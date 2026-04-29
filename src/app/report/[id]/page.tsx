@@ -55,6 +55,7 @@ import { IndustryActivityButton } from '@/components/dashboard/industry-activity
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
+import { bridgeRiskDetails, bridgePackaging } from '@/lib/legacy-bridge'
 // Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
 // industry partner views this report. The surface is the same as the
 // retired /partner/script/[matchId] page; that route now redirects here.
@@ -373,13 +374,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const allStrengths = whatsSpecial.strengths ?? []
   const leadCharacters = report.lead_characters ?? []
   const considerations = report.considerations ?? []
-  const packageAngles = report.package_angles
   const production = report.production_reality
   const scores = report.scores ?? {}
   const craftNote = report.craft_note ?? null
-  // v5.4 (Selznick interim) fields — undefined on legacy evals.
-  const riskDetails = report.risk_details
-  const packaging = report.packaging
+  // v5.4 (Selznick interim) fields. Evals scored on the legacy
+  // `evaluation-prompt.ts` (incl. the Selznick 3.8 rescore batch) only
+  // emit `package_angles` + `production_reality.risk_rubric`. The bridge
+  // derives the modern shape so every eval renders the same UI.
+  const riskDetails = bridgeRiskDetails(report)
+  const packaging = bridgePackaging(report)
   const issues = report.issues
 
   let commercialScore: number | null = null
@@ -768,86 +771,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={ownerIsSubscribed || isAdmin}
         >
           <div data-pdf-section="packaging">
-          {packageAngles && (
-            <Section
-              label="Package angles"
-              subtitle="Who would direct it, and who would buy it."
-              summary={`Director appeal · ${packageAngles.buyer_appeal?.tier ?? 'buyer appeal'}`}
-            >
-              <div className="space-y-3">
-                <Collapsible
-                  title="Why a director wants this"
-                  accent="#059669"
-                  titleBlurred={applyPaywallBlur}
-                >
-                  <p
-                    className="text-[18px] font-semibold text-[var(--gem-gray-50)] leading-[1.4] mb-4 m-0"
-                    style={bodyBlur}
-                  >
-                    {packageAngles.director_appeal.hook}
-                  </p>
-                  {packageAngles.director_appeal.fit_profile && (
-                    <div
-                      className="rounded-lg p-5 mb-4"
-                      style={{
-                        background: 'rgba(5,150,105,0.07)',
-                        border: '1px solid rgba(5,150,105,0.20)',
-                      }}
-                    >
-                      <p
-                        className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                        style={{ color: '#059669' }}
-                      >
-                        Director fit profile
-                      </p>
-                      <p
-                        className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                        style={bodyBlur}
-                      >
-                        {packageAngles.director_appeal.fit_profile}
-                      </p>
-                    </div>
-                  )}
-                  <p
-                    className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                    style={bodyBlur}
-                  >
-                    {packageAngles.director_appeal.detail}
-                  </p>
-                </Collapsible>
-                <Collapsible
-                  title="Why a buyer wants this"
-                  meta={packageAngles.buyer_appeal.tier}
-                  accent="#059669"
-                  titleBlurred={applyPaywallBlur}
-                >
-                  <p
-                    className="text-[13px] uppercase tracking-[0.15em] text-[var(--gem-gray-400)] mb-3 m-0"
-                    style={bodyBlur}
-                  >
-                    {packageAngles.buyer_appeal.lane}
-                  </p>
-                  <p
-                    className="text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0"
-                    style={bodyBlur}
-                  >
-                    {packageAngles.buyer_appeal.detail}
-                  </p>
-                </Collapsible>
+            {/* PACKAGING — modern card UI. Renders for every eval; the
+                bridge derives this shape from legacy `package_angles` +
+                `platform_fit` when the eval is from the older prompt. */}
+            {packaging && (
+              <div
+                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                aria-hidden={applyPaywallBlur ? true : undefined}
+              >
+                <PackagingSection data={packaging} />
               </div>
-            </Section>
-          )}
-          {/* PACKAGING (v5.4) — comps, audience, budget tier, lane fit, IP.
-              Sits right after Package Angles inside the same SectionGate +
-              same data-pdf-section so the print toggle covers both. */}
-          {packaging && (
-            <div
-              style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-              aria-hidden={applyPaywallBlur ? true : undefined}
-            >
-              <PackagingSection data={packaging} />
-            </div>
-          )}
+            )}
           </div>
         </SectionGate>
 
@@ -985,20 +919,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           })()
         )}
 
-        {/* PROJECT RISKS — moved here (after Issues, before Narrative
-            breakdown) per Anuj's 2026-04-27 reorder. Prefer the v5.4
-            `risk_details` payload when present; fall back to the legacy
-            `production.risk_rubric` (production_signal section) when only
-            the older eval shape is available, so we never double-render
-            the same axes. */}
-        {riskDetails ? (
+        {/* PROJECT COMPLEXITY — modern card UI. Renders for every eval;
+            the bridge derives this shape from legacy
+            `production.risk_rubric` when the eval is from the older
+            prompt. */}
+        {riskDetails && (
           <SectionGate
             section="project_complexity"
             privacy={privacy}
             isOwnerOrAdmin={isOwnerOrAdmin}
             submissionId={privacyControlId}
             isPublic={submission.is_public ?? false}
-          isProSubscriber={ownerIsSubscribed || isAdmin}
+            isProSubscriber={ownerIsSubscribed || isAdmin}
           >
             <div
               data-pdf-section="project_complexity"
@@ -1007,43 +939,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             >
               <RiskDetailsSection data={riskDetails} production={production} />
             </div>
-          </SectionGate>
-        ) : (
-          <SectionGate
-            section="project_complexity"
-            privacy={privacy}
-            isOwnerOrAdmin={isOwnerOrAdmin}
-            submissionId={privacyControlId}
-            isPublic={submission.is_public ?? false}
-          isProSubscriber={ownerIsSubscribed || isAdmin}
-          >
-            {production?.risk_rubric && (
-              <Section
-                label="Project Complexity"
-                subtitle="Production lift across cost, cast, and content."
-                summary={[
-                  production.risk_rubric.cost ? `Cost ${LEVEL_LABEL[production.risk_rubric.cost.level]}` : null,
-                  production.risk_rubric.cast ? `Cast ${LEVEL_LABEL[production.risk_rubric.cast.level]}` : null,
-                  production.risk_rubric.content ? `Content ${LEVEL_LABEL[production.risk_rubric.content.level]}` : null,
-                ].filter(Boolean).join(' · ')}
-              >
-                <div
-                  className="grid grid-cols-1 sm:grid-cols-3 gap-3"
-                  style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                  aria-hidden={applyPaywallBlur ? true : undefined}
-                >
-                  {production.risk_rubric.cost && (
-                    <RiskTile label="Production cost" axis={production.risk_rubric.cost} />
-                  )}
-                  {production.risk_rubric.cast && (
-                    <RiskTile label="Cast complexity" axis={production.risk_rubric.cast} />
-                  )}
-                  {production.risk_rubric.content && (
-                    <RiskTile label="Content maturity" axis={production.risk_rubric.content} />
-                  )}
-                </div>
-              </Section>
-            )}
           </SectionGate>
         )}
 
@@ -1482,56 +1377,6 @@ function CommercialScoreCard({
         {copyMessage}
       </p>
     </section>
-  )
-}
-
-// Modern Project Complexity card: neutral white surface, small colored
-// pill at top-right (Smooth / Manageable / Complex) — same look as
-// `src/components/report/risk-details-card.tsx`. Anuj 2026-04-29:
-// retired the color-saturated card backgrounds because "Cast: Complex"
-// painted half the section red and pissed writers off.
-const LEVEL_LABEL: Record<'low' | 'medium' | 'high', string> = {
-  low: 'Smooth',
-  medium: 'Manageable',
-  high: 'Complex',
-}
-function RiskTile({
-  label,
-  axis,
-}: {
-  label: string
-  axis: { level: 'low' | 'medium' | 'high'; note: string }
-}) {
-  const pill =
-    axis.level === 'low'
-      ? { bg: '#d1fae5', fg: 'var(--gem-gray-50)', border: '#10b981' }
-      : axis.level === 'medium'
-        ? { bg: '#fef9c3', fg: 'var(--gem-gray-50)', border: '#facc15' }
-        : { bg: '#fee2e2', fg: 'var(--gem-gray-50)', border: '#ef4444' }
-  return (
-    <div
-      className="rounded-xl p-5 flex flex-col"
-      style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
-    >
-      <div className="flex items-baseline justify-between gap-2 mb-3">
-        <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
-          {label}
-        </p>
-        <span
-          className="text-[10.5px] uppercase tracking-[0.14em] font-bold px-2 py-0.5 rounded-full"
-          style={{
-            color: pill.fg,
-            background: pill.bg,
-            border: `1px solid ${pill.border}`,
-          }}
-        >
-          {LEVEL_LABEL[axis.level]}
-        </span>
-      </div>
-      <p className="text-[15px] sm:text-[16px] font-medium text-[var(--gem-gray-50)] leading-[1.5] m-0">
-        {axis.note}
-      </p>
-    </div>
   )
 }
 
