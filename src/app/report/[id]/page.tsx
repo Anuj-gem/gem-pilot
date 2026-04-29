@@ -1019,12 +1019,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           >
             {production?.risk_rubric && (
               <Section
-                label="Project risks"
-                subtitle="Cost, cast, and content complexity at a glance."
+                label="Project Complexity"
+                subtitle="Production lift across cost, cast, and content."
                 summary={[
-                  production.risk_rubric.cost ? `Cost ${production.risk_rubric.cost.level}` : null,
-                  production.risk_rubric.cast ? `Cast ${production.risk_rubric.cast.level}` : null,
-                  production.risk_rubric.content ? `Content ${production.risk_rubric.content.level}` : null,
+                  production.risk_rubric.cost ? `Cost ${LEVEL_LABEL[production.risk_rubric.cost.level]}` : null,
+                  production.risk_rubric.cast ? `Cast ${LEVEL_LABEL[production.risk_rubric.cast.level]}` : null,
+                  production.risk_rubric.content ? `Content ${LEVEL_LABEL[production.risk_rubric.content.level]}` : null,
                 ].filter(Boolean).join(' · ')}
               >
                 <div
@@ -1485,6 +1485,16 @@ function CommercialScoreCard({
   )
 }
 
+// Modern Project Complexity card: neutral white surface, small colored
+// pill at top-right (Smooth / Manageable / Complex) — same look as
+// `src/components/report/risk-details-card.tsx`. Anuj 2026-04-29:
+// retired the color-saturated card backgrounds because "Cast: Complex"
+// painted half the section red and pissed writers off.
+const LEVEL_LABEL: Record<'low' | 'medium' | 'high', string> = {
+  low: 'Smooth',
+  medium: 'Manageable',
+  high: 'Complex',
+}
 function RiskTile({
   label,
   axis,
@@ -1492,24 +1502,33 @@ function RiskTile({
   label: string
   axis: { level: 'low' | 'medium' | 'high'; note: string }
 }) {
-  const palette =
+  const pill =
     axis.level === 'low'
-      ? { border: 'rgba(5,150,105,0.35)', bg: 'rgba(5,150,105,0.07)', text: '#059669' }
+      ? { bg: '#d1fae5', fg: 'var(--gem-gray-50)', border: '#10b981' }
       : axis.level === 'medium'
-        ? { border: 'rgba(217,119,6,0.35)', bg: 'rgba(217,119,6,0.07)', text: '#d97706' }
-        : { border: 'rgba(220,38,38,0.35)', bg: 'rgba(220,38,38,0.07)', text: '#dc2626' }
+        ? { bg: '#fef9c3', fg: 'var(--gem-gray-50)', border: '#facc15' }
+        : { bg: '#fee2e2', fg: 'var(--gem-gray-50)', border: '#ef4444' }
   return (
     <div
-      className="rounded-xl p-5"
-      style={{ border: `1px solid ${palette.border}`, background: palette.bg }}
+      className="rounded-xl p-5 flex flex-col"
+      style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
     >
-      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
-        {label}
-      </p>
-      <p className="text-[20px] font-bold capitalize m-0 mb-2" style={{ color: palette.text }}>
-        {axis.level}
-      </p>
-      <p className="text-[13px] text-[var(--gem-gray-300)] leading-[1.5] m-0">
+      <div className="flex items-baseline justify-between gap-2 mb-3">
+        <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
+          {label}
+        </p>
+        <span
+          className="text-[10.5px] uppercase tracking-[0.14em] font-bold px-2 py-0.5 rounded-full"
+          style={{
+            color: pill.fg,
+            background: pill.bg,
+            border: `1px solid ${pill.border}`,
+          }}
+        >
+          {LEVEL_LABEL[axis.level]}
+        </span>
+      </div>
+      <p className="text-[15px] sm:text-[16px] font-medium text-[var(--gem-gray-50)] leading-[1.5] m-0">
         {axis.note}
       </p>
     </div>
