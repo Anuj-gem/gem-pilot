@@ -31,8 +31,12 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js"
 
-const MAX_MATCHES_PER_SUBMISSION = 10
-const MAX_MATCHES_PER_PRODUCER_BACKFILL = 50
+// Anuj 2026-04-29: caps removed. The producer dashboard is now a "show
+// every eligible script in your lane" view, not a curated 50-match
+// inbox. The matching engine just creates rows for every script that
+// fits the lane predicate; the dashboard surfaces all of them.
+const MAX_MATCHES_PER_SUBMISSION = 10_000
+const MAX_MATCHES_PER_PRODUCER_BACKFILL = 10_000
 
 // Genre normalization — lowercase, strip punctuation, collapse whitespace.
 function normalize(value: string | null | undefined): string {
@@ -373,7 +377,7 @@ export async function createMatchesForProducer(
        submission:script_submissions!inner ( id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags )`
     )
     .order("weighted_score", { ascending: false })
-    .limit(500)
+    .limit(10_000)
 
   if (candErr) {
     console.error("[matching] candidate query failed:", candErr.message)

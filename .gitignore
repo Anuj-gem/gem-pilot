@@ -40,5 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.next.old/
+/.next-old-*/
 *.bak
 *.bak2
+
+# Rescore script artifacts — local-only crash-recovery cache, per-eval
+# audit receipts, and pre-run snapshots. Thousands of files; no value
+# in version control.
+/data/rescore-cache/
+/data/rescore-cache.*-stale/
+/data/rescore-runs/
+/data/rescore-backup/

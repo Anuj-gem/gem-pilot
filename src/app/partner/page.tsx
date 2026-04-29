@@ -31,10 +31,25 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { Inbox } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
+import { createServerClient } from '@supabase/ssr'
 import Nav from '@/components/nav'
 import { DashboardTabs, type DashboardMatchData } from '@/components/partner/dashboard-tabs'
 import { RealtimeRefresh } from '@/components/partner/realtime-refresh'
 import { isScoreVisible, normalizePrivacy } from '@/lib/report-privacy'
+import { createMatchesForProducer } from '@/lib/matching'
+
+// Inline service-role client — bypasses RLS so the aggregate "X views ·
+// Y interested · Z emailed" stats query can count matches across ALL
+// producers, not just the viewer's own match rows. Same pattern other
+// routes in this app use (see /api/start-submission, /api/send-upgrade-
+// email). Anuj 2026-04-29.
+function createServiceClient() {
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { cookies: { getAll() { return [] }, setAll() {} } }
+  )
+}
 
 export const dynamic = 'force-dynamic'
 
@@ -267,6 +282,18 @@ export default async function PartnerDashboardPage() {
     .update({ last_visited_partner_at: new Date().toISOString() })
     .eq('id', user.id)
 
+  // Sync matches every visit. Anuj 2026-04-29: the dashboard is now
+  // "every public Pro script in your lane", not a curated 50-row inbox.
+  // The matching engine creates a row for each new eligible script and
+  // the UNIQUE constraint silently dedupes existing ones. Uses service
+  // role so insert RLS doesn't block the writes.
+  try {
+    const serviceForMatching = createServiceClient()
+    await createMatchesForProducer(user.id, serviceForMatching)
+  } catch (err) {
+    console.warn('[partner] inline match sync failed:', err)
+  }
+
   const firstName =
     profile?.full_name?.split(' ')[0] ||
     user.email?.split('@')[0] ||
@@ -291,7 +318,6 @@ export default async function PartnerDashboardPage() {
     .eq('producer_id', user.id)
     .is('unmatched_at', null)
     .order('created_at', { ascending: false })
-    .limit(100)
 
   // Anuj 2026-04-28: industry matching is Pro-only on the writer side.
   // Pull the subscription_status of every writer in this feed so we can
@@ -354,7 +380,12 @@ export default async function PartnerDashboardPage() {
     { views: number; interested: number; emailed: number }
   >()
   if (submissionIdsInFeed.length > 0) {
-    const { data: aggRows } = await supabase
+    // Service role — RLS on script_matches scopes to producer_id, so the
+    // user-scoped client only sees this producer's own rows. We need
+    // every producer's rows to compute the aggregate "X views · Y
+    // interested · Z emailed" social-signal counts. Anuj 2026-04-29.
+    const serviceForStats = createServiceClient()
+    const { data: aggRows } = await serviceForStats
       .from('script_matches')
       .select('submission_id, status, producer_emailed_at, unmatched_at')
       .in('submission_id', submissionIdsInFeed)
