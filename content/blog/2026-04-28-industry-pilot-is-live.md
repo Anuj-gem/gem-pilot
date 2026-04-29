@@ -2,30 +2,18 @@
 title: "We're bringing the Industry directly into GEM."
 slug: industry-pilot-is-live
 date: 2026-04-28
-summary: "What's new: in-app industry accounts, end-to-end privacy, the Selznick 3.8 rescore, and the GEM Score is back."
+summary: "What's new: in-app industry accounts, end-to-end privacy, Selznick 3.8 with the GEM Score back, enhanced privacy controls, and branded PDF downloads."
 author: "Anuj Kommareddy"
 draft: false
 ---
 
-Hi, gems. I'm Anuj, founder of GEM.
+Hello — I'm Anuj, founder of GEM.
 
-I started this company to help screenwriters be successful — and to
-connect them to an industry that's notoriously difficult to penetrate.
-After a few days of our industry pilot exposing partners to the GEM
-community, the loudest ask we got back was for **more direct access.**
-
-So today, we're bringing Hollywood directly into GEM with our new
-**in-app industry partner accounts.** This is the headline change.
-Industry partners can now read your script, mark interest, and reach
-out to you directly — so you can actually work together. Details below.
-
-This is a huge change for our product, but the experience for the
-average GEM writer doesn't change. You still upload, get your read,
-share your report. The new piece is what happens on the other side.
-
-A couple of other exciting updates in this release: our new **Selznick
-3.8** evaluation model, and **enhanced privacy controls** that let you
-present exactly what you want to industry. Brief on both below.
+GEM exists to bring Hollywood closer to the most promising
+screenwriters. We're using the most powerful evaluation technology ever
+built for this industry to make that happen. You can read more about us
+on [/selznick](https://www.gem.studio/selznick) — and more about
+today's changes below.
 
 — Anuj
 
@@ -99,9 +87,12 @@ are no longer browsable by strangers.
   people with the link see your report.
 - **Industry visibility is opt-in and Pro-only.** Free reads stay
   private end-to-end. Pro publishes you to the matched feed.
-- **Anonymized engagement signals.** You see views, interested counts,
-  passed counts on your dashboard — but you don't see *who* until they
-  reach out. Same protection on the producer side.
+- **Your contact info isn't exposed.** Industry partners never get
+  your email or phone. To start a conversation, they have to send a
+  note through GEM. Once you reply, they have your email — and you
+  take it from there.
+- **Live engagement counts on your dashboard.** Views, interested,
+  passed — see what's happening on your scripts in real time.
 
 <div class="gem-blog-mock">
   <p class="gem-blog-mock-title">Industry activity</p>
@@ -183,20 +174,32 @@ version of your work you want to industry. More on that in
 
 ## 4. Enhanced privacy controls
 
-Tied to all of the above:
+- **Per-section privacy.** Show or hide each section of your report
+  individually — score, Cast, Packaging, Project Complexity. Industry
+  partners only see what you choose.
+- **Score-eye toggle.** One tap to hide just the GEM Score from
+  industry while keeping the rest visible.
+- **One-click unpublish.** Take your post off the matched feed at any
+  time. Your report URL still works for anyone you've shared it with.
 
-- **Per-section privacy.** Hide your score, hide individual sections
-  (Cast, Packaging, Project Complexity), or take the post down
-  entirely. Industry partners see only what you decide to show.
-- **One-click unpublish.** Toggle visibility from your dashboard at any
-  time.
-- **Branded PDF download** of every report (Pro).
+## 5. Enhanced downloads
+
+Your full report is now downloadable as a clean, branded PDF — every
+section of the read in one document you can email, print, or attach to
+a submission.
+
+- **Branded PDF.** GEM cover page, headline, full report layout, your
+  name, your script title.
+- **Section toggles.** Pick which sections to include in the
+  download — same per-section privacy as the live report.
+- **Reflects your current edits.** If you've sharpened your headline,
+  the download uses the edited version.
 
 <div class="gem-blog-callout gem-blog-callout--accent">
 
 **Coming next.** More vetted industry partners. Tighter matching as we
-learn from the first few weeks of intros. Better signals for writers
-about what's moving the needle on their lane.
+learn from the first weeks of intros. Better signals for writers about
+what's moving the needle on their lane.
 
 </div>
 
