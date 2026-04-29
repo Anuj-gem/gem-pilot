@@ -109,10 +109,10 @@ are no longer browsable by strangers.
   </div>
 </div>
 
-## 3. Selznick 3.8 — every script rescored
+## 3. Selznick 3.8 — an entirely new evaluation model
 
-Selznick 3.8 is the new evaluation engine. Every script on GEM has been
-rescored overnight. Reports are restructured to read more like the
+Selznick 3.8 is a brand-new evaluation engine. Every script on GEM has
+been rescored overnight. Reports are restructured to read more like the
 one-pager a producer would actually write before walking into a
 development meeting.
 
@@ -120,8 +120,11 @@ development meeting.
 - **Why this is a hit** — the strongest commercial notes.
 - **Cast** — lead profiles with the actor archetypes.
 - **Packaging** — audience, budget tier, buyer fit.
-- **Project Complexity** — production reality, cast lift, clearance.
-- **Development considerations** — the case against, sharpest lever.
+- **Project Complexity** — production reality and cast lift.
+- **Development priorities** — the case against, with the sharpest
+  lever called out.
+- **GEM Score** on the cover — back by popular demand. One signal a
+  producer scans first; the substance is the read underneath.
 
 If you previously edited your headline, **your edit is preserved**. The
 rescore only updates the underlying read.
@@ -159,23 +162,12 @@ rescore only updates the underlying read.
   </div>
 </div>
 
-## 4. The GEM Score is back — but it's not the gate
+You stay in control of every piece. **Show or hide the score, hide
+individual sections, take the post down anytime** — present whatever
+version of your work you want to industry. More on that in
+[Section 4 below](#4-enhanced-privacy-controls).
 
-A lot of writers asked for it: when something doesn't get matched, they
-wanted a clear signal of why. So the score is back on the report cover.
-
-- **One signal, not the verdict.** Industry partners match on score
-  *and* genre fit, lane, comparables, budget, what they're scouting
-  this quarter. The number alone doesn't capture any of that.
-- **Anyone who publishes has a real shot.** "Qualifies for access" was
-  the old framing — we're moving away from it. Publishing is the
-  qualifying act. From there, the score is one input alongside
-  everything else.
-- **You can still hide your score.** Privacy controls include a
-  one-click score-eye toggle, so the report can be read on its own
-  merit if that's what you want.
-
-## 5. Enhanced privacy controls
+## 4. Enhanced privacy controls
 
 Tied to all of the above:
 
