@@ -245,13 +245,16 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
     typeof budgetTier === 'string' && budgetTier.trim().length > 0
       ? budgetTier.toLowerCase().trim()
       : null
-  const formatKey = formatRaw
-    ? formatRaw.toLowerCase().includes('series')
-      ? 'series'
-      : formatRaw.toLowerCase().includes('feature')
-        ? 'feature'
-        : formatRaw.toLowerCase()
-    : null
+  // Format is a fixed enum — feature | series | null. Anything else
+  // (genres, tones, etc.) is dropped so they don't leak into the
+  // producer's Format filter chips. Anuj 2026-04-30: the prior loose
+  // fallback was surfacing genre values in the Format row.
+  const formatKey = (() => {
+    const lc = (sub.declared_format ?? '').toLowerCase()
+    if (lc.includes('series')) return 'series'
+    if (lc.includes('feature')) return 'feature'
+    return null
+  })()
   const genreKeys = uniqueLowercase([
     evaluation?.classification?.genre_primary,
     ...(evaluation?.classification?.genre_secondary ?? []),
@@ -607,13 +610,14 @@ export default async function PartnerDashboardPage() {
         productionLevel: normLevel(evaluation?.risk_details?.budget?.level),
         castLevel: normLevel(evaluation?.risk_details?.casting?.level),
         budgetTier: budgetTier ? budgetTier.toLowerCase() : null,
-        format: formatRaw
-          ? formatRaw.toLowerCase().includes('series')
-            ? 'series'
-            : formatRaw.toLowerCase().includes('feature')
-              ? 'feature'
-              : formatRaw.toLowerCase()
-          : null,
+        // Same fixed-enum rule as the matched-cards path above —
+        // declared_format is the only legitimate source of feature|series.
+        format: (() => {
+          const lc = (row.declared_format ?? '').toLowerCase()
+          if (lc.includes('series')) return 'series'
+          if (lc.includes('feature')) return 'feature'
+          return null
+        })(),
         genres: uniqueLowercase([
           evaluation?.classification?.genre_primary,
           ...(evaluation?.classification?.genre_secondary ?? []),
@@ -646,7 +650,9 @@ export default async function PartnerDashboardPage() {
           .map((m) => m.matchId)
       : []
 
-  const laneText = laneSummary(profile.lane)
+  // (laneSummary helper kept for back-compat; the header lane chip was
+  // retired 2026-04-30 in favor of inline filter chips seeded from
+  // profile.lane via the laneDefaults prop on DashboardTabs.)
 
   return (
     <>
@@ -656,41 +662,34 @@ export default async function PartnerDashboardPage() {
         {/* Slim header: greeting on the left, lane chip on the right.
             One line of supporting text (active count). No badges, no
             verbose "your inbox this week" copy. */}
-        <div className="flex items-end justify-between gap-4 flex-wrap mb-6">
-          <div>
-            <div
-              aria-hidden
-              className="w-12 h-0.5 mb-3.5 rounded-sm"
-              style={{ background: 'var(--gem-gold)' }}
-            />
-            <h1 className="text-3xl sm:text-[32px] font-extrabold font-[family-name:var(--font-display)] tracking-tight text-[var(--gem-gray-50)] leading-tight m-0">
-              Welcome back, {firstName}.
-            </h1>
-            {activeMatches.length > 0 && (
-              <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-2">
-                {activeMatches.length} active{' '}
-                {activeMatches.length === 1 ? 'match' : 'matches'}
-                {newMatchIds.length > 0 && (
-                  <>
-                    <span className="text-[var(--gem-gray-500)] mx-2">·</span>
-                    <span className="font-semibold" style={{ color: 'var(--gem-accent)' }}>
-                      {newMatchIds.length} new
-                    </span>
-                  </>
-                )}
-              </p>
-            )}
-          </div>
-          {laneText && (
-            <Link
-              href="/onboarding/producer"
-              className="text-[12.5px] font-medium text-[var(--gem-gray-400)] hover:text-[var(--gem-gold)] transition-colors shrink-0"
-              title="Edit your lane"
-            >
-              Lane: <span className="text-[var(--gem-gray-200)]">{laneText}</span>
-              <span className="text-[var(--gem-gray-500)] mx-1.5">·</span>
-              Edit
-            </Link>
+        {/* Header: greeting + active-match count. Lane chip retired
+            2026-04-30 — the lane preferences now pre-populate the
+            inline filter chips below, so a separate header lane
+            indicator was redundant. The "Edit filter defaults" link
+            inside the Discover filter bar is the entry point to
+            adjusting saved lane preferences. */}
+        <div className="mb-6">
+          <div
+            aria-hidden
+            className="w-12 h-0.5 mb-3.5 rounded-sm"
+            style={{ background: 'var(--gem-gold)' }}
+          />
+          <h1 className="text-3xl sm:text-[32px] font-extrabold font-[family-name:var(--font-display)] tracking-tight text-[var(--gem-gray-50)] leading-tight m-0">
+            Welcome back, {firstName}.
+          </h1>
+          {activeMatches.length > 0 && (
+            <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-2">
+              {activeMatches.length} active{' '}
+              {activeMatches.length === 1 ? 'match' : 'matches'}
+              {newMatchIds.length > 0 && (
+                <>
+                  <span className="text-[var(--gem-gray-500)] mx-2">·</span>
+                  <span className="font-semibold" style={{ color: 'var(--gem-accent)' }}>
+                    {newMatchIds.length} new
+                  </span>
+                </>
+              )}
+            </p>
           )}
         </div>
 
@@ -715,6 +714,23 @@ export default async function PartnerDashboardPage() {
             matches={matches}
             ownedMatches={ownedMatches}
             newMatchIds={newMatchIds}
+            laneDefaults={{
+              genres: Array.isArray(profile.lane?.genres)
+                ? (profile.lane.genres as string[])
+                    .map((g) => g.toLowerCase().trim())
+                    .filter(Boolean)
+                : [],
+              format:
+                typeof profile.lane?.format === 'string' &&
+                profile.lane.format !== 'both'
+                  ? profile.lane.format.toLowerCase()
+                  : null,
+              budgetTier:
+                typeof profile.lane?.budget_tier === 'string' &&
+                profile.lane.budget_tier !== 'agnostic'
+                  ? profile.lane.budget_tier.toLowerCase()
+                  : null,
+            }}
           />
         )}
       </div>

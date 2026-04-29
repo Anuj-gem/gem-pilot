@@ -87,6 +87,17 @@ const BUDGET_LABELS: Record<string, string> = {
   tentpole: '$100M+',
 }
 
+interface LaneDefaults {
+  /** Lowercase genre tokens the producer has saved as their lane. */
+  genres: string[]
+  /** 'feature' | 'series' | null. null when the producer's lane is set
+   *  to "Both" (i.e. no format constraint). */
+  format: string | null
+  /** 'micro' | 'indie' | 'mid' | 'studio' | 'premium' | 'tentpole' | null.
+   *  null when the producer's lane is "Agnostic". */
+  budgetTier: string | null
+}
+
 interface Props {
   matches: DashboardMatchData[]
   /** Producer's own privately-submitted scripts. Rendered on the In
@@ -94,12 +105,40 @@ interface Props {
    *  producer hasn't submitted any. */
   ownedMatches?: DashboardMatchData[]
   newMatchIds: string[]
+  /** The producer's saved lane preferences. Used to pre-populate the
+   *  Discover filter chips so a fresh visit lands on a view that
+   *  already reflects what they've said they care about. The user can
+   *  toggle individual chips off (session-only narrowing); changing
+   *  the saved defaults happens via the Edit defaults link → onboarding
+   *  page. Anuj 2026-04-30. */
+  laneDefaults?: LaneDefaults
 }
 
-export function DashboardTabs({ matches, ownedMatches = [], newMatchIds }: Props) {
+export function DashboardTabs({
+  matches,
+  ownedMatches = [],
+  newMatchIds,
+  laneDefaults,
+}: Props) {
   const [tab, setTab] = useState<TabKey>('inbox')
   const [sort, setSort] = useState<SortKey>('score')
-  const [filter, setFilter] = useState<FilterState>(() => ({ ...EMPTY_FILTER }))
+  const [filter, setFilter] = useState<FilterState>(() => {
+    // Seed from lane defaults so the initial Discover view reflects the
+    // producer's saved preferences. Toggling chips deviates from the
+    // defaults for this session only.
+    const seed: FilterState = {
+      format: new Set(),
+      budgetTier: new Set(),
+      productionLevel: new Set(),
+      castLevel: new Set(),
+      genres: new Set(),
+      scriptTags: new Set(),
+    }
+    if (laneDefaults?.format) seed.format.add(laneDefaults.format)
+    if (laneDefaults?.budgetTier) seed.budgetTier.add(laneDefaults.budgetTier)
+    for (const g of laneDefaults?.genres ?? []) seed.genres.add(g)
+    return seed
+  })
   const newIdSet = useMemo(() => new Set(newMatchIds), [newMatchIds])
 
   function toggleFilter(axis: FilterAxis, token: string) {
@@ -533,21 +572,31 @@ function FilterBar({
         >
           Filter
         </p>
-        {active && (
-          <button
-            type="button"
-            onClick={onClear}
+        <div className="flex items-center gap-3">
+          {active && (
+            <button
+              type="button"
+              onClick={onClear}
+              className="text-[11.5px] font-semibold transition-colors"
+              style={{
+                color: 'var(--gem-accent)',
+                background: 'transparent',
+                padding: 0,
+                border: 0,
+              }}
+            >
+              Clear all
+            </button>
+          )}
+          <a
+            href="/onboarding/producer"
             className="text-[11.5px] font-semibold transition-colors"
-            style={{
-              color: 'var(--gem-accent)',
-              background: 'transparent',
-              padding: 0,
-              border: 0,
-            }}
+            style={{ color: 'var(--gem-gray-400)' }}
+            title="Adjust which genres / format / budget your lane defaults to"
           >
-            Clear all
-          </button>
-        )}
+            Edit defaults →
+          </a>
+        </div>
       </div>
       <div className="space-y-2">
         {sections.map((s) => (
