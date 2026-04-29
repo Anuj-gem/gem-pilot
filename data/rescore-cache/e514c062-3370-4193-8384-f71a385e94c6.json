@@ -2,318 +2,328 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological thriller",
-      "genre_tags": [
-        "satire",
-        "erotic thriller"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Comedy",
+        "Crime"
       ],
-      "tone": "Glossy, satirical, escalating, and increasingly unhinged"
+      "tone": "satirical",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "prestige",
+        "identity",
+        "power",
+        "crime",
+        "fitness",
+        "la"
+      ]
     },
-    "positioning_hook": "A broke barre instructor chasing status in Los Angeles falls for a rich, image-obsessed older man — then discovers he’s building her into the face of a dead woman.",
+    "positioning_hook": "A desperate LA barre instructor falls for a wealthy self-made zaddy, then discovers his perfect face, perfect body, and perfect life are built on a violent, identity-swapping lie.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 8,
-        "reasoning": "The script has a very legible commercial promise: aspirational LA, sex, class envy, beauty culture, and a thriller engine that keeps tightening. The yacht parties, influencer ecosystem, and final island captivity give it broad curiosity value with a clear hook for adult audiences."
+        "score": 7,
+        "reasoning": "The script has a clean, tabloid-ready engine: beauty, class envy, influencer culture, and a dangerous rich man with a secret. The audience is real and the hook is easy to sell, though the tonal extremity and late-turn thriller reveal narrow it from broad four-quadrant play."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The premise lands quickly: Ellie wants upward mobility through fitness and status, and Zack turns that ambition into a trap. The script keeps the engine readable through the Go Barre world, the Zaddy relationship, and the eventual reveal around Vanessa and Brett."
+        "reasoning": "The premise lands fast in the opening stretch: Ellie’s cosmetic consultation, her Go Barre job, and the zaddy ecosystem all establish the world before the story pivots into menace. By the time Zack enters, the script has a very legible engine."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Ellie, Harper, Morgan, and Zack all have strong comic and dramatic surfaces, with Ellie especially built for a performer who can pivot from hustle to panic to rage. The supporting players mostly orbit the central engine, but the lead quartet gives the movie enough personality to carry a feature."
+        "reasoning": "Ellie is a strong lead because she’s ambitious, vain, wounded, funny, and self-contradictory in a way that keeps her playable. Zack and Harper are vivid enough to matter, but the script is still primarily powered by Ellie’s point of view rather than a deep ensemble."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a very specific satirical lane: wellness culture, nepo-baby resentment, cosmetic surgery, and predatory wealth all collide in one escalating story. The acid-attack reveal, the facial-recognition obsession, and the final identity collapse give it a confident, off-kilter identity."
+        "reasoning": "The script commits to a very specific satirical lane: wellness culture, nepo anxiety, zaddy economics, and body-image horror all collide in one package. The acid-attack / identity-replacement / cosmetic-obsession turn is a genuinely bold escalation rather than a routine thriller move."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The story keeps adding pressure: promotion loss, the masked stalker, the fire, the boyfriend betrayal, the Phoenix reveal, and the final island turn. Each act ends with a stronger complication than the last, and the script knows how to keep the reader leaning forward."
+        "reasoning": "The story keeps generating new pressure points: the promotion loss, the affair triangle, the fire, the fake identity, the Phoenix reveal, and the island trap. Each act turn adds a new layer of danger or humiliation, which keeps the read moving."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "This is a fresh collision of social satire and thriller mechanics, with the beauty-industrial complex functioning as both setting and weapon. The Vanessa/Brett/Zack identity twist feels strange in a way that still tracks emotionally with the script’s obsession with image and reinvention."
+        "reasoning": "The script feels immediately ownable because the central contradiction is so specific: a woman chasing empowerment through the same beauty economy that is destroying her. The Vanessa/Brett/Zack reveal gives the premise a nasty inevitability that feels fresh rather than arbitrary."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The LA ecosystem is richly specific: barre studios, influencer parties, cosmetic surgery, rich enclaves, and the social codes that govern all of them. The world keeps generating story, from the Go Barre hierarchy to the elite wellness/tech circle around Zack."
+        "reasoning": "LA status culture is rendered with real specificity: barre studios, filler parties, Palisades mansions, escort-adjacent social circles, and the influencer economy all feel story-generating. The world is not just backdrop; it actively shapes the characters’ choices and delusions."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is sharply defined: glossy, vulgar, self-aware, and then increasingly sinister. It can move from joke-density and social satire into dread without losing its voice, which gives the script a recognizable identity."
+        "reasoning": "The script has a sharp satirical voice that can pivot from comic social observation to body-horror dread without losing its identity. The Maroon 5 motif, the wellness jargon, and the grotesque cosmetic imagery give it a distinct flavor."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the thriller plot, the script is really about worth, desirability, and the violence of being taught that beauty and success are the same thing. The final image of Ellie in the Vanessa identity opens a darker psychological layer that lingers after the plot resolves."
+        "reasoning": "Under the surface, the script is about shame, class resentment, body dysmorphia, and the fantasy of being chosen by power. The Vanessa/Brett backstory and Ellie’s mother wound suggest more emotional depth than the plot initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Ellie/Harper and Ellie/Zack are both strong engines, and Morgan adds a useful counterpoint as the insecure artist boyfriend. The ensemble is not sprawling, but the central relationships generate enough friction, jealousy, and betrayal to keep the movie alive."
+        "reasoning": "Ellie/Harper, Ellie/Morgan, and Ellie/Zack each generate different kinds of friction, and those dynamics keep the script alive scene to scene. It is not a true ensemble machine, but the supporting relationships are strong enough to create recurring story energy."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Ellie Noone",
+        "role_type": "Lead",
+        "demographics": "Woman, mid-20s, former gymnast, LA fitness instructor / aspiring entrepreneur, white.",
+        "hook": "Ellie is a hyper-ambitious, body-conscious striver who talks like a self-help mantra and thinks like a hustler, but underneath the polish she’s terrified she’s already missed her shot. She wants to be admired for helping women, yet she’s just as addicted to status, validation, and the fantasy of being chosen by someone powerful. Her grief over her mother and her resentment toward privilege make her both sympathetic and dangerous to herself.",
+        "why_actor_wants_this": "This is showcase territory for a performer like Margot Robbie in I, Tonya — a role that can swing from comic vanity to raw humiliation to psychological unraveling. It gives an actor a full-body transformation arc, plus the chance to play seduction, self-delusion, and survival in the same frame."
+      },
+      {
+        "name": "Zack Shaw",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, wealthy tech founder, white, physically imposing, cosmetic-enhanced.",
+        "hook": "Zack is the script’s most unnerving engine: polished, charismatic, and apparently self-made, but actually a deeply damaged predator who weaponizes intimacy, money, and image management. He performs vulnerability with precision, then flips into control the second he feels exposed. The acid-burned / identity-swapped reveal makes him feel like a monster built out of vanity culture and grievance.",
+        "why_actor_wants_this": "This is the kind of role that gave Jake Gyllenhaal in Nightcrawler or Penn Badgley in You their most magnetic menace — a charming, articulate sociopath with a performance layer on top of the threat. It offers a rare chance to play seductive intelligence, body obsession, and outright horror without ever leaving the room."
+      },
+      {
+        "name": "Harper Hines",
+        "role_type": "Supporting",
+        "demographics": "Woman, 20s, influencer / party planner, socially ambitious, white.",
+        "hook": "Harper is Ellie’s sharper, brasher mirror: a woman who knows the game is rigged and decides to play it anyway, loudly. She’s funny, wounded, transactional, and more self-aware than she first appears, which makes her both comic relief and a real emotional counterweight. Her breakup with Damien gives her a bruised dignity that keeps her from being just a caricature.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that made Jennifer Coolidge in The White Lotus or Kathryn Hahn in any sharp ensemble so valuable — a comic engine with real pain underneath. It gives an actor big behavior, sharp dialogue, and a late-breaking emotional turn."
+      },
+      {
+        "name": "Morgan",
+        "role_type": "Supporting",
+        "demographics": "Man, late 20s, aspiring actor / filmmaker, white, stoner, underemployed.",
+        "hook": "Morgan is the anti-Zack: broke, passive, self-pitying, and weirdly honest about his own lack of traction. He’s not a villain so much as a dead-end mirror for Ellie’s fear that talent without money is just another form of waiting. His slacker energy gives the script a lived-in counterpoint to the zaddy fantasy.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the sad-comic drift of someone like Ben Schwartz or Paul Dano in a more grounded register — funny, pathetic, and unexpectedly human. The showcase is in making failure feel specific rather than generic."
+      },
+      {
+        "name": "Detective Heller",
+        "role_type": "Supporting",
+        "demographics": "Woman, 50s, detective, no-nonsense, working-class edge.",
+        "hook": "Heller is the script’s reality check: skeptical, dry, and quietly resentful of the same promotion-and-connection system Ellie hates. She’s not flashy, but she gives the thriller spine credibility and keeps the story from floating entirely into satire. Her scenes are built on pressure, not exposition, which makes her useful and memorable.",
+        "why_actor_wants_this": "This is strong character-actor territory in the mold of Regina King in Watchmen or Carrie Coon in a procedural-adjacent prestige role — authority with attitude. It gives an actor the pleasure of being the one person in the room who sees through everyone."
+      },
+      {
+        "name": "Carrie Elaine Lauren",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, boutique fitness owner / boss, polished, status-conscious.",
+        "hook": "Carrie Elaine is the glossy gatekeeper of the wellness world, the kind of boss who can praise you and undercut you in the same breath. She embodies the script’s central hypocrisy: empowerment as branding, access as exclusion. She’s not a villain in a big way, but she is a system with a face.",
+        "why_actor_wants_this": "This is the sort of role that lets an actor play social authority with a smile, like Laura Dern in Big Little Lies or Christine Baranski at her most cutting. The fun is in making the power feel effortless and faintly cruel."
+      },
+      {
+        "name": "Brett Henderson",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s-50s, acid-burned survivor, physically scarred, voice-box speech.",
+        "hook": "Brett is the wounded ghost at the center of the mystery, a man whose body tells the story before he does. He’s tragic, eerie, and finally furious, and the script uses him to expose the violence underneath Zack’s reinvention. His reveal re-frames the whole movie without feeling like a cheat.",
+        "why_actor_wants_this": "This is prestige-makeup, transformation-heavy territory in the vein of Brendan Fraser in The Whale or Doug Jones-style physical storytelling — a role where the body is the performance. It gives an actor the chance to make pain, rage, and recognition land with very little dialogue."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 14,
-        "leads": 4,
+        "speaking_roles": 12,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Several roles depend on specific age and beauty presentation",
-          "One principal male role requires a charismatic 40s-50s leading-man type",
-          "A few cameo/real-person references appear in montage"
+          "One lead in her mid-20s with strong comedic and dramatic range",
+          "One physically imposing 40s male antagonist with charisma and menace",
+          "Supporting roles skew toward attractive, LA-specific types",
+          "Brief celebrity cameos are scripted as references rather than required appearances"
         ]
       },
       "locations": {
         "distinct_count": 18,
-        "interior_exterior_ratio": "Mostly interior with frequent exterior luxury locations",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
           "Beverly Hills cosmetic surgery office",
-          "LA barre studio",
-          "yacht interiors/exteriors",
-          "Pacific Palisades mansion",
-          "Phoenix gymnastics center",
-          "overwater island villa"
+          "boutique barre studio / strip mall space",
+          "Palisades mansion and yacht interiors",
+          "Phoenix gymnastics gym",
+          "overwater island villa / dock / pier"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Facial imaging graphics, fire damage aftermath, acid-attack makeup/effects, helicopter shots, island/ocean visuals, and a final body/identity transformation sequence.",
+        "vfx_details": "Acid-melt attack, fire aftermath, surveillance footage, cosmetic transformation imagery, and the island finale all imply compositing and some enhancement.",
         "stunts_level": "minor",
-        "sfx_needs": "Acid attack aftermath, fire sequence, blood effects, and practical injury makeup.",
+        "sfx_needs": "Practical fire, acid-attack makeup effects, blood, burns, and cosmetic prosthetics for the final reveal.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "real_person",
-          "detail": "Lenny Kravitz, Dwayne Johnson, Mark Wahlberg, Jeff Bezos, Lauren Sanchez, Elon Musk, Grimes, Tom Girardi, Erika Jayne, Jared Leto, Leo DiCaprio, Adam Levine, Kate Hudson, David Foster Wallace, Ryan Murphy, Emma Roberts, Jia Tolentino are referenced by name."
+          "detail": "Lenny Kravitz, Dwayne Johnson, Mark Wahlberg, Jeff Bezos, Lauren Sanchez, Elon Musk, Grimes, Tom Girardi, Erika Jayne, Jared Leto, Bob Iger, Leo DiCaprio, Adam Levine, Kate Hudson, Ryan Murphy, Emma Roberts, David Foster Wallace, and Jia Tolentino are all named or directly referenced."
         },
         {
           "type": "named_music",
-          "detail": "Sheryl Crow's 'Soak Up The Sun' and Maroon 5's 'Harder to Breathe' are specifically named and used as plot/character markers."
+          "detail": "\"Harder to Breathe\" by Maroon 5 and \"Soak Up the Sun\" by Sheryl Crow are plot-meaningful needle drops."
         },
         {
           "type": "brand",
-          "detail": "Go Barre, The Row, Margaux, Glossier, Chanel, La Mer, Tesla, Uber-like ride references, Corona, Balmain, Alfred Coffee, Kirkland, Tiffany, Chloé, and other consumer brands are prominently featured."
+          "detail": "Go Barre, The Row, Glossier, Chanel, Tiffany, Tesla, Corona, Uber-like ride behavior, Twitter/X, TikTok-style social posting, and OnlyFans-adjacent escort-service language are prominently used."
         },
         {
           "type": "ip_licensing",
-          "detail": "The screenplay is based on an Audible Original and includes a fictionalized media ecosystem with real-person references that may require clearance review."
+          "detail": "The script is based on an Audible Original titled Zaddy."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or theatrical indie-thriller lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Best positioned as a festival-to-platform feature or prestige genre release with strong word-of-mouth potential."
+        "recommended_lane": "premium streaming feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: prestige streaming or specialty theatrical with a strong marketing hook; mature sexual content and violence are within streaming norms."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary but wide-ranging: cosmetic office, barre studio, Palisades mansion, yacht, Phoenix gym, and an island finale all add scope, while the acid attack, fire, and transformation beats require practical effects and some VFX."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The story is contemporary and character-driven, but yachts, helicopters, a fire sequence, an island finale, and multiple luxury locations push it above a lean indie budget."
+      "casting": {
+        "level": "medium",
+        "note": "Ellie needs a lead who can sell satire, sex appeal, humiliation, and escalating paranoia; Zack needs a rare combination of charm, physical presence, and menace. The supporting women also need to feel like real LA types rather than generic archetypes."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s final identity-reveal and island captivity turn are audacious, but they also make the movie highly dependent on tonal control and audience buy-in for a very specific satirical-thriller blend."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Promising Young Woman",
+          "year": 2020,
+          "why_it_comps": "Shares the same female-led revenge-satire energy, with a glossy social world masking predatory behavior and a protagonist whose self-presentation is part of the weapon."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The project centers on a few strong lead roles, but it benefits from recognizable, highly specific casting in Ellie, Zack, Harper, and Morgan."
+        {
+          "title": "The Menu",
+          "year": 2022,
+          "why_it_comps": "Like this script, it turns elite status culture into a pressure cooker and uses escalating absurdity to expose class and appetite."
         },
-        "location": {
-          "level": "high",
-          "note": "The script moves through many distinct LA spaces, Phoenix, a yacht, a mansion, and an island villa, with several luxury set pieces."
+        {
+          "title": "I, Tonya",
+          "year": 2017,
+          "why_it_comps": "The lead’s wounded ambition, body scrutiny, and darkly comic self-mythologizing feel very close to that film’s performance-driven engine."
         },
-        "content": {
-          "level": "high",
-          "note": "Sexual content, nudity, stalking, acid violence, fire, coercive behavior, and body-image material make this firmly adult."
+        {
+          "title": "Fresh",
+          "year": 2022,
+          "why_it_comps": "The script shares Fresh’s blend of dating horror, body anxiety, and a male predator whose charm is inseparable from the threat."
         },
-        "rights": {
-          "level": "high",
-          "note": "The script is packed with named real people, brands, and specific music cues that would need clearance review."
+        {
+          "title": "Swarm",
+          "year": 2023,
+          "why_it_comps": "The social satire, female obsession, and violent turn into psychological nightmare put it in the same conversation, even though this is a feature rather than a series."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like glossy, nasty, female-led thrillers with social satire and a strong performance centerpiece.",
+        "demographics": "Skews 25-54, female-leaning but with crossover male interest from thriller and prestige-satire audiences; urban and suburban viewers who respond to LA culture, beauty politics, and class resentment.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary indie feature with a moderate location footprint, a few set-piece effects beats, and no tentpole-scale action or VFX."
+      },
+      "lane_fit": {
+        "lane": "A24-adjacent elevated thriller-satire",
+        "types_of_buyers": [
+          "boutique indie distributors",
+          "streamer originals teams building female-led genre",
+          "prestige genre labels",
+          "producer-financed specialty buyers",
+          "director-driven indie financiers"
+        ],
+        "detail": "This sits naturally in the lane where social satire, body anxiety, and thriller mechanics can coexist without needing franchise scale. The script is built for a buyer who wants a sharp hook, a lead-performance showcase, and a marketing angle that can travel on title, premise, and imagery."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed arc; the central mystery resolves into a final-state nightmare rather than a reusable universe."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise weaponizes beauty culture.",
-          "what_it_means": "That gives the movie a built-in commercial lane beyond a standard thriller: it can sell as a sharp, adult satire about the cost of wanting to be seen. Buyers looking for a female-led genre piece with social commentary will see a clean hook and a current conversation around image, wellness, and status.",
-          "evidence": "The Beverly Hills consultation, the Go Barre hierarchy, the filler party, the skincare obsession, and the final Vanessa transformation all turn appearance into plot.",
+          "dimension_or_area": "The lead role is a star-making trap.",
+          "what_it_means": "Ellie is written as a contradiction machine: vain but wounded, funny but self-destructive, aspirational but ashamed. That creates a rare showcase for an actor who can sell both satire and breakdown, which is exactly the kind of role buyers use to launch or reframe a performer.",
+          "evidence": "Her free consultation at the cosmetic surgeon, her obsession with promotion and status, and her eventual unraveling after the Morgan/Zack betrayal all build the same character engine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ellie is a showcase lead.",
-          "what_it_means": "The role gives an actress comedy, vanity, hunger, romantic longing, and full-throttle terror in one package, which is exactly the kind of part that can elevate a project. Mid-career actresses who want a star-making genre turn, plus managers looking for a role with range and attitude, will respond to it.",
-          "evidence": "Ellie moves from deadpan barre instructor to jealous friend to erotic lead to terrified survivor to final avenger.",
+          "dimension_or_area": "The premise weaponizes LA status culture.",
+          "what_it_means": "The script turns wellness, influencer behavior, and rich-guy access into a thriller engine, which gives it a clean marketing identity and a built-in audience for social satire. That makes it attractive to buyers looking for a contemporary hook that feels both topical and nasty.",
+          "evidence": "Go Barre, filler parties, Palisades mansions, escort-service logistics, and the Times profile all live in the same ecosystem.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Zack is a memorably twisted antagonist.",
-          "what_it_means": "He’s not just rich and creepy; he’s a self-mythologizing tech billionaire with facial-recognition obsession, body-image pathology, and a romantic delusion that keeps mutating. That gives the project a villain role actors can sink into and a buyer-friendly hook that feels both topical and deranged.",
-          "evidence": "His Maroon 5 fixation, the facial-mapping obsession, the Brett/Eugene reveal, and the Vanessa identity scheme all sharpen him into a singular threat.",
+          "dimension_or_area": "The tonal blend is unusually ownable.",
+          "what_it_means": "It moves from comedy to erotic tension to body horror to outright thriller without losing the script’s satirical point of view. That kind of tonal confidence is valuable because it makes the movie feel like a branded object rather than a generic genre exercise.",
+          "evidence": "The Maroon 5 obsession, the acid attack, the cosmetic reveal, and the island captivity finale all belong to the same twisted register.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The LA world feels monetizable.",
-          "what_it_means": "The script knows the social codes of wellness, influencer culture, and wealth signaling, which makes the setting feel like a machine rather than wallpaper. That kind of specificity helps a producer market the movie as a sharp insider piece with exportable class satire.",
-          "evidence": "Go Barre, Hot Girl Parties, yacht parties, Pacific Palisades mansions, and the Phoenix gymnastics detour all feel like lived-in status ecosystems.",
+          "dimension_or_area": "The mystery reveal has real escalation value.",
+          "what_it_means": "The Brett/Eugene/Zack identity chain gives the film a late-game reveal that recontextualizes earlier scenes and deepens the menace instead of just adding a twist. That’s the kind of structural turn that can create strong word-of-mouth if the audience feels the movie has been playing fair.",
+          "evidence": "The Phoenix gym visit, the yearbook photo, the acid-burned Brett reveal, and the final Vanessa transformation all snap together into one reveal path.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The thriller escalation keeps changing shape.",
-          "what_it_means": "Each act introduces a new flavor of danger — social humiliation, stalking, arson, identity theft, and captivity — so the movie keeps renewing its own momentum. That makes it easier to sell to audiences who want a genre ride that keeps surprising them without losing the central obsession.",
-          "evidence": "The masked man, Jess’s acid attack, the fire, Brett’s reveal, and the final island imprisonment all escalate the same core story in different directions.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Harper gives the movie a second engine.",
-          "what_it_means": "She isn’t just comic relief; she’s a parallel cautionary tale about women trying to monetize desirability in the same ecosystem, which gives the film a richer emotional and social texture. That makes the project more attractive to ensemble-minded buyers and actresses who want a scene-stealing supporting role.",
-          "evidence": "Her breakup with Damien, the filler-party persona, the revenge-lip turn, and her blowup at the yacht all give her independent heat.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending lands on a disturbing irony.",
-          "what_it_means": "The final Vanessa identity twist turns the movie into a dark statement about aspiration, self-erasure, and the violence of being remade for male approval. That kind of ending gives the film aftertaste and conversation value, which is gold for festival audiences and platform discovery.",
-          "evidence": "Ellie wakes up with Vanessa’s face, then ends in a gilded prison while the voiceover reframes her surrender as fulfillment.",
-          "source": "script"
+          "dimension_or_area": "The world is rich enough to market visually.",
+          "what_it_means": "This script has a lot of imageable assets: cosmetic surgery, barre class bodies, yacht excess, fire aftermath, and a final island prison. That helps both trailer construction and poster design, which matters for a buyer trying to sell a distinctive adult genre title.",
+          "evidence": "The consultation sequence, the yacht party, the fire, and the overwater villa finale all deliver strong visual set pieces.",
+          "source": "both"
         }
       ],
-      "headline": "This is a glossy, vicious LA thriller with a very current target: the beauty economy, the status economy, and the men who profit from both. It gives a lead actress a juicy, shape-shifting role, a villain with real pop-culture menace, and a world that feels built for conversation, not just consumption."
+      "headline": "This is a sharp, high-concept female-led thriller-satire with a performance role that can make an actor and a visual world that can sell the movie in one image. It also sits in a very buyable lane: contemporary, prestige-leaning, and contained enough to be financeable without needing tentpole economics."
     },
-    "lead_characters": [
-      {
-        "name": "Ellie Noone",
-        "role_type": "Lead",
-        "demographics": "Female · 25 · former gymnast / barre instructor",
-        "hook": "Ellie is a hustler with a chip on her shoulder and a real wound underneath it: she wants to be exceptional so badly that she’s willing to turn her body, her image, and her relationships into currency. She’s funny, sharp, self-mythologizing, and deeply vulnerable to anyone who flatters her ambition, which makes her both magnetic and tragically readable.",
-        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Monster or Jennifer Lawrence in Mother! — a lead who can weaponize charm, vanity, and panic in the same frame. It gives an actress a full-spectrum performance: satire, seduction, humiliation, terror, and a final identity collapse that would be a calling card."
-      },
-      {
-        "name": "Zack Shaw / Brett Henderson / Eugene Beake",
-        "role_type": "Lead",
-        "demographics": "Male · 40s · wealthy tech developer / physically transformed",
-        "hook": "Zack presents as polished, self-made, and sexually confident, but the script keeps peeling back layers until he reads as a man built entirely out of grievance, obsession, and reinvention. He is equal parts romantic fantasy, manipulative caretaker, and body-horror narcissist, which makes him a villain with real performance juice.",
-        "why_actor_wants_this": "This is the kind of role Michael Shannon or Barry Keoghan gets to turn into a full psychological event — a man whose intelligence and fragility are both on display. Actors who want a prestige antagonist with seduction, menace, and a late-story identity reveal will chase it hard."
-      },
-      {
-        "name": "Harper Hines",
-        "role_type": "Lead",
-        "demographics": "Female · mid-20s · influencer / party planner",
-        "hook": "Harper is the friend who says the thing everyone else is thinking, but she’s also carrying her own bruised ambition and humiliation. She’s loud, funny, image-conscious, and emotionally volatile in a way that makes her feel like a real person inside a very performative world.",
-        "why_actor_wants_this": "This is the showcase space of a scene-stealing supporting turn like Jennifer Coolidge in The White Lotus — comic bravado that keeps cracking open into pain. It gives an actress big laughs, sharp exits, and one of the movie’s most emotionally legible friendship arcs."
-      },
-      {
-        "name": "Morgan",
-        "role_type": "Lead",
-        "demographics": "Male · late 20s · aspiring actor / filmmaker",
-        "hook": "Morgan is the soft, self-dramatizing boyfriend who wants to be taken seriously but can’t quite stay sober, focused, or honest long enough to earn it. He’s funny in a deadpan, defeated way, and the script uses him as both comic pressure valve and emotional mirror for Ellie’s own self-deception.",
-        "why_actor_wants_this": "This is the kind of role Jesse Eisenberg or Paul Dano has used to make insecurity feel cinematic — a character whose fragility is the point. It gives an actor the chance to play wounded vanity, passive resentment, and a late-breaking moral pivot."
-      },
-      {
-        "name": "Detective Heller",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · detective",
-        "hook": "Heller is the grounded adult in a world of self-invention, and she carries the authority of someone who has seen status games up close. She’s skeptical, dry, and quietly personal about the gendered politics of being overlooked.",
-        "why_actor_wants_this": "This is the kind of compact, scene-stealing role that gives an actress the grounded authority of Regina King in a procedural-leaning prestige drama. It offers sharp interrogation scenes, moral clarity, and a satisfying counterweight to the movie’s vanity machine."
-      },
-      {
-        "name": "Carrie Elaine Lauren",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · franchise owner / wellness entrepreneur",
-        "hook": "Carrie Elaine is the polished face of the Go Barre machine: warm enough to sell empowerment, ruthless enough to protect the brand, and fully fluent in the language of hustle. She’s a great LA operator character, equal parts mentor and gatekeeper.",
-        "why_actor_wants_this": "This is the kind of role Laura Dern or Patricia Clarkson can make delicious — a polished authority figure who can pivot from supportive to transactional in a beat. It gives an actress a compact power role with real social satire value."
-      },
-      {
-        "name": "Jess Weisberg",
-        "role_type": "Supporting",
-        "demographics": "Female · 19 · privileged barre student",
-        "hook": "Jess is the younger, thinner, richer version of the same status anxiety Ellie is trying to outrun, which makes her feel like a living insult. She’s smug, brittle, and socially protected, and the script uses her as a pressure point for Ellie’s resentment.",
-        "why_actor_wants_this": "This is the kind of sharp, toxic supporting part that lets a young actress play entitlement with a hint of danger, like a Mean Girls-era Rachel McAdams slot. It’s a compact role with instant readability and a memorable turn in the story’s social hierarchy."
-      },
-      {
-        "name": "Harper's boyfriend Damien Sharp",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s · wealthy married businessman",
-        "hook": "Damien is the classic polished older man who treats desire like a lifestyle accessory and accountability like a nuisance. He’s not a full character study, but he’s a clean emblem of the world’s transactional morality.",
-        "why_actor_wants_this": "This is the kind of role that gives a recognizable character actor a few sharp scenes of entitlement and evasiveness, in the vein of a prestige-drama rich cad. It’s a useful part for someone who can make privilege feel specific in very little screen time."
-      },
-      {
-        "name": "Mackenzie Lewis",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · gymnastics coach",
-        "hook": "Mackenzie is the grounded coach who has chosen a quieter version of ambition, and she functions as a mirror to Ellie’s more corrosive drive. She’s practical, skeptical, and unexpectedly warm, which makes her Phoenix scenes feel like a different moral universe.",
-        "why_actor_wants_this": "This is the kind of role that gives an actress the understated authority of a grounded indie drama coach or mentor figure. It offers a clean, humane counterpoint to the movie’s more heightened LA personalities."
-      },
-      {
-        "name": "Brett Henderson / Masked Man",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · acid-burned man with voice box",
-        "hook": "Brett is a damaged survivor who has turned himself into a vigilante witness, and the script gives him a haunting physical presence. He’s tragic, eerie, and driven by a single purpose, which makes him feel like the ghost at the center of the mystery.",
-        "why_actor_wants_this": "This is the kind of role that recalls the physical and emotional specificity of a performance like Doug Jones in a creature drama, but with more human grief underneath. It gives an actor a memorable transformation role with a strong visual and emotional imprint."
-      },
-      {
-        "name": "Dr. Krivitsky",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-60s · cosmetic surgeon",
-        "hook": "Dr. Krivitsky is the smiling artisan of reinvention, the man who can talk about asymmetry and aging while selling fantasy. He’s a perfect emblem of the movie’s central idea that beauty is both service and violence.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor play charming menace in the tradition of a prestige-drama fixer or doctor with a dark edge. It’s a compact but memorable part for someone who can make polished cruelty feel seductive."
-      },
-      {
-        "name": "Jia Tolentino",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · writer / interviewer",
-        "hook": "Jia functions as the media-world observer, the person who can translate Ellie’s image into a public narrative. She’s cool, precise, and there to remind us that the story is already becoming content.",
-        "why_actor_wants_this": "This is a brief but useful role for an actress who can bring intelligence and cultural authority in the mold of a prestige magazine-profile scene. It gives the film a sharp media frame without overexplaining itself."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a glossy social thriller with bite, sex, and a slow slide into nightmare.",
-        "fit_profile": "Established indie directors with at least one or two features, or elevated-genre filmmakers moving up from festival horror/thriller work. This material rewards precision with tone, a strong eye for luxury spaces, and comfort staging scenes that start as satire and end as dread.",
-        "detail": "The movie gives a director a chance to choreograph status, desire, and paranoia in the same frame, with set pieces that escalate from social comedy to body-horror-adjacent thriller. It’s especially attractive to filmmakers who like performance-forward material and know how to make a polished world feel predatory."
-      },
-      "buyer_appeal": {
-        "tier": "$8-15M feature",
-        "lane": "Premium streaming / festival-to-platform genre lane",
-        "detail": "It can be packaged around one strong female lead and one magnetic male antagonist, with the rest of the cast supporting a contained but stylish world. The beauty-satire-plus-thriller lane has clear streamer appetite, and the LA influencer/wellness setting gives it immediate thumbnail appeal and conversation value."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The final island trap is a hard tonal ask.",
+          "detail": "The movie makes a big late pivot from social satire into captivity-horror melodrama, and that shift will be the first thing buyers stress-test. It’s a bold move, but it narrows the audience to viewers who are willing to follow a very specific satirical nightmare all the way through.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The celebrity-name density creates clearance work.",
+          "detail": "The script names a long list of real people — from Bezos, Musk, and DiCaprio to Kate Hudson, Ryan Murphy, and Emma Roberts — and it also uses Maroon 5 and Sheryl Crow as plot-meaningful music. That is not fatal, but it is real legal and budget work before a buyer can move.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The movie depends on a very specific Ellie cast.",
+          "detail": "Ellie has to play vanity, comic timing, sexual confidence, class resentment, grief, and escalating paranoia without losing sympathy. That is a narrow lane, and the role will be judged heavily on whether the actor can keep the satire human.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The Phoenix reveal asks for audience patience.",
+          "detail": "The Brett/Henderson/Vanessa backstory is clever, but it arrives after a long stretch of social-world material and requires the audience to accept a fairly elaborate identity chain. Buyers will see that as a strength and a risk in equal measure.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The script is not a cheap contained play.",
+          "detail": "Between Beverly Hills, Silverlake, the Palisades, Phoenix, yachts, and the island finale, this is a contemporary feature with real location spread and multiple set-piece environments. It’s still indie-scaled, but not micro-friendly.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s biggest commercial risk is that it asks the audience to ride a very specific tonal escalator: glossy LA satire, then psychological thriller, then full nightmare captivity. Add the real-person references and the need for a very precise lead cast, and this becomes a buyer’s movie rather than an easy open-and-shut greenlight."
     },
-    "considerations": [
-      {
-        "area": "The middle section carries a lot of social-world setup.",
-        "detail": "The Go Barre, yacht, and elite-party material does a lot of work establishing the movie’s ecosystem, and the next pass could keep that texture while trimming any repeated beats of Ellie reacting to the same status insult. One lever would be to let the stalker mystery or Zack’s oddness intrude a little earlier so the social satire and thriller engine start feeding each other sooner.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The Phoenix detour is the story’s cleanest reveal lane.",
-        "detail": "The Mackenzie/Brett material is doing important mystery work, and it already pays off the acid-attack thread in a satisfying way. A next pass could consider whether one or two explanatory beats around Vanessa and Brett can be folded into a single cleaner exchange so the reveal lands with even more force.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The location footprint is ambitious for the lane.",
-        "detail": "The script moves through Beverly Hills, Silverlake, the Palisades, Phoenix, a yacht, a mansion, a strip mall, and an island finale, which makes the movie feel expansive but also production-heavy. A simplification lever would be to collapse a couple of the luxury social spaces into one signature location without losing the class contrast that powers the story.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The real-person and brand density is high.",
-        "detail": "The script leans hard on named celebrities, fashion labels, wellness brands, and music cues to build its world, which helps the satire but will require clearance attention. A practical next step would be to identify which references are essential to the joke and which can be swapped for fictional equivalents if needed.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Ellie’s final turn is intentionally extreme.",
-        "detail": "The ending’s identity collapse is the movie’s boldest statement, and it will be the thing people talk about. If the goal is maximum audience shock, the current version delivers that; if the goal is a slightly more ambiguous aftertaste, a future pass could explore how much of Ellie’s final voiceover should feel seduced versus trapped.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 77.3,
+  "weightedScore": 75.7,
   "tier": "Optionable",
-  "inputTokens": 41993,
-  "outputTokens": 5426,
-  "cost": 0.05591175,
+  "inputTokens": 44398,
+  "outputTokens": 5047,
+  "cost": 0.056010000000000004,
   "declaredFormat": "Feature film"
 }

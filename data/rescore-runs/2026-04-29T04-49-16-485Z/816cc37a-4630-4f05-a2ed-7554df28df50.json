@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T04:58:20.427Z",
+  "submission_id": "816cc37a-4630-4f05-a2ed-7554df28df50",
+  "eval_id": "b0ad4403-8adb-4955-8439-36b8231afa09",
+  "title": "SINON",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Francis Booker",
+      "role_type": "Lead",
+      "demographics": "Male, early 20s to early 30s, office worker, anomalous superpowered human"
+    },
+    {
+      "name": "Doreen",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-50s, authority figure, office commander"
+    },
+    {
+      "name": "Ploy",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Thai-speaking, field operative"
+    },
+    {
+      "name": "Hal",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, physically imposing, team bruiser"
+    },
+    {
+      "name": "Clara",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-40s, Italian-American-coded, volatile operative"
+    },
+    {
+      "name": "Toast",
+      "role_type": "Supporting",
+      "demographics": "Nonhuman/robotic, masculine-coded voice and presence"
+    },
+    {
+      "name": "Jerry",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, cyborg wolf-man"
+    }
+  ],
+  "positioning_hook": "A timid office clerk with erased memories is forced into a monster-hunting squad, only to discover his uselessness may be the most dangerous power in the room.",
+  "cost_usd": 0.03395175,
+  "input_tokens": 18797,
+  "output_tokens": 4412,
+  "status": "wrote:leads_ok"
+}

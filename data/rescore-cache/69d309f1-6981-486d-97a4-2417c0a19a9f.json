@@ -2,322 +2,410 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural horror",
-      "genre_tags": [
-        "crime thriller",
-        "folkloric mystery"
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Mystery",
+        "Thriller"
       ],
-      "tone": "Grounded procedural with escalating surreal horror, dry humor, and vivid cultural specificity"
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "prestige",
+        "character-driven",
+        "slow-burn",
+        "multilingual",
+        "family-dynamics",
+        "grief",
+        "thai-american",
+        "krasue",
+        "atlanta"
+      ]
     },
-    "positioning_hook": "A Duluth nail-salon worker dies in a baffling, bloodless case that pulls two Georgia agents into Thai folklore, black magic, and a hidden predator stalking pregnant women.",
+    "positioning_hook": "When a pregnant salon worker dies under impossible circumstances, a GBI agent and his partner uncover a Thai-American family, a cursed video shop, and a Krasue haunting hiding in plain sight.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The hook is easy to sell: a police investigation collides with a creature myth, a salon world, and a pregnancy-centered mystery. It feels built for genre buyers and horror audiences who like their scares attached to a procedural spine."
+        "reasoning": "The hook is immediate and genre-friendly: a dead pregnant woman, an impossible body, and a folkloric monster give the script a clean horror-mystery engine. The audience is narrower than a broad studio thriller because the Thai cultural specificity and procedural structure are the selling point, but that specificity is also the moat."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The premise lands quickly through Jan’s death, the impossible blood loss, and the agents’ discovery that the case points toward a Krasue. The story engine is legible and the escalation from medical mystery to folklore horror is clean."
+        "reasoning": "The premise lands fast through Jan’s death, the missing blood, and the later reveal of the Krasue mythology. The script is very easy to explain in two sentences, and the investigation framework gives the hook a clear forward motion."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 6,
-        "reasoning": "Kim and Gaines have an appealing odd-couple rhythm, and Jan/Tira give the material emotional and tragic weight. The ensemble is functional, though the script is still most magnetic when it is riding the central investigation rather than deep character turns."
+        "score": 7,
+        "reasoning": "Kim and Gaines have a workable odd-couple rhythm, and Jan/Tira/Paul/Kay all feel culturally and behaviorally specific rather than generic. The lead engine is solid, though the script is more compelling as a world and case than as a single unforgettable character showcase."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The Thai-American salon setting, the Krasue mythology, and the procedural framing create a fresh lane that feels specific rather than borrowed. The shadow-play sequence and the folkloric imagery show real confidence in how to stage horror."
+        "reasoning": "The blend of suburban Georgia procedural, Thai-American family drama, and folkloric body horror is unusually confident. The shadow-play Krasue sequence, the salon world, and the video-store detour give the script a distinct authorial stamp."
       },
       "narrative_momentum_engagement": {
-        "score": 8,
-        "reasoning": "The script keeps handing the audience new questions: the cleaver, the missing blood, the DVD trail, the apartment discovery, and then the full creature reveal. Each turn adds pressure and the final identification tease keeps the engine moving."
+        "score": 7,
+        "reasoning": "The investigation keeps generating new evidence — the cleaver, the drawing, the DVD, Tira’s apartment, the old white guy — so the script rarely stalls. The middle is more investigative than escalating, but the reveals are spaced well enough to keep the reader moving."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "This is one of those premises that feels surprising and inevitable at the same time: a Georgia crime case that opens into Southeast Asian demon lore through a nail salon and a video store. The specificity gives the horror a memorable logic."
+        "reasoning": "This feels fresh in a way that is also legible: a police case that can only be solved by understanding a specific immigrant subculture and its horror iconography. The Krasue reveal is not just decorative; it reframes the entire death in a way that feels both surprising and inevitable."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The salon, the family home, the apartment complex, the video store, and the forensic spaces all feel lived-in and socially distinct. The Thai language, food, music, labor, and superstition details make the world story-generating rather than decorative."
+        "reasoning": "The salon, the family home, the video store, the apartment complex, and the GBI office all carry social texture and operational detail. The Thai-language household rules, salon labor dynamics, and horror-media ecosystem make the world feel story-generating rather than merely decorative."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a clear tonal identity: deadpan cop banter, domestic warmth, cultural specificity, then full-body grotesque horror. The shift from loafers jokes to shadow-play possession is distinctive and controlled."
+        "reasoning": "The script has a very specific tonal identity: procedural deadpan colliding with folkloric dread and occasional family-comedy warmth. The switch into stylized grindhouse horror is bold but still feels like part of the same piece."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the creature case is a story about immigrant family, language, grief, shame, and the pressure of keeping appearances. The material suggests more emotional depth than the procedural surface initially advertises."
+        "reasoning": "There are deeper layers around grief, assimilation, fertility, and belief versus skepticism, and the old-white-guy thread hints at a wider mythology. The script shows enough surface to suggest more beneath it, though the current draft is still primarily driven by the case mechanics."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "The family and workplace relationships are useful and give the script texture, especially Paul/Kay/Jan and Kim/Gaines. Still, the story is primarily driven by the central investigation, with the supporting web serving that engine more than generating independent storylines."
+        "score": 7,
+        "reasoning": "Kim/Gaines, Paul/Jan, Kay/Pranee, and the salon crew all generate usable recurring dynamics. It’s not a sprawling ensemble machine, but there are enough relationship nodes that the world can keep producing scenes."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 14,
-        "leads": 4,
-        "series_regulars": 0,
-        "child_actors": true,
-        "casting_characteristics": [
-          "Thai-speaking and bilingual roles are central",
-          "One child role (Nate)",
-          "Specific cultural authenticity in the Thai-American family and salon community",
-          "One major creature/monster performance requirement"
-        ]
-      },
-      "locations": {
-        "distinct_count": 9,
-        "interior_exterior_ratio": "Mostly interior with several exterior neighborhood and parking-lot scenes",
-        "period_or_contemporary": "Contemporary",
-        "notable_requirements": [
-          "Suburban Georgia nail salon",
-          "Family home with kitchen/great room/bedroom coverage",
-          "Apartment complex and unit interior",
-          "Video store strip-mall location",
-          "Forensic conference room and police vehicle interiors"
-        ]
-      },
-      "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Creature transformation, floating Krasue body, stylized shadow-play integration, bloodless death anomaly, and atmospheric distortion imagery.",
-        "stunts_level": "minor",
-        "sfx_needs": "Practical gore, corpse makeup, blood effects, prosthetic creature elements, and set dressing for occult objects.",
-        "night_shoots": "significant",
-        "animals": false
-      },
-      "rights_flags": [
-        {
-          "type": "named_music",
-          "detail": "Multiple specific songs are named, including 'Siamese Beast' by Rhymekhamhaeng, 'Alone' by Ramintra, and 'Lam Toey Chaweewan' by Chaweewan Dumern."
-        },
-        {
-          "type": "brand",
-          "detail": "Felix the Cat, Gucci, AWS, Kiwi-brand cleaver, Fanta, Old Grand-Dad bourbon, Ring cameras, and other named consumer brands appear on the page."
-        },
-        {
-          "type": "ip_licensing",
-          "detail": "The Thai horror DVD titles and the 'Ghost of Gut Eater' cover art may require clearance if reproduced as seen."
-        }
-      ],
-      "platform_fit": {
-        "recommended_lane": "Streaming feature or premium-cable horror lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-original potential"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The footprint is mostly contained to homes, a salon, an apartment, a video store, and police interiors, but the Krasue creature work and stylized sequences push it above micro-budget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The script depends on culturally specific Thai and Thai-American casting, a child role, and a credible lead duo for the investigation."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The story uses a manageable number of contemporary locations, but the salon/home/apartment/video-store spread still requires multiple company moves."
-        },
-        "content": {
-          "level": "high",
-          "note": "Pregnancy loss, corpse imagery, occult body horror, and a decomposing body sequence place this firmly in mature genre territory."
-        },
-        "rights": {
-          "level": "high",
-          "note": "Named songs, visible brands, and specific DVD artwork/cover imagery create a meaningful clearance list."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The premise fuses procedure with folklore.",
-          "what_it_means": "That combination gives buyers a clean genre engine with a fresh cultural angle, which is exactly the kind of hook that can travel from festival attention to streamer discovery. Genre audiences, prestige-horror fans, and buyers looking for culturally specific IP will all recognize the lane immediately.",
-          "evidence": "Jan’s impossible death leads Gaines and Kim from a forensic conference room to the salon, the video store, and finally the Krasue reveal.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The Thai-American world feels lived-in.",
-          "what_it_means": "The family language rules, salon labor, food prep, music, and neighborhood texture create a world that can’t be swapped out for a generic setting without losing the movie’s identity. That specificity is attractive to buyers who want authenticity on the page and to audiences hungry for stories that open a culture through genre.",
-          "evidence": "The Thai-at-home rule, the salon break room, the bootleg horror DVDs, and the family’s bilingual rhythms all recur as story texture.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Kim and Gaines give the movie a playable engine.",
-          "what_it_means": "Their banter and differing instincts create a reliable audience entry point, which helps the film stay accessible even as the mythology gets stranger. Actors and directors alike get a chance to build a partnership that can carry exposition without feeling like exposition.",
-          "evidence": "Their loafers exchange, the DVD argument, and the back-and-forth over whether the monster is nonsense or evidence keep the investigation buoyant.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The horror imagery is highly cinematic.",
-          "what_it_means": "The shadow-play Krasue sequence, the floating organs, and the dawn flight through the neighborhood are the kind of set pieces that sell a trailer and justify a premium genre slot. Horror buyers and directors with a visual signature will see immediate upside in the material’s image-making.",
-          "evidence": "The shoji-screen shadow play, the head-and-entrails reveal, and the sunrise ash sequence are all staged with strong visual design.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The case has emotional stakes beyond the mystery.",
-          "what_it_means": "Jan’s pregnancy, Tira’s grief, and the family’s insistence on moving on give the horror a human cost that broadens the appeal beyond creature fans. That emotional layer is what lets the film play as more than a monster story and gives actors something to anchor to.",
-          "evidence": "Jan’s hidden pregnancy, Tira’s miscarriage history, and the family’s conversations about heartbreak and forgiveness sit directly inside the investigation.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The supporting world is full of usable color.",
-          "what_it_means": "The salon staff, the video-store clerks, the forensic team, and the apartment neighbors all create a web of memorable side characters that can enrich marketing materials and make the world feel populated. That kind of texture is especially useful to producers who want a movie that feels bigger than its footprint.",
-          "evidence": "Vic and Jaz at Other Worlds Video, the nail techs in the break room, and the forensic team’s conference-room banter all add distinct voices.",
-          "source": "script"
-        }
-      ],
-      "headline": "This is a smart, exportable horror feature with a real identity: a Georgia crime investigation that opens into Thai folklore, immigrant family dynamics, and a monster reveal built for trailers. The script’s biggest asset is that it never asks you to choose between grounded procedural and full-throttle supernatural horror — it makes both feel like the same movie."
     },
     "lead_characters": [
       {
         "name": "Sue Kim",
         "role_type": "Lead",
-        "demographics": "Female · 30s-40s · GBI agent",
-        "hook": "Kim is the straight-faced investigator who keeps finding the logic inside the impossible. She’s dry, observant, and professionally contained, but the script lets her register curiosity, skepticism, and a flicker of belief without ever turning her into a genre cliché.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in 'True Detective' season 4 or Emily Blunt in 'Sicario' — a controlled, intelligent lead whose authority is tested by a case that keeps expanding beyond the rules. Actors who want a role built on precision, deadpan authority, and the slow reveal of belief will chase this."
+        "demographics": "Female, 30s-40s, GBI senior special agent, Korean-American or Asian-American identity implied by dialogue and casting context",
+        "hook": "A stone-faced, highly observant GBI agent who treats folklore like evidence and evidence like a language. She’s the script’s clearest audience surrogate: skeptical, dry, and increasingly convinced that the case is pointing somewhere her training doesn’t cover.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Carrie Coon in The Leftovers — controlled intelligence, deadpan authority, and the slow reveal of a character whose certainty keeps getting tested. It gives an actor the pleasure of playing procedural competence while landing the quiet shock of belief."
       },
       {
         "name": "Omar Gaines",
-        "role_type": "Lead",
-        "demographics": "Male · 30s-40s · GBI agent",
-        "hook": "Gaines is the more openly skeptical half of the duo, but he’s not just comic relief; he’s the guy whose disbelief keeps getting outpaced by the evidence. He has a grounded, slightly exasperated energy that makes the supernatural turns feel even stranger because he’s reacting like a real person would.",
-        "why_actor_wants_this": "This is the showcase lane of Walton Goggins in 'Justified' or Michael Peña in 'End of Watch' — a role that lets an actor play wit, irritation, competence, and dawning dread in the same frame. Character actors who can make procedural dialogue feel alive will want it."
-      },
-      {
-        "name": "Jansuda “Jan” Srisuk",
-        "role_type": "Lead",
-        "demographics": "Female · early 20s · Thai-American",
-        "hook": "Jan is the emotional center of the story even when she’s not driving the investigation: young, pregnant, exhausted, and trying to hold her life together inside a family that runs on expectation and silence. She reads as affectionate and vulnerable, with a private sadness that makes her fate land hard.",
-        "why_actor_wants_this": "This is the kind of tragic showcase that gave Brie Larson in 'Short Term 12' or Florence Pugh in 'Midsommar' a chance to carry innocence, fear, and emotional collapse in one performance. Young dramatic leads looking for a role that can break an audience’s heart will chase it."
-      },
-      {
-        "name": "Chanthira “Tira” Boonmee",
-        "role_type": "Lead",
-        "demographics": "Female · mid-30s · Thai",
-        "hook": "Tira is the story’s most haunting presence: withdrawn, grief-struck, and then suddenly charged with a frightening intensity that suggests something ancient moving through her. She’s written as both a wounded woman and a vessel for horror, which gives the role a volatile, unforgettable shape.",
-        "why_actor_wants_this": "This is the showcase space of Toni Collette in 'Hereditary' — a role where emotional collapse and physical transformation become the same performance. Actors who want prestige-horror territory with a real metamorphosis will be drawn to it."
-      },
-      {
-        "name": "Pattapol “Paul” Srisuk",
         "role_type": "Supporting",
-        "demographics": "Male · 40s · Thai-American",
-        "hook": "Paul is the family’s social lubricant: stylish, affectionate, a little vain, and always trying to keep the room light even when the room is about to turn dark. He gives the movie warmth and comic rhythm while also functioning as a bridge between the family, the salon, and the investigation.",
-        "why_actor_wants_this": "This is the kind of supporting showcase that gave Randall Park in 'Fresh Off the Boat' or Ken Jeong in 'The Hangover' a chance to be funny, specific, and scene-stealing without carrying the whole film. Actors with strong comic timing and warmth will see an easy win here."
+        "demographics": "Male, 30s-40s, GBI senior special agent",
+        "hook": "Kim’s partner is the more openly skeptical, more visibly reactive half of the investigative duo, with a comic physicality that keeps him human inside the procedural machinery. He’s the guy who can roll his eyes at a floating-head vampire and still become the audience’s entry point into the weirdness.",
+        "why_actor_wants_this": "This is the kind of partner role that gave Walton Goggins in Justified or Jesse Plemons in Fargo room to be funny, grounded, and slowly unnerved. It’s a strong character-actor part with real scene-stealing opportunities in the banter and the disbelief."
       },
       {
-        "name": "Kanokwan “Kay” Phongphat",
+        "name": "Jansuda Phongphat",
         "role_type": "Supporting",
-        "demographics": "Female · 60s · Thai matriarch",
-        "hook": "Kay is the family’s moral center and disciplinarian, a woman whose sternness is inseparable from care. She’s practical, emotionally direct, and rooted in tradition, which makes her both comforting and formidable in the same scene.",
-        "why_actor_wants_this": "This is the kind of matriarch role that gave Margo Martindale in 'The Americans' or Hong Chau in 'The Whale' such authority — a character whose stillness and judgment shape every room she enters. Veteran actresses who can play command, tenderness, and cultural specificity will want it."
+        "demographics": "Female, late teens to early 20s, Thai-American, salon worker, pregnant",
+        "hook": "Jan is the emotional center of the tragedy: young, exhausted, private, and visibly carrying more than she says. Her silence, hesitation, and final isolation make her death feel personal before it becomes supernatural.",
+        "why_actor_wants_this": "This is the kind of role that gave Riley Keough in The Girlfriend Experience or Jena Malone in Don’t Let Go a chance to play interiority under pressure. Even with limited page time, it offers a strong emotional before-and-after and a haunting physical transformation."
+      },
+      {
+        "name": "Pattapol Srisuk",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, Thai-American, salon worker, family driver and connector",
+        "hook": "Paul is the social lubricant of the family and salon, a stylish, affectionate, slightly performative uncle/cousin figure who can move between Thai and English with ease. He’s funny, affectionate, and more important than he first appears, because he knows everyone and everything in the ecosystem.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Bobby Cannavale did in Boardwalk Empire or Randall Park does in ensemble comedy-drama: charm, authority, and a little mystery. It’s a scene-rich supporting part with enough personality to become memorable fast."
+      },
+      {
+        "name": "Kanokwan Phongphat",
+        "role_type": "Supporting",
+        "demographics": "Female, 60s, Thai-American, salon owner / family matriarch",
+        "hook": "Kay is the household’s moral center and disciplinary force, stern about language, work, and emotional discipline. She reads as practical and unsentimental, but the script lets her warmth show through in the way she manages the family and the salon.",
+        "why_actor_wants_this": "This is the kind of matriarch role that gave Margo Martindale in The Americans or Hong Chau in The Whale real authority and emotional weight. It offers an actor command, restraint, and the chance to play a woman whose toughness is also her love language."
       },
       {
         "name": "Pranee Srisuk",
         "role_type": "Supporting",
-        "demographics": "Female · late 20s · Thai-American",
-        "hook": "Pranee is the younger family voice: observant, slightly sardonic, and emotionally open enough to register what everyone else is trying not to say. She’s the one who can carry the domestic texture and the uneasy intuition that something is off.",
-        "why_actor_wants_this": "This is the kind of grounded supporting role that gave Auliʻi Cravalho in 'The Power' or Stephanie Hsu in 'Everything Everywhere All at Once' room to be funny, vulnerable, and alert all at once. Younger actresses who can play intelligence without losing warmth will be interested."
+        "demographics": "Female, late 20s, Thai-American, mother, salon worker",
+        "hook": "Pranee is the more openly emotional family member, balancing domestic labor, motherhood, and the social pressure of the household. She’s observant and reactive, with enough skepticism and tenderness to keep scenes alive around her.",
+        "why_actor_wants_this": "This is the kind of grounded family role that gave Melanie Lynskey in Yellowjackets or Aunjanue Ellis-Taylor in King Richard room to be both practical and emotionally porous. It’s a strong supporting part with maternal specificity and real reaction work."
+      },
+      {
+        "name": "Chanthira Boonmee",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s, Thai or Thai-American, salon worker",
+        "hook": "Tira is the script’s most volatile supporting presence: withdrawn, grief-struck, and then suddenly alarming in a way that suggests she’s already halfway into another reality. She’s written as a mystery before she becomes a corpse, which gives the role eerie momentum.",
+        "why_actor_wants_this": "This is the kind of role that gave Rebecca Hall in Resurrection or Mia Goth in Pearl a chance to pivot from wounded realism into full-body horror. It’s a transformation part with a strong emotional and physical payoff."
       },
       {
         "name": "Chai Srisuk",
         "role_type": "Supporting",
-        "demographics": "Male · 30s · Thai-American",
-        "hook": "Chai is the absent husband whose distance matters even when he’s off-screen for much of the story. He’s practical, modern, and emotionally out of sync with the family’s domestic center, which gives the role a quiet tension.",
-        "why_actor_wants_this": "This is the kind of restrained supporting part that gives an actor the grounded husband energy of Steven Yeun in 'Minari' or Randall Park in 'Always Be My Maybe' — present, specific, and emotionally legible without overplaying. Actors who can make a few scenes feel lived-in will want it."
-      },
-      {
-        "name": "Dr. Bill Holloway",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s · forensic pathologist",
-        "hook": "Holloway is the seasoned medical voice in the room, the guy who can’t make the evidence behave no matter how hard he tries. He gives the procedural side a skeptical, professional anchor and a little dry humor.",
-        "why_actor_wants_this": "This is the kind of authority role that gave Richard Jenkins in 'The Visitor' or John Carroll Lynch in 'Zodiac' a chance to be quietly magnetic in a procedural frame. Character actors who can make expertise feel human will be drawn to it."
-      },
-      {
-        "name": "Dr. Alyssa Vasquez",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · forensic consultant",
-        "hook": "Vasquez is crisp, smart, and unflappable, the person who can walk the team through the impossible without losing her cool. She’s a clean, modern professional presence that helps the investigation feel credible.",
-        "why_actor_wants_this": "This is the kind of concise, high-functioning procedural role that gave Sarah Shahi in 'Person of Interest' or Jurnee Smollett in 'Lovecraft Country' a chance to project intelligence and command quickly. Actors who like sharp, efficient authority parts will respond to it."
+        "demographics": "Male, 30s, Thai-American, tech professional, husband",
+        "hook": "Chai is the absent husband whose normality becomes suspicious by proximity to the case. He’s polished, corporate, and emotionally constrained, which makes him useful as a pressure point in the family dynamic.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play polished surface with a crack underneath, similar to what John Cho brought to Columbus or what Steven Yeun can do in a contained dramatic scene. It’s a clean, credible supporting part with latent tension."
       },
       {
         "name": "Emily Ortiz",
         "role_type": "Supporting",
-        "demographics": "Female · 20s-30s · forensic technician",
-        "hook": "Ortiz is the younger forensic presence with a sharper edge and a little more emotional leakage than the senior experts. She reacts like someone who is still learning how much the job can ask of her.",
-        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the grounded ensemble energy of Jessica Rothe in 'Happy Death Day' or Auliʻi Cravalho in a procedural-adjacent ensemble — alert, reactive, and able to register the audience’s disbelief. It’s a useful part for someone who can make small beats pop."
+        "demographics": "Female, 20s-30s, GBI forensic technician",
+        "hook": "Ortiz is the sharper, more openly skeptical forensic presence in the room, and the script gives her just enough personality to register as more than process. She’s the one who can puncture the room with a line and still feel like she belongs in the machinery.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dry authority of a procedural regular, like what Sarah Steele or Aya Cash can do in ensemble work. It’s a compact but useful part with attitude and competence."
       },
       {
         "name": "Ryan Patel",
         "role_type": "Supporting",
-        "demographics": "Male · 20s-30s · research analyst",
-        "hook": "Patel is the quieter technical brain in the room, a detail-oriented presence who helps the investigation move without demanding attention. He adds procedural realism and gives the team a broader institutional feel.",
-        "why_actor_wants_this": "This is the kind of precise supporting role that gives an actor the understated utility of Kumail Nanjiani in 'Silicon Valley' or Harvey Guillén in 'What We Do in the Shadows' before the bigger comic turns. It’s a clean fit for actors who can make exposition feel natural."
+        "demographics": "Male, 20s-30s, GBI research analyst",
+        "hook": "Patel is the quieter support player who helps widen the procedural world and gives the GBI scenes a lived-in office texture. He’s not flashy, but he makes the investigation feel staffed by real people.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the steady utility of a smart ensemble player, like what Kumail Nanjiani or Utkarsh Ambudkar can do in grounded procedural work. It’s a credible, low-friction supporting part."
+      },
+      {
+        "name": "Joe Reese",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, GBI supervisor",
+        "hook": "Reese is the authority figure who has to absorb the weirdness and keep the room moving. He’s a classic procedural boss role: calm, skeptical, and increasingly cornered by the evidence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas of a Michael McKean or Clark Gregg type in a procedural ensemble. It’s a clean authority part with a few good reaction beats."
       },
       {
         "name": "Vic Lacayo",
         "role_type": "Supporting",
-        "demographics": "Male · late 30s · video-store manager",
-        "hook": "Vic is the tired, encyclopedic keeper of the horror shelf, the kind of guy who knows the subgenre better than the cops do. He gives the movie a lived-in genre-culture texture and a little deadpan charm.",
-        "why_actor_wants_this": "This is the kind of scene-stealing supporting part that gave Patton Oswalt in 'Young Adult' or John Michael Higgins in 'Best in Show' a chance to be instantly memorable in a few pages. Character actors who can make niche knowledge funny and specific will want it."
+        "demographics": "Male, late 30s, video store manager",
+        "hook": "Vic is the exhausted gatekeeper to the horror-media underworld, a guy who knows the inventory and the subculture better than anyone else in the room. He gives the script a lived-in, slightly grimy texture that broadens the world beyond the salon and the family home.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the offbeat specificity of a character part in a Coen-adjacent ensemble. It’s small but memorable, with a nice comic-dry edge."
       },
       {
         "name": "Jaz Carter",
         "role_type": "Supporting",
-        "demographics": "Female · early 20s · African American",
-        "hook": "Jaz is the cool, bored, genre-literate clerk whose style and attitude make the video store feel like a real subculture hub. She’s got a sharp, self-possessed presence that cuts through the cops’ confusion.",
-        "why_actor_wants_this": "This is the kind of compact, high-style supporting role that gave Tessa Thompson in 'Dear White People' or Zazie Beetz in 'Atlanta' a chance to own a scene with attitude and specificity. Young actors with strong personality and comic timing will chase it."
+        "demographics": "Female, early 20s, Black, video store clerk",
+        "hook": "Jaz is the coolest person in the room, bored, stylish, and casually encyclopedic about international horror. She’s a quick-hit supporting character who instantly makes the world feel younger and more culturally connected.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do sharp, low-effort cool in the mold of a Natasha Lyonne side character or a Zazie Beetz scene-stealer. It’s brief but highly legible."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make folklore horror feel emotionally grounded and visually authored.",
-        "fit_profile": "Established indie genre directors with at least one or two features, or TV directors moving into features, who already work comfortably with atmosphere, performance, and cultural specificity. This material rewards a filmmaker who likes controlled escalation, practical texture, and a strong visual grammar for the supernatural.",
-        "detail": "The movie gives a director a rare chance to build dread out of domestic spaces, procedural rooms, and one unforgettable creature reveal rather than constant spectacle. It’s especially attractive to filmmakers who can stage a signature set piece and still keep the family drama legible underneath it."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Thai-language and English bilingual performances",
+          "One child role with recurring presence",
+          "Asian and Thai-American family casting specificity",
+          "One lead forensic role with dry, controlled authority"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streamer horror / elevated genre thriller",
-        "detail": "The contained contemporary footprint and mostly dialogue-driven investigation mean it can be packaged around a strong director and two credible leads rather than a giant ensemble. The Krasue mythology, Thai-American setting, and trailer-friendly creature reveal give it export value and a clear genre hook for streamer buyers."
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 70/30 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "suburban Atlanta / Duluth area settings",
+          "salon interior with working stations",
+          "GBI conference room and vehicle interiors",
+          "video store interior with dense shelving",
+          "apartment complex hallway and unit",
+          "stylized horror sequence requiring controlled interior build"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Krasue transformation, floating head/body separation, entangled flight, ash dissolution, stylized shadow-play integration, and subtle video-anomaly effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "prosthetic gore, corpse makeup, blood effects, practical creature work, broken glass, and cleanup effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Rhymekhamhaeng's 'Siamese Beast'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Ramintra's 'Alone'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Udom Silapin na Chiang Mai's 'Phleng Hae Sop - Mon Yok Sop (Music for the Corpse)'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Chaweewan Dumern's 'Lam Toey Chaweewan'"
+        },
+        {
+          "type": "brand",
+          "detail": "Gucci"
+        },
+        {
+          "type": "brand",
+          "detail": "Felix the Cat tote design"
+        },
+        {
+          "type": "brand",
+          "detail": "Kiwi-brand cleaver"
+        },
+        {
+          "type": "brand",
+          "detail": "AWS"
+        },
+        {
+          "type": "brand",
+          "detail": "Venmo"
+        },
+        {
+          "type": "brand",
+          "detail": "Ring cameras"
+        },
+        {
+          "type": "brand",
+          "detail": "Fanta"
+        },
+        {
+          "type": "brand",
+          "detail": "Old Grand-Dad Kentucky Straight Bourbon"
+        },
+        {
+          "type": "brand",
+          "detail": "Himalayan Blackberry"
+        },
+        {
+          "type": "brand",
+          "detail": "GBI and Duluth PD / Gwinnett County PD depictions"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Thai horror film 'Mystics in Bali' and 'Ghost of Gut Eater' are referenced as specific titles within the world"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or prestige cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: theatrical specialty or streaming-first genre launch"
       }
     },
-    "considerations": [
-      {
-        "area": "The opening leans on setup before the hook fully bites.",
-        "detail": "The family breakfast and salon routine do useful world-building, and the version of the opening where Jan’s unease or the first impossible detail arrives a little earlier would give the movie a faster first-turn charge. One lever would be to foreground the case engine sooner while preserving the domestic texture that makes the later horror land.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly interior, but the Krasue sequence, corpse makeup, blood effects, and stylized horror finale will push above a simple contained-drama cost profile."
       },
-      {
-        "area": "The procedural explanation runs long in the conference room.",
-        "detail": "The forensic discussion around blood loss, cleanup, and the missing tissue is doing important work, but a future pass could consider compressing a few of those beats so the investigation keeps its forward pull. The strongest version of the scene is the one where the audience gets the conclusion quickly and the mystery keeps moving.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "The project needs a credible Thai-American ensemble with bilingual performance ability, plus a lead who can play deadpan procedural authority and escalating disbelief."
       },
-      {
-        "area": "The mythology could be introduced with one cleaner bridge.",
-        "detail": "The DVD-store discovery is a fun pivot, and the next pass could explore whether the Krasue idea can be seeded one beat earlier so the folklore reveal feels even more inevitable. That would protect the surprise while making the audience feel the case snapping into place sooner.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The creature work drives the budget tier.",
-        "detail": "The Krasue transformation, floating organs, dawn flight, and shadow-play staging are all worth the spend, but they place the movie in a higher production lane than a bare-bones indie. A producer could simplify elsewhere — fewer company moves or a tighter location count — without losing the core appeal of the horror set pieces.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The clearance list is active.",
-        "detail": "Named songs, visible brands, and the bootleg horror artwork all create a meaningful rights pass. A packaging conversation should account for those items early so the movie can move cleanly through financing and delivery.",
-        "is_primary_lever": false,
-        "source": "production"
+      "development": {
+        "level": "medium",
+        "note": "The script’s appeal depends on balancing procedural clarity with folkloric specificity; the old-white-guy thread and the Krasue reveal need to stay legible to buyers outside the cultural context."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Wailing",
+          "year": 2016,
+          "why_it_comps": "A procedural investigation gradually gives way to folkloric horror, with the audience learning the rules of the supernatural through the case."
+        },
+        {
+          "title": "A Girl Walks Home Alone at Night",
+          "year": 2014,
+          "why_it_comps": "The script shares the same art-horror confidence, creature mythology, and stylized nocturnal menace."
+        },
+        {
+          "title": "The Night House",
+          "year": 2020,
+          "why_it_comps": "A death investigation becomes a grief-driven supernatural mystery with a strong female lead and a slow-burn reveal structure."
+        },
+        {
+          "title": "The Autopsy of Jane Doe",
+          "year": 2016,
+          "why_it_comps": "The central mystery is built around an impossible body and a forensic process that keeps uncovering stranger answers."
+        },
+        {
+          "title": "His House",
+          "year": 2020,
+          "why_it_comps": "The script combines immigrant specificity, grief, and supernatural horror in a way that feels emotionally grounded and culturally distinct."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre viewers who like smart horror with cultural specificity, procedural structure, and a strong female investigator.",
+        "demographics": "25-54, slightly female-skewing, urban/coastal and streamer-native, with strong appeal to Asian-American audiences and horror fans who like folklore-driven material.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary Atlanta locations keep the base cost contained, while creature effects, gore, night work, and a few stylized horror set pieces push it above microbudget."
+      },
+      "lane_fit": {
+        "lane": "prestige folklore horror",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original film teams building elevated-horror slates",
+          "prestige indie distributors",
+          "producer-directors with horror festival credibility",
+          "Asian-American or diaspora-focused production companies"
+        ],
+        "detail": "This sits naturally in the lane where cultural specificity is the selling point, not a barrier. The script has enough procedural clarity for mainstream genre buyers and enough mythic texture for prestige horror buyers."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is rich, but the script does not yet present a clean sequel or spinoff vector with a separate anchor character."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Folklore becomes a case engine.",
+          "what_it_means": "The script turns a specific monster mythology into a commercial mystery structure, which makes the supernatural feel investigable rather than abstract. That is the kind of hook that can travel to buyers who want elevated horror with a clean narrative spine.",
+          "evidence": "The missing blood, the salon DVD, the floating-head lore, and the forensic conference all point to the same reveal path.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kim is a strong buyer-facing lead.",
+          "what_it_means": "A deadpan investigator who can carry both skepticism and eventual belief is a very marketable anchor for genre material. That role gives a platform to an actor who can play authority, wit, and dawning dread in the same frame.",
+          "evidence": "Her reactions to the floating-head story, the video-store discovery, and the final monitor reveal all land cleanly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Thai-American family world feels lived-in.",
+          "what_it_means": "The salon/home ecosystem gives the script a textured social world that can support both emotional investment and production value. Buyers respond to worlds that feel specific enough to generate scenes, not just plot points.",
+          "evidence": "The Thai/English household rules, salon labor, family hierarchy, and video-store horror subculture all feel distinct.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The horror reveal is visually ownable.",
+          "what_it_means": "The shadow-play Krasue sequence gives the project a signature set piece that can sell the movie in a trailer and in a pitch room. It’s the kind of sequence that tells a buyer the film has a point of view, not just a premise.",
+          "evidence": "The shoji-screen shadow play, the floating head, the entrails, and the dawn ash sequence are all highly imageable.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The procedural banter broadens the audience.",
+          "what_it_means": "The Kim/Gaines dynamic keeps the script from becoming pure folklore exposition and gives it a more accessible, mainstream entry point. That helps the movie play to both horror fans and viewers who want character chemistry.",
+          "evidence": "Their loafers joke, the DVD skepticism, and the old-white-guy reveal all play as dry procedural comedy.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, culturally specific horror mystery with a real commercial spine: a deadpan GBI lead, a folkloric creature reveal, and a world that feels both fresh and filmable. The contained contemporary setting keeps the economics in indie range while the Krasue imagery and procedural structure give buyers a clear trailer, festival, and streaming lane."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The lead is more observer than driver.",
+          "detail": "Kim is compelling as a skeptical investigator, but the script’s emotional center sits more in the case than in her personal life. That makes the role strong for casting and procedural momentum, but it also means the buyer conversation will focus on concept execution more than character franchise value.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The cultural mythology needs buyer-side translation.",
+          "detail": "The Krasue, kuman thong, and luk thep material is vivid, but it’s also highly specific and can read as opaque without the right framing. For some buyers, that specificity is the asset; for others, it becomes a development question about how much explanation the audience will need.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The procedural middle is more investigative than escalating.",
+          "detail": "The salon visit, the video-store detour, and the apartment discovery are all useful, but they function as accumulation more than a hard turn. That keeps the script coherent, though it also means the momentum depends on the novelty of each clue rather than on a strong external clock.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The music and brand footprint needs cleanup.",
+          "detail": "The draft names multiple songs and brands — including Rhymekhamhaeng, Ramintra, Udom Silapin na Chiang Mai, Chaweewan Dumern, Gucci, Venmo, Ring, Fanta, AWS, and Kiwi. Those are manageable individually, but together they create a real clearance and budget conversation before greenlight.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The script’s main friction is not the premise; it’s the balance between a culturally specific supernatural mythology and the more familiar procedural frame around it. Buyers will also notice that the lead role is strongest as an investigator, not as a deeply personal engine, so the project lives or dies on concept execution and the right cast."
+    },
     "craft_note": ""
   },
-  "weightedScore": 73.3,
+  "weightedScore": 75.3,
   "tier": "Optionable",
-  "inputTokens": 29010,
-  "outputTokens": 5456,
-  "cost": 0.0463095,
+  "inputTokens": 31415,
+  "outputTokens": 5650,
+  "cost": 0.048986249999999995,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T04:53:34.204Z",
+  "submission_id": "059cf10c-65eb-42b0-bdf0-c149e072bcee",
+  "eval_id": "5d1cbe6b-17aa-4bb7-b50c-6c92cdd27119",
+  "title": "CAPSULE (11.08.12)   Ian Shorr",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Elliot Lockhart",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, Korean-American, tech engineer / inventor, emotionally volatile, urban professional"
+    },
+    {
+      "name": "Robyn Gilmore",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Elliot’s ex, nurse, emotionally intelligent, grounded"
+    },
+    {
+      "name": "Craig Bollinger",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, Elliot’s best friend, successful tech operator, charismatic, affluent"
+    },
+    {
+      "name": "Jonathan Wilkes",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-60s, tech mogul, polished, charismatic, predatory"
+    },
+    {
+      "name": "David Prescott",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, Elliot’s boss and later rival, ambitious, petty, corporate"
+    },
+    {
+      "name": "Maguire",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, hired gun, working-class, Irish, professional killer"
+    },
+    {
+      "name": "Harold",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, janitor, older working-class man"
+    }
+  ],
+  "positioning_hook": "A disgraced San Francisco engineer starts receiving capsules from his future self, only to discover his own survival depends on outsmarting a tech mogul who’s using time to turn rivals into targets.",
+  "cost_usd": 0.06079875,
+  "input_tokens": 52205,
+  "output_tokens": 4810,
+  "status": "wrote:leads_ok"
+}

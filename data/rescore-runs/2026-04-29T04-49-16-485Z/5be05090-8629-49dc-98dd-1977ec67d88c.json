@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T04:59:36.879Z",
+  "submission_id": "5be05090-8629-49dc-98dd-1977ec67d88c",
+  "eval_id": "21dc02f6-37e0-4d03-9b9e-c44c4b2cff45",
+  "title": "All I need is one dance….. the wedding g dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Woman, early 30s, former athlete, coach, romantic lead."
+    },
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, church custodian / wedding planner / future husband."
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Supporting",
+      "demographics": "Girl, 16-17, high-school basketball player, daughter figure."
+    },
+    {
+      "name": "Coach Winsil",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s-60s, head coach."
+    },
+    {
+      "name": "Tim Moss",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, athletic director / school administrator."
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s-30s, assistant coach, former player."
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s-30s, assistant coach, former player."
+    },
+    {
+      "name": "Coach Daniels",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s-50s, opposing coach."
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s-70s, priest."
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s-60s, Skylar’s father."
+    },
+    {
+      "name": "Renee Monroe",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s-60s, Skylar’s mother."
+    },
+    {
+      "name": "Lisa",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s-40s, Skylar’s sister."
+    }
+  ],
+  "positioning_hook": "A high-school basketball coach on the verge of a WNBA return must lead her team, protect a rising star, and choose whether love can survive the season.",
+  "cost_usd": 0.07596075,
+  "input_tokens": 70321,
+  "output_tokens": 5160,
+  "status": "wrote:leads_ok"
+}

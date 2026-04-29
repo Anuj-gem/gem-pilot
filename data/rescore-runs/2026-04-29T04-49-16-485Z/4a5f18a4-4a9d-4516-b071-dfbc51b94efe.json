@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T04:56:19.610Z",
+  "submission_id": "4a5f18a4-4a9d-4516-b071-dfbc51b94efe",
+  "eval_id": "e07caeff-27d1-4d4e-bcfe-bb7e5dddd523",
+  "title": "TRUE OUTLAWS SHORT 7",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Tink",
+      "role_type": "Lead",
+      "demographics": "Woman, late 20s, white, pregnant, working-class, criminal-adjacent, likely rural American."
+    },
+    {
+      "name": "Charlie",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, Native American, criminal, physically dangerous, emotionally guarded."
+    },
+    {
+      "name": "Pops",
+      "role_type": "Supporting",
+      "demographics": "Man, late 60s, older white or ambiguous-race rural store owner, hard-edged, exhausted."
+    },
+    {
+      "name": "Girl",
+      "role_type": "Supporting",
+      "demographics": "Teen girl, underage, likely white, local, opportunistic."
+    }
+  ],
+  "positioning_hook": "A pregnant getaway driver and her volatile partner try to survive a botched gas-station robbery, while a dead clerk, a hidden recording, and a collapsing love story turn their escape into a reckoning.",
+  "cost_usd": 0.06923775,
+  "input_tokens": 69355,
+  "output_tokens": 3827,
+  "status": "wrote:leads_ok"
+}

@@ -2,275 +2,323 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "conspiracy thriller",
-        "horror"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Mystery",
+        "Horror"
       ],
-      "tone": "Grounded, paranoid, escalating, with darkly comic FBI banter and a cosmic dread undercurrent"
+      "tone": "paranoid",
+      "tags": [
+        "female-lead",
+        "feature-anchored",
+        "high-concept",
+        "character-driven",
+        "contemporary",
+        "prestige",
+        "grief",
+        "identity",
+        "conspiracy",
+        "los-angeles",
+        "fbi",
+        "comet"
+      ]
     },
-    "positioning_hook": "A rookie FBI agent chasing missing ex-cons in Silver Lake stumbles into a comet-fueled conspiracy, a hidden basement cult, and a bureau cover-up that turns her grief into a weapon.",
+    "positioning_hook": "An FBI surveillance agent chasing missing ex-cons in Silver Lake stumbles into a comet-fueled conspiracy, a hidden basement dungeon, and the possibility that her own childhood disappearance was never what she believed.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean commercial engine: an FBI stakeout, a comet overhead, and a hidden conspiracy that keeps widening. The hook is accessible to thriller audiences, with enough genre escalation to travel beyond a niche sci-fi lane."
+        "reasoning": "The premise has a clean commercial engine: an FBI sting, a creepy suburban house, and a bigger conspiracy tied to a comet. The audience is narrower than a four-quadrant thriller because the script leans hard into paranoia, grief, and a late-stage reality shift, but the hook is strong and easy to sell."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The script establishes its engine early: Rico and Cole surveil the wrong house, then discover a second house, a basement system, and a larger pattern tied to the comet. The premise is easy to explain in a sentence and the story keeps sharpening that sentence as it goes."
+        "reasoning": "The hook lands early with Rico tailing the orange pickup and discovering the red-door/blue-door split, then deepens fast with the hidden hatch, foil-lined rooms, and comet obsession. The premise is easy to explain in two sentences and keeps mutating in a way that stays legible."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Rico has a strong internal engine through her mother’s disappearance, her need to be right, and her outsider status inside the bureau. Cole gives the story a lived-in partner dynamic, while Watson and James add distinct pressure points, though the character web is strongest around Rico rather than evenly distributed."
+        "reasoning": "Rico is a strong lead because her competence, insecurity, and buried family wound all drive the case. Cole is a vivid partner with real personality, and Watson/James/Henry each add texture, though the script is still most durable around Rico’s POV rather than a broad ensemble."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script’s boldest move is making surveillance procedure the doorway into cosmic horror and institutional conspiracy. The foil-lined basement, the sound-based creature logic, and the bureau’s bureaucratic use of the phenomenon give the material a confident, unusual identity."
+        "reasoning": "The script takes a familiar surveillance-thriller setup and pushes it into occult-conspiracy/body-horror territory without losing the procedural spine. The foil, bell, comet, and sound-based control system give it a distinct identity rather than a generic mystery wrapper."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The story keeps escalating through reversals: red door versus blue door, the hidden hatch, the support group connection, the reveal of Watson, and the final descent into the dungeon. Each turn adds a new layer of danger or meaning, and the ending lands with a full-feature payoff."
+        "reasoning": "The first half is built on escalating discoveries, then the back half keeps turning the screw with the support group, the second house, the dungeon reveal, and the Watson betrayal. The story keeps generating new questions and reversals, with very little dead air once the stakeout begins."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "This feels like a conspiracy thriller that keeps revealing a stranger, more inevitable version of itself. The comet motif, the tinfoil acoustics, and the idea of a federal asset pipeline for the unexplained make the premise feel fresh rather than borrowed."
+        "reasoning": "The script’s core idea is immediately graspable but still strange: a surveillance case about missing ex-cons turns into a hidden system of predation managed by the FBI. The comet mythology and Rico’s false-memory childhood wound make the reveal feel both surprising and inevitable."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The FBI field office, the surveillance van, the Silver Lake neighborhood, the support group, and the hidden domestic bunker all carry specific texture. The world is story-generating, though the most vivid density lives in the central conspiracy rather than in a broad social ecosystem."
+        "reasoning": "The LA neighborhoods, FBI bullpen, surveillance van, support group, and suburban duplex create a specific social world with useful texture. The world becomes especially story-generating once the foil-lined underground system and the bureau’s quiet complicity are introduced."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a very identifiable tonal blend: procedural banter, suburban absurdity, and creeping body-horror paranoia. The cup-o-noodles, tacos, dinner bell, and support-group scenes keep the material from sitting in one register."
+        "reasoning": "The script has a very specific paranoid register: procedural banter, deadpan workplace friction, and escalating cosmic dread all live in the same lane. The sound design motifs, the bell, the chewing, and the comet imagery give it a hard-to-mistake tonal signature."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "Beneath the thriller mechanics is a grief story about memory, self-mythology, and the need to make chaos mean something. The final reveal that Rico’s childhood memory was altered gives the script a deeper psychological layer that re-frames the entire story."
+        "score": 7,
+        "reasoning": "The story suggests a larger mythology around the comet, the disappearances, and Rico’s childhood memory, but it still plays primarily as a contained feature mystery. There’s enough buried material to feel bigger than the plot on the page, though the script is not withholding at a Severance-level."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "Rico and Cole have a strong lead-partner dynamic, and Watson/James each create useful pressure, but the story still lives primarily through Rico’s point of view. The ensemble is functional and memorable, though not yet a true multi-directional engine."
+        "score": 7,
+        "reasoning": "Rico/Cole is a strong engine, and Watson/James/Henry each create meaningful pressure on that dynamic. The relationships are not just functional; they generate conflict, misdirection, and emotional payoff, even if the script is still structurally anchored to one lead."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Lucia Del Rico",
+        "role_type": "Lead",
+        "demographics": "Woman, early 30s, FBI agent; Latina; emotionally guarded, work-obsessed, carrying unresolved childhood trauma.",
+        "hook": "A sharp, hyper-vigilant FBI surveillance agent who wants to be taken seriously and trusted on instinct, but whose buried grief makes her vulnerable to pattern-making and obsession. She’s competent in the field, socially prickly, and increasingly convinced that the missing-ex-con case is tied to the night her mother vanished; the script keeps testing whether her intuition is insight or self-deception.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Amy Adams in Sharp Objects: a controlled, inward performance that has to carry procedural authority, emotional fracture, and a late-breaking identity crisis. It gives an actor a full-spectrum role—deadpan command, panic, grief, and final defiance."
+      },
+      {
+        "name": "Dale Cole",
+        "role_type": "Supporting",
+        "demographics": "Man, 60s, FBI agent; older, world-weary, nearing retirement.",
+        "hook": "A veteran surveillance agent with a filthy sense of humor, a tired body, and a surprising amount of emotional intelligence. He starts as comic friction and ends as the script’s most human institutional voice, the guy who knows the job has cost him a marriage and still believes in doing it right.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Bryan Cranston did in Breaking Bad’s quieter stretches or what JK Simmons did in Whiplash: authority, weariness, and a late emotional reveal without losing the character’s bite. It’s a scene-stealing supporting part with real warmth and bite."
+      },
+      {
+        "name": "Captain Watson",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s, FBI station chief; polished, commanding, institutionally powerful.",
+        "hook": "A smooth, paternal bureau boss who reads as pragmatic until the script reveals he’s the architect of the entire hidden system. He weaponizes reassurance, bureaucracy, and institutional language, making him the story’s most chilling authority figure because he never stops sounding reasonable.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled menace of Bryan Cox in Succession or Michael Shannon in Boardwalk Empire: calm, articulate power that turns predatory. The showcase is in playing the smile that never reaches the threat underneath."
+      },
+      {
+        "name": "Henry Dodson",
+        "role_type": "Supporting",
+        "demographics": "Man, middle-aged, ex-convict; physically ordinary, increasingly unstable, later revealed as part of the system.",
+        "hook": "At first he reads like the suspect in a missing-persons case, then becomes a frightened intermediary trying to warn Rico without being able to say the whole truth. He’s creepy, pathetic, and oddly sympathetic, which makes his eventual role in the larger machine more unsettling.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Paul Dano did in Prisoners or what Ben Mendelsohn does so well in crime stories: ordinary surface, deep unease, and a slow reveal of hidden desperation. The big play is the transformation from suspect to terrified participant."
+      },
+      {
+        "name": "James White",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s, ex-convict and support-group attendee; emotionally open, lonely, vulnerable.",
+        "hook": "A grieving son who seems like a possible ally and romantic connection before the script reveals he’s another piece of the machinery. He’s the most emotionally accessible of the supporting players, which makes his turn into a compromised asset land harder.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the intimacy and volatility of Jesse Plemons in a pressure-cooker drama: tender, wounded, and then terrifyingly pliable. It’s a strong showcase for playing sincerity that curdles."
+      },
+      {
+        "name": "Hope",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s-40s, suburban homeowner; controlled, eerie, physically precise.",
+        "hook": "At first she seems like a strange prepper with a comet fixation, but she becomes one of the story’s most unnerving embodiments of the hidden system. She’s calm, ritualized, and frighteningly committed to the logic of the house.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the unnerving stillness of Toni Collette in Hereditary or Rebecca Hall in The Night House: domestic surface, existential dread underneath. The showcase is in making ordinary behavior feel ritualistic and wrong."
+      },
+      {
+        "name": "Lear",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-40s, suburban homeowner; polished, deferential, increasingly monstrous.",
+        "hook": "Hope’s partner and the story’s most unsettling domestic enabler, he performs normalcy while helping maintain the hidden basement system. He’s the kind of character whose politeness becomes more disturbing the more you understand him.",
+        "why_actor_wants_this": "This is a great role for an actor who can play charm as camouflage, like Matthew Rhys in The Americans or Michael C. Hall in Dexter. The fun is in letting the audience realize too late how much control he actually has."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 8,
-        "leads": 4,
+        "leads": 1,
         "series_regulars": 0,
-        "child_actors": true,
+        "child_actors": false,
         "casting_characteristics": [
-          "Female lead in early 30s",
-          "Older male partner in his 60s",
-          "One child version of Rico in flashback",
-          "Physically specific creature/foiled-transformation work",
-          "Supporting roles with Latino identity in the FBI and ex-con world"
+          "Lead role requires a strong emotional close-up performer who can carry procedural authority and paranoia",
+          "Supporting cast skews 30s-60s with one older male authority role",
+          "No child casting required"
         ]
       },
       "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "Mostly interior with recurring exterior street, yard, and hill coverage",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Contained residential neighborhood with two adjacent houses and a shared garage",
-          "FBI field office and surveillance van builds",
-          "Hospital, support group room, diner, motel, and city hall exteriors",
-          "Childhood home flashback location"
+          "FBI field office and surveillance van",
+          "two adjacent suburban houses with a shared garage and basement access",
+          "hospital room",
+          "support-group/community-center interior",
+          "LA street and alley exteriors"
         ]
       },
       "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Comet Theora, atmospheric light effects, creature transformations, and final sky/lift imagery require visible but not tentpole-level VFX.",
+        "vfx_level": "minor",
+        "vfx_details": "Primarily comet enhancement, atmospheric sky work, and a few subjective light/flash effects; no heavy creature or digital-environment dependence.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical blood, injury makeup, foil-lined set dressing, creature prosthetics/appendages, and breakaway elements in the dungeon and roof sequence.",
+        "sfx_needs": "Practical blood, concussion makeup, foil-wrapped body effects, dog bite gag, and a few controlled fight/tackle beats.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Patriot Act, NSA, FBI, LAPD, Sinaloa Cartel, Best Buy, Reynolds Wrap, QuickTime Player, Bud Light, Taco Stand, and Cup-o-Noodles are all named on the page."
+          "detail": "Patriot Act"
         },
         {
-          "type": "real_person",
-          "detail": "No real people are named, but the story references public institutions and a specific support-group setting."
+          "type": "brand",
+          "detail": "NSA"
+        },
+        {
+          "type": "brand",
+          "detail": "FBI"
+        },
+        {
+          "type": "brand",
+          "detail": "Sinaloa Cartel"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming feature or premium-cable theatrical genre lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Best positioned as a festival-to-platform or streamer-original feature with genre-forward marketing."
+        "recommended_lane": "streaming theatrical-thriller lane",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a streamer original or specialty theatrical genre title"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the night-heavy LA shoot, multiple house interiors, surveillance setups, practical blood work, and animal work keep this above a lean indie floor."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The story is largely contained to a few recurring spaces, but the comet effects, creature work, and dungeon finale push it above a microbudget lane."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs an actor who can play procedural competence, paranoia, and emotional fracture in the same frame, while Watson and Cole both need strong, specific performers to keep the institutional dynamic alive."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s final reveal reframes the entire case as a hidden predation system tied to the comet and Watson, so the buyer is really evaluating a conspiracy-thriller mythology as much as a procedural mystery."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "Like this script, it turns a domestic setting into a paranoia machine and keeps the audience locked into a character’s increasingly unreliable read on the room."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The lead roles are compact, but the project benefits from strong casting in Rico, Cole, Watson, and James, plus a child Rico flashback."
+        {
+          "title": "Prisoners",
+          "year": 2013,
+          "why_it_comps": "The missing-persons engine, suburban dread, and moral rot beneath a seemingly ordinary investigation are the same commercial lane."
         },
-        "location": {
-          "level": "medium",
-          "note": "The core story is contained to a neighborhood and a handful of interiors, though the script still moves through multiple distinct spaces including flashbacks and institutional locations."
+        {
+          "title": "The Vast of Night",
+          "year": 2019,
+          "why_it_comps": "The comet/sky mystery and the sense of a larger unseen system give it the same eerie, low-key cosmic unease."
         },
-        "content": {
-          "level": "high",
-          "note": "Violence, torture imagery, body horror, drugging, and a mature conspiracy framework narrow the content lane."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The script uses several named brands and institutions, but no major life-rights or franchise IP dependency is present."
+        {
+          "title": "The Night House",
+          "year": 2020,
+          "why_it_comps": "A grief-driven lead, a haunted domestic space, and a slow reveal that the protagonist’s memory is part of the mystery."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like elevated genre thrillers with a strong female lead, a conspiracy hook, and a creepy domestic reveal.",
+        "demographics": "25-54, slightly female-skewing but playable male; urban/suburban genre audience; strong appeal to viewers who like prestige thrillers and mystery-horror hybrids.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, limited cast, practical effects, and a mostly contained LA-night shoot keep this in indie feature territory despite the high-concept reveal."
+      },
+      "lane_fit": {
+        "lane": "elevated indie thriller",
+        "types_of_buyers": [
+          "streamer original film teams",
+          "specialty distributors with genre slates",
+          "producer-financed indie thriller buyers",
+          "director-driven genre labels",
+          "prestige horror-adjacent development execs"
+        ],
+        "detail": "This sits naturally in the lane where character psychology, mystery architecture, and a strong central performance matter as much as the genre turn. The script has enough hook for a buyer looking for a smart, creepy, adult thriller without requiring tentpole scale."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is suggestive, but there is no clean spinoff vector beyond this story’s central Rico/Watson/comet conspiracy."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The surveillance setup is a story engine.",
-          "what_it_means": "The FBI van, the bugs, the monitors, and the stakeout mechanics give the movie a built-in visual grammar and a clean commercial frame. Buyers who want a contained thriller with a distinctive procedural spine will see a producible hook that still feels cinematic.",
-          "evidence": "Rico and Cole spend the first act building the surveillance operation, then the monitors become the audience’s window into the hidden house and the dungeon below.",
+          "dimension_or_area": "The red-door/blue-door setup is instantly ownable.",
+          "what_it_means": "That visual rule gives the movie a clean marketing image and a memorable audience puzzle from the first act. Buyers can sell the premise in one breath because the house geometry becomes the mystery engine.",
+          "evidence": "The stakeout lands on two identical houses with only red and blue doors, and the script turns that choice into the central investigative problem.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Rico is built around grief and obsession.",
-          "what_it_means": "The lead role has the kind of emotional contradiction that can anchor a genre movie and give an actor real range: competence, denial, guilt, and stubbornness. Prestige-minded buyers and actors looking for a showcase lead will respond to a protagonist whose casework is inseparable from her childhood wound.",
-          "evidence": "Her mother’s disappearance, the recurring comet memory, and the way she keeps pushing the case even after Watson tells her to stand down.",
+          "dimension_or_area": "Rico is a real lead role, not just a plot function.",
+          "what_it_means": "The script gives a buyer a performance-driven package anchor: a female lead with authority, vulnerability, and a buried wound that pays off in the third act. That’s exactly the kind of role that can attract a serious actor and elevate the whole project.",
+          "evidence": "Her first-case nerves, her friction with Cole, and the mother-disappearance flashbacks all feed the same emotional engine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tonal blend is unusually specific.",
-          "what_it_means": "The script can play as a thriller, a horror piece, and a dark workplace comedy without losing its identity, which broadens its audience lane. Directors and buyers who like genre material with personality will respond to the cup-o-noodles, taco-run, and dinner-bell banter sitting beside the dread.",
-          "evidence": "Cole’s eating habits, the FBI office banter, the taco stand stakeout, and the bell that quiets the room.",
+          "dimension_or_area": "The procedural spine keeps the weirdness grounded.",
+          "what_it_means": "The FBI surveillance mechanics, warrant pressure, and stakeout tactics make the movie feel playable and credible even as it escalates into conspiracy horror. That balance broadens the buyer pool because the script never abandons the crime-thriller lane entirely.",
+          "evidence": "The van surveillance, bug placement, probable-cause debate, and SWAT coordination all play as concrete procedural beats.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The hidden-house reveal is a strong midpoint engine.",
-          "what_it_means": "The red-door/blue-door misdirection gives the movie a clean, memorable turn that reorients the entire investigation. That kind of reveal is valuable to producers because it creates a trailer moment and a structural pivot without requiring a huge scale jump.",
-          "evidence": "The audience learns the suspect is next door, not in the house Rico has been bugging, and the wardrobe opens into the basement passage.",
+          "dimension_or_area": "The comet mythology gives the thriller a bigger shadow.",
+          "what_it_means": "The cosmic element adds scale without requiring expensive spectacle, which is a strong commercial move for an indie feature. It also gives the movie a hook that feels larger than the house plot and helps it stand out in a crowded thriller market.",
+          "evidence": "Comet Theora is repeatedly referenced, tracked on forums, and tied to the disappearances and Rico’s childhood memory.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The conspiracy has institutional teeth.",
-          "what_it_means": "Watson’s use of the assets turns the story from a one-off monster hunt into a larger system with repeatable logic, which is exactly what makes a genre concept feel bigger than one case. Buyers who want franchise-adjacent mythology without IP baggage will see room here.",
-          "evidence": "Watson explains the bureau has been managing the creatures as part of the counterterrorism apparatus and using them to generate intelligence.",
+          "dimension_or_area": "Cole is a scene-stealing partner with emotional payoff.",
+          "what_it_means": "The lead-partner dynamic gives the script a second selling point beyond the mystery: a veteran mentor who is funny, human, and ultimately tragic. That kind of role helps with casting and gives the movie a stronger emotional landing.",
+          "evidence": "His banter, retirement jokes, marriage confession, and final sacrifice all deepen the relationship.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The comet gives the movie a deadline and a mood.",
-          "what_it_means": "The celestial clock adds urgency while also giving the film a visual signature that separates it from standard cop-thriller fare. Genre buyers and marketing teams can sell the sky as an active force, not just a backdrop.",
-          "evidence": "Comet Theora is repeatedly tracked, discussed online, and ultimately becomes the event that coincides with the final confrontation.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending pays off the emotional premise.",
-          "what_it_means": "The final reveal that Rico’s memory was altered and that the bureau has been shaping the narrative gives the movie a strong aftertaste and a rewatchable final turn. Festival audiences and streamer viewers both respond to a genre ending that recontextualizes the lead’s entire emotional journey.",
-          "evidence": "The childhood flashback is revised, Watson reframes her mother’s disappearance, and Rico ends in a support-group-to-closure-to-conspiracy loop that lands on the final Bora Bora image.",
+          "dimension_or_area": "The hidden-system reveal is a strong genre escalation.",
+          "what_it_means": "The movie doesn’t just reveal a killer; it reveals an institutional machine, which makes the ending feel bigger and more unsettling. That kind of escalation is attractive to buyers because it turns a contained mystery into a conspiracy thriller with teeth.",
+          "evidence": "Watson’s dungeon, the foil-lined rooms, the creatures, and the bureau’s complicity all reframe the case.",
           "source": "script"
         }
       ],
-      "headline": "This is a contained, high-concept thriller with a real identity: FBI surveillance as the doorway into a comet-driven conspiracy, a hidden basement system, and a lead role powered by grief and obsession. It has the kind of procedural-to-horror escalation that producers can package, actors can sink into, and buyers can market with a single image: the wrong house, the right sky, and a bureau that’s been watching all along."
+      "headline": "This is a contained, elevated thriller with a memorable visual hook, a strong female lead, and a conspiracy reveal that expands the movie without blowing up the budget. It has the kind of clear market image and performance opportunity that can get a buyer to lean in fast, especially in the streamer/specialty genre lane."
     },
-    "lead_characters": [
-      {
-        "name": "Lucia Del Rico",
-        "role_type": "Lead",
-        "demographics": "Female · early 30s · FBI agent",
-        "hook": "Rico is a sharp, restless junior agent whose competence is always colliding with her need to prove something personal. She’s observant, defensive, and emotionally armored, but the script keeps exposing the child underneath the badge: the daughter who never got closure, the woman who reads patterns into the sky, and the investigator who can’t stop following the feeling that the world is lying to her.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Amy Adams in Arrival — a hyper-competent investigator whose interior life is the real engine of the movie. It gives an actress the chance to play procedural authority, grief, paranoia, and eventual revelation in one lead role that can carry a prestige genre feature."
-      },
-      {
-        "name": "Dale Cole",
-        "role_type": "Lead",
-        "demographics": "Male · 60s · FBI agent",
-        "hook": "Cole is the seasoned field hand who looks like he’s one retirement speech away from disappearing, but he’s still the smartest person in the room when the room gets weird. He’s profane, practical, and unexpectedly tender, with a lived-in loneliness that makes his mentorship of Rico feel earned rather than ornamental.",
-        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in Breaking Bad’s early seasons or Jeff Bridges in The Old Man — a weathered professional whose humor and weariness are doing the same job at once. It gives a veteran actor a role with authority, comic timing, and a late-career emotional center that can steal scenes without taking the movie away from the lead."
-      },
-      {
-        "name": "Captain Watson",
-        "role_type": "Lead",
-        "demographics": "Male · 50s · FBI station chief",
-        "hook": "Watson is the polished institutional face of the bureau, all command voice, public confidence, and controlled warmth. He reads as the adult in the room until the script reveals that his calm is the mechanism of the horror, making him a bureaucratic predator who weaponizes procedure as easily as a gun.",
-        "why_actor_wants_this": "This is the kind of role that gave Michael Shannon in Boardwalk Empire or Bryan Cranston in Trumbo the chance to weaponize authority and then invert it. It offers a strong character actor the pleasure of playing a man whose public decency and private menace are both fully legible."
-      },
-      {
-        "name": "James White",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · ex-con / support-group attendee",
-        "hook": "James is the soft-spoken, emotionally open man who seems like a fellow traveler in Rico’s grief before the story reveals how deeply he’s been folded into the system. He’s vulnerable, sincere, and quietly tragic, which makes him both a romantic possibility and a devastating instrument of the conspiracy.",
-        "why_actor_wants_this": "This is the showcase territory of Paul Dano in Prisoners or Jesse Plemons in The Power of the Dog — a gentle presence that can turn unsettling without losing humanity. It gives an actor the chance to play tenderness, dread, and betrayal in the same role, which is catnip for prestige-minded performers."
-      },
-      {
-        "name": "Hope",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · suburban homeowner",
-        "hook": "Hope is the eerie domestic presence who initially reads as a worried wife and gradually becomes the face of the house’s deeper logic. She’s calm, ritualized, and spiritually attuned to the comet, which makes her feel less like a neighbor and more like a gatekeeper to the film’s hidden mythology.",
-        "why_actor_wants_this": "This is the kind of role that gave Toni Collette in Hereditary or Rebecca Ferguson in Doctor Sleep a chance to make domestic space feel haunted from the inside. It’s a compact but memorable part for an actress who can make ordinary behavior feel charged with dread."
-      },
-      {
-        "name": "Lear",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s · suburban homeowner",
-        "hook": "Lear is the quieter half of the domestic pair, the one who looks like he’s trying to keep the machinery of belief running without letting the seams show. He’s controlled, anxious, and physically committed to the house’s rituals, which makes him feel like a believer who has already paid the price.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Stuhlbarg in A Serious Man or Richard Jenkins in The Shape of Water — a man whose stillness carries dread and sorrow at once. It gives a character actor a chance to play devotion, fear, and complicity without needing big speeches."
-      },
-      {
-        "name": "Isaac Martinez",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s · ex-con / cartel member",
-        "hook": "Isaac is the first body in the chain, but the script gives him enough humanity to feel like more than a victim. He’s wary, funny, and trying to survive his own bad decisions, which makes his fate feel like the first clue that the city’s hidden machinery runs on disposable men.",
-        "why_actor_wants_this": "This is the kind of role that gave Benicio del Toro in Traffic or Michael Peña in End of Watch a chance to make a supporting part feel lived-in and dangerous. It’s a compact showcase for an actor who can bring charisma to a man who knows he’s already in too deep."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to turn procedural surveillance into cosmic paranoia.",
-        "fit_profile": "First- or second-feature directors with a strong genre short, or established indie directors looking to make a contained commercial swing. The material rewards filmmakers who care about tension through observation, controlled reveals, and performance-forward dread rather than spectacle for its own sake.",
-        "detail": "The movie gives a director a clean visual system: monitors, bugs, windows, foil, and one neighborhood that keeps recontextualizing itself. It also offers a rare chance to stage a horror reveal through procedure and sound design, which is exactly the kind of craft flex directors use to announce a voice."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Streaming thriller / premium genre feature",
-        "detail": "The cast can be built around one strong female lead and a veteran male partner, so it does not require a four-quadrant ensemble to function. The contained neighborhood footprint and high-concept hook make it exportable as a genre title with a clear trailer image and a strong streamer thumbnail."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The final mythology is a big swing.",
+          "detail": "The script pivots from procedural surveillance thriller into comet-linked body-horror conspiracy, and that’s the sharpest buyer conversation on the page. It’s a bold escalation, but it also means the movie is asking the audience to accept a major reality shift after spending a long stretch in grounded FBI mode.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Watson’s turn is doing a lot of work.",
+          "detail": "The captain moves from paternal boss to hidden architect of the system, and the reveal depends on the audience buying that institutional mask for most of the movie. That’s a strong twist, but it narrows the casting and performance lane because the role has to stay credible while hiding the true engine.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The comet thread is intriguing but abstract.",
+          "detail": "Comet Theora is a compelling motif, but for much of the script it functions more as atmosphere than as a concrete causal force. Buyers will weigh whether the mythology feels sufficiently specific before the late reveal, or whether it reads as a stylish overlay on the real story.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending depends on a very specific tonal balance.",
+          "detail": "The final movement has to hold procedural aftermath, grief, cosmic dread, and a last-image sting in the Bora Bora coda. That’s a lot of tonal territory to land in one feature, and the script’s commercial ceiling will be judged partly on whether that blend feels controlled rather than overstuffed.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest friction is also its biggest ambition: it starts as a clean FBI surveillance thriller and then asks the buyer to follow it into a much stranger conspiracy-horror register. If that pivot lands, it’s a real differentiator; if it doesn’t, the movie risks feeling like two strong ideas stitched together."
     },
-    "considerations": [
-      {
-        "area": "The red-door/blue-door confusion carries the whole middle.",
-        "detail": "The midpoint misdirection is one of the script’s sharpest engines, and the version of the movie where that logic is seeded even earlier would make the eventual reveal feel even more inevitable. A next pass could keep the audience tracking the house geography just a beat sooner so the turn lands with maximum force.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Watson’s cover story is the final lock.",
-        "detail": "The institutional reveal is strong, and the script already commits to it in the hospital, the support group, and the dungeon. One direction would be to clarify the exact logic of how Watson’s system works a touch earlier so the final confrontation feels even more devastating rather than merely surprising.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The support-group thread can do more lifting.",
-        "detail": "The James material gives Rico a second emotional lane outside the FBI, and it already pays off in the final betrayal. There is room for that relationship to carry a little more independent weight earlier, which would deepen the emotional turn when he becomes part of the machinery.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The production footprint is contained but creature-heavy.",
-        "detail": "The story lives in a manageable set of recurring spaces, but the dungeon finale, foil transformations, and comet imagery ask for disciplined effects planning. A simplification lever would be to keep the creature language consistent and economical so the movie preserves its contained-thriller advantage.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The named-brand texture is plentiful.",
-        "detail": "The script uses a lot of recognizable institutions and consumer names, from Reynolds Wrap to QuickTime to Bud Light and Cup-o-Noodles. A clearance pass would be straightforward to manage, but it’s worth deciding which names are doing real storytelling work and which can be generalized without changing the feel.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 72.3,
+  "weightedScore": 73.7,
   "tier": "Optionable",
-  "inputTokens": 38844,
-  "outputTokens": 4587,
-  "cost": 0.0497745,
+  "inputTokens": 41249,
+  "outputTokens": 4657,
+  "cost": 0.05189325,
   "declaredFormat": "Feature film"
 }

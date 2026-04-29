@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T04:56:49.393Z",
+  "submission_id": "acce8b56-b171-4ec6-ad7a-00bdf901a50a",
+  "eval_id": "a1f3df6d-07d1-452c-a8d5-a2f09af59fa9",
+  "title": "Spare",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Sophia",
+      "role_type": "Lead",
+      "demographics": "Teenage girl, likely high-school age; female; white/unspecified ethnicity; struggling with mental-health and family-custody pressure."
+    },
+    {
+      "name": "Jade",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; friend of Sophia; emotionally close to Emma; likely high-school age."
+    },
+    {
+      "name": "Emma",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; member of Sophia’s friend group; romantically linked to Bryan."
+    },
+    {
+      "name": "Nancy",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; friend in Sophia’s circle."
+    },
+    {
+      "name": "Maddy",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; friend in Sophia’s circle."
+    },
+    {
+      "name": "Sam",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; friend in Sophia’s circle."
+    },
+    {
+      "name": "Phoebe",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; friend in Sophia’s circle."
+    },
+    {
+      "name": "Tina",
+      "role_type": "Supporting",
+      "demographics": "Teenage girl; female; friend in Sophia’s circle."
+    },
+    {
+      "name": "Bryan",
+      "role_type": "Supporting",
+      "demographics": "Teenage boy; male; friend / romantic presence in the group."
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Teenage boy; male; Sophia’s boyfriend."
+    },
+    {
+      "name": "Nate",
+      "role_type": "Supporting",
+      "demographics": "Teenage boy; male; friend in the group."
+    },
+    {
+      "name": "Tori",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, likely 30s-40s; female; Jade’s mother."
+    },
+    {
+      "name": "Sophia’s Mom",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, likely 30s-40s; female; Sophia’s mother."
+    },
+    {
+      "name": "Sophia’s Dad",
+      "role_type": "Supporting",
+      "demographics": "Adult man, likely 30s-40s; male; Sophia’s father."
+    },
+    {
+      "name": "Sophia’s Sister",
+      "role_type": "Supporting",
+      "demographics": "Child or young teen; female; Sophia’s younger sister."
+    },
+    {
+      "name": "Ruth",
+      "role_type": "Supporting",
+      "demographics": "Golden retriever; female dog."
+    }
+  ],
+  "positioning_hook": "A teenage girl trying to get off her pills is trapped in a night of escalating hauntings, as a black orb turns her friend group, family, and own mind against her.",
+  "cost_usd": 0.0375945,
+  "input_tokens": 16760,
+  "output_tokens": 5561,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T04:56:58.983Z",
+  "submission_id": "8c5c2895-7898-4ee5-8363-42d2234cbdbb",
+  "eval_id": "3a0bd615-2f0e-4cda-b7b8-f94c4654b70d",
+  "title": "As Everything Falls Apart",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Kevin",
+      "role_type": "Lead",
+      "demographics": "Teenage male, high-school age, likely mid-to-late teens."
+    },
+    {
+      "name": "Claire",
+      "role_type": "Supporting",
+      "demographics": "Teenage female, high-school age."
+    },
+    {
+      "name": "Mike",
+      "role_type": "Supporting",
+      "demographics": "Teenage male, high-school age."
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Supporting",
+      "demographics": "Adult female, mother of Kevin."
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "Adult male, Claire’s father."
+    },
+    {
+      "name": "Lily",
+      "role_type": "Supporting",
+      "demographics": "Adult female, Claire’s mother."
+    },
+    {
+      "name": "Ben",
+      "role_type": "Supporting",
+      "demographics": "Teenage male, high-school age."
+    },
+    {
+      "name": "Stephanie",
+      "role_type": "Supporting",
+      "demographics": "Teenage female, high-school age."
+    },
+    {
+      "name": "Ms. Williams",
+      "role_type": "Supporting",
+      "demographics": "Adult female, school administrator."
+    },
+    {
+      "name": "Ms. Platty",
+      "role_type": "Supporting",
+      "demographics": "Adult female, school staff."
+    },
+    {
+      "name": "Mr. Jones",
+      "role_type": "Supporting",
+      "demographics": "Adult male, teacher."
+    }
+  ],
+  "positioning_hook": "A bullied teen battling binge eating, family shame, and first love spirals toward a breaking point when his closest friend’s trauma and his own self-loathing collide.",
+  "cost_usd": 0.03570375,
+  "input_tokens": 18379,
+  "output_tokens": 4871,
+  "status": "wrote:leads_ok"
+}

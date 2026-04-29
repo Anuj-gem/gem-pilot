@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-04-29T04:57:13.420Z",
+  "submission_id": "fbb12589-ab8b-40bf-b6b5-15d3862b4d1a",
+  "eval_id": "c9dd6224-9996-4702-b96a-967b0e71ceb1",
+  "title": "Pieces",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 2,
+  "lead_characters_summary": [
+    {
+      "name": "Pierre",
+      "role_type": "Lead",
+      "demographics": "Teenage male, likely 16-17, introverted high-school student, emotionally sensitive, writer/poet."
+    },
+    {
+      "name": "Celia",
+      "role_type": "Supporting",
+      "demographics": "Teenage female, likely 16-17, warm, socially confident, emotionally perceptive."
+    }
+  ],
+  "positioning_hook": "A lonely teenage poet falls hard for the one girl who sees him, then has to survive the kind of loss that turns first love into a lifelong wound.",
+  "cost_usd": 0.0256815,
+  "input_tokens": 14088,
+  "output_tokens": 3359,
+  "status": "wrote:leads_ok"
+}

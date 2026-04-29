@@ -2,293 +2,339 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Fantasy drama",
-      "genre_tags": [
-        "Coming-of-age",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama",
         "Musical"
       ],
-      "tone": "Whimsical, spiritual, bittersweet, and emotionally earnest"
+      "tone": "lyrical",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "period-piece",
+        "prestige",
+        "character-driven",
+        "high-concept",
+        "coming-of-age",
+        "grief",
+        "identity",
+        "music",
+        "jimi-hendrix",
+        "san-francisco"
+      ]
     },
-    "positioning_hook": "A suicidal foster kid on Christmas Eve gets one night with the spirits of Jimi Hendrix, Jim Morrison, and Janis Joplin to choose life before his clock runs out.",
+    "positioning_hook": "A suicidal foster teen in 1976 is sent by Jesus to spend one night with Janis Joplin, Jimi Hendrix, and Jim Morrison, and discovers his dead mother’s guitar may be the key to choosing life.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean emotional promise and a built-in holiday hook, with music icons giving it recognizable entry points. Its appeal is strongest for audiences drawn to uplift, music, and spiritual fantasy rather than broad four-quadrant spectacle."
+        "reasoning": "The hook is immediately legible and emotionally accessible: a damaged teen, iconic dead musicians, Christmas, and a life-or-death choice. The audience is real and the premise is easy to sell, but the spiritual/fantasy register and period music rights narrow the lane from broad four-quadrant to specialty prestige."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The central engine is easy to grasp quickly: a boy in limbo gets spirit-guided help before a deadline. The opening hospital/emergency-room framing, the Christmas Eve clock, and the guitar all lock the premise in early."
+        "reasoning": "The premise lands fast and stays clear: Sage dies, meets Jesus, gets three spirit guides, and spends the night with legendary musicians before deciding whether to live. The script keeps the rules simple enough to track while layering in the mother/guitar mystery."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Sage has a strong emotional wound and a clear need, and the trio of guides each brings a distinct comic and emotional flavor. The characters are more archetypal than deeply individualized, but the role set is still highly playable."
+        "reasoning": "Sage has a strong wounded-teen engine, and the trio of Janis/Jimi/Jim each have distinct comic and emotional flavors. The characters are memorable, though Sage’s interiority is more reactive than deeply singular for much of the piece."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a very specific tonal and formal choice: a lyrical Irish-narrated afterlife Christmas tale that folds in rock mythology and spiritual bureaucracy. The audacity of making Hendrix, Morrison, and Joplin literal guides gives the piece a memorable signature."
+        "reasoning": "The script takes a big swing by turning a suicide intervention into a Christmas fantasia with dead rock icons as spirit guides. The voice is committed and unusual, and the Aisling framing device gives it a storybook register that feels authored rather than generic."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The story keeps resetting the clock and moving Sage through successive revelations, which gives it forward motion. The middle section leans on extended dialogue and repeated spiritual explanation, but the guitar, the birthday deadline, and the final identity reveal keep the engine alive."
+        "reasoning": "The story has a clear clock and a strong sequence engine once Sage enters the afterlife/guide framework. It does occasionally linger in explanatory dialogue, but the guitar, the birthday deadline, and the reveal of the mother keep the momentum alive."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A foster kid’s suicide attempt reframed through Christmas, music, and a soul-contract afterlife feels fresh and immediately legible. The final reveal that the Christmas nun is his mother and that the story is about choice lands the premise in a way that feels both surprising and inevitable."
+        "reasoning": "The central idea is fresh and instantly graspable: a boy who has no attachment to life is forced to confront meaning through music, myth, and the dead. The final reveal that the Christmas Nun is his mother gives the premise an emotional inevitability that feels earned."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The afterlife rules, soul contracts, spirit-guide bureaucracy, and 1960s/70s music culture create a world with its own logic and texture. The world is vivid and story-generating, though it is largely built through dialogue rather than layered external systems."
+        "reasoning": "The afterlife rules, the contract language, the spirit-guide bureaucracy, and the 1970s music-club world all create usable texture. The world is specific and story-generating, though it remains more symbolic than fully lived-in."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a very identifiable blend of Irish folktale cadence, deadpan celestial comedy, and earnest teen despair. The tonal voice is unusual enough that a single page would signal exactly what kind of movie this is."
+        "reasoning": "The script has a very specific tonal blend: earnest, whimsical, profane, and devotional all at once. The contrast between Aisling’s lyrical narration, Jesus’s dry bureaucracy, and the rock-star banter gives it a hard-to-copy identity."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the fantasy setup is a deeper story about abandonment, inherited choice, and the difference between existing and living. The final convent reveal and the mother’s story frame suggest more emotional depth than the surface adventure initially advertises."
+        "reasoning": "Beneath the fantasy setup is a real meditation on attachment, self-worth, and the stories we inherit from parents. The mother reveal and the contract logic suggest more emotional depth than the surface adventure initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "Sage’s dynamic with the three guides generates real combinatorial energy, especially when their personalities collide over how to help him. The ensemble is functional and lively, though the story still centers most heavily on Sage’s internal journey."
+        "score": 8,
+        "reasoning": "The Sage/Janis/Jimi/Jim dynamic generates constant friction, comedy, and emotional triangulation, and Jesus adds a separate authority lane. Any two or three of them in a room create playable scenes, which is a real asset for the feature."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Sage Smith",
+        "role_type": "Lead",
+        "demographics": "Male, 14, white/Anglo, foster child, emotionally isolated, working-class, California teen.",
+        "hook": "A bruised, defensive foster kid with no real attachments, Sage is all sharp edges and buried need. He enters the story ready to die, then gets dragged through a supernatural Christmas night that forces him to confront the one thing he has never allowed himself: the possibility that his life might matter.",
+        "why_actor_wants_this": "This is the showcase territory of a young River Phoenix in My Own Private Idaho or a teen lead in The Perks of Being a Wallflower — a role that lets an actor play numbness, anger, vulnerability, and a gradual emotional thaw in one arc."
+      },
+      {
+        "name": "Aisling",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Irish, convent-trained, spiritually luminous, physically fragile.",
+        "hook": "Aisling is the storybook narrator and emotional bridge between the convent past and Sage’s present. She speaks like a folk tale come alive, but the script reveals her as a woman who has lived through the same choice architecture she is now trying to explain to Sage.",
+        "why_actor_wants_this": "This is the kind of role that gave Saoirse Ronan in Brooklyn or Emily Watson in Hilary and Jackie a chance to carry warmth, mystery, and emotional authority at once — a performance built on voice and presence as much as plot."
+      },
+      {
+        "name": "Jesus",
+        "role_type": "Supporting",
+        "demographics": "Male, ageless/appears 30s, divine figure in human form, casual, witty, authoritative.",
+        "hook": "Jesus is less a solemn deity than a dry, overworked caseworker for souls, which is exactly why he works. He’s funny, patient, and a little exasperated, but he also carries the story’s moral weight and the final decision point.",
+        "why_actor_wants_this": "This is the showcase lane of Alan Rickman in Dogma or Morgan Freeman in Bruce Almighty — a role that lets an actor play authority, wit, and spiritual gravity without losing charm."
+      },
+      {
+        "name": "Janis Joplin",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s/appears as iconic 1960s rock star, white, flamboyant, emotionally open.",
+        "hook": "Janis is the emotional heart of the trio: impulsive, affectionate, funny, and unexpectedly maternal. She gives Sage the first real sense that he is seen, and she’s the one who can turn the room from chaos into grace.",
+        "why_actor_wants_this": "This is the kind of role that gave Kate Winslet in Eternal Sunshine or Melissa McCarthy in St. Vincent a chance to be both comic and deeply tender — a performance with warmth, swagger, and a late-scene emotional payoff."
+      },
+      {
+        "name": "Jim Morrison",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s/appears as iconic 1960s rock star, white, charismatic, volatile, poetic.",
+        "hook": "Morrison is the seductive, slightly dangerous intellect in the room, equal parts shaman, performer, and self-mythologizer. He can pivot from comic vanity to genuine compassion, which makes him the trio’s most unstable emotional weather system.",
+        "why_actor_wants_this": "This is the kind of role that let Val Kilmer in The Doors or Joaquin Phoenix in Walk the Line inhabit charisma with menace — a chance to play iconography, ego, and vulnerability in the same breath."
+      },
+      {
+        "name": "Jimi Hendrix",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s/appears as iconic 1960s rock star, Black, electric, playful, mercurial.",
+        "hook": "Hendrix is the wild card: funny, impatient, musically gifted, and always one beat away from chaos. He brings the script its most anarchic energy, but he also becomes part of the emotional argument for staying alive.",
+        "why_actor_wants_this": "This is the kind of role that gave Jamie Foxx in Ray or André 3000 in Idlewild a chance to perform charisma as movement, rhythm, and attitude — a role that lives in the body as much as the dialogue."
+      },
+      {
+        "name": "Wallace March",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, white, club owner, practical, decent, quietly burdened.",
+        "hook": "Wallace is the grounded adult in the real world, the man whose guitar and club become the physical bridge between Sage’s spiritual night and his waking life. He’s not flashy, but he matters because he’s the first living person to offer Sage a nonjudgmental hand.",
+        "why_actor_wants_this": "This is solid character-actor territory in the lane of Richard Jenkins in The Visitor or Jeffrey Wright in Basquiat — a role that plays restraint, decency, and emotional subtext."
+      },
+      {
+        "name": "Suzy",
+        "role_type": "Supporting",
+        "demographics": "Female, 15, white, street-smart, sexually confident, music-scene adjacent.",
+        "hook": "Suzy is the gateway into the club world: brash, funny, and more perceptive than she first appears. She clocks Sage quickly, then keeps nudging him toward the social and sensual world he has never really entered.",
+        "why_actor_wants_this": "This is the kind of role that gave Jennifer Lawrence in Winter’s Bone or Kaitlyn Dever in Short Term 12 a chance to be tough, funny, and emotionally readable at once."
+      },
+      {
+        "name": "Mother Superior",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, Irish, convent authority figure, stern but humane.",
+        "hook": "Mother Superior is the moral custodian of the convent scenes, equal parts discipline and mercy. She’s the one who understands the room’s miracle before anyone else does, and she gives the opening and closing frame its authority.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actor the same kind of scene-stealing dignity as Maggie Smith in The Best Exotic Marigold Hotel — controlled, dry, and quietly moving."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 9,
-        "leads": 5,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "One teenage lead",
-          "Three iconic musician roles requiring strong likeness or performance-channeling",
-          "One adult female narrator/guide role with Irish accent",
-          "One priest/doctor dual-role energy in the afterlife framing"
+          "teen lead with heavy emotional range",
+          "three iconic musician roles requiring strong physical and vocal resemblance",
+          "Irish-accented convent roles",
+          "one ageless divine figure"
         ]
       },
       "locations": {
         "distinct_count": 6,
-        "interior_exterior_ratio": "Mostly interior with a few key exterior night scenes",
-        "period_or_contemporary": "Period (1962 and 1976)",
+        "interior_exterior_ratio": "mostly interiors with a few key exteriors",
+        "period_or_contemporary": "period-piece",
         "notable_requirements": [
-          "1960s convent interior",
-          "1970s hospital/emergency room",
-          "1970s suburban vacant lot",
-          "1970s music club/band room",
-          "Period wardrobe and production design for two eras"
+          "1962 convent interior",
+          "1976 hospital emergency room",
+          "1976 vacant lot",
+          "1976 music club/band room",
+          "period wardrobe and set dressing for both 1960s and 1970s"
         ]
       },
       "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Soul separation, apparition work, glowing altar/collage effects, and a few magical transitions between time periods.",
-        "stunts_level": "none",
-        "sfx_needs": "Practical effects for ghostly appearances, clock/alarm transitions, and possible baby reveal staging.",
+        "vfx_level": "moderate",
+        "vfx_details": "Soul separation, magical parchment scroll, apparition/manifestation of Jesus and the three musicians, and a few stylized supernatural transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "practical effects for soul/body separation, clock and parchment gags, and apparition transitions.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "The script specifically uses 'Break on Through (To the Other Side)', 'Stairway to Heaven', 'Happy Birthday', 'Silent Night', and 'Jingle Bells'."
+          "detail": "The Doors' 'Break on Through (To the Other Side)', Led Zeppelin's 'Stairway to Heaven', 'Happy Birthday', 'Silent Night', and 'Jingle Bells' are all plot-embedded or performance-critical."
         },
         {
           "type": "real_person",
-          "detail": "Jimi Hendrix, Jim Morrison, Janis Joplin, and Jesus are all named and dramatized as characters."
+          "detail": "Jesus Christ is depicted as a speaking character."
         },
         {
-          "type": "brand",
-          "detail": "Martin D-28 is specifically named and central to the plot."
+          "type": "real_person",
+          "detail": "Jimi Hendrix, Janis Joplin, and Jim Morrison are depicted as speaking characters."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or festival-to-platform feature",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong holiday-season positioning and music-driven promotional value"
+        "recommended_lane": "streaming or specialty theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical with strong streaming afterlife"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The period convent, 1970s club, and supernatural effects keep this above a simple contained indie, but the location count stays manageable and the set pieces are character-driven rather than action-heavy."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained cast and limited locations keep it manageable, but period design, music licensing, and recognizable spirit appearances push it above micro-budget."
+      "casting": {
+        "level": "high",
+        "note": "Sage needs a young actor who can carry suicidal despair and comic wonder, while the Hendrix/Joplin/Morrison trio has to feel iconic rather than impressionistic. Jesus also needs a performer who can play authority without flattening the humor."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s voice is distinctive, but the tonal balance between sacred, profane, and whimsical is delicate, and the Jesus/rock-star framework will be a taste-driven conversation for buyers."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Defending Your Life",
+          "year": 1991,
+          "why_it_comps": "Shares the afterlife-as-bureaucracy structure and the emotional premise of a soul being asked to justify its life."
         },
-        "cast": {
-          "level": "high",
-          "note": "The project depends on a teenage lead plus four highly specific adult roles, including three famous musicians that invite casting scrutiny."
+        {
+          "title": "The Fisher King",
+          "year": 1991,
+          "why_it_comps": "Matches the blend of spiritual longing, urban myth, and wounded characters searching for redemption through connection."
         },
-        "location": {
-          "level": "medium",
-          "note": "The footprint is relatively contained, but it spans two time periods and requires distinct period environments for the convent, hospital, lot, and club."
+        {
+          "title": "Almost Famous",
+          "year": 2000,
+          "why_it_comps": "Comps on music-world texture, youthful longing, and the emotional power of being briefly accepted by a band of larger-than-life personalities."
         },
-        "content": {
-          "level": "medium",
-          "note": "Suicide, drug use, sexual frankness, and profanity are all present, which narrows family-facing lanes but fits mature streaming and festival audiences."
+        {
+          "title": "Dogma",
+          "year": 1999,
+          "why_it_comps": "The Jesus-as-character lane and the irreverent-but-sincere spiritual comedy register are close cousins."
         },
-        "rights": {
-          "level": "high",
-          "note": "Named songs, real historical figures, and the Martin guitar all create clear clearance and licensing considerations."
+        {
+          "title": "A Christmas Carol",
+          "year": 1984,
+          "why_it_comps": "The ghostly visitation structure and redemption-through-vision framework map cleanly onto the script’s Christmas-night intervention."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like prestige fantasy with music, heart, and a strong emotional payoff — especially viewers drawn to spiritually inflected coming-of-age stories.",
+        "demographics": "18-54, skewing female but with real male appeal through the music-icon hook; strongest with educated, culture-literate audiences and music fans.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A modest period build, a handful of interiors, and moderate supernatural effects keep this in indie-feature territory despite the music-icon casting and clearance considerations."
+      },
+      "lane_fit": {
+        "lane": "prestige fantasy drama with music DNA",
+        "types_of_buyers": [
+          "specialty distributors",
+          "streamer original film teams",
+          "prestige indie financiers",
+          "music-forward production companies",
+          "director-driven genre labels"
+        ],
+        "detail": "This sits naturally in the lane of elevated, emotionally sincere fantasy with a strong soundtrack identity. The hook is unusual enough to stand out, but the emotional core is accessible enough to sell to buyers looking for awards-adjacent crowd appeal."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The premise resolves around Sage’s one-night choice and does not naturally open a sequel or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise turns suicide into a Christmas fable.",
-          "what_it_means": "That gives the film a rare emotional lane: dark subject matter with a redemptive holiday frame, which is exactly the kind of contrast that can travel beyond genre buyers. Holiday-season streamers, prestige indie distributors, and music-forward marketers all have a clear way in.",
-          "evidence": "Sage’s Christmas Eve suicide attempt is interrupted by Jesus and the spirit-guided night that follows.",
+          "dimension_or_area": "A one-sentence hook with real emotional lift",
+          "what_it_means": "This is easy to pitch, easy to remember, and easy to market because the premise fuses a life-or-death teen story with iconic music mythology. That makes it attractive to specialty buyers and streamer teams looking for something that feels both original and emotionally legible.",
+          "evidence": "Sage’s suicide attempt, Jesus’s intervention, and the arrival of Janis, Jimi, and Jim all happen within the first act.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The rock-god trio is a built-in hook.",
-          "what_it_means": "Hendrix, Morrison, and Joplin give the movie instant cultural shorthand, soundtrack energy, and poster value in one package. Buyers who respond to recognizable IP-adjacent names, music audiences, and older-skewing nostalgia will immediately understand the draw.",
-          "evidence": "The three icons appear as Sage’s Spirit Guides and perform directly in the band room.",
+          "dimension_or_area": "The trio creates a built-in ensemble engine",
+          "what_it_means": "Janis, Jimi, and Jim are not just cameos; they generate banter, conflict, and emotional triangulation that can carry long scenes. That gives the film a playable cast dynamic that actors and directors can get excited about.",
+          "evidence": "Their arguments over Sage, the pills, and the meaning of the night repeatedly shift the scene energy.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Sage is a playable, emotionally legible lead.",
-          "what_it_means": "The role gives an actor a wounded, skeptical teenager who can move from deadpan resistance to open vulnerability without losing edge. That is the kind of part young dramatic leads use to announce range, and it gives casting a clear center of gravity.",
-          "evidence": "Sage’s guarded exchanges with Jesus, his anger over the pills, and his final shift toward guitar and choice.",
+          "dimension_or_area": "The Christmas setting gives the story a clean commercial wrapper",
+          "what_it_means": "The holiday frame makes the movie feel seasonal without turning it into a conventional family title, which broadens its programming value. Buyers can position it as a counter-programming Christmas release with heart and edge.",
+          "evidence": "The story is explicitly set on Christmas Eve and Christmas Day, with repeated use of carols and miracle imagery.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Irish narrator gives the film a signature voice.",
-          "what_it_means": "A strong framing voice can make a familiar redemption structure feel authored rather than generic, and it gives the movie a storybook identity that helps it stand out in a crowded marketplace. Directors and buyers looking for a tonal point of view will see immediate personality here.",
-          "evidence": "Aisling’s lyrical, accented narration bridges the convent, the afterlife, and Sage’s journey.",
+          "dimension_or_area": "The mother reveal gives the fantasy an emotional payoff",
+          "what_it_means": "The final connection between the Christmas Nun and Sage’s mother turns the supernatural premise into a personal inheritance story. That kind of reveal gives the film a stronger aftertaste and helps justify the spiritual conceit to skeptical buyers.",
+          "evidence": "Aisling is revealed as Sage’s mother, and the guitar becomes the bridge between them.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The guitar is a clean emotional object.",
-          "what_it_means": "The Martin D-28 functions as both inheritance and plot engine, which is exactly the kind of prop that can carry marketing art, emotional memory, and story movement at once. Music-driven buyers and audience-facing campaigns can build around a single iconic object with meaning.",
-          "evidence": "The guitar passes from Sage’s mother to him and becomes the key to his connection to life and family.",
+          "dimension_or_area": "The voice is unmistakable",
+          "what_it_means": "The script has a distinctive verbal identity that can help it stand out in a crowded indie marketplace. Buyers looking for authored material will respond to a piece that sounds like itself on the page.",
+          "evidence": "Aisling’s lyrical narration, the comic Jesus, and the profane rock-star dialogue all share a coherent, stylized register.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The afterlife rules are simple and cinematic.",
-          "what_it_means": "The soul contract, the clock, and the one-night deadline create a feature-length engine that is easy to explain and easy to sell. That clarity helps both producers and audiences because the movie’s mechanics are legible without needing heavy exposition.",
-          "evidence": "Jesus explains the contract, the birthday rule, and the alarm clock that governs Sage’s choice window.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending lands on a universal theme.",
-          "what_it_means": "The final reveal reframes the whole story as one about choice, inheritance, and being seen, which broadens the film beyond its period and music references. That gives it awards-friendly emotional lift and a clean takeaway for audiences.",
-          "evidence": "Aisling’s final conversation with the 18-year-old nun about “Our Choices” closes the film’s thematic circle.",
+          "dimension_or_area": "Music is not decoration; it is story engine",
+          "what_it_means": "The songs are tied to memory, identity, and the emotional turn of the plot, which makes the soundtrack feel integral rather than ornamental. That gives the film a strong hook for music-minded buyers and audience word of mouth.",
+          "evidence": "The guitar, 'Happy Birthday,' 'Silent Night,' and 'Break on Through' all drive key turns.",
           "source": "script"
         }
       ],
-      "headline": "This is a spiritually charged, music-soaked Christmas feature with a real hook: a suicidal foster kid gets one night with Hendrix, Morrison, and Joplin to choose life. The voice is singular, the emotional engine is clear, and the movie has the kind of iconography — guitar, saints, soul contract, holiday miracle — that can sell in a single image."
+      "headline": "This is a highly ownable prestige-fantasy feature: a suicidal teen, a Christmas-night spiritual quest, and the dead icons of rock music all in one package. The concept is commercial because it’s instantly pitchable, the cast dynamic is actor-friendly, and the contained period footprint keeps it inside a realistic indie budget lane."
     },
-    "lead_characters": [
-      {
-        "name": "Sage Smith",
-        "role_type": "Lead",
-        "demographics": "Male · 14 years old · Anglo teen",
-        "hook": "A bruised, angry foster kid who has learned to survive by keeping one foot out of every room he enters. He’s skeptical, defensive, and emotionally starved, but the script gives him a real inner turn: the possibility that music, family, and choice can still belong to him.",
-        "why_actor_wants_this": "This is the showcase territory of River Phoenix in My Own Private Idaho — a young performer carrying loneliness, wit, and ache in the same frame. It gives a teenage actor a full emotional arc from numbness to awakening, plus the rare chance to play stillness, defiance, and spiritual wonder in one role."
-      },
-      {
-        "name": "Aisling / Ash",
-        "role_type": "Lead",
-        "demographics": "Female · 20s · Irish accent",
-        "hook": "A warm, theatrical storyteller who speaks like she’s passing down a legend rather than narrating a plot. She carries the film’s memory, humor, and moral perspective, and her voice makes the whole piece feel like a fable being lovingly handed to the audience.",
-        "why_actor_wants_this": "This is the kind of narration-and-presence showcase Cate Blanchett had in The Curious Case of Benjamin Button, where voice becomes character and character becomes the film’s emotional spine. An actress who can command language, rhythm, and tenderness would see a rare opportunity to define the movie’s entire tone."
-      },
-      {
-        "name": "Jesus",
-        "role_type": "Lead",
-        "demographics": "Male · appears 30s · scrubs/doctor presentation",
-        "hook": "A playful, slightly exasperated celestial guide who mixes authority with mischief. He’s funny, disarming, and quietly compassionate, and the script lets him be both cosmic bureaucrat and intimate counselor.",
-        "why_actor_wants_this": "This is the showcase lane of Philip Seymour Hoffman in Charlie Wilson’s War — a scene-stealing authority figure who can pivot from comic ease to moral gravity without changing temperature. It gives a performer a chance to make theology feel conversational and human."
-      },
-      {
-        "name": "Janis Joplin",
-        "role_type": "Lead",
-        "demographics": "Female · appears late 20s · iconic 1960s rock star",
-        "hook": "A raw, affectionate, impulsive spirit who brings emotional honesty into the room before anyone else does. She’s the guide most openly tuned to Sage’s pain, and she gives the film its most direct line to empathy and female force.",
-        "why_actor_wants_this": "This is the kind of role that gave Renée Zellweger in Judy a chance to channel vulnerability, charisma, and public myth at once. An actress with musicality and edge gets a performance that can be funny, wounded, and deeply moving in the same breath."
-      },
-      {
-        "name": "Jim Morrison",
-        "role_type": "Lead",
-        "demographics": "Male · appears late 20s · iconic 1960s rock star",
-        "hook": "A swaggering, self-mythologizing guide who thinks in performance and speaks like he’s always halfway to a stage. He’s the most theatrical of the trio, but the script also lets him reveal insecurity and longing underneath the pose.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor do what Tom Hardy did in Bronson — weaponize charisma, then reveal the loneliness inside the persona. It’s a performance slot for someone who can command a room and still make the audience feel the ache behind the legend."
-      },
-      {
-        "name": "Jimi Hendrix",
-        "role_type": "Lead",
-        "demographics": "Male · appears late 20s · iconic 1960s rock star",
-        "hook": "A loose, funny, volatile presence whose cool is real but never entirely under control. He brings the film its wildest energy, and the script uses him to complicate the idea of wisdom by making him impulsive, funny, and unexpectedly human.",
-        "why_actor_wants_this": "This is the kind of performance territory Jamie Foxx had in Ray — a legendary musician role that demands presence, musical authority, and emotional specificity. A performer with real musical credibility would chase this for the chance to embody iconography without losing personality."
-      },
-      {
-        "name": "Mother Superior",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s",
-        "hook": "A practical, world-weary authority figure who understands more than she says. She’s stern, comic, and quietly compassionate, and she anchors the convent material with lived-in control.",
-        "why_actor_wants_this": "This is the kind of supporting role that gives Frances McDormand in a smaller register the pleasure of playing authority with wit and precision. Character actresses who can make a few scenes feel fully inhabited will be drawn to the role’s dry command."
-      },
-      {
-        "name": "Wallace March",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "A decent, grounded club owner whose concern feels real the moment he enters the story. He functions as the human bridge between the mythic material and the physical world, and he carries the final reveal with quiet sincerity.",
-        "why_actor_wants_this": "This is the kind of grounded supporting part that David Strathairn has often made memorable — a man whose decency changes the temperature of a scene without needing speeches. It’s attractive to actors who like playing the emotional truth under the plot mechanics."
-      },
-      {
-        "name": "Suzy",
-        "role_type": "Supporting",
-        "demographics": "Female · 15 years old · surfer-girl energy",
-        "hook": "A sharp, streetwise teen who knows the club scene and knows how to test a stranger. She’s funny, flirtatious, and practical, and she gives Sage his first real peer connection in the story.",
-        "why_actor_wants_this": "This is the kind of breakout supporting role that launched actors in Dazed and Confused — cool, specific, and instantly watchable. A young actress with attitude and timing would get a memorable, quotable part that can pop in trailers and clips."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a faith-adjacent music fable without sanding off the weirdness.",
-        "fit_profile": "Established indie directors with at least one or two festival features, or TV-to-feature filmmakers who already work well with performance-forward material. The sweet spot is someone drawn to tonal control, period texture, and emotionally sincere storytelling that can still carry humor, music, and a little surrealism.",
-        "detail": "The material rewards a director who can hold a delicate balance: deadpan comedy, spiritual stakes, and period music culture all in the same frame. It’s especially attractive to filmmakers who like to stage intimate scenes with strong visual motifs rather than rely on spectacle."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streaming / festival-to-platform / holiday counterprogramming",
-        "detail": "The contained cast and limited locations make it viable without tentpole-scale spending, but the named music and real-person roles mean it benefits from a buyer comfortable attaching recognizable talent or a strong director early. The holiday setting plus music-icon hook gives it a seasonal marketing lane and a built-in nostalgia audience that travels well on streaming."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The music clearances are the first buyer conversation.",
+          "detail": "The script is built around plot-critical use of The Doors, Led Zeppelin, and multiple carols, plus performance moments that depend on those songs landing. That means sync cost and rights availability are not incidental; they are part of the greenlight math.",
+          "is_primary_lever": true,
+          "source": "production"
+        },
+        {
+          "area": "The Jesus-and-rock-icons premise is taste-dependent.",
+          "detail": "The script asks buyers to embrace a very specific blend of reverence, irreverence, and pop-mythology, and that will not be universal. For some executives it will read as inspired; for others it will be a hard tonal ask before they even get to the emotional payoff.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Sage’s interior arc is sometimes carried by explanation.",
+          "detail": "A lot of the emotional logic is delivered through Aisling’s narration, Jesus’s exposition, and the spirit-guide dialogue rather than through action alone. That keeps the premise clear, but it also means the lead’s transformation is occasionally more spoken than dramatized.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The period and iconography narrow the casting lane.",
+          "detail": "Sage has to read as fragile, angry, and sympathetic in the same frame, and the three musician roles need recognizable charisma without becoming impersonations. That combination narrows the pool and makes attachment more consequential than the page count suggests.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The biggest friction is clearance and taste: the movie lives on named songs, named icons, and a very specific spiritual-comic tone that will be a yes for some buyers and a pass for others. Beyond that, the lead role and period styling are manageable, but they do require a cast and package that can sell the premise fast."
     },
-    "considerations": [
-      {
-        "area": "The middle section leans on explanation.",
-        "detail": "The hospital-to-contract material does a lot of world-building through dialogue, especially in the long Jesus/Sage exchange about the soul plan and the birthday rule. One lever would be to let one or two of those ideas land through a sharper visual or behavioral turn so the momentum keeps feeling cinematic rather than explanatory.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The spirit-guide trio carries the whole engine.",
-        "detail": "The movie is most alive when Hendrix, Morrison, and Joplin are bouncing off each other and Sage, so the version of the script where each guide has one more distinct emotional function would deepen the ensemble. That would protect the comedy while giving each appearance a slightly different dramatic job.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The rights package is doing real work.",
-        "detail": "The named songs, the famous musicians, and the Martin D-28 all create a clear clearance path that should be thought through early. A producer-friendly version would keep the same emotional architecture while confirming which songs are must-haves versus nice-to-haves.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The period footprint is manageable but specific.",
-        "detail": "The story moves between 1962 and 1976, with a convent, hospital, vacant lot, and club all needing distinct period flavor. A next pass could keep the same emotional beats while continuing to favor locations that can double cleanly across the two eras.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Sage’s final turn is the emotional key.",
-        "detail": "The script already lands on the idea that music and choice are what pull him back, and that’s the right destination. One direction would be to keep foregrounding the specific moment where he moves from wanting to disappear to wanting to play, because that’s the cleanest expression of the movie’s thesis.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 73.3,
+  "weightedScore": 75,
   "tier": "Optionable",
-  "inputTokens": 42328,
-  "outputTokens": 4605,
-  "cost": 0.052468499999999994,
+  "inputTokens": 44733,
+  "outputTokens": 4865,
+  "cost": 0.055442250000000005,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T04:46:35.986Z",
+  "submission_id": "330ea354-c4de-4be0-9db8-d9119f0cbaa9",
+  "eval_id": "a2119bb9-ae2b-4d78-8126-238580d712c4",
+  "title": "In the Maze of Existence (13)",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Amir",
+      "role_type": "Lead",
+      "demographics": "Male, 20s, South Asian or Middle Eastern-coded, founder/engineer, likely immigrant or first-generation background."
+    },
+    {
+      "name": "Alexey",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Eastern European-coded, security guard / basement resident / aspiring filmmaker."
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, likely South Asian or Middle Eastern-coded, writer/poet, working professional under pressure."
+    },
+    {
+      "name": "Alana",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, likely South Asian or Middle Eastern-coded, medical trainee or high-achieving partner."
+    },
+    {
+      "name": "Virgil",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, white or ambiguous, investor-facing company presence / nepo-baby energy."
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, contemporary professional, socially direct."
+    },
+    {
+      "name": "Mass",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, working-class, security/bouncer type."
+    },
+    {
+      "name": "Noor",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, contemporary, writer/reader type."
+    },
+    {
+      "name": "Catherine",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, contemporary, friend/reader type."
+    },
+    {
+      "name": "Paolla",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, influencer/public-facing creator."
+    },
+    {
+      "name": "Samir",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, contemporary, peer in the social circle."
+    },
+    {
+      "name": "Ivan",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, contemporary, peer in the social circle."
+    }
+  ],
+  "positioning_hook": "A restless defense-tech founder, his drifting circle of artists and strivers, and a basement full of smoke collide as a Ukrainian-American startup starts attracting military money and personal chaos.",
+  "cost_usd": 0.03757725,
+  "input_tokens": 18663,
+  "output_tokens": 5240,
+  "status": "wrote:leads_ok"
+}

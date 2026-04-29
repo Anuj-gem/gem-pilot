@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:53:34.336Z",
+  "submission_id": "0e693cfa-e5ef-4bd2-ae8e-e1e39735cc53",
+  "eval_id": "36c02dfe-65e3-4a41-bfd8-b52569f7c026",
+  "title": "Challengers 2024 screenplay",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tashi Donaldson",
+      "role_type": "Lead",
+      "demographics": "Black woman, early-to-mid 30s, former elite tennis player, wife and coach, mother."
+    },
+    {
+      "name": "Art Donaldson",
+      "role_type": "Supporting",
+      "demographics": "White man, early-to-mid 30s, elite professional tennis player, husband, father."
+    },
+    {
+      "name": "Patrick Zweig",
+      "role_type": "Supporting",
+      "demographics": "White man, early-to-mid 30s, Jewish, former junior phenom, struggling pro tennis player."
+    },
+    {
+      "name": "Lily",
+      "role_type": "Supporting",
+      "demographics": "Young child, daughter of Tashi and Art."
+    },
+    {
+      "name": "Jeremy",
+      "role_type": "Supporting",
+      "demographics": "Adult man, Art’s nutritionist."
+    },
+    {
+      "name": "Ken",
+      "role_type": "Supporting",
+      "demographics": "Adult man, physiotherapist."
+    },
+    {
+      "name": "Raul",
+      "role_type": "Supporting",
+      "demographics": "Adult man, hitting partner."
+    },
+    {
+      "name": "Andrew",
+      "role_type": "Supporting",
+      "demographics": "Adult man, security guard."
+    },
+    {
+      "name": "Tom",
+      "role_type": "Supporting",
+      "demographics": "Adult man, off-screen or minor tennis contact."
+    },
+    {
+      "name": "Karl",
+      "role_type": "Supporting",
+      "demographics": "Adult man, German former player, coach."
+    }
+  ],
+  "positioning_hook": "A former tennis prodigy turned coach forces her husband and ex-lover into a winner-take-all challenger match, where old desire, professional humiliation, and marriage collide on court.",
+  "cost_usd": 0.05960549999999999,
+  "input_tokens": 50626,
+  "output_tokens": 4808,
+  "status": "wrote:leads_ok"
+}

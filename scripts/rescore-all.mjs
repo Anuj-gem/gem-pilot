@@ -147,6 +147,10 @@ function calcTier(composite) {
 // ── Extract prompt template from evaluation-prompt.ts ──────────────
 // The source is TS, so we can't import it directly. We extract the
 // template literal body and do ${formatLine} / ${declaredFormat} sub.
+//
+// Anuj 2026-04-29: there is now exactly ONE prompt file in the repo.
+// /api/score-submission imports it, this script reads it off disk.
+// Edit the prompt, both code paths update — no more shadow drift.
 const promptPath = path.join(process.cwd(), 'src', 'lib', 'evaluation-prompt.ts')
 const promptSrc = await fs.readFile(promptPath, 'utf-8')
 
@@ -197,14 +201,20 @@ const RUN_TS = new Date().toISOString().replace(/[:.]/g, '-')
 const RUN_DIR = path.join(process.cwd(), 'data', 'rescore-runs', RUN_TS)
 fsSync.mkdirSync(RUN_DIR, { recursive: true })
 const PROMPT_HASH = crypto.createHash('sha256').update(sanity).digest('hex').slice(0, 12)
-const V53_MARKER_PRESENT =
-  sanity.includes('There is **no upper limit**') &&
-  sanity.includes('Same character across time / ages')
+// Selznick 3.8 markers — refuse to run if any of these schema fields are
+// missing from the extracted prompt body. Replaces the prior v5.3
+// markers; the v5.3 prompt ("There is **no upper limit**" /
+// "Same character across time / ages") is the legacy file we just
+// stopped reading from.
+const SELZNICK_MARKERS_PRESENT =
+  sanity.includes('"risk_details"') &&
+  sanity.includes('"packaging"') &&
+  sanity.includes('"issues"')
 console.log(`Prompt hash: ${PROMPT_HASH}`)
-console.log(`v5.3 markers: ${V53_MARKER_PRESENT ? 'PRESENT ✓' : 'MISSING ✗'}`)
+console.log(`Selznick 3.8 markers: ${SELZNICK_MARKERS_PRESENT ? 'PRESENT ✓' : 'MISSING ✗'}`)
 console.log(`Run receipts: data/rescore-runs/${RUN_TS}/`)
-if (!V53_MARKER_PRESENT) {
-  console.error('ERROR: prompt does not contain the v5.3 markers — refusing to run')
+if (!SELZNICK_MARKERS_PRESENT) {
+  console.error('ERROR: prompt does not contain the Selznick 3.8 schema markers — refusing to run')
   process.exit(1)
 }
 
@@ -217,7 +227,7 @@ function writeReceipt(submissionId, evalId, title, declaredFormat, systemPrompt,
     title,
     declared_format: declaredFormat,
     prompt_hash: PROMPT_HASH,
-    prompt_v53_markers_present: V53_MARKER_PRESENT,
+    prompt_selznick_markers_present: SELZNICK_MARKERS_PRESENT,
     prompt_length_chars: systemPrompt.length,
     prompt_first_200: systemPrompt.slice(0, 200),
     prompt_last_200: systemPrompt.slice(-200),
@@ -657,7 +667,7 @@ async function processOne(sub, absoluteIdx) {
         evaluation: result.evaluation,
         weighted_score: result.weightedScore,
         tier: result.tier,
-        model: 'gpt-5.4-mini-rescore',
+        model: 'gpt-5.4-mini-selznick-3-8-rescore',
         input_tokens: result.inputTokens,
         output_tokens: result.outputTokens,
         cost_usd: result.cost,

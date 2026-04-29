@@ -2,234 +2,278 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "action",
-        "family drama"
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Sci-Fi",
+        "Thriller"
       ],
-      "tone": "High-concept, tense, emotional, kinetic"
+      "tone": "propulsive",
+      "tags": [
+        "male-lead",
+        "child-lead",
+        "contemporary",
+        "high-concept",
+        "propulsive",
+        "character-driven",
+        "fatherhood",
+        "survival",
+        "teleportation",
+        "los-angeles"
+      ]
     },
-    "positioning_hook": "A teleporting father races through downtown L.A. to rescue his kidnapped daughter, forcing her to master a deadly jump power before their captors collar them both.",
+    "positioning_hook": "A teleporting father races through downtown Los Angeles to rescue his kidnapped daughter before a black-ops team collars her powers and forces a deadly blind jump.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is instantly legible and built around a parent-child rescue engine, which gives it broad genre appeal. It plays especially well for viewers who want a clean high-concept hook with emotional stakes, though the short-form scale keeps the commercial ceiling more focused than expansive."
+        "reasoning": "The rescue engine is immediate, emotional, and easy to sell: a father, a kidnapped child, and a ticking-clock chase with a sci-fi power twist. The appeal is strongest for genre buyers and action-thriller audiences rather than a broad four-quadrant crowd, because the script is built around a very specific premise and a contained emotional relationship."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The opening pages establish the teleportation rule, the black app, the kidnapped child, and the ticking rescue immediately. The script is very easy to explain in one breath, and the mechanics of the blind jump give the concept a memorable engine."
+        "reasoning": "The hook lands in the first pages: James teleports, uses a mysterious black app to locate Rosie, and has to coordinate a rescue through a phone call while the enemy watches her in real time. The rules of the power and the rescue objective are clear early, which gives the script a clean, pitchable engine."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "James has a strong protective drive and Rosie gives the story heart, especially in the phone-call scenes where fear and trust collide. The characters are effective in the moment, though the short format keeps them more archetypal than layered."
+        "reasoning": "James has a strong core want and a clear emotional wound around Rosie and her mother, but he is mostly defined by mission pressure and protective urgency. Rosie is vivid and sympathetic, and Nora/Edgar/Davidson add texture, though the script is more built on function than on deep character surprise."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The phone-based rescue choreography, the clap-code communication, and the final midair physics solution give the piece a distinct problem-solving identity. It feels like a writer who understands how to turn a simple power set into a sequence of escalating tactical choices."
+        "reasoning": "The phone-based rescue choreography, the clapping code with a trapped child, and the physics of blind-jumping give the script a fresh action set-up. It is still operating in a familiar kidnapped-child/black-ops lane, but the execution has enough specificity to feel ownable."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script moves with real urgency from the first teleport burst through the escalating containment, collar threat, and airborne climax. Each beat tightens the noose, and the final rescue lands as a clean payoff to the setup."
+        "reasoning": "The script is relentlessly forward-moving: every beat either advances the rescue, tightens the surveillance net, or escalates the danger of the jump. The final airborne sequence is especially strong because it converts the premise into a literal life-or-death countdown with no room to stall."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "A father and daughter sharing a teleportation crisis is a fresh enough hook to stand out, and the blind-jump idea gives the story a signature move. The emotional logic is simple and immediate, which helps the concept feel both novel and easy to grasp."
+        "reasoning": "The central idea is simple enough to grasp instantly, but the combination of teleportation, a child prisoner, and a live remote rescue gives it a memorable shape. It feels fresh without being abstract, though the underlying structure still sits close to familiar pursuit-thriller DNA."
       },
       "world_density_and_texture": {
-        "score": 5,
-        "reasoning": "The office-building maze, monitor room, warehouse prep area, and rooftop geography create functional texture around the chase. The world is mostly there to service the rescue, but the black app, ceramic comm chip, and tac teams hint at a larger system beyond the frame."
+        "score": 6,
+        "reasoning": "The world has useful tactical details — ceramic comm chips, collars that block powers, silent surveillance, A/B teams, and the black app — but it is mostly a pressure container for the rescue. The office-building setting and black-site infrastructure are specific, yet the script does not build a larger social or institutional world beyond the immediate chase."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone blends thriller mechanics with a very specific parental panic, especially in the scenes where James coaches Rosie through fear while enemies listen in. It has a clean emotional signature: tactical sci-fi pressure filtered through a father trying to sound calm for a terrified child."
+        "reasoning": "The tone is tense and kinetic, but what makes it stand out is the collision of brutal tactical menace with a father-daughter emotional plea. The script keeps that register consistent, especially in the clapping communication and the final sky-fall sequence, which gives it a distinct emotional-action blend."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "The script is built to deliver its premise efficiently, and what it shows is largely what it is: a rescue under pressure. There are seeds of deeper history in the references to Rosie’s mother, James’s guilt, and Edgar’s family tie, but the short format keeps those reserves mostly implied."
+        "reasoning": "There are seeds of deeper backstory — the mother’s death, Edgar’s family tie, Davidson’s control, and the ethics of using a child’s powers — but the script stays focused on the immediate rescue. It is effective as a contained feature premise, though it does not suggest a lot of hidden layers beyond the central mission."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "The James-Rosie bond is the core engine and it carries the piece well. Nora, Davidson, and Edgar add functional opposition and one useful emotional fracture, but the story remains centered on one relationship rather than a web of recurring dynamics."
+        "score": 6,
+        "reasoning": "James and Rosie are the engine, and their call-and-response dynamic is the script’s strongest relationship. Nora, Davidson, and Edgar create a workable antagonist triangle, but the story is not built for broad ensemble interplay; it lives primarily on the father-daughter bond and the pressure it creates."
       }
     },
+    "lead_characters": [
+      {
+        "name": "James",
+        "role_type": "Lead",
+        "demographics": "Male, 30s, father, physically capable, contemporary American.",
+        "hook": "An exhausted but highly competent everyman with teleportation powers, James is operating on pure paternal panic and tactical instinct. He’s funny only in the way desperate people get funny, and the script gives him a hard edge when he realizes the people holding Rosie are not negotiating in good faith; his love for his daughter is the only thing keeping him from becoming fully feral.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in Locke or Michael Shannon in Take Shelter — a contained, high-pressure role where the actor carries the movie through urgency, guilt, and physical command. It gives a performer the chance to play action, grief, and moral fury in one sustained rescue run."
+      },
+      {
+        "name": "Rosie",
+        "role_type": "Supporting",
+        "demographics": "Female, child, around 6 years old.",
+        "hook": "Rosie is the emotional center of the script: frightened, obedient, and trying very hard to be a good kid in a situation she barely understands. Her power is enormous, but the writing makes the real drama her terror of using it and her longing for her mother, which gives the character heartbreaking innocence under extreme pressure.",
+        "why_actor_wants_this": "This is the kind of child role that can define a young performer the way Brooklynn Prince in The Florida Project did — emotionally precise, vulnerable, and unforgettable without being cute. It offers a rare chance for a child actor to carry fear, confusion, and courage in the same role."
+      },
+      {
+        "name": "Nora",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, trained operative / security professional.",
+        "hook": "Nora is the cold, efficient face of the operation, the kind of antagonist who understands procedure and uses it as cruelty. She reads as disciplined rather than cartoonish, which makes her more dangerous in the room because she believes she is doing the right thing.",
+        "why_actor_wants_this": "This is strong antagonist material in the vein of Rebecca Ferguson in Mission: Impossible or Jodie Comer in The Last Duel — controlled, intelligent, and physically alert. It gives an actor a chance to play authority, menace, and tactical intelligence without losing composure."
+      },
+      {
+        "name": "Davidson",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, senior authority figure.",
+        "hook": "Davidson is the polished institutional predator: calm, managerial, and willing to let other people absorb the violence. He has the most overtly cynical worldview in the script, and the fact that he can speak in civilized language while ordering a child collaring makes him the story’s most chilling power figure.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the same pleasure as Bryan Cranston in Trumbo or Michael Keaton in Spotlight — authority, intelligence, and a moral rot that can be played with restraint. It’s a delicious villain part for a performer who can make control feel threatening."
+      },
+      {
+        "name": "Edgar",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, athletic, family-linked to Rosie.",
+        "hook": "Edgar is the internal fracture in the enemy side: physically dangerous, emotionally compromised, and tied to Rosie by blood. He starts as a tactical presence and then becomes the script’s pressure valve, because his loyalty is split between the operation and the child.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the turn-and-release work of a Jon Bernthal or Yahya Abdul-Mateen II part — controlled menace that can break into action and emotion fast. The family tie gives the performance a personal stake that lifts it above standard henchman territory."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 5,
-        "leads": 2,
-        "series_regulars": 3,
+        "leads": 1,
+        "series_regulars": 4,
         "child_actors": true,
         "casting_characteristics": [
-          "One child lead",
-          "Physically active adult male lead",
-          "Physically active adult female antagonist",
-          "One supporting role with MMA/fight capability"
+          "one child lead carrying sustained fear and dialogue",
+          "one physically capable adult lead with action and emotional range",
+          "one older authority villain",
+          "one athletic supporting antagonist with fight ability"
         ]
       },
       "locations": {
-        "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interior with key exterior rooftop/alley beats",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 6,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Downtown Los Angeles office tower",
-          "Rooftop access",
-          "Warehouse-like interior",
-          "Contained monitor room",
-          "Elevator and lobby coverage"
+          "downtown los angeles rooftops",
+          "office building lobby and upper floors",
+          "holding-cell interior",
+          "warehouse/security room",
+          "macarthur park exterior"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Teleportation blips, electric bursts, airborne fall choreography, and a few body-displacement moments into walls/space.",
+        "vfx_details": "Teleportation blips, electric bursts, falling-from-sky shots, and a few perspective-driven effects for the blind-jump sequence.",
         "stunts_level": "moderate",
-        "sfx_needs": "Collar effects, stun-gun/rubber-bullet action, practical impact beats, and a death-by-wall-materialization gag.",
+        "sfx_needs": "collar effects, electrical discharge, rubber-bullet impacts, practical fight beats, and death-by-wall impact staging.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium-cable sci-fi thriller lane; also viable as a festival-forward genre short-to-feature expansion piece",
-        "content_level": "PG-13 equivalent with intense peril and some violence",
-        "series_engine_or_release_model": "Feature release model: festival launch, genre-platform acquisition, or contained theatrical/streaming play"
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: contained genre thriller with a strong hook for streamer launch or specialty theatrical play."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the footprint contained, but the rooftop work, sky-fall sequence, teleportation effects, and action beats will push beyond a simple contained-thriller cost profile."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained locations keep it efficient, but the teleportation VFX, airborne climax, and action beats push it above micro-budget territory."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to carry action, guilt, and paternal panic at once, while Rosie has to sustain fear and clarity through a large share of the emotional engine. Edgar also needs credible fight ability, which narrows the supporting cast pool."
+      },
+      "development": {
+        "level": "low",
+        "note": "The premise is clean and the rescue objective is clear from page one; the main development conversation is packaging and execution scale rather than story comprehension."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Upgrade",
+          "year": 2018,
+          "why_it_comps": "Shares the body-control sci-fi premise and lean, propulsive revenge energy, with a protagonist whose powers are inseparable from physical vulnerability."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script depends on a strong child performance plus a physically credible adult lead and antagonist trio."
+        {
+          "title": "Run Lola Run",
+          "year": 1998,
+          "why_it_comps": "Matches the breathless, clock-ticking momentum and the sense of a single urgent mission driving every scene."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story is mostly contained, but it still needs a convincing office tower, rooftop access, elevator movement, and warehouse coverage."
+        {
+          "title": "Source Code",
+          "year": 2011,
+          "why_it_comps": "Comps on the clean high-concept mechanics and the way a contained mission becomes emotionally legible through a single relationship."
         },
-        "content": {
-          "level": "medium",
-          "note": "Intense child peril, gunfire, collar restraint, and a bloody wall-impact death keep it in a tense PG-13-to-R lane."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named real people, brands, music, or external IP are central to the story."
+        {
+          "title": "The Invisible Man",
+          "year": 2020,
+          "why_it_comps": "Shares the modern, stripped-down genre packaging and the feeling of a protagonist fighting an unseen, technologically enabled threat."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre audiences who want a fast, emotional rescue thriller with a sci-fi twist and a strong parent-child hook.",
+        "demographics": "Adults 18-49, with a slight male skew for the action mechanics and strong female reach through the child-endangerment/family stakes.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary Los Angeles locations, a small cast, and limited set count keep it indie, with moderate VFX and action sequences as the main cost drivers."
+      },
+      "lane_fit": {
+        "lane": "elevated sci-fi thriller",
+        "types_of_buyers": [
+          "streamer originals dev execs building genre-forward feature slates",
+          "boutique genre financiers looking for a contained hook",
+          "specialty distributors seeking a high-concept action title",
+          "producer-directors with a strong visual reel and limited-budget action experience"
+        ],
+        "detail": "The script sits in the lane of smart, contained genre pieces that can be sold on premise and executed without tentpole scale. The father-daughter emotional spine gives it enough heart to widen beyond pure effects-driven sci-fi."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the premise is built around one rescue mission and one family relationship, with no clear spinoff vector beyond this story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The rescue engine is instantly playable.",
-          "what_it_means": "A producer gets a clean, high-concept chase story that can be pitched in one sentence and understood in one glance. That kind of clarity is attractive to genre buyers, streamer executives, and festival programmers who want a premise with immediate audience traction.",
-          "evidence": "The opening teleports James from rooftop to alley, then cuts straight into the phone call with Rosie in the holding cell.",
+          "dimension_or_area": "The rescue engine is instantly legible.",
+          "what_it_means": "That clarity makes the script easy to pitch, easy to market, and easy for a buyer to understand in one pass. It gives the project a clean commercial spine for streamer or specialty theatrical packaging.",
+          "evidence": "James teleports through downtown, calls Rosie through the black app, and learns in real time that she is being watched and moved toward a collar.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The father-daughter bond carries the whole machine.",
-          "what_it_means": "The emotional center gives the action a human reason to exist, which makes the piece feel more like a showcase than a concept exercise. Actors who want a role that combines urgency, tenderness, and guilt will see a strong two-hander opportunity here.",
-          "evidence": "James coaching Rosie through claps, jumps, and fear while trying to keep his voice calm on the phone.",
+          "dimension_or_area": "The father-daughter call is the movie.",
+          "what_it_means": "The emotional hook is not decorative; it is the delivery system for the action, which makes the premise feel human rather than gadget-driven. That is exactly the kind of built-in audience attachment that helps a genre script travel beyond effects buyers.",
+          "evidence": "The clapping code, the repeated pleas for Mommy, and James coaching Rosie through fear all turn the rescue into a relationship test.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The power rules create tactical suspense.",
-          "what_it_means": "The line-of-sight teleport logic and the need to coordinate jumps in real time give the script a built-in escalation system. That makes the action feel designed rather than random, which is exactly what helps a contained genre piece feel premium.",
-          "evidence": "The black app map, the ceramic comm chip, the blind jump, and the final synchronized midair rotation.",
+          "dimension_or_area": "The blind-jump finale is a strong set piece.",
+          "what_it_means": "The climax converts the premise into a visually memorable, high-stakes action sequence that can sell the trailer and justify the genre promise. It gives the project a signature moment that feels specific rather than generic.",
+          "evidence": "Rosie repeatedly blips upward and falls through the sky while James times the rotation to catch her and reverse the fall.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Rosie is not just a hostage; she becomes the climax.",
-          "what_it_means": "The child lead is the story’s emotional and physical payoff, which gives the script a memorable center of gravity. Buyers respond to stories where the smallest character in the room ends up carrying the biggest turn.",
-          "evidence": "Rosie’s terror, her first electric burst, and her decision to attempt the blind jump.",
+          "dimension_or_area": "The power rules are simple and playable.",
+          "what_it_means": "Clear rules reduce audience friction and make the action readable, which is a major advantage for a contained sci-fi thriller. Buyers like premises where the mechanics can be explained fast and then paid off cleanly.",
+          "evidence": "Teleportation works by line of sight or memory, and the collar blocks the power with a clear physical consequence.",
           "source": "script"
-        },
-        {
-          "dimension_or_area": "The set pieces are economical and cinematic.",
-          "what_it_means": "The script gets mileage out of offices, elevators, rooftops, and a warehouse, which keeps the production footprint manageable while still feeling big on screen. That is useful for a buyer looking for a genre title that can travel without needing a massive build.",
-          "evidence": "The lobby, elevator, empty eighth floor, monitor room, warehouse, and rooftop sequence all drive the climax.",
-          "source": "both"
         }
       ],
-      "headline": "This is a clean, marketable sci-fi rescue thriller with a strong emotional spine: a father and daughter using a dangerous teleport power under surveillance, pressure, and time. The script’s best asset is that the action is inseparable from the relationship, so every set piece doubles as character payoff."
+      "headline": "This is a clean, high-concept rescue thriller with a built-in emotional engine: a father trying to save his kidnapped daughter through a live, tactical phone call. The contained contemporary footprint and modest cast make it packageable at indie scale, while the teleportation rules and sky-fall climax give buyers a trailer-ready genre hook."
     },
-    "lead_characters": [
-      {
-        "name": "JAMES",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · physically active",
-        "hook": "James is an exhausted, hyper-competent father who has turned survival into a reflex. He reads like a man who has lived inside danger long enough to make calm sound like love, and the script keeps revealing how much guilt sits under that control.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in Locke or Jake Gyllenhaal in Prisoners — a pressure-cooker lead whose body, voice, and timing have to carry the entire rescue. Actors who want a role that lets them play tactical intelligence, panic management, and buried remorse in the same breath will chase this."
-      },
-      {
-        "name": "ROSIE",
-        "role_type": "Lead",
-        "demographics": "Female · 6-8 years old",
-        "hook": "Rosie is a frightened little girl forced to become a participant in a power she barely understands. Her sweetness, obedience, and terror all live side by side, which makes her feel painfully real rather than symbolic.",
-        "why_actor_wants_this": "This is the kind of child-performance showcase that made Brooklynn Prince in The Florida Project unforgettable — a role where innocence and survival instinct collide on camera. For a young performer, it offers emotional range, physical action, and the rare chance to anchor a genre climax."
-      },
-      {
-        "name": "NORA",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s",
-        "hook": "Nora is the cold-eyed operator in the monitor room, the kind of professional who has trained herself to treat fear as data. She carries intelligence, discipline, and just enough human fatigue to suggest there’s a person under the procedure.",
-        "why_actor_wants_this": "This is the controlled, steel-edged territory of Rebecca Ferguson in Mission: Impossible or Carrie Coon in The Leftovers — a role that lets an actor project authority while keeping emotion tightly leashed. Actors who enjoy playing competence with a crack in it will be drawn to her."
-      },
-      {
-        "name": "DAVIDSON",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Davidson is the polished, dangerous boss who weaponizes calm. He speaks like a man who believes control is morality, and the script gives him the kind of quiet menace that can turn a room cold without raising his voice.",
-        "why_actor_wants_this": "This is the authority-and-poison lane of Bryan Cranston in Breaking Bad or Michael Shannon in Take Shelter — a role where stillness becomes threat. Character actors who like playing institutional power with a personal agenda will want this part."
-      },
-      {
-        "name": "EDGAR",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s · athletic / fight-capable",
-        "hook": "Edgar is the volatile inside man, physically imposing but emotionally exposed. He has the energy of someone trained to act like muscle, yet the script gives him a family tie that makes him the one character most likely to break ranks.",
-        "why_actor_wants_this": "This is the showcase space of Jon Bernthal in Wind River or Yahya Abdul-Mateen II in The Trial of the Chicago 7 — a role that can pivot from threat to loyalty in a single beat. Actors with physical credibility who also want a human fracture point will chase it."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to turn a simple power set into suspense choreography.",
-        "fit_profile": "First- or second-feature directors, or short-film directors moving up, who already lean toward contained genre storytelling, clean visual rules, and performance-forward action. This material rewards directors who like making geography legible and emotional stakes readable while keeping the camera close enough to feel the panic.",
-        "detail": "The script gives a director a chance to stage action as problem-solving: phone calls, surveillance, elevators, rooftops, and a final airborne rescue all have clear spatial logic. It will attract filmmakers who want to prove they can deliver tension, emotion, and a polished genre finish without needing a giant canvas."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Contained sci-fi thriller / premium streamer genre lane",
-        "detail": "It can be packaged around one strong adult lead, one child lead, and a contained ensemble, which lowers the attachment burden compared with larger effects-driven genre pieces. The teleportation premise and parent-child rescue hook are easy to market in a streamer thumbnail or genre-festival acquisition conversation."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The premise is strongest as a short-form engine.",
+          "detail": "The script is built around one rescue run, one location network, and one climax, which is a very efficient feature premise but also a sign that the material is operating close to a short-film spine. For feature buyers, the question will be whether the 20-page version is enough story for a full commercial run time without feeling stretched.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Rosie carries the emotional burden very young.",
+          "detail": "The child role is central to the movie’s emotional credibility, and the script asks a very young performer to sustain fear, confusion, obedience, and courage across the whole piece. That is a real casting conversation because the movie’s heart depends on a child actor landing a difficult tonal balance.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The action scale rises fast at the end.",
+          "detail": "The rooftop capture, sky-fall sequence, and repeated blips in midair create a visual finish that is more expensive than the opening pages suggest. The project stays contemporary and contained, but the climax will still require disciplined effects and stunt planning to stay inside indie economics.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The antagonist side is functional, not deeply layered.",
+          "detail": "Davidson, Nora, and the tactical teams do the job cleanly, but the script is not building a richly textured enemy world; it is building pressure. That keeps the momentum high, though it also means the movie’s long-tail appeal rests almost entirely on the central rescue concept and James-Rosie bond.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is scale: the script plays like a very efficient, very sellable rescue thriller, but it is also a compact piece that will need careful feature expansion and disciplined climax execution. The child lead and the airborne finale are the two conversations every buyer will have before saying yes."
     },
-    "considerations": [
-      {
-        "area": "The short-film scale wants a feature expansion pass.",
-        "detail": "The current draft plays as a tight, efficient short with a single rescue objective and a clean climax. For a feature lane, one direction would be to widen the world around the black app, the kidnapping operation, and James’s history with Rosie so the central engine can sustain a longer runtime without losing momentum.",
-        "is_primary_lever": true,
-        "source": "both"
-      },
-      {
-        "area": "The supporting antagonists are functional and can carry more texture.",
-        "detail": "Nora, Davidson, and Edgar already give the story a usable triangle of pressure, but the script mostly uses them as pursuit functions. A next pass could let one of them carry a more personal stake in Rosie or James so the opposition feels even more specific and the final confrontation has extra charge.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The final physics solution is the signature move.",
-        "detail": "The midair rotation and synchronized jump are the most memorable mechanics in the piece, and they already land cleanly. If this were being shaped for a longer feature, the version of the script where that logic is seeded a little earlier would make the climax feel even more inevitable.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The production footprint stays contained but VFX-aware.",
-        "detail": "The story lives in a small set of practical locations, which protects budget discipline, but the teleportation, airborne fall, and wall-materialization beats still require careful effects planning. That makes the project especially suited to a buyer who likes contained genre pieces with a polished post pipeline.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 62.7,
+  "weightedScore": 66.3,
   "tier": "Optionable",
-  "inputTokens": 16288,
-  "outputTokens": 3506,
-  "cost": 0.027993,
+  "inputTokens": 18693,
+  "outputTokens": 4007,
+  "cost": 0.03205125,
   "declaredFormat": "Feature film"
 }

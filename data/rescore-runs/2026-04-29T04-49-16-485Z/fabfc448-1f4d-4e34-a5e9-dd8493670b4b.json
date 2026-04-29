@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:50:36.898Z",
+  "submission_id": "fabfc448-1f4d-4e34-a5e9-dd8493670b4b",
+  "eval_id": "08e6843b-2ee3-4b4e-bc74-319a92ee4786",
+  "title": "Demonologist 3 31 26A Lukas Kendall",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Carol Paxton",
+      "role_type": "Lead",
+      "demographics": "Female, late 30s to early 40s, wealthy Texas housewife with ambiguous ethnicity and a carefully curated social identity."
+    },
+    {
+      "name": "D.J. Paxton",
+      "role_type": "Supporting",
+      "demographics": "Male, 16, privileged teen musician with a sensitive, charismatic presence and a racially ambiguous look."
+    },
+    {
+      "name": "Andrew Collinsworth",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, English-accented, ageless, elegant, and physically imposing in a way that reads both charming and predatory."
+    },
+    {
+      "name": "Matt Paxton",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-50s, fit, charismatic, wealthy patriarch with a polished all-American exterior."
+    },
+    {
+      "name": "Beverly Paxton",
+      "role_type": "Supporting",
+      "demographics": "Female, late 70s, wealthy matriarch, old-money Texas, openly racist/classist social code."
+    },
+    {
+      "name": "Roy Paxton",
+      "role_type": "Supporting",
+      "demographics": "Male, 80s, old-money patriarch, politically connected, crude, and entitled."
+    },
+    {
+      "name": "Hayden",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, Latina teen, smart, proud, and under severe family pressure because of her grandmother’s illness."
+    },
+    {
+      "name": "Christina",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Hayden’s mother, exhausted and practical, carrying family illness and legal pressure."
+    },
+    {
+      "name": "Agent Lopez",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, FBI agent, competent, observant, and quietly formidable."
+    },
+    {
+      "name": "Emilia Rodriguez",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, Latina attorney, polished, professional, and under pressure."
+    }
+  ],
+  "positioning_hook": "A wealthy Texas matriarch discovers her son’s exorcism is a con designed to protect the family’s money, forcing her to outwit a demonologist who may be the real parasite in the house.",
+  "cost_usd": 0.05348549999999999,
+  "input_tokens": 40024,
+  "output_tokens": 5215,
+  "status": "wrote:leads_ok"
+}

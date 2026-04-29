@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:56:51.715Z",
+  "submission_id": "dd159f3d-817d-4e05-ba18-f4a06ae532f3",
+  "eval_id": "49fb317e-5213-4686-88e2-3bf303b8efc1",
+  "title": "Stab",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Sammy Miller",
+      "role_type": "Lead",
+      "demographics": "female, 18, high-school senior, socially volatile, party-going teen"
+    },
+    {
+      "name": "Faye Woodbridge",
+      "role_type": "Supporting",
+      "demographics": "female, 18, high-school senior, talkative, emotionally intense"
+    },
+    {
+      "name": "Lucy Carmen",
+      "role_type": "Supporting",
+      "demographics": "female, 17, high-school junior, withdrawn, insecure, socially isolated"
+    },
+    {
+      "name": "Austin Moore",
+      "role_type": "Supporting",
+      "demographics": "male, 18, high-school senior, popular, college-bound, confident"
+    },
+    {
+      "name": "Lauren Cheng",
+      "role_type": "Supporting",
+      "demographics": "female, 17, high-school junior, observant, romantic, emotionally steady"
+    },
+    {
+      "name": "Daniel Stokes-Simpson",
+      "role_type": "Supporting",
+      "demographics": "male, 18, high-school senior, athlete, boyfriend, socially smooth"
+    },
+    {
+      "name": "Eric Smith",
+      "role_type": "Supporting",
+      "demographics": "male, 17, high-school junior, quiet, socially withdrawn, new kid energy"
+    },
+    {
+      "name": "Ryan",
+      "role_type": "Supporting",
+      "demographics": "male, late teens, high-school age, outsider, deceptive, physically dangerous"
+    },
+    {
+      "name": "Officer Wilson",
+      "role_type": "Supporting",
+      "demographics": "male, 30s-50s, police officer, father"
+    },
+    {
+      "name": "Katie Davis",
+      "role_type": "Supporting",
+      "demographics": "female, teen, murdered student"
+    }
+  ],
+  "positioning_hook": "After a high-school prank turns deadly, a party-loving teen and her fractured friend group are hunted by a killer who knows their secrets and keeps turning their own social chaos against them.",
+  "cost_usd": 0.057096749999999995,
+  "input_tokens": 46999,
+  "output_tokens": 4855,
+  "status": "wrote:leads_ok"
+}

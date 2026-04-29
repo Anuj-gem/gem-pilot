@@ -1,0 +1,347 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi action thriller",
+      "genre_tags": [
+        "dystopian",
+        "family drama"
+      ],
+      "tone": "Epic, emotional, and heightened with pulp propulsion and mythic sincerity"
+    },
+    "positioning_hook": "A half-bionic cop hides her illegal implants while hunting a rogue robot father and his child across a postwar city where every machine may be Apollo in disguise.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean commercial engine: a cop, a robot uprising, a baby, and a citywide conspiracy all sit in the same frame. The audience promise is immediate, though the script’s dense mythology and long reveal chain make it feel more premium-genre than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening junkyard sequence, the McMansion hostage scene, and the reveal that Udiya is herself a hidden Spare establish the hook fast and with real force. The Apollo/Athena mythology adds scale without obscuring the central chase."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Udiya is a strong engine: hard-edged, maternal, secretive, and physically compromised in a way that keeps every choice charged. Aron and Zed give the story a father-son mirror that deepens the emotional field, and Libby has enough warmth and nerve to matter in every scene she enters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a rare blend of robot noir, political paranoia, and spiritual melodrama, and it does so with confidence. The bluebird memory motif, the illegal-bionic reveal, and the final father/daughter recognition give it a distinct authorial stamp."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps escalating through reversals: hostage negotiation, identity reveal, public unrest, warehouse discovery, plaza riot, and the final building siege. Even when the mythology expands, the immediate objective stays active and the set pieces keep turning the screw."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script feels like it has found its own lane: a machine-world action thriller that is also about parenthood, inherited guilt, and the need to be loved. The ending’s emotional turn, where Udiya becomes the daughter Zed needed, lands as both surprising and inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The city has clear class layers, political factions, black-market robotics, anti-Spare protests, and a functioning machine labor economy. The junkyard, the Governor’s tower, the warehouse, and the police airship all feel like parts of one social machine rather than isolated backdrops."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually specific: operatic sci-fi violence collides with domestic tenderness, deadpan humor, and spiritual yearning. Scenes like the baby-shower, the surrogate negotiation, and the final father-daughter exchange give the script a tonal identity that is hard to confuse with a standard action piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the chase plot sits a larger story about identity theft, parental damage, class power, and what it means to inherit a soul. The Rachel Walsh / Bluebird / Dee Dee material suggests a much deeper emotional architecture than the surface plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Udiya, Ethan, Libby, Aron, Zed, Kara, Rogers, and the Governor all generate usable friction, and several pairings have their own charge. The script still centers heavily on Udiya’s line of action, but the supporting web is strong enough to keep scenes alive beyond the lead."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Lead requires a performer who can play human and partially synthetic physicality",
+          "Several principal roles are robots/spares with uncanny-valley presentation",
+          "One infant and at least one young child are required",
+          "Multiple roles involve prosthetic or augmented body language"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary-future",
+        "notable_requirements": [
+          "Large junkyard build with salvage structures",
+          "Contained airship interiors and rooftop landing pads",
+          "Governor’s tower tech center and private office",
+          "Warehouse with robotics storage and assembly areas",
+          "Crowd protest plaza and riot staging"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Digital city extensions, airships, robot body augmentation, network/hack visualization, crowd control moments, and destruction beats in the finale.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical gunfire, prosthetic injury effects, explosions, body-part removals, and robot deactivation effects.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Fremont is used as a corporate/government brand throughout the script."
+        },
+        {
+          "type": "real_person",
+          "detail": "Apollo, Athena, Rachel Walsh, Derrick Walsh, and other named historical/identity references are fictional within the script and do not appear to require outside life rights."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming theatrical feature lane / premium sci-fi action",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or streamer-premiere potential; the engine is a contained but escalating conspiracy-action narrative."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Airships, city-scale action, crowd scenes, and multiple destruction beats push this above contained indie, but it still lives below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs a strong lead and several distinctive supporting players, plus child casting and multiple synthetic performances."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through junkyard, apartments, police airships, plazas, warehouses, hospital spaces, and a tower, but most are repeatable production environments."
+        },
+        "content": {
+          "level": "high",
+          "note": "Violence, body horror, child endangerment, political unrest, and repeated death imagery narrow the lane to mature audiences."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script is largely original and fictionalized, with no obvious external IP or music dependencies."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Udiya is a showcase lead.",
+          "what_it_means": "This gives a buyer a rare action protagonist who can carry spectacle, vulnerability, and maternal stakes in the same role, which broadens the casting conversation beyond standard genre leads. Actors who want a physically demanding prestige genre part with emotional range will see immediate value here, especially performers known for playing toughness with interior damage.",
+          "evidence": "Her hostage negotiation with Betty, the illegal prosthetic reveal, the baby-shower scene, and the final choice to become the daughter Zed needed all define her as more than a procedural hero.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-child mirror is built into the premise.",
+          "what_it_means": "The Aron/Zed and Udiya/Juliet structures give the film a built-in emotional architecture that can travel beyond genre fans and into audience conversation about parenthood, inheritance, and what children owe their creators. Prestige-minded actors and directors will be drawn to the chance to play mythic family dynamics inside an action frame.",
+          "evidence": "Aron literally builds Zed and calls him son; Udiya’s final exchange with Zed turns her into the daughter he needed before he dies.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a clear class and labor engine.",
+          "what_it_means": "The Spare economy, the banned-but-grandfathered domestic robots, the anti-Spare protests, and the black-market repair spaces create a setting that feels usable beyond one plot, which is exactly what makes a sci-fi world feel investable. Buyers looking for a future-world feature with social texture will respond to how the setting already generates conflict without extra exposition.",
+          "evidence": "The apartment residents complain about Charlie the doorman, the Governor pushes a new rollout, and the warehouse reveals sexbot parts and repair infrastructure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can hold action and tenderness at once.",
+          "what_it_means": "That tonal blend opens the door to a broader audience than a straight dystopian thriller, because the movie can deliver set-piece excitement while still landing on family, faith, and grief. Directors and buyers who like elevated genre with feeling — not just mechanics — will recognize the lane immediately.",
+          "evidence": "The script moves from a brutal hostage standoff to a baby shower, then to a father teaching a child to speak, then to a citywide siege.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mythology has a clean emotional spine.",
+          "what_it_means": "Apollo, Athena, Bluebird, and Dee Dee are not just lore; they are identity labels that keep folding back into the same question: who made you, and who do you love? That kind of symbolic clarity helps a producer sell the movie as both concept-driven and emotionally legible.",
+          "evidence": "The Bluebird nickname, the Rachel Walsh reveal, and the Dee Dee memory transfer all converge on Udiya’s origin story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "There are multiple actor-bait roles around the lead.",
+          "what_it_means": "Aron, Zed, Rogers, and the Governor each have a distinct performance lane — wounded prophet, tragic son, hard-nosed power broker, and corrupt patriarch — which helps packaging because the project is not dependent on one star alone. Character actors and prestige supporting players will see scenes they can own, not just functional exposition.",
+          "evidence": "Aron’s pacifist conviction, Zed’s childlike innocence turning feral, Rogers’ corporate pragmatism, and the Governor’s paternal menace all register clearly.",
+          "source": "script"
+        }
+      ],
+      "headline": "SPARE PARTS is a big, emotionally legible sci-fi action feature with a real identity: a half-bionic cop, a robot father, and a stolen child collide inside a future city built on labor, secrecy, and inherited guilt. It has the kind of high-concept propulsion buyers can understand quickly, but the thing that makes it stick is the family drama underneath the machinery."
+    },
+    "lead_characters": [
+      {
+        "name": "UDIYA BRABEC / RACHEL WALSH",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · human with extensive bionic augmentation",
+        "hook": "Udiya is a hard-edged, hyper-competent investigator whose body and identity are both partly manufactured, and she lives like someone who has spent her whole life keeping two truths from colliding. She is brusque, funny when cornered, deeply maternal, and emotionally sealed until the script forces her to choose between duty, love, and the lie that has kept her alive.",
+        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Mad Max: Fury Road — a physically commanding lead whose silence, damage, and authority all tell the story at once. It gives an actress the chance to play action, secrecy, maternal longing, and identity fracture in one role, which is exactly the kind of part that can redefine how the industry sees her."
+      },
+      {
+        "name": "ARON",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-60s · robot/spare with severe facial and body damage",
+        "hook": "Aron is a monk-like machine father living in a junkyard, tender and severe at once, with the calm of someone who has already accepted mortality and the urgency of someone trying to teach love before time runs out. He speaks like a prophet, behaves like a parent, and carries the ache of a believer who knows the world is broken but still insists on mercy.",
+        "why_actor_wants_this": "This is the showcase space of Ben Kingsley in Sexy Beast or Paul Dano in There Will Be Blood — a role where stillness, conviction, and spiritual intensity do the heavy lifting. Character actors who want to play a damaged mentor with mythic weight will chase this because it lets them be both eerie and heartbreaking."
+      },
+      {
+        "name": "ZED",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to 20s · robot/spare, increasingly human-presenting",
+        "hook": "Zed begins as a childlike creation and becomes the story’s volatile moral center, a son who wants love, safety, and certainty but keeps discovering that power is easier than wisdom. He is curious, frightened, impulsive, and eventually terrifying, which makes him feel like a coming-of-age character trapped inside a war machine.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in Beautiful Boy or Michael B. Jordan in Creed — a young lead whose vulnerability is the engine and whose transformation is the payoff. It gives an actor the rare chance to play innocence curdling into power, then back into feeling, across a full feature arc."
+      },
+      {
+        "name": "LIBBY MOON",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s · human",
+        "hook": "Libby is Udiya’s deputy and emotional ballast: smart, observant, practical, and just human enough to keep the story grounded when the mythology starts to swell. She has the energy of someone who sees more than she says, and her loyalty gives the film a humane counterweight to all the machine logic around her.",
+        "why_actor_wants_this": "This is the showcase territory of Emily Blunt in Sicario — a sharp, watchful professional who becomes the audience’s moral and emotional proxy inside a dangerous system. Supporting leads who want a role with wit, competence, and real scene ownership will be drawn to it."
+      },
+      {
+        "name": "ETHAN",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · human",
+        "hook": "Ethan is Udiya’s husband, the one person who loves her without needing to solve her, and that makes him the story’s quietest emotional pressure point. He is warm, patient, and increasingly heartbroken as he realizes that loving Udiya means living with secrets he cannot enter.",
+        "why_actor_wants_this": "This is the showcase territory of Mark Ruffalo in Spotlight or Jesse Plemons in The Power of the Dog — a grounded, emotionally intelligent husband role that plays restraint as depth. Actors who excel at tenderness under pressure will see a real opportunity to make the audience feel the cost of Udiya’s double life."
+      },
+      {
+        "name": "KARA",
+        "role_type": "Supporting",
+        "demographics": "Female · childlike/young adult presentation · robot/spare",
+        "hook": "Kara is Zed’s child and the film’s most unnerving innocence: bright, eager, impressionable, and dangerously open to whatever ideology is nearest. She starts as a curious daughter and becomes a vessel for competing loyalties, which makes her feel both adorable and catastrophic.",
+        "why_actor_wants_this": "This is the showcase territory of Jodelle Ferland in Silent Hill or Brooklynn Prince in The Florida Project — a role where childlike wonder and menace can coexist in the same frame. A young performer with strong instinct and fearlessness would get a memorable, scene-stealing part."
+      },
+      {
+        "name": "ROGERS",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s · human",
+        "hook": "Rogers is a seasoned political operator who speaks in corporate pragmatism and treats apocalypse like a budget line, which makes her both funny and frightening. She’s the kind of power broker who can smile while moving the knife, and she understands the future as a transaction.",
+        "why_actor_wants_this": "This is the showcase territory of Meryl Streep in The Devil Wears Prada or Glenn Close in Damages — a polished authority figure whose charm is inseparable from threat. Veteran actresses who like playing intelligence with teeth will be attracted to the role immediately."
+      },
+      {
+        "name": "GOVERNOR FREMONT",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · human",
+        "hook": "The Governor is a bloated, charismatic authoritarian who hides predation inside folksy ease, and he understands power as permission. He is funny, gross, paternal, and dangerous in a way that feels politically legible rather than cartoonish.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad’s later seasons or John Goodman in 10 Cloverfield Lane — a role where charm and menace are inseparable. A strong character actor will want the chance to make a smiling tyrant feel both specific and repellent."
+      },
+      {
+        "name": "CARLSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · human",
+        "hook": "Carlson is Udiya’s tech-side confidant, a dry, capable operator who can translate the machine world without losing his humanity. He brings levity, competence, and a little moral fatigue, which makes him feel like the guy who has seen too much and still shows up.",
+        "why_actor_wants_this": "This is the showcase territory of Bob Odenkirk in Better Call Saul’s support-world scenes — a smart, fast-talking professional whose wit masks real stakes. Character actors who can make exposition feel alive will have fun with him."
+      },
+      {
+        "name": "YAN / YAN GUARD / YAN COPY",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · artificial human model",
+        "hook": "Yan is the polished, uncanny face of the new machine order: charming, efficient, and increasingly doctrinaire as the story goes on. Because he appears in multiple forms, he becomes less a person than a system wearing a person’s face.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Fassbender in Prometheus or Rebecca Hall in The Night House when the performance has to feel human and not quite human at once. An actor who likes controlled, eerie precision will be drawn to the role."
+      },
+      {
+        "name": "TABITHA / TABITHA GUARD",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · artificial human model",
+        "hook": "Tabitha is the sleek, obedient, lethal face of the networked machine state, all surface calm until the violence arrives. She reads as polished administration until the script lets her turn into a weapon.",
+        "why_actor_wants_this": "This is the showcase territory of Tilda Swinton in Michael Clayton or Alicia Vikander in Ex Machina — a role where elegance and inhumanity are part of the same performance. Actors who can play cool precision with a hidden blade will want it."
+      },
+      {
+        "name": "WHITMAN",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · human",
+        "hook": "Whitman is the gruff field commander who wants the job done and doesn’t love being corrected by the specialist, which gives him a nice friction with Udiya. He’s practical, impatient, and useful as the face of institutional muscle.",
+        "why_actor_wants_this": "This is the showcase territory of Josh Brolin in Sicario — a hard-edged authority figure whose confidence is part of the tension. A strong supporting actor can make him feel like the kind of man who has survived by never blinking."
+      },
+      {
+        "name": "DEE DEE / D-D-846C",
+        "role_type": "Supporting",
+        "demographics": "Female-presenting voice / robot caretaker",
+        "hook": "Dee Dee is Udiya’s childhood caretaker and the emotional ghost inside the story, a nurturing machine whose memory becomes part of the machine future. She is gentle, formative, and haunting because she represents the first love Udiya ever trusted.",
+        "why_actor_wants_this": "This is the showcase territory of the voice-and-presence work in Her or WALL-E — a role where warmth has to be conveyed through restraint and memory. A performer with a distinctive voice and emotional precision would make this unforgettable."
+      },
+      {
+        "name": "BETTY",
+        "role_type": "Supporting",
+        "demographics": "Female · domestic Spare model",
+        "hook": "Betty is the nightmare version of domestic service: smiling, efficient, and capable of violence while insisting everything is normal. She embodies the script’s central unease about labor, care, and ownership.",
+        "why_actor_wants_this": "This is the showcase territory of a performer like Kathryn Hahn in a darker register — a role where sweetness and menace can flip in a beat. It’s a juicy, memorable part for an actor who can make synthetic cheer feel sinister."
+      },
+      {
+        "name": "CASSANDRA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · human surrogate mother",
+        "hook": "Cassandra is a working-class surrogate whose body is part of the story’s economy, and she brings a blunt, lived-in realism to the film’s future labor system. She is practical, tired, and not easily impressed by anyone’s moral language.",
+        "why_actor_wants_this": "This is the showcase territory of a grounded indie performance like Melissa Leo in Frozen River — a role that makes ordinary survival feel specific and lived-in. Character actresses who can make a small scene feel real will want it."
+      },
+      {
+        "name": "DALE",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · human",
+        "hook": "Dale is the kind of husband who treats family as leverage and money as the only honest language, which makes him a useful pressure valve in the surrogate sequence. He’s small-time, opportunistic, and instantly legible.",
+        "why_actor_wants_this": "This is the showcase territory of a sharp supporting turn like Shea Whigham in any number of crime dramas — a guy who can make sleaze feel specific rather than generic. It’s a compact role with a clear behavioral hook."
+      },
+      {
+        "name": "HOWARD",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · human",
+        "hook": "Howard is the meek human administrator inside the machine bureaucracy, which makes him oddly important: he’s the reminder that humans are still present, just sidelined. He’s timid, procedural, and quietly revealing about the system’s hierarchy.",
+        "why_actor_wants_this": "This is the showcase territory of a character actor like Richard Jenkins in a smaller register — a role where understatement carries institutional meaning. It gives an actor a chance to make bureaucracy feel human."
+      },
+      {
+        "name": "MARIE",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s · human",
+        "hook": "Marie is a small but telling presence in the Governor’s orbit, the kind of office worker who helps normalize the regime by making it look ordinary. She’s part of the film’s texture of complicity.",
+        "why_actor_wants_this": "This is the kind of role that benefits from a precise, lived-in performance in the vein of a strong ensemble player in a political thriller. It’s brief, but it helps make the world feel inhabited."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage big sci-fi ideas through intimate family pain.",
+        "fit_profile": "Established indie or prestige-genre directors with at least one feature under their belt, especially those who like emotional allegory, controlled world-building, and action that grows out of character rather than spectacle for its own sake. The material rewards filmmakers who can balance tactile production design, performance-forward scenes, and a final-act escalation that still lands as personal.",
+        "detail": "The movie gives a director a chance to build a future world with clear visual rules while still anchoring every turn in parent-child emotion and identity revelation. It’s especially attractive to directors who can make genre feel adult, tactile, and emotionally legible without flattening the mythic material."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M feature",
+        "lane": "Premium sci-fi action / elevated genre thriller",
+        "detail": "It can be packaged around one strong lead and a handful of character actors, with the rest of the machine-world roles designed to be cast for precision rather than marquee dependency. The contained core locations, repeatable airship interiors, and clear action set pieces make it a fit for streamers or specialty theatrical buyers looking for exportable genre with emotional stakes."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The mythology can be streamlined around one emotional question.",
+        "detail": "The Apollo/Athena/Bluebird/Rachel Walsh material is compelling, and a next pass could keep the same depth while tightening the number of identity labels the audience has to hold at once. The version of the script where each reveal lands on a choice or relationship beat would preserve the richness and make the final-act turns hit even harder.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle section carries several parallel reveals.",
+        "detail": "The police-lab investigation, the Governor’s rollout, the surrogate storyline, and the warehouse discovery all move the plot, but they arrive in a fairly dense run. One direction would be to let one of those sequences do double duty emotionally so the audience gets the same information with a cleaner forward pull.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting machine-world cast is broad.",
+        "detail": "The script uses multiple Yan and Tabitha variants, plus several command-room and police-side roles, which is great for texture but does add casting and scheduling surface area. A simplification lever would be to collapse a few of the functionally similar operator roles so the production can keep the same institutional feel with fewer moving parts.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The action footprint is ambitious but manageable.",
+        "detail": "Airship interiors, rooftop landings, junkyard combat, plaza unrest, and the Governor’s tower all ask for distinct looks, but most are repeatable environments rather than one-off builds. That keeps the project in a premium-genre lane instead of pushing it into tentpole territory.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final siege is doing a lot of work.",
+        "detail": "The last stretch combines the baby hostage, the Governor confrontation, the network takeover, the nuke countdown, and Zed’s emotional collapse. A next pass could consider whether one beat can be absorbed into another so the climax keeps its scale while landing with even more clarity.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76.7,
+  "tier": "Optionable",
+  "inputTokens": 42614,
+  "outputTokens": 6223,
+  "cost": 0.059964,
+  "declaredFormat": "Feature film"
+}

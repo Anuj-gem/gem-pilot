@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T04:53:00.938Z",
+  "submission_id": "59964812-188f-49a5-93c0-f4816f4ee7c1",
+  "eval_id": "35eda4be-25a4-4cc3-8787-5001e0710af6",
+  "title": "Landscape with Woman current Elise H. Greven",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Ross Tom",
+      "role_type": "Lead",
+      "demographics": "Woman, 20s, Brooklyn-based painter; working-class/financially precarious; white."
+    },
+    {
+      "name": "Brett Banneker",
+      "role_type": "Supporting",
+      "demographics": "Trans woman, 20s, wealthy New York art-world operator; Yale-educated; family-money adjacent."
+    },
+    {
+      "name": "Amara Chaudhry",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, South Asian; elite art consultant with Yale pedigree and strong social fluency."
+    },
+    {
+      "name": "The Billionaire",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s-60s, ultra-wealthy collector and father; white; tech-money elite."
+    },
+    {
+      "name": "Stephen Forster",
+      "role_type": "Supporting",
+      "demographics": "Man, late 20s-30s, lawyer; polished, upper-class, queer-coded or socially fluid in presentation."
+    },
+    {
+      "name": "Mullet Queer",
+      "role_type": "Supporting",
+      "demographics": "Queer artist, 20s-30s."
+    }
+  ],
+  "positioning_hook": "A broke Brooklyn painter is recruited to forge a lost masterpiece for a trans art-world insider, only to get trapped between class resentment, family money, and an FBI sting.",
+  "cost_usd": 0.057591,
+  "input_tokens": 48354,
+  "output_tokens": 4739,
+  "status": "wrote:leads_ok"
+}

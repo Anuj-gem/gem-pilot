@@ -2,311 +2,353 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural mystery",
-      "genre_tags": [
-        "period drama",
-        "romance"
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Mystery",
+        "Fantasy"
       ],
-      "tone": "Lyrical, soulful, whimsical, emotionally earnest"
+      "tone": "lyrical",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "period-piece",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "grief",
+        "identity",
+        "race",
+        "religion",
+        "harlem"
+      ]
     },
-    "positioning_hook": "A Times crime reporter with a damaged leg follows a funeral tip into a Harlem club where a tarot reader opens a hidden 1958 world of mob money, forbidden love, and his own buried family history.",
+    "positioning_hook": "A limping New York Times crime reporter is pulled into a Harlem funeral mystery by a tarot-reading club owner who can open the past, forcing him to confront his father’s hidden life and a buried family secret.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise has a clear emotional promise: a reporter chasing a funeral mystery discovers a family secret, a romance, and a spiritual reckoning. The period Harlem setting, mob-world texture, and supernatural doorway give it a defined audience, though the very specific dialect and mythic mode keep it more specialty than four-quadrant."
+        "score": 6,
+        "reasoning": "The script has a clear emotional engine — a son, a father, and a buried Harlem story — but it plays in a more adult, specialty lane than a broad four-quadrant feature. The hook is strong for prestige buyers and actor-driven audiences, yet the dense dialect, period setting, and mystical structure narrow the immediate commercial blast radius."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early in the cemetery-to-cab-to-club opening, and the script quickly establishes the engine: Joe is pulled by Mama into a hidden history tied to Frank Smith’s death and his own father. The tarot, time-slip visions, and secret-room reveal make the premise easy to explain in one breath."
+        "reasoning": "The premise lands early: a crime reporter at a funeral gets pulled into a Harlem club where a woman can show him the past. The funeral, the secret back rooms, and the 1958 visions give the script a clean engine that is easy to explain in two sentences."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Joe’s wounded, skeptical reporter persona gives the story a sturdy center, and Mama is a vivid, actor-friendly force with warmth, authority, and mischief. Frank, Rabbi Ross, and the lovers add emotional weight, though the script is most alive when Joe and Mama are in the room together."
+        "reasoning": "Joe Ross is a playable lead because he’s wounded, skeptical, funny, and physically compromised, and Mama has real authority and mystery. The supporting world is vivid, but the script is still primarily powered by Joe’s discovery path rather than a broad ensemble of equally durable roles."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a very specific blend of Jewish, Jamaican, Italian, and Roma worlds inside a Harlem club, and it uses tarot, music, and memory as story mechanics rather than decoration. The dialectal voice and the club-as-portal conceit give it a distinct authorial stamp."
+        "reasoning": "The blend of Harlem crime history, tarot mysticism, and a reporter’s investigation gives the script a confident, ownable angle. The use of the club as a portal into a hidden interracial, interfaith love story is a bold structural choice that feels specific rather than generic."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The story keeps Joe moving through reveals, visions, and reversals, and each return to Mama adds a new layer of the mystery. The middle is more revelatory than urgent, but the buried-money and buried-love threads keep the page turning toward the final dance-floor payoff."
+        "reasoning": "The story keeps handing Joe new revelations — the funeral, the club, the visions, the parents, the money, the fire — so the page-turning impulse is real. The middle is more revelatory than propulsive in a conventional thriller sense, but the mystery keeps deepening in a satisfying way."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A crime reporter investigating a funeral is one thing; that same reporter being led through a Harlem club’s spiritual memory to uncover a cross-cultural family history is the fresh, inevitable turn. The idea feels singular because the emotional and mythic logic are fused to the setting."
+        "reasoning": "This is a fresh premise that also makes immediate sense: a reporter discovers his father’s hidden life through a Harlem club owner who can literally open memory. The emotional reveal of the parents’ secret world, and the buried money/books beneath the stage, gives the concept a strong inevitability."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The script builds a lived-in Harlem ecosystem with clubs, shops, synagogues, mob fronts, and layered ethnic power structures. The back rooms, secret hallway, and 1958 club reveal a world with visible social rules and hidden commerce."
+        "reasoning": "Harlem in 1981 and 1958 feels lived-in, with the club, the shop, the synagogue, the mob families, and the Jamaican taxi all creating a social ecosystem. The world generates story because every location carries history, commerce, and cultural tension."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unmistakable: streetwise, spiritual, funny, and mournful all at once, with the dialogue carrying a musical cadence that becomes part of the identity. The script can pivot from comic skepticism to genuine grief without losing its voice."
+        "reasoning": "The script has a distinct tonal signature: mystical, nostalgic, and streetwise, with a warm comic cadence in the dialogue. The voice is highly recognizable on the page, especially in the Mama/Akeil/F rank exchanges and the way the visions are staged."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "On the surface it’s a ghostly mystery about a dead cop and a hidden romance, but underneath it’s about inheritance, faith, addiction, race, and the stories families tell to survive. The father-son material and the final healing turn suggest more emotional depth than the premise first advertises."
+        "reasoning": "On the surface this is a family mystery, but it keeps opening into identity, inheritance, race, religion, addiction, and hidden community history. The father-son wound and the buried love story suggest more emotional depth than the plot initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Joe and Mama are the engine, but the script also gives Frank, Rabbi Ross, the lovers, and the older generation enough presence to create meaningful relational echoes. It’s not an infinite-web ensemble, but the family and community connections are strong enough to generate recurring story energy."
+        "reasoning": "Joe and Mama are a strong central pairing, and the father/mother/Franky triangle adds real emotional lift. The supporting relationships are vivid enough to matter, though the script is still anchored more by one lead’s journey than by a fully modular ensemble engine."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 12,
-        "leads": 3,
-        "series_regulars": 0,
-        "child_actors": true,
-        "casting_characteristics": [
-          "Period casting across 1958 and 1981 versions of several characters",
-          "Specific ethnic/cultural identity requirements are central to the story world",
-          "One lead is a physically impaired reporter with a cane and chronic pain",
-          "One child/infant role is required for the baby Franky"
-        ]
-      },
-      "locations": {
-        "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interior with some exterior bookends",
-        "period_or_contemporary": "Period (1981 frame with 1958 flashback sequences)",
-        "notable_requirements": [
-          "Harlem club interior with secret back hallway and hidden floor hatch",
-          "Synagogue office, basement living space, and back alley",
-          "Brooklyn cemetery exterior",
-          "Period cars and street dressing for 1958 and 1981"
-        ]
-      },
-      "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Primarily invisible transitions, time-slip visions, smoke-based apparitions, and a few practical-looking supernatural reveals.",
-        "stunts_level": "none",
-        "sfx_needs": "Smoke, practical lighting shifts, hidden-door and floor-hatch reveals, record-player/music playback cues",
-        "night_shoots": "minimal",
-        "animals": false
-      },
-      "rights_flags": [
-        {
-          "type": "named_music",
-          "detail": "Bob Marley’s 'One Love' is specifically named and used in a key sequence."
-        },
-        {
-          "type": "named_music",
-          "detail": "'The Harlem Side-Step' is a plot-critical original song within the story."
-        },
-        {
-          "type": "named_music",
-          "detail": "'Luna’s Song' is a plot-critical original B-side within the story."
-        },
-        {
-          "type": "brand",
-          "detail": "The New York Times is prominently named."
-        }
-      ],
-      "platform_fit": {
-        "recommended_lane": "Prestige streamer feature or festival-to-platform theatrical drama",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong festival positioning and a platform-friendly secondary window"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained interiors and a limited number of period environments keep it manageable, but the dual-time period, period cars, and stylized club build push it above micro-budget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The script needs culturally specific adult casting across multiple communities, plus younger versions of key characters and a child role."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The footprint is contained, but it spans a cemetery, club, shop, synagogue, alley, and two time periods with period dressing."
-        },
-        "content": {
-          "level": "medium",
-          "note": "Drug use, mob activity, death, and family trauma are central, but the material stays more soulful than graphic."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The New York Times and Bob Marley references are clear clearance items, and the story also uses named songs and a plot-specific original song."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The premise fuses crime and spiritual memory.",
-          "what_it_means": "That combination gives the film a clean commercial lane: a mystery with emotional stakes that can travel beyond genre fans because the reveal is about family, faith, and identity. Prestige buyers and actors who want material with both narrative propulsion and soul will recognize the upside immediately.",
-          "evidence": "Joe’s funeral assignment turns into a tarot-led investigation that opens a hidden 1958 history inside Da Club and Da Shop.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Mama is a showcase role.",
-          "what_it_means": "She’s the kind of central female part that can anchor a movie on charisma alone while also carrying mysticism, humor, and authority. Mid-career dramatic leads and actors looking for a signature role with festival heat will be drawn to her.",
-          "evidence": "Her first scenes mix tea, tarot, prophecy, and emotional control while she keeps Joe off balance and moving deeper into the story.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The Harlem club is a story engine.",
-          "what_it_means": "The club, shop, synagogue, and back rooms create a contained world with built-in secrets, commerce, and history, which is exactly the kind of setting that helps a producer package a distinctive feature. Buyers who respond to place-driven storytelling will see a world that can be marketed as much as the plot.",
-          "evidence": "Da Club hides a secret hallway, a floor hatch, and a 1958 memory-space that reveals the buried truth.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The script gives the lead actor a wounded, funny center.",
-          "what_it_means": "Joe’s cane, pain pills, flask, skepticism, and dry irritation create a role with contradiction baked in, which is the kind of part actors use to show range without losing audience sympathy. Character-driven buyers and directors who like performance-forward material will see a strong anchor for the film.",
-          "evidence": "He limps into the cemetery, self-medicates in the taxi and office, and keeps trying to dismiss what he’s seeing even as it keeps escalating.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The cross-cultural romance feels earned.",
-          "what_it_means": "The Matteo/Luna thread gives the movie a romantic spine that broadens the audience beyond mystery and adds a timeless emotional hook. It’s the kind of love story that can help the film play to adult audiences who want feeling, not just puzzle-box mechanics.",
-          "evidence": "The 1958 club sequence, the song recording, and the final reveal of the lovers together make the romance the emotional key to the mystery.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Music is woven into the narrative.",
-          "what_it_means": "Because songs, records, and performance are part of the plot logic, the film has a built-in sensory identity that can elevate marketing and trailer moments. Music-forward buyers and festival programmers tend to respond to stories where sound is part of the storytelling architecture.",
-          "evidence": "The Harlem Side-Step record, Luna’s Song, and Bob Marley’s 'One Love' all function as narrative triggers and emotional punctuation.",
-          "source": "script"
-        }
-      ],
-      "headline": "This is a soulful, highly packageable feature with a real point of view: a crime reporter, a tarot reader, and a hidden Harlem history collide in a story about love, inheritance, and the secrets families bury to survive. The script’s biggest asset is that it feels both intimate and expansive — a contained, producible world with enough myth, music, and emotional payoff to attract actors, festival programmers, and prestige-minded buyers."
     },
     "lead_characters": [
       {
         "name": "Joe Ross",
         "role_type": "Lead",
-        "demographics": "Male · 35 · Jewish · New York reporter · physically impaired with chronic leg pain",
-        "hook": "Joe is a sharp, skeptical New York Times crime reporter who talks like a man trying to keep control of a room he’s already losing. He’s funny in a dry, defensive way, visibly medicating pain and disappointment, and the story keeps peeling back the armor until what’s underneath is grief, longing, and a son who never really understood his father.",
-        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a damaged, highly verbal investigator whose interior life leaks through every line. An actor gets the chance to play wit, skepticism, physical vulnerability, and emotional collapse in one role, which is exactly the kind of part that can redefine how the industry sees them."
+        "demographics": "Male, 35, Jewish, New York newspaper reporter, physically impaired with chronic leg pain, likely middle-class urban professional.",
+        "hook": "A sharp, skeptical New York Times crime reporter who hides his own damage behind wit, pills, and a flask. Joe arrives chasing a funeral story and ends up confronting the father he never understood, while his reporter’s instinct slowly turns into a son’s need for truth.",
+        "why_actor_wants_this": "This is the showcase territory of a young Al Pacino in a prestige character piece — a fast-talking, wounded investigator whose cynicism is constantly cracking under emotion. It gives an actor the chance to play intelligence, physical vulnerability, comic irritation, and a late-breaking emotional surrender."
       },
       {
         "name": "Mama",
-        "role_type": "Lead",
-        "demographics": "Female · 40s · Jamaican · ageless, mystical, club owner / tarot reader",
-        "hook": "Mama is a Harlem oracle with the poise of a queen and the mischief of someone who knows more than she’s saying. She’s sensual, maternal, sly, and spiritually formidable, but what makes her memorable is that she never plays as a stock mystic — she’s a businesswoman, a gatekeeper, and a keeper of memory all at once.",
-        "why_actor_wants_this": "This is the showcase space of Viola Davis in Fences or Angela Bassett in How Stella Got Her Groove Back — a woman whose authority, humor, and emotional history all live in the same frame. It gives an actress a commanding centerpiece with range across mysticism, romance, and hard-earned wisdom, the kind of role that can become a calling card."
-      },
-      {
-        "name": "Officer Frank Smith",
-        "role_type": "Lead",
-        "demographics": "Male · 20s/appearing 23 in life, later posthumous presence · Southern-accented officer",
-        "hook": "Frank is the story’s ghostly hinge: a young cop whose death is the mystery, but whose personality is warm, open, and unexpectedly funny once he starts appearing in Joe’s visions. He carries innocence, longing, and a kind of unfinished grace that makes him feel less like a plot device than a soul still trying to get home.",
-        "why_actor_wants_this": "This is the emotional afterlife territory of Michael B. Jordan in Fruitvale Station — a young man whose presence lingers because the audience feels the life behind the loss. An actor gets to play charm, confusion, tenderness, and revelation, with the added showcase of being the story’s emotional key rather than just its victim."
-      },
-      {
-        "name": "Rabbi Abraham Ross",
         "role_type": "Supporting",
-        "demographics": "Male · 40s · Jewish rabbi",
-        "hook": "Rabbi Ross is Joe’s father as remembered and re-seen: reserved, principled, and carrying a private life that only makes sense once the hidden history opens up. He has the dignity of a man who has made impossible compromises, and the script lets him register as both authority figure and romantic conspirator.",
-        "why_actor_wants_this": "This is the quiet authority space of Ben Kingsley in Schindler’s List or Richard Jenkins in The Visitor — a role where restraint and moral complexity do the heavy lifting. Character actors who can suggest a lifetime in a glance will be drawn to the part because it carries emotional consequence without needing volume."
+        "demographics": "Female, 40s, Jamaican-accented Black woman, club owner, spiritual practitioner, charismatic and sensual.",
+        "hook": "The regal owner of the Deluxe Club and Da Shop, Mama is equal parts healer, operator, and oracle. She speaks in riddles that are really truths, controls the room without raising her voice, and carries the emotional memory of the neighborhood in her body and her business.",
+        "why_actor_wants_this": "This is the kind of role that gave Whoopi Goldberg in Ghost or Angela Bassett in a prestige ensemble the chance to dominate every scene without ever seeming to try. It offers a performer a rare blend of authority, mystique, humor, and emotional command."
       },
       {
         "name": "Akeil Adamson",
         "role_type": "Supporting",
-        "demographics": "Male · early 20s · Caribbean Rastafarian taxi driver",
-        "hook": "Akeil is buoyant, teasing, and spiritually open, the kind of character who can make a taxi ride feel like a doorway. He’s comic relief on the surface, but he also functions as a bridge between Joe’s skepticism and Mama’s world, which gives him real narrative utility.",
-        "why_actor_wants_this": "This is the kind of breakout-supporting territory Donald Glover had in Atlanta’s early episodes — a charismatic, scene-stealing presence that feels effortless but is doing real tonal work. A young actor with musicality and comic timing would chase this because it offers personality, rhythm, and memorable screen time."
+        "demographics": "Male, early 20s, Caribbean Rastafarian taxi driver, physically imposing, charismatic.",
+        "hook": "Akeil is the breezy, herb-friendly messenger who seems comic at first and then becomes a spiritual guide with a sly edge. He’s the bridge between Joe’s skeptical world and Mama’s mystical one, and he keeps slipping in and out of Frank’s presence like a living signal flare.",
+        "why_actor_wants_this": "This is the kind of breakout supporting role that made actors like Mahershala Ali in early prestige work or Donald Glover in ensemble pieces pop off the screen. It gives a performer swagger, rhythm, and the chance to be both funny and uncanny."
       },
       {
-        "name": "Rollie Jefferson",
+        "name": "Frank Smith",
         "role_type": "Supporting",
-        "demographics": "Male · 50s · Black house-band guitarist / singer",
-        "hook": "Rollie is the older musician whose warmth and easy authority make the club feel lived-in and loved. He’s part bandleader, part guardian of the room, and his presence helps the film feel like a community rather than a puzzle box.",
-        "why_actor_wants_this": "This is the kind of supporting role that has the lived-in musical authority of Delroy Lindo in Da 5 Bloods — a performer gets to be soulful, funny, and quietly commanding. Character actors with musical chops will see a role that can land with very little screen time."
+        "demographics": "Male, 23 at death, white or light Mediterranean-presenting Brooklyn police officer, Southern-accented in the afterlife.",
+        "hook": "Frank is the dead rookie whose funeral opens the story and whose soul keeps surfacing in other bodies and voices. He’s earnest, funny, and strangely gentle, with the emotional function of a messenger who still needs help getting home.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play innocence with a supernatural afterlife twist, similar to the emotional lift of a performance like Michael J. Fox in a sentimental fantasy or a young James Franco in a ghostly supporting turn. It gives the actor a memorable tonal pivot between deadpan humor and spiritual poignancy."
       },
       {
-        "name": "Mizzy",
+        "name": "Rabbi Abraham Ross",
         "role_type": "Supporting",
-        "demographics": "Female · 30s · Black singer / club regular / caregiver figure",
-        "hook": "Mizzy is brash, beautiful, and emotionally direct, with the kind of presence that makes her feel essential the moment she enters. She carries the club’s energy and the family’s tenderness at once, which makes her more than a background figure in the 1958 material.",
-        "why_actor_wants_this": "This is the showcase lane of Teyonah Parris in a period ensemble — a role that lets an actress be glamorous, grounded, and emotionally legible in one beat. It’s attractive to performers who want a memorable supporting part with music, movement, and heart."
-      },
-      {
-        "name": "Mama’s Mother",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s-50s · Black Jamaican matriarch / shopkeeper",
-        "hook": "Mama’s Mother is the practical center of the shop and the family’s quiet enforcer, with a sharp eye and a no-nonsense way of moving through the world. She gives the story its generational backbone and makes the family structure feel real rather than symbolic.",
-        "why_actor_wants_this": "This is the kind of role that recalls Alfre Woodard in Clemency or The Watermelon Woman’s family matriarch energy — a part built on authority, history, and emotional economy. Veteran actresses who like to make a room feel different the second they enter will be drawn to it."
+        "demographics": "Male, 40s, Jewish rabbi, Joe’s father, outwardly respectable, privately compromised.",
+        "hook": "Joe’s father is revealed as a man who used his position to shelter hidden lives, move money, and protect a dangerous secret. He reads at first as a vanished parent, then as the emotional and moral center of the buried history Joe has to inherit.",
+        "why_actor_wants_this": "This is the kind of late-reveal father role that gives an actor the gravitas of a prestige family drama, like the emotional authority of Judd Hirsch in Ordinary People or a quieter version of Albert Brooks in a serious turn. It offers dignity, secrecy, and a final scene of real emotional consequence."
       },
       {
         "name": "Esmerelda Cooper",
         "role_type": "Supporting",
-        "demographics": "Female · 40s · Roma healer / mother",
-        "hook": "Esmerelda is protective, wary, and deeply practical, with the aura of someone who has learned to survive by reading danger early. She gives the Roma side of the story a maternal intelligence and a sense of stakes that are emotional as much as criminal.",
-        "why_actor_wants_this": "This is the kind of grounded, fierce supporting territory that Frances McDormand often finds in ensemble dramas — a woman whose intelligence is visible in every choice. It will appeal to actresses who want a role with moral force and cultural specificity."
+        "demographics": "Female, 40s, Roma healer, Luna’s mother, protective and pragmatic.",
+        "hook": "Esmerelda is the hard-edged maternal force trying to keep Luna alive and hidden while navigating family politics and money. She’s not mystical decoration; she’s a survival strategist with a mother’s ferocity.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the fierce, weathered authority of a supporting turn in a prestige period drama. It offers emotional steel, protective rage, and a lived-in sense of history."
+      },
+      {
+        "name": "Luna Cooper",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens/early 20s, Roma, gifted tarot reader, pregnant, vulnerable and othered.",
+        "hook": "Luna is the story’s romantic and spiritual center, a young woman treated as bad luck by her own people but seen clearly by Matteo and Mama. She carries the script’s tenderness and tragedy in one fragile, luminous figure.",
+        "why_actor_wants_this": "This is the kind of role that can launch a young actor the way a breakout in a prestige period romance does — emotionally exposed, visually iconic, and central to the mythic love story. It gives the performer innocence, danger, and a haunting stillness."
+      },
+      {
+        "name": "Matteo Messina",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, Sicilian, socially awkward, intellectually gifted, likely neurodivergent-coded.",
+        "hook": "Matteo is the brilliant, isolated son who handles the books, sees patterns others miss, and falls hard for Luna. He’s the script’s most tragic romantic figure: a boy treated as useful by criminals and dangerous by his own family because he’s different.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the fragile intensity of a prestige outsider part, like a young Philip Seymour Hoffman-type showcase. It offers eccentricity, intelligence, romantic yearning, and real pathos."
+      },
+      {
+        "name": "Rollie Jefferson",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, Black, club musician and surrogate parent figure.",
+        "hook": "Rollie is the warm, grounded bandleader who helps hold the whole hidden world together. He’s a community elder with music in his bones and a practical understanding of how love and survival coexist.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor the easy authority of a beloved ensemble elder. It offers warmth, rhythm, and a few scenes of real emotional ballast."
+      },
+      {
+        "name": "Mizzie",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, Black, singer and surrogate parent figure.",
+        "hook": "Mizzie is the other half of the surrogate family that raises Frank and helps protect the secret. She has maternal warmth, stage presence, and the kind of quiet authority that makes the ending land.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play maternal grace with real emotional payoff, similar to a strong supporting turn in a family drama or musical ensemble. It gives the performer dignity, warmth, and a final emotional release."
       },
       {
         "name": "Salvatore Messina",
         "role_type": "Supporting",
-        "demographics": "Male · 70s · Italian-American mob boss",
-        "hook": "Salvatore is old-world power in a quiet package, the kind of man whose authority is felt before he speaks. He helps define the criminal hierarchy of the world and gives the funeral scene its social weight.",
-        "why_actor_wants_this": "This is classic elder-mob authority territory in the vein of James Gandolfini’s quieter family scenes in The Sopranos or Robert Duvall in The Godfather. Veteran actors who can play power without theatrics will recognize the slot immediately."
-      },
-      {
-        "name": "Joseph Bruno",
-        "role_type": "Supporting",
-        "demographics": "Male · 70s · Italian-American mob boss",
-        "hook": "Joseph Bruno is another pillar of the old criminal order, polished and territorial, with the kind of presence that suggests long memory and long grudges. He helps make the funeral feel like a summit rather than a burial.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor do what veteran crime dramas reward: stillness, menace, and status. It’s a strong fit for performers who specialize in controlled authority and layered underplay."
+        "demographics": "Male, 70s, Italian-American mob boss, patriarchal, old-world.",
+        "hook": "Salvatore is the old-school family boss whose power depends on secrecy, hierarchy, and control. He’s less a scene-stealer than a pressure source, but he gives the world its criminal weight.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actor the gravitas of a mob patriarch in a prestige crime drama. It offers menace, stillness, and the authority of a man who never needs to raise his voice."
       },
       {
         "name": "Duke Cooper",
         "role_type": "Supporting",
-        "demographics": "Male · 70s · Eastern European Roma leader",
-        "hook": "Duke Cooper is stoic, watchful, and almost mythic in his stillness, a man whose silence carries as much weight as anyone else’s speech. He gives the Roma side of the story a formidable elder presence and a sense of old-world hierarchy.",
-        "why_actor_wants_this": "This is the kind of role that recalls the gravitas of Ben Gazzara in The Big Lebowski or veteran patriarch work in prestige crime dramas — a part built on presence more than exposition. Character actors with a strong face and economy of movement will chase it."
+        "demographics": "Male, 70s, Roma patriarch, stoic, physically distinctive with dark glasses.",
+        "hook": "Duke is the silent, watchful head of the Roma side of the deal, a man whose presence carries more threat than dialogue. He’s a classic old-world power figure, but the script gives him a mythic stillness that makes him memorable.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actor the same kind of quiet authority as a late-career prestige crime patriarch. It’s a minimal-dialogue, maximum-presence part."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a soulful mystery where music, memory, and place do the heavy lifting.",
-        "fit_profile": "Established indie directors with at least one or two festival features, especially those who like performance-forward storytelling, period texture, and spiritual or magical-realist elements grounded in character. It also fits TV directors or first-time feature filmmakers with a strong visual sense for interiors, smoke, music, and ensemble blocking.",
-        "detail": "The material rewards directors who can stage dialogue scenes with tension and then pivot into memory sequences that feel emotionally inevitable rather than ornamental. It’s especially attractive to filmmakers who like contained worlds with a strong sense of ritual, because the club, shop, and synagogue all function like living sets."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Strong dialect work required across Jamaican, Brooklyn, Southern, and Italian-inflected speech patterns",
+          "Age-specific casting for 1958 and 1981 versions of Mama and Frank's family history is handled through performance/vision structure rather than separate child leads",
+          "Lead requires physical impairment and sustained close-up emotional range"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Prestige streamer / festival-to-platform drama lane",
-        "detail": "The story is contained enough to mount without a giant cast or action load, but it needs one strong lead in Joe and a magnetic actress in Mama to fully land. The period Harlem setting, music-driven structure, and cross-cultural mystery give it a festival-friendly identity with a clear platform afterlife."
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "roughly 70/30 interior",
+        "period_or_contemporary": "contemporary with extensive 1958 period visions",
+        "notable_requirements": [
+          "Harlem club interior with period transformation",
+          "Synagogue office, basement, and back alley",
+          "Brooklyn cemetery exterior",
+          "Taxi interior and street exteriors",
+          "Back-room storage and secret-door reveal"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily invisible or stylistic effects for memory transitions, smoke-based apparitions, and visual shifts between present and 1958; no large-scale digital spectacle.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical smoke, period dressing, record-player playback, and a few controlled physical beats around Joe's limp and fainting.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Bob Marley is referenced by name and his song 'One Love' is specifically used in the script."
+        },
+        {
+          "type": "named_music",
+          "detail": "'One Love' by Bob Marley is plot-playback material and would require sync clearance."
+        },
+        {
+          "type": "named_music",
+          "detail": "'The Harlem Side-Step' is a plot-critical original song within the story world and would need music creation/clearance decisions."
+        },
+        {
+          "type": "brand",
+          "detail": "The New York Times is named prominently as Joe Ross's employer."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or theatrical specialty",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a prestige specialty theatrical play or awards-leaning streaming original."
       }
     },
-    "considerations": [
-      {
-        "area": "Joe’s present-tense engine is mostly reactive.",
-        "detail": "The script gives Joe a strong entry point, but much of the momentum comes from Mama pulling him through revelations. A next pass could give him one more active decision in the middle stretch — a choice that makes the investigation feel like his story, not only the story he’s being told.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary interiors keep the footprint contained, but the 1958 period visions, club transformation, and music playback/period dressing will push above a bare-bones indie if not scoped carefully."
       },
-      {
-        "area": "The 1958 reveal sequence carries a lot of information.",
-        "detail": "The back-alley, synagogue, and club material is rich, but it also delivers several key facts in close succession. One direction would be to let one emotional beat land before the next piece of history arrives, so the audience has a cleaner place to feel each turn.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "Joe Ross needs a lead who can carry comedy, pain, skepticism, and spiritual vulnerability, while Mama needs a very specific dialect-and-presence performance that will narrow the search."
       },
-      {
-        "area": "The dialect is a signature and a gate.",
-        "detail": "The voice is one of the script’s defining pleasures, but it also asks a lot of the reader and will ask even more of casting and performance. A packaging pass should protect that musicality while making sure the emotional meaning stays crystal clear even when the accent is stylized.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The period footprint is contained but specific.",
-        "detail": "The story lives in a cemetery, taxi, club, shop, synagogue, alley, and memory-space, which is manageable for a feature but still asks for careful art direction and period dressing. The version of the production that leans into a few repeatable hero locations would protect the budget without changing the story.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The music rights path needs early attention.",
-        "detail": "Bob Marley is named, and the story also depends on the original songs 'The Harlem Side-Step' and 'Luna’s Song' as plot devices. A producer would want to map those rights early so the film’s musical identity can stay intact through packaging and release planning.",
-        "is_primary_lever": false,
-        "source": "production"
+      "development": {
+        "level": "medium",
+        "note": "The script’s dialect, mystical rules, and layered family history are distinctive, but they ask a buyer to track a lot of backstory before the emotional reveal fully lands."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Dead Girl",
+          "year": 2006,
+          "why_it_comps": "Shares the prestige-mystery structure where a death opens a web of hidden lives and family pain, with a strong emphasis on atmosphere and revelation."
+        },
+        {
+          "title": "A Bronx Tale",
+          "year": 1993,
+          "why_it_comps": "Like this script, it uses neighborhood memory, family secrecy, and a young man’s coming-to-truth through a specific urban world."
+        },
+        {
+          "title": "The Green Mile",
+          "year": 1999,
+          "why_it_comps": "The emotional supernatural register and the sense of a liminal space where the dead and living briefly meet are the closest tonal neighbors."
+        },
+        {
+          "title": "Passing",
+          "year": 2021,
+          "why_it_comps": "The hidden identity, period memory, and emotionally charged social boundaries echo the script’s interracial, interfaith secret-history angle."
+        },
+        {
+          "title": "The Last Black Man in San Francisco",
+          "year": 2019,
+          "why_it_comps": "The script shares its lyrical relationship to place, memory, and the feeling that a neighborhood holds the ghosts of its own history."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to prestige, character-driven mysteries with emotional and cultural specificity.",
+        "demographics": "35+, skewing educated and urban; strongest with Black audiences, Jewish audiences, and specialty-film viewers who like historical memory stories.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Mostly contained interiors and a modest cast keep it in indie territory, while the period-vision sequences, music, and club dressing prevent it from being micro."
+      },
+      "lane_fit": {
+        "lane": "prestige indie mystery-drama with mystical elements",
+        "types_of_buyers": [
+          "specialty distributors looking for awards-leaning adult drama",
+          "streamer film executives building prestige, culturally specific originals",
+          "indie producers who package actor-driven literary-adjacent material",
+          "director-driven companies with a taste for lyrical urban memory pieces"
+        ],
+        "detail": "This sits naturally in the lane where emotional family revelation, cultural specificity, and a lightly supernatural device can coexist without needing franchise scale. The script’s strongest packaging asset is that it offers actors a showcase while staying materially producible."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed emotional arc; the supporting world is vivid, but there is no clear spinoff vector beyond this story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Harlem as a living memory machine",
+          "what_it_means": "The script turns place into asset: the club, the shop, the synagogue, and the cemetery all carry story, which gives the project a strong identity buyers can market. That makes it attractive to specialty distributors and streamers looking for culturally specific prestige material with a sense of history.",
+          "evidence": "The Deluxe Club’s back rooms, the secret door behind the bookcase, and the 1958 visions all make the neighborhood itself the engine of revelation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Joe Ross is a real lead role",
+          "what_it_means": "The protagonist has a clear wound, a physical limitation, and a built-in arc from skepticism to emotional surrender, which is exactly what opens actor interest. That makes the film easier to package around a strong performance than around spectacle.",
+          "evidence": "His limp, pills, flask, and the way he keeps trying to stay professional while being pulled into the visions define him immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mystical device is story-generating",
+          "what_it_means": "The tarot/vision structure gives the film a repeatable way to reveal backstory without turning into pure exposition. Buyers can understand the hook quickly, and the device gives the script a distinct tonal lane.",
+          "evidence": "Mama’s cards literally open the past, shifting Joe into 1958 and revealing the hidden family history through scenes rather than explanation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-son reveal has emotional weight",
+          "what_it_means": "The buried relationship between Joe and Rabbi Ross gives the mystery a personal payoff that can land with adult audiences. That kind of emotional reveal is what turns a genre premise into a prestige feature.",
+          "evidence": "Joe’s realization that his father was protecting Matteo and Luna, and that he never really knew him, is the script’s deepest turn.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting world is castable",
+          "what_it_means": "Mama, Akeil, Frank, Rollie, Mizzie, Matteo, Luna, and the patriarchs all have distinct performance lanes, which helps the project feel like a real ensemble rather than a one-note vehicle. That broadens the casting conversation and gives the film multiple scene-stealing opportunities.",
+          "evidence": "The dialogue gives each supporting character a specific rhythm, worldview, and function in the mystery.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige, actor-forward mystery with a strong emotional engine and a highly ownable Harlem mythology. It combines a contained production footprint with a vivid period-memory structure, which makes it especially attractive to specialty buyers and streamers looking for culturally specific, awards-capable material."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The dialect is a buyer filter.",
+          "detail": "The script’s stylized Jamaican-inflected dialogue is one of its signatures, but it also narrows the audience and raises the risk of performance inconsistency. A producer will immediately weigh whether the voice is a feature or a barrier in the room.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle leans on revelation over drive.",
+          "detail": "A lot of the second act is built from explanatory visits into the past, which keeps the mystery rich but can soften forward momentum. That is a real consideration for buyers who want the premise to feel propulsive, not just atmospheric.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The music and brand clearances are real.",
+          "detail": "Bob Marley’s name and 'One Love' are explicitly used, and the script also centers a plot-critical original song, 'The Harlem Side-Step.' The New York Times is named prominently as Joe’s employer, so the legal and music pass is not trivial even though the material is otherwise original.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "Joe’s physical and emotional damage narrows casting.",
+          "detail": "The lead has to play chronic pain, addiction, skepticism, and late-blooming vulnerability without losing the comic rhythm of the narration. That is a specific ask, and it will shape who can credibly carry the film.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest friction is not concept — it’s access. The dialect, the music-clearance footprint, and the need for a very specific lead performance will all be part of the greenlight conversation even though the underlying story is strong."
+    },
     "craft_note": ""
   },
-  "weightedScore": 75.7,
+  "weightedScore": 74,
   "tier": "Optionable",
-  "inputTokens": 76966,
-  "outputTokens": 10235,
-  "cost": 0.10378200000000001,
+  "inputTokens": 40888,
+  "outputTokens": 5330,
+  "cost": 0.054651,
   "declaredFormat": "Feature film"
 }

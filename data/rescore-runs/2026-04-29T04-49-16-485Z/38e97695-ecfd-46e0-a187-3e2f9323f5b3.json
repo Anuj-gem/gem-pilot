@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:53:42.000Z",
+  "submission_id": "38e97695-ecfd-46e0-a187-3e2f9323f5b3",
+  "eval_id": "f2ff2f67-06a9-4d44-a41e-578321ed83fe",
+  "title": "The Way Way Back script",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Duncan",
+      "role_type": "Lead",
+      "demographics": "Male, 14, white, shy suburban teen from Albany; socially awkward, emotionally observant, and still figuring out his identity."
+    },
+    {
+      "name": "Pam",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, divorced mother; warm, accommodating, emotionally compromised, and trying to hold a blended family together."
+    },
+    {
+      "name": "Trent",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white, Pam’s boyfriend; charismatic, performative, controlling, and socially fluent enough to dominate a room."
+    },
+    {
+      "name": "Owen",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, white, Water Wizz employee and social ringleader; irreverent, generous, emotionally evasive, and effortlessly cool."
+    },
+    {
+      "name": "Susanna",
+      "role_type": "Supporting",
+      "demographics": "Female, 14-16, white, Betty’s daughter; older-seeming, guarded, smart, and more self-possessed than the other teens."
+    },
+    {
+      "name": "Betty",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, white, divorced beach-house host; loud, sexually frank, chaotic, and emotionally porous."
+    },
+    {
+      "name": "Peter",
+      "role_type": "Supporting",
+      "demographics": "Male, 10-13, white, Betty’s son; eye-patch-wearing, Star Wars-obsessed, socially unfiltered, and eager for connection."
+    },
+    {
+      "name": "Caitlin",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, white, Water Wizz manager; competent, dry, attractive, and increasingly aware of the cost of staying."
+    },
+    {
+      "name": "Roddy",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, white, Water Wizz lifeguard; laid-back, crude, and part of Owen’s orbit."
+    },
+    {
+      "name": "Lewis",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s, white, Water Wizz employee; deadpan, over it, and quietly funny."
+    }
+  ],
+  "positioning_hook": "A painfully shy 14-year-old trapped in his mom’s boyfriend’s beach-house summer discovers a misfit waterpark crew, first crush, and the nerve to choose where he belongs.",
+  "cost_usd": 0.056243249999999995,
+  "input_tokens": 44337,
+  "output_tokens": 5109,
+  "status": "wrote:leads_ok"
+}

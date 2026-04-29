@@ -1,0 +1,318 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Coming-of-age comedy-drama",
+      "genre_tags": [
+        "ensemble",
+        "family drama"
+      ],
+      "tone": "Awkward, sun-drenched, profane, bittersweet"
+    },
+    "positioning_hook": "A shy fourteen-year-old trapped in his mom’s summer with her new boyfriend finds his voice at a chaotic waterpark, where one unlikely mentor turns humiliation into belonging.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The emotional promise is immediate: a lonely kid, a fraught blended family, and a summer of firsts that lands with broad relatability. The profanity and adult behavior narrow the lane a bit, but the coming-of-age engine and beach-town setting give it clear commercial shape."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the opening station-wagon exchange and the Water Wizz arrival, and the script keeps the engine legible: Duncan is trying to survive a summer he doesn’t want. The waterpark job gives the story a clean, repeatable frame that keeps the hook easy to explain."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Duncan’s quietness, Owen’s irreverent confidence, and Pam’s desperate optimism create a trio with real emotional pull. The supporting players—Caitlin, Betty, Susanna, Peter—each add a distinct flavor, and the relationships feel durable enough to keep generating scenes."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s confidence comes from specificity: a retro waterpark, a back-bench station wagon, and a social ecosystem where adults and teens are all slightly unmoored. The comedy is built from behavior and embarrassment rather than punchline machinery, which gives it a distinct authorial stamp."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The summer progression is easy to follow and the waterpark material keeps the movie moving, especially once Duncan starts working there. The middle leans into hangout rhythms more than escalation, but the emotional pressure around Pam, Trent, and Duncan keeps the story pulling forward."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A misfit kid finding selfhood through a waterpark job is instantly graspable, but the specific social geometry—adult dysfunction, teen awkwardness, and Owen’s mentorship—makes it feel freshly observed. The script turns a familiar coming-of-age shape into something that feels lived-in and singular."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Water Wizz is more than a backdrop; it has its own hierarchy, rituals, slang, and recurring faces, from Roddy and Lewis to Caitlin and the kids on the slide. The beach-house ecosystem and the neighboring families deepen that texture and make the world feel inhabited."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unmistakable: raunchy but tender, observational but emotionally direct, with jokes that come from social discomfort and a real ache underneath. Scenes like the Candyland meltdown and the water-slide banter show a voice that can pivot from absurdity to heartbreak without losing its footing."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "On the surface this is a summer misadventure, but underneath it’s about abandonment, self-worth, and the way kids learn to read adult behavior before they can name it. The Duncan/Owen bond and the Pam/Trent fracture suggest a deeper emotional layer that rewards attention."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The script thrives on pairings: Duncan/Owen, Duncan/Susanna, Pam/Trent, Pam/Betty, Owen/Caitlin, Betty/Peter. Those combinations keep producing fresh comic and emotional material, which gives the ensemble real engine beyond the lead."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen lead and teen ensemble",
+          "One child role with eye patch requirement",
+          "Adult ensemble with specific age ranges and strong comic timing"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 40/60",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Large waterpark with multiple slide areas, rental booth, employee lounge, parking lot, and pool deck",
+          "Beach house and adjacent neighboring houses",
+          "Dock/boat access and beach/dunes access",
+          "Retro station wagon and convertible hero vehicles"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond basic cleanup and water-safety continuity.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical water effects, slide splashes, crowd control, and party atmosphere dressing.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "REO Speedwagon's 'Can't Fight This Feeling' and Mr. Mister's 'Kyrie' are specifically named/used."
+        },
+        {
+          "type": "brand",
+          "detail": "Water Wizz is a real-world waterpark name and is central to the setting."
+        },
+        {
+          "type": "brand",
+          "detail": "Pac-Man is specifically referenced as a playable arcade game."
+        },
+        {
+          "type": "brand",
+          "detail": "Star Wars action figures are specifically referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical indie-comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform potential and a broad adult-comedy audience."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The waterpark footprint, beach-house party scenes, and night exteriors create a mid-range production footprint without VFX load."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The movie depends on a strong teen lead, a charismatic adult ensemble, and child casting for Peter and the waterpark kids."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story uses a manageable number of locations, but the waterpark, beach, docks, and multiple house exteriors require coordination."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Profanity, drinking, drug use, sexual references, and adult behavior keep it in mature-comedy territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named songs, branded games, and the Water Wizz setting create clear clearance items."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The waterpark is a story engine.",
+          "what_it_means": "The setting gives the movie a built-in workplace hierarchy, recurring faces, and a visual playground that can carry the whole second half. Buyers respond to worlds that generate scenes on their own, and this one does that for teen, adult, and ensemble storytelling alike.",
+          "evidence": "Owen’s tour of Water Wizz, the rental booth, Devil’s Peak, Harpoon Lagoon, and the employee lounge party all create distinct playable spaces.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Duncan is a clean showcase lead.",
+          "what_it_means": "The role gives a young actor a full arc from passive observer to self-possessed kid, with comedy, embarrassment, and emotional release all in one part. Casting directors and managers will see a breakout vehicle for a young performer who can play stillness and then land a payoff.",
+          "evidence": "The opening back-seat silence, the awkward REO Speedwagon moment, the breakdancing sequence, and the final slide pass all chart his shift.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Owen is the kind of supporting role actors chase.",
+          "what_it_means": "He’s a charismatic chaos agent with enough warmth to keep the movie human, which makes the part a magnet for a comic actor who can also play mentorship. That combination is exactly what buyers like when they want a scene-stealing adult role that still serves the emotional spine.",
+          "evidence": "His waterpark patter, the Pac-Man conversation, the fake-illegitimate-sons bit, and the final sunrise talk with Duncan.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The comedy comes from behavior, not setup.",
+          "what_it_means": "The script has a repeatable comic language built on discomfort, social misreads, and people trying too hard to be cool. That makes it attractive to producers looking for a comedy that can travel beyond one-liner dependence and still play in the edit.",
+          "evidence": "Candyland becomes a marital breakdown, the dance-floor scenes spiral from awkward to joyous, and the water-slide rescue turns into a public rite of passage.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family drama has real emotional bite.",
+          "what_it_means": "Under the jokes, the movie is about a kid watching adults fail each other and himself learning where he belongs, which gives the comedy a heart buyers can market. That balance is especially attractive to festival programmers, prestige-comedy buyers, and actors who want material with emotional aftertaste.",
+          "evidence": "Pam and Trent’s fragile partnership, Duncan’s confrontation at the bonfire, and Pam’s final choice in the station wagon.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble relationships keep paying off.",
+          "what_it_means": "Every major pairing has its own comic rhythm, so the script can keep generating fresh scenes without needing new plot machinery. That’s the kind of relational density that makes a feature feel bigger than its premise and gives a director room to stage memorable group dynamics.",
+          "evidence": "Duncan/Susanna, Duncan/Peter, Pam/Betty, Owen/Caitlin, and Pam/Trent all have distinct chemistry.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final image lands the theme cleanly.",
+          "what_it_means": "The ending gives the movie a memorable emotional button: the kid and his mother choosing each other over the false adult arrangement. That kind of clean thematic landing helps a buyer understand the movie’s audience promise and gives marketing a simple emotional shorthand.",
+          "evidence": "Pam climbing into the back seat with Duncan after the final water-slide triumph.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharply observed summer comedy with a real emotional spine: a shy kid, a messy adult world, and a waterpark that becomes the place he finally learns how to belong. It’s funny, specific, and actor-friendly in all the right places, with a lead role and a supporting mentor part that both have real casting heat."
+    },
+    "lead_characters": [
+      {
+        "name": "Duncan",
+        "role_type": "Lead",
+        "demographics": "Male · 14",
+        "hook": "Duncan is a quiet, watchful teenage boy who lives in the gap between what he feels and what he can say. He starts the summer folded into himself, embarrassed by his mother’s new life and unsure how to occupy space, but the script keeps revealing a kid with dry instincts, a hidden sense of humor, and a real hunger to be seen on his own terms.",
+        "why_actor_wants_this": "This is the showcase territory of a young lead like the breakout center of The Perks of Being a Wallflower — a role where internal life, awkward comedy, and emotional release all have to coexist. A young actor gets to play stillness, humiliation, first attraction, and a genuine coming-of-age turn, which is exactly the kind of part that can launch a career."
+      },
+      {
+        "name": "Owen",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Owen is the waterpark lifeguard/mentor with a motor-mouth, a prankster’s instinct, and a surprising amount of emotional intelligence under the jokes. He’s the guy who can turn a dumb bit into a life lesson without ever sounding like he’s giving a speech, and the script lets him be both comic engine and surrogate older brother.",
+        "why_actor_wants_this": "This is the kind of part Paul Rudd made feel effortless in The Fundamentals of Caring — a charming adult who can carry comedy, warmth, and quiet melancholy in the same frame. Comic actors who want a role with heart, timing, and real scene-stealing room will chase this hard."
+      },
+      {
+        "name": "Pam",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Pam is Duncan’s mother, trying to hold a new family together with politeness, optimism, and a lot of self-erasure. She’s affectionate, eager to please, and increasingly trapped between the man she’s trying to trust and the son who can see more than she wants to admit.",
+        "why_actor_wants_this": "This is the showcase space of Toni Collette in Little Miss Sunshine — a mother whose emotional labor is visible in every scene and whose restraint makes the eventual rupture land. Actresses who can play warmth, embarrassment, and dawning self-recognition will see a rich, awards-friendly role here."
+      },
+      {
+        "name": "Trent",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "Trent is the polished, performative boyfriend who thinks confidence can substitute for intimacy. He’s funny, socially fluent, and often genuinely trying, but the script keeps exposing how much of his charm is a sales pitch, which makes him both entertaining and combustible.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the polished-douche-with-edges territory of Jason Sudeikis in Sleeping with Other People, but with more dramatic pressure underneath. It’s a part for someone who can play charisma as a weapon and still find the insecurity inside it."
+      },
+      {
+        "name": "Susanna",
+        "role_type": "Lead",
+        "demographics": "Female · 14",
+        "hook": "Susanna is the older-seeming beach-town girl who clocks everyone else’s awkwardness before they can name it. She’s dry, observant, and a little guarded, but she becomes the one person who can meet Duncan where he is without making him feel small.",
+        "why_actor_wants_this": "This has the smart, self-possessed teen energy of Hailee Steinfeld in The Edge of Seventeen — a role that gives an actor wit, restraint, and the chance to be the emotional equal in a coming-of-age story. Young actresses who can play intelligence without losing vulnerability will want this part."
+      },
+      {
+        "name": "Betty",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s",
+        "hook": "Betty is the gloriously unfiltered beach-house matriarch who treats every social interaction like a live wire. She’s messy, funny, sexually frank, and weirdly generous, with the kind of comic confidence that makes every room feel more dangerous and more alive.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role Frances McDormand made memorable in Burn After Reading — a character who can detonate a scene with one line and still feel fully lived-in. Veteran comedic actresses who like to steal the movie without ever leaving the ensemble will line up for it."
+      },
+      {
+        "name": "Peter",
+        "role_type": "Supporting",
+        "demographics": "Male · 10s",
+        "hook": "Peter is Betty’s eye-patch-wearing son, a kid whose oddness is treated as both joke and badge of honor. He’s lonely, eager, and deeply committed to his action figures and his own mythology, which makes him one of the movie’s most unexpectedly tender comic presences.",
+        "why_actor_wants_this": "This is the kind of offbeat child role that recalls the specificity of Ke Huy Quan’s early screen presence in Indiana Jones and the Temple of Doom — a part where physical detail and comic sincerity do a lot of the work. A young performer gets a memorable, highly quotable supporting turn with real audience affection."
+      },
+      {
+        "name": "Caitlin",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Caitlin is the no-nonsense waterpark manager who sees through everyone’s nonsense and still keeps the place running. She’s dry, efficient, and emotionally guarded, but the script gives her enough friction with Owen to make her feel like more than a straight man.",
+        "why_actor_wants_this": "This is the kind of sharp, grounded supporting role that Aubrey Plaza has turned into a calling card — deadpan authority with a romantic pulse underneath. Actresses who can play dry wit and contained longing will see a clean, scene-smart part here."
+      },
+      {
+        "name": "Joan",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "Joan is one of the adult orbiters around the beach-house social circle, equal parts flirtation, gossip, and social pressure. She’s there to stir the pot, but she also helps define the adult ecosystem that Duncan is trying to decode.",
+        "why_actor_wants_this": "This is the kind of juicy supporting role that lets an actor play social volatility the way Jennifer Jason Leigh does in ensemble comedies — a character who can be funny, invasive, and a little dangerous in the same breath. It’s a strong fit for actors who like sharp, adult ensemble work."
+      },
+      {
+        "name": "Kip",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Kip is Trent’s buddy and part of the adult beach-house machinery, a guy who lives in the easy banter and half-serious male bonding of summer. He’s not the center of the movie, but he helps define the social weather around Duncan and Pam.",
+        "why_actor_wants_this": "This is the kind of hangout-comedy supporting role that gives an actor the Bill Hader-in-Trainwreck lane of easygoing comic texture. It’s a useful part for someone who can make group scenes feel lived-in and specific."
+      },
+      {
+        "name": "Roddy",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Roddy is the lifeguard who treats the waterpark like a stage and every interaction like a bit. He’s part hype man, part instigator, and part local legend, which makes him one of the movie’s best comic utility players.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets a comic actor do fast, loose, crowd-pleasing work in the vein of Rob Huebel’s best ensemble turns. It’s a great slot for someone who can turn small moments into memorable business."
+      },
+      {
+        "name": "Lewis",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Lewis is the grumpy, over-it waterpark employee who has no patience for Owen’s nonsense but still lives inside the same comic ecosystem. He’s dry, deadpan, and quietly funny, with a resignation that makes him a perfect foil.",
+        "why_actor_wants_this": "This is the kind of deadpan supporting role that gives an actor the Nick Offerman-in-Parks and Recreation lane of dry authority and comic timing. It’s a compact but memorable part for someone who can land sarcasm without overplaying it."
+      },
+      {
+        "name": "Charlie",
+        "role_type": "Supporting",
+        "demographics": "Male · 18",
+        "hook": "Charlie is Betty’s strung-out older son, a walking reminder that the beach-town summer is not as carefree as it looks. He’s more texture than plot, but he sharpens the movie’s sense of adult drift and family chaos.",
+        "why_actor_wants_this": "This is the kind of small but vivid supporting role that can give a young actor the raw, lived-in edge of a character from The Last Picture Show. It’s a brief but memorable slot for someone who can suggest a whole off-screen life."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a comedy that feels emotionally true without sanding off the mess.",
+        "fit_profile": "Established indie directors with one or more festival features, or TV-to-feature filmmakers with a strong ear for performance and ensemble rhythm. The material rewards directors who like observational humor, naturalistic awkwardness, and staging group scenes where the joke is in the behavior.",
+        "detail": "The movie gives a director a contained but lively summer world, a clear emotional spine, and a set of recurring spaces that can be shot with real personality. It’s especially attractive to filmmakers who know how to balance comic chaos with a final emotional landing."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming-friendly indie comedy / festival-to-platform lane",
+        "detail": "It can be packaged around one breakout teen lead plus a charismatic adult ensemble, so it does not require a giant star stack to function. The waterpark setting, beach-town backdrop, and broad coming-of-age appeal give it exportable, audience-friendly hooks that play well for streamers and specialty theatrical buyers."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle lives in hangout mode.",
+        "detail": "The beach-house and waterpark rhythms are very watchable, and the movie benefits from that loose summer feeling. A next pass could look for one or two more pressure points in the midsection so the emotional turns arrive with a little more forward charge while protecting the easygoing tone.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The adult triangle carries the heaviest emotional load.",
+        "detail": "Pam, Trent, and Joan are the engine of the family fracture, and the script already uses them well. One lever would be to keep foregrounding the moments where Duncan’s point of view collides with their private behavior, because that’s where the movie’s emotional voltage is strongest.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The waterpark footprint is the main production lift.",
+        "detail": "The story is still very producible, but the park needs to feel like a real ecosystem across multiple zones, from Devil’s Peak to the lounge to the rental booth. A simplification lever would be to consolidate any duplicate park spaces in production design so the world stays rich without multiplying builds.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The music and brand references need a clear clearance pass.",
+        "detail": "REO Speedwagon, Mr. Mister, Pac-Man, Star Wars, and the Water Wizz name all sit close to the movie’s identity. That’s manageable, but it means the package should account early for music and trademark clearance so the tone and nostalgia stay intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 79.7,
+  "tier": "Optionable",
+  "inputTokens": 41932,
+  "outputTokens": 5304,
+  "cost": 0.055317,
+  "declaredFormat": "Feature film"
+}

@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:54:53.707Z",
+  "submission_id": "512df742-b24d-4ef6-8382-e7356ec88819",
+  "eval_id": "d3182d4c-ea44-487e-9838-e1965d369637",
+  "title": "I H8 XMAS MASTER",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Tommy",
+      "role_type": "Lead",
+      "demographics": "Male, early-to-mid 30s, gay, white, New York-based performer/actor, recovering addict."
+    },
+    {
+      "name": "Joan",
+      "role_type": "Supporting",
+      "demographics": "Female, 70s, white, matriarch, smoker, working-class suburban mother."
+    },
+    {
+      "name": "Danny",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, Baltimore-area brother, divorced or separated, drinking history, in therapy."
+    },
+    {
+      "name": "Marty",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s, white, eldest brother, married, suburban, responsible, father-to-be."
+    },
+    {
+      "name": "Beth",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, Marty’s wife, nurse, practical, emotionally steady."
+    },
+    {
+      "name": "Gregory",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white, Tommy’s husband, therapist, polished, emotionally literate."
+    },
+    {
+      "name": "Darlene",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, white, hospice nurse, Baltimore accent, big personality."
+    },
+    {
+      "name": "Beverly",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, white, TV producer/boss, sharp, dismissive, high-status."
+    },
+    {
+      "name": "Gary Henderson",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, white, funeral director, tired, procedural, local authority."
+    },
+    {
+      "name": "Barbara Trevino",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s-60s, white, neighbor, judgmental suburban observer."
+    }
+  ],
+  "positioning_hook": "A washed-up New York performer races home for his father’s funeral, only to get trapped in a snowbound family road trip with the corpse, his estranged brothers, and the mother who never let him leave.",
+  "cost_usd": 0.0553245,
+  "input_tokens": 40694,
+  "output_tokens": 5512,
+  "status": "wrote:leads_ok"
+}

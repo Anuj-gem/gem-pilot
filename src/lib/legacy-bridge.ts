@@ -39,6 +39,21 @@ const BUDGET_TIERS: BudgetTier['tier'][] = [
   'tentpole',
 ]
 
+/** Canonical dollar ranges per tier — these match the BUDGET_TAG_LABEL
+ *  strings the producer dashboard cards already display, so the bridged
+ *  range and the dashboard pill stay in lockstep. The legacy lane string
+ *  ("Prestige historical drama / adult-skewing literary adaptation lane")
+ *  used to land in `range` and read like a broken description; it lives
+ *  in `note` now. */
+const TIER_RANGE: Record<BudgetTier['tier'], string> = {
+  micro: 'Sub-$1M',
+  indie: '$1–15M',
+  mid: '$15–50M',
+  studio: '$50M+',
+  premium: '$50–100M',
+  tentpole: '$100M+',
+}
+
 /** Map a free-form legacy tier string ("Indie", "$10-25M prestige feature",
  *  "Mid-budget streamer", etc.) to the closest modern enum value. Falls
  *  back to "mid" when no token matches. */
@@ -53,6 +68,16 @@ function normalizeTier(raw: string | undefined): BudgetTier['tier'] {
   if (lc.includes('prestige') || lc.includes('streamer')) return 'premium'
   if (lc.includes('low') || lc.includes('micro')) return 'micro'
   return 'mid'
+}
+
+/** Title-case a single token. */
+function tc(s: string | undefined): string {
+  if (!s) return ''
+  return s
+    .split(/[\s_-]+/)
+    .filter(Boolean)
+    .map((w) => w[0]?.toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ')
 }
 
 /** Derive the modern `risk_details` 3-card shape from the legacy
@@ -71,11 +96,13 @@ export function bridgeRiskDetails(report: GEMEvaluation): RiskDetails | null {
   }
 }
 
-/** Derive the modern `packaging` block from legacy fields. Pulls the
- *  budget tier from `package_angles.buyer_appeal`, falls back to the
- *  recommended-lane string from production_reality.platform_fit. The
- *  audience teaser is the buyer_appeal.detail (best legacy approximation
- *  for "who this is for"). */
+/** Derive the modern `packaging` block from legacy fields. The audience
+ *  teaser is the recommended-lane string (the closest legacy stand-in for
+ *  "who this is for"); the buyer_appeal.detail goes under it as the
+ *  unfold body. The budget range comes from the canonical tier table —
+ *  the legacy lane sentence ("Prestige historical drama / adult-skewing
+ *  literary adaptation lane") used to land in the range slot and read
+ *  broken, so it now sits in `note` where descriptive copy belongs. */
 export function bridgePackaging(report: GEMEvaluation): Packaging | null {
   if (report.packaging) return report.packaging
   const angles = report.package_angles
@@ -85,19 +112,27 @@ export function bridgePackaging(report: GEMEvaluation): Packaging | null {
   const tierRaw = angles?.buyer_appeal?.tier ?? ''
   const laneRaw = angles?.buyer_appeal?.lane ?? platform?.recommended_lane ?? ''
   const detail = angles?.buyer_appeal?.detail ?? ''
+  const tier = normalizeTier(tierRaw || laneRaw)
 
-  const audienceTeaser = detail || laneRaw || 'Audience read pending.'
+  // Audience: prefer the recommended-lane string (descriptive sentence
+  // about the lane this fits), fall back to a genre-derived label so the
+  // card never renders empty.
+  const genre = report.classification?.genre_primary ?? ''
+  const audienceFallback = genre
+    ? `${tc(genre)} audience`
+    : 'Audience read pending.'
+  const audience = laneRaw || audienceFallback
 
   return {
     comp_set: [],
     audience_target: {
-      primary_audience: audienceTeaser,
+      primary_audience: audience,
       demographics: '',
       quadrants: [],
     },
     budget_tier: {
-      tier: normalizeTier(tierRaw || laneRaw),
-      range: laneRaw,
+      tier,
+      range: TIER_RANGE[tier],
       note: detail,
     },
     lane_fit: {

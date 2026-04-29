@@ -2,67 +2,128 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological drama",
-      "genre_tags": [
-        "coming-of-age",
-        "supernatural grief"
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Mystery"
       ],
-      "tone": "dreamlike, melancholy, heightened, intimate"
+      "tone": "elevated",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "grief",
+        "mental-health",
+        "friendship",
+        "coming-of-age",
+        "valium",
+        "school-setting"
+      ]
     },
-    "positioning_hook": "A grief-stricken teen at a private school keeps seeing his dead best friend everywhere — until the hallucination turns out to be the last thing standing between him and a fatal overdose.",
+    "positioning_hook": "A socially awkward teen at a private school starts seeing his dead best friend everywhere, then learns the friendship he depended on was built on a lie and a fatal overdose.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 6,
-        "reasoning": "The emotional core is immediately legible — teen friendship, loss, addiction, and a supernatural grief device — which gives it a clear lane with young-adult and prestige-drama audiences. The appeal is more selective than broad because the script leans heavily on mood and subjective imagery rather than a high-concept engine."
+        "score": 5,
+        "reasoning": "The emotional engine is clear and accessible — teen friendship, loss, and a drug-related death — but the script’s experimental presentation and narrow school-bound setting make the commercial lane more specialized than broad."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The central idea lands: Danny is talking to a friend no one else can see, and the reveal reframes those scenes as a death-bound hallucination. The hook arrives, but the script spends a long stretch in repeated school-beat interactions before the underlying mechanism fully locks in."
+        "reasoning": "The hook lands through the reveal that Arnon is dead and Danny has been talking to a ghostly presence, but the script takes a while to clarify whether the story is a grief drama, a supernatural piece, or a drug-hallucination mystery."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "Danny has a playable emotional state — anxious, funny, medicated, and increasingly unmoored — and Arnon gives the piece a second presence with real warmth. The characters are more atmospheric than fully dimensional on the page, so the material currently plays strongest as a showcase for performance and tone."
+        "reasoning": "Danny has a usable vulnerability and Arnon has charm, but both are sketched more through behavior and mood than through sharply differentiated want or contradiction. The relationship is affecting, though the characters themselves are still more atmospheric than fully dimensional."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The script makes a distinct choice to stage the friendship as a visually stylized, possibly drugged-out perception of reality, with blue lighting, ghostly entrances, and repeated match cuts. The approach is personal and stylized, though the underlying story shape is familiar enough that the execution has to carry most of the distinction."
+        "reasoning": "The script leans into stylized camera language, blue-lit dissociation, and a ghostly final movement that gives it a distinct register. The material is emotionally familiar, though, and the originality comes more from presentation than from a wholly fresh dramatic premise."
       },
       "narrative_momentum_engagement": {
         "score": 5,
-        "reasoning": "The opening mystery around Arnon and the auditorium emergency creates forward pull, and the final reveal lands with emotional force. Between those points, the script circles the same dynamic several times, so the drive comes more from atmosphere than from escalating turns."
+        "reasoning": "The school-day setup moves efficiently, and the auditorium reveal gives the piece a strong turn, but much of the middle is repetition of Danny being startled, confused, and redirected. The final reveal is effective, yet the path there is more atmospheric than propulsive."
       },
       "resonant_originality": {
-        "score": 6,
-        "reasoning": "The script’s strongest original charge is the way it ties teen friendship, Valium use, and a ghostly presence into one subjective experience. It feels personal and specific, though the core premise still sits close to recognizable grief-and-hallucination territory."
+        "score": 5,
+        "reasoning": "The core idea of a teen grieving a dead friend through a possibly supernatural lens is legible and emotionally immediate, but it sits close to familiar grief-and-hallucination territory. The Valium motif and the private-school specificity add texture without fully reinventing the lane."
       },
       "world_density_and_texture": {
-        "score": 5,
-        "reasoning": "The private school, classroom hierarchy, and rehab facility give the story a few distinct spaces, but the world mostly functions as a container for Danny’s emotional state. There is enough texture to ground the piece, though not yet enough institutional specificity to make the setting itself a story engine."
+        "score": 4,
+        "reasoning": "The private school, classroom, bathroom, corridor, and auditorium create a contained environment, but the world functions mostly as a backdrop for the central reveal. There are hints of social texture — Mr. Quill, Principal Palmer, the school emergency — but not yet a richly layered ecosystem."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The script has a clear tonal fingerprint: dreamy, mournful, and visually heightened, with sudden bursts of teen comedy and then a hard fall into tragedy. The repeated blue/orange visual language and the ghostly transitions make the piece feel identifiable rather than generic."
+        "score": 6,
+        "reasoning": "The script has a recognizable blend of teen awkwardness, melancholy, and dreamlike visual stylization, especially in the blue-lit sequences and the ghostly final image. It is consistent, though the tone is still closer to a mood than a fully ownable signature."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the reveal, the script suggests a deeper story about dependency, guilt, and the way friendship can become a survival structure. The emotional material is there, and the rehab flashback hints at more history, but the current draft keeps most of that depth in outline rather than dramatized layers."
+        "reasoning": "The Valium, rehab, and self-harm imagery suggest deeper psychological material beneath the surface reveal, and the Arnon/Danny bond hints at more history than the pages fully unpack. There is more depth implied than explained, but the script has not yet fully converted that implication into layered dramatic payoff."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 4,
-        "reasoning": "The Danny-Arnon bond carries the script, and Emma, Mr. Quill, and Principal Palmer function as supporting pressure points around it. The relationships are effective for the central reveal, but the ensemble is not yet generating many independent story combinations beyond Danny’s experience."
+        "reasoning": "The script is fundamentally a two-character emotional engine, with Emma, Mr. Quill, and Principal Palmer functioning as support around Danny and Arnon. That keeps the focus clean, but it limits the recurring relationship density that would broaden the project’s commercial engine."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Danny",
+        "role_type": "Lead",
+        "demographics": "Teen male, high-school age, likely 16-18; socially anxious, emotionally fragile, prescription-medication dependent.",
+        "hook": "Danny is a nerdy, jittery private-school teen whose whole day is filtered through anxiety, grief, and a growing sense that something is wrong with his reality. He is funny in a self-protective way, easily spooked, and emotionally open enough that the loss of Arnon hits him like a collapse rather than a plot twist.",
+        "why_actor_wants_this": "This is the showcase territory of a young Lucas Hedges or Justice Smith performance — a role built on visible interiority, nervous humor, and the slow unraveling of a boy who can’t tell memory from presence. It gives an actor the chance to carry the film through close-up distress, comic timing, and a final grief break."
+      },
+      {
+        "name": "Arnon",
+        "role_type": "Supporting",
+        "demographics": "Teen male, high-school age, likely 16-18; Danny’s friend/brother figure, with addiction and mental-health history implied.",
+        "hook": "Arnon is Danny’s loud, teasing, physically playful best friend, but the script keeps revealing him as something more unstable and more tragic. He reads as the emotional spark of the piece — the one who can turn a school day into a game, then into a haunting.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the same kind of scene-stealing lift as a standout supporting turn in The Perks of Being a Wallflower or Mid90s — charismatic, funny, and then devastating once the truth lands. It offers a chance to play warmth and menace-by-absence in the same performance."
+      },
+      {
+        "name": "Emma",
+        "role_type": "Supporting",
+        "demographics": "Teen female, high-school age, likely 16-18; classmate with a concerned, observant presence.",
+        "hook": "Emma is the first person to puncture Danny’s private world, noticing that he is talking to someone no one else can see. She functions as the human reality check in a story that keeps slipping into dissociation and memory.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that can play like a breakout in a prestige teen film — think the sharp, observant friend who gives the lead a reality anchor and gets memorable close-ups without overexposure. It’s a clean showcase for restraint and concern rather than big speeches."
+      },
+      {
+        "name": "Mr. Quill",
+        "role_type": "Supporting",
+        "demographics": "Adult male, 30s-40s; private-school teacher.",
+        "hook": "Mr. Quill is the mildly comic authority figure who keeps the school machinery moving until the story reveals that the day is not about homework at all. He’s a functional adult presence, but the script uses him mainly as a pressure valve and institutional voice.",
+        "why_actor_wants_this": "This is the kind of role that lets a character actor do precise comic authority, like a memorable teacher or administrator in a coming-of-age drama. The appeal is in timing, irritation, and the ability to ground the school world quickly."
+      },
+      {
+        "name": "Principal Palmer",
+        "role_type": "Supporting",
+        "demographics": "Adult male, 40s-60s; school principal.",
+        "hook": "Principal Palmer is the bearer of the story’s devastating truth, arriving with institutional calm and personal grief at the exact moment Danny’s fantasy collapses. He is less a full character than the face of the announcement that changes the movie.",
+        "why_actor_wants_this": "This is strong supporting material for an actor who can land a single emotional turn with authority, similar to a principal or parent role in a prestige teen drama. The showcase is the controlled delivery of bad news and the burden of being the one who has to say it."
+      },
+      {
+        "name": "Mrs. Falton",
+        "role_type": "Supporting",
+        "demographics": "Adult female, middle-aged; Arnon’s mother.",
+        "hook": "Mrs. Falton appears through the phone as raw grief and disbelief, giving the death its human cost before the script cuts away. She is a brief but emotionally loaded presence.",
+        "why_actor_wants_this": "This is the kind of small but devastating role that can make an impact in a single scene, especially for an actor who can turn a phone call into a lived emotional event. It’s grief performance territory, not exposition territory."
+      },
+      {
+        "name": "Mr. Falton",
+        "role_type": "Supporting",
+        "demographics": "Adult male, middle-aged; Arnon’s father.",
+        "hook": "Mr. Falton is the voice of shattered aftermath, explaining the overdose and giving the death its final factual shape. He exists to make the loss concrete and irreversible.",
+        "why_actor_wants_this": "This is a brief but potent father role, the kind that asks for controlled devastation rather than broad emotion. It gives an actor a single, memorable beat of collapse."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 6,
-        "leads": 2,
+        "speaking_roles": 7,
+        "leads": 1,
         "series_regulars": 0,
-        "child_actors": true,
+        "child_actors": false,
         "casting_characteristics": [
-          "teen leads",
-          "school-age supporting roles",
-          "principal/teacher adult roles",
-          "one role requires a visible hallucinated/ghostly presence"
+          "teenage lead and supporting teens",
+          "adult school authority figures",
+          "phone-only parental roles"
         ]
       },
       "locations": {
@@ -73,176 +134,172 @@
           "private school yard",
           "classroom",
           "school bathroom",
+          "school corridor",
           "school auditorium",
-          "teen bedroom",
-          "rehab facility"
+          "teen bedroom"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Subjective visual effects for ghost appearances, match cuts, lighting shifts, and a few stylized transitions; no large-scale effects package.",
+        "vfx_details": "Stylized match cuts, ghost apparition, blue-light dream transitions, brief surreal/fantasy overlays, and a few perspective effects.",
         "stunts_level": "none",
-        "sfx_needs": "Minimal practical needs beyond phone props, prescription pills, and simple transition work.",
+        "sfx_needs": "Light practical sound design for hallucination/ghost moments and title-sequence transitions.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Fine Line by Harry Styles is specifically named in the credits/music cue."
+          "detail": "Harry Styles' 'Fine Line' is specifically named in the script."
+        },
+        {
+          "type": "named_music",
+          "detail": "Radiohead's 'Everything in Its Right Place' is specifically referenced."
+        },
+        {
+          "type": "named_music",
+          "detail": "The script also calls for 'a somber rendition score like Euphoria's theme,' which is a clear music-reference clearance consideration if used as a temp or named cue."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "festival-to-platform feature drama / elevated YA indie",
+        "recommended_lane": "streaming",
         "content_level": "mature",
-        "series_engine_or_release_model": "Best suited to a festival launch followed by limited theatrical or streamer acquisition."
+        "series_engine_or_release_model": "Feature release model: specialty streaming or limited theatrical with a strong youth-drama marketing angle."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary teen drama with five school/home locations, no action set pieces, and only minor surreal effects — the main cost pressure is music if the named tracks are retained."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary school and bedroom settings with minor visual effects keep the budget footprint modest."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to carry anxiety, comic timing, and a late emotional collapse, while Arnon has to play charm and tragedy with equal ease. That is a narrower ask than the footprint suggests, especially if the film wants a recognizable young lead."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The auditorium reveal and overdose backstory are clear, but the script still sits between grief drama, hallucination piece, and supernatural ghost story. Buyers will want the governing reality of Arnon's presence to be unmistakable."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Perks of Being a Wallflower",
+          "year": 2012,
+          "why_it_comps": "Shares the intimate teen-psychology lane, the outsider lead, and the emotional weight of friendship as the central engine."
         },
-        "cast": {
-          "level": "medium",
-          "note": "Teen leads and school-age supporting roles require age-specific casting, with the Arnon presence needing careful performance and visual handling."
+        {
+          "title": "Eighth Grade",
+          "year": 2018,
+          "why_it_comps": "Matches the anxious adolescent interiority and the specificity of social discomfort as story propulsion."
         },
-        "location": {
-          "level": "low",
-          "note": "The story stays in a small set of contemporary locations, mostly within one school ecosystem and a bedroom."
+        {
+          "title": "The Fallout",
+          "year": 2021,
+          "why_it_comps": "Comps on the contemporary teen grief register and the way trauma is rendered through a contained school environment."
         },
-        "content": {
-          "level": "medium",
-          "note": "Prescription-pill use, overdose death, anxiety, depression, and rehab material place it in a mature lane."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The named Harry Styles song creates a music-clearance item, and any use of the rehab/medical context may invite sensitivity around depiction."
+        {
+          "title": "The Spectacular Now",
+          "year": 2013,
+          "why_it_comps": "Shares the coming-of-age melancholy, substance-adjacent emotional terrain, and the lead role built around fragile charm."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Older teens and adults who respond to intimate, emotionally raw coming-of-age dramas with a psychological edge.",
+        "demographics": "Skews 16-34, with strongest pull among female viewers and prestige-drama audiences; secondary interest from indie-minded adult viewers.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$1M-$4M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary, school-based feature with a small cast and limited locations; the only meaningful scope pressure is the stylized dream/ghost imagery and music clearance."
+      },
+      "lane_fit": {
+        "lane": "prestige teen drama",
+        "types_of_buyers": [
+          "specialty distributors",
+          "streamer original-film teams",
+          "indie producers building a youth-drama slate",
+          "festival-facing buyers looking for emotional coming-of-age material",
+          "director-driven companies seeking a contained showcase"
+        ],
+        "detail": "The script sits naturally in the intimate, performance-forward lane where a young lead can carry the film and the school setting keeps production contained. Its strongest commercial identity is as a grief-driven teen piece with stylized presentation rather than as a broad supernatural genre play."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the emotional engine is the Danny-Arnon loss, and there is no clear spinoff vector beyond this one story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The ghost reveal is emotionally earned.",
-          "what_it_means": "The script turns a simple school-day friendship into a grief reveal that can land with real audience sting, which gives the project a clean festival-to-platform emotional payoff. Young lead actors and buyers looking for a contained prestige tearjerker will respond to a premise that can be sold on feeling as much as concept.",
-          "evidence": "The auditorium reveal, the phone call from Arnon’s mother, and the final montage that reframes earlier scenes as Danny speaking to no one.",
+          "dimension_or_area": "The Danny-Arnon bond is the engine.",
+          "what_it_means": "That relationship gives the film an immediate emotional purchase and a clean marketing promise: this is about friendship, loss, and the moment a private world collapses. It gives casting and buyers a clear two-hander emotional center even though the script is structurally a solo lead piece.",
+          "evidence": "The repeated teasing in the classroom, the bathroom scare, the rehab flashback, and the final phone call all build the same bond from different angles.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Danny is built for performance.",
-          "what_it_means": "Danny’s anxious humor, medicated drift, and sudden emotional collapse give an actor a role that can move between charm, confusion, and devastation in a single scene. That is exactly the kind of part that attracts rising young leads and reps looking for a breakout dramatic showcase.",
-          "evidence": "His banter with Arnon, the blue-lit corridor walk, and the breakdown in the auditorium after the principal speaks.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The visual language is specific.",
-          "what_it_means": "The blue/orange palette, ghostly entrances, match cuts, and dream-state transitions give the film a recognizable identity that can be pitched as more than a standard grief drama. Directors and buyers who want an elevated, stylized indie with a clear visual signature will see a lane here.",
-          "evidence": "The repeated blue illumination on Danny, Arnon’s orange-hued ghost, and the montage of earlier scenes recontextualized in golden light.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The contained footprint is producer-friendly.",
-          "what_it_means": "A small number of school and home locations keeps the project in a manageable feature budget range while still leaving room for style and performance. That makes it attractive to indie financiers, festival-minded producers, and streamers looking for contained emotional genre material.",
-          "evidence": "Bedroom, school yard, classroom, bathroom, auditorium, and rehab facility are the main spaces.",
+          "dimension_or_area": "The school setting keeps the cost contained.",
+          "what_it_means": "A buyer can see a contained indie feature with limited locations, modest company moves, and a production plan that does not depend on scale to land. That makes it easier to package around performance and mood rather than expensive spectacle.",
+          "evidence": "Most of the script lives in the bedroom, yard, classroom, bathroom, corridor, and auditorium.",
           "source": "production"
         },
         {
-          "dimension_or_area": "The rehab flashback adds depth.",
-          "what_it_means": "The brief facility sequence widens the story beyond one tragic day and suggests a larger history of self-harm, dependency, and mutual recognition between the boys. That gives the film a deeper emotional floor and makes the ending feel like the surface of a longer lived-in bond.",
-          "evidence": "The rehab scene where Danny and Arnon compare wrist cuts and promise to help each other.",
+          "dimension_or_area": "The final reveal lands as a clean emotional turn.",
+          "what_it_means": "The death announcement and the rehab flashback give the film a built-in third-act gut punch that can drive word of mouth if the audience is bought into the friendship first. It creates a clear trailer moment and a clear emotional thesis for the marketing team.",
+          "evidence": "Principal Palmer’s announcement, Mrs. Falton’s call, and the final scream/ghost image.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The stylized visual language gives it a lane.",
+          "what_it_means": "The blue-lit dissociation, ghost imagery, and match-cut montage give the project a recognizable aesthetic that can help it stand out in a crowded teen-drama field. That kind of visual identity is attractive to directors and streamers looking for a film that feels authored.",
+          "evidence": "The repeated 'Euphoria blue' lighting, mirror shots, and the ghost descending in gold.",
           "source": "script"
         }
       ],
-      "headline": "This is a contained, performance-forward feature with a clean emotional hook: a teen’s imaginary friend turns out to be the last expression of a friendship shadowed by addiction and loss. The script’s real selling power is its tone — intimate, stylized, and mournful — with a lead role and visual language that can travel to festivals, streamers, and young adult audiences."
+      "headline": "This is a contained, performance-forward indie feature with a clear emotional hook: a teen friendship story that turns into a grief reveal. The school-bound footprint and limited cast make it easy to imagine as a low-risk specialty buy, while the stylized presentation gives it enough visual identity to stand out in the prestige coming-of-age lane."
     },
-    "lead_characters": [
-      {
-        "name": "Danny",
-        "role_type": "Lead",
-        "demographics": "Male · teen · nerdy private-school student",
-        "hook": "Danny is a jittery, funny, emotionally porous teen whose mind seems to be running faster than his body can keep up. He reads as a kid trying to stay functional through school, friendship, and medication, while the script steadily reveals that his version of reality is slipping out from under him.",
-        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in Beautiful Boy — a young lead carrying vulnerability, charm, and self-destruction in the same frame. It gives an actor the chance to play escalating dissociation, comic timing with Arnon, and a final collapse that redefines everything the audience has seen."
-      },
-      {
-        "name": "Arnon Falton",
-        "role_type": "Lead",
-        "demographics": "Male · teen · Danny’s friend / later revealed as his brother",
-        "hook": "Arnon is the bright, teasing, almost mischievous presence who keeps popping into Danny’s orbit like a private joke only the two of them understand. He carries warmth and menace at once, because the script lets him function as both a real friend and the shape of Danny’s denial.",
-        "why_actor_wants_this": "This is the kind of dual-presence role that gave Jacob Elordi in The Sweet East or Haley Joel Osment in The Sixth Sense their eerie, memorable screen identity — a character whose meaning changes once the audience understands the frame. An actor with a strong teen or young-adult following would chase it for the chance to play charm, ambiguity, and posthumous emotional impact."
-      },
-      {
-        "name": "Emma",
-        "role_type": "Supporting",
-        "demographics": "Female · teen · classmate",
-        "hook": "Emma is the grounded peer who briefly punctures Danny’s private world and forces him to look outward. She functions as the human witness in the corridor, the one character who seems to sense that something is off before the reveal lands.",
-        "why_actor_wants_this": "This is the kind of compact, scene-stealing supporting part that gave Jena Malone in Donnie Darko or Auliʻi Cravalho in early prestige-supporting work a chance to register fast and leave a mark. It offers an actress a sharp emotional beat, a little mystery, and the opportunity to be the audience’s first outside perspective on Danny’s unraveling."
-      },
-      {
-        "name": "Mr. Quill",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · teacher",
-        "hook": "Mr. Quill is the stern, slightly comic authority figure who keeps the school machinery moving while Danny is falling apart inside it. He has the rhythm of a teacher who thinks he’s in control until the room starts slipping away from him.",
-        "why_actor_wants_this": "This is the kind of authority-role showcase that gave Walton Goggins in Justified or Jeffrey Wright in smaller institutional scenes a chance to turn a functional part into a memorable presence. Character actors who can balance irritation, timing, and a touch of humanity will see an easy fit."
-      },
-      {
-        "name": "Principal Palmer",
-        "role_type": "Supporting",
-        "demographics": "Male · middle-aged · school principal",
-        "hook": "Principal Palmer is the bearer of the film’s emotional truth, the adult who has to deliver the news Danny cannot yet process. He is less a personality machine than the face of institutional grief, which makes his calmness land harder.",
-        "why_actor_wants_this": "This is the kind of brief but devastating authority role that gave actors like Richard Jenkins in smaller prestige dramas a chance to make one scene feel like a whole life. A seasoned character actor would take it for the single, loaded speech and the chance to pivot from procedural calm to heartbreak."
-      },
-      {
-        "name": "Arnon's Mom",
-        "role_type": "Supporting",
-        "demographics": "Female · middle-aged · mother",
-        "hook": "Arnon’s mother is the voice of aftermath, the first adult to name the loss and make it real. She exists as a grief carrier, but her phone call is one of the script’s sharpest emotional pivots.",
-        "why_actor_wants_this": "This is the kind of one-scene maternal role that gives an actress a clean emotional spike, similar to the phone-call devastation in Manchester by the Sea or Room. Experienced dramatic actors often chase these moments because they can do so much with so little screen time."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make grief feel cinematic without losing intimacy.",
-        "fit_profile": "First- or second-feature directors with a background in shorts, music videos, or festival drama, especially those who already lean toward subjective imagery and performance-forward storytelling. The material rewards someone who can stage emotional unreliability, use color and camera movement as psychology, and keep the audience inside a teen’s point of view until the reveal lands.",
-        "detail": "The film gives a director room to build a visual grammar around perception — blue light, ghost entrances, match cuts, and the final recontextualizing montage all invite a strong formal hand. It is especially attractive to filmmakers who want a contained project that still feels authored and festival-ready."
-      },
-      "buyer_appeal": {
-        "tier": "$1-5M contained feature",
-        "lane": "festival drama / elevated YA indie / streamer acquisition lane",
-        "detail": "The project can be packaged around two young leads and a small supporting cast, so it does not require a large-name ensemble to function. The contained school-and-bedroom footprint plus the teen grief/addiction angle fit the current buyer appetite for intimate, emotionally legible features that can travel from festivals to streaming."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The governing reality of Arnon stays fuzzy.",
+          "detail": "The script plays Arnon as a ghost, a hallucination, and a memory device in overlapping ways, which creates atmosphere but also leaves the buyer with a core clarity question. That ambiguity is a development-level friction point because the audience has to understand what kind of movie this is by the time the auditorium sequence lands.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle repeats the same scare beat.",
+          "detail": "Danny being startled by Arnon in the classroom, bathroom, and corridor gives the piece a consistent motif, but it also means the central movement is more repetitive than escalating. A producer will notice that the story’s forward motion depends heavily on the final reveal rather than on a steadily intensifying chain of turns.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The named music creates clearance work.",
+          "detail": "Harry Styles’ 'Fine Line' and Radiohead’s 'Everything in Its Right Place' are both specifically called out, and the script also references an 'Euphoria' theme-like cue. Those are real clearance and budget conversations, especially if the film wants to preserve the emotional lift of the montage and ending.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Danny is more mood than fully shaped lead.",
+          "detail": "The role gives an actor anxiety, grief, and comic discomfort, but the page still leans on repeated reactions more than on a sharply defined want or contradiction. That keeps the film playable, but it also narrows the upside unless the casting is unusually strong.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is clarity, not scope: the film is contained and affordable, but the audience has to understand Arnon’s status and the movie’s governing reality very quickly. The other pressure points are practical — a lead role that needs a very specific young actor and a music plan that cannot ignore the named tracks."
     },
-    "considerations": [
-      {
-        "area": "The reveal is strongest when it arrives cleanly.",
-        "detail": "The auditorium sequence and the later flashback montage both work toward the same emotional turn, so a next pass could consider how to protect the reveal’s first impact by trimming any repeated explanation around Arnon’s absence. The version of the script where the audience learns through image and behavior first would make the final phone call hit even harder.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Danny’s inner state can be dramatized even more sharply.",
-        "detail": "The script already signals anxiety, medication, and dissociation through lighting and performance cues, and one lever would be to let a single concrete choice show the cost of that state earlier in the story. A scene where Danny has to hide, miss, or misread something because of the Valium haze would give the emotional arc a more visible spine.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The school world could carry more institutional texture.",
-        "detail": "The classroom, principal, and auditorium are all clear, but they currently function mainly as stages for Danny’s experience. A next pass could foreground one or two specific school rules, peer dynamics, or teacher habits so the setting feels like a lived system rather than a backdrop.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The music cue should be cleared early.",
-        "detail": "Fine Line by Harry Styles is named in the script, which makes music clearance a real packaging item. If the production wants to stay nimble, one lever is to protect the emotional function of that cue while keeping flexibility on the exact song choice.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 55.3,
+  "weightedScore": 49.7,
   "tier": "Needs Development",
-  "inputTokens": 16379,
-  "outputTokens": 3851,
-  "cost": 0.029613749999999998,
+  "inputTokens": 18784,
+  "outputTokens": 4274,
+  "cost": 0.033321,
   "declaredFormat": "Feature film"
 }

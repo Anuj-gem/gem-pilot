@@ -2,312 +2,338 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Sports Drama",
-      "genre_tags": [
-        "Romance",
-        "Family Drama"
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Family",
+        "Sports"
       ],
-      "tone": "Uplifting, sentimental, earnest, inspirational"
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "family-dynamics",
+        "motherhood",
+        "sports",
+        "basketball",
+        "small-town-pennsylvania"
+      ]
     },
-    "positioning_hook": "A small-town custodian and a former pro coach build a family, a championship team, and a wedding timeline that collides with a second chance at the WNBA.",
+    "positioning_hook": "A former pro basketball player becomes head coach overnight, while her custodian fiancé and his teenage daughter pull her toward a wedding, a championship run, and a family she didn’t expect to build.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The promise is immediate: sports, romance, family, and a faith-friendly emotional center all sit in the same lane. The championship run, wedding, and pregnancy reveal give it broad feel-good appeal, though the audience is more specific than a four-quadrant tentpole."
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: sports, romance, family, and uplift. The challenge is that the current material leans very specifically into inspirational-TV-movie territory, which narrows the buyer pool even as it makes the target audience obvious."
       },
       "conceptual_hook_clarity": {
-        "score": 7,
-        "reasoning": "The engine is easy to explain once the story settles into its core: Skylar gets a coaching shot, Ralph becomes the emotional anchor, and the wedding keeps moving toward the season. The pilot spends a lot of page space on setup and escalation, but the central promise is clear."
+        "score": 6,
+        "reasoning": "The core engine is easy to state once the pilot’s premise settles: Skylar gets pulled into a head-coach role, a wedding, and a family crisis all at once. The issue is that the script’s actual presentation is sprawling and repetitive, so the hook lands more as a summary than as a clean pilot engine."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Ralph, Skylar, and Maddie each have a distinct lane: steady partner, driven coach, rising player. The trio has durable series energy, especially with the family unit and team dynamic, though the supporting ensemble is more functional than deeply individualized."
+        "score": 6,
+        "reasoning": "Skylar, Ralph, and Maddie all have strong emotional functions, and Ralph in particular has a vivid, scene-stealing voice. The limitation is that the characters are written more as inspirational archetypes than as deeply contradictory series engines, which caps long-run surprise."
       },
       "creative_originality_and_boldness": {
-        "score": 6,
-        "reasoning": "The blend of small-town faith, women’s basketball, and domestic romance gives the material a recognizable but personal angle. The boldest choice is Ralph’s halftime speech and the way the relationship story is braided into the sports arc, but the overall execution stays in familiar inspirational territory."
+        "score": 5,
+        "reasoning": "The blend of basketball, faith, wedding, and family melodrama gives the script a distinct lane. But the execution is heavily familiar in its emotional beats and speechifying, so the originality is more in the package than in the dramatic construction."
       },
       "narrative_momentum_engagement": {
-        "score": 6,
-        "reasoning": "The story keeps moving through clear escalations: the Fever call, the coaching takeover, the dirty-play game, the championship, and the wedding. The momentum is strong in event terms, but the pilot reads more like a feature-length arc than a series pilot with a recurring episode engine."
+        "score": 5,
+        "reasoning": "The script is built on constant escalation, and the sports beats do generate forward motion. At the same time, the draft repeatedly restates the same emotional turns and locks in outcomes very early, which flattens suspense and makes the pilot feel over-determined."
       },
       "resonant_originality": {
-        "score": 6,
-        "reasoning": "A former player turned coach, a protective partner, and a rising teen athlete is a familiar frame, but the specific family-and-faith texture gives it a cleaner identity than a generic sports drama. The material feels heartfelt and ownable without fully landing in the rare 'of course this exists' zone."
+        "score": 5,
+        "reasoning": "The strongest resonance comes from the family triangle: coach, fiancé, and daughter all orbiting the same dream. What keeps it from scoring higher is that the emotional beats are often announced rather than discovered, so the freshness is present but not yet inevitable."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "Pottsville, the church hall, the high school gym, and the local basketball ecosystem create a coherent small-town world with visible social stakes. The world is specific enough to support ongoing stories, though it functions more as a warm container than a deeply layered institutional system."
+        "reasoning": "The Pottsville church, high school gym, and local basketball ecosystem give the show a usable small-town world with built-in rituals and stakes. It still plays more like a contained inspirational arena than a fully textured social system with multiple story-generating layers."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The tone is distinct because it commits to sincerity without irony: locker-room intensity, church warmth, family humor, and romantic uplift all coexist. Ralph’s movie-quote speech and the wedding/reception material give the show a recognizable emotional signature."
+        "score": 6,
+        "reasoning": "The tone is clearly earnest, sentimental, and crowd-pleasing, with a strong Hallmark-adjacent uplift. That specificity is useful commercially, but the voice is not yet distinctive enough to feel hard-to-imitate."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 6,
-        "reasoning": "Under the surface, the script is about identity, support, sacrifice, and chosen family, and those themes can sustain more than one season. The pilot does state its emotional thesis plainly, so the depth is present but not especially withheld."
+        "score": 5,
+        "reasoning": "There are seeds of deeper material in Ralph’s history, Maddie’s family pain, and Skylar’s identity shift. The draft mostly resolves those threads quickly and cleanly, so the sense of hidden depth is present but not especially withholding."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Ralph/Skylar/Maddie is a strong core triangle, and Katie/Lindsey add useful team texture. The ensemble has recurring utility, but the story’s energy still lives primarily in the central family and the coach-player bond."
+        "reasoning": "The Skylar-Ralph-Maddie triangle is the show’s best asset, and Katie/Lindsey add a workable support layer. The ensemble is functional, but most scenes still depend on the central trio rather than generating many different combinations with equal energy."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Skylar Monroe",
+        "role_type": "Lead",
+        "demographics": "female, early 30s, former athlete, coach",
+        "hook": "Skylar is the emotional and structural center: a former player who gets pulled back into the game as a coach, then has to balance leadership, love, and a future that keeps changing shape. She reads as capable, disciplined, and deeply loyal, with the kind of grounded authority that can carry a series if the writing keeps giving her hard choices instead of just victories.",
+        "why_actor_wants_this": "This is the showcase territory of Connie Britton in Friday Night Lights — a woman whose authority is inseparable from vulnerability, and whose close-ups do as much work as her speeches. It gives an actor the chance to play competence, tenderness, and romantic stakes in the same role."
+      },
+      {
+        "name": "Ralph Bennett",
+        "role_type": "Supporting",
+        "demographics": "male, 50s, custodian/church worker, faith-driven",
+        "hook": "Ralph is the script’s breakout personality: a meticulous, faith-rooted everyman who becomes the emotional ballast of the story and then unexpectedly the loudest voice in the room. He’s funny, protective, romantic, and a little theatrical, which makes him feel like the kind of supporting character audiences quote and remember.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad’s early domestic scenes or William H. Macy in Shameless — a role that lets an actor toggle between warmth, comic timing, and sudden emotional authority. It gives a performer a big, scene-stealing transformation without needing to carry the whole series."
+      },
+      {
+        "name": "Maddie Bennett",
+        "role_type": "Supporting",
+        "demographics": "female, 16-18, high-school athlete",
+        "hook": "Maddie is the teen athlete with the clearest growth arc: talented, hungry, and emotionally observant, she becomes the bridge between Skylar and Ralph and the audience’s entry into the team. She has the makings of a durable supporting role because she can carry both sports pressure and family emotion.",
+        "why_actor_wants_this": "This is the showcase territory of Auliʻi Cravalho in The Power or Hailee Steinfeld in Dickinson — a young performer getting to play confidence, fragility, and leadership all at once. It offers the rare teen role that can be both athletic and emotionally central."
+      },
+      {
+        "name": "Katie Clarkson",
+        "role_type": "Supporting",
+        "demographics": "female, 20s-30s, assistant coach, former player",
+        "hook": "Katie is the energetic assistant who helps translate Skylar’s vision into actual team culture. She’s written more as a functional ally than a fully separate engine, but she has enough personality to keep scenes moving and to become a reliable recurring presence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the sharp, supportive energy of a coach-player ensemble piece like Friday Night Lights. It’s a good fit for someone who wants crisp dialogue, team chemistry, and a role that can pop in group scenes."
+      },
+      {
+        "name": "Lindsey Hill",
+        "role_type": "Supporting",
+        "demographics": "female, 20s-30s, assistant coach, former player",
+        "hook": "Lindsey functions as the defensive, no-nonsense counterweight to Katie and Skylar’s emotional leadership. She’s less individualized on the page, but she helps create the sense of a real coaching staff rather than a solo protagonist surrounded by extras.",
+        "why_actor_wants_this": "This is the showcase territory of a strong ensemble utility player in a sports drama — the kind of role that benefits from sharp reactions, authority, and chemistry with the team. It gives an actor a recurring lane in a feel-good series with room to become memorable."
+      },
+      {
+        "name": "Coach Winsil",
+        "role_type": "Supporting",
+        "demographics": "male, 50s-60s, head coach",
+        "hook": "Coach Winsil is the mentor figure whose stroke becomes the catalyst for Skylar’s rise. He’s less a full character than a narrative handoff, but the hospital scene gives him enough dignity to matter emotionally.",
+        "why_actor_wants_this": "This is the kind of brief but meaningful role that gives an actor a single, emotionally loaded scene in the tradition of a mentor in a sports drama. It’s not a series engine, but it does offer a clean, memorable turn."
+      },
+      {
+        "name": "Tim Moss",
+        "role_type": "Supporting",
+        "demographics": "male, 40s-50s, athletic director",
+        "hook": "Tim is the institutional voice who keeps the sports-world mechanics moving: calls, approvals, consequences, and logistics. He’s practical and steady, which makes him useful in a series built around team and school politics.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that lets an actor play institutional pressure without becoming a villain. It’s a solid recurring part for someone who can make administrative scenes feel alive."
+      },
+      {
+        "name": "Coach Daniels",
+        "role_type": "Supporting",
+        "demographics": "male, 40s-50s, opposing coach",
+        "hook": "Coach Daniels is the antagonistic pressure valve, the coach whose dirty tactics create the script’s clearest external threat. He’s not nuanced, but he does give the story a face for competitive danger.",
+        "why_actor_wants_this": "This is the showcase territory of a strong character actor who can play menace in a sports setting. It’s a compact role with a clear function and a memorable edge."
+      },
+      {
+        "name": "Father Phillips",
+        "role_type": "Supporting",
+        "demographics": "male, 50s-70s, priest",
+        "hook": "Father Phillips anchors the faith and wedding side of the story, giving the series a spiritual and ceremonial spine. He’s more functional than complex, but he helps define the show’s moral and community framework.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor warmth, authority, and a few key ceremonial scenes. It’s a classic supporting part in a faith-forward family drama."
+      },
+      {
+        "name": "Jack Monroe",
+        "role_type": "Supporting",
+        "demographics": "male, 50s-60s, Skylar’s father",
+        "hook": "Jack is the emotional father figure who helps legitimize the wedding and family transition. He’s written as loving and supportive, with a straightforward emotional function in the final act.",
+        "why_actor_wants_this": "This is the showcase territory of a dependable dramatic father role — the kind of part that gives an actor a heartfelt speech and a few strong reaction beats. It’s not flashy, but it’s emotionally legible."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 10,
-        "leads": 3,
-        "series_regulars": 7,
+        "leads": 1,
+        "series_regulars": 5,
         "child_actors": false,
         "casting_characteristics": [
-          "Female lead in her early 30s with athletic credibility",
-          "Male lead in his 50s with warmth, comic timing, and emotional authority",
-          "Teen basketball player with on-court credibility",
-          "Multiple women’s basketball roles with athletic movement requirements"
+          "athletic lead required",
+          "basketball-capable teen supporting role",
+          "ensemble of female players",
+          "faith/community casting texture"
         ]
       },
       "locations": {
-        "distinct_count": 10,
-        "interior_exterior_ratio": "Mostly interior with some exterior travel and event scenes",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 8,
+        "interior_exterior_ratio": "mostly interiors with some key exteriors",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "High school gym",
-          "Church hall and church interior",
-          "Hospital room and hallway",
-          "Indiana arena and practice court",
-          "Highway/car interiors",
-          "Wedding reception space",
-          "Graduation ceremony setting"
+          "high school gym",
+          "church hall",
+          "church wedding",
+          "hospital room",
+          "hotel room",
+          "highway/car scenes",
+          "arena-style basketball spaces"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No meaningful VFX requirements beyond standard crowd and scoreboard coverage.",
+        "vfx_details": "No meaningful VFX beyond basic scoreboard or crowd enhancement if desired.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical crowd, basketball action, and a staged chair-fall distraction sequence.",
+        "sfx_needs": "Practical basketball action, crowd ambience, wedding/reception dressing, hospital practicals.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
-          "type": "brand",
-          "detail": "Indiana Fever is named directly."
+          "type": "named_music",
+          "detail": "The Greatest American Hero theme song is sung in the rehearsal dinner scene."
         },
         {
-          "type": "brand",
+          "type": "named_music",
           "detail": "Shania Twain's 'You're Still the One' is used for the first dance."
         },
         {
           "type": "brand",
-          "detail": "The Greatest American Hero theme song is sung in the rehearsal dinner scene."
-        },
-        {
-          "type": "brand",
-          "detail": "Several sports-film titles are referenced in Ralph's speech, including Varsity Blues, Remember the Titans, and The Mighty Ducks 3."
+          "detail": "WNBA Fever / Indiana Fever is referenced by name."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming family drama / faith-friendly sports romance",
-        "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Serialized character drama with sports-season arcs, relationship milestones, and community stakes driving each episode."
+        "recommended_lane": "streaming",
+        "content_level": "family",
+        "series_engine_or_release_model": "Serialized family sports drama with romance and community stakes; episode engine is team season progression, relationship pressure, and life-event milestones."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the repeated gym/arena sequences, crowd scenes, and wedding/reception set pieces will add up across a season."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary small-town settings, a limited core cast, and no heavy effects keep this in a modest production lane."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to carry coach authority, romantic warmth, and sports credibility, while Ralph needs a very specific comic-emotional register to land the role's big speeches."
+      },
+      "development": {
+        "level": "high",
+        "note": "The pilot is heavily outcome-driven and repeats its emotional beats in multiple forms, so the series shape will need clearer episode-level variation and a cleaner pilot spine."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Friday Night Lights",
+          "year": 2006,
+          "why_it_comps": "Small-town sports pressure, team culture, and the emotional authority of a coach-centered ensemble make this the clearest tonal and structural neighbor."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The project depends on three strong leads plus athletic supporting players, and the basketball roles need credible movement and chemistry."
+        {
+          "title": "One Tree Hill",
+          "year": 2003,
+          "why_it_comps": "Teen basketball, family entanglement, and soap-forward emotional escalation place it in the same broad audience lane."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves between church, school, hospital, highway, arena, and wedding spaces, with a few event-scale crowd scenes."
+        {
+          "title": "Sweet Magnolias",
+          "year": 2020,
+          "why_it_comps": "The community-first, faith-adjacent, relationship-driven tone and warm ensemble packaging are very close to this show’s commercial lane."
         },
-        "content": {
-          "level": "low",
-          "note": "The material stays largely family-friendly, with sports intensity and emotional stakes rather than explicit content."
+        {
+          "title": "Ted Lasso",
+          "year": 2020,
+          "why_it_comps": "The inspirational coaching voice, ensemble uplift, and emotional optimism echo the same crowd-pleasing DNA, even though the sports setting differs."
         },
-        "rights": {
-          "level": "medium",
-          "note": "Named music, branded sports references, and specific pop-culture song usage require clearances."
+        {
+          "title": "The Blind Side",
+          "year": 2009,
+          "why_it_comps": "The family-through-sports emotional engine and broad inspirational appeal are closely aligned with the script’s audience promise."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who want an uplifting, faith-friendly, sports-and-family drama with romance and emotional payoff.",
+        "demographics": "Adult women skew, 25-54, with secondary appeal to family audiences and sports-drama viewers who prefer inspirational stakes over cynicism.",
+        "quadrants": [
+          "F35+",
+          "F18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M/episode",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Contemporary locations, recurring basketball action, ensemble cast, and a few crowd-heavy set pieces keep this in mid-tier streaming drama territory."
+      },
+      "lane_fit": {
+        "lane": "faith-friendly sports family drama",
+        "types_of_buyers": [
+          "streamers building inspirational family originals",
+          "basic-cable drama buyers with a warm ensemble lane",
+          "faith-adjacent distributors",
+          "sports-content labels looking for character-first material"
+        ],
+        "detail": "This sits naturally in the lane where uplift, community, and romance are the product. The show’s strongest commercial identity is not the basketball itself but the emotional promise of a family being built under pressure."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a franchise; no clear spinoff vector is established beyond the core Skylar-Ralph-Maddie triangle."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Ralph is a true showcase role.",
-          "what_it_means": "The script gives a middle-aged male lead warmth, comic timing, authority, and emotional release in one part, which is a strong packaging lever for an actor who wants to be seen as both romantic lead and scene-stealing presence. Character actors with heart, or recognizable TV names looking for a crowd-pleasing lead, will see a role with real audience affection built in.",
-          "evidence": "Ralph’s quiet church-hall routine, his 'strong side' support of Skylar, and the halftime locker-room speech that flips the championship game.",
+          "dimension_or_area": "Ralph is the breakout engine.",
+          "what_it_means": "Commercially, this gives the show a scene-stealing supporting role that can generate quotes, clips, and audience affection fast. Buyers will notice that the series has a built-in fan favorite who can elevate every episode he touches.",
+          "evidence": "Ralph’s halftime locker-room speech, his blood-sugar fake-out, and his rehearsal-dinner song all give him big, memorable turns.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Skylar has a clean, aspirational engine.",
-          "what_it_means": "She is a former pro athlete stepping into leadership while balancing love, family, and a second chance at the WNBA, which gives the project a strong female-forward hook for buyers. Actresses who can play competence, vulnerability, and authority will be drawn to a role that can anchor both sports drama and romance.",
-          "evidence": "The Fever call, the coaching takeover after Coach Winsil’s stroke, and her final choice to keep chasing Indiana while staying emotionally rooted in Pottsville.",
+          "dimension_or_area": "The family triangle is clean and legible.",
+          "what_it_means": "That gives the series a simple emotional engine that can be marketed in one sentence and sustained through multiple life events. This is the kind of structure that appeals to buyers looking for warmth, relatability, and repeatable emotional payoff.",
+          "evidence": "Skylar, Ralph, and Maddie repeatedly function as coach, partner, and daughter-like bridge across the sports and home worlds.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The family triangle is the engine.",
-          "what_it_means": "Ralph, Skylar, and Maddie create a built-in emotional system where every sports win or setback also changes the home life, which is exactly the kind of recurring relationship web that can sustain a series. Buyers looking for a warm, character-led ensemble will see a clear center of gravity and a dependable emotional payoff structure.",
-          "evidence": "Maddie calling Skylar 'Mom,' Ralph moving the wedding up, and the three of them ending in a family embrace after the pregnancy reveal.",
+          "dimension_or_area": "The sports stakes are easy to follow.",
+          "what_it_means": "Clear game progression makes the show accessible to casual viewers and gives each episode a built-in forward drive. Sports buyers and family-drama buyers both understand the value of a clean competitive ladder.",
+          "evidence": "The script tracks practices, league playoffs, districts, and the state championship with explicit score and outcome beats.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The sports stakes are easy to sell.",
-          "what_it_means": "The season arc gives the show a clean ladder of escalation: practice, rivalry game, playoff run, state championship, and future opportunity. That makes it easy for a producer to pitch the series as eventful and emotionally legible without needing a complicated premise.",
-          "evidence": "The Green Hill Hawks game, the league and district playoff wins, and the undefeated run into the state championship.",
+          "dimension_or_area": "The faith-and-wedding layer broadens the lane.",
+          "what_it_means": "That widens the commercial audience beyond pure sports drama and gives the show a more distinctive, family-safe identity. Buyers in the Hallmark/UPTV/streaming family space will immediately understand the positioning.",
+          "evidence": "Church hall setup, Father Phillips, the wedding ceremony, and the rehearsal-dinner speech all sit alongside the basketball arc.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The church setting gives the show a distinct moral texture.",
-          "what_it_means": "The church hall, wedding prep, and Father Phillips scenes add a values-based backdrop that broadens the audience beyond pure sports viewers and gives the show a recognizable identity. Faith-friendly buyers and talent who want material with heart and community will respond to that lane.",
-          "evidence": "Ralph’s work at St. Andrew’s, the accelerated wedding, and the ceremony/reception material.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Ralph’s halftime speech is trailer material.",
-          "what_it_means": "The speech is the kind of big, quotable emotional lift that can define a pilot and give marketing a memorable button. It also gives the project a signature scene that can attract directors who like performance-driven set pieces rather than spectacle.",
-          "evidence": "The locker-room speech with 'We are not beaten,' 'play like gods,' and 'pain is temporary, glory lasts forever.'",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending leaves room for more story.",
-          "what_it_means": "Even though the script delivers a full emotional arc, the WNBA move, the pregnancy reveal, and the family expansion all point to future episodes and seasons. That gives buyers a built-in continuation path rather than a closed ending.",
-          "evidence": "Skylar leaving for Indiana, Ralph promising to watch every game, and the final pregnancy reveal at graduation.",
+          "dimension_or_area": "The ending delivers a full emotional payoff.",
+          "what_it_means": "A strong resolution helps the pilot feel satisfying on first watch and signals confidence in tone. That matters for buyers who want a show that can close emotional loops while still leaving room for more story.",
+          "evidence": "Wedding, first dance, graduation, retirement papers, and the pregnancy reveal all land in the final movement.",
           "source": "script"
         }
       ],
-      "headline": "This is a heartfelt, highly playable sports-family series with a clear emotional center and a built-in audience lane. The combination of church-town texture, women’s basketball, and a romantic partnership that actually supports ambition gives the project a clean commercial identity and a lot of warmth on the page."
+      "headline": "This is a warm, highly marketable family-sports drama with a breakout supporting character and a clean emotional engine. The combination of church, court, and home gives buyers a very clear lane: an uplifting series that can live on chemistry, community, and repeatable payoff."
     },
-    "lead_characters": [
-      {
-        "name": "Ralph Bennett",
-        "role_type": "Lead",
-        "demographics": "Male · 50s · bald, glasses, black goatee",
-        "hook": "Ralph is the steady center of the story: a church custodian with a precise routine, a dry sense of humor, and a deep well of emotional intelligence he only lets out when it matters. He reads as the kind of man who has spent years being underestimated, which makes his authority in the locker room and his tenderness at home feel earned rather than ornamental.",
-        "why_actor_wants_this": "This is the kind of role Tom Hanks had in 'A League of Their Own' and the emotional command Bryan Cranston had in 'Breaking Bad' season 1 — a man whose public surface is modest, but whose inner life keeps expanding. Actors who want a crowd-pleasing, scene-stealing lead with comedy, romance, and a late-blooming hero turn will chase this hard."
-      },
-      {
-        "name": "Skylar Monroe",
-        "role_type": "Lead",
-        "demographics": "Female · early 30s · athletic, former pro basketball player",
-        "hook": "Skylar is disciplined, emotionally contained, and quietly hungry, with the aura of someone who has already lived one version of her dream and is trying to earn the next one. She carries authority on the court, but the script keeps revealing how much of her leadership comes from care, loyalty, and the willingness to let other people matter.",
-        "why_actor_wants_this": "This is the showcase space of Connie Britton in 'Friday Night Lights' and Kerry Washington in 'Scandal' — a woman who can command a room while still letting the audience feel the private cost of leadership. Mid-career actresses looking for a role that blends athletic credibility, romance, and emotional authority will see a strong anchor here."
-      },
-      {
-        "name": "Maddie Bennett",
-        "role_type": "Lead",
-        "demographics": "Female · 16-17 · high school basketball player",
-        "hook": "Maddie is the spark plug: confident, competitive, funny, and still young enough to be thrilled by the dream while already trying to live inside it. She starts as the kid with talent and ends as a real floor general, which gives the role a satisfying coming-of-age shape inside the larger family story.",
-        "why_actor_wants_this": "This is the kind of breakout teen role Hailee Steinfeld had in 'The Edge of Seventeen' and the athletic coming-of-age energy of Auli'i Cravalho in 'Rise' — a part that lets a young actor play swagger, vulnerability, and growth in one package. Rising young performers with sports chops will see a clear star-making lane."
-      },
-      {
-        "name": "Katie Clarkson",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · former player / assistant coach",
-        "hook": "Katie is the energetic, sharp assistant who brings credibility and momentum to the coaching staff. She reads as someone who can push the team hard without losing the fun, and her presence helps make the basketball world feel lived-in rather than symbolic.",
-        "why_actor_wants_this": "This is the kind of grounded, witty support role that gives an actor the Allison Janney-in-'The West Wing' utility of being the smart person in the room without needing the whole show to orbit them. Character actors who like ensemble chemistry and sports-world banter will be drawn to it."
-      },
-      {
-        "name": "Lindsey Hill",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · former player / assistant coach",
-        "hook": "Lindsey is the defensive-minded counterpart to Katie, giving the staff a second voice and a different rhythm. She helps round out the team’s identity and gives the show a believable coaching bench with personality.",
-        "why_actor_wants_this": "This is the sort of role that benefits from the grounded authority of a Janel Moloney-type performance in 'The West Wing' — efficient, specific, and quietly memorable. Actors who like ensemble work and want a recurring role with real utility will find it appealing."
-      },
-      {
-        "name": "Coach Winsil",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s · basketball coach",
-        "hook": "Coach Winsil is the respected mentor whose stroke becomes the emotional hinge that forces Skylar into leadership. He functions as the spiritual predecessor in the coaching lineage, and his final words give the season its moral charge.",
-        "why_actor_wants_this": "This is the kind of mentor role that carries the gravitas of Ed Harris in 'Appaloosa' or James Cromwell in 'Babe' — a brief but meaningful part that can land with real emotional weight. Veteran actors who like dignified, scene-defining support roles will respond to it."
-      },
-      {
-        "name": "Tim Moss",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · athletic director / school administrator",
-        "hook": "Tim is the practical institutional voice who keeps the story moving when the emotional stakes spike. He’s the guy who can translate crisis into next steps, which makes him useful as both pressure valve and authority figure.",
-        "why_actor_wants_this": "This is the kind of steady administrator role that gives an actor the grounded utility of a Philip Baker Hall performance — calm, specific, and believable. Character actors who can play institutional authority without flattening the emotion will fit well."
-      },
-      {
-        "name": "Father Roger Phillips",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-70s · priest",
-        "hook": "Father Phillips gives the story its faith anchor and ceremonial structure. He’s not just officiating events; he’s part of the community fabric that makes the wedding and the town feel spiritually connected.",
-        "why_actor_wants_this": "This is the kind of warm, dignified clergy role that plays like the best of Tom Wilkinson in 'The Full Monty' or Pat Hingle in small-town dramas — a role built on presence and trust. Veteran character actors with a natural pastoral authority will be interested."
-      },
-      {
-        "name": "Jack Monroe",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s · Skylar’s father",
-        "hook": "Jack is the emotional father figure who gives the wedding and family scenes their grounding. He’s proud, tender, and supportive, and his speech at the rehearsal dinner helps define the show’s family-first tone.",
-        "why_actor_wants_this": "This is the kind of father role that lets an actor do the emotional lift of Craig T. Nelson in 'Parenthood' — warm authority with a real tear-jerker button. Actors who specialize in heartfelt supporting work will see easy value here."
-      },
-      {
-        "name": "Maddie’s teammates / South Schuylkill players",
-        "role_type": "Supporting",
-        "demographics": "Female · teens",
-        "hook": "The team functions as a living extension of the show’s emotional world: excited, competitive, and increasingly unified under Skylar’s leadership. They give the series a communal pulse and make the sports sequences feel like a real ecosystem rather than a backdrop.",
-        "why_actor_wants_this": "This is the kind of ensemble lane that gives younger actors the fun, kinetic energy of the 'Friday Night Lights' locker-room world — a place where every face can become a recurring favorite. Casting directors looking for athletic teen ensemble chemistry will see value here."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a heartfelt crowd-pleaser without losing character specificity.",
-        "fit_profile": "Established indie or television directors with at least one or two character-forward features or prestige episodes, especially those who have handled ensemble emotion, sports material, or faith-adjacent family drama. This material rewards clean emotional staging, performance-first coverage, and the ability to make a locker room, church hall, and wedding reception all feel like part of one living world.",
-        "detail": "The best fit is a director who can balance uplift and specificity without turning the material glossy or ironic. The halftime speech, the wedding sequence, and the family scenes all ask for a filmmaker who knows how to let actors carry the moment and still keep the pacing propulsive."
-      },
-      "buyer_appeal": {
-        "tier": "Low-to-mid budget streaming series",
-        "lane": "Faith-friendly sports romance / family drama lane",
-        "detail": "The project can be packaged around three strong leads and a contained set of recurring locations, so it does not need a giant ensemble or heavy effects to get off the ground. The sports-season structure and wedding/family hook give it a clear bingeable engine for streamers that want warm, aspirational, character-led series."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot is built on too many endgame turns.",
+          "detail": "Coach promotion, wedding acceleration, championship run, graduation, retirement, and pregnancy all land in one long stretch. That creates emotional saturation and makes the pilot feel like a full season summary rather than a first episode with room to breathe.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The dialogue often announces the feeling.",
+          "detail": "Characters repeatedly say exactly what the scene is meant to mean, especially in the locker-room speeches and relationship beats. Buyers will hear the sincerity, but they’ll also notice that the script often explains its own emotional value instead of letting subtext do the work.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Ralph’s speeches dominate the tonal memory.",
+          "detail": "He is the most vivid voice on the page, but the pilot leans so hard on his motivational monologues that the series risks becoming dependent on one character’s set-piece energy. That’s a strength in the room and a development risk in the long run.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The sports arc resolves too cleanly.",
+          "detail": "The team goes from dominant to challenged to undefeated champions with very little real uncertainty about the outcome. That makes the competition feel more ceremonial than dramatic, which is a note buyers will weigh if they want ongoing tension.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The biggest friction is structural: the pilot tries to deliver the emotional payoff of an entire season, which compresses suspense and makes the episode feel over-fulfilled. The other buyer concern is dependency — the show’s most memorable energy comes from Ralph’s speeches, so the series will need more than one voice to carry the long haul."
     },
-    "considerations": [
-      {
-        "area": "The pilot reads like a full season arc.",
-        "detail": "The script delivers the Fever call, the coaching takeover, the playoff run, the wedding, and the pregnancy reveal in one sweep, which gives it a satisfying emotional finish but also compresses a lot of series runway into a single installment. One direction would be to let the pilot end on the coaching takeover or the first major team win, so the later milestones can power future episodes instead of arriving all at once.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The championship stretch is very event-dense.",
-        "detail": "The league, district, and state runs all play as major set pieces, and the momentum is strong, but the version where one of those tournament layers is folded into a montage would protect the escalation and keep the episode engine moving. That would also make room for more breathing space around the Skylar/Maddie/Ralph relationship beats that are doing the emotional heavy lifting.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "Ralph’s speech is the signature scene.",
-        "detail": "The locker-room monologue is the most quotable page-turn in the script, and the version where it lands after a little more silence or hesitation could make the release even bigger. The speech already has the right ingredients; the lever is simply letting the room feel the pressure before he takes it over.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The supporting team could carry more individual texture.",
-        "detail": "Katie and Lindsey function well as coaching allies, and the players energize the gym, but the series would gain even more repeat value if a few of the teammates had sharper personal distinctions. A next pass could give one or two of them a recurring point of view so the ensemble feels even more combinatorial over multiple episodes.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The production footprint stays manageable.",
-        "detail": "The story lives in contemporary interiors, gyms, churches, homes, and a handful of travel and arena scenes, which keeps the show in a practical budget lane. The version where the Indiana material is minimized or folded into a smaller number of locations would make the package even easier to mount without changing the emotional arc.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The music and brand references need a clear clearance plan.",
-        "detail": "The Greatest American Hero theme, 'You’re Still the One,' Indiana Fever, and the sports-film references all create recognizable flavor, but they also mean the package should be built with rights in mind. A next pass could preserve the same emotional beats while leaving room for alternate music choices if the production wants flexibility.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 65,
-  "tier": "Optionable",
-  "inputTokens": 67916,
-  "outputTokens": 5125,
-  "cost": 0.0739995,
+  "weightedScore": 58.7,
+  "tier": "Needs Development",
+  "inputTokens": 70321,
+  "outputTokens": 4695,
+  "cost": 0.07386825,
   "declaredFormat": "Series"
 }

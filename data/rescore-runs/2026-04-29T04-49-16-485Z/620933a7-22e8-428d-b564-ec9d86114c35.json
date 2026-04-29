@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T04:52:59.187Z",
+  "submission_id": "620933a7-22e8-428d-b564-ec9d86114c35",
+  "eval_id": "bab06ba0-b4e2-457e-a836-db312a1b53f4",
+  "title": "BLUEFLY 062425",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Myla Reese",
+      "role_type": "Lead",
+      "demographics": "Woman, late 20s; African-born linguist/translator; educated in France; working with the UN/NATO in the DRC."
+    },
+    {
+      "name": "John Broyles",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s-50s; American intelligence/military operative; seasoned, physically capable, morally compromised."
+    },
+    {
+      "name": "Benny",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-40s appearance; pilot; house-arrest ankle monitor; later revealed as non-human."
+    },
+    {
+      "name": "Niles",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s-60s; Congolese refinery operator/ex-pat power broker."
+    },
+    {
+      "name": "Captain Boro",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s; African river captain; experienced, world-weary, pragmatic."
+    },
+    {
+      "name": "Dugan",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s; American special-ops team leader; tactical, profane, competent."
+    },
+    {
+      "name": "Greer",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-40s; American operator; weapons specialist."
+    },
+    {
+      "name": "Malcom",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-40s; American operator; heavy-weapons support."
+    },
+    {
+      "name": "Olson",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-40s; American operator; sniper/tech support."
+    },
+    {
+      "name": "Omari",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-50s; African boat crew member; pilot/engineer/fisherman."
+    },
+    {
+      "name": "Moman",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s; UN official; calm, educated, politically fluent."
+    }
+  ],
+  "positioning_hook": "A UN translator in the Congo is pulled into a covert river mission, then discovers the recovery team is hunting an alien craft buried inside a decade-old military disaster.",
+  "cost_usd": 0.05739675,
+  "input_tokens": 45677,
+  "output_tokens": 5142,
+  "status": "wrote:leads_ok"
+}

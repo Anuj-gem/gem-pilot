@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T04:51:39.354Z",
+  "submission_id": "a763e7fd-bd8e-4449-af7d-9eb96673ae76",
+  "eval_id": "791a20aa-8b9e-43b7-acbe-a148153acdda",
+  "title": "Morning Will Come",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Connor",
+      "role_type": "Lead",
+      "demographics": "Male, 6, child, white."
+    },
+    {
+      "name": "Evie",
+      "role_type": "Supporting",
+      "demographics": "Female, 37, mother, white."
+    },
+    {
+      "name": "Aunt Minnie",
+      "role_type": "Supporting",
+      "demographics": "Female, 66, older aunt, white."
+    },
+    {
+      "name": "Joel",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, father, white."
+    }
+  ],
+  "positioning_hook": "A six-year-old boy spends one terrifying night realizing his mother’s monthly breakdowns may be something far more monstrous than divorce.",
+  "cost_usd": 0.0290325,
+  "input_tokens": 16726,
+  "output_tokens": 3664,
+  "status": "wrote:leads_ok"
+}

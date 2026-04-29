@@ -2,292 +2,326 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Teen horror",
-      "genre_tags": [
-        "mystery",
-        "supernatural slasher"
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Mystery",
+        "Thriller"
       ],
-      "tone": "Gritty, heightened, grief-soaked, and suspenseful"
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "high-concept",
+        "prestige",
+        "grief",
+        "survival",
+        "school-setting",
+        "slasher"
+      ]
     },
-    "positioning_hook": "After her ex-boyfriend is murdered at school, Macy digs into a buried teen death and awakens a black-cloaked killer who turns her grief into a body-count mystery.",
+    "positioning_hook": "After her ex-boyfriend is murdered at school, a grieving teen digs into a buried campus death and discovers the killer may be an inhuman predator hiding in plain sight.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The core promise is easy to sell: a popular high-school circle, a murdered ex, and a buried past death that turns the campus into a fear engine. The teen-horror lane is proven, though this version leans more niche than four-quadrant because the emotional entry point is grief and investigation rather than broad wish-fulfillment."
+        "reasoning": "The core promise is immediate: a teen murder mystery that turns into a predator hunt, with grief as the emotional engine. The audience is clear and genre-native, though the school setting and serialized-feeling mythology narrow it more than a broad four-quadrant feature."
       },
       "conceptual_hook_clarity": {
-        "score": 6,
-        "reasoning": "The opening murder, the school assembly, and Macy’s vow to investigate establish the premise clearly. The hook becomes more specific once Lillian Crawford enters the story, but the script still spends a stretch on mood and social setup before the central supernatural engine fully locks in."
+        "score": 7,
+        "reasoning": "Ryan’s murder, the old Lillian Crawford case, and Macy’s decision to investigate are all legible quickly. The hook gets stronger once Lillian appears as a literal threat, but the script is still early in defining the exact rules of the mystery."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 5,
-        "reasoning": "Macy has a clean emotional engine — guilt, anger, and determination — and the Outlanders give her a social orbit. The supporting players are more functional than singular, so the character appeal lives primarily in Macy’s grief-to-obsession turn and the actor who can carry that shift."
+        "score": 6,
+        "reasoning": "Macy has a usable emotional engine — guilt, anger, and determination — and the Outlanders give her a social orbit. The supporting cast is vivid in attitude, but most of them are still defined by function rather than distinct inner contradiction."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The script’s boldest move is pairing glossy teen-group dynamics with a murder mystery that quickly tips into slasher territory. The school-assembly death announcement and the later warehouse attack give it a sharper edge than a standard teen whodunit, though the overall framework still sits in familiar genre territory."
+        "reasoning": "The teen-clique-plus-murder setup is familiar, but the wealthy-school texture and the turn toward a supernatural predator give it a cleaner ownable edge. The execution is still leaning on recognizable genre beats rather than a fully singular voice."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The opening death, the assembly reveal, and the research sequence create a steady pull, and the warehouse kill closes the episode with real force. There is some repetition in grief beats and conversation scenes, but the escalation is clear and the final head-in-a-box beat in Episode 2 shows the story knows how to punch."
+        "reasoning": "The opening murder, assembly reveal, and warehouse kill create clear escalation, and the ending pushes the mystery forward. The middle spends a lot of time on grief and social atmosphere before the investigation really takes over."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "The idea of a socially dominant teen clique being pulled into a murder-and-urban-legend spiral has immediate appeal, and Lillian’s return as a predatory figure gives the premise a memorable image. It feels fresh enough to stand out in the teen-horror shelf, though not yet in the rarefied territory of a truly singular genre signature."
+        "reasoning": "The script has a fresh enough collision of teen social hierarchy, murder mystery, and monster threat to feel marketable. What keeps it from a higher band is that the underlying shape still reads like a familiar horror-investigation engine."
       },
       "world_density_and_texture": {
-        "score": 5,
-        "reasoning": "The wealthy suburban school, the Outlanders’ status, and the old school archive create a usable world with social hierarchy and history. Most of the texture is still in service of the plot, so the setting reads as a strong container rather than a fully self-generating ecosystem."
+        "score": 6,
+        "reasoning": "The affluent suburban school, the Outlanders clique, and the old campus legend give the world some social specificity. It is still mostly a container for the mystery rather than a fully rule-bound ecosystem."
       },
       "tonal_specificity": {
         "score": 6,
-        "reasoning": "The script has a recognizable blend of glossy teen banter, melodramatic grief, and sudden violence, and the music cues reinforce that identity. The tone is consistent, but it still sits close to adjacent teen mystery-horror pieces rather than announcing a fully singular voice."
+        "reasoning": "The script is aiming for glossy teen melodrama colliding with horror violence, and that contrast is readable on the page. The tonal identity is consistent, but it has not yet landed on a truly hard-to-imitate signature."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Macy’s guilt over Ryan and the buried history around Lillian suggest a deeper mythology under the surface, and the school’s past deaths hint at a larger pattern. The material clearly wants to open into more, even if the current pages mostly foreground the immediate murder mystery."
+        "reasoning": "Lillian Crawford and the closed police report suggest a deeper mythology beneath the immediate murder plot. The page hints at more than it reveals, but the deeper layer is still mostly promise rather than payoff."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "The Outlanders have a workable group dynamic, with teasing, status, and shared shock giving the ensemble some life. At this stage, though, the relationships mostly orbit Macy and the central mystery rather than generating fully independent story energy."
+        "score": 6,
+        "reasoning": "The Outlanders have a built-in social engine, and Macy’s grief gives the group a reason to fracture under pressure. Still, the relationships are currently more archetypal than combustible, so the ensemble energy is present but not yet rich."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Macy",
+        "role_type": "Lead",
+        "demographics": "Female, 16-17, high-school student, affluent suburban background",
+        "hook": "Macy is the emotional center of the script: outwardly polished, socially fluent, and quick with a joke, but internally cracked open by guilt after Ryan’s murder. She starts as the girl trying to keep her morning normal and becomes the one person willing to chase the truth, even when grief curdles into obsession. Her contradiction is the engine — she wants to stay bright and social, but the story keeps pulling her toward rage, isolation, and a darker kind of resolve.",
+        "why_actor_wants_this": "This is the showcase territory of a lead in a teen prestige horror role like Willa Fitzgerald in Scream or Sophie Nélisse in Yellowjackets — a performance that gets to pivot from charm to raw grief to feral determination. It gives an actor a full emotional runway, plus the chance to carry both the social-clique scenes and the investigative horror turn."
+      },
+      {
+        "name": "Jessica",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens, high-school student",
+        "hook": "Jessica is the polished, socially strategic friend who reads as supportive but also tracks the room and the hierarchy at all times. She has enough warmth to keep Macy close and enough self-awareness to feel like she knows more than she says, which makes her useful both as confidante and pressure point.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the sharp, scene-stealing social intelligence of a supporting player in Mean Girls or Yellowjackets — the friend who can turn from comic sparkle to quiet alarm in a beat. It offers fashion, status, and emotional subtext without needing to carry the whole film."
+      },
+      {
+        "name": "Kyle",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens, high-school student",
+        "hook": "Kyle is the confident, smirking alpha of the group, the one who performs ease even when the room turns tense. He reads as the guy who can joke through danger, but the murder and the Lillian talk start to expose a more brittle, reactive layer underneath.",
+        "why_actor_wants_this": "This is good territory for the charismatic teen male supporting turn that actors get in Scream or Riverdale-adjacent ensemble horror — the role that lets someone play swagger, fear, and suspicion in the same package. It’s a useful showcase for timing and social dominance."
+      },
+      {
+        "name": "Nina",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-to-late teens, high-school student",
+        "hook": "Nina is the sarcastic observer, the one who weaponizes wit to stay a step removed from the emotional mess. She has the cleanest line into the group’s skepticism and fear, which makes her feel like a pressure-release valve and a possible truth-teller.",
+        "why_actor_wants_this": "This is the kind of dry, cutting supporting role that gives an actor the best lines and the chance to steal scenes the way a sharp ensemble player does in Buffy or Yellowjackets. It’s a compact showcase for comic timing with a darker undercurrent."
+      },
+      {
+        "name": "Ethan",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens, high-school student",
+        "hook": "Ethan is the easygoing jokester whose humor starts to fail as the deaths stack up. He functions as the group’s social lubricant, but the script also gives him enough fear and guilt to suggest he may not stay light for long.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the pivot from comic relief to shaken witness, similar to the best ensemble teen-horror supporting turns. It gives him room to be likable first, then destabilized."
+      },
+      {
+        "name": "Gabby",
+        "role_type": "Supporting",
+        "demographics": "Male, 10, younger sibling",
+        "hook": "Gabby is Macy’s younger brother and the script’s innocence valve, but he also becomes a useful witness when he mentions the hooded figure outside the house. He brings domestic normalcy into the horror plot and quietly widens the threat beyond school.",
+        "why_actor_wants_this": "This is a clean child-supporting role with a memorable beat and a strong fear-response scene. It gives a young actor a clear, emotionally legible function in the story."
+      },
+      {
+        "name": "Lillian Crawford",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens/young adult, supernatural threat",
+        "hook": "Lillian is the buried campus legend who becomes the story’s literal predator: dead, rumored, and then violently real in the warehouse attack. She carries the mythology of the old case and the physical menace of the present-day killer, making her the script’s most distinctive horror element.",
+        "why_actor_wants_this": "This is the kind of villain role that can become a calling card — the silent, inhuman, physically expressive antagonist that recalls the best creature-adjacent horror turns. It gives an actor or performer a chance to create iconography, not just dialogue."
+      },
+      {
+        "name": "Principal Hawthorne",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, school administrator",
+        "hook": "Principal Hawthorne is the institutional face of the story’s public crisis, the man forced to announce Ryan’s murder and manage the school’s panic. He’s not a mystery engine so much as the authority figure who makes the horror official.",
+        "why_actor_wants_this": "This is a strong character-actor role in the tradition of the worried administrator in teen thrillers and horror. It gives an actor a single high-stakes public scene with emotional authority."
+      },
+      {
+        "name": "Mom",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, mother",
+        "hook": "Macy’s mother is the warm domestic counterweight to the violence outside the house. She’s written as supportive and observant, which gives the home scenes emotional grounding even when Macy is spiraling.",
+        "why_actor_wants_this": "This is the kind of grounded parent role that lets an actor play concern, restraint, and helplessness with real emotional weight. It’s a reliable supporting showcase in a genre piece."
+      },
+      {
+        "name": "Dad",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, father",
+        "hook": "Macy’s father is the calm, ordinary presence in the kitchen scenes, a stabilizing figure who underscores how violently the story invades normal life. He’s functional but useful as part of the family baseline.",
+        "why_actor_wants_this": "This is a concise, naturalistic parent role that gives an actor a few grounded beats without needing heavy exposition. It’s the kind of part that adds texture to a genre ensemble."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 10,
-        "leads": 5,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Teen ensemble",
-          "Adult parents and school staff",
-          "One principal teen lead role with strong emotional range"
+          "one teen female lead carrying grief and investigation",
+          "ensemble of late-teen school peers",
+          "one child sibling role",
+          "one supernatural antagonist with physical menace"
         ]
       },
       "locations": {
-        "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interiors with some exterior school, street, courtyard, and warehouse scenes",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 9,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "High school campus",
-          "Luxury home/apartment setting",
-          "Abandoned warehouse",
-          "Police/assembly staging"
+          "high school auditorium",
+          "high school hallway/classroom/gym",
+          "suburban home interiors",
+          "abandoned warehouse",
+          "limo interior and street exterior"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "A few stylized murder beats and the supernatural presentation of Lillian; mostly practical presentation with possible enhancement for speed/appearance.",
+        "vfx_details": "A few crash and blood-enhancement moments, plus possible subtle supernatural enhancement for Lillian’s speed/appearance; no large-scale effects footprint is implied on the page.",
         "stunts_level": "minor",
-        "sfx_needs": "Blood effects, body impact beats, tire blowout/crash imagery, severed-head reveal in a box",
+        "sfx_needs": "practical blood, body injury makeup, tire blowout/car crash beats, severed-head reveal in a box, and a creature-style attack sequence",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "\"Happier Than Ever\" by Billie Eilish and \"When the Party's Over\" by Billie Eilish are specifically named and used as mood cues."
+          "detail": "\"Happier Than Ever\" by Billie Eilish is used in the opening limo sequence."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"When the Party’s Over\" by Billie Eilish is used in the auditorium announcement and again in Macy’s bedroom."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming horror-thriller or teen genre feature lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong streamer-friendly genre packaging; the mystery-and-kill escalation supports a festival-to-platform or direct streaming path."
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: teen horror mystery with a theatrical-to-streaming path and strong genre-platform fit."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary school and home locations keep the footprint contained, but the limo crash, warehouse kill, severed-head box reveal, and repeated night exteriors add practical effects and stunt coordination that can push above a very lean indie plan."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary school, home, and warehouse settings keep the footprint contained, with only modest effects and practical gore."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to carry grief, suspicion, and investigative momentum while still reading as socially effortless; Lillian also needs a performer with strong physical menace. The teen ensemble is accessible, but those two roles are the real lift."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script has a clear horror-mystery spine, but the mythology around Lillian Crawford is still more teased than defined, so buyers will want the rules of the threat and the Ryan/Lillian connection sharpened before a greenlight conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Scream",
+          "year": 2022,
+          "why_it_comps": "Teen social dynamics, murder fallout, and a killer who turns a high-school ecosystem into a suspicion machine."
         },
-        "cast": {
-          "level": "medium",
-          "note": "A teen ensemble plus parents, police, and school staff requires a broad but manageable cast, with the Macy role carrying the center of gravity."
+        {
+          "title": "I Know What You Did Last Summer",
+          "year": 2021,
+          "why_it_comps": "Grief-driven teen mystery with a body-count engine and a past crime that keeps resurfacing."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through school interiors, suburban exteriors, a home, and a warehouse, but the locations are all contemporary and accessible."
+        {
+          "title": "Yellowjackets",
+          "year": 2021,
+          "why_it_comps": "The blend of teen clique pressure, buried trauma, and a dark mythology underneath the social surface."
         },
-        "content": {
-          "level": "high",
-          "note": "Murder, blood, grief, and a severed-head reveal push the material firmly into mature horror-thriller territory."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "Two Billie Eilish songs are explicitly named and would need clearance if retained."
+        {
+          "title": "Totally Killer",
+          "year": 2023,
+          "why_it_comps": "High-school horror energy with a playful social texture and a murder mystery built around a past death."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Teen and young-adult horror audiences who want school-set mystery, grief, and a female-led predator story.",
+        "demographics": "Skews F18-34, with secondary pull for M18-34 and older genre fans who follow teen horror franchises.",
+        "quadrants": [
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, a small teen ensemble, and limited practical effects keep it in indie feature territory, though the car crash and creature attack sequences require disciplined scope control."
+      },
+      "lane_fit": {
+        "lane": "streaming teen horror mystery",
+        "types_of_buyers": [
+          "streamer genre development execs",
+          "boutique horror producers",
+          "indie financiers looking for elevated teen IP",
+          "director-driven first-feature packages"
+        ],
+        "detail": "This sits naturally in the lane where school-set horror, female-led suspense, and social-clique dynamics are the selling points. The script has enough hook for a streamer and enough contained scope for a producer looking to launch a filmmaker."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature as written; the Lillian mythology suggests more world, but there is not yet a clear spinoff vector with a separate anchor character or universe lane."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The opening murder is immediate and legible.",
-          "what_it_means": "The script starts with a clean genre promise: a stylish teen is violently taken out before the audience has time to settle, which is exactly the kind of cold-open that sells a horror feature fast. Teen-horror buyers and streamers looking for a high-concept hook with instant stakes will understand the lane in seconds.",
-          "evidence": "Ryan’s limo attack in the opening pages, ending with him thrown into the street and left dying.",
+          "dimension_or_area": "Macy has a clean emotional engine.",
+          "what_it_means": "That gives the project a lead role buyers can package around: grief, guilt, and determination all live in the same part. Actors and managers will respond to a role that can play vulnerable, socially sharp, and increasingly dangerous in one arc.",
+          "evidence": "Her reaction to Ryan’s death, the guilt over not calling him back, and the late-night research montage all push her from heartbreak into obsession.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Macy is built around grief and guilt.",
-          "what_it_means": "That emotional engine gives the lead role real traction beyond the mystery plot, making the movie playable as both a scare piece and a character-forward revenge investigation. Young actresses who want a showcase turn with anger, vulnerability, and obsession in one part will see the opportunity immediately, and buyers know that kind of lead can carry a franchise starter.",
-          "evidence": "Macy’s repeated calls to Ryan, her breakdown after the assembly, and her vow not to let his death go.",
+          "dimension_or_area": "The school setting turns into a suspicion machine.",
+          "what_it_means": "That creates a built-in commercial engine because every hallway, classroom, and clique interaction can carry threat. Buyers looking for contained genre with social texture will see a clear lane for tension without needing a huge world build.",
+          "evidence": "The assembly announcement, the Outlanders’ public grief, and the whispered fear after Ryan’s murder all weaponize the campus environment.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The school setting has social hierarchy baked in.",
-          "what_it_means": "The Outlanders, the wealthy neighborhood, and the school’s status culture give the story a built-in social map that can support both suspense and audience identification. That makes the project attractive to teen-genre buyers who want a recognizable world with enough texture to feel premium rather than generic.",
-          "evidence": "The group’s swagger outside the mansion, the whispered attention from other students, and the school’s public assembly.",
+          "dimension_or_area": "Lillian is a strong horror-image antagonist.",
+          "what_it_means": "A physically expressive, inhuman killer gives the film iconography and a marketable threat beyond the mystery itself. That’s the kind of villain concept that can sell posters, trailers, and word-of-mouth.",
+          "evidence": "The warehouse attack turns Lillian from rumor into a silent, fast, brutal predator.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The assembly reveal lands like a set-piece.",
-          "what_it_means": "The public announcement of Ryan’s murder turns private dread into communal shock, which is a strong theatrical-style beat even in a streaming-first market. Producers looking for a contained but eventful midpoint-style jolt will recognize the value of a scene that can be marketed in a trailer.",
-          "evidence": "Principal Hawthorne’s announcement in the auditorium, with police present and students reacting in waves.",
+          "dimension_or_area": "The opening murder is immediate and cinematic.",
+          "what_it_means": "The script announces its genre promise fast, which helps a buyer understand the movie in one pass and helps a trailer cut itself. It also signals a production that knows how to stage a set-piece early.",
+          "evidence": "Ryan’s limo ambush, tire blowout, and violent crash establish danger before the story settles into school life.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Lillian gives the story a visual monster.",
-          "what_it_means": "The black-cloaked, inhuman version of Lillian creates a memorable face for the threat, which is crucial for horror marketing and poster art. Genre buyers and directors who like a creature-adjacent slasher icon will respond to a villain who can be teased, feared, and instantly recognized.",
-          "evidence": "The warehouse attack where Lillian appears as a pale, black-cloaked predator and kills Alex.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending escalates cleanly into a body-count engine.",
-          "what_it_means": "The head-in-a-box beat confirms the movie is not just a mystery but a kill-driven horror feature, which broadens the commercial lane into slasher territory. That kind of escalation is attractive to buyers who want a clear promise of more set-pieces and a trailer-friendly final image.",
-          "evidence": "Episode 2’s box delivery containing Alex Mercer’s head.",
+          "dimension_or_area": "The teen ensemble has usable social chemistry.",
+          "what_it_means": "That gives the film more than a solo lead; it creates a group dynamic that can generate banter, suspicion, and fracture. Ensemble chemistry is a real asset for casting conversations and for audience rewatch value.",
+          "evidence": "The Outlanders’ morning walk, teasing, and then collective shock at the assembly give the group a recognizable rhythm.",
           "source": "script"
         }
       ],
-      "headline": "This has a clean, marketable teen-horror engine: a popular school clique, a murdered ex, a buried local death, and a returning predator with a face. The strongest asset is Macy, whose grief turns into obsession in a way that can anchor both scares and emotion, while the school setting and Lillian mythology give the project a trailer-ready identity."
+      "headline": "This is a contained, female-led teen horror mystery with a clear emotional spine and a villain image that can do real marketing work. The school setting, small ensemble, and contemporary footprint keep it in an accessible indie lane, while Macy’s grief-to-obsession arc gives buyers a role worth packaging around."
     },
-    "lead_characters": [
-      {
-        "name": "Macy",
-        "role_type": "Lead",
-        "demographics": "Female · 16-17",
-        "hook": "Macy is the emotional center of the piece: outwardly polished, socially fluent, and quick with a joke, but internally running on guilt, anger, and the need to make meaning out of loss. She starts as the girl trying to keep her morning bright and ends as the one willing to chase a buried truth into the dark, which gives the role a clean arc from teen confidence to obsessive resolve.",
-        "why_actor_wants_this": "This is the showcase territory of Sophie Nélisse in The Book Thief or Maika Monroe in It Follows — a lead whose stillness and emotional pressure do as much work as the scares. It gives a young actor the chance to play grief, suspicion, and determination in a genre frame, with the kind of central turn that can define a breakout performance."
-      },
-      {
-        "name": "Jessica",
-        "role_type": "Supporting",
-        "demographics": "Female · 17",
-        "hook": "Jessica is the polished social glue of the group, stylish and confident on the surface, but she softens fast when the murder hits home. She functions as the friend who can keep the room moving until the room stops moving, which makes her useful as both comic rhythm and emotional witness.",
-        "why_actor_wants_this": "This is the kind of best-friend role that gave Auliʻi Cravalho in Mean Girls or Beanie Feldstein in Booksmart a chance to balance wit with vulnerability. It offers a young actor a high-visibility ensemble part with sharp reactions, group chemistry, and a few key emotional beats."
-      },
-      {
-        "name": "Kyle",
-        "role_type": "Supporting",
-        "demographics": "Male · 17-18",
-        "hook": "Kyle is the smug, effortless alpha of the group, the one who jokes first and processes later, until the murder strips away the performance. He reads as a status kid with enough charm to lead a room, which makes his shock and guilt more playable when the story turns darker.",
-        "why_actor_wants_this": "This sits in the lane of the privileged teen roles that let actors like Jacob Elordi in Euphoria or Austin Abrams in The Walking Dead play charisma with a crack in it. It gives a young actor a chance to weaponize charm, then let the mask slip under pressure."
-      },
-      {
-        "name": "Nina",
-        "role_type": "Supporting",
-        "demographics": "Female · 16-17",
-        "hook": "Nina is the sharp-tongued skeptic, the one who keeps the group honest with sarcasm until fear makes her quieter. She has the best built-in edge in the ensemble, because she can pivot from comic bite to genuine unease without changing her basic rhythm.",
-        "why_actor_wants_this": "This is the kind of dry, fast-talking supporting part that gave Alexa Demie in Euphoria or Ayo Edebiri in The Bear early scene-stealing space. It gives an actor a chance to land jokes, then turn the same voice into dread when the mystery stops being theoretical."
-      },
-      {
-        "name": "Ethan",
-        "role_type": "Supporting",
-        "demographics": "Male · 17",
-        "hook": "Ethan is the group’s jokester, the one who uses humor as social glue until the murders make the jokes land differently. He’s the easiest character to underestimate, which gives him room to become unexpectedly useful as the story darkens.",
-        "why_actor_wants_this": "This is the kind of comic-relief-with-shadows part that gave Justice Smith in The Get Down or Noah Centineo in To All the Boys a chance to shift from charm to sincerity. It offers a young actor a visible ensemble slot with room for timing, warmth, and a late-breaking emotional turn."
-      },
-      {
-        "name": "Gabby",
-        "role_type": "Supporting",
-        "demographics": "Male · 10",
-        "hook": "Gabby is the younger sibling who still speaks with kid logic, which makes him both disarming and useful as a pressure point in Macy’s home life. He brings innocence into a story that keeps getting darker, and that contrast gives the family scenes a cleaner emotional edge.",
-        "why_actor_wants_this": "This is the kind of younger-sibling role that gives a child actor a memorable foothold in a genre piece, similar to the grounded kid energy in The Babadook or IT. It offers a small but vivid part that can make a scene land by being the one person in the room who doesn’t yet understand the horror."
-      },
-      {
-        "name": "Mom",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s",
-        "hook": "Mom is the steady domestic presence, warm and attentive, the person trying to keep the house normal while Macy’s world tilts. She gives the story a grounded family counterweight, which helps Macy’s isolation feel more earned when she pulls away.",
-        "why_actor_wants_this": "This is the kind of grounded parent role that gave Toni Collette in Hereditary or Connie Britton in The Last House on the Left a chance to anchor the home front before the genre takes over. It offers an actor a contained but emotionally legible part that can deepen the movie’s human stakes."
-      },
-      {
-        "name": "Dad",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Dad is the calm, practical parent, present in the margins as the family’s everyday stability. He’s not written as a heavy emotional engine, but he helps establish the normal world that the murder story disrupts.",
-        "why_actor_wants_this": "This is the sort of understated father role that lets an actor like Kyle Chandler in a family thriller or Mark Ruffalo in a domestic drama bring quiet authority to a few scenes. It gives a performer a clean, efficient support role in a genre feature with real audience visibility."
-      },
-      {
-        "name": "Principal Hawthorne",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s",
-        "hook": "Principal Hawthorne is the institutional face of the school, formal and strained when he has to deliver the worst possible news to a room full of teenagers. He functions as the voice of authority and containment, which makes the assembly scene feel public and irreversible.",
-        "why_actor_wants_this": "This is the kind of authority figure role that gives actors in the J.K. Simmons or Jeffrey Wright lane a chance to command a room with very little screen time. It offers a prestige-adjacent supporting part that can land hard in one major scene."
-      },
-      {
-        "name": "Lillian Crawford",
-        "role_type": "Supporting",
-        "demographics": "Female · late teens/young adult",
-        "hook": "Lillian is the story’s buried legend turned active threat: a dead girl whose name carries rumor, history, and fear, and whose return is framed as something feral and predatory. She’s less a conversational character than a mythic presence, which gives the movie its horror iconography.",
-        "why_actor_wants_this": "This is the showcase territory of a performance like Anya Taylor-Joy in The Witch or Samara Weaving in Ready or Not — a role where the actor can be both beautiful and terrifying, human and monstrous. It gives a performer a signature genre part with strong visual branding and the chance to become the face of the film’s menace."
-      },
-      {
-        "name": "Ryan Mitchell",
-        "role_type": "Supporting",
-        "demographics": "Male · 17",
-        "hook": "Ryan is the absent center of the story: the ex-boyfriend whose death detonates the plot and whose memory keeps pulling Macy forward. Even though he’s gone early, he matters as the emotional trigger and the first mystery the audience wants solved.",
-        "why_actor_wants_this": "This is the kind of short-but-crucial role that gave actors in Scream or I Know What You Did Last Summer a chance to make a strong first impression before the story pivots. It offers a young actor a high-impact opening part with a memorable death scene and immediate narrative importance."
-      },
-      {
-        "name": "Alex Mercer",
-        "role_type": "Supporting",
-        "demographics": "Male · teen/young adult",
-        "hook": "Alex is the curious investigator who pushes the story into its next phase, the one willing to chase the lead into the warehouse and pay for it. He functions as the audience’s proxy for curiosity and danger, which makes his death a clean escalation beat.",
-        "why_actor_wants_this": "This is the kind of doomed-investigator role that gives an actor a compact but vivid horror showcase, similar to the early victims who briefly steer the story in Final Destination or Fear Street. It offers a punchy part with tension, movement, and a memorable kill sequence."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make teen grief feel dangerous, not sentimental.",
-        "fit_profile": "First- or second-feature directors, or TV genre directors moving into features, who already work in suspense, horror, or elevated teen drama. The material rewards someone who likes clean set-piece construction, emotional close-ups, and a polished suburban surface that can crack open into violence.",
-        "detail": "The movie gives a director a chance to stage a public-school shock scene, a contained warehouse kill, and a final escalation beat without needing a giant effects canvas. It will attract filmmakers who want to build tension through performance and atmosphere, then punctuate it with a few sharp, trailer-ready horror images."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Streaming horror-thriller / teen genre lane",
-        "detail": "The Macy role can be cast with a rising young lead rather than a name star, while the rest of the ensemble is compact and age-specific. The contemporary school setting, modest effects load, and clear kill-driven hook fit the current streamer appetite for contained genre features that can travel well internationally."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology is still more tease than engine.",
+          "detail": "Lillian Crawford, the old police report, and the campus rumor all point to a deeper backstory, but the rules of the threat are still vague on the page. That makes the project feel promising rather than fully buy-ready, because the buyer is being asked to trust the mystery before the mystery has a shape.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The opening reads like a pilot, not a feature.",
+          "detail": "The script is labeled as a feature, but the page count and structure currently play like the first act of a serialized teen horror story: school introduction, clique setup, inciting death, then a new body at the end. A buyer will notice that the feature engine is still in setup mode.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting teens are archetypes first.",
+          "detail": "Jessica, Kyle, Nina, and Ethan each have a clear social function, but their inner lives are still thin relative to Macy’s. That keeps the ensemble from feeling fully combustible and limits the upside of the group scenes beyond banter and reaction.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The Billie Eilish needle-drops need clearance.",
+          "detail": "\"Happier Than Ever\" and \"When the Party’s Over\" are both named and structurally important to the opening and the assembly sequence. That creates a real sync-clearance and budget conversation before any buyer can treat the scenes as locked.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The biggest friction is that the script is selling a larger mythology than it has yet fully defined, so the buyer is being asked to lean on promise. The feature also still plays with a pilot-like setup rhythm, and the named Billie Eilish tracks add a real clearance line item on top of that development uncertainty."
     },
-    "considerations": [
-      {
-        "area": "The opening stretch spends time on social texture before the engine locks.",
-        "detail": "The limo attack, Macy’s morning routine, and the Outlanders’ walk to school all establish mood and status before the murder mystery fully takes over. A next pass could consider trimming or compressing one of those early beats so the Ryan death and Macy’s investigation arrive with even more forward charge.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The ensemble mostly orbits Macy.",
-        "detail": "The Outlanders have chemistry, but their scenes largely function as reaction space around Macy’s grief and the central mystery. One direction would be to give one supporting friend a more independent pressure point so the group generates more story on its own.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The Billie Eilish cues are doing real mood work.",
-        "detail": "Because the script names \"Happier Than Ever\" and \"When the Party’s Over\" specifically, those moments carry both tone and clearance implications. If the songs stay, they should be treated as intentional needle drops; if not, the same emotional function can be preserved with original or library music.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The warehouse and school locations keep the footprint contained.",
-        "detail": "The story already lives in a manageable set of contemporary spaces, so the cleanest production version is to protect that containment rather than expand the geography. The school, home, courtyard, and warehouse can likely be consolidated further without changing the core mystery engine.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 57.3,
-  "tier": "Needs Development",
-  "inputTokens": 18179,
-  "outputTokens": 4966,
-  "cost": 0.03598125,
+  "weightedScore": 62.7,
+  "tier": "Optionable",
+  "inputTokens": 20584,
+  "outputTokens": 4687,
+  "cost": 0.0365295,
   "declaredFormat": "Feature film"
 }

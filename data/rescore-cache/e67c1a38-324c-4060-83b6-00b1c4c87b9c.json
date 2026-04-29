@@ -2,338 +2,343 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological thriller",
-      "genre_tags": [
-        "crime thriller",
-        "mystery"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Mystery",
+        "Crime"
       ],
-      "tone": "Grounded, paranoid, escalating, bleakly intimate"
+      "tone": "tense",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "prestige",
+        "grief",
+        "survival",
+        "revenge",
+        "identity",
+        "roadside-america"
+      ]
     },
-    "positioning_hook": "A traumatized teacher is abducted, released, and abducted again by a masked man who seems to know her past—and every answer only deepens the trap.",
+    "positioning_hook": "A traumatized teacher is abducted, released, and abducted again by a masked man who seems to know her past — forcing her to decide whether the monster is real, or the story she needs to survive.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is immediately legible and built for suspense-first audiences: a woman, a masked captor, repeated abductions, and a mystery that keeps changing shape. The hook is commercial, though the story’s adult, psychologically intense lane is more premium-thriller than broad four-quadrant fare."
+        "reasoning": "The premise is instantly legible and built on a strong fear engine: abduction, stalking, and the possibility that the victim may not be telling the whole truth. The audience is narrower than a four-quadrant thriller because the script leans hard into psychological ambiguity and grief, but the hook is commercial and easy to sell."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The opening trunk sequence, the release into the field, and the second abduction establish the engine fast and cleanly. The script keeps the central question visible—who is doing this and why—while layering in the mother, the old school connection, and the later twist around the real perpetrators."
+        "reasoning": "The opening trunk sequence, the second abduction, and the later reveal of a possible long-buried grudge make the premise clear very early. The script keeps re-framing the same central question in a clean, repeatable way: who is doing this to Val, and why?"
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Val is built as a strong lead role: frightened, stubborn, guilt-ridden, and increasingly active as the story turns from survival to pursuit. Delgado adds a compelling counterweight, and Luthe has enough volatility to hold attention, though the character web is still centered tightly on Val’s experience."
+        "score": 8,
+        "reasoning": "Val is built as a wounded, contradictory lead: controlled teacher, compulsive smoker, devoutly shaped daughter, and increasingly volatile survivor. Delgado also lands as a strong counterweight, with enough warmth and edge to matter beyond function, while Luthe is vivid enough to carry the antagonist suspicion for most of the runtime."
       },
       "creative_originality_and_boldness": {
-        "score": 8,
-        "reasoning": "The repeated-abduction structure, the use of postcards and sleepcasts as psychological pressure points, and the eventual reframing of the threat keep the script from feeling generic. The final move into a broader conspiracy around Bowman/Kane gives the material a more unsettling shape than a standard home-invasion or stalker thriller."
+        "score": 7,
+        "reasoning": "The script’s boldest move is making the abduction itself feel repetitive, ritualized, and psychologically corrosive rather than just escalating in a standard chase pattern. The later pivot toward possible misdirection and shared guilt gives it a fresher shape than a straight kidnapping thriller, though the core lane remains familiar."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script is built on forward motion: each time Val thinks she has an answer, the story escalates into a new location, a new suspect, or a new layer of dread. The interrogation scenes, the bar confrontation, the self-storage discovery, and the desert chase all keep the pressure climbing."
+        "reasoning": "The script is built on strong forward motion: each apparent answer creates a new threat, and each relocation or time jump resets the danger in a useful way. The bar confrontation, the desert chase, and the final home-invasion beat all land as clean escalation points."
       },
       "resonant_originality": {
-        "score": 8,
-        "reasoning": "The idea of a victim who cannot tell whether she is being hunted, gaslit, or both lands with real force, especially once the story starts suggesting a wider pattern of women being used in the same ritualized way. The ending’s reveal that Val may have been inside a larger game all along gives the premise a memorable aftertaste."
+        "score": 7,
+        "reasoning": "The central idea feels both familiar and sticky: a woman is being terrorized, but the story keeps asking whether the terror is externally real, internally projected, or both. The final reveal that the true predator may be a different man entirely gives the concept a sharper aftertaste than the setup alone suggests."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The script moves through Idaho, Montana, Utah, Nevada, and California with enough procedural texture to make the geography feel like part of the threat. Police work, storage units, roadside bars, churches, and suburban homes all contribute to a lived-in Western corridor of fear."
+        "reasoning": "The script uses the Mountain West well — Idaho fields, Montana forest, Utah roads, Nevada desert, and small-town police jurisdictions all contribute to a specific geography of isolation. The church background, teacher life, and law-enforcement procedural layer give the world enough texture to feel lived-in rather than generic."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is distinctly anxious and morally bruised, with a strong blend of procedural realism, trauma spiral, and sudden bursts of physical danger. The sleepcast motif, the religious undertow, and the repeated return to trunks, headlights, and open roads give the piece a recognizable identity."
+        "reasoning": "This has a very specific register: dread-forward, emotionally bruised, and intermittently confrontational, with a strong sense of bodily vulnerability. The repeated sleepcast, cigarettes, crucifixes, and roadside spaces create a recognizable tonal signature that separates it from a standard procedural thriller."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "Beneath the thriller mechanics, the script is carrying guilt, faith, repression, family damage, and the question of what a person owes to the truth. The final scenes suggest a larger emotional and thematic reservoir around Val’s self-mythology and the possibility that the story she has told herself is only part of the picture."
+        "reasoning": "The script keeps opening new emotional seams — Val’s father, Holly, Willa’s faith, Delgado’s family pressure, and the possibility of a second predator behind the first. That layering gives the story more depth than the surface kidnapping plot, and the ending leaves a meaningful moral bruise."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "Val and Delgado generate the strongest recurring dynamic, and Willa/Nyback/Landrey add useful pressure, but the story remains primarily a lead-driven engine. The supporting players are functional and effective, though the script is not yet built as a true ensemble machine."
+        "score": 7,
+        "reasoning": "Val and Delgado have real chemistry and the Val/Luthe suspicion dynamic is strong enough to power the feature. The supporting network — Willa, Nyback, Landry, Harry, Bowman — is functional and occasionally vivid, but the script is still primarily driven by a few key relationships rather than a broad ensemble engine."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Val Petersen",
+        "role_type": "Lead",
+        "demographics": "Woman, mid-30s, white, English teacher, Utah/Mountain West background, adult daughter of a pious mother, trauma survivor.",
+        "hook": "Val is a tightly wound English teacher whose life has been organized around control, restraint, and inherited guilt until a series of abductions strips that away. She reads as intelligent and self-protective, but the script keeps revealing how much rage, shame, and unfinished grief are under the surface; by the end, she is capable of tenderness, denial, violence, and self-deception in the same breath.",
+        "why_actor_wants_this": "This is the showcase territory of Amy Adams in Arrival or Jodie Comer in The End We Start From — a role that lives in micro-reactions, emotional repression, and sudden volatility. It gives an actor the chance to play fear, guilt, and moral collapse without ever losing the audience’s sympathy."
+      },
+      {
+        "name": "Lota Delgado",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s, law enforcement, Latina, Utah police officer with family pressure and professional ambition.",
+        "hook": "Delgado is the script’s moral pressure valve: earnest, observant, and increasingly frustrated by how little certainty the case offers. She’s not just a helper; she has her own father issues, career ambition, and emotional vulnerability, and her bond with Val gives the movie its most human counterpoint.",
+        "why_actor_wants_this": "This is the kind of role that gave Regina King in If Beale Street Could Talk or Jurnee Smollett in Lovecraft Country a chance to be both grounded and quietly forceful. It offers a performer a strong emotional arc, a procedural spine, and a relationship that can carry real heat."
+      },
+      {
+        "name": "Elliot Luthe",
+        "role_type": "Supporting",
+        "demographics": "Man, mid-30s, white, working-class, Utah resident, father, possible abductor/possible decoy.",
+        "hook": "Luthe is written as a deeply unstable question mark: he can look like a petty, wounded local guy in one scene and a genuinely dangerous misogynist in the next. The script keeps him slippery on purpose, which makes him useful as both a suspect and a psychological mirror for Val’s need to assign blame.",
+        "why_actor_wants_this": "This is the kind of role that let Paul Dano in Prisoners or Jake Gyllenhaal in Nightcrawler play menace through ambiguity rather than overt villainy. It gives an actor the chance to be unnerving, defensive, and possibly monstrous without ever being one-note."
+      },
+      {
+        "name": "Willa Petersen",
+        "role_type": "Supporting",
+        "demographics": "Woman, 60s, white, devout mother, rural/Utah family matriarch, terminally ill.",
+        "hook": "Willa is a pious, controlling mother whose love is real but conditional, filtered through religion, guilt, and a need to keep Val close. Her illness and the letter she leaves behind turn her into a posthumous engine of revelation and regret.",
+        "why_actor_wants_this": "This is the kind of role that gave Frances McDormand in Three Billboards or Laura Linney in The Savages a chance to play authority with ache underneath. It’s a compact but emotionally loaded part with real scene-stealing potential."
+      },
+      {
+        "name": "Jack Nyback",
+        "role_type": "Supporting",
+        "demographics": "Man, 60s, law enforcement, white, Weber County detective, older working cop.",
+        "hook": "Nyback is the weary procedural anchor: skeptical, blunt, and increasingly outpaced by a case that refuses to behave like a normal one. He’s not flashy, but he gives the movie institutional friction and a believable adult resistance to Val’s certainty.",
+        "why_actor_wants_this": "This is the sort of role that lets a veteran character actor do the Dennis Lehane-adjacent cop work seen in Spotlight or Mystic River. It’s a credibility part with dry authority and a few sharp turns of frustration."
+      },
+      {
+        "name": "Agent Landry",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s, FBI agent, white, career federal investigator.",
+        "hook": "Landry is the polished federal skeptic who keeps forcing the case into a cleaner, uglier frame. He’s useful as a pressure character because he can sound reasonable while still making Val feel dismissed and cornered.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the clipped, controlled authority of Jeffrey Wright in a procedural or Michael Kelly in a prestige thriller. It’s a clean showcase for intelligence, skepticism, and quiet menace."
+      },
+      {
+        "name": "Harry",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s, bar owner, white, socially easygoing, local small-business owner.",
+        "hook": "Harry is the brief but important false-safe-space figure: charming, flirtatious, and normal enough to let Val lower her guard before the script weaponizes a phrase. He’s a good example of how the movie turns ordinary social contact into threat memory.",
+        "why_actor_wants_this": "This is the kind of role that lets a performer do the easy charm work seen in The Bear’s lighter scenes or in a Noah Baumbach ensemble before the floor drops out. It’s small, but it has a memorable turn and a strong tonal function."
+      },
+      {
+        "name": "Pruitt Getch",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, white, violent offender, rural Western background, one-eyed after injury.",
+        "hook": "Pruitt is the decoy suspect with enough ugliness to feel plausible and enough specificity to widen the conspiracy. He expands the world beyond Val and Luthe into a broader ecosystem of male violence and institutional suspicion.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a nasty, unsettling turn like Ben Mendelsohn in Animal Kingdom or Stephen Root in a darker register. It’s a compact but memorable piece of disturbed behavior."
+      },
+      {
+        "name": "Ivan Bowman",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, suburban professional, white, property developer, father.",
+        "hook": "Bowman is the late-story pivot into a more chilling, banal kind of threat: polished, plausible, and socially invisible. The final stretch turns him into the possibility that the real predator has been hiding in plain sight all along.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the slow-burn reveal work of a David Fincher antagonist or a suburban menace in a prestige thriller. It’s a great part for controlled stillness and a final-image chill."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 12,
-        "leads": 3,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "One lead female in her mid-30s",
-          "One female supporting detective in her 30s",
-          "One male antagonist/perpetrator in his 30s-40s",
-          "Several law-enforcement roles in 30s-60s",
-          "At least two child roles (sleeping boy, daughter, son)",
-          "Twin-sibling backstory is referenced but not separately cast in the present timeline"
+          "one child role with dialogue and several child-presence beats",
+          "adult white male antagonist/suspect pool with specific physical description",
+          "female supporting law-enforcement role with strong emotional range",
+          "multiple age-specific family roles"
         ]
       },
       "locations": {
         "distinct_count": 20,
-        "interior_exterior_ratio": "roughly balanced, with a slight exterior lean",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Multiple rural roads/highways",
-          "Farmhouse exterior and interior",
-          "Police stations/interrogation rooms",
-          "Bars and roadside bar interiors",
-          "Self-storage facility",
-          "Forest, field, desert, and river locations",
-          "Hospital rooms and motel/hotel interiors",
-          "Suburban homes in multiple states"
+          "multiple rural highway and backcountry locations",
+          "forest, field, desert, and roadside-bar exteriors",
+          "hospital rooms, police offices, farmhouse interiors, apartment interiors",
+          "car trunk and vehicle-interior work"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly practical geography and vehicle work; limited cleanup for headlights, night exteriors, and the final car fire/explosion.",
+        "vfx_details": "Mostly practical with modest cleanup and compositing for headlights, road movement, and a few impact/transition moments; no heavy creature or digital-environment work.",
         "stunts_level": "moderate",
-        "sfx_needs": "Car trunk sequences, gunfire, vehicle impacts, fire/explosion, blood makeup, and practical injury effects.",
+        "sfx_needs": "Vehicle stunts, abduction restraint work, gunfire, blood effects, car damage, river/water safety, and a fireball/car explosion sequence.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Billy Preston's 'Will It Go Round in Circles' is specifically named and used over the final trunk/desert reveal."
+          "detail": "Billy Preston's 'Will It Go Round in Circles' is specifically named and used over the final trunk/desert sequence."
+        },
+        {
+          "type": "named_music",
+          "detail": "Matthew McConaughey is referenced as the voice type for the sleepcast narrator."
         },
         {
           "type": "brand",
-          "detail": "Matthew McConaughey is referenced in dialogue as a sleepcast voice comparison."
+          "detail": "Peloton is specifically named."
         },
         {
           "type": "brand",
-          "detail": "Specific vehicle makes/models are named repeatedly, including Chevrolet, Ford, Buick, Lincoln, and a Ring doorbell camera."
+          "detail": "Ring is specifically named."
         },
         {
           "type": "brand",
-          "detail": "Peloton, Spotify, American Express, and several named platforms/products are referenced in dialogue and action."
+          "detail": "Spotify is specifically named."
+        },
+        {
+          "type": "brand",
+          "detail": "OnlyFans is not present."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming thriller / theatrical genre lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model; strongest fit is festival-to-platform or a contained theatrical thriller with streamer afterlife."
+        "recommended_lane": "premium streaming thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: theatrical specialty or premium-streaming launch with a strong thriller marketing hook."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is contemporary, but the repeated rural exteriors, night work, vehicle work, water sequence, dog work, and the car-explosion/desert stretch will push it above a simple contained-thriller footprint."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The script is contemporary and mostly practical, but it spans many locations, multiple states, night work, vehicle action, and a desert fire sequence."
+      "casting": {
+        "level": "medium",
+        "note": "Val needs a lead who can carry trauma, ambiguity, and eventual ferocity; Delgado needs a strong counterweight; and the antagonist/suspect lane requires a very specific white male 30s-40s presence that can read as ordinary and threatening."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s central question is whether the abductions are real, misattributed, or part of a broader conspiracy, and the final Bowman turn reframes the entire story. That ambiguity is a feature, but it also means the buyer conversation will center on clarity of culprit, audience trust, and how much uncertainty the market will tolerate."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Girl on the Train",
+          "year": 2016,
+          "why_it_comps": "A female-led psychological thriller built around memory, suspicion, and a protagonist whose credibility is part of the engine."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The lead is central, but the project also needs a strong detective, a credible antagonist, a key female supporting role, and several child roles."
+        {
+          "title": "Wind River",
+          "year": 2017,
+          "why_it_comps": "Rural isolation, law-enforcement pressure, and a bleak American landscape that turns geography into suspense."
         },
-        "location": {
-          "level": "high",
-          "note": "The story moves through farms, highways, forests, bars, hospitals, storage units, suburbs, and a desert, with multiple state settings."
+        {
+          "title": "Prisoners",
+          "year": 2013,
+          "why_it_comps": "The same kind of morally bruised, escalating suspicion around who is guilty and how far a victim will go to get answers."
         },
-        "content": {
-          "level": "medium",
-          "note": "Kidnapping, stalking, gun use, psychological distress, and a dead animal push it into mature thriller territory without becoming explicit."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "Named music, multiple brands, and real-world law-enforcement/geographic references create clearance work, but no major IP dependency is apparent."
+        {
+          "title": "The Invisible Man",
+          "year": 2020,
+          "why_it_comps": "A trauma-forward thriller where the audience is asked to track fear, doubt, and the possibility that the threat is both external and psychologically weaponized."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like high-tension, female-led thrillers with a strong mystery spine and a dark emotional payoff.",
+        "demographics": "Skews 25-54, balanced gender split with a slight female lean, strong appeal to thriller audiences who watch prestige streaming and specialty theatrical releases.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$12M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary setting keeps the base cost contained, but the multiple rural locations, night photography, vehicle work, water safety, animal work, and the desert/car-destruction stretch keep it above micro."
+      },
+      "lane_fit": {
+        "lane": "premium-streaming elevated thriller",
+        "types_of_buyers": [
+          "streamer original thriller teams",
+          "specialty theatrical genre buyers",
+          "indie financiers looking for a female-led suspense package",
+          "producer-directors in the elevated-genre lane",
+          "actor-driven companies seeking a prestige lead role"
+        ],
+        "detail": "This sits naturally in the elevated-thriller lane: a female lead, a mystery with real emotional damage, and a final-act reveal that can be sold as both suspense and character reckoning. The script has enough scale and set-piece energy for a streamer, but it still feels intimate enough for a specialty theatrical play."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The story resolves as a closed psychological thriller, and no supporting character is clearly built as a separate franchise anchor."
       }
     },
     "whats_special": {
       "strengths": [
         {
           "dimension_or_area": "The opening is a killer engine.",
-          "what_it_means": "The trunk-abduction cold open gives the movie an immediate commercial promise: a contained, high-stakes thriller that starts in panic and never lets the audience settle. That is exactly the kind of premise that attracts premium-streamer buyers and actors looking for a survival role with a hook.",
-          "evidence": "Val wakes in the trunk, is released into a field, and is abducted again almost immediately.",
+          "what_it_means": "The trunk-abduction opening gives the movie an immediate, marketable promise and tells a buyer exactly what kind of tension they’re buying. It’s the kind of first sequence that can sell a trailer and hook a director looking for a clean suspense launchpad.",
+          "evidence": "Val wakes in the trunk, is released into the field, and then immediately realizes the threat is not over.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Val is a showcase lead.",
-          "what_it_means": "Val’s arc moves from terror to suspicion to obsession to active confrontation, giving an actress a full-spectrum performance role with emotional escalation baked in. That is the kind of part prestige-minded dramatic leads and festival-facing buyers chase because it can carry the whole film on one face.",
-          "evidence": "Her breakdowns, her confrontations with police, her drinking spiral, and her final decision to take the fight to Luthe.",
+          "dimension_or_area": "Val is a real lead role.",
+          "what_it_means": "The script gives a performer a layered, volatile protagonist with grief, guilt, repression, and rage all in play. That makes the project attractive to actors who want a prestige-thriller showcase rather than a generic victim part.",
+          "evidence": "Her teacher life, church upbringing, smoking, panic attacks, and eventual reversal into active retaliation all sit on the page.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Delgado gives the movie a second engine.",
-          "what_it_means": "The Val/Delgado relationship adds emotional counterpressure and a moral point of view, which broadens the film beyond a single-victim survival story. That makes the project more attractive to buyers who want a thriller with a human center and to actors who want a grounded, emotionally intelligent supporting role.",
-          "evidence": "Delgado repeatedly pushes Val toward safety, then becomes the one person trying to solve the case on her behalf.",
+          "dimension_or_area": "The mystery keeps mutating.",
+          "what_it_means": "Each new location and suspect changes the buying conversation from simple survival thriller to psychological whodunit, which broadens the script’s appeal. That kind of shape-shifting premise is useful for marketing because it keeps the audience leaning forward without losing the core hook.",
+          "evidence": "Luthe, Pruitt Getch, and finally Ivan Bowman all become plausible centers of suspicion.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The procedural texture feels lived-in.",
-          "what_it_means": "The police work, jurisdiction hopping, evidence bags, storage-unit search, and interrogation-room rhythm give the script a credible crime-thriller spine that helps it play as more than pure nightmare fuel. That kind of specificity is useful for buyers because it signals a world that can sustain tension without expensive spectacle.",
-          "evidence": "Nyback, Monette, Landry, and Delgado move through a chain of investigations across Idaho, Montana, Utah, and California.",
+          "dimension_or_area": "Delgado gives the movie a second pulse.",
+          "what_it_means": "The Val/Delgado relationship creates emotional lift and gives the script a human counterweight to the dread. That matters commercially because it opens the role to a strong supporting actress and gives the film a relationship audience beyond pure genre buyers.",
+          "evidence": "Their late-night conversations, shared vulnerability, and final rupture carry real dramatic weight.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The religious undertow adds thematic bite.",
-          "what_it_means": "Val’s history with her pastor father and her pious mother gives the story a guilt-and-forgiveness layer that deepens the thriller mechanics. That opens the door to audiences who respond to psychological material with moral stakes, not just chase mechanics.",
-          "evidence": "Willa’s crucifix, the church references, the father’s death, and Val’s confession about Holly and her upbringing.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The final reveal widens the movie.",
-          "what_it_means": "The late-stage suggestion that Bowman and Kane may be the real architecture behind the abductions turns the story from a personal vendetta into something larger and more disturbing. That gives the film a stronger aftertaste and a more memorable buyer pitch because the threat becomes systemic, not just individual.",
-          "evidence": "Delgado’s discovery of multiple women in trunks, the masked photo, and the Bowman/Kane connection.",
+          "dimension_or_area": "The geography is story-generating.",
+          "what_it_means": "The Mountain West road network, isolated fields, forests, and desert give the thriller a distinct visual identity and a practical suspense advantage. Buyers can see the movie in their heads, and that helps both packaging and trailer language.",
+          "evidence": "Idaho, Montana, Utah, Nevada, and Animas River all become active parts of the chase pattern.",
           "source": "script"
         }
       ],
-      "headline": "This is a lean, high-concept psychological thriller with a real star role at its center and a strong supporting detective dynamic around it. The script keeps escalating the mystery without losing emotional traction, and the final turn expands the story into something bigger and more unsettling than a standard abduction thriller."
-    },
-    "lead_characters": [
-      {
-        "name": "Val Petersen",
-        "role_type": "Lead",
-        "demographics": "Female · mid-30s",
-        "hook": "Val is a schoolteacher with a tightly controlled exterior and a mind that never stops replaying the worst possible outcome. She is smart, guarded, guilt-soaked, and increasingly dangerous to herself as she tries to turn fear into certainty.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs or Amy Adams in Sharp Objects — a woman whose intelligence and fragility are both part of the engine. It gives an actor the chance to play terror, repression, rage, and moral collapse in one sustained lead performance."
+      "headline": "This is a clean, high-tension female-led thriller with a strong opening, a genuinely showcase lead, and a geography that does real suspense work. It also has the kind of ambiguity and final-act reframing that can attract prestige-streaming buyers and actor-driven producers looking for an elevated genre package.",
+      "issues": {
+        "items": [
+          {
+            "area": "The culprit question stays unstable for a long stretch.",
+            "detail": "The script deliberately keeps shifting from Luthe to Pruitt Getch to Ivan Bowman, which is part of the design but also the main buyer friction. That ambiguity can read as sophisticated, but it also risks feeling like the movie is withholding the answer the audience came to get.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The final Bowman turn is a hard pivot.",
+            "detail": "The late reveal that Bowman may be the real predator reframes the entire feature after the Luthe material has already done most of the work. That makes the ending provocative, but it also means the audience has to accept a substantial recontextualization very late in the game.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The production footprint is wider than the premise suggests.",
+            "detail": "The movie moves through farmhouse, hospital, bar, storage facility, forest, desert, river, highway, apartment, and multiple police spaces, with repeated night work and vehicle action. That is still manageable, but it is not a simple contained thriller and will need real scope discipline.",
+            "is_primary_lever": false,
+            "source": "production"
+          },
+          {
+            "area": "The script depends on a very specific lead performance.",
+            "detail": "Val has to play trauma, denial, moral compromise, and eventual aggression without losing audience alignment, especially in the final stretch where she becomes the active threat. That is a strong role, but it narrows the casting conversation to actors who can carry both fragility and danger.",
+            "is_primary_lever": false,
+            "source": "both"
+          },
+          {
+            "area": "The clearance list is not empty.",
+            "detail": "Billy Preston’s 'Will It Go Round in Circles' is plot-critical in the final movement, and the script also names Peloton, Ring, Spotify, and a Matthew McConaughey sleepcast reference. None of that is fatal, but it does mean the package needs a real rights-and-clearance pass before greenlight.",
+            "is_primary_lever": false,
+            "source": "production"
+          }
+        ],
+        "headline": "The script’s biggest commercial risk is that it asks the audience to ride a long ambiguity curve before landing on its true antagonist. On the production side, it’s still a manageable indie thriller, but the multi-state road movie feel and the rights list mean it’s not a frictionless buy."
       },
-      {
-        "name": "Officer Delgado",
-        "role_type": "Lead",
-        "demographics": "Female · 30s",
-        "hook": "Delgado is the rare law-enforcement character who feels emotionally awake in every scene: earnest, observant, ambitious, and quietly lonely. She believes in catching the person before he hurts someone else, and that conviction gives her a moral clarity the rest of the room lacks.",
-        "why_actor_wants_this": "This is the showcase space of Regina King in If Beale Street Could Talk or Carrie Coon in The Leftovers — a grounded, emotionally precise role that carries authority without losing vulnerability. Actors who want a smart, humane law-enforcement part with real interior life will chase this."
-      },
-      {
-        "name": "Elliot Luthe",
-        "role_type": "Lead",
-        "demographics": "Male · mid-30s",
-        "hook": "Luthe is a man whose stillness reads as menace because he never fully reveals whether he is victim, liar, or predator until the story has already poisoned the room. He has the unsettling calm of someone who can sound reasonable while making everyone else feel unsafe.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter or Paul Dano in Prisoners — a role built on controlled volatility, ambiguity, and the ability to make a room feel wrong without raising the volume. Character actors who want a morally charged, scene-stealing antagonist will want this."
-      },
-      {
-        "name": "Willa Petersen",
-        "role_type": "Supporting",
-        "demographics": "Female · 60s",
-        "hook": "Willa is a pious, controlling mother whose love arrives wrapped in judgment, guilt, and practical caretaking. She is physically frail but emotionally forceful, and her presence keeps Val tethered to the past even when she wants out.",
-        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Three Billboards or Ann Dowd in Mass — a role where faith, grief, and maternal control all live in the same body. Veteran actresses who can make warmth and pressure feel inseparable will be drawn to it."
-      },
-      {
-        "name": "Detective Jack Nyback",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Nyback is a tired, skeptical detective who has seen enough to distrust certainty, but not enough to stop caring when the case turns strange. He carries the weary authority of a man who wants the facts to behave and knows they won’t.",
-        "why_actor_wants_this": "This is the kind of role Brian Dennehy or J.K. Simmons has made memorable in crime dramas — a seasoned investigator whose dry authority and fatigue become part of the texture. Character actors who can play exasperation, competence, and moral hesitation will be interested."
-      },
-      {
-        "name": "Agent Patrick Landry",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "Landry is the younger federal presence who arrives with confidence, jargon, and a slightly detached appetite for the case. He is useful, sharp, and just slippery enough to keep the room from trusting him completely.",
-        "why_actor_wants_this": "This is the showcase lane of Shea Whigham in a procedural or Ben Mendelsohn in a crime-thriller supporting turn — a role that lets an actor play intelligence with a faintly unnerving edge. It’s a strong part for someone who can make exposition feel like pressure."
-      },
-      {
-        "name": "Pete Monette",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "Monette is the local detective with a blunt, practical temperament and a nose for the ugly details. He functions as the grounded regional counterweight to the more emotionally entangled investigators.",
-        "why_actor_wants_this": "This is the kind of compact, lived-in lawman role that actors like Stephen Root or David Harbour can make memorable in a few scenes. It gives a performer a chance to bring texture, skepticism, and dry humor to a procedural lane."
-      },
-      {
-        "name": "Holly Luthe",
-        "role_type": "Supporting",
-        "demographics": "Female · teen/young adult in flashback",
-        "hook": "Holly exists as memory, guilt, and the emotional wound at the center of Val and Elliot’s history. She is less a plot device than a ghostly presence whose absence keeps reshaping the meaning of every accusation.",
-        "why_actor_wants_this": "This is the kind of haunting, emotionally loaded flashback role that actors use to make a lasting impression in very little screen time, like the memory-presence in Manchester by the Sea or The Virgin Suicides. It gives a young actress a chance to play innocence, pressure, and tragedy without needing a lot of dialogue."
-      },
-      {
-        "name": "Ivan Bowman",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Bowman is the polished suburban professional who reads as harmless until the story starts connecting him to the larger pattern. He is the kind of man whose normalcy becomes the most unsettling thing about him.",
-        "why_actor_wants_this": "This is the showcase territory of a performance like David Dastmalchian in Prisoners or Chris Cooper in American Beauty — a role where quiet civility can turn into dread with one look. Actors who specialize in controlled menace will be drawn to it."
-      },
-      {
-        "name": "David Kane",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Kane is the off-screen partner whose presence is felt through evidence, photographs, and the final widening of the conspiracy. He functions as the hidden second face of the threat.",
-        "why_actor_wants_this": "This is the kind of late-reveal role that can become a memorable villain slot if cast with someone who can project intelligence and rot in equal measure, like the energy of Richard Jenkins in The Visitor turned dark. It’s a strong fit for an actor who can make a few scenes feel like the tip of a much larger iceberg."
-      },
-      {
-        "name": "Willa's Father / Val's Father",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s (in memory/photos)",
-        "hook": "Val’s father is a remembered authority figure whose death and past teaching job in Idaho keep echoing through the investigation. He matters less as a present character than as a moral and geographic anchor for Val’s history.",
-        "why_actor_wants_this": "This is the kind of memory-role that can be cast with a recognizable character actor for emotional shorthand, similar to the father-presence in a family trauma drama. It gives an actor a chance to define a whole backstory in a handful of images or flashback beats."
-      },
-      {
-        "name": "Flora",
-        "role_type": "Supporting",
-        "demographics": "Female · 18",
-        "hook": "Flora is the young woman whose attempted abduction becomes the story’s proof that Val’s nightmare is part of a wider pattern. She is quick, alert, and capable enough to fight back, which gives the film a sharp jolt of survival energy.",
-        "why_actor_wants_this": "This is the kind of breakout supporting role that gives a young actress a visceral, high-stakes opening scene and a memorable survival beat. It’s ideal for an emerging performer who can sell fear and instinct in the same breath."
-      },
-      {
-        "name": "Harry",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "Harry is the easygoing bar owner who initially feels like a harmless flirtation and then becomes a trigger for Val’s panic. He is charming, casual, and ordinary enough to make the scene’s turn land hard.",
-        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that lets an actor play charm first and unease second, the same kind of tonal pivot that makes a small part memorable in a thriller. It’s a strong fit for actors who can weaponize likability."
-      },
-      {
-        "name": "Pruitt Getch",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Pruitt is the damaged, one-eyed suspect whose presence briefly opens a different lane of menace and suggests a wider network of violence. He is unsettling because he seems both broken and capable of harm.",
-        "why_actor_wants_this": "This is the kind of unnerving supporting turn that actors like Walton Goggins or Michael C. Hall can make unforgettable — a role where physical detail and psychological ambiguity do a lot of the work. It gives a performer a compact but potent villain-adjacent slot."
-      },
-      {
-        "name": "Willa's Mother / Delgado's Parents / Various Officers",
-        "role_type": "Supporting",
-        "demographics": "Mixed ages and genders",
-        "hook": "These roles form the social pressure around the leads: family, authority, and institutional presence. They help define the world’s emotional and procedural boundaries.",
-        "why_actor_wants_this": "These are functional supporting slots for character actors who can add texture quickly, the kind of roles that often go to reliable faces in crime and family dramas. They’re useful for ensemble color and realism."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a thriller out of dread, guilt, and moral uncertainty rather than pure spectacle.",
-        "fit_profile": "Established indie directors with at least one or two features, or TV directors making a feature leap, who already work in restraint, performance-forward tension, and grounded crime material. This material rewards close framing, controlled escalation, and the ability to make ordinary spaces—cars, kitchens, bars, bedrooms—feel like traps.",
-        "detail": "The movie gives a director a clean suspense engine, a strong central performance, and a final-act reveal that can reframe the whole piece without needing heavy VFX. It will appeal to filmmakers who like procedural realism, psychological pressure, and a Western-road texture that can be shot economically but still feel expansive."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium thriller / streamer suspense lane",
-        "detail": "The project can be packaged around one strong female lead and a credible supporting detective, with the antagonist built as a casting opportunity rather than a star dependency. The repeated trunk/road/house pattern and contemporary setting make it exportable and streamer-friendly, while the mystery hook and mature tone fit the current appetite for elevated crime thrillers."
-      }
-    },
-    "considerations": [
-      {
-        "area": "The middle section leans on repeated investigation beats.",
-        "detail": "The police updates, jurisdiction handoffs, and suspect discussions do useful work, and a next pass could look for one or two places where Val’s emotional turn arrives before the procedural explanation. That would keep the same information moving with more forward charge and make the mystery feel even more urgent.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The story carries a wide location footprint.",
-        "detail": "The script moves through Idaho, Montana, Utah, Nevada, California, and multiple rural and suburban settings, which gives it scale but also a lot of company moves. One simplification lever would be to compress a couple of the investigative stops into shared geography so the escalation stays intact while the production footprint stays leaner.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Delgado’s emotional arc could carry even more weight.",
-        "detail": "Her scenes already give the film a strong moral counterpoint, and the version of the script where one or two of her key choices land with a little more independence from Val would deepen the relationship engine. That would also make the final break between them hit with even more force.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The final reveal opens a bigger conspiracy lane.",
-        "detail": "The Bowman/Kane turn is a strong expansion of the premise, and a next pass could consider how early the story wants to seed that broader pattern so the ending feels both surprising and inevitable. The material is already pointing toward a larger network, and a few earlier breadcrumbs would make that turn land even harder.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The night driving and chase material is production-heavy but manageable.",
-        "detail": "The car-trunk sequences, rural highway pursuit, and desert chase are all practical-thriller set pieces rather than effects-driven spectacle. Keeping the vehicle work grounded and minimizing company moves inside those sequences would protect the tension while staying in a realistic feature budget lane.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
-    "craft_note": ""
+      "craft_note": ""
+    }
   },
-  "weightedScore": 72.3,
+  "weightedScore": 74,
   "tier": "Optionable",
-  "inputTokens": 51146,
-  "outputTokens": 5584,
-  "cost": 0.0634875,
+  "inputTokens": 53551,
+  "outputTokens": 5127,
+  "cost": 0.06323474999999999,
   "declaredFormat": "Feature film"
 }

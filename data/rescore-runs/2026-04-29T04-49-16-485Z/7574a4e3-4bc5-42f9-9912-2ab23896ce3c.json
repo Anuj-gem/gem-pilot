@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T04:50:33.740Z",
+  "submission_id": "7574a4e3-4bc5-42f9-9912-2ab23896ce3c",
+  "eval_id": "83b6752a-9cd7-4feb-994b-234aa9719806",
+  "title": "A Rose of Jericho",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W",
+      "role_type": "Lead",
+      "demographics": "Male, 40s appearance, ageless; Black and Hispanic descent; refined British accent; physically fit; multilingual; identity-coded as a rare-book/artifact dealer and covert operator."
+    },
+    {
+      "name": "Ying",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Chinese; gender-disguised artifact competitor; multilingual; physically agile; sexually and strategically self-possessed."
+    },
+    {
+      "name": "Mr. Dakota",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s; Upper Midwest accent; white; government interrogator."
+    },
+    {
+      "name": "Mr. Ohio",
+      "role_type": "Supporting",
+      "demographics": "Male, early 50s; Midwestern accent; white; government interrogator and apparent leader."
+    },
+    {
+      "name": "Mr. Carolina",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s to early 60s; North Carolina accent; white; government interrogator."
+    },
+    {
+      "name": "Mahmoud",
+      "role_type": "Supporting",
+      "demographics": "Male, 90s; Egyptian; elderly shopkeeper; frail but mentally sharp."
+    },
+    {
+      "name": "Amun",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s; Egyptian; grandson of Mahmoud; shop operator."
+    }
+  ],
+  "positioning_hook": "A secretive, ageless artifact broker is interrogated in 1941 Washington while racing to expose Pearl Harbor, the Roosevelt family, and a Nazi bargain before time runs out.",
+  "cost_usd": 0.0519585,
+  "input_tokens": 41162,
+  "output_tokens": 4686,
+  "status": "wrote:leads_ok"
+}

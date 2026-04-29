@@ -2,261 +2,305 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural thriller",
-      "genre_tags": [
-        "crime",
-        "time-loop"
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Thriller",
+        "Fantasy"
       ],
-      "tone": "Grounded, anxious, darkly funny, and increasingly surreal"
+      "tone": "offbeat",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "high-concept",
+        "propulsive",
+        "time-bending",
+        "nypd",
+        "college-campus"
+      ]
     },
-    "positioning_hook": "A panic-stricken college student discovers he can’t die and keeps rewinding time after a bus murder, forcing a relentless NYPD detective to decide whether he’s the killer or the only witness who matters.",
+    "positioning_hook": "A panic-stricken college student who can’t die or stay in the same timeline becomes the prime suspect in a string of impossible murders, forcing a hard-nosed NYPD detective to believe him before time resets again.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is easy to grasp and has a clean commercial engine: a murder, a detective, and a young man trapped in a time-bending loop. The appeal is strongest for genre buyers and thriller audiences, with the college setting and dark humor widening the lane beyond straight procedural crime."
+        "reasoning": "The hook is immediately legible: an impossible-murder mystery with a time-bending protagonist and a detective on his trail. It has a clear genre promise and a strong hook for thriller and fantasy buyers, though the tonal oddness and specificity narrow it from broad four-quadrant play."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands immediately in the cold open with the empty bus, the old woman with the Uzi, and the smash-cut reset that tells us the rules are broken. By the rooftop scene, the audience understands the central engine: Anthony is repeating time, Ji-a is the only one who can track it, and the case keeps erasing itself."
+        "reasoning": "The premise lands fast in the cold open with the bus murder, then sharpens when Ji-a realizes Anthony is tied to the case and time is slipping. The script makes the central engine easy to explain in two sentences: a young man is trapped in a repeating, reality-bending murder pattern, and a detective is the only person who can track it."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Anthony’s anxious, people-pleasing guilt and Ji-a’s hard-edged competence give the story two strong poles, and Joan adds a lively social counterweight. The roles are playable and actor-friendly, though the script is still mostly using them to drive the premise rather than fully opening their inner lives."
+        "reasoning": "Anthony’s panic, guilt, and people-pleasing make him sympathetic, and Ji-a’s blunt competence gives the story a strong counterweight. Joan adds warmth and friction, but the page still leans more on premise than on fully differentiated character depth."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script’s boldest move is making time distortion feel like a murder-case contamination, with evidence disappearing, names shifting, and the detective’s memory becoming part of the mystery. The tonal choice to mix campus banter, noir investigation, and supernatural dread gives the material a sharper identity than a standard loop thriller."
+        "reasoning": "The script takes a familiar detective chase and folds in time distortion, memory loss, and a surreal, almost deadpan New York texture. The old woman with the Uzi, the clock-eye tattoo, and the repeated resets give it a confident, ownable weirdness."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The opening sequence is highly propulsive, and the investigation keeps producing new pressure points: missing evidence, erased cases, and the confrontation with XII. The momentum is strongest when the script is moving between Anthony and Ji-a; the middle section leans a bit more on setup than escalation, but the rooftop turn restores urgency."
+        "reasoning": "The opening murder, the evidence disappearance, and the rooftop confrontation create a strong forward pull. The middle spends meaningful time on atmosphere and character banter, which helps voice, but the case progression is still more episodic than escalating."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The idea of a murder suspect whose crime scene can literally disappear from the record has a fresh inevitability to it. The clock-eye tattoo, the time-skipping antagonist, and the detective who alone notices the edits give the premise a memorable signature."
+        "reasoning": "The script’s core idea feels fresh because the impossible element is embedded in a procedural chase rather than announced as a fantasy premise. Anthony’s repeated near-death resets and Ji-a’s growing awareness create a clean, surprising engine that feels both strange and playable."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "Queens Village, the NYPD precinct, the college campus, and the bus system all feel like parts of one connected urban machine, and the script uses those spaces to create procedural texture. The world is specific enough to generate story, especially through the bus routes, evidence locker, and campus bureaucracy, though it is still primarily serving the central mystery."
+        "reasoning": "The New York bus routes, NYPD process, college campus, and recurring clock imagery create a specific urban texture. The world is still mostly a container for the mystery, but the bus system, evidence board, and time anomalies suggest a larger rule-set underneath."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a distinct voice: deadpan New York banter, sudden violence, and surreal time distortion all coexist without losing the emotional center. Joan’s profanity-laced warmth, Ji-a’s clipped authority, and XII’s playful menace create a tone that feels authored rather than generic."
+        "reasoning": "The script has a distinct off-kilter register: grim murders, casual profanity, deadpan banter, and surreal time mechanics all coexist without feeling random. The Joan/Anthony dialogue especially gives it a lived-in, slightly abrasive comic rhythm that separates it from standard procedural fare."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the genre engine, there are clear reserves around guilt, identity, faith, and the pressure of being seen as a good person while fearing you are not. The script hints at a larger mythology through the clock-eye tattoo and the repeated erasures, and that suggests room for a deeper feature arc."
+        "reasoning": "There are seeds of deeper mythology in the clock-eye tattoo, the disappearing case file, and the suggestion that Anthony’s condition is bigger than one murder. The page hints at a larger system, but the script is still mostly delivering the surface mystery rather than fully opening the mythology."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "The Anthony-Joan bond and the Ji-a-Larry friction give the script useful recurring dynamics, and Ji-a versus Joan has real scene energy. Still, the story is primarily powered by a few key pairings rather than a broad ensemble web."
+        "reasoning": "Anthony and Joan have the strongest recurring dynamic, and Ji-a/Larry gives the investigation a workable procedural pairing. That said, the script is still lead-driven, with the supporting players functioning more as pressure points than as a true ensemble engine."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 7,
-        "leads": 4,
-        "series_regulars": 0,
-        "child_actors": false,
-        "casting_characteristics": [
-          "College-age lead ensemble",
-          "Detective role",
-          "Older woman with heightened presence",
-          "Potentially recurring antagonist with stylized physicality"
-        ]
-      },
-      "locations": {
-        "distinct_count": 9,
-        "interior_exterior_ratio": "Mostly interior with several exterior street/campus/bus-station scenes",
-        "period_or_contemporary": "Contemporary",
-        "notable_requirements": [
-          "New York urban exteriors",
-          "Bus interior",
-          "Police precinct",
-          "College campus locations",
-          "Dorm room",
-          "Rooftop"
-        ]
-      },
-      "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Time-reset moments, disappearance/erasure effects, and a few visual continuity distortions around the loop and clock imagery.",
-        "stunts_level": "minor",
-        "sfx_needs": "Gunfire, blood hits, body effects, and practical reset continuity.",
-        "night_shoots": "significant",
-        "animals": false
-      },
-      "rights_flags": [],
-      "platform_fit": {
-        "recommended_lane": "Streaming thriller / premium cable genre feature lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Festival-to-platform or streamer original feature release model"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary urban settings, limited company moves, and minor VFX keep this in a contained feature budget lane."
-        },
-        "cast": {
-          "level": "low",
-          "note": "The story centers on a small core of four leads with a handful of supporting roles and no child casting."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The script uses multiple New York locations, including bus, precinct, campus, dorm, rooftop, and street exteriors."
-        },
-        "content": {
-          "level": "medium",
-          "note": "Gun violence, a body count, and repeated panic-driven violence push it into mature thriller territory."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named music, brands, or real-person references appear in the pages provided."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The premise turns a murder case into a memory war.",
-          "what_it_means": "That gives a producer a clean hook with built-in escalation: the crime scene itself can be erased, rewritten, and re-litigated, which is a strong engine for a contained thriller. Genre buyers and streamers looking for a high-concept mystery with a fresh procedural wrinkle will immediately understand the value.",
-          "evidence": "Ji-a discovers the evidence locker is empty, the case number no longer exists, and the clock-eye tattoo changes by a minute in her hand.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Anthony is a playable lead built on panic and guilt.",
-          "what_it_means": "That creates a showcase role for an actor who can play fear, decency, and moral collapse in the same frame, which is exactly the kind of part that can elevate a genre package. Mid-career dramatic leads and younger breakout actors looking for a prestige-leaning thriller anchor would chase this.",
-          "evidence": "He is introduced as a model student who can barely function, then confesses to Joan that he may have killed someone and later begs Ji-a to believe he is not lying.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Ji-a gives the story a hard, memorable procedural spine.",
-          "what_it_means": "A detective who can track a case that keeps disappearing is a strong buyer asset because she turns the supernatural premise into an investigation rather than a pure concept exercise. Actors who specialize in controlled intensity and premium-cable authority roles will see a clear lane here.",
-          "evidence": "Her clipped exchanges with forensics and Larry, plus the evidence-board sequence and rooftop confrontation, establish her as the story’s engine on the law-enforcement side.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The tone has a New York-specific snap.",
-          "what_it_means": "The dialogue and setting give the script a lived-in urban texture that helps it stand apart from generic time-loop material and makes it easier to market as a specific city story. Buyers who respond to character-forward genre with voice — especially streamer and indie genre labels — will hear that immediately.",
-          "evidence": "The bus stop, Queens Village, the precinct banter, and lines like 'Time. Place. Fuck off.' and 'Barry' create a very particular rhythm.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Joan is a strong pressure-release valve.",
-          "what_it_means": "She gives the movie a social heartbeat and a source of humor that keeps the thriller from flattening into pure dread, which broadens audience access. Young-adult ensemble casting and actors with sharp comedic timing will be drawn to her fast, profane, loyal energy.",
-          "evidence": "Her scenes with Anthony on campus and at the smoking spot give the script its most relaxed, human back-and-forth.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The antagonist arrives with a signature image.",
-          "what_it_means": "XII’s clock-eye tattoo, chopped-cheese casualness, and time-skipping menace make the threat feel branded, which is valuable in a crowded genre marketplace. Performers who like scene-stealing, heightened antagonists will see a juicy role with a lot of attitude and control.",
-          "evidence": "Her first full scene in Emma’s dorm room, where she explains the time-bending and casually demonstrates it by shooting Anthony and resetting the moment, is instantly legible.",
-          "source": "script"
-        }
-      ],
-      "headline": "This script has a clean, pitchable engine: a college student who can’t die, a detective whose case keeps getting erased, and a time-bending killer who turns every clue into a moving target. The result is a contained, character-forward thriller with a strong New York voice, a memorable visual signature, and a lead role actors will want to own."
     },
     "lead_characters": [
       {
         "name": "Anthony Morgan",
         "role_type": "Lead",
-        "demographics": "Male · late teens/early 20s · college student",
-        "hook": "Anthony is a high-achieving, deeply anxious college student whose default mode is politeness, overthinking, and self-erasure. He reads as the kind of young man who has spent his whole life trying to be good, which makes it devastating when the story forces him to confront the possibility that he may be something else entirely.",
-        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — rapid internalization, verbal fragility, and a mind that never stops moving even when the body is frozen. It gives an actor the chance to play panic, guilt, and dawning supernatural terror while still keeping the audience emotionally attached to his decency."
+        "demographics": "Male, late teens to early 20s, college student, likely Black or mixed-race based on the script's social framing and campus context.",
+        "hook": "A high-achieving, anxious pre-law student who looks like a model citizen until he becomes trapped in a reality where he may have killed someone, may be repeating time, and can’t tell whether he’s a victim, a witness, or a monster. He’s deeply people-pleasing, emotionally frayed, and running on fear, guilt, and instinct.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network or Robert Pattinson in Good Time — a tightly wound, hyper-verbal panic role that lets an actor play intelligence, shame, and escalating unraveling in the same frame."
       },
       {
-        "name": "Detective Ji-a Choi",
-        "role_type": "Lead",
-        "demographics": "Female · 30s to early 40s · Korean or Korean-American detective",
-        "hook": "Ji-a is a hard-edged, hyper-competent detective who trusts process, pattern recognition, and her own instincts more than anyone in the room. She has the kind of clipped authority that makes every interaction feel like a test, but the script also lets her carry the loneliness of being the only person who can see the case changing in real time.",
-        "why_actor_wants_this": "This is the showcase space of Jodie Foster in True Detective season 3 — controlled intelligence, moral pressure, and a detective whose authority is inseparable from her interior life. Actors who want a prestige procedural lead with steel, precision, and emotional containment will chase it."
+        "name": "Ji-a Choi",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, NYPD detective, Korean or Korean-American.",
+        "hook": "A hard-edged detective with a dry, impatient exterior and a real appetite for the truth, even when the truth starts breaking the rules of evidence. She’s the only person in the room who can track the impossible without blinking, and the script gives her a sharp, unsentimental authority.",
+        "why_actor_wants_this": "This is the showcase lane of Regina King in Watchmen or Carrie Coon in The Leftovers — a controlled, emotionally sealed investigator role that lets an actor project command while slowly revealing vulnerability."
       },
       {
         "name": "Joan",
-        "role_type": "Lead",
-        "demographics": "Female · early 20s · college student",
-        "hook": "Joan is Anthony’s closest friend: sharp-tongued, funny, emotionally direct, and far more perceptive than she initially lets on. She brings the script its most human social rhythm, but she also carries the quiet ache of someone who knows more about Anthony than he is ready to say out loud.",
-        "why_actor_wants_this": "This is the kind of role Natasha Lyonne made feel electric in Russian Doll — fast comic timing with an undercurrent of loyalty and emotional intelligence. It gives an actor a chance to be the scene’s engine, the joke’s punchline, and the emotional witness all at once."
+        "role_type": "Supporting",
+        "demographics": "Female, college-age, student, likely in her early 20s.",
+        "hook": "Anthony’s closest friend and emotional pressure valve: sharp-tongued, funny, protective, and far more perceptive than she initially lets on. She’s the kind of friend who can make a joke about murder and still land as the most human person in the scene.",
+        "why_actor_wants_this": "This is the kind of role that gave Ayo Edebiri in The Bear or Jodie Comer in Killing Eve early heat — fast, funny, emotionally legible dialogue that can pivot from comic relief to real stakes without warning."
       },
       {
         "name": "XII",
-        "role_type": "Lead",
-        "demographics": "Female · 20s to 30s · stylized, physically agile presence",
-        "hook": "XII is a time-skipping predator with the confidence of someone who has already seen the end of the conversation and is amused by the middle. She is playful, threatening, and weirdly charismatic, with a streetwise voice that makes her feel both human and not-quite-human.",
-        "why_actor_wants_this": "This is the kind of scene-stealing antagonist territory that Tilda Swinton or Janelle Monáe has used to dominate genre material — a role where style, menace, and control are the performance. Actors who want to leave a mark with a memorable, high-concept villain will be drawn to it."
+        "role_type": "Supporting",
+        "demographics": "Female, ageless/unclear, human-presenting but possibly supernatural or time-displaced.",
+        "hook": "A swaggering, streetwise enigma who seems to know exactly what Anthony is and what he’s carrying, while treating murder and time manipulation like part of a private joke. She’s the script’s most overt mythology carrier: charming, threatening, and impossible to pin down.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Tilda Swinton did in Suspiria or Cate Blanchett in Nightmare Alley — arrive with instant authority, bend the tone, and make the audience lean in because the character feels bigger than the scene."
       },
       {
         "name": "Larry",
         "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · detective partner",
-        "hook": "Larry is the earnest, slightly outmatched partner who keeps trying to be useful while Ji-a steamrolls past him. His comic frustration gives the procedural side some texture, and his confusion helps underline how abnormal the case really is.",
-        "why_actor_wants_this": "This is the kind of role that Ben Schwartz or Jake Johnson has turned into a scene-pop engine — fast talk, wounded pride, and comic timing inside a genre frame. It gives an actor a chance to be memorable without carrying the whole movie."
+        "demographics": "Male, 20s-30s, detective partner / forensic-adjacent police colleague.",
+        "hook": "A well-meaning, slightly hapless procedural foil who keeps trying to be useful while Ji-a steamrolls him. He gives the investigation a human, comic friction point and helps ground the police side of the story.",
+        "why_actor_wants_this": "This is the kind of supporting-cop role that gives actors in The Wire or Brooklyn Nine-Nine a steady stream of scene-stealing beats — reactive comedy, procedural utility, and room to build chemistry."
       },
       {
         "name": "Emma",
         "role_type": "Supporting",
-        "demographics": "Female · early 20s · psychology student",
-        "hook": "Emma is more of a presence than a full social player in the pages provided, but she functions as a key emotional and narrative hinge through Joan’s connection to her and XII’s intrusion into her room. Her role is defined by absence, which makes her feel eerie and important.",
-        "why_actor_wants_this": "This is the kind of contained, high-impact role that can work like the quiet center of a scene in Hereditary or The Invitation — a performance built on stillness, vulnerability, and the audience’s awareness that something is off. Actors who like small but memorable genre parts will see the opportunity immediately."
+        "demographics": "Female, college-age, student, psychology track.",
+        "hook": "A relationship node in Anthony’s orbit who becomes a casualty of the story’s time distortion and hidden violence. Even in limited page time, she functions as a human cost marker and a clue to Anthony’s social world.",
+        "why_actor_wants_this": "This is the kind of role that can do a lot with very little, similar to the emotionally loaded supporting turns in Euphoria or The End of the F***ing World — brief screen time with real narrative consequence."
       },
       {
         "name": "Old Woman",
         "role_type": "Supporting",
-        "demographics": "Female · 60s or older",
-        "hook": "The Old Woman is a grotesquely cheerful assassin whose politeness and violence arrive in the same breath. She is memorable because she feels like a nightmare wearing the face of a commuter, and her giddy certainty gives the opening its shock value.",
-        "why_actor_wants_this": "This is the kind of left-field, unforgettable genre cameo that Kathy Bates or Margo Martindale has made iconic — a role that gets to be funny, terrifying, and instantly legible. Character actors who love a scene that detonates the movie will want it."
+        "demographics": "Female, elderly.",
+        "hook": "A terrifyingly cheerful assassin whose Uzi ambush in the bus cold open instantly establishes the script’s surreal threat level. She’s less a conventional character than a nightmare trigger, but she’s memorable and scene-defining.",
+        "why_actor_wants_this": "This is the kind of left-field, high-impact cameo that gives an actor the kind of one-scene notoriety character performers love — think the shocking, scene-stealing energy of a great Fargo or Barry guest turn."
+      },
+      {
+        "name": "Academic Advisor",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-50s, university staff.",
+        "hook": "A calm institutional presence who quietly knows more than she says, especially in the scene where Ji-a’s movement through the room starts to feel wrong. She adds to the script’s creeping sense that reality is slightly off.",
+        "why_actor_wants_this": "This is a compact, atmospheric role in the vein of prestige-TV institutional characters — the kind of part that lets an actor play stillness, subtext, and unease in a few precise beats."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a grounded thriller where time distortion is felt through behavior, not spectacle.",
-        "fit_profile": "First- or second-feature directors with a strong short-film reel, or established indie filmmakers who already work comfortably in performance-forward genre. This material rewards precision in blocking, rhythm, and tonal control more than big visual effects, so it suits directors who care about tension, urban texture, and actor-driven suspense.",
-        "detail": "The script gives a director a clean playground for escalating dread through repetition, memory, and shifting point of view, while keeping the visual language contained enough to stay elegant. It will attract filmmakers who like genre stories that can be shot lean but still feel conceptually ambitious."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "late-teen/early-20s lead with intense internal panic",
+          "Korean or Korean-American detective",
+          "elderly woman with strong comic-horror timing",
+          "ageless or ambiguous supporting antagonist"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Streamer thriller / premium genre feature lane",
-        "detail": "The package can be built around one breakout lead and a strong supporting detective role, so it does not require a giant ensemble or heavy star stack to get moving. The contained urban footprint and minor VFX make it exportable and streamer-friendly, while the time-loop murder hook gives buyers a clean thumbnail and trailer concept."
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "New York street and bus station exteriors",
+          "college campus and dorm interiors",
+          "NYPD precinct and evidence board setup",
+          "rooftop sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Time-reset effects, disappearing evidence/case continuity, and the visual handling of repeated moments and temporal skips.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical gunfire, blood effects, body hits, and repeated-death staging in the bus cold open.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: genre-forward theatrical or streamer-premiere mystery-thriller with elevated-concept positioning."
       }
     },
-    "considerations": [
-      {
-        "area": "Anthony’s inner conflict is strongest when it becomes action.",
-        "detail": "The rooftop sequence already gives him a visible choice, and the next pass could keep looking for places where his fear turns into a decision rather than a confession. That would make the time-loop premise feel even more character-driven and would deepen the audience’s attachment to him.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the New York exteriors, precinct build, campus coverage, rooftop work, and repeated-time visual effects keep this above a lean indie floor."
       },
-      {
-        "area": "The middle section leans on case explanation.",
-        "detail": "The bus-station investigation, evidence-board material, and academic-advisor scene all do useful work, and one direction would be to let one of those information beats arrive through a sharper emotional turn. That would keep the mystery moving while preserving the script’s procedural clarity.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs an actor who can play panic, intelligence, and dark comedy without losing sympathy, while Ji-a needs a performer with authority and dry edge; XII is a narrow, high-flavor role."
       },
-      {
-        "area": "Ji-a and Larry can carry more independent energy.",
-        "detail": "Their friction is already entertaining, and the version of the script where Larry’s competence or personal stake becomes more visible would give the detective side a richer secondary engine. That would also make the precinct feel less like a relay station and more like a living workplace.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The location footprint is manageable but varied.",
-        "detail": "The story moves through the bus, precinct, campus, dorm, rooftop, and street exteriors, so a production pass should look for any places where two New York locations can be folded into one without changing the story beat. That would protect the urban specificity while keeping the shoot efficient.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The time-reset effects should stay elegant.",
-        "detail": "The script only needs a handful of repeatable visual rules — the clock tick, the jump back, the erased evidence, the continuity snap — so the best version keeps those effects simple and consistent. That lets the movie spend its energy on performance and tension rather than on expensive visual invention.",
-        "is_primary_lever": false,
-        "source": "production"
+      "development": {
+        "level": "medium",
+        "note": "The time-bending rules, disappearing evidence, and clock-eye mythology are compelling, but the feature needs a clean internal logic so the mystery payoff feels earned rather than merely strange."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Invisible Man",
+          "year": 2020,
+          "why_it_comps": "A genre-forward, character-driven thriller built around a protagonist whose reality is doubted while a relentless external threat keeps tightening the vise."
+        },
+        {
+          "title": "Happy Death Day",
+          "year": 2017,
+          "why_it_comps": "The repeated-death/time-loop mechanics and the blend of horror-adjacent tension with a playable, high-concept engine are a close structural neighbor."
+        },
+        {
+          "title": "Source Code",
+          "year": 2011,
+          "why_it_comps": "A mystery-thriller where time distortion is the engine, not just the gimmick, and the lead must solve the case while trapped inside the rules."
+        },
+        {
+          "title": "The Vast of Night",
+          "year": 2019,
+          "why_it_comps": "The script shares its eerie, low-key strangeness and the sense that ordinary spaces are hiding a much larger, stranger system."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who like smart, offbeat mystery-thrillers with a supernatural or time-bending twist and a strong detective-protagonist dynamic.",
+        "demographics": "Adults 18-44, slightly male-skewing on the hook but with strong female appeal through Ji-a and Joan; genre-literate streaming audience.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary New York locations, a modest cast, and moderate time-effect work keep this in indie feature territory rather than studio scale."
+      },
+      "lane_fit": {
+        "lane": "elevated indie mystery-thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-film development execs",
+          "indie producers with elevated-thriller slates",
+          "festival-facing distributors",
+          "director-driven genre labels"
+        ],
+        "detail": "This sits naturally in the lane where concept-forward genre meets character-first execution. The script has enough weirdness to feel fresh, but enough procedural clarity to be marketable to buyers who want a clean hook and a contained spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a contained central mystery and no clear sequel or spinoff vector beyond the lead's immediate case."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The cold open is a killer hook.",
+          "what_it_means": "It gives the project immediate trailer value and a clean buyer-facing promise: this is not a standard procedural, it is a reality-bending murder mystery with a memorable first image. That kind of opening helps both packaging and audience positioning because it signals tone, stakes, and novelty in under five pages.",
+          "evidence": "The empty Queens street, the driverless bus, and the old woman unloading an Uzi into Anthony before the scene resets.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Anthony is a playable lead role.",
+          "what_it_means": "The script gives an actor a high-emotion, high-anxiety centerpiece that can carry a feature on internal tension alone. That makes the project attractive to talent looking for a showcase turn rather than a generic genre assignment.",
+          "evidence": "Anthony’s panic attacks, his self-doubt about being a murderer, and the repeated moments where he tries to talk himself out of what he’s seeing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ji-a gives the movie a spine.",
+          "what_it_means": "Her blunt competence turns the story from a one-man freakout into a two-track investigation with real procedural momentum. Buyers tend to respond to that because it broadens the audience entry point and gives the film a grounded counterweight to the surreal material.",
+          "evidence": "Her evidence-board work, her no-nonsense interrogation style, and the rooftop moment where she becomes the only person who believes Anthony.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The time mechanics feel cinematic.",
+          "what_it_means": "The repeated resets, disappearing evidence, and clock imagery create a visual grammar that can be marketed as a concept, not just explained as plot. That helps the film stand out in a crowded mystery-thriller field because the hook is legible in images.",
+          "evidence": "The clock-shaped eye tattoo, the evidence locker erasing itself, and the rooftop sequence replaying with déjà vu.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The dialogue has a lived-in snap.",
+          "what_it_means": "The banter between Anthony and Joan, and the friction between Ji-a and Larry, gives the script a voice that feels contemporary and castable. That kind of dialogue helps attract actors and directors who want genre material with personality rather than generic exposition.",
+          "evidence": "Joan’s teasing, Ji-a’s “Time. Place. Fuck off.”, and the repeated name-misfires with Larry.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, pitchable elevated-genre feature: a time-bending murder mystery with a strong cold open, a castable anxious lead, and a detective spine that keeps the story commercially legible. The contemporary New York footprint and modest cast keep it in indie territory, which makes the concept feel especially buyable for streamer originals, boutique financiers, or a director looking for a breakout first feature."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The time rules are still impressionistic.",
+          "detail": "The script clearly wants the audience to feel the resets before it fully explains them, but the mechanics around what Anthony can change, what Ji-a remembers, and why evidence disappears are still loose on the page. That is a development-level friction point because the mystery depends on the audience trusting the logic even while the characters don’t.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle section leans on repetition.",
+          "detail": "Several scenes circle the same emotional beat — Anthony panicking, Ji-a investigating, Joan deflecting, the clock motif reasserting itself — before the rooftop confrontation sharpens the stakes. A buyer will notice that the engine is strong, but the feature still needs a more forceful escalation pattern to feel fully propulsive.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Ji-a is compelling but still function-first.",
+          "detail": "She has authority, attitude, and a clean investigative purpose, but the page mostly uses her as the audience’s procedural anchor rather than as a fully dimensional co-driver of the movie. That is not a deal-breaker, but it does narrow the emotional range of the film if the buyer is looking for a richer dual-protagonist dynamic.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "XII arrives as mythology before character.",
+          "detail": "The clock-eye tattoo, time-skipping, and ominous confidence make her memorable, but the scene is doing more world-building than humanizing. Producers will flag that as a useful hook with some risk: she is striking, but the script has not yet fully earned how much authority she has over the story.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest friction is not concept — it has that — but rule clarity and escalation. Buyers will respond to the hook immediately, then ask whether the time mechanics are precise enough and whether the middle can keep climbing with the same force as the cold open and rooftop reveal."
+    },
     "craft_note": ""
   },
   "weightedScore": 71.7,
   "tier": "Optionable",
-  "inputTokens": 18144,
-  "outputTokens": 4307,
-  "cost": 0.0329895,
+  "inputTokens": 20549,
+  "outputTokens": 4505,
+  "cost": 0.03568425,
   "declaredFormat": "Feature film"
 }

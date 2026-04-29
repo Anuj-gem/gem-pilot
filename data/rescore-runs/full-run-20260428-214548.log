@@ -1,0 +1,56 @@
+Prompt hash: 87b22bf7f5f0
+Selznick 3.8 markers: PRESENT ✓
+Run receipts: data/rescore-runs/2026-04-29T04-45-48-153Z/
+
+=== GEM Re-Score → LIVE  ===
+Target table: script_evaluations
+Cache: OFF (default)
+Concurrency: 8
+
+Excluding 132 internal @gem.studio users
+Found 535 submissions to consider (after internal + optional filters)
+Will process 535 submissions
+
+Snapshotting 535 current evaluation rows...
+Snapshot written to data/rescore-backup/pre-rescore-2026-04-29T04-45-56-078Z.json (535 rows)
+
+[2/535] "How To Disappear Completely" (2edfc204) · Feature film
+  Extracted 10647 chars
+  Score: 61.3 | Tier: Optionable | Cost: $0.0300
+  Leads: 6 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/2edfc204-b956-46f9-8f04-578b4cf6ddd4.json
+  ✓ Updated eval 9514c299
+[1/535] "In the Maze of Existence (16)" (0dbcbb11) · Feature film
+  Extracted 29568 chars
+  Score: 57 | Tier: Needs Development | Cost: $0.0371
+  Leads: 11 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/0dbcbb11-cb9d-4a7c-b1bb-5d459d8173f6.json
+  ✓ Updated eval 506e1fdf
+[5/535] "In the Maze of Existence (11)" (9a24bbb3) · Feature film
+  Extracted 30539 chars
+  Score: 59 | Tier: Needs Development | Cost: $0.0368
+  Leads: 11 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/9a24bbb3-e1e3-40a8-9ce4-ecfc5a60bb4d.json
+  ✓ Updated eval 2da402c0
+[7/535] "In the Maze of Existence (13)" (330ea354) · Feature film
+  Extracted 29720 chars
+  Score: 54.3 | Tier: Needs Development | Cost: $0.0376
+  Leads: 12 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/330ea354-c4de-4be0-9db8-d9119f0cbaa9.json
+  ✓ Updated eval a2119bb9
+[8/535] "In the Maze of Existence (14)" (58eb446e) · Feature film
+  Extracted 29565 chars
+  Score: 63.3 | Tier: Optionable | Cost: $0.0375
+  Leads: 12 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/58eb446e-050d-4dff-b045-ef2c3794751c.json
+  ✓ Updated eval a0ee5b72
+[4/535] "In the Maze of Existence (10)" (dd13bbe1) · Feature film
+  Extracted 34413 chars
+  Score: 60.7 | Tier: Optionable | Cost: $0.0390
+  Leads: 11 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/dd13bbe1-84d3-445c-acf5-bc0628b4f50f.json
+  ✓ Updated eval e77e6ba8
+[6/535] "In the Maze of Existence (12)" (104602c3) · Feature film
+  Extracted 29718 chars
+  Score: 56.7 | Tier: Needs Development | Cost: $0.0397
+  Leads: 11 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/104602c3-4ad8-4e34-ac56-52ae6b621693.json
+  ✓ Updated eval 0a0648ac
+[3/535] "In the Maze of Existence (9)" (a0d60dd6) · Feature film
+  Extracted 43373 chars
+  Score: 55.3 | Tier: Needs Development | Cost: $0.0396
+  Leads: 13 (ok) | Receipt: data/rescore-runs/2026-04-29T04-45-48-153Z/a0d60dd6-df80-4cde-9ba0-4f2e978ac799.json
+  ✓ Updated eval 548276eb

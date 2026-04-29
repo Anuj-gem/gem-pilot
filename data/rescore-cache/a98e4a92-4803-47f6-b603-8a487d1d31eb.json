@@ -2,89 +2,166 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Erotic thriller",
-      "genre_tags": [
-        "psychological thriller",
-        "domestic drama"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Drama",
+        "Crime"
       ],
-      "tone": "Seductive, tense, glossy, escalating, and finally tragic"
+      "tone": "erotic",
+      "tags": [
+        "female-lead",
+        "male-lead",
+        "family-dynamics",
+        "marriage",
+        "identity",
+        "crime",
+        "psychosexual",
+        "silicon-valley",
+        "oakland",
+        "low-budget-friendly"
+      ]
     },
-    "positioning_hook": "A Silicon Valley couple’s flirtation with a seductive “unicorn” spirals into blackmail, murder, and a marriage-defining reckoning that turns their private fantasy into a public nightmare.",
+    "positioning_hook": "A Silicon Valley founder and his lawyer wife let a seductive “unicorn” into their marriage, then discover she’s weaponizing desire, blackmail, and murder to keep them hooked.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is instantly legible and built around sex, status, and danger, which gives it a clean commercial lane. The audience is narrower than a four-quadrant thriller because the engine is adult, relationship-specific, and highly charged, but the hook is strong enough to sell."
+        "reasoning": "The premise is instantly legible and saleable: a marriage, a seductress, blackmail, and a murder cover-up. The audience is narrower than a four-quadrant thriller because the erotic material and relationship focus skew adult, but the hook is strong enough to travel."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The script announces its engine early: a married couple at a Silicon Valley gala meets Aria, and the night opens a door they cannot close. The title concept lands in the back half with real force, and the story keeps converting that idea into escalating consequences."
+        "reasoning": "The hook lands early and cleanly at the gala and beach-house sequence: a couple is drawn into a third who turns out to be dangerous. The title concept is also baked into the plot, which gives the premise a strong, easy-to-pitch identity."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Tom and Liz are a compelling pair because their desire, resentment, and loyalty are all active in the same scenes, especially once the beach-house dynamic fractures them. Aria is the standout force, though the supporting orbit mostly serves the triangle rather than generating fully independent momentum."
+        "reasoning": "Tom and Liz are a credible, conflicted pair with enough history to carry the movie, and Aria is a vivid disruptor with real screen presence. They’re compelling, but the script is built more on dynamic than on deep individual reinvention."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script takes a familiar seduction-thriller setup and grounds it in Silicon Valley wealth, open-marriage subculture, and a very specific social vocabulary around optimization, branding, and control. The choice to make the erotic premise collide with corporate image management and family life gives the material a confident edge."
+        "reasoning": "The script commits hard to a psychosexual triangle inside the Silicon Valley elite, and it uses the “unicorn” subculture as a narrative engine rather than a backdrop. The tonal confidence in the sex scenes, social satire, and thriller escalation gives it a sharper edge than a standard affair thriller."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The story keeps tightening the vise: gala encounter, beach-house crossing, gallery reappearance, blackmail, death, cover-up, and final confrontation. Each turn raises the stakes in a way that keeps the reader leaning forward, and the final stretch has strong thriller propulsion."
+        "reasoning": "The story keeps tightening the noose: gala flirtation, first threesome, stalking texts, blackmail, Mike’s death, Benny’s death, and the final trap. Each escalation is tied to a concrete consequence, so the movie keeps generating forward pressure."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The “unicorn” concept becomes more than a kink label; it evolves into a character-driven trap with social, sexual, and criminal consequences. That combination of erotic fantasy and domestic catastrophe feels fresh while still immediately understandable."
+        "reasoning": "The central idea feels fresh because it fuses marriage drama, tech-world status anxiety, and a predatory sexual arrangement into one engine. The reveal that Aria is not just a seductress but a long-game manipulator gives the premise a memorable, inevitable twist."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The Silicon Valley ecosystem is specific and story-generating, from fundraising galas to VC language to law-firm polish and the pressure of brand management. The world is vivid, though it remains primarily a pressure chamber for the central relationship rather than a sprawling institutional canvas."
+        "reasoning": "The Silicon Valley gala culture, Oakland art scene, Acorn projects, and Stinson Beach domesticity create a specific social map with class tension baked in. It’s not a sprawling world, but it’s textured enough to feel lived-in and story-generating."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a distinct tonal signature: glossy wealth, erotic charge, social discomfort, and sudden violence, all played with a controlled, cinematic seriousness. The beach-house intimacy, the gallery unease, and the final blood-soaked turn give it a recognizable identity."
+        "reasoning": "The script has a distinct erotic-thriller register: glossy, intimate, then increasingly poisonous. The contrast between polished wealth and raw sexual danger is consistent and recognizable throughout."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the thriller mechanics, the script is really about aging desire, status hunger, marital drift, and the fantasy of being seen again. The final reveal of Aria’s childhood fire and the closing image give the story a deeper emotional aftertaste."
+        "reasoning": "There are real undercurrents here around marriage fatigue, class resentment, and the hunger to feel chosen. The final Aria childhood-fire image adds a deeper psychological layer, though the movie mostly plays its hand rather than withholding for long."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "Tom, Liz, Aria, Mike, Benny, and Leo create a workable web of pressure, with Tom/Liz/Aria doing the heavy lifting and the others adding leverage. The ensemble is functional and story-useful, though the script’s real engine is the central triangle plus the marriage."
+        "score": 8,
+        "reasoning": "Tom, Liz, Aria, Mike, Benny, and Justin all generate usable tension in different combinations, and the script repeatedly reconfigures those relationships. The triangle is the engine, but the supporting players keep the pressure from feeling static."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Tom Chase",
+        "role_type": "Lead",
+        "demographics": "Male, mid-30s, white, Silicon Valley founder, married father",
+        "hook": "Tom is the polished-but-not-quite-native tech founder who thinks he’s buying control, status, and a future, only to discover he’s emotionally outmatched by the people around him. He’s handsome, decent, and self-protective, which makes him believable as both a husband and a man who can be seduced by the promise of being seen.",
+        "why_actor_wants_this": "This is the showcase territory of a Matthew McConaughey in True Detective-style role: controlled charisma, sexual unease, and a man whose confidence slowly cracks under pressure. It gives an actor the chance to play charm, shame, jealousy, and panic in the same frame."
+      },
+      {
+        "name": "Liz Chase",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s, white, lawyer, wife, mother",
+        "hook": "Liz is the sharper, more emotionally literate half of the marriage, and the script keeps revealing how much of her composure is professional armor. She’s not just reacting to Tom and Aria; she’s the one who most clearly understands the cost of what’s happening, which gives her real authority even when she’s destabilized.",
+        "why_actor_wants_this": "This is the kind of role that gave Laura Linney in Ozark or Nicole Kidman in Big Little Lies so much traction: intelligence, restraint, and a buried volatility that finally breaks through. It offers a strong actress the chance to move from controlled professional to morally compromised co-conspirator."
+      },
+      {
+        "name": "Aria Greene",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, ambiguous ethnicity, artist, lower-income background",
+        "hook": "Aria is the movie’s seductive engine: part fantasy projection, part predator, part wounded survivor, and eventually something much darker. She performs confidence like a weapon, but the script keeps letting us glimpse the need, rage, and damage underneath it.",
+        "why_actor_wants_this": "This is a breakout-vehicle role in the vein of Jodie Comer in Killing Eve or Rosamund Pike in Gone Girl: alluring, dangerous, and constantly shifting the audience’s allegiance. It gives an actor the rare chance to be erotic, funny, manipulative, and terrifying without losing control of the frame."
+      },
+      {
+        "name": "Mike Kreski",
+        "role_type": "Supporting",
+        "demographics": "Male, early 40s, operator, wealth manager / deal intermediary",
+        "hook": "Mike is the slick Silicon Valley fixer who understands the social game better than Tom does and quietly helps steer the whole machine. He reads as comic relief at first, but the script uses him as a pressure valve and a key piece of the conspiracy.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charm with rot underneath, like a Paul Dano or Jon Hamm type of part in a prestige thriller. It’s a scene-stealing supporting turn with real narrative consequence."
+      },
+      {
+        "name": "Benny Taylor",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, working-class, Oakland / foster-care background",
+        "hook": "Benny is Aria’s damaged enforcer and ex-lover, but the script keeps him human enough that he never becomes a pure thug. He’s jealous, vulnerable, and trapped in the orbit of someone he can’t escape, which makes him more than just a plot device.",
+        "why_actor_wants_this": "This is strong supporting territory for an actor who can play menace and hurt at once, the kind of role that gives a performer a memorable, volatile second gear. It’s the sort of part that can break out in a thriller if cast with real edge."
+      },
+      {
+        "name": "Justin Chase",
+        "role_type": "Supporting",
+        "demographics": "Male, 15, athletic boarding-school student, son",
+        "hook": "Justin starts as the grounded family anchor and becomes the most alarming collateral damage in the story. The script uses him to raise the stakes from adult infidelity to something far more personal and dangerous.",
+        "why_actor_wants_this": "This is a strong young-actor role because it shifts from breezy teen confidence to real vulnerability and shock. It gives a performer a late-film emotional turn that matters to the whole story."
+      },
+      {
+        "name": "Leo Vitulo",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, private investigator, rugged",
+        "hook": "Leo is the calm, competent adult in the room, the guy who can actually read the situation without getting seduced by it. He functions as the movie’s procedural ballast and gives the final act a credible investigative spine.",
+        "why_actor_wants_this": "This is the kind of grounded, authoritative supporting role that actors like Shea Whigham or Michael Shannon can make feel bigger than the page count. It’s a clean, professional showcase for controlled intensity."
+      },
+      {
+        "name": "Charles Stone",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, billionaire investor",
+        "hook": "Charles is the polished, predatory money figure who embodies the status world Tom wants into. He’s not a villain in a traditional sense, but he’s a cold reminder that the whole ecosystem is transactional.",
+        "why_actor_wants_this": "This is premium supporting material for an actor who can play wealth as menace, like a Succession-style power player. It gives a performer a few sharp scenes with real authority and social dominance."
+      },
+      {
+        "name": "Edith von Strick",
+        "role_type": "Supporting",
+        "demographics": "Female, 70s, old-money client",
+        "hook": "Edith is a small but useful emblem of the conservative, reputation-conscious world Liz serves. She helps show the professional stakes around Liz’s public image and the kind of clients that could be endangered by scandal.",
+        "why_actor_wants_this": "This is a crisp character-actor cameo with a specific social register, the sort of role that lets a veteran performer land instant class and authority. It’s not a showy part, but it’s sharply defined."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 12,
-        "leads": 3,
+        "speaking_roles": 10,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "One teenage son (Justin)",
-          "Lead female role requires strong erotic charisma and dramatic volatility",
-          "Lead male roles are 30s to 40s professional types",
-          "Several supporting roles are age-specific professionals and social elites"
+          "one teenage son with substantial dialogue",
+          "lead female role requires strong erotic and emotional range",
+          "Aria needs a highly specific mix of glamour, danger, and vulnerability",
+          "supporting roles skew 40s-70s professional and affluent"
         ]
       },
       "locations": {
-        "distinct_count": 18,
-        "interior_exterior_ratio": "roughly 2:1 interior",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
           "Silicon Valley gala venue",
-          "Beach house on a bluff",
+          "modernist suburban home",
+          "Stinson Beach house and shoreline",
           "Oakland art gallery",
-          "Oakland Acorn projects neighborhood",
-          "Apartment building and luxury high-rise apartment",
-          "Law firm offices",
-          "Corporate office",
-          "Airport"
+          "Oakland Acorn projects exterior/interior",
+          "Santana Row apartment building",
+          "law firm offices",
+          "parking structure club space"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No meaningful VFX beyond simple fire imagery in the opening and closing flashback framing.",
+        "vfx_details": "No visible VFX requirement beyond basic cleanup and possible security-camera inserts.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical fire imagery, smashed glass, vandalized exterior, blood effects, and a few fight beats.",
+        "sfx_needs": "Practical fire imagery in the opening flashback, a smashed phone, a broken glass injury, and a vandalized house exterior.",
         "night_shoots": "significant",
         "animals": true
       },
@@ -92,228 +169,164 @@
         {
           "type": "named_music",
           "detail": "Robyn & Röyksopp 'Do It Again', FKA twigs 'Two Weeks', James Blake 'The Wilhelm Scream', Skeeter Davis 'The End of the World'"
-        },
-        {
-          "type": "brand",
-          "detail": "iPhone, Tinder, Uber, Whitney, Silicon Valley Glass House-style venue references, and other contemporary brand/cultural markers"
-        },
-        {
-          "type": "real_person",
-          "detail": "No real people are named as characters, but the script references public-facing institutions and artists through music and art-world context"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or theatrical indie-thriller lane",
-        "content_level": "Mature / explicit",
-        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical-to-streaming potential"
+        "recommended_lane": "premium streaming or premium cable",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult psychosexual thriller with prestige-drama packaging and a streamer-friendly erotic edge."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the script spans multiple distinct locations, several night exteriors, a beach-house sequence, a club/parking-structure set, and a practical fire opening that all need to be scoped cleanly."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary, mostly contained locations keep the budget in a mid-range feature lane, with night work, multiple company moves, and practical effects adding some lift."
+      "casting": {
+        "level": "high",
+        "note": "Aria is the hardest lift: she has to be seductive, funny, manipulative, emotionally damaged, and credible in both erotic and threatening modes. Tom and Liz also need actors who can sell a marriage with real history, not just plot mechanics."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The movie’s engine is clear, but the final-act reveal around Justin and the moral line around Aria’s manipulation make the audience contract sensitive. The script is strongest when it stays in the triangle; the broader conspiracy material is functional but less distinctive."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Fatal Attraction",
+          "year": 1987,
+          "why_it_comps": "The domestic affair-to-threat escalation and the sense of a seductive outsider turning a marriage into a danger zone are the same core engine."
         },
-        "cast": {
-          "level": "medium",
-          "note": "Three demanding leads plus a teenage son and several professional supporting roles require careful casting, especially for the Aria role."
+        {
+          "title": "Gone Girl",
+          "year": 2014,
+          "why_it_comps": "It shares the marriage-as-performance pressure, the weaponized intimacy, and the way a couple’s private life becomes public leverage."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through gala, beach house, law firm, gallery, projects, airport, and luxury interiors, but all are contemporary and producible."
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "The social gathering that slowly reveals itself as a trap, plus the escalating unease around who is manipulating whom, is very much in that lane."
         },
-        "content": {
-          "level": "high",
-          "note": "Explicit sexual content, nudity, drug use, violence, blackmail, and a teenage sexual storyline narrow the platform lane."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "Named songs and contemporary brand references will need clearance or substitution, especially because the music is used as scene identity."
+        {
+          "title": "The Last Thing He Wanted",
+          "year": 2020,
+          "why_it_comps": "The blend of adult political/wealth-world intrigue with a female character whose motives are harder to pin down fits the same adult-thriller lane."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like sexy, high-stakes relationship thrillers where desire and danger are inseparable.",
+        "demographics": "35-54 skew, slightly female-leaning but viable for couples viewing; upscale streamer audience, prestige-thriller fans, and viewers drawn to marriage-under-pressure stories.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$15M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary settings, limited company size, and no heavy VFX keep it in indie feature territory, though the night shoots, beach house, and multiple upscale locations will want disciplined scheduling."
+      },
+      "lane_fit": {
+        "lane": "prestige erotic thriller",
+        "types_of_buyers": [
+          "premium streamer original film teams",
+          "boutique genre financiers",
+          "adult-thriller specialty distributors",
+          "indie producers looking for actor-driven elevated genre",
+          "director-driven companies with a prestige-suspense mandate"
+        ],
+        "detail": "This sits in the lane where adult sexuality, class tension, and psychological danger are the selling points rather than the garnish. The script is built for buyers who want a contained, actor-forward thriller with a sharp hook and a premium finish."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The story resolves its central triangle and murder cover-up cleanly, and there is no clear franchise or spinoff vector beyond this one narrative."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is built on a clean, saleable taboo.",
-          "what_it_means": "A producer gets a high-concept adult thriller with an immediate hook: a married couple’s fantasy becomes a trap, and the title concept is baked into the story engine. Buyers who want a sexy, elevated genre piece for premium streaming or a festival launch will understand the lane instantly.",
-          "evidence": "The gala-to-beach-house-to-blackmail progression, and Aria explicitly naming herself a “Unicorn.”",
+          "dimension_or_area": "The title concept is the movie.",
+          "what_it_means": "The script has a clean, ownable hook that can be sold in one sentence and understood immediately by buyers. That makes it unusually easy to position for streamer acquisition or a director-led package. It’s the kind of premise that attracts adult-thriller audiences and actors who want a bold, high-concept role.",
+          "evidence": "Aria explicitly defines herself as a 'Unicorn,' and the entire plot turns on what that means inside the marriage.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Aria is a star-making antagonist role.",
-          "what_it_means": "The role gives an actress seduction, menace, vulnerability, and volatility in one package, which is exactly the kind of part that can break out a performer. Casting directors, prestige indie buyers, and actors looking for a career-redefining lead will all see the showcase value immediately.",
-          "evidence": "Aria moves from flirtation to emotional manipulation to murder, while also revealing flashes of hurt and self-mythology.",
+          "dimension_or_area": "The triangle is commercially combustible.",
+          "what_it_means": "Tom, Liz, and Aria create a three-way dynamic that keeps reconfiguring power, desire, and blame, which is exactly what makes relationship thrillers sticky. That gives the project a strong word-of-mouth engine for adult audiences and a clear showcase for three actors.",
+          "evidence": "The gala flirtation, beach-house threesome, office hookup, and final trap all escalate from the same relational triangle.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The marriage is the real engine.",
-          "what_it_means": "This is not just a thriller about an outsider; it’s a relationship movie with genre teeth, which broadens the emotional appeal beyond pure kink or crime. Adult drama buyers and actors who want material with both intimacy and escalation will respond to that dual engine.",
-          "evidence": "Tom and Liz repeatedly fracture and reconnect, from the gala dance to the beach-house aftermath to the final cover-up.",
+          "dimension_or_area": "It has a premium erotic-thriller lane.",
+          "what_it_means": "The script knows what kind of movie it is and commits to it without apology, which is a real asset in a market that still buys adult suspense when the hook is sharp. That makes it attractive to streamers and financiers looking for a polished, sexy, actor-driven genre play.",
+          "evidence": "The Robyn, FKA twigs, and James Blake needle drops, plus the explicit seduction scenes, give it a clear adult register.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The class contrast gives the story bite.",
+          "what_it_means": "The move between Silicon Valley wealth, Oakland grit, and the Acorn projects gives the thriller a social texture that lifts it beyond a generic affair story. Buyers looking for prestige genre with a real-world edge will respond to that built-in class tension.",
+          "evidence": "The gala, the Oakland gallery, Benny’s apartment, and Aria’s neighborhood all sit in different social worlds.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Silicon Valley gives the story a sharp social frame.",
-          "what_it_means": "The tech-money setting adds status pressure, image management, and a language of optimization that makes the erotic chaos feel more dangerous and contemporary. That makes the script attractive to buyers looking for a modern, upscale thriller with recognizable cultural texture.",
-          "evidence": "Charles Stone’s “brand-alignment” speech, the gala, the VC talk, and the company sale hanging over every scene.",
+          "dimension_or_area": "Aria is a breakout role.",
+          "what_it_means": "The character is written to be magnetic, dangerous, and unstable in a way that can launch an actor’s profile if cast correctly. That kind of role is a real packaging asset because it can pull in talent who want a scene-stealing, conversation-starting part.",
+          "evidence": "Aria moves from seductive artist to manipulator to violent threat, while still keeping the audience guessing.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The script keeps escalating without losing clarity.",
-          "what_it_means": "Each turn adds a new lever — texts, blackmail, death, evidence, cover-up — so the story stays propulsive and easy to market. Thriller buyers like material that can be pitched in one sentence but still delivers a full chain of consequences.",
-          "evidence": "The progression from flirtation to the club recording to Mike’s death to Benny’s leverage to the final confession video.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The final reveal reframes the whole story.",
-          "what_it_means": "The childhood-fire image and Aria’s backstory give the ending a haunting emotional echo, which lifts the material beyond a simple seduction thriller. That kind of final-image resonance is valuable for festival programmers and buyers who want genre with aftertaste.",
-          "evidence": "The opening and closing burning-house imagery, ending on young Aria watching the fire.",
+          "dimension_or_area": "The ending lands on consequence, not just shock.",
+          "what_it_means": "The final act resolves the danger through a moral and legal trap, which gives the movie a satisfying aftertaste instead of a simple body-count finish. That makes it easier to sell as a prestige thriller rather than disposable genre.",
+          "evidence": "The knife, the video statement, the police cleanup, and the final family tableau all tie the climax back to the marriage and the sale.",
           "source": "script"
         }
       ],
-      "headline": "THE UNICORN has a clean, irresistible commercial engine: a Silicon Valley marriage gets seduced into a fantasy that turns into blackmail, murder, and a brutal test of loyalty. It’s sexy, contemporary, and sharply packaged around a role for an actress who can be both intoxicating and terrifying, with a setting that gives the whole thing a premium, upscale edge."
+      "headline": "This is a clean, high-concept prestige erotic thriller with a title that tells you exactly what the movie is, and a triangle that keeps escalating into blackmail, murder, and moral collapse. It’s commercially attractive because it’s contemporary, actor-forward, and contained enough to package without tentpole economics."
     },
-    "lead_characters": [
-      {
-        "name": "Tom Chase",
-        "role_type": "Lead",
-        "demographics": "Male · mid-30s",
-        "hook": "Tom is the polished small-town transplant who has learned how to look like he belongs in Silicon Valley, even when he still feels like an outsider inside the room. He’s handsome, controlled, and eager to be seen as more than the nice guy in the corner, which makes him vulnerable to status, temptation, and the fantasy of reinvention. The role lives in the tension between his domestic decency and the part of him that wants to be chosen, admired, and upgraded.",
-        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a man whose charisma is inseparable from his self-mythology, and whose internal fracture is always visible under the surface. It gives an actor the chance to play charm, shame, erotic curiosity, and moral panic in a single escalating arc, which is exactly the kind of adult lead role that can reset how the industry sees him."
-      },
-      {
-        "name": "Liz Chase",
-        "role_type": "Lead",
-        "demographics": "Female · mid-30s",
-        "hook": "Liz is the smartest person in the room who has spent years making competence look effortless, even as she quietly wonders what happened to the version of herself that used to feel alive. She’s a lawyer, a wife, a mother, and the emotional barometer of the film, but the script keeps revealing that her restraint is not passivity — it’s pressure. She carries the story’s most interesting contradiction: the woman who knows the rules best is also the one most tempted to break them.",
-        "why_actor_wants_this": "This is the showcase space of Nicole Kidman in Big Little Lies or Julianne Moore in May December — a controlled, intelligent woman whose composure becomes the thing the audience watches crack and re-form. It gives an actress a prestige lead with erotic charge, emotional intelligence, and the kind of late-film turn that can anchor awards conversation or a high-end thriller campaign."
-      },
-      {
-        "name": "Aria Greene",
-        "role_type": "Lead",
-        "demographics": "Female · 20s",
-        "hook": "Aria is a self-invented seductress with the poise of an artist, the instincts of a hustler, and the volatility of someone who cannot bear abandonment. She enters as a fantasy and keeps revealing new layers — playful, wounded, manipulative, needy, dangerous — until it becomes clear that her charisma is both her weapon and her wound. She’s the kind of character who can dominate a movie because every scene with her changes the temperature of the room.",
-        "why_actor_wants_this": "This is the showcase lane of Rosamund Pike in Gone Girl or Jodie Comer in Killing Eve — a magnetic woman whose charm is inseparable from threat, and whose emotional shifts are the performance. It gives an actress the rare chance to play seduction, instability, rage, and tragic self-mythology in a role that can become the movie’s calling card."
-      },
-      {
-        "name": "Mike Kreski",
-        "role_type": "Supporting",
-        "demographics": "Male · early 40s",
-        "hook": "Mike is the slick operator who speaks fluent Silicon Valley and knows exactly how to turn social pressure into leverage. He’s funny, invasive, and always a half-step ahead of Tom, which makes him feel like both a friend and a salesman. He’s the kind of supporting role that can be played as charmingly toxic, with just enough warmth to make the betrayal sting.",
-        "why_actor_wants_this": "This is the kind of role that lives in the Jon Hamm lane in The Town or the Billy Crudup lane in Almost Famous — a charismatic professional who can pivot from buddy energy to predatory control in a beat. Character actors and name supporting players who like scene-stealing, morally slippery material will want it."
-      },
-      {
-        "name": "Benny Taylor",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s",
-        "hook": "Benny is Aria’s old-world tether: rough, wounded, possessive, and emotionally compromised in a way that makes him both dangerous and pitiable. He’s the guy who knows too much, loves too hard, and keeps trying to turn chaos into a transaction. The role has a bruised, volatile energy that makes him feel like a live wire in every scene.",
-        "why_actor_wants_this": "This is the kind of part that gives an actor the raw, combustible territory of Ben Foster in Hell or High Water or Shea Whigham in Boardwalk Empire — a man whose pain is always one step from violence. Supporting players who specialize in intensity and unpredictability will chase it."
-      },
-      {
-        "name": "Justin Chase",
-        "role_type": "Supporting",
-        "demographics": "Male · 15",
-        "hook": "Justin is the son who still reads as a kid to his parents but is old enough to be pulled into the adult world around him. He’s smart, casual, and a little too comfortable with the language of flirtation and performance, which makes him feel like the next generation of the same family contradictions. He gives the story its most unsettling innocence-to-awareness pressure point.",
-        "why_actor_wants_this": "This is the kind of teenage role that sits in the territory of Lucas Hedges in early prestige work or Timothée Chalamet in Call Me by Your Name — a young man whose intelligence and vulnerability make him feel older than he is. Young actors with dramatic credibility will want the chance to play a son who is not just present, but structurally consequential."
-      },
-      {
-        "name": "Leo Vitulo",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "Leo is the private investigator who operates with the calm of a man who has seen every version of human mess and knows how to keep his own hands clean. He’s practical, observant, and quietly authoritative, which makes him feel like the adult in the room whenever the story starts to spin. He adds procedural ballast without stealing the movie’s center of gravity.",
-        "why_actor_wants_this": "This is the grounded, lived-in authority role that actors like Michael Shannon or Shea Whigham often turn into memorable support — a man who can deliver exposition while still feeling like he has a private life offscreen. Character actors who like understated command will be drawn to it."
-      },
-      {
-        "name": "Charles Stone",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Charles is the billionaire investor who treats intimacy, reputation, and money as parts of the same operating system. He’s polished, amused, and casually predatory, which makes him feel like the embodiment of the world Tom wants to enter. He’s a supporting role with real social gravity because every line he speaks changes the temperature of the sale.",
-        "why_actor_wants_this": "This is the kind of role that sits in the Succession-adjacent power-player lane — a man who can make a room feel expensive and dangerous at the same time. Established actors who enjoy playing elite control with a smile will want it."
-      },
-      {
-        "name": "Sabrina",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s",
-        "hook": "Sabrina is Liz’s friend who functions as a social mirror: funny, frank, and just detached enough to puncture the self-seriousness of the gala world. She gives the film a lived-in female social texture and helps define the class and marital assumptions around Liz. She’s small but useful, with a voice that feels specific rather than decorative.",
-        "why_actor_wants_this": "This is the kind of sharp supporting part that can be played with the breezy precision of a Parker Posey or Carrie Coon scene — a woman who lands the joke and the truth in the same breath. Character actresses who like fast, socially legible dialogue will enjoy it."
-      },
-      {
-        "name": "Edith von Strick",
-        "role_type": "Supporting",
-        "demographics": "Female · 70s",
-        "hook": "Edith is the old-money client who reminds us that Liz’s world is built on performance, manners, and inherited power. She’s severe, polished, and quietly judgmental, which makes her a useful pressure point for Liz’s professional life. She’s not a large role, but she sharpens the film’s class language instantly.",
-        "why_actor_wants_this": "This is the kind of elegant authority part that actors like Meryl Streep or Jane Alexander can make memorable in a few scenes — a woman whose social status is the performance. Veteran actresses who like crisp, high-status dialogue will be attracted to it."
-      },
-      {
-        "name": "Jeanie",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Jeanie is Liz’s assistant, a clean, functional presence in the law-firm world who helps make that environment feel real and inhabited. She’s not written as a comic device; she’s part of the professional machinery that keeps Liz moving. The role is small but grounded, and it helps sell the texture of the office.",
-        "why_actor_wants_this": "This is a useful, naturalistic support role in the vein of the efficient assistants and junior staff actors often play in prestige dramas like Succession or The Morning Show. Emerging actors looking for a credible professional-world credit would take it."
-      },
-      {
-        "name": "Detective #1",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s",
-        "hook": "Detective #1 is the procedural face of consequence: calm, unsentimental, and focused on the facts that will eventually close in on Tom and Liz. He gives the ending its institutional weight without overplaying it. The role is lean, but it helps lock the thriller into reality.",
-        "why_actor_wants_this": "This is the kind of grounded law-enforcement part that actors like David Harbour or Clark Gregg can make feel lived-in with very little screen time. Character actors who specialize in authority-without-theatrics will be interested."
-      },
-      {
-        "name": "Detective #2",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Detective #2 is the quieter counterpart in the police pair, there to reinforce the procedural pressure and keep the final scene from feeling theatrical. He’s functional, steady, and part of the film’s closing institutional frame. The role is brief but necessary.",
-        "why_actor_wants_this": "This is a clean supporting slot for a working character actor who knows how to make a few lines feel credible in a prestige thriller. It’s the kind of part that fits the grounded police-drama lane."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make erotic tension feel dangerous, adult, and cinematic rather than exploitative.",
-        "fit_profile": "Established indie directors with at least one or two features, or prestige-TV directors moving into features, who already work comfortably with performance-forward material and controlled suspense. This material rewards directors who care about social texture, intimate blocking, and tonal precision — the kind of filmmaker who can make a dinner party, a beach house, and a bathroom scene all feel like pressure cookers.",
-        "detail": "The movie gives a director a contained but escalating canvas: a few key locations, three combustible leads, and a visual language that can move from glossy wealth to primal violence without changing genres. It will attract filmmakers who like adult relationship drama with thriller mechanics, especially those who can stage intimacy and dread in the same frame."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streaming thriller / festival-to-platform adult genre",
-        "detail": "The package can be built around one breakout female lead and two strong supporting male roles, so it does not require a giant ensemble or effects spend to work. The contemporary setting, recognizable social world, and explicit hook make it exportable for streamers and festival buyers who want a sexy, elevated thriller with a clear title concept."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "Aria’s psychology gets very broad in the back half.",
+          "detail": "The script gives her a strong seductive persona, but once the blackmail and murder mechanics kick in, she starts to read more as a plot engine than a fully legible person. That’s not a deal-breaker for the genre, but it does make the final stretch more dependent on performance than on page-level inevitability.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The final-act Justin reveal is a hard tonal turn.",
+          "detail": "The move from adult psychosexual manipulation to the revelation that Aria has been texting and seducing the teenage son is a major escalation that will narrow the audience and raise sensitivity questions. It’s the sharpest audience-risk moment in the script because it changes the movie’s moral temperature very quickly.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The music budget is not incidental.",
+          "detail": "Robyn & Röyksopp, FKA twigs, James Blake, and Skeeter Davis are all specifically named and materially shape the movie’s tone. Those are real clearance and sync-cost items, not placeholders, and they need to be treated as part of the package rather than as optional flavor.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Aria is a narrow casting lane.",
+          "detail": "The role has to sell erotic power, class intelligence, menace, and emotional damage without losing control of the frame. That is a real casting filter, and the movie’s marketability rises or falls on whether the right actor can make her feel irresistible before she becomes alarming.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The thriller depends on a lot of coincidence.",
+          "detail": "Mike knowing Aria, Aria finding the couple at the gala, the repeated reappearances, and the final convergence at the beach house all require the audience to accept a fairly engineered chain of events. The script sells it with confidence, but a buyer will still notice how much of the engine is driven by coincidence and access.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The movie’s biggest commercial risk is that the back half gets more extreme and more engineered just as it needs to stay seductive and inevitable. The music clearances and the Aria casting lift are manageable, but the Justin turn is the moment every buyer will clock as the point where the audience contract gets much more sensitive."
     },
-    "considerations": [
-      {
-        "area": "The opening spends time on atmosphere before the engine fully locks.",
-        "detail": "The gala and flirtation are doing important tonal work, but the version of the opening where Aria’s role in the story is seeded a little earlier could make the hook hit even faster. The material is already elegant; this is about getting the audience to the central contradiction with maximum snap.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The middle leans hard on repeated seduction beats.",
-        "detail": "The beach-house, gallery, text-message, and party sequences all build the same erotic charge in different clothes, which is effective, but a next pass could vary the emotional function of one of those scenes so each turn reveals something new. That would keep the momentum as sharp as the premise.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The supporting world is mostly there to pressure the triangle.",
-        "detail": "Mike, Charles, Leo, Sabrina, and the law-firm orbit all serve the central story well, and the version where one supporting relationship had a slightly more independent agenda could add another layer of story energy. The current shape is producible and focused; this is a lever for added texture, not a structural fix.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The music and brand references are scene-defining.",
-        "detail": "The Robyn, FKA twigs, James Blake, and Skeeter Davis cues are doing real tonal work, and the contemporary brand references help sell the world. A buyer will want to know early whether those tracks are being cleared or swapped, because they are part of the script’s identity.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The location footprint is manageable but not tiny.",
-        "detail": "The story moves through gala, beach house, law firm, gallery, projects, airport, apartment interiors, and a luxury high-rise, so the production plan will want to consolidate where possible without flattening the social contrast. The good news is that all of those spaces are contemporary and achievable in a mid-budget feature lane.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 73.7,
+  "weightedScore": 75.3,
   "tier": "Optionable",
-  "inputTokens": 41998,
-  "outputTokens": 5635,
-  "cost": 0.056856000000000004,
+  "inputTokens": 44403,
+  "outputTokens": 4954,
+  "cost": 0.05559525,
   "declaredFormat": "Feature film"
 }

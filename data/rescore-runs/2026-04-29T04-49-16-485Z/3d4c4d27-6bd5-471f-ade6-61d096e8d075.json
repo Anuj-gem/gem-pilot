@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T04:59:26.209Z",
+  "submission_id": "3d4c4d27-6bd5-471f-ade6-61d096e8d075",
+  "eval_id": "440f45f8-faea-4ee7-bddc-9690abc8238b",
+  "title": "Forever Girl",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Nissa",
+      "role_type": "Lead",
+      "demographics": "Female, 21, Mughal princess, Indian, royal-born, spiritually gifted."
+    },
+    {
+      "name": "Durga",
+      "role_type": "Supporting",
+      "demographics": "Female, 21, Indian, Urdubegis warrior, physically formidable."
+    },
+    {
+      "name": "Santi",
+      "role_type": "Supporting",
+      "demographics": "Female, 21, Indian, royal servant/dasis, emotionally open."
+    },
+    {
+      "name": "Aurangzeb",
+      "role_type": "Supporting",
+      "demographics": "Male, late 70s, Mughal emperor, Indian, ruling patriarch."
+    },
+    {
+      "name": "Eztli",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, Indigenous/Latine-coded historical figure, seafarer/seeker."
+    }
+  ],
+  "positioning_hook": "A Mughal princess hides a miraculous newborn from her father’s court, then uses a singing bowl to rewrite the child’s fate before the empire can claim her.",
+  "cost_usd": 0.033141000000000004,
+  "input_tokens": 20752,
+  "output_tokens": 3906,
+  "status": "wrote:leads_ok"
+}

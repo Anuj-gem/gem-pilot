@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T04:51:44.174Z",
+  "submission_id": "d116fef3-66cc-4826-8ed8-ad71f1ecff83",
+  "eval_id": "4b4aa6be-83de-4347-ad10-a65a31395cbd",
+  "title": "Fan Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Kevin Marshall",
+      "role_type": "Lead",
+      "demographics": "Male, early-to-mid 40s, white, middle-class, small-business owner, fandom insider."
+    },
+    {
+      "name": "Jon Cooper",
+      "role_type": "Supporting",
+      "demographics": "Male, late 30s, white, married father of two, working-class suburban professional, former filmmaker."
+    },
+    {
+      "name": "Manny Wingood",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Black, overweight, working-class, lifelong fan and warehouse employee."
+    },
+    {
+      "name": "Tam Nguyen",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, Vietnamese-American, college-aged, smart, ambitious, working at the store."
+    },
+    {
+      "name": "Armando Garcia",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, Latino, veteran actor, public figure within the fandom world."
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female, late 30s, Asian or Asian-American implied by family context, medical professional, wife and mother."
+    },
+    {
+      "name": "Peg",
+      "role_type": "Supporting",
+      "demographics": "Female, late 70s, white, wealthy, sharp-tongued matriarch."
+    },
+    {
+      "name": "Hope",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, widow, date, civilian."
+    }
+  ],
+  "positioning_hook": "A sci-fi superfan with a failing collectibles business tries to mount an unauthorized fan film using the original cast, only to turn his own obsession into a legal and personal disaster.",
+  "cost_usd": 0.03774975,
+  "input_tokens": 22547,
+  "output_tokens": 4631,
+  "status": "wrote:leads_ok"
+}

@@ -3,262 +3,292 @@
     "classification": {
       "format": "Feature film",
       "genre_primary": "Drama",
-      "genre_tags": [
-        "Family",
-        "Medical"
-      ],
-      "tone": "Grounded, emotional, intimate, tragic"
+      "genre_secondary": [],
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "black-lead",
+        "contemporary",
+        "character-driven",
+        "family-dynamics",
+        "grief",
+        "mental-health",
+        "motherhood",
+        "fatherhood",
+        "alzheimer's"
+      ]
     },
-    "positioning_hook": "A veteran Black history teacher in the Bronx starts losing her memory just as her husband’s health collapses, forcing her family to watch the woman who held them together slip away.",
+    "positioning_hook": "A veteran Bronx teacher starts losing her memory just as her husband’s health collapses, forcing her to hide the truth at school and home before it erases the life she built.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The emotional promise is immediate and legible: a family-centered story about memory, dignity, and caregiving. Its audience is clear and meaningful, though the material is more prestige-drama than broad commercial entertainment."
+        "reasoning": "The emotional premise is immediate and accessible, especially for adult audiences drawn to family and caregiving stories. The market is real but narrower than a mainstream crowd-pleaser because the script is intimate, issue-driven, and built around a slow medical decline rather than a high-concept engine."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The premise lands early through Donna’s classroom authority, the first memory slips, and the later diagnosis. The story engine is easy to explain in one breath, even if the script plays more as a sequence of emotional beats than a tightly escalating feature premise."
+        "reasoning": "The hook lands early: a respected teacher begins forgetting critical parts of her life, and the script ties that directly to classroom and family pressure. The premise is clear, though the script spends a long stretch on school conflict before the Alzheimer’s engine fully takes over."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Donna has a strong central presence as a proud teacher and caregiver whose identity is being stripped away in real time. Terry and Anthony add emotional weight, but the supporting figures mostly orbit Donna’s decline rather than opening separate dramatic engines."
+        "reasoning": "Donna is a strong lead because she is proud, exhausted, and deeply human, and the husband-son triangle gives her emotional weight. The supporting characters are functional, but most of them are defined by their relationship to Donna rather than by distinct inner lives."
       },
       "creative_originality_and_boldness": {
         "score": 5,
-        "reasoning": "The Alzheimer’s premise is familiar, but the classroom setting and the intergenerational family structure give it a specific social angle. The script stays in a recognizable dramatic lane rather than pushing into a more singular formal or tonal approach."
+        "reasoning": "The script has a sincere, socially grounded angle, but the execution stays close to familiar prestige-drama territory. The school setting and Black family perspective add specificity, yet the storytelling approach is conventional rather than especially bold."
       },
       "narrative_momentum_engagement": {
         "score": 5,
-        "reasoning": "The script has a clear emotional progression from classroom friction to diagnosis to loss, but many scenes are built as standalone moments rather than a steadily tightening feature spine. The hospital and home sequences carry the most forward pull."
+        "reasoning": "The script has clear scenes and escalating medical stakes, but the first half repeats classroom friction beats before the central diagnosis arrives. Once the forgetting becomes undeniable, the emotional momentum improves, but the overall drive is uneven."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "A Black veteran teacher in the Bronx losing her memory while still trying to hold authority in class gives the premise a lived-in specificity. The idea feels grounded and human rather than high-concept, which keeps it accessible but not especially surprising."
+        "reasoning": "The combination of a Black female history teacher, a deteriorating memory, and a home life already under medical strain gives the premise a recognizable but ownable shape. It feels fresh in its social context, even if the dramatic architecture itself is familiar."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The Bronx school, the bus rides, the home caregiving routine, and the medical visits create a coherent everyday world with social texture. The setting is specific enough to feel lived in, though it functions more as a container for the drama than as a fully generative ecosystem."
+        "reasoning": "The Bronx school, the bus rides, the classroom hierarchy, and the family home create a lived-in working-class environment with clear social texture. The world is specific, but it functions mainly as a backdrop for Donna’s decline rather than a system generating many story lines."
       },
       "tonal_specificity": {
-        "score": 6,
-        "reasoning": "The tone is consistently earnest, sad, and human, with some sharp classroom and family friction. It is emotionally clear, though the script does not yet have a highly distinctive tonal signature beyond grounded melodrama."
+        "score": 5,
+        "reasoning": "The tone is consistent in its earnestness and emotional seriousness, with some naturalistic classroom and family friction. It does not yet have a sharply distinguishable tonal signature beyond grounded drama."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 7,
-        "reasoning": "Donna’s memory loss, her pride, and the family’s shifting roles suggest a deeper story about identity, aging, and care. The final image of her touching Terry’s body lands because the script has been building toward the emotional cost beneath the diagnosis."
+        "score": 6,
+        "reasoning": "Donna’s memory loss, her denial, and the family’s quiet adaptation suggest deeper emotional material beneath the surface. The script hints at a larger portrait of dignity, aging, and identity, but it mostly states those themes directly rather than layering them."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "Donna and Terry carry the strongest relationship, with Anthony adding a useful bridge between them and the outside world. The school relationships are functional, but the ensemble is not yet generating many independent story combinations."
+        "score": 6,
+        "reasoning": "Donna, Terry, Christopher, Ashley, Whitfield, and Emily create a workable relationship web with recurring friction and care. The strongest engine is the family triangle, while the school relationships are vivid enough to support scenes but not yet rich enough to feel fully generative."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Donna Collins",
+        "role_type": "Lead",
+        "demographics": "Black woman, late 60s, veteran high school history teacher, wife, mother",
+        "hook": "Donna is a proud, exhausted educator who has spent decades holding other people together while quietly running on fumes herself. She is sharp, disciplined, and emotionally guarded, which makes her memory loss devastating because it attacks the one thing she has always trusted: her mind. Her denial is not passive; it is a form of dignity, and the script uses that to make every lapse feel personal.",
+        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences or Cicely Tyson in The Trip to Bountiful — a role that lets an actor play authority, humor, pride, and collapse in the same frame. The performance opportunity is the slow surrender of control, with intimate close-up work and a final stretch of emotional devastation."
+      },
+      {
+        "name": "Terry Collins",
+        "role_type": "Supporting",
+        "demographics": "Black man, 70s, husband with heart disease and oxygen support",
+        "hook": "Terry is the quiet emotional ballast of the home, a man whose body is failing but whose presence still steadies Donna. He knows her rhythms better than anyone, which makes him the first person to notice the cracks and the last person she wants to hear them from. His love is practical, not performative, and that gives him real weight in the domestic scenes.",
+        "why_actor_wants_this": "This is the kind of role that gave James Earl Jones in The Great White Hope or Louis Gossett Jr. in A Raisin in the Sun its authority — a grounded, lived-in elder with emotional history in every line. The showcase is restraint: the chance to play tenderness, fatigue, and quiet fear without ever over-signaling."
+      },
+      {
+        "name": "Christopher Collins",
+        "role_type": "Supporting",
+        "demographics": "Black man, early 30s, Donna and Terry’s son, career professional",
+        "hook": "Christopher is the adult child who has become the translator between his mother’s pride and the reality everyone else can see. He is loving, practical, and increasingly alarmed, but the script keeps him in the painful position of watching his mother resist help he knows she needs. He gives the story a younger generational perspective without stealing focus from Donna.",
+        "why_actor_wants_this": "This is the kind of emotionally grounded son role that gave Sterling K. Brown in This Is Us or André Holland in Moonlight its quiet force — a man carrying love, frustration, and responsibility at once. The showcase is the scene work around helplessness, especially in the hospital and diagnosis beats."
+      },
+      {
+        "name": "Ashley Morton",
+        "role_type": "Supporting",
+        "demographics": "Woman, mid-30s, school administrator, assistant principal",
+        "hook": "Ashley is the one person inside the school who sees Donna clearly and tries to intervene without the power to fully protect her. She is empathetic but constrained, which makes her a useful pressure valve in the school politics and a credible ally in Donna’s corner. Her scenes suggest a larger moral intelligence than the principal’s office around her.",
+        "why_actor_wants_this": "This is the kind of role that gave Regina Hall in Support the Girls or Aunjanue Ellis in King Richard a chance to play intelligence under pressure — a character who listens, reads the room, and still has to choose her battles. The showcase is quiet authority and the ability to shift from ally to institutional insider in one conversation."
+      },
+      {
+        "name": "Whitfield",
+        "role_type": "Supporting",
+        "demographics": "White man, 40s, principal",
+        "hook": "Whitfield is the institutional antagonist: polished, defensive, and openly biased in a way that makes the school conflict personal fast. He is not written as subtle, but he gives the script a clear external pressure point and a face for the professional disrespect Donna has been absorbing. He functions as the story’s most obvious power obstacle.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do polished menace the way J.K. Simmons did in Whiplash or Michael Stuhlbarg did in Call Me by Your Name — controlled, socially acceptable hostility with a hairline crack underneath. The showcase is authority weaponized through tone rather than volume."
+      },
+      {
+        "name": "Emily Gibson",
+        "role_type": "Supporting",
+        "demographics": "White girl, mid-teens, new student",
+        "hook": "Emily is the outsider student who becomes a mirror for Donna’s classroom and family tensions. She is shy, observant, and clearly carrying her own private life, which gives her a small but meaningful emotional thread. The script uses her as a bridge between school politics and the larger social divide in the room.",
+        "why_actor_wants_this": "This is the kind of role that gave Kaitlyn Dever in Short Term 12 or Angourie Rice in The Nice Guys a chance to play intelligence and vulnerability without overexposure. The showcase is subtle reaction work and the slow reveal of a private interior life."
+      },
+      {
+        "name": "Amanda Gibson",
+        "role_type": "Supporting",
+        "demographics": "White woman, 30s, Emily’s mother",
+        "hook": "Amanda is a polished parent who carries social entitlement into the school and the home, and she immediately reads as someone who will complicate Donna’s world. She is not deeply developed, but she gives the script a class and race contrast that sharpens the school and dinner-table scenes. Her presence is useful because she embodies the kind of casual condescension Donna has to navigate everywhere.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play controlled social friction the way Laura Linney or Amy Ryan often do — a character who can be warm on the surface and cutting underneath. The showcase is in the micro-behavior: the smile, the pause, the entitlement."
+      },
+      {
+        "name": "Darryl Gibson",
+        "role_type": "Supporting",
+        "demographics": "Black man, mid-30s, doctor",
+        "hook": "Darryl is the medical authority who delivers the diagnosis and translates the crisis into clinical terms. He is functional rather than textured, but he carries the story’s turning point and gives the final act its formal weight. He also quietly expands the family and school world by connecting Emily’s home life to Donna’s collapse.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the calm, devastating authority of Courtney B. Vance in The People v. O.J. Simpson or Wendell Pierce in a hospital scene — the professional who has to say the thing nobody wants to hear. The showcase is controlled empathy under pressure."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 12,
-        "leads": 4,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "African-American female lead in late 60s",
-          "African-American male spouse in 70s",
-          "African-American son in 30s",
-          "Caucasian principal and family members",
-          "Teen students and one teen girl with a visible outsider dynamic"
+          "one lead in late 60s with sustained emotional close-up work",
+          "multiple teen classroom roles",
+          "one child/teen school role in Emily",
+          "supporting roles span 30s to 80s"
         ]
       },
       "locations": {
-        "distinct_count": 10,
-        "interior_exterior_ratio": "Mostly interior with several exterior transitions",
-        "period_or_contemporary": "Period (1992-1995)",
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 70/30 interior",
+        "period_or_contemporary": "period-piece",
         "notable_requirements": [
-          "Bronx school interiors",
-          "bus interiors",
-          "modest family home",
-          "doctor's office",
-          "hospital waiting room and treatment spaces",
-          "period-appropriate vehicles, phones, classroom materials, and wardrobe"
+          "1992-1995 period school and home design",
+          "Bronx bus interiors and street exteriors",
+          "doctor's office and hospital waiting room",
+          "classroom and principal's office"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visual effects requirements beyond basic screen inserts and medical environment dressing.",
+        "vfx_details": "No meaningful visual effects beyond basic medical monitor inserts if desired.",
         "stunts_level": "none",
-        "sfx_needs": "Medical props and practical hospital dressing; oxygen tank, walker, ambulance, and MRI room setup.",
-        "night_shoots": "significant",
+        "sfx_needs": "Minimal practical medical and ambulance dressing; oxygen tank and hospital equipment.",
+        "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Prestige streaming drama or festival-to-platform feature",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strongest fit in limited theatrical, festival launch, or streaming acquisition"
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is specialty theatrical or prestige streaming feature."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The period setting, school build, bus work, and hospital/doctor scenes keep this above a bare-bones indie footprint, but there are no VFX or action drivers pushing it into expensive territory."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary-to-period drama with contained school, home, bus, and hospital settings keeps the budget in a modest feature range."
+      "casting": {
+        "level": "medium",
+        "note": "The lead role requires a late-60s actor who can carry denial, pride, confusion, and grief without losing audience sympathy, and the principal/son/husband roles need strong scene partners to keep the drama credible."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s emotional premise is clear, but the first half leans heavily on classroom conflict before the Alzheimer’s story fully locks in, so the buying conversation will focus on whether the central decline is the true engine."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Father",
+          "year": 2020,
+          "why_it_comps": "Shares the subjective memory-loss perspective and the emotional terror of a mind slipping out from under a family."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The lead requires a late-60s Black actress with authority and vulnerability, plus a supporting family and school ensemble with several age-specific roles."
+        {
+          "title": "Still Alice",
+          "year": 2014,
+          "why_it_comps": "Matches the Alzheimer’s-centered prestige-drama lane and the lead-performance showcase built around denial and diagnosis."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through school, bus, home, doctor, and hospital spaces, with period dressing required across all of them."
+        {
+          "title": "The Savages",
+          "year": 2007,
+          "why_it_comps": "Comps on the caregiving burden, adult-child family strain, and the mix of humor and pain in a medical decline story."
         },
-        "content": {
-          "level": "medium",
-          "note": "Medical decline, death, profanity, and emotional distress shape the content profile without pushing into extreme material."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named real people, brands, music, or IP references are central to the story."
+        {
+          "title": "Miss Virginia",
+          "year": 2019,
+          "why_it_comps": "Shares the school-system pressure, Black female lead authority, and socially grounded inspirational-drama lane."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to prestige family dramas about caregiving, aging, and dignity under pressure.",
+        "demographics": "Skews 35+, female-leaning but not exclusive, with strongest pull among drama audiences and viewers who like emotionally serious, performance-forward films.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary period detail, a modest school-and-home footprint, and limited specialty effects keep this in the indie feature lane."
+      },
+      "lane_fit": {
+        "lane": "prestige character drama",
+        "types_of_buyers": [
+          "specialty distributors seeking awards-leaning performance pieces",
+          "streamer feature buyers building the mature-drama lane",
+          "indie financiers looking for contained, actor-driven material",
+          "prestige production companies with a history of socially grounded family dramas"
+        ],
+        "detail": "This sits naturally as a performance-forward, emotionally serious feature with a clear lead role and manageable production footprint. The school setting and Alzheimer’s storyline give it a buyer-friendly social issue angle without requiring a large-scale production spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Donna is a showcase lead role.",
-          "what_it_means": "The role gives a lead actress a full emotional runway: authority, pride, denial, humor, grief, and the slow erosion of identity all live in one part. Veteran dramatic performers and awards-minded indie buyers will see a prestige centerpiece with real emotional reach.",
-          "evidence": "Donna commanding the classroom, snapping at Whitfield, forgetting her husband’s medicine, and then losing her footing in the doctor’s office and hospital.",
+          "dimension_or_area": "Donna is a real lead role.",
+          "what_it_means": "This gives the project a casting hook that can attract a serious actor looking for a late-career showcase and awards-adjacent material. Buyers who want a performance-first drama can see the value immediately because the role is built around pride, denial, and collapse.",
+          "evidence": "The classroom confrontation, the medicine confusion at home, and the diagnosis scene all place Donna at the center of the emotional load.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The caregiving dynamic is the engine.",
-          "what_it_means": "The script turns family care into the dramatic spine, which gives producers a clear emotional hook and a built-in audience for adult drama. Buyers looking for actor-driven material with intergenerational stakes will respond to the Donna-Terry-Anthony triangle.",
-          "evidence": "Donna tending Terry’s medicine, Terry noticing her memory slips, Anthony stepping in after the collapse, and the family moving through diagnosis together.",
+          "dimension_or_area": "The family crisis is emotionally legible.",
+          "what_it_means": "The script has a clean, universal emotional engine that makes the stakes easy to understand in one pass. That clarity helps with both audience access and packaging because the buyer knows exactly what kind of tear-jerker or prestige drama they are getting.",
+          "evidence": "Terry’s heart failure, Christopher’s concern, and the eventual Alzheimer’s diagnosis all build a straightforward caregiving crisis.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Bronx school world has lived-in texture.",
-          "what_it_means": "The classroom, hallway, bus, and office scenes create a specific social environment that feels grounded rather than generic, which helps the film stand apart inside the prestige-drama lane. Directors who like character work in recognizable institutions will see a playable world with immediate texture.",
-          "evidence": "The opening bus ride, the chaotic classroom, the principal’s office, and the bus-stop confrontation with Amanda.",
+          "dimension_or_area": "The school setting adds social friction.",
+          "what_it_means": "The classroom and principal’s office give the story a second pressure system beyond the home, which broadens the film’s appeal beyond a single domestic lane. That makes the project more attractive to buyers looking for issue-driven drama with institutional conflict.",
+          "evidence": "Whitfield’s bias, the students’ disrespect, and Ashley’s attempts to intervene create a recurring workplace tension.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The script gives the diagnosis emotional weight.",
-          "what_it_means": "The Alzheimer’s reveal is not just informational; it lands as a personal and professional identity collapse, which makes the material feel built for performance and audience empathy. Festival programmers and streamers alike tend to respond to stories where the diagnosis changes the meaning of every earlier scene.",
-          "evidence": "Donna forgetting the date, failing the cognitive test, and then insisting she is still a teacher who cannot be replaced by the diagnosis.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending lands on a devastating image.",
-          "what_it_means": "The final hospital beat gives the film a clean emotional endpoint and a memorable closing gesture, which is valuable for buyers looking for a tear-jerker with a strong final impression. Prestige audiences and actors both chase material that can end on a silent, physical moment rather than dialogue.",
-          "evidence": "Donna touching Terry’s cold cheek after his death is announced.",
+          "dimension_or_area": "The Bronx texture feels lived-in.",
+          "what_it_means": "Specific local detail helps the script feel grounded rather than generic, which is valuable in a crowded prestige-drama market. Buyers often respond to a setting that carries identity and class texture without needing expensive worldbuilding.",
+          "evidence": "The bus rides, school hallways, and neighborhood home life all root the story in a recognizable Bronx environment.",
           "source": "script"
         }
       ],
-      "headline": "This is a performance-forward family drama built around a formidable lead role and a deeply playable caregiving world. It has the kind of emotional clarity that can anchor a festival run or a prestige streaming acquisition, especially for a buyer looking for an adult drama with a strong Black female center."
+      "headline": "This is a performance-forward, prestige-drama feature with a clear emotional engine and a contained production footprint. The combination of a late-career lead role, a socially specific school setting, and a family caregiving crisis gives buyers a clean package: actor-driven, emotionally legible, and feasible without tentpole economics."
     },
-    "lead_characters": [
-      {
-        "name": "DONNA COLLINS",
-        "role_type": "Lead",
-        "demographics": "Female · late 60s · African-American",
-        "hook": "Donna is a veteran history teacher who carries herself like someone who has spent a lifetime earning her place and refusing to surrender it. She is sharp, proud, exhausted, funny in flashes, and deeply invested in being useful to everyone around her until her own mind starts slipping out from under her.",
-        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences or Frances McDormand in Nomadland — a role where dignity, fatigue, and private collapse all live in the same frame. An actress gets to play authority, denial, maternal love, and the terror of losing language and memory, which is exactly the kind of part that can define a late-career prestige run."
-      },
-      {
-        "name": "TERRY COLLINS",
-        "role_type": "Lead",
-        "demographics": "Male · 70s · African-American",
-        "hook": "Terry is Donna’s husband, a physically diminished man whose body is failing but whose emotional intelligence is still intact. He is gentle, observant, and quietly devastating because he can see Donna slipping before she can admit it.",
-        "why_actor_wants_this": "This has the intimate, lived-in ache of Richard Jenkins in The Visitor or Brian Cox in a stripped-down family drama — a role built on stillness, love, and the pain of watching a partner disappear. Character actors who thrive on restraint and emotional precision will be drawn to the chance to make a small number of scenes carry enormous weight."
-      },
-      {
-        "name": "ANTHONY COLLINS",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · African-American",
-        "hook": "Anthony is the adult son who becomes the family’s translator, caretaker, and emotional shock absorber the moment the crisis becomes undeniable. He is protective, frustrated, and tender, with the burden of being the one who has to say the hard thing when his mother won’t hear it.",
-        "why_actor_wants_this": "This is the kind of grounded family-drama role that gave Sterling K. Brown in This Is Us or Mahershala Ali in Moonlight room to play love under pressure without ever overexplaining it. Actors looking for a soulful, emotionally legible supporting lead will see a part that can break hearts with very little ornament."
-      },
-      {
-        "name": "ASHLEY MORTON",
-        "role_type": "Supporting",
-        "demographics": "Female · mid-30s · Caucasian",
-        "hook": "Ashley is the assistant principal who sees Donna clearly enough to know she deserves help, even inside a school hierarchy that keeps her limited. She is empathetic, cautious, and quietly brave, functioning as the one institutional ally who can still move toward Donna instead of away from her.",
-        "why_actor_wants_this": "This is the kind of humane supporting role that Laura Linney or Amy Ryan has made memorable in prestige dramas — a character who carries decency, intelligence, and moral pressure in a few scenes. Actors who specialize in grounded authority figures will like that she gets to be the conscience of the school without becoming a speech machine."
-      },
-      {
-        "name": "PRINCIPAL WHITFIELD",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · Caucasian",
-        "hook": "Whitfield is the school administrator who hides prejudice behind polished language and institutional power. He is smug, defensive, and performatively reasonable, which makes him an effective pressure point for Donna’s dignity.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor do the polished menace of J.K. Simmons in Whiplash or Michael Stuhlbarg in a prestige drama — a man whose civility is the mask. Character actors who enjoy playing authority with a hairline crack of cruelty will have a field day with him."
-      },
-      {
-        "name": "EMILY GIBSON",
-        "role_type": "Supporting",
-        "demographics": "Female · mid-teens · Caucasian",
-        "hook": "Emily is the new student who arrives carrying a quiet outsider energy and a private life the school does not yet understand. She is observant, shy, and emotionally porous, which makes her a natural witness to Donna’s unraveling and the school’s social fault lines.",
-        "why_actor_wants_this": "This has the understated, watchful quality of Saoirse Ronan in a coming-of-age drama or Kaitlyn Dever in a prestige ensemble — a role where silence and reaction do a lot of the work. Young actors who can play intelligence without speeches will be attracted to the chance to be the audience’s emotional proxy."
-      },
-      {
-        "name": "AMANDA GIBSON",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · Caucasian",
-        "hook": "Amanda is Emily’s mother, a polished parent whose entitlement and social assumptions show up in small, revealing ways. She is not the center of the story, but she sharpens the film’s class and race dynamics every time she enters a room.",
-        "why_actor_wants_this": "This is the kind of sharply drawn supporting part that gives an actor the same social-comedy bite as Allison Janney in a prestige family drama — a woman whose privilege is legible in every line reading. Actors who like playing status and discomfort will be drawn to the bus scene and the dinner-table reveal."
-      },
-      {
-        "name": "DARRYL GIBSON",
-        "role_type": "Supporting",
-        "demographics": "Male · mid-30s · African-American",
-        "hook": "Darryl is the doctor who becomes the voice of diagnosis and consequence, carrying the medical truth with professional calm. He is functional on the page, but he gives the story a necessary institutional face at the moment Donna’s private fear becomes public fact.",
-        "why_actor_wants_this": "This is the kind of clean, authoritative role that actors like Wendell Pierce or Courtney B. Vance can make feel larger than the page — a professional who has to deliver life-changing news without losing humanity. It appeals to performers who can turn exposition into emotional pressure."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a quiet emotional gut-punch with real social specificity.",
-        "fit_profile": "Established indie drama directors with at least one or two character-driven features, especially those comfortable working with older leads and family ensembles. The material rewards performance-first staging, naturalistic dialogue, and a patient eye for institutional spaces like classrooms, buses, and exam rooms.",
-        "detail": "The craft opportunity is in keeping the film intimate while letting the memory loss and family caregiving feel cumulative rather than episodic. Directors who like to build devastation through behavior, not plot mechanics, will see a clean lane here."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Prestige streaming drama / festival-to-platform lane",
-        "detail": "The project can be packaged around one major lead performance and a contained supporting ensemble, so it does not require a star-heavy cast to make sense on the page. The Black family-drama lane remains attractive for streamers and festival buyers, and the period-school setting gives it a clear identity without demanding large-scale production spend."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The first half delays the real engine.",
+          "detail": "The opening classroom conflict establishes Donna’s frustration, but the Alzheimer’s premise does not fully take over until well into the script. That makes the early stretch feel like setup for a different movie before the central dramatic question finally locks in.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Whitfield is broad as an antagonist.",
+          "detail": "His bias is explicit and immediate, which gives the script a clean external obstacle but also flattens the school conflict into a fairly direct power dynamic. Buyers will notice that he functions more as a pressure source than as a layered character.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast is mostly functional.",
+          "detail": "Christopher, Ashley, Emily, Amanda, and Darryl all serve clear story jobs, but only Donna has real interior complexity on the page. That keeps the film anchored, but it also limits the relationship web to a few strong scenes rather than a truly rich ensemble.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The period setting adds cost without payoff.",
+          "detail": "The 1992-1995 window requires period school, bus, wardrobe, and production design work, but the story itself is not dependent on a highly specific historical event. That makes the period choice a budget consideration buyers will weigh against the same story told contemporarily.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s main friction is structural: it takes a while to get from classroom drama to the Alzheimer’s story that actually defines the film. On top of that, the antagonist is fairly broad and the period setting adds production cost without creating a major story premium."
     },
-    "considerations": [
-      {
-        "area": "The feature spine is built from a series of emotional beats.",
-        "detail": "The script has strong moments, especially the classroom friction, the diagnosis, and the final hospital image, and a next pass could focus on making the transitions between those beats feel more causally linked. One lever would be to let Donna’s memory slips escalate through a few repeated, specific triggers so the audience feels the decline tightening scene by scene.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Donna’s school life can carry more narrative pressure.",
-        "detail": "The classroom scenes establish her authority well, and the version of the script where one student relationship or one school conflict becomes a recurring pressure point would give the middle section more forward motion. That would also deepen the contrast between the respect she commands in theory and the erosion she experiences in practice.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The period setting asks for consistent production dressing.",
-        "detail": "The 1992-1995 frame means the buses, phones, classroom materials, medical spaces, and wardrobe all need to stay period-clean across school, home, and hospital scenes. The good news is that the footprint remains contained, so the period work is more about consistency than scale.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The supporting school ensemble is functional rather than expansive.",
-        "detail": "The students and administrators do their job in the story, and a future pass could decide whether one or two of them deserve slightly more independent texture. Even a small expansion of Ashley or Emily’s interior life would give the ensemble more combinatorial energy without changing the core premise.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The ending is emotionally clear and could be protected.",
-        "detail": "The final hospital sequence already gives the film a strong closing image, so the main task is to preserve its simplicity and not overbuild around it. The version of the script that keeps the last stretch spare will let Donna’s silent touch on Terry land with maximum force.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 59,
+  "weightedScore": 58.7,
   "tier": "Needs Development",
-  "inputTokens": 21974,
-  "outputTokens": 4154,
-  "cost": 0.035173499999999996,
+  "inputTokens": 24379,
+  "outputTokens": 4390,
+  "cost": 0.03803925,
   "declaredFormat": "Feature film"
 }

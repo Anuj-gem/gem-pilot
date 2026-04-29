@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T04:54:06.613Z",
+  "submission_id": "8832b6c6-87a0-44ee-bca2-792256e41fb3",
+  "eval_id": "a6f81449-3e3b-4c85-8943-c87847ac1840",
+  "title": "Blade Runner 2049",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "K",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s to 30s, replicant blade runner; physically precise, emotionally contained, engineered rather than born."
+    },
+    {
+      "name": "Joi",
+      "role_type": "Supporting",
+      "demographics": "Female-presenting digital companion, ageless appearance, holographic AI with intimate domestic function."
+    },
+    {
+      "name": "Joshi",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, LAPD lieutenant; hard-edged, pragmatic, politically alert."
+    },
+    {
+      "name": "Luv",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s to 30s, Wallace’s enforcer; physically formidable, immaculate, emotionally severe."
+    },
+    {
+      "name": "Niander Wallace",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, blind corporate titan; physically limited but intellectually and economically omnipotent."
+    },
+    {
+      "name": "Rick Deckard",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, former blade runner; weathered, isolated, physically capable but emotionally guarded."
+    },
+    {
+      "name": "Doctor Ana Stelline",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, brilliant memory designer with a compromised immune system; physically isolated behind glass."
+    },
+    {
+      "name": "Freysa",
+      "role_type": "Supporting",
+      "demographics": "Female, older adult, replicant resistance organizer; one eye missing, spiritually fervent."
+    },
+    {
+      "name": "Mariette",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s to 30s, sex worker/doxie; street-smart, pragmatic, emotionally open in flashes."
+    }
+  ],
+  "positioning_hook": "A replicant blade runner uncovers a buried birth secret that could ignite a war between humans and replicants, then races to protect the child before Wallace’s enforcer closes the net.",
+  "cost_usd": 0.061689,
+  "input_tokens": 52918,
+  "output_tokens": 4889,
+  "status": "wrote:leads_ok"
+}

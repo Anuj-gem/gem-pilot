@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:57:50.364Z",
+  "submission_id": "bf621902-8774-4458-8f13-f7a55a579ddc",
+  "eval_id": "b85bd8a2-ad9f-452f-8e15-5d6a89b960da",
+  "title": "NO",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Ada Morris",
+      "role_type": "Lead",
+      "demographics": "Woman, early 30s, progressive congresswoman; ethnically ambiguous / part Native American as referenced in dialogue."
+    },
+    {
+      "name": "Quinn Anderson",
+      "role_type": "Supporting",
+      "demographics": "Woman, early 20s, young congressional staffer; Dartmouth-educated, left-coded presentation."
+    },
+    {
+      "name": "Parker",
+      "role_type": "Supporting",
+      "demographics": "Man, late 40s to early 50s, chief of staff / veteran Hill operator."
+    },
+    {
+      "name": "Samuel",
+      "role_type": "Supporting",
+      "demographics": "Man, late 20s, staffer on Ada's team."
+    },
+    {
+      "name": "Chris Marsh",
+      "role_type": "Supporting",
+      "demographics": "Man, late 50s, disgraced lobbyist."
+    },
+    {
+      "name": "Andy",
+      "role_type": "Supporting",
+      "demographics": "Man, late 50s, lobbyist / political fixer."
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Woman, 19, intern / hilltern."
+    },
+    {
+      "name": "Sage",
+      "role_type": "Supporting",
+      "demographics": "Teen girl, Native American / tribal youth visitor."
+    },
+    {
+      "name": "Rep. Jones",
+      "role_type": "Supporting",
+      "demographics": "Man, late 60s, Republican congressman."
+    },
+    {
+      "name": "Rep. Goldman",
+      "role_type": "Supporting",
+      "demographics": "Man, House Minority Leader."
+    }
+  ],
+  "positioning_hook": "After a public panic attack on the House floor, a rising progressive congresswoman cuts a deal with a disgraced lobbyist to save her career—and risks becoming exactly what she campaigned against.",
+  "cost_usd": 0.035088,
+  "input_tokens": 18734,
+  "output_tokens": 4675,
+  "status": "wrote:leads_ok"
+}

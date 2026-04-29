@@ -3,305 +3,343 @@
     "classification": {
       "format": "Feature film",
       "genre_primary": "Horror",
-      "genre_tags": [
-        "Supernatural",
-        "Psychological"
+      "genre_secondary": [
+        "Thriller",
+        "Fantasy"
       ],
-      "tone": "Gory, surreal, feverish, and increasingly nightmarish"
+      "tone": "nightmarish",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "high-concept",
+        "friend-group",
+        "single-location",
+        "low-budget-friendly",
+        "survival",
+        "vampires"
+      ]
     },
-    "positioning_hook": "A stranded college friend group takes shelter in a snowbound house where a welcoming family hides a bloodline of predatory creatures, and one survivor must outthink the house itself.",
+    "positioning_hook": "A college friend group takes shelter in the wrong house and discovers the family inside is feeding on them, body and soul, while one survivor fights to escape a nightmare that keeps rewriting reality.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise is instantly legible to horror audiences: stranded friends, isolated house, hidden family, escalating body horror. The Christmas setting, the friend-group dynamic, and the final survival turn give it a clear genre lane with strong late-night and streamer appeal."
+        "score": 6,
+        "reasoning": "The core promise is clean and commercial: trapped friends, a hostile house, and escalating body-horror stakes. The audience is there, but the script's extreme violence and surreal mythology narrow the lane to genre buyers rather than broad four-quadrant play."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The central engine lands early once the car breaks down and the group enters the house, and the script keeps revealing the house’s rules through the family, the books, and the transformations. The mythology gets denser as it goes, but the core hook stays readable: they are trapped inside a predatory household."
+        "reasoning": "The hook lands early with the stranded car, the welcoming family, and the reveal that the house is a trap. The later mythology expands fast, but the central engine stays legible: survive the house or be consumed by it."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Kenzie, Zoe, Bryan, Vanny, and Drew each have distinct social energy, and the script gives them enough friction to feel playable. The strongest material comes from Kenzie’s eventual hardening and Zoe/Bryan’s emotional bond, while several supporting family members function more as horror operators than fully separate personalities."
+        "reasoning": "Kenzie, Bryan, Zoe, Vanny, and Drew each have distinct social energy and group chemistry, especially in the early banter and later panic. They read more as functional survival pieces than deeply singular leads, though Kenzie and Zoe get the clearest emotional traction."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The script commits to a wild escalation: vampire-adjacent folklore, prophecy language, body mutation, soul imagery, and a final reveal that reframes the house as a ritual machine. The boldness is real, especially in the late-stage transformation imagery and the way the story keeps mutating its own rules."
+        "reasoning": "The script commits hard to a grotesque, mythic escalation: vampires, prophecy, soul-forms, mirror transitions, and a house that behaves like a ritual machine. That boldness gives it identity, even if the mythology sometimes outruns the emotional setup."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "Once the house locks in, the story keeps generating new threats and set pieces, and the back half has strong forward drive. The middle spends a lot of time on conversation and discovery before the danger fully detonates, so the propulsion is solid rather than relentless."
+        "reasoning": "Once the house closes in, the script keeps throwing new threats, rooms, and reversals at the characters. The tradeoff is that the middle becomes more episodic than cumulative, with repeated capture/escape beats and long survival stretches."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The script has the satisfying feeling of a familiar horror setup being pushed into stranger territory, especially once the family’s true form and the house’s ritual logic emerge. The final image of Kenzie absorbed into the system gives the premise a memorable, unsettling aftertaste."
+        "reasoning": "The premise feels familiar at the surface level, but the execution pushes into a stranger lane with the family cult, the blood-red transformations, and the soul-birth imagery. It is not just a haunted-house setup; it has a distinct, deranged internal logic."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The house has a strong internal ecosystem: twins, siblings, parents, servants, ritual rooms, prophecy markings, and a hidden underground logic. The mythology is dense enough to feel story-generating, and the setting keeps revealing new chambers and rules rather than staying a simple cabin."
+        "reasoning": "The house has rules, hierarchy, rituals, and a hidden cosmology, which gives the setting story-generating texture. The final wall-reveal and prophecy language suggest a larger mythos beyond the immediate siege."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone is aggressively unhinged in a way that feels intentional: holiday warmth, teen banter, grotesque body horror, and ritualistic menace all coexist. The script knows when to play social awkwardness, when to go grotesque, and when to go full nightmare."
+        "reasoning": "The script has a very specific register: teen banter colliding with grotesque folk-horror and surreal body terror. The tonal identity is memorable because it refuses to stay in one mode, even when that creates whiplash."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "There are deeper ideas here about belonging, coercion, family systems, and surrendering identity to survive. Those themes are present in the dialogue and the final possession-like ending, though the script mostly prioritizes escalation over fully mining the emotional subtext."
+        "reasoning": "There are hints of a larger cosmology, family history, and spiritual hierarchy beneath the violence. The material suggests depth, but much of it is delivered through exposition and revelation rather than dramatized mystery."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "The friend group has a workable web of dynamics, especially Kenzie/Vanny, Zoe/Bryan, and the group’s shifting trust under pressure. The family also creates a strong opposing ensemble, with multiple members interacting in ways that generate scenes rather than just attacks."
+        "reasoning": "The friend group has enough friction, loyalty, and romantic undercurrent to keep scenes alive, especially Kenzie/Vanny, Zoe/Bryan, and the group dynamic around Drew. The house family also creates a strong opposing ensemble with its own internal structure."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 14,
-        "leads": 6,
-        "series_regulars": 0,
-        "child_actors": false,
-        "casting_characteristics": [
-          "Ensemble of college-age friends",
-          "Multiple family members with overlapping names and twin casting",
-          "Creature transformation roles for several adults and one lead"
-        ]
-      },
-      "locations": {
-        "distinct_count": 12,
-        "interior_exterior_ratio": "Mostly interior with some exterior snow/forest/car work",
-        "period_or_contemporary": "Contemporary",
-        "notable_requirements": [
-          "Snowbound house exterior",
-          "Forest road and woods",
-          "Underground/sewer spaces",
-          "Multiple distinct interior rooms with practical horror dressing"
-        ]
-      },
-      "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Creature transformations, blood effects, mirror/realm transitions, and some surreal environmental shifts.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Heavy practical gore, prosthetics, wounds, dismemberment, blood rigs, and creature makeup.",
-        "night_shoots": "significant",
-        "animals": false
-      },
-      "rights_flags": [],
-      "platform_fit": {
-        "recommended_lane": "Streaming horror / premium genre feature",
-        "content_level": "Explicit mature horror",
-        "series_engine_or_release_model": "Festival-to-platform or direct streaming release; contained horror feature with franchiseable mythology"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained house-and-woods setting keeps the footprint manageable, but the creature work, gore, and multiple nightmare environments push above micro-budget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The script needs a strong six-person friend ensemble plus a multi-member family unit, with twin casting and creature-performance demands."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The story is mostly contained, but it moves through many distinct rooms, a forest road, a sewer, and multiple surreal interior spaces."
-        },
-        "content": {
-          "level": "high",
-          "note": "Graphic gore, body mutation, cannibalism, torture, and explicit bodily horror narrow the lane to mature horror buyers."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named real people, brands, or licensed IP are central to the story."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The house is a full horror machine.",
-          "what_it_means": "This gives a producer a contained, high-yield feature that can keep escalating without needing a bigger world or a larger cast footprint. Horror buyers who want a single-location pressure cooker with franchise mythology will see the upside immediately.",
-          "evidence": "The cabin becomes a ritual site with hidden rooms, a sewer escape, a white room, a caged room, and a final transformation chamber.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ensemble has clear playable chemistry.",
-          "what_it_means": "The script offers a six-person friend group with distinct social rhythms, which creates casting heat and gives the movie a built-in audience hook beyond the scares. Young ensemble horror buyers and actors looking for a group dynamic with banter, loyalty, and betrayal will respond to it.",
-          "evidence": "Kenzie, Zoe, Bryan, Vanny, Drew, and Tiff each get identifiable behavior, pairings, and pressure points before the horror fully takes over.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The mythology keeps mutating in public.",
-          "what_it_means": "The reveal stack — vampires, porphyria, prophecy, souls, ritual bloodlines, and creature forms — gives the script a bigger-than-basic slasher identity. Buyers looking for a horror piece with lore that can support sequels, spin-offs, or audience theorizing will clock that immediately.",
-          "evidence": "The book on vampires, the porphyria explanation, the prophecy wall, and Susan’s final history dump all expand the rules instead of repeating them.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Kenzie has a strong final-turn arc.",
-          "what_it_means": "The lead evolves from trapped outsider to the person who can survive the house’s logic, which gives the movie a clean emotional spine under the gore. That kind of arc is attractive to actors who want a survival role that ends in dominance rather than victimhood, and to buyers who want a final-girl engine with a twist.",
-          "evidence": "Kenzie moves from confusion and fear to strategic violence, then into the final possession-like coda where she becomes part of the system.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The body horror is committed and memorable.",
-          "what_it_means": "The script doesn’t just imply transformation; it goes all the way into mutation, dismemberment, blood, and grotesque rebirth, which is the kind of material genre fans remember and market around. Practical-effects-forward horror directors and buyers chasing a visceral midnight-movie response will see a clear lane.",
-          "evidence": "Vanny’s pregnancy-like transformation, Susan’s body mutation, the mirror-shard self-stab, and the repeated limb and face destruction all push hard into spectacle.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The Christmas setting gives it a clean hook.",
-          "what_it_means": "Holiday horror remains an easy marketing lane because the contrast is immediate and the seasonal window is obvious. Streamers and genre distributors looking for a December-facing horror title can sell the festive surface and the blood underneath in one image.",
-          "evidence": "The opening cabin is decorated for Christmas while the calendar marks the final day and the group is dressed as elves and Santa.",
-          "source": "script"
-        }
-      ],
-      "headline": "This is a contained, high-concept horror feature with a strong ensemble, a nasty mythology engine, and a final-girl turn that actually earns its power. The script’s biggest asset is that it keeps revealing new rooms, new rules, and new forms of monstrosity without losing the basic commercial promise: a trapped group, a predatory family, and a house that wants to keep them forever."
     },
     "lead_characters": [
       {
         "name": "Kenzie",
         "role_type": "Lead",
-        "demographics": "Female · 20s · college-age",
-        "hook": "Kenzie reads as the group’s stabilizer until the house forces her into a harder, colder mode. She starts as the friend who tries to keep everyone together, but the script steadily reveals a sharper survival instinct and a willingness to become dangerous when the situation demands it.",
-        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary — a character who starts as emotional center and ends as the most frightening person in the room. It gives an actress the full arc from grounded ensemble presence to feral survival lead, with a final transformation that can anchor a festival horror campaign."
-      },
-      {
-        "name": "Zoe",
-        "role_type": "Lead",
-        "demographics": "Female · 20s · college-age",
-        "hook": "Zoe is the most emotionally porous member of the group, observant and anxious, with a nervous intelligence that makes her feel like the one most likely to notice the truth first. She carries a lot of the script’s vulnerability and dread, and her bond with Bryan gives her a real emotional center.",
-        "why_actor_wants_this": "This is the showcase space of Florence Pugh in Midsommar — a role where fear, grief, and dawning clarity all live in the same face. It gives an actress the chance to play escalating psychological collapse while still holding the audience’s empathy."
+        "demographics": "Female, early 20s, college-age friend group member.",
+        "hook": "The emotional center of the script: observant, loyal, and increasingly decisive as the nightmare escalates. She starts as the steady social glue of the group and ends as the one person willing to weaponize the house's logic against it, even when that means becoming something monstrous herself.",
+        "why_actor_wants_this": "This is the showcase territory of Florence Pugh in Midsommar or Jodie Comer in Killing Eve — a role that moves from contained vulnerability to feral command, with a final-act transformation that asks for fear, grief, and authority in the same performance."
       },
       {
         "name": "Bryan",
-        "role_type": "Lead",
-        "demographics": "Male · 20s · college-age",
-        "hook": "Bryan is the group’s talker and emotional translator, the guy who uses humor, confidence, and improvisation to keep panic at bay. Under pressure, he becomes a surprisingly physical survival character, and his attachment to Zoe gives him a romantic ache that the script uses well.",
-        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in Game Night or Matthew McConaughey in True Detective season 1 — a role that starts as charm and ends as desperate resolve. It gives an actor room for banter, panic, tenderness, and brutal survival action in one package."
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college-age friend group member.",
+        "hook": "The group's talkative, emotionally open pressure valve, with enough confidence to joke through danger and enough fear to crack when the house starts feeding on him. He becomes one of the script's most active survivors, carrying both romantic tension and physical endurance.",
+        "why_actor_wants_this": "This is the kind of role that gave Caleb Landry Jones in Get Out or Justice Smith in Jurassic World: Fallen Kingdom room to play charm under stress and then collapse into raw panic. It offers a young actor a full-body survival arc with emotional volatility."
+      },
+      {
+        "name": "Zoe",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college-age friend group member.",
+        "hook": "An anxious, perceptive observer whose instincts keep pulling her toward the truth even when the group wants comfort. She has the script's sharpest mix of vulnerability and defiance, and her final stretch gives her a terrifying, body-altering confrontation with the house's power.",
+        "why_actor_wants_this": "This is the kind of role that made Anya Taylor-Joy in The Witch or Cailee Spaeny in Priscilla so watchable — a character whose stillness, fear, and sudden resolve all register in close-up. It gives an actor a strong emotional and physical descent."
       },
       {
         "name": "Vanny",
-        "role_type": "Lead",
-        "demographics": "Female · 20s · college-age",
-        "hook": "Vanny is the social glue of the friend group, constantly managing everyone else’s mood while hiding her own fear and neediness. She has the most overtly affectionate energy in the ensemble, which makes her later body-horror material land harder.",
-        "why_actor_wants_this": "This is the showcase territory of Kaitlyn Dever in Unbelievable — a role built on emotional accessibility that later has to survive terror and bodily violation. It gives an actress a chance to play warmth, comic pressure-release, and full-throttle horror in the same feature."
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college-age friend group member; queer-coded relationship with Kenzie.",
+        "hook": "The group's social engine and emotional caretaker, always trying to keep everyone connected, even when that instinct becomes a liability. Her bond with Kenzie gives the script its most intimate relationship, and her eventual fate turns her into one of the story's most disturbing images.",
+        "why_actor_wants_this": "This is the kind of role that gave Auli'i Cravalho in The Power or Haley Lu Richardson in The White Lotus room to be warm, funny, and then devastatingly exposed. It offers a performer a relationship-forward part that later becomes body-horror tragedy."
       },
       {
         "name": "Drew",
-        "role_type": "Lead",
-        "demographics": "Male · 20s · college-age",
-        "hook": "Drew is the most visibly reactive of the group, a guy whose bravado keeps collapsing into panic and then into stubborn survival. He’s also the script’s most physical lead, carrying a long escape sequence that turns him into a battered, resourceful survivor.",
-        "why_actor_wants_this": "This is the showcase territory of Daniel Radcliffe in Jungle — a role that asks an actor to carry escalating physical punishment while keeping the audience locked to the character’s will to survive. It’s a strong fit for an actor who wants a bruised, endurance-based horror lead."
-      },
-      {
-        "name": "Tiff",
-        "role_type": "Lead",
-        "demographics": "Female · 20s · college-age",
-        "hook": "Tiff is the outsider within the friend group, more detached and reactive than the others, which makes her feel like the one least protected by the group’s emotional code. Her late re-entry gives the ending an extra jolt of unresolved survival energy.",
-        "why_actor_wants_this": "This is the showcase territory of Auliʻi Cravalho in The Power — a role where the character’s distance from the group becomes part of the tension and the final emotional beat. It gives an actress a chance to play skepticism, abandonment, and late-stage survival urgency."
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, college-age friend group member.",
+        "hook": "The most physically active of the group and the one who gets the script's longest survival gauntlet. He starts as the laid-back cook and ends as a battered, desperate escape artist whose panic becomes the engine of the second half.",
+        "why_actor_wants_this": "This is the kind of role that gave Logan Miller in Escape Room or Dylan O'Brien in The Maze Runner franchise a chance to play resourceful panic under extreme physical punishment. It is a bruising, high-stakes survival showcase."
       },
       {
         "name": "Sunny",
         "role_type": "Supporting",
-        "demographics": "Female · 50s-60s",
-        "hook": "Sunny is the family’s polished public face, the one who can sound warm, maternal, and spiritually grounded while steering the room toward predation. She has the most overt authority in the household and reads like the ritual’s social architect.",
-        "why_actor_wants_this": "This is the showcase territory of Toni Collette in The Sixth Sense or Rebecca Ferguson in Doctor Sleep — a role that weaponizes calm authority and maternal control. Character actors who like playing charm with a blade underneath will chase this."
-      },
-      {
-        "name": "Sally",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Sally is one of the family’s younger operators, eager, compliant, and unsettlingly cheerful in a way that suggests she’s been trained into the system. She feels like a person who has learned to treat cruelty as routine.",
-        "why_actor_wants_this": "This is the showcase territory of Sophie Thatcher in Yellowjackets — a role that lets an actor play innocence, indoctrination, and sudden menace in the same breath. It’s a strong fit for a performer who can make obedience feel eerie."
-      },
-      {
-        "name": "Sissy",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Sissy is the twin-like mirror of Sally, but with a more playful, teasing edge that makes her feel even more dangerous. She has the energy of someone who enjoys the game, not just the outcome.",
-        "why_actor_wants_this": "This is the showcase territory of Anya Taylor-Joy in The Menu — a role that can pivot from flirtation to threat without changing temperature. It gives an actor a chance to play eerie charm and physical horror in a compact, memorable package."
-      },
-      {
-        "name": "Sam",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-30s",
-        "hook": "Sam is the younger male enforcer, cocky and physically aggressive, with a mean streak that makes him feel like the family’s blunt instrument. He’s one of the clearest embodiments of the household’s cruelty.",
-        "why_actor_wants_this": "This is the showcase territory of Jack Quaid in Scream — a role that lets an actor weaponize likability before turning fully predatory. It’s a clean fit for a performer who can play smirking menace and physical violence."
-      },
-      {
-        "name": "Jack",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s",
-        "hook": "Jack is the patriarchal authority figure, practical and brutal, with the kind of calm that makes the violence feel institutional rather than impulsive. He reads like the family’s lawgiver and executioner at once.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter or Bill Camp in The Night Of — a role built on controlled intensity and moral rot. Character actors who can make authority feel terrifying will want this part."
-      },
-      {
-        "name": "Salem",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-40s",
-        "hook": "Salem is the household’s hunter and tracker, a silent physical threat who turns the chase material into a grind. He feels less like a person than a function of the house’s violence.",
-        "why_actor_wants_this": "This is the showcase territory of Doug Jones-style creature performance or Javier Botet-style horror embodiment — a role where movement, silhouette, and menace do the work. Physical performers and stunt-forward character actors will chase it."
+        "demographics": "Female, older adult, matriarch of the house family.",
+        "hook": "The polished, unnervingly gracious face of the house's ideology, equal parts hostess, interrogator, and cult leader. She is the script's clearest human antagonist until the mythology opens wider and reveals she is only one layer of the system.",
+        "why_actor_wants_this": "This is the kind of role that gave Toni Collette in Hereditary or Rebecca Ferguson in Doctor Sleep a chance to weaponize calm, warmth, and menace at once. It is a prestige villain part with real monologue and control energy."
       },
       {
         "name": "Susan",
         "role_type": "Supporting",
-        "demographics": "Female · 20s",
-        "hook": "Susan is the most complicated member of the family, the one who can pass as sympathetic before revealing that she’s the most strategically powerful of all. She carries the lore, the prophecy, and the final transformation, making her the story’s true hidden center of gravity.",
-        "why_actor_wants_this": "This is the showcase territory of Rebecca Hall in Resurrection or Jodie Comer in Killing Eve — a role that asks an actor to pivot from human intimacy to monstrous authority. It’s the kind of part that gives a performer a full-spectrum horror showcase and a final-act transformation that will be remembered."
+        "demographics": "Female, late teens to early 20s, house family member.",
+        "hook": "The most conflicted member of the house, visibly trapped between the family's doctrine and her own revulsion. She functions as the story's moral fracture line, and her late reveal reframes the house's power structure.",
+        "why_actor_wants_this": "This is the kind of role that gave Jessie Buckley in Men or Sophie Nélisse in Yellowjackets a chance to play innocence, dread, and complicity in the same frame. It offers a performer a volatile, ambiguous turn with real sympathy."
+      },
+      {
+        "name": "Sally",
+        "role_type": "Supporting",
+        "demographics": "Female, older teen to young adult, house family member.",
+        "hook": "A smiling, obedient enforcer whose friendliness is always one beat away from threat. She helps sell the house's false hospitality before revealing the violence underneath it.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the chance to play cheerful menace, like a younger version of the unnerving social masks in Ready or Not. It is a sharp supporting villain turn."
+      },
+      {
+        "name": "Sissy",
+        "role_type": "Supporting",
+        "demographics": "Female, older teen to young adult, house family member; twin of Sally.",
+        "hook": "The twin counterpart to Sally, with the same polished surface but a slightly different flavor of cruelty and compliance. She helps create the house's uncanny family symmetry and gets one of the script's most memorable kill sequences.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play eerie duplication and physical precision, similar to the twin energy in Orphan or Dead Ringers. It is a vivid horror-supporting part with a strong visual identity."
+      },
+      {
+        "name": "Sam",
+        "role_type": "Supporting",
+        "demographics": "Male, young adult, house family member.",
+        "hook": "A younger enforcer with a smug, taunting edge and a taste for humiliation. He is less ceremonial than Sunny and more openly vicious, which makes him a useful pressure point in the violence.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the chance to play cocky, sadistic menace in the lane of a horror-franchise henchman. It is a compact but scene-stealing antagonist part."
+      },
+      {
+        "name": "Jack",
+        "role_type": "Supporting",
+        "demographics": "Male, older adult, house family patriarch.",
+        "hook": "The stern, rule-enforcing father figure who gives the house its authoritarian spine. He is less verbally ornate than Sunny, but his presence makes the family feel organized, ritualized, and dangerous.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor the chance to play controlled patriarchal menace, like Richard Jenkins in The Shape of Water or Michael Shannon in a darker register. It is a strong authority role with horror weight."
+      },
+      {
+        "name": "Salem",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, house servant/enforcer.",
+        "hook": "The silent, physical hunter who turns the second half into a brutal chase machine. He is the most purely predatory presence in the house and the one who gives the script its longest action-horror pursuit.",
+        "why_actor_wants_this": "This is the kind of role that gives a physical performer the showcase of a mute slasher presence, like Dave Bautista in Knock at the Cabin or a more feral Michael Myers-style enforcer. It is a body-performance role with real stunt and menace value."
+      },
+      {
+        "name": "Tiff",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college-age friend group member.",
+        "hook": "The friend who is initially detached and then becomes the outside-world survivor trying to make anyone believe the nightmare happened. Her late arrival gives the ending a bleak, unresolved sting.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a strong final-scene emotional button, similar to the survivor coda in The Descent or Hereditary. It is a smaller part, but it lands the aftermath."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to turn a contained house into a mythic nightmare engine.",
-        "fit_profile": "First- or second-feature horror directors, or established indie genre filmmakers, who already work comfortably with practical gore, claustrophobic blocking, and escalating surrealism. This material rewards directors who like to build dread through room-by-room revelation and who can make a single location feel like it keeps changing shape.",
-        "detail": "The script gives a director a clean pressure-cooker setup, then keeps opening new visual and narrative chambers without leaving the house. It’s especially attractive to filmmakers who want to show command of creature work, ensemble tension, and a final-act transformation sequence that feels earned rather than decorative."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble of early-20s friend-group roles",
+          "older adult matriarch/patriarch roles",
+          "twin casting for Sally and Sissy",
+          "physical performer needed for Salem",
+          "queer relationship chemistry between Kenzie and Vanny"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Streaming horror / genre-label theatrical / festival-to-platform",
-        "detail": "The contained house setting and small core cast make it attachable off a strong genre director or a breakout lead rather than requiring multiple name stars. The Christmas-horror hook, body-horror set pieces, and franchise-ready mythology give it a clean marketing angle for streamers and genre buyers who want a title with a sharp thumbnail and sequel potential."
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 80/20",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "single primary house/cabin with multiple rooms and hidden spaces",
+          "snowy road and forest exteriors",
+          "underground/sewer-like practical set",
+          "mirror/threshold transition spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Practical-heavy body horror with some creature/transformational work, mirror transitions, blood effects, and environment shifts between house states.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Extensive blood, gore, prosthetics, body-mutation effects, breakaway props, and wound continuity.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical genre",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: genre-forward streaming launch or specialty theatrical horror play."
       }
     },
-    "considerations": [
-      {
-        "area": "The middle spends time before the trap fully snaps.",
-        "detail": "The cabin arrival and family introductions are doing important world-building, and a next pass could consider where the first unmistakable threat lands so the back half has even more forward charge. One lever would be to let one early room or ritual reveal arrive a little sooner, so the audience feels the house tightening its grip earlier.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The house can be built as a controlled primary set, but the snowbound road, forest chase, underground sewer spaces, and repeated gore/prosthetic sequences will push beyond a simple contained thriller."
       },
-      {
-        "area": "The mythology arrives in several waves.",
-        "detail": "The vampire/porphyria/prophesy/soul-system material is compelling, and the script already has enough imagery to support it. A future pass could clarify which idea is the governing rule versus which are supporting layers, so the audience can track the logic while still enjoying the strangeness.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "The hardest lift is Kenzie: she has to carry the emotional center, the final transformation, and the action escalation. Twin casting for Sally and Sissy plus a physically imposing Salem add specificity to the search."
       },
-      {
-        "area": "The friend-group bonds could carry even more weight.",
-        "detail": "Kenzie, Zoe, Bryan, Vanny, Drew, and Tiff all have distinct energy, and the script already uses that well. The version where one or two relationships get a slightly sharper emotional signature before the horror peaks would make the later betrayals and rescues hit even harder.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The creature and gore load is substantial.",
-        "detail": "The transformation work, blood effects, dismemberment, and nightmare-room imagery all point to a meaningful practical-effects plan. From a packaging standpoint, this is the kind of feature that benefits from a director and effects team who can make the body horror feel tactile without pushing the budget into a larger tier.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The cast footprint is ensemble-driven.",
-        "detail": "There are six leads plus a multi-member family unit, including twin casting and creature-performance demands. That makes the project especially suited to actors who like ensemble horror and to buyers comfortable greenlighting off a strong group dynamic rather than a single-star vehicle.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The ending leaves the house alive.",
-        "detail": "The final coda with Kenzie absorbed into the system gives the movie a franchise-friendly sting. If the goal is a one-and-done feature, the current ending still lands; if the goal is a sequel path, the last image already points there.",
-        "is_primary_lever": false,
-        "source": "script"
+      "development": {
+        "level": "high",
+        "note": "The script's mythology expands from stranded-horror into prophecy, soul-forms, vampire logic, and cosmic house rules, so the buyer conversation will center on how much of that lore is essential versus overwhelming."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Ready or Not",
+          "year": 2019,
+          "why_it_comps": "A trapped outsider versus a wealthy, ritualized family that turns hospitality into a kill room, with escalating dark-comic dread and a final-survivor push."
+        },
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "The slow realization that the dinner-party welcome is a trap, with social politeness masking predatory intent."
+        },
+        {
+          "title": "Barbarian",
+          "year": 2022,
+          "why_it_comps": "A house that keeps revealing deeper, stranger chambers and a premise that pivots from simple intrusion horror into grotesque mythology."
+        },
+        {
+          "title": "The Descent",
+          "year": 2005,
+          "why_it_comps": "Claustrophobic survival horror with a female-forward ensemble, body punishment, and a relentless escape engine."
+        },
+        {
+          "title": "Midsommar",
+          "year": 2019,
+          "why_it_comps": "A bright, ritualized community with a hidden belief system, where emotional vulnerability gets absorbed into a larger pagan logic."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Horror fans who like trapped-house survival stories with a strong ensemble, grotesque mythology, and a final-girl-style escalation.",
+        "demographics": "18-34 skew, slightly male-leaning but with strong female appeal; genre-native audience that responds to elevated body horror and cult-family menace.",
+        "quadrants": [
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A primary house set, limited cast, and contained exteriors keep it indie, but the gore, creature work, and multiple transformation sequences keep it from true microbudget territory."
+      },
+      "lane_fit": {
+        "lane": "elevated indie horror",
+        "types_of_buyers": [
+          "boutique horror producers",
+          "streamer genre development execs",
+          "specialty theatrical distributors",
+          "indie financiers looking for contained high-concept horror",
+          "director-driven horror labels"
+        ],
+        "detail": "This sits cleanly in the lane of contained, concept-forward horror with a strong visual hook and a castable ensemble. The house setting, ritual family, and body-horror escalation make it attractive to buyers who want a marketable genre package without tentpole spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the house mythology is vivid, but there is no clear sequel or spinoff vector with a separate character or world lane that would justify franchise planning."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The house is a trap with rules.",
+          "what_it_means": "That gives the movie a clean commercial engine: every room can reveal a new threat, which is exactly what buyers want from contained horror. It will appeal to genre execs looking for a set-piece machine that can be sold in one sentence.",
+          "evidence": "The family home keeps shifting into hidden rooms, ritual spaces, and a second reality, with the mirror and sewer passages turning the house into an active antagonist.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Kenzie has a real final-act turn.",
+          "what_it_means": "The lead is not just a victim; she becomes the story's weapon, which raises the role's casting value and gives the film a memorable survival payoff. That is the kind of arc that attracts actors who want a transformation role, not just a scream role.",
+          "evidence": "Kenzie moves from anxious group anchor to the one who chooses to fight, kill, and ultimately confront Susan in her true form.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The friend group feels playable.",
+          "what_it_means": "The early banter and pairings create enough chemistry to make the first half feel lived-in, which helps the horror land harder once the group starts breaking apart. Buyers respond to ensembles that can generate both warmth and tension before the blood starts.",
+          "evidence": "The car ride, the secret-santa setup, the teasing around Drew, and the Kenzie/Vanny and Zoe/Bryan dynamics all establish distinct social lanes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mythology is grotesque and ownable.",
+          "what_it_means": "The vampire/porphyria/soul-form material pushes the script beyond generic home-invasion horror into a stranger, more memorable lane. That kind of weirdness can be a selling point for genre buyers who want something that feels like it has its own religion.",
+          "evidence": "The book reveal, the blood-red transformations, the prophecy wall, and Susan's explanation of the house's power system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Salem gives the movie a physical hunter.",
+          "what_it_means": "A silent, relentless enforcer is a useful commercial asset because it creates a clear chase silhouette and a repeatable threat image. That helps marketing and gives the action-horror material a recognizable face.",
+          "evidence": "Salem's pursuit through the house, sewer, and exterior chase sequences functions as the script's most sustained physical threat.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, high-concept horror package with a strong house-as-antagonist engine, a castable ensemble, and a lead role that can turn into a serious actor showcase. The mythology is wild enough to stand out in the crowded elevated-horror lane, while the primary setting keeps the production in an indie-friendly zone that buyers can actually price."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology swallows the human engine.",
+          "detail": "Once the house reveal expands into vampires, porphyria, prophecy, soul-forms, and Earth-ruling cosmology, the script starts asking the audience to track a lot of rules at once. That is a real development friction point because the buyer conversation will immediately ask what the movie is emotionally, not just what it is mythologically.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Drew's long escape becomes a separate movie.",
+          "detail": "The extended sewer, ladder, mirror, and body-destruction run gives the script a huge survival stretch, but it also pulls focus away from the ensemble and the house-family dynamic. Producers will notice that the second half is heavily weighted toward one character's ordeal, which changes the balance of the package.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The violence is extremely buyer-specific.",
+          "detail": "The script goes deep into mutilation, dismemberment, forced eating, and body transformation, which makes the content lane clear but narrower. That is not a problem for horror buyers, but it does limit the pool to platforms and distributors comfortable with very explicit gore.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The house family is vivid but broad.",
+          "detail": "Sunny, Jack, Sally, Sissy, Sam, and Salem all have strong functions, but several of them operate more as ritual roles than psychologically differentiated characters. That keeps the antagonist machine efficient, though it leaves some of the supporting villain slots less durable than the lead role.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not concept clarity; it's overload. The script keeps escalating into a dense mythology and a very long survival gauntlet, which makes the package feel more ambitious than immediately clean for a buyer trying to price and position it fast."
+    },
     "craft_note": ""
   },
-  "weightedScore": 68.7,
+  "weightedScore": 67,
   "tier": "Optionable",
-  "inputTokens": 37251,
-  "outputTokens": 5125,
-  "cost": 0.05100075,
+  "inputTokens": 39656,
+  "outputTokens": 5144,
+  "cost": 0.05289,
   "declaredFormat": "Feature film"
 }

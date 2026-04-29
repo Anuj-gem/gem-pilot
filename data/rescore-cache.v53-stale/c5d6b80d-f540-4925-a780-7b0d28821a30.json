@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Romantic comedy",
+      "genre_tags": [
+        "Farce",
+        "Family dramedy"
+      ],
+      "tone": "Broad, bawdy, sentimental, and heightened"
+    },
+    "positioning_hook": "A lovelorn Ohio amusement-park worker races to stop his brother from forcing a shotgun wedding, only to find the girl he lost is back in the chaos.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is easy to grasp and the emotional promise is clear: a humiliating romantic scramble with family chaos and a wedding clock. The broad humor, blue-collar setting, and love-story payoff give it accessible appeal, though the voice is more niche than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The script announces its engine early: Mickey, Travis, Amber, and the looming wedding collide around Happy Acres and the Lumpkins family pressure cooker. The title concept pays off in the final act, and the story stays legible even as it escalates into chase-comedy territory."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Mickey has a strong comic vulnerability, Travis has a sharp antagonistic spark, and Amber’s longing gives the romance real feeling. The supporting players are colorful and memorable in bursts, though most of them serve the central triangle rather than opening separate character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The amusement-park setting, the shotgun-wedding premise, and the Ohio backwoods texture give the script a distinct comic identity. The writing commits hard to a very specific, very loud world, and that commitment is part of the appeal."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps introducing fresh complications: the lost-letter misunderstanding, the fake Australia story, the pregnancy panic, and the armed wedding showdown. The momentum is strong because each turn adds pressure to Mickey’s deadline and keeps the romantic and family engines colliding."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A roller-coaster workplace, a shotgun wedding, and a brother-versus-brother humiliation engine create a premise that feels both familiar and oddly specific. The emotional logic lands because the absurdity is rooted in a very plain need: Mickey wants to be chosen."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Happy Acres and the Lumpkins household feel like lived-in comic ecosystems, with their own jobs, rituals, and social hierarchies. The park show, the doughnut shop, the home, and the country house all carry enough texture to make the world feel story-generating."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very specific voice: raunchy, sentimental, and aggressively regional, with slapstick humiliation sitting beside sincere romantic yearning. Scenes like the coaster rescue, the doughnut-shop heart-to-heart, and the wedding meltdown all feel of one piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the broad comedy, there’s a real story about abandonment, sibling damage, and the way fantasy can substitute for love. The draft keeps that depth visible through Mickey and Amber’s memories, though the surface energy remains the dominant mode."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Mickey/Travis is a strong comic engine, Mickey/Amber gives the story its heart, and Buck/Brenda/Angel create a second family pressure system that keeps the finale alive. The ensemble is active enough that multiple pairings can generate scenes, not just the lead alone."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 17,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Teen and adult versions of several characters appear in flashbacks",
+          "Ensemble includes specific regional/blue-collar character types",
+          "One African-American supporting role is central to the romantic resolution"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Period (1986-1990)",
+        "notable_requirements": [
+          "Amusement park with custom show area and roller coaster",
+          "Country farmhouse and dirt-road exterior",
+          "Doughnut shop interior",
+          "Apartment interior",
+          "Flashback house and secured home locations"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical amusement-park spectacle, coaster movement, smoke effects, and a few crash/impact moments; no heavy digital worldbuilding.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Roller-coaster action, falls, vehicle chases, shotgun blasts, smoke, and impact gags.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Milli Vanilli is referenced by name on the radio."
+        },
+        {
+          "type": "brand",
+          "detail": "Free Willy, Teenage Mutant Ninja Turtles, Star Wars, Lord of the Rings, HBO, Burger World, Goodwill, and Yoda are referenced."
+        },
+        {
+          "type": "real_person",
+          "detail": "No real people are central to the plot, but the script references public figures and pop-culture entities by name."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical comedy lane with broad adult appeal",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a festival-to-platform or modest theatrical comedy with strong word-of-mouth potential."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The amusement park, roller-coaster action, car chases, and period setting push this above a contained indie, but it stays far below effects-driven studio scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story centers on four major roles plus a sizable supporting ensemble, with teen flashback casting and a child presence in the opening and family material."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves between the park, apartment, doughnut shop, country house, roadways, and flashback locations, with several exterior night sequences."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script leans hard into profanity, sexual humor, threats of violence, and gunplay, which narrows the family and broadcast lanes."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Multiple named brands, songs, and pop-culture references appear throughout, creating a moderate clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The setting is a comic engine.",
+          "what_it_means": "Happy Acres is not just backdrop; it gives the movie a built-in visual identity, a workplace hierarchy, and a public stage for humiliation and romance. Buyers who want a producible comedy with a memorable world and a clear trailer image will see immediate value here.",
+          "evidence": "The Terror of the Woods coaster, the shotgun wedding show, the character department, and the loading dock all generate story and set pieces.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mickey is built for sympathy and laughs.",
+          "what_it_means": "The lead role gives an actor a rare mix of physical comedy, romantic longing, and wounded sincerity, which is exactly the kind of part that can break out a performer. Mid-career comedic leads and actors looking for a crowd-pleasing showcase will chase this because Mickey is funny, pathetic, and ultimately endearing.",
+          "evidence": "He flips over the couch, gets pummeled by the world, and still keeps showing up for Amber and for his own dignity.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The brother dynamic has real snap.",
+          "what_it_means": "Mickey and Travis give the movie a built-in engine of sabotage, resentment, and eventual reconciliation that keeps the plot moving even when the romance pauses. That kind of two-hander friction is attractive to producers because it creates repeatable scene energy and gives casting a clear pairing to sell.",
+          "evidence": "Travis steals the letter, torments Mickey at home and at work, then becomes the one who helps bring Amber back into the story.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance has an actual emotional wound.",
+          "what_it_means": "Amber is not just a prize; she’s a character whose entire adult life has been shaped by one childhood moment of being seen, which gives the love story a real ache. That makes the script more than a gag machine and gives buyers a romance hook that can travel with audiences who want heart under the comedy.",
+          "evidence": "Amber keeps Mickey’s shoe, builds her life around the memory, and later admits it was the only time she felt loved.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The finale is built for crowd reaction.",
+          "what_it_means": "The wedding sequence turns the whole movie into a contained, escalating public spectacle, which is exactly where comedies earn applause and trailer moments. Producers looking for a finish that can play in a room will like that the climax is a social collision, not just a private conversation.",
+          "evidence": "The backyard wedding, the shotgun threat, the family reveal, and Mickey’s final choice all happen in one packed sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone knows what it is.",
+          "what_it_means": "This script commits to broad, profane, blue-collar comedy without apologizing for the sentiment underneath, and that confidence is a selling point. It will appeal to buyers who want a clear tonal lane and to directors who can stage big laughs while still landing the romantic payoff.",
+          "evidence": "The dialogue swings from filthy insults to sincere declarations of love and family loyalty in the same scene.",
+          "source": "script"
+        }
+      ],
+      "headline": "SHOTGUN WEDDING is a rowdy, highly specific comedy with a strong commercial spine: a humiliating love story, a brother-versus-brother engine, and a finale that turns a backyard wedding into a full-family showdown. The script’s biggest asset is that it knows exactly what kind of movie it is — loud, romantic, and built around a memorable Ohio amusement-park world that can sell in a single image."
+    },
+    "lead_characters": [
+      {
+        "name": "MICKEY DOURKE",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to early 20s",
+        "hook": "Mickey is a nervous, physically awkward romantic who lives in a permanent state of apology, but underneath the panic is a stubborn heart that wants to be brave. He’s the kind of lead who can get humiliated in one beat and win you over in the next, because every bad decision is rooted in longing rather than malice.",
+        "why_actor_wants_this": "This is the showcase territory of Jason Segel in Forgetting Sarah Marshall or Paul Rudd in The 40-Year-Old Virgin — a lovable, self-sabotaging romantic lead whose embarrassment is the engine of the comedy. Actors who can play wounded sincerity, physical awkwardness, and a late-blooming emotional payoff will chase this because Mickey gets to be the joke and the heart of the movie at once."
+      },
+      {
+        "name": "TRAVIS DOURKE",
+        "role_type": "Lead",
+        "demographics": "Male · late teens to early 20s",
+        "hook": "Travis is the cool, sharper brother who weaponizes charm, timing, and cruelty, but the script keeps revealing that his sabotage comes from old family damage. He’s a classic comic antagonist with enough buried hurt to make the reconciliation land instead of feeling decorative.",
+        "why_actor_wants_this": "This is the showcase lane of Tom Hiddleston in The Night Manager or Jesse Plemons in Game Night — a smooth, funny, slightly dangerous presence who can pivot from teasing to menace to wounded truth. Actors who like playing the smartest person in the room while hiding a bruise underneath will want this part because Travis gets to dominate scenes and then surprise the audience with feeling."
+      },
+      {
+        "name": "AMBER SNELLING",
+        "role_type": "Lead",
+        "demographics": "Female · late teens to early 20s",
+        "hook": "Amber is shy, romantic, and emotionally locked down, but the script gives her a vivid inner life built around memory, longing, and the fantasy of being chosen. She’s not just the girl Mickey wants; she’s a woman whose entire identity has been shaped by one moment of being seen and one promise that never got fulfilled.",
+        "why_actor_wants_this": "This is the showcase space of Saoirse Ronan in Lady Bird or Jenny Slate in Obvious Child — a tender, funny, emotionally specific role where the performance lives in restraint, yearning, and the slow release of feeling. Young actresses who want a romantic lead with real interiority will chase this because Amber gets to be fragile without being passive."
+      },
+      {
+        "name": "BRENDA LUMPKINS",
+        "role_type": "Lead",
+        "demographics": "Female · late teens to early 20s",
+        "hook": "Brenda is hard, profane, sexually aggressive, and funny, but the script keeps letting her reveal fear, calculation, and a desperate need to control her own future. She’s a combustible comic force with enough vulnerability to make her more than a punchline.",
+        "why_actor_wants_this": "This is the showcase territory of Melissa McCarthy in Bridesmaids or Kathryn Hahn in Private Life — a loud, fearless, sexually frank role that can swing from outrageous comedy to real feeling in the same breath. Actors who want to play against type, own the room, and still land emotional turns will chase Brenda because she’s a scene-stealing engine."
+      },
+      {
+        "name": "BUCK LUMPKINS",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to 30s",
+        "hook": "Buck is a giant, country-rough enforcer with a code, a shotgun, and a paternal streak that makes him feel dangerous and oddly principled at the same time. He’s the kind of supporting role that can dominate a scene with stillness and then explode into threat without warning.",
+        "why_actor_wants_this": "This is the showcase lane of Michael Shannon in Take Shelter or Walton Goggins in Justified — a physically imposing presence whose authority comes from controlled intensity rather than volume alone. Character actors who like playing menace with a moral code will want Buck because he gives them a memorable, quotable authority role."
+      },
+      {
+        "name": "MARYANNE",
+        "role_type": "Supporting",
+        "demographics": "Female · late teens to 20s",
+        "hook": "Maryanne is the confident friend who can push Amber into the world without becoming a generic sidekick; she has social ease, comic impatience, and just enough warmth to keep the scenes moving. She functions as the movie’s pressure-release valve and a bridge between fantasy and reality.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the sharp, fast-talking support territory of Allison Janney in The Help or Kathryn Newton in Freaky — a scene partner who can pop a scene with timing and attitude. Young comedic actresses will want it because Maryanne gets clean, playable moments without carrying the whole movie."
+      },
+      {
+        "name": "CAPTAIN",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s",
+        "hook": "Captain is the warm, slightly beat-up philosopher of the doughnut shop, a man who speaks in simple truths and carries the movie’s emotional thesis without sounding like a speech machine. He feels like the older mentor who has lived enough to know that love is often just a matter of paying attention.",
+        "why_actor_wants_this": "This is the showcase space of Richard Jenkins in The Visitor or Nick Offerman in The Last of Us — a quietly soulful older role that can land humor, wisdom, and melancholy in a few scenes. Veteran character actors will chase it because Captain gives them a memorable moral center without needing a huge footprint."
+      },
+      {
+        "name": "ROSE",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 50s",
+        "hook": "Rose is the doughnut-shop counterweight to Captain: dry, observant, and flirtatiously grounded, with a lived-in ease that makes the shop feel inhabited. She’s a small role with real texture, the kind of presence that makes a world feel adult.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actress the grounded, scene-stealing space of Frances McDormand in a small-town ensemble or Laurie Metcalf in Lady Bird. Character actresses will want it because Rose gets to be funny, knowing, and emotionally legible without overplaying it."
+      },
+      {
+        "name": "MRS. MEENE",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Mrs. Meene is the institutional face of Mickey’s childhood humiliation, a blunt disciplinarian whose cruelty is comic on the surface and formative underneath. She’s a vivid authority figure who helps define the movie’s emotional history in a few sharp strokes.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the sharp-edged authority of Kathy Bates in Misery or Margo Martindale in Justified — a memorable, scene-owning adult who can make a childhood memory feel permanent. Veteran character actresses will chase it because Mrs. Meene is instantly legible and quotable."
+      },
+      {
+        "name": "STERLING",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-teens",
+        "hook": "Sterling is the awkward, braces-and-acne kid who functions as Mickey’s comic mirror, but he also gives the movie a younger male perspective on desire and humiliation. He’s a small role with a clear comic rhythm and a nice outsider energy.",
+        "why_actor_wants_this": "This is the showcase lane of a young actor in the Jonah Hill / Michael Cera awkward-comedy tradition — a role built on timing, embarrassment, and the pain of trying to be cool. Teen actors with comic instincts will want it because Sterling gets a clean, memorable scene partner dynamic."
+      },
+      {
+        "name": "ANGEL LUMPKINS",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-teens",
+        "hook": "Angel is the quiet observer in the Lumpkins house, the one who sees the family’s mess clearly and keeps trying to steer it toward something humane. She’s softer than Brenda but not passive, and the script uses her as the conscience inside the chaos.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actress the grounded, observant space of Kaitlyn Dever in Booksmart or Beanie Feldstein in a quieter register — a supporting part with emotional intelligence and a clear point of view. Teen actresses who want more than a decorative sibling role will chase it."
+      },
+      {
+        "name": "DARRIN",
+        "role_type": "Supporting",
+        "demographics": "Male · late teens",
+        "hook": "Darrin is the battered, mullet-sporting boyfriend whose injuries and panic make him a comic casualty of the Lumpkins family machine. He’s a vivid rural type whose fear and physicality help sell the world’s roughness.",
+        "why_actor_wants_this": "This is the kind of part that gives a young actor the comic-beat territory of a Coen brothers small-town loser — a role where physical comedy and panic do the work. Character actors and young comic performers will like it because it’s instantly playable and memorable."
+      },
+      {
+        "name": "TERREL JEFFERSON",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Terrel is the calm, handsome outsider who brings a different energy into the Lumpkins world and gives Brenda a real romantic alternative. He’s understated, self-possessed, and important because he lets the story land its final emotional turn with dignity.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the quiet, grounded romantic territory of Lakeith Stanfield in a supporting turn or André Holland in a small ensemble drama. Actors who want to play warmth and steadiness inside a chaotic comedy will want it because Terrel is the cleanest adult in the room."
+      },
+      {
+        "name": "TIFFANY",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Tiffany is the vacuous, sexually available girlfriend who functions as a comic contrast to Mickey’s emotional paralysis and Travis’s appetite. She’s a quick, disposable presence, but she helps define the apartment world’s messy, low-stakes sexuality.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress a fast, scene-coloring part in the tradition of a party-girl supporting turn in a broad comedy. It’s a small but playable slot for performers who can land attitude and timing in a few beats."
+      },
+      {
+        "name": "FATHER LUMPKINS",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Father Lumpkins is the drunken, barely functional officiant who makes the wedding feel both absurd and inevitable. He’s a comic utility role with just enough personality to keep the finale from feeling generic.",
+        "why_actor_wants_this": "This is the kind of part that gives a veteran character actor a one-scene comic authority slot, similar to the off-kilter clergy roles that pop in broad ensemble comedies. Older actors who like playing tipsy institutional figures will enjoy it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who can stage big comic chaos without losing the romantic pulse.",
+        "fit_profile": "Second-feature or established indie directors with a strong handle on performance-driven comedy, especially those who have already made a contained ensemble piece or a regional character comedy. The material rewards directors who like blocking, escalation, and tonal balance more than spectacle for its own sake.",
+        "detail": "The movie gives a director a playground of public humiliation, physical comedy, and emotional payoff, all inside a world that can be made vivid without enormous scale. It’s especially attractive to filmmakers who know how to make a crowd scene feel alive and still land a sincere romantic ending."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming comedy / modest theatrical crowd-pleaser",
+        "detail": "The script can be mounted around a small number of lead performances and a limited set of recurring locations, so it does not require tentpole-level attachments to make sense on paper. The amusement-park setting and broad romantic-comedy hook give it a clean trailer image and a clear lane for festival launch, streamer acquisition, or a targeted theatrical run."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on childhood setup.",
+        "detail": "The childhood prologue does useful emotional work, and the version of the script where that material is trimmed to the most essential beats could get to the adult engine faster. The core audience promise is already strong, so a leaner opening would protect momentum without changing the heart of the story.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle leans on repeated humiliation beats.",
+        "detail": "The couch-flip, mailbox, milk, and apartment sabotage material all plays in the same comic register, which is part of the movie’s identity. A next pass could vary one or two of those beats so Mickey’s frustration keeps escalating in fresh shapes rather than repeating the same pressure pattern.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The romance is strongest when Amber drives it.",
+        "detail": "Amber’s emotional life is vivid, and the scenes where she speaks about memory, love, and the shoe carry a lot of the movie’s soul. One direction would be to keep foregrounding her point of view in the middle stretch so the love story feels as active for her as it is for Mickey.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The clearance pass will be real.",
+        "detail": "The script uses a lot of named brands, songs, and pop-culture references, including Milli Vanilli, HBO, Free Willy, Teenage Mutant Ninja Turtles, Star Wars, Lord of the Rings, and Yoda. A production-minded pass could swap or generalize some of those references without changing the comedy engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The park material wants careful scheduling.",
+        "detail": "The coaster, smoke, crowd, and stunt beats are all manageable, but they cluster around a few signature sequences. The version of the shoot where those set pieces are grouped tightly would protect the budget and keep the park footprint efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 45527,
+  "outputTokens": 5748,
+  "cost": 0.06001125,
+  "declaredFormat": "Feature film"
+}

@@ -3,84 +3,171 @@
     "classification": {
       "format": "Feature film",
       "genre_primary": "Thriller",
-      "genre_tags": [
+      "genre_secondary": [
         "Horror",
-        "Drama"
+        "Crime"
       ],
-      "tone": "Grounded, suspenseful, emotionally charged, and increasingly horrific"
+      "tone": "tense",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "survival",
+        "crime",
+        "dog",
+        "single-location",
+        "low-budget-friendly"
+      ]
     },
-    "positioning_hook": "A shelter dog with a broken leg bonds with a lonely handyman, then becomes the only witness to the man’s basement of horrors — and the only one who can save the next victim.",
+    "positioning_hook": "A loyal shelter dog is adopted into a serial killer’s house and must use his instincts to save the captive woman hidden in the basement before his owner turns on them both.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 8,
-        "reasoning": "The premise is instantly legible and emotionally sticky: a dog POV thriller with a rescue-bond engine, a serial-killer reveal, and a final cathartic mauling. The animal-centered hook broadens the audience beyond horror buyers into family-adjacent and mainstream curiosity, especially because the opening crash, shelter sequence, and rescue climax are all easy to pitch."
+        "reasoning": "The premise is instantly legible and emotionally sticky: a dog as the hero, a trapped woman, and a killer in the house. That combination gives the script a clean trailer pitch and a broad hook beyond genre buyers, though the violence and canine POV narrow it from true four-quadrant play."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The hook lands immediately in the opening pages: this is a dog’s-eye-view story, and the audience understands the engine as soon as Gary survives the crash and lands in Cameron’s house. The basement, the missing women, and the dog’s limited but crucial agency are all crystal clear and easy to explain in one breath."
+        "reasoning": "The hook lands on page one with the crash, the shelter, and the reveal that Gary is the POV engine. The story is easy to explain in one breath because the central contradiction is so clean: a dog’s-eye thriller about recognizing evil and protecting a human."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Gary is a strong central engine because his innocence, fear, loyalty, and instinctive intelligence all play on the page, and Cameron is a memorable, deeply playable antagonist with a wounded-child quality. Kat adds a sharp counterpoint, though the story is still primarily powered by the Gary/Cameron/Kat triangle rather than a broader character web."
+        "score": 8,
+        "reasoning": "Gary is an unusually strong lead concept because his wants are simple, readable, and emotionally universal, while Cameron and Kat give the movie a clear predator/survivor axis. The supporting cast is smaller, but the core trio is vivid enough to carry the feature."
       },
       "creative_originality_and_boldness": {
-        "score": 8,
-        "reasoning": "The dog-POV execution is the standout creative choice, and the script commits to it with sound design, visual framing, and canine sensory logic rather than treating it as a gimmick. The tonal swing from domestic bonding to basement captivity to feral revenge is bold and specific, especially in the way the dog’s misunderstanding becomes part of the suspense."
+        "score": 9,
+        "reasoning": "The canine POV is not a gimmick here; it is the storytelling grammar of the movie, shaping suspense, information flow, and emotional alignment. Scenes like Gary misreading Kat as Asher, or understanding danger through scent and sound, give the script a genuinely fresh executional identity."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script is built on clean escalation: crash, shelter, adoption, neighbor suspicion, basement discovery, captivity, rescue attempt, and final confrontation. Each major turn adds pressure and the dog’s limited agency keeps the tension active, with the final cornfield pursuit delivering a strong payoff."
+        "reasoning": "The script keeps escalating through discovery, captivity, training, and escape, with each turn tightening Gary’s relationship to both Cameron and Kat. The basement reveal, the collar, the key-training, and the final cornfield chase all create strong forward drive."
       },
       "resonant_originality": {
-        "score": 8,
-        "reasoning": "A dog as the emotional and perceptual lead in a serial-killer thriller is fresh in a way that immediately makes sense. The script turns that novelty into inevitability by making Gary’s loyalty the exact thing that can expose the killer and save Kat."
+        "score": 9,
+        "reasoning": "This is a rare case where the novelty is also the engine: the audience immediately understands the emotional logic of a dog protecting a human, and the story keeps paying that off in new ways. The shelter-to-house-to-basement progression feels both surprising and inevitable."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The Indiana setting, Lowe’s jobsite texture, animal shelter, cornfield, and old farmhouse all give the story a lived-in Midwest specificity. The world is not sprawling, but it has enough social and physical detail — church concern, animal control, hardware-store routine, rural isolation — to feel story-generating."
+        "reasoning": "The world is specific in its Midwestern details, Lowe’s work life, the farm machinery, the animal shelter, and the neighbor surveillance dynamic. It is not a sprawling world, but it is story-generating because the house, barn, basement, and cornfield all have distinct functions."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unusually specific: intimate, canine, and domestic on the surface, then increasingly unsettling and brutal underneath. The script knows exactly when to let Gary’s dog logic create humor or tenderness and when to pivot into dread and violence."
+        "reasoning": "The script has a very particular tonal blend: anxious, intimate, and darkly ironic, with the dog’s innocence constantly colliding with serial-killer horror. The panting/silence motif and the POV discipline give it a hard-to-mistake flavor."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the thriller mechanics, the script is carrying trauma, captivity, attachment, and the need to be a 'good boy' as a psychological wound. Cameron’s childlike need for approval and Gary’s instinctive loyalty give the story more emotional depth than a standard creature-thriller setup."
+        "reasoning": "Beneath the thriller mechanics, the script is carrying themes of captivity, trauma, and the need to be a 'good boy' for love, which gives the material more emotional aftertaste than a standard genre piece. The Cameron backstory and the repeated cage imagery suggest deeper psychological material without over-explaining it."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "The Gary/Cameron bond is the core relationship, and Kat gives the second half a strong counter-dynamic, but the script is not built as a broad ensemble. The supporting players function well in the thriller machinery, though most of the story energy lives in the lead triangle."
+        "score": 7,
+        "reasoning": "The Gary/Cameron bond, Gary/Kat alliance, and Gary/Randy suspicion triangle all generate recurring tension and shifting allegiance. It is not an ensemble in the traditional sense, but the relationships are active enough to keep the movie from becoming a one-note survival chase."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Gary",
+        "role_type": "Lead",
+        "demographics": "Male dog, terrier mix, roughly 8-9 years old in dog years; injured front leg early, later fitted with a brace and collar.",
+        "hook": "Gary is the movie’s emotional and sensory center: a shelter dog whose world is built from scent, sound, and instinct, not language. He starts as a frightened survivor of a car crash and slowly becomes a protector, first bonding with Cameron, then recognizing Kat as the human who needs saving. His innocence is the engine of the suspense, because he keeps trying to be a good boy in a house where goodness is weaponized.",
+        "why_actor_wants_this": "This is the kind of performance territory that made animal-led storytelling in films like The Artist or A Dog’s Purpose resonate, except here the showcase is the emotional precision of the POV itself. For a trainer/animal-performance team, it’s a rare lead role that asks for fear, curiosity, loyalty, and action beats to all read cleanly without dialogue."
+      },
+      {
+        "name": "Cameron",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, white, working-class, physically ordinary, emotionally damaged, missing pinky finger.",
+        "hook": "Cameron is a lonely, soft-spoken Lowe’s employee whose warmth is real enough to fool Gary and whose need for control curdles into predation. He presents as a lonely widower type with a wounded-boy energy, but the script steadily reveals a man who has built a private system of captivity, ritual, and self-justification. He’s the movie’s most unsettling contradiction: tender with the dog, monstrous with everyone else.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter or David Dastmalchian in Prisoners — a role that lets an actor play fragility and menace in the same frame. The prize is the slow reveal of a man whose neediness, grief, and violence all coexist, with the basement scenes giving him a deeply unnerving emotional register."
+      },
+      {
+        "name": "Kat",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s, working-class, practical, physically resilient, injured ankle by the end.",
+        "hook": "Kat enters as a sharp, skeptical customer and becomes the trapped co-survivor who has to learn the language of the dog in order to get out alive. She’s funny, impatient, and resistant to sentiment, which makes her gradual bond with Gary feel earned rather than cute. By the end she’s the movie’s human counterweight to Gary’s instinctive loyalty: a person who starts by not trusting dogs and ends by trusting one with her life.",
+        "why_actor_wants_this": "This is the kind of survival-role showcase that gave Jodie Comer in The Last Duel or Rebecca Hall in Resurrection a chance to play intelligence under pressure and physical endurance at the same time. The role offers a strong arc from skepticism to dependence to action, with a lot of playable frustration and grit."
+      },
+      {
+        "name": "Randy",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, white, neighbor, rough-edged, suspicious, physically imposing.",
+        "hook": "Randy is the watchful neighbor who seems like a threat before he becomes an ally, and the script uses him as the outside pressure that keeps the house from feeling sealed off. He’s the guy who knows something is wrong, but not enough to stop it in time, which makes him useful as both suspicion and rescue vector. His presence gives the movie a human witness outside Cameron’s control.",
+        "why_actor_wants_this": "This is strong character-actor material in the vein of John Goodman in 10 Cloverfield Lane or Stephen Root in No Country for Old Men — a role that can pivot from menace to decency. The appeal is the ambiguity: the audience reads him one way, then the script repositions him as a crucial ally."
+      },
+      {
+        "name": "Asher",
+        "role_type": "Supporting",
+        "demographics": "Male, 12, child actor, Captain America shirt, deceased after the opening crash.",
+        "hook": "Asher is the emotional ghost of the movie: the boy Gary loses in the opening and keeps seeing in moments of stress or recognition. He functions as Gary’s original bond and the emotional template for the dog’s loyalty. Even though he’s gone early, he gives the story its first wound and its deepest memory.",
+        "why_actor_wants_this": "This is a small but crucial child role with real emotional imprint, the kind that can define the opening of a movie the way the child roles in Room or The Sixth Sense do. The showcase is less screen time than impact: the actor has to make the loss feel immediate and unforgettable."
+      },
+      {
+        "name": "Jeannie",
+        "role_type": "Supporting",
+        "demographics": "Female, late 30s, mother, driver in opening sequence.",
+        "hook": "Jeannie is the parent in the opening crash sequence, carrying the ordinary family texture that makes the disaster land. She’s not a major arc character, but she anchors the domestic normalcy that the movie destroys in the first minutes.",
+        "why_actor_wants_this": "This is a brief but emotionally functional role in the tradition of opening-sequence family parts that set the stakes fast. The showcase is realism under pressure, not a long arc."
+      },
+      {
+        "name": "Victor",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s, father, driver in opening sequence.",
+        "hook": "Victor is the other half of the opening family unit, bickering and worrying in the car before the crash. He helps establish the ordinary life Gary is about to lose, and then disappears into the tragedy that motivates the rest of the film.",
+        "why_actor_wants_this": "This is a compact dramatic role that needs to feel lived-in in a few pages. It’s the kind of part that gives an actor a clean, emotionally legible opening beat."
+      },
+      {
+        "name": "Jeans",
+        "role_type": "Supporting",
+        "demographics": "Adult, gender not specified, shelter worker.",
+        "hook": "Jeans is one of the shelter workers who processes Gary’s intake and later helps connect him to Cameron. The character is functional but important as the human face of the shelter system that moves Gary from trauma into a new home.",
+        "why_actor_wants_this": "This is a grounded utility role with a few clean beats of empathy and procedural realism. It’s the kind of part character actors like because it feels specific without being oversized."
+      },
+      {
+        "name": "Khakis",
+        "role_type": "Supporting",
+        "demographics": "Adult, gender not specified, shelter worker.",
+        "hook": "Khakis is the other shelter worker, the one who handles Gary’s surrender and intake logistics. The character helps establish the institutional world Gary passes through before the story becomes personal.",
+        "why_actor_wants_this": "This is a small but functional role that benefits from naturalism and warmth. It’s a quick showcase for a performer who can make procedural detail feel humane."
+      },
+      {
+        "name": "Kat's mother",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, off-screen reference only.",
+        "hook": "Kat’s mother is not a present character but is part of the domestic texture around Kat’s life and the missing-person stakes. She exists more as a social anchor than a dramatic participant.",
+        "why_actor_wants_this": "Not a performance role in the usual sense; included for completeness of the main-cast ecosystem."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 10,
-        "leads": 3,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Dog lead required throughout",
-          "One child role in the opening",
-          "Lead dog must perform POV-driven action and emotional beats"
+          "trained dog lead required",
+          "one child actor with strong opening emotional presence",
+          "supporting adult roles skew 30s-50s",
+          "one physically imposing neighbor type",
+          "one working-class male antagonist with unsettling warmth"
         ]
       },
       "locations": {
-        "distinct_count": 10,
+        "distinct_count": 8,
         "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "Contemporary",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Animal shelter",
-          "single-family home with basement and doggy door",
-          "farmhouse/barn/cornfield",
-          "hardware store/garden center",
-          "highway and roadside crash sequence"
+          "single-family house with usable basement and doggy door",
+          "adjacent neighbor house sightline",
+          "animal shelter kennel area",
+          "Lowe’s-style garden center/workplace",
+          "cornfield and farm with combine harvester",
+          "abandoned farmhouse/barn"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Primarily POV framing, selective visual emphasis on canine perception, and a few crash/impact moments; no heavy fantasy or creature work.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Car crash, body impacts, dog injury makeup/handling, blood effects, and practical violence in the basement and barn sequences.",
+        "vfx_details": "Mostly POV framing and selective enhancement of canine perspective; no major digital creature work implied.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, injury makeup, basement violence, harvester effects, dog collar shock effect, broken glass, and body-cocoon practicals.",
         "night_shoots": "significant",
         "animals": true
       },
@@ -99,246 +186,186 @@
         },
         {
           "type": "brand",
-          "detail": "Indianapolis Colts"
+          "detail": "Colts"
+        },
+        {
+          "type": "brand",
+          "detail": "Waffle House"
+        },
+        {
+          "type": "brand",
+          "detail": "iPhone"
+        },
+        {
+          "type": "brand",
+          "detail": "adidas"
+        },
+        {
+          "type": "brand",
+          "detail": "PBR"
         },
         {
           "type": "brand",
           "detail": "Long John Silver's"
-        },
-        {
-          "type": "named_music",
-          "detail": "\"Bad Moon Rising\" by CCR"
-        },
-        {
-          "type": "real_person",
-          "detail": "J.T. Elliott is referenced as a football player/news figure within the script world"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium genre feature lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model; strongest fit is festival-to-platform or streamer genre launch with a clear hook and contained footprint."
+        "recommended_lane": "streaming theatrical feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Standalone feature release; best positioned as a genre title with strong trailerable hook and festival-to-streaming or specialty theatrical path."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained to a house, shelter, garden center, and farm, but the cornfield climax, animal work, night work, and practical violence keep this above a simple contained-thriller cost profile."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary contained thriller with a few set-piece sequences, animal handling, and practical violence keeps it below tentpole scale."
+      "casting": {
+        "level": "medium",
+        "note": "The hardest lift is the dog lead: Gary has to carry the movie emotionally and physically, which means the animal-performance plan is central to the buy. Cameron also needs an actor who can play warmth, loneliness, and predatory control in the same frame."
+      },
+      "development": {
+        "level": "low",
+        "note": "The premise is clean, the stakes are legible, and the story engine is straightforward once the dog POV is accepted. The main development conversation is tonal and executional, not structural."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "A Quiet Place",
+          "year": 2018,
+          "why_it_comps": "Like this script, it turns a simple survival premise into a high-concept audience event through disciplined POV and escalating domestic danger."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The dog lead is central throughout, with three major human roles and a small supporting ensemble around the shelter, store, and police beats."
+        {
+          "title": "The Black Phone",
+          "year": 2021,
+          "why_it_comps": "Shares the contained, menace-in-the-house structure and the child-victim emotional charge that makes the thriller feel urgent and accessible."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through a home, basement, shelter, store, highway, barn, farmhouse, and cornfield, with night exteriors and rural coverage."
+        {
+          "title": "The Call of the Wild",
+          "year": 2020,
+          "why_it_comps": "The animal-centered lead and emotional identification through a nonhuman protagonist are the closest commercial cousin, even though this is much darker and more contained."
         },
-        "content": {
-          "level": "high",
-          "note": "The basement captivity, serial-killer violence, bloodshed, and dog mauling push the material firmly into mature territory."
+        {
+          "title": "Cujo",
+          "year": 1983,
+          "why_it_comps": "The dog-in-danger / house-as-trap tension and the audience’s emotional alignment with the animal give it a clear genre ancestor."
         },
-        "rights": {
-          "level": "medium",
-          "note": "Several named brands and a specific CCR song appear on the page, alongside a few real-world references."
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "The slow-burn suspicion inside a domestic space and the eventual reveal of predatory intent map well to the script’s escalation."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre audiences who like high-concept thrillers with a strong emotional hook, plus dog lovers willing to go dark for a rescue story.",
+        "demographics": "Adults 18-49, slightly female-skewing because of the animal-empathy hook, with strong appeal to horror/thriller fans and pet-owner audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$5M-$12M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, one animal lead, practical violence, and a modest number of speaking roles keep it in indie feature territory, though the cornfield/farm climax and night shoots add some scope."
+      },
+      "lane_fit": {
+        "lane": "elevated contained thriller",
+        "types_of_buyers": [
+          "streamer genre originals team",
+          "boutique horror-thriller financier",
+          "specialty distributor seeking trailer-first concept",
+          "producer looking for a director-friendly contained feature",
+          "animal-friendly family-adjacent genre buyer"
+        ],
+        "detail": "The script sits naturally in the lane where a clean hook, a contained footprint, and a strong emotional engine can outweigh the absence of star dependency. The dog POV gives it a marketing angle that can travel beyond core horror buyers."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a complete emotional arc; Gary’s story resolves cleanly and does not naturally open into a franchise or sequel vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The dog POV is the engine.",
-          "what_it_means": "That point of view gives the movie an instantly marketable identity and a built-in emotional access point, because the audience experiences the thriller through loyalty, scent, sound, and instinct. Family audiences, genre fans, and animal-driven buyers all have a reason to lean in, and actors/directors can see the concept in one sentence.",
-          "evidence": "The opening pages stay locked to Gary’s sensory experience, from panting to scent-tracking to the crash and his shelter fear.",
+          "dimension_or_area": "Dog POV as story engine",
+          "what_it_means": "This gives the movie a built-in differentiator that can be sold in one sentence and remembered in one image. Buyers looking for a fresh trailer hook or a director-friendly high-concept feature will immediately understand the value.",
+          "evidence": "The opening crash sequence, the shelter intake, and the repeated use of scent/sound/panting as subjective storytelling.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Gary is a true protagonist, not a mascot.",
-          "what_it_means": "The script gives the dog a clear emotional arc — fear, attachment, suspicion, protection, and action — which makes the movie feel like a character piece instead of a novelty premise. That creates a stronger audience bond and gives the project a cleaner emotional payoff than a simple animal thriller.",
-          "evidence": "Gary bonds with Cameron, clocks the basement danger, trains with Kat, and ultimately attacks Cameron to save her.",
+          "dimension_or_area": "A clean, trailerable premise",
+          "what_it_means": "The script has a simple commercial spine that makes it easy to pitch, package, and market without over-explaining the plot. That clarity is attractive to genre buyers who want a concept that reads instantly in a room.",
+          "evidence": "Dog survives crash, is adopted by a killer, discovers a captive woman in the basement, and becomes the rescue mechanism.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Cameron is a memorable villain role.",
-          "what_it_means": "The handyman/killer blend gives the antagonist a grounded, Midwestern specificity that makes the part attractive to actors who want something human, sad, and terrifying at once. Buyers know how to sell a villain who can be both neighborly and monstrous, especially when the performance can carry the movie’s second half.",
-          "evidence": "Cameron’s 'good boy' ritual, his basement captivity, and his childlike need for approval all define him.",
+          "dimension_or_area": "Contained footprint with big tension",
+          "what_it_means": "The production can stay relatively controlled while still feeling like an event because the house, basement, barn, and cornfield all serve the same escalating pressure cooker. That is the sweet spot for buyers who want scope on screen without tentpole spend.",
+          "evidence": "Most of the movie lives in the house/basement/farm ecosystem, with the climax expanding into the cornfield.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "A villain role with real acting meat",
+          "what_it_means": "Cameron is not just a monster; he’s a wounded, needy, self-justifying predator, which makes the role more castable and more memorable. That kind of part can attract a serious character actor and elevate the whole package.",
+          "evidence": "The basement 'good boy' ritual, the grief around his father, and the way he weaponizes affection and control.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Kat gives the back half a human counterweight.",
-          "what_it_means": "Once Kat enters the basement, the script gains a second emotional engine: a trapped human who can communicate with the dog and turn the rescue into a two-character survival story. That opens the movie beyond pure animal novelty and gives the climax a stronger audience release.",
-          "evidence": "Kat and Gary build a communication system with the tennis ball, salmon, and keys.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The Midwest texture feels lived-in.",
-          "what_it_means": "The Lowe’s job, the Colts, the cornfield, the shelter, and the rural house details create a specific American setting that helps the movie feel grounded and exportable at the same time. That kind of texture is attractive to buyers looking for genre material with a recognizable regional flavor.",
-          "evidence": "Cameron’s work vest, the animal shelter, the farm equipment, and the Indiana roadways all recur as story spaces.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The climax delivers catharsis.",
-          "what_it_means": "The final mauling and cornfield escape give the audience the exact release this premise promises, which is crucial for a genre feature built on dread and empathy. Horror and thriller buyers want a payoff that feels earned, and this one lands with a clear emotional and visceral snap.",
-          "evidence": "Gary turns on Cameron in the cornfield and tears him apart to protect Kat.",
+          "dimension_or_area": "Emotional payoff through instinct",
+          "what_it_means": "The climax pays off the dog’s loyalty in a way that is both cathartic and legible, which is why the ending can land with broad audiences even inside a dark thriller. That gives the movie a rare combination of tension and heart.",
+          "evidence": "Gary choosing Kat over Cameron, then dragging her out of the harvester path and attacking Cameron.",
           "source": "script"
         }
       ],
-      "headline": "This script has a clean, high-concept hook and a genuinely ownable execution: a dog-POV thriller that turns loyalty into suspense and suspense into catharsis. It’s contained enough to be producible, specific enough to stand out in a crowded genre market, and built around a central role — the dog and the killer — that actors, directors, and buyers can all immediately understand."
+      "headline": "This is a highly marketable contained thriller with a genuinely ownable hook: a dog’s-eye rescue story that turns a serial-killer house into a pressure cooker. The concept is easy to sell, the footprint is manageable, and the villain role plus animal lead give it real packaging leverage for a streamer or specialty buyer."
     },
-    "lead_characters": [
-      {
-        "name": "Gary",
-        "role_type": "Lead",
-        "demographics": "Male dog · 8-9 years old · terrier mix · black and tan wiry coat · 45 lbs · injured front leg",
-        "hook": "Gary is a frightened, food-motivated, deeply loyal shelter dog whose whole world is scent, sound, and attachment. He starts as a wounded animal looking for safety and becomes the story’s moral center, the one creature in the house who can sense danger before anyone else and act on it when it matters most.",
-        "why_actor_wants_this": "This is the showcase territory of the animal-performance work in The Artist and A Dog's Purpose — a role built on expressive physicality, emotional readability, and audience attachment without dialogue. Trainers, animal-performance specialists, and producers looking for a four-quadrant emotional anchor will see a part that can carry suspense, tenderness, and payoff in one package."
-      },
-      {
-        "name": "Cameron",
-        "role_type": "Lead",
-        "demographics": "Male · 40s · overweight · buzz cut · wire glasses · missing pinky finger",
-        "hook": "Cameron is a lonely, soft-spoken handyman whose need to be needed curdles into control. He presents as gentle, practical, and wounded, but the script keeps revealing how much of his tenderness is fused to captivity, ritual, and a terrifying need to keep people in place.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in Take Shelter or Paul Dano in Prisoners — a man whose stillness and vulnerability are constantly shadowed by menace. Character actors who can play wounded sincerity and sudden violence in the same breath will chase this because the role lets them build dread from intimacy."
-      },
-      {
-        "name": "Kat",
-        "role_type": "Lead",
-        "demographics": "Female · late 20s · blonde bob · overalls / workwear",
-        "hook": "Kat starts as a skeptical, no-nonsense plant-store worker who does not want to be charmed by a dog, then becomes the trapped human who has to outthink the house from inside it. She’s dry, practical, and resistant, which makes her eventual alliance with Gary feel earned and gives the back half a sharp survivalist edge.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in The Last Duel or Rebecca Hall in Resurrection — a role that moves from guarded realism into physical survival and tactical intelligence. Actors who want a contained thriller part with fear, resourcefulness, and a strong final-act payoff will see real value here."
-      },
-      {
-        "name": "Randy",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · bearded · trucker hat · weathered rural neighbor",
-        "hook": "Randy is the suspicious neighbor who reads as a threat before he ever becomes one. He carries the story’s outside pressure, the man who sees enough to know something is wrong but not enough to stop it cleanly.",
-        "why_actor_wants_this": "This is the showcase territory of a character turn like John Goodman in 10 Cloverfield Lane’s early stretch — a presence that can pivot from local color to ominous authority. Strong supporting actors who specialize in grounded menace will want the chance to make a few scenes feel loaded."
-      },
-      {
-        "name": "Asher",
-        "role_type": "Supporting",
-        "demographics": "Male child · 12 years old",
-        "hook": "Asher is the boy Gary loves first, the emotional origin point for the dog’s attachment and the crash that defines the movie’s opening trauma. He functions as the memory-image that keeps Gary’s loyalty human and specific.",
-        "why_actor_wants_this": "This is the kind of brief but emotionally legible child role that works like the opening family beats in The Sixth Sense or A Quiet Place — a part that gives the movie its first emotional imprint. Young performers with strong naturalism would fit the slot, especially if the production wants the opening to land with immediate warmth."
-      },
-      {
-        "name": "Jeannie",
-        "role_type": "Supporting",
-        "demographics": "Female · late 30s",
-        "hook": "Jeannie is the stressed, practical mother in the opening crash sequence, the human pressure inside the car before the story turns fully into Gary’s. She establishes the family unit and the ordinary domestic world that gets shattered.",
-        "why_actor_wants_this": "This is the kind of contained, high-impact opening role that gives an actor a clean emotional beat in a thriller prologue, similar to the family material in Hereditary or A Quiet Place. Character actresses who can make a few pages feel lived-in will understand the value immediately."
-      },
-      {
-        "name": "Victor",
-        "role_type": "Supporting",
-        "demographics": "Male · late 30s",
-        "hook": "Victor is the other parent in the opening car sequence, a grounded family presence whose bickering and concern help establish the crash as a real domestic loss. He’s functional in the best sense: a believable piece of the life Gary is about to lose.",
-        "why_actor_wants_this": "This is the sort of opening-scene father role that gives an actor a clean, emotionally efficient setup in a genre feature, like the family-adjacent parts in The Mist or Signs. It’s a small part, but it helps the movie’s first act feel human before the thriller machinery takes over."
-      },
-      {
-        "name": "Jeans",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · shelter worker",
-        "hook": "Jeans is the shelter worker who sees Gary at his most vulnerable and becomes the face of institutional care. She’s practical, compassionate, and part of the machinery that moves Gary from trauma into a new home.",
-        "why_actor_wants_this": "This is the kind of grounded support role that plays like the humane institutional figures in The Florida Project or Room — a small part that gives the movie credibility and warmth. Actors who like efficient, naturalistic scenes will see the appeal."
-      },
-      {
-        "name": "Khakis",
-        "role_type": "Supporting",
-        "demographics": "Male or female · 30s-40s · shelter worker",
-        "hook": "Khakis is the other shelter worker, a procedural presence who helps move Gary through the system. The character is less about personality than about making the shelter feel real and operational.",
-        "why_actor_wants_this": "This is a functional but useful supporting slot for a character actor who can make institutional texture feel lived-in, the way small roles do in prestige dramas and grounded thrillers. It’s the kind of part that helps the world feel populated without demanding a large footprint."
-      },
-      {
-        "name": "Straw Hat",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · co-worker",
-        "hook": "Straw Hat is Cameron’s work buddy, the guy who gives the Lowe’s world a casual, lived-in social rhythm. He’s the kind of coworker who can clock something off without fully understanding it.",
-        "why_actor_wants_this": "This is the sort of easy, naturalistic supporting role that character actors use to make a workplace feel authentic, similar to the shop-floor texture in Blue Collar or The Bear. It’s a clean fit for someone who can land a few lines and make the world feel inhabited."
-      },
-      {
-        "name": "Kat's Mother",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s",
-        "hook": "Kat’s mother is a brief but functional presence in the plant-store sequence, part of the ordinary world outside the basement. She helps define Kat as someone with a life beyond the thriller engine.",
-        "why_actor_wants_this": "This is a small but useful realism role, the kind that gives a scene domestic texture and helps the lead’s world feel broader. It’s a quick fit for a character actor who can make a few beats feel specific."
-      },
-      {
-        "name": "Officer",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · ex-military",
-        "hook": "The officer is the procedural outsider who almost breaks the case open, then gets swallowed by Cameron’s performance. He represents the outside world’s attempt to intervene, and the scene uses him to sharpen the house’s menace.",
-        "why_actor_wants_this": "This is the kind of law-enforcement role that plays like the grounded procedural beats in Zodiac or Prisoners — a few scenes with real tension and a clear dramatic function. Actors who specialize in authority with a human edge will recognize the slot."
-      },
-      {
-        "name": "Mechanic",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "The mechanic is a rural working-class presence who helps keep the farm machinery world credible. He’s a practical observer, there to make the combine sequence feel tactile and real.",
-        "why_actor_wants_this": "This is a classic character-actor utility role, the kind that gives a working performer a memorable slice of regional texture. It fits the same lane as the shop and farm hands in grounded American dramas."
-      },
-      {
-        "name": "Worker",
-        "role_type": "Supporting",
-        "demographics": "Male or female · 30s",
-        "hook": "The worker at the shelter is a brief final-image presence, the person who resets Gary back into the system before the ending reveal. The role is small, but it lands the movie’s last emotional turn.",
-        "why_actor_wants_this": "This is the kind of final-beat supporting role that can leave a strong aftertaste with very little screen time, similar to the closing beats in animal-led dramas. It’s a clean fit for a performer who can make a few lines feel consequential."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a suspense film from a dog’s nervous system.",
-        "fit_profile": "First- or second-feature directors, or established indie genre directors, who already work in performance-forward thrillers and care about subjective camera language. This material rewards someone who can balance animal behavior, domestic realism, and escalating horror without turning the concept into a stunt.",
-        "detail": "The craft prize here is precision: sound, framing, and performance all have to make the dog’s perspective feel emotionally legible while the human horror keeps escalating. Directors who like contained tension, tactile Midwest settings, and a final-act release will see a clear lane."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Contained genre feature for streamers, premium buyers, and festival-to-platform packages",
-        "detail": "The movie can be packaged around a strong director and a single standout human villain role, with the dog performance as the built-in hook rather than a name-talent dependency. The contained house/basement/farm footprint and the animal-thriller angle make it exportable and easy to market with a one-line premise."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The dog lead narrows the casting plan.",
+          "detail": "Gary is the movie, which means the production lives or dies on animal performance, training, and coverage discipline. That is a real buyer conversation even in a contained indie, because the emotional clarity of the whole piece depends on the dog reading fear, recognition, and loyalty on cue.",
+          "is_primary_lever": true,
+          "source": "production"
+        },
+        {
+          "area": "The violence is more intense than the concept suggests.",
+          "detail": "The basement murder imagery, the mauling, the collar shock, and the harvester climax push this well into mature territory. That is fine for streaming and premium buyers, but it narrows the family-adjacent audience implied by the dog premise and will shape how the movie is sold.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand footprint is cluttered.",
+          "detail": "Toyota RAV4, Lowe's, Kroger, Colts, Waffle House, iPhone, adidas, PBR, and Long John Silver's are all named on the page. None of that is fatal, but it creates a real clearance pass and some potential replacement work if a buyer wants a cleaner legal package.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Cameron’s psychology is intentionally extreme.",
+          "detail": "The 'good boy' ritual, the basement captivity, and the mother-echo imagery make him vivid, but they also make him a very specific kind of serial-killer role. That is a strength on the page and a narrowing factor in casting conversations because the actor has to sell tenderness, damage, and menace without tipping into caricature.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The climax depends on a lot of physical choreography.",
+          "detail": "The final cornfield and barn sequence asks for dog action, injured-human movement, practical blood, and a moving harvester all at once. It is playable, but it is the section most likely to drive schedule pressure and safety planning if the script is greenlit as written.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s biggest friction points are practical rather than conceptual: the animal lead, the mature violence, and the physically demanding climax. None of those are deal-breakers for the right buyer, but they are the conversations that will sit on top of the package from first read to greenlight."
     },
-    "considerations": [
-      {
-        "area": "The opening crash is the launchpad.",
-        "detail": "The prologue does a lot of work quickly, and the dog POV is already distinctive; one lever would be to keep the family beat as lean and emotionally direct as possible so the crash lands with maximum force before the shelter turn. That protects the movie’s clean opening momentum and gets Gary into the shelter story faster.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The basement reveal carries the movie.",
-        "detail": "The dog’s perspective is strongest when it is discovering danger rather than explaining it, so the version of the script where the basement clues arrive through Gary’s sensory experience stays the most cinematic. A next pass could keep the reveal sequence as visual and behavioral as possible, letting the audience assemble the truth the way Gary does.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "Kat’s rescue engine is the second half’s spine.",
-        "detail": "Once Kat enters the basement, the movie gains a second lead dynamic and the communication system with the tennis ball, salmon, and keys becomes the rescue engine. That section is already working as a clean thriller device; the opportunity is to keep each exchange as simple and playable as possible so the audience tracks the plan instantly.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The brand footprint is broader than the story needs.",
-        "detail": "Toyota, Lowe’s, Kroger, the Colts, Long John Silver’s, and CCR all appear on the page, which gives the movie texture but also creates clearance work. A simplification pass could swap any non-essential brand references for generic equivalents without changing the story engine.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The animal handling is the core production challenge.",
-        "detail": "The script depends on a dog lead in nearly every sequence, including POV work, emotional beats, and action coverage. That means the production plan should be built around a highly trained animal performer, a patient schedule, and coverage that protects the dog’s continuity and comfort.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The night exteriors deserve a clean plan.",
-        "detail": "The crash, cornfield pursuit, and final confrontation all lean on night coverage and practical tension. A streamlined lighting and blocking strategy would protect the suspense while keeping the rural exterior schedule efficient.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 74.7,
+  "weightedScore": 77.7,
   "tier": "Optionable",
-  "inputTokens": 34795,
-  "outputTokens": 5506,
-  "cost": 0.050873249999999995,
+  "inputTokens": 37200,
+  "outputTokens": 5289,
+  "cost": 0.051700499999999996,
   "declaredFormat": "Feature film"
 }

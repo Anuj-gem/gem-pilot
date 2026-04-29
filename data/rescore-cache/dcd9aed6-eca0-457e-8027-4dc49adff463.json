@@ -2,88 +2,157 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Fantasy comedy",
-      "genre_tags": [
-        "Romantic comedy",
-        "Period adventure"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Comedy",
+        "Romance"
       ],
-      "tone": "Playful, heightened, irreverent, and knowingly absurd"
+      "tone": "playful",
+      "tags": [
+        "male-lead",
+        "period-piece",
+        "high-concept",
+        "character-driven",
+        "prestige",
+        "identity",
+        "love",
+        "friendship",
+        "egyptian-mythology",
+        "tarot"
+      ]
     },
-    "positioning_hook": "A British novelist hired to adapt Cleopatra and Marc Antony falls for his producer, then gets pulled into a cat-possessed Egyptian love triangle that turns Hollywood matchmaking into ancient history.",
+    "positioning_hook": "A repressed British novelist in 1975 Los Angeles falls for his producer, then gets dragged into a cat-swapping Egyptian reincarnation scheme that turns a Hollywood love triangle into divine chaos.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The hook is easy to sell: a period-set romantic fantasy with a comic engine, a movie-business backdrop, and a clear love triangle. It plays to audiences who like broad, high-concept comedy with romance and spectacle, though the very specific mythic premise keeps it from feeling four-quadrant."
+        "score": 6,
+        "reasoning": "The hook is easy to pitch and the romantic-fantasy engine is legible, but the period, mythological, and highly stylized dialogue choices narrow the audience to buyers who want something eccentric rather than broadly commercial. The upside is a clear star-vehicle lane for a charismatic lead and a female counterpart with real attitude."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The premise lands early in the interrogation-room frame and then keeps clarifying itself through the tarot reading, the studio job, and the banquet scheme. The cat-vessel mythology, the Cleopatra/Marc Antony reincarnation angle, and the Hollywood production setting all arrive with enough specificity to make the engine easy to track."
+        "reasoning": "The premise lands early: a novelist in an interrogation room starts telling the story of a Hollywood tarot reading, a cat, and Cleopatra/Sekhmet possession. The script keeps the central engine clear even as it gets increasingly absurd."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Daniel has a strong comic voice and a durable contradiction: refined, self-important, and deeply out of his depth, yet still earnest enough to carry the story. Penelope, Mystic/Cleo, and Saharian give the script a lively female triangle, though the characters are built more as comic forces than as deeply layered psychological portraits."
+        "reasoning": "Daniel is a strong comic-romantic lead because his pomposity, insecurity, and sincerity are all playable in the same scene, especially in the interrogation-room framing. Penelope, Mystic/Cleo, and Saharian all have distinct energy, though Daniel still carries most of the emotional weight."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits hard to a wildly specific comic mythology: Egyptian gods, reincarnation, Hollywood executives, and Valley dating politics all colliding in one story. The interrogation-room frame and the self-aware period-comedy voice give it a confident, singular stamp."
+        "reasoning": "The script commits hard to a very specific tonal and mythic mash-up: 1975 Hollywood, reincarnation, tarot, and a cat as a vessel for Cleopatra/Sekhmet. That kind of unapologetic swing is rare and gives the material a real signature."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "Once the story locks into the Sunny/Penelope/Cleo plan, it moves with real comic propulsion toward the banquet set-piece. The opening explanation frame is extended, but the escalating reveals, the cat-switch, and the banquet chaos keep the pages turning."
+        "reasoning": "The story keeps escalating through a series of set-piece revelations, from the tarot reading to the banquet to the possession reveal and the final Egypt button. The middle is intentionally digressive, but the detective framing and the countdown to the banquet keep it moving."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "It feels like a premise that only exists because this exact collision of sensibilities exists: a pompous British writer, Valley occultism, and Cleopatra as a modern psychic hustler. The story is strange in a way that still reads immediately, which is the sweet spot for memorable commercial originality."
+        "reasoning": "The script’s core idea is strange in a way that still clicks immediately: a Hollywood love triangle reframed as an ancient karmic battle with a cat in the middle. It feels like a premise that could only come from this exact writerly sensibility."
       },
       "world_density_and_texture": {
-        "score": 8,
-        "reasoning": "The 1975 Encino/Santa Monica/Hollywood world is full of lived-in detail: studio bungalows, banquet culture, Valley slang, production politics, and the social ecosystem around a movie set. The script also gives the spiritual world rules, hierarchies, and a comic internal logic that makes the setting feel story-generating rather than decorative."
+        "score": 7,
+        "reasoning": "The 1975 Valley/Hollywood setting is specific, lived-in, and full of social texture, from studio politics to the tarot garage to the banquet culture. The world is less about procedural rules than about a richly comic ecosystem of status, vanity, and spiritual hustle."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The voice is unmistakable: arch period-comedy narration, broad character comedy, and a steady stream of absurd reversals. The script knows exactly how far to push the joke without losing the romantic-fantasy spine, which gives it a distinct tonal lane."
+        "reasoning": "The voice is unmistakable: arch, self-aware, period-comic, and committed to the bit without ever fully winking out of the emotion. The detective-room framing gives the script a very particular comic rhythm that feels hard to imitate."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the farce, there’s a real theme about identity, reinvention, and choosing a life rather than a fantasy. The script gestures toward that depth through Daniel’s final self-recognition, but the surface pleasure is the main event."
+        "reasoning": "There are real thematic seeds around identity, performance, desire, and reinvention, especially in Daniel’s transformation from observer to participant. But the script mostly plays those ideas through comic mechanics rather than letting them deepen into something more layered."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Daniel, Penelope, Mystic/Cleo, Saharian, Sunny, and the detectives all generate playable combinations, and the banter between Daniel and the cops is especially lively. The story still lives primarily on Daniel’s point of view, but the supporting relationships are active enough to keep the movie elastic."
+        "reasoning": "Daniel/Penelope, Daniel/Mystic, Penelope/Sunny, and the Cleo/Saharian body-sharing dynamic all generate usable scene energy. It’s not a true ensemble machine, but the relationships are varied enough to keep the movie from living on one pairing alone."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Daniel Bartholomew",
+        "role_type": "Lead",
+        "demographics": "Male, mid-20s, British, educated, socially awkward, aspirational writer",
+        "hook": "A self-conscious novelist and first-time screenwriter who speaks in polished, overcooked cadences until pressure forces the real man out. He starts as a comic fish-out-of-water and becomes the emotional center of the story, because the more absurd the situation gets, the more sincerely he wants to belong in it.",
+        "why_actor_wants_this": "This is the showcase territory of Hugh Grant in a peak rom-com performance — verbal precision, wounded vanity, and romantic panic all at once. The role gives an actor a long runway for comic timing, escalating embarrassment, and a late-blooming emotional turn."
+      },
+      {
+        "name": "Penelope Mortimer",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s-50s, Hollywood executive, polished, powerful, romantically guarded",
+        "hook": "A studio executive who looks like she has every room under control until her private life starts leaking into her professional one. She’s sharp, status-aware, and not remotely ornamental; the script gives her enough authority to feel like the real prize in the triangle.",
+        "why_actor_wants_this": "This is the kind of role that gave Melanie Griffith in Working Girl or Michelle Pfeiffer in a prestige studio romance real authority — glamour with leverage, not just love interest energy. It lets an actor play command, vulnerability, and romantic recalibration in the same frame."
+      },
+      {
+        "name": "Mystic",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, mixed Latin/Anglo ancestry, ethereal, intuitive, physically striking",
+        "hook": "A young tarot reader who initially seems like a cool mystic cipher, then reveals she is also a vessel, a trickster, and a conduit for much older forces. She’s the movie’s wild-card presence: serene one moment, possessed the next, and always more in control than she first appears.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Tilda Swinton or Eva Green does best — play stillness, danger, and metaphysical weirdness without losing charisma. It’s a performance that can be iconic if the actor can make the supernatural feel intimate."
+      },
+      {
+        "name": "Saharian",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, Latina, flamboyant, commanding, spiritually savvy",
+        "hook": "Mystic’s mother and a far more seasoned operator, Saharian is the one who understands the rules of the game and knows how to bend them. She has the energy of a woman who has survived every version of Hollywood and still expects to win.",
+        "why_actor_wants_this": "This is the kind of late-career scene-stealing role that gives an actor the authority and comic bite of a Kathy Bates or Rita Moreno turn. The fun is in playing power, mischief, and maternal control with zero apology."
+      },
+      {
+        "name": "Sunny Daye",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, charismatic, athletic, teacher, local celebrity",
+        "hook": "A magnetic Valley teacher whose charm and apparent decency make him irresistible to everyone around him, even as the script keeps undercutting his simplicity. He’s less a villain than a gravitational center, the kind of man other people project mythology onto.",
+        "why_actor_wants_this": "This is the sort of role that lets an actor channel the easy charisma of a young Jeff Bridges or Richard Gere — warmth, sex appeal, and a little mystery. It’s a deceptively light role with real comic and romantic payoff."
+      },
+      {
+        "name": "Detective One",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s, white, slovenly, streetwise, sarcastic",
+        "hook": "The blunt-force comic skeptic in the interrogation room, constantly puncturing Daniel’s self-mythology with profanity and impatience. He’s a pressure valve and a running gag, but also the audience’s grounded proxy when the story goes fully off the rails.",
+        "why_actor_wants_this": "This is the kind of part that gives a character actor the same kind of scene-stealing material as John Goodman in a comedy with teeth — rhythm, disbelief, and constant reaction beats. It’s a role built for timing."
+      },
+      {
+        "name": "Detective Two",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, Black, sharp, observant, restrained",
+        "hook": "The quieter detective who keeps the room from collapsing into pure farce because he’s actually listening. He’s the smarter half of the duo, and his calm curiosity gives the interrogation frame its best counterweight.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play intelligence and restraint the way Don Cheadle or Mahershala Ali can make a room feel different just by being in it. The showcase is control, not volume."
+      },
+      {
+        "name": "Lawyer",
+        "role_type": "Supporting",
+        "demographics": "Female, 50s, Hispanic, polished, severe, quietly formidable",
+        "hook": "Daniel’s mostly off-screen legal handler who turns out to be far more than a legal handler. The reveal gives the character a sly, theatrical payoff, and the role works because she’s both invisible and omnipotent until the script cashes the check.",
+        "why_actor_wants_this": "This is a fun reveal role in the vein of a Frances McDormand or Sigourney Weaver late-entry authority turn — the kind that lets an actor pivot from professional composure to supernatural command. It’s a compact but memorable showcase."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 10,
-        "leads": 4,
+        "speaking_roles": 9,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Period-specific 1970s looks",
-          "Mixed-ancestry Mystic",
-          "Female 50s lawyer reveal",
-          "Cat performance/handling"
+          "adult ensemble with one dominant lead",
+          "period-specific 1970s styling",
+          "multiple roles require strong comic timing and accent control",
+          "one off-screen-to-on-screen reveal for the lawyer"
         ]
       },
       "locations": {
-        "distinct_count": 9,
-        "interior_exterior_ratio": "Mostly interiors with several key exteriors",
-        "period_or_contemporary": "Period (1975)",
+        "distinct_count": 8,
+        "interior_exterior_ratio": "mostly interiors with a few key exteriors",
+        "period_or_contemporary": "period-piece",
         "notable_requirements": [
-          "Encino police station",
-          "Santa Monica garage",
-          "studio bungalow/office",
-          "Beverly Hills mansion",
-          "Valley condo",
-          "banquet hall",
-          "Egypt tomb"
+          "1975 Los Angeles/Valley look",
+          "studio office and bungalow spaces",
+          "tarot garage interior",
+          "mansion and condo interiors",
+          "banquet hall set",
+          "Egypt tomb epilogue"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "A few aura/possession moments, slow-motion beats, and the final Egypt tomb reveal; most effects are practical/comedic rather than heavy.",
+        "vfx_details": "Mostly performance-driven fantasy with a few aura/possession and slow-motion embellishments; no large-scale effects load.",
         "stunts_level": "minor",
-        "sfx_needs": "Cat handling, choking/strangling choreography, table dump, window escape, and a few physical comedy beats.",
+        "sfx_needs": "Cat handling, choking/struggle choreography, practical prop/photo inserts, possible smoke/incense effects, simple transformation beats.",
         "night_shoots": "significant",
         "animals": true
       },
@@ -97,220 +166,154 @@
           "detail": "James Caan"
         },
         {
-          "type": "real_person",
-          "detail": "Cher"
-        },
-        {
           "type": "named_music",
-          "detail": "\"Love Will Keep Us Together\" by Captain & Tennille"
-        },
-        {
-          "type": "brand",
-          "detail": "Volkswagen Karmann Ghia"
-        },
-        {
-          "type": "brand",
-          "detail": "Prestige Productions"
-        },
-        {
-          "type": "brand",
-          "detail": "Encino Police Department"
-        },
-        {
-          "type": "ip_licensing",
-          "detail": "Historical figures and titles referenced: Cleopatra, Marc Antony, Octavian, Julius Caesar, Sekhmet, Thoth, Egyptian mythology"
+          "detail": "Love Will Keep Us Together"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Theatrical comedy or premium streaming feature with a strong genre hook",
-        "content_level": "PG-13 equivalent with mature language and sexual innuendo",
-        "series_engine_or_release_model": "Festival-to-platform or specialty theatrical release; the movie plays as a contained, high-concept feature with strong trailer moments."
+        "recommended_lane": "streaming or premium cable feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a specialty theatrical or streamer original with awards-adjacent comedy-fantasy appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The movie is mostly contained, but the period Los Angeles look, banquet sequence, Egypt epilogue, and cat/practical effects work keep it above a lean indie footprint."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Period 1975 production, multiple dressed locations, a banquet sequence, and an Egypt epilogue keep it above micro-budget but still well below effects-driven spectacle."
+      "casting": {
+        "level": "medium",
+        "note": "Daniel has to carry fast, stylized dialogue without losing emotional access, and Penelope/Mystic/Saharian all need actors who can play comedy, allure, and authority without flattening the fantasy."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The interrogation-room frame, the mythic reincarnation reveal, and the final Egypt button are all distinctive, but the script’s very specific comic register will be a taste issue for some buyers."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Adjustment Bureau",
+          "year": 2011,
+          "why_it_comps": "A romantic lead gets pulled into a metaphysical system that turns desire into destiny, with genre mechanics serving the love story."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script wants several distinctive adult roles, a strong female lead trio, and a cat that must play as a character."
+        {
+          "title": "Down with Love",
+          "year": 2003,
+          "why_it_comps": "The period-comic tone, heightened dialogue, and romantic chess match between smart adults are the closest tonal packaging neighbor."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through Encino, Santa Monica, Beverly Hills, a banquet hall, and Egypt, but most scenes are playable in controlled interiors."
+        {
+          "title": "The Love Witch",
+          "year": 2016,
+          "why_it_comps": "A stylized, female-driven occult-romance world where the pleasure is in the specificity of the aesthetic and the commitment to the bit."
         },
-        "content": {
-          "level": "medium",
-          "note": "Frequent sexual innuendo, threats, choking, and strong language shape the tone without pushing into explicit territory."
-        },
-        "rights": {
-          "level": "high",
-          "note": "Named songs, multiple real celebrities, and historical/mythological figures all appear prominently and would need careful clearance and legal review."
+        {
+          "title": "The Secret of My Success",
+          "year": 1987,
+          "why_it_comps": "An ambitious outsider navigates Hollywood power structures with comic self-invention and romantic aspiration."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like offbeat romantic fantasy with a strong comic voice and a period-Hollywood sheen.",
+        "demographics": "35-64 skew, slightly female-leaning, literate audience, streamer/specialty-theatrical friendly",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Period Los Angeles, a banquet set piece, a mansion/condo/studio footprint, and animal handling keep this in the specialty-indie range."
+      },
+      "lane_fit": {
+        "lane": "quirky prestige fantasy-romance",
+        "types_of_buyers": [
+          "specialty indie financiers",
+          "streamer original film teams",
+          "premium cable feature buyers",
+          "director-driven boutique production companies",
+          "actor-led packaging teams"
+        ],
+        "detail": "This sits naturally with buyers who want a distinctive voice piece that can travel on cast, concept, and tone rather than spectacle. The script’s value is in its oddball romantic engine and its very specific 1970s Hollywood texture."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the world is vivid, but there is no clean sequel or spinoff vector beyond this specific Daniel/Penelope/Cleo-Sekhmet story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly trailerable.",
-          "what_it_means": "A buyer can sell this on one sentence: a fussy British writer gets dragged into a cat-driven reincarnation scheme inside 1970s Hollywood. That kind of clean, high-concept engine is attractive to streamers and specialty theatrical buyers looking for a hook that reads in a thumbnail and a trailer.",
+          "dimension_or_area": "The hook is instantly ownable.",
+          "what_it_means": "A buyer can pitch this in one breath and understand the movie’s promise: romance, reincarnation, and Hollywood absurdity in a single package. That makes it unusually easy to position for a specialty buyer or a star who wants something off-center but legible.",
           "evidence": "The interrogation-room frame, the tarot reading, and the reveal that Cleopatra/Sekhmet are operating through Mystic and Princess.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Daniel is a showcase comic lead.",
-          "what_it_means": "The role gives an actor verbal precision, physical humiliation, romantic longing, and escalating disbelief all in one part. That is exactly the kind of performance package that gets reps excited because it can introduce a performer as both funny and leading-man capable.",
-          "evidence": "His posh accent, his constant self-correction, the cat-carrying slow-motion climax, and the final emotional turn toward choosing his own life.",
+          "dimension_or_area": "Daniel is a real star role.",
+          "what_it_means": "The lead has a built-in arc from comic self-importance to romantic self-possession, which is exactly the kind of transformation that can sell a feature. That gives the project a clear attachment strategy around an actor who can do verbal comedy and emotional embarrassment.",
+          "evidence": "His escalating discomfort in the interrogation room, his obsession with Penelope, and the final admission that he is exactly where he wants to be.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The female trio has real commercial snap.",
-          "what_it_means": "Penelope, Mystic/Cleo, and Saharian create a three-way engine that can attract actresses who want wit, authority, and transformation in the same movie. That gives the project a packaging advantage with female talent and helps it play beyond a single-star vehicle.",
-          "evidence": "Penelope’s executive cool, Mystic’s deadpan channeling, and Saharian’s late reveal as the lawyer who wipes the board clean.",
+          "dimension_or_area": "The tone is highly specific.",
+          "what_it_means": "The script has a voice that separates it from generic fantasy-romance material, which is valuable in a crowded market. Buyers looking for a distinctive auteur-ish commercial swing will recognize that the dialogue and framing device are the product.",
+          "evidence": "The profanity-laced detective banter against Daniel’s ornate British diction and the deadpan treatment of reincarnation and possession.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The 1975 Hollywood-Valley setting has texture.",
-          "what_it_means": "The script uses the period as a living comic ecosystem rather than wallpaper, which gives the movie a distinct visual and cultural lane. Buyers looking for a period piece that feels playful instead of prestige-heavy will see a contained world with strong production design value.",
-          "evidence": "Encino police slang, studio bungalows, Valley banter, the banquet culture, and the era-specific celebrity references.",
-          "source": "script"
+          "dimension_or_area": "The period-Hollywood texture is rich.",
+          "what_it_means": "The 1975 Valley/studio ecosystem gives the movie a visual and cultural identity that helps it feel premium without requiring giant scale. That kind of specificity is attractive to buyers who want a world that feels both nostalgic and playable.",
+          "evidence": "Encino police, studio bungalows, Valley condos, the banquet, and the Barbra Streisand/James Caan references.",
+          "source": "both"
         },
         {
-          "dimension_or_area": "The mythology is absurd but coherent.",
-          "what_it_means": "The story’s spiritual rules are weird enough to feel original, but clear enough that the audience can follow the game. That balance is valuable because it lets the film be playful without becoming random.",
-          "evidence": "The tarot cards, the “Near Life Experience,” the vessel/body-jump logic, and the Cleopatra/Sekhmet split.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The banquet set-piece is built for comedy.",
-          "what_it_means": "The climax has the kind of escalating, cross-cut chaos that can deliver big audience laughs and a memorable trailer sequence. Producers like set-pieces that combine physical comedy, romantic confusion, and a clean visual payoff.",
-          "evidence": "The round table, the poisoned water, the cat in the cage, the women in evening dresses, and the slow-motion escape through the window.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The script has a strong tonal signature.",
-          "what_it_means": "The voice is not generic studio comedy; it has a very specific, literate, self-mocking rhythm that can stand out in a crowded marketplace. That makes it attractive to buyers who want something with personality they can market as an event rather than just another rom-com.",
-          "evidence": "The narration’s faux-formal diction colliding with profanity, and the detectives’ running commentary on the story.",
+          "dimension_or_area": "The female roles are not decorative.",
+          "what_it_means": "Penelope, Mystic, and Saharian all have agency, attitude, and scene-driving power, which broadens the casting conversation and gives the movie more than one engine. That matters for buyers who want a romance that still feels female-forward and performance-rich.",
+          "evidence": "Penelope’s executive authority, Mystic’s vessel reveal, and Saharian’s late-game legal/supernatural control.",
           "source": "script"
         }
       ],
-      "headline": "This is a high-concept period comedy with a real packaging angle: a witty, self-aware lead role, a strong female trio, and a world that turns Hollywood matchmaking into ancient myth. The script’s voice is specific enough to stand out, and the banquet climax gives it the kind of set-piece payoff producers can sell in one image."
+      "headline": "This is a very sellable specialty swing: a sharply voiced, period-Hollywood fantasy-romance with a genuine star role at the center and a premise that can be pitched in one sentence. The contained production footprint, strong female supporting roles, and unmistakable tonal identity make it attractive to buyers who want something distinctive without needing tentpole scale."
     },
-    "lead_characters": [
-      {
-        "name": "Daniel Bartholomew",
-        "role_type": "Lead",
-        "demographics": "Male · 20s · British · refined, bookish, and physically out of place in 1975 Los Angeles",
-        "hook": "Daniel is a self-conscious novelist/screenwriter with a polished accent, a fragile ego, and a talent for making every situation more complicated by trying to sound intelligent. He is funny because he is always one beat behind the room, but he is also sincere enough that his romantic and spiritual confusion never feels cynical.",
-        "why_actor_wants_this": "This is the showcase territory of Hugh Grant in Four Weddings and a Funeral or Colin Firth in Bridget Jones’s Diary — a fast-talking, self-mocking lead whose charm comes from embarrassment, precision, and emotional surrender. Actors who can play verbal comedy while still landing a genuine romantic turn will chase this because it gives them a full-featured star-making lane."
-      },
-      {
-        "name": "Mystic / Cleopatra / Sekhmet",
-        "role_type": "Lead",
-        "demographics": "Female · early 20s · mixed Latin/Anglo ancestry in Mystic form; ancient Egyptian goddess presence when possessed",
-        "hook": "Mystic is all stillness and unreadable focus until the script lets Cleopatra or Sekhmet take the wheel, at which point she becomes a comic force of command, seduction, and ancient authority. The role lives in contradiction: modern, cool, and almost blank on the surface, but carrying a mythic engine underneath.",
-        "why_actor_wants_this": "This is the kind of dual-performance showcase that let Tilda Swinton in Orlando or Cate Blanchett in I’m Not There play identity as transformation rather than imitation. It gives an actor the chance to move between deadpan contemporary cool and full mythic possession, which is catnip for performers who want range inside one role."
-      },
-      {
-        "name": "Penelope Mortimer",
-        "role_type": "Lead",
-        "demographics": "Female · 50s · Hollywood executive",
-        "hook": "Penelope is a polished, high-functioning studio power player who can run a room, run a production, and still be emotionally undone by the wrong man. She has authority, vanity, and vulnerability in the same frame, which makes her feel like a real Hollywood operator rather than a stock boss.",
-        "why_actor_wants_this": "This is the kind of role Glenn Close had in Fatal Attraction or Diane Keaton in Something’s Gotta Give — a woman whose control is part of the drama and part of the comedy. Mid-career actresses looking for a smart, sexy, commanding lead with romantic stakes will see this as a prestige-comedy anchor."
-      },
-      {
-        "name": "Saharian",
-        "role_type": "Lead",
-        "demographics": "Female · 50s · Latin woman",
-        "hook": "Saharian is a flamboyant psychic who can play mystic, hustler, mother, and Hollywood fixer without ever losing her authority. She is the story’s wild-card adult, the one who can move between comic performance and real power with a single look.",
-        "why_actor_wants_this": "This is the showcase space of Whoopi Goldberg in Ghost or Bette Midler in The First Wives Club — a larger-than-life woman who can command a scene with wit, warmth, and a little danger. Character actresses who want a role with swagger, comic timing, and a late-story power reveal will be drawn to it."
-      },
-      {
-        "name": "Sunny Daye",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · charismatic, sun-kissed, teacher-athlete type",
-        "hook": "Sunny is the kind of man who seems too good to be true because he is built out of public virtue, charm, and easy confidence. He functions as the romantic object of desire and the story’s comic ideal of male availability, but he also has enough warmth to keep the triangle emotionally legible.",
-        "why_actor_wants_this": "This is the kind of part that gave John Corbett in My Big Fat Greek Wedding or Patrick Dempsey in a romantic ensemble the chance to be the appealing center of attention. A recognizable, likable male lead type will want it because it plays charm first and lets the comedy come from how much attention he attracts."
-      },
-      {
-        "name": "Detective One",
-        "role_type": "Supporting",
-        "demographics": "Male · late 30s · Caucasian",
-        "hook": "Detective One is a slovenly, profane, impatient cop who keeps trying to drag the story back to common sense and keeps losing. He is the audience’s comic pressure valve, and his irritation gives the frame its street-level bite.",
-        "why_actor_wants_this": "This is the kind of scene-stealing comic-cop territory that made actors like John Goodman or William H. Macy so useful in ensemble comedy. Character actors who can weaponize exasperation and timing will enjoy the constant friction and the steady stream of punchlines."
-      },
-      {
-        "name": "Detective Two",
-        "role_type": "Supporting",
-        "demographics": "Male · early 30s · African American",
-        "hook": "Detective Two is the cooler, more observant half of the interrogation-room duo, the one who keeps the story from collapsing into pure chaos. He has restraint, curiosity, and a dry intelligence that makes him the room’s quiet anchor.",
-        "why_actor_wants_this": "This is the kind of grounded, straight-man role that gave Laurence Fishburne in Boyz n the Hood or Don Cheadle in ensemble comedy the chance to play intelligence without overstatement. Actors who like playing the smartest person in a ridiculous room will see this as a clean, scene-efficient part."
-      },
-      {
-        "name": "Princess",
-        "role_type": "Supporting",
-        "demographics": "Female cat",
-        "hook": "Princess is not just a prop; she is the story’s physical vessel for possession, misdirection, and comic authority. The cat has to read as both adorable and slightly ominous, which is exactly why she works as a narrative hinge.",
-        "why_actor_wants_this": "Animal handlers and trainers will recognize this as a high-visibility specialty role, the kind of part that becomes memorable because the film keeps cutting back to it. The showcase is less about performance psychology and more about precise, repeatable behavior that sells the gag."
-      },
-      {
-        "name": "Patrol Man",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · police officer",
-        "hook": "Patrol Man is a functional authority figure who helps keep the interrogation-room frame moving and gives the ending its bureaucratic absurdity. He is a small but useful comic piece of the institutional machinery.",
-        "why_actor_wants_this": "This is the kind of compact utility role that working character actors like because it lands a clear beat and exits cleanly. It offers a quick, memorable turn in a movie with a strong comic ensemble."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to stage big comic behavior inside a controlled, elegant period frame.",
-        "fit_profile": "Established indie or studio-comedy directors with at least one feature under their belt, especially those who like performance-forward material with a strong visual period wrapper. The best fit is someone who enjoys tonal control, ensemble timing, and letting absurdity play straight rather than winking at it.",
-        "detail": "The material rewards a director who can keep the mythology legible while letting the banter and reversals stay loose. It also gives them a banquet set-piece, a possession comedy, and a period-Hollywood canvas without requiring action-movie scale."
-      },
-      "buyer_appeal": {
-        "tier": "$8-15M feature",
-        "lane": "Premium streaming comedy, specialty theatrical, or prestige-leaning genre comedy",
-        "detail": "It can be greenlit around a strong lead and a few recognizable supporting faces rather than a giant ensemble, which helps packaging stay efficient. The 1975 setting, celebrity references, and trailer-friendly cat/possession hook give it exportable marketing value and a clear thumbnail pitch."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The dialogue style is a taste filter.",
+          "detail": "Daniel’s ornate British patter and the detectives’ profanity-heavy banter are a big part of the movie’s identity, but they also narrow the buyer pool. Some executives will hear the voice as fresh; others will hear it as highly mannered and hard to cast around.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The mythic reveal arrives very late.",
+          "detail": "A lot of the movie’s runtime is spent in setup, explanation, and comic misdirection before the Cleopatra/Sekhmet mechanics fully click. That delay is part of the joke, but it also means the script asks for patience before the core fantasy engine pays off.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The lead role is unusually specific.",
+          "detail": "Daniel has to sell high-register comedy, romantic longing, and eventual emotional sincerity while never losing the audience inside the verbal style. That narrows casting to actors who can handle both precision and charm; a merely competent comic actor won’t carry the piece.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The period and music references need care.",
+          "detail": "The 1975 setting, the Captain & Tennille needle-drop, and the Barbra Streisand/James Caan references all help the movie’s identity, but they also create clearance and budget conversations. The script is not expensive on action, but it is specific enough that the period details matter.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The main friction is not concept — it’s taste, specificity, and patience. Buyers will respond to the hook quickly, but they’ll also immediately clock that the movie depends on a very particular comic voice and a lead who can carry a highly stylized register for the full runtime."
     },
-    "considerations": [
-      {
-        "area": "The opening frame runs long before the engine fully clicks.",
-        "detail": "The interrogation-room setup is funny and distinctive, but the script spends a lot of pages explaining the premise before the romantic engine fully takes over. One lever would be to let the Daniel/Penelope/Sunny triangle arrive a little earlier so the audience feels the story’s momentum sooner.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The rights stack is doing real work.",
-        "detail": "Barbra Streisand, James Caan, Cher, Captain & Tennille, and the named historical figures all sit prominently in the script’s texture. A producer would want to think early about whether the movie leans into those references as clearances or trims them into more flexible equivalents.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The cat is a story engine and a production variable.",
-        "detail": "Princess is central to the plot mechanics, the possession joke, and the climax, so the animal performance has to be precise and repeatable. The version of the movie where the cat’s beats are carefully simplified around a few strong, controllable moments would protect the comedy and the schedule.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The banquet sequence carries the most moving parts.",
-        "detail": "The round table, the four women, the poison gag, the body-swap chaos, and the window escape all converge in one set-piece. A next pass could consider how much of that can be staged in one primary room and one adjacent exit path, which would keep the climax clean without losing the escalation.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "Daniel’s emotional turn is the movie’s cleanest landing strip.",
-        "detail": "The final beat where he chooses to be exactly where and who he wants to be gives the comedy a real finish line. A future pass could foreground that choice a little earlier in the third act so the ending feels like a release the audience has been tracking, not just a punchline.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 75,
+  "weightedScore": 71.3,
   "tier": "Optionable",
-  "inputTokens": 47798,
-  "outputTokens": 4911,
-  "cost": 0.057948,
+  "inputTokens": 50203,
+  "outputTokens": 4515,
+  "cost": 0.05796975,
   "declaredFormat": "Feature film"
 }

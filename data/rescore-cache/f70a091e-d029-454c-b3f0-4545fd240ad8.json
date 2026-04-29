@@ -2,290 +2,320 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Fantasy drama",
-      "genre_tags": [
-        "Sports drama",
-        "Historical epic"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama",
+        "Family"
       ],
-      "tone": "Mythic, earnest, spiritually heightened, and emotionally sentimental"
+      "tone": "mythic",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "period-piece",
+        "character-driven",
+        "prestige",
+        "identity",
+        "family-dynamics",
+        "coming-of-age",
+        "native-american",
+        "football"
+      ]
     },
-    "positioning_hook": "A Lakota quarterback on the verge of college recruitment starts hearing a hawk from his past, forcing him to choose between the future he’s built and the ancestral journey calling him home.",
+    "positioning_hook": "A Lakota high school quarterback on the verge of college recruitment starts seeing his dead father’s spirit guide him through visions that tie his future to a sacred bundle lost for 143 years.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The script has a clear emotional promise: identity, inheritance, and a high-school football engine that gives it an accessible entry point. Its audience is real, especially for viewers drawn to Native-centered stories and sports drama, though the mythic structure and spiritual vocabulary make it more targeted than four-quadrant."
+        "reasoning": "The emotional engine is accessible — a gifted teen, a father-son legacy, football, and spiritual identity — but the script’s mythic register and Native-specific cosmology narrow the immediate buyer conversation. The hook is clear enough to sell, yet it plays more like a specialty prestige/family crossover than a broad four-quadrant commercial package."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The premise lands early through the opening Crow/Pawnee/Lakota prologue and then snaps into the 2011 football setting with Dakota hearing the hawk and being pulled toward the bundle. The time-spanning soul-journey is clear, though the script asks the viewer to track a lot of names and ceremonial terms."
+        "reasoning": "The premise lands early: Dakota is a Lakota teen quarterback being pulled into a spiritual inheritance tied to Ko’la, Chatan, and the missing Little Big Horn Medicine Bundle. The time-jump structure and reincarnation logic are distinctive, though the script asks the reader to track a lot of names, identities, and ceremonial context quickly."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Dakota/Ko’la gives an actor a dual-life role with pride, denial, and spiritual inheritance, and the Coach/Wach/Sage triangle adds texture around him. The central character is compelling, but most supporting players function primarily as guides, challengers, or witnesses to his path."
+        "reasoning": "Dakota has a strong contradiction — swaggering athlete on the outside, displaced foster kid underneath — and the father figure/mentor triangle gives him emotional pressure. The supporting cast is vivid, but several characters function more as spiritual or thematic conduits than fully independent engines."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a rare blend of Native myth, reincarnation, football, and a living ceremonial object that carries the story across 140 years. The opening voiceover, the Spirit Blanket, the hawk, and the winter-count logic give the piece a confident identity that doesn’t feel assembled from standard genre parts."
+        "reasoning": "The script commits to a rare blend of Native myth, sports drama, reincarnation, and ceremonial stakes, and it does so without apologizing for its own worldview. The opening Crow/Pawnee/Lakota prologue and the modern football material create a bold tonal and narrative collision that feels ownable."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The story has a strong forward pull whenever Dakota is confronted by the hawk, the flute, or the recruitment pressure, and the final game sequence gives it a clean climax. Between those anchors, the script leans on montage and explanatory transitions, which keeps the drive steady rather than relentless."
+        "reasoning": "The script has strong forward motion in the football sequences and the ceremonial deadline, but the long mythic prologue and repeated explanatory passages slow the engine between major turns. The final act escalation is clear, yet the middle relies heavily on exposition and spiritual explanation rather than fresh dramatic reversals."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A Native teen quarterback whose ancestral past literally interrupts his present is a fresh, immediately legible engine. The idea that a soul can be tracked through a medicine bundle, a hawk, and a football field gives the script that rare feeling of being both strange and inevitable."
+        "reasoning": "The core idea — a Native quarterback whose identity is literally split across past and present lives — is fresh and immediately legible once it clicks. The medicine bundle, the hawk, the flute, and the football field all feel like parts of one symbolic system rather than decorative add-ons."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The ceremonial world has specific objects, rituals, and social rules: winter counts, medicine bundles, the Nagi Gluhapi ceremony, Bear Butte, and the Little Big Horn history. The contemporary reservation/high-school world is thinner than the mythic one, but the cultural framework is vivid enough to feel story-generating."
+        "reasoning": "The world has real texture: tribal ceremony, winter counts, medicine bundles, reservation politics, foster care, and the social hierarchy of a high school football team. It’s story-generating and specific, though the script is more interested in mythic explanation than in letting the world reveal itself through lived-in behavior."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The tone is unmistakably earnest and spiritually elevated, with bursts of humor in Dakota’s denial and the football banter. It’s not trying to be ironic; it’s trying to make myth feel present-tense, and that gives it a distinct lane."
+        "score": 8,
+        "reasoning": "This has a highly specific tonal identity: earnest, spiritual, and occasionally playful, with a pop-culture football surface sitting on top of a sacred-history frame. The Free Bird chant, the hawk visions, and the ceremonial language create a tone that is hard to mistake for anything else."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the surface quest is a story about memory, adoption, cultural continuity, and the cost of being separated from one’s people. The script only begins to open those layers in the present-day material, but the premise clearly contains more emotional and historical depth than the first pass fully spends."
+        "reasoning": "There are real layers here around identity, inheritance, adoption/foster displacement, and cultural memory, and the script clearly wants the bundle to function as a larger symbolic object. The depth is present, but much of it is stated directly through voiceover rather than dramatized through subtext."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "Dakota’s relationships with Wach, Sage, Coach Marshall, Carmen, and Curly all serve the central journey, and the Coach/Dakota dynamic has the strongest recurring energy. The ensemble is functional and personable, but the story still lives primarily on Dakota’s shoulders."
+        "score": 6,
+        "reasoning": "Dakota/Chatan/Wach/Sage/Curly create a workable relationship web, and the football team adds social pressure, but the script still lives primarily on Dakota’s shoulders. The supporting relationships are useful and colorful, though not yet dense enough to generate endless independent scenes."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Dakota",
+        "role_type": "Lead",
+        "demographics": "Male, 18, full-blooded Lakota, high school quarterback, foster-care background, Native identity central to the story.",
+        "hook": "A charismatic, defensive, deeply wounded teen who performs confidence like a brand while privately carrying abandonment, cultural dislocation, and a spiritual inheritance he doesn’t yet trust. He’s the kind of lead who can sell swagger, shame, and awakening in the same scene, and the script keeps testing whether he is an athlete, a vessel, or both.",
+        "why_actor_wants_this": "This is the showcase territory of a young Chalamet or Justice Smith-type performance — a role that asks for charm, physicality, comic denial, and a slow emotional reveal. It gives an actor the chance to play public confidence cracking open into identity crisis and spiritual recognition."
+      },
+      {
+        "name": "Chatan Running Sky",
+        "role_type": "Supporting",
+        "demographics": "Male, 36, full-blooded Lakota, father figure / spiritual guide, deceased by the present-day frame.",
+        "hook": "Dakota’s dead father and the story’s emotional bridge between the modern world and the ceremonial past. He functions as both a literal parent and a mythic narrator, carrying the burden of truth, legacy, and unfinished duty with quiet authority.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas of a Mahershala Ali or Delroy Lindo performance — presence, warmth, and authority with minimal screen time. The appeal is in making every appearance feel like a revelation and every line feel inherited."
+      },
+      {
+        "name": "Wach",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-20s, full-blooded Lakota, ceremonial insider, emotionally direct.",
+        "hook": "A grounded, practical believer who translates the spiritual mission into human terms and keeps the story from floating away entirely into myth. She’s warm, capable, and quietly frustrated by Dakota’s resistance, which gives her real scene energy.",
+        "why_actor_wants_this": "This is strong supporting territory in the mold of a Lily Gladstone or Amber Midthunder performance — contained, intelligent, emotionally legible, and not there to over-explain herself. It offers the chance to play steadiness with an undercurrent of hurt and faith."
+      },
+      {
+        "name": "Sage",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s, full-blooded Lakota, older brother / mentor energy, rugged and irreverent.",
+        "hook": "A loose, amused, slightly battered adult presence who knows the family history and can puncture Dakota’s self-seriousness without losing affection. He gives the story humor, friction, and a lived-in sense of community.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the dry, lived-in authority of a Walton Goggins or Zahn McClarnon supporting turn — funny, watchable, and emotionally specific. It’s a scene-stealer part with real texture."
+      },
+      {
+        "name": "Thunderhead",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s to late 30s, Pawnee war chief, scarred, physically imposing.",
+        "hook": "A formidable antagonist in the historical frame whose pride and ritual authority make him more than a simple villain. He’s dangerous, ceremonial, and memorable, with a strong visual signature and a clear emotional code.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the physical menace and mythic authority of a Wes Studi or Graham Greene performance. It’s a compact but striking part with strong iconography and a few high-impact scenes."
+      },
+      {
+        "name": "Ko’la",
+        "role_type": "Supporting",
+        "demographics": "Male, 5 to 14 across the historical frame, Crow child, spiritually gifted, later identified with Dakota.",
+        "hook": "The child incarnation of Dakota’s soul, carrying the story’s innocence, destiny, and symbolic continuity. He’s not written as a generic child; he’s an old-soul vessel whose stillness and intuition are the point.",
+        "why_actor_wants_this": "For a young performer, this is the kind of role that recalls the haunting specificity of Jacob Tremblay in Room — a child part with unusual interiority and symbolic weight. It gives a young actor a chance to play stillness, wonder, and spiritual authority."
+      },
+      {
+        "name": "Curly",
+        "role_type": "Supporting",
+        "demographics": "Male German shepherd, companion animal, spiritually linked to the story.",
+        "hook": "More than a pet, Curly functions as comic relief, emotional witness, and a conduit for the Great Warrior imagery. The dog becomes a recurring bridge between the mundane and the mythic, which gives the script a memorable visual and tonal device.",
+        "why_actor_wants_this": "This is a rare animal-supporting role with real story function, the kind that can become a signature element if cast and trained well. It offers the kind of audience affection that often lands with family and crossover viewers."
+      },
+      {
+        "name": "Betty Burkhart",
+        "role_type": "Supporting",
+        "demographics": "Female, 17, white Irish-accented frontier character in the historical frame.",
+        "hook": "A sharp, lively historical supporting character who arrives with immediate personality and a strong voice. She’s memorable because she cuts through the solemnity and gives the period material a human, slightly mischievous edge.",
+        "why_actor_wants_this": "This is the sort of compact, scene-forward role that can give a young actor the same kind of breakout flavor as a standout turn in a period indie. The accent, wit, and physicality make it pop."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 10,
-        "leads": 4,
+        "speaking_roles": 12,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Native American leads and principal roles",
-          "Multiple age ranges for the same soul/identity across time",
-          "Animal performer for hawk and dog",
-          "Athletic teen quarterback casting",
-          "Some roles require Lakota and Pawnee language/subtitles"
+          "Native and Lakota identity is central for multiple roles",
+          "Child version of Ko’la required",
+          "Dog performer required for Curly",
+          "Athletic quarterback casting with strong physical presence",
+          "Historical roles require age-spanning casting across multiple time periods"
         ]
       },
       "locations": {
-        "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly exterior",
-        "period_or_contemporary": "Both period and contemporary",
+        "distinct_count": 10,
+        "interior_exterior_ratio": "mostly exterior",
+        "period_or_contemporary": "both contemporary and period (1867-1877 historical frame plus 2011 present-day frame)",
         "notable_requirements": [
-          "1867-1877 prairie and village settings",
-          "Contemporary high school, diner, stadium, and reservation locations",
-          "Remote outdoor landscapes",
-          "Period costume and production design"
+          "South Dakota prairie and tribal land exteriors",
+          "football stadium and school settings",
+          "reservation/community dining and ceremony spaces",
+          "historical camp and battlefield-style prairie locations"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Spirit/hawk morphing, smoke visions, celestial effects, and some stylized supernatural transitions.",
+        "vfx_details": "Spirit hawk imagery, smoke morphs, vision effects, meteor shower, and stylized spiritual transitions between historical and contemporary frames.",
         "stunts_level": "minor",
-        "sfx_needs": "Fire arrows, fireworks, smoke, practical blood/gash effects, ceremonial fire imagery.",
+        "sfx_needs": "Fire arrows, smoke, fireworks, practical blood/gash makeup, ceremonial fire elements, and animal handling for hawk and dog beats.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Lynyrd Skynyrd's 'Free Bird' is repeatedly sung and referenced."
+          "detail": "Lynyrd Skynyrd's 'Free Bird' is repeatedly named, sung, and used as a story beat."
         },
         {
           "type": "brand",
-          "detail": "Cell phone, tablet, Air Force photo, and football branding elements appear in the contemporary material."
+          "detail": "Cell phone, tablet, ear buds, and football-recruitment culture are present, but no single brand is central enough to drive a clearance issue."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming feature or prestige indie theatrical",
-        "content_level": "PG-13 equivalent to mature",
-        "series_engine_or_release_model": "Festival-to-platform or specialty theatrical release; the feature engine is a mythic coming-of-age quest with sports and cultural identity appeal."
+        "recommended_lane": "streaming theatrical crossover / prestige family-drama fantasy",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with specialty theatrical potential and strong streaming afterlife"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script spans two time periods, multiple prairie and ceremony settings, football-field work, animal handling, and moderate spiritual VFX. It’s not a contained indie, but it also doesn’t require tentpole-scale spectacle if the historical material is scoped carefully."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The contemporary football material is manageable, but the period prairie sequences, remote locations, animals, and supernatural imagery move it above a lean indie."
+      "casting": {
+        "level": "high",
+        "note": "Dakota has to carry athletic charisma, emotional vulnerability, spiritual ambiguity, and Native specificity, while the supporting cast also needs credible Lakota/Pawnee presence across both historical and contemporary frames. The lead search is the buy-defining lift."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The mythology is distinctive, but the script asks the audience to absorb reincarnation rules, ceremonial stakes, and a large amount of explanatory voiceover very quickly. The main development conversation is clarity, not premise."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Smoke Signals",
+          "year": 1998,
+          "why_it_comps": "Shares the Native-centered point of view, the blend of humor and identity, and the sense that cultural specificity is the commercial asset rather than the obstacle."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The project depends on Native leads, a believable teen quarterback, and supporting adults who can carry both realism and ceremonial authority."
+        {
+          "title": "The Rider",
+          "year": 2017,
+          "why_it_comps": "Matches the grounded Native youth/identity lane and the emotional weight of a young man trying to define himself against inherited pain and community expectation."
         },
-        "location": {
-          "level": "high",
-          "note": "The script spans 1867-1877 and 2011, with prairie, village, canyon, reservation, diner, and stadium settings across multiple eras."
+        {
+          "title": "Field of Dreams",
+          "year": 1989,
+          "why_it_comps": "Comps on the spiritual inheritance and father-son legacy mechanics, with the same emotional promise of a mythic force entering an ordinary American landscape."
         },
-        "content": {
-          "level": "medium",
-          "note": "The material includes violence, death, blood, spiritual imagery, and some profanity, but stays within a broadly accessible PG-13-to-mature lane."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The script names 'Free Bird' and uses recognizable institutional and brand elements in the contemporary sections."
+        {
+          "title": "The Green Knight",
+          "year": 2021,
+          "why_it_comps": "Not for budget scale, but for the mythic, symbolic, quest-like storytelling that treats identity and destiny as a visual and spiritual journey."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults and older teens drawn to culturally specific prestige dramas with a spiritual edge, plus sports audiences open to emotional, identity-driven storytelling.",
+        "demographics": "18-54, slightly female-skewing in prestige lanes but with real male teen/young adult sports appeal; strongest with audiences that respond to Native representation, coming-of-age drama, and inspirational family viewing.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Two time periods, prairie exteriors, football sequences, animal work, and moderate VFX keep this above micro, but the scale remains controllable without large set-piece spend."
+      },
+      "lane_fit": {
+        "lane": "prestige Native coming-of-age fantasy-drama",
+        "types_of_buyers": [
+          "specialty distributors looking for awards-adjacent identity storytelling",
+          "streamer originals teams building culturally specific prestige lanes",
+          "indie producers with Native representation mandates",
+          "director-driven financiers looking for a visually distinctive, emotionally accessible feature"
+        ],
+        "detail": "The script sits naturally in a lane where cultural specificity is the selling point and mythic storytelling is the differentiator. The football frame broadens the entry point, while the spiritual material gives it a memorable identity beyond a standard sports drama."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the story is built around Dakota/Ko’la’s singular journey and does not present a clean spinoff vector with a separate supporting character or universe branch."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise fuses Native myth with sports drama.",
-          "what_it_means": "That combination gives the project a clean commercial lane: a culturally specific coming-of-age story with a built-in audience hook and a clear emotional engine. It will attract buyers looking for prestige identity material, and actors who want a role that plays heroism, denial, and spiritual awakening in one package.",
-          "evidence": "Dakota’s 2011 football life collides with Chatan’s voiceover, the hawk visions, and the Little Big Horn bundle quest.",
+          "dimension_or_area": "A Native myth engine with a sports surface",
+          "what_it_means": "This gives the project a commercial wrapper that can reach viewers who might not normally seek out ceremonial or historical material. It creates a clear lane for buyers who want culturally specific prestige with an accessible entry point.",
+          "evidence": "The script cuts between Lakota spiritual inheritance, the Little Big Horn bundle, and Dakota’s football recruitment day.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Dakota/Ko’la is a showcase lead.",
-          "what_it_means": "The role gives a performer a dual identity, a public swagger, and a private spiritual burden, which is exactly the kind of part that can define a breakout turn. Young Native actors and prestige-minded casting directors will see a rare lead that is both physically active and emotionally symbolic.",
-          "evidence": "Dakota’s birthday diner scene, his denial of the ceremony, and the final game sequence all play his split between performance and destiny.",
+          "dimension_or_area": "Dakota is a real star-making lead role",
+          "what_it_means": "The role combines swagger, denial, vulnerability, and physical action, which is exactly the kind of part that can launch or reframe a young actor. That makes the package more attractive to casting-driven buyers and director-led financiers.",
+          "evidence": "His birthday prank denial, the football-field bravado, and the moment he finally recognizes the spiritual truth all play different facets of the same character.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Spirit Blanket is a strong story object.",
-          "what_it_means": "A single prop carrying memory, protection, and plot function gives the movie a memorable visual anchor and a clean marketing image. Buyers and producers respond to objects that can organize a whole narrative, and this one does that while staying rooted in cultural meaning.",
-          "evidence": "The blanket protects Ko’la from arrows, maps his soul journey, and becomes part of Dakota’s present-day call.",
+          "dimension_or_area": "The hawk/flute/bundle imagery is memorable",
+          "what_it_means": "The script has a strong visual symbol system, which helps marketing, poster design, and audience recall. Buyers like projects that can be summarized in one image, and this one has several.",
+          "evidence": "The red-tailed hawk, Ko’la’s flute, the spirit blanket, and the medicine bundle recur as linked icons across timelines.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The hawk gives the film a signature visual motif.",
-          "what_it_means": "The recurring hawk creates a repeatable cinematic language that can unify the historical and contemporary timelines without heavy exposition. Directors who like symbolic imagery and audiences who respond to clear visual motifs will both latch onto it.",
-          "evidence": "Red Hawk appears in the opening prologue, the football field visions, and the final transition to Mato Paha.",
+          "dimension_or_area": "It bridges family viewing and prestige tone",
+          "what_it_means": "The content sits in a lane that can play to adults without shutting out younger viewers, which expands the release conversation. That makes it attractive to streamers and specialty distributors looking for emotionally elevated but not alienating material.",
+          "evidence": "The story centers on fatherhood, inheritance, ceremony, football, and a teen protagonist rather than adult cynicism or graphic content.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The football setting makes the climax legible.",
-          "what_it_means": "The final game gives the supernatural material a grounded, crowd-pleasing arena where the stakes are instantly understood. That makes the script easier to package than a purely mystical drama because the audience always has a concrete scoreboard to follow.",
-          "evidence": "The fourth-quarter drive, the recruitment pressure, and the touchdown sequence provide the ending’s physical and emotional payoff.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ceremonial world feels specific and lived-in.",
-          "what_it_means": "Winter counts, medicine bundles, the Nagi Gluhapi ceremony, and Bear Butte give the film a cultural texture that can’t be swapped out for generic spirituality. That specificity is attractive to prestige buyers and to audiences hungry for Native stories told from inside the worldview.",
-          "evidence": "Wach’s explanation of the ceremony, Sage’s mention of the Pasu, and the Little Big Horn bundle ritual all build the world.",
+          "dimension_or_area": "The historical prologue gives the film scale",
+          "what_it_means": "The 1867-1877 material adds sweep and mythic weight without requiring a giant modern-world canvas. That can make the project feel larger than its budget if the period material is handled with discipline.",
+          "evidence": "The Crow village opening, Little Big Horn bundle sequence, and the final sacrifice all give the story a historical spine.",
           "source": "script"
         }
       ],
-      "headline": "This is a rare feature package: a Native coming-of-age myth with a sports-movie spine, a visually memorable spiritual object, and a lead role built for an actor to own. The script’s biggest asset is that it never asks you to choose between cultural specificity and commercial readability — the football field, the hawk, and the bundle all pull in the same direction."
+      "headline": "This is a culturally specific prestige feature with a built-in commercial bridge: football gets you in the door, Native myth gives it identity, and Dakota is a legitimate star-making lead. The package feels especially attractive for a streamer or specialty buyer that wants emotional uplift, visual signature, and a contained-enough production footprint to stay inside an indie budget band."
     },
-    "lead_characters": [
-      {
-        "name": "Dakota / Ko’la / Chatan Running Sky",
-        "role_type": "Lead",
-        "demographics": "Male · 18 playing 5-36 across the soul timeline · Full-blooded Lakota",
-        "hook": "A swaggering high-school quarterback with a politician’s smile and a deep instinct to perform, Dakota is also the reincarnated Ko’la, carrying a buried ceremonial destiny he keeps trying to turn into a joke. He’s funny, defensive, athletic, and spiritually porous — the kind of lead who can sell a crowd one minute and be quietly undone by a hawk the next.",
-        "why_actor_wants_this": "This is the showcase territory of Michael B. Jordan in Fruitvale Station or Timothée Chalamet in Bones and All — a young lead whose charisma is inseparable from inner fracture. The role gives an actor physical command, emotional denial, and a mythic identity reveal, which is exactly the kind of part that can reframe how the industry sees a rising star."
-      },
-      {
-        "name": "The Great Warrior",
-        "role_type": "Lead",
-        "demographics": "Male · 30s to 40s · Lakota",
-        "hook": "A stoic, self-contained protector whose authority comes from restraint rather than speech, the Great Warrior is the adult anchor of the historical timeline. He reads as a man who understands duty as a burden and tenderness as something he only shows in fragments, which makes his bond with Ko’la feel earned rather than sentimental.",
-        "why_actor_wants_this": "This is the showcase space of Wes Studi in Hostiles or Graham Greene in Dances with Wolves — a role built on stillness, moral gravity, and the power of withholding. Character actors with command and presence will chase it because the part lets them play fatherhood, discipline, and spiritual authority without ever overexplaining itself."
-      },
-      {
-        "name": "Thunderhead",
-        "role_type": "Lead",
-        "demographics": "Male · late 20s to late 30s · Pawnee",
-        "hook": "Thunderhead is a scar-faced force of pride and ritual violence, a warrior whose identity is fused to a sacred tomahawk and whose respect is hard-won. He’s not a cartoon antagonist; he’s a man whose pride, humiliation, and eventual recognition of Ko’la give the historical material its tension and danger.",
-        "why_actor_wants_this": "This is the kind of role that lives in the territory of Javier Bardem in No Country for Old Men or Michael Shannon in Take Shelter — a presence defined by intensity, ritualized behavior, and the possibility of sudden shift. Actors who specialize in controlled menace and emotional volatility will see a meaty, scene-stealing part here."
-      },
-      {
-        "name": "Chatan Running Sky",
-        "role_type": "Lead",
-        "demographics": "Male · 30s to 40s · Full-blooded Lakota",
-        "hook": "As the voice guiding the audience through the story, Chatan is both father-figure and spiritual narrator, a man whose authority comes from memory, loss, and a final act of service. He’s the bridge between eras, and the script gives him the rare dignity of being the keeper of the truth without turning him into a lecture machine.",
-        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in Green Book or Jeffrey Wright in The Last of Us — a role where calm authority, grief, and moral clarity do the heavy lifting. Actors who can carry warmth and gravitas at once will want it because the narration is not decorative; it is the emotional spine of the film."
-      },
-      {
-        "name": "Wach",
-        "role_type": "Supporting",
-        "demographics": "Female · mid-20s · Full-blooded Lakota",
-        "hook": "Wach is bright, direct, and ceremonially fluent, the kind of person who can translate sacred obligation into plain language without losing its weight. She’s affectionate but not soft, and her mix of patience and urgency makes her the story’s clearest present-day guide.",
-        "why_actor_wants_this": "This is the showcase territory of Amber Midthunder in Prey or Lily Gladstone in Certain Women — a role that balances grounded intelligence with cultural authority. Native actresses looking for a contemporary part with warmth, competence, and emotional clarity will be drawn to it."
-      },
-      {
-        "name": "Sage",
-        "role_type": "Supporting",
-        "demographics": "Male · late 30s · Full-blooded Lakota",
-        "hook": "Sage is dry, amused, and a little rough around the edges, the kind of older brother energy that can puncture Dakota’s self-mythology with one line. He feels lived-in and local, giving the present-day material a skeptical, human counterweight to the ceremony talk.",
-        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Justified or Zahn McClarnon in Reservation Dogs — a role where wit, weariness, and emotional intelligence all sit in the same frame. Character actors who can make a supporting part feel indispensable will want this because the dialogue gives them room to land attitude and affection at once."
-      },
-      {
-        "name": "Coach Marshall",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · African American",
-        "hook": "Coach Marshall is a loud, charismatic football lifer who talks like a preacher and coaches like a salesman, but he genuinely believes in Dakota’s talent. He’s the movie’s pressure valve and hype engine, a man who turns football strategy into a moral lesson whether anyone asked for one or not.",
-        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Remember the Titans or J.K. Simmons in Whiplash — a larger-than-life authority figure whose voice and rhythm are half the performance. Actors with command, comic timing, and emotional force will chase it because the part can steal scenes without leaving the movie’s lane."
-      },
-      {
-        "name": "Curly",
-        "role_type": "Supporting",
-        "demographics": "Male dog · athletic German shepherd",
-        "hook": "Curly is more than a pet; he’s Dakota’s companion, warning system, and comic foil, with a personality that seems to know more than the humans around him. The flute around his neck and the repeated hawk/warrrior transformations make him a playful but meaningful bridge between worlds.",
-        "why_actor_wants_this": "This is the kind of animal role that functions like the emotional center of a family adventure, similar to the companion energy in The Artist or A Dog’s Purpose. Trainers, producers, and family-facing buyers will see a memorable screen animal that can become a marketing image as much as a story device."
-      },
-      {
-        "name": "Betty Burkhart",
-        "role_type": "Supporting",
-        "demographics": "Female · 17 · White/Irish",
-        "hook": "Betty arrives upside down over Ko’la with a thick Irish accent, page-boy haircut, and the confidence of someone who can make danger sound like hospitality. She’s vivid, funny, and slightly chaotic, the kind of supporting character who instantly expands the world around her.",
-        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Brooklyn or Florence Pugh in Lady Macbeth — a role that lets an actor be charming, odd, and memorable in very little time. Young actresses who like a scene-stealing supporting turn will chase it because the voice and entrance do so much of the work."
-      },
-      {
-        "name": "Carmen",
-        "role_type": "Supporting",
-        "demographics": "Female · late teens · Hispanic",
-        "hook": "Carmen is warm, perceptive, and more emotionally self-aware than Dakota is ready for, which gives their exchange a lived-in awkwardness. She reads as someone who understands the social code around him and can name it without cruelty.",
-        "why_actor_wants_this": "This is the showcase territory of America Ferrera in Real Women Have Curves or Xochitl Gomez in a grounded teen drama — a role that gets to be emotionally clear without becoming a stereotype. Young actresses who want a grounded, contemporary supporting part with a real point of view will respond to it."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to stage myth as lived reality, not fantasy decoration.",
-        "fit_profile": "Established indie directors with at least one or two character-driven features, plus TV directors moving into features who already have a strong visual grammar for memory, identity, and performance-forward storytelling. The material rewards filmmakers who care about cultural specificity, controlled visual symbolism, and emotional sincerity over spectacle for its own sake.",
-        "detail": "The script gives a director a chance to braid two time periods, spiritual imagery, and a sports climax without losing the human center. It especially suits a filmmaker who can make ceremonial detail feel tactile and who knows how to keep a mythic premise emotionally legible."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Prestige indie / streamer original / specialty theatrical",
-        "detail": "The project can be packaged around a strong Native lead and a director with a visual reel, rather than requiring a giant ensemble or heavy star stack. The Native identity angle, sports hook, and festival-friendly cultural specificity give it both awards-season positioning and a clear streaming discovery lane."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The opening prologue carries a lot of exposition.",
+          "detail": "The Crow/Pawnee/Lakota opening is visually striking, but it spends a long stretch explaining cosmology, destiny, and the medicine bundle before the present-day story fully arrives. That makes the first buying conversation more about patience and trust than immediate propulsion.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The voiceover does much of the dramatic lifting.",
+          "detail": "Chatan/Hawk narrates a large share of the mythology, emotional meaning, and plot logic, which reduces the amount of information the audience discovers through action. Buyers will notice that the script often tells the audience what a scene means before the scene itself can land it.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Dakota’s spiritual logic is still highly conditional.",
+          "detail": "The reincarnation structure, the Ko’la/Dakota identity bridge, and the hawk visions are compelling, but they require the audience to accept a lot of metaphysical rules quickly. That can be a strength in the right lane, but it narrows the buyer pool to teams comfortable with overt mythic storytelling.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The historical and contemporary frames compete for attention.",
+          "detail": "The script is trying to be both an origin myth and a present-day coming-of-age sports story, and the balance between those lanes is not yet neutral. A producer will flag the risk that one frame becomes the real movie while the other becomes explanation.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The football climax depends on a very specific tonal buy-in.",
+          "detail": "The game sequences mix earnest sports drama, spiritual intervention, and broad crowd behavior like the Free Bird chant, which is memorable but also idiosyncratic. That tonal blend is a feature for some buyers and a friction point for others who want a cleaner sports or family lane.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is clarity versus mythic ambition: the script has a strong symbolic system, but it asks the audience to do a lot of interpretive work before the present-day engine fully takes over. The other buyer conversation is tonal — the football/fantasy blend is distinctive, but it’s specific enough that not every distributor will know where to place it immediately."
     },
-    "considerations": [
-      {
-        "area": "The opening prologue carries a lot of explanatory weight.",
-        "detail": "The 1867 sequence establishes the mythology, the Circle concept, the hawk, Thunderhead, and Ko’la’s origin in one stretch. One lever would be to let one or two of those ideas arrive through action or image later, so the audience can discover the rules in motion rather than all at once.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The present-day cast can be streamlined around Dakota.",
-        "detail": "Wach, Sage, Carmen, Coach Marshall, and Curly all do useful work, but the movie’s emotional center is still Dakota’s collision with his past. A next pass could consider which present-day relationships need independent scenes and which can be folded into fewer encounters without changing the story engine.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The ceremonial vocabulary asks for a clean entry point.",
-        "detail": "Terms like winter count, Pasu, Nagi Gluhapi, and the Little Big Horn bundle give the world texture, but they arrive quickly and in clusters. The version of the script where one key term becomes the audience’s anchor first would make the rest of the language land with even more confidence.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The period footprint is the biggest production lift.",
-        "detail": "The story moves between 1867-1877 prairie material and a 2011 contemporary football world, which means two distinct production modes, costumes, and design languages. A simplification lever would be to protect the historical scope while keeping the number of distinct period settings as concentrated as possible.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The football climax is the cleanest commercial anchor.",
-        "detail": "The final game gives the script a readable, crowd-pleasing set piece that can sell the movie to non-specialty buyers. That ending is also the best place to market the film in trailers, because the scoreboard, the hawk, and Dakota’s identity crisis all converge in one sequence.",
-        "is_primary_lever": false,
-        "source": "both"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 64.7,
+  "weightedScore": 68,
   "tier": "Optionable",
-  "inputTokens": 21859,
-  "outputTokens": 5014,
-  "cost": 0.03895725,
+  "inputTokens": 24264,
+  "outputTokens": 4830,
+  "cost": 0.039932999999999996,
   "declaredFormat": "Feature film"
 }

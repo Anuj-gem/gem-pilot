@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T04:54:32.634Z",
+  "submission_id": "bf1042d8-f226-4fb3-b3a0-dfb9a8a9daee",
+  "eval_id": "1a03184b-2e22-40d3-966c-c437984a84e1",
+  "title": "read this one",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Lucia Del Rico",
+      "role_type": "Lead",
+      "demographics": "Woman, early 30s, FBI agent; Latina; emotionally guarded, work-obsessed, carrying unresolved childhood trauma."
+    },
+    {
+      "name": "Dale Cole",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s, FBI agent; older, world-weary, nearing retirement."
+    },
+    {
+      "name": "Captain Watson",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, FBI station chief; polished, commanding, institutionally powerful."
+    },
+    {
+      "name": "Henry Dodson",
+      "role_type": "Supporting",
+      "demographics": "Man, middle-aged, ex-convict; physically ordinary, increasingly unstable, later revealed as part of the system."
+    },
+    {
+      "name": "James White",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, ex-convict and support-group attendee; emotionally open, lonely, vulnerable."
+    },
+    {
+      "name": "Hope",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s-40s, suburban homeowner; controlled, eerie, physically precise."
+    },
+    {
+      "name": "Lear",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s-40s, suburban homeowner; polished, deferential, increasingly monstrous."
+    }
+  ],
+  "positioning_hook": "An FBI surveillance agent chasing missing ex-cons in Silver Lake stumbles into a comet-fueled conspiracy, a hidden basement dungeon, and the possibility that her own childhood disappearance was never what she believed.",
+  "cost_usd": 0.05189325,
+  "input_tokens": 41249,
+  "output_tokens": 4657,
+  "status": "wrote:leads_ok"
+}

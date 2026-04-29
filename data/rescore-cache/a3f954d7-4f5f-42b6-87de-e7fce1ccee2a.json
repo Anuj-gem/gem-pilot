@@ -3,275 +3,288 @@
     "classification": {
       "format": "Feature film",
       "genre_primary": "Horror",
-      "genre_tags": [
-        "psychological thriller",
-        "supernatural"
+      "genre_secondary": [
+        "Mystery",
+        "Drama"
       ],
-      "tone": "gritty, oppressive, tragic, escalating"
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "family-dynamics",
+        "grief",
+        "mental-health",
+        "possession",
+        "prestige",
+        "character-driven",
+        "period-piece",
+        "high-concept",
+        "miniatures"
+      ]
     },
-    "positioning_hook": "A grieving miniaturist’s family unravels after her daughter’s death, as the house itself becomes a trap for a hereditary possession that turns guilt into ritual.",
+    "positioning_hook": "A grief-stricken miniature artist starts seeing her dead mother in the house she built, and a family tragedy turns into a possession nightmare that rewrites who in the Graham family is being inhabited.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 8,
-        "reasoning": "The premise is immediately legible and highly sellable: a family grief story that detonates into supernatural horror, with a clear emotional spine and a memorable visual identity. The funeral, the support group, the miniature art, and the possession escalation give it broad genre appeal with strong word-of-mouth potential."
+        "reasoning": "The premise has a clean, high-recognition horror engine with a strong emotional spine: bereavement, family fracture, and escalating supernatural dread. The hook is easy to sell from the funeral-home opening through the seance and the final possession reveal, and it has obvious genre-audience pull."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The hook lands early and cleanly: a mother who builds miniatures is forced to confront a death in the family that may be tied to a demonic inheritance. The script keeps the engine clear through Annie’s workshop, Charlie’s behavior, the seance material, and the final reveal."
+        "reasoning": "The script announces its concept immediately with the miniature house motif, the funeral, and Charlie’s uncanny behavior. By the time Annie finds the seance material and the sigil, the audience understands the engine: grief, occult manipulation, and a family being pulled toward a hidden ritual."
       },
       "character_appeal_and_long_term_potential": {
         "score": 8,
-        "reasoning": "Annie is a loaded lead role built on grief, control, artistry, and denial, and Peter’s collapse gives the story a second emotional center. Steve and Charlie are also sharply usable, with the family dynamic generating strong scene-to-scene tension."
+        "reasoning": "Annie is a loaded lead: artist, mother, skeptic, and someone whose control issues are inseparable from her grief. Steve and Peter are also sharply usable, especially in the dinner-table blowup and Peter’s guilt spiral after the accident, which gives the cast real acting territory."
       },
       "creative_originality_and_boldness": {
         "score": 9,
-        "reasoning": "The miniature motif is not decorative; it becomes the script’s governing language, from Annie’s art to the house-as-diorama reveal to the final image. The story commits hard to a tragic, occult-family nightmare and keeps finding new ways to make the domestic space feel authored by something larger."
+        "reasoning": "The miniature-house visual grammar is unusually specific and gives the film its own identity from page one. The script commits hard to a slow-burn domestic horror register that keeps turning ordinary family spaces into ritual objects, which is a confident and distinctive choice."
       },
       "narrative_momentum_engagement": {
-        "score": 9,
-        "reasoning": "The script escalates with real force: funeral unease, family fracture, seance discovery, possession events, attic reveal, and then a relentless final movement into the treehouse ritual. Each turn adds pressure and the ending lands with the kind of inevitability that makes the whole piece feel engineered."
+        "score": 8,
+        "reasoning": "The script keeps tightening the noose: funeral, odd signs, support group, seance, accident, possession, revelation. The second half becomes especially propulsive once the family realizes the curse is active and the story starts moving toward the attic/treehouse endgame."
       },
       "resonant_originality": {
         "score": 9,
-        "reasoning": "It feels fresh because the supernatural mechanics are fused to a very specific family psychology and a very specific visual system. The miniature house, the inherited symbols, and the possession lineage create a premise that feels both strange and instantly coherent."
+        "reasoning": "It feels fresh because the supernatural reveal is embedded in a painfully specific family drama rather than bolted onto it. The miniature art, the inherited occult history, and the final body-switching ritual all click together in a way that feels both surprising and inevitable."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The world is rich with tactile detail: the workshop, the school, the support group, the occult books, the attic, the treehouse, and the ritual objects all feel story-bearing. The script also gives the family home a lived-in institutional and emotional history that deepens the horror."
+        "reasoning": "The house, workshop, treehouse, support group, school, and Joan’s apartment all feel story-generating and thematically linked. The occult iconography, family history, and handmade objects create a dense world with rules and visual memory."
       },
       "tonal_specificity": {
         "score": 9,
-        "reasoning": "The tone is unmistakable: domestic realism, grief comedy, and occult dread are braided together without losing control of the register. The script can move from awkward family dinner to body-horror possession to ritual apocalypse and still feel of one piece."
+        "reasoning": "The tone is unmistakable: intimate domestic realism colliding with ritualistic dread and grotesque supernatural imagery. The film knows exactly when to be quiet, when to be emotionally raw, and when to go full nightmare."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "Beneath the horror engine is a deeper story about maternal ambivalence, inherited trauma, and the terror of family identity. The support group, the sleepwalking history, and the mother-daughter lineage all suggest a much larger emotional architecture than the plot initially advertises."
+        "reasoning": "The script keeps revealing that the family trauma is only the surface of a much older occult structure. The mother-daughter, mother-son, and inheritance threads all suggest deeper mythology without losing the immediate emotional stakes."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 8,
-        "reasoning": "The family triangle between Annie, Steve, and Peter is combustible, and Charlie adds a distinct, eerie counterpoint that keeps every interaction charged. Joan and the school/community figures widen the web enough that the relationships keep generating new pressure."
+        "reasoning": "Annie/Steve, Annie/Peter, Annie/Charlie, and Steve/Peter all generate different kinds of pressure, and the dinner scene proves the family can carry long-form conflict. Joan adds a potent outside relationship that widens the emotional and supernatural field."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 12,
-        "leads": 4,
-        "series_regulars": 0,
-        "child_actors": true,
-        "casting_characteristics": [
-          "Teen and child roles for Peter and Charlie",
-          "Strong adult lead roles for Annie and Steve",
-          "One principal supporting role for Joan",
-          "Several school-age ensemble roles"
-        ]
-      },
-      "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "predominantly interior",
-        "period_or_contemporary": "contemporary",
-        "notable_requirements": [
-          "Family house with attic, workshop, treehouse, and bedroom spaces",
-          "Funeral home chapel and viewing room",
-          "High school classroom, gym, hallway, and party house",
-          "Support group in a gymnasium",
-          "Joan’s apartment"
-        ]
-      },
-      "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Practical and digital augmentation for possession effects, floating body moments, fire transitions, and the final ritual imagery; miniature inserts and match-cut scale work are central to the design.",
-        "stunts_level": "minor",
-        "sfx_needs": "Fire effects, prosthetic decapitation imagery, flies/ants, practical blood and body-state effects, and controlled environmental effects for doors, lights, and movement.",
-        "night_shoots": "significant",
-        "animals": true
-      },
-      "rights_flags": [
-        {
-          "type": "brand",
-          "detail": "Serafem and Lexapro are named in Steve’s psychiatry scenes."
-        },
-        {
-          "type": "brand",
-          "detail": "Facebook is referenced in Peter’s school and party material."
-        }
-      ],
-      "platform_fit": {
-        "recommended_lane": "premium theatrical horror / elevated streamer horror",
-        "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or specialty theatrical runway"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The footprint is mostly contained to a family house and a handful of practical locations, but the possession effects, fire work, and final ritual sequence push above micro-budget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The film depends on four strong central performances, including two younger roles, plus a memorable supporting turn for Joan."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The story stays largely contained, but it still moves through the house, school, support group, party house, apartment, cemetery, and attic/treehouse spaces."
-        },
-        "content": {
-          "level": "high",
-          "note": "The script includes decapitation, body horror, child endangerment, possession imagery, suicide references, and intense psychological distress."
-        },
-        "rights": {
-          "level": "low",
-          "note": "The script uses a small number of named brands and no major IP or real-person dependency."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The miniature motif is the movie’s engine.",
-          "what_it_means": "That visual system gives the film a signature that buyers can market in one image and that directors can build an entire language around. Horror fans and prestige genre buyers alike will chase a film that turns the house, the art, and the family into the same object.",
-          "evidence": "Annie’s workshop, the dollhouse-style Graham house, and the final image of the house as a miniature replica.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Annie is a showcase lead role.",
-          "what_it_means": "The part gives an actress grief, rage, denial, dark humor, and full-body terror in one arc, which is exactly the kind of role that can anchor a festival breakout or prestige horror campaign. Mid-career dramatic leads and actors looking for a career-reframing genre turn will line up for this.",
-          "evidence": "The funeral eulogy, the support group confession, the workshop breakdown, and the final possession sequence.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The family drama is brutally playable.",
-          "what_it_means": "The script gives producers a three-hander core that can carry the movie even before the supernatural machinery fully reveals itself. Actors who want emotionally combustible material — especially prestige drama leads and strong younger performers — will see immediate value here.",
-          "evidence": "The dinner-table blowup, the bedroom confrontations, and the aftermath scenes between Annie, Steve, and Peter.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The horror escalates from grief, not gimmick.",
-          "what_it_means": "That makes the scares feel earned and gives the movie a deeper emotional aftertaste than a standard possession title. Buyers looking for elevated genre with a human hook will recognize the difference immediately.",
-          "evidence": "The support group, the sleepwalking history, Joan’s seance, and the final revelation of the ritual lineage.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The final act is a full-throttle reveal.",
-          "what_it_means": "The ending pays off the film’s symbols, family history, and occult breadcrumbs in a way that feels designed for audience shock and post-screening conversation. That kind of climax is exactly what gives a horror title legs in theatrical and streaming conversation.",
-          "evidence": "The attic discovery, the ritual books, the treehouse ceremony, and the final coronation of Peter.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The house feels like a haunted system.",
-          "what_it_means": "The setting is not just a backdrop; it behaves like a machine that stores memory, guilt, and ritual, which gives the production a strong central arena. Directors and designers who love controlled, story-generating spaces will be drawn to that kind of architecture.",
-          "evidence": "The workshop, attic, bedrooms, hallway, and the recurring miniature-house compositions.",
-          "source": "script"
-        }
-      ],
-      "headline": "This is elevated horror with a real prestige spine: a mother, son, and father trapped inside a family history that turns grief into ritual and the home into a diorama of doom. The script has a rare combination of commercial clarity, visual identity, and actor bait — the kind of package that can travel from genre buyers to prestige-minded producers without changing a word."
     },
     "lead_characters": [
       {
         "name": "Annie Graham",
         "role_type": "Lead",
-        "demographics": "Female · 40s · artist / mother",
-        "hook": "Annie is a grief-struck miniaturist whose need to control form is the perfect mask for a life coming apart at the seams. She’s brittle, funny, defensive, and deeply wounded, with a mind that keeps trying to impose order on experiences that refuse to stay contained.",
-        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary itself and of Olivia Colman in The Lost Daughter — a woman whose interior collapse is played with precision, volatility, and dark wit. It gives an actress the rare chance to move from domestic realism to possession horror without ever losing emotional truth, which is catnip for prestige leads and awards-minded genre performers."
+        "demographics": "Female, late 30s to mid 40s, mother, artist, white, emotionally volatile but highly intelligent.",
+        "hook": "A meticulous miniature artist and grieving mother whose need for control is both her gift and her wound. Annie is funny, prickly, defensive, and deeply loving, but her unresolved history with her mother and her own sleepwalking episode make her the perfect vessel for the film’s descent into possession and self-doubt.",
+        "why_actor_wants_this": "This is Toni Collette in Hereditary territory: a role that lets an actor pivot from brittle realism to full-body terror and then to operatic breakdown. It offers the rare showcase of playing grief, rage, denial, and supernatural possession in one sustained arc."
       },
       {
         "name": "Steve Graham",
-        "role_type": "Lead",
-        "demographics": "Male · 40s · psychiatrist / father",
-        "hook": "Steve is the family’s self-appointed stabilizer: controlled, rational, and increasingly cornered by events that his professional language can’t contain. He’s the kind of man who believes composure is love, until composure becomes its own form of denial.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Mark Ruffalo in Spotlight — a man trying to keep the room from collapsing while his own authority erodes in real time. Actors who specialize in contained intensity and late-breaking emotional rupture will want this because it lets them play restraint as a pressure cooker."
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, husband, psychiatrist, white, controlled and professional.",
+        "hook": "Steve is the family’s stabilizer, a calm, rational husband who keeps trying to translate catastrophe into something treatable. His restraint is both admirable and tragic, because the more he tries to manage Annie and Peter, the more powerless he becomes.",
+        "why_actor_wants_this": "This is the showcase territory of Gabriel Byrne in a role like a prestige-family patriarch under siege: contained, wounded, and forced to watch reason fail in real time. It gives an actor the chance to play authority collapsing without ever becoming broad."
       },
       {
         "name": "Peter Graham",
-        "role_type": "Lead",
-        "demographics": "Male · late teens",
-        "hook": "Peter is a socially awkward, emotionally flooded teenager who looks like he’s already halfway out of his own body. He’s horny, embarrassed, frightened, and guilt-ridden, which makes him the perfect vessel for a story about inheritance and possession.",
-        "why_actor_wants_this": "This is the showcase territory of Lucas Hedges in Manchester by the Sea — a young man carrying grief, shame, and panic in a way that feels physically lived-in. It gives a young actor a rare chance to play a passive-seeming character whose internal collapse becomes the movie’s final engine."
+        "role_type": "Supporting",
+        "demographics": "Male, 17, son, high-school student, white, anxious and emotionally shut down.",
+        "hook": "Peter is the guilt-ridden teenage son whose detachment reads as cruelty until the film reveals how much fear and self-loathing he’s carrying. He’s the most vulnerable male host in the story, and the script smartly lets his panic, shame, and dissociation build until they become the horror engine.",
+        "why_actor_wants_this": "This is the kind of role that gave Alex Wolff a breakout showcase: a teenage performance that has to carry panic, repression, and eventual possession. It’s a demanding close-up part with real transformation and trauma work."
       },
       {
         "name": "Charlie Graham",
-        "role_type": "Lead",
-        "demographics": "Female · early teens",
-        "hook": "Charlie is an eerie, self-contained kid whose silence, tics, and outsider energy make her feel like she’s receiving the world on a different frequency. She’s not a conventional child character; she’s a presence, a mystery, and eventually a tragic pivot point.",
-        "why_actor_wants_this": "This is the showcase territory of Brooklynn Prince in The Florida Project — a child performance that can be strange, funny, and devastating without ever feeling manufactured. It gives a young actor a role with iconic imagery, behavioral specificity, and the kind of haunting screen memory that can define a career early."
+        "role_type": "Supporting",
+        "demographics": "Female, 13, daughter, neurodivergent-coded, androgynous presentation, white.",
+        "hook": "Charlie is the film’s most unsettling presence: quiet, observant, socially off-kilter, and deeply connected to the film’s handmade, death-tinged imagery. She feels like a child who is already half in another world, which makes her both heartbreaking and ominous.",
+        "why_actor_wants_this": "This is the kind of eerie, unforgettable child performance that can define a young actor’s career, like a role that asks for stillness, oddity, and emotional ambiguity instead of speeches. It’s a rare part where the actor’s face and physicality do most of the work."
       },
       {
         "name": "Joan",
         "role_type": "Supporting",
-        "demographics": "Female · 60s",
-        "hook": "Joan arrives as a warm, grieving older woman and gradually reveals herself as the story’s most unnerving human hinge. She’s maternal, persuasive, and spiritually committed in a way that feels both comforting and dangerous.",
-        "why_actor_wants_this": "This is the showcase territory of Ann Dowd in The Handmaid’s Tale — a character who can pivot from tenderness to menace without changing her temperature. Character actors who specialize in authority, ambiguity, and moral unease will chase this because the role can dominate every scene she enters."
-      },
-      {
-        "name": "Dr. Mason",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "Dr. Mason is the professional face of reason who walks into a house already ruled by forces he can’t diagnose. He’s calm, polished, and briefly useful, which makes his eventual helplessness land harder.",
-        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in The Visitor — a grounded, humane professional whose competence is tested by something larger than his vocabulary. A seasoned character actor can make this role memorable by playing the exact point where expertise stops helping."
-      },
-      {
-        "name": "Bridget",
-        "role_type": "Supporting",
-        "demographics": "Female · 17",
-        "hook": "Bridget is the cool, slightly detached classmate who becomes Peter’s first real adolescent fixation. She’s not overbuilt, but she gives the teen world a pulse and a social reality outside the family house.",
-        "why_actor_wants_this": "This is the showcase territory of Kaitlyn Dever in Booksmart — a sharp, low-key teen role that can register instantly with very little screen time. Young actors who know how to make a few looks and lines feel lived-in will want it because it gives the movie a believable outside world."
-      },
-      {
-        "name": "Mr. Davies",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "Mr. Davies is the classroom adult who keeps trying to turn tragedy into discussion, only to watch Peter drift further away from the room. He’s a functional authority figure with just enough personality to make the school scenes feel specific.",
-        "why_actor_wants_this": "This is the showcase territory of the teacher roles in Lady Bird or Eighth Grade — a small part that can become memorable through timing and specificity. Working character actors will like it because it gives them a clean, grounded lane inside a high-intensity movie."
+        "demographics": "Female, late 60s to 70s, bereaved older woman, white, outwardly warm but increasingly uncanny.",
+        "hook": "Joan begins as a compassionate grief-group ally and gradually reveals herself as the film’s human doorway into the occult. She’s disarming, maternal, and almost too helpful, which makes her the perfect Trojan horse for the ritual machinery underneath the story.",
+        "why_actor_wants_this": "This is the kind of late-film reveal role that gives an actor a delicious tonal pivot, similar to a prestige thriller’s hidden operator. It lets the performer play warmth, manipulation, and ceremonial authority in one package."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make horror feel authored, intimate, and emotionally devastating.",
-        "fit_profile": "Established indie directors with at least one or two features, plus genre filmmakers who already care about performance and visual grammar more than body count. This material rewards directors who like controlled compositions, domestic spaces that become psychological traps, and escalation that feels inevitable rather than noisy.",
-        "detail": "The movie gives a director a rare chance to build dread through blocking, production design, and family performance instead of constant external action. It’s especially attractive to filmmakers who can turn a contained house, a few key locations, and a strong visual motif into a signature calling card."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one teenage daughter role with unusual physicality and stillness",
+          "one teenage son role carrying heavy emotional and possession material",
+          "older-woman supporting role with a warm-to-menacing pivot"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "premium horror / elevated genre / festival-to-platform",
-        "detail": "The Annie role can anchor the package with one major performance, while the contained house-centered structure keeps the spend in a controllable lane. The occult-family premise, strong poster image, and final-act shock give it the kind of theatrical-to-streaming afterlife buyers want from elevated horror."
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "family house with workshop and attic access",
+          "treehouse exterior and interior",
+          "school classrooms and gymnasium",
+          "support-group space",
+          "apartment interior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Possession imagery, floating body moments, headless/decapitation effects, ant swarms, and a few supernatural movement beats; mostly practical-feeling but with some compositing and enhancement.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, fire effects, decapitation/maiming effects, flies/ants, and body-prop work for the attic and finale.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is specialty theatrical with strong festival launch or premium streaming horror event."
       }
     },
-    "considerations": [
-      {
-        "area": "The family triangle carries the whole engine.",
-        "detail": "The script already has a strong central pressure point, but the version that keeps Annie, Steve, and Peter’s emotional collisions as the primary driver will preserve the movie’s power even when the supernatural material is stripped away. One lever would be to keep every major reveal tethered to a family choice or accusation, so the horror always lands as an extension of the relationship drama.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The house, workshop, attic, treehouse, and school can be managed efficiently, but the finale adds practical gore, fire, flies/ants, and possession effects that need disciplined execution."
       },
-      {
-        "area": "The occult reveal arrives in a long tail.",
-        "detail": "The final mythology payoff is satisfying, but it comes after a substantial run of grief, suspicion, and domestic fracture. A next pass could consider how early the audience needs the first clean breadcrumb of the ritual system so the back half can feel even more inevitable without losing mystery.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "The film lives or dies on Annie, and Peter/Charlie both need actors who can play strange, wounded, and specific without overplaying the horror. Joan also needs a performer who can pivot from grief-group warmth to occult authority."
       },
-      {
-        "area": "The supporting world is efficient, not expansive.",
-        "detail": "The script is strongest when it stays inside the house and the immediate orbit around it, which is also what keeps the production footprint attractive. If a producer wanted to simplify further, the version that folds a couple of school or community beats into fewer locations would protect the momentum without changing the story’s core.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The possession imagery is the main technical spend.",
-        "detail": "The fire transitions, floating-body moments, ants, flies, and final ritual tableau are the places where the effects plan has to be precise. A practical-heavy approach with selective digital support would protect the grounded feel and keep the movie in the right budget lane.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Charlie’s presence is the emotional fuse.",
-        "detail": "The script uses Charlie as both a character and a haunting image, which is one of its sharpest choices. A future pass could keep foregrounding the specific behaviors that make her feel singular — the clicking, the drawings, the treehouse, the shoebox — because those details are doing a lot of the movie’s atmospheric work.",
-        "is_primary_lever": false,
-        "source": "script"
+      "development": {
+        "level": "low",
+        "note": "The concept is clear, the escalation is legible, and the occult reveal is structurally planted. The main development conversation is not story architecture but how much supernatural ambiguity the buyer wants preserved versus clarified."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Babadook",
+          "year": 2014,
+          "why_it_comps": "A grief-driven mother-child horror story where emotional collapse and supernatural manifestation are inseparable."
+        },
+        {
+          "title": "The Witch",
+          "year": 2015,
+          "why_it_comps": "Prestige horror with ritual dread, family fracture, and a patient escalation toward occult revelation."
+        },
+        {
+          "title": "The Others",
+          "year": 2001,
+          "why_it_comps": "A domestic haunted-house structure that turns family space into a pressure chamber and pays off with a devastating supernatural reveal."
+        },
+        {
+          "title": "It Comes at Night",
+          "year": 2017,
+          "why_it_comps": "Claustrophobic family paranoia, escalating mistrust, and a slow-burn horror register that prioritizes dread over spectacle."
+        },
+        {
+          "title": "The Sixth Sense",
+          "year": 1999,
+          "why_it_comps": "A grief-centered supernatural mystery with a late reveal that recontextualizes the family dynamic."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult horror fans who want prestige-level dread, strong performances, and a family story that gets under the skin.",
+        "demographics": "18-44 skew, balanced gender appeal, strongest with genre-literate viewers and prestige-horror audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Mostly contained contemporary interiors with a few exterior set pieces, but the finale’s practical effects, creature-like imagery, and night work keep it above true micro territory."
+      },
+      "lane_fit": {
+        "lane": "prestige elevated horror",
+        "types_of_buyers": [
+          "specialty horror financiers",
+          "streamer genre originals teams",
+          "festival-driven indie distributors",
+          "prestige genre labels",
+          "director-led production companies"
+        ],
+        "detail": "This sits squarely in the lane where character-first horror can open on performance and close on nightmare imagery. The script has the kind of visual identity and emotional severity that buyers use to justify a higher-end genre play."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed, decisive ending; the power is in the one-off family tragedy and occult reveal, not an extensible universe."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The miniature-house motif is instantly ownable.",
+          "what_it_means": "It gives the film a visual brand that is easy to market and hard to mistake for anything else. Buyers can sell the movie off the image of a perfect house model becoming a nightmare object, which is a real poster and trailer asset.",
+          "evidence": "The opening workshop sequence and the repeated cutaways to Annie’s miniatures, especially the Graham house and the final mirrored house image.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Annie is a showcase lead role.",
+          "what_it_means": "The script offers a performance centerpiece that can attract serious actors and elevate the project above routine genre fare. That kind of role is a packaging lever because it can unlock both prestige credibility and horror audience interest.",
+          "evidence": "The funeral eulogy, the support-group confession, the dinner-table explosion, and the possession sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family conflict is the engine.",
+          "what_it_means": "The horror lands because the emotional stakes are already combustible before the supernatural reveal fully arrives. That makes the movie feel bigger than its locations and gives the buyer a reason to believe in word-of-mouth beyond gore.",
+          "evidence": "The dinner scene, Annie and Peter’s mutual blame, and Steve’s attempts to mediate while losing control.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The occult reveal is deeply planted.",
+          "what_it_means": "The script earns its escalation by layering symbols, books, photos, and ritual details before the final explanation lands. That makes the ending feel like a payoff rather than a twist for its own sake.",
+          "evidence": "The sigil necklace, Joan’s apartment, the grimoire, the attic body, and the Paimon ritual text.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is premium-horror specific.",
+          "what_it_means": "It lives in the lane buyers are actively chasing: elevated, adult, emotionally severe horror with a strong auteur feel. That makes it easier to position for festival launch, specialty theatrical, or streamer prestige genre slates.",
+          "evidence": "The long quiet stretches, the grief-group scenes, the controlled domestic scenes, and the final operatic nightmare imagery.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a premium horror package with a built-in visual signature, a major female lead role, and a contained production footprint that still delivers event-level dread. The script’s mix of family tragedy, occult mystery, and unforgettable imagery is exactly the kind of lane buyers can market as prestige genre without needing tentpole spend."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The finale leans hard on explanation.",
+          "detail": "Once Joan’s apartment and the attic reveal the Paimon ritual, the script shifts from dread to exposition-heavy confirmation. That’s not a fatal flaw, but it does mean the last act is more dependent on buyers liking the mythology than on pure suspense.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Annie’s arc is so dominant it narrows the ensemble.",
+          "detail": "The film is structurally Annie’s movie, which is a strength, but it also means Steve, Peter, Charlie, and Joan are all measured against her gravitational pull. For a producer, that concentrates value in one role and makes the rest of the cast feel more functional than independently expandable.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The third act requires a lot of effects confidence.",
+          "detail": "The headless body, floating Annie, fire transfer, ant swarm, and treehouse ritual all need to land cleanly or the movie loses authority fast. This is still manageable, but the ending is not forgiving of weak practical execution or undercooked compositing.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Peter’s possession turn is emotionally abrupt by design.",
+          "detail": "The final body-switching move is bold, but it asks the audience to accept a big metaphysical pivot after spending most of the film inside family grief and paranoia. That makes the ending memorable, but it also means some buyers will read the last movement as a hard genre turn rather than a seamless continuation.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not the concept; it’s the degree to which the movie’s payoff depends on the audience buying the occult machinery and the final possession logic. The project is strongest when it stays in family horror mode, and the buyer conversation will center on whether the mythology-heavy back half is a feature or a risk."
+    },
     "craft_note": ""
   },
-  "weightedScore": 83.7,
+  "weightedScore": 83.3,
   "tier": "Optionable",
-  "inputTokens": 54311,
-  "outputTokens": 4347,
-  "cost": 0.06029475,
+  "inputTokens": 56716,
+  "outputTokens": 4006,
+  "cost": 0.06056400000000001,
   "declaredFormat": "Feature film"
 }

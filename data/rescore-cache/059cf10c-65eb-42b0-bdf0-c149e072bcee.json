@@ -2,293 +2,357 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "tech conspiracy",
-        "romantic thriller"
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Thriller",
+        "Crime"
       ],
-      "tone": "Propulsive, paranoid, witty, and emotionally bruised"
+      "tone": "propulsive",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "high-concept",
+        "feature-anchored",
+        "propulsive",
+        "character-driven",
+        "identity",
+        "revenge",
+        "tech",
+        "time-travel"
+      ]
     },
-    "positioning_hook": "A disgraced tech prodigy starts receiving capsules from his future self, only to learn his comeback is built on a murder conspiracy that can erase people from time.",
+    "positioning_hook": "A disgraced San Francisco engineer starts receiving capsules from his future self, only to discover his own survival depends on outsmarting a tech mogul who’s using time to turn rivals into targets.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 8,
-        "reasoning": "The premise is instantly legible and commercially legible: a fallen inventor, a future-self message engine, and a conspiracy that turns every choice into a survival move. The script also gives the audience a strong emotional spine through Elliot and Robyn, which broadens it beyond pure concept."
+        "reasoning": "The premise is instantly legible and commercially sticky: a fallen tech genius, a mysterious device, and a race against a future conspiracy. It has broad genre appeal, though the tech-world specificity and darker moral turn keep it a notch below four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The hook lands immediately with Park’s opening murder-suicide, Elliot’s capsule discovery, and the rule that future messages arrive as actionable instructions. The story engine is easy to explain in one breath, and the stakes sharpen cleanly once Wilkes is revealed as the architect."
+        "reasoning": "The hook lands in the opening pages with Park’s murder-suicide, the capsule disintegrating, and then Elliot waking up to the first hologram from his future self. The script is built around a clean, explainable engine: messages from the future are steering present-day choices."
       },
       "character_appeal_and_long_term_potential": {
         "score": 8,
-        "reasoning": "Elliot is a strong lead because his self-loathing, intelligence, and dry humor all play in the same role, and Robyn gives the story a grounded counterweight with real emotional authority. Craig, Prescott, and Wilkes each have distinct energy, though the movie is still primarily powered by the central trio."
+        "reasoning": "Elliot is a strong lead because he’s brilliant, self-destructive, funny, and emotionally compromised by Robyn and his own failure. Craig, Robyn, Wilkes, and Prescott all have sharp enough edges to matter, though Elliot remains the clear center of gravity."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script takes a familiar time-travel idea and makes it feel like a corporate assassination thriller with memory as the tracking mechanism. The choice to make the future self both mentor and manipulator gives the material a sharper edge than a standard sci-fi chase."
+        "reasoning": "The script fuses time-travel mechanics with startup culture, workplace humiliation, and a self-fulfilling assassination loop in a way that feels fresh. The boldest choice is making the future self both mentor and manipulator, which gives the concept a nasty, memorable twist."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script keeps escalating through clear reversals: the museum hit, the lottery bait, the hitman trap, the Craig betrayal, and the Wilkes reveal. Each new capsule changes the game, and the final lab siege pays off the engine with real forward drive."
+        "reasoning": "It moves with real urgency once the capsules start arriving, and each new reveal escalates the danger rather than resetting it. The back half is especially strong because the story keeps converting information into immediate physical jeopardy."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The idea of time travel as a weaponized corporate moat feels fresh and immediately usable, especially with the memory-tracking rule and the self-authored future conceit. It’s novel in a way that still clicks fast, which is the sweet spot for this kind of material."
+        "reasoning": "The idea is novel but easy to grasp: a man is being coached by his future self into a chain of actions that may be saving him or destroying him. That combination of clean premise and escalating paranoia is the script’s most marketable originality."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The tech-world setting has real texture: basements, demos, venture-style status games, private security, and the prestige of Silicon Valley success. The world is not sprawling, but it is specific enough to generate story and to make the power dynamics feel lived-in."
+        "reasoning": "The tech-company ecosystem, Silicon Valley vanity, and San Francisco geography give the story a specific social texture. It’s not a sprawling world, but the corporate hierarchy, startup culture, and future-tech rules generate enough story pressure to feel lived-in."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a distinct blend of sardonic banter, noir paranoia, and high-concept sci-fi dread. Elliot’s self-deprecating jokes sit right next to gunplay, surgery, and existential dread, which gives the movie a recognizable voice."
+        "reasoning": "The tone is a sharp blend of sardonic, anxious, and sleekly genre-forward, with jokes landing inside genuinely dangerous situations. The script has a confident voice that can pivot from hangdog comedy to hard-edged thriller without losing its identity."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "Under the thriller mechanics, the script is really about self-authorship, regret, addiction, and whether intelligence without self-belief can ever become wisdom. The Robyn/Elliot material especially suggests a deeper emotional movie beneath the chase."
+        "score": 7,
+        "reasoning": "There’s real thematic depth in the idea that self-belief, memory, and fate can become weapons, and the Robyn/Elliot material gives the story emotional residue. The script is still primarily a high-concept thriller, but it suggests more beneath the surface than the premise alone."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Elliot/Robyn is the strongest relationship engine, and Craig/Wilkes/Prescott all create useful pressure points around him. The ensemble is functional and often lively, though the movie still lives most strongly in the central pair and the triangle of male rivals."
+        "reasoning": "Elliot/Robyn is the emotional spine, and Craig/Wilkes/Prescott create a strong triangle of rivalry and betrayal around him. It’s not an ensemble piece, but the relationships are active enough that scenes keep generating tension beyond the central plot mechanics."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Elliot Lockhart",
+        "role_type": "Lead",
+        "demographics": "Male, 30s, Korean-American, tech engineer / inventor, emotionally volatile, urban professional",
+        "hook": "A once-brilliant inventor now living in the wreckage of a public failure, Elliot is funny, self-lacerating, and deeply allergic to his own potential. He’s the kind of man who can reverse-engineer time capsules in his apartment but still can’t trust his gut, and the script makes that contradiction the engine of the whole story.",
+        "why_actor_wants_this": "This is showcase territory in the vein of Ryan Gosling in Drive or Jake Gyllenhaal in Nightcrawler: a damaged, highly watchable lead who can play charm, shame, panic, and intelligence in the same scene. The role gives an actor a full-spectrum arc from washed-up loser to dangerous believer, with big emotional turns and plenty of dry comic bite."
+      },
+      {
+        "name": "Robyn Gilmore",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Elliot’s ex, nurse, emotionally intelligent, grounded",
+        "hook": "Robyn is the one person who can see through Elliot’s performance and still choose to help him. She’s practical under pressure, emotionally wounded but not sentimental, and the script smartly uses her as both the audience’s reality check and Elliot’s last real tether to a life he blew up.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded authority of Emily Blunt in Edge of Tomorrow or Rebecca Ferguson in Mission: Impossible—smart, capable, and emotionally legible without ever becoming passive. She gets sharp dialogue, crisis competence, and the rare chance to be the person who can match the lead beat for beat."
+      },
+      {
+        "name": "Craig Bollinger",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, Elliot’s best friend, successful tech operator, charismatic, affluent",
+        "hook": "Craig is the guy who looks like he won the game Elliot lost, and the script uses that status gap to make him both comic relief and a genuine threat. He’s affable, smug, and emotionally slippery, which makes his betrayal land with real force.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the polished-bro charm of Bradley Cooper in Limitless or Jon Hamm in a prestige ensemble—easy charisma with a darker undertow. The eventual turn into menace gives the part more bite than a standard best-friend foil."
+      },
+      {
+        "name": "Jonathan Wilkes",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, tech mogul, polished, charismatic, predatory",
+        "hook": "Wilkes is the script’s sleek corporate villain: a visionary who talks like a futurist and behaves like a war criminal with a product launch. He’s magnetic enough to sell the room and cold enough to justify the story’s darkest turns.",
+        "why_actor_wants_this": "This is premium antagonist material in the lane of Michael Keaton in Spider-Man: Homecoming or Jeremy Irons in Margin Call—controlled, witty, and dangerous. It gives an actor the pleasure of playing intelligence as menace, with a late-script reveal that reframes everything."
+      },
+      {
+        "name": "David Prescott",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, Elliot’s boss and later rival, ambitious, petty, corporate",
+        "hook": "Prescott is the small-minded operator who mistakes authority for destiny, and the script keeps him sharp enough to matter without overcomplicating him. He’s the kind of antagonist whose resentment feels personal, which makes his future self’s involvement especially nasty.",
+        "why_actor_wants_this": "This is a great character-actor role in the mold of Paul Dano in There Will Be Blood or Shea Whigham in a prestige thriller: a man whose insecurity curdles into danger. The stairwell confrontation and later reveal give the actor a strong escalation path."
+      },
+      {
+        "name": "Maguire",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, hired gun, working-class, Irish, professional killer",
+        "hook": "Maguire is the script’s most unnerving pure function: a calm, methodical killer who treats murder like a shift job. He’s not flashy, which is exactly why he works; he feels like a man who has made peace with being a tool.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dead-eyed menace of Ben Mendelsohn in Animal Kingdom or Michael Shannon in a low-key thriller. The part is compact but memorable, with a cool, controlled surface that makes the violence hit harder."
+      },
+      {
+        "name": "Harold",
+        "role_type": "Supporting",
+        "demographics": "Male, 70s, janitor, older working-class man",
+        "hook": "Harold is the quiet institutional ghost who knows how the building works and, more importantly, knows how people work. He’s warm, wry, and unexpectedly loyal, giving the story a human anchor inside the corporate machine.",
+        "why_actor_wants_this": "This is the kind of supporting role that can become a scene-stealer in the vein of John Goodman in a prestige thriller: brief, grounded, and memorable. It gives an older actor a chance to play dignity and mischief without exposition overload."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 10,
-        "leads": 4,
+        "speaking_roles": 12,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Male Korean lead in 30s",
-          "Female lead in 20s-30s",
-          "Multiple 30s-60s male supporting roles",
-          "One older Korean voice performance",
-          "One older female hologram role"
+          "Lead requires a Korean or Korean-American actor in his 30s",
+          "Robyn requires a strong grounded female supporting lead",
+          "Wilkes and Maguire are both actor-forward villain roles",
+          "Several roles are age-flexible but need strong comic timing and intensity"
         ]
       },
       "locations": {
-        "distinct_count": 20,
-        "interior_exterior_ratio": "roughly 60/40 interior",
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
         "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "San Francisco and Los Angeles settings",
-          "Thailand resort sequence",
-          "Tech campus, mansion, motel, storage unit, post office, museum, and lab environments"
+          "San Francisco and Bay Area urban settings",
+          "tech office interiors",
+          "museum sequence",
+          "motel room and storage unit",
+          "mansion/penthouse-style interiors"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Capsule holograms, time-materialization effects, disintegration effects, and a few stylized transition moments; mostly contained and repeatable.",
+        "vfx_details": "Hologram projections, capsule materialization/disintegration, time-travel visual effects, and a few stylized energy/flicker moments.",
         "stunts_level": "moderate",
-        "sfx_needs": "Gunfire, car impacts, fireball/lab destruction, practical blood effects, and a car-over-hill sequence.",
+        "sfx_needs": "Gunfire, practical blood effects, fire/explosion sequence in the lab, car chase/crash beats, and practical electrical effects.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "LACMA, Altria, Aston Martin, Hugo Boss, Manolo, iPad-like device, Stack/StackPhone/StackPad references, Rohypnol, Dexedrine, Klonopin, Zoloft, Ambien, Xanax, Fats Domino, Jason Mraz, Road House"
+          "detail": "Altria"
         },
         {
-          "type": "real_person",
-          "detail": "Kierkegaard and President Obama are referenced by name."
+          "type": "brand",
+          "detail": "Aston Martin"
         },
         {
-          "type": "ip_licensing",
-          "detail": "The script uses a named song cue, 'Blueberry Hill,' and multiple recognizable brand and product references."
+          "type": "brand",
+          "detail": "Hugo Boss"
+        },
+        {
+          "type": "brand",
+          "detail": "iPad"
+        },
+        {
+          "type": "brand",
+          "detail": "Rohypnol"
+        },
+        {
+          "type": "brand",
+          "detail": "NASA"
+        },
+        {
+          "type": "brand",
+          "detail": "Wired"
+        },
+        {
+          "type": "brand",
+          "detail": "Sony"
+        },
+        {
+          "type": "brand",
+          "detail": "Apple"
+        },
+        {
+          "type": "brand",
+          "detail": "Fats Domino"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or theatrical genre lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release with strong festival-to-platform or mid-budget theatrical potential; the engine is a contained sci-fi thriller with escalating reveals."
+        "recommended_lane": "premium streaming theatrical thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release with strong streamer and specialty theatrical upside"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly interior-driven, but the museum chase, multiple car beats, mansion break-in, fire-heavy lab climax, and repeated VFX capsule work keep this above a simple contained-thriller spend."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary settings keep the footprint manageable, but the lab fire, car action, multiple city locations, and hologram effects push it above a lean indie."
+      "casting": {
+        "level": "medium",
+        "note": "The lead is a specific Korean-American 30s role that needs both comic timing and wounded intensity, and Wilkes/Maguire each need actor-grade menace to land cleanly."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The time-loop logic is clear enough to track, but the script asks the audience to absorb a lot of causal machinery while the story is still moving at thriller speed."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Source Code",
+          "year": 2011,
+          "why_it_comps": "Shares the high-concept time-loop urgency and the pressure of a protagonist trying to solve a mystery before the next reset."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The story can be built around a few strong leads, but it benefits from specific casting in the Elliot, Robyn, Wilkes, Craig, and Prescott roles."
+        {
+          "title": "Looper",
+          "year": 2012,
+          "why_it_comps": "Matches the sleek sci-fi thriller lane where time mechanics are used to drive moral jeopardy and violent escalation."
         },
-        "location": {
-          "level": "medium",
-          "note": "The script moves through San Francisco, Los Angeles, and Thailand, with several distinct interiors that each carry story weight."
+        {
+          "title": "The Adjustment Bureau",
+          "year": 2011,
+          "why_it_comps": "Like this script, it blends romance, fate, and a hidden system manipulating a man’s life from the shadows."
         },
-        "content": {
-          "level": "high",
-          "note": "Gun violence, suicide, drugging, torture-adjacent coercion, and a lab inferno place this firmly in mature territory."
+        {
+          "title": "Limitless",
+          "year": 2011,
+          "why_it_comps": "The comeback-of-a-failed-genius energy, corporate ambition, and stylish urban momentum are closely aligned."
         },
-        "rights": {
-          "level": "medium",
-          "note": "The script names multiple brands, real-world venues, and a specific song cue, all of which would need clearance review."
+        {
+          "title": "Ex Machina",
+          "year": 2014,
+          "why_it_comps": "Not for plot, but for the sleek tech-paranoia lane and the sense that innovation is inseparable from control."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like smart, high-concept thrillers with emotional stakes and a tech-world edge.",
+        "demographics": "25-54, slightly male-skewing but viable for women via the Robyn relationship and the romantic undercurrent; educated, urban, streamer-friendly audience.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, a moderate VFX load, several action beats, and a contained but not minimal cast keep it in the upper indie range."
+      },
+      "lane_fit": {
+        "lane": "elevated sci-fi thriller",
+        "types_of_buyers": [
+          "streamer original film teams",
+          "specialty genre financiers",
+          "mid-budget thriller producers",
+          "director-driven indie companies",
+          "prestige sci-fi buyers"
+        ],
+        "detail": "This sits naturally in the lane of smart, adult sci-fi with a clean hook and enough emotional weight to travel beyond genre-only buyers. The script’s mix of paranoia, romance, and corporate conspiracy makes it attractive to buyers looking for concept plus character."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed central arc; the capsule mythology is strong, but no clear spinoff vector emerges beyond this story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise turns memory into a tracking device.",
-          "what_it_means": "That gives the movie a clean, cinematic rule set and a fresh way to stage paranoia without relying on generic surveillance tech. Buyers who want a high-concept thriller with a built-in engine will see a hook that is easy to market and easy to cut a trailer around.",
-          "evidence": "Elliot realizes the capsules can be tracked through what he remembers, and Robyn helps him travel blind to break the chain.",
+          "dimension_or_area": "The opening hook is immediate.",
+          "what_it_means": "This gives the project a fast, buyer-friendly pitch that can be understood in one breath and sold on premise alone. That makes it attractive to streamer dev execs and genre financiers who need a clean hook before they commit to a read.",
+          "evidence": "The script opens with Park’s murder-suicide, the capsule disintegrating, and then Elliot discovering the first future-self hologram.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Elliot is built for a star turn.",
-          "what_it_means": "The role gives an actor intelligence, self-loathing, comic timing, and physical jeopardy in the same package, which is exactly the kind of part that can reframe a career. Mid-career leads looking for a prestige genre showcase will chase this, and managers can sell it as a rare chance to play wounded, funny, and dangerous at once.",
-          "evidence": "He goes from hungover basement coder to swaggering comeback figure to terrified man in a garage, all while keeping the same dry voice.",
+          "dimension_or_area": "Elliot is a strong antihero lead.",
+          "what_it_means": "The role can carry the movie because it combines intelligence, self-loathing, humor, and romantic damage in a way that feels castable and playable. That’s the kind of part that can elevate a mid-budget thriller into actor-driven prestige territory.",
+          "evidence": "Elliot’s self-deprecating banter, his relapse into drinking, and his repeated failure to trust his own instincts all define him on the page.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Robyn gives the movie its emotional ballast.",
-          "what_it_means": "She is not just the love interest; she becomes the audience’s translator, co-strategist, and moral witness, which makes the central relationship feel like a real engine rather than a decorative one. Actors who want a sharp, capable female lead with intimacy, skepticism, and nerve will respond to her immediately.",
-          "evidence": "She doses Elliot to keep him safe, helps decode the capsules, performs the improvised surgery, and forces the truth into the open.",
+          "dimension_or_area": "The future-self mechanic has a nasty twist.",
+          "what_it_means": "The time-travel device isn’t just a gimmick; it becomes a moral trap, which gives the concept real staying power. Buyers respond to that because it turns a clean sci-fi hook into a paranoia engine with escalating consequences.",
+          "evidence": "Future Elliot first helps, then steers him toward actions that reveal a larger conspiracy and a possible murder chain.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The villain is a corporate futurist with a god complex.",
-          "what_it_means": "Wilkes is not a generic madman; he is a polished, persuasive founder whose charisma makes the threat feel plausible and contemporary. That opens the door for a magnetic supporting performance and gives the project a buyer-friendly antagonist who can sell both prestige and genre.",
-          "evidence": "His DigiCon speech, his private lab, and his calm explanation of using time to protect intellectual property all frame him as a tech-world predator.",
+          "dimension_or_area": "The Robyn relationship adds emotional ballast.",
+          "what_it_means": "This gives the movie a human center that broadens the audience beyond pure genre fans and gives the lead a real emotional objective. It also helps the script play to buyers who want elevated genre with relationship stakes.",
+          "evidence": "Robyn’s late-night confrontation, her decision to help him, and the motel surgery sequence all deepen the bond.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The script keeps escalating with new capsule reveals.",
-          "what_it_means": "Each message changes the rules of the game, so the movie never settles into a single-note chase; it keeps retooling itself into a bigger thriller. That kind of escalation is valuable for producers because it creates a trailer-friendly structure and a strong act-to-act momentum curve.",
-          "evidence": "The story moves from lottery numbers to self-improvement to hit-man instructions to the final reveal of Wilkes’ future lab.",
+          "dimension_or_area": "The corporate conspiracy is cleanly scalable.",
+          "what_it_means": "The story’s villain structure is easy to package because it maps onto recognizable power dynamics: failed inventor versus visionary mogul. That’s useful for marketing and for attaching actors who want a clear antagonist with stature.",
+          "evidence": "Wilkes’ reveal as the architect of the capsule scheme reframes the entire story and gives the climax a strong face.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tech-world setting has real status texture.",
-          "what_it_means": "This is not a generic lab movie; it lives in the language of demos, funding, product launches, and prestige competition, which makes the stakes feel current and exportable. It will appeal to buyers who want a contemporary thriller with Silicon Valley energy rather than a purely abstract sci-fi premise.",
-          "evidence": "Altria, Trinity, DigiCon, venture-style rivalries, and the public humiliation of Radius all give the world a recognizable corporate ecosystem.",
+          "dimension_or_area": "The script has real set-piece momentum.",
+          "what_it_means": "The movie keeps converting exposition into action, which is exactly what a producer wants in a high-concept thriller. That makes it easier to sell as a propulsive feature rather than a talky sci-fi idea.",
+          "evidence": "The motel chase, stairwell fight, post office shootout, and lab fire sequence all escalate the stakes visually.",
           "source": "script"
         }
       ],
-      "headline": "This is a smart, commercial sci-fi thriller with a clean hook, a wounded lead role actors will chase, and a villain whose power comes from the modern tech economy. It has the rare combination of high-concept clarity, emotional access, and contained enough production design to feel achievable without losing scale."
+      "headline": "This is a clean, high-concept sci-fi thriller with a real actor role at the center and a premium-streaming-friendly premise that sells in one sentence. The script pairs a contained, producible contemporary footprint with a strong emotional engine and a villain reveal that turns the whole movie into a race against time and self-destruction."
     },
-    "lead_characters": [
-      {
-        "name": "Elliot Lockhart / Radius",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · Korean-American",
-        "hook": "A brilliant, self-sabotaging engineer with a razor-dry mouth and a collapsing self-image, Elliot is the kind of man who can talk himself into and out of greatness in the same breath. He’s funny when he’s cornered, wounded when he’s performing confidence, and always one bad decision away from disaster, which makes him compelling even before the time-travel engine kicks in.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman crossed with Jake Gyllenhaal in Nightcrawler: a lead who can weaponize charm while revealing panic underneath it. It gives an actor the full range of comeback narrative, dark comedy, and physical survival, the kind of role that can redefine how the industry sees him."
-      },
-      {
-        "name": "Robyn Gilmore",
-        "role_type": "Lead",
-        "demographics": "Female · 20s-30s",
-        "hook": "Robyn is sharp, skeptical, and emotionally literate, with enough medical competence and nerve to keep the story from floating away into pure concept. She has the rare quality of being both the person who sees through Elliot and the person who still chooses to stand beside him, which gives her real dramatic authority.",
-        "why_actor_wants_this": "This is the showcase space of Emily Blunt in Sicario or Rebecca Ferguson in Mission: Impossible — a woman who can carry intelligence, tension, and emotional restraint without ever feeling ornamental. It gives an actress a role that is active, grounded, and essential to the plot, with enough intimacy to play as a true co-lead."
-      },
-      {
-        "name": "Jonathan Wilkes",
-        "role_type": "Lead",
-        "demographics": "Male · 40s-50s",
-        "hook": "Wilkes is a polished tech visionary with the smile of a founder and the instincts of a warlord, which makes him dangerous in a very modern way. He speaks like a man who believes history belongs to the people who can author it, and that confidence gives him real menace.",
-        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad or Michael Shannon in Take Shelter: a charismatic intelligence that can turn predatory without changing volume. It gives an actor the chance to play seduction, authority, and moral rot in one role, which is catnip for prestige casting."
-      },
-      {
-        "name": "Craig Bollinger",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "Craig is the swaggering best friend who looks like he’s winning at life until the script reveals how much of that confidence is performance. He’s funny, socially fluent, and deeply compromised, which makes him feel like a real Silicon Valley survivor rather than a stock sidekick.",
-        "why_actor_wants_this": "This is the showcase territory of Jonah Hill in The Wolf of Wall Street or Jeremy Strong in Succession — a fast-talking operator whose charm curdles into betrayal. It gives an actor a juicy pivot from comic ally to tragic pressure point, which is exactly the kind of role that gets noticed."
-      },
-      {
-        "name": "David Prescott",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Prescott is the younger boss who enjoys being the guy with the clipboard, but the script keeps letting us see the insecurity under the smugness. He’s petty, ambitious, and ultimately trapped in the same future-pressure system as everyone else, which makes him more than a simple office antagonist.",
-        "why_actor_wants_this": "This is the showcase territory of Paul Dano in There Will Be Blood or Matthew Macfadyen in Succession — a tightly wound man whose authority is always one crack away from humiliation. It gives an actor a role built on brittle control, resentment, and sudden panic."
-      },
-      {
-        "name": "Harold",
-        "role_type": "Supporting",
-        "demographics": "Male · 70s",
-        "hook": "Harold is the quiet institutional ghost of the building, the one person who understands the machinery of the place better than the executives do. He has warmth, discretion, and a lived-in dignity that makes him feel like the moral memory of the company.",
-        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in The Visitor — a small role with real humanity and authority. Character actors will chase it because it gives them a scene-stealing presence without needing volume."
-      },
-      {
-        "name": "Meredith Rothert",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s",
-        "hook": "Meredith is introduced as a stylish, self-possessed young woman whose presence in the museum sequence is loaded with mystery before the script reveals her place in the larger machine. Even in limited screen time, she carries the eerie sense of a life already being written by someone else.",
-        "why_actor_wants_this": "This is the kind of role that plays like the haunting, compressed showcase of Alicia Vikander in Ex Machina — brief, elegant, and loaded with implication. It gives an actress a memorable entry point in a high-concept thriller with a strong visual imprint."
-      },
-      {
-        "name": "Franklin Gantt",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Gantt is the polished corporate patriarch who can smell opportunity and danger in the same room. He reads as a man who has survived long enough to know when to pivot, which makes him a useful power broker in the story’s ecosystem.",
-        "why_actor_wants_this": "This is the showcase territory of John Lithgow in a prestige corporate drama — a senior executive role with intelligence, vanity, and leverage. It gives an actor a chance to play the man who can bless or bury the future with a handshake."
-      },
-      {
-        "name": "Maguire",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Maguire is the professional killer who never raises his voice unless he has to, which makes him feel scarier than a louder villain. He has a working-man’s bluntness and a dead-eyed discipline that turns every scene into a negotiation with death.",
-        "why_actor_wants_this": "This is the showcase territory of Ben Mendelsohn in Animal Kingdom — a calm, predatory presence whose menace comes from understatement. It gives an actor a lean, memorable antagonist role with real scene-control."
-      },
-      {
-        "name": "Lola",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Lola is the social spark who turns Elliot’s humiliation into a public event, but she’s not just a device; she has the kind of bright, status-aware energy that makes the tech-party world feel real. She’s playful, curious, and a little ruthless in the way she reads people.",
-        "why_actor_wants_this": "This is the showcase territory of Olivia Wilde in a sharp social satire — a brief role with instant charisma and bite. It gives an actress a memorable scene in a movie where social humiliation matters as much as gunfire."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a paranoid sci-fi thriller with emotional bruises under the machinery.",
-        "fit_profile": "Established indie or prestige-leaning genre directors with at least one or two features, especially those who like performance-forward tension, clean visual rules, and morally compromised protagonists. The material rewards directors who can balance sleek tech-world surfaces with intimate dread and make exposition feel like pressure rather than explanation.",
-        "detail": "The movie gives a director a contained but escalating canvas: offices, labs, hotels, and a few big set pieces, all driven by character choices rather than spectacle for its own sake. It’s the kind of project that attracts filmmakers who want to prove they can do high-concept genre without losing adult emotion."
-      },
-      "buyer_appeal": {
-        "tier": "$10-25M feature",
-        "lane": "Premium streamer / mid-budget theatrical sci-fi thriller lane",
-        "detail": "It can be built around a small number of strong roles and a contemporary footprint, so it does not require a giant ensemble or tentpole-scale effects to work. The time-travel premise, tech-world setting, and clear trailer hook give it export value and a clean pitch for buyers looking for elevated genre with adult appeal."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The premise depends on dense time mechanics.",
+          "detail": "The capsule rules, memory-tracking logic, and future/past causality all need the audience to stay oriented while the story is moving fast. That’s not a deal-breaker, but it does make the buy somewhat conditional on the buyer’s appetite for concept-forward exposition.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The lead role narrows casting.",
+          "detail": "Elliot is written as a Korean-American man in his 30s, and the part needs someone who can play wounded comedy, technical intelligence, and escalating paranoia without flattening any one lane. That’s a strong role, but it is a specific one.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The climax leans on fire and VFX.",
+          "detail": "The Wilkes lab sequence requires practical fire, heavy smoke, electrical failure, and a weaponized capsule effect that has to read clearly on screen. It’s still in indie range, but this is the part of the movie most likely to push production planning.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Several brand references need a legal pass.",
+          "detail": "The script names Altria, Aston Martin, Hugo Boss, iPad, Rohypnol, Wired, Sony, Apple, NASA, and Fats Domino, so clearance work is not trivial. Most are manageable, but the prominence of the brands means business affairs will want a careful review.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The movie is strongest when it’s moving.",
+          "detail": "The early setup and later conspiracy reveal are strong, but the script’s appeal is most obvious once the capsules start driving immediate danger. Buyers will notice that the concept’s commercial lift is tied to momentum, not just premise.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is conceptual density: the script asks the audience to track a lot of time-travel logic while also following a betrayal-heavy thriller. Add a specific lead-casting lane and a handful of brand clearances, and this becomes a smart buy that still needs disciplined packaging."
     },
-    "considerations": [
-      {
-        "area": "The middle can keep tightening around the capsule rules.",
-        "detail": "The script is strongest when each capsule changes the game, and the version of the middle where every new message either raises the stakes or reveals a new layer of the conspiracy would keep the momentum razor-sharp. One primary lever would be to make sure the Robyn/Elliot decoding scenes always arrive with a fresh turn, so the audience feels the engine advancing rather than repeating.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The supporting world can stay leaner without losing texture.",
-        "detail": "The story already has enough moving parts in Elliot, Robyn, Wilkes, Craig, Prescott, and Maguire, so any future pass could consider folding or trimming peripheral beats that don’t change the power map. That would protect the pace and keep the movie centered on the relationships that actually drive the thriller.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The opening museum sequence does a lot of setup work.",
-        "detail": "The Park/Meredith prologue is a strong cold open, and it also carries a lot of rule-setting before the movie fully shifts to Elliot. A next pass could explore whether one or two of the explanatory beats there can be delivered through image or later payoff, so the opening lands even faster.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The brand and music references will need a clearance pass.",
-        "detail": "The script names multiple consumer brands, real venues, and a specific song cue, which is normal for a contemporary tech-world piece but does require a practical review. If a producer wants the cleanest path, the version of the script where a few of those references are generalized would preserve the movie’s feel while simplifying paperwork.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The final lab siege is the biggest production swing.",
-        "detail": "The fire, the capsule effects, the security-team action, and the lab destruction all stack into the movie’s most expensive sequence. The story earns it, but a producer could also consider how much of that climax can be staged through contained practical effects and selective VFX to protect the budget without shrinking the payoff.",
-        "is_primary_lever": false,
-        "source": "both"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 77.3,
+  "weightedScore": 77,
   "tier": "Optionable",
-  "inputTokens": 49800,
-  "outputTokens": 4915,
-  "cost": 0.05946749999999999,
+  "inputTokens": 52205,
+  "outputTokens": 4810,
+  "cost": 0.06079875,
   "declaredFormat": "Feature film"
 }

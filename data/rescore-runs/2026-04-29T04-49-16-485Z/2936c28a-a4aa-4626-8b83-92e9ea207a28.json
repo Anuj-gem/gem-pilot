@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T04:55:22.470Z",
+  "submission_id": "2936c28a-a4aa-4626-8b83-92e9ea207a28",
+  "eval_id": "d6d648be-820d-4386-ab17-fbdd9b024b49",
+  "title": "Kit 2.0",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Kit",
+      "role_type": "Lead",
+      "demographics": "male, teen (14), cloned/engineered child, physically small and vulnerable, identity-uncertain"
+    },
+    {
+      "name": "Mother",
+      "role_type": "Supporting",
+      "demographics": "female, 40s-50s, maternal authority figure, medically augmented"
+    },
+    {
+      "name": "Kelto",
+      "role_type": "Supporting",
+      "demographics": "male, teen, brainoid peer, same age range and physical type as Kit"
+    },
+    {
+      "name": "Plowtrough",
+      "role_type": "Supporting",
+      "demographics": "male, adult, maintenance/discipline worker, physically imposing"
+    },
+    {
+      "name": "Entity",
+      "role_type": "Supporting",
+      "demographics": "disembodied voice, non-human intelligence, paternal origin figure"
+    },
+    {
+      "name": "Kandid",
+      "role_type": "Supporting",
+      "demographics": "male, teen, brainoid peer"
+    }
+  ],
+  "positioning_hook": "A nauseous teenage clone escapes a loving mother’s labor colony, only to discover the voice guiding him through a living underground world may be his creator — and his father.",
+  "cost_usd": 0.03214725,
+  "input_tokens": 17651,
+  "output_tokens": 4202,
+  "status": "wrote:leads_ok"
+}

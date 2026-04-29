@@ -2,272 +2,291 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi adventure",
-      "genre_tags": [
-        "psychological thriller",
-        "war drama"
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Action",
+        "Thriller"
       ],
-      "tone": "propulsive, high-concept, emotionally heightened, pulpy but earnest"
+      "tone": "propulsive",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "feature-anchored",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "survival",
+        "identity",
+        "friendship",
+        "space-battle",
+        "memory-hack"
+      ]
     },
-    "positioning_hook": "A hacked fighter pilot and his all-natural gunner race through a collapsing alien war, only to discover the enemy may be rewriting their memories to choose humanity’s next evolution.",
+    "positioning_hook": "A cybernetically enhanced fighter pilot wakes with no memory in a crippled ship, and must trust the one unaugmented gunner who may be lying to him to survive an alien war.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean commercial engine: a two-hander survival chase in space with memory manipulation, alien pursuit, and a big moral reveal. It’s still a more specialized sci-fi lane than broad four-quadrant fare, but the emotional spine and action-forward setup give it real buyer traction."
+        "reasoning": "The premise is immediately legible and commercially legible: a memory-wiped space pilot, a hostile alien threat, and a contained survival engine that keeps resetting the stakes. It has clear genre appeal and a strong two-hander hook, though the dense mythology and repeated reversals narrow it from broad four-quadrant reach."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands immediately in the opening pages: John wakes up hacked, trapped in a fighter, and has to trust Mo while enemy ships close in. The script keeps the central question legible throughout — who is lying, what is real, and what does the alien force actually want?"
+        "reasoning": "The hook lands in the opening pages: John wakes restrained in a damaged fighter, learns the fleet has been hacked, and is forced into a trust game with Mo. The script keeps the premise clean even as it layers in the father-memory and blue-dot mythology."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 8,
-        "reasoning": "John and Mo are built as opposites with strong friction: he’s a survivor with violent instincts and memory damage, she’s principled, wired differently, and emotionally committed to meaning. Their push-pull gives the feature a durable engine, and both roles offer actors a lot of playable contradiction."
+        "score": 7,
+        "reasoning": "John and Mo are both built around contradiction: he’s a violent survivor with a buried family wound, she’s an all-natural martyr who keeps choosing principle over safety. They’re playable and actor-friendly, though the script leans more on function and ideology than on fully surprising personal behavior."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a strange, specific blend of military sci-fi, memory warfare, and spiritual test imagery, then keeps escalating into stranger territory with the father-vision, the blue-dot doctrine, and the jellyfish reveal. It’s confident enough to feel authored rather than assembled."
+        "reasoning": "The script commits to a strange, confident blend of military sci-fi, memory manipulation, and quasi-religious alien psychology. The repeated use of the father-vision as both manipulation and emotional trap gives the material a distinct identity."
       },
       "narrative_momentum_engagement": {
-        "score": 8,
-        "reasoning": "The story keeps turning the screws: escape, distrust, betrayal, revelation, alliance, then a larger cosmic choice. The set pieces are arranged to keep the audience re-evaluating the truth, and the final run to the flagship gives the feature a strong forward charge."
+        "score": 7,
+        "reasoning": "The shipboard reversals, betrayals, and tactical pivots keep the movie moving, especially through the Bryant and Descano sections. The middle does rely on repeated trust/distrust cycles, so the propulsion is strong but not relentless."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The most memorable idea here is the way the alien war becomes a fight over identity, memory, and moral selection rather than just firepower. The blue-dot/red-dot framework, the father implant, and the final test give the premise a fresh conceptual signature."
+        "reasoning": "The core idea of a hacked pilot being steered by a fake father while an unaugmented gunner becomes his moral counterweight feels fresh and sticky. The blue-dot/red-dot framework and the final alien test give the premise a memorable conceptual spine."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The world has a lot of usable texture: cybernetic pilots, drone airlocks, hacked transponders, radiation protocols, and a layered military hierarchy. It’s still primarily a contained war-space container rather than a fully sprawling civilization, but the rules are clear and story-generating."
+        "reasoning": "The script builds a usable sci-fi ecosystem: cybernetic pilots, drone airlocks, hacked fleets, alien escorts, research stations, and a layered command structure. It’s specific and story-generating, though the world is still mostly revealed through the immediate crisis rather than lived-in social detail."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unusually specific: hard-scrabble space combat, paranoid mind games, and then sudden cosmic wonder with the jellyfish and the vacation-home afterlife. That blend of grimy militarism and earnest transcendence gives the script a distinct identity."
+        "reasoning": "The tone is unusually confident: hard-sci-fi mechanics, macho banter, emotional melodrama, and cosmic wonder all coexist without feeling random. The script knows when to be brutal, funny, and awe-struck, which gives it a hard-to-imitate register."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "Beneath the chase plot, the script is really about grief, coercion, belief, and whether people can evolve without being forced. The father-memory, Mo’s martyr impulse, and John’s buried family trauma all suggest a deeper emotional layer that pays off in the final act."
+        "reasoning": "Beneath the action engine is a real thematic argument about trust, identity, propaganda, and what kind of species deserves to survive. The father-memory, Mo’s martyrdom, and the blue-dot philosophy all suggest a deeper layer that pays off by the end."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "John/Mo is the core engine and it’s strong enough to carry the feature, with Bryant, Paul, Descano, and the Father each adding pressure from different angles. The supporting cast is functional and plot-active, though the movie still lives primarily on the central duo."
+        "reasoning": "The John/Mo dynamic carries the movie and has real friction, intimacy, and reversals, with Bryant, Paul, Descano, and the Father adding pressure from different angles. It’s not an ensemble in the broad sense, but the relationship web is strong enough to keep generating conflict."
       }
     },
+    "lead_characters": [
+      {
+        "name": "John",
+        "role_type": "Lead",
+        "demographics": "Male, late 20s, human fighter pilot, cybernetically enhanced, working-class military background.",
+        "hook": "A hard-edged, memory-fractured pilot grunt who survives by instinct, aggression, and denial. John is built as a contradiction machine: he’s the guy most likely to shoot first, but the story keeps forcing him toward empathy, grief, and the possibility that his real identity is not the killer he thinks he is.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in a stripped-down survival role or Michael B. Jordan in a pressure-cooker action lead — the part gives an actor physical command, volatility, and a late-breaking emotional reveal that redefines the character."
+      },
+      {
+        "name": "Mo",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, unaugmented human gunner, blue-collar, civilian-coded but combat-capable.",
+        "hook": "A fiercely principled, all-natural gunner who survives by competence, stubbornness, and moral conviction. Mo is the script’s conscience and its engine of doubt: she lies when she has to, but she keeps circling back to the question of what kind of person survives without becoming a monster.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Florence Pugh in a high-stakes genre lead — the role asks for toughness, wit, vulnerability, and a final-act moral authority that can flip the whole movie."
+      },
+      {
+        "name": "Bryant",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, human, scientist/operator type, military-adjacent, physically hardened.",
+        "hook": "A manic, persuasive true-believer who sells apocalypse as systems thinking. Bryant is the kind of supporting antagonist who can talk like a savior, act like a zealot, and then reveal the body-horror cost of his ideology in one brutal turn.",
+        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Vice Principals or Giancarlo Esposito in a morally slippery operator role — the part gives an actor intelligence, menace, and a late-stage body-horror pivot."
+      },
+      {
+        "name": "Descano",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, senior military leader, human, authoritative, polished.",
+        "hook": "A calm, paternal command figure who turns out to be the architect of the species-level compromise. Descano plays like a statesman until the script reveals he’s willing to sacrifice half the species and call it mercy.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in a prestige authority role or J.K. Simmons in a controlled, dangerous institutional power part — the role lets an actor weaponize warmth, rank, and moral certainty."
+      },
+      {
+        "name": "Paul",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, human, officer/attaché, Mo’s fiancé.",
+        "hook": "Mo’s emotional anchor who becomes a compromised believer in the blue-dot project. Paul matters because he’s not just a love interest; he’s the proof that the war has already infected intimacy and turned devotion into policy.",
+        "why_actor_wants_this": "This is the showcase territory of Adam Driver in a conflicted authority role or Lakeith Stanfield in a quietly destabilizing romantic-supporting part — the role gives an actor tenderness, betrayal, and ideological fracture."
+      },
+      {
+        "name": "Father",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-50s appearance, human memory-construct / implanted persona.",
+        "hook": "A recurring hallucinated father figure who functions as both emotional sedative and ideological malware. He’s not a character in the ordinary sense so much as a weaponized memory, which makes every appearance feel intimate and threatening at once.",
+        "why_actor_wants_this": "This is the showcase territory of a performance like Mahershala Ali in Moonlight’s emotional precision or Ben Mendelsohn in a haunting authority role — the part is about presence, seduction, and the ability to make a false memory feel spiritually real."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 8,
-        "leads": 2,
+        "speaking_roles": 7,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "male lead in 20s",
-          "female lead in 20s",
-          "older male authority roles",
-          "voice performances for comms/visions"
+          "Two central adult roles carry the film",
+          "Several off-screen voice roles",
+          "No child performer required on page, though a baby appears in memory vision"
         ]
       },
       "locations": {
         "distinct_count": 8,
-        "interior_exterior_ratio": "mostly interior with frequent exterior space/atmosphere inserts",
-        "period_or_contemporary": "futuristic",
+        "interior_exterior_ratio": "Mostly interior with recurring exterior space and atmospheric VFX plates",
+        "period_or_contemporary": "Near-future",
         "notable_requirements": [
-          "spaceship cockpit/cabin build",
-          "zero-G or wire-assisted spacewalks",
-          "floating research station",
-          "gas giant atmosphere and debris-field visuals"
+          "Contained spaceship interior built as a hero set",
+          "Zero-g / exterior space environments",
+          "Research station interior and landing platform",
+          "Dream/memory environments for the vacation home and forest visions"
         ]
       },
       "technical": {
         "vfx_level": "heavy",
-        "vfx_details": "Extensive spacecraft, alien fighters, atmospheric flight, explosions, holograms, memory-vision overlays, alien jellyfish, and final destruction sequences.",
+        "vfx_details": "Extensive spaceflight, alien ships, atmospheric flight, explosions, holograms, memory-vision transitions, alien jellyfish creatures, and ship damage work throughout.",
         "stunts_level": "moderate",
-        "sfx_needs": "Practical ship damage, fire, smoke, pressure-loss, body paralysis, and debris impacts.",
-        "night_shoots": "significant",
+        "sfx_needs": "Practical ship damage, fire, pressure-loss, body-horror tendrils, and paralyzed/medical effects.",
+        "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "streaming theatrical feature lane",
-        "content_level": "PG-13 equivalent to mature",
-        "series_engine_or_release_model": "Feature release model with strong streamer appeal; best suited to festival-to-platform or effects-driven genre theatrical with a contained cast."
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: effects-driven theatrical sci-fi with strong streaming afterlife if not positioned as a wide event."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "high",
+        "note": "The script lives on spaceflight, alien craft, atmospheric battles, holographic interfaces, and multiple large-scale VFX sequences, so the effects load will drive the budget well above a contained genre level."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "high",
-          "note": "The script depends on heavy space VFX, multiple ship battles, atmospheric flight, alien creatures, and large destruction sequences."
+      "casting": {
+        "level": "medium",
+        "note": "John and Mo need a very specific chemistry: he has to play volatility and wounded innocence, while she has to carry moral force without losing edge. The roles are strong, but the pairing is the casting conversation."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The father-memory device, the blue-dot mythology, and the final alien-test reveal are distinctive, but they require a buyer to lean into a fairly elaborate conceptual framework before the emotional payoff lands."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Edge of Tomorrow",
+          "year": 2014,
+          "why_it_comps": "Shares the military sci-fi propulsion, tactical problem-solving, and a lead who has to learn the rules of a hostile war zone fast."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The story is anchored by two leads and a compact supporting ensemble, with no child casting or star-heavy dependency built into the page."
+        {
+          "title": "The Last Starfighter",
+          "year": 1984,
+          "why_it_comps": "The fighter-pilot fantasy, alien war stakes, and outsider hero energy echo the same wish-fulfillment lane, updated here with a darker, more adult edge."
         },
-        "location": {
-          "level": "high",
-          "note": "Multiple spacecraft interiors, exterior space action, a floating research station, debris fields, and gas-giant atmosphere sequences drive the footprint."
+        {
+          "title": "Sunshine",
+          "year": 2007,
+          "why_it_comps": "Matches the high-concept space mission tension, the psychological pressure inside a confined ship, and the eventual turn toward cosmic awe."
         },
-        "content": {
-          "level": "medium",
-          "note": "Violence, executions, body horror imagery, and war-scale destruction are present, but the material stays within a mainstream sci-fi thriller range."
-        },
-        "rights": {
-          "level": "low",
-          "note": "The script appears to be original IP with no named real people, brands, or music dependencies."
+        {
+          "title": "Pandorum",
+          "year": 2009,
+          "why_it_comps": "The memory loss, shipboard paranoia, and survival-through-mistrust structure are close cousins to this script’s first-half engine."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult sci-fi and action audiences who want a smart, emotional space thriller with a strong two-hander and a big conceptual payoff.",
+        "demographics": "Skews 18-44, male-leaning but with strong crossover for genre-savvy women; best for viewers who like elevated sci-fi with character conflict.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "studio",
+        "range": "$55M-$90M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "The ship interiors are containable, but the alien fleet, atmospheric battles, creature work, and repeated VFX-heavy action sequences push this into studio-feature territory."
+      },
+      "lane_fit": {
+        "lane": "elevated studio sci-fi thriller",
+        "types_of_buyers": [
+          "studio genre executives",
+          "streamer feature acquisition teams",
+          "mid-budget sci-fi producers",
+          "director-driven sci-fi buyers",
+          "prestige action-thriller labels"
+        ],
+        "detail": "This sits in the lane of smart, effects-forward sci-fi that still needs character chemistry and a clean emotional spine. It’s built for buyers who want a commercial hook without losing the adult, idea-driven feel."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a complete emotional and narrative arc; the John/Mo story resolves cleanly, and the world is broad but not obviously franchise-shaped."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The John/Mo dynamic is the engine.",
-          "what_it_means": "This gives the project a two-hander center that can carry both action and emotional payoff, which is exactly what buyers want when the VFX spend is high. Actors who want a showcase partnership role — the kind built on friction, trust, and reversal — will see immediate value here.",
-          "evidence": "Their cockpit/cabin split, the repeated trust tests, the hand-holding beats, and the final embrace before the nuke all make the relationship the movie’s spine.",
+          "dimension_or_area": "The opening hook is immediate.",
+          "what_it_means": "This gives the project a fast, readable sell: a memory-wiped pilot in a damaged ship is an easy pitch for buyers and audiences. It also helps the script clear the hardest first hurdle in the room — everyone understands the engine within minutes.",
+          "evidence": "John wakes restrained in the K-59, learns the fleet is hacked, and is forced into a trust crisis with Mo before the first major action sequence ends.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The memory-hack conceit is commercially legible.",
-          "what_it_means": "The script turns a familiar space-war setup into a paranoia thriller, which broadens the hook beyond pure effects spectacle. Buyers looking for a sci-fi premise with a clean emotional question — what if your memories were weaponized — have a strong angle to sell.",
-          "evidence": "John’s post-it notes, the Father visions, and the repeated uncertainty over what is real versus implanted drive the plot.",
+          "dimension_or_area": "John and Mo are a real two-hander.",
+          "what_it_means": "The film has a built-in chemistry engine that can carry a star-driven package and keep the movie alive even when the mythology gets dense. Buyers looking for actor-forward genre material will see a pair of roles with friction, intimacy, and reversals.",
+          "evidence": "Their relationship moves from suspicion to alliance to betrayal to emotional dependence, especially in the gun, post-it, and final sacrifice sequences.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has a clear ruleset.",
-          "what_it_means": "The pilot establishes a usable sci-fi grammar fast — hacked pilots, drone airlocks, emulator tech, radiation sensors, and transponder logic — which helps the audience track a complicated premise without losing the thread. That clarity is valuable for a producer because it makes the movie feel expensive in concept, not confusing in execution.",
-          "evidence": "The ship systems, the “red line” descent, the modem-like comms, and the blue-dot explanation all build a coherent operating system.",
+          "dimension_or_area": "The father-memory device is sticky.",
+          "what_it_means": "This creates a memorable signature that separates the script from generic space-war material and gives the movie a psychological hook beyond the action. It also gives a director a visual and emotional motif to build around.",
+          "evidence": "The recurring flash visions of the Father, the post-it notes, and the reveal that the memory is an implant all recur as a single story engine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tonal blend is distinctive.",
-          "what_it_means": "It can play as hard sci-fi one minute and spiritual fable the next, which gives the project a lane that feels more authored than generic. That kind of tonal signature attracts directors who want to make genre material with emotional and philosophical lift, and buyers who want something that stands apart on a slate.",
-          "evidence": "The script moves from fighter-ship combat to the jellyfish ballet to the vacation-home afterlife without losing its core identity.",
+          "dimension_or_area": "The world has usable sci-fi rules.",
+          "what_it_means": "The pilot-port system, drone airlock, holographic ship interface, hacked fleet logic, and blue-dot program make the universe feel operational rather than decorative. That kind of rule-based world is attractive to buyers because it suggests repeatable tension and clear visual language.",
+          "evidence": "The ship’s controls resize to each pilot, the emulator sits under the floor, and the fleet’s hack logic drives the entire war.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Mo is a strong actor-facing role.",
-          "what_it_means": "She has conviction, humor, fear, and moral force, which makes her the kind of lead that can anchor a prestige genre package. Mid-career actresses looking for a role with action, intelligence, and emotional authority will chase this, especially in a market that still wants female-led sci-fi with a point of view.",
-          "evidence": "Her refusal to run, her martyr logic, her spacewalk repair work, and her final choice to trust John all give her range.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "John has a volatile star turn built in.",
-          "what_it_means": "He’s a damaged, funny, dangerous lead who can pivot from swagger to vulnerability to ferocity, which is the kind of role that can reframe an actor’s image. Actors who thrive on morally compromised charisma will see a lot of playable territory in the Cockroach persona and the buried father/son grief.",
-          "evidence": "His post-it dependence, his shifting loyalties, the “I only see you” line, and the final choice to reject the false father all define the part.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The final act has a genuine scale lift.",
-          "what_it_means": "The movie doesn’t stay trapped in one ship; it opens into a larger cosmic reveal with the research station, the jellyfish, the flagship, and the afterlife-like test space. That escalation helps the feature feel like an event rather than a single-location exercise, which is important for theatrical and streamer positioning.",
-          "evidence": "The move from K-59 to the Madrid to the floating station to the atmosphere battle expands the canvas in a controlled way.",
+          "dimension_or_area": "The ending lands on theme, not just spectacle.",
+          "what_it_means": "The final choice gives the movie a clean emotional thesis about trust, sacrifice, and what kind of people deserve to survive. That makes the script feel more premium than a standard chase-through-space title.",
+          "evidence": "John and Mo choose not to nuke the Jellyfish, then sacrifice the ship, and the final “neighbors” reveal reframes the whole war.",
           "source": "script"
         }
       ],
-      "headline": "ZENITH is a propulsive sci-fi feature with a sharp two-hander at its center and a premise that keeps mutating in smart, cinematic ways. It offers a producer a contained-but-expansive package: a strong actor’s duel, a clear high-concept hook, and a final-act reveal that turns a war movie into a moral test."
+      "headline": "This is a strong commercial sci-fi package: a clean, high-concept opening, a volatile two-hander, and a rule-based world that can support big set pieces and emotional payoff. The script’s best asset is that it feels both actor-forward and effects-forward, which is exactly the combination that can justify a serious genre buy."
     },
-    "lead_characters": [
-      {
-        "name": "JOHN",
-        "role_type": "Lead",
-        "demographics": "Male · late 20s · human fighter pilot with cybernetic interface",
-        "hook": "John is a cocky, damaged space pilot whose identity has been partially stripped away by a hack, leaving him to rebuild himself from scraps of instinct, muscle memory, and post-it notes. He’s funny, volatile, and deeply wounded, with a survivor’s reflexes and a buried tenderness that keeps surfacing through the noise. The role lives in contradiction: he can be a killer, a clown, a believer, and a grieving father in the same scene.",
-        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, haunted man whose fractured inner life is the performance engine. It gives an actor the chance to play swagger, paranoia, grief, and hard-earned moral clarity in one lead role that keeps changing shape."
-      },
-      {
-        "name": "MO",
-        "role_type": "Lead",
-        "demographics": "Female · early 20s · human gunner, all-natural",
-        "hook": "Mo is a blue-collar, all-natural gunner with a fierce moral center and a body that marks her as outside the system she serves. She’s practical, sharp, emotionally guarded, and capable of surprising tenderness, but what defines her most is that she refuses to surrender her values even when survival would be easier. She reads like someone who has already decided what kind of person she wants to be, then spends the movie proving it under pressure.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve — a woman whose intelligence, humor, and emotional volatility all stay active at once. It gives an actress a physically active, morally serious lead who can carry action, intimacy, and conviction without ever becoming generic."
-      },
-      {
-        "name": "BRYANT",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · human scientist/operator",
-        "hook": "Bryant is a jittery, self-justifying operator who talks like a visionary and behaves like a hustler. He’s the kind of man who can explain the future in a whiteboard pitch while hiding the fact that he’s already crossed the line into something ugly. He brings a dangerous mix of intelligence, opportunism, and ideological certainty.",
-        "why_actor_wants_this": "This is the showcase territory of Walton Goggins in Justified — a fast-talking, morally slippery man whose charm is inseparable from menace. It gives an actor a compact but memorable role with big monologue energy and a hard turn into threat."
-      },
-      {
-        "name": "PAUL",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s · human officer/attaché",
-        "hook": "Paul is Mo’s fiancé and the face of the life she’s trying to get back to, but he’s also entangled in the larger system that wants to remake humanity. He reads as earnest, compromised, and emotionally legible, which makes his loyalty feel both comforting and suspect. The part functions as a pressure point between love, ideology, and institutional obedience.",
-        "why_actor_wants_this": "This is the showcase territory of Michael C. Hall in Dexter when the mask starts to slip — a man whose emotional availability is always carrying a second agenda. It gives an actor the chance to play romantic sincerity, bureaucratic authority, and quiet betrayal in the same frame."
-      },
-      {
-        "name": "DESCANO",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s · human admiral",
-        "hook": "Descano is a polished military patriarch who speaks in the language of sacrifice while engineering a species-level transformation. He has the calm authority of a man who believes history will vindicate him, which makes his cruelty feel bureaucratic rather than theatrical. He’s the face of institutional certainty taken to its logical extreme.",
-        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad when authority becomes ideology — a man who can sound reasonable while steering catastrophe. It gives a veteran actor a command role with moral ambiguity, command presence, and a late-stage reveal of true intent."
-      },
-      {
-        "name": "FATHER",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-60s appearing ageless in memory visions",
-        "hook": "The Father is a memory construct, a masculine authority figure who appears as a guide, a comfort, and eventually a manipulator. He’s less a person than a weaponized emotional template, which makes every appearance feel intimate and suspect at once. The role is built to be both reassuring and uncanny.",
-        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in The Grand Budapest Hotel or The Menu’s controlled authority figures — a performance that can pivot from warmth to menace with precision. It gives an actor a stylized, scene-stealing part that lives in voice, presence, and psychological control."
-      },
-      {
-        "name": "K LEADER",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · voice role / off-screen pilot leader",
-        "hook": "K Leader is a macho, clipped voice of command who embodies the fleet’s appetite for violence and certainty. He’s not a full character in the room so much as a pressure system over the room, shaping John’s choices through authority and fear. The role works as a recurring voice of militarized instinct.",
-        "why_actor_wants_this": "This is the showcase territory of a great voice performance in a contained thriller — the kind of role that lets an actor dominate scenes without ever entering the frame. It’s attractive to recognizable character actors who can make a voice feel like a threat, a seduction, and a command."
-      },
-      {
-        "name": "HARDCASE",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-30s · voice role / pilot",
-        "hook": "Hardcase is a sharp, desperate voice from another ship who instantly complicates the trust game. She feels like a survivor with her own agenda, which makes every transmission feel like a possible trap. She functions as a live-wire pressure point in the middle of the chase.",
-        "why_actor_wants_this": "This is the showcase territory of a strong voice role in a thriller like The Martian’s mission-control voices or Gravity’s off-screen operators — a part that can create tension with only a few lines. It’s ideal for an actor who can make urgency and suspicion feel immediate."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a space thriller that turns into a moral fable without losing momentum.",
-        "fit_profile": "Established indie or elevated-genre directors with at least one or two features, especially those who already work well with contained tension, performance-forward scenes, and clean visual rules. This material rewards directors who can stage action economically while making the memory imagery, alien reveal, and final cosmic test feel emotionally inevitable.",
-        "detail": "The craft opportunity is to keep the audience oriented through a lot of moving parts while still landing the emotional reversals between John and Mo. It’s especially attractive to directors who like genre material that can carry both spectacle and a philosophical aftertaste."
-      },
-      "buyer_appeal": {
-        "tier": "$20-40M feature",
-        "lane": "premium streamer sci-fi / elevated genre theatrical",
-        "detail": "The package can be built around two strong lead performances rather than a giant ensemble, which helps offset the VFX spend and gives buyers a clear marketing spine. The alien-war premise, memory twist, and contained ship-based footprint make it exportable and easy to position as a high-concept genre event."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology gets very dense, very fast.",
+          "detail": "The blue-dot/red-dot framework, the Father implant, the emulator, the Alice biology, and the final test structure all arrive in a relatively compressed run. That’s not a fatal flaw, but it is the main buyer conversation: the concept is strong, yet the explanation load is heavy enough to make the script feel tier-dependent on execution and casting.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The VFX footprint is not small.",
+          "detail": "Multiple fighter ships, atmospheric flight, alien jellyfish, explosions, holograms, and ship-damage sequences are baked into the spine of the movie. Even with a contained interior set, this is not a cheap sci-fi play and will need a buyer comfortable with studio-level effects spend.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "John’s trust swings are intentionally extreme.",
+          "detail": "He flips from Mo to Hardcase to K Leader to Bryant and back again, often on the strength of a single new data point or memory flash. That keeps the tension alive, but it also means the lead’s decision-making will be a point of scrutiny in the room because the audience has to track his logic beat by beat.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Mo is strongest as a moral force, not a mystery.",
+          "detail": "She’s compelling because of conviction, competence, and emotional restraint, but the script gives John the more elaborate internal maze. That makes the film work as a two-hander, though the packaging conversation will still center more on the male lead’s volatility than on a fully equal dual-star engine.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is conceptual density: the script asks the audience to track a lot of moving parts before the emotional thesis fully locks. On the production side, the effects load is real, so the buy case depends on a buyer who wants elevated sci-fi and is willing to pay for it."
     },
-    "considerations": [
-      {
-        "area": "The opening spends time on setup before the core relationship locks.",
-        "detail": "The opening sequence is effective at establishing the war and John’s condition, and the first major turn arrives with real force once Mo enters. A next pass could consider bringing the John/Mo friction online as early as possible so the audience gets the movie’s best engine sooner.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The Father visions carry the emotional thesis.",
-        "detail": "The memory construct is one of the script’s strongest devices, and it does a lot of thematic work. One lever would be to keep each Father appearance doing a slightly different job — comfort, manipulation, revelation — so the audience feels the pattern tightening rather than repeating.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The final-act reveal asks for a lot of VFX.",
-        "detail": "The jellyfish, flagship, atmospheric battle, and afterlife/test space all pay off the concept, but they also define the cost profile. A simplification lever would be to protect the emotional and philosophical beats while collapsing any redundant exterior beats into fewer, bigger visual turns.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The supporting voices are strongest when they pressure the duo.",
-        "detail": "Bryant, Paul, Descano, and the off-screen commanders all work best as forces that force John and Mo into choice. A future pass could keep each of those voices more sharply differentiated in function so every call or confrontation changes the board in a distinct way.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The ship interiors are a major asset.",
-        "detail": "The K-59 cabin/cockpit split gives the movie a producible core and a strong visual grammar. Protecting that contained engine while limiting any additional locations that don’t change the story would keep the movie feeling focused even as the world expands.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 74.7,
+  "weightedScore": 73.7,
   "tier": "Optionable",
-  "inputTokens": 41215,
-  "outputTokens": 4678,
-  "cost": 0.05196225,
+  "inputTokens": 43620,
+  "outputTokens": 4236,
+  "cost": 0.051777000000000004,
   "declaredFormat": "Feature film"
 }

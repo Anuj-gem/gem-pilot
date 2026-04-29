@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T04:56:49.383Z",
+  "submission_id": "0ca2379f-db8c-4aef-9f18-67835037d588",
+  "eval_id": "ea3dd274-034c-4711-a5b8-e1f9095491cf",
+  "title": "Spare",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Sophia French",
+      "role_type": "Lead",
+      "demographics": "Female, 17, white or light-skinned teen, high-school student, recovering addict, emotionally volatile but resilient."
+    },
+    {
+      "name": "Evelyn",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, teen sister, supportive family member."
+    },
+    {
+      "name": "Bonnie",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged mother."
+    },
+    {
+      "name": "Maddy",
+      "role_type": "Supporting",
+      "demographics": "Female, 18, senior, group leader, aspiring performer/businesswoman."
+    },
+    {
+      "name": "Nate",
+      "role_type": "Supporting",
+      "demographics": "Male, teen, bi, recently bereaved, athletic build."
+    },
+    {
+      "name": "Sam",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, goth-presenting teen, introverted, queer-coded or bi-coded through dialogue context."
+    },
+    {
+      "name": "Emma",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, teen, twin sister to Sam."
+    },
+    {
+      "name": "Bryan",
+      "role_type": "Supporting",
+      "demographics": "Male, 16, teen boyfriend, polished and self-regarding."
+    },
+    {
+      "name": "Kyle",
+      "role_type": "Supporting",
+      "demographics": "Male, 16, teen boyfriend, later revealed as killer."
+    },
+    {
+      "name": "Nancy",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, loyal friend, socially central teen."
+    },
+    {
+      "name": "Phoebe",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, teen friend, sincere and honest."
+    },
+    {
+      "name": "Tina",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, teen new girl, snarky and self-contained."
+    },
+    {
+      "name": "Jade",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, teen, influencer-adjacent, moving away."
+    },
+    {
+      "name": "Zoey",
+      "role_type": "Supporting",
+      "demographics": "Female, teen, schoolmate."
+    },
+    {
+      "name": "Nate",
+      "role_type": "Supporting",
+      "demographics": "Male, teen, bi, recently bereaved, athletic build."
+    }
+  ],
+  "positioning_hook": "A recovering teen addict tries to hold her friend group together after a masked killer starts executing their darkest secrets, only to discover the murderer is one of their own.",
+  "cost_usd": 0.0550065,
+  "input_tokens": 39718,
+  "output_tokens": 5604,
+  "status": "wrote:leads_ok"
+}

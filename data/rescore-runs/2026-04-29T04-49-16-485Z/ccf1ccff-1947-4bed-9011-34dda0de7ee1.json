@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T04:58:21.522Z",
+  "submission_id": "ccf1ccff-1947-4bed-9011-34dda0de7ee1",
+  "eval_id": "81edb627-46cf-45e0-9877-32efeb25da5c",
+  "title": "Celtx   Script SINON",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Francis Booker",
+      "role_type": "Lead",
+      "demographics": "Male, early 20s to early 30s, office worker, anomalous supernatural ability, likely working-class/underclass-coded"
+    },
+    {
+      "name": "Ploy",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Thai, field operative with sonic/bass-based powers"
+    },
+    {
+      "name": "Doreen",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, authority figure, corporate/military-adjacent manager"
+    },
+    {
+      "name": "Hal",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, physically imposing, field operative with enhanced strength"
+    },
+    {
+      "name": "Clara",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Italian, coked-up, volatile field operative"
+    },
+    {
+      "name": "Toast",
+      "role_type": "Supporting",
+      "demographics": "Nonhuman robot, adult-coded, sentient machine operative"
+    },
+    {
+      "name": "Jerry",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, cyborg wolf-man, office worker"
+    }
+  ],
+  "positioning_hook": "A timid office clerk in a retro-futurist death bureau is forced into a monster hunt when his buried anomaly powers make him the team’s last chance to erase a regenerating British zombie.",
+  "cost_usd": 0.034653750000000004,
+  "input_tokens": 18797,
+  "output_tokens": 4568,
+  "status": "wrote:leads_ok"
+}

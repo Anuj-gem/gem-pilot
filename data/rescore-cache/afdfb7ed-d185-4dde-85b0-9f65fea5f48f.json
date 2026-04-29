@@ -2,345 +2,371 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological thriller",
-      "genre_tags": [
-        "dark drama",
-        "horror"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Drama"
       ],
-      "tone": "grounded, surreal, grotesque, darkly comic"
+      "tone": "surreal",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "slow-burn",
+        "family-dynamics",
+        "mental-health",
+        "revenge",
+        "high-school",
+        "halloween"
+      ]
     },
-    "positioning_hook": "A feral English teacher who attacks women outside nightclubs by night must keep her marriage, her students, and her own violent double life from collapsing on Halloween.",
+    "positioning_hook": "A high-school English teacher who moonlights as a sadistic nightclub attacker must keep her marriage, her student confidant, and a citywide manhunt from colliding before Halloween exposes everything.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise has a clean, sellable engine: a woman-led psychological thriller with a serial-attack mystery, a school setting, and a Halloween climax. The audience is clear, though the material plays more cult-prestige than four-quadrant, with its strongest pull coming from viewers who like transgressive character pieces."
+        "score": 6,
+        "reasoning": "The hook is immediate and the Halloween countdown gives it a clean commercial engine, but the material is niche in its tonal extremity and character psychology. It will attract buyers looking for elevated genre, not broad four-quadrant play."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early and keeps sharpening: Francis’ nightclub attacks, the police investigation, and the split between her domestic life and nocturnal violence are all established fast. The script makes its central contradiction legible in the opening pages and then keeps feeding it with the classroom, home, and party sequences."
+        "reasoning": "The premise lands fast: Francis is the attacker, the police are closing in, and the story is building toward Halloween. The script makes that clear through the nightclub assaults, the news reports, and the final gymnasium showdown."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Francis is a vivid lead with a strong contradiction—brilliant, sexually charged, contemptuous, and strangely magnetic—while Edgar and Charlie give the story emotional counterweights. The supporting players are functional and specific enough to keep scenes alive, though the script is most durable when it stays close to Francis, Edgar, Charlie, and Diane."
+        "reasoning": "Francis is vivid, contradictory, and playable as both menace and charisma, while Charlie and Diane add strong counterweights. The characters are memorable, though the script leans more on behavior and mood than on a fully rounded emotional arc."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The half-painted clown smile, the black-and-white/color shifts, and the repeated fantasy intrusions give the script a confident visual grammar. The choice to make the attacker a teacher whose violence is tied to humiliation, desire, and performance gives the material a sharper edge than a standard mystery-thriller."
+        "reasoning": "The black-and-white/color shifts, fantasy intrusions, and half-painted clown iconography give the script a distinct authorial stamp. The choice to center a female aggressor who humiliates before attacking is unusually specific and hard to mistake for generic genre writing."
       },
       "narrative_momentum_engagement": {
-        "score": 7,
-        "reasoning": "The story keeps moving through attacks, domestic confrontations, police scenes, and the Halloween build, so the engine is always active. The momentum is strongest when the investigation and Francis’ private life collide; the more the script leans into those collisions, the more propulsive it feels."
+        "score": 6,
+        "reasoning": "The story has a strong forward pull through repeated attacks, police pressure, and the Halloween endpoint, but it moves in episodic bursts rather than a tightly escalating chain. Several domestic and dreamlike passages deepen texture more than propulsion."
       },
       "resonant_originality": {
-        "score": 8,
-        "reasoning": "A beautiful, volatile teacher who humiliates and attacks women while her husband and students orbit her is an immediately ownable premise. The script’s mix of domestic satire, queer-coded menace, and horror imagery gives it that rare feeling of something strange that still clicks instantly."
+        "score": 7,
+        "reasoning": "The script’s core idea is fresh in a way that is easy to explain: a charismatic teacher/assailant whose violence is tied to humiliation and performance. It’s memorable, though the surrounding domestic material is more familiar than the central conceit."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The high school, police station, nightclub, and wealthy family spaces each carry their own social codes, and the script uses class, marriage, and public reputation as active pressures. The world feels lived-in and story-generating, especially in the way the school and the Bell/Cloud households mirror each other."
+        "reasoning": "The school, the police station, the nightclub circuit, and the two households create a specific social ecosystem with recurring pressure points. The world feels lived-in, especially through the class dynamics, marriage tensions, and the citywide rumor mill."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a very identifiable tone: abrasive, lyrical, sexually charged, and then suddenly grotesque or dreamlike. The repeated booing motif, the clown imagery, and the deadpan domestic banter create a tonal signature that would be recognizable from a single scene."
+        "reasoning": "The script has a very particular register: grotesque, lyrical, funny, and unsettling all at once. Francis’s banter, the fantasy cutaways, and the abrupt violence create a tonal identity that is difficult to imitate."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the surface violence, the script is circling grief, shame, repression, and the way families normalize abuse. The Diane/Charlie material in particular suggests a deeper emotional engine, and the Francis/Edgar marriage hints at a much larger psychological story than the plot initially announces."
+        "reasoning": "There are clear seeds of deeper material around shame, performance, motherhood, and inherited damage, especially in the Diane/Charlie flashback and Francis’s split self-image. The script suggests more beneath the surface than it fully cashes in on within this feature."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "Francis/Edgar, Francis/Charlie, Diane/Charlie, and Lawrence/Jill all generate distinct friction, and the dinner and party scenes show how quickly the ensemble can produce conflict. The script is still lead-driven, but the supporting relationships are active enough to create multiple playable combinations."
+        "score": 8,
+        "reasoning": "Francis/Edgar, Francis/Charlie, Diane/Charlie, and Diane/Albert all generate distinct energy, and the dinner-party and car scenes show how easily the relationships produce conflict. This is a strong relationship engine, not just a solo showcase."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Francis Cow",
+        "role_type": "Lead",
+        "demographics": "Black woman, 30s, married, high-school English teacher, physically imposing, queer-coded energy not explicit, psychologically volatile.",
+        "hook": "Francis is the script’s gravitational center: a beautiful, statuesque teacher with a rebel’s swagger, a bully’s appetite for control, and a private ritual of violence that feels half-performance, half-compulsion. She can be seductive, funny, cruel, and oddly tender in the same breath, and the script keeps her unreadable enough to stay dangerous. Her marriage to Edgar is real, but it’s also a stage on which she manages her masks.",
+        "why_actor_wants_this": "This is showcase territory in the vein of Rosamund Pike in Gone Girl or Jodie Comer in Killing Eve — a role that lets an actor toggle charm, menace, erotic charge, and deadpan comedy inside the same scene. The prize here is a signature antiheroine part with iconography, quotable dialogue, and a final-act reveal that resets how the audience sees her."
+      },
+      {
+        "name": "Charlie Bell",
+        "role_type": "Supporting",
+        "demographics": "Mixed-race teenage boy, 15, androgynous, emotionally fragile, socially alienated, student.",
+        "hook": "Charlie is the wounded observer who sees too much and has too little power to stop any of it. He’s drawn to Francis’s volatility and repelled by his mother Diane’s cruelty, which makes him the story’s most vulnerable moral witness. His sleepwalking, bruises, and longing for escape give him a haunted, almost ghostlike presence.",
+        "why_actor_wants_this": "This is the kind of role that gave Lucas Hedges in Manchester by the Sea or Timothée Chalamet in Beautiful Boy a chance to play sensitivity under pressure and make fragility feel cinematic. The showcase is emotional transparency: fear, yearning, humiliation, and the slow accumulation of a breaking point."
+      },
+      {
+        "name": "Edgar Cow",
+        "role_type": "Supporting",
+        "demographics": "Black man, 30s, husband, detective, emotionally devoted, socially polished.",
+        "hook": "Edgar is the loving husband who keeps trying to metabolize the impossible: his wife’s cruelty, her secrecy, and the city’s growing suspicion. He’s warm, funny, and observant, but the script also lets him carry shame and denial, which makes him more than a generic spouse. He’s the emotional ballast of the Francis storyline, even when he’s being quietly outmaneuvered.",
+        "why_actor_wants_this": "This is the kind of role that gave Sterling K. Brown in This Is Us or Jeffrey Wright in Westworld a chance to play intelligence, restraint, and emotional injury without losing authority. The appeal is the close-up work: a man trying to love someone he cannot fully know."
+      },
+      {
+        "name": "Diane Bell",
+        "role_type": "Supporting",
+        "demographics": "White woman, 50s, Charlie’s mother, wealthy, alcoholic, theatrical, emotionally abusive.",
+        "hook": "Diane is a force of nature built out of vanity, grief, intoxication, and control. She can be comic, monstrous, seductive, and pitiful within a single scene, and the script gives her a vivid, almost operatic volatility. Her relationship to Charlie is the story’s ugliest emotional engine, and the flashback makes her damage feel inherited rather than random.",
+        "why_actor_wants_this": "This is the kind of role that gave Patricia Clarkson in Sharp Objects or Julianne Moore in The Hours a chance to play glamour collapsing into self-destruction. The showcase is big, risky behavior with emotional undertow — a part that can steal scenes and still leave a bruise."
+      },
+      {
+        "name": "Albert",
+        "role_type": "Supporting",
+        "demographics": "Caribbean man, 60s, butler, emotionally contained, observant, loyal.",
+        "hook": "Albert is the quiet stabilizer in Diane’s chaos and Charlie’s only consistent adult refuge. He speaks sparingly, but the script uses him as a moral witness and a pressure valve, which gives him unusual dignity for a supporting domestic role. He’s the one character who seems to understand the family’s damage without being consumed by it.",
+        "why_actor_wants_this": "This is the kind of role that gave Mahershala Ali in Moonlight or Delroy Lindo in Da 5 Bloods a chance to project authority through stillness. The showcase is controlled presence: the power of a performer who can change the temperature of a room without raising his voice."
+      },
+      {
+        "name": "Lawrence Cloud",
+        "role_type": "Supporting",
+        "demographics": "Black man, 40s, detective, Edgar’s partner and friend, grounded, dryly comic.",
+        "hook": "Lawrence is the procedural anchor and the script’s most natural straight man, but he’s not just there to move plot. His marriage strain with Jill and his friendship with Edgar give him enough personal friction to feel like a real person inside the investigation. He’s the one who helps translate the city’s chaos into a case.",
+        "why_actor_wants_this": "This is the kind of role that gave Wendell Pierce in The Wire or Shea Whigham in Boardwalk Empire a chance to be both grounded and scene-stealing. The appeal is authority with comic timing — a detective who can carry exposition without feeling like exposition."
+      },
+      {
+        "name": "Jill Cloud",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 40s, Lawrence’s wife, emotionally raw, infertile, socially sharp.",
+        "hook": "Jill is the script’s most openly wounded adult woman outside Francis, and her resentment gives the dinner scenes real bite. She’s grieving, defensive, and perceptive, which makes her both sympathetic and dangerous in conversation. Her inability to tolerate Francis is rooted in pain, not just dislike.",
+        "why_actor_wants_this": "This is the kind of role that gave Regina Hall in Support the Girls or Carrie Coon in The Leftovers a chance to play hurt, intelligence, and social friction at once. The showcase is emotional volatility with a polished surface."
+      },
+      {
+        "name": "Patrick Thiel",
+        "role_type": "Supporting",
+        "demographics": "Black man, 40s, science teacher, observant, concerned, slightly peripheral.",
+        "hook": "Patrick functions as the school’s watchful conscience, noticing Francis before most people do. He’s not central to the plot mechanics, but he gives the school world a credible adult counterpoint and a useful witness to Francis’s instability. His unease helps externalize what others are only beginning to suspect.",
+        "why_actor_wants_this": "This is a solid character-actor role in the vein of Courtney B. Vance in The People v. O.J. Simpson — a part that gets value from intelligence, restraint, and reaction. The showcase is the slow realization that something is off."
+      },
+      {
+        "name": "Mrs. Newlander",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 50s, guidance counselor, stern, no-nonsense.",
+        "hook": "Mrs. Newlander is the school’s institutional spine, the adult who refuses to indulge Charlie’s evasions. She’s not flashy, but she’s memorable because she speaks in a way that cuts through the script’s more theatrical behavior. She gives the school scenes a hard-edged realism.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor a clean, memorable lane — think Viola Davis in a supporting authority role before the lead-level spotlight. The showcase is command: a few scenes, maximum control."
+      },
+      {
+        "name": "Freddy",
+        "role_type": "Supporting",
+        "demographics": "Teenage girl, 17, pretty, bold, socially agile.",
+        "hook": "Freddy is the one teenage character who can meet Charlie’s weirdness without collapsing under it. She’s flirtatious, blunt, and self-possessed, which makes her a welcome tonal counterweight to the adults’ damage. She also gives Charlie a brief, believable shot at normal teenage desire.",
+        "why_actor_wants_this": "This is the kind of role that gave Kaitlyn Dever in Booksmart or Odessa A’zion in Hellraiser a chance to be sharp, funny, and emotionally legible fast. The showcase is chemistry and attitude in a compact amount of screen time."
+      },
+      {
+        "name": "Danielle Lager",
+        "role_type": "Supporting",
+        "demographics": "White woman, 20s, nightclub victim, injured, frightened.",
+        "hook": "Danielle is one of the victims who helps define Francis’s pattern, and her interview scene is crucial because it gives the attacks a human cost. She’s not a deep character, but she’s an effective witness whose details help the investigation take shape. The painted smile description is one of the script’s cleanest external images.",
+        "why_actor_wants_this": "This is a strong single-scene showcase for a young actor who can play shock and specificity, similar to the victim roles that anchor true-crime thrillers. The performance opportunity is to make a procedural interview feel lived-in."
+      },
+      {
+        "name": "Sandy Lyle",
+        "role_type": "Supporting",
+        "demographics": "Black woman, 50s, Diane’s friend, polished, socially successful.",
+        "hook": "Sandy is the social mirror Diane resents, and the yacht sequence uses her to expose Diane’s jealousy and shame. She’s not deeply developed, but she’s important as the person onto whom Diane projects old wounds. Her presence helps the flashback and party scenes feel socially specific.",
+        "why_actor_wants_this": "This is the kind of role that gives a seasoned actor a clean social-status part — polished, watchful, and quietly combustible. The showcase is the ability to imply history without speeches."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 13,
-        "leads": 4,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "mixed-race teen boy",
-          "multiple Black adult leads",
-          "white female supporting roles",
-          "one child flashback role",
-          "strong age-specific casting for 15-year-old Charlie and 5-year-old Charlie/Zelda flashback"
+          "teenage lead/supporting roles for Charlie and Freddy",
+          "mixed-race teenage boy with androgynous presentation",
+          "older supporting roles for Diane, Albert, Mrs. Newlander, Nancy",
+          "strong physical presence required for Francis"
         ]
       },
       "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "contemporary with stylized retro/abstract presentation",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary with stylized flashback and fantasy sequences",
         "notable_requirements": [
-          "nightclubs",
-          "high school interiors",
-          "wealthy home interiors",
-          "yacht/harbor sequence",
-          "flashback pool party",
-          "Halloween dance set dressing"
+          "high school classroom, hallway, gym, and parking lot",
+          "nightclub exterior and interior",
+          "two family homes with distinct social texture",
+          "police station interview room and bullpen",
+          "yacht party sequence",
+          "flashback pool-party setup"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "primarily stylized fantasy overlays, black-and-white/color transitions, and a few surreal visual inserts such as the clown grin and mermaid sequence",
+        "vfx_details": "stylized black-and-white/color transitions, fantasy inserts, mirror-smile effects, and a few surreal visual overlays",
         "stunts_level": "moderate",
-        "sfx_needs": "fight choreography, blood makeup, bruising, gunshot impact, practical injury makeup, crowd chaos in nightclub and gym sequences",
+        "sfx_needs": "fight choreography, blood makeup, bruising, gunshot impact, practical injury makeup, and crowd reaction beats",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Carl's Jr. is named on the page"
+          "detail": "Carl's Jr. is named on the page and used in a plot beat."
         },
         {
           "type": "brand",
-          "detail": "Wonder Woman costume reference"
+          "detail": "Glen Miller Orchestra is specifically named as source music in the Diane living-room scene."
         },
         {
           "type": "brand",
-          "detail": "Tyler Durden is referenced in description"
+          "detail": "Wonder Woman is used as a Halloween costume reference for Jill."
         },
         {
           "type": "brand",
-          "detail": "Megatron is referenced in dialogue"
+          "detail": "Tyler Durden is referenced in Francis's description."
         },
         {
           "type": "brand",
-          "detail": "Jack Napier is referenced in a cannabis strain name"
+          "detail": "Jack Napier is used as a named cannabis strain reference."
         },
         {
           "type": "brand",
-          "detail": "Edgar Allan Poe is referenced repeatedly by name"
-        },
-        {
-          "type": "brand",
-          "detail": "The Dubliner's is named as a workplace/reference"
-        },
-        {
-          "type": "brand",
-          "detail": "Glen Miller Orchestra is specifically named"
-        },
-        {
-          "type": "brand",
-          "detail": "Rainbow Italian Ice is named"
-        },
-        {
-          "type": "ip_licensing",
-          "detail": "The script references specific literary works and cultural figures, including Poe's 'Morella' and 'The Mind and the Matter' as on-page text references"
+          "detail": "Poe, Joyce, and Edgar Allan Poe are referenced as literary names, but not clearance-sensitive in the same way as branded IP."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "premium cable or streaming feature with festival-to-platform upside",
+        "recommended_lane": "streaming",
         "content_level": "mature",
-        "series_engine_or_release_model": "feature release model with festival launch potential, then platform acquisition or limited theatrical play"
+        "series_engine_or_release_model": "Feature release model: specialty theatrical or streaming original with festival launch potential"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the footprint controlled, but the nightclub fights, Halloween dance chaos, yacht party, flashback pool sequence, and repeated night work add scope pressure."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary and mostly contained, but the nightclub fights, Halloween crowd scenes, yacht sequence, and stylized fantasy inserts push it above a microbudget lane."
+      "casting": {
+        "level": "medium",
+        "note": "Francis is a narrow, high-voltage lead who has to play seduction, menace, comedy, and physical aggression; Charlie also needs a teen actor with unusual sensitivity and edge."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s strongest asset is its tonal and psychological singularity, but the buyer conversation will focus on how to frame Francis’s violence, how much of the fantasy language to preserve, and how to position the ending without softening the provocation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Promising Young Woman",
+          "year": 2020,
+          "why_it_comps": "Shares the female-centered revenge/violence lane, the stylized surface, and the sense of a protagonist weaponizing performance."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script depends on a strong Francis, plus playable Edgar, Charlie, Diane, Lawrence, and Jill, with child casting in flashback material."
+        {
+          "title": "Killing Eve",
+          "year": 2018,
+          "why_it_comps": "The appeal of a charismatic, dangerous woman whose behavior is as entertaining as it is alarming maps closely to Francis."
         },
-        "location": {
-          "level": "medium",
-          "note": "It moves through homes, school spaces, a police station, nightclub, harbor yacht, park, and flashback pool party, with several night exteriors and crowd setups."
+        {
+          "title": "May",
+          "year": 2002,
+          "why_it_comps": "The off-kilter psychological volatility, fetishized body language, and lonely outsider energy feel adjacent to Francis’s split self-image."
         },
-        "content": {
-          "level": "high",
-          "note": "Violent assaults, domestic abuse, sexualized banter, alcohol/drug use, and a child-drowning flashback place it firmly in mature territory."
+        {
+          "title": "Thoroughbreds",
+          "year": 2017,
+          "why_it_comps": "The deadpan cruelty, social unease, and polished suburban surfaces hiding violence are a strong tonal neighbor."
         },
-        "rights": {
-          "level": "medium",
-          "note": "Several named brands, artists, and literary references appear on the page, but the script is not built around a single external IP."
+        {
+          "title": "Pearl",
+          "year": 2022,
+          "why_it_comps": "The heightened female psychodrama, periodized self-mythology, and violent theatricality make it a useful comp for tone and audience."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like elevated, female-driven genre films with a sharp psychological edge and a memorable antiheroine.",
+        "demographics": "Skews 25-44, slightly female-leaning, college-educated, streamer/festival audience, strong appetite for prestige genre.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary settings and limited principal cast keep it in indie territory, while the fight scenes, Halloween crowd work, yacht sequence, and stylized visual transitions prevent it from feeling micro."
+      },
+      "lane_fit": {
+        "lane": "elevated indie thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "festival-facing indie distributors",
+          "streamer originals teams building female-led genre",
+          "producer-directors looking for a breakout lead role",
+          "prestige horror/thriller labels"
+        ],
+        "detail": "This sits naturally in the lane where character psychology, stylized violence, and a strong central performance are the selling points. The script is more artful and stranger than a standard thriller, but still legible enough to market on premise and image."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. Francis is a strong singular character, but the script does not establish a clean sequel or universe vector beyond this one story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Francis is a showcase lead.",
-          "what_it_means": "This gives a performer a ferocious, contradictory centerpiece: seductive, funny, dangerous, and emotionally unreadable in the same role. Actors who want a prestige turn with teeth — especially women known for intelligence and volatility — will see a part that can reframe how the industry sees them.",
-          "evidence": "Francis’ nightclub attacks, her deadpan marriage banter, the classroom humiliation scene, and the Halloween-clown finale all come from the same character engine.",
+          "dimension_or_area": "Francis is a star-making antiheroine.",
+          "what_it_means": "This gives the project a casting hook that can open doors with actors and buyers who want a role with attitude, danger, and iconography. It is the kind of part that can anchor a director’s calling-card feature and generate immediate conversation around performance.",
+          "evidence": "The nightclub assaults, the half-painted clown smile, and the final Halloween confrontation all build a character who is both predator and performance artist.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The clown motif is a real signature.",
-          "what_it_means": "The half-painted smile, the black-and-white/color shifts, and the repeated booing create a visual identity that can market the film off a single image. Directors and buyers looking for a horror-thriller with an art-house stamp will respond to that kind of instantly legible iconography.",
-          "evidence": "Francis’ mirror flashes, the painted grin, and the Halloween costume payoff all return to the same image language.",
+          "dimension_or_area": "The premise is instantly marketable.",
+          "what_it_means": "A teacher who is also the city’s female nightclub attacker is a clean, high-concept engine that can be pitched in one breath. That clarity helps with buyers, festival programmers, and actors looking for a bold centerpiece role.",
+          "evidence": "The news reports, police interviews, and repeated attacks make the central mystery legible almost immediately.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The domestic scenes have bite.",
-          "what_it_means": "The marriage and dinner-table material turns the movie into more than a serial-attack story; it becomes a relationship thriller with social embarrassment, sexual tension, and emotional cruelty baked in. That broadens the buyer pool to prestige genre labels and actor-driven indie financiers who want character conflict, not just plot.",
-          "evidence": "The breakfast banter with Edgar, the dinner with Lawrence and Jill, and the backyard reconciliation all play as character warfare.",
+          "dimension_or_area": "The tone is unmistakable.",
+          "what_it_means": "The script has a voice that can separate it from generic thriller material and give marketing a distinct visual and tonal identity. Buyers chasing elevated genre want something that feels authored, and this page absolutely does.",
+          "evidence": "The black-and-white/color shifts, fantasy hallucinations, and Francis’s absurdly specific dialogue create a signature register.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Charlie and Diane add a second engine.",
-          "what_it_means": "The mother-son material gives the script a parallel emotional spine, which makes the project feel larger than a single-protagonist descent. Buyers who like ensemble pressure-cookers will see extra value because the family story can carry its own tension even when Francis is offscreen.",
-          "evidence": "Charlie’s abuse at Diane’s hands, the flashback to Zelda’s death, and the gun confrontation all build a separate dramatic track.",
+          "dimension_or_area": "The relationship engine is strong.",
+          "what_it_means": "Francis/Edgar, Francis/Charlie, and Diane/Charlie all create recurring friction that can sustain scenes without relying on plot mechanics alone. That makes the script attractive to actors and directors who want dialogue scenes with tension, not just set pieces.",
+          "evidence": "The dinner table blowup, the car rides with Charlie, and the bedroom confrontation with Edgar all play as character pressure-cookers.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The school setting is unusually charged.",
-          "what_it_means": "Putting the lead in a classroom gives the film a built-in social arena where authority, humiliation, and performance can all play in public. That is attractive to producers because it creates repeatable set pieces without requiring a huge footprint.",
-          "evidence": "Francis’ classroom control, the hallway confrontation with Charlie, and the Halloween dance all use the school as an engine.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The fantasy inserts deepen the psychology.",
-          "what_it_means": "The surreal beats let the film externalize obsession and shame instead of explaining them, which gives the material a more elevated lane than a straight procedural. That kind of formal confidence is catnip for directors with a visual point of view and for festival-minded buyers.",
-          "evidence": "The harpoon fantasy, the mermaid sequence, and the clown-smile flashes all turn inner life into image.",
+          "dimension_or_area": "The Halloween climax is a clean event hook.",
+          "what_it_means": "The calendar endpoint gives the film a built-in release-season identity and a natural marketing image. It also gives the story a visible countdown that helps buyers understand the shape of the feature quickly.",
+          "evidence": "Francis explicitly frames Halloween as the night she wants to go out on, and the final gym sequence pays that off.",
           "source": "script"
         }
       ],
-      "headline": "This is a bold, actor-forward psychological thriller with a genuinely singular lead: a beautiful English teacher whose private violence, public charm, and fractured domestic life keep colliding until Halloween detonates everything. The script has a clear commercial spine, but what makes it stand out is the tone — grotesque, funny, erotic, and haunted — plus a visual identity that feels built for marketing and memory."
+      "headline": "This is a contained, elevated indie thriller with a genuinely ownable lead role and a visual identity that feels built for a trailer. The script’s biggest commercial asset is that it pairs a star-making antiheroine with a clear Halloween countdown and a production footprint that stays in the indie lane rather than exploding into tentpole scope."
     },
-    "lead_characters": [
-      {
-        "name": "Francis Cow",
-        "role_type": "Lead",
-        "demographics": "Female · 30s · Black",
-        "hook": "Francis is a beautiful, statuesque English teacher with a predator’s stillness and a comedian’s timing. She can be affectionate, contemptuous, erotic, and terrifying in the same breath, and the script keeps her just opaque enough that every scene feels like it might tip into confession or attack.",
-        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Monster or Toni Collette in Hereditary — a role where the audience’s understanding of the character keeps shifting as the performance deepens. It gives an actress the rare chance to play charisma, menace, sexual power, and emotional vacancy as one continuous instrument, which is exactly the kind of part that can become a calling card."
-      },
-      {
-        "name": "Edgar Cow",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · Black",
-        "hook": "Edgar is the husband who sees Francis through rose-colored glasses and keeps trying to domesticate a woman who resists being known. He’s warm, intelligent, and quietly humiliated, which makes him both sympathetic and painfully exposed whenever Francis turns the temperature in the room.",
-        "why_actor_wants_this": "This is the showcase space of Michael Shannon in Take Shelter or Jesse Plemons in a prestige domestic thriller — a man whose decency becomes a form of vulnerability. It gives an actor the chance to play love, denial, shame, and dawning dread without ever leaving the emotional center of the film."
-      },
-      {
-        "name": "Charlie Bell",
-        "role_type": "Lead",
-        "demographics": "Male · 15",
-        "hook": "Charlie is a sensitive, androgynous, bruised teenager who moves through the story like someone already half outside his own life. He’s funny, wounded, sexually curious, and desperate for relief, which makes him the emotional witness who can also become the story’s moral fuse.",
-        "why_actor_wants_this": "This is the kind of breakout role that gave Lucas Hedges in Manchester by the Sea or Timothée Chalamet in Call Me by Your Name a platform for vulnerability and interiority. It offers a young actor a dense emotional runway: humiliation, longing, rage, and the shock of finally acting instead of enduring."
-      },
-      {
-        "name": "Diane Bell",
-        "role_type": "Lead",
-        "demographics": "Female · 50s · White",
-        "hook": "Diane is a lush, volatile matriarch who weaponizes drink, charm, and memory while orbiting her son with suffocating need. She’s funny until she isn’t, seductive until she turns cruel, and the script lets her carry the grief of Zelda’s death like a permanent bruise.",
-        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Olive Kitteridge or Patricia Clarkson in Sharp Objects — a woman whose volatility is inseparable from pain and self-mythology. It gives a veteran actress a role that can play comic intoxication, maternal terror, and buried guilt in the same performance."
-      },
-      {
-        "name": "Lawrence Cloud",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · Black",
-        "hook": "Lawrence is Edgar’s partner and best friend, a grounded detective who functions as both comic relief and the story’s practical adult in the room. He’s observant, stressed, and increasingly aware that the people around him are carrying far more than they admit.",
-        "why_actor_wants_this": "This is the kind of grounded-supporting role that gave Sterling K. Brown in smaller prestige ensembles or Jeffrey Wright in procedural-adjacent drama a chance to anchor scenes with authority and wit. It offers an actor the chance to play competence, friendship, and quiet alarm without needing to carry the whole film."
-      },
-      {
-        "name": "Jill Cloud",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · Black",
-        "hook": "Jill is Lawrence’s wife, a woman whose grief and resentment sharpen into social judgment the moment Francis enters the room. She’s not just a dinner guest; she’s a pressure point, and her scenes expose how quickly politeness can curdle into accusation.",
-        "why_actor_wants_this": "This is the kind of sharp supporting turn that gave Regina King in a limited ensemble or Aunjanue Ellis in a prestige drama a chance to dominate a scene with precision. It gives an actress a clean, playable lane for wounded dignity, social intelligence, and righteous irritation."
-      },
-      {
-        "name": "Mrs. Newlander",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Black",
-        "hook": "Mrs. Newlander is the school’s stern guidance counselor, a no-nonsense authority figure who sees through the hallway chaos faster than anyone else. She’s dry, watchful, and practical, which makes her a useful counterweight to the story’s more theatrical personalities.",
-        "why_actor_wants_this": "This is the kind of scene-stealing authority role that gives an actor the same pleasure as Margo Martindale in a prestige ensemble or Alfre Woodard in a sharp supporting part. It offers crisp authority, comic deadpan, and the satisfaction of being the adult who actually runs the room."
-      },
-      {
-        "name": "Patrick Thiel",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · Black",
-        "hook": "Patrick is the science teacher who keeps noticing Francis from the edge of the frame, making him the story’s quiet witness and potential moral alarm bell. He’s curious, uneasy, and increasingly pulled into a mystery he doesn’t fully understand.",
-        "why_actor_wants_this": "This is the kind of watchful supporting role that gave actors like Scoot McNairy or Corey Stoll in ensemble thrillers a chance to play suspicion without overstatement. It gives a performer the pleasure of building tension through observation, not speeches."
-      },
-      {
-        "name": "Albert",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s · Caribbean",
-        "hook": "Albert is the butler who moves through Diane’s chaos with unnerving calm and a deep, almost parental familiarity. He’s the household’s quiet stabilizer, but the script keeps hinting that he understands the family’s damage more intimately than he says.",
-        "why_actor_wants_this": "This is the kind of elegant, layered supporting role that gives an actor the same terrain as Stephen McKinley Henderson in a family drama or Glynn Turman in a prestige ensemble. It offers authority, restraint, and the chance to play emotional history without exposition."
-      },
-      {
-        "name": "Freddy",
-        "role_type": "Supporting",
-        "demographics": "Female · late teens",
-        "hook": "Freddy is a sharp, flirtatious teen with enough attitude to meet Charlie on his own wavelength. She’s playful but not passive, and she gives the film a burst of youthful friction that feels alive rather than decorative.",
-        "why_actor_wants_this": "This is the kind of scene-part that can pop the way a young actor does in a coming-of-age ensemble, with the same spark that made supporting turns in Lady Bird or Eighth Grade memorable. It gives a young performer a chance to be funny, direct, and unexpectedly self-possessed."
-      },
-      {
-        "name": "Sandy Lyle",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Black",
-        "hook": "Sandy is the polished friend whose presence exposes Diane’s jealousy and old wounds. She reads as gracious on the surface, but the history between her and Diane gives every exchange a social charge.",
-        "why_actor_wants_this": "This is the kind of elegant supporting role that lets an actor play social ease with an undercurrent of history, similar to the best dinner-party turns in prestige drama. It gives a performer a clean lane for charm, status, and unspoken tension."
-      },
-      {
-        "name": "Danielle Lager",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s · White",
-        "hook": "Danielle is the attack victim whose testimony helps define the mystery and the public image of Francis. She’s a functional but vivid witness role, with enough specificity in the interview room to make the case feel real.",
-        "why_actor_wants_this": "This is the kind of compact, high-impact supporting role that gives an actor a memorable scene in a thriller without needing a large footprint. It offers the same kind of concentrated exposure that strong witness roles do in prestige crime stories."
-      },
-      {
-        "name": "Nancy",
-        "role_type": "Supporting",
-        "demographics": "Female · 70s · Black",
-        "hook": "Nancy is the neighbor who arrives with cake and concern, embodying the community’s polite alarm around Francis and Edgar. She’s small in page count but useful in texture, because her kindness lands as social pressure.",
-        "why_actor_wants_this": "This is the kind of brief but memorable elder role that gives an actor a chance to color the world with warmth and unease in a single beat. It’s the sort of part character actors love because it instantly deepens the neighborhood around the leads."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a female-centered psychological thriller with a hard visual signature and no interest in smoothing the edges.",
-        "fit_profile": "Established indie directors with at least one or two features, or elevated-genre filmmakers moving up from festival horror and character drama. This material rewards directors who care about performance under pressure, stylized image language, and tonal control more than spectacle for its own sake.",
-        "detail": "The film gives a director a chance to build a repeatable visual system — clown imagery, black-and-white/color shifts, fantasy intrusions — while keeping the emotional center in the performances. It’s especially attractive to directors who like domestic spaces, school corridors, and public humiliation as engines of dread."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "prestige genre / elevated indie thriller lane",
-        "detail": "The project can be packaged around one standout female lead and a strong supporting ensemble, so it does not require a giant cast or effects-heavy build to sell. The Halloween hook, school setting, and serial-attack mystery give it a clean marketing lane for festival buyers and streamers that like elevated horror-thrillers with a strong image."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "Francis’s psychology stays more emblematic than legible.",
+          "detail": "The script gives her a powerful surface — swagger, cruelty, erotic charge, humiliation — but the deeper engine of why she attacks is still mostly implied through mood and fantasy. That makes her magnetic, but it also means some buyers will see a performance vehicle before they see a fully bankable character arc.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The violence pattern is repetitive before the finale.",
+          "detail": "Several nightclub and school beats follow the same rhythm: Francis spots a target, humiliates them, attacks, and exits laughing. The repetition is part of the character design, but it also creates a buyer concern about escalation and whether each set piece is adding a new layer or just restating the same impulse.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The fantasy language may divide buyers.",
+          "detail": "The black-and-white/color switches, mirror-smile blips, harpoon hallucination, and mermaid sequence give the film a strong signature, but they also push it away from straightforward thriller territory. That is a feature for some buyers and a friction point for others who want the premise to play more cleanly as grounded genre.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Charlie is vivid but structurally secondary.",
+          "detail": "He has strong scenes with Francis and Diane, but the script never fully turns him into an equal engine; he functions more as witness, victim, and pressure point. That keeps the story centered, but it also narrows the emotional breadth of the ensemble and limits the sense of a broader breakout cast.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand and music references need a legal pass.",
+          "detail": "Carl's Jr., Glen Miller Orchestra, Wonder Woman, Tyler Durden, and Jack Napier are all specifically named on the page. None of them are fatal, but they do create clearance and trademark questions that business affairs will want resolved early.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is that the script’s most compelling element — Francis herself — is also the least psychologically pinned-down, which makes the film feel like a bold performance piece more than a fully demystified thriller. Buyers will also weigh the repeated attack pattern and the stylized fantasy inserts, which are part of the appeal but may narrow the lane to elevated-genre champions rather than broad commercial buyers."
     },
-    "considerations": [
-      {
-        "area": "Francis’ inner turn stays mostly external.",
-        "detail": "The script gives Francis a striking surface and a memorable pattern of behavior, and the next pass could deepen the emotional hinge by letting one private scene clarify what she is protecting or fleeing. The classroom, bathroom mirror, and bedroom beats already point toward that interior life, so one more scene of unguarded contradiction would raise the whole film.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The Diane/Charlie track can carry more weight.",
-        "detail": "The mother-son material is one of the richest parts of the script, and a next pass could consider giving it one more scene that lets their bond or damage play without the plot machinery around it. That would protect the emotional spine of the film and make the Halloween climax hit with even more force.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The attack pattern is clear but repetitive by design.",
-        "detail": "Because the nightclub assaults recur in a similar shape, the script may benefit from one variation in the way Francis chooses or frames a victim, so the escalation feels even more inevitable. The core idea is already strong; a small change in pattern would keep the audience leaning forward without changing the premise.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The location footprint is manageable but spread out.",
-        "detail": "The story moves through school, home, police, nightclub, yacht, park, and flashback spaces, so a production-minded pass could look for any two locations that can be combined or redressed. The narrative would still read cleanly if one of the social spaces were absorbed into another, which would protect the budget without changing the story engine.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The named references invite clearance attention.",
-        "detail": "The page includes several named brands and cultural references, including Carl’s Jr., Wonder Woman, Tyler Durden, Megatron, Edgar Allan Poe, and The Dubliner’s. A production pass would likely want to decide which of those are essential to the voice and which can be generalized to keep the path to production cleaner.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 73.3,
+  "weightedScore": 72.7,
   "tier": "Optionable",
-  "inputTokens": 39005,
-  "outputTokens": 5465,
-  "cost": 0.05384625,
+  "inputTokens": 41410,
+  "outputTokens": 5701,
+  "cost": 0.056712,
   "declaredFormat": "Feature film"
 }

@@ -2,283 +2,312 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Post-apocalyptic survival thriller",
-      "genre_tags": [
-        "horror",
-        "action-drama"
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller",
+        "Drama"
       ],
-      "tone": "gritty, urgent, emotionally charged"
+      "tone": "gritty",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "ongoing-series",
+        "high-concept",
+        "character-driven",
+        "survival",
+        "family-dynamics",
+        "grief",
+        "post-apocalyptic",
+        "rabids"
+      ]
     },
-    "positioning_hook": "Eighteen-year-old Gracie protects her feverish little sister in a quarantined wasteland, then gets pulled into a fight over a cure that turns every safe haven into a target.",
+    "positioning_hook": "A teenage scavenger protecting her sick little sister is forced into a quarantine stronghold, then watches the only safe haven she found burn when a ruthless warlord comes for a stolen cure.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The survival premise is instantly legible and the sister-protection engine gives it a clear emotional promise. It sits in a proven genre lane, though the appeal is strongest for thriller and horror audiences rather than broad four-quadrant viewing."
+        "reasoning": "The survival-horror engine is instantly legible and the sister-protection hook gives it emotional entry, which broadens it beyond pure creature fare. It still skews genre-forward and adult, with the apocalypse setting and bleak violence narrowing it from true four-quadrant reach."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The pilot opens with quarantine bracelets, rabids, and a desperate scavenger logic that makes the rules easy to grasp fast. By the end, the vial, Northridge, and Bear's assault give the series engine a clean forward thrust."
+        "reasoning": "The pilot opens with a quarantine bracelet, a rabid attack, and a clear survival rule-set, then quickly reveals Gracie's core burden: Callie is sick and dependent on her. The vial, the quarantine base, and Bear's pursuit give the episode a clean engine that is easy to explain in two sentences."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Gracie has a strong protective drive and a visible moral edge, and Amelia gives the pilot a second adult perspective with emotional weight. The ensemble is functional and expandable, with room for deeper contradictions in later episodes."
+        "reasoning": "Gracie has a strong protective instinct and a visible wound around her mother and sister, which gives her durable series fuel. The supporting players are functional and distinct, but most of the emotional weight still sits on Gracie/Callie/Amelia rather than a broader ensemble."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The quarantine-bracelet system and the cure-vial chase give the world a specific survival framework. The larger shape still lives in familiar post-collapse territory, with the script's distinctiveness coming more from execution than from a radically new premise."
+        "reasoning": "The quarantine-bracelet infected-world detail and the 'rabids' terminology give the apocalypse a specific skin, and the pilot commits hard to emotional survival over lore-dumping. But the underlying shape is familiar genre territory: infected threat, fortified community, ruthless outsider, stolen cure."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The pilot keeps stacking immediate threats: scavenging, infection, pursuit, sanctuary, then siege. The ending burns down the apparent safe zone and leaves Gracie with a fresh rescue mission, which is exactly the kind of turn a series pilot needs."
+        "reasoning": "The pilot keeps turning the screw: Gracie's scavenging, Callie's illness, Liam's interrogation, the base assault, and the final destruction of Northridge all escalate cleanly. The back half is especially propulsive, with the Bear siege and Gracie's return into the burning town delivering a strong end-of-pilot push."
       },
       "resonant_originality": {
-        "score": 7,
-        "reasoning": "The bracelet system, the rabid threat, and the cure politics combine into a version of apocalypse that feels specific rather than generic. It lands as familiar genre material with a few memorable rules that make it easier to remember after the read."
+        "score": 6,
+        "reasoning": "The emotional spine is clear and effective, but the larger premise still reads as a recognizable post-apocalyptic survival story with a cure MacGuffin. The bracelet system and the sister dynamic add specificity, yet the show has not fully revealed a singularly surprising angle beyond that."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The quarantine base, Northridge, the outpost hierarchy, and the scavenged landscape all suggest a functioning social order under pressure. The world feels story-generating because every location carries a rule set, a resource problem, or a power imbalance."
+        "reasoning": "The quarantine bracelets, sickbay restrictions, outpost hierarchy, armed crews, and community rules create a functioning social order rather than a blank apocalypse backdrop. The world feels story-generating, though this pilot mostly uses it to stage pursuit and siege rather than opening up a wider civic ecosystem."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The script balances dread, action, and family grief without losing its survival urgency. The tone is consistent and playable, with the strongest identity coming from the emotional bond between Gracie and Callie inside the genre machinery."
+        "reasoning": "The script has a consistent, bruised tone that blends dread, maternal grief, and survival urgency without drifting into irony. The candlelit bedroom scenes and the violent field assault give it a clear emotional register, even if the genre palette is still familiar."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "The mother bite, the cure vial, Bear's control, and Amelia's grief all hint at a larger emotional and political backstory. The pilot gives enough surface action to work immediately while leaving room for the mythology and relationships to deepen."
+        "reasoning": "The mother-infected basement scene, Gracie's guilt, and Amelia's dead-daughter backstory all suggest a deeper emotional series than the immediate plot reveals. There are seeds of a larger moral world around the vial and the quarantine system, but the pilot keeps most of that depth implicit."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Gracie and Callie are the emotional center, and Amelia/James/Bear create a workable triangle of pressure around them. The ensemble is solid, though the pilot still lives most strongly on the lead relationship and the antagonistic force around it."
+        "reasoning": "Gracie/Callie is the emotional center, and Gracie/Amelia gives the pilot a workable secondary dynamic. Beyond that, the ensemble is more functional than generative; Bear, Liam, and James/Amelia each have clear roles, but the script does not yet show a roomful of relationships that can all spin material."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 11,
-        "leads": 5,
-        "series_regulars": 6,
-        "child_actors": true,
-        "casting_characteristics": [
-          "Teen female lead",
-          "Child supporting role",
-          "30s-40s adult ensemble",
-          "Physical action casting for survival roles"
-        ]
-      },
-      "locations": {
-        "distinct_count": 12,
-        "interior_exterior_ratio": "roughly 6:6",
-        "period_or_contemporary": "contemporary",
-        "notable_requirements": [
-          "Quarantine base compound",
-          "Reinforced gate set",
-          "Sickbay/medical room",
-          "Armory/interrogation room",
-          "Burning settlement sequence",
-          "Rural roads, fields, and forested exterior coverage"
-        ]
-      },
-      "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Primarily environmental destruction, smoke/fire enhancement, and crowd/infected augmentation rather than creature-heavy VFX.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Practical blood, bites, gunfire impacts, explosions, fire, shattered glass, and infected makeup/prosthetics.",
-        "night_shoots": "significant",
-        "animals": false
-      },
-      "rights_flags": [],
-      "platform_fit": {
-        "recommended_lane": "streaming genre drama / premium cable thriller",
-        "content_level": "mature",
-        "series_engine_or_release_model": "Serialized survival thriller driven by the search for Callie, the vial, and the shifting power struggle between Gracie, the quarantine community, and Bear."
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The show is mostly contained and contemporary, but the siege, fire, infected action, and vehicle work push it beyond a low-cost drama."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The pilot centers on a young lead plus a multi-character adult ensemble, with a child role that needs sustained presence."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through homes, woods, roads, a base, a sickbay, an armory, and a burning town, but all within a grounded regional footprint."
-        },
-        "content": {
-          "level": "high",
-          "note": "Infection, blood, gun violence, body horror, and a town-burning climax place it firmly in mature territory."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named music, brands, or real-person references are prominent in the pilot pages provided."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "Gracie is built around survival and sisterhood.",
-          "what_it_means": "That gives the series a clean emotional engine that can carry episodes beyond the immediate apocalypse mechanics, because every external threat is filtered through a kid trying to keep a child alive. Young female leads with protective, physical, morally complicated material are exactly the kind of roles that attract breakout casting and keep viewers invested week to week.",
-          "evidence": "Gracie scavenges pills for Callie, refuses to leave her bedside, and later runs back into the burning settlement to find her after the sickbay is emptied.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The quarantine bracelet system gives the world rules.",
-          "what_it_means": "That creates a built-in story engine around trust, infection status, and who gets access to safety, medicine, and movement. Buyers looking for a contained genre world with clear visual rules will see a format that can generate episode conflicts without needing a new premise every week.",
-          "evidence": "The cracked bracelets, the red/green status language, and the unmarked bracelet on the rabid make infection status a constant visual and dramatic question.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The pilot ends with a true series-launching burn.",
-          "what_it_means": "Destroying Northridge at the end of the pilot resets the board and turns the show from survival-in-a-safe-place into a rescue-and-reckoning engine. That kind of ending is attractive to streamers and cable buyers because it promises the next episode will not simply repeat the pilot's setup.",
-          "evidence": "Bear steals the vial, detonates the town, and Gracie steps into the flames after finding Callie's bracelet in the empty sickbay.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Amelia adds an adult emotional counterweight.",
-          "what_it_means": "She broadens the show beyond a single POV by giving the series a second grief lane and a bridge into the community's rules and compromises. That makes the project more attractive to actors and buyers who want an ensemble drama rather than a one-note survival chase.",
-          "evidence": "Amelia talks about losing her daughter, teaches Gracie to shoot, and repeatedly chooses empathy over procedure.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Bear is a clean, playable antagonist.",
-          "what_it_means": "He gives the series a human engine with authority, leverage, and a clear appetite for control, which is valuable for long-form conflict. A strong villain role like this is the kind of part character actors and genre buyers both understand immediately.",
-          "evidence": "Bear interrogates Liam, weaponizes Wren, mobilizes a crew, and then takes Northridge by force for the vial.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The setting has visible institutional edges.",
-          "what_it_means": "Northridge, the quarantine base, the armory, the sickbay, and the gate system all suggest a functioning society under siege rather than a blank wasteland. That kind of world texture supports recurring story, recurring sets, and a clear hierarchy of power that can sustain multiple seasons.",
-          "evidence": "The script moves from scavenged roadside spaces to a fortified community with medics, soldiers, rules, and restricted areas.",
-          "source": "script"
-        }
-      ],
-      "headline": "This pilot has the kind of clean, emotionally legible survival engine buyers can track immediately: a teenage protector, a sick little sister, a quarantined world, and a cure that makes every alliance temporary. The ending does exactly what a series opener should do — it burns down the safe zone, widens the conflict, and leaves a character worth following into the wreckage."
     },
     "lead_characters": [
       {
         "name": "Gracie",
         "role_type": "Lead",
-        "demographics": "Female · 18 · physically scrappy, survival-hardened",
-        "hook": "Gracie is a teenage survivor who has already been forced into the role of guardian, scavenger, and executioner. She moves like someone who has learned to keep her fear private, but the pilot keeps revealing the grief underneath the steel: her mother is gone, her sister is sick, and every choice she makes is a bet against losing the last person she has left.",
-        "why_actor_wants_this": "This is the showcase territory of Bella Ramsey in The Last of Us — a young protector whose toughness is inseparable from grief, instinct, and rage. It gives an actor the chance to play physical survival, emotional restraint, and a final-act sprint into chaos, which is exactly the kind of role that can launch or redefine a young lead."
+        "demographics": "female, 18, teen survivor; white or unspecified ethnicity; physically capable, emotionally guarded",
+        "hook": "A hard-edged scavenger who moves like someone older than 18, Gracie is defined by competence under pressure and a private collapse she keeps buried. She steals to survive, protects Callie like a parent, and carries the unresolved wound of a mother who was infected and emotionally unavailable before she was gone.",
+        "why_actor_wants_this": "This is the showcase territory of Bella Ramsey in The Last of Us — a young survivor role that lets an actor play ferocity, tenderness, and grief in the same breath. It offers the kind of close-up emotional authority and physical survival work that can define a breakout performance."
       },
       {
         "name": "Callie",
-        "role_type": "Lead",
-        "demographics": "Female · 12 · frail, feverish child",
-        "hook": "Callie is the emotional center of the pilot even when she is barely able to move. She is small, sick, and dependent, but the bracelet, the questions about her mother, and the way Gracie orbits her make her the human stake that turns the apocalypse into a family story.",
-        "why_actor_wants_this": "This is the kind of child role that functions like the emotional anchor in Room — a performance built on vulnerability, trust, and the audience's need to protect the character. A young actor with strong naturalism would get a rare part that makes every scene around her feel urgent."
+        "role_type": "Supporting",
+        "demographics": "female, 12, child; sickly, vulnerable, dependent",
+        "hook": "Callie is the emotional stakes engine of the pilot: feverish, frightened, and still trying to believe in rescue. She is not just a child in danger; she is the person Gracie is trying to keep alive long enough for hope to matter.",
+        "why_actor_wants_this": "This is the kind of role that gave Brooklynn Prince in The Florida Project its heartbreaking immediacy — a child part that can land with devastating simplicity. It gives a young actor the chance to be the emotional center of the room without needing speeches."
       },
       {
         "name": "Amelia",
-        "role_type": "Lead",
-        "demographics": "Female · 30s · adult survivor, mother",
-        "hook": "Amelia is a hardened survivor whose grief has become competence. She can clear a room, teach a weapon, and enforce the rules of a fortified community, but the pilot keeps exposing the wound underneath: she lost a daughter, and every act of care seems to come with the memory of what she couldn't save.",
-        "why_actor_wants_this": "This is the showcase space of Toni Collette in Hereditary or Carrie Coon in The Leftovers — an adult woman carrying grief, authority, and tenderness in the same frame. It gives a performer a layered genre role that can play maternal warmth, command, and private devastation without leaving the series lane."
-      },
-      {
-        "name": "James",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · ex-military, armed community enforcer",
-        "hook": "James is the rule-first operator who believes order is the only thing standing between his people and collapse. He is practical, suspicious, and increasingly cornered, which makes him feel like a man trying to hold a wall together while the wall is already cracking.",
-        "why_actor_wants_this": "This is the kind of authority role that gave Pedro Pascal in Narcos or Michael Shannon in Boardwalk Empire its charge — a man whose control is always one bad decision away from breaking. It offers an actor the chance to play command, moral compromise, and physical action in a grounded ensemble setting."
+        "role_type": "Supporting",
+        "demographics": "female, 30s, ex-military survivor; mother; community protector",
+        "hook": "Amelia is the pilot's most layered adult presence: practical, armed, and visibly carrying the loss of her daughter while still trying to function inside a failing system. She reads as a protector who has not stopped grieving, which makes her both useful and dangerous to trust.",
+        "why_actor_wants_this": "This is the showcase lane of Melanie Lynskey in Yellowjackets — a woman whose softness and steel coexist in every scene. It gives an actor a chance to play authority, maternal ache, and tactical competence without flattening into a stock survivor."
       },
       {
         "name": "Bear",
-        "role_type": "Lead",
-        "demographics": "Male · 40s · armed faction leader",
-        "hook": "Bear is the pilot's human predator: calm, strategic, and willing to turn people into leverage. He speaks like a man who thinks he owns the future, and the script makes him dangerous because he is not chaotic — he is organized.",
-        "why_actor_wants_this": "This is the showcase lane of Walton Goggins in Justified or Jeffrey Dean Morgan in The Walking Dead — a charismatic antagonist who can be charming, threatening, and physically imposing in the same scene. Character actors who like playing intelligence with menace will see a role with real franchise value."
+        "role_type": "Supporting",
+        "demographics": "male, 40s, authoritarian leader; physically imposing; antagonist",
+        "hook": "Bear is a coercive, pragmatic warlord who speaks in calm threats and treats people as leverage. He is not chaotic; he is controlled, which makes the violence around him feel organized and inevitable.",
+        "why_actor_wants_this": "This is the kind of role that gave Giancarlo Esposito in Breaking Bad its electric menace — a quiet operator whose restraint is more frightening than shouting. It offers a strong character actor a chance to build dread through stillness and precision."
       },
       {
         "name": "Liam",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · fugitive, former outpost insider",
-        "hook": "Liam is the hunted man whose knowledge makes him valuable and disposable at the same time. He has the nervous wit of someone who talks to survive, but the interrogation scenes reveal a deeper panic: he knows the vial matters, and he knows people will die for it.",
-        "why_actor_wants_this": "This is the kind of pressure-cooker role that gave Andrew Lincoln in The Walking Dead early-season urgency — a man running, bargaining, and trying to protect someone while every faction wants a piece of him. It gives an actor a sustained survival arc with interrogation, chase, and emotional loyalty baked in."
+        "role_type": "Supporting",
+        "demographics": "male, 30s, survivor with knowledge of the vial; physically stressed, emotionally cornered",
+        "hook": "Liam is the hunted man with the secret that everyone wants, and the pilot uses him as both a plot key and a moral pressure point. He is desperate, sarcastic, and visibly breaking under the cost of what he knows.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a man under pressure whose intelligence and damage are equally playable. It gives an actor a chance to carry interrogation scenes, fear, and moral compromise with real texture."
       },
       {
         "name": "Wren",
         "role_type": "Supporting",
-        "demographics": "Female · 30s · bruised captive, Liam's partner",
-        "hook": "Wren is the emotional hostage in Bear's interrogation chamber, but the script gives her more than a hostage function: she is frightened, loyal, and physically deteriorating in real time. Her presence sharpens Liam's choices and gives the story a human cost beyond the vial itself.",
-        "why_actor_wants_this": "This is the kind of contained, high-intensity supporting part that gave Melissa Leo in Prisoners or Jurnee Smollett in Lovecraft Country scenes their voltage — a role defined by fear, loyalty, and the audience's immediate concern for her fate. Actors who want a memorable, emotionally loaded supporting turn will chase it."
+        "demographics": "female, 30s, Liam's partner; captive; infected or symptomatic",
+        "hook": "Wren is introduced as the emotional hostage in Bear's interrogation, then becomes a tragic body under threat as her symptoms worsen. She functions as the human cost of the vial conflict and gives Liam's choices a face.",
+        "why_actor_wants_this": "This is the kind of brief but devastating role that gave Jodie Comer in Killing Eve early scene-stealing impact — a part that can turn vulnerability into instant gravity. It offers a performer a chance to make a few scenes land hard."
+      },
+      {
+        "name": "James",
+        "role_type": "Supporting",
+        "demographics": "male, 30s, ex-military community defender",
+        "hook": "James is the rule-bound defender of Northridge, a man who believes procedure keeps people alive until the world proves otherwise. He is competent, rigid, and increasingly compromised by the impossible choices around the vial and the town's survival.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that gave Michael Kelly in House of Cards its utility — a disciplined operator with pressure under the surface. It gives an actor a chance to play command, fracture, and physical action."
       },
       {
         "name": "Mother",
         "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · infected, bound, former caregiver",
-        "hook": "Gracie's mother appears as memory, accusation, and living loss all at once. Bound in the basement and already turning, she embodies the pilot's central wound: the people who were supposed to protect the family are now the ones the family has to survive.",
-        "why_actor_wants_this": "This is the kind of haunting, limited-but-potent role that gave Frances Conroy in American Horror Story or Sissy Spacek in Bloodline its eerie gravity — a presence that can carry backstory, guilt, and dread in very few scenes. A seasoned actress would be drawn to the emotional weight packed into the final confrontation."
-      },
-      {
-        "name": "Woman",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · scavenger mother",
-        "hook": "The Woman is a brief but effective portrait of the world's moral collapse: desperate, guarded, and trying to protect pills for her son. Her scene exists to show how quickly trust can turn into violence in this world.",
-        "why_actor_wants_this": "This is the kind of one-scene survival role that gives an actor a sharp, memorable beat in the vein of the early victims and strivers in The Walking Dead. It is a compact showcase for fear, pleading, and instant stakes."
-      },
-      {
-        "name": "Crewman",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · armed faction soldier",
-        "hook": "The Crewman is the faceless pressure of Bear's machine, the man who turns pursuit into threat and threat into capture. He functions as the visible arm of a larger organized force.",
-        "why_actor_wants_this": "This is a solid genre utility role in the mold of the soldiers and enforcers in The Last of Us or The Walking Dead — a physically active part that gives an actor movement, menace, and a clear place in the hierarchy. It suits performers who want to live inside a larger ensemble machine."
-      },
-      {
-        "name": "Soldier #1",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-30s · Northridge guard",
-        "hook": "Soldier #1 is a working member of the community whose loyalty is personal as much as professional. His line about his family inside the compound gives the siege a human face.",
-        "why_actor_wants_this": "This is the kind of grounded ensemble role that gives an actor a lived-in presence in a crisis sequence, similar to the supporting guards and townspeople in Station Eleven. It offers a quick but emotionally legible beat in a large-scale action episode."
+        "demographics": "female, 30s-40s, infected parent; Gracie's mother",
+        "hook": "Gracie's mother appears in flashback-like emotional memory and in the basement confrontation as a bitten, deteriorating parent who can no longer protect her children. The role is less about exposition than about the wound that shaped Gracie's survival instinct.",
+        "why_actor_wants_this": "This is the kind of emotionally loaded, limited-screen-time role that gave Toni Collette in Hereditary its devastating impact. It offers an actor a concentrated chance to embody love, loss, and horror in a single sequence."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make apocalypse feel intimate, not abstract.",
-        "fit_profile": "First- or second-feature directors, or TV directors with a strong genre reel, who already work in performance-forward survival drama and grounded horror. The material rewards directors who care about emotional geography, clean action blocking, and making a fortified community feel like a living system rather than a backdrop.",
-        "detail": "The pilot gives a director a chance to stage escalating pressure across a contained world: scavenging, interrogation, a community siege, and a final town-burning collapse. It is especially attractive to filmmakers who like character-first genre pieces where the action is legible, the stakes are personal, and the world can be built through practical texture."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 5,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child lead/major supporting role",
+          "physically credible teen survival lead",
+          "adult antagonist with controlled menace",
+          "ex-military authority types",
+          "infected performer work with movement and prosthetic makeup"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "Streaming genre drama / premium cable series",
-        "lane": "post-apocalyptic survival, elevated horror, action-drama",
-        "detail": "The show can be packaged around a young breakout lead and a strong supporting ensemble rather than requiring expensive star casting to sell the premise. The quarantine-bracelet hook, the sister rescue engine, and the burning-settlement pilot ending give it a clear trailer moment and a durable serialized engine for streamers that buy high-concept survival worlds."
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with multiple exterior survival and action beats",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "quarantine base compound",
+          "fortified town/gate set",
+          "burning-town destruction sequence",
+          "forest and highway survival exteriors",
+          "sickbay and interrogation interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Primarily creature/infected enhancement, smoke/fire augmentation, explosion work, and destruction coverage for the Northridge attack.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical blood, bite wounds, gunfire, explosions, fire effects, and infected makeup/prosthetics.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized survival horror with an ongoing pursuit engine, community-versus-outside-threat conflicts, and a cure/vial mythology that can drive season arcs."
       }
     },
-    "considerations": [
-      {
-        "area": "The pilot is carrying two engines at once.",
-        "detail": "Gracie/Callie's survival story and the Liam/Bear vial story both have enough momentum to sustain a series, but the next pass could decide which one is the primary spine and which one is the pressure valve. Clarifying that hierarchy would make the pilot feel even more inevitable as a launchpad.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The burning-town finale, multiple gunfights, infected attacks, and explosion coverage will push above a simple contained-drama footprint, but the contemporary setting and limited core locations keep it scopeable."
       },
-      {
-        "area": "The opening scavenging sequence does a lot of setup.",
-        "detail": "The gas-station prologue establishes the bracelet system, the pill bottle, the rabid threat, and Gracie's moral code in quick succession. One lever would be to let one of those ideas arrive a beat earlier or later so the emotional turn lands before the information stack peaks.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "Gracie has to carry action, grief, and moral pressure in nearly every scene, while Callie, Amelia, and Bear each need sharply differentiated energy. The child role and the antagonist's controlled menace are the two most specific lifts."
       },
-      {
-        "area": "The Northridge assault is the biggest production swing.",
-        "detail": "The burning-town climax, vehicle convoy, gunfire, and infected chaos are the most expensive stretch of the pilot. A version that concentrates more of that destruction into a few repeatable set pieces would protect the scale while keeping the finale's impact intact.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The community politics can carry more episode fuel.",
-        "detail": "The gate rules, sickbay restrictions, and James/Amelia disagreement already hint at a larger social order. A next pass could foreground one or two recurring internal tensions inside Northridge so the series has more built-in conflict once the external chase pauses.",
-        "is_primary_lever": false,
-        "source": "script"
+      "development": {
+        "level": "medium",
+        "note": "The pilot is clear on immediate survival stakes, but the vial mythology, quarantine system, and Bear's larger power structure will need careful expansion to sustain the series beyond the first crisis."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Last of Us",
+          "year": 2023,
+          "why_it_comps": "Shares the post-collapse survival engine and the emotional center built around protecting a vulnerable younger companion in a hostile world."
+        },
+        {
+          "title": "Station Eleven",
+          "year": 2021,
+          "why_it_comps": "Comps on the post-pandemic world-building and the way grief and community survival are as important as the external threat."
+        },
+        {
+          "title": "Yellowjackets",
+          "year": 2021,
+          "why_it_comps": "Matches the female-forward survival pressure, trauma-forward character writing, and the sense that the past catastrophe keeps poisoning the present."
+        },
+        {
+          "title": "The Walking Dead",
+          "year": 2010,
+          "why_it_comps": "The infected-world survival lane, fortified-community politics, and recurring threat of siege are directly in this show's DNA."
+        },
+        {
+          "title": "Sweet Tooth",
+          "year": 2021,
+          "why_it_comps": "Shares the protective-child dynamic and the road-to-safety structure, even though this script is darker and more adult."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre viewers who want survival horror with a strong emotional spine, especially audiences that respond to found-family stakes and protective sibling dynamics.",
+        "demographics": "18-49 skew, slightly female-leaning due to the sister/protector emotional engine, but with broad genre appeal among horror and post-apocalyptic viewers.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Moderate creature work, gun battles, fire/explosion coverage, and a finale-scale town destruction sequence drive the spend, but the show remains contemporary and largely grounded in practical locations."
+      },
+      "lane_fit": {
+        "lane": "prestige survival horror",
+        "types_of_buyers": [
+          "streamer originals teams building elevated genre",
+          "premium-cable drama buyers with horror tolerance",
+          "genre-forward production companies with post-apocalyptic track records",
+          "buyers seeking female-led survival franchises",
+          "executives looking for contained-but-scalable apocalypse series"
+        ],
+        "detail": "This sits naturally in the adult survival-horror lane: emotionally driven, violent, and built around a strong female lead with a clear season engine. The quarantine rules, infected threat, and fortified-community politics make it feel like a series buyers can position against established genre audiences without needing a giant fantasy spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series with no clear spinoff vector yet; the supporting characters are functional but not deep enough on the page to anchor a separate project."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Gracie is a real lead role.",
+          "what_it_means": "This is the kind of part that can launch or reframe a young actor because it combines physical survival, maternal responsibility, and emotional restraint. Buyers looking for a breakout female lead in elevated genre will see immediate casting value.",
+          "evidence": "Gracie scavenges, threatens strangers, protects Callie, confronts her infected mother, and then runs back into the burning town for her sister.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The sister bond gives the apocalypse a heart.",
+          "what_it_means": "The show is not just about surviving monsters; it is about whether care can survive collapse, which is a cleaner emotional sell than generic apocalypse dread. That makes it attractive to streamers and premium buyers who want genre with a human hook.",
+          "evidence": "Gracie repeatedly chooses Callie over safety, from the pill bottle to the sickbay to the final return into Northridge.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The quarantine-bracelet world is instantly legible.",
+          "what_it_means": "The bracelet system gives the series a visual rule-set and a simple way to communicate infection status, which helps both audience comprehension and episodic storytelling. Buyers like worlds that can be explained fast and repeated visually.",
+          "evidence": "The cracked bracelet on the opening survivor, the green bracelet on the woman, and the bracelet on the rabid all establish the system immediately.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Bear is a clean antagonist engine.",
+          "what_it_means": "A controlled, coercive villain with resources is more useful to a series than a random monster because he can drive human conflict across episodes. That gives the project a recurring pressure point for buyers who want serialized tension, not just creature attacks.",
+          "evidence": "Bear interrogates Liam, threatens Wren, mobilizes a crew, and then burns Northridge to get the vial.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pilot ends on a real event.",
+          "what_it_means": "The destruction of Northridge is a strong pilot close because it resets the board and promises a larger, harsher season ahead. That kind of ending helps a buyer feel the series has momentum and a clear next chapter.",
+          "evidence": "Bear takes the vial, detonates the town, and Gracie returns to find Callie gone as the settlement burns.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a female-led survival-horror pilot with a clean emotional engine and a visually readable world, which makes it easy to position in the elevated-genre lane. The contemporary setting, practical locations, and contained core cast keep it in a mid-budget series range while the finale-scale destruction gives buyers a clear sense of event value."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The vial plot is still a MacGuffin.",
+          "detail": "The pilot makes the vial important, but the audience does not yet know enough about what it does, why it matters, or why Bear's entire operation is built around it. That is a manageable development note, but it is the central mythology question a buyer will flag before leaning in.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The apocalypse grammar is familiar.",
+          "detail": "Rabids, quarantine zones, fortified communities, and a ruthless outside crew are all effective, but they sit in a well-traveled post-collapse lane. The bracelet detail helps, yet the buyer conversation will still be about whether the show has a sharper signature than the genre baseline.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Gracie carries most of the series load.",
+          "detail": "The pilot is built around her, which is a strength, but it also means the show lives or dies on one young actor sustaining action, grief, and moral pressure across a long run. The supporting cast is solid, but not yet deep enough to reduce that dependency.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The finale asks for real destruction spend.",
+          "detail": "Northridge burning, multiple explosions, infected attacks, and truck chases create a pilot closer that is materially bigger than the rest of the episode. That is fine creatively, but it is the kind of sequence producers will immediately test against the budget tier.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is not clarity — it is differentiation and scale. The pilot has a strong emotional center and a clean antagonist, but the vial mythology is still under-explained and the finale pushes into a destruction sequence that will be closely scrutinized against the mid-budget lane."
+    },
     "craft_note": ""
   },
-  "weightedScore": 69.3,
+  "weightedScore": 69,
   "tier": "Optionable",
-  "inputTokens": 22229,
-  "outputTokens": 4773,
-  "cost": 0.03815025,
+  "inputTokens": 24634,
+  "outputTokens": 4594,
+  "cost": 0.0391485,
   "declaredFormat": "Series"
 }

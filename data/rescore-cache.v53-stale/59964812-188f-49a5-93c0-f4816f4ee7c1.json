@@ -1,0 +1,292 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Art-world crime drama",
+      "genre_tags": [
+        "heist",
+        "satire"
+      ],
+      "tone": "Wry, propulsive, socially observant, and emotionally grounded"
+    },
+    "positioning_hook": "A broke Brooklyn painter is recruited to forge a lost masterpiece for a trans art-world operator and her billionaire father, then gets trapped in a scheme where authenticity, class, and desire all become currency.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise is instantly legible and commercially legible: an underpaid artist, a billionaire art market, a forgery scheme, and a sharp social climb. The emotional promise is broad because it plays as both a caper and a class story, with Ross’s survival pressure and Brett’s family power giving the hook real reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The engine lands early and cleanly in the hotel-bar pitch: paint a copy of a lost Old Painter work, pass it through authentication, and use the sale to unlock money and status. The script keeps the rules understandable even as the plan evolves, which makes the premise easy to repeat and easy to sell."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Ross is a vivid lead: technically gifted, socially awkward, financially cornered, and emotionally hungry for recognition. Brett is equally playable, with privilege, ambition, and a bruised need for approval; together they create a relationship that can carry the whole film."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is making the art-forgery story about labor, class, and authorship rather than just deception. The gallery-world specificity, the shadow-painting visual motif, and the way the con is built from actual art-world procedures give it a confident, ownable angle."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps adding pressure: money trouble, the forgery challenge, the trip to Portugal, the authentication play, the FBI turn, and the auction climax. The reversals are clear and escalating, and the Ross/Brett dynamic keeps the momentum personal instead of procedural."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It feels fresh because the central contradiction is so specific: a woman trying to make serious art is pulled into a scheme that only works if her work is invisible. The ending’s move from forgery to authorship, and from scam to gallery legitimacy, gives the premise a satisfying inevitability."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "The New York art ecosystem is rendered with real institutional texture: Christie’s, the Armory, Freeports, consultants, collectors, museums, studio visits, and the social codes around all of them. The world doesn’t just decorate the story; it generates the plot mechanics and the power dynamics."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a strong blend of dry comedy, social satire, and emotional sincerity, with the art-world absurdity played straight enough to feel real. Scenes like the Connecticut wife sale, the hotel-bar pitch, and the FBI arrest sequence give the script a distinct voice that knows how to be funny without losing stakes."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the caper surface, the script is really about who gets to be seen, who gets erased, and how women inherit or resist systems of value. Ross’s father history, Brett’s family wound, and the repeated emphasis on narrative over fact all suggest deeper thematic payoff."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Ross and Brett are the core engine, and Amara adds a useful third point of tension, especially around exploitation and access. The ensemble is functional and story-generating, though the film’s energy still lives primarily in the Ross/Brett duet."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Trans woman lead role",
+          "Multiple 20s-50s art-world and finance-adjacent supporting roles",
+          "A few child roles in flashbacks",
+          "One billionaire father role with strong authority presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 24,
+        "interior_exterior_ratio": "roughly 70/30 interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New York art-world locations",
+          "Portugal travel sequence",
+          "Museum, gallery, auction-house, apartment, and hotel interiors",
+          "Private jet / jetport material",
+          "FBI/interrogation setting"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly invisible work for painting inserts, signage, and a few montage transitions; no major creature or spectacle effects.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical art handling, auction-room crowding, and a few controlled physical beats like the Narcan sequence and security escort.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Christie's, Hauser & Wirth, The Met, Guggenheim, Whitney, Yale, Uniqlo, Wendy's, Daily Mail, Christie’s, and other named institutions/brands are used prominently."
+        },
+        {
+          "type": "real_person",
+          "detail": "Brock Colyar is a named media figure in the script."
+        },
+        {
+          "type": "real_person",
+          "detail": "Ann Boorman is presented as a specific art-world expert figure."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Old Painter, the lost painting 'Landscape with Woman,' and the catalogue raisonné / authentication material are central story elements built around art-world provenance."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical or premium-streaming feature lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Festival-to-platform or limited theatrical with strong word-of-mouth potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary urban production with a Portugal unit, multiple art-world interiors, and auction/museum crowd scenes keeps this above microbudget but far from effects-heavy."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The film depends on two strong leads plus a handful of recognizable supporting roles, with a trans woman role and a billionaire father role carrying notable casting importance."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable but varied: New York galleries, apartments, museums, auction spaces, and a Portugal travel block all need to feel specific."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Language, drug use, class conflict, and a brief overdose/Narcan sequence keep it in mature territory without pushing into extreme content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script leans heavily on named institutions, brands, and real-world art-market references, plus a media figure and art-authentication ecosystem that will need careful clearance."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The art-world machinery is story fuel.",
+          "what_it_means": "This gives the film a built-in commercial engine because the con is rooted in real procedures, not generic scam logic, so the audience can track the move and enjoy the escalation. Buyers who like prestige crime with institutional texture will see a world that can support sharp marketing and strong conversation value.",
+          "evidence": "The Freeport explanation, the three-legged stool of forging, the authentication sequence, and the Christie’s auction climax all use specific art-market mechanics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ross is a showcase lead.",
+          "what_it_means": "The role offers an actor the kind of contradiction that opens awards-season and breakout-star conversations: technically gifted, socially brittle, funny under pressure, and emotionally starving for recognition. Festival buyers and reps looking for a new female lead with intelligence, awkwardness, and bite will immediately understand the slot.",
+          "evidence": "Her disastrous grant interview, the Connecticut wife scene, the studio frustration, and the final gallery payoff all define her through behavior.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Brett turns privilege into propulsion.",
+          "what_it_means": "This is the kind of role that lets an actor play charm, calculation, woundedness, and self-mythology in the same frame, which is catnip for prestige casting. The part will attract performers who want a morally slippery but emotionally legible character with real scene authority.",
+          "evidence": "Her podcast persona, her father strategy, the gallery ambition, and the betrayal reveal all build a character who is both aspirational and dangerous.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Ross/Brett relationship has real voltage.",
+          "what_it_means": "The film has a two-hander core that can carry the whole package, giving buyers a clear emotional center and actors a juicy push-pull dynamic. That kind of relationship engine is exactly what makes a contained prestige feature feel bigger than its footprint.",
+          "evidence": "Their hotel-bar pitch, Portugal trip, balcony fights, Narcan rescue, and final reconciliation all keep the bond active and evolving.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script understands class as texture, not lecture.",
+          "what_it_means": "The movie can travel because it dramatizes class through rooms, objects, and behavior — studio rent, doormen, trust funds, business class, and gallery access — instead of speeches. That makes it attractive to buyers who want social commentary that plays as entertainment.",
+          "evidence": "Ross’s apartment instability, Brett’s all-cash apartment, the business-class flight, and the gallery-building purchase all encode status visually.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending converts a scam into authorship.",
+          "what_it_means": "The final turn gives the film a satisfying commercial and emotional release: the forgery becomes a legitimate artistic breakthrough, and the story lands on recognition rather than punishment alone. That makes the movie feel uplifting enough for a broader prestige audience while still retaining its edge.",
+          "evidence": "Ross’s finished painting of Brett, the gallery opening, and the Boys & Girls Club workshop all reframe the project as a path to visibility and access.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a smart, highly producible prestige feature with a fresh art-world engine and two sharply castable female leads. It has the kind of specific institutional world, class tension, and emotional payoff that can attract both festival attention and streamer interest."
+    },
+    "lead_characters": [
+      {
+        "name": "Ross Tom",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Brooklyn-based painter",
+        "hook": "Ross is a gifted but financially cornered painter who talks like someone apologizing for taking up space and paints like someone trying to prove she deserves it. She’s funny in a self-protective way, deeply observant, and always half a beat away from humiliation, which makes her both vulnerable and unexpectedly sharp. Her whole identity is built around the tension between technical excellence and the need to be seen as more than labor.",
+        "why_actor_wants_this": "This is the showcase territory of Jessie Buckley in *The Lost Daughter* or Carey Mulligan in *Promising Young Woman* — a role where intelligence, embarrassment, anger, and self-possession can all live in the same close-up. An actor gets to play the full arc from invisible working artist to the person whose hand and eye finally define the room."
+      },
+      {
+        "name": "Brett Banneker",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Trans woman · wealthy New York art-world insider",
+        "hook": "Brett is a trans woman with money, access, and a ferocious need to turn all of it into a legacy that feels self-authored. She’s polished, strategic, funny, and emotionally armored, but the script keeps revealing the hurt underneath the performance of control. She can read a room, weaponize a room, and still be the most wounded person in it.",
+        "why_actor_wants_this": "This is the showcase space of Michaela Coel in *I May Destroy You* or Jodie Comer in *Killing Eve* — a role that lets an actor pivot between wit, menace, vulnerability, and self-invention without losing the audience. It’s the kind of part that gives a performer a signature character: glamorous, dangerous, and heartbreakingly human."
+      },
+      {
+        "name": "Amara Chaudhry",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · South Asian",
+        "hook": "Amara is the art-world operator who knows exactly how access gets monetized and never pretends otherwise. She’s socially fluent, opportunistic, and always three moves ahead, with just enough charm to make exploitation look like networking. She’s the kind of person who can turn a room into a pipeline.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the delicious precision of Sarah Snook in *Succession* or Aimee Lou Wood in *The White Lotus* — fast, cutting, and socially lethal. It’s a compact but memorable part built for an actor who wants to steal scenes with speed, intelligence, and a little moral frost."
+      },
+      {
+        "name": "The Billionaire",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · ultra-wealthy art collector",
+        "hook": "The Billionaire is a man whose money has made him paranoid, sentimental, and convinced that ownership is the same thing as love. He’s volatile, status-obsessed, and emotionally stunted, but the script gives him enough family pain to feel more than cartoonish. He’s a force of appetite and grievance in the same body.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the grand, wounded authority of Brian Cox in *Succession* or Michael Keaton in *The Founder* — a man whose power is inseparable from his insecurity. It’s a juicy late-career or prestige supporting part with tantrum energy, emotional history, and real scene dominance."
+      },
+      {
+        "name": "Stephen Forster, Esq.",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s-30s · lawyer",
+        "hook": "Stephen is the polished legal operator who looks like he was raised to say the right thing in the right room and actually means it. He’s dry, competent, and quietly amused by everyone else’s chaos, which makes him a useful counterweight to the art-world volatility around him. He reads as the rare person in the story who can translate money into structure.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the crisp, controlled utility of Matthew Macfadyen in *Succession* — a smart professional whose restraint becomes its own comic instrument. It’s a strong supporting slot for someone who can play dry authority without flattening into function."
+      },
+      {
+        "name": "Mullet Queer",
+        "role_type": "Supporting",
+        "demographics": "Nonbinary/queer-presenting · 20s-30s · artist",
+        "hook": "Mullet Queer is one of the few people in the story who feels like an actual peer to Ross rather than a gatekeeper. They’re observant, a little bruised, and quietly funny, with enough self-awareness to make the art-world hypocrisy land harder. They function as a moral barometer without becoming a sermon.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the lived-in specificity of a *Shiva Baby* or *Bottoms* ensemble player — quick, contemporary, and emotionally legible in a few scenes. It’s a scene-part with real texture for an actor who wants to feel like part of the city’s bloodstream."
+      },
+      {
+        "name": "Doorman Raph",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · doorman",
+        "hook": "Raph is the working guy who sees the machinery of wealth up close and knows exactly how much of it is theater. He’s not a comic prop; he’s the person who understands the building’s social code better than the people paying for it. His presence gives the film a grounded witness to the whole ecosystem.",
+        "why_actor_wants_this": "This is the kind of role that can do what the best supporting parts in *The Bear* or *Do the Right Thing* do — make a world feel inhabited with just a few lines and a look. Character actors who specialize in authority, skepticism, and dry understatement will know how to make this pop."
+      },
+      {
+        "name": "Ross's Mother",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s-60s",
+        "hook": "Ross’s mother is warm but financially chaotic, the kind of parent whose love is real even when the structure around it isn’t. She helps explain why Ross is so self-reliant and so hungry for stability at the same time. The role carries emotional context more than plot weight, but it matters to the film’s inner life.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the intimate, lived-in resonance of a parent in *Lady Bird* or *The Farewell* — brief but emotionally load-bearing. It’s a strong supporting slot for a performer who can make a family history feel immediate in a small amount of screen time."
+      },
+      {
+        "name": "Ross's Father",
+        "role_type": "Supporting",
+        "demographics": "Male · deceased in present-day story · appears in flashback",
+        "hook": "Ross’s father is a ghost in the story, but an important one: a math teacher whose approval was tied to measurable achievement. He helps define Ross’s relationship to merit, worth, and the ache of being invisible to the person who should have seen her most clearly. The role is brief, but it shapes the emotional architecture of the lead.",
+        "why_actor_wants_this": "This is the kind of flashback role that can carry the quiet ache of a *Manchester by the Sea* parent or a *Aftersun* memory figure — small in screen time, large in emotional consequence. It’s a meaningful part for an actor who can make a few scenes feel like the origin of an entire personality."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a smart, character-driven crime film inside a highly specific social ecosystem.",
+        "fit_profile": "Established indie directors with at least one or two features, or prestige-TV directors moving into features, who already know how to stage dialogue, status, and emotional reversals without overcutting. This material rewards directors who care about performance, institutional texture, and visual storytelling that makes money, class, and desire feel tactile.",
+        "detail": "The script gives a director a clean tonal lane: caper mechanics on the surface, emotional and class warfare underneath. It also offers a lot of room for elegant production design, gallery-world blocking, and close-up performance work rather than spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige indie / premium streamer crime-drama lane",
+        "detail": "It can be packaged around two strong lead performances and a director with a strong reel, rather than needing expensive spectacle or heavy VFX. The art-world setting, trans lead role, and class-satire angle give it exportable conversation value and a clear festival-to-platform runway."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on Ross’s frustration before the engine fully clicks.",
+        "detail": "The grant interview and studio-life material do a good job of grounding her world, and a next pass could consider bringing the forgery proposition into view a little earlier so the caper momentum starts even sooner. That would protect the character work while giving the first act a sharper forward pull.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The art-world explanation is rich and dense.",
+        "detail": "The Freeport, authentication, provenance, and auction mechanics are all compelling, and the version of the script where a few of those explanatory beats are slightly compressed could keep the same specificity with even more propulsion. The story already has the goods; this is about preserving the pace around them.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad for a contemporary feature.",
+        "detail": "New York galleries, apartments, museums, hotels, auction spaces, jetport material, and the Portugal sequence all help the film feel expansive, but a simplification pass could look for places where one institutional space can stand in for another. That would protect the world while making the shoot more efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The named art-world and brand references need a clearance pass.",
+        "detail": "Christie’s, Hauser & Wirth, The Met, the Guggenheim, the Whitney, Yale, Uniqlo, Wendy’s, and the Daily Mail all give the script specificity, and they also create a real legal and clearance workload. A producer would want to decide early which names are essential to the texture and which can be generalized without losing the story’s bite.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Ross’s final gallery success is emotionally satisfying.",
+        "detail": "The ending lands because it resolves the central contradiction — she wants authorship, but the world keeps trying to make her invisible — and the final gallery/workshop structure makes that theme visible. If anything, the next pass could continue foregrounding the emotional cost of that visibility so the payoff feels even more earned.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 81.3,
+  "tier": "Optionable",
+  "inputTokens": 45949,
+  "outputTokens": 5068,
+  "cost": 0.05726775,
+  "declaredFormat": "Feature film"
+}

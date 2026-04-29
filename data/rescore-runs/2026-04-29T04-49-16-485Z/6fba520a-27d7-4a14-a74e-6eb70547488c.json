@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T04:57:32.259Z",
+  "submission_id": "6fba520a-27d7-4a14-a74e-6eb70547488c",
+  "eval_id": "4d2722f1-5793-4100-95ff-973a67103811",
+  "title": "The Paper Man",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Matthias Sindelar",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, Austrian football star of Czech working-class background."
+    },
+    {
+      "name": "Camilla Castagnola",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, Italian fashion model, immigrant in Vienna."
+    },
+    {
+      "name": "Leopold Drill",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Jewish cafe owner in Vienna."
+    },
+    {
+      "name": "Walter Nausch",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, Austrian footballer, married to Margot."
+    },
+    {
+      "name": "Hans Mock",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Austrian footballer with pro-Nazi sympathies."
+    },
+    {
+      "name": "Heinrich Retschury",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Austrian coach."
+    },
+    {
+      "name": "Philip Dibbon",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, sports reporter."
+    },
+    {
+      "name": "Michl Schwarz",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Jewish football administrator."
+    }
+  ],
+  "positioning_hook": "A beloved Austrian football star is pressured to play for the Nazis after the Anschluss, but his refusal to be absorbed turns one match into a public act of resistance.",
+  "cost_usd": 0.058244250000000004,
+  "input_tokens": 49135,
+  "output_tokens": 4754,
+  "status": "wrote:leads_ok"
+}

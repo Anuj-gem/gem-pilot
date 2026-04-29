@@ -2,316 +2,331 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Slasher horror",
-      "genre_tags": [
-        "teen thriller",
-        "ensemble drama"
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller",
+        "Crime"
       ],
-      "tone": "heightened, melodramatic, violent, soap-operatic"
+      "tone": "melodramatic",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "revenge",
+        "friendship",
+        "survival",
+        "high-school",
+        "slasher"
+      ]
     },
-    "positioning_hook": "A high school friend group is torn apart by a masked killer, and the surviving teens must survive the night while buried resentments, betrayals, and a buried revenge plot explode.",
+    "positioning_hook": "After a high-school prank turns deadly, a party-loving teen and her fractured friend group are hunted by a killer who knows their secrets and keeps turning their own social chaos against them.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The premise is easy to grasp and the slasher frame gives it a clear audience lane, especially for teen-horror viewers. The emotional hook is present in the friend-group betrayals and romantic crosscurrents, but the sheer number of characters and repeated relationship turns make the commercial promise feel more diffuse than streamlined."
+        "reasoning": "The slasher engine is instantly legible and the teen-friend-group setup gives it a clear audience, but the appeal is narrower than a clean commercial horror premise because the script leans heavily on melodrama and long dialogue scenes between kills. The core promise is there, but it isn’t yet packaged with the kind of sharp, singular hook that broadens beyond horror fans."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The killer-at-school-and-home engine is clear early, and the Katie murder plus the grandma reveal give the story a readable spine. The script keeps adding new suspects, flashbacks, and relationship reversals, which broadens the canvas but softens the central hook."
+        "reasoning": "The premise is easy to explain once Katie’s murder and the friend-group fallout are established: a circle of teens is picked off while the group’s past prank comes back to haunt them. The issue is that the script takes a long time to settle on its true engine, with multiple false starts around Katie, Lucy, and the grandma before the Ryan reveal lands."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "Sammy, Lucy, Faye, Austin, and Ryan each have strong behavioral signatures, and the script gives them distinct social rhythms. At the same time, many of the characters are built around one dominant trait or function, so the ensemble plays more as a set of types than a fully layered group."
+        "reasoning": "Sammy, Faye, Lucy, Austin, and Lauren all have strong behavioral signatures, which gives the ensemble some immediate texture. But the characters are written more as loud social types than as psychologically layered leads, so the emotional durability is limited even when the banter is lively."
       },
       "creative_originality_and_boldness": {
-        "score": 5,
-        "reasoning": "The script commits to a very specific teen voice and leans into messy, overtalkative social dynamics inside a slasher framework. The execution is familiar in its revenge-killer structure, but the volume of interpersonal chaos and the long-form friend-group banter give it a recognizable personality."
+        "score": 4,
+        "reasoning": "The script has bold volume and a willingness to go extreme, but much of the execution plays like a familiar teen-slasher with heightened soap-opera dialogue. The killer reveal and prank-backstory framework are serviceable rather than fresh, and the voice is more maximal than distinctive."
       },
       "narrative_momentum_engagement": {
         "score": 5,
-        "reasoning": "The body count and escalating attacks keep the story moving, and the reveal structure gives it forward pressure. The middle spends a lot of time on conversation-heavy group scenes and repeated emotional resets, so the drive comes in waves rather than with a constant tightening grip."
+        "reasoning": "The murder set pieces and interrogation beats keep the story moving, and the body count gives the script a built-in forward drive. But the middle stretches are dominated by repetitive relationship talk and extended social scenes, which soften the urgency between attacks."
       },
       "resonant_originality": {
-        "score": 5,
-        "reasoning": "The core idea of a teen group being hunted after a bullying incident is familiar, but the script’s specific social ecosystem — the talkative friend, the party girl, the quiet outsider, the romantic triangulation — gives it a more personal texture. The final reveal reframes the killings in a way that is easy to follow, though not especially surprising once the revenge logic is in motion."
+        "score": 4,
+        "reasoning": "There is a usable core idea in the way a school prank metastasizes into a revenge-killer scenario, but the reveal mechanics and character dynamics are familiar horror territory. The script’s most memorable element is its intensity, not a truly surprising premise."
       },
       "world_density_and_texture": {
-        "score": 6,
-        "reasoning": "The school, homes, police station, and party spaces all feel like part of the same teen ecosystem, and the script repeatedly returns to the social rules of popularity, gossip, and status. The world is not richly institutional in a large-scale sense, but it does have enough teen-social texture to support the story."
+        "score": 5,
+        "reasoning": "The high-school ecosystem, party culture, parent dynamics, and police involvement create a usable social world with enough recurring relationships to generate scenes. Still, the world mostly functions as a container for the killings and arguments rather than a deeply specific system with its own rules and pressures."
       },
       "tonal_specificity": {
-        "score": 6,
-        "reasoning": "The tone is unmistakably heightened: earnest grief, blunt profanity, romantic banter, and graphic violence all coexist in the same register. That mix gives the script a distinct soap-horror flavor, even when the scenes sometimes swing hard between comedy, melodrama, and gore."
+        "score": 4,
+        "reasoning": "The script has a very loud, teen-soap register, but the tone is unstable: comedy, melodrama, romance, and gore are all present, often in the same stretch. That volatility gives it personality, but not yet a controlled tonal identity."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "There are seeds of deeper material in the insecurity, friendship fractures, and the way each character performs identity for the group. The script mostly keeps those ideas on the surface through direct dialogue, so the emotional subtext is visible but not yet fully layered."
+        "reasoning": "The Lucy insecurity thread, the Sammy-grandma trauma, and the friend-group betrayals suggest more emotional material underneath the slasher surface. The problem is that the script states those wounds directly rather than letting them accumulate with much subtext, so the depth is more declared than felt."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "The friend group generates a lot of playable combinations, especially Sammy/Lucy, Austin/Lauren, and Faye/Daniel, and those pairings keep the story socially active. The ensemble is lively, though many scenes still orbit the same core dynamics rather than branching into fully independent relationship engines."
+        "reasoning": "This is the script’s strongest structural asset: the friend group is constantly generating friction, flirtation, jealousy, and loyalty tests, which keeps the ensemble active. Even when the dialogue is overextended, the relationships are doing real work and give the story a recurring engine beyond the killer."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Sammy Miller",
+        "role_type": "Lead",
+        "demographics": "female, 18, high-school senior, socially volatile, party-going teen",
+        "hook": "The story’s center of gravity: loud, defensive, funny, and emotionally evasive, Sammy is the friend-group catalyst who keeps trying to outrun guilt, grief, and the shadow of her grandmother’s violence. She wants control, loyalty, and the freedom to keep living loudly, but her own history keeps dragging the past back into the room.",
+        "why_actor_wants_this": "This is the showcase territory of a young lead in a scream-queen lane — the kind of role that lets an actor swing from comic bravado to raw panic to moral ugliness in the same movie. It gives the performer a full-body survival arc plus the chance to own the final stretch of a body-count thriller."
+      },
+      {
+        "name": "Faye Woodbridge",
+        "role_type": "Supporting",
+        "demographics": "female, 18, high-school senior, talkative, emotionally intense",
+        "hook": "Faye is the script’s loudest pressure valve: oversharing, needy, romantic, and constantly trying to keep the group together even as she burns people out. Under the chatter is a real fear of abandonment, which makes her grief and panic feel personal when the killings start.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the same volatile, scene-stealing runway as a high-energy supporting turn in a teen ensemble horror film — big laughs, big tears, and a hard pivot into terror. It’s a showcase for comic timing, emotional speed, and physical panic."
+      },
+      {
+        "name": "Lucy Carmen",
+        "role_type": "Supporting",
+        "demographics": "female, 17, high-school junior, withdrawn, insecure, socially isolated",
+        "hook": "Lucy is the quiet fracture in the group: observant, wounded, and desperate to be chosen, then suddenly cruel when she feels invisible. Her arc is built on shame, self-image, and the need to matter, which makes her both sympathetic and volatile.",
+        "why_actor_wants_this": "This is strong material for an actor who can play repression turning into eruption — the kind of performance territory that rewards stillness, then pays off with a late emotional confession. It gives the performer a dark, wounded arc inside an ensemble horror structure."
+      },
+      {
+        "name": "Austin Moore",
+        "role_type": "Supporting",
+        "demographics": "male, 18, high-school senior, popular, college-bound, confident",
+        "hook": "Austin is the polished social operator of the group: charming, competitive, image-conscious, and always trying to manage the room. He reads like the guy who can talk his way through anything until the pressure finally exposes how self-serving he can be.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charisma as a weapon, then let the mask slip under pressure. It’s a good showcase for a young leading-man type who can do swagger, jealousy, and panic without losing audience interest."
+      },
+      {
+        "name": "Lauren Cheng",
+        "role_type": "Supporting",
+        "demographics": "female, 17, high-school junior, observant, romantic, emotionally steady",
+        "hook": "Lauren is the calmer counterweight in the group, but she’s not passive; she watches, processes, and quietly steers the emotional temperature of the room. Her loyalty is real, but so is her insecurity, especially once the Austin-Julia-Lauren triangle starts to crack.",
+        "why_actor_wants_this": "This is the kind of role that benefits an actor who can play intelligence without showboating — the grounded friend who becomes the emotional barometer of the ensemble. It’s a strong support turn with romance, hurt, and moral clarity."
+      },
+      {
+        "name": "Daniel Stokes-Simpson",
+        "role_type": "Supporting",
+        "demographics": "male, 18, high-school senior, athlete, boyfriend, socially smooth",
+        "hook": "Daniel is the easygoing popular guy who smooths over conflict, jokes through tension, and keeps the group moving until the script needs him to become a victim. He functions as both social glue and a pressure-release valve for Faye’s intensity.",
+        "why_actor_wants_this": "This is a classic teen-horror boyfriend role with enough banter to give an actor charm before the kill sequence turns it into a physical showcase. It’s the kind of part that can make a young actor memorable fast."
+      },
+      {
+        "name": "Eric Smith",
+        "role_type": "Supporting",
+        "demographics": "male, 17, high-school junior, quiet, socially withdrawn, new kid energy",
+        "hook": "Eric is the soft-spoken outsider who keeps getting pulled into the group’s emotional weather without ever fully owning the room. His silence reads as mystery, insecurity, and restraint, which makes him useful both as a romantic object and as a late-story victim.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a quiet, watchful presence in an ensemble and then a sudden horror payoff. It’s good material for someone who can play interiority and vulnerability without needing speeches."
+      },
+      {
+        "name": "Ryan",
+        "role_type": "Supporting",
+        "demographics": "male, late teens, high-school age, outsider, deceptive, physically dangerous",
+        "hook": "Ryan is the late-arriving emotional trap: initially awkward and sympathetic, then revealed as the manipulative engine behind the killings. He weaponizes intimacy, grievance, and false vulnerability, which makes him the script’s clearest antagonist.",
+        "why_actor_wants_this": "This is the kind of reveal role that lets an actor play two tracks at once — wounded outsider and hidden predator — which is catnip for a young villain turn. It gives the performer a big late-game switch and a final confrontation payoff."
+      },
+      {
+        "name": "Officer Wilson",
+        "role_type": "Supporting",
+        "demographics": "male, 30s-50s, police officer, father",
+        "hook": "Officer Wilson is the procedural pressure point: skeptical, blunt, and increasingly entangled because his son is part of the friend group. He gives the script a law-enforcement frame and a family complication at the same time.",
+        "why_actor_wants_this": "This is solid character-actor territory — a role that lets an actor play authority, irritation, and paternal conflict in the same scenes. It’s especially useful because the son/father dynamic gives the part a personal edge."
+      },
+      {
+        "name": "Katie Davis",
+        "role_type": "Supporting",
+        "demographics": "female, teen, murdered student",
+        "hook": "Katie is the absent catalyst whose death and bullying history drive the entire plot. She exists mostly as a memory, accusation, and moral stain on the friend group.",
+        "why_actor_wants_this": "This is not a performance-heavy role, but it is structurally important as the emotional and narrative trigger. It’s the kind of part that matters more as a plot engine than as a showcase."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 14,
-        "leads": 7,
+        "speaking_roles": 12,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Teen ensemble",
-          "One older female antagonist role (Sammy's grandma)",
-          "One police officer role with recurring presence",
-          "Multiple family roles across several households",
-          "One twin brother role for Austin"
+          "ensemble teen cast",
+          "one adult law-enforcement role",
+          "one offscreen/absent victim catalyst",
+          "age-specific high-school casting"
         ]
       },
       "locations": {
         "distinct_count": 10,
-        "interior_exterior_ratio": "mostly interior",
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
         "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "High school cafeteria/classroom",
-          "Multiple teen bedrooms",
-          "Several family homes",
-          "Police station/interrogation room",
-          "Park",
-          "Restaurant",
-          "Bathroom",
-          "One house with repeated break-in/chase coverage"
+          "high school cafeteria and classroom",
+          "multiple teen bedrooms and family homes",
+          "police station/interrogation room",
+          "park and restaurant exteriors"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly practical violence and cleanup shots; limited needs for blood effects, body handling, and possible police/ambulance inserts.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Knife attacks, chases, falls, chokeholds, gunshots, and repeated gore-heavy death beats.",
+        "vfx_details": "primarily blood, wound, and kill-enhancement work; no major creature or environment effects",
+        "stunts_level": "minor",
+        "sfx_needs": "practical knife work, gunshot effects, blood rigs, body bags, and repeated gore makeup",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Get Out is specifically named and discussed."
+          "detail": "Get Out is specifically named as a movie the characters watch."
         },
         {
           "type": "brand",
-          "detail": "McDonald’s is specifically named."
-        },
-        {
-          "type": "brand",
-          "detail": "DoorDash is specifically named."
-        },
-        {
-          "type": "brand",
-          "detail": "MacBook is specifically named."
+          "detail": "McDonald’s is specifically named in dialogue."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming or low-to-mid-budget theatrical horror",
+        "recommended_lane": "streaming theatrical-horror lane",
         "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model; best suited to a horror-forward streaming launch or limited theatrical run for teen/young-adult audiences."
+        "series_engine_or_release_model": "Feature release model: genre-forward streaming or specialty theatrical with a strong horror audience"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary teen settings keep the footprint manageable, but the repeated murder sequences, blood effects, night work, and multiple house interiors will push above a lean contained-thriller cost profile."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary school-and-home settings keep the footprint manageable, but repeated night chases, blood effects, police coverage, and multiple murder sequences add up."
+      "casting": {
+        "level": "medium",
+        "note": "The project needs a large ensemble of age-specific teen roles with distinct comic and emotional rhythms, plus a villain reveal that has to land after playing sympathetic for much of the script."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s biggest friction is structural clarity: the killer identity, motive chain, and friend-group blame logic shift repeatedly, so the buyer conversation will center on whether the narrative spine feels locked."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Scream",
+          "year": 1996,
+          "why_it_comps": "Teen ensemble slasher dynamics, friend-group suspicion, and a killer who turns social history into murder fuel."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script wants a sizable teen ensemble plus parents, police, and the grandmother antagonist, with several roles needing strong comic-drama timing."
+        {
+          "title": "I Know What You Did Last Summer",
+          "year": 1997,
+          "why_it_comps": "A past wrongdoing comes back as a body-count engine, with teen relationships and guilt driving the suspense."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through a school, several houses, a restaurant, a park, a bathroom, and a police station, with repeated night coverage."
+        {
+          "title": "Bodies Bodies Bodies",
+          "year": 2022,
+          "why_it_comps": "A young ensemble trapped in escalating paranoia, with relationship chaos and accusation as part of the horror engine."
         },
-        "content": {
-          "level": "high",
-          "note": "Graphic stabbings, throat slits, gunshots, choking, profanity, sexual dialogue, and teen drinking/vaping push it firmly into mature territory."
-        },
-        "rights": {
-          "level": "low",
-          "note": "Only a few named real-world brands and one named film are referenced, with no major life-rights or IP dependency apparent."
+        {
+          "title": "Fear Street Part One: 1994",
+          "year": 2021,
+          "why_it_comps": "Streaming-friendly teen horror with a group dynamic, stylized kills, and a mystery tied to past violence."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Horror fans who like teen ensembles, relationship drama, and a high body count with emotional betrayals.",
+        "demographics": "Primarily 16-34, skewing female but with broad teen-horror crossover; strongest with genre viewers who like group dynamics and messy romance.",
+        "quadrants": [
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations and limited effects keep it in indie horror territory, though the repeated kill scenes and ensemble cast prevent it from being ultra-lean."
+      },
+      "lane_fit": {
+        "lane": "teen slasher / streaming horror",
+        "types_of_buyers": [
+          "streamer genre originals execs",
+          "specialty horror distributors",
+          "indie producers in the elevated-teen-horror lane",
+          "low-to-mid budget genre financiers"
+        ],
+        "detail": "This sits naturally in the teen-horror lane where ensemble chemistry, body count, and a clean revenge engine matter more than star power. The script’s contemporary setting and contained locations make it a practical genre buy if the killer reveal is tightened."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or universe vector beyond the central revenge story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The ensemble has a built-in social engine.",
-          "what_it_means": "This gives a producer a horror movie that can play as a relationship piece, not just a body-count exercise, which broadens the audience beyond pure gore fans. Teen ensemble buyers and actors who want a group dynamic with romantic crossfire will respond to that setup.",
-          "evidence": "The cafeteria scenes, the party sleepover, and the repeated pairings around Sammy, Lucy, Austin, Lauren, Faye, Daniel, Eric, and Ryan keep generating new combinations.",
+          "dimension_or_area": "The ensemble keeps generating friction.",
+          "what_it_means": "That gives the movie a repeatable scene engine and a clear reason for buyers to see a cast-driven horror package rather than a one-note slasher. It will appeal to producers looking for a young ensemble that can play banter, betrayal, and panic in the same movie.",
+          "evidence": "The cafeteria and party scenes keep rotating alliances, crushes, and resentments, especially around Sammy, Faye, Austin, Lauren, Lucy, and Eric.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Sammy is a playable center of gravity.",
-          "what_it_means": "The lead role gives an actor a volatile mix of bravado, grief, defensiveness, and survival instinct, which is exactly the kind of part that can anchor a genre package. Young actresses looking for a showcase lead and managers hunting for a breakout horror face will see the opportunity immediately.",
-          "evidence": "Sammy moves from party confidence to police interrogation to emotional collapse to final-survivor mode, with a strong final confrontation against Ryan.",
+          "dimension_or_area": "The script has a built-in revenge spine.",
+          "what_it_means": "A past prank turning into a murder spree is a clean commercial engine because it gives the killings a motive the audience can track. That makes the project legible to horror buyers who want a simple hook with escalating consequences.",
+          "evidence": "Katie’s bullying/prank history is repeatedly referenced, then folded into the killer’s revenge logic and the police interrogations.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The teen voice is specific and loud.",
-          "what_it_means": "The script has a very identifiable social rhythm: fast talk, teasing, oversharing, public embarrassment, and sudden emotional reversals. That kind of voice can help a buyer market the movie as character-driven horror with a distinct youth texture.",
-          "evidence": "Faye’s nonstop chatter, Austin’s performative confidence, Lucy’s shutdowns, and the group’s constant banter all create a recognizable cadence.",
+          "dimension_or_area": "Faye is a scene-stealing pressure valve.",
+          "what_it_means": "Her volume, insecurity, and emotional overdrive create a memorable supporting role that can pop in casting conversations. Buyers often respond to a character who can deliver both comic relief and genuine panic, and Faye does that repeatedly.",
+          "evidence": "Her long cafeteria monologues, her panic after Daniel dies, and her frantic survival run give her a very specific performance lane.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The killer reveal is emotionally legible.",
-          "what_it_means": "The revenge logic is easy to pitch and easy to follow, which helps the movie travel with audiences who want a clean motive behind the mayhem. Horror buyers and streamers like a reveal that can be explained in one sentence without losing the emotional hook.",
-          "evidence": "Ryan’s final reveal ties the murders back to Katie, the prank, and the friend group’s cruelty, then reframes the entire attack pattern.",
+          "dimension_or_area": "The kill sequences are frequent and clear.",
+          "what_it_means": "That keeps the movie in a commercially familiar horror lane and gives the trailer team obvious set pieces to cut around. Genre audiences know exactly what kind of ride they’re buying.",
+          "evidence": "Katie, Julia, Daniel, Austin, Eric, Lucy, and Ryan all get explicit attack sequences with escalating gore.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The violence is staged for genre fans.",
-          "what_it_means": "The script is unapologetically committed to slasher escalation, which gives it a clear lane with horror audiences who want practical, visceral set pieces. That makes it attractive to buyers looking for a hard-R crowd-pleaser with repeatable kill scenes.",
-          "evidence": "Katie’s home invasion, Julia’s house sequence, Faye’s extended chase, and the final house massacre all lean into sustained attack choreography.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The friend-group betrayals create marketing hooks.",
-          "what_it_means": "There are multiple relationship fractures that can be sold in trailers and social copy: exes, best-friend jealousy, hidden crushes, and shifting alliances under pressure. That gives the movie more than one emotional entry point for viewers who like their horror with soap-opera energy.",
-          "evidence": "Austin/Lauren/Julia, Sammy/Lucy, and Faye/Daniel all carry betrayals or unresolved feelings into the killings.",
+          "dimension_or_area": "The teen social world is active.",
+          "what_it_means": "The script has enough relationship churn to support marketing around romance, jealousy, and betrayal rather than just murder. That broadens the emotional entry point for younger viewers who come for the social drama as much as the slasher mechanics.",
+          "evidence": "The Austin/Lauren/Julia triangle, Sammy/Lucy fallout, and Faye/Daniel pairing all drive scenes before and after the attacks.",
           "source": "script"
         }
       ],
-      "headline": "This is a teen slasher with a loud, specific social voice and a built-in ensemble engine. The script’s real commercial value is that it doesn’t just offer kills — it offers a friend-group meltdown, a revenge motive that’s easy to pitch, and a lead role that gives an actor a full-spectrum horror showcase."
+      "headline": "This is a castable, contemporary teen-slasher package with a clear revenge engine and enough relationship chaos to keep the ensemble alive between kills. If the killer spine is sharpened, it has a real lane as a streamer-friendly indie horror buy with trailer-ready set pieces and a few breakout supporting roles."
     },
-    "lead_characters": [
-      {
-        "name": "Sammy Miller",
-        "role_type": "Lead",
-        "demographics": "Female · 18",
-        "hook": "Sammy is the social engine of the group: blunt, party-forward, defensive, and always trying to stay one step ahead of embarrassment. She reads as the kind of teen who uses confidence as armor, then has to keep that armor on while the world around her turns into a murder investigation.",
-        "why_actor_wants_this": "This is the showcase territory of Maika Monroe in *It Follows* — a young woman whose outward cool becomes survival language as the threat closes in. An actress gets to play party-girl charisma, panic, guilt, and final-girl resolve in one role, which is exactly the kind of horror lead that can break out."
-      },
-      {
-        "name": "Lucy",
-        "role_type": "Lead",
-        "demographics": "Female · 17",
-        "hook": "Lucy starts as the quiet, watchful one and then detonates into a furious, wounded, emotionally exposed presence. She’s built around repression, insecurity, and a desperate need to belong, which makes her one of the script’s most volatile and sympathetic figures.",
-        "why_actor_wants_this": "This is the showcase space of Toni Collette in *Hereditary* — a role where emotional fracture is the performance engine and the audience keeps re-evaluating what they’re seeing. A young actress would get a full-spectrum turn from withdrawn outsider to raw confessor to ferocious survivor."
-      },
-      {
-        "name": "Austin Moore",
-        "role_type": "Lead",
-        "demographics": "Male · 18",
-        "hook": "Austin is the polished, high-achieving guy who likes to think he’s the most emotionally literate person in the room. He’s confident, romantic, and a little performative, which gives him a strong screen presence even when he’s being self-satisfied or controlling.",
-        "why_actor_wants_this": "This is the showcase lane of Penn Badgley in *You* — a charming, articulate male lead whose confidence is part of the character’s tension. An actor gets to play charisma, manipulation, romantic intensity, and eventual moral exposure, which is a strong package for a young leading man."
-      },
-      {
-        "name": "Lauren Cheng",
-        "role_type": "Lead",
-        "demographics": "Female · 17",
-        "hook": "Lauren is observant, emotionally strategic, and often the quiet stabilizer in the room. She has a softer surface than Sammy or Faye, but the script gives her enough romantic and friendship tension to make her feel like a real participant rather than a background girlfriend.",
-        "why_actor_wants_this": "This is the kind of role Zendaya had in *Euphoria* when the performance is about stillness, perception, and emotional withholding. A young actress gets to play the person who sees more than she says, which is a strong prestige-leaning teen role."
-      },
-      {
-        "name": "Faye Woodbridge",
-        "role_type": "Lead",
-        "demographics": "Female · 18",
-        "hook": "Faye is a human flood of feeling: talkative, theatrical, needy, funny, and deeply self-conscious underneath all of it. She’s the kind of character who fills silence with words because silence feels dangerous, and that makes her both comic and heartbreaking.",
-        "why_actor_wants_this": "This is the showcase territory of Rachel Sennott in *Shiva Baby* — a pressure-cooker role where comedy is inseparable from panic and social overcompensation. An actress who wants to do fast, high-wire emotional comedy with real vulnerability would jump at this."
-      },
-      {
-        "name": "Daniel Stokes-Simpson",
-        "role_type": "Lead",
-        "demographics": "Male · 18",
-        "hook": "Daniel is the chill, supportive boyfriend archetype with enough swagger to feel like the social glue of the group. He’s easygoing on the surface, but the script lets him function as both comic relief and emotional ballast until the violence catches up to him.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the easy charm and sudden loss territory of Noah Centineo in a teen ensemble drama. It’s a strong fit for a young actor who can sell warmth, banter, and the shock of being the one who can’t save the room."
-      },
-      {
-        "name": "Eric Smith",
-        "role_type": "Lead",
-        "demographics": "Male · 17",
-        "hook": "Eric is the quiet outsider with a nervous, watchful energy and a lot more interiority than he initially shows. He’s the least verbally dominant person in the group, which makes his eventual emotional and romantic beats feel earned rather than automatic.",
-        "why_actor_wants_this": "This is the showcase space of Finn Wolfhard in *The Goldfinch* or *Stranger Things* when the role is about quiet intensity and delayed emotional release. An actor gets to play restraint, awkwardness, and a late-blooming romantic payoff."
-      },
-      {
-        "name": "Ryan",
-        "role_type": "Lead",
-        "demographics": "Male · 17-18",
-        "hook": "Ryan is the quiet, slightly mysterious outsider who becomes the story’s hidden engine. He’s socially reserved, emotionally strategic, and ultimately the most dangerous person in the room, which gives him a strong double life as both romantic interest and antagonist.",
-        "why_actor_wants_this": "This is the showcase territory of Jack Quaid in *Scream* — a role that lets an actor play likability, uncertainty, and a late reveal that recontextualizes everything. Young actors who can toggle between soft-spoken charm and menace will see the upside immediately."
-      },
-      {
-        "name": "Katie Davis",
-        "role_type": "Supporting",
-        "demographics": "Female · teen",
-        "hook": "Katie is the off-screen catalyst whose death and social history drive the entire revenge structure. She functions as the moral center the group failed, which gives the story its emotional wound.",
-        "why_actor_wants_this": "This is the kind of catalytic role that can still matter in a horror package because the audience has to feel the loss before the violence can land. A young actress with a strong presence could make the opening section memorable even with limited screen time."
-      },
-      {
-        "name": "Sammy’s Grandma",
-        "role_type": "Supporting",
-        "demographics": "Female · elderly",
-        "hook": "She’s the unstable, relentless older woman who keeps slipping back into the story as a threat and a warning. The character has a feral, unglamorous menace that makes her feel like a slasher villain with personal history.",
-        "why_actor_wants_this": "This is the kind of role that gives an older actress the unhinged, scene-stealing territory of Cathy Bates in *Misery*. It’s a juicy antagonist part with physical menace and a strong motive."
-      },
-      {
-        "name": "Officer Wilson",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Officer Wilson is the procedural adult presence who keeps trying to impose order on a teen nightmare. He’s part authority figure, part comic friction, and part pressure valve for the investigation scenes.",
-        "why_actor_wants_this": "This is the grounded authority-role lane of Jeffrey Wright in *Westworld* or a strong network procedural lead-in scene — controlled, skeptical, and reactive to chaos. Character actors who can play dry authority with a little edge will have fun here."
-      },
-      {
-        "name": "Lauren’s Mom / Naomi",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s",
-        "hook": "Naomi is the warm, supportive parent who gives Lauren a home base and helps keep the teen world emotionally legible. She functions as a stabilizing adult presence in a story that otherwise keeps stripping adults away.",
-        "why_actor_wants_this": "This is the kind of emotionally grounded parent role that gives an actress the Sarah Snook-in-*Succession* adjacent lane of warmth under stress, but in a more intimate domestic register. It’s a clean supporting part for an actor who can make a few scenes feel lived-in."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to turn teen social chaos into a slasher engine.",
-        "fit_profile": "First- or second-feature directors, or TV-to-feature filmmakers, who already work comfortably with ensemble blocking, heightened dialogue, and contained horror geography. The material rewards directors who like performance-forward genre, fast tonal pivots, and the ability to make a house, a cafeteria, and a hallway feel like pressure cookers.",
-        "detail": "The movie gives a director a chance to choreograph group dynamics as suspense, not just dialogue, and to build set pieces out of social embarrassment before the knife ever appears. It’s especially attractive to filmmakers who can make character friction feel cinematic and who know how to keep a teen ensemble moving without losing clarity."
-      },
-      "buyer_appeal": {
-        "tier": "$2-8M feature",
-        "lane": "streaming horror / low-budget theatrical genre lane",
-        "detail": "It can be packaged around a strong young ensemble and one standout lead, without needing expensive star casting to make the premise legible. The teen-slasher lane remains a reliable streamer and genre-theatrical buy, and the contemporary school/home footprint keeps it in a producible range."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The killer logic shifts too often.",
+          "detail": "The script moves from Sammy’s grandma to Lucy’s apparent breakdown to Ryan’s reveal, with the motive chain changing as the story goes. That creates real development friction because the audience is asked to reorient the mystery multiple times before the final answer lands.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The dialogue runs long between attacks.",
+          "detail": "Several cafeteria, party, and relationship scenes stretch far past the amount of information they need to carry, especially the Faye/Austin/Lauren/Sammy exchanges. That softens momentum in a genre piece where buyers will expect the next scare or reveal to arrive faster.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tone swings from camp to gore without control.",
+          "detail": "The script jumps from joke-heavy teen banter to explicit mutilation and back again, often in the same sequence. That volatility gives it energy, but it also makes the lane harder to sell because the movie is not consistently one thing.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ensemble is vivid but not equally deep.",
+          "detail": "Sammy, Faye, Lucy, Austin, and Lauren all have strong behavioral signatures, but many supporting players function as loud types rather than fully differentiated dramatic engines. That limits long-tail attachment unless the buyer is specifically responding to the group dynamic.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The gore level narrows the buyer pool.",
+          "detail": "The repeated throat-slits, stabbings, decapitation imagery, and prolonged attack beats push the movie firmly into mature horror territory. That is fine for streaming and genre buyers, but it will not travel as broadly as a softer teen thriller.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural, not conceptual: the script has a usable slasher engine, but the killer reveal path and motive chain keep changing, and the dialogue-heavy middle sections slow the charge between set pieces. It’s sellable as a teen-horror package, but the buyer conversation will focus on clarity, tone control, and whether the ensemble can justify the runtime."
     },
-    "considerations": [
-      {
-        "area": "The ensemble could be slightly more selective.",
-        "detail": "The script has enough characters for a lively friend-group movie, but a next pass could consider which relationships truly need independent screen time versus which ones can be folded into the same social beats. That would protect the momentum while keeping the cast footprint and audience tracking cleaner.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The middle leans hard on conversation.",
-        "detail": "Several cafeteria and hangout scenes spend a lot of pages on the group explaining feelings and status changes directly. One lever would be to let a few of those turns land through action, interruption, or a sharper visual beat so the horror pressure keeps building while the relationships still register.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The killer logic is strongest when it stays simple.",
-        "detail": "The final reveal is easiest to track when it stays anchored to Katie, the prank, and the revenge motive. A next pass could keep the explanation tight in the reveal scene so the audience feels the emotional punch before the mechanics expand.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The violence footprint is manageable but repetitive.",
-        "detail": "The repeated chase-and-stab structure is producible in the contemporary setting, but the version of the script where a couple of attacks are collapsed into fewer, more distinct set pieces would protect both budget and impact. That would also make the standout kills feel more eventized.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The teen dialogue has room to sharpen by contrast.",
-        "detail": "The script already has a loud, specific voice, and the next pass could make that voice even more memorable by varying how each character speaks under pressure. The more each person’s language pattern is distinct in crisis, the more the ensemble will pop in trailers and in the final act.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 56.3,
+  "weightedScore": 50.3,
   "tier": "Needs Development",
-  "inputTokens": 44594,
-  "outputTokens": 5052,
-  "cost": 0.05617950000000001,
+  "inputTokens": 46999,
+  "outputTokens": 4855,
+  "cost": 0.057096749999999995,
   "declaredFormat": "Feature film"
 }

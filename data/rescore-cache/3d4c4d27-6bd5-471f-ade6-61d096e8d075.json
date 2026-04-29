@@ -2,254 +2,284 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Historical fantasy",
-      "genre_tags": [
-        "Mythic drama",
-        "Coming-of-age"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama",
+        "Historical"
       ],
-      "tone": "Lyrical, reverent, mystical, and emotionally earnest"
+      "tone": "mythic",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "period-piece",
+        "prestige",
+        "character-driven",
+        "slow-burn",
+        "family-dynamics",
+        "identity",
+        "friendship",
+        "mughal-india",
+        "singing-bowl"
+      ]
     },
-    "positioning_hook": "A Mughal princess uses a singing bowl to hide a forbidden child, then must erase the night from her two closest allies before her father discovers the truth.",
+    "positioning_hook": "A Mughal princess hides a miraculous newborn from her father’s court, then uses a singing bowl to rewrite the child’s fate before the empire can claim her.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise has a clear emotional promise and a visually distinctive historical setting, which gives it a defined lane with prestige and genre buyers. Its audience is more specific than broad, but the princess, the secret child, and the mythic device create a clean entry point."
+        "reasoning": "The hook is vivid and emotionally legible, but the period-mythic register narrows the immediate buyer pool. The princess/infant/father conflict is strong, yet the script’s appeal is more prestige and niche than broad four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The hook lands early: a princess, a hidden baby, a singing bowl, and a father who can never know. The opening is dense with invented terms, but the central engine becomes legible by the time Nissa reveals the child and the bowl's purpose."
+        "reasoning": "The premise lands early: a royal infant is being hidden, and a mystical bowl becomes the mechanism for fate and memory. The mythology is distinctive, though the pilot spends a long stretch establishing the rules before the central engine fully crystallizes."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Nissa, Durga, and Santi form a durable triangle with clear emotional roles: authority, muscle, and devotion. Nissa has the strongest long-run engine because her secrecy, spiritual power, and royal burden can sustain many episodes, while the supporting pair give the show a built-in relational core."
+        "reasoning": "Nissa, Durga, and Santi each have a clear behavioral signature, and their sisterly triangle gives the series a durable emotional core. The lead is compelling, but the supporting cast on the page is still mostly defined through this one night and one revelation."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a rare blend of Mughal history, spiritual cosmology, and maternal sacrifice, and it does so without flattening the period into generic palace drama. The singing bowl as a narrative instrument and the baby-as-future-myth structure give the pilot a confident, unusual identity."
+        "reasoning": "A Mughal princess, a singing bowl, reincarnation language, and a secret infant fate make for a genuinely unusual fantasy frame. The script commits hard to its own cosmology and refuses generic fantasy shorthand."
       },
       "narrative_momentum_engagement": {
-        "score": 6,
-        "reasoning": "The pilot is more ceremonial than propulsive, but it keeps revealing new layers of the central secret and ends by reframing the baby's future as a long-range quest. The emotional escalation is steady, though the scene design favors revelation and ritual over forward-driving conflict."
+        "score": 5,
+        "reasoning": "The opening mystery is engaging, but the pilot becomes largely explanatory as Nissa narrates the backstory of Eztli and the bowl. The emotional destination is clear, yet the scene progression is more ceremonial than propulsive."
       },
       "resonant_originality": {
-        "score": 8,
-        "reasoning": "This feels like a story that could only exist in this exact historical and spiritual frame: a royal daughter, a sacred bowl, a hidden child, and a destiny that spans generations. The idea of memory, prophecy, and motherhood being carried through sound gives the concept a memorable inevitability."
+        "score": 7,
+        "reasoning": "The script has a fresh, immediately ownable combination of royal history and spiritual fantasy, and the baby-in-the-bowl image is memorable. It feels singular rather than derivative, even if the pilot’s momentum is more meditative than surprising."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The Red Fort, the palace water channels, the Urdubegis, the royal hierarchy, and the devotional language all create a world with visible rules and social texture. The setting is not just decorative; it actively shapes secrecy, movement, and power."
+        "reasoning": "The Red Fort, the palace water channels, the Urdubegis, the emperor’s court, and the spiritual vocabulary create a world with real hierarchy and texture. The setting is not just backdrop; it generates behavior, status, and ritual."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unmistakably lyrical and ceremonial, with intimate banter sitting beside spiritual revelation and royal gravity. The script has a very specific cadence and worldview, and that voice is one of its most memorable assets."
+        "reasoning": "The tone is mythic, intimate, and ceremonially playful, with the girls’ banter sitting inside a sacred-history frame. That blend of childlike literalism and imperial grandeur gives the pilot a hard-to-copy identity."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "The pilot suggests a much larger mythic and emotional architecture beneath the immediate scene: prophecy, reincarnation, lineage, and a future search for the father. The ending opens a long runway for the baby's destiny and Nissa's hidden role in it."
+        "reasoning": "The pilot is clearly operating with hidden history, reincarnation logic, and a future-facing destiny structure. The final reveal that the baby will be raised elsewhere and eventually return suggests a much larger saga beneath the surface."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "The Nissa-Durga-Santi triangle is lively and distinct, with each relationship carrying a different emotional charge and comic rhythm. The ensemble is compact rather than sprawling, but the trio already generates enough friction and affection to support ongoing stories."
+        "reasoning": "Nissa, Durga, and Santi generate a strong recurring triangle, and their different registers create usable scene energy. The ensemble engine is promising, though the pilot’s supporting world is still secondary to the central trio."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Nissa",
+        "role_type": "Lead",
+        "demographics": "Female, 21, Mughal princess, Indian, royal-born, spiritually gifted.",
+        "hook": "Princess Badr-un-Nissa Begum, called Nissa, is the script’s center of gravity: regal, serene, mischievous, and terrifyingly certain of her own destiny. She moves between court authority and private tenderness, using the singing bowl like both instrument and oracle, and she is willing to commit an unforgivable act in service of a larger fate she believes only she can see.",
+        "why_actor_wants_this": "This is the showcase territory of Claire Foy in The Crown or Zendaya in Euphoria: a controlled, high-status role that lets an actor play command, secrecy, spiritual conviction, and devastating moral choice in the same performance."
+      },
+      {
+        "name": "Durga",
+        "role_type": "Supporting",
+        "demographics": "Female, 21, Indian, Urdubegis warrior, physically formidable.",
+        "hook": "Durga is the disciplined blade in the trio: skeptical, loyal, physically imposing, and constantly trying to keep the others grounded in practical reality. Her comedy comes from being the most competent person in the room while still getting outmaneuvered by Nissa’s mysticism and Santi’s emotional openness.",
+        "why_actor_wants_this": "This is the kind of role that gave Gwendoline Christie in Game of Thrones or Jodie Comer in Killing Eve a chance to be both formidable and unexpectedly vulnerable, with physical authority and dry comic friction."
+      },
+      {
+        "name": "Santi",
+        "role_type": "Supporting",
+        "demographics": "Female, 21, Indian, royal servant/dasis, emotionally open.",
+        "hook": "Santi is the eager, affectionate witness who turns the pilot’s mythology into feeling; she is the one most likely to believe, react, and ask the question the audience is thinking. Her devotion to Nissa gives the series its heart, and her comic literalism keeps the spiritual material from floating away.",
+        "why_actor_wants_this": "This is the showcase lane of Ayo Edebiri in The Bear or Natasha Lyonne in Poker Face: a role built on rapid emotional response, comic timing, and the ability to make exposition feel alive."
+      },
+      {
+        "name": "Aurangzeb",
+        "role_type": "Supporting",
+        "demographics": "Male, late 70s, Mughal emperor, Indian, ruling patriarch.",
+        "hook": "Aurangzeb is the imperial father and political threat: still formidable, still controlling, and emotionally unreadable until the final confrontation cracks him open. He functions as the human face of state power and the personal cost of Nissa’s secret.",
+        "why_actor_wants_this": "This is the kind of late-career authority role that gave Brian Cox in Succession or Ben Kingsley in House of Sand and Fog a chance to dominate a room with stillness, menace, and wounded pride."
+      },
+      {
+        "name": "Eztli",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, Indigenous/Latine-coded historical figure, seafarer/seeker.",
+        "hook": "Eztli exists first as myth and memory, then as the emotional and spiritual counterpart to Nissa’s bowl. He is framed as a seeker rather than a pirate, a man whose future is already burdened with loneliness, destiny, and the burden of being known and unknown at once.",
+        "why_actor_wants_this": "This is the kind of enigmatic, myth-weighted role that gave Oscar Isaac in Scenes from a Marriage or Diego Luna in Andor room to play intelligence, longing, and destiny without over-explaining the character."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 4,
-        "leads": 3,
-        "series_regulars": 4,
+        "speaking_roles": 5,
+        "leads": 1,
+        "series_regulars": 3,
         "child_actors": true,
         "casting_characteristics": [
-          "Historical South Asian casting",
-          "Female-led principal cast",
-          "Infant required",
-          "Royal and warrior physical presence in the lead roles"
+          "one newborn/infant",
+          "period-appropriate Indian casting",
+          "strong physical presence for Durga",
+          "older patriarch role for Aurangzeb"
         ]
       },
       "locations": {
         "distinct_count": 4,
-        "interior_exterior_ratio": "Mostly interior with some exterior transitions",
-        "period_or_contemporary": "Period",
+        "interior_exterior_ratio": "mostly interiors with some exterior riverbank and fort approach material",
+        "period_or_contemporary": "period-piece",
         "notable_requirements": [
-          "Red Fort / palace interiors",
-          "Riverbank and water-channel staging",
-          "Period-built or heavily dressed historical sets"
+          "Red Fort palace interiors",
+          "water-channel / boat movement inside palace complex",
+          "pottery shed",
+          "imperial throne room"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Limited enhancement for palace scale, river movement, and the bowl's vision imagery.",
+        "vfx_details": "Primarily period enhancement, fort/palace scale augmentation, and subtle supernatural effects around the bowl, vibration, and vision imagery.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical water-channel and boat work; vibration/vision effects for the singing bowl.",
+        "sfx_needs": "Practical baby handling, bowl vibration effects, water-channel boat movement, and controlled performance effects for trance/sleep sequences.",
         "night_shoots": "significant",
         "animals": false
       },
-      "rights_flags": [
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "premium streaming historical fantasy drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mythology-driven drama with a court-politics-and-destiny engine"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "high",
+        "note": "The Red Fort, palace interiors, period costuming, water-channel staging, and supernatural vision work all push this above a simple contained drama footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Nissa has to carry regal authority, spiritual certainty, and emotional ambiguity, while Durga and Santi need a precise comic rhythm; the infant and older emperor add narrow age-specific requirements."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot is rich in mythology and atmosphere, but the opening spends substantial time on explanation and ritual before the series engine fully locks in."
+      }
+    },
+    "packaging": {
+      "comp_set": [
         {
-          "type": "real_person",
-          "detail": "Aurangzeb"
+          "title": "The Crown",
+          "year": 2016,
+          "why_it_comps": "A court-centered prestige series where power, ritual, and private emotion collide inside a highly specific historical world."
         },
         {
-          "type": "real_person",
-          "detail": "Badr-un-Nissa Begum"
+          "title": "Pachinko",
+          "year": 2022,
+          "why_it_comps": "The intergenerational sweep, lyrical seriousness, and historical specificity make this feel like a premium, culture-forward period drama."
         },
         {
-          "type": "real_person",
-          "detail": "Quetzalcoatl"
+          "title": "His Dark Materials",
+          "year": 2019,
+          "why_it_comps": "The spiritual cosmology, destiny language, and child-centered mythic stakes align with a fantasy series built on belief and revelation."
         },
         {
-          "type": "real_person",
-          "detail": "Chimalman"
+          "title": "Andor",
+          "year": 2022,
+          "why_it_comps": "The political texture and serious, adult treatment of a larger historical system give the pilot a prestige genre lane rather than a light fantasy one."
         }
       ],
-      "platform_fit": {
-        "recommended_lane": "Prestige streaming historical drama",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Serialized mythic drama driven by Nissa's hidden actions, the baby's future, and the unfolding consequences of prophecy and memory."
+      "audience_target": {
+        "primary_audience": "Viewers who want prestige historical fantasy with emotional stakes, especially adults drawn to royal intrigue, spiritual mythology, and strong female leads.",
+        "demographics": "Adults 25-54, slightly female-skewing, premium-streaming audience, culturally curious viewers who respond to period specificity and elevated genre.",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "F18-34"
+        ]
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Period palace environments, water-channel staging, and dressed historical exteriors place it above a contained indie but below large-scale spectacle."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The core cast is compact, but the project depends on specific South Asian historical casting and an infant presence at the center of the story."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The story is concentrated in a few spaces, but the Red Fort, riverbank, and palace-waterway elements require controlled period locations or builds."
-        },
-        "content": {
-          "level": "low",
-          "note": "The material is emotionally intense and spiritually charged, but it avoids graphic violence, sexuality, and overt profanity."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The script names historical figures and mythic figures, which invites clearance and historical sensitivity review."
-        }
+      "budget_tier": {
+        "tier": "premium",
+        "range": "",
+        "per_episode": "$10M-$14M",
+        "season_total": "$80M-$112M for an 8-episode season",
+        "note": "Premium period design, palace builds, water-channel staging, and a modest supernatural layer drive the per-episode cost."
+      },
+      "lane_fit": {
+        "lane": "premium historical fantasy drama",
+        "types_of_buyers": [
+          "premium-streamer originals teams",
+          "prestige period-drama buyers",
+          "elevated-fantasy development execs",
+          "international co-production buyers",
+          "female-led event-series buyers"
+        ],
+        "detail": "This sits naturally in the lane where historical specificity is part of the hook and fantasy is used as a prestige amplifier rather than a spectacle-first engine. The script feels built for a buyer looking for culturally specific, awards-capable worldbuilding with a strong female center."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series with a strong ongoing engine, but no clear spinoff vector on the page beyond the core Nissa/Durga/Santi story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise fuses royal history with spiritual destiny.",
-          "what_it_means": "That combination gives the show a prestige identity that can travel beyond pure period-drama buyers into streamer lanes looking for elevated, culturally specific storytelling. It will attract buyers and creators who want historical material with a mythic engine and a female-centered point of view.",
-          "evidence": "Nissa is revealed as the Mughal princess while the scene also frames the singing bowl, visions, and reincarnation as the story's operating system.",
+          "dimension_or_area": "The Red Fort feels story-generating.",
+          "what_it_means": "The setting is not decorative; it gives the series hierarchy, movement, ritual, and visual identity that can sustain premium episodic storytelling. Buyers looking for a world with immediate texture and a built-in sense of power will respond to that specificity.",
+          "evidence": "The palace water channels, imperial apartment corridors, throne room, and riverbank movement all become part of the drama rather than background.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Nissa is a showcase role built on authority and secrecy.",
-          "what_it_means": "The lead part gives an actor command, tenderness, spiritual intensity, and moral burden in one package, which is exactly the kind of role that can anchor a prestige series. Mid-career dramatic leads and actors looking for a signature historical role will see immediate value here.",
-          "evidence": "She shifts from playful banter with Santi and Durga to royal command before the Emperor, then to the devastating confession that she killed the baby.",
+          "dimension_or_area": "Nissa is a premium lead role.",
+          "what_it_means": "The role combines royal authority, spiritual mystery, romantic memory, and moral extremity, which is exactly the kind of part that can attract a major actress and define a series. Casting teams and talent reps will see a rare chance for a performance that is both stately and emotionally dangerous.",
+          "evidence": "She calmly narrates the baby’s fate, controls the room, and then reveals she has killed the child to protect a larger destiny.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The singing bowl is a story engine, not a prop.",
-          "what_it_means": "A repeatable ritual object that reveals memory, prophecy, and emotional truth gives the series a built-in episodic mechanism. Buyers looking for a distinctive serialized device will respond to a show where the object itself can generate scenes, revelations, and mythology.",
-          "evidence": "Nissa plays the bowl to induce visions, vibrates the shed into sleep, and uses it to seal the baby's future into the story.",
+          "dimension_or_area": "The trio has real series chemistry.",
+          "what_it_means": "Nissa, Durga, and Santi create a repeatable relationship engine with distinct registers: authority, skepticism, and devotion. That gives the show a reliable scene-making system that can support long-form storytelling.",
+          "evidence": "Their banter over the baby, the bowl, and the meaning of “special” keeps shifting between comedy, reverence, and emotional loyalty.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The trio has a clean, playable dynamic.",
-          "what_it_means": "Nissa, Durga, and Santi form a compact ensemble with distinct functions, which makes the series easy to track and gives writers a reliable relationship engine. Casting directors and actors will respond to the clear triangle of princess, warrior, and devoted scribe-servant.",
-          "evidence": "Santi writes, Durga protects, and Nissa leads them through the night's secret and the Emperor confrontation.",
+          "dimension_or_area": "The mythology is singular, not generic.",
+          "what_it_means": "The singing bowl, reincarnation language, and destiny mechanics create a fantasy identity that feels culturally specific and hard to confuse with other shows. That distinctiveness is valuable in a crowded premium marketplace where buyers want a clear point of view.",
+          "evidence": "The bowl’s tone, the visions, the Atman/Samsara/Moksha language, and the future-facing baby prophecy all operate as one system.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has visible institutional texture.",
-          "what_it_means": "The Red Fort, the Urdubegis, the royal silence privilege, and the palace hierarchy create a world with rules that can keep generating story beyond the pilot. Prestige buyers and historical-drama audiences tend to respond when the setting shapes behavior instead of merely decorating it.",
-          "evidence": "The palace water channels, guards, formal oaths, and the Emperor's interrogation all show a functioning power structure.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending opens a long mythic runway.",
-          "what_it_means": "The pilot does not close the story; it launches a generational search for the child, the father, and the meaning of the bowl's gift. That gives the series a durable serialized spine that can carry multiple seasons of revelation and return.",
-          "evidence": "The final vision sends the baby down the Yamuna and promises that Nissa will one day find her again.",
+          "dimension_or_area": "The ending reframes the whole pilot.",
+          "what_it_means": "The final vision gives the episode a larger-series promise: this is not just a rescue story, it is a destiny story with a long runway. That kind of reveal helps a buyer see season architecture immediately.",
+          "evidence": "The baby is shown floating downriver to a new life, raised elsewhere, and eventually returning to find her father.",
           "source": "script"
         }
       ],
-      "headline": "This is a prestige historical fantasy with a very specific pulse: a Mughal princess, a sacred singing bowl, and a hidden child whose future becomes a generational quest. The material feels authored, playable, and visually expensive in the right way — the kind of series that can attract actors, directors, and buyers looking for something culturally rooted and unmistakably its own."
+      "headline": "This is a premium historical fantasy with a genuinely ownable world: the Red Fort, a royal heroine, and a spiritual object that turns destiny into drama. It has the kind of lead role and visual specificity that can attract serious talent and justify a premium-streaming buy, even before the mythology fully unfolds."
     },
-    "lead_characters": [
-      {
-        "name": "Badr-un-Nissa Begum / Nissa",
-        "role_type": "Lead",
-        "demographics": "Female · 21 · Mughal princess",
-        "hook": "Nissa is a royal daughter who can move between intimate warmth and absolute authority without changing her center. She is spiritually literate, emotionally guarded, and carrying a secret so large that even her closest companions are being asked to live inside its silence.",
-        "why_actor_wants_this": "This is the showcase territory of Cate Blanchett in Elizabeth or Claire Foy in The Crown — a ruler whose power is inseparable from private sacrifice. The role gives an actor command scenes, devotional intimacy, and a devastating moral pivot, all in one performance."
-      },
-      {
-        "name": "Durga",
-        "role_type": "Lead",
-        "demographics": "Female · 21 · Indian · Urdubegis warrior",
-        "hook": "Durga is the physically formidable one in the room, but her real charm is how quickly her certainty gets punctured by Nissa's mysteries. She is disciplined, skeptical, and deeply loyal, with a dry, watchful presence that makes her the series' grounded counterweight.",
-        "why_actor_wants_this": "This is the showcase space of Gwendoline Christie in Game of Thrones or Jodie Comer in a sharp loyalty role — a bodyguard-type part that still gets humor, devotion, and emotional reaction shots. Actors who want to play strength without flattening into stoicism will chase it."
-      },
-      {
-        "name": "Santi",
-        "role_type": "Lead",
-        "demographics": "Female · 21 · Indian · royal servant / dasi",
-        "hook": "Santi is eager, earnest, and emotionally porous, the kind of person who turns reverence into comedy and then into genuine feeling in the same breath. She is the most openly affected by Nissa's stories, which makes her the audience's most immediate entry point into the myth.",
-        "why_actor_wants_this": "This is the showcase territory of Ayo Edebiri in The Bear or Jenny Slate in a heightened ensemble — fast emotional responsiveness, comic sincerity, and the ability to make awe feel human. It gives an actor a role that can pivot from servantly deference to heartfelt wonder without losing charm."
-      },
-      {
-        "name": "Aurangzeb",
-        "role_type": "Supporting",
-        "demographics": "Male · late 70s · Mughal Emperor",
-        "hook": "Aurangzeb is imperial force embodied: patient, severe, and capable of making a room feel smaller just by entering it. He is not written as a cartoon tyrant; he is a father, ruler, and judge whose authority is rooted in stillness.",
-        "why_actor_wants_this": "This is the showcase territory of Anthony Hopkins in The Father or Brian Cox in Succession — a commanding patriarch whose stillness carries threat and heartbreak at once. Veteran actors who want a late-career authority role with emotional voltage will be drawn to it."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to stage intimacy as ritual and history as lived texture.",
-        "fit_profile": "Established indie or prestige-TV directors with at least one character-forward feature or limited series, especially those who work well with performance, period detail, and controlled visual language. The sweet spot is a filmmaker who likes mythic material but prefers emotional precision over spectacle.",
-        "detail": "The material rewards close framing, patient blocking, and a director who can make dialogue feel ceremonial without losing human immediacy. It will attract directors who want a visually rich historical canvas that still lives or dies on faces, pauses, and the pressure of a secret."
-      },
-      "buyer_appeal": {
-        "tier": "Prestige streaming limited series / ongoing drama",
-        "lane": "Elevated historical fantasy with awards-adjacent period texture",
-        "detail": "The core cast is compact and the story can be built around a few recurring sets, which makes it packageable off a strong director and lead actress rather than a giant ensemble of names. The historical-fantasy lane is exportable and streamer-friendly, with a culturally specific setting that helps it stand apart in a crowded prestige market."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot spends heavily on explanation.",
+          "detail": "A large portion of the episode is Nissa narrating Eztli, the bowl, Nature, Atman, Samsara, and Moksha to Durga and Santi. That gives the buyer a rich mythology read, but it also means the episode’s forward motion is more declarative than dramatic for long stretches.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The period build will not be cheap.",
+          "detail": "The Red Fort, palace interiors, water-channel boat movement, formal court spaces, and period wardrobe all stack into a premium historical spend. This is a buyer conversation about scope, not a contained-cost play.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The lead depends on a very specific performance.",
+          "detail": "Nissa has to play serene authority, spiritual certainty, comic mischief, and the emotional weight of infanticide without losing audience trust. That is a narrow casting lane, and the project will feel it if the role is underpowered or too modern in delivery.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The supporting world is still thin.",
+          "detail": "Durga and Santi are vivid, but the pilot’s broader recurring world is mostly court function, guards, and historical backstory. A producer will notice that the series is currently strongest as a trio-driven piece rather than as a fully populated ensemble engine.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not concept — it’s that the pilot is front-loaded with cosmology and explanation, so the buyer has to trust the mythology before the engine fully turns. On top of that, the period scope and the precision casting ask make this a premium commitment rather than a casual genre buy."
     },
-    "considerations": [
-      {
-        "area": "The pilot is built as a ceremonial reveal.",
-        "detail": "The opening spends real time establishing the world, the bowl, and the trio's relationship before the central secret fully clicks into place. One direction would be to let the first irreversible turn arrive a little earlier so the episode keeps the same poetry while tightening the forward pull.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The Emperor sequence carries the episode's sharpest conflict.",
-        "detail": "The confrontation with Aurangzeb is the clearest engine scene on the page because it converts the private secret into public danger. A next pass could consider foregrounding that pressure even sooner in the pilot so the audience feels the threat of exposure while the ritual material is still unfolding.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The historical and mythic names do a lot of work.",
-        "detail": "Aurangzeb, Quetzalcoatl, Chimalman, Moksha, Samsara, and the Red Fort all signal a rich world, but they also ask the viewer to do some decoding. The version of the pilot where a few of those terms are introduced through action or image rather than explanation would keep the same specificity while easing entry for a broader audience.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The baby-centered engine is emotionally potent.",
-        "detail": "The infant is the emotional and mythic center of the pilot, which gives the series a strong future spine. From a production standpoint, the version of the show that keeps the baby present but contained to a few key sequences would protect the story while keeping the logistics elegant.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The period setting wants controlled scale.",
-        "detail": "The Red Fort, palace interiors, river channel, and night exteriors create a beautiful but specific production footprint. This is a good candidate for a contained historical build or a limited number of dressed standing sets rather than a sprawling location plan.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 72.7,
+  "weightedScore": 72,
   "tier": "Optionable",
-  "inputTokens": 36694,
-  "outputTokens": 7818,
-  "cost": 0.0627015,
+  "inputTokens": 20752,
+  "outputTokens": 3906,
+  "cost": 0.033141000000000004,
   "declaredFormat": "Series"
 }

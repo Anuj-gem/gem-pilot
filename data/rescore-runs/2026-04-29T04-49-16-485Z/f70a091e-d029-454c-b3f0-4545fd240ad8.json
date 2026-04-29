@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T04:55:57.858Z",
+  "submission_id": "f70a091e-d029-454c-b3f0-4545fd240ad8",
+  "eval_id": "a6db40eb-ec66-407d-ad34-062e15bebb54",
+  "title": "The Firekeeper",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Dakota",
+      "role_type": "Lead",
+      "demographics": "Male, 18, full-blooded Lakota, high school quarterback, foster-care background, Native identity central to the story."
+    },
+    {
+      "name": "Chatan Running Sky",
+      "role_type": "Supporting",
+      "demographics": "Male, 36, full-blooded Lakota, father figure / spiritual guide, deceased by the present-day frame."
+    },
+    {
+      "name": "Wach",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, full-blooded Lakota, ceremonial insider, emotionally direct."
+    },
+    {
+      "name": "Sage",
+      "role_type": "Supporting",
+      "demographics": "Male, late 30s, full-blooded Lakota, older brother / mentor energy, rugged and irreverent."
+    },
+    {
+      "name": "Thunderhead",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s to late 30s, Pawnee war chief, scarred, physically imposing."
+    },
+    {
+      "name": "Ko’la",
+      "role_type": "Supporting",
+      "demographics": "Male, 5 to 14 across the historical frame, Crow child, spiritually gifted, later identified with Dakota."
+    },
+    {
+      "name": "Curly",
+      "role_type": "Supporting",
+      "demographics": "Male German shepherd, companion animal, spiritually linked to the story."
+    },
+    {
+      "name": "Betty Burkhart",
+      "role_type": "Supporting",
+      "demographics": "Female, 17, white Irish-accented frontier character in the historical frame."
+    }
+  ],
+  "positioning_hook": "A Lakota high school quarterback on the verge of college recruitment starts seeing his dead father’s spirit guide him through visions that tie his future to a sacred bundle lost for 143 years.",
+  "cost_usd": 0.039932999999999996,
+  "input_tokens": 24264,
+  "output_tokens": 4830,
+  "status": "wrote:leads_ok"
+}

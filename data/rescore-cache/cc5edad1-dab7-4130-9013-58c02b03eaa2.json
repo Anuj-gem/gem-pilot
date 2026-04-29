@@ -3,346 +3,380 @@
     "classification": {
       "format": "Feature film",
       "genre_primary": "Comedy",
-      "genre_tags": [
-        "Satire",
-        "Social thriller"
+      "genre_secondary": [
+        "Drama"
       ],
-      "tone": "raunchy, irreverent, heightened, politically charged"
+      "tone": "raunchy",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "coming-of-age",
+        "friendship",
+        "college",
+        "fraternity",
+        "sexual-assault",
+        "low-budget-friendly"
+      ]
     },
-    "positioning_hook": "A sorority freshman and her grocery-store best friend go undercover as frat boys to expose a campus predator, turning rush week into a savage gender-swap takedown.",
+    "positioning_hook": "After a blackout assault, a sorority freshman and her grocery-store best friend go undercover as frat bros to trap the predator, only to get seduced by the power, chaos, and lies of Greek life.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 8,
-        "reasoning": "The premise is instantly legible and built for broad conversation: college party culture, sexual misconduct, and undercover gender play all have clear audience entry points. The opening assault, the rush-week infiltration, and the final campus-wide fallout give it a strong commercial engine."
+        "score": 7,
+        "reasoning": "The hook is instantly legible and built around a high-recognition college setting, revenge energy, and broad comic set pieces. The content is sharp enough to travel, though the sexual-assault premise and explicit language narrow the buyer pool away from four-quadrant play."
       },
       "conceptual_hook_clarity": {
-        "score": 9,
-        "reasoning": "The hook lands immediately in the opening pages and never stops being easy to explain: two women infiltrate a frat as men to trap the guy who assaulted one of them. The story engine is clean, specific, and escalates through a series of clear set pieces."
+        "score": 8,
+        "reasoning": "The premise lands immediately in the opening assault sequence and then cleanly pivots into the undercover-frat engine. The cross-dressing / infiltration conceit is easy to explain in one breath and keeps the movie’s engine visible throughout."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 8,
-        "reasoning": "Daisy and Maddy are sharply contrasted and playable: one is wounded and determined, the other is combative, funny, and socially fluent in a different way. Brad, Tanner, Jake, Stephanie, and Courtney all have distinct comic functions, and the Daisy/Maddy bond carries the movie."
+        "score": 7,
+        "reasoning": "Daisy and Maddy are distinct, funny, and built on a real friendship dynamic, while Tanner, Brad, Jake, Courtney, and Stephanie each have a usable comic function. The characters are strong enough to carry the feature, though the script leans more on premise and performance than on deep interiority."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits hard to a risky comic premise and keeps finding new angles on it, especially once the undercover scheme becomes a full social experiment in masculinity. The tonal confidence in mixing assault accountability, frat absurdism, and gender performance gives it a real point of view."
+        "reasoning": "The script takes a familiar campus-comedy space and pushes it into a sharper, more confrontational lane by making the undercover game about assault, gaslighting, and fraternity power. The tonal confidence is real: it swings from broad raunch to social critique without losing its own voice."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The movie keeps generating forward motion through reversals, disguises, and escalating infiltration beats, with the rush process functioning as a built-in ladder. The Jungle-party climax and the final confession sequence pay off the setup with real propulsion."
+        "reasoning": "The movie keeps resetting the objective with clear escalations: report the assault, infiltrate the frat, gather proof, survive the date party, then expose the whole system. The undercover beats, party reversals, and final Jungle sequence give it strong forward drive."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The core idea feels fresh because it fuses a campus assault story with a gender-disguise comedy and a frat-house takedown. The undercover mechanics are specific enough to feel inevitable once you see them, which is exactly why they play."
+        "reasoning": "The central idea feels both fresh and immediately understandable: a campus assault story told through a frat-bro infiltration comedy. The gender-performance engine and the way the script weaponizes frat logic against itself give it a memorable, ownable twist."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "Greek life is rendered as a complete ecosystem with its own rituals, language, status games, and institutional cover-ups. The sorority, the frat, Title 9, campus police, Nationals, and the grocery-store job all create a lived-in social map."
+        "reasoning": "Greek life is rendered as a social ecosystem with rituals, hierarchies, codes, and language that generate story: rush, pledging, Nationals, Tiki Bar, Jungle, Honor Council, Title IX. The sorority side is equally textured, which makes the campus feel like a functioning pressure cooker rather than a backdrop."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a very identifiable voice: filthy, fast, self-aware, and willing to swing from crude jokes to genuine anger without losing its comic identity. The dialogue rhythms, running bits, and repeated frat/sorority inversions make the tone easy to recognize."
+        "reasoning": "The voice is aggressively contemporary, profane, and joke-dense, but it also knows when to pivot into real discomfort and anger. The script has a recognizable register: raunchy, feminist, and socially pointed without becoming solemn."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the comedy, the script is tracking belief, complicity, and the social cost of being heard, especially in the Daisy/Courtney and Daisy/Maddy dynamics. The ending’s campus-wide ripple effects suggest a larger thematic world beyond the central takedown."
+        "reasoning": "Under the comedy, the script is really about complicity, denial, female friendship, and how institutions protect charismatic men. That depth is present in the Title IX scenes, Courtney’s turn, and the final campus fallout, though the movie mostly chooses propulsion over lingering psychological excavation."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 8,
-        "reasoning": "The Daisy-Maddy-Tanner triangle, the Daisy-Brad-Courtney knot, and the Daisy-Jake-Stephanie crosscurrents all generate independent scenes and comic pressure. The ensemble is active enough that multiple pairings can drive set pieces without the movie collapsing onto one lead."
+        "reasoning": "Daisy/Maddy is a strong center, but the script also gives usable friction and chemistry to Daisy/Jake, Maddy/Stephanie, Daisy/Courtney, and the frat-bro ecosystem. Multiple pairings can generate scenes, which is a real asset for both casting and audience engagement."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Daisy",
+        "role_type": "Lead",
+        "demographics": "Female, 19, college freshman, sorority member, white.",
+        "hook": "A golden-girl freshman who starts as the kind of campus social climber everyone underestimates, then gets forced into a crash course in shame, rage, and self-definition after a blackout assault. She’s funny, image-conscious, and deeply wounded, with a stubborn need for closure that keeps mutating into action.",
+        "why_actor_wants_this": "This is the showcase territory of a lead like Beanie Feldstein in Booksmart or Kathryn Newton in Abigail — a comic engine with real emotional bruising underneath. The role gives an actor the chance to play denial, humiliation, rage, and catharsis in the same movie, with a big physical transformation through the Derek disguise."
+      },
+      {
+        "name": "Maddy",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, college-age, working-class-coded, Daisy’s best friend, white.",
+        "hook": "A grocery-store worker with a sharp mouth, a tomboy swagger, and a real outsider’s contempt for campus hierarchy. She’s the movie’s pressure valve and moral accelerant: funny, loyal, horny, and more clear-eyed than anyone else in the story.",
+        "why_actor_wants_this": "This is the kind of role that gave Rachel Sennott in Shiva Baby or Ayo Edebiri in Bottoms a breakout lane — fast, specific, and scene-stealing without needing to be the formal protagonist. It offers a comic actor a chance to dominate scenes with timing, attitude, and a surprising emotional backbone."
+      },
+      {
+        "name": "Tanner",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-20s, Daisy’s friend’s older brother, local business owner, white.",
+        "hook": "A reformed frat guy turned A/V dad-bro who becomes the movie’s tactical ally and absurdist coach. He’s goofy, unexpectedly useful, and emotionally lonely in a way that makes his masculinity feel both satirical and sincere.",
+        "why_actor_wants_this": "This is the kind of comic-supporting showcase that let Paul Rudd in Role Models or Adam Scott in Parks-adjacent material play competence with self-mockery. The role gives an actor a lot of buttoned-up comic authority, plus the chance to play the only adult in the room who still wants in on the chaos."
+      },
+      {
+        "name": "Brad",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, fraternity brother, campus alpha, white.",
+        "hook": "A charismatic predator who can switch from charming host to abusive manipulator without changing his smile. He’s not just a villain; he’s the movie’s embodiment of institutional gaslighting, social immunity, and frat-boy performance as power.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the polished menace of Penn Badgley in You or the social ease of a classic campus antagonist while turning it dark. The showcase is in the pivot: charm, entitlement, panic, and collapse all in one performance."
+      },
+      {
+        "name": "Jake",
+        "role_type": "Supporting",
+        "demographics": "Male, 18-19, freshman pledge, white.",
+        "hook": "A sweet, awkward, emotionally porous freshman who keeps trying to be good and keeps getting pulled into the frat’s logic. He’s the movie’s most useful romantic decoy and one of its clearest examples of how the house trains boys to confuse passivity with decency.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor the same awkward-romantic territory that made Noah Centineo and Justice Smith pop in early breakout parts. The performance opportunity is in playing sincerity, confusion, and a late-blooming moral spine without losing the comedy."
+      },
+      {
+        "name": "Courtney",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, sorority member, Brad’s girlfriend, white.",
+        "hook": "A former mean girl who starts as an obstacle and becomes one of the movie’s sharpest pivots toward solidarity. She’s wounded, image-aware, and more perceptive than she first appears, which makes her eventual alliance feel earned rather than tidy.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the arc work of a Mean Girls-era antagonist who becomes emotionally legible by the end. It offers a strong turn from icy social power to wounded self-awareness and active resistance."
+      },
+      {
+        "name": "Stephanie",
+        "role_type": "Supporting",
+        "demographics": "Female, 19, sorority member, white.",
+        "hook": "An ethereal, hyper-competent sorority girl who initially reads as the straight-arrow prize and then becomes a surprisingly sharp witness to the campus ecosystem. She’s romantic, socially fluent, and more self-possessed than the boys realize.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the polished, deceptively light territory of a Rachel McAdams or Zoey Deutch campus part, with a late reveal of intelligence and agency. The showcase is in playing charm that can flip into judgment instantly."
+      },
+      {
+        "name": "Olivia",
+        "role_type": "Supporting",
+        "demographics": "Female, 19, sorority member, white.",
+        "hook": "Daisy’s quieter friend who starts as part of the social drift around the assault and later becomes part of the corrective force. She’s observant, dry, and useful in ensemble scenes without demanding the spotlight.",
+        "why_actor_wants_this": "This is a solid supporting role for an actor who can play the grounded friend in a fast ensemble, similar to the best friend slots in Booksmart-style comedies. The appeal is in sharp reactions and the eventual shift from bystander to ally."
+      },
+      {
+        "name": "Kendall",
+        "role_type": "Supporting",
+        "demographics": "Female, 19, sorority member, white.",
+        "hook": "The more skeptical of Daisy’s friends, which gives her a useful edge in the opening fallout and later in the campus solidarity turn. She’s not the warmest person in the room, but she’s useful, funny, and believable as a peer who initially gets it wrong.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play social defensiveness and then earn a turn toward conscience. It’s a compact but useful part for someone who can land sharp comic beats and then pivot into sincerity."
+      },
+      {
+        "name": "Harrison",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, fraternity president, white.",
+        "hook": "The house’s bureaucratic enforcer, always treating abuse like policy and humiliation like tradition. He’s a great comic institutional villain because he’s so committed to the rules that he never notices how monstrous they are.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play dead-serious absurdity, like a campus version of a corporate functionary gone feral. The showcase is in playing authority as a joke that the character never realizes he’s in."
+      },
+      {
+        "name": "Theo",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, fraternity pledge, white.",
+        "hook": "A film-bro pledge with a cigarette habit and a fragile self-image, useful as both comic texture and a barometer for the frat’s moral rot. He’s vain, performative, and easy to manipulate, which makes him a good pressure-release character.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a very specific comic lane: smug, fragile, and instantly legible. It’s a fun supporting part for someone who can make pretension funny without flattening the character."
+      },
+      {
+        "name": "Angelo",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, fraternity pledge, NYC/Italian-American-coded, white.",
+        "hook": "A loud, eager pledge whose need to belong makes him both funny and vulnerable. He’s one of the frat’s most humanized guys, which matters because he helps show how the house recruits insecurity as loyalty.",
+        "why_actor_wants_this": "This is a juicy supporting part for an actor who can play big, eager, and emotionally transparent. The role gives you broad comedy plus a real turn in the final act when the house’s logic starts to crack."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 20,
-        "leads": 4,
+        "speaking_roles": 14,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "College-age ensemble",
-          "Gender-disguise performances for two leads",
-          "Several roles require strong comedic timing and physical comedy"
+          "Two central female roles require strong comedic chemistry",
+          "Multiple college-age male supporting roles with distinct frat archetypes",
+          "Lead requires physical comedy and emotional vulnerability",
+          "Several roles are age-flexible within early-20s range"
         ]
       },
       "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "roughly 70/30 interior",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
         "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Frat house",
-          "Sorority house",
-          "Campus interiors/exteriors",
-          "Grocery store",
-          "Title 9 office",
-          "A/V van",
-          "Suburban house"
+          "Frat house with basement, back rooms, bedroom, and party spaces",
+          "Sorority house with basement room and communal interiors",
+          "Campus exteriors, seminar room, grocery store, Title IX office, van interior, library, coffee shop"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No meaningful VFX beyond simple title cards and possible cleanup for party crowd continuity.",
+        "vfx_details": "No meaningful VFX beyond simple cleanup and title cards.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical vomit gag, fire gag for the wig, pepper spray beat, beer pong and party chaos, cattle-brand prosthetic makeup/effects.",
+        "sfx_needs": "Practical vomit gag, fire gag on wig, branded-ass makeup/prosthetics, drug-test prop, party crowd control.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
-          "type": "named_music",
-          "detail": "Mo Bamba, John Mayer, Troye Sivan, Chappell Roan, Waka Flocka, and other named/clear-reference music cues are referenced in dialogue and scene direction."
+          "type": "brand",
+          "detail": "Market Basket"
         },
         {
           "type": "brand",
-          "detail": "Jose Cuervo, Market Basket, Zara, McKinsey, and other branded references appear on the page."
+          "detail": "Zara"
         },
         {
-          "type": "real_person",
-          "detail": "Gloria Steinem is referenced in dialogue."
+          "type": "brand",
+          "detail": "McKinsey"
         },
         {
-          "type": "real_person",
-          "detail": "Ryan Reynolds is referenced in dialogue."
+          "type": "brand",
+          "detail": "TikTok"
+        },
+        {
+          "type": "brand",
+          "detail": "OnlyFans"
+        },
+        {
+          "type": "brand",
+          "detail": "John Mayer"
+        },
+        {
+          "type": "brand",
+          "detail": "Chappell Roan"
+        },
+        {
+          "type": "brand",
+          "detail": "Gladiator"
+        },
+        {
+          "type": "brand",
+          "detail": "Pride & Prejudice"
+        },
+        {
+          "type": "brand",
+          "detail": "Game of Thrones"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming theatrical-comedy lane / premium streamer feature",
+        "recommended_lane": "streaming theatrical-style comedy",
         "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or streamer-first potential; the engine is the undercover rush-week takedown and campus fallout."
+        "series_engine_or_release_model": "Feature release; best suited to streaming or specialty theatrical with a mature-comedy audience."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly interior, but the script needs multiple party nights, crowd scenes, a frat-house build, sorority-house spaces, and a significant night-shoot load."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary college settings, a contained cast, and mostly practical party/interior scenes keep the budget in a modest feature range."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to sell both wounded sincerity and broad undercover comedy, and the Daisy/Maddy pairing lives or dies on chemistry. Brad and Jake also need to be sharply differentiated without leaning on type alone."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s engine is strong, but the tonal balance between assault-revenge, raunch comedy, and campus satire will be the main development conversation. The ending also asks the audience to track a lot of institutional fallout quickly."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Booksmart",
+          "year": 2019,
+          "why_it_comps": "Shares the rapid-fire female friendship energy, campus specificity, and high-comedy confidence, even though this script is darker and more confrontational."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The movie depends on four strong young leads plus a sizable college ensemble, and the gender-disguise material asks for performers with sharp comic control."
+        {
+          "title": "Bottoms",
+          "year": 2023,
+          "why_it_comps": "The undercover, gender-performance, campus-comedy engine and anarchic tone are the clearest tonal neighbor, with a similar willingness to weaponize absurdity."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through frat, sorority, campus, grocery store, house, and van spaces, but all are contemporary and producible."
+        {
+          "title": "The To Do List",
+          "year": 2013,
+          "why_it_comps": "The sexual coming-of-age, explicit joke density, and female-led campus setting make this a close packaging cousin on audience and tone."
         },
-        "content": {
-          "level": "high",
-          "note": "Sexual assault, drugging, explicit language, and hazing imagery narrow the lane and require careful platform and marketing alignment."
+        {
+          "title": "Neighbors",
+          "year": 2014,
+          "why_it_comps": "The frat-house warfare, party escalation, and broad campus-comedy mechanics live in the same commercial neighborhood."
         },
-        "rights": {
-          "level": "medium",
-          "note": "The script uses several named songs, brands, and public figures, which creates a meaningful clearance pass but not an IP-dependent premise."
+        {
+          "title": "The Sex Lives of College Girls",
+          "year": 2021,
+          "why_it_comps": "The campus social ecosystem, female ensemble energy, and frank sexual politics align closely, even though this is a feature rather than a series."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Gen Z and younger millennial viewers who want a raunchy, feminist campus comedy with real stakes and a revenge payoff.",
+        "demographics": "18-34 skew, female-leaning but with male crossover from frat-comedy and college-party audiences; strongest with streaming-native viewers and college-educated audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary college locations, a limited number of core sets, and no VFX-heavy sequences keep this in indie-feature territory, though the party nights and crowd work add some scope."
+      },
+      "lane_fit": {
+        "lane": "streaming-friendly elevated campus comedy",
+        "types_of_buyers": [
+          "streamer original film execs",
+          "boutique comedy producers",
+          "female-forward genre buyers",
+          "indie distributors seeking youth-skewing titles",
+          "comedy directors looking for a breakout feature"
+        ],
+        "detail": "This sits naturally in the lane of sharp, youth-skewing, female-led campus comedies with a social edge. The script’s combination of explicit humor, friendship chemistry, and institutional takedown gives it a clear buyer-facing identity."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The story resolves its central conflict cleanly, and no supporting character is built as a separate franchise anchor."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly pitchable.",
-          "what_it_means": "This is the kind of feature a buyer can understand in one breath, which helps it travel from a manager’s inbox to a greenlight meeting without translation. It will attract producers looking for a clean high-concept comedy with a topical engine and a clear audience hook.",
-          "evidence": "Daisy and Maddy literally go undercover as frat guys to get close to Brad and force a confession.",
+          "dimension_or_area": "The undercover premise is instantly ownable.",
+          "what_it_means": "This gives the project a clean marketing sentence and a visual hook that can sell in a thumbnail, trailer, or pitch meeting. Buyers looking for a female-led campus comedy with a sharper edge will immediately understand the engine.",
+          "evidence": "Daisy and Maddy literally dress as guys, rush the frat, and use the disguise to infiltrate Brad’s world.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Daisy and Maddy are a real comic engine.",
-          "what_it_means": "The movie has a built-in two-hander dynamic: Daisy brings wounded urgency, Maddy brings swagger and bite, and their friendship gives the comedy emotional ballast. That kind of lead pairing is catnip for actresses who want a showcase and for buyers who want a movie that can live on chemistry.",
-          "evidence": "Their ping-pong banter, secret handshake, and constant bickering while executing the plan keep the movie alive.",
+          "dimension_or_area": "The Daisy-Maddy friendship carries the movie.",
+          "what_it_means": "That relationship gives the film emotional traction beyond the joke machine and makes the comedy feel like it has a real heart. It also gives casting a clear two-hander chemistry test that can elevate the whole package.",
+          "evidence": "Their secret handshake, ping-pong banter, and repeated “we work best as a pair” dynamic are the movie’s emotional spine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The undercover conceit keeps mutating.",
-          "what_it_means": "The script doesn’t just do one disguise gag and move on; it turns the premise into a full social experiment about how men move through the world. That gives the film repeatable set pieces and a trailer-friendly escalation path.",
-          "evidence": "The wigs, sock-dicks, man-walk training, confidence drills, and rush rituals all build the same joke into a bigger machine.",
+          "dimension_or_area": "Greek-life texture is highly specific.",
+          "what_it_means": "The fraternity rituals, jargon, and social codes create a world that feels lived-in and story-generating, which is exactly what makes campus comedies rewatchable. That specificity also helps the script stand apart from generic college-party material.",
+          "evidence": "Rush, pledging, Nationals, Jungle, the Tiki Bar, and the DIK house rules all function as recurring story mechanics.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Greek life is treated like a closed ecosystem.",
-          "what_it_means": "The frat and sorority worlds have enough rules, rituals, and status games to feel like a mini-society, which makes the setting more than a backdrop. That density gives producers a world that can support repeat viewing and strong word-of-mouth because the details feel lived-in.",
-          "evidence": "Rush, pledging, Nationals, the Tiki Bar, Jungle, Honor Council, and Title 9 all operate as part of the same social machine.",
+          "dimension_or_area": "The comedy is built on power reversal.",
+          "what_it_means": "The script keeps turning frat logic back on itself, which makes the jokes feel structural rather than random. That’s a strong commercial trait because it creates repeatable set pieces and a satisfying revenge rhythm.",
+          "evidence": "The girls learn the house’s language, win beer pong, weaponize “bro” behavior, and ultimately force Brad into a confession.",
           "source": "script"
         },
         {
-          "dimension_or_area": "It has a sharp, saleable tonal identity.",
-          "what_it_means": "The script lives in a lane that blends raunchy comedy, campus satire, and real anger without losing momentum, which is a useful brand position in the current feature market. Buyers who want edgy but accessible comedy will see a clear lane for it.",
-          "evidence": "The script swings from vomit jokes and sock-dicks to Title 9 hearings, drink spiking, and a final confession scene.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The supporting cast keeps generating story.",
-          "what_it_means": "Brad, Courtney, Tanner, Jake, Stephanie, Olivia, Kendall, and the frat brothers all have enough personality to create multiple pairings and reversals, which makes the movie feel bigger than a single revenge plot. That ensemble energy is attractive to directors and buyers who want a comedy with rewatchable side characters.",
-          "evidence": "Courtney’s shift from rival to ally, Jake’s romantic confusion, Tanner’s coaching role, and the frat brothers’ evolving reactions all create independent scenes.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending broadens the movie’s payoff.",
-          "what_it_means": "The final stretch doesn’t just resolve the central conflict; it shows the social fallout across campus, which makes the movie feel like it matters beyond the last scene. That kind of ending helps a producer sell the film as both a crowd-pleaser and a conversation starter.",
-          "evidence": "The campus-wide complaints, DIK getting kicked off campus, and the girls organizing against the house all extend the impact.",
+          "dimension_or_area": "The final act broadens into campus accountability.",
+          "what_it_means": "The movie doesn’t stop at one bad guy; it expands into a wider institutional takedown, which gives the ending more scale and relevance. That makes the project feel more current and more discussable for audiences and buyers alike.",
+          "evidence": "The Tiki Bar drugging, Title IX fallout, campus police intervention, and postscript about other complaints all widen the scope.",
           "source": "script"
         }
       ],
-      "headline": "RUSH is a filthy, fast, and highly marketable college comedy with a real engine: two women weaponize frat-boy behavior to expose the predator at the center of campus life. It has the kind of clean premise, strong lead chemistry, and built-in escalation that can sell on concept while still landing as a crowd-pleasing ensemble movie."
-    },
-    "lead_characters": [
-      {
-        "name": "DAISY",
-        "role_type": "Lead",
-        "demographics": "Female · 19",
-        "hook": "Daisy is the movie’s emotional center: a golden-girl freshman who starts out trying to outrun what happened to her and ends up turning rage into strategy. She’s funny, image-conscious, and deeply wounded, with a voice that can snap from flirty to feral in a beat; the role lives in the contradiction between her polished sorority exterior and the private panic underneath it.",
-        "why_actor_wants_this": "This is the showcase territory of Carey Mulligan in Promising Young Woman — a woman whose charm and precision are the weapon, and whose pain keeps changing the temperature of every scene. An actress gets comedy, vulnerability, and righteous propulsion in one part, which is exactly the kind of role that can redefine how the industry sees her."
+      "headline": "This is a sharp, streaming-friendly campus comedy with a built-in hook: two young women go undercover in a frat to expose a predator, and the disguise engine keeps generating set pieces. The script pairs a marketable revenge premise with a real friendship core and enough Greek-life specificity to feel like a buyer can see the trailer immediately.",
+      "issues": {
+        "items": [
+          {
+            "area": "The assault premise narrows the buyer pool.",
+            "detail": "The movie is built around sexual assault, drugging, and explicit frat abuse, which gives it urgency but also makes the content lane more sensitive than a standard college comedy. That’s a real positioning conversation for theatrical buyers and some streamers, even with the comic wrapper.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The final act stacks a lot of moving parts.",
+            "detail": "The Jungle-party climax has undercover bait, a second infiltration, campus police, drug testing, a separate Jake/Tanner brawl, and the Brad confession all running at once. It plays with energy, but the density means the audience has to track a lot of simultaneous reversals in a short window.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The comedy leans hard on explicit language.",
+            "detail": "The script’s voice is part of its appeal, but the volume of slurs, sexual references, and raunch jokes will be a factor in buyer conversations and marketing strategy. That’s not a creative flaw so much as a clear content identity that narrows the lane to buyers comfortable with hard-R comedy.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "Brad’s confession arrives through a contrivance.",
+            "detail": "The final bedroom scene depends on Daisy and Maddy forcing the confession through disguise, pressure, and a very specific lie chain. It’s satisfying as payoff, but it’s also the kind of engineered reveal a producer will clock as heavily plot-dependent.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The supporting ensemble is vivid but broad.",
+            "detail": "Characters like Tanner, Jake, Courtney, Stephanie, Harrison, and Angelo are all useful and funny, but most are built as strong functions around the lead rather than deeply layered standalone roles. That helps the machine, but it also means the movie’s durability still rests heavily on Daisy and Maddy.",
+            "is_primary_lever": false,
+            "source": "script"
+          }
+        ],
+        "headline": "The biggest friction is not the premise — it’s the content lane and the density of the climax. This is a sharp, commercial campus comedy, but it’s also a hard-R assault-revenge movie with a lot of moving pieces in the final stretch, so buyers will want to know exactly how it’s being positioned."
       },
-      {
-        "name": "MADDY",
-        "role_type": "Lead",
-        "demographics": "Female · 19-20",
-        "hook": "Maddy is Daisy’s best friend and the movie’s chaos engine: tomboyish, sharp-tongued, socially fearless, and secretly more emotionally invested than she lets on. She can read a room, read a person, and read a sorority girl’s entire life in one line, which makes her both a comic assassin and the perfect undercover partner.",
-        "why_actor_wants_this": "This is the showcase space of Kristen Wiig in Bridesmaids — a fast-talking comic lead who can make selfishness, loyalty, and panic all feel alive in the same scene. It’s a part for an actress who can do big laughs while still landing the ache of being the friend who always shows up first."
-      },
-      {
-        "name": "TANNER",
-        "role_type": "Lead",
-        "demographics": "Male · mid-20s",
-        "hook": "Tanner is the older-brother wildcard: a reformed frat guy, local-business adult, and accidental masculinity coach who is still emotionally stuck in the college ecosystem. He’s funny because he takes the boys’ code seriously enough to teach it, and useful because he knows exactly how the machine works from the inside.",
-        "why_actor_wants_this": "This is the showcase territory of Paul Rudd in a broad ensemble comedy — the charming adult who can play clueless, supportive, and unexpectedly useful without ever losing likability. It gives a comic actor a chance to be the bridge between the women’s plan and the frat world, which is a very playable lane."
-      },
-      {
-        "name": "BRAD",
-        "role_type": "Lead",
-        "demographics": "Male · 21",
-        "hook": "Brad is the movie’s charismatic predator: handsome, socially fluent, and always performing the version of himself that gets him what he wants. He’s funniest when he’s most dangerous, because he can pivot from golden-boy charm to manipulative gaslighting to full collapse without ever leaving the same smiley surface.",
-        "why_actor_wants_this": "This is the showcase territory of Penn Badgley in You or Billy Crudup in The Morning Show — a polished, self-justifying man whose charm is inseparable from menace. It’s the kind of role that lets an actor play seduction, entitlement, and cowardice in one package, which is catnip for prestige-leaning genre casting."
-      },
-      {
-        "name": "JAKE",
-        "role_type": "Supporting",
-        "demographics": "Male · 18-19",
-        "hook": "Jake is the sweet, awkward freshman who keeps stumbling into the movie’s emotional crossfire. He’s earnest enough to be funny and confused enough to be dangerous, which makes him a useful romantic foil and a believable product of the frat ecosystem without being fully corrupted by it.",
-        "why_actor_wants_this": "This is the showcase territory of Lucas Hedges in a coming-of-age ensemble — the sensitive guy whose sincerity creates both comedy and pathos. A young actor gets to play romantic longing, social awkwardness, and the slow realization that he’s been standing in the wrong room."
-      },
-      {
-        "name": "STEPHANIE",
-        "role_type": "Supporting",
-        "demographics": "Female · 19",
-        "hook": "Stephanie is the ethereal sorority girl who starts as a romantic object and ends up becoming one of the movie’s clearest moral voices. She’s smart, funny, and more self-possessed than the men around her realize, which lets the script flip her from fantasy to ally without losing her appeal.",
-        "why_actor_wants_this": "This is the showcase territory of Zoey Deutch in a sharp campus comedy — the girl who can be glamorous, funny, and emotionally legible in the same scene. It gives an actress the chance to play the moment a character stops being decorative and starts steering the room."
-      },
-      {
-        "name": "COURTNEY",
-        "role_type": "Supporting",
-        "demographics": "Female · 21",
-        "hook": "Courtney begins as the polished rival and evolves into a complicated ally whose anger has been sitting under the surface the whole time. She’s socially sharp, image-aware, and capable of both cruelty and solidarity, which makes her one of the movie’s best late-game pivots.",
-        "why_actor_wants_this": "This is the showcase territory of Alison Brie in a sharp ensemble comedy — a character who can weaponize status, then reveal hurt, then swing back into action. It’s a juicy part for an actress who likes playing intelligence with a little venom."
-      },
-      {
-        "name": "OLIVIA",
-        "role_type": "Supporting",
-        "demographics": "Female · 19",
-        "hook": "Olivia is the grounded friend who sees more than she says and gives the sorority side of the story a practical spine. She’s less performative than Daisy or Maddy, which makes her useful as a reality-check character and a quiet source of solidarity.",
-        "why_actor_wants_this": "This is the kind of grounded supporting role that works in the Allison Janney / Auli’i Cravalho lane of ensemble specificity — not the loudest voice, but the one that makes the group feel real. It gives an actor clean, scene-stealing reactions and a credible emotional anchor."
-      },
-      {
-        "name": "KENDALL",
-        "role_type": "Supporting",
-        "demographics": "Female · 19",
-        "hook": "Kendall is the other half of the sorority trio: skeptical, observant, and funny in a dry, slightly wounded way. She helps the movie widen beyond Daisy and Maddy by showing how the women around them are also negotiating loyalty, fear, and social pressure.",
-        "why_actor_wants_this": "This is the kind of sharp supporting role that gives an actor the dry-comic lane of a Jenny Slate ensemble part — quick, specific, and memorable without needing to carry the whole plot. It’s a great fit for someone who can make a single look land like a punchline."
-      },
-      {
-        "name": "HARRISON",
-        "role_type": "Supporting",
-        "demographics": "Male · 21",
-        "hook": "Harrison is the frat president who takes the whole absurd system with deadly seriousness. He’s a comic bureaucrat of masculinity, which makes him useful as both a gatekeeper and a punchline whenever the movie wants to show how institutional the frat culture really is.",
-        "why_actor_wants_this": "This is the showcase territory of a deadpan ensemble player like Zach Woods — the guy who can make institutional stupidity feel almost noble. It gives an actor a chance to play authority as a joke that the movie keeps exposing."
-      },
-      {
-        "name": "ANGELO",
-        "role_type": "Supporting",
-        "demographics": "Male · 19-21",
-        "hook": "Angelo is the frat brother with the most open heart and the least self-awareness, which makes him both funny and strangely sympathetic. He’s the kind of guy who can be swept up by the group’s logic while still feeling like a real person rather than a pure caricature.",
-        "why_actor_wants_this": "This is the showcase territory of a comic supporting player like Tony Revolori in a campus ensemble — eager, impressionable, and always one beat away from embarrassment. It gives an actor a chance to play loyalty and cluelessness at the same time."
-      },
-      {
-        "name": "THEO",
-        "role_type": "Supporting",
-        "demographics": "Male · 19-21",
-        "hook": "Theo is the film-bro frat guy who thinks he’s the smartest person in the room and is usually wrong in a very specific way. He’s a great pressure-release valve because his self-mythology is so transparent, yet the script keeps him useful inside the group dynamic.",
-        "why_actor_wants_this": "This is the showcase territory of a scene-stealing indie comic like Ben Schwartz — fast, self-regarding, and always one smug line away from humiliation. It gives an actor a chance to play performative intelligence as a running joke."
-      },
-      {
-        "name": "PRESTON",
-        "role_type": "Supporting",
-        "demographics": "Male · 19-21",
-        "hook": "Preston is the moneyed frat archetype: polished, entitled, and always talking like the world was built to accommodate him. He helps define the class texture of the house and gives the movie another flavor of male privilege to puncture.",
-        "why_actor_wants_this": "This is the showcase territory of a wealthy-prep comic type like Will Poulter in a satire — the guy whose entitlement is funny because it’s so specific. It’s a clean supporting slot for an actor who can make privilege feel embodied rather than generic."
-      },
-      {
-        "name": "TOMMY",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s",
-        "hook": "Tommy is one of the frat’s functional background brothers, useful as part of the house’s social machinery and the casual normalization of the culture. He helps the movie feel populated by a real ecosystem rather than a handful of named villains.",
-        "why_actor_wants_this": "This is the kind of small but vivid ensemble slot that working comedy actors use to make a world feel lived-in, similar to the utility roles in a Judd Apatow ensemble. It’s a good fit for a performer who can land a line and disappear back into the crowd."
-      },
-      {
-        "name": "MANAGER",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "The Market Basket manager is the everyday authority figure who keeps Maddy’s world grounded outside the frat plot. He’s part of the movie’s class texture, showing that the women’s lives are not just campus-bound performance spaces.",
-        "why_actor_wants_this": "This is the kind of grounded supporting role that gives a character actor a few sharp beats in a broader comedy, like the store managers and bosses in a Nicole Holofcener ensemble. It’s a clean fit for someone who can make ordinary authority feel specific."
-      },
-      {
-        "name": "BUREAUCRAT",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "The Title 9 bureaucrat is the face of institutional delay and procedural absurdity. He’s not a villain in a big theatrical sense; he’s worse in a more realistic way, because he turns Daisy’s trauma into paperwork and timing.",
-        "why_actor_wants_this": "This is the showcase territory of a dry institutional comic role like the administrators in The Office or the hearing-room officials in a prestige satire. It gives an actor a chance to play passive obstruction as comedy."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a filthy campus comedy with real social teeth.",
-        "fit_profile": "Second- or third-feature directors with festival-comedy or sharp ensemble experience, especially those who like performance-forward material and can balance raunch with point of view. This is for a filmmaker who understands how to stage social humiliation, undercover reversals, and crowd scenes without flattening the emotional stakes.",
-        "detail": "The material rewards directors who can keep the comedy moving while letting the assault accountability story stay legible and emotionally grounded. It also gives a director a chance to build a very marketable ensemble movie with repeatable set pieces, strong party visuals, and a clear tonal signature."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "premium streamer comedy / edgy campus satire",
-        "detail": "It can be cast off four strong young leads and a supporting ensemble, so it does not require star-level attachments to function. The contemporary college setting, contained locations, and topical premise make it exportable and easy to position as a conversation-starting comedy with trailer-friendly set pieces."
-      }
-    },
-    "considerations": [
-      {
-        "area": "The opening assault is the movie’s hardest turn.",
-        "detail": "The script is clear about what happened, but the first pages ask the audience to move from party comedy into assault immediately. One lever would be to let Daisy’s social world breathe a little longer before the inciting event, so the emotional whiplash lands with even more force and the audience knows exactly what she loses.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The confession engine repeats in several forms.",
-        "detail": "The movie keeps returning to the same objective — get Brad to admit it — through Title 9, the frat infiltration, and the final bedroom scene. A next pass could sharpen the distinction between those attempts so each one reveals a new layer of the world rather than re-running the same pressure in a different outfit.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The undercover mechanics are the movie’s biggest asset.",
-        "detail": "The disguise material is the engine, so the version of the script where each phase of the plan has a slightly different social rule would make the escalation even cleaner. That would protect the comedy and make the final Jungle sequence feel like the inevitable summit of everything the movie has been teaching us.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The named-music and brand references are plentiful.",
-        "detail": "The script leans on a lot of specific songs, brands, and pop-culture references, which gives it texture but also means the clearance pass will matter. A producer could preserve the energy by keeping the cultural specificity while being open to swaps where needed.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The party footprint is manageable but active.",
-        "detail": "Most of the movie lives in contemporary interiors and night exteriors around campus, frat, sorority, and house spaces, so the production is contained even with a lively crowd feel. The version that consolidates a few of the campus beats into fewer repeatable locations would protect the pace while keeping the budget in the sweet spot.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
-    "craft_note": ""
+      "craft_note": ""
+    }
   },
-  "weightedScore": 80.7,
+  "weightedScore": 77.3,
   "tier": "Optionable",
-  "inputTokens": 44079,
-  "outputTokens": 5864,
-  "cost": 0.05944725,
+  "inputTokens": 46484,
+  "outputTokens": 5474,
+  "cost": 0.05949599999999999,
   "declaredFormat": "Feature film"
 }

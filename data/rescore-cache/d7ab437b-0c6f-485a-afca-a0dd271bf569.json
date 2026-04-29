@@ -2,271 +2,318 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Romantic fantasy",
-      "genre_tags": [
-        "Comedy-drama",
-        "Supernatural"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Romance",
+        "Comedy"
       ],
-      "tone": "Grounded, wry, intimate, lightly magical"
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "feature-anchored",
+        "character-driven",
+        "high-concept",
+        "love",
+        "identity",
+        "loneliness",
+        "genie",
+        "dating"
+      ]
     },
-    "positioning_hook": "A lonely thirtysomething man gets one wish from a genie and accidentally becomes irresistible to women for exactly 24 hours—until he chooses real connection over the shortcut.",
+    "positioning_hook": "A lonely thirtysomething man wishes to be irresistible, gets a 24-hour free trial, and has to choose between effortless attention and the first real connection he’s ever had.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is instantly legible and easy to sell: a romantic fantasy built around dating, self-worth, and a supernatural shortcut with a built-in expiration date. The audience lane is clear and broad enough for streaming or specialty theatrical, though the appeal is more intimate than four-quadrant."
+        "reasoning": "The premise is instantly legible and commercially friendly: a wish gone wrong, romantic stakes, and a clean emotional endpoint. It has broad date-night appeal, though the appeal is more adult and relationship-driven than four-quadrant."
       },
       "conceptual_hook_clarity": {
-        "score": 8,
-        "reasoning": "The bottle, the genie, the wish, and the 24-hour reset all land early and cleanly, with Marcus later naming the 'free trial' logic in a way that crystallizes the engine. The story is easy to explain in one breath and the rules are simple enough to track without friction."
+        "score": 9,
+        "reasoning": "The hook lands early and cleanly: David finds a genie bottle, wishes to be irresistible, and discovers the wish expires after 24 hours. The rules are simple, the irony is immediate, and the title concept is easy to pitch in one breath."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "David has a strong central contradiction: he wants to be wanted, but what he actually needs is to be seen without performance. Zara and Marcus give him a playable triangle of temptation, wit, and grounded perspective, while Caroline and Priya each offer a different version of adult connection."
+        "reasoning": "David is a strong lead because his insecurity is specific and his final choice is emotionally legible. Zara and Marcus add texture, but the script is still primarily built around David’s internal shift rather than a deeply expandable ensemble."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The script takes a familiar wish-fulfillment setup and narrows it to a very specific emotional question about desirability versus intimacy. The 'free trial' framing and the 24-hour reset give the concept a fresh comic shape without losing the romantic core."
+        "reasoning": "The free-trial framing gives a familiar genie premise a fresh, modern hook, and the script commits to a very specific romantic-social experiment. It is not radically subversive, but the angle is clean and ownable."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The script moves with a clean escalation: awkward baseline, wish granted, seductive montage, pattern recognition, confrontation, and a return to earned connection. The middle section repeats the same beat several times by design, but the countdown structure keeps the engine moving."
+        "reasoning": "The wish, the 24-hour pattern, and the eventual cancellation of the deal create a clear engine with escalating discovery. The middle is more observational than plot-heavy, but the countdown structure keeps it moving."
       },
       "resonant_originality": {
-        "score": 7,
-        "reasoning": "The idea of a genie granting irresistible charm that expires after a day is immediately graspable and has a built-in emotional irony. It feels like a premise that could only exist in this exact story because the supernatural mechanic is welded to the protagonist's loneliness."
+        "score": 8,
+        "reasoning": "The script turns a classic fantasy bargain into a modern emotional trap: being desired is not the same as being known. That idea is simple enough to land instantly and specific enough to feel fresh."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The world is contemporary and familiar, but it is textured through coffee shops, bookstores, galleries, gyms, rental counters, and neighborhood streets that make the city feel lived-in. The setting supports the story well, though it functions more as a believable container than a fully rule-bound ecosystem."
+        "reasoning": "The city dating ecosystem, coffee shops, bookstore, gym, and gallery give the world a lived-in contemporary texture. Still, the world mostly functions as a stage for the premise rather than a deeply rule-bound ecosystem."
       },
       "tonal_specificity": {
-        "score": 8,
-        "reasoning": "The tone is distinct: dry, observant dialogue sits beside a sincere romantic-fantasy premise, and Zara's calm supernatural authority gives the script a clean comic edge. The piece knows when to be funny, when to be tender, and when to let a quiet emotional beat land without overexplaining it."
+        "score": 7,
+        "reasoning": "The tone is consistent and lightly comic, with a sincere romantic core and a clean fantasy overlay. The Marcus banter and Zara’s dry authority give it a distinct register without pushing into broad comedy."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Under the wish mechanics is a clear story about self-perception, performative masculinity, and the difference between being desired and being known. The Caroline and Priya threads, plus Zara's measured presence, suggest a deeper emotional layer that rewards a second look."
+        "reasoning": "Under the premise is a clear theme about self-worth, performative charm, and the difference between attention and intimacy. The Caroline/Priya contrast and the notepad reveal suggest more emotional depth than the surface wish-comedy initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "David/Marcus is a strong anchor, and Zara gives the story a memorable supernatural counterpart, but the script is still primarily powered by David's encounters rather than a web of equally active relationships. Caroline and Priya are effective mirrors, though they function more as distinct stops on David's journey than as an interlocking ensemble system."
+        "reasoning": "David/Marcus is a solid anchor, and Zara gives the script a strong supernatural counterpoint. But the supporting relationships are mostly functional around David’s arc rather than generating a truly elastic ensemble engine."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 10,
-        "leads": 4,
-        "series_regulars": 0,
-        "child_actors": false,
-        "casting_characteristics": [
-          "Male lead in his early 30s",
-          "Female lead in her 30s with an ageless, otherworldly presence",
-          "Strong supporting friend role for a sharp, grounded male best friend",
-          "Multiple featured women across the same age band who each play a distinct romantic texture"
-        ]
-      },
-      "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "Mostly interior with frequent street exteriors",
-        "period_or_contemporary": "Contemporary",
-        "notable_requirements": [
-          "Urban neighborhood coffee shops, bookstore, gym, gallery, restaurant, apartment interiors, and a small antiquities shop",
-          "No large set builds required"
-        ]
-      },
-      "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Smoke manifestation for Zara's entrances/exits and a few subtle magical beats around the bottle and wish effect.",
-        "stunts_level": "none",
-        "sfx_needs": "Practical smoke and simple bottle effect work",
-        "night_shoots": "significant",
-        "animals": false
-      },
-      "rights_flags": [],
-      "platform_fit": {
-        "recommended_lane": "Streaming romantic comedy-drama with a supernatural hook; also viable as a modest theatrical indie",
-        "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or modest specialty theatrical rollout"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary urban settings, limited cast, and minor VFX keep this in a contained feature budget lane."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The lead needs charm and specificity, and the story benefits from a strong Zara plus several distinct romantic counterparts."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The script uses a spread of city locations, but they are all accessible contemporary interiors and street exteriors."
-        },
-        "content": {
-          "level": "low",
-          "note": "The material stays in a PG-13 romantic-comedy register with no heavy violence, explicit sexuality, or extreme language."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No real people, named music, brands, or licensed IP are referenced."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The premise has a clean commercial engine.",
-          "what_it_means": "A buyer gets a simple, high-concept romantic fantasy with a built-in clock: irresistible for 24 hours, then gone. That kind of rule-set is easy to market to streaming audiences and gives a producer a trailer-friendly hook without a giant budget.",
-          "evidence": "Marcus naming it a 'free trial' after David's wish, and the repeated 24-hour pattern across Miranda, Caroline, and Priya.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "David is built on a playable contradiction.",
-          "what_it_means": "The lead role gives an actor comedy, vulnerability, and emotional turn in one package: a man who wants attention but learns he wants authenticity. That is the kind of part mid-career dramatic leads and actor-comics both chase because it can carry a whole film on performance.",
-          "evidence": "His awkward barista flirtation, the notepad tracking the women, and the final choice to cancel the wish.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Zara is a standout supernatural foil.",
-          "what_it_means": "The genie is written with dry authority and a calm, almost managerial intelligence, which makes the fantasy feel fresh instead of generic. That gives the project a magnetic supporting role for an actress who can play wit, control, and a flicker of surprise in the same scene.",
-          "evidence": "Her 'too much paperwork' line, her precise explanation of the wish, and her reaction when David asks to cancel it.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The romance lands through contrast, not wish fulfillment.",
-          "what_it_means": "Caroline and Priya are not just targets of the spell; they each represent a different kind of adult connection, which makes the eventual choice feel earned. That gives the film a stronger emotional aftertaste than a standard fantasy-comedy because the ending is about self-recognition, not just getting the girl.",
-          "evidence": "Caroline's book about free will and Priya's art-world self-possession, both of which David responds to before the wish is fully understood.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Marcus gives the movie its grounded comic spine.",
-          "what_it_means": "The best-friend role functions as the audience surrogate and the pressure-release valve, which keeps the supernatural premise from floating away. That makes the script attractive to actors who specialize in sharp, scene-stealing support and to producers who want a reliable tonal anchor.",
-          "evidence": "Marcus decoding the wish, calling it a 'free trial,' and pushing David toward the right questions.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The city is used as a dating machine.",
-          "what_it_means": "Coffee shops, bookstores, gyms, galleries, and apartment buildings all become repeatable encounter spaces, which gives the film a strong visual rhythm and a low-cost production footprint. That kind of urban texture plays well for buyers looking for a contemporary relationship movie with enough specificity to feel current.",
-          "evidence": "The repeated set pieces across the coffee shop, car rental counter, bookstore, gym, office elevator, grocery store, riverside cafe, and art gallery.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending earns its emotional thesis.",
-          "what_it_means": "The final movement turns the supernatural premise into a human choice: David rejects the shortcut and walks toward a real conversation. That gives the film a satisfying close for audiences who want romance with a point of view, not just a gimmick.",
-          "evidence": "David canceling the wish, then calling Caroline and showing up as himself at Renner Street Coffee.",
-          "source": "script"
-        }
-      ],
-      "headline": "This is a smart, low-cost romantic fantasy with a very clean hook: a lonely man gets one wish and accidentally becomes irresistible for 24 hours at a time. What makes it worth attention is that the script knows the real fantasy is not being wanted — it is being chosen without magic, and it gives actors, buyers, and audiences a clear emotional payoff."
     },
     "lead_characters": [
       {
         "name": "David Calloway",
         "role_type": "Lead",
-        "demographics": "Male · 32",
-        "hook": "David is a quietly self-conscious single man who has spent so long rehearsing himself that he barely trusts his own instincts. He is funny in a dry, apologetic way, but the real engine is the ache underneath the jokes: he wants to be seen without having to perform for it.",
-        "why_actor_wants_this": "This is the showcase territory of Paul Giamatti in *Sideways* or Jake Gyllenhaal in *Stronger* — a lead whose inner life is the movie, with comedy and self-reckoning living in the same face. Actors who want a role that lets them play awkward charm, romantic longing, and a late-film moral pivot will chase this."
-      },
-      {
-        "name": "Zara",
-        "role_type": "Lead",
-        "demographics": "Female · ageless adult",
-        "hook": "Zara is a genie with the patience of someone who has seen every version of human desire and is no longer impressed by the packaging. She is elegant, amused, and exacting, but the script lets her become something more interesting than a trickster: a witness to the difference between wanting and understanding.",
-        "why_actor_wants_this": "This is the kind of role Tilda Swinton had in *Only Lovers Left Alive* or Cate Blanchett in *Blue Jasmine* — a character whose authority and mystery are the performance. It gives an actress the chance to play command, wit, and a subtle emotional thaw without ever leaving the frame."
+        "demographics": "Male, early 30s, contemporary urban professional, straight.",
+        "hook": "A decent-looking but chronically self-conscious man who has spent years rehearsing charm instead of inhabiting it. He is funny in a defensive way, lonely without being pitiable, and the wish exposes the gap between being wanted and being secure enough to be known.",
+        "why_actor_wants_this": "This is the showcase lane of Paul Giamatti in Sideways or Jake Gyllenhaal in Nightcrawler before the darkness turns outward: a role built on internal contradiction, awkward comedy, and a late emotional reset that lets an actor play humiliation, vanity, and earned self-respect in one arc."
       },
       {
         "name": "Marcus Green",
-        "role_type": "Lead",
-        "demographics": "Male · 33",
-        "hook": "Marcus is David's best friend and the only person in the movie who can puncture the fantasy without killing the fun. He is funny, grounded, and smarter than he pretends to be, with the easy authority of someone who knows exactly how ridiculous his friend is and loves him anyway.",
-        "why_actor_wants_this": "This is the showcase lane of Mahershala Ali in *Moonlight*'s friend/mentor register or Donald Glover in *Atlanta*'s grounded comic mode — a role that gets to be the smartest person in the room without becoming a lecture. Character actors who can do warmth, timing, and lived-in friendship will want it."
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, contemporary urban friend, likely Black.",
+        "hook": "David’s best friend and the only person in the script who can puncture his self-myth without cruelty. Marcus is the grounded truth-teller, but he is also warm, funny, and smart enough to function as the audience’s pressure valve.",
+        "why_actor_wants_this": "This is the kind of friend role that gives an actor the scene-stealing rhythm of Mahershala Ali in Moonlight or Lakeith Stanfield in a grounded dramedy: sharp comic timing, emotional intelligence, and the chance to be the smartest person in the room without becoming a lecture."
+      },
+      {
+        "name": "Zara",
+        "role_type": "Supporting",
+        "demographics": "Female, ageless-presenting, supernatural entity, adult.",
+        "hook": "A genie with dry wit, ancient patience, and a transactional moral code that never becomes cartoonish. She is elegant, amused, and quietly formidable, and the script gives her the rare pleasure of being both mythic and conversational.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Tilda Swinton did in Constantine or Cate Blanchett in Thor: Ragnarok—play otherworldly authority with wit, control, and just enough mystery to make every line feel like a choice."
       },
       {
         "name": "Caroline Price",
-        "role_type": "Lead",
-        "demographics": "Female · 34",
-        "hook": "Caroline is the version of adult attraction that feels calm, intelligent, and unforced. She reads as self-possessed rather than performative, which makes her the perfect counterweight to David's wish-driven chaos and gives the film its most grounded romantic energy.",
-        "why_actor_wants_this": "This is the kind of role Greta Gerwig had in *Frances Ha* or Michelle Williams in *Take This Waltz* — a woman whose intelligence and stillness are the point, not the decoration. Actresses who want a romantic lead built on specificity, not melodrama, will see the appeal immediately."
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s, contemporary urban professional.",
+        "hook": "The woman who becomes the story’s emotional proof of concept: intelligent, self-possessed, and interested in David only when he is actually present. She is not written as a prize; she is written as a person with standards, taste, and a clear internal life.",
+        "why_actor_wants_this": "This is the kind of grounded romantic lead role that gives an actor the understated authority of Michelle Williams in indie romance work: listening, withholding, and then landing the decisive emotional beat without overselling it."
       },
       {
         "name": "Priya Anand",
-        "role_type": "Lead",
-        "demographics": "Female · 31",
-        "hook": "Priya is sharp, self-possessed, and unbothered by the room's opinion of her, which makes her feel instantly adult in a story full of projection. She has the kind of clarity that makes David slow down, because she is not asking to be chosen — she is already choosing.",
-        "why_actor_wants_this": "This is the showcase space of Ayo Edebiri in *The Bear*'s more self-contained moments or Zoe Kazan in *Ruby Sparks* — a role that lets an actress play intelligence, wit, and romantic authority without overexplaining herself. It is especially attractive to performers who want a modern, grounded female lead with real conversational chemistry."
+        "role_type": "Supporting",
+        "demographics": "Female, early 30s, contemporary urban professional, South Asian.",
+        "hook": "A sharp, self-possessed art-world woman who reads as fully formed the moment she enters. She has enough specificity to feel like a real alternate path for David, even though the script uses her primarily as a contrast point.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the crisp, intelligent energy of Ayo Edebiri in a grounded scene partner dynamic: quick wit, self-possession, and the chance to make a small role feel like a fully lived-in person."
       },
       {
         "name": "Miranda",
         "role_type": "Supporting",
-        "demographics": "Female · 30",
-        "hook": "Miranda is warm, quick, and briefly open in a way that makes David think he might be getting somewhere. She functions as one of the film's early mirrors for the wish, showing how fast charm can feel like destiny before it evaporates.",
-        "why_actor_wants_this": "This is the kind of compact, memorable romantic-support role that actresses like Allison Janney or Kathryn Hahn can make feel larger than the page. It gives a performer a clean comic-romantic beat and a sharp exit that the audience remembers."
+        "demographics": "Female, early 30s, contemporary urban professional.",
+        "hook": "A warm, funny date who becomes one of the script’s early data points in David’s pattern of temporary connection. She is lightly sketched, but she serves the story’s emotional math cleanly.",
+        "why_actor_wants_this": "This is a compact but playable scene role in the mold of a strong indie date-night supporting turn—something like the grounded charm of Greta Gerwig in a small early-career role, where warmth and timing do the heavy lifting."
       },
       {
         "name": "Jessica",
         "role_type": "Supporting",
-        "demographics": "Female · 29",
-        "hook": "Jessica is the first person to make the wish feel operational in the real world, turning a routine rental counter into a flirtation with consequences. She is efficient, playful, and just bold enough to make David question what changed.",
-        "why_actor_wants_this": "This is the kind of scene-stealing part that lets an actress do instant chemistry in a single exchange, the way supporting players do in *Set It Up* or *Crazy, Stupid, Love*. It is a strong audition-piece role for someone who can land charm fast and leave a mark."
-      },
-      {
-        "name": "Claire",
-        "role_type": "Supporting",
-        "demographics": "Female · 31",
-        "hook": "Claire is bookish, self-aware, and a little surprised by her own boldness, which makes her feel like a real person rather than a fantasy beat. She helps widen the movie's romantic texture by showing that the wish works on women with different energies, not just one type.",
-        "why_actor_wants_this": "This is the kind of role that plays like a smart indie-romance supporting turn, similar to the grounded charm of Emily Blunt in *The Young Victoria* or Jenny Slate in *Obvious Child*'s lighter registers. It gives an actress a quick, memorable scene with a clear emotional temperature."
+        "demographics": "Female, late 20s, contemporary urban professional.",
+        "hook": "The car-rental clerk whose sudden interest is one of the first visible signs that the wish is working. She is brief, but she helps sell the premise’s immediate social effect.",
+        "why_actor_wants_this": "This is the kind of quick-hit role that lets an actor make a memorable impression in a single scene, similar to the best of the ‘one-scene spark’ work in romantic comedies where timing and reaction sell the premise."
       },
       {
         "name": "Helen",
         "role_type": "Supporting",
-        "demographics": "Female · 44",
-        "hook": "Helen is the neighbor who makes the spell feel socially real, not just flirtatious. She is married, familiar, and suddenly attentive, which gives the wish its most uncomfortable proof that the effect is broader than David can manage.",
-        "why_actor_wants_this": "This is the kind of adult-support role that can land with the specificity of Patricia Clarkson in a few scenes — a woman whose brief attention tells a whole story. It gives an actress a chance to play temptation, irony, and everyday realism at once."
+        "demographics": "Female, mid-40s, married neighbor, contemporary urban resident.",
+        "hook": "David’s neighbor, who functions as a small but important proof point that the wish is affecting women across contexts, not just dates. She is ordinary, which makes the supernatural effect feel more invasive and real.",
+        "why_actor_wants_this": "This is a clean character-actor beat role: the kind of brief but specific part that lets an actor ground a fantasy premise with naturalism, similar to the best neighbor/observer turns in elevated studio comedies."
+      },
+      {
+        "name": "Caroline's Bookstore Woman",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, contemporary urban professional.",
+        "hook": "A bookstore stranger who helps establish the wish’s reach in public spaces. She is more function than arc, but she contributes to the script’s cumulative pattern of attention.",
+        "why_actor_wants_this": "This is a small but useful showcase for an actor who can make a single beat feel specific and lived-in, the kind of role that benefits from natural timing and an easy, believable presence."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a romantic fantasy that plays like a character study, not a spectacle.",
-        "fit_profile": "Established indie directors with one or more features, or TV-to-feature filmmakers who already know how to stage intimate dialogue and clean emotional turns. The sweet spot is someone drawn to performance-forward storytelling, urban texture, and lightly magical premises that stay emotionally grounded.",
-        "detail": "The material rewards restraint: the magic is simple, the scenes are conversational, and the payoff comes from behavior rather than effects. That makes it especially attractive to directors who can get chemistry, timing, and tonal control out of small moments instead of leaning on set pieces."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead carrying the full emotional and comic burden",
+          "Multiple supporting women across a range of ages who must each feel distinct",
+          "Zara requires a performer with authority, wit, and a supernatural stillness"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Streaming romantic comedy-drama with a supernatural hook; specialty theatrical for adult audiences",
-        "detail": "It can be greenlit off a strong lead and a compelling Zara without requiring a large ensemble or expensive effects package. The contemporary setting, PG-13 tone, and clean high-concept premise fit the current buyer appetite for dateable, exportable genre-romance with a clear trailer hook."
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 7:5",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Coffee shop",
+          "restaurant",
+          "antiquities shop",
+          "apartment interior",
+          "bookstore",
+          "gym",
+          "office elevator",
+          "grocery store",
+          "gallery",
+          "rooftop restaurant",
+          "street exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Smoke emergence for Zara and a few subtle magical transition beats; no large-scale effects or digital environments.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical smoke effect and simple bottle-appearance effect work.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model: romantic fantasy with broad streaming and specialty theatrical upside."
       }
     },
-    "considerations": [
-      {
-        "area": "The middle section repeats the same wish-beat.",
-        "detail": "The montage of women responding to David's new aura is effective as escalation, and a next pass could consider compressing one or two of those encounters so the emotional turn arrives a little sooner. That would protect the momentum while keeping the 'free trial' idea intact.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly dialogue-driven, and built around ordinary urban locations with only minor practical magic. The bottle-and-smoke effect is the only notable technical lift."
       },
-      {
-        "area": "Caroline becomes the emotional destination late.",
-        "detail": "The Caroline thread is the most resonant romantic lane, and the version of the script where her presence is seeded a little earlier could make the final call and coffee-shop reunion land with even more inevitability. The material already points there; this is about foregrounding that destination sooner.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "David has to carry awkward comedy, romantic sincerity, and a believable late-blooming self-respect arc, while Zara needs a very specific blend of wit and authority. The supporting women also need to feel individually distinct so the premise does not flatten."
       },
-      {
-        "area": "The city footprint is pleasantly broad.",
-        "detail": "The script uses a healthy spread of contemporary locations — coffee shop, restaurant, antiquities store, apartment, rental counter, bookstore, gym, office, grocery, gallery, rooftop, and street exteriors. If production wanted to simplify, a few of those encounter spaces could be folded together without changing the story engine.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Zara's rules are clean and playable.",
-        "detail": "The wish logic is already easy to follow, and the one place to protect is the distinction between being desired and being remembered. Keeping that distinction crisp in every Zara scene preserves the emotional thesis and makes the ending feel earned.",
-        "is_primary_lever": false,
-        "source": "script"
+      "development": {
+        "level": "medium",
+        "note": "The central premise is clear, but the script’s commercial value depends on the emotional distinction between being desired and being genuinely known. The Caroline/Priya/Miranda pattern is the key narrative proof point buyers will weigh."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Mask of Zorro",
+          "year": 1998,
+          "why_it_comps": "A charismatic fantasy-romance built on transformation, wish fulfillment, and a lead whose confidence changes the social temperature around him."
+        },
+        {
+          "title": "Bedazzled",
+          "year": 2000,
+          "why_it_comps": "The bargain-with-the-supernatural structure and comic wish logic are the closest tonal and commercial neighbor, especially in the way the deal exposes the protagonist’s real need."
+        },
+        {
+          "title": "The Big Sick",
+          "year": 2017,
+          "why_it_comps": "The script shares that adult-romantic-comedy balance of humor, vulnerability, and emotional honesty, with a lead who has to earn connection rather than simply win it."
+        },
+        {
+          "title": "Palm Springs",
+          "year": 2020,
+          "why_it_comps": "A high-concept romantic premise that uses a simple supernatural rule to explore commitment, self-knowledge, and the difference between novelty and real intimacy."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like romantic comedies with a fantasy hook and a sincere emotional payoff.",
+        "demographics": "25-54, slightly female-skewing, urban/suburban, streamer-friendly, date-night audience with appetite for elevated genre.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, a single lead, and only minor practical VFX keep this in indie territory."
+      },
+      "lane_fit": {
+        "lane": "elevated romantic fantasy",
+        "types_of_buyers": [
+          "streamer original film executives",
+          "specialty distributor development teams",
+          "indie producers looking for a star-driven rom-com swing",
+          "buyers building a female- and date-night-friendly genre slate",
+          "director-driven companies with a taste for high-concept relationship stories"
+        ],
+        "detail": "This sits naturally in the lane where a clean premise, modest budget, and emotionally legible ending can travel on cast and concept. The script is built for buyers who want a commercial hook without needing action scale or franchise machinery."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The premise resolves cleanly around David’s choice, and there is no clear spinoff vector beyond repeating the same wish mechanic."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly pitchable.",
+          "what_it_means": "This gives the project a clean buyer-facing elevator pitch and a strong thumbnail for marketing. It is the kind of premise that can get a reader to the next page fast and can be sold to a streamer or indie financier without explanation overload.",
+          "evidence": "David wishes to be irresistible, and the wish comes with a 24-hour expiration that turns the fantasy into a trap.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional premise is sharper than the fantasy premise.",
+          "what_it_means": "That makes the script more durable than a simple wish-comedy because the real question is identity, not just magic. Buyers looking for elevated genre will respond to a story that can play as both a rom-com and a self-worth movie.",
+          "evidence": "David ultimately cancels the wish and chooses to be wanted as himself rather than as a reflex.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Zara gives the fantasy a premium voice.",
+          "what_it_means": "A genie who is dry, controlled, and emotionally literate is a strong packaging asset because she prevents the premise from feeling childish. That kind of role can attract a recognizable actor who elevates the whole project.",
+          "evidence": "Zara’s deadpan rules, her refusal to over-explain, and her final respect for David’s choice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The 24-hour rule creates built-in momentum.",
+          "what_it_means": "The expiration mechanic gives the movie a natural engine and a clean escalation path without needing expensive set pieces. That is attractive to buyers because the story can move on performance and structure rather than scale.",
+          "evidence": "The notepad of names and times proves the pattern and turns the wish into a ticking clock.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting women are used as proof points, not props.",
+          "what_it_means": "That helps the script avoid feeling like a one-note male fantasy and broadens its audience appeal. It also gives casting a series of small but distinct roles that can be filled by strong actors.",
+          "evidence": "Caroline, Priya, Miranda, Jessica, and Helen each register as different kinds of interest rather than one repeated type.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable elevated-romance package: a high-concept fantasy hook, a modest contemporary footprint, and a lead role built for a strong actor to carry. The script’s real commercial edge is that it turns wish fulfillment into a story about self-worth, which gives buyers both a clear premise and an emotional payoff."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle is more pattern than escalation.",
+          "detail": "Once the wish starts working, the script spends a long stretch showing variations on the same effect: women noticing David, giving him numbers, and then resetting after 24 hours. That is effective proof-of-concept, but it also means the buying conversation will focus on whether the second half has enough new dramatic information beyond the premise demonstration.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Caroline carries the emotional ending.",
+          "detail": "The final romantic payoff depends on Caroline feeling distinct enough from the earlier wish-driven encounters to justify the movie’s emotional landing. Buyers will notice that the script asks one supporting character to become the proof that real connection is possible, which makes her function load-bearing.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Zara is strong but underused.",
+          "detail": "She is the most ownable supernatural element in the script, yet she appears in relatively few scenes and mostly serves the rules of the premise. That keeps the budget down, but it also means the most distinctive voice in the movie is not fully exploited on the page.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting women are intentionally similar in function.",
+          "detail": "Jessica, Claire, Helen, Miranda, and the gym/bookstore women all serve the same narrative purpose: proof that the wish is working. That is clean storytelling, but it narrows the relationship engine and makes the script more dependent on David’s internal arc than on a truly varied ensemble.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest friction is that the premise is so clean it risks feeling repetitive in the middle: once the wish is established, the movie has to keep finding new emotional information inside the same mechanic. The ending lands because it shifts from attention to authenticity, but that payoff makes Caroline and Zara especially load-bearing in a way buyers will notice."
+    },
     "craft_note": ""
   },
-  "weightedScore": 69,
+  "weightedScore": 68.7,
   "tier": "Optionable",
-  "inputTokens": 22222,
-  "outputTokens": 4538,
-  "cost": 0.0370875,
+  "inputTokens": 24627,
+  "outputTokens": 4415,
+  "cost": 0.038337750000000004,
   "declaredFormat": "Feature film"
 }

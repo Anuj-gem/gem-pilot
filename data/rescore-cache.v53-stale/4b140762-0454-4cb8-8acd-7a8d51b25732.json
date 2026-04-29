@@ -1,0 +1,342 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy Adventure",
+      "genre_tags": [
+        "Family",
+        "Ensemble",
+        "Quest"
+      ],
+      "tone": "Whimsical, earnest, adventurous, and lightly comedic with occasional dark edges"
+    },
+    "positioning_hook": "A band of forgotten toy figures crosses continents in a battered plane and RV to uncover a buried Truth that could unite their world — or rewrite it.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has broad family-adventure appeal, with toys, travel, and a clear quest engine that can play across age groups. The hook is commercial and easy to explain, though the mythology-heavy middle and the very specific toy-world rules make it feel more specialized than four-quadrant mainstream."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The opening immediately establishes the toy awakening, the abandoned-house setting, and the adventure engine, then keeps escalating with the plane, RV, and globe-spanning mission. The core idea is easy to grasp in one pass: sentient toys go on a quest for Truth."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Captain Everett Moran, Norman, Jacob Wilfred, and Professor Brickfigure each have readable functions and distinct attitudes, especially in their banter and reactions to danger. The emotional engine is strongest in the captain/crew dynamic and the battered-to-whole toy arc, while the human side remains more functional than deeply individualized."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a toy-world adventure with international travel, hidden councils, and a mythic Truth quest, which gives it a clear identity. The boldest choice is the scale and specificity of the toy ecosystem, though the underlying quest structure remains familiar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving through a steady chain of discoveries, transports, and set pieces, and each new location introduces another layer of the mission. The momentum is strongest in the toy storyline; the human-family thread and the repeated travel beats sometimes function more as connective tissue than as fresh turns."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "Sentient toys on a globe-spanning quest for a metaphysical Truth has a clean, memorable oddity that feels both fresh and legible. The concept lands because the emotional logic is simple — forgotten things seeking purpose — while the world keeps expanding in unexpected directions."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a layered toy society with councils, military factions, hidden chambers, and a mythology of unity that feels bigger than the page count. The repeated use of foreclosed houses, toy shops, caves, command centers, and vehicles gives the world a strong, story-generating texture."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends earnest questing, playful toy banter, and occasional grotesque comedy in the bathroom/cave material, which gives it a distinct flavor. It is consistent in its adventurous spirit, though the script moves between family warmth, mythic seriousness, and gross-out humor in a way that keeps the tonal identity broad rather than razor-specific."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the adventure surface, the script keeps returning to belonging, obsolescence, repair, and what it means to be chosen after being discarded. The battered toy’s backstory and the Truth mythology suggest a deeper emotional and philosophical layer that could sustain a larger franchise or a more resonant feature arc."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The toy crew has a workable ensemble rhythm, especially through the friction between Moran, Norman, and Wilfred, with Brickfigure as the stabilizing intellect. The human family thread adds another relational lane, but the script’s strongest combinatorial energy lives inside the toy group itself."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 16,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple child/teen roles including Mia, Miguel, and Clara",
+          "Voice/performance capture or VFX-assisted toy characters",
+          "Ensemble of toy and action-figure characters with distinct physical designs",
+          "Spanish-speaking family roles and accented supporting roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior travel beats",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Granada, Melbourne, London, New Zealand, Germany, and multiple international travel stand-ins",
+          "Foreclosed houses, train interiors, cave systems, toy-scale hidden chambers, docks, airstrips, and castle interiors",
+          "Night exteriors, storm sequences, and a large final battle environment"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Toy characters, scale-compositing, flying vehicles, portal effects, storm work, glowing artifacts, and battle augmentation for the final El Possessor sequence.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical destruction beats, train violence, cave tremors, vehicle movement, weapon effects, and portal/battle lighting.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "A Latin pop song by Carlos Vincent Martinez is specifically named on Mia’s phone screen."
+        },
+        {
+          "type": "brand",
+          "detail": "Granada Express is named as the train service."
+        },
+        {
+          "type": "brand",
+          "detail": "Specific toy/figure names and recognizable action-figure archetypes are used throughout, including Commander Stark, Blitzwing, and diecast vehicle types."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Family adventure theatrical or premium streaming feature",
+        "content_level": "PG / PG-13 equivalent with some mature violence and disturbing bathroom imagery",
+        "series_engine_or_release_model": "Feature release model with franchise potential; best positioned as festival-friendly family adventure or streamer event title"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The toy-scale world, multiple vehicle builds, international travel, and final battle sequence point to a mid-budget visual-effects feature rather than a contained indie."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script carries a sizable ensemble of toy characters plus a family unit and several supporting human roles, with child casting and performance-capture considerations."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story spans Granada, Melbourne, London, New Zealand, Germany, docks, caves, trains, and multiple interiors that would need to be staged or doubled."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The train assault, self-harm beat, and grotesque bathroom imagery push beyond pure family fare while still staying short of explicit adult content."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script names a song, a train service, and several branded or recognizable toy/action-figure references that would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The toy world has franchise-scale architecture.",
+          "what_it_means": "This gives a producer a built-in universe with factions, councils, vehicles, and mythic objects that can support a feature launch and future installments. Family audiences, animation-minded buyers, and studios looking for a toyetic adventure property will all understand the commercial lane immediately.",
+          "evidence": "The Council of Toys, Sergeant Iguana’s reptilian headquarters, the German Command Center, El Possessor’s castle, and the recurring plane/RV/tugboat/helicopter/bomber progression.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The central metaphor is emotionally legible.",
+          "what_it_means": "The story turns discarded toys into a story about repair, belonging, and being chosen again, which gives the adventure a heart that travels well. Buyers looking for a family title with emotional uplift and a clean thematic spine will see the value fast.",
+          "evidence": "The battered action figure’s backstory, the repair sequence in the Council chamber, and the final return to the chest as a chosen home.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Captain Everett Moran is a clear anchor.",
+          "what_it_means": "The captain gives the movie a leadership role with authority, warmth, and enough weathered gravitas to carry the quest through multiple set pieces. That is the kind of part that attracts a recognizable voice actor, a prestige character actor, or a performer who can sell both command and tenderness.",
+          "evidence": "His repeated calls to action, his calm under pressure, and the way the crew defers to him in the plane, RV, and council scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has built-in banter chemistry.",
+          "what_it_means": "Norman, Wilfred, and Brickfigure create a usable comic triangle around Moran’s steadiness, which helps the script play as a group adventure rather than a solo march. Ensemble-friendly buyers and directors who like character interplay will see a castable, playable engine here.",
+          "evidence": "The repeated exchanges about storms, toilets, unity, and the mission across the plane, cave, and command-center sequences.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world is visually modular.",
+          "what_it_means": "Planes, RVs, tugboats, caves, hidden rooms, and toy shops create a production design package that can be varied without losing the identity of the film. That modularity is attractive to producers because it allows spectacle without needing one giant expensive environment.",
+          "evidence": "The toy airplane, diecast RV, tugboat, hidden library, command center, and castle all function as distinct playable arenas.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a clean emotional handoff at the end.",
+          "what_it_means": "Returning the crew to the chest gives the feature a satisfying circular finish that feels complete while still leaving room for more. That kind of ending is useful for buyers because it plays as a self-contained movie and a launchpad at the same time.",
+          "evidence": "The final attic return, the crew choosing to go back into the chest, and the warm glow that closes the story.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a toy-adventure feature with real commercial shape: a globe-trotting quest, a memorable ensemble, and a mythic emotional spine about repair, belonging, and chosen family. The world is big enough to feel like a launch property, but the heart of it is simple enough to sell in one sentence."
+    },
+    "lead_characters": [
+      {
+        "name": "Captain Everett Moran",
+        "role_type": "Lead",
+        "demographics": "Male · toy figure · weathered sailor captain persona",
+        "hook": "The steady center of the toy crew, Moran is a weathered, old-school leader with a sailor’s discipline and a surprisingly tender belief that purpose can be rebuilt. He speaks like someone who has seen enough to know fear is real, but not enough to stop moving anyway, which makes him feel like both commander and caretaker.",
+        "why_actor_wants_this": "This is the Richard Dreyfuss-in-Close Encounters / Tom Hanks-in-Cast Away territory of a leader whose calm becomes the emotional engine of the movie. An actor gets to play authority, vulnerability, and mythic reassurance in the same role, which is exactly the kind of part that can become the face of a family franchise."
+      },
+      {
+        "name": "Norman",
+        "role_type": "Lead",
+        "demographics": "Male · toy figure · adult-coded comic personality",
+        "hook": "Norman is the crew’s skeptic and pressure valve, the one who says what everyone else is thinking but with enough bite to make it funny. He’s vain, anxious, and resistant to sentiment, which gives him a nice contradiction: the toy who complains the loudest is also the one most affected by what the journey means.",
+        "why_actor_wants_this": "This is the Donkey-in-Shrek / Jack Black-style comic sidekick slot where the performance is all about timing, exasperation, and surprise sincerity. Voice actors and comic performers chase this because it lets them dominate scenes, land big laughs, and still sneak in real feeling."
+      },
+      {
+        "name": "Jacob Wilfred",
+        "role_type": "Lead",
+        "demographics": "Male · toy figure · adult-coded, sharp-edged personality",
+        "hook": "Wilfred is the dry, skeptical counterweight to Moran’s optimism, with a sharper tongue and a more guarded emotional posture. He reads like the crew member who trusts competence over sentiment, which makes his gradual buy-in feel earned and gives the ensemble a needed edge.",
+        "why_actor_wants_this": "This is the Oscar Isaac-in-Ex Machina / Alan Rickman-style slot of the cool skeptic whose intelligence and sarcasm carry the scene. Actors who like playing controlled intensity will want it because the role lets them pivot from resistance to loyalty without ever losing authority."
+      },
+      {
+        "name": "Professor Brickfigure",
+        "role_type": "Lead",
+        "demographics": "Male · toy figure · scholarly, inventor-coded personality",
+        "hook": "Brickfigure is the crew’s analytical mind, a tinkerer who treats danger like a puzzle and keeps the mission moving with precision. He brings a quieter humor than Norman and a more technical confidence than Wilfred, which makes him the ensemble’s brain without flattening him into a function.",
+        "why_actor_wants_this": "This is the Jeff Goldblum-in-Jurassic Park / Wallace Shawn-style showcase for a performer who can make intelligence feel playful and alive. The role gives an actor room to turn exposition into character and to make problem-solving itself entertaining."
+      },
+      {
+        "name": "Mia Rodriguez",
+        "role_type": "Lead",
+        "demographics": "Female · 14 years old · Spanish teen",
+        "hook": "Mia is the human emotional entry point: guarded, restless, and visibly disconnected from the family around her, but not numb enough to be unreadable. Her headphones, silence, and defiance give her a strong teen exterior, while the train sequence and the Miguel thread hint at a much more vulnerable interior life.",
+        "why_actor_wants_this": "This is the Saoirse Ronan-in-Lady Bird / Hailee Steinfeld-in-The Edge of Seventeen lane of a teenage lead who can carry private emotion under a sharp exterior. Young actors and casting directors will respond to the chance to play rebellion, hurt, and dawning self-awareness in one role."
+      },
+      {
+        "name": "Isabella Rodriguez",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · Spanish mother",
+        "hook": "Isabella is the emotional ballast of the human story, trying to keep a family intact while absorbing the force of Carlos’s volatility and Mia’s distance. She reads as exhausted but composed, and the script gives her the kind of quiet endurance that can become deeply affecting when played with specificity.",
+        "why_actor_wants_this": "This is the Toni Collette-in-Hereditary / Patricia Clarkson-in pieces of grounded maternal authority and contained distress. Character actresses who can hold a room with restraint will see a rich, playable role that anchors the human stakes."
+      },
+      {
+        "name": "Carlos Rodriguez",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s · Spanish father",
+        "hook": "Carlos is the volatile center of the family thread, a man whose control issues and emotional volatility turn domestic tension into danger. He’s not written as a simple villain; he’s a pressure system, which makes his scenes feel combustible and dramatically immediate.",
+        "why_actor_wants_this": "This is the Javier Bardem-in-No Country for Old Men / Ben Mendelsohn-style territory of a volatile, intimidating presence who can shift from charm to menace in a beat. Actors who like playing dangerous complexity will be drawn to the chance to make the family drama feel genuinely unstable."
+      },
+      {
+        "name": "Miguel Hernandez",
+        "role_type": "Lead",
+        "demographics": "Male · teen · Spanish",
+        "hook": "Miguel is the impulsive, curious teen whose attraction to the abandoned house pulls him into the story’s human and mystery lanes. He has skateboard-kid confidence on the surface, but the arrest and escape material give him a scrappier, more desperate edge that makes him feel like a real adolescent in over his head.",
+        "why_actor_wants_this": "This is the Lucas Hedges-in-Mid90s / Justice Smith-style role of a young male lead who gets to play bravado, panic, and stubborn conviction. Young actors will chase it because it offers a full emotional arc and a lot of physical action."
+      },
+      {
+        "name": "General Action Figure",
+        "role_type": "Supporting",
+        "demographics": "Male · toy figure · imposing military-coded presence",
+        "hook": "The General is a mythic authority figure who arrives like a legend already in progress, carrying the weight of history and command. He functions as the bridge between the toy crew’s adventure and the larger truth mythology, with a presence that feels ceremonial and consequential.",
+        "why_actor_wants_this": "This is the Liam Neeson-in-a-mentor-slot / Laurence Fishburne-style gravitas role where every line sounds like it matters. A recognizable voice or character actor would want it because the part gives instant authority and franchise-level presence."
+      },
+      {
+        "name": "Professor Brickfigure",
+        "role_type": "Lead",
+        "demographics": "Male · toy figure · inventor/scholar-coded",
+        "hook": "Brickfigure is the crew’s methodical problem-solver, always measuring, adjusting, and translating chaos into something workable. He adds a different flavor of intelligence than Moran’s leadership or Wilfred’s skepticism, which keeps the ensemble from collapsing into one note.",
+        "why_actor_wants_this": "This is the Jeff Goldblum-in-Jurassic Park / Wallace Shawn-style showcase for a performer who can make intelligence feel playful and alive. The role gives an actor room to turn exposition into character and to make problem-solving itself entertaining."
+      },
+      {
+        "name": "Sergeant Iguana",
+        "role_type": "Supporting",
+        "demographics": "Male · reptilian toy figure · military-coded",
+        "hook": "Sergeant Iguana is a hard-edged ally with a tactical mind and a dry sense of urgency, the kind of figure who makes a mission feel official the moment he enters. He broadens the toy ecosystem beyond the core crew and gives the world a more militarized, organized texture.",
+        "why_actor_wants_this": "This is the Keith David-in-a-command role lane: authoritative, textured, and instantly memorable. Character actors and voice performers who like world-building roles will be drawn to the chance to make a supporting part feel iconic."
+      },
+      {
+        "name": "General Apex",
+        "role_type": "Supporting",
+        "demographics": "Male · toy figure · commanding, battle-ready",
+        "hook": "General Apex is the ceremonial gatekeeper of the Council of Toys, a figure whose calm authority makes the mythology feel ancient and organized. He’s less comic than the crew and more ritualistic, which gives the world a sense of hierarchy and history.",
+        "why_actor_wants_this": "This is the Morgan Freeman / James Earl Jones-style authority slot, where the voice and presence do the heavy lifting. A veteran performer would be attracted to the dignity of the role and the way it frames the mythology."
+      },
+      {
+        "name": "El Possessor",
+        "role_type": "Supporting",
+        "demographics": "Male · towering toy villain figure",
+        "hook": "El Possessor is the story’s dark force, a theatrical antagonist with a supernatural edge and a hunger to control the Truth. He gives the climax a clear face and a larger-than-life threat, which is essential for the final battle to feel like a payoff rather than just a set piece.",
+        "why_actor_wants_this": "This is the Jeremy Irons / Ralph Fiennes villain showcase lane — grand, dangerous, and deliciously declarative. Actors who enjoy stylized antagonists will want the chance to dominate the final act with voice, menace, and spectacle."
+      },
+      {
+        "name": "Fixed Action Figure",
+        "role_type": "Supporting",
+        "demographics": "Male · toy figure · repaired/battered-to-whole transformation",
+        "hook": "Fixed Action Figure is the emotional proof of concept for the movie’s theme: a once-battered toy who becomes whole again and chooses to rejoin the mission. He embodies the story’s promise that damage is not the end of usefulness, which makes him feel like the heart of the mythology in miniature.",
+        "why_actor_wants_this": "This is the Tom Hanks-in-A Beautiful Day in the Neighborhood / Ben Whishaw-style emotional transformation role, where the performance arc is about rediscovered worth. An actor would chase it for the chance to play fragility turning into renewed purpose."
+      },
+      {
+        "name": "Train Manager",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s · authority figure",
+        "hook": "The Train Manager is a sharp, decisive civilian authority who interrupts the family crisis with immediate force. He functions as a pressure-release valve in the train sequence and gives the human storyline an outside witness with moral clarity.",
+        "why_actor_wants_this": "This is the J.K. Simmons-in-a-control-role lane: brief, forceful, and instantly memorable. Character actors who can make a few scenes land hard will be attracted to the authority and momentum of the part."
+      },
+      {
+        "name": "Clara",
+        "role_type": "Supporting",
+        "demographics": "Female · 8 years old",
+        "hook": "Clara is a small but important observer, the child who notices the uncanny movement at the foreclosed house and helps widen the sense that the mystery is visible beyond the main cast. She adds innocence and external confirmation to the story’s eerie atmosphere.",
+        "why_actor_wants_this": "This is the kind of child role that gives a young performer a vivid, memorable beat without overcomplicating the part. Casting directors looking for a strong child reaction role would see it as a clean fit."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a family adventure with real mythic scale and tactile toy-world charm.",
+        "fit_profile": "Established indie or studio-adjacent directors with at least one feature under their belt, especially those who care about production design, ensemble blocking, and emotionally legible spectacle. This material rewards filmmakers who can balance wonder, comedy, and sincere feeling without flattening the toy premise into pure novelty.",
+        "detail": "The movie gives a director a chance to stage big travel, action, and world-building beats while keeping the emotional spine simple and accessible. It’s especially attractive to directors who can make practical texture and performance interplay feel as important as the effects."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M feature",
+        "lane": "Family adventure / premium streaming event / theatrical four-quadrant-lite",
+        "detail": "The toy characters and globe-spanning quest create a clear packaging advantage because the movie can be sold off concept and design before any single star attachment. The family-adventure lane remains exportable and streamer-friendly, and the toy-world premise gives it merchandising and sequel potential that most mid-budget features do not have."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The human thread can be sharpened around Mia.",
+        "detail": "The Rodriguez material is strongest when Mia’s silence, Miguel’s arrival, and the train sequence are in conversation with each other. A next pass could make her emotional turn more active by letting one choice on the page reveal what the headphones are protecting her from, rather than keeping that interiority mostly in reaction mode.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The mythology arrives in several waves.",
+        "detail": "The Council, the Truth, the Orb, the Nexus, and the El Possessor material all add color, but they also ask the audience to track a lot of proper nouns. One lever would be to consolidate a few of those terms so the quest engine feels even cleaner without losing the scale of the world.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The bathroom material defines the tone.",
+        "detail": "The Kangaroo Cave and toilet sequence is memorable and gives the movie a distinct comic edge, but it also sets a very specific gross-out register. If the goal is a broader family lane, the version of the script where that humor is a touch less explicit would keep the adventure accessible while preserving Norman’s comic voice.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The international travel footprint is ambitious.",
+        "detail": "Granada, Melbourne, London, New Zealand, Germany, and the various transit beats create a big canvas, but they also expand the number of environments the production has to solve. A simplification lever would be to let a few of the travel stops share visual language or combine into fewer signature locations without changing the quest structure.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final battle is the biggest production swing.",
+        "detail": "The El Possessor sequence brings together portals, storm work, multiple toy factions, weapons, and a castle environment, which is where the movie’s effects ambition peaks. That’s the place to protect in development, because it’s also the sequence that most clearly signals the movie’s scale to buyers and audiences.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The toy ensemble could support even more contrast.",
+        "detail": "Moran, Norman, Wilfred, and Brickfigure already give the crew a solid internal rhythm, and the supporting factions widen the world. A next pass could deepen one or two of the secondary toy voices so the ensemble has even more independent story energy once the quest gets underway.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 48059,
+  "outputTokens": 5942,
+  "cost": 0.06278325,
+  "declaredFormat": "Feature film"
+}

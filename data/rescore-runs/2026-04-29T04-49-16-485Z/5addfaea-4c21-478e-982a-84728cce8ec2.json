@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T04:59:08.952Z",
+  "submission_id": "5addfaea-4c21-478e-982a-84728cce8ec2",
+  "eval_id": "ae2c179b-f088-4031-aabd-7b9728293b43",
+  "title": "The Layoff",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Jesse Peterson",
+      "role_type": "Lead",
+      "demographics": "White male, mid-20s, laid-off data analyst, urban professional, likely college-educated."
+    },
+    {
+      "name": "Mikey",
+      "role_type": "Supporting",
+      "demographics": "White male, late-20s, Jesse's best friend, employed, in a serious relationship."
+    },
+    {
+      "name": "Andrea",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, Mikey's girlfriend/fiancée, ambitious, finance-minded, likely Ivy/MBA track."
+    },
+    {
+      "name": "Brenda McMahon",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, COO, corporate executive, polished, high-status professional."
+    },
+    {
+      "name": "Devin Lee",
+      "role_type": "Supporting",
+      "demographics": "Asian male, 40s, CEO, tech founder, physically performative, status-conscious."
+    },
+    {
+      "name": "Mario de Amor",
+      "role_type": "Supporting",
+      "demographics": "Male, early 40s, wealthy AI founder, elite, cosmopolitan, likely Latin American or Latino-coded by name and setting."
+    },
+    {
+      "name": "Kayla",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, stripper/sex worker, socially agile, financially motivated."
+    },
+    {
+      "name": "Chase",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, white, aggressive, working-class, later bodyguard role."
+    },
+    {
+      "name": "Carlos Machado",
+      "role_type": "Supporting",
+      "demographics": "Latino male, late teens/early 20s, Miami/Hialeah, family-bound, gun access, emotionally fragile."
+    },
+    {
+      "name": "President Bowman",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-40s, President of the United States, charismatic, vulgar, politically powerful."
+    },
+    {
+      "name": "Jeeves",
+      "role_type": "Supporting",
+      "demographics": "Humanoid robot, British-accented voice, non-human performance requirement."
+    }
+  ],
+  "positioning_hook": "A laid-off Manhattan data analyst turns his suicide into a market-moving spectacle, then tries to outsmart AI, Wall Street, and his own best friend for millions.",
+  "cost_usd": 0.060845250000000003,
+  "input_tokens": 47059,
+  "output_tokens": 5678,
+  "status": "wrote:leads_ok"
+}

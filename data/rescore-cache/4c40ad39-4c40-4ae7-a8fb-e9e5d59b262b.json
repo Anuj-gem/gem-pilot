@@ -2,312 +2,382 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Faith-based family drama",
-      "genre_tags": [
-        "medical drama",
-        "romance"
-      ],
-      "tone": "grounded, emotional, reverent"
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "family-dynamics",
+        "grief",
+        "fatherhood",
+        "motherhood",
+        "faith",
+        "community",
+        "small-town",
+        "sports"
+      ]
     },
-    "positioning_hook": "A beloved school principal faces a fatal heart condition just as his family and church community need him most, forcing one last reckoning with love, faith, and legacy.",
+    "positioning_hook": "A small-town school administrator facing a fatal heart condition must choose how to spend his final days, while his family learns to keep loving him as his body fails.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The emotional promise is immediate and legible: a husband, father, and community anchor fighting to stay present for the people who depend on him. The faith setting, family stakes, and medical countdown give it a clear audience lane, especially for viewers who respond to inspirational, values-forward drama."
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible, especially for viewers who respond to family-first tearjerkers and faith-adjacent dramas. The challenge is that the script is very specific in its devotional, small-town register, which narrows the commercial lane rather than broadening it."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The premise lands quickly in the opening pages with Ralph’s collapse at the church spaghetti dinner and the diagnosis that follows. The story engine is easy to explain, though the script is more character-and-feeling driven than concept-forward."
+        "reasoning": "The hook lands early: Ralph collapses at the spaghetti dinner, learns he has a serious heart condition, and the story becomes about how a family prepares for loss. The premise is easy to explain in one breath, though the script’s many later turns make the back half feel more expansive than the initial hook."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Ralph is built as a steady, beloved patriarch whose identity is tested by illness, and Skylar carries real emotional weight as the partner who has to hold the family together. Maddie, Father Phillips, and the Monroe family add support and texture, though the story remains most strongly centered on Ralph and Skylar."
+        "score": 6,
+        "reasoning": "Ralph is built as a steady, beloved patriarch with a clear emotional function, and Skylar has real warmth as the partner holding the family together. The supporting family members are affectionate and functional, but they are more support system than sharply individualized characters."
       },
       "creative_originality_and_boldness": {
-        "score": 6,
-        "reasoning": "The script leans into a familiar inspirational-drama framework, but the Pottsville church/community setting and the recurring 'left side / strong side' motif give it a personal stamp. The final flash-drive structure and the dance reveal add a distinctive emotional frame."
+        "score": 5,
+        "reasoning": "The script leans into familiar inspirational-drama language: illness, family unity, faith, and a final dance. The Pottsville setting and church-community texture give it some specificity, but the execution stays close to recognizable sentimental territory."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The hospital escalation, repeated setbacks, and eventual funeral-to-legacy movement keep the story moving with clear emotional escalation. At the same time, the middle section revisits several hospital-room conversations that serve the same emotional function, which keeps the propulsion more steady than urgent."
+        "reasoning": "The collapse at the spaghetti dinner gives the story a strong engine, and the hospital/recovery beats create a clear emotional progression. The middle section repeats variations of the same emotional conversation several times, which softens momentum before the final decline."
       },
       "resonant_originality": {
-        "score": 6,
-        "reasoning": "The core idea is instantly understandable and emotionally accessible, but it sits in a recognizable lane of illness-and-family perseverance drama. What makes it feel specific is the Catholic ritual, the school/community life, and the way Ralph’s private history is revealed through the flash drive and memorabilia."
+        "score": 5,
+        "reasoning": "The strongest original element is the 'left side / strong side' motif, which gives the relationship a memorable private language. Beyond that, the script’s emotional architecture is familiar enough that the ending feels earned more than surprising."
       },
       "world_density_and_texture": {
-        "score": 7,
-        "reasoning": "St. Andrew’s Church, the school district, the gym, the rehab center, and the Bennett family home create a lived-in small-town ecosystem with clear social roles. The church spaghetti dinner, funeral mass, and school coaching details give the world enough texture to feel inhabited rather than generic."
+        "score": 6,
+        "reasoning": "St. Andrew’s Church, the spaghetti dinner, the school district, the rehab center, and the family’s sports-and-faith habits create a lived-in local world. It is specific and usable, but it functions more as a warm container for the drama than as a deeply generative social system."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The tone is consistently reverent, sentimental, and grounded in lived family ritual, with prayer, last rites, and community support woven directly into the drama. The repeated 'strong side' language and the final dance give the script a recognizable emotional signature."
+        "score": 6,
+        "reasoning": "The tone is consistently sincere, devotional, and sentimental without tipping into irony. That consistency helps the script feel coherent, but it also keeps the piece in a familiar inspirational lane rather than a more distinctive tonal signature."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "The script is upfront about what it is, but it does hint at deeper reserves in Ralph’s hidden hobbies, Skylar’s past, and the family’s inherited rituals. The flash drive and the storage-room reveal suggest a fuller life beneath the surface, even though the story stays focused on the central emotional arc."
+        "reasoning": "There are hints of deeper material around Ralph’s hidden hobbies, his identity after illness, and the family’s inherited rituals. The script gestures toward that depth, but it mostly resolves in direct emotional statements rather than letting subtext accumulate."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Ralph and Skylar carry the spine, but the family groupings generate real scene energy: parents and kids, sisters and brothers, in-laws, Father Phillips, and the Monroe support system all create usable combinations. The hospital and home sequences repeatedly benefit from the ensemble being present rather than isolated."
+        "reasoning": "The family unit has real recurring energy: Ralph/Skylar, Ralph/Maddie, Skylar/the kids, and the extended Monroe support system all generate usable scenes. The ensemble is strongest when it’s functioning as a protective circle around Ralph, which gives the script dependable relationship momentum."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Ralph Bennett",
+        "role_type": "Lead",
+        "demographics": "Male, late 50s, white, small-town Pennsylvania school administrator and family patriarch.",
+        "hook": "A deeply loved, habit-driven man who has built his identity around showing up for everyone else: his wife, his four kids, his school, his church, and his community. When a heart condition strips away his physical authority, he has to confront the terrifying possibility that being needed is not the same as being whole.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in a prestige tearjerker or Bryan Cranston in a late-career family drama: a role built on authority, vulnerability, and the slow collapse of a man who has always been the steady one. It gives an actor the chance to play dignity, fear, humor, and physical limitation in the same frame."
+      },
+      {
+        "name": "Skylar Bennett",
+        "role_type": "Supporting",
+        "demographics": "Female, early 40s, white, former athlete/coaching figure, wife and mother.",
+        "hook": "Skylar is the emotional spine of the household: practical, affectionate, and quietly formidable when the family starts to fracture under pressure. Her private grief and her public steadiness make her the person everyone leans on, even as she is the one most visibly carrying the loss.",
+        "why_actor_wants_this": "This is the kind of role that gave Laura Linney in The Savages or Patricia Clarkson in Pieces of April its emotional authority: a woman whose restraint is the performance, and whose breaking points land because she has held the line so long. It offers a strong actor a grounded, adult showcase with real maternal and romantic dimension."
+      },
+      {
+        "name": "Maddie Bennett",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 20s to 30s, white, adult daughter living out of state.",
+        "hook": "Maddie arrives as the daughter who left, but she becomes the one who can translate the family’s fear into language the younger kids can understand. She carries the emotional perspective of someone who has already lost one parent and is terrified of losing the other.",
+        "why_actor_wants_this": "This is the kind of supporting turn that gave Saoirse Ronan in Brooklyn or Rosemarie DeWitt in Rachel Getting Married its ache: a daughter returning with history, guilt, and love all at once. It gives an actor a clean emotional arc and a few high-impact scenes without needing to carry the whole film."
+      },
+      {
+        "name": "Father Phillips",
+        "role_type": "Supporting",
+        "demographics": "Male, late 70s, Catholic priest, white.",
+        "hook": "Father Phillips is the community’s spiritual witness: calm, familiar, and present at the moments when the family cannot hold itself together. He functions as both ritual guide and emotional anchor, especially in the hospital and funeral material.",
+        "why_actor_wants_this": "This is the kind of role that lets a veteran character actor do what Paul Scofield did in A Man for All Seasons or Brendan Gleeson often does in ensemble dramas: carry moral weight with very little screen time. It is a prestige-supporting part with dignity, authority, and a few memorable ceremonial beats."
+      },
+      {
+        "name": "Jack Monroe",
+        "role_type": "Supporting",
+        "demographics": "Male, early 70s, white, extended family elder.",
+        "hook": "Jack is the older-generation stabilizer who steps in when the Bennett household starts to wobble. He is not flashy, but he is the kind of man whose presence immediately lowers the temperature in a room.",
+        "why_actor_wants_this": "This is the sort of role that gives a seasoned actor the understated authority of Richard Jenkins in The Visitor or Albert Brooks in Drive: a quiet, emotionally literate elder who makes every scene feel safer and sadder at once. It is a strong supporting showcase for restraint and warmth."
+      },
+      {
+        "name": "Renee Monroe",
+        "role_type": "Supporting",
+        "demographics": "Female, early 70s, white, extended family elder.",
+        "hook": "Renee is the maternal counterpart to Jack, offering practical care and emotional containment when the family is overwhelmed. She reads as someone who has seen enough life to know when to speak and when to simply stay.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the lived-in grace of Frances Sternhagen or June Squibb: a woman whose stillness carries history. It gives a performer a chance to be the emotional glue in a family drama without being over-written."
+      },
+      {
+        "name": "Lisa",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 40s, white, extended family member.",
+        "hook": "Lisa is the practical helper in the extended family orbit, the one who can move between caregiving, humor, and logistics without making a show of it. She helps keep the younger kids grounded and gives the family scenes a little oxygen.",
+        "why_actor_wants_this": "This is a useful character-actor role in the vein of Amy Ryan in a family ensemble or Melanie Lynskey in a grounded drama: present, specific, and emotionally legible without needing a big speech. It offers a performer a chance to make a supporting role feel indispensable."
+      },
+      {
+        "name": "Antonio",
+        "role_type": "Supporting",
+        "demographics": "Male, 9-16 across the story, white, one of the twin boys.",
+        "hook": "Antonio is one of the twin sons, old enough to feel the stakes but young enough to still process them through action, loyalty, and imitation. He becomes one of the emotional receivers of Ralph’s legacy, especially in the later family scenes.",
+        "why_actor_wants_this": "This is the kind of youth role that can be memorable if cast well, because it gets to play innocence under pressure rather than broad kid comedy. It gives a young actor a real emotional close-up in a family film context."
+      },
+      {
+        "name": "Angelo",
+        "role_type": "Supporting",
+        "demographics": "Male, 9-16 across the story, white, one of the twin boys.",
+        "hook": "Angelo is the more verbally expressive twin, the one who asks the questions the adults are trying not to answer. He gives the family scenes a child’s directness and a little comic friction without breaking the tone.",
+        "why_actor_wants_this": "This is a strong child-supporting part because it lets a young actor play curiosity, fear, and loyalty in the same beat. It has the kind of naturalistic family-drama material that can make a kid performer stand out."
+      },
+      {
+        "name": "Olivia",
+        "role_type": "Supporting",
+        "demographics": "Female, 7-14 across the story, white, one of the twin girls.",
+        "hook": "Olivia is one of the younger daughters, emotionally open and observant, often the first to register the family’s fear. She helps externalize the stakes without needing speeches.",
+        "why_actor_wants_this": "This is the kind of role that gives a young actor a clean emotional lane: reaction, attachment, and the ability to break the audience’s heart in a single look. It is a useful family-drama child part with real visibility."
+      },
+      {
+        "name": "Hannah",
+        "role_type": "Supporting",
+        "demographics": "Female, 7-14 across the story, white, one of the twin girls.",
+        "hook": "Hannah is the quieter twin girl, often functioning as the emotional echo in the room. She helps round out the family portrait and gives the script a second child perspective that is distinct from Olivia’s openness.",
+        "why_actor_wants_this": "This is a solid child role for an actor who can play stillness and reaction rather than big behavior. It offers the kind of understated emotional work that family dramas use to great effect."
+      },
+      {
+        "name": "Dr. Anckles",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, physician, white.",
+        "hook": "Dr. Anckles is the offscreen institutional voice of the school district, a reminder that Ralph’s life is larger than the hospital room. He is functional but useful as a sign of the outside world continuing to move.",
+        "why_actor_wants_this": "This is a small but clean professional role, the kind of part that lets a character actor bring authority to a single scene. It is not a showcase, but it is a credible working-actor slot."
+      },
+      {
+        "name": "Cardiologist",
+        "role_type": "Supporting",
+        "demographics": "Any gender, 40s-60s, physician.",
+        "hook": "The cardiologist is the blunt truth-teller who keeps translating Ralph’s condition into consequences the family can understand. The role functions as the story’s medical reality check and later as the emotional pressure valve.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a few high-stakes scenes with authority and moral force, similar to the doctor roles in prestige hospital dramas. It is a compact but important part for a strong character actor."
+      },
+      {
+        "name": "Therapist",
+        "role_type": "Supporting",
+        "demographics": "Any gender, 40s, rehab professional.",
+        "hook": "The therapist is the calm, practical guide in the rehab material, there to measure progress while Ralph resists the new limits of his body. The role helps dramatize the gap between who Ralph was and who he is now.",
+        "why_actor_wants_this": "This is a functional but useful support role for an actor who can play empathy without sentimentality. It gives the performer a clean professional presence in a key recovery sequence."
+      },
+      {
+        "name": "Father Jason Michaels",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-60s, Catholic priest, white.",
+        "hook": "Father Jason Michaels is the celebrant at the funeral mass, carrying the ritual weight of the final goodbye. He is less character than ceremonial authority, but he helps give the ending its liturgical shape.",
+        "why_actor_wants_this": "This is a brief but dignified clergy role, the kind of part a veteran actor can elevate with presence alone. It is a small prestige-supporting slot rather than a major dramatic opportunity."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 11,
-        "leads": 2,
+        "speaking_roles": 15,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Two boys and two girls in the 7-9 range",
-          "One adult daughter in her 40s",
-          "Older Catholic priest role",
-          "Family ensemble with multiple supporting adults"
+          "two sets of twins",
+          "multiple child roles across a wide age span",
+          "late-50s male lead with sustained emotional and physical deterioration",
+          "older Catholic priest roles",
+          "extended family ensemble"
         ]
       },
       "locations": {
         "distinct_count": 10,
-        "interior_exterior_ratio": "mostly interior",
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
         "period_or_contemporary": "contemporary",
         "notable_requirements": [
           "church hall and sanctuary",
           "hospital ER, room, hallway, rehab center",
-          "family home",
-          "gym/basketball court",
+          "family home and parents' house",
           "cemetery",
-          "parents' house/storage room"
+          "school gym"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visual effects requirements beyond basic monitor/medical display inserts.",
-        "stunts_level": "none",
-        "sfx_needs": "Medical alarms, CPR, flatline monitor, ambulance lights, and practical hospital action.",
+        "vfx_details": "No visible VFX requirements beyond standard medical monitors and screen inserts.",
+        "stunts_level": "minor",
+        "sfx_needs": "Medical alarms, CPR/defibrillator moments, practical hospital and funeral effects.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "\"I Will Always Love You\" is specifically named for the final dance."
+          "detail": "\"I Will Always Love You\" is specifically named for the final dance sequence."
         },
         {
           "type": "named_music",
-          "detail": "\"In Paradisum\" is specifically named and sung during the funeral mass."
+          "detail": "\"In Paradisum\" is specifically named and performed in the funeral mass."
         },
         {
           "type": "brand",
-          "detail": "New England Patriots, Indiana Fever, and Bulls references are used in Ralph's memorabilia."
+          "detail": "New England Patriots is prominently referenced in Ralph's burial instructions and memorabilia."
         },
         {
           "type": "brand",
-          "detail": "Transformers and Star Wars are named in storage-room labels."
+          "detail": "Indiana Fever is prominently referenced via Skylar's jersey reveal."
+        },
+        {
+          "type": "brand",
+          "detail": "Bulls is referenced in the family memorabilia sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Star Wars and Transformers are referenced in the storage-room memorabilia sequence."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming or faith-forward theatrical/limited release",
-        "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Feature release with inspirational-drama appeal; strongest as festival-to-platform, specialty theatrical, or faith/community rollout."
+        "recommended_lane": "streaming or premium cable feature drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Standalone feature release; emotional family drama with faith and sports texture."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary interiors, a handful of practical exteriors, and no VFX-heavy set pieces keep the film in contained-feature territory."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary, mostly contained to homes, church spaces, hospital interiors, a gym, and a cemetery."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a late-50s actor who can carry prolonged illness, authority, and emotional vulnerability, while the two sets of twins and the child ensemble add a real casting lift."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script is emotionally legible, but the repeated hospital beats and the very explicit faith/funeral material make the final buyer conversation more lane-specific than broad."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Farewell",
+          "year": 2019,
+          "why_it_comps": "A family-centered emotional feature built around illness, generational love, and the rituals people use to survive loss."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The family ensemble includes two leads, four child roles, and several supporting adults, with the father and mother roles carrying the emotional center."
+        {
+          "title": "The Savages",
+          "year": 2007,
+          "why_it_comps": "A grounded adult family drama where caregiving, mortality, and sibling/family logistics drive the emotional engine."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through about ten distinct locations, but they are all practical contemporary spaces rather than build-heavy or remote settings."
+        {
+          "title": "Ordinary People",
+          "year": 1980,
+          "why_it_comps": "A prestige family drama that finds its power in grief, restraint, and the way a household reorganizes around trauma."
         },
-        "content": {
-          "level": "medium",
-          "note": "Medical crisis, death, grief, and last rites are central, but the material stays within a PG-13 emotional register."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "Several named music cues and brand references appear on the page, plus the funeral liturgy language may invite clearance review."
+        {
+          "title": "Pieces of April",
+          "year": 2003,
+          "why_it_comps": "The domestic ensemble warmth and holiday-adjacent family texture echo the script’s community-first emotional register."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to faith-friendly, family-centered tearjerkers with a strong caregiving and loss component.",
+        "demographics": "Skews 35+, female-leaning but not exclusive, with a secondary older audience and a meaningful church/community audience.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary contained drama with a modest cast, practical locations, and no visual-effects burden; hospital and church access will be the main scheduling variables."
+      },
+      "lane_fit": {
+        "lane": "faith-adjacent emotional indie drama",
+        "types_of_buyers": [
+          "specialty distributors",
+          "streamer drama development execs",
+          "prestige indie producers",
+          "faith-friendly acquisition teams",
+          "adult-skewing theatrical buyers"
+        ],
+        "detail": "The script sits in a lane where sincerity is the product: a small-town, family-first drama with church texture, illness stakes, and a clear cathartic ending. It is most natural for buyers who want emotional accessibility without needing genre mechanics."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or spinoff vector; the emotional payoff is tied to Ralph's singular arc and the family's closure."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The faith setting is story-active.",
-          "what_it_means": "The church, priest, prayer, last rites, and funeral mass are not decorative; they are part of the dramatic engine, which gives the film a built-in audience lane and a clear emotional identity. Faith-forward buyers, Catholic audiences, and actors who want material with spiritual gravity will all recognize the slot immediately.",
-          "evidence": "Father Phillips at the spaghetti dinner, the anointing of the sick, the prayer in the hallway, and the full funeral mass at St. Andrew’s.",
+          "dimension_or_area": "The family unit is instantly legible.",
+          "what_it_means": "That clarity makes the movie easy to sell in one sentence and easy for audiences to emotionally enter without a lot of setup. It also gives casting a clean target: a believable, lived-in family ensemble with immediate chemistry.",
+          "evidence": "The opening breakfast chaos, the 'two sets of twins' joke, and the hospital-room cluster all establish the household fast.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ralph is a playable patriarch role.",
-          "what_it_means": "The role gives an actor authority, warmth, humor, fear, and physical vulnerability in one package, which is exactly the kind of part that can anchor a prestige-leaning emotional drama. Mid-career leading men who want a father-role showcase and buyers looking for a trustworthy center will see immediate value.",
-          "evidence": "Ralph running the school buildings, calming the kids, collapsing at dinner, resisting rehab, and finally dancing with Skylar.",
+          "dimension_or_area": "The 'left side / strong side' motif is ownable.",
+          "what_it_means": "A recurring private language between spouses gives the film a memorable emotional signature and a marketing-friendly phrase that can travel beyond the script. Buyers like motifs that can be repeated in trailers, posters, and word-of-mouth without feeling manufactured.",
+          "evidence": "Ralph and Skylar repeatedly use 'left side' and 'strong side' from the first scenes through the final breath.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Skylar has a strong emotional counterweight.",
-          "what_it_means": "Skylar is not just support; she becomes the keeper of the family’s emotional continuity, which creates a second lead performance that can carry the movie alongside Ralph. Actresses who excel at grounded resilience and buyers who like a two-hander emotional spine will respond to that balance.",
-          "evidence": "Skylar holding the house together, breaking down with Jack and Renee, guiding the kids through the crisis, and carrying the final legacy reveal.",
+          "dimension_or_area": "It offers a strong lead role for a mature actor.",
+          "what_it_means": "Ralph is the kind of part that can attract a respected name looking for a late-career showcase with emotional range and dignity. That matters because the film’s commercial ceiling rises if the lead is cast as a recognizable, trusted presence.",
+          "evidence": "Ralph moves from school administrator and father to patient, then to a man confronting mortality and identity loss.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The family ensemble has usable chemistry.",
-          "what_it_means": "The parents, children, daughter, and extended family create multiple playable combinations, which helps the movie feel communal rather than single-character bound. That makes it attractive to producers who want an ensemble that can populate posters, trailers, and emotional beats without requiring a huge cast footprint.",
-          "evidence": "The hospital room groupings, the hallway prayer circle, the home support scenes, and the final family watch party around the flash drive.",
+          "dimension_or_area": "The church/community setting gives it a ready-made audience lane.",
+          "what_it_means": "The faith texture and communal rituals make the film legible to a specific audience segment that often responds strongly to earnest emotional storytelling. That creates a clearer buyer conversation than a generic family drama would.",
+          "evidence": "The spaghetti dinner, Father Phillips' prayers, last rites, funeral mass, and cemetery procession all anchor the story in church life.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The 'left side / strong side' motif gives the film a signature.",
-          "what_it_means": "A repeated phrase that evolves from private joke to emotional code gives the movie a memorable hook for marketing and audience recall. It also gives the lead pair a shared language that can be used in trailers, posters, and word-of-mouth conversation.",
-          "evidence": "Ralph and Skylar repeatedly use 'left side' and 'strong side,' including the final breath and the closing dance.",
+          "dimension_or_area": "The ending is built for catharsis.",
+          "what_it_means": "The final dance, the funeral reveal, and the flash-drive epilogue give the film a strong emotional release pattern that can drive audience tears and post-screening conversation. That kind of payoff is valuable in the indie drama lane because it creates a clear reason to recommend the movie.",
+          "evidence": "The 'one last dance' sequence, the flatline, and the later discovery of Ralph's prepared files all stack the ending.",
           "source": "script"
-        },
-        {
-          "dimension_or_area": "The final flash-drive reveal adds a legacy engine.",
-          "what_it_means": "The posthumous files turn the ending into an inheritance story, which broadens the movie beyond grief into memory, identity, and family mythology. That kind of reveal gives the film a second emotional payoff for audiences who stay for the full ride and a clean final beat for buyers to sell.",
-          "evidence": "The folder labeled 'IF YOU’RE WATCHING THIS...,' the funeral instructions, the hidden memorabilia, and the Indiana Fever jersey reveal.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The movie is producible without spectacle.",
-          "what_it_means": "The story’s emotional scale comes from performance and ritual, not expensive set pieces, which keeps the budget in a very manageable lane. That makes it attractive to indie financiers, faith-based distributors, and streamers looking for contained adult drama with clear audience identity.",
-          "evidence": "Hospital rooms, church interiors, a home, a gym, a cemetery, and a rehab center carry nearly all of the action.",
-          "source": "production"
         }
       ],
-      "headline": "This is a contained, performance-forward faith drama with a clear emotional engine: a beloved father and husband running out of time, and a family refusing to let his love disappear with him. The church setting, the 'left side / strong side' motif, and the final legacy reveal give the movie a memorable identity that can travel well with audiences who want heartfelt, values-driven storytelling."
+      "headline": "This is a contained, emotionally direct family drama with a clear tearjerker engine, a marketable central motif, and a lead role that could attract a respected mature actor. The production footprint stays modest while the church/community texture gives it a defined lane for specialty buyers and streamer drama teams looking for sincere, adult-skewing material."
     },
-    "lead_characters": [
-      {
-        "name": "Ralph Bennett",
-        "role_type": "Lead",
-        "demographics": "Male · late 50s",
-        "hook": "Ralph is the kind of man a town leans on without ever asking him to announce it: school administrator, husband, father, coach, and quiet center of gravity. He’s warm, funny, physically capable, and deeply identified with being useful, which makes the heart condition feel like an identity crisis as much as a medical one.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in *A Beautiful Day in the Neighborhood* and Bryan Cranston in *The Upside* — a role built on decency, authority, and the slow surrender of control. Actors who want to play a beloved everyman with emotional range, physical limitation, and a final-act catharsis will chase this hard."
-      },
-      {
-        "name": "Skylar Bennett",
-        "role_type": "Lead",
-        "demographics": "Female · early 40s",
-        "hook": "Skylar is steady without being passive, loving without being ornamental, and strong enough to hold a family together while quietly breaking inside. She carries the history of having been hurt, rebuilt, and chosen, which gives her a lived-in emotional depth that keeps expanding as the story moves forward.",
-        "why_actor_wants_this": "This is the emotional command center territory of Toni Collette in *Hereditary* and Julia Roberts in *August: Osage County* — a woman who has to carry grief, authority, and private collapse in the same frame. Actresses looking for a grounded, adult lead with maternal force and a final-act legacy payoff will see a lot to play."
-      },
-      {
-        "name": "Maddie Bennett",
-        "role_type": "Supporting",
-        "demographics": "Female · mid 40s",
-        "hook": "Maddie arrives as the daughter who has built a life elsewhere, but the crisis pulls her back into the family’s emotional center. She’s practical, observant, and quietly wounded by distance, which makes her the bridge between the old family story and the one that survives it.",
-        "why_actor_wants_this": "This is the kind of grounded adult-daughter material Laura Linney had in *The Savages* — a role that plays restraint, filial duty, and emotional intelligence without needing to dominate every scene. Character actresses who want a strong supporting turn with a clear emotional function and a late-story inheritance reveal will be interested."
-      },
-      {
-        "name": "Father Phillips",
-        "role_type": "Supporting",
-        "demographics": "Male · late 70s",
-        "hook": "Father Phillips is the town priest who knows everybody’s history and carries it with calm authority. He’s not just ceremonial; he’s the spiritual witness to Ralph’s life, which gives him the weight of a man who has seen generations come and go.",
-        "why_actor_wants_this": "This is the kind of dignified supporting role that earned actors like Mark Margolis in *The Wrestler* or Brendan Gleeson in *Calvary* their most memorable late-career moments — a man whose stillness carries moral authority. Veteran character actors who can bring warmth, gravity, and ritual presence will be drawn to it."
-      },
-      {
-        "name": "Antonio Bennett",
-        "role_type": "Supporting",
-        "demographics": "Male · 9 at present, later 16",
-        "hook": "Antonio is one of the twin boys who wants to be brave before he fully understands what bravery costs. He’s active, curious, and emotionally direct, which makes him a clean conduit for the family’s fear and the father’s legacy.",
-        "why_actor_wants_this": "This is the kind of child-to-teen emotional arc seen in *The Pursuit of Happyness* or *Manchester by the Sea*’s younger-family material — a role that lets a young performer play confusion, loyalty, and growing responsibility. Casting directors looking for a natural kid who can age into a later payoff will notice him."
-      },
-      {
-        "name": "Angelo Bennett",
-        "role_type": "Supporting",
-        "demographics": "Male · 9 at present, later 16",
-        "hook": "Angelo is the more openly anxious twin, the one who asks the question everybody else is trying not to ask. He gives the family scenes a direct emotional pulse and becomes one of the clearest mirrors for Ralph’s fear and courage.",
-        "why_actor_wants_this": "This is the kind of vulnerable young-role territory that gave Jacob Tremblay in *Room* and Noah Jupe in *Honey Boy* their early emotional showcases — a part that lets a child actor play fear, love, and dawning understanding. Families and casting teams looking for a boy who can land honest emotional beats will respond to him."
-      },
-      {
-        "name": "Olivia Bennett",
-        "role_type": "Supporting",
-        "demographics": "Female · 7 at present, later 14",
-        "hook": "Olivia is the sharp little observer in the house, the one who notices the emotional weather even when nobody says it out loud. Her directness gives the family scenes a clean, human truth and keeps the younger generation from feeling decorative.",
-        "why_actor_wants_this": "This is the kind of child-role sweetness and clarity seen in *Little Miss Sunshine* and *The Florida Project* — a part that lets a young performer be funny, perceptive, and emotionally present without overplaying. Casting teams looking for a natural child actor with strong reaction work will like the slot."
-      },
-      {
-        "name": "Hannah Bennett",
-        "role_type": "Supporting",
-        "demographics": "Female · 7 at present, later 14",
-        "hook": "Hannah is the most emotionally open of the younger kids, the one who reaches for comfort first and gives the audience an immediate access point into the family’s fear. She helps turn the crisis into something intimate rather than abstract.",
-        "why_actor_wants_this": "This is the kind of child performance space that made Abigail Breslin in *Little Miss Sunshine* and Brooklynn Prince in *The Florida Project* so memorable — a role that can be small on dialogue but big on feeling. Young actors who can cry, listen, and land a room’s emotional shift will be drawn to it."
-      },
-      {
-        "name": "Jack Monroe",
-        "role_type": "Supporting",
-        "demographics": "Male · early 70s",
-        "hook": "Jack is the older family patriarch who steps in with calm, practical authority when the Bennett household starts to fracture. He reads as a man who has lived through enough to know that presence matters more than speeches.",
-        "why_actor_wants_this": "This is the kind of warm elder-support role that actors like Richard Jenkins in *The Visitor* or Glynn Turman in *Ma Rainey’s Black Bottom* make memorable with very little screen time. Veteran actors who can bring steadiness and lived-in family authority will see the appeal immediately."
-      },
-      {
-        "name": "Renee Monroe",
-        "role_type": "Supporting",
-        "demographics": "Female · early 70s",
-        "hook": "Renee is the maternal counterpart in the Monroe family, offering comfort without sentimentality. She helps widen the movie’s emotional circle and gives the family scenes another generational layer of care.",
-        "why_actor_wants_this": "This is the kind of supporting maternal role that gives actresses like Frances Sternhagen in *Misery* or June Squibb in *Nebraska* a chance to make a scene feel lived-in and specific. Character actresses who excel at warmth, timing, and quiet authority will be interested."
-      },
-      {
-        "name": "Lisa Monroe",
-        "role_type": "Supporting",
-        "demographics": "Female · mid 40s",
-        "hook": "Lisa is the sibling who helps translate crisis into action, moving between the adults and the children with practical ease. She’s a useful, grounded presence who keeps the family machine functioning when emotions are high.",
-        "why_actor_wants_this": "This is the kind of functional-but-colorful family-support role that actors like Amy Ryan in *The Office* or Carrie Coon in *The Leftovers* can elevate with specificity. Ensemble players who like playing the competent one with emotional undercurrents will find a clean fit."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a faith-forward family drama that feels lived-in, not sanitized.",
-        "fit_profile": "Established indie directors with at least one or two features, or TV directors moving into features, who already work comfortably with performance-first storytelling and emotionally specific domestic spaces. The material rewards restraint, ritual, and clean emotional escalation more than stylistic pyrotechnics.",
-        "detail": "The right director gets to stage prayer, illness, family conflict, and legacy in a way that feels intimate and cinematic without needing spectacle. It will appeal to filmmakers who know how to get tears from behavior, not speeches, and who can make a church hall, hospital room, and family kitchen feel like a complete world."
-      },
-      "buyer_appeal": {
-        "tier": "$2-8M feature",
-        "lane": "faith-based drama / inspirational family drama / specialty streamer lane",
-        "detail": "The contained locations and contemporary setting mean it can be packaged around one strong lead pair and a capable supporting ensemble rather than expensive attachments. The faith audience, Catholic ritual elements, and clear emotional payoff give it a secondary runway beyond standard indie drama buyers."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The script repeats the same hospital beat pattern.",
+          "detail": "Several scenes cycle through Ralph in bed, family reassurance, a doctor update, and another emotional reset. That repetition lowers momentum in the middle and makes the film feel longer than its premise needs to be.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The ending is heavily telegraphed.",
+          "detail": "Once the story moves into the final decline, the film signals its destination very clearly: last rites, flatline, funeral, epilogue. That predictability is not fatal in this lane, but it does reduce surprise and narrows the upside to pure emotional payoff.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting family members are more functional than vivid.",
+          "detail": "Maddie, Jack, Renee, Lisa, and the children all serve the emotional machine well, but most of them are defined by their relationship to Ralph rather than by sharply differentiated wants. That keeps the ensemble warm, but it limits long-term memorability and actor-specific heat outside the lead roles.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The faith lane narrows the buyer pool.",
+          "detail": "Father Phillips, last rites, the funeral mass, and the devotional framing make the film very specific in its spiritual register. For some buyers that is an asset; for others it makes the project feel more audience-defined than broadly programmable.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The final act leans on sentiment over complication.",
+          "detail": "The flash drive, memorabilia reveal, and funeral sequence are emotionally effective, but they resolve the film through affirmation rather than a more surprising dramatic turn. That makes the movie accessible, though it also keeps it in familiar inspirational-drama territory.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is middle-act repetition and a final stretch that is emotionally clear but not especially surprising. The script’s sincerity is a strength, but the same sincerity also keeps it in a narrow, faith-adjacent family-drama lane where buyers will be looking for cast and audience fit more than novelty."
     },
-    "considerations": [
-      {
-        "area": "The middle leans on repeated hospital conversations.",
-        "detail": "A next pass could look at whether a few of the bedside exchanges can be combined or redistributed so each one turns the emotional screw in a different way. The story already has strong forward motion; the opportunity is to make every hospital beat reveal something new rather than restating the same fear in slightly different language.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The final stretch carries a lot of emotional functions.",
-        "detail": "The death, the flash drive, the hidden memorabilia, the funeral mass, the cemetery, and the seven-years-later button all land in a fairly compressed run. One lever would be to protect the final emotional crescendo by considering whether one of those legacy beats can be folded into another so the ending feels even more inevitable.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The child ensemble is central to the movie’s heart.",
-        "detail": "Because four young performers are carrying recurring emotional beats, the casting process will matter as much as the page. The version of the production that locks in natural, reactive kids early will protect the family chemistry that the whole movie depends on.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The music cues are doing real work.",
-        "detail": "The final dance and funeral sequence both depend on named songs and liturgical music, so a producer should plan early for clearance or substitution strategy. The story can absolutely hold its emotional shape with different music, but the current draft should be treated as clearance-aware.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The story lives in practical contemporary spaces.",
-        "detail": "This is a strong fit for a modest-budget production plan because the church, hospital, home, gym, and cemetery are all accessible locations rather than build-heavy environments. The cleanest version of the package keeps the footprint tight and lets the performances carry the value on screen.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 68.7,
+  "weightedScore": 62,
   "tier": "Optionable",
-  "inputTokens": 26207,
-  "outputTokens": 5129,
-  "cost": 0.04273575,
+  "inputTokens": 28612,
+  "outputTokens": 5616,
+  "cost": 0.046731,
   "declaredFormat": "Feature film"
 }

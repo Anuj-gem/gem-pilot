@@ -2,218 +2,263 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Romantic drama",
-      "genre_tags": [
-        "coming-of-age",
-        "melodrama"
+      "genre_primary": "Romance",
+      "genre_secondary": [
+        "Drama"
       ],
-      "tone": "Poetic, mournful, intimate"
+      "tone": "lyrical",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "grief",
+        "love",
+        "coming-of-age",
+        "poetry",
+        "bracelet",
+        "high-school"
+      ]
     },
-    "positioning_hook": "A lonely teenage poet falls hard for the first girl who sees him, then has to carry their love through illness, grief, and the promise he made to remember her.",
+    "positioning_hook": "A lonely teenage poet falls hard for the one girl who sees him, then has to survive the kind of loss that turns first love into a lifelong wound.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The emotional lane is clear and accessible, especially for viewers who respond to first-love tragedy and grief-forward romance. Its audience is more specific than broad four-quadrant fare, but the central promise is easy to understand and emotionally legible."
+        "reasoning": "The emotional lane is clear and evergreen: first love, grief, and memory. The challenge is that the script plays as a very intimate, poetic romance with limited external engine, so the audience is real but narrower than a broad commercial feature."
       },
       "conceptual_hook_clarity": {
-        "score": 5,
-        "reasoning": "The core relationship lands quickly: Pierre, Celia, poetry, and a loss that reshapes him. The script is more lyrical than engine-driven, so the hook is felt more as mood and emotional arc than as a sharply articulated premise."
+        "score": 6,
+        "reasoning": "The central premise lands quickly: Pierre is isolated, Celia enters his life, and the bracelet/poem motif ties the relationship to the loss. The hook is understandable, but the script is more mood-and-montage than a sharply articulated feature engine."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "Pierre has a clear inner life as an isolated, sensitive writer, and Celia functions as the luminous catalyst who opens him up. The characters are emotionally readable, though the script keeps them in broad symbolic territory rather than giving them many surprising behavioral turns."
+        "reasoning": "Pierre has a clear emotional wound and Celia has warmth and initiative, which gives the relationship a pulse. They are more archetypal than fully individualized on the page, so the roles function better as a showcase than as especially durable star vehicles."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The poem-as-emotional-architecture approach gives the script a distinct authorial signature, and the visual motif of the bracelet and color-coded mourning adds a personal stamp. The execution is still familiar in its romantic-tragedy shape, but the presentation has enough voice to stand apart from a standard teen love story."
+        "reasoning": "The poem-forward structure and visualized memory fragments give the script a distinct authorial register. That said, the underlying story is a familiar young-love-to-loss arc, so the boldness lives more in presentation than in premise."
       },
       "narrative_momentum_engagement": {
         "score": 4,
-        "reasoning": "The script moves as a sequence of emotional images and memory beats rather than a steadily escalating feature engine. The hospital reveal and funeral speech provide a destination, but the middle plays more like a montage of feeling than a propulsive dramatic build."
+        "reasoning": "The script moves in emotional beats rather than escalating dramatic turns, with long stretches of lyrical montage and reflective voiceover. The church eulogy and coffin reveal the destination, but the middle section has limited forward pressure."
       },
       "resonant_originality": {
-        "score": 6,
-        "reasoning": "A shy poet, a bracelet motif, and a grief-colored love story are familiar ingredients, but the script arranges them with a personal, elegiac sensibility. The poem and the color language give it a recognizable emotional identity even when the underlying romance framework is familiar."
+        "score": 5,
+        "reasoning": "The bracelet, the poem, and the rain motif create a recognizable emotional signature. The effect is sincere, but the story itself remains close to a familiar tragic-romance template."
       },
       "world_density_and_texture": {
         "score": 3,
-        "reasoning": "The world is mostly a container for the relationship: classroom, school grounds, field, beach, prom, hospital, church. Those spaces support the emotion, but they do not yet generate much social texture or a larger lived-in ecosystem around Pierre and Celia."
+        "reasoning": "The world is essentially a school, a field, a hospital, and a church, used as emotional backdrops rather than a textured social ecosystem. There is little sense of a larger environment generating story beyond the central relationship."
       },
       "tonal_specificity": {
         "score": 6,
-        "reasoning": "The tone is consistently wistful and mournful, with a strong poetic register and recurring musical cues. It has a clear identity, though it stays in one emotional key for most of the script rather than moving through a wider tonal range."
+        "reasoning": "The script has a consistent elegiac, poetic tone, and it commits to that register from the opening voiceover through the funeral. The tone is distinctive in texture, though it can feel repetitive because the same emotional note is sustained almost throughout."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "The bracelet, the opening flashes, and Pierre’s voice-over suggest a deeper memory structure beneath the surface romance. The script hints at a larger emotional backstory, but most of that depth is implied rather than dramatized on the page."
+        "reasoning": "The grief framing and recurring imagery suggest a deeper interior life for Pierre, especially around memory and self-worth. On the page, though, that depth is implied more than dramatized, so the script hints at more than it fully delivers."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 2,
-        "reasoning": "This is almost entirely a two-character emotional piece, with Pierre and Celia carrying the full weight. The supporting world is minimal, so the script lives or dies on the central pairing rather than on a broader relationship web."
+        "score": 3,
+        "reasoning": "This is fundamentally a two-character romance with very limited supporting interaction. Pierre and Celia carry the piece, but there is not much ensemble energy or recurring relationship web beyond them."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Pierre",
+        "role_type": "Lead",
+        "demographics": "Teenage male, likely 16-17, introverted high-school student, emotionally sensitive, writer/poet.",
+        "hook": "Pierre is the isolated, self-erasing boy at the center of the piece: awkward in class, defensive when someone gets close, and quietly desperate to be seen. His poetry is his private language, and Celia becomes the first person who treats that inner life as something worth loving; after her loss, he turns grief into ritual, memory, and voiceover.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in Call Me by Your Name — a tender, inward lead whose face has to carry longing, embarrassment, and heartbreak in close-up. It gives an actor the chance to play silence as subtext and then land the emotional release in the funeral speech and final voiceover."
+      },
+      {
+        "name": "Celia",
+        "role_type": "Supporting",
+        "demographics": "Teenage female, likely 16-17, warm, socially confident, emotionally perceptive.",
+        "hook": "Celia is the bright force who notices Pierre before anyone else does, and she does it with ease rather than pity. She is written as the emotional catalyst of the story — playful, encouraging, and romantic — and then becomes the memory the film keeps returning to after her death.",
+        "why_actor_wants_this": "This is the kind of luminous, scene-stealing part that gave Rachel McAdams in The Notebook or Hailee Steinfeld in The Edge of Seventeen a chance to define the emotional temperature of the movie. The role offers charm, warmth, and the tragic afterimage that makes the audience feel the loss."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 2,
-        "leads": 2,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Teen/young adult leads",
-          "Strong poetic voice required for Pierre",
-          "Celia needs warmth and ease in intimate dialogue"
+          "Teenage lead and teenage female co-star",
+          "No specialty physical requirements",
+          "Age-specific high-school casting"
         ]
       },
       "locations": {
-        "distinct_count": 6,
-        "interior_exterior_ratio": "roughly 1:1",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 5,
+        "interior_exterior_ratio": "roughly 50/50",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "School classroom",
-          "School grounds",
-          "Bedroom",
-          "Hospital room",
-          "Church interior",
-          "Field/beach/promenade-style exterior inserts"
+          "school classroom",
+          "school grounds",
+          "bedroom",
+          "hospital room",
+          "church funeral setting"
         ]
       },
       "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Simple title-card style transitions, match cuts, floating bracelet imagery, and stylized memory flashes.",
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirement beyond simple title/transition styling if desired.",
         "stunts_level": "none",
-        "sfx_needs": "Rain effects in church sequence; practical hospital and funeral dressing.",
+        "sfx_needs": "Minimal practical needs: rain effect, coffin/funeral dressing, music playback, and montage styling.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Novo Amor tracks are specifically named: 'Anchor' and 'Seneca'."
+          "detail": "Novo Amor's 'Anchor'"
+        },
+        {
+          "type": "named_music",
+          "detail": "Novo Amor's 'Seneca'"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming romance drama / festival-to-platform feature",
+        "recommended_lane": "streaming",
         "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Feature release model: festival launch or direct-to-streaming emotional drama."
+        "series_engine_or_release_model": "Feature release model: specialty streaming debut or limited theatrical play for a young-adult romance/drama."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, small cast, five practical locations, no VFX, no stunts, and minimal effects work — this sits comfortably in a low-cost feature package."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary, intimate, and largely built from a small cast and modest locations."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a teenager or very young-looking actor who can carry interior poetry, awkward comedy, and grief without flattening into one note. Celia also needs immediate warmth and natural charisma to make the relationship feel lived-in."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script is built around mood, voiceover, and montage, so the main development conversation is whether the emotional beats can carry feature length without a stronger dramatic engine. The funeral reveal and poem motif give it shape, but the middle section remains light on escalation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Fault in Our Stars",
+          "year": 2014,
+          "why_it_comps": "Shares the young-love-through-loss emotional lane and the audience promise of romance that turns into grief."
         },
-        "cast": {
-          "level": "low",
-          "note": "Two lead roles carry almost everything, with no child ensemble or large supporting roster."
+        {
+          "title": "A Walk to Remember",
+          "year": 2002,
+          "why_it_comps": "Matches the earnest, tearjerker romance structure where a gentle relationship is defined by mortality and memory."
         },
-        "location": {
-          "level": "low",
-          "note": "A handful of contemporary interiors and exteriors, with no special travel or build requirements."
+        {
+          "title": "Call Me by Your Name",
+          "year": 2017,
+          "why_it_comps": "Comps on lyrical intimacy, first-love subjectivity, and the way memory becomes the real dramatic engine."
         },
-        "content": {
-          "level": "low",
-          "note": "Emotionally heavy material, but the content stays within romance, illness, and grief."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The named Novo Amor songs create a clear music-clearance item if the soundtrack approach is preserved."
+        {
+          "title": "The Spectacular Now",
+          "year": 2013,
+          "why_it_comps": "Shares the teen-romance realism and the focus on an emotionally fragile young lead whose inner life drives the movie."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who respond to earnest young-adult romance and grief-forward love stories, especially audiences that like emotional, music-driven features.",
+        "demographics": "Teens through adults 35+, with a strong skew toward women and young adults who watch relationship-driven streaming dramas.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$500K-$2M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Small cast, contemporary settings, and no VFX keep this in indie-feature territory; music licensing for the Novo Amor tracks is the main variable."
+      },
+      "lane_fit": {
+        "lane": "elevated young-adult romance",
+        "types_of_buyers": [
+          "specialty streamers looking for emotional date-night titles",
+          "indie distributors with a young-adult romance lane",
+          "producers seeking low-cost, actor-forward prestige romance",
+          "financiers who like music-driven tearjerkers"
+        ],
+        "detail": "This sits naturally beside intimate, emotionally legible romance features that sell on feeling, soundtrack, and a strong central performance rather than plot machinery."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the story resolves as a self-contained romance-and-loss piece with no clear franchise or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The poem is the engine.",
-          "what_it_means": "The script has a built-in signature that can make the film feel authored rather than generic, which is valuable for festival-facing buyers and streamers looking for a distinct emotional voice. Actors who want material with lyrical monologue space and directors who like performance-led storytelling will be drawn to that center of gravity.",
-          "evidence": "Pierre’s notebook poem is read aloud, then echoed later in the church speech and Celia’s piano/singing coda.",
+          "dimension_or_area": "The poem is the movie's signature device.",
+          "what_it_means": "That gives the project a clear marketing and emotional hook: a romance defined by a recurring piece of writing, memory, and music. Buyers who want a lyrical, youth-skewing tearjerker can immediately understand the promise.",
+          "evidence": "Celia reads Pierre's poem, the poem returns in voiceover, and the final funeral speech circles back to the same language.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The bracelet gives the story a clean visual motif.",
-          "what_it_means": "A recurring object that survives across the opening, the romance, and the ending gives the film a simple marketing image and an easy emotional anchor. That kind of motif is attractive to buyers because it helps the movie feel cohesive and trailer-friendly without needing a large-scale premise.",
-          "evidence": "The bracelet appears in the opening, is gifted in the memory montage, and returns in the final floating image.",
+          "dimension_or_area": "The bracelet creates a clean visual motif.",
+          "what_it_means": "A simple recurring object helps the film feel cohesive and gives the audience something to remember after the emotional beats. That kind of motif is useful for posters, trailers, and the kind of word-of-mouth that comes from a strong image.",
+          "evidence": "The bracelet appears at the start, is gifted in the relationship montage, and returns in the final floating image.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The mourning palette is a direct storytelling device.",
-          "what_it_means": "Pierre’s refusal to wear black and his choice of maroons, greens, and yellow turns grief into a visual concept, which gives the film a memorable identity in a crowded romance lane. Costume-forward directors and design-conscious producers will see a clear opportunity to make emotion visible on screen.",
-          "evidence": "The church speech explicitly explains his color choices as a response to Celia and the rain.",
-          "source": "script"
+          "dimension_or_area": "The production footprint is very lean.",
+          "what_it_means": "This is the kind of feature that can be mounted without heavy infrastructure, which lowers buyer risk and broadens the pool of indie financiers and streaming buyers. A director can make a strong calling-card film here without needing scale.",
+          "evidence": "The script lives in a bedroom, classroom, school grounds, hospital room, and church, with no VFX or stunt load.",
+          "source": "production"
         },
         {
-          "dimension_or_area": "The cast footprint is extremely lean.",
-          "what_it_means": "A two-lead feature with minimal supporting load is attractive for contained-budget financing and for actors who want a showcase built almost entirely around chemistry and emotional access. Buyers looking for a modestly priced, performance-first romance can understand the package immediately.",
-          "evidence": "Pierre and Celia carry the only meaningful dialogue scenes; the rest is memory, voice-over, and visual montage.",
-          "source": "both"
+          "dimension_or_area": "Pierre is a strong actor-facing grief role.",
+          "what_it_means": "The lead part offers a clear emotional arc from isolation to connection to mourning, which is exactly the kind of material that can elevate a young actor's profile. That makes the project attractive to talent reps looking for a showcase with sensitivity rather than spectacle.",
+          "evidence": "Pierre's stammered classroom exchanges, the poem reveal, the hospital bedside scenes, and the funeral speech all lean on performance.",
+          "source": "script"
         }
       ],
-      "headline": "This is a small, emotionally legible feature with a clear authorial stamp: a poetically structured romance that turns grief into image, music, and ritual. The bracelet, the poem, and the color-coded mourning give the film a memorable identity that can travel as a festival piece or a streamer tearjerker."
+      "headline": "This is a low-cost, actor-forward romance with a built-in emotional signature: the poem, the bracelet, and the grief arc give it a clean identity that can travel on streaming and specialty indie lanes. It is the kind of project a buyer can understand fast — intimate, music-driven, and production-light — while still offering a lead performance that could matter to casting and awards-minded indie audiences."
     },
-    "lead_characters": [
-      {
-        "name": "Pierre",
-        "role_type": "Lead",
-        "demographics": "Male · Teen/late teens",
-        "hook": "Pierre is a shy, inward teenage poet who experiences the world as if he’s half a step removed from it. He’s awkward, self-protective, and deeply romantic in a way that only becomes visible when someone finally asks to read what he’s written; the character lives in contradiction, because the boy who can barely speak aloud has the most expressive inner voice in the film.",
-        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in Call Me by Your Name — a sensitive, interior young lead whose emotional life is carried through hesitation, stillness, and sudden vulnerability. An actor gets to play the full spectrum of adolescent longing, private artistry, and grief without needing a big external engine to carry the part."
-      },
-      {
-        "name": "Celia",
-        "role_type": "Lead",
-        "demographics": "Female · Teen/late teens",
-        "hook": "Celia is the bright, socially fluent girl who sees Pierre before anyone else does, and she brings warmth, curiosity, and easy confidence into his sealed-off world. She’s not just a love interest; she’s the emotional catalyst who turns his private poetry into a shared language, and the script gives her the kind of luminous presence that can make a memory feel alive.",
-        "why_actor_wants_this": "This is the kind of role that gave Rachel McAdams in The Notebook its enduring appeal — a romantic lead whose charm comes from directness, emotional generosity, and the ability to make simple gestures feel mythic. Young actresses looking for a heartfelt breakout part will respond to the sweetness, the intimacy, and the chance to become the film’s emotional afterimage."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make grief feel tactile, musical, and visually legible.",
-        "fit_profile": "First- or second-feature directors with a strong short-film sensibility, especially those already working in intimate drama, lyrical romance, or performance-forward material. This is for filmmakers who care about image, rhythm, and emotional punctuation more than plot mechanics.",
-        "detail": "The material rewards a director who can turn a small number of scenes into a coherent emotional experience through framing, music, and recurring visual motifs. It attracts filmmakers who want to build a calling-card feature that feels personal and polished without requiring a large production footprint."
-      },
-      "buyer_appeal": {
-        "tier": "$1-3M feature",
-        "lane": "Streaming romance drama / festival-to-platform lane",
-        "detail": "The package can be built around two young leads and a director with a strong reel, so it does not require a large ensemble or expensive star attachments to make sense. The contemporary setting, modest location count, and emotionally direct premise fit the current buy-zone for intimate streamer dramas and festival titles that can travel on mood and music."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The middle plays as montage more than drama.",
+          "detail": "After Celia enters Pierre's life, the script leans heavily on quick flashes, voiceover, and lyrical transitions rather than scene-to-scene escalation. That keeps the tone consistent, but it also means the feature's central stretch has limited forward pressure for a buyer evaluating audience momentum.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The emotional beats are carrying the structure.",
+          "detail": "The funeral speech and final voiceover do the heavy lifting, which makes the piece feel more like an elegy than a fully engineered feature narrative. Producers will notice that the script's impact depends on performance and mood more than on a strong sequence of reversals.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Novo Amor clearance is a real line item.",
+          "detail": "The script specifically names 'Anchor' and 'Seneca,' so those tracks are not just temp references — they are clearance and budget items if the music stays in the cut. That is manageable, but it is a real cost and rights conversation for packaging.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The lead role narrows casting to a specific type.",
+          "detail": "Pierre has to play awkwardness, poetic sensitivity, and grief without losing credibility as a teenager, which is a narrower ask than the page initially suggests. The role is attractive, but it will take a very particular young actor to make the inner life land cleanly.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is structural: the script is strongest as a mood piece, but the central stretch relies on montage and voiceover more than active dramatic turns. Add the named-music clearance and the need for a very specific teenage lead, and the project becomes a targeted indie buy rather than a broad commercial one."
     },
-    "considerations": [
-      {
-        "area": "The middle plays as a memory montage.",
-        "detail": "The sequence of field, prom, beach, and snow images creates a strong emotional impression, and a next pass could decide whether one or two of those beats can carry more dramatic specificity. If each memory advances a different facet of Pierre and Celia’s bond, the film’s center would feel even more cumulative.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Pierre’s inner life is mostly voiced, not tested.",
-        "detail": "The opening voice-over and the poem do a lot of the emotional lifting, and one lever would be to let Pierre make a more concrete choice in a present-tense scene before the romance turns elegiac. That would give the audience one visible action that defines him beyond his sensitivity.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The church speech carries the film’s thesis.",
-        "detail": "The funeral address is the clearest articulation of the movie’s emotional idea, so a next pass could consider how much of that meaning can be dramatized earlier through behavior and image. The version of the script where the speech lands as culmination rather than explanation would feel even more cinematic.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The named songs need a clearance plan.",
-        "detail": "Novo Amor’s 'Anchor' and 'Seneca' are specifically embedded in the script, which makes the soundtrack identity clear but also means the music strategy should be decided early. A producer can protect the mood by either clearing those tracks or building a close tonal substitute plan.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The cast footprint is already efficient.",
-        "detail": "The story is built around two leads and a very small supporting footprint, so the production can stay lean without losing the core appeal. That makes the project especially friendly to a contained-budget package built around performance and music.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 43,
+  "weightedScore": 45.3,
   "tier": "Needs Development",
-  "inputTokens": 11683,
-  "outputTokens": 3546,
-  "cost": 0.024719249999999998,
+  "inputTokens": 14088,
+  "outputTokens": 3359,
+  "cost": 0.0256815,
   "declaredFormat": "Feature film"
 }

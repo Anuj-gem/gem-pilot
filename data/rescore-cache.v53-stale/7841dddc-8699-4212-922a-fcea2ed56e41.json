@@ -1,0 +1,341 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Literary dramedy",
+      "genre_tags": [
+        "psychological drama",
+        "satire"
+      ],
+      "tone": "Sharp, erotic, humiliating, and darkly comic with escalating emotional volatility"
+    },
+    "positioning_hook": "A self-publishing Brooklyn writer turns her husband’s literary fame into a viral confession, then watches the internet, her marriage, and her ambition all weaponize each other.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate hook value: a literary couple, a viral essay, and a marriage collapsing in public is easy to sell in one sentence. The audience is narrower than a broad four-quadrant crowd, but the sex, scandal, and publishing-world voyeurism give it strong clickability."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The engine is clear early: Anya writes a confessional piece about her marriage, it breaks open their private life, and the fallout keeps escalating through competing articles and public reaction. The script keeps the central contradiction legible — intimacy as both currency and weapon."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Anya is vivid, contradictory, and performance-rich: horny, ashamed, ambitious, funny, and self-sabotaging in ways that feel specific to her. Chris is equally playable as the charming academic who curdles into entitlement, and the supporting orbit gives the leads plenty of combustible friction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a literary-world satire that is also bodily, sexual, and emotionally raw, which gives it a distinct identity. The direct-address reaction montages and the way public discourse becomes part of the drama are especially confident choices."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps finding new escalators — the article, the rebuttal, the affair, the publishing fallout, the pregnancy, the breakup, the final book. Each turn changes the social temperature and pushes the couple into a new public arena, which keeps the read moving."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "It feels fresh because it treats literary reputation, online pile-ons, and marital intimacy as one ecosystem. The idea that a couple can become their own content machine is immediately understandable and unusually specific."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The publishing, academic, and Brooklyn media circles are rendered with enough detail to feel lived-in and self-policing. Columbia, New York Mag, Rolling Stone, bathhouses, readings, and bar chatter all create a social world that generates story rather than just hosting it."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The tone is unusually identifiable: erotic humiliation, literary vanity, and social satire all play in the same register. The script can pivot from filthy comedy to emotional dread to public embarrassment without losing its voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Under the scandal plot is a deeper story about authorship, self-mythology, fertility, and who gets to narrate a relationship. The ending’s book-launch frame and the recurring river imagery suggest a larger emotional and thematic architecture beneath the immediate plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Anya/Chris is the core engine, but the script also gives Nora, Marcus, Lorelei, Ron, Izzy, and Teeny enough presence to create a lively social web. The ensemble mostly serves the central couple, though the supporting relationships do generate their own sparks."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One infant/toddler presence in the final stretch",
+          "Adult leads in their late 30s",
+          "Several supporting roles in 20s-60s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Mostly interior with frequent street, train, bar, and waterfront exteriors",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New York City and Hudson Valley settings",
+          "Train, ferry, river, bookstore, bathhouse, university, and apartment interiors",
+          "Waterfront and canoe sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily visual transitions, stylized montages, and the underwater dream imagery; no heavy effects build.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, bodily injury makeup, and finger-amputation effects in the climax.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Patti Smith's 'Land: Horses/Land of a Thousand Dances/La Mer(de)' and Dmitri Shostakovich's Waltz No. 2 are specifically named."
+        },
+        {
+          "type": "named_music",
+          "detail": "Bartók's String Quartet No. 4 and 'Palladio (Concerto Grosso for Strings)' are specifically referenced in montage cues."
+        },
+        {
+          "type": "brand",
+          "detail": "New York Magazine, The New Yorker, Rolling Stone, Columbia University, US Weekly, PornHub, Spotify, YouTube, Reddit, Goodreads, and Google are prominently named."
+        },
+        {
+          "type": "real_person",
+          "detail": "David Grann, Kathy Acker, Annie Ernaux, Elizabeth Wurtzel, Janet Malcolm, Hunter Biden, and David Remnick are referenced by name."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script references published articles, books, and magazine ecosystems in a way that may require careful clearance review for on-screen use."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or prestige theatrical indie",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform potential; the hook is scandal-driven, character-forward, and highly discussable."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary urban locations keep the budget contained, but the river, ferry, bathhouse, and injury climax add some production lift."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Two strong lead roles plus a sizable supporting web, with one child and a baby in the mix, but no star-dependent VFX or specialty casting."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through apartments, bars, Columbia, bookstores, bathhouses, trains, ferries, and waterfronts across New York and Beacon/Newburgh."
+        },
+        "content": {
+          "level": "high",
+          "note": "Explicit sexual content, bodily fluids, profanity, drug use, and a violent climax narrow the lane to mature buyers."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is full of named publications, brands, books, songs, and public figures that will need a careful clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is built for conversation.",
+          "what_it_means": "A buyer gets a built-in hook about privacy, authorship, and public humiliation that can travel fast in marketing and press. It will attract prestige-streaming buyers and festival programmers who want a title people argue about after the credits.",
+          "evidence": "Anya’s 'Mommy or Me?' article goes viral, then Chris’s rebuttal and the New Yorker collaboration turn their marriage into public content.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Anya is a showcase lead.",
+          "what_it_means": "The role gives an actress comedy, erotic charge, shame, ambition, and self-mythology in one package, which is exactly the kind of part that can define a career turn. Mid-career actresses looking for a messy, fearless centerpiece and indie buyers looking for a festival anchor will both lean in.",
+          "evidence": "Her cheek-biting, her public bravado, the 'Erotic Weeping' shirt, the article-writing spiral, and the final book-launch performance all build a singular screen presence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The literary world feels like a pressure cooker.",
+          "what_it_means": "The Columbia/New York Mag/Rolling Stone ecosystem gives the script a specific social ladder, with status, access, and humiliation all happening in the same rooms. That kind of institutional texture is attractive to buyers who want adult satire with a recognizable, exportable milieu.",
+          "evidence": "Readings, faculty politics, editors, moderators, and publishing meetings all become arenas where reputation is won or lost.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The couple dynamic keeps mutating.",
+          "what_it_means": "Anya and Chris are not just lovers; they are collaborators, rivals, audience, and source material for each other, which gives the movie a durable engine. Actors and directors who like relationship pieces with sexual charge and shifting power will see immediate value.",
+          "evidence": "Their flirtation, bargaining, article-writing, jealousy, and eventual reconciliation all play as different versions of the same bond.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a strong satirical bite.",
+          "what_it_means": "It skewers literary vanity, online discourse, and performative intimacy without flattening the characters into caricature, which makes it feel current rather than merely topical. That balance is catnip for buyers who want something smart enough for critics and juicy enough for audiences.",
+          "evidence": "The reaction montages, the gossiping peers, the anonymous comments, and the publishing-office conversations all sharpen the satire.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on a memorable image.",
+          "what_it_means": "The final book-launch frame gives the project a clean, marketable endpoint and a last-note ambiguity that lingers. That kind of ending is attractive to festival programmers and prestige buyers because it leaves the audience with a question, not just a plot resolution.",
+          "evidence": "Anya reads from her book to a packed audience while the applause shifts between celebration and accusation.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, filthy, highly discussable feature about a literary couple who turn their marriage into copy and then discover the internet can write back. It has a breakout female lead, a specific New York publishing ecosystem, and the kind of public-private collision that producers can sell on a single sentence."
+    },
+    "lead_characters": [
+      {
+        "name": "Anya Anderson",
+        "role_type": "Lead",
+        "demographics": "Female · 37 · white · writer/teacher · contemporary Brooklyn",
+        "hook": "Anya is a self-conscious, sexually charged, status-hungry writer who performs indifference like armor and then immediately betrays herself with cheek-biting, sarcasm, and need. She wants literary legitimacy, a baby, and proof that her voice matters, but she keeps reaching for the most self-destructive route to get there.",
+        "why_actor_wants_this": "This is the showcase territory of Amy Adams in *Sharp Objects* — a woman whose intelligence, vanity, shame, and hunger all live on her face at once. An actor gets to play seduction, humiliation, comic timing, and emotional collapse in a role that can carry a whole movie."
+      },
+      {
+        "name": "Chris Diniz",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s · writer/professor · contemporary New York",
+        "hook": "Chris is a polished literary charmer whose vanity is so well-trained it passes for warmth until the mask slips. He wants status, family, and control, and he keeps using intelligence and tenderness as tools to keep the room — and Anya — oriented around him.",
+        "why_actor_wants_this": "This is the showcase lane of Matthew Macfadyen in *Succession* — a man whose charm is inseparable from insecurity and whose self-image keeps curdling in real time. It gives an actor the chance to play wit, erotic confidence, wounded pride, and a slow moral unraveling."
+      },
+      {
+        "name": "Marcus Cadman",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · writer/divorcé · contemporary New York",
+        "hook": "Marcus is a brilliant, self-destructive literary outlaw who knows exactly how ugly he is and enjoys that it gives him permission to be honest. He’s magnetic because he’s both a cautionary tale and a dare, and Anya recognizes herself in him immediately.",
+        "why_actor_wants_this": "This is the kind of role Philip Seymour Hoffman used to turn into a whole ecosystem in *Before the Devil Knows You’re Dead* — damaged charisma, comic menace, and emotional rot all in one body. Actors who like playing seductive chaos with a wounded center will chase it."
+      },
+      {
+        "name": "Lorelei Palacio",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · publisher/editor · contemporary New York",
+        "hook": "Lorelei is the gatekeeper who can smell desperation and status anxiety from across a room. She’s cool, exacting, and socially lethal, but she also understands the machinery of the industry better than anyone else in the script.",
+        "why_actor_wants_this": "This is the Glenn Close-in-*Damages* lane — a woman whose authority comes from precision, not volume, and who can turn a single line into a verdict. It’s a delicious role for actors who specialize in controlled power and institutional command."
+      },
+      {
+        "name": "Ron",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · editor · contemporary New York",
+        "hook": "Ron is the schlubby, knowing industry middleman who speaks in half-truths and practical advice while quietly protecting his own position. He’s funny because he’s always just a little too comfortable with the ugliness of the business.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the dry, scene-stealing authority of J.K. Simmons in *Whiplash* without needing a villain speech. It rewards performers who can make institutional cynicism feel effortless."
+      },
+      {
+        "name": "Izzy",
+        "role_type": "Supporting",
+        "demographics": "Female · late 20s to early 30s · student/divorced mother · contemporary New York",
+        "hook": "Izzy is bright, vulnerable, and trying to keep her life stitched together while orbiting Chris’s charisma. She reads as open-hearted at first, then reveals enough self-possession to make the dynamic with Chris feel dangerous and sad at once.",
+        "why_actor_wants_this": "This is the kind of role that lives in the emotional space of Carrie Coon in *The Leftovers* — a woman whose restraint makes the cracks feel bigger. It gives an actor a clean, affecting turn with real subtext in a few scenes."
+      },
+      {
+        "name": "Teeny",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · library boss · contemporary New York",
+        "hook": "Teeny is the blunt institutional authority who sees through Anya’s performance and doesn’t need to be cruel to make the point land. He’s a compact, memorable presence who embodies the city’s practical judgment.",
+        "why_actor_wants_this": "This is the kind of sharp supporting authority role that actors like Richard Jenkins make memorable in a handful of scenes — dry, human, and unsentimental. It gives a performer a clean comic-drama beat with real texture."
+      },
+      {
+        "name": "Kaley Kovalava",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · author/moderator · contemporary New York",
+        "hook": "Kaley is the polished literary celebrity who can make a room feel smaller just by entering it. She’s not a villain so much as a mirror: everything Anya wants to be, with enough polish to make the comparison sting.",
+        "why_actor_wants_this": "This is the kind of glossy, socially lethal role that Sarah Snook in *Succession* can make feel both aspirational and cutting. It’s ideal for an actor who can weaponize charm without losing intelligence."
+      },
+      {
+        "name": "Nicholas",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · dean · contemporary New York",
+        "hook": "Nicholas is the polished academic administrator who speaks in soft institutional language while moving the chess pieces underneath. He’s the kind of man who can bless a career and flatten a conscience in the same breath.",
+        "why_actor_wants_this": "This is the prestige-adjacent authority slot that actors like Michael Stuhlbarg often elevate — calm, intelligent, and quietly decisive. It gives a performer a chance to play power without theatrics."
+      },
+      {
+        "name": "Max",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · editor · contemporary New York",
+        "hook": "Max is the younger media gatekeeper who looks eager until the machinery of the industry forces him into damage control. He’s a useful emblem of how fast the attention economy can turn from opportunity to embarrassment.",
+        "why_actor_wants_this": "This is the kind of modern-media supporting role that lets an actor play panic, ambition, and professional self-protection in one scene. It suits performers who can make a small role feel like a lived-in office reality."
+      },
+      {
+        "name": "Nora’s Husband, Eli",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · father/husband · contemporary New York",
+        "hook": "Eli is the practical spouse in the room, the one who keeps the domestic machinery visible without trying to dominate the scene. He gives the script a grounded counterpoint to the literary chaos around him.",
+        "why_actor_wants_this": "This is the kind of grounded spouse role that works like a pressure valve in ensemble drama — small but specific. It’s a good fit for actors who can make ordinary frustration feel real and funny."
+      },
+      {
+        "name": "Anya’s Mother",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s · contemporary New York",
+        "hook": "Anya’s mother is the worried, practical voice of consequence who sees the public fallout before anyone else wants to admit it. She’s not abstractly judgmental; she’s the family member who knows exactly how permanent the internet is.",
+        "why_actor_wants_this": "This is the kind of maternal role that gives an actor the grounded authority of Frances McDormand in *Three Billboards* — direct, funny, and emotionally legible. It’s a compact but memorable part for a performer who can make concern feel specific."
+      },
+      {
+        "name": "Anya’s Father",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · contemporary New York",
+        "hook": "Anya’s father is the comic, irritated, slightly wounded family observer who reacts to the scandal like a man discovering his own private life has been published. He’s funny because his embarrassment is so immediate and so human.",
+        "why_actor_wants_this": "This is the kind of father role that lets an actor do the dry, exasperated realism of Richard Kind — a little vain, a little hurt, and very funny. It’s a strong fit for character actors who can make a few lines land hard."
+      },
+      {
+        "name": "Bartender",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · contemporary New York",
+        "hook": "The bartender is the social barometer in the room, clocking everyone’s performance and silently grading it. She’s a small role with a sharp eye, which makes her feel like part of the city’s judgmental chorus.",
+        "why_actor_wants_this": "This is the kind of sharp, observational supporting part that can pop like a scene in *Girls* or *Insecure* — brief but memorable. Actors who specialize in dry reaction work will have fun with it."
+      },
+      {
+        "name": "Doctor",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · OBGYN · contemporary New York",
+        "hook": "The doctor is casually invasive and uncomfortably offhand, which makes the fertility pressure feel immediate and bodily. He’s a small but important embodiment of how clinical language can sharpen Anya’s panic.",
+        "why_actor_wants_this": "This is the kind of one-scene authority role that can land like a knife if played with the right deadpan. It suits actors who can make institutional indifference feel specific."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage sex, shame, and status as one continuous social performance.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, plus TV directors moving into features who already know how to handle adult dialogue and ensemble friction. The material rewards close-framed performance, tonal control, and a confident hand with public humiliation, erotic tension, and satirical social spaces.",
+        "detail": "The craft opportunity is in keeping the movie intimate while letting the public fallout feel enormous, especially through the reaction montages and the shifting power between Anya and Chris. It will attract directors who like actors, rhythm, and social observation more than spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M prestige indie feature",
+        "lane": "A24 / Searchlight / premium-streamer adult dramedy lane",
+        "detail": "The movie is largely built around two lead performances and contemporary New York locations, so it can be packaged off script and director without a heavy effects or action dependency. The publishing-world hook, viral-essay premise, and mature relationship material give it a clean festival-to-platform path with strong press and conversation value."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The reaction montage language is a major engine.",
+        "detail": "The direct-to-camera social reaction sequences are one of the script’s sharpest devices, and a next pass could keep tightening the selection so each voice adds a new angle rather than repeating the same outrage. The more each reaction escalates the public myth of Anya and Chris, the more the movie feels like a living discourse machine.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The final act carries a lot of moving parts.",
+        "detail": "The pregnancy reveal, the breakup, the cheating fallout, the Columbia scandal, the hospital beat, and the final book-launch frame all land in a fairly compressed stretch. One lever would be to protect the emotional clarity by making sure each turn has its own clean beat before the next public consequence arrives.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The script lives in a wide New York footprint.",
+        "detail": "The train, ferry, Columbia, bookstore, bathhouse, apartment, bar, hospital, and waterfront material all give the movie texture, but they also create a fairly mobile production. A simplification pass could consider whether a few of the social spaces can be folded into one another without losing the sense of the city as a pressure cooker.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The clearance list is substantial.",
+        "detail": "Named publications, books, songs, platforms, and public figures are woven throughout the script, which gives it specificity but also means the legal pass will matter. The upside is that the references help the movie feel current and literate; the next step is making sure the final package is built with those names in mind.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Chris’s student-office material is doing double duty.",
+        "detail": "The Columbia scenes with Izzy and Maggie give Chris a softer, more seductive public face, and they also set up the later scandal. A next pass could keep that material as lean and pointed as possible so it sharpens his charm without over-explaining it.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The bodily-horror climax is memorable and contained.",
+        "detail": "The dog attack and finger injury are practical, not effects-heavy, but they do ask for precise stunt, makeup, and blood work. That sequence is a strong payoff, and the production version that keeps it clean and efficient will protect both tone and budget.",
+        "is_primary_lever": false,
+        "source": "both"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 78.3,
+  "tier": "Optionable",
+  "inputTokens": 41881,
+  "outputTokens": 5776,
+  "cost": 0.05740275,
+  "declaredFormat": "Feature film"
+}

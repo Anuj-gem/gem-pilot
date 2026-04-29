@@ -2,253 +2,291 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Historical fantasy",
-      "genre_tags": [
-        "Adventure",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Historical",
         "Romance"
       ],
-      "tone": "Mythic, sensual, playful, and reverent"
+      "tone": "mythic",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "period-piece",
+        "prestige",
+        "character-driven",
+        "slow-burn",
+        "identity",
+        "love",
+        "religion",
+        "aztec-mythology"
+      ]
     },
-    "positioning_hook": "A pregnant teenage runaway in 1927 Manhattan falls under the spell of a mysterious reading, then gets pulled into a centuries-spanning quest for a goddess who made her lover’s bracelet.",
+    "positioning_hook": "A pregnant teenage immigrant in 1927 Manhattan falls under the spell of a mystical reading that reveals her unborn child is bound to a centuries-spanning goddess, launching a mythic love story across conquest-era Mexico.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The hook is vivid and exportable: a rare-book salon, a cursed-looking bracelet, and a romance that jumps from 1927 New York to 1519 Mexico. The audience is clear for prestige fantasy, but the period-mythic blend is more specialized than broad four-quadrant fare."
+        "score": 6,
+        "reasoning": "The hook is emotionally legible — forbidden love, reincarnation, and a pregnant young woman at the center — but the period-mythology blend is specialized rather than broad. The audience is real, especially for prestige fantasy and romance buyers, but this is not an easy four-quadrant sell."
       },
       "conceptual_hook_clarity": {
-        "score": 8,
-        "reasoning": "The pilot lands its premise early and keeps returning to the bracelet as the story engine. The framing device in the emporium, the author’s confession, and the cut into Juan’s past make the central mystery easy to track."
+        "score": 7,
+        "reasoning": "The bracelet, the reading, and the cut to 1519 give the premise a clear engine early. The script is still operating in a layered frame, so the full shape of the series takes a minute to settle, but the central mystery lands."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Judy has immediate attitude and physical stakes, while Juan and Chimalman open a durable mythic triangle. The ensemble is still more concept-forward than character-networked, but the core trio has real series legs."
+        "reasoning": "Judy/Clara give the pilot a vivid human entry point, and Juan/Father Miguel/Chimalman create a triangle with real series durability. The characters are distinctive, though the pilot is still more enchanted by premise than by fully individualized long-form behavior."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a rare tonal and narrative blend: immigrant-era book salon, eroticized artifact lore, and a divine romance told as oral history. The choice to make provenance itself the thematic engine gives the piece a distinct identity."
+        "reasoning": "The script commits to a rare fusion of Aztec cosmology, colonial history, and romantic destiny, and it does so with confidence. The 1927 book-reading frame as a portal into a mythic origin story is a bold structural choice that gives the material its own identity."
       },
       "narrative_momentum_engagement": {
-        "score": 7,
-        "reasoning": "The pilot moves with strong forward pull once the reading begins, and the bracelet vision gives it a clean escalation point. The opening spends time establishing atmosphere, but the story doors open decisively by the time Juan and Father Miguel enter the jungle track."
+        "score": 6,
+        "reasoning": "The reading-room frame and the cut into 1519 create forward motion, but the pilot spends a long stretch in explanatory dialogue before the dramatic engine fully tightens. The emotional pull is there, yet the episode is more immersive than propulsive."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The bracelet as both sacred object and identity proof feels fresh and inevitable at once. The script’s central idea — that a person’s provenance can be a love story, a religious argument, and a colonial battleground — has real staying power."
+        "reasoning": "The bracelet as a living provenance object, the goddess who wants to become human, and the reincarnated love thread feel both strange and inevitable once introduced. It is fresh in concept and immediately ownable in execution."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The emporium, the reading ritual, the Spanish ship, and the jungle route all feel socially specific and story-generating. The artifact world is not just decorative; it carries class, faith, commerce, and power in every scene."
+        "reasoning": "The emporium, the reading culture, the colonial shipboard politics, and the jungle journey all suggest a world with rules, status, and ritual. The script is already generating texture from objects, language, and belief systems rather than just using setting as backdrop."
       },
       "tonal_specificity": {
-        "score": 8,
-        "reasoning": "The tone is unusually legible: whimsical period detail, romantic mythmaking, and sly comic friction between Judy, Clara, and the audience. The script knows when to play wonder, when to play irony, and when to let the spiritual material land with sincerity."
+        "score": 7,
+        "reasoning": "The tone is mythic, romantic, and slightly storybook, with a strong sense of wonder around the artifact and the goddess. It is specific, though the pilot is still balancing exposition, comedy of manners, and spiritual grandeur."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "Beneath the romance and adventure, the pilot is already asking about identity, ownership, conversion, and what makes a self legible to the world. The framing device suggests a larger mythology around the bracelet, the goddess, and the author’s long memory."
+        "reasoning": "The pilot implies a much larger cosmology around Chimalman, the bracelet, and the repeated lives of Juan and Nova. The material feels designed to reveal deeper emotional and historical layers over time."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "The Judy-Clara dynamic is lively, and Juan/Father Miguel/Don Dominguez create a workable triangle of desire and authority. The pilot is still driven primarily by the central mythic pairings rather than a broad ensemble web."
+        "reasoning": "Judy and Clara have a workable sister dynamic, and Juan/Father Miguel/Don Dominguez create a strong triangle, but the pilot is still anchored more by the central myth than by a broad ensemble engine. There is relationship material here, but not yet a fully modular group dynamic."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Judy",
+        "role_type": "Lead",
+        "demographics": "Female, 17, pregnant, Hungarian immigrant, lower-class, accented English.",
+        "hook": "A sharp-tongued, stubborn teenage sister who arrives at the emporium visibly pregnant and resistant to being managed, then gets quietly overtaken by the story and the bracelet’s pull. Judy is the audience surrogate: skeptical, impulsive, and more spiritually porous than she wants to admit.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Lady Bird — a young woman whose resistance, vulnerability, and comic irritation all live in the same beat. The role gives an actor the chance to play defiance, wonder, and bodily urgency without ever becoming passive."
+      },
+      {
+        "name": "Clara",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, Hungarian immigrant, sister to Judy.",
+        "hook": "Clara is the steadier, more socially fluent sister who translates the room, pushes Judy forward, and carries the practical intelligence of someone who knows how to survive in public. She is affectionate, bossy, and quietly funny, with a real sense of purpose behind the maternal posture.",
+        "why_actor_wants_this": "This is the kind of role that gave Greta Gerwig in Frances Ha or Kathryn Hahn in transparent room to be both comic engine and emotional ballast. An actor gets to play the sister who seems secondary until you realize she is steering the whole scene."
+      },
+      {
+        "name": "Amethyst",
+        "role_type": "Supporting",
+        "demographics": "Female, ageless presentation, caramel-skinned, French accent, host/guide figure.",
+        "hook": "Amethyst is the emporium’s elegant ceremonial host, part emcee and part gatekeeper, with a sly awareness that she is managing more than a reading. She has the poise of someone who knows the room’s rules and the mischief of someone who enjoys bending them.",
+        "why_actor_wants_this": "This is the kind of controlled, magnetic role that lets an actor do what Lupita Nyong’o did in Us or Tilda Swinton in Suspiria — command the frame through presence, not volume. The part offers style, authority, and a hint of supernatural ambiguity."
+      },
+      {
+        "name": "Juan",
+        "role_type": "Supporting",
+        "demographics": "Male, 15, Aztec, orphaned, musical, spiritually marked.",
+        "hook": "Juan is the story’s emotional and mythic hinge: a curious, vulnerable boy whose bracelet marks him as chosen long before he understands what that means. He is open-hearted, musically gifted, and disarmingly direct, which makes him both easy to love and easy to exploit.",
+        "why_actor_wants_this": "This is the kind of breakout role that gave Xolo Maridueña in Cobra Kai or Timothée Chalamet in Call Me by Your Name a mix of innocence, longing, and destiny. It asks for a young actor who can carry wonder without losing specificity."
+      },
+      {
+        "name": "Father Miguel",
+        "role_type": "Supporting",
+        "demographics": "Male, 22, Spanish priest, thin, ambitious, emotionally repressed.",
+        "hook": "Father Miguel is a tightly wound cleric whose piety is inseparable from careerism, envy, and a private hunger for meaning. He starts as an instrument of the Church’s extraction logic, but the bracelet and Juan’s presence crack open something more conflicted and human.",
+        "why_actor_wants_this": "This is the kind of morally divided role that gave Andrew Scott in Fleabag or Michael Shannon in Boardwalk Empire a chance to weaponize repression. It offers an actor a slow burn of vanity, shame, and spiritual self-deception."
+      },
+      {
+        "name": "Don Dominguez",
+        "role_type": "Supporting",
+        "demographics": "Male, 55, conquistador commander, heavyset, politically connected, Antonio’s uncle.",
+        "hook": "Don Dominguez is the swaggering, compromised power broker who can charm a room while quietly controlling the terms of everyone else’s survival. He is worldly, indulgent, and unexpectedly affectionate toward Juan, which makes him more dangerous than a simple villain.",
+        "why_actor_wants_this": "This is the kind of scene-stealing authority role that gave Giancarlo Esposito in Breaking Bad or John Lithgow in The Crown a chance to play command with warmth and menace in the same breath. It is a prestige supporting part with real texture."
+      },
+      {
+        "name": "Chimalman",
+        "role_type": "Supporting",
+        "demographics": "Female, ageless spirit/goddess, manifests through human bodies.",
+        "hook": "Chimalman is the mythic center of gravity: a goddess who wants to become human, tests love as a condition of embodiment, and treats mortality as a lesson rather than a punishment. She is tender, severe, playful, and philosophically dangerous.",
+        "why_actor_wants_this": "This is the kind of role that gave Cate Blanchett in Manifesto or Jodie Comer in Killing Eve its intoxicating range of authority and unpredictability. An actor gets to play divinity as intimacy, not distance."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 7,
-        "leads": 5,
-        "series_regulars": 2,
+        "leads": 1,
+        "series_regulars": 6,
         "child_actors": false,
         "casting_characteristics": [
-          "Pregnant teenage lead",
-          "Period-appropriate Spanish, Hungarian, French, and American accents",
-          "One role with a strong offscreen/voice presence",
-          "Ethnically specific casting for Juan and Chimalman"
+          "accented dialogue for multiple roles",
+          "period-appropriate age casting",
+          "goddess/spirit role with ageless presentation",
+          "young male lead with musical ability"
         ]
       },
       "locations": {
         "distinct_count": 6,
-        "interior_exterior_ratio": "Mostly interior with some exterior travel sequences",
-        "period_or_contemporary": "Period (1927 framing; 1517-1519 historical sections)",
+        "interior_exterior_ratio": "mostly interiors with some jungle exteriors",
+        "period_or_contemporary": "period-piece",
         "notable_requirements": [
-          "New York rare-book emporium set",
-          "Spanish galleon interiors",
-          "Jungle path and village exteriors",
-          "Chimalman’s tent",
-          "Period costume and props"
+          "1927 new york emporium interior",
+          "shipboard spanish galleon interiors",
+          "jungle path and tent exteriors",
+          "mexico/mesoamerican period world-building"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "A few vision cuts, atmospheric transitions, and the implied supernatural presence of Chimalman; no large-scale effects language on the page.",
+        "vfx_details": "Primarily magical transitions, vision inserts, and atmospheric effects around the bracelet and Chimalman’s entrances.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical lighting shifts, smoke/breeze cues, and simple illusion beats around the bracelet and Chimalman’s entrances.",
+        "sfx_needs": "Practical period dressing, bracelet prop continuity, smoke/light cues, and controlled vision effects.",
         "night_shoots": "minimal",
         "animals": false
       },
-      "rights_flags": [
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "premium streaming fantasy drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized mythology with a frame-story pilot; ongoing episode engine built around the bracelet, reincarnation, and the search for Chimalman."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The period settings, multiple historical environments, and recurring costume/world-build elements will keep this above a simple contained-drama spend, even though the VFX load is light."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Judy, Juan, Chimalman, and Father Miguel each need a very specific tonal mix — innocence, authority, sensuality, and spiritual tension — which narrows the usable pool more than the page count suggests."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot is strongest as a mythic origin story, but the frame-story structure and explanatory passages mean the series identity will need disciplined episode design once the pilot is sold."
+      }
+    },
+    "packaging": {
+      "comp_set": [
         {
-          "type": "ip_licensing",
-          "detail": "The script centers on a fictional book reading and a fictional artifact mythology; no obvious external IP is named."
+          "title": "Pachinko",
+          "year": 2022,
+          "why_it_comps": "Like this script, it uses historical sweep and intimate family longing to make a transgenerational identity story feel prestige and emotionally durable."
+        },
+        {
+          "title": "Interview with the Vampire",
+          "year": 2022,
+          "why_it_comps": "The romantic immortality, sensual myth-making, and lush period atmosphere track closely with the script’s supernatural love-and-memory engine."
+        },
+        {
+          "title": "His Dark Materials",
+          "year": 2019,
+          "why_it_comps": "The artifact-driven mythology and serialized quest structure resemble this pilot’s bracelet-led world-building and destiny mechanics."
+        },
+        {
+          "title": "The Great",
+          "year": 2020,
+          "why_it_comps": "The script shares that blend of heightened period language, wit, and emotional anachronism that makes historical material feel contemporary."
         }
       ],
-      "platform_fit": {
-        "recommended_lane": "Premium streaming historical fantasy drama",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Serialized mythology engine built around the bracelet, the author’s long memory, and the quest to find Nova across time."
+      "audience_target": {
+        "primary_audience": "Viewers who want prestige fantasy with romance and historical sweep, especially adults drawn to emotionally charged mythology and culturally specific world-building.",
+        "demographics": "Adults 25-54, slightly female-skewing, premium-streaming audience, educated viewers comfortable with subtitles of history, faith, and mythology.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M35+"
+        ]
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Period settings, multiple eras, and custom sets push above a contained indie, but the page does not call for large-scale spectacle."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The project needs several specific lead performances and culturally/linguistically distinct casting, but the speaking cast remains compact."
-        },
-        "location": {
-          "level": "medium",
-          "note": "Two time periods, a New York emporium, ship interiors, jungle travel, and a village sequence create a manageable but real location footprint."
-        },
-        "content": {
-          "level": "medium",
-          "note": "The material is sensual, religious, and colonial in subject matter, with pregnancy and implied sexual themes shaping the standards-and-practices lane."
-        },
-        "rights": {
-          "level": "low",
-          "note": "The script appears to rely on original characters, original mythology, and original artifact lore."
-        }
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Period interiors, historical exteriors, and recurring costume/world-build needs drive the spend; the pilot itself is dialogue-forward but the series assumes multiple eras and settings."
+      },
+      "lane_fit": {
+        "lane": "premium-streaming prestige fantasy drama",
+        "types_of_buyers": [
+          "premium streamer originals teams",
+          "prestige genre development execs",
+          "historical-drama buyers",
+          "female-forward fantasy buyers",
+          "literary-adaptation-minded producers"
+        ],
+        "detail": "This sits naturally in the lane where elevated genre, historical specificity, and emotional romance can coexist without needing broad procedural mechanics. The material feels designed for buyers who want scale in feeling more than scale in action."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a franchise engine; the material is built around one central mythic romance and does not yet present a separate spinoff vector with enough independent character depth."
       }
     },
     "whats_special": {
       "strengths": [
         {
           "dimension_or_area": "The bracelet is a story engine.",
-          "what_it_means": "That object gives the series a clean, repeatable engine for mystery, romance, and identity-based revelation across multiple timelines. Buyers can see a mythology that can expand without losing its emotional center, which is exactly the kind of durable hook premium streamers like to build around.",
-          "evidence": "The bracelet appears first as a museum-like object in the emporium, then as Juan’s inherited protector, then as Chimalman’s blood-made bond leading the characters toward Tenochtitlan.",
+          "what_it_means": "The object gives the series a clean, repeatable mythology hook that can organize episodes, flashbacks, and emotional reveals without feeling arbitrary. Buyers can see a premium serialized engine rather than a one-off period romance.",
+          "evidence": "The bracelet appears in the emporium, triggers Judy’s vision, and then becomes the literal thread carrying the story back to Juan and Chimalman.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The framing device gives the pilot a signature shape.",
-          "what_it_means": "The 1927 reading room lets the show move between wit, wonder, and legend without feeling arbitrary, which is a strong asset for a serialized period fantasy. That structure also gives the series a built-in audience surrogate in Judy, making the mythology accessible to viewers who are not already fluent in the history.",
-          "evidence": "Judy’s reactions, the women’s responses to the reading, and the cut from the emporium into Juan’s past all work as one continuous engine.",
+          "dimension_or_area": "The frame story is commercially legible.",
+          "what_it_means": "The 1927 reading-room setup gives the pilot an elegant entry point and a built-in audience surrogate, which helps buyers understand the mythology before the historical sweep expands. That structure is attractive to streamers looking for prestige fantasy with a controlled on-ramp.",
+          "evidence": "Judy and Clara enter the emporium, hear the reading, and the story opens outward from the author’s performance.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Judy has immediate screen presence.",
-          "what_it_means": "She gives the series a young, volatile, emotionally readable entry point that can carry both comedy and awe. That is attractive to casting because it creates a breakout role for a young actress who can play defiance, confusion, and wonder in the same scene.",
-          "evidence": "Her banter with Clara, her fascination with the bracelet, and her repeated sleep-fighting reactions to the story all make her pop instantly.",
+          "dimension_or_area": "Chimalman is a premium lead engine.",
+          "what_it_means": "A goddess who wants to become human is a rare, actor-attractive role with franchise-level iconography even if the series itself stays intimate. That kind of part can anchor casting conversations and give the project a signature face.",
+          "evidence": "Chimalman explains her test, her desire for humanity, and the conditions around love, death, and embodiment.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The mythic romance has real heat.",
-          "what_it_means": "The Juan/Chimalman connection is not just lore; it is a long-form romantic engine with spiritual stakes, which gives the series emotional propulsion beyond the artifact chase. That kind of role pairing is catnip for prestige buyers who want genre material with an adult love story at its core.",
-          "evidence": "Chimalman’s declaration that Juan is her mate, the bracelet as a blood-bond, and the promise of children and tests all frame the relationship as destiny rather than exposition.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The world carries class and faith tension.",
-          "what_it_means": "The emporium, the women’s reactions, the Church’s opportunism, and the colonial trade logic all create a world where every object has social value and spiritual value at once. That density gives producers a series that can generate episodes from commerce, devotion, and power struggles rather than only from plot mechanics.",
-          "evidence": "The reading-room etiquette, Father Miguel’s gold-making scheme, and Don Dominguez’s casual authority all show a layered institutional world.",
+          "dimension_or_area": "The historical world feels specific, not generic.",
+          "what_it_means": "The emporium, Spanish galleon, jungle path, and Mesoamerican belief system create a world that feels authored rather than assembled from stock period pieces. That specificity is what lets the show stand out in a crowded prestige market.",
+          "evidence": "The script leans on the reading-room ritual, colonial ship politics, and the bracelet’s indigenous provenance as distinct story texture.",
           "source": "script"
         }
       ],
-      "headline": "This is a premium historical fantasy with a real signature: a 1927 rare-book reading that opens into a centuries-spanning romance, artifact mystery, and colonial power struggle. The bracelet, the goddess, and the framing device give the series a durable engine that can carry mythology, emotion, and spectacle in one package."
+      "headline": "This is a premium-streaming fantasy romance with a real object-based engine, a strong frame, and a mythic female figure who can carry marketing. The period scope raises the spend, but the pilot’s controlled entry point and emotionally legible central mystery make it feel like a buyer can understand the series in one pass."
     },
-    "lead_characters": [
-      {
-        "name": "JUDY / JUDKA",
-        "role_type": "Lead",
-        "demographics": "Female · 17 · pregnant · Hungarian immigrant",
-        "hook": "Judy is all nerve endings and resistance: a teenage girl who arrives in a polished room already braced for judgment, then keeps finding herself pulled toward wonder. She is sharp-tongued, physically restless, and more perceptive than she knows, with the baby in her body functioning like a second clock ticking through the scene.",
-        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in *Lady Bird* or Florence Pugh in *Midsommar* — a young woman whose defiance, vulnerability, and physicality all stay live at once. A rising actress gets a role that can play comedy, awe, and emotional awakening while anchoring the audience’s entry into the mythology."
-      },
-      {
-        "name": "CLARA",
-        "role_type": "Lead",
-        "demographics": "Female · early 20s · Hungarian immigrant",
-        "hook": "Clara is the practical sister with a sly streak, the one who can translate the room, the ritual, and Judy’s mood in the same breath. She reads as older than her years, protective without being soft, and she gives the pilot its most grounded human rhythm.",
-        "why_actor_wants_this": "This is the kind of sister-role that gave Greta Gerwig in *Frances Ha* or Juno Temple in *Atonement* a mix of wit, tenderness, and social intelligence to play against a larger world. Actors who want a role with comic timing, emotional authority, and a strong relational engine will see real value here."
-      },
-      {
-        "name": "AMETHYST",
-        "role_type": "Lead",
-        "demographics": "Female · ageless presentation · caramel-skinned · French accent",
-        "hook": "Amethyst is the emporium’s velvet-gloved gatekeeper, a host who can soothe a room, command it, and quietly redirect it without ever raising her voice. She feels like someone who knows the rules of the space and the people in it better than anyone else, which makes her both elegant and slightly dangerous.",
-        "why_actor_wants_this": "This is the kind of poised, enigmatic showcase that Tilda Swinton in *Only Lovers Left Alive* or Angela Bassett in *American Horror Story* gets to turn into pure authority. A charismatic adult lead would chase this for the chance to play mystery, control, and seduction in one contained performance."
-      },
-      {
-        "name": "AUTHOR / JUAN",
-        "role_type": "Lead",
-        "demographics": "Male · 15 in flashback / adult narrator presence · Aztec",
-        "hook": "Juan is the story’s emotional and mythic center: curious, musically gifted, and already marked by a destiny he does not fully understand. He has the innocence of a boy and the burden of a legend, which makes him feel like someone history keeps trying to claim.",
-        "why_actor_wants_this": "This is the kind of dual-time showcase that Timothée Chalamet in *The King* or Dev Patel in *The Green Knight* gets to inhabit — a young man carrying innocence, sensuality, and fate at once. A lead actor would be drawn to the chance to play both the boy inside the legend and the voice that remembers it."
-      },
-      {
-        "name": "CHIMALMAN",
-        "role_type": "Lead",
-        "demographics": "Female · ageless spirit in human bodies · Indigenous/Mesoamerican",
-        "hook": "Chimalman is a goddess who speaks with calm authority and a startling emotional logic: she is divine, but she is also trying to become human. That contradiction gives her a rare mix of tenderness, command, and philosophical strangeness, and every line suggests a being who has lived too long inside myth.",
-        "why_actor_wants_this": "This is the showcase space of Cate Blanchett in *Thor: Ragnarok* or Jodie Comer in *The Last Duel* — a role that can hold power, wit, and metaphysical scale without losing intimacy. Prestige actresses who want a part that feels iconic and emotionally playable will chase this immediately."
-      },
-      {
-        "name": "FATHER ANTONIO MIGUEL",
-        "role_type": "Lead",
-        "demographics": "Male · 20s · Spanish priest",
-        "hook": "Father Miguel is a hungry, self-justifying cleric whose piety is inseparable from ambition, envy, and social insecurity. He is physically frail, emotionally repressed, and constantly trying to convert other people’s power into his own future.",
-        "why_actor_wants_this": "This is the kind of morally split role that Paul Dano in *There Will Be Blood* or Andrew Scott in *Fleabag* can turn into a pressure cooker of longing and self-deception. Actors who like playing intellect, repression, and spiritual corrosion will see a lot to mine here."
-      },
-      {
-        "name": "DON DOMINGUEZ",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · Spanish conquistador commander",
-        "hook": "Don Dominguez is swagger, appetite, and old-world authority in one body, a man whose charm still works even as his decline is visible. He has the looseness of someone who has survived too much and now uses humor and indulgence as social armor.",
-        "why_actor_wants_this": "This is the kind of supporting turn that Javier Bardem in *No Country for Old Men* or Mark Rylance in *Bridge of Spies* can make unforgettable with ease and menace. A seasoned character actor would want the chance to dominate scenes with warmth, rot, and authority."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to stage myth as intimate, sensual history.",
-        "fit_profile": "Established indie or prestige-TV directors with at least one visually confident period or genre project behind them, especially those who care about performance-first storytelling and elegant world-building. This material rewards directors who can balance ritual, romance, and colonial tension without flattening any of them into pure exposition.",
-        "detail": "The pilot gives a director a chance to move between contained interiors, dreamlike transitions, and historical travel without needing spectacle to carry the frame. It will attract filmmakers who like to build atmosphere from blocking, costume, and performance rather than from large-scale effects."
-      },
-      "buyer_appeal": {
-        "tier": "Premium streaming series",
-        "lane": "Prestige historical fantasy with adult romance",
-        "detail": "The project can be packaged around a strong young female lead and a distinctive ensemble rather than a heavy VFX mandate, which lowers the barrier for a buyer willing to back tone and performance. The 1927 framing device and mythic historical sweep give it export value and a bingeable serialized engine that can travel well across territories."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot spends a long time explaining itself.",
+          "detail": "The reading-room sequence is rich in texture, but the first act leans heavily on exposition before the central romantic engine fully takes over. That makes the buy feel more literary than propulsive, which is a real consideration for streamers looking for immediate momentum.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Judy is more witness than driver.",
+          "detail": "The frame is emotionally effective, but Judy’s role in the pilot is largely to receive the story rather than alter it. Buyers will notice that the lead’s agency is still emerging, which matters when assessing whether the series can stay anchored in her POV.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The mythology is dense on first pass.",
+          "detail": "Chimalman, Quetzalcoatl, the bracelet, reincarnation, and colonial history all arrive quickly, and the pilot assumes a lot of cultural and historical fluency from the audience. That density is part of the appeal, but it also narrows the immediate casual-viewer lane.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The series is period-expensive by design.",
+          "detail": "The 1927 New York emporium, the Spanish galleon, and the jungle/Mesoamerican material all point to recurring period build and costume costs. Even with light VFX, this is not a cheap historical fantasy to sustain across a season.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is pacing and accessibility: the pilot is beautifully specific, but it asks for patience before the emotional engine fully locks. On the business side, the period scope is manageable for premium streaming, but it is still a real spend conversation, not a contained buy."
     },
-    "considerations": [
-      {
-        "area": "The pilot spends real time in the emporium before the past opens.",
-        "detail": "The reading-room setup is doing important atmospheric work, and the 1927 frame is a strong signature. A next pass could consider how quickly Judy’s personal stakes are braided into the ritual so the opening pages carry even more forward charge while preserving the charm of the room.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The ensemble is still centered on the mythic pairings.",
-        "detail": "Judy/Clara and Juan/Chimalman are the strongest relational engines, while the supporting players mostly serve the central reveal. One direction would be to give Clara or Amethyst a more independent episode engine so the series feels even more expandable beyond the core romance-myth axis.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The period footprint is manageable but real.",
-        "detail": "The script asks for a 1927 New York emporium, a Spanish galleon, jungle travel, and a village sequence, all of which point to a period build rather than a contained contemporary shoot. The version of the series that keeps more of the action in recurring interiors would protect the atmosphere while making the production lane even cleaner.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The lead roles invite specific casting.",
-        "detail": "Judy, Juan, and Chimalman all need performers who can carry language, accent, and mythic presence without losing emotional clarity. That specificity is a packaging advantage for prestige casting, but it also means the project will benefit from early attachment conversations around the central trio.",
-        "is_primary_lever": false,
-        "source": "both"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 74,
+  "weightedScore": 69.3,
   "tier": "Optionable",
-  "inputTokens": 19414,
-  "outputTokens": 4165,
-  "cost": 0.033303,
+  "inputTokens": 21819,
+  "outputTokens": 4189,
+  "cost": 0.03521475,
   "declaredFormat": "Series"
 }

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T04:54:41.486Z",
+  "submission_id": "e13e0942-9160-4bdf-ae8e-a7f8685e42a9",
+  "eval_id": "40024e96-04af-4a3d-a255-53cc5c0562bc",
+  "title": "Lamparello    The Last Call Submission",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Adam Lamparello",
+      "role_type": "Lead",
+      "demographics": "Male, late 30s to early 40s, white, New Jersey attorney, recovering alcoholic, brother of Marc, son of Mary."
+    },
+    {
+      "name": "Marc Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, philosophy teacher, brother of Adam, mental-health vulnerability."
+    },
+    {
+      "name": "Mary Lamparello",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s, white, mother of Adam and Marc."
+    },
+    {
+      "name": "Marty",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 50s, white, Adam’s friend and legal ally."
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s to 40s, white, former romantic partner of Adam, connected to Marc’s final hours."
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s to 40s, white or ethnically flexible depending on casting, woman who knew and loved Marc after his discharge."
+    },
+    {
+      "name": "Dr. Susan Myers",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s to 40s, physician, psychiatric unit staff."
+    },
+    {
+      "name": "Dr. Helen Andrews",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-40s, physician, psychiatric unit staff."
+    },
+    {
+      "name": "Galloway",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s to 60s, defense attorney."
+    },
+    {
+      "name": "Dr. Karen Levy",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s to 60s, expert witness, psychiatrist or mental-health specialist."
+    },
+    {
+      "name": "Dr. Reynolds",
+      "role_type": "Supporting",
+      "demographics": "Male or female, 40s to 60s, medical examiner/coroner."
+    }
+  ],
+  "positioning_hook": "A grief-ravaged lawyer sues the hospital that discharged his brother after a suicide attempt, only to confront his own missed call, his drinking, and the family silence that helped kill him.",
+  "cost_usd": 0.048045,
+  "input_tokens": 32260,
+  "output_tokens": 5300,
+  "status": "wrote:leads_ok"
+}

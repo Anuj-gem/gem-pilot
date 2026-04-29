@@ -1,0 +1,307 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Apocalyptic romance",
+      "genre_tags": [
+        "Drama",
+        "Music-driven"
+      ],
+      "tone": "Lush, melancholic, romantic, and elegiac with bursts of tension"
+    },
+    "positioning_hook": "A burned-out jazz pianist in Lisbon is hired to play for a bunker king before an asteroid strike, but the woman who awakens him makes survival feel like the wrong bargain.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean emotional promise — love, survival, and one last performance against the end of the world — that can travel to adult audiences and prestige buyers. It is more specialized than a four-quadrant disaster movie because the engine lives in mood, romance, and character, but the hook is still easy to grasp."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script announces its engine immediately: asteroid countdown, bunker scarcity, and a pianist being recruited by a mysterious patron. The opening hotel-bar sequence makes the premise legible fast, and the story’s central bargain stays clear throughout."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Morgan has a strong actor-facing contradiction — controlled, damaged, and musically gifted — and Marie gives the story a second pulse with her defiance and tenderness. Michel and George add useful counterweights, though the movie is still primarily carried by the Morgan/Marie axis."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The apocalyptic setting is filtered through jazz, performance, and romantic longing rather than spectacle, which gives the script a distinctive identity. The recurring watch motif, the music-as-salvation bargain, and the Lisbon hotel ecosystem all feel authored rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving through clear reversals: the passport theft, George’s recruitment, the rooftop intimacy, the bunker deal, and the final refusal. A few stretches lean into atmosphere and repetition, but the emotional stakes keep recharging the momentum."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A pianist being purchased for a bunker while the world ends is immediately graspable and unusually specific. The way the story turns music into both currency and moral test gives the premise that 'of course this exists' feeling."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The hotel, bar, corridor, rooftop, and ruined Lisbon streets all feel like a living social system with its own rules, class tensions, and survival economy. The bunker hierarchy, passport lottery, and improvised barter market give the world visible edges and story-generating pressure."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very identifiable tone: candlelit apocalypse, romantic fatalism, and jazz-club intimacy under collapse. It knows when to be operatic, when to be intimate, and when to let silence or ticking do the work."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface romance and survival plot, the script is really about art, control, grief, and what it means to preserve a self under pressure. The watch, the unfinished song, and the bride memory suggest a deeper emotional architecture that rewards attention."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Morgan, Marie, Michel, George, Ava, and Nadia create a web where almost any pairing can generate tension or tenderness. The movie still belongs to the central romance, but the hotel ensemble gives it enough relational texture to feel inhabited rather than isolated."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Adult lead in his 30s with strong piano performance ability or convincing piano doubling",
+          "Adult female lead in her 30s with singing ability",
+          "Older male antagonist with controlled, aristocratic presence",
+          "Child role for Nadia",
+          "Ensemble of adults in 30s to 70s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly interior with periodic exterior street, rooftop, and alley sequences",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Lisbon hotel/bar corridor suite footprint",
+          "Rooftop access with city views",
+          "Ravaged contemporary urban street exteriors",
+          "Record store interior",
+          "Chocolataria interior",
+          "Car interior for Rolls Royce sequence"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Asteroid visions, impact-night atmosphere, city-wide fire/smoke extensions, and some crowd/environment augmentation",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical gunshot aftermath, shattered glass, body handling, riot damage, and blackout/tremor effects",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "The Blue Note is referenced as a real venue"
+        },
+        {
+          "type": "brand",
+          "detail": "NATO is named repeatedly as the governing institution for entry passports"
+        },
+        {
+          "type": "brand",
+          "detail": "Rolls Royce is specifically named"
+        },
+        {
+          "type": "brand",
+          "detail": "Long Island is named as a cocktail, not a clearance issue"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical prestige drama lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release with festival-to-platform or limited theatrical runway"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained hotel-and-street footprint keeps the budget in a manageable prestige range, while asteroid imagery, crowd chaos, and city-fire extensions add moderate effects spend."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The movie can be built around two strong leads, but it benefits from a capable supporting ensemble and a child role that matters to the emotional finish."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story is mostly contained, but it uses multiple distinct interiors, rooftop work, night exteriors, and ruined city streets that need careful scheduling."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes gun violence, suicide-adjacent despair, collapse imagery, and mature romantic material, but it stays below explicit territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The script uses a few named real-world references, but it is largely original and not dependent on a heavy IP or life-rights package."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The apocalypse is filtered through music.",
+          "what_it_means": "That gives the movie a clear commercial identity: this is not just an end-of-the-world drama, it is a performance piece where music becomes currency, seduction, and salvation. Prestige buyers and actor-driven distributors will respond to a concept that lets the score, the piano, and the singing carry emotional and marketing weight.",
+          "evidence": "Morgan is hired to play for George; the unfinished song 'Stardust' becomes the price of a bunker seat; Marie later sings the lyrics and transforms the room.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Morgan is a showcase lead.",
+          "what_it_means": "The role gives an actor control, shame, romance, and musical virtuosity in one package, which is exactly the kind of part that can anchor a prestige feature. Mid-career dramatic leads and actor-musicians will see a rare chance to play a man whose inner collapse is expressed through performance.",
+          "evidence": "He starts as a rigid, blood-stained pianist with a broken watch and ends by choosing the song over the bunker bargain.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Marie gives the film its emotional voltage.",
+          "what_it_means": "She is not just a love interest; she is the story’s moral counterweight, which makes the romance feel earned rather than decorative. That creates a strong magnet for actresses who want a role with wit, vulnerability, and a late-film turn that changes the meaning of the entire movie.",
+          "evidence": "Her melodica, rooftop honesty, and refusal to become a 'bird in a gilded cage' define the film’s emotional argument.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The hotel is a self-contained pressure cooker.",
+          "what_it_means": "The contained setting keeps the movie producible while still feeling expansive, because the bar, corridor, rooms, and rooftop all generate different social behavior. Buyers like contained prestige pieces because they can be mounted with discipline and still feel eventful.",
+          "evidence": "Nearly every major beat plays inside the Grand Hotel or its immediate surroundings, with the bar functioning as the social center of the collapse.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "George is a memorable antagonist.",
+          "what_it_means": "He is not a cartoon villain; he is a collector, patron, and gatekeeper whose calm makes him more unsettling than overt menace would. That kind of refined antagonist is attractive to prestige actors and gives the film a class-based edge beyond simple survival stakes.",
+          "evidence": "He buys music, controls bunker access, and treats people like acquisitions while remaining composed even as the city falls apart.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has a strong class-and-scarcity engine.",
+          "what_it_means": "The passport lottery, barter economy, and bunker hierarchy create a social order that can sustain tension scene after scene. That makes the script feel bigger than its footprint and gives producers a marketable hook beyond the romance.",
+          "evidence": "Jewelry is traded for passes, medicine becomes currency, and George’s underground vault is reserved for the chosen few.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is elegant and mournful.",
+          "what_it_means": "The script has a distinctive lane between romantic tragedy and apocalyptic chamber piece, which is hard to mistake for anything else. That tonal identity is attractive to directors and buyers looking for elevated genre material with awards-adjacent texture.",
+          "evidence": "The jazz bar, rooftop confessionals, dream imagery, and final performance all lean into lyrical melancholy rather than spectacle-first disaster storytelling.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige apocalyptic romance with a real hook: a jazz pianist is bought by a bunker king, then falls for the woman who makes survival feel like surrender. The script’s biggest asset is that it turns the end of the world into an intimate, actor-forward music drama with a contained production footprint and a memorable emotional finish."
+    },
+    "lead_characters": [
+      {
+        "name": "Morgan Aireheart",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · pianist/composer",
+        "hook": "Morgan is a polished wreck: a gifted musician with the posture of a man who has spent years turning pain into manners. He is controlled, self-protective, and quietly theatrical, with a broken watch on his wrist and an unfinished song in his notebook that functions like a sealed wound.",
+        "why_actor_wants_this": "This is the showcase territory of Oscar Isaac in *Inside Llewyn Davis* crossed with the emotional unraveling space of Casey Affleck in *Manchester by the Sea* — a man whose restraint is the performance. Actor-musicians and prestige leads will chase it because it asks for piano skill, romantic chemistry, and a full interior collapse that still has to look elegant on the outside."
+      },
+      {
+        "name": "Marie Freeling",
+        "role_type": "Lead",
+        "demographics": "Female · 30s",
+        "hook": "Marie is bright, sharp, and emotionally unarmored in a way that makes her feel dangerous to Morgan’s defenses. She has wit, musical instinct, and a stubborn moral center; she can flirt, needle, comfort, and refuse all in the same breath.",
+        "why_actor_wants_this": "This is the kind of role that gave Rooney Mara in *Carol* or Carey Mulligan in *Promising Young Woman* a full-spectrum showcase — intelligence, restraint, and a late-film moral authority that changes the room. Leading actresses will want it because she is the story’s conscience without ever becoming passive, and the singing/performance element adds a second lane of display."
+      },
+      {
+        "name": "George Drier",
+        "role_type": "Lead",
+        "demographics": "Male · 60s",
+        "hook": "George is a collector with the calm of a man who has already decided who gets to survive. He is elegant, surgical, and quietly predatory, speaking like a patron while operating like a buyer of souls, art, and time.",
+        "why_actor_wants_this": "This is the showcase space of Ralph Fiennes in *The Grand Budapest Hotel* or Michael Stuhlbarg in *Call Me by Your Name* — refined intelligence with menace tucked under impeccable manners. Character actors with authority will chase it because every scene lets them weaponize stillness, taste, and control."
+      },
+      {
+        "name": "Michel",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Michel is the bartender as philosopher: dry, observant, and emotionally weathered, but never sentimental. He keeps the room functioning with ritual precision, and his calm makes him feel like the last adult in a collapsing city.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Jeffrey Wright in *The French Dispatch* or Barkhad Abdi in *Captain Phillips* a scene-stealing moral center — a man whose stillness carries authority. Actors who like to steal scenes with intelligence and understatement will want it because he gets the best observational lines and the clearest perspective on the world."
+      },
+      {
+        "name": "Ava",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s",
+        "hook": "Ava is all surface sparkle and private damage, a woman who uses glamour as armor while moving through the hotel’s social economy with instinctive speed. She is flirtatious, opportunistic, and more wounded than she first appears.",
+        "why_actor_wants_this": "This is the kind of role that gave Jennifer Jason Leigh in *The Hateful Eight* or Jena Malone in *The Neon Demon* a volatile, scene-rich presence — a woman who can pivot from comic bite to raw grief. Supporting actresses will chase it because she has attitude, mystery, and a few sharp turns that keep her alive in the frame."
+      },
+      {
+        "name": "Nadia",
+        "role_type": "Supporting",
+        "demographics": "Female · 16",
+        "hook": "Nadia is a frightened teenager with a startling amount of quiet dignity. She is small in the room but never merely decorative; her fear, grief, and instinct to survive give the film a human scale inside the apocalypse.",
+        "why_actor_wants_this": "This is the kind of young role that gave Brooklynn Prince in *The Florida Project* or Abby Ryder Fortson in *Are You There God? It’s Me, Margaret.* a real emotional anchor — a child/teen perspective that changes the temperature of every scene. Young actors and their reps will respond to the specificity and the emotional payoff of being the story’s most vulnerable witness."
+      },
+      {
+        "name": "Azar",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Azar is a desperate father reduced to bargaining with jewelry and hope. He is one of the film’s clearest faces of ordinary panic, and his presence keeps the apocalypse grounded in family stakes.",
+        "why_actor_wants_this": "This is the kind of brief but memorable role that gives an actor a single devastating turn, like the father figures in *Children of Men* or *The Road*. Character actors will like the emotional directness and the chance to make one scene land hard."
+      },
+      {
+        "name": "Cyra",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Cyra is a mother under impossible pressure, trying to keep her daughter intact while the world strips away every illusion of safety. She reads as exhausted, protective, and one bad decision away from breaking.",
+        "why_actor_wants_this": "This is the sort of grounded maternal role that gives an actress a lived-in emotional truth, similar to the parent roles in *Room* or *The Pursuit of Happyness*. Supporting actresses who specialize in realism will respond to the immediacy of the fear and love on the page."
+      },
+      {
+        "name": "Victor Reis",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Victor is another polished survivor in George’s orbit, a man whose nervousness suggests he understands the cost of proximity to power. He functions as a reminder that the bunker economy is already corrupting everyone it touches.",
+        "why_actor_wants_this": "This is a compact prestige-supporting part in the vein of the anxious power brokers in *Succession* or *Margin Call*. Actors who like sharp, economical roles will see a chance to make a lot of meaning with very little screen time."
+      },
+      {
+        "name": "Elias",
+        "role_type": "Supporting",
+        "demographics": "Male · 70s",
+        "hook": "Elias is a keeper of objects and memory, a shop owner who understands that some things cannot be bartered without losing their soul. He brings the film one of its most humane notes of grief and principle.",
+        "why_actor_wants_this": "This is the kind of role that gives an older actor the moral gravity of a scene in *The Straight Story* or *A Man Called Ove* — quiet, principled, and emotionally resonant. Veteran character actors will want it because the refusal to sell the record says more than pages of dialogue could."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make the end of the world feel intimate, musical, and morally charged.",
+        "fit_profile": "Established indie directors with at least one or two festival features, or prestige-leaning TV directors making the jump to features, who already work comfortably with performance-forward material. The material rewards directors who care about rhythm, silence, close-ups, and emotional choreography more than spectacle for its own sake.",
+        "detail": "The movie gives a director a chance to stage romance, class tension, and apocalypse inside a controlled visual grammar — hotel interiors, rooftop confessionals, and performance scenes that can carry the film. It is especially attractive to filmmakers who like to build atmosphere through production design, music, and actor behavior rather than heavy action coverage."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget prestige feature",
+        "lane": "Premium streamer / festival-to-platform / limited theatrical lane",
+        "detail": "It can be packaged around two strong lead performances and a contained production design footprint, so it does not require a giant ensemble or tentpole-scale star system to make sense. The apocalyptic-romance lane is exportable and streamer-friendly, and the music-driven hook gives marketing a clean emotional angle beyond the disaster premise."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The bunker bargain carries the whole engine.",
+        "detail": "The script is strongest when the George/Morgan deal feels like a live moral trap rather than a background premise. A next pass could keep the bargain visible in more of the middle movement so every romantic beat also tightens the survival pressure.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle leans on repeated mood beats.",
+        "detail": "The hotel-bar atmosphere is rich, but several passages return to the same emotional temperature: ticking watch, piano, longing glance, George watching. One direction would be to vary the middle with a sharper external turn or a more active obstacle so the romance and the survival plot keep colliding in new ways.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Marie’s choice can stay visible earlier.",
+        "detail": "Her final refusal lands because it is morally coherent, and the script already seeds that independence well. A future pass could foreground a few more moments where she actively shapes the terms of survival, which would make the ending feel even more inevitable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The cast can stay lean and premium.",
+        "detail": "The movie already lives comfortably in a contained ensemble lane, so there is no need to widen the supporting roster. Protecting the hotel footprint and keeping the street-world mostly impressionistic will preserve the prestige feel and keep the production in a disciplined budget band.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The asteroid imagery should stay selective.",
+        "detail": "The script uses visions, broadcasts, and environmental collapse rather than constant effects coverage, which is the right lane for the material. Keeping the VFX concentrated around a few signature moments will protect the emotional intimacy and avoid turning the movie into a spectacle piece.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 48532,
+  "outputTokens": 4882,
+  "cost": 0.058368,
+  "declaredFormat": "Feature film"
+}

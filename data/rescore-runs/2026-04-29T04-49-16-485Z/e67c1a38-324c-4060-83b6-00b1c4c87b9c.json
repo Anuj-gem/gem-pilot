@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T04:52:54.354Z",
+  "submission_id": "e67c1a38-324c-4060-83b6-00b1c4c87b9c",
+  "eval_id": "3b98f56b-caa2-45ea-8764-29bb7030734b",
+  "title": "Incidents William Gillies Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Val Petersen",
+      "role_type": "Lead",
+      "demographics": "Woman, mid-30s, white, English teacher, Utah/Mountain West background, adult daughter of a pious mother, trauma survivor."
+    },
+    {
+      "name": "Lota Delgado",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s, law enforcement, Latina, Utah police officer with family pressure and professional ambition."
+    },
+    {
+      "name": "Elliot Luthe",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-30s, white, working-class, Utah resident, father, possible abductor/possible decoy."
+    },
+    {
+      "name": "Willa Petersen",
+      "role_type": "Supporting",
+      "demographics": "Woman, 60s, white, devout mother, rural/Utah family matriarch, terminally ill."
+    },
+    {
+      "name": "Jack Nyback",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s, law enforcement, white, Weber County detective, older working cop."
+    },
+    {
+      "name": "Agent Landry",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, FBI agent, white, career federal investigator."
+    },
+    {
+      "name": "Harry",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, bar owner, white, socially easygoing, local small-business owner."
+    },
+    {
+      "name": "Pruitt Getch",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s, white, violent offender, rural Western background, one-eyed after injury."
+    },
+    {
+      "name": "Ivan Bowman",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s, suburban professional, white, property developer, father."
+    }
+  ],
+  "positioning_hook": "A traumatized teacher is abducted, released, and abducted again by a masked man who seems to know her past — forcing her to decide whether the monster is real, or the story she needs to survive.",
+  "cost_usd": 0.06323474999999999,
+  "input_tokens": 53551,
+  "output_tokens": 5127,
+  "status": "wrote:leads_ok"
+}

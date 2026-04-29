@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T04:53:06.521Z",
+  "submission_id": "e514c062-3370-4193-8384-f71a385e94c6",
+  "eval_id": "7f78aa21-2cfb-4994-85a5-5f0c4c4af7a2",
+  "title": "07   ZADDY by Sarah Ramos",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Ellie Noone",
+      "role_type": "Lead",
+      "demographics": "Woman, mid-20s, former gymnast, LA fitness instructor / aspiring entrepreneur, white."
+    },
+    {
+      "name": "Zack Shaw",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s, wealthy tech founder, white, physically imposing, cosmetic-enhanced."
+    },
+    {
+      "name": "Harper Hines",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, influencer / party planner, socially ambitious, white."
+    },
+    {
+      "name": "Morgan",
+      "role_type": "Supporting",
+      "demographics": "Man, late 20s, aspiring actor / filmmaker, white, stoner, underemployed."
+    },
+    {
+      "name": "Detective Heller",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s, detective, no-nonsense, working-class edge."
+    },
+    {
+      "name": "Carrie Elaine Lauren",
+      "role_type": "Supporting",
+      "demographics": "Woman, 40s, boutique fitness owner / boss, polished, status-conscious."
+    },
+    {
+      "name": "Brett Henderson",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s-50s, acid-burned survivor, physically scarred, voice-box speech."
+    }
+  ],
+  "positioning_hook": "A desperate LA barre instructor falls for a wealthy self-made zaddy, then discovers his perfect face, perfect body, and perfect life are built on a violent, identity-swapping lie.",
+  "cost_usd": 0.056010000000000004,
+  "input_tokens": 44398,
+  "output_tokens": 5047,
+  "status": "wrote:leads_ok"
+}

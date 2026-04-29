@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T04:57:35.882Z",
+  "submission_id": "720486b3-846c-4b26-a774-d2372db81dea",
+  "eval_id": "779331c3-d85f-46ac-a9d3-6bbb0997eba9",
+  "title": "Stardust",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Morgan Aireheart",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, white/European-presenting, professional musician, emotionally guarded, urban cosmopolitan"
+    },
+    {
+      "name": "Marie Freeling",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, American, emotionally resilient, working-to-middle class, musical"
+    },
+    {
+      "name": "George",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, affluent, controlled, likely European or transatlantic elite"
+    },
+    {
+      "name": "Michel",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-50s, Portuguese, bartender, observant, emotionally contained"
+    },
+    {
+      "name": "Ava",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, glamorous, socially agile, likely hotel regular / opportunist"
+    },
+    {
+      "name": "Markus",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, unstable, addicted/medically dependent, socially compromised"
+    },
+    {
+      "name": "Nadia",
+      "role_type": "Supporting",
+      "demographics": "Female, teenager, child/young teen, vulnerable, observant"
+    },
+    {
+      "name": "Azar",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, father, desperate, likely immigrant or expatriate"
+    },
+    {
+      "name": "Cyra",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, mother, protective, exhausted"
+    },
+    {
+      "name": "Victor Reis",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, affluent, nervous, business-minded"
+    },
+    {
+      "name": "Elias",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, shopkeeper, elderly, sentimental"
+    },
+    {
+      "name": "Gideon",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, wealthy, entitled, physically imposing"
+    }
+  ],
+  "positioning_hook": "A burned-out jazz pianist in Lisbon is offered bunker salvation if he finishes one last song before impact, then falls for a woman who may be his last reason to stay human.",
+  "cost_usd": 0.0646185,
+  "input_tokens": 51994,
+  "output_tokens": 5694,
+  "status": "wrote:leads_ok"
+}

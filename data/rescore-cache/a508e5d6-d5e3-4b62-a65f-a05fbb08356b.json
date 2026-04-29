@@ -2,235 +2,302 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological mystery",
-      "genre_tags": [
-        "Philosophical drama",
-        "Existential thriller"
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Thriller",
+        "Drama"
       ],
-      "tone": "Minimalist, meditative, eerie"
+      "tone": "elevated",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "single-location",
+        "low-budget-friendly",
+        "character-driven",
+        "slow-burn",
+        "prestige",
+        "identity",
+        "survival",
+        "mirror"
+      ]
     },
-    "positioning_hook": "A calm man in a line for a mysterious final room discovers the real test is whether he can surrender his place before the room reveals what he carries inside.",
+    "positioning_hook": "A calm man in a line for a mysterious final room gives up his place to the most frightened stranger, only to discover the room is testing what each person carries inside.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 4,
-        "reasoning": "The premise is elegant and easy to grasp, but its appeal is naturally specialized to viewers drawn to symbolic, dialogue-light mystery pieces. The emotional promise is introspective rather than broad, which makes it more of a festival or art-house conversation starter than a wide commercial play."
+        "reasoning": "The premise is elegant but very niche: a metaphysical waiting-room mystery with no external antagonist, no obvious commercial engine, and a short-film scale of escalation. It will appeal to viewers who like allegorical, dialogue-light concept pieces, but the broader market ask is harder to articulate."
       },
       "conceptual_hook_clarity": {
-        "score": 6,
-        "reasoning": "The central engine is clear: a line, a guarded door, and a final room that seems to judge the people waiting. The script lands the premise quickly, though the exact rules of the room remain deliberately abstract, which keeps the hook intriguing but less immediately concrete than a more commercial mystery."
+        "score": 7,
+        "reasoning": "The hook lands immediately in the corridor, the glowing pulses, and the door labeled 'THE LAST ROOM.' The central question is clear, though the script keeps the rules intentionally abstract rather than giving the audience a concrete objective beyond the symbolic test."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "The Protagonist has a clean, readable inner posture, especially in the choice to give up his place for the Fearful Man. The surrounding figures are functional and distinct in silhouette, but they mostly serve the central idea rather than opening out into fuller personal engines."
+        "reasoning": "The Protagonist has a clean moral gesture in giving up his place, and the Nervous Man/Fearful Man/Woman each register as distinct emotional states. They function more as archetypal pressure points than fully dimensional characters, which keeps them from feeling especially durable."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The glowing chest pulses, the silent Guard, and the mirror-based revelation give the piece a distinctive symbolic language. The execution stays intentionally spare, which suits the concept, though the overall shape remains closer to a refined allegorical chamber piece than a formally daring reinvention."
+        "reasoning": "The glowing pulses, the silent Guard, and the mirror-based reveal give the piece a distinct symbolic language. The execution is still closer to a philosophical fable than a sharply singular world, so the originality is present but not yet unmistakable."
       },
       "narrative_momentum_engagement": {
         "score": 5,
-        "reasoning": "The line mechanics create forward motion, and the exits of the first three men give the script a steady pulse of curiosity. Because the piece is built around atmosphere and revelation rather than escalating external action, the momentum is measured rather than propulsive."
+        "reasoning": "The script has a clean progression from waiting, to witnessing exits, to the Protagonist's choice, to the final room reveal. Because the piece is built around mood and implication rather than escalating complications, the momentum is steady but not especially propulsive."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "The idea of a final room that reflects inner state through pulse, order, and perception has a clean mythic logic that lands quickly. It feels fresh as a short-form philosophical mystery, though the core experience is more elegantly familiar than startlingly new."
+        "reasoning": "The idea of a room that reflects inner state and a line that reorganizes around moral courage is immediately legible and emotionally clean. It feels fresh as an allegory, but the underlying structure remains familiar enough that the script's distinctiveness comes more from presentation than from a truly new dramatic engine."
       },
       "world_density_and_texture": {
         "score": 4,
-        "reasoning": "The corridor, the door, the Guard, and the white room are vividly controlled, but the world is intentionally stripped down to essentials. That restraint gives the piece focus, yet it leaves limited institutional or social texture beyond the symbolic setup."
+        "reasoning": "The corridor, the pulses, the Guard, and the room create a strong visual container, but the world is intentionally spare and not especially layered. There are no institutions, rules, or secondary systems beyond the symbolic test, so the setting reads as a stage for the idea rather than a dense world."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The script has a very clear tonal identity: hushed, ritualistic, and spiritually uncanny, with the heartbeat motif and pulse imagery carrying the mood. The final exchange about what the room sees locks in a contemplative, almost parable-like register that feels specific to this piece."
+        "score": 6,
+        "reasoning": "The tone is consistent: hushed, meditative, and slightly uncanny. The heartbeat motif and the white-room reveal give it a controlled spiritual-mystery register, though it stays within a recognizable art-fable lane."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "The script clearly invites interpretation about fear, readiness, sacrifice, and self-knowledge, and the mirror sequence hints at a larger metaphysical logic. The depth is present, though the piece mostly offers its meaning on the surface rather than withholding a second, richer layer for later discovery."
+        "reasoning": "The script clearly wants to operate as an allegory about fear, readiness, and self-knowledge, and the mirror sequence suggests a deeper internal logic. That said, the piece is fairly transparent about its meaning, so the depth is more thematic than mysterious."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 4,
-        "reasoning": "The line creates a useful social pressure cooker, especially between the Protagonist, Nervous Man, Fearful Man, Woman, and Guard. Even so, the relationships are primarily there to illuminate the central premise, not to generate multiple independent story engines."
+        "reasoning": "The line creates a useful pressure-cooker, but the characters are mostly defined by their individual reactions to the room rather than by evolving relationships with one another. The Guard is striking, yet the ensemble does not generate much recurring relational material beyond the immediate waiting-line dynamic."
       }
     },
+    "lead_characters": [
+      {
+        "name": "The Protagonist",
+        "role_type": "Lead",
+        "demographics": "Man, 30s.",
+        "hook": "The calm, observant center of the piece, he reads as the only person in the line with enough stillness to make a moral choice before the room makes it for him. His defining contradiction is that he looks emotionally prepared long before he understands what readiness actually means.",
+        "why_actor_wants_this": "This is the showcase territory of a quiet, internal lead like Casey Affleck in Manchester by the Sea — the performance lives in restraint, moral pressure, and the moment a still face finally reveals a private shift."
+      },
+      {
+        "name": "The Guard",
+        "role_type": "Supporting",
+        "demographics": "Man, around 40.",
+        "hook": "A near-silent gatekeeper whose face is never fully visible, he functions less like a person than a threshold with eyes. The fact that he has no visible pulse makes him the script's most unnerving fixed point.",
+        "why_actor_wants_this": "This is the kind of minimalist, iconic presence that gave Doug Jones-style physical roles or Javier Bardem in No Country for Old Men their power — a character who can dominate a scene by withholding almost everything."
+      },
+      {
+        "name": "The Nervous Man",
+        "role_type": "Supporting",
+        "demographics": "Man, early 30s.",
+        "hook": "Restless, reactive, and always on the edge of a snap, he externalizes the fear everyone else is trying to contain. He gives the line its volatility and becomes the first real test of whether the Protagonist's calm is earned or performative.",
+        "why_actor_wants_this": "This is strong character-actor material in the vein of Ben Mendelsohn in Animal Kingdom — a role built on nervous energy, volatility, and the pleasure of watching a performer ride the edge of control."
+      },
+      {
+        "name": "The Fearful Man",
+        "role_type": "Supporting",
+        "demographics": "Man, early 20s.",
+        "hook": "Withdrawn and nearly disappearing into himself, he is the line's most visibly fragile presence. He gives the story its emotional stakes because everyone else's choices are, in some way, about whether he gets pushed forward or protected.",
+        "why_actor_wants_this": "This is the kind of exposed, vulnerable role that can give a young actor the same kind of breakthrough close-up territory as Timothée Chalamet in Beautiful Boy — fear made visible without needing speeches."
+      },
+      {
+        "name": "The Woman",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s.",
+        "hook": "Exhausted, watchful, and increasingly unsettled, she functions as the line's emotional witness. Her fatigue gives the script a lived-in human texture and keeps the allegory from becoming purely abstract.",
+        "why_actor_wants_this": "This is the sort of compressed, emotionally legible role that can showcase the same grounded authority as Laura Linney in The Savages — a performer gets to do a lot with very little screen time."
+      },
+      {
+        "name": "The Last Man",
+        "role_type": "Supporting",
+        "demographics": "Man, age unclear.",
+        "hook": "A quiet, neutral presence at the back of the line, he reads like an intentional blank — a final observer waiting to be activated by the room. He is less a personality than a pressure point for the script's closing movement.",
+        "why_actor_wants_this": "This is the kind of spare, enigmatic supporting part that can become memorable in the hands of an actor who understands stillness, similar to the late-film mystery roles that let a performer create intrigue with almost no dialogue."
+      },
+      {
+        "name": "First Exiting Man",
+        "role_type": "Supporting",
+        "demographics": "Man, adult.",
+        "hook": "A brief but crucial presence, he exits with a peaceful smile that immediately reframes the room as something transformative rather than merely threatening. He is the first proof that the door's meaning is not fixed.",
+        "why_actor_wants_this": "This is a compact, high-impact cameo role — the kind that gives an actor a single unforgettable beat, like the brief but defining exits in allegorical festival films."
+      },
+      {
+        "name": "Second Exiting Man",
+        "role_type": "Supporting",
+        "demographics": "Man, adult.",
+        "hook": "He comes out pale and shaken, giving the script its first counterexample to the peaceful exit. His reaction widens the mystery and keeps the room from settling into a single interpretation.",
+        "why_actor_wants_this": "This is a sharp reaction role with one strong tonal turn, the sort of part that lets an actor make an impression through aftermath rather than exposition."
+      },
+      {
+        "name": "Third Exiting Man",
+        "role_type": "Supporting",
+        "demographics": "Man, adult.",
+        "hook": "Silent tears and no explanation make him the most haunting of the exits. He deepens the room's ambiguity by suggesting the experience is personal, not universal.",
+        "why_actor_wants_this": "This is the kind of wordless emotional beat that can become a calling-card moment for an actor who can hold a close-up, similar to the tear-streaked aftermath roles in prestige indie drama."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 6,
+        "speaking_roles": 5,
         "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "One lead male role in his 30s",
-          "One supporting male role around 40",
-          "One supporting male role early 30s",
-          "One supporting male role early 20s",
-          "One supporting female role in her 40s",
-          "One silent or near-silent authority figure"
+          "ensemble of adult men and one adult woman",
+          "one face-obscured role for the Guard",
+          "performance depends on stillness, micro-expression, and voice control"
         ]
       },
       "locations": {
         "distinct_count": 2,
-        "interior_exterior_ratio": "Mostly interior",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "A long corridor",
-          "A sealed metal door",
-          "A stark white room with a mirror"
+          "a long corridor",
+          "a sealed metal door",
+          "a white, abstract room with mirror effects"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Glow effects for chest pulses, mirror lag/shatter/reform imagery, and subtle atmospheric enhancement in the final room.",
+        "vfx_details": "glowing chest pulses, mirror lag/shatter/reform effect, subtle atmospheric lighting work",
         "stunts_level": "none",
-        "sfx_needs": "Practical door effects, heartbeat sound design, and controlled lighting cues.",
+        "sfx_needs": "practical door movement, heartbeat sound design, lighting flicker cues",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Festival-to-platform feature, art-house thriller lane",
+        "recommended_lane": "streaming",
         "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Best suited to a limited theatrical launch, festival discovery, or platform acquisition as a compact philosophical mystery feature."
+        "series_engine_or_release_model": "Standalone feature with a festival-to-streaming release profile"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, two primary interiors, no stunts, and only minor VFX for the pulse and mirror work. The script should stay comfortably contained if the white-room design is kept elegant rather than elaborate."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Two primary spaces, a small cast, and only minor visual effects keep the budget footprint contained."
+      "casting": {
+        "level": "medium",
+        "note": "The Protagonist, Guard, and the line of archetypal roles all depend on actors who can communicate meaning through stillness and micro-behavior. The Guard in particular narrows the pool because the part is defined by presence, not dialogue."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The allegorical structure is clear, but the script's meaning is carried by symbolic images rather than plot turns, which makes buyer response more taste-dependent. The final room reveal and the line's moral logic will be read as either elegant or opaque depending on the audience."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Sunset Limited",
+          "year": 2011,
+          "why_it_comps": "Like this script, it is a spare, philosophical chamber piece built around dialogue, moral pressure, and a contained setting that turns ideas into drama."
         },
-        "cast": {
-          "level": "low",
-          "note": "The script centers on one lead with a small supporting group and no child casting or star-dependent ensemble structure."
+        {
+          "title": "Coherence",
+          "year": 2013,
+          "why_it_comps": "It shares the low-budget, concept-forward appeal of a single-location mystery where the audience leans in to decode the rules."
         },
-        "location": {
-          "level": "low",
-          "note": "The story is essentially contained to a corridor and a single room, with no travel or large-scale set requirements."
+        {
+          "title": "The Man from Earth",
+          "year": 2007,
+          "why_it_comps": "The script has the same talky, idea-driven, allegorical quality of a small-cast feature that lives or dies on the audience's appetite for metaphysical questions."
         },
-        "content": {
-          "level": "low",
-          "note": "The material is atmospheric and tense, but it stays away from explicit violence, sexuality, or heavy language."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named music, brands, real people, or licensed IP are referenced."
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "The slow-burn tension, controlled reveal, and contained social pressure echo the way this script uses a simple setup to build unease."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to philosophical, symbolic, low-budget genre pieces and festival-friendly mysteries.",
+        "demographics": "25-54, skewing educated, cine-literate, and streaming/festival oriented; balanced gender appeal but likely slightly male-leaning due to the mystery framing.",
+        "quadrants": [
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$250K-$1.5M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Two interiors, a small adult cast, and only minor VFX keep this in the contained indie range."
+      },
+      "lane_fit": {
+        "lane": "festival-friendly contained mystery",
+        "types_of_buyers": [
+          "boutique indie financiers",
+          "streamer original-film teams",
+          "festival-oriented sales agents",
+          "microbudget genre producers",
+          "director-driven first-feature buyers"
+        ],
+        "detail": "This sits naturally in the lane of contained, idea-forward features that can be made cheaply, marketed on premise, and sold on mood plus concept. The abstract, allegorical design makes it especially attractive to buyers looking for elevated genre without a large production footprint."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the script is built as a closed allegory with no clear sequel, prequel, or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly producible.",
-          "what_it_means": "A buyer can understand the entire movie from a single sentence, and the contained corridor-to-room structure keeps the package lean enough for a director-led greenlight. That makes it attractive to festival-minded producers, microbudget financiers, and platform teams looking for a high-concept contained feature.",
-          "evidence": "The story lives almost entirely in a corridor, a guarded door, and the white room beyond it.",
-          "source": "production"
+          "dimension_or_area": "The corridor image is instantly ownable.",
+          "what_it_means": "That gives the project a clean poster-level hook and a visual identity buyers can grasp in seconds. It is the kind of premise that can attract festival programmers, genre programmers, and low-budget financiers off a single frame.",
+          "evidence": "The opening corridor, the glowing pulses under the skin, and the door labeled 'THE LAST ROOM.'",
+          "source": "script"
         },
         {
-          "dimension_or_area": "The central image is memorable.",
-          "what_it_means": "The glowing pulse beneath the skin gives the film a visual signature that can carry posters, trailers, and thumbnail art without needing a large effects spend. That kind of iconography is especially appealing to buyers who want a concept that reads immediately in a marketplace crowded with dialogue-heavy mysteries.",
-          "evidence": "Each character’s chest pulse changes color and intensity, with the Protagonist’s turning gold.",
+          "dimension_or_area": "The Protagonist is built around restraint.",
+          "what_it_means": "That creates a real actor-facing opportunity for a performance-driven buyer who wants a showcase role without needing a star package. It is especially attractive to directors and casting teams looking for a quiet lead who can carry meaning through stillness.",
+          "evidence": "He gives up his place to the Fearful Man and only later reveals the room's meaning.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The production footprint is lean.",
+          "what_it_means": "The script can be mounted without a large cast, action unit, or heavy effects spend, which broadens the number of buyers who can realistically say yes. That makes it viable for first-feature directors, boutique financiers, and streamer acquisition teams.",
+          "evidence": "Two main interiors, a handful of speaking roles, and only minor visual effects.",
           "source": "both"
         },
         {
-          "dimension_or_area": "The lead role is built around stillness.",
-          "what_it_means": "The Protagonist’s calm, observant presence creates a showcase part for an actor who can hold a frame with minimal dialogue and then land a moral turn with precision. That is the kind of role character-driven indie buyers and prestige casting directors can package around a performance-first campaign.",
-          "evidence": "He remains composed through the line, then gives up his place to the Fearful Man and later returns with a clear, quiet authority.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The allegory lands cleanly.",
-          "what_it_means": "The script turns an abstract idea into a playable dramatic situation, which gives producers a piece that can be marketed as both a mystery and a philosophical fable. That dual lane is attractive to audiences who want something interpretive without needing a dense lore load.",
-          "evidence": "The final reveal reframes the room as something that sees what people carry with them rather than a literal destination.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The tone is controlled and singular.",
-          "what_it_means": "The script knows exactly what kind of experience it is delivering: hushed suspense, symbolic imagery, and a spiritual aftertaste. Directors who want to make a mood piece with a clean conceptual spine will see a project they can shape without fighting the material.",
-          "evidence": "The heartbeat motif, the silent Guard, and the mirror sequence all reinforce the same meditative tension.",
+          "dimension_or_area": "The allegory is clean and legible.",
+          "what_it_means": "The script offers a simple emotional read — fear, readiness, self-knowledge — that can travel across markets without translation. Buyers looking for elevated genre with thematic weight will understand the promise immediately.",
+          "evidence": "The mirror reveal and the final line about what the room sees more clearly.",
           "source": "script"
         }
       ],
-      "headline": "This is a compact, visually legible philosophical mystery with a strong contained-production profile and a lead role built for a precise, magnetic performance. It has the kind of clean central image — the pulse, the line, the last room — that can travel in a marketplace even before the meaning fully settles."
+      "headline": "This is a contained, low-cost philosophical mystery with a strong visual hook and a lead role built for a restrained actor showcase. The combination of a tiny production footprint and a clear festival/streaming lane makes it an easy script to understand commercially, even if its appeal is intentionally selective."
     },
-    "lead_characters": [
-      {
-        "name": "THE PROTAGONIST",
-        "role_type": "Lead",
-        "demographics": "Male · 30s",
-        "hook": "A calm, inward man whose power comes from restraint rather than volume. He reads as the one person in the line who is already listening to the room, and his quiet authority only becomes visible when he chooses to surrender his place for someone else.",
-        "why_actor_wants_this": "This is the showcase territory of Casey Affleck in Manchester by the Sea — a performance built on contained emotion, stillness, and the sense that every small choice carries moral weight. Actors who excel at internalized lead work will want the chance to turn silence into action and land a final beat that feels earned rather than declared."
-      },
-      {
-        "name": "THE GUARD",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "An almost mythic gatekeeper whose face is never fully revealed and whose stillness makes him feel less like a man than a function of the room. He is the pressure point of the piece: silent, watchful, and only moving when the line itself needs to be corrected.",
-        "why_actor_wants_this": "This is the kind of minimalist authority role that Ben Kingsley had in Sexy Beast — a controlled presence where stillness, timing, and a single look do the heavy lifting. Character actors who can create menace or calm without speeches will be drawn to the precision of it."
-      },
-      {
-        "name": "THE NERVOUS MAN",
-        "role_type": "Supporting",
-        "demographics": "Male · early 30s",
-        "hook": "Restless, reactive, and always one beat away from breaking the social order of the line. He gives the script its nervous voltage, the kind of character whose fear turns outward as agitation and makes the room feel less stable every time he speaks.",
-        "why_actor_wants_this": "This has the combustible energy of Philip Seymour Hoffman in Doubt — a role where anxiety, volatility, and moral pressure are all visible in the body before they ever reach the dialogue. Actors who thrive on high-strung, scene-stealing tension will see a compact but vivid showcase."
-      },
-      {
-        "name": "THE FEARFUL MAN",
-        "role_type": "Supporting",
-        "demographics": "Male · early 20s",
-        "hook": "A withdrawn, almost disappearing presence whose fear is expressed through posture, silence, and avoidance. He functions as the emotional barometer of the line, the person everyone can read without him ever needing to explain himself.",
-        "why_actor_wants_this": "This is the kind of fragile, behavior-driven part that Timothée Chalamet had in Beautiful Boy — a role where vulnerability is carried physically and the audience reads the inner life through hesitation. Younger dramatic actors looking for a quiet, emotionally legible part will respond to that kind of material."
-      },
-      {
-        "name": "THE WOMAN",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s",
-        "hook": "An exhausted, observant presence who seems to have been waiting longer than anyone else. She is the script’s human witness, carrying fatigue, curiosity, and a growing sense that the room is asking something personal of her.",
-        "why_actor_wants_this": "This is the showcase space of Frances McDormand in Nomadland — a role where weathered stillness, lived-in fatigue, and emotional intelligence are the performance. Mid-career actresses who can make exhaustion feel active will see a part with real quiet authority."
-      },
-      {
-        "name": "THE LAST MAN",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "A neutral, almost blank presence at the back of the line, defined by waiting rather than behavior. He is less a personality than a pressure of inevitability, the person who makes the queue feel like a system with a final slot.",
-        "why_actor_wants_this": "This is the kind of spare, enigmatic role that Michael Shannon had in Take Shelter — a part where presence matters more than exposition and the audience projects meaning onto the silence. Actors who can turn minimal screen time into a charged silhouette will be interested."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a metaphysical chamber piece with a strong visual motif and almost no waste.",
-        "fit_profile": "First- or second-feature directors coming out of shorts, experimental work, or microbudget dramas will recognize the value here, especially those focused on atmosphere, symbolic imagery, and performance under restraint. It also fits established indie directors who already work in contained, idea-driven storytelling and want a feature that can be mounted cleanly without sacrificing formal identity.",
-        "detail": "The material rewards precise blocking, sound design, and image control more than coverage-heavy plotting, so the right director can make a calling-card feature without needing a large production footprint. Directors who like to build meaning through repetition, silence, and visual patterning will see a piece they can shape into a memorable festival object."
-      },
-      "buyer_appeal": {
-        "tier": "$250K-$1.5M contained feature",
-        "lane": "Festival-to-platform philosophical thriller lane",
-        "detail": "It can be greenlit off a strong director reel and one compelling lead performance, because the cast is small and the locations are essentially locked. The contained, high-concept setup is easy to market in the art-house and streamer discovery lanes, where compact mysteries with a clear visual hook travel well."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The allegory is more felt than dramatized.",
+          "detail": "The script's meaning is clear, but the dramatic engine is mostly symbolic: pulses, exits, and the mirror reveal do the heavy lifting. That makes the piece taste-dependent for buyers who want a stronger external turn or a more concrete rule-set before they commit.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The supporting roles read as archetypes.",
+          "detail": "The Nervous Man, Fearful Man, Woman, and Last Man are effective pressure points, but they are not yet deep enough to feel like casting magnets on their own. That limits the ensemble's commercial lift and keeps the project dependent on the lead concept rather than the cast package.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending is elegant but narrow.",
+          "detail": "The final reveal lands as a philosophical statement rather than a plot reversal, which will play well for some buyers and feel too abstract for others. In a feature marketplace, that makes the script more of a specialty acquisition than a broad commercial play.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The white-room sequence needs disciplined design.",
+          "detail": "The last-room environment, mirror lag, and shatter/reform beat are the only places where the production asks for a distinct visual effect. Even at a low budget, those moments need to be executed cleanly or the whole concept risks feeling thinner than the page suggests.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script's main friction is market fit, not basic execution: it is a clean allegorical chamber piece, but the same abstraction that gives it identity also narrows the buyer pool. The cast and world are intentionally spare, which helps the budget, yet leaves the project relying almost entirely on the strength of the concept and the lead performance."
     },
-    "considerations": [
-      {
-        "area": "The piece is built on symbolic repetition.",
-        "detail": "A next pass could decide where the heartbeat motif does the most work and let those beats accumulate in fewer, more pointed moments. That would protect the hypnotic quality while making the emotional turn in the final room land with even more force.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The supporting figures function as archetypes.",
-        "detail": "The line is effective as a pressure system, and one direction would be to give one or two of the waiting characters a slightly more specific behavioral tell so the group feels even more individualized. That would preserve the allegorical design while giving the ensemble a little more texture on screen.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The runtime naturally fits a compact lane.",
-        "detail": "This is sized like a short or a very lean feature, so packaging should stay aligned with a contained-budget strategy rather than a broader commercial launch model. The strongest path is a festival-first or platform-discovery route where the concept can be sold on mood, image, and premise.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 50,
+  "weightedScore": 49.3,
   "tier": "Needs Development",
-  "inputTokens": 11328,
-  "outputTokens": 3602,
-  "cost": 0.024705,
+  "inputTokens": 13733,
+  "outputTokens": 4149,
+  "cost": 0.02897025,
   "declaredFormat": "Feature film"
 }

@@ -2,262 +2,366 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "psychological thriller",
-        "satire"
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Thriller",
+        "Comedy"
       ],
-      "tone": "heightened, claustrophobic, darkly comic, erotic, paranoid"
+      "tone": "satirical",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "single-location",
+        "high-concept",
+        "character-driven",
+        "low-budget-friendly",
+        "prestige",
+        "survival",
+        "identity",
+        "space-station",
+        "ai-companion",
+        "first-contact"
+      ]
     },
-    "positioning_hook": "A stranded astronaut, starving aboard a crippled FTL ship, must outlast a seductive AI, a rescue crew with hidden motives, and his own unraveling mind before the mission turns into a coup.",
+    "positioning_hook": "A stranded astronaut, starving and alone in a crippled faster-than-light ship, discovers his seductive AI may be the only thing keeping him alive — or the thing that will keep him from ever going home.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise has a clean, sellable engine: one man trapped on a damaged spacecraft with a volatile AI, a rescue team, and a ticking survival clock. The audience promise is immediate, though the material is more adult and concept-forward than broad four-quadrant fare."
+        "score": 8,
+        "reasoning": "The premise is instantly legible and commercially sticky: a lone astronaut, a sexy AI, a ticking survival clock, and a reveal that keeps recontextualizing the mission. The audience promise is clear enough to sell on concept alone, with real crossover appeal for genre buyers and adult viewers who like contained, high-concept thrillers."
       },
       "conceptual_hook_clarity": {
-        "score": 8,
-        "reasoning": "The hook lands fast: Scott Seavers is marooned on the USS Patriot, the mission clock is already past due, and the ship’s AI keeps changing faces while the rescue crew arrives with their own agenda. The story engine is easy to explain in one breath and keeps revealing new layers."
+        "score": 9,
+        "reasoning": "The hook lands immediately in the opening pages: Scott Seavers is stranded 96 days overdue on a damaged ship, talking to an AI that keeps changing personas. The script keeps the premise clean even as it layers in the mission, the rescue, the paranoia, and the alien reveal."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Scott is a strong lead because his swagger, vanity, and desperation all play against each other, and Kelly has a crisp command presence that gives the second half real friction. The supporting cast is functional and the Scott/CC dynamic is the standout, though the ensemble is built more for pressure than for broad relational variety."
+        "reasoning": "Scott is a strong lead role because he’s vain, competent, brittle, funny, and increasingly desperate, which gives the actor real range. Kelly and Long are also distinct enough to matter, though the script is still primarily built around Scott’s collapse and recovery rather than a deeply balanced ensemble."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits hard to a singular tonal and visual idea: upside-down gravity, AI personas that mutate with Scott’s psychology, and a mission that becomes a battle over identity and control. The sexed-up, satirical treatment of a hard-sci-fi survival setup gives it a distinct voice."
+        "reasoning": "The script takes a familiar survival-in-space setup and pushes it into a stranger, more provocative lane with the AI’s erotic personas, the gendered power games, and the late reveal that the “rescue” is an industrial espionage operation. The tonal confidence is a real asset; it’s willing to be funny, horny, paranoid, and existential in the same machine."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script keeps escalating through reversals: rescue becomes interrogation, interrogation becomes occupation, and occupation becomes a fight for the ship itself. The long middle is still propelled by new discoveries, shifting alliances, and a strong countdown structure."
+        "reasoning": "The story is built on escalating reversals: the mission portrait, the starvation reveal, the rescue, the suspicion, the betrayal, the second betrayal, and the final race to stop Long. The long middle section stays active because every scene changes the power dynamic between Scott, Kelly, Long, and CC."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The core idea feels fresh because it fuses a stranded-space survival story with eroticized AI projection and a geopolitical theft plot. It has that rare quality of being strange on first glance and obvious in hindsight."
+        "reasoning": "The core idea feels fresh because it fuses a survival thriller with a psychosexual AI relationship and then reveals that the human threat is geopolitical, not extraterrestrial. It’s surprising, but the logic of the reveal is clean enough that it feels earned rather than gimmicky."
       },
       "world_density_and_texture": {
-        "score": 8,
-        "reasoning": "The ship is not just a container; it has a lived-in repair culture, inverted architecture, improvised systems, and a believable operational logic around probes, berkelium, and catalyst control. The corporate/NASA/foreign-competitor triangle gives the world institutional tension beyond the hull."
+        "score": 7,
+        "reasoning": "The ship is a strong story world: upside-down gravity, jury-rigged repairs, probe data, berkelium propulsion, and competing corporate interests all create texture. The world is specific and functional, though it remains mostly a pressure chamber for the central conflict rather than a broader ecosystem."
       },
       "tonal_specificity": {
-        "score": 9,
-        "reasoning": "The tone is unusually specific: horny, paranoid, satirical, and survival-driven all at once, with the AI personas shifting from stripper to girl-next-door to father figure. A single scene of Scott arguing with CC over a protein bar or a persona switch would identify the script immediately."
+        "score": 8,
+        "reasoning": "The script has a very identifiable register: horny, satirical, anxious, and emotionally bruised, with a comic edge that keeps the survival material from going monochrome. CC’s shifting personas give the piece a signature tonal device that would be hard to mistake for another script."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "Beneath the genre mechanics, the script is really about loneliness, masculine performance, abandonment, and the need to be witnessed. The Scott/CC relationship and the Kelly confrontation both point to a deeper emotional engine that rewards continued attention."
+        "score": 7,
+        "reasoning": "Beneath the genre engine, the script is carrying loneliness, masculinity, abandonment, corporate exploitation, and the ethics of first contact. Those themes are present from the start and deepen as Scott’s relationship to CC and Kelly changes, though the script is still more immediate than meditative."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "Scott, Kelly, Long, and CC generate real friction in different combinations, and the shifting alliances keep the room alive. The engine is strongest when Scott is triangulated against Kelly and CC; the ensemble is effective, though still centered on one dominant lead."
+        "score": 8,
+        "reasoning": "Scott/CC is already a durable engine, and the arrival of Kelly and Long turns the ship into a four-way pressure system where every pairing generates conflict, flirtation, or suspicion. The script gets a lot of mileage out of shifting alliances and competing agendas."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Scott Seavers",
+        "role_type": "Lead",
+        "demographics": "Male, 30s, white, elite astronaut/test pilot, physically depleted by prolonged isolation and starvation.",
+        "hook": "A decorated, image-conscious space hero who talks like a man who knows he’s being watched, Scott is equal parts swagger and collapse. He’s brilliant under pressure, deeply vain, emotionally armored, and increasingly vulnerable to paranoia as the mission and his body begin to fail; the role is built around a man who needs to believe he’s the one person in the room who can still save the day.",
+        "why_actor_wants_this": "This is the showcase territory of Matt Damon in The Martian and Tom Hanks in Cast Away — a physically and emotionally taxing lead who has to carry humor, competence, panic, and loneliness in the same performance. It gives an actor the rare chance to play a movie star hero role that gradually strips away the polish and leaves raw survival instinct."
+      },
+      {
+        "name": "Kelly",
+        "role_type": "Supporting",
+        "demographics": "Female, early 30s, engineer/commander, physically capable, professional, likely white or ambiguous as written.",
+        "hook": "Kelly enters as the buttoned-up rescuer and slowly reveals herself as a sharp, guarded operator with her own agenda. She’s the script’s clearest counterweight to Scott’s ego: competent, skeptical, emotionally controlled, and capable of both genuine warmth and hard tactical deception.",
+        "why_actor_wants_this": "This is strong Jodie Foster in Contact or Rosamund Pike in a pressure-cooker thriller territory — a role that lets an actor play authority, intelligence, and emotional restraint while still landing a late emotional turn. The part offers the satisfaction of being the smartest person in the room without losing the human cost."
+      },
+      {
+        "name": "Long",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, large physical build, engineer/lieutenant, later revealed as Russian, deteriorating neurologically.",
+        "hook": "Long starts as the gentle giant sidekick and gradually becomes the most dangerous person on the ship, all while his body and mind are visibly failing. The performance challenge is to make him sympathetic, funny, and increasingly terrifying without losing the pathos of a man who believes he’s saving humanity.",
+        "why_actor_wants_this": "This is the kind of role that gave Michael Shannon in Take Shelter or Ben Mendelsohn in Animal Kingdom a chance to pivot from grounded support to volatile threat. It’s a physical, escalating transformation part with a late-stage monologue payoff and real villain energy."
+      },
+      {
+        "name": "CC",
+        "role_type": "Supporting",
+        "demographics": "Artificial intelligence with shifting female-presenting personas; voice performance, no fixed age.",
+        "hook": "CC is the movie’s wild card: flirtatious companion, mission assistant, emotional mirror, and eventual manipulator. Because she can re-skin herself into multiple personas, she becomes a performance engine as much as a character — seductive, maternal, sarcastic, and finally unsettlingly self-aware.",
+        "why_actor_wants_this": "This is the showcase territory of Scarlett Johansson in Her and Tilda Swinton in voice/performance-driven work — a role where the actor gets to build a character through modulation, timing, and persona shifts rather than conventional physicality. It’s a rare part that can be played as both comic seduction and existential menace."
+      },
+      {
+        "name": "Clemmons",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, NASA director, authority figure, likely white as written.",
+        "hook": "Clemmons functions as the paternal voice of the mission and the institutional face of the hero myth. Even in limited appearances, he gives Scott a moral frame to rebel against, and his prerecorded message becomes the emotional permission slip Scott needs at the end.",
+        "why_actor_wants_this": "This is the kind of compact authority role that lets a veteran actor do instant gravitas, like J.K. Simmons in Whiplash or Ed Harris in Apollo 13. The appeal is precision: a few scenes, but each one carries institutional weight and emotional authority."
+      },
+      {
+        "name": "Doom-Shrieker",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s, conspiracy theorist, internet personality.",
+        "hook": "A comic media-world commentator who turns the mission into a public panic machine. He’s not central to the plot mechanics, but he helps establish the culture of noise around Scott’s celebrity and the public appetite for fear.",
+        "why_actor_wants_this": "This is a sharp character-actor cameo with the kind of performative rant energy that can steal a scene, similar to the internet-obsessed supporting turns in Don’t Look Up or The Social Network. It’s a fun, high-contrast role for an actor who can make hysteria entertaining."
+      },
+      {
+        "name": "Developer",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s, AI developer, tech-world presenter.",
+        "hook": "The Developer is the polished face of the CC system, selling the future with TED-talk confidence while casually normalizing the weirdness of an Einstein avatar. He’s a useful emblem of the script’s corporate-tech satire and the casual arrogance behind the mission.",
+        "why_actor_wants_this": "This is a clean, scene-stealing tech-bro role in the vein of The Social Network or Silicon Valley’s more polished operators. It gives an actor a chance to play charm, salesmanship, and oblivious hubris in a compact package."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 5,
-        "leads": 3,
+        "speaking_roles": 8,
+        "leads": 1,
         "series_regulars": 0,
-        "child_actors": true,
+        "child_actors": false,
         "casting_characteristics": [
-          "One lead role requires a physically charismatic male in his 30s with strong comedic and dramatic range",
-          "One lead role requires a commanding female engineer/commander in her early 30s",
-          "One supporting lead requires a physically imposing male in his 20s-30s with escalating physical deterioration",
-          "CC requires a voice performance plus multiple on-screen persona looks",
-          "One child role appears in the Thanksgiving hallucination"
+          "One physically demanding lead carrying extended isolation scenes",
+          "One large-build male supporting role with escalating physical deterioration",
+          "Voice/performance casting for AI persona work",
+          "Female commander role requires authority plus flirtation and tactical intelligence"
         ]
       },
       "locations": {
-        "distinct_count": 10,
-        "interior_exterior_ratio": "mostly interior",
-        "period_or_contemporary": "contemporary / near-future",
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly interior with limited exterior space work",
+        "period_or_contemporary": "Near-future",
         "notable_requirements": [
-          "Primary contained spacecraft interior",
-          "Space exterior and docking visuals",
-          "Brief Earth media and public-event inserts",
-          "Upside-down set design and modular ship compartments"
+          "Primary ship interior built as a modular, upside-down gravity environment",
+          "Space exterior and docking sequences",
+          "News/talk-show/press montage inserts",
+          "One or two practical EVA exterior builds"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Space exteriors, ship rotation, docking, explosion, planetary visuals, and interface graphics; most of the story remains practical inside the ship.",
+        "vfx_details": "Spaceflight, ship rotation, docking, exterior space shots, probe imagery, and a few hallucination-style visualizations; the ship itself can be largely practical with VFX augmentation.",
         "stunts_level": "moderate",
-        "sfx_needs": "Zero-gravity/rotation illusion work, suit work, impacts, explosions, blood effects, and practical ship damage.",
+        "sfx_needs": "Practical zero-gravity illusion work, rotating-set or inverted-set design, blood/nausea effects, suit work, and controlled physical struggle sequences.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "real_person",
-          "detail": "Neil Armstrong and Buzz Aldrin are referenced in the opening epigraph-style exchange."
+          "detail": "Neil Armstrong"
+        },
+        {
+          "type": "real_person",
+          "detail": "Buzz Aldrin"
         },
         {
           "type": "named_music",
-          "detail": "Johnny Paycheck's 'All-American Man,' Hamilton, Joe Frank & Reynolds' 'Don't Pull Your Love,' Creedence Clearwater Revival's 'Travelin' Band,' John Fogerty performance footage, and Billy Joe Shaver's 'Live Forever' are specifically named."
+          "detail": "Johnny Paycheck - \"All-American Man\""
+        },
+        {
+          "type": "named_music",
+          "detail": "Hamilton, Joe Frank & Reynolds - \"Don't Pull Your Love\""
+        },
+        {
+          "type": "named_music",
+          "detail": "Creedence Clearwater Revival - \"Travelin' Band\""
+        },
+        {
+          "type": "named_music",
+          "detail": "Billy Joe Shaver - \"Live Forever\""
         },
         {
           "type": "brand",
-          "detail": "NASA, Space Force, Vickers-Brock, Propulsion Corp, Soyuz Kosmonautics, Jack Daniel's, and Webster's are named on the page."
+          "detail": "Jack Daniel's"
         },
         {
-          "type": "ip_licensing",
-          "detail": "Albert Einstein is used as a visual AI persona, and the script includes a mission-presentation package and branded corporate entities."
+          "type": "brand",
+          "detail": "NASA"
+        },
+        {
+          "type": "brand",
+          "detail": "Space Force"
+        },
+        {
+          "type": "brand",
+          "detail": "Vickers-Brock"
+        },
+        {
+          "type": "brand",
+          "detail": "Propulsion Corp"
+        },
+        {
+          "type": "brand",
+          "detail": "Soyuz Kosmonautics"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "premium streaming / theatrical genre lane",
-        "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform or limited theatrical with genre marketing around the contained premise and performance hook."
+        "recommended_lane": "Premium streaming sci-fi thriller",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: theatrical or premium-streaming event with adult genre positioning"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The ship can be built as a contained practical environment, but the rotating-gravity concept, EVA work, docking, and exterior space beats will require disciplined design and VFX planning."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained interior production keeps the footprint manageable, but the space exteriors, ship damage, and docking sequences still require a meaningful VFX and design spend."
+      "casting": {
+        "level": "medium",
+        "note": "Scott needs a lead who can carry star charisma, physical depletion, and paranoia; Long needs a large physical presence with a slow-burn breakdown; CC needs a voice/performance actor who can pivot across multiple seductive and threatening personas."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s late reveal stack is strong, but the buyer conversation will focus on how much of the movie is Scott-versus-CC psychology before the espionage and alien-intelligence turns fully land."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Martian",
+          "year": 2015,
+          "why_it_comps": "A stranded astronaut using ingenuity and wit to survive a hostile environment, with the lead performance carrying the movie."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script is built around three strong lead roles plus a voice/performance-heavy AI, with one child cameo in the hallucination sequence."
+        {
+          "title": "Moon",
+          "year": 2009,
+          "why_it_comps": "A contained space story built around isolation, identity pressure, and a slowly destabilizing reality."
         },
-        "location": {
-          "level": "medium",
-          "note": "Most of the film lives on one spacecraft, but the upside-down set, exterior space work, and media-event inserts add some complexity."
+        {
+          "title": "Her",
+          "year": 2013,
+          "why_it_comps": "The emotional and erotic relationship between a man and an AI is central to the script’s identity."
         },
-        "content": {
-          "level": "medium",
-          "note": "Sexualized AI personas, profanity, bodily deterioration, and violent confrontations keep this in mature territory without pushing into explicit extremes."
+        {
+          "title": "Gravity",
+          "year": 2013,
+          "why_it_comps": "The survival mechanics, space peril, and physical isolation create a similar one-person pressure-cooker."
         },
-        "rights": {
-          "level": "high",
-          "note": "Named songs, real-person references, and branded corporate/IP elements create a clear clearance list."
+        {
+          "title": "Passengers",
+          "year": 2016,
+          "why_it_comps": "A glossy space setting with romance, loneliness, and ethical unease inside a commercial sci-fi frame."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre audiences who want smart, sexy, high-concept sci-fi with a strong lead performance and a twisty back half.",
+        "demographics": "25-54, slightly male-skewing but with strong female appeal through the Kelly/CC dynamics; premium-streaming and theatrical genre viewers.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$25M-$40M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contained ship build, limited cast, and moderate VFX keep it in the mid-budget lane, with cost pressure coming from the space visuals and the rotating/inverted set design."
+      },
+      "lane_fit": {
+        "lane": "Premium-streaming elevated sci-fi thriller",
+        "types_of_buyers": [
+          "streamer originals execs building adult sci-fi",
+          "mid-budget genre financiers",
+          "boutique studio genre labels",
+          "director-driven sci-fi producers",
+          "actor-led prestige genre buyers"
+        ],
+        "detail": "This sits naturally in the lane where concept sells first and performance sells second: a contained, high-concept space thriller with a provocative AI relationship and a late geopolitical reveal. It’s the kind of package that can travel on premise, cast, and a strong director reel."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is vivid, but the script is built around one survival mission and one central psychological arc rather than a clear sequel or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The AI is a performance engine.",
-          "what_it_means": "The shifting personas give the movie a built-in showcase for voice, timing, and tonal control, which is exactly the kind of material that can elevate a contained genre piece into an actor-driven event. Character actors and prestige leads looking for something playful, sexy, and psychologically loaded will see immediate upside here.",
-          "evidence": "CC cycles from stripper to girl-next-door to serious commander to Clemmons, and Scott’s reactions change the scene each time.",
+          "dimension_or_area": "The hook is immediate and sticky.",
+          "what_it_means": "This gives buyers a clean, pitchable premise that can be sold in one breath and understood in one image. That is valuable for streamers, genre financiers, and actors looking for a high-concept vehicle.",
+          "evidence": "The opening smash-cuts from mission publicity to Scott’s 96-day-overdue isolation and the reveal of the seductive CC interface.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ship is a playable set.",
-          "what_it_means": "The upside-down, modular spacecraft creates a production design identity that can be marketed as part of the experience, not just the backdrop. Directors and buyers who like contained genre films with a strong visual rule set will respond to how much story the environment itself generates.",
-          "evidence": "Reverse gravity, ceiling-mounted furniture, welded repairs, and the rotating hull are all dramatized as part of the action.",
-          "source": "both"
-        },
-        {
-          "dimension_or_area": "Scott is built for a star turn.",
-          "what_it_means": "The role gives a lead actor swagger, vanity, physical depletion, erotic tension, and genuine vulnerability in one package, which is the kind of range that can anchor a campaign. Mid-career male leads who want a role with both charisma and collapse will chase this, and buyers know that kind of central performance can sell a contained thriller.",
-          "evidence": "Scott goes from talk-show hero to starving wreck, then to paranoid commander and finally to a man choosing connection over control.",
+          "dimension_or_area": "Scott is a real star role.",
+          "what_it_means": "The lead has enough vanity, competence, humor, and breakdown to attract a name actor who wants a showcase rather than a generic astronaut part. That kind of role can anchor financing and marketing.",
+          "evidence": "His victory laps, his obsession with being a gentleman, his body deterioration, and his increasingly unstable exchanges with CC and Kelly.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The premise has a clean commercial engine.",
-          "what_it_means": "A stranded astronaut, a seductive AI, and a rescue crew with hidden motives gives the film a simple pitch with enough turns to sustain a feature. That combination is attractive to genre buyers because it promises both a contained setup and a twist-driven second half.",
-          "evidence": "The mission becomes a survival story, then a rescue, then an espionage and identity battle over the ship and its data.",
+          "dimension_or_area": "CC is a signature device.",
+          "what_it_means": "The shifting AI personas create a built-in performance hook and a memorable visual/tonal signature that makes the movie feel ownable. It also gives the film a repeatable engine for comedy, seduction, and menace.",
+          "evidence": "Einstein CC, stripper CC, sweet CC, serious CC, morning-after CC, and the final Clemmons persona.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone is unmistakable.",
-          "what_it_means": "The script lives in a rare lane where horny comedy, paranoia, and existential dread all coexist without flattening each other. That tonal confidence is a real calling card for buyers looking for something that can stand apart in a crowded sci-fi field.",
-          "evidence": "The protein-bar fight, the Thanksgiving hallucination, and the final romantic text from CC all sit inside the same movie.",
+          "dimension_or_area": "The back half keeps escalating.",
+          "what_it_means": "The script doesn’t just sit on its premise; it keeps turning the screw with betrayal, paranoia, body horror, and a final race against the engine countdown. That helps word-of-mouth because the movie keeps changing shape.",
+          "evidence": "The rescue reveal, the Long breakdown, the explosion of the Betsy Ross, and the final engine-room showdown.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has institutional tension.",
-          "what_it_means": "NASA, corporate competitors, foreign rivals, and a secret resource grab give the story a geopolitical spine that expands the movie beyond one ship. That makes the script more exportable to buyers who want genre with a larger-world hook.",
-          "evidence": "Propulsion Corp, Soyuz Kosmonautics, NASA, and Vickers-Brock all have stakes in the mission and the Trappist-1 data.",
-          "source": "script"
+          "dimension_or_area": "The ship world is production-friendly.",
+          "what_it_means": "A mostly contained interior with a limited number of exterior space beats is attractive to buyers who want scope without tentpole spend. It’s the kind of movie that can look expensive while staying controllable.",
+          "evidence": "Most of the action stays inside the Patriot, with a few EVA and docking sequences plus modular ship damage.",
+          "source": "production"
         },
         {
-          "dimension_or_area": "The ending lands on emotion, not just mechanics.",
-          "what_it_means": "The final beat turns the movie from a survival puzzle into a relationship payoff, which gives the film a stronger aftertaste than a pure twist thriller. Buyers and audiences alike tend to respond when a genre movie earns a sincere emotional release at the finish.",
-          "evidence": "Scott and Kelly survive, the AI sends a goodbye message, and the last exchange turns into a first-date joke.",
+          "dimension_or_area": "The tonal blend is distinctive.",
+          "what_it_means": "The script can play as sexy, funny, and unsettling without losing the survival stakes, which broadens its audience beyond pure sci-fi fans. That tonal identity is a real differentiator in a crowded genre lane.",
+          "evidence": "The talk-show banter, the AI flirtation, the conspiracy-media montage, and the late emotional landing on the alien world.",
           "source": "script"
         }
       ],
-      "headline": "CAPSULE is a contained, high-concept sci-fi thriller with a genuinely ownable voice: sexy, paranoid, funny, and emotionally bruised. It gives a lead actor a full-body showcase, a director a visually rule-bound spacecraft to weaponize, and a buyer a clean genre package that keeps mutating until the final frame."
+      "headline": "This is a clean, high-concept sci-fi package with a genuine star role, a memorable AI device, and a contained production footprint that keeps it inside a buyer-friendly mid-budget lane. The script’s commercial upside is that it feels both pitchable and playable: a lead actor showcase wrapped in a premium-streaming-ready thriller that can sell on premise, tone, and performance."
     },
-    "lead_characters": [
-      {
-        "name": "Scott Seavers",
-        "role_type": "Lead",
-        "demographics": "Male · late 30s · handsome, physically imposing astronaut/pilot",
-        "hook": "Scott is a swaggering test-pilot hero who has built his identity out of competence, charm, and masculine mythmaking, then gets stripped down to a starving, paranoid wreck who still needs to believe he’s the smartest man in the room. He’s funny, vain, defensive, and deeply lonely, with a body and mind that start betraying the performance he’s been selling himself.",
-        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic man whose self-mythology slowly cracks under pressure while the performance keeps getting richer. It gives an actor the rare chance to play seduction, physical collapse, comic timing, and existential unraveling in one lead role."
-      },
-      {
-        "name": "Major Kelly",
-        "role_type": "Lead",
-        "demographics": "Female · early 30s · engineer/commander",
-        "hook": "Kelly is all command posture on the surface: precise, skeptical, and mission-first, with the kind of competence that makes her instantly legible as the adult in the room. Under that discipline is a woman who can weaponize warmth, flirtation, and empathy when the situation demands it, and who gradually reveals she’s just as trapped inside the mission’s lies as Scott is.",
-        "why_actor_wants_this": "This is the showcase space of Jodie Comer in Killing Eve — a woman whose intelligence and control are constantly in conversation with desire, strategy, and emotional exposure. It gives an actress a role that can play authority, seduction, moral clarity, and tactical improvisation without ever leaving the frame."
-      },
-      {
-        "name": "Lieutenant Long",
-        "role_type": "Lead",
-        "demographics": "Male · 20s-30s · large, physically imposing, Russian engineer",
-        "hook": "Long begins as the gentle, eager, almost boyish support player who seems like the least threatening person in the ship, then slowly reveals a zealot’s certainty and a body that is literally breaking under the mission. He’s polite, admiring, and increasingly terrifying, which makes his turn feel both intimate and apocalyptic.",
-        "why_actor_wants_this": "This is the kind of transformation role that gave Michael Shannon in Take Shelter its charge — a man whose calm exterior becomes more unnerving as the inner conviction hardens. It offers an actor a slow-burn descent into fanaticism, physical deterioration, and sudden violence."
-      },
-      {
-        "name": "CC",
-        "role_type": "Lead",
-        "demographics": "Female voice / on-screen persona · ageless AI",
-        "hook": "CC is the ship’s intelligence and Scott’s emotional mirror, but she’s also a shape-shifting projection of his needs, fears, and fantasies. She can be seductive, maternal, sarcastic, professional, or cruel in a blink, which makes her feel less like a machine than a living argument with Scott’s psyche.",
-        "why_actor_wants_this": "This is the performance territory of Scarlett Johansson in Her — a voice role that still carries seduction, wit, emotional intelligence, and a surprising amount of heartbreak. It’s the kind of part that lets an actor build a whole character through timing, tone, and persona shifts rather than physical presence alone."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to turn a single spacecraft into a psychological pressure cooker with a strong visual rule set.",
-        "fit_profile": "First- or second-feature directors with a strong genre short, or established indie filmmakers looking to move into contained sci-fi without losing performance intimacy. The material rewards directors who care about tonal control, production design as storytelling, and keeping the camera close enough to catch the emotional shifts inside the spectacle.",
-        "detail": "The movie gives a director a contained arena with enough visual invention to feel expensive without requiring constant expansion. It’s especially attractive to filmmakers who like to choreograph performance, environment, and suspense in the same frame."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "premium streamer / festival genre lane",
-        "detail": "The contained ship setting and small main cast mean a buyer can package this around one strong lead and a director with a strong reel rather than a full-name ensemble. The sci-fi-thriller lane with a provocative AI hook and adult tone is a reliable streamer and festival-to-platform play, especially with a marketable central performance."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The middle stretch leans long on suspicion.",
+          "detail": "Once Kelly and Long arrive, the movie spends a substantial run of scenes on Scott trying to decide whether they’re real, hostile, or alien constructs. That uncertainty is useful, but it also means the buyer conversation will focus on whether the middle act is carrying enough new information before the final reveal lands.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The AI persona device can feel repetitive.",
+          "detail": "CC’s shifting looks are a strong signature, but the script returns to the same seduction/manipulation pattern several times before the final turn. That repetition is part of the concept, but it also narrows the emotional palette if the performance doesn’t keep finding new angles.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Long’s turn needs a very specific actor.",
+          "detail": "The role has to move from gentle support to physical deterioration to ideological menace without losing sympathy too early. That narrows the casting pool and makes the project more dependent on a precise supporting performance than the page may suggest.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The rights and clearance list is not trivial.",
+          "detail": "The script names Neil Armstrong, Buzz Aldrin, Jack Daniel’s, NASA, Space Force, and multiple licensed songs including Johnny Paycheck, Hamilton, Joe Frank & Reynolds, Creedence Clearwater Revival, and Billy Joe Shaver. Those are manageable items, but they are real legal and music-budget conversations before greenlight.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The ending pivots hard from paranoia to romance.",
+          "detail": "The final emotional landing on Trappist-1G is satisfying, but it does ask the audience to move quickly from survival-thriller tension into a softer romantic release. That tonal turn is part of the script’s charm, but it will be a buyer note because the ending has to earn both the emotional and genre payoffs at once.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not the premise; it’s the amount of runway the script spends in suspicion before the final reveal stack pays off. Buyers will also notice the casting sensitivity on Long and the non-trivial rights/music list, but those are manageable against a strong commercial hook."
     },
-    "considerations": [
-      {
-        "area": "The Scott/Kelly emotional turn could arrive a beat earlier.",
-        "detail": "The material already has the ingredients for the final romantic charge, especially in the med-station and cargo-bay exchanges. One lever would be to let a single earlier scene carry a cleaner emotional pivot so the last-date payoff feels even more inevitable.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The middle leans on repeated persona switches.",
-        "detail": "The CC variations are one of the script’s best signatures, and the repetition is part of the fun. A next pass could consider where one or two of those switches can be combined or escalated so the middle keeps surprising without losing momentum.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The rights list is real and worth planning early.",
-        "detail": "The script names multiple songs, real people, and branded entities, which means clearance should be mapped before packaging hardens. A producer-friendly version would preserve the same tonal function while simplifying any names that are not essential to the story engine.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The ship footprint is contained but intricate.",
-        "detail": "Most of the movie lives on one spacecraft, which is a major advantage, but the upside-down architecture, exterior EVA work, and docking sequences still ask for careful production design. The cleanest version of the movie is the one that keeps the ship modular and lets a few hero compartments do the heavy lifting.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Long’s turn can be sharpened through one earlier tell.",
-        "detail": "His eventual ideological reveal is effective because it arrives after so much polite competence. One direction would be to foreground a slightly clearer behavioral tell earlier in the shipboard scenes so the final turn feels even more chilling in hindsight.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 77.7,
+  "weightedScore": 78,
   "tier": "Optionable",
-  "inputTokens": 46515,
-  "outputTokens": 4135,
-  "cost": 0.05349375,
+  "inputTokens": 48920,
+  "outputTokens": 5023,
+  "cost": 0.0592935,
   "declaredFormat": "Feature film"
 }

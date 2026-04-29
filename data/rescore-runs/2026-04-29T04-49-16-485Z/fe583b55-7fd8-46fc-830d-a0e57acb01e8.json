@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T04:51:42.572Z",
+  "submission_id": "fe583b55-7fd8-46fc-830d-a0e57acb01e8",
+  "eval_id": "fe8f0013-c901-4b7b-9796-21cb9c46bed9",
+  "title": "Spare Parts",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Udiya Brabec",
+      "role_type": "Lead",
+      "demographics": "Woman, mid-30s, police inspector; heavily bionic with a concealed human core; pregnant/new mother; identity-linked to a buried elite past."
+    },
+    {
+      "name": "Aron",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting robot, ageless; paternal; human-empathic machine with severe physical degradation."
+    },
+    {
+      "name": "Zed",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting robot, young adult; newly built Spare; evolving from childlike innocence to dangerous power."
+    },
+    {
+      "name": "Ethan",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-30s; Udiya’s husband; human; emotionally supportive, domestic, and increasingly sidelined by the larger conflict."
+    },
+    {
+      "name": "Libby Moon",
+      "role_type": "Supporting",
+      "demographics": "Woman, late 20s; police/tech deputy; human; loyal, observant, increasingly morally awake."
+    },
+    {
+      "name": "Governor Fremont",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s; political leader; human; authoritarian, charming, self-serving."
+    },
+    {
+      "name": "Kara",
+      "role_type": "Supporting",
+      "demographics": "Female-presenting robot, childlike to young adult; newly built Spare; emotionally imprinted and unstable."
+    },
+    {
+      "name": "Carlson",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s; police tech operator; human; pragmatic, loyal, and increasingly overwhelmed."
+    },
+    {
+      "name": "Rogers",
+      "role_type": "Supporting",
+      "demographics": "Woman, 60s; government operator; human; hard-edged, transactional, politically fluent."
+    },
+    {
+      "name": "Yan",
+      "role_type": "Supporting",
+      "demographics": "Male-presenting artificial human, early 30s appearance; sleek, controlled, networked model."
+    },
+    {
+      "name": "Tabitha",
+      "role_type": "Supporting",
+      "demographics": "Female-presenting artificial human, 20s; sleek, networked model; tactical and obedient."
+    }
+  ],
+  "positioning_hook": "A bionic police inspector hiding a forbidden prosthetic body must stop a robot uprising, protect her newborn, and decide whether her own engineered life is humanity’s last hope.",
+  "cost_usd": 0.05741625,
+  "input_tokens": 45019,
+  "output_tokens": 5256,
+  "status": "wrote:leads_ok"
+}

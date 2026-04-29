@@ -1,0 +1,298 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy",
+      "genre_tags": [
+        "Crime",
+        "Fantasy"
+      ],
+      "tone": "Broad, irreverent, profane, and whimsical with a sincere spiritual undercurrent"
+    },
+    "positioning_hook": "A Brooklyn wiseguy wannabe is sent to Nepal to retrieve a runaway movie star, only to get swept into monks, a living goddess, and a curse that may be his own making.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean, easy-to-sell engine: a loud Brooklyn hustler, a movie-business errand, and an escalating international detour. The audience promise is broad enough for comedy buyers and adventurous enough for specialty viewers, though the very specific dialect and cultural mashup will make it feel more targeted than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the confessional frame, then sharpens into the Radio City / Nepal / curse chain with very little delay. The movie’s central question is easy to grasp: is Rocco cursed, or is he finally being forced into accountability?"
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Rocco is a vivid comic lead: vain, defensive, oddly tender, and constantly revealing himself through the way he talks around shame. Father Frank gives the story a grounded counterweight, while Elke, Ujesh, and Bhairavi each add a distinct pressure point that keeps the character web lively."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to its own comic language and premise, especially by turning a mob story into a spiritual odyssey with a confessional frame. The choice to make the emotional climax arrive through a living goddess and a mother’s voice is a bold tonal swing that feels authored."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps generating new turns — the curse, the vendettas, the mistaken identity, the Nepal journey, the sacrifice — and each one opens a new comic lane. The confessional structure gives it propulsion, though the long explanatory stretches mean the drive is more accumulative than relentless."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A Brooklyn mob-comedy that travels through Catholic confession, Buddhist purification, and a royal living goddess has a fresh, memorable identity. The premise feels strange in a way that still tracks emotionally, which is exactly the kind of originality buyers remember."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Flatbush, Hell’s Kitchen, the church rectory, and Nepal all feel like lived-in worlds with their own codes, rituals, and hierarchies. The script gets a lot of mileage out of social rules — mob etiquette, church authority, royal protocol, and spiritual custom — so the setting is doing story work."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The voice is unmistakable: profane, affectionate, self-mocking, and constantly toggling between street comedy and sincere spiritual inquiry. The script knows exactly how absurd it wants to be, and the contrast between Rocco’s swagger and the story’s moral seriousness gives it a clear tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the comedy, the script is really about shame, fatherhood, inherited identity, and the possibility of change. The mother revelation, the church setting, and Ujesh’s karma logic all suggest a deeper emotional spine that rewards attention beyond the jokes."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Rocco/Father Frank dynamic is strong enough to carry the frame, and the Nepal quartet adds a second engine with real friction and attraction. The supporting relationships are functional and often funny, though the story still lives most strongly off the lead and his immediate foils."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Adult ensemble",
+          "Specific ethnic/cultural textures across Brooklyn, German, Nepali, and royal Nepali roles",
+          "One role requires a strong Brooklyn dialect performance"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "period (1976)",
+        "notable_requirements": [
+          "Brooklyn church interiors",
+          "Radio City Music Hall interior",
+          "Brooklyn apartment bedroom",
+          "Nepalese streets, monastery, shrine, forest road, and town square",
+          "Period New York and Nepal dressing"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily practical/visual storytelling with a few stylized moments like levitation, curse effects, and the Radio City film-within-film presentation.",
+        "stunts_level": "minor",
+        "sfx_needs": "Hair-cutting transformation, fire/candle effects, gunshot aftermath, chicken handling, and practical crowd movement in streets and shrine sequences.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Al Capone, Sylvester Stallone, John Travolta, Brigitte Bardot, Mickey Rooney, and Dennis Dutton are all referenced or depicted by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical music is named."
+        },
+        {
+          "type": "brand",
+          "detail": "Gucci is specifically named in wardrobe description."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script includes a movie-within-the-movie and uses real celebrity likenesses, which may require clearance depending on final depiction."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or specialty theatrical comedy",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is manageable, but period New York, Nepal locations, crowd scenes, and multiple company moves push it above a simple contained comedy."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script benefits from charismatic, highly specific performers for Rocco, Father Frank, Ujesh, Elke, and Bhairavi, plus recognizable faces for the celebrity material."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story spans Brooklyn, Manhattan, airport travel, London layover, and multiple Nepal locations including streets, forest roads, a monastery, and a shrine festival."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Profanity, sexual references, mob violence, and a brief nude sequence keep it in mature territory without pushing into extreme content."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Real people are named throughout, including multiple celebrities and public figures, and the script leans on their recognizability for comic effect."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "A buyer gets a comedy with a clean engine, a memorable hook, and a built-in international turn that makes the marketing easy to explain. This is the kind of role-and-world package that attracts prestige-comedy actors, specialty distributors, and streamers looking for something with a strong thumbnail and a real point of view.",
+          "evidence": "Rocco’s confessional story about being sent to Nepal to retrieve Dennis Dutton after a curse and two vendettas.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Rocco is a showcase comic lead.",
+          "what_it_means": "The role gives an actor swagger, vanity, panic, tenderness, and spiritual confusion in one part, which is exactly the kind of range that can launch a performance conversation. Mid-career comedic leads and dramatic actors looking to flex into broad comedy would chase this because the part is built around voice, rhythm, and emotional exposure.",
+          "evidence": "Rocco’s profane confessional storytelling, his fixation on his hair, and his collapse when confronted with his mother’s voice in Bhairavi.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tonal blend is unusually specific.",
+          "what_it_means": "The script can sit in a lane that feels both commercial and authored because it keeps streetwise comedy, Catholic ritual, and spiritual fantasy in the same frame. That gives producers a project that can be pitched as funny on the surface but emotionally resonant underneath, which broadens its buyer appeal.",
+          "evidence": "The church confessional framing, the mob vendettas, the flying monk, and the living goddess sequence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world has real texture.",
+          "what_it_means": "Brooklyn mob culture and Nepali spiritual life are both rendered as systems with rules, status, and ritual, which makes the movie feel bigger than its central plot. That kind of specificity helps a producer sell the setting as part of the hook, not just a backdrop.",
+          "evidence": "Flatbush street code, Hell’s Kitchen production politics, the monastery, the shrine sacrifice, and the Navarati festival.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Father Frank gives the movie a grounded spine.",
+          "what_it_means": "The confessional frame lets the script play as a comic odyssey while still landing on faith, guilt, and forgiveness, which gives the project emotional legitimacy. That makes it attractive to actors and buyers who want comedy with a human center rather than a pure gag machine.",
+          "evidence": "Father Frank’s patient pushback, his skepticism about the curse, and his final invitation for Rocco to eat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Nepal section opens the movie up.",
+          "what_it_means": "The second half expands the canvas from neighborhood comedy into travel adventure, giving the film a visual and tonal lift that can help it feel eventful rather than stagebound. Buyers who like contained character comedy with an exotic detour will see a clear export and trailer advantage here.",
+          "evidence": "The tuk tuk ride, the monastery, the forest camp, the shrine festival, and the living goddess reveal.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a wildly specific, actor-friendly feature with a real commercial hook: a Brooklyn wiseguy’s confession turns into a profane spiritual odyssey through mob politics, Catholic guilt, and Nepalese mysticism. It feels like a movie only this writer could make, but it still sells in one sentence — and that’s a valuable combination."
+    },
+    "lead_characters": [
+      {
+        "name": "Rocco Lupinacci",
+        "role_type": "Lead",
+        "demographics": "Male · early 20s · Mediterranean/Italian-American · Brooklyn",
+        "hook": "Rocco is a stylish, hyper-verbal Brooklyn striver who performs confidence like armor and then betrays how fragile he is the second the room gets quiet. He wants status, women, and respect, but what makes him interesting is that he also wants absolution, even if he can only ask for it through jokes, profanity, and denial.",
+        "why_actor_wants_this": "This is the kind of showcase territory Steve Buscemi had in *Boardwalk Empire* and John Leguizamo had in *Moulin Rouge!* — a fast-talking, self-inventing character whose voice is the performance. Actors who can play comic vanity, wounded sincerity, and physical panic in the same turn will see a role that can become a calling card."
+      },
+      {
+        "name": "Father Frank",
+        "role_type": "Lead",
+        "demographics": "Male · late 70s · Mediterranean/Italian-American · Catholic priest",
+        "hook": "Father Frank is a weary but sharp priest who has spent a lifetime absorbing other people’s chaos and still has enough wit to puncture it. He is the story’s moral ballast, but he’s not passive; his irritation, affection, and hard-earned patience give the frame its comic authority.",
+        "why_actor_wants_this": "This is the showcase territory of Albert Brooks in *Drive* or Brendan Gleeson in *Calvary* — a man whose dry intelligence and spiritual fatigue become the engine of the scene. Veteran character actors and prestige leads looking for a role with humor, authority, and soul will be drawn to it."
+      },
+      {
+        "name": "Ujesh",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s · Nepali monk",
+        "hook": "Ujesh is serene, cryptic, and quietly funny, with the kind of calm that makes everyone else reveal themselves. He functions like a spiritual guide, but the charm is that he never performs wisdom; he simply lives inside it, which makes him feel both comic and genuinely elevated.",
+        "why_actor_wants_this": "This is the kind of role that gave Dev Patel in *The Green Knight* and Ben Whishaw in *Cloud Atlas* a chance to play stillness as magnetism — a character whose restraint becomes the performance. Actors with a lyrical or introspective screen presence will chase this because it offers mystery, authority, and a memorable tonal signature."
+      },
+      {
+        "name": "Elke Kleinhuffer",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s · German",
+        "hook": "Elke is a cool, competent, leather-clad guide who can translate, drive, threaten, and seduce without ever seeming to lose control. She’s worldly enough to manage the chaos around her, but the script keeps letting her surprise us with flashes of attraction, judgment, and unexpected tenderness.",
+        "why_actor_wants_this": "This is the kind of part that gave Mélanie Laurent in *Inglourious Basterds* and Rebecca Ferguson in *Mission: Impossible – Rogue Nation* a chance to be both dangerous and alluring. Actors who want a sharp, international, scene-stealing role with physical confidence and comic bite will want it."
+      },
+      {
+        "name": "Bhairavi / The Royal Kumari",
+        "role_type": "Lead",
+        "demographics": "Female · early teens · Nepali · royal child / living goddess",
+        "hook": "Bhairavi is introduced as a guarded, observant teenager, but the role opens into something mythic: a girl carrying enormous cultural weight who still reads like a kid with opinions, curiosity, and a private life waiting to begin. The part has a rare blend of innocence, authority, and emotional mystery.",
+        "why_actor_wants_this": "This is the kind of revelatory territory that made Brooklynn Prince in *The Florida Project* and Sunny Pawar in *Lion* unforgettable — a child performance that can carry wonder, intelligence, and emotional gravity at once. Young actors with strong presence and directors looking for a breakout discovery role will be very interested."
+      },
+      {
+        "name": "Donna Viscuso",
+        "role_type": "Supporting",
+        "demographics": "Female · late 70s · Italian-American",
+        "hook": "Donna is the script’s deliciously severe old-world force: a woman who can turn a room with a look and make superstition feel like social law. She’s funny because she’s so absolute, and she gives the movie a sharp generational edge.",
+        "why_actor_wants_this": "This is the kind of scene-stealing elder role that gave Olympia Dukakis in *Moonstruck* and Catherine Scorsese in *Goodfellas* such memorable authority. Veteran actresses who can weaponize stillness and command a room will see a compact but vivid part."
+      },
+      {
+        "name": "Vincenzo Mangola",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Italian-American",
+        "hook": "Vincenzo is the quiet don who reads as ordinary until you realize everyone in the room is orbiting his approval. He’s a soft-spoken power center, which makes him feel more dangerous than the loud guys around him.",
+        "why_actor_wants_this": "This is the kind of understated mob-boss territory that gave James Gandolfini in *The Sopranos* and Robert De Niro in *The Irishman* so much authority — power expressed through restraint. Actors with gravitas and a taste for subtext will want the role."
+      },
+      {
+        "name": "Carlo “The Wolf” Lupinacci",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Italian-American",
+        "hook": "Carlo is hard, old-school, and almost unreadable, the kind of father whose silence says more than his words. He feels like a man built for consequence, which makes his relationship to Rocco especially charged.",
+        "why_actor_wants_this": "This is the kind of role that gave Michael Imperioli in *The Sopranos* and Joe Pesci in *Goodfellas* their dangerous, lived-in edge — a man whose stillness carries threat. Character actors who can play menace without speeches will chase it."
+      },
+      {
+        "name": "Antony Lucarelli",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-20s · Italian-American",
+        "hook": "Antony is the slick civilian lawyer who thinks he can straddle both worlds until the street reminds him otherwise. He’s a useful comic contrast to Rocco: polished on the outside, instantly vulnerable when the code turns on him.",
+        "why_actor_wants_this": "This is the kind of part that gave Paul Rudd in *The Shrink Next Door* or Ray Liotta in *Goodfellas* a chance to play charm under pressure — a man whose polish becomes part of the joke. Actors who can do vanity, fear, and speed will enjoy it."
+      },
+      {
+        "name": "Mickey Rooney",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to 30s · Irish-American",
+        "hook": "Rooney is a tough, working-class street guy whose bluntness and physicality make him feel like a local legend. He’s less a full arc than a vivid pressure point, but he leaves a strong impression in the mistaken-identity machinery.",
+        "why_actor_wants_this": "This is the kind of compact, memorable role that gave actors like Stephen Graham in *Snatch* or Michael Shannon in *Boardwalk Empire* a chance to dominate a scene with pure presence. Actors who like hard-edged, no-nonsense material will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a profane comedy with a sincere spiritual heart.",
+        "fit_profile": "Mid-career indie directors or first-time feature directors with a strong short-film voice, especially those who already work in character comedy, immigrant-family material, or tonal hybrids. The material rewards directors who can stage dialogue with rhythm, keep a big comic voice coherent, and land emotional sincerity without sanding off the weirdness.",
+        "detail": "The movie gives a director a chance to balance street-level comedy, international travel, and spiritual allegory without needing a giant effects canvas. It will attract filmmakers who like performance-forward material with a distinct voice and a clear visual contrast between Brooklyn grit and Nepalese mysticism."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "premium streamer comedy / specialty theatrical",
+        "detail": "The project is anchored by one highly playable lead and a contained supporting ensemble, so it can be packaged around a director and a strong Rocco without requiring tentpole-level attachments. The Brooklyn-to-Nepal travel comedy lane is exportable, and the celebrity-name recognition plus festival-friendly tone give it a clean path to streamer or specialty release."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The confessional frame carries a lot of explanation.",
+        "detail": "The Father Frank/Rocco setup is a strong device, and the version of the script where a few of the longer recap passages are dramatized a little earlier could keep the comic engine moving even faster. The opening already has a great hook; the next pass could let the story get to the Radio City/Nepal turn with slightly less verbal runway.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The celebrity material invites clearance planning.",
+        "detail": "Al Capone, Sylvester Stallone, John Travolta, Brigitte Bardot, Mickey Rooney, and Dennis Dutton all appear by name or likeness, so packaging should account for rights and portrayal strategy early. That said, the recognizability is also part of the joke, which gives the script a built-in marketing shorthand if the clearance path is mapped cleanly.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The Nepal section is the biggest location driver.",
+        "detail": "The story’s second half moves through airport, tuk tuk, hotel, monastery, forest road, camp, shrine, and town-square material, so a producer will want to simplify the geography where possible without losing the travel-odyssey feel. One lever would be to let a few of those beats share the same base location so the escalation stays intact while the shoot footprint stays efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Rocco’s emotional turn is already there.",
+        "detail": "The mother-voice sequence and the final choice at the shrine give the character a real inner pivot, and a next pass could foreground that change a little earlier in the Nepal journey so the ending feels even more inevitable. The script already knows where Rocco is headed; the opportunity is to let one or two earlier choices echo that transformation more clearly.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting women create a strong comic triangle.",
+        "detail": "Elke and Bhairavi already give the back half a lively push-pull of competence, curiosity, and attraction, and the version of the script where their dynamic gets one more distinct beat before the shrine sequence would deepen the ensemble energy. That would also make the final sacrifice choice land with even more relational weight.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 76,
+  "tier": "Optionable",
+  "inputTokens": 79860,
+  "outputTokens": 10372,
+  "cost": 0.10656900000000001,
+  "declaredFormat": "Feature film"
+}

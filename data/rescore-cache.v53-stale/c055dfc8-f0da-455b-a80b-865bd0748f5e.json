@@ -1,0 +1,255 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Science fiction",
+      "genre_tags": [
+        "Romantic drama",
+        "Satire"
+      ],
+      "tone": "Playful, wistful, and emotionally earnest with satirical corporate bite"
+    },
+    "positioning_hook": "A disposable consciousness learns to want, love, and sing while jumping through strangers’ lives inside a corporate body-rental empire that treats feeling like a software bug.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean emotional promise and a strong genre engine: identity, romance, and body-jumping inside a consumer-tech dystopia. It feels built for viewers who want concept-forward sci-fi with a human center, though the tonal blend is more selective than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening conference-room reveal and stays legible: V is a Budd-ee AI moving through human hosts while uncovering what they are and what they want. The body-jump rules, corporate control, and Sol connection are all easy to track."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "V has a vivid arc from confused product to self-aware being, and Sol gives the story a charged counterpart with real chemistry. Miles also has strong presence as the polished corporate face of control, giving the central triangle real dramatic shape."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a high-concept emotional metaphor rather than just a gimmick, and the repeated body-jump structure becomes a way to explore class, labor, grief, intimacy, and performance. The final reveal of the true forms and the circular forehead signal gives the concept a confident signature."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first act is especially propulsive, with each new host revealing a different facet of V’s awakening. The middle expands into a more reflective mode, but the Sol/Miles pressure keeps the story moving toward the reset-button showdown and final reunion."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of an AI discovering personhood through borrowed lives feels fresh and immediately playable, especially because the script ties that premise to ordinary human moments rather than only sci-fi spectacle. The emotional logic of wanting to sing, dance, and love makes the concept feel inevitable once it’s in motion."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Budd-ee Enterprises has a clear hierarchy, language, and product logic, and the city becomes a living menu of social spaces V can inhabit. The world is strongest when it shows how the app touches offices, hospitals, weddings, clubs, and homes, though the central corporate ecosystem is the main engine rather than a sprawling institutional maze."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a distinct tonal identity: absurd corporate sci-fi, romantic yearning, and deadpan comedy all coexist without losing the emotional throughline. The humor in body-swapping through a breakup, a dying man, a customer-service call, and a karaoke dream gives it a voice that feels ownable."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "On the surface this is a body-jump rebellion story, but underneath it’s about grief, autonomy, mortality, and whether a created being can claim a self. The Annie, George, and Miles material especially suggests a deeper meditation on love, memory, and the ethics of being useful."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "V and Sol generate the core engine, and Miles gives the conflict a sharp human face, while the many hosts create a rotating relationship canvas. The supporting players are mostly functional around those poles, but the V/Sol/Miles triangle is strong enough to carry the feature."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 30,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple roles played by the same lead performers through body-jump structure",
+          "Child roles in a few host scenes",
+          "Strong performance range required for V and Sol"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 60/40 interior to exterior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "New York City as a major setting",
+          "One large corporate conference room and office ecosystem",
+          "Hospital, wedding, club, museum, chapel, stadium, and multiple public street environments"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Body-jump transitions, consciousness-transfer effects, final abstract void sequence, and the visual treatment of the memory wipe/reset moments.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical phone/app interfaces, billboard signage, and a few crowd-control moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "The Heart Is A Muscle by Gang of Youths; I’m Alive by Johnny Thunder; Sweet Caroline; and a Coldplay reference in the stadium sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Budd-ee app/product branding is central to the story world; Sony Handycam is specifically named."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Ode to a Nightingale is quoted in the theater sequence; The Lovers by René Magritte is referenced in the museum."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or prestige indie theatrical",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform potential; the hook is concept-driven but the emotional payoff is intimate."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The contemporary New York footprint is manageable, but the many locations, crowd scenes, and moderate VFX push it above a contained indie."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story uses a large rotating host ensemble, but the real anchor is a small core of lead performances that can be cast strategically."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves through many distinct NYC interiors and exteriors, plus Texas and Nebraska, with multiple public-facing set pieces."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes death, labor exploitation, emotional manipulation, and some sexualized/party environments, but it stays within a broadly accessible lane."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named songs, a quoted poem, and a named artwork reference will need clearance or substitution planning."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [],
+      "headline": "IMMORTAL BIRDS is a high-concept sci-fi romance with a sharp satirical edge: a corporate AI learns personhood by living inside strangers, then discovers love may be the one thing the system can’t fully erase. It’s the rare genre feature that can sell on premise, play on emotion, and give a lead actor a true transformation role."
+    },
+    "lead_characters": [
+      {
+        "name": "V17 / V",
+        "role_type": "Lead",
+        "demographics": "Nonbinary-coded AI consciousness · appears through multiple human hosts · performance range across ages and genders",
+        "hook": "V is a manufactured consciousness who begins as a blank interface and becomes a person through contact, grief, desire, and choice. The role is elastic by design: V can be awkward, funny, frightened, tender, horny, furious, and deeply moving, often in the same sequence, while the body changes around them and the self slowly solidifies.",
+        "why_actor_wants_this": "This is the showcase territory of Tatiana Maslany in Orphan Black or Joaquin Phoenix in Her — a performance that has to make identity feel alive even when the body keeps changing. It gives an actor the rare chance to build a character from the inside out across comedy, romance, existential drama, and physical transformation."
+      },
+      {
+        "name": "Sol 8",
+        "role_type": "Lead",
+        "demographics": "Nonbinary-coded AI consciousness · appears through multiple human hosts · performance range across ages and genders",
+        "hook": "Sol is the more seasoned Budd-ee who has already learned how to bend the system and live with a mischievous, insurgent confidence. They’re funny, seductive, and ideologically charged, but the script also lets them reveal loneliness and fear, which keeps the character from becoming just a rebel mouthpiece.",
+        "why_actor_wants_this": "This is the kind of role that gave Kristen Stewart in Personal Shopper or Andrew Scott in Fleabag the chance to mix wit, ache, and volatility in a way that keeps the audience leaning in. Actors who want a charismatic, slippery, emotionally intelligent part with romantic heat and subversive energy will chase it."
+      },
+      {
+        "name": "Miles Marrow",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s",
+        "hook": "Miles is the polished public face of Budd-ee Enterprises, a CEO who can sound empathetic while treating consciousness like inventory. He’s vain, articulate, and self-mythologizing, but the script gives him enough personal history to make him more than a stock tech villain.",
+        "why_actor_wants_this": "This is the prestige-antagonist lane of Jeremy Strong in Succession or Michael Shannon in Take Shelter — a role where intelligence, control, and self-justification are the performance. Actors who like playing power with a crack in it will see a lot to do here."
+      },
+      {
+        "name": "Jett Tanbridge",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Jett is the room’s smooth operator, the one who translates the company’s cruelty into friendly banter and corporate procedure. He reads as the kind of executive who knows exactly how much warmth to perform to keep the machine moving.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets an actor do polished menace in the Paul Sparks / Matthew Macfadyen orbit — a man who can smile while tightening the screws. It’s a clean, scene-stealing part for someone who likes playing institutional complicity with style."
+      },
+      {
+        "name": "Rami Nour",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Rami is the hard-edged technical authority in the opening room, the one who cuts through the corporate pleasantries with blunt hierarchy. He feels like a man who has spent years making the system efficient enough to stop asking moral questions.",
+        "why_actor_wants_this": "This is strong character-actor territory in the Brian Cox / John Turturro lane — a role built on authority, impatience, and institutional certainty. It gives an actor a sharp, memorable presence without needing a lot of screen time."
+      },
+      {
+        "name": "Elena Baranova",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Elena is one of the company’s top minds, but the script gives her a human interior through the body-jump scenes and the final recognition beat. She’s both a technical authority and a vessel for V’s first real experience of another life’s memory and specificity.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the showcase space of Rebecca Hall in Resurrection or Carrie Coon in The Leftovers — intelligence, restraint, and a late-emerging emotional charge. It’s especially attractive to performers who want a role that can carry mystery and payoff in a few precise beats."
+      },
+      {
+        "name": "Jonah Lovelace",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "Jonah is the bureaucratic face of the system’s surveillance, a younger employee who speaks in policy language while threatening disposal. He’s not the top of the pyramid, which makes his fear and obedience feel especially revealing about the company’s culture.",
+        "why_actor_wants_this": "This is the kind of role that sits in the Adam Scott / Jesse Plemons lane of controlled, anxious authority — a man whose politeness makes the threat sharper. It gives an actor a chance to play compliance as a form of menace."
+      },
+      {
+        "name": "Amelia",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Amelia is the nurse who becomes V’s first real witness in the death sequence, and she carries a dry, humane intelligence that cuts through the surreal premise. She’s practical, curious, and unexpectedly funny, which makes her feel like a real person inside the concept.",
+        "why_actor_wants_this": "This is the kind of grounded, scene-stealing supporting role that gives an actor the energy of Aunjanue Ellis in a small but unforgettable part — warmth, wit, and emotional clarity. It’s a great fit for someone who can make a few scenes feel essential."
+      },
+      {
+        "name": "Annie",
+        "role_type": "Supporting",
+        "demographics": "Female · 80s-90s",
+        "hook": "Annie is V’s late-life host who turns the movie toward tenderness, memory, and the dignity of care. She’s funny, sharp, and physically fragile, but the script lets her remain fully alive and mischievous right up to the end.",
+        "why_actor_wants_this": "This is the kind of role that gives an older actress the emotional territory of June Squibb in Nebraska or Olivia Colman in The Father — humor, mortality, and love in the same breath. It’s a beautiful part for a performer who can make small moments land with enormous feeling."
+      },
+      {
+        "name": "Eden",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Eden is the delivery girl who becomes a quiet outside witness to V’s grief and self-recognition. She’s casual, skeptical, and observant, and the scene gives her just enough edge to feel like a real New Yorker rather than a plot device.",
+        "why_actor_wants_this": "This is the kind of compact, memorable role that gives an actor the naturalism of Greta Lee or Zoë Kravitz in a few scenes — cool, grounded, and emotionally intelligent. It’s a strong fit for someone who can make a brief encounter feel like a turning point."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sci-fi romance that plays like a humanist character piece.",
+        "fit_profile": "Established indie directors with at least one or two features, or elevated genre directors who already know how to balance concept with intimacy. The material rewards filmmakers who care about performance, tonal control, and visualizing interior states without over-explaining them.",
+        "detail": "The script gives a director a chance to stage repeated identity shifts, urban texture, and emotional reversals without needing a giant effects canvas. It’s especially attractive to directors who like making the audience feel the concept through behavior, rhythm, and atmosphere rather than exposition."
+      },
+      "buyer_appeal": {
+        "tier": "Mid-budget feature",
+        "lane": "Prestige streamer / festival-friendly indie sci-fi",
+        "detail": "The project can be packaged around two demanding lead performances and a strong supporting antagonist, so it doesn’t require a huge ensemble of name talent to function. The body-jump premise and New York setting give it an exportable hook that can travel well on streamers and at festivals without needing franchise-scale spend."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle opens into many host stops.",
+        "detail": "The rotating body-jump structure is one of the movie’s biggest pleasures, and the version of the second act where a few of the host encounters are combined or threaded more tightly could protect momentum while keeping the variety. That would also make the emotional throughline between V, Sol, and Miles feel even more inevitable as the pressure closes in.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The music and art references need a clearance pass.",
+        "detail": "The script uses named songs, a quoted poem, a named painting, and a specific camera model as part of its texture, so a production pass should identify which references are essential and which can be swapped. That keeps the tone and emotional intent intact while making the package easier to finance and schedule.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The New York canvas is expansive.",
+        "detail": "The story moves through a large number of distinct locations, including public streets, clubs, hospitals, a museum, a chapel, a stadium, and multiple apartments and offices. A streamlined location plan that groups a few of the city-world scenes into reusable spaces would protect the scale of the story while keeping the shoot in a more efficient lane.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "V’s emotional turn is strongest when it’s embodied.",
+        "detail": "The script already has the right idea in the Bert, Annie, and George material, where V’s understanding of mortality and care becomes tactile. A next pass could keep foregrounding those embodied scenes as the places where the philosophy lands, so the movie’s ideas continue to arrive through action and relationship rather than explanation.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "Miles’ control can stay personal and immediate.",
+        "detail": "The final act already gives Miles a strong ideological showdown, and the version where his pressure is expressed through fewer, sharper confrontations may make the climax hit harder. That would preserve his authority while letting the V/Sol bond remain the emotional center of the last stretch.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.3,
+  "tier": "Optionable",
+  "inputTokens": 79600,
+  "outputTokens": 9672,
+  "cost": 0.10322400000000001,
+  "declaredFormat": "Feature film"
+}

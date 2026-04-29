@@ -3,230 +3,268 @@
     "classification": {
       "format": "Feature film",
       "genre_primary": "Horror",
-      "genre_tags": [
-        "Supernatural",
-        "Family Drama"
+      "genre_secondary": [
+        "Drama",
+        "Fantasy"
       ],
-      "tone": "Grounded, eerie, intimate, and emotionally tender"
+      "tone": "elevated",
+      "tags": [
+        "child-lead",
+        "female-lead",
+        "single-location",
+        "contemporary",
+        "character-driven",
+        "slow-burn",
+        "family-dynamics",
+        "motherhood",
+        "grief",
+        "werewolf"
+      ]
     },
-    "positioning_hook": "A six-year-old boy spends one moonlit night trapped in the house while his mother transforms into a werewolf and his family tries to keep him from seeing the truth.",
+    "positioning_hook": "A six-year-old boy spends one terrifying night realizing his mother’s monthly breakdowns may be something far more monstrous than divorce.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is instantly legible and easy to sell: a child, a full moon, a mother hiding a monstrous secret. The emotional core gives the horror a broader entry point than creature material alone, though the audience is still more genre-forward than four-quadrant."
+        "reasoning": "The premise is instantly legible and emotionally accessible: a child at the center of a domestic horror setup with a strong maternal hook. The audience is narrower than a broad commercial horror because the story is intimate and restrained, but the werewolf reveal gives it a clean genre promise."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands on page one and never drifts: Connor is in the wrong house, the adults are lying, and the moon is turning the night into a containment problem. The script keeps the engine simple and readable, which is a real asset for buyers and readers alike."
+        "reasoning": "The hook lands immediately in the opening pages: Connor is trapped in a house with a mother whose behavior is being carefully explained away, while the moon and the locked bedroom keep escalating the mystery. The script makes the premise easy to summarize in two sentences and keeps the reveal structure clear."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Connor is a strong child POV with real innocence and curiosity, and Evie carries the most actor-friendly contradiction in the piece: loving mother, ashamed monster, exhausted woman. Minnie also adds a sturdy protective presence, though the character set is intentionally compact rather than expansive."
+        "reasoning": "Connor is a strong child POV with enough innocence and courage to carry the night, and Evie has a vivid contradiction as a loving mother who is also the threat. Minnie adds a useful pressure valve, but the character set is intentionally compact rather than expansive."
       },
       "creative_originality_and_boldness": {
-        "score": 7,
-        "reasoning": "The werewolf premise is familiar, but the choice to stage it almost entirely as a domestic custody-night from a six-year-old’s perspective gives it a cleaner, more personal angle. The script’s confidence comes from restraint and emotional specificity rather than reinvention of the mythology."
+        "score": 8,
+        "reasoning": "The script’s boldest move is treating werewolf mythology as a family secret inside a custody-night domestic drama, not as a monster-movie machine. The choice to filter the horror through a six-year-old’s confusion gives the material a distinctive emotional angle."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The night escalates cleanly from confusion to dread to revelation, and the child’s decision to keep moving toward the locked bedroom gives the story a steady pull. The piece is compact by design, so its momentum comes from atmosphere and revelation rather than plot turns."
+        "reasoning": "The night builds cleanly from unease to revelation to confrontation, with the locked door, the phone call, and Connor’s repeated returns to the bedroom all escalating the tension. Because the piece is short and atmospheric, the momentum is strong but deliberately not propulsive in a feature-length sense."
       },
       "resonant_originality": {
-        "score": 7,
-        "reasoning": "A werewolf story told as a child’s accidental initiation into family truth has a fresh emotional logic that feels both surprising and inevitable. The final image of Connor sleeping beside the transformed mother gives the concept a memorable aftertaste."
+        "score": 8,
+        "reasoning": "The idea of a child slowly realizing his mother transforms into a beast is both immediately graspable and emotionally specific, which is the sweet spot for this dimension. The domestic details — iPad, custody confusion, aunt mediation, bedtime rituals — make the fantasy feel grounded and fresh."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The world is specific in its domestic details — the iPad game, the bathrobe, the locked bedroom, the backup key, the moonlit house in the woods — but it remains a contained family space rather than a larger social ecosystem. That containment suits the story, even if it keeps the world from feeling especially expansive."
+        "reasoning": "The house, the moonlit woods, and the family’s coded language create strong texture, but the world is intentionally narrow and mostly contained to one night. There are hints of a larger family history and custody context, yet the script keeps that mostly offscreen."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unusually precise: bedtime intimacy, parental fracture, and creature-horror all live in the same frame without fighting each other. The script knows exactly when to let Connor’s child logic soften the terror, which gives it a distinct emotional flavor."
+        "reasoning": "The tone is unusually controlled: tender, eerie, and child-height all at once, with the moonlit house and bedtime routines giving the horror a lullaby quality. The script knows exactly when to lean into fear and when to stay emotionally warm."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 6,
-        "reasoning": "There are clear seeds of deeper material around inheritance, shame, divorce, and what children absorb before they can name it. The short-form structure keeps those themes suggestive rather than fully explored, which is appropriate for the format but limits the sense of hidden reserves."
+        "score": 7,
+        "reasoning": "There’s real subtext around inheritance, shame, divorce, and a mother trying to prepare her child for a burden he doesn’t understand yet. The script suggests a larger emotional mythology without overexplaining it, though the surface story is still the main event."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "The Connor-Evie-Minnie triangle is functional and emotionally clear, but the story is built to concentrate pressure rather than generate many combinatorial relationship scenes. That focus is right for the premise, though it keeps the ensemble engine intentionally lean."
+        "score": 6,
+        "reasoning": "Connor, Evie, and Minnie create a workable triangle with clear friction, but the piece is fundamentally a tight family chamber piece rather than an ensemble engine. The relationships are strong enough to sustain the night, not a sprawling network."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Connor",
+        "role_type": "Lead",
+        "demographics": "Male, 6, child, white.",
+        "hook": "Connor is a smart, observant little boy who starts the night worried about Jump Club and ends it confronting the possibility that his mother is literally a monster. He’s old enough to notice the lies, young enough to accept the impossible, and brave enough to keep returning to the bedroom even when he’s terrified.",
+        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room — a child performance built on listening, fear, and emotional intelligence rather than speeches. The role gives a young actor the rare chance to carry a horror story through pure reaction, curiosity, and a final act of love."
+      },
+      {
+        "name": "Evie",
+        "role_type": "Supporting",
+        "demographics": "Female, 37, mother, white.",
+        "hook": "Evie is Connor’s mother, a once-vibrant woman who is trying to hold together a terrifying private condition while still protecting her son from the truth. She moves between manic volatility, shame, tenderness, and animal threat, which makes her both the emotional center and the danger in the room.",
+        "why_actor_wants_this": "This is the kind of role that gave Toni Collette in Hereditary its career-redefining volatility — a mother whose love and terror are inseparable. It offers a performer a full-spectrum turn: breakdown, concealment, physical transformation, and a devastating final note of maternal pride."
+      },
+      {
+        "name": "Aunt Minnie",
+        "role_type": "Supporting",
+        "demographics": "Female, 66, older aunt, white.",
+        "hook": "Minnie is the family’s exhausted stabilizer, the adult who knows the rules, manages the lie, and tries to keep Connor calm while Evie unravels. She’s stern, loving, and visibly overmatched, which gives her the texture of someone who has done this before and knows exactly how bad the night can get.",
+        "why_actor_wants_this": "This is strong character-actress material in the vein of Frances McDormand in Three Billboards or Laurie Metcalf in Lady Bird — a role where restraint, fatigue, and dry authority do a lot of the work. The part gives an actor the pleasure of being the only adult who can actually hold the room."
+      },
+      {
+        "name": "Joel",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, father, white.",
+        "hook": "Joel is the offscreen father whose phone call confirms the custody chaos and the family’s fractured logistics. He’s not physically present for long, but his panic and evasiveness make him part of the pressure system around Connor.",
+        "why_actor_wants_this": "This is the kind of offscreen-but-load-bearing role that can still land like the father in The Babadook or the absent parent in Take Shelter — a voice performance that carries guilt, distance, and urgency. It’s a compact but useful role for an actor who can make a few lines feel like a whole history."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 4,
-        "leads": 3,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "One child lead around age 6",
-          "One female lead in her 30s",
-          "One female supporting role in her 60s",
-          "One off-screen male voice role"
+          "one child lead carrying the emotional POV",
+          "adult female lead requires convincing human-to-beast transformation",
+          "offscreen father voice role"
         ]
       },
       "locations": {
-        "distinct_count": 4,
-        "interior_exterior_ratio": "Mostly interior, with one exterior woods/house establishing setup",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 5,
+        "interior_exterior_ratio": "predominantly interior",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Single primary house location",
-          "Night exterior in wooded setting",
-          "Bedroom and bathroom practical set dressing for transformation sequence"
+          "single family house with bedroom, hallway, kitchen, living room, bathroom, and exterior woods access",
+          "night exterior moonlit forest look",
+          "locked bedroom door and practical padlock/key beats"
         ]
       },
       "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Practical creature transformation coverage, fur, claws, eyes, and cleanup-enhancement work for the Evie-beast reveal and aftermath.",
+        "vfx_level": "minor",
+        "vfx_details": "The transformation is mostly implied through silhouette, sound, fur, eyes, and aftermath, with only light enhancement if any.",
         "stunts_level": "minor",
-        "sfx_needs": "Locked door, padlock, claw marks, destroyed bedroom, fur shedding, animal sounds, and practical moonlight-driven atmosphere.",
+        "sfx_needs": "Practical claw marks, fur, destroyed bedroom dressing, chains, padlock, and creature sound design.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Festival short / horror anthology lane / premium genre streaming short-form showcase",
-        "content_level": "PG-13 equivalent to mature, depending on creature depiction",
-        "series_engine_or_release_model": "Contained short-form release with strong festival play and anthology/genre-platform positioning"
+        "recommended_lane": "streaming",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release; best suited to specialty theatrical or streaming genre acquisition."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, house-bound, and effects-light; the main spend is a single practical creature transformation, night photography, and atmospheric sound design."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "One primary house, a small cast, and a transformation that can be staged with practical effects and selective coverage keep the budget footprint contained."
+      "casting": {
+        "level": "medium",
+        "note": "The child lead has to carry fear, curiosity, and emotional restraint, while Evie needs an actor who can play maternal warmth and feral instability in the same performance."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The core reveal is clean, but the feature version would need enough story architecture beyond the one-night domestic escalation to justify a full-length runtime."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Babadook",
+          "year": 2014,
+          "why_it_comps": "Shares the domestic-horror lane where a family home becomes the site of grief, fear, and a mother-child emotional siege."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The child lead requires a very specific performance, and the mother role needs an actor who can play both domestic warmth and creature-state intensity."
+        {
+          "title": "Take Shelter",
+          "year": 2011,
+          "why_it_comps": "Matches the slow-burn dread of a loved one possibly becoming dangerous while the family tries to normalize the impossible."
         },
-        "location": {
-          "level": "low",
-          "note": "The story is largely contained to one house and its immediate woods exterior, with no travel or large-scale company moves."
+        {
+          "title": "Hereditary",
+          "year": 2018,
+          "why_it_comps": "Comps on the mother-as-threat emotional volatility and the sense that family inheritance is itself the horror engine."
         },
-        "content": {
-          "level": "medium",
-          "note": "Creature horror, child peril, and parental distress are the main content drivers, but the piece stays away from explicit gore or sexual material."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named brands, music, or real-person references drive clearance complexity."
+        {
+          "title": "Room",
+          "year": 2015,
+          "why_it_comps": "The child POV and the performance demand on a young lead are the closest packaging neighbor, even though the genre lane is different."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre audiences who like intimate, emotional horror with a strong child POV and a tragic family secret.",
+        "demographics": "Skews 25-54, balanced gender appeal, strongest with elevated-horror and prestige-drama viewers.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$1M-$4M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary house interior, one night of forest exteriors, and a mostly implied creature transformation keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "elevated domestic horror",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer originals dev execs",
+          "specialty theatrical distributors",
+          "producer-directors in the elevated-horror lane",
+          "prestige indie labels"
+        ],
+        "detail": "The script sits naturally in the intimate horror lane where emotional specificity matters as much as the monster reveal. It is built for buyers who want a contained, actor-forward genre piece with a clear hook and manageable production footprint."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed emotional arc; the strength is in the one-night revelation, not a franchise or universe vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The child POV is the engine.",
-          "what_it_means": "That perspective turns a familiar monster premise into a family-accessible horror piece with a clear emotional entry point, which broadens the audience beyond hardcore genre fans. Child-led genre material with a strong emotional spine is exactly the kind of thing festival programmers and genre buyers can champion quickly.",
-          "evidence": "Connor’s iPad, his questions about Jump Club, and his repeated attempts to understand what the adults are hiding keep the story anchored in his experience.",
+          "dimension_or_area": "Child POV makes the horror hurt.",
+          "what_it_means": "This gives the project a clean emotional access point that broadens the genre beyond creature mechanics and makes the fear legible to a wide audience. Buyers looking for elevated horror with a performance anchor will respond to a story that can be sold as terrifying and heartbreaking at the same time.",
+          "evidence": "Connor repeatedly tries to understand the adults, asks if Mommy is a werewolf, and ultimately climbs into bed with the transformed Evie instead of fleeing the house.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Evie is a showcase role.",
-          "what_it_means": "The mother part gives an actress a rare blend of tenderness, shame, physical transformation, and feral release in one contained performance, which is the kind of role that can elevate a short into a calling card. Mid-career dramatic leads and actors with genre credibility will see a chance to do emotional acting and creature work without leaving the same scene set.",
-          "evidence": "Evie’s dinner breakdown, her whispered apology in beast form, and the final human reset all sit on the same character track.",
+          "dimension_or_area": "The mother-monster contradiction is the hook.",
+          "what_it_means": "The script turns a familiar monster myth into a family-secret drama, which is exactly the kind of ownable angle that helps a project stand out in a crowded horror market. That contradiction is attractive to actors and buyers because it promises both emotional range and a clear genre payoff.",
+          "evidence": "Evie is loving, ashamed, volatile, and physically monstrous in the same night, and her final line to Connor lands as both maternal pride and farewell.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The setting is economically smart.",
-          "what_it_means": "A single house, a woods edge, and one moonlit night make this highly producible while still feeling cinematic, which is a strong package for a short or proof-of-concept. Producers looking for a contained genre piece that can be made with discipline and still deliver atmosphere will respond to that footprint.",
-          "evidence": "Most of the action stays inside the Barton house, with only brief exterior moon and woods material.",
+          "dimension_or_area": "Contained house-night structure keeps the cost sane.",
+          "what_it_means": "The production footprint is small enough to attract indie financiers and streamer genre buyers who want a polished concept without tentpole overhead. That makes the script easier to package around a director reel or a strong lead performance rather than expensive spectacle.",
+          "evidence": "The story stays inside one family house, with only a brief exterior woods beat and a transformation that is mostly implied through sound and aftermath.",
           "source": "production"
         },
         {
-          "dimension_or_area": "The tone balances fear and tenderness.",
-          "what_it_means": "The script can play to horror audiences without abandoning viewers who want emotional warmth, giving it a wider festival and streaming lane than a purely aggressive creature piece. Buyers who like genre with heart — and directors who know how to stage intimacy under pressure — will recognize the lane immediately.",
-          "evidence": "Aunt Minnie’s bedtime reassurance, Evie’s apology, and Connor climbing into bed with the beast all land as emotional beats, not just horror beats.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The mythology is clean and readable.",
-          "what_it_means": "The moon, the locked room, the family secrecy, and the morning-after reset create a simple rule set that audiences can grasp instantly, which helps the concept travel fast in a pitch room. That clarity is attractive to buyers who want a genre premise they can explain in one breath and market in one image.",
-          "evidence": "The repeated moon imagery and the line about morning coming always frame the transformation as a nightly cycle.",
+          "dimension_or_area": "The tone is controlled and memorable.",
+          "what_it_means": "The script has a distinct tonal lane: bedtime intimacy colliding with moonlit dread, which is harder to imitate than a standard jump-scare setup. That specificity helps it travel to buyers who want elevated genre with a signature mood.",
+          "evidence": "The iPad game, meatloaf dinner, bedtime routine, and moonlit hallway all play like ordinary domestic rituals under siege by something primal.",
           "source": "script"
         }
       ],
-      "headline": "This is a tightly contained, emotionally legible werewolf short with a child’s-eye POV that makes the monster reveal feel personal instead of generic. It has a strong festival-ready hook, a showcase mother role, and a production footprint that stays disciplined while still delivering atmosphere and payoff."
+      "headline": "This is a contained, actor-forward domestic horror piece with a clean emotional engine and a production footprint that stays inside indie range. The child POV and mother-as-monster contradiction make it easy to pitch to elevated-genre buyers who want something intimate, eerie, and packageable without heavy VFX."
     },
-    "lead_characters": [
-      {
-        "name": "CONNOR",
-        "role_type": "Lead",
-        "demographics": "Male · 6",
-        "hook": "Connor is a little kid who still thinks in terms of games, bedtime, and who gets to take him to Jump Club, which makes him devastatingly vulnerable and disarmingly observant. He’s old enough to notice the adults are lying and young enough not to understand the shape of the lie, so every clue lands as confusion before it lands as fear.",
-        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room — a child performance built on alertness, confusion, and emotional truth under pressure. Young actors and parents looking for a high-visibility genre role will be drawn to a part that asks for innocence, bravery, and real reaction work in the same night."
-      },
-      {
-        "name": "EVIE",
-        "role_type": "Lead",
-        "demographics": "Female · 30s",
-        "hook": "Evie is a mother who is trying to keep her son safe from the thing she becomes, and the strain of that effort is visible in every scene before the transformation even arrives. She reads as athletic, vibrant, and loving when she’s human, but the script lets her collapse into shame, hunger, and animal panic without losing the audience’s sympathy.",
-        "why_actor_wants_this": "This is the showcase space of Toni Collette in Hereditary — a role where domestic authority, grief, and bodily terror all collide in one performance. Actresses who want a prestige-genre calling card will chase the chance to play a mother whose love is never in doubt even when her body is no longer hers."
-      },
-      {
-        "name": "AUNT MINNIE",
-        "role_type": "Supporting",
-        "demographics": "Female · 60s",
-        "hook": "Minnie is the family’s exhausted stabilizer, the one who knows the rules, manages the child, and keeps the night from tipping into chaos. She has the dry authority of someone who has done this before, but the script also gives her warmth and real affection for Connor, which keeps her from becoming just a keeper of secrets.",
-        "why_actor_wants_this": "This is the kind of grounded supporting turn Frances McDormand makes memorable in a small role — practical, dry, and emotionally legible without needing speeches. Character actors who specialize in authority with tenderness will want the chance to play the adult who holds the whole night together."
-      },
-      {
-        "name": "JOEL",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · voice only",
-        "hook": "Joel exists as a voice of panic, distance, and fractured family logistics, which makes him feel like a real off-screen pressure rather than a placeholder dad. He’s the absent parent whose choices have already shaped the night, and the phone call gives him just enough presence to matter.",
-        "why_actor_wants_this": "This is the kind of off-screen authority role that can echo the phone-call tension of Michael Stuhlbarg in A Serious Man — a voice that changes the temperature of the room without ever entering it. A recognizable voice actor or name supporting player could make the call feel like a larger world pressing in on the house."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make creature horror feel like a bedtime story gone wrong.",
-        "fit_profile": "First- or second-feature directors coming out of shorts, especially those with a horror or fantasy calling card and a taste for intimate, performance-forward genre. The material rewards restraint, moonlit atmosphere, and precise child-direction more than spectacle, which is ideal for filmmakers building a voice around emotional genre storytelling.",
-        "detail": "The best version of this film lives or dies on tone control: the director has to make the house feel safe before it feels cursed, and then let the transformation land as a family event rather than a set piece. That’s catnip for a filmmaker who likes to stage dread through blocking, sound, and performance instead of coverage-heavy chaos."
-      },
-      "buyer_appeal": {
-        "tier": "Low-budget feature or premium short-form genre piece",
-        "lane": "Festival horror, anthology-friendly genre, elevated contained creature lane",
-        "detail": "It can be greenlit off a strong child actor, a compelling mother lead, and a director with a practical-effects reel rather than a heavy attachment package. The contained house footprint and simple moon-cycle premise make it exportable and easy to market as a one-night family-horror concept."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The feature version needs more story architecture.",
+          "detail": "On the page, this plays as a tight short built around one night of escalating revelation and a final emotional release. As a feature buy, the main question is whether the premise can support a full-length narrative without losing the concentrated power that makes the material work.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The child lead narrows the casting pool.",
+          "detail": "Connor has to carry confusion, fear, and emotional intelligence without ever feeling precocious, which is a specific and limited child-actor lane. That makes casting more sensitive than the script’s small cast count suggests.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The creature reveal is mostly implied.",
+          "detail": "The script smartly avoids expensive monster mechanics, but that also means the payoff depends on sound, silhouette, and performance rather than a fully realized transformation sequence. Buyers will read that as a strength for budget control and a constraint on spectacle.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The emotional world is intentionally narrow.",
+          "detail": "The story is tightly focused on Connor, Evie, and Minnie inside one house, which gives it intimacy but limits relationship density and world expansion. That’s a good fit for a short-form horror concept, but it leaves less room for secondary story engines in a feature package.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest commercial friction is format: it reads as a strong, self-contained short with a precise emotional payoff, and the feature ask will be the first thing every buyer weighs. Casting the child lead is the other real lift, while the contained creature approach keeps the budget sane but also caps spectacle."
     },
-    "considerations": [
-      {
-        "area": "The short-form structure is already disciplined.",
-        "detail": "This plays with real economy, so the next pass is less about adding material and more about protecting the clean line from confusion to revelation to emotional landing. The contained runtime is an asset for festivals and buyers, and the script already knows how to spend its pages efficiently.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Connor’s discovery could carry one more beat of agency.",
-        "detail": "The child POV is strong throughout, and one lever would be to let Connor make one more active choice before the final bed-sharing moment so the climax feels even more earned from his side. What would it look like if his curiosity or loyalty caused a decision that changes the night rather than only reacting to it?",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The Evie reveal is the central payoff.",
-        "detail": "The bedroom transformation is the script’s biggest emotional and visual turn, so a next pass could keep that sequence as the clear apex and make sure every earlier moon-and-lock image is quietly steering toward it. The more the audience feels the house preparing for that reveal, the more the final human reset will land.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The mother-daughter-adult triangle is tightly contained.",
-        "detail": "That containment is good for production and focus, and it also means the script should keep the family geometry simple rather than widening the circle. The version of this story that stays inside the house and lets the three central relationships do all the work is the strongest lane for both budget and clarity.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The transformation can stay practical-forward.",
-        "detail": "The creature material reads as achievable with selective coverage, fur, sound, and makeup rather than a heavy VFX build, which protects the intimacy of the piece. A practical-first approach also keeps the film in the sweet spot for festival horror buyers who respond to tactile effects.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 67,
+  "weightedScore": 69.7,
   "tier": "Optionable",
-  "inputTokens": 14321,
-  "outputTokens": 3668,
-  "cost": 0.02724675,
+  "inputTokens": 16726,
+  "outputTokens": 3664,
+  "cost": 0.0290325,
   "declaredFormat": "Feature film"
 }

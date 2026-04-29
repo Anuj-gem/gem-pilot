@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T04:53:59.492Z",
+  "submission_id": "66067955-7267-4fbd-8953-6bc8a103a443",
+  "eval_id": "aa8b6a44-3645-426d-bedf-ec6b9ff9d950",
+  "title": "Never there FD5 18",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Isabella",
+      "role_type": "Lead",
+      "demographics": "Female, 18, white, scarred, emotionally arrested, orphaned runaway with a teenage exterior and childlike interior."
+    },
+    {
+      "name": "Jenny",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, scarred, guarded, queer-coded, working within a criminal/paramilitary structure."
+    },
+    {
+      "name": "Luigi",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, streetwise, sexually aggressive, armed enforcer."
+    },
+    {
+      "name": "Aiden",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, Black, soft-spoken, emotionally open, later revealed as a trap."
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-teens, timid voice, off-screen/voice presence, vulnerable."
+    }
+  ],
+  "positioning_hook": "A scarred runaway with a hidden body-count hunts the people who erased her orphanage, while a jaded fixer and a compromised partner close in on the last surviving child.",
+  "cost_usd": 0.03268875,
+  "input_tokens": 20581,
+  "output_tokens": 3834,
+  "status": "wrote:leads_ok"
+}

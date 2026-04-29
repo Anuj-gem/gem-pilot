@@ -2,264 +2,277 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological thriller",
-      "genre_tags": [
+      "genre_primary": "Thriller",
+      "genre_secondary": [
         "Crime",
-        "LGBTQ+ drama"
+        "Drama"
       ],
-      "tone": "Gritty, surreal, intimate, and tragic with bursts of darkly playful menace"
+      "tone": "bleak",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "high-concept",
+        "survival",
+        "crime",
+        "grief",
+        "identity",
+        "new-york-city"
+      ]
     },
-    "positioning_hook": "A scarred runaway in New York lures a pair of child-trafficking enforcers into her orbit, then turns their hunt into a trap for the truth she’s been chasing.",
+    "positioning_hook": "A scarred runaway with a hidden body-count hunts the people who erased her orphanage, while a jaded fixer and a compromised partner close in on the last surviving child.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise has a clean thriller engine, a vivid urban setting, and a wounded young lead whose emotional need is easy to grasp. The audience lane is narrower than a broad commercial crime title because the script leans hard into mood, trauma, and surreal behavior, but the hook is strong enough to travel."
+        "score": 6,
+        "reasoning": "The hook is immediate and genre-legible: a damaged young woman, missing children, and a citywide hunt with a brutal reveal. The audience is real, but the script’s extreme violence, elliptical storytelling, and art-house presentation narrow the commercial lane rather than opening it wide."
       },
       "conceptual_hook_clarity": {
-        "score": 8,
-        "reasoning": "The script establishes its central engine quickly: Isabella, a scarred teen tied to missing children, is being tracked by Jenny and Luigi, and the story keeps tightening around that pursuit. The reveal of the blood-splattered room, the orphanage connection, and the final confrontation give the premise a clear spine."
+        "score": 7,
+        "reasoning": "The orphanage/missing-children engine lands clearly by the midpoint, and the reveal that Isabella is one of the escaped children gives the premise a clean spine. The opening is more mood-forward than premise-forward, so the hook takes a few pages to fully lock."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Isabella and Jenny both carry strong screen presence, with Isabella’s childlike menace and Jenny’s guarded moral conflict creating a compelling pair. Luigi is sharply drawn as a crude, predatory operator, though the script’s emotional center is mostly concentrated in the two women rather than a wider character web."
+        "reasoning": "Isabella is memorable because she is both predator and wounded child, and Jenny gets a strong moral-pressure arc through David and the job. Luigi is vivid as a sleazy, dangerous operator, but the script is built more around mood and reversal than around deeply layered ensemble durability."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a striking tonal blend: pop-song intimacy, chat-overlay storytelling, body-horror imagery, and a protagonist who can be both vulnerable and terrifying. The choice to make the lead’s power feel almost supernatural while keeping the emotional wound grounded gives the material a confident, unusual edge."
+        "reasoning": "The script commits to a strange, unsettling register: chat-overlay dialogue, cassette-tape nostalgia, scar imagery, and a childlike killer’s emotional logic. That formal and tonal confidence gives it a distinct identity even when the underlying chase structure is familiar."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The pursuit structure keeps the pages moving, and the restaurant-to-train-to-apartment escalation gives the back half real forward pressure. Some of the middle is more atmospheric than propulsive, but the story keeps paying off with new reversals and a strong final collision."
+        "reasoning": "Once Jenny and Luigi enter the investigation, the story moves with real urgency toward the park confrontation and the restaurant standoff. The first stretch is more atmospheric than propulsive, but the escalation into the final third is strong and increasingly tense."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A scarred, possibly orphaned teen who can kill with a snap and weaponizes her own fragility is a fresh center for a thriller. The orphanage/missing-children thread, the chat-text overlays, and the final emotional turn toward intimacy make the concept feel both strange and legible."
+        "reasoning": "The script’s core contradiction — a traumatized escaped child who can kill with a snap, yet still wants connection and a first kiss — is instantly ownable. It feels fresh because the emotional logic and the horror of the premise are fused rather than merely juxtaposed."
       },
       "world_density_and_texture": {
-        "score": 7,
-        "reasoning": "New York is used as more than backdrop: trains, tunnels, parks, restaurants, and cramped interiors all feed the story’s sense of surveillance and drift. The orphanage history and the trafficking network suggest a larger system beyond the frame, though the script stays focused on a relatively contained slice of it."
+        "score": 6,
+        "reasoning": "New York is used well as a nocturnal, surveilled space, and the orphanage backstory suggests a larger criminal system. But most of the world exists to service the pursuit, so the setting feels specific without yet becoming richly layered."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is highly identifiable: melancholy teen romance collides with criminal menace, then tips into surreal violence and deadpan cruelty. The walkman/cassette nostalgia, the chat overlays, and Isabella’s eerie playfulness give the script a signature flavor."
+        "reasoning": "The script has a hard-to-mistake tone: mournful, abrasive, and strangely tender, with bursts of dark humor and childlike play. The contrast between Isabella’s innocence and the violence around her is the signature register."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the thriller surface is a story about abandonment, identity, and the hunger to be seen, especially in Isabella’s fixation on parents, names, and first contact. The script hints at a larger emotional and mythic layer, even as it keeps the immediate plot front and center."
+        "reasoning": "The orphanage, the scars, the missing parents, and Jenny’s hidden attachment to David all imply deeper emotional and institutional history. The script doesn’t fully unpack those layers, but it clearly suggests more beneath the surface than the immediate chase plot."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "The Isabella/Jenny/Luigi triangle carries the feature, and the David thread adds a second emotional pressure point. The relationships are effective and playable, but the script is built more on a central triangle than on a broad ensemble engine."
+        "reasoning": "The Isabella/Jenny/Luigi triangle generates most of the energy, and the David thread adds a useful pressure point. Still, this is not an ensemble engine; it lives on a few charged relationships rather than a broad recurring social system."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Isabella",
+        "role_type": "Lead",
+        "demographics": "Female, 18, white, scarred, emotionally arrested, orphaned runaway with a teenage exterior and childlike interior.",
+        "hook": "Isabella is a scarred, socially stunted young woman who moves through the city like someone half-feral and half-dreaming. She is both the hunted and the hunter, using a terrifying supernatural burst of violence to protect herself while desperately craving intimacy, identity, and a first real human connection.",
+        "why_actor_wants_this": "This is showcase territory in the vein of Jodie Comer in Killing Eve or Anya Taylor-Joy in The Witch: a role that lets an actor play fragility, menace, shame, and sudden power in the same breath. The big draw is the contradiction — she can be terrifying and heartbreakingly childlike in adjacent beats."
+      },
+      {
+        "name": "Jenny",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, scarred, guarded, queer-coded, working within a criminal/paramilitary structure.",
+        "hook": "Jenny is a controlled, watchful fixer who starts as an operator and gradually reveals a private moral fracture. Her connection to David gives her a human tether, and her scenes with Isabella force her to confront what she has been helping to erase.",
+        "why_actor_wants_this": "This is the kind of role that gave Alicia Vikander in Ex Machina or Rebecca Ferguson in Mission: Impossible a chance to play cool precision with a buried emotional current. The showcase is the slow reveal of conscience under discipline, especially in the restaurant and final bedroom scenes."
+      },
+      {
+        "name": "Luigi",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, streetwise, sexually aggressive, armed enforcer.",
+        "hook": "Luigi is a smirking, crude, predatory handler who treats violence like routine and women like a joke until the situation turns on him. He is useful as a pressure-cooker antagonist because his confidence masks real fear the moment Isabella stops behaving like prey.",
+        "why_actor_wants_this": "This is the kind of scene-eating supporting turn that actors use to announce danger, like Walton Goggins in Justified or Ben Mendelsohn in Animal Kingdom. The role offers swagger, menace, and a humiliating collapse when the power dynamic flips."
+      },
+      {
+        "name": "Aiden",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, Black, soft-spoken, emotionally open, later revealed as a trap.",
+        "hook": "Aiden reads first as Isabella’s possible first safe connection: shy, observant, and disarmingly gentle. The turn into betrayal makes him less a character than a devastating emotional test for Isabella’s capacity to trust.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do tenderness and threat in one package, similar to Lakeith Stanfield in short-form emotional reversals or Daniel Kaluuya in a scene that flips audience trust. The showcase is the pivot from warmth to menace."
+      },
+      {
+        "name": "David",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-teens, timid voice, off-screen/voice presence, vulnerable.",
+        "hook": "David is mostly a voice and a pressure point, but he matters because he gives Jenny a reason to keep choosing the mission over the job. He functions as the emotional hostage in the story’s moral geometry.",
+        "why_actor_wants_this": "This is not a flashy role, but it gives a young actor the chance to play vulnerability with real stakes, similar to the off-screen emotional weight of a key child in a thriller. The value is in making the audience feel the cost of Jenny’s choices."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 7,
-        "leads": 3,
+        "speaking_roles": 5,
+        "leads": 1,
         "series_regulars": 0,
-        "child_actors": true,
+        "child_actors": false,
         "casting_characteristics": [
-          "Teen female lead with scarred hands/back",
-          "Young adult female lead with gloves/scars",
-          "Male antagonist in his 30s",
-          "Child/teen voice role for David",
-          "Black male romantic interest in early 20s"
+          "One lead role with heavy emotional and physical range",
+          "One young female supporting role with scar makeup continuity",
+          "One Black male supporting role",
+          "One teen voice role only"
         ]
       },
       "locations": {
-        "distinct_count": 11,
-        "interior_exterior_ratio": "roughly 6:5",
-        "period_or_contemporary": "contemporary with 1990s music/props texture",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 50/50",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "New York subway platforms and tunnels",
-          "Central Park and adjacent tunnel sequence",
-          "Apartment/bedroom interiors with distressed production design",
-          "Restaurant interior",
-          "Alleyway room with blood-heavy reveal"
+          "New York subway and station access",
+          "Central Park tunnel/park sequence",
+          "Apartment/bedroom interiors",
+          "Restaurant and alleyway night work"
         ]
       },
       "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Blood-splatter transformations after snap-triggered kills and cleanup continuity around the exploded-body reveals.",
+        "vfx_level": "minor",
+        "vfx_details": "A few body-explosion moments and blood-splatter enhancements; otherwise largely practical.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical blood effects, gunfire effects, and body-disintegration aftermath.",
+        "sfx_needs": "Blood effects, practical gunfire, scar makeup continuity, body-disintegration gore beats.",
         "night_shoots": "significant",
         "animals": false
       },
-      "rights_flags": [
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: limited theatrical or streamer original with genre positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary New York locations, limited cast, and only minor gore/VFX keep this in contained-feature territory; the main cost pressure is night exteriors and subway/park access."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead requires an actor who can play innocence, erotic curiosity, menace, and trauma without losing coherence. Jenny and Luigi also need performers who can carry long dialogue exchanges and sudden shifts in power."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s elliptical structure and stylized dialogue are part of the appeal, but the opening takes time to clarify the orphanage/missing-children engine. Buyers will weigh that delay against the strength of the final-third reveal."
+      }
+    },
+    "packaging": {
+      "comp_set": [
         {
-          "type": "named_music",
-          "detail": "I Dream of Jeannie / Stina Nordenstam is specifically used as a recurring emotional cue."
+          "title": "The Witch",
+          "year": 2015,
+          "why_it_comps": "Shares the unsettling innocence-to-horror contradiction and the sense of a young woman whose interior life is the engine of dread."
         },
         {
-          "type": "brand",
-          "detail": "Walkman and cassette-era music hardware are prominently featured as character texture."
+          "title": "You Were Never Really Here",
+          "year": 2017,
+          "why_it_comps": "Matches the bruised, urban, trauma-saturated thriller lane and the emphasis on damaged bodies moving through a corrupt system."
+        },
+        {
+          "title": "Under the Skin",
+          "year": 2013,
+          "why_it_comps": "Comps on tone and alienated emotional logic: a female figure moving through a city with eerie, almost dreamlike menace."
+        },
+        {
+          "title": "The Killing of a Sacred Deer",
+          "year": 2017,
+          "why_it_comps": "The cold, unsettling emotional register and the sense of characters behaving according to a private, disturbing logic are close to this script’s DNA."
         }
       ],
-      "platform_fit": {
-        "recommended_lane": "Festival-to-platform feature, premium streamer thriller lane, elevated genre indie",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong festival launch potential and platform acquisition appeal"
+      "audience_target": {
+        "primary_audience": "Adult genre viewers who like elevated, unsettling thrillers with a strong female lead and a bleak emotional core.",
+        "demographics": "18-44 skew, slightly female-leaning, streamer-native, art-house genre audience with appetite for dark material.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary urban locations keep the footprint manageable, while the blood-heavy effects and multiple night exteriors lift it above microbudget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The project centers on three strong roles and benefits from specific casting chemistry, plus a child/teen component through David and the orphanage thread."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through bedrooms, trains, tunnels, parks, streets, restaurants, and alleys, but all within a contemporary city footprint."
-        },
-        "content": {
-          "level": "high",
-          "note": "Child exploitation, sexual coercion, gun violence, blood effects, and psychological menace place it firmly in mature territory."
-        },
-        "rights": {
-          "level": "low",
-          "note": "The script uses a small number of named music cues and no major real-person or IP dependencies."
-        }
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary urban locations, a small cast, and limited practical gore keep this in indie-feature range, with night shoots and location access as the main scope drivers."
+      },
+      "lane_fit": {
+        "lane": "elevated indie thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-film development execs",
+          "festival-forward indie distributors",
+          "director-driven production companies",
+          "female-led genre label buyers"
+        ],
+        "detail": "This sits naturally in the lane where mood, performance, and a sharp central conceit matter as much as plot mechanics. It is the kind of script that can attract a director with a strong visual voice and a lead actor looking for a risky, signature turn."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: Isabella’s story resolves as a single revenge/escape arc, and Jenny’s thread closes with the rescue of David rather than opening a clean sequel or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Isabella is built as a contradiction.",
-          "what_it_means": "That gives a producer a lead role with festival gravity and genre heat at the same time, which is exactly the kind of part that can attract a breakout young actress. Actors who want to play innocence, menace, and wounded sexuality in one turn will see the opportunity immediately.",
-          "evidence": "Isabella’s scarred body, shy flirtation at the train platform, eerie snap-kill ability, and final first-kiss beat with Jenny.",
+          "dimension_or_area": "Isabella is a killer with childlike longing.",
+          "what_it_means": "That contradiction gives the movie a real commercial hook: the audience gets horror, empathy, and suspense from the same character. It is the kind of role that can attract a bold young lead looking for a signature breakout turn.",
+          "evidence": "The carousel scene, the first-kiss fixation, and the final bedroom sequence where she laughs at Luigi dancing naked all come from the same emotional engine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone has a signature blend.",
-          "what_it_means": "The script can be sold as elevated genre rather than generic crime material because it mixes teen longing, urban dread, and surreal violence in a way that feels authored. Directors and buyers looking for a distinctive premium-streamer thriller lane will recognize the voice.",
-          "evidence": "Walkman/cassette nostalgia, chat overlays, the carousel sequence, and the blood-splatter kills.",
+          "dimension_or_area": "The orphanage mystery gives the chase a spine.",
+          "what_it_means": "The missing-children backstory turns the film from a generic pursuit into a revenge-and-revelation engine with a clear moral wound. That makes the premise easier to sell to genre buyers who want a hook that is both emotional and plot-driven.",
+          "evidence": "The 404’d orphanage pages, the posters of missing children, and the reveal that the escaped children are being hunted all sharpen the central question.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The central triangle is playable.",
-          "what_it_means": "Isabella, Jenny, and Luigi create a compact, high-friction engine that can carry a feature without needing a sprawling cast. That makes the project attractive to actors who want a contained showcase and to buyers who like a three-hander with clear tension lines.",
-          "evidence": "The restaurant standoff, the train confrontation, and the apartment-room sequence where power keeps shifting hands.",
+          "dimension_or_area": "The tone is singular and hard to mistake.",
+          "what_it_means": "The script’s blend of tenderness, disgust, and dark humor gives it a distinct identity in a crowded elevated-thriller market. Buyers looking for something that feels authored rather than generic will notice that immediately.",
+          "evidence": "The chat-overlay dialogue, cassette-tape soundtrack cues, and Isabella’s sudden laughter during the hostage scene create a very specific register.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has a clean thriller spine.",
-          "what_it_means": "The missing-children/orphanage thread gives the story a commercial engine beyond mood, which helps it travel to buyers who want genre with a social undercurrent. The trafficking-adjacent setup also gives the film a built-in urgency that can support marketing and audience conversation.",
-          "evidence": "The orphanage demolition, the missing-children posters, the report about escaped children, and the final reveal that four children remain in play.",
+          "dimension_or_area": "The city is used as a pressure system.",
+          "what_it_means": "New York is not just backdrop here; it becomes a surveillance maze that supports the thriller mechanics without requiring expensive world-building. That helps the script stay attractive to indie financiers and streamer buyers alike.",
+          "evidence": "Subway platforms, tunnels, empty streets, and Central Park all function as pursuit corridors and concealment spaces.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a contained, performance-forward thriller with a genuinely ownable lead role and a clean emotional engine under the horror. The indie-scale location footprint and limited cast make it packageable for streamer originals or boutique genre financiers, while the Isabella contradiction gives it breakout-actor appeal."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The opening delays the premise reveal.",
+          "detail": "The first stretch is heavily mood-led before the orphanage/missing-children engine fully clicks. That is a real development conversation because buyers will compare the script’s atmospheric opening to the clarity and urgency of the final-third reveal.",
+          "is_primary_lever": true,
           "source": "script"
         },
         {
-          "dimension_or_area": "The script knows how to stage reversals.",
-          "what_it_means": "Each major sequence turns the power dynamic in a way that keeps the audience leaning forward, which is valuable for both festival programmers and genre buyers. The material feels designed for a director who can make dialogue scenes feel like traps.",
-          "evidence": "Aiden’s gun reveal, Luigi’s restaurant pressure play, and Isabella’s final invitation into her room before the snap of violence.",
+          "area": "Isabella’s power rules stay opaque.",
+          "detail": "Her snap-triggered body explosions are striking, but the script does not define the mechanism or limits in a way that creates a stable rule set. That keeps the film in a more poetic lane, but it also narrows the audience that wants a cleaner genre contract.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The dialogue leans stylized over naturalistic.",
+          "detail": "The chat overlays, repeated phrasing, and heightened exchanges give the script voice, but they also make some scenes feel written rather than lived. A buyer will see that as part of the aesthetic, while also recognizing it as a taste-specific lane.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast is thin by design.",
+          "detail": "Jenny, Luigi, Aiden, and David are functional and vivid, but the film is not building a broad relationship web. That keeps the focus tight, but it also means the project lives or dies on the lead performance and the central conceit.",
+          "is_primary_lever": false,
           "source": "script"
         }
       ],
-      "headline": "This is a moody, high-concept thriller with a breakout female lead at its center: a scarred runaway whose vulnerability is inseparable from her power. The script’s biggest asset is how confidently it fuses intimate coming-of-age emotion with predatory crime-world tension, giving buyers a contained, actor-forward feature that still feels dangerous and original."
+      "headline": "The main friction is not the premise but the presentation: the script withholds its engine early and leans into a stylized register that will be polarizing outside the elevated-genre lane. It is strongest when the emotional contradiction and the orphanage mystery are in the same frame, and weakest when it asks the audience to live in atmosphere alone."
     },
-    "lead_characters": [
-      {
-        "name": "ISABELLA",
-        "role_type": "Lead",
-        "demographics": "Female · 18 · white · scarred hands/back",
-        "hook": "Isabella is a shy, self-conscious teenager who moves through the world like someone trying to remember how to be human. She’s physically marked, emotionally starved, and quietly dangerous; the script lets her read as vulnerable, flirtatious, childlike, and terrifying, often in the same scene.",
-        "why_actor_wants_this": "This is the showcase territory of Mia Goth in Pearl — a performance that can pivot from wounded fragility to unsettling control without losing the audience’s sympathy. An actor gets to play a role that is part trauma portrait, part genre monster, and part first-love tragedy, which is catnip for performers looking to announce range."
-      },
-      {
-        "name": "JENNY",
-        "role_type": "Lead",
-        "demographics": "Female · 19-20s · unspecified ethnicity · gloves/scars",
-        "hook": "Jenny is a guarded young operative who tries to keep her face blank while her body tells on her. She’s sardonic, observant, and increasingly split between duty and conscience, with the David thread giving her a private emotional life beneath the professional shell.",
-        "why_actor_wants_this": "This is the kind of morally divided, tightly wound role Jodie Comer had in Killing Eve — a character whose intelligence and restraint become the performance engine. Actors who want a cool exterior that gradually cracks into panic, tenderness, and moral choice will chase this immediately."
-      },
-      {
-        "name": "LUIGI",
-        "role_type": "Lead",
-        "demographics": "Male · 30s",
-        "hook": "Luigi is a crude, predatory, street-smart enforcer who hides menace inside jokes, flirtation, and constant motion. He’s the kind of guy who keeps talking because silence would expose him, and the script uses that chatter to make him both comic and deeply unpleasant.",
-        "why_actor_wants_this": "This is the showcase lane of Walton Goggins in Justified — a fast-talking, volatile operator whose charm is inseparable from threat. Character actors who like to steal scenes with rhythm, cruelty, and sudden vulnerability will see a juicy antagonist role here."
-      },
-      {
-        "name": "AIDEN",
-        "role_type": "Supporting",
-        "demographics": "Male · early 20s · Black",
-        "hook": "Aiden is the soft-spoken romantic decoy who briefly gives Isabella a version of normal life before the trap closes. He reads as gentle, nervous, and sincere, which makes his turn into the gun reveal land as a betrayal of the exact tenderness he seemed to offer.",
-        "why_actor_wants_this": "This is the kind of deceptively simple role that gave Lakeith Stanfield in Sorry to Bother You its early charge — a calm, watchful presence that flips the audience’s expectation in one move. A young actor gets a clean showcase for stillness, charm, and a sudden pivot into dread."
-      },
-      {
-        "name": "DAVID",
-        "role_type": "Supporting",
-        "demographics": "Male · 14 · voice/phone presence",
-        "hook": "David is mostly felt through calls and memory, but he functions as Jenny’s emotional tether and the one innocent life she’s trying to protect. He gives the story a human cost beyond the hunt, and his vulnerability sharpens Jenny’s choices.",
-        "why_actor_wants_this": "This is the kind of off-screen emotional anchor that worked for the child presence in Room — a role whose power comes from being the reason another character changes. A young performer or voice actor gets a meaningful, emotionally legible part without needing heavy screen time."
-      },
-      {
-        "name": "BALDO",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Baldo is the transactional adult who treats Isabella like disposable labor and himself like the one person in the room with leverage. He’s blunt, sleazy, and functional to the story’s sense of exploitation.",
-        "why_actor_wants_this": "This is the kind of grimy authority role that actors like Michael Shannon have turned into scene poison in smaller crime dramas — a compact part with instant behavioral specificity. Character actors who enjoy making a few scenes feel dangerous will be drawn to it."
-      },
-      {
-        "name": "AIDEN'S VOICE / CHAT PARTNER",
-        "role_type": "Supporting",
-        "demographics": "Voice · young adult",
-        "hook": "The off-screen chat presence helps build the script’s digital intimacy and gives Isabella a place to project longing before the reveal. It functions less as a full character than as a pressure valve for the story’s loneliness.",
-        "why_actor_wants_this": "This is the kind of voice role that lets an actor play intimacy through absence, similar to the off-screen emotional texture in Her. It’s a small but useful slot for a performer who can make a voice feel like a relationship."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a crime thriller feel like a damaged love story.",
-        "fit_profile": "Second-feature or established indie directors with a strong visual sense and a taste for performance-first genre. This material rewards filmmakers who already know how to stage intimacy, dread, and stylized violence in the same frame without flattening any of them.",
-        "detail": "The movie gives a director a chance to build tension out of glances, pauses, and location movement rather than constant plot machinery. It’s especially attractive to filmmakers who like contained urban worlds, expressive production design, and scenes that can turn on a single behavioral shift."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Elevated genre indie / premium streamer thriller",
-        "detail": "It can be packaged around one breakout female lead and two strong supporting male roles, so a buyer does not need a giant ensemble to make the movie work. The contained city footprint, mature thriller hook, and festival-friendly tone give it a clean path from indie launch to streamer acquisition."
-      }
-    },
-    "considerations": [
-      {
-        "area": "The orphanage thread can be foregrounded earlier.",
-        "detail": "The missing-children posters, the demolished orphanage article, and the 404 page are potent story markers; a next pass could let that investigative spine arrive a little sooner so the audience understands the hunt before the romance and menace fully collide. That would make the central engine read even faster without changing the script’s mood.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The middle section leans on atmosphere.",
-        "detail": "The train-platform and Central Park material is evocative, and the emotional chemistry is real, but the sequence has room to tighten its forward pressure by letting one concrete objective drive the scene chain more explicitly. One direction would be to make each stop in that stretch reveal a new piece of the chase rather than primarily extending the mood.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The final apartment sequence is the biggest showcase set-piece.",
-        "detail": "The room with the buckets, the music cue, the forced dancing, and the first kiss all land as a memorable climax; the version of the scene where Isabella’s emotional turn is even more clearly tied to one specific question about identity could deepen the payoff. That would preserve the surreal playfulness while sharpening the catharsis.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The city footprint is manageable but location-rich.",
-        "detail": "The story moves through bedrooms, subway platforms, tunnels, parks, streets, restaurants, and an alleyway room, so a production-minded pass could consider collapsing one or two of those urban beats into shared geography. The narrative would stay intact, and the shoot would become easier to schedule and light.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The music cues are doing character work.",
-        "detail": "The Stina Nordenstam cue and the 90s cassette/walkman texture are part of Isabella’s identity, so any production plan should protect those elements rather than treat them as optional dressing. They give the film a memorable sonic signature that helps it stand out in the elevated-genre lane.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 71.7,
+  "weightedScore": 67,
   "tier": "Optionable",
-  "inputTokens": 18176,
-  "outputTokens": 4152,
-  "cost": 0.032316000000000004,
+  "inputTokens": 20581,
+  "outputTokens": 3834,
+  "cost": 0.03268875,
   "declaredFormat": "Feature film"
 }

@@ -2,101 +2,180 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "body-swap identity drama",
-        "conspiracy thriller"
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Thriller",
+        "Drama"
       ],
-      "tone": "Propulsive, paranoid, emotionally earnest, and darkly playful"
+      "tone": "propulsive",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "identity",
+        "family-dynamics",
+        "survival",
+        "shapeshifters",
+        "small-town-conspiracy"
+      ]
     },
-    "positioning_hook": "A teenage outsider discovers she’s a shapeshifting fugitive in a corporate cover-up, then must survive a town-wide manhunt before her stolen identity becomes permanent.",
+    "positioning_hook": "A self-doubting Midwestern teen discovers she’s a shape-shifting lab experiment, then has to outrun the company that made her before they erase who she really is.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has immediate genre pull: a teen in a small town, a secret company, a manhunt, and a body-swapping engine that keeps escalating. It’s commercially legible and has a clean emotional entry point, though the concept is more targeted than four-quadrant."
+        "reasoning": "The premise has immediate genre appeal: a teen identity story wrapped in a chase thriller with body-swap spectacle and a clear emotional spine. The audience is real and broad enough for streaming or specialty theatrical, though the concept is still a little stranger than a pure four-quadrant play."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands fast with the opening chase, the shapeshift reveal, and the later explanation of the foam and the company’s operation. By the time Ava is pulled into the school and mall sequences, the story engine is clear and easy to track."
+        "reasoning": "The hook lands fast in the opening woods chase and then sharpens again when Ava realizes the town is hiding escaped shapeshifters and she may be one of them. The script keeps the premise legible even as it escalates into the Ava/Madison identity reveal."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Ava has a strong blend of insecurity, intelligence, and moral instinct, and June gives the story a vivid, blue-collar counterweight. The supporting players are functional and distinct, though the script is most alive when it’s focused on Ava, June, and Madison."
+        "score": 8,
+        "reasoning": "Ava/Madison is a strong lead because the role is built on insecurity, moral instinct, and a genuinely painful identity crisis. June, Shannon, Priscilla, and David all have enough texture to matter, with June especially giving the story a second emotional engine."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The shapeshifting is handled with a specific physical logic, and the identity confusion is dramatized through touch, memory, and body changes rather than exposition alone. The Ava/Madison reveal and the later mirror-image confrontations give the script a confident, unusual shape."
+        "reasoning": "The script’s boldest move is making shapeshifting about memory, class resentment, and self-concept rather than just disguise. The Ava/Christy, Ava/Grandma, and Ava/Eric transformations give the material a fresh, performance-forward angle."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script keeps turning the screw: chase, reveal, school confrontation, mall escape, identity reversal, lab capture, and final confrontation. Each sequence changes the terms of the story, and the momentum stays strong through the endgame."
+        "reasoning": "The story keeps turning: the road chase, the school confrontation, the mall escape, the lab reveal, the identity reversal, and the final lab assault all escalate cleanly. The back half is especially propulsive because every reveal changes the protagonist’s understanding of herself."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The core idea feels fresh because it fuses teen identity anxiety with a corporate body-horror conspiracy and then makes the emotional truth of the story about being seen. The Ava/Madison switch is not just a gimmick; it becomes the movie’s moral and emotional center."
+        "reasoning": "It feels like a familiar genre engine at first, then becomes something more specific and emotionally sticky once the script reveals the body-hopping, memory-loss, and class-coded identity warfare. The Ava/Madison twist is surprising but also inevitable in retrospect."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The town, school, mall, secret lab, and corporate security apparatus all feel like parts of one connected ecosystem. The world is specific enough to generate story, especially with the fake news, social-media slop, and company presence in public spaces."
+        "reasoning": "The small-town setting, the corporate security apparatus, the secret lab, and the social-media disinformation layer all create a usable world with story-generating friction. It’s not a huge mythology, but it has enough institutional texture to feel bigger than a one-note chase."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a distinct blend of teen awkwardness, paranoid thriller energy, and body-horror absurdity, while still keeping the emotional stakes sincere. The dialogue often lands with a sharp, lived-in comic edge that keeps the material from feeling generic."
+        "reasoning": "The tone is unusually specific: teen-movie banter, paranoid sci-fi, and body-horror panic all live in the same lane without collapsing the emotional stakes. The script’s mix of humor, fear, and earnestness gives it a distinct register."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Under the chase mechanics, the script is really about identity, class resentment, maternal love, and the hunger to be chosen. The Ava/Madison relationship and June’s compromises suggest more emotional territory than the surface plot initially advertises."
+        "reasoning": "Under the thriller mechanics, the script is carrying real material about class shame, maternal sacrifice, and the terror of being seen incorrectly. The Ava/Madison identity fracture suggests more depth than the surface plot initially advertises, though the movie is still primarily driven by reveal and pursuit."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "Ava/June/Shannon gives the movie a solid emotional triangle, and the Ava/Madison mirror dynamic adds a second engine. The company side is vivid enough to function, but the story still lives primarily on the lead relationships rather than a fully webbed ensemble."
+        "score": 7,
+        "reasoning": "Ava/June/Shannon is a strong triangle, and the shapeshifter pair gives the story a second emotional axis. The ensemble is not sprawling, but the relationships are active enough that scenes can generate tension from multiple directions."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Madison",
+        "role_type": "Lead",
+        "demographics": "female, 9-16, shapeshifter in a teen body; identity is the central dramatic requirement",
+        "hook": "The story’s true center is a frightened, morally stubborn girl whose mind has been scrambled by experimental drugs and memory loss, leaving her to live inside the identity of Ava while slowly discovering she is Madison. She’s funny, defensive, hungry, and deeply ashamed of needing other people, which makes her both vulnerable and dangerous once she realizes what she can do.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Lady Bird or Jodie Comer in Killing Eve: a role that lives on contradiction, emotional transparency, and rapid identity shifts. It gives an actor the rare chance to play innocence, rage, body-horror panic, and hard-won self-possession in one performance."
+      },
+      {
+        "name": "June",
+        "role_type": "Supporting",
+        "demographics": "female, 30s, blue-collar mother, physically capable, emotionally hardened",
+        "hook": "June reads like a scrappy, overworked single mom until the script reveals she can shapeshift too and has been carrying the same secret under the surface. She’s funny, defensive, and fiercely practical, but the real charge is that she loves her daughter enough to lie, fight, and improvise her way through a nightmare.",
+        "why_actor_wants_this": "This is the kind of role that gave Allison Janney in I, Tonya or Laura Linney in Ozark so much juice: a mother who can pivot from comic bite to ferocious protection in a beat. It offers a mature actress a full emotional range plus action and secrecy."
+      },
+      {
+        "name": "Shannon",
+        "role_type": "Supporting",
+        "demographics": "female, 16-17, teen best friend, full-figured, socially grounded",
+        "hook": "Shannon is the best friend who sees Ava clearly, calls out her nonsense, and keeps the movie human whenever the conspiracy threatens to swallow it. She’s not just comic relief; she’s the social anchor that makes Ava’s isolation and transformation feel real.",
+        "why_actor_wants_this": "This is strong supporting territory in the spirit of Beanie Feldstein in Booksmart or Auliʻi Cravalho in The Little Mermaid: a friend role with warmth, timing, and real loyalty. It gives an actor the chance to be the audience’s emotional translator without being ornamental."
+      },
+      {
+        "name": "Priscilla",
+        "role_type": "Supporting",
+        "demographics": "female, 40s-50s, corporate security operator, hard-edged professional",
+        "hook": "Priscilla is the polished face of the operation: calm, ruthless, and capable of sounding reasonable while she’s coercing a teenager into a nightmare. She’s one of the script’s best pressure characters because she can be maternal, corporate, and predatory in the same scene.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Patricia Clarkson did in Sharp Objects or Carrie Coon in The Leftovers: authority with menace and intelligence. It’s a scene-stealer part for someone who can make control feel seductive."
+      },
+      {
+        "name": "David",
+        "role_type": "Supporting",
+        "demographics": "male, 90s body / shapeshifter, mentally fragmented, emotionally dependent",
+        "hook": "David is the other half of the shapeshifter pair, and the script gives him real pathos: he’s damaged, obsessive, and desperate to protect Madison even as he helps trap her. The role is tragic because he’s both victim and accomplice, often in the same breath.",
+        "why_actor_wants_this": "This is the kind of transformation-heavy, emotionally exposed role that gave Gary Oldman in The Darkest Hour or Brendan Gleeson in The Banshees of Inisherin so much room to work. It asks for a performer who can make brokenness feel intimate rather than grotesque."
+      },
+      {
+        "name": "Wilma",
+        "role_type": "Supporting",
+        "demographics": "female, 20s, company nurse, observant, morally compromised",
+        "hook": "Wilma is the quieter company insider who seems more humane than the others until the script reveals how deeply she’s embedded in the system. She’s useful because she can move between caretaker, enabler, and threat without changing costumes.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the same stealthy complexity as Carrie Coon in Gone Girl or Merritt Wever in Unbelievable. It’s a smart supporting part with enough ambiguity to land a memorable turn."
+      },
+      {
+        "name": "Mills",
+        "role_type": "Supporting",
+        "demographics": "male, late 20s, ex-military security, father, working-class",
+        "hook": "Mills is the one company man who still feels like a person, which makes him useful and dangerous to the story. His sick kid and visible discomfort with the job give the movie a conscience inside the machinery.",
+        "why_actor_wants_this": "This is the sort of morally split supporting role that lets an actor play against type the way Shea Whigham or Scoot McNairy often do. It’s a grounded, humanizing part inside a high-concept machine."
+      },
+      {
+        "name": "Jamieson",
+        "role_type": "Supporting",
+        "demographics": "male, 40s, private security enforcer, physically imposing",
+        "hook": "Jamieson is the blunt instrument: all procedure, intimidation, and tactical obedience. He’s not deep, but he’s effective, and the script uses him as a constant physical threat.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor a clean, memorable lane like Michael Shannon in supporting-mode or Shea Whigham in a pressure-cooker thriller. It’s a physical antagonist part with authority and menace."
+      },
+      {
+        "name": "Wolcott",
+        "role_type": "Supporting",
+        "demographics": "male, 60s, scientist-executive, clinical, controlling",
+        "hook": "Wolcott is the cold intellectual center of the operation, the man who can talk about curing cancer while overseeing torture. He’s the script’s clearest embodiment of technocratic cruelty.",
+        "why_actor_wants_this": "This is prestige-villain material in the vein of Bryan Cranston in Your Honor or Michael Keaton in The Founder: a role where intelligence and self-justification are the performance. It gives an actor a chance to make evil feel rational."
+      },
+      {
+        "name": "Eric Huntington",
+        "role_type": "Supporting",
+        "demographics": "male, 50s, billionaire tech mogul, vanity-driven, physically specific",
+        "hook": "Eric is mostly a target and a symbol, but the script makes him vivid enough to matter: arrogant, performative, and morally hollow. He’s the body the operation wants to wear because he already represents power without conscience.",
+        "why_actor_wants_this": "This is a juicy cameo-to-supporting role in the tradition of Mark Ruffalo in Spotlight or Armie Hammer in The Social Network: a polished, dangerous public face with rot underneath. It’s a role that can be played with charisma and contempt."
+      }
+    ],
     "production_reality": {
       "cast": {
         "speaking_roles": 12,
-        "leads": 4,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Two central teen female roles with strong physical and emotional range",
-          "One child role with extensive transformation requirements",
-          "Multiple body-copy performances requiring the same actor to play different identities",
-          "Supporting adult roles skew 30s-60s"
+          "one child lead performance requirement",
+          "multiple body/identity shifts for the lead",
+          "adult actors must plausibly play multiple identities through performance and makeup"
         ]
       },
       "locations": {
-        "distinct_count": 12,
+        "distinct_count": 15,
         "interior_exterior_ratio": "roughly 55/45",
-        "period_or_contemporary": "Contemporary",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Small-town streets and woods",
-          "High school interiors",
-          "Mall interiors",
-          "Secret lab / warehouse build",
-          "Suburban home interiors"
+          "small-town streets and woods",
+          "high school interiors",
+          "mall and retail interiors",
+          "secret lab / warehouse / office interiors",
+          "car chase and roadblock sequence"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Body transformation effects, skin bubbling/mutation, identity morphs, and a few stylized action beats; mostly practical-performance driven with selective digital enhancement.",
+        "vfx_details": "Body-transformation effects, skin mutation, identity-shift transitions, and a few stylized creature-like moments; mostly practical/visual transformation work rather than large-scale CGI environments.",
         "stunts_level": "moderate",
-        "sfx_needs": "Foam spray effects, burns, fire ignition, gunfire, cattle prods, tasers, explosions, and practical injury makeup.",
+        "sfx_needs": "foam spray effects, burns, electrical discharge, fire, blood, body-mutation practical effects, and controlled explosion/fire sequence in the lab finale.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "real_person",
-          "detail": "Eric Huntington is a fictional character, but the script references a New York Times reporter and CNN in dialogue."
+          "detail": "Eric Huntington is a fictional character, but the script references the New York Times, CNN, TikTok, and a billionaire tech mogul archetype without naming a real person as the antagonist."
         },
         {
           "type": "brand",
-          "detail": "Trader Joe’s, Target, Honda Civic, iPhone, Purina, Beretta, and CNN are named on the page."
-        },
-        {
-          "type": "named_music",
-          "detail": "No plot-critical named music."
+          "detail": "TikTok, Trader Joe's, Ford Escape, Honda Civic, Beretta APX Carry, and Purina are all named on the page."
         },
         {
           "type": "ip_licensing",
@@ -104,216 +183,155 @@
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium-cable genre lane; also viable as a festival-to-platform feature",
-        "content_level": "PG-13 to mature",
-        "series_engine_or_release_model": "Feature release model: festival launch with streamer or specialty distributor pickup; the engine is a contained conspiracy thriller with a strong hook and a high-concept identity twist."
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: elevated sci-fi thriller with teen and adult crossover appeal, best suited to streaming-first or specialty theatrical with genre marketing."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the footprint contained, but the road chase, mall sequence, secret-lab finale, fire effects, and repeated transformation work will push beyond a cheap indie if executed cleanly."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary small-town settings keep the footprint manageable, but the transformation effects, lab build, action, and fire-heavy finale push above micro-budget."
+      "casting": {
+        "level": "high",
+        "note": "The lead has to play a frightened teen, a body-hopping identity crisis, and multiple forms of the same consciousness; the mother role also needs an actor who can credibly pivot into action and secrecy."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The Ava/Madison reveal is the script’s big structural swing, and the movie depends on that twist landing with emotional clarity rather than just surprise."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Freaky",
+          "year": 2020,
+          "why_it_comps": "Body-swap identity comedy/horror with a teen lead forced to survive inside a transformed self."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The movie depends on a strong teen lead, a compelling maternal role, and a child performer with major emotional and physical demands."
+        {
+          "title": "The Faculty",
+          "year": 1998,
+          "why_it_comps": "Small-town paranoia, teen ensemble energy, and a hidden-invasion premise that turns school life into a conspiracy zone."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through woods, streets, school, mall, homes, warehouse, and a secret lab, but all within a contemporary domestic footprint."
+        {
+          "title": "Upgrade",
+          "year": 2018,
+          "why_it_comps": "High-concept bodily takeover mechanics paired with a propulsive revenge/thriller engine and a strong genre hook."
         },
-        "content": {
-          "level": "medium",
-          "note": "There is violence, gunplay, body-horror transformation, child endangerment, and some intense peril, but the material stays within mainstream thriller bounds."
+        {
+          "title": "The One I Love",
+          "year": 2014,
+          "why_it_comps": "Identity confusion and relationship-based sci-fi that uses a contained premise to explore selfhood and emotional fracture."
         },
-        "rights": {
-          "level": "low",
-          "note": "The script uses a few recognizable brands and one pop-culture reference, but it is not built on licensed IP or real-person life rights."
+        {
+          "title": "The Invisible Man",
+          "year": 2020,
+          "why_it_comps": "Modern, elevated genre storytelling where paranoia, bodily vulnerability, and a clear villain drive the commercial engine."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults and older teens who like elevated genre with a strong emotional hook, especially viewers drawn to identity-driven sci-fi and paranoid thrillers.",
+        "demographics": "16-44, slightly female-skewing, genre-literate, streaming-friendly, with crossover appeal to character-drama audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary small-town locations, a limited cast, and contained interiors keep it in indie territory, while transformation effects, stunts, and the lab finale prevent it from being micro."
+      },
+      "lane_fit": {
+        "lane": "elevated sci-fi thriller",
+        "types_of_buyers": [
+          "streamer genre originals execs",
+          "boutique genre financiers",
+          "indie distributors seeking elevated commercial hooks",
+          "producer-directors looking for a contained breakout feature",
+          "actor-driven genre packages"
+        ],
+        "detail": "This sits naturally in the lane of smart, high-concept genre with a human core: a movie that can sell on premise, but still gives actors and directors something substantial to play. The body-horror mechanics and teen emotional angle make it especially attractive to buyers who want commercial genre without franchise bloat."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The shapeshifter premise is expandable in theory, but the script’s emotional payoff is tied to Madison/Ava’s specific identity crisis rather than a clear franchise or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The body-swap engine is emotionally legible.",
-          "what_it_means": "The concept gives buyers a clean high-concept hook that is easy to market while still carrying a real emotional payoff about identity, self-worth, and being recognized. Actors and genre buyers will respond to the chance to play transformation as both spectacle and psychology.",
-          "evidence": "Ava becoming Christy, then the old woman, then Eric; the final pendant-driven return to Ava.",
+          "dimension_or_area": "The body-swap mechanic is emotionally specific.",
+          "what_it_means": "This is not just a gimmick; it gives the movie a built-in metaphor for shame, class anxiety, and self-loathing that buyers can market as elevated genre. That makes the script attractive to streamer dev execs and actor-driven producers looking for a hook with substance.",
+          "evidence": "Ava becoming Christy, Grandma, Eric, and finally realizing she is Madison turns the premise into an identity engine rather than a one-off twist.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ava is a strong teen lead.",
-          "what_it_means": "The role offers a young actress a full showcase: insecurity, intelligence, moral courage, panic, and physical action all in one part. Casting directors and reps will see a breakout vehicle for a performer who can carry both genre momentum and emotional specificity.",
-          "evidence": "Her classroom challenge to Priscilla, her decision to rescue Madison, and her repeated instinct to do the right thing even when it costs her.",
+          "dimension_or_area": "The opening is a clean, cinematic sell.",
+          "what_it_means": "The cold open delivers action, mystery, and a visual rule-set in under a page, which is exactly what helps a buyer understand the movie fast. That kind of immediate clarity is valuable for packaging and for trailer construction.",
+          "evidence": "The little girl sprinting through the woods, eating in the café, and transforming in the alley establishes the movie’s core mechanics instantly.",
           "source": "script"
         },
         {
           "dimension_or_area": "June gives the movie a second engine.",
-          "what_it_means": "The mother-daughter dynamic broadens the audience beyond teen genre buyers and gives the film a grounded adult perspective, which helps it play as more than a creature-feature premise. Mid-career actresses who can do warmth, grit, and comic timing will see a juicy, playable part.",
-          "evidence": "June’s waitress hustle, her blunt advice about bodies and value, and her late-story reveal that she can shapeshift too.",
+          "what_it_means": "The mother-daughter dynamic is not decorative; it creates emotional stakes, comic friction, and a late-game reveal that broadens the movie beyond a solo chase. That makes the project more castable and more marketable to adult audiences who want family tension inside genre.",
+          "evidence": "June’s blue-collar wit, her protection of Ava, and the reveal that she can shapeshift too all deepen the story’s emotional and commercial reach.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has institutional texture.",
-          "what_it_means": "The company, school, town, and media-disinformation layer create a believable ecosystem that makes the conspiracy feel bigger than the immediate plot. Buyers looking for a contained but expandable world will see a feature that feels like it has edges beyond the frame.",
-          "evidence": "The fake Amber-alert-style messaging, company SUVs at school, and the secret lab hidden in the woods.",
+          "dimension_or_area": "The script has a strong performance showcase.",
+          "what_it_means": "The lead role asks for fear, humor, confusion, and moral clarity in rapid succession, which is the kind of part that can launch or reframe an actor. Buyers like roles that feel like an event for the cast as much as for the audience.",
+          "evidence": "Ava/Madison moving through multiple bodies while trying to hold onto a self is a sustained acting challenge, not just a plot device.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tonal blend is distinctive.",
-          "what_it_means": "The script can play as thriller, body-horror, and teen comedy without losing its emotional center, which is a useful lane for streamers and specialty theatrical buyers. Directors who like to balance dread with wit will see a material that rewards a confident hand.",
-          "evidence": "Ava’s truck joke at the burger joint, the mall escape disguises, and the violent lab finale all live in the same movie.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The finale pays off the premise with escalation.",
-          "what_it_means": "The ending doesn’t just resolve the chase; it cashes in the identity premise, the corporate conspiracy, and the emotional bond between the two girls. That gives the project a satisfying feature-shaped payoff rather than a one-note premise reveal.",
-          "evidence": "The lab fire, the pendant reveal, Madison’s return to human form, and the found-family exit.",
+          "dimension_or_area": "The world has a usable conspiracy texture.",
+          "what_it_means": "The secret lab, private security, disinformation, and corporate cover-up give the movie enough institutional machinery to feel bigger than a single-location thriller. That helps the script play as a premium genre package rather than a thin concept.",
+          "evidence": "The school intrusion, the mall escape, the lab, and the fake social-media noise all build a coherent cover-up ecosystem.",
           "source": "script"
         }
       ],
-      "headline": "This is a clean, marketable sci-fi thriller with a real actor’s role at the center: a teenage outsider who discovers her body is the key to a corporate conspiracy. The script’s best asset is that the high-concept premise keeps paying emotional dividends — especially through Ava, June, and Madison — so it plays as both genre engine and identity story."
+      "headline": "This is a smart, actor-forward sci-fi thriller with a clean commercial hook and a real emotional engine. The contemporary footprint keeps it in indie range, while the body-horror identity premise and mother-daughter angle give it streamer-friendly upside and trailerable moments."
     },
-    "lead_characters": [
-      {
-        "name": "Ava / Madison",
-        "role_type": "Lead",
-        "demographics": "Female · 16-17 · teen",
-        "hook": "Ava is the kind of teen lead who can carry a movie because she’s all contradiction: shy but observant, self-conscious but morally braver than the adults around her, and physically transformed by a power she doesn’t understand. As the story unfolds, the script turns her into a moving target for identity itself — first as a girl who wants to be seen, then as someone who learns she may not be who she thought she was, and finally as a person choosing who she wants to become.",
-        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in *Lady Bird* crossed with the body-and-self-discovery range of Tatiana Maslany in *Orphan Black* — a role where the performance is the transformation. Young actresses who want a breakout part with emotional intelligence, physicality, and a final-act identity turn will chase this hard."
-      },
-      {
-        "name": "June",
-        "role_type": "Lead",
-        "demographics": "Female · 30s",
-        "hook": "June is a blue-collar, fast-talking, emotionally armored mom who reads like she’s been improvising adulthood for years and still somehow keeps the family moving. She’s funny, tired, protective, and more capable than she lets on, which makes her feel like a real person before the script reveals she’s also part of the same impossible phenomenon as her daughter.",
-        "why_actor_wants_this": "This is the showcase space of Frances McDormand in *Nomadland* or Toni Collette in *Hereditary* — a mother role that can pivot from grounded realism to ferocious survival energy. Mid-career actresses who want a part with wit, authority, and late-story physical action will see a strong vehicle here."
-      },
-      {
-        "name": "David",
-        "role_type": "Lead",
-        "demographics": "Male · 90s body / ageless consciousness",
-        "hook": "David is the story’s most tragic shape-shifter: a damaged, elderly consciousness trapped in a body that can become anyone, carrying tenderness and menace in the same breath. He’s not just a villain or ally; he’s a man whose need to survive has eaten away at his moral center, which makes him compelling every time he appears in a new form.",
-        "why_actor_wants_this": "This is the kind of role Anthony Hopkins had in *The Father* — a performance built on instability, memory, and the audience’s shifting trust in what they’re seeing. A veteran actor looking for a prestige-heavy, shape-changing showcase with emotional volatility will be drawn to it."
-      },
-      {
-        "name": "Priscilla",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s-50s",
-        "hook": "Priscilla is the corporate face of the operation: sharp, controlled, and always one step away from either a settlement offer or a threat. She has the kind of boardroom authority that makes her feel like she could run a company, a hostage negotiation, or a cover-up with the same calm efficiency.",
-        "why_actor_wants_this": "This is the power-player territory of Sarah Snook in *Succession* — a role that lives in command, pressure, and strategic charm. Character actresses who like playing intelligence with a blade underneath will want it."
-      },
-      {
-        "name": "Wilma",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s",
-        "hook": "Wilma is the most human face inside the machine: a young company nurse who seems capable of empathy even while participating in something monstrous. She has a quiet, watchful presence that makes her feel like she could either become an ally or a casualty at any moment.",
-        "why_actor_wants_this": "This is the kind of morally split supporting part that gave Jodie Comer so much to play in *Killing Eve* — warmth, compliance, and the possibility of rupture. Rising actresses who want a role with emotional ambiguity and a late-story turn will be interested."
-      },
-      {
-        "name": "Jamieson",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Jamieson is the muscle with a conscience he keeps trying not to hear. He’s a security guy who can move from intimidation to reluctant decency, which gives the movie a grounded enforcer who isn’t purely mechanical.",
-        "why_actor_wants_this": "This is the kind of grounded enforcer role that actors like Shea Whigham or Walton Goggins often make memorable — a man who can carry menace, fatigue, and a flicker of humanity in the same scene. Character actors who like playing pressure with a pulse will chase it."
-      },
-      {
-        "name": "Mills",
-        "role_type": "Supporting",
-        "demographics": "Male · late 20s",
-        "hook": "Mills is the younger security man who looks like he’s been drafted into a nightmare he doesn’t fully believe in. He’s practical, watchful, and increasingly uneasy, which makes him a useful audience surrogate inside the company apparatus.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor play contained panic and moral hesitation the way Jesse Plemons often does in pressure-cooker material. Working actors who want a credible, scene-stealing supporting part will see value here."
-      },
-      {
-        "name": "Wolcott",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Wolcott is the cold scientist-executive who treats human beings like prototypes and moral objections like accounting errors. He has the clipped certainty of someone who believes history will forgive him because he can monetize the future.",
-        "why_actor_wants_this": "This is the kind of icy authority role that gives an actor the same delicious control as Michael Keaton in *Dopesick* or Bryan Cranston in prestige villain mode — a man whose calm is the performance. Veteran character actors who enjoy playing intelligence without warmth will want it."
-      },
-      {
-        "name": "Liam",
-        "role_type": "Supporting",
-        "demographics": "Male · 17",
-        "hook": "Liam is the crush object who becomes unsettlingly important once the shapeshifting begins. He starts as a sweet, readable high-school dreamboat and then turns into one of the movie’s most eerie identity mirrors.",
-        "why_actor_wants_this": "This is the kind of deceptively simple teen role that can become memorable through the performance shift, like the unsettling double-duty energy in *The Leftovers* or *Twin Peaks*-adjacent teen material. Young actors who can play charm and uncanny detachment will be drawn to it."
-      },
-      {
-        "name": "Shannon",
-        "role_type": "Supporting",
-        "demographics": "Female · 16-17",
-        "hook": "Shannon is Ava’s best friend and the movie’s pressure valve: funny, loyal, practical, and just skeptical enough to keep the story honest. She gives the teen world a lived-in social texture and helps ground the more outrageous turns.",
-        "why_actor_wants_this": "This is the best-friend role that can play like the grounded comic support in *Booksmart* — a part that gets laughs, loyalty, and emotional clarity without being ornamental. Young actresses who want a sharp, scene-friendly supporting role will like it."
-      },
-      {
-        "name": "Christy",
-        "role_type": "Supporting",
-        "demographics": "Female · 17",
-        "hook": "Christy is the glamorous high-school rival who initially reads as the impossible ideal and then becomes part of the story’s identity machinery. She’s not just a crush obstacle; she’s one of the bodies Ava can become, which makes her function as both person and possibility.",
-        "why_actor_wants_this": "This is the kind of role that gives an actress the glossy surface and hidden utility of a prestige teen part in the *Euphoria* lane. Performers who can project confidence while also serving a larger transformation engine will want it."
-      },
-      {
-        "name": "Madison",
-        "role_type": "Lead",
-        "demographics": "Female · 9-10",
-        "hook": "Madison is the original little girl at the center of the body-horror premise: terrified, feral, and carrying the emotional wound that powers the whole story. Once the truth is revealed, she becomes the movie’s most heartbreaking figure — a child whose identity has been buried under another girl’s life.",
-        "why_actor_wants_this": "This is the kind of child performance territory that made Brooklynn Prince so unforgettable in *The Florida Project* — a role where innocence, fear, and resilience all have to live in the same body. A young performer with real emotional range would get a rare, memorable showcase."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a propulsive genre movie without losing the human ache underneath it.",
-        "fit_profile": "First- or second-feature directors with a strong visual sense and a taste for contained thriller mechanics, especially those coming out of festival shorts, elevated genre, or character-forward indie work. The material rewards directors who can stage action cleanly, keep body-horror emotionally grounded, and make identity feel tactile rather than abstract.",
-        "detail": "The movie gives a director a chance to build suspense through performance, physical transformation, and escalating reveals instead of expensive spectacle. It’s especially attractive to filmmakers who like genre stories that can move fast, play smart, and still land a final emotional turn."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Streaming thriller / elevated genre / festival-to-platform",
-        "detail": "The script is contained enough to package around a strong young lead and a few adult character actors, without needing a giant ensemble or heavy star dependency. The body-swap hook, teen setting, and conspiracy angle fit the current streamer appetite for high-concept genre with a clear emotional spine and exportable premise."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The Ava/Madison reveal is the whole movie.",
+          "detail": "The late identity reversal is the script’s biggest swing, and the audience has to accept that the emotional center was hidden in plain sight. If that turn doesn’t land with precision, the entire back half becomes a clever mechanism instead of a cathartic payoff.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The lead role narrows the casting pool.",
+          "detail": "The protagonist has to play teen comedy, body-horror panic, and a final emotional reframe across multiple identities, which is a much harder ask than a standard genre lead. That makes the project highly dependent on finding an actor who can sell both innocence and volatility.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The finale leans on effects and fire.",
+          "detail": "The secret-lab climax adds foam burns, mutation effects, cattle-prods, and a chemical fire that ignites the whole facility. That is still manageable, but it is the sequence most likely to push the movie off its clean indie footprint if scope creeps.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The script is carrying a lot of named references.",
+          "detail": "TikTok, Trader Joe's, Ford, Honda, Beretta, Purina, CNN, the New York Times, and Indiana Jones all appear on the page. None of that is fatal, but it does mean a buyer will want a clearance pass and a brand-sensitivity review before greenlight.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The main risk is structural: the movie’s emotional payoff depends on a late identity reveal that has to feel inevitable, not gimmicky. Beyond that, the project is cast-dependent and the finale carries enough effects/fire work to require disciplined scope control."
     },
-    "considerations": [
-      {
-        "area": "The Ava/Madison reveal is the engine to protect.",
-        "detail": "The late-story identity reversal is the movie’s biggest payoff, so the next pass should keep seeding that truth with the same precision the script already gives the chase mechanics. The version of the script where the pendant, the memory flashes, and the “Ava” name all quietly point to the same answer will make the final reveal hit even harder.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The company mythology can stay leaner.",
-        "detail": "The script already gives us the essential pieces — experimental drug, shapeshifters, cover-up, and Eric’s money — so a future pass could keep the explanation as compact as possible and let the action carry the rest. That would protect pace and keep the focus on Ava’s experience rather than on system mechanics.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The school and mall sections do a lot of work.",
-        "detail": "Those sequences are doing double duty as character comedy and plot propulsion, which is a strength, but they also carry a lot of moving parts. One direction would be to keep each public-set-piece anchored to a single emotional objective so the momentum stays clean while the world gets bigger.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The supporting company team is functional, not webbed.",
-        "detail": "Priscilla, Jamieson, Mills, Wilma, and Wolcott all serve the main engine well, but the story still belongs to the lead triangle and the identity twist. If the goal is to deepen the ensemble feel, the next pass could give one of the company players a more personal stake that collides with Ava’s moral center.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The finale asks for a moderate effects footprint.",
-        "detail": "The transformation work, foam burns, fire ignition, and lab destruction all point to a mid-range effects package rather than a minimal one. A simplification lever would be to keep the lab geography tight and reuse a small number of controlled spaces so the climax feels big without expanding the build.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The child role carries major casting weight.",
-        "detail": "Madison has to hold fear, confusion, feral survival, and emotional innocence, while also playing the story’s identity pivot. That makes the project especially dependent on finding a young performer who can carry both the horror and the heartbreak.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 72,
+  "weightedScore": 74.3,
   "tier": "Optionable",
-  "inputTokens": 41519,
-  "outputTokens": 5271,
-  "cost": 0.05485875,
+  "inputTokens": 43924,
+  "outputTokens": 5016,
+  "cost": 0.055514999999999995,
   "declaredFormat": "Feature film"
 }

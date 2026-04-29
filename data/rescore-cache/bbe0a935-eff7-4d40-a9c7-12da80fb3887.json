@@ -2,292 +2,321 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Fantasy drama",
-      "genre_tags": [
-        "coming-of-age",
-        "psychological"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama",
+        "Historical"
       ],
-      "tone": "Lyrical, surreal, emotionally earnest, and darkly comic"
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "period-piece",
+        "character-driven",
+        "coming-of-age",
+        "identity",
+        "family-dynamics",
+        "grief",
+        "egyptian-mythology",
+        "high-concept"
+      ]
     },
-    "positioning_hook": "A bullied Jewish teen in 1977 Los Angeles is pulled into an Egyptian afterlife test, where saving a poisoned prince becomes the only way to answer who he is.",
+    "positioning_hook": "A socially anxious Jewish teen in 1977 is pulled into an Egyptian afterlife test where he must save a poisoned prince, confront his own shame, and earn a second chance at being himself.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise has a clear emotional promise: a shy, bullied teen gets a mythic chance to matter, and the 1970s school setting gives it an accessible entry point. The audience is real and broad enough for prestige-leaning fantasy drama, though the voice and period specificity make it more selective than four-quadrant."
+        "score": 6,
+        "reasoning": "The emotional engine is clear and accessible — a bullied teen, first love, and a supernatural second chance — but the Egyptian-mythology frame and stylized voice narrow the immediate commercial lane. It feels most viable as specialty prestige or elevated family-adjacent fantasy rather than broad four-quadrant fare."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early in the classroom oral report, then opens into the tomb and the Second Life test with clean rules. The feather, scale, and poisoned prince give the story a simple engine that is easy to explain in one breath."
+        "reasoning": "The hook lands early: Daniel’s oral report, his recurring nightmare, and the tomb/second-life premise are all established in the opening pages. The script cleanly fuses school humiliation with an afterlife test, which makes the premise easy to pitch in two sentences."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Daniel is built around a strong contradiction: anxious, funny, self-protective, and capable of real moral courage when it counts. Mary, Tommy, and Aria each add a distinct pressure point, though Daniel remains the clear center of gravity."
+        "score": 8,
+        "reasoning": "Daniel is a strong lead because his anxiety, self-conscious humor, and buried decency all play in the same role, and Mary/Tommy/Bob give him a usable social ecosystem. Aria is also vivid enough to matter, especially once the story turns into a moral mirror for Daniel."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a highly specific voice and a mythic framework that feels personal rather than generic. The blend of adolescent humiliation, Egyptian theology, and internal narration gives it a confident identity that stands apart from standard coming-of-age fantasy."
+        "reasoning": "The script takes a very specific swing: a 1970s teen voice colliding with Egyptian afterlife mythology, rendered through a comic, confessional V.O. The choice to make the emotional climax about fairness, not victory, gives it a distinct authorial angle."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The story keeps resetting with fresh turns — classroom, diner, movie theater, tomb, then the return to class — and each turn advances Daniel’s emotional stakes. The momentum is strongest once Aria enters the tomb; the opening stretch spends more time establishing Daniel’s world than driving the central engine."
+        "reasoning": "Once the tomb sequence begins, the story has a strong engine: Daniel must decode Aria’s situation, manage the gods, and act before time runs out. The opening classroom stretch is more atmospheric than propulsive, but the central test sequence keeps escalating cleanly."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The feather-on-the-scale idea, the second-life bargain, and the way Daniel’s social shame becomes a cosmic test create a fresh, memorable premise. It feels invented from the inside out, not assembled from genre parts."
+        "reasoning": "The core idea feels both strange and legible: a kid who can’t speak up in class becomes the only person who can speak for someone else in the afterlife. That’s a fresh emotional mechanism, and the feather/scale motif gives the premise a memorable symbolic spine."
       },
       "world_density_and_texture": {
-        "score": 8,
-        "reasoning": "The 1977 San Fernando Valley school, the Halloween costumes, the oral report culture, and the Egyptian afterlife rules all carry specific texture. The mythic world has enough internal logic — gods, tests, balance, memory, revenge — to feel story-generating rather than decorative."
+        "score": 7,
+        "reasoning": "The 1977 San Fernando Valley classroom, Halloween costumes, and teen social hierarchy are specific, and the Egyptian afterlife rules are vivid enough to generate scenes. The world is strongest when it toggles between those two spaces; it is less rich as a fully independent mythology than as a story container."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unmistakable: neurotic, funny, spiritually earnest, and occasionally absurd in a way that keeps the material human. Daniel’s voice is the tonal signature, and the script stays committed to it even as it moves between school comedy and afterlife drama."
+        "reasoning": "The voice is unmistakable: anxious, funny, self-mocking, and emotionally sincere without becoming polished or literary. The script’s tonal identity comes from Daniel’s speech pattern and the way the fantasy is filtered through his panic and wonder."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "The script starts as a teen anxiety story and gradually reveals a deeper meditation on identity, fairness, memory, and moral choice. The ending recontextualizes Daniel’s shame as a larger question of selfhood, which gives the material real afterglow."
+        "score": 7,
+        "reasoning": "Under the surface, the script is about shame, identity, inherited expectation, and the difference between fairness and entitlement. The gods, the second life, and the repeated dream language suggest a larger metaphysical system, though the feature ultimately stays focused on Daniel’s immediate emotional breakthrough."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "Daniel/Mary/Tommy/Bob form a workable social web, and the school dynamics give the story recurring friction. Still, the script is primarily powered by Daniel’s interiority and the Aria test, so the ensemble functions more as pressure than as a fully independent engine."
+        "score": 7,
+        "reasoning": "Daniel/Mary/Tommy/Bob create a workable social engine, and the tomb relationship with Aria adds a second, more dramatic pairing. It is not an ensemble piece in the broad sense, but the relationships are active enough that scenes can turn on shifting alliances and status."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 8,
-        "leads": 4,
-        "series_regulars": 0,
-        "child_actors": true,
-        "casting_characteristics": [
-          "Teen leads and supporting roles",
-          "Specific ethnic/faith identity for Daniel and Aria is central to the story",
-          "A performer who can carry stylized internal narration and period teen awkwardness"
-        ]
-      },
-      "locations": {
-        "distinct_count": 6,
-        "interior_exterior_ratio": "Mostly interior",
-        "period_or_contemporary": "Period (1977 / 341 BC fantasy sequence)",
-        "notable_requirements": [
-          "High-school classroom",
-          "Diner booth",
-          "Movie theater",
-          "Daniel's home bedroom",
-          "Contained tomb set",
-          "Royal Egyptian interior / play area"
-        ]
-      },
-      "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Time-slowing effects, glowing deity transformations, pupil-vision inserts, and dream/afterlife transitions.",
-        "stunts_level": "minor",
-        "sfx_needs": "Practical lamp effects, lighting cues, blood/poison effects, vomiting, and simple transformation beats.",
-        "night_shoots": "minimal",
-        "animals": false
-      },
-      "rights_flags": [
-        {
-          "type": "real_person",
-          "detail": "Charles Bronson is referenced by name and his film Death Wish is specifically named."
-        },
-        {
-          "type": "named_music",
-          "detail": "Led Zeppelin's 'Stairway to Heaven' is performed in the script."
-        },
-        {
-          "type": "brand",
-          "detail": "Bic pen is specifically named."
-        },
-        {
-          "type": "brand",
-          "detail": "GI Joe is specifically named."
-        },
-        {
-          "type": "brand",
-          "detail": "IROC T-top convertible is specifically named."
-        },
-        {
-          "type": "ip_licensing",
-          "detail": "Roots is referenced as a specific TV title."
-        }
-      ],
-      "platform_fit": {
-        "recommended_lane": "Prestige streaming or festival-to-platform feature lane",
-        "content_level": "PG-13 equivalent with mature themes",
-        "series_engine_or_release_model": "Feature release model; strongest as a festival launch with platform acquisition or a limited theatrical run."
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained interiors and a small cast keep the footprint manageable, while the period setting, tomb build, and visual effects push it above micro-budget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The story depends on strong teen performances for Daniel, Mary, Tommy, and Aria, plus a credible adult presence for Mrs. Marder and Daniel's parents."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The script moves through a handful of distinct spaces, but the tomb, Egyptian interiors, and period classroom require controlled production design."
-        },
-        "content": {
-          "level": "medium",
-          "note": "Bullying, suicide-adjacent material, poison, blood, and religious identity themes keep it in a mature family-to-teen lane rather than broad family fare."
-        },
-        "rights": {
-          "level": "high",
-          "note": "The script names Charles Bronson, Death Wish, Led Zeppelin's 'Stairway to Heaven,' Roots, Bic, GI Joe, and IROC, all of which invite clearance attention."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "Daniel is a showcase lead.",
-          "what_it_means": "The role gives a young actor comedy, vulnerability, voiceover intimacy, and a late-film authority turn, which is exactly the kind of part that can launch a career. Teen actors with range, plus managers looking for a breakout vehicle, will see a rare chance to build a calling card around one performance.",
-          "evidence": "Daniel's internal narration, his public collapse during the oral report, and the final classroom speech where he claims his identity out loud.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The premise has a clean mythic engine.",
-          "what_it_means": "The feather-scale rule, the Second Life bargain, and the poisoned prince create a simple, pitchable engine that can travel in the room and in the marketplace. Buyers who want elevated genre with an emotional spine will respond to how quickly the story turns a school anxiety into a cosmic test.",
-          "evidence": "The repeated feather-and-scale moments and the tomb test that forces Daniel to help Aria choose revenge or mercy.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The voice is unmistakable.",
-          "what_it_means": "Daniel's narration gives the script a built-in signature that can separate it from standard YA fantasy and make it feel authored. Directors and buyers looking for a distinct tonal fingerprint — funny, wounded, and spiritually sincere — will hear a finished voice on the page.",
-          "evidence": "Daniel's running commentary to Dr. Feinstein, the school scenes, and the way he narrates his own panic and insight.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The period texture is vivid and usable.",
-          "what_it_means": "The 1977 Valley setting, Halloween costumes, oral reports, diner sundaes, and movie-theater hangout culture give the project a specific world that feels producible and marketable. That kind of period specificity helps a buyer sell the movie as both nostalgic and emotionally current.",
-          "evidence": "The Happy Days/Star Wars/Charlie's Angels costumes, Death Wish at the theater, and the Halloween birthday dinner.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The emotional payoff is earned.",
-          "what_it_means": "The ending lands because the story has spent the whole film turning shame into agency, so the final declaration feels like a release rather than a speech. Prestige buyers and festival audiences tend to respond when a genre premise resolves into a personal statement this cleanly.",
-          "evidence": "Daniel's final classroom poem and the last beat where he looks into camera and asks, 'Who are you?'",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Mary and Tommy give the story heart.",
-          "what_it_means": "The script has two strong emotional satellites around Daniel: Mary as the desired, mythic peer and Tommy as the loyal outsider friend. That triangle gives the project a relational hook that can attract actors and help the movie play beyond the fantasy conceit.",
-          "evidence": "Mary's birthday dinner and homecoming tension, plus Tommy's repeated support and the video-recording reveal.",
-          "source": "script"
-        }
-      ],
-      "headline": "This is a smart, emotionally legible feature with a real calling-card lead role at its center. It turns adolescent humiliation into myth, and the result is a period fantasy drama that feels personal, producible, and actor-forward."
     },
     "lead_characters": [
       {
         "name": "Daniel Green",
         "role_type": "Lead",
-        "demographics": "Male · 16-17 · Jewish · San Fernando Valley teen",
-        "hook": "Daniel is a hyper-verbal, anxious, self-mocking kid whose body betrays him before his courage catches up. He lives inside his own narration, which makes him funny and fragile at once, but the script keeps revealing a real moral center under the panic: he notices unfairness, he remembers promises, and when the moment finally demands it, he can stand up and speak with authority.",
-        "why_actor_wants_this": "This is the kind of showcase territory that gave Jesse Eisenberg in The Social Network or Elliot Page in Juno a fast, unmistakable screen identity — a voice-driven lead whose intelligence and insecurity are both the performance. Young actors who can do rapid-fire narration, emotional embarrassment, and a late-film authority turn will chase this, and reps will see a breakout vehicle with range."
+        "demographics": "Male, 16, Jewish, suburban teen, anxious and physically self-conscious",
+        "hook": "A hyper-self-aware, funny, deeply anxious high schooler who narrates his life like a private confession to his psychiatrist. Daniel is trapped between humiliation and imagination: he wants to disappear, but he also wants to matter, and the story turns that contradiction into a literal test of courage.",
+        "why_actor_wants_this": "This is the showcase territory of a young Adam Sandler in a dramatic mode or a breakout like Lucas Hedges in Manchester by the Sea — a role that lets an actor weaponize awkwardness, then reveal steel, tenderness, and moral authority by the end."
       },
       {
-        "name": "Mary Lindgren / Egyptian Mary / Isis",
-        "role_type": "Lead",
-        "demographics": "Female · 16-17 · Swedish-American teen / mythic goddess embodiment",
-        "hook": "Mary is the cool, beautiful, slightly unreachable friend who becomes the story's bridge between ordinary teen longing and divine judgment. She is both a real girl with social gravity and a mythic presence with authority, which gives the role a rare mix of warmth, mystery, and command.",
-        "why_actor_wants_this": "This is the showcase space of Rooney Mara in The Girl with the Dragon Tattoo or Anya Taylor-Joy in The Queen's Gambit — a role that combines stillness, allure, and hidden power. Young actresses who can play intelligence without over-explaining it, and buyers looking for a face that can carry both romantic tension and supernatural authority, will be drawn to it."
-      },
-      {
-        "name": "Aria",
-        "role_type": "Lead",
-        "demographics": "Male · 16-17 · Persian/Egyptian royal heir",
-        "hook": "Aria starts as a proud, imperious, dying prince and gradually reveals the frightened, loyal son underneath the rank. He is sharp, entitled, and wounded, but the script gives him a moving emotional turn as his certainty cracks and he reaches for forgiveness instead of vengeance.",
-        "why_actor_wants_this": "This is the kind of tragic-prince showcase that gave Timothée Chalamet in The King or Lucas Hedges in Manchester by the Sea a chance to play authority collapsing into vulnerability. A young actor with classical poise and emotional access will want the role because it lets him start regal and end heartbreakingly human."
+        "name": "Mary Lindgren",
+        "role_type": "Supporting",
+        "demographics": "Female, 16, Swedish-American, Daniel’s best friend and crush",
+        "hook": "Mary is the story’s emotional pressure point: warm, socially fluent, and just out of Daniel’s reach as she blooms into a more confident version of herself. She can read Daniel better than most people can, which makes her both his comfort and his humiliation.",
+        "why_actor_wants_this": "This is the kind of role that gave Rachel McAdams in Mean Girls or Kaitlyn Dever in Booksmart a chance to be both appealing and emotionally legible — the friend/crush who can pivot from charm to disappointment in a single look."
       },
       {
         "name": "Tommy",
-        "role_type": "Lead",
-        "demographics": "Male · 15-16 · skinny, glasses, socially awkward teen",
-        "hook": "Tommy is the smart, oddball friend who sees more than the room gives him credit for. He has the energy of the kid who has been underestimated his whole life, and the script uses him as both comic relief and emotional witness, especially in the way he keeps trying to protect Daniel without making a show of it.",
-        "why_actor_wants_this": "This is the kind of best-friend role that gave Lucas Hedges in Boyhood or Noah Galvin in theater-driven coming-of-age work a chance to steal scenes through specificity and sincerity. Character actors in their teens will chase it because it offers humor, loyalty, and a quiet emotional payoff without needing to carry the whole movie."
+        "role_type": "Supporting",
+        "demographics": "Male, 15, socially awkward, intellectually advanced",
+        "hook": "Tommy is the loyal oddball who sees Daniel more clearly than Daniel sees himself. He’s comic, earnest, and slightly too intense, but the script uses him as a genuine friend rather than a punchline.",
+        "why_actor_wants_this": "This is strong supporting-character territory in the vein of Paul Dano in Little Miss Sunshine — a role that lets an actor play intelligence, vulnerability, and comic pain without needing to dominate the movie."
       },
       {
-        "name": "Bob James",
+        "name": "Aria",
         "role_type": "Supporting",
-        "demographics": "Male · 16-17 · handsome jock",
-        "hook": "Bob is the polished school bully who understands social power as performance. He is not just mean; he is socially fluent, casually cruel, and always aware of the room, which makes him a clean antagonist in the school-world scenes.",
-        "why_actor_wants_this": "This is the kind of high-school alpha role that gave actors like Ben Affleck in Dazed and Confused or Eric Stoltz in teen ensemble films a chance to play charisma with menace. Young actors who want a memorable, scene-stealing antagonist part will go after it because the role is simple, sharp, and instantly legible."
+        "demographics": "Male, 16, Persian/Egyptian royal heir, poisoned and buried alive",
+        "hook": "Aria begins as an arrogant, imperious obstacle and becomes the story’s moral mirror: a privileged boy who has to confront betrayal, mortality, and the possibility that love and loyalty are not the same thing. His transformation is the emotional counterweight to Daniel’s.",
+        "why_actor_wants_this": "This is the kind of role that gave Timothée Chalamet in The King or Barry Keoghan in The Banshees of Inisherin a chance to play status, fragility, and collapse in the same performance."
       },
       {
         "name": "Mrs. Marder",
         "role_type": "Supporting",
-        "demographics": "Female · 50s · teacher",
-        "hook": "Mrs. Marder is the well-meaning adult who tries to make the assignment feel survivable, even when she cannot fully see how hard it is for Daniel. She carries the authority of the classroom but also the human awkwardness of a teacher who knows a kid is struggling and is trying, imperfectly, to help.",
-        "why_actor_wants_this": "This is the kind of grounded authority role that gave Laurie Metcalf in Lady Bird or Frances McDormand in smaller ensemble dramas a chance to make one room feel emotionally real. Experienced character actresses will like it because it has texture, timing, and a few precise beats that can land hard without overplaying."
+        "demographics": "Female, 50s, history teacher",
+        "hook": "Mrs. Marder is the well-meaning authority figure who thinks she’s helping Daniel while still participating in the social machinery that embarrasses him. She gives the classroom its adult pressure and keeps the oral-report frame grounded.",
+        "why_actor_wants_this": "This is the kind of role that lets a veteran character actor do precise, lived-in work in the mode of Laurie Metcalf in Lady Bird — small authority, real humanity, and a few sharp turns of comic frustration."
       },
       {
-        "name": "Leon Green",
+        "name": "Bob James",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · father",
-        "hook": "Leon is part of the offscreen pressure system that shapes Daniel's shame and longing. He is less a plot engine than an emotional presence, but the script uses him to suggest a household where love, worry, and helplessness are all present at once.",
-        "why_actor_wants_this": "This is the kind of restrained parent role that gives actors in the Tom Wilkinson or Richard Jenkins lane a chance to do a lot with very little screen time. Character actors who specialize in lived-in authority will see a chance to ground the movie's emotional stakes."
+        "demographics": "Male, 16, popular jock",
+        "hook": "Bob is the social bully with enough charisma to make cruelty look casual. He’s not complex in a psychological sense, but he’s exactly the kind of teen antagonist who can make a room feel unsafe with one line.",
+        "why_actor_wants_this": "This is classic young-antagonist showcase material in the lane of a young Chris Evans in Not Another Teen Movie or a teen-era Billy Zane type — swagger, menace, and the chance to own every entrance."
       },
       {
-        "name": "Daniel's Mother",
+        "name": "Osiris",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-50s · mother",
-        "hook": "Daniel's mother is the practical, worried adult trying to manage a son who is both fragile and impossible to manage by ordinary means. She represents the domestic side of the story's emotional burden, and her presence helps make Daniel's inner life feel lived-in rather than abstract.",
-        "why_actor_wants_this": "This is the sort of mother role that gives actresses in the Patricia Clarkson or Amy Madigan lane a chance to play care, fatigue, and love in a few clean strokes. It will attract performers who know how to make a family scene feel specific without taking over the frame."
+        "demographics": "Mythic male deity, ageless",
+        "hook": "Osiris arrives as the final arbiter of Daniel’s fate, but the script plays him with a sly, bureaucratic wit that keeps the mythology from becoming solemn. He’s less a boss monster than a cosmic administrator with a sense of humor.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the theatrical lift of Ralph Fiennes in The Grand Budapest Hotel or Ian McKellen in Gods and Monsters — authority, wit, and mythic scale with a human edge."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a mythic coming-of-age movie without losing the awkwardness of real adolescence.",
-        "fit_profile": "First- or second-feature directors with a strong short-film voice, especially those coming out of festival drama or elevated genre. The material rewards directors who care about performance, internal narration, and visualizing subjective states without turning the movie into a effects demo.",
-        "detail": "The craft opportunity is to keep the emotional comedy of the classroom and diner scenes alive while making the tomb and deity material feel inevitable rather than ornamental. Directors who like intimate scale with one bold formal conceit will respond because the movie gives them a signature world without requiring a giant canvas."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "teen lead with strong comic narration",
+          "supporting teen ensemble",
+          "age-specific 1970s high-school casting",
+          "mythic deity role with performance gravitas"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Prestige indie / elevated streaming fantasy drama",
-        "detail": "The movie can be packaged around one breakout teen lead and a contained supporting ensemble, so it does not require a star-heavy cast to make sense on the page. The period setting and fantasy conceit give it a festival-to-platform path, with enough originality to stand out in a buyer's elevated-genre stack."
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "mostly interiors",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "1977 San Fernando Valley classroom",
+          "diner booth",
+          "movie theater",
+          "Daniel’s bedroom",
+          "Egyptian tomb set",
+          "royal Egyptian interior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily stylized lighting, dream transitions, slow-motion/time-slow effects, and a few deity transformation moments; no large-scale effects burden.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical lighting cues, tomb atmosphere, transformation makeup/costume, and simple prop effects for the scale/feather and lamp beats.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Led Zeppelin's 'Stairway to Heaven' is specifically performed on flute and functions as a key story beat."
+        },
+        {
+          "type": "named_music",
+          "detail": "Charles Bronson and Death Wish are explicitly referenced as Daniel's hero text."
+        },
+        {
+          "type": "named_music",
+          "detail": "Alice Cooper's 'Welcome to My Nightmare' is quoted by title in the opening nightmare framing."
+        },
+        {
+          "type": "brand",
+          "detail": "BIC pen is specifically named in the opening tomb sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "GI Joe is prominently used as a classroom prop in the oral-report gag."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical or streaming original with awards-friendly positioning"
       }
     },
-    "considerations": [
-      {
-        "area": "The opening spends time before the engine fully locks.",
-        "detail": "The tomb framing is memorable, but the script takes a while to arrive at the Aria test that becomes the movie's true propulsion. A next pass could consider bringing the feather-scale rule and the second-life stakes into view a little earlier so the audience feels the central bargain sooner.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary-period interiors, one principal tomb set, a classroom, diner, bedroom, and movie theater keep the spend contained; the fantasy is driven by performance and lighting rather than effects."
       },
-      {
-        "area": "Daniel's inner life carries the movie.",
-        "detail": "The script is strongest when Daniel's narration, panic, and insight are all active at once, especially in the classroom and diner sequences. One direction would be to keep looking for places where another character can press back on him in a way that forces a choice, so the emotional engine stays external as well as internal.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a very specific mix of comic timing, vulnerability, and sustained voice-over performance, while Mary, Tommy, and Aria all need to feel age-true and distinct."
       },
-      {
-        "area": "The rights list is real and manageable.",
-        "detail": "Charles Bronson, Death Wish, Led Zeppelin, Roots, Bic, GI Joe, and IROC all appear by name, which means a producer will want a clear clearance pass early. The version of the package that swaps or softens the most expensive references would protect the script's period flavor while making the legal path cleaner.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The tomb and Egyptian interiors want disciplined design.",
-        "detail": "The story is mostly contained, but the 341 BC tomb, royal play area, and deity reveals need a coherent visual language to feel premium rather than improvised. A simplification lever would be to keep the Egyptian spaces modular and repeatable so the production design can do more with fewer builds.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The teen ensemble can be sharpened as a package asset.",
-        "detail": "Daniel, Mary, Tommy, and Aria each have a distinct function, which gives the movie a clean young-ensemble pitch. The version of the script that keeps their relationships active in more scenes would make the project even more attractive to casting and to buyers looking for a youth-facing prestige title.",
-        "is_primary_lever": false,
-        "source": "script"
+      "development": {
+        "level": "medium",
+        "note": "The script’s voice is highly specific, but the opening stretch leans heavily on narration and internal explanation before the tomb engine fully takes over."
       }
-    ],
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Sixth Sense",
+          "year": 1999,
+          "why_it_comps": "A child/teen POV filtered through grief, fear, and a supernatural mechanism that is emotionally legible before it is fully explained."
+        },
+        {
+          "title": "A Christmas Story",
+          "year": 1983,
+          "why_it_comps": "The comic first-person memory voice, period specificity, and childhood embarrassment as the engine of the movie."
+        },
+        {
+          "title": "Lady Bird",
+          "year": 2017,
+          "why_it_comps": "A sharp adolescent identity story where social pain, family feeling, and self-invention all live in the same register."
+        },
+        {
+          "title": "The Green Mile",
+          "year": 1999,
+          "why_it_comps": "A moral fantasy built around mercy, fate, and a contained supernatural world with emotional stakes bigger than the setting."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults and older teens who respond to emotionally sincere coming-of-age stories with a supernatural hook and a strong first-person voice.",
+        "demographics": "Skews 16-44, with strongest pull for women and men who like prestige-leaning genre, Jewish family material, and nostalgic period storytelling.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contained period feature with a small cast, a handful of sets, and modest fantasy execution."
+      },
+      "lane_fit": {
+        "lane": "elevated indie fantasy drama",
+        "types_of_buyers": [
+          "specialty distributors",
+          "streamer original film teams",
+          "prestige indie financiers",
+          "director-driven production companies",
+          "youth-skewing awards-friendly buyers"
+        ],
+        "detail": "This sits naturally in the lane of emotionally sincere genre pieces that can be sold on voice, performance, and a memorable premise. The period setting and mythic frame give it enough texture for prestige buyers without forcing a tentpole spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the story resolves Daniel's arc cleanly and does not present a separate spinoff vector with independent depth."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The voice is instantly ownable.",
+          "what_it_means": "That gives the project a clear marketing identity and a performance-forward hook that can sell on pages alone. Buyers looking for a distinctive young narrator or a breakout lead role will understand the lane immediately.",
+          "evidence": "Daniel’s V.O. is funny, anxious, and self-correcting from the first pages, and it never stops being character-specific.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise fuses humiliation with mythology.",
+          "what_it_means": "That combination creates a clean commercial elevator pitch: a teen embarrassment story that opens into a supernatural moral test. It is attractive to buyers who want genre access without losing emotional sincerity.",
+          "evidence": "The oral report in Mrs. Marder’s class becomes the gateway to the tomb, the scale, the feather, and the second-life bargain.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Daniel is a real lead role, not just a premise carrier.",
+          "what_it_means": "That makes the script castable as a showcase for a young actor who can do comedy, vulnerability, and moral awakening in one package. It also gives the movie a durable emotional center that can anchor a director’s pitch.",
+          "evidence": "He starts as a kid who can barely speak up and ends by publicly claiming his own name and agency in the classroom.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The feather/scale motif is simple and memorable.",
+          "what_it_means": "That kind of visual-symbolic spine helps the movie travel in marketing and gives the story a clean emotional icon. It also makes the fantasy feel legible rather than overbuilt.",
+          "evidence": "The feather repeatedly changes weight, slows time, and becomes the physical expression of Daniel’s inner state.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on emotional release, not plot mechanics.",
+          "what_it_means": "That gives the film a stronger aftertaste and makes it more attractive to prestige-minded buyers who want payoff beyond the genre device. It also broadens the audience beyond pure fantasy fans.",
+          "evidence": "Daniel’s final public speech and his choice to stand up to Bob resolve the story through identity, not spectacle.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a voice-driven, contained period fantasy with a breakout teen lead and a clean emotional engine: humiliation becomes myth, and myth becomes a coming-of-age test. The budget stays in indie territory while the premise and performance opportunity give buyers a real reason to lean in."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The opening leans hard on narration.",
+          "detail": "The first stretch spends a lot of time explaining Daniel’s condition, his doctors, and his internal state before the story fully externalizes. That makes the hook clear, but it also delays the first real dramatic turn until the classroom and tomb mechanics take over.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The voice is highly specific and potentially polarizing.",
+          "detail": "Daniel’s dialect-heavy V.O. is a major asset, but it is also a filter that will narrow some buyers and some audience members. The script is asking the movie to live inside that voice for the full runtime, which is a real taste issue in packaging conversations.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The period setting and mythology are niche by nature.",
+          "detail": "The 1977 Valley setting, Egyptian afterlife rules, and Jewish teen identity make the movie distinctive, but they also keep it out of the broadest commercial lane. This is a specialty play, not a four-quadrant one, and that will shape buyer interest.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The rights list is not frictionless.",
+          "detail": "The script explicitly names 'Stairway to Heaven,' 'Welcome to My Nightmare,' Death Wish, and BIC/GI Joe, which means music and brand clearance will need to be addressed before production. None of it is fatal, but the named music in particular is a real line item.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is not the premise — it is the amount of voice and explanation the script uses to get to the premise, plus the fact that the voice itself is a taste filter. Add the period specificity and named-music clearance, and this becomes a very attractive specialty package rather than an easy broad buy."
+    },
     "craft_note": ""
   },
-  "weightedScore": 74,
+  "weightedScore": 72.3,
   "tier": "Optionable",
-  "inputTokens": 40982,
-  "outputTokens": 4669,
-  "cost": 0.051747,
+  "inputTokens": 43387,
+  "outputTokens": 4335,
+  "cost": 0.052047750000000004,
   "declaredFormat": "Feature film"
 }

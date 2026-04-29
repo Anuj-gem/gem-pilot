@@ -2,298 +2,393 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Romantic drama",
-      "genre_tags": [
-        "Sports drama",
-        "Faith-adjacent"
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Romance",
+        "Sports"
       ],
-      "tone": "Earnest, sentimental, inspirational, grounded"
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "family-dynamics",
+        "grief",
+        "love",
+        "sports",
+        "small-town",
+        "basketball",
+        "faith"
+      ]
     },
-    "positioning_hook": "A WNBA star returns to her Missouri hometown after a career-ending injury and finds a second life in a widowed church custodian, a grieving promise, and a small-town dance that changes everything.",
+    "positioning_hook": "A star basketball player rebuilds her life in a Missouri-to-Pennsylvania journey of grief, faith, and second chances, where a cemetery promise and a small-town gym lead her to love.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The emotional promise is immediate: sports triumph, grief, healing, and romance all land in the first pages and pay off in the final dance. The audience is clear and commercially legible, especially for viewers who respond to inspirational relationship dramas with a faith-friendly edge."
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: grief, healing, faith, basketball, and romance all have recognizable audience lanes. The challenge is that the script plays in a softer, faith-forward, small-town register rather than a broad commercial engine, so the audience is real but not explosive."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The premise is easy to explain: a star athlete’s life is interrupted by injury and loss, then redirected by a promise to bring her grandparents home. The hook is clear, though the script plays more as a sequence of emotional milestones than a single sharp engine."
+        "reasoning": "The premise lands cleanly once the story reveals the cemetery promise and the return to Pottsville to bury Frank and Beth together. The hook is strongest in the back half, where the basketball comeback and the romance converge, but the opening section takes time to reveal the actual feature engine."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 6,
-        "reasoning": "Skylar has a clean emotional arc from elite certainty to earned openness, and Ralph’s restraint gives the romance a steady center. The supporting players mostly serve the lead journey, so the character field is functional rather than especially layered."
+        "score": 7,
+        "reasoning": "Skylar is a strong lead: elite, wounded, and emotionally legible, with a clear arc from athlete to mentor to woman choosing a life. Ralph is also appealing as a restrained, service-oriented romantic lead, and Maddie gives the story a warm family anchor."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The blend of championship basketball, funeral ritual, church life, and small-town romance gives the script a recognizable identity. The execution stays in a familiar inspirational lane, but the specific pairing of a WNBA path with a cemetery-and-church love story gives it some distinction."
+        "reasoning": "The script’s blend of women’s basketball, faith, funeral ritual, and small-town romance gives it a distinct lane, especially in the Pottsville church/cemetery material. The execution, though, is largely familiar in its emotional beats and leans on well-worn inspirational-drama rhythms."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The script moves in clear emotional chapters and keeps resetting with strong visual beats: the title dance, the championship shot, the injury, the return to Pottsville, and the final dance. It is engaging, though the forward drive is more episodic than propulsive."
+        "reasoning": "The basketball set pieces and the cemetery journey create momentum, and the injury-to-recovery-to-return structure gives the feature a clear spine. Still, the middle stretches are episodic and reflective, with several scenes functioning more as emotional waypoints than escalating turns."
       },
       "resonant_originality": {
-        "score": 7,
-        "reasoning": "A pro athlete rebuilding her identity through a burial promise and a small-town caretaker romance feels fresh in a way that is immediately understandable. The cemetery plots, church office, and high-school gym create a specific emotional architecture that makes the premise feel earned rather than generic."
+        "score": 6,
+        "reasoning": "The core idea of a WNBA star returning to a small town to fulfill a burial promise is fresh enough to feel ownable, and the church/school-district world adds texture. What keeps it from a higher score is that the emotional logic is straightforward and the story’s surprises are modest."
       },
       "world_density_and_texture": {
-        "score": 6,
-        "reasoning": "Pottsville, the church, the school district, and the basketball spaces all have clear texture and social function. The world is specific enough to support the story, but it remains a container for the romance and recovery arc rather than a larger ecosystem."
+        "score": 7,
+        "reasoning": "Pottsville, St. Andrew’s Church, the school district, and the local gym create a lived-in, story-generating environment with clear social roles and routines. The world feels specific without becoming complicated, and the church-school-basketball ecosystem gives the script a stable identity."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The script has a consistent inspirational-romantic tone with sports-movie uplift and Catholic small-town warmth. The repeated use of prayer, ritual, and game-clock pressure gives it a distinct emotional register that would be recognizable from a scene or two."
+        "reasoning": "The tone is consistent and recognizable: sincere, faith-inflected, and gently romantic, with sports-movie uplift. The cemetery scenes, church interiors, and dance-floor payoff give it a clear emotional register, even if the tonal palette is not especially surprising."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Under the surface, the script is about identity after loss, inherited faith, and the difference between being needed and being known. Those themes are present throughout, though the script keeps them in plain view rather than withholding them for deeper revelation."
+        "reasoning": "There are seeds of deeper material in grief, vocation, and the tension between ambition and rootedness, especially in Skylar’s injury and Ralph’s fear of opening up again. The script mostly states those themes plainly rather than layering them with much ambiguity or subtext."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 5,
-        "reasoning": "Skylar and Ralph carry the movie, with Maddie, Beth, and Jason functioning as meaningful satellites around that core. The relationships are clear and emotionally useful, but the ensemble energy is not the main attraction."
+        "score": 7,
+        "reasoning": "Skylar/Ralph/Maddie is a solid triangle, and the family and church relationships add recurring emotional pressure. The ensemble is not sprawling, but the key relationships are functional and generate enough scene-to-scene energy to carry the feature."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Skylar Monroe",
+        "role_type": "Lead",
+        "demographics": "Woman, late teens to late 20s; elite basketball player; Midwestern; emotionally guarded but warm; likely white.",
+        "hook": "Skylar is a gifted, high-pressure athlete who starts as a championship-level scorer and ends as a woman forced to rebuild her identity after injury. She carries grief, ambition, and tenderness in the same frame, and the script gives her a credible evolution from star to mentor to someone choosing love and home on her own terms.",
+        "why_actor_wants_this": "This is the showcase territory of a sports-drama lead like Auliʻi Cravalho in 'The Power' or Queen Latifah in 'Bessie'—a role that lets an actor play physical command, emotional collapse, and quiet authority in one arc."
+      },
+      {
+        "name": "Ralph",
+        "role_type": "Supporting",
+        "demographics": "Man, late 30s to early 40s; widower; church/school-district worker; father; working-class; likely white.",
+        "hook": "Ralph is the grounded small-town widower whose life is built on duty, routine, and restraint until Skylar pulls him back into the possibility of wanting more. He’s written as a man of quiet decency with real emotional history, and the script uses his hesitation as part of the romance rather than a stall.",
+        "why_actor_wants_this": "This is the kind of restrained, emotionally loaded work that gave Ben Mendelsohn in 'The Outsider' or Michael Shannon in 'Take Shelter' room to play interior damage, steadiness, and a late-blooming romantic pulse."
+      },
+      {
+        "name": "Maddie",
+        "role_type": "Supporting",
+        "demographics": "Girl, 8-14 across the story; Ralph’s daughter; basketball player; observant, earnest, and emotionally perceptive.",
+        "hook": "Maddie is the kid who sees more than adults expect and becomes the bridge between Skylar’s past and future. She’s not just cute support; she has agency in the school-gym material, moral clarity in the coach conflict, and real emotional function in the family structure.",
+        "why_actor_wants_this": "This is strong young-performer material in the lane of Brooklynn Prince in 'The Florida Project'—a role that gives a child actor specificity, emotional intelligence, and scenes that matter to the adult story."
+      },
+      {
+        "name": "Beth Rose",
+        "role_type": "Supporting",
+        "demographics": "Woman, late 60s to 70s; grandmother; devout, warm, emotionally articulate.",
+        "hook": "Beth is the story’s spiritual and emotional keeper, the one who links the basketball legacy, the marriage story, and the burial promise. Even in limited scenes, she functions as the script’s moral compass and the keeper of the title’s emotional thesis.",
+        "why_actor_wants_this": "This is the kind of late-career showcase that gives Frances McDormand in 'Nomadland' or June Squibb in 'Nebraska' the chance to be both plainspoken and devastatingly specific."
+      },
+      {
+        "name": "Frank Rose",
+        "role_type": "Supporting",
+        "demographics": "Man, 70s; grandfather; old-school, steady, faith-rooted.",
+        "hook": "Frank is the quiet patriarch whose presence is felt most strongly through memory, ritual, and the way the family talks about him after death. He’s less a plot engine than an emotional inheritance, but the script uses him effectively as the voice that keeps returning in Skylar’s head.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Richard Jenkins did in 'The Visitor'—project warmth, authority, and memory with very little screen time."
+      },
+      {
+        "name": "Jason",
+        "role_type": "Supporting",
+        "demographics": "Man, late 20s to early 30s; supportive ex/partner; emotionally steady, urban-adjacent, grounded.",
+        "hook": "Jason is the clean, decent relationship that Skylar can’t quite keep once her life changes shape. He’s written less as a villain than as the emotional contrast that clarifies what Skylar is choosing, which makes him useful and credible even when he’s not the endgame.",
+        "why_actor_wants_this": "This is the kind of emotionally intelligent breakup role that gave Adam Brody in 'The Kid Detective' or John Krasinski in 'A Quiet Place' a chance to play decency under pressure and still leave a mark."
+      },
+      {
+        "name": "Coach Wensil",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s; high school coach; blunt, observant, community-minded.",
+        "hook": "Coach Wensil is the practical adult who recognizes talent and gives Skylar a place to redirect it. He’s a functional but useful supporting role, especially once the story shifts from romance to mentorship and community leadership.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that lets an actor work in the lane of J.K. Simmons in 'Whiplash' or Craig T. Nelson in 'Parenthood'—blunt, funny, and quietly pivotal."
+      },
+      {
+        "name": "Katie Clarkson",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 20s; elite basketball player; electric, fearless.",
+        "hook": "Katie is the new-generation player who pulls Skylar back toward the game and gives the later basketball material a fresh competitive edge. She’s more functional than deeply explored, but she helps keep the sports world alive after Skylar’s injury.",
+        "why_actor_wants_this": "This is the kind of high-energy supporting athlete role that gives an actor the snap and confidence of Hailee Steinfeld in 'Bumblebee'—fast, charismatic, and scene-lifting."
+      },
+      {
+        "name": "Coach Green",
+        "role_type": "Supporting",
+        "demographics": "Woman, 50s; professional coach; calm, commanding.",
+        "hook": "Coach Green is the steady professional presence in the Fever material, the person who keeps the team coherent when Skylar’s injury blows the season apart. She’s not deeply individualized, but she gives the pro-basketball sections authority and structure.",
+        "why_actor_wants_this": "This is the kind of efficient, authoritative role that lets an actor play the grounded leadership of Viola Davis in 'Air'—command without overstatement."
+      },
+      {
+        "name": "Sharon Maid",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 40s; church office administrator; warm, efficient.",
+        "hook": "Sharon is the kind of support character who makes the church world feel operational rather than symbolic. She’s a small but useful texture role, giving the Pottsville setting a lived-in institutional feel.",
+        "why_actor_wants_this": "This is the sort of role that can give a character actor the easy specificity of Amy Ryan in 'Win Win'—brief, natural, and memorable without needing a big speech."
+      },
+      {
+        "name": "Father Phillips",
+        "role_type": "Supporting",
+        "demographics": "Man, 60s; priest; calm, pastoral, wise.",
+        "hook": "Father Phillips functions as the script’s faith voice and moral framing device, especially in the burial and romantic decision scenes. He’s not complex on the page, but he gives the story a clear spiritual register and helps the ending land with ceremony.",
+        "why_actor_wants_this": "This is the kind of dignified supporting role that gives an actor the measured authority of Tom Wilkinson in 'The Full Monty'—a calm center with a few well-placed lines."
+      },
+      {
+        "name": "Lisa Monroe",
+        "role_type": "Supporting",
+        "demographics": "Woman, mid-20s; older sister; family support.",
+        "hook": "Lisa is a functional family presence who helps round out the Monroe household and gives Skylar a sibling witness to the draft and grief material. She’s underwritten relative to the lead, but she helps the family scenes feel less isolated.",
+        "why_actor_wants_this": "This is the kind of supportive family role that can give an actor the grounded utility of Merritt Wever in 'Marriage Story'—present, specific, and emotionally legible."
+      },
+      {
+        "name": "Tim Moss",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s; athletic director; institutional, practical.",
+        "hook": "Tim is the school-system adult who can move things forward once the gym and coaching worlds intersect. He’s a clean utility role, but he helps the school setting feel administratively real.",
+        "why_actor_wants_this": "This is the kind of compact authority role that gives an actor the functional presence of Bob Balaban in 'Lady Bird'—small, specific, and useful."
+      },
+      {
+        "name": "Lindsey Hill",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 20s; basketball player; teammate.",
+        "hook": "Lindsey is part of the later team engine and helps the pro-basketball sections feel like a real unit rather than a two-character setup. She’s more ensemble support than standalone character, but she contributes to the team texture.",
+        "why_actor_wants_this": "This is the kind of ensemble athlete role that gives an actor the easy, lived-in energy of a supporting player in 'Friday Night Lights'—team-first but still visible."
+      },
+      {
+        "name": "Lyla Nevada",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 20s; basketball player; teammate.",
+        "hook": "Lyla is another piece of the team fabric, especially in the injury and comeback material where Skylar’s leadership is defined by how the others respond to her. She’s not deeply individualized, but she helps the team feel populated.",
+        "why_actor_wants_this": "This is the kind of ensemble role that gives an actor the utility and presence of a recurring sports teammate in 'One Tree Hill' or 'Friday Night Lights'."
+      },
+      {
+        "name": "Casey Middletown",
+        "role_type": "Supporting",
+        "demographics": "Woman, early 20s; basketball player; teammate.",
+        "hook": "Casey rounds out the later team and helps the script sell the idea of a real roster, not just a star and a few placeholders. She’s functional, but she contributes to the sports-world credibility.",
+        "why_actor_wants_this": "This is the kind of team-role that gives an actor a clean, professional sports-drama lane—small but useful, with room to feel part of a winning unit."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 12,
-        "leads": 3,
+        "speaking_roles": 16,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Athletic lead required for Skylar",
-          "Child performer required for Maddie",
-          "Basketball players and coaches with credible sports presence",
-          "Older supporting roles for grandparents and clergy"
+          "One child role with meaningful emotional continuity across ages 8-14",
+          "Basketball-capable lead required",
+          "Supporting cast includes multiple age-specific adult roles",
+          "Athletic ensemble for pro and high-school basketball sequences"
         ]
       },
       "locations": {
-        "distinct_count": 14,
+        "distinct_count": 12,
         "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "Contemporary",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Basketball arenas and gyms",
+          "High school gym",
           "Church interior and cemetery",
-          "Small-town home and restaurant",
-          "Phoenix restaurant and apartment",
-          "Travel montage locations"
+          "Hospital room",
+          "Restaurant",
+          "Phoenix arena",
+          "Indiana arena",
+          "Small-town Missouri and Pennsylvania exteriors"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No meaningful VFX beyond scoreboard inserts and crowd enhancement if desired.",
+        "vfx_details": "No meaningful VFX beyond scoreboard graphics and crowd enhancement if desired.",
         "stunts_level": "minor",
-        "sfx_needs": "Basketball game action, injury fall, crowd reactions, funeral and burial practicals.",
+        "sfx_needs": "Basketball game choreography, injury fall, crowd/arena atmosphere, funeral and burial practicals.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "WNBA, Phoenix Mercury, Indiana Fever, New York Liberty, Notre Dame, Missouri, and Gainbridge Fieldhouse are all named."
+          "detail": "Phoenix Mercury"
+        },
+        {
+          "type": "brand",
+          "detail": "Indiana Fever"
+        },
+        {
+          "type": "brand",
+          "detail": "New York Liberty"
+        },
+        {
+          "type": "brand",
+          "detail": "Gainbridge Fieldhouse"
+        },
+        {
+          "type": "brand",
+          "detail": "Shania Twain"
         },
         {
           "type": "named_music",
-          "detail": "\"From This Moment On\" by Shania Twain is specifically used in the final dance."
+          "detail": "From This Moment On"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming feature or faith-adjacent theatrical/limited release",
+        "recommended_lane": "streaming",
         "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Feature release model with inspirational audience appeal and strong trailer moments around the championship, injury, cemetery return, and final dance."
+        "series_engine_or_release_model": "Feature release; emotional sports-romance drama with faith and family appeal"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the script includes multiple basketball game environments, arena crowd scenes, a hospital sequence, a road-trip stretch, and a dance-floor finale that all benefit from scale."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The movie is contemporary and mostly contained, but basketball game scenes, crowd work, and multiple sports locations push it above micro-budget."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to credibly play an elite basketball star across injury, recovery, and romance, while Maddie must carry meaningful emotional continuity from child to early teen. Several supporting roles also need authentic athletic or institutional presence."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The burial promise, injury recovery, and romance all track cleanly, but the script’s emotional center shifts from sports to grief to romance to mentorship, which makes the buyer conversation about primary hook and audience lane important."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Brittany Runs a Marathon",
+          "year": 2019,
+          "why_it_comps": "A personal reinvention story built around physical discipline, identity shift, and a lead performance that carries the emotional lift."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The lead needs athletic credibility, Maddie requires a child actor, and the sports world benefits from performers who can play real team dynamics."
+        {
+          "title": "The Blind Side",
+          "year": 2009,
+          "why_it_comps": "Faith-inflected, sports-centered uplift with family dynamics and a clear emotional payoff around belief and belonging."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves between Missouri, Arizona, and Pennsylvania, with churches, cemeteries, homes, restaurants, and multiple gym settings."
+        {
+          "title": "A League of Their Own",
+          "year": 1992,
+          "why_it_comps": "Women’s sports as character engine, with team chemistry and emotional stakes beyond the game."
         },
-        "content": {
-          "level": "low",
-          "note": "The material is emotionally intense but stays within PG-13 territory, with no explicit sexual content or graphic violence."
-        },
-        "rights": {
-          "level": "high",
-          "note": "Multiple named teams, venues, and the Shania Twain song create clear clearance and licensing considerations."
+        {
+          "title": "The Way Back",
+          "year": 2020,
+          "why_it_comps": "Athletic identity, injury-adjacent emotional fallout, and a comeback structure anchored by a wounded lead."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who respond to inspirational sports dramas, faith-adjacent family stories, and romance with a strong emotional payoff.",
+        "demographics": "Skews 30+, with a meaningful female audience and family-viewing appeal; strongest with viewers who like character-first sports stories.",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "F18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary feature with a modest location footprint, but basketball games, arena atmospherics, and a dance-finale sequence keep it above micro."
+      },
+      "lane_fit": {
+        "lane": "faith-adjacent inspirational sports romance",
+        "types_of_buyers": [
+          "streamer originals teams building adult female uplift",
+          "specialty distributors seeking faith-friendly crossover titles",
+          "indie producers in the sports-drama lane",
+          "buyers looking for family-safe emotional crowd-pleasers"
+        ],
+        "detail": "The script sits naturally in the lane of character-first inspirational drama: sports as the engine, grief as the wound, romance as the release, and faith as the framing device. It is commercially legible to buyers who want uplift without going full Hallmark and who can market around a recognizable athletic lead."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the story resolves Skylar’s emotional and romantic arc cleanly, and there is no clear sequel or spinoff vector beyond the central relationship."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The opening gives Skylar a star-making entrance.",
-          "what_it_means": "The championship buzzer-beater immediately frames the lead as elite, magnetic, and emotionally legible, which is exactly the kind of opening that helps a buyer see the movie in one glance. Sports-drama buyers and actresses looking for a physically confident, emotionally accessible showcase role will respond fast.",
-          "evidence": "The Missouri title-game sequence ends with Skylar hitting the game-winning jumper and looking to her family in the stands.",
+          "dimension_or_area": "Skylar is a true star role.",
+          "what_it_means": "This gives the project a clear casting and marketing center: a lead who can sell athletic authority, grief, and romantic vulnerability in one package. That is attractive to female-star vehicles and to buyers looking for a performance-forward sports drama.",
+          "evidence": "The championship shot, the injury collapse, the hospital breakdown, and the final choice to stay in Pottsville all belong to Skylar’s emotional arc.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The premise fuses sports and grief cleanly.",
-          "what_it_means": "The movie has a built-in emotional engine: every basketball milestone is tied to loss, memory, and family obligation, which gives the story a clear commercial heart. That combination is attractive to faith-adjacent buyers, inspirational drama labels, and audiences that want uplift without losing the ache.",
-          "evidence": "Frank’s death, Beth’s burial request, and Skylar’s return to Pottsville all drive the basketball and romance beats.",
+          "dimension_or_area": "The burial promise gives the story a clean spine.",
+          "what_it_means": "The ashes-to-Pottsville journey creates a simple, emotionally legible engine that can be marketed in one sentence and understood immediately by audiences. That clarity helps the script travel to buyers who want a heartfelt, high-concept emotional premise without genre confusion.",
+          "evidence": "Beth’s request to return Frank and Beth’s ashes to their plots in St. Anthony’s Cemetery drives the entire second half.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ralph is a quietly premium male lead.",
-          "what_it_means": "He is written as steady, observant, and emotionally restrained, which gives the film a grounded romantic counterweight to Skylar’s public life. Actors who specialize in contained, soulful work will see a role that can carry tenderness, dignity, and late-blooming desire without needing speeches to sell it.",
-          "evidence": "Ralph’s church work, school-district night shift, and careful handling of Skylar’s boundaries define him before the romance turns.",
+          "dimension_or_area": "The church-school-gym world is specific.",
+          "what_it_means": "The setting gives the film a recognizable small-town ecosystem with built-in institutions, rituals, and visual identity. That kind of texture helps a modestly budgeted feature feel bigger and more lived-in than its footprint.",
+          "evidence": "St. Andrew’s Church, South Schuylkill schools, the cemetery, and the gym all recur as meaningful spaces rather than generic backdrops.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The church-and-cemetery world has real texture.",
-          "what_it_means": "The setting gives the film a distinctive spiritual and civic identity that separates it from generic sports romance. Buyers looking for a faith-friendly lane or a small-town emotional drama get a world with rituals, hierarchy, and visual calm that can be marketed cleanly.",
-          "evidence": "St. Andrew’s Church, Father Phillips, Sharon Maid, and St. Anthony’s Cemetery all function as active story spaces.",
+          "dimension_or_area": "Ralph and Maddie add a family engine.",
+          "what_it_means": "The father-daughter dynamic broadens the emotional appeal beyond romance and gives the film a second audience entry point. That makes the project more attractive to buyers who want a family-safe emotional hook alongside the sports material.",
+          "evidence": "Ralph’s routines with Maddie, her basketball arc, and his protective response to her coach conflict create recurring relational stakes.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The final dance is a clean payoff image.",
-          "what_it_means": "The title promise resolves into a simple, trailer-friendly romantic image that can sell the whole movie in a single frame. That kind of ending is catnip for audiences who want catharsis, and it gives marketing a clear emotional button.",
-          "evidence": "The spring dance ends with Skylar and Ralph slow-dancing at center court to \"From This Moment On.\"",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The injury turn creates a second-act reset.",
-          "what_it_means": "The leg injury shifts the movie from victory story to identity story, which broadens the emotional range and gives the script a strong midstream pivot. That kind of turn helps the film play beyond sports fans and into adult drama audiences who want recovery, romance, and purpose.",
-          "evidence": "Skylar tears her leg in the playoff game, loses Jason, and then begins rebuilding through the burial promise and the school job.",
+          "dimension_or_area": "The ending payoff is clean and marketable.",
+          "what_it_means": "The final dance and kiss deliver a satisfying emotional release that buyers can easily understand as the movie’s signature moment. That kind of ending helps trailers, posters, and audience word-of-mouth because the title concept and payoff align neatly.",
+          "evidence": "The spring dance sequence culminates in Skylar’s line that all she needs is one dance, followed by the title card return.",
           "source": "script"
         }
       ],
-      "headline": "This is a clean, emotionally legible feature with a real commercial center: a WNBA star, a widowed church custodian, and a promise that turns a burial trip into a second chance at life. It has the kind of inspirational-romance architecture that can travel to faith-friendly audiences, streamer buyers, and actors looking for a heartfelt showcase with a strong final image."
+      "headline": "This is a clean, emotionally legible female-led sports-romance with a strong star vehicle at its center and a modest, controllable production footprint. The burial promise, church/gym world, and final dance payoff give buyers a clear market identity: inspirational, faith-adjacent, and performance-driven without needing franchise scale."
     },
-    "lead_characters": [
-      {
-        "name": "Skylar Monroe",
-        "role_type": "Lead",
-        "demographics": "Female · late 20s · elite athlete",
-        "hook": "Skylar is a high-level basketball player whose identity has been built on control, precision, and winning. The script tracks her from championship certainty to injury, grief, and a quieter kind of strength, letting her become someone who can lead a team, hold a promise, and finally choose a life instead of just a career.",
-        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences or Jennifer Lawrence in a prestige sports drama — a role that moves from physical command to emotional collapse to earned self-definition. An actress gets the rare chance to play athletic authority, public vulnerability, and romantic awakening in one arc, which is exactly the kind of part that can reframe how the industry sees her."
-      },
-      {
-        "name": "Ralph",
-        "role_type": "Lead",
-        "demographics": "Male · early-to-mid 40s · widower",
-        "hook": "Ralph is a church custodian and school-district night-shift worker who lives in service, routine, and restraint. He carries grief without announcing it, parents his daughter with steadiness, and becomes compelling because his emotional life is so carefully held until Skylar gives it somewhere to go.",
-        "why_actor_wants_this": "This is the showcase space of Ben Mendelsohn in a quiet character drama or Paul Mescal in a restrained romantic turn — a man whose stillness is the performance and whose decency becomes magnetic. Character actors and leading men who want a role built on subtext, patience, and late-blooming intimacy will chase it."
-      },
-      {
-        "name": "Maddie",
-        "role_type": "Lead",
-        "demographics": "Female · 13-14 · child/teen athlete",
-        "hook": "Maddie is Ralph’s daughter, a basketball kid with enough instinct to recognize greatness and enough moral clarity to reject the wrong kind of coaching. She gives the movie its younger point of view, its future-facing energy, and a clean emotional bridge between Skylar’s past and the next generation.",
-        "why_actor_wants_this": "This is the kind of coming-of-age support role that gave Hailee Steinfeld in True Grit or Brooklynn Prince in The Florida Project a chance to hold the frame with honesty and spark. A young performer gets scenes of admiration, defiance, and self-respect, plus the sports material that makes the role feel active rather than decorative."
-      },
-      {
-        "name": "Beth Rose",
-        "role_type": "Supporting",
-        "demographics": "Female · 70s",
-        "hook": "Beth is the emotional keeper of the family story, warm but purposeful, with the kind of faith and memory that turns a burial request into a mission. She functions as the script’s quiet moral compass, giving the romance and the return trip their spiritual center.",
-        "why_actor_wants_this": "This is the kind of late-life grace role that gave June Squibb in Nebraska or Frances Sternhagen in character-driven family drama a memorable, scene-stealing lane. Veteran actresses who want a compact but meaningful part with dignity, warmth, and emotional authority will be drawn to it."
-      },
-      {
-        "name": "Frank Rose",
-        "role_type": "Supporting",
-        "demographics": "Male · 70s",
-        "hook": "Frank is the grandfather whose memory keeps the whole story moving, even after his death. He is less a plot device than a presence: the voice of patience, faith, and timing that Skylar keeps hearing long after he’s gone.",
-        "why_actor_wants_this": "This is the kind of memory-role that gave Tom Wilkinson in Michael Clayton or James Cromwell in family dramas a chance to leave a deep imprint with limited screen time. A seasoned actor can make the character feel like the emotional architecture of the movie, which is a very attractive prestige lane."
-      },
-      {
-        "name": "Jason",
-        "role_type": "Supporting",
-        "demographics": "Male · late 20s",
-        "hook": "Jason is the supportive boyfriend from Skylar’s old life, steady enough to be kind and honest enough to leave when he realizes he cannot follow her into her new identity. He gives the movie a clean emotional contrast: love that is real, but not the right shape for the life she is building.",
-        "why_actor_wants_this": "This is the kind of grounded romantic-support role that gave Adam Brody in a prestige indie or Jesse Plemons in a relationship drama a chance to play decency under pressure. Actors who can make heartbreak feel adult and specific will see a strong, playable lane here."
-      },
-      {
-        "name": "Coach Green",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "Coach Green is the calm, commanding basketball authority who understands how to hold a team together when the star goes down. He is efficient, credible, and useful in the best way: a coach who can pivot from strategy to emotional leadership without losing his edge.",
-        "why_actor_wants_this": "This is the sort of coach role that gave J.K. Simmons in Whiplash or Courtney B. Vance in sports drama material a chance to bring authority and texture to a supporting part. Character actors who can project competence and moral weight will be interested."
-      },
-      {
-        "name": "Coach Dan Wensil",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "Coach Wensil is the local high-school coach with enough fire to get ejected and enough heart to recognize when a player needs a better environment. He gives the school-world scenes a human center and becomes part of the town’s moral ecosystem.",
-        "why_actor_wants_this": "This is the kind of supporting coach role that lets an actor play bluster, frustration, and decency in the same package, similar to the utility of a strong character turn in Friday Night Lights. Working actors who like scene-stealing authority parts will chase it."
-      },
-      {
-        "name": "Sharon Maid",
-        "role_type": "Supporting",
-        "demographics": "Female · early 40s",
-        "hook": "Sharon is the parish office presence who makes the church feel lived-in and administratively real. She is warm, efficient, and quietly essential, the kind of character who makes the town’s institutions feel human rather than decorative.",
-        "why_actor_wants_this": "This is the kind of compact, functional role that gives an actor a chance to create instant trust and texture, like the memorable office-support parts in small-town dramas and faith-based features. Character actresses who specialize in warmth with authority will be drawn to it."
-      },
-      {
-        "name": "Father Rodger Phillips",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Father Phillips is the calm spiritual guide who understands the emotional stakes without overplaying them. He gives the film a steady moral frame and helps translate grief into action, which makes him feel like part of the story’s conscience.",
-        "why_actor_wants_this": "This is the kind of clergy role that gives an actor the same quiet authority as the best supporting turns in faith-adjacent dramas — a part built on listening, timing, and a few well-placed lines. Veteran character actors who can project serenity and depth will respond to it."
-      },
-      {
-        "name": "LISA MONROE",
-        "role_type": "Supporting",
-        "demographics": "Female · mid 20s",
-        "hook": "Lisa is the older sister who helps hold the family together in the background, giving Skylar a sibling presence that feels lived-in and supportive. She is not the engine of the movie, but she adds family texture and a sense that Skylar’s life extends beyond the central romance.",
-        "why_actor_wants_this": "This is the kind of supporting family role that gives an actor a chance to play shorthand intimacy and emotional history, similar to the useful sister parts in family dramas. Young adult actresses who want a clean, credible ensemble credit will see it as a solid fit."
-      },
-      {
-        "name": "Tim Moss",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s",
-        "hook": "Tim Moss is the athletic director who functions as the town’s practical adult in the room. He is the bridge between institutional order and the emotional chaos of the gym, which makes him useful in scenes that need authority without heat.",
-        "why_actor_wants_this": "This is the kind of efficient supporting role that lets an actor play institutional competence and small-town familiarity, the same lane that often works in sports and school-set dramas. Reliable character actors who can make a few scenes feel grounded will want it."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a faith-adjacent romance with real sports-movie propulsion and a clean emotional payoff.",
-        "fit_profile": "Established indie directors with one or two features, or TV directors moving into features, who already know how to stage performance-forward drama and crowd-pleasing uplift. This material rewards restraint, clean emotional geography, and the ability to make a church, a gym, and a cemetery feel like one connected emotional world.",
-        "detail": "The movie gives a director a chance to balance game-clock tension with intimate grief scenes and land a final romantic image that feels earned rather than manufactured. It will appeal to filmmakers who like accessible emotional storytelling, strong visual motifs, and a modest production footprint that still plays big on screen."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Streaming feature, faith-adjacent drama, inspirational romance",
-        "detail": "The Skylar role benefits from a recognizable athletic lead, but the rest of the cast can be built from strong character actors, which keeps packaging flexible. The sports-and-faith blend gives it a clear trailer hook and a secondary audience beyond standard romance buyers, especially on streamers that buy uplifting adult dramas."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The emotional center keeps shifting.",
+          "detail": "The script moves from championship sports story to grief drama to burial-road-trip to romance to mentorship, and each mode is workable on its own. The buyer conversation will be about which of those is the actual hook, because the feature currently asks the audience to track several different promises at once.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle plays more episodic than escalating.",
+          "detail": "Several stretches are built around reflective scenes, phone calls, and routine work rather than turns that force new decisions. That makes the script feel emotionally steady, but it also softens the sense of propulsion between the injury and the final dance payoff.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The basketball world is broad but not deep.",
+          "detail": "The Fever and high-school sequences give the film scale, but the team members beyond Skylar and Katie are mostly functional names and reactions. For a sports feature, that means the ensemble energy is serviceable rather than memorable, and the game-world specificity is lighter than the premise suggests.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The romance is clean, but not especially surprising.",
+          "detail": "Ralph is appealing and the chemistry is gentle, but the relationship follows a familiar wounded-widow / wounded-athlete path. That makes it easy to root for, though it also means the film’s differentiation will depend more on tone and setting than on romantic unpredictability.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Named brands and music need a legal pass.",
+          "detail": "The script explicitly names the Phoenix Mercury, Indiana Fever, New York Liberty, Gainbridge Fieldhouse, and Shania Twain’s 'From This Moment On.' Those are manageable clearance items, but they are real line items that need to be addressed before a buyer treats the package as clean.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script is commercially legible, but it asks buyers to choose between several emotional engines: sports comeback, grief ritual, and small-town romance. The other main friction is practical rather than creative — the basketball scale is modestly expensive, and the named sports/music references will need a business affairs pass."
     },
-    "considerations": [
-      {
-        "area": "The story plays in clear emotional chapters.",
-        "detail": "The draft moves through championship, injury, burial promise, relocation, and romance as distinct blocks. A next pass could consider how to let one transition trigger the next a little more directly so the movie feels even more like one continuous emotional engine.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The opening and ending are the strongest bookends.",
-        "detail": "The buzzer-beater opener and final dance are both highly cinematic and easy to market. The middle already has strong material, and the version of the script where those bookends are even more tightly echoed would make the whole feature feel more inevitable.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The sports rights need a clean clearance plan.",
-        "detail": "The script names multiple real teams, a real arena, and a specific Shania Twain song. A production pass would want to decide early whether to preserve those references or swap to fictional equivalents to protect budget and distribution flexibility.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Ralph and Skylar carry the movie.",
-        "detail": "Their chemistry is the central engine, and the supporting cast is built to support that lane. A future pass could keep looking for places where Maddie, Beth, and Jason each get one more distinct beat so the relationship web feels even richer around the lead pair.",
-        "is_primary_lever": false,
-        "source": "script"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 63,
+  "weightedScore": 67,
   "tier": "Optionable",
-  "inputTokens": 28611,
-  "outputTokens": 4899,
-  "cost": 0.04350375,
+  "inputTokens": 31016,
+  "outputTokens": 5782,
+  "cost": 0.049281,
   "declaredFormat": "Feature film"
 }

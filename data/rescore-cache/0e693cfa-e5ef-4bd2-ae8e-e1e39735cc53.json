@@ -2,337 +2,368 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sports drama",
-      "genre_tags": [
-        "romantic drama",
-        "psychological drama"
-      ],
-      "tone": "Erotic, tense, emotionally volatile, and propulsive"
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "male-lead",
+        "love-triangle",
+        "character-driven",
+        "prestige",
+        "contemporary",
+        "sports",
+        "tennis",
+        "family-dynamics",
+        "identity"
+      ]
     },
-    "positioning_hook": "A tennis coach trapped between her husband and her ex turns a low-stakes challenger match into a three-way referendum on desire, ambition, and who gets to win.",
+    "positioning_hook": "A former tennis prodigy turned coach forces her husband and ex-lover into a winner-take-all challenger match, where old desire, professional humiliation, and marriage collide on court.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 8,
-        "reasoning": "The premise is instantly legible and broadly sellable: elite tennis, a love triangle, and a championship-level emotional rivalry all sit inside one clean engine. The opening Challenger match, the ESPN/local-news spectacle, and the final tiebreak give it a clear event-movie shape with adult appeal."
+        "reasoning": "The hook is immediate, sexy, and legible even to non-tennis audiences: a love triangle detonates inside a high-stakes sports match. The emotional promise is broad, though the adult, dialogue-forward register keeps it from being four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The hook lands on page one: a former player-coach wife watches her husband face her ex in a tournament that is really about their history. The script keeps that engine crystal clear through the present-day match and the repeated flashbacks that explain exactly why this meeting matters."
+        "reasoning": "The premise lands in the opening pages: Art, Patrick, and Tashi are triangulated in a challenger tournament with a clear present-tense engine and a loaded past. The script keeps the setup clean while layering in the 15-year history that gives the match meaning."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 8,
-        "reasoning": "Tashi, Art, and Patrick are all built around contradiction: control and hunger, polish and resentment, swagger and self-sabotage. The triangle is durable because each character wants something different from the same relationship web, and the script keeps shifting who has leverage."
+        "score": 9,
+        "reasoning": "Tashi, Art, and Patrick are all sharply differentiated and built around contradiction: ambition, insecurity, erotic power, and professional identity. The 2006 junior scenes, the present-day hotel confrontations, and the final match all deepen them rather than flatten them."
       },
       "creative_originality_and_boldness": {
         "score": 9,
-        "reasoning": "This is a sports movie that treats tennis as erotic combat, emotional language, and status warfare all at once. The script’s confidence in making coaching, sex, and match strategy part of the same dramatic system gives it a very specific identity."
+        "reasoning": "This is a rare sports drama that treats tennis as psychosexual warfare and status combat, not just competition. The structure of intercut timelines and the way the match becomes a three-way emotional referendum is a confident, ownable choice."
       },
       "narrative_momentum_engagement": {
-        "score": 9,
-        "reasoning": "The structure is relentlessly forward-driving: present-day match, then strategic flashbacks, then escalating emotional collisions that keep feeding the final point. The Challenger countdown, set breaks, and repeated returns to the court create a strong sense of inevitability."
+        "score": 8,
+        "reasoning": "The script has a strong forward drive because every scene either escalates the triangle or recontextualizes the match. The only drag comes from the amount of temporal back-and-forth, but the present-day challenger frame keeps the engine moving."
       },
       "resonant_originality": {
         "score": 9,
-        "reasoning": "The idea of a married coach using a challenger match to manage her husband’s confidence while her ex is the opponent feels both surprising and inevitable. The script turns a niche tennis setting into a universal story about desire, ego, and the cost of being exceptional."
+        "reasoning": "The script turns a low-level tennis tournament into a crucible for marriage, ambition, and unfinished desire, which feels both surprising and inevitable. The challenger setting, the coaching dynamic, and the final serve-motion reveal give it a distinctive identity."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The tennis ecosystem is vivid and story-generating: rankings, qualifiers, sponsorship patches, hotel tiers, line judges, prize money, and the social hierarchy of the tour all matter on the page. The Challenger level versus the Open level gives the world a clear ladder of status."
+        "reasoning": "The tennis ecosystem feels lived-in: rankings, qualifiers, sponsorships, hotel tiers, junior circuits, and the social hierarchy of the tour all generate story. The country club/challenger contrast and the ESPN/local-news attention make the world feel specific and economically real."
       },
       "tonal_specificity": {
         "score": 9,
-        "reasoning": "The tone is unmistakable: intimate, horny, competitive, funny, and cruel in quick succession. The script can move from a locker-room joke to a devastating emotional read to a near-operatic match beat without losing its identity."
+        "reasoning": "The script has a very particular blend of erotic tension, competitive cruelty, and dead-serious sports detail. Scenes like the steam-room confrontation, the hotel-bar exchange, and the final tiebreak make the tone unmistakable."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "On the surface it’s a triangle and a tennis match, but underneath it’s about identity, aging, ambition, and the difference between being loved and being wanted. The repeated returns to the same match, the same gestures, and the same lines give the story a strong sense of accumulated meaning."
+        "reasoning": "On the surface it’s a triangle around a tennis match, but the script keeps revealing deeper questions about identity, aging, shame, and who gets to define success. The repeated returns to the same emotional fault lines suggest more beneath the immediate plot."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 8,
-        "reasoning": "The central triangle is exceptionally productive, and even the secondary relationships — Art with his team, Patrick with the tour, Tashi with her father and daughter — add pressure rather than decoration. Any two of the leads in a room generate conflict, strategy, and subtext."
+        "score": 9,
+        "reasoning": "Any pairing of Art, Patrick, and Tashi generates material, and the script repeatedly proves it in hotel rooms, practice courts, the steam room, and the car. The triangle is the engine, but the supporting tennis-world characters add enough texture to keep it from feeling closed off."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Tashi Donaldson",
+        "role_type": "Lead",
+        "demographics": "Black woman, early-to-mid 30s, former elite tennis player, wife and coach, mother.",
+        "hook": "Tashi is the script’s gravitational center: brilliant, exacting, sexually charged, and emotionally unreadable until she chooses to cut. She’s a former prodigy whose injury redirected her into coaching and control, and she uses both as weapons; every scene shows her trying to manage talent, marriage, and her own resentment without ever surrendering power.",
+        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences or Jodie Comer in Killing Eve: a role that lets an actor weaponize intelligence, desire, and authority in the same breath. It offers the rare chance to play a woman who is both the strategist and the emotional prize, with major close-up volatility and star-level command."
+      },
+      {
+        "name": "Art Donaldson",
+        "role_type": "Supporting",
+        "demographics": "White man, early-to-mid 30s, elite professional tennis player, husband, father.",
+        "hook": "Art is the polished champion who looks like he has everything and is quietly terrified of losing the one thing that still defines him. He’s disciplined, handsome, and technically gifted, but the script keeps exposing the insecurity underneath the brand: he needs Tashi’s approval, fears Patrick’s shadow, and is nearing the end of the version of himself that tennis rewards.",
+        "why_actor_wants_this": "This is the kind of role that gave Andrew Scott in Ripley or Paul Mescal in Aftersun room to play restraint, vanity, and emotional fracture at once. It’s a prestige lead-support hybrid with a lot of silent acting, wounded masculinity, and a late-film pressure-cooker payoff."
+      },
+      {
+        "name": "Patrick Zweig",
+        "role_type": "Supporting",
+        "demographics": "White man, early-to-mid 30s, Jewish, former junior phenom, struggling pro tennis player.",
+        "hook": "Patrick is the brilliant mess: broke, cocky, self-sabotaging, and still somehow magnetic enough to destabilize everyone around him. He’s the guy who never fully left adolescence, but the script makes that immaturity feel tragic as much as comic; his swagger is real, but so is the damage underneath it.",
+        "why_actor_wants_this": "This is the showcase lane of Barry Keoghan in Saltburn or Jeremy Allen White in The Bear: charisma, volatility, and self-destruction in one package. The role gives an actor a chance to be funny, pathetic, seductive, and dangerous without ever losing the audience."
+      },
+      {
+        "name": "Lily",
+        "role_type": "Supporting",
+        "demographics": "Young child, daughter of Tashi and Art.",
+        "hook": "Lily is a quiet but important pressure point in the adult triangle, a reminder that the emotional war has real domestic consequences. She doesn’t drive plot, but her presence sharpens the stakes of what Tashi and Art are risking.",
+        "why_actor_wants_this": "This is a small but meaningful child role that gives a young performer naturalistic family-scene work and a few key reaction beats. It’s the kind of part that benefits from a child actor who can play observant and unaffected."
+      },
+      {
+        "name": "Jeremy",
+        "role_type": "Supporting",
+        "demographics": "Adult man, Art’s nutritionist.",
+        "hook": "Jeremy is part of the professional machine around Art, a small but useful marker of how managed and optimized the champion’s life has become. He’s not a dramatic engine, but he helps sell the ecosystem.",
+        "why_actor_wants_this": "This is a clean supporting role for a character actor who can make sports-world specificity feel effortless. It’s the kind of part that adds texture without demanding a heavy lift."
+      },
+      {
+        "name": "Ken",
+        "role_type": "Supporting",
+        "demographics": "Adult man, physiotherapist.",
+        "hook": "Ken functions as another node in Art’s support system, reinforcing the physical maintenance and fragility of a top athlete nearing decline. He’s practical, familiar, and part of the script’s lived-in tennis infrastructure.",
+        "why_actor_wants_this": "A solid utility role for a grounded character actor. The appeal is in making the treatment-room world feel authentic and specific."
+      },
+      {
+        "name": "Raul",
+        "role_type": "Supporting",
+        "demographics": "Adult man, hitting partner.",
+        "hook": "Raul is one of the working parts of Art’s training environment, there to show the repetition and labor behind elite performance. He’s a functional but useful presence in the sports-world texture.",
+        "why_actor_wants_this": "A straightforward supporting role for an actor who can make a training-court scene feel real. It’s a good fit for someone comfortable in a sports ensemble."
+      },
+      {
+        "name": "Andrew",
+        "role_type": "Supporting",
+        "demographics": "Adult man, security guard.",
+        "hook": "Andrew is the quiet security layer around Tashi and Art’s public life, a reminder that celebrity tennis is still a managed, watched environment. He’s mostly functional, but he helps ground the hotel and tournament logistics.",
+        "why_actor_wants_this": "A small, efficient role for a character actor who can establish authority quickly. It’s a useful piece of the production’s realism."
+      },
+      {
+        "name": "Tom",
+        "role_type": "Supporting",
+        "demographics": "Adult man, off-screen or minor tennis contact.",
+        "hook": "Tom is a utility name in the tennis network, part of the machinery that gets Art into events. He’s not a dramatic presence, but he helps the world feel operational.",
+        "why_actor_wants_this": "Minimal role, likely best served by a reliable day-player type. The value is in making the tour infrastructure feel credible."
+      },
+      {
+        "name": "Karl",
+        "role_type": "Supporting",
+        "demographics": "Adult man, German former player, coach.",
+        "hook": "Karl represents the professional coaching lane that Art is moving through as he matures into a more complete player. He’s part of the script’s broader argument about discipline versus raw talent.",
+        "why_actor_wants_this": "A nice supporting role for a seasoned actor with authority and a little edge. It gives the production a believable tennis-world veteran."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 18,
-        "leads": 3,
+        "speaking_roles": 10,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Three lead roles with strong star-vehicle potential",
-          "One child role for Lily",
-          "Tashi requires a Black actress in her 30s",
-          "Art and Patrick require athletic performers with credible tennis skill"
+          "Three lead-level tennis performers with credible athletic movement",
+          "One child role with recurring family-scene presence",
+          "Age-specific casting for younger versions of the leads in flashbacks",
+          "Tennis doubles and singles action requires actors who can physically sell elite play"
         ]
       },
       "locations": {
-        "distinct_count": 18,
-        "interior_exterior_ratio": "roughly 60/40",
-        "period_or_contemporary": "Contemporary with flashbacks to 2004, 2006, 2007, and 2011",
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary with 2006/2011 flashback periods",
         "notable_requirements": [
-          "Multiple tennis courts and tournament facilities",
-          "Hotel rooms, lobbies, bars, and hallways",
-          "Country club and practice-court environments",
-          "Flashback tennis venues that can read as earlier eras"
+          "Multiple tennis courts and tournament grounds",
+          "Hotel rooms, lobby, bar, hallway, and car interiors",
+          "Steam room and locker room access",
+          "Flashback tennis venues for junior and college eras"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visible VFX requirements beyond possible scoreboard and broadcast graphics.",
+        "vfx_details": "No meaningful VFX beyond possible crowd or tennis-ball enhancement.",
         "stunts_level": "minor",
-        "sfx_needs": "Tennis ball action, racket impacts, crowd reactions, and practical injury beats.",
+        "sfx_needs": "Practical tennis action, crowd reactions, and a visible ankle-injury beat.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Nike, Wilson, McDonald’s, Volkswagen, Ritz-Carlton, ESPN, Stanford, and ATP are all referenced on the page."
+          "detail": "Nike"
         },
         {
-          "type": "real_person",
-          "detail": "Roger Federer, Dominic Thiem, Nick Kyrgios, Gael Monfils, Serena Williams, and Borg-McEnroe are referenced in dialogue or comparison language."
+          "type": "brand",
+          "detail": "Wilson"
+        },
+        {
+          "type": "brand",
+          "detail": "IMPATTO"
+        },
+        {
+          "type": "brand",
+          "detail": "ESPN"
+        },
+        {
+          "type": "brand",
+          "detail": "McDonald's"
+        },
+        {
+          "type": "brand",
+          "detail": "Tinder"
+        },
+        {
+          "type": "brand",
+          "detail": "Ritz Carlton"
+        },
+        {
+          "type": "brand",
+          "detail": "Stanford"
+        },
+        {
+          "type": "brand",
+          "detail": "Pepperdine"
+        },
+        {
+          "type": "brand",
+          "detail": "Hawk-Eye"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Prestige theatrical or premium streaming feature",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with festival-to-platform or adult theatrical runway"
+        "recommended_lane": "theatrical prestige drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: awards-leaning theatrical with strong premium-streaming afterlife"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the spend controlled, but the script needs multiple tennis venues, night matches, flashback periods, and crowd coverage that all have to look premium."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "The footprint is mostly tennis courts, hotels, and interiors, but the match coverage, crowd scenes, and multiple flashback eras push it above micro-budget."
+      "casting": {
+        "level": "high",
+        "note": "The three central roles all need actors who can credibly play elite tennis and carry a very specific erotic/psychological dynamic; the movie lives or dies on that triangle."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The intercut timeline structure and the repeated returns to the same emotional triangle are part of the design, but they require very precise pacing so the flashbacks keep sharpening the present-tense match."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Brokeback Mountain",
+          "year": 2005,
+          "why_it_comps": "Like this script, it turns a charged relationship triangle into a prestige emotional event with real audience heat."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script is anchored by three demanding lead roles plus a child part, and the tennis credibility asks for performers who can sell athleticism."
+        {
+          "title": "Whiplash",
+          "year": 2014,
+          "why_it_comps": "The competitive obsession, psychological brinkmanship, and performance-as-combat energy are strongly aligned."
         },
-        "location": {
-          "level": "medium",
-          "note": "It uses a manageable number of recurring spaces, but the story moves across several tournament sites, hotels, and flashback courts."
+        {
+          "title": "The Social Network",
+          "year": 2010,
+          "why_it_comps": "It has the same sharp, adult, dialogue-driven sense of ambition, resentment, and status warfare."
         },
-        "content": {
-          "level": "medium",
-          "note": "Sex, nudity, profanity, and emotionally charged relationship material keep it in the adult lane."
+        {
+          "title": "Battle of the Sexes",
+          "year": 2017,
+          "why_it_comps": "The tennis setting, public spectacle, and personal stakes inside sport make this a natural neighbor."
         },
-        "rights": {
-          "level": "high",
-          "note": "The page is full of named brands, sports entities, and real-player references that would need clearance or substitution."
+        {
+          "title": "Black Swan",
+          "year": 2010,
+          "why_it_comps": "The script shares that same pressure-cooker blend of obsession, body politics, and self-destruction."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who want prestige character drama with sex, rivalry, and sports stakes, especially viewers drawn to adult relationship triangles and competitive psychology.",
+        "demographics": "25-54, slightly female-skewing but with strong male appeal through the sports and rivalry angle, upscale streamer/theatrical audience.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$15M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, limited VFX, and a contained cast keep it in indie feature territory, though the tennis action and period flashbacks require polished execution."
+      },
+      "lane_fit": {
+        "lane": "prestige adult relationship drama with sports DNA",
+        "types_of_buyers": [
+          "prestige indie financiers",
+          "streamer film acquisition teams",
+          "adult-drama specialty distributors",
+          "actor-driven production companies",
+          "festival-forward buyers"
+        ],
+        "detail": "This sits naturally in the lane of adult, star-driven prestige films where dialogue, desire, and status are the selling points. The tennis setting gives it a clean commercial wrapper, while the triangle and flashback structure make it feel elevated rather than generic."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear sequel or spinoff vector; the triangle and match are the point, not a launchpad."
       }
     },
     "whats_special": {
       "strengths": [
         {
           "dimension_or_area": "The triangle is the engine.",
-          "what_it_means": "This gives the project a clean commercial spine: every scene is either advancing the match, the marriage, or the unresolved history between the three leads. Buyers can package it as a prestige adult drama with a built-in hook for audiences who want sex, rivalry, and emotional stakes in one lane.",
-          "evidence": "The present-day Challenger match is constantly cross-cut with the teenage origin story and the later hotel-room confrontations.",
+          "what_it_means": "Commercially, this gives the movie a clean, high-concept emotional hook that can be sold in one sentence without feeling generic. It’s the kind of setup that attracts prestige buyers and actors who want a role with real romantic and psychological voltage.",
+          "evidence": "The script repeatedly stages Art, Patrick, and Tashi as a three-way force, from the junior tournament introduction to the hotel-bar and car confrontations to the final match.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Tennis becomes emotional combat.",
-          "what_it_means": "The sport is not decorative here; it is the language of power, attraction, and humiliation, which makes the movie feel bigger than a standard sports picture. That kind of formal confidence is attractive to prestige buyers and directors who want a genre frame with adult psychological texture.",
-          "evidence": "The script repeatedly mirrors match points with sexual tension, coaching with intimacy, and service motions with character psychology.",
+          "dimension_or_area": "Tennis becomes psychodrama.",
+          "what_it_means": "That turns a sports movie into a broader adult drama with built-in tension, which widens the audience beyond tennis fans. Buyers looking for elevated genre material will respond to how every point on court reflects a private wound.",
+          "evidence": "The match is constantly crosscut with flashbacks and emotional reversals, and the final tiebreak is staged like a relationship verdict.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Tashi is a star-making role.",
-          "what_it_means": "A sharp, commanding female lead who is both coach and ex-player gives an actress a rare combination of authority, erotic charge, and emotional control. That is exactly the kind of part that draws top-tier dramatic talent and gives a buyer a marquee performance to sell around.",
-          "evidence": "Tashi dominates the room in the hotel fight, the smoking-area confrontation, and the final match as the emotional center of the story.",
+          "dimension_or_area": "Tashi is a star role.",
+          "what_it_means": "This is the kind of female lead that can anchor packaging around a major actress and elevate the whole project. The role combines authority, erotic power, intelligence, and emotional ambiguity in a way that feels rare in studio-adjacent material.",
+          "evidence": "Her coaching scenes, her confrontations with Patrick, and her control over Art’s career all show her as both strategist and emotional center.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tennis world feels lived-in.",
-          "what_it_means": "The Challenger-to-Open ladder, prize-money details, sponsorship patches, and tour logistics create a specific ecosystem that makes the movie feel authentic and exportable to sports audiences. That specificity helps the script stand apart from generic athlete dramas and gives producers a world with clear rules.",
-          "evidence": "The Phil’s Tire Town Challenger, the motel stay, the prize-money conversation, and the ATP ranking talk all ground the story in tour reality.",
-          "source": "script"
+          "dimension_or_area": "The world feels expensive but contained.",
+          "what_it_means": "That is a strong buyer combination: the movie plays bigger than its footprint, but it doesn’t require tentpole economics. It can be mounted as a polished indie with premium value on screen.",
+          "evidence": "Most of the story lives in courts, hotels, cars, locker rooms, and a few flashback venues.",
+          "source": "both"
         },
         {
-          "dimension_or_area": "The structure keeps tightening the vise.",
-          "what_it_means": "The repeated returns to the same match, each time with a new emotional layer, create a strong escalation pattern that should play very well in the room and on screen. This is the kind of architecture that helps a buyer feel the movie’s momentum before they even get to the ending.",
-          "evidence": "The script cycles through present-day set play, teenage flashbacks, and private confrontations until the final tiebreak becomes a full emotional reckoning.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "It has a premium adult audience lane.",
-          "what_it_means": "The combination of sex, ambition, and elite sports gives it a lane that sits comfortably between arthouse and commercial adult drama. That makes it attractive to streamers and specialty theatrical buyers looking for something sexy, smart, and conversation-starting.",
-          "evidence": "The hotel-room intimacy, the car scenes, and the final match all play with explicit adult tension rather than broad comedy or family sports uplift.",
+          "dimension_or_area": "The dialogue has bite and status.",
+          "what_it_means": "The script gives actors sharp, quotable exchanges that can drive marketing and trailer moments. That makes it attractive to performers and to buyers who want a film with adult wit and tension, not just plot mechanics.",
+          "evidence": "The steam-room confrontation, the hotel-bar exchange, and the final car argument all land as verbal duels.",
           "source": "script"
         }
       ],
-      "headline": "This is a sleek, adult, high-concept relationship drama disguised as a tennis movie. The script has a rare commercial combination: a vivid sports world, a three-hander with real star-vehicle energy, and a final act that turns emotional history into a live sporting event."
+      "headline": "This is a prestige, actor-forward sports drama with a genuinely ownable hook: a love triangle weaponized through elite tennis. It has the kind of contained production profile and star-making central role that can justify a theatrical or premium-streaming buy without needing franchise scale."
     },
-    "lead_characters": [
-      {
-        "name": "Tashi Donaldson",
-        "role_type": "Lead",
-        "demographics": "Female · 30s · Black",
-        "hook": "Tashi is the story’s gravitational center: a former tennis prodigy turned coach, wife, mother, and strategist who treats desire like a competitive system. She is brilliant, exacting, sexually charged, and emotionally unreadable in the way only someone who has spent years managing other people’s performance can be.",
-        "why_actor_wants_this": "This is the showcase territory of Viola Davis in Fences or Jodie Comer in Killing Eve — a woman whose intelligence, authority, and volatility all live in the same frame. It gives an actress the rare chance to play command, seduction, and private collapse while driving the entire movie’s emotional and strategic logic."
-      },
-      {
-        "name": "Art Donaldson",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · White",
-        "hook": "Art is the polished champion who looks like he was built for the center court spotlight, but the script keeps revealing how much of his identity depends on discipline, approval, and being the reliable one. He is handsome, controlled, and deeply competitive, with a buried need to be seen as more than the safe choice.",
-        "why_actor_wants_this": "This is the showcase space of Paul Mescal in Aftersun or Andrew Garfield in Tick, Tick... Boom! — a performer role where restraint is the point and the emotional pressure keeps leaking through the surface. It gives an actor the chance to play a man whose composure is constantly being tested by love, ego, and the fear of not being enough."
-      },
-      {
-        "name": "Patrick Zweig",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · White · athletic",
-        "hook": "Patrick is the gifted wrecking ball: broke, cocky, funny, self-aware, and still convinced his talent should have carried him somewhere better. He’s the kind of man who can turn humiliation into a joke and a joke into a weapon, which makes him magnetic even when he’s sabotaging himself.",
-        "why_actor_wants_this": "This is the showcase territory of Jeremy Allen White in The Bear or Barry Keoghan in Saltburn — a volatile, charismatic outsider whose self-destruction is part of the appeal. It gives an actor a role that can swing from comic bravado to wounded confession without ever losing momentum."
-      },
-      {
-        "name": "Lily",
-        "role_type": "Supporting",
-        "demographics": "Female · child",
-        "hook": "Lily is the couple’s daughter, and she functions as the quiet witness to a family built around performance, tension, and unspoken history. Even in brief scenes, she gives the story a domestic anchor and a reminder that the adult games have consequences beyond the court.",
-        "why_actor_wants_this": "This is the kind of child role that benefits from naturalism rather than big speeches, similar to the grounded kid work in Marriage Story or The Florida Project. It gives a young performer a chance to play observation and emotional truth in a movie driven by adult intensity."
-      },
-      {
-        "name": "Jeremy",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Jeremy is Art’s nutritionist, a small but telling part of the professional machine around a top athlete. He helps establish the absurd precision of the tour life and the degree to which Art’s body is managed like a business asset.",
-        "why_actor_wants_this": "This is the kind of contained, scene-stealing support role that works for actors who excel at dry realism, like the staff roles in Moneyball or The Menu. It gives a performer a clean lane to make a professional world feel specific in very little screen time."
-      },
-      {
-        "name": "Ken",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s",
-        "hook": "Ken is Art’s physiotherapist, part caretaker and part blunt instrument, speaking the language of recovery and discipline. He helps define the physical cost of staying in the game and the way the tour turns pain into routine.",
-        "why_actor_wants_this": "This is the sort of grounded support part that actors with strong character instincts can make memorable, like the medical and training-room roles in sports dramas such as Creed. It offers a concise, functional showcase for authority and deadpan humor."
-      },
-      {
-        "name": "Raul",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-40s",
-        "hook": "Raul is Art’s hitting partner, a working pro who exists inside the grind of repetition and preparation. He adds texture to the training ecosystem and helps sell the physical labor behind the glamour.",
-        "why_actor_wants_this": "This is the kind of role that appeals to actors who like grounded, procedural realism and can make repetition feel alive, similar to the training partners in sports films like Creed or King Richard. It gives a performer a believable slice of the tour world without needing a big monologue."
-      },
-      {
-        "name": "Andrew",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Andrew is the security guard who shadows the family and quietly reinforces how public their lives are. He’s a practical presence that keeps the story’s celebrity layer visible without turning it into spectacle.",
-        "why_actor_wants_this": "This is the kind of understated support role that actors with strong observational instincts can make feel real, like the security and entourage parts in prestige dramas. It gives a performer a clean, watchful presence in a world of constant exposure."
-      },
-      {
-        "name": "Tom",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Tom is the offscreen connective tissue who helps move Art back into the Challenger draw. He represents the administrative side of the sport, where access and timing matter as much as talent.",
-        "why_actor_wants_this": "This is a functional industry role with the kind of authority actors can play efficiently, similar to the tournament officials and managers in sports-business dramas. It gives a performer a small but necessary piece of the machine."
-      },
-      {
-        "name": "ATP Official",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-60s",
-        "hook": "The ATP official is the face of the tour’s bureaucracy, polite but faintly humiliating, which fits the movie’s obsession with status. He’s a small role, but he helps define the difference between being famous and being merely ranked.",
-        "why_actor_wants_this": "This is a classic character-actor slot in the tradition of the officious tournament staff in sports dramas and workplace comedies. It gives a performer a chance to land the world’s tone in a few lines."
-      },
-      {
-        "name": "Umpire",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-60s",
-        "hook": "The umpire is the neutral authority who becomes a pressure valve for the men’s frustration and the match’s escalating psychology. He’s less a personality than a mechanism, which makes his presence useful every time the script needs the rules to feel alive.",
-        "why_actor_wants_this": "This is the kind of role that appeals to actors who can play authority with dry comic timing, like the officials in Moneyball or The Rehearsal. It gives a performer a clean, memorable function in the match engine."
-      },
-      {
-        "name": "Front Desk Woman",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "The front desk woman is the first person to puncture Patrick’s self-image, and she does it with total calm. She’s a small but sharp reminder that the tour’s glamour collapses fast outside the bubble.",
-        "why_actor_wants_this": "This is a great small role for an actor who can make deadpan resistance funny and real, in the vein of the best service-industry scenes in indie dramedy. It gives a performer a quick, memorable power reversal."
-      },
-      {
-        "name": "Date",
-        "role_type": "Supporting",
-        "demographics": "Female · late 30s",
-        "hook": "Patrick’s date is a smart, grounded outsider who briefly exposes how little of his life can fit into normal adult conversation. She functions as a contrast piece, making Patrick’s obsession with tennis and Tashi feel even more consuming.",
-        "why_actor_wants_this": "This is the kind of brief but vivid adult-woman role that can land with the right performer, similar to the grounded dates and near-strangers in relationship dramas like Before Midnight. It gives an actress a sharp, realistic scene opposite a charismatic lead."
-      },
-      {
-        "name": "Lana",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Lana exists as a ghost of Patrick’s past, a reminder that his life is full of unfinished connections and burned bridges. Even through texts, she helps define how isolated and improvised his present is.",
-        "why_actor_wants_this": "This is a compact offscreen role that still carries emotional history, the kind of part actors can make feel larger than the page. It gives a performer a quick, pointed glimpse into Patrick’s collateral damage."
-      },
-      {
-        "name": "Ernesto Gonzalez",
-        "role_type": "Supporting",
-        "demographics": "Male · late 20s",
-        "hook": "Ernesto is one of the tour’s many capable opponents, but the script uses him to show how Patrick handles the grind when no one is watching. He’s part of the world’s competitive texture rather than a separate storyline.",
-        "why_actor_wants_this": "This is a solid sports-drama opponent role for an actor with athletic credibility and strong physical presence. It gives a performer a clean, functional match scene that helps define the hero’s environment."
-      },
-      {
-        "name": "Kenji Shinoda",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-30s",
-        "hook": "Kenji is another journeyman opponent who helps illustrate the brutal sameness of the lower tour levels. He’s there to show how quickly talent gets normalized when the money and attention disappear.",
-        "why_actor_wants_this": "This is the kind of international opponent role that can be cast for authenticity and athleticism, similar to the supporting competitors in prestige sports films. It gives a performer a crisp, credible match presence."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to stage sex, rivalry, and athletic competition as one continuous emotional language.",
-        "fit_profile": "Established indie or prestige-feature directors with at least one or two character-driven features, especially those who have handled adult relationships, erotic tension, or performance-forward storytelling. This material rewards filmmakers who care about blocking, rhythm, and subtext as much as they care about plot.",
-        "detail": "The movie gives a director a rare chance to make a sports arena feel intimate and a bedroom scene feel like a championship point. It’s especially attractive to directors who like precise tonal control, because the script asks for comedy, desire, humiliation, and suspense to live in the same scene."
-      },
-      "buyer_appeal": {
-        "tier": "Prestige feature in the $15-30M range",
-        "lane": "Adult streamer / specialty theatrical prestige lane",
-        "detail": "It can be greenlit around three strong lead performances and a contained set of recurring tennis and hotel locations, so it does not need a giant ensemble or heavy VFX to work. The tennis setting gives it exportable sports-world clarity, while the erotic relationship engine gives it a premium adult hook that travels well on streaming and in festival-to-platform positioning."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The cast lives or dies on the triangle.",
+          "detail": "Art, Patrick, and Tashi all need to land as elite, sexually charged, and emotionally specific, because the script gives them very little room to hide. That makes the buy highly conditional on casting chemistry rather than just script quality.",
+          "is_primary_lever": true,
+          "source": "both"
+        },
+        {
+          "area": "The tennis action has to look real.",
+          "detail": "The script asks for credible pro-level singles, doubles, and junior flashback play, including a very specific Patrick serve and multiple momentum-shifting rallies. If the movement doesn’t sell, the whole premise loses authority fast.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The flashback structure is a pacing risk.",
+          "detail": "The script keeps returning to 2006 and 2011 to reframe the present-day match, which is elegant on the page but easy to overcut in the room. Buyers will watch closely to see whether the timeline shifts deepen tension or start to feel like repeated explanation.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The brand footprint is noisy.",
+          "detail": "Nike, Wilson, ESPN, McDonald’s, Tinder, Stanford, Pepperdine, Ritz Carlton, and IMPATTO are all named on the page, which creates a real clearance and substitution conversation. None of it is fatal, but it is a meaningful legal and business affairs pass before greenlight.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The adult content narrows the lane slightly.",
+          "detail": "The script is mature, sexually explicit in implication and language, and built around infidelity and emotional manipulation, which fits premium buyers but not broad four-quadrant release. That’s not a problem, but it does define the audience ceiling.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The main friction is not the premise; it’s execution dependency. This is a movie that needs three exceptional performances, convincing tennis, and disciplined handling of the flashback structure to fully cash the check the script writes."
     },
-    "considerations": [
-      {
-        "area": "The flashback ladder is doing a lot of work.",
-        "detail": "The 2004, 2006, 2007, and 2011 jumps are effective, but a next pass could consider whether one of those time steps can be folded into another so the emotional throughline lands with even more force. The version of the script where the past is slightly more compressed would keep the present-day match feeling even more relentless.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The brand and rights footprint is busy.",
-        "detail": "Nike, Wilson, ESPN, ATP, Stanford, McDonald’s, Volkswagen, and the Ritz-Carlton all appear on the page, along with several named athletes and comparison references. A production pass could simplify or abstract a few of those references without changing the story engine, which would make clearance cleaner while preserving the world.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The match coverage is the movie’s biggest engine.",
-        "detail": "The final tiebreak and the repeated set-break structure are the movie’s signature device, and the script already uses them well. One direction would be to keep protecting the clarity of who is ahead, what each point means, and what emotional turn each score change unlocks, because that is where the audience’s pulse lives.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "Tashi’s interior life can keep deepening through choice.",
-        "detail": "The page gives her enormous force, and the strongest next pass may be to keep foregrounding the moments where she chooses rather than simply reacts — especially in the hotel, car, and bedside scenes. That would make her already magnetic role feel even more authored and would sharpen the sense that she is steering the whole story.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The tennis authenticity is a selling point.",
-        "detail": "The ranking talk, prize-money details, and Challenger-level texture are all specific and useful, and they help the movie feel credible to sports audiences. A producer can lean into that authenticity in packaging, while still keeping the language accessible for viewers who do not know the tour.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The cast is concentrated but demanding.",
-        "detail": "Three lead roles carry most of the movie, and all three need performers who can sell athletic history, sexual tension, and verbal sparring. That concentration is a strength for packaging, but it means the project will benefit from casting that can credibly play tennis and emotional warfare at the same time.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 83.7,
-  "tier": "Optionable",
-  "inputTokens": 48221,
-  "outputTokens": 5609,
-  "cost": 0.061406249999999996,
+  "weightedScore": 85.7,
+  "tier": "Greenlight Material",
+  "inputTokens": 50626,
+  "outputTokens": 4808,
+  "cost": 0.05960549999999999,
   "declaredFormat": "Feature film"
 }

@@ -2,303 +2,346 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural thriller",
-      "genre_tags": [
-        "satire",
-        "family drama"
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Thriller",
+        "Comedy"
       ],
-      "tone": "Darkly comic, heightened, satirical, and increasingly ferocious"
+      "tone": "satirical",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "power",
+        "corruption",
+        "race",
+        "wealth",
+        "exorcism",
+        "texas-mansion"
+      ]
     },
-    "positioning_hook": "A status-obsessed Texas matriarch discovers her son’s rich-kid meltdown is actually a demon’s long con — and the only way to save her family is to outmaneuver the monster inside it.",
+    "positioning_hook": "A status-conscious Texas matriarch discovers her son’s exorcist is a centuries-old parasite using demonology to hijack her family, and must outmaneuver him before he rewires everyone she loves.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 7,
-        "reasoning": "The premise has a clean commercial engine: a wealthy family, a possessed son, and a mother forced to choose between social order and saving her child. The blend of domestic satire, occult escalation, and class warfare gives it a clear audience lane, though the tonal boldness narrows the buyer pool a bit."
+        "score": 8,
+        "reasoning": "The script has a clean, sellable engine: wealthy family, occult possession, and a mother fighting to save her son and status. The hook is easy to pitch and the escalating set-pieces give it real trailer value, though the tonal bite will skew it more to genre buyers than four-quadrant audiences."
       },
       "conceptual_hook_clarity": {
-        "score": 8,
-        "reasoning": "The hook lands early in the party sequence and keeps sharpening: strange energy, a family exorcist, then the reveal that the demon is using the family’s own power structure. The story engine is easy to explain in one breath and the stakes stay legible all the way through."
+        "score": 9,
+        "reasoning": "The premise lands immediately in the opening pages with D.J.’s strange energy event, Carol’s social world, and Andrew’s arrival as the family fixer. By the time the demonologist reveal hits, the script has already established a clear, ownable engine."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Carol is a strong center: funny, socially fluent, defensive, and gradually radicalized into action. D.J. and Andrew both add vivid pressure, while Matt and Beverly give the family system shape, though Carol remains the clear gravitational force."
+        "score": 8,
+        "reasoning": "Carol is a strong lead: funny, status-aware, maternal, and increasingly ferocious as the story turns. Andrew is a memorable antagonist with charisma and menace, and D.J. gives the story a volatile emotional center, though the supporting cast is more functional than deeply layered."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a very specific collision of suburban wealth, occult possession, and social climbing, and it keeps finding fresh comic turns inside that setup. The demon-as-elite-consultant angle, the class-coded exorcism, and the ending’s status-quo inversion all feel confidently chosen."
+        "reasoning": "The script’s blend of upper-class domestic satire, occult possession, and racial/class power politics is unusually specific. The choice to make the demonology a tool of social control rather than pure supernatural horror gives the material a sharper, more contemporary edge."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script escalates cleanly from party unease to bodily possession to legal and spiritual siege, with each turn adding pressure rather than repeating it. The final stretch, especially the FBI arrival and the driveway showdown, has strong forward drive and payoff."
+        "reasoning": "The story keeps escalating through the party, the injury, the exorcism, the legal pressure, the road capture, and the final showdown. Each turn adds a new layer of threat or reversal, and the script is especially strong when Carol’s certainty collapses into action."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "This feels like a familiar genre machine that has been rerouted through a very specific social world, so the freshness is immediate and functional. The idea that the demon is effectively a class-preserving operator inside a wealthy family gives the premise an 'of course' quality once it clicks."
+        "reasoning": "The central idea feels fresh because it fuses a recognizable possession framework with wealth, assimilation, and family complicity. The demon as a mechanism of privilege and control is immediately legible and gives the genre premise a social sting."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The Paxton house, the gated wealth, the legal machinery, the family hierarchy, and the coded rituals of status all create a world with visible rules. The script keeps using the house, the office, the driveway, and the kitchen as pressure chambers, which makes the setting feel story-generating rather than decorative."
+        "reasoning": "The Paxton house, the catered parties, the golf-club money, the legal machinery, and the family hierarchy all create a vivid social ecosystem. The world feels story-generating because every room contains a power dynamic, not just a plot function."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The voice is sharply its own: affluent domestic comedy, social discomfort, and supernatural horror all play in the same register without losing the script’s bite. The dialogue swings from cutting one-liners to genuine terror, and that blend is distinctive enough to identify from a page or two."
+        "reasoning": "The script has a distinct register: glossy, biting, and increasingly unhinged without losing the domestic comedy of manners underneath. Carol’s one-liners, the family’s coded cruelty, and the occult escalation create a tone that is hard to mistake for generic horror."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the possession plot, the script is really about assimilation, complicity, motherhood, and the cost of buying into a system that rewards denial. The ending leaves a strong aftertaste because the family’s emotional bargain feels bigger than the demon story alone."
+        "reasoning": "There are deeper currents around assimilation, maternal sacrifice, class performance, and inherited shame, and the script keeps revealing them through behavior rather than speeches. It is still primarily a surface-forward genre piece, but the social subtext gives it more aftertaste than a standard possession thriller."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "Carol/Matt, Carol/D.J., Carol/Andrew, and Carol/Beverly each generate a different kind of friction, and the family table scenes have real combinatorial energy. The ensemble is still centered on Carol, but the surrounding relationships are active enough to keep the script from feeling one-note."
+        "score": 8,
+        "reasoning": "Carol, Matt, D.J., Beverly, Roy, and Andrew all generate friction in different combinations, and the family table scenes are as playable as the horror beats. The script has a strong relational engine because every alliance is conditional and every conversation can flip power."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Carol Paxton",
+        "role_type": "Lead",
+        "demographics": "Woman, late 30s to early 40s, Latina-presenting but not strictly defined, affluent suburban mother, married, Texas-based.",
+        "hook": "Carol is the polished queen bee of a wealthy Texas household who has spent years converting survival instincts into social grace. She loves her son fiercely, knows exactly how to work a room, and slowly realizes the family’s comfort is built on a moral rot she has been helping maintain.",
+        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary or Julia Louis-Dreyfus in Veep when the mask starts cracking — a role that lets an actor play wit, vanity, maternal devotion, panic, and righteous fury in the same frame."
+      },
+      {
+        "name": "Andrew Collinsworth",
+        "role_type": "Supporting",
+        "demographics": "Man, 70s, English, older, imposing, charismatic, occult practitioner.",
+        "hook": "Andrew presents as the family’s elegant, worldly fixer, but he is really the story’s predator in a bespoke suit: ancient, amused, and always several moves ahead. He weaponizes charm, class fluency, and spiritual authority to turn the household into his instrument.",
+        "why_actor_wants_this": "This is the kind of villain role that gives an actor the delicious control of Ralph Fiennes in The Menu or Christoph Waltz in Inglourious Basterds — refined menace, verbal precision, and the chance to pivot from courtly to monstrous on a dime."
+      },
+      {
+        "name": "David",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-teens, affluent teen, musically gifted, emotionally volatile.",
+        "hook": "D.J. is the son Carol has tried to raise outside the family’s old poison, which makes him both the emotional prize and the easiest target. He is sweet, artistic, and vulnerable, but the script keeps testing how much of him is selfhood and how much is inherited corruption.",
+        "why_actor_wants_this": "This is strong young-actor material in the lane of Lucas Hedges in Manchester by the Sea or Justice Smith in The Get Down — a role that asks for sensitivity, confusion, charm, and a late-story turn into something unsettling."
+      },
+      {
+        "name": "Beverly Paxton",
+        "role_type": "Supporting",
+        "demographics": "Woman, late 70s, wealthy matriarch, white, Southern social power broker.",
+        "hook": "Beverly is the family’s velvet-gloved enforcer, the kind of matriarch who can insult you while making it sound like hospitality. She is funny, poisonous, and deeply invested in keeping the family’s hierarchy intact.",
+        "why_actor_wants_this": "This is prime grande-dame territory in the vein of Jane Fonda in Grace and Frankie or Jessica Lange in Feud — a role that lets an actor play social authority, comic cruelty, and buried menace."
+      },
+      {
+        "name": "Matt Paxton",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s, wealthy businessman, white, husband and father, Texas elite.",
+        "hook": "Matt is the family’s polished patriarch, a man who wants to believe he is the rational center of the house even as he keeps choosing convenience over truth. He is charming, evasive, and increasingly compromised by the system he benefits from.",
+        "why_actor_wants_this": "This is a solid prestige-supporting role in the lane of Michael Shannon in a domestic thriller or Kyle Chandler in Bloodline — a chance to play authority, denial, and emotional collapse without ever becoming a cartoon."
+      },
+      {
+        "name": "Hayden",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-teens, Latina, working-class background, smart, principled.",
+        "hook": "Hayden is the outsider who sees the Paxtons clearly because she has less to lose from their mythology. She is emotionally honest and morally steadier than the family around her, which makes her both a conscience and a target.",
+        "why_actor_wants_this": "This gives a young actor the kind of grounded, emotionally legible material that made Auliʻi Cravalho in The Power or Xochitl Gomez in The Baby-Sitters Club pop — sincerity under pressure, with a real moral point of view."
+      },
+      {
+        "name": "Christina",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, Latina, mother, stressed, working-class or middle-class.",
+        "hook": "Christina arrives as the practical parent trying to keep a crisis from becoming a catastrophe, and she quickly becomes the human counterweight to the Paxtons’ wealth and manipulation. She is wary, exhausted, and more perceptive than the room initially gives her credit for.",
+        "why_actor_wants_this": "This is the kind of grounded supporting role that lets an actor do lived-in realism in the mode of Patricia Clarkson in Pieces of April or America Ferrera in Real Women Have Curves — warmth, fatigue, and quiet authority."
+      },
+      {
+        "name": "Roy Paxton",
+        "role_type": "Supporting",
+        "demographics": "Man, 80s, wealthy elder patriarch, white, politically connected.",
+        "hook": "Roy is the old-money patriarch who treats power as inheritance and morality as a public-relations problem. He is blunt, entitled, and useful as a reminder that the family’s rot predates the current crisis.",
+        "why_actor_wants_this": "This is a sharp elder-statesman role in the lane of J.K. Simmons in Whiplash or Brian Cox in Succession — a chance to play institutional power, contempt, and comic menace."
+      },
+      {
+        "name": "Emilia Rodriguez",
+        "role_type": "Supporting",
+        "demographics": "Woman, 50s, Latina, attorney.",
+        "hook": "Emilia is the legal adult in the room when the family tries to turn catastrophe into paperwork. She is professional, skeptical, and a useful pressure valve in the final stretch.",
+        "why_actor_wants_this": "This is a clean, efficient character-actor role that gives an actor the authority and precision of a courtroom or negotiation scene without needing a giant arc."
+      },
+      {
+        "name": "Agent Lopez",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s-40s, FBI agent, Latina.",
+        "hook": "Lopez is the outside force who briefly punctures the family’s insulated reality and gives Carol a possible exit. She is calm, competent, and crucial to the final reveal that the system is larger than the house.",
+        "why_actor_wants_this": "This is the kind of crisp law-enforcement role that lets an actor play competence and moral clarity in the style of Regina King in a procedural or Carrie Coon in a thriller."
+      },
+      {
+        "name": "Agent O’Reilly",
+        "role_type": "Supporting",
+        "demographics": "Man, adult, FBI agent.",
+        "hook": "O’Reilly is the second half of the federal intrusion, a functional but important presence in the climax. He exists to show how little ordinary authority matters once Andrew fully reveals himself.",
+        "why_actor_wants_this": "This is a compact, scene-specific role for a strong character actor who can sell procedural authority before the supernatural escalation wipes it out."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 13,
-        "leads": 4,
+        "speaking_roles": 11,
+        "leads": 1,
         "series_regulars": 0,
-        "child_actors": true,
+        "child_actors": false,
         "casting_characteristics": [
-          "Teen leads required for D.J. and Hayden",
-          "Latina identity is structurally important for Hayden and Christina",
-          "Andrew is written as ageless / older-man-presenting",
-          "Carol is written with flexible ethnicity but specific social presence",
-          "Multiple adult supporting roles in the same family unit"
+          "teen roles require age-specific casting",
+          "Latina-presenting identities are structurally important for Hayden, Christina, and Carol's social positioning",
+          "older supporting roles require strong character-actor presence",
+          "Andrew needs an actor who can play charm and menace with a refined English accent"
         ]
       },
       "locations": {
         "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interior with several key exterior driveway/roadside/yard scenes",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "mostly interior with recurring exterior driveway/road/ramp scenes",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Large upscale Texas house with kitchen, master bedroom, guest room, office, garage, and exterior grounds",
-          "Skateboard ramp / half-shell exterior build",
-          "Roadside pull-off and Texas highway stretch",
-          "Cramped lower-income house for Hayden and Abuela",
-          "Police / FBI arrival exterior coverage"
+          "large affluent Texas house with pool-party scale",
+          "skateboard half-shell/ramp exterior",
+          "rural roadside sequence",
+          "working FBI arrival exterior",
+          "cramped working-class kitchen for Hayden's home"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Telekinetic energy waves, air distortion, body contortions, environmental shaking, lamp explosion, neck-break effects, and possession visuals are central to the climax.",
+        "vfx_details": "telekinetic energy waves, body distortions, room-shaking effects, practical/digital possession moments, and a few supernatural death beats",
         "stunts_level": "minor",
-        "sfx_needs": "Practical blood, dog attack choreography, gun handling, broken glass injury, and possession makeup/rigging effects.",
+        "sfx_needs": "blood, broken glass injury, dog attack, neck-break deaths, practical possession effects, syringe injection beats",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "iPhone, Mac, Corvette, Range Rover, Infiniti, Lincoln, Ford Bronco, Glock, Swiss chocolate, TikTok, TMZ, Juilliard, and Google are all named or prominently featured."
+          "detail": "iPhone"
         },
         {
-          "type": "real_person",
-          "detail": "FBI Agent Lopez is fictional, but the script references the Dalai Lama, Obama, Miles Davis, Trump, and Shakespeare by name."
+          "type": "brand",
+          "detail": "TikTok"
         },
         {
-          "type": "named_music",
-          "detail": "Soft rock, hip-hop, and a referenced song lyric from 'The Rolling Stones' style cultural memory appear, but no single plot-critical song title is clearly locked."
+          "type": "brand",
+          "detail": "Google"
+        },
+        {
+          "type": "brand",
+          "detail": "FBI"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or theatrical genre lane with elevated satirical horror sensibility",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model; strongest fit is festival-to-platform or specialty theatrical with genre marketing"
+        "recommended_lane": "streaming theatrical genre",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: streamer original, specialty theatrical, or premium genre label with adult content and elevated-horror positioning"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary interiors keep the footprint contained, but the possession effects, multiple night exteriors, dog attack, FBI arrival, and several supernatural death beats will need disciplined execution."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained to a handful of houses, a driveway, and a road sequence, but the possession effects, blood, and climax require a meaningful genre-effects spend."
+      "casting": {
+        "level": "medium",
+        "note": "Carol and Andrew are the load-bearing roles: Carol needs comic authority plus emotional collapse, and Andrew needs a very specific blend of elegance, age, and predatory charisma."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s tonal balance between satire, family drama, and outright horror is distinctive, but buyers will track how cleanly the social commentary stays legible once the possession mechanics take over."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Hereditary",
+          "year": 2018,
+          "why_it_comps": "Shares the escalating domestic-horror structure and the showcase role for a mother whose family crisis turns into a nightmare of inheritance and control."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script can be built around one marquee female lead, but it also needs a strong teen pair, an older male antagonist, and a family ensemble that can play status and menace."
+        {
+          "title": "Get Out",
+          "year": 2017,
+          "why_it_comps": "The social-power critique is embedded inside a genre engine, with race, class, and family performance driving the horror rather than sitting beside it."
         },
-        "location": {
-          "level": "medium",
-          "note": "The footprint is manageable, though the story depends on a large upscale home, a second modest home, exterior grounds, and multiple night and roadside setups."
+        {
+          "title": "Ready or Not",
+          "year": 2019,
+          "why_it_comps": "Matches the wealthy-family pressure cooker, the dark comic tone, and the heroine forced to fight a corrupt domestic system from inside the house."
         },
-        "content": {
-          "level": "high",
-          "note": "Graphic possession violence, a dog stabbing, neck breaks, gun use, profanity, and a late sexualized power dynamic push it firmly into mature territory."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "The script uses many recognizable brands and public figures, but nothing appears to require heavy estate or life-rights clearance beyond standard legal review."
+        {
+          "title": "The Menu",
+          "year": 2022,
+          "why_it_comps": "Like this script, it weaponizes elite manners, status performance, and satirical cruelty before detonating into genre violence."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre fans who like elevated horror with social bite, plus viewers drawn to sharp family satire and a strong female lead.",
+        "demographics": "18-49 skew, slightly female-leaning, urban/suburban, streamer-friendly, horror-literate audience with appetite for prestige-genre hybrids.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$15M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary house-bound genre piece with moderate VFX, practical effects, and a limited cast should live in indie feature economics if the possession effects are kept disciplined."
+      },
+      "lane_fit": {
+        "lane": "elevated horror with satirical bite",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original film execs",
+          "prestige horror producers",
+          "director-driven indie labels",
+          "specialty distributors"
+        ],
+        "detail": "This sits naturally in the lane where social commentary, family dysfunction, and genre escalation are all part of the sell. The script has enough style and role meat to attract a filmmaker looking for a breakout horror feature with awards-adjacent texture."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed supernatural conflict and no clear sequel or spinoff vector beyond the core family story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Carol is a showcase lead.",
-          "what_it_means": "This gives a buyer a female-centered genre vehicle with comedy, panic, seduction, maternal ferocity, and moral collapse all in one role. Actresses who want a prestige-horror turn with real range — the kind of part that can anchor a festival launch and still play commercially — will lean in hard.",
-          "evidence": "Carol moves from hostess charm to protective mother to furious investigator to possessed enabler, then ends as the household’s new power center."
+          "dimension_or_area": "Carol is a real star role.",
+          "what_it_means": "This gives the project a casting-forward center of gravity: a female lead who can carry comedy, social satire, and horror escalation without losing audience sympathy. That is exactly the kind of part that attracts actor-driven buyers and can elevate a genre package quickly.",
+          "evidence": "Carol’s party-hosting poise, her private panic over D.J., her confrontation with Beverly, and her final pivot into violent agency all belong to one coherent character arc.",
+          "source": "script"
         },
         {
-          "dimension_or_area": "The premise weaponizes class.",
-          "what_it_means": "The script turns wealth into the engine of the horror, which makes the story feel topical without becoming preachy. Buyers looking for elevated genre with social bite will see a clean hook that travels beyond pure demon-movie fans.",
-          "evidence": "The Paxtons’ money, lawyers, security, and social insulation are repeatedly used as both shield and corruption."
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "The script has a clean commercial sentence that buyers can understand in one pass, which lowers development friction and helps marketing immediately. That clarity is attractive to streamer film teams and genre labels looking for a high-concept hook with a prestige wrapper.",
+          "evidence": "The demonologist reveal, the family exorcism, and the idea that the occult force is tied to wealth and control all land early and clearly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The social satire is baked into the horror.",
+          "what_it_means": "The script is not just a possession story; it is a class-and-race power story that uses genre to make the commentary feel entertaining rather than academic. That makes it more marketable to buyers who want elevated horror with a point of view.",
+          "evidence": "Beverly’s “Latina angels” line, Andrew’s manipulation of the family’s money and status, and the repeated use of assimilation language all sharpen the genre engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The house is a story engine.",
+          "what_it_means": "The Paxton mansion is not just a setting; it is a pressure chamber where every room reflects a different kind of power. That kind of contained, textured world is attractive because it keeps production focused while still feeling expansive on screen.",
+          "evidence": "The kitchen, office, master bedroom, driveway, guest room, and ramp all function as distinct arenas for conflict.",
+          "source": "both"
         },
         {
           "dimension_or_area": "Andrew is a memorable antagonist.",
-          "what_it_means": "The demonologist is not just a villain; he is a charismatic, articulate, centuries-old parasite who can dominate a room before he ever uses power. That kind of role attracts actors who want a scene-stealing prestige bad guy with wit, menace, and theatrical control.",
-          "evidence": "Andrew’s calm explanations, hypnotic intimacy with Carol, and eventual reveal as an ancient occupier give him a strong escalation path."
-        },
-        {
-          "dimension_or_area": "The family dynamic keeps mutating.",
-          "what_it_means": "Every major relationship shifts under pressure, so the script has the kind of internal engine that keeps a feature from feeling static. That makes it attractive to producers who want a contained thriller with enough relational volatility to feel bigger than its footprint.",
-          "evidence": "Carol’s alliances with Matt, D.J., Beverly, and Andrew all change multiple times as the story advances."
-        },
-        {
-          "dimension_or_area": "The ending lands on a sharp irony.",
-          "what_it_means": "The final turn — Carol surviving by buying into the very system she resisted — gives the movie a memorable aftertaste and a conversation-starting finish. That kind of ending helps a buyer market the film as more than a standard exorcism story.",
-          "evidence": "Carol ends up restored to status, wealth, and domestic control, but with the demon’s logic still alive in the house."
-        },
-        {
-          "dimension_or_area": "The world is producible and specific.",
-          "what_it_means": "Most of the story lives in a single mansion, a second modest home, and a few exterior set pieces, which keeps the movie in a practical lane for a genre buyer. That footprint is attractive to indie financiers and streamers who want scope on screen without a sprawling location bill.",
-          "evidence": "The action repeatedly returns to the Paxton house, Hayden’s house, the driveway, and the skate ramp."
+          "what_it_means": "A villain with charm, class fluency, and supernatural authority is a strong commercial asset because he can carry trailers, posters, and word-of-mouth. Buyers like antagonists who are as watchable as the protagonist, and Andrew absolutely is.",
+          "evidence": "His refined accent, his “faith in me” pitch, his controlled exorcism, and his final escalation into open violence all make him legible and distinctive.",
+          "source": "script"
         }
       ],
-      "headline": "This is a smart, nasty, highly marketable genre feature with a real star turn at its center. It takes the familiar possession movie and reroutes it through wealth, marriage, and social performance, giving the right actress a role that can sell both scares and awards-season conversation."
+      "headline": "This is a clean elevated-horror package: a star-making lead role, a high-concept premise, and a contained luxury-house setting that keeps the economics sane. The social satire gives it a sharper buyer lane than standard possession fare, making it attractive to streamer film teams and prestige genre financiers looking for something with both bite and market shape."
     },
-    "lead_characters": [
-      {
-        "name": "Carol Paxton",
-        "role_type": "Lead",
-        "demographics": "Female · late 30s to early 40s · affluent Texas housewife / social operator",
-        "hook": "Carol is the polished center of the house: warm, funny, image-conscious, and always reading the room before anyone else does. She performs ease as a survival skill, but underneath that charm is a woman who has spent years translating herself into whatever version keeps the family intact, and the story gradually forces her to decide whether that talent is grace or surrender.",
-        "why_actor_wants_this": "This is the showcase territory of Toni Collette in Hereditary and Julia Louis-Dreyfus in The New Adventures of Old Christine — a role that can pivot from comic social control to raw maternal terror without losing authority. Mid-career actresses looking for a prestige genre lead with range, wit, and a final-act power shift will chase this."
-      },
-      {
-        "name": "D.J. Paxton / David John Paxton",
-        "role_type": "Lead",
-        "demographics": "Male · 16-18 · affluent teen musician",
-        "hook": "D.J. is the golden-boy son who seems sweet, soulful, and self-aware until the script starts revealing how easily he can be rewritten by the people around him. He’s a kid with real musical sensitivity and a genuine need to be loved, which makes his possession arc land as both horror and a coming-of-age corruption story.",
-        "why_actor_wants_this": "This is the showcase territory of Lucas Hedges in Manchester by the Sea or Timothée Chalamet in Beautiful Boy — a young lead whose interior life has to fracture in front of us. Teen actors with dramatic credibility and musical ability will see a rare part that asks for vulnerability, menace, and emotional whiplash."
-      },
-      {
-        "name": "Andrew Collinsworth",
-        "role_type": "Lead",
-        "demographics": "Male · 70s but ageless · English-accented, debonair, physically imposing",
-        "hook": "Andrew is the kind of man who can enter a room and make everyone feel chosen, then quietly own them. He reads as a family friend, spiritual authority, and elegant old-world gentleman, but the script keeps peeling back the charm until he becomes a centuries-old predator who treats people like inventory.",
-        "why_actor_wants_this": "This is the showcase territory of Ralph Fiennes in The Grand Budapest Hotel or Michael Keaton in The Founder — a polished, verbally agile presence whose charm is the weapon. Character actors who want a villain role with elegance, humor, and escalating menace will line up for it."
-      },
-      {
-        "name": "Matt Paxton",
-        "role_type": "Lead",
-        "demographics": "Male · mid-50s · fit, charismatic, wealthy patriarch",
-        "hook": "Matt is the family’s smooth operator: controlled, masculine, and always trying to keep the machine running without exposing the gears. He’s not the loudest man in the room, but his authority is baked into the house, and the script lets him oscillate between protective husband, compromised son, and man who has made peace with too much.",
-        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Trumbo or Michael Shannon in Take Shelter — a man whose composure slowly reveals moral compromise and buried fear. Actors who can play authority with a crack in it will be drawn to the part."
-      },
-      {
-        "name": "Beverly Paxton",
-        "role_type": "Supporting",
-        "demographics": "Female · late 70s · matriarch",
-        "hook": "Beverly is the family’s velvet-gloved enforcer, a woman who can sound affectionate while defending a brutal order. She’s funny, poisonous, and socially fluent, with the kind of old-money certainty that makes her both comic and chilling.",
-        "why_actor_wants_this": "This is the showcase territory of Jane Fonda in Grace and Frankie or Meryl Streep in The Devil Wears Prada — a matriarch role that gets to weaponize wit, status, and control in every scene. Veteran actresses who enjoy playing elegant menace will want it."
-      },
-      {
-        "name": "Roy Paxton",
-        "role_type": "Supporting",
-        "demographics": "Male · 80s · old-money patriarch",
-        "hook": "Roy is the blunt instrument of the family, a man whose privilege has hardened into reflexive cruelty. He’s less charming than Beverly and less strategic than Andrew, which makes him feel like the raw institutional muscle behind the operation.",
-        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in Whiplash or Richard Jenkins in The Visitor — an older authority figure who can turn a room with a single line. Character actors who like playing entitlement with bite will have a field day."
-      },
-      {
-        "name": "Hayden",
-        "role_type": "Supporting",
-        "demographics": "Female · 16-18 · Latina teen",
-        "hook": "Hayden is smart, observant, and emotionally exposed, with the kind of quiet dignity that makes her easy to underestimate. She’s not just the girlfriend or the victim; she’s the moral mirror that keeps reflecting Carol’s compromises back at her.",
-        "why_actor_wants_this": "This is the showcase territory of Auli'i Cravalho in The Little Mermaid or Xochitl Gomez in The Baby-Sitters Club — a young role that can carry hurt, intelligence, and moral clarity at once. Rising teen actresses with dramatic instincts will want the emotional specificity and the final confrontation energy."
-      },
-      {
-        "name": "Christina",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · Hayden’s mother",
-        "hook": "Christina is a tired, practical parent trying to keep her family upright while the world around her gets more absurd by the minute. She’s the grounded counterweight to the Paxtons’ theatrical wealth, and her presence gives the story a necessary outside moral frame.",
-        "why_actor_wants_this": "This is the showcase territory of Regina King in If Beale Street Could Talk — a mother role that has to carry dignity, exhaustion, and moral authority in very little time. Strong character actresses will see a clean, emotionally legible part."
-      },
-      {
-        "name": "Dina",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Carol’s friend",
-        "hook": "Dina is a quick, intimate presence who helps define Carol’s social world before the horror takes over. She’s lightly sketched, but she gives the opening stretch a lived-in adult-female texture and a sense that Carol has a life beyond the house.",
-        "why_actor_wants_this": "This is the kind of compact, scene-stealing role that recalls Laura Dern in Marriage Story for its ease and specificity, even in a smaller footprint. Character actresses who can make a few lines feel like a whole life will enjoy it."
-      },
-      {
-        "name": "Agent Lopez",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s · FBI agent",
-        "hook": "Agent Lopez is the story’s outside reality check: calm, professional, and increasingly aware that the family she’s dealing with is stranger than the case file suggests. She enters late but gives the climax a procedural spine and a credible institutional presence.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in The Silence of the Lambs in miniature — a competent investigator who has to stay grounded while the room turns surreal. Actors who specialize in authority with intelligence will be drawn to it."
-      },
-      {
-        "name": "Emilia Rodriguez",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Latina lawyer",
-        "hook": "Emilia is the legal face of the outside world, practical and measured in a room full of manipulation. She’s a useful pressure valve in the final act, giving the story a professional counterpoint to the family’s private mythology.",
-        "why_actor_wants_this": "This is the showcase territory of Marisa Tomei in My Cousin Vinny for its crisp, no-nonsense competence and comic timing under pressure. Working character actors who can make legal exposition feel alive will like the part."
-      },
-      {
-        "name": "Kevin Lewis",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · white-shoe lawyer",
-        "hook": "Kevin is the polished legal mouthpiece for the family’s damage control, all smooth language and strategic vagueness. He helps define the moneyed ecosystem around the Paxtons and gives the final act another layer of institutional insulation.",
-        "why_actor_wants_this": "This is the showcase territory of Paul Giamatti in Billions or The Holdovers for a fast-talking professional who can make self-protective intelligence entertaining. Character actors who like verbal sparring will be interested."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a prestige horror film about wealth, denial, and family control without losing the genre engine.",
-        "fit_profile": "Established indie directors with at least one or two features, or elevated-genre filmmakers moving up from festival horror into broader commercial territory. The sweet spot is someone who cares about performance-first storytelling, social satire, and controlled escalation more than spectacle for its own sake.",
-        "detail": "The material rewards precise tonal management: it has to play as a domestic comedy, a possession thriller, and a class satire in the same breath. That makes it especially attractive to directors who can stage actors in rooms with pressure and let the horror emerge from behavior rather than effects."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streaming / specialty theatrical elevated horror lane",
-        "detail": "It can be built around one marquee female lead and a contained house-based production footprint, which helps buyers package it off a director and a single star rather than a giant ensemble. The possession-horror lane remains a reliable streamer and specialty-theatrical buy, and the class-satire angle gives it a cleaner hook than a standard exorcism title."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The third-act possession rules keep shifting.",
+          "detail": "Andrew moves from exorcist to manipulator to full telekinetic killer, and the script keeps widening what his power can do. That escalation is exciting, but buyers will notice that the mechanics are more elastic than fixed, which makes the final act feel tier-dependent on execution.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The satire sometimes competes with the horror.",
+          "detail": "The script is strongest when class, race, and family control are embedded in the possession story, but a few stretches lean hard into speechifying or explanatory dialogue. That can be a feature for some buyers and a friction point for others if they want the genre engine to stay dominant.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Andrew is so dominant he narrows the ensemble.",
+          "detail": "Once he fully takes over, the family’s other dynamics become reactive, and the story increasingly depends on Carol versus Andrew. That is a strong spine, but it reduces the amount of playable ensemble energy in the back half.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending lands on a hard tonal swing.",
+          "detail": "The final beat of Carol settling into the household’s new order is a sharp satirical button, but it also asks the audience to accept a very dark moral inversion after a long horror escalation. Some buyers will love that bite; others will flag it as a tonal risk for broader genre audiences.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is tonal and mechanical: the script’s social satire is a strength, but it also makes the possession rules feel more fluid than fixed as the story escalates. Buyers will also clock that the back half becomes a very concentrated Carol-versus-Andrew showdown, which is effective but narrows the ensemble payoff."
     },
-    "considerations": [
-      {
-        "area": "Carol’s final turn can be foregrounded earlier.",
-        "detail": "The script already lands the ending, but the version of the movie where Carol’s appetite for control is seeded a little more explicitly in the middle would make her final embrace of the house feel even more inevitable. One lever would be to let a few more scenes show her enjoying the power of the Paxton system before the climax locks it in.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Andrew’s mythology is intentionally broad.",
-        "detail": "The demon-transfer history, the family lineage, and the colonial-Africa backstory all add flavor, but they also ask the audience to track a lot of lore in a fast-moving feature. A next pass could simplify one layer of that mythology without losing the core reveal, which would keep the climax moving with even more force.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The middle stretch leans on explanation.",
-        "detail": "The exorcism rules, the family history, and the legal stakes all arrive in dialogue-heavy scenes, especially once Andrew starts teaching the family how to think about the demon. One direction would be to let one or two of those ideas arrive through action or behavior first, so the exposition feels earned by the scene rather than carried by it.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The house footprint is a clean production advantage.",
-        "detail": "The story already lives in a small number of repeatable spaces, so the production can stay elegant and contained without losing scale. That makes the script especially friendly to a director-driven package or a streamer that likes contained genre with a premium finish.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The brand load is worth a clearance pass.",
-        "detail": "The script uses a lot of named consumer and cultural references — from iPhone and Mac to Range Rover, Glock, TMZ, TikTok, and Juilliard — so a legal pass should confirm what stays and what can be generalized. None of it changes the story engine, so the cleanest version is the one where the references support texture without becoming dependencies.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 75.7,
+  "weightedScore": 80.7,
   "tier": "Optionable",
-  "inputTokens": 37891,
-  "outputTokens": 5256,
-  "cost": 0.05207025,
+  "inputTokens": 40296,
+  "outputTokens": 4959,
+  "cost": 0.0525375,
   "declaredFormat": "Feature film"
 }

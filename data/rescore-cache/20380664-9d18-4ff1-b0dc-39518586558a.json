@@ -2,285 +2,350 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Erotic thriller",
-      "genre_tags": [
-        "psychological thriller",
-        "domestic drama"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Drama"
       ],
-      "tone": "Stylized, tense, sensual, and increasingly unhinged"
+      "tone": "erotic",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "prestige",
+        "character-driven",
+        "psychological",
+        "marriage",
+        "identity",
+        "power",
+        "crime",
+        "opera"
+      ]
     },
-    "positioning_hook": "A couples therapist’s affair with her patient’s husband turns into a manipulative power game when the wife reveals she’s been orchestrating the seduction all along.",
+    "positioning_hook": "A married couples therapist falls into an affair with a client’s husband, then discovers the wife orchestrated the seduction to expose her and destroy her life.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is immediately legible and built around sex, marriage, and professional betrayal, which gives it a clear adult audience and a strong curiosity engine. It’s more targeted than four-quadrant, but the hook is clean enough to sell on premise and conversation value."
+        "reasoning": "The premise is instantly legible, adult, and built on sex, betrayal, and blackmail — all reliable thriller fuel. Its audience is narrower than a four-quadrant commercial play because the material is explicitly erotic and psychologically specific, but the hook is strong enough to sell."
       },
       "conceptual_hook_clarity": {
-        "score": 8,
-        "reasoning": "The central engine lands early: Pau’s flirtation at the party, the reveal that Oliver is Mare’s husband, and the later reversal that Mare has been steering the whole thing. The story is easy to explain in a sentence or two, and the escalation is built on a very clear irreversible choice."
+        "score": 9,
+        "reasoning": "The hook lands immediately in the opening party sequence and keeps sharpening: therapist, affair, client, then the reveal that the wife is controlling the whole trap. The script is easy to pitch in two sentences and the engine is clear from page one."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Pau is a strong lead because she’s composed, erotic, ashamed, and increasingly cornered, while Mare and Oliver each carry a distinct charge that keeps the triangle alive. The characters are most compelling when they’re in conflict, and the script gives them enough contradiction to sustain a feature."
+        "score": 8,
+        "reasoning": "Pau is a strong lead role because she is competent, vain, lonely, horny, and increasingly unmoored — a full contradiction set. Mare is equally vivid as the controlling, sexually charged antagonist, and Oliver gives the triangle a volatile male pressure point."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a high-wire erotic-thriller premise with a therapist, a married couple, and a consent/power reversal that keeps mutating. The final turn into Mare’s orchestration, the hidden camera, and the therapy-session-as-hostage setup show real confidence in escalation and provocation."
+        "reasoning": "The script commits hard to erotic-psychological melodrama without apologizing for it, and the opera motif gives it a distinct high-gloss identity. The late reveal that the wife is the architect of the seduction is a confident, commercial twist rather than a generic affair story."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The script keeps tightening the noose: party encounter, secret affair, professional exposure, surveillance, blackmail, and then physical entrapment. Each major sequence adds a new pressure point, and the ending confrontation in Pau’s office gives the story a strong, escalating payoff."
+        "reasoning": "The story keeps escalating through reversals: party flirtation, secret affair, professional exposure, surveillance, confrontation, and the final domestic trap. The third act in particular keeps tightening the vise with the office ambush, the bathroom showdown, and the car crash."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The idea of a couples therapist being seduced into the very marriage she’s meant to treat feels fresh and instantly playable. The later reveal that the wife has been directing the whole affair gives the premise a nasty inevitability that makes the concept stick."
+        "reasoning": "It feels familiar in the best way — a marriage thriller — but the specific configuration of therapist, client, husband, and wife-as-puppeteer makes it feel ownable. The ending lands because the emotional logic of control and projection has been seeded throughout the script."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The Manhattan high-rise, therapy office, private equity/law world, and Hudson weekend-house material create a specific upper-middle/upper-class social ecosystem with clear status games. The world is not sprawling, but it has enough moneyed texture, professional etiquette, and domestic architecture to feel story-generating."
+        "reasoning": "The Manhattan high-rise, therapy office, Upper East Side marriage, and Hudson weekend house create a polished social world with class and status baked in. It is not an expansive world, but it is textured enough to generate story and status pressure at every turn."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a distinct erotic-psychological tone: polished surfaces, operatic music, clinical language, and sudden bursts of humiliation and violence. The contrast between elegant domesticity and raw sexual power play gives it a recognizable identity."
+        "reasoning": "The script has a very specific register: glossy, erotic, anxious, and operatic. The repeated use of Mozart and the polished domestic surfaces give it a signature tone that separates it from more generic affair thrillers."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the thriller mechanics, the script keeps circling marriage fatigue, desire, control, ambition, and self-erasure. The final divorce turn and Pau’s last-image self-possession suggest a deeper story about reinvention, not just scandal."
+        "reasoning": "Under the sex-and-blackmail engine, the script is really about control, projection, shame, and the fantasy of being seen. The final divorce and therapy beats suggest a deeper emotional afterlife, though the script mostly keeps that depth in service of the thriller."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "The Pau/Oliver/Mare triangle is the engine, but Anders and Sylvie add useful pressure and contrast, especially once the marriage and the Hudson weekend become part of the trap. The relationships are strongest when they cross-contaminate one another, which the script uses well."
+        "score": 8,
+        "reasoning": "The Pau/Mare/Oliver triangle is highly generative, and Anders adds a second domestic pressure system that keeps the story from collapsing into a single affair thread. Nearly every pairing in the script produces tension, leverage, or erotic charge."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Paulina Cuevas Ström",
+        "role_type": "Lead",
+        "demographics": "Woman, 40s, Spanish-born, married, upper-middle-class Manhattan therapist.",
+        "hook": "A polished couples therapist who lives by control, presentation, and professional authority until desire, shame, and manipulation strip those defenses away. Pau is intelligent and self-aware enough to diagnose everyone else, but not herself; her arc is powered by the gap between the composed woman she performs and the impulsive woman she keeps trying to deny.",
+        "why_actor_wants_this": "This is the showcase territory of Nicole Kidman in Big Little Lies — a controlled, elegant woman whose interior fracture keeps widening until the performance has to carry erotic charge, humiliation, panic, and survival in the same role."
+      },
+      {
+        "name": "Meredith Adler",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, high-achieving, affluent, professionally powerful.",
+        "hook": "A razor-edged lawyer who reads as polished, ambitious, and socially fluent, but is actually the most dangerous person in the room. Mare weaponizes intelligence, sexuality, and composure with the calm of someone who believes control is a birthright, not a tactic.",
+        "why_actor_wants_this": "This is the showcase territory of Rosamund Pike in Gone Girl — a cool, exacting predator role that lets an actor play intelligence, menace, erotic control, and emotional volatility without ever losing the mask."
+      },
+      {
+        "name": "Oliver Ramos",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, affluent finance/private equity professional, married.",
+        "hook": "A handsome, polished husband who initially reads as flirtatious and evasive, then reveals himself as needy, manipulative, and deeply compromised. Oliver is the kind of man who can look harmless in a room and become frightening the moment his need for control is threatened.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a charismatic, sexually charged man whose charm is inseparable from menace, self-deception, and a slow collapse of control."
+      },
+      {
+        "name": "Anders Ström",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s/50s, Swedish, writer, husband, father.",
+        "hook": "Pau’s emotionally muted husband, who seems passive and slightly underpowered until the script reveals how observant and retaliatory he really is. Anders is the quiet domestic counterweight to the affair plot, and his late reveal as the reporter adds a cold, personal sting.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Stuhlbarg in a prestige domestic drama — a deceptively soft-spoken husband role that pays off in hurt, intelligence, and a late-breaking moral reversal."
+      },
+      {
+        "name": "Sylvie Porter",
+        "role_type": "Supporting",
+        "demographics": "Woman, late 40s, affluent social friend.",
+        "hook": "Pau’s breezy, sexually frank friend who opens the movie in the social world of the wealthy and emotionally compromised. She’s not the engine, but she helps define the script’s class-and-marriage ecosystem and gives Pau a social mirror.",
+        "why_actor_wants_this": "This is the showcase territory of Laura Dern in a sharp prestige ensemble — a scene-stealing friend role with wit, status, and just enough bite to feel lived-in."
+      },
+      {
+        "name": "Bill Porter",
+        "role_type": "Supporting",
+        "demographics": "Man, 60s, wealthy husband, social host.",
+        "hook": "A genial, slightly drunk host whose flirtation and obliviousness help establish the script’s world of permissive wealth and marital rot. He’s mostly a social texture character, but he gives the opening party its lived-in hypocrisy.",
+        "why_actor_wants_this": "This is the showcase territory of Richard Jenkins in a prestige ensemble — a warm, compromised husband role that can carry comic discomfort and quiet sadness."
+      },
+      {
+        "name": "Jackson",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s, coworker, therapist.",
+        "hook": "Pau’s younger office colleague, a useful pressure valve for the professional world around her. He’s a clean supporting role that helps ground the office environment and later becomes part of the hearing fallout.",
+        "why_actor_wants_this": "This is the showcase territory of a strong character actor like Jake Lacy — a polished, lightly comic professional role that can turn uneasy when the story darkens."
+      },
+      {
+        "name": "Fidan",
+        "role_type": "Supporting",
+        "demographics": "Woman, late 30s, client, recovery history.",
+        "hook": "One half of the recurring couples-therapy material, Fidan gives Pau a credible professional arena and a glimpse of what competent work looks like before the affair unravels her life. She also helps establish Pau’s authority early.",
+        "why_actor_wants_this": "This is the showcase territory of a strong indie performer in a grounded relationship scene — emotionally specific, but not star-dependent."
+      },
+      {
+        "name": "Kunter",
+        "role_type": "Supporting",
+        "demographics": "Man, late 30s, client, artist type.",
+        "hook": "Fidan’s partner, skeptical and wounded, whose scenes with Pau establish the therapist’s professional competence and the script’s interest in projection and mistrust. He’s functional but still vivid enough to feel like a real patient.",
+        "why_actor_wants_this": "This is the showcase territory of a reliable character actor in a therapy-scene role — the kind of part that rewards precision and emotional restraint."
+      },
+      {
+        "name": "Mare's Therapist",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, therapist in later scene.",
+        "hook": "A later-stage professional mirror who appears only briefly but helps close the loop on Pau’s own recovery and the script’s therapy framework. She’s a functional framing device rather than a major character.",
+        "why_actor_wants_this": "This is the showcase territory of a small but elegant prestige cameo — a role that lands through authority and calm rather than size."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 8,
-        "leads": 3,
+        "speaking_roles": 10,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Three adult leads with strong chemistry demands",
-          "One teenage son with limited but meaningful presence",
-          "Adult casting should support affluent Manhattan and Hudson credibility"
+          "One teenage son appears in family-photo and phone references",
+          "Lead requires an actor who can play erotic charge, shame, panic, and controlled intelligence",
+          "Mare and Oliver need strong chemistry and a believable affluent-married-couple surface",
+          "Supporting roles skew 30s-60s and are castable with character actors"
         ]
       },
       "locations": {
-        "distinct_count": 11,
-        "interior_exterior_ratio": "Mostly interior with a modest exterior footprint",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 75/25",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Manhattan high-rise penthouse",
-          "Therapist office",
+          "Manhattan high-rise penthouse party",
+          "Therapy office with glass-walled executive office counterpart",
           "West Village brownstone",
+          "Four Seasons-style hotel room and hallway",
           "Brooklyn hotel bar",
-          "Upper East Side apartment",
-          "Hudson house and Hudson town locations",
-          "Law office",
-          "Restaurant and café interiors"
+          "Hudson weekend house and Hudson town exteriors",
+          "Underhill tavern / upscale restaurant",
+          "Law office floor and executive office"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No VFX-driven storytelling beyond basic screen inserts and digital communications.",
+        "vfx_details": "No visual effects requirements beyond simple screen inserts and phone UI moments.",
         "stunts_level": "minor",
-        "sfx_needs": "Car crash, broken glass, blood effects, and practical bruising/injury makeup.",
+        "sfx_needs": "Practical crash sequence, airbag deployment, blood makeup, bruising, and a few physical struggle beats in the bathroom and office.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Mozart’s Queen of the Night aria is repeatedly used as a tonal and thematic motif."
+          "detail": "Mozart's Queen of the Night aria is used as a recurring, plot-signature musical motif."
         },
         {
           "type": "brand",
-          "detail": "Friday Cafe, Nespresso, LinkedIn, Instagram, academia.edu, Tanqueray, Maker’s, and Four Seasons are all named on the page."
+          "detail": "LinkedIn, Instagram, academia.edu, Nespresso, Friday Cafe, Four Seasons, and Tanqueray are named on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "Freud is referenced and a Freud bust is a recurring prop, though not a depiction of a living person."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming / theatrical genre lane",
-        "content_level": "Mature, explicit",
-        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or adult genre theatrical positioning."
+        "recommended_lane": "streaming theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult erotic thriller for streaming-first or specialty theatrical."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary Manhattan and Hudson locations keep it grounded, but the multi-location footprint, night work, hotel interiors, and car crash sequence will keep this above a lean contained indie."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary and largely contained, but the Manhattan, Hudson, hotel, law-office, and restaurant footprint plus night work and a car crash push it above microbudget."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a performer who can carry erotic tension, humiliation, and psychological unraveling without losing authority, and Mare needs a similarly strong counterweight to make the final confrontation land."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script is clear and commercially legible, but the final-act escalation into surveillance, coercion, and the domestic reveal depends on precise tonal control to stay thrilling rather than melodramatic."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Fatal Attraction",
+          "year": 1987,
+          "why_it_comps": "The affair-as-catastrophe engine and marital fallout echo the same adult-thriller DNA, with desire turning into threat."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script depends on three adult leads with very specific chemistry and a credible teenage son, but it does not require a large ensemble."
+        {
+          "title": "Gone Girl",
+          "year": 2014,
+          "why_it_comps": "The wife-as-strategist reveal and the weaponization of marriage, image, and performance are directly in this lane."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story moves through multiple upscale interiors and a Hudson getaway, with enough company moves to matter but no period builds or remote terrain."
+        {
+          "title": "The Undoing",
+          "year": 2020,
+          "why_it_comps": "Upper-class New York marriage pressure, sexual secrecy, and prestige-thriller polish make this a close tonal and audience neighbor."
         },
-        "content": {
-          "level": "high",
-          "note": "Explicit sex, coercive power play, blackmail, choking, blood, and a car crash place it firmly in adult-only territory."
+        {
+          "title": "Big Little Lies",
+          "year": 2017,
+          "why_it_comps": "Female power games, marital rot, and glossy prestige packaging align with the script’s emotional and commercial lane."
         },
-        "rights": {
-          "level": "medium",
-          "note": "The script uses several named brands and a specific Mozart aria, but there are no real-person life-rights dependencies."
+        {
+          "title": "The Girl on the Train",
+          "year": 2016,
+          "why_it_comps": "Psychological instability, unreliable intimacy, and a woman caught in a dangerous domestic web fit the same adult thriller audience."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like prestige relationship thrillers with sex, betrayal, and a strong female lead.",
+        "demographics": "35-64, skewing female but with meaningful adult male interest; upscale streamer and specialty-theatrical viewers who respond to glossy psychological suspense.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary settings, limited VFX, and a mostly dialogue-driven cast keep it in indie feature territory, though the Manhattan/Hudson footprint and crash sequence prevent true microbudget treatment."
+      },
+      "lane_fit": {
+        "lane": "prestige erotic thriller",
+        "types_of_buyers": [
+          "streamer originals dev execs",
+          "specialty theatrical distributors",
+          "prestige genre producers",
+          "female-driven thriller buyers",
+          "director-led indie financiers"
+        ],
+        "detail": "This sits naturally in the adult, glossy, psychologically charged thriller lane where performance, sex, and social status are the selling points. The script is built for buyers who want a star-driven female lead and a clean, high-concept hook that can be marketed on premise alone."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed emotional and narrative arc; no clear sequel or spinoff vector beyond the central triangle."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly pitchable.",
-          "what_it_means": "A buyer can understand the engine in one breath: a therapist sleeps with her patient’s husband, then discovers the wife has been steering the affair. That kind of clean, adult hook is ideal for streamer genre buyers and producers looking for a conversation-starting thriller with a clear audience lane.",
-          "evidence": "The party meet-cute, the hotel-room affair, and the later reveal that Mare orchestrated the setup all lock the concept in place.",
+          "dimension_or_area": "The hook is immediate and marketable.",
+          "what_it_means": "This gives the project a clean buyer pitch and a trailer-ready premise that can be understood in one breath. That makes it attractive to streamer dev execs and specialty distributors looking for an adult thriller with a sharp logline.",
+          "evidence": "The opening party flirtation turns into an affair with a client’s husband, then flips into the reveal that the wife engineered the trap.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Pau is a showcase lead role.",
-          "what_it_means": "The part gives an actress glamour, repression, erotic charge, panic, and moral collapse in one package, which is exactly the kind of performance vehicle that can attract serious talent. Mid-career dramatic leads and actors looking to pivot into prestige genre would see a juicy, scene-rich centerpiece here.",
-          "evidence": "Pau moves from controlled therapist to adulterous participant to terrified target to hard-eyed survivor, with the office, hotel, and bathroom sequences all built around her reaction.",
+          "dimension_or_area": "Pau is a real lead role.",
+          "what_it_means": "The role can attract an actor who wants a prestige showcase with erotic tension, shame, and psychological unraveling rather than a generic victim part. That is exactly the kind of part that can elevate a mid-budget thriller into a star vehicle.",
+          "evidence": "Pau moves from controlled therapist to compulsive affair partner to panicked professional under investigation, with each phase visible on the page.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The erotic power reversal is the engine.",
-          "what_it_means": "The script keeps flipping who is in control, which gives the story a built-in escalation pattern and a strong hook for adult genre buyers. That dynamic is catnip for directors and audiences who want sex scenes to carry plot, not just heat.",
-          "evidence": "Mare’s reveal that she directed Oliver, the hidden camera in Pau’s office, and the final hostage therapy session all turn desire into strategy.",
+          "dimension_or_area": "Mare is the movie’s secret weapon.",
+          "what_it_means": "A female antagonist with intelligence, sexual control, and strategic patience gives the script a memorable engine and a strong casting conversation. Buyers respond to a villain who is not just dangerous but fascinating.",
+          "evidence": "Mare reveals she orchestrated the seduction, controls Oliver, and turns the therapy room into a trap.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has affluent social texture.",
-          "what_it_means": "The Manhattan penthouse, private equity/law marriage, therapist office, and Hudson weekend house create a polished upper-class ecosystem where every room has status pressure. That gives the film a premium sheen that helps it play above a standard affair thriller and makes it attractive to buyers who want sophistication with pulp.",
-          "evidence": "The anniversary party, the law office, the Upper East Side apartment, and the Hudson house all feel like extensions of the same social class.",
+          "dimension_or_area": "The erotic-thriller tone is committed.",
+          "what_it_means": "The script knows exactly what lane it wants and stays in it, which helps commercial positioning and audience expectation. That clarity is valuable for buyers who want a confident adult genre play rather than a timid prestige drama.",
+          "evidence": "The hotel-room encounters, office sex, bathroom confrontation, and final threesome reveal all escalate the same charged register.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone is controlled and operatic.",
-          "what_it_means": "The Mozart motif, the elegant interiors, and the increasingly unhinged sexual and psychological behavior create a distinctive tonal signature that a director can lean into hard. That blend is especially attractive to filmmakers who like prestige surfaces with taboo material underneath.",
-          "evidence": "Opera opens the script and returns throughout, including the final image of Pau masturbating to it in her new apartment.",
+          "dimension_or_area": "The opera motif gives it identity.",
+          "what_it_means": "The recurring Mozart cue and the polished, high-gloss surfaces create a signature that can be marketed visually and sonically. That kind of motif helps a thriller feel authored rather than generic.",
+          "evidence": "Opera plays over black, returns in Pau’s earbuds, and crescendos through the final montage and ending.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ending leaves a strong aftertaste.",
-          "what_it_means": "The final movement gives the story a clean emotional landing without sanding off the danger, which helps the film feel complete rather than merely sensational. Buyers like endings that resolve the central triangle but still leave a charged image in the audience’s head.",
-          "evidence": "Pau divorces Anders, starts therapy, and then sees Mare and Oliver outside the wine bar before the final solo image.",
+          "dimension_or_area": "The triangle keeps generating new pressure.",
+          "what_it_means": "The Pau/Mare/Oliver dynamic creates a durable engine for escalation, reversals, and shifting alliances. That gives the script strong momentum and makes the third act feel like a payoff rather than a detour.",
+          "evidence": "Every major scene reconfigures who has leverage: the office reveal, the hotel confrontations, the bathroom trap, and the final violence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The class world is legible and useful.",
+          "what_it_means": "Upper East Side money, Hudson weekends, therapy culture, and polished professional status give the story a premium sheen that buyers know how to market. It also widens the appeal beyond pure sex-thriller audiences into prestige-drama viewers.",
+          "evidence": "The penthouse party, therapy office, law office, brownstone, and Hudson house all reinforce a specific affluent social ecosystem.",
           "source": "script"
         }
       ],
-      "headline": "FIXATION is a sleek adult thriller with a killer premise: a couples therapist falls into an affair with her patient’s husband, only to discover the wife has been orchestrating the whole seduction. It’s built for actors, loaded with status, sex, and psychological reversal, and it has the kind of premium, conversation-starting hook that can travel in the marketplace."
+      "headline": "This is a clean, adult thriller package: a star-making lead role, a memorable female antagonist, and a premise that can be sold in one sentence. The contemporary, mostly dialogue-driven production footprint keeps it in indie feature territory, which makes the script especially attractive to streamer buyers and prestige genre financiers looking for a glossy, performance-forward play."
     },
-    "lead_characters": [
-      {
-        "name": "Dr. Paulina Cuevas Ström",
-        "role_type": "Lead",
-        "demographics": "Female · 40s · Spanish-American / European-presenting therapist",
-        "hook": "Pau is polished, intelligent, and deeply self-managed, the kind of woman who can transform herself in an elevator from tired anonymity into social elegance in seconds. Under that control is a restless hunger she keeps trying to intellectualize away, and the script lets us watch her composure become the very thing that traps her.",
-        "why_actor_wants_this": "This is the showcase territory of Julianne Moore in *May December* or Nicole Kidman in *Birth* — a woman whose surface control slowly gives way to obsession, shame, and self-recognition. It gives an actress the full range: erotic tension, professional authority, humiliation, panic, and a final hard-earned reclamation of self."
-      },
-      {
-        "name": "Meredith Adler",
-        "role_type": "Lead",
-        "demographics": "Female · 40s · tall, blonde, affluent professional",
-        "hook": "Mare is all poise, appetite, and strategic intelligence, a woman who reads as glamorous until you realize she is the most dangerous person in the room. She’s ambitious, sexually commanding, and emotionally exacting, with the unnerving ability to turn vulnerability into leverage.",
-        "why_actor_wants_this": "This is the showcase space of Rosamund Pike in *Gone Girl* — a character who weaponizes intelligence, charm, and performance to control the room. Actors who want to play icy precision with flashes of erotic menace will chase this because it gives them dominance, wit, and a late-film reveal of real ferocity."
-      },
-      {
-        "name": "Oliver Ramos",
-        "role_type": "Lead",
-        "demographics": "Male · 40s · polished, attractive, finance/private equity type",
-        "hook": "Oliver is charming in a way that never quite feels innocent, a man whose flirtation reads as social ease until it becomes clear he uses desire as a tool. He’s the script’s most slippery figure: needy, controlled, performative, and capable of sudden aggression when his status is threatened.",
-        "why_actor_wants_this": "This is the kind of morally unstable male lead Jake Gyllenhaal played in *Nightcrawler* — a charismatic surface with something predatory and self-justifying underneath. It gives an actor the chance to move from seduction to menace to collapse without ever losing the audience’s attention."
-      },
-      {
-        "name": "Anders Ström",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s/50s · Swedish writer, domestic, understated",
-        "hook": "Anders is the quieter counterweight in Pau’s life: affectionate, slightly stalled, and more observant than he first appears. He reads as the stable husband until the script reveals he has his own calculations, resentments, and capacity for manipulation.",
-        "why_actor_wants_this": "This is the kind of understated marital role that gave Michael Stuhlbarg so much to do in *A Serious Man* — a man whose calm exterior can suddenly reveal deep emotional pressure. Actors who excel at dry intelligence and wounded restraint will see a lot to play here."
-      },
-      {
-        "name": "Sylvie Porter",
-        "role_type": "Supporting",
-        "demographics": "Female · late 40s · wealthy hostess",
-        "hook": "Sylvie is the social lubricant of the opening world: funny, frank, and casually miserable in a way that makes the party feel lived-in. She gives the film its first note of adult marital candor and helps establish the class and social code Pau moves through.",
-        "why_actor_wants_this": "This is the kind of sharp supporting hostess role that lets an actor do the *Big Little Lies* style of breezy social comedy with a bite underneath. It’s a compact part that can still land memorable lines and establish the film’s adult tone immediately."
-      },
-      {
-        "name": "Bill Porter",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s · wealthy, slightly drunk host",
-        "hook": "Bill is the kind of rich husband who thinks he’s charming because he’s harmless, which makes him useful as a social mirror for the film’s marriage games. He’s not the engine, but he helps define the world’s casual entitlement and sexual drift.",
-        "why_actor_wants_this": "This is a good character turn in the vein of Richard Jenkins in *The Visitor* or a lighter *Succession* patriarch-adjacent role — a man whose vanity and obliviousness are funny until they aren’t. It gives a seasoned actor easy authority and comic texture."
-      },
-      {
-        "name": "Jackson",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s · handsome coworker",
-        "hook": "Jackson is the office foil: younger, socially easy, and used to being around Pau’s competence without understanding its cost. He functions as a pressure valve and a witness, which makes him useful whenever the script needs the outside world to register Pau’s unraveling.",
-        "why_actor_wants_this": "This is the kind of supporting role that works for an actor with the easy, naturalistic charm of a *The Bear* ensemble player — someone who can make a few scenes feel lived-in and real. It offers clean, grounded contrast to the film’s heightened central triangle."
-      },
-      {
-        "name": "Fidan",
-        "role_type": "Supporting",
-        "demographics": "Female · late 30s · gallery-owner aesthetic",
-        "hook": "Fidan is one half of the couple Pau treats, and she gives the therapy scenes emotional specificity through her bluntness and recovery history. She helps show Pau’s professional competence before the story starts eating away at it.",
-        "why_actor_wants_this": "This is the kind of sharply observed supporting role that lets an actor do the intimate realism of a *Marriage Story* secondary character in miniature. It’s a concise but credible part for someone who can make therapy dialogue feel personal rather than functional."
-      },
-      {
-        "name": "Kunter",
-        "role_type": "Supporting",
-        "demographics": "Male · late 30s · artist type",
-        "hook": "Kunter is the more emotionally exposed half of the therapy couple, carrying worry, resentment, and tenderness in the same scene. He gives the film an early example of how love and suspicion can coexist in the same room.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded marital pain of a Noah Baumbach supporting part — enough emotional truth to matter, enough specificity to feel real. It’s a useful showcase for someone who can play hurt without overplaying it."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make sex feel like strategy and strategy feel like danger.",
-        "fit_profile": "Established indie or prestige-genre directors with at least one feature under their belt, especially those who work well with actors and can sustain tension in contained interiors. This material rewards filmmakers who care about performance, visual control, and the slow escalation of psychological humiliation into physical threat.",
-        "detail": "The movie gives a director a clean three-hander engine, elegant production design, and a chance to stage erotic scenes that actually move the plot. It’s especially attractive to directors who like polished surfaces cracking under pressure and who can make a single room feel like a battlefield."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streaming / adult erotic thriller lane",
-        "detail": "The script can be packaged around three strong adult leads and does not require VFX-heavy execution, which makes it viable for a director-driven greenlight. The erotic-thriller lane remains a recognizable streamer and festival-to-platform play, and the Manhattan/Hudson setting gives it upscale export appeal."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The final-act escalation is tonally extreme.",
+          "detail": "The move from affair thriller into coercion, surveillance, bathroom violence, and a near-strangulation in Pau’s office is bold, but it pushes the material into a very specific hard-edged lane. That is a real commercial strength for some buyers and a real sensitivity for others, especially if they want prestige polish without the most explicit sexual and physical violence.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The movie depends on a very specific lead performance.",
+          "detail": "Pau has to play controlled, erotic, ashamed, funny, and unraveling without losing audience sympathy, and that is a narrow casting lane. The script is strongest when that role is magnetic; without the right actor, the whole piece reads more brittle than intended.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The story is built around a narrow adult audience.",
+          "detail": "This is not a broad four-quadrant play; the explicit sex, marital betrayal, and psychological manipulation point squarely at adult thriller buyers. That is fine, but it means the commercial ceiling is tied to prestige streaming and specialty theatrical rather than mass-market reach.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The named-music motif adds clearance work.",
+          "detail": "Mozart’s Queen of the Night aria is a recurring signature element, so the music is not just flavor — it is part of the script’s identity. That means sync and usage planning will matter early if the production wants to preserve the opera-driven branding.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main buyer conversation will be about how far they want to go with the erotic-psychological escalation, because the script commits hard to coercion, humiliation, and violence in the back half. The other real friction points are casting Pau correctly and deciding whether the adult-only lane and named-opera motif fit the intended release strategy."
     },
-    "considerations": [
-      {
-        "area": "The final act has room to sharpen the external objective.",
-        "detail": "The script’s last movement is strongest when Pau is reacting to Mare and Oliver’s control games; a next pass could foreground one concrete endgame she is actively trying to achieve once the blackmail and surveillance escalate. That would make the final stretch feel even more propulsive without changing the core premise.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The therapy scenes can carry more story pressure.",
-        "detail": "Several office sessions do important character work, but a few of them play as elegant exchanges of diagnosis and response; one lever would be to let each session turn on a fresh piece of information or a sharper tactical move. That would keep the professional scenes feeling like plot engines, not just atmosphere.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The Hudson section can be streamlined.",
-        "detail": "The getaway material does useful work on marriage and exposure, but the script already has a strong pressure-cooker in Manhattan and the office. The version of the story where one Hudson sequence absorbs the function of another would protect momentum and keep the feature feeling taut.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The brand and music references are specific.",
-        "detail": "Mozart, the named cafes, the hotel, and the social-media platforms all help texture the world, but they also create a modest clearance layer. A producer can keep the specificity while planning early for music and brand substitutions where needed.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The adult leads need chemistry that can pivot.",
-        "detail": "The script asks Pau, Mare, and Oliver to move from flirtation to humiliation to threat to intimacy, often in the same scene. Packaging should prioritize performers who can play seduction and control without flattening either side of the triangle.",
-        "is_primary_lever": false,
-        "source": "both"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 73.7,
+  "weightedScore": 77,
   "tier": "Optionable",
-  "inputTokens": 39429,
-  "outputTokens": 4600,
-  "cost": 0.050271750000000004,
+  "inputTokens": 41834,
+  "outputTokens": 4938,
+  "cost": 0.0535965,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T04:51:15.466Z",
+  "submission_id": "01146053-3aa1-4190-909b-3137a976359a",
+  "eval_id": "7c5ff85d-e420-409d-a58e-e3a518a26b09",
+  "title": "CREATION CLUB",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Sage Smith",
+      "role_type": "Lead",
+      "demographics": "Male, 14, white/Anglo, foster child, emotionally isolated, working-class, California teen."
+    },
+    {
+      "name": "Aisling",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Irish, convent-trained, spiritually luminous, physically fragile."
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Supporting",
+      "demographics": "Male, ageless/appears 30s, divine figure in human form, casual, witty, authoritative."
+    },
+    {
+      "name": "Janis Joplin",
+      "role_type": "Supporting",
+      "demographics": "Female, late 20s/appears as iconic 1960s rock star, white, flamboyant, emotionally open."
+    },
+    {
+      "name": "Jim Morrison",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s/appears as iconic 1960s rock star, white, charismatic, volatile, poetic."
+    },
+    {
+      "name": "Jimi Hendrix",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s/appears as iconic 1960s rock star, Black, electric, playful, mercurial."
+    },
+    {
+      "name": "Wallace March",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white, club owner, practical, decent, quietly burdened."
+    },
+    {
+      "name": "Suzy",
+      "role_type": "Supporting",
+      "demographics": "Female, 15, white, street-smart, sexually confident, music-scene adjacent."
+    },
+    {
+      "name": "Mother Superior",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, Irish, convent authority figure, stern but humane."
+    }
+  ],
+  "positioning_hook": "A suicidal foster teen in 1976 is sent by Jesus to spend one night with Janis Joplin, Jimi Hendrix, and Jim Morrison, and discovers his dead mother’s guitar may be the key to choosing life.",
+  "cost_usd": 0.055442250000000005,
+  "input_tokens": 44733,
+  "output_tokens": 4865,
+  "status": "wrote:leads_ok"
+}

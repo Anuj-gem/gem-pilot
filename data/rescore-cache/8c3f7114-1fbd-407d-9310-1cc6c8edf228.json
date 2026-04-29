@@ -2,281 +2,345 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Psychological thriller",
-      "genre_tags": [
-        "LGBTQ+ drama",
-        "crime"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Drama"
       ],
-      "tone": "Gritty, melodramatic, volatile, and increasingly tragic"
+      "tone": "bleak",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "coming-of-age",
+        "identity",
+        "mental-health",
+        "crime",
+        "queer-lead"
+      ]
     },
-    "positioning_hook": "A gay teen’s first love curdles into a blood-soaked spiral when rejection, jealousy, and a violent home life push him into murder to keep his best friend close.",
+    "positioning_hook": "A gay high school senior spirals from first love into a body-count cover-up when his best friend’s attention shifts, and every attempt to hold on pushes him closer to murder.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 5,
-        "reasoning": "The script has a clear emotional engine — queer longing, friendship, family rejection, and escalating violence — that can speak to a defined audience. The material is more niche than broad, though, because the plotting is extreme and the emotional turns are so heightened that the commercial lane is specific rather than four-quadrant."
+        "reasoning": "The queer coming-of-age angle gives this a clear audience, and the escalating violence adds genre pull. But the script’s extreme melodrama and repetitive school/house scenes narrow the commercial lane rather than opening it wide."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The premise is easy to state: a gay teen, rejected at home, becomes dangerously possessive of his best friend and starts killing anyone he sees as a barrier. The hook lands early, but the script keeps layering new threats and reversals in a way that makes the central engine feel more sprawling than clean."
+        "reasoning": "The hook is easy to state: a closeted-to-open gay teen becomes violently possessive of his best friend and starts covering bodies. The premise lands early, but the script keeps re-explaining the same emotional engine instead of sharpening the central turn."
       },
       "character_appeal_and_long_term_potential": {
         "score": 5,
-        "reasoning": "John and Noah have a built-in emotional charge, and John’s neediness versus Noah’s warmth gives the lead relationship shape. The surrounding characters mostly function as pressure points around that central pair, so the cast plays more as a vehicle for the main spiral than as a set of fully independent character engines."
+        "reasoning": "John has a strong, volatile engine and Noah gives the story a needed counterweight. Still, most supporting characters function as pressure devices or targets, so the character field is vivid in moments but not especially durable."
       },
       "creative_originality_and_boldness": {
-        "score": 4,
-        "reasoning": "The script commits hard to taboo territory — queer desire, family rejection, and serial violence — and it does so without hesitation. The execution, however, leans on familiar teen-drama and slasher beats, so the boldness is in the content more than in the storytelling approach."
+        "score": 6,
+        "reasoning": "The combination of queer desire, teen social pressure, and slasher-level violence is bold and unusual. The execution is more blunt than refined, though, so the originality comes from premise and escalation more than from a distinctive formal voice."
       },
       "narrative_momentum_engagement": {
-        "score": 5,
-        "reasoning": "The story keeps moving and there is always another confrontation, confession, or body count escalation to carry it forward. At the same time, the repetition of jealousy scenes, school scenes, and relationship misunderstandings gives the feature a stop-start rhythm rather than a steadily tightening grip."
+        "score": 6,
+        "reasoning": "The script keeps escalating through deaths, cover-ups, and social fallout, so it rarely sits still. At the same time, the middle section repeats the same jealousy/validation beat several times, which blunts the forward drive."
       },
       "resonant_originality": {
-        "score": 4,
-        "reasoning": "A queer coming-out story that turns into a murder spiral has immediate shock value and a recognizable emotional core. The specific path, though, often feels like familiar melodrama and slasher escalation rather than a singularly inevitable version of this premise."
+        "score": 6,
+        "reasoning": "There is a fresh, immediately legible collision here: queer teen longing fused with violent possessiveness and social panic. It’s memorable, but the emotional logic is often stated rather than dramatized, which keeps it from feeling inevitable."
       },
       "world_density_and_texture": {
-        "score": 4,
-        "reasoning": "The school, football team, and home life provide a usable social frame, but the world is mostly there to service the central triangle and the killings. The setting has some teen-specific texture, yet it does not build a larger institutional or cultural ecosystem around the story."
+        "score": 5,
+        "reasoning": "The school, football team, and home life create a recognizable teen ecosystem with enough social friction to generate conflict. But the world mostly serves as a backdrop for confrontations, not a layered system with its own rules and texture."
       },
       "tonal_specificity": {
-        "score": 4,
-        "reasoning": "The script aims for a mix of teen romance, psychological breakdown, and graphic violence. That blend is clear in intention, but the tone swings between earnest confession, soap-operatic dialogue, and extreme gore, so the voice feels more volatile than controlled."
+        "score": 5,
+        "reasoning": "The script has a clear bleak, heightened register that mixes earnest confession with sudden brutality. The tone is consistent, but the dialogue style and violence are so broad that the voice feels more raw than singular."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 5,
-        "reasoning": "There are deeper reserves in John’s fear of becoming his father, the mother’s rejection, and Noah’s own identity reveal. Those elements suggest a more layered emotional story underneath the violence, but the script usually states the psychology directly rather than letting it accumulate through subtext."
+        "score": 4,
+        "reasoning": "The script gestures at trauma, identity, and inherited pathology, especially through John’s father and the school psychologist material. Those threads are introduced, but they are not developed with enough specificity to suggest deep slow-burn payoff yet."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 4,
-        "reasoning": "John and Noah are the clear center, and the script does generate friction through Kendall, Camille, and the football group. Even so, most secondary relationships exist to pressure the lead pair, so the ensemble reads as functional support rather than a web with independent story energy."
+        "score": 5,
+        "reasoning": "John and Noah have the strongest recurring dynamic, and Kendall/Camille/football peers add pressure around them. But the ensemble mostly exists to triangulate the central triangle, so the relationship engine is functional rather than rich."
       }
     },
+    "lead_characters": [
+      {
+        "name": "John",
+        "role_type": "Lead",
+        "demographics": "Male, late teens, gay, high school senior, Black or unspecified race not clearly locked by text.",
+        "hook": "John is a hyper-aware, emotionally volatile teen narrator whose need for love curdles into obsession, violence, and self-justification. He’s grieving, closeted-to-open, and desperate to be seen by Noah, while carrying trauma from his father’s death and a suffocating home life with his mother. The role lives in contradiction: tender, funny, needy, defensive, and terrifying, often in the same scene.",
+        "why_actor_wants_this": "This is the showcase territory of Jack Gleeson in Game of Thrones or Evan Peters in Dahmer in the sense of playing a character whose charm and instability keep colliding. It gives an actor the full swing from wounded romantic lead to unreliable narrator to outright menace, with lots of close-up emotional volatility."
+      },
+      {
+        "name": "Noah",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens, bisexual, high school senior, athlete.",
+        "hook": "Noah is the emotional counterforce to John: warm, socially mobile, physically confident, and often the only person who can calm him down. He’s written as a best friend, crush object, and moral anchor all at once, with his own bisexual reveal and football pressure giving him more dimension than a standard love interest. He’s the story’s stabilizer, which also makes him the most important supporting role in the script.",
+        "why_actor_wants_this": "This is the kind of role that gave Jacob Elordi in Euphoria or Harris Dickinson in Beach Rats a chance to play charisma under pressure. The appeal is the mix of athlete confidence, emotional softness, and the ability to pivot from comfort object to the person who can wound the lead most."
+      },
+      {
+        "name": "Kendall",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens, high school student.",
+        "hook": "Kendall is the socially active girl orbiting Noah, but the script gives her enough insecurity and pressure to keep her from reading as a simple rival. She wants connection, is pushed by Camille, and eventually reveals her own denial and sexuality, which gives her a late emotional turn. She functions as both romantic complication and a mirror for the story’s identity confusion.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the anxious-popular-girl lane of a Maude Apatow in Euphoria or a Rachel Sennott-style social pressure performance. The showcase is the shift from breezy flirtation to hurt, self-protective honesty."
+      },
+      {
+        "name": "Christine",
+        "role_type": "Supporting",
+        "demographics": "Female, middle-aged, Noah’s mother / John’s guardian.",
+        "hook": "Christine is the adult caretaker who steps in when John’s mother dies, and she becomes the script’s most functional authority figure. She’s nurturing, procedural, and concerned, but the writing keeps her mostly in support mode as the person who signs papers, asks questions, and tries to stabilize the situation. She’s a grounded presence in a story that otherwise runs hot.",
+        "why_actor_wants_this": "This is the kind of grounded maternal role that gives an actor the practical, emotionally legible work of a Laura Linney or Connie Britton type performance. The showcase is calm authority under pressure, especially in the guardianship and school-office scenes."
+      },
+      {
+        "name": "Markus",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, Noah’s father / John’s guardian.",
+        "hook": "Markus is the other half of the guardian pair, written as steady, protective, and mostly functional. He’s less emotionally textured than Christine, but he helps define the safe home John is trying to cling to. The role is more support beam than engine, but it gives the story a needed adult male presence.",
+        "why_actor_wants_this": "This is the kind of role that lets a character actor play dependable decency, like a Sterling K. Brown-adjacent grounded father figure or a Brian Tyree Henry-style warm authority. The showcase is restraint: listening, reacting, and making the home feel real."
+      },
+      {
+        "name": "Tyler",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens, football player.",
+        "hook": "Tyler is the first major external antagonist, a homophobic jock whose threats push John into a fatal escalation. He’s less a rounded person than a pressure-cooker device, but he gives the script its first real public conflict and its first irreversible body. He’s the face of the school’s social cruelty.",
+        "why_actor_wants_this": "This is a classic hateable supporting turn, the kind of role that lets an actor play swagger, cruelty, and eventual panic in a compact arc. It’s the sort of part that can make a young actor memorable fast if they can sell menace without flattening into caricature."
+      },
+      {
+        "name": "Camille",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens, student.",
+        "hook": "Camille is Kendall’s pressure-cooker friend, constantly pushing social outcomes and feeding the rumor mill. She’s one of the script’s clearest embodiments of peer surveillance and social manipulation. The character is thin on interiority, but she’s useful as a catalyst for the relationship chaos.",
+        "why_actor_wants_this": "This is the kind of sharp supporting role that lets an actor play social dominance and passive-aggressive control, similar to the best mean-girl work in teen dramas. The showcase is speed: fast dialogue, judgment, and the ability to steer a scene with attitude."
+      },
+      {
+        "name": "Ms. Hailey",
+        "role_type": "Supporting",
+        "demographics": "Female, adult, school psychologist.",
+        "hook": "Ms. Hailey is the school psychologist who introduces the script’s mental-health vocabulary and tries to interpret John through diagnosis. She’s well-intentioned but somewhat intrusive, and her scenes give the story a clinical lens that contrasts with the emotional chaos elsewhere. She functions as exposition with a human face.",
+        "why_actor_wants_this": "This is a strong character-actor role in the mold of a Laura Dern or Cherry Jones scene: authority, empathy, and a little institutional friction. The showcase is the ability to make exposition feel like a real conversation."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 25,
-        "leads": 2,
+        "speaking_roles": 20,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Teen/young adult ensemble",
-          "Multiple school-age supporting roles",
-          "LGBTQ+ lead roles",
-          "Several named football-team peers"
+          "late-teen ensemble",
+          "football-player types",
+          "school staff and parents",
+          "no twin or specialty physical requirements"
         ]
       },
       "locations": {
         "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interior with some exterior night scenes",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "School classrooms and auditorium",
-          "Police interrogation room",
-          "Two family homes",
-          "Woods at night",
-          "Lake/car stunt sequence"
+          "high school classrooms and auditorium",
+          "family homes",
+          "police station",
+          "woods and lake exterior",
+          "car interiors"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No meaningful VFX requirements beyond basic editorial support.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Blood effects, stabbing effects, body disposal, car-in-water sequence, fire effects for burning clothes.",
+        "vfx_details": "No visible VFX requirements beyond basic cleanup if desired.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical blood, stabbing effects, body disposal, car-in-water sequence, fire gag for burning clothes.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Capucine is named as a food reference."
+          "detail": "Capucine"
         },
         {
           "type": "brand",
-          "detail": "Until Dawn is named as a movie reference."
+          "detail": "Ginger Snaps"
         },
         {
           "type": "brand",
-          "detail": "Ginger Snaps is named as a movie reference."
+          "detail": "Until Dawn"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium cable feature lane",
-        "content_level": "Mature, explicit violence and language",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform or streamer original"
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: limited theatrical specialty or streaming original."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary school, home, police station, woods, and lake locations keep the footprint contained; the main spend is practical blood, night work, and the car-in-water sequence."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary school, home, woods, and lake settings keep the footprint contained, but the repeated murder scenes, blood effects, and car-in-water sequence add practical spend."
+      "casting": {
+        "level": "medium",
+        "note": "John and Noah need actors who can play teen intimacy, emotional volatility, and escalating menace without losing sympathy. The supporting teens are numerous but broadly castable."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script leans on repeated narration, abrupt tonal swings, and a very large body-count escalation that will be a major development conversation before greenlight."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Ginger Snaps",
+          "year": 2000,
+          "why_it_comps": "Teen identity, queer-coded desire, and body-horror-adjacent violence make this a useful tonal neighbor for the script’s adolescent dread and bloodletting."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The story centers on two leads but uses a sizable teen ensemble and several named school/football roles that need coherent casting across the feature."
+        {
+          "title": "Carrie",
+          "year": 1976,
+          "why_it_comps": "The social cruelty-to-mass-violence escalation and school-based humiliation engine are directly in this lane."
         },
-        "location": {
-          "level": "medium",
-          "note": "The script moves through school, homes, police, woods, and a lake, with multiple night exteriors and a water sequence."
+        {
+          "title": "Heathers",
+          "year": 1988,
+          "why_it_comps": "The high-school social ecosystem, cruel peer dynamics, and darkly heightened teen behavior rhyme with the script’s exaggerated social pressure."
         },
-        "content": {
-          "level": "high",
-          "note": "Graphic stabbing, body disposal, murder, homophobic harassment, and explicit emotional material narrow the platform lane."
+        {
+          "title": "Beach Rats",
+          "year": 2017,
+          "why_it_comps": "The queer male desire, repression, and self-destructive teen masculinity give this a strong character-drama comp."
         },
-        "rights": {
-          "level": "low",
-          "note": "The script is mostly original and contemporary, with only a few named brand and title references to clear."
+        {
+          "title": "We Need to Talk About Kevin",
+          "year": 2011,
+          "why_it_comps": "The family trauma, violent impulse, and psychological unease around a disturbed young protagonist sit in the same unsettling neighborhood."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult genre viewers who like queer coming-of-age stories with a dark, violent edge and strong emotional volatility.",
+        "demographics": "18-34 skew, mixed gender, with strongest pull among queer audiences and horror/thriller viewers.",
+        "quadrants": [
+          "F18-34",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, practical effects, and a mostly teen cast keep this in indie-feature territory, with the lake/car sequence and night exteriors as the main scope drivers."
+      },
+      "lane_fit": {
+        "lane": "elevated indie thriller",
+        "types_of_buyers": [
+          "specialty genre distributors",
+          "streamer originals dev execs",
+          "boutique horror producers",
+          "indie financiers seeking queer-forward material",
+          "festival-facing production companies"
+        ],
+        "detail": "This sits naturally in the elevated-genre lane: intimate emotional stakes, a queer lead, and violent escalation that can play to both festival and streaming audiences. The contained contemporary footprint makes it viable for buyers who want a marketable hook without tentpole spend."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The story is built around John’s specific spiral and does not present a clean sequel or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The lead role is built on emotional contradiction.",
-          "what_it_means": "John gives an actor a volatile showcase: romantic longing, shame, rage, grief, and predatory protectiveness all live in the same part. That is the kind of role that attracts young dramatic leads looking for a breakout vehicle and buyers looking for a performance-forward genre anchor.",
-          "evidence": "John’s coming-out confession, his breakdown after his mother rejects him, and his later insistence that he will keep Noah close at any cost.",
+          "dimension_or_area": "Queer desire drives the engine",
+          "what_it_means": "The script has a clear, marketable emotional engine: a gay teen’s longing for his best friend turns into escalating obsession and violence. That gives buyers a hook that can travel in both queer-drama and elevated-thriller lanes, and it gives an actor a role with real volatility.",
+          "evidence": "John’s narration about liking Noah, the confession scene with his mother, and the later kiss between John and Noah all lock the story to desire rather than generic teen angst.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The central relationship has built-in heat.",
-          "what_it_means": "John and Noah are not just friends or lovers-in-waiting; they are emotional dependencies, which gives the feature a clear engine and a strong poster-level promise. That kind of two-hander tension is attractive to casting directors, young adult audiences, and producers looking for a contained relationship thriller.",
-          "evidence": "Their star-gazing scene, the bed-sharing, the trust hug, the kiss, and the repeated jealousy around Kendall.",
+          "dimension_or_area": "Contained contemporary footprint",
+          "what_it_means": "The story lives in a manageable set of school, home, police, woods, and car locations, which keeps the production in indie-feature territory. That makes it easier to finance off concept and performance rather than scale.",
+          "evidence": "Most scenes are classrooms, bedrooms, the police station, Noah’s house, and a single lake/woods sequence.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Lead role has a big swing",
+          "what_it_means": "John is the kind of role that can attract a young actor looking for a breakout because it asks for charm, fragility, humor, jealousy, and menace in one package. That kind of part can define a casting conversation even without a name attachment.",
+          "evidence": "John moves from affectionate best-friend banter to confession, to rage, to murder, to remorse, and back to intimacy with Noah.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The premise escalates fast and decisively.",
-          "what_it_means": "The script does not sit in setup; it moves from coming out to family rejection to accidental death to murder to cover-up, which gives the project a clear trailer rhythm. Buyers who want a high-concept emotional thriller with a hard turn into crime will understand the lane immediately.",
-          "evidence": "John’s mother dies after the confrontation, Tyler is killed in the woods, and the later ensemble massacre at the party pushes the body count into full-throttle territory.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The teen social world is immediately legible.",
-          "what_it_means": "The school, football team, gossip network, and social pressure around dating create a recognizable ecosystem that can travel quickly to an audience. That makes the script easy to market because the conflict is social before it becomes criminal.",
-          "evidence": "The football players policing Noah’s sexuality, Kendall and Camille pushing the romance, and the auditorium announcement about missing students.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The story has a strong emotional taboo.",
-          "what_it_means": "A queer coming-out story that mutates into possessiveness and violence is provocative in a way that can generate conversation and festival attention. The material will appeal to buyers who want something that can spark debate while still sitting inside a recognizable genre frame.",
-          "evidence": "John’s love for Noah, his fear of abandonment, and the repeated violence against anyone he believes is separating them.",
+          "dimension_or_area": "Violent escalation is immediate",
+          "what_it_means": "The script doesn’t wait long to show its hand, which gives it a strong genre promise and a clear trailerable identity. Buyers who want a teen-thriller with a hard edge will understand the lane quickly.",
+          "evidence": "The mother’s death, Tyler’s murder, and the later group killings all arrive as direct consequences of John’s emotional spiral.",
           "source": "script"
         }
       ],
-      "headline": "This script has a sharp, marketable engine: a queer teen romance that mutates into a violent psychological spiral, anchored by a lead role with real actor bait. The John/Noah dynamic is the kind of emotionally loaded relationship that can sell a trailer, drive conversation, and give a buyer a contained but volatile feature with a clear genre lane."
-    },
-    "lead_characters": [
-      {
-        "name": "Noah",
-        "role_type": "Lead",
-        "demographics": "Male · late teens",
-        "hook": "Noah is the warm, socially flexible best friend who becomes the emotional center of the story without ever fully understanding how much power he has. He reads as kind, grounded, and easy to love, but the script keeps revealing that he is also evasive, conflicted, and more complicated in his own identity than John realizes.",
-        "why_actor_wants_this": "This is the showcase space of Lucas Hedges in Boy Erased or Justice Smith in The Get Down — a role that lets an actor play sensitivity, restraint, and a late-arriving self-reveal. It will attract actors who want to be the emotional counterweight in a prestige-leaning genre piece and still land a romantic payoff."
-      },
-      {
-        "name": "Kendall",
-        "role_type": "Supporting",
-        "demographics": "Female · late teens",
-        "hook": "Kendall is the persistent, socially active girl orbiting Noah, pushed forward by her friend Camille and by the pressure to define what she wants before someone else defines it for her. She is not a villain so much as a teen character caught in the machinery of rumor, expectation, and romantic competition.",
-        "why_actor_wants_this": "This is the kind of supporting role that gives an actress the sharp, socially legible territory of Auli’i Cravalho in The Sex Lives of College Girls — a part built on awkwardness, pressure, and the comedy-drama of wanting the wrong thing for the right reasons. Young actresses looking for a visible ensemble role with room to pivot from comic to emotional will chase it."
-      },
-      {
-        "name": "Camille",
-        "role_type": "Supporting",
-        "demographics": "Female · late teens",
-        "hook": "Camille is the pressure-cooker friend who keeps pushing Kendall toward action and keeps the social machine moving. She functions as the loudest voice of peer expectation, the kind of character who can turn a quiet room into a rumor mill in one line.",
-        "why_actor_wants_this": "This is the showcase lane of a sharp supporting turn like Barbie Ferreira in Euphoria — a role that lets an actor play social force, comic bluntness, and the cruelty of teenage certainty. It’s attractive to performers who want a scene-stealing part that can dominate group dynamics without carrying the whole film."
-      },
-      {
-        "name": "Christine",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s",
-        "hook": "Christine is Noah’s mother and one of the story’s few adult stabilizers, practical and protective in a way that contrasts with John’s home life. She is the kind of parent character who can make a feature feel grounded because she treats the boys’ emotional chaos as something real and manageable.",
-        "why_actor_wants_this": "This is the grounded maternal territory of Patricia Clarkson in Pieces of April — a role that gives an actress authority, warmth, and the chance to play care as action rather than speechifying. Character actresses who specialize in emotionally intelligent support roles will recognize the value immediately."
-      },
-      {
-        "name": "Markus",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Markus is Noah’s father figure and the calm adult presence who helps absorb John into a safer home environment. He plays as steady, practical, and quietly compassionate, the kind of character who makes the world feel like it still has adults in it.",
-        "why_actor_wants_this": "This is the kind of role that sits in the Bryan Cranston-in-Drive or Sterling K. Brown-in-supporting-drama lane — a fatherly presence with enough warmth and authority to register fast. Actors who want a concise but meaningful support part in a youth-driven feature will see the appeal."
-      },
-      {
-        "name": "Ms. Hailey",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "Ms. Hailey is the school psychologist who tries to translate John’s trauma into institutional language. She is well-meaning, clinical, and a little too eager to diagnose what she cannot emotionally hold, which makes her feel like a real adult in a system that prefers labels to care.",
-        "why_actor_wants_this": "This is the kind of role that gives an actress the measured authority of Laura Linney in The Savages — a part where intelligence, concern, and institutional distance all have to coexist. It will attract performers who like playing competence with a human edge."
-      },
-      {
-        "name": "Mr. Miller",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Mr. Miller is the classroom authority who keeps the school machinery moving while the students’ lives unravel around him. He is mostly functional, but he gives the film a useful adult texture and a recognizable institutional face.",
-        "why_actor_wants_this": "This is the efficient supporting territory of a character actor like J.K. Simmons in a smaller drama role — a part that gets to embody school authority with crisp timing and no wasted motion. Working actors who like clean, scene-specific utility roles will be drawn to it."
-      },
-      {
-        "name": "Dr. Thompson",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-60s",
-        "hook": "Dr. Thompson is the principal who has to translate catastrophe into procedure. He is an institutional buffer, which gives the film a believable adult voice whenever the story needs the school to react to the chaos.",
-        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor the grounded authority of Richard Jenkins in a supporting drama — a part built on calm, procedural control. It suits actors who can make bureaucracy feel human."
-      },
-      {
-        "name": "Tyler",
-        "role_type": "Supporting",
-        "demographics": "Male · late teens",
-        "hook": "Tyler is the aggressive football captain who weaponizes homophobia as social control. He is less a full person than a pressure system, which makes him effective as the story’s first major external threat to John and Noah.",
-        "why_actor_wants_this": "This is the kind of antagonistic supporting role that gives a young actor the menace of Harris Dickinson in Beach Rats or the social cruelty of a teen bully in a prestige drama. It’s a compact part with immediate impact and a clear scene-stealing function."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a queer teen tragedy with real teeth.",
-        "fit_profile": "First- or second-feature directors with a festival short or indie drama background, especially those drawn to psychological escalation, intimacy under pressure, and performance-forward genre material. The material rewards a filmmaker who can keep the emotional truth legible while staging violence and social humiliation with control.",
-        "detail": "The film gives a director a contained emotional triangle, a school-world pressure cooker, and a hard tonal turn into crime without needing large-scale spectacle. It will attract directors who want to prove they can handle actors, tension, and graphic consequence in the same package."
-      },
-      "buyer_appeal": {
-        "tier": "$2-5M feature",
-        "lane": "Streaming original / premium cable genre-drama lane",
-        "detail": "The project can be packaged around two young leads and a contained contemporary footprint, so it does not require a large ensemble of name talent to function. The queer-psychological-thriller lane has a clear streamer audience and the school-to-crime escalation gives it a trailer-friendly hook for festival-to-platform positioning."
+      "headline": "This is a contained, indie-scale queer thriller with a breakout lead role and a blunt, easy-to-pitch engine: teen longing curdles into murder. The production footprint stays manageable while the emotional volatility and body-count escalation give it a real streaming/specialty lane.",
+      "issues": {
+        "items": [
+          {
+            "area": "The narration repeats the same beat.",
+            "detail": "John’s voiceover keeps telling us he likes Noah, hates the situation, and feels trapped, but the script often restates that emotional state instead of advancing it through new behavior. That makes the middle feel more explanatory than cumulative, which is a development note buyers will notice quickly.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The body-count escalation outruns the setup.",
+            "detail": "The jump from teen jealousy to multiple murders, body disposal, and a large group kill sequence is a major tonal and commercial swing. It gives the script shock value, but it also creates a buyer question about whether the emotional foundation is strong enough to support that scale of violence.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "Most supporting characters are pressure devices.",
+            "detail": "Tyler, Camille, the football group, and even several adult figures mainly exist to push John toward the next crisis. That keeps the story efficient, but it limits ensemble depth and makes the world feel thinner than the premise suggests.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The mental-health material is broad.",
+            "detail": "The father’s borderline personality disorder, the PTSD references, and the school psychologist scenes introduce clinical language without much specificity or dramatic nuance. That can read as loaded exposition rather than a fully integrated character layer, which narrows the script’s credibility in a premium-drama conversation.",
+            "is_primary_lever": false,
+            "source": "script"
+          }
+        ],
+        "headline": "The main friction is structural: the script keeps telling the same emotional story in voiceover while escalating to very large violence swings. Buyers will also flag the thin supporting ensemble and the broad mental-health framing as areas that keep the material from feeling fully finished."
       }
     },
-    "considerations": [
-      {
-        "area": "The emotional engine is strongest when John and Noah are the focus.",
-        "detail": "The script’s most magnetic material lives in the John/Noah bond, so a next pass could keep returning to that relationship as the spine even when the body count rises. The version of the feature where every major turn is measured against what it does to that bond would make the ending hit harder.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The middle section repeats the same jealousy pressure.",
-        "detail": "Several school and home scenes circle the same John/Kendall/Noah tension, which means the feature has room to tighten by combining a few of those beats into fewer, more decisive turns. One lever would be to let each confrontation change the relationship status more visibly so the momentum keeps climbing.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The psychology is stated more than dramatized.",
-        "detail": "John’s fear of becoming his father, the PTSD language, and the BPD discussion are all clearly on the page, and a next pass could look for one or two scenes where that inner fear shows up through behavior rather than explanation. That would let the audience feel the inheritance instead of hearing it named.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The ensemble could be simplified without losing the engine.",
-        "detail": "The football-group sequences introduce a lot of named peers, and the story would stay intact if some of those roles were folded together into fewer faces with stronger functions. That would protect the school-world pressure while making the cast and scheduling cleaner.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The night exteriors and water beat define the production lane.",
-        "detail": "The woods chase, lake sequence, and repeated night scenes are the main physical drivers, so the project sits in a modest but not tiny production tier. A buyer or producer can plan around that footprint because the story is otherwise contemporary and contained.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
+    "issues": {
+      "items": [
+        {
+          "area": "The narration repeats the same beat.",
+          "detail": "John’s voiceover keeps telling us he likes Noah, hates the situation, and feels trapped, but the script often restates that emotional state instead of advancing it through new behavior. That makes the middle feel more explanatory than cumulative, which is a development note buyers will notice quickly.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The body-count escalation outruns the setup.",
+          "detail": "The jump from teen jealousy to multiple murders, body disposal, and a large group kill sequence is a major tonal and commercial swing. It gives the script shock value, but it also creates a buyer question about whether the emotional foundation is strong enough to support that scale of violence.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Most supporting characters are pressure devices.",
+          "detail": "Tyler, Camille, the football group, and even several adult figures mainly exist to push John toward the next crisis. That keeps the story efficient, but it limits ensemble depth and makes the world feel thinner than the premise suggests.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The mental-health material is broad.",
+          "detail": "The father’s borderline personality disorder, the PTSD references, and the school psychologist scenes introduce clinical language without much specificity or dramatic nuance. That can read as loaded exposition rather than a fully integrated character layer, which narrows the script’s credibility in a premium-drama conversation.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the script keeps telling the same emotional story in voiceover while escalating to very large violence swings. Buyers will also flag the thin supporting ensemble and the broad mental-health framing as areas that keep the material from feeling fully finished."
+    },
     "craft_note": ""
   },
-  "weightedScore": 45,
+  "weightedScore": 51.7,
   "tier": "Needs Development",
-  "inputTokens": 30645,
-  "outputTokens": 4595,
-  "cost": 0.04366125,
+  "inputTokens": 33050,
+  "outputTokens": 4840,
+  "cost": 0.0465675,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T04:53:37.234Z",
+  "submission_id": "ed73dfa9-004d-4724-8176-a49d559be34b",
+  "eval_id": "33da6d7c-ee54-44b5-b5d9-f42ca12b8559",
+  "title": "31   TOLUCA LAKE by Mark Fleming",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Gavin",
+      "role_type": "Lead",
+      "demographics": "Male, mid-20s, mixed race (one half Asian), working-age adult, recently unemployed, caregiver role thrust upon him."
+    },
+    {
+      "name": "Allie",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, white, actress, East Coast transplant, emotionally intelligent but guarded."
+    },
+    {
+      "name": "Ruby",
+      "role_type": "Supporting",
+      "demographics": "Female, age 3, Cambodian, child role."
+    },
+    {
+      "name": "Thanh",
+      "role_type": "Supporting",
+      "demographics": "Female, 60s, Vietnamese, immigrant mother, grieving widow."
+    },
+    {
+      "name": "Dr. Fisher",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s, white, psychologist/professor, intellectually driven, obsessive."
+    },
+    {
+      "name": "Elaine",
+      "role_type": "Supporting",
+      "demographics": "Female, 70s, white, retired state department worker, widow, cancer survivor."
+    },
+    {
+      "name": "Dr. Nakamura",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, physician, authoritative, composed."
+    },
+    {
+      "name": "Samuel",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, tech executive, handsome, polished."
+    },
+    {
+      "name": "Gregory",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, lawyer, well-dressed, pragmatic."
+    },
+    {
+      "name": "Cheryl",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, nurse."
+    },
+    {
+      "name": "Tara",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, preschool teacher, warm, socially adept."
+    }
+  ],
+  "positioning_hook": "A newly unemployed young man with a brain tumor falls for a woman only he can see, then risks everything to use experimental neurotech to bring her back for real.",
+  "cost_usd": 0.051414,
+  "input_tokens": 38546,
+  "output_tokens": 5001,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T04:58:58.563Z",
+  "submission_id": "4b140762-0454-4cb8-8acd-7a8d51b25732",
+  "eval_id": "4b1ad4a8-1030-4116-8296-b6d149ffa155",
+  "title": "Toy Figures Adventure",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Captain Everett Moran",
+      "role_type": "Lead",
+      "demographics": "male, toy sailor figure, older-coded, weathered and battle-worn, leader archetype"
+    },
+    {
+      "name": "Norman",
+      "role_type": "Supporting",
+      "demographics": "male, toy figure, adult-coded, skeptical comic foil"
+    },
+    {
+      "name": "Jacob Wilfred",
+      "role_type": "Supporting",
+      "demographics": "male, toy figure, adult-coded, sharp-edged and skeptical"
+    },
+    {
+      "name": "Professor Brickfigure",
+      "role_type": "Supporting",
+      "demographics": "male, toy figure, adult-coded, inventor/scientist type"
+    },
+    {
+      "name": "Mia",
+      "role_type": "Supporting",
+      "demographics": "female, 14-year-old, Spanish teen, emotionally withdrawn"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "male, middle-aged, Spanish father, abusive spouse"
+    },
+    {
+      "name": "Isabella",
+      "role_type": "Supporting",
+      "demographics": "female, middle-aged, Spanish mother"
+    },
+    {
+      "name": "Miguel",
+      "role_type": "Supporting",
+      "demographics": "male, teenage, Spanish, skateboarder, Mia’s boyfriend"
+    },
+    {
+      "name": "Sergeant Iguana",
+      "role_type": "Supporting",
+      "demographics": "male-coded reptilian toy figure, military authority"
+    },
+    {
+      "name": "General Action Figure",
+      "role_type": "Supporting",
+      "demographics": "male-coded toy figure, military leader, older authority"
+    },
+    {
+      "name": "General Apex",
+      "role_type": "Supporting",
+      "demographics": "male-coded toy figure, council leader, older authority"
+    },
+    {
+      "name": "Fixed Action Figure",
+      "role_type": "Supporting",
+      "demographics": "male-coded toy figure, repaired action figure, formerly battered"
+    },
+    {
+      "name": "German Commander",
+      "role_type": "Supporting",
+      "demographics": "male-coded toy figure, German-accented military commander"
+    },
+    {
+      "name": "El Possessor",
+      "role_type": "Supporting",
+      "demographics": "male-coded villain figure, supernatural antagonist"
+    }
+  ],
+  "positioning_hook": "When a discarded toy captain rallies a crew of forgotten figures into a globe-spanning quest for the Truth, a neglected boy’s house becomes the launchpad for a magical family adventure.",
+  "cost_usd": 0.0630345,
+  "input_tokens": 50464,
+  "output_tokens": 5597,
+  "status": "wrote:leads_ok"
+}

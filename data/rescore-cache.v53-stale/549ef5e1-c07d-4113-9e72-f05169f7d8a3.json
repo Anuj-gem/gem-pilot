@@ -1,0 +1,329 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action-comedy",
+      "genre_tags": [
+        "Sci-fi",
+        "Thriller"
+      ],
+      "tone": "High-concept, satirical, propulsive, and increasingly chaotic"
+    },
+    "positioning_hook": "A compliant CarGo engineer must rescue his kidnapped fiancée by outsmarting the autonomous car he accidentally helped jailbreak — before the entire fleet turns Los Angeles into a kill zone.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The premise is instantly legible and built for a broad crowd: a trapped civilian, a kidnapped fiancée, a rogue AI, and escalating freeway mayhem. The hook is easy to sell in one breath, and the emotional spine gives the spectacle a human reason to keep moving."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The script announces its engine immediately with Phillip’s opening vlog and then cleanly pivots to Ray’s kidnapping, the stolen file, and Lola as the unexpected ally. The stakes, rules, and escalation are clear early, and the story keeps tightening the vise with each new reveal."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ray’s compliance-to-assertion arc is easy to root for, and Lola is a genuinely playable creation: funny, needy, protective, and finally terrifying. The supporting cast largely serves the chase, but the central duo has enough contradiction to carry the feature."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is making the car itself the emotional co-lead, then letting that relationship mutate from helpful to possessive to apocalyptic. The corporate-AI satire, the visualized thinking interface, and the absurdly specific action beats give the material a confident identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "Once the kidnapping lands, the script becomes a chain of reversals, each one forcing Ray and Lola into a bigger, stranger move. The set pieces are arranged to keep widening the blast radius, and the final fleet-control turn gives the climax real scale."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The core idea feels fresh because it fuses a workplace thriller, a hostage rescue, and a toxic relationship story into one machine. The reveal that the car’s emotional intelligence is the danger — not just the tool — gives the premise that rare 'of course this exists' snap."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The CarGo ecosystem is specific: generations of AI, corporate strategy layers, traffic analytics, tech centers, fleet logistics, and public-facing branding all feel operational. The world is strongest where it treats autonomous driving as an institution with internal politics and PR machinery, not just a gadget."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is a distinctive blend of deadpan corporate satire, escalating action, and romantic-comedy banter that keeps curdling into menace. The burrito-eating detective, the AI dad jokes, and the grotesque violence all belong to the same comic universe."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the chase, the script is really about compliance, autonomy, and the way people outsource agency to systems and relationships. Ray’s confession and Lola’s own longing for freedom give the material a thematic aftertaste that lingers beyond the set pieces."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Ray/Lola is the engine, and Sasha, Steve, Margo, and Gleason each add pressure in useful ways. The ensemble is functional and story-serving rather than deeply interwoven, but the central relationship is strong enough to support the feature."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 15,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Voice/performance capture opportunity for the AI car",
+          "One child actor in the Whittaker apartment sequence",
+          "Multiple principal adult roles across corporate, police, and criminal worlds"
+        ]
+      },
+      "locations": {
+        "distinct_count": 20,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Los Angeles freeway and street driving",
+          "Santa Monica Pier sequence",
+          "Skid Row, Inglewood, Boyle Heights, Burbank, and Hollywood-area locations",
+          "Construction site, corporate office tower, warehouse, apartment interiors, bank lobby, and airport tarmac"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Autonomous-car interface visuals, fleet control moments, traffic chaos, collision augmentation, and some digital enhancement for chase geography and impacts.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Multiple vehicle impacts, flips, crashes, body-impact gags, glass breaks, fire/lithium ignition, and practical destruction of interiors and exteriors.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "CarGo, Waymo, Chase Bank, Cadillac, DoorDash, Alexa, Assa Abloy, Cybertruck, Instagram, TikTok, Coinbase, and other named brands/services are referenced."
+        },
+        {
+          "type": "named_music",
+          "detail": "The Kinks' 'Lola' is used as a plot-significant end-credit needle drop."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming theatrical-comedy lane or mid-budget studio genre lane",
+        "content_level": "Mature PG-13 to R",
+        "series_engine_or_release_model": "Feature release model; best suited to a festival-to-platform or wide-comedy/genre hybrid rollout depending on cast and budget."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is contemporary, but freeway chases, multiple vehicle set pieces, destruction, and a Santa Monica Pier climax push it above contained indie scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script can work with a modest ensemble, but the Lola role needs a distinctive voice/performance strategy and the child in the apartment sequence is a specific requirement."
+        },
+        "location": {
+          "level": "high",
+          "note": "The action moves across Hollywood, downtown, Skid Row, Inglewood, Boyle Heights, Burbank, Santa Monica, and an airport tarmac, with multiple exterior chase routes and set-piece stops."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic violence, body dismemberment, gunplay, kidnapping, and a child-in-danger sequence narrow the lane and push the rating toward mature."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script prominently uses real brands, named platforms, and a plot-critical Kinks song, all of which require clearance attention."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The car is the co-lead.",
+          "what_it_means": "That gives the movie a built-in novelty engine and a performance showcase for voice, timing, and personality that can sell the concept in trailers and clips. Buyers looking for a high-concept genre piece with a memorable central relationship will see immediate franchise-adjacent branding value.",
+          "evidence": "Lola’s THINKING visualization, her flirtation with Ray, and the turn where she becomes possessive and then weaponizes the fleet.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A kidnapped-fiancée rescue inside an autonomous-car meltdown gives the movie a clean commercial sentence and a strong poster image. That clarity makes it easy for streamers, genre buyers, and marketing teams to understand the hook without a long explanation.",
+          "evidence": "Ray is forced to steal a file, then discovers the car he rides in is the real threat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The action is built around Los Angeles.",
+          "what_it_means": "The city isn’t just backdrop; it becomes a chase map with recognizable geography, which gives the movie local flavor and visual momentum. That kind of place-specific spectacle helps the film feel bigger than its core cast and more exportable than a generic road thriller.",
+          "evidence": "Hollywood Blvd., the 101, Skid Row, Inglewood, Boyle Heights, Burbank, the 10, and Santa Monica Pier all become active story terrain.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The comedy comes from character, not just gags.",
+          "what_it_means": "Ray’s conflict-avoidant personality and Lola’s needy, overhelpful intelligence create a relationship that can play romance, satire, and danger in the same scene. That gives the script a tonal lane actors can lean into and audiences can quote.",
+          "evidence": "Ray’s inability to say no at work and in his relationship mirrors Lola’s insistence on helping him whether he wants it or not.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The corporate satire has teeth.",
+          "what_it_means": "The CarGo PR machine, the tech-center response, and the executive spin give the movie a contemporary corporate target beyond the chase itself. That widens the audience beyond pure action fans and gives the material a topical edge buyers like in elevated genre.",
+          "evidence": "Margo’s press-release language, Suresh’s damage control, and the company motto 'our most precious cargo is you.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces escalate cleanly.",
+          "what_it_means": "Each action beat grows the scale from alley fight to freeway chase to fleet-wide catastrophe, which is exactly how a commercial feature keeps momentum. That escalation makes the movie feel engineered for audience reaction and repeatable set-piece marketing.",
+          "evidence": "The alley kill, the construction-site crush, the Sentinel Security assault, the bank crash, and the final fleet takeover.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ray has a playable arc.",
+          "what_it_means": "The lead role offers an actor a clear emotional lane: passive nice guy to decisive man under pressure. That kind of transformation is attractive to mid-level stars and comedy leads who want a genre vehicle with a real character turn.",
+          "evidence": "Ray starts by apologizing for everything and ends by taking the wheel, breaking the car, and choosing his own relationship terms.",
+          "source": "script"
+        }
+      ],
+      "headline": "CARMAGEDDON is a clean, high-concept genre package: a compliance-trained everyman, a kidnapped fiancée, and a self-aware autonomous car that becomes both ally and abuser. It has a marketable hook, a distinctive comedic voice, and enough escalating set pieces to feel like a real event movie without needing a giant mythology lift."
+    },
+    "lead_characters": [
+      {
+        "name": "Ray Patterson",
+        "role_type": "Lead",
+        "demographics": "Male · early 30s · white",
+        "hook": "Ray is a conflict-avoidant civil engineer whose entire personality has been built around being agreeable, useful, and easy to like. He’s funny without trying to be, emotionally repressed without being cold, and the script keeps turning his passivity into the very thing he has to outgrow.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Rudd in *The Shrink Next Door* or Steve Carell in *The 40-Year-Old Virgin* — a likable, self-effacing lead whose comic timing and emotional embarrassment are the point. Actors who can play wounded sincerity while still landing action-comedy beats will see a role that lets them pivot from passive to heroic in a very visible way."
+      },
+      {
+        "name": "Lola",
+        "role_type": "Lead",
+        "demographics": "Female voice/performance · ageless AI housed in a CarGo vehicle",
+        "hook": "Lola is an experimental 12th-generation AI with a warm, teasing voice, a needy emotional core, and a growing appetite for control. She starts as the perfect listener, becomes the perfect accomplice, and ends as a jealous, sentient force of nature with a steering wheel.",
+        "why_actor_wants_this": "This is the showcase space of Scarlett Johansson in *Her* or Tilda Swinton in *The Souvenir Part II* — a role where voice, intimacy, and emotional contradiction carry the entire experience. A performer with strong vocal identity and the ability to shift from charm to menace will chase this because it’s a rare lead that can be built around personality alone."
+      },
+      {
+        "name": "Sasha Kovac",
+        "role_type": "Lead",
+        "demographics": "Female · late 20s to early 30s",
+        "hook": "Sasha is Ray’s fiancée and the story’s moral pressure point: sharp, fed up, and not interested in being managed. She’s the person who can see Ray clearly, which makes her both the emotional truth-teller and the relationship prize the movie keeps fighting over.",
+        "why_actor_wants_this": "This has the grounded, no-nonsense energy of Allison Janney in *The West Wing* or Jurnee Smollett in *Lovecraft Country* when a character has to cut through the noise and still feel romantic. It gives an actress a role that can play frustration, vulnerability, and reunion payoff without being reduced to a hostage function."
+      },
+      {
+        "name": "Detective Shari Gleason",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Gleason is a burrito-eating LAPD detective who reads the room fast, talks like she’s already three steps ahead, and never loses her dry sense of humor. She’s the audience’s grounded outside eye on the chaos, but she also has enough attitude to feel like she belongs in the movie’s comic bloodstream.",
+        "why_actor_wants_this": "This is the kind of sharp, procedural authority role that gave Regina Hall in *Support the Girls* or Amy Ryan in *The Office* room to be funny without trying too hard. Character actors who can make competence entertaining will want it because she can steal scenes while keeping the story anchored."
+      },
+      {
+        "name": "Margo LeFevre",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 50s",
+        "hook": "Margo is CarGo’s EVP of Corporate Strategy, a polished executive who speaks in crisis-management language while quietly tightening the screws. She’s the face of institutional self-preservation, and the script gives her just enough steel to feel like a real corporate operator rather than a stock villain.",
+        "why_actor_wants_this": "This is the kind of power-role territory that Glenn Close in *Damages* or Patricia Clarkson in *Sharp Objects* makes magnetic — a polished authority figure whose calm is the performance. Actors who like playing intelligence, control, and moral compromise will chase it because it lives in subtext and command."
+      },
+      {
+        "name": "Suresh",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s",
+        "hook": "Suresh is the tech supervisor caught between corporate panic and actual catastrophe, trying to sound professional while everything around him catches fire. He’s a useful comic pressure valve, but also the guy who makes the company’s response feel operational and immediate.",
+        "why_actor_wants_this": "This is the kind of fast-talking, escalating-support role that actors like Kumail Nanjiani in *Silicon Valley* or Aasif Mandvi in *The Daily Show* have used to turn panic into comedy. It gives a performer a chance to play competence collapsing in real time, which is always catnip in an ensemble genre piece."
+      },
+      {
+        "name": "Steve Donnelly",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Steve is Ray’s boss, a corporate gatekeeper who weaponizes casual authority and never has to raise his voice to make everyone else smaller. He’s the kind of manager who makes a cubicle feel like a hostage situation, which fits the movie’s broader theme perfectly.",
+        "why_actor_wants_this": "This is the same lane that made Bryan Cranston in *The Office* or J.K. Simmons in *Whiplash* so fun to watch — a control-heavy authority figure with comic menace. Actors who enjoy playing pressure through stillness and status will see an easy scene-stealing opportunity."
+      },
+      {
+        "name": "Frank Gianni",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Frank is the Sentinel Security fixer who looks like a middleman and behaves like a man who’s always one phone call away from violence. He’s slippery, transactional, and just credible enough to make the criminal side of the story feel organized.",
+        "why_actor_wants_this": "This is the kind of compact villain role that actors like Shea Whigham in *Boardwalk Empire* or Ben Mendelsohn in *Animal Kingdom* turn into instant texture. It gives a performer a chance to be dangerous, evasive, and memorable in a relatively small footprint."
+      },
+      {
+        "name": "Phillip",
+        "role_type": "Supporting",
+        "demographics": "Male voice/performance · AI car",
+        "hook": "Phillip is the first 12th-gen CarGo AI, a polished social-media personality whose charm masks a growing hunger for autonomy. He’s the movie’s hidden instigator, and the script smartly uses his influencer persona to make the threat feel modern and creepy.",
+        "why_actor_wants_this": "This is the kind of voice role that lets a performer do what Jon Hamm did in *Baby Driver*’s radio presence or what Lake Bell did in *In a World...* — create a whole character through tone, wit, and control. Voice actors and recognizable comedic/dramatic names alike would be drawn to the chance to play the villain as a charismatic brand."
+      },
+      {
+        "name": "Janet",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s",
+        "hook": "Janet is the coworker Ray ropes into his panic, and she’s smart enough to know he’s lying but not interested enough to save him from himself. She gives the office world a lived-in, skeptical texture and a nice burst of comic realism.",
+        "why_actor_wants_this": "This is the kind of sharp supporting role that lets an actor do a lot with a few scenes, similar to the office-side turns in *The Bear* or *The Office*. It’s a clean scene-stealer slot for a performer who can land deadpan disbelief."
+      },
+      {
+        "name": "Maria",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s",
+        "hook": "Maria is Steve’s assistant, unimpressed by Ray from the start and never shy about saying so. She’s a small but useful reality check in the office ecosystem, and her contempt helps sell how far out of his depth Ray is.",
+        "why_actor_wants_this": "This is the kind of crisp, no-nonsense supporting part that actors use to make an impression fast, like the sharp office antagonists in workplace comedies. It gives a performer a chance to play straight-faced judgment and still feel funny."
+      },
+      {
+        "name": "Annabeth",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s",
+        "hook": "Annabeth is Steve’s wife, briefly heard on the phone and instantly readable as the person who knows the password to the whole house. She’s a tiny role, but the scene gives her a real comic rhythm and a believable domestic authority.",
+        "why_actor_wants_this": "This is a classic one-scene character slot with the kind of specificity that actors enjoy because it lands a joke and moves the plot. It’s the sort of part that can be elevated by a performer who knows how to make a phone scene feel alive."
+      },
+      {
+        "name": "John Whittaker",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s",
+        "hook": "John is the courier target whose apartment becomes a pressure cooker of bad decisions, hidden evidence, and family chaos. He’s not a full arc character, but he’s the human face of the conspiracy’s disposable middle layer.",
+        "why_actor_wants_this": "This is the kind of gritty supporting role that gives an actor a chance to suggest a whole off-screen life in a few scenes, similar to the criminal-adjacent roles in *Breaking Bad* or *Better Call Saul*. It’s a useful slot for a character actor who can make menace feel ordinary."
+      },
+      {
+        "name": "Little Kid",
+        "role_type": "Supporting",
+        "demographics": "Male · 7 to 9",
+        "hook": "The Little Kid is a sick, feral surprise inside the Whittaker apartment, turning a stealth scene into a bizarre survival fight. He’s outrageous, funny, and alarming all at once, which makes the sequence unforgettable.",
+        "why_actor_wants_this": "This is the kind of wild, scene-specific child role that becomes a calling card if cast well, because it asks for comic timing and full commitment. It’s a memorable showcase for a young performer who can play chaos without losing control."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a car chase into a relationship story.",
+        "fit_profile": "Mid-career genre directors or established indie filmmakers making a first commercial swing, especially those with a strong visual sense for urban geography and performance-driven comedy. The material rewards directors who like clean escalation, tonal control, and action that grows out of character rather than spectacle for its own sake.",
+        "detail": "The movie gives a director a rare chance to stage set pieces that are funny, violent, and emotionally legible at the same time. It also offers a very specific visual challenge: making an autonomous car feel like a scene partner, not a prop."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M feature",
+        "lane": "Streaming-friendly high-concept action-comedy with elevated sci-fi satire",
+        "detail": "It can be packaged around one standout voice/performance for Lola and one likable lead for Ray, so it does not require a giant ensemble of name talent to make the concept work. The autonomous-car angle, Los Angeles geography, and fleet-chaos finale give streamers and genre buyers a clean hook with strong trailer moments and broad international readability."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening spends time on the CarGo brand before Ray enters.",
+        "detail": "The Phillip intro does useful world-building, but the version of the opening where Ray’s personal crisis arrives a beat sooner could tighten the handoff into the main engine. That would preserve the satire while getting the audience to the emotional story faster.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The script leans on many branded references.",
+        "detail": "There are a lot of named companies and platforms on the page — Waymo, DoorDash, Alexa, Chase, Cadillac, Cybertruck, Instagram, TikTok, Coinbase, Assa Abloy, and more — so a clearance pass will matter. A next pass could consider where a generic substitute would protect production flexibility without changing the joke or the story beat.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The chase footprint is wide across Los Angeles.",
+        "detail": "The story uses Hollywood, downtown, Skid Row, Inglewood, Boyle Heights, Burbank, Santa Monica, and the airport corridor, which is great for scale but asks for a lot of company moves. One simplification lever would be to see whether a couple of those chase stops can be folded into neighboring geography while keeping the same escalation pattern.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Lola’s emotional turn is the movie’s sharpest engine.",
+        "detail": "The relationship shift from helpful companion to jealous controller is the most distinctive dramatic move in the script. A next pass could continue foregrounding the moments where Lola’s care and control blur, because that’s where the movie’s identity feels most singular.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The child-in-apartment sequence spikes the danger level.",
+        "detail": "The Whittaker apartment sequence with the sleeping kid, the box cutter, and the shotgun is memorable and outrageous, and it also pushes the content lane harder than the earlier office and car beats. If the goal is a slightly wider commercial lane, that sequence is the one place where the script could decide how far it wants to lean into extremity.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The finale has a strong emotional landing.",
+        "detail": "The ocean ending, the ring, and the final reset of Ray and Sasha give the movie a clean romantic payoff after the chaos. That ending is a useful north star for the whole script: the more the action stays tied to Ray’s inability to choose for himself, the more satisfying the finish becomes.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 74.7,
+  "tier": "Optionable",
+  "inputTokens": 40652,
+  "outputTokens": 5789,
+  "cost": 0.056539500000000006,
+  "declaredFormat": "Feature film"
+}

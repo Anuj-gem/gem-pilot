@@ -1,0 +1,283 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Absurdist crime comedy",
+      "genre_tags": [
+        "buddy comedy",
+        "surreal satire"
+      ],
+      "tone": "Deadpan, chaotic, heightened, and aggressively offbeat"
+    },
+    "positioning_hook": "A sleep-deprived insurance drone gets dumped, fired, and dragged into a night of weed runs, pool hustles, and escalating chaos with the city’s most unhinged insomniacs.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear comic engine and a built-in audience for oddball crime comedy, especially viewers who like hangout chaos and escalating bad decisions. The appeal is more cult-friendly than four-quadrant, but the insurance-office-to-nightlife collision gives it a clean sell."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The script establishes Dave’s deadened life, the insomnia support group, and the night-spiral premise early, so the viewer understands the lane quickly. The hook is clear, though the story keeps widening into new set pieces rather than locking into one central objective."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Dave’s blank, overcontrolled persona and Mark’s sleepless, impulsive swagger give the movie a workable odd-couple center. The supporting players are vivid in bursts, but most of the character energy is concentrated in Dave, Mark, and Abe."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The insurance-claim stamp bureaucracy, insomnia support group, and blood-same-as-blood speech give the script a strange, specific comic identity. The voice is willing to get weird in a way that feels authored rather than generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The script keeps throwing Dave and Mark into new rooms, new rivals, and new complications, so it rarely sits still. The momentum comes from escalation and surprise more than a single clean objective, which keeps it lively but slightly episodic."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "An insomnia support group that becomes the gateway to a criminal night run is a fresh comic premise with immediate internal logic. The paper-stamp bureaucracy, the blood-cut bonding beat, and the absurd tracking-device chase make the concept feel oddly inevitable once it starts."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The world has a distinct middle-class, rule-bound daytime layer and a nocturnal underworld of bars, warehouses, and improvised communities. It’s textured enough to support the comedy, though the setting functions more as a sequence of comic arenas than a fully layered ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a very specific deadpan-to-chaos register: rigid office monotony, then sudden eruptions of profanity, violence, and surreal camera movement. That tonal mash is recognizable on the page and gives the material its own flavor."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "Beneath the chaos, there’s a real idea about men who feel invisible by day and alive at night, and the insomnia group gives that theme a place to live. The draft mostly plays the surface comic engine, with the deeper emotional layer suggested more than explored."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Dave and Mark have a strong odd-couple rhythm, and Abe, Bert, the cops, and the support-group regulars create a usable comic web. The ensemble is functional and lively, though the movie still lives primarily on the Dave/Mark pairing."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 13,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male-heavy ensemble",
+          "20s-40s adult cast",
+          "One strong deadpan lead and one charismatic comic foil",
+          "Several supporting roles with specific physical/comic presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 11,
+        "interior_exterior_ratio": "Mostly interior with frequent exterior transitions",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Suburban house",
+          "corporate office/cubicle floor",
+          "therapist office",
+          "pub/support-group room",
+          "warehouse/drug location",
+          "pool hall/bar",
+          "bridge",
+          "rave club",
+          "police car/station",
+          "street/night driving coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Drone-style opening, repeated stylized POV/ceiling moves, speed-ramp camera transitions, and a few heightened visual flourishes rather than story-driven VFX.",
+        "stunts_level": "minor",
+        "sfx_needs": "Shotgun prop, drug warehouse panic, bar fight energy, fire aftermath at the pool hall, blood-cut practical effect, and vehicle movement coverage.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Airtag is specifically named as the tracking device."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming comedy feature / indie theatrical comedy lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Best suited to a festival-to-platform or limited theatrical comedy release model."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, mostly practical, and driven by dialogue, performance, and a handful of contained locations."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The movie is built around two lead roles plus a colorful supporting bench of cops, dealers, and bar regulars."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves through roughly a dozen distinct contemporary locations, with several night exteriors and vehicle transitions."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Drug dealing, a shotgun threat, profanity, and bar-fight chaos keep it in mature-comedy territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "The only notable clearance item in the draft is the named Airtag reference."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [],
+      "headline": "This is a weird, playable feature with a real comic engine: a dead-eyed insurance worker gets dumped into an insomnia support group and spends the night ricocheting through weed deals, pool hustles, and escalating chaos with a sleepless criminal sidekick. The script’s deadpan visual style, odd-couple chemistry, and scene-stealing supporting roles give it a clear packageable identity for indie comedy buyers and actors looking for something off-center."
+    },
+    "lead_characters": [
+      {
+        "name": "Dave",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · office worker",
+        "hook": "Dave is a tightly wound, emotionally flattened insurance bureaucrat whose whole identity is built on order, symmetry, and compliance. He speaks in monotone, moves like a man trying not to disturb the air, and only starts to feel alive once his life has already fallen apart.",
+        "why_actor_wants_this": "This is the showcase territory of Bill Murray in Lost in Translation or Ben Stiller in The Secret Life of Walter Mitty — a deadpan interiority role where the comedy comes from repression cracking under pressure. Actors who can play stillness, timing, and slow-burn emotional release will want the chance to turn a blank surface into the movie’s emotional center."
+      },
+      {
+        "name": "Mark",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s · working-class",
+        "hook": "Mark is a sleepless drifter with a gambler’s nerve, a dealer’s confidence, and a social mask that slips the second he’s off-script. He’s funny, volatile, and weirdly philosophical, the kind of guy who can turn a car ride into a manifesto and a knife into a lecture.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective or Jesse Plemons in Game Night — a charismatic loose cannon whose charm and menace live in the same breath. Actors who want to play fast, funny, and slightly dangerous will chase this because it gives them room to dominate scenes without ever becoming one-note."
+      },
+      {
+        "name": "Dianne",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s · suburban wife",
+        "hook": "Dianne is the sharp-edged domestic force in Dave’s life, all sweat, accusation, and sexual betrayal. She reads as the person who has already moved on emotionally while Dave is still trying to understand what happened in the room.",
+        "why_actor_wants_this": "This is the kind of compact, high-impact role that gives an actor a single explosive scene with real bite, similar to the spouse roles in Marriage Story or Revolutionary Road. Character actresses who like to arrive, detonate, and leave a mark will be drawn to it."
+      },
+      {
+        "name": "Charles",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · corporate boss",
+        "hook": "Charles is the perfectly arranged face of corporate indifference, a man who speaks in metrics and treats human beings like misfiled paperwork. He’s not loud; he’s worse than loud, because he’s calm while dismantling Dave’s life.",
+        "why_actor_wants_this": "This is the kind of precision villainy that recalls Bryan Cranston’s corporate menace in Little Miss Sunshine or Michael Shannon’s ice-cold authority in supporting drama roles. Actors who excel at controlled, bureaucratic cruelty will see a sharp, memorable scene-stealing opportunity."
+      },
+      {
+        "name": "Ms. Thump",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-60s · therapist",
+        "hook": "Ms. Thump is a therapist who seems to have one foot in clinical care and one foot in the neighborhood bar scene, which makes her feel lived-in rather than polished. She’s direct, lightly amused, and practical enough to hand Dave a flyer instead of a lecture.",
+        "why_actor_wants_this": "This is the kind of grounded comic-support role that gives an actor the dry authority of Laurie Metcalf in Lady Bird or Catherine O’Hara in a more restrained register. Performers who can make exposition feel like character will want the chance to be the movie’s calm, funny hinge."
+      },
+      {
+        "name": "Dan",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · support-group leader",
+        "hook": "Dan is the friendly facilitator who tries to keep the insomnia group from drifting into total social collapse. He has the energy of a guy who has done this enough times to know the room will always become a little stranger than planned.",
+        "why_actor_wants_this": "This is the kind of ensemble utility role that gives an actor the easy authority of a Paul Rudd-adjacent hangout leader or a restrained Jason Mantzoukas-style comic anchor without needing to steal the movie. It’s a clean role for someone who can keep a room moving and still land a laugh."
+      },
+      {
+        "name": "Stewie",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · anxious insomniac",
+        "hook": "Stewie is one of the support-group regulars, nervous and self-conscious, trying to say the right thing in a room full of strangers. He gives the group a human baseline before the movie starts spiraling into stranger territory.",
+        "why_actor_wants_this": "This is the kind of small but memorable role that lets an actor play awkward sincerity in the vein of a Christopher Mintz-Plasse or a young Michael Cera type of slot. It’s a quick-hit character part with a clear comic rhythm."
+      },
+      {
+        "name": "Mark",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · insomniac gambler",
+        "hook": "Mark is the sleepless regular who treats the night like a second life, drifting between gambling, drinking, and philosophical one-liners. He’s the movie’s most dangerous kind of conversationalist: the guy who sounds casual right before he does something reckless.",
+        "why_actor_wants_this": "This is the showcase territory of a supporting turn like Walton Goggins in a crime-comedy ensemble — a character who can be funny, slippery, and unexpectedly soulful in the same scene. Actors who specialize in scene-stealing volatility will want this because it gives them a memorable night-world presence."
+      },
+      {
+        "name": "Abe",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · dealer",
+        "hook": "Abe is a swaggering dealer with gold chains, grills, and the kind of confidence that makes every room feel like his territory. He’s funny because he’s so sure of himself, and dangerous because that confidence is not an act.",
+        "why_actor_wants_this": "This is the kind of flashy supporting role that gives an actor the kinetic presence of a Lakeith Stanfield or a Benicio del Toro crime-world turn, where style is part of the character’s power. It’s a great slot for someone who can make menace feel cool without flattening the humor."
+      },
+      {
+        "name": "Toby",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · warehouse lieutenant",
+        "hook": "Toby is the practical middleman in Abe’s operation, always moving, always relaying, always trying to keep the machine from breaking apart. He reads like the guy who knows exactly how much chaos he can manage before the night goes sideways.",
+        "why_actor_wants_this": "This is the kind of efficient supporting role that gives an actor the grounded utility of a Michael K. Williams-style operator in a smaller comic-crime setting. It’s a solid part for someone who can make logistics feel alive."
+      },
+      {
+        "name": "Charisma",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · dealer’s girlfriend",
+        "hook": "Charisma is flirtatious, frustrated, and clearly used to being ignored by the man she’s trying to reach. She adds a lived-in domestic edge to the warehouse world and gives the scene a quick jolt of personality.",
+        "why_actor_wants_this": "This is the kind of brief but flavorful role that gives an actor the sharp comic energy of a Natasha Lyonne-style scene pop, even in a small footprint. It’s the sort of part that can become memorable fast if played with attitude and timing."
+      },
+      {
+        "name": "Officer Pete",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · police officer",
+        "hook": "Officer Pete is a procedural cop trying to keep up with a night that keeps outrunning his understanding of it. He’s part authority figure, part bewildered witness, which makes him useful as both pressure and comic reaction.",
+        "why_actor_wants_this": "This is the kind of straight-man cop role that gives an actor the dry utility of a Rob Riggle or a Ben Schwartz-adjacent procedural comic slot. It’s a clean support part for someone who can sell confusion without losing authority."
+      },
+      {
+        "name": "Officer Bob",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · police officer",
+        "hook": "Officer Bob is the more aggressive half of the patrol duo, eager to make sense of the chaos and increasingly convinced he’s one step from a clean arrest. He gives the police thread a sharper comic edge and a little more bite.",
+        "why_actor_wants_this": "This is the kind of cop role that lets an actor play escalating frustration in the vein of a David Harbour or Shea Whigham supporting turn. It’s a scene-forward part with room for exasperated authority."
+      },
+      {
+        "name": "Bert",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s · pool champion",
+        "hook": "Bert is a bitter, nationally ranked pool lifer who has carried the humiliation of an old loss for decades. He’s funny because he’s so committed to his own anger, and memorable because the anger has become his personality.",
+        "why_actor_wants_this": "This is the kind of late-blooming comic menace that gives an actor the showcase of a John Turturro or Richard Jenkins supporting turn — a man whose history is visible in every glare. Character actors who can make resentment hilarious will gravitate to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a stylized hangout comedy with real visual authorship.",
+        "fit_profile": "First- or second-feature directors, or TV directors moving into features, who already lean toward performance-forward comedy, deadpan absurdism, and controlled visual punctuation. This material rewards someone who can stage dialogue, movement, and camera grammar as part of the joke rather than as decoration.",
+        "detail": "The script gives a director room to build a signature through symmetry, POV shifts, and abrupt tonal pivots, while keeping the production footprint manageable. It’s especially attractive to filmmakers who like ensemble chaos but want the movie to feel composed, not sloppy."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Indie comedy / streamer original comedy lane",
+        "detail": "It can be packaged around two strong lead performances and a handful of vivid supporting roles, so it does not require a giant ensemble or heavy effects to sell. The contemporary setting, contained night locations, and cult-friendly premise fit the current appetite for offbeat comedy features that can travel on streaming and festival buzz."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The night-run structure keeps opening new stops.",
+        "detail": "The movie’s energy comes from Dave and Mark moving from support group to warehouse to pool hall to rave cave to bridge, which keeps the comic escalation lively. One lever would be to identify the single most important destination and let the others orbit it more tightly, so the feature feels even more inevitable as it builds.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Dave’s emotional turn is mostly externalized.",
+        "detail": "The script gives Dave a strong deadpan surface and a lot of reactive movement, but his inner shift is still carried mostly by circumstance. A next pass could foreground one scene where he actively chooses the night instead of merely being pulled through it, which would deepen the character engine without changing the comic premise.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The support-group bench can be streamlined.",
+        "detail": "The insomnia meeting introduces several men in quick succession, and the movie then moves on to Mark and the criminal night. The version of the script where one or two of those voices are folded together would protect pace and keep the audience locked on the Dave/Mark dynamic.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The visual style is already a selling point.",
+        "detail": "The drone opening, ceiling POVs, and speed-ramp transitions give the script a distinct look that helps it stand out in the comedy lane. That same style can be protected in production by keeping the camera language focused on a few repeatable signatures rather than expanding into more expensive coverage.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "Airtag should be handled carefully in packaging.",
+        "detail": "The tracking-device gag is clear and funny, but the named brand creates a small clearance decision for production. One simple lever is to keep the function of the device while generalizing the brand in later drafts, which preserves the joke and simplifies approvals.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 62,
+  "tier": "Optionable",
+  "inputTokens": 19119,
+  "outputTokens": 5207,
+  "cost": 0.037770750000000006,
+  "declaredFormat": "Feature film"
+}

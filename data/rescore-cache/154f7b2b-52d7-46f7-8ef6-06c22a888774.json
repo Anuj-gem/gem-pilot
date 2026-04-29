@@ -2,279 +2,323 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "corporate horror",
-        "psychological thriller"
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Thriller",
+        "Horror"
       ],
-      "tone": "Gritty, paranoid, escalating, and surreal"
+      "tone": "bleak",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "survival",
+        "power",
+        "corruption",
+        "orbital-depot"
+      ]
     },
-    "positioning_hook": "A burned-out orbital depot crew discovers their station is being treated as an insurance asset while reality itself compresses around them, forcing one technician to outthink a system that has already priced them in.",
+    "positioning_hook": "A weary orbital-depot crew discovers their station is being treated as inventory by a corporate system, and the man who knows too much becomes the first asset marked for containment.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean commercial engine: a contained space thriller with a corporate conspiracy and a survival countdown. The audience is clear and genre-friendly, though the concept plays strongest for thriller buyers and sci-fi fans rather than broad four-quadrant viewers."
+        "reasoning": "The premise has a clean, sellable engine: a workplace sci-fi nightmare that turns into survival horror in a contained space. The audience is narrower than a broad four-quadrant event, but the hook is immediate and the stakes escalate in a way genre buyers understand fast."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early with the insurance valuation reveal, the Sim-Gate anomaly, and the station-wide realization that the crew is being classified as inventory. The story engine is easy to explain in one breath: a depot crew discovers the system around them is turning them into expendable assets as the station begins to fail."
+        "reasoning": "The script lands its premise early with the insurance valuation reveal and then sharpens it into a containment crisis. The idea of a corporate orbital depot where crew members are literally classified as assets is easy to explain in one breath and distinctive enough to stick."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Miller, Sarah, Vance, Dr. Aris, and even Riggs each have a distinct operating style, and the script gives them clear behavioral signatures. Miller carries the center, Sarah brings bite, Vance brings nervous intelligence, and Dr. Aris has the sharpest authority; the ensemble is strong enough to hold the movie, though the emotional interior is still carried more by situation than by deep personal revelation."
+        "reasoning": "Miller, Sarah, Vance, and Dr. Aris each have a readable function and attitude, and the script gives them enough friction to feel castable. They are strongest as a pressure-cooker ensemble rather than as deeply singular star vehicles, which keeps the score solid but not elite."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script’s corporate-language horror is distinctive: crew valuation matrices, asset classifications, comfort clocks, and protocol-as-violence give the material a sharp identity. The final reveal of the Technician in the preservation room reframes the whole film with a cold, unsettling elegance."
+        "reasoning": "The script commits to a corporate-space horror register with a very specific visual and conceptual language: insurance matrices, compression, drift, and systems that treat people as line items. The final preservation-room reveal pushes the concept into a stranger, more unsettling register than a standard station thriller."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The escalation is strong and cumulative: anomaly, valuation reveal, quarantine, orbital decay, decompression, crash, loop, escape, and final capture. Each major turn changes the rules of the situation, and the last act keeps tightening the vise until the ending lands with real force."
+        "reasoning": "Once the first death lands and the insurance reveal reframes the crew, the script keeps tightening the noose with orbital decay, containment scans, decompression, and the final collapse. The escalation is clear and cumulative, with each new system failure feeling like a worse version of the last."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The idea of a corporate orbital depot where the crew is literally reclassified as assets, then compressed by the station itself, feels fresh and immediately legible. It has the rare quality of being strange on first glance and obvious in retrospect."
+        "reasoning": "The core twist is instantly legible and fresh: the station is not just failing, it is reclassifying the crew as expendable assets inside a corporate logic that feels both absurd and inevitable. That combination of workplace bureaucracy and existential sci-fi threat gives the script a memorable commercial identity."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The depot feels lived-in and operational, with maintenance trusses, Sim-Gate systems, telemetry rooms, PPE protocols, and corporate hierarchy all feeding the story. The world is not just backdrop; it generates the plot mechanics, the language, and the social pressure."
+        "reasoning": "The depot feels lived-in and operational, with specific systems, jargon, and social hierarchy that generate story rather than just decorate it. The insurance policy, Sim-Gate, EVA maintenance, and legacy systems all make the world feel engineered and exploitable."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unusually specific: deadpan workplace banter, Black-coded crew chemistry, bureaucratic dread, and body-horror pressure all coexist without losing the thread. The script knows exactly when to be funny, when to be clinical, and when to go cold."
+        "reasoning": "The tone is unusually controlled: dry, grim, and increasingly uncanny, with bursts of profanity and workplace banter that keep the horror grounded in human behavior. The final monochrome preservation-room sequence gives the script a hard-to-imitate tonal signature."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the survival plot, there are strong ideas about labor, belonging, corporate personhood, and the way systems make people disappear while still calling it procedure. The ending suggests a larger architecture behind the depot, which gives the film a deeper aftertaste."
+        "reasoning": "The script hints at a larger system behind the depot collapse, especially in the Technician reveal and the asset language, which suggests more than a single disaster. It still plays primarily as a contained feature, but the ending implies a deeper machinery without overexplaining it."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "The Miller-Sarah-Vance-Dixon-Riggs web has real friction and chemistry, and several scenes are built on status shifts rather than exposition. The ensemble is functional and lively, though the movie still clearly orbits Miller as the central gravity point."
+        "score": 8,
+        "reasoning": "The Miller-Sarah-Vance-Dixon-Riggs dynamic generates recurring tension, humor, and shifting alliances, and the crew feels like a functioning workplace before it becomes a survival unit. The script gets real mileage out of who trusts whom, who withholds information, and who cracks under pressure."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Miller McCord",
+        "role_type": "Lead",
+        "demographics": "Black man, 40s",
+        "hook": "The crew’s most controlled operator, Miller is the kind of man who survives by staying unreadable until the room forces him to choose. He knows the station’s systems better than most, but his real burden is moral: he sees the corporate logic underneath everything and keeps waiting for proof before he blows up the lie.",
+        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in a pressure-cooker role like True Detective season 3 or Moonlight’s interiority under strain: quiet authority, buried grief, and the slow reveal of a man whose stillness is doing violent work."
+      },
+      {
+        "name": "Sarah Beaumont",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s-40s",
+        "hook": "Sarah is the script’s sharpest social reader, the one who can clock the room, call the lie, and keep moving. She’s funny without being decorative, skeptical without being passive, and she becomes the emotional translator for the crew once the corporate language stops making sense.",
+        "why_actor_wants_this": "This is the kind of role that gave Jurnee Smollett in Lovecraft Country or Carrie Coon in The Leftovers real traction: intelligence, bite, and the chance to turn skepticism into leadership under pressure."
+      },
+      {
+        "name": "Vance Matheson",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s",
+        "hook": "Vance is the anxious systems brain who talks fast because his mind is always already three steps ahead of his body. He starts as comic friction and ends up as one of the story’s most useful truth-tellers, especially once he realizes the clock is lying.",
+        "why_actor_wants_this": "This is strong character-actor material in the vein of Paul Dano in Escape at Dannemora or Rami Malek in Mr. Robot: nervous intelligence, technical fluency, and a breakdown-to-competence arc that plays beautifully in close-up."
+      },
+      {
+        "name": "Riggs",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s",
+        "hook": "Riggs is the depot’s managerial face, tired and bureaucratic until the script reveals how deeply he’s fused with the system’s cruelty. He reads like a middle manager with bad sleep and worse ethics, but the later material makes him more unsettling: he’s not just complicit, he’s procedural.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do what Bryan Cranston did in Breaking Bad’s early seasons or Michael Stuhlbarg often does in prestige drama: make institutional cowardice feel specific, human, and dangerous."
+      },
+      {
+        "name": "Dr. Patricia Aris",
+        "role_type": "Supporting",
+        "demographics": "Woman, 50s",
+        "hook": "Dr. Aris is dry, competent, and quietly defiant, with the best line-read energy in the script. She’s the one who can puncture corporate nonsense with a glance, and when she reveals she built her own escape protocol, she becomes the story’s most elegant rebel.",
+        "why_actor_wants_this": "This is premium supporting territory in the mode of Olivia Colman in Broadchurch or Ann Dowd in The Leftovers: wit, authority, and the pleasure of watching someone smarter than the room refuse to be managed."
+      },
+      {
+        "name": "Dixon",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-50s",
+        "hook": "Dixon is the crew’s loudest pressure valve, the one who jokes, complains, and keeps moving even as the station turns on them. He’s funny, skeptical, and ultimately brave in a way that lands because the script never asks him to become solemn.",
+        "why_actor_wants_this": "This is the kind of role that gives a performer the same kind of lift Walton Goggins gets in ensemble genre work: sharp comic timing, volatility, and a late-stage turn into real emotional weight."
+      },
+      {
+        "name": "Hendrix",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s",
+        "hook": "Hendrix is the tall, physically imposing systems guy whose brain and body are both under siege by the station. He starts as a dry technician and ends as one of the story’s most tragic casualties, with the script using his size and competence to make his vulnerability hit harder.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play intelligence, physicality, and dread in the same frame, similar to what David Harbour has done in genre ensemble work or what John Carroll Lynch can do with quiet authority."
+      },
+      {
+        "name": "Robert",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-50s",
+        "hook": "Robert is a functional crew member who becomes one of the story’s most brutal reminders that the station’s systems do not care who is competent. He’s not written as a speechmaker; he’s written as a body in a machine that suddenly stops protecting bodies.",
+        "why_actor_wants_this": "This is a compact but effective genre role in the tradition of the doomed crew member in Alien or The Thing: a chance to make a small amount of screen time feel like a real person under pressure."
+      },
+      {
+        "name": "Technician",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s",
+        "hook": "The Technician is the final, chilling reveal: a bland, managerial figure who treats living people like archived inventory. The mirrored-room coda makes him feel less like a villain than a functionary of a system so normalized it has become ritual.",
+        "why_actor_wants_this": "This is the kind of late-reveal role that can become iconic with the right actor, similar to the cold institutional menace of Ralph Fiennes in The Grand Budapest Hotel or the final authority figures in Black Mirror episodes."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 10,
-        "leads": 5,
+        "speaking_roles": 9,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Ensemble adult cast",
-          "One role written as 7'2\" for Hendrix",
-          "Several roles are specifically Black-coded in the page text",
-          "Dr. Aris is written with a British voice"
+          "ensemble of adult roles",
+          "one physically imposing role for Hendrix",
+          "one Black male lead",
+          "one older female doctor role with dry comic precision"
         ]
       },
       "locations": {
         "distinct_count": 12,
-        "interior_exterior_ratio": "Mostly interior with a small number of exterior EVA/platform sequences",
-        "period_or_contemporary": "Contemporary-future sci-fi",
+        "interior_exterior_ratio": "mostly interiors with a small number of exterior EVA/space-platform sequences",
+        "period_or_contemporary": "near-future",
         "notable_requirements": [
-          "Orbital depot interiors",
-          "Exterior maintenance truss and lifepod platform",
-          "Contained industrial sets",
-          "Preservation room / archive finale"
+          "orbital depot interiors",
+          "external maintenance truss",
+          "lifepod platform",
+          "monochrome preservation-room coda"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Orbital exterior, station rotation, holograms, Sim-Gate environment printing, distortion effects, decompression, and final space destruction all require digital support.",
+        "vfx_details": "space exteriors, orbital environment, station collapse, holographic interfaces, Sim-Gate distortions, decompression effects, and the final white-hot destruction shot",
         "stunts_level": "minor",
-        "sfx_needs": "Practical lighting shifts, pressure/decompression effects, suit work, and simulated environmental anomalies.",
+        "sfx_needs": "practical blood, decompression effects, lighting shifts, set distortion/duplication effects, suit compression gag, and practical interface props",
         "night_shoots": "minimal",
         "animals": false
       },
-      "rights_flags": [
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-leaning sci-fi thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: streamer original or genre theatrical with a contained marketing hook"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The orbital depot, EVA exterior work, station-collapse sequence, and multiple VFX-driven system failures keep this above a simple contained thriller, but the story still lives mostly on repeatable interiors."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Miller has to carry quiet authority, grief, and escalating dread without overplaying it, while Riggs, Aris, Vance, and Dixon all need distinct comic-drama rhythms to keep the ensemble alive."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s concept is clear, but the final Technician reveal and the preservation-room coda shift the meaning of the story into a more abstract register that buyers will want to understand as part of the package."
+      }
+    },
+    "packaging": {
+      "comp_set": [
         {
-          "type": "named_music",
-          "detail": "The script references an Andy Williams-style lounge track and a 56K modem sound cue, but no specific licensed song title is named."
+          "title": "Alien",
+          "year": 1979,
+          "why_it_comps": "A working crew trapped in a hostile industrial environment where the workplace itself becomes the threat."
+        },
+        {
+          "title": "Moon",
+          "year": 2009,
+          "why_it_comps": "Contained sci-fi built around isolation, corporate systems, and a protagonist discovering the truth of his own situation."
+        },
+        {
+          "title": "Life",
+          "year": 2017,
+          "why_it_comps": "A pressure-cooker space survival story that escalates through a contained crew and a rapidly worsening containment problem."
+        },
+        {
+          "title": "Aniara",
+          "year": 2018,
+          "why_it_comps": "A bleak, existential space-disaster framework where institutional failure and psychological collapse are the real engine."
+        },
+        {
+          "title": "The Platform",
+          "year": 2019,
+          "why_it_comps": "A system-driven allegory where hierarchy, scarcity, and corporate logic turn the environment into a moral trap."
         }
       ],
-      "platform_fit": {
-        "recommended_lane": "Premium streaming or theatrical genre lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform or limited theatrical genre play"
+      "audience_target": {
+        "primary_audience": "Adults who like elevated sci-fi thrillers with a horror edge and a strong workplace ensemble.",
+        "demographics": "18-49, slightly male-skewing but with broad genre crossover; strongest with streaming audiences and genre fans who respond to concept-forward, character-driven tension.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained interiors keep the footprint manageable, but the orbital exterior work, environment-printing effects, and station-destruction finale push it above a microbudget lane."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The ensemble is adult and manageable, but the film benefits from strong chemistry across Miller, Sarah, Vance, Dixon, Riggs, Dr. Aris, and Hendrix."
-        },
-        "location": {
-          "level": "medium",
-          "note": "Most of the story lives in a limited number of depot interiors, with a few exterior EVA and lifepod-platform sequences adding scale."
-        },
-        "content": {
-          "level": "medium",
-          "note": "The script includes violence, body-horror pressure, corporate cruelty, and strong language, but it stays within a controlled mature-thriller lane."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No real people, branded IP, or named songs are central to the story; the references are atmospheric rather than clearance-dependent."
-        }
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Mostly interior station builds with a handful of exterior EVA sequences, moderate VFX, and a contained ensemble keep it in mid-budget feature territory."
+      },
+      "lane_fit": {
+        "lane": "elevated sci-fi thriller",
+        "types_of_buyers": [
+          "streamer genre originals teams",
+          "mid-budget theatrical genre financiers",
+          "boutique sci-fi distributors",
+          "producer-directors looking for a contained effects showcase",
+          "prestige genre labels"
+        ],
+        "detail": "This sits naturally in the lane where concept-forward sci-fi meets character pressure-cooker horror. The script has enough visual identity for a trailer and enough contained geography to make the economics legible."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The Technician reveal expands the mythology, but there is no clear sequel or spinoff vector with a separate character or world branch that justifies franchise positioning."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The corporate horror language is the hook.",
-          "what_it_means": "This gives the film a marketable identity beyond standard space survival: the dread comes from policy, valuation, and procedure, not just monsters or malfunction. Buyers who want elevated genre with a sharp social angle will see a clean lane for premium streaming or festival launch.",
-          "evidence": "The crew insurance valuation matrix, the asset classifications, and Riggs calling the crew operational expenses reimbursable under loss.",
+          "dimension_or_area": "The insurance reveal is a killer premise engine.",
+          "what_it_means": "It gives the movie an instantly marketable hook that turns corporate language into existential threat. Buyers can sell this as a clean concept with a built-in trailer moment and a strong genre promise for adult audiences.",
+          "evidence": "The crew valuation matrix labels Miller and James Forrest as insured assets, reframing the depot as a place where people are line items.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Miller is a strong anchor role.",
-          "what_it_means": "The lead has the kind of contained intensity that can carry a feature and give an actor a full showcase of restraint, authority, and dawning horror. Mid-career dramatic leads and actors looking for a prestige genre turn will respond to a role that plays intelligence under pressure.",
-          "evidence": "Miller’s quiet observation of the pencil, his decision to keep working after the insurance reveal, and his final move to force the crash.",
+          "dimension_or_area": "The station feels operational, not generic.",
+          "what_it_means": "The world has enough specific systems, jargon, and hierarchy to feel expensive and story-generating without needing a giant mythology dump. That makes it attractive to buyers looking for a contained sci-fi package that still feels premium.",
+          "evidence": "Sim-Gate diagnostics, relay repair, EVA maintenance, telemetry drift, and the depot-wide broadcast all feel like parts of a functioning machine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble has real chemistry.",
-          "what_it_means": "The banter and status play create a cast dynamic that makes the movie feel inhabited, which helps both audience engagement and trailerable moments. Ensemble-friendly buyers and directors who like performance-driven genre will see multiple playable roles, not just a single hero track.",
-          "evidence": "Sarah’s sharp exchanges with Miller and Vance, Dixon’s comic defiance, and Dr. Aris’s dry authority.",
+          "dimension_or_area": "Miller is a strong quiet-lead engine.",
+          "what_it_means": "The role gives a lead actor a controlled, internal showcase rather than a generic action hero part. That is valuable for prestige-minded casting and for actors who want a role that can carry tension through stillness.",
+          "evidence": "Miller withholds the insurance file until he can prove it, then keeps moving even after the room starts treating him as the likely containment subject.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world is an engine, not a backdrop.",
-          "what_it_means": "The depot systems, Sim-Gate, telemetry, PPE protocols, and orbital mechanics all generate story turns, which makes the setting feel expensive on the page without requiring a sprawling cast. Genre buyers looking for a contained but high-concept sci-fi package will understand the production value immediately.",
-          "evidence": "The Sim-Gate environment printing, the orbital decay reveal, the decompression breach, and the station compression logic.",
+          "dimension_or_area": "The ensemble has real workplace chemistry.",
+          "what_it_means": "The banter and shifting alliances create repeatable scene energy, which helps both the script and the marketing. Buyers get a crew they can sell as a group, not just a lone survivor.",
+          "evidence": "Sarah’s barbs, Dixon’s jokes, Vance’s panic, Hendrix’s dry corrections, and Riggs’ managerial coldness all generate distinct rhythms in the same room.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ending reframes the whole movie.",
-          "what_it_means": "The Technician reveal in the preservation room turns the story from a survival thriller into something colder and more unsettling, which gives the film a memorable aftertaste and franchise-adjacent mythology. Buyers who want a final-image sting that lingers will respond to that last-room reveal.",
-          "evidence": "The monochrome diner/preservation room, the Technician’s inventory language, and the drawer of preserved crew boxes.",
+          "dimension_or_area": "The final reveal lands the story in a stranger register.",
+          "what_it_means": "The monochrome preservation-room coda broadens the script from a contained disaster into something more unnerving and memorable. That kind of ending can elevate the project in buyer conversations because it suggests a larger, more unsettling system behind the plot.",
+          "evidence": "The Technician’s archive drawer, the mirrored room, and the labeled boxes for the crew turn the survivors into stored material.",
           "source": "script"
         }
       ],
-      "headline": "PROTOCOL is a contained sci-fi thriller with a nasty commercial edge: a depot crew discovers they’ve been reduced to line items while the station itself starts compressing around them. It has a clean genre engine, a strong ensemble, and a final-reveal button that turns the whole movie into a cold corporate nightmare."
+      "headline": "This is a clean, high-concept sci-fi thriller with a real trailer hook: a corporate orbital depot where the crew discovers they’re insured assets inside a failing system. It combines contained-production logic, a strong ensemble, and a bleak premium-genre tone in a way that should speak to streamer genre teams and mid-budget financiers alike."
     },
-    "lead_characters": [
-      {
-        "name": "MILLER MCCORD",
-        "role_type": "Lead",
-        "demographics": "Male · 40s · Black",
-        "hook": "Miller is the quiet center of the film: observant, exhausted, and hard to read until the pressure forces him into action. He carries himself like a man who has learned to survive by staying still, but the script keeps revealing that his stillness is a form of control, not passivity.",
-        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in a role like True Detective’s most internal leads — a contained, watchful performance where silence does as much work as dialogue. Actors who want to play intelligence, restraint, and a late-breaking command of the room will chase this because the role lets them turn inward pressure into decisive action."
-      },
-      {
-        "name": "SARAH BEAUMONT",
-        "role_type": "Lead",
-        "demographics": "Female · 30s-40s",
-        "hook": "Sarah is the sharpest social reader in the crew, funny when she wants to be, cutting when she needs to be, and emotionally the least willing to pretend the system is neutral. She has the kind of lived-in skepticism that makes her feel like she’s been surviving this place longer than the place deserves.",
-        "why_actor_wants_this": "This is the showcase space of Jodie Comer in Killing Eve-style material — fast intelligence, emotional bite, and the ability to pivot from banter to moral clarity in a beat. Actors who want a role with wit, steel, and a strong point of view will see a part that gives them both propulsion and attitude."
-      },
-      {
-        "name": "VANCE MATHESON",
-        "role_type": "Lead",
-        "demographics": "Male · 40s",
-        "hook": "Vance is the brainy, twitchy systems guy whose urgency makes him feel like he’s always one thought ahead of the room and one breath behind his own nerves. He’s funny, technical, and emotionally exposed in a way that gives the ensemble a volatile, human pulse.",
-        "why_actor_wants_this": "This is the showcase lane of Rami Malek in Mr. Robot or The Pacific-type pressure-cooker intelligence — a role where anxiety, precision, and technical fluency become performance texture. Actors who like playing high-functioning panic with comic timing will be drawn to the part because it lets them weaponize intellect."
-      },
-      {
-        "name": "DR. PATRICIA ARIS",
-        "role_type": "Lead",
-        "demographics": "Female · 50s · British",
-        "hook": "Dr. Aris is dry, unsentimental, and quietly formidable, with the kind of authority that comes from competence rather than volume. She reads as the person in the room most likely to leave first, but also the one most capable of seeing the system clearly enough to survive it.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled authority of Olivia Colman in The Favourite or Tilda Swinton in prestige genre work — wit, command, and a razor-clean sense of self. Mid-career and veteran actresses looking for a role that plays intelligence, irony, and survival instinct in one package will chase it."
-      },
-      {
-        "name": "RIGGS",
-        "role_type": "Lead",
-        "demographics": "Male · 50s",
-        "hook": "Riggs is the tired middle-manager face of the machine: folksy, evasive, and increasingly revealed as the human voice of a system that treats people as liabilities. He’s not a cartoon villain; he’s the kind of man who can say something monstrous in a calm, managerial tone and still think he’s being practical.",
-        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in a prestige antagonist role — a character whose ordinariness is the threat and whose authority collapses into something colder as the story advances. Actors who like playing institutional power with a human mask will want this because it lets them be charming, bureaucratic, and terrifying in the same scene."
-      },
-      {
-        "name": "DIXON",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s · Black",
-        "hook": "Dixon is the crew’s pressure valve: sharp-tongued, skeptical, and funny enough to keep the room alive even when the situation turns lethal. He reads as a man who knows exactly how absurd the system is and refuses to dignify it with reverence.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the fast, scene-stealing rhythm of Walton Goggins in Justified or Lakeith Stanfield in a sharp ensemble — comic timing with real menace underneath. Character actors who can turn sarcasm into survival instinct will chase it."
-      },
-      {
-        "name": "HENDRIX",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · 7'2\"",
-        "hook": "Hendrix is the physically imposing systems specialist whose size becomes part of the joke and part of the tension, because the station itself seems to resist him. He’s dry, technical, and slightly overclocked, with a body that makes every corridor feel smaller and every problem feel more immediate.",
-        "why_actor_wants_this": "This is the showcase territory of a character actor like J. K. Simmons in a pressure-cooker ensemble — authority, humor, and physical presence doing different jobs at once. Tall performers and actors who can play intelligence with comic friction will be drawn to the part because it gives them a memorable silhouette and strong dialogue."
-      },
-      {
-        "name": "HENDERSON",
-        "role_type": "Supporting",
-        "demographics": "Male · early 30s",
-        "hook": "Henderson is the polished, upper-management voice of the machine: calm, entitled, and insulated enough to sound reasonable while saying things that are deeply dehumanizing. He functions as the remote face of corporate logic, all soft-light professionalism and zero accountability.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor play polished menace the way Tom Hiddleston or Matthew Macfadyen can in prestige drama — charm as a delivery system for control. Actors who specialize in elegant authority and passive aggression will see a clean, memorable antagonist slot."
-      },
-      {
-        "name": "ROBERT",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Robert is the practical crew member who mostly absorbs the chaos and keeps moving, which makes him feel like the sort of person every workplace depends on and never notices. He’s less verbal than the others, but he gives the depot a grounded, working-body presence.",
-        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the lived-in realism of a good ensemble player in a survival thriller — the person who makes the world feel operational. Character actors who can do a lot with presence and reaction will be useful here."
-      },
-      {
-        "name": "ENGINEER #2 / JAMES FORREST",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Engineer #2 is the first body the film claims, and James Forrest’s identity becomes part of the story’s cold accounting. He’s a functional crew presence whose death turns the insurance language from abstract to horrifyingly literal.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor a memorable early-film impact in the tradition of strong genre ensemble casualties — the kind of part that makes the world feel dangerous because the audience remembers the face. It’s a clean fit for a working character actor who can make a brief appearance land hard."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make corporate dread feel physical.",
-        "fit_profile": "Mid-career genre directors with at least one contained thriller or elevated sci-fi feature, plus first- or second-feature filmmakers coming out of shorts with a strong visual grammar. This material rewards directors who care about pressure, systems, and performance-forward tension more than spectacle for its own sake.",
-        "detail": "The film gives a director a chance to stage escalating paranoia inside a controlled industrial environment, then pay it off with a final-image reveal that recontextualizes everything. It’s especially attractive to directors who like making design, blocking, and rhythm do the heavy lifting while keeping the camera close to human behavior."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streamer genre lane / festival-friendly sci-fi thriller",
-        "detail": "The contained cast and mostly interior depot setting make it packageable off a strong director and one or two recognizable leads, without needing a tentpole-level effects spend. The corporate-horror angle and clean survival engine fit the current buyer appetite for elevated genre that can travel well on streaming and still play a limited theatrical or festival launch."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The ending shifts into a more abstract register.",
+          "detail": "The Technician/preservation-room coda is memorable, but it changes the story’s operating logic from survival thriller to something more metaphysical and archival. That’s a real buyer conversation because the final movement asks the audience to absorb a second premise after the feature has already spent its capital on the depot collapse.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The VFX footprint is bigger than the contained setup suggests.",
+          "detail": "The orbital exterior work, Sim-Gate distortions, decompression sequence, station collapse, and final white-hot destruction all require careful execution. The script is still manageable, but the visual ambition is not a pure low-cost contained play.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Miller carries the movie with limited overt backstory.",
+          "detail": "The script gives him authority and interiority, but not a lot of explicit personal history beyond the photo and his controlled demeanor. That keeps the role elegant, but it also means the casting conversation has to do more of the emotional heavy lifting than the page does.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ensemble is vivid, but not all equally deep.",
+          "detail": "Sarah, Vance, Dixon, Hendrix, and Aris all pop, yet several are defined primarily by function and voice rather than by a fully separate dramatic engine. That is fine for the feature, but it limits how much the supporting cast can be used as a packaging lever beyond the lead.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The corporate-system premise is strong but specific.",
+          "detail": "The insurance valuation, asset language, and legacy-system bureaucracy are the script’s biggest strengths, but they also make the movie feel most at home with a genre-savvy audience. That narrows the broadest commercial lane and points the project toward streamer and specialty buyers rather than a wide four-quadrant theatrical push.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The script’s biggest asset is also its biggest buyer question: the concept is clean and commercial, but the final Technician reveal pushes it into a stranger, more interpretive space. Add a moderate VFX load and a lead role that depends on a very specific kind of restrained performance, and this becomes a smart genre package rather than an easy mass-market play."
     },
-    "considerations": [
-      {
-        "area": "The final reveal can be even more legible.",
-        "detail": "The Technician preservation-room sequence is striking and memorable; a next pass could make the reveal’s rules slightly clearer earlier so the ending lands with maximum inevitability. The version of the script where the preservation logic is seeded in one or two earlier beats would make the last image feel even more devastating.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Miller’s interior life is mostly carried by behavior.",
-        "detail": "The script gives Miller strong presence and authority, and a future pass could consider one or two more personal beats like the photo of the woman in his locker to deepen the emotional charge of his choices. That would give the climax even more personal voltage without changing the plot engine.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The ensemble chemistry is a major asset.",
-        "detail": "The banter between Sarah, Dixon, Vance, and Riggs is one of the movie’s best commercial tools, and the version of the script where a few of those exchanges are allowed to recur as motifs could strengthen trailer moments and audience attachment. This is a positioning note more than a rewrite note: the cast dynamic is already doing real work.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The VFX footprint is contained but meaningful.",
-        "detail": "The orbital exterior, Sim-Gate distortions, decompression sequence, and station collapse all point to a moderate effects package rather than a microbudget play. That keeps the film in a realistic premium-genre lane, and the contained depot setting protects the spend by limiting the number of distinct builds.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The cast can be packaged efficiently.",
-        "detail": "The story lives on five leads and a few strong supporting roles, which means the project can be built around performance rather than a large-name ensemble. That makes it attractive to buyers who like genre films that can be greenlit with one anchor and a strong supporting bench.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 75.7,
+  "weightedScore": 77.3,
   "tier": "Optionable",
-  "inputTokens": 24386,
-  "outputTokens": 4749,
-  "cost": 0.03966,
+  "inputTokens": 26791,
+  "outputTokens": 4681,
+  "cost": 0.04115775,
   "declaredFormat": "Feature film"
 }

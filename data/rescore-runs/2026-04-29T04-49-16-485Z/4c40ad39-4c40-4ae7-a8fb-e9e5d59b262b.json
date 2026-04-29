@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T04:59:14.454Z",
+  "submission_id": "4c40ad39-4c40-4ae7-a8fb-e9e5d59b262b",
+  "eval_id": "43a8795f-4329-4af2-88d1-9a1945686502",
+  "title": "One last dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male, late 50s, white, small-town Pennsylvania school administrator and family patriarch."
+    },
+    {
+      "name": "Skylar Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female, early 40s, white, former athlete/coaching figure, wife and mother."
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 20s to 30s, white, adult daughter living out of state."
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male, late 70s, Catholic priest, white."
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Male, early 70s, white, extended family elder."
+    },
+    {
+      "name": "Renee Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female, early 70s, white, extended family elder."
+    },
+    {
+      "name": "Lisa",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 40s, white, extended family member."
+    },
+    {
+      "name": "Antonio",
+      "role_type": "Supporting",
+      "demographics": "Male, 9-16 across the story, white, one of the twin boys."
+    },
+    {
+      "name": "Angelo",
+      "role_type": "Supporting",
+      "demographics": "Male, 9-16 across the story, white, one of the twin boys."
+    },
+    {
+      "name": "Olivia",
+      "role_type": "Supporting",
+      "demographics": "Female, 7-14 across the story, white, one of the twin girls."
+    },
+    {
+      "name": "Hannah",
+      "role_type": "Supporting",
+      "demographics": "Female, 7-14 across the story, white, one of the twin girls."
+    },
+    {
+      "name": "Dr. Anckles",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-60s, physician, white."
+    },
+    {
+      "name": "Cardiologist",
+      "role_type": "Supporting",
+      "demographics": "Any gender, 40s-60s, physician."
+    },
+    {
+      "name": "Therapist",
+      "role_type": "Supporting",
+      "demographics": "Any gender, 40s, rehab professional."
+    },
+    {
+      "name": "Father Jason Michaels",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s-60s, Catholic priest, white."
+    }
+  ],
+  "positioning_hook": "A small-town school administrator facing a fatal heart condition must choose how to spend his final days, while his family learns to keep loving him as his body fails.",
+  "cost_usd": 0.046731,
+  "input_tokens": 28612,
+  "output_tokens": 5616,
+  "status": "wrote:leads_ok"
+}

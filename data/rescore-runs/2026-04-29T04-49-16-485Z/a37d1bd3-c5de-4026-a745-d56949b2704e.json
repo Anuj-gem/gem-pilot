@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T04:57:58.711Z",
+  "submission_id": "a37d1bd3-c5de-4026-a745-d56949b2704e",
+  "eval_id": "ffad8ba8-3d0a-4265-afc2-e97159200187",
+  "title": "The Secrets Under the lake",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Jer",
+      "role_type": "Lead",
+      "demographics": "Teen male, high-school age, likely white or unspecified, socially embedded in a close friend group."
+    },
+    {
+      "name": "Kylie",
+      "role_type": "Supporting",
+      "demographics": "Teen female, high-school age, socially confident, emotionally guarded."
+    },
+    {
+      "name": "Aria",
+      "role_type": "Supporting",
+      "demographics": "Teen female, high-school age, socially observant, loyal to her friends."
+    },
+    {
+      "name": "Noah",
+      "role_type": "Supporting",
+      "demographics": "Teen male, high-school age, friendly, socially loose, part of the core friend group."
+    },
+    {
+      "name": "Tyler",
+      "role_type": "Supporting",
+      "demographics": "Teen male, high-school age, dry, defensive, romantically distracted."
+    },
+    {
+      "name": "Gianna",
+      "role_type": "Supporting",
+      "demographics": "Teen female, high-school age, socially dominant, antagonistic, attractive to the group’s boys."
+    },
+    {
+      "name": "Mrs. Bennett",
+      "role_type": "Supporting",
+      "demographics": "Adult female, mother, suburban, protective, frightened."
+    },
+    {
+      "name": "Mr. Bennett",
+      "role_type": "Supporting",
+      "demographics": "Adult male, father, suburban, controlled, protective."
+    },
+    {
+      "name": "Mrs. Sterling",
+      "role_type": "Supporting",
+      "demographics": "Adult female, mother, suburban, casual, unaware of the danger."
+    },
+    {
+      "name": "Mr. Larsen",
+      "role_type": "Supporting",
+      "demographics": "Adult male, teacher, authority figure."
+    }
+  ],
+  "positioning_hook": "After a girl’s mother is attacked by her exact double, a Maryland teen starts uncovering a town-wide secret tied to a lake creature, a hostile friend group, and a reflection that may not be his own.",
+  "cost_usd": 0.03669075,
+  "input_tokens": 19593,
+  "output_tokens": 4888,
+  "status": "wrote:leads_ok"
+}

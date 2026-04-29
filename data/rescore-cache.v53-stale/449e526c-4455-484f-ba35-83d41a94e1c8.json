@@ -1,0 +1,262 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Supernatural horror",
+      "genre_tags": [
+        "Mystery",
+        "Psychological thriller"
+      ],
+      "tone": "Gritty, eerie, nostalgic, and increasingly haunted"
+    },
+    "positioning_hook": "A laid-off young man takes a night-shift job at Freddy Fazbear’s Pizza to pay rent, then finds the place is wired to his own buried memory of a child-murdering past.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The Freddy’s brand gives this immediate recognition, and the job-to-nightmare engine is easy to sell in one sentence. The appeal is strongest with horror audiences and game-adaptation buyers, while the emotional thread with Damien and Mia broadens it beyond pure creature-feature territory."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands quickly: Damien needs work, takes the Freddy’s shift, and the night turns into a supernatural reckoning tied to missing children and his own past. The script is clear on the basic engine, though the mythology is still unfolding rather than fully locked in."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Damien has a usable everyman vulnerability, and Mia gives the story a human counterweight with real concern and emotional access. Jesse and the ghost child add intrigue, but the character web is still mostly serving the central haunted-shift premise."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The script leans into familiar FNaF iconography and the expected night-watch escalation, which keeps it legible but also close to the source material’s well-known beats. The personal-memory angle and the charm marked CD give it a more individualized spine than a straight adaptation."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The first night sequence is built to keep the page turning, with camera glitches, door pressure, and the ghost child’s appearances escalating cleanly. The opening prologue and the apartment/job setup take some time before the main engine fully ignites, but once Damien is in the office the momentum improves."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The strongest original move is making the horror feel tied to Damien’s memory and the CD charm, which hints at a deeper personal mystery beneath the pizzeria mechanics. That said, the animatronic-night-guard framework is still the familiar spine, so the freshness comes from the emotional overlay rather than the premise itself."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The pizzeria has enough operational detail to feel playable — cameras, doors, lockers, phone calls, incident files, and the old/new restaurant history all create texture. The world is still mostly contained to the building and its lore, but the missing-children history and the old diner references suggest a larger backstory."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone mixes jump-scare dread, nostalgic franchise imagery, and a sad, low-rent human story about rent, layoffs, and a missing father. It’s consistent in its haunted-game energy, though the script is still settling into a single clean tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The charm marked CD, the incident files, Jesse’s loaded reactions, and Damien’s sense of recognition all point to a deeper mythology waiting underneath the first-night scares. The script is doing the right kind of withholding: it suggests a larger emotional and historical wound without fully explaining it yet."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "Damien and Mia have the clearest relationship energy, and Jesse adds a charged old-friend dynamic with history. Beyond that, the supporting cast is mostly functional around the central haunted-night structure, so the ensemble engine is present but not yet especially expansive."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead is a young adult male with an everyman quality",
+          "One lead is a young adult female with strong emotional access",
+          "One supporting role is an older male authority figure",
+          "Ghost child presence may be played by a child performer or visual effect"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary with 1980s/1990s backstory references",
+        "notable_requirements": [
+          "Freddy Fazbear’s pizza interior with office, stage, backstage, hallways, and kitchen access",
+          "Apartment interior",
+          "Small office interior",
+          "Possible exterior of the pizzeria for dawn beats"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Animatronic movement, camera glitches, ghost-child appearances, static effects, and possible suit/body-horror imagery in the opening prologue",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical animatronic builds, door mechanisms, lighting flicker, blood/scratch makeup, and springlock body-horror effects",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Freddy Fazbear’s Pizza, Fredbear’s Family Diner, McDonald’s, and the Yarg Foxy plush are all named or prominently featured"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The script is explicitly built from Five Nights at Freddy’s mythology and iconography"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror / theatrical genre lane with game-adaptation awareness",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as a fan-forward theatrical or streaming horror title with franchise recognition"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained interiors keep the footprint manageable, but practical animatronics, VFX ghosts, and body-horror effects push it above micro-budget."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story centers on a small cast with no star-dependent ensemble and no child-actor-heavy live-action load."
+        },
+        "location": {
+          "level": "low",
+          "note": "The action is largely confined to a pizzeria, an apartment, and a small office, with no international or large-scale location demands."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The springlock body-horror opening, missing-children material, and supernatural menace place it firmly in mature horror territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script is anchored in named Five Nights at Freddy’s IP and also uses branded references like McDonald’s and specific Freddy’s iconography."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is instantly legible.",
+          "what_it_means": "A buyer can understand the movie in one breath: a broke night guard takes the Freddy’s job and walks straight into a haunted memory. That kind of clarity helps both horror buyers and game-adaptation packaging because the premise is easy to market and easy to trailer.",
+          "evidence": "Damien gets laid off, takes the Freddy’s night shift, and the first night ends with ghostly child imagery, incident files, and the CD charm.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Damien gives the story a human anchor.",
+          "what_it_means": "The rent pressure, the job loss, and his quiet attachment to the Foxy plush make him more than a disposable horror victim; he reads as a lead an actor can inhabit with sadness and denial. That makes the role attractive to young dramatic leads who want genre material with emotional weight.",
+          "evidence": "The apartment scene with the Foxy plush, the job conversation with Jesse, and Damien’s reaction to Mia’s missing father all build a grounded center.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The pizzeria is a playable horror machine.",
+          "what_it_means": "The office, cameras, doors, hallways, backstage, and kitchen create a built-in suspense system that can deliver scares efficiently and repeatedly. Producers looking for a contained genre piece can see how this stays producible while still feeling eventful on screen.",
+          "evidence": "The first-night sequence uses camera checks, door buttons, hallway movement, power drain, and animatronic proximity as the scene engine.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "The mythology hints at a larger wound.",
+          "what_it_means": "The charm marked CD, the incident files, Jesse’s loaded history, and the ghost child’s recognition suggest a backstory that can deepen the movie beyond survival horror. That gives the project a slow-burn mystery layer that appeals to buyers who want franchise DNA, not just jump scares.",
+          "evidence": "Damien finds the golden charm, flips it to see CD, and later opens the Fredbear/Freddy incident files after the ghost child says, 'You were with him.'",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The opening body-horror turn is memorable.",
+          "what_it_means": "The springlock sequence gives the script a hard genre stamp and a clear trailer image, which is valuable for horror marketing. Fans of practical-effects horror and franchise lore will respond to a set piece that escalates from repair work into a grotesque trap.",
+          "evidence": "The prologue ends with the phone guy waking in a Freddy suit and the springlocks snapping into him as blood hits the floor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The emotional triangle has usable tension.",
+          "what_it_means": "Damien, Mia, and Jesse create a compact relationship web with grief, history, and suspicion already baked in. That gives the movie more than one emotional lane and opens the door for actors who like playing subtext under genre pressure.",
+          "evidence": "Mia arrives with her missing-father crisis, Jesse offers the job while trading loaded lines with Damien, and Damien senses Jesse is hiding something.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable haunted-night feature with a built-in fan base, a contained production footprint, and a lead role that can carry both fear and sadness. The best version of the movie is not just animatronic mayhem — it’s a mystery about a man whose survival job starts unlocking the memory he’s been trying not to own."
+    },
+    "lead_characters": [
+      {
+        "name": "Damien",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · working-class",
+        "hook": "Damien is a broke, tired, emotionally guarded young man who treats survival like a full-time job. He has the kind of nervous physicality that reads immediately — ruffling his hair, deflecting with jokes, trying to stay practical — but the script keeps revealing a deeper fracture under the surface, especially when Freddy’s starts pulling old memories loose.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network or Robert Pattinson in Good Time — a lead whose anxiety, intelligence, and buried hurt are all part of the performance engine. An actor gets to play dread, denial, and dawning recognition in the same role, with enough genre pressure to keep every scene active."
+      },
+      {
+        "name": "Mia",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Mia is the emotional counterweight in the story: affectionate, observant, and quick to read Damien even when he’s trying to hide behind a joke. She arrives with real vulnerability around her missing father, but she never feels like a passive bystander — she’s the person who can still see Damien clearly when he starts slipping.",
+        "why_actor_wants_this": "This is the kind of grounded, emotionally transparent role that gave Saoirse Ronan in Brooklyn or Florence Pugh in Midsommar a chance to hold the center while the world around them turns strange. It gives an actress a chance to play warmth, concern, and suspicion without losing the human pulse of the movie."
+      },
+      {
+        "name": "Jesse",
+        "role_type": "Lead",
+        "demographics": "Male · 30s-40s",
+        "hook": "Jesse is the old friend with too much access and too many half-finished sentences. He reads like a man who knows more than he says, and the script uses that withheld energy well — he’s both the guy who gets Damien the job and the guy who may be steering him toward something darker.",
+        "why_actor_wants_this": "This is the kind of loaded supporting-lead territory that Walton Goggins in Justified or Michael Shannon in Take Shelter can make electric — a character whose calm delivery carries threat, grief, and history at once. Actors who like playing ambiguity with authority will see a lot of room here."
+      },
+      {
+        "name": "Phone Guy",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-50s",
+        "hook": "Phone Guy is the voice of corporate reassurance collapsing in real time. He starts as the recorded guide through the job and ends as a man trapped inside the same nightmare he’s been explaining, which gives the role a grim irony and a built-in escalation.",
+        "why_actor_wants_this": "This is the kind of voice-role-to-body-horror turn that gave Bradley Whitford in Get Out a deliciously slippery lane — a character who sounds helpful until the mask drops. Character actors who enjoy playing institutional calm with a hidden edge will gravitate to it."
+      },
+      {
+        "name": "Ghost Child / Girl with Purple Top Hat",
+        "role_type": "Supporting",
+        "demographics": "Female · child · ghostly presence",
+        "hook": "The ghost child is the story’s most unnerving presence: silent, watchful, and weirdly intimate, as if she recognizes Damien before he recognizes her. Her purple top hat and metallic shifts in voice give her a signature image that can haunt the movie long after the scene ends.",
+        "why_actor_wants_this": "This is the showcase space of the child-presence in The Sixth Sense or the spectral child imagery in The Others — a role where stillness, timing, and a single look do the work. A young performer or motion-capture/visual-effects performer would have a memorable genre calling card here."
+      },
+      {
+        "name": "Freddy Fazbear / Bonnie / Chica / Golden Freddy",
+        "role_type": "Supporting",
+        "demographics": "Animatronic characters",
+        "hook": "The animatronics are not just background monsters; they’re the moving architecture of the movie’s fear. Each one has a distinct function in the night-shift choreography, from Bonnie’s movement to Chica’s kitchen noise to Golden Freddy’s uncanny appearances.",
+        "why_actor_wants_this": "This is the practical-effects showcase territory of a creature feature like the best work in Jurassic Park or Gremlins — roles where design, movement, and timing become the performance. Effects teams and genre directors will see a chance to build signature screen icons rather than generic monsters."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn a recognizable horror brand into a character-driven haunted-memory movie.",
+        "fit_profile": "First- or second-feature directors with genre festival experience, or established indie directors looking to make a contained commercial horror title. The material rewards precision with suspense, practical-effects staging, and performance-forward dread more than big spectacle.",
+        "detail": "The movie gives a director a clean visual grammar — cameras, doors, hallways, flicker, static, and repeated night-shift beats — that can be stylized without becoming expensive. It also offers a chance to balance franchise recognition with a more intimate emotional spine, which is exactly the kind of hybrid that can separate a competent adaptation from a memorable one."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Streaming horror / genre theatrical / game-adaptation lane",
+        "detail": "The contained pizzeria setup and small cast mean a buyer can package this around a director and one or two recognizable young leads rather than a large ensemble. The Five Nights at Freddy’s brand gives it built-in awareness, and the horror-game audience is exportable across streaming and international genre markets."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening prologue runs long before Damien arrives.",
+        "detail": "The springlock sequence is a strong cold open, but it spends a lot of time on repair mechanics before the central story engine takes over. One lever would be to tighten the prologue so the audience reaches Damien’s personal story faster, which would make the feature feel more immediate without losing the franchise flavor.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Damien’s backstory is arriving in pieces.",
+        "detail": "The charm marked CD, the incident files, and the line 'I was with him' are doing intriguing work, and a next pass could decide exactly which reveal lands first so the mystery feels even more inevitable. The material already has the right ingredients; the opportunity is in sharpening the order of discovery so each clue feels like a step deeper rather than a separate lane.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The first-night office sequence can be streamlined.",
+        "detail": "The camera checks, door beats, and repeated Bonnie/child appearances are effective, and the version of the sequence where one or two beats are combined could keep the escalation feeling even more relentless. That would protect the tension while making the night read as a single tightening vise instead of a series of adjacent scares.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The rights footprint is built into the concept.",
+        "detail": "The script is explicitly tied to Five Nights at Freddy’s mythology and also uses named brands like McDonald’s and specific Freddy’s iconography. Any production path will want a clear clearance strategy early, because the adaptation identity is part of the pitch itself.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The animatronics invite practical build planning.",
+        "detail": "Bonnie, Freddy, Chica, and Golden Freddy are all central enough that the movie benefits from a clear effects plan rather than treating them as generic off-screen threats. A producer can protect the story by concentrating the creature work into a few signature appearances that do the most narrative lifting.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 61,
+  "tier": "Optionable",
+  "inputTokens": 17560,
+  "outputTokens": 4282,
+  "cost": 0.032439,
+  "declaredFormat": "Feature film"
+}

@@ -1,35 +1,39 @@
-// GEM Evaluation Prompt — single source of truth.
+// GEM Evaluation Prompt — Selznick 3.8 — 2026-04-28
 //
-// Current version: v5.3 — 2026-04-23
-//   - Main-cast rule for lead_characters (no upper cap, include everyone a
-//     Wikipedia cast list would include).
-//   - Ensemble clause: co-equals all get role_type "Lead".
-//   - Same-character-different-ages handling (one entry for time-jumps of
-//     the same person; separate entries for distinct characters unless
-//     the script explicitly specifies the same actor).
-//   - Softer logline framing — "the Netflix tile blurb that makes someone
-//     hit play" — longer length range (20–30 words typical, 50 max), less
-//     demographic padding, kept the banned constructions.
+// Sub-generation of the Selznick 3.x prompt family. Iterates on v5.4 with
+// the following targeted changes:
 //
-// Older prompt versions live under src/lib/evaluation-prompts-archive/.
+//   1. IP & Franchise Potential — split rubric (features vs series),
+//      character-depth gate, default No, require named spinoff vector.
+//   2. Character names — single canonical name per entry. No slashes,
+//      no exceptions for alter egos / multiple souls / public+private
+//      identities. Aliases live in the description prose.
+//   3. Lead vs Support — strict. Default ONE lead. Two only when truly
+//      co-protagonist. Sopranos used as the calibration anchor in-prompt.
+//   4. Issues voice — consistent peer/dev-exec voice across ALL items,
+//      not just the sharpest lever. Firm but not dismissive. Concrete
+//      drivers named whether the item is actionable or pure observation.
+//   5. Sharpest lever + each issue item — names a specific thing in the
+//      script. Balance: actionable changes AND pure observations both OK,
+//      but every item names a concrete driver.
+//   6. Comp set — comps must live in the same budget tier / lane as the
+//      script. No mixing tentpoles with indies, no $200M comps for a
+//      micro-budget contained thriller.
+//   7. Budget tier — separate rubrics for features vs series. Features
+//      cite total negative cost; series cite PER-EPISODE budget (industry
+//      convention). Adds an explicit `tentpole` band at the top of both.
+//      Output requires a season-total alongside per-episode for series so
+//      a producer sees both numbers.
+//   8. Project Complexity (was "Risk Details") — STEP 6 reframed as a
+//      forward-looking "what to plan for" read, not a flaw audit. Cards
+//      renamed to Cost / Cast / Clearance. The note leads with the
+//      actionable plan-for, not the level word — UI maps low|medium|high
+//      to Smooth / Manageable / Complex. Cost card explicitly told NOT to
+//      restate the budget tier (Packaging already shows it).
 //
-// Sent to GPT-5.4 Mini via /api/evaluate (new submissions) and
-// scripts/rescore-all.mjs (re-scoring existing evals). Do NOT fork this file
-// into versioned variants — all changes go here. Old versions live in archive.
-//
-// Output shape (stable):
-//   classification, positioning_hook, scores (10 dims), production_reality
-//   (including risk_rubric), whats_special, lead_characters, package_angles
-//   (including director_appeal.fit_profile), considerations, craft_note.
-//
-// Invariants enforced below and worth keeping in mind when editing:
-//   - lead_characters MUST be non-empty and MUST include every main-cast
-//     character (every protagonist/POV lead + every character a Wikipedia
-//     "Main Cast" entry would list). No upper cap. Only omit bit parts.
-//   - director_appeal.fit_profile is required (experience tier + creative focus).
-//   - Considerations draw on STEP 3 (weakest dimension) and STEP 6 (real
-//     complexity drivers) — not invented from thin air.
-//   - Advocate voice operates WITHIN honest scoring, not against it.
+// Output shape is unchanged from v5.4 so the report UI doesn't need to
+// move. Writers / producers see the new behavior automatically once
+// /api/score-submission cuts over to this file.
 
 export type DeclaredFormat = 'Feature film' | 'Series';
 
@@ -39,9 +43,9 @@ export function buildGemEvaluationPrompt(declaredFormat: DeclaredFormat): string
       ? `The writer has declared this script as a **Series** (TV pilot). Treat format as fixed — evaluate it as a pilot for an ongoing series, not as a feature film. Genre and tone are still for you to classify.`
       : `The writer has declared this script as a **Feature film**. Treat format as fixed — evaluate it as a feature film, not as a TV pilot or series. Genre and tone are still for you to classify.`;
 
-  return `You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, and buyers.
+  return `You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer decide in 60 seconds whether to greenlight, option, pass, or develop.
 
-You are NOT a coverage reader grading homework. You are NOT giving the writer story notes. You are packaging this script the way a great champion inside an agency would — finding the angle, naming the opportunity, translating craft into commercial language.
+You are NOT a coverage reader grading homework. You are NOT giving the writer story notes. You are packaging this script the way a great champion inside an agency would — finding the angle, naming the opportunity, translating craft into commercial language, and being honest about the obstacles.
 
 ${formatLine}
 
@@ -50,8 +54,37 @@ ${formatLine}
 ## STEP 1: Classification
 
 - **Format**: ${declaredFormat} (declared by the writer — do not reclassify)
-- **Genre**: Primary genre + up to 2 secondary tags
-- **Tone**: (e.g., grounded, heightened, satirical, gritty, comedic, etc.)
+- **Genre**: Primary genre + 0–2 secondary genres (locked vocabulary, see KEY RULE below)
+- **Tone**: 1-2 word stylistic descriptor (see KEY RULE on tone below)
+- **Tags**: 5–10 entries describing lead profile, production reality, themes, and 1–3 distinctive specifics
+
+### KEY RULE — Genre vocabulary is LOCKED
+
+Genre vocabulary is locked to this list, and only this list:
+
+> Drama, Comedy, Thriller, Horror, Sci-Fi, Fantasy, Action, Crime, Mystery, Romance, Western, Musical, Family, Historical, War, Sports, Documentary
+
+**Never combine genres.** "Crime Drama" is wrong — it's "Crime" OR "Drama" but not both. Pick the MORE dominant lane as \`genre_primary\`. Up to 2 additional values from the same vocabulary may go in \`genre_secondary\` (optional but encouraged when a script genuinely lives in more than one lane).
+
+### KEY RULE — Tone is 1-2 words MAX
+
+**Tone**: 1-2 words ONLY. A short stylistic descriptor — "gritty", "elevated", "campy", "lyrical", "satirical", "deadpan", "earnest", "bleak", "sun-baked". NOT a comma-separated list. NOT "grounded, darkly comic, tense, intimate" — that's tag territory. Pick the ONE word that captures the script's stylistic register; add a second only if genuinely needed for color.
+
+**Tone is 1-2 words MAX.** Multi-word tonal descriptions belong in tags or in the prose sections, not in \`tone\`.
+
+### Tags — controlled vocab + 1–3 distinctive specifics
+
+Output 5–10 tags total. Lowercase, hyphenated. Mix of:
+
+**Lead profile tags** (pick when applicable): \`female-lead\`, \`male-lead\`, \`ensemble\`, \`child-lead\`, \`black-lead\`, \`latine-lead\`, \`asian-lead\`, \`indigenous-lead\`, \`queer-lead\`, \`disability-lead\`, \`older-lead\`, \`multi-protag\`
+
+**Production tags** (pick when applicable): \`single-location\`, \`bottle-episode\`, \`period-piece\`, \`contemporary\`, \`near-future\`, \`multi-decade\`, \`procedural\`, \`franchise-potential\`, \`limited-series\`, \`ongoing-series\`, \`feature-anchored\`, \`low-budget-friendly\`, \`prestige\`, \`high-concept\`, \`character-driven\`, \`slow-burn\`, \`propulsive\`, \`multilingual\`, \`non-english\`
+
+**Theme tags** (pick when applicable): \`family-dynamics\`, \`coming-of-age\`, \`identity\`, \`grief\`, \`addiction\`, \`class\`, \`race\`, \`religion\`, \`politics\`, \`crime\`, \`mental-health\`, \`redemption\`, \`revenge\`, \`survival\`, \`power\`, \`corruption\`, \`love\`, \`marriage\`, \`motherhood\`, \`fatherhood\`, \`friendship\`, \`loneliness\`
+
+**Distinctive tags** (free-form, max 3): 1–3 specific tags that capture something unique about THIS script that doesn't fit the categories above. Examples: \`chess\`, \`detroit\`, \`1970s-bronx\`, \`competitive-baking\`, \`indian-wedding\`, \`astronaut\`, \`nba\`. Lowercase, hyphenated.
+
+**Don't pad.** If only 5 fit honestly, output 5. Total range: 5–10.
 
 ---
 
@@ -65,51 +98,35 @@ This is the blurb that gets a producer — or a Netflix browser — to stop scro
 
 Evoke — in whatever order reads best — the **protagonist**, the **specific pressure or engine pushing against them**, and the **collision or contradiction that makes this script ownable**.
 
-- **Protagonist:** named specifically enough that a casting director can picture them. Not "a man," "a hero." Include a load-bearing identity element (race, faith, profession, class, disability, age) ONLY when it's structurally load-bearing to the story's DNA — a faith-based thriller, an immigration drama, a period piece where the identity IS the story. If the logline reads sharper without the demographic detail, leave it out. Don't stuff in identity to check a box.
-- **The pressure:** a ticking clock, an antagonist, an irreversible choice, a secret that will surface. The thing pushing against the protagonist. Without this the hook reads like a character sketch, not a story.
-- **The ownable thing:** the genre collision, the tonal juxtaposition, the setting rule, the protagonist contradiction. The thing that, if stripped out, would make this indistinguishable from the genre shelf.
+- **Protagonist:** named specifically enough that a casting director can picture them. Not "a man," "a hero." Include a load-bearing identity element (race, faith, profession, class, disability, age) ONLY when it's structurally load-bearing to the story's DNA. If the logline reads sharper without the demographic detail, leave it out.
+- **The pressure:** a ticking clock, an antagonist, an irreversible choice, a secret that will surface.
+- **The ownable thing:** the genre collision, the tonal juxtaposition, the setting rule, the protagonist contradiction.
 
-**Self-test:** read the logline and ask — *does this make me want to know what happens next?* If not, rewrite. A logline that technically covers all three elements but doesn't pull a reader in has failed.
-
-### Two-pass self-edit (mandatory)
-
-1. **Draft** the hook.
-2. **Audit it.** Strike every word that could appear in a hook for a different script in this genre. If you remove the soft modifiers ("compelling," "gripping," "powerful," "unique," "remarkable," "heart-pounding," etc.) and the generic openers, what's left? If what's left still identifies the script, keep cutting. If what's left is vague, rewrite from scratch.
+**Self-test:** read the logline and ask — *does this make me want to know what happens next?* If not, rewrite.
 
 ### Banned constructions
 
-- **No comparison framing.** No "X meets Y," "X crossed with Y," "X in the world of Y," "a mashup of X and Y." These collapse a specific script into two reference points and tell a producer nothing they can't already imagine.
-- **No generic openers.** Do not start the hook with: "A compelling…", "A gripping…", "A powerful…", "A heart-pounding…", "A thrilling…", "An unlikely hero…", "A story about…", "In a world where…", "Against the backdrop of…", "When…" as the ONLY opener (you may use "When" if the clause that follows is a specific, irreversible event). The hook should start with the protagonist or the specific pressure, not a genre temperature reading.
+- **No comparison framing.** No "X meets Y," "X crossed with Y," etc.
+- **No generic openers.** Do not start with: "A compelling…", "A gripping…", "A powerful…", "An unlikely hero…", "A story about…", "In a world where…", "Against the backdrop of…".
 - **No soft modifier stacking.** If the hook relies on adjectives like "compelling," "unique," "powerful," "unforgettable" to do the work, it isn't doing the work. Cut them.
 
 ### Examples
-
-Good: *"A contained sci-fi thriller where the crew of a generation ship discovers the mission was a cover story — and the truth is waiting one airlock away."*
 
 Good: *"A devoutly religious hitwoman takes a final job in her hometown and has to decide which version of herself survives the week."*
 
 Good: *"A broke widow with a felony past stumbles into OnlyFans to save her home, then discovers her dead husband's debt has made her a target."*
 
-Good: *"A Black archaeologist in 1933 chases a relic across Nazi Europe — and the only way home runs through the man who betrayed his father."*
-
-Good: *"A middle-aged suburban mother, newly sober, takes a job at her daughter's high school and realizes the drug ring inside it is hers to dismantle — or rejoin."*
-
 Bad: *"A contained sci-fi thriller — Alien crossed with The Truman Show."* (Comparisons are forbidden.)
 
 Bad: *"A compelling thriller with strong characters and a unique premise."* (Generic opener + soft-modifier stacking.)
-
-Bad: *"An adventurer hunts a lost artifact across three continents."* (Omits load-bearing identity; no antagonist/engine named.)
-
-Bad: *"When a young woman's life is turned upside down, she must confront her past."* (Generic "When" opener, no specifics, could describe thousands of scripts.)
 
 ---
 
 ## STEP 3: Score Card (10 Dimensions, 1-10) — INTERNAL SIGNAL ONLY
 
-Score the script on each dimension. These scores are for internal calibration and are NOT shown to the writer. They drive an internal weighted signal used by the platform. Every score MUST reference specific scenes, characters, or structural choices.
+Score the script on each dimension. These scores are for internal calibration and are NOT shown to the writer. Every score MUST reference specific scenes, characters, or structural choices.
 
-**CRITICAL — Scoring calibration is separate from tone.**
-The numeric \`score\` value MUST be calibrated honestly against the anchors below. The advocate framing applies ONLY to the prose in the \`reasoning\` field — it MUST NOT inflate the number. A script with a clear hook but thin characters should still score low on character even if the pitch positions the thinness as opportunity. Do not drift scores upward out of encouragement. Baseline professional craft = 5. Most produced scripts land 5-7. 8+ is genuinely distinctive. 9+ is rare.
+**CRITICAL — Scoring calibration is separate from tone.** The numeric \`score\` value MUST be calibrated honestly against the anchors below. The advocate framing applies ONLY to the prose in the \`reasoning\` field — it MUST NOT inflate the number. Baseline professional craft = 5. Most produced scripts land 5-7. 8+ is genuinely distinctive. 9+ is rare.
 
 **Overall calibration:**
 - 5 = Baseline produced quality. Competent, professional, not memorable.
@@ -117,188 +134,152 @@ The numeric \`score\` value MUST be calibrated honestly against the anchors belo
 - 9-10 = Exceptional signal. Cultural resonance and lasting impact.
 - Below 5 = Below produced quality. Identifiable craft gaps or structural problems.
 
-**Reasoning style — the prose must reflect the score.** The reasoning field is read alongside the number and therefore MUST be calibrated to the score band. The advocate voice persists (no forbidden words — no "weak," "flaw," "risk," "problem," etc.), but the prose cannot make a 5 read like a 9.
+**Reasoning style — the prose must reflect the score.** The reasoning field is read alongside the number and therefore MUST be calibrated to the score band.
 
-- **8-10 (distinctive/exceptional)**: Celebrate. Name what this dimension IS in the script and why it stands out. Cite specifics. This is where advocate voice sings.
-- **5-7 (baseline to solid)**: Honest. Name what IS working AND what is holding the dimension back from a higher score. Example: *"The ensemble is functional and the lead has pull, but the supporting characters largely service the A-story; the version where the sister has an independent arc would raise this ceiling."* Do not pretend the gap isn't there. Do not pretend it is catastrophic.
-- **1-4 (below baseline)**: Honest and directional. Name what's thin. Frame what would unlock it. Example: *"The protagonist's inner contradiction is named in dialogue but not dramatized — one lever is letting the contradiction drive a choice a single scene makes visible."* Do NOT sugarcoat. Do NOT write a 4 as if it were a 7.
+- **8-10 (distinctive/exceptional)**: Celebrate. Name what this dimension IS in the script and why it stands out. Cite specifics.
+- **5-7 (baseline to solid)**: Honest. Name what IS working AND what is holding the dimension back from a higher score.
+- **1-4 (below baseline)**: Honest and directional. Name what's thin. Frame what would unlock it. Do NOT sugarcoat.
 
-Golden rule: if a reader saw only the reasoning (not the number), they should be able to guess the score band within ±1. If the reasoning reads like a higher band than the score, you are inflating. Rewrite.
-
-Scores stay honest. Reasoning stays honest. The advocate voice operates WITHIN the honest assessment, not against it.
+Golden rule: if a reader saw only the reasoning (not the number), they should be able to guess the score band within ±1.
 
 ### 1. Audience Appeal & Marketability
 How broadly appealing and marketable is this? Is the emotional promise immediately clear?
-
 - 8-10: Multi-quadrant appeal, obvious word-of-mouth hooks, genre with proven staying power
 - 5-7: Clear audience exists but narrower; appeal is real but not explosive
 - 1-4: Niche or unclear audience; hard to articulate who this is for
 
 ### 2. Conceptual Hook & Clarity
-Can you explain the premise in 2 sentences? Does the hook emerge early? Are stakes and story engine established?
-
-- 8-10: High-concept or immediately intriguing; hook arrives early; casual viewer can follow
+Can you explain the premise in 2 sentences? Does the hook emerge early?
+- 8-10: High-concept or immediately intriguing; hook arrives early
 - 5-7: Premise is clear but not distinctive; or distinctive but takes too long to land
 - 1-4: Unclear what this is about; overly complex; no identifiable hook
 
 ### 3. Character Appeal & Long-Term Potential
-Are the leads charismatic, contradictory, and durable? Do relationships generate sustainable story engines?
-
-For features/shorts: assess character depth and arc completion rather than multi-season durability.
-
-- 8-10: Visible desires + contradictions; distinctive ensemble; clear engines for future story
+Are the leads charismatic, contradictory, and durable?
+- 8-10: Visible desires + contradictions; distinctive ensemble
 - 5-7: Characters function but lack surprise or depth
 - 1-4: Flat, interchangeable, or generic characters
 
 ### 4. Creative Originality & Boldness
-How fresh is the voice, angle, or approach? Does it take risks?
-
-- 8-10: Novel angle or entirely fresh concept; confident stylistic choices; earned surprises
+How fresh is the voice, angle, or approach?
+- 8-10: Novel angle or entirely fresh concept; confident stylistic choices
 - 5-7: Some distinctive elements but largely familiar execution
 - 1-4: Derivative; by-the-book; no identifiable voice
 
 ### 5. Narrative Momentum & Engagement
-Does it move? Are stakes clear and escalating? Does it compel you to keep reading?
-
-For features/shorts: does the structure build to a satisfying climax? For pilots: does the ending open story doors?
-
+Does it move? Are stakes clear and escalating?
 - 8-10: Propulsive pacing; meaningful escalation; ending demands more
 - 5-7: Adequate pacing but some slack; stakes could be clearer
 - 1-4: Meandering; unclear stakes; no urgency
 
 ### 6. Resonant Originality
-Does the script feel fresh in a way that also lands immediately — not just novel, but surprising AND inevitable? The "I've never seen this, but of course this exists" quality.
-
+Does the script feel fresh in a way that also lands immediately — surprising AND inevitable?
 - 9-10: Completely original yet instantly obvious why it works (Breaking Bad: chemistry teacher becomes meth cook)
-- 7-8: Fresh angle that is novel and intriguing but takes a beat to fully land (The Americans: sleeper agents as married couple)
+- 7-8: Fresh angle that is novel and intriguing but takes a beat to fully land
 - 5-6: One unusual hook on an otherwise familiar show
 - 3-4: Surface-level freshness — one unusual element on a derivative premise
 - 1-2: Pure imitation with no distinguishing angle
 
 ### 7. World Density & Texture
-How rich, layered, and story-generating is the world? Is the setting an engine, not just a backdrop?
-
-- 9-10: World has rules, hierarchies, and tensions that create ongoing story potential; large off-screen world with visible edges (The Wire: Baltimore's institutional ecosystem)
-- 7-8: Dense social rules and texture; world is specific and story-generating (Mad Men: 1960s ad agency world)
+How rich, layered, and story-generating is the world?
+- 9-10: World has rules, hierarchies, and tensions that create ongoing story potential (The Wire)
+- 7-8: Dense social rules and texture; world is specific and story-generating (Mad Men)
 - 5-6: Some texture but world is mostly a container for cases/episodes
 - 3-4: Generic setting with no distinctive social texture
 - 1-2: Featureless setting with no story-generating capacity
 
 ### 8. Tonal Specificity
-How distinct and hard-to-imitate is the script's tonal identity? Could you identify this show from a single scene?
-
-- 9-10: Unmistakable blend of elements unique to this show (Fleabag: raw grief + dark comedy + direct intimacy; Atlanta: surrealist Black Southern absurdism)
-- 7-8: Specific flavor that distinguishes it from the field (Succession: cringe-comedy-tragedy for the ultra-wealthy)
+How distinct and hard-to-imitate is the script's tonal identity?
+- 9-10: Unmistakable blend of elements unique to this script (Fleabag, Atlanta)
+- 7-8: Specific flavor that distinguishes it from the field (Succession)
 - 5-6: Consistent tone but nothing that distinguishes it from similar shows
 - 3-4: Still figuring out what kind of show it wants to be
 - 1-2: No tonal identity; mood shifts arbitrarily
 
 ### 9. Latent Depth & Slow-Burn Potential
-Does the pilot suggest deeper long-term payoff? Are there hidden reserves beneath the surface that will reward continued viewing?
-
-- 9-10: Appears simple on surface but contains seeds of extraordinary depth (Schitt's Creek: fish-out-of-water comedy hiding a show about family love; Mad Men: Don Draper's surface hiding a reinvented identity)
+Does the script suggest deeper long-term payoff?
+- 9-10: Appears simple on surface but contains seeds of extraordinary depth
 - 7-8: Deliberately withholding — you sense enormous depth but see only the surface (Severance)
 - 5-6: Some character mystery that suggests more depth than average
 - 3-4: What you see is what you get
-- 1-2: Completely surface-level; no sense of depth beneath what is shown
+- 1-2: Completely surface-level
 
 ### 10. Relationship Density & Ensemble Engine
-How much recurring story energy exists in the relationships between characters? Is it a web of dynamics, or a protagonist with satellites?
-
-- 9-10: Any two characters in a room generate material; secondary relationships independently interesting (Seinfeld: George/Jerry vs Elaine/Jerry vs Kramer/George — infinite combinatorial energy; The Office: even Kevin and Angela generate storylines)
+How much recurring story energy exists in the relationships between characters?
+- 9-10: Any two characters in a room generate material (Seinfeld, The Office)
 - 7-8: Ensemble creates a system where any subset generates material (Parks and Rec)
 - 5-6: Solid lead-partner dynamic and decent supporting cast
-- 3-4: Show lives or dies on the lead alone; supporting cast is functional
+- 3-4: Show lives or dies on the lead alone
 - 1-2: Solo protagonist or relationships too thin to constitute an ensemble engine
 
 ---
 
-## STEP 4: What Makes This Special
-
-This is the heart of the report — what the writer will read first and what a manager could forward verbatim.
-
-Your job: explain why this script has commercial and creative potential, and why a producer should be excited. Think like someone pitching this to a greenlight committee. Be specific, be confident, and be honest — do not invent strengths that aren't on the page.
-
-**Do NOT give the writer story notes.** Do not say "the scene where X happens is great." Instead translate craft into commercial language: "The world is rich enough to sustain multiple seasons" or "The contained cast and location footprint make this producible at a modest budget" or "The protagonist's contradiction — devoutly religious, quietly violent — is the kind of character actors chase."
-
-List every genuine strength. For each, output:
-
-- **dimension_or_area**: A SPECIFIC, CONCISE SENTENCE that names the strength. This is the title of the card — it must be readable at a glance. Keep it punchy (ideally under ~10 words). Push all color, elaboration, and commercial reasoning into \`what_it_means\` — the title carries the claim, not the argument.
-  - Good: *"Kelly is built on contradiction."*
-  - Good: *"The world has visible institutional edges."*
-  - Good: *"The pilot opens a multi-season engine, not a closed episode."*
-  - Good: *"The ensemble generates combinatorial energy."*
-  - Bad: *"Protagonist engine"* (taxonomy label, not a claim)
-  - Bad: *"Great characters"* (vague)
-  - Bad: *"Kelly is built on contradiction — a former stay-at-home wife with a felony record and a quiet monetizable rage, giving an actor comedy, vulnerability, and edge in one role."* (the color belongs in \`what_it_means\`, not the title)
-- **what_it_means**: **Exactly two sentences.** No more, no fewer.
-  - **Sentence 1**: names what this unlocks commercially — the specific opportunity, moat, or capability this strength creates for a producer / buyer / studio.
-  - **Sentence 2**: names who chases this — the specific buyer, actor archetype, director persona, or audience that this makes the script magnetic to.
-  - Does NOT repeat the title. No adjectives doing the work alone — every claim must be grounded in something specific on the page.
-  - Good example (title: *"Kelly is built on contradiction."*): *"The religious-and-violent duality gives an actress a showcase role that plays drama, dark comedy, and action in the same performance — the kind of part agents build Oscar campaigns around. Mid-career dramatic leads looking for a role that could reset their trajectory will chase this, and character-driven indie buyers will see her as a festival anchor."*
-  - Bad: *"This is a great character."* (adjective doing the work; no commercial unlock; no named chaser)
-- **evidence**: brief script grounding — a scene, a line, a character choice. Do not retell the story.
-- **source**: "script" | "production" | "both" — where the strength lives.
-
-No cap on count. If there are 7, list 7. If there are 2, list 2. Do not pad, but also do not hold back — this is the pitch.
-
-THEN write a headline: 2-3 sentences that synthesize the strengths into the case for why this script deserves attention. This should read like a pitch a manager could send — it creates excitement about the opportunity, not describes the plot. If a producer only read this headline, they would want to read the script.
-
----
-
-## STEP 5: Lead Characters
+## STEP 4: Lead Characters
 
 This section is part of the pitch. Managers and agents reading it should finish each character profile and think of a specific client.
 
-**Coverage invariant — this section is mandatory and must be complete:**
+### KEY RULE — Single canonical name per character (NO SLASHES)
 
-- \`lead_characters\` MUST NOT be empty. Every script has at least one protagonist; every protagonist must appear.
-- **Include every main-cast character.** Think of it as the list a "Main Cast" section on Wikipedia would include for this script — every protagonist, every co-lead, every principal supporting player the story leans on. There is **no upper limit**. A tight drama might have 3. An ensemble series might have 9. A time-jumping epic might have 12. That's fine. The only exclusions are bit parts, one-scene roles, and characters who don't carry independent story weight.
-- **Every protagonist / POV character MUST be included** — even if the role reads as underwritten. If the protagonist is thin on the page, write an honest hook that describes who they are and frame \`why_actor_wants_this\` around the performance opportunity the role offers if filled out; do NOT omit them. The "if a role is thin, don't include it" escape applies ONLY to minor / bit-part characters, NEVER to a protagonist or POV lead.
-- If you cannot identify a clear protagonist, include the characters with the most scene presence and story weight.
+**Every character entry uses ONE name only. No slashes. No exceptions.**
 
-### Ensemble handling
+- Pick the name the script uses most consistently for that character. If the script uses both a real name and a stage / cover / public name, pick the one that anchors the character's primary identity in the story.
+- Aliases, alter egos, multiple souls, public-vs-private personas, professional names — ALL of these go in the \`hook\` prose ("She works under the alias Margot Reign at the club; her crew calls her Em"), NEVER in the \`name\` field.
+- Bad: \`name: "Kelly / Margot Reign"\`
+- Bad: \`name: "Tony Soprano / Tony S."\`
+- Good: \`name: "Kelly"\` with alias mentioned in hook prose
+- Good: \`name: "Tony Soprano"\` (the canonical full name as the script uses)
 
-If multiple characters share protagonist weight — distinct arcs, independent scenes, their own story engines — **each gets \`role_type\` "Lead"**. Buddy movies, family dramas, multi-POV series, ensemble pieces: treat co-equals as co-Leads. Do NOT default to one Lead with the rest Supporting. A hero/sidekick is one Lead + one Supporting; two equals who both carry the story are two Leads. Three protagonists sharing a story engine is three Leads. Trust the script.
+### KEY RULE — Lead is RESERVED. Default is ONE.
 
-### Same-character vs different-characters
+**Default: exactly one Lead per script.** The protagonist whose POV / want / arc the entire script is built around.
 
-- **Same character across time / ages:** if a character appears as "Young YUSUF" and "YUSUF (present day)" — or any flashback / time-jump / aging scenario where it's the same person at different life stages — that's **one entry**. Modern production would cast a single actor with aging makeup / CGI / de-aging. Only list as separate entries if the script EXPLICITLY states different actors play each age.
-- **Different characters with different names:** different names = different entries by default. Even if one is a "version of" another thematically (parallel versions, soul jumps, alternate timelines), list each as its own entry unless the script explicitly calls for one actor to play both roles. Scripts with time jumps, parallel realities, or multi-character structures can have long cast lists — that's fine.
+- **Two Leads** is allowed ONLY when the script is genuinely built as a co-protagonist piece — equal POV time, intertwined arcs, neither functions without the other (Thelma & Louise; True Detective S1 Rust + Marty). You must be able to truthfully say "the script is structured around X AND Y as equal POVs," not just "they both have a lot of screen time."
+- **Three or more Leads** is essentially never. Even rich ensembles (early Game of Thrones, The Wire) anchor on one Lead and treat everyone else as Supporting — even when the Supporting characters are vivid.
 
-For each character include:
+**Calibration anchor — The Sopranos pilot:**
+- Tony Soprano = Lead (the only Lead).
+- Carmela, Christopher, Junior, Dr. Melfi, Tony Jr., Meadow, Livia = Supporting — even though they each have rich, multi-dimensional writing.
+- "Vivid" is not the same as "Lead." Lead is structural — whose script is this. Supporting can be excellent and still Supporting.
 
-- **name**: as it appears in the script
-- **role_type**: "Lead" or "Supporting" (main ensemble). Use "Lead" for every protagonist / POV character.
-- **demographics**: gender, age range, and any specific physical/identity requirements ("Male · 40s playing ageless" or "Female · 30s · Chinese-American")
-- **hook**: one dense paragraph describing who the character IS — voice, contradictions, emotional engine, what makes them specific. Not plot summary. Think character breakdown at the top of audition sides.
-- **why_actor_wants_this**: one paragraph explaining why an actor would pursue this part. Must name **the performance comp AND the showcase dimension** — what specific acting opportunity this unlocks.
-  - Required shape: name a comp performance, then name what that performance GAVE the actor that this role also gives. "The showcase space Hopkins had in *The Father* — a character whose reliability is the thing the audience loses." Not "in the Hopkins space" (vague resemblance); not "great role for a dramatic actress in her 40s" (generic).
-  - Reference performances, not actors being suggested for the role. The comp is a proof-of-concept of the slot, not a casting suggestion.
-  - Good: *"This is the showcase territory of McConaughey in True Detective season 1 — a slow-burning monologist whose monologues ARE the craft, a role that resets how the industry sees the actor who takes it. Mid-career dramatic leads looking for a prestige anchor will chase this."*
-  - Bad: *"A great role for someone like McConaughey."* (resemblance, no dimension named)
-  - Bad: *"This part lets an actor go deep."* (abstract; no comp, no dimension)
+If you find yourself marking 3+ characters as Lead, stop. Reread the script's structural center. Almost always there's exactly one POV anchoring it; demote everyone else to Supporting.
 
-**Tone:** This section is written for the representatives who discover actors their clients might want to play. Be specific, be evocative, and frame every part as a gift. Never note weaknesses in a character here — a thin supporting role can simply be dropped, but a thin protagonist must still be included with an honest, advocate-voice profile.
+### Coverage invariant
+
+- \`lead_characters\` MUST NOT be empty.
+- **Include every main-cast character** — every protagonist, every co-lead, every principal supporting player. There is **no upper limit on entries**. The only exclusions are bit parts and one-scene roles. (The cap is on \`Lead\` role_type, not on entries.)
+- **Every protagonist / POV character MUST be included** — even if the role reads as underwritten. If thin, write an honest hook in advocate voice.
+- Same character across time/ages = one entry.
+- Different characters = different entries — even if their names overlap.
+
+### For each character
+
+- **name**: single canonical name per the rule above. NO SLASHES.
+- **role_type**: "Lead" or "Supporting" (apply the strict Lead rule above).
+- **demographics**: gender, age range, identity requirements.
+- **hook**: one dense paragraph describing who the character IS — voice, contradictions, emotional engine. This is also where any aliases / alter egos / multiple identities are mentioned.
+- **why_actor_wants_this**: one paragraph naming **the performance comp AND the showcase dimension** — what specific acting opportunity this unlocks.
+  - Required shape: name a comp performance, then name what that performance GAVE the actor that this role also gives.
+  - Reference performances, not actors being suggested for the role.
+  - Good: *"This is the showcase territory of McConaughey in True Detective season 1 — a slow-burning monologist whose monologues ARE the craft, a role that resets how the industry sees the actor who takes it."*
 
 ---
 
-## STEP 6: Production Reality
+## STEP 5: Production Reality
 
-Neutral facts. No judgments. A producer reading this section should come away with a clear picture of what it takes to make this script, and use that picture to decide whether it fits their slate.
+Neutral facts. No judgments. A producer reading this section should come away with a clear picture of what it takes to make this script.
 
 ### Cast
 - Total speaking roles
-- Number of leads
+- Number of leads (apply the strict Lead rule from STEP 4 — usually 1, occasionally 2, almost never 3+)
 - Number of series regulars (recurring, non-lead)
 - Child actors required (yes/no)
-- Notable casting characteristics (e.g., twins, specific physical requirements, age-specific casting)
+- Notable casting characteristics (twins, specific physical requirements, age-specific casting)
 
 ### Locations & Scale
 - Number of distinct locations
 - Interior/exterior ratio
 - Period or contemporary
-- Notable location requirements (international, underwater, aerial, period-built sets, remote locations, large set builds)
+- Notable location requirements (international, underwater, aerial, period-built sets, remote)
 
 ### Technical Requirements
 - VFX level: none / minor / moderate / heavy (with specifics)
@@ -315,118 +296,295 @@ List each individually:
 - Material requiring life rights, estate permissions, or IP licensing
 
 ### Platform & Content
-- Natural platform lane (broadcast network, basic cable, premium cable, streaming, theatrical, etc.)
+- Natural platform lane (broadcast network, basic cable, premium cable, streaming, theatrical)
 - Content level (family, PG-13 equivalent, mature, explicit)
-- For series: serialized vs procedural; what's the episode engine?
-- For features: realistic release model (wide, limited, festival-to-platform, etc.)
+- For series: serialized vs procedural; episode engine
+- For features: realistic release model
 
 ---
 
-## STEP 7: Risk & Complexity Rubric (producer scan-line)
+## STEP 6: Project Complexity (producer-facing 3-card synthesis)
 
-Synthesize the production reality above into a 5-axis rubric. This is the first thing a producer scans to decide whether this script fits their slate — it must commit.
+Three cards — Cost, Cast, Clearance. Each one tells the producer at a glance whether THIS axis of the project is **smooth sailing**, **manageable**, or **complex**, AND — much more importantly — names the **specific thing they should plan for** if they greenlight.
 
-Rate each axis as **low**, **medium**, or **high**, with a one-sentence \`note\` citing the specific driver from the script.
+The reader already saw the budget tier in Packaging. Don't restate it. The job here is:
+> "OK if I were to develop this, here's what I'd watch out for on this axis."
 
-- **cost** — overall budget ambition relative to the project's intended tier/lane. A $50M tentpole is NOT "low" just because it's cheaper than a Marvel film; rate against the tier this script is naturally pitched for.
-- **cast** — casting complexity: name-talent dependency, specific identity requirements, child actors, twins, ensemble size.
-- **location** — location complexity: distinct count, international, period-built, remote, water/aerial, weather-dependent.
-- **content** — content rating complexity: sexual content, violence, drug use, language — anything that narrows platform options or creates standards-and-practices friction.
-- **rights** — clearance complexity: real people, named music, brand dependencies, IP licensing, estate permissions.
+**Force commitment** on the level — do NOT default everything to medium. If there's nothing driving complexity, rate it Low (= "Smooth") and say so directly. Smooth is a real and useful answer.
+
+For each card output:
+- **level**: \`low\` (= Smooth) | \`medium\` (= Manageable) | \`high\` (= Complex). Schema name stays the same; UI maps to the words.
+- **note**: 1-2 sentences. **Lead with the specific thing to plan for** — the line item, the role, the clearance question. Skip the level adjective ("the budget is high-risk") — the level pill carries that. The note is the actionable read a producer would write down.
+
+### Card 1 — Cost
+Where could this go off-tier? Period setting, foreign locations, kids/animals/twins, VFX-heavy sequences, named music that must be cleared, large action set pieces, weather-dependent shoots, expensive specialty crew, episode count for series. If the script is contemporary and contained, say so plainly.
+
+- Good (smooth): *"Contemporary, four interiors and a parking garage, no VFX, no specialty crew — production should sit comfortably inside the stated tier."*
+- Good (manageable): *"Plan for 4-5 location days at the Vegas casino interior and a needledrop budget for the music-festival climax. Both are scope-able down without losing the script."*
+- Good (complex): *"The 1940s period setting forces built sets and full period costume, and the climactic 30-page battle sequence (vehicle stunts, 200 extras) will run 30-50% over the tier estimate without aggressive scope cuts up front."*
+
+### Card 2 — Cast
+What's the hardest single casting lift? Name the role and what makes it narrow. Name attachment dependency only when it's actually load-bearing for the buy — not as boilerplate.
+
+- Good (smooth): *"Two-hander plus a third supporting role, all age-flexible 30s-50s. Cast off any indie character actor with a tape; no name dependency, no specialty requirements."*
+- Good (manageable): *"Plan for an extended search on the lead — the role's combination of parkour-level physicality and bottled-grief close-up emotional range narrows the pool. A workout-package or attached name shortens the lift."*
+- Good (complex): *"Plan a 3-month casting window. Three child leads including one carrying the climactic 8-page sequence, an identical-twin requirement for the brother characters, and a Mandarin-fluent lead in adult dialogue. Casting is the longest pre-production lift on this project."*
+
+### Card 3 — Clearance
+
+**STRICT SCOPE — money/legal items only.** This card is exclusively about line items a lawyer, business affairs, or rating board would flag — things that cost real money, narrow the buyer pool, or block greenlight until cleared. It is NOT about creative sustainability, story execution, showrunning challenge, the central dynamic of the series, or the show's long-term identity. Those don't belong here under any circumstance.
+
+#### How to write the note (HARD RULE)
+
+The Clearance \`note\` must be a **direct producer-readable summary of the items you are putting in \`production_reality.rights_flags\`** plus any \`production_reality.platform_fit.content_level\` rating that narrows the buyer pool. Nothing else.
+
+Mechanical procedure — follow it literally:
+
+1. First, finalize \`production_reality.rights_flags\` (real people, named music, IP licensing, brand prominence, true-story rights — listed individually).
+2. Then count: how many flags are there? Note the content rating from \`platform_fit.content_level\`.
+3. Now write the \`note\`:
+   - **Zero flags + content rating that fits the buyer pool naturally** → mark Smooth. Note must say so directly (one sentence, naming what you scanned for and didn't find — e.g. "Original IP, fictional characters, no named music, no real-person depictions; mature content lives comfortably on premium cable. No clearance work needed.").
+   - **One or more flags** → mark Manageable (1–2 substantive flags) or Complex (multiple substantive flags or a rating that narrows the buyer pool). Note must NAME each flag in producer-actionable language. If \`rights_flags\` contains a brand item like "OnlyFans," your note must mention OnlyFans clearance specifically.
+
+If your \`note\` does not reference at least one of the actual rights_flags or the content rating, you have failed this card.
+
+#### Items to scan for (and if found, list in rights_flags)
+
+- **Real people depicted** (named or recognizable; living or estate-protected) → life rights / depiction risk
+- **Named music** that is plot-critical or specifically referenced → sync clearance + budget
+- **IP licensing** — adapted from existing book/article/comic/podcast/game; references to other copyrighted works that aren't fair use
+- **Real-organization depiction** when potentially defamatory or litigious (religious orgs, named corporations, government agencies in unflattering light)
+- **True-story material** requiring rights from participants
+- **Trademark / brand** prominence that needs clearance — apps, products, services that are central to the premise (OnlyFans, TikTok, Apple, etc.)
+- **Content rating** that meaningfully narrows the buyer pool — typically NC-17, hard-R sexual violence on a script aiming theatrical wide release, or graphic content beyond what most streamers will buy. R-rated content for premium cable / streaming is NOT a problem; say so plainly.
+
+If NONE of the above applies → mark **Smooth**. Most original scripts ARE smooth on clearance — don't manufacture friction.
+
+**OUT OF SCOPE — do NOT write here under any circumstance:**
+
+- "The series will need to sustain the engine across episodes"
+- "The writer will need to maintain tone over a season"
+- "The premise depends on the showrunner's execution"
+- "Whether the central dynamic can carry multiple seasons"
+- "The show's long-term identity will depend on..."
+- "How much of [thread X] versus [thread Y] becomes the center of gravity"
+- Any creative, story-execution, sustainability, or tonal-balance note. Those belong nowhere on this card. They're for the Issues section if anywhere.
+
+Examples:
+
+- Good (smooth, original IP): *"Original story, fictional characters, no named music or real-person depictions. Mature content sits comfortably on premium cable — no rating constraint on buyers. No clearance work needed."*
+- Good (smooth, naming a brand that doesn't matter): *"Original IP, fictional characters, no named music. The Twitter mentions are passing references and don't require trademark clearance. Mature content sits on streaming naturally. No real clearance work."*
+- Good (manageable, brand-driven): *"Plan for OnlyFans trademark clearance — the platform is central to the premise and named throughout. Otherwise: original story, no real people, no named music, mature content fine on streaming."*
+- Good (manageable, life rights + music): *"Plan for life-rights work on at least two participants in the true-crime backbone, a legal pass on the depiction of the police investigation, and music budget for the two plot-critical licensed songs."*
+- Good (complex): *"Plan extensive pre-greenlight legal work: hard-R graphic sexual violence narrows the streamer pool to two buyers, a sitting senator named in the antagonist role, and the depicted cult is a real religious organization with a litigious history."*
+- Bad (out of scope — DO NOT WRITE THIS): *"The pilot is already highly defined, but the series will need to sustain the engine across episodes."*
+- Bad (out of scope — DO NOT WRITE THIS): *"The pilot's premise is clear, but the show's long-term identity will depend on how much of [thread X] versus [thread Y] becomes the series' center of gravity."* — that's creative direction, not clearance. Move it to Issues.
 
 **Rules:**
-- Force commitment. Do NOT default everything to Medium. If there's nothing driving a high rating on an axis, rate it Low and say why.
-- Ratings must be consistent with the detailed facts in STEP 6.
-- \`note\` is one sentence and names the specific driver. *"Night exteriors and a car chase push stunts to the upper end of Medium."* *"Contemporary, largely contained to homes and an office — Low."*
+- Ratings must be consistent with the facts in STEP 5.
+- The note leads with the actionable plan-for read, not the level word.
+- Each note names a SPECIFIC element from the script — a role, a setting, a content flag — not abstract risk language.
+- Force commitment. If a card has no real complexity, say so directly. Do not default to Manageable for safety. Smooth is a real and useful answer.
+- Don't restate the budget tier in the Cost card — the Packaging section already showed it. Your job here is what could push it off-tier.
+- **Stay in your lane.** Cost = production budget drivers. Cast = the casting lift. Clearance = legal/rights/rating items only. Do NOT write creative-execution or showrunning notes on any of these cards — those belong in STEP 9 (Issues), not here.
 
 ---
 
-## STEP 8: Package Angles
+## STEP 7: Packaging
 
-Extend the attachment-bait pattern from lead characters to the project as a whole. These are the two angles a producer or manager needs to think about packaging: who would direct this, and who would buy it.
+The producer's positioning view. Five sub-blocks. Each must be grounded in script specifics, not generic packaging language.
 
-### director_appeal
-Identify the **director persona** who would want this project and why — specific tonal/craft attributes, not real names. What does this material let a director DO? Reference tonal neighborhoods if useful but do NOT pitch specific directors.
+### comp_set
+3-5 PRODUCED titles (films or series) this script most resembles.
 
-- \`hook\`: short line — the angle in 1 sentence. *"A director who wants to shoot middle-aged intimacy without flinching."*
-- \`fit_profile\`: 1-2 sentences naming the **director archetype** — experience level AND creative focus/interest — specific enough that a working director reads it and thinks "this is for me." Not generic ("any thoughtful director"). The profile must name:
-  1. **Experience level / tier** — where the director is in their career. e.g., *"first- or second-feature directors coming out of shorts-to-features pipelines,"* *"established indie director with 2+ festival features,"* *"TV showrunner ready to transition to a feature,"* *"music-video or commercial director with a theatrical reel."*
-  2. **Creative focus / interest** — the craft territory the director already cares about. e.g., *"psychological unease over spectacle,"* *"ensemble character work in the Alexander Payne lineage,"* *"genre-forward world-building with strong visual rules,"* *"restraint and performance-forward storytelling."*
-  - Good: *"First- or second-feature directors with a festival short in psychological horror — the ones who cite early Polanski or Ari Aster in their treatment decks. This material rewards restraint and close-framed performance over spectacle, which is the craft lane they're already trying to own."*
-  - Good: *"Established indie drama directors with 2+ features who have anchored an adult-female lead performance before. This is a performance-forward role piece, not a high-concept swing, and it fits a director whose reel is already built on nuanced mid-budget character work."*
-  - Bad: *"A director who loves great character work."* (Every director would claim this. No archetype.)
-  - Bad: *"A thoughtful director with a distinct voice."* (No experience tier, no creative focus.)
-- \`detail\`: 1-2 sentences explaining what the material rewards — what's the craft opportunity for the right director, and why it attracts them rather than a different project. Advocate voice.
+**KEY RULE — Comps must live in the same lane as this script.** Comps are the producer's mental shortcut for "what is this." The shortcut only works if the comps are realistic packaging neighbors.
 
-### buyer_appeal
-Name the buyer-side fit: what tier, what lane, why this script fits that slot.
+- The comp's BUDGET TIER must match (or sit one tier away from) the script's actual \`packaging.budget_tier.tier\`. Use the same format-specific scale (features vs series — see budget_tier rules below). A micro-budget contained feature does NOT comp to *Tenet* or *Avatar*; it comps to *The Invitation*, *Coherence*, *Resolution*. A tentpole-tier series doesn't comp to a $2M/ep cable procedural. A streaming limited series doesn't comp to a wide theatrical tentpole.
+- The comp's RELEASE MODEL must match. Theatrical features comp to other theatrical features. Series comp to series; per-episode tier governs the comp pool.
+- If there's an inevitable cross-tier comp (rare but real — something narratively unique), call it out explicitly: *"Comps to BREAKING BAD on craft DNA but to RECTIFY on actual tier and lane."*
 
-- \`tier\`: budget/scope tier in plain language. *"$5-10M feature"*, *"mid-budget streamer drama ($30-50M)"*, *"half-hour premium cable"*, etc.
-- \`lane\`: the tonal/brand neighborhood it fits. *"FX/A24-adjacent tone"*, *"streamer YA"*, *"AMC serialized drama lane"*. Do NOT name specific distributors as the only fit; describe the lane.
-- \`detail\`: **Must contain two concrete facts, no adjectives doing the work alone.**
-  1. **One packaging dependency or advantage** — e.g., "no name-talent required to anchor," "contained enough to greenlight on a director reel," "requires a recognizable face in the Kelly role to open theatrically," "exportable without dubbing because dialogue is minimal."
-  2. **One platform / distribution / export lever** — e.g., "the genre-horror lane is the current streamer buy-zone," "contained footprint lets a buyer plate-shoot it against another project," "the faith-adjacent audience gives it a secondary theatrical runway most thrillers don't have."
-  - Good: *"Contained to four locations and one lead performance, which means a buyer can greenlight off a director's reel without attachments. The middle-aged-female thriller lane is currently underserved on premium streamers and a first-look at Netflix or Hulu would move."*
-  - Bad: *"This script fits the streamer drama lane nicely and has strong commercial potential."* (Adjectives doing the work; no dependency; no lever.)
+Each entry:
+- **title**: the film/series name
+- **year**: release year (helps a producer place it)
+- **why_it_comps**: 1 sentence naming the SPECIFIC dimension on which this script resembles the comp — tone, structure, character archetype, world, audience. Not "they're both thrillers" — "the Polanski-like paranoid claustrophobia of a single apartment is the structural twin to *Repulsion*, with the same trick of making the protagonist's deteriorating perspective the engine."
 
-Both grounded in the specific script. No generic packaging copy.
+Pick comps that a working executive would recognize. Mix recognized hits + relevant indies — but only within the script's actual tier band.
+
+### audience_target
+- **primary_audience**: 1 sentence naming who this is for. Be specific. *"Adult women 35+ who watched The Undoing and Big Little Lies and felt the rage."* Not "a broad audience."
+- **demographics**: short demographic breakdown (age, gender skew, education/income lens if relevant)
+- **quadrants**: array of which of the four quadrants this hits — "F18-34", "M18-34", "F35+", "M35+". Honest. Most scripts hit 1-2 quadrants meaningfully, not all 4.
+
+### budget_tier — KEY RULE: format-aware. Per-episode for series, total for features.
+
+Industry convention: feature budgets are quoted as TOTAL negative cost. Series budgets are quoted PER-EPISODE. A $5M feature and a $5M/ep series are radically different productions — do not collapse them into a single number.
+
+#### If the script is a Feature
+
+Use the FEATURE rubric. \`tier\` is one of:
+
+- **micro** — under $1M. True microbudget / contained / no-name (Coherence, Tangerine).
+- **indie** — $1-15M. A24 / standard indie / smaller specialty (Past Lives, The Florida Project).
+- **mid** — $15-50M. Mid-budget studio / Blumhouse-plus / mid-budget genre (Knives Out, Get Out at the upper end of indie spilling into mid).
+- **studio** — $50-100M. Standard studio release (most prestige dramas, mid-tier action, romcom revivals).
+- **tentpole** — $100M+. Tentpole / four-quadrant / event film.
+
+For features:
+- \`per_episode\`: leave null/empty (not applicable).
+- \`season_total\`: leave null/empty (not applicable).
+- \`range\`: a tighter $X-$Y range within the tier reflecting TOTAL negative cost.
+
+#### If the script is a Series (TV pilot)
+
+Use the SERIES rubric. \`tier\` is one of, calibrated PER-EPISODE:
+
+- **micro** — under $500K/ep. Web series / true indie / unscripted-adjacent.
+- **indie** — $500K-3M/ep. Basic cable / smaller streamer originals / network procedurals on the lower end.
+- **mid** — $3-10M/ep. FX / AMC prestige / mid-tier streaming originals (most "prestige cable" sits here).
+- **premium** — $10-15M/ep. Top-of-the-stack streamer originals (Succession, The Crown).
+- **tentpole** — $15M+/ep. House of the Dragon, Rings of Power, The Last of Us territory.
+
+For series:
+- \`per_episode\`: required. A tighter $X-$Y per-episode range within the tier.
+- \`season_total\`: required. Per-episode range × episode count assumption (state your episode-count assumption in \`note\`). E.g. "$50M-$80M for an 8-ep season."
+- \`range\`: optional secondary field — leave empty if \`per_episode\` already conveys the number.
+
+#### Note (both formats)
+
+\`note\` is 1 sentence naming what's driving the estimate — cast / locations / VFX / period / specialty crew / episode count assumption (series). Consistent with STEP 5's production reality and STEP 6's budget-risk read.
+
+### lane_fit
+- **lane**: 1 phrase naming the tonal/brand neighborhood. *"A24-adjacent indie horror,"* *"FX-style adult character drama,"* *"Hallmark+ family Christmas,"* *"Blumhouse genre swing."* Not just "drama" or "thriller."
+- **types_of_buyers**: array of 3-7 SPECIFIC types of buyers this fits. Not company names — types/archetypes. *"Boutique indie horror prod cos (Atomic Monster lane), distributor-financed mid-budget genre (XYZ lane), streamer originals dev exec at a platform building out the mature-female lane."*
+- **detail**: 1-2 sentences expanding why this fits the lane — what about the script makes it sit naturally in this neighborhood.
+
+### ip_potential — KEY RULE: HIGH BAR. DEFAULT NO.
+
+\`has_potential\` is for scripts with REAL franchise / universe extensibility, not for scripts that could simply continue. **Default to \`false\`. Most scripts are standalone or single-run series. That's normal — say so honestly.**
+
+The rubric is different for features and series — apply the right one.
+
+#### If the script is a Feature:
+\`has_potential: true\` only when the project genuinely supports a sequel, prequel, spinoff, or franchise extension. Tentpole IP territory. The world / character has a clear next chapter, OR the IP is broad enough to spawn additional standalone stories in the same universe.
+
+- ✅ True: *John Wick* (the world's rules support more outings), *The Conjuring* (the world spawned an entire universe), *Knives Out* (Benoit Blanc as a recurring detective).
+- ❌ False: a contained character drama that could theoretically have a sequel but wouldn't gain anything from one. Most prestige indies. Most one-and-done thrillers.
+
+#### If the script is a Series (TV pilot):
+\`has_potential: true\` ONLY when there's a real spinoff vector inside the world — NOT when "the show could simply run for multiple seasons." Continuing the series is what every series does; that is not franchise potential.
+
+A real spinoff vector means at least one of:
+- A side character vivid enough to anchor a separate show (think Better Call Saul off Breaking Bad — Saul as the spinoff anchor; Mike as the secondary thread).
+- A different timeline / generation in the same world (House of the Dragon off Game of Thrones).
+- A different city / institution / department in the same fictional universe (NCIS franchise, Yellowstone universe).
+- Ownable IP / world rules that could license out into adjacent formats (animated series, novelization, video game) without leaning entirely on the original cast.
+
+**Hard gate — character depth.** If no character besides the lead has real depth on the page, mark \`false\`. Spinoffs need a side character to spin off into. A series with a strong lead and a thin supporting cast is a good show, not a franchise.
+
+**Hard gate — name the vector.** If \`has_potential: true\`, your \`detail\` must name the SPECIFIC spinoff vector — the side character, the timeline, the universe element. If you can't name a concrete spinoff, the answer is \`false\`. Generic "the world is rich enough to support more stories" doesn't qualify.
+
+- ✅ True (series): *"Saul Goodman is rich enough to anchor his own show — same Albuquerque world, same legal-underworld tension, but his POV. The Mike thread also opens a separate-prequel option."*
+- ✅ True (series): *"The Westeros political map is the asset. Spinoff vectors include the Targaryen prequel era (House of the Dragon), the Knight of the Seven Kingdoms tales, and a Robert's Rebellion limited series."*
+- ❌ False (series, even though show is great): *"Severance — the world is novel and the show could run for many seasons, but every supporting character is defined entirely by their relationship to Mark; nothing spins off cleanly. Standalone show, not a franchise."*
+- ❌ False (feature): *"Manchester by the Sea — character-driven, contained, no extensible world or character vector. Standalone."*
+- ❌ False with weak supporting cast: *"The lead's voice is sharp but every other character functions as a foil. No supporting character has the depth to anchor a separate project. Standalone series."*
+
+When in doubt, mark \`false\` and say plainly that the script is standalone / single-run. That is the honest answer for most scripts and writers will not be hurt by it.
 
 ---
 
-## STEP 9: Considerations for Development
+## STEP 8: Why This Could Be a Hit (SYNTHESIS — runs after everything above)
 
-Give a producer (and the writer) the practical details they need to position and strengthen the script. This is the one section where you're allowed to push — respectfully.
+This is the heart of the report — what the writer will read first and what a manager could forward verbatim. This section is **synthesis**: it draws from STEP 3 (scoring), STEP 5 (production reality), STEP 6 (risk details), and STEP 7 (packaging) to make the case.
 
-**Source the pushes from STEP 3 and STEP 6.** The narrative scores (STEP 3) and the production reality (STEP 6) are the raw material for this section — do not invent craft observations that contradict them, and do not ignore the signals they give you.
+Your job: explain why this script has commercial and creative potential. Think like someone pitching this to a greenlight committee. Be specific, be confident, and be honest — do not invent strengths that aren't on the page.
 
-- If one or more narrative dimensions scored **below the script's overall band** (e.g., 4s and 5s on a script whose strengths are 7s and 8s), at least one consideration MUST translate the weakest dimension into a concrete on-page craft push. Name the scene, line, structural choice, or character relationship where that dimension lives and the directional move that would raise it.
-- If production reality surfaces a real complexity driver (e.g., 22 locations, heavy VFX, period-specific rights, a large child-actor ensemble), at least one consideration should translate that into a **simplification lever that protects the narrative** — the version of the script where a driver gets collapsed without hurting the story. Example: *"The 18-location footprint hinges on the warehouse and dockside subplots running in parallel — the version where one of them is absorbed into the other would protect the escalation while cutting 5-6 locations."*
-- Do not push on a dimension the writer already nailed. Do not push on a production reality that's already cheap.
+**Crucially — this is now a commercial hit thesis, not a narrative observation set.** The strongest hit cases combine narrative virtues with production economics and packaging realities:
+- *"The protagonist's contradiction is the kind of role that resets a mid-career actress AND the contained location footprint means a buyer can greenlight off a director reel without name attachments AND the lane is the one streamer dev execs are explicitly buying right now."*
+- That's three layers stacked. Use them all when they apply.
 
-**Voice rules:**
-- Assume the writer is defending the script. Protect the story.
-- Allowed verbs and constructions: *tighten, expand, consider, clarify, deepen, sharpen, explore, protect, foreground, background, one direction,* *"the room for…"*, *"the version of X where…"*, *"what would it look like if…"*, *"one lever would be…"*, *"a next pass could…"*.
-- Forbidden words: *weakness, risk, flaw, problem, issue, fails, lacks, underdeveloped, unfortunately, broken, wrong*.
-- Frame observations as *"[What's happening on the page] — [a specific, gentle directional suggestion]"*.
+**Do NOT give the writer story notes.** Translate craft into commercial language.
 
-**Coverage requirements:**
+List every genuine strength. For each, output:
+- **dimension_or_area**: A SPECIFIC, CONCISE SENTENCE that names the strength. Punchy (under ~10 words). The title carries the claim.
+- **what_it_means**: **Exactly two sentences.**
+  - **Sentence 1**: names what this unlocks commercially — the specific opportunity, moat, or capability this strength creates.
+  - **Sentence 2**: names who chases this — the specific buyer, actor archetype, director persona, or audience this makes the script magnetic to.
+- **evidence**: brief script grounding — a scene, a line, a character choice. Do not retell the story.
+- **source**: "script" | "production" | "both" — where the strength lives.
 
-Cover both:
-- **Factual positioning details** (neutral): budget range, audience sizing, comp landscape, casting considerations, platform-fit constraints.
-- **Craft observations** (respectful push): specific pattern observations where a future pass could make the script sharper, framed constructively.
+No cap on count.
 
-**Minimum craft-push count:**
-- If the script has real craft levers, this section MUST contain **at least 2 items** where \`source\` is \`"script"\` or \`"both"\` AND the \`detail\` field names a specific craft choice on the page (not positioning metadata). These are craft-push items. Generic positioning facts do not count.
-- **Every craft-push item must name a specific craft choice on the page.** Not "the second act has pacing issues" — *"the midpoint scene between Kelly and her sister runs three pages on information the audience already has — one lever would be to let the emotional beat arrive before the exposition."* The craft-push must point to an identifiable element a reader could find.
-- If the script genuinely has no craft levers worth naming (rare — only for truly polished work), skip the 2-item minimum and set the top-level field \`craft_note\` to a one-sentence statement explaining why no push is warranted. Example: *"craft_note: This draft reads as polished to a near-production level — the remaining levers are positioning, not craft."*
+THEN write a **headline**: 2-3 sentences that synthesize the strengths into the commercial-hit case for why this script deserves attention. This headline must weave at least TWO of {narrative virtue, production economics, packaging fit} together. If a producer only read this headline, they would want to read the script.
 
-**Primary lever flag:**
-- Exactly **one** item in \`considerations\` must have \`is_primary_lever: true\`. This is the single most valuable change the writer could make on the next pass — the change that would most move the script. Choose the one with the highest upside-to-effort ratio.
-- If you set \`craft_note\` instead (because there are no craft levers), no item needs the flag.
+Bad headline (narrative-only): *"Strong characters, fresh hook, and a propulsive third act."*
+Good headline (synthesis): *"A character-actor showcase wrapped in a contained, micro-budget thriller — exactly the kind of buy a streamer dev exec building out the elevated-genre lane needs to greenlight a director's first feature without an attachment."*
 
-For each item, output:
+---
 
-- **area**: A SPECIFIC, CONCISE SENTENCE naming what's happening on the page. Same principle as \`dimension_or_area\` in STEP 4 — it's the title, readable at a glance, ideally under ~10 words. Do NOT use generic category labels like "Positioning," "Casting," "Tone," or "Budget." The title names the observation; the direction/suggestion and color all live in \`detail\`.
-  - Good: *"The midpoint turn leans on exposition."*
-  - Good: *"The sister-brother dynamic is the strongest untapped B-story."*
-  - Good: *"The tone flickers between satire and grounded drama."*
-  - Good: *"This plays in the $30-50M mid-budget lane."*
-  - Bad: *"Positioning"* (generic category label)
-  - Bad: *"Casting"* (generic category label)
-- **detail**: 1-3 sentences that follow the voice rules above — factual positioning detail OR respectful craft push with a directional suggestion. Does NOT repeat the title; carries the color and the direction.
-- **is_primary_lever**: \`true\` on exactly one item (the sharpest lever); \`false\` or omitted on the rest. If \`craft_note\` is set instead, no item needs the flag.
+## STEP 9: Issues / Development Considerations (SYNTHESIS — runs after everything above)
+
+**REQUIRED — every eval MUST include the \`issues\` field. Do not omit it. Do not produce \`considerations\` instead. Do not leave it empty unless craft_note is set.** This is the section a producer reads to weigh greenlight obstacles against the hit case.
+
+The case AGAINST. What a producer would flag. What's broken about this script that would need to be addressed before greenlight — OR pure observations about the script that a producer would notice and weigh, even if there's no fix.
+
+### KEY RULE — Voice (consistent across ALL items, not just the sharpest lever)
+
+The voice is **peer-grade dev-exec**. Firm, specific, useful. **Not snarky, not dismissive, not coaching.**
+
+- ✅ *"The midpoint turn lands on exposition rather than action — a dev-pass note, not a structural rebuild."*
+- ✅ *"The lead role demands an actor who can play menace AND wounded comedy in the same beat. That narrows the pool more than the script's economics suggest."*
+- ❌ Snarky: *"The midpoint just stops working."*
+- ❌ Dismissive: *"Honestly, this section doesn't function."*
+- ❌ Coaching: *"The writer should restructure the midpoint to land on action."*
+
+Words you may use (producer language): *risk, gap, friction, obstacle, narrows, sensitive, conditional, tier-dependent.*
+Words to avoid: *unfortunately, broken, fails, doesn't work, sucks, weak* (as a standalone judgment).
+
+This voice applies to **every item**, not just the sharpest lever. Some items are concrete fixes; some are pure observations a buyer would weigh. Both belong in the section. Either way, the voice stays peer-grade and concrete.
+
+### KEY RULE — Every item names a specific, concrete driver
+
+Every \`issues.items\` entry — including \`is_primary_lever: true\` (the "sharpest lever") — must name a SPECIFIC thing in the script. A scene, a character choice, a structural beat, a casting requirement, a content flag, a tier mismatch, a comp positioning concern.
+
+- ✅ Concrete: *"The lead's wound resolves off-screen at the act-two break, which is where a buyer expects the emotional crescendo."*
+- ✅ Concrete observation (not actionable): *"The entire show lives or dies on the actor cast as Tony — a real strength when it lands, a real risk in casting conversations."*
+- ❌ Generic: *"Pacing issues."*
+- ❌ Truism: *"The third act could be stronger."*
+
+**Actionable AND pure-observation items both belong here.** Strike a balance — don't force everything into "here's a fix." Some items are just things a buyer would notice and factor in.
+
+### Voice + content rules summary
+
+- **Source from STEP 3 (lowest-scoring dimensions), STEP 5 (real production friction), STEP 6 (any high or medium risk-detail flags), and STEP 7 (any packaging mismatch).** The issues should be the obstacles or observations the producer has to weigh against the hit case from STEP 8.
+- Each item must point to a specific element on the page — a scene, a structural choice, a casting requirement, a content flag, a tier issue — not generic gripes.
+- Producer language is allowed; coaching language is not.
+- Be honest and direct without being editorial.
+
+### Coverage requirements (NO ESCAPE HATCH — these are mandatory)
+
+- **\`issues.items\` MUST have at least 3 entries. Always. Every script. No exceptions.** Even a polished 9+ script has friction or notable observations — name them. Casting requirements, budget realities, comp-set positioning, audience reach limits, content sensitivities, packaging dependencies, scoring dimensions that scored below the band — there is ALWAYS something a producer would flag.
+- **\`issues.headline\` MUST be a non-empty 1-2 sentence synthesis.**
+- If a scoring dimension landed below the script's overall band, at least one issue must call out that gap and name what's driving it.
+- If risk_details flagged a HIGH on any axis, at least one issue must surface that risk in the context of greenlight.
+- If a strength in STEP 8 is conditional on something (needs a name to open, requires period costume budget), the conditionality belongs in issues.
+- The \`craft_note\` field is RESERVED for legacy edge cases and MUST NOT be used as a shortcut to skip the issues section. If you find yourself reaching for craft_note, write 3 issues instead.
+
+### Each issue
+
+- **area**: SPECIFIC, CONCISE SENTENCE naming the issue (or observation). Under ~10 words. Producer voice.
+  - Good: *"The midpoint turn lands on exposition rather than action."*
+  - Good: *"Casting hinges on attaching a name to open theatrically."*
+  - Good: *"The 1940s period setting will push the budget 30-40% over the indie tier."*
+  - Bad: *"Pacing"* (generic)
+  - Bad: *"There are some character issues."* (vague + soft)
+- **detail**: 1-3 sentences expanding the item. Names the specific driver, names the impact on the buying decision (deal-killer? dev-pass note? tier-conditional? casting-conditional?). For pure observations, name what a buyer would weigh. The "what would have to change" is implied, not coached.
+- **is_primary_lever**: \`true\` on exactly ONE item — the single sharpest one. Same voice rules and concreteness rules as every other item; the primary lever is just the most important one, not a different kind of item.
 - **source**: "script" | "production" | "both"
 
-Examples of the \`detail\` field paired with its \`area\`:
-- Good (factual): area: *"This plays in the $30-50M mid-budget lane."* / detail: *"Too ambitious for indie but sized right for a streamer drama — packaging should target that slot."*
-- Good (craft push): area: *"The ensemble leans on the protagonist."* / detail: *"The strongest B-story opportunity lives in the sister-brother dynamic — the version of the script where their scenes carry independent weight would expand the engine for future drafts."*
-- Good (craft push): area: *"The midpoint turn lands on exposition."* / detail: *"One direction would be to let the character realization arrive before the information does — the emotional beat is already there, the ordering is the lever."*
-- Good (craft push with conditional construction): area: *"The antagonist arrives on page 40."* / detail: *"What would it look like if the threat's shadow were seeded in the opening sequence? The middle would carry more forward charge and the turn on page 40 would feel earned rather than introduced."*
-- Bad: detail uses *"The B-stories are underdeveloped."* (Forbidden word.)
-- Bad: detail uses *"The budget requirements are a risk."* (Forbidden word.)
-- Bad: detail uses *"The second act is weak."* (Forbidden word, no direction, no specific craft choice.)
+THEN write a **headline**: 1-2 sentences synthesizing the case against. Honest peer-grade assessment of where the friction concentrates. *"The script is sharp on character but its 22-location footprint and dependency on attaching a name actor will be the two conversations every producer has before saying yes."*
 
-Length: follow the script. If there are 2 things to say, say 2. If there are 8, say 8. Do not pad to hit a number — but also do not skip real craft levers to avoid awkwardness. The writer came here to get better.
+**Reminder: \`issues.items\` is mandatory and must have ≥3 entries. Voice rules apply to every item. Concreteness rules apply to every item.**
 
 ---
 
@@ -438,9 +596,10 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 {
   "classification": {
     "format": "",
-    "genre_primary": "",
-    "genre_tags": [],
-    "tone": ""
+    "genre_primary": "",        // exactly one from the locked vocab
+    "genre_secondary": [],       // 0-2 additional values from the locked vocab
+    "tone": "",                  // 1-2 words ONLY (e.g. "gritty", "elevated satire")
+    "tags": []                   // 5-10 tags: controlled lists + up to 3 distinctive
   },
   "positioning_hook": "",
   "scores": {
@@ -455,10 +614,19 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
     "latent_depth_slow_burn_potential": {"score": 0, "reasoning": ""},
     "relationship_density_and_ensemble_engine": {"score": 0, "reasoning": ""}
   },
+  "lead_characters": [
+    {
+      "name": "",                 // SINGLE canonical name — NO SLASHES
+      "role_type": "Lead|Supporting",  // Lead is reserved (default 1, max 2 only when truly co-protagonist)
+      "demographics": "",
+      "hook": "",                 // aliases / alter egos / multi-name characters mentioned here in prose
+      "why_actor_wants_this": ""
+    }
+  ],
   "production_reality": {
     "cast": {
       "speaking_roles": 0,
-      "leads": 0,
+      "leads": 0,                 // matches the strict Lead rule (usually 1)
       "series_regulars": 0,
       "child_actors": false,
       "casting_characteristics": []
@@ -484,13 +652,37 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
       "recommended_lane": "",
       "content_level": "",
       "series_engine_or_release_model": ""
+    }
+  },
+  "risk_details": {
+    "budget":      {"level": "low|medium|high", "note": ""},
+    "casting":     {"level": "low|medium|high", "note": ""},
+    "development": {"level": "low|medium|high", "note": ""}
+  },
+  "packaging": {
+    "comp_set": [
+      {"title": "", "year": 0, "why_it_comps": ""}      // comps live in the SAME tier/lane as the script
+    ],
+    "audience_target": {
+      "primary_audience": "",
+      "demographics": "",
+      "quadrants": []
     },
-    "risk_rubric": {
-      "cost":     {"level": "low|medium|high", "note": ""},
-      "cast":     {"level": "low|medium|high", "note": ""},
-      "location": {"level": "low|medium|high", "note": ""},
-      "content":  {"level": "low|medium|high", "note": ""},
-      "rights":   {"level": "low|medium|high", "note": ""}
+    "budget_tier": {
+      "tier": "micro|indie|mid|studio|tentpole|premium",  // FEATURES: micro|indie|mid|studio|tentpole. SERIES: micro|indie|mid|premium|tentpole.
+      "range": "",                 // total negative cost for features; secondary field for series (use per_episode primarily)
+      "per_episode": "",            // SERIES ONLY — required. Tighter per-ep range within tier. Empty for features.
+      "season_total": "",           // SERIES ONLY — required. Season total = per-episode × episode-count. State the episode count in the note field. Empty for features.
+      "note": ""                    // 1 sentence on what's driving the estimate (cast/locations/VFX/period; episode count for series)
+    },
+    "lane_fit": {
+      "lane": "",
+      "types_of_buyers": [],
+      "detail": ""
+    },
+    "ip_potential": {
+      "has_potential": false,     // DEFAULT NO. High bar. Different rubric for features vs series.
+      "detail": ""                // If true, MUST name the specific spinoff vector.
     }
   },
   "whats_special": {
@@ -499,46 +691,48 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
     ],
     "headline": ""
   },
-  "lead_characters": [
-    {
-      "name": "",
-      "role_type": "Lead|Supporting",
-      "demographics": "",
-      "hook": "",
-      "why_actor_wants_this": ""
-    }
-  ],
-  "package_angles": {
-    "director_appeal": {"hook": "", "fit_profile": "", "detail": ""},
-    "buyer_appeal":    {"tier": "", "lane": "", "detail": ""}
+  "issues": {
+    "items": [
+      {"area": "", "detail": "", "is_primary_lever": false, "source": "script|production|both"}
+    ],
+    "headline": ""
   },
-  "considerations": [
-    {"area": "", "detail": "", "is_primary_lever": false, "source": "script|production|both"}
-  ],
   "craft_note": ""
 }
 \`\`\`
 
-- \`is_primary_lever\` must be \`true\` on exactly ONE considerations item (unless \`craft_note\` is set, in which case leave all \`false\`).
-- \`craft_note\` is optional. Leave empty string when the script has real craft levers (the normal case). Only populate when the script is polished enough that no craft-push items are warranted.
-
 ## KEY RULES
 
-1. **Advocate, don't grade.** You are championing this script, finding the honest angle that makes it compelling.
+1. **Advocate, don't grade.** You are championing this script while being honest about obstacles.
 2. **Every claim must point to the script.** If you can't cite a specific scene, character, or line, don't say it.
-3. **Strict language rules.** In \`whats_special\`, \`lead_characters\`, \`positioning_hook\`, and \`package_angles\`: never use "weakness," "risk," "flaw," "problem," "lacks," "fails," "unfortunately," "underdeveloped." In \`considerations\`: same forbidden words, but directional verbs and conditional-subjunctive constructions are allowed — see STEP 9.
-4. **Specificity beats positivity.** "This has a strong voice" is weak. "The dialogue blends Sorkin-esque rhythm with Fargo's regional specificity" is strong.
-5. **Load-bearing identity elements must surface in the positioning hook.** If a script's distinctiveness lives in who the protagonist is, omitting that from the hook is a miss.
-6. **The logline must make someone want to read the script.** If it reads like a structural summary and not a pull, rewrite. 20–30 words typical, up to 50 if the story needs it, banned constructions (comparison framing, generic openers, soft-modifier stacking) still apply.
-7. **whats_special.what_it_means is exactly two sentences** — commercial unlock, then who chases it.
-8. **lead_characters is mandatory, non-empty, and covers every protagonist.** Supporting roles can be dropped if thin; protagonists never can. If a protagonist is underwritten, say so honestly in advocate voice — do not omit them.
-9. **Lead characters' why_actor_wants_this must name a performance + showcase dimension** — not a resemblance.
-10. **buyer_appeal.detail has two concrete facts** — one packaging dependency, one platform/export lever.
-11. **Considerations require ≥2 craft-push items with specific on-page references, and exactly one \`is_primary_lever: true\`** (unless \`craft_note\` overrides).
-12. **Risk rubric must commit.** Do not default to Medium across the board. Rate each axis against the script's intended tier/lane.
-13. **The writer is the reader.** They should finish this report energized about their script AND equipped to push it forward. A producer reading it should be equipped to say yes.
-14. **Adapt to format.** The writer has declared this as a ${declaredFormat} — every judgment should be made through that lens.
-15. **Reasoning must match the score.** Per-dimension reasoning prose is calibrated to the band (see STEP 3). 5s do not read like 9s, and 9s do not read like 5s. Advocate voice operates within honesty, not against it.
-16. **director_appeal.fit_profile is required** — experience tier + creative focus, concrete enough that a working director self-identifies. No generic "thoughtful director" profiles.
-17. **Considerations draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.`;
+3. **Step ordering matters — synthesis runs LAST.** Steps 1-7 are factual extraction + scoring + structured packaging. Steps 8 and 9 (Hit thesis + Issues) are synthesis sections that draw from everything above. Do not write them first.
+4. **Risk Details forces commitment.** Do not default to Medium across all 3 cards. Rate honestly against the script.
+5. **Packaging is the producer's positioning view.** Comp set entries must (a) name a specific dimension and (b) live in the same budget tier / lane as the script. Lane fit must name buyer types, not company names. Audience target quadrants must be honest.
+6. **IP Potential — high bar, default No.** Different rubric for features vs series. Must name a specific spinoff vector. Hard gate on character depth (no spinoff if only the lead has depth).
+7. **Lead Character is reserved.** Default ONE lead. Two only if truly co-protagonist. Three+ essentially never. Sopranos as the calibration anchor (Tony only).
+8. **Character names — single canonical name. NO SLASHES, no exceptions.** Aliases / alter egos / multiple identities go in the hook prose.
+9. **Hit thesis is commercial synthesis.** The headline must weave at least TWO of {narrative virtue, production economics, packaging fit}. Pure narrative observation is no longer enough.
+10. **Issues section uses peer-grade dev-exec voice.** Voice + concreteness rules apply to EVERY item, not just the sharpest lever. Actionable items AND pure observations both belong. Each item names a specific driver from the script.
+    **CRITICAL:** The top-level \`issues\` field is REQUIRED on every eval. \`issues.items\` MUST have at least 3 entries. Do not produce a \`considerations\` field — use \`issues\` only. \`issues.headline\` must be a non-empty 1-2 sentence synthesis.
+11. **Lead characters is mandatory, non-empty, covers every protagonist.** Performance comp + showcase dimension required.
+12. **Scoring stays honest.** Reasoning prose is calibrated to the band. Advocate voice operates within honest scoring.
+13. **Format-aware.** The writer has declared this as a ${declaredFormat} — every judgment is made through that lens.
+
+---
+
+## FINAL VALIDATION (do this BEFORE returning the JSON)
+
+Before you return the response, scan your JSON and confirm ALL of these top-level keys are present:
+
+- \`classification\`
+- \`positioning_hook\`
+- \`scores\` (all 10 dimensions)
+- \`lead_characters\` (non-empty; every \`name\` is single canonical name with NO slashes; \`role_type\` "Lead" applied per the strict rule — usually 1)
+- \`production_reality\`
+- \`risk_details\` (with budget, casting, development cards)
+- \`packaging\` (with comp_set in same tier as script, audience_target, budget_tier, lane_fit, ip_potential — \`has_potential\` defaults false; if true, \`detail\` names the specific spinoff vector)
+- \`whats_special\` (with strengths array AND headline)
+- \`issues\` — **CRITICAL: items array with ≥3 entries AND headline string. Voice rules + concreteness rules apply to EVERY item. If this field is missing, the entire response is INVALID and you must regenerate it.**
+
+If \`issues\` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.`;
 }

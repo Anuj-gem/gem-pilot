@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T04:58:30.929Z",
+  "submission_id": "3d8b4ffa-89f0-4af3-af4f-9b3fb630e448",
+  "eval_id": "2b685054-86e5-4078-b651-831ab06f632e",
+  "title": "Mirrors Short Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Alfred West",
+      "role_type": "Lead",
+      "demographics": "Black male, college-age, late teens to early 20s, socially awkward, lower-income background implied, religious family environment."
+    },
+    {
+      "name": "Monica Bellucci",
+      "role_type": "Supporting",
+      "demographics": "Female, college-age, vampire, pre-med student, elegant and predatory with a controlled, alluring presence."
+    },
+    {
+      "name": "Alfred's Mom",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged, Black, devout, protective mother."
+    },
+    {
+      "name": "Alfred's Dad",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, Black, religious father, protective and practical."
+    }
+  ],
+  "positioning_hook": "A lonely college freshman falls for a vampire on campus, then wakes up to find his own reflection gone and his need to be seen turning him into the thing he feared.",
+  "cost_usd": 0.030079500000000002,
+  "input_tokens": 17984,
+  "output_tokens": 3687,
+  "status": "wrote:leads_ok"
+}

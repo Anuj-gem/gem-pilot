@@ -2,331 +2,447 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Satirical drama",
-      "genre_tags": [
-        "corporate thriller",
-        "psychological drama"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Drama"
       ],
-      "tone": "Sharp, propulsive, darkly comic, and increasingly paranoid"
+      "tone": "satirical",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "prestige",
+        "power",
+        "corruption",
+        "identity",
+        "startup-world",
+        "fintech"
+      ]
     },
-    "positioning_hook": "A refugee-founded biotech CEO accepts a billionaire’s bizarre personal-equity deal, then discovers the real product is his own identity—and the price is his soul.",
+    "positioning_hook": "A hungry immigrant founder lands a bizarre personal-equity deal with a billionaire mentor, then discovers the path to scale may cost him his company, his fiancée, and his own autonomy.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 8,
-        "reasoning": "The premise is instantly legible and commercially legible: a founder, a billionaire, a public pitch show, and a scandal engine that escalates into a high-stakes corporate takedown. The mix of startup culture, prestige satire, and thriller mechanics gives it broad adult appeal, especially for viewers who like business-world power plays with a moral trap at the center."
+        "reasoning": "The pitch is instantly legible: startup ambition, billionaire manipulation, and a public unraveling with real-world stakes. It has strong adult-audience appeal because the emotional engine is recognizable even as the premise gets increasingly outrageous."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The hook lands immediately in the opening pitch sequence and stays clean throughout: Adel sells a medical startup, then gets pulled into a personal-equity arrangement that turns him into the asset. The Anthro reveal, the Forbes exposure, and the final valuation manipulation all keep the engine simple to track and easy to pitch in a sentence."
+        "reasoning": "The hook lands immediately in the Python Pit opening and keeps sharpening as Anthro, the personal-equity deal, and the valuation manipulation come into focus. The premise can be explained cleanly in one breath and the script keeps paying that premise forward."
       },
       "character_appeal_and_long_term_potential": {
         "score": 8,
-        "reasoning": "Adel is built on a strong contradiction: idealistic founder, status-hungry operator, and eventually a man willing to weaponize the same system that trapped him. Mike is equally vivid as a charismatic predator with wounded-boy energy, and Cecilia and Hamilton give the story real relational pressure rather than just plot function."
+        "reasoning": "Adel is a strong lead because he’s both admirable and compromised: idealistic founder, status-hungry striver, and eventually a man willing to weaponize the same system against Mike. Mike is equally vivid, with charisma, menace, and wounded self-mythology that make him a real scene engine."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The personal-equity concept is the script’s signature move, and the way it evolves from a weird deal into a public platform and then a weapon is smart and audacious. The script also commits to a tonal swing that moves from Shark Tank parody to corporate nightmare without losing its satirical bite."
+        "reasoning": "The script takes a genuinely fresh swing by turning founder culture, equity, and personal branding into a psychological thriller. The reality-show framing, the personal-stock concept, and the corporate seduction language give it a distinct commercial voice."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "Each major turn changes the power balance: the pitch, the contract, the app launch, the exposé, the breakup, the blackmail, and the final reversal. The story keeps generating new leverage points, and the last stretch has real forward charge because every scene is about who controls the next move."
+        "reasoning": "The story keeps escalating through concrete reversals: the initial deal, the contract reveal, the Anthro launch, the Forbes exposure, the Thailand detour, and the final blackmail trap. Each major sequence changes the power balance rather than simply repeating the same conflict."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "It feels fresh because the central idea is both weirdly specific and instantly understandable: a man can be financially invested in as a person. The script turns that premise into a larger argument about belonging, legacy, and commodified identity, which gives the concept a memorable aftertaste."
+        "reasoning": "The core idea feels both novel and inevitable: a founder literally becomes an asset class, and the script keeps finding new ways to make that metaphor operational. The final image of him trading his own stock in bed lands because the concept has been built with discipline."
       },
       "world_density_and_texture": {
-        "score": 7,
-        "reasoning": "The startup, venture, media, and private-capital worlds are all textured with recognizable rituals, jargon, and status markers, from pitch sets to gala rooms to private jets. The world is specific enough to feel lived-in, though it is primarily an engine for the central power struggle rather than a sprawling ecosystem."
+        "score": 8,
+        "reasoning": "The startup, investor, media, and luxury-brokerage worlds all feel specific and story-generating, from the Python Pit set to the gala circuit to the Thai manufacturing negotiation. The script understands how money, access, and prestige circulate in this ecosystem."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a clear tonal fingerprint: glossy corporate absurdism with escalating menace, punctuated by sharp comic humiliation and sudden emotional bruises. The reality-show framing, the billionaire banter, and the final confrontation all feel of one piece, which makes the material easy to identify in the marketplace."
+        "reasoning": "It has a sharp satirical register with real thriller pressure underneath, and it sustains that blend through the pitch-show parody, the luxury excess, and the increasingly predatory dialogue. The tone is confident and recognizable rather than generic prestige seriousness."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "Beneath the satire, the script keeps revealing deeper material about immigrant ambition, shame, assimilation, and the hunger to belong in rooms that were never built for you. Mike’s backstory, Adel’s family pressure, and Cecilia’s moral clarity all suggest a feature that can play as both thriller and character study."
+        "score": 7,
+        "reasoning": "Beneath the plot mechanics, the script is clearly interested in shame, belonging, immigrant aspiration, and the seduction of elite spaces. The Mike backstory and Adel’s family pressure suggest a deeper emotional layer, even though the script mostly drives forward on plot."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "The Adel/Mike relationship is the engine, but the script gives it useful pressure from Cecilia, Hamilton, Jen, Mindy, and the Yuca staff. The ensemble is functional and often lively, though the core dynamic remains the main event rather than a fully combinatorial web."
+        "reasoning": "Adel/Mike is the main engine, but Cecilia, Hamilton, Jen, Mindy, and the Yuca staff all create usable pressure points around him. The ensemble is not sprawling, but the relationships do generate recurring conflict rather than functioning as pure support."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Adel Rahma",
+        "role_type": "Lead",
+        "demographics": "Male, mid-30s, Arab-American / refugee background, founder-CEO, Princeton-educated, New York-based",
+        "hook": "Adel is a polished, ambitious founder who believes he can outgrow every constraint if he just keeps scaling fast enough. He starts as a charismatic pitchman with a sincere mission, but the script steadily reveals how much of his identity is built on status hunger, control, and the need to belong in rooms that were never meant for him.",
+        "why_actor_wants_this": "This is the showcase territory of Riz Ahmed in The Night Of or Oscar Isaac in A Most Violent Year: a smart, contained man whose ambition curdles under pressure, with big close-up reversals and moral compromise baked into every scene."
+      },
+      {
+        "name": "Mike Mukhtar",
+        "role_type": "Supporting",
+        "demographics": "Male, late 50s, billionaire entrepreneur, Middle Eastern / immigrant background implied, hyper-charismatic, physically imposing presence not required but helpful",
+        "hook": "Mike is the kind of billionaire who can make predation sound like mentorship and humiliation sound like love. He’s funny, theatrical, and deeply controlling, with enough vulnerability and self-mythology to keep him from reading as a simple villain.",
+        "why_actor_wants_this": "This is the showcase territory of Jeremy Strong in The Trial of the Chicago 7 or Matthew McConaughey in True Detective: a magnetic, dangerous monologuer who can pivot from charm to threat in a single beat."
+      },
+      {
+        "name": "Cecilia Diaz",
+        "role_type": "Supporting",
+        "demographics": "Female, early 30s, investment banker, Latina, engaged to Adel",
+        "hook": "Cecilia is not just the worried partner; she’s the script’s moral and practical counterweight, someone who understands contracts, risk, and the social cost of bad judgment. Her love for Adel is real, but it’s constantly colliding with the fact that she can see the trap before he can.",
+        "why_actor_wants_this": "This is the showcase territory of Jurnee Smollett in Lovecraft Country or Rebecca Hall in The Night House: a sharp, emotionally legible role that gets to play intelligence, hurt, and betrayal without becoming passive."
+      },
+      {
+        "name": "Hamilton Tran",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, Vietnamese-American, CFO, first-generation professional",
+        "hook": "Hamilton is the grounded operator in the room, the guy who understands the math before anyone else wants to hear it. He’s funny, loyal, and increasingly frustrated by Adel’s need to turn every business decision into a referendum on ego.",
+        "why_actor_wants_this": "This is the showcase territory of Steven Yeun in Beef or Randall Park in Shortcomings: a smart, dry, emotionally contained role that can turn into the audience’s most trusted point of view."
+      },
+      {
+        "name": "Jen Wilson",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, corporate counsel",
+        "hook": "Jen is the legal reality check who can translate absurdity into plain English without losing her composure. She’s not written as a villain or a comic device; she’s the person who knows exactly how dangerous the paper trail is and still has to advise through it.",
+        "why_actor_wants_this": "This is the showcase territory of Carrie Coon in The Leftovers or Laura Linney in Ozark: a precise, high-IQ role where the performance lives in controlled alarm and professional restraint."
+      },
+      {
+        "name": "Mindy Phang",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s, journalist, Asian-American",
+        "hook": "Mindy starts as a former connection and becomes the story’s conscience and investigative threat. She’s smart enough to see the system clearly, and personal enough to make Adel feel the cost of what he’s rationalizing.",
+        "why_actor_wants_this": "This is the showcase territory of Ayo Edebiri in a dramatic mode or Carrie Coon in The Post: a reporter role with moral force, intelligence, and the ability to turn a conversation into a confrontation."
+      },
+      {
+        "name": "Isa",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, assistant / operations staff",
+        "hook": "Isa is the quietly competent office glue who sees more than she says. She’s useful, observant, and positioned close enough to power to understand how much of the company runs on improvisation and denial.",
+        "why_actor_wants_this": "This is the showcase territory of Auliʻi Cravalho in a grounded ensemble or Janelle James in Abbott Elementary: a role that can play dry wit, competence, and subtle judgment."
+      },
+      {
+        "name": "Wallace Singer",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, healthcare power broker, Southern accent",
+        "hook": "Wallace is the old-money gatekeeper who can bless a deal with a smile while keeping his own hands clean. He’s not the central antagonist, but he embodies the institutional layer that makes the whole ecosystem feel rigged.",
+        "why_actor_wants_this": "This is the showcase territory of John Lithgow in Succession or Bryan Cranston in Your Honor: a polished authority figure whose warmth is inseparable from leverage."
+      },
+      {
+        "name": "Aaliyah Kapoor",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, actor / public figure, married to Mike",
+        "hook": "Aaliyah is the elegant spouse who reads the room faster than anyone else and quietly clocks the social damage around her. She’s brief but useful as a pressure valve and a credibility marker inside Mike’s world.",
+        "why_actor_wants_this": "This is the showcase territory of Parker Posey in a prestige ensemble: a small role with sharp social intelligence and a lot of subtext in very little screen time."
+      },
+      {
+        "name": "Dao Ratanarak",
+        "role_type": "Supporting",
+        "demographics": "Female, late 50s, Thai business executive",
+        "hook": "Dao is the international counterpart who reminds Adel that scale comes with hard terms, not inspirational language. She’s calm, exacting, and materially more grounded than the men trying to posture around her.",
+        "why_actor_wants_this": "This is the showcase territory of Michelle Yeoh in a business-drama register: authority, elegance, and the ability to dominate a room with very little dialogue."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 18,
-        "leads": 4,
+        "speaking_roles": 15,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Middle Eastern or Arab lead required for Adel",
-          "Strong late-50s/60s male role for Mike",
-          "Strong early-30s female role for Cecilia",
-          "One child performer appears in the final Anthro-S montage",
-          "Ensemble of business, legal, and office roles across 30s-60s"
+          "one child role with dialogue and on-camera presence",
+          "one sex-worker role requiring adult performer and age verification",
+          "several high-status supporting roles with specific age and ethnic texture",
+          "one principal billionaire role that benefits from strong comedic menace"
         ]
       },
       "locations": {
         "distinct_count": 18,
-        "interior_exterior_ratio": "Mostly interior with some exterior city, travel, and event coverage",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "mostly interiors with a handful of exteriors",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Studio pitch set / reality-show set",
-          "New York office spaces, apartments, restaurants, gala, airport, plane, Vegas hotel, Bangkok conference room, factory, convention hall",
-          "Private jet and penthouse environments"
+          "New York office environments",
+          "luxury restaurant and gala spaces",
+          "private jet and airport tarmac",
+          "Las Vegas hotel and convention spaces",
+          "Bangkok conference room and factory",
+          "virtual-production / commercial-style stage"
         ]
       },
       "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Virtual-production stage, broadcast graphics, app UI overlays, stock-footage-style montage inserts, and a few stylized presentation moments.",
+        "vfx_level": "minor",
+        "vfx_details": "mostly UI overlays, broadcast graphics, stock-footage-style montage elements, and a few polished commercial/virtual-production beats",
         "stunts_level": "none",
-        "sfx_needs": "Practical broadcast and event dressing, screens, projection, and live-show style sound design.",
+        "sfx_needs": "practical broadcast and commercial-style production design, plus some controlled party and stage effects",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
-          "type": "real_person",
-          "detail": "George and Amal Clooney, Pete and Chasten Buttigieg are referenced in a restaurant tableau."
-        },
-        {
-          "type": "real_person",
-          "detail": "Mark Cuban, Elon Musk, Kevin O’Leary, Warren Buffett-style analogues are directly invoked in character descriptions and dialogue."
-        },
-        {
-          "type": "real_person",
-          "detail": "Princeton, Forbes, Good Morning America, MSNBC, Wall Street Journal, Harvard, Cannes, and Money 20/20 are named."
-        },
-        {
-          "type": "named_music",
-          "detail": "“Heroes” by David Bowie and Thelonious Monk’s “Straight, No Chaser” are specifically used."
+          "type": "brand",
+          "detail": "Python Pit"
         },
         {
           "type": "brand",
-          "detail": "Whole Foods, Patek Philippe, Maybach, Dassault Falcon 900, Uber, Macallan, Kinetic Enterprises, Yuca, Anthro, and Anthro-S are prominently featured."
+          "detail": "Good Morning America"
         },
         {
-          "type": "ip_licensing",
-          "detail": "Python Pit, GMA-style broadcast framing, and the Anthro platform concept are central to the story world."
+          "type": "brand",
+          "detail": "MSNBC"
+        },
+        {
+          "type": "brand",
+          "detail": "Forbes"
+        },
+        {
+          "type": "brand",
+          "detail": "Whole Foods"
+        },
+        {
+          "type": "brand",
+          "detail": "Princeton"
+        },
+        {
+          "type": "brand",
+          "detail": "Kinetic Enterprises"
+        },
+        {
+          "type": "brand",
+          "detail": "Anthro"
+        },
+        {
+          "type": "brand",
+          "detail": "Anthro-S"
+        },
+        {
+          "type": "brand",
+          "detail": "Yuca"
+        },
+        {
+          "type": "brand",
+          "detail": "CUNY"
+        },
+        {
+          "type": "brand",
+          "detail": "Uber"
+        },
+        {
+          "type": "brand",
+          "detail": "Maybach"
+        },
+        {
+          "type": "brand",
+          "detail": "Patek Philippe"
+        },
+        {
+          "type": "brand",
+          "detail": "Thelonious Monk"
+        },
+        {
+          "type": "brand",
+          "detail": "David Bowie"
+        },
+        {
+          "type": "brand",
+          "detail": "Kool & The Gang"
+        },
+        {
+          "type": "brand",
+          "detail": "Cannes"
+        },
+        {
+          "type": "brand",
+          "detail": "Princeton"
+        },
+        {
+          "type": "brand",
+          "detail": "TikTok"
+        },
+        {
+          "type": "brand",
+          "detail": "Instagram"
+        },
+        {
+          "type": "brand",
+          "detail": "Telegram"
+        },
+        {
+          "type": "brand",
+          "detail": "WSJ"
+        },
+        {
+          "type": "brand",
+          "detail": "Harvard"
+        },
+        {
+          "type": "brand",
+          "detail": "Clooney"
+        },
+        {
+          "type": "brand",
+          "detail": "Buttigieg"
+        },
+        {
+          "type": "brand",
+          "detail": "OnlyFans"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or prestige theatrical",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release with strong festival-to-platform or prestige limited theatrical runway"
+        "recommended_lane": "premium streaming thriller",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a prestige streamer original or specialty theatrical title with awards-adjacent commercial appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is contemporary but not contained: New York, Vegas, Bangkok, private aviation, gala spaces, and a polished commercial-style finale all add up. It stays below true studio spectacle, but the travel and luxury footprint will keep it above a simple indie cost profile."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contemporary but with multiple premium interiors, travel, broadcast-style setups, and a handful of stylized production moments."
+      "casting": {
+        "level": "medium",
+        "note": "Adel and Mike are both heavy-lift roles because they need charisma, intelligence, and escalating moral volatility without losing audience access. Cecilia, Hamilton, and Mindy also need actors who can play as real adults in a world of money and leverage, not just functional support."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s central legal-financial conceit is bold, but it depends on the audience tracking a lot of bespoke mechanics around personal equity, Anthro, and the buy-back structure. The final act also pushes into overtly punitive leverage and corporate-blackmail territory, which is potent but sensitive."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Social Network",
+          "year": 2010,
+          "why_it_comps": "Shares the elite-ambition, betrayal, and power-through-innovation DNA, with a lead whose intelligence becomes inseparable from self-destruction."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The script needs a strong lead quartet and a credible supporting business ensemble, plus a child performer in the final branded montage."
+        {
+          "title": "Nightcrawler",
+          "year": 2014,
+          "why_it_comps": "Like this script, it follows a morally elastic striver who learns to weaponize the media ecosystem and then gets rewarded for it."
         },
-        "location": {
-          "level": "high",
-          "note": "The story moves through New York, Vegas, Bangkok, airports, factories, offices, restaurants, and event spaces."
+        {
+          "title": "Succession",
+          "year": 2018,
+          "why_it_comps": "The billionaire seduction language, status games, and weaponized mentorship feel very much in that prestige power-satire lane."
         },
-        "content": {
-          "level": "high",
-          "note": "Corporate coercion, sexual content, drug use, profanity, and a final deportation threat narrow the lane to mature buyers."
+        {
+          "title": "The Big Short",
+          "year": 2015,
+          "why_it_comps": "It turns a complex financial mechanism into a propulsive, audience-friendly story about systems, incentives, and who gets hurt."
         },
-        "rights": {
-          "level": "high",
-          "note": "The script names real people, brands, media outlets, songs, and public institutions throughout."
+        {
+          "title": "Whiplash",
+          "year": 2014,
+          "why_it_comps": "The mentor-protégé dynamic has the same escalating psychological pressure, with admiration curdling into domination."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like prestige thrillers about money, power, and moral compromise, especially viewers drawn to startup culture and billionaire takedown stories.",
+        "demographics": "35-54 skew, slightly male-leaning but viable for women; college-educated, urban/suburban, streaming-first audience with appetite for topical adult drama",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "The contemporary setting keeps it grounded, but the New York/Vegas/Bangkok travel, luxury interiors, private aviation, gala sequences, and polished commercial-style finale push it into mid-budget feature territory."
+      },
+      "lane_fit": {
+        "lane": "prestige commercial thriller",
+        "types_of_buyers": [
+          "streamer originals execs building adult-leaning prestige thrillers",
+          "specialty theatrical buyers looking for smart, topical commercial fare",
+          "producer-financed mid-budget genre companies",
+          "director-driven packages with a strong actor play",
+          "buyers chasing startup-culture and wealth-inequality material"
+        ],
+        "detail": "This sits in the lane where a sharp concept, a strong lead role, and a topical hook can justify a meaningful but not tentpole spend. It feels designed for a buyer who wants awards-adjacent heat without giving up a clean commercial premise."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is rich, but the script does not present a clean sequel or spinoff vector beyond this one contained power struggle."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly pitchable.",
-          "what_it_means": "A buyer can understand the engine in one breath: a founder gets financially and morally trapped by a billionaire who turns him into an asset. That kind of clean, high-concept hook travels fast in the room and gives the project a strong trailer-line identity for streamers and prestige buyers alike.",
-          "evidence": "The opening Python Pit pitch, the personal-equity contract, and the Anthro app reveal all build the same central idea.",
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "This gives the project a clean elevator pitch that can travel in the room and on a thumbnail. It is the kind of hook that can attract both a buyer and a star because the role is legible before the script is even opened.",
+          "evidence": "The opening Python Pit pitch and the personal-equity deal make the central conceit clear within the first stretch of pages.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Adel is a showcase lead.",
-          "what_it_means": "The role gives an actor ambition, embarrassment, seduction, rage, and collapse in one arc, which is exactly the kind of part that can elevate a career. Mid-career dramatic leads who want a prestige turn with comic timing and moral complexity will see the value immediately.",
-          "evidence": "Adel moves from polished founder to defensive negotiator to betrayed partner to retaliating strategist, especially in the restaurant, Forbes, and penthouse sequences.",
+          "dimension_or_area": "Adel is a real lead role.",
+          "what_it_means": "A role like this can anchor casting, financing, and audience identification because it is built on contradiction rather than function. Buyers chase this because it can reset how a mid-career actor is perceived.",
+          "evidence": "Adel moves from polished founder to defensive operator to morally compromised counterpuncher, especially in the Forbes confrontation and the final Mike showdown.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Mike is a magnetic antagonist.",
-          "what_it_means": "He’s not just a villain; he’s a charismatic, wounded, terrifying operator with a philosophy, which makes every scene with him feel like a duel. That gives the project a star-facing role for an actor who wants to play charm and menace in the same breath.",
-          "evidence": "Mike’s pitch at dinner, his GMA reveal, and the final penthouse confession all show him as seductive, controlling, and emotionally exposed.",
+          "dimension_or_area": "Mike is a premium antagonist.",
+          "what_it_means": "The script has a villain who is entertaining enough to sell scenes and dangerous enough to justify the thriller engine. That combination is valuable because it creates trailer moments and awards-grade acting bait at the same time.",
+          "evidence": "Mike’s pitch at the restaurant, the Anthro launch, and the final penthouse confession all show him as charming, manipulative, and psychologically specific.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The satire has a real-world bite.",
-          "what_it_means": "The script turns startup culture, media branding, and venture logic into a story about commodified identity, which gives it conversation value beyond the plot. Buyers looking for a timely corporate-thriller with a social-media-ready premise will recognize the hook immediately.",
-          "evidence": "Anthro, the Forbes exposé, the GMA launch, and the final stock manipulation all satirize the machinery of modern influence.",
+          "dimension_or_area": "The financial mechanics are story, not garnish.",
+          "what_it_means": "The deal structure itself becomes the engine of escalation, which is a commercial advantage because the audience is watching a system collapse in real time. Buyers like this because the tension is built into the premise rather than dependent on external action set pieces.",
+          "evidence": "The personal equity contract, Anthro listings, buy-back clause, and valuation manipulation all directly drive the plot turns.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The relationship web keeps tightening.",
-          "what_it_means": "Adel/Mike is the spine, but Cecilia, Hamilton, Jen, and Mindy each add a different pressure point, which broadens the emotional and commercial appeal. That gives the script enough ensemble energy to attract actors around the lead and enough relational friction to keep scenes alive.",
-          "evidence": "Cecilia challenges the contract, Hamilton pushes back on strategy, Jen reads the legal trap, and Mindy becomes the journalistic counterforce.",
-          "source": "script"
+          "dimension_or_area": "It has a strong prestige-thriller lane.",
+          "what_it_means": "The script can be positioned as adult, topical, and actor-forward without needing franchise scale. That makes it attractive to streamers and specialty theatrical buyers looking for smart commercial material.",
+          "evidence": "The Forbes exposure, MSNBC segment, gala circuit, and final public reckoning all feel built for a prestige release model.",
+          "source": "both"
         },
         {
-          "dimension_or_area": "The world has premium texture.",
-          "what_it_means": "The script moves through pitch sets, penthouses, gala rooms, private jets, factories, and conference halls with confidence, which makes the project feel expensive in the right way. That texture is attractive to directors and buyers who want a glossy adult feature with visible status and scale.",
-          "evidence": "The Python Pit set, the Vegas sequence, the Bangkok meeting, the Thai factory, and the final convention-hall keynote all expand the world.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending lands on a disturbing image.",
-          "what_it_means": "The final beat of Adel compulsively trading his own stock gives the movie a memorable, unsettling coda that lingers after the credits. That kind of ending is useful for festival conversation, prestige positioning, and post-screening debate.",
-          "evidence": "The last scene shows Adel alone in his new apartment, repeatedly buying and selling his own equity on Anthro.",
+          "dimension_or_area": "The world feels current and monetizable.",
+          "what_it_means": "Startup culture, influencer finance, and public-facing founder branding are all recognizable to modern audiences, which lowers the explanation burden. That makes the project easier to market than a more abstract corporate thriller.",
+          "evidence": "Python Pit, Anthro, GMA, Forbes, and the luxury investor ecosystem all sit inside a contemporary media-finance world.",
           "source": "script"
         }
       ],
-      "headline": "This is a sharp, adult feature with a killer central conceit: a founder gets seduced into a deal that turns his own personhood into the commodity. The script has a clean commercial engine, a star-making lead role, and a villain with the kind of charisma that can carry a movie all the way to the final frame."
+      "headline": "This is a sharp, marketable prestige thriller with a killer central conceit: a founder literally becomes an asset class, then tries to outmaneuver the billionaire who taught him the rules. The script pairs a strong actor showcase with a contemporary, high-recognition world, which makes it feel very packageable for a streamer or specialty buyer looking for adult commercial heat."
     },
-    "lead_characters": [
-      {
-        "name": "ADEL RAHMA",
-        "role_type": "Lead",
-        "demographics": "Male · mid-30s · Arab / Middle Eastern-American",
-        "hook": "Adel is a polished, hungry founder who wants to be taken seriously in rooms that are built to patronize him. He’s charming enough to sell a vision, smart enough to know the rules, and prideful enough to mistake access for safety; the script keeps revealing how much of his confidence is performance and how much is survival.",
-        "why_actor_wants_this": "This is the showcase territory of Riz Ahmed in The Sound of Metal or Jeremy Strong in Succession — a man whose intelligence and self-invention are always one step away from fracture. It gives an actor the chance to play ascent, humiliation, seduction, and moral corrosion in a single feature, with a final stretch that turns the performance into a psychological duel."
-      },
-      {
-        "name": "MIKE MUKHTAR",
-        "role_type": "Lead",
-        "demographics": "Male · late 50s to early 60s",
-        "hook": "Mike is a billionaire mentor-predator who speaks in aphorisms, business gospel, and emotional blackmail. He’s funny, intimate, and terrifying in the same scene, and the script gives him the rare luxury of being both the man who opens the door and the man who locks it behind you.",
-        "why_actor_wants_this": "This is the showcase space of Bryan Cranston in Breaking Bad or Paul Walter Hauser in Black Bird — a character whose charm is inseparable from menace and whose vulnerability arrives as a weapon. It offers a major actor a chance to dominate scenes with verbal control, then reveal the damaged logic underneath the control."
-      },
-      {
-        "name": "CECILIA DIAZ",
-        "role_type": "Lead",
-        "demographics": "Female · early 30s",
-        "hook": "Cecilia is Adel’s partner and the story’s moral pressure valve: sharp, affectionate, professionally literate, and increasingly unwilling to rationalize what she sees. She’s not written as a bystander to his ambition; she’s the person who can read the contract, read the room, and read him, which makes her emotional distance hurt more.",
-        "why_actor_wants_this": "This is the kind of grounded, emotionally intelligent role that Rebecca Hall in Christine or Carrie Coon in The Leftovers makes feel devastatingly alive. It gives an actress the chance to play love turning into clarity, with scenes that move from warmth to disillusionment without losing dignity."
-      },
-      {
-        "name": "HAMILTON TRAN",
-        "role_type": "Lead",
-        "demographics": "Male · 30s · Vietnamese-American",
-        "hook": "Hamilton is the CFO who sees the numbers clearly and the human cost even more clearly, which makes him both a business ally and a conscience Adel keeps trying to outrun. He’s funny, grounded, and quietly fed up, and the resignation beat gives him a clean, memorable exit that lands like a verdict.",
-        "why_actor_wants_this": "This is the showcase lane of Steven Yeun in Minari or Randall Park in Shortcomings — a smart, contained role that lets an actor play loyalty, frustration, and moral clarity without overstatement. It’s the kind of part that can steal scenes through precision rather than volume."
-      },
-      {
-        "name": "JEN WILSON",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s",
-        "hook": "Jen is the legal mind in the room who can translate predatory structure into plain English, and the script uses her as the person who can still say the quiet part out loud. She’s practical, wary, and not easily impressed, which gives her scenes a clean, adult authority.",
-        "why_actor_wants_this": "This is the kind of sharp professional role that Laura Linney in The Big C or Carrie Preston in The Good Wife makes feel indispensable. It gives an actress the pleasure of playing competence under pressure, with a few scenes that carry real narrative consequence."
-      },
-      {
-        "name": "MINDY PHANG",
-        "role_type": "Supporting",
-        "demographics": "Female · mid-30s",
-        "hook": "Mindy is the journalist who starts as a professional threat and becomes the story’s most direct ethical counterweight. She’s incisive, persistent, and emotionally legible without being sentimental, and the script gives her enough spine to feel like a force rather than a device.",
-        "why_actor_wants_this": "This is the showcase territory of Sarah Snook in The Newsreader or Jodie Comer in The Last Duel — a role that lets an actor play intelligence, pressure, and moral urgency in a clean, modern register. It’s a strong fit for someone who wants a scene-stealing supporting part with real public-facing stakes."
-      },
-      {
-        "name": "ISA",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s",
-        "hook": "Isa is the efficient office operator who keeps the company moving and understands the rhythms of the room better than most of the executives do. She’s lightly comic, observant, and useful in the best sense of the word, which makes her feel like a real workplace presence.",
-        "why_actor_wants_this": "This is the kind of smart supporting role that Ayo Edebiri in a smaller dramatic register or Janelle James in Abbott Elementary can make pop with timing and specificity. It gives an actor a chance to build a memorable office texture without needing a huge amount of screen time."
-      },
-      {
-        "name": "WALLACE SINGER",
-        "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Wallace is the old-money healthcare power broker who speaks like a man used to being obeyed and underestimated at the same time. He’s genial, opaque, and deeply embedded in the system, which makes him feel like the kind of man who can bless a deal without ever seeming to own it.",
-        "why_actor_wants_this": "This is the showcase space of John Lithgow in Succession or James Cromwell in any boardroom drama — a role built on institutional authority and sly menace. It’s ideal for a veteran actor who can make a few scenes feel like they carry the weight of an entire industry."
-      },
-      {
-        "name": "DAO RATANARAK",
-        "role_type": "Supporting",
-        "demographics": "Female · late 50s",
-        "hook": "Dao is the Thai industrial partner who reads as calm, exacting, and far more powerful than the room initially assumes. She’s not there to be impressed; she’s there to set terms, and the script gives her a cool, efficient authority that broadens the movie’s global scale.",
-        "why_actor_wants_this": "This is the kind of controlled, high-status role that Michelle Yeoh or Sandra Oh can make feel electric with minimal movement. It gives an actor the chance to play leverage, not exposition, and to own a scene through stillness."
-      },
-      {
-        "name": "AALIYAH KAPOOR",
-        "role_type": "Supporting",
-        "demographics": "Female · mid-40s",
-        "hook": "Aaliyah is Mike’s wife, and in a few lines she reveals she understands the ecosystem around him better than the men do. She’s gracious, socially fluent, and quietly aware of the performance happening around her, which gives her a sharp, elegant presence.",
-        "why_actor_wants_this": "This is the kind of polished supporting role that Priyanka Chopra Jonas or Archie Panjabi can make memorable in a handful of scenes. It offers a performer the chance to imply a whole private life behind a very public marriage."
-      },
-      {
-        "name": "ALBERT BARKITZIS",
-        "role_type": "Supporting",
-        "demographics": "Male · mid-50s",
-        "hook": "Albert is the acquisition player who arrives with the easy confidence of a man who knows he’s being courted. He’s boisterous, transactional, and useful as a late-stage marker of how far Adel has climbed.",
-        "why_actor_wants_this": "This is the kind of compact, moneyed role that character actors love because it lets them bring swagger and authority to a single key sequence. It’s a clean fit for someone who can make a boardroom lunch feel like a power event."
-      },
-      {
-        "name": "BASTIAN",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "Bastian is Mike’s new assistant and surveillance layer, a quiet presence who signals how much control has shifted around Adel. He’s not flashy, but he gives the final stretch a colder, more institutional feel.",
-        "why_actor_wants_this": "This is the kind of sleek, controlled supporting role that actors with a strong stillness reel can use to suggest menace without speeches. It’s a useful part for someone who can make bureaucracy feel like a threat."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to turn corporate power into a psychological thriller with real comic venom.",
-        "fit_profile": "Established indie directors with at least one or two features, or prestige-TV directors moving into features, who already work comfortably with performance-forward tension and tonal control. This material rewards filmmakers who like clean visual status, sharp dialogue scenes, and the slow tightening of a moral noose rather than spectacle.",
-        "detail": "The movie gives a director a chance to stage boardroom pressure, luxury as menace, and emotional collapse without needing heavy action coverage. It will especially attract directors who can make actors feel dangerous in close-up and who know how to keep satire and dread in the same frame."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Prestige streamer / adult satirical thriller lane",
-        "detail": "The project can be packaged around one major lead and one major antagonist, with the supporting ensemble doing real work but not requiring a giant cast buy-in. The startup-satire-plus-thriller lane has strong streamer appetite, and the contemporary setting plus contained office/event interiors keep it exportable and slate-friendly."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The legal mechanics need a patient audience.",
+          "detail": "The personal-equity structure, Anthro valuation swings, and buy-back math are clever, but they ask the viewer to track a lot of bespoke rules. That is manageable for a prestige buyer, but it narrows the lane if the goal is broader four-quadrant accessibility.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The final act turns very punitive.",
+          "detail": "The Mindy deportation threat and the blackmail endgame are potent, but they push the material into a harder, uglier register than the earlier satirical startup material. That’s a real tonal and audience-sensitivity conversation for buyers, especially around the last 20 pages.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The production footprint is not small.",
+          "detail": "New York offices, luxury restaurants, Vegas, Bangkok, private aviation, gala spaces, and a polished commercial-style finale all add cost and logistics. It’s still a mid-budget feature, but not one that can be made cheaply without losing the script’s status language.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Adel and Mike are both narrow casting lifts.",
+          "detail": "The movie lives or dies on actors who can play intelligence, vanity, charm, and menace without flattening into caricature. That’s a strength when cast well, but it makes the package more conditional than the premise alone suggests.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The supporting world is functional, not franchise-rich.",
+          "detail": "Cecilia, Hamilton, Jen, and Mindy are all useful and vivid, but the script remains tightly centered on Adel and Mike. That keeps the feature focused, but it also means there’s no obvious spinoff or broader universe play.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s biggest buyer conversation will be whether the audience is ready to track a bespoke financial power game that gets increasingly ruthless in the back half. It’s commercially strong, but the cost footprint, the casting lift, and the hard-edged final act make it a premium package rather than an easy one."
     },
-    "considerations": [
-      {
-        "area": "The final act opens into a larger machine.",
-        "detail": "The Anthro launch, the stock manipulation, the blackmail, and the final keynote all escalate cleanly, but the version of the ending where one of those beats is collapsed could sharpen the emotional landing without losing the satirical punch. The primary lever is the last stretch around the Mike penthouse, the Mindy package, and the final convention-hall reveal: tightening one of those turns would make Adel’s reversal feel even more inevitable.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The location footprint is wide.",
-        "detail": "The script travels through New York offices, apartments, restaurants, airports, Vegas, Bangkok, a factory, a convention hall, and multiple premium event spaces. A streamlined version that consolidates a few of the travel beats would protect momentum and make the feature easier to mount without changing the core story.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The contract language carries the plot.",
-        "detail": "The legal exposition in the Jen scenes is doing important story work, especially around the personal-equity structure and the Anthro terms. One direction would be to keep the same information but let the emotional beat arrive a touch earlier in those exchanges, so the audience feels the trap before it fully understands the mechanics.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "Mike’s philosophy is the engine.",
-        "detail": "The dinner, the penthouse confession, and the final confrontation all work because Mike’s worldview is so specific. A next pass could consider giving one more early glimpse of the wound beneath his confidence, so the later reveal of his shame lands with even more force.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The ensemble is strongest when it pushes Adel.",
-        "detail": "Cecilia, Hamilton, Jen, and Mindy each press a different nerve, and the script is at its most alive when those relationships collide with Adel’s ambition. The version of the movie where one of those relationships gets a slightly more independent pressure point would deepen the emotional web without changing the central plot.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The rights stack is substantial.",
-        "detail": "Named brands, public figures, media outlets, songs, and real institutions are woven through the script at a high density. A production pass would want to map which references are essential to the satire and which could be generalized if clearance strategy becomes a priority.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 77.3,
+  "weightedScore": 79,
   "tier": "Optionable",
-  "inputTokens": 48532,
-  "outputTokens": 5615,
-  "cost": 0.0616665,
+  "inputTokens": 50937,
+  "outputTokens": 5483,
+  "cost": 0.06287625,
   "declaredFormat": "Feature film"
 }

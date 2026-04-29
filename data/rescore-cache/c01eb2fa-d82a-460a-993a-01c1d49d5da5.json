@@ -2,224 +2,261 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Crime thriller",
-      "genre_tags": [
-        "dark comedy",
-        "relationship drama"
+      "genre_primary": "Crime",
+      "genre_secondary": [
+        "Drama",
+        "Thriller"
       ],
-      "tone": "gritty, profane, deadpan"
+      "tone": "gritty",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "crime",
+        "family-dynamics",
+        "revenge",
+        "class",
+        "yankees",
+        "yoga"
+      ]
     },
-    "positioning_hook": "A broke Queens hustler gets dumped the same night he has to collect a debt, forcing him to choose between keeping his life together and becoming the kind of man his world rewards.",
+    "positioning_hook": "A broke Queens debt collector’s life implodes when his girlfriend leaves for a steadier man and his payday disappears, forcing him to chase one last collection before his whole hustle collapses.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The setup has a clean commercial spine: debt pressure, a breakup, and a criminal errand all collide in a recognizable working-class lane. The appeal is strongest for adult crime-drama buyers and audiences who like character-first pressure cookers rather than broad four-quadrant play."
+        "reasoning": "The emotional engine is easy to grasp — a desperate man, a breakup, and money pressure — but the appeal is still fairly niche because the excerpt reads like a slice of a larger crime story rather than a fully ownable commercial premise. The audience is there for grounded crime-drama buyers, but it doesn't yet signal broad four-quadrant reach."
       },
       "conceptual_hook_clarity": {
         "score": 6,
-        "reasoning": "The premise is easy to state from these pages: Bobby is under pressure to get money, and the night is collapsing around him. What lands more as scene energy than full feature engine is the larger shape of the debt world and what happens if he misses the collection."
+        "reasoning": "The hook is clear in the pages provided: Bobby is broke, his relationship is ending, and a collection job is hanging over him. What keeps it from scoring higher is that the larger engine is still implied rather than fully crystallized in the excerpt."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Bobby has a vivid, self-sabotaging voice, especially in the phone call where he rehearses his own tough-guy performance and in the breakup scene with Lara. He reads as playable and specific, though the page here is still mostly defining him through attitude and immediate need."
+        "reasoning": "Bobby has a usable contradiction — bluster, denial, and visible humiliation — and Lara lands as the clearest counterweight in the scene. He still reads more as a type in motion than a fully singular lead, and the supporting cast is only lightly sketched here."
       },
       "creative_originality_and_boldness": {
         "score": 5,
-        "reasoning": "The material leans on familiar crime-and-domestic-collapse ingredients, but the dialogue has a lived-in, comic abrasion that gives it some snap. The originality is more in the voice and rhythm than in the underlying setup."
+        "reasoning": "The dialogue has some lived-in snap, especially in the breakup exchange and Bobby's self-replaying of the phone call, but the underlying setup is familiar crime-world material. The page shows competence and voice, not yet a sharply unusual angle."
       },
       "narrative_momentum_engagement": {
-        "score": 5,
-        "reasoning": "The scene sequence moves cleanly from the failed call to the breakup to the next debt call, so the page has forward motion. On these pages, though, the larger escalation is still implied rather than fully dramatized, so the engine feels like it is just starting up."
+        "score": 6,
+        "reasoning": "The scene-to-scene movement is clean: failed call, breakup, stalled home life, then the pressure call from Carmy. The momentum is real, but the excerpt is still mostly setup and doesn't yet deliver a major escalation or turn."
       },
       "resonant_originality": {
         "score": 5,
-        "reasoning": "A debt-collector night gone sideways is familiar terrain, but Bobby’s self-conscious replay of his own phone performance and the blunt, unsentimental breakup give it a recognizable human angle. It feels specific in texture more than singular in premise."
+        "reasoning": "The most resonant element is Bobby's humiliating attempt to perform toughness after being hung up on and dumped, which gives the material a human hook. Beyond that, the premise sits in recognizable working-class crime territory rather than landing as instantly singular."
       },
       "world_density_and_texture": {
-        "score": 5,
-        "reasoning": "Queens, the Yankees on TV, the unpaid money, and Carmy’s terse command sketch a working-class criminal ecosystem with some texture. The world is still mostly glimpsed through Bobby’s apartment and car, so the broader social machinery is only lightly drawn here."
+        "score": 6,
+        "reasoning": "The Yankees game, the pasta, the driveway-house rhythm, and the yoga-class boyfriend all give the world a specific New York working-class texture. It feels lived-in, but the excerpt doesn't yet reveal a deeper system of rules or a broader criminal ecosystem."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The tone is sharply profane, sad, and funny in the same breath, especially in the breakup banter and Bobby’s self-mocking repetition of his own threats. It has a distinct deadpan strain that could carry a feature if sustained."
+        "score": 6,
+        "reasoning": "The tone mixes bruised realism with darkly comic humiliation, and the dialogue has a blunt, profane cadence that feels specific. It is consistent on the page, though not yet distinctive enough to separate it from other grounded crime dramedies."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 6,
-        "reasoning": "Beneath the comic surface, Bobby’s money trouble, his mother’s surgery, and Lara’s exit suggest a man whose identity is fraying at once. The pages hint at a fuller emotional and criminal life beyond the immediate argument, which gives the material room to deepen."
+        "score": 5,
+        "reasoning": "There are hints of deeper material in Bobby's money problems, his mother's surgery, and the way Lara sees through him, but the excerpt keeps those threads at surface level. The page suggests more beneath the hustle, but not yet enough to feel especially layered."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 4,
-        "reasoning": "The Bobby-Lara dynamic is clear and playable, and Carmy adds pressure, but the page is still built around Bobby as the sole engine. The supporting relationships are functional on these pages rather than yet forming a broader web."
+        "score": 5,
+        "reasoning": "Bobby and Lara have immediate friction, and Carmy adds pressure from off-screen, but the excerpt doesn't yet show a relationship web with much recurring engine. This currently plays as a lead-driven piece with a couple of strong pressure points rather than an ensemble system."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Bobby",
+        "role_type": "Lead",
+        "demographics": "Male, late 20s to 30s, working-class, New York-based, white or ethnicity unspecified in the excerpt.",
+        "hook": "A hustling, self-mythologizing debt collector who talks like a guy always one step from a score, then immediately reveals how little control he actually has. He is embarrassed by his own performance, desperate to keep Lara, and still convinced the next collection will fix everything.",
+        "why_actor_wants_this": "This is the showcase territory of Ray Liotta in Goodfellas — a fast-talking, volatile guy whose charm and panic are always in the same frame, giving an actor room for swagger, humiliation, and sudden menace."
+      },
+      {
+        "name": "Lara",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s, working-class, Bobby's girlfriend.",
+        "hook": "Lara is the clean break Bobby can't bully, flatter, or joke his way out of. She speaks plainly, sees the mess in the house and in the relationship, and leaves with enough composure to make Bobby's denial look pathetic.",
+        "why_actor_wants_this": "This is the kind of scene-stealing exit role that gave Michelle Williams in Blue Valentine its sting — a grounded, emotionally legible woman who gets the moral high ground without becoming a speechifying device."
+      },
+      {
+        "name": "Carmy",
+        "role_type": "Supporting",
+        "demographics": "Male, age unclear, likely Bobby's criminal associate or boss.",
+        "hook": "Carmy is the voice on the other end of the line who cuts through Bobby's excuses and brings the pressure back down to one thing: get the money. He reads as an off-screen force with authority, impatience, and a relationship to Bobby that is already loaded.",
+        "why_actor_wants_this": "This is the kind of terse, authority-heavy supporting role that lets an actor do a lot with very little, similar to the pressure-cooker energy of Michael Stuhlbarg in A Serious Man — a voice that can dominate a scene without needing pages."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 4,
+        "speaking_roles": 3,
         "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Male lead in his 30s-40s",
-          "Female partner in her late 20s",
-          "Off-screen voice role for Alf",
-          "Off-screen or phone-only role for Carmy"
+          "Age-flexible adult roles",
+          "No specialty physical requirements apparent in the excerpt",
+          "Lead benefits from strong New York working-class authenticity"
         ]
       },
       "locations": {
-        "distinct_count": 2,
-        "interior_exterior_ratio": "Mostly interior with one exterior driveway beat",
+        "distinct_count": 3,
+        "interior_exterior_ratio": "Mostly interiors with one driveway exterior",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
+          "House interior",
           "Car interior",
-          "Modest suburban or working-class house interior",
           "Driveway exterior"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visible VFX requirements on these pages.",
+        "vfx_details": "No VFX indicated in the excerpt.",
         "stunts_level": "none",
-        "sfx_needs": "Minimal practical needs limited to phone use, TV playback, and ordinary domestic action.",
+        "sfx_needs": "Minimal practical needs; standard domestic and car-playback setup.",
         "night_shoots": "minimal",
         "animals": false
       },
-      "rights_flags": [
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming or theatrical indie crime drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; original contemporary crime story with adult language and violence implied rather than shown in the excerpt."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, contained domestic and car-based scenes, no VFX, no stunts, and only a handful of locations visible in the excerpt. This should stay comfortably inside a low-budget indie feature plan."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Bobby needs an actor who can play bluster, shame, and threat in the same beat, which is a narrower ask than the page first suggests. Lara also needs enough authority to land the breakup as a real verdict, not a plot function."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The excerpt establishes pressure well, but the larger crime engine is still mostly implied through Bobby's call with Carmy and the missing money. Buyers will want to see the full collection-world premise and the stakes of the debt before leaning in."
+      }
+    },
+    "packaging": {
+      "comp_set": [
         {
-          "type": "brand",
-          "detail": "Yankees"
+          "title": "Good Time",
+          "year": 2017,
+          "why_it_comps": "Shares the anxious, New York crime-pressure energy of a man spiraling through bad decisions while the clock keeps tightening."
+        },
+        {
+          "title": "Uncut Gems",
+          "year": 2019,
+          "why_it_comps": "The hustler-protagonist, debt stress, and humiliating momentum all point to the same nervous, pressure-cooker crime lane."
+        },
+        {
+          "title": "Blue Valentine",
+          "year": 2010,
+          "why_it_comps": "The breakup scene has the same bruised domestic realism and emotional finality, even though this script sits in a crime frame."
+        },
+        {
+          "title": "The Drop",
+          "year": 2014,
+          "why_it_comps": "Working-class criminal routine, neighborhood texture, and a lead whose quiet desperation drives the tension."
         }
       ],
-      "platform_fit": {
-        "recommended_lane": "Indie crime drama / streamer feature lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with a contained, character-driven crime premise suited to festival-to-platform or limited theatrical play."
+      "audience_target": {
+        "primary_audience": "Adults who like grounded, character-first crime stories with New York texture and emotionally messy relationships.",
+        "demographics": "25-54, slightly male-skewing but viable for women who respond to relationship fallout and antihero drama, urban and suburban adult viewers with streamer habits.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "low",
-          "note": "Contemporary, contained to a car, a house interior, and a driveway exterior, with no visible VFX or stunt load."
-        },
-        "cast": {
-          "level": "low",
-          "note": "A small speaking cast centered on one lead and two key off-screen voices keeps casting straightforward."
-        },
-        "location": {
-          "level": "low",
-          "note": "The page points to a compact, contemporary footprint with only a few ordinary locations."
-        },
-        "content": {
-          "level": "medium",
-          "note": "Profanity and criminal pressure are front and center, with mature relationship conflict and implied debt violence."
-        },
-        "rights": {
-          "level": "low",
-          "note": "The only clear clearance item on these pages is the Yankees reference."
-        }
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$1M-$5M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary interiors, a car scene, and a small speaking cast keep this in indie-feature territory."
+      },
+      "lane_fit": {
+        "lane": "A24-adjacent grounded crime indie",
+        "types_of_buyers": [
+          "boutique indie financiers",
+          "streamer original-film execs",
+          "festival-forward distributors",
+          "producer-directors looking for a contained crime vehicle",
+          "actor-driven genre buyers"
+        ],
+        "detail": "The page has the kind of bruised, working-class specificity that sits naturally in the elevated crime lane. It is built around a lead performance and a contained footprint, which makes it attractive to buyers who want character pressure without a large production lift."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a contained crime premise and no clear spinoff vector beyond this lead's story."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Bobby’s voice is instantly playable.",
-          "what_it_means": "That gives the project a clear actor-facing hook: a lead role built on comic self-delusion, wounded pride, and street-level bravado that can carry a whole feature. Character actors and mid-career leads who want a showcase in the Ray Romano / John Turturro / Steve Buscemi emotional register will notice this immediately.",
-          "evidence": "Bobby rehearses his own phone call out loud after Alf hangs up, then pivots into the breakup scene with Lara without losing his rhythm.",
+          "dimension_or_area": "Bobby's humiliation is playable.",
+          "what_it_means": "That gives the lead role a real actor-facing hook: swagger collapsing in real time, which is exactly the kind of material that can elevate a modest-budget crime feature. Buyers and casting directors respond to roles that let a performer be funny, pathetic, and dangerous in the same scene.",
+          "evidence": "Bobby replays his own phone call out loud, hating how he sounded, after being hung up on by Alf.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The breakup and debt pressure collide cleanly.",
-          "what_it_means": "That creates a simple, marketable engine: one bad night where personal collapse and criminal obligation hit at the same time. Buyers looking for contained adult crime stories can see the whole movie in the premise, and audiences who like pressure-cooker character pieces will know exactly what they’re getting.",
-          "evidence": "Lara leaves, Bobby is still chasing money for Carmy, and the next call lands immediately after the breakup.",
+          "dimension_or_area": "The breakup scene has clean emotional force.",
+          "what_it_means": "A breakup that lands this plainly gives the script an immediate human stake beyond the money plot, which broadens the appeal inside a crime frame. It is the kind of scene that can attract an actor who wants a grounded, unsentimental relationship turn.",
+          "evidence": "Lara leaves because Bobby keeps promising money that never arrives, and she names the house as proof.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The dialogue has lived-in comic abrasion.",
-          "what_it_means": "The script has a tone that can separate it from generic crime material by making the laughs come from humiliation, not punchlines. That’s attractive to directors and buyers who want a gritty feature with a distinct voice and a playable trailer rhythm.",
-          "evidence": "The “Yoga! You do karate” exchange and Lara’s “namaste motherfucker” line give the scene a sharp, specific snap.",
+          "dimension_or_area": "The New York texture feels lived-in.",
+          "what_it_means": "Specific domestic details and the Yankees game give the script a recognizable working-class world that helps it feel authentic rather than generic. That texture is useful for buyers looking for a contained crime story with a strong sense of place.",
+          "evidence": "Butter-and-cheese pasta, a Yankees game on TV, a driveway arrival, and the yoga-class boyfriend all sketch a specific neighborhood life.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The footprint is producer-friendly.",
-          "what_it_means": "A contained feature built around a car, a house, and a handful of speaking roles is the kind of package that can get made without a giant financing stack. That makes it appealing to indie producers, streamer buyers, and directors looking for a strong calling-card feature that stays inside a manageable budget band.",
-          "evidence": "These pages stay in Bobby’s car, driveway, and house, with the pressure delivered mostly through phone calls.",
+          "dimension_or_area": "The footprint is production-friendly.",
+          "what_it_means": "A small cast and a handful of contemporary locations make this easy to package as a low-risk indie feature, which is a real advantage in a market that likes contained adult genre plays. That can open doors with financiers who want a script that doesn't require a large pre-sell or heavy physical production.",
+          "evidence": "The excerpt plays across a phone call, a house interior, a couch scene, and a driveway exterior with no visible effects or action demands.",
           "source": "production"
         }
       ],
-      "headline": "This is a contained, actor-forward crime feature with a sharp comic bite: a broke hustler’s worst night starts with a debt call and ends with his girlfriend walking out. The material’s real asset is Bobby himself — a self-mythologizing loser with enough voice and humiliation to anchor a whole movie."
+      "headline": "This is a contained, actor-forward crime feature with real indie packaging value: a bruised New York hustler, a clean breakup, and a pressure-cooker money problem that can be shot cheaply and sold on performance. The combination of lived-in domestic texture and a volatile lead role gives it a credible lane with boutique financiers, streamer film buyers, and festival-minded distributors."
     },
-    "lead_characters": [
-      {
-        "name": "BOBBY",
-        "role_type": "Lead",
-        "demographics": "Male · 30s-40s · working-class Queens hustler",
-        "hook": "Bobby is a loud, defensive, self-editing guy who performs toughness even when nobody’s buying it. He’s broke, cornered, and emotionally exposed, but he keeps trying to talk himself into being the man he thinks the room needs, which makes him funny, sad, and dangerous in the same breath.",
-        "why_actor_wants_this": "This is the showcase territory of Steve Buscemi in Boardwalk Empire or Ray Romano in Somewhere in Queens — a man whose self-image is always a half-step ahead of his reality. Actors get to play humiliation, comic timing, and simmering desperation in one lead role, which is exactly the kind of part that can reframe how the industry sees them."
-      },
-      {
-        "name": "LARA",
-        "role_type": "Supporting",
-        "demographics": "Female · late 20s",
-        "hook": "Lara is done performing patience. She’s practical, sharp, and emotionally clear-eyed, and she cuts through Bobby’s bullshit with the kind of bluntness that makes the breakup feel earned the second she walks in with the suitcase.",
-        "why_actor_wants_this": "This is the kind of scene-stealing partner role that gave Laura Dern in Marriage Story or Rosamund Pike in Gone Girl their sharpest material — a woman who can hold the emotional center of a scene without needing the most lines. Actresses who like playing intelligence, restraint, and a decisive exit will be drawn to it."
-      },
-      {
-        "name": "CARMY",
-        "role_type": "Supporting",
-        "demographics": "Male · adult · voice/phone presence",
-        "hook": "Carmy is pure pressure: terse, impatient, and all business. He doesn’t need a lot of page time to register as the voice of the criminal obligation hanging over Bobby’s night.",
-        "why_actor_wants_this": "This is the kind of lean, authority-loaded role that lets an actor do a lot with very little, like the off-screen command energy of Bryan Cranston’s phone scenes in Drive or Michael Shannon’s clipped menace in supporting turns. Character actors who can make a voice feel like a threat will want it."
-      },
-      {
-        "name": "ALF",
-        "role_type": "Supporting",
-        "demographics": "Male · adult · voice/phone presence",
-        "hook": "Alf is the first closed door of the story — the guy who hangs up on Bobby and leaves him talking to himself. He functions as a small but important pressure point, the kind of voice that tells you Bobby’s world is already slipping out of his hands.",
-        "why_actor_wants_this": "This is the compact, scene-specific voice role that can still land with the authority of a memorable supporting turn, similar to the clipped off-screen presence in phone-heavy crime dramas. Actors with strong vocal character work will see an easy, efficient showcase."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a crime feature out of humiliation, not gunfire.",
-        "fit_profile": "Second-feature indie directors or TV directors moving into features who already have a feel for performance-forward realism, working-class texture, and deadpan comedy. The material rewards directors who can stage tension in ordinary spaces and let dialogue carry the charge without overcutting.",
-        "detail": "The script gives a director a contained canvas with a strong lead performance and a tonal lane that can feel fresh if played straight. It’s especially attractive to filmmakers who know how to make a small domestic space feel like a pressure cooker and who want a feature that can travel on voice."
-      },
-      "buyer_appeal": {
-        "tier": "$1-5M feature",
-        "lane": "Indie crime drama / streamer original feature",
-        "detail": "The package can be built around one lead and a small supporting cast, so it does not require a heavy name stack to get moving. The contained footprint and mature crime-comedy tone fit the current buyer appetite for low-to-mid budget features that can play festival, platform, and limited theatrical lanes."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The larger crime engine is still implied.",
+          "detail": "In the excerpt, we know Bobby needs money and Carmy wants a collection handled, but the actual criminal mechanism is still off-screen. That makes the buying conversation more conditional than the scene work alone suggests, because the premise needs the full pressure system to feel like a feature rather than a strong opening sequence.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Bobby reads as familiar before he reads singular.",
+          "detail": "The page gives him bluster, denial, and embarrassment, which are useful, but the voice still sits close to a recognizable hustler type. Buyers will respond to the performance opportunity, but the character itself doesn't yet announce a sharply ownable identity beyond the genre lane.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The excerpt is light on relationship web.",
+          "detail": "Lara and Carmy are effective pressure points, but there isn't yet a dense enough supporting network to suggest a broader ensemble engine. That keeps the project in a lead-driven lane and limits the sense of recurring story energy on the page.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tonal lane is still adjacent to familiar crime drama.",
+          "detail": "The dialogue has snap and the domestic humiliation is strong, but the page is still operating in a recognizable grounded-crime register rather than a distinctly hard-to-imitate tonal identity. That matters in packaging, because the script will likely be judged against a crowded field of similar adult crime indies.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is that the page sells the mood and the lead, but not yet the full criminal machine driving the feature. Buyers will also notice that the character and tone are effective but still sit close to a familiar working-class crime lane, which raises the bar for the rest of the script to feel truly distinctive."
     },
-    "considerations": [
-      {
-        "area": "The debt world is still mostly off-screen.",
-        "detail": "The opening pages establish pressure through calls, but the larger criminal ecosystem is still being felt rather than seen. A next pass could foreground one concrete piece of that world earlier — a collector, a location, or a transaction — so Bobby’s night has a more immediate external engine.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Lara’s exit is emotionally clear and structurally efficient.",
-        "detail": "The breakup lands fast, which keeps the scene moving, and the version of the script where Lara has one more specific personal detail or objective could give her even more independent gravity. That would deepen the relationship engine without changing the core premise.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The footprint is already lean.",
-        "detail": "The contemporary, mostly interior setup is naturally producible, so the main packaging conversation is about preserving that contained scale as the story expands. Keeping the action concentrated in a few repeatable locations will protect the budget and the pressure-cooker feel.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The Yankees reference needs a clearance pass.",
-        "detail": "The TV beat is vivid and useful, but any final production draft should confirm whether the team name stays or gets generalized. That’s a small legal housekeeping item that keeps the script clean for buyers.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 55.3,
+  "weightedScore": 57.3,
   "tier": "Needs Development",
-  "inputTokens": 10409,
-  "outputTokens": 3280,
-  "cost": 0.022566749999999997,
+  "inputTokens": 12814,
+  "outputTokens": 3503,
+  "cost": 0.025374,
   "declaredFormat": "Feature film"
 }

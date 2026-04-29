@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T04:46:28.118Z",
+  "submission_id": "2edfc204-b956-46f9-8f04-578b4cf6ddd4",
+  "eval_id": "9514c299-d2fe-463a-9c71-b99521597843",
+  "title": "How To Disappear Completely",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Samir",
+      "role_type": "Lead",
+      "demographics": "Male, 20s, South Asian/Middle Eastern-coded, startup engineer/founder class, likely urban professional."
+    },
+    {
+      "name": "Othello",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, wealthy-family background, business-facing startup cofounder."
+    },
+    {
+      "name": "Rahul",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, coder/technical team member."
+    },
+    {
+      "name": "Elseid",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, filmmaker, old friend / returning acquaintance."
+    },
+    {
+      "name": "Samir's mother",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged to older, mother."
+    },
+    {
+      "name": "Potential Investor #1",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, investor/VC type."
+    }
+  ],
+  "positioning_hook": "A disillusioned startup engineer building battery tech for military use watches his cofounder steal the spotlight, forcing him to choose between ambition, complicity, and disappearance.",
+  "cost_usd": 0.029996250000000002,
+  "input_tokens": 14387,
+  "output_tokens": 4268,
+  "status": "wrote:leads_ok"
+}

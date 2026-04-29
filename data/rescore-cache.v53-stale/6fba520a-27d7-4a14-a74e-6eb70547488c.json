@@ -1,0 +1,398 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Historical drama",
+      "genre_tags": [
+        "Sports",
+        "Political thriller"
+      ],
+      "tone": "Gritty, defiant, elegiac"
+    },
+    "positioning_hook": "Matthias Sindelar, Austria’s football icon, is pressured to play a Nazi-sanctioned farewell match and turn his talent into propaganda — then chooses to humiliate the regime instead.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has a clean, sellable engine: a sports legend forced into a political spectacle, with a built-in underdog payoff and a famous historical figure at the center. The audience is broad for prestige-drama buyers and sports-history viewers, though the period setting and political specificity keep it from feeling four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the opening World Cup sequence and stays legible: Sindelar is a star athlete under fascist pressure, and the match itself becomes the arena for resistance. The script keeps the central question clear all the way to the final whistle."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Sindelar is charismatic, principled, and physically expressive, with a strong contradiction between showman and dissenter. Camilla, Walter, Leopold, and Heinrich add meaningful pressure and texture, though the story remains most powerfully anchored to Matthias."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script makes a sports biopic feel like a political act, and it commits to the idea that a football match can carry historical consequence. The choice to dramatize resistance through play, gesture, and public spectacle gives the material a confident identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with purpose toward the Anschluss match, and the repeated pressure from Nazis, teammates, and institutions keeps the story active. Some stretches are more atmospheric and explanatory than propulsive, but the match countdown gives the feature a strong spine."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "This feels like a story that should exist: a national sports hero whose greatest act is refusing to let his talent be absorbed by fascist theater. The combination of football choreography, propaganda pressure, and personal defiance creates a fresh and memorable dramatic lane."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Vienna in the Anschluss period is rendered with strong institutional and social texture: newsroom, café, Gestapo office, locker room, church, street, and stadium all feel like parts of the same tightening system. The world is not just backdrop; it actively shapes every choice Matthias makes."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone blends prestige historical drama with sports-page momentum and moments of dark, ugly authoritarian menace. The script knows when to let the match breathe and when to turn the screws, which gives it a distinct and hard-to-mistake identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "On the surface this is a resistance sports drama, but beneath that are themes of legacy, complicity, identity, and what history remembers. The repeated parallels between football rules and political rules suggest deeper thematic layers that reward attention."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Matthias and Camilla have real romantic charge, Matthias and Heinrich have a strong mentor-athlete bond, and the team dynamics around Hans and Karl create usable friction. The ensemble is functional and story-generating, though the feature still lives primarily through Matthias’s orbit."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 24,
+        "leads": 6,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in his 30s with athletic soccer ability",
+          "Multiple supporting roles for 20s-60s men",
+          "Female romantic lead in her 20s",
+          "Several named historical figures and public-facing authority roles",
+          "One child at funeral and one child in street/funeral scenes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Approximately 9 interiors / 7 exteriors",
+        "period_or_contemporary": "Period (1934-1938)",
+        "notable_requirements": [
+          "1930s Vienna streets and storefronts",
+          "1930s stadium and locker room builds",
+          "Gestapo office and interrogation spaces",
+          "Church interior and public square crowd scenes",
+          "Crowd-controlled football match staging"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily crowd extension, period skyline cleanup, and possible stadium enhancement; no major creature or fantasy work.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical destruction for cafe vandalism, broken glass, smoke/fire aftermath, and crowd-control action in street and stadium sequences.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Matthias Sindelar, Adolf Hitler, Benito Mussolini, Sepp Herberger, Theodor Innitzer, and other named historical figures."
+        },
+        {
+          "type": "named_music",
+          "detail": "Mozart's Requiem, Don Giovanni, Duke Ellington records, Danube Waltz, Deutschland Über Alles, and Wessel-Lied are specifically referenced."
+        },
+        {
+          "type": "brand",
+          "detail": "Mein Kampf, Völkischer Beobachter, and named football institutions and stadiums are prominently referenced."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Historical-event dramatization and use of real public figures may require life-rights or estate/clearance review depending on production approach."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige theatrical or premium streaming historical drama",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or limited theatrical with awards positioning"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Period Vienna, stadium crowd work, and multiple public scenes push above a contained indie, but the story remains fundamentally character-driven."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on a strong lead and a sizable supporting ensemble, with several historical roles and a child appearance."
+        },
+        "location": {
+          "level": "high",
+          "note": "The script moves through stadiums, streets, cafés, offices, apartments, church interiors, and crowd scenes across 1934-1938 Vienna."
+        },
+        "content": {
+          "level": "high",
+          "note": "Nazi violence, antisemitic abuse, sexual assault, interrogation, and political persecution set a mature standards-and-practices profile."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script names numerous real historical figures, songs, institutions, and period publications that invite clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "A sports legend becomes the resistance.",
+          "what_it_means": "That gives buyers a clean prestige hook with built-in emotional lift: a public hero using the one thing he’s famous for as an act of defiance. It will attract actors who want a role with physical charisma and moral stature, and producers looking for an awards-capable historical lead.",
+          "evidence": "Matthias is pressured to play the Anschluss Match, then refuses the Nazi jersey and scores in the black Austrian kit while the crowd chants his nation’s name.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The match is the movie’s climax engine.",
+          "what_it_means": "The story has a built-in countdown and a public arena where every choice becomes visible, which is exactly the kind of structure that keeps a feature moving. Sports buyers, prestige streamers, and theatrical audiences all understand the stakes instantly because the final act is a game with political consequences.",
+          "evidence": "The script repeatedly returns to the upcoming match, training, locker-room pressure, and the final 90-minute showdown at Praterstadion.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Vienna feels like a tightening trap.",
+          "what_it_means": "The city is not decorative; it becomes an ecosystem of surveillance, propaganda, and social pressure that gives the film a strong period identity. That kind of world texture is attractive to directors who want to stage history through lived-in spaces rather than speeches.",
+          "evidence": "The newsroom, café, Gestapo headquarters, church, apartment blocks, and stadium all show different faces of the same political takeover.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Matthias is built for an actor.",
+          "what_it_means": "He gets charisma, athleticism, romance, public performance, and quiet moral resistance in one role, which is the kind of part that can reframe an actor’s range. Mid-career leading men with physical presence and prestige ambitions will see this as a showcase vehicle.",
+          "evidence": "He dances, flirts, argues, trains, defies the Nazis, and turns the pitch into a political statement.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting relationships carry real charge.",
+          "what_it_means": "The Matthias-Camilla romance, the Matthias-Heinrich mentorship, and the Matthias-Hans rivalry give the film multiple emotional lanes beyond the central historical event. That helps the project play to adult audiences who want character dynamics, not just a sports outcome.",
+          "evidence": "Camilla challenges his worldview, Heinrich urges him to play, and Hans embodies the seductive pull of collaboration.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script understands propaganda as theater.",
+          "what_it_means": "The film’s political material has a cinematic angle because it shows fascism as performance, pageantry, and crowd manipulation rather than abstract history. That makes the material especially appealing to directors and buyers who respond to political drama with visual scale.",
+          "evidence": "The salutes, banners, speeches, newspaper propaganda, and staged match all operate as public spectacle.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige sports drama with a built-in historical climax and a lead role actors will want to fight for. By turning a football match into an act of national defiance, the script gives producers a clean, marketable hook and a finale that lands as both crowd-pleaser and political statement."
+    },
+    "lead_characters": [
+      {
+        "name": "Matthias Sindelar",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · Austrian/Czech descent · elite footballer",
+        "hook": "A dazzling, self-possessed striker with showman instincts and a stubborn moral center, Matthias lives through movement, rhythm, and control. He is charming without trying, proud without being pompous, and increasingly unable to separate the game he loves from the regime trying to own it.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in *A Complete Unknown* or Eddie Redmayne in *The Theory of Everything* — a physically expressive lead whose body, voice, and inner life all have to carry the film. Actors will chase the chance to play charisma under pressure, then land a final-act defiance that feels earned rather than declared."
+      },
+      {
+        "name": "Camilla Castagnola",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · Italian fashion model",
+        "hook": "Camilla is elegant, observant, and sharper than the men around her initially assume. She brings wit, worldly intelligence, and a survivor’s instinct to the story, and she becomes the emotional counterweight that forces Matthias to see the world beyond football.",
+        "why_actor_wants_this": "This has the showcase space of Alicia Vikander in *The Danish Girl* or Lily James in *Mamma Mia! Here We Go Again* — a luminous presence who can shift from flirtation to pain to moral clarity in the same scene. Actresses looking for a role that is romantic, stylish, and emotionally consequential will respond to her."
+      },
+      {
+        "name": "Walter Nausch",
+        "role_type": "Lead",
+        "demographics": "Male · 30s · Austrian footballer",
+        "hook": "Walter is Matthias’s teammate and moral mirror, a player who understands the stakes but is more openly vulnerable to the political pressure around him. His marriage to Margot gives him a personal reason to fear the future, which makes his choices feel lived-in rather than symbolic.",
+        "why_actor_wants_this": "This is the kind of grounded supporting-lead territory Oscar Isaac had in *A Most Violent Year* — a man trying to keep his dignity while the world narrows around him. Actors who like intimate, pressure-cooker drama will be drawn to the role’s loyalty, fear, and emotional restraint."
+      },
+      {
+        "name": "Leopold Drill",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Jewish café owner",
+        "hook": "Leopold is warm, wounded, and quietly brave, a man trying to preserve decency in a city that is stripping it away in public. His café becomes one of the film’s moral centers, and his grief over his son gives the story a human cost beyond the stadium.",
+        "why_actor_wants_this": "This is the showcase territory of Mark Rylance in *Bridge of Spies* — a gentle exterior with immense internal pressure, where every pause carries meaning. Character actors who specialize in humane authority and emotional precision will want this part."
+      },
+      {
+        "name": "Heinrich Retschury",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Austrian coach",
+        "hook": "Heinrich is the coach who sees football and politics as inseparable, and he speaks with the weary intelligence of a man who knows the game is bigger than the game. He is pragmatic, loyal, and haunted by what history will erase if nobody names it.",
+        "why_actor_wants_this": "This is the kind of role Brendan Gleeson had in *The Banshees of Inisherin* — a seasoned presence with authority, melancholy, and a worldview that can carry a scene with one line. Veteran actors who want gravitas without stiffness will chase it."
+      },
+      {
+        "name": "Hans Mock",
+        "role_type": "Lead",
+        "demographics": "Male · 20s · Austrian footballer",
+        "hook": "Hans is the teammate who has bought into the new order, and he gives the film its most dangerous kind of friction: betrayal that still looks like ambition. He is cocky, politically compromised, and emotionally legible enough that his choices sting.",
+        "why_actor_wants_this": "This is the kind of morally split supporting-lead territory that Tom Burke had in *The Souvenir Part II* — a role where charm and self-deception sit right on top of each other. Actors who like playing seductive antagonism from inside the ensemble will be drawn to him."
+      },
+      {
+        "name": "Philip Dibbon",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · sports reporter",
+        "hook": "Philip is the observer who keeps trying to tell the truth in a newsroom that wants obedience more than reporting. He gives the film a civilian point of view on how propaganda colonizes ordinary institutions.",
+        "why_actor_wants_this": "This is the kind of newsroom pressure role that Jesse Plemons had in *The Post* — a smart, watchful character whose restraint makes the surrounding machinery feel more dangerous. Actors who excel at contained intelligence and quiet alarm will like the part."
+      },
+      {
+        "name": "Herr Mosser",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · newspaper editor",
+        "hook": "Mosser is the institutional gatekeeper who knows exactly how far he can bend before he breaks. He is polished, cautious, and chilling precisely because he sounds reasonable while enforcing the regime’s limits.",
+        "why_actor_wants_this": "This is the kind of authority role that Richard Jenkins had in *The Visitor* — a man whose calm exterior becomes the point of tension. Character actors who can make compromise feel active will be interested."
+      },
+      {
+        "name": "Jurgen Schrempf",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · Gestapo officer",
+        "hook": "Schrempf is the film’s most overt instrument of state violence, a predator who uses bureaucracy, humiliation, and sexual menace as one continuous weapon. He is not just cruel; he is methodical, which makes him more frightening.",
+        "why_actor_wants_this": "This is the kind of villain territory Christoph Waltz had in *Inglourious Basterds* — articulate, theatrical, and terrifying because he enjoys the performance of power. Actors who can weaponize charm and precision will want the role."
+      },
+      {
+        "name": "Otto",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s · Gestapo officer",
+        "hook": "Otto is Schrempf’s quieter partner, the one who turns intimidation into procedure. He is less flamboyant than Schrempf, which makes him feel even more institutional and harder to read.",
+        "why_actor_wants_this": "This is the kind of cold-enforcer role that Michael Shannon has played in prestige dramas — a contained presence whose stillness makes the room colder. Actors who can project menace with minimal movement will be interested."
+      },
+      {
+        "name": "Karl Sesta",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · Austrian footballer",
+        "hook": "Karl is the teammate who still believes in the team as a team, even as politics tries to split everyone into camps. He is competitive, loyal, and useful as a pressure valve for the locker-room tension.",
+        "why_actor_wants_this": "This is the kind of ensemble-athlete role that Jovan Adepo had in *Fences* — a supporting part that still gets to register pride, frustration, and camaraderie in a vivid way. Actors who want a strong team dynamic without carrying the whole film will like it."
+      },
+      {
+        "name": "Margot",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Jewish wife",
+        "hook": "Margot is Walter’s wife and a quiet measure of what the regime threatens to erase. She is present enough to matter emotionally, and her marriage gives the film a domestic stake inside the larger political one.",
+        "why_actor_wants_this": "This is the kind of intimate supporting role that Sarah Snook had in *Pieces of a Woman* — brief but emotionally loaded, with the ability to make a larger world feel personal. Actors who can communicate history through stillness will respond to it."
+      },
+      {
+        "name": "Michl Shwarz",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Jewish football administrator",
+        "hook": "Michl is a dignified football man being pushed out of the institution he helped build. He carries the sadness of someone who understands the game’s beauty and the state’s cruelty in equal measure.",
+        "why_actor_wants_this": "This is the kind of late-scene authority role that Stanley Tucci had in *Spotlight* — brief but resonant, with moral weight and institutional history in every line. Veteran character actors will see the emotional precision in it."
+      },
+      {
+        "name": "Leopold Drill’s son, Robert",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · Jewish activist",
+        "hook": "Robert is idealistic, defiant, and willing to pay for his convictions. He gives the story a younger generation’s urgency and makes the political danger feel immediate inside Leopold’s family.",
+        "why_actor_wants_this": "This is the kind of idealist role that Lucas Hedges had in *Manchester by the Sea* — a young man whose conviction is part courage and part self-destruction. Actors looking for a brief but memorable moral spark will be drawn to it."
+      },
+      {
+        "name": "Felix Linnemann",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · football federation president",
+        "hook": "Felix is the polished bureaucrat who translates authoritarian pressure into career opportunity. He is smooth, managerial, and chilling because he speaks the language of sport while serving power.",
+        "why_actor_wants_this": "This is the kind of institutional operator role that David Strathairn had in *Good Night, and Good Luck* — a man whose calm professionalism masks the machinery underneath. Actors who can make compromise feel elegant will want it."
+      },
+      {
+        "name": "Heinrich Retschury",
+        "role_type": "Lead",
+        "demographics": "Male · 50s · Austrian coach",
+        "hook": "Heinrich is the coach who sees football and politics as inseparable, and he speaks with the weary intelligence of a man who knows the game is bigger than the game. He is pragmatic, loyal, and haunted by what history will erase if nobody names it.",
+        "why_actor_wants_this": "This is the kind of role Brendan Gleeson had in *The Banshees of Inisherin* — a seasoned presence with authority, melancholy, and a worldview that can carry a scene with one line. Veteran actors who want gravitas without stiffness will chase it."
+      },
+      {
+        "name": "Max Uhrmann",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · Gestapo superior",
+        "hook": "Uhrmann is the higher-level bureaucrat who understands exactly when to tighten the screws and when to wait. He is less theatrical than Schrempf, which makes his authority feel colder and more systemic.",
+        "why_actor_wants_this": "This is the kind of command role that Mark Strong has played in prestige thrillers — controlled, intelligent, and dangerous because he never needs to raise his voice. Actors who can project power through restraint will want it."
+      },
+      {
+        "name": "Egon Ulbrich",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · football official",
+        "hook": "Egon is the compromised intermediary who has to deliver bad news while trying to keep his own conscience intact. He’s a useful face of institutional surrender.",
+        "why_actor_wants_this": "This is the kind of small but telling role that Paul Dano often makes memorable in prestige ensemble work — a character whose discomfort tells you everything about the system. Actors who can play shame and obedience at once will like it."
+      },
+      {
+        "name": "Andreas",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s · building superintendent / repairman",
+        "hook": "Andreas is the ordinary working man who keeps showing up inside a collapsing world. He brings a little comic friction and a lot of everyday texture to Matthias’s apartment life.",
+        "why_actor_wants_this": "This is the kind of lived-in supporting role that Brian d’Arcy James has in ensemble dramas — practical, specific, and quietly memorable. Character actors who can make a small role feel real will be interested."
+      },
+      {
+        "name": "Ilana",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · model",
+        "hook": "Ilana is part of Camilla’s social world and functions as both confidante and warning system. She gives the film a peer-level female perspective on escape, survival, and what people choose to ignore.",
+        "why_actor_wants_this": "This is the kind of sharp ensemble role that Zoey Deutch has played in period and contemporary dramas — quick, socially aware, and able to land a scene in a few lines. Actors who like stylish supporting work will respond to it."
+      },
+      {
+        "name": "Isabella",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · model",
+        "hook": "Isabella is another voice in Camilla’s orbit, helping build the social texture of Vienna’s fashion world under pressure. She gives the film a lighter, more observational register without losing the period tension.",
+        "why_actor_wants_this": "This is the kind of ensemble texture role that Haley Lu Richardson has made memorable — present, specific, and able to humanize a scene quickly. Actors who excel at social realism will like the part."
+      },
+      {
+        "name": "Udo",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · assistant",
+        "hook": "Udo is the polished assistant who moves through the fashion world with practiced ease. He helps make the Vienna social scene feel operational rather than decorative.",
+        "why_actor_wants_this": "This is the kind of supporting role that Joe Alwyn has often occupied in period pieces — elegant, observant, and useful in building a world. Actors who can play class and subtext in a few beats will be interested."
+      },
+      {
+        "name": "Archbishop Theodor Innitzer",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Catholic archbishop",
+        "hook": "Innitzer is a public religious figure whose presence underscores how broadly the regime has penetrated civic life. He gives the film a chilling note of institutional blessing.",
+        "why_actor_wants_this": "This is the kind of authority cameo that Ralph Fiennes can make unforgettable — ceremonial, controlled, and morally loaded. Actors with gravitas and a command of public speech will be drawn to it."
+      },
+      {
+        "name": "Fritz Szepan",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · German football captain",
+        "hook": "Szepan is the opposing captain and a physical embodiment of the new order on the pitch. He is competitive, taunting, and useful as the face of the match’s sporting antagonism.",
+        "why_actor_wants_this": "This is the kind of athletic antagonist role that Matthias Schoenaerts has played in sports and prestige dramas — physical, proud, and able to carry tension without overexplaining it. Actors with real athletic presence will want the part."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage history through bodies, crowds, and one unforgettable public act.",
+        "fit_profile": "Established indie or prestige-feature directors with at least one period drama or character-driven historical piece behind them, especially those who care about performance-forward storytelling and political tension. The material rewards directors who can choreograph football as drama, use institutions as pressure-cookers, and let a final act land like a public verdict.",
+        "detail": "The script gives a director a rare chance to turn a sports sequence into a political climax without losing emotional intimacy. It will attract filmmakers who like precise period texture, crowd orchestration, and actors doing heavy lifting inside a visually legible world."
+      },
+      "buyer_appeal": {
+        "tier": "$10-20M prestige feature",
+        "lane": "Prestige historical drama / awards-friendly streamer lane",
+        "detail": "The project can be packaged around one marquee lead and a strong supporting ensemble, with the stadium finale and period Vienna doing the rest of the selling. The historical-sports hook, recognizable real-world figures, and awards-friendly resistance story fit the current streamer and limited-theatrical appetite for elevated adult drama."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The café and apartment threads can be streamlined.",
+        "detail": "The story already has a strong spine in Matthias, Camilla, the team, and the Anschluss match, so a next pass could consider folding some of the café-business logistics and repeated domestic beats into fewer scenes. That would protect the emotional throughline while keeping the feature moving with even more force toward the final match.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The political pressure arrives in several waves.",
+        "detail": "The script has a lot of effective institutional scenes — newsroom, Gestapo office, café raid, protest arrest, and the apartment search — and the version where a few of those beats are combined could keep the escalation feeling even more relentless. The core idea is already strong; the simplification lever is about preserving momentum, not reducing scope.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The match build could be even more concentrated.",
+        "detail": "The training montage, locker-room speech, and pregame locker-room confrontation all work toward the same emotional destination. One direction would be to let one of those beats carry more of the burden so the final 90 minutes arrive with maximum charge and less repetition.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The historical specificity is a selling point.",
+        "detail": "Because the script names real people, songs, newspapers, and institutions, the production should plan for a clear clearance pass early. That is a manageable development step for a prestige historical feature, and it protects the film’s authenticity while keeping the package clean.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The crowd and stadium work define the budget lane.",
+        "detail": "The football finale, public demonstrations, and period crowd scenes place the film above a microbudget footprint, but still comfortably inside a contained prestige feature range. A producer can protect the budget by keeping the story centered on a limited number of key locations and using the stadium as the one major scale event.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 75.3,
+  "tier": "Optionable",
+  "inputTokens": 46730,
+  "outputTokens": 6711,
+  "cost": 0.065247,
+  "declaredFormat": "Feature film"
+}

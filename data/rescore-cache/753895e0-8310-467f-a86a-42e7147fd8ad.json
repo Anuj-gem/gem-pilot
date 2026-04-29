@@ -2,256 +2,286 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural horror-comedy",
-      "genre_tags": [
-        "Ensemble",
-        "Urban fantasy"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Comedy",
+        "Horror"
       ],
-      "tone": "Fast, irreverent, chaotic, and character-driven with sitcom banter colliding into creature-feature escalation"
+      "tone": "irreverent",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "feature-anchored",
+        "character-driven",
+        "low-budget-friendly",
+        "supernatural-office",
+        "witches",
+        "vampires",
+        "ghosts",
+        "demon"
+      ]
     },
-    "positioning_hook": "A chaotic supernatural office crew’s pizza run unleashes vampires, ghosts, and a demon, forcing a witch, a psychic, and their boss to survive the night before sunrise.",
+    "positioning_hook": "At a supernatural office in New York, a witchy pizza run goes sideways when a demon crashes the night shift, forcing a snarky team of misfits to survive until sunrise.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise has an easy sell: an occult workplace, a pizza errand gone sideways, and a clear midnight survival engine. It’s most magnetic to genre audiences and buyers looking for a contained ensemble play rather than a broad four-quadrant event."
+        "reasoning": "The premise is easy to grasp and the vampire-pizza-demon escalation gives it a clear genre promise, but the appeal is still fairly niche because the humor is very specific and the world is built around a small ensemble at one office. It has a real audience among horror-comedy and supernatural-fantasy buyers, but it is not an obvious four-quadrant play."
       },
       "conceptual_hook_clarity": {
-        "score": 7,
-        "reasoning": "The hook lands quickly in the opening office banter and then sharpens with the vampire pizza place, the ghost encounters, and the demon breach. The story engine is easy to explain in one breath, even as the script keeps layering new supernatural complications."
+        "score": 8,
+        "reasoning": "The hook lands immediately: a supernatural office night shift turns into a contained monster problem, and the script keeps that engine legible from the first pizza run to the demon breach. The vampire pizza place, the ghost clients, and the demon summoning all reinforce one clean premise."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 6,
-        "reasoning": "Joan, Mateo, Cassandra, and Willy each have a distinct comic rhythm, and the friction between Joan and Cassandra gives the piece its best interpersonal charge. The roles are playable and actor-friendly, though the script is still more invested in group energy than in deep individual interiority."
+        "score": 7,
+        "reasoning": "Joan, Cassandra, Mateo, and Willy each have a distinct comic function and enough friction to make the group fun to watch, especially in the apology beats and the final teamwork sequence. They are vivid enough to carry a feature, though the roles are more sharply defined by banter and function than by deep interior contradiction."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The blend of office banter, occult logistics, and absurd supernatural bureaucracy gives the script a specific comic identity. The invisible-ink mission, Slack references, entity-sorted storage room, and vampire pizza run all show a writer leaning into a playful, ownable lane."
+        "reasoning": "The script has a fresh mash-up of office comedy, occult logistics, and creature chaos, with the Slack joke, the entity storage room, and the vampire pizza run giving it a playful identity. The voice is confident, though the underlying structure still sits in familiar 'misfits battle supernatural threat' territory."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The script keeps escalating cleanly from pizza errand to ghost mediation to demon containment, and each turn adds pressure without losing the comic voice. The final upstairs siege gives the feature a satisfying survival-climax shape."
+        "reasoning": "The story moves briskly from the pizza errand to the demon escalation, and each beat adds a new supernatural complication rather than stalling. The stakes are clear by the time the demon appears, though the first half spends a fair amount of time in banter before the central threat fully locks in."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The core idea feels fresh because the supernatural world is embedded in mundane workplace behavior rather than treated as a separate fantasy realm. The office procedures, talisman storage, and casual handling of ghosts create that pleasing sense that this world could keep generating stories."
+        "reasoning": "The idea of a supernatural office that handles ghosts, witches, and demons is immediately ownable, and the pizza-run misfire is a clean, memorable trigger. It feels fresh in presentation even if the broad 'team survives a night from hell' shape is familiar."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "Solomon and Associates feels like a place with rules, inventory, and institutional memory, from the upstairs labeled boxes to the Slack joke and the desk drawer full of relics. The world is compact, but it has enough texture to feel story-generating rather than merely decorative."
+        "reasoning": "The office has a usable internal logic: entity categories upstairs, talismans in drawers, Slack references, and a boss who clearly knows the supernatural bureaucracy. That texture makes the world feel story-generating, even though the script only sketches the larger rules rather than fully opening them up."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a very legible tonal signature: deadpan workplace comedy colliding with supernatural chaos, with characters who argue like coworkers even while a demon tears through the ceiling. The banter, profanity, and matter-of-fact handling of the bizarre give it a distinct voice."
+        "reasoning": "The tone is sharply defined as profane, playful, and lightly grotesque, with the dialogue bouncing between workplace sniping and occult panic. The contrast between deadpan office rhythms and escalating monster imagery gives the script a distinct comic-horror flavor."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "The surface pleasure is immediate and the mythology is readable, but the draft is primarily playing the comic situation rather than opening much hidden emotional depth. There are hints of a fuller world and a more personal history between Joan and Cassandra, which could become a stronger reserve in a later pass."
+        "reasoning": "There are hints of a larger supernatural ecosystem and some interpersonal history, but the script mostly plays the surface-level comic engine rather than suggesting deeper thematic layers. The emotional material is functional and effective, but it does not yet imply a lot of hidden depth."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "The Joan/Cassandra rivalry, Mateo’s anxious peacemaking, and Willy’s exhausted authority create a workable ensemble web with multiple comic combinations. The group already generates scenes by simple collision, which is a strong sign for feature momentum and repeatable chemistry."
+        "score": 8,
+        "reasoning": "The ensemble is the engine: Joan and Cassandra’s rivalry, Mateo’s anxious loyalty, and Willy’s exhausted authority all generate scenes even before the demon arrives. The final stretch works because the group dynamics are already established enough that any pairing in the room has comic and dramatic charge."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Joan",
+        "role_type": "Lead",
+        "demographics": "Woman, 20s-30s, witch/cosplayer-coded, New York-based, working-class or lower-middle-class vibe",
+        "hook": "Joan is the sharp-tongued, easily provoked witch at the center of the chaos, the one who takes the vampire pizza run personally and turns embarrassment into action. She reads as defensive, proud, and more capable than she wants anyone to notice, with a chip on her shoulder about being underestimated by Cassandra and the office at large.",
+        "why_actor_wants_this": "This is the showcase territory of Aubrey Plaza in Ingrid Goes West — a prickly, funny, emotionally armored lead who can weaponize irritation and then pivot into real vulnerability. The role gives an actor a fast, quotable comic rhythm plus the payoff of being the person who actually has to perform the containment spell under pressure."
+      },
+      {
+        "name": "Cassandra",
+        "role_type": "Supporting",
+        "demographics": "Woman, 20s-30s, witch, office insider, socially dominant",
+        "hook": "Cassandra is the smug instigator with enough supernatural confidence to needle Joan and enough panic underneath to recognize when the room has gone wrong. She is the kind of character who can start trouble, apologize halfway through, and still feel like she owns the space.",
+        "why_actor_wants_this": "This is the showcase lane of Kathryn Hahn in Bad Moms — a high-energy, razor-tongued comic role that lets an actor be both the problem and the charm. It offers sharp banter, status play, and a late-scene turn into genuine team loyalty."
+      },
+      {
+        "name": "Mateo",
+        "role_type": "Supporting",
+        "demographics": "Man, 20s-30s, anxious office runner, likely Latino-coded by name and vibe",
+        "hook": "Mateo is the nervous heart of the office, a people-pleaser who keeps trying to do the right thing while getting dragged into supernatural nonsense he barely understands. His appeal is in the sincerity: he is awkward, loyal, and just brave enough to matter when the ghosts and demon show up.",
+        "why_actor_wants_this": "This is the kind of role that gave Diego Luna in Narcos a chance to play intelligence under pressure, or that lets a comic actor like Michael Cera-style energy carry sincere panic. The showcase is the emotional pivot from anxious sidekick to the one who negotiates with the dead and helps hold the group together."
+      },
+      {
+        "name": "Willy",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s-50s, boss/occult operator, glasses, revolver, office authority",
+        "hook": "Willy is the exhausted supernatural manager who seems half-asleep until the room turns lethal, then becomes the only person with a plan. He has the best authority energy in the script: dry, competent, and just weird enough to feel like he has been surviving this office for years.",
+        "why_actor_wants_this": "This is the showcase lane of J.K. Simmons in Whiplash or Jeffrey Wright in Westworld — controlled authority with a dry edge and a sudden ability to dominate the room. The role gives an actor the pleasure of being the calm center, the lore keeper, and the guy with the bullet that matters."
+      },
+      {
+        "name": "Margaret",
+        "role_type": "Supporting",
+        "demographics": "Woman, elderly, deceased ghost",
+        "hook": "Margaret is the old ghost who starts as a nuisance and becomes an ally, with a blunt, no-nonsense voice that cuts through Mateo’s panic. She gives the script a humanizing dead-world presence and a small emotional thread about unfinished business.",
+        "why_actor_wants_this": "This is the kind of late-breaking supporting turn that gave June Squibb in Nebraska or Margo Martindale in The Americans a chance to steal scenes with authority and specificity. The role is small but memorable, with comic bite and a sincere afterlife plea."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 6,
-        "leads": 4,
-        "series_regulars": 0,
+        "speaking_roles": 5,
+        "leads": 1,
+        "series_regulars": 3,
         "child_actors": false,
         "casting_characteristics": [
-          "Ensemble of four principal adults",
-          "One ghostly older woman",
-          "One ghostly adult male",
-          "Creature/demon performance"
+          "Ensemble of four core adults plus one featured ghost role",
+          "No child casting",
+          "No special physical match requirements",
+          "Performance needs strong comic timing and rapid dialogue handling"
         ]
       },
       "locations": {
         "distinct_count": 5,
-        "interior_exterior_ratio": "Mostly interior with one exterior pizza-run sequence",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Office/main hall, meeting room, lounge room, back room, upstairs storage area",
-          "Short exterior street and pizza shop sequence",
-          "Practical set dressing for occult office inventory"
+          "Office/main hall, meeting room, lounge, back room, upstairs storage",
+          "One exterior pizza-place location and a brief street/alley beat",
+          "Contained practical locations with one hero supernatural office build"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Ghost materializations, floating runes, amoeba-like entities, flickering supernatural effects, and a multi-masked demon with portal exit.",
+        "vfx_details": "Monsters, ghosts, floating runes, demon manifestation, and supernatural environmental effects like flickering lights and portal imagery; could be handled with selective practical augmentation and limited compositing.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical demon makeup/puppetry or hybrid creature build, garlic dust burst, flicker and possession-style effects, talismans and spell props.",
+        "sfx_needs": "Practical creature makeup/prosthetics, garlic-dust orb effect, talismans, bloodless demon effects, flicker and boom cues, and a few impact beats for chase movement.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "TikTok is referenced by name."
+          "detail": "TikTok is named in dialogue as a threat."
+        },
+        {
+          "type": "brand",
+          "detail": "Slack is referenced as the office communication system."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming genre-comedy or premium-cable supernatural comedy lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform or direct streaming genre play"
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: contained supernatural ensemble comedy-horror with streamer-friendly genre positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is mostly contained to a few office interiors, but the demon reveal, ghost effects, vampire restaurant, and chase sequence push it beyond a simple dialogue indie."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained locations keep the footprint manageable, while the demon, ghosts, and supernatural effects push it above microbudget."
+      "casting": {
+        "level": "medium",
+        "note": "The project needs four performers with fast comic timing and clean ensemble chemistry, plus a boss actor who can play deadpan authority without flattening the humor."
+      },
+      "development": {
+        "level": "low",
+        "note": "The premise is clear, the escalation is legible, and the supernatural office rules are easy to understand from the page."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "What We Do in the Shadows",
+          "year": 2014,
+          "why_it_comps": "The deadpan supernatural workplace energy and creature-comedy rhythm are close cousins, with ordinary logistics colliding against monsters."
         },
-        "cast": {
-          "level": "low",
-          "note": "The story is built around four adult leads and a small supporting roster, with no child casting or star-dependent roles."
+        {
+          "title": "The Babysitter",
+          "year": 2017,
+          "why_it_comps": "A contained night of escalating genre chaos with a playful, irreverent tone and a young ensemble under pressure."
         },
-        "location": {
-          "level": "low",
-          "note": "The action stays mostly inside one office complex with a brief exterior pizza-shop sequence."
+        {
+          "title": "Ready or Not",
+          "year": 2019,
+          "why_it_comps": "The script shares the propulsive, one-night survival structure and the pleasure of a protagonist forced into violent supernatural problem-solving."
         },
-        "content": {
-          "level": "medium",
-          "note": "Profanity, horror imagery, and supernatural violence shape the tone, but the material stays in a broadly playable mature-comedy lane."
-        },
-        "rights": {
-          "level": "low",
-          "note": "The only notable clearance item in the draft is the named TikTok reference."
+        {
+          "title": "Extra Ordinary",
+          "year": 2019,
+          "why_it_comps": "The comedy comes from treating the supernatural as a workplace nuisance, with ghosts and occult business folded into everyday banter."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who like irreverent supernatural comedies with ensemble banter, practical creature chaos, and a strong midnight-movie vibe.",
+        "demographics": "Adults 18-44, slightly male-skewing but broadly balanced, with strongest pull among genre fans and comedy-horror audiences.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Mostly contained office interiors and one exterior pizza run, with moderate creature/VFX work and practical effects driving the spend."
+      },
+      "lane_fit": {
+        "lane": "indie supernatural comedy-horror",
+        "types_of_buyers": [
+          "boutique genre producers",
+          "streamer original-film execs",
+          "mid-budget horror-comedy financiers",
+          "festival-friendly indie distributors",
+          "director-driven genre labels"
+        ],
+        "detail": "This sits naturally in the lane of contained, character-forward genre films that can sell on tone, ensemble chemistry, and a memorable premise. The office setting keeps it producible while the demon/vampire/ghost material gives it enough spectacle for genre buyers."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the office ensemble is fun, but no supporting character is yet built as a clear spin-off anchor."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The office is a supernatural machine.",
-          "what_it_means": "This gives a producer a repeatable, contained world that can generate set pieces without needing a huge canvas. Buyers who want a genre-comedy with a clear production footprint and a built-in franchiseable workplace can see the lane immediately.",
-          "evidence": "The upstairs labeled by entity type, the desk drawer full of talismans, the Slack joke, and the casual handling of ghosts and demons.",
+          "dimension_or_area": "Supernatural office as a clean engine",
+          "what_it_means": "This gives the project an instantly pitchable container that buyers can understand in one sentence and budget against without guesswork. It is especially attractive to streamer and indie genre buyers looking for a contained concept with repeatable comic rules.",
+          "evidence": "The office has entity storage upstairs, talismans in drawers, Slack references, and a boss who already knows how to handle ghosts and demons.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Joan and Cassandra have real comic friction",
+          "what_it_means": "The central relationship creates scene-level energy before the monster plot even kicks in, which is what makes the script feel castable and playable. That kind of banter-driven rivalry is exactly what attracts actor-forward buyers and directors who want ensemble chemistry.",
+          "evidence": "The pizza-den argument, the cosplayer insult, and the apology beat all land because the two women have status tension and history.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Joan and Cassandra have real comic friction.",
-          "what_it_means": "Their rivalry gives the movie a central relationship that can carry both jokes and emotional payoff, which is exactly what helps a genre comedy travel beyond its premise. Casting directors and actors who like sparring, fast reversals, and a little emotional bruise under the banter will respond to this immediately.",
-          "evidence": "The vampire-pizza misunderstanding, the cosplayer insult, and the eventual apology before the demon fight.",
-          "source": "script"
+          "dimension_or_area": "Contained night structure with escalating threats",
+          "what_it_means": "The one-night pressure cooker keeps the production footprint manageable while still delivering a full genre ride. Buyers looking for a contained feature with a clear start, middle, and monster payoff will understand the value immediately.",
+          "evidence": "The story moves from pizza pickup to vampire chase to demon breach to sunrise aftermath without leaving the core location system for long.",
+          "source": "both"
         },
         {
-          "dimension_or_area": "Mateo is a strong pressure-release valve.",
-          "what_it_means": "He gives the ensemble a nervous, sympathetic point of entry and keeps the movie from becoming purely snark-driven. That makes the piece attractive to buyers looking for a broader audience bridge inside a horror-comedy package.",
-          "evidence": "His panic around the ghosts, his repeated attempts to keep peace, and his earnest plea to help Margaret move on.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Willy reads like a playable anchor.",
-          "what_it_means": "The boss role has authority, deadpan control, and just enough occult competence to feel like the adult in the room, which is a useful center of gravity for packaging. Mid-career character actors who can play dry command and exasperated competence will see a clean showcase here.",
-          "evidence": "His calm inventory of tools, his knowledge of the demon timeline, and the revolver-and-bullet ritual.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The supernatural rules are easy to follow.",
-          "what_it_means": "The script makes the audience understand what stops vampires, what a psychopomp does, and how containment works without turning into a lecture, which helps the movie stay accessible. That clarity is attractive to streamers and genre buyers who want a concept that plays fast and doesn’t require homework.",
-          "evidence": "Crucifixes, garlic dust, Ofuda, salt, chalk circles, and the bullet-based demon banishment.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The comedy comes from workplace logic.",
-          "what_it_means": "The humor is not random; it’s built from office hierarchy, bad communication, and coworkers trying to do supernatural damage control like it’s a normal shift. That makes the material feel exportable and easy to market because the joke is legible even before the mythology lands.",
-          "evidence": "The Slack reference, the pizza errand, the apology being scheduled around dinner, and Willy treating the crisis like a task list.",
+          "dimension_or_area": "The dialogue has a usable comic snap",
+          "what_it_means": "The script has quotable, actor-friendly exchanges that can sell in a trailer and give performers room to make the material feel alive. That matters for casting because it signals a project where the cast can elevate the page without needing expensive spectacle.",
+          "evidence": "Lines like 'Cool balls,' the Slack joke, and the office bickering around the pizza all show a fast, irreverent rhythm.",
           "source": "script"
         }
       ],
-      "headline": "This is a contained supernatural ensemble with a clean commercial identity: an occult office crew, a midnight pizza run, and a demon siege that turns workplace banter into survival comedy. The script’s best asset is how naturally it fuses a playable four-hander with a world that feels like it could keep generating stories, which makes it attractive to genre buyers looking for something funny, producible, and immediately legible."
+      "headline": "This is a contained, actor-friendly supernatural comedy-horror with a clear buyable engine: a weird office, a one-night monster problem, and a cast that can carry the joke-to-danger pivot. The production footprint stays in indie territory while the premise and tone are specific enough to stand out in the streamer-friendly genre lane."
     },
-    "lead_characters": [
-      {
-        "name": "Joan",
-        "role_type": "Lead",
-        "demographics": "Female · 20s-30s · witch",
-        "hook": "Joan is sharp-tongued, easily irritated, and much more capable than she wants to admit. She carries herself like someone who would rather win an argument than ask for help, but the script keeps revealing that her anger is also a form of competence and self-protection.",
-        "why_actor_wants_this": "This is the showcase territory of Aubrey Plaza in Ingrid Goes West — a character whose bite, insecurity, and comic timing all live in the same frame. An actor gets to play sarcasm, occult authority, and a buried need to be taken seriously, which is exactly the kind of role that can become a calling card."
-      },
-      {
-        "name": "Cassandra",
-        "role_type": "Lead",
-        "demographics": "Female · 20s-30s · witch",
-        "hook": "Cassandra is the chaos agent with a grin, the kind of person who weaponizes mischief because sincerity makes her nervous. She’s funny, smug, and emotionally evasive, but the script lets her reveal real vulnerability when the room stops being a game.",
-        "why_actor_wants_this": "This is the showcase lane of Natasha Lyonne in Russian Doll — fast-talking, self-protective, and secretly carrying more feeling than she admits. It gives an actor a chance to play comic provocation, defensive charm, and a late-arriving apology that lands because the performance has earned it."
-      },
-      {
-        "name": "Mateo",
-        "role_type": "Lead",
-        "demographics": "Male · 20s-30s",
-        "hook": "Mateo is the anxious heart of the group, a people-pleaser who keeps trying to hold the room together even when he’s clearly out of his depth. His nervousness is not passive; it becomes the engine that pushes him toward courage, especially when the ghosts and the demon force him to choose between panic and responsibility.",
-        "why_actor_wants_this": "This is the kind of role Steven Yeun had in The Walking Dead when the audience realized the quiet guy could carry the emotional center of the show. It gives an actor the chance to play fear, decency, and sudden backbone in a way that makes the character the audience’s most relatable entry point."
-      },
-      {
-        "name": "Willy",
-        "role_type": "Lead",
-        "demographics": "Male · 30s-50s",
-        "hook": "Willy is the exhausted boss who seems to know more than everyone else and still looks like he’d rather be anywhere else. He’s dry, practical, and quietly formidable, with the kind of deadpan authority that makes the supernatural feel like office maintenance.",
-        "why_actor_wants_this": "This is the showcase space of J.K. Simmons in Whiplash — controlled, intimidating, and funny because the authority is so specific. An actor gets to play command, occult expertise, and comic exasperation in a role that can anchor the whole ensemble."
-      },
-      {
-        "name": "Old Ghost Lady / Margaret",
-        "role_type": "Supporting",
-        "demographics": "Female · elderly",
-        "hook": "Margaret is a frustrated dead woman who wants closure, heaven, and basic respect in roughly that order. She’s prickly, funny, and unexpectedly human, which makes her more than a gag and gives the ghost material a real emotional pulse.",
-        "why_actor_wants_this": "This is the kind of compact but memorable role Frances McDormand had in Three Billboards when every scene had to land on attitude and ache at once. A veteran character actor gets a showcase in voice, timing, and a late-blooming emotional plea that can steal the scene."
-      },
-      {
-        "name": "Scumbag Lawyer Ghost",
-        "role_type": "Supporting",
-        "demographics": "Male · adult",
-        "hook": "This ghost is pure petty entitlement, a dead lawyer who still talks like he’s in a deposition and thinks everyone owes him an exit plan. He’s a comic irritant with just enough menace to keep the supernatural world feeling unruly.",
-        "why_actor_wants_this": "This is the kind of scene-stealing supporting part that Paul Giamatti has turned into an art form in films like Sideways and The Holdovers. It gives an actor a chance to play verbal speed, self-importance, and comic collapse in a few sharp bursts."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to stage a contained creature-comedy with real ensemble rhythm and a clean visual rulebook.",
-        "fit_profile": "First- or second-feature directors, or TV comedy/drama directors moving into features, who already understand performance-forward scenes and can keep a supernatural premise grounded in character behavior. This material rewards directors who like blocking, timing, and tonal control more than spectacle for its own sake.",
-        "detail": "The movie gives a director a tight playground: one office world, one exterior detour, and a final siege that can be built from escalating practical and digital beats. It’s especially appealing to filmmakers who can make a roomful of people arguing feel as propulsive as an action sequence."
-      },
-      "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Streaming genre-comedy / premium-cable supernatural comedy",
-        "detail": "It can be packaged around four playable leads and a contained location footprint, so a buyer doesn’t need a giant cast or globe-trotting schedule to make the premise work. The supernatural-comedy lane has strong streamer appetite, and the office setting gives it a clear hook that is easy to market in clips and thumbnails."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The first act leans on banter before the threat locks in.",
+          "detail": "The pizza-run setup and office teasing are fun, but the central monster engine does not fully seize the movie until the demon arrives late in the back half. That makes the opening feel more like a vibe and less like a hard narrative hook for a buyer skimming pages.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The supernatural rules are still sketchy.",
+          "detail": "The office has talismans, ofuda, crucifixes, bullets, runes, ghosts, witches, and demons, but the script only partially explains how these systems relate. A producer would note that the world is fun, but the rule-set is still more suggestive than fully operational.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ensemble is lively but still function-first.",
+          "detail": "Joan, Cassandra, Mateo, and Willy all have distinct comic functions, but the page gives them more banter than interior contradiction. That keeps the movie playable, but it also means the cast conversation will center on chemistry rather than on a single role that feels like an awards-level showcase.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The creature work will need disciplined scope.",
+          "detail": "The vampire restaurant, ghost manifestations, floating runes, and full demon reveal all ask for visible effects work in a short runtime. Even in an indie lane, that means the production has to stay disciplined about how much of the supernatural is shown versus implied.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The script’s main friction is that the opening plays as a comic hangout before the demon plot fully takes over, so the buyer conversation will focus on how quickly the premise truly lands. The world is appealing, but the rule-set and effects scope are still broad enough that the movie will need careful containment to stay inside its indie lane."
     },
-    "considerations": [
-      {
-        "area": "The Joan/Cassandra rivalry carries the most engine.",
-        "detail": "The script already knows these two are the spark, and the vampire-pizza misunderstanding plus the cosplayer insult give them a clean comic feud. A next pass could foreground one more scene where their shared history is dramatized rather than only implied, so the apology lands with even more charge.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "Mateo’s emotional lane can widen.",
-        "detail": "He functions beautifully as the anxious mediator, especially in the ghost scenes and the Margaret exchange. One direction would be to give him one choice that changes the room before he asks for help, so his courage reads as active rather than only reactive.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The demon siege is the production peak.",
-        "detail": "The final upstairs confrontation is the most effects-heavy stretch, with a multi-masked demon, floating objects, ghost manifestations, and portal imagery. If the production wants to protect budget, the version where one or two supernatural beats are implied through sound and reaction would preserve the escalation while keeping the set-piece lean.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The vampire pizza sequence is a clean marketing asset.",
-        "detail": "The vampire restaurant beat is the most instantly trailerable stretch, because it gives the audience a simple joke, a creature reveal, and a chase in one compact run. A buyer can sell that sequence in a single clip, which is useful for a streaming launch or festival teaser campaign.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The office world can stay compact.",
-        "detail": "Most of the story already lives in the main hall, meeting room, lounge, back room, and upstairs storage area, so the footprint is naturally contained. Keeping the action inside that ecosystem protects the movie’s identity and makes the production feel sized for a modest genre budget.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 68.7,
+  "weightedScore": 72,
   "tier": "Optionable",
-  "inputTokens": 15391,
-  "outputTokens": 4014,
-  "cost": 0.02960625,
+  "inputTokens": 17796,
+  "outputTokens": 4041,
+  "cost": 0.031531500000000004,
   "declaredFormat": "Feature film"
 }

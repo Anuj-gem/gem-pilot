@@ -2,280 +2,322 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
-      "genre_tags": [
-        "psychological thriller",
-        "coming-of-age"
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Horror",
+        "Drama"
       ],
-      "tone": "Grounded, eerie, emotionally raw, and increasingly surreal"
+      "tone": "elevated",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "prestige",
+        "coming-of-age",
+        "grief",
+        "mental-health",
+        "time-travel",
+        "college-campus"
+      ]
     },
-    "positioning_hook": "A high-achieving college sophomore starts slipping through time on a haunted New Hampshire campus, where her trauma, a dead student, and a manipulative professor all point to the same impossible truth.",
+    "positioning_hook": "A hyper-achieving college sophomore starts slipping through time on a haunted campus and must face her mother’s trauma before a professor with his own dead son pulls her deeper into the loop.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean commercial engine: a smart young woman, a haunted campus, and a time-slip mystery tied to trauma. It plays to thriller audiences and prestige-leaning genre buyers, though the emotional and conceptual specificity will matter more than broad four-quadrant scale."
+        "reasoning": "The hook is immediately legible as elevated genre with a strong emotional engine: a gifted young woman, a haunted campus, and a trauma-driven time-slip mystery. It has clear appeal for streamer audiences and genre buyers, though the intellectual framing and psychological specificity make it more targeted than four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early with the black void chase, then sharpens into the campus mythology, the Discord obsession, and the time-dislocation reveal. By the end of the first act of the sample, the story engine is clear and the rules are intriguingly unstable."
+        "reasoning": "The premise lands early: Jessica sees a black void on campus, gets pulled into a time-dislocation mystery, and discovers Professor Maddox and Henry are tied to the same phenomenon. The script keeps the rules mysterious, but the central question is clean and easy to pitch."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Jessica is a strong center: hyper-competent, self-mocking, emotionally armored, and visibly cracking under pressure. Kerri and Maddox add useful counterweights, and Henry gives the story a wounded, charismatic mirror, though Jessica remains the clear gravitational force."
+        "reasoning": "Jessica is a strong lead because she’s overachieving, funny, brittle, and emotionally blocked, which gives the role real play. Maddox and Henry are vivid counterweights, but the script is still most durable through Jessica’s interiority rather than a broad ensemble of equally rich players."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script takes a campus ghost story and turns it into a trauma-driven time fracture with social-media folklore, psych theory, and a manipulative academic frame. The choice to make the supernatural feel like dysregulation rather than clean mythology gives the material a distinct edge."
+        "reasoning": "The campus setting, trauma-as-portal idea, and the way the monster reads as a manifestation of dysregulation give the script a distinct angle. The Penderecki sequence, the Discord mythology, and the temporal overlap imagery show a writer making specific, confident choices."
       },
       "narrative_momentum_engagement": {
-        "score": 8,
-        "reasoning": "The script keeps escalating: chase, campus rumor, tunnel reveal, time jump, frat-house confrontation, then the mother reveal and Maddox’s final trapdoor. Each sequence adds a new layer of danger or meaning, and the ending lands on a strong forward pull."
+        "score": 7,
+        "reasoning": "The episode keeps escalating through the campus mystery, the steam tunnels, the time-slip, and the final confrontation with Maddox. It does spend time on atmosphere and psychological framing, but the set pieces are strong enough to keep the engine moving."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The idea of trauma externalized as a literal temporal and psychological disturbance feels fresh and immediately legible. The campus setting, the Discord mythology, and the mother/son mirror make the premise feel both novel and inevitable."
+        "reasoning": "The script’s best idea is that the supernatural threat and the protagonist’s trauma are not separate systems but the same one. That makes the time-travel conceit feel emotionally inevitable rather than decorative, especially in the mother/son parallel between Jessica and Henry."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "Morgan College feels lived-in and specific: elite liberal-arts polish, underground steam tunnels, campus gossip channels, old yearbooks, and a hidden frat ecosystem. The world is not just backdrop; it generates the mystery, the social pressure, and the time-slip logic."
+        "reasoning": "Morgan College feels specific and story-generating: elite liberal-arts status, dorm folklore, Discord gossip, steam tunnels, old frat-house architecture, and campus social hierarchy all feed the plot. The world has enough institutional texture to support the mystery without feeling generic."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unusually controlled: collegiate wit, sexual tension, horror imagery, and emotional breakdown all coexist without collapsing into parody. The script knows when to be funny, when to be uncanny, and when to go fully raw."
+        "reasoning": "The tone is unusually calibrated: collegiate, eerie, funny, and psychologically raw all at once. The script can pivot from drunken banter to body-horror-adjacent dread to emotional confession without losing its identity."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "Beneath the genre surface is a story about inherited illness, memory, shame, and the desire to rewrite family history. The Maddox/Jessica dynamic and the mother material suggest a much larger emotional architecture waiting under the mystery."
+        "reasoning": "The Maddox/Henry/Jessica triangle suggests a much larger emotional and temporal architecture beneath the surface. The script withholds enough to imply a deeper mythology while still giving the audience a satisfying first-episode turn."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Jessica/Kerri is a strong anchor, Jessica/Donovan has awkward-romantic friction, and Jessica/Maddox is loaded with power and projection. The ensemble is not sprawling, but the key relationships are distinct enough to keep generating scenes."
+        "reasoning": "Jessica/Kerri gives the script a reliable emotional anchor, and Maddox/Henry/Donovan create a useful triangle of pressure and suspicion. It’s not an ensemble machine in the broad sense, but the recurring relationships are strong enough to generate repeated story energy."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Jessica Wolfe",
+        "role_type": "Lead",
+        "demographics": "female, 19, college sophomore, high-achieving, upper-middle-class or affluent academic striver",
+        "hook": "Jessica is a hyper-competent, overbooked honors student who performs control so well she can even be the funniest drunk in the room. Underneath the polish is a daughter still carrying her mother’s illness and death, and the script makes her emotional repression the literal engine of the supernatural plot.",
+        "why_actor_wants_this": "This is showcase territory in the vein of Florence Pugh in Midsommar or Emma Stone in The Curse — a role that lets an actor play intelligence, panic, denial, and emotional collapse in the same frame. It’s a prestige lead with genre propulsion and a big internal transformation."
+      },
+      {
+        "name": "Kerri",
+        "role_type": "Supporting",
+        "demographics": "female, 19, college sophomore, close friend, athlete/performer",
+        "hook": "Kerri is Jessica’s blunt, affectionate best friend — the one person who can puncture her self-seriousness without losing the friendship. She’s socially fluent, skeptical, and loyal, which makes her the script’s emotional reality check whenever Jessica starts to drift into the uncanny.",
+        "why_actor_wants_this": "This is the kind of sharp best-friend role that gives an actor the fast, scene-stealing rhythm of Beanie Feldstein in Booksmart or Ayo Edebiri in supporting-comedy mode. The appeal is the comic authority plus the ability to turn into a grounded emotional anchor."
+      },
+      {
+        "name": "Donovan",
+        "role_type": "Supporting",
+        "demographics": "male, 20, college junior, awkward, socially isolated, bearded",
+        "hook": "Donovan is the campus outsider who turns obsession into performance art and conspiracy lore. He’s needy, earnest, and a little creepy, but the script gives him enough sincerity that he reads as a damaged believer rather than a stock incel punchline.",
+        "why_actor_wants_this": "This is strong character-actor material in the mold of Jesse Eisenberg in The Social Network or Justice Smith in a more anxious register — a role that lets an actor play awkwardness, longing, and volatility without ever becoming generic."
+      },
+      {
+        "name": "William Maddox",
+        "role_type": "Supporting",
+        "demographics": "male, early 60s, professor, widowed or bereaved father, intellectually formidable",
+        "hook": "Maddox is a brilliant, handsome professor who weaponizes empathy as a method and grief as a theory. He’s part mentor, part manipulator, part gatekeeper, and the script keeps him just slippery enough that every scene with him feels like a test Jessica may already be failing.",
+        "why_actor_wants_this": "This is the kind of prestige supporting role that gives an actor the delicious ambiguity of Michael Stuhlbarg in Call Me by Your Name or Matthew Rhys in a darker mode — authority, seduction, menace, and grief all in one performance."
+      },
+      {
+        "name": "Henry Maddox",
+        "role_type": "Supporting",
+        "demographics": "male, 19, college student, mentally unstable, charismatic, drugged, deceased in present timeline",
+        "hook": "Henry is the dead son at the center of the campus mythology, but the script makes him feel alive through his wit, instability, and romantic self-mythologizing. He’s seductive, wounded, and dangerous, with enough charm to make Jessica believe he might be the key to everything.",
+        "why_actor_wants_this": "This is the kind of role that can break out for a young actor the way Lucas Hedges or Timothée Chalamet early roles did — emotionally volatile, intellectually alive, and carrying a tragic charge that lingers after the scene ends."
+      },
+      {
+        "name": "Jessica's Mother",
+        "role_type": "Supporting",
+        "demographics": "female, 20s-30s in flashbacks, young mother, mentally ill",
+        "hook": "Jessica’s mother appears as both memory and wound: loving, erratic, frightening, and impossible to fully hold onto. She’s not just backstory; she’s the emotional source code for Jessica’s fear, guilt, and need to control reality.",
+        "why_actor_wants_this": "This is the kind of flashback role that can become a devastating showcase in the mold of Toni Collette in Hereditary or Patricia Clarkson in Pieces of April — brief screen time with major emotional aftershock."
+      },
+      {
+        "name": "Jessica's Father",
+        "role_type": "Supporting",
+        "demographics": "male, middle-aged, doctor or clinician, supportive parent",
+        "hook": "Jessica’s father is the calm voice of ordinary life, the one person who still treats her like a daughter instead of a problem to solve. He’s not flashy, but he gives the script a crucial baseline of care and normalcy that makes Jessica’s dislocation hit harder.",
+        "why_actor_wants_this": "This is a grounded, emotionally precise supporting role in the vein of Richard Jenkins in The Visitor or Kyle Chandler in a family-drama register — a quiet performance that can land hard with very little screen time."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 8,
-        "leads": 4,
+        "speaking_roles": 7,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "College-age ensemble",
-          "One older male professor role",
-          "One adult mother role in flashbacks",
-          "One young male role with intense vulnerability and volatility"
+          "college-age ensemble",
+          "one strong female lead",
+          "older-professor role with romantic/menacing ambiguity",
+          "flashback mother role requires younger adult casting"
         ]
       },
       "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "Contemporary with 1999 period sections",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary with 1999/2000 time-slip period elements",
         "notable_requirements": [
-          "College campus with old stone buildings",
-          "Steam tunnels",
-          "Frat house that can play as 1999 and present-day",
-          "Dorm interiors",
-          "Flashback-friendly campus and home interiors"
+          "elite New England college campus look",
+          "steam tunnels",
+          "old frat-house/mansion exterior and interior",
+          "library, dorm, classroom, office, parking lot, pond/bird sanctuary"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "The black void monster, reality overlap, temporal shifts, disappearing architecture, and flash-cut time imagery require compositing and visual transition work.",
+        "vfx_details": "Temporal overlap, disappearing buildings, two-moon sky, black void monster, and reality-shift transitions require compositing and selective digital enhancement.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical lighting shifts, phone/signal effects, environmental distortion, and fire imagery in flashbacks or visions.",
+        "sfx_needs": "Practical lighting shifts, phone-signal effects, environmental distortion, and a suicide-video insert; no large-scale effects package.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Pop song sung by the opening group; Penderecki's 'Threnody for the Victims of Hiroshima' is specifically named and used as a mood engine."
+          "detail": "Krzysztof Penderecki's 'Threnody for the Victims of Hiroshima' is specifically named and used as a plot/characterization beat."
         },
         {
-          "type": "brand",
-          "detail": "Solo cup, Prius, Twilight, Matrix, YouTube, Discord, and Wikipedia are specifically referenced."
+          "type": "named_music",
+          "detail": "The pop song the women sing drunkenly is referenced as a specific source cue and may require clearance if retained as named or used on soundtrack."
         },
         {
           "type": "ip_licensing",
-          "detail": "Twilight and The Matrix are named as recognizable cultural references; if used prominently in marketing materials, clearance review is advisable."
+          "detail": "The Matrix is specifically named in dialogue."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Twilight is specifically named in dialogue and flashback context."
+        },
+        {
+          "type": "brand",
+          "detail": "Discord is central to the campus mythology and online chatter."
+        },
+        {
+          "type": "brand",
+          "detail": "YouTube is used as a specific platform reference in the self-dysregulation montage."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or theatrical genre lane with prestige-horror crossover appeal",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform or specialty theatrical with streamer follow-on"
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: elevated genre theatrical or streamer-first with festival launch potential."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The campus footprint is manageable, but the time-slip visuals, reality-overlap moments, and black-void monster will need disciplined VFX scope to stay inside an indie-to-mid budget."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained college locations keep the footprint manageable, while the time-shift visuals and monster effects push beyond microbudget."
+      "casting": {
+        "level": "medium",
+        "note": "Jessica has to carry comedy, panic, intellect, and emotional breakdown; Maddox needs authority plus ambiguity; Henry needs charisma without losing instability. Those are all castable, but the lead and professor roles are the real lift."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s mythology is compelling, but the buyer conversation will focus on how much of the time-travel system is legible versus intentionally withheld in a feature runtime."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Blackcoat's Daughter",
+          "year": 2015,
+          "why_it_comps": "Shares the eerie, female-led, psychologically haunted genre lane where trauma and supernatural dread are fused into one atmosphere."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The core cast is compact, but the Jessica, Maddox, and Henry roles need strong performers to carry the emotional and conceptual load."
+        {
+          "title": "Coherence",
+          "year": 2013,
+          "why_it_comps": "Like this script, it uses a contained social setting and reality slippage to turn a small cast into a high-concept puzzle."
         },
-        "location": {
-          "level": "medium",
-          "note": "A campus, dorms, tunnels, frat house, apartment complex, and flashback spaces create a moderate but controllable location spread."
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "The slow-burn suspicion, social unease, and eventual reality rupture are structurally similar, even though the setting is campus rather than dinner-party."
         },
-        "content": {
-          "level": "medium",
-          "note": "Suicide, assault threat, psychological distress, and sexual power dynamics place it in mature territory without pushing into extreme content."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "Several named cultural references and one named piece of music appear on the page, but there is no heavy real-person or franchise dependency."
+        {
+          "title": "I Saw the TV Glow",
+          "year": 2024,
+          "why_it_comps": "The emotional logic of identity, dissociation, and uncanny media/trauma overlap is very close to this script’s psychological register."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like elevated horror and prestige sci-fi with an emotional wound at the center, especially viewers drawn to campus settings and psychologically unstable mysteries.",
+        "demographics": "18-44 skew, slightly female-leaning, college-educated, streamer-native, genre-literate audience",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary campus locations, a small speaking cast, and selective VFX keep this in indie territory, with the monster/time-shift effects as the main scope driver."
+      },
+      "lane_fit": {
+        "lane": "elevated indie sci-fi horror",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-film development execs",
+          "festival-minded indie producers",
+          "director-driven horror labels",
+          "prestige genre acquisition teams"
+        ],
+        "detail": "This sits naturally in the lane where psychological horror, identity drama, and a clean high-concept hook can be sold on taste and execution rather than spectacle. The college setting and emotional specificity make it especially attractive to buyers looking for smart genre with awards-adjacent credibility."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the mythology is expandable, but no side character or world element on the page is yet strong enough to justify a sequel or spinoff vector."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Jessica is a showcase lead.",
-          "what_it_means": "The role gives a young actress a full-spectrum turn: sharp comic timing, panic, intellectual vanity, romantic confusion, and raw grief all in one engine. That is exactly the kind of part festival buyers and prestige-minded casting directors use to introduce a new face or reframe an existing one.",
-          "evidence": "Jessica’s drunken Martin Eden riff, the campus chase, the dysregulation in the steam tunnels, and the final breakdown in Maddox’s office.",
+          "dimension_or_area": "Trauma becomes the monster",
+          "what_it_means": "That gives the film a clean commercial identity: the horror is not decorative, it is emotionally legible and marketable as prestige genre. Buyers chasing elevated horror and actors looking for psychologically loaded material will both understand the promise immediately.",
+          "evidence": "Jessica’s panic around her mother’s illness is repeatedly mirrored by the black void, and Maddox explicitly frames the monster as trauma externalized.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The campus is a story engine.",
-          "what_it_means": "Morgan College is not generic ivy wallpaper; the steam tunnels, old frat house, Discord rumor mill, and elite-liberal-arts culture create a contained world with its own rules and secrets. That gives a producer a producible setting with enough texture to feel expensive without requiring an expensive footprint.",
-          "evidence": "The Morgan College supers, the steam tunnels, the hidden Psi Kappa house, and the campus chat mythology around Henry and J.W.",
+          "dimension_or_area": "Jessica is a real lead role",
+          "what_it_means": "The script gives a buyer a female protagonist with range — funny, brilliant, ashamed, frightened, and finally destabilized — which is exactly the kind of part that can attract a name actress. That makes the project easier to package than a concept-only genre piece.",
+          "evidence": "Her drunken Martin Eden riff, her confrontation with Maddox, and her breakdown in the steam tunnels all show different performance registers.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The horror is emotionally motivated.",
-          "what_it_means": "The monster is tied to trauma rather than random threat, which gives the genre material a deeper commercial lane than a standard campus scare picture. Buyers looking for elevated horror and audience-driven psychological genre will see a clean hook with thematic weight.",
-          "evidence": "Jessica’s mother is linked to the monster, and the story repeatedly frames the void as an externalized trauma response.",
+          "dimension_or_area": "The campus world has texture",
+          "what_it_means": "Morgan College feels specific enough to function as a story engine, which helps the film stand out in a crowded genre market. Buyers get a contained but not generic setting with built-in social hierarchy, folklore, and institutional secrecy.",
+          "evidence": "The Discord threads, steam tunnels, old frat house, admissions-board professor, and elite liberal-arts branding all feed the plot.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Maddox is a loaded antagonist.",
-          "what_it_means": "William Maddox has the kind of calm, educated, morally slippery presence that can anchor a prestige thriller and give an actor a deliciously controlled performance. He is the sort of role that attracts actors who like to play intelligence as menace.",
-          "evidence": "His office scenes, the Ziploc journal, the therapy language, and the final invitation that feels like a trap.",
+          "dimension_or_area": "The mystery escalates cleanly",
+          "what_it_means": "The script keeps adding information without losing the central question, which is a strong sign for audience retention and word-of-mouth. That kind of controlled escalation is valuable to streamers and genre distributors alike.",
+          "evidence": "The black void, Maddox’s journal, the steam tunnels, the time-slip, and the final reveal of Jessica’s mother all land as successive turns.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The time-slip rules feel cinematic.",
-          "what_it_means": "The script turns emotional states into visible shifts in reality, which gives the film a strong visual grammar and a memorable trailer language. That kind of rule-set is attractive to directors who want genre spectacle without needing giant set pieces.",
-          "evidence": "The diagonal energy wave, the two moons, the campus changing eras, and Jessica using music and breathing to move time.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The Jessica/Kerri bond has real heat.",
-          "what_it_means": "Kerri gives the story a grounded best-friend counterpoint that keeps the film from becoming a solo head-trip and gives the audience a human tether. That relationship is the kind of thing that helps a buyer see both emotional accessibility and repeatable scene chemistry.",
-          "evidence": "Kerri’s teasing support, her defense of Jessica, and her practical skepticism when Jessica starts describing the time travel.",
+          "dimension_or_area": "It has prestige-genre casting appeal",
+          "what_it_means": "The Jessica/Maddox/Henry triangle creates roles that can attract serious actors who want material with psychological stakes, not just plot mechanics. That broadens the buyer conversation beyond horror specialists.",
+          "evidence": "Maddox’s manipulative tenderness, Henry’s unstable charisma, and Jessica’s emotional resistance all read as actor-forward writing.",
           "source": "script"
         }
       ],
-      "headline": "This is a smart, marketable genre feature with a real identity: a haunted-campus thriller where trauma becomes physics and the emotional stakes are as sharp as the mystery. It has a contained, producible world, a breakout female lead, and a prestige-horror lane that feels current without feeling generic."
+      "headline": "This is a smart, actor-friendly elevated genre feature with a clean hook: a high-achieving college sophomore discovers her trauma is literally warping time and reality. The contained campus footprint, strong lead role, and prestige-horror tone make it a credible buy for streamer originals or boutique genre financiers looking for something smarter than a standard scare piece."
     },
-    "lead_characters": [
-      {
-        "name": "Jessica Wolfe",
-        "role_type": "Lead",
-        "demographics": "Female · 19",
-        "hook": "Jessica is the kind of overachiever who can quote literature while blackout drunk and still wake up determined to keep her life immaculate. Under the polish is a young woman whose intelligence has become armor, and whose grief is about to turn the campus into a hall of mirrors.",
-        "why_actor_wants_this": "This is the showcase territory of Florence Pugh in Midsommar or Emma Stone in Birdman — a role where intelligence, volatility, humor, and emotional collapse all live in the same body. Actors will chase it for the chance to play a high-functioning young woman whose control is constantly slipping in public."
-      },
-      {
-        "name": "Kerri",
-        "role_type": "Lead",
-        "demographics": "Female · 19",
-        "hook": "Kerri is Jessica’s blunt, affectionate ballast: funny, socially fluent, and sharp enough to puncture self-seriousness without ever losing loyalty. She reads like the friend who can make a room easier to breathe in, but she also has enough edge to keep the story honest.",
-        "why_actor_wants_this": "This is the kind of best-friend role that gave Beanie Feldstein in Booksmart or Auli'i Cravalho in The Fallout room to be funny, grounded, and emotionally essential without carrying the whole plot alone. Young actors will want it because the part gets to be the audience surrogate, the comic pressure valve, and the emotional witness."
-      },
-      {
-        "name": "William Maddox",
-        "role_type": "Lead",
-        "demographics": "Male · 60s",
-        "hook": "Maddox is a brilliant, handsome professor who speaks in therapeutic riddles and never seems to say exactly what he means. He carries himself like a man offering help, but every scene suggests he is also curating the terms of the trap.",
-        "why_actor_wants_this": "This is the showcase space of Michael Shannon in Take Shelter or Paul Dano in Prisoners — a controlled, intelligent figure whose stillness becomes menace. Character actors and prestige leads will chase it because the role lets them play authority, grief, and manipulation with the same instrument."
-      },
-      {
-        "name": "Henry Maddox",
-        "role_type": "Lead",
-        "demographics": "Male · 19",
-        "hook": "Henry is a charismatic, damaged college kid who can be funny, flirtatious, paranoid, and heartbreakingly exposed in the same breath. He feels like someone who has spent years trying to turn his own instability into a personality, and the result is magnetic and dangerous.",
-        "why_actor_wants_this": "This is the kind of role that gave Timothée Chalamet in Beautiful Boy or Lucas Hedges in Manchester by the Sea a chance to make fragility feel active and alive. Young actors will chase it for the volatility, the romantic charge, and the chance to play a mind that is both seductive and unraveling."
-      },
-      {
-        "name": "Donovan",
-        "role_type": "Supporting",
-        "demographics": "Male · 20",
-        "hook": "Donovan is the awkward campus obsessive who hides his loneliness inside performance art, conspiracy thinking, and a desperate need to be taken seriously. He is socially off-center but not empty; the script gives him enough wounded sincerity to keep him from becoming a punchline.",
-        "why_actor_wants_this": "This is the kind of offbeat supporting role that gave Jesse Eisenberg in The Squid and the Whale or Justice Smith in The Get Down a chance to make discomfort feel specific and watchable. Actors who specialize in anxious intelligence will be drawn to the mix of comic embarrassment and genuine pathos."
-      },
-      {
-        "name": "Nicole",
-        "role_type": "Supporting",
-        "demographics": "Female · 19 · Korean-American",
-        "hook": "Nicole is a quick, lightly sardonic campus presence who helps define the social ecosystem around Jessica without overexplaining it. She feels like a real student in a real dorm, the kind of character who makes the world feel lived-in in a single entrance.",
-        "why_actor_wants_this": "This is the kind of sharp supporting student role that gave Greta Lee in Past Lives or Lana Condor in ensemble college material room to register instantly and memorably. Actors will want it because it plays as authentic, contemporary, and easy to expand if the world grows."
-      },
-      {
-        "name": "Will",
-        "role_type": "Supporting",
-        "demographics": "Male · 21",
-        "hook": "Will is one of the frat-house gatekeepers: polished, socially fluent, and just plausible enough to make the room feel safe while it is doing the opposite. He carries the soft-power menace of a guy who knows how to keep things deniable.",
-        "why_actor_wants_this": "This is the kind of fraternity-adjacent authority role that gave actors in The Social Network or The Line room to play charm as control. It appeals to performers who like to suggest entitlement without ever raising their voice."
-      },
-      {
-        "name": "Pete",
-        "role_type": "Supporting",
-        "demographics": "Male · 22",
-        "hook": "Pete is the other half of the frat-house pressure system: physically imposing, socially smooth, and comfortable letting other people do the dirty work. He is less a character than a social force, which makes him useful and memorable.",
-        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the same functional menace as the jock antagonists in Euphoria or The Bling Ring. It is a clean fit for a performer who can make privilege feel threatening without needing big speeches."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a psychological genre film where emotion literally changes the world.",
-        "fit_profile": "First- or second-feature directors with a strong festival short background, especially those who already work in elevated horror, psychological thriller, or intimate sci-fi. The material rewards directors who care about performance-first tension, visualizing interior states, and making a contained world feel uncanny without overbuilding it.",
-        "detail": "The script gives a director a clean visual grammar: campus normalcy, then reality slippage, then emotional rupture made physical. It is especially attractive to filmmakers who like to stage dread through atmosphere, blocking, and sound design rather than constant spectacle."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Prestige genre / elevated horror / streamer thriller",
-        "detail": "The cast can be anchored by one breakout young lead and one prestige older male role, which keeps packaging focused rather than ensemble-dependent. The campus setting, contained locations, and trauma-driven supernatural hook fit the current buyer appetite for elevated genre that can travel well on streaming and still support a specialty theatrical launch."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology stays intentionally slippery.",
+          "detail": "The script is strongest when it’s emotional and uncanny, but the rules of the time-slip, the monster, and Maddox’s knowledge are still more suggestive than concrete. That’s fine for a first installment, but buyers will immediately weigh how much clarity they need before committing to a feature-length version.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Jessica’s internal wound drives the whole engine.",
+          "detail": "Nearly every major turn depends on Jessica’s trauma response, which is a strength creatively but also a concentration risk commercially. If the lead performance doesn’t land, the entire movie’s emotional and narrative architecture gets narrower fast.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The VFX ask is modest but real.",
+          "detail": "The black void monster, the two-reality sky, the disappearing building, and the time-shift transitions all need to look intentional rather than improvised. That keeps this out of true microbudget territory and makes visual discipline a real greenlight conversation.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Named music and pop-culture references need a pass.",
+          "detail": "Penderecki’s 'Threnody for the Victims of Hiroshima,' The Matrix, Twilight, Discord, and YouTube are all specifically named. None of that is fatal, but the script is not clearance-neutral, and the music cue in particular is a real budget/legal line item.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is that the script’s power comes from a deliberately unstable mythology and a lead performance that has to carry the emotional logic of the whole piece. Add a real but manageable VFX burden plus a handful of named-music/IP references, and this becomes a smart buy only if the package is disciplined."
     },
-    "considerations": [
-      {
-        "area": "The opening can lean even harder into Jessica.",
-        "detail": "The first pages already give her wit, status, and intoxication; a next pass could make the emotional contradiction arrive even earlier so the audience locks onto her before the mythology expands. That would sharpen the handoff from campus mood to supernatural engine without changing the premise.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The Maddox reveal carries a lot of exposition.",
-        "detail": "The office scene is doing important work on the page, and one lever would be to let the emotional pressure land before the explanation stack. The version where Jessica gets one more clean, personal beat before the journal and diagnosis language would make the turn feel even more devastating.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The time-travel rules stay intentionally fluid.",
-        "detail": "That ambiguity is part of the appeal, but the script also has enough concrete imagery to support one or two more anchor points around what triggers a jump and what it costs. Clarifying just a little more of the mechanism would help the audience track the stakes while preserving the dream logic.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The campus footprint is manageable but specific.",
-        "detail": "The story already lives in a contained set of spaces, so the cleanest production version is one that consolidates the dorm, tunnel, and frat-house geography as much as possible. Protecting that compact footprint would keep the film in a very attractive budget lane without losing the sense of a hidden campus underworld.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The rights pass should cover the named references.",
-        "detail": "Penderecki, Twilight, The Matrix, Discord, and the other named cultural markers are all useful texture, but they should be checked in a clearance pass before packaging. That is a straightforward administrative step rather than a structural obstacle, and it keeps the script’s contemporary specificity intact.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 76,
+  "weightedScore": 75.7,
   "tier": "Optionable",
-  "inputTokens": 25671,
-  "outputTokens": 4342,
-  "cost": 0.03879225,
+  "inputTokens": 28076,
+  "outputTokens": 4540,
+  "cost": 0.041486999999999996,
   "declaredFormat": "Feature film"
 }

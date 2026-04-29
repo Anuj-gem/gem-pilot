@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T04:51:45.608Z",
+  "submission_id": "60943de1-f80a-4c6e-9d3c-4a6a733eaa2d",
+  "eval_id": "5a5827b0-01f3-4596-806c-3d574073e9eb",
+  "title": "Blind Jump",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "James",
+      "role_type": "Lead",
+      "demographics": "Male, 30s, father, physically capable, contemporary American."
+    },
+    {
+      "name": "Rosie",
+      "role_type": "Supporting",
+      "demographics": "Female, child, around 6 years old."
+    },
+    {
+      "name": "Nora",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, trained operative / security professional."
+    },
+    {
+      "name": "Davidson",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, senior authority figure."
+    },
+    {
+      "name": "Edgar",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, athletic, family-linked to Rosie."
+    }
+  ],
+  "positioning_hook": "A teleporting father races through downtown Los Angeles to rescue his kidnapped daughter before a black-ops team collars her powers and forces a deadly blind jump.",
+  "cost_usd": 0.03205125,
+  "input_tokens": 18693,
+  "output_tokens": 4007,
+  "status": "wrote:leads_ok"
+}

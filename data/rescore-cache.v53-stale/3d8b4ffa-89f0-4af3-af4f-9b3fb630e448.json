@@ -1,0 +1,250 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Romance",
+        "Supernatural"
+      ],
+      "tone": "Intimate, anxious, darkly comic, and emotionally vulnerable"
+    },
+    "positioning_hook": "A lonely college freshman falls for a vampire who bites him on their first date, then wakes up to find his reflection gone and his hunger changing with it.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is easy to grasp and has a clean emotional engine: a shy young man, a first date, and a supernatural turn that turns intimacy into danger. The audience lane is clear for horror-romance viewers and younger streaming audiences, though the intimate scale keeps it from feeling broad-four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early and stays legible: Alfred's self-conscious inner monologue, Monica's predatory charm, and the mirror/reflection motif all point to the same story engine. The date-bite-transformation sequence gives the premise a simple, memorable shape that is easy to pitch in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Alfred is specific in his insecurity, obsessive grooming, and need to be seen, which gives the role a strong emotional center. Monica has a seductive, withholding presence and the parents add a warm counterweight, though the script is still primarily powered by Alfred's point of view."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar vampire setup and filters it through a very particular social anxiety: the terror of being perceived, then the terror of not being reflected at all. The voiceover-heavy, self-interrupting style and the mirror ritual give it a distinct authorial stamp."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The opening loop of grooming, walking, and self-talk establishes mood well, and the Monica encounter gives the story a strong turn. The middle plays more as a sustained atmosphere piece than a sequence of escalating external turns, so the propulsion is solid rather than relentless."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The reflection motif and the idea of vampirism as a literalization of social invisibility feel freshly fused together. It is recognizable as a vampire story, but the emotional premise of wanting to be seen so badly that being erased becomes the horror gives it a memorable identity."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The college campus, dorm routines, food app, and parental home give the story a grounded everyday texture that makes the supernatural intrusion land. The world is specific enough to support the premise, though it remains mostly a container for Alfred's experience rather than a broader social ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very identifiable tone: anxious, self-mocking, romantic, and eerie all at once. Alfred's V.O. keeps undercutting and amplifying the action, while Monica's sweetness and predation create a tonal blend that feels hard to mistake for another script."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the vampire turn is a strong thematic engine about loneliness, self-image, faith, and the desire to be chosen. The parents' prayerful response and Alfred's denial of his own prayer life hint at deeper emotional and spiritual layers that could pay off beyond the immediate genre turn."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The Alfred-Monica dynamic is the clear center, and the parents provide a useful second relationship axis. Beyond that, the script is largely a two-character engine with supporting figures serving the protagonist's arc rather than generating independent story energy."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 4,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "College-age lead",
+          "Female vampire role with predatory charm",
+          "Two middle-aged parents",
+          "Black male protagonist implied by hair/grooming details and family dynamics"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "College campus",
+          "Dorm room",
+          "Dorm bathroom",
+          "Student center",
+          "Classrooms",
+          "Campus field/bleachers",
+          "Uber/car interior",
+          "Family home"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Reflection absence, glowing eyes, subtle fang reveals, and a few transformation beats.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical fangs, bloodless bite makeup, mirror effects, and a brief transformation sound design/makeup progression.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Uber"
+        },
+        {
+          "type": "brand",
+          "detail": "TikTok"
+        },
+        {
+          "type": "brand",
+          "detail": "Monica Bellucci is named in dialogue as the source of Monica's name"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming horror-romance / elevated genre indie",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or streamer original with genre audience appeal"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary campus, dorm, home, and car interiors keep the footprint contained."
+        },
+        "cast": {
+          "level": "low",
+          "note": "Two leads and a small supporting cast, with no child ensemble or star-dependent crowd scenes."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Several distinct campus spaces plus a family home and car work, but all are accessible contemporary locations."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Vampire bite imagery, blood-adjacent transformation, and some profanity keep it above family level without pushing into extreme territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "Only a few named brands and a celebrity name reference appear, with no major IP dependency."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise literalizes social invisibility.",
+          "what_it_means": "That gives the movie a clean emotional thesis a buyer can market immediately: the horror is not just vampirism, it's being unseen until it becomes irreversible. Genre buyers and elevated-horror labels will respond to a concept that turns a universal feeling into a supernatural rule.",
+          "evidence": "Alfred repeatedly talks to the audience in his head, checks every mirror and window, and panics when his reflection disappears.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Alfred is a showcase lead role.",
+          "what_it_means": "The role gives an actor a full menu of awkward comedy, romantic yearning, body-image obsession, and escalating panic in one contained arc. Young dramatic leads and comic actors looking to pivot into genre would see a real calling-card part here.",
+          "evidence": "His V.O. spirals from hair checks to date anxiety to full-blown terror when he realizes he cannot see himself in the mirror.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The vampire romance has a fresh emotional angle.",
+          "what_it_means": "The date sequence turns seduction into dread without losing sweetness, which makes the material attractive to buyers looking for genre with heart rather than pure gore. It also opens the door to audiences who want romance stakes inside horror packaging.",
+          "evidence": "Monica asks him out, laughs at his awkwardness, bites him on the neck, and then apologizes with visible regret.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The voiceover is a signature device.",
+          "what_it_means": "The internal commentary gives the script a built-in tonal identity and a clear trailerable voice, which helps it stand out in a crowded supernatural field. Directors and buyers who like first-person genre storytelling will see a strong authorial point of view.",
+          "evidence": "Alfred narrates directly to the audience as if they are a made-up companion, constantly second-guessing himself in real time.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The campus setting keeps the story producible.",
+          "what_it_means": "A college dorm, classrooms, student center, and a few exterior campus spaces create a contained production footprint that can be mounted without a large budget. That makes it attractive to indie financiers and streamers looking for a genre piece with controlled costs.",
+          "evidence": "Most of the action stays on campus, in Alfred's dorm, bathroom, classrooms, and a single date location.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The parents add a spiritual countercurrent.",
+          "what_it_means": "The prayer scene gives the story a second emotional lane beyond romance and horror, which can broaden its appeal to audiences who like faith-adjacent tension inside genre. That also gives the film a more distinctive identity than a standard campus vampire story.",
+          "evidence": "Alfred's mother immediately frames his condition as demonic and the parents pray over him while he suffers.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, character-forward vampire romance with a sharp emotional thesis: the terror of being unseen becomes literal, then monstrous. Alfred's voice, Monica's seductive menace, and the mirror/reflection motif give the script a clean, marketable identity that feels both intimate and genre-ready."
+    },
+    "lead_characters": [
+      {
+        "name": "Alfred West",
+        "role_type": "Lead",
+        "demographics": "Male · college-age · Black",
+        "hook": "Alfred is a hyper-self-aware, socially isolated college student whose entire inner life is built around presentation, reflection, and the fear of being judged. He is funny in a defensive way, tender without meaning to be, and so hungry to be seen that he mistakes attention for safety.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — rapid-fire internalization, self-protective wit, and the sense that every line is a defense mechanism. It gives an actor the chance to play comedy, romantic embarrassment, and existential panic in one sustained transformation role."
+      },
+      {
+        "name": "Monica Bellucci",
+        "role_type": "Lead",
+        "demographics": "Female · college-age · vampire",
+        "hook": "Monica is a poised, elegant predator who can read as flirtatious, amused, and dangerous in the same breath. She carries herself like someone who has already decided the outcome, but the script lets her sadness leak through the charm, which makes her more than a simple monster.",
+        "why_actor_wants_this": "This is the kind of seductive-monster role that gave Eva Green in Penny Dreadful so much traction — glamour with a hidden wound and menace that can turn tender in a beat. It will attract actresses who want a part that plays seduction, regret, and supernatural authority without losing control of the room."
+      },
+      {
+        "name": "Alfred's Mom",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s",
+        "hook": "Alfred's mother is warm, practical, and spiritually certain, the kind of parent who can move from concern to prayer without a tonal break. She grounds the film in family care and gives Alfred a home base that feels loving even when it cannot fully understand him.",
+        "why_actor_wants_this": "This is the kind of grounded maternal role that Octavia Spencer or Regina King have elevated in smaller-scale dramas — a character who can make a scene feel lived-in with very little screen time. Character actors with warmth and authority will see a clean, memorable supporting turn."
+      },
+      {
+        "name": "Alfred's Dad",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s",
+        "hook": "Alfred's father is quiet, protective, and faith-forward, with a sternness that softens the moment he realizes his son is in pain. He functions as the family's stabilizing presence and gives the story a masculine, devotional counterpoint to Alfred's uncertainty.",
+        "why_actor_wants_this": "This is the sort of contained, emotionally legible father role that actors like Delroy Lindo or Jeffrey Wright can make resonate with just a few scenes. It offers a chance to play authority, tenderness, and spiritual conviction without overexposure."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a vampire movie about loneliness, not lore.",
+        "fit_profile": "First- or second-feature directors with a strong short-film voice in elevated horror, romantic genre, or intimate psychological drama. The material rewards close-framed performance, precise tonal control, and visual motifs like mirrors, windows, and shadow play rather than large-scale spectacle.",
+        "detail": "The script gives a director a clear visual grammar and a contained emotional arc, so the craft challenge is making Alfred's interior panic feel cinematic without overbuilding the world. Directors who like performance-led genre pieces will be drawn to the chance to turn a simple supernatural premise into a deeply personal coming-of-age nightmare."
+      },
+      "buyer_appeal": {
+        "tier": "$2-5M feature",
+        "lane": "Elevated horror / streamer genre romance",
+        "detail": "It can be packaged around two young leads and a contained campus footprint, so a buyer does not need a large ensemble or heavy VFX spend to see the movie. The vampire-romance lane remains exportable and streamer-friendly, and the reflection hook gives marketing a clean visual hook for trailers and thumbnails."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening loop is mood-first.",
+        "detail": "The repeated grooming, mirror-checking, and campus-walk montage establishes Alfred beautifully, and a next pass could consider where the emotional turn arrives relative to that repetition. What would it look like if one small external disruption landed a little earlier, so the audience feels the story engine kick in before the loop fully settles?",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Monica's reveal can carry more shadow.",
+        "detail": "The date sequence already plays with her predatory nature, and the version of the scene where her intent is seeded a touch earlier could make the eventual bite feel even more inevitable. That would protect the romance while giving the horror turn a sharper charge.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The campus footprint is already efficient.",
+        "detail": "The story lives in dorms, bathrooms, classrooms, a student center, a field, and one family home, which keeps the production in a very manageable contemporary lane. If the script ever needs to simplify further, the campus date and the home recovery could be collapsed into fewer distinct spaces without changing the core arc.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand references are easy to clear or swap.",
+        "detail": "Uber and TikTok are the only prominent modern brands, and Monica Bellucci is named in dialogue as a cultural reference point. A production pass can either clear those references or replace them with generic equivalents without affecting the story engine.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 67,
+  "tier": "Optionable",
+  "inputTokens": 15579,
+  "outputTokens": 3569,
+  "cost": 0.027744750000000002,
+  "declaredFormat": "Feature film"
+}

@@ -2,241 +2,299 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Action fantasy",
-      "genre_tags": [
-        "Supernatural comedy",
-        "Ensemble adventure"
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Action",
+        "Comedy"
       ],
-      "tone": "Irreverent, fast-talking, absurdist, and comic-book heightened"
+      "tone": "irreverent",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "high-concept",
+        "character-driven",
+        "propulsive",
+        "identity",
+        "friendship",
+        "multilingual",
+        "retro-futuristic"
+      ]
     },
-    "positioning_hook": "A timid death-tally clerk with erased powers is dragged into a retro-futurist suicide squad and forced to discover what he can do before a regenerating British zombie tears London apart.",
+    "positioning_hook": "A timid office clerk with erased powers is forced into a monster-hunting squad, and discovers the only way to save the mission is to stop treating his own abilities like a joke.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is easy to sell: an office drone with hidden powers gets shoved into a monster-hunting team, and the script keeps the action/comedy promise front and center. The audience lane is clear for genre buyers who want banter, creature combat, and a misfit-team engine."
+        "reasoning": "The premise is immediately legible and has a clean genre promise: oddball workplace fantasy that turns into a monster fight. The appeal is strongest for genre audiences and streamers looking for a quirky ensemble swing, though the very specific humor and world language keep it from feeling four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands immediately in the opening pages: Francis wakes in a ruined field, then snaps back to a bizarre logistics office where death is literally tracked on a board. By the time Doreen straps on the outburst monitor and the team is assembled, the story engine is unmistakable."
+        "reasoning": "The hook lands fast: Francis is a low-level logistics worker at a bizarre agency, gets drafted onto a suicide mission, and turns out to be the key weapon. The opening pages establish the job, the team, the wrist meter, and the mission with enough clarity to orient the reader quickly."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Francis has a strong underdog lane, and the team around him gives the movie a playable ensemble of distinct comic voices. The characters are vivid in scene, though the emotional architecture is still mostly built around the mission rather than deeper personal turns."
+        "reasoning": "Francis has a strong underdog engine, and the team around him is colorful enough to support a feature-sized ensemble. The main limitation is that several supporting players are defined more by comic attitude than by deeper contradiction, so the character draw is lively rather than truly durable."
       },
       "creative_originality_and_boldness": {
-        "score": 8,
-        "reasoning": "The script commits to a very specific bureaucratic-afterlife-meets-monster-hunt world, with death toll spreadsheets, outburst meters, and a corporate field unit called SINON. That combination of office satire, supernatural action, and cartoonish dialogue gives it a clear point of view."
+        "score": 7,
+        "reasoning": "The script commits to a weird, retro-futuristic bureaucracy with comic-sans death boards, anomalous powers, and a very specific tonal mashup. It still sits in familiar monster-team territory, but the office-comedy framing and the absurdist dialogue give it a distinct angle."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The story moves quickly from recruitment to mission to reveal, and the London fight gives the feature a clean escalation path. The momentum is strong, though the central mystery of Francis's power is carried more by momentum than by layered suspense."
+        "reasoning": "The script moves efficiently from office disruption to team assembly to London mission, and the fight escalates cleanly once the British zombie appears. The middle stretch is more setup-heavy than the action payoff, but the wrist-meter mystery keeps the engine active."
       },
       "resonant_originality": {
-        "score": 8,
-        "reasoning": "A death-processing clerk who may be able to erase anything, including a regenerating monster, is a fresh and legible engine. The idea feels novel without becoming opaque, which is exactly the kind of high-concept clarity buyers can latch onto."
+        "score": 7,
+        "reasoning": "The core idea of a powerless-seeming office drone whose hidden anomaly can erase a monster is fresh enough to feel ownable. It is not yet operating at the level of a fully inevitable premise, but the combination of bureaucratic deadpan and multicolor power expression gives it a memorable signature."
       },
       "world_density_and_texture": {
-        "score": 8,
-        "reasoning": "Comirum has a lived-in internal logic: logistics division, field units, wrist monitors, retro-futurist weapons, and a death-toll bureaucracy that makes the supernatural feel institutional. The office, briefing room, cafeteria, and London street all suggest a larger system beyond the frame."
+        "score": 7,
+        "reasoning": "Comirum feels like a functioning weird workplace, with its logistics division, death-toll board, field-suit hierarchy, and specialized team roles. The world is story-generating and specific, though the mythology is still mostly implied rather than deeply explained."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is sharply defined by deadpan profanity, absurd workplace behavior, and creature-action played with comic confidence. Francis's panic, Clara's chaos, Toast's robotic contempt, and Hal's macho nonsense create a tone that is easy to recognize from a single scene."
+        "reasoning": "The tone is unusually committed: deadpan office banter collides with grotesque monster violence and cartoonish bureaucratic absurdity. The dialogue rhythm, the retro-futurist props, and the self-aware team dynamics create a flavor that is hard to mistake for anything else."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "There are seeds of deeper identity material in Francis's erased memory flashes and the idea that his power is tied to something he cannot yet name. The feature currently plays more as a high-energy origin story than as a layered emotional mystery."
+        "reasoning": "Francis’s opening flash of the empty ruins and the erased glasses suggests a larger mystery around his powers and the world’s rules. Right now that depth is more teased than explored, so the script hints at more than it fully delivers on the page."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "The team has real comic friction: Francis and Ploy, Doreen and Hal, Clara and Toast all generate distinct energy. The ensemble is functional and entertaining, though the movie still lives most strongly on the central recruit-and-survive engine."
+        "score": 8,
+        "reasoning": "The team dynamic is the script’s strongest commercial asset: Francis, Ploy, Hal, Clara, Toast, Jerry, and Doreen all generate immediate friction and banter. Even in a single mission, the relationships already feel like a reusable engine rather than a one-off gag."
       }
-    },
-    "production_reality": {
-      "cast": {
-        "speaking_roles": 8,
-        "leads": 6,
-        "series_regulars": 0,
-        "child_actors": false,
-        "casting_characteristics": [
-          "Ensemble of distinct archetypes",
-          "Creature/monster antagonist with performance makeup or VFX",
-          "Francis requires a physically slight, anxious lead presence",
-          "Doreen reads as a strong authority role for a 30s-40s performer",
-          "Clara, Hal, Ploy, and Toast each have highly specific comic voice requirements"
-        ]
-      },
-      "locations": {
-        "distinct_count": 5,
-        "interior_exterior_ratio": "Mostly interior with one major exterior action sequence",
-        "period_or_contemporary": "Retro-futurist contemporary",
-        "notable_requirements": [
-          "Office floor with cubicles and briefing room",
-          "Cafeteria",
-          "London street and alleyway night exteriors",
-          "Rooftop action coverage"
-        ]
-      },
-      "technical": {
-        "vfx_level": "moderate",
-        "vfx_details": "Multicolor energy effects, Francis's eye/forehead glow and erasure beam, creature regeneration, static/glitch effects, teleportation light, and a retro-futurist device interface.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Practical creature makeup or prosthetics for the British zombie, weapon transformations, breakaway glass, and impact beats.",
-        "night_shoots": "significant",
-        "animals": false
-      },
-      "rights_flags": [],
-      "platform_fit": {
-        "recommended_lane": "Streaming action-comedy or premium genre feature lane",
-        "content_level": "PG-13 equivalent to mature",
-        "series_engine_or_release_model": "Feature release model with franchise-adjacent sequel potential if the world is expanded"
-      },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained interiors keep the footprint manageable, while the London night battle, creature work, and energy effects push it above micro-budget."
-        },
-        "cast": {
-          "level": "medium",
-          "note": "The ensemble is manageable in size, but the roles depend on sharply differentiated comic performers and a lead who can carry both panic and payoff."
-        },
-        "location": {
-          "level": "medium",
-          "note": "The script is mostly contained, but it requires multiple office interiors plus a nighttime London action sequence with rooftops, alleyways, and street coverage."
-        },
-        "content": {
-          "level": "medium",
-          "note": "Violence, blood, profanity, drug references, and creature carnage are all present, but the material stays in a broadly commercial genre range."
-        },
-        "rights": {
-          "level": "low",
-          "note": "No named real people, brands, or licensed IP are referenced in the script."
-        }
-      }
-    },
-    "whats_special": {
-      "strengths": [
-        {
-          "dimension_or_area": "The office world is the engine.",
-          "what_it_means": "The death-toll logistics division, outburst monitor, and bureaucratic field assignment give the movie a built-in production identity that can be marketed as a workplace action-comedy with a supernatural twist. Buyers who want a genre piece with a clear internal system — and actors who like playing against corporate absurdity — will immediately understand the lane.",
-          "evidence": "The green chalkboard tracking weekly death tolls, the wrist device measuring outbursts, and Doreen treating field deployment like an HR decision.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Francis is a clean underdog lead.",
-          "what_it_means": "A lead who starts as a frightened pencil pusher and ends up firing a multicolor erasure beam gives the film a strong transformation arc that can anchor a franchise or a one-off crowd-pleaser. This is the kind of role that attracts younger male leads looking for a breakout showcase with comedy, vulnerability, and eventual power.",
-          "evidence": "Francis panics through the briefing, insists he does nothing, then discovers his power by eating the hot dog and erasing the zombie.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ensemble has distinct comic voices.",
-          "what_it_means": "Hal, Clara, Ploy, Toast, and Doreen each bring a different performance lane, which makes the movie easier to package as an ensemble and gives the marketing team multiple character hooks. That kind of playable group dynamic is attractive to buyers looking for a castable genre piece with clip-friendly dialogue.",
-          "evidence": "Hal's macho bragging, Clara's coke-fueled chaos, Toast's deadpan contempt, Ploy's bass-driven swagger, and Doreen's dry authority.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The monster fight has a clear escalation ladder.",
-          "what_it_means": "The London sequence gives the feature a satisfying action spine: discovery, retreat, regroup, tactic, payoff. That structure is useful for a producer because it promises a contained but energetic set piece rather than an effects-heavy sprawl.",
-          "evidence": "The team learns the zombie regenerates, Francis retreats to figure out his power, and the group coordinates a three-block trap to finish the kill.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The tone is instantly legible.",
-          "what_it_means": "The script knows exactly how to sound: profane, playful, and weirdly sincere beneath the jokes. That tonal confidence helps a buyer know where to place it and helps a director know the movie will reward rhythm, timing, and performance over exposition.",
-          "evidence": "The donut banter, the comic insults, the British zombie's tea-and-bollocks routine, and the final 'Cool powers, dude' button.",
-          "source": "script"
-        }
-      ],
-      "headline": "SINON has a sharp commercial lane: a retro-futurist workplace action-comedy where a terrified office clerk is forced into a monster-killing unit and discovers he may be the most dangerous weapon in the room. The script’s biggest asset is how cleanly it packages world, tone, and ensemble into one sellable engine — bureaucratic absurdity on the surface, crowd-pleasing creature action underneath."
     },
     "lead_characters": [
       {
         "name": "Francis Booker",
         "role_type": "Lead",
-        "demographics": "Male · 20s-30s",
-        "hook": "Francis is a frightened, sarcastic office drone whose whole identity is built around staying out of the blast radius. He starts as the guy annotating death tolls in a cubicle and ends up the one person in the room who can erase a monster, which gives him a built-in contradiction: the least field-ready person in the building may be the most consequential.",
-        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — a fast, defensive verbal rhythm masking panic and intelligence, with a late-story pivot into authority. Actors who want a role that starts as comic anxiety and ends as a power reveal will chase this."
+        "demographics": "Male, early 20s to early 30s, working-class office employee with anomalous powers.",
+        "hook": "Francis is a frightened, self-deprecating logistics clerk who would rather hide behind spreadsheets than become a field operative, but the script keeps revealing that his passivity is a cover for something far stranger. He’s the kind of lead who can play panic, embarrassment, and sudden power in the same beat, and his arc is built around learning that his ‘nothing’ may actually be the most dangerous thing in the room.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network — fast, brittle, funny, and emotionally defensive — with the added bonus of a late-breaking power reveal that lets the actor pivot from comic cowardice to mythic release."
       },
       {
         "name": "Doreen",
-        "role_type": "Lead",
-        "demographics": "Female · 30s-40s",
-        "hook": "Doreen is the hard-edged boss who speaks like she has already made peace with everyone dying on company time. She is all command voice and dry contempt on the surface, but the way she handles Francis and the team suggests a leader who knows exactly how much chaos she can afford to tolerate.",
-        "why_actor_wants_this": "This is the command-and-control showcase of Jodie Foster in The Silence of the Lambs — a character whose authority is the performance, with intelligence and pressure living in every line. Mid-career dramatic actresses who can carry steel, wit, and institutional power will want this role."
-      },
-      {
-        "name": "Ploy",
-        "role_type": "Lead",
-        "demographics": "Female · 20s-30s",
-        "hook": "Ploy is a bass-blasting chaos agent with a flirtatious mouth and a fighter's instincts, the kind of teammate who treats danger like a social event. She is funny, reckless, and weirdly perceptive, which makes her the first person to clock that Francis is lying to himself.",
-        "why_actor_wants_this": "This is the kinetic, scene-stealing territory of Jennifer Lawrence in The Hunger Games — a character who can swing from comic swagger to emotional clarity without losing momentum. Actors who want a role built on physical confidence, banter, and sudden sincerity will chase it."
+        "role_type": "Supporting",
+        "demographics": "Female, 40s-50s, authority figure, corporate/military-adjacent leadership.",
+        "hook": "Doreen is the hard-edged boss who treats absurdity like routine and keeps the whole operation moving with clipped authority and a dry, almost parental contempt. She’s not warm, but she is legible: the person who knows exactly how broken the machine is and still chooses to run it.",
+        "why_actor_wants_this": "This is the kind of role that gave Viola Davis in Fences or Jodie Foster in The Silence of the Lambs real command — a contained authority part that lets an actor weaponize stillness, precision, and moral ambiguity."
       },
       {
         "name": "Hal",
-        "role_type": "Lead",
-        "demographics": "Male · 30s-40s",
-        "hook": "Hal is a swaggering bruiser who performs invincibility as a lifestyle choice. He talks like a war story never ends, laughs when people laugh at him, and turns every room into a contest of masculine volume, which makes him both funny and dangerous to underestimate.",
-        "why_actor_wants_this": "This is the swagger-and-self-mythology lane of Brad Pitt in Snatch — a role where the joke is the character's confidence, but the actor still gets to sell physicality and charm. Performers with strong comic timing and a taste for larger-than-life bravado will want it."
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, physically imposing team member.",
+        "hook": "Hal is the swaggering bruiser who performs confidence as a social shield, even when the room is clearly laughing at him. He gives the team a big, kinetic presence and a comic macho energy that can flip into real competence when the fight starts.",
+        "why_actor_wants_this": "This is the kind of part that let Dave Bautista or John Cena show they can be funny without losing physical credibility — a role built for a performer who can sell both the joke and the impact."
       },
       {
         "name": "Clara",
-        "role_type": "Lead",
-        "demographics": "Female · 20s-30s",
-        "hook": "Clara is a coke-fueled sharpshooter with old-school gangster energy and zero interest in behaving like a professional. She is horny, volatile, funny, and lethal, which makes her feel like she wandered in from a different decade and decided to stay for the violence.",
-        "why_actor_wants_this": "This is the feral charisma showcase of Margot Robbie in Birds of Prey — a role that lets an actor play volatility, seduction, and physical comedy in one package. Actors who want a loud, dangerous, highly quotable part will chase Clara."
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Italian-American-coded, volatile, substance-using operative.",
+        "hook": "Clara is a coked-up, knife-catching chaos agent who turns every scene into a dare and every flirtation into a threat. She’s the most combustible member of the team, and the script uses her as both comic voltage and genuine combat danger.",
+        "why_actor_wants_this": "This is the kind of feral, scene-stealing part that gave Jennifer Lawrence in Silver Linings Playbook or Margot Robbie in Birds of Prey room to be reckless, funny, and physically fearless at once."
       },
       {
         "name": "Toast",
-        "role_type": "Lead",
-        "demographics": "Nonhuman robot · ageless",
-        "hook": "Toast is a sentient robot with the patience of a spreadsheet and the contempt of a machine that has seen too much flesh. The character's deadpan precision and literal-minded insults make him the team's coldest comic instrument, but the action beats also let him function as a tactical operator.",
-        "why_actor_wants_this": "This is the dry, precision-comedy territory of Alan Tudyk in Resident Alien — a nonhuman role where the performance lives in timing, posture, and verbal exactitude. Voice performers or physical-comedy specialists who want to create a memorable character through rhythm and attitude will chase it."
+        "role_type": "Supporting",
+        "demographics": "Non-human robot, adult-coded intelligence, masculine presentation.",
+        "hook": "Toast is the team’s dry, contemptuous robot tactician, all clipped logic and withering judgment, but the script lets him play as more than a machine punchline. He’s the voice of cold competence in a room full of chaos, which makes every insult land harder.",
+        "why_actor_wants_this": "This is the showcase lane of Alan Tudyk-style voice performance in a character like K-2SO — deadpan precision, comic disdain, and the chance to make a non-human character feel like the smartest person in the room."
+      },
+      {
+        "name": "Ploy",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, Thai-speaking or Thai-coded operative.",
+        "hook": "Ploy is loud, flirtatious, physically forceful, and socially fearless, with a bass-heavy entrance that announces her before she even speaks. She’s the team member who most directly pulls Francis into the mission and into the emotional logic of the story.",
+        "why_actor_wants_this": "This is the kind of high-energy, swagger-heavy supporting role that lets an actor do what Awkwafina did in The Farewell or what a breakout in an ensemble comedy does — steal scenes through rhythm, confidence, and specificity."
+      },
+      {
+        "name": "Jerry",
+        "role_type": "Supporting",
+        "demographics": "Male, adult, cyborg wolf-man.",
+        "hook": "Jerry is a friendly, hungry, physically distinctive office creature whose casual appetite makes the world feel lived-in and strange. He’s not central to the plot, but he adds texture and a sense that Comirum is full of odd beings with their own routines.",
+        "why_actor_wants_this": "This is the kind of prosthetic-heavy, personality-forward role that gives an actor or performer the fun of creature work without losing comic humanity — the sort of part that can become a cult favorite if played with commitment."
       }
     ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make action feel like office satire with teeth.",
-        "fit_profile": "Second-feature or established indie-genre directors who already know how to stage dialogue-driven scenes and then pay them off with clean, readable action. The material rewards directors who care about comic timing, ensemble blocking, and building a world where bureaucracy and violence sit in the same frame.",
-        "detail": "The movie gives a director a chance to control tone through performance and production design rather than scale, which is ideal for someone trying to make a calling-card genre feature. It also offers a very clear visual grammar — cubicles, briefing rooms, retro gear, and a London night chase — that lets a director show range without needing tentpole spectacle."
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 7,
+        "leads": 1,
+        "series_regulars": 6,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble with several highly stylized supporting roles",
+          "one non-human performance role (robot)",
+          "one creature/prosthetic role (cyborg wolf-man)",
+          "multilingual or accent-specific dialogue for Ploy and Clara"
+        ]
       },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Streaming genre-comedy / premium action-fantasy lane",
-        "detail": "The ensemble can be cast from strong working actors rather than name-dependent stars, with Francis as the only role that really needs a breakout lead to sell the transformation. The contained office footprint and one major creature-action set piece make it a clean fit for streamers and genre buyers who want a marketable concept without a sprawling effects bill."
+      "locations": {
+        "distinct_count": 5,
+        "interior_exterior_ratio": "roughly 3:2",
+        "period_or_contemporary": "contemporary with retro-futuristic design elements",
+        "notable_requirements": [
+          "office/cubicle floor",
+          "briefing room",
+          "cafeteria",
+          "London street exterior",
+          "alleyway and rooftop action coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Multicolor energy effects, erasure/flashback visuals, glitch effects on the zombie, and a transforming weapon gag; creature enhancement likely needed for the British zombie and the cyborg wolf-man.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical blood, prosthetic wounds, arm loss, head burst/regeneration beats, breakaway glass, weapon transformation props, and impact gags.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: ensemble genre film with a contained mission structure and franchise-adjacent worldbuilding."
       }
     },
-    "considerations": [
-      {
-        "area": "Francis's power reveal is carried by one mechanism.",
-        "detail": "The hot dog trigger is memorable and funny, and the reveal lands cleanly in the London fight. A next pass could consider seeding that logic a little earlier in the office material so the final payoff feels even more inevitable when the watch hits 95.",
-        "is_primary_lever": true,
-        "source": "script"
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The contemporary office material is cheap, but the London night exteriors, creature work, energy effects, and prosthetic violence will push this above a simple contained indie if not tightly scoped."
       },
-      {
-        "area": "The opening dream image can do more work.",
-        "detail": "The ruined college field, the cracked glasses, and the nosebleed are striking, but the sequence currently reads as a mood-forward prologue before the office world takes over. One direction would be to connect that image more directly to Francis's anomaly or the mission stakes so the opening functions as both atmosphere and story engine.",
-        "is_primary_lever": false,
-        "source": "script"
+      "casting": {
+        "level": "medium",
+        "note": "Francis needs a lead who can play anxious comedy, latent power, and emotional release, while Clara, Ploy, Hal, and Toast all need sharply differentiated performers to keep the ensemble from flattening."
       },
-      {
-        "area": "The team chemistry is strongest when it collides.",
-        "detail": "The banter is already lively, and the movie gets a lift whenever Francis is forced to bounce off Ploy, Clara, Hal, and Toast in the same stretch. A future pass could foreground one or two sharper relationship turns inside the mission so the ensemble feels even more like a machine, not just a lineup.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The London sequence is the main production lift.",
-        "detail": "The night exterior fight, rooftop coverage, creature regeneration, and weapon effects are the biggest spend drivers in the script. The contained office material is economical, so the cleanest simplification lever would be to protect the office footprint and keep the action geography as concentrated as possible around the street, alley, and one rooftop.",
-        "is_primary_lever": false,
-        "source": "production"
+      "development": {
+        "level": "medium",
+        "note": "The script has a clear engine, but the mythology around SINONs, the wrist meter, and the erased opening image is still more suggestive than fully dramatized, which makes the premise feel slightly ahead of its explanation."
       }
-    ],
-    "craft_note": ""
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Suicide Squad",
+          "year": 2021,
+          "why_it_comps": "A ragtag government team of misfits, violent comic-book action, and a tone that treats absurdity as part of the operating system."
+        },
+        {
+          "title": "The Boys",
+          "year": 2019,
+          "why_it_comps": "The script shares the same appetite for grotesque powers, irreverent banter, and a world where institutional dysfunction is the joke and the threat."
+        },
+        {
+          "title": "Free Guy",
+          "year": 2021,
+          "why_it_comps": "A low-status protagonist discovers he is secretly the key to a larger system, with comedy built from a character waking up inside a bizarre ruleset."
+        },
+        {
+          "title": "Guardians of the Galaxy",
+          "year": 2014,
+          "why_it_comps": "The ensemble chemistry, oddball team assembly, and playful genre confidence echo the same crowd-pleasing misfit-team appeal."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Genre fans who like irreverent ensemble action-comedy with a weird mythology and a lovable underdog lead.",
+        "demographics": "18-44, skewing male but with real crossover for viewers who respond to character-driven genre comedy and stylized team dynamics.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "The office material is inexpensive, but the creature effects, night exterior action, prosthetic violence, and ensemble cast put this in mid-budget feature territory."
+      },
+      "lane_fit": {
+        "lane": "streaming-friendly elevated genre ensemble",
+        "types_of_buyers": [
+          "streamer original film executives",
+          "mid-budget genre producers",
+          "boutique studio genre buyers",
+          "director-driven action-comedy buyers",
+          "IP-minded development execs looking for franchise-adjacent worldbuilding"
+        ],
+        "detail": "This sits naturally in the lane of irreverent, character-forward genre films that can sell on concept, ensemble chemistry, and a distinctive world. The script’s mix of office satire, monster violence, and retro-futurist design makes it attractive to buyers who want something weird but still legible."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature: the page establishes a fun team and a larger agency world, but no side character or world element is yet deep enough to justify a clear sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The opening image is a strong mystery engine.",
+          "what_it_means": "The ruined college flash and the erased glasses create an immediate question that can sell curiosity before the comedy even lands. That kind of visual hook is useful for trailers, pitch decks, and any buyer looking for a genre promise with a mythic undertow.",
+          "evidence": "Francis wakes in the college ruins, sees the abandoned belongings and cracked glasses, and bleeds from the nose before cutting back to the office.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Francis is a clean underdog lead.",
+          "what_it_means": "A timid office worker who turns out to be the key weapon is a commercially legible protagonist with built-in audience identification. That gives casting and marketing a simple emotional spine: the guy nobody takes seriously becomes the one who saves the mission.",
+          "evidence": "Francis insists he is not a field guy, repeatedly denies his usefulness, then finally triggers the multicolor beam that destroys the zombie.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble already has chemistry.",
+          "what_it_means": "The team banter creates reusable value beyond the first mission, which is a major asset for buyers who want a movie that feels like a group rather than a single gimmick. Ensemble chemistry also broadens the casting conversation because the movie can be sold through interplay, not just plot.",
+          "evidence": "Hal’s macho bluster, Clara’s chaos, Toast’s contempt, Ploy’s teasing, and Doreen’s deadpan authority all land in the first half of the script.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is specific and marketable.",
+          "what_it_means": "The script’s deadpan bureaucracy plus absurd monster violence gives it a distinct flavor that can stand out in a crowded genre field. Buyers chasing elevated-but-fun genre material will recognize the lane immediately.",
+          "evidence": "Comic-sans death board, retro-futuristic wrist device, and a British zombie who speaks in grotesque tea-time clichés.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels operational, not decorative.",
+          "what_it_means": "Comirum has enough internal structure to support story momentum without needing a giant exposition dump. That makes the project easier to package as a repeatable universe rather than a one-joke premise.",
+          "evidence": "Logistics division, field suits, outburst meter, article-based termination language, and mission briefing hierarchy.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, sellable genre package: a misfit-team action-comedy with a memorable lead, a weird bureaucratic world, and enough creature/action business to justify a mid-budget swing. The ensemble chemistry and opening mystery give it both trailer value and development upside, which is exactly the combination buyers want in streaming-friendly elevated genre.",
+      "issues": {
+        "items": [
+          {
+            "area": "The mythology is still mostly a tease.",
+            "detail": "The opening ruins image, the wrist meter, and the SINON label all imply a larger system, but the script keeps that system at arm’s length. That makes the premise easy to enjoy in the moment, but it also means the buyer is mostly buying tone and ensemble rather than a fully articulated world.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "Francis’s power rules are intentionally fuzzy.",
+            "detail": "The script leans on the idea that he can 'do anything' once the meter hits the right point, but the trigger logic is still opaque by design. That fuzziness is part of the joke, but it also narrows the clarity of the action engine until the rules are more legible.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The supporting team is vivid before it is deep.",
+            "detail": "Hal, Clara, Toast, and Ploy all pop immediately, but most of their characterization is built from voice, attitude, and one-note comic behavior in the mission sequence. That is enough for a first impression, but a producer would still see room for deeper contradiction if the goal is to make the ensemble feel premium rather than merely fun.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The London fight carries the budget.",
+            "detail": "The night exterior, rooftop coverage, creature regeneration, prosthetic damage, and energy-beam climax are the expensive stretch of the script. If this is greenlit, those pages will be the first place a line producer starts pressure-testing scope.",
+            "is_primary_lever": false,
+            "source": "production"
+          }
+        ],
+        "headline": "The main friction is clarity versus vibe: the script has a strong tone and a fun team, but the larger SINON mythology and Francis’s power logic are still more suggestive than fully owned. On the production side, the London creature fight is the budget conversation every buyer will have to have before saying yes."
+      },
+      "craft_note": ""
+    }
   },
-  "weightedScore": 75,
+  "weightedScore": 74,
   "tier": "Optionable",
-  "inputTokens": 16392,
-  "outputTokens": 3973,
-  "cost": 0.030172499999999998,
+  "inputTokens": 18797,
+  "outputTokens": 4528,
+  "cost": 0.03447375,
   "declaredFormat": "Feature film"
 }

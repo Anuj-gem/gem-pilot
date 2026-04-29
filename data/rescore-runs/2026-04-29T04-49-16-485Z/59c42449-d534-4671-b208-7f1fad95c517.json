@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T04:51:18.774Z",
+  "submission_id": "59c42449-d534-4671-b208-7f1fad95c517",
+  "eval_id": "cc1d6fcc-ece7-4528-af2e-6d76326c160d",
+  "title": "Who",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Ava",
+      "role_type": "Lead",
+      "demographics": "female, 16, white, high-school student, working-class family"
+    },
+    {
+      "name": "June",
+      "role_type": "Supporting",
+      "demographics": "female, 30s, white, blue-collar mother"
+    },
+    {
+      "name": "Shannon",
+      "role_type": "Supporting",
+      "demographics": "female, 16, teen best friend"
+    },
+    {
+      "name": "Priscilla",
+      "role_type": "Supporting",
+      "demographics": "female, late 40s, corporate security operative"
+    },
+    {
+      "name": "Madison",
+      "role_type": "Supporting",
+      "demographics": "female, child, true identity of the shapeshifter"
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "male, 90s, shapeshifter in an old-man body"
+    },
+    {
+      "name": "Eric Huntington",
+      "role_type": "Supporting",
+      "demographics": "male, 50s, billionaire tech mogul"
+    },
+    {
+      "name": "Wolcott",
+      "role_type": "Supporting",
+      "demographics": "male, 60s, biotech scientist"
+    },
+    {
+      "name": "Jamieson",
+      "role_type": "Supporting",
+      "demographics": "male, 40s, private security enforcer"
+    },
+    {
+      "name": "Mills",
+      "role_type": "Supporting",
+      "demographics": "male, late 20s, security operative, military background"
+    },
+    {
+      "name": "Wilma",
+      "role_type": "Supporting",
+      "demographics": "female, 20s, company nurse"
+    },
+    {
+      "name": "Liam",
+      "role_type": "Supporting",
+      "demographics": "male, 17, teen crush / shapeshifter copy target"
+    },
+    {
+      "name": "Christy",
+      "role_type": "Supporting",
+      "demographics": "female, 17, athletic popular girl"
+    }
+  ],
+  "positioning_hook": "A self-doubting teen girl discovers she’s a shapeshifter caught in a corporate cover-up, and must outrun the people who created her before they turn her into their billionaire frontman.",
+  "cost_usd": 0.05626575,
+  "input_tokens": 43887,
+  "output_tokens": 5189,
+  "status": "wrote:leads_ok"
+}

@@ -2,377 +2,382 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural mystery thriller",
-      "genre_tags": [
-        "procedural",
-        "horror"
+      "genre_primary": "Mystery",
+      "genre_secondary": [
+        "Thriller",
+        "Horror"
       ],
-      "tone": "Grounded, eerie, culturally specific, with bursts of stylized horror and deadpan workplace comedy"
+      "tone": "surreal",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "prestige",
+        "slow-burn",
+        "high-concept",
+        "family-dynamics",
+        "identity",
+        "grief",
+        "buford-highway",
+        "korean-american",
+        "shamanism"
+      ]
     },
-    "positioning_hook": "A Korean-American GBI agent and her blunt Black partner investigate a bakery owner’s impossible death on Buford Highway, where Korean shamanism, police procedure, and a ghostly revenge story collide.",
+    "positioning_hook": "A Korean-American GBI agent and her blunt Black partner investigate a bakery owner’s fiery death on Buford Highway, where Korean ritual, racial tension, and a possible ghost story collide.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean commercial engine: an impossible death, a procedural investigation, and a culturally specific supernatural layer. The audience is clear for elevated genre buyers and streamer thriller fans, though the bilingual, regional specificity keeps it more targeted than four-quadrant."
+        "reasoning": "The hook is immediately legible as an investigative mystery with a supernatural edge, and the Buford Highway setting gives it a fresh cultural lane. It’s not four-quadrant, but it has a clear adult audience: crime-thriller viewers who respond to occult-adjacent cases, procedural banter, and culturally specific worlds."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early with Susie Park’s fiery death and then sharpens through the GBI briefing, the CCTV anomaly, and the shaman angle. The investigation engine is easy to explain in one breath, and the story keeps adding new, legible pieces."
+        "reasoning": "The premise lands fast: a woman burns alive in her car outside a Korean bakery, and the GBI is pulled into a case that may involve ritual, omen, or murder. The script keeps returning to the same clean engine — what caused the fire, and what really happened at Happy Cake — which makes the hook easy to explain."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Kim and Gaines have a strong friction-based partnership, and Susie, Jade, and the Happy Cake staff each bring a distinct flavor. The roles are playable and actor-friendly, though the feature format keeps the character arcs more functional than deeply transformative on the page."
+        "reasoning": "Omar Gaines and Sue Kim are both sharply drawn, with a strong friction-based partnership that gives the investigation personality. Susie Park, Ken Lim, and Jade Han add vivid texture, though the page is still more interested in the case mechanics than in fully deepening everyone’s private lives."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits to a very specific cultural and tonal blend: Korean bakery politics, Georgia law enforcement, shaman ritual, and stylized horror imagery. The bilingual dialogue, sound design motifs, and ritual visuals give it a confident identity rather than a generic supernatural procedural."
+        "reasoning": "The script’s boldest move is treating Korean shamanism, Christian piety, and police procedure as equal parts of the same mystery, then staging the fire sequence like a stylized ritual nightmare. The tonal confidence is real, especially in the transition from grounded interrogation to surreal, music-driven horror imagery."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The opening death is a strong engine, and the investigation keeps moving from the bakery to the GBI briefing to Jade’s ritual space. The momentum is steady and watchable, with the final reveal of the ghostly attack giving the story a satisfying escalation."
+        "reasoning": "The investigation moves with purpose from the death scene to the GBI briefing to the bakery interviews to Jade Han, and each stop adds a new layer. The momentum is strongest when the script is gathering clues; it softens a bit in the explanatory dialogue around omens, curses, and ritual history."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A Korean bakery on Buford Highway, a GBI team, and a shamanic explanation for an apparently supernatural murder create a fresh combination that feels specific and inevitable. The repeated sound motif and the ritualized visual language make the premise feel authored, not assembled."
+        "reasoning": "This feels like a familiar procedural that has been re-energized by a very specific cultural and geographic world. The combination of Buford Highway, Korean-American family dynamics, and a possible spirit-world explanation gives the premise a memorable identity that is both strange and instantly playable."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "Buford Highway is treated as a living ecosystem: Korean businesses, police jurisdictions, church culture, shaman practice, street racing, and memorial rituals all feed the story. The world has social rules and cultural friction that generate plot rather than merely decorate it."
+        "reasoning": "Happy Cake, the 714 group, the Korean-language break room, the mudang ecosystem, and the Buford Highway street-racing corridor all feel story-generating rather than decorative. The world has social hierarchy, cultural codes, and local specificity that can keep producing scenes."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a recognizable tonal signature: dry cop banter, workplace deference, spiritual unease, and sudden grindhouse-style horror imagery. The switches between procedural realism and surreal ritual are controlled enough to feel intentional."
+        "reasoning": "The script has a distinct tonal signature: deadpan cop banter, cultural specificity, and sudden surreal horror imagery. The sound design motifs, ritual music cues, and stylized fire sequence give it a hard-to-mistake identity."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the case-of-the-week surface, there are deeper currents around immigrant hierarchy, faith, reputation, and the tension between public respectability and private belief. The script hints at a larger social and spiritual world without overexplaining it."
+        "reasoning": "There are real seeds of deeper material here — assimilation, faith, shame, class, and the tension between public reputation and private belief. The script hints at a larger emotional and mythic layer, though this draft is still primarily operating as a case-driven mystery."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Kim and Gaines carry the main engine well, and the Happy Cake staff plus the GBI/local PD cluster create a workable web of dynamics. The ensemble is lively enough to support repeated scenes, though the story still lives primarily off the lead duo."
+        "reasoning": "The Omar/Sue pairing is strong enough to carry the movie, and the bakery staff plus the Park family create a usable web of recurring friction. It’s not an ensemble that generates endless combinations, but it does have enough relational tension to keep scenes alive."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Sue Kim",
+        "role_type": "Lead",
+        "demographics": "Korean American woman, 30s, GBI senior special agent.",
+        "hook": "A hyper-competent, emotionally sealed investigator who moves through rooms like she already knows the answer, but whose Korean background makes her both insider and outsider in the Happy Cake world. She’s dry, controlled, and quietly provocative, with a private history that surfaces through her connection to Jade Han and her fluency in the cultural codes everyone else is trying to decode.",
+        "why_actor_wants_this": "This is the showcase territory of Sandra Oh in Killing Eve — a cool, exacting professional whose restraint is the performance. It gives an actor the chance to play intelligence, authority, and buried personal history while letting the smallest reactions land as story."
+      },
+      {
+        "name": "Omar Gaines",
+        "role_type": "Supporting",
+        "demographics": "Black man, 30s, GBI senior special agent, military bearing.",
+        "hook": "A disciplined, observant investigator who reads the room fast and tries to keep the partnership human with humor and small talk, only to discover Sue Kim is operating on a different frequency. He’s the audience’s entry point into the case’s cultural weirdness, and his grounded professionalism keeps the script from floating away into pure atmosphere.",
+        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in True Detective season 3 — controlled authority with a private interior life and a partner dynamic that reveals character through friction. It gives an actor the chance to play command, skepticism, and comic exasperation without losing dignity."
+      },
+      {
+        "name": "Susie Park",
+        "role_type": "Supporting",
+        "demographics": "Korean woman, 50s, bakery owner and family matriarch.",
+        "hook": "A status-obsessed, exacting business owner whose vanity and control issues make her instantly legible as a force in the room, even before the fire. She’s the kind of character whose absence still dominates the movie, because every employee and family member is reacting to the pressure she created.",
+        "why_actor_wants_this": "This is the showcase territory of Glenn Close in Fatal Attraction or The Wife — a commanding, difficult woman whose authority is the role. It gives an actor a chance to make a character memorable through posture, bite, and the sense that everyone else has been orbiting her for years."
+      },
+      {
+        "name": "Kyung-ho Lim",
+        "role_type": "Supporting",
+        "demographics": "Korean man, 40s, store manager.",
+        "hook": "The exhausted middle manager trapped between a volatile boss and a staff that reads the world through omens, guilt, and hierarchy. He’s the pressure valve of the bakery scenes, and his nervous diplomacy gives the investigation a human, compromised witness who knows more than he wants to say.",
+        "why_actor_wants_this": "This is the showcase territory of Steven Yeun in Minari or Will Patton in a pressure-cooker ensemble — a man carrying stress in every pause. It gives an actor the chance to play embarrassment, loyalty, and quiet panic in the same scene."
+      },
+      {
+        "name": "Jade Han",
+        "role_type": "Supporting",
+        "demographics": "Korean American woman, 30s, mudang/shaman.",
+        "hook": "A fast-talking, weed-smoking ritual practitioner who treats the spirit world like a lived-in neighborhood and the investigation like a social call. She’s the script’s wild card: funny, slippery, spiritually confident, and just credible enough to make the supernatural lane feel dangerous.",
+        "why_actor_wants_this": "This is the showcase territory of Tilda Swinton in Suspiria or Aunjanue Ellis in The Book of Clarence — a role that can be playful, eerie, and authoritative at once. It gives an actor a big tonal swing and a chance to make exposition feel like a performance event."
+      },
+      {
+        "name": "Soo-yeon Park",
+        "role_type": "Supporting",
+        "demographics": "Korean woman, 60s, Susie’s sister.",
+        "hook": "A sharp-tongued family gatekeeper who treats the investigation as an intrusion and speaks with the authority of someone used to being obeyed. She’s a great friction character: defensive, proud, and just opaque enough to keep the family’s real story from being cleanly accessible.",
+        "why_actor_wants_this": "This is the showcase territory of Hong Chau in The Whale or Meryl Streep in August: Osage County — a role built on verbal force and emotional resistance. It gives an actor a chance to dominate scenes with precision and contempt."
+      },
+      {
+        "name": "Dr. John Kim",
+        "role_type": "Supporting",
+        "demographics": "Korean American man, 40s, orthopedic surgeon.",
+        "hook": "The polished, overextended son trying to manage family reputation, police questions, and his aunt’s temper without ever fully taking control. He reads as the bridge between worlds — professional, assimilated, and visibly uncomfortable with the spiritual and emotional mess around him.",
+        "why_actor_wants_this": "This is the showcase territory of Randall Park in Shortcomings or John Cho in Columbus — a contained, intelligent role where discomfort is the point. It gives an actor the chance to play restraint, embarrassment, and buried authority."
+      },
+      {
+        "name": "Eun-ja",
+        "role_type": "Supporting",
+        "demographics": "Korean woman, 50s, bakery employee.",
+        "hook": "A gossipy, emotionally porous worker who oscillates between piety, superstition, and blunt common sense. She’s one of the script’s best texture characters, because she turns exposition into personality and makes the bakery feel socially alive.",
+        "why_actor_wants_this": "This is the showcase territory of June Squibb in Nebraska — a role that can steal scenes through specificity, timing, and lived-in contradiction. It gives an actor a chance to be funny, nosy, and oddly moving without ever becoming a stock side character."
+      },
+      {
+        "name": "Mi-sook",
+        "role_type": "Supporting",
+        "demographics": "Korean woman, 50s, bakery employee.",
+        "hook": "A devout, anxious worker whose instinct is to sanctify the boss and interpret every spill, ink mark, and bad feeling as evidence of cosmic order. She’s a perfect counterweight to Eun-ja, and together they create a comic-ritual chorus around the central mystery.",
+        "why_actor_wants_this": "This is the showcase territory of Kathy Bates in a supporting ensemble role — a character who can be funny, severe, and emotionally legible in a single exchange. It gives an actor a chance to build a memorable presence from rhythm and reaction."
+      },
+      {
+        "name": "Young-hee",
+        "role_type": "Supporting",
+        "demographics": "Korean woman, 20s, bakery employee.",
+        "hook": "The youngest worker in the room, eager to please and constantly overcorrecting under the gaze of the older women. She gives the bakery scenes a generational layer and a real sense of hierarchy, because every line she says feels like a test she might fail.",
+        "why_actor_wants_this": "This is the showcase territory of Stephanie Hsu in a smaller ensemble role — a young character whose nervous energy and comic timing make her pop. It gives an actor a chance to play vulnerability, eagerness, and social pressure."
+      },
+      {
+        "name": "Karen Powell",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s, GBI region supervisor.",
+        "hook": "A blunt, physically imposing law-enforcement boss who cuts through bureaucratic fog with pure command energy. She’s a strong authority figure in a room full of men trying to manage optics, and she instantly clarifies the chain of power.",
+        "why_actor_wants_this": "This is the showcase territory of Regina King in a hard-edged authority role — direct, intimidating, and efficient. It gives an actor the chance to own a room with minimal dialogue and maximum presence."
+      },
+      {
+        "name": "Vic Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s, GBI assistant deputy director.",
+        "hook": "A rumpled, awkward administrator who wants the case handled quietly and can barely hide his discomfort while saying it. He’s useful because he embodies the institutional pressure behind the investigation without turning into a cartoon bureaucrat.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in a low-key authority role — a man whose discomfort is part of the character. It gives an actor a chance to play institutional fatigue and dry authority."
+      },
+      {
+        "name": "Joe Reese",
+        "role_type": "Supporting",
+        "demographics": "Man, 50s, senior investigative coordinator.",
+        "hook": "A deadpan logistics guy who functions like the case’s human firewall, controlling access and information with clipped efficiency. He’s not flashy, but he gives the investigation a procedural spine and a memorable comic-flat register.",
+        "why_actor_wants_this": "This is the showcase territory of Shea Whigham in a procedural support role — terse, watchful, and oddly funny. It gives an actor the chance to make minimalism feel loaded."
+      },
+      {
+        "name": "Jamal Carter",
+        "role_type": "Supporting",
+        "demographics": "Black man, 50s, Doraville PD sergeant.",
+        "hook": "A seasoned local cop with a storyteller’s instinct and a dry, amused relationship to the absurdity of the case. He’s the kind of supporting role that makes the world feel lived-in because he can deliver exposition without sounding like exposition.",
+        "why_actor_wants_this": "This is the showcase territory of Delroy Lindo in a supporting procedural role — warm, skeptical, and effortlessly watchable. It gives an actor the chance to make a briefing scene feel like a performance."
+      },
+      {
+        "name": "David Pratt",
+        "role_type": "Supporting",
+        "demographics": "Black man, 50s, DeKalb County PD major.",
+        "hook": "A swaggering local authority who needles the state investigators and enjoys the politics of jurisdiction almost as much as the case itself. He adds friction, personality, and a little comic ego to the law-enforcement ecosystem.",
+        "why_actor_wants_this": "This is the showcase territory of Wendell Pierce in a sharp supporting role — confident, funny, and territorial. It gives an actor a chance to play institutional pride with bite."
+      },
+      {
+        "name": "Tom Holt",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s, GBI forensics tech.",
+        "hook": "The tech guy who quietly becomes the bridge between the mystery and the evidence, with just enough personality to keep the lab work from feeling sterile. He’s the practical counterweight to the script’s supernatural speculation.",
+        "why_actor_wants_this": "This is the showcase territory of David Harbour in a grounded supporting role — smart, slightly rumpled, and useful under pressure. It gives an actor a chance to be the competent guy who still has a personality."
+      },
+      {
+        "name": "Michelle Yoon",
+        "role_type": "Supporting",
+        "demographics": "Korean girl, 16, crash victim.",
+        "hook": "A presence more than a speaking character in this draft, but emotionally central to the case because her death becomes the image and wound that the whole story keeps circling. She functions as the haunting center of the mystery, even when she’s only present through memory, footage, and ritual imagery.",
+        "why_actor_wants_this": "This is the showcase territory of a haunting, memory-driven role like the victim presence in The Lovely Bones — brief on dialogue, heavy on emotional imprint. It gives a young actor a chance to make a lasting impression through image and aftermath."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 14,
-        "leads": 2,
+        "speaking_roles": 17,
+        "leads": 1,
         "series_regulars": 0,
-        "child_actors": false,
+        "child_actors": true,
         "casting_characteristics": [
-          "Bilingual Korean/English performers required for several principal roles",
-          "African American male lead in 30s",
-          "Korean American female lead in 30s",
-          "Korean-speaking supporting ensemble in 20s-60s",
-          "One 16-year-old character appears in the crash sequence"
+          "Korean-language fluency required for multiple roles",
+          "Korean American lead and supporting ensemble",
+          "Teen victim role with limited dialogue",
+          "Age-specific casting across 20s to 60s"
         ]
       },
       "locations": {
         "distinct_count": 8,
-        "interior_exterior_ratio": "roughly 60/40",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Bakery interior and parking lot as a recurring anchor location",
+          "Buford Highway bakery interior and parking lot",
           "GBI headquarters offices and conference room",
-          "Modest residential home with ritual space",
-          "Buford Highway street-racing roadway and memorial setup",
-          "Night fire sequence with controlled vehicle burn"
+          "Jade Han ritual home with altar space",
+          "street-racing roadway and memorial setup"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Fire ignition, CCTV distortion, spectral apparition, stylized ritual visions, and a few composited supernatural beats.",
+        "vfx_details": "Stylized fire ignition, CCTV distortion, surreal apparition imagery, and a designed ritual-horror sequence with composited flame and atmospheric effects.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical fire effects, vehicle burn, smoke, light flicker, and controlled crash aftermath elements.",
+        "sfx_needs": "Practical fire effects, car burn sequence, smoke, glass, and controlled crash aftermath imagery.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "\"The Wailing\" is specifically named on the break-room TV and \"The Sun\" by Kim Jung-mi is used as a music cue."
-        },
-        {
-          "type": "brand",
-          "detail": "Happy Cake, Happy-chan, Red Book/Xiaohongshu, Porsche Cayenne, Ford Explorer Interceptor, Honda Civic, Subaru WRX STI, Mustang GT, and COEXIST bumper sticker are prominently featured."
+          "detail": "The Wailing is specifically named and shown on TV."
         },
         {
           "type": "ip_licensing",
-          "detail": "The script explicitly references and displays footage from \"The Wailing\" (2016, dir. Na Hong-jin), which may require clearance if retained as a plot-visible element."
+          "detail": "The Wailing (2016, dir. Na Hong-jin) is specifically referenced as an on-screen title."
+        },
+        {
+          "type": "brand",
+          "detail": "Red Book app (Xiaohongshu) is specifically named."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or elevated genre theatrical lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with festival-to-platform or specialty theatrical potential; the engine is an investigation into an impossible death that opens into a larger supernatural case."
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult mystery-thriller with supernatural-horror elements, suited to streaming-first or specialty theatrical play."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the footprint grounded, but the stylized fire sequence, night exteriors, ritual imagery, and car-burn effects will push this above a bare-bones indie if executed as written."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Contained interiors and a modest cast keep the footprint manageable, but the fire sequence, night work, and stylized supernatural visuals push it above micro-budget."
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs an actor who can play procedural authority, dry comedy, and cultural specificity without flattening the role, and the Korean-language ensemble adds a real authenticity requirement across several supporting parts."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The case is clear, but the script is balancing procedural mystery, family drama, and supernatural suggestion; buyers will want confidence that the fire is being played as a coherent engine rather than a collection of competing explanations."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Wailing",
+          "year": 2016,
+          "why_it_comps": "Shares the same collision of police investigation, folk belief, and escalating supernatural dread, with a mystery structure that keeps the audience unsure what kind of horror they’re watching."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The lead duo is straightforward to cast, but the script depends on bilingual Korean/English performers and a culturally specific ensemble to preserve its texture."
+        {
+          "title": "Longlegs",
+          "year": 2024,
+          "why_it_comps": "Matches the eerie procedural lane where a law-enforcement investigation is gradually overtaken by occult suggestion and stylized dread."
         },
-        "location": {
-          "level": "medium",
-          "note": "The story is anchored in a handful of repeatable locations, with the main complexity coming from the Buford Highway roadway, the bakery lot, and the night fire setup."
+        {
+          "title": "The Night House",
+          "year": 2020,
+          "why_it_comps": "Comps on the emotional shape of grief, hidden truth, and a haunting that may be psychological, supernatural, or both."
         },
-        "content": {
-          "level": "medium",
-          "note": "The material includes a fiery death, corpse-adjacent imagery, police language, and supernatural horror beats, but it stays below explicit sexual or extreme-gore territory."
-        },
-        "rights": {
-          "level": "medium",
-          "note": "Named music, a referenced film, and several visible brands create a defined clearance pass, though the script is not built on life rights or major IP."
+        {
+          "title": "A Simple Favor",
+          "year": 2018,
+          "why_it_comps": "Shares the polished surface, sharp character interplay, and the pleasure of watching a mystery unfold through personality as much as plot."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like elevated mystery-thrillers with a supernatural edge, especially viewers drawn to culturally specific worlds and strong investigator chemistry.",
+        "demographics": "35-54 skew, slightly female-leaning but not exclusive, urban/suburban adults, genre-literate streaming audience.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary interiors, a limited number of principal locations, and one major stylized fire sequence keep this in indie-feature territory, though the ritual-horror imagery and night work add scope."
+      },
+      "lane_fit": {
+        "lane": "elevated mystery-thriller with supernatural horror",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer originals dev execs",
+          "specialty distributors",
+          "producer-led elevated-horror shingle",
+          "prestige-thriller buyers"
+        ],
+        "detail": "This sits naturally in the lane where character-forward crime stories are allowed to get weird, but still need a clean hook and a strong lead performance. The Korean-American specificity and the occult-adjacent investigation make it feel premium without requiring tentpole scale."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed case and no clear sequel or spinoff vector on the page."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Buford Highway feels like a story engine.",
-          "what_it_means": "The setting gives a producer a built-in identity: immigrant commerce, local law enforcement, faith, and street culture all collide in one corridor. Buyers who want elevated regional specificity — the kind that travels because it feels lived-in — will respond to that density.",
-          "evidence": "The script moves from Happy Cake in Doraville to GBI Decatur, then out to Jade Han’s home and the Calidad Quarter street-racing strip.",
+          "dimension_or_area": "Buford Highway gives the mystery a real place.",
+          "what_it_means": "The setting is specific enough to feel ownable and commercially legible, which helps the project stand out in a crowded mystery-thriller field. Buyers looking for a fresh regional identity or a culturally textured crime lane will notice it immediately.",
+          "evidence": "The script repeatedly grounds the story in Happy Cake Doraville, the Buford Highway corridor, and the street-racing stretch called the Calidad Quarter.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Kim and Gaines are a saleable odd-couple duo.",
-          "what_it_means": "Their deadpan/sarcastic chemistry gives the movie a repeatable engine for tension, humor, and investigation without needing a huge cast. That makes the project attractive to actors who want a two-hander with banter and to buyers who like a lead pair that can carry a franchise-sized premise in a contained package.",
-          "evidence": "The car ride small-talk scene, the sarcasm signal exchange, and their shared reaction to Jade’s ritual all define the pairing fast.",
+          "dimension_or_area": "Sue Kim is a strong lead role.",
+          "what_it_means": "The role gives a buyer a clear casting target: a smart, controlled investigator with dry humor and buried personal history. That’s the kind of part that can attract a name actress and anchor the whole package.",
+          "evidence": "Her deadpan exchanges with Gaines, her instant recognition of Jade Han, and her icy control in the Soo-yeon interview all define her fast.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The supernatural reveal is staged with confidence.",
-          "what_it_means": "The script doesn’t just tell us the death is impossible; it gives a visual language for the impossible, which is what makes the concept marketable. Genre buyers and directors looking for a contained horror set-piece with a memorable signature will see a clear path to screen impact.",
-          "evidence": "The CCTV distortion, the humanoid flash, and the stylized slow-motion fire sequence all build to the spectral attack on Susie.",
+          "dimension_or_area": "The procedural and supernatural lanes are fused cleanly.",
+          "what_it_means": "The script can be sold as a mystery with a horror charge rather than as a pure genre experiment, which broadens the buyer conversation. That hybrid lane is attractive to streamers and specialty genre financiers who want something elevated but accessible.",
+          "evidence": "The investigation moves from CCTV anomalies and forensic speculation into mudang ritual, apparition imagery, and the stylized fire sequence.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Korean cultural texture is specific, not decorative.",
-          "what_it_means": "The bilingual dialogue, shaman ritual, church dynamics, and workplace hierarchy create a world that feels authored and exportable. That specificity is a magnet for prestige-minded genre buyers and actors who want material that can play both culturally grounded and broadly legible.",
-          "evidence": "Jade’s gutdang, the mudang discussion, the code-switching in the bakery, and the repeated references to prayer and omens all carry the world.",
+          "dimension_or_area": "The Korean-language ensemble feels lived-in.",
+          "what_it_means": "The bakery staff and family scenes create a social world with hierarchy, humor, and cultural specificity, which is valuable both creatively and commercially. It gives the movie a texture that can travel as prestige genre rather than generic occult procedural.",
+          "evidence": "Eun-ja, Mi-sook, Young-hee, Soo-yeon, and Dr. Kim all speak in distinct registers and occupy different positions in the bakery ecosystem.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The opening death is a strong hook image.",
-          "what_it_means": "A woman burning alive in her own car, after an apparently ordinary workday, is the kind of event that instantly tells a buyer what lane this lives in. It gives the movie a trailer-ready centerpiece and a clean entry point for audience curiosity.",
-          "evidence": "Susie’s final exit, the ignition flash, and the window-framed car fire are all staged as a single escalating set-piece.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The procedural framework keeps the fantasy grounded.",
-          "what_it_means": "The GBI briefing, jurisdictional politics, and forensic discussion give the supernatural material a credible spine, which broadens the project beyond pure occult horror. That balance is attractive to premium streamers and theatrical buyers who want genre with adult authority.",
-          "evidence": "The 714 task-force meeting, the CCTV analysis, and Holt’s RF interference explanation all anchor the case in procedure.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The sound motif is a signature device.",
-          "what_it_means": "The repeated tchick/click/thud pattern and the sound-drop transitions give the film a memorable audio identity that can become part of the marketing conversation. Directors and editors who like formal control will see a clear stylistic lane to own.",
-          "evidence": "The script repeatedly isolates Susie’s tchick, the whiteboard squeak, the soy sauce spill, and the lighter click in montage.",
+          "dimension_or_area": "The fire sequence is a signature set piece.",
+          "what_it_means": "The stylized ignition and the later surreal replay of the death give the film a trailer-ready image engine. That kind of visual identity helps a buyer see marketing value beyond the page.",
+          "evidence": "The script stages Susie’s burning car through CCTV distortion, ritual music, and a giallo-like visual treatment of Michelle’s apparition.",
           "source": "script"
         }
       ],
-      "headline": "BUFORD HIGHWAY has a sharp, exportable hook: a Korean-American GBI agent and her blunt partner investigate an impossible bakery death that opens into shaman ritual, street-racing mythology, and a very specific Georgia immigrant world. It’s the kind of elevated genre feature that can sell on premise, cast, and atmosphere at the same time."
-    },
-    "lead_characters": [
-      {
-        "name": "Soo-jin “Sue” Kim",
-        "role_type": "Lead",
-        "demographics": "Female · 30s · Korean American",
-        "hook": "Sue is all edges and control: a Korean-American senior special agent who speaks with surgical precision, keeps her face unreadable, and carries herself like someone who learned early that competence is armor. She’s culturally fluent, professionally intimidating, and quietly funny in the driest possible way, which makes her feel like she belongs in both the GBI and the spiritual world she’s being pulled toward.",
-        "why_actor_wants_this": "This is the showcase territory of Sandra Oh in Killing Eve — a woman whose intelligence, restraint, and private volatility are all part of the performance. It gives an actress the chance to play authority, cultural specificity, deadpan comedy, and a slow reveal of inner life in one role."
+      "headline": "This has the kind of specific world and lead role that can make a buyer lean in fast: a Korean-American procedural with a supernatural charge, a memorable Buford Highway setting, and a strong actress-facing part in Sue Kim. The production footprint stays in indie-feature range while the imagery and cultural texture give it a premium, trailer-friendly identity.",
+      "issues": {
+        "items": [
+          {
+            "area": "The supernatural rules stay deliberately blurry.",
+            "detail": "The script keeps the fire open to ghost story, ritual curse, and forensic anomaly, which is part of the appeal but also the main buyer question. In a greenlight conversation, that ambiguity will read as either sophisticated or unresolved depending on who’s in the room.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The exposition leans hard on explanation scenes.",
+            "detail": "A lot of the case information arrives through briefing-room dialogue, witness recaps, and cultural translation rather than through active discovery. That makes the script clear, but it also concentrates momentum in talk-heavy stretches that will be watched closely in development.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "Sue Kim carries the package.",
+            "detail": "The movie’s appeal rises or falls on the lead performance because Sue is the clearest star-facing role and the emotional anchor for the investigation. That’s a strength, but it also narrows the casting conversation to actors who can play cool authority without flattening the humor.",
+            "is_primary_lever": false,
+            "source": "both"
+          },
+          {
+            "area": "The fire effects need disciplined scope control.",
+            "detail": "The car-burn sequence, CCTV distortion, apparition imagery, and ritualized replay of the death all ask for more than a simple practical approach. If the visual language gets expensive, the project can drift above its indie-feature lane quickly.",
+            "is_primary_lever": false,
+            "source": "production"
+          }
+        ],
+        "headline": "The main friction is not the premise — it’s the balance between procedural clarity and supernatural ambiguity, which the script intentionally keeps unresolved. Add the fact that the lead role has to carry the whole package and the fire imagery needs real visual discipline, and those are the conversations a producer will have before saying yes."
       },
-      {
-        "name": "Omar Gaines",
-        "role_type": "Lead",
-        "demographics": "Male · late 30s · African American",
-        "hook": "Gaines is the grounded counterweight: military bearing, warm instincts, and just enough exasperation to keep him human in a room full of coded behavior and bureaucratic nonsense. He reads people fast, carries himself like a professional, and gives the movie its audience surrogate without ever becoming blandly generic.",
-        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in True Detective season 3 — a controlled investigator whose stillness and intelligence do as much work as the dialogue. It gives an actor the chance to play procedural authority, dry humor, and emotional intelligence without losing leading-man presence."
-      },
-      {
-        "name": "Susie Park",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Korean",
-        "hook": "Susie is a tyrant in couture: a bakery owner whose vanity, discipline, and contempt for disorder make her instantly legible and deeply watchable. Even in a short span, she feels like the kind of woman who has built an empire out of willpower and fear, which makes her death land as both spectacle and social rupture.",
-        "why_actor_wants_this": "This is the showcase territory of Glenn Close in Fatal Attraction or The Wife — a role that lets an actor command the room through status, precision, and barely contained rage. Character actors and prestige veterans will chase it because the part makes an entrance, defines a world, and leaves a mark fast."
-      },
-      {
-        "name": "Kyung-ho “Ken” Lim",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · Korean",
-        "hook": "Ken is the exhausted middle manager caught between a fearsome owner and a staff that knows more than it says. He’s polite, deferential, and visibly fraying, which gives him the texture of a man who has spent years translating power into survival.",
-        "why_actor_wants_this": "This is the showcase territory of Steven Yeun in Minari for quiet pressure and emotional containment — a role where the audience reads everything in the pauses and the posture. Actors who excel at subtext and controlled panic will see a rich supporting turn here."
-      },
-      {
-        "name": "Eun-ja",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Korean",
-        "hook": "Eun-ja is the office gossip with a conscience: chatty, observant, and forever trying to say the socially acceptable thing while her real feelings leak through. She’s funny, wary, and deeply embedded in the bakery’s pecking order, which makes her a great pressure valve for the scene dynamics.",
-        "why_actor_wants_this": "This is the showcase territory of Hong Chau in Downsizing or The Whale — a supporting role that can pivot from comic rhythm to emotional truth in a single beat. Character actors who can make a room feel lived-in will want this."
-      },
-      {
-        "name": "Mi-sook",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · Korean",
-        "hook": "Mi-sook is the pious echo chamber with a sly streak, the kind of woman who can sound devout one second and conspiratorial the next. She’s a perfect ensemble piece because she reveals how belief, fear, and workplace loyalty can all sound the same when spoken out loud.",
-        "why_actor_wants_this": "This is the showcase territory of Margo Martindale in Justified — a supporting role that can turn plainspoken dialogue into character gold. Actors who enjoy playing layered community figures will be drawn to the mix of humor, faith, and judgment."
-      },
-      {
-        "name": "Young-hee",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s · Korean",
-        "hook": "Young-hee is the eager junior employee trying to survive a room full of older women who can smell insecurity instantly. She’s bubbly, impressionable, and painfully eager to please, which gives the script a younger counterpoint to the bakery’s hardened social order.",
-        "why_actor_wants_this": "This is the showcase territory of Ayo Edebiri in The Bear — a younger ensemble role where nervous energy, comic timing, and emotional vulnerability all live in the same body. Emerging actors will chase it because it gives them a distinct voice inside a bigger world."
-      },
-      {
-        "name": "Dr. John Kim",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · Korean American",
-        "hook": "Dr. Kim is the polished family emissary: successful, uncomfortable, and constantly trying to keep the peace between reputation and reality. He’s the kind of man who can translate for everyone else while never fully saying what he thinks, which makes him a useful pressure point in the family dynamic.",
-        "why_actor_wants_this": "This is the showcase territory of Randall Park in Always Be My Maybe or The Afterparty — a role that plays intelligence, social discomfort, and quiet authority. Actors who can do charm under strain will see a clean fit."
-      },
-      {
-        "name": "Soo-yeon Park",
-        "role_type": "Supporting",
-        "demographics": "Female · 60s · Korean",
-        "hook": "Soo-yeon is the imperious aunt who treats every room like it owes her an apology. She’s sharp, defensive, and socially explosive, which makes her a great source of friction whenever the family’s public image is on the line.",
-        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in a smaller, more combustible register — a role built on blunt authority and zero interest in pleasing anyone. Veteran character actors will chase the chance to dominate scenes with attitude and precision."
-      },
-      {
-        "name": "Jade Han",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · Korean American",
-        "hook": "Jade is the wild-card shaman with a stoner’s looseness and a performer’s instinct for the room. She’s funny, spiritually serious, and impossible to pin down, which makes her the movie’s most unpredictable source of exposition and atmosphere.",
-        "why_actor_wants_this": "This is the showcase territory of Tilda Swinton in Suspiria or Kathryn Hahn in Agatha All Along — a role where eccentricity, authority, and comic freedom all coexist. Actors who like to steal scenes with charisma and specificity will chase it."
-      },
-      {
-        "name": "Jamal Carter",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · African American",
-        "hook": "Carter is the local cop who knows the neighborhood, knows the politics, and knows how to make a briefing feel like a story. He’s relaxed, funny, and a little world-weary, which gives the procedural scenes a lived-in local voice.",
-        "why_actor_wants_this": "This is the showcase territory of Wendell Pierce in The Wire — a seasoned lawman role that gets its power from voice, timing, and institutional memory. Actors who can make exposition feel like character will want it."
-      },
-      {
-        "name": "Joe Reese",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · White",
-        "hook": "Reese is the bureaucratic gatekeeper who speaks in clipped logistics and keeps the machine moving while everyone else argues. He’s dry, controlled, and faintly amused by the chaos around him, which makes him a useful pressure-release valve in the GBI scenes.",
-        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in Spotlight — a role where institutional authority and deadpan delivery do the heavy lifting. Character actors who can make a room feel real with minimal movement will be interested."
-      },
-      {
-        "name": "Karen Powell",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · White",
-        "hook": "Powell is the hard-charging supervisor who cuts through bureaucracy with blunt force and zero patience for nonsense. She’s physically imposing, verbally sharp, and instantly credible as someone who has earned the right to be feared in a room.",
-        "why_actor_wants_this": "This is the showcase territory of Regina King in Watchmen — a commanding authority role that plays toughness, wit, and command presence. Actors who can project power without overplaying it will chase this."
-      },
-      {
-        "name": "Vic Reynolds",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · White",
-        "hook": "Reynolds is the uneasy administrator trying to keep the investigation quiet while looking like he’d rather be anywhere else. He’s slightly overwhelmed, slightly comic, and useful precisely because he feels like a man trapped between politics and competence.",
-        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in a smaller institutional mode — a role that lets an actor play discomfort, authority, and evasiveness at once. Supporting players who specialize in bureaucratic comedy-drama will be drawn to it."
-      },
-      {
-        "name": "Tom Holt",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · White",
-        "hook": "Holt is the forensic tech with a laptop brain and a calm surface, the guy who can turn a weird image into a usable lead. He’s not flashy, but he gives the investigation its technical credibility and a little dry wit.",
-        "why_actor_wants_this": "This is the showcase territory of David Strathairn in a procedural ensemble — a role where intelligence and understatement carry the scene. Actors who like precise, low-key authority will want it."
-      },
-      {
-        "name": "Emily Ortiz",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · unspecified ethnicity",
-        "hook": "Ortiz is the eager younger agent in the room, all business and ready to prove she belongs. She’s a clean procedural presence who helps round out the task-force texture.",
-        "why_actor_wants_this": "This is the showcase territory of Stephanie Beatriz in a straight procedural mode — a role that rewards competence, speed, and sharp reaction work. Actors looking for a grounded ensemble slot will see a fit."
-      },
-      {
-        "name": "Ryan Patel",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s · South Asian",
-        "hook": "Ryan is the rookie analyst with the laptop and the alert eyes, the youngest mind in the room. He gives the investigation a modern, data-driven edge and a little forward momentum.",
-        "why_actor_wants_this": "This is the showcase territory of Kumail Nanjiani in a supporting procedural role — smart, observant, and lightly comic without losing credibility. Emerging or mid-career actors who want a clean ensemble foothold will chase it."
-      },
-      {
-        "name": "Lt. Elena Torres",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · Latina",
-        "hook": "Torres is the local lieutenant who knows when she’s being sidelined and doesn’t love it. She’s self-conscious, deferential on the surface, and quietly sharp underneath, which makes her a useful local-law-enforcement counterpoint.",
-        "why_actor_wants_this": "This is the showcase territory of Melissa Barrera in a grounded procedural register — a role that plays competence under institutional pressure. Actors who can balance frustration and professionalism will be interested."
-      },
-      {
-        "name": "Capt. Lisa Hargrove",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s · White",
-        "hook": "Hargrove is the no-nonsense captain who says what everyone else is thinking and doesn’t care who flinches. She’s a blunt institutional force, which makes her a strong scene-stopper in the briefing room.",
-        "why_actor_wants_this": "This is the showcase territory of Allison Janney in The West Wing — a role built on command, speed, and verbal authority. Actors with crisp comic timing and authority presence will want it."
-      },
-      {
-        "name": "Maj. David Pratt",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · African American",
-        "hook": "Pratt is the swaggering local major who uses humor and charm to challenge the state’s authority without ever losing his footing. He’s a great friction character because he can needle the room while still feeling like a pro.",
-        "why_actor_wants_this": "This is the showcase territory of Giancarlo Esposito in a lighter institutional mode — a role where charisma, control, and tactical wit all matter. Actors who can make a brief entrance feel like a power move will chase it."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a grounded supernatural thriller with a very specific cultural fingerprint.",
-        "fit_profile": "Established indie genre directors with at least one or two features, or TV directors moving into features, who already work comfortably with performance-forward tension and controlled stylistic flourishes. The material rewards directors who care about ritual, atmosphere, and the choreography of a room as much as they care about the scare.",
-        "detail": "The script gives a director a chance to stage a procedural that keeps slipping into the uncanny without losing credibility. It also offers formal toys — sound motifs, bilingual dialogue, ritual imagery, and a stylized fire sequence — that let a director build a signature without needing a giant effects canvas."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Premium streamer genre lane / elevated indie horror-thriller lane",
-        "detail": "It can be packaged off a strong director and two compelling lead performances rather than a heavy name-talent stack, because the cast footprint is contained and the concept is legible fast. The Korean-American specificity, procedural spine, and supernatural hook give it both streamer appeal and specialty theatrical upside."
-      }
-    },
-    "considerations": [
-      {
-        "area": "The opening case can be streamlined around one clean engine.",
-        "detail": "The script already has a strong central mystery in Susie’s death, the CCTV anomaly, and the shaman explanation. A next pass could keep the early investigation focused on that one thread before widening into the memorial, the race, and the broader spiritual backstory, so the feature launch feels even more immediate.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The ensemble is rich enough to simplify if needed.",
-        "detail": "The GBI briefing room introduces a full bench of local and state law enforcement voices, and several of them serve overlapping procedural functions. If the goal is to protect budget and keep the investigation moving, one direction would be to fold a couple of those roles together without losing the jurisdictional friction.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The ritual explanation could arrive with one cleaner reveal.",
-        "detail": "Jade’s scene is memorable because it’s so alive, but it also carries a lot of explanatory material in one stretch. What would it look like if one key image or line carried the core supernatural rule earlier, with the rest of the lore unfolding after the audience has already locked onto the threat?",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The bilingual texture is a major asset to protect.",
-        "detail": "Several scenes depend on Korean/English code-switching, and that specificity is part of the movie’s identity. The practical move is not to flatten it, but to make sure the emotional beats still read cleanly for non-Korean-speaking viewers so the texture stays vivid and accessible.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The fire sequence sets the budget ceiling.",
-        "detail": "The car ignition, burn, and spectral overlay are the main effects-heavy beats, and they’re already concentrated into a few signature moments. Keeping the supernatural visuals selective rather than constant will protect the production lane while preserving the impact of the set-piece.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The named-media references deserve a clearance pass.",
-        "detail": "The script explicitly uses \"The Wailing\" on the TV and names a Kim Jung-mi track, while also leaning on visible brands and vehicles. A producer would want to decide early which of those are essential to the texture and which can be swapped if clearance becomes a packaging priority.",
-        "is_primary_lever": false,
-        "source": "production"
-      }
-    ],
-    "craft_note": ""
+      "craft_note": ""
+    }
   },
   "weightedScore": 75.3,
   "tier": "Optionable",
-  "inputTokens": 24466,
-  "outputTokens": 6497,
-  "cost": 0.047586,
+  "inputTokens": 26871,
+  "outputTokens": 5936,
+  "cost": 0.04686525,
   "declaredFormat": "Feature film"
 }

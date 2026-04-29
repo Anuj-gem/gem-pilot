@@ -2,346 +2,441 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Satirical thriller",
-      "genre_tags": [
-        "dark comedy",
-        "psychological drama"
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Drama"
       ],
-      "tone": "Provocative, caustic, manic, and escalating into grotesque black comedy"
+      "tone": "satirical",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "high-concept",
+        "propulsive",
+        "character-driven",
+        "crime",
+        "power",
+        "corruption",
+        "ai",
+        "prediction-markets"
+      ]
     },
-    "positioning_hook": "A laid-off Manhattan analyst turns his suicide into a market, then discovers Wall Street, tech, and the White House all want a piece of the spectacle.",
+    "positioning_hook": "A laid-off Manhattan data analyst turns his suicide into a market-moving spectacle, then tries to outsmart AI, Wall Street, and his own best friend for millions.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 8,
-        "reasoning": "The premise is instantly legible and built for conversation: a fired data analyst monetizes his own death, and the story keeps widening from a condo to corporate HQ to a presidential compound. The hook has strong clickability and a clear audience for dark, high-concept satire, though the material is pointed enough that it will play strongest with adult genre and prestige buyers."
+        "reasoning": "The premise is instantly legible and built for conversation: a suicidal layoff victim becomes a financial instrument, and every escalation is easy to pitch in one sentence. The audience is narrower than a four-quadrant crowd because of the dark subject matter and dense finance/tech satire, but the hook is unusually strong."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The engine lands immediately in the opening pages with the layoff, the suicide note, and the prediction market around Jesse's death. The script keeps the rules clear as the stakes expand, especially once the FutureDays market, the livestream, and the corporate response all lock into place."
+        "reasoning": "The hook lands immediately in the opening pages with Jesse's layoff, the suicide countdown, and the prediction market mechanic. The script keeps restating the engine through concrete turns—Harvard Club, tour, Nervy, Palm Beach—so the premise never gets muddy."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Jesse is a vivid, self-destructive lead with a strong comic voice and a volatile emotional center, and Mikey/Andrea give the story a usable relational triangle. The characters are memorable in behavior and attitude, while the deeper interior life is carried more by performance and escalation than by layered backstory."
+        "reasoning": "Jesse is vivid because he is both pathetic and strategic, and Mikey/Andrea give the story a relational triangle with real pressure. The characters are strong enough to carry the feature, though Jesse is still more concept-forward than psychologically layered."
       },
       "creative_originality_and_boldness": {
         "score": 9,
-        "reasoning": "The script takes a genuinely unusual premise and commits to it with no hesitation: prediction markets, AI layoffs, livestream suicide, and elite power brokers all collide in one satirical machine. The boldness is not just in the concept but in the willingness to push it through corporate, media, religious, and political spaces without softening the edge."
+        "reasoning": "The script takes a wildly specific satirical swing: AI layoffs, suicide markets, creator platforms, and political power brokers all collide in one escalating machine. The tonal audacity is real, especially in the way it treats public self-destruction as both media event and financial product."
       },
       "narrative_momentum_engagement": {
         "score": 8,
-        "reasoning": "The story keeps finding new accelerants: the viral post, the Harvard Club meltdown, the tour, the streamer deal, the presidential compound, and the final public collapse. The second half is especially propulsive because each escalation changes the market and the relationships at the same time."
+        "reasoning": "The story keeps finding new engines—viral post, corporate panic, market manipulation, live tour, streamer deal, Palm Beach climax—so it rarely sits still. A few stretches lean on dialogue-heavy explanation, but the escalation pattern is strong and the set pieces keep changing shape."
       },
       "resonant_originality": {
         "score": 9,
-        "reasoning": "This feels like a premise that could only exist now, but it is shaped with enough inevitability that the satire lands as more than novelty. The AI-layoff anxiety, prediction-market logic, and public self-branding all fuse into a single cultural pressure cooker."
+        "reasoning": "This is one of those rare premises that feels bizarre on first read and obvious in hindsight: a man monetizes the public's certainty about his death. The idea is fresh, but it also maps cleanly onto current anxieties about AI, attention markets, and the commodification of despair."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The script builds a specific ecosystem around tech layoffs, prediction markets, influencer culture, elite finance, and political theater, and each of those spaces has its own language and behavior. The Harvard Club, ShareStop, FutureDays, Nervy, and Meer-zu-See all feel like distinct social arenas rather than interchangeable backdrops."
+        "reasoning": "The world is unusually specific: Manhattan nightlife, tech-office culture, prediction markets, creator platforms, Palm Beach power circles, and Miami family life all have distinct texture. The script keeps generating story from institutions and status systems rather than just using them as backdrop."
       },
       "tonal_specificity": {
-        "score": 9,
-        "reasoning": "The tone is unmistakable: savage satire with deadpan corporate absurdity, sexual humiliation, and sudden bursts of operatic violence. The script can pivot from a smoke alarm gag to a suicide-market monologue to a presidential dinner without losing its identity."
+        "score": 8,
+        "reasoning": "The voice is sharply satirical, but it also has a sincere undercurrent of grief and class resentment that keeps the comedy from floating away. The tonal identity is distinctive because it can pivot from corporate absurdism to intimate humiliation to political grotesque without losing its center."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "Beneath the provocation, the script keeps revealing a deeper argument about labor, status, male friendship, and the way institutions monetize despair. The Binghamton material, the family references, and the final Carlos thread suggest a wider moral frame that rewards a second look."
+        "score": 7,
+        "reasoning": "Under the high-concept engine, there are real layers about obsolescence, masculinity, class betrayal, and the monetization of hopelessness. The script hints at more than it fully explores, which gives it depth without quite reaching the level of a truly inexhaustible character study."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 8,
-        "reasoning": "Jesse/Mikey/Andrea is a strong triangle with money, loyalty, and desire constantly in conflict, and the corporate/political ensemble adds fresh combinations at every turn. Several pairings generate their own energy — Jesse and Brenda, Jesse and Mario, Jesse and Kayla, Mikey and Andrea — which gives the script real ensemble lift."
+        "reasoning": "Jesse, Mikey, and Andrea form a volatile triangle that can generate scenes almost anywhere, and the corporate/power-world supporting cast adds additional friction. The ensemble is not sprawling, but the relationships are active enough that multiple pairings can carry material."
       }
     },
+    "lead_characters": [
+      {
+        "name": "Jesse Peterson",
+        "role_type": "Lead",
+        "demographics": "White male, mid-20s, laid-off data analyst, urban professional, likely college-educated.",
+        "hook": "A smart, self-mythologizing data analyst who turns his layoff into a public death countdown, Jesse is equal parts wounded, vain, funny, and opportunistic. He wants dignity, money, and control in a world that has already decided he is obsolete, and he keeps discovering that his worst impulses are also his best survival tools.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network or Jeremy Strong in Succession: a fast-talking, self-justifying pressure cooker role that lets an actor play humiliation, intelligence, and moral collapse in the same scene."
+      },
+      {
+        "name": "Mikey",
+        "role_type": "Supporting",
+        "demographics": "White male, late-20s, Jesse's best friend, employed, in a serious relationship.",
+        "hook": "Mikey is the grounded friend who keeps getting pulled into Jesse's chaos because loyalty and self-interest are hard to separate. He reads as the moral center until the script reveals how easily he can be seduced by the same money logic he condemns.",
+        "why_actor_wants_this": "This is the kind of role that gave Adam Driver in Marriage Story or Paul Dano in The Fabelmans a chance to play restraint under pressure; the appeal is the slow burn of a decent man discovering his own complicity."
+      },
+      {
+        "name": "Andrea",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-20s, Mikey's girlfriend/fiancée, ambitious, finance-minded, likely Ivy/MBA track.",
+        "hook": "Andrea is the sharpest strategist in the room, and she understands the market logic of Jesse's crisis faster than anyone else. She is emotionally attached to Mikey but intellectually drawn to the hustle, which makes her both indispensable and dangerous.",
+        "why_actor_wants_this": "This is the kind of role that let Sarah Snook in Succession or Jodie Comer in The Last Duel play intelligence as seduction; the showcase is a woman who can weaponize composure while still letting the cracks show."
+      },
+      {
+        "name": "Brenda McMahon",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, COO, corporate executive, polished, high-status professional.",
+        "hook": "Brenda is the corporate fixer who can speak compassion, legalese, and threat in the same breath. She is one of the few characters who can meet Jesse on his own rhetorical level, which makes her feel like both antagonist and mirror.",
+        "why_actor_wants_this": "This is strong Glenn Close in Damages or Patricia Clarkson in Sharp Objects territory: a controlled, high-IQ operator role that rewards precision, authority, and the ability to turn warmth into menace."
+      },
+      {
+        "name": "Devin Lee",
+        "role_type": "Supporting",
+        "demographics": "Asian male, 40s, CEO, tech founder, physically performative, status-conscious.",
+        "hook": "Devin is the kind of founder who has internalized the market's cruelty and now performs it back at everyone beneath him. His panic is comic, but the script also lets him register as a man who knows the machine is bigger than him and keeps pretending otherwise.",
+        "why_actor_wants_this": "This is the kind of role that gave Ken Watanabe in Godzilla or Steven Yeun in Beef a chance to play authority cracking under absurd pressure; the fun is in the collapse of polish."
+      },
+      {
+        "name": "Mario de Amor",
+        "role_type": "Supporting",
+        "demographics": "Male, early 40s, wealthy AI founder, elite, cosmopolitan, likely Latin American or Latino-coded by name and setting.",
+        "hook": "Mario is the script's philosophical villain: a billionaire technologist who treats human suffering as data and moral catastrophe as an experiment. He is articulate, theatrical, and terrifying because he believes he is serving history.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the prestige-villain lift of Michael Stuhlbarg in Dopesick or Giancarlo Esposito in Better Call Saul: elegant menace, ideological certainty, and big monologue territory."
+      },
+      {
+        "name": "Kayla",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s, stripper/sex worker, socially agile, financially motivated.",
+        "hook": "Kayla is more than a temptation figure; she is a hustler who recognizes Jesse's vulnerability and turns it into leverage. She can be tender, transactional, and predatory in the same scene, which keeps her from reading as a simple plot device.",
+        "why_actor_wants_this": "This is the kind of role that gave Sydney Sweeney in Reality or Juno Temple in Fargo a chance to play charm with a blade under it; the showcase is volatility plus control."
+      },
+      {
+        "name": "Chase",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, white, aggressive, working-class, later bodyguard role.",
+        "hook": "Chase starts as a nightclub antagonist and becomes an unlikely follower, which gives him a useful volatility. He is the kind of guy who can be dangerous, pathetic, and loyal depending on who is paying him.",
+        "why_actor_wants_this": "This is a strong character-actor part in the vein of Joe Cole in Gangs of London or Ben Foster in Hell or High Water: physical menace with a surprising emotional turn."
+      },
+      {
+        "name": "Carlos Machado",
+        "role_type": "Supporting",
+        "demographics": "Latino male, late teens/early 20s, Miami/Hialeah, family-bound, gun access, emotionally fragile.",
+        "hook": "Carlos is the script's second tragic mirror, a young man whose despair is triggered by Jesse's public performance and the surrounding culture of violence. His family scenes give the movie a grounded emotional counterweight to the satire.",
+        "why_actor_wants_this": "This is the kind of role that can launch a young actor the way Lucas Hedges in Manchester by the Sea or Xolo Maridueña in Blue Beetle did: raw vulnerability with a late-film emotional payoff."
+      },
+      {
+        "name": "President Bowman",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-40s, President of the United States, charismatic, vulgar, politically powerful.",
+        "hook": "President Bowman is a grotesque populist who treats Jesse's suicide spectacle as both entertainment and statecraft. He is outrageous, but the script makes him feel like a natural endpoint of the same attention economy Jesse is exploiting.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do full-throttle political satire in the mode of Bryan Cranston in Your Honor or Kelsey Grammer in Boss: swagger, threat, and absurdity."
+      },
+      {
+        "name": "Jeeves",
+        "role_type": "Supporting",
+        "demographics": "Humanoid robot, British-accented voice, non-human performance requirement.",
+        "hook": "Jeeves is the eerie, polite machine at the center of Mario's worldview, and its deadpan protocol makes the satire land harder. It is both comic relief and a symbol of the script's deepest anxiety about automation and obedience.",
+        "why_actor_wants_this": "This is motion-capture or voice-performance showcase territory in the vein of Andy Serkis's Gollum or Alan Tudyk's K-2SO: a non-human role with distinct personality and scene-stealing precision."
+      }
+    ],
     "production_reality": {
       "cast": {
-        "speaking_roles": 18,
-        "leads": 4,
+        "speaking_roles": 15,
+        "leads": 1,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Multiple 20s-40s roles with specific ethnic and age requirements",
-          "One humanoid robot performance/voice role",
-          "One Pope role and one President role with strong presence",
-          "Several scenes require attractive, club-ready, or executive-specific casting"
+          "One lead with heavy dialogue and emotional volatility",
+          "Multiple 20s-40s supporting roles with specific age and status texture",
+          "One humanoid robot performance requirement",
+          "Several roles with race/ethnicity specificity in the page text"
         ]
       },
       "locations": {
-        "distinct_count": 20,
-        "interior_exterior_ratio": "roughly 70/30 interior-heavy with several major exterior set pieces",
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 70/30",
         "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Manhattan condo, nightclub, strip club, Harvard Club, corporate HQ, podcast studio, LA nightclub, remote estate, Miami/Hialeah, beach, airport, and presidential compound-style location",
-          "Large crowd and security-controlled environments for the finale",
-          "Remote luxury estate and beach access for the Palm Beach material"
+          "Manhattan condo, nightclub, strip club, corporate HQ, Harvard Club, karaoke bar, Palm Beach estate, Miami/Hialeah family home, beach and pool-party locations",
+          "Remote luxury estate and large ballroom sequence",
+          "Multiple city-specific settings across New York, Los Angeles, Palm Beach, and Miami"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Prediction-market interfaces, broadcast inserts, social-media overlays, stock graphics, helicopter shots, crowd-scale chaos, and a humanoid robot reveal.",
+        "vfx_details": "News inserts, market graphics, livestream interfaces, helicopter coverage, crowd scale, and the humanoid robot Jeeves require compositing and interface work rather than heavy spectacle.",
         "stunts_level": "moderate",
-        "sfx_needs": "Gunfire, car crash, underwater action, bodily injury, and practical blood effects.",
+        "sfx_needs": "Gunfire, car crash, drowning sequence, overdose staging, blood effects, and practical destruction beats.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "\"Perfect Day\" by Lou Reed, \"Is That All There Is?\" by Peggy Lee, and \"Sail Away\" by Randy Newman are plot- and tone-critical needle drops."
+          "detail": "\"Perfect Day\" by Lou Reed"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Is That All There Is?\" by Peggy Lee"
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Sail Away\" by Randy Newman"
         },
         {
           "type": "brand",
-          "detail": "ShareStop, FutureDays, Nervy, FanUniverse, Beings, Pappy Van Winkle, Costco, Chase, Vanguard, Zillow, LinkedIn, Facebook, Instagram, NYU Stern, and Wall Street Journal/Fox Business/New York Times are prominently named."
+          "detail": "LinkedIn"
         },
         {
-          "type": "real_person",
-          "detail": "Pope Anthony I, President Bowman, and public-facing figures such as Mario de Amor and references to Marc, Parkland, and the President are used in a way that may invite clearance review depending on final naming and portrayal choices."
+          "type": "brand",
+          "detail": "Facebook"
+        },
+        {
+          "type": "brand",
+          "detail": "Instagram"
+        },
+        {
+          "type": "brand",
+          "detail": "Chase"
+        },
+        {
+          "type": "brand",
+          "detail": "Vanguard"
+        },
+        {
+          "type": "brand",
+          "detail": "Zillow"
+        },
+        {
+          "type": "brand",
+          "detail": "Costco"
+        },
+        {
+          "type": "brand",
+          "detail": "OnlyFans"
+        },
+        {
+          "type": "brand",
+          "detail": "FanUniverse"
+        },
+        {
+          "type": "brand",
+          "detail": "Nervy"
+        },
+        {
+          "type": "brand",
+          "detail": "FutureDays"
+        },
+        {
+          "type": "brand",
+          "detail": "ShareStop"
+        },
+        {
+          "type": "brand",
+          "detail": "Pappy Van Winkle"
+        },
+        {
+          "type": "brand",
+          "detail": "NYU Stern"
+        },
+        {
+          "type": "brand",
+          "detail": "Harvard Club"
+        },
+        {
+          "type": "brand",
+          "detail": "Wall Street Journal"
+        },
+        {
+          "type": "brand",
+          "detail": "Fox Business"
+        },
+        {
+          "type": "brand",
+          "detail": "The New York Times"
+        },
+        {
+          "type": "brand",
+          "detail": "CNN"
+        },
+        {
+          "type": "brand",
+          "detail": "Beings"
+        },
+        {
+          "type": "brand",
+          "detail": "ShareStop"
+        },
+        {
+          "type": "brand",
+          "detail": "Nervy"
+        },
+        {
+          "type": "brand",
+          "detail": "FutureDays"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium streaming or prestige theatrical satire",
-        "content_level": "Mature / explicit",
-        "series_engine_or_release_model": "Feature release with festival-to-platform upside; the hook is strong enough for a conversation-starting launch, but the content and scale point toward adult-skewing distribution."
+        "recommended_lane": "premium streaming or theatrical satire",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult satirical thriller with awards-leaning commercial upside and strong streamer positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary production, but the script spans Manhattan, Los Angeles, Palm Beach, and Miami, with nightclub, estate, ballroom, helicopter, crowd, and stunt-heavy sequences that keep it above a contained indie footprint."
       },
-      "risk_rubric": {
-        "cost": {
-          "level": "medium",
-          "note": "Mostly interior and dialogue-driven, but the script adds clubs, corporate spaces, a remote estate, Miami beach chaos, helicopters, crowd scenes, and a robot reveal."
+      "casting": {
+        "level": "high",
+        "note": "Jesse needs a lead who can carry rapid-fire satire, humiliation, manic escalation, and emotional collapse; Mario, Brenda, Andrea, Mikey, and President Bowman all need actors with sharp comic timing and authority."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script is built on a very specific satirical premise and a large number of named institutions, brands, and public-facing systems; the tonal balance between dark comedy, thriller escalation, and tragic ending is a major buyer conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Big Short",
+          "year": 2015,
+          "why_it_comps": "Shares the financial-satire DNA and the pleasure of turning a complex market mechanism into a propulsive, character-driven movie."
         },
-        "cast": {
-          "level": "medium",
-          "note": "The core is compact, but the script asks for several highly specific adult roles, a Pope, a President, a streamer-founder, and a humanoid robot presence."
+        {
+          "title": "The Social Network",
+          "year": 2010,
+          "why_it_comps": "Matches the tech-era anxiety, verbal velocity, and the sense that a single ambitious young man can become a cultural event."
         },
-        "location": {
-          "level": "high",
-          "note": "The story moves from Manhattan to Los Angeles to Miami and Palm Beach, with clubs, offices, a remote estate, a beach, and a presidential compound-style finale."
+        {
+          "title": "Nightcrawler",
+          "year": 2014,
+          "why_it_comps": "Like this script, it follows a morally elastic protagonist who monetizes catastrophe and keeps climbing as the world rewards him."
         },
-        "content": {
-          "level": "high",
-          "note": "Suicide, overdose, sex work, nudity, profanity, gun violence, and public self-harm discourse all sit at the center of the story."
+        {
+          "title": "Triangle of Sadness",
+          "year": 2022,
+          "why_it_comps": "Comps on satirical bite, class grotesque, and the way wealth and spectacle become the engine of the film."
         },
-        "rights": {
-          "level": "high",
-          "note": "The script uses many named brands, real media outlets, plot-critical songs, and public-figure-adjacent references that would need clearance review."
+        {
+          "title": "Don't Look Up",
+          "year": 2021,
+          "why_it_comps": "Shares the broad public-satire impulse and the sense of a society turning existential dread into entertainment."
         }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like sharp, topical satire about tech, money, and media collapse, especially viewers who respond to morally compromised antiheroes.",
+        "demographics": "25-54, slightly male-skewing but viable with women who like prestige satire; educated urban/suburban audience, streamer-native, awards-aware.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Multiple city settings, luxury interiors, nightclub/estate/ballroom sequences, crowd work, practical stunts, and licensed music push this above a lean indie while staying below studio-scale spectacle."
+      },
+      "lane_fit": {
+        "lane": "premium satirical thriller",
+        "types_of_buyers": [
+          "streamer originals team building adult prestige genre",
+          "indie financier/distributor looking for awards-leaning commercial satire",
+          "producer-packaged mid-budget feature buyer",
+          "director-driven genre label",
+          "actor-led prestige package buyer"
+        ],
+        "detail": "This sits in the lane where topicality, performance, and a high-concept hook can justify a mid-budget feature. The script has enough set-piece energy and social bite to attract buyers who want something smarter and stranger than a standard thriller."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the premise is built around one specific public countdown and one specific social-media/market event, not a reusable franchise engine."
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly marketable.",
-          "what_it_means": "This gives buyers a clean, high-concept hook that can be explained in one breath and sold on the page, the kind of premise that travels fast in a room. Adult genre buyers, prestige streamers, and producers looking for a sharp conversation piece will all recognize the commercial lane immediately.",
-          "evidence": "Jesse's layoff, the suicide note, and the FutureDays market all arrive early and become the story engine.",
+          "dimension_or_area": "A killer, instantly pitchable premise",
+          "what_it_means": "This gives the project a clean commercial elevator pitch and a strong trailer promise, which is exactly what helps a buyer understand the movie in one pass. It will attract executives, actors, and directors who want a concept that feels current without needing explanation.",
+          "evidence": "Jesse's layoff note, the suicide countdown, and the prediction market that prices his death at different odds.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Jesse is a showcase lead.",
-          "what_it_means": "The role offers an actor volatility, comic timing, humiliation, seduction, and genuine pathos in one package, which is exactly the kind of part that can define a career turn. Mid-career male leads who want a fearless, antiheroic centerpiece and directors who love performance-forward material will chase this.",
-          "evidence": "He swings from self-pity to bravado to tears to manic entrepreneurship, often in the same scene.",
+          "dimension_or_area": "Satire with real narrative propulsion",
+          "what_it_means": "The script isn't just making jokes about tech culture; it turns the satire into a thriller engine, which broadens the audience beyond pure comedy buyers. That makes it attractive to streamer dev teams and producers looking for elevated genre with topical bite.",
+          "evidence": "The Harvard Club meltdown, the tour, the Nervy deal, and the Palm Beach climax all escalate the same premise in new forms.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The satire has a real cultural target.",
-          "what_it_means": "The script is not just topical; it has a specific target in the AI-layoff economy, where labor anxiety, algorithmic power, and public spectacle all feed each other. Buyers looking for a sharp, now movie with built-in debate value will see a timely hook that can generate press and audience conversation.",
-          "evidence": "ShareStop, FutureDays, Nervy, and Beings all orbit the same AI-displacement panic.",
+          "dimension_or_area": "A lead role built for a breakout performance",
+          "what_it_means": "Jesse is the kind of part that can redefine an actor's lane because it requires speed, shame, charm, and volatility in constant collision. That is valuable to casting directors and managers because it can launch or reframe a career.",
+          "evidence": "Jesse's oscillation between self-pity, manipulation, and genuine panic in the Harvard Club, the podcast speech, and the final livestream.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world keeps widening without losing the engine.",
-          "what_it_means": "The story starts in a condo and expands into corporate boardrooms, nightlife, media, politics, and a presidential estate, which gives the film scale without abandoning its central conceit. That kind of controlled expansion is attractive to producers because it feels bigger than its footprint while staying anchored to one marketable idea.",
-          "evidence": "The layoff story moves from Jesse's apartment to ShareStop HQ, the Harvard Club, a podcast studio, LA, Miami, and Meer-zu-See.",
+          "dimension_or_area": "A triangle that keeps generating scenes",
+          "what_it_means": "Jesse, Mikey, and Andrea create a durable relationship engine that can carry dialogue scenes, betrayals, and reversals without needing constant external plot. That is a real packaging advantage because it gives the movie emotional structure beyond the headline premise.",
+          "evidence": "Their investment scheme, the wedding reveal, the hotel-room fallout, and the final breakup all come out of the same triangle.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble creates constant friction.",
-          "what_it_means": "Jesse, Mikey, and Andrea form a triangle where money, loyalty, sex, and ambition are always in play, which gives the film recurring dramatic and comic fuel. That makes the project attractive to actors and to buyers who want a relationship-driven engine inside a high-concept wrapper.",
-          "evidence": "The three of them repeatedly shift from friends to co-conspirators to romantic rivals to business partners.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The tone is unmistakable.",
-          "what_it_means": "This is the kind of material a director can brand immediately: savage, contemporary, and willing to let absurdity and dread sit in the same frame. That tonal identity is a moat, because it makes the script feel authored rather than assembled from genre parts.",
-          "evidence": "The script jumps from smoke-alarm slapstick to suicide-market monologues to presidential grotesquerie without losing its voice.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending has event-movie scale.",
-          "what_it_means": "The final movement turns the story into a public spectacle with mobs, livestreams, political power, and a bloody climax, which gives the film a memorable finish and trailer-friendly imagery. Buyers who want a feature that can spark debate and leave an audience talking will respond to that kind of escalation.",
-          "evidence": "The Palm Beach dinner, the staged death, the Miami chase, and the final ocean image all build to a public rupture.",
+          "dimension_or_area": "Worlds that feel like separate pressure chambers",
+          "what_it_means": "The script moves through tech, nightlife, finance, politics, and family life in a way that makes each setting feel like a different social system. That gives the project texture and makes it easier to market as a bigger cultural portrait rather than a single-location gimmick.",
+          "evidence": "ShareStop HQ, the Harvard Club, Palm Beach, Hialeah, and the Miami family home all produce different kinds of conflict.",
           "source": "script"
         }
       ],
-      "headline": "THE LAYOFF is a savage, high-concept satire about a fired Manhattan analyst who turns his own suicide into a market and accidentally becomes a national obsession. It has the kind of premise that can sell in a sentence, the kind of lead role actors chase, and the kind of escalating world that lets a producer think bigger than the budget footprint."
+      "headline": "This is a sharp, high-concept satirical thriller with a lead role that can launch an actor and a premise that sells itself in one sentence. The script also has enough production texture and relationship engine to justify a mid-budget, prestige-leaning package for a streamer or specialty theatrical buyer."
     },
-    "lead_characters": [
-      {
-        "name": "JESSE PETERSON",
-        "role_type": "Lead",
-        "demographics": "Male · mid-20s · white",
-        "hook": "Jesse is a laid-off Manhattan data analyst with a wounded ego, a performer’s instinct, and a self-destructive streak he keeps trying to monetize. He is funny, needy, vain, and strangely articulate about his own collapse, which makes him both contemptible and magnetic in the same breath.",
-        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in The Social Network crossed with Joaquin Phoenix in Joker, but with the added engine of a man who can turn humiliation into strategy. Actors who want a role that lets them pivot between brittle comedy, public breakdown, and antihero charisma will chase this hard."
-      },
-      {
-        "name": "MIKEY",
-        "role_type": "Lead",
-        "demographics": "Male · late-20s · white",
-        "hook": "Mikey is Jesse's best friend and the story's moral ballast, but he is not passive; he is practical, jealous, funny, and increasingly implicated in the scheme. He reads like the guy who can still pretend this is all a joke until the money and the relationship both become real.",
-        "why_actor_wants_this": "This is the friend-role territory of Jonah Hill in The Wolf of Wall Street or Jesse Plemons in Game Night, where the actor gets to play loyalty, panic, and complicity without becoming a sidekick. It gives a performer a strong emotional counterweight to the lead and a chance to land both comedy and betrayal."
-      },
-      {
-        "name": "ANDREA",
-        "role_type": "Lead",
-        "demographics": "Female · mid-20s · white",
-        "hook": "Andrea is Mikey's girlfriend and the sharpest strategist in the room, with an MBA brain, a social climber's eye, and a willingness to treat catastrophe like a spreadsheet. She is emotionally controlled until she isn't, and that tension makes her feel like the person most likely to outlast everyone else in the room.",
-        "why_actor_wants_this": "This is the kind of role that gives an actress the cool intelligence of Rosamund Pike in Gone Girl with the transactional edge of Sarah Snook in Succession. It offers a performance lane where calculation, desire, and moral compromise all stay visible at once."
-      },
-      {
-        "name": "BRENDA MCMCAHON",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s · Asian",
-        "hook": "Brenda is ShareStop's COO: polished, ruthless, and always one step ahead of the room until the room turns on her. She has executive calm, a hard-edged survival instinct, and just enough humanity to make her feel like she could either save the company or bury it.",
-        "why_actor_wants_this": "This is the corporate power-player territory of Sarah Paulson in Carol or Patricia Clarkson in Sharp Objects, where the actor gets to play authority, restraint, and private panic under a perfect surface. It is a great part for an actress who can make boardroom control feel like a form of combat."
-      },
-      {
-        "name": "DEVIN LEE",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s · Asian",
-        "hook": "Devin is the CEO who wants to sound like a philosopher while behaving like a panicked operator, and that contradiction is the joke and the tragedy. He is vain, performative, and deeply dependent on the machinery he claims to understand.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor play prestige-corporate absurdity in the vein of Jeremy Strong in Succession, but with more overt comic humiliation. It gives a performer a chance to make executive self-mythology feel both ridiculous and dangerous."
-      },
-      {
-        "name": "MARIO DE AMOR",
-        "role_type": "Supporting",
-        "demographics": "Male · early 40s · curly-haired",
-        "hook": "Mario is the script's grand theorist: a billionaire AI figure who speaks in moral philosophy, controls the room through intellect, and treats catastrophe as an experiment. He is elegant, eerie, and convinced that history is something he can model.",
-        "why_actor_wants_this": "This is the showcase space of Michael Stuhlbarg in A Serious Man or Mark Rylance in Bridge of Spies, where intelligence itself becomes the performance. Actors who want to play a man whose calm is more unsettling than rage will be drawn to it."
-      },
-      {
-        "name": "KAYLA",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s · lithe",
-        "hook": "Kayla is a stripper who understands performance, leverage, and self-invention better than almost anyone else in the film. She is flirtatious, strategic, and emotionally unreadable in a way that keeps her from ever feeling like a simple plot device.",
-        "why_actor_wants_this": "This is the kind of role that gives an actress the layered seduction and survival energy of Juno Temple in Fargo or Sydney Sweeney in Reality, where charm and calculation are always in the same frame. It offers a sharp, scene-stealing part with real control over the room."
-      },
-      {
-        "name": "CHASE / ROID RAGER",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s · white · heavily built",
-        "hook": "Chase begins as Jesse's nightclub antagonist and becomes a bodyguard, which makes him feel like a walking joke about masculinity, loyalty, and online volatility. He is impulsive, physical, and weirdly sincere, which gives him a surprising amount of texture for a role that could have been a one-note bruiser.",
-        "why_actor_wants_this": "This is the kind of part that gives an actor the breakout-supporting energy of Dave Bautista in Blade Runner 2049 or Stephen Root in Barry, where physical presence and emotional oddity collide. It is a great role for someone who can make menace, comedy, and tenderness coexist."
-      },
-      {
-        "name": "JASON GOODMAN",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s · white · bald",
-        "hook": "Jason is the CFO who looks like the guy who always knows where the bodies are buried and still somehow thinks he can laugh his way out of it. He is cheap, opportunistic, and increasingly unmoored as the market turns on him.",
-        "why_actor_wants_this": "This is the kind of corporate-fallout role that gives an actor the comic degradation of Paul Giamatti in Billions with the panic of a man watching the floor disappear. It is a juicy supporting part for someone who can make greed feel both pathetic and dangerous."
-      },
-      {
-        "name": "TALKI COCKBURN",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s",
-        "hook": "Talki is the young CEO who sits inside the AI ecosystem like a nervous intermediary, always trying to sound like he belongs in the room. He is more function than personality on the page, but his presence helps define the script's tech-world hierarchy.",
-        "why_actor_wants_this": "This is the kind of role that gives a younger actor a clean prestige-tech slot in the vein of the junior operators in The Big Short or Industry. It is a useful part for someone who can play polished competence with a hint of panic."
-      },
-      {
-        "name": "POPE ANTHONY I",
-        "role_type": "Supporting",
-        "demographics": "Male · 70s · white · American",
-        "hook": "Pope Anthony is a worldly, skeptical religious authority who can spar with billionaires without losing his composure. He gives the film a moral counterweight, but he also has enough wit and vanity to feel like a character rather than a symbol.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas-and-wryness lane of Anthony Hopkins in The Two Popes or Ralph Fiennes in Conclave. It offers a rare chance to play authority, theology, and dry humor in the same frame."
-      },
-      {
-        "name": "JEEVES",
-        "role_type": "Supporting",
-        "demographics": "Male-presenting humanoid robot · 6' tall · British-accented voice",
-        "hook": "Jeeves is the humanoid servant built to be both elegant and uncanny, and the script uses him as a symbol of AI domesticated into etiquette. He is eerie because he is polite, and funny because he is too polite to be human.",
-        "why_actor_wants_this": "This is the kind of performance-capture or voice role that gives an actor the deadpan precision of Alan Tudyk in a robot part or the formal menace of HAL-like AI characters. It is a memorable showcase for someone who can make artificial intelligence feel almost aristocratic."
-      },
-      {
-        "name": "PRESIDENT BOWMAN",
-        "role_type": "Supporting",
-        "demographics": "Male · mid-40s · bearded",
-        "hook": "President Bowman is a swaggering, obscene, hyper-confident head of state who treats everything as theater and everyone as audience. He is grotesque, funny, and terrifying in the same scene, which makes him one of the film's biggest tonal engines.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the unhinged political-showman energy of Bryan Cranston in Your Honor or Peter Dinklage in a power role with a satirical edge. It is a big, scene-devouring part for someone who can make authority feel like performance art."
-      },
-      {
-        "name": "DRAUPADI BOWMAN",
-        "role_type": "Supporting",
-        "demographics": "Female · mid-40s · Indian American",
-        "hook": "Draupadi is the First Lady with enough volatility to detonate the room and enough presence to make the palace feel unstable. She is a late-film force of chaos, but she arrives with a fully legible emotional temperature.",
-        "why_actor_wants_this": "This is the kind of late-entry prestige role that gives an actress the combustible energy of a political spouse in a sharp satire, with the volatility of a scene-stealing turn in a Coen-adjacent ensemble. It offers a compact but memorable burst of power."
-      },
-      {
-        "name": "WHITE FOX",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s · white · tattooed",
-        "hook": "White Fox is a celebrity streamer with a body built for spectacle and a personality built for attention. He is shameless, sexually fluid, and completely at home in the culture Jesse is trying to exploit.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the outrageous media-persona energy of a reality-TV villain or a hyper-online influencer in a prestige satire. It is a flashy, modern supporting part with instant scene value."
-      },
-      {
-        "name": "CARLOS MACHADO",
-        "role_type": "Supporting",
-        "demographics": "Male · teenage to early 20s · Latino",
-        "hook": "Carlos is the film's final counterpoint: a young man from Hialeah whose despair is quieter, more intimate, and rooted in family rather than spectacle. He broadens the movie's emotional and social frame without losing the story's dark momentum.",
-        "why_actor_wants_this": "This is the kind of role that gives a young actor the emotional gravity of a late-film reveal in a prestige drama, where the performance lands because it changes the meaning of the whole story. It offers a grounded, heartbreaking counterweight to the film's larger satire."
-      }
-    ],
-    "package_angles": {
-      "director_appeal": {
-        "hook": "A director who wants to make a savage, contemporary satire with real propulsion and a final-act scale-up.",
-        "fit_profile": "Established indie or prestige-leaning directors with at least one feature under their belt, especially those who like performance-forward material, tonal whiplash, and social satire with a hard edge. The material rewards filmmakers who can stage dialogue as combat, keep a high-concept engine legible, and land a finale that feels both outrageous and inevitable.",
-        "detail": "The script gives a director a rare chance to move from intimate humiliation to corporate farce to political grotesquerie without changing the movie's identity. It is especially attractive to filmmakers who can make actors feel dangerous inside controlled spaces and who know how to turn a roomful of people into a pressure cooker."
-      },
-      "buyer_appeal": {
-        "tier": "$5-15M feature",
-        "lane": "Prestige satire / adult genre / streamer conversation piece",
-        "detail": "The core engine is one lead performance and a compact central triangle, so a buyer can package it around an actor rather than a giant ensemble. The AI-layoff premise, prediction-market hook, and contemporary media ecosystem give it a timely hook that can travel on streaming and generate press without requiring franchise scale."
-      }
+    "issues": {
+      "items": [
+        {
+          "area": "The ending asks for a very specific tonal buy.",
+          "detail": "The final movement goes from satire to blood-soaked political grotesque to near-mythic escape, and that is a real buyer conversation. If the audience is not already aligned with the script's heightened register, the last act can read as a hard tonal pivot rather than an inevitable escalation.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Jesse is concept-strong before he is fully human.",
+          "detail": "The script gives him a brilliant engine, but much of his identity is expressed through behavior, rhetoric, and market logic rather than interiority. That is fine for a high-concept thriller, but it narrows the range of actors and makes the emotional landing more conditional on performance.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The music and brand stack needs real clearance work.",
+          "detail": "\"Perfect Day,\" \"Is That All There Is?,\" and \"Sail Away\" are not decorative references; they are structurally important to the movie's emotional architecture. On top of that, the script leans heavily on named platforms and institutions like LinkedIn, Instagram, Facebook, Nervy, FutureDays, and ShareStop, which means business affairs will want a careful pass.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The production footprint is wider than the premise suggests.",
+          "detail": "The movie moves from Manhattan to Los Angeles to Palm Beach to Miami, with clubs, estates, ballrooms, a helicopter, and crowd scenes. That is still manageable for a feature, but it is not a contained one-location buy, and the scope will matter in budget conversations.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The satire depends on a lot of named systems.",
+          "detail": "ShareStop, Beings, Nervy, FutureDays, the President, the Pope, and the prediction-market apparatus all do heavy lifting in the premise. That density is part of the appeal, but it also means the script is less plug-and-play than a cleaner genre piece and will require a buyer comfortable with topical specificity.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The biggest friction is not the premise; it's the degree of tonal and packaging specificity the premise demands. This is a sharp, ambitious feature, but the buyer has to be comfortable with a very particular satirical register, a wide production footprint, and a lead role that lives or dies on the actor."
     },
-    "considerations": [
-      {
-        "area": "The final act opens into a very large canvas.",
-        "detail": "The Palm Beach / Miami / presidential-compound stretch gives the movie a big finish, but it also asks the production to carry multiple crowd scenes, security environments, and a public-chaos climax. One lever would be to keep the same escalation while collapsing a few of the late locations into a single controlled luxury setting, which would protect the momentum and simplify the shoot.",
-        "is_primary_lever": true,
-        "source": "production"
-      },
-      {
-        "area": "The script leans hard on named music.",
-        "detail": "The Lou Reed, Peggy Lee, and Randy Newman cues are doing real tonal work, so a music plan will matter early. A next pass could preserve the emotional function of those moments while keeping alternate needle-drop options in mind, which would protect the edit and the budget.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The supporting world is rich enough to sharpen further.",
-        "detail": "The corporate and media ecosystem is vivid, but a few supporting figures currently function mainly as pressure valves for Jesse's arc. One direction would be to let one or two of them carry a more independent agenda in the middle stretch, which would deepen the ensemble engine without changing the premise.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The Jesse/Andrea/Mikey triangle is the story's strongest relational engine.",
-        "detail": "Their money, sex, and loyalty dynamics are already doing a lot of work, and the late-film betrayal lands because the triangle has been active all along. A next pass could foreground a few more scenes where Andrea and Mikey make decisions without Jesse in the room, which would make the eventual fracture hit even harder.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The Carlos thread broadens the movie's moral frame.",
-        "detail": "The Hialeah material gives the film a second emotional register and a wider social horizon, which is valuable because it keeps the story from living only inside elite satire. If the goal is to preserve that resonance while tightening runtime, the version of the script where Carlos' material is even more concentrated around the family/piano/funeral axis would keep the emotional punch and reduce sprawl.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The late-stage political machinery is very specific.",
-        "detail": "The President, Vice President, Pope, and AI-broker dinner create a memorable escalation, but they also introduce a lot of named power players in a short span. A future pass could clarify which of those figures are essential to the climax and which can be combined, which would keep the finale crisp while preserving the satire.",
-        "is_primary_lever": false,
-        "source": "both"
-      }
-    ],
     "craft_note": ""
   },
-  "weightedScore": 82.7,
+  "weightedScore": 80.7,
   "tier": "Optionable",
-  "inputTokens": 89308,
-  "outputTokens": 11513,
-  "cost": 0.1187895,
+  "inputTokens": 47059,
+  "outputTokens": 5678,
+  "cost": 0.060845250000000003,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T04:51:45.114Z",
+  "submission_id": "8df85a0e-ba94-45e0-b649-6b04b1388076",
+  "eval_id": "bd0cc03f-af23-47b7-bcbb-c4c70c89bcbf",
+  "title": "Vineyard Haven",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Scott Morgan",
+      "role_type": "Lead",
+      "demographics": "Male, 20s, white, Vineyard-born local, aspiring screenwriter"
+    },
+    {
+      "name": "Ben Carter",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, white, wealthy old-money heir, Vineyard-connected producer type"
+    },
+    {
+      "name": "Rebecca Harding",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, white, working-class background, politically conservative, emotionally volatile"
+    },
+    {
+      "name": "Kate",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, Black/Jewish, British-accented, Ben’s partner"
+    },
+    {
+      "name": "Mom",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, white, Scott’s mother, working professional"
+    },
+    {
+      "name": "Todd Straite",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, congressman, polished political operator"
+    },
+    {
+      "name": "George",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, white, island builder/contractor"
+    },
+    {
+      "name": "Rebecca Harding's Mother",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, working-class, off-island, unseen but referenced"
+    }
+  ],
+  "positioning_hook": "A frustrated Vineyard screenwriter gets pulled into a rich family’s off-island mess, and the job turns into a crash course in class, grief, and whether he can finally leave home.",
+  "cost_usd": 0.0510135,
+  "input_tokens": 38600,
+  "output_tokens": 4903,
+  "status": "wrote:leads_ok"
+}
