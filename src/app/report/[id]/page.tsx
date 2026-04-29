@@ -232,13 +232,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const topCardHasEdits = hasEdits(editedFields)
 
   let ownerIsSubscribed = false
+  let ownerIsProducer = false
   if (submission.user_id) {
     const { data: ownerProfile } = await serviceClient
       .from('profiles')
-      .select('subscription_status')
+      .select('subscription_status, account_type')
       .eq('id', submission.user_id)
       .single()
     ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
+    ownerIsProducer = ownerProfile?.account_type === 'producer'
   }
 
   let viewerIsSubscribed = false
@@ -272,8 +274,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // posture before they upgrade — feature-discovery, not a paywall wall.
   const privacyControlId: string | undefined = isOwner ? submission.id : undefined
 
+  // The free-eval paywall lock is a writer-only mechanic. Producer
+  // accounts submit unlimited private scripts via /partner/submit and
+  // must always see the full report on their own work — they're not
+  // running through the writer trial → Pro conversion funnel. Anuj
+  // 2026-04-30: bypass the lock entirely for producer-owned scripts.
   let lockedAfterFreeEval = false
-  if (isOwner && !ownerIsSubscribed && submission.user_id && !isAdmin) {
+  if (
+    isOwner &&
+    !ownerIsSubscribed &&
+    !ownerIsProducer &&
+    submission.user_id &&
+    !isAdmin
+  ) {
     const { data: firstSub } = await serviceClient
       .from('script_submissions')
       .select('id')

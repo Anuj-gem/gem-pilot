@@ -5,11 +5,22 @@
 // → /api/score-submission pair the writer flow uses; the score route
 // detects the producer-owned case and skips matching + auto-publish.
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Upload, FileText, Lock } from 'lucide-react'
 
 type DeclaredFormat = 'Feature film' | 'Series'
+
+// Stage labels rotated through during the ~45s scoring phase. They
+// match the order GPT actually works through (read → score → notes).
+const SCORING_STAGES = [
+  'Reading the screenplay…',
+  'Sizing characters and cast…',
+  'Mapping production reality…',
+  'Sketching packaging and audience…',
+  'Weighing the development priorities…',
+  'Writing your report…',
+] as const
 
 export function ProducerSubmitForm() {
   const router = useRouter()
@@ -20,21 +31,75 @@ export function ProducerSubmitForm() {
   const [busy, setBusy] = useState(false)
   const [phase, setPhase] = useState<'idle' | 'uploading' | 'scoring'>('idle')
   const [error, setError] = useState<string | null>(null)
+  const [dragActive, setDragActive] = useState(false)
+  const [stageIndex, setStageIndex] = useState(0)
+  const [progressPct, setProgressPct] = useState(0)
+
+  // Stage text + bar animation while the score endpoint is grinding.
+  // Rotates every ~7s; bar fills from 0→95 over ~50s and the API
+  // response snaps it to 100 right before the redirect. Anuj
+  // 2026-04-30.
+  useEffect(() => {
+    if (phase !== 'scoring') {
+      setStageIndex(0)
+      setProgressPct(0)
+      return
+    }
+    setStageIndex(0)
+    setProgressPct(8)
+    const stageInterval = window.setInterval(() => {
+      setStageIndex((i) => Math.min(i + 1, SCORING_STAGES.length - 1))
+    }, 7500)
+    const fillInterval = window.setInterval(() => {
+      setProgressPct((p) => (p < 95 ? p + 1.2 : p))
+    }, 600)
+    return () => {
+      window.clearInterval(stageInterval)
+      window.clearInterval(fillInterval)
+    }
+  }, [phase])
 
   function pickFile() {
     fileInputRef.current?.click()
   }
 
+  function acceptFile(f: File) {
+    if (f.type && f.type !== 'application/pdf' && !f.name.toLowerCase().endsWith('.pdf')) {
+      setError('That file isn’t a PDF. Export from Final Draft, WriterSolo, or Highland.')
+      return
+    }
+    setError(null)
+    setFile(f)
+    if (!title.trim()) {
+      const base = f.name.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ').trim()
+      setTitle(base.slice(0, 120))
+    }
+  }
+
   function onFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0] ?? null
-    if (f) {
-      setFile(f)
-      // Auto-populate title from filename if blank.
-      if (!title.trim()) {
-        const base = f.name.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ').trim()
-        setTitle(base.slice(0, 120))
-      }
-    }
+    if (f) acceptFile(f)
+  }
+
+  function onDragOver(e: React.DragEvent<HTMLButtonElement>) {
+    e.preventDefault()
+    e.stopPropagation()
+    if (!busy) setDragActive(true)
+  }
+
+  function onDragLeave(e: React.DragEvent<HTMLButtonElement>) {
+    e.preventDefault()
+    e.stopPropagation()
+    setDragActive(false)
+  }
+
+  function onDrop(e: React.DragEvent<HTMLButtonElement>) {
+    e.preventDefault()
+    e.stopPropagation()
+    setDragActive(false)
+    if (busy) return
+    const dropped = e.dataTransfer.files?.[0]
+    if (dropped) acceptFile(dropped)
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -79,6 +144,10 @@ export function ProducerSubmitForm() {
           scoreData?.error ?? `Scoring failed (${scoreRes.status}).`
         )
       }
+      // Snap the bar to 100 so the producer sees a full track for a
+      // beat before the redirect — feels finished instead of cut off.
+      setProgressPct(100)
+      await new Promise((r) => setTimeout(r, 250))
       router.push(`/report/${scoreData.evaluation_id}`)
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -135,13 +204,23 @@ export function ProducerSubmitForm() {
       <button
         type="button"
         onClick={pickFile}
+        onDragOver={onDragOver}
+        onDragEnter={onDragOver}
+        onDragLeave={onDragLeave}
+        onDrop={onDrop}
         disabled={busy}
-        className="w-full rounded-xl px-4 py-4 mb-5 transition-colors flex items-center gap-3 text-left"
+        className="w-full rounded-xl px-4 py-5 mb-5 transition-all flex items-center gap-3 text-left"
         style={{
-          background: file ? 'rgba(124,58,237,0.05)' : 'var(--gem-gray-900)',
-          border: file
-            ? '1px solid rgba(124,58,237,0.25)'
-            : '1px dashed var(--gem-gray-700)',
+          background: dragActive
+            ? 'rgba(124,58,237,0.10)'
+            : file
+              ? 'rgba(124,58,237,0.05)'
+              : 'var(--gem-gray-900)',
+          border: dragActive
+            ? '2px dashed var(--gem-accent)'
+            : file
+              ? '1px solid rgba(124,58,237,0.25)'
+              : '1px dashed var(--gem-gray-700)',
           opacity: busy ? 0.6 : 1,
           cursor: busy ? 'not-allowed' : 'pointer',
         }}
@@ -153,7 +232,11 @@ export function ProducerSubmitForm() {
         )}
         <div className="min-w-0 flex-1">
           <p className="text-[14.5px] font-semibold text-[var(--gem-gray-50)] m-0 truncate">
-            {file ? file.name : 'Pick a PDF from your computer'}
+            {dragActive
+              ? 'Drop the PDF to upload'
+              : file
+                ? file.name
+                : 'Drag a PDF here, or click to pick one'}
           </p>
           <p className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-0.5">
             {file
@@ -219,29 +302,89 @@ export function ProducerSubmitForm() {
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={busy || !file || !title.trim()}
-        className="w-full py-3 rounded-xl text-[15px] font-semibold transition-opacity"
-        style={{
-          background: 'var(--gem-accent)',
-          color: '#fff',
-          opacity: busy || !file || !title.trim() ? 0.6 : 1,
-          cursor: busy || !file || !title.trim() ? 'not-allowed' : 'pointer',
-          boxShadow: '0 4px 14px rgba(124,58,237,0.25)',
-        }}
-      >
-        {phase === 'uploading'
-          ? 'Uploading…'
-          : phase === 'scoring'
-            ? 'Reading the script… ~30s'
-            : 'Submit for a private GEM read'}
-      </button>
+      {phase === 'scoring' ? (
+        <ScoringProgress
+          stageLabel={SCORING_STAGES[stageIndex]}
+          percent={progressPct}
+        />
+      ) : (
+        <button
+          type="submit"
+          disabled={busy || !file || !title.trim()}
+          className="w-full py-3 rounded-xl text-[15px] font-semibold transition-opacity"
+          style={{
+            background: 'var(--gem-accent)',
+            color: '#fff',
+            opacity: busy || !file || !title.trim() ? 0.6 : 1,
+            cursor: busy || !file || !title.trim() ? 'not-allowed' : 'pointer',
+            boxShadow: '0 4px 14px rgba(124,58,237,0.25)',
+          }}
+        >
+          {phase === 'uploading' ? 'Uploading…' : 'Submit for a private GEM read'}
+        </button>
+      )}
 
       <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-4 leading-[1.5] text-center">
         Submit as many as you want — there's no cap on industry-partner
         accounts.
       </p>
     </form>
+  )
+}
+
+function ScoringProgress({
+  stageLabel,
+  percent,
+}: {
+  stageLabel: string
+  percent: number
+}) {
+  const pct = Math.max(0, Math.min(100, percent))
+  return (
+    <div
+      className="rounded-xl p-5"
+      style={{
+        background: 'rgba(124,58,237,0.05)',
+        border: '1px solid rgba(124,58,237,0.20)',
+      }}
+    >
+      <div className="flex items-baseline justify-between gap-3 mb-2.5">
+        <p
+          className="text-[14px] font-semibold m-0"
+          style={{ color: 'var(--gem-gray-50)' }}
+        >
+          {stageLabel}
+        </p>
+        <span
+          className="text-[12.5px] tabular-nums font-semibold"
+          style={{ color: 'var(--gem-accent)' }}
+        >
+          {Math.round(pct)}%
+        </span>
+      </div>
+      <div
+        className="rounded-full overflow-hidden"
+        style={{
+          background: 'var(--gem-gray-900)',
+          border: '1px solid var(--gem-gray-700)',
+          height: 8,
+        }}
+      >
+        <div
+          style={{
+            width: `${pct}%`,
+            height: '100%',
+            background: 'var(--gem-accent)',
+            transition: 'width 0.6s ease-out',
+          }}
+        />
+      </div>
+      <p
+        className="text-[11.5px] m-0 mt-2.5 text-center"
+        style={{ color: 'var(--gem-gray-500)' }}
+      >
+        Hang tight — full read takes about 45 seconds.
+      </p>
+    </div>
   )
 }
