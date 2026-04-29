@@ -33,28 +33,45 @@ directly through GEM.
   Stats and inbound will be modest at first — they grow as more
   partners come on.
 
+<div class="gem-blog-producer-action">
+  <p class="gem-blog-mock-title" style="margin-bottom:14px">Producer view · your script</p>
+  <p style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:var(--gem-gray-50);margin:0 0 4px;line-height:1.2">Untitled mob therapy pilot</p>
+  <p style="font-size:12.5px;color:var(--gem-gray-500);margin:0 0 14px">Series · 1 hr drama · By you</p>
+  <div class="gem-blog-action-row">
+    <button type="button" class="gem-blog-btn gem-blog-btn--interested">
+      <span class="gem-blog-btn__icon">✓</span>
+      Interested
+    </button>
+    <button type="button" class="gem-blog-btn gem-blog-btn--pass">
+      <span class="gem-blog-btn__icon">×</span>
+      Pass
+    </button>
+    <button type="button" class="gem-blog-btn gem-blog-btn--intro">
+      <span class="gem-blog-btn__icon">✉</span>
+      Send intro
+    </button>
+  </div>
+  <p style="font-size:11.5px;color:var(--gem-gray-500);margin:10px 0 0;text-align:center;font-style:italic">
+    Real buttons in the producer's app. One tap = you hear from them.
+  </p>
+</div>
+
 <div class="gem-blog-mock">
-  <p class="gem-blog-mock-title">Producer feed · drama lane</p>
-  <div class="gem-blog-row">
-    <div>
-      <p class="gem-blog-row__title">Untitled mob therapy pilot <span class="gem-blog-pill gem-blog-pill--new">New</span></p>
-      <p class="gem-blog-row__meta">Series · 1 hr drama · <span style="color:#15803d">5 interested</span> · <span style="color:var(--gem-gray-500)">1 passed</span></p>
-    </div>
-    <span class="gem-blog-row__score gem-blog-row__score--quiet">78</span>
+  <p class="gem-blog-mock-title">Send intro to the writer</p>
+  <p style="font-size:13px;color:var(--gem-gray-400);margin:0 0 10px;line-height:1.5">
+    Add a short note (optional). We'll send your intro by email — the writer
+    can hit Reply to land in your inbox directly.
+  </p>
+  <div style="background:var(--gem-gray-900);border:1px solid var(--gem-gray-700);border-radius:8px;padding:10px 12px;margin:0 0 12px;font-size:13px;color:var(--gem-gray-200);line-height:1.5">
+    Loved the Tony voice and the family/crew triangulation — exactly the lane
+    I'm scouting this quarter. Free for fifteen minutes this week?
   </div>
-  <div class="gem-blog-row">
-    <div>
-      <p class="gem-blog-row__title">The Northern Line</p>
-      <p class="gem-blog-row__meta">Feature · Action thriller · <span style="color:#15803d">3 interested</span> · <span style="color:var(--gem-gray-500)">2 passed</span></p>
-    </div>
-    <span class="gem-blog-row__score gem-blog-row__score--quiet">74</span>
-  </div>
-  <div class="gem-blog-row">
-    <div>
-      <p class="gem-blog-row__title">Glass Cathedral</p>
-      <p class="gem-blog-row__meta">Series · Workplace comedy · <span style="color:#15803d">2 interested</span> · <span style="color:var(--gem-gray-500)">4 passed</span></p>
-    </div>
-    <span class="gem-blog-row__score gem-blog-row__score--quiet">71</span>
+  <div style="display:flex;justify-content:flex-end;gap:8px;align-items:center">
+    <span style="font-size:11px;color:var(--gem-gray-500)">183 / 2000</span>
+    <button type="button" class="gem-blog-btn gem-blog-btn--intro" style="margin:0">
+      <span class="gem-blog-btn__icon">→</span>
+      Send intro
+    </button>
   </div>
 </div>
 

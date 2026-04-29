@@ -455,6 +455,69 @@ input::placeholder, textarea::placeholder {
   padding: 2px 7px;
   font-weight: 600;
 }
+
+/* Producer action graphic — mirrors the real Interested/Pass/Send-intro
+   buttons from src/components/partner/match-actions.tsx and
+   producer-intro-button.tsx so writers see the literal moment a
+   producer hits these buttons in the app. */
+.gem-prose .gem-blog-producer-action {
+  background: #fff;
+  border: 1px solid var(--gem-gray-700);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 1.5em 0;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+}
+.gem-prose .gem-blog-action-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+}
+.gem-prose .gem-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: default;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+.gem-prose .gem-blog-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+.gem-prose .gem-blog-btn--interested {
+  background: var(--gem-accent);
+  color: #fff;
+  border-color: var(--gem-accent);
+  box-shadow: 0 4px 12px rgba(124,58,237,0.30);
+}
+.gem-prose .gem-blog-btn--pass {
+  background: #fff;
+  color: var(--gem-gray-300);
+  border-color: var(--gem-gray-700);
+}
+.gem-prose .gem-blog-btn--intro {
+  background: var(--gem-accent);
+  color: #fff;
+  border-color: var(--gem-accent);
+  margin-left: auto;
+  box-shadow: 0 4px 12px rgba(124,58,237,0.30);
+}
+@media (max-width: 640px) {
+  .gem-prose .gem-blog-btn--intro { margin-left: 0; width: 100%; justify-content: center; }
+}
 .gem-prose .gem-blog-tile {
   background: var(--gem-gray-900);
   border: 1px solid var(--gem-gray-700);
