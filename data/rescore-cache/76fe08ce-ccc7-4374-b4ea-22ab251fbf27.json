@@ -1,0 +1,360 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Romance"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "coming-of-age",
+        "family-dynamics",
+        "grief",
+        "motherhood",
+        "fatherhood",
+        "lake-town",
+        "disabled-sibling"
+      ]
+    },
+    "positioning_hook": "A restless 16-year-old hides in her grandmother’s trunk for a summer escape, then gets forced to grow up fast when first love, family collapse, and her disabled sister’s absence collide.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional lane is clear and accessible: a teenage girl, a fraught family summer, and a first-love thread that gives the story a commercial entry point. The appeal is narrower than a broad four-quadrant feature because the material is intimate, female-driven, and heavily dependent on character connection rather than plot escalation."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The trunk escape is an immediate, easy-to-pitch engine, and the summer-at-the-cottage setup lands quickly. The hook is strong, though the script’s real premise becomes less about the concealment and more about the emotional education once Tilly arrives at the lake."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Tilly is vivid, contradictory, and playable: sarcastic, lonely, horny, defensive, and unexpectedly tender with Janny and the bunnies. Emma is also a strong counterweight, but the supporting cast is more functional than deeply surprising, so the character engine is solid rather than expansive."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script’s boldness lives in its specific domestic world: disability care, trunk hiding, menstruation, tampons, and lake-town adolescence are all folded into one lived-in summer. The execution is familiar in its coming-of-age shape, but the texture keeps it from feeling generic."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story has a clean forward motion through the summer beats, and the Ryan/Tilly/Emma triangle keeps scenes moving. Still, several stretches are observational rather than escalatory, so the momentum is more cumulative than propulsive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The combination of a disabled sibling’s removal, a trunk stowaway, and a grandmother who becomes the summer’s emotional authority gives the premise a fresh, memorable shape. It feels specific enough to be ownable, even though the underlying coming-of-age arc is familiar."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The cottage, dock, small-town police, waterski school, and family routines create a coherent social ecosystem with recurring rules and pressures. It’s not a sprawling world, but it is story-generating and full of lived-in detail."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is distinctly warm, awkward, and lightly comic around a serious emotional core. The script knows how to pivot from bodily embarrassment to tenderness without losing its footing, which gives it a recognizable register."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Janny’s absence, Emma’s history, and the parents’ collapse all suggest a deeper family wound beneath the summer plot. The script only partially opens that depth, but the emotional architecture is there and gives the feature more weight than a simple teen romance."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Tilly-Emma dynamic is strong enough to carry the movie, and Aaron/Justine/Ryan add a workable social triangle around it. The relationships are not endlessly generative, but they do create enough recurring friction and affection to sustain the feature."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Tilly",
+        "role_type": "Lead",
+        "demographics": "Female, 16, white, tomboyish teen, young-looking for her age.",
+        "hook": "A smart-mouthed, romance-reading 16-year-old who performs indifference but is secretly starving for attention, autonomy, and a version of herself that feels cooler than the one her family has assigned her. She is fiercely loyal to her disabled sister Janny, deeply embarrassed by her body, and desperate to be seen as desirable, which makes her both funny and painfully vulnerable.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Lady Bird or Kaitlyn Dever in Short Term 12 — a role built on brittle humor, private hurt, and the kind of close-up emotional transparency that can launch a young actor into adult leading territory."
+      },
+      {
+        "name": "Emma",
+        "role_type": "Supporting",
+        "demographics": "Female, 72, white, grandmother, older adult.",
+        "hook": "A sharp-tongued, practical grandmother who runs on rules, routines, and a deep reserve of love she rarely packages sentimentally. She is funny, controlling, and unexpectedly permissive in the ways that matter, becoming the only adult in the story who can actually meet Tilly where she is.",
+        "why_actor_wants_this": "This is the kind of role that gives Frances McDormand in Nomadland or June Squibb in Nebraska their best material — dry authority, comic timing, and a late-life emotional center that can steal the movie without ever asking for it."
+      },
+      {
+        "name": "Aaron",
+        "role_type": "Supporting",
+        "demographics": "Male, 15-16, white, nerdy teen.",
+        "hook": "A braces-wearing, Game Boy-obsessed outsider who talks in facts, theories, and awkward sincerity, then quietly reveals real emotional intelligence. He’s the story’s anti-Ryan: less polished, less cool, but far more honest, which makes him a meaningful romantic and friendship counterweight.",
+        "why_actor_wants_this": "This is the showcase lane of Lucas Hedges in Boy Erased or Noah Centineo in a more grounded register — a role where awkwardness, decency, and wounded self-possession all have to play at once."
+      },
+      {
+        "name": "Ryan",
+        "role_type": "Supporting",
+        "demographics": "Male, 20, white, waterski instructor.",
+        "hook": "A sun-bleached, physically confident older teen who knows exactly how to read a younger girl’s attention and use it. He’s charming in public, careless in private, and the script smartly lets his appeal curdle into humiliation without turning him into a cartoon villain.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play charisma as a weapon, like a younger version of the manipulative charm in Cruel Intentions or The Last Picture Show — attractive on entry, morally revealing on exit."
+      },
+      {
+        "name": "Andrea",
+        "role_type": "Supporting",
+        "demographics": "Female, 46, white, mother, caregiver.",
+        "hook": "Tilly’s mother, exhausted and cornered by the realities of Janny’s care, who is trying to hold a family together while quietly losing the argument with everyone in it. She’s defensive because she’s drowning, and the script gives her enough pain to make her choices legible even when they’re devastating.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional compression of Patricia Clarkson in Pieces of April or Toni Collette in Little Miss Sunshine — a parent role where fatigue, guilt, and love all have to register in the same beat."
+      },
+      {
+        "name": "Michael",
+        "role_type": "Supporting",
+        "demographics": "Male, 50, white, father, business-suit professional.",
+        "hook": "A father who is physically present in flashes but emotionally absent in the way that matters, trying to sound reasonable while the family around him is already breaking apart. He’s not a monster; he’s a man whose failure is mostly in his inability to stay engaged when the work gets ugly.",
+        "why_actor_wants_this": "This is the sort of role that lets a character actor play denial, defensiveness, and late-arriving regret in the vein of Paul Sparks in The Looming Tower or Richard Jenkins in a family drama — restrained, human, and quietly corrosive."
+      },
+      {
+        "name": "Janny",
+        "role_type": "Supporting",
+        "demographics": "Female, 18, severely physically and mentally disabled, non-verbal.",
+        "hook": "Tilly’s older sister, defined by total dependency and total emotional gravity, even though she never speaks. She functions as the story’s moral center and wound at once, shaping every family decision without ever being able to participate in the argument.",
+        "why_actor_wants_this": "This is not a conventional showcase role, but it is the kind of presence that can anchor a film’s emotional stakes the way a silent, central figure does in The Diving Bell and the Butterfly — a role defined by impact rather than dialogue."
+      },
+      {
+        "name": "Bernie",
+        "role_type": "Supporting",
+        "demographics": "Male, middle-aged, white, local cop.",
+        "hook": "A small-town cop who knows everybody, keeps showing up at the exact wrong-right moments, and gives the movie a comic civic texture. He’s less a plot engine than a recurring pressure valve, which makes him useful and memorable.",
+        "why_actor_wants_this": "This is the kind of supporting role that lets a character actor do lived-in local authority, like a small-town cop in Fargo or The Straight Story — brief, specific, and scene-stealing without overreaching."
+      },
+      {
+        "name": "Sarah",
+        "role_type": "Supporting",
+        "demographics": "Female, 16, white, bookish teen friend.",
+        "hook": "Tilly’s only real peer at the start, a cautious, bookish friend who mirrors Tilly’s loneliness without being able to solve it. She gives the story an outside-the-house social baseline and helps define what Tilly is missing.",
+        "why_actor_wants_this": "This is a compact but useful teen-friend role in the mold of a grounded indie coming-of-age sidekick — the kind that gives a young actor a clean, naturalistic scene partner and a few sharp beats."
+      },
+      {
+        "name": "Justine",
+        "role_type": "Supporting",
+        "demographics": "Female, 18, white, athletic teen.",
+        "hook": "One of the older ski girls who sits closer to Ryan’s world than Tilly does, and who helps expose the social hierarchy around him. She’s not deeply individualized, but she gives the party and camp scenes a lived-in peer texture.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a confident, socially fluent teen presence — the sort of part that reads quickly and helps define the movie’s social ecosystem."
+      },
+      {
+        "name": "Sharon",
+        "role_type": "Supporting",
+        "demographics": "Female, 50, white, local neighbor/friend.",
+        "hook": "A small-town adult who knows the family, knows the lake, and knows more than she says. She’s a useful texture character who helps the world feel inhabited and watched.",
+        "why_actor_wants_this": "This is a classic character-actress role: a few lines, a strong local presence, and the kind of specificity that makes a town feel real."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Teen lead with strong comedic and emotional range",
+          "Older grandmother role with substantial screen time",
+          "Disabled sister is non-verbal and physically specific",
+          "Several teen supporting roles with age-specific authenticity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "1996 period design and wardrobe",
+          "Lake cottage, dock, boathouse, and rural road access",
+          "Small-town main street and waterski-school location",
+          "Interior home spaces for family scenes"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond basic cleanup if desired.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical boat handling, waterskiing, and a few physical comedy beats including trunk concealment and falls.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Cosmo magazine"
+        },
+        {
+          "type": "brand",
+          "detail": "Game Boy"
+        },
+        {
+          "type": "brand",
+          "detail": "Crash Bandicoot"
+        },
+        {
+          "type": "brand",
+          "detail": "Star Trek"
+        },
+        {
+          "type": "brand",
+          "detail": "Star Wars"
+        },
+        {
+          "type": "brand",
+          "detail": "Alanis Morissette"
+        },
+        {
+          "type": "brand",
+          "detail": "Harlequin romance"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: specialty theatrical or streaming original with awards-adjacent positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary-feeling period feature with a small cast, a handful of recurring locations, no VFX, and only minor watersports logistics; the main cost drivers are 1996 production design and lake access."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs to carry sarcasm, sexual awakening, grief, and physical comedy in one performance, while Emma has to play both comic authority and emotional ballast. Janny’s non-verbal disability portrayal also requires careful, specific casting."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The movie is strongest as a character piece, but the central emotional spine depends on the Tilly-Emma relationship and the Ryan thread landing with enough force to justify the summer structure."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Lady Bird",
+          "year": 2017,
+          "why_it_comps": "A sharp, funny, emotionally specific coming-of-age story built around a young woman testing herself against family, class, and first love."
+        },
+        {
+          "title": "The Way Way Back",
+          "year": 2013,
+          "why_it_comps": "Summer escape, awkward teen self-discovery, and a coastal/lake-town environment that turns a seasonal job into an emotional reset."
+        },
+        {
+          "title": "Nebraska",
+          "year": 2013,
+          "why_it_comps": "The dry, lived-in family texture and the older relative as emotional anchor give it a similar plainspoken, human-scale appeal."
+        },
+        {
+          "title": "Little Miss Sunshine",
+          "year": 2006,
+          "why_it_comps": "Family dysfunction, road-trip pressure, and a mix of comedy and ache in a story where the adults are as broken as the kids."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to character-driven coming-of-age dramas with humor, family pain, and a strong female lead.",
+        "demographics": "Women 25-54 skewing slightly female, with secondary appeal to prestige-drama audiences and older viewers who like warm, observant family stories.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$2M-$6M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A small cast, limited locations, and no VFX keep this in indie territory, with period wardrobe/design and lake production as the main spend."
+      },
+      "lane_fit": {
+        "lane": "prestige indie coming-of-age drama",
+        "types_of_buyers": [
+          "specialty film financiers",
+          "prestige indie distributors",
+          "streamer originals teams building female-led character films",
+          "festival-forward production companies",
+          "actor-driven drama buyers"
+        ],
+        "detail": "This sits naturally in the lane of intimate, performance-forward features with a clear emotional hook and a modest production footprint. The grandmother-granddaughter dynamic and the 1996 summer setting give it enough specificity to feel curated rather than generic."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the supporting characters are vivid but not built as franchise vectors."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Tilly is a real lead role.",
+          "what_it_means": "This gives the movie a casting-forward center that can attract a young actor looking for a breakout and a buyer looking for a performance engine. It is especially attractive to directors who want a role that can carry both comedy and ache without needing plot fireworks.",
+          "evidence": "Her trunk escape, her embarrassment over tampons, her crush on Ryan, and her loyalty to Janny all coexist on the page.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Emma is the movie’s secret weapon.",
+          "what_it_means": "The grandmother role adds a second, older audience entry point and gives the film a scene-stealing counterweight to the teen lead. That makes the package more attractive to actors and buyers who like intergenerational emotional hooks.",
+          "evidence": "Her blunt sex talk, her rules, her comic routines, and her final emotional speech about love and survival.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The disability backdrop gives the story weight.",
+          "what_it_means": "Janny’s presence turns a standard summer coming-of-age into a family-drama with real stakes and moral pressure. That depth broadens the film’s emotional credibility and gives the pitch more gravity than a simple teen romance.",
+          "evidence": "The opening argument over placing Janny in care and Tilly’s repeated grief over her absence.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lake-town world is highly filmable.",
+          "what_it_means": "The cottage, dock, boat, and waterski-school setting create a contained but visually appealing production package that feels bigger than its footprint. That helps the film read as accessible indie rather than expensive period drama.",
+          "evidence": "Repeated use of the cottage, dock, boathouse, lake, and small-town main street.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The script knows how to mix embarrassment and tenderness.",
+          "what_it_means": "That tonal balance is commercially useful because it keeps the movie from becoming either too precious or too bleak. Buyers looking for elevated, audience-friendly drama will respond to that kind of controlled warmth.",
+          "evidence": "The tampon scene, the bloody nose after the kiss, and the bunny rescue all pivot from comedy into feeling.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a performance-led, female-driven indie with a clean emotional engine and a very sellable summer setting. The grandmother-granddaughter dynamic, the 1996 period texture, and the contained lake-world make it feel both festival-ready and producible without needing a big-budget lift."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "Ryan is more function than depth.",
+          "detail": "He works as the summer crush and disappointment engine, but the script keeps him mostly in charm mode until the late humiliation beat. That makes the romantic turn readable, but it also narrows how much a buyer can lean on him as a fully dimensional counterforce.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle runs on mood more than escalation.",
+          "detail": "A lot of the cottage and camp material is pleasurable and specific, but several sequences are observational rather than causally advancing the central conflict. That is fine for tone, but it means the feature’s momentum is more cumulative than urgent.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Janny’s absence is emotionally powerful but structurally static.",
+          "detail": "The disabled sister is the story’s deepest wound, yet she is offscreen for most of the feature, so the script has to carry that weight through memory and argument rather than active scene work. Producers will see the emotional value immediately, but also the limitation of a major force that cannot participate in the present-tense drama.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The period setting adds cost without changing the lane.",
+          "detail": "The 1996 wardrobe, props, music references, and production design are all manageable, but they still move the film away from a pure contemporary shoot. Buyers will weigh whether the period specificity is enough of a differentiator to justify the added design burden.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The lead role depends on a very specific young actor.",
+          "detail": "Tilly has to play sarcasm, sexual curiosity, grief, and physical embarrassment without losing likability, which narrows the casting pool more than the budget suggests. This is a real upside if the right actor lands, but it is also the project’s biggest casting dependency.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The script’s main friction is that its best material is emotional and atmospheric, while its central romantic engine is intentionally immature and somewhat one-note. That’s workable for an indie, but the buyer conversation will center on whether the Tilly/Emma relationship is strong enough to carry the movie if Ryan stays this lightly drawn."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 68,
+  "tier": "Optionable",
+  "inputTokens": 34645,
+  "outputTokens": 5008,
+  "cost": 0.04851975,
+  "declaredFormat": "Feature film"
+}

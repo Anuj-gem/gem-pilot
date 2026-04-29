@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:24:26.036Z",
+  "submission_id": "d9304e55-0a9f-4991-b6cb-4b9aef7c218a",
+  "eval_id": "3cebabb1-921c-47e5-b818-3207ff8a27f5",
+  "title": "I Work in Marketing   Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Kelly Rabino",
+      "role_type": "Lead",
+      "demographics": "Female, late 30s, white; former stay-at-home mom with an ex-con past, newly widowed, financially desperate."
+    },
+    {
+      "name": "Stevie Rabino",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-teens, white; Kelly’s son."
+    },
+    {
+      "name": "Dan",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, white; accountant and late husband’s best friend."
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, white; former neighbor, newly divorced, now in marketing and on OnlyFans."
+    },
+    {
+      "name": "Yuri",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, Russian; creditor with criminal ties."
+    },
+    {
+      "name": "Marco",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, Latino; barista and Kelly’s first working-class gatekeeper."
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female, 70s, white; Kelly’s mother."
+    },
+    {
+      "name": "Steven Jensen",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, white; Kelly’s father."
+    }
+  ],
+  "positioning_hook": "A broke ex-con widow with a teenage son turns to OnlyFans after her dead husband’s debt comes due, and discovers humiliation may be the fastest way to survival.",
+  "cost_usd": 0.034376250000000004,
+  "input_tokens": 18967,
+  "output_tokens": 4478,
+  "status": "wrote:leads_ok"
+}

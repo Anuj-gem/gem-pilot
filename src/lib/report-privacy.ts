@@ -32,16 +32,18 @@ export const QUALIFICATION_THRESHOLD = 50
  *  Keys are persisted in the DB; the labels in SECTION_META are what the
  *  writer reads. */
 export type SectionKey =
-  | 'whats_working'         // "Why this is a hit"
-  | 'deep_dive_characters'  // "Cast" (was Lead Characters)
-  | 'deep_dive_package'     // "Packaging"
-  | 'project_complexity'    // "Project Complexity" (Production + Cast cards)
+  | 'whats_working'              // "Why this is a hit"
+  | 'deep_dive_characters'       // "Cast" (was Lead Characters)
+  | 'deep_dive_package'          // "Packaging"
+  | 'project_complexity'         // "Project Complexity" (Production + Cast cards)
+  | 'development_considerations' // "Development considerations" (Issues + craft note)
 
 export const SECTION_KEYS: SectionKey[] = [
   'whats_working',
   'deep_dive_characters',
   'deep_dive_package',
   'project_complexity',
+  'development_considerations',
 ]
 
 export interface SectionMeta {
@@ -80,6 +82,12 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
     hint: 'Production and cast lift — what to plan for.',
     group: 'development',
   },
+  development_considerations: {
+    key: 'development_considerations',
+    label: 'Development considerations',
+    hint: 'The case-against — issues a buyer would flag.',
+    group: 'development',
+  },
 }
 
 /** Shape stored in script_submissions.report_privacy. We version it so we can
@@ -100,10 +108,11 @@ export interface ReportPrivacy {
  *  privacy modal if they want.
  */
 const DEFAULT_VISIBILITY: Record<SectionKey, Visibility> = {
-  whats_working:        'public',
-  deep_dive_characters: 'public',
-  deep_dive_package:    'public',
-  project_complexity:   'public',
+  whats_working:              'public',
+  deep_dive_characters:       'public',
+  deep_dive_package:          'public',
+  project_complexity:         'public',
+  development_considerations: 'public',
 }
 
 export type PresetKey = 'pitch_only' | 'pitch_plus_dev'
@@ -124,21 +133,23 @@ export const PRESETS: Record<PresetKey, Preset> = {
     label: 'Pitch only',
     blurb: 'Why this is a hit, cast, and packaging. (Top card always shown.)',
     sections: {
-      whats_working:        'public',
-      deep_dive_characters: 'public',
-      deep_dive_package:    'public',
-      project_complexity:   'private',
+      whats_working:              'public',
+      deep_dive_characters:       'public',
+      deep_dive_package:          'public',
+      project_complexity:         'private',
+      development_considerations: 'private',
     },
   },
   pitch_plus_dev: {
     key: 'pitch_plus_dev',
     label: 'Everything',
-    blurb: 'All four sections visible to industry partners.',
+    blurb: 'All five sections visible to industry partners.',
     sections: {
-      whats_working:        'public',
-      deep_dive_characters: 'public',
-      deep_dive_package:    'public',
-      project_complexity:   'public',
+      whats_working:              'public',
+      deep_dive_characters:       'public',
+      deep_dive_package:          'public',
+      project_complexity:         'public',
+      development_considerations: 'public',
     },
   },
 }

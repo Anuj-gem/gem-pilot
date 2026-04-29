@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:19:11.843Z",
+  "submission_id": "9538ee95-eb03-4796-b249-bbf9204d9182",
+  "eval_id": "d39cd7c2-0d4d-4242-a98e-c6263fb0716f",
+  "title": "Playmaker",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Tony",
+      "role_type": "Lead",
+      "demographics": "male, late teens, undersized teenage soccer player, student, working-class family background"
+    },
+    {
+      "name": "Clyde",
+      "role_type": "Supporting",
+      "demographics": "male, late teens, star teammate, physically imposing"
+    },
+    {
+      "name": "Mark",
+      "role_type": "Supporting",
+      "demographics": "male, 30s, soccer coach/manager, authoritative adult mentor"
+    },
+    {
+      "name": "Erica",
+      "role_type": "Supporting",
+      "demographics": "female, late teens, girlfriend, emotionally supportive peer"
+    },
+    {
+      "name": "Paul",
+      "role_type": "Supporting",
+      "demographics": "male, late teens, substitute player, comic teammate"
+    },
+    {
+      "name": "Leroy",
+      "role_type": "Supporting",
+      "demographics": "male, late teens, star attacker, injured player"
+    },
+    {
+      "name": "Coach Collins",
+      "role_type": "Supporting",
+      "demographics": "male, 50s, coach, authority figure"
+    },
+    {
+      "name": "Tony's Dad",
+      "role_type": "Supporting",
+      "demographics": "male, 40s, father, former soccer player, college-minded parent"
+    },
+    {
+      "name": "Tony's Mom",
+      "role_type": "Supporting",
+      "demographics": "female, 40s, mother, emotionally intuitive parent"
+    },
+    {
+      "name": "Kevin",
+      "role_type": "Supporting",
+      "demographics": "male, early 20s, local tough, park antagonist"
+    },
+    {
+      "name": "Mark Brady",
+      "role_type": "Supporting",
+      "demographics": "male, 30s, new manager, tactical thinker"
+    }
+  ],
+  "positioning_hook": "A undersized teenage soccer obsessive fights his coach, his father, and his own fear of contact to prove he can become a playmaker before the game leaves him behind.",
+  "cost_usd": 0.059388750000000004,
+  "input_tokens": 50547,
+  "output_tokens": 4773,
+  "status": "wrote:leads_ok"
+}

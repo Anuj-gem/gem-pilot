@@ -783,13 +783,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             Merges what was previously two sections ("Sharpest lever" + secondary
             Development Priorities) into a single coherent section that mirrors
             the structure of the actual report. */}
-        {/* Development considerations — no per-section privacy toggle.
-            Anuj 2026-04-28: only the four "pitch" sections + score have
-            writer-controlled toggles. Dev considerations always render
-            when the post is published; non-owners just don't see them
-            on unpublished reports. */}
+        {/* Development considerations — Anuj 2026-04-29: now has its
+            own per-section privacy toggle (`development_considerations`).
+            Owner/admin always see it. Non-owners only see it on a
+            published post when the writer hasn't marked the section
+            private. */}
         {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
-          (() => {
+          <SectionGate
+            section="development_considerations"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+            isPublic={submission.is_public ?? false}
+            isProSubscriber={ownerIsSubscribed || isAdmin}
+          >
+          {(() => {
             // Selznick 3.8: every eval emits `issues.items` directly.
             // Legacy `considerations` reads removed 2026-04-29.
             type IssueRow = {
@@ -897,7 +905,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 )}
               </EditorialSection>
             )
-          })()
+          })()}
+          </SectionGate>
         )}
 
         {/* PROJECT COMPLEXITY — modern card UI. Renders for every eval;

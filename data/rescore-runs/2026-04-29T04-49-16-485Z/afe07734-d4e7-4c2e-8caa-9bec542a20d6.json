@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:19:20.503Z",
+  "submission_id": "afe07734-d4e7-4c2e-8caa-9bec542a20d6",
+  "eval_id": "3cfb1558-d7c2-46df-a74c-3751a969b402",
+  "title": "TERMINATOR EXTINCTION",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "John Connor",
+      "role_type": "Lead",
+      "demographics": "Male, late teens/early 20s, human, iconic franchise protagonist"
+    },
+    {
+      "name": "Lora",
+      "role_type": "Supporting",
+      "demographics": "Female, early 30s, Resistance medic/soldier, human"
+    },
+    {
+      "name": "Sara Freeman",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-50s, Resistance commander, human"
+    },
+    {
+      "name": "XO-47",
+      "role_type": "Supporting",
+      "demographics": "Male-coded machine, ageless, Terminator unit with evolving cognition"
+    },
+    {
+      "name": "Tim",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, Resistance fighter, human"
+    },
+    {
+      "name": "Maya",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, Resistance fighter, human"
+    },
+    {
+      "name": "Elena",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s, Resistance fighter, human"
+    },
+    {
+      "name": "Gregory",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, grizzled Resistance fighter, human"
+    },
+    {
+      "name": "Klaus",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, German-accented gym trainer, human"
+    }
+  ],
+  "positioning_hook": "In a ruined future, John Connor is pulled into a new timeline by a Terminator who may be humanity’s last chance, just as a Resistance base collapses under a machine assault.",
+  "cost_usd": 0.049224000000000004,
+  "input_tokens": 36370,
+  "output_tokens": 4877,
+  "status": "wrote:leads_ok"
+}

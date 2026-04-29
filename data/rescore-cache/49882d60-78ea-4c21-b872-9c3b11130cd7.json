@@ -1,0 +1,363 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Drama",
+        "Crime"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "contemporary",
+        "character-driven",
+        "high-concept",
+        "identity",
+        "survival",
+        "friendship",
+        "homelessness",
+        "body-swap",
+        "tampa"
+      ]
+    },
+    "positioning_hook": "A homeless drifter discovers a Cuban pilot’s mask that lets him inhabit other people’s bodies, then uses it to steal, survive, and finally choose who he wants to be.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The body-swap premise is instantly legible and the homeless-to-power fantasy gives it a clear underdog appeal. The market is narrower than a broad four-quadrant genre play because the script leans hard on character monologue, social satire, and a morally messy lead."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early: Zane finds the mask, learns it can transfer him into other bodies, and immediately starts testing it on a lawyer, a mayor, and celebrities. The rules are simple enough to track, and the escalating use of the mask gives the premise a clean engine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Zane has a strong central contradiction — self-loathing, funny, opportunistic, and ultimately redeemable — which gives the role shape. The supporting players are vivid in scene, but most of them function as foils or helpers rather than fully durable character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar body-swap device and grounds it in homelessness, class resentment, and a moral test about using power for good or theft. The repeated identity-hopping through lawyers, mayors, gangsters, and Elvis gives it a playful, comic-book-like boldness."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the mask is activated, the story keeps generating new situations with clear stakes: money, exposure, violence, and the risk of getting trapped in the wrong body. The middle section is episodic by design, so momentum comes more from concept escalation than from a single tightening plotline."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The homeless protagonist who can become anyone is a fresh, immediately understandable engine, and the script keeps finding new social angles on that power. It is not fully seamless yet because the tonal mix of fairy tale, street comedy, and crime caper can feel broad rather than inevitable."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Tampa homeless camp, pawn shop, diner, hotel, and club world all feel specific and socially stratified, and the script repeatedly uses class contrast as story fuel. The world is strongest when it is about who gets seen, who gets dismissed, and who gets access."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The voice is distinctive — jokey, self-aware, streetwise, and moralizing in the same breath — and Zane’s Shakespeare riffs give it a signature. The tone can also swing from broad comedy to earnest sermonizing, which keeps it from feeling fully locked."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There is real thematic depth in the idea that self-hatred makes Zane misuse power until the mask becomes a moral sentence. The script states its lesson fairly directly, so the deeper layer is present but not especially withheld."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Zane, Janie, Dixon, Leeza, Sergio, and the various bodies he inhabits create a workable relationship web with recurring friction and alliance shifts. Still, the script is structurally driven by Zane’s solo transformations more than by a truly ensemble-based engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Zane Zachary",
+        "role_type": "Lead",
+        "demographics": "Male, mid-40s; white; chronically homeless, working-class background, emotionally damaged, physically worn down.",
+        "hook": "A self-loathing drifter with a sharp mouth and a bruised sense of humor, Zane is the kind of guy who has spent so long wishing he were someone else that he finally gets his wish. The mask turns him into a body-hopping con artist, but the real engine is his hunger for dignity, money, and a version of himself he can live with.",
+        "why_actor_wants_this": "This is showcase territory in the vein of Matthew McConaughey in True Detective season 1 or Brendan Gleeson in The Guard — a role that lets an actor play wit, shame, menace, and redemption in one continuous performance. It offers constant identity shifts plus a wounded core, which is catnip for a character actor looking for a signature lead."
+      },
+      {
+        "name": "Janie",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-40s; homeless; pragmatic, sharp, emotionally resilient.",
+        "hook": "Janie is the camp’s moral ballast: funny, unsentimental, and more grounded than the men around her. She sees through Zane’s self-pity, but she also understands the economics of survival, which makes her both a conscience and a realist.",
+        "why_actor_wants_this": "This is the kind of grounded, scene-stealing support role that gave Regina King in If Beale Street Could Talk or Octavia Spencer in The Help room to command the frame without needing the plot to belong to her. It offers dry humor, emotional authority, and the chance to play someone smarter than the room."
+      },
+      {
+        "name": "Dixon",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-40s; homeless; comic, loyal, insecure, performative.",
+        "hook": "Dixon is Zane’s loyal hanger-on and comic partner, always trying on a bigger persona than his circumstances can support. He’s funny because he’s needy, and he’s useful because he’s willing to follow Zane into trouble while still calling out the absurdity of it.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the sidekick-with-soul lane of Steve Zahn in Rescue Dawn or Michael Peña in End of Watch — comic timing with enough vulnerability to keep him from being a throwaway. It gives a performer a lot of reaction work, banter, and a few surprise turns of courage."
+      },
+      {
+        "name": "Sergio Romero",
+        "role_type": "Supporting",
+        "demographics": "Male, elderly; Cuban; spiritual, enigmatic, morally authoritative.",
+        "hook": "Sergio is the story’s quiet guardian and moral gatekeeper, appearing like a drifter but operating like a judge. He knows the rules of the mask, understands the cost of misuse, and carries the weight of the film’s mythic backstory.",
+        "why_actor_wants_this": "This is the kind of restrained, mystical authority role that gave Benicio del Toro in Traffic or Ruben Blades in Safe House a chance to dominate scenes with stillness and implication. It’s a compact but memorable part for an actor who can make a few lines feel like prophecy."
+      },
+      {
+        "name": "Leeza",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-30s; journalist; ambitious, skeptical, increasingly sympathetic.",
+        "hook": "Leeza starts as the observer who wants the story, then becomes the practical ally who helps move the plot when the mask’s consequences turn real. She’s smart enough to be dangerous, but the script also lets her become one of the few people who sees Zane clearly.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the newsroom-to-noir pivot seen in Rosamund Pike in Gone Girl or Carrie Coon in The Leftovers — intelligence, skepticism, and a slow shift from witness to participant. It’s a strong utility role with a clean arc and real scene presence."
+      },
+      {
+        "name": "Adolfo",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-50s; Cuban immigrant; shopkeeper, spiritually informed, compassionate.",
+        "hook": "Adolfo is the first person to frame the mask as something sacred rather than merely useful, and he gives the story its ethical vocabulary. He’s warm, worldly, and quietly prophetic, the kind of character who can explain the rules without flattening the mystery.",
+        "why_actor_wants_this": "This is the kind of wise, humane supporting role that gives an actor the same kind of quiet authority John Ortiz brings to character work in films like Peppermint or Fast & Furious entries. It’s a scene-setting part with emotional credibility and a touch of myth."
+      },
+      {
+        "name": "Richie Lombardi",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-50s; gangster; violent, paranoid, powerful.",
+        "hook": "Richie is the body Zane ends up trapped in, and he’s the story’s most dangerous external pressure once the mask’s consequences catch up. He’s a classic mob boss with enough ego and menace to make the final prison turn feel earned.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the hard-edged authority of James Gandolfini in mob mode or Chazz Palminteri in A Bronx Tale — a chance to play threat, status, and wounded pride. Even in limited screen time, it’s a memorable villain/host body with strong texture."
+      },
+      {
+        "name": "Louie Picard",
+        "role_type": "Supporting",
+        "demographics": "Male, older; gangster/businessman; cunning, resentful, opportunistic.",
+        "hook": "Louie is the most dangerous kind of hustler: the one who smiles while setting the trap. He uses Zane’s power for his own revenge, then reveals he’s been playing a longer game than anyone else in the room.",
+        "why_actor_wants_this": "This is the kind of sly, late-reveal gangster role that lets an actor do the smooth-to-savage turn of Ray Liotta in Goodfellas or Paul Sorvino in mob material. It’s a juicy betrayal part with a strong payoff scene."
+      },
+      {
+        "name": "Mayor Fleming",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-50s; politician; hypocritical, image-conscious, compromised.",
+        "hook": "The mayor is a public face built on hypocrisy, and Zane’s possession exposes how fragile that image really is. He’s useful because he gives the story a civic target and a public consequences lane beyond the street-level scams.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the corrupt-public-figure energy of Bryan Cranston in Trumbo or Kevin Spacey in political drama mode — polished, slippery, and vulnerable to humiliation. It’s a strong showcase for controlled indignation and comic unraveling."
+      },
+      {
+        "name": "Billy James",
+        "role_type": "Supporting",
+        "demographics": "Male, forties; attorney; smug, adulterous, status-driven.",
+        "hook": "Billy is one of Zane’s first test bodies, and he gives the movie an immediate class and morality contrast: a man with money, status, and a rotten private life. He’s less a full character than a useful pressure valve for the film’s satire of privilege.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the smug, unraveling professional energy of Rob Morrow in Quiz Show or David Harbour in smaller corrupt-professional parts. It’s a sharp comic target with enough humiliation to land."
+      },
+      {
+        "name": "Tommy Salvatore",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-40s; celebrity; handsome, entitled, sexually reckless.",
+        "hook": "Tommy is the fantasy body that turns the movie into a celebrity power trip, but he also exposes how quickly fantasy becomes liability. He’s the body that lets the script play with fame, lust, and public exposure in one sequence.",
+        "why_actor_wants_this": "This is the kind of vanity-role-with-teeth that gives an actor the swagger of a movie-star cameo in the mold of John Travolta in Get Shorty or Ben Affleck in Hollywood satire. It’s a flashy, high-recognition part with built-in image play."
+      },
+      {
+        "name": "Max",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-40s; shop owner; abrasive, defensive, suspicious.",
+        "hook": "Max is the petty gatekeeper Zane humiliates for sport, and he represents the everyday cruelty Zane is trying to outrun. He’s not a major plot mover, but he gives the film one of its clearest class-payback beats.",
+        "why_actor_wants_this": "This is the kind of small but memorable role that lets an actor do the cranky, combustible shopkeeper work of a character player like Richard Jenkins in a smaller register. It’s a clean, scene-specific part with a comic payoff."
+      },
+      {
+        "name": "Adolfo",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-50s; Cuban immigrant; shopkeeper, spiritually informed, compassionate.",
+        "hook": "Adolfo is the first person to frame the mask as something sacred rather than merely useful, and he gives the story its ethical vocabulary. He’s warm, worldly, and quietly prophetic, the kind of character who can explain the rules without flattening the mystery.",
+        "why_actor_wants_this": "This is the kind of wise, humane supporting role that gives an actor the same kind of quiet authority John Ortiz brings to character work in films like Peppermint or Fast & Furious entries. It’s a scene-setting part with emotional credibility and a touch of myth."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One lead carrying extensive voiceover and body-swap performance demands",
+          "Multiple age-specific body targets for Zane's transformations, including celebrity likenesses",
+          "Child performer in the opening school flashback and mall crowd beat"
+        ]
+      },
+      "locations": {
+        "distinct_count": 14,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary with 1987 flashback material",
+        "notable_requirements": [
+          "Homeless camp under bridge",
+          "Federal prison cell and visitors room",
+          "Hotel lobby, suite, and club interiors",
+          "Pawn shop, diner, restaurant, mall, city hall, and cemetery"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Body-swap moments, disappearance beats, and a few transformation transitions; mostly practical performance and editorial effects.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, finger-shot injury, blackout transitions, and practical body-disappearance effects.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Spider-Man comics and Spider-Man imagery are referenced directly in Zane's childhood scenes."
+        },
+        {
+          "type": "real_person",
+          "detail": "Tom Cruise, Elvis Presley, Muhammad Ali, John Wayne, Mike Tyson, Charles Lindbergh, Kirk Douglas, and Shakespeare are referenced or impersonated in dialogue and action."
+        },
+        {
+          "type": "brand",
+          "detail": "Ralph Lauren, Miller Lite, Mondavi Meritage, OxyContin, and Spiderman are named on the page."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a mid-budget streaming genre title with some specialty-comedy appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary locations keep the footprint contained, but the script still needs multiple distinct sets, night work, prison, club, hotel, and transformation coverage across many body-swap beats."
+      },
+      "casting": {
+        "level": "high",
+        "note": "The lead has to carry long stretches of voiceover, comic timing, physical transformation, and moral turn, while the script also asks for recognizable likeness work on celebrities and public figures."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The premise is clear, but the script leans on repeated body-swap episodes and explicit moral speeches, which makes the final shape and tonal balance a meaningful buyer conversation."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Freaky",
+          "year": 2020,
+          "why_it_comps": "A body-swap premise used for comedy, identity play, and escalating consequences, with the lead performance doing most of the heavy lifting."
+        },
+        {
+          "title": "Big",
+          "year": 1988,
+          "why_it_comps": "The wish-fulfillment of becoming someone else and discovering the emotional cost of that fantasy is the same core engine."
+        },
+        {
+          "title": "The Mask",
+          "year": 1994,
+          "why_it_comps": "A magical object unlocks a new persona and a comic power fantasy, with broad transformation set pieces and a playful tone."
+        },
+        {
+          "title": "Being John Malkovich",
+          "year": 1999,
+          "why_it_comps": "Identity occupation, body control, and the surreal comedy of inhabiting another person’s life are central to the appeal."
+        },
+        {
+          "title": "Trading Places",
+          "year": 1983,
+          "why_it_comps": "Class resentment, social humiliation, and the pleasure of watching an outsider exploit elite spaces drive the audience promise."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like high-concept genre comedies with a moral edge, especially viewers drawn to identity-swaps, underdog revenge, and street-level wish fulfillment.",
+        "demographics": "Skews 25-54, mixed gender, strongest with viewers who like elevated genre, comic crime, and character-led fantasy.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$4M-$10M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, modest VFX, and a mostly dialogue-driven structure keep it in indie feature territory, though the celebrity/body-swap coverage and multiple set pieces add some scope."
+      },
+      "lane_fit": {
+        "lane": "elevated indie fantasy-comedy",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original film teams",
+          "indie producers looking for a star-driven high-concept vehicle",
+          "buyers seeking character-led crowd-pleasers with a social underdog angle"
+        ],
+        "detail": "This sits naturally in the lane of a contained, performance-forward genre feature with a clear hook and a built-in moral engine. The homeless-to-celebrity body-swap angle gives it both a commercial elevator pitch and a character-actor showcase."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the mask premise can repeat, but the script does not build a distinct franchise world or a separate spinoff vector with enough depth."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is immediate and visual.",
+          "what_it_means": "A buyer can understand the movie in one sentence and see the trailer beats right away, which is a real advantage in a crowded genre market. That makes it attractive to streamer dev teams and indie financiers looking for a clean, pitchable concept.",
+          "evidence": "Zane discovers the buried mask, learns the chin strap activates the power, and immediately starts body-hopping through lawyers, mayors, and celebrities.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Zane is a showcase lead.",
+          "what_it_means": "The role gives an actor a rare mix of comic narration, wounded self-loathing, physical transformation, and eventual moral reckoning. That is exactly the kind of part that can reframe a character actor or mid-career lead in the marketplace.",
+          "evidence": "His voiceover moves from despair to mischief to regret, and the body-swap scenes let him play Billy, Max, Tommy, Louie, Mayor Fleming, and Richie Lombardi.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The class satire is built into the engine.",
+          "what_it_means": "The movie has a built-in audience pleasure in watching a dismissed homeless man exploit the systems that ignore him, which gives the premise a sharper edge than a standard fantasy comedy. That makes it appealing to buyers who want genre with social bite.",
+          "evidence": "Zane humiliates the pawn shop clerk, gives away donuts as Max, manipulates the hotel suite, and exposes the mayor’s hypocrisy in public.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The homeless camp gives the film texture.",
+          "what_it_means": "The setting is not just backdrop; it creates a social world with its own rules, humor, and emotional stakes, which helps the movie feel specific rather than generic. That specificity is useful for both casting and marketing because it gives the film a recognizable human center.",
+          "evidence": "Janie and Dixon’s camp, the bridge, the scavenging, and the recurring conversations about dignity and survival all recur as a home base.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Sergio mythology adds moral weight.",
+          "what_it_means": "The mask is not just a gimmick; it comes with a rule system and a spiritual consequence, which gives the story a stronger mythic spine. That helps the film feel less like a one-joke premise and more like a fable with a payoff.",
+          "evidence": "Sergio warns Zane about using the mask for evil, explains the Cuban backstory, and ultimately returns to judge the choices Zane made.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, trailer-ready body-swap fantasy with a strong actor-bait lead and a socially charged underdog angle. It sits in a commercially legible indie lane: contained enough to finance, distinctive enough to market, and built around a performance that could be the package."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The script leans on repetition of the same mechanic.",
+          "detail": "A lot of the middle section is built on Zane entering a new body, exploiting it, and then snapping back. That keeps the premise clear, but it also means the movie’s momentum depends on variation in each set piece rather than on a deeper plot engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The tone swings between satire and sermon.",
+          "detail": "The movie wants to be a comic wish-fulfillment caper, a class satire, and a moral fable about self-worth all at once. Those pieces are all present on the page, but the transitions are broad enough that a buyer will notice the tonal handoff as a real packaging question.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The celebrity impersonation lane creates clearance friction.",
+          "detail": "The script directly invokes Spider-Man, Tom Cruise, Elvis Presley, Muhammad Ali, John Wayne, Mike Tyson, Charles Lindbergh, Kirk Douglas, and Shakespeare, plus named brands like Ralph Lauren, Miller Lite, Mondavi Meritage, and OxyContin. That is a meaningful legal and business affairs pass before anyone can greenlight the page as written.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The lead role narrows the casting pool.",
+          "detail": "Zane has to carry long voiceover passages, comic timing, physical transformation, and a believable turn from self-pity to moral clarity. That is a much narrower ask than a standard indie lead, and the movie’s value rises or falls on whether the actor can make the shifting identities feel like one person.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The ending resolves by rule explanation.",
+          "detail": "Sergio’s final visit in prison explains the moral logic of the mask and closes the loop on Zane’s punishment. It gives the story closure, but it also means the climax lands more on explanation and judgment than on a dramatic external confrontation.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the movie keeps returning to the same body-swap trick, so the buyer has to believe the variations are enough to sustain a feature. On top of that, the celebrity references and impersonations create real clearance work, and the lead role is a genuine casting lift."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 65,
+  "tier": "Optionable",
+  "inputTokens": 51141,
+  "outputTokens": 5736,
+  "cost": 0.06416775,
+  "declaredFormat": "Feature film"
+}

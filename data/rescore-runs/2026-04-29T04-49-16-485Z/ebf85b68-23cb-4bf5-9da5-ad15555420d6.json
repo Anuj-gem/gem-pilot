@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:21:34.498Z",
+  "submission_id": "ebf85b68-23cb-4bf5-9da5-ad15555420d6",
+  "eval_id": "0d149bfa-9ca0-461e-b93d-054eb0c35051",
+  "title": "THE WRONG NUMBER",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Jake Corelli",
+      "role_type": "Lead",
+      "demographics": "White male, mid-30s, ex-Marine, working-class, average-to-good-looking, physically solid."
+    },
+    {
+      "name": "Deshon Dunn",
+      "role_type": "Supporting",
+      "demographics": "Black male, mid-30s, ex-Marine, amputee with a prosthetic lower leg, working-class, physically imposing."
+    },
+    {
+      "name": "Ronnie Dyson",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-40s, physically intimidating, police officer, corrupt, working-class."
+    },
+    {
+      "name": "Haley",
+      "role_type": "Supporting",
+      "demographics": "Black female, late 30s to early 40s, apartment-building employee, working-class."
+    },
+    {
+      "name": "Officer Molloy",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-30s, police officer, corrupt, authoritative."
+    },
+    {
+      "name": "Buck",
+      "role_type": "Supporting",
+      "demographics": "White male, mid-30s to 40s, large, tattooed, redneck/biker presentation."
+    },
+    {
+      "name": "Sargoza",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s to 60s, judge, authoritative, well-connected."
+    },
+    {
+      "name": "Kendra",
+      "role_type": "Supporting",
+      "demographics": "Black female, early 40s, office worker, Deshon’s sister."
+    },
+    {
+      "name": "Davey",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, thin, geeky, surveillance helper."
+    }
+  ],
+  "positioning_hook": "A laid-off ex-Marine and a doorman-turned-thief are forced into an uneasy alliance when a crooked cop frames them both, turning a wrong-number feud into a violent conspiracy hunt.",
+  "cost_usd": 0.05739975,
+  "input_tokens": 47433,
+  "output_tokens": 4850,
+  "status": "wrote:leads_ok"
+}

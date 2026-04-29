@@ -1,0 +1,345 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Action",
+        "Thriller"
+      ],
+      "tone": "pulpy",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "survival",
+        "family-dynamics",
+        "vampires",
+        "post-apocalyptic"
+      ]
+    },
+    "positioning_hook": "Two rival farm families in rural California are trapped together when a vampire outbreak hits, forcing a bickering teen alliance to survive the night, the military cover-up, and each other.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is immediate: a family survival horror with a clean outbreak engine, kids in danger, and a militarized escalation. The audience is clear and genre-friendly, though the script’s broad, pulpy execution and heavy carnage keep it from feeling four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the opening pages: a comet-like crash, a vampire outbreak, and two neighboring families forced into the same survival space. The hook is easy to explain in one breath and the rural California setting gives it a distinct, readable frame."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Sam and Lily have a workable sibling dynamic, and the Barber/Ranger rivalry gives the ensemble some friction. But most adults are defined by function or attitude rather than layered contradiction, so the cast plays more as survival pieces than durable character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The script has a few bold moves — the farm-family feud, the playing-dead vampire rule, and the military chemical-weapons ending — but the overall execution leans into familiar outbreak-horror beats. It feels like a confident genre mashup more than a fresh reinvention."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the outbreak hits, the script keeps moving through house invasions, rooftop escape, family deaths, and the military response. The momentum is strong, though the long stretch of repetitive survival beats and repeated family bickering softens the escalation."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The playing-dead vampire behavior and the California-wide quarantine give the premise a memorable twist, but the underlying shape is still a familiar siege-and-escape survival story. It’s distinctive enough to sell, but not yet one of those instantly iconic high-concept premises."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The rural farm setting, the neighboring property line, the military base, and the evacuation centers give the world some texture and geography. Still, most of the world exists as outbreak backdrop rather than a fully socialized system with layered rules."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The voice is unmistakably pulpy, grim, and occasionally darkly comic in the way it treats family squabbles inside apocalypse chaos. That blunt, B-movie register is part of the appeal and gives the script a clearer identity than a generic zombie-vampire survival piece."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are seeds of deeper material in the family rivalry, the military cover-up, and the post-outbreak aftermath, but the script mostly stays on the surface of immediate survival. The emotional aftermath is present, yet not developed into something especially layered."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Barber and Ranger households create a built-in relational engine: sibling rivalry, parental authority, neighbor resentment, and a forced alliance under pressure. The ensemble has enough friction that multiple pairings can generate scenes, even if the adults are more archetypal than complex."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Sam Barber",
+        "role_type": "Lead",
+        "demographics": "Male, 13-16, white rural California teen",
+        "hook": "Sam is the smart, anxious Barber kid who starts as the family’s observer and ends up becoming one of the story’s survival anchors. He’s bookish, sarcastic, and emotionally overwhelmed by the apocalypse, but the script keeps putting him in the hardest practical choices — protecting Cooks, carrying the wounded, and trying to hold the family together after the adults collapse.",
+        "why_actor_wants_this": "This is the showcase territory of a young Logan Lerman in The Perks of Being a Wallflower — a role that lets an actor play intelligence, fear, grief, and reluctant courage in the same frame."
+      },
+      {
+        "name": "Lily Barber",
+        "role_type": "Supporting",
+        "demographics": "Female, 15-18, white rural California teen",
+        "hook": "Lily is the sharper, meaner Barber sibling, but the script steadily reveals her as the more capable survivor when things go bad. She’s sarcastic, physically brave, and emotionally guarded, with a streak of protectiveness that keeps breaking through the attitude.",
+        "why_actor_wants_this": "This is the kind of role that gave Saoirse Ronan in Hanna or Hailee Steinfeld in True Grit a chance to combine bite, vulnerability, and action-readiness — a teen part with real screen-command and survival grit."
+      },
+      {
+        "name": "Butch Barber",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, white rural father",
+        "hook": "Butch is the hard-edged, practical father whose authority is built on bluntness and survival instinct. He’s not especially warm, but he carries the emotional weight of the family’s collapse, and his paralysis/death becomes one of the script’s key trauma points.",
+        "why_actor_wants_this": "This is strong character-actor material in the vein of Michael Shannon in Take Shelter — a father role that lets an actor play stoicism, panic, and physical vulnerability as the world falls apart."
+      },
+      {
+        "name": "Apple Barber",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, white rural mother",
+        "hook": "Apple is the Barber mother, initially quiet and domestic, then pushed into ferocious protective mode once the family is cornered. She becomes one of the story’s emotional pressure valves, especially when grief and rage start driving her decisions.",
+        "why_actor_wants_this": "This is the kind of survival-mother showcase that gave Toni Collette in Hereditary or Emily Blunt in A Quiet Place a chance to move from grounded domesticity into raw, physical terror."
+      },
+      {
+        "name": "Warren Ranger",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, white rural father",
+        "hook": "Warren is the Ranger patriarch: suspicious, armed, proud, and quick to turn crisis into territorial thinking. He starts as a neighborly antagonist and becomes one of the story’s most volatile survival figures, especially once grief and paranoia take over.",
+        "why_actor_wants_this": "This is the kind of role that lets a veteran character actor do what John Goodman did in 10 Cloverfield Lane — authority, menace, and wounded paternal energy all in one part."
+      },
+      {
+        "name": "Dana Ranger",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s, white rural mother",
+        "hook": "Dana is the Ranger mother, practical and exhausted, trying to keep the household functioning while the men posture and the kids unravel. She’s less explosive than Warren, but she gives the family its emotional ballast and a believable survival instinct.",
+        "why_actor_wants_this": "This is solid grounded-mother territory in the mode of Vera Farmiga in The Conjuring — a role that rewards calm authority under pressure and lets an actor play fear without losing control."
+      },
+      {
+        "name": "Tommy Ranger",
+        "role_type": "Supporting",
+        "demographics": "Male, 14, white teen",
+        "hook": "Tommy is the Ranger son who wants peace between the families and gets punished for it. He’s the most openly decent kid in the house, which makes his death one of the script’s clearest emotional detonations.",
+        "why_actor_wants_this": "This is the kind of tragic teen role that gave Noah Jupe in A Quiet Place a showcase for innocence, fear, and audience sympathy before the story turns on him."
+      },
+      {
+        "name": "Dana Jr.",
+        "role_type": "Supporting",
+        "demographics": "Female, 11, white child",
+        "hook": "Dana Jr. is the youngest Ranger and one of the script’s wild cards: angry, defensive, and increasingly unmoored as the apocalypse strips away her family structure. She’s written as a volatile child antagonist-survivor hybrid, which makes her memorable even when she’s abrasive.",
+        "why_actor_wants_this": "This is the kind of feral child role that lets a young performer do what Brooklynn Prince did in The Florida Project — play innocence, volatility, and emotional damage without smoothing any of it out."
+      },
+      {
+        "name": "Cooks",
+        "role_type": "Supporting",
+        "demographics": "Male dog, 9",
+        "hook": "Cooks is the family dog and emotional barometer, used as a loyalty anchor and a survival complication. The script gives him real story weight, especially once he’s bitten and Sam has to make the brutal choice to amputate his foot.",
+        "why_actor_wants_this": "This is the kind of animal-performance centerpiece that gives a film its emotional shorthand — the same audience attachment function as the dog in I Am Legend, where the pet becomes the story’s purest vulnerability."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one child dog performance required",
+          "multiple teen roles",
+          "one 11-year-old child role with significant dialogue",
+          "adult rural family casting with age-specific parents in their 40s-50s"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "rural farm property with two neighboring houses",
+          "garage, barn, basement, roof, and fields",
+          "government base/interior command spaces",
+          "city street and military evacuation center exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Vampire transformation effects, mass outbreak crowds, fire/explosion enhancement, bomb blast imagery, and some citywide destruction elements.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical blood, bite wounds, fire effects, burning property, vehicle damage, and large-scale destruction dressing.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Michael Jackson's 'Beat It' is specifically named in Tommy's kitchen scene."
+        },
+        {
+          "type": "brand",
+          "detail": "PS2 is prominently referenced during the vampire house-destruction sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Coke is specifically named in General Howie's office scene."
+        },
+        {
+          "type": "brand",
+          "detail": "Fast and Furious is specifically named as Tommy's VHS watch."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "30 Days of Night, The Stand, Dawn of the Dead, and Land of the Dead are explicitly referenced."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical genre feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: genre theatrical or streaming-premiere with broad horror audience appeal."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary rural locations keep the base spend contained, but the outbreak scale, fire-heavy destruction, bomb sequences, and multiple night exteriors push this above a simple contained indie."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The project needs a strong teen lead pair, credible 40s-50s parents, and child casting that can handle fear, bickering, and physical peril without flattening the family dynamic."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script has a clear engine, but the repeated survival beats, broad character writing, and multiple ending variants create some decision friction around final shape and tone."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "A Quiet Place",
+          "year": 2018,
+          "why_it_comps": "Shares the family-under-siege survival engine and the pressure-cooker use of domestic space as a horror arena."
+        },
+        {
+          "title": "The Crazies",
+          "year": 2010,
+          "why_it_comps": "Matches the outbreak escalation, military response, and small-town collapse into a larger containment crisis."
+        },
+        {
+          "title": "The Mist",
+          "year": 2007,
+          "why_it_comps": "Comps on the trapped-community panic, family fracture under siege, and bleak survival tone."
+        },
+        {
+          "title": "10 Cloverfield Lane",
+          "year": 2016,
+          "why_it_comps": "The paranoia, bunker-like survival pressure, and volatile authority figures give it a similar tension profile."
+        },
+        {
+          "title": "Train to Busan",
+          "year": 2016,
+          "why_it_comps": "The propulsive outbreak momentum and emotional family stakes align with this script’s survival-forward genre lane."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Horror fans who like family-survival stakes, outbreak escalation, and high-body-count genre pieces with a clear emotional anchor.",
+        "demographics": "18-44 skew, slightly male-leaning but with strong crossover for genre-savvy women; strongest with streaming horror audiences and theatrical genre regulars.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$18M-$35M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Two-family cast, practical creature work, fire/destruction sequences, and multiple rural-to-city locations keep it in mid-budget genre territory."
+      },
+      "lane_fit": {
+        "lane": "mid-budget elevated genre survival horror",
+        "types_of_buyers": [
+          "streamer genre buyers building out adult horror",
+          "mid-budget theatrical genre financiers",
+          "boutique horror production companies",
+          "director-driven genre labels",
+          "sales agents looking for outbreak hooks"
+        ],
+        "detail": "This sits naturally in the lane of adult survival horror with a clean premise, a family anchor, and enough scale to feel eventful without requiring tentpole economics. The rural setting and military escalation make it attractive to buyers who want a contained-but-not-tiny genre play."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear franchise vector beyond a generic sequel; the story resolves its outbreak and family arc as a one-off."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly legible.",
+          "what_it_means": "A buyer can understand the movie in one sentence, which is a real advantage in a crowded genre market and makes the project easy to pitch internally. That clarity is attractive to streamer genre execs and theatrical buyers who need a fast read on audience promise.",
+          "evidence": "The opening crash, the outbreak reveal, and the Barber/Ranger property-line feud all establish the engine within the first stretch.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family rivalry gives the outbreak a human engine.",
+          "what_it_means": "The Barber-versus-Ranger tension turns the apocalypse into a relationship story, which broadens the emotional entry point beyond pure creature action. That makes the script more appealing to buyers looking for genre with a domestic hook and to actors who want conflict that isn’t just external.",
+          "evidence": "The property line, the dog/cat feud, the refusal to help each other, and the eventual forced alliance all build a built-in relational spine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The playing-dead vampire rule is a clean hook.",
+          "what_it_means": "That single behavioral twist gives the outbreak a memorable mechanic and creates visual suspense around daylight versus night. It helps the film stand out in a crowded undead field and gives marketing a simple, repeatable idea.",
+          "evidence": "The creatures collapse in daylight, rise at night, and the script repeatedly uses that rule to structure danger and false safety.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script offers a strong teen-survival showcase.",
+          "what_it_means": "Sam and Lily are positioned to carry the movie emotionally and physically, which is useful for casting and for audience identification. That gives the project a young-lead angle that can attract both teen-facing performers and adult genre audiences.",
+          "evidence": "Sam’s fear, Lily’s toughness, the rooftop escape, the dog rescue, and the final road-to-San-Diego drive all center the siblings.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The military cover-up widens the scale.",
+          "what_it_means": "The ending expands the movie from a local siege into a national disaster story, which increases the sense of consequence and gives the project a bigger commercial footprint. That kind of escalation is attractive to buyers who want a contained setup that still feels event-sized by the finish.",
+          "evidence": "General Howie’s chemical attack, the evacuation centers, and the final cover-up sequence all push the story beyond the farm.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, pitchable outbreak horror feature with a family feud at its center, a memorable daylight/night rule, and enough escalation to feel bigger than its farm setting. It’s the kind of mid-budget genre package that can sell on premise, play to horror audiences, and give a director a contained but eventful canvas.",
+      "issues": {
+        "items": [
+          {
+            "area": "The script leans on broad character labels.",
+            "detail": "A lot of the cast is introduced through function — the smart kid, the mean kid, the tough dad, the psycho child, the grumpy neighbor — which keeps the movie moving but limits depth. That’s fine for a genre engine, but it narrows the role value for prestige casting conversations.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The ending shape is still split three ways.",
+            "detail": "The script presents three alternate endings, which means the final emotional and commercial landing is not yet locked. For a buyer, that creates real decision friction because the movie’s last impression is still being negotiated on the page.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The body count outruns the emotional aftermath.",
+            "detail": "Major deaths stack quickly — Butch, Tommy, Warren, Dana Jr., Apple, and Cooks’ injury arc — but the script often moves on before the grief can fully register. That keeps momentum high, but it also leaves some of the emotional turns feeling more declared than lived.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The brand and title references need cleanup.",
+            "detail": "The page names Michael Jackson’s 'Beat It,' PS2, Coke, Fast and Furious, and multiple existing films by title. Those are manageable clearance items, but they add legal and business affairs work that a buyer will notice before greenlight.",
+            "is_primary_lever": false,
+            "source": "production"
+          },
+          {
+            "area": "The creature scale pushes beyond a tiny indie lane.",
+            "detail": "Between the outbreak crowds, fire effects, bomb destruction, and military cleanup, this is not a contained two-location horror play. It still sits in a mid-budget lane, but the scope is large enough that a buyer will expect disciplined execution and a real effects plan.",
+            "is_primary_lever": false,
+            "source": "production"
+          }
+        ],
+        "headline": "The main friction is not the premise — it’s the execution shape: broad character writing, multiple ending variants, and a lot of emotional carnage that moves faster than it lands. Add the named-brand/title clearances and the destruction-heavy scope, and this becomes a mid-budget genre buy that needs disciplined packaging to close."
+      }
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 67,
+  "tier": "Optionable",
+  "inputTokens": 28651,
+  "outputTokens": 4768,
+  "cost": 0.04294425,
+  "declaredFormat": "Feature film"
+}

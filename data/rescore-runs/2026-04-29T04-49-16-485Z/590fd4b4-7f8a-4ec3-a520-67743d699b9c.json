@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:18:04.717Z",
+  "submission_id": "590fd4b4-7f8a-4ec3-a520-67743d699b9c",
+  "eval_id": "a7b6172a-8e4b-4c81-bf94-ad96d1da9ebf",
+  "title": "chritmas time script final",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Sean",
+      "role_type": "Lead",
+      "demographics": "Adult man, husband, father, business owner; likely 30s-40s."
+    },
+    {
+      "name": "Frances",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, wife, mother; likely 30s-40s."
+    },
+    {
+      "name": "Ron",
+      "role_type": "Supporting",
+      "demographics": "Adult man, friend/investor figure; likely 30s-50s."
+    },
+    {
+      "name": "Sandra",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, shopper/friend, later wife and mother; likely 20s-30s."
+    },
+    {
+      "name": "James",
+      "role_type": "Supporting",
+      "demographics": "Adult man with mobility disability; likely 20s-30s."
+    },
+    {
+      "name": "Grant",
+      "role_type": "Supporting",
+      "demographics": "Child male, age 5."
+    },
+    {
+      "name": "Ted",
+      "role_type": "Supporting",
+      "demographics": "Adult man, father, husband; likely 30s-40s."
+    },
+    {
+      "name": "Maria",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, mother, wife; likely 30s-40s."
+    },
+    {
+      "name": "Yates",
+      "role_type": "Supporting",
+      "demographics": "Adult man, host/organizer; likely 30s-50s."
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Adult woman, Yates’s partner/wife; likely 30s-40s."
+    },
+    {
+      "name": "Jasmine",
+      "role_type": "Supporting",
+      "demographics": "Female child, age 12."
+    }
+  ],
+  "positioning_hook": "A series of Christmas vignettes follows families, friends, and neighbors as money trouble, disability, and loneliness collide with the pressure to make the holiday mean something more than decorations.",
+  "cost_usd": 0.041321250000000004,
+  "input_tokens": 26487,
+  "output_tokens": 4768,
+  "status": "wrote:leads_ok"
+}

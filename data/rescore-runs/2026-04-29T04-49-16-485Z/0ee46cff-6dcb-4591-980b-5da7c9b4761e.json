@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T05:26:05.538Z",
+  "submission_id": "0ee46cff-6dcb-4591-980b-5da7c9b4761e",
+  "eval_id": "e5a5344c-1980-40dc-9de9-91e923a70d59",
+  "title": "il giardino delle ceneri",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Elara",
+      "role_type": "Lead",
+      "demographics": "Woman, 20s-30s, matriarchal rainforest guardian / botanist, physically capable, emotionally rooted in ecological stewardship."
+    },
+    {
+      "name": "Kael",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s-30s, botanist/scientist from the old world, physically worn, morally burdened, redemption-coded."
+    },
+    {
+      "name": "Margot",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s-30s, Elara’s childhood friend and community member, grounded, alert, protective."
+    },
+    {
+      "name": "Noble Casa Solar guard",
+      "role_type": "Supporting",
+      "demographics": "Woman, adult, armed community guard, matriarchal authority figure."
+    }
+  ],
+  "positioning_hook": "A botanist from a matriarchal rainforest sanctuary joins forces with a fugitive scientist to save a sacred plant before a poisoned ecosystem and the old patriarchy erase their world.",
+  "cost_usd": 0.03788925,
+  "input_tokens": 28019,
+  "output_tokens": 3750,
+  "status": "wrote:leads_ok"
+}

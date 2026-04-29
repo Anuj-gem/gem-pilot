@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:20:29.604Z",
+  "submission_id": "6ad6534b-2860-4b73-af58-8792ed7c0fb8",
+  "eval_id": "1c2657b1-3e3a-4daf-ad93-44a9b0f63854",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "African American male, mid-teens to early 20s"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Supporting",
+      "demographics": "Latino male, mid-teens to mid-20s"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Supporting",
+      "demographics": "Caucasian male, pre-teen to early 20s, autistic"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Supporting",
+      "demographics": "African American male, mid-teens to early 20s"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Supporting",
+      "demographics": "Asian Pacific Islander male, early teens to early 20s"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Supporting",
+      "demographics": "African American male, late 40s"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "African American male, 50s"
+    },
+    {
+      "name": "Grace Oliver",
+      "role_type": "Supporting",
+      "demographics": "Caucasian female, teen to early 20s"
+    },
+    {
+      "name": "Jeffery Parker",
+      "role_type": "Supporting",
+      "demographics": "African American male, late 40s"
+    },
+    {
+      "name": "Doris Parker",
+      "role_type": "Supporting",
+      "demographics": "African American female, mid-40s"
+    },
+    {
+      "name": "Phil Davis",
+      "role_type": "Supporting",
+      "demographics": "African American male, mid-40s"
+    }
+  ],
+  "positioning_hook": "A Brooklyn teen forms a multiracial boy band with his friends, then has to hold the group together through fame, family pressure, and betrayal as they rocket from talent show to global superstardom.",
+  "cost_usd": 0.06885375,
+  "input_tokens": 57971,
+  "output_tokens": 5639,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:22:25.940Z",
+  "submission_id": "cfcb93a2-36ab-4c29-a664-87be691de358",
+  "eval_id": "c8b8c09d-4c56-4362-beac-63bd6eb76506",
+  "title": "ALL AMERICANA PATRIOT [OFFICIAL SCRIPT]",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Sofia",
+      "role_type": "Lead",
+      "demographics": "Woman, 20s, queer-coded, urban outsider with a hard-edged fashion-forward presence."
+    },
+    {
+      "name": "Coyotl",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, queer, stylish, high-energy, gender-nonconforming presentation."
+    },
+    {
+      "name": "Nicole",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, brainy, anxious, likely white or unspecified, college-age."
+    },
+    {
+      "name": "Liam",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, college-age, local insider, polished enough to pass as harmless."
+    },
+    {
+      "name": "Charlotte",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, close friend of Sofia, college-age."
+    },
+    {
+      "name": "Farah",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, local, mechanically capable, tough."
+    },
+    {
+      "name": "Luis",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, local or semi-local, physically resilient, emotionally open."
+    },
+    {
+      "name": "Miles Overton",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s, law-enforcement authority, local enforcer."
+    },
+    {
+      "name": "Quinn",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, queer or queer-coded, volatile, jealous, performative."
+    },
+    {
+      "name": "Lily",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, local family connection to the Chester line."
+    }
+  ],
+  "positioning_hook": "A queer rave crew gets trapped in a rural town where an Eagle-masked killer turns Americana into a factory line, and the survivors must expose the harvest before they’re woven into it.",
+  "cost_usd": 0.06826425,
+  "input_tokens": 62273,
+  "output_tokens": 4791,
+  "status": "wrote:leads_ok"
+}

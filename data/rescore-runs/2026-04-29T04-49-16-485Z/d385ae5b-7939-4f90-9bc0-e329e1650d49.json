@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:27:21.971Z",
+  "submission_id": "d385ae5b-7939-4f90-9bc0-e329e1650d49",
+  "eval_id": "0efe826a-8318-49c0-af33-9d72eafb801b",
+  "title": "Oldest Friend",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Jill",
+      "role_type": "Lead",
+      "demographics": "Woman, 30s, white, married mother of two, former party-girl from Missouri now living in Los Angeles."
+    },
+    {
+      "name": "Stefani",
+      "role_type": "Supporting",
+      "demographics": "Woman, mid-30s, white, bride-to-be, Missouri local with a more contained, conventional adult life."
+    },
+    {
+      "name": "Lex",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s, queer, college friend of Stefani, socially loose and observant."
+    },
+    {
+      "name": "Sherri",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s-40s, white, wedding organizer / bridesmaid wrangler, socially controlled and hyper-competent."
+    },
+    {
+      "name": "Matt",
+      "role_type": "Supporting",
+      "demographics": "Man, late 30s, white, Jill’s husband, easygoing suburban dad."
+    },
+    {
+      "name": "Graham McDonald",
+      "role_type": "Supporting",
+      "demographics": "Man, late 30s, white, former college crush / old hookup, now married and living in Missouri."
+    },
+    {
+      "name": "Mama G",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s-60s, white, family matriarch / wedding host."
+    },
+    {
+      "name": "Monica",
+      "role_type": "Supporting",
+      "demographics": "Woman, early 40s, white, married into the family, loud and socially unfiltered."
+    },
+    {
+      "name": "Billy",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, white, Stefani’s fiancé."
+    }
+  ],
+  "positioning_hook": "A feral Los Angeles mom returns to rural Missouri for her best friend’s wedding, only to find the old crush, old wounds, and old hierarchy still have teeth.",
+  "cost_usd": 0.042977249999999995,
+  "input_tokens": 27909,
+  "output_tokens": 4899,
+  "status": "wrote:leads_ok"
+}

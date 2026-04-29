@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:19:17.118Z",
+  "submission_id": "1548588e-0576-4fe9-8062-233a33985e0c",
+  "eval_id": "b0de4531-575a-43f0-a712-ef199a625e06",
+  "title": "PREDATORS; HUNTERS MOON (2)",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Alice Boyd",
+      "role_type": "Lead",
+      "demographics": "Female, mid-to-late 30s, police detective, working-class, Canadian."
+    },
+    {
+      "name": "Shane Hatcher",
+      "role_type": "Supporting",
+      "demographics": "Male, late 30s to early 40s, Canadian Armed Forces veteran, special operations background."
+    },
+    {
+      "name": "Chris Lang",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, police tactical officer, Boyd's younger brother."
+    },
+    {
+      "name": "Dimtri Trushencko",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s to 60s, Eastern European organized-crime boss."
+    },
+    {
+      "name": "Jimmy Bartolo",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 50s, local crime boss, father."
+    },
+    {
+      "name": "Gareth Oakes",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, medical examiner."
+    },
+    {
+      "name": "Dr. Leonard",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 50s, coroner/forensics professional."
+    },
+    {
+      "name": "Tony Lozono",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s to 40s, detective, Boyd's partner."
+    },
+    {
+      "name": "Captain West",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s to 60s, police captain."
+    }
+  ],
+  "positioning_hook": "A hard-charging detective and a combat-hardened veteran uncover a hidden alien hunter stalking the winners, the violent, and the powerful across Alberta.",
+  "cost_usd": 0.0592035,
+  "input_tokens": 48956,
+  "output_tokens": 4997,
+  "status": "wrote:leads_ok"
+}

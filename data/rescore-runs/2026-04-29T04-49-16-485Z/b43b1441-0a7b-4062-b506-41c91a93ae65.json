@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:24:27.690Z",
+  "submission_id": "b43b1441-0a7b-4062-b506-41c91a93ae65",
+  "eval_id": "6cdaaa88-b11c-4aef-977e-217b0b962509",
+  "title": "I Work in Marketing   Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Kelly Rabino",
+      "role_type": "Lead",
+      "demographics": "Female, late 30s, white; former jail inmate, widowed mother, economically strained suburban homeowner."
+    },
+    {
+      "name": "Stevie Rabino",
+      "role_type": "Supporting",
+      "demographics": "Male, 15, teenage son; emotionally sensitive, school-aged, identity still forming."
+    },
+    {
+      "name": "Dan",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, accountant and family friend; casual, evasive, financially compromised."
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, former neighbor; polished, socially fluent, newly independent."
+    },
+    {
+      "name": "Yuri",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, Russian-accented criminal creditor."
+    },
+    {
+      "name": "Marco",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-30s, coffee-shop worker; working-class, socially direct, comic."
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female, 70s, Kelly's mother; elderly, soft-spoken, protective."
+    },
+    {
+      "name": "Steven Jensen",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, Kelly's father; stern, old-school, blunt."
+    }
+  ],
+  "positioning_hook": "A broke widow with a felony past and a teenage son takes a humiliating job hunt into her own hands, then stumbles into OnlyFans as the fastest way to stop the bleeding.",
+  "cost_usd": 0.03401175,
+  "input_tokens": 18967,
+  "output_tokens": 4397,
+  "status": "wrote:leads_ok"
+}

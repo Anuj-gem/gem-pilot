@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:18:52.861Z",
+  "submission_id": "76fe08ce-ccc7-4374-b4ea-22ab251fbf27",
+  "eval_id": "7ce53da9-0b77-4bd7-8636-d11e4ead61de",
+  "title": "Tilly @16",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Tilly",
+      "role_type": "Lead",
+      "demographics": "Female, 16, white, tomboyish teen, young-looking for her age."
+    },
+    {
+      "name": "Emma",
+      "role_type": "Supporting",
+      "demographics": "Female, 72, white, grandmother, older adult."
+    },
+    {
+      "name": "Aaron",
+      "role_type": "Supporting",
+      "demographics": "Male, 15-16, white, nerdy teen."
+    },
+    {
+      "name": "Ryan",
+      "role_type": "Supporting",
+      "demographics": "Male, 20, white, waterski instructor."
+    },
+    {
+      "name": "Andrea",
+      "role_type": "Supporting",
+      "demographics": "Female, 46, white, mother, caregiver."
+    },
+    {
+      "name": "Michael",
+      "role_type": "Supporting",
+      "demographics": "Male, 50, white, father, business-suit professional."
+    },
+    {
+      "name": "Janny",
+      "role_type": "Supporting",
+      "demographics": "Female, 18, severely physically and mentally disabled, non-verbal."
+    },
+    {
+      "name": "Bernie",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged, white, local cop."
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female, 16, white, bookish teen friend."
+    },
+    {
+      "name": "Justine",
+      "role_type": "Supporting",
+      "demographics": "Female, 18, white, athletic teen."
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female, 50, white, local neighbor/friend."
+    }
+  ],
+  "positioning_hook": "A restless 16-year-old hides in her grandmother’s trunk for a summer escape, then gets forced to grow up fast when first love, family collapse, and her disabled sister’s absence collide.",
+  "cost_usd": 0.04851975,
+  "input_tokens": 34645,
+  "output_tokens": 5008,
+  "status": "wrote:leads_ok"
+}

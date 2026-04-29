@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:23:50.629Z",
+  "submission_id": "c27766c4-ff4d-449d-b662-393a60dbf360",
+  "eval_id": "b2e7a994-34cf-498c-b3c6-d3759fedc55e",
+  "title": "The Inventor",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Brent Woods",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, white, inventor/entrepreneur, married father, bipolar and alcoholic"
+    },
+    {
+      "name": "Emily Woods",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, wife, mother, working-class, emotionally resilient"
+    },
+    {
+      "name": "Henry",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-50s, white, lawyer/business aide, observant, emotionally guarded"
+    },
+    {
+      "name": "Maximilian",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, wealthy, corporate operator, polished, predatory"
+    },
+    {
+      "name": "Lizzy",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s-60s, disabled, mobility-impaired, investor/user"
+    },
+    {
+      "name": "Jeremy",
+      "role_type": "Supporting",
+      "demographics": "Male, teen to early 20s, white, son, emotionally observant"
+    },
+    {
+      "name": "Lanna",
+      "role_type": "Supporting",
+      "demographics": "Female, teen, white, daughter, emotionally direct"
+    },
+    {
+      "name": "Carrie",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, inventor/activist, fierce, working-class"
+    },
+    {
+      "name": "Judy",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, musician, intimate, perceptive"
+    }
+  ],
+  "positioning_hook": "A bipolar inventor fights to keep his mobility aid patent from being stolen, while his own mania, marriage, and sanity become the real battleground.",
+  "cost_usd": 0.058203,
+  "input_tokens": 47142,
+  "output_tokens": 5077,
+  "status": "wrote:leads_ok"
+}

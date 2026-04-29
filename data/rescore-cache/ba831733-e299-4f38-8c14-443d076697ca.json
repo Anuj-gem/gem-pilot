@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Drama"
+      ],
+      "tone": "gritty",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "character-driven",
+        "propulsive",
+        "family-dynamics",
+        "identity",
+        "survival",
+        "crime",
+        "desert",
+        "queer-lead"
+      ]
+    },
+    "positioning_hook": "A closeted Oklahoma drifter is pulled into his family’s paranoid militia world, then has to choose between survival, loyalty, and the boy he loves when a desert road trip turns into a blood-soaked siege.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hook is immediate and the stakes are legible, but the script’s hard-edged extremism, graphic violence, and openly hateful language narrow the audience to adult thriller buyers. The emotional spine between Scott and Joel broadens it, but this is still a niche, not four-quadrant, commercial proposition."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early: a closeted young man in a rural conspiracy family gets trapped when his brother’s militia paranoia collides with a visiting queer couple. The diner, motel, and church-steeple set pieces keep the engine clear and easy to pitch."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Scott has a strong internal contradiction — timid at home, decisive under pressure — and Joel gives the script a second emotional center. Chad Michael and Roberta are vivid antagonistic forces, though they’re more combustible types than deeply surprising people."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits hard to a toxic, politically charged rural nightmare and doesn’t soften the language or behavior. The collision of queer romance, family melodrama, and militia paranoia gives it a sharper edge than a standard backwoods thriller."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once the desert trip and motel trap kick in, the script moves with real urgency through escalating captures, escapes, and reversals. The opening spends time setting the social world, but the back half is built to keep turning the screw."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central engine — a closeted son inside a conspiracy-addled family who falls for one of the people they target — feels fresh and immediately legible. It’s not reinventing the thriller, but the emotional and political collision is specific enough to stand out."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The desert town, motor lodge, diner, compound, and church create a coherent ecosystem of poverty, isolation, and grievance. The radio ranting, MAGA iconography, and local social codes make the world feel story-generating rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The script has a very clear register: brutal, satirical, and emotionally earnest at the same time. It knows when to play the paranoia straight and when to let the absurdity of the conspiracists expose itself."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real thematic seeds here — shame, family loyalty, internalized hate, and the seduction of belonging — but the script mostly pays them off in the moment. The emotional material is strong, though it doesn’t yet suggest a much larger hidden architecture."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Scott/Joel, Scott/Chad Michael, Scott/Roberta, Pam/Theo, and Pam/Joel all generate distinct friction and chemistry. The script keeps pairing characters in ways that create fresh pressure, which gives the ensemble real engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Scott Hewitt",
+        "role_type": "Lead",
+        "demographics": "Male, early 20s, white, closeted gay man from a poor rural desert family.",
+        "hook": "Scott is the emotional center of the script: quiet, ashamed, observant, and desperate to be loved by a family that has built its identity around hatred. He spends most of the story trying to disappear, then discovers he can act with real courage once the choice is no longer abstract. His arc is not about becoming someone else; it’s about finally choosing himself in public.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the internal pressure of Timothée Chalamet in Call Me by Your Name and the survival turn of Lucas Hedges in Manchester by the Sea — a performance built on restraint, shame, and then a hard-earned break into action."
+      },
+      {
+        "name": "Roberta Hewitt",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-40s, white, grieving mother, economically strained, ideologically radicalized.",
+        "hook": "Roberta is a volatile mix of maternal devotion, grief, paranoia, and ugly prejudice. She can be tender in one beat and monstrous in the next, which makes her more than a stock bigot; she’s a woman whose fear has curdled into a worldview she uses to survive. Her love for Scott is real, which is exactly what makes her dangerous.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Three Billboards Outside Ebbing, Missouri — a ferocious, contradictory mother role that lets an actor swing between pain, rage, and dark humor without ever becoming passive."
+      },
+      {
+        "name": "Chad Michael Hewitt",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-20s, white, physically imposing older brother, militia-aligned rural extremist.",
+        "hook": "Chad Michael is the family’s enforcer and false savior: protective, charismatic, and terrifyingly committed to the worldview that gives him purpose. He reads as the brother who could have been a hero in another movie, which makes his betrayal of Scott more painful and more dangerous. He’s the script’s most overt embodiment of masculine grievance turned predatory.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the menace-and-charisma swing of Walton Goggins in Justified — a magnetic, dangerous presence who can dominate a room and then turn lethal without warning."
+      },
+      {
+        "name": "Pam Sutton",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s, white, artist, educated, socially ambitious, engaged to Theo.",
+        "hook": "Pam is the script’s bridge character: she wants decency, stability, and a future, but she keeps walking into spaces where her optimism gets tested. She’s not naive so much as emotionally overcommitted, and the story uses her to expose how fragile liberal comfort becomes when it meets real violence. Her fear is credible, and her loyalty is what keeps her from becoming a bystander.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the anxious, self-correcting energy of Elisabeth Moss in The Handmaid’s Tale — a woman trying to stay composed while the world keeps proving her instincts right."
+      },
+      {
+        "name": "Theo Jones",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, Black, filmmaker, educated, engaged, professionally stalled.",
+        "hook": "Theo is smart, funny, wounded, and constantly having to absorb other people’s assumptions before he can even get to the work. He has the most outward confidence of the central group, but the script keeps revealing how much humiliation he’s had to metabolize to stay functional. He’s the emotional ballast of the urban side of the story and the clearest adult in the room until the violence starts.",
+        "why_actor_wants_this": "This is the showcase lane of Sterling K. Brown in This Is Us — a role that lets an actor play intelligence, hurt, charm, and dignity while still landing as the most grounded person in the scene."
+      },
+      {
+        "name": "Joel Schwartz",
+        "role_type": "Supporting",
+        "demographics": "Male, early 20s, white, gay, Jewish, stylish, sharp-tongued, urban outsider.",
+        "hook": "Joel is the script’s most overtly modern outsider: quick, flirtatious, self-protective, and capable of turning fear into wit. He starts as comic relief and social contrast, then becomes the person who most clearly sees Scott for who he is. His vulnerability under pressure gives the story its most emotionally legible queer-romance thread.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the scene-stealing bite of Ben Platt in The Politician — fast verbal rhythm, self-aware humor, and a late-story vulnerability that redefines the character."
+      },
+      {
+        "name": "Houston",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-50s, white, obese, conspiracy theorist, militia-adjacent mentor figure.",
+        "hook": "Houston is the pseudo-intellectual engine of the conspiracy world, the guy who can turn nonsense into doctrine and make it sound like revelation. He’s cowardly, manipulative, and weirdly paternal toward Scott, which makes him useful and pathetic at once. He’s less a villain than a recruiter for grievance.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the grotesque charm of Paul Walter Hauser in I, Tonya — a character who can be funny, sad, and repellent in the same breath."
+      },
+      {
+        "name": "Marcie Eidleberg",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-50s, white/Jewish, film executive, tough, high-status, pragmatic.",
+        "hook": "Marcie is the sharpest professional in the room and one of the few adults who can move between the urban and rural worlds without losing her footing. She’s funny, impatient, and strategically generous, which makes her feel like a real industry operator rather than a token authority figure. She also gives the script a welcome counterweight to the surrounding hysteria.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the crisp authority of Laura Linney in Ozark — a smart, dry, no-nonsense professional who can command a scene with one look."
+      },
+      {
+        "name": "Muhammad Quraishi",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s to early 30s, South Asian/Muslim, filmmaker, witty, flirtatious, socially agile.",
+        "hook": "Muhammad is the most openly playful member of the urban group, but he’s also the one who gets the story’s most brutal punishment. He brings warmth and comic rhythm to the road-trip material, which makes his death land as a real rupture rather than just a body count beat. He broadens the world and sharpens the script’s sense of who is being targeted.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the easy charm and sudden vulnerability of Riz Ahmed in Sound of Metal — a lively, intelligent presence whose loss would sting because he feels fully alive."
+      },
+      {
+        "name": "Buck Taylor",
+        "role_type": "Supporting",
+        "demographics": "Male, mid-60s, white, sheriff, local authority, openly complicit.",
+        "hook": "Buck is the story’s institutional rot made flesh: calm, paternal, and more dangerous than the younger men because he knows exactly how to launder violence through procedure. He arrives late but changes the temperature of the climax immediately, because he represents the system protecting the family’s hatred. He’s not just a bad cop; he’s the reason the bad guys think they can win.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the chilling authority of J.K. Simmons in Whiplash — controlled, paternal, and terrifying because the power is so normalized."
+      },
+      {
+        "name": "Wyatt",
+        "role_type": "Supporting",
+        "demographics": "Male, late 50s to early 60s, white, deceased father/stepfather figure.",
+        "hook": "Wyatt functions as the story’s lost moral alternative: the one adult in the Hewitt orbit who seems to have offered warmth, humor, and a more humane model of masculinity. Even in flashback, he gives Scott a memory of being seen. His absence is part of the wound the script is really tracking.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the lived-in warmth of Jeff Bridges in Crazy Heart — a brief but meaningful presence that can define the emotional memory of the whole film."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead role with strong internalized emotional range",
+          "Multiple supporting roles require specific regional/rural texture",
+          "Several roles are written with explicit identity markers: queer, Jewish, Black, Muslim, white supremacist, law enforcement",
+          "Physical contrast matters across the Hewitt brothers and the militia men"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Rural desert roadways",
+          "Run-down family house",
+          "Gas station/convenience store",
+          "High-end art gallery",
+          "Diner",
+          "Motor lodge rooms",
+          "Conspiracy compound",
+          "Ghost town main street",
+          "Church and steeple",
+          "Abandoned house"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirement beyond basic cleanup and possible blood enhancement.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Heavy practical blood effects, gunshot hits, prosthetic gore, and multiple injury beats including throat slash, head wound, and limb trauma.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Trump/MAGA bumper stickers and Confederate/Trump iconography are prominently featured as character and production design elements."
+        },
+        {
+          "type": "real_person",
+          "detail": "The script references the President in news dialogue without naming a specific real person."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming / theatrical genre",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult thriller with limited theatrical specialty play and stronger streaming afterlife."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary desert locations keep the footprint contained, but the climax stacks multiple gunfights, blood effects, and injury makeup across several locations in the same stretch of story."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Scott and Joel both need actors who can carry vulnerability, attraction, and fear without flattening into type, while Chad Michael and Roberta require performers who can sell menace and family intimacy in the same scene."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s explicit racism, homophobia, and conspiracy rhetoric are central to the premise, so the buyer conversation will hinge on whether the material is being read as provocation, satire, or straight thriller."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Green Room",
+          "year": 2015,
+          "why_it_comps": "Shares the same pressure-cooker escalation where outsiders are trapped inside a violent, ideologically sealed community."
+        },
+        {
+          "title": "The Invitation",
+          "year": 2015,
+          "why_it_comps": "Matches the slow-burn suspicion turning into a siege, with social unease becoming physical danger."
+        },
+        {
+          "title": "Three Billboards Outside Ebbing, Missouri",
+          "year": 2017,
+          "why_it_comps": "Comps on rural anger, dark humor, and a community defined by grief, resentment, and moral rot."
+        },
+        {
+          "title": "Get Out",
+          "year": 2017,
+          "why_it_comps": "Not a direct tonal match, but it shares the social-horror mechanism of prejudice turning into a literal trap."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult thriller viewers who respond to socially charged genre material with a strong queer emotional spine.",
+        "demographics": "Adults 25-54, skewing slightly male on the thriller hook but with meaningful female and LGBTQ+ interest because of the romance and family-drama elements.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$3M-$8M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary desert locations, a limited cast, and mostly practical violence keep it in indie feature territory, though the climax needs disciplined stunt and gore execution."
+      },
+      "lane_fit": {
+        "lane": "elevated indie thriller",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original-film dev execs",
+          "specialty distributors",
+          "producer-directors looking for a contained breakout",
+          "LGBTQ+-friendly genre labels"
+        ],
+        "detail": "This sits naturally in the lane of adult, socially pointed thrillers that can sell on premise, performance, and topical heat. The queer romance and family-horror angle give it a differentiator beyond the usual rural siege movie."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with a closed emotional arc; the supporting characters are vivid, but there is no clear franchise or sequel vector that improves the property."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Scott’s internal conflict is the engine",
+          "what_it_means": "Commercially, this gives the film a protagonist who can carry both suspense and emotional identification, which is what makes elevated genre travel beyond its niche. Buyers looking for a breakout lead role for a younger actor will see a clean showcase with real awards-adjacent potential.",
+          "evidence": "Scott’s repeated attempts to tell Chad Michael and Roberta he’s gay, followed by his decisive turn to protect Joel and reject the family’s worldview.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The queer romance has real stakes",
+          "what_it_means": "This turns the movie from a hate-crime thriller into a love story under siege, which broadens the emotional promise and gives the ending a payoff beyond survival. That combination is attractive to buyers seeking genre with identity-driven urgency and to actors who want a romance that actually matters.",
+          "evidence": "Scott and Joel’s connection builds from the diner and motel scenes into the final hospital and cemetery beats.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The rural world feels specific and saleable",
+          "what_it_means": "The desert, motor lodge, diner, compound, and ghost town create a contained production world that is easy to visualize and market. That specificity helps the film feel like a place-based thriller rather than a generic backwoods chase movie.",
+          "evidence": "The repeated use of the Hewitt house, the diner, the compound, and the abandoned church/ghost town.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps generating friction",
+          "what_it_means": "This gives the project multiple marketing angles and keeps the movie from depending on a single relationship to function. Buyers can see a cast-driven thriller where almost every pairing has tension, chemistry, or betrayal baked in.",
+          "evidence": "Scott/Chad Michael, Scott/Joel, Pam/Theo, Pam/Joel, Roberta/Buck, and Marcie/Muhammad all create distinct energy.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax is built for audience reaction",
+          "what_it_means": "The final siege has the kind of escalating reversals, betrayals, and practical gore that can play hard in a theater and clip well in marketing. That makes the ending a real selling point for genre buyers who want a memorable third act.",
+          "evidence": "The church shootout, the motel torture, the sheriff reveal, and the final rescue sequence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, performance-forward thriller with a strong queer emotional spine and a brutally specific rural world. It has the kind of production footprint that can live in indie feature territory while still delivering the escalation, blood, and moral heat that genre buyers want."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The script leans hard on hateful language",
+          "detail": "The repeated slurs and extremist rhetoric are central to the premise, but they also narrow the buyer pool and make the marketing conversation more sensitive. That’s a real positioning issue even for premium streaming, where buyers will want to know whether the material is being read as satire, provocation, or straight exploitation.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Roberta’s turn is very abrupt",
+          "detail": "Her shift from grieving mother to full-on torturer happens fast, and the movie asks the audience to accept that escalation while the motel sequence is already moving at speed. It’s a strong dramatic choice, but it’s also the point where some buyers will feel the script is asking for a lot of trust in a short span.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The climax is blood-heavy and punishing",
+          "detail": "The church and house sequences stack head wounds, throat slashes, kneecap destruction, and torture in a way that pushes the film toward the harder end of the mature-content spectrum. That’s effective for genre fans, but it will be a factor in buyer conversations about rating comfort and audience reach.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Joel and Scott need very specific casting chemistry",
+          "detail": "The movie lives or dies on whether the Scott/Joel dynamic feels tender, funny, and dangerous enough to carry the back half of the film. If that chemistry doesn’t land, the emotional payoff of the ending drops sharply.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The biggest friction is not concept clarity; it’s the script’s willingness to live inside extreme prejudice and graphic retaliation for most of its runtime. That makes it potent for the right buyer, but it also means the project will be discussed as much for its content sensitivity as for its thriller mechanics."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 72.7,
+  "tier": "Optionable",
+  "inputTokens": 40576,
+  "outputTokens": 5224,
+  "cost": 0.05394,
+  "declaredFormat": "Feature film"
+}

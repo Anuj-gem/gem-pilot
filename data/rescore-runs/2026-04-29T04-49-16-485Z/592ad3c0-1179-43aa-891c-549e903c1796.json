@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:26:33.086Z",
+  "submission_id": "592ad3c0-1179-43aa-891c-549e903c1796",
+  "eval_id": "e17748b8-4d98-4d45-84bc-d7aece6681a7",
+  "title": "qb1 426revisions  name",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Carson King",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, white, elite professional athlete, physically aging, married, father of two."
+    },
+    {
+      "name": "Phoebe Merchant",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, white, executive-level football talent evaluator, daughter of the team owner."
+    },
+    {
+      "name": "Thomas Merchant",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, white, billionaire NFL owner, Texas-born, old-money/new-money hybrid."
+    },
+    {
+      "name": "Johnny Howard",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, white, elite quarterback prospect, draft-age, reckless public persona."
+    },
+    {
+      "name": "Elle King",
+      "role_type": "Supporting",
+      "demographics": "Female, 40s, white, former supermodel, wife of Carson, mother of two."
+    },
+    {
+      "name": "Will Caldwell",
+      "role_type": "Supporting",
+      "demographics": "Male, late 40s, white, head coach, former lineman build."
+    },
+    {
+      "name": "Willie Howard",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, former football father, working-class sports parent."
+    },
+    {
+      "name": "Elaine Carson",
+      "role_type": "Supporting",
+      "demographics": "Female, late 60s, white, Carson’s mother, socially sharp, upper-class family matriarch."
+    },
+    {
+      "name": "Henry Guerrero",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, likely Latino, wellness/retreat facilitator, professional spiritual guide."
+    },
+    {
+      "name": "Jeremy Barnett",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, sports reporter, professional interviewer."
+    }
+  ],
+  "positioning_hook": "An aging NFL franchise quarterback faces a forced succession battle with a reckless rookie while his owner-dad and power-hungry daughter turn the draft into a family coup.",
+  "cost_usd": 0.045864749999999996,
+  "input_tokens": 29545,
+  "output_tokens": 5268,
+  "status": "wrote:leads_ok"
+}

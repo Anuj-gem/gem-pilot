@@ -1,0 +1,374 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Action",
+        "Family"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "feature-anchored",
+        "high-concept",
+        "character-driven",
+        "franchise-potential",
+        "family-dynamics",
+        "coming-of-age",
+        "monrovia",
+        "art-magic"
+      ]
+    },
+    "positioning_hook": "A 14-year-old artist in Monrovia discovers his drawings can become real, then has to stop a man harvesting imagination before his whole neighborhood gets drained dry.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is easy to sell: a kid artist with a magical gift, a neighborhood crew, and a villain stealing imagination. It has family appeal and franchise-friendly energy, though the very specific mythology and earnest register narrow it somewhat versus a broader four-quadrant fantasy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The hook lands immediately in the opening pages: Cahner draws, the drawings can step off the page, and the Figure Company arcade is secretly siphoning creative energy. The premise is clean, visual, and easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Cahner is a strong lead because his gift is inseparable from his identity, and the supporting crew each has a readable function and personality. Mark, Anafil, Javel, Jenea, and Mr. Sammy Flavors all add durability, though Cahner still carries most of the emotional weight."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s blend of sketchbook magic, neighborhood warmth, and a corporate imagination-heist is distinctive. The opening visual grammar and the Zero-C mythology give it a confident, ownable angle rather than a generic fantasy wrapper."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The first act builds cleanly toward the arcade reveal, and the Figure confrontation gives the story a strong engine. The middle expands into a lot of world-building and character introductions, which is charming but slightly dilutes urgency before the final trap."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The idea of imagination as a literal source field, guarded through generations and accessed through drawing, feels fresh and immediately legible. It has the kind of simple-but-surprising logic that can travel if packaged well."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "Monrovia is rendered as a lived-in social ecosystem: Assorted Flavors, the school crew, the family table, the arcade, and the neighborhood routes all feel story-generating. The world has rules, rituals, and a warm civic identity that can support more than one set piece."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually sincere and affectionate without feeling bland; it treats friendship, family, and wonder as the point rather than the garnish. The script knows exactly what kind of emotional temperature it wants, especially in the Assorted Flavors and family-table scenes."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Zero-C, the guardianship history, and Figure’s buried wound all suggest a larger mythology beneath the surface. The script gives enough to imply depth, though it still plays more like an origin story than a deeply withheld universe."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The crew dynamic is a real asset: Cahner, Anafil, Cliffy, Dick, Demi, Ryker, Darius, Carlo, Benny, Addison, Mark, and Josh all generate usable combinations. Assorted Flavors functions like a relationship hub, which gives the script recurring scene energy beyond the lead."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Cahner Lynch",
+        "role_type": "Lead",
+        "demographics": "Black male, 14",
+        "hook": "A gifted, observant 14-year-old artist from Monrovia whose drawings are so alive they become a way of understanding the world before he can explain it. He is quiet but not passive, deeply affectionate with his family, and carries the rare combination of wonder, discipline, and instinctive leadership that makes him feel older than his age without losing his kid energy.",
+        "why_actor_wants_this": "This is the showcase territory of Jacob Tremblay in Room or Jaeden Martell in It — a young lead who has to carry wonder, intelligence, and emotional authority in the same frame. The role gives an actor a full hero arc plus the physical business of drawing, discovering, and commanding a magical world."
+      },
+      {
+        "name": "Anafil Swahili",
+        "role_type": "Supporting",
+        "demographics": "female, 14",
+        "hook": "A new-to-town artist with her own internal logic, quiet confidence, and a sketchbook that proves she is Cahner’s equal rather than his accessory. She reads people and drawings with unusual precision, and the script positions her as the one who can meet Cahner in the same imaginative register while still having her own unfinished line to complete.",
+        "why_actor_wants_this": "This is the kind of role that gave Auli'i Cravalho in The Little Mermaid or Sophia Lillis in It a chance to play intelligence and emotional self-possession rather than just support the lead. The showcase is the slow-burn reveal of a character who is already complete in some ways but still becoming."
+      },
+      {
+        "name": "Mark",
+        "role_type": "Supporting",
+        "demographics": "male-presenting, ageless animated/created character",
+        "hook": "Cahner’s original ferret drawing made real: a tiny, knowing, hyper-observant guide who speaks with the authority of something that has been watching the whole time. He functions as comic precision, mythic translator, and emotional witness, and he gives the movie its most memorable sidekick voice.",
+        "why_actor_wants_this": "This is the showcase territory of Dobby in Harry Potter or Rocket in Guardians of the Galaxy — a scene-stealing nonhuman role with wit, specificity, and emotional utility. The performance opportunity is voice work with personality, timing, and a surprising amount of heart."
+      },
+      {
+        "name": "Javel Lynch",
+        "role_type": "Supporting",
+        "demographics": "Black male, 40s",
+        "hook": "Cahner’s father is steady, emotionally literate, and quietly profound, the kind of parent who sees his son’s gift long before he can name it. He is not written as a skeptic or obstacle; he is the grounded adult who gives the story its moral center and makes the fantasy feel inherited rather than random.",
+        "why_actor_wants_this": "This is the kind of role that gave Brian Tyree Henry in Causeway or Mahershala Ali in Moonlight a chance to play warmth, authority, and restraint without ever becoming background. The showcase is the emotional intelligence of a father who understands his son more deeply than he says out loud."
+      },
+      {
+        "name": "Jenea Lynch",
+        "role_type": "Supporting",
+        "demographics": "female, 40s",
+        "hook": "Cahner’s mother is the household’s practical heartbeat: warm, funny, exacting, and fully aware that love is expressed through food, timing, and the small rituals that keep a family intact. She sees the magic before the plot does, and her calm certainty gives the story its domestic grounding.",
+        "why_actor_wants_this": "This is the showcase territory of Regina King in If Beale Street Could Talk or Octavia Spencer in The Help — a role that turns quiet authority into star power. It gives an actor the chance to play humor, tenderness, and maternal command without ever leaving the room."
+      },
+      {
+        "name": "Justin Figure",
+        "role_type": "Supporting",
+        "demographics": "male, 50s-60s",
+        "hook": "A polished, silver-haired corporate visionary whose obsession with controlling imagination masks a deeper wound around loss, ownership, and what was taken from him. He is not a cartoon villain; the script gives him enough interior truth to make his argument dangerous, which is exactly why he works.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Spotlight or Ben Mendelsohn in Bloodline — a controlled, intelligent antagonist role where menace comes from precision rather than volume. The actor gets to play charisma, grievance, and the slow collapse of certainty."
+      },
+      {
+        "name": "Mr. Sammy Flavors",
+        "role_type": "Supporting",
+        "demographics": "male, 60s",
+        "hook": "The owner of Assorted Flavors is the neighborhood’s quiet guardian, a man who knows what people need before they do and treats the shop like a civic institution. He carries the mythology without over-explaining it, which makes him feel both ordinary and sacred.",
+        "why_actor_wants_this": "This is the showcase territory of Delroy Lindo in Da 5 Bloods or Glynn Turman in The Last Black Man in San Francisco — a role built on presence, wisdom, and the ability to make a single look feel like backstory. It’s a prestige supporting part with real warmth and mystery."
+      },
+      {
+        "name": "Cliffy",
+        "role_type": "Supporting",
+        "demographics": "male, 14",
+        "hook": "Cahner’s friend whose kindness is structural, not performative; he is the steady social glue of the group and the one who can say the obvious thing with a grin. He gives the ensemble its emotional ease and keeps the movie from becoming too self-serious.",
+        "why_actor_wants_this": "This is the kind of role that gave Caleb McLaughlin in Stranger Things or Jack Dylan Grazer in It a chance to be funny, loyal, and emotionally legible in a group dynamic. The showcase is comic timing with a genuinely warm center."
+      },
+      {
+        "name": "Dick",
+        "role_type": "Supporting",
+        "demographics": "male, 14",
+        "hook": "A grease-on-his-knuckles builder kid with the most practical imagination in the group, always inventing, testing, and refining. He reads as a future engineer or mechanic, but the script gives him enough personality to feel like a real friend rather than a utility function.",
+        "why_actor_wants_this": "This is the showcase territory of Gaten Matarazzo in Stranger Things — a smart, funny, hands-on kid role with strong ensemble rhythm. It gives an actor a chance to play competence as character."
+      },
+      {
+        "name": "Demi",
+        "role_type": "Supporting",
+        "demographics": "female, 14",
+        "hook": "The group’s recorder and strategist, always filming, mapping, or clocking the details everyone else misses. She has a cool, exacting presence that makes her feel like the one who will remember the summer correctly.",
+        "why_actor_wants_this": "This is the showcase territory of Sadie Sink in Stranger Things or Storm Reid in A Wrinkle in Time — a sharp, observant teen role with agency and technical intelligence. The performance opportunity is precision, not volume."
+      },
+      {
+        "name": "Ryker",
+        "role_type": "Supporting",
+        "demographics": "male, 14",
+        "hook": "Quiet, physically grounded, and unexpectedly decisive, Ryker is the friend who arrives from the edge and turns out to be exactly where he needs to be. He has the least verbal flash of the group, which makes his certainty stand out more.",
+        "why_actor_wants_this": "This is the kind of part that gave Noah Jupe in A Quiet Place or Finn Wolfhard in Stranger Things a chance to play stillness with pressure underneath. The showcase is controlled presence and understated loyalty."
+      },
+      {
+        "name": "Darius",
+        "role_type": "Supporting",
+        "demographics": "male, 14",
+        "hook": "The neighborhood chronicler, the kid who understands that recording what is happening is its own form of courage. He’s not the loudest in the room, but he gives the story a memory and a point of view outside the immediate action.",
+        "why_actor_wants_this": "This is the showcase territory of Jharrel Jerome in When They See Us or Ashton Sanders in Moonlight — a thoughtful role where observation itself becomes character. It gives an actor a chance to play intelligence and emotional witness."
+      },
+      {
+        "name": "Benny",
+        "role_type": "Supporting",
+        "demographics": "male, ageless animated/created character",
+        "hook": "A chimpanzee drawing brought to life with fast eyes and diagnostic intelligence, Benny reads people and systems almost instantly. He adds a different cognitive texture to the ensemble and helps translate Anafil’s artistic process into story language.",
+        "why_actor_wants_this": "This is the showcase territory of a smart animated side character like Abu in Aladdin or Rocket in Guardians — quick, funny, and narratively useful. The role is a voice-performance opportunity with real personality and scene-stealing potential."
+      },
+      {
+        "name": "Addison",
+        "role_type": "Supporting",
+        "demographics": "female, ageless animated/created character",
+        "hook": "A lion drawn into being with calm dignity and a patient, almost regal intelligence. She feels like the oldest soul in the room the moment she arrives, and her presence broadens the movie’s emotional and visual scale.",
+        "why_actor_wants_this": "This is the showcase territory of a noble animated figure like Aslan or the Beast — a role that asks for authority, warmth, and mythic calm. It gives an actor or voice performer a chance to make stillness feel enormous."
+      },
+      {
+        "name": "Josh",
+        "role_type": "Supporting",
+        "demographics": "male, ageless animated/created character",
+        "hook": "A donkey drawn into being with careful, measured intelligence and a dry, almost philosophical way of speaking. He arrives late in the story but immediately feels like someone who can hold strategy, record-keeping, and moral clarity at once.",
+        "why_actor_wants_this": "This is the showcase territory of Donkey in Shrek or a more restrained sidekick like Korg in Thor: Ragnarok — a voice role that can be funny without losing intelligence. The performance opportunity is verbal precision and unexpected gravitas."
+      },
+      {
+        "name": "Luma",
+        "role_type": "Supporting",
+        "demographics": "female, ageless animated/created character",
+        "hook": "Anafil’s incomplete figure made real, Luma is patient, observant, and defined by the line she has been waiting to finish. She gives Anafil a mirror character and turns the abstract idea of artistic completion into a person with emotional weight.",
+        "why_actor_wants_this": "This is the showcase territory of a lyrical animated role like the spirit figures in The Little Prince or the emotional side characters in Inside Out. It gives a performer the chance to play quiet revelation and tenderness."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "lead 14-year-old Black boy with strong emotional intelligence and light physicality",
+          "multiple teen supporting roles with distinct comic/ensemble functions",
+          "several ageless or animated/created characters requiring voice or performance-capture style casting",
+          "one adult antagonist with polished, authoritative presence"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Monrovia, California neighborhood texture is specific and recurring",
+          "Assorted Flavors functions as a recurring hub location",
+          "Figure Company requires a stylized arcade interior plus a large sub-basement build",
+          "Cahner's bedroom wall of drawings is a signature set piece"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Drawing-to-life transformations, glowing Pencil Wand effects, Zero-C environments, and animated/created characters stepping into live action.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical glow effects, machine lighting, arcade atmosphere, and transformation beats for the Pencil Wand and character emergence.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "theatrical family fantasy",
+        "content_level": "PG / PG-13 equivalent",
+        "series_engine_or_release_model": "Realistic release model is a theatrical family event film with franchise positioning and strong streaming afterlife."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The contemporary neighborhood setting keeps most of the movie contained, but the Figure Company sub-basement, Zero-C sequences, and multiple character-emergence effects will require disciplined visual execution."
+      },
+      "casting": {
+        "level": "high",
+        "note": "Cahner has to carry the movie as a 14-year-old lead with authority, wonder, and emotional precision, while the script also asks for a large teen ensemble and several distinctive voice/performance roles."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The mythology is clear enough to track, but the script is carrying a lot of named characters, rules, and origin material in one feature, so the buyer conversation will focus on how cleanly the world can be introduced."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Kid Who Would Be King",
+          "year": 2019,
+          "why_it_comps": "A kid-led fantasy adventure with a modern setting, ensemble friends, and a sincere emotional register aimed at family audiences."
+        },
+        {
+          "title": "A Wrinkle in Time",
+          "year": 2018,
+          "why_it_comps": "Shares the earnest, imagination-forward fantasy lane and the sense of a young protagonist entering a larger mythic system."
+        },
+        {
+          "title": "Spider-Man: Into the Spider-Verse",
+          "year": 2018,
+          "why_it_comps": "The art-as-identity premise, visual invention, and coming-of-age heroism give it a similar commercial and tonal DNA."
+        },
+        {
+          "title": "The Secret Garden",
+          "year": 2020,
+          "why_it_comps": "The warmth, emotional restoration, and child-centered wonder make it a useful comp for the family-facing side of the material."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Families and younger teens who want a heartfelt fantasy adventure with a Black lead, a strong friend group, and a clear emotional moral.",
+        "demographics": "Skews 10-17 with meaningful parent co-viewing; strongest pull for families, Black audiences, and viewers who respond to imaginative, character-forward fantasy.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$25M-$45M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary family fantasy with moderate VFX, multiple creature/character emergence beats, and a few stylized set pieces, but no period burden or large-scale action."
+      },
+      "lane_fit": {
+        "lane": "family fantasy adventure",
+        "types_of_buyers": [
+          "family-event theatrical distributors",
+          "streamer originals teams building all-ages fantasy",
+          "mid-budget genre producers with kid-facing IP instincts",
+          "director-driven family fantasy buyers",
+          "Black-led commercial feature buyers"
+        ],
+        "detail": "This sits in the lane of sincere, visually inventive family fantasy with a strong moral center and a lead role that can launch a young performer. The neighborhood specificity and art-based magic give it a cleaner identity than generic kid fantasy."
+      },
+      "ip_potential": {
+        "has_potential": true,
+        "detail": "Cahner, Anafil, and the Zero-C mythology support sequel and spinoff pathways, with the strongest vector being a continuing feature franchise around the cord, the guardians, and new characters drawn from the source."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "This gives buyers a clean elevator pitch and a visual hook that can be marketed in a single image: a kid’s drawings becoming real. It is the kind of concept that can attract family audiences, young viewers, and packaging interest around a breakout young lead.",
+          "evidence": "The opening sequence literally animates Cahner’s drawing into existence, then reveals the Figure Company imagination-harvesting engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Cahner is a real star-making lead role.",
+          "what_it_means": "The movie has a central part that can launch a young actor because it combines wonder, authority, humor, and emotional intelligence. That makes the project more attractive to casting-driven buyers and to directors looking for a performance anchor.",
+          "evidence": "Cahner is calm in the face of the voice, leads the crew, confronts Figure, and articulates the film’s moral thesis.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The neighborhood feels like a world, not a backdrop.",
+          "what_it_means": "Assorted Flavors, Monrovia streets, the school crew, and the family table create a repeatable ecosystem that can support multiple set pieces and a strong audience attachment. That kind of texture helps a fantasy movie feel grounded and rewatchable.",
+          "evidence": "The script repeatedly returns to the shop, the school steps, the backyard, and the same street corners as emotional and strategic hubs.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has usable chemistry.",
+          "what_it_means": "The supporting cast is not decorative; it creates a functioning social engine that can generate scenes, humor, and tactical problem-solving. That broadens the movie’s appeal beyond a single-hero fantasy and gives producers more casting lanes.",
+          "evidence": "Cliffy, Dick, Demi, Ryker, Darius, Carlo, Benny, Josh, Addison, Mark, and Luma all have distinct functions and voices.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The villain has a credible argument.",
+          "what_it_means": "Justin Figure is not just a mustache-twirl; he has a worldview about ownership, access, and lost imagination that gives the conflict adult weight. That makes the movie more attractive to prestige-leaning buyers and older viewers who want more than a simple good-vs-evil setup.",
+          "evidence": "The final confrontation turns on Figure’s claim that imagination can be organized and used, not merely stolen.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is sincere without being soft.",
+          "what_it_means": "The script can play to families while still feeling emotionally specific and not cynical, which is a valuable lane in a crowded market. Buyers looking for hopeful, values-forward fantasy have a clear lane here.",
+          "evidence": "The family breakfast scenes, Assorted Flavors exchanges, and the repeated language of love, warmth, and home define the movie’s emotional register.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable family-fantasy package with a breakout young lead, a vivid neighborhood world, and a concept that sells in one sentence. The moderate-VFX, contemporary setting keeps it inside a realistic mid-budget lane while the ensemble and mythology give it franchise upside if a buyer wants to build."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology arrives in a big wave.",
+          "detail": "The script introduces Zero-C, guardians, the cord, the Pencil Wand, the DDWCER, and a large cast of drawn characters in one feature. That gives the movie scale, but it also means the buyer conversation will center on whether the audience can absorb the rules cleanly without the exposition feeling heavy.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The cast list is doing a lot of work.",
+          "detail": "Cahner, Anafil, Mark, Javel, Jenea, Figure, Mr. Sammy Flavors, and a full teen ensemble all matter, and several of them have distinct functions rather than simple support. That is a strength creatively, but it narrows the casting conversation because the movie needs multiple precise fits, not just one lead.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The VFX ask is broader than it first appears.",
+          "detail": "The movie is contemporary, but it still needs drawing-to-life transformations, Zero-C environments, glowing instruments, and several created characters interacting naturally with live action. That keeps it out of true low-budget territory and makes execution quality a visible buyer concern.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The middle leans into explanation.",
+          "detail": "Once the arcade reveal lands, the script spends a lot of time defining the source, the guardians, the crew roles, and the mechanics of the circle plan. The material is engaging, but the pacing conversation will focus on whether the second act can keep the same propulsion as the opening and the final confrontation.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Cahner carries the emotional load.",
+          "detail": "The ensemble is vivid, but the movie still lives or dies on whether the young lead can hold the wonder, the moral clarity, and the authority to face Figure. That is a real upside if cast well, and a real dependency if the role is underpowered in the room.",
+          "is_primary_lever": false,
+          "source": "both"
+        }
+      ],
+      "headline": "The main friction is not the concept; it is the amount of mythology and character machinery the script asks a feature audience to absorb while still keeping the pace light. If the buyer likes the lane, the next conversation will be about casting precision and whether the VFX scope stays disciplined enough to protect the mid-budget promise."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 78.7,
+  "tier": "Optionable",
+  "inputTokens": 34301,
+  "outputTokens": 5933,
+  "cost": 0.05242425,
+  "declaredFormat": "Feature film"
+}

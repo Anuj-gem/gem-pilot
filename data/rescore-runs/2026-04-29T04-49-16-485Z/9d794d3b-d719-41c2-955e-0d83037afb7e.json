@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T05:27:24.174Z",
+  "submission_id": "9d794d3b-d719-41c2-955e-0d83037afb7e",
+  "eval_id": "52d0dbf9-5f7e-42a3-bc79-0057c32796c3",
+  "title": "The Exodus - Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Clarton",
+      "role_type": "Lead",
+      "demographics": "Male, late 20s, human; a meticulous engineer from a controlled off-world society."
+    },
+    {
+      "name": "Zois",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, human; Clarton’s peer and shipmate."
+    },
+    {
+      "name": "Nya",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 20s, human; medical technician, formerly trained as a veterinarian."
+    },
+    {
+      "name": "Captain Almor",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, human; commanding officer of Voyager One."
+    },
+    {
+      "name": "Chief Engineer",
+      "role_type": "Supporting",
+      "demographics": "Male, older adult, human; senior engineering authority on Voyager One."
+    },
+    {
+      "name": "Father",
+      "role_type": "Supporting",
+      "demographics": "Male, middle-aged to older adult, human; Clarton’s father."
+    }
+  ],
+  "positioning_hook": "A meticulous young engineer on a generation ship falls for a medical tech, then discovers the voyage may be looping through time and reality itself is lying to the crew.",
+  "cost_usd": 0.031392,
+  "input_tokens": 17460,
+  "output_tokens": 4066,
+  "status": "wrote:leads_ok"
+}

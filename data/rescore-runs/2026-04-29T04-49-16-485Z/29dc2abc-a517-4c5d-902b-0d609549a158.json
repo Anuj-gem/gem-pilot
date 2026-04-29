@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:23:37.121Z",
+  "submission_id": "29dc2abc-a517-4c5d-902b-0d609549a158",
+  "eval_id": "3d5e793b-7568-4fad-aa5d-3820bc54e334",
+  "title": "AGENCY Sixth Draft ROOF2RESET",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Ridley Cooper",
+      "role_type": "Lead",
+      "demographics": "Woman, 20s, CIA trainee / cognitive psychology background, survivor of coercive abuse and school violence."
+    },
+    {
+      "name": "Ian Walsh",
+      "role_type": "Supporting",
+      "demographics": "Man, mid-20s to early 30s, CIA operative / trainee, physically capable, emotionally disciplined."
+    },
+    {
+      "name": "Dawson",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s, intelligence/defense technologist with ambiguous agency ties."
+    },
+    {
+      "name": "Alvarez",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, data analytics trainee, smart, guarded, observant."
+    },
+    {
+      "name": "Egan",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, West Point legacy, tactical trainee, physically aggressive, status-driven."
+    },
+    {
+      "name": "Wyatt Denny",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, worst-case-scenarios analyst, socially awkward, hyper-alert."
+    },
+    {
+      "name": "Chris Williams",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, cybersecurity trainee, quiet, focused, vulnerable to overload."
+    },
+    {
+      "name": "Sykes",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s-60s, seasoned operations director, institutional hardliner."
+    },
+    {
+      "name": "Bill Harrison",
+      "role_type": "Supporting",
+      "demographics": "Man, older, lead ops trainer, smart, deadly, institutional veteran."
+    },
+    {
+      "name": "Cameron West",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, professor / abuser / projected identity construct."
+    },
+    {
+      "name": "Senator Kerrigan",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, U.S. senator, military family background, public-facing reformer."
+    }
+  ],
+  "positioning_hook": "A CIA trainee with a history of coercive abuse discovers her agency’s neural warfare program is rewriting reality, forcing her to choose between the man she loves and the system that built her.",
+  "cost_usd": 0.0536475,
+  "input_tokens": 40618,
+  "output_tokens": 5152,
+  "status": "wrote:leads_ok"
+}

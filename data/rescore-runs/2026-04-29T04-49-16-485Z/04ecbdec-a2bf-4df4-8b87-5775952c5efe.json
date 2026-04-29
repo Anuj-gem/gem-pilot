@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:25:49.682Z",
+  "submission_id": "04ecbdec-a2bf-4df4-8b87-5775952c5efe",
+  "eval_id": "8756a0e3-b19f-44e2-a09b-e7a278fa1331",
+  "title": "ONE LAST DANCE 1st out come",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male, late 50s, white, working-class Catholic father and school administrator in Pottsville, Pennsylvania."
+    },
+    {
+      "name": "Skylar Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female, early 40s, white, former athlete/coaching-minded mother and Catholic community figure."
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 20s to mid 30s, adult daughter living out of state."
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male, late 70s, Catholic priest."
+    },
+    {
+      "name": "Dr. Anckles",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 60s, physician."
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Male, early 70s, white, family elder."
+    },
+    {
+      "name": "Renee Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female, early 70s, white, family elder."
+    },
+    {
+      "name": "Lisa",
+      "role_type": "Supporting",
+      "demographics": "Female, mid 40s to 50s, family member."
+    },
+    {
+      "name": "Antonio",
+      "role_type": "Supporting",
+      "demographics": "Male, 9-16 depending on timeline, child/teen son."
+    },
+    {
+      "name": "Angelo",
+      "role_type": "Supporting",
+      "demographics": "Male, 9-16 depending on timeline, child/teen son."
+    },
+    {
+      "name": "Olivia",
+      "role_type": "Supporting",
+      "demographics": "Female, 7-14 depending on timeline, child/teen daughter."
+    },
+    {
+      "name": "Hannah",
+      "role_type": "Supporting",
+      "demographics": "Female, 7-14 depending on timeline, child/teen daughter."
+    }
+  ],
+  "positioning_hook": "A beloved school principal and church volunteer faces a fatal heart condition, forcing his family to confront loss, faith, and the life he quietly built before time runs out.",
+  "cost_usd": 0.045657,
+  "input_tokens": 30360,
+  "output_tokens": 5086,
+  "status": "wrote:leads_ok"
+}

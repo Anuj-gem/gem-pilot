@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:27:31.966Z",
+  "submission_id": "506f312e-44e9-4120-9eed-b3b73a06ca0c",
+  "eval_id": "3023fcd0-ff24-4c23-9bec-c214f939d99c",
+  "title": "Love Letter script",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Atlanta Moe",
+      "role_type": "Lead",
+      "demographics": "Female, early 20s, affluent Lagos young woman, sheltered but emotionally hungry."
+    },
+    {
+      "name": "Kayla Moe",
+      "role_type": "Supporting",
+      "demographics": "Female, early-to-mid 30s, affluent Lagos woman, aunt-guarded family member with a volatile private life."
+    },
+    {
+      "name": "Presley Akunde",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, wealthy Lagos man, predatory romantic lead with violent history and trauma."
+    },
+    {
+      "name": "Bryan Akunde",
+      "role_type": "Supporting",
+      "demographics": "Male, early-to-mid 20s, disabled, wheelchair user, wealthy family member."
+    },
+    {
+      "name": "Pamela Moe",
+      "role_type": "Supporting",
+      "demographics": "Female, 50s, affluent matriarch, aunt/guardian figure."
+    },
+    {
+      "name": "Shirley Moe",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-20s, affluent Lagos woman, cousin with asthma/inhaler dependency."
+    },
+    {
+      "name": "Gerald",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, adult lover/kept man, socially mobile Lagos man."
+    },
+    {
+      "name": "June",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged, domestic worker/maid."
+    },
+    {
+      "name": "Oz",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s, flirtatious Lagos socialite type."
+    },
+    {
+      "name": "Beatrice",
+      "role_type": "Supporting",
+      "demographics": "Female, young adult, deceased in present timeline."
+    }
+  ],
+  "positioning_hook": "A sheltered Lagos heiress falls for a charismatic predator with a murderous past, while her jealous cousin and a disabled brother race to stop the family from collapsing under the secret.",
+  "cost_usd": 0.05177925,
+  "input_tokens": 38871,
+  "output_tokens": 5028,
+  "status": "wrote:leads_ok"
+}

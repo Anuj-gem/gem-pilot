@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T05:19:27.466Z",
+  "submission_id": "a3576585-3419-4239-80bc-6041e80ba55a",
+  "eval_id": "0ab3f06d-d099-4bff-b28d-2e3759a62d3e",
+  "title": "Harrow Alley",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Harry Poyntz",
+      "role_type": "Lead",
+      "demographics": "Male, late 30s to early 40s, London alderman and tailor, middle-class, married, white."
+    },
+    {
+      "name": "Gamaliel Ratsey",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s to 40s, condemned highwayman and later corpse-bearer/baker/constable, white."
+    },
+    {
+      "name": "Jem Poyntz",
+      "role_type": "Supporting",
+      "demographics": "Female, late teens to early 20s, Harry’s wife, pregnant, white."
+    },
+    {
+      "name": "Nathaniel Hodges",
+      "role_type": "Supporting",
+      "demographics": "Male, late 60s, physician, white."
+    },
+    {
+      "name": "John Lawrence",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, Lord Mayor of London, white."
+    },
+    {
+      "name": "Prothero",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, clerk, white."
+    },
+    {
+      "name": "Betty Buckworth",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s to 30s, baker’s wife, white."
+    },
+    {
+      "name": "Samuel Killigrew",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s to 40s, grocer and parish man, white."
+    },
+    {
+      "name": "Toby",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 30s, Jamaican, laborer and later corpse-bearer."
+    },
+    {
+      "name": "Nathaniel Morrell",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 30s, curate, white."
+    }
+  ],
+  "positioning_hook": "A proud London alderman fights to keep his parish alive during the Great Plague, while a condemned highwayman discovers decency, and the city’s moral order collapses around them.",
+  "cost_usd": 0.06823275,
+  "input_tokens": 61379,
+  "output_tokens": 4933,
+  "status": "wrote:leads_ok"
+}

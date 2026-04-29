@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:20:21.946Z",
+  "submission_id": "a5e8ef7a-9a65-4e86-8344-386f6f5043a5",
+  "eval_id": "6a1e27a1-e708-45f7-9221-feea3af93570",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "African American male, mid-teens to early 20s"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Supporting",
+      "demographics": "Latino male, mid-teens to early 20s"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Supporting",
+      "demographics": "African American male, mid-teens to early 20s, devout Christian"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Supporting",
+      "demographics": "Asian Pacific Islander male, mid-teens to early 20s"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Supporting",
+      "demographics": "Caucasian male, pre-teen to early 20s, autistic, former bullied kid"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Supporting",
+      "demographics": "African American male, late 40s"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "African American male, 50s, physically limited by a cane"
+    },
+    {
+      "name": "Rachel Myers",
+      "role_type": "Supporting",
+      "demographics": "African American female, 20s"
+    },
+    {
+      "name": "Grace Oliver",
+      "role_type": "Supporting",
+      "demographics": "Caucasian female, teen to early 20s"
+    }
+  ],
+  "positioning_hook": "A Brooklyn teen boy band rises from a church-basement dream to national superstardom, then has to survive fame, addiction, betrayal, and grief without losing the brotherhood that made them work.",
+  "cost_usd": 0.06634725,
+  "input_tokens": 57971,
+  "output_tokens": 5082,
+  "status": "wrote:leads_ok"
+}

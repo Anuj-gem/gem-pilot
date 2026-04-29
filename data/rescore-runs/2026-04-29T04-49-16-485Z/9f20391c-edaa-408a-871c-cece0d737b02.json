@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T05:25:52.984Z",
+  "submission_id": "9f20391c-edaa-408a-871c-cece0d737b02",
+  "eval_id": "a8a2b43e-3970-4b88-b165-d41e1c7e75fb",
+  "title": "Vineyard Haven Lukas Kendall 4 23 26A",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Scott Morgan",
+      "role_type": "Lead",
+      "demographics": "Male, mid-20s, Vineyard native, white, working-class-adjacent, aspiring screenwriter."
+    },
+    {
+      "name": "Ben Carter",
+      "role_type": "Supporting",
+      "demographics": "Male, early 50s, wealthy, white, Vineyard-connected, family money, producer type."
+    },
+    {
+      "name": "Rebecca Harding",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, politically conservative, working-class background, emotionally unstable, attractive, white."
+    },
+    {
+      "name": "Kate",
+      "role_type": "Supporting",
+      "demographics": "Female, late 40s, Black, English, Jewish, adopted, former performer, emotionally mature."
+    },
+    {
+      "name": "MOM",
+      "role_type": "Supporting",
+      "demographics": "Female, early 50s, Vineyard local, white, exhausted but formidable, Scott’s mother."
+    },
+    {
+      "name": "Todd Straite",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s, white, polished, ambitious, Congressman, politically connected."
+    },
+    {
+      "name": "George",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, Island builder, white, working local, Scott’s mother’s partner."
+    },
+    {
+      "name": "Rob Kelley",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, state trooper, local, physically imposing."
+    },
+    {
+      "name": "Meredith",
+      "role_type": "Supporting",
+      "demographics": "Female, 20s-30s, Ben’s niece, wealthy, socially polished."
+    }
+  ],
+  "positioning_hook": "A Vineyard-born screenwriter gets pulled into a wealthy fixer’s chaotic island weekend, where a jilted political bride, a damaged producer, and one impossible ferry ride force him to choose between resentment and adulthood.",
+  "cost_usd": 0.05429625,
+  "input_tokens": 40601,
+  "output_tokens": 5299,
+  "status": "wrote:leads_ok"
+}

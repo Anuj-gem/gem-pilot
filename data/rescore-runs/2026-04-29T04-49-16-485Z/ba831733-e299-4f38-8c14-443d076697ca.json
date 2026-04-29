@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:26:33.892Z",
+  "submission_id": "ba831733-e299-4f38-8c14-443d076697ca",
+  "eval_id": "b0eeb256-e3f6-4943-96a3-87f326a14964",
+  "title": "Deepening the Divide",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Scott Hewitt",
+      "role_type": "Lead",
+      "demographics": "Male, early 20s, white, closeted gay man from a poor rural desert family."
+    },
+    {
+      "name": "Roberta Hewitt",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-40s, white, grieving mother, economically strained, ideologically radicalized."
+    },
+    {
+      "name": "Chad Michael Hewitt",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-20s, white, physically imposing older brother, militia-aligned rural extremist."
+    },
+    {
+      "name": "Pam Sutton",
+      "role_type": "Supporting",
+      "demographics": "Female, late 20s, white, artist, educated, socially ambitious, engaged to Theo."
+    },
+    {
+      "name": "Theo Jones",
+      "role_type": "Supporting",
+      "demographics": "Male, early 30s, Black, filmmaker, educated, engaged, professionally stalled."
+    },
+    {
+      "name": "Joel Schwartz",
+      "role_type": "Supporting",
+      "demographics": "Male, early 20s, white, gay, Jewish, stylish, sharp-tongued, urban outsider."
+    },
+    {
+      "name": "Houston",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-50s, white, obese, conspiracy theorist, militia-adjacent mentor figure."
+    },
+    {
+      "name": "Marcie Eidleberg",
+      "role_type": "Supporting",
+      "demographics": "Female, mid-50s, white/Jewish, film executive, tough, high-status, pragmatic."
+    },
+    {
+      "name": "Muhammad Quraishi",
+      "role_type": "Supporting",
+      "demographics": "Male, late 20s to early 30s, South Asian/Muslim, filmmaker, witty, flirtatious, socially agile."
+    },
+    {
+      "name": "Buck Taylor",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-60s, white, sheriff, local authority, openly complicit."
+    },
+    {
+      "name": "Wyatt",
+      "role_type": "Supporting",
+      "demographics": "Male, late 50s to early 60s, white, deceased father/stepfather figure."
+    }
+  ],
+  "positioning_hook": "A closeted Oklahoma drifter is pulled into his family’s paranoid militia world, then has to choose between survival, loyalty, and the boy he loves when a desert road trip turns into a blood-soaked siege.",
+  "cost_usd": 0.05394,
+  "input_tokens": 40576,
+  "output_tokens": 5224,
+  "status": "wrote:leads_ok"
+}

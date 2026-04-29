@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:26:38.409Z",
+  "submission_id": "44802074-ccab-4e17-a843-2296cf7090cd",
+  "eval_id": "35f15f18-bfe7-48de-ad27-6efd9f79ef67",
+  "title": "THE ANIMAL CATCHERS LATEST",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Ted Maxwell",
+      "role_type": "Lead",
+      "demographics": "Male, late 40s to 50s, white, seasoned African bush professional."
+    },
+    {
+      "name": "Nancy Maxwell",
+      "role_type": "Supporting",
+      "demographics": "Female, middle-aged, white, paraplegic, Ted Maxwell's wife."
+    },
+    {
+      "name": "Jen",
+      "role_type": "Supporting",
+      "demographics": "Female, early 20s, white, Ted Maxwell's ward."
+    },
+    {
+      "name": "Webb",
+      "role_type": "Supporting",
+      "demographics": "Male, late teens to early 20s, white, mechanic and junior catcher."
+    },
+    {
+      "name": "Mike Ryan",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s to 30s, white, South African animal catcher."
+    },
+    {
+      "name": "Alex Ritchie",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s to 50s, white, national parks director and landowner."
+    },
+    {
+      "name": "Nguru",
+      "role_type": "Supporting",
+      "demographics": "Male, adult, African, safari crew member."
+    }
+  ],
+  "positioning_hook": "A hard-bitten African game catcher races to move hippos and rhinos through a country on the brink of civil war, while his ward falls for a rival trapper and his own family fractures in the bush.",
+  "cost_usd": 0.05206725,
+  "input_tokens": 42807,
+  "output_tokens": 4436,
+  "status": "wrote:leads_ok"
+}

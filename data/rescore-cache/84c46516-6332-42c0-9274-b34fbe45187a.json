@@ -1,0 +1,349 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Thriller",
+        "Crime"
+      ],
+      "tone": "provocative",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "prestige",
+        "character-driven",
+        "politics",
+        "crime",
+        "race",
+        "media",
+        "broadcast-rights"
+      ]
+    },
+    "positioning_hook": "A veteran TV anchor and his network race to secure the first live execution broadcast in America, while a Black senator and the victim’s families fight to stop a media event that could change the country forever.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a sharp, easy-to-grasp controversy engine and a built-in debate hook around media ethics, race, and capital punishment. The audience is real, but the subject matter is polarizing and the script leans heavily on talk and institutional maneuvering rather than broad emotional access."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately: a network wants the broadcast rights to a live execution, and the story tracks the legal and political fight to make that happen. The title concept is clean, unusual, and easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Steve, Linda, Nathan, and Daniel all have clear positions in the argument, and Garrett is a memorable antagonist figure. But most of the ensemble functions as a debate board rather than a set of deeply surprising, durable character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a genuinely risky premise and commits to it without softening the provocation. The network-boardroom satire, courtroom escalation, and execution-day broadcast angle give it a distinct commercial identity even when the dialogue is broad."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story has a clear escalation path from verdict to legal petition to broadcast night, and the prison-yard attack adds a useful spike. Still, a lot of the middle is procedural argumentation and repeated boardroom posture, which slows the forward drive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea feels fresh and immediately legible: a network trying to televise an execution as a ratings event. It is memorable because the concept is both outrageous and rooted in recognizable media behavior."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a specific world of network politics, legal maneuvering, prison procedure, and public reaction, and those layers generate story pressure. The Texas courtrooms, TV boardrooms, Senate floor, and prison spaces all feel like parts of one media ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistent in its outrage and satirical seriousness, with occasional broad humor and soapbox energy. It has a recognizable register, but the dialogue often plays at the same volume, which blunts tonal precision."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real thematic seeds here around spectacle, racism, public appetite, and institutional opportunism. The script gestures toward deeper moral questions, but much of that depth is stated rather than dramatized through evolving relationships."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Steve/Rick, Linda/Tom, Nathan/Joe, and Daniel/Jason pairings all create usable friction, and the families add a moral counterweight. The ensemble has enough cross-pressure to keep scenes alive, even if the script is still lead-and-foil driven."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Steve Walton",
+        "role_type": "Lead",
+        "demographics": "Male, late 40s to 50s, white, veteran network news anchor, married.",
+        "hook": "Steve is the polished, seasoned face of the broadcast who starts the story as a smart-ass media professional and gradually realizes he has helped unleash something morally radioactive. He is vain, competent, and not nearly as detached as he pretends; the script gives him the best internal contradiction in the piece, because he wants the scoop, wants the status, and still has enough conscience to flinch when the thing becomes real.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in a prestige newsroom drama or Michael Keaton in a morally compromised authority role: a charismatic professional who has to play charm, panic, and conscience in the same frame. The role gives an actor a big public-facing arc, newsroom authority, and a late-stage moral reckoning."
+      },
+      {
+        "name": "Linda Smith",
+        "role_type": "Supporting",
+        "demographics": "Female, late 50s to 60s, white, network head, high-status executive.",
+        "hook": "Linda is the steel-spined network chief who understands exactly how to weaponize controversy and never confuses ethics with weakness. She is the script’s clearest power player: composed, strategic, and willing to push the room into history if it serves the network’s advantage.",
+        "why_actor_wants_this": "This is the kind of role that gives Glenn Close in Damages or Meryl Streep in a corporate power drama a chance to dominate rooms with precision and authority. It offers a commanding, scene-stealing performance built on control, calculation, and a few well-placed cracks in the armor."
+      },
+      {
+        "name": "Rick Sterling",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, white, head of news programming, married.",
+        "hook": "Rick is the ratings-first operator who treats the Bellows story like a career-making event and never hides his appetite for the win. He is blustery, funny, opportunistic, and useful as the engine that keeps the network pushing forward even when the moral ground starts to shift.",
+        "why_actor_wants_this": "This is strong supporting territory for an actor like Bryan Cranston in a corporate shark mode or William H. Macy in a fast-talking institutional climber role. The part gives a performer comic bite, newsroom swagger, and the chance to play ambition without apology."
+      },
+      {
+        "name": "Tom Nixon",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s to 50s, white, network legal counsel.",
+        "hook": "Tom is the network’s legal brain, the man asked to turn a moral and constitutional nightmare into a defensible argument. He is earnest, overmatched, and increasingly aware that the room is using law as a shield for appetite.",
+        "why_actor_wants_this": "This is the kind of role that gives a character actor the showcase of a courtroom-pressure performance like Paul Giamatti in a legal drama or Jeffrey Wright in an institutional chess match. It rewards precision, verbal control, and the slow humiliation of being the smartest person in a room that doesn’t really want answers."
+      },
+      {
+        "name": "Garrett Bellows",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s to 40s, white, convicted murderer on death row.",
+        "hook": "Garrett is written as a monstrous, unrepentant racist killer who also understands how to manipulate the room by refusing shame and leaning into provocation. He is not a redemption character; he is a pressure device, a living embodiment of the story’s moral outrage and the media’s appetite for spectacle.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the chance to do chilling, unblinking villain work like Michael Rooker in Henry: Portrait of a Serial Killer or Ralph Fiennes in a cold-blooded antagonist mode. The showcase is menace without apology, plus the unsettling calm that makes every scene with him dangerous."
+      },
+      {
+        "name": "Daniel Stevens",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s to 40s, Black, U.S. senator from New York.",
+        "hook": "Daniel is the young senator trying to stop the broadcast on moral and political grounds while carrying the burden of being the room’s conscience. He is articulate, strategic, and visibly torn between principle and the realities of power, which gives him a credible public face and a private cost.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the prestige and rhetorical lift of a David Oyelowo or John David Washington political performance. It offers speeches, moral pressure, and the chance to play intelligence under institutional strain."
+      },
+      {
+        "name": "Jessica Walton",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s to 40s, white, Steve’s wife.",
+        "hook": "Jessica starts as the supportive spouse and becomes the story’s domestic alarm system when the broadcast threat reaches home. She is more perceptive than Steve expects, and her fear gives the story a human cost outside the boardroom and courtroom machinery.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a strong emotional counterpoint, like the spouse roles in Spotlight or The Post where private life collides with public consequence. It offers grounded reaction work and a late-story fear beat that lands cleanly."
+      },
+      {
+        "name": "Nathan Standing",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, white, head of the rival network.",
+        "hook": "Nathan is the rival-network titan who turns outrage into strategy and sees every scandal as a market position. He is the story’s most overt corporate predator, and the script uses him to show how quickly moral language becomes competitive branding.",
+        "why_actor_wants_this": "This is premium villainous executive territory, the kind of role that lets an actor play power with a smile and a knife behind it, like Jeremy Irons in a boardroom thriller. It gives a performer authority, wit, and a deliciously cynical second-act pivot."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "large adult ensemble",
+          "multiple authority figures",
+          "race-specific supporting roles",
+          "no child performers required on-page"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 80/20 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "courtroom",
+          "network boardrooms",
+          "senate floor",
+          "prison interior and death chamber",
+          "hotel rooms",
+          "bars",
+          "suburban home",
+          "TV studio"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "primarily broadcast monitors, crawls, and simple screen inserts; no major effects set pieces",
+        "stunts_level": "minor",
+        "sfx_needs": "electric-chair execution setup, prison restraint mechanics, crowd-control moments, practical blood/impact beats in the prison-yard attack",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Edward R. Murrow"
+        },
+        {
+          "type": "real_person",
+          "detail": "Walter Cronkite"
+        },
+        {
+          "type": "real_person",
+          "detail": "Scarlett Johansson"
+        },
+        {
+          "type": "brand",
+          "detail": "PBS"
+        },
+        {
+          "type": "brand",
+          "detail": "AP"
+        },
+        {
+          "type": "brand",
+          "detail": "Dunkin' Donuts"
+        },
+        {
+          "type": "brand",
+          "detail": "Ipad"
+        },
+        {
+          "type": "brand",
+          "detail": "Corvette"
+        },
+        {
+          "type": "brand",
+          "detail": "Brooks Brothers"
+        },
+        {
+          "type": "brand",
+          "detail": "Texas State Supreme Court"
+        },
+        {
+          "type": "brand",
+          "detail": "U.S. Supreme Court"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or prestige theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model: adult prestige drama with controversy-driven marketing and awards-adjacent positioning"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly interior, but the script needs multiple boardrooms, courtrooms, prison spaces, a Senate floor, a TV studio, and a sizable execution-day crowd, which keeps it above a simple contained drama."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a credible veteran broadcaster, the network chiefs need strong authority, and Garrett has to land as a truly frightening presence rather than a generic villain. The ensemble is playable, but the script benefits from actors who can handle long dialogue scenes without flattening the tension."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script lives or dies on whether buyers want a hard-edged media-satire drama centered on televised execution politics; the premise is instantly legible but also highly sensitive and polarizing. The repeated boardroom and courtroom debate structure makes the concept dependent on execution-level polish and tonal control."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Insider",
+          "year": 1999,
+          "why_it_comps": "Like this script, it turns institutional pressure and media ethics into a prestige adult drama with a lead navigating a public controversy."
+        },
+        {
+          "title": "Network",
+          "year": 1976,
+          "why_it_comps": "The broadcast-business satire, ratings obsession, and moral collapse inside a newsroom make this the clearest tonal ancestor."
+        },
+        {
+          "title": "The Post",
+          "year": 2017,
+          "why_it_comps": "It shares the newsroom-versus-power structure and the sense of a media decision becoming a national moral test."
+        },
+        {
+          "title": "Mississippi Burning",
+          "year": 1988,
+          "why_it_comps": "The racial violence, Southern institutional pressure, and public outrage give it a similar combustible social charge."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who respond to prestige political dramas and media-ethics stories with a strong controversy hook.",
+        "demographics": "35-64, skewing educated and news-literate, with strongest pull for viewers who like courtroom, newsroom, and political power stories.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$15M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary interiors, modest action, and no heavy VFX keep it in indie feature territory, though the large ensemble and multiple institutional sets prevent it from feeling micro."
+      },
+      "lane_fit": {
+        "lane": "prestige controversy drama",
+        "types_of_buyers": [
+          "prestige indie financiers",
+          "adult-drama streamers",
+          "awards-minded specialty distributors",
+          "director-driven production companies",
+          "political-thriller development execs"
+        ],
+        "detail": "This sits naturally in the lane of adult, issue-driven prestige drama with a sharp commercial premise and a strong lead role. The script’s value is the conversation it starts, but it also has enough institutional texture to feel like a real movie rather than a thesis piece."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the premise is built around one singular broadcast controversy and does not present a clean sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly ownable.",
+          "what_it_means": "A buyer can understand the movie in one sentence, which is a major advantage in a crowded prestige-drama market. That kind of clarity helps with both financing and marketing because the hook is controversial, timely, and easy to pitch to adult audiences.",
+          "evidence": "The network’s decision to pursue live broadcast rights for Garrett Bellows’ execution is stated early and drives every major scene.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "It gives a lead actor a real showcase.",
+          "what_it_means": "Steve Walton is built for a performance that can sell charm, ego, and conscience in the same role, which is exactly the kind of part that attracts seasoned stars. That makes the project easier to package than a purely concept-driven script because the lead can carry both the public-facing and private-facing sides of the story.",
+          "evidence": "Steve jokes through boardroom meetings, then starts to wobble once the execution becomes real and his wife is threatened.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels commercially specific.",
+          "what_it_means": "The newsroom, legal, Senate, and prison spaces create a layered institutional ecosystem that gives the script more texture than a single-location debate piece. That specificity makes it attractive to buyers looking for prestige material with a strong procedural spine.",
+          "evidence": "The story moves from network boardrooms to state and federal courts, then to the prison and the Senate floor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The controversy is built for conversation.",
+          "what_it_means": "This is the kind of movie that can generate debate before release, which is valuable for streamers, specialty distributors, and awards campaigns. The subject matter naturally invites press, think pieces, and audience argument, which is a real commercial asset when handled with confidence.",
+          "evidence": "The script repeatedly stages arguments over whether televised execution is journalism, exploitation, or constitutional overreach.",
+          "source": "both"
+        }
+      ],
+      "headline": "This is a sharp, high-concept prestige drama with a built-in marketing argument: a veteran broadcaster, a network power struggle, and a live-execution controversy that practically sells itself in one sentence. Because the concept is contemporary, interior-heavy, and anchored by a strong lead role, it has a realistic indie feature path while still feeling big enough to attract serious talent and conversation.",
+      "source": "both"
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The middle runs on repeated argument scenes.",
+          "detail": "A lot of the script’s momentum comes from boardroom and court-room debate, and several scenes restate the same moral and legal positions in slightly different rooms. That makes the piece feel more like a thesis-driven procedural than a steadily escalating feature until the prison and broadcast material kicks in.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Garrett is more symbol than character.",
+          "detail": "He is effective as a monstrous pressure point, but the script gives him limited interiority beyond provocation, racism, and defiance. For buyers, that means the antagonist function is strong while the character depth is comparatively thin.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tone stays at one volume.",
+          "detail": "The dialogue is consistently heated, declarative, and performative, which gives the script energy but also flattens contrast across scenes. Without more tonal variation, the movie risks feeling like a series of speeches rather than a progression of escalating emotional states.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The subject matter narrows the buyer pool.",
+          "detail": "Televising a child-murderer’s execution is a deliberately volatile premise, and the script leans into racial violence, capital punishment, and public spectacle without much cushioning. That is a strong conversation starter, but it will be a sensitive sell for some theatrical buyers and a hard pass for more conservative platforms.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is structural: the script spends a long stretch in rooms where people explain the same ethical crisis from different angles, so the concept’s heat has to do a lot of heavy lifting. The other buyer-level concern is sensitivity — the premise is memorable precisely because it is provocative, but that same provocation will narrow the room before anyone gets to the page-one hook.",
+      "source": "both"
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 66.3,
+  "tier": "Optionable",
+  "inputTokens": 43699,
+  "outputTokens": 4648,
+  "cost": 0.05369025000000001,
+  "declaredFormat": "Feature film"
+}

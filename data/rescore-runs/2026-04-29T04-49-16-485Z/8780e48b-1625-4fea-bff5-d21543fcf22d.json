@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:18:38.658Z",
+  "submission_id": "8780e48b-1625-4fea-bff5-d21543fcf22d",
+  "eval_id": "76ebac42-abad-4f49-9f49-daeabeebde88",
+  "title": "THE FARMGIRL",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Ginny Armstrong",
+      "role_type": "Lead",
+      "demographics": "White female, ages 10-30 across the script; Southern, working-class, rural Florida upbringing."
+    },
+    {
+      "name": "Maxie Leonetti",
+      "role_type": "Supporting",
+      "demographics": "White male, 20s-30s, handsome, slick, criminally connected, Southern/Florida-based."
+    },
+    {
+      "name": "Charlie",
+      "role_type": "Supporting",
+      "demographics": "White male, 50s-60s, older criminal organizer, Florida underworld operator."
+    },
+    {
+      "name": "Billy Riley",
+      "role_type": "Supporting",
+      "demographics": "White male, 40s-50s, criminal associate with a polished surface and opportunist instincts."
+    },
+    {
+      "name": "Ruth Armstrong",
+      "role_type": "Supporting",
+      "demographics": "White female, 40s-50s, rural Florida mother, working-class wife and widow."
+    },
+    {
+      "name": "Detective Adler",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, law enforcement, white or unspecified in script."
+    },
+    {
+      "name": "Vern",
+      "role_type": "Supporting",
+      "demographics": "White male, 20s, criminal associate, twin brother to Vic."
+    },
+    {
+      "name": "Vic",
+      "role_type": "Supporting",
+      "demographics": "White male, 20s-30s, criminal associate, twin brother to Vern."
+    },
+    {
+      "name": "Jimmy",
+      "role_type": "Supporting",
+      "demographics": "White male, 20s-40s across the story, criminal associate and later restaurant worker."
+    },
+    {
+      "name": "Eric Wagner",
+      "role_type": "Supporting",
+      "demographics": "White male, late teens to 20s, busboy/working-class son, emotionally loaded family connection."
+    },
+    {
+      "name": "Coco Wagner",
+      "role_type": "Supporting",
+      "demographics": "White female, 30s-40s implied, former mistress/partner, mother."
+    },
+    {
+      "name": "Briar",
+      "role_type": "Supporting",
+      "demographics": "Male child, about 6 years old at the end."
+    }
+  ],
+  "positioning_hook": "After her father is murdered in a home invasion, a Florida farm girl grows into a ruthless avenger inside a mobbed-up marriage, then turns the men who built her life into her next targets.",
+  "cost_usd": 0.057822,
+  "input_tokens": 44144,
+  "output_tokens": 5492,
+  "status": "wrote:leads_ok"
+}

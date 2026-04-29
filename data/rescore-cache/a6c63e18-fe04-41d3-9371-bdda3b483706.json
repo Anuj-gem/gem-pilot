@@ -1,0 +1,316 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_secondary": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "tone": "nightmarish",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "high-concept",
+        "feature-anchored",
+        "propulsive",
+        "family-dynamics",
+        "survival",
+        "corruption",
+        "z-4",
+        "area-51"
+      ]
+    },
+    "positioning_hook": "A former black-ops anomaly hunter must protect his family when a glitching, near-unstoppable escapee from Area 51 starts harvesting the town and targeting the people tied to his buried past.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clean genre promise: a masked, superhuman killer stalking a family and a town, with a strong escalation from school unease to police-station carnage to home-invasion siege. The audience is clear for horror-action buyers, though the dense lore and stylized language narrow the immediate four-quadrant reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early through the Area 51 breach, the Z-4 legacy, and Jez’s transformation into a harvesting force. The premise is explainable in two sentences, but the script layers in a lot of terminology and timeline fragments that make the core engine less instantly legible than the best high-concept genre packages."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Guest 1337 has a strong stoic-protector posture, and Daisy gives the family a grounded emotional center. Cameron and Daniela are functional, but the script leans more on their fear than on sharply differentiated wants, so the cast plays more as a survival unit than a fully durable character engine."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits hard to a glitch-horror aesthetic: digital tears, frame-skips, corrupted audio, and a killer whose violence feels like a system error. That visual and sonic language is distinctive, and the opening logo corruption sequence announces a voice with real confidence."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Once Jez escapes, the script keeps tightening the vise with school stalking, police-station mayhem, and the final home invasion. The momentum is strong in set pieces, though the middle relies on repeated threat beats and exposition dumps that slow the forward drive between attacks."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The central idea of an anomaly-incubated, signal-fed killer hunting a family tied to his origin has a fresh enough spine to feel ownable. It is still operating in familiar containment-horror territory, but the Z-4 mythology and digital-corruption texture give it a more memorable identity than a standard escaped-monster story."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has a specific institutional texture: Area 51 containment, AST response teams, dead zones, signal saturation, and a town living under surveillance and fear. The mythology is rich enough to generate scenes, though some of the terminology arrives faster than the audience can fully metabolize it."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very particular tonal signature: apocalyptic body horror filtered through military procedure, suburban family banter, and digital corruption. The contrast between the affectionate household scenes and the brutal, glitching violence gives the script a hard-to-mistake identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are seeds of deeper mythology in the Z-4 legacy, the father-son inheritance, and the repeated references to memory, signal, and incubation. But on the page, the script is more invested in immediate threat than in layered revelation, so the depth is suggestive rather than fully realized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Guest/Daisy/Cameron/Daniela gives the story a workable family-and-protection engine, and Paul adds a mirrored-brother dynamic with some intrigue. Still, most relationships are defined by the crisis rather than by distinct recurring friction, so the ensemble is solid but not especially generative."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Guest 1337",
+        "role_type": "Lead",
+        "demographics": "Male, 40s-50s, former military / anomaly-containment operative, father, husband.",
+        "hook": "A hyper-disciplined family man with a buried black-ops past, Guest 1337 moves like someone trained to anticipate violence before it arrives. He is protective to the point of rigidity, but the script keeps revealing that his calm is a survival mask over guilt, fear, and a history he has spent years trying to contain.",
+        "why_actor_wants_this": "This is the showcase territory of Josh Brolin in No Country for Old Men or Michael Shannon in Take Shelter — a contained, physically authoritative role where the performance lives in control, dread, and the slow crack of buried trauma."
+      },
+      {
+        "name": "Daisy",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, wife, mother, emotionally grounded but capable under pressure.",
+        "hook": "Daisy is the emotional ballast of the house: affectionate, observant, and far more steel-spined than her warm surface suggests. She reads the room faster than anyone, keeps the family connected, and becomes a real survival asset once the house turns into a battlefield.",
+        "why_actor_wants_this": "This is the kind of role that gave Vera Farmiga in The Conjuring or Connie Britton in 24/7-style crisis material a chance to be both maternal and formidable — the grounded partner whose steadiness becomes indispensable when the world breaks."
+      },
+      {
+        "name": "Cameron",
+        "role_type": "Supporting",
+        "demographics": "Male, 19, son, high-school age, anxious but capable.",
+        "hook": "Cameron is the son caught between teenage normalcy and a household built for war. He has the right instincts, a little tactical swagger, and enough fear to keep him human, but he mostly functions as the audience’s younger point of entry into the family’s escalating nightmare.",
+        "why_actor_wants_this": "This is the kind of role that lets a young actor do the frightened-but-brave work seen in It or Stranger Things ensemble turns — panic, loyalty, and physical reaction under pressure, with room for a breakout close-up."
+      },
+      {
+        "name": "Daniela",
+        "role_type": "Supporting",
+        "demographics": "Female, 19, teen/young adult, traumatized, secretive, vulnerable.",
+        "hook": "Daniela is the story’s most overtly haunted young character, carrying a fear she can’t fully name and a connection to Jez that keeps surfacing in fragments. She’s written as fragile but not passive, and her panic gives the family stakes a more personal, intimate edge.",
+        "why_actor_wants_this": "This is strong material for the kind of emotional vulnerability and terror showcase that helped Sophia Lillis in It or Milly Shapiro in hereditary-style horror work — a role built around fear, secrecy, and the body reacting before the words do."
+      },
+      {
+        "name": "Jez",
+        "role_type": "Supporting",
+        "demographics": "Male, ageless / 20s-40s appearance, enhanced anomaly, masked killer.",
+        "hook": "Jez is the script’s nightmare engine: a glitching, signal-fed, near-mythic predator who moves with military precision and corrupted logic. He is not just a slasher figure; he’s a weaponized presence, part soldier, part system failure, part ancient hunger, and the mask gives him a strong iconographic identity.",
+        "why_actor_wants_this": "This is the kind of physically iconic villain role that gave Doug Jones or Javier Botet-style performers a signature lane — a largely nonverbal, movement-driven showcase where menace is created through posture, timing, and presence."
+      },
+      {
+        "name": "Paul Rennick",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, police officer / investigator, physically mirrored to Guest 1337.",
+        "hook": "Paul is the law-enforcement mirror to Guest 1337, and the script uses him to underline the story’s obsession with symmetry, inheritance, and buried violence. He reads as competent, wary, and personally entangled in the same history that produced the central threat.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the procedural authority and bruised-cop texture of a Ben Foster or Shea Whigham part — a grounded lawman with enough personal history to feel like more than a badge."
+      },
+      {
+        "name": "Commander",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s-50s, military command authority.",
+        "hook": "The Commander is the institutional face of the containment apparatus, all clipped urgency and procedural control. He exists to show how badly the system is losing the ability to manage what it created.",
+        "why_actor_wants_this": "This is solid authority-role territory in the vein of a Bryan Cranston in a command-room mode or a J.K. Simmons-style hardline operator — a compact part that benefits from command presence and crisp line delivery."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "one heavily physical masked antagonist",
+          "adult family unit centered on 30s-50s parents and a 19-year-old son",
+          "several military / law-enforcement roles",
+          "no child performers required in the core cast"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "contemporary with flashback period material",
+        "notable_requirements": [
+          "Area 51 / containment facility interiors",
+          "small-town high school",
+          "family house with safe room / attic / garage",
+          "police station and command tent",
+          "one 1944 German barn flashback"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "digital glitches, frame-skips, reality pixelation, signal corruption, and a few supernatural/physics-defying movement beats; mostly stylized enhancement rather than full-CG worldbuilding",
+        "stunts_level": "moderate",
+        "sfx_needs": "blood effects, practical gore, breakaway glass, collapses, muzzle flashes, practical fire, prosthetic mask work",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Paramount Pictures, Blumhouse, New Line Cinema, and Spyglass Media Group are named in the opening logo sequence."
+        },
+        {
+          "type": "brand",
+          "detail": "Chromebook is referenced in the family scenes."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical genre",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model; best positioned as a genre title for theatrical specialty or streaming-first distribution."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is mostly contemporary interiors, but the Area 51 facility, police-station destruction, repeated night exteriors, and stylized VFX/glitch work will push it above a lean contained-horror price point."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Guest 1337 and Jez are the key lifts: one needs authority, grief, and physical credibility, while the other needs a highly specific movement-based menace that can carry the movie without much dialogue."
+      },
+      "development": {
+        "level": "high",
+        "note": "The script’s mythology is dense — Z-4, Class-V, AST, Guest lineage, signal saturation, and the harvest phases — so buyers will immediately weigh how much of that lore is essential versus decorative."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "A Quiet Place",
+          "year": 2018,
+          "why_it_comps": "Family-protection horror with a clear external threat, strong sound design identity, and a domestic unit forced into survival mode."
+        },
+        {
+          "title": "It",
+          "year": 2017,
+          "why_it_comps": "Teen fear, small-town dread, and a monster whose presence escalates from rumor to full-scale siege."
+        },
+        {
+          "title": "The Invisible Man",
+          "year": 2020,
+          "why_it_comps": "A relentless stalker threat, domestic paranoia, and a protagonist group trying to prove the danger is real before it’s too late."
+        },
+        {
+          "title": "Upgrade",
+          "year": 2018,
+          "why_it_comps": "Body-horror action with a tech-corruption edge and a killer whose movement language is part of the appeal."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Horror and elevated-genre audiences who want a brutal, high-concept home-invasion thriller with a strong creature-villain identity.",
+        "demographics": "18-44 skew, slightly male-leaning but viable with couples and genre-fan women; strongest with streaming horror viewers and theatrical genre regulars.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations, a contained family-house core, and moderate VFX/stunts keep it in indie feature territory, though the facility destruction and night coverage add scope."
+      },
+      "lane_fit": {
+        "lane": "elevated horror-action indie",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer original film execs",
+          "specialty theatrical distributors",
+          "mid-budget horror producers",
+          "director-driven genre labels"
+        ],
+        "detail": "The script sits naturally in the lane of elevated, high-concept horror with a strong villain icon and a family-protection spine. It is built for buyers who want a marketable hook, a contained-enough production plan, and a visual identity that can sell in a trailer."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature as written; Jez has franchise iconography, but the supporting characters do not yet form a separate spin-off vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The villain has a real icon shape.",
+          "what_it_means": "Jez is built like a trailer asset: masked, glitching, physically specific, and easy to recognize in one frame. That gives the project a marketable face and a clean visual shorthand for posters, thumbnails, and campaign art. Buyers chasing a new horror icon will notice immediately.",
+          "evidence": "The mask design, frame-skipping movement, corrupted audio, and repeated calling-card imagery like the ash smear and binary mask glitch.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family unit gives the horror emotional ballast.",
+          "what_it_means": "The Guest/Daisy/Cameron/Daniela dynamic turns the threat into a domestic siege rather than a generic monster chase. That makes the movie easier to sell to audiences who want stakes beyond body count and gives the lead actor a protector role with real emotional leverage.",
+          "evidence": "The warm morning banter, the tactical handshake, Daisy’s steadying presence, and the later safe-room defense.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The glitch aesthetic is ownable.",
+          "what_it_means": "The script’s corrupted-image language creates a distinct sensory brand that can separate it from standard slasher or creature fare. That kind of visual grammar is valuable to a buyer because it makes the movie feel designed, not just plotted.",
+          "evidence": "The opening logo corruption, static tears, digital screams, pixelation, and reality warping around Jez.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The containment setup supports efficient genre production.",
+          "what_it_means": "Most of the story lives in houses, hallways, a school, a police station, and a few controlled exteriors, which keeps the production in a financeable indie lane. That makes the script attractive to buyers looking for a concept that can deliver scale without tentpole spend.",
+          "evidence": "The repeated use of the family house, school, bar, police station, and command tent.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Guest 1337 is a strong anchor role.",
+          "what_it_means": "The lead has the kind of stoic, wounded, physically credible presence that can attract a serious character actor and elevate the whole package. That matters commercially because a strong lead attachment can unlock financing even when the antagonist is the bigger spectacle.",
+          "evidence": "His controlled domestic routine, the hidden weapons room, the mirrored posture with Paul, and the final command-mode survival beats.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a marketable elevated-horror package with a real villain image, a contained production footprint, and a family-protection spine that gives the violence emotional weight. The script’s strongest commercial asset is that it can sell as both a creature-feature event and a character-actor showcase, which is exactly the overlap buyers in the indie-genre lane want."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology arrives faster than the audience can absorb it.",
+          "detail": "Z-4, Class-V, AST, Guest 1337, Guest 1337, and the harvest phases all enter before the core relationship map is fully stabilized. That creates a development conversation around clarity, because buyers will immediately ask whether the lore is a selling asset or a comprehension tax.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Jez’s threat is strongest as image, thinner as character.",
+          "detail": "The script gives him a powerful iconography and a clear predatory function, but very little interiority beyond corrupted purpose and inherited violence. That is fine for a monster-forward genre buy, but it narrows the role’s long-tail dramatic value and makes the movie depend heavily on the visual concept landing.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The family scenes lean on repetition.",
+          "detail": "The morning banter, tactical jokes, and protective dialogue establish warmth, but several exchanges repeat the same emotional note without adding new friction. A producer will notice that the domestic material is doing setup work more than escalating character conflict.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The police-station assault is the biggest cost spike.",
+          "detail": "The station sequence combines multiple kills, heavy stunt action, practical gore, and a large night shoot with destruction and crowd control. Even in an indie lane, that set piece is the one most likely to push the schedule and effects budget if not tightly scoped.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The opening logo gag is a clearance conversation.",
+          "detail": "Paramount Pictures, Blumhouse, New Line Cinema, and Spyglass Media Group are all named in the title sequence, which means the script is using real company brands as part of the presentation. That is not a story problem, but it is a legal/clearance item a buyer’s business affairs team would flag immediately.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is clarity versus density: the script has a strong monster image and a sellable family siege, but it stacks a lot of mythology before the audience has fully locked the rules. On the production side, the police-station assault is the obvious scope pressure point, and the branded logo sequence will trigger a clearance pass before anyone gets to greenlight."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 69.3,
+  "tier": "Optionable",
+  "inputTokens": 26460,
+  "outputTokens": 4635,
+  "cost": 0.0407025,
+  "declaredFormat": "Feature film"
+}

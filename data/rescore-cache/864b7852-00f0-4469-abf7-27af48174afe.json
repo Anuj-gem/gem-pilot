@@ -1,0 +1,346 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_secondary": [],
+      "tone": "soapy",
+      "tags": [
+        "female-lead",
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "power",
+        "hospital",
+        "medical-workplace"
+      ]
+    },
+    "positioning_hook": "A widowed hospital CEO fights budget cuts and office politics while her chaotic niece, a power-hungry surgeon, and a sharp-elbowed staff turn a children’s hospital into a pressure cooker.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The hospital setting gives this an easy, familiar entry point and the family/workplace collision broadens the hook beyond pure medical drama. It still reads more like a niche broadcast/streaming soap than a breakout four-quadrant buy."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The pilot quickly establishes Miranda inheriting control of the hospital after Jimmy’s death, with Sebastian resisting her authority and Amanda crashing into the system. The premise is clear early, though the show’s central engine is more ensemble friction than a single sharp high-concept twist."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Miranda has the strongest long-run spine: grief, authority, and private fragility all land in the office scenes and the Jimmy voiceover. Sebastian, Amanda, and Emily are vivid, but several supporting players are still defined primarily by attitude rather than deeper contradiction."
+      },
+      "creative_originality_and_boldness": {
+        "score": 5,
+        "reasoning": "The script leans into a familiar hospital-soap grammar: hierarchy, ego, bedside crises, and romantic misbehavior. The family tie between CEO and staff, plus the dead-husband voiceover, gives it a distinct flavor, but the execution stays close to recognizable daytime/premium medical-drama territory."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The Joey sepsis storyline supplies a clean medical spine, and the Amanda/Miranda/Sebastian friction keeps the pilot moving. Some scenes play as character banter or status games rather than escalation, so the hour’s drive is steady more than propulsive."
+      },
+      "resonant_originality": {
+        "score": 5,
+        "reasoning": "The strongest original element is the children’s hospital framed through a grieving widow CEO and a staff culture that feels personal, petty, and intimate. It’s fresh enough to notice, but not yet the kind of instantly inevitable premise that redefines the lane."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The hospital has usable texture: boardroom politics, resident hierarchy, nursing station banter, admin offices, and the pediatric patient floor all feel operational. It’s a solid container for episodes, though the world is still mostly a workplace rather than a fully rule-bound ecosystem."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone sits in a glossy, catty, emotionally earnest register, with Jimmy’s elegiac voiceover softening the sharper workplace sniping. That blend is coherent, but it’s still adjacent to familiar hospital melodrama rather than unmistakably singular."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Miranda’s grief, the dead husband’s lingering presence, and the budget crisis all suggest a deeper season arc beneath the pilot’s surface. The page hints at more than it reveals, but the supporting cast hasn’t yet opened into the kind of layered long-game depth that would push this higher."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "There’s real recurring energy in the Miranda/Sebastian power struggle, Amanda’s disruptive access, and the nurse/resident cross-talk. Multiple pairings can generate scenes, which is a strong sign for an ongoing series engine."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Miranda Ashton",
+        "role_type": "Lead",
+        "demographics": "Female, late 40s, widowed hospital CEO, white-collar professional",
+        "hook": "The newly widowed CEO of Macon Children’s Hospital is trying to hold the institution together while privately unraveling. She’s composed in public, devastated in private, and forced to govern a staff that doubts her authority while she’s still grieving Jimmy’s death.",
+        "why_actor_wants_this": "This is the showcase territory of Julianna Margulies in The Good Wife — a controlled, intelligent woman whose authority is constantly tested, with private grief and public competence living in the same frame."
+      },
+      {
+        "name": "Doctor Sebastian Evans",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, surgeon, British accent required",
+        "hook": "A brilliant, entitled surgeon who believes the hospital runs on his talent and resentments. He’s vain, funny, petty, and dangerous in the way only a man with real skill and no humility can be.",
+        "why_actor_wants_this": "This is the showcase territory of Hugh Laurie in House — a gifted, abrasive doctor whose arrogance is the performance engine, giving an actor room for bite, vanity, and flashes of vulnerability."
+      },
+      {
+        "name": "Amanda Ashton",
+        "role_type": "Supporting",
+        "demographics": "Female, early 20s, niece of the CEO, alternative style, working-class edge",
+        "hook": "Miranda’s messy niece arrives broke, defensive, and opportunistic, then immediately starts testing every boundary in the building. She’s impulsive, flirtatious, and more emotionally needy than she wants anyone to see.",
+        "why_actor_wants_this": "This is the showcase territory of Juno Temple in Ted Lasso — a chaotic, funny, wounded young woman with enough volatility to steal scenes and enough vulnerability to make the chaos matter."
+      },
+      {
+        "name": "Emily McDowell",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s, nurse or hospital staffer, contemporary professional",
+        "hook": "Emily is the office operator who knows where the bodies are buried and enjoys being the one who nudges them around. She’s sly, observant, and quietly predatory, especially when she’s watching other people make fools of themselves.",
+        "why_actor_wants_this": "This is the showcase territory of Sarah Snook in Succession — a sharp, watchful operator whose stillness and side-eye do as much work as the dialogue."
+      },
+      {
+        "name": "Taylor Carlyle",
+        "role_type": "Supporting",
+        "demographics": "Male, early 30s, doctor, handsome, resident-level authority",
+        "hook": "A talented young doctor trying to do the right thing while getting shoved around by Sebastian and pulled into the hospital’s status games. He reads as competent, decent, and just insecure enough to be interesting over time.",
+        "why_actor_wants_this": "This is the showcase territory of Patrick J. Adams in Suits — a polished, ambitious professional who can play competence under pressure while the room keeps trying to define him."
+      },
+      {
+        "name": "Aiden Henderson",
+        "role_type": "Supporting",
+        "demographics": "Male, late 20s, endocrine resident, comic-relief energy",
+        "hook": "Aiden is the resident who walks into rooms like he owns them and says the wrong thing with total confidence. He’s goofy, horny, and useful as a pressure-release valve inside the hospital hierarchy.",
+        "why_actor_wants_this": "This is the showcase territory of Zach Woods in Silicon Valley — a fast-talking comic operator whose confidence and cluelessness are both the joke."
+      },
+      {
+        "name": "Beth Fonda",
+        "role_type": "Supporting",
+        "demographics": "Female, late 20s, pediatrics resident",
+        "hook": "Beth is the grounded counterweight in the resident break room, the one who sees Aiden’s nonsense for what it is. She’s dry, practical, and positioned to become a steadier presence in the ensemble.",
+        "why_actor_wants_this": "This is the showcase territory of Aja Naomi King in How to Get Away with Murder — a smart, contained professional role that can carry warmth, skepticism, and moral clarity."
+      },
+      {
+        "name": "Chuck Harrison",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, CFO, corporate administrator",
+        "hook": "The hospital’s financial adult in the room, Chuck is the one delivering the bad news nobody wants to hear. He’s bureaucratic, dry, and useful as the face of institutional pressure.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in The Accountant or Succession’s corporate elders — a role that lets an actor weaponize calm authority and deadpan menace."
+      },
+      {
+        "name": "Lori Donovan",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s-40s, mother of pediatric patient Joey",
+        "hook": "Lori is the emotional anchor of the Joey storyline, a parent trying to stay upright while her child’s condition worsens. She’s not flashy, but she gives the medical stakes a human center.",
+        "why_actor_wants_this": "This is the showcase territory of Patricia Clarkson in Sharp Objects — a grief-struck, contained parent role that lets an actor play fear without melodrama."
+      },
+      {
+        "name": "Jenna",
+        "role_type": "Supporting",
+        "demographics": "Female, mid-20s, nurse, recent graduate",
+        "hook": "Jenna is the anxious junior nurse who’s trying to survive the hospital’s social pecking order while getting bullied by Emily. She’s reactive, overworked, and one bad day away from snapping.",
+        "why_actor_wants_this": "This is the showcase territory of Molly Gordon in Theater Camp — a tightly wound young professional role that can swing between comic embarrassment and real hurt."
+      },
+      {
+        "name": "Dawn",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, nurse",
+        "hook": "Dawn is one of the nurses who understands the hospital’s informal rules and knows how to exploit them. She’s sly, opportunistic, and part of the workplace gossip engine.",
+        "why_actor_wants_this": "This is the showcase territory of Natasha Lyonne in Russian Doll — a dry, knowing presence who can make a small role feel like it has its own agenda."
+      },
+      {
+        "name": "Sheila",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, nurse",
+        "hook": "Sheila is a practical nurse who moves through the crisis scenes with competence and little drama. She helps ground the medical action and gives the floor a lived-in feel.",
+        "why_actor_wants_this": "This is the showcase territory of Merritt Wever in Nurse Jackie — a grounded, observant hospital role that can make competence feel characterful."
+      },
+      {
+        "name": "Linda Riley",
+        "role_type": "Supporting",
+        "demographics": "Female, 40s-50s, receptionist",
+        "hook": "Linda is the front-desk gatekeeper with a sharp tongue and a low tolerance for nonsense. She’s comic, territorial, and instantly readable as someone who has seen everything.",
+        "why_actor_wants_this": "This is the showcase territory of Constance Zimmer in UnREAL — a role built on crisp timing, authority, and the pleasure of watching someone manage chaos from the desk."
+      },
+      {
+        "name": "Joey Donovan",
+        "role_type": "Supporting",
+        "demographics": "Male, 8 years old, pediatric patient",
+        "hook": "Joey is the child at the center of the medical crisis, giving the pilot its emotional stakes. He’s vulnerable but not passive, especially in the recovery scenes with Carlyle and his mother.",
+        "why_actor_wants_this": "This is the showcase territory of the child performance in Room or The Florida Project — a role where innocence and physical vulnerability carry the emotional weight of the hour."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 14,
+        "leads": 1,
+        "series_regulars": 8,
+        "child_actors": true,
+        "casting_characteristics": [
+          "British-accented surgeon",
+          "child patient age 8",
+          "late-40s female CEO",
+          "ensemble hospital staff with age-diverse roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "working hospital interiors",
+          "operating room",
+          "boardroom",
+          "nurse locker room",
+          "staff parking lot",
+          "administration office"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond standard medical-screen inserts and monitor graphics.",
+        "stunts_level": "none",
+        "sfx_needs": "Standard medical practicals including surgery setup, IVs, monitors, respirator, seizure response, and CPR.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized workplace drama with recurring medical cases, staff politics, and family-institution conflict."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary hospital interiors, no VFX, no action set pieces, and a mostly contained footprint keep this inside a controlled TV drama budget."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a late-40s actress who can play grief, authority, and fragility in the same scenes, while Sebastian benefits from a very specific British-accented comic-villain energy."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot is built on ensemble friction and hospital hierarchy, so the buyer will want confidence that Miranda remains the true center even as Sebastian, Amanda, and Emily all pull attention."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Nurse Jackie",
+          "year": 2009,
+          "why_it_comps": "Shares the hospital workplace engine, the mix of professional competence and personal mess, and the way staff dynamics become the real serialized hook."
+        },
+        {
+          "title": "The Resident",
+          "year": 2018,
+          "why_it_comps": "Matches the contemporary medical-institution setting where power struggles, budget pressure, and doctor politics drive the episode engine."
+        },
+        {
+          "title": "Grey's Anatomy",
+          "year": 2005,
+          "why_it_comps": "Comps on the soapy ensemble energy, romantic tension inside a hospital, and the broad accessibility of medical stakes."
+        },
+        {
+          "title": "Chicago Med",
+          "year": 2015,
+          "why_it_comps": "Fits the procedural-medical lane with recurring patient crises and staff hierarchy as the weekly engine."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who like hospital dramas with soapy interpersonal conflict, especially adults who respond to workplace power plays and family-institution tension.",
+        "demographics": "Adults 25-54, slightly female-skewing, broad middle-income streaming and broadcast-friendly audience",
+        "quadrants": [
+          "F35+",
+          "M35+",
+          "F18-34"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "",
+        "per_episode": "$1.5M-$2.5M",
+        "season_total": "$12M-$20M for an assumed 8-episode season",
+        "note": "Mostly interior hospital sets, a modest recurring ensemble, and standard medical practicals keep the per-episode spend in the lower TV-drama range."
+      },
+      "lane_fit": {
+        "lane": "streaming medical workplace drama",
+        "types_of_buyers": [
+          "streamer originals exec building adult soapy drama",
+          "basic-cable drama buyer",
+          "broadcast network programming team",
+          "independent TV producer looking for a hospital series",
+          "platform seeking female-led institutional drama"
+        ],
+        "detail": "This sits naturally in the adult hospital-drama lane: accessible, character-forward, and built around recurring institutional conflict rather than expensive spectacle. The family tie at the center gives it a slightly more personal hook than a standard medical procedural."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone hospital series with no clear spinoff vector beyond the main ensemble."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Miranda is the real engine.",
+          "what_it_means": "A widowed CEO fighting for control of a children’s hospital gives the show a clean emotional center and a role that can anchor casting conversations. Buyers looking for a prestige female lead with authority and grief get a built-in showcase.",
+          "evidence": "Her office scenes with Jimmy’s photo, the budget meeting, and the late-night breakdown under the desk all define her as both leader and widow.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The hospital feels playable.",
+          "what_it_means": "The pilot gives production a repeatable, affordable world with clear departments, recurring spaces, and built-in story traffic. That makes it easier to sell as an ongoing series without needing a new engine every episode.",
+          "evidence": "Operating room, boardroom, locker room, break room, lobby, admin office, and patient room all recur within the hour.",
+          "source": "production"
+        },
+        {
+          "dimension_or_area": "Sebastian is a strong friction role.",
+          "what_it_means": "A vain, talented surgeon who resents authority is exactly the kind of part that can attract a scene-stealing actor and generate episode-to-episode conflict. He gives the series a reliable antagonist inside the institution, not just outside it.",
+          "evidence": "He complains about Carlyle taking credit, dismisses Miranda’s competence, and keeps trying to reclaim status in the boardroom and patient room.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Amanda access point broadens the show.",
+          "what_it_means": "The niece entering the hospital creates a second lane of story: family dysfunction colliding with workplace politics. That widens the audience beyond pure medical-drama viewers and gives the series a younger, messier energy.",
+          "evidence": "Amanda shows up broke, gets hired by Miranda, and immediately starts flirting with Sebastian and testing every boundary.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Joey storyline supplies emotional stakes.",
+          "what_it_means": "The pediatric crisis gives the pilot a clear patient engine and a reason for the audience to care about the hospital beyond staff banter. That’s the kind of recurring medical-emotional spine buyers expect in the lane.",
+          "evidence": "Joey’s seizure, septic diagnosis, ventilator recovery, and final collapse create the hour’s most urgent throughline.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a castable, affordable hospital drama with a strong female lead and a built-in workplace engine. The combination of Miranda’s grief-driven authority, Sebastian’s antagonistic swagger, and the family-institution collision gives buyers a clean series lane with repeatable production value.",
+      "issues": {
+        "items": [
+          {
+            "area": "Sebastian risks overpowering the pilot.",
+            "detail": "His scenes are the loudest and funniest on the page, from the boardroom complaints to the flirtation with Amanda, which makes him a strong scene engine but also a potential center-of-gravity problem. A buyer will notice that the hour often feels like it’s orbiting his attitude rather than Miranda’s agenda.",
+            "is_primary_lever": true,
+            "source": "script"
+          },
+          {
+            "area": "The pilot leans on familiar hospital beats.",
+            "detail": "Budget cuts, resident hierarchy, bedside crises, and staff sniping are all functional, but they sit squarely in a well-traveled medical-drama lane. That makes the show easy to understand, but it also means the pitch has to win on execution and cast rather than premise novelty.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "Amanda’s function is still mostly disruption.",
+            "detail": "She arrives with attitude, debt, and flirtation, but the page mostly uses her as a chaos vector rather than a fully differentiated long-term engine. A producer will clock her as useful to the pilot and still ask how much story she can carry once the novelty of her entrance wears off.",
+            "is_primary_lever": false,
+            "source": "script"
+          },
+          {
+            "area": "The medical case is emotionally clear but structurally simple.",
+            "detail": "Joey’s sepsis storyline gives the hour urgency, but the beats are straightforward and resolve in a fairly expected hospital rhythm. That keeps the pilot accessible, though it leaves limited room for surprise inside the case itself.",
+            "is_primary_lever": false,
+            "source": "script"
+          }
+        ],
+        "headline": "The main friction is that the show’s most electric personality is Sebastian, while the actual series center is Miranda. The pilot also lives in a familiar hospital-soap lane, so the buyer conversation will hinge on whether the cast and tone are distinctive enough to separate it from a crowded field."
+      },
+      "craft_note": ""
+    }
+  },
+  "weightedScore": 62,
+  "tier": "Optionable",
+  "inputTokens": 20759,
+  "outputTokens": 4877,
+  "cost": 0.03751575,
+  "declaredFormat": "Series"
+}

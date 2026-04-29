@@ -1,0 +1,305 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Crime"
+      ],
+      "tone": "soapy",
+      "tags": [
+        "ensemble",
+        "contemporary",
+        "ongoing-series",
+        "character-driven",
+        "prestige",
+        "family-dynamics",
+        "power",
+        "corruption",
+        "acting",
+        "studio-lot"
+      ]
+    },
+    "positioning_hook": "A hotheaded acting teacher and his polished brother run a studio-backed training program while a gifted student is pressured into nepotism, blackmail, and a career-defining choice.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear soap engine — ambition, favoritism, and betrayal inside a show-business pipeline — but it’s aimed more at adult drama viewers than a broad four-quadrant audience. The student/teacher power games and studio politics are accessible, yet the appeal depends on whether buyers want a backstage ensemble rather than a cleaner procedural hook."
+      },
+      "conceptual_hook_clarity": {
+        "score": 6,
+        "reasoning": "The pilot quickly establishes the acting program, the brothers’ control of it, and Sebastian’s leverage over the students, so the basic engine is legible. What’s less crisp is the series’ central question beyond the pilot: the script has several competing centers of gravity — Benjamin, Levi, Todd, Kathleen, Chelsea — before the show’s main POV fully locks in."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Benjamin has a strong combustible presence, Levi reads as the steadier counterweight, and Todd is built as a volatile young lead with real insecurity under the swagger. The student ensemble also gives the series room to keep generating conflict, though several characters are still defined more by function than by a fully singular voice."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The backstage acting-school setting gives the script a specific commercial lane, and the repeated acting exercises create a built-in dramatic device. The execution is still familiar in its power struggles, romantic tension, and nepotism beats, so the originality is more in the setting than in the storytelling grammar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The pilot keeps introducing pressure points — the books audit, the showcase funding threat, Todd’s scholarship leverage, Sebastian’s deal — which gives it forward motion. At the same time, the scene-to-scene energy is often conversational rather than escalatory, and the pilot ends before one dominant engine fully takes over."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of an acting workshop as a pressure cooker for ambition and identity is fresh enough to stand out, especially with the program’s public-facing branding and private corruption. It’s not yet at the level where the premise feels inevitable and singular; the script is still assembling its own identity from recognizable industry-drama parts."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The studio lot, workshop, showcase, books audit, and scholarship pipeline create a world with internal hierarchy and recurring story fuel. The program’s rules — who gets roles, who controls funding, who can be poached — are specific enough to support ongoing episodes without needing a new case each week."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone sits in a glossy, combative soap register with flashes of sharp industry satire and youthful romantic friction. It’s consistent, but the script hasn’t yet landed on a harder-to-imitate tonal signature beyond ‘backstage drama with attitude.’"
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Todd’s father history, Benjamin’s resentment, and the brothers’ power imbalance all hint at deeper family and career wounds beneath the surface conflict. Those seeds are present, but the pilot mostly uses them as pressure rather than opening them into a more surprising long-game mythology."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Benjamin/Levi, Todd/Kathleen, Todd/Chelsea, and Sebastian/Levi all generate usable friction, which is the right shape for a recurring ensemble. The strongest material comes from the triangulation inside the student group and the brothers’ competing control of the program."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Benjamin Stevens",
+        "role_type": "Lead",
+        "demographics": "male, 30s-40s, industry insider, acting teacher/studio operator",
+        "hook": "Benjamin is the volatile brother with the sharper edge and the less filtered mouth, the one who treats acting like combat and people like liabilities until they prove otherwise. He carries the authority of a teacher and the insecurity of a man who knows he’s one bad decision away from being cut loose, which makes him both dangerous and magnetic.",
+        "why_actor_wants_this": "This is the showcase territory of Jeremy Strong in Succession — a pressure-cooker role that lets an actor weaponize intelligence, rage, and humiliation in the same scene. It gives the performer a constant pivot between control and collapse, with big confrontation scenes and smaller moments of wounded self-protection."
+      },
+      {
+        "name": "Levi Stevens",
+        "role_type": "Supporting",
+        "demographics": "male, 30s-40s, industry insider, studio/program co-head",
+        "hook": "Levi is Benjamin’s polished opposite: measured, strategic, and always trying to keep the machine running even when the machine is rotten. He’s the brother who can smile through a threat, but the pilot makes clear that his restraint is also a form of compromise that Benjamin despises.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Stuhlbarg in The Drop or Matthew Macfadyen in Succession — a controlled, intelligent operator whose stillness carries as much tension as a blow-up. It gives an actor the chance to play authority, calculation, and private panic without ever needing to overstate it."
+      },
+      {
+        "name": "Todd Mahler",
+        "role_type": "Supporting",
+        "demographics": "male, late teens to early 20s, aspiring actor, scholarship-dependent",
+        "hook": "Todd is the gifted young outsider with enough swagger to hide how badly he wants to be chosen. He’s defensive, funny, and emotionally porous under the performance of indifference, and Sebastian’s scholarship leverage makes him the pilot’s most obvious pressure point.",
+        "why_actor_wants_this": "This is the showcase territory of Timothée Chalamet in The King or Austin Butler in Elvis — a young lead role that asks for charisma, vanity, and vulnerability in equal measure. It gives the actor a chance to play the moment where talent becomes identity and identity becomes a liability."
+      },
+      {
+        "name": "Kathleen",
+        "role_type": "Supporting",
+        "demographics": "female, late teens to early 20s, student performer",
+        "hook": "Kathleen is the quiet observer who turns out to have the sharpest self-awareness in the room. She starts as the audience surrogate, but the workshop scenes give her a private hunger and a competitive streak that suggest she’s more dangerous than she first appears.",
+        "why_actor_wants_this": "This is the showcase territory of Ayo Edebiri in The Bear or Beanie Feldstein in Lady Bird — a role built on listening, reacting, and then revealing a much fiercer inner life than the room expects. It gives the actor a strong emotional arc from tentative to self-possessed without losing the character’s vulnerability."
+      },
+      {
+        "name": "Chelsea Andersen",
+        "role_type": "Supporting",
+        "demographics": "female, late teens to early 20s, student performer, privileged background",
+        "hook": "Chelsea is the polished, socially fluent student who uses confidence as armor and status as currency. She’s funny, cutting, and visibly threatened by anyone who can outshine her, which makes her a reliable source of friction inside the class.",
+        "why_actor_wants_this": "This is the showcase territory of Sydney Sweeney in Reality or Rachel Sennott in Shiva Baby — a role that lets an actor play vanity, insecurity, and comic cruelty without flattening the character into a villain. It offers sharp scene-stealing material and the chance to turn entitlement into something more wounded."
+      },
+      {
+        "name": "Sebastian Mueller",
+        "role_type": "Supporting",
+        "demographics": "male, 40s-60s, financier/industry power broker",
+        "hook": "Sebastian is the predatory money man who understands exactly where everyone’s weak spot is and enjoys pressing on it. He’s cold, amused, and transactional, but the script gives him enough personal history — including his knowledge of Todd’s father — to make him more than a generic antagonist.",
+        "why_actor_wants_this": "This is the showcase territory of Jon Hamm in The Morning Show or Paul Sparks in Boardwalk Empire — a role for an actor who can make menace feel civilized. It gives the performer the pleasure of playing power as charm, with every line carrying a hidden threat."
+      },
+      {
+        "name": "Molly",
+        "role_type": "Supporting",
+        "demographics": "female, 20s-30s, assistant/runner",
+        "hook": "Molly is the nervous institutional messenger who knows more than she says and is always the one sent to deliver bad news. She functions as the connective tissue of the operation, which gives her a useful recurring utility role and a quiet sense of complicity.",
+        "why_actor_wants_this": "This is the showcase territory of Janel Moloney in The West Wing or Sarah Goldberg in Barry’s supporting ensemble — a role that can steal scenes through timing, reaction, and the burden of being the person who has to walk into the room with the problem. It gives an actor a recurring pressure-valve part with real comic and dramatic utility."
+      },
+      {
+        "name": "Lucas Croft",
+        "role_type": "Supporting",
+        "demographics": "male, late teens to early 20s, student/editorial track",
+        "hook": "Lucas is the quieter student whose self-consciousness shows up in the edit bay before it shows up in conversation. The pilot uses him to broaden the program beyond acting and to suggest that the same insecurity infects every corner of the studio ecosystem.",
+        "why_actor_wants_this": "This is the showcase territory of Justice Smith in The Get Down — a role where internalized anxiety and creative precision live side by side. It gives an actor a subtler lane than the louder class-room scenes, with a nice reveal in the editing-suite confrontation."
+      },
+      {
+        "name": "Miguel Logan",
+        "role_type": "Supporting",
+        "demographics": "male, 20s-40s, mentor/editor",
+        "hook": "Miguel is the grounded adult who can see through the performance and name it instantly. He’s the rare character in the pilot who offers honest feedback without trying to dominate the room, which makes him a stabilizing presence in a show full of ego.",
+        "why_actor_wants_this": "This is the showcase territory of Mahershala Ali in Moonlight’s quieter mentor mode or André Holland in The Knick — a role that lets an actor project authority through calm observation. It gives the performer a clean, scene-efficient part that can still carry emotional weight."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 6,
+        "child_actors": false,
+        "casting_characteristics": [
+          "late-teen-to-20s student ensemble",
+          "one strong male lead",
+          "multiple recurring industry-adult roles",
+          "no special physical requirements beyond age-appropriate acting range"
+        ]
+      },
+      "locations": {
+        "distinct_count": 6,
+        "interior_exterior_ratio": "mostly interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "studio lot setting",
+          "boardroom",
+          "acting workshop/classroom",
+          "office spaces",
+          "cafeteria/courtyard/parking lot"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements in the pilot pages provided.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical needs; standard office/classroom/studio dressing only.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "premium streaming adult drama",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Serialized ensemble drama driven by workshop conflicts, studio politics, and student power struggles."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary studio-lot interiors, a handful of offices/classrooms, and no visible VFX or stunt load keep this comfortably contained for a series pilot."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Benjamin and Todd both need actors who can play swagger, insecurity, and volatility without flattening into archetypes, and the student ensemble needs enough chemistry to make the class feel alive."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The pilot introduces several possible centers of gravity — Benjamin, Levi, Todd, Kathleen, Chelsea — so the buyer conversation will focus on which relationship is the true series spine."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Barry",
+          "year": 2018,
+          "why_it_comps": "Shares the backstage-performance ecosystem and the tension between acting craft and personal damage, with a lead who weaponizes authority inside a creative community."
+        },
+        {
+          "title": "The Morning Show",
+          "year": 2019,
+          "why_it_comps": "Matches the glossy workplace power politics, institutional leverage, and adult ensemble friction inside a media-adjacent world."
+        },
+        {
+          "title": "Fame",
+          "year": 1982,
+          "why_it_comps": "The student-ensemble structure and ambition-driven classroom dynamics echo the same pressure-cooker energy of young performers competing for visibility."
+        },
+        {
+          "title": "Succession",
+          "year": 2018,
+          "why_it_comps": "The sibling power struggle, transactional dialogue, and constant leverage games give the pilot a similar elite-family-business tension, even at a smaller scale."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like glossy workplace dramas about ambition, favoritism, and emotional sabotage inside creative industries.",
+        "demographics": "18-49 skewing female, with strong appeal to viewers who like ensemble character drama and behind-the-scenes entertainment worlds.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "",
+        "per_episode": "$1M-$2.5M/ep",
+        "season_total": "$8M-$20M for an 8-episode season",
+        "note": "Contemporary, mostly interior studio-lot production with a modest recurring ensemble and no visible effects load."
+      },
+      "lane_fit": {
+        "lane": "premium streaming backstage ensemble drama",
+        "types_of_buyers": [
+          "streamer originals drama execs",
+          "premium cable development teams",
+          "independent producers seeking character-forward ensemble series",
+          "talent-driven packaging buyers looking for actor showcases"
+        ],
+        "detail": "This sits naturally in the adult backstage-drama lane: glossy enough for streaming, intimate enough for character-first buyers, and structured around recurring power games rather than case-of-the-week plotting."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series with no clear spinoff vector beyond the main studio-program ensemble."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The acting-workshop engine is built-in.",
+          "what_it_means": "That gives the series a repeatable episode device where every scene can be about performance, self-invention, or humiliation, which is useful for both serialization and actor marketing. Buyers looking for a character-forward ensemble with a clear dramatic arena will understand the hook immediately.",
+          "evidence": "Benjamin’s class exercises — ‘acting’s not about feeling,’ the vulnerability monologue, the improv drill — repeatedly turn craft into conflict.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Benjamin is a volatile lead role.",
+          "what_it_means": "A lead this combative and contradictory can attract a serious actor who wants a showcase part with teeth, which materially helps packaging. Casting-driven buyers and prestige streamers both respond to roles that can anchor press and awards conversation.",
+          "evidence": "He humiliates students, clashes with Levi, and still reads as the most alive person in the room.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The studio politics are legible and recurring.",
+          "what_it_means": "The books audit, showcase funding threat, and scholarship leverage create a durable pressure system that can generate multiple episodes without needing a new premise each week. That makes the show easier to sell as an ongoing ensemble rather than a one-off industry drama.",
+          "evidence": "Sebastian auditing the books, pulling funding, and dangling Todd’s future all happen inside the pilot.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The student ensemble has usable friction.",
+          "what_it_means": "Todd, Kathleen, and Chelsea already form a triangle of attraction, rivalry, and status anxiety, which is exactly the kind of relationship web that keeps a series alive. Ensemble buyers want a group where any pairing can produce a scene, and this pilot starts to build that.",
+          "evidence": "Todd and Kathleen’s tentative connection, Chelsea’s jealousy, and the class’s reaction to Benjamin’s exercises all point in that direction.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, actor-friendly ensemble drama with a clear backstage engine and enough studio-politics friction to sustain a premium streaming season. The combination of a volatile lead role, recurring workshop structure, and modest production footprint makes it a realistic package for a buyer looking to launch a character-forward series without tentpole spend."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot has too many possible centers.",
+          "detail": "Benjamin, Levi, Todd, Kathleen, and Chelsea all get meaningful attention, but the script hasn’t fully declared which relationship is the series spine. That’s a development conversation buyers will have immediately because the pilot reads as an ensemble before it reads as a singular POV engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Todd’s scholarship leverage is the sharpest hook.",
+          "detail": "The Sebastian/Todd contract scene gives the pilot its cleanest external pressure, but it arrives after several other conflicts have already been introduced. A buyer will notice that the strongest engine is present, yet not yet dominant enough to define the whole hour on first pass.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The dialogue still reads draft-level in places.",
+          "detail": "The opening boardroom exchange and several early lines contain typos, shorthand, and inconsistent phrasing that undercut the polish of the material. That’s not a concept problem, but it is a buyer-facing friction point because the script’s commercial lane depends on confidence and precision.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Benjamin’s behavior is the show’s risk and asset.",
+          "detail": "He’s the most vivid character on the page, but his abrasive teaching style and constant dominance can narrow sympathy if the pilot doesn’t keep balancing him against Levi and the students. That makes the lead casting conversation especially important, because the role has to stay compelling even when he’s being difficult.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script’s main friction is structural: it has a strong world and a strong lead role, but the pilot is still deciding whether it’s Benjamin’s show, Todd’s show, or a true ensemble. The other buyer conversation will be polish — the draft-level dialogue and typos are fixable, but they do signal that the material needs a cleaner pass before it can be sold at the level the premise is aiming for."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 64.3,
+  "tier": "Optionable",
+  "inputTokens": 17831,
+  "outputTokens": 3880,
+  "cost": 0.03083325,
+  "declaredFormat": "Series"
+}

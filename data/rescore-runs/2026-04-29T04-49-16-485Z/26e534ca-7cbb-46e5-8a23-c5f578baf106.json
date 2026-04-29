@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T05:26:17.039Z",
+  "submission_id": "26e534ca-7cbb-46e5-8a23-c5f578baf106",
+  "eval_id": "d6ebc65a-b54d-411b-8211-bd825fb0b086",
+  "title": "Unicorns Exist",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Alma",
+      "role_type": "Lead",
+      "demographics": "Latina woman, late teens"
+    },
+    {
+      "name": "David",
+      "role_type": "Supporting",
+      "demographics": "Young man, late teens"
+    },
+    {
+      "name": "Alma's Mom",
+      "role_type": "Supporting",
+      "demographics": "Latina woman, middle-aged"
+    },
+    {
+      "name": "David's Mom",
+      "role_type": "Supporting",
+      "demographics": "Woman, middle-aged"
+    },
+    {
+      "name": "Clerk",
+      "role_type": "Supporting",
+      "demographics": "Young woman, late teens to early 20s"
+    },
+    {
+      "name": "Denise",
+      "role_type": "Supporting",
+      "demographics": "Girl, pre-teen"
+    }
+  ],
+  "positioning_hook": "A restless queer teen follows her childhood best friend into the woods to prove unicorns are real, only to discover the magic is tied to the identity she’s been trying not to name.",
+  "cost_usd": 0.034044000000000005,
+  "input_tokens": 20528,
+  "output_tokens": 4144,
+  "status": "wrote:leads_ok"
+}

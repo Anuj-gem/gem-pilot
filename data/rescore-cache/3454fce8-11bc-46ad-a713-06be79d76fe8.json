@@ -1,0 +1,278 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Drama",
+        "Mystery"
+      ],
+      "tone": "elevated",
+      "tags": [
+        "male-lead",
+        "female-lead",
+        "contemporary",
+        "character-driven",
+        "low-budget-friendly",
+        "high-concept",
+        "grief",
+        "loneliness",
+        "technology",
+        "single-location"
+      ]
+    },
+    "positioning_hook": "A lonely software engineer moves into a haunted penthouse and discovers the old router is tethering him to a digital ghost who can hijack his life and maybe heal his own.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is instantly legible and has a clean emotional engine: a lonely coder, a ghost in the machine, and a contained apartment setting. It has clear genre appeal for elevated sci-fi buyers, but the intimate scale and melancholy tone keep it from feeling broadly four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the penthouse/router sequence: the old router restores signal, then starts producing impossible behavior, and Maya materializes as the source of it. The premise can be explained in one breath, which is a real asset for packaging."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Akhil is a relatable, workable lead because his loneliness is baked into the setup, and Maya has an appealing mix of calm intelligence and loss. They function well together, but the script keeps them more symbolic than deeply contradictory, so the roles are strong rather than star-making."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The old-router-as-supernatural conduit is a fresh, modern image, and the purple signal motif gives the script a distinct visual identity. The execution stays fairly restrained, though, so the originality comes more from the premise than from a daring narrative approach."
+      },
+      "narrative_momentum_engagement": {
+        "score": 5,
+        "reasoning": "The setup is efficient, but after Maya appears the script settles into a gentle montage of companionship rather than escalating conflict. The ending lands on mood and connection more than a dramatic turn, which keeps the piece from building strong forward pressure."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of a digital ghost bound to an obsolete router is both strange and immediately understandable, which is the right kind of novelty. It feels like a clean metaphor for isolation and connection rather than a gimmick, which helps it register."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The world is specific in its surfaces — corporate office, WFH culture, apartment tower, glitchy devices — but it functions mostly as a container for the central relationship. There are hints of a larger logic around the building and the signal, yet the script does not fully build out that system."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistent: quiet, melancholy, lightly uncanny, with a soft-tech haunting register. It has a clear mood, but it stays in one emotional lane and does not yet have a sharply ownable tonal blend beyond that."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The script suggests deeper material around grief, attachment, and what it means to remain connected after loss. The final image and Maya’s backstory hint at more mythology, but the page currently keeps that depth mostly implied rather than dramatized."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 4,
+        "reasoning": "This is fundamentally a two-hander, and the supporting characters are functional but thin. The emotional engine lives almost entirely in Akhil and Maya, so the script does not generate much recurring relationship energy beyond that central pair."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Akhil",
+        "role_type": "Lead",
+        "demographics": "Male, late 20s, software engineer, contemporary urban professional.",
+        "hook": "Akhil is a tired, practical coder who moves into the penthouse for silence and ends up confronting the one presence that can actually meet him where he lives: a digital ghost who turns his private life into a haunted network. He reads as emotionally contained, lonely, and quietly receptive to wonder, which makes him a strong audience surrogate and a credible romantic-drama lead inside a sci-fi frame.",
+        "why_actor_wants_this": "This is the kind of restrained, interior showcase that gives an actor the space of Riz Ahmed in The Sound of Metal or Andrew Garfield in After the Hunt-style emotional containment — a role built on listening, micro-reaction, and the slow opening of a guarded man."
+      },
+      {
+        "name": "Maya",
+        "role_type": "Supporting",
+        "demographics": "Female, mid 20s, spectral/digital presence, identity anchored to the penthouse and the signal.",
+        "hook": "Maya is a calm, intelligent, fading presence who has learned to survive as part of the network after losing her family in the apartment. She is both haunting and tender, with a built-in contradiction: she can control devices and shape the space, but she is also trapped by the very connection that keeps her alive.",
+        "why_actor_wants_this": "This is showcase territory for a performance like Rebecca Hall in The Night House or Jessie Buckley in Men — a role that lets an actor play grief, mystery, and uncanny presence while remaining emotionally legible."
+      },
+      {
+        "name": "Friend",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s, coworker/friend, urban professional.",
+        "hook": "Akhil’s friend is the practical social bridge into the penthouse, the guy who normalizes the weird rent deal and gives the story its first nudge toward the apartment. He’s functional rather than deeply individualized, but he helps ground the premise in everyday male banter and workplace realism.",
+        "why_actor_wants_this": "This is the kind of compact supporting role that lets a character actor do easy, lived-in work in the mold of a friend role in The Big Sick or The Bear — a few scenes, but enough to establish chemistry and comic timing."
+      },
+      {
+        "name": "Manager",
+        "role_type": "Supporting",
+        "demographics": "Adult, corporate manager, voice role / off-screen presence.",
+        "hook": "The manager is a pressure source more than a person, representing the corporate world that makes Akhil crave the penthouse in the first place. The role is thin on the page, but it efficiently establishes the work-life stress that the story is trying to escape.",
+        "why_actor_wants_this": "This is a small but functional authority role in the vein of a workplace pressure-cooker scene from The Devil Wears Prada or Severance — a quick, sharp turn for an actor who can deliver friction in one scene."
+      },
+      {
+        "name": "Watchman",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, building watchman/guard.",
+        "hook": "The watchman is the local warning system, the person who knows the building’s rumor mill and quietly signals that the 10th floor is not like the rest of the tower. He adds texture and a small dose of folk-horror skepticism without becoming a major narrative engine.",
+        "why_actor_wants_this": "This is a classic character-actor part in the tradition of a gatekeeper role from Hereditary or The Others — brief screen time, but a chance to make the audience lean in with one warning and one look."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 5,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "One lead in his late 20s with strong internal acting range",
+          "One female spectral role that may require VFX-assisted performance or compositing",
+          "Supporting roles are small and age-flexible"
+        ]
+      },
+      "locations": {
+        "distinct_count": 4,
+        "interior_exterior_ratio": "Mostly interior",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Apartment penthouse as primary set",
+          "Corporate office",
+          "Building exterior/entrance",
+          "Bathroom and balcony coverage within the apartment unit"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Purple signal pulses, device glitches, Maya’s pixelation/fading, and a few stylized energy-wave moments.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical device behavior, screen graphics, and subtle environmental effects like fluttering curtains and shadow movement.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium cable elevated sci-fi drama",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model; best suited to a limited theatrical run or streamer premiere."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "low",
+        "note": "Contemporary, mostly interior, four primary locations, and only minor VFX around the router and Maya’s manifestation keep this comfortably contained."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Akhil needs an actor who can carry quiet loneliness without flattening, and Maya needs a performer who can play spectral presence without losing emotional specificity."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The router premise is clear, but the script’s emotional and mythic payoff is modest, so buyers will weigh whether the central relationship alone is enough to justify the feature."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Vast of Night",
+          "year": 2019,
+          "why_it_comps": "Shares the low-budget sci-fi strategy of making signal, technology, and atmosphere do the heavy lifting while keeping the human scale intimate."
+        },
+        {
+          "title": "Her",
+          "year": 2013,
+          "why_it_comps": "The emotional lane is a lonely man forming a bond with an unseen intelligence, with the relationship itself carrying the movie."
+        },
+        {
+          "title": "A Ghost Story",
+          "year": 2017,
+          "why_it_comps": "Like that film, this uses a spectral presence and a restrained pace to turn grief and attachment into the core dramatic engine."
+        },
+        {
+          "title": "Coherence",
+          "year": 2013,
+          "why_it_comps": "The contained setting and reality-bending premise create a similar indie-friendly, concept-forward package."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like intimate sci-fi with emotional melancholy and a clean high-concept hook.",
+        "demographics": "Skews 25-44, slightly male-leaning but accessible to women; urban, streamer-native, genre-literate viewers.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$1M-$4M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary penthouse-centered feature with a small cast and only minor VFX should live in a low indie range."
+      },
+      "lane_fit": {
+        "lane": "Elevated indie sci-fi",
+        "types_of_buyers": [
+          "Boutique genre financiers",
+          "Streamer original-film development executives",
+          "Indie producers looking for contained high-concept material",
+          "Director-driven companies seeking a calling-card feature",
+          "Festival-oriented distributors"
+        ],
+        "detail": "The script sits naturally in the lane of intimate, concept-forward sci-fi where atmosphere and emotion matter as much as plot mechanics. Its contained footprint and clear hook make it attractive to buyers who want a modestly priced genre piece with a strong trailer image."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature with no clear franchise or spinoff vector; Maya and the building are evocative, but the story is built as a single, closed emotional arc."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The router is a clean visual hook.",
+          "what_it_means": "That object gives the movie an instantly marketable image and a simple trailer-friendly premise: an obsolete device becomes the doorway to the impossible. Buyers can understand the concept fast, which helps both development and audience positioning.",
+          "evidence": "The old 2010-era router with the purple pulse, followed by the signal returning only when Akhil plugs it back in.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The setting is cheap but story-rich.",
+          "what_it_means": "A penthouse, a corporate office, and a few interior spaces create a contained production that can still feel cinematic through lighting and sound design. That makes the script attractive to indie financiers and streamer buyers looking for elevated genre without tentpole spend.",
+          "evidence": "Most of the script lives in the penthouse, with only brief office and building-exterior scenes.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The central relationship has emotional clarity.",
+          "what_it_means": "Akhil and Maya give the script a clean human core that can sell beyond the sci-fi premise, which is what makes contained genre pieces travel. The role pair is especially appealing to buyers looking for actor-forward material with a built-in metaphor for loneliness and connection.",
+          "evidence": "Their montage of working together, talking on the balcony, and the final 'Ready to submit?' beat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The purple signal motif is ownable.",
+          "what_it_means": "A consistent color-and-energy language gives the film a signature look that can be carried through marketing, poster art, and VFX design. That kind of visual branding helps a small movie feel bigger than its footprint.",
+          "evidence": "The recurring violet pulse, the pixelation shimmer, and the final glowing window.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, elevated sci-fi feature with a very clear trailer image and a production footprint that stays inside indie economics. The router/Maya concept gives buyers a fast read, while the penthouse setting and small cast make it a practical calling-card package for a streamer or boutique financier."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The second half softens into mood.",
+          "detail": "Once Maya appears, the script shifts into a gentle companionship montage and never really introduces a stronger external pressure than the emotional bond itself. That makes the ending feel earned on feeling, but light on escalation for a feature buyer looking for a firmer third-act engine.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Maya’s rules stay impressionistic.",
+          "detail": "The script gives her a haunting backstory and some device control, but the boundaries of what she can and cannot do remain loose. Buyers will notice that the mythology is evocative without yet feeling systematized enough to create tension beyond the central romance/grief dynamic.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast is thin by design.",
+          "detail": "The friend, manager, and watchman do their jobs, but they are mostly functional pressure points rather than characters with their own dramatic weight. That leaves the movie highly dependent on the Akhil-Maya pairing, which is elegant but narrows the relationship engine.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The ending plays more like a tone piece.",
+          "detail": "The final 'Connected' image is memorable, but it resolves the story on atmosphere rather than on a decisive turn or irreversible choice. For some buyers that restraint is the appeal; for others it will read as a modest payoff relative to the high-concept setup.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is that the script’s strongest asset — its intimate, melancholy tone — is also what keeps the feature from building harder narrative pressure. Buyers will like the concept and the footprint, but they’ll want confidence that the emotional premise alone is enough to carry a full-length release."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 57,
+  "tier": "Needs Development",
+  "inputTokens": 13510,
+  "outputTokens": 3770,
+  "cost": 0.0270975,
+  "declaredFormat": "Feature film"
+}

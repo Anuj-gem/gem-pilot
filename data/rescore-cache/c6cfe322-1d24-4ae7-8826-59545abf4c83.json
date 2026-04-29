@@ -1,0 +1,368 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy",
+      "genre_secondary": [
+        "Comedy",
+        "Drama"
+      ],
+      "tone": "playful",
+      "tags": [
+        "female-lead",
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "character-driven",
+        "high-concept",
+        "family-dynamics",
+        "identity",
+        "friendship",
+        "witchcraft",
+        "body-swap"
+      ]
+    },
+    "positioning_hook": "A centuries-old witch wakes in a modern Tampa apartment, and the petty, funny, dangerous battle over her body pulls a small-time hitman and his son into a spell war with a deadline.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear, sellable fantasy-comedy engine: a witch in a modern apartment, a hitman family, and escalating body-swap chaos. The appeal is real, but the script's very specific tone and rough-edged execution make it feel more specialty than four-quadrant."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The hook lands early in the bottle opening, Helena arriving in Pablo's apartment, and Freya's body-theft reveal. The central engine is easy to explain, though the script adds a lot of moving parts—Stryker, the coven, the mirror, the blood scroll—before the main conflict fully settles."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Helena has a strong fish-out-of-water voice, Pablo has a workable hard-shell/soft-core contrast, and Ricky gives the piece a younger comic bridge. Freya is vivid as an antagonist, but several supporting players function more as spell mechanics than fully durable character engines."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a weird, unabashedly theatrical fantasy-comedy register, with transformation gags, talking dog beats, and a witch-versus-witch identity war. It is not subtle, but it is distinctive in how aggressively it mixes medieval magic, modern slang, and broad comic humiliation."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The story keeps generating new reversals—Adofo's transformation, the coven, the deadline, the mirror reveal, the final showdown—but it also cycles through repeated confrontations in Pablo's apartment. The momentum is steady rather than propulsive, with several scenes functioning as variations on the same spell/retort pattern."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea of a beautiful princess and an ugly witch trading bodies and identities is instantly legible and commercially ownable. What keeps it from a higher score is that the script often explains its mythology in dialogue rather than letting the premise deepen through action."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "There is a usable world here: Tampa apartments, a coven of older women, a hitman pipeline, a mirror-based spell system, and a medieval backstory. But most of the world exists to service the plot, and the social texture outside the apartment and Freya's house remains fairly thin."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone is unusually specific: broad, cheeky, body-swap fantasy with streetwise banter and a self-aware comic edge. The script knows exactly how silly it wants to be, even when the emotional material asks for more gravity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 5,
+        "reasoning": "There are seeds of deeper material around beauty, class resentment, identity, and the cost of living in a hostile world. But the script mostly plays those ideas as surface-level dialogue and comic conflict rather than building a deeper emotional reservoir."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Pablo, Helena, and Ricky create a workable triangle, and the later additions of Bree, Adele, Mario, and Alexander widen the room. Still, the script is driven by a few central pairings more than by a truly generative ensemble system."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Helena",
+        "role_type": "Lead",
+        "demographics": "Female, 20s-30s, royal-born, medieval-era woman trapped in a witch's body.",
+        "hook": "A princess who wakes up in the body of the witch who stole her life, Helena is vain, wounded, funny, and far more observant than she first appears. She starts as a fish out of water and becomes the emotional center of the story, learning modern life while fighting to reclaim her identity, her body, and her future.",
+        "why_actor_wants_this": "This is the showcase territory of Amy Adams in Enchanted — a performance that has to sell innocence, irritation, wonder, and emotional authority in the same role. It gives an actor the chance to play comic culture shock, romantic vulnerability, and late-story power shift."
+      },
+      {
+        "name": "Pablo",
+        "role_type": "Supporting",
+        "demographics": "Male, 40s, Latino, working-class hitman with a family.",
+        "hook": "Pablo is a weary, defensive contract killer who is better at surviving than believing in himself. He starts as a cynical operator trying to finish a job and becomes the story's grounded moral counterweight, forced to choose between self-protection and loyalty.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in Sicario — a contained, watchful man whose stillness carries threat and hurt at once. It gives an actor a chance to play deadpan toughness, reluctant tenderness, and a late-blooming conscience."
+      },
+      {
+        "name": "Ricky",
+        "role_type": "Supporting",
+        "demographics": "Male, late teens/early 20s, Pablo's son.",
+        "hook": "Ricky is the bridge between the movie's modern world and its fantasy chaos: sarcastic, curious, and more emotionally open than his father. He gives Helena a younger audience inside the story and helps turn the apartment into a comic pressure cooker.",
+        "why_actor_wants_this": "This is the showcase territory of a young actor in Booksmart or The Edge of Seventeen — fast, reactive, and funny without losing sincerity. It offers the chance to be the audience surrogate while still landing real emotional beats with his father."
+      },
+      {
+        "name": "Freya",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s-30s, witch, body thief, medieval origin.",
+        "hook": "Freya is the story's engine of resentment: a witch who weaponizes beauty, memory, and humiliation to seize the life she thinks she was denied. She is funny, cruel, and theatrical, with a villain's appetite for control and a very personal grudge against Helena.",
+        "why_actor_wants_this": "This is the showcase territory of Glenn Close in Fatal Attraction or Charlize Theron in Snow White and the Huntsman — a villain role that gets to be seductive, wounded, and terrifying. It gives an actor the chance to play vanity, menace, and comic cruelty in equal measure."
+      },
+      {
+        "name": "Adofo",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s-40s, Black, African, criminal enforcer.",
+        "hook": "Adofo begins as a hard-edged fixer and becomes one of the script's best comic reversals when Helena turns him into a woman and he has to confront his own identity. The role is built on swagger, humiliation, and a surprising capacity for reinvention.",
+        "why_actor_wants_this": "This is the showcase territory of Eddie Murphy in The Nutty Professor or Tootsie-style body-comedy territory — a role that lets an actor play vanity, panic, and transformation. It offers broad comic swing plus a memorable physical and identity-based turn."
+      },
+      {
+        "name": "Bree",
+        "role_type": "Supporting",
+        "demographics": "Female, 60s, coven leader.",
+        "hook": "Bree is the calm, older authority figure who gives the movie its spiritual spine. She is practical, protective, and quietly funny, and she helps translate the fantasy rules into emotional stakes.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in a grounded ensemble role — dry authority, warmth, and no wasted motion. It gives an actor the chance to be the adult in the room without becoming decorative."
+      },
+      {
+        "name": "Adele",
+        "role_type": "Supporting",
+        "demographics": "Female-presenting, formerly male, adult enforcer transformed by magic.",
+        "hook": "Adele is Adofo after Helena's spell forces him into a new identity, and the character becomes a comic release valve for the movie's gender and power jokes. The role is all about the shock of self-recognition and the pleasure of reinvention.",
+        "why_actor_wants_this": "This is the showcase territory of a broad transformation performance like Jamie Foxx in drag-comedy mode or a classic switcheroo role in a studio farce. It gives an actor a big comic reveal and a chance to play discovery rather than just punchlines."
+      },
+      {
+        "name": "Alexander",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s-30s, royal, Helena's intended husband.",
+        "hook": "Alexander is the lost romantic anchor of Helena's past, revealed late as the man Freya displaced and erased. He functions less as a full character than as the emotional proof that Helena's original life was real and worth reclaiming.",
+        "why_actor_wants_this": "This is the showcase territory of a romantic-fantasy prince role like the one in Ever After — noble, patient, and emotionally legible. It gives an actor a clean, classical love-interest part with a late-story reveal."
+      },
+      {
+        "name": "Mario",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s-40s, Italian-accented friend and local operator.",
+        "hook": "Mario is the neighborhood comic ally who keeps the movie socially alive whenever the plot threatens to become too mechanical. He is curious, chatty, and useful, with enough personality to feel like part of the apartment ecosystem.",
+        "why_actor_wants_this": "This is the showcase territory of a character actor in a lively supporting role like John Leguizamo in a comic ensemble. It gives an actor banter, reaction shots, and a chance to steal scenes without carrying the plot."
+      },
+      {
+        "name": "Teshi",
+        "role_type": "Supporting",
+        "demographics": "Male, troll-like creature, ancient servant body.",
+        "hook": "Teshi is Freya's long-suffering servant and the script's most overtly fairy-tale supporting creature. He carries the burden of the old spell system and becomes the key to the final reveal about Alexander's identity.",
+        "why_actor_wants_this": "This is the showcase territory of a creature-performance role like Andy Serkis-style motion-capture support, but in practical fantasy form. It gives an actor physical transformation, comic pathos, and a late-story emotional payoff."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "one principal lead with heavy makeup/prosthetic requirements",
+          "multiple age-flexible supporting adults",
+          "one dog performer",
+          "one troll/creature role",
+          "one body-swap performance requiring strong physical and comic range"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "hybrid: contemporary Tampa story with medieval flashback and fantasy inserts",
+        "notable_requirements": [
+          "medieval castle interiors/exteriors",
+          "modern apartment complex",
+          "restaurant and airport parking lot",
+          "hotel suite and basement spell room"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "body transformations, fog/smoke spell effects, object movement, creature changes, lightning bolts, dream imagery, and the final dual-Helena fantasy sequence.",
+        "stunts_level": "minor",
+        "sfx_needs": "practical makeup/prosthetics for witch and troll looks, prop bottle effects, food-spell gags, and transformation beats.",
+        "night_shoots": "minimal",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Scream"
+        },
+        {
+          "type": "brand",
+          "detail": "Michael Jackson"
+        },
+        {
+          "type": "brand",
+          "detail": "Billie Jean"
+        },
+        {
+          "type": "brand",
+          "detail": "Gucci"
+        },
+        {
+          "type": "brand",
+          "detail": "Alexander McQueen"
+        },
+        {
+          "type": "brand",
+          "detail": "Coke"
+        },
+        {
+          "type": "brand",
+          "detail": "Ding Dong"
+        },
+        {
+          "type": "brand",
+          "detail": "Doritos"
+        },
+        {
+          "type": "brand",
+          "detail": "Twizzlers"
+        },
+        {
+          "type": "brand",
+          "detail": "Chiefs"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming feature",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Standalone feature with fantasy-comedy release model; best suited to streaming or specialty theatrical rather than broad family release."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary apartment coverage keeps most of the movie contained, but the medieval castle material, multiple transformation effects, creature makeup, and final fantasy battle sequence will push beyond a simple contained-indie footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Helena needs an actor who can play regal, comic, and wounded at once, while Freya needs a villain who can pivot from beauty to menace; Adofo/Adele and Teshi add specialty performance demands."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The core premise is clear, but the script layers in Stryker, the coven, the blood scroll, the mirror, and the body-swap mythology in a way that creates some explanatory drag."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Enchanted",
+          "year": 2007,
+          "why_it_comps": "A fairy-tale character dropped into modern life, with comedy built from culture shock and sincere romantic stakes."
+        },
+        {
+          "title": "The Hot Chick",
+          "year": 2002,
+          "why_it_comps": "Body-swap comedy driven by identity confusion, gendered humor, and broad fish-out-of-water reactions."
+        },
+        {
+          "title": "Practical Magic",
+          "year": 1998,
+          "why_it_comps": "Female-led witchcraft, family spell dynamics, and a tonal mix of romance, comedy, and supernatural conflict."
+        },
+        {
+          "title": "Death Becomes Her",
+          "year": 1992,
+          "why_it_comps": "Vanity, body obsession, and supernatural rivalry played with comic bite and visual transformation."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like high-concept fantasy-comedies with attitude, especially viewers who respond to witchcraft, body-swap humor, and relationship-driven genre play.",
+        "demographics": "18-49 skew, slightly female-leaning, with strongest pull for genre fans and viewers open to campy, character-forward fantasy.",
+        "quadrants": [
+          "F18-34",
+          "M18-34",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$6M-$12M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Apartment-centered contemporary production with a handful of fantasy set pieces, medieval flashbacks, creature makeup, and moderate VFX."
+      },
+      "lane_fit": {
+        "lane": "elevated fantasy-comedy",
+        "types_of_buyers": [
+          "streamer genre buyers",
+          "boutique indie distributors",
+          "mid-budget fantasy comedy financiers",
+          "producer-led packages built around a strong female lead",
+          "director-driven genre labels looking for a quirky commercial swing"
+        ],
+        "detail": "This sits in the lane of adult fantasy-comedy with a strong lead role, comic transformation beats, and enough visual invention to feel like an event without requiring tentpole scale. The apartment setting and character banter make it packageable for a buyer who wants a contained genre swing with a clear hook."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the supporting witches and spell rules are colorful, but there is no clear sequel or spinoff vector that rises to franchise level."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Helena is a vivid comic lead",
+          "what_it_means": "The role gives a buyer a clear star vehicle: a regal, angry, fish-out-of-water witch who can carry both comedy and emotion. That is attractive to actors who want a showcase part with transformation, attitude, and late-story power.",
+          "evidence": "Helena's first apartment scenes, her TV obsession, the peanut butter discovery, and the restaurant spell sequence all show her voice and comic timing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise is instantly ownable",
+          "what_it_means": "A witch trapped in the wrong body, living with a hitman family, is a clean hook that can be pitched in one breath. That makes the project easy to understand for buyers looking for a high-concept genre swing with a human center.",
+          "evidence": "The bottle opening, Freya's body theft, and the later reveal that Helena and Freya have swapped lives establish the engine quickly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The apartment becomes a comic pressure cooker",
+          "what_it_means": "The mostly contained setting gives the movie a production-friendly base while also creating repeatable relationship comedy. Buyers can see how the same room keeps generating new scenes without requiring constant location escalation.",
+          "evidence": "Nearly all of the modern-day conflict plays out in Pablo's apartment, with Helena, Ricky, Pablo, Mario, Adofo, Bree, and Freya cycling through it.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "Freya is a strong villain engine",
+          "what_it_means": "The antagonist has a personal grievance, a clear visual identity, and a power set that can drive the whole movie. That gives the project a memorable face for marketing and a strong adversarial spine for the lead role.",
+          "evidence": "Freya's childhood rejection flashback, her body theft, and her repeated attempts to reclaim control all sharpen her motive.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a playful transformation-comedy lane",
+          "what_it_means": "The body-swap and spell gags create a marketable comic texture that can travel to genre fans and actors who like big physical comedy. That makes the piece feel more like a performance event than a standard supernatural drama.",
+          "evidence": "Adofo becoming Adele, the talking dog beat, the restaurant food-spell sequence, and the final identity reveal all lean into transformation comedy.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a contained, high-concept fantasy-comedy with a real lead role at its center and a clear, pitchable hook: a princess-turned-witch fighting to reclaim her body while a hitman family gets dragged into the spell war. The apartment setting and transformation gags make it feel packageable for a streamer or specialty buyer looking for an adult genre swing that can be sold off the premise alone."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The mythology keeps expanding after the hook lands.",
+          "detail": "Once the bottle opens, the script adds Stryker, the coven, the mirror, the blood scroll, the death voice, and multiple identity reveals. That gives the movie texture, but it also creates explanatory drag that a buyer will notice as the story keeps re-explaining its own rules.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The middle section repeats the same apartment conflict.",
+          "detail": "A lot of the movie's energy comes from Helena entering a room, clashing with Pablo or a visitor, and then resetting the dynamic with another spell or joke. That repetition is part of the comic engine, but it also makes the narrative feel more episodic than escalating for stretches.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The tone leans broad enough to narrow the buyer pool.",
+          "detail": "The script plays hard into camp, gender-swapping jokes, humiliation spells, and comic cruelty, including the Adofo-to-Adele transformation and the restaurant body-gag sequence. That is a selling point for the right buyer, but it will read as too broad for some prestige-leaning or family-facing lanes.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The final fantasy battle is a scope jump.",
+          "detail": "The castle showdown, animal transformations, lightning effects, and dual-Helena confrontation are a much bigger visual ask than the apartment-based body of the movie. A producer will flag that sequence as the point where the budget and effects plan have to hold together.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "Several supporting roles are function-first.",
+          "detail": "Bree, Mario, Teshi, and even Alexander often serve the spell mechanics or the emotional reveal rather than driving independent scenes of their own. The ensemble is lively, but the movie still lives or dies on Helena, Pablo, and Freya more than on a truly deep bench.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The script's biggest friction is structural, not conceptual: the hook is strong, but the mythology keeps accreting and the apartment scenes can start to feel like variations on the same argument. The other producer conversation is tonal and budgetary — the broad comic register is part of the appeal, but the final fantasy set pieces and transformation work will need a disciplined production plan."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 63,
+  "tier": "Optionable",
+  "inputTokens": 45475,
+  "outputTokens": 5157,
+  "cost": 0.05731275000000001,
+  "declaredFormat": "Feature film"
+}

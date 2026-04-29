@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:21:46.378Z",
+  "submission_id": "61f39b48-2920-4d0e-a3ac-5e9566ea3841",
+  "eval_id": "2f7be5d4-789d-4832-a475-38307de5d463",
+  "title": "BOROUGH COMMANDER",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Brandt Voss",
+      "role_type": "Lead",
+      "demographics": "Male, mid-50s, Brooklyn-born NYPD Deputy Chief/Borough Commander; white; former dance student with a lingering leg injury."
+    },
+    {
+      "name": "Deborah Walsh",
+      "role_type": "Supporting",
+      "demographics": "Female, early 40s, NYPD captain."
+    },
+    {
+      "name": "Greg Bishop",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, lieutenant, street-to-desk cop."
+    },
+    {
+      "name": "Charlie McKenna",
+      "role_type": "Supporting",
+      "demographics": "Male, early 50s, borough executive officer/operations."
+    },
+    {
+      "name": "Kofi Mensah",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-60s, Chief of Detectives, Black."
+    },
+    {
+      "name": "Eleanor Pike",
+      "role_type": "Supporting",
+      "demographics": "Female, late 40s, deputy chief."
+    },
+    {
+      "name": "Germaine Williamson",
+      "role_type": "Supporting",
+      "demographics": "Female, early 50s, lieutenant."
+    }
+  ],
+  "positioning_hook": "A Brooklyn borough commander with a dancer’s discipline and a maverick instinct reopens two suspicious deaths, then collides with NYPD politics when the trail points to the mounted unit.",
+  "cost_usd": 0.04046775,
+  "input_tokens": 26015,
+  "output_tokens": 4657,
+  "status": "wrote:leads_ok"
+}

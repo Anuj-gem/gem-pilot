@@ -1,0 +1,365 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Thriller",
+      "genre_secondary": [
+        "Crime",
+        "Action"
+      ],
+      "tone": "propulsive",
+      "tags": [
+        "male-lead",
+        "multi-protag",
+        "contemporary",
+        "high-concept",
+        "propulsive",
+        "politics",
+        "crime",
+        "corruption",
+        "race",
+        "mexico-us-border",
+        "financial-bailout"
+      ]
+    },
+    "positioning_hook": "A Mexican federal agent and a DOJ investigator race to stop a politically motivated assassin targeting bailout-era power brokers, only to uncover a conspiracy that reaches into Washington, Wall Street, and family bloodlines.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise has immediate commercial clarity: assassinations, political corruption, cross-border pursuit, and a ticking list of targets. It plays like a broad adult thriller, though the bailout-specific politics and dense procedural machinery narrow it a bit from four-quadrant reach."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands fast with the yacht assassination, then expands cleanly into a federal case built around three-shot killings tied to bailout money. The Garza/Soliz/Knox triangle gives the premise a strong engine and a clear investigative spine."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Soliz and Knox are both playable: he’s swaggering, wounded, and culturally specific; she’s sharp, impatient, and authoritative. Garza is the standout, but the supporting political and financial players are more functional than deeply surprising."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script has a distinctive cross-border political-thriller flavor, especially in the bilingual banter, the bailout-era anger, and the family reveal. It’s still working in a familiar conspiracy-thriller lane, but with enough specificity to feel ownable."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The script keeps moving through assassinations, interrogations, chases, and reversals, with Garza repeatedly staying one step ahead. The escalation from Wall Street targets to congressional bait to the Mexico endgame gives it strong forward drive."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The bailout-assassination premise is fresh enough to feel immediately legible, and the eventual brother reveal gives the story a sharper emotional hook. The underlying structure is familiar thriller architecture, but the political and familial specifics make it more than a generic manhunt."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The script builds a rich world of DOJ, Secret Service, Treasury, Congress, Mexican federal police, Wall Street, and media panic, all under pressure from the same crisis. The offices, restaurants, golf courses, and border-family spaces all feel story-generating rather than merely decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "It has a very specific register: hard-charging, politically charged, and laced with comic insult-trading that keeps the thriller from going monochrome. The banter between Soliz, Knox, Hughes, and Garza gives it a recognizable voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The script hints at deeper ideological wounds, especially around the 1988 election trauma, family loss, and the moral rot of bailout politics. It doesn’t fully luxuriate in that depth, but the material suggests more beneath the surface than a standard chase thriller."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "The Soliz/Knox partnership has real friction and chemistry, and Garza adds a volatile third point of tension. The political and institutional supporting cast gives the story recurring interaction energy, though the script still clearly lives or dies on the central trio."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Neron Soliz",
+        "role_type": "Lead",
+        "demographics": "Male, 40s, Mexican federal police agent, bilingual, working-class, Latino.",
+        "hook": "A street-smart Mexican federal agent with a sharp mouth and a bruised history, Soliz is the kind of investigator who can laugh in the middle of a gunfight and still read the room faster than anyone else. He carries the emotional weight of a family wound he has spent years outrunning, and the Garza case forces him to choose between professional duty, national politics, and blood loyalty.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in Sicario or Oscar Isaac in a pressure-cooker procedural: a charismatic, world-weary operator who can play humor, menace, and buried pain in the same beat. The role gives an actor swagger scenes, interrogation scenes, action pursuit, and a late-story emotional reveal that recontextualizes the whole performance."
+      },
+      {
+        "name": "Abigail Knox",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, DOJ special agent, American.",
+        "hook": "Knox is the by-the-book federal investigator who keeps getting forced into messier, more political terrain than she expected, and she never loses her edge even when the room turns against her. She’s disciplined, skeptical, and funny in a dry, cutting way, which makes her the perfect counterweight to Soliz’s looser, more improvisational energy.",
+        "why_actor_wants_this": "This is strong Jodie Foster in The Silence of the Lambs or Emily Blunt in Sicario territory: an authoritative professional who gets to project control while the case keeps testing her limits. The role offers a clean showcase for intelligence, command, and escalating moral pressure."
+      },
+      {
+        "name": "Quirce Garza",
+        "role_type": "Supporting",
+        "demographics": "Male, late 30s, Latino, Mexican assassin with political history.",
+        "hook": "Garza is the movie’s wild card: a charming, ideological killer who can turn from joke to threat in a breath and seems to enjoy staying just ahead of the law. He’s not a faceless hitman; he’s a man with grievance, family history, and a warped sense of patriotism that makes him more dangerous than a simple mercenary.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the Javier Bardem in No Country for Old Men or Benicio del Toro in Sicario lane: controlled menace with philosophical texture. It’s a juicy antagonist part because he’s not just lethal, he’s articulate, slippery, and emotionally legible."
+      },
+      {
+        "name": "Marilyn Reyes",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, Latina, CFO, corporate executive.",
+        "hook": "Reyes is a polished financial power player who reads as both victim and opportunist, and the script keeps her just ambiguous enough to stay interesting. She’s sharp, status-conscious, and ideologically defensive, which makes her feel like someone who can survive any room until the room turns on her.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the Glenn Close in Damages thing: elegant, controlled, and morally slippery. The part offers a strong scene partner dynamic and a late reveal that lets the performance pivot from ally energy to suspect energy."
+      },
+      {
+        "name": "Phillip Tunnellee",
+        "role_type": "Supporting",
+        "demographics": "Male, late 50s, senior federal supervisor.",
+        "hook": "Tunnellee is the bureaucratic hard-ass who thinks in chain-of-command terms and treats the case like a political liability before it’s a crime scene. He’s not a villain so much as the institutional face of resistance, which gives him a useful antagonistic pressure in the federal scenes.",
+        "why_actor_wants_this": "This is classic character-actor territory in the vein of J.K. Simmons in Spotlight or Bryan Cranston in supporting authority mode: a role built on command, irritation, and institutional gravity. It gives an actor a chance to dominate scenes with posture and timing rather than action."
+      },
+      {
+        "name": "Kenneth Hughes",
+        "role_type": "Supporting",
+        "demographics": "Male, 50s, Black, senior Secret Service official.",
+        "hook": "Hughes is the smoother, more politically fluent power broker who understands the optics as well as the threat. He’s pragmatic, funny, and slightly dangerous in the way only a seasoned institutional operator can be, especially when he starts bending rules for results.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas-and-wit lane of Jeffrey Wright or Giancarlo Esposito: a man who can command a room without raising his voice. It’s a prestige supporting part with authority, humor, and political intelligence."
+      },
+      {
+        "name": "Marilyn Reyes",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, Latina, CFO, corporate executive.",
+        "hook": "Reyes is a polished financial power player who reads as both victim and opportunist, and the script keeps her just ambiguous enough to stay interesting. She’s sharp, status-conscious, and ideologically defensive, which makes her feel like someone who can survive any room until the room turns on her.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the Glenn Close in Damages thing: elegant, controlled, and morally slippery. The part offers a strong scene partner dynamic and a late reveal that lets the performance pivot from ally energy to suspect energy."
+      },
+      {
+        "name": "Juanita Garza",
+        "role_type": "Supporting",
+        "demographics": "Female, 70s, Mexican matriarch.",
+        "hook": "Juanita is the moral center and emotional pressure point of the Garza/Soliz family history, carrying grief, pride, and exhaustion in equal measure. She’s not passive; she’s the one person who can still shame both sons into remembering where they came from, even when she can’t control what they’ve become.",
+        "why_actor_wants_this": "This is a rich elder-role in the vein of Adriana Barraza in Babel or Rita Moreno in a prestige family drama: lived-in, emotionally authoritative, and capable of changing the temperature of a scene with one look. It gives an actor a late-career showcase with real dignity and pain."
+      },
+      {
+        "name": "Marilyn Reyes",
+        "role_type": "Supporting",
+        "demographics": "Female, 30s, Latina, CFO, corporate executive.",
+        "hook": "Reyes is a polished financial power player who reads as both victim and opportunist, and the script keeps her just ambiguous enough to stay interesting. She’s sharp, status-conscious, and ideologically defensive, which makes her feel like someone who can survive any room until the room turns on her.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the Glenn Close in Damages thing: elegant, controlled, and morally slippery. The part offers a strong scene partner dynamic and a late reveal that lets the performance pivot from ally energy to suspect energy."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "bilingual spanish-english lead support",
+          "one child in a key chase/shield sequence",
+          "older political and financial authority roles",
+          "Latino/Mexican identity is structurally load-bearing for Soliz and Garza"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Washington D.C. political and institutional settings",
+          "Mexico street and airport material",
+          "golf course and private club exteriors",
+          "hotel, casino, restaurant, office, and vehicle chase setups"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily gunfire, bullet impacts, vehicle chase enhancement, crowd control, and a few explosive beats; no heavy fantasy or digital world-building.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Multiple shootouts, car chase beats, a plane taxi/jump sequence, practical blood hits, and crowd panic choreography.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Ronald Reagan"
+        },
+        {
+          "type": "real_person",
+          "detail": "Alan Greenspan"
+        },
+        {
+          "type": "real_person",
+          "detail": "Donald Rumsfeld"
+        },
+        {
+          "type": "real_person",
+          "detail": "George Bush Sr."
+        },
+        {
+          "type": "real_person",
+          "detail": "George Bush Jr."
+        },
+        {
+          "type": "real_person",
+          "detail": "Bill Clinton"
+        },
+        {
+          "type": "real_person",
+          "detail": "Hillary Clinton"
+        },
+        {
+          "type": "real_person",
+          "detail": "Thomas Jefferson"
+        },
+        {
+          "type": "brand",
+          "detail": "CNN"
+        },
+        {
+          "type": "brand",
+          "detail": "Gold Bullion, U.S.A."
+        },
+        {
+          "type": "brand",
+          "detail": "Patron"
+        },
+        {
+          "type": "brand",
+          "detail": "Jiffy Lube"
+        },
+        {
+          "type": "brand",
+          "detail": "Dodge Charger"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Realistic release model is a theatrical or premium-streaming adult thriller with political-crime positioning."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The script is contemporary, but it carries multiple shootouts, a car chase, a plane-taxi escape, crowd scenes, and several institutional locations that will need controlled access and some stunt coordination."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs bilingual charisma, action credibility, and comic timing, while Garza and Knox both need strong scene authority; the child in the alley sequence adds a narrow but manageable requirement."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The political conspiracy is clear, but the script leans on a lot of institutional exposition and several named targets, so the buyer will want confidence that the procedural density stays legible on screen."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Sicario",
+          "year": 2015,
+          "why_it_comps": "Cross-border law-enforcement tension, morally charged violence, and a bilingual cat-and-mouse structure make this a close tonal and audience comp."
+        },
+        {
+          "title": "No Country for Old Men",
+          "year": 2007,
+          "why_it_comps": "The relentless assassin pursuit and the sense of a killer operating by his own code give it that fatalistic, pressure-cooker thriller feel."
+        },
+        {
+          "title": "Enemy of the State",
+          "year": 1998,
+          "why_it_comps": "Federal agencies, surveillance pressure, and a conspiracy that widens as the case unfolds put it in the same commercial neighborhood."
+        },
+        {
+          "title": "Body of Lies",
+          "year": 2008,
+          "why_it_comps": "International intelligence friction, institutional mistrust, and a lead caught between agencies and agendas are structurally similar."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like politically charged crime thrillers with sharp banter, institutional intrigue, and a strong law-enforcement cat-and-mouse engine.",
+        "demographics": "Primarily 25-54, male-skewing but with real appeal to women who respond to prestige thriller material; educated, news-aware, genre-literate audience.",
+        "quadrants": [
+          "M18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$8M-$14M",
+        "per_episode": "",
+        "season_total": "",
+        "note": "Contemporary locations and limited VFX keep it in indie territory, but the multiple shootouts, car chase, crowd scenes, and airport finale push it toward the upper end of the band."
+      },
+      "lane_fit": {
+        "lane": "adult political-thriller indie",
+        "types_of_buyers": [
+          "boutique genre financiers",
+          "streamer thriller development execs",
+          "indie producers with action-capable packaging",
+          "prestige crime-thriller distributors"
+        ],
+        "detail": "This sits naturally in the lane of elevated adult thrillers with a topical hook and a strong lead role. The bilingual cross-border angle and bailout-era political anger give it a sharper identity than a generic conspiracy piece."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the Garza/Soliz dynamic is strong, but there is no clear sequel or spinoff vector beyond this case."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise is instantly legible.",
+          "what_it_means": "A buyer can understand the movie in one breath: a federal manhunt for a politically motivated assassin tied to bailout-era rage. That clarity makes it easy to position to thriller buyers who want a topical hook without needing a franchise engine.",
+          "evidence": "The opening yacht assassination, the repeated three-shot pattern, and the bailout-money connection are established early and cleanly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Soliz and Knox give the movie a real engine.",
+          "what_it_means": "The lead partnership creates friction, humor, and procedural momentum, which is exactly what keeps an adult thriller moving between set pieces. That dynamic is attractive to actors and to buyers looking for a two-hander with commercial heat.",
+          "evidence": "Their El Cortez meet-cute, the office sparring, and the repeated push-pull over procedure versus instinct all define the relationship.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Garza is a strong antagonist role.",
+          "what_it_means": "The killer is not just a target; he’s a charismatic ideological force with enough personality to elevate every scene he enters. That gives the project a casting hook and a memorable villain that can help market the film.",
+          "evidence": "Garza’s hotel confrontation, his taunting calls, and the final brother reveal all give him dimension beyond a standard hitman.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The world feels expensive without being expensive.",
+          "what_it_means": "The story moves through high-status locations, but most of the value is in institutions, offices, and controlled public spaces rather than giant effects sequences. That makes the movie easier to finance than its political scope might suggest.",
+          "evidence": "Yacht, casino, Treasury, Secret Service, Capitol golf course, restaurants, and airport scenes all create scale through access and texture.",
+          "source": "both"
+        },
+        {
+          "dimension_or_area": "The family reveal adds emotional afterburn.",
+          "what_it_means": "The late brother twist turns the chase into something more personal and gives the climax a human wound underneath the politics. That kind of reveal helps a thriller linger after the plot mechanics are over.",
+          "evidence": "The Juanita backstory and the final Soliz/Garza confrontation reframe the entire case as family revenge as much as political violence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a commercially legible adult thriller with a clean hook, a strong two-hander dynamic, and a villain who can carry real heat. It also stays in a financeable contemporary lane: big enough to feel like an event, contained enough to package without tentpole economics."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The conspiracy explanation gets dense fast.",
+          "detail": "The bailout targets, congressional list, Treasury links, offshore money, and ideological motive all stack quickly across multiple offices and interrogations. A producer will flag the risk that the audience is tracking institutions and names more than the emotional spine of the chase.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The supporting cast is more functional than iconic.",
+          "detail": "Knox, Hughes, Tunnellee, Reyes, Mathers, and Hansen all do their jobs, but most of them are defined by position and attitude rather than deep contradiction. That keeps the movie moving, but it narrows the number of truly breakout roles beyond Soliz and Garza.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The political satire can crowd the thriller.",
+          "detail": "The script spends a lot of time on bailout rhetoric, partisan posturing, and institutional speeches, especially in the middle stretch. That gives the movie topical bite, but it also risks slowing the momentum whenever the case pauses for argument.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The set-piece count wants disciplined scope control.",
+          "detail": "There are multiple shootouts, a golf-course assassination, a high-speed chase, a plane-taxi escape, and a final Mexico pursuit. That’s all playable, but it means the production conversation will focus on how much action can be delivered without the movie drifting above indie economics.",
+          "is_primary_lever": false,
+          "source": "production"
+        }
+      ],
+      "headline": "The main friction is not the premise; it’s the amount of institutional explanation the movie asks the audience to absorb while the plot keeps widening. The other producer conversation will be scope discipline: this wants to feel big, but it only works if the action stays controlled and the cast stays centered on Soliz, Knox, and Garza."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 75,
+  "tier": "Optionable",
+  "inputTokens": 47940,
+  "outputTokens": 5027,
+  "cost": 0.058576500000000004,
+  "declaredFormat": "Feature film"
+}

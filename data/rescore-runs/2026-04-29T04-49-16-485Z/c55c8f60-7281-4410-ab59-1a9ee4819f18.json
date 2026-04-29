@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:21:42.616Z",
+  "submission_id": "c55c8f60-7281-4410-ab59-1a9ee4819f18",
+  "eval_id": "1b360179-25ab-4bbf-a744-4c07663de2f2",
+  "title": "The Domino Manifesto",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Grace Young",
+      "role_type": "Lead",
+      "demographics": "Woman, late 20s to 30s, enforcement agent; physically capable, sharp-tongued, emotionally guarded."
+    },
+    {
+      "name": "Wolff Cummings",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s to 40s, resistance agent and Grace’s partner; emotionally open, comic, loyal."
+    },
+    {
+      "name": "Dean Lee Lewis",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s to 30s, Elvis impersonator with stage-name identity and romantic lead energy."
+    },
+    {
+      "name": "Alexander Portman",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s to 70s, resistance leader/professor, intellectual authority figure."
+    },
+    {
+      "name": "Ronald Canard",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s to 70s, president, public figure, comic antagonist."
+    },
+    {
+      "name": "Olga Costalotta",
+      "role_type": "Supporting",
+      "demographics": "Woman, 30s to 50s, First Lady/spy figure, Eastern European-coded, sexually manipulative."
+    },
+    {
+      "name": "Yuri Yerkemov",
+      "role_type": "Supporting",
+      "demographics": "Man, 40s to 60s, oligarch/fixer, Russian antagonist, polished and opportunistic."
+    },
+    {
+      "name": "Louise Gilchrist",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s to 70s, Marine gunny sergeant, training instructor."
+    }
+  ],
+  "positioning_hook": "A resistance agent and a 1950s Elvis impersonator race to stop a time-bending communist invasion before a presidential coup erases America’s future.",
+  "cost_usd": 0.0547155,
+  "input_tokens": 43548,
+  "output_tokens": 4901,
+  "status": "wrote:leads_ok"
+}

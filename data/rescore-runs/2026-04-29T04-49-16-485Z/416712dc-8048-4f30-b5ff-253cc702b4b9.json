@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T05:21:04.312Z",
+  "submission_id": "416712dc-8048-4f30-b5ff-253cc702b4b9",
+  "eval_id": "b7cfb953-b9d7-45c2-bb95-f34775ac5007",
+  "title": "Mixstreet Kids",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Nick Parker",
+      "role_type": "Lead",
+      "demographics": "African American male, mid-to-late teens"
+    },
+    {
+      "name": "Jose Martinez",
+      "role_type": "Supporting",
+      "demographics": "Latino male, late teens to early 20s"
+    },
+    {
+      "name": "Crai-Sean Jones",
+      "role_type": "Supporting",
+      "demographics": "African American male, mid-to-late teens"
+    },
+    {
+      "name": "Kenny D. Lee",
+      "role_type": "Supporting",
+      "demographics": "Asian Pacific Islander male, mid-teens"
+    },
+    {
+      "name": "John McTyler",
+      "role_type": "Supporting",
+      "demographics": "Caucasian male, preteen to mid-teens; autistic"
+    },
+    {
+      "name": "Roc Turner",
+      "role_type": "Supporting",
+      "demographics": "African American male, late 40s"
+    },
+    {
+      "name": "Doris Parker",
+      "role_type": "Supporting",
+      "demographics": "African American female, mid-40s"
+    },
+    {
+      "name": "Jeffery Parker",
+      "role_type": "Supporting",
+      "demographics": "African American male, late 40s"
+    },
+    {
+      "name": "Rachel Myers",
+      "role_type": "Supporting",
+      "demographics": "African American female, 20s"
+    },
+    {
+      "name": "Ben Stone",
+      "role_type": "Supporting",
+      "demographics": "Caucasian male, mid-30s"
+    },
+    {
+      "name": "Mr. Showtime",
+      "role_type": "Supporting",
+      "demographics": "African American male, 50s"
+    }
+  ],
+  "positioning_hook": "A Brooklyn teen boy band with five clashing personalities rockets from rec-center rehearsals to Apollo glory, then has to survive fame, family pressure, and betrayal before the spotlight turns on them.",
+  "cost_usd": 0.06844425,
+  "input_tokens": 57971,
+  "output_tokens": 5548,
+  "status": "wrote:leads_ok"
+}

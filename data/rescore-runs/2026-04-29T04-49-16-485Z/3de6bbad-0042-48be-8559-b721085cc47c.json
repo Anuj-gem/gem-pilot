@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T05:21:56.179Z",
+  "submission_id": "3de6bbad-0042-48be-8559-b721085cc47c",
+  "eval_id": "33a7cb19-26fc-406a-9bf5-668f71654a4f",
+  "title": "Starwatch pilot",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Roberto Sabala",
+      "role_type": "Lead",
+      "demographics": "Latino man, 40s, former combat commander, Guard officer"
+    },
+    {
+      "name": "Barbara Marcoux",
+      "role_type": "Supporting",
+      "demographics": "Woman, early 30s, military commander, former W.U.C. fighter"
+    },
+    {
+      "name": "Kenny Cisneros",
+      "role_type": "Supporting",
+      "demographics": "Man, 20s, Guard pilot / lieutenant"
+    },
+    {
+      "name": "Charlene Cisneros",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s, Guard pilot / lieutenant"
+    },
+    {
+      "name": "Jennifer Maren",
+      "role_type": "Supporting",
+      "demographics": "Black woman, early 20s, Ensign"
+    },
+    {
+      "name": "Abril de la Cruz",
+      "role_type": "Supporting",
+      "demographics": "Woman, 50s, Guard commandant"
+    },
+    {
+      "name": "Jetts McDermott",
+      "role_type": "Supporting",
+      "demographics": "Man, late 30s, Guard captain"
+    },
+    {
+      "name": "Francois Marcoux",
+      "role_type": "Supporting",
+      "demographics": "Man, 60s, Mars power figure / father of Barbara Marcoux"
+    },
+    {
+      "name": "Patrick Cannon",
+      "role_type": "Supporting",
+      "demographics": "Man, 50s, ambassador / former military leader"
+    },
+    {
+      "name": "Jorge Orisa",
+      "role_type": "Supporting",
+      "demographics": "Man, 70s, ambassador / Current Ager leader"
+    },
+    {
+      "name": "Tracy Sabala",
+      "role_type": "Supporting",
+      "demographics": "Woman, 20s-40s, Sabala family member / O.E.L. fighter"
+    },
+    {
+      "name": "Akiva Stuart",
+      "role_type": "Supporting",
+      "demographics": "Man, 30s, Guard chief technical officer"
+    }
+  ],
+  "positioning_hook": "A disgraced space-war commander and his fiercest enemy are forced to co-run a frontier peacekeeping station when humanity splits into rival societies and the first ceasefire turns into a trap.",
+  "cost_usd": 0.04467375,
+  "input_tokens": 28287,
+  "output_tokens": 5213,
+  "status": "wrote:leads_ok"
+}

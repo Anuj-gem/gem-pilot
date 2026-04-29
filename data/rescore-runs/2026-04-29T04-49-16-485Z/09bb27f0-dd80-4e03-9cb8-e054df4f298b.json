@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:25:08.038Z",
+  "submission_id": "09bb27f0-dd80-4e03-9cb8-e054df4f298b",
+  "eval_id": "fcc1d36a-323c-4e07-b3ff-b98847c94577",
+  "title": "I Work in Marketing   Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50351,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Kelly Rabino",
+      "role_type": "Lead",
+      "demographics": "Female, late 30s, white, ex-con, widowed mother of one teenage son."
+    },
+    {
+      "name": "Stevie Rabino",
+      "role_type": "Supporting",
+      "demographics": "Male, mid-teens, Kelly’s son."
+    },
+    {
+      "name": "Dan",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, accountant, Eric’s best friend."
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s, former neighbor, newly divorced, financially successful."
+    },
+    {
+      "name": "Yuri",
+      "role_type": "Supporting",
+      "demographics": "Male, older, Russian-accented, criminal creditor."
+    },
+    {
+      "name": "Marco",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s, coffee-shop worker."
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female, 70s, Kelly’s mother."
+    },
+    {
+      "name": "Steven",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, Kelly’s father."
+    }
+  ],
+  "positioning_hook": "A broke, ex-con widow with a teenage son turns to OnlyFans after her dead husband’s hidden debt and a humiliating job search leave her no cleaner way out.",
+  "cost_usd": 0.03504675,
+  "input_tokens": 18967,
+  "output_tokens": 4627,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,371 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Action",
+      "genre_secondary": [
+        "Comedy",
+        "Crime"
+      ],
+      "tone": "chaotic",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "contemporary",
+        "high-concept",
+        "propulsive",
+        "character-driven",
+        "crime",
+        "friendship",
+        "class",
+        "office-heist",
+        "fourth-of-july"
+      ]
+    },
+    "positioning_hook": "A broke freelance hustler and his overthinking best friend take a shady security gig at a corporate Fourth of July party, then get trapped between a fake robbery, a real killer, and a building full of armed liars.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and commercially friendly: a contained workplace siege with broad comic energy, escalating gunplay, and a clear survival engine. It’s not four-quadrant, but the action-comedy lane is easy to sell and the Fourth of July setting gives it a clean hook."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately in the opening pages: a fake landscaper crew robs a bank-adjacent security truck, then the script pivots into a corporate-party hostage situation. The audience always knows the immediate objective, even as the true target keeps shifting."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Vic and James are a strong comic duo: Vic’s hustler confidence and James’s anxious decency create a durable engine, and Lisbon/Frank/Grace all have clear behavioral signatures. The downside is that several supporting players are more vivid as types than as fully dimensional people."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldness comes from its corporate-jargon satire colliding with a hard-R action siege, and that voice is consistent across the whole piece. The fake-business language, the self-aware hustling, and the absurdly specific workplace details give it a distinct comic identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "It moves hard once the party goes sideways, with repeated reversals, shifting alliances, and a constant pressure-cooker of cops, snipers, and competing criminals. The momentum is especially strong in the back half, where every floor change introduces a new problem."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea is fresh enough to feel ownable: a scammy workplace heist becomes a survival comedy inside a corporate tower on the Fourth of July. It’s not reinventing the genre, but the specific social texture and tone make it feel newly packaged."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The script builds a lively world of gig workers, fake gangsters, corporate climbers, and social-media opportunists, all speaking the same hustle dialect. The Nimbus building and its party ecosystem generate a lot of story friction without needing much exposition."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is highly specific: deadpan, hyper-verbal, and satirical, with violence treated like a workplace inconvenience. The script knows exactly how silly it wants to be without losing the threat level."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are real thematic seeds here around labor, class performance, masculinity, and self-mythology, especially in Vic and James’s relationship and Lisbon’s fake-visionary leadership. But the script mostly plays those ideas as propulsion rather than letting them deepen into something more layered."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The Vic/James partnership is strong, and the script keeps generating playable combinations: Lisbon/Evan, Frank/Grace, Spencer/Sonya, Wyatt/Walter, Vic/Frank. That web of pairings gives the movie a lot of recurring comic and conflict energy."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Vic Yu",
+        "role_type": "Lead",
+        "demographics": "Asian-American man, 30s",
+        "hook": "A self-styled freelance consultant with a mouth that runs faster than his judgment, Vic is the movie’s hustler philosopher: funny, defensive, opportunistic, and weirdly principled when the bullets start flying. He wants money, but what he really wants is to be seen as the smartest guy in the room, even when he’s clearly improvising his way into disaster.",
+        "why_actor_wants_this": "This is the showcase territory of Ryan Reynolds in Deadpool or Jason Bateman in Game Night — fast-talking, self-protective comedy under pressure, with the chance to turn charm into panic and back again."
+      },
+      {
+        "name": "James Carter",
+        "role_type": "Supporting",
+        "demographics": "Black man, 30s",
+        "hook": "James is Vic’s steadier counterweight: practical, tired, and motivated by family obligations rather than swagger. He’s the emotional ballast of the movie, the guy who keeps trying to do the right thing even as the situation keeps rewarding the wrong instincts.",
+        "why_actor_wants_this": "This is the kind of grounded, scene-stealing straight-man role that gave Lakeith Stanfield in Sorry to Bother You or Sterling K. Brown in a sharp ensemble room the chance to play intelligence, restraint, and exasperation in equal measure."
+      },
+      {
+        "name": "Lisbon",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s",
+        "hook": "Lisbon is a broke-CEO visionary with the confidence of a startup founder and the ethics of a con artist. She’s all language, momentum, and self-mythology, selling everyone on a mission she barely understands herself.",
+        "why_actor_wants_this": "This is the kind of high-wire, charisma-first role that lets an actor do Amy Adams in Sharp Objects or Regina Hall in Support the Girls territory — command, delusion, humor, and menace all in one performance."
+      },
+      {
+        "name": "Evan",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s",
+        "hook": "Evan is the muscle who thinks he’s the strategist, a huge, intimidating guy with just enough self-awareness to be dangerous and just enough insecurity to be funny. He’s the team’s blunt instrument, but the script keeps letting him reveal a bruised ego under the bravado.",
+        "why_actor_wants_this": "This is the kind of role that gave Dave Bautista in Glass Onion or John Cena in Blockers a chance to weaponize size, timing, and wounded vanity for comedy."
+      },
+      {
+        "name": "Frank Pavement",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s",
+        "hook": "Frank is the ex-cop turned one-man wrecking ball who keeps insisting he’s the moral center while leaving a trail of bodies behind him. He’s funny because he’s so committed to righteous violence that he can’t see how absurd he looks.",
+        "why_actor_wants_this": "This is premium antihero-villain showcase territory in the vein of Josh Brolin in Sicario or Michael Shannon in a volatile action role — controlled menace, physical authority, and a comic edge that makes the violence pop."
+      },
+      {
+        "name": "Grace",
+        "role_type": "Supporting",
+        "demographics": "Woman, 40s",
+        "hook": "Grace starts as a polished corporate operator and ends up revealing she’s fully capable of turning the room once the guns appear. She’s sharp, socially fluent, and more dangerous than the men around her initially realize.",
+        "why_actor_wants_this": "This is the kind of late-breaking power role that lets an actor do Jennifer Jason Leigh in The Hateful Eight or Carrie Coon in a pressure-cooker ensemble — controlled surface, then a hard pivot into command."
+      },
+      {
+        "name": "Sonya",
+        "role_type": "Supporting",
+        "demographics": "Woman, 30s",
+        "hook": "Sonya is a seductive, chaotic operator whose competence is always slightly out of frame, which makes her funnier and more unpredictable. She’s the kind of criminal-adjacent character who can flirt, lie, and improvise her way through a crisis while still feeling like she’s one bad decision from collapse.",
+        "why_actor_wants_this": "This is the kind of sly, scene-stealing role that gives an actor the same kind of playful volatility Eva Green or Jodie Comer gets in a genre ensemble."
+      },
+      {
+        "name": "Spencer",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s",
+        "hook": "Spencer is the hyper-credentialed tech genius who can’t quite translate intelligence into competence under pressure. He’s a comic portrait of overconfidence, social awkwardness, and professional delusion.",
+        "why_actor_wants_this": "This is the sort of role that lets an actor do Jesse Eisenberg in The Social Network or Richard Ayoade-style precision comedy — brittle intelligence, panic, and ego in constant collision."
+      },
+      {
+        "name": "Wyatt",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s",
+        "hook": "Wyatt is one half of the twin chaos machine, loud, contradictory, and impossible to trust. He’s a running source of confusion and comic misdirection, which makes him useful right up until the script makes him expendable.",
+        "why_actor_wants_this": "This is a fun, heightened supporting turn in the vein of a character actor getting to play a loud, volatile wildcard with a built-in gimmick."
+      },
+      {
+        "name": "Walter",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s",
+        "hook": "Walter is Wyatt’s twin and the more aggressive half of the pair, but the script keeps blurring their identities for comic effect. He’s a useful engine for confusion, escalation, and eventual shock value.",
+        "why_actor_wants_this": "This is the kind of twin-role-adjacent showcase that gives an actor physical comedy, confusion, and a late-story payoff when the audience finally has to track him as an individual."
+      },
+      {
+        "name": "Harry",
+        "role_type": "Supporting",
+        "demographics": "Man, 40s",
+        "hook": "Harry is a fake Yakuza guy with real family pressure, which is exactly the kind of contradiction this script likes. He’s funny because he’s trying to project menace while quietly admitting he’s just trying to keep his life together.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do Ben Schwartz in a more dangerous register or a character actor like Ken Jeong when the joke is that the guy is much softer than the costume."
+      },
+      {
+        "name": "Calvin",
+        "role_type": "Supporting",
+        "demographics": "Man, 30s",
+        "hook": "Calvin is the self-branding hustler who treats every disaster as content. He’s a parasite, a clown, and a perfect modern opportunist, which makes him one of the script’s sharpest satirical inventions.",
+        "why_actor_wants_this": "This is the kind of shameless, contemporary comic role that lets an actor go full cringe-satire in the vein of a social-media-era villain with real comic timing."
+      },
+      {
+        "name": "Harvin",
+        "role_type": "Supporting",
+        "demographics": "Man, 70s",
+        "hook": "Harvin is the elderly security guard who keeps getting dragged through the chaos as if he’s a prop, but the script gives him enough dignity to register as a real human being. He’s a pressure valve and a moral reminder in a movie that otherwise runs on adrenaline.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actor a memorable, scene-stealing run of panic, confusion, and physical comedy."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One 15-year-old daughter role",
+          "Twin casting for Wyatt and Walter",
+          "Several roles benefit from strong comedic timing and physicality",
+          "Lead role favors a physically imposing actor"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 70/30",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Office tower with multiple floors, atrium, stairwell, rooftop, and window-washing platform",
+          "Parking garage and adjacent street coverage",
+          "Bank exterior and modest residential interiors",
+          "Crowd-party setup with hostage and police coverage"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Helicopter crash, gunfire impacts, explosions, window breakage, rooftop chaos, and some crowd/smoke augmentation.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, squibs, breakaway glass, practical explosions, smoke, and a few body-fall beats.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Applebee's is repeatedly named as a location/reference."
+        },
+        {
+          "type": "brand",
+          "detail": "Soylent is specifically visible and named on screen."
+        },
+        {
+          "type": "brand",
+          "detail": "Craigslist is referenced as the job-posting source."
+        },
+        {
+          "type": "brand",
+          "detail": "Garda security is named as the security company."
+        },
+        {
+          "type": "brand",
+          "detail": "Lenovo is specifically named on the laptop."
+        },
+        {
+          "type": "brand",
+          "detail": "Disney song or the like is referenced as plot-adjacent music."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming theatrical-action-comedy",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best suited to streaming-first or mid-budget theatrical with strong genre marketing."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary and mostly contained, but the office-tower siege adds multi-floor company moves, rooftop work, helicopter beats, gunfire, explosions, and a crash sequence that will push above a simple contained-comedy footprint."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a physically imposing comic actor, the twin pair needs clean differentiation, and the ensemble works best if the supporting roles are cast with strong comedic specificity rather than generic types."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script’s voice is clear, but the satire depends on a very precise balance between action, workplace comedy, and criminal farce; the buyer conversation will center on whether that tonal blend is the movie."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "Game Night",
+          "year": 2018,
+          "why_it_comps": "A tightly engineered comic escalation where ordinary people get trapped inside a criminal situation that keeps getting bigger and more absurd."
+        },
+        {
+          "title": "The Nice Guys",
+          "year": 2016,
+          "why_it_comps": "The buddy dynamic, hard-boiled chaos, and joke density all live in the same lane as this script’s Vic/James engine."
+        },
+        {
+          "title": "Bullet Train",
+          "year": 2022,
+          "why_it_comps": "The ensemble of competing criminals, fast reversals, and stylized violence make this a close tonal and commercial neighbor."
+        },
+        {
+          "title": "The Other Guys",
+          "year": 2010,
+          "why_it_comps": "It shares the satirical workplace-crime energy and the pleasure of watching underqualified men stumble into a much bigger mess."
+        },
+        {
+          "title": "Free Fire",
+          "year": 2016,
+          "why_it_comps": "The contained gunfight escalation and comic incompetence in a single location give it a similar production-and-tone profile."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adults who like high-energy action comedies with sharp banter, ensemble chaos, and a cynical workplace edge.",
+        "demographics": "18-49 skew, slightly male-leaning but playable to women through the relationship comedy and social satire.",
+        "quadrants": [
+          "M18-34",
+          "F18-34",
+          "M35+",
+          "F35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "$20M-$35M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "A contemporary office-tower siege with a sizable ensemble, multiple floors, rooftop action, gunfire, explosions, and a helicopter crash sequence."
+      },
+      "lane_fit": {
+        "lane": "mid-budget action-comedy with satirical edge",
+        "types_of_buyers": [
+          "streamer originals teams looking for a male-skewing ensemble genre play",
+          "mid-budget theatrical genre buyers",
+          "producer-financed action-comedy shops",
+          "buyers building a smart, adult, high-concept comedy lane"
+        ],
+        "detail": "This sits naturally in the lane of elevated but accessible action-comedy: a clear hook, a playable ensemble, and enough set-piece escalation to justify a real marketing push. The corporate-satire angle gives it a slightly fresher wrapper than a standard siege movie."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature; the core conflict resolves as a one-night siege and the supporting characters are strong in the moment but not built around a clear sequel or spinoff vector."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hook is immediate and visual.",
+          "what_it_means": "That gives the movie a fast marketing read and a trailer-friendly opening that tells buyers exactly what kind of ride they’re buying. It’s the kind of premise that can sell on concept before anyone knows the full plot.",
+          "evidence": "The opening fake-landscaper bank setup, the masked truck, and the sudden pivot into the Nimbus building siege.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Vic and James are a real comic engine.",
+          "what_it_means": "The movie has a durable two-hander core, which is what makes ensemble chaos feel emotionally anchored instead of just noisy. That’s valuable to buyers because it gives the film a repeatable rhythm and a clear audience surrogate.",
+          "evidence": "Their constant bickering about work, money, fatherhood, and whether to run or stay.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The satire has a modern workplace target.",
+          "what_it_means": "The script isn’t just about criminals; it’s about hustle culture, fake leadership, and people performing competence for cameras. That makes it feel current and gives the comedy a sharper edge than a generic heist.",
+          "evidence": "Calvin’s content-creator hustle, Lisbon’s startup jargon, and the office-party setting.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble is built for escalation.",
+          "what_it_means": "Every new character adds a new comic or action variable, which is exactly what keeps a contained movie from feeling static. Buyers can see the set-piece value in the way each floor introduces a new faction or complication.",
+          "evidence": "Fake Yakuza, Ecuadorian gunmen, hostages with guns, cops, snipers, and Frank as the roaming wildcard.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is confidently specific.",
+          "what_it_means": "That specificity is a moat: it makes the script feel authored rather than assembled from genre parts. Buyers looking for a voice-driven genre swing can see a clear tonal identity they can market.",
+          "evidence": "The repeated corporate jargon, deadpan one-liners, and absurdly casual treatment of violence.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable action-comedy package: a high-concept siege movie with a strong buddy core, a satirical workplace wrapper, and enough set-piece escalation to justify a real mid-budget swing. The voice is specific enough to stand out, and the contained-but-busy production profile gives buyers a clear path to making it without tentpole risk."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The third-act geography gets busy.",
+          "detail": "Once the movie moves through the rooftop, window-washing platform, elevator, and third-floor escape, the action starts to rely on repeated location resets. That’s not a deal-breaker, but it does mean the buyer conversation will include whether the set-piece geography is clean enough to track in a fast-cut trailer and in the room.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The ensemble is vivid but not equally deep.",
+          "detail": "Vic, James, Lisbon, Frank, and Grace all pop, but several of the supporting players function more as comic functions than as fully dimensional characters. That’s fine for the movie’s engine, but it narrows franchise or sequel value and makes the cast package depend heavily on the lead pair and one or two scene-stealers.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The violence level narrows the buyer pool.",
+          "detail": "The script goes hard on gunfire, body counts, explosions, and a helicopter crash, while still playing as comedy. That combination is viable, but it pushes the project toward mature streaming or a very specific theatrical buyer rather than a broad four-quadrant lane.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The satire depends on a very specific tone balance.",
+          "detail": "The corporate-jargon jokes, criminal incompetence, and real danger all need to stay in the same register for the movie to land. Buyers will notice that the script is strongest when those elements are in lockstep, and more conditional when the action starts to outrun the comedy.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not concept or voice; it’s whether the movie’s busy back half stays legible while the body count and location shifts keep climbing. The project is strongest as a mature, mid-budget ensemble play, but it will live or die on how cleanly the action-comedy balance is executed."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 74.7,
+  "tier": "Optionable",
+  "inputTokens": 40471,
+  "outputTokens": 5175,
+  "cost": 0.05364075,
+  "declaredFormat": "Feature film"
+}

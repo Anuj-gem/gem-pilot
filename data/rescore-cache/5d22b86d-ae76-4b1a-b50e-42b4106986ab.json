@@ -1,0 +1,312 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Sci-Fi",
+      "genre_secondary": [
+        "Drama",
+        "Thriller"
+      ],
+      "tone": "earnest",
+      "tags": [
+        "female-lead",
+        "multi-protag",
+        "contemporary",
+        "ongoing-series",
+        "high-concept",
+        "character-driven",
+        "family-dynamics",
+        "survival",
+        "grief",
+        "black-hole",
+        "alien-planet"
+      ]
+    },
+    "positioning_hook": "When a government analyst’s secret funding deal unleashes a reality-ripping black-hole event, his teenage daughter and young son must survive the night while their parents vanish into an alien world.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The hook is easy to grasp and has built-in family stakes, creature danger, and apocalypse-scale spectacle. The audience is real, but the material reads more like a niche sci-fi family survival series than a broad four-quadrant breakout."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands quickly: a government-backed experiment goes wrong, a giant rat appears, then the sky tears open and the family is split apart. The pilot makes the engine legible early, even if the final alien-planet turn arrives very late."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Mia has the clearest long-term shape as the protective older sister, and Mason gives the show a vulnerable younger POV. Noah, Ruth, and Goodwin are functional but still largely defined by the plot mechanics around them."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The black-hole escalation and family separation give the script a fresher sci-fi wrapper than a standard lab-accident story. The execution, though, is still familiar in its domestic-drama-plus-disaster setup and leans on broad genre beats."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The pilot keeps introducing bigger problems — lab breach, investigation, home invasion, black-hole catastrophe — and that escalation helps. But the middle section spends a lot of time on setup and repeated family tension before the endgame arrives."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The strongest original move is the collision of suburban family drama with cosmic catastrophe and a giant mutated rat. It feels ownable, but the deeper logic of the world is still mostly implied rather than fully felt."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "There are promising ingredients — a White House-connected government job, a science lab, a mysterious gas, and an alien planet tease — but the world is still mostly a container for events. The pilot hints at a larger mythology without yet delivering much social or institutional texture."
+      },
+      "tonal_specificity": {
+        "score": 5,
+        "reasoning": "The script is consistently earnest and apocalyptic, with some creature-feature energy. It has a clear emotional register, but the tonal identity is still broad rather than sharply singular."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The family fracture, Noah’s guilt, Ruth’s loyalty, and Goodwin’s messianic obsession all suggest more beneath the surface. The pilot gestures at bigger thematic material, but most of that depth is still in setup mode."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "The family unit gives the series a usable engine, and Mia/Mason have a believable sibling dynamic. Still, the supporting cast is thin enough that the show currently depends heavily on the core family and the villain scientist."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Mia",
+        "role_type": "Lead",
+        "demographics": "female, 16, teenager",
+        "hook": "Mia is the sharp-tongued older daughter who sees the family’s emotional fault lines before anyone else does. She starts as a typical skeptical teen, but the pilot positions her as the one most likely to become the practical survivor and emotional anchor once the world breaks open.",
+        "why_actor_wants_this": "This is the showcase territory of Kaitlyn Dever in Unbelievable — a young performer carrying intelligence, hurt, and authority in the same role. It gives an actor the chance to play sarcasm, fear, and leadership as the story’s moral center."
+      },
+      {
+        "name": "Mason",
+        "role_type": "Supporting",
+        "demographics": "male, 9-10, child",
+        "hook": "Mason is the younger brother with a big imagination and a still-open heart, which makes him both comic relief and emotional vulnerability. He’s the kid who notices the strange weather, fears the rat, and forces the story to keep its innocence intact even as the world collapses.",
+        "why_actor_wants_this": "This is the kind of child role that gave Noah Jupe in A Quiet Place a breakout lane — fear, wonder, and emotional immediacy without feeling ornamental. It offers a young actor a high-stakes survival part with real audience sympathy."
+      },
+      {
+        "name": "Noah",
+        "role_type": "Supporting",
+        "demographics": "male, late 40s, government employee",
+        "hook": "Noah is the work-obsessed father whose professional ambition and compromised judgment help trigger the disaster. He’s not a simple villain; the script plays him as a man trying to provide for his family while quietly becoming the weak link in the chain.",
+        "why_actor_wants_this": "This is the kind of morally compromised father role that gave Bryan Cranston in Breaking Bad its early electricity — a man whose private panic keeps leaking into public consequence. It offers an actor guilt, denial, and eventual collapse rather than a one-note authority figure."
+      },
+      {
+        "name": "Ruth",
+        "role_type": "Supporting",
+        "demographics": "female, mid-40s, stay-at-home mother",
+        "hook": "Ruth is the warm, observant center of the household, loyal to her family but increasingly aware that something is wrong in the marriage and in the world. She reads as the emotional stabilizer of the home, which makes her disappearance into the black hole especially devastating.",
+        "why_actor_wants_this": "This is the kind of grounded family-drama role that gave Patricia Clarkson in Sharp Objects its quiet force — a woman whose stillness carries real emotional weight. It gives an actor the chance to play love, disappointment, and dread without needing big speeches."
+      },
+      {
+        "name": "Dr. Ivan Goodwin",
+        "role_type": "Supporting",
+        "demographics": "male, late 50s, white, scientist",
+        "hook": "Dr. Goodwin is the obsessive scientist whose miracle cure fantasy curdles into a messianic power trip. He’s intense, physically fragile, and increasingly unmoored, which makes him feel like both the engine of the disaster and a man addicted to proving he was right.",
+        "why_actor_wants_this": "This is the kind of prestige-villain role that gave Michael Emerson in Person of Interest and Giancarlo Esposito in Breaking Bad their scene-stealing precision — controlled menace with a crackling intellect. It offers an actor a chance to play conviction turning into madness."
+      },
+      {
+        "name": "Agent Blackwell",
+        "role_type": "Supporting",
+        "demographics": "male, 40s, government agent",
+        "hook": "Agent Blackwell is the stern, procedural face of the government response, the man who turns the lab accident into a formal crisis. He functions as the institutional counterweight to Goodwin’s chaos and Noah’s panic.",
+        "why_actor_wants_this": "This is solid authority-role territory in the vein of Lance Reddick in Bosch — controlled, watchful, and capable of carrying tension with minimal dialogue. It gives an actor a clean, grounded power part in the middle of genre chaos."
+      },
+      {
+        "name": "Alex",
+        "role_type": "Supporting",
+        "demographics": "male, 20s, survivor",
+        "hook": "Alex is the resourceful young survivor who gives Mia and Mason shelter, food, and practical instruction once the collapse begins. He’s the first sign that the world outside the family home has already become a survival economy.",
+        "why_actor_wants_this": "This is the kind of post-collapse helper role that gave Austin Amelio in The Walking Dead a useful mix of danger and utility. It offers an actor a compact but memorable survivalist part with room to expand."
+      },
+      {
+        "name": "Mrs. Davis",
+        "role_type": "Supporting",
+        "demographics": "female, 70s, neighbor",
+        "hook": "Mrs. Davis is the nosy, sweet neighborhood presence who briefly normalizes the family’s world before the horror takes over. She’s a small but effective reminder of the suburban social fabric the story is about to tear apart.",
+        "why_actor_wants_this": "This is the kind of character turn that gave Margo Martindale in countless prestige dramas its lived-in authority — a small role that instantly feels real. It gives an older actor a quick, memorable texture part."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 1,
+        "series_regulars": 4,
+        "child_actors": true,
+        "casting_characteristics": [
+          "one teenage female lead",
+          "one child male role with substantial screen time",
+          "one late-40s father role",
+          "one mid-40s mother role",
+          "one older-neighbor role",
+          "one 20s survivor role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "mostly interiors with several key exteriors",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "suburban family house",
+          "government office",
+          "science laboratory",
+          "YMCA shelter",
+          "alien-planet tease in final image"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "giant rat, expanding black hole, atmospheric rupture, house destruction, alien-planet end tag, and some environmental effects like snow and sky anomalies",
+        "stunts_level": "minor",
+        "sfx_needs": "practical rat effects, lab destruction, smoke/gas effects, debris, and partial house-collapse work",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Kelly Clarkson is named as the morning news anchor."
+        },
+        {
+          "type": "brand",
+          "detail": "The White House is referenced visually through Noah's government ID badge and job context."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "streaming",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Serialized survival sci-fi with a family-disaster engine and a mystery-of-the-week layer around the cosmic event"
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "Contemporary suburban interiors keep the base footprint controlled, but the giant rat, black-hole destruction, house collapse, and alien-world tag push this beyond a simple contained drama."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "The lead needs a teenage actress who can carry sarcasm, fear, and leadership, while the child brother has to stay emotionally legible through heavy effects and disaster beats."
+      },
+      "development": {
+        "level": "high",
+        "note": "The pilot ends on a major format pivot into alien-planet survival, so the series identity will be judged immediately on whether the family-disaster engine and the cosmic mythology feel like one show."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "A Quiet Place",
+          "year": 2018,
+          "why_it_comps": "Shares the family-under-siege structure, child vulnerability, and tension built from a home becoming unsafe."
+        },
+        {
+          "title": "War of the Worlds",
+          "year": 2019,
+          "why_it_comps": "The suburban collapse into survival mode and the family separation through a larger catastrophe are the same audience promise."
+        },
+        {
+          "title": "From",
+          "year": 2022,
+          "why_it_comps": "The mystery-box survival lane, eerie environmental rules, and ensemble-in-peril structure line up with this series' post-disaster engine."
+        },
+        {
+          "title": "The Last of Us",
+          "year": 2023,
+          "why_it_comps": "The emotional center is a protective younger character navigating a ruined world with family loss and survival stakes."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Viewers who like high-concept survival sci-fi with family stakes, especially audiences drawn to emotional genre stories rather than hard-science spectacle.",
+        "demographics": "Adults 18-49 with a slight female skew; strongest with genre fans, parents, and younger viewers who respond to sibling-centered survival stories.",
+        "quadrants": [
+          "F18-34",
+          "F35+",
+          "M18-34",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "mid",
+        "range": "",
+        "per_episode": "$3M-$6M",
+        "season_total": "$24M-$48M for an 8-episode season",
+        "note": "Assumes an 8-episode season with a contemporary base, moderate creature/VFX work, and recurring disaster/environmental effects."
+      },
+      "lane_fit": {
+        "lane": "streaming elevated sci-fi survival drama",
+        "types_of_buyers": [
+          "streamer originals teams building genre with emotional stakes",
+          "premium cable drama buyers looking for contained but scalable sci-fi",
+          "producer-financed genre companies with family-audience crossover ambitions",
+          "buyers seeking a teen-forward survival hook with adult emotional weight"
+        ],
+        "detail": "This sits naturally in the lane where genre spectacle is used to amplify family fracture, not replace it. The pilot has enough mystery and destruction to sell the hook, while the sibling POV gives it a durable emotional entry point."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone series rather than a clear franchise/spinoff engine; the supporting characters are functional but not yet deep enough to anchor a separate offshoot."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The family hook is immediate.",
+          "what_it_means": "The script gives buyers a fast emotional entry point, which is crucial for a genre series that needs to sell both danger and feeling in the same pitch. That makes it attractive to streamers and producers looking for a high-concept show with an accessible human core.",
+          "evidence": "The opening breakfast scene establishes the family dynamic before the lab accident and the later black-hole catastrophe split them apart.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The escalation is visually ownable.",
+          "what_it_means": "A mutated rat, a collapsing sky, and a family ripped into an alien world create a trailer-friendly sequence of images that can sell the series quickly. That kind of escalation is useful for buyers who want a clear hook they can market in a single cut.",
+          "evidence": "The rat grows, the black hole opens over the house, and the final image lands on Ruth and Noah waking on an alien planet.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Mia has series-lead potential.",
+          "what_it_means": "The older sister is the clearest long-term anchor, which gives the project a durable POV and a role that can attract a young actor with range. Buyers often respond to a teen lead who can carry both survival action and emotional authority.",
+          "evidence": "Mia protects Mason, keeps him quiet about the rat, and becomes the one pushing survival once the house is destroyed.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise blends domestic and cosmic stakes.",
+          "what_it_means": "That combination broadens the show beyond pure creature feature territory and gives it a more premium emotional frame. It is the kind of tonal mix that can appeal to buyers seeking genre with family-drama credibility.",
+          "evidence": "The pilot moves from kitchen-table tension to government investigation to black-hole apocalypse without losing the family throughline.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a family-survival sci-fi series with a clean, marketable engine: a suburban household gets shattered by a government experiment, then the kids are forced to survive while the parents vanish into a cosmic disaster. The contained domestic setup keeps the buy accessible, while the rat/black-hole imagery and alien-world tag give it the kind of trailer moments that can justify a streamer or premium-cable genre push."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The pilot pivots hard at the end.",
+          "detail": "The final move from suburban catastrophe to Ruth and Noah waking on an alien planet is a major format shift, and that is the first conversation a buyer will have. It creates a strong hook, but it also means the series is being sold on two different engines in one episode.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "Goodwin is still mostly a plot device.",
+          "detail": "He drives the experiment, the breach, and the funding fraud, but the pilot gives him more obsession than dimension. Buyers will notice that the villain’s emotional engine is thinner than the family material around him.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The middle section repeats the same family tension.",
+          "detail": "The Noah-Ruth argument about work, the kids, and emotional distance is clear, but it plays in a fairly familiar lane and takes up meaningful page time before the disaster payoff. That makes the pilot feel more setup-heavy than the premise alone suggests.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "The world rules are still broad.",
+          "detail": "The black holes, cloudy weather, disappearing stars, and Solnulim gas are intriguing, but the pilot does not yet define how these phenomena connect in a way that feels fully owned. A buyer will read that as mythology still in the sketch phase.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The strongest friction is structural: the pilot sells a family survival show and a cosmic alien-world show in the same hour, and the handoff is abrupt enough to become a buyer question. Beyond that, the villain and mythology are intriguing but still underdefined relative to the scale of the premise."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 60,
+  "tier": "Optionable",
+  "inputTokens": 20243,
+  "outputTokens": 4264,
+  "cost": 0.034370250000000005,
+  "declaredFormat": "Series"
+}

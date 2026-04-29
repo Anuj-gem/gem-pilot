@@ -1,0 +1,330 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_secondary": [
+        "Historical"
+      ],
+      "tone": "elevated",
+      "tags": [
+        "male-lead",
+        "ensemble",
+        "period-piece",
+        "prestige",
+        "character-driven",
+        "grief",
+        "survival",
+        "family-dynamics",
+        "plague",
+        "london-1665"
+      ]
+    },
+    "positioning_hook": "A proud London alderman fights to keep his parish alive during the Great Plague, while a condemned highwayman discovers decency, and the city’s moral order collapses around them.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The plague setting, civic stakes, and transformation arc give this a clear adult audience, especially for prestige historical drama buyers. It is less obviously four-quadrant because the language, period specificity, and density of social detail make it a more selective theatrical or streamer play."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands immediately: a condemned rogue is pulled into plague duty, and a city official is forced to choose between duty, family, and survival. The opening execution sequence and the later parish crisis make the premise easy to explain in two sentences."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Harry Poyntz is a strong center: self-regarding, civic-minded, frightened, and gradually opened by catastrophe. Ratsey is equally vivid, with a rare comic-feral-to-human turn that gives the script a second engine, and the supporting cast around them is full of usable faces."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script commits to a specific historical world and lets plague bureaucracy, street commerce, and moral panic generate drama rather than generic disaster beats. The tonal blend of bawdy comedy, civic procedure, and mortality is unusually confident."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through a series of escalating civic and personal shocks: the execution, the plague’s arrival, the quarantine regime, the family rupture, and the eventual collapse of order. It is more accumulative than propulsive in places, but the pressure keeps tightening."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The central idea feels both fresh and inevitable: a plague city seen through the mechanics of work, class, and public duty rather than through melodramatic catastrophe. Ratsey’s arc from swaggering criminal to someone who can notice a child’s dress is the kind of human-scale turn that lingers."
+      },
+      "world_density_and_texture": {
+        "score": 9,
+        "reasoning": "This is the script’s standout asset. Harrow Alley feels inhabited by a full civic ecosystem — aldermen, searchers, watchers, buriers, tavern-keepers, physicians, clergy, and street sellers — and every role generates story."
+      },
+      "tonal_specificity": {
+        "score": 9,
+        "reasoning": "The voice is unmistakable: bawdy, literary, fatalistic, and oddly humane all at once. The script can move from gallows banter to theological dread to comic commerce without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "Beneath the plague plot is a durable meditation on duty, class, faith, and what remains of civilization when fear takes over. The Ratsey/Harry contrast gives the piece a deeper moral argument than the surface plot initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "The script is built on recurring friction between Harry and Jem, Harry and Lawrence, Ratsey and Prothero, Ratsey and Betty, and the parish as a living system. Even side characters like Hodges, Feeny, Morrell, and Sam have relationship value beyond their plot function."
+      }
+    },
+    "lead_characters": [
+      {
+        "name": "Harry Poyntz",
+        "role_type": "Lead",
+        "demographics": "Male, late 30s to early 40s, London alderman and tailor, middle-class, married, white.",
+        "hook": "A self-made civic man who wants order, respectability, and control, Harry begins as a practical, slightly pompous alderman and ends up carrying the emotional burden of a city in collapse. He is proud, anxious, sexually frustrated, morally serious, and gradually forced into real tenderness — especially toward Jem, the parish, and the child he thought was his.",
+        "why_actor_wants_this": "This is the showcase territory of Mark Rylance in a historical drama or Matthew Macfadyen in a prestige period piece — a man whose authority is constantly undercut by private panic, then deepened into moral courage. The role gives an actor speeches, humiliation, civic leadership, and a late-blooming emotional turn."
+      },
+      {
+        "name": "Gamaliel Ratsey",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s to 40s, condemned highwayman and later corpse-bearer/baker/constable, white.",
+        "hook": "A swaggering criminal with a filthy mouth, a performer’s instinct, and a survivalist’s appetite, Ratsey is the script’s great wild card. He starts as a comic rogue who can charm a crowd on the way to the gallows and ends as a man who discovers dignity in work, cleanliness, and ordinary pleasure.",
+        "why_actor_wants_this": "This is the kind of role that gave Brendan Gleeson in In Bruges or Benicio del Toro in The Usual Suspects room to be funny, dangerous, and unexpectedly tender. It offers a performer a full-body transformation, with comic set pieces, menace, and a late emotional landing."
+      },
+      {
+        "name": "Jem Poyntz",
+        "role_type": "Supporting",
+        "demographics": "Female, late teens to early 20s, Harry’s wife, pregnant, white.",
+        "hook": "Jem is quiet, observant, and emotionally guarded, but the script gives her real interior force. She carries the humiliation of a marriage built on convenience, then becomes the emotional center of the home once the plague strips away Harry’s defenses.",
+        "why_actor_wants_this": "This is the kind of restrained, devastating period work that gave Carey Mulligan in Far from the Madding Crowd or Keira Knightley in Atonement a chance to play intelligence under pressure. The role offers stillness, hurt, and a late confession that redefines the marriage."
+      },
+      {
+        "name": "Nathaniel Hodges",
+        "role_type": "Supporting",
+        "demographics": "Male, late 60s, physician, white.",
+        "hook": "Hodges is a brilliant, exhausted, profane doctor who sees through the city’s superstitions and still keeps working because he cannot quite stop caring. He is cynical about humanity, but the script keeps revealing a stubborn, almost comic devotion to knowledge and witness.",
+        "why_actor_wants_this": "This is the showcase territory of Jim Broadbent in a period role or Ian McKellen in a late-life intellectual part — wit, authority, disgust, and compassion in the same breath. It gives an actor big language, dry humor, and a final act of tragic purpose."
+      },
+      {
+        "name": "John Lawrence",
+        "role_type": "Supporting",
+        "demographics": "Male, 60s, Lord Mayor of London, white.",
+        "hook": "Lawrence is the city’s moral spine: blunt, practical, and impossible to bully. He is not sentimental, but he understands that leadership in crisis is partly theater, partly discipline, and partly refusing to run.",
+        "why_actor_wants_this": "This is the kind of role that gave Tom Wilkinson in Michael Clayton or David Strathairn in Lincoln the chance to play authority as pressure rather than bluster. It’s a compact but commanding part for an actor who can make civic duty feel dramatic."
+      },
+      {
+        "name": "Prothero",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s, clerk, white.",
+        "hook": "Neat, sly, and opportunistic, Prothero is the script’s most visible profiteer, turning plague into a business model before anyone else fully understands the market. He is not a villain in a grand sense; he is what happens when intelligence meets panic without conscience.",
+        "why_actor_wants_this": "This is the kind of sharp supporting turn that gave Tom Hollander in The Night Manager or Matthew Goode in Downton Abbey room to be polished, funny, and faintly predatory. The role offers speed, wit, and a morally elastic intelligence."
+      },
+      {
+        "name": "Betty Buckworth",
+        "role_type": "Supporting",
+        "demographics": "Female, 20s to 30s, baker’s wife, white.",
+        "hook": "Betty is practical, sensual, and sturdier than the men around her realize. She becomes one of the story’s clearest embodiments of ordinary competence, and her scenes with Ratsey quietly rewire him.",
+        "why_actor_wants_this": "This is the kind of grounded, alive supporting role that gave Jodie Comer in The Last Duel or Olivia Colman in smaller period work a chance to dominate a scene without announcing it. It offers warmth, authority, and a subtle romantic charge."
+      },
+      {
+        "name": "Samuel Killigrew",
+        "role_type": "Supporting",
+        "demographics": "Male, 30s to 40s, grocer and parish man, white.",
+        "hook": "Sam is a decent, frightened family man whose fear of contagion eventually hardens into a terrible domestic decision. He begins as a neighborly presence and becomes one of the story’s clearest examples of what panic does to love.",
+        "why_actor_wants_this": "This is the kind of role that gave Paul Giamatti in Sideways or Stephen Graham in a domestic crisis drama room to play decency under strain. It’s a strong character part with a painful moral turn."
+      },
+      {
+        "name": "Toby",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s to 30s, Jamaican, laborer and later corpse-bearer.",
+        "hook": "Toby is quiet, wounded, and observant, carrying the script’s clearest outsider perspective on London’s cruelty. He is treated badly by others, but the script gives him dignity, memory, and a real emotional center in his longing for home.",
+        "why_actor_wants_this": "This is the kind of role that gave Chiwetel Ejiofor in 12 Years a Slave or Kingsley Ben-Adir in One Night in Miami room to play interiority under pressure. It offers restraint, pain, and a deeply felt homesickness."
+      },
+      {
+        "name": "Nathaniel Morrell",
+        "role_type": "Supporting",
+        "demographics": "Male, 20s to 30s, curate, white.",
+        "hook": "Morrell is gentle, awkward, and spiritually sincere, with a stammer that makes him seem less powerful than he is. He becomes one of the few characters who can answer fear with actual compassion rather than performance.",
+        "why_actor_wants_this": "This is the kind of role that gave Andrew Garfield in Silence or Paul Mescal in smaller period work a chance to play vulnerability as strength. It offers tenderness, moral clarity, and a quiet emotional payoff."
+      }
+    ],
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 1,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "large ensemble of period supporting roles",
+          "one child with significant emotional presence",
+          "one teenage pregnant character",
+          "one Jamaican supporting role",
+          "older male physician and civic authority roles"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 55/45",
+        "period_or_contemporary": "period-piece",
+        "notable_requirements": [
+          "1665 London street build",
+          "Newgate prison interiors",
+          "Tyburn gallows exterior",
+          "church, tavern, shop, coach, and alley period environments",
+          "crowd scenes with plague-era street texture"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily period extension work, crowd enhancement, and city-scale atmosphere; no effects-driven spectacle.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical plague-era props, dead-cart handling, hanging setup, fire barrels, and corpse makeup.",
+        "night_shoots": "significant",
+        "animals": true
+      },
+      "rights_flags": [
+        {
+          "type": "ip_licensing",
+          "detail": "Adapted from an unproduced 1962 screenplay by Walter Brown Newman; underlying rights are referenced as remaining with the estate of Walter Brown Newman, Campbell-Devon Productions, and/or successors and assigns."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium streaming or prestige theatrical",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release; best positioned as a prestige historical drama with awards-facing potential rather than broad commercial four-quadrant play."
+      }
+    },
+    "risk_details": {
+      "budget": {
+        "level": "medium",
+        "note": "The period London build, crowd scenes, coach traffic, plague street dressing, and night exteriors push this above a lean indie, but it stays well below effects-heavy historical spectacle."
+      },
+      "casting": {
+        "level": "medium",
+        "note": "Harry and Ratsey are both actor-defining roles, and the piece needs a cast that can handle period language without flattening the humor. The supporting ensemble is rich, but the lead pair will drive buyer confidence."
+      },
+      "development": {
+        "level": "medium",
+        "note": "The script is already highly shaped, but the adaptation’s literary density and historical specificity will make buyer conversations about tone, accessibility, and contemporary relevance unavoidable."
+      }
+    },
+    "packaging": {
+      "comp_set": [
+        {
+          "title": "The Crucible",
+          "year": 1996,
+          "why_it_comps": "Shares the pressure-cooker moral atmosphere of a community under fear, with public panic turning civic life into accusation and ritual."
+        },
+        {
+          "title": "The Favourite",
+          "year": 2018,
+          "why_it_comps": "Like this script, it uses period language, social maneuvering, and dark humor to make hierarchy and survival feel immediate."
+        },
+        {
+          "title": "The Dig",
+          "year": 2021,
+          "why_it_comps": "A prestige historical lane with intimate human stakes, strong period texture, and emotional payoff rooted in ordinary labor and mortality."
+        },
+        {
+          "title": "The Last Duel",
+          "year": 2021,
+          "why_it_comps": "A serious historical feature with adult themes, strong ensemble support, and a world that feels lived-in rather than decorative."
+        }
+      ],
+      "audience_target": {
+        "primary_audience": "Adult viewers who buy prestige historical dramas for character, language, and moral pressure rather than spectacle.",
+        "demographics": "35+, skew slightly older, educated, premium-streaming and arthouse-theatrical friendly, with strongest pull among viewers of literary period drama.",
+        "quadrants": [
+          "F35+",
+          "M35+"
+        ]
+      },
+      "budget_tier": {
+        "tier": "indie",
+        "range": "$12M-$20M total negative cost",
+        "per_episode": "",
+        "season_total": "",
+        "note": "The period London setting, ensemble cast, coach work, crowd scenes, and night exteriors keep it in the upper indie range."
+      },
+      "lane_fit": {
+        "lane": "prestige historical drama",
+        "types_of_buyers": [
+          "prestige indie financiers",
+          "streamer original film teams",
+          "arthouse distributors",
+          "awards-oriented production companies",
+          "literary adaptation buyers"
+        ],
+        "detail": "This sits naturally in the lane of adult historical features that sell on performance, atmosphere, and moral seriousness. The plague setting gives it a built-in hook, while the language and ensemble texture make it feel premium rather than generic."
+      },
+      "ip_potential": {
+        "has_potential": false,
+        "detail": "Standalone feature. The world is rich, but the script does not present a clean sequel or spinoff vector beyond this story."
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The plague city feels fully inhabited.",
+          "what_it_means": "That density gives the film a premium-world moat: buyers are not just getting a story, they are getting a lived-in civic ecosystem with built-in texture. It is especially attractive to prestige financiers and directors who want a historical world that can carry the frame without expensive spectacle.",
+          "evidence": "The script populates Harrow Alley with aldermen, searchers, watchers, buriers, clergy, tavern-keepers, physicians, and street sellers, each with a distinct function and voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Harry is a strong prestige lead.",
+          "what_it_means": "The role offers a mid-career actor a full arc from self-regard to moral seriousness, which is exactly the kind of part that can anchor a buyer’s confidence. It will appeal to actors and directors looking for a performance-forward historical drama rather than a plot machine.",
+          "evidence": "Harry’s scenes with Lawrence, Jem, and the parish repeatedly expose his vanity, fear, and eventual tenderness, especially in the marriage and childbirth material.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ratsey gives the film a second engine.",
+          "what_it_means": "A rogue who becomes human is a commercially useful transformation because it broadens the emotional range and gives the movie a memorable supporting turn. That makes the project more castable and more marketable to actors who want a role with bite and surprise.",
+          "evidence": "Ratsey goes from gallows swagger to corpse-bearer, then baker, then constable, with the bath scene and the final recognition of ordinary beauty as his key turn.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is unusually ownable.",
+          "what_it_means": "The blend of bawdy comedy, civic procedure, and mortality creates a signature lane that is harder to confuse with generic plague drama. That specificity helps the project stand out in a crowded prestige marketplace.",
+          "evidence": "The script moves from execution banter to parish administration to theological panic to tavern farce without losing its voice.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has awards-facing moral weight.",
+          "what_it_means": "The story’s civic duty versus self-preservation conflict gives it the kind of thematic seriousness that buyers can position as prestige rather than genre. That opens the door to directors and actors who want material with ethical consequence.",
+          "evidence": "Harry’s refusal to flee, Lawrence’s insistence on staying, and the final collapse of private and public life all frame the story as a test of character.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a prestige historical feature with a real commercial spine: a vivid plague-era world, two actor-friendly lead engines, and a tone that feels literary without becoming inert. The period footprint is manageable for the lane, and the material has the kind of moral seriousness and performance opportunity that can attract both premium-streaming buyers and awards-minded talent."
+    },
+    "issues": {
+      "items": [
+        {
+          "area": "The language is a buyer filter.",
+          "detail": "The script’s period diction is part of its identity, but it also narrows the audience to viewers comfortable with dense historical dialogue. That is not a flaw so much as a positioning reality: this will need the right buyer and the right cast to make the language feel inviting rather than academic.",
+          "is_primary_lever": true,
+          "source": "script"
+        },
+        {
+          "area": "The adaptation rights need clean chain-of-title.",
+          "detail": "The title page itself flags underlying rights tied to Walter Brown Newman, Campbell-Devon Productions, and successors or assigns. That makes this a legal-first conversation before any packaging conversation can get serious.",
+          "is_primary_lever": false,
+          "source": "production"
+        },
+        {
+          "area": "The ensemble is rich but not cheap.",
+          "detail": "This is not a two-hander in practice: the script relies on a broad civic ecosystem, multiple named supporting roles, child casting, and recurring period street life. The world is a strength, but it also means the film will need disciplined scope management to stay in the indie lane.",
+          "is_primary_lever": false,
+          "source": "both"
+        },
+        {
+          "area": "The plague material is emotionally punishing.",
+          "detail": "The script leans hard into death carts, quarantines, child fear, domestic separation, and public panic. That gives it seriousness, but it also narrows the comfort zone for mainstream buyers looking for uplift or easy genre labeling.",
+          "is_primary_lever": false,
+          "source": "script"
+        },
+        {
+          "area": "Ratsey’s arc risks overshadowing the nominal lead.",
+          "detail": "Ratsey is so vivid that he can pull attention away from Harry in a way buyers will notice immediately. That is a strength in performance terms, but it creates a packaging question about which role is the true audience entry point.",
+          "is_primary_lever": false,
+          "source": "script"
+        }
+      ],
+      "headline": "The main friction is not craft but lane: this is a dense, language-forward historical drama with a large supporting ecosystem and a very specific audience. The rights chain also needs to be cleaned up before anyone can seriously package it."
+    },
+    "craft_note": ""
+  },
+  "weightedScore": 80,
+  "tier": "Optionable",
+  "inputTokens": 61379,
+  "outputTokens": 4933,
+  "cost": 0.06823275,
+  "declaredFormat": "Feature film"
+}

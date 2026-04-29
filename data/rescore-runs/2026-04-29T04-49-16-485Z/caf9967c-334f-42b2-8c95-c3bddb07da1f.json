@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T05:23:54.975Z",
+  "submission_id": "caf9967c-334f-42b2-8c95-c3bddb07da1f",
+  "eval_id": "a10696ea-f108-4546-86ed-58063fba4235",
+  "title": "THEINVENTOR",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Brent Woods",
+      "role_type": "Lead",
+      "demographics": "Male, 50s, white, working-class inventor/business owner; bipolar disorder and addiction are structurally load-bearing."
+    },
+    {
+      "name": "Emily Woods",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white; wife, writer, mother."
+    },
+    {
+      "name": "Maximilian",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, wealthy corporate operator; polished, predatory, charismatic."
+    },
+    {
+      "name": "Henry",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, business partner; grounded, pragmatic, loyal."
+    },
+    {
+      "name": "John Anderson",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, wealthy inventor/mentor figure."
+    },
+    {
+      "name": "Big Stan",
+      "role_type": "Supporting",
+      "demographics": "Male, 50s, Texas lawyer; blunt, seasoned, folksy."
+    },
+    {
+      "name": "Krammer",
+      "role_type": "Supporting",
+      "demographics": "Male, 30s-40s, slick intermediary/business operator."
+    }
+  ],
+  "positioning_hook": "A bipolar inventor fights a patent war against a corporate knockoff empire, then risks his family, freedom, and sanity to prove the idea that built his life was stolen.",
+  "cost_usd": 0.059736,
+  "input_tokens": 51094,
+  "output_tokens": 4759,
+  "status": "wrote:leads_ok"
+}

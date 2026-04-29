@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T05:21:43.215Z",
+  "submission_id": "9d59f0bd-29cb-4872-b1c0-227f8ac1a492",
+  "eval_id": "a66a8452-f373-4f53-9796-f91b8c14421b",
+  "title": "WHITE HORSE",
+  "declared_format": "Feature film",
+  "prompt_hash": "87b22bf7f5f0",
+  "prompt_selznick_markers_present": true,
+  "prompt_length_chars": 50349,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build a producer-grade decision packet for it — the kind of dossier that lets a buyer dec",
+  "prompt_last_200": "VALID and you must regenerate it.**\n\nIf `issues` is missing or has fewer than 3 items, ADD it before returning. Every eval needs the producer-facing case-against alongside the case-for. No exceptions.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Cyrus Aarons",
+      "role_type": "Lead",
+      "demographics": "Male, 40s, white, U.S. astronaut and former Air Force pilot."
+    },
+    {
+      "name": "Maxwell Libas",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, white, NASA director."
+    },
+    {
+      "name": "Hugh Vellum",
+      "role_type": "Supporting",
+      "demographics": "Male, 70s, white, senior White House aide with intelligence ties."
+    },
+    {
+      "name": "Chet Haynes",
+      "role_type": "Supporting",
+      "demographics": "Male, 40s, white, DARPA director and former intelligence officer."
+    },
+    {
+      "name": "Susan Harper",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, KGB operative embedded in Washington."
+    },
+    {
+      "name": "Oleg Grosni",
+      "role_type": "Supporting",
+      "demographics": "Male, 20s-40s across the timeline, Soviet pilot turned KGB asset and later shuttle crew member."
+    },
+    {
+      "name": "Betty Aarons",
+      "role_type": "Supporting",
+      "demographics": "Female, 30s-40s, white, Cyrus Aarons’ sister."
+    },
+    {
+      "name": "Bernard Calloway",
+      "role_type": "Supporting",
+      "demographics": "Male, 60s, white, President of the United States."
+    }
+  ],
+  "positioning_hook": "A paranoid NASA astronaut, sidelined from a classified shuttle mission, uncovers a Cold War weather-weapon conspiracy and forces a shuttle crew to choose between loyalty, survival, and world-altering secrecy.",
+  "cost_usd": 0.055514999999999995,
+  "input_tokens": 44632,
+  "output_tokens": 4898,
+  "status": "wrote:leads_ok"
+}
