@@ -34,6 +34,7 @@ import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/nav'
 import { DashboardTabs, type DashboardMatchData } from '@/components/partner/dashboard-tabs'
 import { RealtimeRefresh } from '@/components/partner/realtime-refresh'
+import { isScoreVisible, normalizePrivacy } from '@/lib/report-privacy'
 
 export const dynamic = 'force-dynamic'
 
@@ -80,6 +81,7 @@ interface RawMatchRow {
     tags: string[] | null
     hidden_at: string | null
     is_public: boolean | null
+    report_privacy: unknown
     script_evaluations:
       | Array<{
           weighted_score: number | null
@@ -141,12 +143,18 @@ function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
       : null
   const headline = editedHeadline ?? evaluation?.positioning_hook ?? null
 
-  const score =
+  const rawScore =
     typeof evalRaw?.weighted_score === 'number'
       ? evalRaw.weighted_score
       : evalRaw?.weighted_score != null
         ? Number(evalRaw.weighted_score)
         : null
+  // Honor the writer's score-eye toggle. If they hid the score, producers
+  // shouldn't see a number on the dashboard card — they just see "—".
+  // Anuj 2026-04-29: this matches the report-page behavior; otherwise
+  // hiding the score on the report doesn't actually hide it.
+  const writerPrivacy = normalizePrivacy(sub.report_privacy)
+  const score = isScoreVisible(writerPrivacy) ? rawScore : null
 
   const formatRaw =
     sub.declared_format ?? evaluation?.classification?.genre_primary ?? ''
@@ -266,7 +274,7 @@ export default async function PartnerDashboardPage() {
       `
       id, status, created_at, unmatched_at,
       script_submissions (
-        id, title, declared_format, tags, hidden_at, is_public, user_id,
+        id, title, declared_format, tags, hidden_at, is_public, user_id, report_privacy,
         script_evaluations ( weighted_score, tier, evaluation, edited_fields )
       )
       `
