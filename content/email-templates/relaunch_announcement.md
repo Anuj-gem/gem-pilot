@@ -1,5 +1,5 @@
 <!-- SUBJECT -->
-Stage 2: industry partners are now in the app.
+GEM: We're bringing the Industry inside GEM
 
 <!-- HTML -->
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 24px; color: #1C1917; line-height: 1.6;">
@@ -10,7 +10,9 @@ Stage 2: industry partners are now in the app.
 
   <p style="font-size: 16px; margin: 0 0 14px;">Today we're shipping the biggest change since GEM launched: <strong>industry partners are now in the app.</strong> This is stage two of our industry pilot — vetted producers, agents, and managers logging in, reading scripts in their lane, and reaching out to writers directly.</p>
 
-  <p style="font-size: 16px; margin: 0 0 22px;">You're going to start getting communication from industry partners directly through GEM. We've also enhanced the report pages to make that whole experience better.</p>
+  <p style="font-size: 16px; margin: 0 0 14px;">You're going to start getting communication from industry partners directly through GEM. We've also enhanced the report pages to make that whole experience better.</p>
+
+  <p style="font-size: 16px; margin: 0 0 22px;">This has been the plan for GEM since the beginning, and I'm so proud to be bringing it to you. But remember — this is just Day 1. GEM is on an unstoppable journey from here, and I'm so thankful you're a part of it. Stay tuned.</p>
 
   <!-- Small in-product graphic — the actual buttons producers will press on your script. -->
   <div style="background: #fff; border: 1px solid #E7E5E4; border-radius: 12px; padding: 18px 20px; margin: 0 0 22px; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
@@ -61,6 +63,8 @@ Hey {{first_name}} — we're moving fast.
 Today we're shipping the biggest change since GEM launched: industry partners are now in the app. This is stage two of our industry pilot — vetted producers, agents, and managers logging in, reading scripts in their lane, and reaching out to writers directly.
 
 You're going to start getting communication from industry partners directly through GEM. We've also enhanced the report pages to make that whole experience better.
+
+This has been the plan for GEM since the beginning, and I'm so proud to be bringing it to you. But remember — this is just Day 1. GEM is on an unstoppable journey from here, and I'm so thankful you're a part of it. Stay tuned.
 
 What's new:
 

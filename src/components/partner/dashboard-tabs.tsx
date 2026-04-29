@@ -32,6 +32,7 @@ export interface DashboardMatchData extends MatchCardData {
 }
 
 type TabKey = 'inbox' | 'slate' | 'passed'
+type SortKey = 'score' | 'recent' | 'views'
 
 interface Props {
   matches: DashboardMatchData[]
@@ -40,6 +41,7 @@ interface Props {
 
 export function DashboardTabs({ matches, newMatchIds }: Props) {
   const [tab, setTab] = useState<TabKey>('inbox')
+  const [sort, setSort] = useState<SortKey>('score')
   const newIdSet = useMemo(() => new Set(newMatchIds), [newMatchIds])
 
   // Tab buckets — stable so the count badges don't flicker mid-navigation.
@@ -63,20 +65,33 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
 
   const active = tab === 'inbox' ? inbox : tab === 'slate' ? slate : passed
 
-  // Default sort = score desc. The producer's primary signal is score, and
-  // we no longer offer a sort toggle.
+  // Sort by the user-selected key. Score uses the always-raw sortScore so
+  // writers who hide their number from view still rank correctly. Recent
+  // sorts by createdAt (most recent first). Views sorts by aggregate
+  // industry view count.
   const sorted = useMemo(() => {
     const arr = [...active]
-    // Rank by the always-raw sortScore so writers who hide their score
-    // (Dan Stevens etc.) still rank correctly. Falls back to display
-    // score for back-compat.
-    arr.sort((a, b) => {
-      const av = a.sortScore ?? a.score ?? -1
-      const bv = b.sortScore ?? b.score ?? -1
-      return bv - av
-    })
+    if (sort === 'recent') {
+      arr.sort((a, b) => {
+        const at = new Date(a.createdAt).getTime()
+        const bt = new Date(b.createdAt).getTime()
+        return bt - at
+      })
+    } else if (sort === 'views') {
+      arr.sort((a, b) => {
+        const av = a.stats?.views ?? 0
+        const bv = b.stats?.views ?? 0
+        return bv - av
+      })
+    } else {
+      arr.sort((a, b) => {
+        const av = a.sortScore ?? a.score ?? -1
+        const bv = b.sortScore ?? b.score ?? -1
+        return bv - av
+      })
+    }
     return arr
-  }, [active])
+  }, [active, sort])
 
   return (
     <div>
@@ -84,7 +99,7 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
           prominent; Slate and Passed sit beside it as quieter secondary
           links. The active tab gets the gold accent. */}
       <div
-        className="flex items-center gap-5 mb-6 pb-3"
+        className="flex items-center gap-5 mb-6 pb-3 flex-wrap"
         style={{ borderBottom: '1px solid var(--gem-gray-700)' }}
       >
         <TabLink
@@ -106,6 +121,28 @@ export function DashboardTabs({ matches, newMatchIds }: Props) {
           count={passed.length}
           quiet
         />
+        {/* Sort selector pushed to the far right of the tab row. Producer
+            can toggle between Score (the default — ranked by raw score
+            even when the writer hides it from view), Recent (newest
+            match first), and Views (highest aggregate industry view
+            count first). */}
+        <div className="ml-auto flex items-center gap-1">
+          <span
+            className="text-[11.5px] uppercase tracking-[0.14em] font-bold mr-1"
+            style={{ color: 'var(--gem-gray-500)' }}
+          >
+            Sort
+          </span>
+          <SortPill active={sort === 'score'} onClick={() => setSort('score')}>
+            Score
+          </SortPill>
+          <SortPill active={sort === 'recent'} onClick={() => setSort('recent')}>
+            Recent
+          </SortPill>
+          <SortPill active={sort === 'views'} onClick={() => setSort('views')}>
+            Views
+          </SortPill>
+        </div>
       </div>
 
       {active.length === 0 ? (
@@ -173,6 +210,36 @@ function TabLink({
           {count}
         </span>
       )}
+    </button>
+  )
+}
+
+function SortPill({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean
+  onClick: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="text-[12px] font-semibold transition-colors"
+      style={{
+        color: active ? 'var(--gem-gray-50)' : 'var(--gem-gray-400)',
+        background: active ? 'rgba(124,58,237,0.10)' : 'transparent',
+        border: active
+          ? '1px solid rgba(124,58,237,0.30)'
+          : '1px solid var(--gem-gray-700)',
+        padding: '4px 10px',
+        borderRadius: 999,
+        lineHeight: 1.1,
+      }}
+    >
+      {children}
     </button>
   )
 }
