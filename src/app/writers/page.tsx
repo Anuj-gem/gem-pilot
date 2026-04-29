@@ -352,15 +352,18 @@ function FlowCard({
 }) {
   return (
     <div
-      className="rounded-2xl p-5 sm:p-6 grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-5 md:gap-7 items-center"
+      className="rounded-2xl p-5 sm:p-6"
       style={{
         background: '#fff',
         border: '1px solid var(--gem-gray-700)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
       }}
     >
-      <div>
-        <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2" style={{ color: 'var(--gem-accent)' }}>
+      <div className="mb-5 max-w-[60ch]">
+        <p
+          className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-2"
+          style={{ color: 'var(--gem-accent)' }}
+        >
           {caption}
         </p>
         <p className="text-[14.5px] text-[var(--gem-gray-200)] leading-[1.55] m-0">
