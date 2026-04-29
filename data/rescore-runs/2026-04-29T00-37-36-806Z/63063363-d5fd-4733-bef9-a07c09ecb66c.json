@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-04-29T00:55:11.886Z",
+  "submission_id": "63063363-d5fd-4733-bef9-a07c09ecb66c",
+  "eval_id": "7557cbb6-3280-4a0a-864d-20e944eed4eb",
+  "title": "One last dance. ( 2nd outcome)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 18,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "Skylar Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "Lisa",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s"
+    },
+    {
+      "name": "Antonio",
+      "role_type": "Supporting",
+      "demographics": "Male · 9"
+    },
+    {
+      "name": "Angelo",
+      "role_type": "Supporting",
+      "demographics": "Male · 9"
+    },
+    {
+      "name": "Olivia",
+      "role_type": "Supporting",
+      "demographics": "Female · 7"
+    },
+    {
+      "name": "Hannah",
+      "role_type": "Supporting",
+      "demographics": "Female · 7"
+    },
+    {
+      "name": "Jack",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s-70s"
+    },
+    {
+      "name": "Renee",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s"
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Debbie Runner",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Dr. Wolfgang",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "Dr. Yang",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 30s-50s"
+    },
+    {
+      "name": "Dr. Johnson",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 40s-60s"
+    },
+    {
+      "name": "Dr. Warren",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 40s-60s"
+    }
+  ],
+  "positioning_hook": "A beloved Pennsylvania school administrator survives a catastrophic loader accident, then has to rebuild his identity, marriage, and family while learning to live with paralysis.",
+  "cost_usd": 0.046511250000000004,
+  "input_tokens": 26081,
+  "output_tokens": 5989,
+  "status": "wrote:leads_ok"
+}

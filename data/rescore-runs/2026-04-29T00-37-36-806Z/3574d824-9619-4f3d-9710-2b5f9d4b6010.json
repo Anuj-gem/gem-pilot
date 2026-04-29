@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T00:57:16.520Z",
+  "submission_id": "3574d824-9619-4f3d-9710-2b5f9d4b6010",
+  "eval_id": "737ef4a5-bf2e-4402-a248-a9f3d0dfbe56",
+  "title": "Bounty Across the Cosmos Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Queen Abudallah Gonallah",
+      "role_type": "Lead",
+      "demographics": "Female · age unknown · over 8 feet tall · green-skinned alien queen"
+    },
+    {
+      "name": "Daryl Hattens",
+      "role_type": "Lead",
+      "demographics": "Male · 16 · African-American/Navajo"
+    },
+    {
+      "name": "Kitara “Kit” Provence",
+      "role_type": "Lead",
+      "demographics": "Female · 14 · Caucasian-looking alien teen with purple hair and star-shaped pupils"
+    },
+    {
+      "name": "Solace “Sol” Provence",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · light-green-skinned alien woman"
+    },
+    {
+      "name": "Madame N’Vati Provence",
+      "role_type": "Lead",
+      "demographics": "Female · several millennia · red-skinned lizard humanoid with wings and a tail"
+    },
+    {
+      "name": "Astha Provence",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · blonde-haired alien woman with purple eyes and fanged teeth"
+    },
+    {
+      "name": "Topher Gace",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · small-statured black-skinned alien man"
+    },
+    {
+      "name": "General Lyoar Growleth",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · muscular lion humanoid"
+    },
+    {
+      "name": "Damon Hattens",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · African-American"
+    },
+    {
+      "name": "Har-El",
+      "role_type": "Supporting",
+      "demographics": "Female · young teen · alien girl"
+    }
+  ],
+  "positioning_hook": "A bored Georgia teen and a runaway bounty hunter get dragged into a cosmic power struggle when a ruthless alien queen’s conquest reaches Earth and a legendary egg hunt begins.",
+  "cost_usd": 0.0380085,
+  "input_tokens": 20672,
+  "output_tokens": 5001,
+  "status": "wrote:leads_ok"
+}

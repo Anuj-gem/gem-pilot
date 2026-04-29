@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T00:54:03.866Z",
+  "submission_id": "4b140762-0454-4cb8-8acd-7a8d51b25732",
+  "eval_id": "4b1ad4a8-1030-4116-8296-b6d149ffa155",
+  "title": "Toy Figures Adventure",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Captain Everett Moran",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · weathered sailor captain persona"
+    },
+    {
+      "name": "Norman",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · adult-coded comic personality"
+    },
+    {
+      "name": "Jacob Wilfred",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · adult-coded, sharp-edged personality"
+    },
+    {
+      "name": "Professor Brickfigure",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · scholarly, inventor-coded personality"
+    },
+    {
+      "name": "Mia Rodriguez",
+      "role_type": "Lead",
+      "demographics": "Female · 14 years old · Spanish teen"
+    },
+    {
+      "name": "Isabella Rodriguez",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · Spanish mother"
+    },
+    {
+      "name": "Carlos Rodriguez",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Spanish father"
+    },
+    {
+      "name": "Miguel Hernandez",
+      "role_type": "Lead",
+      "demographics": "Male · teen · Spanish"
+    },
+    {
+      "name": "General Action Figure",
+      "role_type": "Supporting",
+      "demographics": "Male · toy figure · imposing military-coded presence"
+    },
+    {
+      "name": "Professor Brickfigure",
+      "role_type": "Lead",
+      "demographics": "Male · toy figure · inventor/scholar-coded"
+    },
+    {
+      "name": "Sergeant Iguana",
+      "role_type": "Supporting",
+      "demographics": "Male · reptilian toy figure · military-coded"
+    },
+    {
+      "name": "General Apex",
+      "role_type": "Supporting",
+      "demographics": "Male · toy figure · commanding, battle-ready"
+    },
+    {
+      "name": "El Possessor",
+      "role_type": "Supporting",
+      "demographics": "Male · towering toy villain figure"
+    },
+    {
+      "name": "Fixed Action Figure",
+      "role_type": "Supporting",
+      "demographics": "Male · toy figure · repaired/battered-to-whole transformation"
+    },
+    {
+      "name": "Train Manager",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · authority figure"
+    },
+    {
+      "name": "Clara",
+      "role_type": "Supporting",
+      "demographics": "Female · 8 years old"
+    }
+  ],
+  "positioning_hook": "A band of forgotten toy figures crosses continents in a battered plane and RV to uncover a buried Truth that could unite their world — or rewrite it.",
+  "cost_usd": 0.06278325,
+  "input_tokens": 48059,
+  "output_tokens": 5942,
+  "status": "wrote:leads_ok"
+}

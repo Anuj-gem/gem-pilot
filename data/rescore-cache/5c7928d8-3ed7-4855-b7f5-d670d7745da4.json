@@ -2,292 +2,319 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Comedy",
+      "genre_primary": "Crime comedy",
       "genre_tags": [
-        "Crime",
-        "Satire"
+        "Drug satire",
+        "Gangster farce"
       ],
-      "tone": "raunchy, broad, irreverent, heightened"
+      "tone": "Broad, profane, absurdist, and satirical"
     },
-    "positioning_hook": "Bud’s African exchange trip cures his addiction to getting high, and his brother Percy turns the miracle into a street-level drug empire before the feds move in.",
+    "positioning_hook": "A broke college kid returns from Africa unable to get high, then accidentally unleashes a miracle anti-drug that turns his pimp brother into a street-level kingpin.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 5,
-        "reasoning": "The premise is easy to grasp and has a built-in comic engine, but the humor is very specific in language, behavior, and era. It will play strongest for audiences tuned to broad, profane crime comedy rather than a wide four-quadrant crowd."
+        "score": 6,
+        "reasoning": "The premise is instantly legible as a high-concept crime comedy with a built-in hook around addiction, hustling, and a miracle product. Its audience is real but specific, and the extreme language and subject matter point to a narrower lane than a broad four-quadrant crowd."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The hook lands early: Bud ingests the root sap, discovers he can no longer get high, and the story quickly pivots into Percy monetizing the effect. The central engine is clear, even if the script takes a few pages to fully reveal the larger criminal play."
+        "reasoning": "The script establishes its engine quickly: Bud returns changed, the root sap alters his relationship to intoxication, and Percy sees a business opportunity. The hook is easy to explain in one breath, though the story keeps widening into gang politics and federal attention rather than staying on a single clean line."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 5,
-        "reasoning": "Bud, Percy, and Will each have a distinct comic function, and Percy in particular has a memorable swagger. The characters are more built for punchlines and escalation than for layered interiority, which keeps them entertaining but not especially deep."
+        "score": 6,
+        "reasoning": "Bud, Percy, and Will each have a distinct comic function, and Percy in particular has a strong swaggering presence. The characters are built more as comic engines than layered interior lives, so they play cleanly but leave room for deeper contradiction."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The core idea of a miracle anti-drug becoming a black-market commodity is a sharp comic inversion, and the script commits to its own outrageous logic. The voice is confident and unembarrassed, with a willingness to push into absurdity, profanity, and social satire."
+        "reasoning": "The anti-drug root, the pimp economy around sobriety, and the escalation from tribal ritual to street-level pharmaceutical monopoly give the script a genuinely off-center premise. The voice is committed to its own outrageous lane, even when the execution leans on broad comic beats."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The story keeps moving through a chain of experiments, power plays, and reversals, and Percy’s rise gives it forward charge. The middle section repeats a similar beat pattern a few times, so the propulsion is steady rather than relentless."
+        "reasoning": "The story keeps introducing new complications — Laticia, the rival pimps, the hostage exchange, the federal angle — so it rarely sits still. At the same time, the middle section is more episodic than tightly causal, with several set-pieces functioning as comic variations on the same idea."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The script finds a fresh comic premise that feels immediately legible: a de-drug that makes addicts and hustlers rethink their entire economy. The idea is memorable because it turns the usual drug-story logic inside out."
+        "reasoning": "The idea of a drug that cures addiction by making people feel naturally good is fresh and immediately understandable, especially in the hands of a street-corner power struggle. The final burn-back to the root in Africa gives the concept a mythic loop that makes the premise feel like it could only exist here."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The pimp-bar ecosystem, the street hierarchy, and the African origin story give the script a recognizable social world with its own rules and slang. That said, the world mainly serves the central gag and criminal escalation rather than opening into a broader lived-in system."
+        "reasoning": "The script has a vivid underworld of pimps, prostitutes, dealers, and hustlers, with Percy’s bar functioning as a social hub. The world is colorful and specific, though it is built primarily as a comic-crime container rather than a deeply layered institutional ecosystem."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone is unmistakably raunchy, cartoonish, and aggressively profane, with a comic-book gangster rhythm that never pretends to be subtle. The script knows exactly what kind of outrageous movie it wants to be."
+        "reasoning": "The tone is unmistakably profane, cartoonish, and confrontational, with a strong streetwise comic voice that keeps undercutting seriousness. The script knows exactly how outrageous it wants to be, and that consistency gives it a recognizable identity."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 4,
-        "reasoning": "What’s on the page is mostly the surface pleasure of the premise: addiction reversal, hustler greed, and comic criminal chaos. There are hints of brother rivalry and social satire, but the script doesn’t spend much time mining those layers."
+        "score": 5,
+        "reasoning": "There are hints of a larger satirical idea about addiction, commerce, and control, especially in Percy’s greed and Will’s pseudo-scientific idealism. But the script mostly plays those ideas as surface-level propulsion, so the deeper thematic reserves are present more as potential than as fully dramatized subtext."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 6,
-        "reasoning": "Bud/Percy/Will creates a workable triangle, and the pimp ensemble gives the story enough friction for set-piece scenes. Most supporting players function as pressure valves or amplifiers for Percy, so the relationship web is useful but not especially intricate."
+        "score": 7,
+        "reasoning": "Bud/Percy/Will form a strong triangle, and Percy’s orbit of bodyguards, prostitutes, and rival pimps creates recurring friction. The barroom ecosystem generates multiple playable pairings, which gives the script more ensemble energy than a simple two-hander."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 18,
+        "speaking_roles": 20,
         "leads": 3,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
           "Predominantly Black adult cast",
-          "Several roles require strong comic timing and heightened profanity delivery",
-          "One role requires a British accent (Twit)",
-          "A few roles are defined by specific body type or swagger rather than age alone"
+          "Several roles require strong comic timing and heightened streetwise delivery",
+          "One tribal community sequence includes African villagers and an elder",
+          "No child roles"
         ]
       },
       "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
-        "period_or_contemporary": "contemporary",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interiors with recurring bar, office, apartment, garage, and interrogation-room scenes",
+        "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "African jungle/village sequence",
-          "Nightclub/bar interiors",
-          "Garage/torture space",
-          "Suburban home exteriors",
+          "Africa/jungle opening sequence",
+          "New York street and bar exteriors",
+          "Factory/warehouse climax",
           "Federal office/interrogation room",
-          "Hardware store and street exteriors"
+          "Suburban epilogue"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly practical coverage and editorial effects; the root sap transformation, the final ember-to-regrowth beat, and a few stylized montage moments may benefit from light compositing or optical work.",
+        "vfx_details": "Limited visual effects for the root sap transformation, the burning plant embers, and a few stylized transition shots.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical makeup and gag effects for overdose, burns, bodily reactions, and the collapsing wall finale.",
+        "sfx_needs": "Practical gunfire, body impacts, burning plant effects, and a battering ram wall collapse in the climax.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "R. Kelly’s 'I Believe I Can Fly' is specifically named and used as story commentary."
+          "detail": "R. Kelly’s 'I Believe I Can Fly' is specifically named and used as a story beat."
         },
         {
           "type": "brand",
-          "detail": "Ace Hardware is named on the page."
+          "detail": "Smith and Wesson, Ace Hardware, and Impala are specifically referenced."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming or specialty theatrical comedy lane",
-        "content_level": "explicit",
-        "series_engine_or_release_model": "Feature release model; best suited to cult-comedy, late-night, or festival-to-platform positioning."
+        "recommended_lane": "Mid-budget theatrical or streaming crime comedy lane",
+        "content_level": "Explicit",
+        "series_engine_or_release_model": "Feature release model with cult-comedy and late-night cable/streaming afterlife"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Contemporary and mostly contained, but the Africa sequence, multiple bar interiors, and action-heavy finale push it beyond microbudget."
+          "note": "The footprint is mostly contained, but the Africa opening, factory climax, crowd scenes, and action beats push it above a microbudget lane."
         },
         "cast": {
           "level": "medium",
-          "note": "The ensemble is manageable in size, but the script depends on performers who can land broad profanity-driven comedy and distinct street personas."
+          "note": "The script wants a strong trio at the center plus a sizable supporting ensemble of pimps, prostitutes, and law-enforcement figures."
         },
         "location": {
           "level": "medium",
-          "note": "The story moves through a dozen-plus distinct spaces, including an Africa opening, multiple clubs, homes, streets, and a federal facility."
+          "note": "It moves through bars, apartments, garages, a factory, a federal room, suburban homes, and an Africa sequence, but most scenes are still playable in practical interiors."
         },
         "content": {
           "level": "high",
-          "note": "Explicit sexual language, drug use, violence, prostitution, and repeated racial slurs narrow the viable platform and rating lane."
+          "note": "The script is built on explicit drug use, prostitution, profanity, gun violence, and sexual content."
         },
         "rights": {
           "level": "medium",
-          "note": "The script names R. Kelly’s song and Ace Hardware, both of which create clearance considerations."
+          "note": "The named R. Kelly song and several branded references require clearance, but there is no major underlying IP dependency."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise flips the drug movie inside out.",
-          "what_it_means": "A miracle anti-drug that makes people feel good instead of high gives the movie a clean commercial engine and a built-in satirical thesis. Buyers looking for a high-concept comedy with a criminal marketplace hook can understand the pitch in one sentence.",
-          "evidence": "Bud licks the root sap, loses his ability to get wasted, and Percy immediately sees a profit model in the effect.",
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A buyer can understand the movie in one sentence: a miracle anti-drug becomes a street commodity, which is exactly the kind of clean, high-concept engine that helps a comedy stand out in a crowded market. That makes it attractive to producers and performers who want a commercial hook with a built-in satirical edge.",
+          "evidence": "Bud returns from Africa unable to get high, then Percy turns the sap into the D-Drug and starts selling it to the street.",
           "source": "script"
         },
         {
           "dimension_or_area": "Percy is a scene-stealing antagonist-lead.",
-          "what_it_means": "The brother who turns salvation into a hustle gives the film a magnetic central engine and a role that can carry the whole marketing campaign. Actors who like swaggering, volatile, quotable parts will see a showcase in Percy’s rise from skeptical gangster to drug-market monopolist.",
-          "evidence": "Percy dismisses Bud’s plea for help, then pivots to 'We gonna get paid' and builds the D-Drug into a business.",
+          "what_it_means": "The role gives a performer swagger, menace, comic timing, and a real power arc as he moves from brother to entrepreneur to street tyrant. That is exactly the kind of part that draws charismatic actors who want a quotable, larger-than-life showcase with teeth.",
+          "evidence": "Percy’s office scenes, the pimp summit, and his 'my permission for you to stay in business' speech.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The comic voice is unapologetically specific.",
-          "what_it_means": "The script’s slang, rhythm, and outrageous reversals give it a distinct lane that can stand out in cult-comedy and late-night discovery spaces. That specificity is exactly what can make the movie feel quotable and rewatchable to the audience that wants something rowdy and unfiltered.",
-          "evidence": "Bud, Percy, Will, and the pimps all speak in a heightened street vernacular that drives the jokes as much as the plot.",
+          "dimension_or_area": "The world has a built-in comic ecosystem.",
+          "what_it_means": "The bar, the pimps, the prostitutes, the bodyguards, and the rival crews create a self-contained underworld that can generate set-pieces without needing expensive external world-building. That kind of ecosystem is appealing to producers looking for a contained, repeatable environment with strong supporting roles.",
+          "evidence": "Percy’s bar functions as the hub for meetings, sales, threats, and the final siege.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has a built-in criminal ecosystem.",
-          "what_it_means": "The pimp/bar economy, the prostitutes, the junkies, and the street distributors create a marketplace story that can escalate naturally without needing a huge external mythology. That makes the material attractive to producers who want a contained crime-comedy with a lot of playable supporting parts.",
-          "evidence": "Percy’s bar becomes the hub for dealers, hookers, informers, and the D-Drug rollout.",
+          "dimension_or_area": "The tone is aggressively specific.",
+          "what_it_means": "The script’s voice is not trying to be polite or generic; it commits to a profane, streetwise, absurdist register that gives the material a cult-comedy identity. That kind of tonal confidence is magnetic to directors and buyers who want something that feels authored rather than assembled.",
+          "evidence": "Bud’s narration, Percy’s speeches, and the repeated comic reversals around addiction and control.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The premise has cult-comedy shock value.",
-          "what_it_means": "The movie keeps finding outrageous visual and verbal turns — from the African ritual to the pimp summit to the overdose gag — which is the kind of material that can travel by clip, quote, and word of mouth. Midnight audiences and genre buyers who like transgressive comedy will recognize the lane immediately.",
-          "evidence": "The script repeatedly escalates from absurd setup to extreme payoff, including the Laticia makeover, the pimp meeting, and the final siege.",
+          "dimension_or_area": "The concept has satirical bite.",
+          "what_it_means": "The movie turns addiction into a business model and recovery into a commodity, which gives it a sharp commercial satire underneath the chaos. Buyers who like genre material with a social hook will see a lane for audience conversation beyond the jokes.",
+          "evidence": "Percy frames the D-Drug as a monopoly play and a 'public service' while the pimps panic over losing control.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The climax scales from comic to siege mode.",
+          "what_it_means": "The final act gives the script a clear escalation path from street hustle to armed standoff, which helps the movie feel like it earns a bigger finish without leaving its comic-crime lane. That makes it easier to package as a feature with a satisfying third-act payoff.",
+          "evidence": "The factory hostage exchange, the boarded-up bar, the battering ram, and Percy’s rocket-launcher beat.",
           "source": "script"
         }
       ],
-      "headline": "This is a blunt, outrageous crime-comedy with a genuinely ownable hook: a miracle root that cures addiction becomes the hottest product on the street. Percy’s transformation from hustler to kingpin gives the movie a quotable, actor-friendly center, while the whole thing plays like a cult title built for late-night discovery."
+      "headline": "This is a wild, profanity-fueled crime comedy with a clean commercial engine: a miracle anti-drug gets weaponized by a pimp kingpin who sees a monopoly instead of a cure. The result is a contained, character-driven underworld movie with a cult-ready voice, a scene-stealing central role, and a premise that can be sold in a single breath."
     },
     "lead_characters": [
       {
-        "name": "BUD",
+        "name": "Bud",
         "role_type": "Lead",
-        "demographics": "Male · 20s-30s · Black",
-        "hook": "Bud is the loose, horny, self-mythologizing center of the movie — a college-age party animal who discovers, to his horror, that he can no longer get high. He’s funny because he’s sincere about his own dysfunction, and the script keeps letting him react like a man whose identity has been stolen by wellness.",
-        "why_actor_wants_this": "This is the comic-disaster territory of Jonah Hill in Superbad, where the performance lives in panic, vanity, and verbal overcommitment. An actor gets to play a guy whose entire self-image is built on vice, then watch that identity collapse in real time."
+        "demographics": "Male · 20s · Black",
+        "hook": "Bud is a fast-talking, self-mythologizing college kid whose whole identity is built around getting loaded, looking cool, and surviving by charm. The joke of the character is that the miracle cure leaves him horrified because sobriety feels unnatural to him; underneath that is a guy who is more dependent on the ritual of intoxication than on the substances themselves.",
+        "why_actor_wants_this": "This is the comic-disaster territory of Chris Tucker in *Friday* — a hyper-verbal, physically expressive lead whose panic becomes the engine of the movie. Actors who can play manic rhythm, vulnerability, and streetwise swagger in the same breath will see a role that lets them carry a cult comedy."
       },
       {
-        "name": "PERCY KELLY",
+        "name": "Percy Kelly",
         "role_type": "Lead",
         "demographics": "Male · 30s-40s · Black",
-        "hook": "Percy is the movie’s engine: a polished, predatory gangster with a salesman’s brain and a tyrant’s appetite. He’s funny because he’s always one step ahead of the room, and dangerous because he can turn any revelation into a revenue stream.",
-        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Training Day, where charisma and menace are inseparable and every scene is a power move. A lead actor gets the rare pleasure of playing a villain who is also the most entertaining person in the room."
+        "hook": "Percy is Bud’s older brother and the movie’s most dangerous presence: polished, predatory, funny, and always thinking in terms of leverage. He reads like a businessman in a gangster’s wardrobe, which makes him feel both theatrical and terrifying — a man who can turn any room into a negotiation.",
+        "why_actor_wants_this": "This is the showcase lane of Denzel Washington in *Training Day* — a magnetic authority figure whose charm and threat are inseparable. Actors who want a quotable, power-heavy role with comic control and sudden menace will chase this immediately."
       },
       {
-        "name": "WILL JACKSON",
+        "name": "Will Jackson",
         "role_type": "Lead",
-        "demographics": "Male · 20s-30s · Black",
-        "hook": "Will is the science-minded sidekick who starts as a chain-smoking chemistry student and ends up helping turn the miracle root into a marketable product. He gives the movie its pseudo-intellectual counterpoint — the guy who can explain the impossible while still getting swept into the chaos.",
-        "why_actor_wants_this": "This is the Jesse Pinkman lane from Breaking Bad, where a smart, twitchy, morally flexible partner becomes the audience’s entry point into the madness. It gives an actor room for fast comic timing, nervous intelligence, and a gradual slide into complicity."
+        "demographics": "Male · 20s · Black",
+        "hook": "Will is the chain-smoking chemistry student whose pseudo-scientific curiosity gives the story its accidental inventor energy. He is the straightest of the trio on paper, but the script keeps revealing how easily he can be seduced by the promise of discovery and profit.",
+        "why_actor_wants_this": "This is the Jesse Pinkman-style territory of a smart, reactive hustler whose moral center keeps shifting under pressure. Actors who like playing intelligence, comic confusion, and a slow slide into complicity will find a lot to do here."
       },
       {
-        "name": "LATICIA",
+        "name": "Rimu",
         "role_type": "Supporting",
-        "demographics": "Female · 20s-30s · Black",
-        "hook": "Laticia starts as Percy’s worn-down prostitute and becomes the story’s most surprising transformation, moving from disposable street figure to self-possessed woman with leverage. She’s sly, sensual, and more observant than the men around her realize.",
-        "why_actor_wants_this": "This is the kind of role that gives an actress the arc-shift energy of Regina King in If Beale Street Could Talk, where the character’s presence changes the temperature of every scene she enters. It offers a performer a chance to play survival, seduction, and intelligence in one compact package."
+        "demographics": "Male · late teens/20s · African tribal villager",
+        "hook": "Rimu is the charismatic tribal friend who introduces Bud to the root and treats the whole ritual like a test of belonging. He functions as the story’s mischievous catalyst, but he also gives the opening a sense of local authority and ritual confidence.",
+        "why_actor_wants_this": "This is the kind of supporting role that plays like the wise, mischievous catalyst in *The Gods Must Be Crazy* — brief but memorable, with a strong tonal imprint. A performer with natural ease, physical comedy, and presence would make the opening sequence pop."
       },
       {
-        "name": "TWIT",
+        "name": "Twit",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · British",
-        "hook": "Twit is Percy’s British pharmacist and quiet lab brain, a dry, watchful presence who helps translate the miracle into a product. He’s the kind of supporting player who makes the criminal world feel slightly more absurd and more organized at the same time.",
-        "why_actor_wants_this": "This is the comic-support slot of Ben Whishaw in In the Loop, where precision, understatement, and verbal dexterity make the character pop inside a louder ensemble. Character actors who can play intelligence with a straight face will have fun here."
+        "demographics": "Male · 20s-30s · British",
+        "hook": "Twit is Percy’s British pharmacist, a dry, clinical observer dropped into a room full of chaos. He gives the movie a comic counterpoint: the one man who can translate the madness into pseudo-scientific language without ever fully losing his cool.",
+        "why_actor_wants_this": "This is the dry-sidekick territory of a character like the lab-minded comic in *Lock, Stock and Two Smoking Barrels* — a role built on deadpan precision inside a volatile world. Actors who specialize in crisp comic underplaying will enjoy the contrast."
       },
       {
-        "name": "FAT JACK",
+        "name": "Laticia",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Black",
+        "hook": "Laticia starts as one of Percy’s worn-down prostitutes and becomes the story’s most visible transformation case. She is street-smart, sensual, and opportunistic, but the script lets her shift from damaged commodity to self-possessed player in a way that gives her real comic and sexual agency.",
+        "why_actor_wants_this": "This is the transformation showcase of Regina Hall in *Support the Girls* — a woman whose intelligence and survival instincts become more visible as the role unfolds. Actresses who want a part that moves from objectification to control will see the appeal fast."
+      },
+      {
+        "name": "Fat Jack",
         "role_type": "Supporting",
         "demographics": "Male · 30s-40s · Black",
-        "hook": "Fat Jack is Percy’s overeager muscle, defined by appetite, loyalty, and a body that keeps betraying his discipline. He’s a physical-comedy pressure valve whose hunger becomes a running joke as the D-Drug changes the rules around him.",
-        "why_actor_wants_this": "This is the kind of broad ensemble part that gives an actor the Farley-style comic physicality of Tommy Boy, where the body itself becomes part of the joke. It’s a memorable utility role for a performer who can sell panic, loyalty, and slapstick in the same beat."
+        "hook": "Fat Jack is Percy’s hungry, loyal bodyguard, built as a comic physical presence whose appetite becomes a running character note. He is the kind of supporting player who can turn a reaction beat into a laugh just by being in the frame.",
+        "why_actor_wants_this": "This is the comic-sidekick space of John C. Reilly in *Talladega Nights* — a role where physicality and reaction timing do a lot of the work. Character actors who can sell loyalty, confusion, and broad comedy will have fun here."
       },
       {
         "name": "B.K.",
         "role_type": "Supporting",
         "demographics": "Male · 30s-40s · Black",
-        "hook": "B.K. is Percy’s other bodyguard, a blunt, hungry enforcer whose behavior shifts once the D-Drug starts changing appetites and instincts. He’s a useful comic barometer for how the miracle spreads through the crew.",
-        "why_actor_wants_this": "This is the ensemble utility of a role like Craig Robinson in Hot Tub Time Machine, where deadpan reactions make the surrounding chaos funnier. It gives an actor a clean lane for reaction comedy, physical business, and streetwise presence."
+        "hook": "B.K. is Percy’s other bodyguard, a steroid-heavy enforcer whose appetite and physicality make him a walking punchline until the D-Drug changes his behavior. He is less verbal than the others, but the role gives the actor a strong physical-comedy lane.",
+        "why_actor_wants_this": "This is the kind of physical enforcer role that lets an actor play the comic aftershock of a scene, similar to the muscle roles in *Friday* or *The Other Guys*. Performers with big physical presence and strong reaction work will be drawn to it."
       },
       {
-        "name": "EZ IKE",
+        "name": "Ted Mack",
         "role_type": "Supporting",
         "demographics": "Male · 30s-40s · Black",
-        "hook": "EZ Ike is one of Percy’s rival pimps, a loud, defensive operator who tries to protect his business by preaching against the D-Drug. He’s all posture and panic, which makes him a useful comic antagonist in the street ecosystem.",
-        "why_actor_wants_this": "This is the kind of loud supporting antagonist that lets an actor do the Joe Lo Truglio lane from Brooklyn Nine-Nine — bluster, indignation, and comic humiliation. It’s a great part for someone who can make self-importance funny."
+        "hook": "Ted Mack is one of Percy’s rival pimps, all bluster, calculation, and wounded pride. He helps widen the movie’s underworld and gives the conflict a face that can pivot from comic swagger to hostage-taking menace.",
+        "why_actor_wants_this": "This is the kind of street-king supporting role that recalls the volatile rival energy in *New Jack City*. Actors who like playing status, ego, and threat in the same scene will see a clean lane."
       },
       {
-        "name": "TED MACK",
+        "name": "King G",
         "role_type": "Supporting",
         "demographics": "Male · 30s-40s · Black",
-        "hook": "Ted Mack is another rival pimp, more calculating than EZ and more openly predatory when Percy’s operation starts threatening the market. He helps give the street war a face and a voice.",
-        "why_actor_wants_this": "This is the kind of hard-edged supporting role that plays like Michael K. Williams in The Wire — controlled menace with a streetwise code. Actors who like authority, threat, and verbal sparring will see a clean fit."
+        "hook": "King G is the most calculating of the rival pimps, the one who thinks in strategy rather than impulse. He gives the movie a colder, more managerial antagonist texture and helps turn the street conflict into a business war.",
+        "why_actor_wants_this": "This is the cerebral-crime supporting slot of a strategist like the cooler heads in *The Wire* or *New Jack City*. Actors who can play intelligence, menace, and impatience without overexplaining will be attracted to it."
       },
       {
-        "name": "KING G",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · Black",
-        "hook": "King G is the most strategic of the rival pimps, the one who sees the D-Drug as both a threat and an opportunity. He gives the opposition a sharper brain and a more organized response.",
-        "why_actor_wants_this": "This is the kind of cool, calculating crime role that gives an actor the energy of Idris Elba in The Wire — intelligence, command, and a sense that the room should listen. It’s a strong part for someone who can play power without shouting."
-      },
-      {
-        "name": "PIMPERNICKLE",
+        "name": "Pimpernickle",
         "role_type": "Supporting",
         "demographics": "Male · 40s-50s · White",
-        "hook": "Pimpernickle is the smooth federal interrogator who turns the story’s street chaos into a national-level problem. He’s calm, polished, and quietly threatening, which makes him a clean institutional counterweight to Percy.",
-        "why_actor_wants_this": "This is the kind of controlled authority role that gives an actor the Tommy Lee Jones in No Country for Old Men space — minimal movement, maximum pressure. Character actors who can weaponize politeness will be drawn to it."
+        "hook": "Pimpernickle is the smooth federal interrogator who turns the story’s street chaos into a national-security and pharmaceutical matter. He is calm, polished, and quietly threatening, which makes him feel like a different species from the pimps and hustlers.",
+        "why_actor_wants_this": "This is the cool, controlled authority role of a character like Tommy Lee Jones in *The Fugitive* — a man whose stillness is the threat. Actors who specialize in institutional power and verbal pressure will find this a sharp supporting turn."
+      },
+      {
+        "name": "Twit",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · British",
+        "hook": "Twit is Percy’s British pharmacist, a dry, clinical observer dropped into a room full of chaos. He gives the movie a comic counterpoint: the one man who can translate the madness into pseudo-scientific language without ever fully losing his cool.",
+        "why_actor_wants_this": "This is the dry-sidekick territory of a character like the lab-minded comic in *Lock, Stock and Two Smoking Barrels* — a role built on deadpan precision inside a volatile world. Actors who specialize in crisp comic underplaying will enjoy the contrast."
+      },
+      {
+        "name": "Moesha",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Black",
+        "hook": "Moesha is one of the street women used to prove the D-Drug’s effect, and her body becomes part of Percy’s sales pitch. She is less individualized than Laticia, but she gives the movie a hard-edged, high-stakes demonstration of what Percy is willing to do.",
+        "why_actor_wants_this": "This is the kind of brief but memorable exploitation-era supporting part that can land like a shock beat in a *New Jack City* or *Hustle & Flow* world. An actor who can make a small role feel lived-in and dangerous would make it count."
+      },
+      {
+        "name": "Debbie",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · Black",
+        "hook": "Debbie is one of the reformed women who steps forward to help Will, and she gives the movie a cleaner emotional counterweight to the street cynicism. She is practical, grateful, and ready to act, which makes her feel like a believable grassroots ally.",
+        "why_actor_wants_this": "This is the kind of grounded ensemble role that recalls the community voices in *The Wire* or *Straight Outta Compton* — brief, but with enough dignity to register. Character actors who can bring warmth and conviction to a small part will be useful here."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a filthy, quotable crime comedy with a straight face.",
-        "fit_profile": "Second- or third-feature directors, or seasoned indie/comedy directors, who already know how to stage ensemble chaos and keep the camera alive inside dialogue-heavy scenes. This material rewards directors who like heightened performance, bold tonal control, and set pieces that escalate from absurdity into genuine threat.",
-        "detail": "The movie gives a director a chance to choreograph a comic underworld with clear visual contrasts: jungle ritual, pimp bar, federal room, suburban coda. It’s especially attractive to filmmakers who can balance outrageous behavior with clean blocking and sharp rhythm, because the laughs come from escalation as much as from dialogue."
+        "hook": "A director who wants to make a profane, character-driven crime comedy with a cult aftertaste and a strong visual underworld.",
+        "fit_profile": "Second- or third-feature directors, or established indie filmmakers looking to pivot into sharper commercial material, will recognize the lane immediately. The material rewards directors who like performance-forward ensemble scenes, stylized street texture, and escalation from comic banter into controlled chaos.",
+        "detail": "The movie gives a director a chance to choreograph a contained world that keeps changing temperature without needing heavy spectacle. It is especially attractive to filmmakers who can make dialogue feel dangerous and funny in the same frame."
       },
       "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "cult comedy / specialty crime-comedy / late-night streaming",
-        "detail": "It can be mounted around a strong ensemble and a single breakout lead performance, so it does not require a giant star package to be legible. The explicit, cult-friendly premise and street-level setting give it a clear path to streamer discovery, midnight programming, or a small theatrical run with strong word of mouth."
+        "tier": "$5-15M feature",
+        "lane": "Mid-budget streamer or cult theatrical crime-comedy lane",
+        "detail": "It can be packaged around one standout lead for Percy and a strong comic trio, which lowers the need for expensive star stacking. The contained bar/apartment/garage footprint plus a built-in cult-comedy tone make it viable for streamers and specialty theatrical buyers looking for an edgy, replayable title."
       }
     },
     "considerations": [
       {
-        "area": "The middle repeats the same miracle beat.",
-        "detail": "Bud’s discovery, Will’s test, and Percy’s monetization all land cleanly, and the script knows how to make each one funny. A next pass could vary the middle movement by letting one of the supporting players drive a new complication earlier, so the escalation feels even more cumulative.",
+        "area": "The middle plays as a series of variations.",
+        "detail": "The root-sap discovery, the Laticia transformation, the pimp demonstrations, and the street distribution all circle the same core idea in different registers. One lever would be to let one of those turns carry a sharper irreversible consequence so the second half feels like a single tightening spiral rather than a sequence of comic proofs.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Bud’s emotional engine is mostly external.",
-        "detail": "He’s a vivid comic presence, but most of his scenes are reactions to the miracle rather than choices that change the board. One lever would be to give him a more active decision in the back half — something that forces him to define what he wants beyond getting loaded.",
+        "area": "Bud’s goal keeps shifting shape.",
+        "detail": "He begins wanting a cure, then wants the feeling back, then gets pulled into Percy’s business, then into the hostage rescue. A next pass could foreground one emotional want more consistently so the audience tracks his need through the chaos instead of following the premise from beat to beat.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The Africa opening is a production swing.",
-        "detail": "The jungle/village material establishes the premise, but it also creates a location and logistics step-up that sits apart from the rest of the movie. The version of the script where that origin is compressed into fewer setups would protect the story while making the shoot easier to manage.",
+        "area": "The Africa opening is a distinct production lane.",
+        "detail": "The jungle, tribal village, and military burn sequence create a separate location and casting footprint from the rest of the movie. The version of the script where that material is concentrated into fewer setups would protect the mythic opening while keeping the production footprint closer to the bar-and-street core.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The clearance list needs attention.",
-        "detail": "R. Kelly’s 'I Believe I Can Fly' is used as a meaningful story cue, and Ace Hardware is named on the page. A producer would want to decide early whether to clear, replace, or reframe those references so the release path stays clean.",
+        "area": "The rights list needs a clean pass.",
+        "detail": "R. Kelly’s 'I Believe I Can Fly' is used as a story beat, and several brand names are named on the page. A producer would want those cleared early so the script can move cleanly through packaging and distribution conversations.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The final federal turn broadens the lane.",
-        "detail": "The Pimpernickle interrogation and the pharmaceutical-company framing push the story from street comedy into institutional satire. That gives the movie a bigger finish, and a next pass could decide whether to foreground that conspiracy angle earlier so the ending feels even more inevitable.",
+        "area": "The climax wants a precise action map.",
+        "detail": "The factory hostage exchange, the boarded-up bar, the battering ram, and Percy’s rocket-launcher beat all escalate well, but they also ask the audience to track multiple spaces at once. A next pass could simplify the geography of the final confrontation so the payoff lands with even more force.",
         "is_primary_lever": false,
         "source": "script"
       }
     ],
-    "craft_note": ""
+    "craft_note": "",
+    "production_reality_note": ""
   },
-  "weightedScore": 60.3,
+  "weightedScore": 64.7,
   "tier": "Optionable",
   "inputTokens": 31922,
-  "outputTokens": 4669,
-  "cost": 0.044952,
+  "outputTokens": 5329,
+  "cost": 0.047922,
   "declaredFormat": "Feature film"
 }

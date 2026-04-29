@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T01:12:18.084Z",
+  "submission_id": "559187f4-6d85-4c0c-a215-f22105537aff",
+  "eval_id": "7a2a255b-6310-4e78-94db-4296d864cf15",
+  "title": "Dangerous Spaces",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Jessica Gutierrez",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Latina · queer"
+    },
+    {
+      "name": "Steve Sullivan",
+      "role_type": "Lead",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Mai",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · Asian · Cambodian"
+    },
+    {
+      "name": "Sheila Sullivan",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s"
+    },
+    {
+      "name": "Agnes",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-70s"
+    },
+    {
+      "name": "Jessica's Father",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Latino"
+    }
+  ],
+  "positioning_hook": "A homeless queer artist takes a housecleaning job in a wealthy man’s mansion and discovers he’s trapping women inside to control their bodies, their stories, and their escape.",
+  "cost_usd": 0.045488249999999994,
+  "input_tokens": 35139,
+  "output_tokens": 4252,
+  "status": "wrote:leads_ok"
+}

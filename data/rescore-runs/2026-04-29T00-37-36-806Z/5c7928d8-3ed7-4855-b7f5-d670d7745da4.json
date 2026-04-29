@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T01:08:13.374Z",
+  "submission_id": "5c7928d8-3ed7-4855-b7f5-d670d7745da4",
+  "eval_id": "e8c61431-f79a-4d59-96fd-2e77941c4cb5",
+  "title": "Purge",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "Bud",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Percy Kelly",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · Black"
+    },
+    {
+      "name": "Will Jackson",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "Rimu",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens/20s · African tribal villager"
+    },
+    {
+      "name": "Twit",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · British"
+    },
+    {
+      "name": "Laticia",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Black"
+    },
+    {
+      "name": "Fat Jack",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Black"
+    },
+    {
+      "name": "B.K.",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Black"
+    },
+    {
+      "name": "Ted Mack",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Black"
+    },
+    {
+      "name": "King G",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Black"
+    },
+    {
+      "name": "Pimpernickle",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · White"
+    },
+    {
+      "name": "Twit",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · British"
+    },
+    {
+      "name": "Moesha",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Black"
+    },
+    {
+      "name": "Debbie",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · Black"
+    }
+  ],
+  "positioning_hook": "A broke college kid returns from Africa unable to get high, then accidentally unleashes a miracle anti-drug that turns his pimp brother into a street-level kingpin.",
+  "cost_usd": 0.047922,
+  "input_tokens": 31922,
+  "output_tokens": 5329,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T00:54:38.110Z",
+  "submission_id": "2058a3c7-2f93-4663-8895-4d321fe82d01",
+  "eval_id": "13245fd0-e471-45f5-80ff-def560023b31",
+  "title": "All I need is one dance….. the wedding g dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s · elite athlete"
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Lead",
+      "demographics": "Male · early-to-mid 40s · widower"
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Lead",
+      "demographics": "Female · 13-14 · child/teen athlete"
+    },
+    {
+      "name": "Beth Rose",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s"
+    },
+    {
+      "name": "Frank Rose",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s"
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Coach Dan Wensil",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Sharon Maid",
+      "role_type": "Supporting",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Father Rodger Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "LISA MONROE",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 20s"
+    },
+    {
+      "name": "Tim Moss",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    }
+  ],
+  "positioning_hook": "A WNBA star returns to her Missouri hometown after a career-ending injury and finds a second life in a widowed church custodian, a grieving promise, and a small-town dance that changes everything.",
+  "cost_usd": 0.04350375,
+  "input_tokens": 28611,
+  "output_tokens": 4899,
+  "status": "wrote:leads_ok"
+}

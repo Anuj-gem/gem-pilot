@@ -2,288 +2,299 @@
   "evaluation": {
     "classification": {
       "format": "Series",
-      "genre_primary": "Corporate drama",
+      "genre_primary": "Drama",
       "genre_tags": [
-        "Family saga",
-        "Satirical drama"
+        "Corporate thriller",
+        "Family saga"
       ],
-      "tone": "Gritty, caustic, darkly funny, high-pressure"
+      "tone": "Gritty, satirical, heightened"
     },
-    "positioning_hook": "The Roy children circle a media empire on the day their father’s succession plan collapses, and a birthday party turns into a blood sport for control.",
+    "positioning_hook": "The Roy siblings circle their media empire’s throne on Logan’s birthday, but a surprise succession move and a sudden medical crisis turn the family celebration into a hostile takeover.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 9,
-        "reasoning": "The premise is instantly legible as elite-family power warfare, with a clear emotional promise: money, status, and inheritance all collide in one room. The birthday-party setting and the succession fight give it broad prestige appeal with real bingeability."
+        "reasoning": "The premise is instantly legible and broadly sellable: a billionaire family, a succession fight, and a corporate power vacuum. The birthday-party pressure cooker and the final brain hemorrhage turn the pilot into a high-concept launchpad with clear binge appeal."
       },
       "conceptual_hook_clarity": {
         "score": 9,
-        "reasoning": "The pilot lands its engine early: Logan’s birthday, the trust changes, the Vaulter deal, and the announcement of succession all converge into one escalating pressure cooker. By the time Logan stays on and the children realize the handoff is not happening, the series engine is unmistakable."
+        "reasoning": "The hook lands early through the Vaulter acquisition, the trust maneuver, and Logan’s decision to stay in charge. By the time the birthday lunch detonates, the series engine is unmistakable: every family interaction is also a boardroom battle."
       },
       "character_appeal_and_long_term_potential": {
         "score": 9,
-        "reasoning": "Kendall, Shiv, Roman, Connor, Tom, Greg, Frank, and Logan all arrive with distinct appetites and social strategies, and the family web can keep generating new combinations for seasons. Kendall’s need to be taken seriously, Roman’s weaponized irreverence, and Logan’s dominance create durable friction that can keep paying off."
+        "reasoning": "Kendall, Shiv, Roman, Connor, Tom, Greg, Frank, and Logan all arrive with distinct social weapons and private needs, and the pilot immediately sets up durable alliances and betrayals. The family system is built to keep generating story because no relationship is ever just personal."
       },
       "creative_originality_and_boldness": {
-        "score": 8,
-        "reasoning": "The script’s boldness comes from how it turns corporate maneuvering into family humiliation, then lets both registers play at once. The birthday-game structure, the trust reveal, and the grotesque comedy of gifts, insults, and board politics give the material a confident identity."
+        "score": 9,
+        "reasoning": "The script turns elite corporate maneuvering into a savage family comedy-drama without softening either side. The dialogue’s speed, the obscene intimacy of the insults, and the way business language becomes emotional warfare give it a very specific authorial stamp."
       },
       "narrative_momentum_engagement": {
         "score": 9,
-        "reasoning": "The episode keeps tightening the screws: the Vaulter deal, the surprise party, the trust paperwork, the succession reversal, and the final medical collapse all escalate cleanly. The ending detonates the status quo and opens the next episode with immediate urgency."
+        "reasoning": "The pilot keeps stacking pressure: the Vaulter deal, the trust change, the birthday gathering, the succession reveal, the public collapse, and the hemorrhage. Each scene either advances the takeover or sharpens the family fracture, and the ending absolutely demands another episode."
       },
       "resonant_originality": {
         "score": 9,
-        "reasoning": "It feels both specific and inevitable: a media dynasty’s succession crisis played through birthday rituals, boardroom language, and sibling cruelty. The combination of corporate strategy and intimate family warfare is fresh because the script makes each one expose the other."
+        "reasoning": "It feels fresh because the central question is not whether the family can save the company, but who gets to inherit the machinery of power and humiliation. The combination of boardroom strategy, sibling cruelty, and dynastic theater lands as both specific and inevitable."
       },
       "world_density_and_texture": {
-        "score": 8,
-        "reasoning": "Waystar Royco feels like a living ecosystem with board politics, trust structures, PR pressure, and internal hierarchy all visible on the page. The pilot suggests a larger off-screen world of media, finance, politics, and family alliances that can keep producing story."
+        "score": 9,
+        "reasoning": "Waystar Royco feels like a living institution with board politics, legal maneuvering, media optics, parks, trusts, and internal hierarchy all in play. The pilot makes the company itself feel like a character, with enough off-screen gravity to support many seasons."
       },
       "tonal_specificity": {
-        "score": 9,
-        "reasoning": "The voice is unmistakable: obscene, elite, funny, and emotionally brutal in the same breath. The script can swing from a Patek Philippe joke to a succession threat to a medical emergency without losing its identity."
+        "score": 10,
+        "reasoning": "The tone is unmistakable: viciously funny, emotionally poisonous, and constantly one insult away from tragedy. The script can pivot from a joke about a Patek Philippe to a brain hemorrhage without losing its identity."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 8,
-        "reasoning": "On the surface this is a succession scramble, but the pilot keeps hinting at deeper wounds around approval, addiction, loyalty, and legacy. Logan’s control, Kendall’s hunger, and the siblings’ reflexive cruelty suggest a long-burn family tragedy underneath the satire."
+        "score": 9,
+        "reasoning": "Beneath the immediate succession fight, the pilot suggests a long game about inheritance, dependency, shame, and the cost of being raised inside power. Logan’s final collapse opens the door to a much larger emotional and institutional story."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 9,
-        "reasoning": "Any pairing in this family produces story: Kendall and Logan, Shiv and Roman, Tom and Greg, Frank and Kendall, Logan and Marcia. The ensemble is built for recurring conflict because every relationship carries money, status, and emotional leverage at once."
+        "score": 10,
+        "reasoning": "Any two people in this family generate a scene, and the supporting players are not satellites so much as pressure valves and accomplices. The Kendall-Logan, Shiv-Logan, Roman-Logan, Tom-Shiv, and Greg-everyone dynamics all have independent series fuel."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 12,
         "leads": 6,
-        "series_regulars": 8,
+        "series_regulars": 6,
         "child_actors": true,
         "casting_characteristics": [
-          "Large adult ensemble",
-          "Multiple siblings in 30s-40s",
-          "One child baseball player",
-          "Specific age/authority balance for Logan and Marcia"
+          "Large adult ensemble with multiple playable 30s-60s roles",
+          "One child role in the birthday sequence",
+          "No special physical requirements beyond affluent, corporate, and family-world credibility"
         ]
       },
       "locations": {
         "distinct_count": 8,
-        "interior_exterior_ratio": "Mostly interior with some exterior arrivals and sports-field material",
+        "interior_exterior_ratio": "Mostly interior with some exterior arrivals, helicopter, and sports-field moments",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
           "Corporate office interiors",
-          "Luxury residence/party spaces",
-          "Helicopter arrival",
-          "Baseball field or equivalent sports location",
-          "Hospital exterior/interior for ending"
+          "Private residence / estate dining and party spaces",
+          "Helicopter transport",
+          "Baseball field or similar outdoor recreational setting"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Helicopter arrival and broadcast/news montage elements; otherwise grounded.",
+        "vfx_details": "Primarily helicopter and broadcast/news montage elements; no heavy effects footprint.",
         "stunts_level": "minor",
-        "sfx_needs": "Medical emergency performance and practical crowd/party chaos; no major effects load.",
+        "sfx_needs": "Medical collapse, practical crowd control, helicopter sound/landing coordination, party chaos.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Patek Philippe is named on the page."
+          "detail": "Patek Philippe is named explicitly."
         },
         {
           "type": "brand",
-          "detail": "Calvin Klein is named in the party exchange."
+          "detail": "Calvin Klein is named explicitly."
         },
         {
-          "type": "brand",
-          "detail": "Waystar Royco, Vaulter, and other corporate entities are fictional but central to the story world."
+          "type": "real_person",
+          "detail": "Gore Vidal is referenced by name."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Premium cable or prestige streaming drama",
+        "recommended_lane": "Premium cable / prestige streaming drama",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Serialized family-corporate power drama driven by succession battles, board politics, and shifting alliances."
+        "series_engine_or_release_model": "Serialized family-corporate power drama driven by succession, board politics, media maneuvering, and shifting alliances."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Contemporary interiors keep the footprint controlled, with a helicopter, crowd scenes, and a hospital finale adding some lift."
+          "note": "Contemporary corporate interiors keep the footprint manageable, with a few higher-cost elements like helicopter travel and upscale estate settings."
         },
         "cast": {
           "level": "high",
-          "note": "The show depends on a sizable ensemble with sharply differentiated adult roles, plus a child baseball sequence and recurring family members."
+          "note": "The show depends on a sizable adult ensemble with multiple lead-caliber roles and a child appearance in the birthday sequence."
         },
         "location": {
           "level": "medium",
-          "note": "The pilot moves through several distinct interiors, a sports field, a helicopter arrival, and a hospital endpoint."
+          "note": "The pilot moves through several distinct interiors plus exterior transport and sports-field material, but remains largely contained to modern locations."
         },
         "content": {
-          "level": "high",
-          "note": "The dialogue is profane throughout and the episode includes addiction references, humiliation, and a medical crisis."
+          "level": "medium",
+          "note": "Frequent profanity, humiliation comedy, and a medical emergency push it into mature territory without explicit sexual or graphic violence content."
         },
         "rights": {
-          "level": "low",
-          "note": "The named brands are limited and the core corporate world is fictional."
+          "level": "medium",
+          "note": "Named brands and a real-person reference appear on the page, which creates clearance work but not a heavy licensing burden."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The family business is the battlefield.",
-          "what_it_means": "That gives the show a built-in engine where every board decision is also a sibling wound, which is exactly the kind of dual-purpose storytelling premium buyers want. Prestige-drama audiences and actors who like power roles will respond because the emotional stakes are inseparable from the corporate stakes.",
-          "evidence": "The trust paperwork, the succession reversal, and the lunch-table confrontation all turn corporate governance into family combat.",
+          "dimension_or_area": "The family is the engine.",
+          "what_it_means": "This gives buyers a repeatable series machine where every board vote, birthday, and dinner becomes a power play, which is exactly the kind of durable premium-drama engine that sustains multiple seasons. Prestige streamers and cable buyers who want a conversation-starting ensemble will see immediate franchise value here.",
+          "evidence": "The trust change at Logan’s birthday lunch detonates the entire room, and every sibling immediately recalibrates around it.",
           "source": "script"
         },
         {
           "dimension_or_area": "Logan is a monster with gravity.",
-          "what_it_means": "The patriarch is not just an obstacle; he is the center of the series’ orbit, which gives the show a commanding lead role and a durable source of conflict. Veteran dramatic actors and prestige buyers looking for a headline performance will see immediate value in a role that can dominate scenes without ever leaving the room.",
-          "evidence": "He shifts the succession plan mid-day, humiliates Kendall, and still controls the room even as he’s being challenged.",
+          "what_it_means": "The patriarch is written as both tyrant and gravitational center, which creates a role actors can build a career-defining performance around while keeping the whole series emotionally anchored. Veteran prestige leads and directors who like performance-first material will be drawn to that kind of central force.",
+          "evidence": "He stays in charge, humiliates Kendall, toys with the children, and still commands the room even as he collapses.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The siblings each have a usable engine.",
-          "what_it_means": "Kendall’s hunger, Shiv’s political intelligence, Roman’s chaos, and Connor’s detached vanity create a four-way engine that can sustain episodes beyond the pilot. That kind of ensemble gives a buyer multiple breakout pathways and gives casting a real event-series hook.",
-          "evidence": "Kendall pushes the deal and the succession; Shiv reads the trust; Roman needles everyone; Connor floats above the whole fight until he suddenly matters.",
+          "dimension_or_area": "The dialogue weaponizes business language.",
+          "what_it_means": "The script turns corporate jargon into character warfare, which makes the show feel smart, current, and highly quotable without becoming academic. Buyers chasing sharp, rewatchable prestige dialogue will recognize the value immediately.",
+          "evidence": "The Vaulter negotiation, the trust paperwork, and the succession talk all land as insults disguised as strategy.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The dialogue weaponizes humiliation.",
-          "what_it_means": "The script’s voice turns every exchange into a status contest, which makes the show highly quotable and actor-friendly. This is catnip for performers who want sharp, fast, prestige dialogue and for audiences who like their drama with bite.",
-          "evidence": "The birthday insults, the “big dick competition” language, and the repeated public corrections all define the scene language.",
+          "dimension_or_area": "The pilot ends with a true series rupture.",
+          "what_it_means": "The brain hemorrhage is not just a cliffhanger; it resets the entire power structure and guarantees the next episode has a new governing question. That kind of hard turn is gold for streamers because it converts a strong pilot into an urgent binge proposition.",
+          "evidence": "Logan’s collapse lands after he reasserts control and the family refuses the trust arrangement.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The pilot ends with a clean series rupture.",
-          "what_it_means": "The brain hemorrhage at the end blows up the succession plan and guarantees the next episode has immediate forward motion. Buyers like pilots that don’t just introduce a world but detonate it, because that creates a strong season-one promise.",
-          "evidence": "Logan’s collapse lands after the family has already fought over power and the deal has already closed.",
+          "dimension_or_area": "The ensemble has independent story fuel.",
+          "what_it_means": "Kendall, Shiv, Roman, Connor, Tom, Greg, and Frank each have enough texture to support separate arcs, which means the show can expand without losing its core. Ensemble buyers and actors who want a real chessboard rather than a single-lead vehicle will respond to that density.",
+          "evidence": "Kendall’s succession hunger, Shiv’s political intelligence, Roman’s chaos, Tom’s ambition, and Greg’s social climbing all surface in the pilot.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world feels expensive without feeling inflated.",
-          "what_it_means": "The show signals wealth through behavior, access, and institutional power rather than constant spectacle, which keeps it premium but producible. That makes it attractive to streamers and cable buyers who want scale in the writing, not just in the budget.",
-          "evidence": "Helicopters, boardrooms, private parties, and luxury gifts do the work of the world-building.",
-          "source": "both"
+          "dimension_or_area": "The world feels expensive and specific.",
+          "what_it_means": "Waystar Royco is not generic corporate wallpaper; it has media, parks, legal, and family-trust machinery that can generate stories for years. That breadth makes the show attractive to buyers looking for a premium institutional world with room to scale.",
+          "evidence": "The pilot moves from acquisition talks to board politics to a birthday estate to helicopter transport and a public news fallout.",
+          "source": "script"
         }
       ],
-      "headline": "This is a succession drama with teeth: a media dynasty where every board move is also a family insult, and every family gathering is a corporate coup. The pilot has the rare combination of a killer ensemble, a ruthless voice, and a season engine that can keep generating power long after the birthday party ends."
+      "headline": "This is a premium family-power drama with a brutal comic edge and a built-in succession engine. The pilot doesn’t just introduce a world; it detonates one, then leaves a wounded empire and a hungry family standing in the smoke."
     },
     "lead_characters": [
       {
+        "name": "Logan Roy",
+        "role_type": "Lead",
+        "demographics": "Male · 80s · Scottish-born media titan",
+        "hook": "The patriarch of Waystar Royco is a volcanic mix of charm, cruelty, and instinctive dominance. He can bless you, humiliate you, or gut you in the same breath, and the room still bends toward him.",
+        "why_actor_wants_this": "This is the Brian Cox in Succession lane — a towering patriarch role where the performance is built on command, menace, and the ability to make every silence feel like a threat. Veteran dramatic leads who want a late-career signature part will chase this because it gives them authority, volatility, and tragic scale in one package."
+      },
+      {
         "name": "Kendall Roy",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s · heir apparent, recovering addict",
-        "hook": "Kendall is the son who most wants the crown and least knows how to wear it, a polished executive whose need for approval keeps leaking through his corporate language. He is earnest, brittle, and desperate to be seen as a serious successor, which makes him both sympathetic and combustible.",
-        "why_actor_wants_this": "This is the Jeremy Strong in *Succession* / Michael Corleone-adjacent showcase of a man trying to become his father while visibly breaking under the attempt. Actors who want a prestige lead with emotional volatility, humiliation, and sudden authority will see a career-defining part."
+        "demographics": "Male · 30s-40s · heir apparent, corporate executive, recovering addict",
+        "hook": "Kendall is the son who wants to be taken seriously and can’t stop auditioning for his father’s approval. He’s polished, anxious, and always one insult away from either a breakthrough or a collapse.",
+        "why_actor_wants_this": "This is the Matthew McConaughey in True Detective season 1 territory of a man whose intelligence and damage are always in the same frame. Actors who want a prestige lead with emotional volatility, wounded ambition, and a constant internal battle will see a showcase here."
       },
       {
         "name": "Siobhan Roy",
         "role_type": "Lead",
-        "demographics": "Female · 30s · politically fluent heiress",
-        "hook": "Shiv is the smartest reader in the room and the least interested in pretending she isn’t, a sibling who can translate power into language faster than anyone else. She carries herself like someone already halfway out of the family business, which makes her independence feel strategic rather than sentimental.",
-        "why_actor_wants_this": "This is the Sarah Snook in *Succession* lane — a role that lets an actor play intelligence as a weapon, not a trait, and keep shifting between ally, skeptic, and heir. It’s ideal for actresses who want a prestige part with verbal precision and long-game authority."
+        "demographics": "Female · 30s · politically savvy Roy daughter",
+        "hook": "Shiv is the smartest person in the room until the room becomes a family dinner. She reads power fluently, keeps her distance, and still can’t fully escape the gravitational pull of her father’s approval.",
+        "why_actor_wants_this": "This is the Claire Underwood / Jodie Comer-style prestige power-player slot — a role that lets an actor play intelligence, restraint, and private calculation without ever losing the emotional undercurrent. Actors who want a sharp, modern female lead with political edge and family damage will chase it."
       },
       {
         "name": "Roman Roy",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s · youngest son, corporate provocateur",
-        "hook": "Roman is the family’s chaos engine, a man who uses jokes, sexual bravado, and mockery to keep anyone from seeing what he actually wants. He is unserious on purpose, which makes him one of the show’s most useful emotional saboteurs.",
-        "why_actor_wants_this": "This is the Kieran Culkin in *Succession* lane — a role built on speed, mischief, and the ability to turn a joke into a dagger. Actors who excel at comic volatility and sudden emotional exposure will want this immediately."
+        "demographics": "Male · 30s-40s · Roy son, corporate insider",
+        "hook": "Roman is the family’s chaos agent: funny, cruel, evasive, and always testing how far he can push before someone flinches. Under the jokes and provocation is a kid who treats intimacy like a prank and power like a dare.",
+        "why_actor_wants_this": "This is the Jesse Eisenberg in The Social Network energy of a fast-talking, socially dangerous operator whose comedy is inseparable from insecurity. Actors who can turn speed, mischief, and emotional avoidance into a character signature will want this part."
       },
       {
         "name": "Connor Roy",
         "role_type": "Lead",
-        "demographics": "Male · 40s-50s · eldest son, detached heir",
-        "hook": "Connor floats above the family’s real war with the confidence of a man who has mistaken distance for wisdom. He is absurd, self-regarding, and oddly free because he has already opted out of the competition everyone else is still bleeding for.",
-        "why_actor_wants_this": "This is the Alan Ruck in *Succession* lane — a part that lets an actor play comic vanity, wounded entitlement, and deadpan obliviousness without ever becoming a punchline. Character actors who can make delusion feel oddly noble will chase it."
+        "demographics": "Male · 40s-60s · eldest Roy son, outsider sibling",
+        "hook": "Connor lives on the edge of the family machine, half self-mythologizing eccentric and half neglected heir. He wants relevance, but he wants it on his own terms, which makes him both comic and oddly poignant.",
+        "why_actor_wants_this": "This is the kind of off-center prestige role that lets an actor do deadpan comedy and wounded vanity in the same scene, like the best of the supporting-player showcase territory in Arrested Development or The White Lotus. Character actors who can make delusion feel human will be drawn to it."
       },
       {
         "name": "Tom Wambsgans",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s · ambitious outsider, family spouse",
-        "hook": "Tom is the climber who knows exactly how close he is to the center and exactly how disposable that makes him. He’s eager, insecure, and always performing usefulness, which gives him a deliciously unstable place inside the Roy machine.",
-        "why_actor_wants_this": "This is the Matthew Macfadyen in *Succession* lane — a role where social anxiety, ambition, and self-preservation all play at once. Actors who can mine comedy from humiliation and menace from politeness will see a showcase."
+        "demographics": "Male · 30s-40s · corporate climber, Shiv’s husband",
+        "hook": "Tom is the anxious striver who wants status so badly he can taste it, and knows he may never fully belong to the world he’s trying to enter. He’s eager, performative, and just self-aware enough to know he’s being used.",
+        "why_actor_wants_this": "This is the cringe-comedy prestige lane of a Steve Carell in The Big Short or a Matthew Macfadyen-style social climber role — a part that lets an actor play humiliation, ambition, and comic desperation at once. Actors who excel at status anxiety and brittle charm will chase it hard."
       },
       {
-        "name": "Greg",
+        "name": "Greg Hirsch",
         "role_type": "Lead",
-        "demographics": "Male · 20s · awkward family outsider",
-        "hook": "Greg is the accidental entrant who keeps stumbling into the center of power without ever looking like he belongs there. He’s anxious, eager to please, and just self-aware enough to know he’s in over his head, which makes him a perfect audience surrogate and comic disruptor.",
-        "why_actor_wants_this": "This is the Nicholas Braun in *Succession* lane — a role that lets an actor stretch from cringe comedy into genuine survival instinct. Young comedic performers with timing and a taste for escalation will want the part because it keeps expanding in every scene."
+        "demographics": "Male · 20s-30s · awkward family outsider",
+        "hook": "Greg is the cousin-nephew hybrid who keeps stumbling into the Roy orbit and somehow survives each encounter by being harmless, opportunistic, and deeply weird. He’s the audience’s entry point into the family’s absurdity, but he’s also learning how to play the game.",
+        "why_actor_wants_this": "This is the Michael Cera / early Jesse Eisenberg lane of a socially awkward climber whose discomfort becomes a comic engine and a survival strategy. Younger actors who want a breakout role with both cringe comedy and long-term character growth will see a lot to play."
       },
       {
-        "name": "Frank",
+        "name": "Frank Vernon",
         "role_type": "Supporting",
-        "demographics": "Male · 50s-60s · senior executive, family retainer",
-        "hook": "Frank is the seasoned operator who knows where the bodies are buried and how to keep the machine moving while pretending it’s all normal. He has the weary intelligence of someone who has survived too many regime changes to be surprised by any of them.",
-        "why_actor_wants_this": "This is the Richard Schiff in *The West Wing* / senior-courtier territory — a role that gives an actor dry authority, institutional memory, and the pleasure of playing the man who understands the room better than the people in charge. Character actors who specialize in controlled exasperation will gravitate to it."
+        "demographics": "Male · 50s-60s · senior executive, Logan confidant",
+        "hook": "Frank is the old-company insider who knows where the bodies are buried and how to keep the machine moving. He’s dry, loyal, and permanently one step away from being useful or expendable.",
+        "why_actor_wants_this": "This is the John Slattery / corporate-fixer prestige-supporting lane — a role that lets an actor play competence, fatigue, and moral compromise with real bite. Experienced character actors who like playing the man behind the curtain will want it."
       },
       {
         "name": "Marcia Roy",
         "role_type": "Supporting",
-        "demographics": "Female · 50s-60s · Logan’s wife",
-        "hook": "Marcia is elegant, watchful, and never as decorative as the family would like her to be, with a quiet command that shifts the balance of any room she enters. She understands the Roy ecosystem as both spouse and strategist, which makes her presence feel loaded even when she says very little.",
-        "why_actor_wants_this": "This is the Diane Lane in *Unfaithful* / Gillian Anderson in *The Crown* lane of composed power — a role that lets an actor play stillness as leverage. Prestige actresses who like playing intelligence under restraint will be drawn to it."
+        "demographics": "Female · 40s-60s · Logan’s wife",
+        "hook": "Marcia is elegant, controlled, and never as passive as anyone in the room assumes. She moves through the family like a strategist, and the trust maneuver makes clear she understands leverage as well as anyone.",
+        "why_actor_wants_this": "This is the prestige-wife-as-power-broker territory of a Gillian Anderson in The Crown or a Diane Lane-style role — composed, watchful, and quietly decisive. Actors who like playing intelligence under stillness will be drawn to her."
       },
       {
-        "name": "Rava",
+        "name": "Rava Roy",
         "role_type": "Supporting",
         "demographics": "Female · 30s-40s · Kendall’s ex-wife",
-        "hook": "Rava is the grounded counterweight to the Roy circus, someone who can still speak plainly inside a world built on performance. She carries the history of Kendall’s damage without being defined by it, which gives her a clean, adult authority in the family orbit.",
-        "why_actor_wants_this": "This is the Carrie Coon in *The Leftovers* / prestige-ex-wife lane — a role that gives an actor emotional clarity in a world of noise. It’s attractive to actresses who want a sharp, humane presence that can cut through the chaos."
+        "hook": "Rava reads as the sane center of a deeply insane orbit. She’s present enough to matter, sharp enough to puncture the family’s self-mythology, and grounded enough to remind us what normal looks like.",
+        "why_actor_wants_this": "This is the grounded ex-spouse role that gives an actor the straight-line emotional truth in a room full of performance, similar to the best grounded-supporting work in Big Little Lies. Actors who can play intelligence without spectacle will want the clarity of this part."
       },
       {
-        "name": "Marianne",
+        "name": "Colin",
         "role_type": "Supporting",
-        "demographics": "Female · 50s-70s · Greg’s mother",
-        "hook": "Marianne is the anxious, practical family voice trying to manage embarrassment before it becomes catastrophe. She gives the show a more ordinary register of concern, which makes Greg’s absurdity land harder.",
-        "why_actor_wants_this": "This is the kind of grounded maternal role that gives an actor clean comic timing and a believable emotional anchor in a prestige ensemble. Character actresses who can play exasperation without broadening it will enjoy the slot."
+        "demographics": "Male · 30s-50s · Logan’s bodyguard",
+        "hook": "Colin is the quiet muscle in the room, all restraint and procedure until the family chaos spills over. He’s not there to emote; he’s there to contain the damage.",
+        "why_actor_wants_this": "This is the stoic-enforcer lane of a classic prestige bodyguard role, where stillness and authority do the work. Character actors who can project danger with minimal dialogue will be interested."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage power as family theater.",
-        "fit_profile": "Established TV or feature directors with at least one prestige drama or ensemble piece behind them, especially those who care about performance-first storytelling, verbal combat, and social hierarchy. The material rewards directors who can keep scenes alive in rooms, let actors spar, and make corporate spaces feel like arenas.",
-        "detail": "The craft challenge is balancing satire, tragedy, and procedural business talk without flattening any of them, which is exactly the kind of tonal control experienced prestige directors like to show off. Directors who have already proven they can handle ensemble blocking and dialogue pressure will see this as a signature-project opportunity."
+        "hook": "A director who wants to stage power as family dinner and make every joke land like a knife.",
+        "fit_profile": "Established indie or prestige-TV directors with at least one or two character-forward features or episodes, especially those who specialize in ensemble blocking, sharp dialogue, and social humiliation. This material rewards directors who can keep the camera close, let actors spar, and make boardroom politics feel as tense as a hostage scene.",
+        "detail": "The craft opportunity is in balancing comedy and dread without flattening either, while keeping a large ensemble legible through overlapping dialogue and shifting alliances. Directors who like performance-first material with a strong visual sense of status and proximity will be especially drawn to it."
       },
       "buyer_appeal": {
-        "tier": "Premium cable / prestige streaming series",
-        "lane": "Adult ensemble drama with satirical edge",
-        "detail": "It can be packaged around one marquee patriarch and a strong ensemble, so a buyer can sell the show on performance rather than spectacle. The corporate-family lane is exportable and binge-friendly, and the contemporary setting keeps the production footprint in a premium-drama range."
+        "tier": "Prestige series / premium streamer drama",
+        "lane": "Adult ensemble, corporate-family power drama, awards-friendly satire",
+        "detail": "The show can be greenlit around a strong ensemble rather than a single effects-heavy hook, which makes it attractive to buyers who like actor-driven prestige packages. The succession premise and media-empire setting travel well internationally and fit the current appetite for bingeable, conversation-driving adult drama."
       }
     },
     "considerations": [
       {
-        "area": "Kendall’s coronation gets interrupted by Logan’s reversal.",
-        "detail": "The succession turn is already strong; a next pass could make Kendall’s emotional beat land a hair earlier in the lunch sequence so the reversal hits with even more force. The scene is doing a lot of plot work at once, and the version where Kendall’s hope is more visibly alive before Logan speaks would sharpen the gut-punch.",
-        "is_primary_lever": true,
-        "source": "script"
-      },
-      {
-        "area": "The trust explanation runs long in the dining room.",
-        "detail": "The family trust mechanics are clear, but the lunch-table exchange spends several beats on who gets which vote and why Marcia’s seat matters. One lever would be to preserve the same information while letting the emotional betrayal lead the scene and the legal detail arrive in smaller, sharper pieces.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The pilot carries a large ensemble footprint.",
-        "detail": "The script is built around a sizable family and executive circle, plus a child baseball sequence and a hospital endpoint. That supports the story, but the version of the production that keeps the party, boardroom, and sports-field material as efficiently grouped as possible would protect schedule and budget without changing the engine.",
+        "area": "The pilot is already built for a premium ensemble lane.",
+        "detail": "The cast footprint and multiple lead roles point cleanly to prestige cable or streamer packaging, where buyers expect a strong ensemble and a recognizable central patriarch. The upside is that the show’s value is in the group dynamic, so it can be sold as an actor magnet rather than a spectacle play.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The ending opens a major season engine.",
-        "detail": "Logan’s collapse is a clean series rupture, and the next pass should protect that final turn exactly as written in spirit. The only thing to watch in development is preserving the immediate aftermath as a launchpad for episode two, because the pilot already earns that cliff edge.",
+        "area": "The birthday sequence carries the whole engine.",
+        "detail": "The lunch and gift-giving stretch is where the succession fight, the trust maneuver, and the family humiliation all converge, so it’s the most valuable stretch to keep as sharp and legible as possible. One lever would be to protect the emotional order of those beats so the reveal lands before the room fully understands what it’s losing.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble can stay readable with fewer moving parts.",
+        "detail": "The pilot already has enough corporate, family, and media pressure without needing extra location sprawl, so the version that keeps the key action inside a tighter set of interiors would protect momentum. That would preserve the feeling of a sealed pressure cooker while making the production footprint even more efficient.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Greg’s material is a breakout lane.",
+        "detail": "His scenes with Logan and the family party give the show a comic outsider perspective, but the role is also carrying a lot of audience-entry function. A next pass could consider giving him one more choice that shows how quickly he learns the rules of the room, which would deepen his long-term series value.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The trust reveal is the series’ cleanest turn.",
+        "detail": "The double-vote Marcia move is the kind of succession detail that makes the show feel specific and institutional rather than generic family conflict. It’s also the clearest example of how the script can turn legal paperwork into drama, which is a major asset for the series engine.",
         "is_primary_lever": false,
         "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 87.3,
+  "weightedScore": 93.3,
   "tier": "Greenlight Material",
   "inputTokens": 19896,
-  "outputTokens": 4689,
-  "cost": 0.0360225,
+  "outputTokens": 4729,
+  "cost": 0.0362025,
   "declaredFormat": "Series"
 }

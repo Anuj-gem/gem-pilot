@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:02:09.766Z",
+  "submission_id": "57799649-8557-4467-a126-0a020e3ca801",
+  "eval_id": "1968b769-d12a-4bee-9dc9-3935d96693d2",
+  "title": "Of God's and Dolls",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W / Eztli",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · mixed-race Black · ageless presentation"
+    },
+    {
+      "name": "Ying",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-20s · Chinese"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Sephardic-appearing · ageless presentation"
+    },
+    {
+      "name": "Inti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless divine figure · Incan Sun God"
+    },
+    {
+      "name": "Pachacuti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless divine ruler · Sapa Inca"
+    },
+    {
+      "name": "Pope Pius XII",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · historical figure"
+    },
+    {
+      "name": "Station Master / Guard / Official",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · Spanish officials"
+    }
+  ],
+  "positioning_hook": "A Black immortal smuggler in wartime Europe is pulled from a refugee rescue into a Vatican mission to recover stolen Christ dolls before Christmas breaks in Bolivia.",
+  "cost_usd": 0.0357045,
+  "input_tokens": 18938,
+  "output_tokens": 4778,
+  "status": "wrote:leads_ok"
+}

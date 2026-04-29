@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T00:56:47.149Z",
+  "submission_id": "98b654a0-2b27-4789-a70d-cc86ffe41191",
+  "eval_id": "9ed31e26-8389-4d12-8a72-012c81db407c",
+  "title": "Aftermath   N.G.Davis   2021",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Eric Daniels",
+      "role_type": "Lead",
+      "demographics": "Male · early 30s · white · military veteran"
+    },
+    {
+      "name": "Madeleine Daniels",
+      "role_type": "Lead",
+      "demographics": "Female · 12 years old · white"
+    },
+    {
+      "name": "Romeo / Major Jimmy Roken",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · white · former military"
+    },
+    {
+      "name": "Bryan Saint",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s · white · television journalist"
+    },
+    {
+      "name": "Ozzie",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Middle-Eastern"
+    },
+    {
+      "name": "Hutch",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · white"
+    },
+    {
+      "name": "Katherine Daniels",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · white"
+    },
+    {
+      "name": "Delta",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · military build"
+    },
+    {
+      "name": "Echo",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · military build"
+    },
+    {
+      "name": "Foxtrot",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · military build"
+    },
+    {
+      "name": "India",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · military build"
+    },
+    {
+      "name": "Kilo",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · tech-savvy, military-adjacent"
+    },
+    {
+      "name": "Zulu",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · military build"
+    },
+    {
+      "name": "X-Ray",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · military build"
+    },
+    {
+      "name": "Bravo",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · military build"
+    },
+    {
+      "name": "Tango",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s · military build"
+    },
+    {
+      "name": "Thornton Land",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · polished broadcaster"
+    }
+  ],
+  "positioning_hook": "A traumatized Iraq veteran and his teenage daughter get trapped on a bombed-out Cape Cod bridge, forcing him to fight a paramilitary cell before they turn the hostage crisis into a live-streamed execution.",
+  "cost_usd": 0.056505,
+  "input_tokens": 39514,
+  "output_tokens": 5971,
+  "status": "wrote:leads_ok"
+}

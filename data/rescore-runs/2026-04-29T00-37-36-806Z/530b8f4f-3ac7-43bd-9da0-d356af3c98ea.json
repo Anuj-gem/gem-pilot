@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:06:04.654Z",
+  "submission_id": "530b8f4f-3ac7-43bd-9da0-d356af3c98ea",
+  "eval_id": "fc132f23-9d85-4927-aafa-f2f7d8b5ec57",
+  "title": "Warhorses",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Ray Sallinger / WarHorse",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Nordic-featured · physically imposing but aging"
+    },
+    {
+      "name": "Connie Sallinger",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s"
+    },
+    {
+      "name": "Trac Man",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · human/metal hybrid"
+    },
+    {
+      "name": "H20",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-50s · aquatic humanoid"
+    },
+    {
+      "name": "Deviant",
+      "role_type": "Lead",
+      "demographics": "Male-coded alien creature · ageless"
+    },
+    {
+      "name": "Watta Gal",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "Extreme",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · titan-like superhero"
+    },
+    {
+      "name": "Axiom",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · masked avenger"
+    },
+    {
+      "name": "Ron Davis",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · burly, working-class"
+    },
+    {
+      "name": "Don",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "Bartender",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "Frank",
+      "role_type": "Supporting",
+      "demographics": "Male · older adult"
+    },
+    {
+      "name": "Joe",
+      "role_type": "Supporting",
+      "demographics": "Male · older adult"
+    }
+  ],
+  "positioning_hook": "A washed-up suburban superhero is forced back into action when an alien weapon turns his teammates’ insecurities into citywide chaos — and his marriage, pride, and bladder all go with it.",
+  "cost_usd": 0.103704,
+  "input_tokens": 73988,
+  "output_tokens": 10714,
+  "status": "wrote:leads_ok"
+}

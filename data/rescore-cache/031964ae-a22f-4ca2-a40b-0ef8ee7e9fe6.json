@@ -2,377 +2,324 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Biographical drama",
+      "genre_primary": "Historical drama",
       "genre_tags": [
-        "War drama",
-        "Romantic drama"
+        "Biographical",
+        "War"
       ],
-      "tone": "Grounded, nostalgic, elegiac"
+      "tone": "Earnest, nostalgic, emotionally bruised, reverent"
     },
-    "positioning_hook": "Jimmy Stewart, haunted by combat and the death of his closest wartime crew, is cornered by Frank Capra and a Christmas homecoming that forces him to choose between Hollywood and the life he survived for.",
+    "positioning_hook": "Jimmy Stewart returns from bombing runs over Germany carrying survivor’s guilt, then has to decide whether Hollywood can still be his home after war rewired his soul.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The script has clear appeal for adult audiences who respond to prestige biographical drama, classic Hollywood, and wartime emotional stakes. Its strongest market signal is the emotional collision between Stewart’s public image and private trauma, though the period setting and historical specificity narrow the lane compared with a broader commercial drama."
+        "reasoning": "The hook has clear prestige appeal: a beloved American icon, wartime trauma, and classic Hollywood mythology in one package. The audience is more adult and awards-oriented than four-quadrant, but the emotional promise is immediate and legible."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The premise lands quickly: Jimmy Stewart’s postwar crisis is framed through the making of 'It’s a Wonderful Life,' then deepened by combat flashbacks and a homecoming that tests his future. The story engine is easy to explain in two sentences and the emotional stakes are established early."
+        "reasoning": "The premise is easy to state in two sentences: Jimmy Stewart’s wartime experience collides with the release of 'It’s a Wonderful Life,' forcing him to confront whether he can keep acting. The script establishes that engine early and keeps returning to the same central question."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Stewart is a compelling lead because the script gives him public warmth, private grief, and a real identity conflict about acting versus authenticity. Capra, Barrymore, and Margaret Sullavan add strong counterweights, though most supporting players function in service of Stewart’s arc rather than generating fully separate dramatic engines."
+        "reasoning": "Stewart is a strong lead because the script gives him contradiction: war hero, movie star, romantic idealist, and a man quietly unraveling. Capra, Barrymore, and Sullavan add color and pressure, though the story remains most alive through Stewart’s interior journey."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The script’s boldest move is to dramatize a real icon’s inner life through a dual frame: the making of a beloved film and the war memories that haunt it. That structure gives the material a distinctive emotional angle, even as the overall execution stays within classical biographical drama conventions."
+        "reasoning": "The choice to frame the story through the making and reception of 'It’s A Wonderful Life' gives the material a distinctive historical angle. Much of the execution is classical and reverent, but the emotional collision between public iconography and private trauma gives it a clear point of view."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The combat sequence and the emotional confrontations carry strong forward motion, especially once the mission begins and later when Stewart’s crisis with Capra and Barrymore intensifies. The screenplay is more episodic than propulsive in its first half, with long stretches of procedural aviation detail and repeated emotional beats that slow the build."
+        "reasoning": "The script has a strong central spine, but it plays in long, reflective stretches that lean more on mood and dialogue than escalation. The combat sequence and the Barrymore/Capra conversations carry the momentum, while the overall shape is more contemplative than propulsive."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The idea of using Stewart’s own wartime experience as the hidden emotional engine behind 'It’s a Wonderful Life' has a clean, inevitable quality. It feels fresh because it reframes a familiar cultural artifact through the psychology of the man inside it."
+        "reasoning": "The idea of using Stewart’s own life to refract the meaning of 'It’s A Wonderful Life' lands with a satisfying inevitability. It feels fresh because the script turns a familiar cultural artifact into a personal reckoning rather than a behind-the-scenes scrapbook."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The Hollywood-and-air-war world is richly specific, from RKO screening rooms and Beverly Hills homes to B-24 cockpit procedures and bomber formations over Europe. The period detail is not just decorative; it creates a lived-in ecosystem of studio culture, military hierarchy, and postwar celebrity pressure."
+        "reasoning": "1940s Hollywood, wartime airfields, Beverly Hills homes, and the social rituals around studio-era stardom are all rendered with specific texture. The script understands the hierarchy of the era — studios, stars, directors, military command, and family life — and uses that world as more than backdrop."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone blends reverence, melancholy, and old-Hollywood warmth with combat intensity and intimate emotional confession. It has a clear identity, though the screenplay sometimes shifts from procedural war drama to sentimental remembrance in a way that softens tonal sharpness."
+        "reasoning": "The tone is distinctly old-Hollywood elegiac, with earnest sentiment, wartime dread, and a touch of romantic longing. It stays consistent, though it largely commits to one register rather than surprising with tonal shifts."
       },
       "latent_depth_slow_burn_potential": {
         "score": 8,
-        "reasoning": "Beneath the surface biography, the script is really about survivor’s guilt, masculine identity, and the cost of turning pain into public inspiration. The Stewart-Maggie-Capra triangle suggests deeper emotional reserves than the plot initially announces, which gives the material lasting resonance."
+        "reasoning": "On the surface this is a biographical wartime drama, but underneath it’s about identity, masculinity, grief, and the cost of being a public symbol. The Stewart/Capra/Barrymore triangle and the Maggie relationship suggest a deeper emotional architecture than the plot initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "The Stewart-Capra-Barrymore-Sullavan relationships are the engine, and each pairing has some distinct chemistry. Still, the script is fundamentally lead-driven, with the ensemble orbiting Stewart rather than creating a fully combinatorial relationship web."
+        "reasoning": "The Stewart-Capra-Barrymore-Sullavan web gives the script real relational life, and each of those pairings has a distinct charge. Still, the story is fundamentally lead-driven, with the supporting players serving Stewart’s arc more than generating independent engines."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 18,
+        "speaking_roles": 14,
         "leads": 4,
         "series_regulars": 0,
-        "child_actors": false,
+        "child_actors": true,
         "casting_characteristics": [
-          "Period-accurate adult ensemble",
-          "Requires recognizable historical figures",
-          "Military roles with age-specific authenticity"
+          "Period-accurate portrayals of recognizable real people",
+          "Male lead in his 30s/40s across wartime and postwar timelines",
+          "Female lead in her 20s/30s",
+          "Ensemble of young male airmen",
+          "Child roles in family and holiday scenes"
         ]
       },
       "locations": {
-        "distinct_count": 14,
-        "interior_exterior_ratio": "Approximately 55/45",
-        "period_or_contemporary": "Period (1940s)",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "Period (1920s, 1930s, 1940s)",
         "notable_requirements": [
-          "Studio screening room",
-          "B-24 bomber cockpit/interiors",
-          "Military airfield and runway builds",
-          "Beverly Hills home interiors",
-          "New York hotel and bar interiors",
-          "Pennsylvania family home"
+          "RKO screening room",
+          "WWII airfield and bomber interiors",
+          "Beverly Hills homes",
+          "New York hotel interiors",
+          "Pennsylvania family home",
+          "Period street and studio exteriors"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Large-scale aerial combat, bomber formations, fighter planes, explosions, and sky compositing for wartime sequences.",
+        "vfx_details": "Aerial combat, bomber formations, fighter planes, explosions, flak, and period sky replacements are central to the war sequences.",
         "stunts_level": "moderate",
-        "sfx_needs": "Practical aircraft interiors, gunfire, explosion effects, fire, smoke, blood, and crash aftermath.",
+        "sfx_needs": "Practical aircraft cockpit work, explosion effects, gunfire, fire, smoke, and damage makeup/props for aircraft and casualties.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "real_person",
-          "detail": "James Stewart"
-        },
-        {
-          "type": "real_person",
-          "detail": "Frank Capra"
-        },
-        {
-          "type": "real_person",
-          "detail": "Donna Reed"
-        },
-        {
-          "type": "real_person",
-          "detail": "Lionel Barrymore"
-        },
-        {
-          "type": "real_person",
-          "detail": "Margaret Sullavan"
-        },
-        {
-          "type": "real_person",
-          "detail": "Leland Hayward"
-        },
-        {
-          "type": "real_person",
-          "detail": "Henry Travers"
-        },
-        {
-          "type": "real_person",
-          "detail": "Thomas Mitchell"
-        },
-        {
-          "type": "named_music",
-          "detail": "\"Auld Lang Syne\""
+          "detail": "James Stewart, Frank Capra, Donna Reed, Lionel Barrymore, Margaret Sullavan, Henry Travers, Thomas Mitchell, and other historical figures are depicted by name."
         },
         {
           "type": "ip_licensing",
-          "detail": "\"It's a Wonderful Life\""
+          "detail": "\"It’s a Wonderful Life,\" \"Mr. Smith Goes to Washington,\" \"The Shop Around the Corner,\" and \"The Mortal Storm\" are referenced and dramatized."
+        },
+        {
+          "type": "named_music",
+          "detail": "\"Auld Lang Syne\" is performed on page."
         },
         {
           "type": "brand",
-          "detail": "RKO Radio Pictures"
-        },
-        {
-          "type": "brand",
-          "detail": "The Plaza Hotel"
-        },
-        {
-          "type": "brand",
-          "detail": "St. Regis Hotel"
-        },
-        {
-          "type": "brand",
-          "detail": "Romanoff's"
+          "detail": "RKO Radio Pictures, The Plaza, St. Regis, Romanoff’s, and specific aircraft/military designations are named prominently."
         }
       ],
       "platform_fit": {
         "recommended_lane": "Prestige theatrical or premium streaming biographical drama",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Festival-to-platform or awards-leaning limited theatrical release"
+        "series_engine_or_release_model": "Festival-to-platform or awards-season limited theatrical release"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Period aviation sequences, aircraft builds, and wartime VFX push this above a contained indie, but it still sits below large-scale studio tentpole territory."
+          "note": "Period aviation sequences, multiple eras, and aircraft combat create a meaningful but contained feature budget."
         },
         "cast": {
-          "level": "high",
-          "note": "The script depends on multiple recognizable historical figures and age-specific casting for Stewart, Capra, Barrymore, Sullavan, and the bomber crew."
+          "level": "medium",
+          "note": "The script depends on recognizable historical figures and a sizable supporting aircrew, but the lead set is still manageable."
         },
         "location": {
-          "level": "high",
-          "note": "The story moves across Hollywood, England, Germany, Pennsylvania, Connecticut, and New York, with multiple period environments and aircraft settings."
+          "level": "medium",
+          "note": "The story moves across Hollywood, England, Germany, Pennsylvania, and New York, with several period-specific interiors and airfield setups."
         },
         "content": {
           "level": "medium",
-          "note": "War violence, dead bodies, grief, drinking, and sexual content appear, but the material stays within prestige-drama boundaries."
+          "note": "War violence, death, grief, drinking, and sexual content appear, but the material stays within adult prestige-drama territory."
         },
         "rights": {
           "level": "high",
-          "note": "The script names real people, a famous film, and several branded locations, creating a meaningful clearance and life-rights conversation."
+          "note": "The script centers on named real people and directly dramatizes copyrighted films and studio-era brands."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The Stewart role is built on contradiction.",
-          "what_it_means": "This gives a lead actor a prestige showcase that can play charm, grief, patriotism, and existential doubt in the same frame. Mid-career dramatic stars and awards-minded buyers will respond to a part that lets an icon be both beloved and deeply unsettled.",
-          "evidence": "Stewart’s cheerful banter in the RKO screening room gives way to his private collapse after the bombing mission and his confession to Capra that he may not want to act anymore.",
+          "dimension_or_area": "The premise is built on an American icon.",
+          "what_it_means": "This gives the project instant recognition value and a clean marketing lane: a prestige biopic about a beloved star whose public image and private pain collide. Awards buyers, classic-Hollywood audiences, and actors who want to play a cultural figure with emotional depth will all understand the appeal immediately.",
+          "evidence": "The script opens with Jimmy Stewart in the RKO screening room watching 'It’s a Wonderful Life,' then pivots into his wartime flashback and postwar crisis.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The war material has lived-in authenticity.",
-          "what_it_means": "The bomber procedures, crew roles, formation language, and combat geography create a credible wartime engine that can support serious prestige packaging. Military-history audiences, older male viewers, and actors who want procedural specificity will all feel the weight of the material.",
-          "evidence": "The pre-flight checklist, intercom callouts, formation briefing, and the detailed B-24 attack sequence over Germany all read like a world with rules and consequences.",
+          "dimension_or_area": "The war material has visceral scale.",
+          "what_it_means": "The bomber mission sequences give the film a cinematic engine that can widen the audience beyond pure biography and make the emotional stakes feel earned. Directors and buyers looking for a prestige war sequence with character at the center will see a strong theatrical hook.",
+          "evidence": "The B-24 mission over the North Sea, the German fighter attack, Obie’s death, Shardy’s injury, and Tex’s plane exploding all play as a sustained combat set piece.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Capra-Stewart relationship has real dramatic heat.",
-          "what_it_means": "This is the kind of mentor-protégé dynamic that gives a producer a two-hander inside a larger biopic, which is useful for awards positioning and trailer construction. Directors and actors who like emotionally literate male scenes will see immediate value in the Capra office confrontation.",
-          "evidence": "Capra confronts Stewart about his drinking and mood, then later tries to pull him back from the edge with a fatherly hug and a direct appeal to his sense of purpose.",
+          "dimension_or_area": "The Stewart-Capra relationship carries the spine.",
+          "what_it_means": "That mentor-artist dynamic gives the movie a built-in emotional argument about art, duty, and recovery, which is exactly the kind of relationship that helps a biopic feel dramatic rather than illustrative. Prestige actors and directors who like two-hander pressure scenes will respond to the Capra office confrontation.",
+          "evidence": "Capra confronts Stewart about drinking, depression, and his doubts about acting, then later tries to pull him back toward the profession.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Margaret Sullavan gives the script romantic voltage.",
-          "what_it_means": "Her scenes add a sensual, adult-romance layer that broadens the movie beyond war biography and gives the project a second emotional lane. A strong actress would see a juicy, emotionally complicated part with glamour, wit, and melancholy baked in.",
-          "evidence": "The Santa Barbara flying sequence, the Romanoff’s breakup conversation, and the Plaza reunion all frame her as both muse and moral pressure point.",
+          "dimension_or_area": "Margaret Sullavan gives the script heat.",
+          "what_it_means": "She adds romance, volatility, and a second emotional axis so the film is not only about war trauma and career doubt. That creates a more actor-friendly package for a female lead and broadens the film’s appeal to audiences who want the love story inside the legend.",
+          "evidence": "The Romanoff’s scenes, the hotel reunion, and the final phone call all frame Sullavan as Stewart’s emotional counterweight and romantic memory.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The movie’s emotional thesis is clean and exportable.",
-          "what_it_means": "The central idea — that a man who survived war has to decide whether his gift still matters — is universal enough to travel beyond classic-Hollywood fans. Prestige buyers and awards strategists can sell this as a story about purpose, legacy, and the cost of survival.",
-          "evidence": "Barrymore’s speech about legacy, Stewart’s guilt over the dead crewman Obie, and the final decision to keep acting all point to the same thematic spine.",
+          "dimension_or_area": "The title has a built-in irony engine.",
+          "what_it_means": "The script’s central tension — Stewart’s life versus the optimism of 'It’s A Wonderful Life' — gives the project a clean thematic hook that buyers can communicate in one sentence. That kind of irony is useful for trailers, festival positioning, and awards campaign language.",
+          "evidence": "Stewart watches the film, then reveals that he is struggling to believe in the very hope the movie represents.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The period world is a selling point, not just a backdrop.",
-          "what_it_means": "Hollywood in 1946, wartime England, and postwar Pennsylvania each carry distinct texture that can be marketed visually and tonally. Buyers who like lush period pieces with recognizable cultural landmarks will see a clear production value lane.",
-          "evidence": "RKO screening room, Beverly Hills homes, the Plaza, Romanoff’s, and the bomber airfield all feel specific and cinematic.",
+          "dimension_or_area": "The period world is richly legible.",
+          "what_it_means": "Hollywood backlots, wartime airfields, Beverly Hills homes, and New York hotel rooms create a textured studio-era canvas that feels premium and transportive. That helps the film sell as an event piece for audiences who love classic Hollywood and production design-forward storytelling.",
+          "evidence": "The screenplay moves from RKO to Tibenham, Beverly Hills, Indiana, Pennsylvania, the Plaza, and the St. Regis with specific period detail.",
           "source": "script"
         }
       ],
-      "headline": "This is a prestige biopic with a built-in emotional engine: Jimmy Stewart’s public legend collides with the private trauma of war, and the result is a role actors will want and buyers can frame. The script has the kind of classic-Hollywood texture, wartime authenticity, and adult romantic tension that can support awards-minded packaging and a strong trailer cut."
+      "headline": "This is a prestige biopic with a clean emotional engine: Jimmy Stewart, fresh off the war, is forced to reconcile the man he became in combat with the screen persona America loves. The script has the scale of a war picture, the intimacy of a character drama, and the built-in cultural recognition of one of the most famous titles in movie history."
     },
     "lead_characters": [
       {
-        "name": "JIMMY STEWART",
+        "name": "JAMES 'JIMMY' STEWART",
         "role_type": "Lead",
-        "demographics": "Male · late 30s to early 40s · white · lean, tall, iconic screen presence",
-        "hook": "A beloved movie star and decorated war pilot whose easy charm hides a man coming apart under survivor’s guilt. He is funny, self-effacing, romantic, and increasingly unable to reconcile the fantasy of Hollywood with what he has seen in combat.",
-        "why_actor_wants_this": "This is the showcase territory of Cillian Murphy in 'Oppenheimer' or Joaquin Phoenix in 'Walk the Line' — a public legend whose inner fracture becomes the performance. Actors who want to play charisma under pressure, emotional repression, and a slow-burn identity crisis will chase this hard."
+        "demographics": "Male · late 30s to early 40s · white · tall, lanky, Midwestern/Pennsylvania-rooted",
+        "hook": "A movie star who reads as all decency and ease until the war has hollowed him out from the inside. He is funny, self-effacing, romantic, and deeply wounded, with a public persona that keeps colliding with private grief and survivor’s guilt.",
+        "why_actor_wants_this": "This is the showcase territory of Casey Affleck in 'Manchester by the Sea' crossed with Tom Hanks in 'Saving Private Ryan' — a man whose restraint is the performance and whose silence carries the damage. Actors who want to play a beloved public figure with interior fracture, awards-season gravity, and a full emotional arc will chase it."
       },
       {
         "name": "FRANK CAPRA",
         "role_type": "Lead",
-        "demographics": "Male · 50s · Italian-American filmmaker",
-        "hook": "A forceful, affectionate director who knows how to push a star without losing him. He is part mentor, part producer, part emotional translator, and he becomes the adult in the room when Stewart starts to unravel.",
-        "why_actor_wants_this": "This is the kind of role that has the moral authority of Paul Giamatti in 'The Holdovers' or Tom Wilkinson in 'Michael Clayton' — a man whose intelligence is expressed through pressure, patience, and blunt care. Character actors who can play warmth, irritation, and authority in the same scene will want it."
-      },
-      {
-        "name": "MARGARET SULLAVAN",
-        "role_type": "Lead",
-        "demographics": "Female · 30s · white · glamorous, sharp, emotionally volatile",
-        "hook": "A magnetic actress who understands desire, compromise, and the cost of choosing a practical life over a romantic one. She is playful, sexually confident, and emotionally lucid, but there is real sadness under her wit.",
-        "why_actor_wants_this": "This is the showcase lane of Michelle Williams in 'My Week with Marilyn' or Kate Winslet in 'Revolutionary Road' — a luminous woman whose intelligence and longing are always in tension. Actresses looking for a part with glamour, bite, and emotional complexity will see a lot to play."
+        "demographics": "Male · 50s · Italian-American",
+        "hook": "A forceful, affectionate director who believes in the moral power of movies and knows exactly how to push his star. He is warm, paternal, and professionally relentless, with enough vanity and conviction to make him feel alive rather than merely supportive.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the sharp, talky authority of Paul Giamatti in 'Sideways' or J.K. Simmons in 'Whiplash' — a mentor figure who can dominate a room while still revealing tenderness. Character actors who like playing intelligence, pressure, and old-school Hollywood command will want it."
       },
       {
         "name": "LIONEL BARRYMORE",
         "role_type": "Lead",
-        "demographics": "Male · late 60s to 70s · white · wheelchair user, chronic arthritis",
-        "hook": "A legendary old pro with a wicked sense of humor and the authority to tell the truth no one else will say. He is physically diminished but dramatically enormous, and he becomes the script’s clearest voice of hard-earned wisdom.",
-        "why_actor_wants_this": "This is the kind of part that gives an actor the gravitas of Anthony Hopkins in 'The Father' or Christopher Plummer in 'Beginners' — a late-life role where wit and mortality sit in the same chair. Veteran character actors will chase the chance to be both comic and devastating in one performance."
+        "demographics": "Male · late 60s to early 70s · white · wheelchair user / chronic arthritis",
+        "hook": "A grand, mischievous elder statesman who can turn from comic ribbing to moral clarity in a breath. He is physically diminished but spiritually expansive, and the script uses that contrast to make him both funny and devastating.",
+        "why_actor_wants_this": "This is the showcase space of Anthony Hopkins in 'The Father' or Christopher Plummer in 'Beginners' — an older performer given wit, authority, and the chance to land emotional truth without sentimentality. Veteran actors who want a late-career role with dignity, bite, and memorable speeches will circle it."
+      },
+      {
+        "name": "MARGARET SULLAVAN",
+        "role_type": "Lead",
+        "demographics": "Female · 30s · white",
+        "hook": "A glamorous, emotionally intelligent, slightly dangerous romantic force who knows exactly what she wants and refuses to apologize for it. She is playful, sexually frank, and more pragmatic than Jimmy, which makes her both his temptation and his truth-teller.",
+        "why_actor_wants_this": "This is the kind of part that gives an actress the electricity of Michelle Williams in 'My Week with Marilyn' or Julianne Moore in 'The End of the Affair' — a woman who can be luminous, wounded, and decisive in the same scene. Actresses looking for a role that blends romance, wit, and emotional authority will respond immediately."
       },
       {
         "name": "JOE “TEX” HARDY",
         "role_type": "Supporting",
-        "demographics": "Male · mid-30s · white · Texas drawl, bomber pilot",
-        "hook": "A confident squadron leader who brings swagger, competence, and a little frontier humor to the air war. He functions as the kind of commander men trust immediately, which makes his presence in the combat sequences feel stabilizing and real.",
-        "why_actor_wants_this": "This is the kind of military-support role that has the easy authority of Michael Shannon in 'Midway' or Josh Brolin in 'Sicario' — a man whose command presence is the point. Actors who like playing grounded leadership with a regional edge will be drawn to it."
+        "demographics": "Male · mid-30s · white · Texas drawl",
+        "hook": "A seasoned bomber pilot who projects calm, competence, and easy camaraderie under lethal pressure. He functions as the mission’s human anchor, the kind of leader whose confidence makes the surrounding danger feel even sharper.",
+        "why_actor_wants_this": "This is the kind of supporting role that has the grounded authority of Tom Berenger in 'Platoon' or Michael Keaton’s command in 'The Company You Keep' — a man who can make a few scenes feel essential by sheer presence. Actors who like playing professional competence with regional flavor will be drawn to it."
       },
       {
         "name": "LT. LLOYD “SHARDY” SHARRARD",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · co-pilot",
-        "hook": "A younger co-pilot who gives Stewart a human sounding board inside the bomber. He is nervous, loyal, and practical, which makes him the audience’s proxy for the fear inside the plane.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded, reactive energy of Barry Keoghan in 'Dunkirk' or Lucas Hedges in 'Manchester by the Sea' — someone whose fear and loyalty sharpen the lead’s emotional profile. Younger dramatic actors looking for a credible ensemble part will respond to it."
+        "demographics": "Male · 20s · white",
+        "hook": "Jimmy’s co-pilot is young, nervous, and loyal, with the kind of plainspoken humor that keeps fear from taking over. He gives the bomber cockpit a human pulse and lets the audience feel the mission through a less seasoned set of eyes.",
+        "why_actor_wants_this": "This has the nervous, endearing energy of Jonah Hill in 'War Dogs' or Jack Quaid in 'Oppenheimer' — a younger performer getting to play fear, loyalty, and gallows humor in a pressure cooker. Emerging actors who want a memorable ensemble role with clear stakes will want it."
       },
       {
         "name": "OBIE",
         "role_type": "Supporting",
-        "demographics": "Male · 18 · white · ball turret gunner",
-        "hook": "The youngest crewman, eager to prove himself and full of boyish energy before the war takes him. He gives the mission its most painful human cost because he feels like a kid, not a symbol.",
-        "why_actor_wants_this": "This is the kind of brief but memorable wartime part that has the emotional sting of George MacKay in '1917' or Jack O’Connell in 'Unbroken' — a young man whose innocence makes the loss land. Emerging actors who want a role that can break an audience’s heart quickly will be interested."
+        "demographics": "Male · 18 · white",
+        "hook": "The youngest crew member, eager to prove himself and full of boyish confidence before the mission turns fatal. He gives the combat scenes their most heartbreaking innocence.",
+        "why_actor_wants_this": "This is the kind of role that recalls the emotional punch of the young soldiers in 'Saving Private Ryan' or '1917' — brief screen time with a devastating imprint. Young actors looking for a role that can break an audience’s heart in one sequence will want it."
       },
       {
         "name": "BILLY",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · right waist gunner",
-        "hook": "A crewman with enough personality to keep the bomber feeling like a living workplace rather than a machine. He is part of the banter and part of the fear, which helps the mission feel communal.",
-        "why_actor_wants_this": "This is the kind of ensemble wartime role that gives an actor the texture of a supporting player in 'Band of Brothers' — not the center, but the kind of part that makes the unit feel real. Character actors and rising TV names will see a clean, playable slot."
+        "demographics": "Male · 18-20s · white",
+        "hook": "A waist gunner whose banter and nerves help define the crew’s camaraderie. He is one of the faces that makes the bomber feel like a living unit rather than a machine.",
+        "why_actor_wants_this": "This is the kind of ensemble part that gives a young actor the camaraderie and battlefield immediacy of the supporting soldiers in 'Band of Brothers.' Actors who want to be part of a tight, emotionally legible unit will see the value."
       },
       {
         "name": "SAMMY",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · left waist gunner/radio man",
-        "hook": "A nervous, observant crewman who carries both the radio chatter and the emotional temperature of the plane. He is one of the first to register fear, which makes him useful as a pressure valve in the combat scenes.",
-        "why_actor_wants_this": "This is the kind of role that works like a strong ensemble turn in 'Saving Private Ryan' — a character with enough specificity to stand out without needing the whole movie on his shoulders. Actors who like reactive, high-tension support work will want it."
+        "demographics": "Male · 18-20s · white",
+        "hook": "The radio man and left waist gunner, quick with a joke and quick to feel the fear underneath it. He helps carry the crew’s emotional temperature and gives the cockpit its lived-in rhythm.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play wit under pressure, similar to the ensemble soldiers in 'Dunkirk' or 'Masters of the Air.' Young actors who want a compact but vivid wartime part will be interested."
       },
       {
         "name": "BOBBY",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · engineer/top turret gunner",
-        "hook": "A mechanically minded crewman who can step into the cockpit if needed and keeps the plane functioning under pressure. He has the practical competence that makes the bomber sequences feel operational rather than abstract.",
-        "why_actor_wants_this": "This is the kind of utility-support role that has the crisp professionalism of a good war-film ensemble part in 'Dunkirk' — a man whose competence is the character. Actors who can play calm under fire will be attracted to it."
+        "demographics": "Male · 18-20s · white",
+        "hook": "The engineer/top turret gunner who can flip from card-playing ease to battlefield urgency in a second. He is practical, alert, and one of the crew’s most useful voices when the plane starts taking damage.",
+        "why_actor_wants_this": "This has the utility-player appeal of a strong ensemble role in 'The Thin Red Line' or 'Band of Brothers' — a part that gets to be both comic and indispensable. Character actors and rising ensemble players will want the chance to make the cockpit feel real."
       },
       {
         "name": "RUDY",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · nose gunner",
-        "hook": "A straightforward gunner whose job is to keep the front of the plane alive. He is less verbally defined than some of the others, but he helps complete the crew’s sense of scale and teamwork.",
-        "why_actor_wants_this": "This is the kind of compact military role that gives an actor the functional realism of a platoon member in 'Band of Brothers.' It’s a clean supporting slot for someone who wants to be part of a serious ensemble without carrying the narrative load."
+        "demographics": "Male · 18-20s · white",
+        "hook": "The nose gunner and bombardier-side presence who helps complete the bomber’s human geography. He is less about speeches than about the collective rhythm of the crew.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor a clean wartime profile and a place in a larger ensemble machine, similar to the support players in 'Memphis Belle.' Actors who want a credible military role without carrying the whole picture will like it."
       },
       {
         "name": "CHET",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · bombardier",
-        "hook": "The crewman responsible for the bomb run, which makes him the personification of the mission’s purpose. He is a procedural presence more than a psychological one, but he helps anchor the mechanics of the attack.",
-        "why_actor_wants_this": "This is the sort of specialized wartime role that gives an actor the technical specificity of a mission crew in 'Memphis Belle.' Actors who like playing a job inside a larger machine will see the appeal."
+        "demographics": "Male · 18-20s · white",
+        "hook": "The bombardier, defined by precision and timing rather than personality flourishes. He adds procedural credibility to the mission and helps the bomber feel operationally specific.",
+        "why_actor_wants_this": "This is the kind of role that appeals to actors who like technical competence on screen, the same way support parts in 'Apollo 13' or 'The Right Stuff' do. It offers a clean, professional military slot in a prestige ensemble."
       },
       {
         "name": "VIRGIL",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · white · navigator",
-        "hook": "The man plotting the route home and marking the target, which gives him a quiet authority inside the bomber. He is one of the few crew members whose work literally maps the story’s direction.",
-        "why_actor_wants_this": "This is the kind of precision-support role that has the calm intelligence of a navigator in a classic war picture like 'Twelve O’Clock High.' Actors who can play competence with minimal fuss will be interested."
+        "demographics": "Male · 18-20s · white",
+        "hook": "The navigator who keeps the mission oriented and the audience grounded in geography. He is the crew member who translates chaos into direction.",
+        "why_actor_wants_this": "This is the sort of role that gives an actor the procedural authority of a mission specialist in 'Apollo 13' — a part built on calm competence. Actors who like playing the brain of an operation will respond to it."
       },
       {
         "name": "ALEX STEWART",
         "role_type": "Supporting",
-        "demographics": "Male · 60s · white · father",
-        "hook": "A warm, practical father who speaks the language of home, duty, and providence. He gives Stewart a place to land emotionally, and his scenes carry the script’s small-town moral center.",
-        "why_actor_wants_this": "This is the kind of father role that has the plainspoken authority of Tom Hanks in 'A Beautiful Day in the Neighborhood' or Brian Cox in 'Succession' when he turns unexpectedly tender. Veteran character actors will like the chance to be the emotional ballast of the homecoming material."
-      },
-      {
-        "name": "ELIZABETH STEWART",
-        "role_type": "Supporting",
-        "demographics": "Female · 60s · white · mother",
-        "hook": "A loving, observant mother who keeps the family emotionally organized. She is the domestic counterpart to the war and Hollywood worlds, and her warmth helps make the homecoming feel earned.",
-        "why_actor_wants_this": "This is the kind of maternal role that has the quiet authority of Frances McDormand in 'Nomadland' or Sally Field in 'Steel Magnolias' — a woman whose care is the scene’s emotional infrastructure. Strong character actresses will respond to the dignity of the part."
-      },
-      {
-        "name": "GINNY",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s · white · sister",
-        "hook": "A lively younger sister who brings family banter and a little sparkle to the home scenes. She helps the Stewart household feel lived-in and affectionate.",
-        "why_actor_wants_this": "This is the kind of supporting family role that gives an actress the easy, scene-lifting energy of a sibling in a prestige period drama. Young actresses who want a warm, playable ensemble part will see the value."
-      },
-      {
-        "name": "MARY",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s · white · sister",
-        "hook": "A second sister who helps round out the family’s Christmas warmth and gives Stewart a softer domestic anchor. She is part of the home’s emotional texture rather than a separate plot engine.",
-        "why_actor_wants_this": "This is the kind of period-family role that gives an actress the charm and presence of a supporting turn in a holiday-set prestige drama. It’s a clean, appealing slot for someone who wants to be part of the emotional fabric of the movie."
+        "demographics": "Male · 60s · white · Pennsylvania father",
+        "hook": "Jimmy’s father is a warm, practical, faith-inflected presence who understands his son better than Jimmy wants to admit. He is the family voice of grounding, providence, and home.",
+        "why_actor_wants_this": "This is the kind of father role that gives an actor the quiet authority of Tom Wilkinson in 'In the Bedroom' or Brian Cox in 'The Escapist' — a scene partner who can carry emotional truth with very little screen time. Older character actors who specialize in warmth and moral weight will want it."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a prestige period drama with emotional intimacy and wartime scale.",
-        "fit_profile": "Established indie or prestige-feature directors with at least one or two character-driven films under their belt, especially those comfortable balancing performance scenes with set-piece logistics. This material rewards directors who care about emotional restraint, classical framing, and the ability to make history feel personal rather than museum-like.",
-        "detail": "The craft opportunity is to braid cockpit tension, studio-era glamour, and intimate confession into one coherent emotional arc. Directors who can move between ensemble period detail and close-up psychological pressure will see a strong showcase here."
+        "hook": "A director who wants to make a prestige biopic with wartime scale and old-Hollywood intimacy.",
+        "fit_profile": "Established indie or prestige-feature directors with at least one character-driven drama or historical piece behind them, especially those who care about performance-first storytelling, period texture, and emotional restraint. This material rewards filmmakers who can stage combat with clarity but still keep the camera on the face that’s breaking underneath it.",
+        "detail": "The movie gives a director two strong arenas: the bomber sequences and the intimate rooms where Stewart is forced to articulate what the war did to him. That combination attracts directors who can balance spectacle with interiority and who want a project that feels awards-ready without needing franchise scale."
       },
       "buyer_appeal": {
-        "tier": "$15-30M prestige feature",
-        "lane": "Awards-leaning theatrical drama / premium streamer prestige lane",
-        "detail": "The project can be packaged around one major lead performance plus a strong supporting trio, which gives buyers a clear awards-facing anchor without needing a giant ensemble. The wartime material and classic-Hollywood subject matter give it both festival credibility and a built-in older audience that still responds to legacy biopics."
+        "tier": "Mid-budget prestige feature",
+        "lane": "Awards-season biographical drama / classic-Hollywood lane",
+        "detail": "The Stewart role is the packaging magnet, so the project benefits from a recognizable lead or a major prestige actor willing to play against type. The classic-Hollywood subject matter and wartime set pieces give it a festival-to-platform runway and a secondary audience among older moviegoers and awards viewers."
       }
     },
     "considerations": [
       {
-        "area": "The bomber sequence is the biggest production driver.",
-        "detail": "The air-combat material is the most expensive and technically demanding stretch, so the cleanest simplification lever would be to protect the emotional beats while compressing the number of distinct aerial engagements. One version of the script where the mission’s escalation is concentrated into fewer combat beats would preserve impact and reduce aircraft/VFX load.",
+        "area": "The combat set pieces carry the budget.",
+        "detail": "The bomber mission, fighter attacks, flak damage, and aircraft explosions are the main spend drivers, so the cleanest version of the film is one that protects those sequences and keeps the rest of the movie intimate. A next pass could continue to concentrate the war material into a few major set pieces so the period drama remains producible at a prestige mid-budget level.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The script leans heavily on named historical figures.",
+        "detail": "Because Stewart, Capra, Barrymore, Sullavan, Reed, and others are all dramatized by name, the project will want a clear rights and approvals strategy before packaging gets too far. That said, the real-person framework is also the movie’s commercial identity, so the material should be positioned as a prestige biopic rather than softened into a generic Hollywood story.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The opening spends a long time in the screening room.",
+        "detail": "The frame is elegant, but the first stretch is mostly setup before the emotional engine fully turns. One lever would be to let the wartime fracture arrive a little sooner, so the audience feels the collision between 'It’s a Wonderful Life' and Stewart’s inner life earlier in the movie.",
         "is_primary_lever": true,
-        "source": "production"
+        "source": "script"
       },
       {
-        "area": "The script carries a large historical cast.",
-        "detail": "The current draft asks for multiple named real people plus a full bomber crew, which means packaging will benefit from a clear hierarchy of who absolutely needs name recognition and who can be cast for authenticity. A next pass could clarify which supporting crew members are essential on the page versus present for texture, which would help streamline casting conversations.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The opening screening-room frame can move faster.",
-        "detail": "The film spends a long stretch establishing the 'It’s a Wonderful Life' screening before the emotional engine fully turns toward Stewart’s inner crisis. One direction would be to let the first crack in Stewart’s mood arrive a little earlier, so the audience feels the pressure of the frame sooner and the transition into flashback lands with more force.",
+        "area": "The Capra and Barrymore scenes are the dramatic core.",
+        "detail": "Those conversations already carry the movie’s best adult tension, and a next pass could further foreground them as the pressure points that move Stewart rather than as pauses between flashbacks. The more each exchange changes his decision-making, the more the film will feel like a true character drama instead of a sequence of historical moments.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The combat detail sometimes outruns the emotion.",
-        "detail": "The mission sequence is vivid, but some of the procedural callouts and formation language stack for a long stretch before the personal cost fully reasserts itself. A next pass could tighten a few of the technical exchanges so the audience stays locked to Stewart’s emotional point of view while the action still feels authentic.",
+        "area": "Maggie’s arc can do even more narrative work.",
+        "detail": "She already functions as romance, memory, and emotional counterweight, which is a strong foundation. The version of the script where her scenes more directly challenge Stewart’s idea of home, duty, and legacy would deepen the love story and give the final phone call even more charge.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "Maggie’s final phone call is a strong hinge.",
-        "detail": "The Plaza reunion and the Christmas phone call give the story a clean emotional turn, and that material deserves to feel like the decisive romantic and existential beat of the film. The version of the script where that sequence is even more foregrounded would sharpen the ending’s lift and make Stewart’s choice feel fully earned.",
+        "area": "The ending lands on biography after the drama.",
+        "detail": "The closing crawl gives the audience the historical payoff, but the emotional finish is Stewart’s choice to keep acting and keep living. One direction would be to make sure the final dramatic beat itself feels complete before the factual epilogue arrives, so the movie ends on feeling first and information second.",
         "is_primary_lever": false,
         "source": "script"
       }
@@ -382,7 +329,7 @@
   "weightedScore": 71.3,
   "tier": "Optionable",
   "inputTokens": 40593,
-  "outputTokens": 7009,
-  "cost": 0.06198525,
+  "outputTokens": 5563,
+  "cost": 0.05547825,
   "declaredFormat": "Feature film"
 }

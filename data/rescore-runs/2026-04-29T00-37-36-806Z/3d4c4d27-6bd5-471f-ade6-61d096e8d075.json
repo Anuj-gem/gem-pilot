@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T00:55:31.704Z",
+  "submission_id": "3d4c4d27-6bd5-471f-ade6-61d096e8d075",
+  "eval_id": "440f45f8-faea-4ee7-bddc-9690abc8238b",
+  "title": "Forever Girl",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "Badr-un-Nissa Begum / Nissa",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Mughal princess"
+    },
+    {
+      "name": "Durga",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Indian · Urdubegis warrior"
+    },
+    {
+      "name": "Santi",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Indian · royal servant / dasi"
+    },
+    {
+      "name": "Aurangzeb",
+      "role_type": "Supporting",
+      "demographics": "Male · late 70s · Mughal Emperor"
+    }
+  ],
+  "positioning_hook": "A Mughal princess uses a singing bowl to hide a forbidden child, then must erase the night from her two closest allies before her father discovers the truth.",
+  "cost_usd": 0.0627015,
+  "input_tokens": 36694,
+  "output_tokens": 7818,
+  "status": "wrote:leads_ok"
+}

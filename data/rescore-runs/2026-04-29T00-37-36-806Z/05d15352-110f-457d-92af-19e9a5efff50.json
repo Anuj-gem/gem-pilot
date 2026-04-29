@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:13:01.225Z",
+  "submission_id": "05d15352-110f-457d-92af-19e9a5efff50",
+  "eval_id": "eb8620ea-578c-4185-8427-230c75b6697b",
+  "title": "Inception",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Dom Cobb",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · American"
+    },
+    {
+      "name": "Ariadne",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · French or international student type"
+    },
+    {
+      "name": "Arthur",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · American or British"
+    },
+    {
+      "name": "Eames",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · British"
+    },
+    {
+      "name": "Yusuf",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 50s · South Asian or Middle Eastern"
+    },
+    {
+      "name": "Saito",
+      "role_type": "Lead",
+      "demographics": "Male · 40s to 60s · Japanese"
+    },
+    {
+      "name": "Mal",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · American"
+    },
+    {
+      "name": "Robert Fischer",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · Australian or international executive type"
+    },
+    {
+      "name": "Miles",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 70s · French academic"
+    }
+  ],
+  "positioning_hook": "A master extractor takes one last job to plant an idea inside a corporate heir’s mind, but his dead wife keeps sabotaging the mission from inside his own subconscious.",
+  "cost_usd": 0.06498075,
+  "input_tokens": 58327,
+  "output_tokens": 4719,
+  "status": "wrote:leads_ok"
+}

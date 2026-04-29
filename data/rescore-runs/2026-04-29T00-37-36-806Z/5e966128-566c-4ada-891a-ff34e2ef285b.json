@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:13:48.562Z",
+  "submission_id": "5e966128-566c-4ada-891a-ff34e2ef285b",
+  "eval_id": "c9b1f9ad-bd08-4fc9-9d6a-0ac20fb21b1a",
+  "title": "Stranger Things",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Joyce Byers",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · working-class Midwestern mother"
+    },
+    {
+      "name": "Jim Hopper",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · sheriff"
+    },
+    {
+      "name": "Mike Wheeler",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Dustin Henderson",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Lucas Sinclair",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Nancy Wheeler",
+      "role_type": "Lead",
+      "demographics": "Female · mid-to-late teens"
+    },
+    {
+      "name": "Eleven",
+      "role_type": "Lead",
+      "demographics": "Female · child · shaved head / institutionalized presentation"
+    },
+    {
+      "name": "Will Byers",
+      "role_type": "Lead",
+      "demographics": "Male · early teens"
+    },
+    {
+      "name": "Jonathan Byers",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens"
+    },
+    {
+      "name": "Steve Harrington",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens"
+    },
+    {
+      "name": "Karen Wheeler",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · suburban mother"
+    },
+    {
+      "name": "Ted Wheeler",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · suburban father"
+    },
+    {
+      "name": "Benny Hammond",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · diner owner"
+    },
+    {
+      "name": "Dr. Brenner",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s · scientist / government authority"
+    },
+    {
+      "name": "Connie Frazier",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s · social services"
+    },
+    {
+      "name": "Scott Clarke",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · middle-school teacher"
+    }
+  ],
+  "positioning_hook": "A missing boy in small-town Indiana pulls his friends, his mother, and a disgraced sheriff into a supernatural cover-up that starts with a D&D game and ends in the dark.",
+  "cost_usd": 0.03700425,
+  "input_tokens": 15607,
+  "output_tokens": 5622,
+  "status": "wrote:leads_ok"
+}

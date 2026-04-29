@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:07:48.254Z",
+  "submission_id": "cc78f311-cd22-435a-b889-45398c8253bc",
+  "eval_id": "4db6283f-4bb0-441e-9e61-2ed7a31e404f",
+  "title": "The Vanish Woods",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "ANGIE",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · college swimmer"
+    },
+    {
+      "name": "LAUREN",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · college swimmer captain"
+    },
+    {
+      "name": "KENDALL",
+      "role_type": "Lead",
+      "demographics": "Female · 19 · college swimmer, red-haired"
+    },
+    {
+      "name": "MAY",
+      "role_type": "Lead",
+      "demographics": "Female · 20 · Asian-American college swimmer"
+    },
+    {
+      "name": "DEVINA",
+      "role_type": "Lead",
+      "demographics": "Female · 21 · Black college swimmer"
+    },
+    {
+      "name": "LUCAN",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · feral, physically imposing"
+    },
+    {
+      "name": "JEREMIAH KENT",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · massive, ill-tempered"
+    },
+    {
+      "name": "NATHAN",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · man-child, rural"
+    },
+    {
+      "name": "AUNT DEE",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s to 70s · rural matron"
+    },
+    {
+      "name": "UNCLE RED",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · rural elder"
+    },
+    {
+      "name": "MADAM DRABARDI",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s+ · mystic, rural"
+    },
+    {
+      "name": "ZEKE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · local yokel"
+    },
+    {
+      "name": "DEKE",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · local yokel"
+    }
+  ],
+  "positioning_hook": "A pregnant college swimmer on a spring-break bike trip gets stranded in backwoods territory where a family bargain has turned the woods into a werewolf feeding ground.",
+  "cost_usd": 0.053323499999999996,
+  "input_tokens": 39046,
+  "output_tokens": 5342,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:00:44.228Z",
+  "submission_id": "42fb2ebc-c4fe-40d4-9608-50748a7e83b2",
+  "eval_id": "3416eb73-2c4f-4d7f-8978-65d7d7e40d47",
+  "title": "FIN",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Drake “Fin” Finley",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · athletic, California surfer, physically capable, handsome, weathered by addiction"
+    },
+    {
+      "name": "Macy Jimenez",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · Latina · lawyer / fixer with surf-world fluency"
+    },
+    {
+      "name": "Detective Cindy Chiu",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · Asian-American · detective, legacy cop"
+    },
+    {
+      "name": "Sage Andersen",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · surfer / board shaper, physically limited by a limp"
+    },
+    {
+      "name": "Josh “Skull” James",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · bald, surfer-local alpha, physically imposing"
+    },
+    {
+      "name": "Pudge McNeely",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · scruffy photographer, stoner energy"
+    },
+    {
+      "name": "Yannick Goins",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · polished, wealthy, surf-industry executive"
+    },
+    {
+      "name": "Tank",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · large, physically intimidating surfer"
+    },
+    {
+      "name": "Gabriel",
+      "role_type": "Supporting",
+      "demographics": "Male · 14 · teen surfer, eager, impressionable"
+    }
+  ],
+  "positioning_hook": "A burned-out surf sleuth is pulled back into the water when a missing photographer case exposes a local surf crew, a cartel pipeline, and the death he still can’t outrun.",
+  "cost_usd": 0.04442475,
+  "input_tokens": 28783,
+  "output_tokens": 5075,
+  "status": "wrote:leads_ok"
+}

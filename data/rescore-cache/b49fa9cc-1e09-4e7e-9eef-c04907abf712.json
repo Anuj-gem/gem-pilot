@@ -2,318 +2,311 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi thriller",
+      "genre_primary": "Sci-fi action thriller",
       "genre_tags": [
-        "Horror",
-        "Action"
+        "horror",
+        "police procedural"
       ],
-      "tone": "Gritty, pulpy, satirical"
+      "tone": "gritty, pulpy, heightened, satirical"
     },
-    "positioning_hook": "A hardline undead cop and his rookie partner uncover a police-state conspiracy in a city where zombies, vampires, and werewolves are already part of the force.",
+    "positioning_hook": "A hard-bitten undead cop in a segregated monster city uncovers a police conspiracy that turns the dead battery into a private army — and his partner is the bait.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean genre promise: monster policing, conspiracy, and a corrupt authority reveal all read quickly and sell in one sentence. The audience lane is clear for genre fans, though the script’s heavy world-specific terminology and procedural texture make it more cult-forward than four-quadrant."
+        "reasoning": "The premise has an immediate genre promise: a cop movie where zombies, vampires, and werewolves are part of the civic order, with action set pieces, a conspiracy engine, and a clear hero. The audience is real and the hook is easy to sell, though the material plays more cult-commercial than four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands immediately in the opening pages with Helm killing a vampire in a restroom, then revealing a dead-battery police unit that handles the undead sector. The Re-Life conspiracy and the chip mystery give the feature a second engine that sharpens the premise beyond the initial monster-cop setup."
+        "reasoning": "The script announces its world fast with Helm killing a vampire in the opening pages, then quickly explains the dead battery/live battery split, the monster wars, and the procedural rules. By the time Foster is on patrol, the engine is clear: a monster-policing precinct is hiding something rotten."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 6,
-        "reasoning": "Helm has a strong central contradiction — devout, grieving, and ruthlessly committed to the job — and Foster gives the story a useful audience surrogate. The supporting players mostly serve the investigation and the conspiracy, so the character field is functional and the lead role carries most of the weight."
+        "score": 7,
+        "reasoning": "Helm has a strong stoic center, grief over his wife, and a code that makes him playable beyond the premise. Foster gives the story a second viewpoint and Reynolds adds emotional counterweight, but the characters mostly serve the central engine rather than generating many independent layers."
       },
       "creative_originality_and_boldness": {
-        "score": 7,
-        "reasoning": "The script commits to a fully imagined undead civic system, from live battery/dead battery policing to Re-Life disposal and monster labor hierarchies. The boldness is in the social satire and the bureaucratic absurdity, even when the plotting stays in familiar cop-thriller lanes."
+        "score": 8,
+        "reasoning": "The script commits to a full civic ecosystem for the undead, with monster labor, monster vice, monster law enforcement, and a Re-Life conspiracy beneath it all. The boldness is in treating the supernatural as municipal infrastructure, not just as a monster-of-the-week wrapper."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The story keeps moving through patrol calls, escalating monster encounters, and a steady drip of conspiracy clues. The back half builds effectively toward the Re-Life reveal and Beacon’s betrayal, giving the feature a clear escalation path and a strong final confrontation."
+        "reasoning": "The story keeps moving through patrol calls, escalating discoveries, and a conspiracy reveal that pays off in a strong final act. The middle section leans procedural and explanatory at times, but the escalation from routine calls to the Re-Life unit keeps the momentum intact."
       },
       "resonant_originality": {
-        "score": 7,
-        "reasoning": "The idea of an undead precinct policing an undead city feels instantly legible and fresh, especially with the dead/live battery split and the Re-Life body pipeline. The concept has that useful quality where the world itself suggests story before the plot even starts."
+        "score": 8,
+        "reasoning": "The idea of a police precinct for the dead, with execution bureaucracy, monster rights, and a hidden body-processing system, feels fresh and immediately legible. It has that rare quality of being strange on paper but intuitive in execution."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The script is rich with civic texture: precinct hierarchy, medical examiners, live/dead battery divisions, Re-Life processing, monster labor roles, and public policy pressure. The city feels operational rather than decorative, and the setting generates plot at every turn."
+        "reasoning": "The precinct, the Crypt, the Holding Tower, the Re-Life unit, the live/dead battery split, and the monster labor hierarchy all give the world visible institutional edges. The setting is not just backdrop; it generates the story’s rules, conflicts, and imagery."
       },
       "tonal_specificity": {
-        "score": 7,
-        "reasoning": "The tone blends hardboiled cop banter, gore, and deadpan civic satire in a way that is easy to identify from a page or two. The script knows when to play the absurdity straight, especially in scenes like the dick-in-a-box call and the porn-store raid."
+        "score": 8,
+        "reasoning": "The script has a distinct pulp-noir register: deadpan cop banter, grotesque body horror, civic satire, and straight-faced monster bureaucracy. Scenes like the dick-in-a-box domestic call, the necrophilia bust, and Beacon’s gleeful corruption give it a hard-to-mistake identity."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 6,
-        "reasoning": "Beneath the monster-action surface, the script is interested in grief, institutional control, and the ethics of public safety. Those themes are present and usable, though the feature mostly drives them through plot rather than letting them accumulate in quieter, more layered ways."
+        "score": 7,
+        "reasoning": "Under the action surface, the script is about grief, institutional rot, and the cost of enforcing order in a broken world. The Helm/Reynolds relationship and the Beacon conspiracy suggest more emotional and political material than the plot initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Helm/Foster is a solid engine, and Reynolds adds a useful emotional and investigative counterweight. The ensemble is serviceable and story-active, but the script is still primarily powered by Helm’s point of view rather than a web of equally generative relationships."
+        "reasoning": "Helm and Foster carry the story well, and Reynolds and Beacon add useful pressure, but the script is still primarily driven by Helm’s perspective. The ensemble functions, though most relationships orbit the lead rather than creating a fully combinatorial web."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 16,
+        "speaking_roles": 14,
         "leads": 4,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Male lead in 30s-40s with physical authority",
-          "Younger male partner in 20s-30s",
-          "Female lead in 30s-40s with intelligence and emotional range",
-          "Commissioner role with strong villain charisma",
-          "Multiple creature roles and undead performers"
+          "adult ensemble",
+          "monster performers with prosthetic or makeup requirements",
+          "one strong action lead",
+          "one female lead with emotional authority"
         ]
       },
       "locations": {
         "distinct_count": 18,
         "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "contemporary-future",
+        "period_or_contemporary": "contemporary with speculative future elements",
         "notable_requirements": [
-          "Police precinct with administrative offices and lab",
-          "Contained underground Re-Life facility",
-          "Church confession booth",
-          "Adult bookstore/video booth set",
-          "Multiple alleyways, streets, and domestic interiors",
-          "Prison visitation area and tower exterior"
+          "police precinct complex",
+          "bar/nightclub interiors",
+          "apartment interiors",
+          "church/confessional",
+          "courtroom/TV news inserts",
+          "underground laboratory set",
+          "adult bookstore/vice location",
+          "suburban homes",
+          "street and alley night exteriors"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Creature transformations, disintegration effects, telekinetic/energy weapon impacts, and a final energy-vortex sequence.",
+        "vfx_details": "monster transformations, deionizer disintegration effects, energy-hole/vortex finale, telepathic/containment lab visuals, some creature enhancement",
         "stunts_level": "moderate",
-        "sfx_needs": "Practical gore, creature makeup/prosthetics, severed limbs, body destruction, blood effects, and armored police gear.",
+        "sfx_needs": "prosthetic wounds, severed limbs, disintegration, blood effects, creature makeup, practical monster gore",
         "night_shoots": "significant",
         "animals": false
       },
-      "rights_flags": [],
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "No prominent real-world brands are central to the story."
+        }
+      ],
       "platform_fit": {
-        "recommended_lane": "Streaming genre feature / mid-budget theatrical genre lane",
-        "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or genre-platform path"
+        "recommended_lane": "streaming or genre-focused theatrical release",
+        "content_level": "mature",
+        "series_engine_or_release_model": "Feature release model with strong cult/genre appeal; could also play as a festival-to-platform title"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Creature effects, gore, armored police gear, and a contained underground lab push this above microbudget but still below tentpole scale."
+          "note": "Creature makeup, gore effects, multiple night exteriors, and a contained but effects-driven finale place it above a bare-bones indie, below a tentpole."
         },
         "cast": {
           "level": "medium",
-          "note": "The story centers on four principal roles, but the monster ensemble and villain reveal require distinctive casting across human and creature parts."
+          "note": "The story centers on four substantial roles, with several supporting officers and monster types that need clear casting identity."
         },
         "location": {
           "level": "medium",
-          "note": "The script uses a manageable number of urban interiors and exteriors, but it does move through precinct, homes, bars, alleyways, prison, and a hidden lab."
+          "note": "The script moves through precincts, streets, bars, homes, a church, a courtroom, and a hidden lab, but most spaces are controllable interiors or urban exteriors."
         },
         "content": {
           "level": "high",
-          "note": "Graphic violence, dismemberment, necrophilia imagery, sexual content, and execution themes narrow the platform lane to mature buyers."
+          "note": "Graphic gore, executions, necrophilia imagery, sexual content, and body horror narrow the lane to mature genre buyers."
         },
         "rights": {
           "level": "low",
-          "note": "The story is original and does not rely on named music, brands, or real-person rights."
+          "note": "The story is original and does not depend on named music, brands, or life rights."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise has an instantly playable civic engine.",
-          "what_it_means": "The dead-battery/live-battery split gives buyers a world that can generate set pieces, procedural calls, and institutional conflict without needing a giant mythology dump. Genre audiences and streamer buyers who want a high-concept cop frame with monster rules will clock it fast.",
-          "evidence": "The opening precinct setup, the live-battery transfer of Foster, and the repeated references to Re-Life and the undead sector.",
+          "dimension_or_area": "The world is built like a civic machine.",
+          "what_it_means": "That gives the project a clean commercial identity: monster law enforcement, monster labor, monster bureaucracy, and a secret body-processing pipeline all create a franchise-ready mythology. Genre buyers who want a concept with rules and a visible system — especially streamer and cult-genre executives — will immediately see the hook.",
+          "evidence": "The dead battery/live battery split, Re-Life, the Holding Tower, and the precinct procedures all operate as a functioning social order.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Helm is built for an actor.",
-          "what_it_means": "The role combines grief, discipline, religious guilt, and hard-edged authority, which is the kind of contradiction that gives a lead performance real traction. Mid-career dramatic actors who want a genre showcase and buyers looking for a franchise-capable face have a clear anchor here.",
-          "evidence": "Helm’s cross tattoo, his confession booth scene, his wife flashback, and his relentless execution of the job.",
+          "dimension_or_area": "Helm is a playable action lead.",
+          "what_it_means": "The role gives an actor stoicism, grief, dry humor, and physical authority in one package, which is exactly the kind of part that can anchor a mid-budget genre film. Action leads and prestige character actors looking for a genre vehicle with emotional weight would both lean in.",
+          "evidence": "Helm’s deadpan patrol work, his wife’s death, his church gesture, and his final refusal to back down from Beacon define him quickly.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world has a satirical bite.",
-          "what_it_means": "The script turns monster policing into a bureaucracy with paperwork, jurisdiction, and public pressure, which gives the material a sharper identity than a standard creature feature. That tonal blend is attractive to genre buyers who want social commentary without losing the pulp engine.",
-          "evidence": "The dead battery precinct, the Re-Life paperwork, the councilwoman hearing, and Beacon’s public rhetoric.",
+          "dimension_or_area": "The script has a sharp satirical edge.",
+          "what_it_means": "The material can sell as action-horror while also giving buyers a social-critique angle about policing, class, and state control. That dual use broadens the pitch to producers who like genre with commentary and to audiences who respond to pulp with a point of view.",
+          "evidence": "The three-chance law, the execution bureaucracy, the Re-Life body transfers, and Beacon’s rhetoric about control all sharpen the satire.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The conspiracy reveal escalates cleanly.",
-          "what_it_means": "The story starts as patrol-of-the-week monster policing and widens into a hidden body-processing operation and a corrupt commissioner with monster DNA control, which gives the feature a satisfying escalation curve. That kind of reveal structure is useful for both theatrical genre packaging and streamer discovery.",
-          "evidence": "Paddy’s chip discovery, Reynolds’ file comparison, and the underground Re-Life unit beneath the precinct.",
+          "dimension_or_area": "The ensemble creates a clean triangle of pressure.",
+          "what_it_means": "Helm, Foster, and Reynolds form a commercially useful core: the veteran, the rookie, and the outsider who can expose the system. That structure gives the movie emotional access points for different audience types and makes the eventual betrayal land with force.",
+          "evidence": "Foster’s transfer, Reynolds’ arrival, and the reveal that Foster is being used to deliver Helm to Beacon all reframe the relationships.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The action is grounded in specific monster rules.",
-          "what_it_means": "The deionizer, armor-on command, tracking sensors, and species-specific behavior make the action feel designed rather than generic. That specificity helps the script stand out in a crowded creature lane and gives production a repeatable visual language.",
-          "evidence": "Helm’s deionizer, Foster’s armor command, the sensor POV shots, and the werewolf/zombie/vampire distinctions.",
+          "dimension_or_area": "The villain reveal is built for escalation.",
+          "what_it_means": "Beacon’s turn from civic authority to undead architect of the conspiracy gives the third act a strong face and a clear ideological opponent. That kind of reveal is useful to buyers because it turns the movie from procedural monster-cop story into a contained rebellion narrative.",
+          "evidence": "Beacon’s hidden Re-Life unit, his DNA-based monster control, and his use of Cara and Reynolds as leverage all converge in the finale.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The supporting duo gives the story momentum.",
-          "what_it_means": "Foster functions as the audience entry point while Reynolds expands the emotional and investigative side of the movie, which creates a usable triangle around Helm. That makes the project more attractive to buyers who want a lead vehicle with a strong partner dynamic and a female counterweight.",
-          "evidence": "Foster’s rookie perspective, his sister Cara, and Reynolds’ investigation and romance with Helm.",
+          "dimension_or_area": "The set pieces are vivid and marketable.",
+          "what_it_means": "The script offers trailer-friendly moments: the vampire takedown in the restroom, the werewolf alley fight, the necrophilia bust, and the underground lab showdown. Those sequences give a producer clear promotional images and a practical sense of where the money is on screen.",
+          "evidence": "The opening kill, the full-moon alley fight, the adult bookstore raid, and the Re-Life climax all deliver distinct visual beats.",
           "source": "script"
         }
       ],
-      "headline": "This is a genre feature with a clean commercial engine: a hardboiled undead cop, a rookie partner from the living side, and a citywide conspiracy hiding inside the police department itself. The world is specific enough to feel franchise-ready, but the emotional spine — grief, duty, and corruption inside a monster state — gives it real buyer appeal beyond the creature hook."
+      "headline": "This is a smart, nasty, highly sellable monster-cop feature with a real world behind it. It has a strong lead role, a memorable precinct mythology, and a conspiracy reveal that turns pulp into a bigger civic nightmare."
     },
     "lead_characters": [
       {
         "name": "Luke Helm",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s",
-        "hook": "Helm is a disciplined, faith-marked public servant who treats monster policing like a moral calling, even when the job has hollowed him out. He carries himself like a soldier, speaks in clipped authority, and lives with the private ache of a dead wife and a conscience that still answers to church, duty, and violence all at once.",
-        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in True Detective season 1 — a stoic lawman whose interior damage leaks through every line and gesture. Actors who want a lead role with gravitas, physical command, and a buried emotional wound will chase it, especially those looking for a genre part that can play prestige."
+        "demographics": "Male · 30s-40s · armored police officer",
+        "hook": "Helm is a dead-serious, grief-worn public servant who treats monster policing like a sacred duty. He is physically imposing, emotionally sealed, and quietly haunted by the death of his wife, which makes his code feel earned rather than generic.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Training Day crossed with the stoic authority of Kurt Russell in Escape from New York — a man whose stillness carries the movie until the violence erupts. Actors who want a hard-edged genre lead with emotional subtext and a few great moral turns will chase this."
       },
       {
         "name": "Thomas Foster",
         "role_type": "Lead",
-        "demographics": "Male · 20s-30s",
-        "hook": "Foster is the live-battery transfer who enters the dead-battery precinct with curiosity, decency, and just enough nerve to keep asking the wrong questions. He is the audience’s moral pressure valve: younger, less hardened, and increasingly forced to decide whether the system he joined deserves his loyalty.",
-        "why_actor_wants_this": "This is the kind of role Joseph Gordon-Levitt had in 50/50 — the grounded, reactive center who lets the audience learn the world while still carrying real emotional stakes. Younger leading men who want a smart, likable part with escalation, shock, and moral awakening will see a strong showcase here."
+        "demographics": "Male · 20s-30s · live-battery police transfer",
+        "hook": "Foster is the audience’s entry point: eager, observant, and increasingly disillusioned as he learns the dead battery’s rules. He has enough innocence to ask the right questions and enough backbone to become dangerous once he understands what he’s inside.",
+        "why_actor_wants_this": "This is the coming-of-age pressure-cooker territory of Jake Gyllenhaal in End of Watch — a younger partner role that gets to watch the world crack open and then choose a side. Rising leads who want a role with moral awakening, action beats, and betrayal material will want it."
       },
       {
         "name": "Alicia Reynolds",
         "role_type": "Lead",
-        "demographics": "Female · 30s-40s",
-        "hook": "Reynolds arrives as a composed chief coroner with intelligence, grief, and a professional calm that slowly reveals steel underneath. She is not just a love interest; she is a competent insider whose curiosity and empathy make her the story’s most dangerous truth-seeker once she starts reading the files.",
-        "why_actor_wants_this": "This is the showcase space of Emily Blunt in Sicario — a smart professional dropped into a morally contaminated system and forced to keep her nerve while the floor shifts under her. Actresses who want authority, vulnerability, and investigative momentum in one part will be drawn to it."
+        "demographics": "Female · 30s-40s · chief coroner",
+        "hook": "Reynolds is smart, controlled, and emotionally guarded, with a professional calm that slowly reveals grief and resolve. She enters as an outsider but becomes the story’s moral and investigative counterweight, which gives her a strong blend of competence and vulnerability.",
+        "why_actor_wants_this": "This is the prestige-thriller lane of Rebecca Ferguson in Mission: Impossible or Emily Blunt in Sicario — a woman who can read a room, carry authority, and still let pain leak through the seams. Actors looking for a sharp, adult role with intelligence, chemistry, and late-story urgency will chase it."
       },
       {
         "name": "Commissioner Beacon",
         "role_type": "Lead",
-        "demographics": "Male · 50s-60s",
-        "hook": "Beacon is a charming civic father figure with a predator’s appetite for control, the kind of man who can smile through policy language while engineering a private monster regime. He reads as warm, wily, and institutional until the script reveals he is the engine behind the city’s rot.",
-        "why_actor_wants_this": "This is the kind of villain role that gave Bryan Cranston in Breaking Bad the chance to turn authority into menace and menace into charisma. Character actors who want a polished, scene-stealing antagonist with public respectability and private monstrosity will chase it."
+        "demographics": "Male · 50s-60s · police commissioner / undead hybrid",
+        "hook": "Beacon is charming, paternal, and increasingly monstrous, with the smile of a civic leader and the appetite of a tyrant. He works because he never stops sounding reasonable even as he reveals that control, not justice, is his religion.",
+        "why_actor_wants_this": "This is the villain showcase space of Bryan Cranston in Breaking Bad or Michael Keaton in Spotlight when the mask is the performance — a man whose warmth becomes the weapon. Veteran character actors who want a charismatic antagonist with ideological depth will line up for it."
       },
       {
         "name": "Paddy McCallum",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s",
-        "hook": "Paddy is the precinct’s weary medical examiner, a working-class professional with enough curiosity to notice the chip anomaly and enough humanity to feel like the department’s conscience. He’s practical, dry, and quietly essential, which makes his death land as both plot turn and emotional loss.",
-        "why_actor_wants_this": "This is the kind of supporting role that gave Michael K. Williams in The Wire the chance to make a secondary character feel like a whole life. Actors who like compact, memorable authority roles with one strong investigative turn and a meaningful exit will want it."
+        "demographics": "Male · 40s-50s · medical examiner",
+        "hook": "Paddy is the precinct’s weary science guy, practical and dry, with just enough curiosity to push the mystery forward. He feels like the kind of colleague everyone trusts until the story proves how exposed he really is.",
+        "why_actor_wants_this": "This is the grounded supporting territory of John Turturro in a prestige crime piece — a working-class intellect who can deliver exposition without feeling like exposition. Character actors who specialize in texture and authority will gravitate to it."
       },
       {
         "name": "Commissioner Barb",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-60s",
-        "hook": "Barb is the emotionless administrative voice of the precinct, the kind of bureaucrat who makes the system feel larger than any one officer. She is cool, procedural, and quietly ominous in the way she delivers orders without ever raising her temperature.",
-        "why_actor_wants_this": "This is the kind of clipped institutional role that gives an actor the precision space of Carrie Coon in The Leftovers when authority is all restraint and subtext. Character actors who can make bureaucracy feel alive will be drawn to it."
+        "demographics": "Female · 40s-50s · administrative voice on the phone",
+        "hook": "Barb is the precinct’s cool, procedural voice, the kind of bureaucrat who can make a nightmare sound routine. She gives the world institutional texture and helps sell the idea that this system runs on paperwork as much as violence.",
+        "why_actor_wants_this": "This is the clipped, authority-through-voice slot that actors like Ann Dowd often make unforgettable in a few scenes. It’s a compact role for someone who can turn administration into menace."
       },
       {
         "name": "Captain Parnell",
         "role_type": "Supporting",
-        "demographics": "Male · 50s-60s",
-        "hook": "Parnell is a sidelined veteran who still carries the habits of command, even if his body has moved him into administration. He has the weary credibility of someone who has seen the city change and knows exactly how much of the old order is gone.",
-        "why_actor_wants_this": "This is the kind of weathered authority role that gives an actor the grounded command of J.K. Simmons in Whiplash without needing a huge page count. Seasoned character actors who specialize in lived-in institutional presence will be interested."
+        "demographics": "Male · 50s-60s · veteran beat officer",
+        "hook": "Parnell is the sidelined old hand who still knows how the precinct works and how to talk to the room. He adds institutional memory and helps make the dead battery feel like a real department with history.",
+        "why_actor_wants_this": "This is the seasoned-cop support slot that actors like J.K. Simmons can make feel lived-in immediately. It offers a clean authority presence without needing a huge amount of screen time."
       },
       {
-        "name": "Cara",
+        "name": "Ronald Ho",
         "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Cara is Foster’s sister, an addict on death row whose vulnerability gives the story a human face inside the state’s machinery. She is wounded, defensive, and heartbreaking in a way that makes the Re-Life conspiracy personal before it becomes political.",
-        "why_actor_wants_this": "This is the kind of prison-visitation role that gave Jena Malone in Saved! the chance to play pain, defiance, and fragility in one scene space. Actresses who can make a few scenes feel devastating will be attracted to it."
+        "demographics": "Male · 30s-50s · Hawaiian man, rotund build",
+        "hook": "Ho is a blunt, funny precinct presence whose casual line readings help normalize the world before the violence hits. He functions as part comic relief, part working-cop texture, and part reminder that this is a real department with real casualties.",
+        "why_actor_wants_this": "This is the kind of vivid supporting role that lets an actor steal scenes the way John C. Reilly or Bobby Cannavale can in ensemble crime pieces. It’s a memorable texture part with a strong death beat."
       },
       {
         "name": "Thelma Louise",
         "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "Thelma Louise is a domestic violence victim whose home call turns grotesque in a way that immediately defines the world’s moral stakes. She is ordinary, frightened, and trapped inside a supernatural version of a very human crisis.",
-        "why_actor_wants_this": "This is the kind of intense one-scene role that lets an actor do raw fear and humiliation the way Toni Collette did in Hereditary before the movie widens out. Strong character actors who can make a domestic scene unforgettable will want it."
+        "demographics": "Female · 30s-40s · homemaker",
+        "hook": "Thelma is a domestic-life character thrown into grotesque absurdity, which makes her both tragic and darkly comic. She grounds the world’s social stakes by showing what monster violence looks like inside an ordinary home.",
+        "why_actor_wants_this": "This is the kind of one-scene emotional gut punch that actors like Patricia Clarkson can elevate instantly. It gives a performer a full domestic breakdown inside a genre sequence."
       },
       {
         "name": "Mr. Louise",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Mr. Louise is a grotesquely injured undead husband who still has enough conscience to apologize for what he’s done. He turns a domestic call into tragic horror, which gives the world its most unsettling blend of pity and threat.",
-        "why_actor_wants_this": "This is the kind of prosthetic-heavy, tragic-monster role that gives an actor the physical transformation space of Doug Jones in The Shape of Water. Performers who like expressive creature work with emotional residue will chase it."
+        "demographics": "Male · 30s-50s · undead husband",
+        "hook": "Mr. Louise is a remorseful undead domestic abuser whose guilt and decay make the scene land as tragedy rather than simple monster action. He embodies the script’s ability to make the supernatural feel like a warped extension of human behavior.",
+        "why_actor_wants_this": "This is the grotesque character-role space of actors who can play shame and menace at once, like Michael Shannon in a dark supporting turn. It’s a brief but unforgettable transformation role."
       },
       {
-        "name": "The Young Woman",
+        "name": "Cara",
         "role_type": "Supporting",
-        "demographics": "Female · 20s",
-        "hook": "The Young Woman is a naked, half-destroyed rotter who still speaks with enough self-awareness to make her terrifying and tragic at once. She is one of the script’s sharpest examples of the world’s moral ambiguity: monstrous, hungry, and still recognizably human.",
-        "why_actor_wants_this": "This is the kind of creature role that gives an actor the unsettling physicality of Anya Taylor-Joy’s possession work in The Witch, but with more overt body-horror spectacle. Performers interested in prosthetics, movement, and a memorable horror image will want it."
+        "demographics": "Female · 20s-30s · inmate / addict",
+        "hook": "Cara is Foster’s last family tie, and the script uses her to give the conspiracy a human cost. She starts as a wounded sister in a prison booth and becomes the emotional trapdoor that exposes Beacon’s cruelty.",
+        "why_actor_wants_this": "This is the heartbreaking sister role that gives an actress a late-story transformation and a devastating turn into horror. Performers who can play vulnerability and terror in the same scene will be drawn to it."
       },
       {
-        "name": "Alicia Reynolds' Husband",
+        "name": "Beth McCallum",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Reynolds’ husband exists as a quiet emotional absence that helps define her grief and her guardedness. Even in a small footprint, he gives the story a second layer of loss that mirrors Helm’s own history.",
-        "why_actor_wants_this": "This is the kind of memory-role that gives an actor the emotional afterimage of the husband in Manchester by the Sea — brief, but carrying the weight of a life that still shapes the present. Supporting actors who like meaningful off-screen presence will recognize the value."
-      },
-      {
-        "name": "Warden Simpson",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s-60s",
-        "hook": "Simpson is the public face of the state’s execution logic, a polished bureaucrat who can defend brutality with calm administrative language. He embodies the system’s ability to make moral violence sound procedural.",
-        "why_actor_wants_this": "This is the kind of courtroom authority role that gives an actor the cold institutional control of Michael Stuhlbarg in a prestige drama. Actors who can make policy feel sinister without raising their voice will be drawn to it."
+        "demographics": "Female · 40s-50s · widow",
+        "hook": "Beth is the quiet aftermath of Paddy’s death, a domestic reminder that the precinct’s violence reaches beyond the badge. She gives the story a human pause and helps make Helm’s grief feel communal.",
+        "why_actor_wants_this": "This is the restrained widow role that can land with the emotional economy of a strong prestige supporting turn. It’s ideal for an actor who can make a few lines carry history."
       },
       {
         "name": "Loretta Groombridge",
         "role_type": "Supporting",
-        "demographics": "Female · 30s-50s",
-        "hook": "Groombridge is a sharp civil-liberties lawyer who punctures the state’s language with precision and skepticism. She gives the script a public-facing counterargument and a clean ideological foil to Beacon’s rhetoric.",
-        "why_actor_wants_this": "This is the kind of courtroom sparring role that gives an actor the verbal authority of Viola Davis in a legal drama. Performers who like articulate opposition and public confrontation will want it."
-      },
-      {
-        "name": "Phelps",
-        "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Phelps is a live-battery vice cop who brings a more conventional law-enforcement attitude into the monster raid. He functions as a useful contrast to Helm’s dead-battery pragmatism and helps widen the police ecosystem.",
-        "why_actor_wants_this": "This is the kind of procedural-support role that gives an actor the straight-man authority of Shea Whigham in a crime ensemble. Working character actors who can anchor a raid scene and still feel specific will be interested."
+        "demographics": "Female · 30s-50s · lawyer",
+        "hook": "Groombridge is the public face of resistance, sharp enough to puncture the state’s language and force the issue into daylight. She broadens the world beyond the precinct and gives the film a political dimension.",
+        "why_actor_wants_this": "This is the courtroom-firebrand slot that actors with crisp verbal authority can make pop, in the vein of a prestige legal drama antagonist. It’s a clean, articulate pressure role."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage a monster movie as a corrupt civic system.",
-        "fit_profile": "Mid-career genre directors with one or two features, or TV directors moving into features, who already know how to balance action, creature work, and institutional satire. The material rewards filmmakers who care about world rules, procedural texture, and keeping the camera close enough to let performance carry the moral rot.",
-        "detail": "The script gives a director a repeatable visual grammar — precinct, alley, lab, bar, prison, and domestic spaces — while still offering set pieces with creatures and gunplay. It will appeal to directors who like grounded genre worlds where the production design and blocking do as much storytelling as the dialogue."
+        "hook": "A director who wants to stage monster mythology as civic noir.",
+        "fit_profile": "Established indie or genre directors with at least one or two features, especially those who like world-building that still lives or dies on performance. The material rewards filmmakers who can balance pulp violence, institutional satire, and emotional restraint without smoothing off the edges.",
+        "detail": "The script gives a director a full visual system — precincts, labs, bars, alleys, and monster-specific civic rules — while still leaving room to shape tone through performance and pacing. It will attract directors who want a contained but distinctive genre feature that can feel expensive on screen without requiring a giant canvas."
       },
       "buyer_appeal": {
-        "tier": "$8-20M feature",
-        "lane": "Streaming genre feature / elevated creature-thriller lane",
-        "detail": "The project can be anchored by one strong lead and a contained supporting ensemble, so it does not require a giant star package to make sense on paper. The monster-police concept, mature content, and conspiracy reveal fit the current streamer appetite for high-concept genre features with a distinctive world and a clear thumbnail."
+        "tier": "$5-15M genre feature",
+        "lane": "streaming genre lane with cult-theatrical upside",
+        "detail": "The movie can be packaged around one strong lead and a contained ensemble, so a buyer can greenlight it off a director reel plus one recognizable face rather than a full star stack. The monster-cop concept, mature content, and built-in trailer moments fit the current genre buy-zone for streamers and specialty distributors looking for a high-concept hook with franchise texture."
       }
     },
     "considerations": [
       {
-        "area": "The opening run is doing a lot of world-building.",
-        "detail": "The first stretch introduces the precinct, the dead/live battery split, the deionizer, the monster taxonomy, and Helm’s grief all at once. One lever would be to let one or two of those ideas arrive a beat later so the emotional entry point stays front and center while the world still lands cleanly.",
+        "area": "The middle leans on procedural explanation.",
+        "detail": "The patrol-call structure does a good job of teaching the world, and the version of the script where one or two of those calls are fused could keep the same texture while tightening the forward drive. The opening, the domestic call, and the alley fight already establish the rules; a next pass could let the conspiracy pressure arrive a little earlier in the body of the movie.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The conspiracy thread can be foregrounded earlier.",
-        "detail": "Paddy’s chip discovery and Reynolds’ file work pay off well, but the Re-Life machinery only fully clicks once the underground unit appears. What would it look like if the body-transfer anomaly were seeded a little earlier in the patrol material so the back half feels even more inevitable?",
+        "area": "The conspiracy reveal can arrive with more shadow.",
+        "detail": "Beacon’s turn is satisfying, and the version where his Re-Life agenda is seeded a little more obliquely in the earlier precinct scenes would make the final reveal hit even harder. A few more visual or behavioral tells in the office and lab spaces would protect the surprise while deepening the payoff.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The ensemble is strongest when it stays relational.",
-        "detail": "Helm, Foster, and Reynolds each bring a different pressure to the story, and those scenes have the most lift. A next pass could keep protecting those triangles so the feature continues to feel like a character-driven thriller rather than a sequence of case calls.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The creature and gore load is substantial.",
-        "detail": "The werewolf fight, the disintegrations, the severed hands, the living head, and the final lab destruction all point to a meaningful practical-effects and VFX footprint. The cleanest production version is the one that keeps the monster variety but concentrates the biggest effects into a few signature set pieces.",
+        "area": "The cast footprint is controllable but creature-heavy.",
+        "detail": "The story is mostly contained to a core ensemble, which is a good fit for the lane, but the monster variety and repeated night exteriors mean the production will want disciplined creature design. One simplification lever would be to keep the vampire, zombie, and werewolf language visually distinct but operationally streamlined so the effects package stays elegant.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The night-shoot footprint is significant.",
-        "detail": "Most of the story’s best material lives in alleys, streets, bars, and exterior police work after dark. A production plan that clusters those sequences by geography would protect the look of the movie while keeping the schedule efficient.",
+        "area": "The adult-bookstore sequence carries the content ceiling.",
+        "detail": "The necrophilia imagery, explicit violence, and body horror are part of the movie’s identity, and they also place it firmly in mature territory. That is a clean positioning fact for buyers, but it means the marketing lane should lean into genre audacity rather than broadening the tone.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The hidden lab is the production anchor.",
+        "detail": "The Re-Life unit, containment chambers, and energy-hole finale are the most effects-dependent pieces of the film. The version of the climax where the lab is built around one strong modular set would protect the reveal and keep the budget focused where the story needs it most.",
         "is_primary_lever": false,
         "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 70.3,
+  "weightedScore": 73.7,
   "tier": "Optionable",
-  "inputTokens": 39504,
-  "outputTokens": 5353,
-  "cost": 0.0537165,
+  "inputTokens": 79008,
+  "outputTokens": 10894,
+  "cost": 0.10827899999999999,
   "declaredFormat": "Feature film"
 }

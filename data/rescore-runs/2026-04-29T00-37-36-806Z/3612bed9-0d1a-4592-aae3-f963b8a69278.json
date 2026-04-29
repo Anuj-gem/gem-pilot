@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:01:38.572Z",
+  "submission_id": "3612bed9-0d1a-4592-aae3-f963b8a69278",
+  "eval_id": "a0c73aa4-5b94-40e1-9c12-c0a888e5845a",
+  "title": "Nova's Hope",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Black, mixed-race presentation · ageless physicality"
+    },
+    {
+      "name": "Nova / Estanatlehi / Chimalman",
+      "role_type": "Lead",
+      "demographics": "Female · appears 20s to 60s · mixed-race, ageless presentation"
+    },
+    {
+      "name": "Abraham Lincoln",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · White"
+    },
+    {
+      "name": "Amethyst",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · ageless presentation · mixed-race beauty"
+    },
+    {
+      "name": "Emma Goldman",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · White · sharp, energetic presence"
+    },
+    {
+      "name": "Samuel Clemens / Mark Twain",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · White"
+    },
+    {
+      "name": "Kit Carson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · White"
+    },
+    {
+      "name": "Spirit Talker",
+      "role_type": "Supporting",
+      "demographics": "Male · 80s / younger glowing form · Native American"
+    }
+  ],
+  "positioning_hook": "A shape-shifting Black Union chaplain races to stop the Long Walk, bargaining with his immortal goddess mother and Abraham Lincoln to rewrite history before the trail turns fatal.",
+  "cost_usd": 0.0489045,
+  "input_tokens": 36478,
+  "output_tokens": 4788,
+  "status": "wrote:leads_ok"
+}

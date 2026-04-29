@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T00:53:21.485Z",
+  "submission_id": "ccf1ccff-1947-4bed-9011-34dda0de7ee1",
+  "eval_id": "81edb627-46cf-45e0-9877-32efeb25da5c",
+  "title": "Celtx   Script SINON",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Francis Booker",
+      "role_type": "Lead",
+      "demographics": "Male · 20s/30s · slight build"
+    },
+    {
+      "name": "Doreen",
+      "role_type": "Lead",
+      "demographics": "Female · 30s/40s · power-dressed office authority"
+    },
+    {
+      "name": "Hal",
+      "role_type": "Lead",
+      "demographics": "Male · 30s/40s · tall, physically imposing"
+    },
+    {
+      "name": "Ploy",
+      "role_type": "Lead",
+      "demographics": "Female · 20s/30s · Thai"
+    },
+    {
+      "name": "Clara",
+      "role_type": "Lead",
+      "demographics": "Female · 20s/30s · Italian-American coded, 1920s style"
+    },
+    {
+      "name": "Toast",
+      "role_type": "Lead",
+      "demographics": "Nonhuman robot · adult-coded voice/performance"
+    },
+    {
+      "name": "Jerry",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · cyborg wolf-man"
+    }
+  ],
+  "positioning_hook": "A timid logistics clerk at a supernatural death agency is forced into a field team of misfit monsters and weapons-grade weirdos, then discovers his erased-outburst power can end a British zombie threat.",
+  "cost_usd": 0.032314499999999996,
+  "input_tokens": 16392,
+  "output_tokens": 4449,
+  "status": "wrote:leads_ok"
+}

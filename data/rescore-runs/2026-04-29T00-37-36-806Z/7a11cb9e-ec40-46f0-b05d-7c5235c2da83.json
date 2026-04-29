@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:14:22.711Z",
+  "submission_id": "7a11cb9e-ec40-46f0-b05d-7c5235c2da83",
+  "eval_id": "95079bed-e92a-4e73-b2f4-5ab3b1f8fb1d",
+  "title": "WHITE HORSE",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Cyrus Aarons",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · NASA astronaut / former Air Force pilot"
+    },
+    {
+      "name": "Maxwell Libas",
+      "role_type": "Lead",
+      "demographics": "Male · 60s · NASA Director of the Astronaut Office"
+    },
+    {
+      "name": "Hugh Vellum",
+      "role_type": "Lead",
+      "demographics": "Male · 70s · White House senior aide"
+    },
+    {
+      "name": "Chet Haynes",
+      "role_type": "Lead",
+      "demographics": "Male · mid-40s · DARPA director / intelligence veteran"
+    },
+    {
+      "name": "Susan Harper",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · KGB operative posing as a Washington socialite"
+    },
+    {
+      "name": "Oleg Grosni / William Easter",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to 40s across the story · Soviet pilot turned KGB infiltrator"
+    },
+    {
+      "name": "Betty Aarons",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · seamstress / Cyrus Aarons' sister"
+    }
+  ],
+  "positioning_hook": "A hotshot NASA astronaut, sidelined by a classified air-show massacre, uncovers a Soviet weather weapon hidden inside a shuttle mission and has to expose the truth before his own government buries it.",
+  "cost_usd": 0.052131000000000004,
+  "input_tokens": 41596,
+  "output_tokens": 4652,
+  "status": "wrote:leads_ok"
+}

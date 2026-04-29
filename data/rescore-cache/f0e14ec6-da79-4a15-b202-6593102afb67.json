@@ -2,54 +2,54 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Romantic comedy-drama",
+      "genre_primary": "Romantic comedy",
       "genre_tags": [
-        "workplace comedy",
-        "coming-of-age"
+        "drama",
+        "workplace comedy"
       ],
-      "tone": "Warm, broad, satirical, and sentimental"
+      "tone": "Broad, earnest, and lightly satirical with a sentimental undercurrent"
     },
-    "positioning_hook": "A hearing-impaired office worker who secretly can hear must choose between passing as disabled at work, his deaf community, and the woman who sees through him.",
+    "positioning_hook": "A hearing-impaired office worker who secretly hears after surgery must juggle a deaf community, a corporate promotion, and two women before his lie detonates.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise is easy to grasp and the emotional lane is accessible: identity, romance, and workplace comedy all play clearly in Motson’s double life. The audience is real, though the broadest commercial lift depends on execution and cast charisma more than on a high-concept engine."
+        "reasoning": "The premise is easy to grasp and the emotional lane is accessible: identity, romance, workplace status, and family all collide around one central secret. It plays to a clear audience, though the comedy is broad and the hook is more charming than explosive."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The hook lands early with Motson’s hearing loss, the cochlear implant, and the reveal that he can hear again while continuing to pass. The story engine is legible throughout, especially once the office, the institute, and Rosemary’s interest begin colliding."
+        "reasoning": "The script establishes its engine quickly: Rick Motson is deaf, gets an operation, can hear, and then has to manage the social fallout of that change. The opening pages and the repeated sound/no-sound device make the premise legible early."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Motson has a playable contradiction — self-conscious, vain, romantic, and increasingly power-drunk once he can hear — and Rosemary gives the script a strong counterforce. The supporting players are vivid in moments, but most of them orbit Motson rather than generating fully independent momentum."
+        "reasoning": "Motson has a playable contradiction — self-conscious, romantic, defensive, and increasingly power-drunk once he can hear — and Rosemary gives the story a second strong presence. The supporting players are vivid in scene, but most of them function around Motson rather than opening independent character engines."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The central premise is unusual and the script commits to a specific disability-comedy setup with sign language, subtitles, and sound design as part of the storytelling. The execution stays in a familiar crowd-pleaser lane, with broad workplace and romance beats carrying most of the shape."
+        "reasoning": "The script’s most distinctive move is using sound itself as a storytelling device, especially the silent city passages and the shift into Motson’s hearing experience. The workplace-and-romance frame is familiar, but the deaf/hearing reversal gives it a clear angle."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The script keeps moving through office scenes, institute scenes, and the softball game, and the reveal structure gives it forward pull. Some stretches are episodic in feel, but the secret, the romance, and the family dynamic keep the pages turning."
+        "reasoning": "The story keeps moving through office, home, institute, and softball beats, and the secret steadily creates new social friction. The middle is more episodic than escalating, but the final confrontation with Harris and the return to Rosemary give it a clean finish."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "A man who can hear but chooses to live as deaf, then discovers the social and moral cost of that choice, is a fresh and immediately understandable engine. The final return to the institute and the walk-in ending give the premise a satisfying circular shape."
+        "reasoning": "A deaf man who regains hearing and then has to decide what kind of person he becomes is a clean, immediately understandable premise with built-in irony. The script keeps finding fresh comic reversals inside that setup, especially when Motson’s new hearing changes his status at work and in love."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The deaf institute, the corporate office, and the Motson home each have their own social rules, and the script uses sign language, subtitles, and hearing/non-hearing dynamics as texture. The world is specific, though it functions more as a series of playable containers than as a deeply layered ecosystem."
+        "reasoning": "The deaf institute, the corporate office, and the Motson home each have their own social rules, and the script gets mileage from moving Motson between them. The world is specific enough to feel lived-in, though it is still primarily a stage for Motson’s transformation rather than a deeply layered ecosystem."
       },
       "tonal_specificity": {
         "score": 6,
-        "reasoning": "The tone mixes broad comedy, social satire, and sincere disability drama in a way that is consistent and easy to read. It has a clear crowd-pleaser identity, though it doesn’t yet have the singular tonal stamp of a truly unmistakable voice piece."
+        "reasoning": "The tone mixes broad workplace comedy, romantic awkwardness, and earnest disability drama in a way that stays recognizable throughout. It has a clear commercial flavor, though the script leans more on situation than on a sharply singular comic voice."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the comedy, the script is really about belonging, self-invention, and the ethics of passing, which gives it more emotional depth than the surface banter suggests. The Motson/Able parallel and the final return to the institute hint at a larger identity story that could resonate beyond the plot mechanics."
+        "reasoning": "Beneath the comic surface, the story is really about identity, belonging, and the temptation to trade community for status. The father-son mirror, the cochlear implant debate, and Motson’s return to the institute all suggest more emotional depth than the premise initially advertises."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Motson, Rosemary, Teddy, Able, Madge, Walford, and Harris all create usable dynamics, and the father-son and Motson-Rosemary tensions are especially active. Still, the script is primarily powered by Motson’s choices, with the ensemble serving the lead more than generating a fully combinatorial engine."
+        "reasoning": "Motson/able, Motson/Rosemary, Motson/Teddy, and Motson/Margo all generate playable friction, and the office team has a workable group dynamic. Still, the script lives most strongly on Motson’s shoulders, with the ensemble serving his arc more than creating a fully independent web."
       }
     },
     "production_reality": {
@@ -59,176 +59,225 @@
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Lead requires a hearing-impaired performer or an actor comfortable playing extended sign-language and lip-reading behavior",
-          "Several deaf supporting roles require fluent sign language performance",
+          "Lead requires hearing-impaired performance and sign language fluency or training",
+          "Several supporting roles are deaf and sign on camera",
           "One child ensemble at the institute"
         ]
       },
       "locations": {
-        "distinct_count": 13,
-        "interior_exterior_ratio": "roughly 60/40",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 2:1 interior",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "Corporate office tower and conference spaces",
-          "Large Victorian mansion interior",
-          "Deaf institute campus with classrooms, cafeteria, hallway, director office, and field",
-          "Baseball/softball field and stands",
+          "Corporate office tower and conference rooms",
+          "Large Victorian family home",
+          "Deaf institute campus with classrooms, cafeteria, hallway, and director office",
+          "Baseball field and park",
           "Apartment and bar interiors"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visual effects beyond simple title-card or sound-design transitions.",
+        "vfx_details": "No visible VFX requirements beyond simple sound-design transitions and subjective hearing moments.",
         "stunts_level": "minor",
-        "sfx_needs": "Sound design is central, including silent passages, muffled hearing POV, and subjective audio shifts.",
+        "sfx_needs": "Practical sound-design emphasis, including silent subjective sequences and loud/noisy contrast cues.",
         "night_shoots": "minimal",
         "animals": true
       },
       "rights_flags": [],
       "platform_fit": {
-        "recommended_lane": "Theatrical indie comedy-drama or streamer feature",
-        "content_level": "PG-13 equivalent with some mature language and disability-based slurs",
-        "series_engine_or_release_model": "Feature release model; best positioned as a festival-to-platform or specialty theatrical play"
+        "recommended_lane": "Theatrical indie / streamer comedy-drama",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or specialty theatrical with broad streaming afterlife"
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary settings, modest cast, no VFX, and limited stunt demand keep this in an economical feature lane."
+          "note": "Contemporary settings, modest cast, no VFX, and mostly interior-driven scenes keep the budget in a contained feature range."
         },
         "cast": {
           "level": "medium",
-          "note": "The lead and several supporting roles depend on credible deaf/sign-language casting, and the child classroom ensemble adds coordination."
+          "note": "The lead needs a strong hearing-impaired performance and sign-language credibility, and the story uses a sizable supporting ensemble plus child actors."
         },
         "location": {
           "level": "medium",
-          "note": "The story moves among office, institute, home, apartment, bar, and ballfield locations, but all are practical contemporary builds."
+          "note": "The script moves across office, home, institute, apartment, bar, and ballfield locations, but all are practical contemporary spaces."
         },
         "content": {
-          "level": "medium",
-          "note": "The script includes disability humor, workplace insults, and a few physical confrontations, but nothing that pushes into hard-R territory."
+          "level": "low",
+          "note": "The material is broadly accessible, with mild profanity, workplace aggression, and one brief fight."
         },
         "rights": {
           "level": "low",
-          "note": "No named real people, brands, music, or IP-dependent material are central to the story."
+          "note": "No real people, named music, or branded IP are central to the story."
         }
       }
     },
     "whats_special": {
       "strengths": [],
-      "headline": "SOUND BITES has a clean, marketable premise with a real actor’s role at its center: a man who can hear but keeps living as if he can’t, until the lie starts costing him love, family, and identity. The script blends workplace comedy, romance, and disability drama into a crowd-pleasing feature with a specific world, a strong emotional hook, and a finish that lands on honesty rather than gimmick."
+      "headline": "This is a clean, commercial character feature with a memorable hook: a man who regains hearing and discovers the lie is more seductive than the truth. The script has a real cinematic signature in its sound design, a strong lead role, and a family/romance/workplace triangle that gives buyers multiple entry points."
     },
     "lead_characters": [
       {
         "name": "Rick Motson",
         "role_type": "Lead",
         "demographics": "Male · 30s to early 40s · hearing-impaired / cochlear implant user",
-        "hook": "Rick is a polished, self-conscious office climber with a chip on his shoulder and a hunger to be seen as competent, desirable, and in control. He starts as a man defined by adaptation, then becomes fascinating because his secret gives him power, vanity, and shame all at once; he can be funny, defensive, romantic, and quietly ruthless in the same breath.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in Philadelphia crossed with the comic self-reinvention of Steve Carell in The 40-Year-Old Virgin — a role where the audience’s understanding of the character keeps changing as the performance deepens. Actors who want a lead that can play charm, physical comedy, romantic embarrassment, and a late moral reckoning will chase this hard."
+        "hook": "Rick is a self-conscious, socially hungry office worker who has spent years translating himself to the world through lip-reading, sign, and posture, then discovers that hearing again makes him more powerful and more dangerous than he expected. He is funny, defensive, romantic, and quietly vain, with a real need to belong that keeps colliding with his desire to be seen as exceptional.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in *Big* or Matthew McConaughey in *Dallas Buyers Club* — a role where physical behavior, charm, and inner recalibration all have to happen in front of us. Actors will chase it for the chance to play a man whose identity is literally changing on screen, with comedy, romance, and moral reckoning all in one part."
       },
       {
         "name": "Rosemary Sirkos",
         "role_type": "Lead",
         "demographics": "Female · 30s to 40s · deaf psychiatrist",
-        "hook": "Rosemary is calm on the surface, but she has a teasing intelligence and a directness that makes her impossible to bluff. She carries authority without stiffness, and the script lets her be both emotionally open and professionally grounded, which makes her feel like the only person in the movie who can truly meet Rick where he is.",
-        "why_actor_wants_this": "This is the kind of role that gave Julia Roberts in Erin Brockovich its charge — a woman whose confidence and wit become the engine of the story, not just the decoration around it. Actresses looking for a smart, adult romantic lead with authority, warmth, and a final emotional reveal will see a lot to play here."
+        "hook": "Rosemary is poised, perceptive, and a little mischievous, with the authority of a clinician and the flirtation of someone who knows exactly when she has the upper hand. She reads Motson faster than anyone else in the story, which makes her both a romantic spark and a moral mirror.",
+        "why_actor_wants_this": "This is the kind of role Laura Linney had in *The Savages* or Julia Roberts had in *Erin Brockovich* — a woman whose intelligence and directness carry the room without needing to announce themselves. It gives an actress a chance to play authority, wit, and romantic charge while still landing as the emotional conscience of the film."
       },
       {
         "name": "Able Motson",
         "role_type": "Lead",
-        "demographics": "Male · 60s · hearing-impaired / later partially deaf",
-        "hook": "Able is a proud, blustery patriarch whose love for his son is always filtered through ego, impatience, and a need to be right. He’s comic, stubborn, and unexpectedly vulnerable, and once his own hearing begins to fail, he becomes the film’s most poignant mirror of what Rick has been hiding from.",
-        "why_actor_wants_this": "This is the kind of late-life showcase that gave Albert Brooks in Drive a whole new register — a father figure whose authority slowly gives way to fragility and self-recognition. Veteran character actors who can balance bluster, comedy, and a late emotional turn will be drawn to it."
+        "demographics": "Male · 60s · hearing-impaired / later losing hearing",
+        "hook": "Able is a proud, blustery patriarch whose authority is built on volume, habit, and the assumption that he can still dominate every room he enters. Beneath the bluster, he is a man terrified of irrelevance, which makes his own hearing loss land as both comic reversal and emotional reckoning.",
+        "why_actor_wants_this": "This is the showcase space of Albert Brooks in *Drive* or Michael Caine in *The Quiet American* — a role where authority, vanity, and vulnerability all have to coexist in the same frame. Veteran actors will want it because it lets them play a father whose control is eroding in real time, with both comedy and pathos available in every scene."
       },
       {
         "name": "Margo Alvarez",
         "role_type": "Lead",
         "demographics": "Female · 20s to 30s · secretary / aspiring interior decorator",
-        "hook": "Margo is flirtatious, socially agile, and fully aware of the power she has in a room, even when she’s pretending to be breezy. She’s the movie’s comic spark plug, but she also has enough vanity and ambition to make her more than a punchline; she’s a woman who wants upward mobility and knows how to sell herself.",
-        "why_actor_wants_this": "This is the kind of sharp, scene-stealing supporting lead that gave Jennifer Coolidge in Legally Blonde or Busy Philipps in Freaks and Geeks its comic voltage — a role built on timing, attitude, and the ability to turn one line into a character event. Actors with strong comedic instincts and a taste for memorable entrances will want this part."
+        "hook": "Margo is a fast-talking, socially ambitious flirt who treats every room like it is waiting for her to improve it. She is funny, vain, and emotionally direct, and the script uses her as both a romantic complication and a comic force of nature.",
+        "why_actor_wants_this": "This is the kind of part Jennifer Coolidge or Catherine O'Hara has turned into a scene-stealing machine — a woman whose confidence, vanity, and comic timing become the engine of every entrance. An actress with strong comedic instincts will chase it for the chance to make a supporting role feel larger than the frame."
       },
       {
         "name": "Teddy Lavinski",
         "role_type": "Supporting",
         "demographics": "Male · 20s to 30s · deaf",
-        "hook": "Teddy is Rick’s loudest ideological pressure point: funny, combative, loyal, and deeply invested in deaf pride. He’s the friend who can turn a joke into a manifesto, which makes him both a comic engine and a moral irritant whenever Rick starts drifting toward the hearing world.",
-        "why_actor_wants_this": "This is the kind of high-energy best-friend role that gave Jonah Hill in Superbad its breakout charge — fast, opinionated, and built to dominate scenes with rhythm and attitude. A charismatic comic actor or a deaf performer with strong timing would have a lot of room to make this part pop."
+        "hook": "Teddy is Motson’s loudest ideological friend, a fast-signing, proudly tribal presence who turns every disagreement into a political statement. He is funny and combative, but he also gives the institute its most overt sense of community pressure.",
+        "why_actor_wants_this": "This is the kind of role that gave Steve Zahn in *Happy, Texas* or Paul Dano in *Little Miss Sunshine* a chance to steal scenes through attitude and rhythm. It offers an actor a sharp comic voice and the pleasure of playing a friend who is also a pressure cooker."
       },
       {
         "name": "Joe Harris",
         "role_type": "Supporting",
-        "demographics": "Male · 30s to 40s · office manager / athletic build",
-        "hook": "Joe is a blunt-force office bully with a crude sense of humor and a talent for reading weakness in other people. He gives the corporate world its testosterone and menace, but he also functions as the movie’s easiest pressure valve for broad comedy and conflict.",
-        "why_actor_wants_this": "This is the kind of scene-chewing workplace antagonist that gave John C. Reilly in Talladega Nights or Craig Bierko in Cinderella Man a lot of comic and physical authority to play with. Character actors who can weaponize swagger and still land laughs will have fun here."
+        "demographics": "Male · 30s to 40s · office manager / softball ringer",
+        "hook": "Joe is the office bully who masks insecurity with locker-room swagger and casual cruelty. He is the story’s most straightforward antagonist, but he also functions as the social weather vane for the hearing world Motson is trying to navigate.",
+        "why_actor_wants_this": "This is the kind of part that lets an actor do what William Fichtner or Michael Rapaport often do best — turn bluster into comic menace. It gives a performer a clean, scene-driving adversarial role with physicality, attitude, and a few big payoff moments."
+      },
+      {
+        "name": "Madge Motson",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s to 60s · mother",
+        "hook": "Madge is the family’s emotional translator, a warm but socially conventional mother who wants peace, progress, and the appearance of normalcy. She is gentler than Able, but she still reinforces the family’s pressure to adapt rather than question.",
+        "why_actor_wants_this": "This is the kind of maternal role that gives an actress the space Diane Wiest had in *Parenthood* — warmth, exasperation, and the ability to land the family’s emotional truth in a single look. It is a strong fit for actors who like playing the person everyone turns to when the room tilts."
+      },
+      {
+        "name": "Carl Thomas",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s · deaf administrative assistant",
+        "hook": "Carl is the quiet newcomer who becomes Motson’s mirror inside the office, a younger deaf employee whose presence exposes how much Motson has changed. He is polite, resilient, and easy to underestimate, which makes him a useful emotional counterpoint in the final act.",
+        "why_actor_wants_this": "This is the kind of understated role that gave actors like Lucas Hedges in early ensemble work a chance to register depth with very little screen time. It offers a performer the chance to play stillness, dignity, and quiet authority in a supporting slot."
+      },
+      {
+        "name": "Ann Greenway",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · institute director",
+        "hook": "Ann is calm, institutional, and emotionally literate, the kind of administrator who can absorb a resignation without losing her center. She represents the institute’s adult logic and gives Motson a dignified exit and return path.",
+        "why_actor_wants_this": "This is the kind of role that lets an actress play authority with the grace Frances McDormand brings to institutional figures in *Wonder Boys* or *Nomadland*. It is a compact but valuable part for someone who can make a few scenes feel like the moral architecture of the film."
       },
       {
         "name": "Walford",
         "role_type": "Supporting",
         "demographics": "Male · 50s to 60s · CFO",
-        "hook": "Walford is the smooth, paternal face of corporate power, the man who can praise you and control you in the same sentence. He’s not a cartoon villain; he’s the kind of executive who makes hierarchy feel like mentorship, which makes him a useful and believable pressure source.",
-        "why_actor_wants_this": "This is the kind of polished authority role that gave Bryan Cranston in The Infiltrator or Ed Harris in The Truman Show its command — a man whose calm is itself a form of power. Veteran actors who like playing institutional authority with a sly edge will be interested."
+        "hook": "Walford is the polished corporate patriarch who rewards competence, likes hierarchy, and knows how to weaponize praise. He is not a villain in a cartoon sense; he is the kind of boss who makes assimilation feel like advancement.",
+        "why_actor_wants_this": "This is the kind of executive role that gives an actor the same pleasure as J.K. Simmons in *Whiplash* or Bryan Cranston in *The Infiltrator* — controlled authority with a hint of danger underneath. It is a strong fit for performers who can make power feel both seductive and transactional."
       },
       {
-        "name": "Madge Motson",
+        "name": "Betty Reed",
         "role_type": "Supporting",
-        "demographics": "Female · 50s to 60s · housewife / mother",
-        "hook": "Madge is the family’s emotional buffer, the one who translates, smooths, and absorbs tension until she can’t. She’s warm, practical, and quietly wounded, and the script gives her just enough texture to feel like the household’s true center of gravity.",
-        "why_actor_wants_this": "This is the kind of maternal role that gave Frances McDormand in Almost Famous or Allison Janney in The Hours its lived-in authority — a woman who can carry love, disappointment, and humor in a single look. Strong character actresses will recognize the emotional utility of the part."
+        "demographics": "Female · 20s to 40s · secretary",
+        "hook": "Betty is the office observer with a sharp tongue and a quick read on everyone’s business. She functions as a comic commentator and a social bridge between Motson, Margo, and the rest of the office ecosystem.",
+        "why_actor_wants_this": "This is the kind of scene-support role that gives an actress the same snap as Jane Lynch or Amy Sedaris in ensemble comedy — a few lines, a strong attitude, and instant memorability. It is ideal for someone who can turn reaction shots into punchlines."
+      },
+      {
+        "name": "George Leonard",
+        "role_type": "Supporting",
+        "demographics": "Male · 8 to 12 · deaf child",
+        "hook": "George is the class smart-mouth, a little kid with adult timing and a natural instinct for testing authority. He gives the classroom its liveliest energy and becomes one of the story’s clearest emotional anchors.",
+        "why_actor_wants_this": "This is the kind of child role that can do what the young cast in *The Mighty* or *Akeelah and the Bee* did — steal scenes by being sharper than the adults around them. A young performer with comic timing and confidence would have a field day here."
+      },
+      {
+        "name": "Tommy Parker",
+        "role_type": "Supporting",
+        "demographics": "Male · 8 to 12 · deaf child",
+        "hook": "Tommy is the shy, eager student whose need to please makes him both endearing and heartbreaking. He is the child most clearly caught between wanting approval and wanting to be understood on his own terms.",
+        "why_actor_wants_this": "This is the kind of part that gives a young actor the emotional territory of the child performances in *The Sixth Sense* or *Room* — quiet vulnerability with a strong payoff when the character finally speaks up. It is a showcase for a child performer who can play restraint."
+      },
+      {
+        "name": "Deloris Shawnee",
+        "role_type": "Supporting",
+        "demographics": "Female · 8 to 12 · deaf child",
+        "hook": "Deloris is one of the classroom’s bright, responsive kids, quick to join the group rhythm and quick to answer when the room opens up. She helps make the institute feel like a living community rather than a backdrop.",
+        "why_actor_wants_this": "This is a clean child ensemble role with the kind of naturalism that can stand out in a family-friendly feature. It gives a young performer the chance to be part of the group energy while still landing a few memorable beats."
+      },
+      {
+        "name": "Milo Reynolds",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s · business associate",
+        "hook": "Milo is the boardroom observer who functions as a social mirror for Walford’s status games. He is less a character engine than a useful pressure point in the corporate world.",
+        "why_actor_wants_this": "This is the kind of polished supporting role that lets a veteran actor play dry authority and reactionary wit in a few scenes. It is a good fit for performers who like making institutional spaces feel inhabited."
+      },
+      {
+        "name": "Frank Millard",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 50s · credit rep",
+        "hook": "Frank is the anxious office worker whose fear of scrutiny makes him easy prey for Motson’s new managerial edge. He is a small but useful example of how power changes the way people move around Motson.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor a clean comic beat of workplace humiliation and nervous reaction. It is ideal for a performer who can make one scene feel lived-in and specific."
       },
       {
         "name": "Carl Thomas",
         "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · deaf",
-        "hook": "Carl is the quiet newcomer who becomes a living test of Rick’s integrity. He’s gentle, observant, and easy to underestimate, which makes him a perfect foil for the office’s condescension and for Rick’s eventual moral choice.",
-        "why_actor_wants_this": "This is the kind of understated role that gave Ben Foster in The Messenger or Riz Ahmed in early ensemble work its quiet force — a part where stillness and dignity do the heavy lifting. A deaf actor or a performer with strong internal life would make this memorable."
-      },
-      {
-        "name": "Ann Greenway",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s · director of the institute",
-        "hook": "Ann is calm, measured, and emotionally literate, the kind of administrator who can deliver a life-changing response without raising her voice. She represents the institute’s adult wisdom and gives the movie a stabilizing institutional presence.",
-        "why_actor_wants_this": "This is the kind of controlled, humane authority role that gave Cherry Jones in The Handmaid’s Tale or Patricia Clarkson in Pieces of April its quiet command. Experienced actresses who play intelligence and grace well will be drawn to it."
+        "demographics": "Male · 20s to 30s · deaf administrative assistant",
+        "hook": "Carl is the quiet newcomer who becomes Motson’s mirror inside the office, a younger deaf employee whose presence exposes how much Motson has changed. He is polite, resilient, and easy to underestimate, which makes him a useful emotional counterpoint in the final act.",
+        "why_actor_wants_this": "This is the kind of understated role that gave actors like Lucas Hedges in early ensemble work a chance to register depth with very little screen time. It offers a performer the chance to play stillness, dignity, and quiet authority in a supporting slot."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage identity comedy with real emotional consequence.",
-        "fit_profile": "Second- or third-feature directors, or established indie filmmakers, who already work comfortably with performance-forward material and social satire. This material rewards directors who care about tonal control, clean blocking in dialogue scenes, and making subjective sound design feel emotionally motivated rather than gimmicky.",
-        "detail": "The movie gives a director a chance to balance broad workplace comedy, romantic tension, and a disability-centered emotional arc without needing spectacle. It will appeal to filmmakers who like actors in close-up, ensemble timing, and a final act that lands on character choice."
+        "hook": "A director who wants to make a performance-forward comedy-drama with a formal sound-design signature.",
+        "fit_profile": "Established indie feature directors with at least one or two character-driven films behind them, or TV directors looking to step into features with a strong emotional center. The material rewards restraint, clean blocking, and a confident handle on subjective sound, sign-language staging, and ensemble comedy.",
+        "detail": "The film gives a director a clear cinematic device to own — silence, sound, and subtitle-driven scenes that can be staged with precision rather than spectacle. It also offers a contained, actor-friendly canvas where the director can shape tone through performance and rhythm instead of heavy production machinery."
       },
       "buyer_appeal": {
         "tier": "$3-8M feature",
-        "lane": "Indie comedy-drama / streamer original feature",
-        "detail": "The script can be packaged around one strong lead and a supporting ensemble, so it does not require a heavy effects or action spend to make sense on the page. The deaf-community angle, workplace-comedy access point, and romance give it multiple audience entry points for festival buyers and streamers looking for a distinctive, exportable feature."
+        "lane": "Specialty theatrical / streamer comedy-drama",
+        "detail": "The package can be built around one strong lead and a supporting ensemble, so it does not require a tentpole cast to function. The deaf-community angle, workplace comedy, and romantic-drama spine give it a festival-to-platform path with clear audience identity and easy marketing hooks."
       }
     },
     "considerations": [
       {
-        "area": "The lie engine can sharpen the third act.",
-        "detail": "The core premise is strongest when Motson’s secret is actively costing him something in the room. One lever would be to let the Rosemary reveal and the office promotion pressure collide a little more directly before he chooses the institute, so the final turn feels like the inevitable result of one impossible choice.",
+        "area": "The middle plays as a series of social reversals.",
+        "detail": "The office, institute, and home sequences all work, but the script’s central engine would sharpen if one or two of those reversals were braided more tightly into a single escalating chain. The version where Motson’s secret collides with the romance and the workplace pressure in the same stretch would give the back half more forward charge.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The office satire could be more cumulative.",
-        "detail": "The Stanley Tower material has a clean comic lane, especially around Walford, Harris, and the quota reveal, but several office beats play as isolated set pieces. A next pass could thread Motson’s rise, the company softball stakes, and Carl Thomas’s arrival into a more escalating workplace ladder so the corporate world feels like one tightening machine.",
+        "area": "Motson’s secret could surface sooner in behavior.",
+        "detail": "The lie is the movie’s strongest engine, and the script already has the pieces in place; a next pass could let one or two early choices reveal that he is hearing before the explicit confession arrives. That would make the audience lean in harder because the tension would live in his conduct, not only in the reveal.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "Rosemary’s professional world can carry more weight.",
-        "detail": "Rosemary is compelling as a romantic counterforce, and the script already gives her authority in the classroom and the park. The version of the film where her psychiatry work and her view of deaf identity are a little more foregrounded would deepen the emotional debate around Tommy, Motson, and the final walk-in ending.",
+        "area": "The ensemble is strongest when it cross-pollinates.",
+        "detail": "The office cast, the institute cast, and the family cast each have their own flavor, and the film gets especially lively when those worlds collide. One lever would be to protect a few more scenes where those groups overlap, because that is where the comedy and the emotional contrast feel most saleable.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The family scenes invite a cleaner emotional build.",
-        "detail": "The Motson house material is rich with comic friction, especially the stereo, the dinner table, and the final father-son exchange. One direction would be to let Able’s hearing loss emerge with a touch more gradual pressure so the parallel with Rick lands with even more force when it finally surfaces.",
+        "area": "The softball game is the biggest production set piece.",
+        "detail": "The final game is the most elaborate sequence in the script, but it is still a practical, grounded set piece rather than a budget driver. If a producer wanted to simplify, the game could be staged with a tighter number of players and fewer cutaway beats without losing the story’s payoff.",
         "is_primary_lever": false,
-        "source": "script"
+        "source": "production"
       },
       {
-        "area": "The production footprint is already friendly.",
-        "detail": "This is a contemporary feature with practical locations, no VFX burden, and a manageable cast size, which makes it attractive for a modest-budget package. The main simplification lever is to keep the institute, office, and home worlds as the three primary anchors so the schedule stays efficient without losing the story’s social range.",
+        "area": "The sign-language world needs disciplined staging.",
+        "detail": "Because so much of the film depends on signed dialogue and subtitle readability, the blocking and camera coverage have to stay clean and legible. That is a craft opportunity rather than a burden: the version where the camera stays close enough to preserve performance would make the whole piece feel more intimate and premium.",
         "is_primary_lever": false,
         "source": "production"
       }
@@ -238,7 +287,7 @@
   "weightedScore": 61.3,
   "tier": "Optionable",
   "inputTokens": 37963,
-  "outputTokens": 5016,
-  "cost": 0.05104425,
+  "outputTokens": 5986,
+  "cost": 0.05540924999999999,
   "declaredFormat": "Feature film"
 }

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-29T00:56:16.834Z",
+  "submission_id": "d95a6b72-efbd-4672-8720-e9bd91f09da7",
+  "eval_id": "9b93f138-08de-40e3-b09d-b2fc3f6889e2",
+  "title": "American Midnight Connor Osborne McIntyre Film",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 5,
+  "lead_characters_summary": [
+    {
+      "name": "Alissa Forrest",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · law enforcement captain"
+    },
+    {
+      "name": "Hudson \"Hud\" Carol",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · truck driver"
+    },
+    {
+      "name": "Clara Forrest",
+      "role_type": "Lead",
+      "demographics": "Female · 17 · teenager"
+    },
+    {
+      "name": "Peter Forrest",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · FBI agent"
+    },
+    {
+      "name": "Layla Carol",
+      "role_type": "Lead",
+      "demographics": "Female · 50s · vampire"
+    }
+  ],
+  "positioning_hook": "A highway patrol captain hunting a string of drained bodies discovers the killer is a trucker keeping his vampire wife alive with stolen blood — until the family he’s built around her starts to collapse.",
+  "cost_usd": 0.04943549999999999,
+  "input_tokens": 41386,
+  "output_tokens": 4088,
+  "status": "wrote:leads_ok"
+}

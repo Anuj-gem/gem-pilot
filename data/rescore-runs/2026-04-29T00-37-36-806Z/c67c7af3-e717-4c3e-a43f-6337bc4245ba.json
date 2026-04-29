@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-04-29T01:01:36.904Z",
+  "submission_id": "c67c7af3-e717-4c3e-a43f-6337bc4245ba",
+  "eval_id": "d916dd9b-bc6d-418c-a6ae-7564160133c2",
+  "title": "The Paper Man",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 21,
+  "lead_characters_summary": [
+    {
+      "name": "Matthias Sindelar",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Austrian football star"
+    },
+    {
+      "name": "Camilla Castagnola",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Italian model"
+    },
+    {
+      "name": "Leopold Drill",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Jewish cafe owner"
+    },
+    {
+      "name": "Philip Dibbon",
+      "role_type": "Lead",
+      "demographics": "Male · early 30s · sports reporter"
+    },
+    {
+      "name": "Heinrich Retschury",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Austrian coach"
+    },
+    {
+      "name": "Walter Nausch",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Austrian footballer"
+    },
+    {
+      "name": "Hans Mock",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Austrian footballer"
+    },
+    {
+      "name": "Karl Sesta",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Austrian footballer"
+    },
+    {
+      "name": "Herr Mosser",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · newspaper editor"
+    },
+    {
+      "name": "Jurgen Schrempf",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Nazi officer"
+    },
+    {
+      "name": "Otto",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · Nazi officer"
+    },
+    {
+      "name": "Felix Linnemann",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · football federation official"
+    },
+    {
+      "name": "Heinrich Retschury",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Austrian coach"
+    },
+    {
+      "name": "Michl Shwarz",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · football administrator"
+    },
+    {
+      "name": "Robert Drill",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Jewish protester"
+    },
+    {
+      "name": "Brandt",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Jewish kapo"
+    },
+    {
+      "name": "Peter",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · concentration camp prisoner"
+    },
+    {
+      "name": "Egon Ulbrich",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · football official"
+    },
+    {
+      "name": "Max Uhrmann",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Nazi superior"
+    },
+    {
+      "name": "Andreas",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · building manager"
+    },
+    {
+      "name": "Archbishop Theodor Innitzer",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · Catholic archbishop"
+    }
+  ],
+  "positioning_hook": "Austrian football legend Matthias Sindelar is forced to choose between Nazi propaganda and his own legacy, turning a World Cup showcase into a public act of resistance.",
+  "cost_usd": 0.06568275,
+  "input_tokens": 49621,
+  "output_tokens": 6326,
+  "status": "wrote:leads_ok"
+}

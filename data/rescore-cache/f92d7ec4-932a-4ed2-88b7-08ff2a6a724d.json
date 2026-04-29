@@ -2,297 +2,299 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Romantic dramedy",
+      "genre_primary": "Romantic comedy",
       "genre_tags": [
-        "Showbiz satire",
-        "Character comedy"
+        "Satire",
+        "Drama"
       ],
-      "tone": "Broad, bawdy, self-aware, and ultimately sincere"
+      "tone": "Broad, bawdy, self-aware, and emotionally earnest"
     },
-    "positioning_hook": "A horny, insecure screenwriter at a Hollywood convention falls for a psychologist studying writers, and their seduction turns into a brutal test of ego, honesty, and ambition.",
+    "positioning_hook": "A struggling screenwriter at a Hollywood convention falls for a psychologist studying him, and their affair turns into a battle over art, ego, and who gets to define his life.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise is easy to grasp and the Hollywood-convention setting gives it an accessible industry hook, especially through Overby’s underdog chase for representation. The audience lane is real but somewhat specific: this plays best for adults who like sex-forward character comedy and insider satire rather than a broad four-quadrant crowd."
+        "reasoning": "The premise is easy to grasp and the Hollywood-satire angle gives it a clear audience, especially for viewers who like adult relationship comedies with industry inside-baseball texture. Its appeal is more targeted than four-quadrant, but the screenwriter/psychologist collision and the eventual public reconciliation give it a clean emotional promise."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The hook lands early: a screenwriter and a psychologist collide at a convention, then the relationship becomes the experiment. The script keeps the engine clear through the agent meetings, the seduction, and the eventual public reckoning at the student reception."
+        "reasoning": "The hook lands immediately: a screenwriter at a convention is mistaken for a subject by a psychologist, and that misunderstanding becomes the engine for the story. The script keeps the premise legible through the convention setting, the affair, and the final public speech, so the concept is easy to explain in a sentence."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Overby has a strong comic voice and Bell has a sharp intellectual edge, while Berger and Coyle add memorable counterpoints. The characters are vivid in behavior, though the emotional architecture is more built around their dynamic than around deeply layered interior turns."
+        "reasoning": "Overby has a strong comic voice, a bruised ego, and a clear need to be recognized, while Bell has a sharper, more complicated arc as she moves from clinical observer to emotionally implicated participant. Berger and Coyle add warmth and contrast, though the story is still primarily powered by the central couple."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The script commits to a very specific comic universe: writers, psychologists, agents, and sexual politics all colliding in one hotel ecosystem. The boldness comes from how openly it treats libido, ego, and craft as the same conversation, especially in Bell’s study premise and Overby’s final speech."
+        "reasoning": "The script commits to a very specific comic premise: a writer being psychoanalyzed by a psychologist who is also using him as research material. The boldness comes from the sexual frankness, the industry satire, and the way the script turns a convention hotel into a pressure cooker for identity and desire."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The story moves in clean blocks—meet-cute, seduction, betrayal, breakup, redemption, public declaration—but several stretches are built from repeated relationship beats and montage-like progression. The final reception gives the movie a satisfying destination, even if the middle is more episodic than escalating."
+        "reasoning": "The story moves with a steady comic engine through the convention, the affair, the betrayal, and the public reconciliation. Some middle passages play as extended relationship and banter sequences, but the emotional throughline remains clear enough to keep the momentum intact."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "A screenwriter being studied as a subject while trying to sell himself is an immediately legible and fresh comic premise. It feels like a premise that could only come from this exact collision of Hollywood vanity, sexual politics, and self-mythologizing."
+        "reasoning": "The idea of a screenwriter being studied as a specimen while trying to sell himself in Hollywood feels fresh and immediately playable. The final speech about suffering, craft, and love gives the premise a thematic landing that makes the odd setup feel inevitable rather than merely quirky."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "The hotel convention, the psychology forum, the agency meetings, the student reception, and the apartment life all create a recognizable ecosystem with its own rituals and status games. The world is not huge, but it is specific enough to generate scenes rather than merely host them."
+        "reasoning": "The convention hotel, the screenwriting hustle, the agent meetings, and the psychology forum create a world with its own social rules and status games. The script gets a lot of mileage out of the ecosystem around the protagonist, especially the hotel spaces where writers, agents, and professionals keep colliding."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone is unmistakably bawdy and confessional, with a comic voice that swings from crude banter to sincere emotional declaration. The script knows exactly how far it wants to push sexual frankness and self-parody before landing in sentiment."
+        "reasoning": "The tone is distinctive because it mixes bawdy sex comedy, industry satire, and sincere romantic longing without pretending any of those modes are separate. The dialogue is loud and comic, but the script keeps returning to vulnerability, which gives it a recognizable personality."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the sex comedy, there’s a clear wound around trust, authorship, and being seen as more than a punchline. The Bell-overby relationship and the reveal of his past marriage give the story a deeper emotional floor, though the script keeps that depth in service of the romance rather than exploring it broadly."
+        "reasoning": "Beneath the comic surface, the script is really about validation, trust, and the cost of making art in public. The father trauma reveal and the final reconciliation suggest more emotional depth than the early banter alone advertises, though the script is still most immediately a relationship comedy."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "Overby/Bell is the core engine, but Berger/Coyle and Overby/Kinari add strong secondary chemistry that keeps the movie from living on one pairing alone. The apartment and convention settings let multiple combinations generate material, which is a real asset for a feature comedy."
+        "score": 6,
+        "reasoning": "The central Overby/Bell dynamic carries the movie, and Berger/Coyle provide a lively secondary mirror that keeps the apartment world active. The ensemble is functional and often funny, but the story’s energy still concentrates around the lead couple rather than generating endless combinatorial pairings."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 12,
+        "speaking_roles": 10,
         "leads": 4,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
           "Adult ensemble",
-          "One principal role written as a psychologist with strong authority and sexual confidence",
-          "One principal role written as an overweight comic roommate",
-          "One principal role written as an Asian-American TV star/client",
-          "One principal role written as an older male agent"
+          "One principal role for a psychologist in her 30s-40s",
+          "One principal role for a screenwriter in his 30s-40s",
+          "One supporting role for an older male agent",
+          "One supporting role for a male roommate with comic presence"
         ]
       },
       "locations": {
-        "distinct_count": 14,
+        "distinct_count": 12,
         "interior_exterior_ratio": "Mostly interior",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
           "Hotel convention spaces",
           "Apartment interiors",
-          "Restaurant and office interiors",
-          "Car interiors and short street exteriors"
+          "Restaurant/breakfast areas",
+          "Office interiors",
+          "One police station exterior"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No visual effects requirements beyond simple title-card style montage transitions.",
+        "vfx_details": "No VFX-driven sequences; the film is built from dialogue scenes and simple practical transitions.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical slap, minor physical comedy, door lock breakage, and a brief jail beat.",
+        "sfx_needs": "Minimal practical effects, limited to a door lock break, a punch, and simple crowd/background action.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Mercedes Benz, Thunderbird wine, Queensryche, Arthur Murray, Rampage arcade game, and WD-40 are referenced by name."
+          "detail": "Queensryche is specifically named as music playing during a sex scene."
         },
         {
-          "type": "named_music",
-          "detail": "Heavy metal, classical music, opera, disco, and the National Anthem are all used as scripted audio cues; Queensryche is specifically named."
+          "type": "brand",
+          "detail": "Arthur Murray is referenced in dialogue about dance lessons."
+        },
+        {
+          "type": "brand",
+          "detail": "Mercedes Benz is specifically identified in a car scene."
+        },
+        {
+          "type": "brand",
+          "detail": "Thunderbird wine is specifically named in a domestic scene."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Theatrical indie comedy or premium-streaming adult comedy",
+        "recommended_lane": "Indie theatrical / festival-to-platform adult comedy-drama",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Feature release model with festival-to-platform potential; the hook is character and dialogue driven rather than franchise-based."
+        "series_engine_or_release_model": "Feature release model with strongest fit as a festival launch or adult-comedy platform acquisition"
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary, mostly interior, and built around dialogue scenes in a hotel, apartments, offices, and restaurants."
+          "note": "Contemporary, dialogue-driven, and largely contained to hotel, apartment, office, and restaurant interiors."
         },
         "cast": {
           "level": "medium",
-          "note": "The script wants four strong adult leads and benefits from distinctive comic casting in the Overby, Bell, Berger, and Kinari roles."
+          "note": "The script depends on four strong adult roles and benefits from actors with sharp comic timing and sexual chemistry."
         },
         "location": {
           "level": "medium",
-          "note": "The footprint is manageable but spread across a hotel, multiple apartments, offices, restaurants, and a few exterior beats."
+          "note": "A dozen distinct locations, but most are contained interiors within the hotel/apartment/convention ecosystem."
         },
         "content": {
           "level": "high",
-          "note": "Explicit sexual dialogue and behavior, profanity, and a sexual-abuse backstory narrow the content lane."
+          "note": "Explicit sexual dialogue and behavior, plus profanity and a brief assault/jail beat, narrow the platform lane."
         },
         "rights": {
           "level": "medium",
-          "note": "Several named brands and music references appear on the page, including Queensryche, Mercedes Benz, Rampage, and Arthur Murray."
+          "note": "Several named brands and music references appear on the page and would need clearance review."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is built on a clean comic engine.",
-          "what_it_means": "A screenwriter being analyzed by a psychologist gives the movie a built-in irony machine: every flirtation is also a case study, and every career move is also emotional exposure. That kind of premise is easy to sell to adult comedy buyers and gives actors a playable hook from page one.",
-          "evidence": "Bell explicitly frames Overby as her subject, and the relationship becomes a research experiment disguised as seduction.",
+          "dimension_or_area": "The premise is instantly pitchable.",
+          "what_it_means": "A buyer can understand the movie in one breath: a screenwriter at a Hollywood convention gets psychoanalyzed, seduced, and challenged by the woman studying him. That kind of clean, high-concept relationship engine is easy to market to adult audiences who want comedy with a hook. It will attract producers looking for a contained, actor-forward feature and buyers who program smart, sexy industry satire.",
+          "evidence": "Bell mistakes Overby for a fellow writer, then decides to study screenwriters by seducing him; the convention hotel becomes the story engine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Overby is a showcase lead.",
-          "what_it_means": "Dave Overby is written as a fast-talking, horny, wounded, self-mythologizing writer who can carry comedy, romance, and humiliation in the same scene. That is exactly the kind of role that attracts actor-driven indie buyers and gives a performer a full-spectrum turn.",
-          "evidence": "His convention monologue, his heavy-metal writing ritual, his blowup at Bell, and his final speech at the reception all build a single comic identity.",
+          "dimension_or_area": "Overby is a vivid comic lead.",
+          "what_it_means": "The role gives an actor a fast-talking, self-mythologizing hustler who can be ridiculous, wounded, and strangely sincere in the same scene. That is the kind of part that draws comedic leads, prestige-comedy actors, and performers who want a showcase for verbal rhythm and emotional volatility.",
+          "evidence": "His opening monologue about talent, persistence, luck, and 'nothing days' sets his voice immediately, and he keeps turning humiliation into performance.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Bell has a sharp, playable contradiction.",
-          "what_it_means": "Helen Bell is not just the love interest; she is the person with institutional authority who chooses to break her own rules, which gives the film a strong female lead slot. That kind of role is attractive to actresses looking for intelligence, erotic charge, and emotional reversal in one package.",
-          "evidence": "She studies Overby, seduces him, betrays him, and then publicly claims him at the end.",
+          "dimension_or_area": "Bell has a built-in transformation arc.",
+          "what_it_means": "The psychologist starts as the observer and ends up the one emotionally exposed, which gives the film a strong female lead trajectory and a clean romantic reversal. That makes the role attractive to actresses who want intelligence, control, erotic charge, and a late-breaking emotional surrender.",
+          "evidence": "Bell frames Overby as a subject, uses the affair as research, then finally admits 'I love you for who and what you are' in the public climax.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The supporting duo has real comic lift.",
-          "what_it_means": "Berger and Coyle create a second relationship engine that broadens the movie beyond the central romance and gives the script more than one audience entry point. Ensemble-friendly buyers and actors who like scene-stealing supporting roles will respond to how much personality they bring to the apartment material.",
-          "evidence": "Berger’s self-conscious charm and Coyle’s blunt candor power their sessions, dates, and domestic scenes.",
+          "dimension_or_area": "The apartment-world ensemble has comic lift.",
+          "what_it_means": "Berger and Coyle give the movie a second relationship lane that keeps the domestic world alive and broadens the audience beyond the central romance. That kind of supporting engine helps a producer sell the project as a character comedy with repeatable chemistry, not just a two-hander.",
+          "evidence": "Berger’s food-and-sex routines and Coyle’s candid self-disclosure create a parallel courtship that mirrors and comments on Overby and Bell.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The Hollywood-insider setting is story-generating.",
-          "what_it_means": "The convention, the agent meetings, the rewrite process, and the student reception all turn the industry itself into the arena of the movie. That gives the script a built-in appeal for buyers who want a showbiz satire with recognizable rituals and status games.",
-          "evidence": "The hotel conference, Kinari’s pitch meetings, Roth’s deal-making, and the final student reception all live in the same professional ecosystem.",
+          "dimension_or_area": "The script has a clear thematic spine.",
+          "what_it_means": "This is not just a sex comedy; it is about authorship, validation, and the cost of being seen. That gives the movie a stronger festival and critical lane because the laughs are tied to a recognizable emotional argument about art and identity.",
+          "evidence": "Overby’s final speech about suffering for writing, and Bell’s public declaration of love, land the movie on craft and acceptance.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ending lands as a public emotional payoff.",
-          "what_it_means": "The final reception speech and Bell’s on-stage declaration give the feature a clean climax that converts private conflict into public affirmation. That’s the kind of ending that helps a comedy feel complete and gives distributors a satisfying trailer moment.",
-          "evidence": "Overby’s speech about suffering for writing is interrupted by Bell’s declaration of love before the room applauds them together.",
+          "dimension_or_area": "The setting is an engine, not wallpaper.",
+          "what_it_means": "The hotel convention environment creates built-in collisions between writers, agents, psychologists, and aspirants, which means the movie can generate scenes without leaving its core footprint. That is attractive to financiers because the world feels specific while staying producible.",
+          "evidence": "The screenwriters conference, psychologists forum, student reception, and hotel breakfast spaces all feed the same social pressure cooker.",
           "source": "script"
         }
       ],
-      "headline": "This is a bawdy, actor-friendly Hollywood comedy with a very saleable engine: a screenwriter gets seduced by the psychologist studying him, and the relationship becomes a battle over ego, trust, and authorship. It has a contained production footprint, a vivid ensemble, and a final-act public declaration that gives the movie a clean emotional landing."
+      "headline": "NOTHING DAYS is a smart, bawdy, actor-friendly feature with a clean commercial engine: a screenwriter at a Hollywood convention gets turned into a psychological case study and falls for the woman holding the clipboard. It plays like adult relationship comedy with real industry texture, a contained footprint, and a lead role that gives an actor room to be funny, wounded, and unexpectedly moving."
     },
     "lead_characters": [
       {
         "name": "Dave Overby",
         "role_type": "Lead",
-        "demographics": "Male · 30s",
-        "hook": "A swaggering, insecure screenwriter with a salesman’s mouth and a bruised ego, Overby lives in the gap between how he sees himself and how the room sees him. He is funny, horny, defensive, and unexpectedly sincere, with a real need to be recognized as an artist rather than a punchline.",
-        "why_actor_wants_this": "This is the showcase territory of John Cusack in *High Fidelity* — a fast-talking romantic lead whose self-awareness is always colliding with self-delusion. It gives an actor the chance to play verbal velocity, humiliation, sexual confidence, and wounded sincerity in one continuous performance."
+        "demographics": "Male · mid-30s",
+        "hook": "A hustling screenwriter with a big mouth, a bruised ego, and a genuine need to be taken seriously. He performs confidence like a religion, but the script keeps revealing the insecurity underneath, which makes him funny without making him small. He is the kind of guy who can turn a rant about craft into a seduction and a humiliation into a sales pitch.",
+        "why_actor_wants_this": "This is the showcase territory of Steve Carell in Little Miss Sunshine or Michael Keaton in Birdman — a comic man whose self-image is constantly colliding with the room. The role gives an actor sharp dialogue, romantic lead energy, and a late-film emotional speech that can reset how audiences see him."
       },
       {
         "name": "Dr. Helen Bell",
         "role_type": "Lead",
         "demographics": "Female · 30s",
-        "hook": "Bell is a psychologist with a cool exterior, a sharp mind, and a private hunger that keeps breaking through her professional mask. She begins as the observer and ends up becoming the most emotionally exposed person in the story, which makes her both the authority figure and the romantic engine.",
-        "why_actor_wants_this": "This is the showcase territory of Julianne Moore in *Boogie Nights* — a woman whose intelligence and composure gradually give way to need, shame, and desire. It offers an actress a role that can play authority, erotic charge, betrayal, and public emotional reclamation without ever leaving the same character."
-      },
-      {
-        "name": "Louis Berger",
-        "role_type": "Lead",
-        "demographics": "Male · 30s-40s · overweight",
-        "hook": "Berger is the roommate who looks like comic relief until you realize he is the story’s most emotionally available man. He is self-deprecating, loyal, and quietly romantic, with a sweetness that makes his scenes feel like the movie’s pressure valve.",
-        "why_actor_wants_this": "This is the showcase territory of Philip Seymour Hoffman in *Along Came Polly* — a comic supporting lead who can make insecurity, affection, and physicality feel fully human. It gives an actor a memorable, scene-rich part that can steal the movie without ever asking for broad caricature."
-      },
-      {
-        "name": "Louise Coyle",
-        "role_type": "Lead",
-        "demographics": "Female · 20s-30s",
-        "hook": "Coyle is blunt, funny, body-conscious, and far more emotionally articulate than she first appears. She brings a lived-in, unguarded energy to the apartment scenes and gives the movie a second female perspective that is earthy rather than polished.",
-        "why_actor_wants_this": "This is the showcase territory of Melissa McCarthy in *Bridesmaids* — a role that turns blunt honesty and physical comedy into real emotional presence. It gives an actress room to be funny, sexually frank, and unexpectedly vulnerable in the same breath."
-      },
-      {
-        "name": "Roderick Hamilton",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s",
-        "hook": "Hamilton is a polished, predatory psychologist who treats charm like a weapon and intimacy like a performance space. He is smug, sexually theatrical, and professionally authoritative, which makes him a perfect foil for Bell’s unraveling.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Wilkinson in *Michael Clayton* — a man whose calm authority hides a manipulative core and whose scenes are built on controlled menace. It gives an actor the chance to play charisma as domination, then let the mask slip in private."
-      },
-      {
-        "name": "Sarah Roth",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s-40s",
-        "hook": "Roth is a hard-edged agent who understands the business as a negotiation, not a romance. She is sharp, territorial, and unimpressed by Overby’s self-image, which makes her one of the few people in the movie who can puncture his mythology instantly.",
-        "why_actor_wants_this": "This is the showcase territory of Catherine Keener in *Being John Malkovich* — a woman who can weaponize deadpan intelligence and make every line feel like a verdict. It gives an actress a compact but memorable authority role with real bite."
-      },
-      {
-        "name": "Ramesy Kinari",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · Arabian",
-        "hook": "Kinari is a worldly, food-loving agent with a sly sense of humor and a practical eye for talent. He is both comic and shrewd, the kind of industry figure who can laugh at the business while still knowing exactly how to work it.",
-        "why_actor_wants_this": "This is the showcase territory of Ben Kingsley in *Sexy Beast* — a smooth operator whose charm is inseparable from intelligence and control. It gives an actor a flavorful supporting role that can play warmth, wit, and deal-making authority in equal measure."
-      },
-      {
-        "name": "Fawn Spree",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s-60s",
-        "hook": "Spree is the polished founder of the institute, all presentation and institutional confidence. She exists to embody the polished public face of the writing world, which makes her a useful pressure point in the final reception sequence.",
-        "why_actor_wants_this": "This is the showcase territory of Meryl Streep in *The Devil Wears Prada* — a role built on command, polish, and social authority. It gives an actress a brief but high-visibility institutional power part that can land a room with one entrance."
+        "hook": "An intelligent psychologist who begins as the observer and slowly becomes the one most exposed by the experiment. She is controlled, curious, sexually direct, and more emotionally complicated than her clinical posture suggests. The part lives in the tension between professional authority and private longing.",
+        "why_actor_wants_this": "This is the showcase space of Julianne Moore in Boogie Nights or Toni Collette in The United States of Tara — a woman whose intelligence is part of the performance, not a substitute for feeling. It gives an actress the chance to play restraint, erotic curiosity, shame, and a public emotional surrender in one arc."
       },
       {
         "name": "Louis Berger",
         "role_type": "Supporting",
         "demographics": "Male · 30s-40s",
-        "hook": "The apartment roommate is a comic ballast with appetites, loyalty, and a disarming lack of pretension. He makes the domestic world feel lived-in and gives Overby someone to bounce off when the romance and career pressure start to tighten.",
-        "why_actor_wants_this": "This is the showcase territory of Seth Rogen in *Knocked Up* — a funny, affectionate roommate role that turns everyday behavior into character. It gives an actor a scene-stealing supporting slot with warmth and comic rhythm."
+        "hook": "Overby’s roommate is a warm, overeager comic ballast with a big appetite for food, sex, and friendship. He is funny because he is unguarded, but he also functions as the movie’s emotional conscience, especially when he tells the truth about Overby’s past. He feels like the kind of supporting character who can steal scenes without ever trying to.",
+        "why_actor_wants_this": "This is the kind of part John Goodman made a career out of in The Big Lebowski — a broad, lovable presence who can pivot into real feeling when the movie needs it. Character actors and comic performers with warmth will chase it because it gives them both punchlines and heart."
       },
       {
-        "name": "Marguerite",
+        "name": "Louise Coyle",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Bell’s roommate is candid, funny, sexually open, and refreshingly unembarrassed about her body and appetites. She gives the movie a grounded female counterpoint to the central romance and keeps the apartment scenes from becoming purely functional. Her bluntness makes her feel lived-in rather than ornamental.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that made Jennifer Coolidge in American Pie or Parker Posey in Party Girl pop — a woman who can turn frankness into comedy and surprise. Actors who specialize in sharp, offbeat supporting work will see a chance to make a small role memorable."
+      },
+      {
+        "name": "Roderick Hamilton",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Bell’s lover is polished, smug, sexually performative, and always half a step away from becoming ridiculous. He is the movie’s most overt antagonist, but he works because he is not just a villain; he is a narcissist whose confidence keeps curdling into humiliation. He gives the film a strong comic foil with real menace in the relationship scenes.",
+        "why_actor_wants_this": "This is the kind of glossy, toxic, scene-chewing part that actors like Willem Dafoe in Wild at Heart or Tom Hollander in The Night Manager can make delicious. It offers a performer the chance to play vanity, erotic control, and public embarrassment in the same role."
+      },
+      {
+        "name": "Ramesy Kinari",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · South Asian",
+        "hook": "Overby’s agent is shrewd, funny, and more worldly than the protagonist, but he never loses his comic appetite. He reads like a man who understands the business and the absurdity of it, which makes him a useful pressure valve in the story. He also gives the movie a professional gatekeeper with personality.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor play the smooth operator territory of Ben Kingsley in Sexy Beast or Aasif Mandvi in smaller industry comedies — a man who can be charming while quietly controlling the room. Character actors who like verbal precision and authority will want it."
+      },
+      {
+        "name": "Sarah Roth",
         "role_type": "Supporting",
         "demographics": "Female · 30s-40s",
-        "hook": "Marguerite is the off-screen force that explains why Overby’s trust issues have teeth. Even in absence, she gives the story a personal history that makes his fear of emotional exposure feel earned.",
-        "why_actor_wants_this": "This is the showcase territory of the absent-wife function in *Manchester by the Sea* — a role whose power comes from how it shapes the lead’s interior life. If expanded on the page, it gives an actress a memory-role with real emotional consequence."
+        "hook": "A hard-edged agent who knows the business and refuses to flatter anyone. She is sharp, transactional, and emotionally legible even when she is being ruthless, which makes her feel like a real Hollywood operator rather than a stock gatekeeper. Her scenes give the movie a tougher industry texture.",
+        "why_actor_wants_this": "This is the kind of no-nonsense role that Frances McDormand or Allison Janney has turned into a weapon in smaller scenes — a woman who can dominate a room with timing and attitude. It will attract actors who enjoy playing competence with bite."
       },
       {
-        "name": "Mark",
+        "name": "Louis Berger",
         "role_type": "Supporting",
-        "demographics": "Male · child",
-        "hook": "Mark is the son in Overby’s past, the human cost of his earlier life. He is less a present-tense character than an emotional anchor for the backstory that defines Overby’s distrust.",
-        "why_actor_wants_this": "This is the kind of child role that functions as emotional shorthand in a father-loss story, similar to the memory-space children occupy in *Kramer vs. Kramer*. It would attract a young performer if the production chose to stage the backstory visually."
+        "demographics": "Male · 30s-40s",
+        "hook": "Overby’s roommate is a warm, overeager comic ballast with a big appetite for food, sex, and friendship. He is funny because he is unguarded, but he also functions as the movie’s emotional conscience, especially when he tells the truth about Overby’s past. He feels like the kind of supporting character who can steal scenes without ever trying to.",
+        "why_actor_wants_this": "This is the kind of part John Goodman made a career out of in The Big Lebowski — a broad, lovable presence who can pivot into real feeling when the movie needs it. Character actors and comic performers with warmth will chase it because it gives them both punchlines and heart."
+      },
+      {
+        "name": "Louise Coyle",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s",
+        "hook": "Bell’s roommate is candid, funny, sexually open, and refreshingly unembarrassed about her body and appetites. She gives the movie a grounded female counterpoint to the central romance and keeps the apartment scenes from becoming purely functional. Her bluntness makes her feel lived-in rather than ornamental.",
+        "why_actor_wants_this": "This is the kind of scene-stealing supporting role that made Jennifer Coolidge in American Pie or Parker Posey in Party Girl pop — a woman who can turn frankness into comedy and surprise. Actors who specialize in sharp, offbeat supporting work will see a chance to make a small role memorable."
+      },
+      {
+        "name": "Fawn Spree",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s",
+        "hook": "The founder of the institute is a polished, self-important host who embodies the institutional side of the screenwriting world. She is not central to the emotional story, but she gives the final reception a comic target and a sense of show-business hierarchy. Her presence helps the climax feel like a public event rather than a private speech.",
+        "why_actor_wants_this": "This is the kind of elevated supporting role that lets an actor play authority with comic vanity, similar to the social-climber energy of Meryl Streep in smaller ensemble scenes. It suits performers who like making institutional power funny."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a sex comedy with real emotional bruises.",
-        "fit_profile": "First- or second-feature directors, or established indie filmmakers, who already work in performance-forward comedy and are comfortable staging adult dialogue scenes with a sharp comic rhythm. This material rewards directors who like contained social worlds, tonal control, and actors playing contradiction rather than plot mechanics.",
-        "detail": "The movie gives a director a hotel-convention ecosystem, a strong ensemble, and a final public payoff that can be staged with confidence rather than scale. It is especially attractive to filmmakers who want to prove they can handle bawdy material without losing emotional sincerity."
+        "hook": "A director who wants to make a sexy, talky, character-driven Hollywood satire without losing the romantic payoff.",
+        "fit_profile": "Established indie feature directors with at least one or two relationship-driven films, or TV directors moving into features who already know how to stage dialogue-heavy scenes with rhythm. The material rewards directors who care about performance, comic timing, and making interiors feel socially alive rather than static.",
+        "detail": "The movie gives a director a contained playground of hotel rooms, restaurants, apartments, and offices where status, desire, and humiliation can play in close-up. It is especially attractive to filmmakers who can balance bawdy comedy with emotional sincerity and make actors carry the frame."
       },
       "buyer_appeal": {
-        "tier": "$3-8M feature",
-        "lane": "Premium-streaming adult comedy / festival-friendly indie comedy",
-        "detail": "It can be packaged around two strong leads and a compact ensemble, so a buyer does not need VFX or large-scale action to justify the greenlight. The showbiz setting, explicit adult humor, and contained interiors make it exportable as a dialogue-driven comedy with a clear trailer hook."
+        "tier": "$2-8M feature",
+        "lane": "Adult indie comedy-drama / festival-to-platform lane",
+        "detail": "It can be packaged around two strong lead performances and a compact supporting ensemble, so a buyer does not need VFX or large-scale set pieces to see the movie. The Hollywood-insider setting and mature relationship material fit the current adult-comedy lane for streamers and festival-driven theatrical releases."
       }
     },
     "considerations": [
       {
-        "area": "The middle runs on repeated relationship beats.",
-        "detail": "The convention seduction, the apartment scenes, and the dating montage all play well, but they also cover similar emotional territory. A next pass could sharpen the escalation by making each phase of the relationship reveal a different side of Overby and Bell rather than revisiting the same attraction/conflict pattern.",
+        "area": "The middle leans on repeated banter beats.",
+        "detail": "The convention-to-affair stretch is entertaining, but a next pass could look at where the same emotional beat is being stated in slightly different comic clothes. One lever would be to let a few scenes turn on a sharper change in power or information so the relationship keeps evolving rather than simply deepening by accumulation.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The backstory arrives as exposition.",
-        "detail": "Berger’s explanation of Overby’s marriage, jail time, and lost son gives the character depth, and the scene is doing a lot of narrative work at once. One direction would be to seed one or two of those facts earlier in behavior or dialogue so the reveal lands with more inevitability and less summary.",
+        "area": "The final reconciliation arrives through speech.",
+        "detail": "The ending lands because the public declaration is emotionally clear, and the version of the climax where one visual or behavioral choice carries part of that turn could make the payoff even more cinematic. That would protect the movie’s theatrical feel while keeping the speech from doing all the heavy lifting.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The final speech is the emotional thesis.",
-        "detail": "Overby’s reception speech is the movie’s statement of purpose, and it already has a strong comic voice. The version of the scene where Bell’s arrival is even more directly tied to the speech’s emotional turn would make the climax feel even more earned.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The brand and music references are specific.",
-        "detail": "Queensryche, Mercedes Benz, Arthur Murray, Rampage, Thunderbird, and WD-40 all appear by name, which gives the script texture but also creates clearance work. A production pass could preserve the same social texture while swapping any nonessential references for generic equivalents if needed.",
+        "area": "The script carries several named brands.",
+        "detail": "Queensryche, Arthur Murray, Mercedes Benz, Thunderbird wine, and other named references are all specific enough to help texture the world, but they also create a clearance pass. A producer would want to know early whether those references stay, get swapped, or get generalized in production.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The footprint stays manageable with one simplification.",
-        "detail": "The story already lives mostly in interiors, so the hotel, apartment, restaurant, and office network is a good fit for a contained production. If needed, the version of the script where a couple of the apartment and restaurant beats are consolidated would protect the relationship engine while trimming company moves.",
+        "area": "The cast is compact but chemistry-dependent.",
+        "detail": "The movie really lives on Overby, Bell, Berger, and Coyle, with Roth, Kinari, and Hamilton adding pressure around them. That makes the package efficient, but it also means the lead pair needs immediate chemistry and the supporting players need strong comic timing.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The hotel world can be simplified further.",
+        "detail": "The story already lives in a contained convention ecosystem, so one future pass could consider whether a few of the hotel-adjacent spaces can be folded into each other without changing the social rhythm. That would keep the movie nimble for a modest-budget production while preserving the sense of a bustling industry weekend.",
         "is_primary_lever": false,
         "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 67,
+  "weightedScore": 65.3,
   "tier": "Optionable",
   "inputTokens": 35164,
-  "outputTokens": 4802,
-  "cost": 0.047982,
+  "outputTokens": 4892,
+  "cost": 0.048387,
   "declaredFormat": "Feature film"
 }

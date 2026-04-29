@@ -2,345 +2,331 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Supernatural crime thriller",
+      "genre_primary": "Supernatural action thriller",
       "genre_tags": [
-        "Police procedural",
-        "Horror"
+        "crime",
+        "horror"
       ],
-      "tone": "Gritty, heightened, pulpy, and tragic"
+      "tone": "Gritty, pulpy, heightened, and tragic"
     },
-    "positioning_hook": "A Long Beach vice cop survives a blood-soaked drug raid, then returns as a decaying avenger to expose the captain who turned the department into a silent gang.",
+    "positioning_hook": "A Long Beach vice cop is forced to hunt a drug empire after his partner dies and returns as an undead avenger, while his captain secretly runs the trade.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The script has a clean genre promise: cops, drug dealers, a corrupt captain, and a supernatural return from the dead. The audience target is clear and the hook is easy to sell, though the extreme gore and pulpy execution narrow the lane more than a four-quadrant thriller."
+        "reasoning": "The premise has a clean commercial engine: cops, drugs, betrayal, and a supernatural revenge turn that escalates into a full-scale showdown. The audience is narrower than a four-quadrant thriller because the material is very specific in its violence and genre blend, but the hook is immediate and easy to sell."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The premise lands early in the raid sequence and then sharpens when Pattern reappears altered and Antonelli is pulled into the conspiracy. The story engine is legible in two sentences: a cop is presumed dead, comes back changed, and the department itself is the enemy."
+        "reasoning": "The script establishes its engine early with the crackhouse raid, Pattern's death, and the later reveal that she has returned changed. The final act makes the premise unmistakable: Antonelli must stop the captain behind the drug network while confronting his undead partner."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Antonelli has a durable center as the weary veteran with a conscience, and Pattern becomes a striking tragic figure once she returns. Fields is vivid as the smiling rot at the center of the system, but several supporting players function more as pressure points than fully independent character engines."
+        "reasoning": "Antonelli has a durable center as the weary veteran caught between duty, love, and institutional rot, and Pattern becomes a striking tragic figure once transformed. Fields is vivid as the corrupt mentor, though several supporting players function mainly as pressure points around the lead."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The blend of police corruption, gang warfare, and supernatural mutation gives the script a distinct pulp identity. The weather motif, the cathedral imagery, and the final chemical-vat transformation show a writer reaching for a bigger mythic register than a standard cop thriller."
+        "reasoning": "The script commits to a hard genre pivot: a street-level police corruption story that mutates into supernatural body horror and revenge. The weather motif, the undead partner, and the final creature fusion give it a confident pulp identity that stands apart from a standard cop thriller."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The raid, the aftermath, the IA pressure, the gang escalation, and the final warehouse showdown keep the story moving with strong escalation. The middle section does spend time on repeated interrogations and domestic beats, but the overall drive remains intact and culminates in a clear endgame."
+        "reasoning": "The opening raid, the aftermath investigation, the drug-house escalation, and the final warehouse assault create a strong forward drive. The middle spends time on domestic and procedural material, but those scenes keep the emotional stakes alive and feed the eventual confrontation."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A dead partner returning as a rotting, justice-driven force inside a corrupt police war is an immediately ownable twist. The idea feels strange in a way that still clicks instantly, especially once Pattern’s transformation becomes tied to the department’s betrayal."
+        "reasoning": "The idea of a police partner returning as a decayed, justice-driven force is instantly legible and memorable, and the script keeps finding fresh images around that core. The storm, the cathedral, the flies, and the final mutation all reinforce a premise that feels strange in a way that still makes immediate sense."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "Long Beach is rendered with specific street-level detail: graffiti, vice operations, cathedrals, alleyways, housing tracts, and the drug economy’s logistics. The world has social layers and a visible criminal ecosystem, though it is still primarily built to serve the central plot rather than to branch outward indefinitely."
+        "reasoning": "Long Beach is rendered with specific street-level texture: vice units, IAD, gang graffiti, crackhouses, and the social geography of neighborhoods and police culture. The world is not just a backdrop; it generates the plot, the corruption, and the visual language of the story."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The script has a very particular tone: hardboiled cop drama colliding with body-horror spectacle and grimly comic streetwise banter. The weather, the profanity, the grotesque violence, and the emotional sincerity around Antonelli and Pattern create a tone that would be recognizable from a single sequence."
+        "reasoning": "The tone is unmistakable: hardboiled cop banter, tragic domesticity, lurid gore, and supernatural spectacle all live in the same frame. The script knows when to play straight, when to go operatic, and when to lean into grotesque pulp."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the pulp surface there is a real tragic spine about duty, corruption, family, and the cost of service. The emotional material around Antonelli, Christine, Jerry, and Pattern suggests more depth than the plot alone advertises, though the script mostly keeps that depth in service of the thriller engine."
+        "reasoning": "Beneath the genre surface there is a real story about loyalty, institutional decay, marriage, and the cost of service. The script gestures toward that depth through Antonelli's retirement anxiety and Pattern's family life, though the surface engine remains the dominant attraction."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Antonelli/Fields, Antonelli/Pattern, Antonelli/Christine, and Fields/Stevens all generate playable dynamics. The ensemble is functional and gives the story multiple pressure lines, but the script still lives most strongly on the Antonelli-Pattern-Fields triangle."
+        "reasoning": "Antonelli/Fields, Antonelli/Pattern, Antonelli/Christine, and Fields/Kimbrell all carry usable energy, and the police-gang ecosystem gives the ensemble some shape. Still, the story is fundamentally driven by Antonelli's point of view, with the supporting cast serving the central collision."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 16,
+        "speaking_roles": 18,
         "leads": 4,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Black female lead in her 30s",
-          "White male lead in his 50s",
-          "Younger white female romantic lead",
-          "Child roles for two daughters",
-          "Gang ensemble with specific ethnic and age textures",
-          "Blind supporting character",
-          "Police ensemble"
+          "Black female lead",
+          "white male lead",
+          "mixed-age supporting cast",
+          "child roles for two daughters",
+          "teen gang ensemble",
+          "older authority figures"
         ]
       },
       "locations": {
         "distinct_count": 18,
-        "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "Contemporary",
+        "interior_exterior_ratio": "roughly balanced",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Long Beach / Southern California street texture",
-          "Police station interiors",
-          "Residential homes",
-          "Warehouse drug lab",
-          "Cathedral exterior",
-          "Apartment complex",
-          "Bar",
-          "Firing range",
-          "Hospital"
+          "Long Beach/Los Angeles street grid",
+          "police station interiors",
+          "cathedral exterior",
+          "warehouse drug lab",
+          "apartment complex",
+          "family homes",
+          "bar",
+          "alleyways",
+          "firing range",
+          "hospital"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Lightning strikes, supernatural resurrection, corpse transformation, and a final mutated creature require visible effects work and compositing.",
+        "vfx_details": "Supernatural transformation of Pattern, the final mutated creature, lightning effects, and some gore augmentation.",
         "stunts_level": "moderate",
-        "sfx_needs": "Heavy practical blood, gunshot impacts, dismemberment, burns, corpse makeup, and creature prosthetics.",
+        "sfx_needs": "Heavy practical gore, bullet hits, dismemberment, burns, and creature makeup/prosthetics.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Walkman"
-        },
-        {
-          "type": "brand",
-          "detail": "Ross"
-        },
-        {
-          "type": "brand",
-          "detail": "Daily Affair"
+          "detail": "Walkman, Ross, Barbie, Ken, VCRs, Uzi, and other named consumer items appear in dialogue or action."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium-cable genre feature lane",
-        "content_level": "Mature, explicit violence and language",
-        "series_engine_or_release_model": "Feature release model best suited to festival-to-platform or genre-label distribution"
+        "recommended_lane": "Mid-budget theatrical or streaming genre lane",
+        "content_level": "Mature, explicit",
+        "series_engine_or_release_model": "Feature release model with strong cult and midnight-movie potential; best suited to festival-to-platform or genre theatrical play."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Contained police and neighborhood settings keep it below tentpole scale, but the raid, creature work, blood effects, and night exteriors push it above a microbudget lane."
+          "note": "The story is mostly contained to streets, homes, and one warehouse, but the creature work, night exteriors, and heavy gore push it above a lean indie budget."
         },
         "cast": {
           "level": "medium",
-          "note": "The script needs a strong central trio plus a police ensemble, gang players, and two child roles, but it does not depend on an oversized star package."
+          "note": "The script needs a strong lead trio plus a credible ensemble of cops, gang members, family members, and two child roles."
         },
         "location": {
           "level": "medium",
-          "note": "The story moves through homes, streets, a cathedral, a bar, a hospital, a station, and a warehouse, with several night exterior sequences."
+          "note": "The footprint is spread across many distinct contemporary locations, though all are urban and producible within one metro area."
         },
         "content": {
           "level": "high",
-          "note": "Graphic shootings, dismemberment, corpse imagery, and explicit language place it firmly in mature-content territory."
+          "note": "Graphic violence, dismemberment, corpse imagery, drug use, and a sexualized underage character in the opening pages narrow the lane considerably."
         },
         "rights": {
           "level": "low",
-          "note": "The script uses a few generic brands and public-facing settings, with no major real-person or IP dependency."
+          "note": "The script uses a few recognizable brands, but it is not built around real people, music, or licensed IP."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise fuses cop thriller and body horror.",
-          "what_it_means": "That combination gives the project a clear genre identity and a marketing angle that stands apart from standard police procedurals. Buyers who want elevated pulp, horror-forward genre labels, and midnight-movie energy will immediately understand the lane.",
-          "evidence": "Pattern is killed in the raid, returns as a decaying avenger, and the finale ends with a mutated Fields-Pattern creature in the chemical vats.",
+          "dimension_or_area": "The premise fuses cop thriller and undead revenge.",
+          "what_it_means": "That hybrid gives a buyer a clean genre engine with a built-in escalation path from procedural crime to supernatural spectacle. Genre fans, midnight audiences, and actors who want a prestige-meets-pulp showcase will all recognize the lane immediately.",
+          "evidence": "The opening raid, Pattern's death, her return as a decayed avenger, and the final warehouse creature all belong to the same story spine.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Antonelli is a playable veteran lead.",
-          "what_it_means": "The role gives an actor age, weariness, competence, and moral pressure in one package, which is exactly the kind of part that can anchor a prestige-leaning genre feature. Mid-career dramatic leads and character actors who can carry authority without vanity will chase it.",
-          "evidence": "Antonelli is a 20-year sergeant six months from retirement, still sharp on the range, but shaken by Pattern’s disappearance and the pension threat.",
+          "dimension_or_area": "Antonelli is a strong late-career lead role.",
+          "what_it_means": "The role gives an actor age, weariness, dry humor, and moral pressure in one package, which is exactly the kind of part that can anchor a mid-budget feature. Character actors and seasoned leads looking for a bruised, emotionally legible centerpiece would chase this.",
+          "evidence": "His retirement countdown, IAD interrogation, domestic scenes with Christine, and the final confrontation with Fields all keep him under pressure.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Pattern’s return is tragic and iconic.",
-          "what_it_means": "The character becomes a memorable horror centerpiece while still carrying emotional weight, which gives the film a signature image and a strong audience memory point. Actors who want a transformation role with physicality, pathos, and mythic scale would be drawn to it.",
-          "evidence": "Pattern rises from the ground after being shot, later loses skin and features, and still pushes toward justice and her family.",
+          "dimension_or_area": "Pattern becomes a tragic monster with a point of view.",
+          "what_it_means": "The transformation turns a supporting partner into a memorable horror icon without losing the emotional core of who she was, which is a strong hook for marketing and audience memory. Performers who can play warmth, physicality, and ferocity in the same role would see real showcase value here.",
+          "evidence": "Her death, resurrection, alley encounters, and final recognition of her family all define her arc.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Fields is a villain with social camouflage.",
-          "what_it_means": "The captain’s easy charm, profanity, and buddy-cop warmth make the betrayal land harder and give the movie a strong internal antagonist. Character actors who can play genial authority with a hidden blade will see the role as a showcase.",
-          "evidence": "Fields jokes with Antonelli, manages the operation, and is ultimately revealed as the head of the silent gang and the ice trade.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The Long Beach world has street-level specificity.",
-          "what_it_means": "The setting feels lived-in rather than generic, which helps the script travel as a place-based genre piece and gives production a recognizable Southern California texture. Buyers looking for an urban crime story with a distinct local flavor will respond to that specificity.",
-          "evidence": "Convenience stores, graffiti-marked streets, a cathedral, tract homes, a warehouse lab, and the Long Beach police ecosystem all recur throughout the script.",
+          "dimension_or_area": "Fields is a juicy corruption reveal.",
+          "what_it_means": "The captain-as-mastermind turn gives the movie a betrayal engine that pays off the procedural setup and turns the institution itself into the antagonist. Actors who specialize in charismatic authority with a hidden edge will be drawn to that kind of role.",
+          "evidence": "Fields coordinates the operation, manages the vice response, and is ultimately exposed as the man running the silent gang.",
           "source": "script"
         },
         {
           "dimension_or_area": "The weather motif gives the film a signature mood.",
-          "what_it_means": "The storm imagery ties the supernatural turn to the emotional and procedural escalation, making the movie feel designed rather than merely plotted. Directors who like expressive atmosphere and visual motifs will have a clear craft playground.",
-          "evidence": "Weather reports, thunder, lightning, and storm clouds track the raid, Pattern’s transformation, and the final showdown.",
+          "what_it_means": "The storm imagery creates a visual and tonal throughline that a director can build into a strong trailer language and a memorable poster identity. Buyers looking for a genre piece with a clear atmospheric signature will notice that immediately.",
+          "evidence": "Weather reports, thunder, lightning, and the cathedral imagery recur from the opening through the raid and final showdown.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The finale pays off with a big practical spectacle.",
-          "what_it_means": "The warehouse climax gives the project a contained but memorable action endpoint, with firepower, chemical vats, and a monster reveal that can sell the trailer. Genre buyers who want a climax that delivers on the poster promise will see the upside.",
-          "evidence": "The DEA raid, the vat explosion, Fields and Pattern falling into chemicals, and the final creature reveal all converge in one set piece.",
+          "dimension_or_area": "The final act delivers full-scale genre payoff.",
+          "what_it_means": "The warehouse assault, chemical vats, and monster reveal give the movie a climax that can justify the earlier setup and leave audiences with a big finish. That kind of ending helps a genre title travel in theatrical, home-entertainment, and streaming discovery lanes.",
+          "evidence": "The DEA raid, Fields' betrayal, the vat plunge, and the final mutant creature all converge in one set-piece.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Long Beach street world feels lived-in.",
+          "what_it_means": "The script has enough local texture to make the city feel like an active part of the story rather than a generic urban backdrop. That specificity helps the project stand out in a crowded crime-thriller field and gives production a clear visual map.",
+          "evidence": "Graffiti-coded neighborhoods, Long Beach police culture, Paramount, Compton, Wilmington, and Rosecrans all appear as part of the story geography.",
           "source": "script"
         }
       ],
-      "headline": "This script has a real genre identity: a hardboiled Long Beach cop story that mutates into supernatural revenge horror without losing its street-level pulse. The best version of the package is built around the Antonelli-Pattern-Fields triangle, because each role is actor-bait and the world around them is specific enough to feel like a franchise-ready corner of crime cinema."
+      "headline": "This is a hard, commercial genre piece with a memorable hook: a corrupt-cop thriller that turns into an undead revenge story without losing its emotional spine. Antonelli, Pattern, and Fields are all castable, trailer-friendly roles, and the movie builds to a finale that feels big enough for theatrical play while still being producible in a contained urban footprint."
     },
     "lead_characters": [
       {
         "name": "Frank Antonelli",
         "role_type": "Lead",
         "demographics": "Male · 50s · Italian-American police sergeant",
-        "hook": "Antonelli is a tired, funny, old-school cop who still believes in procedure, loyalty, and getting the job done even when his body and conscience are both fraying. He reads as a guy who has spent a lifetime surviving on reflex, sarcasm, and stubborn decency, and the script keeps testing how much of that identity can hold under supernatural pressure.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in *Captain Phillips* or Denzel Washington in *Training Day*—a seasoned professional whose authority is constantly being tested while the audience watches the mask crack. Actors who want a role that lets them play competence, grief, dry humor, and moral resolve in the same frame will chase it."
+        "hook": "A tired, funny, old-school vice cop who still believes in procedure, loyalty, and getting home with his pension intact. He is physically capable, emotionally guarded, and quietly romantic, with a working-man decency that keeps getting tested by the rot around him.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hanks in *Captain Phillips* or Denzel Washington in *Training Day*—a man whose competence is the thing under pressure, and whose face has to carry fear, authority, and heartbreak at once. Veteran leads and character actors who want a role with grit, humor, and emotional authority will see a full meal here."
       },
       {
         "name": "Livecia Pattern",
         "role_type": "Lead",
         "demographics": "Female · 30s · Black police officer",
-        "hook": "Pattern starts as a strong, sensual, grounded cop and becomes something stranger, sadder, and more elemental after the raid. Even in decay she retains a fierce emotional core: she is still a mother, still a partner, still a woman trying to make sense of what happened to her body and her life.",
-        "why_actor_wants_this": "This is the kind of transformation role Charlize Theron had in *Monster* or Toni Collette had in *Hereditary*—a performance that moves from recognizable humanity into something physically and emotionally altered. Actresses looking for a part with prosthetic impact, emotional tragedy, and a final mythic image will want this immediately."
+        "hook": "A hard, attractive, street-smart cop whose confidence and physical presence make her feel larger than the room she enters. After death, she becomes something stranger and more elemental: a decayed avenger still driven by love, memory, and instinct.",
+        "why_actor_wants_this": "This is the kind of transformation role that gave Charlize Theron in *Monster* and Lupita Nyong'o in *Us* such electric range—beauty, danger, vulnerability, and physical reinvention in one part. Actresses looking for a role that can become a calling card in both prestige and genre circles will chase this immediately."
       },
       {
         "name": "Captain Joe Fields",
         "role_type": "Lead",
-        "demographics": "Male · 50s · burly white police captain",
-        "hook": "Fields is the smiling institutional predator: warm, profane, paternal, and completely comfortable inside the machinery he corrupts. He has the easy camaraderie of a beloved boss and the appetite of a kingpin, which makes him dangerous because he never looks like the monster until it is too late.",
-        "why_actor_wants_this": "This is the kind of role Bryan Cranston had in *Breaking Bad* once the mask fully drops, or the kind of authority-with-rot part that lets an actor pivot from charm to menace in a single scene. Character actors and prestige villains will chase it because it gives them both social ease and outright villainy."
+        "demographics": "Male · 50s · burly police captain",
+        "hook": "A swaggering, blue-collar authority figure who talks like a buddy and thinks like a businessman. He is funny, profane, and deeply self-justifying, which makes his corruption feel less like a twist than a worldview.",
+        "why_actor_wants_this": "This is the Al Pacino in *Heat* / Bryan Cranston in *Breaking Bad* lane of performance—commanding, charismatic, and morally collapsing in plain sight. Actors who like playing charm as a weapon will be drawn to the role because it lets them dominate scenes while slowly revealing the rot underneath."
       },
       {
         "name": "Christine",
         "role_type": "Supporting",
         "demographics": "Female · late teens to early 20s · white",
-        "hook": "Christine is young, affectionate, and emotionally open, with a childlike sincerity that makes her devotion to Antonelli feel disarming rather than calculated. She brings domestic warmth into a story full of corruption and blood, which gives the film a human counterweight.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional directness of *The Last Picture Show* or *True Romance*’s softer romantic beats—someone who can make sincerity feel dangerous in a cynical world. Young actresses who want a part that is sweet, vulnerable, and memorable without being ornamental will respond to it."
-      },
-      {
-        "name": "Jave Stevens",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-30s · streetwise dealer",
-        "hook": "Stevens is a jittery, eager middleman who wants to be seen as important and keeps overperforming confidence to hide his nerves. He is the kind of hustler who thinks he is rising into power even as he is being used by people above him.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the volatile energy of Michael K. Williams-style street authority or the nervous volatility of a *Training Day* lieutenant. It offers fast dialogue, comic swagger, and the chance to play ambition curdling into panic."
-      },
-      {
-        "name": "Peter Woodard",
-        "role_type": "Supporting",
-        "demographics": "Male · teen",
-        "hook": "Peter is a local kid already hollowed out by ice, introduced as a small-time user whose body and mind are visibly slipping away. He functions as a tragic snapshot of the drug economy’s damage, giving the film a human casualty before the larger war explodes.",
-        "why_actor_wants_this": "This is the kind of brief but memorable part that can land like the teen addicts in *Requiem for a Dream* or *Kids*—a role that communicates collapse in a few scenes. Young actors with strong dramatic instincts will see the chance to make a small role unforgettable."
+        "hook": "Antonelli’s young fiancée, written with a mix of innocence, eagerness, and comic awkwardness. She gives the movie a domestic counterweight and a human stake in Antonelli’s future, even as she remains mostly a pressure point rather than a separate engine.",
+        "why_actor_wants_this": "This is the kind of role that gives an actress the warmth and vulnerability of the girlfriend parts in *The Last Picture Show* or *A History of Violence*—someone whose presence makes the lead’s home life feel real. Emerging actresses who can play sincerity without vanity will find an easy entry point here."
       },
       {
         "name": "Jerry Pattern",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · white househusband",
-        "hook": "Jerry is tender, domestic, and visibly out of step with macho cop culture, which makes him one of the script’s most quietly affecting figures. He is a man who has built his identity around care work and family stability, and the story gives him real emotional dignity.",
-        "why_actor_wants_this": "This is the kind of role that recalls the domestic vulnerability of *Ordinary People* or the wounded spouse energy in *The Ice Storm*—a part that lets an actor play love, fear, and helplessness without grandstanding. Character actors who excel at emotional transparency will be drawn to it."
+        "demographics": "Male · 30s to 40s · white",
+        "hook": "Livecia’s house-husband, a tender, gender-nonconforming domestic figure who keeps the family together while the world outside collapses. He is gentle, anxious, and emotionally exposed, which makes him one of the story’s most human anchors.",
+        "why_actor_wants_this": "This is the kind of intimate, off-center supporting part that gave actors like Peter Sarsgaard in *Shattered Glass* or Michael Stuhlbarg in *A Serious Man* room to make a character unforgettable in limited time. Character actors who can find dignity and fragility in the same breath will want it."
       },
       {
-        "name": "Detective Pete Hansen",
+        "name": "Jave Stevens",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · white Internal Affairs detective",
-        "hook": "Hansen is polished, baby-faced, and quietly sadistic, the kind of bureaucrat who weaponizes calm language and procedure. He is less a brute than a scalpel, which makes him a useful pressure valve in the story’s institutional machinery.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the controlled menace of *Zodiac*’s investigators or *The Departed*’s institutional antagonists—someone who can make a room colder by speaking softly. Actors who like playing intelligence with an edge will chase it."
+        "demographics": "Male · 20s to 30s · street-level drug dealer",
+        "hook": "A nervous, eager, fast-talking operator who wants to be taken seriously by the men above him. He has the energy of a guy trying to hustle his way into the next tier, which makes him useful, comic, and disposable all at once.",
+        "why_actor_wants_this": "This is the kind of role that lets an actor do the jittery, status-hungry work seen in *The Wire* or *Training Day*—someone whose whole body is trying to outrun his own insecurity. Young actors with comic timing and menace will have fun with it."
+      },
+      {
+        "name": "Pete Hansen",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s · Internal Affairs detective",
+        "hook": "A baby-faced, polished interrogator with a cold edge and a bureaucrat’s patience. He looks harmless until he starts tightening the screws, which makes him a clean institutional antagonist.",
+        "why_actor_wants_this": "This is the kind of controlled, scene-stealing authority role that actors like David Strathairn or Michael Shannon have used to make a room go quiet. It gives a performer the chance to play menace through precision rather than volume."
       },
       {
         "name": "Chris Kimbrell",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · police rookie",
-        "hook": "Kimbrell is the young cop with a mouth, a conscience, and just enough skepticism to make him useful. He starts as a smart-ass observer and gradually becomes the audience’s fresh eyes inside a rotten system.",
-        "why_actor_wants_this": "This is the kind of breakout-supporting role that gives an actor the rookie energy of *The Wire*’s younger cops or *L.A. Confidential*’s eager strivers. It offers banter, action, and the chance to play innocence hardening in real time."
+        "demographics": "Male · 20s · rookie cop",
+        "hook": "A young officer with a smart mouth, a skeptical eye, and just enough bravado to survive his first real nightmare. He functions as the audience’s fresh set of eyes inside Antonelli’s world.",
+        "why_actor_wants_this": "This is the kind of breakout-supporting role that gives an actor the same kind of watchable friction Michael Peña had in *End of Watch*—comic, reactive, and gradually hardened by what he sees. Younger actors who can balance attitude with vulnerability will want the part."
       },
       {
-        "name": "Bonnie Fields",
+        "name": "Captain Caruther",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-50s · white",
-        "hook": "Bonnie is socially polished, observant, and quietly fed up, the spouse who understands the room better than her husband does. She gives the police-family world a sharper domestic edge and hints at the private cost of living inside Fields’ orbit.",
-        "why_actor_wants_this": "This is the kind of role that recalls the sharp spouse energy in *Big Little Lies* or *The Ice Storm*—a woman who can say very little and still control the temperature of a scene. Experienced character actresses will see the opportunity to make social friction feel alive."
-      },
-      {
-        "name": "Tyrone Power",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s-30s · Black gang leader",
-        "hook": "Power is a cold, theatrical gang boss who speaks with command and superstition in equal measure. He is not just a thug; he is a rival sovereign whose fear of Pattern and obsession with control give him a mythic gangster presence.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the swagger and volatility of *New Jack City* or *Menace II Society* leadership parts, but with a supernatural edge. Actors who want a villain with style, authority, and a final survival instinct will be interested."
+        "demographics": "Male · late 40s to 50s · police captain",
+        "hook": "A weary, intuitive supervisor who knows the city is bigger than his paperwork. He is less flamboyant than Fields, which makes him feel like the sane institutional counterweight in a department full of noise.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that lets an actor play competence under pressure, similar to the command presence in *L.A. Confidential* or *The Wire*. Seasoned character actors who can make a few scenes feel lived-in will be interested."
       },
       {
         "name": "Harold Falter",
         "role_type": "Supporting",
-        "demographics": "Male · 20s-30s · Black gang lieutenant",
-        "hook": "Falter is a jivey emissary who tries to talk his way through danger until the room turns on him. He is a small but sharp portrait of gang hierarchy, the kind of man who knows the language of power but not its protection.",
-        "why_actor_wants_this": "This is the kind of supporting role that lets an actor make a quick impression the way *Boyz n the Hood* or *Heat* secondary players do—fast, specific, and dangerous. It gives a performer a clean scene-stealing opportunity."
+        "demographics": "Male · 30s to 40s · gang lieutenant",
+        "hook": "A slick emissary who thinks he can talk his way into power until the room proves otherwise. He’s a small but vivid example of the gang hierarchy’s internal violence.",
+        "why_actor_wants_this": "This is a compact, high-impact role in the tradition of the memorable mid-level enforcers in *Menace II Society* or *New Jack City*. Actors who like making a mark fast will see the appeal."
       },
       {
-        "name": "S. Bombino",
+        "name": "Tyrone Power",
         "role_type": "Supporting",
-        "demographics": "Male · middle-aged · convenience store manager",
-        "hook": "Bombino is a watchful neighborhood witness, the guy who sees the street economy from behind a counter and knows exactly what is happening without being able to stop it. He gives the opening a grounded civilian perspective and a little dry humor.",
-        "why_actor_wants_this": "This is the kind of small role that can play like a *Do the Right Thing* neighborhood observer or a *Fargo* local—brief, specific, and memorable. Character actors who specialize in texture will enjoy it."
+        "demographics": "Male · 30s to 40s · gang leader",
+        "hook": "A cold, theatrical gang boss who speaks with the authority of a warlord and the vanity of a man who thinks he’s above the street. He is the story’s human face of predation before the supernatural turn takes over.",
+        "why_actor_wants_this": "This is the kind of villain role that gives an actor the same command as Laurence Fishburne in *Deep Cover* or Wesley Snipes in *New Jack City*—a leader who can dominate a room with stillness. Actors with gravitas and menace will want the part."
+      },
+      {
+        "name": "Paco",
+        "role_type": "Supporting",
+        "demographics": "Male · teens to early 20s · Hispanic gang member",
+        "hook": "A vicious, mocking street kid whose cruelty escalates the alley sequence into something primal. He’s a small-role embodiment of the neighborhood’s casual brutality.",
+        "why_actor_wants_this": "This is a sharp, memorable gang-role slot in the tradition of the volatile street antagonists in *Boyz n the Hood* or *Colors*. Young actors who can turn on a dime from swagger to panic will gravitate to it."
+      },
+      {
+        "name": "Stevy",
+        "role_type": "Supporting",
+        "demographics": "Male · teens to early 20s · gang member",
+        "hook": "Paco’s sidekick, loud enough to be funny until the violence turns on him. He gives the alley attack a human, chaotic texture before the scene goes fully feral.",
+        "why_actor_wants_this": "This is the kind of supporting street role that lets an actor make a vivid impression in a single sequence, like the disposable-but-memorable gang players in *Menace II Society*. It’s a good fit for a performer with physical energy and comic timing."
       },
       {
         "name": "Mrs. Woodard",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-50s · white mother",
-        "hook": "Mrs. Woodard is a worried parent trying to keep her household from collapsing around addiction. She is not a plot device so much as a face of the collateral damage the drug trade leaves behind.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the emotional plainness of a *Requiem for a Dream* parent or a *The Panic in Needle Park* witness—brief but grounded in real pain. It’s a strong fit for character actresses who can make panic feel lived-in."
+        "demographics": "Female · 40s to 50s · mother",
+        "hook": "A worried parent trying to keep her son alive and her home intact. She gives the drug storyline a civilian face and a note of ordinary grief.",
+        "why_actor_wants_this": "This is the kind of grounded, emotionally legible supporting role that gives an actress a real scene in a genre piece, similar to the family-mother parts in *Traffic* or *The Wire*. Strong character actresses will know how to make it land quickly."
       },
       {
-        "name": "Lynn",
+        "name": "Joanie Lee",
         "role_type": "Supporting",
-        "demographics": "Female · 5",
-        "hook": "Lynn is one of Pattern’s daughters, and her innocence is used with devastating simplicity. She gives the ending its emotional sting by turning the supernatural plot back into a family wound.",
-        "why_actor_wants_this": "This is a small child role, but it carries the kind of emotional function that makes a scene land like the child moments in *The Sixth Sense* or *Manchester by the Sea*. It is a clear casting call for a child actor with natural presence."
+        "demographics": "Female · 20s to 30s · TV reporter",
+        "hook": "A polished local-news presence who turns tragedy into broadcast copy with a smile. She adds media texture and a cynical public-facing layer to the story’s aftermath.",
+        "why_actor_wants_this": "This is a clean, scene-friendly media role in the tradition of the TV reporters in *L.A. Confidential* or *Natural Born Killers*. Actors who can play glossy professionalism with a hint of opportunism will enjoy it."
       },
       {
-        "name": "Katrina",
+        "name": "Barbara McGuire",
         "role_type": "Supporting",
-        "demographics": "Female · 8",
-        "hook": "Katrina is the older daughter, old enough to understand absence and young enough to still play with dolls as family symbols. She helps turn Pattern’s return into a maternal tragedy rather than just a horror beat.",
-        "why_actor_wants_this": "This is the kind of child role that gives a young performer a poignant emotional beat without needing heavy dialogue. Casting directors looking for a natural, affecting child presence will notice it."
+        "demographics": "Female · 30s to 40s · psychologist",
+        "hook": "A clinical interrogator who treats Antonelli’s trauma like a file to be opened. She is brisk, unsentimental, and useful as a pressure valve for the film’s emotional and procedural stakes.",
+        "why_actor_wants_this": "This is the kind of sharp, contained authority role that lets an actress play intelligence and skepticism in a few clean scenes, like the therapist/interrogator parts in *The Sopranos* or *The Silence of the Lambs*. It’s a good fit for actors who like verbal sparring."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage a cop movie that turns into a monster movie without losing emotional sincerity.",
-        "fit_profile": "Second-feature or established indie genre directors who already know how to balance performance with practical gore, or TV directors moving into features with a strong visual sense. The material rewards filmmakers who like expressive weather, night exteriors, contained action, and character-first horror rather than glossy spectacle.",
-        "detail": "The script gives a director a clear tonal signature: street realism, procedural pressure, and a final supernatural payoff. It also offers a strong playground for practical effects, atmospheric lighting, and a climax that can be staged with real momentum instead of expensive scale."
+        "hook": "A director who wants to make a hardboiled crime movie that mutates into full-blooded supernatural horror.",
+        "fit_profile": "Established indie genre directors or second-feature filmmakers with a strong visual sense and a taste for moral decay, practical gore, and night exteriors. The material rewards someone who can stage cops, gangs, and creature work with the same confidence and keep the emotional spine intact while the movie gets bigger and stranger.",
+        "detail": "The script gives a director a rare chance to build from procedural realism into operatic horror without changing protagonists or locations, which is a strong showcase for control of tone. It will attract filmmakers who like contained urban worlds, practical effects, and a final-act escalation that can sell a trailer on images alone."
       },
       "buyer_appeal": {
         "tier": "$5-15M feature",
-        "lane": "Premium genre / streamer horror-thriller lane",
-        "detail": "The project can be packaged around one strong veteran lead and one striking female transformation role, so it does not require a giant ensemble or heavy star stack to make sense. The contained police-and-neighborhood footprint, plus the horror hook, fits the current buyer appetite for elevated genre features that can travel on premise and trailer."
+        "lane": "Mid-budget genre lane with cult and streamer upside",
+        "detail": "The movie can be packaged around one strong veteran lead and a breakout supporting cast, so it does not require a giant ensemble or franchise IP to function. The cop-thriller-plus-horror lane has durable streamer demand, and the contained urban footprint keeps it in a budget range that can still support practical creature and gore work."
       }
     },
     "considerations": [
       {
-        "area": "The opening spends time on atmosphere before the engine locks in.",
-        "detail": "The convenience-store, bedroom, and captain-introduction material builds mood and world, and the storm motif is doing real work. A next pass could consider getting the central conspiracy pressure into motion a little earlier so the supernatural-crime premise announces itself faster.",
+        "area": "The opening sexual material reads younger than the rest of the script.",
+        "detail": "Christine is introduced as 'barely past puberty,' which creates a tonal and platform conversation before the genre engine has fully arrived. One direction would be to clarify the character's age on the page so the domestic material can play as intended without distracting from the thriller.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Pattern’s middle section can carry one more emotional turn.",
-        "detail": "Once she returns, the script gives her striking physical moments and strong imagery, but the emotional throughline is most concentrated in the final family-window sequence. One lever would be to foreground one additional beat of recognition or choice earlier in her return path so the tragedy lands even harder.",
+        "area": "Pattern's transformation can be foregrounded earlier.",
+        "detail": "The script already seeds her unease with the storm and her premonition, and the later resurrection lands hard. A next pass could give her more early behavioral tells so the eventual undead turn feels even more inevitable and emotionally loaded.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The supporting police and gang players are mostly functional.",
-        "detail": "The story is strongest when it stays on Antonelli, Pattern, and Fields, while several secondary figures serve the plot efficiently. If a future pass wanted more ensemble lift, the version where one or two of those players get a sharper personal stake would deepen the web without changing the spine.",
+        "area": "Fields' corruption reveal carries the movie's biggest payoff.",
+        "detail": "The final warehouse turn is strong, and the earlier vice-operation scenes already point in that direction. One lever would be to let a few more of his small choices read as self-serving before the reveal, so the betrayal feels seeded rather than only announced at the end.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The warehouse finale asks for a clear effects plan.",
-        "detail": "The vat explosion, the chemical transformation, and the final creature reveal are all producible, but they want a disciplined practical/VFX strategy. A producer-friendly version would keep the monster language focused on one or two signature images so the climax stays bold without ballooning the effects load.",
+        "area": "The story moves through many urban locations.",
+        "detail": "The script ranges across homes, alleys, a cathedral, a bar, a hospital, a firing range, a police station, and a warehouse. A simplification pass could fold a couple of the procedural interiors together without changing the story engine, which would protect the pace and keep the production footprint efficient.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The night-exterior footprint is meaningful.",
-        "detail": "The raid, alley work, apartment confrontation, and warehouse climax all lean on night photography and weather effects. That gives the movie its look, but it also means the schedule will want careful clustering of exterior work to protect the budget and the shoot.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The child roles are emotionally important but limited.",
-        "detail": "Lynn and Katrina matter most in the final family beat, so they should be cast for natural presence and protected in the schedule. The story does not need a large child ensemble, which keeps the family material manageable.",
+        "area": "The finale depends on heavy practical and makeup work.",
+        "detail": "Pattern's corpse transformation, the alley dismemberment, and the final mutant creature all want strong effects execution. That is part of the appeal, but the version of the package that leans into practical prosthetics and selective VFX will be the most producible and the most tactile on screen.",
         "is_primary_lever": false,
         "source": "production"
       }
@@ -350,7 +336,7 @@
   "weightedScore": 70.3,
   "tier": "Optionable",
   "inputTokens": 45639,
-  "outputTokens": 5893,
-  "cost": 0.06074775,
+  "outputTokens": 5645,
+  "cost": 0.05963175,
   "declaredFormat": "Feature film"
 }

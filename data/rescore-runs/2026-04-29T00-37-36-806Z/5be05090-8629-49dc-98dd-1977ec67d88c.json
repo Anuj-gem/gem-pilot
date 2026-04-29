@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T00:55:05.939Z",
+  "submission_id": "5be05090-8629-49dc-98dd-1977ec67d88c",
+  "eval_id": "21dc02f6-37e0-4d03-9b9e-c44c4b2cff45",
+  "title": "All I need is one dance….. the wedding g dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "RALPH BENNETT",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · bald, glasses, black goatee"
+    },
+    {
+      "name": "SKYLAR MONROE",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · former athlete, coach"
+    },
+    {
+      "name": "MADDIE BENNETT",
+      "role_type": "Lead",
+      "demographics": "Female · 16-17 · high school basketball player"
+    },
+    {
+      "name": "COACH WINSIL",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · coach"
+    },
+    {
+      "name": "TIM MOSS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · athletic director"
+    },
+    {
+      "name": "KATIE CLARKSON",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · former player/assistant coach"
+    },
+    {
+      "name": "LINDSEY HILL",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · former player/assistant coach"
+    },
+    {
+      "name": "COACH GREEN",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · commanding coach"
+    },
+    {
+      "name": "HAWKS COACH",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · high school coach"
+    },
+    {
+      "name": "JACK MONROE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · father"
+    },
+    {
+      "name": "MADDIE'S MOM",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · off-screen / referenced"
+    }
+  ],
+  "positioning_hook": "A small-town custodian-turned-future-husband helps his fiancée coach a girls basketball team, then becomes the locker-room spark that carries them to a state title.",
+  "cost_usd": 0.072537,
+  "input_tokens": 67916,
+  "output_tokens": 4800,
+  "status": "wrote:leads_ok"
+}

@@ -2,328 +2,327 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Family fantasy adventure",
+      "genre_primary": "Family adventure",
       "genre_tags": [
-        "Environmental adventure",
-        "Creature feature"
+        "Fantasy",
+        "Environmental"
       ],
-      "tone": "Whimsical, earnest, and broadly family-friendly with a satirical corporate villain and a big emotional finish"
+      "tone": "Whimsical, earnest, and lightly satirical with a big-hearted ecological fable sensibility"
     },
-    "positioning_hook": "A lonely girl discovers a family of magical seahorses in her coastal town, then fights an oil baron who turns them into a tourist empire before the ocean itself answers back.",
+    "positioning_hook": "A lonely girl bonds with a mysterious seahorse-pony from the Atlantic, then leads her coastal town in a fight to keep it out of a corporate aquarium.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise is easy to grasp and has clear family appeal: a child, a magical creature, a greedy corporate villain, and a rescue climax. It sits in a recognizable commercial lane, though the very specific coastal-fable flavor makes it more targeted than four-quadrant."
+        "reasoning": "The premise has clean family appeal: a child, a magical creature, a coastal community, and a clear villain in the corporate showman who wants to monetize discovery. The emotional promise is easy to grasp, though the tone skews niche enough that the broadest four-quadrant reach would depend on execution and effects."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early and cleanly: Karissa finds Star, the seahorse becomes the emotional center, and Thompson's takeover creates a simple, legible conflict. The script keeps the engine visible all the way through the sea park reveal and the final oceanic showdown."
+        "reasoning": "The hook lands early and stays legible: Karissa finds Star, the town adopts the seahorses, and Thompson moves to seize them for Seahorse Cove. The story engine is easy to explain in one breath, and the final protest-to-rescue escalation gives the premise a clean feature shape."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Karissa has a strong emotional center, and Boone, Marla, and Thompson each have distinct functions in the story. The supporting kids add charm, but most of the ensemble serves the main plot rather than opening separate character engines."
+        "reasoning": "Karissa has a strong emotional center, especially in her bond with Star and her quiet shift from withdrawn to outspoken. Boone, Marla, Jim, and Willis all add color, but most of the supporting cast functions around the central child-creature relationship rather than opening fully independent character engines."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The image of a child bonding with a horse-sized seahorse, then watching that creature become a public spectacle, gives the script a memorable angle. The final reveal of Father and the tidal-scale rescue pushes the concept into a more mythic register than the opening pages suggest."
+        "reasoning": "The script commits to an odd, memorable creature premise and treats it with sincerity instead of irony. The seahorse-pony design, the blue dookie gag, and the giant Father reveal show a writer willing to swing for a playful, mythic register."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The script moves steadily from discovery to secrecy to capture to public protest to disaster, and the escalation is easy to follow. Some middle stretches spend time on repeated beats of seahorse discovery and domestic adjustment, which keeps the pace more measured than propulsive."
+        "reasoning": "The first half spends time establishing the town, the families, and the seahorse club before the conflict fully locks in, so the propulsion is more gradual than urgent. Once Thompson claims the creatures and the protest begins, the momentum sharpens into a clear feature climax with escalating public stakes."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The story feels like a familiar family adventure until the seahorses become a civic and ecological symbol, which gives the premise a fresh emotional and visual identity. The oil-rig setting, the sea park, and the giant Father seahorse create a combination that feels specific rather than generic."
+        "reasoning": "A child discovering a magical sea creature is familiar territory, but the oil-rig setting, the corporate capture plot, and the environmental payoff give it a fresh, immediately readable identity. The idea of a town-sized custody battle over seahorse-ponies feels both strange and intuitive."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The coastal town, oil platform, festival, and sea park give the story a defined local ecosystem with social and economic tension. The world is vivid enough to support the plot, though it remains primarily a container for the central conflict rather than a deeply layered social machine."
+        "reasoning": "The coastal town, drilling platform, festival, and aquarium create a specific small-community ecosystem with enough texture to support the story. The world is vivid in surface detail, though most of the setting functions as a stage for the central fable rather than a deeply layered institutional maze."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The script has a distinct tonal blend: playful kid logic, New England coastal texture, broad corporate satire, and sincere environmental fable. The dialogue gives the adults and children different comic registers, which helps the piece feel authored rather than generic."
+        "reasoning": "The script has a distinct tonal blend: storybook wonder, deadpan kid logic, broad comic adults, and a sincere ecological climax. Scenes like the seahorse dookie fallout and Thompson’s press-conference grandstanding give the piece a recognizable comic-fable voice."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the creature adventure is a story about custody, belonging, community pressure, and the ethics of possession. The script gestures toward that depth through Karissa's loneliness and Boone's regret, though the surface adventure remains the dominant experience."
+        "reasoning": "Under the creature adventure is a clean emotional spine about divorce, belonging, and children trying to repair what adults break. The material suggests more depth than a simple creature feature, though the script mostly keeps that subtext in service of the plot rather than letting it open into richer ambiguity."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Karissa and Boone anchor the emotional spine, with Marla adding warmth and Thompson providing a strong external antagonist. The children’s group dynamic is lively, but the relationships mostly orbit the central father-daughter and kid-vs-adult conflicts."
+        "reasoning": "Karissa/Boone/Marla and Karissa/Willis give the story its strongest relational charge, and the town families create a pleasant community web. Still, the ensemble is primarily organized around the protagonist’s journey, with most supporting dynamics feeding the central custody-and-protest arc."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 15,
-        "leads": 4,
+        "leads": 5,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Child lead around 9 years old",
-          "Multiple child ensemble roles",
-          "One prominent corporate villain in his 40s-60s",
-          "Several adult supporting roles with regional New England flavor"
+          "One lead child role with several child supporting roles",
+          "Creature performance requires a convincing family-friendly visual design",
+          "Adult lead roles skew 30s to 50s"
         ]
       },
       "locations": {
-        "distinct_count": 16,
+        "distinct_count": 14,
         "interior_exterior_ratio": "roughly 45/55",
-        "period_or_contemporary": "Contemporary",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
-          "Coastal town setting",
+          "Coastal town exteriors",
           "Offshore drilling platform",
-          "Aquarium/sea park build",
-          "Beach and ocean work",
-          "Tidal-wave destruction sequence"
+          "Boat and open-water work",
+          "Aquarium/sea-park build",
+          "Festival/public protest setup"
         ]
       },
       "technical": {
         "vfx_level": "moderate",
-        "vfx_details": "Creature animation for the seahorses, including the 250-foot Father, plus tidal-wave destruction, ocean interaction, and the sea park collapse.",
+        "vfx_details": "Multiple seahorse creatures, a 250-foot Father reveal, tidal-wave destruction, underwater action, and sea-park flooding sequences.",
         "stunts_level": "moderate",
-        "sfx_needs": "Water effects, flooding, practical destruction, creature handling, and large-scale environmental damage.",
+        "sfx_needs": "Flooding, water interaction, creature prosthetic/animatronic or CG integration, destruction effects, and practical stink/gag beats.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "CNN is specifically named in the protest coverage."
+          "detail": "CNN is named in the protest coverage."
         },
         {
           "type": "brand",
-          "detail": "OSHA is specifically referenced in the drilling-operation dialogue."
+          "detail": "OSHA is referenced in dialogue."
         },
         {
           "type": "brand",
-          "detail": "A.T.O.I.L. / Atlantic Oil is a named company and logo in the story."
+          "detail": "Calvin Klein is referenced in a joke about underwear."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Family theatrical or streaming feature with broad PG-family positioning",
-        "content_level": "Family / PG equivalent",
-        "series_engine_or_release_model": "Feature release model; best suited to family theatrical, holiday platforming, or streamer family-event placement"
+        "recommended_lane": "Family theatrical or streaming family-adventure lane",
+        "content_level": "PG / PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with strongest fit as festival-to-platform or family theatrical play"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Creature work, water effects, a sea park build, and a tidal-wave climax push this above a small indie footprint."
+          "note": "Creature work, water destruction, and the sea-park finale push this above a simple indie budget but still below tentpole scale."
         },
         "cast": {
           "level": "medium",
-          "note": "A child lead plus a sizable child ensemble and a villain who needs strong comic-authority casting create some packaging attention."
+          "note": "The story needs a child lead, several named adults, and a credible corporate antagonist, but it does not depend on a giant ensemble or star-heavy package."
         },
         "location": {
           "level": "high",
-          "note": "The story spans beach, ocean, drilling platform, homes, festival grounds, office interiors, and a large aquatic park with destruction."
+          "note": "The script spans coastal exteriors, boats, a drilling platform, a festival, homes, and a custom sea-park build, with multiple water-heavy set pieces."
         },
         "content": {
           "level": "low",
-          "note": "The material stays family-accessible, with peril and environmental conflict rather than explicit content."
+          "note": "The material is family-facing, with mild peril, comic bodily humor, and no explicit language or adult content."
         },
         "rights": {
           "level": "low",
-          "note": "The script uses a few named brands and organizations, but no major life-rights or franchise dependencies."
+          "note": "The script uses a few named references like CNN and OSHA, but there is no heavy IP dependency or life-rights requirement."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The central creature is instantly merchable.",
-          "what_it_means": "A horse-sized seahorse with a child bond, a comic bodily function, and a later mythic reveal gives the project a clear poster image and family-audience recall. That kind of creature design is attractive to family studios, streamer event buyers, and producers looking for a toyetic centerpiece.",
-          "evidence": "Star is introduced as a strange hybrid seahorse/pony, becomes Karissa's pet, and later returns as the 250-foot Father with wings.",
+          "dimension_or_area": "The creature concept is instantly playable.",
+          "what_it_means": "A magical seahorse-pony gives the project a clean poster image and a toyetic hook that can travel across family audiences. Creature-feature buyers, family streamers, and producers looking for a visually marketable original IP will all understand the appeal immediately.",
+          "evidence": "Star’s reveal on the beach, the later family of seahorses, and the final winged return of Star.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The child perspective drives the whole engine.",
-          "what_it_means": "Karissa's point of view gives the story a clean emotional spine that makes the fantasy feel personal instead of abstract. Family buyers and actors who specialize in sincere, high-emotion youth roles will see a showcase for a young lead with real agency.",
-          "evidence": "Karissa names Star, protects him, organizes the protest, and becomes the emotional center of the climax.",
+          "dimension_or_area": "Karissa is a strong child-center.",
+          "what_it_means": "The story gives a young actress a clear emotional arc from withdrawn observer to public advocate, which is exactly the kind of role that can anchor a family film. Casting directors and buyers looking for a breakout child lead with heart, intelligence, and quiet authority will notice her fast.",
+          "evidence": "Karissa’s initial isolation at the picnic, her bond with Star, and her protest speech at the sea-park opening.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The villain is broad but legible.",
-          "what_it_means": "Martin Thompson is a clean commercial antagonist: corporate, smug, media-savvy, and physically imposing, which makes the conflict easy to market and easy to play. Character actors who can weaponize charm and menace in the same breath will be drawn to him, and buyers know how to sell that kind of public-facing villain.",
-          "evidence": "Thompson turns the discovery into Seahorse Cove, uses legal force to seize the creatures, and keeps performing for cameras while the town turns against him.",
+          "dimension_or_area": "The environmental villain is legible.",
+          "what_it_means": "Thompson gives the film a clean antagonist who is easy to market, easy to hate, and easy to understand in a trailer. Family audiences and mainstream buyers respond to stories where the emotional stakes and the external stakes line up this clearly.",
+          "evidence": "Thompson’s press conference, his seizure of the seahorses, and his sea-park monetization plan.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The coastal world has a strong local flavor.",
-          "what_it_means": "The New England shoreline, oil platform, founders day festival, and working-town politics give the movie a specific place-based identity rather than a generic fantasy setting. That helps the project feel producible, exportable, and rooted in a recognizable American coastal lane.",
-          "evidence": "The script moves through the Atlantic platform, the cove, the town festival, family homes, and the sea park built on the shoreline.",
+          "dimension_or_area": "The town ensemble has community appeal.",
+          "what_it_means": "The picnic, the seahorse club, and the final protest create a communal moviegoing experience rather than a single-character chamber piece. That opens the door to family audiences who like ensemble warmth and to buyers who want a title that can play as a shared event.",
+          "evidence": "The Founders Day picnic, the children’s pact, and the families joining Karissa at the protest.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The finale scales from intimate to mythic.",
-          "what_it_means": "The script starts as a child-and-pet story and ends with a tidal disaster, a giant seahorse, and an oil-slick purge, which gives the movie a memorable escalation curve. That kind of third-act expansion is attractive to buyers looking for a family adventure that can deliver a big finish without losing its emotional core.",
-          "evidence": "The sea park floods, Karissa nearly drowns, Star rescues her, and Father appears to clear the oil from the cove.",
+          "dimension_or_area": "The tone mixes whimsy with civic stakes.",
+          "what_it_means": "The script can sell on charm and then widen into a bigger public spectacle, which is useful for trailers and for directors who like tonal lift without cynicism. Buyers in the family-adventure lane and directors with a taste for earnest fantasy will see a clear lane here.",
+          "evidence": "The seahorse dookie gag, the kids naming their creatures, and the final flood-and-rescue climax.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble gives the town a communal feel.",
-          "what_it_means": "The children and parents are arranged as a small civic ecosystem, which creates a sense of community stakes beyond one family. That broadens the audience promise and gives the project a warmer, more event-like social texture than a single-protagonist creature feature.",
-          "evidence": "The seahorse club, the protest line, the neighborhood meeting, and the final public alignment against Thompson all play as group action.",
+          "dimension_or_area": "The finale delivers a big visual payoff.",
+          "what_it_means": "The sea-park destruction, the tidal wave, and the giant Father reveal give the script a climax that can justify a theatrical-style finish even in a modestly budgeted package. Effects-friendly family buyers and directors who like a third act with spectacle will be drawn to that payoff.",
+          "evidence": "The flooding of Seahorse Cove, Karissa’s rescue, and the 250-foot seahorse emerging over Thompson.",
           "source": "script"
         }
       ],
-      "headline": "SEAHORSE COVE has a clean family-event premise: a lonely girl bonds with a magical seahorse, then has to protect it from a corporate mogul who turns wonder into commerce. The script’s real selling point is the combination of a toyetic creature, a sincere child lead, and a finale that grows from backyard fantasy into full-scale coastal spectacle."
+      "headline": "SEAHORSE COVE has the kind of clean, high-concept family hook that buyers can understand in one sentence and remember after the meeting. It pairs a breakout child lead with a vivid creature premise, a clear corporate villain, and a finale that escalates from small-town protest to full-on mythic spectacle."
     },
     "lead_characters": [
       {
-        "name": "KARISSA",
+        "name": "Karissa Boone",
         "role_type": "Lead",
         "demographics": "Female · 9 years old",
-        "hook": "Karissa is a guarded, observant child who lives mostly inside herself until Star gives her a bond she can name and defend. She has the emotional directness of a kid who says exactly what she means, but the script gives her a melancholy edge that makes her feel older than her years; she is lonely, loyal, and quietly brave.",
-        "why_actor_wants_this": "This is the kind of showcase territory that gave Anna Paquin in The Piano its charge — a child performance built on stillness, intelligence, and emotional authority rather than cute behavior. Young actors and the teams around them will chase this because Karissa gets to carry the movie, speak for the creatures, and turn a protest into a moral stand."
+        "hook": "Karissa is a guarded, observant kid who seems older than her years because she has already learned how to retreat from disappointment. She starts the story emotionally sealed off, then becomes the one person in town who can look at a strange creature and see a friend instead of a threat; that mix of fragility, conviction, and moral clarity makes her the film’s heart.",
+        "why_actor_wants_this": "This is the showcase territory of Brooklynn Prince in The Florida Project — a child performance that can move from hurt to wonder to defiance without ever feeling manufactured. Young actors who can carry emotional truth, comic deadpan, and a final public stand will chase this, and family buyers will see a lead who can hold the frame."
       },
       {
-        "name": "DREW BOONE",
+        "name": "Drew Boone",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s · oceanologist / divorced father",
-        "hook": "Boone is a scruffy, brainy, emotionally tender father whose scientific curiosity keeps colliding with his guilt as a parent. He has the appealing contradiction of a man who can invent seahorse chow in one scene and fail to protect his daughter in the next, which makes him sympathetic without sanding off his flaws.",
-        "why_actor_wants_this": "This is the showcase lane of Matthew McConaughey in Interstellar or Jeff Daniels in The Squid and the Whale — a father role where intelligence, regret, and decency all have to live in the same frame. Mid-career dramatic leads who want warmth, humor, and a redemption arc in one package will see the value immediately."
+        "demographics": "Male · 30s to 40s",
+        "hook": "Drew is a scrappy oceanologist and single father whose intelligence is always in tension with his tendency to defer to stronger personalities. He’s warm, a little rumpled, and quietly wounded by divorce, which gives him the unusual feature-film combination of dad-comedy, professional credibility, and emotional shame that can turn into backbone.",
+        "why_actor_wants_this": "This is the showcase space of Matthew McConaughey in Interstellar or The Lincoln Lawyer — a man whose charm is real, but whose emotional authority has to be earned in the room. Mid-career leading men who want a role that plays intelligence, tenderness, and late-arriving courage will see a lot to do here."
       },
       {
-        "name": "MARLA BOONE",
+        "name": "Marla Boone",
         "role_type": "Lead",
         "demographics": "Female · 50s",
-        "hook": "Marla is the emotional ballast of the house: warm, wry, spiritually grounded, and more perceptive than she first appears. She functions like the family’s quiet center of gravity, the person who can absorb chaos, translate it into wisdom, and keep the movie from tipping into pure whimsy.",
-        "why_actor_wants_this": "This is the kind of grounded matriarch role that gave Frances McDormand in Nomadland and Sally Field in Steel Magnolias their authority — a woman whose calm presence becomes the movie’s moral compass. Experienced dramatic actresses who want warmth, wit, and a late-film emotional anchor will be drawn to it."
+        "hook": "Marla is the household’s calm center: earthy, intuitive, and emotionally fluent without ever becoming sentimental. She reads like the kind of woman who can absorb chaos, translate it into wisdom, and still land a joke, which makes her feel like the adult the movie trusts most.",
+        "why_actor_wants_this": "This is the kind of grounded maternal showcase Frances McDormand gets in Nomadland — a role built on presence, weathered intelligence, and the ability to make stillness feel active. Veteran actresses who want a warm, authoritative center in a family film will be drawn to it."
       },
       {
-        "name": "MARTIN THOMPSON",
+        "name": "Martin Thompson",
         "role_type": "Lead",
-        "demographics": "Male · 40s-60s · corporate executive",
-        "hook": "Thompson is a polished predator who speaks in public-service language while treating people like inventory. He is funny, vain, and authoritarian in equal measure, which makes him more than a cartoon villain; he is the face of institutional greed with a grin.",
-        "why_actor_wants_this": "This is the kind of performance territory that gave Michael Keaton in Spotlight and Bryan Cranston in Argo their bite — a man who can smile for cameras while tightening the screws behind the scenes. Character actors and prestige-comedy villains will chase it because Thompson gets to dominate rooms, speeches, and set pieces."
+        "demographics": "Male · 40s to 50s",
+        "hook": "Thompson is a polished corporate predator who never stops performing sincerity while stripping everyone else of agency. He’s funny because he’s so self-regarding, but he also has the clean menace of a man who can weaponize law, media, and money in the same breath.",
+        "why_actor_wants_this": "This is the showcase lane of Bryan Cranston in Breaking Bad or Michael Keaton in Spotlight — a charismatic authority figure whose smile is the threat. Actors who like playing intelligence, vanity, and controlled outrage in one package will want this part, and buyers will recognize him as a trailer-ready villain."
       },
       {
-        "name": "JIM CRIMSON",
+        "name": "Ken Crimson",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s",
+        "hook": "Ken is a deputy sheriff and family man whose authority is real but constantly tested by his son’s conscience and Thompson’s leverage. He’s the kind of local-law character who can be comic, stern, and morally cornered all at once.",
+        "why_actor_wants_this": "This is the territory of Jeffrey Wright in a grounded civic drama — a lawman whose dignity is tested by competing loyalties. Character actors who like playing restraint under pressure will find a lot of playable behavior here."
+      },
+      {
+        "name": "Grace Crimson",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s to 50s",
+        "hook": "Grace is the practical, no-nonsense spouse who sees through Thompson faster than the men around her do. She has the clean, watchful energy of someone who keeps the household honest and refuses to be charmed by power.",
+        "why_actor_wants_this": "This is the kind of sharp domestic authority Laurie Metcalf brings to Lady Bird — a parent role that can be funny, skeptical, and emotionally exact in the same scene. Strong character actresses who like playing the smartest person in the room without speeches will be interested."
+      },
+      {
+        "name": "Jim Crimson",
         "role_type": "Supporting",
         "demographics": "Male · 10 years old",
-        "hook": "Jim is the town kid with the biggest mouth and the quickest conversion from swagger to sincerity. He starts as a comic bruiser, but the script lets him become a genuine believer in the seahorse cause, which gives him a nice arc from show-off to ally.",
-        "why_actor_wants_this": "This is the kind of kid-role energy that gave Gaten Matarazzo in Stranger Things its appeal — a funny, expressive boy who can pivot from comic bravado to real feeling. Young actors who can play boldness without losing vulnerability will have a field day."
+        "hook": "Jim is a swaggering kid with a performative edge who gradually reveals a real capacity for loyalty and grief. He starts as the loudest boy in the room and ends up as one of the story’s clearest emotional mirrors for Karissa.",
+        "why_actor_wants_this": "This is the kind of boy-role energy Finn Wolfhard brought to It — a kid who can be cocky, funny, and suddenly vulnerable when the story asks for it. Young actors with comic timing and a little bite will gravitate to him."
       },
       {
-        "name": "WILLIS ROSENBERG",
+        "name": "Willis Rosenberg",
         "role_type": "Supporting",
         "demographics": "Male · 9 years old",
-        "hook": "Willis is the precocious, glasses-wearing observer who speaks like a tiny adult but still has the wonder of a child. He is the smartest kid in the room without being smug, and his deadpan formality gives the movie some of its best comic texture.",
-        "why_actor_wants_this": "This is the kind of role that gave young Noah Schnapp in Stranger Things or young Haley Joel Osment in The Sixth Sense its appeal — a child whose intelligence is the joke and the charm. It gives a young actor a chance to play precision, timing, and wonder in the same part."
+        "hook": "Willis is a precocious, bookish kid whose formal speech makes him instantly memorable. He’s socially awkward in a charming way, but the script gives him a real emotional function as the first child to meet Karissa on her terms.",
+        "why_actor_wants_this": "This is the showcase space of a young actor playing the early-precocious outsider, like the kid energy in Moonrise Kingdom. Performers who can land precise dialogue, deadpan sincerity, and a sweet romantic curiosity will want it."
       },
       {
-        "name": "TERESA TANNA",
+        "name": "Dan Tanna",
         "role_type": "Supporting",
-        "demographics": "Female · 9 years old",
-        "hook": "Teresa is socially polished, slightly snooty, and eager to control the terms of play. She gives the child ensemble a little status tension and helps the movie feel like a real schoolyard ecosystem rather than a single-kid fantasy.",
-        "why_actor_wants_this": "This is the sort of sharply defined child supporting role that lets a young performer play status and comic judgment, like the best of the kid ensemble in E.T. or Matilda. It’s a neat showcase for a child actor who can land attitude without becoming one-note."
+        "demographics": "Male · 40s to 50s",
+        "hook": "Dan is the easygoing neighbor who keeps the social temperature light while still feeling like a real member of the town ecosystem. He’s a comic-relief adult with enough warmth to make the community feel lived-in.",
+        "why_actor_wants_this": "This is the kind of ensemble-support role that gives a character actor the rhythm of a sitcom dad inside a feature fable, similar to the neighbor energy in The Sandlot. Actors who specialize in likable, fast-talking community texture will enjoy it."
       },
       {
-        "name": "TASHA LAMONT",
+        "name": "Nora Tanna",
         "role_type": "Supporting",
-        "demographics": "Female · 9 years old",
-        "hook": "Tasha is the eager imitator in the group, always a beat behind the stronger personalities but fully invested in the game. She adds texture to the child ensemble by reflecting the social pressure of wanting to belong.",
-        "why_actor_wants_this": "This is the kind of ensemble kid part that gives a young actor the chance to play reaction, imitation, and comic escalation, similar to the supporting child energy in The Sandlot. It’s a useful showcase for a performer who can make small choices feel alive."
+        "demographics": "Female · 40s to 50s",
+        "hook": "Nora is the grounded counterpart to Dan, practical and socially alert, with a no-fuss presence that helps the town feel real. She reads as someone who can clock the room instantly and keep the adults from drifting too far into nonsense.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actress clean, efficient scene business in a family ensemble, like the parent texture in Little Miss Sunshine. Character actresses who like specificity over speeches will see the value."
       },
       {
-        "name": "KEN CRIMSON",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · deputy sheriff",
-        "hook": "Ken is a duty-first local authority figure whose loyalty to law keeps colliding with his loyalty to his son. He’s not a villain; he’s a man trapped between public order and private feeling, which gives the town conflict a human face.",
-        "why_actor_wants_this": "This is the kind of grounded authority role that gave Dennis Quaid in Far from Heaven or Kyle Chandler in Friday Night Lights its appeal — a father with a uniform and a conscience. Actors who specialize in decency under pressure will see a clean, playable part."
-      },
-      {
-        "name": "GRACE CRIMSON",
-        "role_type": "Supporting",
-        "demographics": "Female · 40s-50s",
-        "hook": "Grace is the practical, no-nonsense spouse who sees through posturing fast and keeps the family grounded. She has a sharp maternal presence that helps the Crimson home feel lived-in and emotionally credible.",
-        "why_actor_wants_this": "This is the kind of supporting-mom role that gives an actress the chance to play authority, humor, and exasperation in a compact space, like the best parent roles in The Goonies or The Blind Side. Character actresses who can land a line and a look will be interested."
-      },
-      {
-        "name": "DENEISE LAMONT",
+        "name": "Deneise Lamont",
         "role_type": "Supporting",
         "demographics": "Female · 30s",
-        "hook": "Deneise is a flirtatious, self-conscious divorcee who uses wit and social performance to keep control of the room. She adds adult comic friction and a little romantic chaos to the neighborhood ensemble.",
-        "why_actor_wants_this": "This is the kind of lightly comic adult supporting role that gives an actress a chance to play vanity, loneliness, and flirtation in the same breath, similar to the sharper women in Steel Magnolias or Parenthood. It’s a compact but flavorful part for a performer who can make a few scenes pop."
+        "hook": "Deneise is a flirtatious, slightly chaotic divorced mom who brings adult comic friction into the picnic scenes. She’s socially forward, self-aware enough to be funny, and just messy enough to keep the ensemble lively.",
+        "why_actor_wants_this": "This is the kind of comic-adult showcase that lets an actress play vanity, loneliness, and flirtation in the same breath, like the sharper supporting women in Parenthood. Performers who like broad-but-specific character color will want a swing at her."
       },
       {
-        "name": "NORA TANNA",
+        "name": "Tasha Lamont",
         "role_type": "Supporting",
-        "demographics": "Female · 30s-40s",
-        "hook": "Nora is the efficient, socially fluent spouse who helps keep the neighborhood table moving. She’s part of the movie’s domestic texture, the kind of adult who makes the town feel organized and communal.",
-        "why_actor_wants_this": "This is a useful ensemble role for an actress who can play grounded realism and quick reaction, the kind of part that supports the social fabric in a family ensemble like Little Miss Sunshine. It gives a performer a chance to make the world feel inhabited."
+        "demographics": "Female · 9 years old",
+        "hook": "Tasha is an imitator and tag-along with enough personality to feel like a real kid rather than a background child. She gives the children’s ensemble a social echo, especially in the way she mirrors the adults’ attitudes without fully understanding them.",
+        "why_actor_wants_this": "This is the kind of kid role that works like the younger ensemble kids in E.T. — not the lead, but a vivid child presence with comic reaction beats and group energy. Young actors who are good at reaction and rhythm will have fun with it."
       },
       {
-        "name": "MILT ROSENBERG",
+        "name": "Teresa Tanna",
         "role_type": "Supporting",
-        "demographics": "Male · 50s-60s",
-        "hook": "Milt is the wry, quick-talking neighborhood elder who turns every conversation into a joke without losing his humanity. He gives the movie its easy comic rhythm and helps the adult ensemble feel like a real community of personalities.",
-        "why_actor_wants_this": "This is the kind of comic elder role that gives an actor the same pleasure as the best supporting dads and uncles in A Serious Man or The Marvelous Mrs. Maisel — timing, texture, and a few memorable lines. Character actors who enjoy verbal play will gravitate to it."
+        "demographics": "Female · 9 years old",
+        "hook": "Teresa is polished, slightly snooty, and eager to be taken seriously, which makes her a great foil for Karissa’s bluntness. She has the social confidence of a kid who already knows how to perform status.",
+        "why_actor_wants_this": "This is the kind of sharp child-support role that gives a young actress a mini-arc of pride, envy, and comic correction, similar to the precocious girls in Matilda. Performers with crisp line delivery and attitude will chase it."
       },
       {
-        "name": "DELORIS ROSENBERG",
+        "name": "Alan Ross",
         "role_type": "Supporting",
-        "demographics": "Female · 50s-60s",
-        "hook": "Deloris is the steady, skeptical counterweight to Milt’s joking, and she keeps the adult conversations from floating away. She’s a practical presence with enough warmth to make the neighborhood feel like a functioning social unit.",
-        "why_actor_wants_this": "This is the sort of supporting matriarch role that gives an actress the same grounded authority seen in the family ensembles of The Farewell or Moonstruck. It’s a clean part for someone who can play intelligence through reaction."
+        "demographics": "Male · 30s to 40s",
+        "hook": "Ross is Thompson’s loyal aide, a pale, anxious operator who keeps the corporate machine moving while quietly absorbing the boss’s abuse. He’s a classic underling with enough personality to make the power dynamic funny and uncomfortable.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the sidekick pressure-cooker energy of Steve Carell’s early office work — a man trapped in the orbit of a louder personality. Character actors who can play nervous competence will be drawn to it."
       },
       {
-        "name": "ALAN ROSS",
+        "name": "Gary",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-50s",
-        "hook": "Ross is Thompson’s loyal aide, a nervous professional who translates corporate menace into polite obedience. He’s the kind of subordinate who knows exactly how far to go and still ends up funny because of it.",
-        "why_actor_wants_this": "This is the kind of sidekick role that gives an actor the comic-relief utility of the best corporate underlings in Veep or The Devil Wears Prada. It’s a strong fit for a performer who can play fear, loyalty, and dry reaction in one package."
+        "demographics": "Male · 20s to 40s",
+        "hook": "Gary is the cheerful rig worker who opens the movie with a simple, memorable gesture of feeding the fish. He’s a small but useful piece of the film’s working-class texture, the kind of guy who makes the world feel inhabited.",
+        "why_actor_wants_this": "This is the sort of brief but flavorful role that actors like in ensemble adventure films because it gives them a clean comic beat and a memorable image, similar to the dockworker cameos in Jaws. It’s a good fit for a performer who likes making an entrance fast."
       },
       {
-        "name": "GARY",
+        "name": "Ned",
         "role_type": "Supporting",
-        "demographics": "Male · 20s-40s · oil rig worker",
-        "hook": "Gary is the working-guy observer who opens the movie with a joke and helps establish the offshore world as lived-in and casual. He’s a small but useful piece of the film’s blue-collar texture.",
-        "why_actor_wants_this": "This is the kind of brief but memorable working-man role that gives an actor a clean comic entrance and a little local color, similar to the utility players in Jaws or The Perfect Storm. It’s a good showcase for a performer who can make a few lines feel authentic."
+        "demographics": "Male · 20s to 40s",
+        "hook": "Ned is Gary’s co-worker and audience surrogate for the opening mystery, reacting with wonder and a little superstition. He helps establish the film’s tone of everyday people encountering the impossible.",
+        "why_actor_wants_this": "This is a compact, playable supporting beat in the tradition of the first witnesses in Close Encounters — a role built on reaction and comic awe. Actors who can sell disbelief without overplaying it will fit."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a family fantasy with real emotional weather and a big practical-to-mythic third act.",
-        "fit_profile": "First- or second-feature directors, or established indie filmmakers moving into family adventure, who already care about performance-forward storytelling and clean visual escalation. This material rewards someone who can balance child emotion, coastal realism, and a final act that grows from intimate wonder into large-scale spectacle without losing sincerity.",
-        "detail": "The movie gives a director a clear tonal runway: domestic scenes, creature wonder, civic protest, and disaster payoff. It is especially attractive to filmmakers who like to stage emotion through environment and can make a contained coastal world feel bigger than its footprint."
+        "hook": "A director who wants to make a family fantasy with real emotional weather and a big third-act spectacle.",
+        "fit_profile": "Second- or third-feature directors with festival or prestige-family credits, especially those who like performance-forward storytelling, practical emotion, and lightly heightened visual worlds. This material rewards a filmmaker who can keep the creature wonder sincere while staging a public climax that feels large, legible, and crowd-pleasing.",
+        "detail": "The movie gives a director a child-led emotional spine, a comic adult ensemble, and a finale that can move from intimate rescue to mythic scale without changing genres. It will attract directors who like to balance warmth, satire, and visual payoff in a way that still feels accessible to families."
       },
       "buyer_appeal": {
-        "tier": "$10-25M family feature",
-        "lane": "Family adventure / streamer event / modest theatrical fantasy",
-        "detail": "The script can be sold off a child lead, a memorable creature, and a villain role that a recognizable character actor can own, so it does not require a star-heavy ensemble to make sense. The family-fantasy lane and environmental message give it a clean streamer-event path, while the creature and sea-park imagery support poster, trailer, and holiday-family programming appeal."
+        "tier": "$10-20M family feature",
+        "lane": "Streaming family adventure / modest theatrical family fantasy",
+        "detail": "The package can be built around one strong child lead and a recognizable adult villain, so it does not require a giant star ensemble to make sense in the room. The creature premise, coastal setting, and environmental angle give it a clean family-marketing lane with exportable visual hooks and a trailer-friendly final act."
       }
     },
     "considerations": [
       {
-        "area": "The middle section repeats the discovery beat.",
-        "detail": "The pages that move from first encounter to feeding, bathing, naming, and riding Star are charming, and a next pass could consider compressing one of those domestic beats so the capture/protest turn arrives with even more forward charge. The story already has a strong emotional center; tightening the sequence of wonder beats would protect momentum without changing the heart of the movie.",
+        "area": "The opening spends time on atmosphere before the engine fully locks.",
+        "detail": "The oil-rig prologue, the home reunion, and the Founders Day picnic all do useful work, but the version of the script where Karissa’s bond with Star arrives a little sooner would give the feature a faster first-act pull. One lever would be to compress a beat or two of town setup so the audience reaches the creature discovery with more momentum.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The sea park build drives the scale.",
-        "detail": "The aquarium/sea-park material, the flooding climax, and the giant Father reveal all ask for a meaningful effects and water budget. One simplification lever would be to keep the sea park visually distinct but modular in construction so the production can preserve the climax while controlling build complexity.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Thompson’s public campaign could sharpen the turn.",
-        "detail": "The press conference and ribbon-cutting sequence already give the antagonist a strong public face, and the version of the scene where Karissa’s protest directly interrupts his media victory would make the showdown feel even more inevitable. That would keep the story’s moral argument visible in one place and strengthen the handoff into the disaster finale.",
+        "area": "Thompson’s takeover could be seeded even earlier.",
+        "detail": "His press conference and seizure of the seahorses land cleanly, and the character is already vivid in the festival scenes. What would it look like if his appetite for control were threaded through one earlier exchange with Boone or the town, so the later legal move feels even more inevitable?",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The child ensemble is a selling point and a casting lift.",
-        "detail": "The group of kids gives the movie charm and community, but it also means the production will want a careful casting plan around multiple strong child performances. The upside is that the ensemble can be a marketing asset if the kids feel distinct and playable, especially in the protest and seahorse-club material.",
+        "area": "The supporting adults mostly orbit the central pair.",
+        "detail": "The town families are charming and functional, especially in the picnic and protest sequences, but the version of the script where one or two adults get a sharper independent stance would deepen the ensemble engine. That could be as simple as giving Grace or Marla one more scene where their point of view actively changes the plan.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The sea-park build pushes the production footprint upward.",
+        "detail": "The aquarium, flooding finale, underwater action, and giant Father reveal all justify the spectacle, but they also define the movie’s budget ceiling. A producer looking to protect the narrative could consider how much of the sea-park can be implied through design, crowd reaction, and selective reveal rather than full-scale build.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The oil-platform opening sets the stakes fast.",
-        "detail": "The opening image of the drilling rig and the sandwich disappearing into the water immediately establishes the environmental pressure, and the script could continue to foreground that cause-and-effect line whenever the story returns to Thompson’s operation. Keeping that thread explicit will make the final oil-slick payoff feel even more earned.",
+        "area": "The creature effects need a consistent visual rule.",
+        "detail": "Star, the family of seahorses, and the final winged transformation all ask the audience to accept a specific fantasy logic. The version of the film where the creature language is tightly standardized from the first beach reveal onward would make the later spectacle feel even more inevitable.",
         "is_primary_lever": false,
-        "source": "script"
+        "source": "production"
       }
     ],
     "craft_note": ""
@@ -331,7 +330,7 @@
   "weightedScore": 66,
   "tier": "Optionable",
   "inputTokens": 31680,
-  "outputTokens": 5756,
-  "cost": 0.049662,
+  "outputTokens": 5644,
+  "cost": 0.04915799999999999,
   "declaredFormat": "Feature film"
 }

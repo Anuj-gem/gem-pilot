@@ -2,303 +2,293 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-fi comedy",
+      "genre_primary": "Sci-fi satire",
       "genre_tags": [
-        "satire",
-        "thriller"
+        "thriller",
+        "social commentary"
       ],
-      "tone": "Darkly comic, satirical, fast-talking, increasingly paranoid"
+      "tone": "Darkly comic, paranoid, heightened, and satirical"
     },
-    "positioning_hook": "A socially awkward grad student infiltrates a brain-slug content house to find her missing friend, then discovers the whole online ecosystem is built to weaponize attention, fear, and consent.",
+    "positioning_hook": "A Ph.D. candidate hunting her missing friend infiltrates a brain-slug content house, where viral manipulation, gender performance, and real violence blur into one algorithmic trap.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean, easy-to-sell engine: a missing friend, a secretive creator house, and alien brain slugs as the metaphorical and literal threat. The audience promise is clear and contemporary, though the satire-forward lane is sharper for streaming and cult discovery than four-quadrant play."
+        "reasoning": "The premise has a clean, sellable engine: a smart, isolated young woman enters a media house built on manipulation and discovers the people behind the content are not what they seem. The audience promise is clear and current, though the satire-forward lane is more targeted than four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early in the interview-room opener and then sharpens when Jane realizes the videos, the house, and the missing Eve are all connected. The story engine is easy to explain in two sentences, and the white-cyclorama interview device gives the premise an immediate visual identity."
+        "reasoning": "The hook lands fast in the opening interview room, then sharpens when Jane realizes the brain-slug videos are a recruitment and control machine. The script keeps the premise legible while escalating from online weirdness to a contained conspiracy."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Jane has a strong comic-awkward voice and a clear emotional drive in her search for Eve, while Capp, Eve, and Sterling each embody a different flavor of manipulation. The roles are playable and actor-friendly, though the script is most magnetic when Jane is reacting to the machine rather than when the ensemble is carrying equal dramatic weight."
+        "reasoning": "Jane has a strong comic-argumentative voice, and her mix of intellectual certainty, social awkwardness, and survival instinct gives the role real traction. Capp, Eve, Sterling, and Nancy each carry a distinct social function, though Jane remains the clear center of gravity."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script turns influencer culture, manosphere rhetoric, and conspiracy logic into a single absurd social ecosystem, and it commits to the bit with the fake-laughs, the unplugged podcast set, and the performative content house. The satire is specific enough to feel authored rather than generic."
+        "reasoning": "The script commits to a very specific satirical language: fake podcasts, influencer performance, comment-section voices, and the mechanics of online persuasion all become story action. The choice to make the alien invasion feel like content strategy is a sharp, confident angle."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The investigation keeps generating new reveals — Eve’s disappearance, the fake podcast, the slug storage closet, the conversion video, the final takedown — so the script keeps moving. A few stretches lean more on explanation than escalation, but the momentum stays active and the third act pays off the setup with a clean physical confrontation."
+        "reasoning": "The story keeps Jane moving from campus to dates to The Hub to the final escape, and each step reveals a deeper layer of the machine. A few stretches are more conversational than propulsive, but the escalation into captivity and revolt gives the feature a strong back half."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The idea of a creator house that monetizes alien possession as content feels both bizarre and inevitable, which is exactly the sweet spot for this category. The script’s best turns — the fake studio, the audience-research mantra, the conversion video, the slug closet — make the premise feel freshly engineered."
+        "reasoning": "The idea of brain slugs as both literal body-snatchers and a metaphor for media conformity feels immediately graspable and fresh. The script turns that premise into a social ecosystem rather than a one-note gag, which gives it a memorable aftertaste."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The Hub, the campus, the bar, and the production spaces all feel like parts of one social machine, with clear hierarchies, monetization logic, and status games. The world has enough texture to support a feature and potentially more, because every room is tied to a different layer of the same attention economy."
+        "reasoning": "The production house, podcast rooms, cyclorama set, editing bay, and social-media machinery create a world with visible rules and incentives. The ecosystem of creators, producers, academics, parking enforcement, and online mobs makes the setting feel story-generating rather than decorative."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is sharply defined: deadpan satire colliding with escalating paranoia and occasional body-horror violence. The fake-laughs, the absurdly polite menace, and the way casual content talk turns into coercion give the script a recognizable tonal signature."
+        "reasoning": "The tone is highly identifiable: deadpan absurdism, internet-age paranoia, and escalating menace all coexist in the same scene. The script can jump from a fake-laugh joke to a body-snatching murder without losing its satirical voice."
       },
       "latent_depth_slow_burn_potential": {
         "score": 7,
-        "reasoning": "Beneath the alien premise is a pointed argument about consent, audience capture, and how people rationalize harm when it is packaged as community or content. The script hints at a broader social critique without overexplaining it, which gives the material room to linger after the plot resolves."
+        "reasoning": "Under the comedy, the script is tracking loneliness, social isolation, audience hunger, and the seduction of belonging. The final reveal that Capp is running for President widens the world and suggests a larger institutional story beyond the immediate plot."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "Jane/Eve, Jane/Capp, Jane/Sterling, and Jane/Kevin all generate distinct comic and dramatic energy, and the Hub crew has a workable internal system of alliances and betrayals. The ensemble is strong enough to keep scenes alive, though the feature still belongs primarily to Jane’s point of view."
+        "reasoning": "Jane/Eve, Jane/Capp, Jane/Sterling, and Jane/Nancy all generate different kinds of friction, and the Hub functions as a social machine. The ensemble is strongest when characters are competing over narrative control, though Jane remains the primary engine."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 11,
-        "leads": 4,
+        "leads": 5,
         "series_regulars": 0,
         "child_actors": false,
         "casting_characteristics": [
-          "Ensemble of 20s-60s",
-          "One lead role requires strong comic timing and escalating paranoia",
-          "Several roles depend on persuasive on-camera charisma"
+          "20s female lead with sharp comic timing",
+          "multiple 20s-40s supporting roles",
+          "one 60s male professor role",
+          "one 60s mother role",
+          "one 30s female politician/producer type"
         ]
       },
       "locations": {
-        "distinct_count": 10,
-        "interior_exterior_ratio": "Mostly interior with some exterior support",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with some exterior campus, street, and backyard scenes",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "Contained house/location footprint at The Hub",
-          "College campus",
-          "Bar",
-          "Apartment",
-          "Production office/studio spaces"
+          "contained mansion/creator-house location",
+          "campus office and apartment interiors",
+          "podcast/cyclorama/studio setups",
+          "Hollywood Hills residential exterior"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Primarily UI/text overlays, video playback, and a few slug POV/transition moments; no large-scale creature or environment work is indicated.",
+        "vfx_details": "Primarily interface/text overlays, phone/video inserts, and simple slug effects; no large-scale spectacle.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical slug props, squibs/impact beats, fight beats, concussion/slug-removal effects, and a few slapstick takedowns.",
-        "night_shoots": "minimal",
+        "sfx_needs": "Practical slug props, body-control effects, concussion/impact beats, squish effects, and a few fight/takedown moments.",
+        "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
           "detail": "\"Not Like Us\" is specifically named in dialogue."
-        },
-        {
-          "type": "brand",
-          "detail": "Disney sweatshirt, HGTV, OnlyFans, Patreon, Instagram, Reddit, Zork, and Apple are referenced."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming feature / premium cable satire lane",
+        "recommended_lane": "Streaming feature or festival-to-platform satirical genre lane",
         "content_level": "Mature",
-        "series_engine_or_release_model": "Festival-to-platform or direct streaming release; feature release model with strong cult and conversation potential."
+        "series_engine_or_release_model": "Feature release model with strong streamer value; the contained setting and topical satire support a festival launch or direct-to-platform play."
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "The story is largely contained to homes, studios, a campus, and a bar, with only modest practical effects and UI work."
+          "note": "Contemporary, contained interiors, limited effects, and no large-scale action keep the budget in a modest feature range."
         },
         "cast": {
           "level": "medium",
-          "note": "The script benefits from a charismatic Jane, a magnetic Capp, and strong supporting turns for Eve, Sterling, Nancy, Kevin, and Buchanan."
+          "note": "The script wants a strong Jane, plus several distinct supporting players across the 20s-60s range, but it does not depend on a large ensemble or child casting."
         },
         "location": {
           "level": "medium",
-          "note": "There are about ten distinct locations, but most are contemporary interiors and exteriors in the same Los Angeles ecosystem."
+          "note": "The story moves through a dozen practical locations, but most are controllable interiors centered on The Hub, campus, and Jane's apartment."
         },
         "content": {
-          "level": "high",
-          "note": "Threats, coercion, murder, body possession, misogynistic language, and online harassment push this into mature territory."
+          "level": "medium",
+          "note": "Death threats, murder, coercion, and sexualized online behavior push it into mature territory without requiring extreme explicitness."
         },
         "rights": {
-          "level": "medium",
-          "note": "The script uses several named platforms and brands, plus a specifically named song, which will need clearance review."
+          "level": "low",
+          "note": "Only one named song reference appears, and the rest of the material is original with no obvious real-person or brand dependency."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise weaponizes creator culture.",
-          "what_it_means": "This gives the project a timely satirical lane that buyers can immediately understand: a conspiracy story where content strategy, audience capture, and manipulation are the actual monster. It will attract streamer buyers, genre producers, and audiences who respond to media satire with a thriller spine.",
-          "evidence": "The Hub’s fake podcast set, the unplugged microphones, the “audience research” mantra, and the way deleted footage becomes the engine of the final act.",
+          "dimension_or_area": "The premise turns internet culture into invasion horror.",
+          "what_it_means": "That gives the movie a clean commercial engine: the audience can instantly read the metaphor while still enjoying the literal conspiracy. Buyers looking for topical genre with a satirical edge will see a feature that feels built for the current media moment.",
+          "evidence": "The blank-room interviews, fake podcasts, comment-section voices, and creator-house recruitment all fold into the brain-slug mythology.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Jane is a highly playable lead.",
-          "what_it_means": "The role gives an actor comic discomfort, investigative drive, and escalating moral outrage in one package, which is exactly the kind of part that can break out at festivals or on a streamer launch. Mid-career comedic actresses and sharp dramatic performers looking for a genre showcase would see immediate value here.",
-          "evidence": "Her deadpan phone-commentary, the male-avatar experiment, the repeated fake-laughs, and the final shift from anxious researcher to physical fighter.",
+          "dimension_or_area": "Jane is a sharp, playable lead.",
+          "what_it_means": "The role gives an actor a comic intellect, escalating paranoia, and physical survival beats in one package, which is exactly the kind of part that can break out at festivals. Mid-career comedic actresses and rising dramatic leads looking for a signature role would both lean in.",
+          "evidence": "Her dissertation arguments, her fake male profile, her escalating suspicion, and her final escape all keep her active and specific.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The satire has a clean visual engine.",
-          "what_it_means": "The white cyclorama interview room, the podcast studio, and the content-house spaces create a repeatable visual grammar that makes the movie feel designed rather than merely written. Directors who like controlled, performance-forward setups will see a lot to work with without needing a giant budget.",
-          "evidence": "The opening interview stool, the repeated studio setups, and the way each room becomes a different version of the same performance machine.",
-          "source": "production"
-        },
-        {
-          "dimension_or_area": "The ensemble has distinct comic functions.",
-          "what_it_means": "Capp, Eve, Sterling, Nancy, Kevin, and Buchanan each represent a different way people rationalize power, which gives the script a built-in argument engine beyond the central mystery. That makes the material attractive to ensemble-minded directors and buyers who want supporting roles that can be cast with recognizable faces.",
-          "evidence": "Capp’s polished menace, Eve’s performative femininity, Sterling’s smug rhetoric, Nancy’s producer logic, Kevin’s late-blooming skepticism, and Buchanan’s institutional spin.",
+          "dimension_or_area": "The Hub is a story engine, not just a set.",
+          "what_it_means": "A contained creator compound with podcast rooms, a cyclorama, editing bay, kitchen, garage, and pool gives the project a producible footprint with multiple playable zones. That kind of modular location design is attractive to indie financiers and streamers who want scale without sprawl.",
+          "evidence": "The script repeatedly returns to the same house while using each room for a different kind of confrontation or reveal.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world feels monetized from every angle.",
-          "what_it_means": "The script understands how modern influence ecosystems actually work — sponsors, Patreon, shadow accounts, clips, reposts, and audience bait — so the setting is not just backdrop, it is the engine. That specificity helps the project travel with buyers who want contemporary satire that feels current on arrival.",
-          "evidence": "Sponsor mentions, Patreon talk, fake live-streaming, deleted footage resurfacing, and the constant language of reach, conversion, and engagement.",
+          "dimension_or_area": "The satire has a very current target.",
+          "what_it_means": "This is not generic alien comedy; it is about audience capture, authenticity theater, and the monetization of outrage, which gives the script a sharper buyer-facing identity. It will appeal to producers and directors who want something that can play as both genre entertainment and cultural commentary.",
+          "evidence": "The fake live streams, Patreon talk, shadow accounts, and “the medium is the message” dialogue all point to the same satirical lane.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The third act delivers physical payoff.",
-          "what_it_means": "The movie doesn’t just stay in commentary mode; it cashes the premise out into a contained fight-and-escape sequence that gives the audience release. That helps the script play as a feature rather than a sketch, because the satire ends in action instead of just another speech.",
-          "evidence": "Jane and Kevin taking down the Hub crew, the slug closet reveal, the taser beat on Capp, and the final purge of the jars.",
+          "dimension_or_area": "The ensemble creates social friction on contact.",
+          "what_it_means": "Jane, Eve, Capp, Nancy, Sterling, Preston, and Kevin each represent a different relationship to power, attention, and belief, so scenes can generate conflict without needing plot machinery every time. That gives the project repeatable scene energy and makes it attractive to actors who want to spar.",
+          "evidence": "The podcast ambush, the kitchen confrontation, the conversion attempt, and the final takedown all depend on character dynamics.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone can pivot from absurd to threatening in one beat.",
+          "what_it_means": "That tonal control is valuable because it lets the movie stay funny without losing danger, which broadens its audience beyond pure horror or pure comedy. Buyers in the elevated-genre lane will recognize a script that can deliver laughs, unease, and payoff in the same sequence.",
+          "evidence": "The fake-laugh jokes, parking-ticket absurdity, and slug violence coexist without breaking the script's voice.",
           "source": "script"
         }
       ],
-      "headline": "SLUG LIFE has a sharp, marketable engine: a missing-friend mystery that turns into a savage satire of influencer culture, consent, and audience manipulation. The script’s biggest asset is how cleanly it turns a contemporary media ecosystem into a contained genre machine, with a lead role and ensemble that actors can really sink into."
+      "headline": "SLUG LIFE has a sharp, marketable premise and a very current satirical target: a smart young woman infiltrates a creator compound where alien possession, influencer performance, and audience manipulation are all part of the same business model. It’s contained, producible, and built around a lead role with real comic and dramatic lift, which makes it the kind of genre feature that can travel from festival buzz to streamer appetite."
     },
     "lead_characters": [
       {
-        "name": "Jane",
+        "name": "JANE",
         "role_type": "Lead",
-        "demographics": "Female · 20s",
-        "hook": "Jane is a bookish, hyper-literate grad student whose default mode is analysis, not action, until the world forces her to become both investigator and combatant. She’s socially awkward, morally rigid, and funny in a way that comes from overthinking every room she enters, which makes her easy to root for even when she’s wrong-footed by the culture around her.",
-        "why_actor_wants_this": "This is the showcase territory of Aubrey Plaza in Ingrid Goes West — a tightly wound, deadpan lead whose discomfort becomes the engine of the movie. Actors who can play intelligence, embarrassment, and sudden ferocity in the same scene will see a role that lets them carry a satirical feature and then physically seize the climax."
+        "demographics": "Female · 20s · bookish graduate student",
+        "hook": "Jane is a hyper-literate, socially awkward researcher who believes facts should still matter, even when the world around her has turned into performance art. She is funny because she is earnest, dangerous because she is right, and compelling because her need to be taken seriously keeps colliding with a culture built to mock seriousness.",
+        "why_actor_wants_this": "This is the showcase territory of Rachel Sennott in Bottoms or Carey Mulligan in Promising Young Woman — a lead who can weaponize intelligence, embarrassment, and rage in the same scene. It gives an actor the chance to play a woman whose internal logic is always active, with a full arc from defensive observer to active insurgent."
       },
       {
-        "name": "Eve",
+        "name": "CAPP",
         "role_type": "Lead",
-        "demographics": "Female · 20s",
-        "hook": "Eve is the friend who has learned how to survive by becoming legible to the camera, and that makes her both seductive and unsettling. She can read as bubbly, wounded, manipulative, or sincerely converted depending on the moment, which gives the role a slippery, fascinating charge.",
-        "why_actor_wants_this": "This is the kind of part that gave Jodie Comer in Killing Eve the chance to toggle between charm and menace while keeping the audience guessing about allegiance. An actor who wants to play a woman performing femininity as both armor and weapon will find a lot of runway here."
+        "demographics": "Male · 30s · polished media entrepreneur",
+        "hook": "Capp is the smiling operator who understands that control looks better when it sounds like freedom. He is calm, managerial, and almost paternal, which makes his coercion more unsettling because he never seems to think he is doing anything monstrous.",
+        "why_actor_wants_this": "This is the showcase space of Jeremy Strong in Succession or Paul Dano in There Will Be Blood — a man whose politeness is the mask for total dominance. It gives an actor a role built on controlled menace, ideological flexibility, and the ability to turn a room with a smile."
       },
       {
-        "name": "Capp",
+        "name": "EVE",
         "role_type": "Lead",
-        "demographics": "Male · 30s",
-        "hook": "Capp is the polished operator at the center of the machine: calm, camera-ready, and always speaking in the language of freedom while controlling every room he enters. He’s the kind of antagonist who never looks like he’s raising his voice because he doesn’t need to — the power is already in the framing.",
-        "why_actor_wants_this": "This is the showcase space of Matthew McConaughey in True Detective season 1 — a charismatic, slippery authority figure whose charm is inseparable from the threat underneath it. Actors who want to play seductive control, ideological spin, and quiet menace in one role will chase this immediately."
+        "demographics": "Female · 20s · polished influencer type",
+        "hook": "Eve is the friend Jane is trying to save, but she has already been absorbed into the system she once resisted. She reads as bubbly, stylish, and socially fluent, yet the script keeps revealing how much of that persona is a survival costume.",
+        "why_actor_wants_this": "This is the showcase territory of Sydney Sweeney in Reality or Emma Stone in Birdman — a role where charm, self-invention, and quiet dread all have to coexist. An actor gets to play the seduction of belonging and the eerie calm of someone who may no longer know where the performance ends."
       },
       {
-        "name": "Sterling",
+        "name": "NANCY",
         "role_type": "Lead",
-        "demographics": "Male · 20s-30s",
-        "hook": "Sterling is the smug, self-mythologizing content guy who can turn any conversation into a performance of intelligence, masculinity, and irony. He’s funny because he’s always half-selling himself, and dangerous because he believes his own branding just enough to act on it.",
-        "why_actor_wants_this": "This is the kind of role that let Jesse Plemons in Game Night or Jeremy Strong in Succession play delusion as a full-body operating system. Actors who excel at brittle confidence, comic self-importance, and sudden cruelty will see a juicy antagonist with real scene-stealing potential."
+        "demographics": "Female · 30s · producer/manager type",
+        "hook": "Nancy is the polished, politically fluent face of the operation, always translating exploitation into branding language. She is sharp, pragmatic, and socially agile, which makes her feel like the person most likely to survive any room she enters.",
+        "why_actor_wants_this": "This is the showcase territory of Allison Janney in I, Tonya or Janelle Monáe in Glass Onion — a role that lets an actor play intelligence, control, and social calibration as a weapon. It will attract performers who like playing the person who can sell the lie while knowing exactly what the lie costs."
       },
       {
-        "name": "Nancy",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s",
-        "hook": "Nancy is the producer-brain of the operation, fluent in optics, audience framing, and the language of empowerment as a sales tool. She’s not the loudest person in the room, but she’s often the one deciding what the room becomes.",
-        "why_actor_wants_this": "This is the kind of sharp, managerial role that gave Sarah Snook in Succession the chance to play competence as a form of emotional armor. Actors who like playing intelligence with a smile and a knife behind it will be drawn to her."
+        "name": "STERLING",
+        "role_type": "Lead",
+        "demographics": "Male · 20s-30s · handsome, camera-ready",
+        "hook": "Sterling is the self-styled intellectual bro who treats every conversation like a performance for an invisible audience. He is smug, slippery, and weirdly vulnerable underneath the posture, which makes him both comic and threatening.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in Game Night or Nicholas Hoult in The Great — a role that lets an actor weaponize charm, vanity, and social delusion. It gives a performer room to play a man who is always auditioning for approval while insisting he is above it."
       },
       {
-        "name": "Kevin",
+        "name": "PRESTON",
         "role_type": "Supporting",
-        "demographics": "Male · late 20s",
-        "hook": "Kevin starts as a mild, agreeable grad-school peer and slowly reveals a spine, a conscience, and a willingness to act when the moment finally arrives. He’s the audience’s late-blooming ally, which makes his turn feel earned and satisfying.",
-        "why_actor_wants_this": "This is the kind of understated-to-heroic pivot that gave Paul Dano in Prisoners or Jesse Eisenberg in The Social Network a chance to make intelligence feel emotionally active. Actors who can play awkward decency and then surprise with physical commitment will want this part."
+        "demographics": "Male · 20s · edgelord streamer/podcaster",
+        "hook": "Preston is the loud, meme-trained provocateur who treats offensiveness as a personality and irony as armor. He is less ideologue than opportunist, which makes him useful to the machine and disposable to it at the same time.",
+        "why_actor_wants_this": "This is the showcase territory of a scene-stealing supporting turn like Bill Hader in Barry's comic mode or Ben Schwartz in The Afterparty — a fast-talking, self-mythologizing irritant who can steal scenes with rhythm. Actors who like playing the guy who thinks he is the smartest person in the room will have a field day."
       },
       {
-        "name": "Dr. Buchanan",
+        "name": "KEVIN",
         "role_type": "Supporting",
-        "demographics": "Male · 60s",
-        "hook": "Dr. Buchanan is the institutional face of respectable nonsense: paternal, polished, and always ready to translate ideology into policy language. He’s funny because he sounds like a mentor while steadily revealing himself as a bureaucrat for the machine.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the Alan Arkin in Little Miss Sunshine slot — a dry, authoritative presence whose calm delivery makes the satire land harder. Character actors who can play warmth and complicity at once will be interested."
+        "demographics": "Male · late 20s · grad student",
+        "hook": "Kevin is the decent, slightly dim academic who keeps trying to process the world in good faith. He is not the loudest person in the room, but his gradual shift from passive observer to active ally gives the story a grounded moral counterweight.",
+        "why_actor_wants_this": "This is the showcase territory of a grounded supporting turn like Jesse Eisenberg in The Social Network or Adam Scott in Severance's early episodes — a smart, anxious man whose decency becomes action. It gives an actor a clean arc from academic passivity to physical commitment."
       },
       {
-        "name": "Betty",
+        "name": "DR. BUCHANAN",
         "role_type": "Supporting",
-        "demographics": "Female · 40s",
-        "hook": "Betty is the competent adult in the room who briefly grounds the story in practical reality before the conspiracy swallows it back up. She has a brisk, professional energy that makes her feel like someone with a life beyond the plot.",
-        "why_actor_wants_this": "This is a compact but useful role in the Allison Janney / Holly Hunter lane — a smart, no-nonsense presence who can make a few scenes feel lived-in and specific. Supporting players who like crisp, scene-efficient authority will gravitate to it."
+        "demographics": "Male · 60s · professor",
+        "hook": "Dr. Buchanan is the paternal gatekeeper of academia, all forced warmth and institutional condescension. He speaks in the language of mentorship while quietly enforcing the system that keeps Jane waiting.",
+        "why_actor_wants_this": "This is the showcase territory of a character actor role like J.K. Simmons in Whiplash or Michael Stuhlbarg in Call Me by Your Name — a seemingly reasonable authority figure whose friendliness carries pressure. It gives an actor the pleasure of playing institutional power with comic awkwardness."
       },
       {
-        "name": "Preston",
+        "name": "BETTY",
         "role_type": "Supporting",
-        "demographics": "Male · 20s",
-        "hook": "Preston is the meme-fueled loudmouth who treats every room like a live stream and every opinion like content. He’s a comic accelerant, but he also helps define the culture of the house by making everything feel unserious until it becomes violent.",
-        "why_actor_wants_this": "This is the kind of role that lets an actor play fast, obnoxious, and weirdly magnetic in the Jonah Hill / Eric André lane. It’s a strong comic-support slot for someone who can weaponize chaos without losing rhythm."
+        "demographics": "Female · 40s · professional legal expert",
+        "hook": "Betty is the competent outside-world adult who understands how systems actually work, even when the system is absurd. She is brisk, practical, and funny in a dry, exasperated way that makes her feel like a lifeline from the real world.",
+        "why_actor_wants_this": "This is the showcase territory of a sharp supporting role like Octavia Spencer in The Help or Regina Hall in Support the Girls — a woman who can deliver authority and comic timing in the same breath. It will appeal to actors who like being the sane person in a room full of chaos."
       },
       {
-        "name": "Drew",
+        "name": "MOM",
         "role_type": "Supporting",
-        "demographics": "Male · 40s",
-        "hook": "Drew is the quietly disillusioned production guy who knows how the machine works and keeps showing up anyway. He has the dry, practical energy of someone who has seen too much and still needs the paycheck.",
-        "why_actor_wants_this": "This is the kind of grounded supporting role that gives an actor the Richard Jenkins in The Visitor space — restrained, observant, and quietly pivotal. Character actors who can make silence feel loaded will like this part."
+        "demographics": "Female · 60s · suburban mother",
+        "hook": "Jane's mom is a practical, slightly oblivious domestic presence whose casual advice keeps colliding with Jane's crisis. She gives the movie a lived-in family texture and a comic reminder that the outside world keeps moving even when Jane's life is on fire.",
+        "why_actor_wants_this": "This is the showcase territory of a warm comic supporting turn like Laurie Metcalf in Lady Bird — a parent who can be funny, grounding, and just detached enough to sting. It gives an actor a recognizable domestic authority role with real timing."
       },
       {
-        "name": "Desperate Greg",
+        "name": "DREW",
         "role_type": "Supporting",
-        "demographics": "Male · 30s",
-        "hook": "Greg is the lonely campus hanger-on whose need for approval makes him easy to steer. He’s comic, awkward, and vulnerable, which gives the story a useful civilian perspective on the larger ideological mess.",
-        "why_actor_wants_this": "This is a classic awkward-support role in the Michael Cera / Martin Starr lane — a part that can get laughs while still feeling human. Actors who specialize in anxious sincerity will see a clean fit."
-      },
-      {
-        "name": "Parking Officer Jo",
-        "role_type": "Supporting",
-        "demographics": "Female · 30s",
-        "hook": "Jo is the deadpan municipal functionary who refuses to be pulled into anyone else’s apocalypse. Her calm indifference becomes a comic counterweight to the story’s escalating panic.",
-        "why_actor_wants_this": "This is the kind of scene-stealing cameo that gives an actor the Kathryn Hahn in Parks and Recreation energy — a small role with a very clear comic point of view. It’s ideal for someone who can make bureaucratic absurdity feel effortless."
+        "demographics": "Male · 40s · indie filmmaker/crew",
+        "hook": "Drew is the quietly compromised crew member who knows how the machine works and keeps working anyway. He is the kind of behind-the-scenes operator who makes the Hub feel like a real production ecosystem rather than a cartoon lair.",
+        "why_actor_wants_this": "This is the showcase territory of a dry, underplayed supporting role like Michael Cera in This Is the End or Richard Kind in any ensemble where the observer becomes complicit. It gives an actor a chance to play the guy who sees everything and still stays in the room."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to turn a contained satire into a pressure-cooker thriller.",
-        "fit_profile": "First- or second-feature directors with a strong festival short or indie feature background, especially those drawn to performance-forward genre work and social satire. This material rewards precision, tonal control, and the ability to make a few rooms feel like a whole ideological ecosystem.",
-        "detail": "The movie gives a director a clean visual system — interview room, podcast studio, content house, campus, bar — and lets each space reveal a different layer of the same machine. It’s especially attractive to filmmakers who like dialogue-driven tension that can still pay off in physical confrontation."
+        "hook": "A director who wants to make a satire that plays like a thriller and a thriller that plays like a satire.",
+        "fit_profile": "Second-feature or established indie directors with a strong festival track record, especially those who like contained ensembles and dialogue-driven escalation. The material rewards directors who are fluent in tonal control, performance calibration, and visualizing internet-age absurdity without flattening it into sketch comedy.",
+        "detail": "The movie gives a director a contained house, a handful of repeatable rooms, and a clear escalation path from social comedy to physical danger. It is especially attractive to filmmakers who like staging power shifts in close quarters and getting big performances out of small, precise setups."
       },
       "buyer_appeal": {
         "tier": "$3-8M feature",
-        "lane": "Streaming satire / elevated genre / cult-comedy thriller lane",
-        "detail": "It can be packaged around one breakout lead and a strong ensemble without requiring heavy VFX or a star-driven effects pitch. The contemporary influencer/conspiracy angle, plus the contained footprint, makes it a clean fit for streamers and festival-to-platform buyers looking for something current and conversation-ready."
+        "lane": "Streaming-first elevated genre / festival satirical thriller lane",
+        "detail": "It can be packaged around one strong female lead and a compact supporting ensemble, so a buyer does not need a giant cast or heavy VFX to make the premise work. The contemporary creator-house setting and topical media satire give it a clean hook for streamers looking for original genre with social relevance."
       }
     },
     "considerations": [
       {
-        "area": "Jane’s investigation is strongest when it turns physical.",
-        "detail": "The script is at its most propulsive when Jane moves from analysis into action — the male-avatar experiment, the Hub infiltration, and the final takedown all click because they externalize her shift. A next pass could keep foregrounding choices where her research becomes a bodily decision, since that’s where the satire and thriller engines fuse most cleanly.",
+        "area": "Jane's research scenes carry the engine.",
+        "detail": "The campus office, the phone-comment montage, and the first Hub visit all do important premise work, but the script really ignites when Jane starts acting on her suspicions. One lever would be to keep the research beats as active discoveries rather than explanatory stops, so each scene changes Jane's leverage in the story.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The middle leans on explanation more than escalation.",
-        "detail": "The Hub tour and the repeated content-strategy conversations do useful world-building, but a few stretches spend more time naming the machine than tightening the noose around Jane. One lever would be to let a reveal or confrontation arrive a beat earlier in those sequences so the audience learns through pressure rather than through explanation.",
-        "is_primary_lever": false,
-        "source": "script"
-      },
-      {
-        "area": "The supporting cast could be trimmed for a leaner package.",
-        "detail": "The script currently carries a fairly full ensemble across the Hub, campus, and bar spaces, which is great for texture but does widen the casting footprint. If a producer wanted to simplify without changing the story, one direction would be to fold a couple of the smaller functionary roles into existing players and keep the core triangle-plus-allies intact.",
+        "area": "The Hub footprint can stay compact.",
+        "detail": "The story already lives mostly inside one creator compound, a campus office, and Jane's apartment, which is a strong production advantage. A next pass could consider whether a couple of the smaller exterior beats can be absorbed into the house ecosystem without losing momentum, protecting the contained feel that makes the movie producible.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The named-platform references need a clearance pass.",
-        "detail": "The script uses several real brands and platforms, plus a specifically named song cue, which is normal for contemporary satire but should be reviewed early. That’s a manageable step, and the version of the script where a few references are generalized would preserve the joke while easing the legal path.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The slug rules can stay slightly cleaner on first pass.",
-        "detail": "The story is already clear that slugs are coercive, performative, and tied to audience manipulation, but a few late-stage mechanics — especially around conversion, control, and what the slug can or cannot do — could be sharpened for maximum clarity. The goal would be to make the audience feel the rules instinctively, so the final confrontation lands with even more force.",
+        "area": "The final act can keep sharpening Jane's agency.",
+        "detail": "The escape, slug takedown, and cleanup are satisfying, and the version of the climax where Jane's choices are even more visibly driving each turn would make the finish hit harder. The material is already there; the opportunity is to foreground her tactical thinking so the payoff feels even more earned.",
         "is_primary_lever": false,
         "source": "script"
+      },
+      {
+        "area": "The satire is strongest when it stays specific.",
+        "detail": "The fake podcast language, comment-section chorus, and creator-branding jokes are the movie's signature texture. A next pass could keep leaning into those concrete media behaviors rather than broadening into generic conspiracy language, because the specificity is what makes the premise feel ownable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The named-song moment may need a clearance plan.",
+        "detail": "The explicit reference to \"Not Like Us\" is a useful contemporary joke, but it is also the one clear music-specific reference in the script. If the production wants maximum flexibility, this is the kind of line that can be swapped or rephrased without changing the scene's function.",
+        "is_primary_lever": false,
+        "source": "production"
       }
     ],
     "craft_note": ""
   },
   "weightedScore": 75.3,
   "tier": "Optionable",
-  "inputTokens": 34261,
-  "outputTokens": 5049,
-  "cost": 0.048416249999999994,
+  "inputTokens": 68522,
+  "outputTokens": 9538,
+  "cost": 0.0943125,
   "declaredFormat": "Feature film"
 }

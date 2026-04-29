@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T00:52:50.786Z",
+  "submission_id": "03e81f77-90cd-491c-822b-0386f9079813",
+  "eval_id": "a5211634-f852-4b5a-a5ce-5b1bfe368e28",
+  "title": "Celtx   EP.1   Script Sisyphus Project",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Anthony Morgan",
+      "role_type": "Lead",
+      "demographics": "Male · late teens/early 20s · college student"
+    },
+    {
+      "name": "Detective Ji-a Choi",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to early 40s · Korean or Korean-American detective"
+    },
+    {
+      "name": "Joan",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · college student"
+    },
+    {
+      "name": "XII",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s · stylized, physically agile presence"
+    },
+    {
+      "name": "Larry",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · detective partner"
+    },
+    {
+      "name": "Emma",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · psychology student"
+    },
+    {
+      "name": "Old Woman",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s or older"
+    }
+  ],
+  "positioning_hook": "A panic-stricken college student discovers he can’t die and keeps rewinding time after a bus murder, forcing a relentless NYPD detective to decide whether he’s the killer or the only witness who matters.",
+  "cost_usd": 0.0329895,
+  "input_tokens": 18144,
+  "output_tokens": 4307,
+  "status": "wrote:leads_ok"
+}

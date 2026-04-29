@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:13:41.219Z",
+  "submission_id": "b6b51437-38d8-4126-812b-bb35e38c592f",
+  "eval_id": "406c7b7c-b16e-476a-bfbe-92f92303dee7",
+  "title": "Fleabag",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Fleabag",
+      "role_type": "Lead",
+      "demographics": "Female · late 20s to early 30s · contemporary Londoner"
+    },
+    {
+      "name": "Claire",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · polished, affluent, high-functioning"
+    },
+    {
+      "name": "Dad",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · warm, awkward, emotionally evasive"
+    },
+    {
+      "name": "Harry",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s · contemporary London professional"
+    },
+    {
+      "name": "Boo",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · present through memory/flashback"
+    },
+    {
+      "name": "Bank Woman",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 50s · professional, controlled"
+    },
+    {
+      "name": "Women Speak Host",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 50s · polished public speaker"
+    }
+  ],
+  "positioning_hook": "A self-destructive young woman tries to keep her failing café, her family, and her sex life from collapsing while her dead best friend keeps haunting every bad decision.",
+  "cost_usd": 0.028055999999999998,
+  "input_tokens": 12988,
+  "output_tokens": 4070,
+  "status": "wrote:leads_ok"
+}

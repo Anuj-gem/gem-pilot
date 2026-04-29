@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T00:58:31.415Z",
+  "submission_id": "808daf00-cbc2-4b62-92f0-494f483ac9f8",
+  "eval_id": "be144b2c-b7e3-42d5-827a-7a2f2381ce30",
+  "title": "All I need is one dance",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Skylar Monroe",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · elite basketball player"
+    },
+    {
+      "name": "Ralph",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · small-town church worker / widower"
+    },
+    {
+      "name": "Beth",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s-80s"
+    },
+    {
+      "name": "Jason",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s-30s"
+    },
+    {
+      "name": "Maddie",
+      "role_type": "Supporting",
+      "demographics": "Female · 5-10 · child actor"
+    },
+    {
+      "name": "Coach Green",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Coach Wensil",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Katie Clarkson",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · athlete"
+    },
+    {
+      "name": "Lindsey Hill",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · athlete"
+    },
+    {
+      "name": "Lyla Nevada",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · athlete"
+    },
+    {
+      "name": "Casey Middletown",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · athlete"
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · priest"
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    }
+  ],
+  "positioning_hook": "A star guard loses the game that defined her, returns home injured, and finds her next shot may be choosing between the life she built and the one waiting in Pottsville.",
+  "cost_usd": 0.03832725,
+  "input_tokens": 19687,
+  "output_tokens": 5236,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:09:07.502Z",
+  "submission_id": "915ba29c-d549-49ec-9047-6cfd90025113",
+  "eval_id": "48d2bd15-ac9c-4e43-9444-91232b03dd32",
+  "title": "Be Still My Heart",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "JOY",
+      "role_type": "Lead",
+      "demographics": "Female · 23 · contemporary Las Vegas resident"
+    },
+    {
+      "name": "ROB",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · contemporary Las Vegas resident"
+    },
+    {
+      "name": "ELAINE",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · born-again Christian mother"
+    },
+    {
+      "name": "VIV",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · ex-showgirl / waitress"
+    },
+    {
+      "name": "DWAYNE ALVEREZ",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · hulking Hispanic comic-book-store clerk"
+    },
+    {
+      "name": "PASTOR JACK",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · pastor"
+    },
+    {
+      "name": "JILL",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Joy’s online best friend"
+    }
+  ],
+  "positioning_hook": "A quarantined Vegas woman with telekinetic powers falls for an online suitor who shares her gift — then discovers he’s grooming her for something darker.",
+  "cost_usd": 0.037548750000000006,
+  "input_tokens": 24535,
+  "output_tokens": 4255,
+  "status": "wrote:leads_ok"
+}

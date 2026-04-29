@@ -2,87 +2,87 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Satirical comedy",
+      "genre_primary": "Satirical fantasy comedy",
       "genre_tags": [
-        "religious farce",
-        "alternate-history adventure"
+        "religious satire",
+        "time-travel adventure"
       ],
-      "tone": "irreverent, broad, manic, pop-culture-satirical"
+      "tone": "irreverent, broad, absurdist, pop-culture-splashed"
     },
-    "positioning_hook": "A 1970s Christian cult clones Jesus from the Shroud of Turin, then sends Ted Nugent to kidnap the real Messiah before a rival sect can crucify him.",
+    "positioning_hook": "A 1970s Christian cult clones Jesus from the Shroud of Turin, then sends Ted Nugent through a time machine to retrieve the real Messiah before a rival sect crucifies him.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise is instantly legible as a high-concept comedy with built-in controversy, and the rock-concert, time-travel, and biblical iconography give it a clear curiosity factor. Its audience is more cult and late-night than four-quadrant, but the hook is strong enough to sell the concept in a room."
+        "reasoning": "The premise is instantly legible as a high-concept comedy with built-in controversy, and the Ted Nugent / Jesus collision gives it a clear hook for cult audiences. Its appeal is more specialized than four-quadrant, though, because the satire is aggressively specific and the religious provocation will narrow the buyer pool."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The script announces its engine early: a Jesus-cloning ministry, a grown clone who disappoints his handlers, and a rescue mission that escalates into time travel and biblical intervention. The premise is easy to explain in one breath, and the story keeps restating its central contradiction in fresh ways."
+        "reasoning": "The script announces its engine early: a fringe ministry, cloned Jesus, and a rescue mission that jumps between modern L.A. and biblical Jerusalem. The central contradiction is easy to explain in one breath, and the story keeps restating the premise through escalating set pieces."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 5,
-        "reasoning": "Wayne Bigsley, Wendy Shapiro, Ross, and Jose each have a readable comic function, and Jose’s resistance to being Jesus gives the lead role a built-in friction. The characters are more archetypal than layered, though the Wayne/Jose dynamic and the odd-couple energy with Nugent keep the cast watchable."
+        "score": 6,
+        "reasoning": "Wayne Bigsley, Wendy Shapiro, Ross, Jose, and Nugent each have a playable comic angle, especially Wayne's zeal and Jose's reluctant messiah energy. The characters are built more for broad comic function than layered interiority, so the roles play cleanly but don't yet carry a lot of hidden complexity."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script commits hard to a blasphemous, absurdist premise and keeps finding new comic engines inside it: cloning, televangelism, rock stardom, time travel, and biblical reenactment. The willingness to put Jesus in a concert, a whorehouse, and a custody battle with a religious cult gives it a distinct comic identity."
+        "reasoning": "The script commits hard to a wildly specific satirical premise and keeps escalating it with cloned Christ, a rock-band second coming, and a time-travel retrieval mission. The boldness is not subtle, but it is unmistakably its own thing and the willingness to go all the way is part of the appeal."
       },
       "narrative_momentum_engagement": {
         "score": 7,
-        "reasoning": "The story keeps escalating through clear set pieces: the cloning reveal, the club test, the time-machine mission, the Jerusalem chase, the concert rescue, and the crucifixion detour. It moves with real propulsion, even when the comedy is more episodic than tightly causal."
+        "reasoning": "The story keeps moving through clear comic objectives: clone Jesus, raise him, lose him, retrieve him, and stop the crucifixion. The momentum is strongest in the chase and concert sequences, while the long run of premise-explaining dialogue keeps the engine from feeling fully propulsive at every turn."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "The core idea feels both outrageous and oddly inevitable: a modern religious movement trying to manufacture the Second Coming, only to lose control of the result. The script’s best turns make the absurdity feel structurally baked in rather than random."
+        "reasoning": "A clone-Jesus satire that turns into a rock-concert rescue mission has the kind of strange inevitability that makes a reader lean in. The combination of religious iconography, 1970s culture, and absurd celebrity casting gives the script a memorable identity rather than a generic spoof."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The world has a lot of surface texture — 1970s protest culture, televangelist spectacle, lab science, rock venues, and biblical Jerusalem — and each space generates its own comic behavior. The setting is vivid, though it functions more as a sequence of comic arenas than a deeply layered social ecosystem."
+        "reasoning": "The script has vivid pockets of texture — the revival meeting, the lab, the Greek Theater, biblical Jerusalem, and the cultish language of the Jesus group. The world is more a series of comic arenas than a deeply layered social ecosystem, but each setting does enough work to keep the premise alive."
       },
       "tonal_specificity": {
         "score": 8,
-        "reasoning": "The tone is unmistakable: profane, cartoonish, and aggressively irreverent, with biblical language colliding against rock-show chaos and tabloid absurdity. The script knows exactly how far it wants to push the joke, and that confidence gives it a strong identity."
+        "reasoning": "The tone is aggressively irreverent, mixing biblical pageantry, sex comedy, rock spectacle, and deadpan absurdism. You can feel the script's comic voice in the way it treats sacred material as a playground for outrageous escalation."
       },
       "latent_depth_slow_burn_potential": {
         "score": 5,
-        "reasoning": "Beneath the farce there’s a workable idea about faith becoming performance and institutions trying to control revelation, especially in Wayne’s panic and Jose’s reluctant identity. The script mostly plays the surface joke, though, so the deeper thematic reserves are present more as potential than as fully dramatized subtext."
+        "reasoning": "The surface pleasure is the joke itself, and the script mostly stays in that lane. There are hints of a deeper satire about faith, manipulation, and American appetite for spectacle, but the draft is primarily built to deliver the gag and the set piece."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Wayne, Shapiro, Ross, Nugent, Jose, and Dwayne create a usable web of comic friction, especially the cult leadership triangle and the Wayne/Dwayne sibling rivalry. The ensemble is functional and often funny, but the story still lives primarily on the Jose-Wayne axis."
+        "reasoning": "Wayne, Wendy, Ross, and Jose create a workable comic quartet, and Wayne/Dwayne adds a nice mirror-image rivalry. The ensemble functions well enough to keep scenes alive, though most relationships serve the central premise rather than generating fully independent story engines."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 24,
+        "speaking_roles": 20,
         "leads": 5,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Ted Nugent and Charles Manson are named real-person roles",
-          "Jesus must play as a convincing 20s male with iconic long-hair/beard look",
-          "Wayne and Dwayne Bigsley are lookalike brothers",
-          "One child role appears in the baptism/bracelet scene",
-          "Multiple crowd scenes require large extras groups"
+          "Ted Nugent cameo/role",
+          "Jesus and Wayne/Dwayne are distinct but visually similar adult male roles",
+          "child Jesus appears as a baby and later as a 23-year-old adult",
+          "large ensemble crowd scenes",
+          "specific celebrity/public-figure casting flavor"
         ]
       },
       "locations": {
-        "distinct_count": 18,
-        "interior_exterior_ratio": "roughly 60/40 interior",
-        "period_or_contemporary": "mixed period: 1970s, 1978, contemporary, and biblical antiquity",
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy with multiple crowd exteriors",
+        "period_or_contemporary": "both contemporary and biblical period",
         "notable_requirements": [
-          "1970s discotheque and courthouse exterior",
-          "Los Angeles streets, club, theater, headquarters, lab, bedroom",
-          "Biblical Jerusalem, Jordan River, Sea of Tiberius, Gethsemane, Calvary",
-          "Time-machine room and incinerator room",
-          "Concert venue with large crowd and stage build"
+          "1970s disco and revival settings",
+          "modern Los Angeles streets and nightclub/concert venue",
+          "biblical Jerusalem, Jordan River, Gethsemane, Calvary",
+          "time-machine lab and incinerator spaces",
+          "large concert staging"
         ]
       },
       "technical": {
-        "vfx_level": "minor",
-        "vfx_details": "Time-travel transitions, wall-phasing escape, rainbow/weather beat, and a few stylized crowd/energy moments.",
-        "stunts_level": "minor",
-        "sfx_needs": "Practical medical/procedure setups, tranquilizer dart beats, crowd chaos, concert pyrotechnic-style moments, and a few physical gag falls.",
+        "vfx_level": "moderate",
+        "vfx_details": "time-travel transitions, Jesus walking on water, glowing wall-escape effect, rainbow/thunder effects, some stylized crowd and concert visuals",
+        "stunts_level": "moderate",
+        "sfx_needs": "time machine effects, sparks, practical medical/procedure staging, concert pyrotechnic-style moments, crowd chaos",
         "night_shoots": "significant",
         "animals": false
       },
@@ -94,6 +94,18 @@
         {
           "type": "real_person",
           "detail": "Charles Manson"
+        },
+        {
+          "type": "real_person",
+          "detail": "Phillip Morris"
+        },
+        {
+          "type": "real_person",
+          "detail": "Exxon"
+        },
+        {
+          "type": "real_person",
+          "detail": "Johnson and Johnson"
         },
         {
           "type": "named_music",
@@ -112,10 +124,6 @@
           "detail": "\"Cat Scratch Fever\""
         },
         {
-          "type": "named_music",
-          "detail": "\"Wipe Them Out\""
-        },
-        {
           "type": "brand",
           "detail": "Phillip Morris"
         },
@@ -128,39 +136,35 @@
           "detail": "Exxon"
         },
         {
-          "type": "brand",
-          "detail": "NRA"
-        },
-        {
           "type": "ip_licensing",
-          "detail": "The Shroud of Turin and biblical figures/events are used as story-critical source material."
+          "detail": "Shroud of Turin reference and Jesus Christ depiction"
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming comedy lane or cult theatrical midnight lane",
+        "recommended_lane": "streaming or specialty theatrical comedy lane",
         "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model: festival-to-platform, cult theatrical, or late-night streaming discovery"
+        "series_engine_or_release_model": "festival-to-platform or cult-theatrical release model; feature plays as a one-off satirical event"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The footprint is mostly contained to interiors, streets, and one major concert build, but the period shifts and crowd scenes lift it above microbudget."
+          "note": "The footprint is mostly contained, but the concert sequences, period biblical scenes, crowd work, and effects push it above a simple indie scale."
         },
         "cast": {
           "level": "high",
-          "note": "The script depends on recognizable real-person roles, a convincing Jesus, a lookalike brother pair, and multiple crowd-heavy sequences."
+          "note": "The script leans on recognizable celebrity energy for Ted Nugent and on specific adult leads plus large crowd scenes and a child-to-adult Jesus arc."
         },
         "location": {
-          "level": "medium",
-          "note": "It spans contemporary Los Angeles, 1970s material, and multiple biblical locations, but many scenes are playable in a limited number of repeatable sets."
+          "level": "high",
+          "note": "It moves between contemporary Los Angeles, a concert venue, a lab, and multiple biblical-era locations including Jerusalem, the Jordan River, Gethsemane, and Calvary."
         },
         "content": {
           "level": "high",
-          "note": "Blasphemous satire, sexual content, drug use, profanity, and violent crowd material push the material into mature territory."
+          "note": "Religious satire, sexual humor, drug use, profanity, and violent/crude imagery all narrow the lane and shape the release strategy."
         },
         "rights": {
           "level": "high",
-          "note": "Named real people, plot-critical songs, branded references, and biblical/IP-adjacent source material all require clearance attention."
+          "note": "Named real people, branded sponsors, and multiple plot-critical songs all create clearance and licensing considerations."
         }
       }
     },
@@ -168,177 +172,235 @@
       "strengths": [
         {
           "dimension_or_area": "The premise is instantly pitchable.",
-          "what_it_means": "A buyer can understand the engine in one sentence: a Christian cult clones Jesus and then loses control of the result. That kind of immediate, outrageous premise is catnip for cult-comedy audiences, midnight programmers, and streamers looking for a conversation starter.",
-          "evidence": "Wayne and Shapiro reveal the Shroud-of-Turin cloning plan, then the story pivots into a mission to retrieve the real Jesus before the rival sect can act.",
+          "what_it_means": "A producer can sell this in one sentence because the engine is so clean: cloned Jesus, a zealot ministry, and a rescue mission across time. That kind of clarity is catnip for buyers looking for a high-concept comedy with a built-in conversation starter.",
+          "evidence": "Wayne reveals the cloned-Jesus plan in the opening conference scene, then the story pivots to the time machine and the hunt for the real Jesus.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Jose gives the movie a comic lead role.",
-          "what_it_means": "The grown clone’s resistance to his own destiny creates a playable, actor-friendly center that can carry both deadpan comedy and existential confusion. That makes the project attractive to comedic leads who can play arrogance, innocence, and panic in the same frame.",
-          "evidence": "Jose keeps asking for a haircut, rejects the Messiah branding, and repeatedly undercuts the miracles with hangover-level skepticism.",
+          "dimension_or_area": "The satire has a fearless target.",
+          "what_it_means": "The script has a clear comic thesis about American religiosity, spectacle, and the way faith gets packaged for mass consumption. That gives it a sharper identity than a generic spoof and makes it attractive to buyers who want provocation with a point of view.",
+          "evidence": "The revival meeting, corporate sponsors, and the Jesus-for-peace-now crowd all turn belief into performance and branding.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Wayne is a showy comic zealot.",
-          "what_it_means": "Wayne’s apocalyptic certainty, public sermonizing, and escalating panic give the movie a scene-stealing authority figure who can drive the plot and land big laughs. Character actors who specialize in manic conviction will see a role with strong monologue energy and plenty of escalation.",
-          "evidence": "His conference-room sermon, his meltdown over Jose, and his frantic phone calls about plan B all build the same comic engine.",
+          "dimension_or_area": "Ted Nugent gives it a pop-culture engine.",
+          "what_it_means": "Dropping a real-world rock persona into biblical history creates an immediate marketing hook and a very specific comic flavor. That kind of casting bait can pull in both cult-comedy audiences and the kind of actor who wants to play a larger-than-life public image.",
+          "evidence": "Nugent is introduced as the hunter-bounty man, then becomes the blowgun-wielding agent who tracks down Jesus in Jerusalem.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The script has a built-in set-piece machine.",
-          "what_it_means": "Each major turn lands in a fresh comic arena — the lab, the club, the time machine, Jerusalem, the concert, the crucifixion sequence — which gives the movie trailer moments and marketing beats. That structure is attractive to producers because it promises a steady stream of memorable clips and poster-friendly images.",
-          "evidence": "The club test, Ted Nugent time-travel mission, Jerusalem chase, Greek Theater concert, and Calvary finale all function as distinct showcase sequences.",
+          "dimension_or_area": "The set pieces keep escalating.",
+          "what_it_means": "The script doesn't just rest on the premise; it keeps finding new arenas for the joke, from the clinic to the club to the Greek Theater to biblical Jerusalem. That gives a producer a feature that feels eventful and trailer-friendly rather than static.",
+          "evidence": "The disco-club test, the time-travel mission, the rock concert, and the crucifixion rescue all function as distinct comic engines.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone is aggressively ownable.",
-          "what_it_means": "The script doesn’t hedge its irreverence; it commits to biblical language colliding with rock excess, bodily comedy, and televangelist absurdity. That kind of tonal certainty is exactly what cult buyers and directors with a strong comic voice look for.",
-          "evidence": "Jesus is framed as a rock frontman, the congregation treats cloning like revival, and the movie keeps cutting from scripture to slapstick.",
+          "dimension_or_area": "Jose is a playable comic lead.",
+          "what_it_means": "The reluctant, hungover, modernized Jesus gives an actor a role that can play innocence, irritation, and accidental charisma in the same frame. That is the kind of part that attracts performers who like iconography they can subvert.",
+          "evidence": "Jose keeps asking for a haircut, resists the messiah role, and still ends up commanding crowds with almost no effort.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The world mixes religion and pop spectacle.",
-          "what_it_means": "The story turns faith into a media event, which gives it a satirical edge that can travel beyond the immediate joke. Buyers looking for a high-concept satire with a recognizable American cultural target will see a clear lane here.",
-          "evidence": "The cult uses a video presentation, sponsors, a concert tour, and news coverage to manage the Messiah as if he were a brand.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Ted Nugent adds a wild-card packaging hook.",
-          "what_it_means": "Dropping a real-world rock figure into the rescue mission gives the project an extra layer of pop-culture bait and a built-in publicity angle. That kind of cameo-friendly, headline-grabbing role is the sort of thing managers and buyers notice immediately.",
-          "evidence": "Nugent is recruited as the time-travel hunter, carries the blowgun through Jerusalem, and becomes the physical engine of the retrieval mission.",
+          "dimension_or_area": "The concert finale is a commercial centerpiece.",
+          "what_it_means": "The Greek Theater sequence turns the movie into a crowd-pleasing spectacle with music, chaos, and a clear visual payoff. That gives the project a trailer moment and a finale that can sell the whole movie in a few seconds of footage.",
+          "evidence": "Jesus and The Hell Raisers perform 'Wipe Them Out' while the crowd moshes and the assassination attempt unfolds in the back of the theater.",
           "source": "script"
         }
       ],
-      "headline": "This is a loud, unapologetic cult-comedy package with a clean hook, a memorable lead contradiction, and a steady supply of trailer-ready set pieces. The script’s value is in its audacity: it turns Jesus, televangelism, rock stardom, and time travel into one outrageous commercial engine that is hard to mistake for anything else."
+      "headline": "This is a brazen, high-concept satire with a clean commercial engine: cloned Jesus, a time-travel retrieval mission, and a rock-concert second coming. It has the kind of outrageous premise that can cut through a crowded marketplace because it is both instantly explainable and impossible to confuse with anything else."
     },
     "lead_characters": [
       {
-        "name": "WAYNE BIGSLEY",
+        "name": "Wayne Bigsley",
         "role_type": "Lead",
-        "demographics": "Male · 40s-50s",
-        "hook": "Wayne is a fire-and-brimstone zealot who thinks he is managing the apocalypse, but he is really trying to control a spectacle that keeps slipping out of his hands. He is funny because he is both sincere and absurdly self-important, a man who can quote scripture, panic over a concert crowd, and treat every setback like a theological emergency.",
-        "why_actor_wants_this": "This is the showcase territory of Steve Carell in *The Big Short* or Philip Seymour Hoffman in *The Master* — a character whose certainty is the joke until it becomes the engine. Character actors who can play authority, panic, and self-delusion in the same breath will chase it, and comedy buyers will see a scene-stealing lead with monologue heat."
+        "demographics": "Male · 40s-50s · white · evangelical preacher",
+        "hook": "Wayne is a fervent, self-serious revival leader whose certainty keeps outrunning his judgment. He is part zealot, part showman, and part exhausted manager of a miracle he no longer fully controls.",
+        "why_actor_wants_this": "This is the comic authority territory of Steve Carell in The Big Short or Michael Stuhlbarg in A Serious Man — a man whose conviction becomes the joke and the engine at the same time. Character actors who can play manic certainty, public performance, and private panic will see a showcase role with big monologues and escalating humiliation."
       },
       {
-        "name": "WENDY SHAPIRO",
+        "name": "Wendy Shapiro",
         "role_type": "Lead",
-        "demographics": "Female · 30s-40s",
-        "hook": "Wendy is the cool-headed scientist inside a room full of zealots, but she is not above enjoying the chaos she helps create. She has the smartest read in the room, a dry comic edge, and enough sensual confidence to make her feel like the only adult in the cult until she starts dancing at the club herself.",
-        "why_actor_wants_this": "This is the showcase space of Rebecca Hall in *Christine* or Toni Collette in *Hereditary* — a smart, controlled woman whose composure becomes part of the performance. Actresses who can pivot between deadpan authority and sly complicity will want it, and buyers will see a sharp counterweight to the louder male chaos."
+        "demographics": "Female · 30s-40s · white · scientist",
+        "hook": "Wendy is the cool-headed lab brain who can translate miracle talk into procedure without losing her edge. She has a dry, pragmatic intelligence that keeps her one step ahead of Wayne's hysteria, even when she is fully complicit in the scheme.",
+        "why_actor_wants_this": "This is the sharp, deadpan authority lane of Sigourney Weaver in Ghostbusters or Allison Janney in I, Tonya — the smart operator who can land a joke without surrendering command. Actors who like playing competence under pressure will be drawn to the role's mix of science, sarcasm, and moral flexibility."
       },
       {
-        "name": "JOSE",
+        "name": "Ross Able",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-30s · white · camera operator / follower",
+        "hook": "Ross is the wide-eyed, slightly addled true believer who keeps the camera rolling and the chaos visible. He functions as the audience surrogate inside the cult, a sweetly dim witness whose loyalty is stronger than his coordination.",
+        "why_actor_wants_this": "This is the hapless sidekick space of John C. Reilly in Talladega Nights or Stephen Root in Office Space — a role built on earnestness, timing, and physical comedy. Character actors who can make a fool lovable will have a field day with the falls, fluster, and accidental witness energy."
+      },
+      {
+        "name": "Genevieve",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · white · lab biologist / surrogate mother",
+        "hook": "Genevieve is the sensual, self-possessed woman asked to embody a holy contradiction: virgin, vessel, and willing participant. She brings a sly, bodily intelligence to a role that is both comic and iconographic.",
+        "why_actor_wants_this": "This is the kind of heightened, body-forward role that gave Jennifer Jason Leigh in The Hudsucker Proxy or Julianne Moore in Magnolia room to play irony, vulnerability, and sexual charge at once. Actresses who like playing against sacred imagery with wit and control will be drawn to it."
+      },
+      {
+        "name": "Jose",
         "role_type": "Lead",
-        "demographics": "Male · 20s",
-        "hook": "Jose is the cloned Jesus who would rather be a regular guy, which makes him the perfect comic center for a movie about destiny being forced on someone who never asked for it. He is skeptical, horny, confused, and accidentally miraculous, a reluctant messiah whose humanity keeps sabotaging the myth around him.",
-        "why_actor_wants_this": "This is the showcase territory of Jim Carrey in *Bruce Almighty* or Joaquin Phoenix in *You Were Never Really Here* — a lead whose inner resistance is the performance. Comedic leads with physical ease and a gift for deadpan exasperation will chase it, because the role lets them play iconography while constantly puncturing it."
+        "demographics": "Male · early 20s · white · cloned Jesus Christ",
+        "hook": "Jose is a modern, reluctant Christ figure who wants a haircut, not a calling. He is confused, hungover, and strangely magnetic, which makes his accidental holiness funnier and more playable than a reverent version ever could be.",
+        "why_actor_wants_this": "This is the showcase territory of Joaquin Phoenix in Walk the Line or Nicolas Cage in Adaptation — a lead who can play self-doubt, charisma, and comic dislocation without losing the audience. A young actor with range will chase the chance to turn an icon into a messy, human, crowd-moving lead."
       },
       {
-        "name": "ROSS ABLE",
+        "name": "Ted Nugent",
         "role_type": "Supporting",
-        "demographics": "Male · mid-30s",
-        "hook": "Ross is the wide-eyed, half-stoned cameraman who keeps stumbling through the mission with the innocence of a man who never fully caught up to the cult he joined. He is the kind of comic sidekick who makes every room feel more unstable just by being in it.",
-        "why_actor_wants_this": "This is the kind of off-center supporting part that gave Michael Cera in *Superbad* or Steve Zahn in *Out of Sight* a chance to turn nervous energy into a signature. Character actors and comic improvisers will want it because the role gets laughs through timing, physical awkwardness, and loyal confusion."
+        "demographics": "Male · 30s-40s · white · rock star / hunter",
+        "hook": "Ted Nugent is a swaggering, hyper-masculine hunter who treats the mission like a trophy hunt and the world like a stage. He is all bravado, noise, and physical confidence, which makes him a perfect comic weapon in the biblical sections.",
+        "why_actor_wants_this": "This is the larger-than-life cameo lane of Bill Murray in Zombieland or Robert Downey Jr. in Tropic Thunder — a role that lets a performer weaponize persona for laughs. Any actor with a strong public image, or a comic performer who can play outrageous self-mythology, would want this part."
       },
       {
-        "name": "DR. HANDS",
+        "name": "Dr. Larry James",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-60s",
-        "hook": "Dr. Hands is the calm, absurdly competent fertility specialist who treats the impossible as routine and the sacred as a procedure. He plays the movie’s straightest straight man, which makes his deadpan professionalism funnier every time the room around him loses its mind.",
-        "why_actor_wants_this": "This is the showcase lane of Peter McRobbie in *The Royal Tenenbaums* or Wallace Shawn in *Clueless* — a dry authority figure whose composure is the punchline. Actors who specialize in precise comic understatement will want the role because it lets them anchor the chaos without ever chasing it."
+        "demographics": "Male · 40s-50s · white · scientist",
+        "hook": "Dr. James is the dry, overqualified technician who explains the impossible with a straight face. He gives the movie a bureaucratic, procedural texture that makes the absurdity feel even more grounded.",
+        "why_actor_wants_this": "This is the deadpan-expert territory of Wallace Shawn in My Dinner with Andre or Bob Balaban in Gosford Park — the man who makes nonsense sound like policy. Character actors who excel at precise, underplayed exposition will enjoy the straight-man authority."
       },
       {
-        "name": "TED NUGENT",
+        "name": "Dwayne Bigsley",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-40s",
-        "hook": "Ted Nugent is the movie’s gonzo hunter-warrior, a rock-star mercenary who treats biblical history like a backwoods expedition. He is loud, physical, and gloriously overcommitted, which makes him feel like a comic weapon dropped into the middle of the story.",
-        "why_actor_wants_this": "This is the showcase territory of Brad Pitt in *Burn After Reading* or John Goodman in *The Big Lebowski* — a larger-than-life wild card whose entrance changes the temperature of every scene. Performers with big comic swagger will chase it, and the role gives a star a chance to steal the movie in a handful of entrances."
+        "demographics": "Male · 40s-50s · white · preacher / Wayne's brother",
+        "hook": "Dwayne is Wayne's ideological mirror: another preacher, another zealot, but from the rival camp. He gives the story a sibling rivalry that turns theology into family business.",
+        "why_actor_wants_this": "This is the mirrored-rival space of Brian Cox in Succession or Philip Seymour Hoffman in Doubt — a role where a second authority figure can dominate a room with a few lines. Actors who like playing institutional power with personal venom will be interested."
       },
       {
-        "name": "DR. LARRY JAMES",
+        "name": "Pontius Pilate",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s",
-        "hook": "Dr. Larry James is the government-science gatekeeper who explains the impossible with total seriousness, which makes him a perfect bureaucratic accomplice to the madness. He is a dry, procedural presence in a movie that keeps trying to blow past procedure.",
-        "why_actor_wants_this": "This is the kind of deadpan utility role that gave actors like Richard Jenkins in *Step Brothers* or Bob Balaban in *Ghost World* memorable comic authority. Character actors who can make exposition feel like a personality will want it."
+        "demographics": "Male · 40s-60s · Roman governor",
+        "hook": "Pilate is the calm, skeptical authority figure who treats the messianic chaos like a legal inconvenience. He gives the biblical sections a worldly, administrative counterweight.",
+        "why_actor_wants_this": "This is the polished authority lane of Ralph Fiennes in The Grand Budapest Hotel or Ian McKellen in Richard III — a role that lets an actor play intelligence, skepticism, and dry command. Performers who enjoy elegant power with comic detachment will gravitate to it."
       },
       {
-        "name": "DWAYNE BIGSLEY",
+        "name": "Mary Magdalene",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s",
-        "hook": "Dwayne is Wayne’s mirror-image brother on the opposite side of the religious divide, which gives the story a built-in sibling rivalry with ideological teeth. He exists as a second zealot with his own agenda, and the family resemblance makes the conflict feel personal and comic at once.",
-        "why_actor_wants_this": "This is the kind of sibling-antagonist role that gave John Lithgow in *Terms of Endearment* or Michael Shannon in *Knives Out* a chance to sharpen a family dynamic into a performance. Strong character actors will want it because the part gives them a clean opposition line and a memorable reveal."
+        "demographics": "Female · 20s-30s · biblical-era woman",
+        "hook": "Mary Magdalene is sensual, practical, and unbothered by the moral panic around her. She brings a lived-in, bodily ease to the biblical world and helps define the movie's irreverent take on holiness.",
+        "why_actor_wants_this": "This is the sly, earthy supporting territory of Monica Bellucci in The Passion of the Christ or Penelope Cruz in Volver — a role that can play allure, wit, and grounded presence in a few scenes. Actresses who like making a small part memorable through attitude and texture will be drawn to it."
       },
       {
-        "name": "MARY MAGDALENE",
+        "name": "Mary",
         "role_type": "Supporting",
-        "demographics": "Female · 20s-30s",
-        "hook": "Mary Magdalene is sensual, practical, and unbothered by the moral panic around her, which makes her one of the few people in the biblical sections who feels fully alive. She brings warmth and adult ease to the story, and she understands Jose better than the zealots do.",
-        "why_actor_wants_this": "This is the kind of role that gave Monica Bellucci in *The Passion of the Christ* or Penélope Cruz in *Vicky Cristina Barcelona* a chance to play allure with intelligence. Actresses who want a vivid, scene-stealing presence rather than a purely symbolic part will chase it."
+        "demographics": "Female · 40s-60s · Jewish mother",
+        "hook": "Mary is the classic maternal pressure point: worried, practical, and never fully convinced her son is making good choices. She gives the biblical material a domestic, human anchor.",
+        "why_actor_wants_this": "This is the warm-but-firm mother territory of Frances McDormand in Almost Famous or Sissy Spacek in Coal Miner's Daughter — a role that can turn a few scenes into emotional ballast. Character actresses who can make maternal concern funny and moving at once will respond to it."
       },
       {
-        "name": "MOTHER MARY",
+        "name": "John the Baptist",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-60s",
-        "hook": "Mother Mary is the classic Jewish mother reframed inside sacred history: worried, practical, and emotionally unimpressed by divine excuses. She grounds the biblical material in domestic pressure, which makes her both funny and unexpectedly human.",
-        "why_actor_wants_this": "This is the showcase space of Frances McDormand in *A Serious Man* or Catherine O’Hara in *Schitt’s Creek* — a maternal figure whose plainspoken authority becomes the comic center. Veteran actresses will want it because the role lets them play exasperation, love, and moral pressure in one voice."
+        "demographics": "Male · 30s-40s · biblical prophet",
+        "hook": "John is the ecstatic herald who treats every appearance of Jesus like a cosmic event. He is earnest, theatrical, and completely sold on the miracle in front of him.",
+        "why_actor_wants_this": "This is the ecstatic supporting lane of Paul Dano in There Will Be Blood or Mark Ruffalo in You Can Count on Me — a role that lets an actor play fervor, awe, and comic sincerity. Performers who enjoy spiritual intensity with a comic edge will be interested."
+      },
+      {
+        "name": "Peter",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · apostle",
+        "hook": "Peter is the loyal disciple who keeps trying to interpret the impossible in real time. He is earnest, confused, and useful, which makes him a strong comic foil for Jose's improvisation.",
+        "why_actor_wants_this": "This is the loyal-follower space of Martin Freeman in The Hobbit or Paul Bettany in A Knight's Tale — a role that gets laughs from reaction, loyalty, and exasperation. Actors who can play devotion without becoming bland will find plenty to do."
+      },
+      {
+        "name": "Luke",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · apostle",
+        "hook": "Luke is the messenger who arrives with bad news and keeps the plot moving toward the crucifixion track. He has a practical urgency that contrasts nicely with Jose's avoidance.",
+        "why_actor_wants_this": "This is the efficient messenger role of Michael Stuhlbarg in Boardwalk Empire or David Strathairn in Good Night, and Good Luck — a part that gives an actor authority through speed and clarity. Character actors who can make exposition feel alive will be drawn to it."
+      },
+      {
+        "name": "Judas",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · apostle",
+        "hook": "Judas is written as a comic, slightly fussy presence at the Last Supper table, which gives the betrayal material a strange, off-kilter flavor. He is less tragic than mischievous, which fits the script's satirical mode.",
+        "why_actor_wants_this": "This is the sly, scene-stealing supporting lane of Steve Coogan in Philomena or Stanley Tucci in The Lovely Bones — a role where a few lines can define the room. Actors who like playing subtext with comic surface behavior will be interested."
+      },
+      {
+        "name": "Mother Mary",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-60s · biblical mother",
+        "hook": "Mother Mary is the weary, emotionally loaded maternal figure who keeps pressing Jose toward destiny. She is both tender and relentless, which gives the biblical material a human pressure point.",
+        "why_actor_wants_this": "This is the maternal authority territory of Vanessa Redgrave in Atonement or Brenda Blethyn in Secrets & Lies — a role that can carry grief, faith, and pressure in a few scenes. Veteran actresses who can make maternal insistence feel mythic will chase it."
+      },
+      {
+        "name": "Crack-Ho",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · street addict",
+        "hook": "Crack-Ho is a sharp, combative street character who punctures Jose's saintly routine with blunt modern reality. She is funny, abrasive, and unexpectedly alive in a single encounter.",
+        "why_actor_wants_this": "This is the fast, scene-stealing street-role territory of Regina King in Boyz n the Hood or Melissa Leo in Frozen River — a part that can dominate a scene with attitude and specificity. Actors who like making a brief appearance unforgettable will be drawn to it."
+      },
+      {
+        "name": "The Thug",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · Latino street thug",
+        "hook": "The Thug is a crude, predatory street presence who escalates the modern L.A. sequence and gives Jose a blunt test of compassion. He is written as a comic menace with a nasty edge.",
+        "why_actor_wants_this": "This is the volatile antagonist cameo lane of Benicio del Toro in Traffic or Clifton Collins Jr. in Capote — a role that lets an actor bring danger and unpredictability into a small space. Performers who can make menace feel specific rather than generic will want it."
+      },
+      {
+        "name": "The Doorman",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-40s · club doorman",
+        "hook": "The Doorman is a deadpan gatekeeper who turns nightclub entry into a pseudo-philosophical ritual. He gives the club sequence a comic institutional absurdity.",
+        "why_actor_wants_this": "This is the dry gatekeeper territory of Richard Kind in Spin City or Peter Stormare in Fargo — a role that can steal a scene with one or two perfectly timed speeches. Character actors who enjoy playing authority as absurd theater will chase it."
+      },
+      {
+        "name": "The Lead Singer",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · rock singer",
+        "hook": "The Lead Singer is the frontman who turns Jesus into a stage event and knows exactly how to work a crowd. He is pure performance energy, a showman who understands spectacle as ministry.",
+        "why_actor_wants_this": "This is the flamboyant frontman space of Tim Curry in Rocky Horror Picture Show or Jack Black in School of Rock — a role that lets an actor command a room through charisma and volume. Performers with musicality and comic swagger will be drawn to it."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make sacrilegious comedy feel like a stadium event.",
-        "fit_profile": "Second- or third-feature directors, or established indie comedy directors, who already work with heightened tone, musical set pieces, and performance-forward ensemble chaos. This material rewards filmmakers who can stage big comic swings without losing the emotional throughline, and who like turning pop culture, religion, and spectacle into one controlled eruption.",
-        "detail": "The movie gives a director a chance to choreograph crowd comedy, concert energy, and biblical pageantry without needing prestige realism as a crutch. It will attract directors who can make actors pop inside a loud, stylized frame and who want a project with a clear cult identity."
+        "hook": "A director who wants to make sacrilege feel like a stadium event.",
+        "fit_profile": "Second-feature or established indie directors with a taste for broad satire, pop iconography, and controlled chaos. The material rewards filmmakers who already like performance-forward comedy, music-driven sequences, and tonal whiplash that still lands cleanly.",
+        "detail": "The movie gives a director permission to stage religion, rock, and time-travel absurdity with a big visual grin, while still keeping the comedy legible. It is especially attractive to directors who can handle ensemble blocking, crowd choreography, and a finale that has to play like both a joke and a spectacle."
       },
       "buyer_appeal": {
         "tier": "$5-15M feature",
-        "lane": "cult comedy / streaming satire / midnight theatrical",
-        "detail": "The cast can be built around one or two comic leads plus a handful of scene-stealing supporting roles, so it does not require a giant star package to read on paper. The Jesus-plus-rock-concert hook, the biblical satire angle, and the built-in music moments give it exportable trailer value and a clear lane for cult discovery on streaming or at genre festivals."
+        "lane": "cult-comedy / specialty theatrical / streaming event",
+        "detail": "It can be packaged around a strong comic lead and a director with a sharp reel, rather than requiring a tentpole-level cast. The religious-satire angle and music-driven set pieces give it cult upside and a trailerable hook that can travel on streaming or in limited theatrical play."
       }
     },
     "considerations": [
       {
-        "area": "The script is built for a modest-to-mid budget feature.",
-        "detail": "Most of the story lives in repeatable interiors, streets, and a handful of large comic set pieces, which keeps the footprint manageable. The version of the package that leans into contained production design and one strong lead performance would protect the comedy while keeping the budget in a buyer-friendly lane.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The cast asks for several specific attachments.",
-        "detail": "Ted Nugent, Charles Manson, and the Shroud of Turin material all point to clearance-aware casting and legal review, while Wayne/Dwayne Bigsley benefits from a pair of performers who can sell the sibling resemblance. A next pass in packaging should think early about whether the real-person references stay as-is or become fictionalized equivalents.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The concert finale is the biggest production swing.",
-        "detail": "The Greek Theater sequence, mosh pit, choir, and stage performance are the most scale-forward elements in the script. One lever would be to protect the climax by simplifying the crowd choreography or compressing the number of onstage beats so the finale stays electric without ballooning the shoot.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "Jose’s inner turn can carry more emotional charge.",
-        "detail": "The script already has the comic contradiction — a reluctant clone who keeps denying his own identity — and that is the strongest dramatic engine on the page. A next pass could foreground one or two moments where Jose’s choice matters before the gag lands, so the audience feels the human cost inside the farce.",
+        "area": "The satire can be sharpened around one spine.",
+        "detail": "The script has several comic targets at once — televangelism, corporate sponsorship, rock spectacle, biblical literalism, and modern moral panic. A next pass could foreground the single satirical argument that matters most so the set pieces feel like they are all pulling in the same direction.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Wayne and Jose are the core engine.",
-        "detail": "Their scenes already create the movie’s clearest push-pull: Wayne wants control, Jose wants out, and the story gets funnier when those desires collide. The version of the script where their relationship drives more of the transitions would make the whole feature feel even more inevitable.",
+        "area": "Wayne's arc is mostly externalized.",
+        "detail": "Wayne's zeal and panic are very playable, especially in the revival hall, the club, and the concert rescue, but the script mostly expresses him through reaction and command. One lever would be to let one private choice or confession show what he stands to lose beyond the mission, which would deepen the role without changing the premise.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The biblical detours are the broadest canvas.",
-        "detail": "The Jerusalem material, especially the chase, the baptism, and the concert-era miracles, gives the script its biggest comic images. If a future pass wanted to simplify anything, the cleanest lever would be to fold a few of the episodic biblical stops into fewer, larger set pieces so the momentum stays concentrated.",
+        "area": "Jose's resistance could land earlier.",
+        "detail": "The haircut complaint and the club sequence establish his reluctance well, and the biblical sections keep the joke alive, but the emotional center would pop even more if his refusal to be Jesus were dramatized in one sharper early choice. That would make the eventual public charisma feel even more earned.",
         "is_primary_lever": false,
-        "source": "both"
+        "source": "script"
+      },
+      {
+        "area": "The rights stack is substantial.",
+        "detail": "Named songs, real public figures, and branded sponsors all appear on the page, so a producing team would want to map clearance early. The version of the package that swaps a few named references for generic equivalents would protect the joke while reducing licensing friction.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The biblical and concert worlds drive the footprint.",
+        "detail": "The script moves between modern Los Angeles, a lab, a nightclub, a concert venue, and multiple biblical locations, which makes it feel bigger than a contained indie. A simplification lever would be to collapse any redundant modern interiors so the production can preserve the concert and Jerusalem material, which are the movie's most saleable arenas.",
+        "is_primary_lever": false,
+        "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 66,
+  "weightedScore": 66.7,
   "tier": "Optionable",
   "inputTokens": 40155,
-  "outputTokens": 5497,
-  "cost": 0.054852750000000006,
+  "outputTokens": 6382,
+  "cost": 0.058835250000000006,
   "declaredFormat": "Feature film"
 }

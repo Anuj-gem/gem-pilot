@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:12:54.443Z",
+  "submission_id": "57eadd13-ee60-43a8-be7e-d0a839252a1e",
+  "eval_id": "28089fff-2fd2-49bf-9b5d-49a7c9af5689",
+  "title": "Open Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Barney Olsen",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s"
+    },
+    {
+      "name": "Ryleigh Vaughn",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s"
+    },
+    {
+      "name": "Gail",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Adam Stone",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Patrick Abbott",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to 30s · British"
+    },
+    {
+      "name": "Wilma Robertston",
+      "role_type": "Supporting",
+      "demographics": "Female · late 80s"
+    },
+    {
+      "name": "Edward Robertson",
+      "role_type": "Supporting",
+      "demographics": "Male · late 80s"
+    }
+  ],
+  "positioning_hook": "A stalled young couple’s sex life, future, and fidelity get stress-tested when one of them asks for an open relationship after a retirement-home anniversary party reminds her what certainty looks like.",
+  "cost_usd": 0.031503,
+  "input_tokens": 17560,
+  "output_tokens": 4074,
+  "status": "wrote:leads_ok"
+}

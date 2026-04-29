@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T01:05:03.371Z",
+  "submission_id": "f0e14ec6-da79-4a15-b202-6593102afb67",
+  "eval_id": "8cccd978-59ca-410b-8f50-5fb3333a7b1f",
+  "title": "Sound Bites",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Rick Motson",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to early 40s · hearing-impaired / cochlear implant user"
+    },
+    {
+      "name": "Rosemary Sirkos",
+      "role_type": "Lead",
+      "demographics": "Female · 30s to 40s · deaf psychiatrist"
+    },
+    {
+      "name": "Able Motson",
+      "role_type": "Lead",
+      "demographics": "Male · 60s · hearing-impaired / later losing hearing"
+    },
+    {
+      "name": "Margo Alvarez",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to 30s · secretary / aspiring interior decorator"
+    },
+    {
+      "name": "Teddy Lavinski",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · deaf"
+    },
+    {
+      "name": "Joe Harris",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · office manager / softball ringer"
+    },
+    {
+      "name": "Madge Motson",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s to 60s · mother"
+    },
+    {
+      "name": "Carl Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · deaf administrative assistant"
+    },
+    {
+      "name": "Ann Greenway",
+      "role_type": "Supporting",
+      "demographics": "Female · 50s · institute director"
+    },
+    {
+      "name": "Walford",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · CFO"
+    },
+    {
+      "name": "Betty Reed",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s · secretary"
+    },
+    {
+      "name": "George Leonard",
+      "role_type": "Supporting",
+      "demographics": "Male · 8 to 12 · deaf child"
+    },
+    {
+      "name": "Tommy Parker",
+      "role_type": "Supporting",
+      "demographics": "Male · 8 to 12 · deaf child"
+    },
+    {
+      "name": "Deloris Shawnee",
+      "role_type": "Supporting",
+      "demographics": "Female · 8 to 12 · deaf child"
+    },
+    {
+      "name": "Milo Reynolds",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · business associate"
+    },
+    {
+      "name": "Frank Millard",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · credit rep"
+    },
+    {
+      "name": "Carl Thomas",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · deaf administrative assistant"
+    }
+  ],
+  "positioning_hook": "A hearing-impaired office worker who secretly hears after surgery must juggle a deaf community, a corporate promotion, and two women before his lie detonates.",
+  "cost_usd": 0.05540924999999999,
+  "input_tokens": 37963,
+  "output_tokens": 5986,
+  "status": "wrote:leads_ok"
+}

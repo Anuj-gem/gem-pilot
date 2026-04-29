@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T00:56:11.582Z",
+  "submission_id": "4419dadb-d732-4ca8-a15e-98dcf2b37e91",
+  "eval_id": "0b6d6860-ad65-46c2-8487-5e7533cfa2f3",
+  "title": "The Firekeeper",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Dakota / Ko'la",
+      "role_type": "Lead",
+      "demographics": "Male · 18 · Full-blooded Lakota"
+    },
+    {
+      "name": "Chatan Running Sky",
+      "role_type": "Lead",
+      "demographics": "Male · 30s to 40s · Full-blooded Lakota"
+    },
+    {
+      "name": "Wach",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · Full-blooded Lakota"
+    },
+    {
+      "name": "Sage",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s · Full-blooded Lakota"
+    },
+    {
+      "name": "Thunderhead",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to late 30s · Pawnee"
+    },
+    {
+      "name": "Red Hawk / Hawk",
+      "role_type": "Supporting",
+      "demographics": "Male voice · ageless spirit presence"
+    },
+    {
+      "name": "Curly",
+      "role_type": "Supporting",
+      "demographics": "Male dog · German Shepherd"
+    },
+    {
+      "name": "Coach Marshall",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · African American"
+    },
+    {
+      "name": "Carmen",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens · Hispanic"
+    }
+  ],
+  "positioning_hook": "A Lakota quarterback on the verge of college recruitment starts seeing his dead ancestor in a hawk and a dog, pulling him into a centuries-spanning quest for a sacred bundle and his own identity.",
+  "cost_usd": 0.07524600000000001,
+  "input_tokens": 43718,
+  "output_tokens": 9435,
+  "status": "wrote:leads_ok"
+}

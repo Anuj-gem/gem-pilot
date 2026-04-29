@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T01:00:21.792Z",
+  "submission_id": "8c63df53-ec5b-4be1-8e50-f5e0c40bb537",
+  "eval_id": "d1696caa-2a82-46eb-bcd5-b33e86e433fe",
+  "title": "Cinderella Cinderella",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Cinderella / Ella",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · white"
+    },
+    {
+      "name": "Lyle",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · nonhuman/outsider physicality"
+    },
+    {
+      "name": "Evelyn",
+      "role_type": "Lead",
+      "demographics": "Female · 50s"
+    },
+    {
+      "name": "Hubert Davenport",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Toby Davenport",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to 20s"
+    },
+    {
+      "name": "Charlotte",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Bridgette",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Archibald",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Vincent 'Sadiki the Scourge'",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "King Titus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Queen Josephine",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Guinevere",
+      "role_type": "Supporting",
+      "demographics": "Female · teen"
+    },
+    {
+      "name": "Dinah",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to 20s"
+    },
+    {
+      "name": "Bobo the Jailer",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · large physical build"
+    },
+    {
+      "name": "Dagger",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "Cindy (Shopkeeper)",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s"
+    },
+    {
+      "name": "Old Woman / Fairy Godmother",
+      "role_type": "Supporting",
+      "demographics": "Female · 90s"
+    }
+  ],
+  "positioning_hook": "A cursed Cinderella wakes in a colorless kingdom, escapes her murderous family, and stumbles into a hidden world where fairy-tale identities, power, and memory are all up for grabs.",
+  "cost_usd": 0.105522,
+  "input_tokens": 64874,
+  "output_tokens": 12637,
+  "status": "wrote:leads_ok"
+}

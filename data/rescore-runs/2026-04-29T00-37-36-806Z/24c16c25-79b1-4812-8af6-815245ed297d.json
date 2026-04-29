@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T00:53:46.558Z",
+  "submission_id": "24c16c25-79b1-4812-8af6-815245ed297d",
+  "eval_id": "59ce445a-ac2a-4297-8de2-86c2f35344a6",
+  "title": "Kingstown",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Buddy Parker / Eugene Parker",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s · rugged, working-class detective"
+    },
+    {
+      "name": "Frances Kelly",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s · police lieutenant"
+    },
+    {
+      "name": "James Dunn",
+      "role_type": "Lead",
+      "demographics": "Male · mid-to-late 40s · FBI special agent"
+    },
+    {
+      "name": "Salvatore Vannetti",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s · well-dressed mobster"
+    },
+    {
+      "name": "Edward Casey",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · veteran detective"
+    },
+    {
+      "name": "Gerda Ziegler-Parker",
+      "role_type": "Supporting",
+      "demographics": "Female · 80s · German-accented mother with dementia"
+    },
+    {
+      "name": "Ronnell McDonald",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s · Black mayor"
+    },
+    {
+      "name": "Benny Kowalski",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · extremely tall, Polish bookmaker"
+    },
+    {
+      "name": "Carmen Garcia",
+      "role_type": "Supporting",
+      "demographics": "Female · early 20s · red-haired, tattooed, pierced, with natural elf ears"
+    }
+  ],
+  "positioning_hook": "A hard-bitten homicide detective in a corrupt Connecticut city is forced onto an FBI task force, then learns the case points straight at his own badge.",
+  "cost_usd": 0.039304500000000006,
+  "input_tokens": 24038,
+  "output_tokens": 4728,
+  "status": "wrote:leads_ok"
+}

@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T01:08:35.435Z",
+  "submission_id": "ea455189-7652-466f-82e1-25a32452cf7f",
+  "eval_id": "e4df0bd6-81a3-4533-b47c-7cf9aa1cd0d2",
+  "title": "Shadow Wolves",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "John Scout",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · rugged border-patrol officer"
+    },
+    {
+      "name": "Fernando Rey",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · Mexican drug lord"
+    },
+    {
+      "name": "Emillo Cortz",
+      "role_type": "Lead",
+      "demographics": "Male · early 20s · Latino hacker"
+    },
+    {
+      "name": "Beau Dama",
+      "role_type": "Lead",
+      "demographics": "Male · mid-50s · African-American President of the United States"
+    },
+    {
+      "name": "Malcom Kinney",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · FBI Director"
+    },
+    {
+      "name": "Ellie King",
+      "role_type": "Supporting",
+      "demographics": "Female · late 40s · Secretary of State"
+    },
+    {
+      "name": "Jonas Salt",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · White House Chief of Staff"
+    },
+    {
+      "name": "Faruk Pink",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · Middle Eastern/Muslim-coded presidential advisor"
+    },
+    {
+      "name": "Brock Lindbergh",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · Vice President, military background"
+    },
+    {
+      "name": "George Ramone",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · CIA Director"
+    },
+    {
+      "name": "Dean",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · lone guard at the nuclear plant"
+    }
+  ],
+  "positioning_hook": "A border patrol officer and a Mexican drug lord uncover a presidential terror plot that turns a 9/11 memorial into a race to stop America’s own commander in chief.",
+  "cost_usd": 0.1024845,
+  "input_tokens": 71120,
+  "output_tokens": 10921,
+  "status": "wrote:leads_ok"
+}

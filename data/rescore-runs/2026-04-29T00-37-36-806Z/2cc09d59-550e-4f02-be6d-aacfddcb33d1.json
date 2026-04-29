@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:04:43.016Z",
+  "submission_id": "2cc09d59-550e-4f02-be6d-aacfddcb33d1",
+  "eval_id": "59ef9b3c-f348-43e3-8306-7e94a08f576d",
+  "title": "A Good Bet",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Jim Foster",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · white · Vegas gambler"
+    },
+    {
+      "name": "Mary Waters",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s · white · foster mother / Mary Kay representative"
+    },
+    {
+      "name": "Lily",
+      "role_type": "Lead",
+      "demographics": "Female · 10 years old · child actor"
+    },
+    {
+      "name": "Jack",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-60s · casino pit boss"
+    },
+    {
+      "name": "Cassandra",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · glamorous, brassy"
+    },
+    {
+      "name": "Paul Trivialli",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Italian-American mob boss"
+    },
+    {
+      "name": "Paulie Jr.",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Italian-American"
+    },
+    {
+      "name": "Bill Williams",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · corporate gambler / bookish high roller"
+    },
+    {
+      "name": "Manny Costello",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · very large build"
+    },
+    {
+      "name": "Eddie Tucci",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · collector / bookie muscle"
+    },
+    {
+      "name": "Ben",
+      "role_type": "Supporting",
+      "demographics": "Male · child · Black"
+    },
+    {
+      "name": "Wanita",
+      "role_type": "Supporting",
+      "demographics": "Female · child · Black"
+    },
+    {
+      "name": "June",
+      "role_type": "Supporting",
+      "demographics": "Female · child"
+    },
+    {
+      "name": "Deneise",
+      "role_type": "Supporting",
+      "demographics": "Female · child"
+    },
+    {
+      "name": "Bettye",
+      "role_type": "Supporting",
+      "demographics": "Female · infant/toddler"
+    },
+    {
+      "name": "Desk Clerk",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-60s"
+    }
+  ],
+  "positioning_hook": "A Vegas gambler on a losing streak is guided by a ghostly little girl into a fragile romance, a foster family, and one last shot at redemption on the casino floor.",
+  "cost_usd": 0.05355075,
+  "input_tokens": 38905,
+  "output_tokens": 5416,
+  "status": "wrote:leads_ok"
+}

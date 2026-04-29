@@ -73,9 +73,16 @@ Content (markdown that lives outside `src/`):
 
 ```
 content/
-└── blog/                     # Markdown posts. README.md inside explains
-                              # the frontmatter + conventions. Drop a new
-                              # .md file → live at /blog/<slug> next deploy.
+├── blog/                     # Markdown posts. README.md inside explains
+│                             # the frontmatter + conventions. Drop a new
+│                             # .md file → live at /blog/<slug> next deploy.
+└── email-templates/          # Source-of-truth copy for the four Postmark
+                              # transactional templates (post_signup,
+                              # post_submission_free, post_submission_pro,
+                              # post_upgrade). Postmark is the live system;
+                              # these files are the canonical copy. Update
+                              # both when copy changes. README.md inside
+                              # documents the format + variables.
 ```
 
 ### Adding a new top-level concept
@@ -149,6 +156,12 @@ Common patterns:
 
 ## Conventions changelog
 
+- **2026-04-28**: Added `content/email-templates/` — source-of-truth
+  copy for the four Postmark transactional templates (`post_signup`,
+  `post_submission_free`, `post_submission_pro`, `post_upgrade`). Each
+  file holds Subject + HtmlBody + TextBody fenced by HTML comments.
+  Postmark itself is the live system; paste from these files when
+  updating templates so the repo stays canonical.
 - **2026-04-28**: Added `content/blog/` directory + `src/app/blog/`
   routes + `src/lib/blog.ts`. Posts as plain markdown with YAML
   frontmatter; renderer is `react-markdown` + `remark-gfm`.

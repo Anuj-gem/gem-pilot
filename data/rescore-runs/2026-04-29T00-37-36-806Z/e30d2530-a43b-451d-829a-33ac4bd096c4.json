@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:02:14.750Z",
+  "submission_id": "e30d2530-a43b-451d-829a-33ac4bd096c4",
+  "eval_id": "a0837c8b-ac21-4624-816b-a0261ab94231",
+  "title": "OF GODS AND DOLLS",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "Sir W / Eztli",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · mixed-race Black · ageless"
+    },
+    {
+      "name": "Ying",
+      "role_type": "Lead",
+      "demographics": "Female · mid-20s · Chinese"
+    },
+    {
+      "name": "Jesus",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Sephardic-presenting · ageless"
+    },
+    {
+      "name": "Reverend Mother",
+      "role_type": "Lead",
+      "demographics": "Female · 60s · Czech"
+    },
+    {
+      "name": "Eva",
+      "role_type": "Lead",
+      "demographics": "Female · late teens · European"
+    },
+    {
+      "name": "Pope Pius XII",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    },
+    {
+      "name": "Reinhard Heydrich",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Inti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless deity"
+    },
+    {
+      "name": "Pachacuti",
+      "role_type": "Supporting",
+      "demographics": "Male · ageless deity"
+    },
+    {
+      "name": "Carlos",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Indigenous Bolivian"
+    }
+  ],
+  "positioning_hook": "A black-market demigod smuggler is sent by Jesus to recover a stolen Christ Child statue, then gets pulled into a wartime faith test across Europe and Bolivia.",
+  "cost_usd": 0.051238500000000006,
+  "input_tokens": 38384,
+  "output_tokens": 4989,
+  "status": "wrote:leads_ok"
+}

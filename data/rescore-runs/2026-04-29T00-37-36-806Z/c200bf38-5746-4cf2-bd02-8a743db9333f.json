@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:13:20.577Z",
+  "submission_id": "c200bf38-5746-4cf2-bd02-8a743db9333f",
+  "eval_id": "0528be01-7503-4edc-9f0d-f172d62cae27",
+  "title": "Breaking Bad",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Walter White",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · high school chemistry teacher"
+    },
+    {
+      "name": "Jesse Pinkman",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · former student / small-time meth cook"
+    },
+    {
+      "name": "Skyler White",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · pregnant wife"
+    },
+    {
+      "name": "Hank Schrader",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · DEA agent"
+    },
+    {
+      "name": "Marie Schrader",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Hank’s wife"
+    },
+    {
+      "name": "Walter White Jr.",
+      "role_type": "Supporting",
+      "demographics": "Male · teen · Walter and Skyler’s son"
+    },
+    {
+      "name": "Bogdan",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 60s · car wash owner"
+    },
+    {
+      "name": "Krazy-8 / Emilio Koyama",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · criminal associate"
+    },
+    {
+      "name": "Tuco Salamanca",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · drug dealer"
+    }
+  ],
+  "positioning_hook": "A terminally ill chemistry teacher starts cooking meth with a former student, turning a desperate bid for money into a double life that can’t stay hidden.",
+  "cost_usd": 0.029762249999999997,
+  "input_tokens": 14405,
+  "output_tokens": 4213,
+  "status": "wrote:leads_ok"
+}

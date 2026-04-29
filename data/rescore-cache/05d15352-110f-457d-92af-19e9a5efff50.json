@@ -2,55 +2,55 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Sci-Fi Thriller",
+      "genre_primary": "Science fiction",
       "genre_tags": [
         "Action",
-        "Heist",
-        "Mystery"
+        "Thriller",
+        "Heist"
       ],
-      "tone": "Heightened, propulsive, cerebral, emotionally haunted"
+      "tone": "High-concept, propulsive, cerebral, emotionally haunted"
     },
-    "positioning_hook": "A dream thief takes one last job to earn his way home, but the target’s mind is booby-trapped—and his own grief is the real infiltration.",
+    "positioning_hook": "A master extractor takes one last job to plant an idea inside a corporate heir’s mind, but his dead wife keeps sabotaging the mission from inside his own subconscious.",
     "scores": {
       "audience_appeal_marketability": {
-        "score": 9,
-        "reasoning": "The premise is instantly legible as a big-event genre movie with a clean emotional promise: a man trying to get back to his children through an impossible job. The castle, the train, the collapsing city, and the layered dream mechanics give it the kind of trailer-ready spectacle and conversation-starting premise that travels widely."
+        "score": 10,
+        "reasoning": "The premise is instantly legible and built for broad commercial reach: a heist, a ticking clock, and a reality-bending mission with emotional stakes. The final image of the spinning top and the family reunion gives the movie both spectacle and a clean audience promise."
       },
       "conceptual_hook_clarity": {
-        "score": 9,
-        "reasoning": "The hook lands early and keeps sharpening: extraction, then inception, then the three-level dream heist, then the personal cost tied to Cobb’s wife and children. The script is unusually clear about the engine while still escalating the premise into something bigger than the setup."
+        "score": 10,
+        "reasoning": "The hook lands immediately in the opening sequence with the beach, the castle, and the dream-extraction explanation at the table. By the time Saito says 'Inception,' the engine is crystal clear and the story mandate is locked."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 8,
-        "reasoning": "Cobb is built around a strong contradiction—elite professional control versus emotional collapse—and Ariadne gives the story a sharp observer who can challenge him from inside the machine. Eames, Arthur, Yusuf, Saito, and Fischer each have a clean function and a distinct flavor, though Cobb and Ariadne carry most of the emotional weight."
+        "score": 9,
+        "reasoning": "Cobb is a strong lead because his competence is inseparable from his grief, and Mal gives the story a haunting emotional counterforce. Ariadne, Eames, Arthur, Yusuf, and Saito each have distinct functions and voices, with Ariadne especially giving the audience a fresh entry point into Cobb’s inner life."
       },
       "creative_originality_and_boldness": {
-        "score": 9,
-        "reasoning": "The script commits to a rare blend of espionage mechanics, architectural imagination, and emotional melodrama without softening any of them. The choice to make the action grammar itself dream logic—gravity shifts, folding cities, synchronized kicks—gives it a confident formal identity."
+        "score": 10,
+        "reasoning": "The script turns dream architecture into action grammar, then escalates that idea into nested levels, paradox spaces, and a limbo city built from memory. The boldness is not just conceptual; it is dramatized through set pieces that keep reinterpreting the same rules in new ways."
       },
       "narrative_momentum_engagement": {
-        "score": 9,
-        "reasoning": "It moves with real force: the opening extraction, the recruitment of the team, the train ambush, the hotel assault, the snow fortress, and the limbo confrontation all keep raising the stakes. Each sequence either reveals a new rule or forces a harder choice, so the momentum never feels decorative."
+        "score": 10,
+        "reasoning": "The story keeps adding pressure: the job becomes a rescue mission, then a survival story, then a psychological reckoning. Every major turn either deepens the plan or collapses it into a more urgent version, and the cross-cutting between levels keeps the momentum relentless."
       },
       "resonant_originality": {
         "score": 10,
-        "reasoning": "This is one of those rare high-concept premises that feels both strange and inevitable: professional dream invasion used as a corporate weapon, with the protagonist’s own subconscious becoming the final battlefield. The idea is simple enough to repeat in one sentence, but the execution makes it feel like a whole new cinematic language."
+        "reasoning": "This is one of those rare high-concept premises that feels both impossible and inevitable once you hear it. The idea of planting an idea instead of stealing one becomes a perfect metaphor for persuasion, grief, and self-deception."
       },
       "world_density_and_texture": {
-        "score": 9,
-        "reasoning": "The world has rules, tools, jargon, and a lived-in black-market ecosystem—extractors, architects, chemists, forgers, corporate security, limbo, totems, kicks. The Mombasa pharmacy, the Paris architecture school, the 747, and the snow fortress all feel like distinct operational spaces rather than interchangeable backdrops."
+        "score": 10,
+        "reasoning": "The world has rules, tools, jargon, and a lived-in criminal economy around dream-sharing, from Somnacin to totems to kicks to limbo. The settings are not decorative; each level has its own physics and tactical logic, which makes the world feel engineered rather than invented on the fly."
       },
       "tonal_specificity": {
         "score": 10,
-        "reasoning": "The tone is unmistakable: sleek heist procedure colliding with emotional grief and surreal dream spectacle, all played with absolute seriousness. The script can pivot from a dry joke about carpet to a collapsing city or a father’s deathbed confession without losing its identity."
+        "reasoning": "The tone is unmistakable: cool-headed procedural precision colliding with romantic tragedy and sudden, operatic action. It can move from a dry explanation of dream mechanics to a collapsing city or a father-son wound without losing its identity."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 9,
-        "reasoning": "On the surface it’s a precision-engineered genre machine, but underneath it’s about memory, guilt, authorship, and the danger of living inside a self-made reality. Cobb’s relationship to Mal and his children gives the story a second life beyond the mechanics, which is why the ending lands with real aftertaste."
+        "score": 10,
+        "reasoning": "On the surface this is a precision heist, but underneath it is a story about guilt, memory, and the danger of living inside a self-authored reality. Mal’s presence, Cobb’s children, and the final ambiguity around the top all suggest a much larger emotional and philosophical afterlife."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 8,
-        "reasoning": "The ensemble is functional and story-generating: Cobb/Ariadne, Cobb/Arthur, Cobb/Eames, Cobb/Saito, and Cobb/Fischer each produce different kinds of pressure. It is still a Cobb-centered machine, but the supporting relationships are strong enough to keep generating fresh scenes and reversals."
+        "score": 9,
+        "reasoning": "The Cobb-Arthur-Eames-Ariadne dynamic generates constant story energy, and Saito/Yusuf add useful pressure and texture. Cobb and Ariadne in particular create a mentor-student relationship that keeps evolving into moral confrontation, which gives the ensemble real combinatorial value."
       }
     },
     "production_reality": {
@@ -60,239 +60,233 @@
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Two child roles as Cobb's children",
-          "Japanese male lead role for Saito",
-          "Male ensemble in 30s-40s with one young adult female lead",
-          "Older male roles for Miles, Maurice Fischer, and elderly Saito"
+          "Two blonde children as Cobb's son and daughter",
+          "Japanese and French-speaking supporting roles",
+          "Multiple age ranges for Cobb, Mal, Saito, and Fischer",
+          "Strong physicality required for action and stunt work"
         ]
       },
       "locations": {
         "distinct_count": 14,
-        "interior_exterior_ratio": "Mostly interior with substantial exterior set pieces",
+        "interior_exterior_ratio": "Mostly interiors with significant exterior action",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "Paris architecture school and streets",
-          "Mombasa market/pharmacy district",
-          "747 cabin and airfield",
-          "Snow-covered mountain fortress",
-          "Limbo city and shoreline",
-          "Hotel interiors with gravity-shift effects"
+          "Paris architecture and café streets",
+          "Mombasa street chase locations",
+          "747 cabin and airport environments",
+          "Snow mountain facility and avalanche terrain",
+          "Limbo city and collapsing coastal shoreline",
+          "Japanese castle interiors/exteriors"
         ]
       },
       "technical": {
         "vfx_level": "heavy",
-        "vfx_details": "Dream-logic environments, folding city geometry, zero-gravity hotel corridor, collapsing limbo city, avalanche, van fall, and layered transition effects require extensive visual effects and compositing.",
-        "stunts_level": "moderate",
-        "sfx_needs": "Practical explosions, vehicle impacts, elevator drop, gunfire, water tank work, and controlled collapse effects.",
+        "vfx_details": "Dream-folding city streets, zero-gravity corridor action, collapsing environments, limbo city extensions, avalanche scale, and layered dream transitions all require substantial VFX support.",
+        "stunts_level": "heavy",
+        "sfx_needs": "Practical explosions, vehicle crashes, wire work, fight choreography, elevator/van synchronization, and large-scale collapse effects.",
         "night_shoots": "significant",
-        "animals": true
+        "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "Edith Piaf's 'Non, je ne regrette rien'"
+          "detail": "Edith Piaf's 'Non, je ne regrette rien' is plot-critical and structurally timed to the kicks."
         },
         {
           "type": "brand",
-          "detail": "MP3 player"
-        },
-        {
-          "type": "brand",
-          "detail": "Gulf Stream jet"
-        },
-        {
-          "type": "brand",
-          "detail": "747"
-        },
-        {
-          "type": "brand",
-          "detail": "Cobol Engineering"
-        },
-        {
-          "type": "brand",
-          "detail": "Fischer Morrow"
-        },
-        {
-          "type": "brand",
-          "detail": "Somnacin"
+          "detail": "Cobol Engineering, Somnacin, Fischer Morrow, and other fictional corporate names are embedded throughout."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Event theatrical sci-fi thriller / premium streamer tentpole",
-        "content_level": "PG-13 equivalent to mature",
-        "series_engine_or_release_model": "Feature release model with strong global theatrical play and long-tail streaming value"
+        "recommended_lane": "Theatrical event film / premium streamer tentpole",
+        "content_level": "PG-13 equivalent, intense",
+        "series_engine_or_release_model": "Feature release model with strong global theatrical upside and long-tail streaming value"
       },
       "risk_rubric": {
         "cost": {
           "level": "high",
-          "note": "The snow fortress, collapsing city, zero-gravity corridor, van fall, and multiple large-scale dream environments push this into major tentpole territory."
+          "note": "Nested dream worlds, large-scale action, VFX-heavy environments, and multiple international set pieces push this into premium tentpole territory."
         },
         "cast": {
           "level": "medium",
-          "note": "The ensemble is manageable in size, but the project depends on a strong Cobb, a magnetic Ariadne, and credible international casting for Saito and Fischer."
+          "note": "The ensemble is manageable in size, but the film benefits from recognizable leads and requires child casting plus strong international supporting roles."
         },
         "location": {
           "level": "high",
-          "note": "Paris, Mombasa, Tokyo, a 747, a mountain fortress, a hotel labyrinth, and limbo create a wide location footprint even when some are buildable sets."
+          "note": "The script moves through Paris, Mombasa, Tokyo, a 747, snowy mountains, a Japanese castle, and limbo environments."
         },
         "content": {
           "level": "medium",
-          "note": "Gun violence, death in dream states, and psychological trauma are central, but the material stays within a mainstream thriller envelope."
+          "note": "Violence, gunplay, psychological peril, and child-involved emotional stakes are present, but the material stays within a PG-13-adjacent lane."
         },
         "rights": {
           "level": "medium",
-          "note": "Edith Piaf is plot-critical, and several named brands and corporate entities are embedded in the story world."
+          "note": "The only notable clearance pressure is the plot-critical Edith Piaf song and any real-world likeness concerns around the corporate and architectural references."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The premise is instantly pitchable.",
-          "what_it_means": "A buyer can understand the engine in one breath: a professional thief is hired to plant an idea instead of stealing one. That kind of clean, high-concept setup is exactly what makes a project easy to market internationally and easy for audiences to repeat to each other after the trailer drops.",
-          "evidence": "Cobb is recruited for 'inception' and the target is Robert Fischer, whose mind must be seeded with the idea to split his father's empire.",
+          "dimension_or_area": "The concept is instantly ownable.",
+          "what_it_means": "This is the kind of high-concept engine that can be sold in a sentence and still feels richer on the page, which is gold for theatrical packaging and global marketing. It gives a studio, streamer, or star vehicle a clean hook that can travel across territories and audiences without losing the emotional core.",
+          "evidence": "Saito’s 'Inception' proposal, the explanation of extraction, and the final mission to plant an idea in Robert Fischer’s mind.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Cobb is a premium lead role.",
-          "what_it_means": "The role gives an actor action, intelligence, guilt, and romantic ruin in one package, which is the kind of showcase part that can anchor a prestige commercial vehicle. Mid-career stars who want a physically active, emotionally haunted lead will see the appeal immediately.",
-          "evidence": "Cobb is both the team’s strategist and the man haunted by Mal, the children, and the possibility that he may never get home.",
+          "dimension_or_area": "The action grammar is story-specific.",
+          "what_it_means": "The set pieces are not generic spectacle; they are built from the rules of the premise, which makes every action beat feel like a fresh expression of the concept rather than a detour from it. That kind of integration is exactly what buyers want when they’re looking for a premium genre movie with repeatable audience pleasure.",
+          "evidence": "The folding Paris street, the zero-gravity hotel corridor, the van fall synchronized to the elevator drop, and the snow fortress assault.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ariadne gives the film a fresh audience surrogate.",
-          "what_it_means": "She is the entry point for the rules, but she also becomes the moral witness to Cobb’s inner life, which gives the movie a second emotional spine. That makes the project especially attractive to actors who want a smart, active role that is not just exposition delivery.",
-          "evidence": "Ariadne tests Cobb, learns the dream rules, and then pushes him to confront Mal and his guilt.",
+          "dimension_or_area": "Cobb is a prestige lead role.",
+          "what_it_means": "The role gives an actor action, intelligence, grief, and moral ambiguity in one package, which is the kind of part that can anchor a franchise-level movie while still feeling awards-adjacent. Leading men who want a role with physical command and emotional damage will chase this, and buyers can market the film around that duality.",
+          "evidence": "Cobb’s scenes with Mal, the children, Ariadne, and the final choice to stay in limbo for Saito.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The dream mechanics are cinematic, not abstract.",
-          "what_it_means": "The rules are visualized through architecture, gravity, time dilation, and synchronized kicks, so the concept plays as spectacle rather than dialogue-only science fiction. That gives directors and VFX teams a clear grammar to build around, which is a major selling point for event-level buyers.",
-          "evidence": "The folding Paris street, the zero-gravity hotel corridor, the van falling through the bridge, and the snow fortress all turn the premise into set pieces.",
+          "dimension_or_area": "Ariadne gives the audience a clean entry point.",
+          "what_it_means": "She functions as the viewer’s proxy without becoming passive, which keeps the exposition alive and gives the film a smart, skeptical counterweight to Cobb’s obsession. That makes the script more accessible to a broad audience and gives casting a breakout female role with intelligence and agency.",
+          "evidence": "Her maze test, her first dream lesson, her confrontation with Cobb about Mal, and her decision to come on the plane.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble has clean utility and flavor.",
-          "what_it_means": "Arthur, Eames, Yusuf, Saito, and Fischer each serve a distinct function in the heist while still feeling like castable parts with personality. That helps packaging because the movie can be sold as a team operation without losing the centrality of Cobb.",
-          "evidence": "Arthur is the planner, Eames the forger, Yusuf the chemist, Saito the financier, and Fischer the mark.",
+          "dimension_or_area": "The ensemble has distinct utility and voice.",
+          "what_it_means": "Arthur, Eames, Yusuf, and Saito each bring a different function, rhythm, and energy, which keeps the team dynamic from flattening into generic mission support. That helps the movie play like an event ensemble rather than a solo vehicle, and it gives the cast a set of roles actors can immediately understand and want.",
+          "evidence": "Arthur’s precision, Eames’s wit and forgery skill, Yusuf’s chemistry and dry humor, and Saito’s calm authority.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The emotional core is unusually strong for a genre engine.",
-          "what_it_means": "The story is not just about a job; it is about grief, memory, and the cost of trying to live inside a self-made reality. That depth gives the film awards-season afterglow and keeps it from feeling disposable once the action is over.",
-          "evidence": "Cobb’s history with Mal, the children, and Limbo drives the final act and the ending.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The ending is built for audience debate.",
-          "what_it_means": "The spinning top gives the movie a final image that invites conversation, interpretation, and repeat viewing. That kind of ambiguous but emotionally satisfying finish is a real commercial asset because it extends the life of the title beyond opening weekend.",
-          "evidence": "Cobb returns home and spins the top as the film cuts before the result is confirmed.",
+          "dimension_or_area": "The emotional engine is unusually durable.",
+          "what_it_means": "The film has a clean external objective, but the real propulsion comes from Cobb’s unresolved guilt, which keeps the story resonant even when the mechanics get elaborate. That gives the movie rewatch value and a deeper audience conversation than a standard heist thriller.",
+          "evidence": "The Mal backstory, the children’s unseen faces, and the final return to the spinning top.",
           "source": "script"
         }
       ],
-      "headline": "This is a rare studio-scale original: a dream-heist thriller with a clean commercial engine, a premium male lead, and a female co-lead who gives the audience a way into the rules and the emotion. It has the kind of visual invention, ensemble utility, and final-image debate value that buyers look for when they want an event movie that also feels smart."
+      "headline": "This is a premium, globally legible event movie with a rare combination of intellectual hook and emotional ache. It offers a studio-scale spectacle engine, a star-making lead role, and a world that feels engineered for audience obsession and repeat viewing."
     },
     "lead_characters": [
       {
         "name": "Dom Cobb",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s · American",
-        "hook": "A world-class extractor with a surgeon’s precision and a man’s worth of unresolved grief. Cobb is all control on the surface—cool, tactical, persuasive—but the script keeps revealing the fracture underneath: a father desperate to get home, a husband still trapped by the memory of his wife, and a professional who knows exactly how to enter other people’s minds while failing to fully govern his own.",
-        "why_actor_wants_this": "This is the showcase territory of Leonardo DiCaprio in The Revenant / Shutter Island-style intensity, but with the added engine of a heist lead who has to command a team and carry the emotional mystery. It gives an actor the rare combination of physical authority, psychological volatility, and a final-act reckoning that can define a career-sized role."
+        "demographics": "Male · 30s to 40s · American",
+        "hook": "A brilliant extractor with the calm of a professional thief and the exhaustion of a man living inside his own guilt. Cobb is all precision on the outside, but every decision is haunted by Mal, his children, and the possibility that he no longer trusts reality more than he trusts his own grief.",
+        "why_actor_wants_this": "This is the showcase territory of Leonardo DiCaprio in *The Revenant* and *Shutter Island*—a physically commanding lead whose inner life is the real spectacle. It gives an actor the rare chance to play action authority, romantic loss, and psychological fracture in the same frame, with a final ambiguity that lingers after the credits."
       },
       {
         "name": "Ariadne",
         "role_type": "Lead",
-        "demographics": "Female · 20s · French or European-presenting",
-        "hook": "A brilliant architecture student who sees the dream world faster than the men around her and refuses to be intimidated by their mythology. Ariadne is curious, skeptical, and increasingly morally awake; she starts as the apprentice and becomes the one person willing to tell Cobb the truth about what his mind is doing to everyone in the room.",
-        "why_actor_wants_this": "This is the showcase territory of Alicia Vikander in Ex Machina or Jodie Comer in The Last Duel—an intelligent observer who becomes the story’s conscience without losing edge or agency. It gives a young actress a rare combination of exposition mastery, emotional confrontation, and action participation in a major-scale film."
+        "demographics": "Female · early 20s · French or international student type",
+        "hook": "A gifted architecture student with a sharp eye, fast instincts, and the nerve to challenge the man who recruited her. She starts as the audience’s guide into the dream system and becomes the moral pressure point that forces Cobb’s private damage into the open.",
+        "why_actor_wants_this": "This is the breakout-intelligence lane of Alicia Vikander in *Ex Machina*—a young woman whose curiosity becomes authority as the story deepens. It gives an actress a role that moves from exposition partner to emotional truth-teller, with real command in the ensemble."
       },
       {
         "name": "Arthur",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s",
-        "hook": "The planner’s planner: dry, exacting, and allergic to improvisation until the situation forces him to improvise anyway. Arthur is the team’s operational backbone, the guy who knows the rules, hates the chaos, and still has to keep moving when the dream architecture starts breaking around him.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Caine in The Quiet American or Mark Rylance in Bridge of Spies—controlled intelligence with pressure building under the surface. It gives a character actor or prestige lead a role built on precision, irritation, and competence under fire."
+        "demographics": "Male · 30s to 40s · American or British",
+        "hook": "Cobb’s disciplined point man: dry, skeptical, and always one step ahead on logistics. Arthur is the team’s adult in the room, but his irritation and loyalty give him a human edge that keeps him from becoming just the planner.",
+        "why_actor_wants_this": "This is the precision-and-wit slot of Joseph Gordon-Levitt in *500 Days of Summer* and *Inception* itself—controlled, intelligent, and quietly funny under pressure. It gives an actor a clean showcase for tactical competence, deadpan humor, and physical action."
       },
       {
         "name": "Eames",
         "role_type": "Lead",
-        "demographics": "Male · 30s-40s · British",
-        "hook": "A charming forger with a gambler’s grin and a con artist’s instinct for reading the room. Eames is the team’s wild card, the one who can impersonate authority, improvise under pressure, and turn a plan into a performance without ever seeming like he’s trying too hard.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in Locke / The Drop energy—swagger, wit, and danger in one compact package. It gives an actor a scene-stealing role that can play comedy, menace, and tactical brilliance in the same breath."
+        "demographics": "Male · 30s to 40s · British",
+        "hook": "A charming forger with a gambler’s confidence and a performer’s instinct for reading a room. Eames is the team’s improviser, the one who can turn identity into a weapon and make the movie feel sly without losing momentum.",
+        "why_actor_wants_this": "This is the swagger-and-transformation territory of Tom Hardy in *Bronson* and *The Dark Knight Rises*—a role built on voice, disguise, and magnetic unpredictability. Actors who want to steal scenes while still serving the machine will chase this part."
       },
       {
         "name": "Yusuf",
         "role_type": "Lead",
-        "demographics": "Male · 40s-50s · South Asian or Middle Eastern-presenting",
-        "hook": "A chemist with a dry sense of humor and the calm of a man who knows exactly how much sleep everyone else is about to lose. Yusuf is the practical genius of the operation, the one whose compounds make the impossible possible and whose deadpan delivery keeps the movie grounded when the world starts bending.",
-        "why_actor_wants_this": "This is the showcase territory of Ben Kingsley in Sexy Beast or Stanley Tucci in The Lovely Bones—an expert whose authority comes from understatement. It gives a seasoned actor a memorable supporting-lead presence with wit, technical mastery, and a few great pressure-release moments."
+        "demographics": "Male · 30s to 50s · South Asian or Middle Eastern",
+        "hook": "A chemist with a dry sense of humor and the practical intelligence to keep the whole operation alive. Yusuf grounds the fantasy in procedure, and his calm under pressure makes the dream machinery feel credible.",
+        "why_actor_wants_this": "This is the grounded-brilliance lane of Ben Kingsley in *Sexy Beast*—a role where authority comes from specificity, not volume. It gives an actor a memorable supporting-lead presence with wit, technical command, and a crucial place in the ensemble rhythm."
       },
       {
         "name": "Saito",
         "role_type": "Lead",
-        "demographics": "Male · 40s-60s · Japanese",
-        "hook": "A billionaire power broker who speaks softly, watches everything, and never seems to be the least powerful person in the room. Saito is both client and threat, a man whose calm authority masks a strategic appetite so large that he can turn a dream heist into a geopolitical move.",
-        "why_actor_wants_this": "This is the showcase territory of Ken Watanabe in Letters from Iwo Jima or The Last Samurai—command, restraint, and moral ambiguity in one role. It gives an actor a premium international part with gravitas, mystery, and a late-story emotional payoff."
+        "demographics": "Male · 40s to 60s · Japanese",
+        "hook": "A composed corporate power player who never seems to raise his voice because he doesn’t need to. Saito is both client and kingmaker, and his calm exterior hides the leverage that keeps the mission alive.",
+        "why_actor_wants_this": "This is the controlled-power territory of Ken Watanabe in *Letters from Iwo Jima*—a role that plays authority, restraint, and emotional gravity without excess. It gives an actor a prestige international presence and a memorable final turn in the film’s emotional architecture."
+      },
+      {
+        "name": "Mal",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s to 40s · American",
+        "hook": "Cobb’s dead wife as memory, projection, and accusation. She is seductive, wounded, and terrifyingly persuasive, which makes her less a ghost than the embodiment of Cobb’s unresolved guilt and self-betrayal.",
+        "why_actor_wants_this": "This is the psychological-haunting showcase of Rebecca Hall in *The Prestige* or Marion Cotillard in *La Vie en Rose*—a role where presence matters more than screen time. It gives an actress the chance to be romantic, dangerous, and emotionally mythic all at once."
       },
       {
         "name": "Robert Fischer",
-        "role_type": "Lead",
-        "demographics": "Male · 30s",
-        "hook": "A corporate heir who looks successful from the outside but is emotionally stranded inside a father-son wound he can’t name. Fischer is not a villain or a mark in the usual sense; he’s a man whose identity has been built around inheritance, pressure, and the ache of never hearing the right thing from the one person who mattered most.",
-        "why_actor_wants_this": "This is the showcase territory of Paul Dano in There Will Be Blood or Jesse Eisenberg in The Social Network—a role where internal conflict is the performance. It gives an actor the chance to play repression, vulnerability, and revelation in a way that can quietly steal the movie."
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · Australian or international executive type",
+        "hook": "A wealthy heir who looks polished but carries a deep, private wound around his father’s approval. Fischer is not a villain; he’s a son being manipulated through the oldest pressure point in the book, which makes him sympathetic and useful to the story’s emotional logic.",
+        "why_actor_wants_this": "This is the wounded-heir territory of Michael Sheen in *Frost/Nixon*—a role where the emotional turn is the whole engine. It gives an actor the chance to play inheritance, grief, and self-definition inside a high-concept thriller."
+      },
+      {
+        "name": "Miles",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 70s · French academic",
+        "hook": "Cobb’s former mentor, now a weary professor who sees through him immediately. Miles carries the film’s moral memory: he understands both the promise and the cost of Cobb’s gift.",
+        "why_actor_wants_this": "This is the mentor-with-regret lane of Michael Caine in *The Dark Knight*—a role that lands because it speaks with authority and emotional history in very few scenes. Character actors who can make a short run feel consequential will want it."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage spectacle as psychology.",
-        "fit_profile": "Established feature directors with at least one visually ambitious genre or prestige title under their belt, especially those who care about formal control, spatial storytelling, and emotional subtext. This material rewards filmmakers who can choreograph action, architecture, and performance as one system rather than treating the set pieces as separate from the character work.",
-        "detail": "The movie gives a director a rare chance to build a fully legible visual language—gravity shifts, layered time, dream architecture, and recurring motifs like the top and the train. It is especially attractive to directors who like precision blocking, large-scale set pieces, and emotional storytelling that lands through image as much as dialogue."
+        "hook": "A director who wants to stage spectacle as psychology, not decoration.",
+        "fit_profile": "Established feature directors with at least one visually ambitious film or a strong prestige-thriller track record, especially those who care about formal precision, spatial storytelling, and emotional subtext. This material rewards filmmakers who can choreograph complex action while keeping the audience locked to character pain and narrative logic.",
+        "detail": "The movie asks a director to make rules feel cinematic: to turn exposition into momentum, and to make each dream layer feel like a different genre of pressure. It attracts directors who like engineering set pieces that are also character revelations, not just visual effects showcases."
       },
       "buyer_appeal": {
-        "tier": "$100M+ event feature",
-        "lane": "Premium theatrical sci-fi thriller with global four-quadrant reach",
-        "detail": "It needs a bankable lead and a director with major-scale visual credibility, but the concept itself is strong enough to justify that spend because the hook is easy to sell in one sentence. The dream-heist premise, international settings, and repeatable iconography give it both theatrical opening power and long-tail streaming value."
+        "tier": "Tentpole feature / $100M+ event movie",
+        "lane": "Premium theatrical sci-fi thriller with prestige ambitions",
+        "detail": "It can be packaged around one major star in Cobb and a strong ensemble around him, with the rest of the cast scalable to budget and territory. The dream-heist premise, global locations, and built-in rewatch value make it a natural fit for theatrical play, premium streaming, and international marketing."
       }
     },
     "considerations": [
       {
-        "area": "The dream rules can be streamlined on the page.",
-        "detail": "The script already does a strong job making the mechanics legible, so a next pass could look for any place where explanation can be folded into action rather than spoken as a lesson. The cleanest version is the one where the audience learns the rules by watching Cobb and Ariadne solve problems, not by pausing the momentum to restate them.",
+        "area": "The third-act geography is dense.",
+        "detail": "The cross-cutting between the van, the hotel, the mountain fortress, and limbo is exhilarating, and a next pass could keep the same propulsion while clarifying the spatial handoff between levels even earlier. The cleaner the audience can track the kick chain, the more the finale lands as triumph rather than puzzle-solving.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Cobb’s Mal material carries the whole emotional load.",
-        "detail": "The movie is strongest when Mal is felt as a force inside Cobb’s choices, so the version of the script where each return to her memory lands on a new turn in his behavior would deepen the emotional progression. That keeps the haunting alive without repeating the same beat of guilt and longing in the same shape.",
+        "area": "The emotional rules are already rich.",
+        "detail": "The Cobb/Mal material is the film’s deepest engine, and the version of the script where Ariadne’s confrontation with Cobb arrives even more directly from that emotional logic would sharpen the audience’s attachment. The good news is that the material is already there; the lever is simply to keep the emotional revelation as legible as the mechanics.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The ensemble could use one more independent pulse.",
-        "detail": "Arthur, Eames, and Yusuf are all useful and memorable, and the team dynamic already works; one additional scene that lets one of them make a choice unrelated to Cobb would give the group even more texture. That would preserve the Cobb spine while making the supporting cast feel even more like people with their own momentum.",
+        "area": "The cast footprint is premium but manageable.",
+        "detail": "The script naturally wants a recognizable lead and a strong supporting ensemble, plus child casting and international roles that need care. That said, the team structure is compact enough that a buyer can still package it as a star-driven event rather than an oversized ensemble piece.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The location spread is ambitious.",
+        "detail": "Paris, Mombasa, Tokyo, the 747, the snow fortress, the Japanese castle, and limbo all give the movie scale, but they also point to a version of the production that benefits from smart consolidation and repeatable sets. The story would still play if some geography were combined into fewer production hubs, as long as the dream-level contrast stays intact.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The Piaf cue is structurally important.",
+        "detail": "The Edith Piaf song is not just flavor; it is part of the film’s timing mechanism and should be treated as a clearance item from the start. Because the cue is so iconic and so tied to the kick structure, it also becomes a marketing asset if secured cleanly.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "Ariadne’s role could carry even more authority.",
+        "detail": "She already functions as the audience’s guide and Cobb’s conscience, and the version of the script where her decisions more visibly shape the mission would make the ensemble feel even more balanced. That would not change the premise; it would simply let the smartest observer in the room drive more of the action.",
         "is_primary_lever": false,
         "source": "script"
-      },
-      {
-        "area": "The production footprint is major-scale by design.",
-        "detail": "This is naturally a tentpole or premium-streamer event, not a modest indie, because the snow fortress, van fall, zero-gravity corridor, and limbo city all demand substantial build and effects work. The simplification lever is not to shrink the concept, but to protect the story by consolidating any duplicate dream spaces that serve the same dramatic function.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The music cue is a clearance anchor.",
-        "detail": "Edith Piaf’s 'Non, je ne regrette rien' is structurally important, so any packaging or budget conversation needs to account for that early. The upside is that the cue becomes part of the movie’s identity, which is exactly the kind of sonic signature buyers like to market.",
-        "is_primary_lever": false,
-        "source": "production"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 89.7,
+  "weightedScore": 97.7,
   "tier": "Greenlight Material",
   "inputTokens": 58327,
-  "outputTokens": 4664,
-  "cost": 0.06473324999999999,
+  "outputTokens": 4719,
+  "cost": 0.06498075,
   "declaredFormat": "Feature film"
 }

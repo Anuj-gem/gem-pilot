@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:14:22.552Z",
+  "submission_id": "b1a036f8-8fb8-452b-8ffd-4e569c44006f",
+  "eval_id": "41404783-6446-4f34-b092-711c4f1f1368",
+  "title": "Don Juan 2019",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "DON JUAN TENORIO",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s · Spanish nobleman"
+    },
+    {
+      "name": "DONA INES DE ULLOA",
+      "role_type": "Lead",
+      "demographics": "Female · early 20s · Spanish noblewoman"
+    },
+    {
+      "name": "DON LUIS MEJIA",
+      "role_type": "Lead",
+      "demographics": "Male · 20s to early 30s · Spanish nobleman"
+    },
+    {
+      "name": "DON GONZALO",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Spanish military captain"
+    },
+    {
+      "name": "CIUTTI",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Spanish servant"
+    },
+    {
+      "name": "DONA ANA DE PANTOJA",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · Spanish noblewoman"
+    },
+    {
+      "name": "DONA BRIGIDA",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · Spanish servant"
+    },
+    {
+      "name": "BUTTARELLI",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Italian tavern owner"
+    },
+    {
+      "name": "PABLO",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · prison guard"
+    },
+    {
+      "name": "PESTE",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · dirty prisoner"
+    },
+    {
+      "name": "PASCUAL",
+      "role_type": "Supporting",
+      "demographics": "Male · elderly · Spanish gate guard"
+    },
+    {
+      "name": "SENOR PANTOJA",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s to 60s · Spanish nobleman"
+    },
+    {
+      "name": "DON ROBERTO",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Spanish stepfather"
+    }
+  ],
+  "positioning_hook": "A legendary Spanish seducer is forced to choose between a wager, a convent-bound woman who can outfight him, and the redemption his dead mother asked for.",
+  "cost_usd": 0.058404,
+  "input_tokens": 44800,
+  "output_tokens": 5512,
+  "status": "wrote:leads_ok"
+}

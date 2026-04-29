@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-29T01:09:02.100Z",
+  "submission_id": "d3da9d70-fed1-4501-9df6-3cf0e30a9070",
+  "eval_id": "66064c48-1de8-46c5-9d25-95525d905518",
+  "title": "The Biz",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 6,
+  "lead_characters_summary": [
+    {
+      "name": "Benton Calamino",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · flamboyant filmmaker"
+    },
+    {
+      "name": "Horace Render",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · studio producer"
+    },
+    {
+      "name": "Dave Palmer",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · screenwriter"
+    },
+    {
+      "name": "Candy Meyers",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · producer's aide / assistant"
+    },
+    {
+      "name": "Meryl Hepburn",
+      "role_type": "Lead",
+      "demographics": "Female · 40s-50s · Oscar-winning actress"
+    },
+    {
+      "name": "Trevor Treason",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · action star"
+    }
+  ],
+  "positioning_hook": "A desert production of a vanity western spirals into bodily chaos, ego warfare, and career-ending accidents as a director, producer, and star-studded circus try to finish the movie.",
+  "cost_usd": 0.04974225,
+  "input_tokens": 40427,
+  "output_tokens": 4316,
+  "status": "wrote:leads_ok"
+}

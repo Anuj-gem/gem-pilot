@@ -2,321 +2,348 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Family drama",
+      "genre_primary": "Drama",
       "genre_tags": [
-        "Faith-based",
-        "Romantic drama"
+        "Family",
+        "Faith-based"
       ],
       "tone": "Grounded, heartfelt, inspirational"
     },
-    "positioning_hook": "A devoted Pennsylvania school administrator is crushed by a farm accident, forcing his family to rebuild around his paralysis, a buried first love, and one last move toward a new life.",
+    "positioning_hook": "A beloved Pennsylvania school administrator survives a catastrophic loader accident, then has to rebuild his identity, marriage, and family while learning to live with paralysis.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The emotional promise is immediate: marriage, children, faith, injury, recovery, and a life-changing relocation all land in the first half of the script. The audience is clearly the faith-and-family drama lane, with added appeal for viewers who respond to recovery stories and marriage-centered emotional stakes."
+        "reasoning": "The emotional promise is immediate: a husband, father, and community pillar is forced to redefine himself after a life-altering accident. The faith-and-family lane is clear and commercially legible, with built-in appeal for audiences that respond to uplift, resilience, and multigenerational stakes."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The premise is easy to summarize: a family man survives a catastrophic loader accident and has to redefine his identity while the family decides whether to leave Pottsville. The hook is clear, though it plays more as a moving dramatic premise than a sharply high-concept engine."
+        "reasoning": "The central engine lands cleanly once the cemetery accident hits: a man who has always carried everyone else can no longer carry himself. The story is easy to explain in a sentence, though the script is more about emotional transformation than a sharply high-concept premise."
       },
       "character_appeal_and_long_term_potential": {
         "score": 7,
-        "reasoning": "Ralph has a strong everyman center, and Skylar carries real emotional authority as the partner who becomes the family’s anchor. Maddie, Lisa, and Father Phillips add useful texture, though the supporting players mostly orbit Ralph’s recovery rather than generating fully separate arcs."
+        "reasoning": "Ralph and Skylar are built as a steady, affectionate partnership with enough history to feel lived-in, and the children give the family real texture. Ralph’s identity shift after the accident gives the role range, though most supporting characters function in service of his arc rather than generating separate dramatic engines."
       },
       "creative_originality_and_boldness": {
         "score": 6,
-        "reasoning": "The script’s boldest move is making the central romance and spiritual life feel inseparable from the injury story, and the loader accident is a memorable inciting event. The execution stays in a familiar inspirational-drama register, with the emotional beats landing more through sincerity than surprise."
+        "reasoning": "The script’s strongest distinction is its specific Catholic-small-town texture and the loader accident as the inciting trauma. The emotional territory is familiar, but the Pottsville setting, parish life, and sports-family details give it a recognizable local signature."
       },
       "narrative_momentum_engagement": {
-        "score": 7,
-        "reasoning": "The accident, hospital transfer, family arrivals, paralysis reveal, and eventual move to Missouri create a clear forward drive. The middle section is built around recovery and conversation rather than external escalation, but the story keeps its emotional stakes active."
+        "score": 6,
+        "reasoning": "The accident, surgery, paralysis reveal, and family relocation create clear forward motion, and the story keeps resetting around new emotional turns. The middle section is more reflective than propulsive, with the recovery beats carrying the drama more than external escalation."
       },
       "resonant_originality": {
         "score": 6,
-        "reasoning": "A school administrator, church volunteer, and father of two sets of twins becoming disabled in a cemetery accident is a specific setup with real emotional identity. The deeper shape, though, is a recognizable faith-family recovery arc that lands more through sincerity than through a fresh structural surprise."
+        "reasoning": "A faith-centered family drama about a man losing mobility and then re-learning purpose has a clean, accessible core. What makes it feel fresh is the combination of parish ritual, school leadership, and the sports-world backstory, especially once Skylar’s identity as a former player is folded in."
       },
       "world_density_and_texture": {
         "score": 7,
-        "reasoning": "Pottsville, the parish center, the school, the cemetery, and the hospital all feel like parts of a lived-in community ecosystem. The church-and-school network gives the story a clear social fabric, even if the world remains centered on a few familiar institutions."
+        "reasoning": "Pottsville, the church, the school, the cemetery, and the parish center all feel like parts of one social ecosystem. The script understands how a small town’s institutions overlap, which gives the world enough texture to feel story-generating rather than merely scenic."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The tone is consistent: reverent without being stiff, sentimental without tipping into parody, and grounded in family ritual. The repeated phrases like 'left side... strong side' and the final dance give the script a recognizable emotional signature."
+        "reasoning": "The tone is consistently earnest, intimate, and reverent without becoming static. The repeated left-side/strong-side motif, the spaghetti dinner, and the final dance give the script a distinct emotional signature that feels tailored to this family."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "There are deeper layers in Ralph’s past, Skylar’s former basketball life, and the buried history with Jason, which suggest a fuller emotional world beneath the surface. The script mainly chooses to keep those layers in service of the central recovery story rather than opening them into larger thematic complexity."
+        "reasoning": "Beneath the recovery story is a deeper theme about identity, service, and what happens when a caretaker becomes the one who needs care. The script gestures toward that depth through Ralph’s past, the trailer reveal, and the move to Missouri, though the surface emotional line remains the primary focus."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 7,
-        "reasoning": "The marriage, the four children, the in-laws, Father Phillips, Sharon, Debbie, and Lisa create a functioning family web with multiple emotional entry points. Ralph and Skylar remain the core engine, but the ensemble has enough relational texture to keep scenes alive beyond the lead pair."
+        "score": 6,
+        "reasoning": "The Ralph-Skylar marriage is the anchor, and the children plus extended family create a warm support web. The ensemble is functional and affectionate, but the story still lives primarily through Ralph’s point of view rather than through multiple equally generative relationship engines."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 16,
+        "speaking_roles": 15,
         "leads": 2,
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Two lead adults in their 40s-50s",
-          "Four child roles, including twins",
-          "One supporting role with prior romantic history to the female lead"
+          "Two sets of twins / four children",
+          "Female former athlete in 30s-40s",
+          "Male lead late 50s with post-accident mobility requirements",
+          "Faith-community adults in 40s-70s"
         ]
       },
       "locations": {
-        "distinct_count": 11,
-        "interior_exterior_ratio": "Mostly interior with recurring exterior community locations",
+        "distinct_count": 14,
+        "interior_exterior_ratio": "Mostly interior with recurring exterior town/cemetery/hospital coverage",
         "period_or_contemporary": "Contemporary",
         "notable_requirements": [
-          "Hospital trauma bay, ICU, and helipad",
-          "Church interior and parish center",
-          "Cemetery with loader and gravesite access",
-          "Home interior plus trailer flashback location",
-          "Airport and rental car sequence"
+          "Hospital trauma and ICU spaces",
+          "Church interior",
+          "Cemetery",
+          "School gym",
+          "Parish center",
+          "Trailer/home flashback location",
+          "Helipad/air transport setup"
         ]
       },
       "technical": {
-        "vfx_level": "none",
-        "vfx_details": "No visible VFX requirement beyond standard cleanup and possible helicopter plate work.",
-        "stunts_level": "minor",
-        "sfx_needs": "Practical loader accident coordination, ambulance/medical response, and hospital procedure staging.",
+        "vfx_level": "minor",
+        "vfx_details": "Primarily invisible cleanup and possible helicopter/medical transport enhancement; no major fantasy or creature work.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Loader movement, impact sequence, ambulance/helicopter arrival, medical trauma procedures, practical blood and injury makeup.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "\"We’ve Only Just Begun\" by The Carpenters is played in the final dance."
+          "detail": "\"We’ve Only Just Begun\" by The Carpenters is used in the final dance and would require music clearance."
         },
         {
           "type": "brand",
-          "detail": "Portland Fire is named as Maddie’s team."
-        },
-        {
-          "type": "brand",
-          "detail": "University of Missouri is named in the ending relocation/job reveal."
+          "detail": "Indiana Fever is referenced on Skylar’s jersey, and Portland Fire is referenced as Maddie’s team."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Faith-based theatrical or streaming family drama",
+        "recommended_lane": "Streaming feature, premium cable original movie, or faith-adjacent theatrical/limited release",
         "content_level": "PG-13 equivalent",
-        "series_engine_or_release_model": "Feature release model with strongest fit as festival-to-platform, faith-market theatrical, or streamer family-drama acquisition."
+        "series_engine_or_release_model": "Feature release model with strongest fit as a festival-to-platform or eventized faith/family drama"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The story is mostly contained to homes, church, cemetery, hospital, and parish spaces, but the loader accident, ambulance response, and helicopter transfer add some production lift."
+          "note": "The hospital sequence, helicopter transfer, and accident set-piece push this above a simple contained drama, but the story remains fundamentally character- and location-driven."
         },
         "cast": {
           "level": "medium",
-          "note": "Two adult leads, four child roles, and a supporting family network create moderate casting coordination, especially with the twin children and the Jason/Lisa history."
+          "note": "Two lead adults, four child roles, and several family/community supporting parts create a modest ensemble with some age-specific casting needs."
         },
         "location": {
           "level": "medium",
-          "note": "The script uses a manageable number of recurring locations, but it spans church, cemetery, hospital, airport, trailer, and two states."
+          "note": "The script moves through church, cemetery, hospital, home, school, parish center, trailer, helipad, and a second-state ending, with several recurring practical spaces."
         },
         "content": {
           "level": "low",
-          "note": "The material is emotionally intense but stays within family-drama boundaries, with no explicit sexual content or graphic violence."
+          "note": "The material centers on injury, surgery, grief, and disability, but it stays within a PG-13 emotional and medical register."
         },
         "rights": {
           "level": "medium",
-          "note": "The final dance song and the named sports/team references require clearance, and the University of Missouri mention is a real-world institutional reference."
+          "note": "The final song clearance and the named sports brands are the main clearance items, with no life-rights or IP dependency apparent."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The central marriage has real screen warmth.",
-          "what_it_means": "This gives the project a dependable emotional engine that can carry a faith-based or family-drama audience all the way through injury, recovery, and relocation. Actors who specialize in lived-in adult intimacy will see a role set that lets them play devotion, humor, and grief in the same frame.",
-          "evidence": "The recurring 'left side... strong side' exchange, the bedside care, and the final dance in the driveway all build a recognizable couple dynamic.",
+          "dimension_or_area": "The central couple has real screen warmth.",
+          "what_it_means": "That gives the movie a dependable emotional engine and makes the recovery story feel like a shared journey rather than a solo ordeal. Mid-career actors who can play lived-in marriage, and buyers looking for a four-quadrant family tearjerker, will respond to that kind of chemistry.",
+          "evidence": "The repeated \"left side / strong side\" exchange, the bedroom opening, and the final dance all build the relationship as a recognizable private language.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Ralph is built as an everyman anchor.",
-          "what_it_means": "A lead like this is valuable because he can hold a broad audience without needing irony or cynicism; the role is rooted in service, responsibility, and quiet authority. Mid-career dramatic actors who want a grounded, emotionally legible centerpiece would be drawn to it.",
-          "evidence": "He runs the schools, leads the parish dinner, coaches the kids through the loader accident, and then has to re-learn identity after paralysis.",
+          "dimension_or_area": "The parish world feels lived-in and usable.",
+          "what_it_means": "The church, spaghetti dinner, cemetery, and school all connect into one community ecosystem, which gives the film a clear identity and a practical production footprint. Faith-based distributors and producers who want a setting that can carry both ritual and everyday life will see immediate value here.",
+          "evidence": "Father Phillips, Sharon, Debbie, the parish center dinner, and the anointing/last-rites material all operate as part of one social fabric.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The accident is a clean, cinematic inciting event.",
-          "what_it_means": "The loader sequence gives the film a memorable turn that instantly changes the family’s trajectory and creates a strong trailer moment. Producers looking for a contained drama with one unmistakable event to sell will recognize the value immediately.",
-          "evidence": "The boys climb into the loader, it rolls, Ralph runs, and he is struck in the cemetery in front of the whole family.",
+          "dimension_or_area": "The accident is a clean, cinematic pivot.",
+          "what_it_means": "The loader sequence gives the script a memorable inciting event that instantly changes the family’s trajectory and creates a strong trailer moment. Producers looking for a contained drama with one unmistakable set-piece can package around that turn.",
+          "evidence": "The boys climb into the loader, it rolls, Ralph runs, and the impact lands in a single, readable sequence.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The church-and-school world feels lived in.",
-          "what_it_means": "The script has a built-in community ecosystem that can support marketing around faith, family, and small-town belonging without needing a huge canvas. Buyers in the inspirational lane will see a setting that feels specific enough to be trusted and familiar enough to travel.",
-          "evidence": "The parish center spaghetti dinner, Father Phillips, Sharon and Debbie, and Ralph’s school leadership all recur as part of the same social fabric.",
+          "dimension_or_area": "Ralph’s identity crisis is commercially playable.",
+          "what_it_means": "A man who has built his life around service, competence, and control suddenly has to live inside dependence, which is a strong actor-facing premise. Prestige drama buyers and performers who want a role with dignity, anger, and vulnerability all in one part will notice.",
+          "evidence": "His hospital-room line about not knowing who he is anymore and the accrued-time phone call make the internal shift explicit.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The recovery story has a clear emotional spine.",
-          "what_it_means": "The paralysis arc gives the film a strong second-act identity: not just survival, but identity reconstruction. That is the kind of material that can attract audiences looking for uplift that is earned rather than easy.",
-          "evidence": "The hospital tests, therapy sessions, Ralph’s anger, the family support, and the eventual decision to move all track the same emotional question.",
+          "dimension_or_area": "Skylar is more than a support system.",
+          "what_it_means": "Her history as a former athlete and her eventual coaching job give the movie a second adult lead with her own forward motion, which broadens the appeal beyond a pure caregiving story. Actresses looking for a grounded, emotionally intelligent role with a quiet authority arc will chase this.",
+          "evidence": "The gym flashback, the rehab montage, and the Missouri assistant-coach reveal all point to her own unfinished life.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The final dance lands the title idea.",
-          "what_it_means": "The ending pays off the script’s central romantic motif in a way that is easy to market and easy to remember. Faith-based and adult-drama buyers alike respond to endings that feel like a completed emotional circle, and this one does that cleanly.",
-          "evidence": "Ralph plays 'We’ve Only Just Begun,' asks Skylar to dance, and the family watches as they move together in the driveway.",
+          "dimension_or_area": "The ending offers a clean emotional payoff.",
+          "what_it_means": "The final dance, move to Missouri, and new-home arrival give the film a satisfying circle-closing finish that audiences can leave with. Buyers in the inspirational lane will like that it resolves with forward motion instead of a purely sentimental stop.",
+          "evidence": "The Carpenters cue, the wheelchair dance, and the last line about being alright complete the arc.",
           "source": "script"
         }
       ],
-      "headline": "This is a sincere, actor-friendly family drama with a strong faith-market lane and a clean emotional engine: a devoted husband and father is forced to rebuild his identity after a catastrophic accident, and the marriage at the center of it gives the whole film its lift. The script’s best commercial asset is its combination of small-town specificity, clear spiritual texture, and a final act that turns recovery into a move toward a new life rather than a closed ending."
+      "headline": "This is a faith-forward family drama with a strong, marketable emotional engine: a respected small-town father is forced to rebuild his life after a catastrophic accident, and the marriage at the center of it gives the movie real heat. The script’s parish texture, clear set-piece, and final-circle payoff make it easy to imagine as an audience-pleasing, actor-friendly feature with a defined lane."
     },
     "lead_characters": [
       {
         "name": "Ralph Bennett",
         "role_type": "Lead",
         "demographics": "Male · late 50s",
-        "hook": "Ralph is a sturdy, quietly funny small-town patriarch whose identity is built on service: school administrator, church helper, husband, father, and the guy everyone leans on. He carries himself with calm competence until the accident strips away the role structure that has defined him, and then the script lets us watch a man who has to discover whether he can still be himself without being the fixer.",
-        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *The Upside* or Kevin Costner in *Field of Dreams* — a grounded lead whose authority is tested by vulnerability, and whose emotional restraint becomes the performance. Character actors and prestige leads looking for a role that lets them play dignity, collapse, humor, and renewal in one arc will be drawn to it."
+        "hook": "Ralph is the kind of man a town quietly depends on: steady, practical, affectionate, and always in motion. He runs schools, helps at church, raises four kids, and carries himself like responsibility is a calling, until the accident strips away the identity he has built around usefulness and control. What emerges is a deeply human lead role: proud but tender, funny in small flashes, and forced to discover whether being needed is the same thing as being whole.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* or Paul Walter Hauser in *Black Bird*—a role where the audience watches a familiar self get stripped down and rebuilt in real time. Actors who want a prestige turn built on restraint, grief, humor, and physical limitation will see a full-body performance opportunity here."
       },
       {
         "name": "Skylar Bennett",
         "role_type": "Lead",
         "demographics": "Female · early 40s",
-        "hook": "Skylar is graceful, emotionally intelligent, and more formidable than she first appears; she’s the partner who can soothe a room, hold a family together, and still carry her own history. Her past as a basketball player and her present as the emotional center of the household give her a layered, adult presence that feels both nurturing and competitive.",
-        "why_actor_wants_this": "This is the kind of role Sandra Bullock had in *The Blind Side* or Julia Roberts had in *Steel Magnolias* — a woman whose warmth is matched by steel, and whose love becomes the story’s organizing force. Actresses who want a lead that can play tenderness, command, and private grief in the same performance will chase it."
+        "hook": "Skylar is graceful, grounded, and emotionally exacting, with the kind of quiet strength that never needs to announce itself. She begins as the wife who knows how to hold a family together and becomes the person who has to hold the whole emotional architecture of the story while still protecting her own unfinished life. The script gives her warmth, intelligence, and a lived-in athletic history that keeps her from reading as a generic spouse role.",
+        "why_actor_wants_this": "This is the emotional-command space of Toni Collette in *Hereditary* or Sarah Snook in *Succession*—a role that lets an actress carry pressure, love, and private panic without ever losing composure. Mid-career actresses looking for a grounded lead with maternal authority, romantic history, and a second-act reinvention will be drawn to it."
+      },
+      {
+        "name": "Father Phillips",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Father Phillips is the parish’s calm center: gentle, observant, and spiritually steady without becoming abstract or saintly. He knows the family history, understands the town’s rhythms, and functions as both witness and guide, which gives him real presence in the emotional architecture of the film.",
+        "why_actor_wants_this": "This is the kind of grounded spiritual authority that Tom Wilkinson had in *The Full Monty* or Richard Jenkins had in *The Visitor*—a supporting role that carries moral weight without needing speeches to announce it. Character actors who specialize in warmth, intelligence, and quiet authority will want this part."
       },
       {
         "name": "Maddie Bennett",
         "role_type": "Supporting",
-        "demographics": "Female · 20s-30s · professional athlete",
-        "hook": "Maddie is the eldest daughter with a life of her own, a pro basketball player whose distance from home gives her a sharper perspective on the family than the younger kids have. She arrives with authority, emotional intelligence, and just enough detachment to make her scenes feel like a different register of the same family story.",
-        "why_actor_wants_this": "This is the kind of part Regina King had in *If Beale Street Could Talk* or Tessa Thompson in *Creed* — a daughter who carries adult gravity and can land a scene with one look or one line. Athletes-turned-actors or dramatic actresses looking for a concise but memorable family role will see a clean showcase here."
+        "demographics": "Female · 20s-30s",
+        "hook": "Maddie is the eldest child with a life already in motion, which gives her a different relationship to the family crisis than the younger kids. She reads as capable, emotionally open, and slightly more removed, and the script smartly uses her as the daughter who can reflect back who Ralph has been to other people.",
+        "why_actor_wants_this": "This has the emotional-return energy of Kaitlyn Dever in *Dopesick* or Beanie Feldstein in *Booksmart*—a role that can land a family scene with one look and one line. Young adult actresses who want a grounded, emotionally literate supporting turn will see a clean showcase here."
       },
       {
-        "name": "Lisa Monroe",
+        "name": "Lisa",
         "role_type": "Supporting",
         "demographics": "Female · 30s-40s",
-        "hook": "Lisa is the sister who arrives carrying her own life, her own relationship, and a history that complicates the family gathering in a way nobody can ignore. She’s emotionally open but not ornamental, and the Jason reveal gives her a lived-in, adult-romance dimension that deepens the family web.",
-        "why_actor_wants_this": "This is the kind of supporting role Laura Linney had in *The Savages* — a sibling part that can pivot from practical concern to emotional shock in a single scene. Character actresses who like family-drama material with a personal reveal will respond to it."
+        "hook": "Lisa arrives as the sister who has her own life, her own relationship, and her own history with the family, which makes her feel like a real adult presence rather than a plot device. Her arrival with Jason opens the story outward and gives the family dynamic another layer of memory, surprise, and emotional complication.",
+        "why_actor_wants_this": "This is the kind of late-entry family role that Laura Linney often turns into a scene-stealing anchor in ensemble drama—small in page count, large in emotional consequence. Actors who like playing the sibling who changes the temperature of a room will be interested."
       },
       {
         "name": "Jason",
         "role_type": "Supporting",
         "demographics": "Male · 30s-40s",
-        "hook": "Jason is the outsider who walks into the Bennett family carrying a buried connection to Skylar and immediately changes the temperature of the room. He’s not a villain or a comic device; he’s a man with unfinished history, and that makes him useful as a pressure point in the family’s emotional architecture.",
-        "why_actor_wants_this": "This is the kind of role Michael Shannon had in *Take Shelter* in terms of quiet, loaded presence — a man whose silence means more than exposition. Actors who specialize in restrained, emotionally charged supporting work will see a clean, scene-stealing opportunity."
+        "hook": "Jason is the outsider who turns out not to be an outsider at all, carrying a buried history with Pottsville and with Skylar that detonates at exactly the wrong moment. He’s a useful pressure valve for the script because he brings romantic memory, awkwardness, and a second emotional timeline into the same family crisis.",
+        "why_actor_wants_this": "This is the kind of reveal-driven supporting role that Paul Mescal in *Normal People* or Ben Mendelsohn in *Bloodline* has used to make a character feel loaded from the first entrance. Actors who can play regret, restraint, and unfinished business will find a lot to do with very little screen time."
       },
       {
-        "name": "Father Phillips",
+        "name": "Antonio",
         "role_type": "Supporting",
-        "demographics": "Male · 50s-60s · Catholic priest",
-        "hook": "Father Phillips is the parish priest who knows the family, the town, and the emotional weather of both. He functions as spiritual witness, community anchor, and calm authority, but the script gives him enough warmth and specificity that he feels like a person rather than a function.",
-        "why_actor_wants_this": "This is the kind of role Mark Rylance had in *The Outfit* or Brendan Gleeson often gets in intimate dramas — a quiet authority figure whose stillness carries weight. Veteran character actors who can make a small number of scenes feel indispensable will be interested."
+        "demographics": "Male · 9",
+        "hook": "Antonio is one of the older twins, eager to help, eager to prove himself, and just old enough to think he understands more than he does. His guilt after the loader accident gives the family drama a child’s-eye emotional charge without turning him into a symbol.",
+        "why_actor_wants_this": "This is the kind of child role that Jacob Tremblay in *Room* made unforgettable—an emotionally legible kid part where innocence and responsibility collide. Young performers with strong naturalism and parents looking for a meaningful dramatic credit will be drawn to it."
+      },
+      {
+        "name": "Angelo",
+        "role_type": "Supporting",
+        "demographics": "Male · 9",
+        "hook": "Angelo is Antonio’s twin and the more impulsive half of the pair, which gives the accident sequence its immediate panic and the aftermath its rawest child reaction. He helps the movie feel like a real household full of competing energies, not a polished inspirational postcard.",
+        "why_actor_wants_this": "This has the kind of emotionally immediate child energy that Noah Jupe brought to *A Quiet Place*—a role where fear, love, and instinct all play at once. Casting directors looking for a natural kid with strong reaction work will notice it."
+      },
+      {
+        "name": "Olivia",
+        "role_type": "Supporting",
+        "demographics": "Female · 7",
+        "hook": "Olivia is sharp, observant, and just young enough to ask the questions adults are trying not to answer. She gives the family scenes a bright, unfiltered point of view and helps the script keep its humanity in the middle of medical and spiritual crisis.",
+        "why_actor_wants_this": "This is the kind of scene-stealing child part that Brooklynn Prince in *The Florida Project* showed can anchor a family movie’s emotional truth. Young actors with natural curiosity and comic timing will make this role pop."
+      },
+      {
+        "name": "Hannah",
+        "role_type": "Supporting",
+        "demographics": "Female · 7",
+        "hook": "Hannah is Olivia’s twin and the more openly affectionate of the two, which gives the family scenes a softer emotional counterpoint. She helps make the Bennett household feel crowded, loving, and alive in a way that sells the stakes of Ralph’s absence.",
+        "why_actor_wants_this": "This is the kind of child role that lets a young performer do pure emotional response work, like the younger kids in *This Is Us* or *The Pursuit of Happyness*. Families and casting teams looking for authentic sibling chemistry will respond to it."
+      },
+      {
+        "name": "Jack",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s-70s",
+        "hook": "Jack is the father who arrives with steadiness instead of speeches, carrying the authority of a man who knows how to be useful in a crisis. He helps widen the family circle and gives Ralph another generational mirror for what strength looks like.",
+        "why_actor_wants_this": "This is the kind of quietly authoritative family patriarch role that Ed Harris or J.K. Simmons can make feel indispensable with very little screen time. Veteran character actors who can play love through action will be interested."
+      },
+      {
+        "name": "Renee",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s-70s",
+        "hook": "Renee is the maternal counterpart to Jack: warm, direct, and emotionally available without becoming sentimental. She functions as a stabilizing presence for Skylar and the kids, and her arrival helps the story feel like a true family network rather than a two-person crisis.",
+        "why_actor_wants_this": "This is the kind of role that Frances Sternhagen or Margo Martindale has turned into a memorable emotional anchor—supportive, specific, and never decorative. Experienced actresses who know how to make a room feel safer will want it."
       },
       {
         "name": "Sharon",
         "role_type": "Supporting",
         "demographics": "Female · 50s",
-        "hook": "Sharon is the no-nonsense parish organizer who keeps the machinery moving and speaks in practical terms when everyone else is emotional. She gives the film a useful working-class competence and a grounded female presence outside the Bennett household.",
-        "why_actor_wants_this": "This is the kind of supporting role Frances McDormand or Kathy Bates can make unforgettable in a few scenes — a woman whose authority comes from competence, not speeches. Strong character actresses who like crisp, functional scenes with personality will be attracted to it."
+        "hook": "Sharon is the no-nonsense parish organizer who keeps the machinery of the community moving. She adds texture to the church world and gives the film a practical, working-woman presence that makes the setting feel lived-in.",
+        "why_actor_wants_this": "This is the kind of efficient, scene-smart supporting role that Melissa Leo or Kathy Bates can elevate instantly. Character actresses who can make competence feel warm will be drawn to it."
       },
       {
         "name": "Debbie Runner",
         "role_type": "Supporting",
         "demographics": "Female · 40s-50s",
-        "hook": "Debbie is the church office administrator who moves fast, knows everyone, and helps turn the parish into a real support system. She’s a practical, emotionally literate presence who helps the film feel communal rather than isolated around the central couple.",
-        "why_actor_wants_this": "This is the kind of role that gives an actor the grounded utility of a Holly Hunter supporting part — efficient, warm, and memorable without needing a huge page count. Character actors who can make institutional support feel human will like the slot."
+        "hook": "Debbie is the church office administrator who knows the family, the town, and the logistics of crisis management. She’s a useful connective tissue character who helps the parish feel like a functioning organism rather than a backdrop.",
+        "why_actor_wants_this": "This is the sort of grounded supporting part that character actors use to make a community feel real, like the office staff in *The Office* or the town regulars in *Friday Night Lights*. Actors who specialize in lived-in realism will appreciate the specificity."
       },
       {
-        "name": "Jack Monroe",
+        "name": "Dr. Wolfgang",
         "role_type": "Supporting",
-        "demographics": "Male · 60s-70s",
-        "hook": "Jack is the father who arrives with steadiness and a plainspoken kind of love. He doesn’t over-explain himself, which makes him feel like a real parent in a family that has learned to communicate through action more than speeches.",
-        "why_actor_wants_this": "This is the sort of role that gives an older actor the quiet authority of Albert Brooks in *Drive* or Richard Jenkins in *The Visitor* — a father figure whose presence stabilizes the room. Veteran character actors will respond to the chance to play support without sentimentality."
+        "demographics": "Male · 40s-60s",
+        "hook": "Dr. Wolfgang is the composed trauma surgeon who delivers the hard truth without theatrics. He gives the hospital section its procedural authority and keeps the medical stakes legible and credible.",
+        "why_actor_wants_this": "This is the kind of crisp, high-stakes doctor role that actors like Jeffrey Wright or Peter Sarsgaard can make feel instantly authoritative. Performers who can communicate competence and empathy in a few lines will want it."
       },
       {
-        "name": "Renee Monroe",
+        "name": "Dr. Yang",
         "role_type": "Supporting",
-        "demographics": "Female · 60s-70s",
-        "hook": "Renee is the mother who can move from shock to action in a beat, and her scenes with Skylar make the family’s emotional inheritance feel tangible. She reads as someone who has spent a lifetime holding things together and knows exactly how to show up when it matters.",
-        "why_actor_wants_this": "This is the kind of maternal role that lets an actor do what Sissy Spacek did in *The Straight Story* — make care feel active, not decorative. Seasoned actresses who want a concise but emotionally resonant family role will be interested."
+        "demographics": "Male or Female · 30s-50s",
+        "hook": "Dr. Yang is the surgeon who delivers the post-op update and helps transition the story from crisis to recovery. The role is brief but important, functioning as the voice of medical reality at the exact moment the family needs it most.",
+        "why_actor_wants_this": "This is a clean, high-functioning medical supporting role in the vein of the doctors in *Grey’s Anatomy* or *The Good Doctor* when those parts are played with restraint. Actors who can land urgency and compassion quickly will fit it well."
       },
       {
-        "name": "Antonio Bennett",
+        "name": "Dr. Johnson",
         "role_type": "Supporting",
-        "demographics": "Male · 9",
-        "hook": "Antonio is one of the twin boys, old enough to be curious and proud, young enough to make a mistake that changes everything. He gives the story a child’s mix of bravado and guilt, which becomes especially potent once the accident lands on his shoulders emotionally.",
-        "why_actor_wants_this": "This is the kind of child role that can do what the young actors in *The Pursuit of Happyness* did — make the audience feel the stakes through innocence and fear. Young actors with natural emotional access will have a strong showcase here."
+        "demographics": "Male or Female · 40s-60s",
+        "hook": "Dr. Johnson is the physician who becomes the voice of the long recovery, translating Ralph’s future into plain language the family can absorb. The role carries the emotional burden of naming paralysis without turning the film into a medical procedural.",
+        "why_actor_wants_this": "This is the kind of sober, emotionally precise doctor role that actors like Cherry Jones or Michael Stuhlbarg can make memorable with one scene. It gives a performer the chance to be the person who changes the room with a sentence."
       },
       {
-        "name": "Angelo Bennett",
+        "name": "Dr. Warren",
         "role_type": "Supporting",
-        "demographics": "Male · 9",
-        "hook": "Angelo is the other twin, a little more impulsive and reactive, which gives the pair a believable sibling rhythm. He’s the boy who says the thing out loud, panics first, and helps make the accident sequence feel immediate and human.",
-        "why_actor_wants_this": "This is the sort of child role that gives a young actor the same kind of vivid, reactive energy seen in *The Florida Project* — a kid whose responses are the scene. Casting directors looking for naturalistic child performances will notice it."
-      },
-      {
-        "name": "Olivia Bennett",
-        "role_type": "Supporting",
-        "demographics": "Female · 7",
-        "hook": "Olivia is one of the younger twins, observant and emotionally direct in the way younger children often are. She gives the family scenes a bright, unfiltered innocence that makes the stakes feel even more personal.",
-        "why_actor_wants_this": "This is the kind of part that lets a young performer do what the children in *Room* or *Little Miss Sunshine* do — register the emotional weather of the adults without needing to explain it. Families and child-casting teams will see a sweet, usable role."
-      },
-      {
-        "name": "Hannah Bennett",
-        "role_type": "Supporting",
-        "demographics": "Female · 7",
-        "hook": "Hannah is the other younger twin, a little more playful and a little more emotionally porous, which helps the family feel like a real household rather than a dramatic construct. Her questions and reactions keep the story rooted in ordinary childhood even as the adults face extraordinary change.",
-        "why_actor_wants_this": "This is the kind of child role that gives a young actor the natural, scene-stealing honesty of the kids in *The Descendants* — simple reactions that carry emotional weight. It’s a clean fit for a child performer with instinctive timing."
+        "demographics": "Male or Female · 40s-60s",
+        "hook": "Dr. Warren is the later-stage physician who reframes Ralph’s recovery as a matter of pace, stress, and survival. The character helps crystallize the story’s thematic turn from crisis management to life redesign.",
+        "why_actor_wants_this": "This is the kind of concise, authoritative supporting role that can land with the weight of a mentor or truth-teller, similar to the doctors and counselors in *The Descendants* or *Manchester by the Sea*. Experienced character actors will recognize the utility of the part."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a faith-forward family drama with real emotional restraint.",
-        "fit_profile": "Established indie or television directors with at least one or two character-driven features, or a strong run of prestige episodic work, who are ready to handle a mid-budget feature with performance at the center. The material rewards directors who care about domestic realism, spiritual texture, and clean emotional staging over visual pyrotechnics.",
-        "detail": "The craft opportunity is in making ordinary spaces feel sacred without overplaying the sentiment, and in letting the accident, hospital, and final dance each land with different emotional temperatures. Directors who can work with ensemble intimacy and keep the camera patient around grief and recovery will see a clear lane here."
+        "hook": "A director who wants to make a faith-adjacent family drama with real emotional muscle and a clean, cinematic set-piece.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, or TV directors moving into features who already know how to stage intimate ensemble scenes. This material rewards performance-first storytelling, controlled sentiment, and the ability to make a small-town world feel specific without over-stylizing it.",
+        "detail": "The script gives a director a strong opening trauma sequence, a sustained recovery arc, and a final emotional payoff that can be staged with restraint rather than spectacle. It’s especially attractive to directors who like working with actors, shaping family dynamics, and finding cinematic meaning in ordinary spaces like churches, kitchens, and hospital rooms."
       },
       "buyer_appeal": {
         "tier": "$3-8M feature",
-        "lane": "Faith-based streamer, specialty theatrical, or family-drama acquisition lane",
-        "detail": "The project can be mounted around two adult leads and a contained community footprint, so it does not require a heavy effects package or a large-name ensemble to function. The faith-and-family audience gives it a built-in secondary market beyond standard drama buyers, and the final dance/song payoff is the kind of ending that travels well in trailers and clips."
+        "lane": "Faith-based / inspirational drama, streamer original movie, premium cable family feature",
+        "detail": "The movie can be packaged around two adult leads and a contained community cast, with the child ensemble and hospital material adding texture rather than requiring star-heavy support. The faith-and-family lane still has a reliable audience on streamers and specialty theatrical platforms, and the clear emotional payoff plus recognizable music cue make it easy to market."
       }
     },
     "considerations": [
       {
-        "area": "The middle lives in recovery scenes.",
-        "detail": "The hospital and therapy stretch gives the film its emotional identity, but a next pass could keep each recovery beat doing a little more story work so the middle feels as propulsive as the accident and the ending. One lever would be to let one or two therapy scenes reveal a new family dynamic or decision rather than only tracking physical progress.",
+        "area": "The middle leans heavily on recovery beats.",
+        "detail": "The hospital, therapy, and home-rehab material does the emotional heavy lifting, which is appropriate for the story; a next pass could look for one additional external objective in that stretch so Ralph’s inner change has a visible task to chase. The version where one recovery sequence also advances a family decision or a community obligation would keep the momentum feeling more active.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The Jason reveal arrives late in the family arc.",
-        "detail": "The buried history with Jason is a strong emotional card, and the scene where Lisa introduces him has real charge. What would it look like if that thread were seeded a little earlier, even in a small way, so the reveal feels like a pressure point the audience has been subconsciously carrying?",
+        "area": "The ensemble is warm but centered on Ralph.",
+        "detail": "The family and parish characters are vivid in support, but most of them orbit Ralph’s arc rather than generating independent turns. If the goal is to widen the movie’s emotional footprint, one lever would be to give Lisa, Maddie, or Father Phillips a scene that carries its own choice-point instead of only reflecting Ralph’s journey.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The ending is built for a clear release model.",
-        "detail": "This plays naturally as a faith-market theatrical or streamer acquisition, with the strongest audience fit in the adult family-drama lane. The contained footprint and emotional payoff make it a practical package for buyers who want a modest-budget title with clip-friendly moments.",
+        "area": "The final move adds a second emotional destination.",
+        "detail": "The Missouri relocation gives the ending a hopeful forward motion, but it also introduces a new home, a new job, and a new family rhythm in the last stretch. A simplification lever would be to keep the move emotionally clear while minimizing the number of new logistical beats once the family leaves Pottsville.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The music cue needs clearance planning.",
+        "detail": "The final dance is built around \"We’ve Only Just Begun,\" which is doing real emotional work in the ending. If the song stays, it should be treated as a priority clearance item early in packaging so the final sequence can be protected.",
         "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The loader sequence carries the production lift.",
-        "detail": "The cemetery accident, emergency response, and helicopter transfer are the main physical-production set pieces. The version of the script that keeps those beats tightly staged and avoids expanding the accident geography would protect the impact while keeping the shoot efficient.",
+        "area": "The child ensemble requires careful scheduling.",
+        "detail": "Four child roles, including two sets of twins, give the family scenes their lived-in energy. A production plan that clusters the kids’ coverage efficiently would protect performance freshness and keep the shoot manageable.",
         "is_primary_lever": false,
         "source": "production"
-      },
-      {
-        "area": "The family ensemble can stay lean.",
-        "detail": "The script already gets a lot of mileage from Ralph, Skylar, the four children, and the immediate extended family. A next pass could continue to keep supporting community roles functional and concise so the emotional center stays on the Bennett household.",
-        "is_primary_lever": false,
-        "source": "both"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 69,
+  "weightedScore": 67,
   "tier": "Optionable",
   "inputTokens": 26081,
-  "outputTokens": 5395,
-  "cost": 0.043838249999999995,
+  "outputTokens": 5989,
+  "cost": 0.046511250000000004,
   "declaredFormat": "Feature film"
 }

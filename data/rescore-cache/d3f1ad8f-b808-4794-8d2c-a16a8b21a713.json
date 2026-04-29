@@ -4,67 +4,66 @@
       "format": "Feature film",
       "genre_primary": "Legal drama",
       "genre_tags": [
-        "prison drama",
+        "prison thriller",
         "martial arts action"
       ],
-      "tone": "grounded, gritty, propulsive"
+      "tone": "gritty, propulsive, socially charged"
     },
-    "positioning_hook": "A Vietnamese-American martial artist is framed for murder after a gang attack, forcing his sister and a compromised lawyer to expose a prison conspiracy before he’s buried by a plea deal.",
+    "positioning_hook": "A Vietnamese martial-arts student is framed for murder after a gang attack, and his lawyer and sister must beat a rigged justice system before prison violence buries the truth.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The premise has a clean emotional engine: an innocent man, a sister fighting for him, and a lawyer with a personal stake. The prison setting and fight-forward set pieces give it a clear genre lane, though the audience is more adult thriller/drama than four-quadrant."
+        "reasoning": "The hook is immediate and legible: an innocent man, a prison setting, a legal fight, and fight choreography that gives the movie a clear trailer spine. The audience is narrower than a four-quadrant studio play because the material is hard-edged and very specific, but the premise has real genre pull."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The hook lands early: Quan is attacked, a man dies, and he’s trapped in a murder case that keeps widening inside jail. The script keeps the central question legible all the way through, especially once the plea bargain and prison evidence-gathering kick in."
+        "reasoning": "The script announces its engine early with the gang assault, Quan's arrest, and the defense strategy that follows. The prison setting, the legal pressure, and the martial-arts angle are all clear and easy to explain in one breath."
       },
       "character_appeal_and_long_term_potential": {
-        "score": 7,
-        "reasoning": "Quan is a strong physical lead with a clear moral center, and Lisa gives the story a second pulse as the family advocate. English and Richards add adult complexity, but the supporting players mostly orbit the main case rather than opening fully independent arcs."
+        "score": 6,
+        "reasoning": "Quan has a clean emotional center — innocent, disciplined, and increasingly cornered — and Lisa and English give the story a second and third point of view. The supporting inmates are vivid in moments, though the movie still lives most strongly on the lead trio."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The blend of prison procedural, martial-arts combat, and legal maneuvering gives the script a distinct lane. The choice to make the prison itself the action arena, with kick-out politics and trustee hierarchy, gives the material a confident identity."
+        "reasoning": "The blend of prison procedural, courtroom maneuvering, and martial-arts action gives the script a distinctive commercial lane. The choice to make the prison itself a pressure cooker for both legal and physical survival is a strong, ownable move."
       },
       "narrative_momentum_engagement": {
-        "score": 8,
-        "reasoning": "The script moves with real urgency from street fight to arrest to plea pressure to prison escalation. Each new beat adds pressure rather than resetting it, and the cafeteria eruption pays off the tension built through the holding-cell and yard sequences."
+        "score": 7,
+        "reasoning": "The story keeps moving through arrest, intake, legal strategy, witness work, and the prison eruption, with the cafeteria sequence delivering a major escalation. There is some repetition in the middle around legal maneuvering, but the forward drive remains solid."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "The core idea feels fresh because the legal case and the prison ecosystem are fused into one engine. The kick-out mechanism, the trustee structure, and the martial-arts protagonist make the setup feel specific rather than generic."
+        "reasoning": "The script feels like a familiar justice story until the prison ecosystem, Quan's fighting skill, and the kick-out mechanism give it a sharper identity. The idea of an innocent martial artist surviving both the system and the yard lands as fresh and immediately playable."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The jail is rendered as a functioning social system with deputies, trustees, section politics, freak tank dynamics, and informal inmate economies. The outside world also has texture through the law offices, immigrant family home, and neighborhood search sequences."
+        "reasoning": "The jail is rendered as a full social ecosystem with trustees, deputies, sections, yard politics, freak tank dynamics, and informal inmate economies. The legal world outside the jail also has texture through the DA, the defense office, and the witness-chasing process."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The script has a hard-edged, streetwise tone with bursts of humor, sexual bravado, and brutal action. It knows how to move between legal talk, prison banter, and sudden violence, even if the tonal register is broad rather than highly stylized."
+        "reasoning": "The tone mixes hard prison realism, blunt street humor, and heightened action in a way that feels consistent across the piece. The script knows when to lean into brutality, when to let inmates banter, and when to play the legal chess match straight."
       },
       "latent_depth_slow_burn_potential": {
-        "score": 7,
-        "reasoning": "Beneath the action, the script is interested in institutional bias, plea pressure, and the way prison identity sticks to people. Richards’ speeches about guilt and exile, plus English’s corruption history, suggest a deeper moral layer that could sustain a larger feature franchise or prestige remake."
+        "score": 6,
+        "reasoning": "Beneath the action, the script is interested in institutional bias, identity, and how prison turns people into roles they didn't choose. That depth is present, though the movie's surface pleasures are still the main engine."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 7,
-        "reasoning": "The Quan-Lisa-English triangle gives the story a strong core, and the prison ensemble generates recurring friction through Madison, Richards, Rix, Pledger, and the Plowboyz. The relationships are functional and often lively, though the script still lives most strongly on the central trio."
+        "reasoning": "Quan/Madison/Richards gives the prison section a real relational spine, and Lisa/English/Firth creates a second engine outside the walls. The ensemble is strongest when those pairings collide, especially in the legal and prison spaces."
       }
     },
     "production_reality": {
       "cast": {
-        "speaking_roles": 20,
-        "leads": 3,
-        "series_regulars": 7,
+        "speaking_roles": 25,
+        "leads": 4,
+        "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Vietnamese-American lead",
+          "Vietnamese lead",
           "Latino gang ensemble",
-          "Black prison ensemble",
+          "multiple prison authority roles",
           "one trans character",
-          "teen daughters in supporting roles",
-          "specific age and ethnicity texture across the ensemble"
+          "teen daughters in supporting roles"
         ]
       },
       "locations": {
@@ -73,284 +72,222 @@
         "period_or_contemporary": "contemporary",
         "notable_requirements": [
           "county jail / prison blocks",
-          "law office interiors",
-          "family store",
+          "courtroom and chambers",
+          "law office",
+          "storefront robbery location",
           "apartment interiors",
-          "courtroom and courthouse spaces",
-          "street fight and alley exteriors"
+          "yard/cafeteria/prison bus spaces"
         ]
       },
       "technical": {
         "vfx_level": "none",
-        "vfx_details": "No meaningful VFX beyond basic blood and impact enhancement.",
+        "vfx_details": "No meaningful VFX beyond basic cleanup and possible glass-break enhancement.",
         "stunts_level": "moderate",
-        "sfx_needs": "Fight choreography, glass breakage, blood effects, weapon handling, and crowd-control action in prison and street sequences.",
+        "sfx_needs": "Fight choreography, glass breakage, practical blood, weapon props, prison restraint action.",
         "night_shoots": "significant",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "named_music",
-          "detail": "America's Most Wanted, Cops, Johnny Carson, CHiPs, Adam-12, The Six Million Dollar Man, Eight Is Enough, Knight Rider, Hunter, Zeppelin, and Black Sabbath are referenced."
+          "detail": "Television references to CHiPs, Adam-12, The Six Million Dollar Man, Eight Is Enough, Knight Rider, Black Sabbath, Zeppelin, Johnny Carson, and America's Most Wanted."
         },
         {
           "type": "brand",
-          "detail": "Corona, Volvo, Mercedes, Laker, and specific TV channels/programs are named on the page."
+          "detail": "Mercedes, Volvo, Corona, Laker, and other branded consumer references appear in dialogue and scene description."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "streaming feature or mid-budget theatrical crime drama",
+        "recommended_lane": "theatrical or premium-cable feature lane",
         "content_level": "mature",
-        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or limited theatrical-to-streaming path."
+        "series_engine_or_release_model": "Feature release model; strongest as a festival-to-platform or modest theatrical action-drama."
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "Contained interiors keep the spend in check, but the prison crowd scenes, fight choreography, and multiple company moves push it above micro-budget."
+          "note": "Interior-heavy and VFX-light, but the prison action, fight scenes, and multiple company moves still place it above a microbudget play."
         },
         "cast": {
           "level": "medium",
-          "note": "The lead roles are playable without marquee dependency, but the script needs a specific ethnic mix, a trans supporting role, and a sizable prison ensemble."
+          "note": "The script needs a strong lead trio and a sizable prison ensemble, plus specific ethnic and age casting across the family and gang worlds."
         },
         "location": {
           "level": "medium",
-          "note": "The story is mostly contained, but it moves across jail, courthouse, law offices, homes, apartments, streets, and a market."
+          "note": "The story moves through jail, courtroom, homes, offices, streets, and a market, with several prison-specific spaces carrying the load."
         },
         "content": {
           "level": "high",
-          "note": "Violence, slurs, sexual coercion, prison nudity, and explicit language narrow the lane to mature buyers."
+          "note": "Violence, prison sexual threat, slurs, and explicit language narrow the lane to mature buyers."
         },
         "rights": {
           "level": "medium",
-          "note": "The page names multiple TV shows, brands, and songs that would need clearance review if retained in production dialogue or design."
+          "note": "The script uses multiple named TV, music, and brand references that would need clearance review if retained."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "The prison is the story engine.",
-          "what_it_means": "This gives the project a contained, producible arena where every relationship, threat, and legal move can keep paying off in the same pressure cooker. Buyers who like elevated crime stories with a clear physical world — and actors who want a role that lives inside a system, not just a plot — will respond to that setup.",
-          "evidence": "Section 202, the kick-out system, trustee hierarchy, lock-downs, chow line politics, and the cafeteria eruption all turn the jail into an active narrative machine.",
+          "dimension_or_area": "The prison is a full social machine.",
+          "what_it_means": "That gives a producer a contained, story-generating world with built-in hierarchy, commerce, and conflict, which is exactly what makes a prison feature travel. Buyers who like institutional pressure-cooker stories and directors who can stage ensemble tension in tight spaces will see the value immediately.",
+          "evidence": "Section 202, the yard, the freak tank, trustees, kick-out charts, and the cafeteria all function as distinct social zones.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Quan is a physical lead with moral clarity.",
-          "what_it_means": "The role gives an actor action, vulnerability, and dignity in one package, which is exactly the kind of part that can elevate a genre feature beyond routine crime material. Martial-arts performers, rising Asian-American leads, and actors looking for a breakout showcase would all see a real calling card here.",
-          "evidence": "Quan’s studio training, the store fight, the holding-cell pay phone beat, and the cafeteria showdown all frame him as disciplined, controlled, and dangerous when cornered.",
+          "dimension_or_area": "Quan is an action lead with innocence.",
+          "what_it_means": "The role gives an actor physical authority and emotional vulnerability in the same package, which is a strong casting proposition for a breakout or a reinvention. Action buyers and prestige-minded performers alike can see the appeal of a lead who fights like a weapon but is still pleading to be believed.",
+          "evidence": "Quan's martial arts practice, the store fight, and the cafeteria eruption all play against his repeated insistence that he didn't kill anyone.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Lisa gives the movie its emotional spine.",
-          "what_it_means": "Her move from student-lawyer confidence to full-on family advocate creates a second lead engine that broadens the audience beyond action fans. Female dramatic leads and actors who can play intelligence under pressure will be drawn to a role that is both procedural and personal.",
-          "evidence": "She researches precedent, records testimony, confronts witnesses, and pushes the defense strategy while carrying the emotional burden of her brother’s fate.",
+          "dimension_or_area": "Lisa gives the movie a second engine.",
+          "what_it_means": "Her legal pursuit outside the jail keeps the movie from becoming a single-location bruiser and opens the door to a broader audience that wants procedural momentum as well as action. Female lead actors who want intelligence, urgency, and moral stakes will respond to the part, and buyers get a clean dual-track structure.",
+          "evidence": "Lisa interviews witnesses, challenges the DA, pushes for warrants, and becomes the bridge between Quan and the defense strategy.",
           "source": "script"
         },
         {
-          "dimension_or_area": "English is a compromised adult lead.",
-          "what_it_means": "The script gives a lawyer role with charisma, corruption history, and redemption stakes, which is strong packaging for a seasoned actor who can play charm with rot underneath. Character actors and prestige-friendly leads who like morally tangled men will see a lot to do here.",
-          "evidence": "His affair with Kellerman, his confession to throwing cases, and his decision to take Quan’s defense for revenge all define him as a man trying to reclaim himself.",
+          "dimension_or_area": "English is a compromised insider with teeth.",
+          "what_it_means": "The lawyer role has the kind of moral corrosion and charm that can anchor a mid-budget adult drama, especially for an actor who wants wit, regret, and redemption in one arc. Character-driven buyers and seasoned leading men will recognize the showcase in a man who knows the system and hates what he became inside it.",
+          "evidence": "English's affair with Kellerman, his earlier betrayal of a client, and his eventual decision to fight for Quan all define the arc.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Richards has real mythic presence.",
-          "what_it_means": "He reads like the kind of prison figure who can steal scenes and anchor a whole second act, giving the movie a memorable wildcard. Actors with physical authority and a cool, controlled screen persona will be attracted to the role’s menace and code.",
-          "evidence": "His calm confession about the mob, his prison discipline, and the final cafeteria intervention make him feel larger than the cell block around him.",
+          "dimension_or_area": "The action is grounded in character stakes.",
+          "what_it_means": "The fights are not decorative; they are tied to survival, reputation, and legal consequence, which makes the set pieces feel earned rather than random. That helps the material play to buyers who want action with narrative weight and to directors who prefer choreography that reveals character.",
+          "evidence": "The store fight leads to arrest, the prison brawl triggers an insurrection, and the final cafeteria sequence changes Quan's status in the jail.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ensemble has distinct prison types.",
-          "what_it_means": "The supporting cast is colorful enough to create repeatable tension, humor, and hierarchy inside the jail, which helps the movie feel lived-in rather than functional. Ensemble players and casting directors will have room to build a memorable inmate ecosystem.",
-          "evidence": "Madison, Rix, Pledger, Burke, Oliver, Lance, Benton, Muhammed, and the Plowboyz each have sharply different voices and behaviors.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The legal and prison worlds interlock cleanly.",
-          "what_it_means": "That structure gives the film a commercial advantage because the courtroom stakes and the jailhouse stakes are feeding each other instead of competing. Buyers who want a crime thriller with procedural momentum and action payoff will see a clear lane.",
-          "evidence": "The plea bargain, witness interviews, search warrants, and prison evidence-gathering all directly affect Quan’s fate.",
+          "dimension_or_area": "The script has a clear exploitation-to-prestige bridge.",
+          "what_it_means": "It can sell on prison violence and martial-arts spectacle while still carrying a justice-system argument underneath, which broadens its packaging options. Genre buyers, indie-minded financiers, and actors looking for material with both grit and social charge all have a lane here.",
+          "evidence": "The story moves from gang assault to legal defense to institutional corruption and false imprisonment.",
           "source": "script"
         }
       ],
-      "headline": "This is a clean, commercial crime feature with a strong physical lead, a female co-engine, and a prison world that actually generates story instead of just containing it. The script has the kind of built-in momentum that can play to genre buyers, while still offering actors a showcase in the Quan, Lisa, English, and Richards roles."
+      "headline": "This is a clean, commercial prison-justice feature with a real hook: a disciplined Vietnamese fighter trapped inside a system that wants him convicted, and a sister-lawyer team trying to outmaneuver the machine before the yard kills him. The prison world is vivid enough to feel like a movie on its own, while the legal track and the action track keep the package broad enough for genre buyers and prestige-leaning actors alike."
     },
     "lead_characters": [
       {
         "name": "Joe Quan",
         "role_type": "Lead",
         "demographics": "Male · early 20s · Vietnamese-American",
-        "hook": "Joe is a disciplined martial artist with a quiet streak and a stubborn moral center. He looks like the kind of young man who keeps his head down, but once he’s cornered he becomes all reflex, precision, and pride; the script makes him both vulnerable and physically formidable, which is a strong combination for a breakout lead.",
-        "why_actor_wants_this": "This is the showcase territory of Tony Jaa in *Ong-Bak* — a performer whose body language, fight control, and emotional restraint are the performance. Young action leads, Asian-American actors looking for a star-making role, and martial-arts performers who want dramatic weight will chase this."
+        "hook": "Joe is quiet, disciplined, and physically formidable, but his defining trait is not toughness — it's the stubborn insistence that the truth still matters when everyone around him has already decided otherwise. He moves through the prison like a man trying to keep his dignity intact, and the contrast between his restraint and the violence he can unleash gives him a very specific screen identity.",
+        "why_actor_wants_this": "This is the showcase territory of Tony Jaa in Ong-Bak — a fighter whose body is the language, but whose emotional credibility has to carry the movie too. It gives an actor the rare combination of martial-arts display, innocence under pressure, and a final-act transformation from victim to force of nature."
       },
       {
         "name": "Lisa Quan",
         "role_type": "Lead",
-        "demographics": "Female · early 20s · Vietnamese-American",
-        "hook": "Lisa is smart, ambitious, and emotionally exposed in a way she tries hard to hide. She starts as the family’s legal-minded overachiever and becomes the story’s most relentless advocate, giving her a mix of intelligence, nerve, and sisterly devotion that makes her feel active rather than ornamental.",
-        "why_actor_wants_this": "This is the showcase territory of Jodie Foster in *The Accused* — a woman whose intelligence and conviction become the engine of the story. Young dramatic leads and actors looking to play competence under pressure will see a role that can carry both legal tension and emotional stakes."
+        "demographics": "Female · 20s to early 30s · Vietnamese-American",
+        "hook": "Lisa is the educated sibling who refuses to accept the official story, and the script gives her a mix of intelligence, nerve, and family loyalty that keeps her from reading as a simple helper. She is practical enough to work the law and emotional enough to feel every compromise, which makes her the story's conscience and its pressure valve.",
+        "why_actor_wants_this": "This is the showcase lane of Jodie Foster in The Accused — a woman who has to turn intelligence into action while the room keeps underestimating her. It gives an actress the chance to play legal precision, family devotion, and escalating moral urgency in the same role."
       },
       {
         "name": "Terrance English",
         "role_type": "Lead",
         "demographics": "Male · 30s to 40s · Hispanic",
-        "hook": "English is a polished defense lawyer with a salesman’s charm and a private history of compromise. He’s funny, vain, and morally bruised, but the script gives him a real turn toward conscience, which makes him feel like a man trying to buy back his own soul one case at a time.",
-        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in *The Trial of the Chicago 7* or Paul Newman in *The Verdict* — a charismatic professional whose credibility is tested by his own past. Seasoned leading men and actors who can play wit, regret, and redemption in the same frame will want it."
-      },
-      {
-        "name": "Jacque Richards",
-        "role_type": "Lead",
-        "demographics": "Male · 30s to 40s · white",
-        "hook": "Richards is a cold, self-contained inmate with the aura of someone who has already made peace with violence. He speaks sparingly but carries enormous weight whenever he enters a scene, and the script uses that stillness to make him feel dangerous, intelligent, and strangely principled.",
-        "why_actor_wants_this": "This is the showcase territory of Tom Hardy in *Bronson* — a physically commanding man whose stillness is as expressive as his violence. Actors with a strong physical presence and a taste for controlled menace will be drawn to the role immediately."
+        "hook": "English is polished, verbally agile, and deeply compromised, the kind of lawyer who can charm a room while quietly admitting he sold out his own principles. He carries the movie's adult regret: a man who knows exactly how the system works because he helped make it work badly.",
+        "why_actor_wants_this": "This is the showcase territory of Denzel Washington in Roman J. Israel, Esq. or Michael Keaton in Spotlight-adjacent moral territory — a man whose intelligence is inseparable from his self-disgust. It gives an actor a chance to play wit, seduction, shame, and redemption without ever leaving the legal arena."
       },
       {
         "name": "Nancy Kellerman",
         "role_type": "Supporting",
         "demographics": "Female · 30s to 40s · white",
-        "hook": "Kellerman is a hard-edged district attorney who knows how to weaponize charm, status, and public image. She’s not written as a simple antagonist; she’s a political operator with sexual chemistry, professional confidence, and a ruthless sense of timing.",
-        "why_actor_wants_this": "This is the showcase territory of Glenn Close in *Damages* — a woman who can turn authority into seduction and threat in the same breath. Actors who like sharp, power-forward roles with prestige heat will chase it."
+        "hook": "Kellerman is a hard-charging district attorney who understands power, optics, and leverage, and she uses all three with a cool smile. She is not just an antagonist; she is the face of institutional confidence, which makes her scenes crackle because she never has to raise her voice to dominate the room.",
+        "why_actor_wants_this": "This is the showcase territory of Glenn Close in Damages — a professional who weaponizes composure and turns every conversation into a negotiation. Strong dramatic actresses who like authority, intelligence, and controlled menace will be drawn to it."
       },
       {
         "name": "Simon Firth",
         "role_type": "Supporting",
-        "demographics": "Male · 40s to 50s · white",
-        "hook": "Firth is a successful lawyer whose cynicism has hardened into a kind of weary intelligence. He’s funny, blunt, and deeply compromised, but the script lets him carry both comic bite and genuine remorse, which makes him feel like a man who knows exactly how the machine works because he helped build it.",
-        "why_actor_wants_this": "This is the showcase territory of William H. Macy in *Fargo* or Bryan Cranston in *Your Honor* — a man whose professional polish hides moral collapse. Character actors and prestige TV-to-feature performers will see a juicy, scene-rich role."
+        "demographics": "Male · 40s to 50s · Irish-American",
+        "hook": "Firth is the old friend with a conscience, a lawyer who still has enough decency left to be dangerous to the people around him. He brings blunt humor, wounded loyalty, and the sense that he has seen the whole game and no longer respects it.",
+        "why_actor_wants_this": "This is the showcase territory of Albert Finney in Erin Brockovich or Tom Wilkinson in Michael Clayton — a seasoned professional whose moral fatigue becomes the performance. It gives an actor the chance to play friendship, betrayal, and hard-earned clarity in a single role."
       },
       {
-        "name": "Madison",
+        "name": "Julio Menendez",
         "role_type": "Supporting",
-        "demographics": "Male · 50s to 60s · Black",
-        "hook": "Madison is the prison elder with a dirty sense of humor and a surprisingly tender core. He talks like a guy who has seen everything, but the script gives him warmth, wisdom, and a real paternal bond with Quan, which makes him feel like the cellblock’s emotional ballast.",
-        "why_actor_wants_this": "This is the showcase territory of Morgan Freeman in *The Shawshank Redemption* — a wise inmate whose humor and humanity give the story its soul. Veteran character actors with gravitas and comic timing will want it."
+        "demographics": "Male · 20s to 30s · Latino",
+        "hook": "Menendez is the gang member who keeps trying to impose order on chaos, which makes him both dangerous and strangely readable. He is the one Plowboyz member who can see the legal consequences coming, and that gives him a different temperature from the rest of the crew.",
+        "why_actor_wants_this": "This is the kind of role that plays like Michael Peña in End of Watch — a street-level character with authority, humor, and a live-wire edge. It gives an actor a chance to make a supporting part feel like a real pressure point in the ensemble."
+      },
+      {
+        "name": "Jacque Richards",
+        "role_type": "Lead",
+        "demographics": "Male · 30s to 40s · white",
+        "hook": "Richards is the prison's most dangerous still point: calm, intelligent, and capable of sudden, devastating violence. He reads like a man who has already made peace with his own darkness, which makes him magnetic every time he enters a scene with Quan.",
+        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in The Usual Suspects or Tom Hardy in Bronson-adjacent menace — a character whose stillness is more intimidating than shouting. It gives an actor a chance to play controlled brutality, unexpected loyalty, and a morally ambiguous bond with the lead."
+      },
+      {
+        "name": "Burke Woods",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s to 50s · any ethnicity",
+        "hook": "Burke is the jailhouse economist, the guy who understands the system well enough to explain how inmates are processed like inventory. He has the easy authority of someone who has learned to survive by reading the room faster than everyone else.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the showcase of a prison-wise character like John Turturro in a Coen ensemble — compact, vivid, and memorable in a few scenes. Character actors who can make exposition feel lived-in will want it."
       },
       {
         "name": "Rix",
         "role_type": "Supporting",
         "demographics": "Male · 30s to 40s · white",
-        "hook": "Rix is a jittery, lonely inmate who masks neediness with sarcasm and oddball behavior. He starts as comic texture and becomes unexpectedly poignant, especially in the way he attaches himself to Quan and reveals how prison friendship works as survival.",
-        "why_actor_wants_this": "This is the showcase territory of Steve Buscemi in *Fargo* or *Boardwalk Empire* — a nervous, off-center man whose vulnerability keeps revealing new layers. Character actors who can play awkwardness, pathos, and menace in the same scene will be interested."
-      },
-      {
-        "name": "Pledger",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · white",
-        "hook": "Pledger is a handsome, predatory trustee with a smile that never quite reaches his eyes. He’s the kind of prison operator who can look affable while carrying real danger, which makes him a strong pressure point inside the section.",
-        "why_actor_wants_this": "This is the showcase territory of Billy Zane in *Titanic* or Joffrey-style prestige villainy — charm that curdles into threat. Actors who like sleek antagonists with social power will chase it."
-      },
-      {
-        "name": "Cuauhtemoc Martinez",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · Latino",
-        "hook": "Martinez is the gang’s volatile heavy, funny in a reckless way and dangerous when he’s turned loose. He reads as the kind of guy who wants approval and chaos at the same time, which gives him a memorable, unstable charge.",
-        "why_actor_wants_this": "This is the showcase territory of Benicio del Toro in *Traffic* — a volatile presence who can shift from comic to lethal in a beat. Actors with physicality and unpredictable energy will want the part."
-      },
-      {
-        "name": "Juan Perez",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · Latino",
-        "hook": "Perez is the Plowboyz leader, all swagger, cruelty, and knife-handling confidence. He’s built as a charismatic street predator whose authority comes from performance as much as force, which makes him a vivid antagonist whenever he’s on screen.",
-        "why_actor_wants_this": "This is the showcase territory of Javier Bardem in *No Country for Old Men* — a villain whose calm control makes him more frightening than rage would. Actors who can play menace with style will want to sink into it."
-      },
-      {
-        "name": "Felipe Huerta",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · Latino",
-        "hook": "Huerta is the scarred, thinner Plowboyz member who reads as loyal but easily led. He gives the gang texture and helps make the group feel like a real hierarchy rather than a generic crew.",
-        "why_actor_wants_this": "This is the showcase territory of a strong supporting turn in a crime ensemble like *City of God* — a role that lives through attitude, body language, and group dynamics. Emerging actors looking for a memorable gang-member part will respond to it."
-      },
-      {
-        "name": "Luis Castillo",
-        "role_type": "Supporting",
-        "demographics": "Male · 20s to 30s · Latino",
-        "hook": "Castillo is the quiet one in the gang, the guy whose stillness makes him feel more dangerous than the louder members. He’s observant, calculating, and ultimately decisive, which gives him a sharper edge than a standard henchman role.",
-        "why_actor_wants_this": "This is the showcase territory of a cool, restrained crime-role performance like Michael Peña in *End of Watch* when the character is carrying hidden intent. Actors who play intelligence under pressure will want it."
-      },
-      {
-        "name": "Mr. Quan",
-        "role_type": "Supporting",
-        "demographics": "Male · 50s to 60s · Vietnamese",
-        "hook": "Mr. Quan is a hardworking father whose dignity comes through in small gestures and careful restraint. He’s not a speechmaker, but the script uses him as a moral anchor for the family and a reminder of what Quan stands to lose.",
-        "why_actor_wants_this": "This is the showcase territory of a quiet family patriarch role like the father in *Minari* — a part built on presence, not speeches. Veteran character actors who specialize in grounded domestic authority will be drawn to it."
-      },
-      {
-        "name": "Mrs. Quan",
-        "role_type": "Supporting",
-        "demographics": "Female · 50s to 60s · Vietnamese",
-        "hook": "Mrs. Quan is protective, frightened, and fiercely maternal. Her scenes give the family stakes real emotional weight, especially in the store attack and the aftermath of Joe’s arrest.",
-        "why_actor_wants_this": "This is the showcase territory of a mother role like the one in *The Farewell* — emotional truth carried through reaction and family loyalty. Actors who excel at protective, lived-in domestic work will want it."
-      },
-      {
-        "name": "Agnes Cribb",
-        "role_type": "Supporting",
-        "demographics": "Female · 60s to 70s · white",
-        "hook": "Cribb is a cranky, biased eyewitness whose testimony becomes a legal hinge. She’s vivid, specific, and ugly in a way that makes the courtroom strategy feel concrete rather than abstract.",
-        "why_actor_wants_this": "This is the showcase territory of a sharp character turn like Kathy Bates in *Misery* — a scene-stealing role built on attitude and specificity. Veteran character actresses will enjoy the bite."
+        "hook": "Rix is the anxious, lonely inmate who uses humor and neediness to keep himself from disappearing inside the prison hierarchy. He starts as comic texture and becomes one of the story's most affecting reminders that survival in jail is also about belonging.",
+        "why_actor_wants_this": "This is the showcase territory of Steve Buscemi in a prison ensemble — a vulnerable outsider whose nervous energy becomes part of the movie's emotional fabric. Actors who can balance comedy, pathos, and desperation will see the opportunity immediately."
       },
       {
         "name": "Burke Woods",
         "role_type": "Supporting",
-        "demographics": "Male · 40s to 50s · white",
-        "hook": "Burke is the jailhouse math guy, a practical inmate who understands the kick-out system and can explain the prison’s hidden economy. He gives the world a procedural intelligence that makes the jail feel administratively real.",
-        "why_actor_wants_this": "This is the showcase territory of a smart supporting role in *The Wire* — a man whose expertise makes the world legible. Character actors who can play brains without flash will like it."
-      },
-      {
-        "name": "Burke Woods",
-        "role_type": "Supporting",
-        "demographics": "Male · 40s to 50s · white",
-        "hook": "Burke is the jailhouse math guy, a practical inmate who understands the kick-out system and can explain the prison’s hidden economy. He gives the world a procedural intelligence that makes the jail feel administratively real.",
-        "why_actor_wants_this": "This is the showcase territory of a smart supporting role in *The Wire* — a man whose expertise makes the world legible. Character actors who can play brains without flash will like it."
+        "demographics": "Male · 40s to 50s · any ethnicity",
+        "hook": "Burke is the jailhouse economist, the guy who understands the system well enough to explain how inmates are processed like inventory. He has the easy authority of someone who has learned to survive by reading the room faster than everyone else.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the showcase of a prison-wise character like John Turturro in a Coen ensemble — compact, vivid, and memorable in a few scenes. Character actors who can make exposition feel lived-in will want it."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to stage a prison thriller with real emotional and physical pressure.",
-        "fit_profile": "Mid-career indie directors or first-time feature directors coming out of shorts, music videos, or TV episodes who already lean toward performance-forward crime material. This material rewards clean action geography, ensemble control, and a grounded sense of institutional tension more than glossy spectacle.",
-        "detail": "The movie gives a director a contained world with escalating set pieces, a legal spine, and a final crowd-control sequence that can land hard without VFX. It will attract filmmakers who like character-first genre work and want to prove they can handle action, dialogue, and ensemble blocking in one package."
+        "hook": "A director who wants to stage a prison pressure-cooker without losing the human story.",
+        "fit_profile": "Established indie or mid-budget genre directors with at least one feature under their belt, especially those who like contained ensemble spaces, moral tension, and physical storytelling. This material rewards filmmakers who can balance fight choreography, institutional detail, and performance-forward scenes without turning the movie into pure action.",
+        "detail": "The prison architecture, legal crosscutting, and final cafeteria eruption give a director multiple arenas to build escalating tension. It will attract filmmakers who like to make genre feel adult, grounded, and actor-driven rather than effects-driven."
       },
       "buyer_appeal": {
         "tier": "$5-15M feature",
-        "lane": "streaming crime thriller / prestige genre lane",
-        "detail": "The script can be built around a strong ensemble and a breakout lead without requiring a major star to explain the premise. The prison setting, legal hook, and martial-arts action give it exportable genre value and a clear home on streamers that buy adult crime material."
+        "lane": "premium-cable / streamer crime-drama lane",
+        "detail": "The movie can be packaged around one strong martial-arts lead plus two adult supporting names, so it does not require a giant ensemble of stars to function. The prison setting, legal stakes, and action spine make it exportable to buyers who like contained crime stories with a clear hook and a mature audience."
       }
     },
     "considerations": [
       {
-        "area": "The prison footprint can stay disciplined.",
-        "detail": "The story already lives in a few repeatable spaces — section 202, the yard, the cafeteria, the holding cell, the law offices, and the family store. A next pass could keep those anchors even tighter by letting more of the outside investigation happen through the same few recurring locations, which would protect the momentum and simplify the shoot.",
+        "area": "The legal track can be sharpened around one clean pressure point.",
+        "detail": "The witness work, warrant strategy, plea discussion, and courtroom beats all serve the same goal, so a next pass could consider which of those scenes carries the most emotional turn and let the others support it more lightly. The version where Lisa's agency peaks in one decisive move would make the defense engine feel even more propulsive.",
         "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The prison ensemble is rich enough to simplify.",
+        "detail": "There are a lot of distinct inmates, deputies, and authority figures, and the story already has a strong core in Quan, Lisa, English, Richards, and the Plowboyz. One lever would be to fold a few of the smaller inmate functions together so the audience can track the social map faster without losing the texture.",
+        "is_primary_lever": false,
         "source": "production"
       },
       {
-        "area": "The fight language is the main craft lever.",
-        "detail": "The action is vivid and readable, especially in the store fight and cafeteria sequence, but the script would gain even more force if one or two major confrontations had a sharper emotional turn inside the choreography. What would it look like if the Quan-Perez rivalry or Quan-Richards alliance changed state in the middle of a fight, not just at the end of it?",
+        "area": "The opening assault establishes the movie fast.",
+        "detail": "The gang attack and store robbery are already doing the heavy lifting, but the version where the emotional stakes of Quan's family and the store are seeded even earlier would make the arrest feel even more personal. That would give the later prison and courtroom material an even stronger emotional floor.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "Lisa’s investigation could carry one more signature turn.",
-        "detail": "Her witness work is clear and effective, especially with Cribb and the Castillo search, but the character would pop even more if one scene let her win through a choice only she could make. The version of the script where her legal instinct and family loyalty collide in a single decisive move would deepen her as a co-lead.",
+        "area": "The brand and TV references need a clearance pass.",
+        "detail": "The script names multiple shows, songs, and consumer brands, which is manageable but should be reviewed if the goal is a clean production package. A few substitutions could preserve the period flavor while reducing paperwork.",
         "is_primary_lever": false,
-        "source": "script"
+        "source": "production"
       },
       {
-        "area": "The outside legal pressure can be streamlined.",
-        "detail": "The English-Firth-Kellerman triangle is compelling, but the script has enough moving parts that a future pass could consider folding a beat or two of the office politics into the same confrontation. That would keep the legal engine sharp while preserving the revenge-and-redemption spine.",
-        "is_primary_lever": false,
-        "source": "both"
-      },
-      {
-        "area": "The ensemble is strongest when it stays specific.",
-        "detail": "The prison voices are memorable because each inmate has a distinct rhythm, status, or worldview. A next pass could keep leaning into that specificity in the scenes where the section is just talking, because those exchanges are part of what makes the world feel alive.",
+        "area": "The final release works as a clean payoff.",
+        "detail": "Quan's kick-out and the civil lawsuit tag give the feature a satisfying ending that also opens the door to a broader justice angle. If the goal is a tighter commercial finish, the civil claim could be framed as a button rather than a new runway.",
         "is_primary_lever": false,
         "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 73.3,
+  "weightedScore": 72,
   "tier": "Optionable",
   "inputTokens": 51414,
-  "outputTokens": 5974,
-  "cost": 0.0654435,
+  "outputTokens": 4746,
+  "cost": 0.0599175,
   "declaredFormat": "Feature film"
 }

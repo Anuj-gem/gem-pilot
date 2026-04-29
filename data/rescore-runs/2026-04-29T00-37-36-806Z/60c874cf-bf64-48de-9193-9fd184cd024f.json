@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:10:29.485Z",
+  "submission_id": "60c874cf-bf64-48de-9193-9fd184cd024f",
+  "eval_id": "abd1b63e-9ade-4524-8212-7ac0192d1576",
+  "title": "Heavy 1x01",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Jesse",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · overweight · aspiring actor"
+    },
+    {
+      "name": "Sherri",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s to early 30s"
+    },
+    {
+      "name": "Kayla Gordon",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s"
+    },
+    {
+      "name": "Sarah Gordon",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s"
+    },
+    {
+      "name": "Lauren",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Joseph Camacho",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "Susan Camacho",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    },
+    {
+      "name": "Jarrod",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to early 30s"
+    }
+  ],
+  "positioning_hook": "A broke aspiring actor turns his Uber shift into a desperate rent run, then gets pulled into one disastrous passenger ride that leaves him stranded, humiliated, and unexpectedly hopeful.",
+  "cost_usd": 0.031755,
+  "input_tokens": 16576,
+  "output_tokens": 4294,
+  "status": "wrote:leads_ok"
+}

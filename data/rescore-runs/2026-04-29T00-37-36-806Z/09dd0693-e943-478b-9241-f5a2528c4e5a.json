@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:08:46.323Z",
+  "submission_id": "09dd0693-e943-478b-9241-f5a2528c4e5a",
+  "eval_id": "d85360df-d1ed-449c-9bea-d6d25dca8257",
+  "title": "Firestar",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Karissa Boone",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · white · New England-born ranch mother"
+    },
+    {
+      "name": "Angelique Boone",
+      "role_type": "Lead",
+      "demographics": "Female · 12-13 · child actor"
+    },
+    {
+      "name": "Drew Boone",
+      "role_type": "Lead",
+      "demographics": "Male · 60s-70s · older ranch patriarch"
+    },
+    {
+      "name": "Ted Manning",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · cowboy / ranch hand"
+    },
+    {
+      "name": "Martin Thompson",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · white · menacing drifter / former acquaintance"
+    },
+    {
+      "name": "Ed",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · stable hand"
+    },
+    {
+      "name": "Dr. Black",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · physician"
+    },
+    {
+      "name": "Nora",
+      "role_type": "Supporting",
+      "demographics": "Female horse · mare"
+    },
+    {
+      "name": "Star",
+      "role_type": "Supporting",
+      "demographics": "Male/female seahorse creature · magical animal"
+    }
+  ],
+  "positioning_hook": "A ranch mother protecting her dying daughter’s secret bond with a winged colt must hide a miracle from a predatory ex and the men who want to own it.",
+  "cost_usd": 0.05193974999999999,
+  "input_tokens": 42169,
+  "output_tokens": 4514,
+  "status": "wrote:leads_ok"
+}

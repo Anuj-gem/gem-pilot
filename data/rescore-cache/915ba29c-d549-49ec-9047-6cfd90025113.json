@@ -2,155 +2,120 @@
   "evaluation": {
     "classification": {
       "format": "Feature film",
-      "genre_primary": "Romantic drama",
+      "genre_primary": "Psychological thriller",
       "genre_tags": [
-        "Supernatural",
-        "Psychological thriller"
+        "romantic drama",
+        "supernatural"
       ],
-      "tone": "Grounded, eerie, and satirical with a slow-burn romantic unease"
+      "tone": "Grounded, eerie, satirical, and increasingly unsettling"
     },
-    "positioning_hook": "A quarantined young woman with telekinetic powers falls for a charming online suitor who shares her gift — and slowly reveals a hunger for control.",
+    "positioning_hook": "A quarantined Vegas woman with telekinetic powers falls for an online suitor who shares her gift — then discovers he’s grooming her for something darker.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 6,
-        "reasoning": "The premise has a clean emotional engine — lonely quarantine romance colliding with supernatural ability — that is easy to explain and easy to market. Its audience is real, especially for viewers drawn to offbeat relationship stories with a darker turn, though the very specific pandemic-era setting narrows the lane."
+        "reasoning": "The premise has a clean, easy-to-sell engine: quarantine isolation, online romance, and psychic powers colliding in a Vegas setting. The appeal is real, though the script’s specific voice and satirical edge make it feel more targeted than four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 7,
-        "reasoning": "The hook lands early: Joy is isolated, meets Rob online, and discovers they both have powers. The story engine is legible in the opening pages and the eventual turn toward manipulation gives the premise a clear directional pull."
+        "reasoning": "The hook lands early with Joy texting a stranger about her telekinesis and learning he has the same ability. The story engine stays legible through the park fountain scene, the church consultation, and the late-turn reveal that Rob’s worldview is turning predatory."
       },
       "character_appeal_and_long_term_potential": {
         "score": 6,
-        "reasoning": "Joy has a sympathetic core in her longing for love, her faith conflict, and her physical vulnerability, while Rob has a seductive surface that gradually darkens. The characters are functional and playable, though the script leans more on the premise than on deeply layered interiority."
+        "reasoning": "Joy has a strong emotional center as a lonely, devout daughter desperate to be chosen, and Rob has a slippery charisma that keeps him watchable. The supporting players are vivid in moments, but the script is most alive when those two are in the room together."
       },
       "creative_originality_and_boldness": {
         "score": 7,
-        "reasoning": "The combination of quarantine-era courtship, telekinesis, and religious framing gives the script a distinct angle that feels specific to its moment. The boldest choice is how ordinary domestic details — masks, toilet paper lines, vaccines, church closure — are folded into a supernatural romance."
+        "reasoning": "The quarantine-era courtship, psychic powers, and evangelical household create a specific collision that feels authored rather than assembled. The script’s willingness to play the pandemic as lived-in social texture, not just backdrop, gives it a distinct angle."
       },
       "narrative_momentum_engagement": {
         "score": 6,
-        "reasoning": "The story moves steadily through the online courtship, first meeting, family introductions, and the fountain sequence, with a clear escalation into Rob’s controlling energy. The middle section is more conversational than propulsive, but the Rob/Joy dynamic keeps the pages moving."
+        "reasoning": "The script moves steadily through meet-cute, family introduction, and power-testing escalation, with the fountain sequence giving the story a clear midstream lift. The final stretch is most compelling when Rob’s ideology sharpens, though the overall drive is more gradual than propulsive."
       },
       "resonant_originality": {
         "score": 7,
-        "reasoning": "It feels like a familiar romance setup until the script reveals that the shared gift is also a shared appetite for power. That turn gives the material an 'of course this exists' quality, especially because the pandemic isolation makes the emotional dependency feel immediate."
+        "reasoning": "A psychic romance inside quarantine is fresh, and the script finds an immediately understandable emotional shape inside that novelty. The Rob/Joy dynamic becomes more interesting as the story reveals that their shared power is also a shared appetite for control."
       },
       "world_density_and_texture": {
         "score": 6,
-        "reasoning": "The Vegas quarantine world has recognizable texture: closed churches, reopened casinos, vaccine lines, mask etiquette, and the social weirdness of public scarcity. The setting is vivid enough to support the story, though it functions more as a lived-in container than a fully generative system."
+        "reasoning": "The Vegas quarantine, church culture, comic-book-store ecosystem, and pandemic shopping rituals give the script a recognizable social world. It’s specific enough to feel lived in, though the world functions more as a container for the central relationship than as a fully layered system."
       },
       "tonal_specificity": {
         "score": 7,
-        "reasoning": "The script has a very particular tonal blend: earnest Christian domesticity, awkward online romance, and a creeping sense that something is off about the boy next door. The comic details around masks, shopping, and family banter keep the tone from flattening into pure dread."
+        "reasoning": "The tone blends deadpan pandemic absurdity, evangelical sincerity, and creeping menace in a way that feels identifiable. The store lines, mask jokes, and Pastor Jack scenes give the script a comic surface that keeps curdling underneath."
       },
       "latent_depth_slow_burn_potential": {
         "score": 6,
-        "reasoning": "Beneath the romance is a clear thematic current about loneliness, faith, power, and the seduction of being 'special.' The script hints at deeper psychological territory through Rob’s fatherlessness, Joy’s father loss, and Elaine’s religious worldview, though the draft mostly keeps those ideas on the surface."
+        "reasoning": "There are deeper currents around faith, loneliness, power, and self-invention, and the script keeps hinting that Joy’s need to be seen is the real engine. The material suggests more beneath the surface, especially once Rob starts speaking in superiority language."
       },
       "relationship_density_and_ensemble_engine": {
         "score": 6,
-        "reasoning": "Joy/Elaine and Rob/Viv give the script two solid family dynamics, and Dwayne adds a useful pressure point that externalizes Rob’s history. The relationships are effective and playable, though the story still lives primarily on the central couple rather than a broader ensemble web."
+        "reasoning": "Joy/Elaine, Rob/Viv, and Joy/Rob all have usable chemistry, and the family pairings create a workable web. Still, the script is fundamentally driven by one central romance and its surrounding satellites rather than a truly combinatorial ensemble."
       }
     },
     "production_reality": {
       "cast": {
         "speaking_roles": 7,
         "leads": 4,
-        "series_regulars": 0,
+        "series_regulars": 3,
         "child_actors": false,
         "casting_characteristics": [
-          "Two lead couples/family units drive the story",
-          "Joy is written as physically fragile with breathing issues",
-          "Dwayne is described as a very large, intimidating man",
-          "Pastor Jack is an older widower with a polished church persona"
+          "Two lead roles built around strong chemistry and tonal control",
+          "Supporting roles include Pastor Jack, Dwayne, Jill, and store clerks",
+          "Joy is 23; Rob appears similar age; Elaine and Viv are middle-aged"
         ]
       },
       "locations": {
-        "distinct_count": 12,
-        "interior_exterior_ratio": "roughly 60/40",
-        "period_or_contemporary": "Contemporary",
+        "distinct_count": 11,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
         "notable_requirements": [
           "Las Vegas exteriors",
-          "House interiors for two family homes",
-          "Comic book store",
-          "Church office and church exterior",
-          "Drugstore/pharmacy vaccination area",
-          "Park/lake setting",
-          "Movie theater",
-          "Grocery/store interiors"
+          "grocery/store interiors",
+          "church office and sanctuary",
+          "comic book store",
+          "park/lakeside setting",
+          "house interiors for both families"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Telekinetic effects on a pencil cup, fountain, and Dwayne's ankle; all appear achievable with modest practical/VFX support.",
+        "vfx_details": "Telekinetic effects on small objects and the fountain topple can be handled with practical/VFX augmentation.",
         "stunts_level": "minor",
-        "sfx_needs": "Practical crowd reaction beats, fountain topple, and simple injury effects.",
+        "sfx_needs": "Practical effects for object movement, fountain eruption/topple, and a few physical reactions.",
         "night_shoots": "minimal",
         "animals": false
       },
       "rights_flags": [
         {
           "type": "brand",
-          "detail": "Tunnels to Towers"
-        },
-        {
-          "type": "brand",
-          "detail": "Mazda"
-        },
-        {
-          "type": "brand",
-          "detail": "KFC"
-        },
-        {
-          "type": "brand",
-          "detail": "Spider-Man"
-        },
-        {
-          "type": "brand",
-          "detail": "Galactus"
-        },
-        {
-          "type": "brand",
-          "detail": "Daffy"
-        },
-        {
-          "type": "brand",
-          "detail": "Donald"
-        },
-        {
-          "type": "brand",
-          "detail": "Big Gulp"
-        },
-        {
-          "type": "brand",
-          "detail": "Jesus, don't leave home without him"
+          "detail": "Tunnels to Towers, Wal-Mart, Skype, KFC, Mazda, Big Gulp, Spider-Man, Daffy, Donald, Galactus, and Jesus bumper-sticker language are all named on the page."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "Streaming or premium cable feature lane with indie-thriller and relationship-drama appeal",
-        "content_level": "PG-13 equivalent to mature",
-        "series_engine_or_release_model": "Festival-to-platform or streamer original feature; the release model benefits from a contained cast, contemporary setting, and a hook that can be sold in one sentence."
+        "recommended_lane": "Streaming original or festival-to-platform feature",
+        "content_level": "PG-13 equivalent with some mature language and thematic menace",
+        "series_engine_or_release_model": "Feature release model; best suited to festival launch or streamer acquisition rather than wide theatrical play."
       },
       "risk_rubric": {
         "cost": {
           "level": "low",
-          "note": "Contemporary homes, a few public interiors, and modest telekinesis effects keep the budget in a contained feature range."
+          "note": "Contemporary, mostly domestic locations with modest effects and no large-scale action keep the budget in a contained feature lane."
         },
         "cast": {
           "level": "medium",
-          "note": "The story depends on four central roles with distinct casting energy, plus a few memorable supporting players like Dwayne, Jill, Elaine, Viv, and Pastor Jack."
+          "note": "The project depends on two charismatic leads with strong chemistry, plus several supporting roles that need precise comic and dramatic timing."
         },
         "location": {
           "level": "medium",
-          "note": "The script moves through about a dozen contemporary locations, but most are ordinary interiors and exteriors that can be scheduled efficiently."
+          "note": "The story moves through homes, stores, church spaces, a park, and Las Vegas exteriors, but all are accessible contemporary locations."
         },
         "content": {
           "level": "medium",
-          "note": "Religious conflict, body-shaming language, and a late psychological turn keep it above family level without pushing into explicit territory."
+          "note": "Psychic violence, religious conflict, and pandemic-era anxiety give the material some edge, but it stays within a broadly accessible feature range."
         },
         "rights": {
           "level": "medium",
-          "note": "Several named brands and pop-culture references are woven into dialogue and props, including Tunnels to Towers, Mazda, KFC, Spider-Man, and Galactus."
+          "note": "The script names multiple brands, organizations, and pop-culture references that would need clearance review in production."
         }
       }
     },
@@ -158,129 +123,136 @@
       "strengths": [
         {
           "dimension_or_area": "The quarantine setting is story-active.",
-          "what_it_means": "The pandemic rules are not just backdrop; they create the isolation, awkward courtship, and public panic that make the romance and the powers feel socially charged. Buyers looking for a contemporary feature with an instantly legible world hook will see a contained concept that can be sold in a sentence.",
-          "evidence": "Mask mandates, closed churches, toilet paper lines, vaccination queues, and the public reaction to Joy's collapse all drive the plot.",
+          "what_it_means": "The pandemic isn’t just atmosphere here; it creates the isolation, social friction, and online intimacy that make the romance engine work. That gives buyers a timely hook without requiring a giant world-build, and it will appeal to streamer audiences that respond to recognizable lived-in context.",
+          "evidence": "The opening quarantine broadcast, the masked grocery-store breakdown, and the repeated restrictions on gathering all shape how Joy and Rob connect.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Joy is built around longing and contradiction.",
-          "what_it_means": "She gives the movie a sympathetic center that can carry both romance and dread, which is exactly what makes a contained feature playable. Young actresses who can balance innocence, comic timing, and emotional fragility will see a showcase role here, and indie buyers will see a lead who can anchor the whole film.",
-          "evidence": "Joy is 23, physically vulnerable, devoutly shaped by her mother, and desperate to be chosen by Rob.",
+          "dimension_or_area": "Joy is a playable lead role.",
+          "what_it_means": "Joy’s mix of loneliness, faith, embarrassment, and longing gives an actress a role that can play innocence and dread in the same scene. That’s the kind of part that attracts young dramatic leads looking for a festival-facing showcase with emotional range.",
+          "evidence": "Joy’s private texting, her panic in the store, and her desperate insistence that Rob “believes in me” all define her.",
           "source": "script"
         },
         {
-          "dimension_or_area": "Rob’s charm curdles in a controlled way.",
-          "what_it_means": "The script gives the buyer a male lead who can start as a romantic draw and end as a menace, which broadens the audience promise beyond a simple love story. Actors who play charismatic volatility — the kind of part that lets them turn from flirtation to threat in the same scene — will chase this.",
-          "evidence": "Rob is playful on the tablet, tender at the park, then increasingly ideological and possessive after the fountain sequence.",
+          "dimension_or_area": "Rob has a slippery, watchable edge.",
+          "what_it_means": "The script gives a performer a character who can read as charming, wounded, and quietly authoritarian in the same breath. That creates a strong casting magnet for actors who want a role that can pivot from romantic lead energy into something far more dangerous.",
+          "evidence": "Rob’s playful banter, his fascination with power, and his duck speech all point toward a darker worldview.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The family dynamics have commercial texture.",
-          "what_it_means": "Joy/Elaine and Rob/Viv give the film two domestic engines, which helps the story feel bigger than the central romance and gives the movie multiple emotional entry points. Character actors who specialize in warm, sharp, or slightly off-kilter parental energy will be drawn to those roles.",
-          "evidence": "Elaine's faith-based concern, Viv's ex-showgirl wit, and the dinner-table scenes all create distinct home worlds.",
+          "dimension_or_area": "The faith dynamic gives the story a clean collision.",
+          "what_it_means": "Elaine and Pastor Jack create a built-in moral framework that makes Joy’s secret feel consequential rather than decorative. That opens the door for faith-adjacent audiences and gives the project a sharper identity than a standard paranormal romance.",
+          "evidence": "Elaine calls the gift satanic, while Pastor Jack offers prayer and exorcism with a straight face.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The telekinesis is modest but memorable.",
-          "what_it_means": "The powers are staged in a way that keeps the movie producible while still giving it a supernatural hook that can travel in marketing. A director who likes performance-first genre with a few clean effects beats will see a practical path to making this feel bigger than its footprint.",
-          "evidence": "The pencil cup, the fountain, and Dwayne's ankle are the main visible manifestations of the gift.",
-          "source": "both"
+          "dimension_or_area": "The comic-book-store world adds texture.",
+          "what_it_means": "The Zap Comix material gives the script a specific subculture and a visual setting that feels contemporary without being generic. That kind of texture helps a buyer see the movie as a lived-in indie with a recognizable audience lane.",
+          "evidence": "Rob’s history with Dwayne, the racks of comics, and the family tension inside the store all give the location narrative function.",
+          "source": "script"
         },
         {
-          "dimension_or_area": "The script has a clean tonal signature.",
-          "what_it_means": "It can sit in the lane of adult genre romance with a religious and psychological edge, which makes it easier to position than a purely abstract supernatural drama. Buyers who program elevated genre, faith-adjacent material, or offbeat relationship features will recognize the lane immediately.",
-          "evidence": "Church talk, online dating, comic-book banter, and a creeping power dynamic all coexist in the same scenes.",
+          "dimension_or_area": "The fountain sequence is a clean escalation beat.",
+          "what_it_means": "The shared telekinesis moment turns the premise from flirtation into action and gives the movie a mid-story set piece that is easy to market in a trailer. It also signals to genre buyers that the script knows how to pay off its supernatural promise without needing a giant effects budget.",
+          "evidence": "Joy and Rob topple the taped-off fountain together and immediately reframe themselves as a special pair.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family pairings are commercially useful.",
+          "what_it_means": "Joy/Elaine and Rob/Viv create two distinct mother-child dynamics that can carry scenes independently and give the movie more than one emotional register. That helps the project play to actors who like ensemble-adjacent features and to buyers who want relationship material alongside the genre hook.",
+          "evidence": "Elaine’s protective faith and Viv’s streetwise skepticism both shape how the romance is received.",
           "source": "script"
         }
       ],
-      "headline": "This is a contained, contemporary feature with a clear hook: a quarantined young woman falls for a man who shares her telekinetic gift, only to discover that being 'special' can be a trap. The script has a marketable blend of romance, faith tension, and psychological unease, with enough production control to make it attractive to indie and streamer buyers alike."
+      "headline": "This is a contained, character-forward supernatural romance with a sharp quarantine-era hook and a genuinely unsettling turn underneath it. The script’s best asset is the way it turns a simple online meet-cute into a story about power, faith, and who gets to define what makes someone “special.”"
     },
     "lead_characters": [
       {
+        "name": "JOY",
+        "role_type": "Lead",
+        "demographics": "Female · 23 · contemporary Las Vegas resident",
+        "hook": "Joy is a lonely, devoutly raised young woman whose telekinesis is matched only by her hunger to be chosen. She’s awkward, romantic, and emotionally porous, but she also has a stubborn streak that shows up whenever her mother, her faith, or her own body tells her to shrink.",
+        "why_actor_wants_this": "This is the showcase territory of Saoirse Ronan in Lady Bird or Jessie Buckley in I’m Thinking of Ending Things — a young woman whose inner life is doing the heavy lifting even when she’s trying to appear composed. The role gives an actress the chance to play yearning, embarrassment, spiritual conflict, and supernatural power in one contained feature lead."
+      },
+      {
         "name": "ROB",
         "role_type": "Lead",
-        "demographics": "Male · 20s",
-        "hook": "Rob is a charming, underemployed drifter with comic-book taste, a wounded family history, and a talent for making himself seem like the smartest person in the room. He starts as the ideal online boyfriend and gradually reveals a colder worldview, using intimacy, ideology, and shared power to pull Joy closer.",
-        "why_actor_wants_this": "This is the showcase territory of Jake Gyllenhaal in Nightcrawler — a magnetic, slippery presence whose appeal is inseparable from the danger underneath it. Actors who want to play seduction, menace, and self-mythology in one role will see a juicy turn here."
+        "demographics": "Male · 20s · contemporary Las Vegas resident",
+        "hook": "Rob is a charming, self-mythologizing drifter with a comic-book-store past, a grievance against the world, and a growing belief that he and Joy are above ordinary people. He can sound playful and wounded in one beat and then slide into something cold, superior, and controlling the next.",
+        "why_actor_wants_this": "This is the showcase territory of Jake Gyllenhaal in Nightcrawler or Barry Keoghan in The Killing of a Sacred Deer — a man whose charisma is inseparable from menace. It gives an actor the chance to weaponize charm, play ideological seduction, and reveal a darker engine gradually rather than all at once."
       },
       {
         "name": "ELAINE",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-50s",
-        "hook": "Elaine is Joy's mother, a born-again Christian widow who carries herself with practical warmth and a steady moral center. She is loving, a little old-fashioned, and quietly funny, but she also has the authority of someone who has already survived loss and knows how to keep a house and a daughter together.",
-        "why_actor_wants_this": "This is the kind of grounded maternal role that gave Patricia Clarkson in Pieces of April and Laurie Metcalf in Lady Bird room to be funny, tender, and emotionally exact without ever becoming ornamental. Character actresses who can make faith, fatigue, and maternal instinct feel lived-in will want this."
+        "demographics": "Female · 40s-50s · born-again Christian mother",
+        "hook": "Elaine is Joy’s practical, faith-driven mother, a widow who carries grief with discipline and tries to keep her daughter’s life pointed toward safety, decency, and God. She’s funny in a dry, no-nonsense way, but her real power is the steadiness with which she absorbs chaos and keeps going.",
+        "why_actor_wants_this": "This is the showcase territory of Patricia Clarkson in Pieces of April or Laurie Metcalf in Lady Bird — a mother who can be comic, exasperated, and deeply loving without ever becoming soft-focus. Character actresses who can play authority with warmth will see a role that anchors the movie’s moral center."
       },
       {
         "name": "VIV",
         "role_type": "Supporting",
-        "demographics": "Female · 40s-50s",
-        "hook": "Viv is Rob's mother, an ex-showgirl turned working-class survivor with a cigarette, a drink, and a sharp tongue. She is worldly, amused, and more perceptive than she first appears, giving the film a brassy counterweight to Elaine's piety.",
-        "why_actor_wants_this": "This is the kind of scene-stealing mother role that gave Frances McDormand in Almost Famous and Margo Martindale in The Americans room to be funny, bruised, and unexpectedly tender. Veteran character actresses who can play wit as armor will be drawn to her."
+        "demographics": "Female · 40s-50s · ex-showgirl / waitress",
+        "hook": "Viv is Rob’s cigarette-smoking, hard-earned, streetwise mother, a woman who has seen enough life to recognize a con but still wants her son to come home whole. She’s bawdy, funny, and skeptical, with a lived-in toughness that makes her scenes pop immediately.",
+        "why_actor_wants_this": "This is the showcase territory of Frances McDormand in Nomadland or Melissa Leo in Frozen River — a woman whose authority comes from survival, not polish. It’s a strong part for an actress who can make a few scenes feel like a whole life."
       },
       {
         "name": "DWAYNE ALVEREZ",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-40s · Hispanic",
-        "hook": "Dwayne is Rob's hulking half-brother and the comic book store clerk who knows exactly how much trouble Rob has caused. He is intimidating, blunt, and physically imposing, but the script also gives him a brotherly frustration that makes him more than a simple obstacle.",
-        "why_actor_wants_this": "This is the kind of bruised, funny supporting role that gave Michael Peña in End of Watch and John Ortiz in Silver Linings Playbook room to dominate scenes with attitude and heart. Actors who can play size, authority, and wounded loyalty will want it."
-      },
-      {
-        "name": "JILL",
-        "role_type": "Supporting",
-        "demographics": "Female · 20s",
-        "hook": "Jill is Joy's blunt, internet-savvy best friend, the voice of caution and sexual candor in a story otherwise full of romantic idealism. She functions as Joy's reality check, but she also gives the movie a modern, conversational texture through the text exchanges.",
-        "why_actor_wants_this": "This is the kind of sharp best-friend role that gave Beanie Feldstein in Booksmart and Zoey Deutch in Set It Up room to land jokes while steering the emotional temperature. Young comic actresses who can make exposition feel like personality will chase it."
+        "demographics": "Male · 30s-40s · hulking Hispanic comic-book-store clerk",
+        "hook": "Dwayne is Rob’s physically imposing half-brother and the one person who can puncture Rob’s self-mythology with ease. He’s blunt, territorial, and funny in a rough-edged way, with a built-in volatility that makes every scene feel like it could tip.",
+        "why_actor_wants_this": "This is the showcase territory of John Goodman in Barton Fink or Walton Goggins in The Righteous Gemstones — a big personality who can be comic, threatening, and unexpectedly human. Actors who like scene-stealing supporting roles with physical presence will chase it."
       },
       {
         "name": "PASTOR JACK",
         "role_type": "Supporting",
-        "demographics": "Male · 50s-60s",
-        "hook": "Pastor Jack is the church's polished widower with a soft voice, a strategic smile, and a talent for making everything sound spiritually useful. He is not a cartoon villain; he is a smooth institutional presence who knows how to absorb a revelation without ever losing his composure.",
-        "why_actor_wants_this": "This is the kind of quietly controlling authority role that gave Michael Stuhlbarg in Call Me by Your Name and Paul Sparks in Boardwalk Empire room to be charming, ambiguous, and faintly unsettling. Actors who specialize in calm menace or polished duplicity will be interested."
+        "demographics": "Male · 50s-60s · pastor",
+        "hook": "Pastor Jack is the polished, self-assured church leader who speaks in reassurance while quietly enjoying the optics of any attention his congregation can get. He’s not a cartoon villain; he’s a smiling institutional presence who knows how to sound holy and opportunistic at once.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in Breaking Bad’s early moral-mask scenes or Michael Stuhlbarg in a prestige drama — a man whose charm is part of the performance. Character actors who enjoy playing subtext under civility will be drawn to it."
+      },
+      {
+        "name": "JILL",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s · Joy’s online best friend",
+        "hook": "Jill is Joy’s blunt, digitally fluent confidante, the friend who sees through the romance faster than Joy does and says what everyone else is thinking. She functions as comic relief and warning system, but she also gives the story a younger, more contemporary voice.",
+        "why_actor_wants_this": "This is the showcase territory of Beanie Feldstein in a sharp supporting best-friend role — fast, funny, and emotionally legible in a few scenes. It’s a good fit for a young comic actress who can make exposition feel like personality."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make a relationship thriller out of quarantine loneliness and spiritual longing.",
-        "fit_profile": "Second- or third-feature directors with festival experience, especially those who have already shown restraint, close-up performance control, and comfort with contemporary social unease. This material rewards a filmmaker who can keep the supernatural beats intimate and let the emotional turn do the heavy lifting.",
-        "detail": "The movie lives or dies on tone, not scale, so the right director gets to build tension out of text messages, family dinners, and small telekinetic reveals. That is catnip for directors who want a contained feature that still feels like a calling-card genre piece."
+        "hook": "A director who wants to make a romance that slowly reveals itself as a power story.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, especially those comfortable balancing intimacy, irony, and unease. The material rewards directors who care about performance-first storytelling, tonal control, and letting a genre premise curdle from the inside.",
+        "detail": "The best version of this movie lives in small behavioral turns: a glance at a tablet, a church conversation, a grocery-store humiliation, a fountain set piece that changes the emotional temperature. A director with a strong eye for actors and social texture can make the movie feel both intimate and commercially legible."
       },
       "buyer_appeal": {
         "tier": "$2-5M feature",
-        "lane": "Contained elevated genre / indie romance-thriller lane",
-        "detail": "The cast can be anchored by one or two recognizable faces, but the script does not require star-level spectacle to function, which helps packaging at the indie level. The quarantine-era hook and modest effects footprint make it a clean fit for streamers and festival-to-platform buyers looking for a contemporary, easy-to-sell feature."
+        "lane": "Streamer-friendly elevated genre with faith-adjacent and relationship-drama crossover",
+        "detail": "It can be packaged around two breakout-capable leads and a modest supporting ensemble, with the telekinesis effects kept small enough to stay inside an indie budget. The quarantine hook, psychic romance, and Vegas setting give it a timely, exportable premise that can travel well on streaming and festival discovery."
       }
     },
     "considerations": [
       {
-        "area": "Rob’s turn wants one more visible step.",
-        "detail": "The script already gives him a clean slide from charming dater to ideological manipulator, and the fountain sequence is the right pivot point. One lever would be to let the earlier park and bus-stop scenes carry a slightly sharper hint of his appetite for control so the final reveal lands with even more inevitability.",
+        "area": "The middle leans on repeated texting exchanges.",
+        "detail": "A next pass could vary the middle stretch by letting one or two of the tablet conversations turn into physical encounters or sharper reversals sooner. The emotional information is already strong; the version where some of it arrives through action would keep the romance from feeling too screen-bound.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "Joy’s faith conflict can be foregrounded sooner.",
-        "detail": "Her mother and Pastor Jack establish the religious world clearly, and Joy’s 'gift of Satan' conversation is a strong scene. A next pass could let one earlier exchange or private beat show Joy actively wrestling with belief before Rob starts reframing the power for her.",
+        "area": "Rob’s turn could be seeded a touch earlier.",
+        "detail": "The duck speech and the superiority language land well, and the movie would gain even more charge if that worldview were hinted at in one earlier, smaller beat. What would it look like if the charm carried a faint edge from the start so the later reveal feels inevitable rather than newly introduced?",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The text-message scenes carry the engine.",
-        "detail": "The screenplay’s most distinctive rhythm lives in the tablet exchanges, where attraction, insecurity, and manipulation all travel through the same interface. Protecting that device and varying the emotional turns inside it will keep the feature feeling contemporary and lean.",
+        "area": "The brand and reference load is noticeable.",
+        "detail": "The script names a lot of recognizable entities — Wal-Mart, Skype, KFC, Mazda, Spider-Man, Galactus, Tunnels to Towers, and more — so a production pass would want to decide which references are essential and which can be generalized. That simplification would protect clearance time without changing the story’s core social texture.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The supporting world is strongest when it stays specific.",
+        "detail": "The comic-book store, church office, and grocery-store lines all feel vivid because they are grounded in behavior rather than explanation. A next pass could keep leaning into those concrete social details instead of broadening the world, which would preserve the movie’s intimate scale.",
         "is_primary_lever": false,
         "source": "script"
-      },
-      {
-        "area": "The location footprint is already efficient.",
-        "detail": "Most of the story lives in homes, a park, a store, a church office, and one comic shop, which keeps the production in a manageable contemporary lane. If a producer wanted to simplify further, the movie could likely absorb one of the retail stops without losing the core romance or the power escalation.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The brand references should be cleared early.",
-        "detail": "Tunnels to Towers, Mazda, KFC, Spider-Man, Galactus, Daffy, Donald, and Big Gulp all appear as named references or props. A packaging pass should decide which of those are essential to the voice and which can be generalized to keep the clearance path clean.",
-        "is_primary_lever": false,
-        "source": "production"
       }
     ],
     "craft_note": ""
@@ -288,7 +260,7 @@
   "weightedScore": 63.3,
   "tier": "Optionable",
   "inputTokens": 24535,
-  "outputTokens": 4464,
-  "cost": 0.03848925,
+  "outputTokens": 4255,
+  "cost": 0.037548750000000006,
   "declaredFormat": "Feature film"
 }

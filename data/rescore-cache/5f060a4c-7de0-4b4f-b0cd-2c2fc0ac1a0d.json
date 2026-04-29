@@ -4,53 +4,53 @@
       "format": "Feature film",
       "genre_primary": "Drama",
       "genre_tags": [
-        "Biographical",
-        "Sports",
-        "Psychological thriller"
+        "biographical",
+        "sports",
+        "psychological thriller"
       ],
-      "tone": "Grounded, tense, unsettling, tragic"
+      "tone": "Gritty, tense, tragic, and psychologically charged"
     },
-    "positioning_hook": "Olympic wrestler Mark Schultz accepts a billionaire patron’s dream training camp, only to find the real match is for his brother, his identity, and his sanity.",
+    "positioning_hook": "An Olympic wrestling champion accepts a billionaire patron’s offer to build a dream team, only to find the real contest is for his brother’s loyalty and his own sanity.",
     "scores": {
       "audience_appeal_marketability": {
         "score": 7,
-        "reasoning": "The hook is immediately legible: an Olympic champion, a wealthy patron, and a brotherly rivalry that turns poisonous. The material has prestige-drama appeal with true-story recognition, though the audience is more adult and awards-facing than four-quadrant."
+        "reasoning": "The premise has immediate prestige appeal: Olympic glory, a billionaire patron, and a true-story descent into obsession. The audience is clear for adult drama, awards-minded buyers, and sports-story viewers, though the material is more intense and specialized than four-quadrant."
       },
       "conceptual_hook_clarity": {
         "score": 8,
-        "reasoning": "The premise lands early and cleanly: Mark Schultz is recruited into Foxcatcher, then pulled into a triangle with du Pont and Dave that keeps tightening. The story engine is easy to explain in a sentence and the escalation is built into the setup."
+        "reasoning": "The hook lands early and cleanly: Mark Schultz is recruited by John du Pont to train at Foxcatcher, and the story engine becomes the pressure on Mark’s bond with Dave. The script keeps the central triangle legible even as it widens into institutional and psychological territory."
       },
       "character_appeal_and_long_term_potential": {
         "score": 8,
-        "reasoning": "Mark is a vivid lead: ferocious, needy, proud, and emotionally dependent on his brother, which gives the role real acting range. Dave is equally strong as the calm center, and du Pont is a singularly watchable presence whose neediness curdles into menace."
+        "reasoning": "Mark, Dave, and du Pont are all sharply defined through behavior: Mark’s hunger and insecurity, Dave’s calm authority, and du Pont’s neediness dressed as power. The brother dynamic and du Pont’s fixation give the film durable emotional voltage beyond the sports plot."
       },
       "creative_originality_and_boldness": {
         "score": 8,
-        "reasoning": "The script turns an Olympic sports story into a study of power, dependency, and male longing, with a tone that keeps shifting from absurd to ominous. The Foxcatcher estate, the documentary framing, and the du Pont dynamic give it a distinct authorial stamp."
+        "reasoning": "The script turns a sports biopic into a study of dependence, class, and control, with Foxcatcher itself becoming a pressure cooker rather than a backdrop. The tonal choice to play the material with restraint, dread, and dark absurdity gives it a distinctive identity."
       },
       "narrative_momentum_engagement": {
-        "score": 8,
-        "reasoning": "The script keeps adding pressure: the training camp, the brother split, the control games, the documentary, the security lockdown, and the final rupture. Each major sequence changes the balance of power and pushes the story toward an ending that feels inevitable."
+        "score": 7,
+        "reasoning": "The story moves with strong forward pull from recruitment to training to Olympic stakes to collapse, and each major turn changes the power balance. The middle section is deliberately patient, but the escalation through du Pont’s behavior and Mark’s unraveling keeps the film engaged."
       },
       "resonant_originality": {
         "score": 8,
-        "reasoning": "A wrestling drama becomes a story about patronage, emotional captivity, and American self-mythology, which feels fresh and immediately understandable. The du Pont character is the kind of real-life figure who gives the movie its own identity beyond the sports genre."
+        "reasoning": "A wrestling champion being emotionally and financially absorbed by a lonely heir who wants to become his coach is a fresh, instantly graspable dramatic engine. The brotherhood, patronage, and patriotism elements collide in a way that feels specific to this story rather than generic to the genre."
       },
       "world_density_and_texture": {
         "score": 8,
-        "reasoning": "The wrestling world is specific, procedural, and socially legible: clinics, weigh-ins, team politics, Olympic bureaucracy, and the Foxcatcher compound all feel lived-in. The estate itself becomes an ecosystem with its own hierarchy, rituals, and surveillance."
+        "reasoning": "The world of elite wrestling, private patronage, Olympic bureaucracy, and Foxcatcher’s estate is richly textured and story-generating. The estate, gym, hotel rooms, and tournament spaces all feel like parts of a closed ecosystem with its own rules and hierarchy."
       },
       "tonal_specificity": {
-        "score": 9,
-        "reasoning": "The script has a very particular tonal blend: deadpan awkwardness, athletic intensity, class unease, and slow-burn dread. Scenes like the school speech, the Arby’s exchange, and the trophy-room celebration all carry the same uneasy signature."
+        "score": 8,
+        "reasoning": "The script has a very identifiable tone: controlled, ominous, and occasionally darkly comic, with bursts of physicality and humiliation. Scenes like the school talk, the trophy-room celebration, and du Pont’s awkward coaching give it a singular flavor."
       },
       "latent_depth_slow_burn_potential": {
         "score": 9,
-        "reasoning": "What begins as a sports patronage story keeps revealing deeper layers: father hunger, class resentment, identity collapse, and du Pont’s own emotional vacancy. The final act pays off a lot of quiet behavior that has been accumulating from the start."
+        "reasoning": "On the surface it is a sports drama, but underneath it’s about class hunger, paternal longing, masculinity, and the seduction of being seen. The du Pont and Mark relationship, especially, keeps revealing new emotional and psychological layers as the film progresses."
       },
       "relationship_density_and_ensemble_engine": {
-        "score": 8,
-        "reasoning": "The Mark-Dave-du Pont triangle is exceptionally strong, and the supporting wrestlers, Nancy, Stan, and Jean all add pressure to that core. The relationships generate story on contact, especially when family, money, and coaching authority collide."
+        "score": 7,
+        "reasoning": "The Mark-Dave-du Pont triangle is the engine, and the supporting wrestlers, Nancy, Stan, and Jean add useful pressure and texture. The film is not built as a sprawling ensemble, but the key relationships are strong enough to generate repeated dramatic turns."
       }
     },
     "production_reality": {
@@ -60,286 +60,287 @@
         "series_regulars": 0,
         "child_actors": true,
         "casting_characteristics": [
-          "Olympic wrestling physiques",
-          "one principal role for a 50s male with specific aristocratic mannerisms",
+          "Olympic-level wrestling physicality",
+          "one principal role for a 50s white male with specific aristocratic bearing",
           "children in family scenes",
-          "some ethnic specificity among supporting wrestlers"
+          "wrestlers across multiple weight classes"
         ]
       },
       "locations": {
-        "distinct_count": 20,
-        "interior_exterior_ratio": "roughly 60/40 interior",
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40",
         "period_or_contemporary": "period (1980s)",
         "notable_requirements": [
-          "large estate build or access to a comparable mansion/farm compound",
-          "gym, chalet, hotel, airport, and arena environments",
-          "period vehicles, wardrobe, signage, and production design"
+          "large estate with mansion, chalet, gym, stables, woods, and lawn",
+          "wrestling arenas and training facilities",
+          "airport/helicopter access",
+          "period cars, wardrobe, signage, and interiors"
         ]
       },
       "technical": {
         "vfx_level": "minor",
-        "vfx_details": "Mostly practical filmmaking with some helicopter work, APC movement, crowd extension potential, and a few documentary-style inserts.",
+        "vfx_details": "Mostly period enhancement and crowd/environment cleanup; no heavy effects language on the page.",
         "stunts_level": "moderate",
-        "sfx_needs": "Wrestling choreography, gunfire, helicopter sequences, APC water entry, and the final shooting sequence.",
+        "sfx_needs": "Wrestling choreography, gunfire, helicopter work, APC movement, and a few physical altercations.",
         "night_shoots": "significant",
         "animals": true
       },
       "rights_flags": [
         {
           "type": "real_person",
-          "detail": "Mark Schultz, Dave Schultz, John du Pont, Jean du Pont, and other real wrestling figures"
+          "detail": "Mark Schultz, Dave Schultz, John du Pont, Jean du Pont, and other real-world wrestling figures are depicted."
         },
         {
           "type": "named_music",
-          "detail": "David Bowie 'Let's Dance', Bob Dylan 'All the Tired Horses', The Doobie Brothers 'Listen to the Music'"
+          "detail": "David Bowie’s 'Let’s Dance,' 'China Girl,' The Doobie Brothers’ 'Listen to the Music,' and Bob Dylan’s 'All the Tired Horses' are specifically used."
         },
         {
           "type": "brand",
-          "detail": "Arby's, 7-Eleven, AMC Gremlin, Ford, Hilton, USA Wrestling, Villanova, Olympic branding"
+          "detail": "Arby’s, 7-Eleven, AMC Gremlin, Ryder, Hilton, and Foxcatcher/USA Wrestling references appear prominently."
         },
         {
           "type": "ip_licensing",
-          "detail": "Documentary-style footage and the Foxcatcher/du Pont story are based on real events and public figures"
+          "detail": "Olympic and USA Wrestling branding, documentary footage language, and the Foxcatcher identity all imply clearance and licensing considerations."
         }
       ],
       "platform_fit": {
-        "recommended_lane": "prestige theatrical drama / awards streamer lane",
+        "recommended_lane": "prestige theatrical drama / awards-season streamer lane",
         "content_level": "mature",
-        "series_engine_or_release_model": "Feature release with festival-to-platform or prestige theatrical rollout"
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or awards theatrical positioning"
       },
       "risk_rubric": {
         "cost": {
           "level": "medium",
-          "note": "The estate, period design, wrestling arenas, helicopter work, and APC sequence push it above a lean indie, but it remains far below tentpole scale."
+          "note": "Period recreation, estate builds, wrestling arenas, helicopters, and a few specialty set pieces place it above a lean indie but below tentpole scale."
         },
         "cast": {
           "level": "medium",
-          "note": "The project depends on three highly specific lead performances and several real-person supporting roles, plus child casting in the Schultz family scenes."
+          "note": "The film depends on three central performances and requires credible wrestling physicality, plus children and a sizable supporting wrestling roster."
         },
         "location": {
           "level": "high",
-          "note": "The story moves through many distinct spaces, including a large period estate, multiple gyms, hotels, airports, arenas, and exterior grounds."
+          "note": "The story moves across the Foxcatcher estate, gyms, hotels, airports, arenas, and period public spaces, with several distinct environments to recreate."
         },
         "content": {
           "level": "high",
-          "note": "The script includes violence, gun use, emotional abuse, drug use, and a fatal shooting, which narrows the platform and rating lane."
+          "note": "The film includes violence, gun use, emotional abuse, drug use, and a murder climax, which narrows the platform and rating lane."
         },
         "rights": {
           "level": "high",
-          "note": "It uses real people, real organizations, named songs, and branded elements tied to the historical Foxcatcher story."
+          "note": "It is built on real people, named music, sports institutions, and recognizable brands and organizations."
         }
       }
     },
     "whats_special": {
       "strengths": [
         {
-          "dimension_or_area": "Mark is built on need and pride.",
-          "what_it_means": "That contradiction gives the movie a lead role with real awards traction: an athlete who is physically dominant but emotionally dependent, which is catnip for actors who want to play strength and fragility in the same frame. Mid-career dramatic leads and prestige buyers will see a showcase that can carry the whole film.",
-          "evidence": "Mark’s school speech, his fixation on Dave, and his collapse after du Pont’s attention shifts away from him.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "Du Pont is a singular prestige villain.",
-          "what_it_means": "The character is eccentric, wounded, wealthy, and increasingly unstable, which creates a role that can attract a major actor looking for transformation and complexity. Buyers know how to sell a true-story antagonist with this much specificity, especially when the performance can swing from charm to menace.",
-          "evidence": "The owl gift, the cocaine, the gun, the documentary self-mythology, and the final breakdown into violence.",
-          "source": "script"
-        },
-        {
-          "dimension_or_area": "The brother dynamic is the emotional engine.",
-          "what_it_means": "The Mark-Dave relationship gives the film a durable center that is bigger than sports and more universal than biography. That kind of sibling bond is exactly what prestige distributors and adult audiences respond to because it turns competition into family tragedy.",
-          "evidence": "Their training sessions, the dinner-table tension, the hotel-room confrontation, and the final demand that Mark be taken care of.",
+          "dimension_or_area": "The Mark-Dave-du Pont triangle is the engine.",
+          "what_it_means": "That three-way dynamic gives the film a clean commercial spine: a sports story that is really about loyalty, dependency, and the cost of being chosen. Prestige buyers and actor-driven producers will respond to a setup where every scene can shift the balance of power between the three men.",
+          "evidence": "Mark recruits Dave, du Pont recruits Mark, and the later negotiations over who sits in whose corner turn the whole movie into a contest of allegiance.",
           "source": "script"
         },
         {
           "dimension_or_area": "Foxcatcher feels like a closed ecosystem.",
-          "what_it_means": "The estate is not just a setting; it is a power structure with security, staff, hierarchy, surveillance, and ritual, which makes the film feel expensive in texture without needing huge scale. That kind of contained world is attractive to producers because it gives the movie a strong visual identity and a manageable footprint.",
-          "evidence": "The chalet, the Big House, the gym, the guardhouse, the security sweep, the trophy room, and the fenced grounds.",
+          "what_it_means": "The estate, chalet, gym, stables, guardhouse, and Big House create a contained world that can be shot efficiently while still feeling expansive and specific. Buyers like contained prestige dramas because the setting itself becomes a brandable asset and a production advantage.",
+          "evidence": "The repeated movement between the chalet, the gym, the Big House, and the grounds makes the estate feel like its own country.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The tone keeps surprising you.",
-          "what_it_means": "The script can pivot from absurd comedy to dread to tragedy without losing its identity, which is a rare commercial asset in adult drama. Directors and buyers who like elevated, off-center prestige material will recognize a film that can play in conversation as much as in plot.",
-          "evidence": "The Arby’s exchange, the school speech, the trophy-room dance, the APC sequence, and the final murder.",
+          "dimension_or_area": "Mark is a showcase role built on contradiction.",
+          "what_it_means": "He is a gold medalist who still behaves like the overlooked little brother, which gives an actor physical authority, emotional fragility, and a slow collapse to play. That is exactly the kind of role that attracts serious leading men looking for a prestige transformation part.",
+          "evidence": "His school speech, his desperate need for Dave’s approval, and his self-punishing training routines all reveal a man who cannot metabolize success.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The sports material is cinematic, not procedural.",
-          "what_it_means": "The wrestling scenes are staged as emotional confrontations, so the matches function as story turns rather than filler. That makes the movie easier to market to audiences who may not care about wrestling but will care about the stakes inside each bout.",
-          "evidence": "The Schultz brothers’ matches, the weigh-in sequence, the finals in Pensacola, and the Seoul Olympic bouts.",
+          "dimension_or_area": "Du Pont is an unforgettable prestige antagonist.",
+          "what_it_means": "He is not a standard villain; he is a lonely heir performing authority, which makes the part magnetically playable and awards-friendly. Character actors and star-level chameleons will chase a role that can move from charm to neediness to menace in the same scene.",
+          "evidence": "His bird-book gift, his awkward coaching, his documentary vanity, and his final violence all come from the same wounded need to matter.",
           "source": "script"
         },
         {
-          "dimension_or_area": "The ending lands with tragic inevitability.",
-          "what_it_means": "The final act pays off the emotional and psychological pressure that has been building all along, which is exactly what gives prestige true-story films staying power. Awards buyers and serious adult audiences tend to respond to stories that feel both shocking and preordained.",
-          "evidence": "Du Pont’s isolation, the security lockdown, Dave’s final confrontation, and the shooting at the Schultz house.",
+          "dimension_or_area": "The film has a rare tonal identity.",
+          "what_it_means": "It plays as a sports drama with the dread of a psychological thriller, which broadens its appeal beyond wrestling fans and gives it a distinctive trailer shape. Buyers looking for elevated adult drama can sell the tension without having to oversell the sport.",
+          "evidence": "The school talk, the trophy-room celebration, the helicopter arrival, and the final murder all sit in the same controlled tonal lane.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The wrestling scenes are character scenes, not filler.",
+          "what_it_means": "The matches and drills are doing story work, so the film earns its sports material instead of pausing for it. That makes the project more attractive to prestige buyers because the athletic sequences are tied directly to psychology and power.",
+          "evidence": "The brother sparring match, the Foxcatcher drills, and the Olympic bouts all reveal status, insecurity, and control.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands with true tragic force.",
+          "what_it_means": "The final movement from triumph to isolation to murder gives the film a devastating aftertaste that can drive awards conversation and word of mouth. Producers know that endings like this create the kind of emotional memory that keeps a movie in the conversation.",
+          "evidence": "Dave’s death, followed by Mark’s UFC coda, reframes the entire story as a collapse of identity and purpose.",
           "source": "script"
         }
       ],
-      "headline": "This is a prestige true-story drama with a major acting lane at its center: one role for a physically imposing athlete who is emotionally starving, one for a wealthy patron who turns need into control, and one for the brother who holds the whole system together until it breaks. The script has the kind of tonal identity, period texture, and tragic inevitability that can travel from festival conversation to awards-season positioning."
+      "headline": "This is a prestige sports drama with a thriller’s pulse: a gold-medal wrestler, his beloved older brother, and a lonely billionaire locked into a relationship that turns admiration into possession. The script has a rare combination of awards-caliber performances, a contained and producible world, and a tragic true-story ending that gives the whole film lasting weight."
     },
     "lead_characters": [
       {
         "name": "Mark Schultz",
         "role_type": "Lead",
         "demographics": "Male · late 20s · Olympic wrestler · physically imposing, cauliflower ears",
-        "hook": "Mark is a world-class wrestler who carries himself like a machine and feels like a child. He is proud, obsessive, lonely, and desperate for recognition, especially from his older brother, and that need makes him both formidable and vulnerable in the same breath.",
-        "why_actor_wants_this": "This is the showcase territory of Casey Affleck in *Manchester by the Sea* crossed with the physical authority of a championship athlete: a man whose silence is doing as much work as his dialogue. Actors who want a role that can play ferocity, humiliation, dependency, and collapse in one arc will chase this immediately."
+        "hook": "Mark is a world-class athlete who still carries himself like the younger brother who never quite got enough love. He is disciplined to the point of self-punishment, emotionally inarticulate, and hungry for recognition in a way that makes him both formidable and painfully vulnerable.",
+        "why_actor_wants_this": "This is the showcase territory of Christian Bale in The Fighter or Rami Malek in Bohemian Rhapsody — a physically specific lead whose inner life is expressed through posture, silence, and eruption. Actors will want it because it offers a full-body transformation role with a tragic emotional arc and a final descent that still feels human."
       },
       {
         "name": "Dave Schultz",
         "role_type": "Lead",
-        "demographics": "Male · early 30s · wrestler/coach · compact, bearded, calm, physically strong",
-        "hook": "Dave is the brother everyone orbits: steady, intelligent, quietly commanding, and capable of making a room settle just by entering it. He has the warmth of a family man and the authority of a coach, but the script keeps revealing how much of his power comes from emotional discipline.",
-        "why_actor_wants_this": "This is the kind of grounded, morally centered role that gave Bryan Cranston in *Breaking Bad* or Jeff Bridges in *Crazy Heart* the chance to make restraint feel magnetic. Actors who can play intelligence, authority, and tenderness without over-signaling will see a deeply playable lead."
+        "demographics": "Male · early 30s · wrestler and coach · compact, strong, bearded",
+        "hook": "Dave is the calm center of the film: intelligent, grounded, and quietly magnetic, with the kind of authority that never needs to announce itself. He is a coach, brother, husband, and father whose steadiness makes him the emotional north star of the story.",
+        "why_actor_wants_this": "This is the showcase space of Philip Seymour Hoffman in Capote or Jeff Bridges in Crazy Heart — a role where stillness, warmth, and authority do the heavy lifting. Actors who want to play a man whose presence changes the temperature of every room will chase this part."
       },
       {
         "name": "John du Pont",
         "role_type": "Lead",
-        "demographics": "Male · 50s · wealthy heir / amateur coach · thin, beak-nosed, physically awkward",
-        "hook": "Du Pont is a lonely aristocrat who wants to be seen as a builder, a patriot, and a father figure, but can only express himself through control, money, and performance. He is charming when he’s trying, pathetic when he’s sincere, and terrifying when those two states collapse into each other.",
-        "why_actor_wants_this": "This is the showcase space of Philip Seymour Hoffman in *Capote* or Michael Keaton in *Birdman*: a highly specific, behavior-rich role that lets an actor build a whole psychology out of posture, speech, and need. Prestige actors looking for a transformation part with awards gravity will circle this."
+        "demographics": "Male · 50s · wealthy heir, ornithologist, amateur coach",
+        "hook": "Du Pont is a lonely, highly educated heir who performs confidence like a costume and uses money to buy proximity to the life he wants. He is charming, brittle, theatrical, and increasingly unstable, with a childlike need to be admired that curdles into control.",
+        "why_actor_wants_this": "This is the kind of role Anthony Hopkins had in The Father or Michael Keaton had in Birdman — a man whose self-image is always slipping just out of reach. It gives an actor the chance to play intelligence, vanity, loneliness, and menace in a single prestige performance."
       },
       {
         "name": "Nancy Schultz",
         "role_type": "Supporting",
         "demographics": "Female · 20s-30s · wife and mother",
-        "hook": "Nancy is the grounded domestic counterweight in a world of male ego and institutional fantasy. She reads quickly, speaks plainly, and carries the emotional cost of the brothers’ choices without ever becoming ornamental.",
-        "why_actor_wants_this": "This is the kind of sharp supporting wife role that gave Laura Linney in *You Can Count on Me* or Patricia Clarkson in *The Station Agent* real emotional authority in limited screen time. Strong dramatic actresses will want the clarity, intelligence, and lived-in realism of the part."
+        "hook": "Nancy is practical, sharp, and unromantic about the men around her, which makes her one of the few people in the film who sees the situation clearly. She brings domestic reality into a world of male obsession and status games.",
+        "why_actor_wants_this": "This is the kind of grounded, scene-stealing support role Laura Linney often makes memorable in prestige drama — a woman whose clarity cuts through the male mythology. Character actresses who want a sharp domestic counterweight in an awards film will respond to it."
       },
       {
         "name": "Stan Beck",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · du Pont’s manager / fixer",
-        "hook": "Stan is the corporate face of Foxcatcher: polished, procedural, and always translating du Pont’s impulses into something administratively usable. He is the kind of man who can make a bizarre arrangement sound normal, which makes him quietly dangerous.",
-        "why_actor_wants_this": "This is the crisp, scene-stealing authority role that actors like Paul Giamatti or Richard Jenkins often turn into memorable pressure valves. It gives a performer the chance to play bureaucracy as character, not function."
-      },
-      {
-        "name": "Jean du Pont",
-        "role_type": "Supporting",
-        "demographics": "Female · 70s-80s · wheelchair user · oxygen tubes",
-        "hook": "Jean is imperious, withholding, and impossible to impress, with the social power of someone who never had to ask for it. Even in a few scenes, she defines the emotional weather of the du Pont house and explains a lot without ever softening.",
-        "why_actor_wants_this": "This is the kind of aristocratic matriarch role that gives an actor the authority of Judi Dench in *Philomena* or Vanessa Redgrave in *Atonement*: minimal screen time, maximum gravitational pull. Veteran actresses who can command a room with a glance will want it."
+        "demographics": "Male · 40s-50s · du Pont’s manager and fixer",
+        "hook": "Stan is the polished intermediary who translates du Pont’s money into policy and keeps the machine moving. He is controlled, procedural, and quietly complicit, which makes him feel like the corporate face of the Foxcatcher world.",
+        "why_actor_wants_this": "This is the kind of contained authority role that Paul Giamatti or Richard Jenkins can make crackle with subtext — a man whose job is to manage chaos without ever naming it. Actors who specialize in institutional pressure and dry intelligence will be drawn to it."
       },
       {
         "name": "Brandon",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · polished estate aide",
-        "hook": "Brandon is the smooth intermediary who keeps the Foxcatcher machine moving, always polite, always slightly removed. He’s the kind of character who makes the estate feel staffed and controlled rather than merely rich.",
-        "why_actor_wants_this": "This is a clean supporting role for an actor who can play polished subordination with a hint of unease, the kind of part that often lands in prestige ensemble films. It gives a performer a foothold in a high-status world without needing a huge amount of screen time."
+        "demographics": "Male · 20s · du Pont aide/driver",
+        "hook": "Brandon is the polished young functionary who moves people, messages, and money through the estate with unnerving ease. He is a useful presence in the machinery of Foxcatcher, always just formal enough to feel slightly off.",
+        "why_actor_wants_this": "This is the kind of precise supporting role that lets an actor play obedience with a hint of menace, similar to the energy of a strong aide role in The Social Network. It gives a performer a clean lane to make a small part memorable through control and restraint."
+      },
+      {
+        "name": "Jean du Pont",
+        "role_type": "Supporting",
+        "demographics": "Female · elderly · wheelchair user",
+        "hook": "Jean is the matriarchal shadow over the estate, imperious and emotionally withholding, with a presence that explains a lot about John without ever over-explaining him. She is all status, judgment, and old-world hierarchy.",
+        "why_actor_wants_this": "This is the kind of aristocratic, ice-cold supporting part that actresses like Vanessa Redgrave or Judi Dench can turn into a scene’s gravitational center. It offers a performer the chance to embody inherited power with very little dialogue."
       },
       {
         "name": "Dan Bane",
         "role_type": "Supporting",
-        "demographics": "Male · 20s-30s · wrestler · strong, low-key, intelligent",
-        "hook": "Dan is the quiet professional in the room, the one who seems to understand the Foxcatcher ecosystem without needing to narrate it. He has enough presence to feel like a real teammate and enough restraint to keep the ensemble from becoming noisy.",
-        "why_actor_wants_this": "This is the kind of understated athlete role that gives a performer the credibility of a real team member and the chance to play intelligence without speeches. Character actors with physicality will like the clean, grounded lane."
+        "demographics": "Male · 30s · wrestler",
+        "hook": "Dan is low-key, intelligent, and steady, the kind of athlete who understands the room without needing to dominate it. He functions as one of the film’s few sane, watchful presences inside the Foxcatcher machine.",
+        "why_actor_wants_this": "This is the kind of understated ensemble role that lets an actor play competence and quiet loyalty, similar to the grounded support parts in Moneyball or Spotlight. It will appeal to actors who like to make a small amount of screen time feel lived-in and real."
       },
       {
         "name": "Roberto Garcia",
         "role_type": "Supporting",
-        "demographics": "Male · early 20s · Latino wrestler · 105 lbs.",
-        "hook": "Garcia is fast, sharp, and verbally alive, a smaller wrestler whose energy cuts through the room. He adds texture to the team and helps make Foxcatcher feel like a real training camp rather than a two-man story.",
-        "why_actor_wants_this": "This is a lively supporting athlete role with personality, the kind of part that lets an actor bring rhythm and edge to an ensemble. It’s especially appealing to performers who want a memorable presence inside a prestige film."
+        "demographics": "Male · early 20s · Latino wrestler",
+        "hook": "Garcia is fast-talking, sharp, and irreverent, bringing a little street-level friction into the otherwise controlled Foxcatcher environment. He gives the team texture and a more casual, lived-in energy.",
+        "why_actor_wants_this": "This is the kind of lively supporting role that can pop the way supporting players do in ensemble sports dramas like Friday Night Lights. It gives an actor room for humor, attitude, and authentic locker-room rhythm."
       },
       {
         "name": "Jim Zerega",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · blond Midwesterner wrestler",
-        "hook": "Zerega is one of the younger bodies in the room, part of the team’s working machinery and part of its social fabric. He helps the Foxcatcher gym feel populated by actual lives instead of background texture.",
-        "why_actor_wants_this": "This is a useful ensemble-athlete role for a performer who can make a few moments feel specific and lived-in. It’s the kind of part that benefits from naturalism and physical credibility."
+        "demographics": "Male · 20s · wrestler",
+        "hook": "Zerega is one of the younger bodies in the room, part of the team’s working texture rather than its emotional center. He helps make Foxcatcher feel like a real training environment with a hierarchy of talent and attention.",
+        "why_actor_wants_this": "This is a useful ensemble-athlete role in the tradition of the supporting wrestlers and teammates in prestige sports films. It gives a performer a chance to contribute authenticity and physical specificity without carrying the plot."
       },
       {
         "name": "Matt Popper",
         "role_type": "Supporting",
-        "demographics": "Male · 20s · East Coast working-class wrestler",
-        "hook": "Popper reads as one of the more grounded, working-class presences in the room, which helps the team feel socially varied. He’s part of the film’s texture of men who have made wrestling their whole identity.",
-        "why_actor_wants_this": "This is a solid supporting role for an actor who can bring authenticity to a team environment and make the world feel inhabited. It’s a good fit for performers who thrive in ensemble realism."
+        "demographics": "Male · 20s · wrestler",
+        "hook": "Popper is another member of the training room ecosystem, defined more by presence and function than by speech. He helps the Foxcatcher team feel populated by real athletes with different temperaments and bodies.",
+        "why_actor_wants_this": "This is the kind of small but useful role that can be cast with a real wrestler or athlete for authenticity, similar to the supporting team members in Creed. It offers physical credibility and a believable place in the room."
       },
       {
         "name": "Bruce Springer",
         "role_type": "Supporting",
         "demographics": "Male · 20s-30s · half-Asian wrestler",
-        "hook": "Springer adds another distinct social and physical presence to the Foxcatcher roster, helping the team feel broader than the central triangle. He’s part of the film’s sense that this is a real, mixed group of athletes with their own rhythms.",
-        "why_actor_wants_this": "This is the kind of ensemble role that gives an actor a chance to stand out through specificity rather than volume. It suits performers who can make a few lines and reactions feel memorable."
+        "hook": "Springer adds another distinct physical and cultural presence to the team, helping the roster feel broad rather than generic. He is part of the film’s texture of athletes who live inside du Pont’s orbit.",
+        "why_actor_wants_this": "This is a strong supporting-athlete slot for a performer who can bring specificity and dry humor to a team environment. It fits the kind of role that helps ensemble films feel populated by real people rather than placeholders."
       },
       {
         "name": "Fred Cole",
         "role_type": "Supporting",
-        "demographics": "Male · 40s-50s · USA Wrestling official",
-        "hook": "Fred is the institutional face of the sport, the man who represents the larger system Foxcatcher is trying to influence. He’s polite, procedural, and useful as a reminder that the story is bigger than one estate.",
-        "why_actor_wants_this": "This is a clean authority role for an actor who can make bureaucracy feel human and slightly wary. It’s the kind of part that often lands well with seasoned character actors."
+        "demographics": "Male · middle-aged · USA Wrestling official",
+        "hook": "Fred is the institutional face of the sport, polite and procedural, but clearly operating inside a system that can be bent by money and influence. He represents the outside world trying to negotiate with Foxcatcher’s private kingdom.",
+        "why_actor_wants_this": "This is the kind of bureaucratic authority role that actors like Bob Balaban or John Slattery can make quietly memorable. It gives a performer the chance to play institutional compromise with just enough edge to matter."
       },
       {
         "name": "Larry",
         "role_type": "Supporting",
         "demographics": "Male · 50s · pilot",
-        "hook": "Larry is a functional but vivid part of the Foxcatcher transport machine, giving the estate a private, insulated feel. He helps sell the scale and privilege of du Pont’s world without needing much screen time.",
-        "why_actor_wants_this": "This is a compact, professional supporting role that can be played with authority and ease. It’s the sort of part character actors and working veterans can make feel real fast."
+        "hook": "Larry is a working professional in du Pont’s orbit, there to move bodies and reinforce the sense that Foxcatcher has its own infrastructure. He is part of the film’s texture of privilege made operational.",
+        "why_actor_wants_this": "This is a clean, functional supporting role that can be cast for authenticity and presence. It gives an actor a small but vivid piece of the Foxcatcher machine."
       },
       {
-        "name": "The Documentary Director",
+        "name": "The Uniformed Maid",
         "role_type": "Supporting",
-        "demographics": "Male · 30s-50s · documentary filmmaker",
-        "hook": "The director is the film’s self-mythology witness, capturing du Pont’s attempt to narrate himself into greatness. He gives the story a meta layer without taking it away from the drama.",
-        "why_actor_wants_this": "This is a smart supporting role for an actor who can play observer, facilitator, and quiet skeptic in one register. It’s the kind of part that adds prestige texture to a film’s final movement."
+        "demographics": "Female · adult · domestic staff",
+        "hook": "She is the first sign that the Big House runs on hierarchy and ritual, not warmth. Her clipped interactions with Mark underline how foreign the estate is to him.",
+        "why_actor_wants_this": "This is the kind of brief but memorable role that can be played with exactness and class texture, similar to the domestic staff beats in period prestige drama. It gives an actor a chance to define a world in a few lines."
       }
     ],
     "package_angles": {
       "director_appeal": {
-        "hook": "A director who wants to make power feel intimate and terrifying.",
-        "fit_profile": "Established indie or prestige-feature directors with at least one or two character-driven films behind them, especially those who work well with actors and can sustain tension through behavior rather than plot mechanics. This material rewards directors who care about emotional subtext, class tension, and controlled escalation inside a visually specific world.",
-        "detail": "The movie gives a director a rare chance to stage a true-story tragedy as a pressure cooker: estate, gym, family, and patronage all colliding in one contained ecosystem. It will attract filmmakers who like performance-forward material with a strong visual grammar and the confidence to let awkwardness, silence, and ritual do the heavy lifting."
+        "hook": "A director who wants to make a prestige character study that slowly turns into a nightmare.",
+        "fit_profile": "Established indie directors with at least one or two festival features, or prestige-drama filmmakers moving into darker material. The material rewards restraint, performance orchestration, and the ability to make institutional spaces feel emotionally claustrophobic rather than merely scenic.",
+        "detail": "The craft opportunity is in balancing intimacy and dread without losing the human core of the brother relationship. It will attract directors who like actors, controlled tension, and a world where every room carries status pressure."
       },
       "buyer_appeal": {
-        "tier": "$10-25M prestige feature",
-        "lane": "awards streamer / prestige theatrical drama",
-        "detail": "The project is packageable around three high-value lead performances, so a buyer can greenlight it on cast and director rather than spectacle. The true-story recognition, awards-friendly tone, and adult-skewing subject matter give it a clean festival-to-platform or limited theatrical runway."
+        "tier": "$15-30M prestige feature",
+        "lane": "awards-season theatrical / premium streamer drama",
+        "detail": "The project can be packaged around three major performances, with the Mark and du Pont roles especially attractive to name actors who want transformation material. The true-story hook, period setting, and sports-drama frame give it a clean festival-to-platform or awards-theatrical runway."
       }
     },
     "considerations": [
       {
-        "area": "The du Pont relationship can be sharpened earlier.",
-        "detail": "The script already plants the emotional logic, but the version of the opening act where du Pont’s need for Mark is seeded a little sooner would make the later dependence feel even more inevitable. One lever would be to foreground the first moment du Pont sees Mark as a substitute son rather than waiting for the Foxcatcher invitation to do all the work.",
+        "area": "The brother bond carries the emotional load.",
+        "detail": "The script is strongest when Mark and Dave’s relationship is the center of gravity, because that is where the audience feels the cost of every choice. A next pass could keep protecting that bond in the middle stretch so the final separation lands with even more force.",
         "is_primary_lever": true,
         "source": "script"
       },
       {
-        "area": "The Foxcatcher world is already rich.",
-        "detail": "The estate, the gym, the chalet, the security detail, and the documentary apparatus all give the film a strong production identity. A producer can keep this in a controlled prestige budget lane by protecting the estate as the central hub and treating the other locations as satellites rather than expanding the footprint further.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The family triangle carries the most heat.",
-        "detail": "The Mark-Dave-Nancy dynamic is one of the script’s strongest engines, especially in the dinner scene, the hotel-room confrontation, and the later negotiations over staying at Foxcatcher. A next pass could continue to let Nancy press on the brothers’ choices in ways that make the domestic stakes feel as consequential as the athletic ones.",
+        "area": "Du Pont’s interior life can stay legible through behavior.",
+        "detail": "The film already gives him strong behavioral markers — the bird book, the documentary, the coaching, the need to be seen — so the version of the script that keeps translating psychology into action will preserve his power. That approach protects the role’s mystery while keeping the audience oriented.",
         "is_primary_lever": false,
         "source": "script"
       },
       {
-        "area": "The documentary framing is a useful pressure valve.",
-        "detail": "The filmed speeches and self-mythologizing inserts help the movie widen from private obsession into public performance. If needed for pacing, those moments can be used to bridge time and reinforce du Pont’s self-image without adding new locations or characters.",
+        "area": "The estate footprint is substantial.",
+        "detail": "The story uses the Big House, chalet, gym, stables, woods, guardhouse, airport, arenas, hotel rooms, and public event spaces, which makes the production feel larger than a simple contained drama. One simplification lever would be to keep a few of the Foxcatcher interiors doing double duty so the estate still feels expansive without multiplying builds.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The music and brand references need a clear clearance path.",
+        "detail": "Bowie, Dylan, The Doobie Brothers, Arby’s, 7-Eleven, Ryder, Hilton, and Olympic/USA Wrestling references are all part of the script’s texture. A producer will want to map those early because the period authenticity and documentary feel depend on them.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The wrestling action should stay character-driven.",
+        "detail": "The matches already do story work, so the next pass should keep each bout tied to a relationship turn or a shift in power rather than treating them as standalone set pieces. That preserves the film’s momentum and keeps the sports material emotionally legible.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The final movement is built for a devastating release.",
+        "detail": "The murder, followed by the UFC coda, gives the film a hard, unforgettable ending that can anchor awards conversation and post-screening discussion. The script already earns that ending; the main packaging task is making sure the audience arrives there fully invested in the brother dynamic and du Pont’s unraveling.",
         "is_primary_lever": false,
         "source": "both"
-      },
-      {
-        "area": "The period detail is doing real work.",
-        "detail": "The Reagan-era school, the VHS clinics, the Olympic politics, the cars, and the wardrobe all lock the movie into a specific historical moment. That specificity is part of the appeal, so the next pass should protect those details while keeping the production design focused on the spaces that matter most.",
-        "is_primary_lever": false,
-        "source": "production"
-      },
-      {
-        "area": "The final act is already built for impact.",
-        "detail": "The move from Seoul back to the estate and then to the murder sequence gives the film a hard, unmistakable finish. The main craft opportunity is not to add more plot, but to preserve the emotional line so the ending lands as the culmination of everything that came before.",
-        "is_primary_lever": false,
-        "source": "script"
       }
     ],
     "craft_note": ""
   },
-  "weightedScore": 80.3,
+  "weightedScore": 76.7,
   "tier": "Optionable",
   "inputTokens": 47121,
-  "outputTokens": 5618,
-  "cost": 0.06062175,
+  "outputTokens": 5585,
+  "cost": 0.060473250000000006,
   "declaredFormat": "Feature film"
 }

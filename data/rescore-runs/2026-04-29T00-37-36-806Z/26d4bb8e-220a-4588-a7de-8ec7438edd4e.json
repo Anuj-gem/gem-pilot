@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T00:56:18.776Z",
+  "submission_id": "26d4bb8e-220a-4588-a7de-8ec7438edd4e",
+  "eval_id": "0d4a0878-6ca3-4fa0-831d-d01bb4da479b",
+  "title": "Passion Bear The Aboriginal Bear",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Anya",
+      "role_type": "Lead",
+      "demographics": "Female · late teens to 20s · princess/young rebel leader"
+    },
+    {
+      "name": "Elara",
+      "role_type": "Lead",
+      "demographics": "Female · 10s to 20s across the script · princess/descendant/spacefaring hero"
+    },
+    {
+      "name": "Passion Bear",
+      "role_type": "Lead",
+      "demographics": "Non-human character · sentient teddy bear · ageless"
+    },
+    {
+      "name": "Marcus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · authoritarian military antagonist"
+    },
+    {
+      "name": "Miriam",
+      "role_type": "Supporting",
+      "demographics": "Female · child"
+    },
+    {
+      "name": "Sarah",
+      "role_type": "Supporting",
+      "demographics": "Female · adult"
+    },
+    {
+      "name": "Elara",
+      "role_type": "Supporting",
+      "demographics": "Female · elder"
+    },
+    {
+      "name": "Master Thane",
+      "role_type": "Supporting",
+      "demographics": "Male · elderly scholar"
+    },
+    {
+      "name": "Kael",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · Rizqian fighter"
+    },
+    {
+      "name": "Dr. Aria",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 50s · scientist"
+    },
+    {
+      "name": "Commander Zyrus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 50s · Palionian military commander"
+    },
+    {
+      "name": "Vex",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · command bridge officer"
+    },
+    {
+      "name": "Commander Marcus",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · military antagonist"
+    },
+    {
+      "name": "Rhys",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · messenger/insider"
+    },
+    {
+      "name": "Silas",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · enforcer"
+    },
+    {
+      "name": "Lucian",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · rebel ally"
+    },
+    {
+      "name": "Kael",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · Rizqian fighter"
+    }
+  ],
+  "positioning_hook": "A sentient teddy bear becomes the spiritual and tactical key to a princess’s rebellion, carrying a planet’s hope from ancient captivity to interstellar war.",
+  "cost_usd": 0.0474855,
+  "input_tokens": 29114,
+  "output_tokens": 5700,
+  "status": "wrote:leads_ok"
+}

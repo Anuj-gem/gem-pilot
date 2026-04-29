@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-04-29T00:57:47.216Z",
+  "submission_id": "01efbf18-3279-4cb1-8225-85805e76fcd6",
+  "eval_id": "63c1f0a5-1b81-4c52-ac75-9db5620d274a",
+  "title": "Freak",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 4,
+  "lead_characters_summary": [
+    {
+      "name": "DELILAH",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · sharp-eyed, road-worn, contemporary"
+    },
+    {
+      "name": "FATHER / MARK",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s for Father, late teens in flashback for Mark if staged literally"
+    },
+    {
+      "name": "DR. LEE",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged"
+    },
+    {
+      "name": "MARTHA",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s"
+    }
+  ],
+  "positioning_hook": "A starving drifter heads north to confront the father who abandoned him, but a mysterious roadside woman and a buried family secret turn the trip into a reckoning with guilt, grief, and survival.",
+  "cost_usd": 0.03534375,
+  "input_tokens": 24793,
+  "output_tokens": 3722,
+  "status": "wrote:leads_ok"
+}

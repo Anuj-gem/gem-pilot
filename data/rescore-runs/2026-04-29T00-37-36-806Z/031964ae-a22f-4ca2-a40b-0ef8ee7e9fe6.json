@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-29T01:03:28.655Z",
+  "submission_id": "031964ae-a22f-4ca2-a40b-0ef8ee7e9fe6",
+  "eval_id": "41532709-22b1-45ed-897c-47887f5ff5c4",
+  "title": "Captain Jimmy's Number",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 14,
+  "lead_characters_summary": [
+    {
+      "name": "JAMES 'JIMMY' STEWART",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · white · tall, lanky, Midwestern/Pennsylvania-rooted"
+    },
+    {
+      "name": "FRANK CAPRA",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Italian-American"
+    },
+    {
+      "name": "LIONEL BARRYMORE",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s to early 70s · white · wheelchair user / chronic arthritis"
+    },
+    {
+      "name": "MARGARET SULLAVAN",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · white"
+    },
+    {
+      "name": "JOE “TEX” HARDY",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s · white · Texas drawl"
+    },
+    {
+      "name": "LT. LLOYD “SHARDY” SHARRARD",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · white"
+    },
+    {
+      "name": "OBIE",
+      "role_type": "Supporting",
+      "demographics": "Male · 18 · white"
+    },
+    {
+      "name": "BILLY",
+      "role_type": "Supporting",
+      "demographics": "Male · 18-20s · white"
+    },
+    {
+      "name": "SAMMY",
+      "role_type": "Supporting",
+      "demographics": "Male · 18-20s · white"
+    },
+    {
+      "name": "BOBBY",
+      "role_type": "Supporting",
+      "demographics": "Male · 18-20s · white"
+    },
+    {
+      "name": "RUDY",
+      "role_type": "Supporting",
+      "demographics": "Male · 18-20s · white"
+    },
+    {
+      "name": "CHET",
+      "role_type": "Supporting",
+      "demographics": "Male · 18-20s · white"
+    },
+    {
+      "name": "VIRGIL",
+      "role_type": "Supporting",
+      "demographics": "Male · 18-20s · white"
+    },
+    {
+      "name": "ALEX STEWART",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · white · Pennsylvania father"
+    }
+  ],
+  "positioning_hook": "Jimmy Stewart returns from bombing runs over Germany carrying survivor’s guilt, then has to decide whether Hollywood can still be his home after war rewired his soul.",
+  "cost_usd": 0.05547825,
+  "input_tokens": 40593,
+  "output_tokens": 5563,
+  "status": "wrote:leads_ok"
+}

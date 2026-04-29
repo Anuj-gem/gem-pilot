@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T00:53:48.840Z",
+  "submission_id": "c3a1e020-79eb-49a8-a954-360afac3fe9c",
+  "eval_id": "75cc13d0-ba2d-4568-a73f-e52ba81b5d84",
+  "title": "The Last Room",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "THE PROTAGONIST",
+      "role_type": "Lead",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "THE GUARD",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · face never fully visible"
+    },
+    {
+      "name": "THE NERVOUS MAN",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s"
+    },
+    {
+      "name": "THE FEARFUL MAN",
+      "role_type": "Supporting",
+      "demographics": "Male · early 20s"
+    },
+    {
+      "name": "THE WOMAN",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "FIRST EXITING MAN",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "SECOND EXITING MAN",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "THIRD EXITING MAN",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    },
+    {
+      "name": "THE LAST MAN",
+      "role_type": "Supporting",
+      "demographics": "Male · adult"
+    }
+  ],
+  "positioning_hook": "A calm man in a silent corridor must decide who goes first into a sealed room that reveals what each person carries inside — and what it costs to surrender your place.",
+  "cost_usd": 0.026680500000000003,
+  "input_tokens": 11328,
+  "output_tokens": 4041,
+  "status": "wrote:leads_ok"
+}

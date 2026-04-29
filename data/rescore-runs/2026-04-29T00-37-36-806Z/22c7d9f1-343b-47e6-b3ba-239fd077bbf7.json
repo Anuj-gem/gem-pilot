@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:07:53.017Z",
+  "submission_id": "22c7d9f1-343b-47e6-b3ba-239fd077bbf7",
+  "eval_id": "474c17f1-1711-4176-90d9-f5b293ac005b",
+  "title": "Dead Beat",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "Frank Antonelli",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · Italian-American police sergeant"
+    },
+    {
+      "name": "Livecia Pattern",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · Black police officer"
+    },
+    {
+      "name": "Captain Joe Fields",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · burly police captain"
+    },
+    {
+      "name": "Christine",
+      "role_type": "Supporting",
+      "demographics": "Female · late teens to early 20s · white"
+    },
+    {
+      "name": "Jerry Pattern",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · white"
+    },
+    {
+      "name": "Jave Stevens",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · street-level drug dealer"
+    },
+    {
+      "name": "Pete Hansen",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · Internal Affairs detective"
+    },
+    {
+      "name": "Chris Kimbrell",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · rookie cop"
+    },
+    {
+      "name": "Captain Caruther",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s to 50s · police captain"
+    },
+    {
+      "name": "Harold Falter",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · gang lieutenant"
+    },
+    {
+      "name": "Tyrone Power",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · gang leader"
+    },
+    {
+      "name": "Paco",
+      "role_type": "Supporting",
+      "demographics": "Male · teens to early 20s · Hispanic gang member"
+    },
+    {
+      "name": "Stevy",
+      "role_type": "Supporting",
+      "demographics": "Male · teens to early 20s · gang member"
+    },
+    {
+      "name": "Mrs. Woodard",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s to 50s · mother"
+    },
+    {
+      "name": "Joanie Lee",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · TV reporter"
+    },
+    {
+      "name": "Barbara McGuire",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s to 40s · psychologist"
+    }
+  ],
+  "positioning_hook": "A Long Beach vice cop is forced to hunt a drug empire after his partner dies and returns as an undead avenger, while his captain secretly runs the trade.",
+  "cost_usd": 0.05963175,
+  "input_tokens": 45639,
+  "output_tokens": 5645,
+  "status": "wrote:leads_ok"
+}
