@@ -55,6 +55,14 @@ import { IndustryActivityButton } from '@/components/dashboard/industry-activity
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
+// Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
+// industry partner views this report. The surface is the same as the
+// retired /partner/script/[matchId] page; that route now redirects here.
+import { MatchActions } from '@/components/partner/match-actions'
+import { StickyMatchActions } from '@/components/partner/sticky-actions'
+import { ScriptDownloadButton } from '@/components/partner/script-download-button'
+import { ProducerIntroButton } from '@/components/partner/producer-intro-button'
+import { Mail } from 'lucide-react'
 import { normalizeEvaluation, calculateWeightedScore, DIMENSION_META } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
@@ -170,6 +178,50 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const isAdmin = user?.email === 'anuj@gem.studio'
   const isOwnerOrAdmin = isOwner || isAdmin
   const isAnonymousSubmission = !submission.user_id
+
+  // Producer-mode detection (Anuj 2026-04-29). If a logged-in non-owner
+  // has a script_match for this submission AND it isn't unmatched, render
+  // producer affordances inline (Interested/Pass, Reach-out, sticky bar)
+  // and treat them as a non-owner viewer for privacy purposes. This is
+  // what consolidates the old /partner/script/[matchId] view onto the
+  // single /report/[id] URL — same surface for everyone, role-aware
+  // affordances injected.
+  type ViewerMatch = {
+    id: string
+    status: 'pending' | 'opened' | 'interested' | 'passed' | 'commented'
+    producer_emailed_at: string | null
+    unmatched_at: string | null
+  }
+  let viewerMatch: ViewerMatch | null = null
+  if (user && !isOwner && !isAdmin) {
+    const { data: matchRow } = await serviceClient
+      .from('script_matches')
+      .select('id, status, producer_emailed_at, unmatched_at')
+      .eq('producer_id', user.id)
+      .eq('submission_id', submission.id)
+      .maybeSingle()
+    const m = matchRow as ViewerMatch | null
+    if (m && !m.unmatched_at) {
+      // Side effect: flip pending → opened on first view so the producer
+      // dashboard's "new since visit" math stays accurate. Mirrors the
+      // behavior the old /partner/script/[matchId] page had.
+      if (m.status === 'pending') {
+        await serviceClient
+          .from('script_matches')
+          .update({ status: 'opened', opened_at: new Date().toISOString() })
+          .eq('id', m.id)
+          .eq('status', 'pending')
+        m.status = 'opened'
+      }
+      viewerMatch = m
+    }
+  }
+  const isViewerProducer = viewerMatch !== null
+  // Match status considered "unlocked" → script PDF + writer email panel.
+  const isViewerProducerUnlocked =
+    viewerMatch !== null &&
+    (viewerMatch.status === 'interested' ||
+      viewerMatch.status === 'commented')
   const hasExpiry = isAnonymousSubmission && !!submission.expires_at
   const isExpired = hasExpiry && new Date(submission.expires_at!) < new Date()
   const writerName = submission.profiles?.full_name ?? 'the writer'
@@ -480,6 +532,44 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           scoreShownToIndustry={isScoreVisible(privacy)}
           isProSubscriber={ownerIsSubscribed || isAdmin}
         />
+
+        {/* Producer-mode action row (Interested / Pass). Sits right under
+            the top card so the primary decision is unmissable. Mirrors the
+            retired /partner/script/[matchId] surface. Anuj 2026-04-29. */}
+        {isViewerProducer && viewerMatch && (
+          <div className="gem-no-print mb-8">
+            <MatchActions
+              matchId={viewerMatch.id}
+              status={viewerMatch.status}
+              variant="detail"
+              hideComment
+            />
+          </div>
+        )}
+
+        {/* Producer-mode script download. Gated on Interested. */}
+        {isViewerProducer && isViewerProducerUnlocked && viewerMatch && (
+          <div
+            className="gem-no-print rounded-xl px-5 py-5 mb-8 flex items-start gap-4 flex-wrap"
+            style={{
+              background: 'rgba(5,150,105,0.06)',
+              border: '1px solid rgba(5,150,105,0.30)',
+            }}
+          >
+            <div className="min-w-0 flex-1">
+              <p
+                className="text-[11px] uppercase tracking-[0.18em] font-bold m-0 mb-1"
+                style={{ color: '#059669' }}
+              >
+                Script unlocked
+              </p>
+              <p className="text-[14.5px] text-[var(--gem-gray-100)] m-0 leading-snug">
+                Download the PDF — link is signed and good for 10 minutes.
+              </p>
+            </div>
+            <ScriptDownloadButton matchId={viewerMatch.id} />
+          </div>
+        )}
 
         {/* Inline industry stats — owner/admin, always visible while
             published. Doubles as the always-on conversion carrot for
@@ -1188,6 +1278,57 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {!viewerIsSubscribed && user && (
         <SubscribeGate evaluationId={id} isLoggedIn={true} />
+      )}
+
+      {/* Producer-mode: "Reach out to the writer" panel — gated on
+          Interested. Anuj 2026-04-29: ported from /partner/script/[matchId]
+          so producers have the same email-the-writer affordance on the
+          unified URL. */}
+      {isViewerProducer && isViewerProducerUnlocked && viewerMatch && (
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-10 mb-12 gem-no-print">
+          <div
+            className="rounded-xl px-5 py-5 flex flex-wrap items-start gap-4"
+            style={{
+              background: '#fff',
+              border: '1.5px solid var(--gem-accent)',
+              boxShadow: '0 2px 10px rgba(124,58,237,0.08)',
+            }}
+          >
+            <span
+              className="inline-flex items-center justify-center rounded-full"
+              style={{
+                width: 40,
+                height: 40,
+                background: 'rgba(124,58,237,0.10)',
+                color: 'var(--gem-accent)',
+                flexShrink: 0,
+              }}
+            >
+              <Mail size={18} strokeWidth={2.25} />
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
+                Reach out to the writer
+              </p>
+              <p className="text-[12.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+                Send an intro by email — we'll deliver it. The writer can hit
+                Reply to land in your inbox directly.
+              </p>
+            </div>
+            <ProducerIntroButton
+              matchId={viewerMatch.id}
+              producerEmailedAt={viewerMatch.producer_emailed_at}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Producer-mode: sticky bottom Interested/Pass bar. */}
+      {isViewerProducer && viewerMatch && (
+        <StickyMatchActions
+          matchId={viewerMatch.id}
+          status={viewerMatch.status}
+        />
       )}
     </>
   )
