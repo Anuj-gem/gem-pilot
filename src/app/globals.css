@@ -322,28 +322,45 @@ input::placeholder, textarea::placeholder {
   color: var(--gem-gray-500);
   margin: 0 0 12px;
 }
+/* Development considerations row — mirrors src/app/report/[id]/page.tsx.
+   Anuj 2026-04-29: gold-numbered, no boxed background. The number lives
+   in its own grid column so the title + detail align cleanly under each
+   other in a single 28px-gutter ladder. */
 .gem-prose .gem-blog-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: var(--gem-gray-900);
-  border: 1px solid var(--gem-gray-700);
-  border-radius: 10px;
-  padding: 10px 14px;
-  margin: 6px 0;
-}
-.gem-prose .gem-blog-row + .gem-blog-row { margin-top: 8px; }
-.gem-prose .gem-blog-row__title {
-  font-weight: 600;
-  color: var(--gem-gray-50);
-  font-size: 13.5px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  column-gap: 14px;
+  align-items: baseline;
+  padding: 10px 0;
   margin: 0;
 }
+.gem-prose .gem-blog-row + .gem-blog-row {
+  margin-top: 0;
+  border-top: 1px solid var(--gem-gray-800);
+}
+.gem-prose .gem-blog-row__num {
+  grid-row: 1 / span 2;
+  font-weight: 700;
+  color: var(--gem-gold);
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+  margin: 0;
+}
+.gem-prose .gem-blog-row__title {
+  grid-column: 2;
+  font-weight: 700;
+  color: var(--gem-gray-50);
+  font-size: 14.5px;
+  margin: 0;
+  line-height: 1.35;
+}
 .gem-prose .gem-blog-row__meta {
-  font-size: 11.5px;
-  color: var(--gem-gray-400);
-  margin: 2px 0 0;
+  grid-column: 2;
+  font-size: 13px;
+  color: var(--gem-gray-300);
+  margin: 4px 0 0;
+  line-height: 1.55;
 }
 .gem-prose .gem-blog-row__score {
   font-size: 12.5px;
@@ -518,33 +535,51 @@ input::placeholder, textarea::placeholder {
 @media (max-width: 640px) {
   .gem-prose .gem-blog-btn--intro { margin-left: 0; width: 100%; justify-content: center; }
 }
+/* Project Complexity tile — mirrors src/components/report/risk-details-card.tsx
+   (Anuj 2026-04-29). Neutral white card, eyebrow label on the left,
+   small colored pill (Smooth / Manageable / Complex) at the top right.
+   No big colored backgrounds — that read as alarms on the live page. */
 .gem-prose .gem-blog-tile {
-  background: var(--gem-gray-900);
+  background: #fff;
   border: 1px solid var(--gem-gray-700);
-  border-radius: 10px;
-  padding: 12px;
-  text-align: center;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
 }
 .gem-prose .gem-blog-tile__label {
-  font-size: 9px;
-  letter-spacing: 0.16em;
+  font-size: 10.5px;
+  letter-spacing: 0.20em;
   font-weight: 700;
   color: var(--gem-gray-500);
   text-transform: uppercase;
-  margin: 0 0 6px;
-}
-.gem-prose .gem-blog-tile__value {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--gem-gray-50);
   margin: 0;
 }
-.gem-prose .gem-blog-tile--smooth { background: #d1fae5; border-color: #10b981; }
-.gem-prose .gem-blog-tile--manageable { background: #fef9c3; border-color: #facc15; }
-.gem-prose .gem-blog-tile--complex { background: #fee2e2; border-color: #ef4444; }
-.gem-prose .gem-blog-tile--smooth .gem-blog-tile__value,
-.gem-prose .gem-blog-tile--manageable .gem-blog-tile__value,
-.gem-prose .gem-blog-tile--complex .gem-blog-tile__value { color: var(--gem-gray-50); }
+.gem-prose .gem-blog-tile__value {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--gem-gray-50);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.gem-prose .gem-blog-tile--smooth .gem-blog-tile__value {
+  background: #d1fae5;
+  border-color: #10b981;
+}
+.gem-prose .gem-blog-tile--manageable .gem-blog-tile__value {
+  background: #fef9c3;
+  border-color: #facc15;
+}
+.gem-prose .gem-blog-tile--complex .gem-blog-tile__value {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
 
 @media (max-width: 640px) {
   .gem-prose .gem-blog-grid-3 { grid-template-columns: 1fr; }

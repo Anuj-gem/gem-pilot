@@ -118,7 +118,7 @@ development meeting.
 - **Cast** — lead profiles with the actor archetypes.
 - **Packaging** — audience, budget tier, buyer fit.
 - **Project Complexity** — production reality and cast lift.
-- **Development priorities** — the case against, with the sharpest
+- **Development considerations** — the case against, with the sharpest
   lever called out.
 - **GEM Score** on the cover — back by popular demand. One signal a
   producer scans first; the substance is the read underneath.
@@ -138,24 +138,21 @@ rescore only updates the underlying read.
 </div>
 
 <div class="gem-blog-mock">
-  <p class="gem-blog-mock-title">Development priorities</p>
+  <p class="gem-blog-mock-title">Development considerations</p>
   <div class="gem-blog-row">
-    <div>
-      <p class="gem-blog-row__title">01 · Tighten the second-act midpoint</p>
-      <p class="gem-blog-row__meta">The sharpest lever — Tony's first crisis lands at p52, ten pages later than it should.</p>
-    </div>
+    <p class="gem-blog-row__num">01</p>
+    <p class="gem-blog-row__title">Tighten the second-act midpoint</p>
+    <p class="gem-blog-row__meta">The sharpest lever — Tony's first crisis lands at p52, ten pages later than it should.</p>
   </div>
   <div class="gem-blog-row">
-    <div>
-      <p class="gem-blog-row__title">02 · Clarify Carmela's arc in the back half</p>
-      <p class="gem-blog-row__meta">Strong setup, less defined turn. A scene-level pass does it.</p>
-    </div>
+    <p class="gem-blog-row__num">02</p>
+    <p class="gem-blog-row__title">Clarify Carmela's arc in the back half</p>
+    <p class="gem-blog-row__meta">Strong setup, less defined turn. A scene-level pass does it.</p>
   </div>
   <div class="gem-blog-row">
-    <div>
-      <p class="gem-blog-row__title">03 · Trim the FBI subplot by ~6 pages</p>
-      <p class="gem-blog-row__meta">Pulls focus from the family/crew triangulation that's actually working.</p>
-    </div>
+    <p class="gem-blog-row__num">03</p>
+    <p class="gem-blog-row__title">Trim the FBI subplot by ~6 pages</p>
+    <p class="gem-blog-row__meta">Pulls focus from the family/crew triangulation that's actually working.</p>
   </div>
 </div>
 
