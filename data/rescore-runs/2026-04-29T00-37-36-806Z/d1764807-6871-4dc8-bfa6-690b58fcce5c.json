@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:49:05.388Z",
+  "submission_id": "d1764807-6871-4dc8-bfa6-690b58fcce5c",
+  "eval_id": "b5df929a-e2dc-44b2-8570-d64ae39213a1",
+  "title": "dinosaur island survival",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "PHILLIP HARRIS",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · pilot/engineer type"
+    },
+    {
+      "name": "DR. ELARA VANCE",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · scientist/adventurer type"
+    },
+    {
+      "name": "KAI",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s · rugged island survivor"
+    },
+    {
+      "name": "DR. ARIS THORNE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · scientist"
+    },
+    {
+      "name": "AGENT VALERIE REID",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · government agent"
+    },
+    {
+      "name": "GENERAL ROOKER",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · military authority"
+    },
+    {
+      "name": "BEN",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · expedition coordinator"
+    },
+    {
+      "name": "ANNA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · analyst/scientist"
+    },
+    {
+      "name": "CHLOE",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · scientist"
+    },
+    {
+      "name": "MARCO",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · scientist/tech specialist"
+    }
+  ],
+  "positioning_hook": "A cargo pilot and a stranded scientist fight through a dinosaur island’s shifting territories, racing to signal rescue before the ecosystem’s apex predators erase them.",
+  "cost_usd": 0.04029525,
+  "input_tokens": 26937,
+  "output_tokens": 4465,
+  "status": "wrote:leads_ok"
+}

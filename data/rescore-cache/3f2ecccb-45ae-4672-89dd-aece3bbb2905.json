@@ -1,0 +1,271 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Series",
+      "genre_primary": "Documentary",
+      "genre_tags": [
+        "True Crime",
+        "Investigative"
+      ],
+      "tone": "Grounded, intimate, sober, and quietly relentless"
+    },
+    "positioning_hook": "Jessilyn King turns a family reckoning into an investigation, confronting a man who denied her at the door and forcing a buried pattern of abuse into the open.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The true-crime and survivor-led investigation lane has a built-in audience, and the pilot’s emotional promise is immediate: a woman refuses silence and keeps pushing until the pattern is documented. Its appeal is strongest for viewers who want real-world accountability stories with a personal spine."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The engine is clear early: Jessilyn learns she was lied about, confronts Don in Barstow, is brushed off by police, and then starts building the case herself. The pilot keeps the objective legible while widening the scope from one family confrontation into a larger pattern."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jessilyn is a compelling lead because she moves from wounded witness to self-directed investigator, and Dena gives the story a second emotional anchor. The long-term engine is real, though the series lives primarily on Jessilyn’s persistence and the expanding circle of voices rather than a broad ensemble."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The material stands out by centering process, memory, and documentation instead of sensationalizing the accusation. The body-cam confrontation, redacted records, and social-media outreach give the series a distinctive investigative grammar."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Each sequence adds a new step in the pursuit—confrontation, police, first breakthrough, records, public outreach, deeper roots—so the pilot keeps opening doors. The momentum is more cumulative than explosive, which fits the subject and keeps the viewer leaning forward."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "A survivor-led documentary that becomes an active case-building machine has a fresh, inevitable feel: the personal story and the investigative process are inseparable. The repeated discovery that others were affected gives the series a strong sense of unfolding truth rather than retrospective summary."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Barstow, Carson City, police records, family photo albums, and social-media outreach create a specific documentary ecosystem with real institutional and geographic texture. The world is story-generating because each source type opens a different path to evidence and testimony."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unmistakably restrained and ethical: long holds, minimal music, careful redaction, and present-day quiet all shape the viewing experience. It feels like a documentary that understands suspense can come from silence, not just revelation."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 8,
+        "reasoning": "The pilot starts as one woman’s confrontation and gradually reveals a wider pattern, prior reports, family history, and unresolved cases. That structure suggests a series with real depth beneath the immediate story, especially as more voices and records come into view."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Jessilyn and Dena form a strong core dynamic, and the expanding web of victims, relatives, and officials gives the series recurring interaction points. Still, the engine is centered on one lead and a rotating set of interview subjects rather than a fully combinatorial ensemble."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Primary on-camera presence is Jessilyn King as herself",
+          "Secondary recurring interview presence includes Dena, Don, Peggi, Stephanie, Lily, Julie, Kathy, and Ben if consented"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "Mostly interior interview setups with intermittent exteriors and screen-based inserts",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Present-day home environment",
+          "Barstow exterior coverage",
+          "Barstow Police Department exterior/interior access if available",
+          "Body-cam footage integration",
+          "Archival family photos and redacted documents"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Simple redaction treatments, document visualization, screen inserts, and restrained map graphics.",
+        "stunts_level": "none",
+        "sfx_needs": "Minimal practical needs; documentary audio handling and careful legal/ethical presentation of body-cam and records.",
+        "night_shoots": "minimal",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "real_person",
+          "detail": "Jessilyn King, Dena, Don, Peggi, Stephanie, Lily, Julie, Kathy, Ben, and other identified interview subjects"
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "Body-cam footage, police reports, and archival family photos require clearance and ethical review"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming documentary / true-crime docuseries lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Serialized investigative documentary driven by survivor testimony, records, and expanding witness interviews"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Interview setups, present-day observational footage, archival materials, and limited graphics keep the production footprint contained."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project depends on real-person participation and consented interviews, with multiple named subjects potentially appearing across episodes."
+        },
+        "location": {
+          "level": "low",
+          "note": "The series is built around a small set of contemporary interview spaces, Barstow exteriors, and document-based inserts."
+        },
+        "content": {
+          "level": "high",
+          "note": "The subject matter centers on sexual abuse allegations, denial, police inaction, and survivor testimony, which places it in mature documentary territory."
+        },
+        "rights": {
+          "level": "high",
+          "note": "Real people, body-cam footage, police records, and archival family materials all require careful clearance and release management."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The lead is the investigator and the evidence.",
+          "what_it_means": "That gives the series a built-in engine: every episode can advance both the emotional arc and the case itself, which is exactly what keeps documentary buyers engaged over multiple hours. Premium streamers and true-crime audiences will respond to a survivor who is not just recounting events but actively assembling the record.",
+          "evidence": "Jessilyn moves from the Christmas-night conversation to the Barstow confrontation, then starts contacting witnesses, requesting records, and building the case herself.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The body-cam confrontation is a clean hook.",
+          "what_it_means": "The series has a visual centerpiece that instantly communicates stakes without needing dramatization: a real-time doorstep exchange that collapses years of silence into one unbearable moment. Buyers looking for a docuseries with a strong trailer moment and immediate episode-end tension will see the value right away.",
+          "evidence": "The body-cam sequence where Don says he does not know who Jessilyn is, then shuts the door.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The documentary grammar is disciplined.",
+          "what_it_means": "The restrained use of silence, redaction, archival photos, and observational footage gives the project a premium, ethically aware identity that feels more serious than sensational. That makes it attractive to buyers who want true-crime credibility without the tabloid sheen.",
+          "evidence": "Repeated notes like 'No music,' 'Hold longer than comfortable,' careful redaction language, and non-exploitative visual instructions.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The story keeps widening without losing the spine.",
+          "what_it_means": "Each sequence adds a new layer—family memory, police records, additional victims, prior investigations, and family history—so the series can sustain a multi-episode rollout rather than collapsing into a single reveal. That structure is especially useful for streamers who want a limited-series shape with room to breathe.",
+          "evidence": "The progression from one confrontation to two more victims, then six known cases, then the Carson City report and deeper family roots.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Barstow functions like a memory map.",
+          "what_it_means": "The recurring geography gives the series a visual and emotional anchor that can be revisited across episodes, making the setting feel like part of the investigation rather than a backdrop. That kind of place-based identity helps a docuseries stand out in a crowded true-crime field.",
+          "evidence": "Barstow, Carson City, the police department, the house, and the repeated return to the desert landscape.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a survivor-led investigative docuseries with a built-in engine: Jessilyn King doesn’t just tell her story, she keeps uncovering it in real time. The result is a restrained, ethically sharp true-crime series with a strong visual centerpiece, expanding witness web, and enough documentary momentum to sustain multiple episodes.",
+      "craft_note": ""
+    },
+    "lead_characters": [
+      {
+        "name": "Jessilyn King",
+        "role_type": "Lead",
+        "demographics": "Female · 30s-40s · real person",
+        "hook": "Jessilyn is the emotional and investigative center of the series: a mother, survivor, and self-taught fact-finder who starts with a private family conversation and ends up building a case. She carries grief, resolve, and disbelief in the same frame, and the show lives in the tension between her tenderness at home and her steel when she starts asking questions.",
+        "why_actor_wants_this": "This is the showcase territory of Michelle Williams in *Maid* or Jodie Comer in *The End We Start From*—a performance built on interior pressure, controlled emotion, and the slow transformation of pain into action. An actor gets to play witness, investigator, and moral center all at once, which is the kind of role that can define a prestige documentary series."
+      },
+      {
+        "name": "Dena",
+        "role_type": "Lead",
+        "demographics": "Female · 50s-70s · real person",
+        "hook": "Dena is the family witness who carries her own burden of memory, regret, and loyalty. She is composed on the surface but emotionally porous underneath, and her presence gives the series a second perspective on what was said, what was believed, and what was carried for years.",
+        "why_actor_wants_this": "This has the lived-in authority of Patricia Clarkson in *Sharp Objects* or Laura Linney in *Ozark*—a role where restraint is doing as much work as confession. Character actors who excel at layered maternal presence will see a chance to play history, guilt, and protection without ever overplaying the emotion."
+      },
+      {
+        "name": "Don",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-70s · real person",
+        "hook": "Don is the offscreen gravity of the series: the man at the center of the allegations, the denial, and the unresolved history. Even in limited footage and audio, he functions as a chilling absence-presence, a figure whose refusal to acknowledge Jessilyn becomes part of the story’s emotional architecture.",
+        "why_actor_wants_this": "This is the kind of morally opaque, tightly controlled presence that actors like Matthew Rhys in *The Americans* or Paul Walter Hauser in *Black Bird* use to make a scene feel dangerous without volume. A performer with stillness and menace will be drawn to the challenge of making a few moments carry the weight of years."
+      },
+      {
+        "name": "Peggi",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s-80s · real person",
+        "hook": "Peggi is the family elder whose memory and proximity complicate the story’s emotional terrain. She is not there to drive the investigation; she is there to show how trust, denial, and family closeness can coexist in the same room.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran character actress the authority of Frances McDormand in *Olive Kitteridge*—brief, grounded, and loaded with subtext. Actors who like playing the person who knows more than they say will respond to the quiet complexity here."
+      },
+      {
+        "name": "Stephanie",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-40s · real person",
+        "hook": "Stephanie is one of the first confirmations that turns suspicion into pattern. She is direct, unsentimental, and crucial because she answers the question the series keeps asking: what happens when someone finally says yes out loud?",
+        "why_actor_wants_this": "This is the compact, high-impact testimonial role that actors in the vein of Kaitlyn Dever in *Unbelievable* or Merritt Wever in *Godless* know how to make unforgettable. It gives a performer a single, clean emotional lane with enormous narrative consequence."
+      },
+      {
+        "name": "Lily",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-40s · real person",
+        "hook": "Lily is quieter and more hesitant, which makes her testimony feel especially human and hard-won. She broadens the emotional range of the series by showing how memory returns differently for different people.",
+        "why_actor_wants_this": "This is the kind of restrained testimonial part that actors like Elizabeth Olsen in *Wind River* or Carrie Coon in *The Leftovers* can turn into a scene-stealer through stillness. It rewards an actor who can make uncertainty feel as dramatic as certainty."
+      },
+      {
+        "name": "Julie",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-60s · real person",
+        "hook": "Julie is the connective tissue between Jessilyn’s search and the wider history around Don. She helps the series move from family memory into corroboration, which makes her feel like a key node in the investigation rather than a simple interview subject.",
+        "why_actor_wants_this": "This is the kind of corroborating role that actors in prestige docudrama often chase because it carries real narrative authority in a small amount of screen time. It gives a performer the chance to deliver one of the series’ pivot points with clarity and credibility."
+      },
+      {
+        "name": "Kathy",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-60s · real person",
+        "hook": "Kathy opens another branch of the pattern by connecting Don to a different family context and a different set of confirmations. She helps the series expand outward without losing its emotional specificity.",
+        "why_actor_wants_this": "This is the kind of grounded, testimonial role that can land like a key reveal in *The Keepers* or *The Jinx*—small on paper, major in effect. Actors who like playing the person who unlocks the next layer of truth will be drawn to it."
+      },
+      {
+        "name": "Ben",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-50s · real person",
+        "hook": "Ben points the story toward Don’s family history and the broader pattern around him. He adds a generational angle, suggesting the series is not only about one man’s actions but about the ecosystem that let them persist.",
+        "why_actor_wants_this": "This is the kind of reflective, information-bearing role that actors in documentary reconstructions and prestige nonfiction love because it can shift the story’s scope in one conversation. It gives a performer the chance to play inherited discomfort and reluctant disclosure."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make silence feel like suspense.",
+        "fit_profile": "Established documentary directors or first-time series directors with a strong observational eye, especially those coming from investigative nonfiction, character-led docs, or prestige true-crime. This material rewards restraint, ethical precision, and the ability to shape interviews, archival material, and body-cam footage into a single escalating emotional argument.",
+        "detail": "The craft challenge is not spectacle; it is control—knowing when to hold on a face, when to let a document speak, and how to make a real-time confrontation land like a climax. Directors who already work in intimate, process-driven nonfiction will see a series they can shape with taste and authority."
+      },
+      "buyer_appeal": {
+        "tier": "Premium streaming documentary series",
+        "lane": "True-crime / survivor-led investigative nonfiction",
+        "detail": "It can be greenlit around a small documentary footprint because the engine is interviews, archival materials, and carefully handled screen inserts rather than reenactment-heavy production. The survivor-led true-crime lane remains a reliable streamer buy-zone, and the series has a clean trailer moment in the body-cam confrontation plus enough case expansion to support multiple episodes."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening sequence is emotionally clear but long.",
+        "detail": "The Christmas-night conversation establishes the wound and the family dynamic, and a next pass could look at whether the same emotional information can arrive with slightly less runway so the investigative engine turns sooner. The goal would be to preserve the intimacy while getting to the first active question a little faster.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The middle chapters lean on repeated testimonial beats.",
+        "detail": "The pattern discovery is compelling, and the version of the series where a few of the interview passages are intercut more aggressively with records, maps, or outreach activity could keep the forward motion even tighter. That would protect the cumulative power while giving each episode a sharper visual turn.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The body-cam and records material need careful legal shaping.",
+        "detail": "Because the series uses real people, police documents, and body-cam footage, the cleanest production path is to keep the visual language modular and avoid building the episode around any one clearance-sensitive element. That protects the story while preserving flexibility if a source or document changes late in the process.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The series plays in a mature documentary lane.",
+        "detail": "The subject matter is squarely adult and will fit best with platforms comfortable programming sexual abuse testimony, police inaction, and ongoing case status. That positioning is an advantage for premium streamers because the audience arrives expecting seriousness and stays for the investigative payoff.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 71.7,
+  "tier": "Optionable",
+  "inputTokens": 18237,
+  "outputTokens": 4342,
+  "cost": 0.03321675,
+  "declaredFormat": "Series"
+}

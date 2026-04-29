@@ -1,0 +1,337 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Sci-fi thriller",
+      "genre_tags": [
+        "spy thriller",
+        "psychological thriller"
+      ],
+      "tone": "High-concept, paranoid, propulsive, and emotionally charged"
+    },
+    "positioning_hook": "A CIA trainee trapped in an augmented-reality black-ops program discovers her memories, her lover, and her mission may all be engineered to keep her compliant.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 8,
+        "reasoning": "The script has a clean commercial engine: CIA training, immersive tech, and a conspiracy that turns personal memory into the battlefield. The opening Istanbul snatch, the Farm training sequence, and the Washington live-op finale give it a broad genre promise with clear trailer moments."
+      },
+      "conceptual_hook_clarity": {
+        "score": 9,
+        "reasoning": "The premise lands fast and stays legible: a trainee enters ARC, a system that overlays reality with predictive intelligence, and gradually realizes the program is rewriting her life. The opening mission, the reveal of the neural patch, and the final cycle-reset structure make the hook easy to explain in one breath."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Ridley is a strong lead because her professional intelligence, trauma history, and instinctive resistance to the system all pull in different directions. Ian, Egan, Alvarez, and Williams each carry a distinct relationship to ARC, which gives the ensemble real play beyond the central romance."
+      },
+      "creative_originality_and_boldness": {
+        "score": 8,
+        "reasoning": "The script’s boldest move is making intelligence analysis itself the action language, with HUD prompts, card systems, and overwrite environments driving set pieces. The repeated cycle structure and the reveal that the protagonist’s life has been iterated give the material a confident, unusual shape."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "It moves with real force from training to field ops to live D.C. intervention, and each escalation changes the stakes rather than simply repeating the last one. The rooftop confrontation, the server-room discovery, and the final embassy sequence all keep the engine pushing forward."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The script fuses spycraft, trauma psychology, and simulation tech into a premise that feels fresh while remaining instantly readable. The idea that ARC learns the operatives as much as they learn it, then weaponizes their own patterns against them, gives the concept a memorable spine."
+      },
+      "world_density_and_texture": {
+        "score": 8,
+        "reasoning": "The Farm, the ARC backlot, the observation rooms, and the live-op Washington finale create a layered institutional world with visible hierarchy and procedure. The card system, neural patch, and live-feed command structure make the setting feel operational rather than decorative."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: sleek espionage mechanics collide with psychological dread and a volatile romantic history. The script can pivot from tactical banter to intimate memory fracture to action spectacle without losing its identity."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 9,
+        "reasoning": "Beneath the thriller surface is a deeper story about coercion, identity, consent, and how institutions train people to distrust their own instincts. The cycle reveals, the memory tampering, and the recurring West/Dawson overlay suggest a much larger psychological architecture underneath the plot."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 8,
+        "reasoning": "Ridley/Ian is the core engine, but the script also gives Egan, Alvarez, Denny, Williams, Harrison, Sykes, and Dawson meaningful friction points. The team dynamics inside ARC and the shifting trust lines in the field create multiple playable combinations."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "ensemble of adult operatives and officials",
+          "one major female lead",
+          "one major male lead",
+          "supporting roles include government and intelligence personnel"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior-heavy",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Istanbul market",
+          "Georgetown campus/lecture hall",
+          "Camp Peary/Farm training facility",
+          "large backlot build for ARC overwrites",
+          "Washington D.C. embassy row/live city exteriors",
+          "Paris, Serbia, Taipei, Yemen, Moscow, and Liverpool station environments created via simulation or selective location work"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Digital environment overwrites, HUD interfaces, pixelation/reset effects, simulated city transformations, and memory/cycle visualizations are central to the storytelling.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, explosions, rooftop falls, vehicle action, and practical combat choreography throughout the training and live-op sequences.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Apple Watch"
+        },
+        {
+          "type": "brand",
+          "detail": "Uber"
+        },
+        {
+          "type": "brand",
+          "detail": "World Bank"
+        },
+        {
+          "type": "brand",
+          "detail": "CIA"
+        },
+        {
+          "type": "brand",
+          "detail": "NSA"
+        },
+        {
+          "type": "brand",
+          "detail": "DOD"
+        },
+        {
+          "type": "brand",
+          "detail": "Georgetown University"
+        },
+        {
+          "type": "brand",
+          "detail": "Columbia"
+        },
+        {
+          "type": "brand",
+          "detail": "Camp Peary"
+        },
+        {
+          "type": "brand",
+          "detail": "The Tombs bar"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical thriller lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-platform or mid-wide theatrical potential if packaged around the lead roles and the high-concept hook"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The ARC backlot, HUD/VFX language, and multiple international simulation environments push this above a contained indie, but it remains far below tentpole scale."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script is ensemble-driven with two major leads and several distinct supporting operatives, plus a strong need for actors who can play intelligence, volatility, and romantic history."
+        },
+        "location": {
+          "level": "high",
+          "note": "The story spans Istanbul, Georgetown, Camp Peary, D.C., Paris, Serbia, Taipei, Yemen, Moscow, and Liverpool, even if many are achieved through simulation and selective builds."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The material includes gun violence, coercive control, psychological manipulation, and a live assassination scenario, which keeps it in mature-thriller territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "The script references real institutions, brands, and named places, but it does not hinge on a single life-rights subject or music-driven clearance package."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The premise turns spycraft into a mind game.",
+          "what_it_means": "This gives buyers a clean hook that feels fresh inside a proven genre lane: intelligence work becomes a psychological and sensory battleground, not just a procedural one. It will attract streamer and theatrical thriller buyers looking for a high-concept engine with immediate trailer language.",
+          "evidence": "ARC overlays Moscow onto Virginia, the cards drive tactical choices, and the system learns the trainees' patterns in real time.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Ridley is built for a star-making lead.",
+          "what_it_means": "The role gives an actress intelligence, vulnerability, defiance, and action in one package, which is exactly the kind of part that can elevate a project in packaging. Mid-career dramatic leads and rising prestige names will see a showcase that can carry both emotional weight and genre momentum.",
+          "evidence": "Her coercive-control lecture, her trauma responses, her refusal to trust ARC, and her rooftop confrontation with Ian all define her as both thinker and fighter.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The training world has a built-in escalation engine.",
+          "what_it_means": "The Farm, ARC, and the card system create a modular structure that can keep generating set pieces without feeling repetitive. That makes the script attractive to producers who want a contained-enough framework with room for big sequences and clear act turns.",
+          "evidence": "Dojo simulations, the Paris safe house, Liverpool station, Yemen interrogation, and the final D.C. live op all emerge from the same training architecture.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The romance is story fuel, not decoration.",
+          "what_it_means": "Ridley and Ian’s history gives the thriller an emotional spine that can widen the audience beyond pure genre fans. Casting teams will see a two-hander dynamic with chemistry, betrayal, and memory loss baked into the premise.",
+          "evidence": "Their bar reunion, the repeated 'what are the odds' motif, and the final rooftop recognition scene all turn the relationship into a structural engine.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The conspiracy lands in a timely institutional lane.",
+          "what_it_means": "The script taps current buyer interest in surveillance, predictive systems, and the ethics of automation inside government power structures. That gives it a topical edge that can travel with audiences who respond to paranoia thrillers with a contemporary political pulse.",
+          "evidence": "Senator Kerrigan’s guardrails speeches, the ARC debate over prediction versus accountability, and the live-op reveal all frame the story around institutional overreach.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The final reveal recontextualizes the whole movie.",
+          "what_it_means": "The cycle structure gives the project a built-in conversation piece and a strong ending that invites rewatch value. Buyers like material that can land as a complete thriller while also promising a deeper architecture underneath.",
+          "evidence": "The server-room discovery, the 'Cycle 3 Initiated' turn, and the final human-override beat reframe Ridley’s entire journey.",
+          "source": "script"
+        }
+      ],
+      "headline": "AGENCY is a sleek, high-concept espionage thriller with a psychological hook: a CIA trainee discovers the program training her may also be rewriting her life. The script combines immersive tech, live-action tradecraft, and a volatile central romance into a package that feels both commercial and distinctive."
+    },
+    "lead_characters": [
+      {
+        "name": "Ridley Cooper",
+        "role_type": "Lead",
+        "demographics": "Female · 20s",
+        "hook": "Ridley is a sharp, self-contained intelligence trainee whose real superpower is pattern recognition, but her deeper engine is resistance: she does not like being told what to feel, what to trust, or who she is allowed to become. She carries herself like someone who has already survived something private and ugly, which makes her both credible in the field and dangerous to the system trying to shape her.",
+        "why_actor_wants_this": "This is the showcase territory of Jodie Comer in Killing Eve or Rebecca Ferguson in a prestige action-thriller — a role that lets an actor play intelligence, fracture, seduction, and physical command in the same frame. It gives a performer the rare combination of emotional volatility, genre authority, and a final-act identity reveal that can define a career turn."
+      },
+      {
+        "name": "Ian Walsh",
+        "role_type": "Lead",
+        "demographics": "Male · mid-20s",
+        "hook": "Ian is the polished, hyper-competent operative who believes discipline is morality and optimization is mercy. He reads as the guy who always gets the job done, but the script keeps exposing the cost of that certainty until he becomes the emotional mirror for Ridley’s refusal to surrender her instincts.",
+        "why_actor_wants_this": "This is the showcase lane of Matthew McConaughey in True Detective or Michael Fassbender in The Killer — a controlled, magnetic lead whose stillness hides a moral fracture. Actors who want a cool-headed action role with a buried emotional collapse will chase this because it lets them play precision first and humanity breaking through later."
+      },
+      {
+        "name": "Dawson / Cameron West",
+        "role_type": "Lead",
+        "demographics": "Male · 40s-50s",
+        "hook": "Dawson is the smooth institutional architect who can sell a future of safety while quietly engineering obedience, and Cameron West is the face that makes that control intimate. The duality gives the character a chilling calm: he is part mentor, part abuser, part system, and the script uses that ambiguity to make him feel omnipresent.",
+        "why_actor_wants_this": "This is the prestige-villain space of Ralph Fiennes in The Menu or Michael Shannon in Take Shelter — a role where menace comes from composure, not volume. Character actors who want a cerebral antagonist with psychological authority and a late-game identity twist will see real meat here."
+      },
+      {
+        "name": "Matt Egan",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Egan is the legacy operator who treats aggression like a birthright and confidence like a shield. He’s the kind of guy who looks like the system’s favorite son until the script lets his certainty curdle into something far more frightening.",
+        "why_actor_wants_this": "This is the territory of Jesse Plemons in a pressure-cooker ensemble or Jon Bernthal in a military thriller — a role that lets an actor play swagger, volatility, and the moment a hard-charging guy realizes he may be the weapon. It’s a strong supporting part for someone who wants to make an impression through controlled menace and a late emotional crack."
+      },
+      {
+        "name": "Jessie Alvarez",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Alvarez is the smartest person in the room who doesn’t need the room to know it, and she carries herself with a cool, skeptical intelligence that keeps her from becoming a pure believer in ARC. She’s the team’s clearest bridge between data and doubt, which makes her both useful and quietly subversive.",
+        "why_actor_wants_this": "This is the showcase space of Ayo Edebiri in a sharp ensemble or Kerry Condon in a procedural-thriller hybrid — a role that rewards precision, wit, and the ability to make intelligence feel lived-in rather than explained. Actors who want a grounded, modern operator with real screen authority will respond to it."
+      },
+      {
+        "name": "Wyatt Denny",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Denny is the anxious analyst who sees too much and says just enough, which makes him the ensemble’s pressure gauge. He’s funny, observant, and increasingly haunted, giving the script a human voice for the cost of over-processing the world.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the nervous intelligence of Paul Dano in a thriller ensemble or Jesse Eisenberg in a pressure-cooker team dynamic. It offers a strong showcase for fast, reactive dialogue and the slow realization that being right is not the same as being safe."
+      },
+      {
+        "name": "Chris Williams",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s",
+        "hook": "Williams is the quiet one who seems built for systems until the systems start living inside him. His arc is the most visibly destabilizing of the trainees, which makes him a potent warning sign for what ARC can do to a mind that already leans inward.",
+        "why_actor_wants_this": "This is the showcase lane of Lakeith Stanfield in a paranoid ensemble or Barry Keoghan in a psychological thriller — a role where stillness, interiority, and eventual unraveling do the heavy lifting. Actors who want to play a character whose silence becomes the story will be drawn to it."
+      },
+      {
+        "name": "Sykes",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Sykes is the hard-edged operations director who speaks in outcomes, not ethics. He’s the institutional face of 'get it done,' which makes him a clean embodiment of the machine Ridley is fighting.",
+        "why_actor_wants_this": "This is the kind of authority role that gives an actor the command presence of Bryan Cranston in a power-thriller or J.K. Simmons in a military command part. It’s a compact, scene-stealing slot for someone who can make institutional certainty feel dangerous."
+      },
+      {
+        "name": "Bill Harrison",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s-60s",
+        "hook": "Harrison is the veteran trainer who understands the machinery and the mythology of the program equally well. He reads as the guy who can explain the rules while quietly helping enforce them, which gives him a useful ambiguity inside the hierarchy.",
+        "why_actor_wants_this": "This is the showcase territory of a seasoned character actor like David Strathairn or Stephen Root in a procedural power structure — a role that lets an actor play institutional fluency, dry authority, and just enough moral drift to keep the audience uneasy. It’s ideal for someone who can make exposition feel like power."
+      },
+      {
+        "name": "Senator Robert Kerrigan",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Kerrigan is the public-facing conscience of the story, but the script keeps him one step away from becoming a pure symbol. His gold-star grief and guardrails rhetoric give the film a political and emotional counterweight to ARC’s cold logic.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the gravitas of Michael Keaton in Spotlight or Mark Ruffalo in a political thriller — a public figure with private pain and moral leverage. It’s a strong supporting slot for someone who can make a speech feel like a lived wound rather than a platform moment."
+      },
+      {
+        "name": "Pavel Markov",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s",
+        "hook": "Markov is the elegant, slippery asset who keeps changing meaning depending on who is looking at him. He functions as both target and misdirection, which makes him a useful narrative hinge rather than a simple MacGuffin.",
+        "why_actor_wants_this": "This is the kind of part that gives a veteran actor the cool ambiguity of Stellan Skarsgård in a spy drama or Christoph Waltz in an espionage thriller. It offers a compact but memorable opportunity to play charm, fear, and hidden intent in a single role."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to stage paranoia as a sensory experience, not just a plot.",
+        "fit_profile": "Established indie or elevated-genre directors with at least one feature under their belt, or TV directors moving into features, who already work in psychological tension, performance-forward action, and clean visual systems. This material rewards someone who can balance sleek world-building with intimate emotional fracture and make the audience feel the system closing in.",
+        "detail": "The ARC overlays, cycle resets, and live-op reveal give a director a chance to build a signature visual language around perception itself. It also offers a strong two-hander emotional spine, which means the right filmmaker can deliver both set-piece momentum and actor-driven suspense."
+      },
+      "buyer_appeal": {
+        "tier": "$10-25M feature",
+        "lane": "Premium streaming thriller / elevated theatrical genre lane",
+        "detail": "It can be packaged around two strong lead roles and a contained ensemble, so it does not require a giant star stack to make sense on paper. The CIA/tech-conspiracy lane remains a reliable buyer zone, and the ARC backlot concept gives the film a repeatable production footprint that can be sold as high-concept without tentpole spend."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The cycle reveal is the biggest lever.",
+        "detail": "The final archive sequence and Cycle 3 reset are the movie’s most distinctive turn; a next pass could consider planting one or two earlier visual tells so the recontextualization lands with even more inevitability. That would protect the surprise while making the ending feel even more earned.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The opening runs long before the core premise fully locks.",
+        "detail": "The Istanbul rescue, Georgetown lecture, and bar reunion all do useful work, but the version of the script where ARC’s true nature arrives a touch earlier would sharpen the first-act propulsion. The material is already clear; this is about getting to the movie’s ownable engine with maximum snap.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble could be even more combinatorial.",
+        "detail": "Ridley/Ian is the dominant relationship, and the supporting trainees are vivid, but a few more independent friction points among Alvarez, Denny, Egan, and Williams would deepen the team dynamic. That would give the middle section even more replayable energy without changing the plot spine.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is broad on the page.",
+        "detail": "The story travels through Istanbul, Georgetown, Camp Peary, Paris, Serbia, Taipei, Yemen, Moscow, Liverpool, and multiple D.C. environments, even though many are simulation-based. A production-minded pass could collapse a few of the overseas beats into fewer signature environments without losing the global intelligence feel.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The HUD language is a signature and a burden.",
+        "detail": "The card system, overlays, and live data read as the film’s visual identity, so the next pass should keep that language crisp and repeatable rather than expanding it in too many directions. The more the audience can instantly read each interface state, the more the concept will play cleanly on screen.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "Ridley’s emotional turn is the engine of the climax.",
+        "detail": "The rooftop recognition with Ian and the final choice against West are already strong, and the script could further foreground the exact moment she stops asking the system for permission. That would make her final human override feel like the culmination of the whole movie rather than only the climax of the plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 81.3,
+  "tier": "Optionable",
+  "inputTokens": 36897,
+  "outputTokens": 5174,
+  "cost": 0.050955749999999994,
+  "declaredFormat": "Feature film"
+}

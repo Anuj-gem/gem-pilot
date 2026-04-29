@@ -1,0 +1,268 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Superhero",
+      "genre_tags": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "tone": "Grounded, earnest, small-town, crowd-pleasing"
+    },
+    "positioning_hook": "A widowed church custodian in small-town Pennsylvania is bonded to an alien armor system and must protect his daughter when a covert force comes to reclaim it.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The core promise is instantly legible: an ordinary dad becomes a winged protector, and the father-daughter stakes give the spectacle a human anchor. The appeal is broad within genre audiences, though the concept is more character-forward than four-quadrant event-level."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The hook lands early in the cemetery encounter and the script quickly establishes the engine: Ralph is bonded to an alien system, hunted by a covert force, and trying to keep his life intact. The rules are easy to track, and the act breaks are built around clear escalations."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ralph has a strong built-in contradiction — exhausted widower, church worker, reluctant protector — and Abby gives the story emotional gravity. Lexie, Linsey, Debbie, and Tim add useful texture, though the script still lives most strongly on Ralph’s shoulders."
+      },
+      "creative_originality_and_boldness": {
+        "score": 6,
+        "reasoning": "The church custodian / small-town guardian angle gives the material a distinct moral texture, and the Pennsylvania setting helps separate it from generic superhero fare. The larger shape is familiar, but the working-class, faith-adjacent frame gives it a cleaner identity than most origin stories."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script moves with clear escalation from discovery to attack to team-up to abduction to rescue, and each act has a visible turn. The momentum is strongest once the Hunter arrives and the ensemble starts reacting to the secret."
+      },
+      "resonant_originality": {
+        "score": 6,
+        "reasoning": "The idea of a church maintenance man becoming a winged armored guardian has a fresh surface image and a clean emotional fit. The underlying spine is recognizable, but the specific identity of the hero gives it enough lift to feel ownable."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "Pittsville, Saint Peter’s Church, the cemetery, and the school create a coherent local ecosystem with working-class texture. The off-screen mythology is present through the 1963 file and the carrier, but the world is still primarily serving the origin plot."
+      },
+      "tonal_specificity": {
+        "score": 7,
+        "reasoning": "The tone blends earnest family drama, small-town humor, and clean superhero escalation without getting cynical. Ralph’s deadpan reactions — especially the church and school banter — give the script a specific, approachable voice."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The widower/father angle and the 1963 incident file suggest a larger history beneath the surface, and the voice’s line about a system, a purpose, and a failure opens a deeper mythology. The draft is still mostly operating as an origin story, but it leaves room for more emotional and cosmic depth."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Ralph and Abby are the emotional center, and Lexie/Linsey/Debbie/Tim create a workable support web around him. The ensemble functions well for this story, though the strongest recurring energy still comes from the father-daughter axis rather than a fully combinatorial group dynamic."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 5,
+        "series_regulars": 3,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One teenage daughter role",
+          "One twin pair",
+          "Male lead in his 40s",
+          "Older female supporting roles with authority"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Church interior and basement",
+          "Cemetery",
+          "School gym/hallways/training room",
+          "High-tech carrier interior",
+          "Night exterior sky effects"
+        ]
+      },
+      "technical": {
+        "vfx_level": "moderate",
+        "vfx_details": "Alien gem arrival, armor manifestation, wings, flight, energy blasts, carrier exterior/interior, disintegration effects, and a final explosion sequence.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Practical impact beats, glowing armor effects, energy fields, and destruction of set pieces/headstones.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "streaming or mid-budget theatrical genre lane",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with franchise potential if the mythology expands"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The story is contemporary and mostly contained, but the flight, armor, carrier, and battle effects push it above a lean indie budget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead is anchorable by one strong actor, but the twin sister, daughter, mentor, and antagonist all need clear casting to make the ensemble click."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The footprint is manageable, but the script moves between church, cemetery, school, home, woods, and a sci-fi carrier, with multiple night exteriors."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material stays in PG-13 territory with action violence and peril, without sexual content or heavy language."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named real people, brands, music, or external IP are central to the story as written."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The hero is built from working-class contradiction.",
+          "what_it_means": "That gives the script a lead role actors can inhabit with humor, fatigue, and quiet authority, which is exactly what makes a genre premise feel expensive without raising the budget. Mid-career dramatic leads and actorly genre names will respond to a part that lets them play dad, laborer, skeptic, and savior in one package.",
+          "evidence": "Ralph is a widowed church maintenance worker and night custodian who keeps saying 'I’m fine' while clearly carrying the weight of his daughter and his life.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-daughter bond is the emotional engine.",
+          "what_it_means": "That turns the spectacle into a family movie with stakes that travel beyond the genre audience, which is the kind of emotional spine buyers look for when they want franchise potential. Actors with prestige-drama credibility and family-audience appeal will both see a role that can play tenderness, guilt, and heroism.",
+          "evidence": "Abby repeatedly clocks that Ralph is hiding something, and the final act centers on him choosing to get back to her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The small-town church setting gives the mythology a fresh frame.",
+          "what_it_means": "The church, cemetery, and school create a recognizable American world that makes the alien material feel grounded and producible, which helps the project stand out in a crowded superhero field. Buyers looking for a contained genre play with a distinct regional identity will see a clean lane here.",
+          "evidence": "Saint Peter’s Church, the cemetery, and Pittsville High School become the recurring story spaces around the transformation and attacks.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The voice has a clean, playable deadpan.",
+          "what_it_means": "Ralph’s dry reactions give the script a commercial tone that can carry action without becoming self-serious, which broadens the audience and gives the trailer real rhythm. Performers who excel at grounded humor inside genre material will be drawn to the part because the dialogue keeps giving them buttons to play.",
+          "evidence": "Lines like 'Just maintenance' and 'Knock knock' sit alongside the armor and flight beats.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble has a useful civic-web feel.",
+          "what_it_means": "Debbie, Lexie, Linsey, Abby, and Tim create a community around the hero rather than a lone-wolf setup, which gives the story more relationship surfaces and more marketing angles. Ensemble-friendly buyers and directors who like a town-as-character structure will recognize the value of that network.",
+          "evidence": "Debbie brings the 1963 file, Lexie investigates, Linsey pushes her, Tim rescues Ralph, and Abby refuses to stay out of the fight.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The mythology is simple enough to scale.",
+          "what_it_means": "The alien host, the Hunter, the carrier, and the 1963 incident create a franchise-ready framework without burying the audience in lore, which is ideal for a first installment. Streamers and genre financiers looking for expandable IP will see room for sequels, prequels, or a larger universe.",
+          "evidence": "The 'Fallen Star Incident – 1963' file and the carrier reveal imply a longer history beyond this origin story.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, emotionally legible superhero origin with a working-class father at the center, which immediately gives the material a different temperature than standard cape fare. The church, cemetery, and school setting make the world feel specific and producible, while the father-daughter bond and deadpan voice give buyers a trailer-ready hook with franchise room underneath."
+    },
+    "lead_characters": [
+      {
+        "name": "Ralph Cipplone",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · white · widower · church maintenance worker / night custodian",
+        "hook": "Ralph is a tired, decent, emotionally guarded dad who keeps his life stitched together through routine, humor, and sheer will. He is the kind of man who fixes other people’s spaces while quietly falling apart in his own, which makes the alien armor bond feel less like wish fulfillment than a test of character.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Keaton in Birdman or Hugh Jackman in Logan — a worn-down man whose physical competence is inseparable from grief, restraint, and sudden ferocity. Actors who want a role that can play grounded fatherhood, dry comedy, and action-hero transformation in one arc will chase this."
+      },
+      {
+        "name": "Abagail “Abby” Cipplone",
+        "role_type": "Lead",
+        "demographics": "Female · 16 · teen daughter",
+        "hook": "Abby is sharp, observant, and emotionally braver than the adults around her, which lets her function as both the conscience and the pressure point of the story. She has the easy intimacy of a kid who knows her father too well, and the intelligence to sense the lie before she has proof.",
+        "why_actor_wants_this": "This is the kind of grounded teen role that gave Hailee Steinfeld in True Grit and Kaitlyn Dever in Booksmart a chance to be funny, perceptive, and emotionally exact at the same time. Young actors who want a part with real scene authority — not just reaction beats — will see Abby as a breakout vehicle."
+      },
+      {
+        "name": "Lexie Howard",
+        "role_type": "Lead",
+        "demographics": "Female · 35 · athletic trainer",
+        "hook": "Lexie is confident, observant, and quietly restless, the kind of woman who notices patterns before anyone else admits they exist. She brings intelligence and emotional restraint to the investigation, and her curiosity gives the story a second point of view that isn’t just there to admire the hero.",
+        "why_actor_wants_this": "This is the showcase lane of Emily Blunt in Sicario or Rebecca Ferguson in Mission: Impossible — a smart, controlled woman whose competence is part of the tension. Actors who like playing intelligence under pressure, with a hint of personal mystery, will respond to her."
+      },
+      {
+        "name": "Linsey Howard",
+        "role_type": "Supporting",
+        "demographics": "Female · 35 · English teacher · Lexie’s twin sister",
+        "hook": "Linsey is the more verbally agile half of the twin pair, using wit and emotional clarity to keep Lexie honest. She functions as the human counterweight to Lexie’s instinctive certainty, and the twin dynamic gives her a built-in rhythm with another strong character.",
+        "why_actor_wants_this": "This is the kind of sharp supporting role that gave Anna Paquin in True Blood or Merritt Wever in Godless room to steal scenes through timing and emotional precision. Actors who enjoy playing the smartest person in the room without needing the spotlight every minute will want it."
+      },
+      {
+        "name": "Debbie Runner",
+        "role_type": "Supporting",
+        "demographics": "Female · 60s · church office administrator",
+        "hook": "Debbie is warm, sharp, and impossible to fool, the sort of older woman who has seen enough to read a room instantly. She gives the church world authority and history, and she becomes the keeper of the town’s buried memory.",
+        "why_actor_wants_this": "This is the kind of supporting role that gave Frances McDormand in Almost Famous or Margo Martindale in Justified the pleasure of being the person everyone else has to catch up to. Character actors who like playing authority with warmth and bite will be drawn to her."
+      },
+      {
+        "name": "Tim",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s · local ally / rescue partner",
+        "hook": "Tim is the practical friend who shows up when the situation turns real, and he gives the story a grounded male ally outside the armor mythology. He is less about mystery than reliability, which makes him useful as the human hand that gets Ralph back on his feet.",
+        "why_actor_wants_this": "This is the kind of grounded support role that gave Walton Goggins in Justified or Shea Whigham in Boardwalk Empire room to make every entrance count. Actors who specialize in lived-in, blue-collar credibility will see an easy fit."
+      },
+      {
+        "name": "Director Kane",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-50s · antagonist · military/scientific authority figure",
+        "hook": "Kane is calm, controlled, and predatory, the kind of antagonist who never needs to raise his voice to feel dangerous. He represents the cold institutional side of the mythology, and his composure makes him a clean foil for Ralph’s exhausted humanity.",
+        "why_actor_wants_this": "This is the showcase territory of Giancarlo Esposito in Breaking Bad or Michael Emerson in Person of Interest — a controlled, intelligent villain whose stillness is the menace. Actors who like playing authority with a blade under the surface will chase it."
+      },
+      {
+        "name": "The Voice",
+        "role_type": "Supporting",
+        "demographics": "Nonhuman voice · ageless",
+        "hook": "The Voice is the alien system inside Ralph, part guide, part diagnostic machine, part buried history. It gives the story a second rhythm and a built-in internal dialogue that can be eerie, funny, and emotionally revealing all at once.",
+        "why_actor_wants_this": "This is the kind of voice role that gave Scarlett Johansson in Her or Alan Tudyk in I, Robot a chance to create a character entirely through timing, texture, and subtext. A distinctive vocal performer would chase it because the part has personality, mystery, and a clear sonic identity."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make superhero spectacle feel intimate, regional, and emotionally legible.",
+        "fit_profile": "Established indie directors with one or more character-driven features, or genre directors moving up from contained thrillers into larger-scale IP. The material rewards performance-first staging, clean action geography, and a strong sense of place rather than maximal spectacle.",
+        "detail": "The church, cemetery, school, and home spaces let a director build a world from ordinary American textures before the sky opens up. It’s especially attractive to filmmakers who like grounding genre in lived-in behavior and then letting the visual effects arrive as emotional punctuation."
+      },
+      "buyer_appeal": {
+        "tier": "$15-30M feature",
+        "lane": "streaming genre lane with theatrical upside",
+        "detail": "The Ralph role can be cast with one recognizable lead, while the rest of the ensemble can be built economically around strong character actors. The PG-13 superhero lane remains exportable and trailer-friendly, and the church/small-town frame gives the project a cleaner identity than a generic origin story."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The 1963 thread is a strong mythic seed.",
+        "detail": "Debbie’s 'Fallen Star Incident – 1963' file is a great promise of history, and a next pass could decide how much of that history should be dramatized on the page versus held as mystery. The version where the past is seeded a little earlier in the first act would make the reveal feel even more inevitable.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The ensemble arrives in waves.",
+        "detail": "Ralph, Abby, Lexie, Linsey, Debbie, and Tim all matter, but the story still belongs most strongly to Ralph’s orbit. One direction would be to give one supporting relationship — especially Lexie/Linsey or Debbie/Ralph — a slightly more independent emotional beat so the town feels even more alive around the hero.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The carrier and flight effects set the budget ceiling.",
+        "detail": "The armor transformations, aerial movement, energy fields, and carrier interiors are all manageable in a mid-budget genre lane, but they do define the visual-effects spend. A producer could protect the story by keeping the carrier geography compact and repeating a few signature visual motifs instead of expanding the ship into multiple large-scale environments.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Ralph’s secrecy drives the middle act.",
+        "detail": "The repeated 'I’m fine' / 'work' / 'nothing' pattern is doing the dramatic heavy lifting, and the next pass could let one conversation with Abby or Lexie carry a sharper emotional turn before the action resumes. What would it look like if the truth almost came out one scene earlier, so the audience felt the cost of holding it back?",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The school and church footprint is efficient.",
+        "detail": "The story already lives in a small set of recurring locations, which is a good fit for a contained genre package. Keeping the action centered on the church, cemetery, school, home, and carrier will protect both budget and clarity.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 66.3,
+  "tier": "Optionable",
+  "inputTokens": 16480,
+  "outputTokens": 4410,
+  "cost": 0.032205,
+  "declaredFormat": "Feature film"
+}

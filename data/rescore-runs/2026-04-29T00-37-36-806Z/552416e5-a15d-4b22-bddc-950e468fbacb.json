@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-04-29T01:49:15.132Z",
+  "submission_id": "552416e5-a15d-4b22-bddc-950e468fbacb",
+  "eval_id": "7ae1b0ba-4029-4f6e-899b-8aa0b4109b05",
+  "title": "when a mob boss takes interests in you (1)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 10,
+  "lead_characters_summary": [
+    {
+      "name": "ADRIAN LOCKE",
+      "role_type": "Lead",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "ELARA",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s"
+    },
+    {
+      "name": "MARTHA",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-60s"
+    },
+    {
+      "name": "FINN",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s"
+    },
+    {
+      "name": "KAI",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s"
+    },
+    {
+      "name": "MARCUS",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s"
+    },
+    {
+      "name": "AURORA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-50s"
+    },
+    {
+      "name": "CHLOE",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s"
+    },
+    {
+      "name": "SILAS",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-60s"
+    },
+    {
+      "name": "ARIA",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s"
+    }
+  ],
+  "positioning_hook": "A restless office worker is pulled into a mob boss’s shadow economy, only to discover the real game is loyalty, leverage, and who gets erased first.",
+  "cost_usd": 0.04061175,
+  "input_tokens": 27335,
+  "output_tokens": 4469,
+  "status": "wrote:leads_ok"
+}

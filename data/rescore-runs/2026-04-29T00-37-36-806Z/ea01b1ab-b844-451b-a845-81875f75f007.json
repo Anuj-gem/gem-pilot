@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-29T01:47:04.898Z",
+  "submission_id": "ea01b1ab-b844-451b-a845-81875f75f007",
+  "eval_id": "eda5bf64-519a-4d0c-a67a-00bc70a0f505",
+  "title": "AGENCY Sixth Draft (CLEAN) 042426",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 11,
+  "lead_characters_summary": [
+    {
+      "name": "Ridley Cooper",
+      "role_type": "Lead",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Ian Walsh",
+      "role_type": "Lead",
+      "demographics": "Male · mid-20s"
+    },
+    {
+      "name": "Dawson / Cameron West",
+      "role_type": "Lead",
+      "demographics": "Male · 40s-50s"
+    },
+    {
+      "name": "Matt Egan",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Jessie Alvarez",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s"
+    },
+    {
+      "name": "Wyatt Denny",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Chris Williams",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s"
+    },
+    {
+      "name": "Sykes",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Bill Harrison",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s"
+    },
+    {
+      "name": "Senator Robert Kerrigan",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "Pavel Markov",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s"
+    }
+  ],
+  "positioning_hook": "A CIA trainee trapped in an augmented-reality black-ops program discovers her memories, her lover, and her mission may all be engineered to keep her compliant.",
+  "cost_usd": 0.050955749999999994,
+  "input_tokens": 36897,
+  "output_tokens": 5174,
+  "status": "wrote:leads_ok"
+}

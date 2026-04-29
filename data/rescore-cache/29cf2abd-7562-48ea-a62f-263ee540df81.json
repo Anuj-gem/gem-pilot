@@ -1,0 +1,341 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Fantasy comedy",
+      "genre_tags": [
+        "Anthology",
+        "Romantic comedy",
+        "Supernatural"
+      ],
+      "tone": "Light, whimsical, broad, and fable-like with comic irony"
+    },
+    "positioning_hook": "A cursed penny passes from a bullied beachcomber to a timid trader to a lonely waitress, each discovering it grants luck at the cost of exposing what they most need to change.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise is easy to grasp and the lucky-object engine is broadly legible, with three different lead lanes that each open a different audience doorway. The anthology structure and whimsical tone keep it from feeling like a four-quadrant slam dunk, but the hook is clear enough to sell."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The penny-as-magic-object premise lands immediately, and each chapter quickly establishes a new owner, a new social arena, and a new form of wish fulfillment. The throughline is simple to explain in one breath, even as the script keeps widening its cast and situations."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Peter, Suzy, Timmy, John, and Lucy each have a recognizable emotional need and a playable contradiction, especially when the penny amplifies their insecurities. They function more as variations on a theme than deeply individualized engines, but the roles are actor-friendly and each chapter gives a distinct showcase."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar lucky-charm idea and turns it into a chain of character vignettes with a moral fable structure, which gives it a distinct shape. The repeated coin handoff and the final angel tag show a writer willing to lean into storybook logic rather than realism."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "Each chapter has a clear mini-engine and the penny keeps moving, which gives the script forward motion and a sense of accumulation. The episodic design creates some restart energy between sections, but the individual turns are easy to follow and the final poker payoff closes the loop cleanly."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The idea of one object passing through multiple lives, each time exposing a different human hunger, has a clean inevitability to it. The penny becomes a simple mythic device that feels both familiar and specific, especially in the Atlantic City / Vegas / boardwalk world."
+      },
+      "world_density_and_texture": {
+        "score": 6,
+        "reasoning": "The script uses vivid, recognizable spaces — casino floors, boardwalks, cubicles, bars, carnival tents — and each one gives the penny a different social meaning. The world is more a series of playable containers than a deeply layered ecosystem, but the settings are concrete and cinematic."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The tone is consistently whimsical and comic, with broad character beats, ironic reversals, and a fairy-tale narrator’s hand on the wheel. It stays in one lane well, though the script’s broad comedy and moral-fable register are more familiar than singular."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "Under the comic surface, the script keeps returning to shame, self-worth, class anxiety, body image, and the desire to be seen as lucky or chosen. The angels at the end hint at a larger mythic system, but the draft mostly plays its ideas openly rather than withholding them."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 5,
+        "reasoning": "The script has several strong pairings — Suzy/Jenny, Timmy/Louise, John/Carol, John/Jackson — and those duos do the heavy lifting. It is not built as a true ensemble web, but the chapter structure gives each relationship a clean, self-contained dynamic."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 20,
+        "leads": 5,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Multiple lead roles across different ages and body types",
+          "One child sequence in the final chapter",
+          "Several featured supporting roles in casino, office, and boardwalk settings"
+        ]
+      },
+      "locations": {
+        "distinct_count": 18,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Atlantic City boardwalk and beach",
+          "Las Vegas casino floor and poker stage",
+          "Office bullpen and boardroom",
+          "Carnival tent interiors",
+          "Beach house dinner-party setting"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Primarily title-card transitions, poker broadcast inserts, and a brief angel epilogue; no heavy effects engine.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical crowd movement, casino atmosphere, and simple prop continuity around the penny.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "ESPN, Heineken, Rush, Beatles, Trump, Bentley, and other named brands/venues are referenced on the page."
+        },
+        {
+          "type": "real_person",
+          "detail": "Spalding Stafford is a fictionalized billionaire archetype, but the script also uses on-air presenter and celebrity-style references that may invite clearance review."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or cable-friendly feature with broad comedic appeal and a light fantasy premise",
+        "content_level": "PG-13 equivalent with some adult language and sexual innuendo",
+        "series_engine_or_release_model": "Festival-to-platform or streamer original feature; the chaptered structure also supports anthology-style marketing."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contemporary and practical, but the script spans multiple distinct locations including casinos, beaches, offices, a carnival tent, and a beach house."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "Five lead-sized chapter protagonists plus a sizable supporting roster, with one child sequence and several featured speaking parts."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Multiple Atlantic City and Las Vegas settings, plus office, bar, restaurant, carnival, and beach-house environments."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The script includes body-shaming, profanity, drinking, marijuana use, and sexual humiliation beats, but stays below explicit territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Named brands, venues, and media references appear throughout and would need a standard clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The penny is a clean mythic engine.",
+          "what_it_means": "A single prop can carry the whole marketing idea, which makes the movie easy to pitch, easy to remember, and easy to trailer. Buyers who like high-concept, low-VFX storytelling will see a contained fantasy feature with a built-in hook for broad audiences.",
+          "evidence": "The penny passes from Peter to Suzy to Timmy to John to Lucy and keeps changing each life it touches.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Each chapter gives a different audience doorway.",
+          "what_it_means": "The script can speak to poker fans, workplace-comedy viewers, romantic-comedy viewers, and boardwalk-casino audiences without changing its core premise. That kind of modular appeal helps a producer position the film across multiple marketing lanes.",
+          "evidence": "Poker tournament opener, weight-loss chapter, mind-reading carney chapter, stock-market chapter, and casino-romance chapter.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The roles are actor-friendly showcases.",
+          "what_it_means": "Every lead gets a clear emotional need and a playable comic engine, which creates casting heat even before packaging. Character actors and mid-career leads looking for a distinctive, scene-stealing feature part would have something to grab onto here.",
+          "evidence": "Peter’s nervous poker mystique, Suzy’s body-image struggle, Timmy’s accidental telepathy, John’s timid ambition, and Lucy’s romantic humiliation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The boardwalk-and-casino world is instantly legible.",
+          "what_it_means": "Atlantic City and Vegas give the movie a recognizable commercial surface while still letting the penny feel magical and local. That makes the project feel exportable and easy to visualize in a trailer, poster, or streaming thumbnail.",
+          "evidence": "Atlantic City beach, boardwalk, casino floor, and Las Vegas final-table poker broadcast.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a fable structure with a wink.",
+          "what_it_means": "The chapter cards, recurring object, and angel epilogue give the film a storybook frame that separates it from a standard lucky-break comedy. That kind of tonal identity can attract buyers who want something lighter than prestige drama but more distinctive than a straight rom-com.",
+          "evidence": "Chapter cards, repeated penny handoffs, and the final angel conversation about trying a monkey’s paw next.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable fantasy-comedy feature built around one unforgettable prop and five playable lead turns. The chaptered structure gives it a fresh, anthology-like feel while keeping the emotional promise simple: a lucky penny changes lives, but only by exposing what each person is missing."
+    },
+    "lead_characters": [
+      {
+        "name": "Peter Joff",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "A nervous, under-the-radar poker player with a scrappy, almost accidental mystique, Peter reads like a guy who stumbled into the spotlight and still can’t believe it’s on him. He’s got the comic contradiction of a man who looks like a drifter but is somehow sitting at a world championship final table, and the penny gives him just enough confidence to become legible to the world.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Eisenberg in *The Social Network* — fast, anxious intelligence with a private current of self-protection. It gives an actor the chance to play quiet volatility, public composure, and the thrill of a character whose inner life is bigger than his outward posture."
+      },
+      {
+        "name": "Suzy James",
+        "role_type": "Lead",
+        "demographics": "Female · 20s · obese",
+        "hook": "Suzy is a deeply self-conscious woman whose body image and self-talk are the emotional center of her chapter. She’s funny, tender, and painfully human, with a best-friend dynamic that keeps her from becoming a punchline and instead makes her feel like someone fighting for dignity in public.",
+        "why_actor_wants_this": "This is the showcase space of Melissa McCarthy in *Can You Ever Forgive Me?* — a role that lets an actor toggle vulnerability, humor, and wounded pride in the same breath. It gives a performer a real transformation arc and a chance to anchor a comedy with emotional truth."
+      },
+      {
+        "name": "Timmy McMurter",
+        "role_type": "Lead",
+        "demographics": "Male · 30s",
+        "hook": "A worn-down carny with a hustler’s instinct and a loser’s self-awareness, Timmy is the kind of guy who talks himself into trouble before anyone else can. His accidental telepathy turns his worst private thoughts into public disaster, which makes him both comic and painfully exposed.",
+        "why_actor_wants_this": "This is the showcase territory of Jim Carrey in *The Truman Show* — a character whose inner panic becomes the engine of the performance. It gives an actor room for physical comedy, verbal timing, and the humiliation of hearing your own ugliest thoughts come back at you."
+      },
+      {
+        "name": "John Rydell",
+        "role_type": "Lead",
+        "demographics": "Male · 20s to early 30s",
+        "hook": "John is a timid, eager stock trader who wants approval so badly he can barely stand inside his own ambition. He’s the classic underdog with a comic class gap — smart enough to recognize the game, too deferential to play it until the penny and the computer force him to act.",
+        "why_actor_wants_this": "This is the showcase territory of Paul Dano in *There Will Be Blood* — a role built around nervous intelligence, social discomfort, and the slow emergence of backbone. It gives an actor the pleasure of playing a man who looks passive until the moment he suddenly isn’t."
+      },
+      {
+        "name": "Lucy Thompson",
+        "role_type": "Lead",
+        "demographics": "Female · 20s to early 30s",
+        "hook": "Lucy is a boardwalk casino waitress with a romantic streak and a bruised sense of self, the kind of woman who can still believe in a grand gesture even after being humiliated. She’s warm, observant, and emotionally open, which makes her final turn feel earned rather than decorative.",
+        "why_actor_wants_this": "This is the showcase territory of Renée Zellweger in *Judy* — a role that lets an actor carry longing, embarrassment, and resilience in one performance. It gives a leading actress a chance to play romantic vulnerability without losing the character’s inner steel."
+      },
+      {
+        "name": "Jenny",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Jenny is Suzy’s energetic roommate and emotional engine, the kind of friend who can be both loving and merciless in the same scene. She functions as a pressure valve and a mirror, pushing Suzy toward change while keeping the tone buoyant.",
+        "why_actor_wants_this": "This is the showcase territory of Octavia Spencer in *The Help* — a supporting role that gets to be funny, blunt, and emotionally essential without carrying the whole movie. Actors who like scene-stealing best-friend parts will see a lot of playable rhythm here."
+      },
+      {
+        "name": "Angela Myers",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s",
+        "hook": "Angela is Suzy’s co-worker friend with a big appetite for life and food, and she brings a rough-edged, teasing camaraderie to the office and restaurant scenes. She’s not just comic relief; she embodies the social pressure around Suzy’s chapter.",
+        "why_actor_wants_this": "This is the showcase territory of Queen Latifah in *Girls Trip* — a friend role that gets to be loud, funny, and emotionally legible in a way audiences remember. It’s the kind of part that lets an actor make a small amount of screen time feel bigger than the page count."
+      },
+      {
+        "name": "Louise",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Louise is Timmy’s free-spirited girlfriend, airy on the surface but quick to bristle when she feels disrespected. She gives the chapter a romantic counterpoint and a comic volatility that keeps Timmy’s inner-monologue gag from feeling one-note.",
+        "why_actor_wants_this": "This is the showcase territory of Zooey Deschanel in *500 Days of Summer* — a role that can be whimsical, frustrating, and emotionally specific all at once. It gives an actress a chance to play charm with a sharp edge."
+      },
+      {
+        "name": "Bernice Stillstrom",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s to 30s",
+        "hook": "Bernice is the bearded lady with a hard-earned sense of humor and a practical streak, which makes her the perfect witness to Timmy’s unraveling. She’s a vivid carnival-world presence who grounds the telepathy reveal in something human and funny.",
+        "why_actor_wants_this": "This is the showcase territory of Kathy Bates in *Misery* — a supporting role that can be earthy, funny, and unexpectedly authoritative. It gives an actor a memorable character turn in a world that already has texture."
+      },
+      {
+        "name": "Stanley Jackson",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Stanley is a tyrannical, old-school trader boss who weaponizes humiliation as management style and then rewrites history the moment it suits him. He’s comic in his bluster but also a real pressure source, the kind of boss who makes the whole office orbit his mood.",
+        "why_actor_wants_this": "This is the showcase territory of J.K. Simmons in *Whiplash* — a role built on verbal domination, comic cruelty, and the pleasure of watching a room bend around one man’s ego. Character actors who can command a boardroom will chase this immediately."
+      },
+      {
+        "name": "Carol Smith",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s",
+        "hook": "Carol is one of John’s co-workers and becomes his romantic counterpart, bringing wit, warmth, and a little mischief into the office world. She’s the kind of grounded, attractive, smart presence that makes John’s confidence feel newly possible.",
+        "why_actor_wants_this": "This is the showcase territory of Rashida Jones in *The Office* or *Parks and Recreation* — a role that gets to be dry, charming, and emotionally available without overplaying it. It’s a clean fit for an actress who can make a small role feel like the movie’s emotional reward."
+      },
+      {
+        "name": "Ryan Stokes",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Ryan is John’s older work friend, a laid-back office guy with a comic streak and a marijuana habit that keeps the scenes loose. He functions as the social glue in the trading-floor world and gives John a peer who can puncture his nerves.",
+        "why_actor_wants_this": "This is the showcase territory of Seth Rogen in *Knocked Up* — a buddy role that lives on timing, ease, and the ability to make exposition feel like hangout energy. It’s a good fit for an actor who can make a supporting part feel like the room’s heartbeat."
+      },
+      {
+        "name": "Tom Snelling",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s",
+        "hook": "Tom is the slick office climber who knows exactly how to survive under Stanley Jackson and exactly when to turn on the charm. He’s the kind of secondary antagonist who makes the office hierarchy feel real without needing a separate plotline.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Hiddleston in *The Night Manager* — polished, watchful, and socially dangerous in a way that plays beautifully on camera. Actors who like elegant, controlled antagonists will see a lot of juice here."
+      },
+      {
+        "name": "Spalding Stafford",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s to 60s",
+        "hook": "Spalding is the billionaire kingmaker who enters like a private joke only he understands, then turns the joke into a threat. He’s suave, theatrical, and quietly menacing, which makes him feel like the final boss of the trading world.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* season 5 — a role that lets an actor weaponize charm, intelligence, and menace in the same scene. Prestige character actors will chase the chance to make a billionaire feel both seductive and dangerous."
+      },
+      {
+        "name": "Violet Jones",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s",
+        "hook": "Violet is Lucy’s older co-worker and confidante, weathered but still sharp, with the kind of lived-in humor that makes the casino feel like a real workplace. She’s a social bridge between Lucy and the larger world around her.",
+        "why_actor_wants_this": "This is the showcase territory of Margo Martindale in *The Americans* — a supporting role with texture, authority, and lived-in comic timing. Character actresses who can make a few lines feel like a whole life will be drawn to it."
+      },
+      {
+        "name": "Tom Treswald",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Tom is the polished TV weather man who looks like a fantasy and behaves like a gentleman until the prank reveal flips the whole thing. He’s a charming romantic lead type with a cruel social circle behind him, which makes him both alluring and disposable in the story’s logic.",
+        "why_actor_wants_this": "This is the showcase territory of Matthew McConaughey in *The Lincoln Lawyer* — a smooth, charismatic man whose surface charm is the whole point of the casting. It gives an actor a chance to play seduction, status, and betrayal in one glossy package."
+      },
+      {
+        "name": "Francis Jones",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s to 40s",
+        "hook": "Francis is the homeless man who becomes part of Lucy’s humiliation and then part of her emotional reversal. He’s a small but memorable human detail in the final chapter, giving the story a face for the people the world overlooks.",
+        "why_actor_wants_this": "This is the showcase territory of Michael J. Fox in *The Good Wife* guest turns or any grounded character cameo that lands a moral beat. It gives an actor a brief but meaningful turn that can pivot from comic embarrassment to pathos."
+      },
+      {
+        "name": "John Wisnet",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s to 30s",
+        "hook": "John Wisnet is the poker-world rival at the end of the film, the crowd favorite whose presence gives Peter’s final table a real target. He’s less a full character than a pressure point, but he makes the climax feel like a genuine showdown.",
+        "why_actor_wants_this": "This is the showcase territory of a sports-movie rival like the opponent in *Rocky* — a role that exists to give the hero’s final moment shape. A recognizable face could make the last hand feel like an event."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a whimsical, character-driven fantasy feature with a clean visual motif and a strong comic rhythm.",
+        "fit_profile": "Mid-career indie directors with one or two features, or TV directors moving into features, who already work comfortably in performance-forward comedy and lightly magical realism. The material rewards clean chapter transitions, tonal control, and the ability to make a prop feel like destiny without overexplaining the rules.",
+        "detail": "The script gives a director five distinct tonal mini-movies inside one feature, which is a strong showcase for pacing and visual contrast. It also stays largely practical, so a director with a strong actor reel and a taste for stylized but contained storytelling can make it sing without needing spectacle."
+      },
+      "buyer_appeal": {
+        "tier": "$3-10M feature",
+        "lane": "Streaming original, festival-friendly crowd-pleaser, or cable-adjacent fantasy comedy",
+        "detail": "The project can be packaged around ensemble character actors rather than one expensive star, because the penny concept and chapter structure do a lot of the selling on their own. The contemporary settings, modest effects load, and recognizable boardwalk/casino world make it exportable and easy to market with a simple prop-driven campaign."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The chapter structure is the main lever.",
+        "detail": "The anthology-style design is part of the charm, but the version of the script where each chapter’s emotional turn lands a little earlier would make the whole feature feel even more propulsive. The penny already gives you a strong connective tissue, so the next pass can keep the same structure while tightening the handoff between lives.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The supporting world can be streamlined.",
+        "detail": "The script has enough distinct side characters that a producer could easily imagine a slightly leaner version without losing the core appeal. If needed, some of the office and casino supporting beats could be folded together so the film keeps its chaptered feel while trimming company moves and setup time.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The penny’s rules stay mostly intuitive.",
+        "detail": "The object works best when the audience can feel the luck without needing a formal explanation, and the draft already leans into that. One direction would be to keep the penny’s behavior as a mystery with a comic-fable logic rather than adding more mechanics, which protects the charm and keeps the feature easy to follow.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The body-image chapter carries the most emotional weight.",
+        "detail": "Suzy’s section is the one that most directly turns the premise into human stakes, because the scale, the roommate dynamic, and the restaurant temptation all give the penny a real emotional function. A next pass could foreground that chapter’s emotional turn a touch earlier so the audience feels the transformation as a story event, not just a running gag.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand and venue references need a clearance pass.",
+        "detail": "ESPN, Rush, Heineken, the Trump casino, Bentley, and other named references are woven through the script. That is manageable, but it does mean a production path should include a standard rights-and-clearance sweep before packaging gets too far.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 60,
+  "tier": "Optionable",
+  "inputTokens": 43010,
+  "outputTokens": 5878,
+  "cost": 0.058708500000000004,
+  "declaredFormat": "Feature film"
+}

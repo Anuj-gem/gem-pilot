@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-04-29T01:51:39.747Z",
+  "submission_id": "be9135cb-d542-4d8d-90a7-0211c2df162a",
+  "eval_id": "d13d1222-d91e-4648-801b-d5b7d90b59bd",
+  "title": "Risaldi",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 17,
+  "lead_characters_summary": [
+    {
+      "name": "Jacob Smith",
+      "role_type": "Lead",
+      "demographics": "Male · late 30s to early 40s · white · grieving father"
+    },
+    {
+      "name": "Jodie Smith",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s to early 40s · police officer"
+    },
+    {
+      "name": "Ethan Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 20s to early 30s · white · Risaldi family member"
+    },
+    {
+      "name": "Victor Risaldi",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s · physically imposing · crime patriarch"
+    },
+    {
+      "name": "Katherine Smith",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 40s · Catholic mother"
+    },
+    {
+      "name": "Tyler Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · intimidating enforcer"
+    },
+    {
+      "name": "Martin Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · intimidating, volatile"
+    },
+    {
+      "name": "Frankie Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s to early 30s · quieter enforcer"
+    },
+    {
+      "name": "Edward Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · mountain of muscle"
+    },
+    {
+      "name": "Alicia",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 50s · former stripper"
+    },
+    {
+      "name": "Marcus Risaldi",
+      "role_type": "Supporting",
+      "demographics": "Male · 11 years old"
+    },
+    {
+      "name": "Father Michael",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s to 60s · priest"
+    },
+    {
+      "name": "Dr. Owens",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 30s · therapist"
+    },
+    {
+      "name": "Captain Ricks",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · police captain"
+    },
+    {
+      "name": "Chief Pitts",
+      "role_type": "Supporting",
+      "demographics": "Male · late 50s · police chief"
+    },
+    {
+      "name": "Officer Daniels",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · grizzled officer"
+    },
+    {
+      "name": "Mayor Adams",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s · charismatic politician"
+    }
+  ],
+  "positioning_hook": "A grieving Catholic cop and her shattered brother get pulled into a blood-soaked family war, where justice, confession, and revenge keep collapsing into each other.",
+  "cost_usd": 0.060945,
+  "input_tokens": 45728,
+  "output_tokens": 5922,
+  "status": "wrote:leads_ok"
+}

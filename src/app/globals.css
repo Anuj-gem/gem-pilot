@@ -294,6 +294,185 @@ input::placeholder, textarea::placeholder {
   color: var(--gem-gray-50);
 }
 
+/* ── Blog post inline graphic blocks (Anuj 2026-04-28) ──────────────
+   Reusable visual blocks that authors can drop into a markdown post via
+   inline HTML (rehype-raw renders it). Each block has a `gem-blog-*`
+   class so we can keep all the style here and the post stays clean.
+
+   Pattern:
+     <div class="gem-blog-mock">…HTML mock UI…</div>
+     <div class="gem-blog-callout gem-blog-callout--accent">…</div>
+     <ul class="gem-blog-tight"><li>…</li></ul>
+*/
+.gem-prose .gem-blog-mock {
+  background: #fff;
+  border: 1px solid var(--gem-gray-700);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 1.5em 0;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.gem-prose .gem-blog-mock-title {
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gem-gray-500);
+  margin: 0 0 12px;
+}
+.gem-prose .gem-blog-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--gem-gray-900);
+  border: 1px solid var(--gem-gray-700);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 6px 0;
+}
+.gem-prose .gem-blog-row + .gem-blog-row { margin-top: 8px; }
+.gem-prose .gem-blog-row__title {
+  font-weight: 600;
+  color: var(--gem-gray-50);
+  font-size: 13.5px;
+  margin: 0;
+}
+.gem-prose .gem-blog-row__meta {
+  font-size: 11.5px;
+  color: var(--gem-gray-400);
+  margin: 2px 0 0;
+}
+.gem-prose .gem-blog-row__score {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.25);
+  color: var(--gem-gray-50);
+}
+.gem-prose .gem-blog-pill {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.gem-prose .gem-blog-pill--new { background: #16a34a; color: #fff; }
+.gem-prose .gem-blog-pill--interested { background: rgba(22,163,74,0.10); color: #15803d; border: 1px solid rgba(22,163,74,0.30); }
+.gem-prose .gem-blog-pill--reachedout { background: rgba(124,58,237,0.10); color: var(--gem-accent); border: 1px solid rgba(124,58,237,0.30); }
+
+.gem-prose .gem-blog-callout {
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 1.5em 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.gem-prose .gem-blog-callout p:first-child { margin-top: 0; }
+.gem-prose .gem-blog-callout p:last-child { margin-bottom: 0; }
+.gem-prose .gem-blog-callout--accent {
+  background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(124,58,237,0.02) 70%);
+  border: 1px solid rgba(124,58,237,0.30);
+}
+.gem-prose .gem-blog-callout--gold {
+  background: linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%);
+  border: 1px solid rgba(212,160,23,0.30);
+}
+.gem-prose .gem-blog-callout--success {
+  background: rgba(22,163,74,0.06);
+  border: 1px solid rgba(22,163,74,0.30);
+}
+
+.gem-prose .gem-blog-letter {
+  background: var(--gem-gray-900);
+  border-left: 3px solid var(--gem-gold);
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: var(--gem-gray-200);
+  font-size: 15.5px;
+  line-height: 1.65;
+  border-radius: 0 8px 8px 0;
+}
+.gem-prose .gem-blog-letter p:first-child { margin-top: 0; }
+.gem-prose .gem-blog-letter p:last-child { margin-bottom: 0; }
+.gem-prose .gem-blog-letter strong { color: var(--gem-gray-50); }
+
+.gem-prose .gem-blog-stat-strip {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  margin: 0 0 12px;
+  flex-wrap: wrap;
+}
+.gem-prose .gem-blog-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gem-prose .gem-blog-stat__value {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gem-gray-50);
+  line-height: 1;
+}
+.gem-prose .gem-blog-stat__label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--gem-gray-500);
+  margin-top: 6px;
+}
+
+.gem-prose .gem-blog-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 1em 0;
+}
+.gem-prose .gem-blog-tile {
+  background: var(--gem-gray-900);
+  border: 1px solid var(--gem-gray-700);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.gem-prose .gem-blog-tile__label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--gem-gray-500);
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+.gem-prose .gem-blog-tile__value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gem-gray-50);
+  margin: 0;
+}
+.gem-prose .gem-blog-tile--smooth { background: #d1fae5; border-color: #10b981; }
+.gem-prose .gem-blog-tile--manageable { background: #fef9c3; border-color: #facc15; }
+.gem-prose .gem-blog-tile--complex { background: #fee2e2; border-color: #ef4444; }
+.gem-prose .gem-blog-tile--smooth .gem-blog-tile__value,
+.gem-prose .gem-blog-tile--manageable .gem-blog-tile__value,
+.gem-prose .gem-blog-tile--complex .gem-blog-tile__value { color: var(--gem-gray-50); }
+
+@media (max-width: 640px) {
+  .gem-prose .gem-blog-grid-3 { grid-template-columns: 1fr; }
+}
+
 /* ── Print / PDF download styling (Anuj 2026-04-28) ─────────────────
    The owner's "Download PDF" modal triggers window.print() after
    adding a <style> tag that hides excluded sections. We also tag chrome

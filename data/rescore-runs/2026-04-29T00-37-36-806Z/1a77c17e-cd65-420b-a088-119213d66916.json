@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:46:57.502Z",
+  "submission_id": "1a77c17e-cd65-420b-a088-119213d66916",
+  "eval_id": "368863e1-29b3-4814-89ad-b398d5a69f77",
+  "title": "SWITCHED SKIN",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Darren Hayes",
+      "role_type": "Lead",
+      "demographics": "Male · 20s · wiry, tattooed, working-class"
+    },
+    {
+      "name": "Eliot Grey",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · polished, affluent, physically controlled"
+    },
+    {
+      "name": "Amanda Grey",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s · blonde, stylish, formidable"
+    },
+    {
+      "name": "Javier",
+      "role_type": "Supporting",
+      "demographics": "Male · mid-30s · scarred, dangerous, cartel-connected"
+    },
+    {
+      "name": "Ruiz",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · tired, mustached, compromised cop"
+    },
+    {
+      "name": "Captain Hernandez",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s · salt-and-pepper, hard-eyed, authoritative"
+    },
+    {
+      "name": "Cop",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · tired, mustached, observant"
+    }
+  ],
+  "positioning_hook": "A tattooed murder suspect and his smug defense lawyer swap bodies in a county jail, forcing them to outwit cops, cartel muscle, and each other before the real killer buries them both.",
+  "cost_usd": 0.0354195,
+  "input_tokens": 20538,
+  "output_tokens": 4448,
+  "status": "wrote:leads_ok"
+}

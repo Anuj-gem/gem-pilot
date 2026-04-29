@@ -1,0 +1,261 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Horror",
+      "genre_tags": [
+        "Thriller",
+        "Psychological"
+      ],
+      "tone": "Gritty, heightened, darkly ironic"
+    },
+    "positioning_hook": "A lifeguard trapped overnight in a shuttered aquatic center must survive two vengeful survivors, a weaponized ex-boyfriend, and a viral humiliation campaign before the deep end swallows her whole.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The premise is instantly legible and built around a clean survival engine, with a young female lead, a contained location, and a social-media humiliation angle that broadens the hook. It plays to horror-thriller audiences very directly, though the appeal is strongest in genre lanes rather than four-quadrant space."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The script announces its engine early: Michelle’s rescue of Raven becomes the seed of a night-long siege inside the aquatic center. The diving well, the power outage, and the revenge setup are all easy to track, and the story keeps tightening the noose with clear reversals."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Michelle has a strong physical and emotional spine, especially once her fear of deep water collides with her role as rescuer. Raven and Angelo are vivid antagonistic presences, and Daniel’s turn gives the story a personal betrayal layer that sharpens the lead role."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The aquatic-center setting, the diving-well geography, and the idea of rescue turning into social and physical punishment give the script a distinct angle. The AI-altered rescue video and the repeated motif of being saved becoming a curse add a contemporary edge."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "Once the lights go out, the script becomes a strong pressure-cooker with escalating traps, betrayals, and location-specific set pieces. The movement from pool deck to locker room to service corridors to surge tank room keeps the story in motion and the stakes continually narrowing."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The core idea feels fresh because it fuses rescue-movie heroism with revenge horror and online humiliation in a way that feels of-the-moment. The emotional premise is simple enough to land immediately, while the deeper pattern of saved people turning on their savior gives it a memorable aftertaste."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The aquatic center is used as a functioning machine, not just a backdrop, with the diving well, observation window, surge tank, mechanical room, emergency systems, and lifeguard office all feeding the action. That specificity gives the setting story utility and makes the space feel navigable and alive."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The script has a very clear tonal identity: sweaty, claustrophobic, sexually charged, and mean in a way that still leaves room for dark humor. The dialogue between Raven, Angelo, Michelle, and Daniel gives the piece a nasty, contemporary bite that separates it from standard stalk-and-slash material."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "The surface engine is strong and satisfying, and the final news-broadcast coda hints at a larger pattern beyond the night at the pool. The script is most effective as a contained thriller, with some thematic room around gratitude, humiliation, and rescue culture that could be pushed even further."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Michelle/Raven is the central combustible pairing, and Daniel’s betrayal adds a second pressure line that changes the emotional geometry of the night. Angelo gives the ensemble a third volatile axis, so the relationships generate more than one kind of scene and keep recontextualizing each other."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 6,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Female lead in early 20s with strong physicality and emotional range",
+          "Two male supporting roles in their 20s",
+          "One 40s female authority figure",
+          "One medic/first responder role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with a small number of exterior beach and parking-lot scenes",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Aquatic center with pool deck, diving well, locker room, lobby, offices, service corridor, mechanical room, surge tank room",
+          "Night shooting in a large contained facility",
+          "Water-safe production design and wet-set management"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "AI-altered rescue video, news broadcast graphics, and limited blood/water compositing; the action is primarily practical.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Water work, falls from height, choking, chlorine reaction effects, broken glass, practical blood, blackout and emergency-lighting effects",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Coast Guard is referenced as a career goal."
+        },
+        {
+          "type": "brand",
+          "detail": "AI and social-media platform behavior are referenced generically, but no specific platform name is used."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming or premium genre feature lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; strongest as festival-to-platform or genre-platform original"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contained to one primary facility, but the water work, night exteriors, and practical effects push it above micro-budget."
+        },
+        "cast": {
+          "level": "low",
+          "note": "The story is anchored by one lead and a compact supporting ensemble with no child casting or star-system dependency."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The aquatic center footprint is contained, but it requires multiple distinct interior zones and wet-set coordination."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Violence, choking, sexual tension, and chemical injury keep it firmly in mature genre territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No major life rights, music, or branded IP dependencies are central to the story."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The aquatic center is a built-in pressure cooker.",
+          "what_it_means": "This gives buyers a contained thriller with a clear production footprint and a setting that naturally generates set pieces instead of merely hosting them. Genre buyers and directors who like one-location escalation will immediately see the appeal, especially for a streamer or festival-to-platform launch.",
+          "evidence": "The story moves through the pool deck, locker room, lobby, service corridor, surge tank room, mechanical room, and diving well, all inside one facility.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Michelle is a physical lead with contradiction.",
+          "what_it_means": "The role offers an actress a showcase that mixes athletic competence, fear, desire, humiliation, and survival instinct in one part. Young dramatic leads who want a genre role with real body language and emotional volatility will chase this, and casting directors will see a breakout vehicle.",
+          "evidence": "Michelle is a lifeguard who fears deep water, freezes at the diving well, and later has to weaponize her own balance and training to survive.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The premise turns rescue into a curse.",
+          "what_it_means": "That inversion gives the movie a clean thematic engine and a memorable commercial sentence: saving someone can make you the target. Horror and thriller buyers respond to concepts that are easy to pitch and easy to remember, and this one has a built-in moral hook.",
+          "evidence": "Raven, Angelo, Daniel, and the news coda all frame Michelle’s acts of rescue as the thing that brings violence back to her.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The social-media humiliation angle feels current.",
+          "what_it_means": "The AI-altered rescue video and the viral commentary give the script a contemporary cultural surface that widens the audience beyond pure slasher fans. Streamers and genre labels looking for a story that speaks to online cruelty and public shaming will recognize the hook immediately.",
+          "evidence": "Raven shows Michelle the doctored beach video with the caption mocking her as a lifeguard failure, and later weaponizes video capture as the night escalates.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The diving well is a memorable visual engine.",
+          "what_it_means": "The 16-foot-deep black shaft gives the climax a signature image and a geography that can be marketed in a trailer. Directors who want a single iconic space to build dread around will see a strong canvas here, and audiences will remember the well as the movie’s signature threat.",
+          "evidence": "Michelle’s fear of the diving well, the climb up the platform, and the final underwater confrontation all revolve around that one space.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble keeps reconfiguring the threat.",
+          "what_it_means": "Raven, Angelo, and Daniel each change the emotional and tactical rules of the night, which keeps the movie from feeling like a single-note siege. That gives the project more packaging value because multiple actors get playable turns, not just the lead.",
+          "evidence": "Raven shifts from flirtation to humiliation, Angelo becomes the enforcer, and Daniel turns from boyfriend to chemical attacker.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, commercial contained thriller with a strong visual identity: one young lifeguard, one aquatic center, and a night where every act of rescue comes back as punishment. The script has a marketable premise, a memorable central space, and a lead role that can launch an actress by forcing competence and terror into the same performance."
+    },
+    "lead_characters": [
+      {
+        "name": "Michelle",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Michelle is a disciplined lifeguard with an athlete’s body control and a private terror of deep water, which makes her both the best person in the room and the most vulnerable one. She carries herself like someone who wants to be useful, admired, and in control, but the script keeps exposing how much of that identity is built on performance, approval, and the need to be seen as heroic.",
+        "why_actor_wants_this": "This is the showcase territory of Florence Pugh in Midsommar or Jodie Comer in The Last Duel — a role that lets an actor move from composure to panic to feral survival without losing emotional specificity. It gives a young lead the rare chance to play physical competence, erotic charge, humiliation, and terror in one sustained feature performance."
+      },
+      {
+        "name": "Raven",
+        "role_type": "Lead",
+        "demographics": "Female · early 20s",
+        "hook": "Raven is a wounded, manipulative survivor who can pivot from fragile gratitude to sexual provocation to outright menace in a single breath. She reads as the girl-next-door until the mask slips, and then she becomes the story’s most unpredictable emotional weapon, using shame, flirtation, and performance as survival tools.",
+        "why_actor_wants_this": "This is the showcase space of Alicia Vikander in The Green Knight or Rosamund Pike in Gone Girl — a role that lets an actor weaponize charm, ambiguity, and sudden cruelty. It’s catnip for actresses who want a part that can play seductive, unstable, and terrifying without leaving the thriller lane."
+      },
+      {
+        "name": "Daniel",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Daniel starts as the supportive boyfriend in scrubs and gradually reveals a corrosive need to control the woman he loves. He is the kind of character who can sound caring one minute and vindictive the next, which makes him feel less like a stock boyfriend and more like a pressure-cooker of resentment, entitlement, and wounded pride.",
+        "why_actor_wants_this": "This is the showcase territory of Jesse Plemons in Game Night or Jake Gyllenhaal in Nightcrawler — a role where the smile curdles and the actor gets to reveal menace through restraint before the eruption. It gives a young male actor a juicy turn from affable to monstrous, with a late-film transformation that can redefine his screen image."
+      },
+      {
+        "name": "Angelo",
+        "role_type": "Lead",
+        "demographics": "Male · 20s",
+        "hook": "Angelo is the charismatic flirt who turns out to be the night’s most openly resentful enforcer, carrying humiliation like a grudge with a pulse. He has swagger, vanity, and a wounded masculinity that makes him feel dangerous even before the knife comes out, and the script gives him a nasty comic edge that keeps him from flattening into pure brute force.",
+        "why_actor_wants_this": "This is the showcase territory of Ben Mendelsohn in Animal Kingdom or Barry Keoghan in The Killing of a Sacred Deer — a role that lets an actor make charm feel unstable and then let it rot into threat. It’s a strong part for a performer who wants to play seductive, petty, and vicious in the same frame."
+      },
+      {
+        "name": "Karla",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s",
+        "hook": "Karla is the practical aquatic-center manager who thinks in liability, staffing, and liability again, which gives the movie a grounded adult counterweight. She’s not there to be colorful; she’s there to represent the real-world systems Michelle is trying to navigate before the nightmare takes over.",
+        "why_actor_wants_this": "This is the kind of grounded authority role that Frances McDormand in Fargo or Allison Janney in The West Wing made feel alive through precision and dry authority. Character actors who can make a few scenes feel institutionally real will be drawn to it."
+      },
+      {
+        "name": "Kris",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s",
+        "hook": "Kris is the medic who enters the aftermath with professional calm, only to become the final human witness to Michelle’s altered state. He functions as the story’s quiet reality check, a man whose job is to save people and who gets pulled into the emotional residue of the night.",
+        "why_actor_wants_this": "This is the kind of contained, emotionally precise support role that actors like Michael Stuhlbarg or Shea Whigham often elevate — a few scenes with real aftermath and moral weight. It gives a performer a clean landing spot in the final movement and a memorable last exchange."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to turn one location into a moral trap.",
+        "fit_profile": "First- or second-feature directors with a strong genre short or a contained-thriller reel, especially those who care about spatial storytelling, performance under pressure, and practical suspense. The material rewards directors who like building dread from blocking, water, darkness, and escalating reversals rather than from spectacle.",
+        "detail": "The aquatic center gives a director a chance to choreograph a full feature around one navigable environment, with each room changing the rules of the scene. It’s especially attractive to filmmakers who want to prove they can deliver a high-concept genre piece on a disciplined footprint."
+      },
+      "buyer_appeal": {
+        "tier": "$5-10M feature",
+        "lane": "Streaming genre original / premium horror-thriller lane",
+        "detail": "It can be packaged around a strong young lead and a compact ensemble, so it does not require a star-heavy cast to function. The contained location, contemporary hook, and practical-heavy execution make it exportable and trailer-friendly for streamers looking for a clean genre buy."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening rescue and ceremony can tighten together.",
+        "detail": "The script already establishes Michelle’s competence and her discomfort with attention; one next-pass lever would be to let the award, the rescue, and Raven’s first appearance land with even less separation so the hook arrives with more snap. That would keep the audience inside the same emotional current from page one and make the later betrayal feel even more inevitable.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "Daniel’s turn could be seeded a touch earlier.",
+        "detail": "The boyfriend reveal lands hard, and the later chlorine attack is memorable; a future pass could consider one or two earlier behavioral tells in the bar or pool sequence so his shift feels even more psychologically loaded. The version of the script where his resentment is faintly visible before the reveal would deepen the final betrayal without changing the structure.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The aquatic-center footprint is already efficient.",
+        "detail": "The story is largely contained to one facility, which is a strong production advantage, but the number of distinct interior zones means the schedule will still need careful wet-set planning. A simplification lever, if desired, would be to see whether the service corridor, mechanical room, and surge tank room can be staged with even more overlap in the same physical build.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The climax leans into multiple attack modes.",
+        "detail": "The final movement uses gunfire, chlorine, gas, underwater action, and a physical struggle, which gives the ending plenty of propulsion and also sets the practical-effects bar at a moderate level. A future pass could explore whether one of those mechanisms can carry a little more of the climax so the set-piece remains just as intense while simplifying the stunt and effects load.",
+        "is_primary_lever": false,
+        "source": "both"
+      },
+      {
+        "area": "The news-coda hints at a larger pattern.",
+        "detail": "The final broadcast about rescued victims turning violent opens a bigger mythology around the skull and the rescue curse, which is intriguing for buyers but also shifts the movie toward franchise-adjacent territory. If the goal is a pure feature, the version where that idea is even more distilled could keep the ending focused while preserving the sting.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 72.7,
+  "tier": "Optionable",
+  "inputTokens": 27281,
+  "outputTokens": 4269,
+  "cost": 0.039671250000000005,
+  "declaredFormat": "Feature film"
+}

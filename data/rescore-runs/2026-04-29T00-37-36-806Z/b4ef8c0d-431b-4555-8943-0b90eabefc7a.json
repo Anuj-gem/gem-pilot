@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:51:59.702Z",
+  "submission_id": "b4ef8c0d-431b-4555-8943-0b90eabefc7a",
+  "eval_id": "3f6574fc-fdab-4263-bbc5-b88019940f91",
+  "title": "I Work in Marketing   Pilot",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Kelly Rabino",
+      "role_type": "Lead",
+      "demographics": "Female · late 30s · blonde · suburban mother · ex-con"
+    },
+    {
+      "name": "Stevie Rabino",
+      "role_type": "Supporting",
+      "demographics": "Male · 15 · teen son"
+    },
+    {
+      "name": "Dan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · accountant · family friend"
+    },
+    {
+      "name": "Jackie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · brunette · former neighbor"
+    },
+    {
+      "name": "Yuri",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-60s · Russian-accented · enforcer"
+    },
+    {
+      "name": "Marco",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · coffee shop worker"
+    },
+    {
+      "name": "Jane",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · grandmother"
+    },
+    {
+      "name": "Steven Jensen",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s · grandfather"
+    },
+    {
+      "name": "Employer 1",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-50s · lawyer / interviewer"
+    }
+  ],
+  "positioning_hook": "A widowed ex-con and stay-at-home mom turns to OnlyFans to save her house, then discovers her late husband’s debt has put her family in a Russian enforcer’s crosshairs.",
+  "cost_usd": 0.032208,
+  "input_tokens": 16562,
+  "output_tokens": 4397,
+  "status": "wrote:leads_ok"
+}

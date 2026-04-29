@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:50:56.486Z",
+  "submission_id": "51c26b53-104f-49c4-af70-d752b43ad001",
+  "eval_id": "55112357-4064-497a-980a-11f14bf22012",
+  "title": "Grey Areas Pilot 6.4.26",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Sylvie Bardo",
+      "role_type": "Lead",
+      "demographics": "Female · 29 · London-based neurosurgeon"
+    },
+    {
+      "name": "Jett Devi",
+      "role_type": "Lead",
+      "demographics": "Female · 28 · South Asian British"
+    },
+    {
+      "name": "DCI Akin Okoye",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Black British detective"
+    },
+    {
+      "name": "Medea Green",
+      "role_type": "Supporting",
+      "demographics": "Female · late 50s · senior surgeon"
+    },
+    {
+      "name": "Guy Lively",
+      "role_type": "Supporting",
+      "demographics": "Male · early 30s · surgeon"
+    },
+    {
+      "name": "Harry Bardo",
+      "role_type": "Supporting",
+      "demographics": "Male · 19 · Sylvie’s younger brother"
+    },
+    {
+      "name": "DS Niamh Larkin",
+      "role_type": "Supporting",
+      "demographics": "Female · late 20s · police detective"
+    },
+    {
+      "name": "Medea's patient / Kelly Warrington",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · hospital patient"
+    }
+  ],
+  "positioning_hook": "A London neurosurgeon who craves human brains must hide her hunger from homicide while hunting the men her city keeps letting walk free.",
+  "cost_usd": 0.040964999999999994,
+  "input_tokens": 24872,
+  "output_tokens": 4958,
+  "status": "wrote:leads_ok"
+}

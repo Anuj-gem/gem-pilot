@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-29T01:48:29.815Z",
+  "submission_id": "e48d3b88-57be-4769-af51-714a801ce119",
+  "eval_id": "a768a70a-6040-4e09-ac4e-78322da7243f",
+  "title": "Big Matzah Ball    HS Version   YANCHAK",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 3,
+  "lead_characters_summary": [
+    {
+      "name": "CHARLIE",
+      "role_type": "Lead",
+      "demographics": "Female · mid-30s · business-minded, very put-together"
+    },
+    {
+      "name": "RAY",
+      "role_type": "Lead",
+      "demographics": "Male · early-40s · unkempt, unshaved, accountant, socially awkward"
+    },
+    {
+      "name": "FRANK",
+      "role_type": "Supporting",
+      "demographics": "Male · adult · offstage voice"
+    }
+  ],
+  "positioning_hook": "A scheming accountant uses a bizarre Indiana anti-garlic arrest to recruit his exhausted sister into a criminal plan, turning a tiny jail into a sibling power struggle.",
+  "cost_usd": 0.024612000000000002,
+  "input_tokens": 12860,
+  "output_tokens": 3326,
+  "status": "wrote:leads_ok"
+}

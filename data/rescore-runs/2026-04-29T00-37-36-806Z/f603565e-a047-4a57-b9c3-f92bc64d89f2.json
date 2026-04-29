@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:50:20.642Z",
+  "submission_id": "f603565e-a047-4a57-b9c3-f92bc64d89f2",
+  "eval_id": "4cccd0d0-20e8-402f-adfb-020907e67c1d",
+  "title": "The Father Gallagher Mysteries. The Mystery of the Manger.",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Father Keith Gallagher",
+      "role_type": "Lead",
+      "demographics": "Male · late 60s to early 70s · white-bearded Catholic priest"
+    },
+    {
+      "name": "Deacon Dave Smith",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s to early 60s · sturdy, practical"
+    },
+    {
+      "name": "Debbie Runner",
+      "role_type": "Lead",
+      "demographics": "Female · late 50s to early 60s · choir director / youth group leader / lifelong parishioner"
+    },
+    {
+      "name": "Mrs. Eileen Cordella",
+      "role_type": "Supporting",
+      "demographics": "Female · 70s · devout parishioner"
+    },
+    {
+      "name": "Monsignor Bill Lesnar",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s to 70s · Catholic monsignor"
+    },
+    {
+      "name": "Tom Song",
+      "role_type": "Supporting",
+      "demographics": "Male · early 60s · sharply dressed parishioner"
+    },
+    {
+      "name": "Anna Bernadette",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · parish-connected local"
+    },
+    {
+      "name": "Bishop Albert Smirk",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s to 70s · bishop"
+    }
+  ],
+  "positioning_hook": "Father Keith Gallagher investigates a stolen Baby Jesus in a Pennsylvania coal town and uncovers a decades-old parish cover-up tied to a dead young man, a bishop, and a Christmas display that won’t stay buried.",
+  "cost_usd": 0.03610425,
+  "input_tokens": 22267,
+  "output_tokens": 4312,
+  "status": "wrote:leads_ok"
+}

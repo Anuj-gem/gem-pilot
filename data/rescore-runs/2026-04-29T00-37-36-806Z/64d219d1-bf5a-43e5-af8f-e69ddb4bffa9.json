@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:51:10.714Z",
+  "submission_id": "64d219d1-bf5a-43e5-af8f-e69ddb4bffa9",
+  "eval_id": "35a81197-8f30-4806-9594-fa5305b9461f",
+  "title": "second shift dreams",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s · working-class Pennsylvania custodian/school supervisor"
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · 17 · Ralph’s daughter"
+    },
+    {
+      "name": "Sarah Martin",
+      "role_type": "Lead",
+      "demographics": "Female · early 30s · English teacher"
+    },
+    {
+      "name": "Jayden",
+      "role_type": "Lead",
+      "demographics": "Male · 17 · student"
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · priest"
+    },
+    {
+      "name": "Mike",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · school custodian"
+    },
+    {
+      "name": "Diane Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s in flashback · Ralph’s late wife"
+    },
+    {
+      "name": "ADMIN",
+      "role_type": "Supporting",
+      "demographics": "Any gender · 40s-60s · school administrator"
+    }
+  ],
+  "positioning_hook": "A burned-out Pennsylvania custodian with a secret screenplay deadline gets one last shot at the life he shelved, while his daughter, a sharp-eyed student, and a perceptive teacher push him to choose himself.",
+  "cost_usd": 0.032697000000000004,
+  "input_tokens": 18276,
+  "output_tokens": 4220,
+  "status": "wrote:leads_ok"
+}

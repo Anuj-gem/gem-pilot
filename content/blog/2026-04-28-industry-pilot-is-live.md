@@ -2,132 +2,164 @@
 title: "We're bringing the Industry directly into GEM."
 slug: industry-pilot-is-live
 date: 2026-04-28
-summary: "Producers and reps are reading scripts on GEM. Reports are rescored on Selznick 3.8. Privacy is end-to-end. And the public Discover page is gone."
+summary: "What's new: in-app industry accounts, end-to-end privacy, the Selznick 3.8 rescore, and the GEM Score is back."
 author: "Anuj Kommareddy"
 draft: false
 ---
 
-Today is the biggest release we've shipped — and it changes the shape of GEM
-from a tool you use into a network you join.
+<div class="gem-blog-letter">
 
-The short version: producers and reps are on the platform. Every script
-has been rescored on the new Selznick 3.8 engine. Privacy is on
-end-to-end. And we've turned off the public Discover page.
+[ANUJ — write your personal letter to writers here. A few paragraphs,
+casual, founder-voice. Why this release matters to you, what you're
+excited about, what's next.]
 
-Here's what changed and why it matters.
+— Anuj
 
-## Industry partners are reading
+</div>
 
-The headline change. GEM was always meant to connect promising writers
-to the people who can actually make their work. The pilot is live now:
-a curated, vetted group of producers and representatives are logging in,
-filtering the feed by their lane, and reading scripts directly.
+## 1. Industry partners are now in the app
 
-What this looks like on their side: a clean, searchable feed of
-qualified scripts in their genre/format/budget. They tap into the full
-report, mark **Interested** or **Pass** in one click, and email writers
-directly when something fits their slate.
+The biggest change. We're expanding the industry pilot — and producers,
+agents, and managers now have **real in-app accounts**. They log in,
+filter the matched feed by their lane, and reach out to writers
+directly through GEM.
 
-We're being deliberately selective on industry onboarding. Each partner
-goes through a personal vet — that means the people in the feed are
-real, the reads are real, and the inbound to writers will be real. It
-also means stats will grow slowly at first. You might see a few views
-in the first few days. Inbound intros will start landing as more
-partners come on. Both grow over time.
+- **Vetted, invite-only.** Every industry account goes through a
+  personal vet. Real people, real scouts, real reads.
+- **Direct contact.** When something fits their slate, they email you
+  through GEM. Their identity is revealed in your inbox; their reply-to
+  is their actual address.
+- **Slow start, real signal.** We're onboarding partners deliberately.
+  Stats and inbound will be modest at first — they grow as more
+  partners come on.
 
-## Privacy by default — Discover is gone
+<div class="gem-blog-mock">
+  <p class="gem-blog-mock-title">Producer feed · drama lane</p>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">Untitled mob therapy pilot <span class="gem-blog-pill gem-blog-pill--new">New</span></p>
+      <p class="gem-blog-row__meta">Series · 1 hr drama · Premium cable</p>
+    </div>
+    <span class="gem-blog-row__score">78</span>
+  </div>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">The Northern Line</p>
+      <p class="gem-blog-row__meta">Series · 1 hr drama · Premium cable</p>
+    </div>
+    <span class="gem-blog-row__score">74</span>
+  </div>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">Glass Cathedral</p>
+      <p class="gem-blog-row__meta">Series · 1 hr drama · Premium cable</p>
+    </div>
+    <span class="gem-blog-row__score">71</span>
+  </div>
+</div>
 
-The biggest paradigm shift on the writer side: **scripts are not
-publicly listed anymore.**
+## 2. End-to-end privacy by default
 
-The old `/discover` page is retired. Your script doesn't appear on a
-public leaderboard, and a stranger can't browse the catalog. The only
-way someone sees your report is if you send them the URL — or if
-they're a vetted industry partner with your script in their matched
-feed.
+The other paradigm shift. **The public Discover page is gone.** Scripts
+are no longer browsable by strangers.
 
-Two consequences worth being clear about:
-
-- **Your report URL is private to you to share.** Send it to the people
-  you want reading it — agents, producers in your network, your
-  writing group. They see exactly what you see. Anyone without the
-  link has no way to find it.
+- **Your report URL is private to you to share.** Send it to anyone you
+  want — agents, producers in your network, your writing group. Only
+  people with the link see your report.
 - **Industry visibility is opt-in and Pro-only.** Free reads stay
-  private end-to-end. When you upgrade to Pro, your script enters the
-  matched feed for partners in your lane.
+  private end-to-end. Pro publishes you to the matched feed.
+- **Anonymized engagement signals.** You see views, interested counts,
+  passed counts on your dashboard — but you don't see *who* until they
+  reach out. Same protection on the producer side.
 
-## Identity privacy on both sides
+<div class="gem-blog-mock">
+  <p class="gem-blog-mock-title">Industry activity</p>
+  <div class="gem-blog-stat-strip">
+    <div class="gem-blog-stat"><span class="gem-blog-stat__value">14</span><span class="gem-blog-stat__label">Views</span></div>
+    <div class="gem-blog-stat"><span class="gem-blog-stat__value">3</span><span class="gem-blog-stat__label">Interested</span></div>
+    <div class="gem-blog-stat"><span class="gem-blog-stat__value">2</span><span class="gem-blog-stat__label">Passed</span></div>
+    <div class="gem-blog-stat"><span class="gem-blog-stat__value">2</span><span class="gem-blog-stat__label">Emailed</span></div>
+  </div>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">Lena Park · Westview Pictures <span class="gem-blog-pill gem-blog-pill--reachedout">Reached out</span></p>
+    </div>
+  </div>
+  <div class="gem-blog-row">
+    <div>
+      <p class="gem-blog-row__title">Marcus Hill · Lighthouse Studios <span class="gem-blog-pill gem-blog-pill--interested">Interested</span></p>
+    </div>
+  </div>
+</div>
 
-Industry partners' activity on your script is **private to them** until
-they decide to reach out. You see anonymized engagement signals — views,
-interested counts, passed counts — but you don't see *who* until they
-email you directly through GEM.
+## 3. Selznick 3.8 — every script rescored
 
-When a producer reaches out, their identity is revealed in your inbox
-along with their note. From there, the conversation is yours.
+Selznick 3.8 is the new evaluation engine. Every script on GEM has been
+rescored overnight. Reports are restructured to read more like the
+one-pager a producer would actually write before walking into a
+development meeting.
 
-Same protection on the producer side. Their pass and interested marks
-aren't visible to anyone but them.
-
-## Selznick 3.8 — every script rescored
-
-Selznick 3.8 is the new evaluation engine, and we ran it across every
-script on the platform overnight. Every report has been refreshed.
-
-The structure of the report is also new:
-
-- A sharpened **headline** distilled from your script.
-- The strongest **Why this is a hit** notes a producer would put on the
-  cover.
-- **Cast** profiles with actor archetypes for each lead.
+- **Sharpened headline** — the pitch line for your script.
+- **Why this is a hit** — the strongest commercial notes.
+- **Cast** — lead profiles with the actor archetypes.
 - **Packaging** — audience, budget tier, buyer fit.
-- **Project Complexity** — production reality, cast lift, rights and
-  clearance flags.
-- **Development considerations** — the case against, with the sharpest
-  lever called out.
+- **Project Complexity** — production reality, cast lift, clearance.
+- **Development considerations** — the case against, sharpest lever.
 
-If you'd previously edited your headline, your edit is preserved — the
-rescore only updates the underlying read, never your own changes.
+If you previously edited your headline, **your edit is preserved**. The
+rescore only updates the underlying read.
 
-## The score is back — but it's not the gate
+<div class="gem-blog-grid-3">
+  <div class="gem-blog-tile gem-blog-tile--smooth">
+    <p class="gem-blog-tile__label">Cost</p>
+    <p class="gem-blog-tile__value">Smooth</p>
+  </div>
+  <div class="gem-blog-tile gem-blog-tile--manageable">
+    <p class="gem-blog-tile__label">Cast</p>
+    <p class="gem-blog-tile__value">Manageable</p>
+  </div>
+  <div class="gem-blog-tile gem-blog-tile--complex">
+    <p class="gem-blog-tile__label">Clearance</p>
+    <p class="gem-blog-tile__value">Complex</p>
+  </div>
+</div>
 
-We brought the GEM Score back on the report cover. A lot of writers
-asked for it: when something *doesn't* qualify for industry visibility,
-they wanted a clear signal of why. Fair.
+## 4. The GEM Score is back — but it's not the gate
 
-A few things to be careful about, though:
+A lot of writers asked for it: when something doesn't get matched, they
+wanted a clear signal of why. So the score is back on the report cover.
 
-- **The score is one signal, not the verdict.** Industry partners match
-  on score, yes — but also on genre fit, lane, comparables, budget tier,
-  and what they're personally scouting for that quarter. A great script
-  in a lane no one's currently buying gets a different real-world
-  outcome than a great script in a hot lane. The number doesn't capture
-  any of that.
+- **One signal, not the verdict.** Industry partners match on score
+  *and* genre fit, lane, comparables, budget, what they're scouting
+  this quarter. The number alone doesn't capture any of that.
 - **Anyone who publishes has a real shot.** "Qualifies for access" was
   the old framing — we're moving away from it. Publishing is the
-  qualifying act. From there, the score is one input into who sees what,
-  alongside everything else above.
-- **You can still hide your score from industry partners** if you want
-  the report read on its own merit. Privacy controls now include a
-  per-section visibility toggle and a one-click score-eye.
+  qualifying act. From there, the score is one input alongside
+  everything else.
+- **You can still hide your score.** Privacy controls include a
+  one-click score-eye toggle, so the report can be read on its own
+  merit if that's what you want.
 
-## Enhanced privacy controls
+## 5. Enhanced privacy controls
 
 Tied to all of the above:
 
 - **Per-section privacy.** Hide your score, hide individual sections
-  (Cast, Packaging, Project Complexity), or take the post down entirely.
-  Industry partners see only what you decide to show them.
-- **Score-eye toggle.** One tap to hide the GEM Score from industry
-  partners while still seeing it yourself.
-- **One-click unpublish.** Publish/unpublish from your dashboard at any
+  (Cast, Packaging, Project Complexity), or take the post down
+  entirely. Industry partners see only what you decide to show.
+- **One-click unpublish.** Toggle visibility from your dashboard at any
   time.
+- **Branded PDF download** of every report (Pro).
 
-## What's next
+<div class="gem-blog-callout gem-blog-callout--accent">
 
-This is the start of the industry pilot, not the end of one. The next
-few weeks are about onboarding more vetted partners, tightening the
-matching engine, and making sure the inbox flow is clean on both sides.
+**Coming next.** More vetted industry partners. Tighter matching as we
+learn from the first few weeks of intros. Better signals for writers
+about what's moving the needle on their lane.
+
+</div>
+
+---
 
 If you're a writer: drop in your screenplay at
 [gem.studio](https://www.gem.studio). First read is on us.

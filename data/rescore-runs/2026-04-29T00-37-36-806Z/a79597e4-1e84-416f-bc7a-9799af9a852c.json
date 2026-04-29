@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:50:06.245Z",
+  "submission_id": "a79597e4-1e84-416f-bc7a-9799af9a852c",
+  "eval_id": "777dc528-6aa1-4acb-b12c-e59162853b6b",
+  "title": "Silent bruises",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Dinozzo",
+      "role_type": "Lead",
+      "demographics": "Male · late 40s"
+    },
+    {
+      "name": "Diane Dinozzo",
+      "role_type": "Lead",
+      "demographics": "Female · mid 40s"
+    },
+    {
+      "name": "Eleanor Dinozzo",
+      "role_type": "Lead",
+      "demographics": "Female · teen"
+    },
+    {
+      "name": "Father Maxwell Sears",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "Ralph’s Attorney",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 30s-50s"
+    },
+    {
+      "name": "Diane’s Attorney",
+      "role_type": "Supporting",
+      "demographics": "Male or Female · 30s-50s"
+    },
+    {
+      "name": "Judge",
+      "role_type": "Supporting",
+      "demographics": "Any gender · 40s-60s"
+    }
+  ],
+  "positioning_hook": "A church custodian trapped in a controlling marriage finally chooses his daughter over the woman who monitors every move, and the escape becomes a custody fight.",
+  "cost_usd": 0.02826,
+  "input_tokens": 13788,
+  "output_tokens": 3982,
+  "status": "wrote:leads_ok"
+}

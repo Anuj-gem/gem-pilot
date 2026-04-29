@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:48:28.713Z",
+  "submission_id": "1b9dea5d-b066-440a-8564-b109060365b3",
+  "eval_id": "edbf38fd-266f-4d2b-959a-3b0015f3dff9",
+  "title": "The widows debt done",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "KIKI",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Black"
+    },
+    {
+      "name": "TASHA",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · Black"
+    },
+    {
+      "name": "SONDRA",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · Black"
+    },
+    {
+      "name": "MARCUS",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "GLORIA",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Black"
+    },
+    {
+      "name": "TRAY",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · Black"
+    },
+    {
+      "name": "MARCUS'S CREW / THUGS",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-30s · Mixed"
+    },
+    {
+      "name": "WHITE MAN / COP",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · White"
+    }
+  ],
+  "positioning_hook": "Two West Side Charlotte women inherit a dead kingpin’s debt and get pulled into a ruthless underworld where survival means laundering money, dodging cops, and outlasting the woman who owns the shoes they’re wearing.",
+  "cost_usd": 0.03374100000000001,
+  "input_tokens": 17760,
+  "output_tokens": 4538,
+  "status": "wrote:leads_ok"
+}

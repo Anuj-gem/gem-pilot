@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:52:12.998Z",
+  "submission_id": "633cf844-d486-4bb5-bd0c-7d1f1366f389",
+  "eval_id": "cff12cb1-b1e1-419d-a2b0-ac6d910362da",
+  "title": "In the Maze of Existence (17)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Amir",
+      "role_type": "Lead",
+      "demographics": "Male · 26 · South Asian"
+    },
+    {
+      "name": "Alexey",
+      "role_type": "Lead",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Lucia",
+      "role_type": "Lead",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Alana",
+      "role_type": "Lead",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Virgil",
+      "role_type": "Supporting",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Michelle",
+      "role_type": "Supporting",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Mass",
+      "role_type": "Supporting",
+      "demographics": "Male · 26"
+    },
+    {
+      "name": "Noor",
+      "role_type": "Supporting",
+      "demographics": "Female · 26"
+    },
+    {
+      "name": "Catherine",
+      "role_type": "Supporting",
+      "demographics": "Female · 26"
+    }
+  ],
+  "positioning_hook": "A disaffected startup founder building military drone tech drifts through a drugged-out, status-obsessed friend group, where every conversation turns into a referendum on ambition, intimacy, and moral rot.",
+  "cost_usd": 0.032530500000000004,
+  "input_tokens": 16680,
+  "output_tokens": 4449,
+  "status": "wrote:leads_ok"
+}

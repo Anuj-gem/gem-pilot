@@ -1,0 +1,278 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Mystery",
+      "genre_tags": [
+        "Drama",
+        "Faith-based"
+      ],
+      "tone": "Grounded, reverent, cozy-ominous, and procedural with a devotional undercurrent"
+    },
+    "positioning_hook": "Father Keith Gallagher investigates a stolen Baby Jesus in a Pennsylvania coal town and uncovers a decades-old parish cover-up tied to a dead young man, a bishop, and a Christmas display that won’t stay buried.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The Christmas setting and parish mystery give this a clear audience lane, especially for viewers who like faith-adjacent mysteries with moral stakes. The appeal is specific rather than broad, but the seasonal hook and church-world engine make it easy to market."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands immediately: a missing Baby Jesus becomes the entry point into a larger parish secret. The script keeps the engine legible through the note, the medal, the 1998 thread, and the escalating returns of the nativity pieces."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Gallagher, Dave, and Debbie have a workable trio dynamic, with Gallagher’s calm authority and Dave’s dry skepticism doing most of the lifting. The characters function well in the mystery, though the script is still leaning more on the case than on deeply individualized inner lives."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The choice to build a mystery around a church nativity display is fresh and immediately ownable, and the script commits to its devotional texture. The boldest move is using parish ritual objects as clue carriers, which gives the story a distinct identity."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "Each clue hands off cleanly to the next, and the story keeps widening from the manger to the cemetery to St. Cecile to the diocese. The momentum is steady and readable, with the strongest propulsion coming from the repeated returns of the nativity pieces."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A Christmas mystery inside a Catholic parish has an immediate, surprising logic that feels both novel and inevitable. The script’s best originality comes from making sacred objects, parish politics, and local memory all part of the same investigative engine."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The parish ecosystem is specific: rectory kitchen, parish office, basement storage, cemetery, sanctuary, diocesan office, and the social pressure of a small coal town. The world feels story-generating because every location carries institutional memory and community scrutiny."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is unusually distinct: warm Christmas ritual, dry clerical banter, and a slow-blooming sense of spiritual unease. The dialogue between Gallagher, Dave, Debbie, and Eileen gives the piece a recognizable voice that could be identified from a single scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "The surface mystery opens onto faith, memory, institutional silence, and the cost of protecting an image of the Church. The script suggests deeper emotional and moral territory beneath the case, especially once the 1998 history and Donnelly’s death come into focus."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Gallagher, Dave, and Debbie create a solid working trio, and Eileen, Tom, and Lesnar add useful pressure points. The ensemble is functional and gives the mystery multiple social angles, though the strongest recurring energy still sits with the central trio."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 8,
+        "leads": 3,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Late-50s to 70s principal roles",
+          "Catholic clergy and parishioner casting authenticity matters",
+          "One 40s local man and one bishop role"
+        ]
+      },
+      "locations": {
+        "distinct_count": 8,
+        "interior_exterior_ratio": "roughly 60/40 interior",
+        "period_or_contemporary": "contemporary",
+        "notable_requirements": [
+          "Small-town Pennsylvania church community",
+          "Cemetery",
+          "Diocesan office",
+          "Church basement storage",
+          "Winter exteriors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No visible VFX requirements beyond simple atmospheric snow and lighting effects.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical snow, candlelight, church lighting flicker, and prop nativity pieces.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "No prominent brand dependencies identified."
+        },
+        {
+          "type": "real_person",
+          "detail": "No real people are referenced by name."
+        },
+        {
+          "type": "named_music",
+          "detail": "No plot-critical named music is used."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "No external IP licensing is indicated."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium cable or streaming feature with faith-adjacent, adult mystery positioning",
+        "content_level": "PG-13 equivalent to mature",
+        "series_engine_or_release_model": "Feature release model; strongest as a festival-to-platform or seasonal streaming title"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, contained to churches, homes, cemetery, and offices, with no VFX or stunt load."
+        },
+        "cast": {
+          "level": "low",
+          "note": "A small principal ensemble centered on three older leads and a handful of supporting parish roles."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Multiple distinct church-adjacent interiors and winter exteriors, but all within a manageable small-town footprint."
+        },
+        "content": {
+          "level": "medium",
+          "note": "The story touches institutional misconduct, death, and moral cover-up, which keeps it adult without pushing into explicit territory."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named music, brands, or real-person rights dependencies are apparent on the page."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The Christmas mystery is instantly ownable.",
+          "what_it_means": "A seasonal church mystery gives buyers a clean hook that can be marketed on premise alone, with a built-in calendar window and a clear emotional promise. Faith-adjacent audiences, holiday programming buyers, and adult mystery fans all have a reason to lean in.",
+          "evidence": "The opening nativity theft, the note in the manger, and the repeated return of nativity pieces tied to 1998.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Gallagher is a calm anchor role.",
+          "what_it_means": "The lead priest gives the project a steady center that can carry both procedural investigation and moral authority, which is exactly the kind of role that attracts seasoned actors. Prestige character actors, older leading men, and performers with faith-based audience recognition would all see a showcase in it.",
+          "evidence": "Gallagher’s measured responses to Dave, Debbie, Tom, and Lesnar, especially in the church and diocesan scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The parish world has built-in texture.",
+          "what_it_means": "The rectory, parish office, basement storage, sanctuary, cemetery, and diocesan office create a contained ecosystem that feels lived-in and story-generating. That kind of world supports efficient production and gives the film a specific institutional identity instead of a generic mystery backdrop.",
+          "evidence": "The script moves through the rectory kitchen, parish office, church basement, cemetery, St. Cecile, and the bishop’s office.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The trio has easy, playable chemistry.",
+          "what_it_means": "Gallagher, Dave, and Debbie give the movie a reliable engine of wit, competence, and emotional balance, which helps the script play as both mystery and character piece. Ensemble buyers and directors who like dialogue-driven interplay will see immediate value in the banter and shared investigation.",
+          "evidence": "Their exchanges about the lights, “disturbance,” and the escalating clues keep the investigation lively.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The story turns sacred objects into clues.",
+          "what_it_means": "Using nativity figures, a St. Christopher medal, a rosary, and parish records as evidence gives the mystery a signature visual language that feels different from standard detective fare. That specificity helps the film stand out in a crowded mystery market and gives production memorable prop storytelling.",
+          "evidence": "The matching medal, the dated wooden pieces, the shepherd figure, and the rosary tied to the returned Baby Jesus.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The institutional cover-up gives the story weight.",
+          "what_it_means": "The mystery is not just about theft; it opens into a parish failure with moral and emotional consequences, which raises the project above a simple holiday caper. Buyers looking for elevated genre with conscience will respond to the way the script folds faith, memory, and accountability into the case.",
+          "evidence": "The 1998 logbook entry, Lesnar’s guarded answers, and the bishop’s formal acknowledgment.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a clean, marketable faith-adjacent mystery with a seasonal hook and a contained production footprint. The script’s real advantage is that it turns a Baby Jesus theft into a parish-wide reckoning, giving actors, buyers, and audiences a story that feels both cozy and consequential."
+    },
+    "lead_characters": [
+      {
+        "name": "Father Keith Gallagher",
+        "role_type": "Lead",
+        "demographics": "Male · late 60s to early 70s · white-bearded Catholic priest",
+        "hook": "Gallagher is a warm, observant parish priest with a quiet authority that never needs to announce itself. He reads people before he speaks, carries moral weight without theatrics, and becomes the story’s center of gravity as the mystery shifts from missing ornament to buried truth.",
+        "why_actor_wants_this": "This is the showcase territory of Tom Wilkinson in *The Best Exotic Marigold Hotel* or Brendan Gleeson in *Calvary* — a late-career lead whose stillness and moral intelligence do the heavy lifting. Actors who want a role that lets them play compassion, skepticism, and spiritual pressure in the same frame will chase it."
+      },
+      {
+        "name": "Deacon Dave Smith",
+        "role_type": "Lead",
+        "demographics": "Male · late 50s to early 60s · sturdy, practical",
+        "hook": "Dave is the parish’s dry-witted ballast: skeptical, grounded, and always one joke away from saying what everyone else is thinking. He gives the movie its comic timing and its common-sense pressure valve, but he also carries real loyalty and a growing sense that the church’s story is bigger than the one being told.",
+        "why_actor_wants_this": "This has the showcase lane of Paul Giamatti in *Sideways* or David Harbour in *Stranger Things* — a character whose sarcasm is a mask for conscience and hurt. Character actors who can play humor as defense and sincerity as payoff will see a rich supporting-lead opportunity."
+      },
+      {
+        "name": "Debbie Runner",
+        "role_type": "Lead",
+        "demographics": "Female · late 50s to early 60s · choir director / youth group leader / lifelong parishioner",
+        "hook": "Debbie is the parish insider who knows where every body is buried, socially and literally. She’s efficient, sharp, and emotionally literate, with enough church fluency to keep the story moving and enough backbone to challenge both the men around her and the institution they serve.",
+        "why_actor_wants_this": "This is the kind of grounded, high-functioning role that gave Frances McDormand in *Fargo* and Allison Janney in *The West Wing* their authority — competence with bite, warmth with steel. Actors who want a role that can carry exposition without feeling like exposition will be drawn to her."
+      },
+      {
+        "name": "Mrs. Eileen Cordella",
+        "role_type": "Supporting",
+        "demographics": "Female · 70s · devout parishioner",
+        "hook": "Eileen is the parish’s pressure-cooker conscience, the kind of woman who can turn a hallway whisper into a town event. She’s funny, alarmed, and impossible to outrun, which makes her a perfect embodiment of small-church social gravity.",
+        "why_actor_wants_this": "This is the comic-authority territory of Margo Martindale in *The Americans* or June Squibb in *Nebraska* — a scene-stealing elder with timing, judgment, and a sharp social radar. Character actresses who enjoy making a room tilt with one entrance will want it."
+      },
+      {
+        "name": "Monsignor Bill Lesnar",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s to 70s · Catholic monsignor",
+        "hook": "Lesnar is polished, controlled, and always slightly too composed for comfort. He carries the weight of institutional memory, and the script lets him play as both gatekeeper and wounded custodian of a truth he helped bury.",
+        "why_actor_wants_this": "This is the moral-authority pressure role of Ralph Fiennes in *The Grand Budapest Hotel* or Mark Rylance in *Bridge of Spies* — a man whose restraint becomes the performance. Actors who specialize in layered authority figures will see a rich, scene-heavy part."
+      },
+      {
+        "name": "Tom Song",
+        "role_type": "Supporting",
+        "demographics": "Male · early 60s · sharply dressed parishioner",
+        "hook": "Tom is the rigid, self-appointed guardian of order who believes urgency equals righteousness. He’s the kind of parish presence who can sound like a truth-teller while revealing, beat by beat, that he’s also protecting himself.",
+        "why_actor_wants_this": "This is the showcase lane of Michael Stuhlbarg in *A Serious Man* — a tightly wound man whose certainty slowly exposes fear. Actors who like playing controlled intensity with a crack underneath will be attracted to him."
+      },
+      {
+        "name": "Anna Bernadette",
+        "role_type": "Supporting",
+        "demographics": "Female · adult · parish-connected local",
+        "hook": "Anna is the nervous civilian entry point into the deeper history, the person whose home opens the archive of old parish objects. She’s not a driver of the mystery so much as a human hinge that lets the past surface in a believable way.",
+        "why_actor_wants_this": "This is the kind of contained, emotionally specific supporting role that gives an actor a clean dramatic scene without carrying the whole plot. It suits performers who excel at anxiety, receptivity, and the moment a character realizes they’ve opened the wrong box."
+      },
+      {
+        "name": "Bishop Albert Smirk",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s to 70s · bishop",
+        "hook": "Smirk arrives late but lands with institutional finality. He’s the voice of formal accountability, and the script uses him to convert the mystery’s private pressure into public consequence.",
+        "why_actor_wants_this": "This is the authority-role territory of John Lithgow in *The Crown* or Richard Jenkins in *The Visitor* — a late-scene figure whose presence changes the temperature of the room. Actors who can make institutional language feel human will want the part."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a mystery out of ritual, silence, and small-town faith.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, or TV directors looking to step into a contained feature with strong dialogue and atmosphere. The material rewards filmmakers who care about performance, seasonal texture, and the tension between public piety and private truth.",
+        "detail": "The movie gives a director a contained canvas with clear visual motifs — nativity pieces, church interiors, snow, candlelight, and parish spaces that can be shot economically but feel rich. It will attract directors who like to stage moral pressure in rooms rather than chase spectacle, and who can make a quiet reveal feel like a climax."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Premium streaming / faith-adjacent mystery / seasonal adult drama",
+        "detail": "The project can be packaged around one older lead and a small ensemble, so it does not require a star-heavy cast to function. The Christmas setting gives it a natural seasonal marketing window and a clear thumbnail hook for streamers looking for adult holiday titles with a mystery engine."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The 1998 thread is the engine.",
+        "detail": "The script’s strongest propulsion comes from the 1998 objects, photos, and logbook entry; a next pass could keep that history even more tightly braided into the present-day investigation so every clue feels like a step deeper rather than a new branch. The more the current theft and the old incident mirror each other, the more the reveal will feel inevitable.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The trio could carry even more contrast.",
+        "detail": "Gallagher, Dave, and Debbie already work well together, and the version of the script where each of them has one more distinct personal stake in the case would expand the emotional engine without changing the plot. That would give the banter more subtext and make the final moral reckoning land even harder.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The parish geography is manageable.",
+        "detail": "This is already a contained production, but the church, rectory, parish hall basement, cemetery, St. Cecile, Anna’s house, and diocesan office all register as separate stops. If needed, one next-pass simplification would be to absorb one or two of those beats into the same physical space while preserving the investigation’s forward motion.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The ending sets up a larger world.",
+        "detail": "The final tag — the returned Baby Jesus with the note “Now you’re ready” — opens the door to a broader mystery universe around Father Gallagher. If the goal is a one-off feature, the ending already works as a clean button; if the goal is franchise potential, that last beat is doing useful work.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 70.3,
+  "tier": "Optionable",
+  "inputTokens": 22267,
+  "outputTokens": 4312,
+  "cost": 0.03610425,
+  "declaredFormat": "Feature film"
+}

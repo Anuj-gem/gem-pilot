@@ -1,0 +1,283 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Comedy-Drama",
+      "genre_tags": [
+        "Female Friendship",
+        "Wedding Weekend",
+        "Character-Driven"
+      ],
+      "tone": "Raucous, profane, emotionally honest, and sharply observational"
+    },
+    "positioning_hook": "A feral suburban mom returns to her Missouri hometown for her best friend’s wedding and finds the old hierarchy still alive — along with the boy who once defined her.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The wedding-weekend setup is instantly legible, and the adult-female-friendship angle gives it a clear audience beyond the usual bridesmaid comedy crowd. The hook is strongest when the script leans into Jill and Stef’s history and the social collision of L.A. polish versus Missouri chaos."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands early: Jill comes home for Stef’s wedding, the reunion reopens old emotional territory, and the night engine is easy to track. The strip-club detour and the Graham reveal sharpen the central contradiction rather than muddying it."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 8,
+        "reasoning": "Jill is a vivid lead — funny, combative, image-conscious, and secretly vulnerable — and Stef has a strong counterweight as the quieter woman whose restraint is its own power. Lex and Sherri add enough friction and texture to make the social ecosystem feel playable beyond the central duo."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script takes a familiar reunion/wedding framework and gives it a sharper, rowdier edge through the Missouri setting, the heat, the van breakdown, and the strip-club escalation. The voice is confident, though the underlying emotional architecture remains recognizable in a good, accessible way."
+      },
+      "narrative_momentum_engagement": {
+        "score": 8,
+        "reasoning": "The story keeps turning: reunion, rehearsal, bachelorette, van disaster, strip club, fallout, morning-after reckoning. Each sequence escalates the Jill/Stef fracture and keeps the night feeling like it can still tip into something worse or more revealing."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The script has that satisfying feeling of a premise that clicks once you hear it — a wedding weekend becomes a referendum on who these women were and who they became. The emotional engine is familiar, but the specific class, region, and social texture give it a fresh enough signature."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The Missouri wedding world is specific and story-generating: the glass chapel, the Hilton conference chaos, the plantation reception, the van, the strip club, the local social codes. The setting is not just backdrop; it actively shapes behavior, status, and conflict."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "The tone is distinct: raunchy but not empty, emotionally bruised but still funny, with a lived-in sense of female friendship that can swing from crude jokes to real hurt in a beat. The script knows exactly how loud it wants to be and when to let silence do the work."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Under the party chaos, there’s a real story about identity, projection, and the way adult women measure themselves against old versions of each other. The final hotel-room reconciliation and the homecoming beat suggest a fuller emotional life beneath the comic surface."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jill/Stef is the engine, but the script also gives Lex, Sherri, Matt, and Mama G enough relational charge to keep scenes alive. The ensemble is strongest when the women’s group dynamic becomes a pressure cooker rather than a backdrop."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 10,
+        "leads": 2,
+        "series_regulars": 4,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Two female leads in their mid-30s",
+          "One male husband role in late 30s",
+          "Two toddlers/young children in the home scenes",
+          "Ensemble bridesmaid/wedding-party casting with regional specificity"
+        ]
+      },
+      "locations": {
+        "distinct_count": 10,
+        "interior_exterior_ratio": "Mostly interior with several key exterior set pieces",
+        "period_or_contemporary": "Contemporary with 2007 flashback opening",
+        "notable_requirements": [
+          "Glass chapel in a wooded setting",
+          "Hotel lobby, conference area, bar, and room interiors",
+          "Strip club interior and parking lot",
+          "Farm road / rural roadside sequence",
+          "Plantation-style reception location",
+          "Suburban home and backyard"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX requirements beyond simple title/flashback transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "Practical vomit, minor fight choreography, car trouble/bumper drag, and glass-shattering moments.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Opening and needle-drop references include 'Shake It' by Metro Station, 'Whatever You Like' by T.I., 'Like a G6,' 'So What' by P!nk, and 'We Can't Stop' by Miley Cyrus."
+        },
+        {
+          "type": "brand",
+          "detail": "Brand and product references include Hollister, Birkenstocks, Snooki hair bumps, Patagonia, Busch Light, Hilton, AAA, and Just For Men."
+        },
+        {
+          "type": "brand",
+          "detail": "Specific consumer items are used as texture and comedy beats, including weed gummies, diuretics, matcha, and a vending machine scene."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Streaming feature or premium cable comedy-drama lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with strong festival-to-streaming or platform-premiere potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "The story is built around contained interiors, a handful of practical exteriors, and no VFX-heavy set pieces."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The two-lead female dynamic is the anchor, with a supporting wedding-party ensemble and two child roles adding some casting coordination."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script moves through about ten distinct locations, including a chapel, hotel complex, strip club, roadside sequence, and plantation reception."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Profanity, sexual references, strip-club material, vomiting, and a physical altercation keep this in the mature lane."
+        },
+        "rights": {
+          "level": "high",
+          "note": "The script uses multiple named songs and several prominent brands, which creates a meaningful clearance pass."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Jill is a showcase lead.",
+          "what_it_means": "This gives a producer a female star vehicle that can play comedy, volatility, vanity, and hurt without ever losing momentum. Mid-career actresses who want a role with bite and range — the kind that can carry a festival crowd and still sell a trailer — will see the appeal immediately.",
+          "evidence": "Jill’s 2007 party entrance, her self-aware trash talk, the meticulous pre-wedding transformation, and the emotional blowup at the strip club all belong to the same character.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The friendship engine is the real hook.",
+          "what_it_means": "The script isn’t just about a wedding; it’s about two women whose history still has voltage, which makes the emotional engine feel bigger than the event itself. Buyers looking for female-led, relationship-forward material will respond to a story that can generate both laughs and ache from one central bond.",
+          "evidence": "Jill and Stef’s reunion, the bridesmaid weekend, the fight over Graham, and the final hotel-room reconciliation all turn on their shared past.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Missouri setting has texture.",
+          "what_it_means": "The rural heat, local social codes, and wedding-world specifics give the script a place-based identity that helps it stand out in a crowded female-friendship lane. Directors and buyers who like regional specificity — and audiences who enjoy watching polished outsiders collide with a very particular local culture — will lean in.",
+          "evidence": "The glass chapel with no AC, the van breakdown on a farm road, the plantation reception, and the Hilton conference-room wedding all feel rooted in a specific social ecosystem.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The comedy is character-driven, not sketchy.",
+          "what_it_means": "The jokes come from personality, status, and social discomfort, which makes the material feel playable and repeatable rather than one-note. That’s attractive to actors and to buyers who want a comedy-drama that can travel on performance instead of broad set pieces.",
+          "evidence": "Jill’s banter with Matt, the bridesmaids’ van meltdown, and the strip-club argument all build from who these people are and how they behave under pressure.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ensemble creates social friction.",
+          "what_it_means": "Sherri, Lex, Monica, Matt, and Mama G give the script enough relational variety to keep scenes alive around the lead pair. That opens the door to a castable, actor-friendly package where supporting roles still have distinct flavors and can attract recognizable names.",
+          "evidence": "Sherri’s control, Lex’s dry detachment, Monica’s chaos, and Matt’s easy domestic counterpoint all register quickly in the wedding-weekend scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The set pieces escalate cleanly.",
+          "what_it_means": "The van breakdown, the farmer encounter, the strip-club blowup, and the morning-after reckoning give the film a clear sequence of turns that can be marketed as a night that keeps getting worse and more revealing. That kind of escalation is useful for trailers, audience word-of-mouth, and a buyer looking for a contained feature with a strong third-act payoff.",
+          "evidence": "The bachelorette night moves from a hotel bar to a broken van to a roadside jump-start to a strip club confrontation.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a sharp, castable female-friendship feature with a real star turn at its center. It has the kind of specific regional texture, propulsive wedding-weekend escalation, and emotionally messy payoff that can sell to both talent and buyers looking for adult comedy-drama with bite."
+    },
+    "lead_characters": [
+      {
+        "name": "JILL MITCHELLSON / JILL ROBERSON",
+        "role_type": "Lead",
+        "demographics": "Female · 36 · white · suburban mom / former party girl",
+        "hook": "Jill is all appetite, armor, and performance — a woman who learned how to dominate a room before she learned how to sit inside her own life. She’s funny, filthy, image-conscious, and deeply observant, with the kind of restless energy that makes her both magnetic and exhausting; the script keeps revealing that her loudness is also a defense against feeling ordinary, left behind, or unseen.",
+        "why_actor_wants_this": "This is the showcase territory of Charlize Theron in Young Adult — a woman whose comic aggression is inseparable from grief, self-mythology, and embarrassment. It gives an actor the chance to play razor-edged comedy, emotional collapse, and late-blooming self-recognition in one role that can anchor a whole movie."
+      },
+      {
+        "name": "STEFANI",
+        "role_type": "Lead",
+        "demographics": "Female · 35 · white · Missouri bride-to-be",
+        "hook": "Stef is the quieter counterforce: controlled, careful, and more emotionally sealed than Jill, but not passive. She carries the weight of someone who has spent years choosing stability over spectacle, and the script lets her reveal that restraint as a form of strength, not absence.",
+        "why_actor_wants_this": "This is the showcase territory of Greta Gerwig in Frances Ha — a woman whose interior life is legible through restraint, timing, and the small fractures under the surface. It gives an actor the chance to play contained hurt, dry wit, and a late-breaking emotional spine without ever needing to overstate the part."
+      },
+      {
+        "name": "LEX",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s · queer",
+        "hook": "Lex is the dry, watchful outsider inside the wedding machine — funny without trying, socially fluent without being invested, and just detached enough to see the whole absurdity clearly. She functions as Jill’s best comic ally, but she also has her own lived-in loneliness and a sense that she’s made peace with being slightly outside the frame.",
+        "why_actor_wants_this": "This is the kind of sharp supporting role that gave Aubrey Plaza in Ingrid Goes West a lane to weaponize deadpan as character. It offers an actor a scene-stealing mix of sarcasm, observational wit, and emotional understatement that can pop in every group scene."
+      },
+      {
+        "name": "SHERRI",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-30s",
+        "hook": "Sherri is the wedding’s operations center — controlled, efficient, and quietly territorial, with the energy of someone who has been managing everyone else for so long that it’s become her personality. She reads as polished and composed, but the script keeps letting us see how much labor is underneath that polish.",
+        "why_actor_wants_this": "This is the kind of precision supporting role that Allison Janney or Patricia Clarkson has made memorable in ensemble comedy-drama — a character whose authority is funny until it becomes revealing. It gives an actor the chance to play command, irritation, and buried history in a role that can steal scenes without ever becoming broad."
+      },
+      {
+        "name": "MATT",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s",
+        "hook": "Matt is the easy, grounded husband who knows exactly who he married and mostly enjoys the ride. He’s warm, teasing, and emotionally literate enough to challenge Jill without trying to control her, which makes him feel like a real adult in a movie full of old emotional weather.",
+        "why_actor_wants_this": "This is the grounded husband territory of Adam Scott in Friends with Kids — a role that plays charm, domestic ease, and quiet intelligence without needing to dominate the movie. It’s attractive to actors who want a likable, lived-in part that still has enough wit to register in every scene."
+      },
+      {
+        "name": "GRAHAM McDONALD",
+        "role_type": "Supporting",
+        "demographics": "Male · late 30s / early 40s",
+        "hook": "Graham is the old fantasy object who arrives with just enough charm to reopen the wound and just enough vacancy to expose it. He’s handsome, socially smooth, and fundamentally self-involved, which makes him useful less as a romantic lead than as the living proof of what Jill and Stef projected onto him.",
+        "why_actor_wants_this": "This is the kind of deceptively easy charm role that Jake Lacy played in Obvious Child — a man who looks like the answer until the scene reveals he’s mostly a mirror. It gives an actor the chance to play charisma, obliviousness, and late-arriving discomfort in a part that can pivot the whole movie."
+      },
+      {
+        "name": "MONICA",
+        "role_type": "Supporting",
+        "demographics": "Female · early 40s",
+        "hook": "Monica is the loud, funny pressure valve in the group — a woman who says the thing, sweats through the thing, and keeps the room from getting too polished. She’s broad in the best sense: a social accelerant who makes the ensemble feel lived-in and messy.",
+        "why_actor_wants_this": "This is the kind of scene-stealing comic support Melissa McCarthy made a lane out of in Bridesmaids — a role that gets laughs from appetite, panic, and total lack of self-consciousness. It’s a gift for an actor who wants to come in hot and make every group scene more alive."
+      },
+      {
+        "name": "MAMA G",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s/60s",
+        "hook": "Mama G is the warm social glue of the wedding world, the kind of woman who can hug you, clock you, and keep the machine moving in one breath. She gives the film a generational anchor and a sense that this community has its own long memory.",
+        "why_actor_wants_this": "This is the warm authority space of Margo Martindale in The Americans or Octavia Spencer in ensemble drama — a role that communicates history with very little screen time. It’s ideal for an actor who can make a room feel inhabited the second she enters."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a female friendship movie that can be funny, profane, and emotionally bruising without losing momentum.",
+        "fit_profile": "Established indie directors with at least one or two character-driven features, or TV-to-feature filmmakers who already know how to stage ensemble dialogue and tonal pivots. This material rewards directors who care about performance-first storytelling, social tension, and making a contained weekend feel like a pressure cooker.",
+        "detail": "The movie lives or dies on timing, subtext, and the ability to let comedy and hurt share the same frame, which is exactly the craft lane for directors who can block a room and still find the emotional close-up. It also gives a director a clean, producible canvas with enough set-piece escalation to feel cinematic without needing scale for its own sake."
+      },
+      "buyer_appeal": {
+        "tier": "$3-8M feature",
+        "lane": "Streaming comedy-drama / premium indie lane",
+        "detail": "It can be packaged around two strong female leads and a supporting ensemble without requiring VFX or star-driven spectacle, which makes it viable for a director-led greenlight. The wedding-weekend premise, adult-female friendship angle, and contained production footprint fit the current buyer appetite for elevated, exportable character comedy with a clear hook."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening flashback can do more work.",
+        "detail": "The 2007 party sequence establishes Jill’s voice and the Jill/Stef bond quickly, and a next pass could sharpen the emotional turn that carries us into the present-day wedding invitation. One lever would be to make the final beat of the prologue land even harder as the reason this friendship still has unfinished business.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The wedding-party ensemble is carrying a lot of names.",
+        "detail": "The script already keeps the group readable, but the version of the movie where one or two supporting bridesmaids are folded together could protect momentum without changing the core dynamic. That would keep the focus on Jill, Stef, Lex, and Sherri — the relationships that actually drive the night.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The bachelorette night is the engine.",
+        "detail": "The van breakdown, farmer encounter, strip-club escalation, and morning-after fallout are the movie’s strongest propulsion, and the structure is already built around that chain. A next pass could consider whether the emotional turn between Jill and Stef lands even earlier in that night so the chaos feels even more personally charged.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The brand-and-music texture is clearance-heavy.",
+        "detail": "The script uses multiple named songs and several recognizable brands as period and character shorthand, which is great texture but does ask for a meaningful clearance pass. A production-minded version could preserve the same cultural feel while swapping a few of the most specific references for easier-to-license equivalents.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Jill’s domestic life is a useful counterweight.",
+        "detail": "The home scenes with Matt and the kids give the movie a grounded aftertaste, and the version where those moments are slightly more distinct from the wedding material could deepen the contrast between Jill’s two selves. That would protect the ending’s emotional landing without changing the plot.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73.7,
+  "tier": "Optionable",
+  "inputTokens": 25504,
+  "outputTokens": 4728,
+  "cost": 0.040404,
+  "declaredFormat": "Feature film"
+}

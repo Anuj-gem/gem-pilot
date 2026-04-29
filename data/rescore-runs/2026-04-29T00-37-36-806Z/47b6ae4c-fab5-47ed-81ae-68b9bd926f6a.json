@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:49:46.892Z",
+  "submission_id": "47b6ae4c-fab5-47ed-81ae-68b9bd926f6a",
+  "eval_id": "2e3ee145-d015-4056-94f3-a4a5eca59323",
+  "title": "hundred foot long python",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Dr. Aris Thorne",
+      "role_type": "Lead",
+      "demographics": "Male · 50s · weathered academic explorer"
+    },
+    {
+      "name": "Lena Hanson",
+      "role_type": "Lead",
+      "demographics": "Female · 20s · field scientist / ecological researcher"
+    },
+    {
+      "name": "Carter",
+      "role_type": "Lead",
+      "demographics": "Male · 30s-40s · survivalist / field operative"
+    },
+    {
+      "name": "Dr. Elara Vance",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · geologist"
+    },
+    {
+      "name": "Kai Shimizu",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · scientist / tech specialist"
+    },
+    {
+      "name": "Ben Carter",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · expedition member / local guide or field hand"
+    },
+    {
+      "name": "Captain Eva Rostova",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · military rescue captain"
+    },
+    {
+      "name": "Agent Reid",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · government official"
+    },
+    {
+      "name": "Agent Daniels",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s-50s · government official"
+    },
+    {
+      "name": "Marko",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s-40s · mercenary leader or team member"
+    },
+    {
+      "name": "Riz",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · mercenary"
+    },
+    {
+      "name": "Elara Vance",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-40s · researcher / protégé"
+    }
+  ],
+  "positioning_hook": "A jungle expedition wakes a colossal guardian serpent and a buried nexus, forcing three scientists to outrun mercenaries, ancient ritual, and the planet’s own immune system.",
+  "cost_usd": 0.044919,
+  "input_tokens": 30876,
+  "output_tokens": 4836,
+  "status": "wrote:leads_ok"
+}

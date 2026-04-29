@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T01:52:09.744Z",
+  "submission_id": "2e40a104-d51d-413f-bc7f-225842f9787b",
+  "eval_id": "721cc7a6-9f3c-4533-b0fc-d93c6c6ab28b",
+  "title": "INDAY (SCRIPT)",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 7,
+  "lead_characters_summary": [
+    {
+      "name": "Christopher",
+      "role_type": "Lead",
+      "demographics": "Male · early 40s · light-skinned · Toronto-based · autism-coded mannerisms"
+    },
+    {
+      "name": "Inday",
+      "role_type": "Lead",
+      "demographics": "Female · appears in Christopher’s imagination and final correspondence · early 40s presentation in the closing image"
+    },
+    {
+      "name": "Mom",
+      "role_type": "Supporting",
+      "demographics": "Female · middle-aged · Toronto-based"
+    },
+    {
+      "name": "Dad",
+      "role_type": "Supporting",
+      "demographics": "Male · middle-aged to older · Toronto-based"
+    },
+    {
+      "name": "Claire",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s to middle-aged · Asian · hospital/clinic staff"
+    },
+    {
+      "name": "Stephanie",
+      "role_type": "Supporting",
+      "demographics": "Female · late 30s · petite · Asian · nurse/scrubs"
+    },
+    {
+      "name": "Woman",
+      "role_type": "Supporting",
+      "demographics": "Female · adult · barefoot presentation in the final reveal"
+    }
+  ],
+  "positioning_hook": "A lonely Toronto hospital worker writes to the sister he never met, and the imagined twin he’s built in his head starts answering back.",
+  "cost_usd": 0.06065550000000001,
+  "input_tokens": 31968,
+  "output_tokens": 8151,
+  "status": "wrote:leads_ok"
+}

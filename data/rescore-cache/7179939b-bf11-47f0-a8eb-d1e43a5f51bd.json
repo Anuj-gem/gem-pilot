@@ -1,0 +1,343 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "family drama",
+        "revenge thriller"
+      ],
+      "tone": "gritty, heightened, lurid, tragic"
+    },
+    "positioning_hook": "A debt-ridden ex-soldier and his teenage son infiltrate a child-sex ring to rescue their daughter and sister, only to discover the man running it is tied to their war past.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The premise has a clear, urgent engine and a built-in rescue mission, which gives it immediate genre traction. Its audience is narrower because the material is extremely hard-edged and the subject matter is specific, but the father-son rescue frame gives it a real commercial lane."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The story engine lands early: a family crisis, a surveillance thread on Rainbow Street, and a later infiltration into Rainbow Hall. The opening Kuwait sequence adds a strong prologue, though the script takes a while to reveal how the war memory, the family, and the trafficking operation lock together."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 6,
+        "reasoning": "Oscar and Zak have a workable emotional spine, especially once the father-son divide turns into a rescue partnership. The supporting players are vivid in function, but most of them serve the plot more than they open independent character lanes."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The script commits to a brazen tonal and moral universe, using the Kuwait flashback, the rainbow-coded trafficking system, and the family’s collapse into one escalating design. The voice is unmistakable, even when the execution leans into blunt, confrontational choices."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The story keeps moving through surveillance, seduction training, the sister’s descent, and the final assault on Rainbow Hall. The second half has strong propulsion, especially once Zak and Oscar are on the same mission and the clock to four o’clock kicks in."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "The rainbow-coded house system, the color-based girls, and the war souvenir guns create a memorable internal logic that feels specific to this script. The family-trafficking collision is familiar territory, but the way the script binds it to the father’s military past gives it a distinct shape."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "Rainbow Street, Rainbow Hall, the Caballeros, the convenience store, the restaurant, and the apartment block all feel like parts of one ecosystem. The world has social rules, coded spaces, and a criminal hierarchy that generate story rather than just decorate it."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very specific, confrontational tone: operatic crime melodrama with blunt humor, sexual menace, and sudden bursts of violence. The script’s voice is so forceful that a reader would know within pages whether they’re in or out."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 6,
+        "reasoning": "There are deeper currents around guilt, masculinity, faith, and family failure, especially in Oscar’s Kuwait trauma and Zak’s need to be the opposite of Ryan. The script mostly drives those ideas through plot pressure rather than letting them accumulate in quieter, layered ways."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Oscar/Zak, Zak/Stella, Oscar/Julia, Zak/Fuzz, Zak/Patrick, and the brother dynamic with Ryan all create usable friction. The ensemble is built around a web of betrayals and alliances, which gives the feature a strong relational engine beyond the central rescue."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 18,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "teen and preteen roles are central",
+          "multiple roles require specific age presentation",
+          "one teacher role is a predatory antagonist",
+          "one major female role is written with illness and wig changes"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "roughly 7:5",
+        "period_or_contemporary": "contemporary with a 1993 Kuwait flashback",
+        "notable_requirements": [
+          "period military barracks in Kuwait",
+          "rain-heavy street surveillance scenes",
+          "contained hideout interior",
+          "restaurant with safe",
+          "school exterior/interior",
+          "cinema exterior/interior"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical violence and simple cleanup effects; the car hit on Kate and gunshot wounds/blood effects are the main technical needs.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Car impact, gunfire, axe injuries, blood squibs, severed-limb illusion, and chained restraint release.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Céline Dion is referenced by name in dialogue."
+        },
+        {
+          "type": "brand",
+          "detail": "Multiple brands and products are named or shown prominently, including iPhone, Mercedes, Porsche, Chrysler 300, Civic, Cadillac, McDonald’s, Harvey’s, KFC, Pepsi, and Full Metal Jacket."
+        },
+        {
+          "type": "ip_licensing",
+          "detail": "The Blue Princess is referenced as a specific film title."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "premium cable or streaming crime-thriller lane",
+        "content_level": "explicit",
+        "series_engine_or_release_model": "Feature release model: festival-to-platform or direct streaming for adult thriller audiences"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "The footprint is mostly contained to homes, streets, a store, a restaurant, and one hideout, with one period Kuwait prologue and practical violence driving spend."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The story depends on several strong teen and adult roles, including child actors and a predatory antagonist, but it does not require a large star ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The script uses a manageable number of contemporary locations, but the rain surveillance, school, cinema, restaurant, and period Kuwait material add coordination."
+        },
+        "content": {
+          "level": "high",
+          "note": "The script includes trafficking, underage exploitation, drug use, sexual coercion, explicit language, and graphic violence."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named brands, a named musician, and a named film title appear on the page and would need clearance review."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The family-crime collision is immediate.",
+          "what_it_means": "That gives the project a clean commercial spine: a rescue thriller with a personal wound at its center, which is easier to market than a purely procedural crime story. Buyers who want adult genre material with emotional stakes and a clear mission will understand the lane instantly.",
+          "evidence": "Oscar and Zak’s final push into Rainbow Hall is driven by Stella’s disappearance, not just by the criminal operation.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The rainbow-coded criminal world is memorable.",
+          "what_it_means": "The color system, the house layout, and the girls being identified by color create a branded underworld that feels ownable and easy to pitch. That kind of internal mythology is attractive to genre buyers looking for a world that can be described in one sentence and remembered after the meeting.",
+          "evidence": "Rainbow Street, Rainbow Hall, the colored rooms, and the girls in yellow, orange, green, and red all operate as a coded system.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Oscar and Zak give the movie a father-son engine.",
+          "what_it_means": "The script turns the rescue into a generational reckoning, which gives actors a lot to play and gives the feature more emotional lift than a standard revenge setup. That makes it appealing to prestige-leaning genre buyers and to performers who want a bruised, masculine two-hander with heart.",
+          "evidence": "Oscar’s guilt, Zak’s defiance, and their eventual alignment around Stella drive the back half of the film.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The Kuwait prologue adds myth and consequence.",
+          "what_it_means": "The war flashback gives the story a larger shadow and ties the present-day violence to a past moral injury, which deepens the material beyond a single-night rescue. That kind of backstory can attract directors who like genre stories with a buried trauma engine.",
+          "evidence": "Oscar and Fuzz’s 1993 Kuwait mission ends with Oscar swearing off guns and Fuzz carrying on in the criminal present.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The supporting villains are sharply drawable.",
+          "what_it_means": "Fuzz, Patrick, Hendrix, Uno, and the teacher each have a distinct behavioral signature, which gives casting a lot of room to create memorable parts. Character actors and scene-stealing supporting players will see clear opportunities to make an impression.",
+          "evidence": "Fuzz’s swagger, Patrick’s seduction routine, Hendrix’s manipulative pitch, Uno’s gang authority, and the teacher’s predatory control all read distinctly.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script is built for hard-edged set pieces.",
+          "what_it_means": "The convenience-store robbery, the restaurant safe confrontation, the hideout shootout, and the Rainbow Hall breach all give the movie trailer moments and escalation points. That makes it attractive to buyers who want a contained thriller with multiple spikes of violence and momentum.",
+          "evidence": "The axe, the red shotgun, the blue pistol, and the final hallway assault all pay off as recurring action objects.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The tone is unapologetically specific.",
+          "what_it_means": "This is not trying to be broad or generic; it has a nasty, heightened, almost comic-book crime voice that stands apart from softer trafficking dramas. Directors and buyers who want something brash, adult, and hard to confuse with anything else will notice that immediately.",
+          "evidence": "The dialogue, the blunt sexual language, the color symbolism, and the sudden violence all push the same aggressive tonal identity.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a bruised, propulsive crime thriller with a built-in hook: a father and son storm a color-coded trafficking house to save their daughter and sister. The script’s strongest asset is its ownable underworld — Rainbow Street, Rainbow Hall, and the war-scarred men tied to it — which gives producers a marketable world, actors a showcase ensemble, and buyers a clean adult-thriller lane."
+    },
+    "lead_characters": [
+      {
+        "name": "Zak Blackwhite",
+        "role_type": "Lead",
+        "demographics": "Male · 17 · teen",
+        "hook": "Zak is the smartest person in the room and the least interested in acting like it, which makes him dangerous, funny, and hard to read. He’s a teenager with swagger, resentment, and a real moral instinct underneath the bravado, and the script lets him become the family’s most decisive protector.",
+        "why_actor_wants_this": "This is the breakout-teen showcase space of Timothée Chalamet in *Beautiful Boy* or Tye Sheridan in *Mud* — a young lead who gets to be cocky, wounded, resourceful, and suddenly heroic. Rising young actors looking for a role that can announce range beyond the standard coming-of-age lane will see the appeal immediately."
+      },
+      {
+        "name": "Stella Blackwhite",
+        "role_type": "Lead",
+        "demographics": "Female · 14-15 · teen",
+        "hook": "Stella begins as the family’s dreamy, impressionable youngest child and becomes the emotional center of the entire rescue. Her arc is built around vulnerability, seduction, addiction, and the tragedy of a girl who wants to be seen as grown before she understands the cost.",
+        "why_actor_wants_this": "This is the kind of devastating coming-of-age material that gave Jena Malone in *Donnie Darko* or Kaitlyn Dever in *Short Term 12* so much emotional range — innocence sliding into danger while the audience watches every step. Strong young actresses and prestige-minded casting teams will respond to the role’s emotional volatility and centrality."
+      },
+      {
+        "name": "Fuzz Redsky",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · rough, charismatic, physically capable",
+        "hook": "Fuzz is the smiling predator with a salesman’s charm and a soldier’s muscle memory, the kind of man who can sound like a buddy and behave like a threat in the same breath. He’s built on contradiction: funny, crude, efficient, and completely comfortable turning people into inventory.",
+        "why_actor_wants_this": "This is the kind of villain role that made Christoph Waltz in *Inglourious Basterds* and Walton Goggins in *Justified* so magnetic — articulate menace with a grin and a code. Character actors who want a scene-eating antagonist with wit, danger, and a final-act payoff will circle this immediately."
+      },
+      {
+        "name": "Julia",
+        "role_type": "Supporting",
+        "demographics": "Female · mid-40s · cancer patient, sex worker, bald under wig",
+        "hook": "Julia is the script’s most quietly tragic adult woman: pragmatic, sexually self-possessed, and already living with a terminal clock. She understands the town’s economy better than the men do, and she becomes the one person willing to convert her own body and reputation into a way out for Oscar.",
+        "why_actor_wants_this": "This is the kind of lived-in, bruised role that gave Patricia Clarkson in *The Station Agent* or Laura Linney in *You Can Count on Me* so much emotional authority — a woman whose restraint carries the scene. Experienced dramatic actresses looking for a compact but memorable turn with moral weight will want it."
+      },
+      {
+        "name": "Ryan Blackwhite",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · police officer",
+        "hook": "Ryan is the family’s clean-cut overachiever, the son who followed the rules and still ended up emotionally distant from the people he’s supposed to protect. He’s the embodiment of order in a story that keeps proving order is not enough.",
+        "why_actor_wants_this": "This is the kind of conflicted authority role that gave Michael Kelly in *House of Cards* or Shea Whigham in *Boardwalk Empire* so much texture — a man who looks like the responsible one until the family crisis exposes the limits of that identity. Actors who play grounded authority well will see a strong supporting lane here."
+      },
+      {
+        "name": "Patrick",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · handsome, predatory, polished",
+        "hook": "Patrick is the smooth-talking recruiter who weaponizes charm, aspiration, and attention to trap girls into the system. He’s the most socially polished predator in the film, which makes him especially disturbing because he can sound like a dream date while engineering a collapse.",
+        "why_actor_wants_this": "This is the dark-charisma territory of Penn Badgley in *You* or Billy Crudup in *Almost Famous* turned predatory — a role where seduction is the performance. Actors who can play allure without losing menace will see a juicy, memorable antagonist part."
+      },
+      {
+        "name": "Hendrix",
+        "role_type": "Supporting",
+        "demographics": "Male · early 20s · Black",
+        "hook": "Hendrix is the street philosopher of the operation, the one who turns exploitation into a sales pitch and cruelty into a joke. He’s funny, poisonous, and weirdly articulate, which makes him feel like the most modern kind of villain in the piece.",
+        "why_actor_wants_this": "This is the kind of role that gave Lakeith Stanfield in *Sorry to Bother You* or Jharrel Jerome in *When They See Us* room to bend tone and intelligence together — a character who can be charismatic, comic, and chilling in the same scene. Actors with sharp verbal rhythm and a taste for dangerous humor will want a swing at it."
+      },
+      {
+        "name": "Uno",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s · gang leader",
+        "hook": "Uno is the blunt-force face of the Caballeros, a territorial enforcer who speaks in threats and moves like someone used to being obeyed. He’s less psychologically elaborate than Fuzz, but he gives the movie a street-level pressure valve and a clear physical antagonist.",
+        "why_actor_wants_this": "This is the kind of compact gang-leader role that lets an actor do pure menace the way Michael Peña or Clifton Collins Jr. often do in crime material — direct, physical, and scene-controlling. Supporting players who like to arrive, dominate, and leave a mark will be drawn to it."
+      },
+      {
+        "name": "Cherry",
+        "role_type": "Supporting",
+        "demographics": "Female · early 20s · sex worker / streetwise young woman",
+        "hook": "Cherry is the one woman in the orbit who still has enough instinct to be suspicious, but not enough power to stay safe. She gives Zak a brief, human connection outside the trafficking machine, which makes her feel like a possible exit that the world keeps trying to close.",
+        "why_actor_wants_this": "This is the kind of streetwise, emotionally exposed supporting role that gave Juno Temple in *Atonement* or Riley Keough in *The Girlfriend Experience* a chance to mix vulnerability and edge. Young actresses who want a role with bite, danger, and a real scene partner will see the opportunity."
+      },
+      {
+        "name": "Sergeant",
+        "role_type": "Supporting",
+        "demographics": "Female · 50s · police sergeant",
+        "hook": "The Sergeant is the institutional gatekeeper who sends Ryan into the surveillance operation and keeps the machinery of law moving at a distance. She’s efficient, unsentimental, and useful as the story’s reminder that official systems are always a step behind the street.",
+        "why_actor_wants_this": "This is the kind of no-nonsense law-enforcement role that gives an actor the grounded authority of Frances McDormand in *Fargo* or Regina Taylor in procedural drama — concise, controlled, and memorable. Veteran character actresses who can project command in a few scenes will like the fit."
+      },
+      {
+        "name": "Captain",
+        "role_type": "Supporting",
+        "demographics": "Male · mid-40s · military officer",
+        "hook": "The Captain is the brutal military authority who frames the Kuwait mission as a clean operation while speaking in the language of dehumanization. He’s the story’s first face of sanctioned violence, and he helps define the moral rot that follows Oscar home.",
+        "why_actor_wants_this": "This is the kind of hard-edged authority role that gave Jason Isaacs in *The Patriot* or Bryan Cranston in *The Infiltrator* a chance to turn command into menace. Actors who can make institutional cruelty feel personal will be interested."
+      },
+      {
+        "name": "Kate Blackwhite",
+        "role_type": "Supporting",
+        "demographics": "Female · late 30s to 40s · mother",
+        "hook": "Kate is the family’s emotional center before the story takes her away, and her death becomes the wound that destabilizes everything after. She’s presented as graceful, domestic, and quietly stabilizing, which makes her absence feel structural rather than incidental.",
+        "why_actor_wants_this": "This is the kind of brief but meaningful family role that gives an actress the emotional gravity of Rebecca Hall in *The Night House* or Emily Watson in family drama — a presence whose loss changes the temperature of the whole movie. Strong dramatic actresses can make a lasting impression even in limited screen time."
+      },
+      {
+        "name": "Vivian",
+        "role_type": "Supporting",
+        "demographics": "Female · 14-15 · teen",
+        "hook": "Vivian is Stella’s friend and mirror, a girl who starts as peer support and ends up another casualty of the same machine. She helps show how normal teenage social life gets absorbed into the film’s predatory ecosystem.",
+        "why_actor_wants_this": "This is the kind of teen supporting role that gave Odessa Young in *Assassination Nation* or Elsie Fisher in *Eighth Grade* a chance to feel contemporary and vulnerable at once. Young actresses who can play social ease turning into dread will fit it well."
+      },
+      {
+        "name": "Mr. Nguyen",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · Vietnamese shop owner",
+        "hook": "Mr. Nguyen is the hard-edged small-business owner who sees through Oscar instantly and survives by being tougher than the people around him. He adds texture to the neighborhood and gives the movie a sharp, unsentimental working-class voice outside the main family.",
+        "why_actor_wants_this": "This is the kind of compact character role that gives an actor the dry authority of Ken Jeong in *The Hangover* or James Hong in crime-comedy material, but with more bite and realism. Character actors who can turn a few scenes into a memorable local presence will want it."
+      },
+      {
+        "name": "Teacher",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s · potbellied, predatory schoolteacher",
+        "hook": "The Teacher is the film’s most grotesque institutional predator, hiding in plain sight behind a classroom and a fake authority posture. He’s the final face of the system that has been grooming Stella, and he gives the climax a deeply personal villain to confront.",
+        "why_actor_wants_this": "This is the kind of chilling, morally repellent role that gives an actor the showcase of a villain like David Dastmalchian in *The Dark Knight* or Paul Walter Hauser in darker character work — a part built on discomfort and control. Actors willing to disappear into an ugly, memorable antagonist will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a brutal, emotionally charged crime thriller with a highly specific underworld and a father-son rescue spine.",
+        "fit_profile": "Established indie directors with at least one or two features, or TV directors moving into features, who already work in performance-forward crime drama, social realism, or heightened genre. This material rewards control of tone, strong blocking in contained interiors, and the ability to make violence feel consequential rather than decorative.",
+        "detail": "The script gives a director a chance to stage a contained escalation from surveillance to infiltration to siege, with a distinct visual system built around color, doors, and weapons. It will appeal to filmmakers who like hard-edged adult material, ensemble tension, and a world that can be shot economically without feeling small."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "premium streamer / festival crime-thriller lane",
+        "detail": "The movie can be mounted around a strong lead and a handful of vivid supporting roles rather than a large star ensemble, which helps packaging at this budget level. The contained locations, practical violence, and adult subject matter fit the current appetite for dark, exportable genre titles that can travel on premise and tone."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The opening prologue carries a lot of story weight.",
+        "detail": "The Kuwait sequence, the family setup, and the immediate jump into the present all do important work, but the script has room to clarify the exact emotional bridge from Oscar’s war trauma to the Rainbow Hall rescue. One lever would be to make the prologue’s payoff land even more directly in the present-day mission so the audience feels the connection sooner.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The surveillance stretch can be tightened.",
+        "detail": "Ryan’s rain-soaked stakeout establishes the operation well, but the repeated time stamps and windshield observations create a long observational run before the story fully ignites. A next pass could compress that material so the audience gets to the family crisis and the criminal engine with a little more snap.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The supporting villains are strongest in clusters.",
+        "detail": "Fuzz, Patrick, and Hendrix each have a clear function, and the script already uses them well as a trio. The version of the movie where each one gets one extra defining choice or line in a separate scene would make the ensemble feel even more dangerous and memorable.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The Rainbow Hall geography is a major asset.",
+        "detail": "The color-coded rooms and the black door give the climax a strong visual logic, and that logic is easy to follow once the audience is inside. A future pass could foreground that spatial rule a touch earlier so the final assault feels even more inevitable when the code is cracked.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The content sits in the explicit adult lane.",
+        "detail": "The trafficking material, drug use, sexual coercion, and graphic violence make this a clear fit for premium or streaming buyers rather than broad theatrical play. That specificity is a selling point for the right lane, but it also means packaging should be aimed at buyers comfortable with hard R material.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The brand and music references need a clearance pass.",
+        "detail": "Named products, Céline Dion, and The Blue Princess are all on the page, so a production-minded version would want those references reviewed early. The good news is that none of them are structurally essential to the core engine, so they can be handled without changing the story’s spine.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 69,
+  "tier": "Optionable",
+  "inputTokens": 42109,
+  "outputTokens": 6165,
+  "cost": 0.05932425,
+  "declaredFormat": "Feature film"
+}

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import Nav from '@/components/nav'
 import { BlogMasthead } from '@/components/blog/blog-masthead'
 import { ArrowLeft } from 'lucide-react'
@@ -110,7 +111,10 @@ export default async function BlogPostPage({
         </header>
 
         <article className="gem-prose">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+          >
             {post.content}
           </ReactMarkdown>
         </article>

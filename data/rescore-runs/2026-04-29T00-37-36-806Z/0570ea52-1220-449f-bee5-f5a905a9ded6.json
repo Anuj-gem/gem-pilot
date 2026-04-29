@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-04-29T01:50:37.901Z",
+  "submission_id": "0570ea52-1220-449f-bee5-f5a905a9ded6",
+  "eval_id": "57823e60-938d-4a77-8eb7-2486939f2931",
+  "title": "God, Satan and me",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 16,
+  "lead_characters_summary": [
+    {
+      "name": "LEO",
+      "role_type": "Lead",
+      "demographics": "Male · 16 in the 1993 storyline; 90s in the framing sequence"
+    },
+    {
+      "name": "AMANDA SMITH",
+      "role_type": "Lead",
+      "demographics": "Female · 16 · blind in the 1993 storyline"
+    },
+    {
+      "name": "SATAN",
+      "role_type": "Lead",
+      "demographics": "Male-presenting supernatural being · ageless"
+    },
+    {
+      "name": "GOD",
+      "role_type": "Lead",
+      "demographics": "Male-presenting divine voice/figure · ageless"
+    },
+    {
+      "name": "WAYNE",
+      "role_type": "Supporting",
+      "demographics": "Male · 16"
+    },
+    {
+      "name": "BRUCE",
+      "role_type": "Supporting",
+      "demographics": "Male · 16"
+    },
+    {
+      "name": "VIVIAN",
+      "role_type": "Supporting",
+      "demographics": "Female · 16"
+    },
+    {
+      "name": "BERT",
+      "role_type": "Supporting",
+      "demographics": "Male · 70s"
+    },
+    {
+      "name": "DAVE",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s"
+    },
+    {
+      "name": "THOMAS",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s"
+    },
+    {
+      "name": "THEODORE",
+      "role_type": "Supporting",
+      "demographics": "Male · 15"
+    },
+    {
+      "name": "OLD LEO",
+      "role_type": "Supporting",
+      "demographics": "Male · 90s"
+    },
+    {
+      "name": "LEO'S MOTHER",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s"
+    },
+    {
+      "name": "LEO'S FATHER",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s"
+    },
+    {
+      "name": "ARNOLD",
+      "role_type": "Supporting",
+      "demographics": "Male · 16-18"
+    },
+    {
+      "name": "A MYSTERY OF PARTY TEENS",
+      "role_type": "Supporting",
+      "demographics": "Male/Female · teens"
+    }
+  ],
+  "positioning_hook": "A horny stoner teen in 1993 accidentally gets recruited by God and Satan, then has to choose which cosmic deal will win him love, status, and a future.",
+  "cost_usd": 0.0540705,
+  "input_tokens": 38236,
+  "output_tokens": 5643,
+  "status": "wrote:leads_ok"
+}

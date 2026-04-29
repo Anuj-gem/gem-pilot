@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-04-29T01:50:06.338Z",
+  "submission_id": "8ca62187-2de3-451c-8301-1f2fd56dc82c",
+  "eval_id": "f948eced-d0db-4309-8fe6-9eca6f5f9927",
+  "title": "Lefty 1 and 2",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 25,
+  "lead_characters_summary": [
+    {
+      "name": "Lexi McCoy / Lefty",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to early 30s · physically fit · amputee with left leg prosthetic"
+    },
+    {
+      "name": "Henry McCoy",
+      "role_type": "Lead",
+      "demographics": "Male · 60s · rural working-class North Dakotan"
+    },
+    {
+      "name": "Miller",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · veteran with amputated right arm and prosthetic claw"
+    },
+    {
+      "name": "Chief",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · tattooed mechanic/biker type"
+    },
+    {
+      "name": "Ajax",
+      "role_type": "Supporting",
+      "demographics": "Male · late teens to early 20s · soldier"
+    },
+    {
+      "name": "Connor",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · soldier"
+    },
+    {
+      "name": "Gerald",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s to 30s · burn victim with severe facial scarring"
+    },
+    {
+      "name": "Gus",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s · prosthetic user / technician"
+    },
+    {
+      "name": "June McCoy",
+      "role_type": "Supporting",
+      "demographics": "Female · late 50s to 60s · frail, medically compromised"
+    },
+    {
+      "name": "Callahan",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · DHS agent"
+    },
+    {
+      "name": "Munny",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · DHS agent"
+    },
+    {
+      "name": "Chief's Wife Angie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s · tattooed, working-class"
+    },
+    {
+      "name": "Dr. Frazier",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s · physician"
+    },
+    {
+      "name": "Army Nurse",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s · military nurse"
+    },
+    {
+      "name": "Secretary of Defense S.O.D",
+      "role_type": "Supporting",
+      "demographics": "Male · 60s · high-ranking government official"
+    },
+    {
+      "name": "JAG Officer",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · military legal officer"
+    },
+    {
+      "name": "Dr. Meyers",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · rehab doctor"
+    },
+    {
+      "name": "Corporal Miller",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s · amputee veteran with prosthetic claw"
+    },
+    {
+      "name": "Resident",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 30s · medical resident"
+    },
+    {
+      "name": "Flight Medic",
+      "role_type": "Supporting",
+      "demographics": "Male or female · 20s to 30s · military medic"
+    },
+    {
+      "name": "Major Adams",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Army major"
+    },
+    {
+      "name": "Staff Sergeant Carr",
+      "role_type": "Supporting",
+      "demographics": "Male · 30s to 40s · drill sergeant / training NCO"
+    },
+    {
+      "name": "NCO",
+      "role_type": "Supporting",
+      "demographics": "Male or female · 20s to 40s · military intake staff"
+    },
+    {
+      "name": "Corporal",
+      "role_type": "Supporting",
+      "demographics": "Male or female · 20s to 30s · military staff"
+    },
+    {
+      "name": "Nurse",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s to 40s · hospital staff"
+    }
+  ],
+  "positioning_hook": "A battle-hardened Army sergeant with a fresh prosthetic rides home across the Midwest to clear her father’s name, while federal agents close in and the war keeps following her.",
+  "cost_usd": 0.066678,
+  "input_tokens": 46610,
+  "output_tokens": 7049,
+  "status": "wrote:leads_ok"
+}

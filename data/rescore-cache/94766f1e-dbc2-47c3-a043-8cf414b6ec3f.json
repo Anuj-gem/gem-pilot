@@ -1,0 +1,289 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "Neo-noir",
+        "Psychological thriller"
+      ],
+      "tone": "Gritty, heightened, seductive, and operatic"
+    },
+    "positioning_hook": "A broke office drone is pulled into a mob boss’s shadow economy, only to discover the real currency is loyalty, leverage, and who gets erased first.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The core promise is easy to grasp: an ordinary person gets seduced into a dangerous criminal world and learns the cost of entry. The appeal is strongest for thriller audiences and buyers who like power-play crime stories, though the script’s repeated abstract phrasing and shifting endgame keep the commercial lane from feeling fully locked."
+      },
+      "conceptual_hook_clarity": {
+        "score": 5,
+        "reasoning": "The opening establishes a mood and a power dynamic quickly, but the premise keeps widening from mob intrigue to conspiracy, infrastructure sabotage, and multiple shadow players. The hook is present, yet the engine is more atmospheric than sharply defined."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 4,
+        "reasoning": "The protagonist is positioned as hungry, restless, and susceptible to temptation, which gives the role a playable entry point. But the character is mostly defined by reactions and declarations, while Locke carries the strongest presence; the lead would benefit from a more specific inner contradiction driving choices on the page."
+      },
+      "creative_originality_and_boldness": {
+        "score": 4,
+        "reasoning": "The script leans on familiar noir signposts—mansion, ledger, syndicate, betrayal, hidden mastermind—more than a singular new angle. The mood is confident, but the material stays close to genre vocabulary the audience has seen before."
+      },
+      "narrative_momentum_engagement": {
+        "score": 4,
+        "reasoning": "There is constant movement, but much of it comes from repeated confrontations, reversals, and exposition reveals rather than a cleanly escalating dramatic engine. The story keeps introducing new names and layers, which sustains motion, yet the forward drive is diffuse rather than propulsive."
+      },
+      "resonant_originality": {
+        "score": 3,
+        "reasoning": "The script has surface freshness in its glossy criminal-world imagery, but the underlying premise is a well-worn rise-and-betrayal structure. The most distinctive element is the seductive mentor dynamic, and even that is framed in broadly familiar terms."
+      },
+      "world_density_and_texture": {
+        "score": 5,
+        "reasoning": "The script gives us mansions, warehouses, bars, clubs, a server farm, and a city of hidden transactions, so the world has visible surfaces and class contrast. What it doesn’t yet fully deliver is a system with sharply differentiated rules; the setting feels atmospheric more than deeply institutional."
+      },
+      "tonal_specificity": {
+        "score": 5,
+        "reasoning": "The tone is consistent in its noir seriousness and luxury-crime sheen, with occasional heightened, almost mythic language. It’s coherent, but the script hasn’t yet found a tonal fingerprint that would make a single scene unmistakably its own."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 4,
+        "reasoning": "The script gestures toward themes of identity, power, and moral corrosion, and Locke’s loneliness hints at a deeper emotional layer. But those reserves are mostly stated rather than dramatized, so the draft reads more as a surface-level power story than a slow-burn character study."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 4,
+        "reasoning": "Locke and the protagonist create the main engine, and a few secondary figures add pressure, but most supporting characters function as plot conduits. The ensemble does not yet generate many independent combinations of tension; the story lives primarily on the central duo."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 12,
+        "leads": 2,
+        "series_regulars": 0,
+        "child_actors": false,
+        "casting_characteristics": [
+          "Male lead in his 40s with imposing physical presence",
+          "Adult protagonist in their 30s",
+          "Multiple supporting roles in 30s-50s",
+          "No child-specific casting requirements"
+        ]
+      },
+      "locations": {
+        "distinct_count": 16,
+        "interior_exterior_ratio": "Mostly interior with some exterior night work",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Luxury mansion/penthouse environments",
+          "Warehouse and industrial spaces",
+          "Server farm / tech facility",
+          "City streets, alleyways, bars, club, apartment interiors"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Stylized environmental distortion, glowing nexus/interface imagery, monitor graphics, and a few heightened visual transitions.",
+        "stunts_level": "minor",
+        "sfx_needs": "Gunfire, sparks, electrical effects, smoke, and practical lighting shifts.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [],
+      "platform_fit": {
+        "recommended_lane": "Streaming crime thriller / premium cable feature lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model; best suited to festival-to-platform or streamer premiere"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Contemporary crime thriller with multiple interiors, night exteriors, and a few stylized effects keeps it below tentpole scale but above microbudget."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The project centers on two strong lead roles with a manageable supporting ensemble, but the Locke role benefits from a commanding performer."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Sixteen distinct locations, including mansion, warehouse, club, penthouse, subway tunnel, and server farm, create a moderate company move footprint."
+        },
+        "content": {
+          "level": "medium",
+          "note": "Crime violence, gunfire, threats, and mature criminal-world material shape the rating and platform lane."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named music, brands, real people, or IP-dependent elements are present in the pages provided."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Locke is a showcase antagonist.",
+          "what_it_means": "The Adrian Locke role is built for a star or breakout actor who can play seduction, menace, and wounded authority in the same frame, which gives the project a clean packaging hook. Buyers and talent reps will immediately see the kind of part that can anchor a prestige crime vehicle and generate trailer moments from every scene he enters.",
+          "evidence": "Locke’s first bar and gallery entrances, his hand-clasp “recalibration,” and the later warehouse and study scenes where he shifts from mentor to threat.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The central relationship has predator-prey voltage.",
+          "what_it_means": "The protagonist/Locke dynamic gives the film a built-in emotional engine that can carry a whole feature without needing a large ensemble. That kind of two-hander tension is attractive to actors who want a duel of control and surrender, and to buyers who want a contained crime story with a strong trailer spine.",
+          "evidence": "The repeated invitations, warnings, and loyalty tests across the bar, mansion, warehouse, and study scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The criminal world has upscale texture.",
+          "what_it_means": "The script moves through galleries, mansions, penthouses, clubs, and server farms, which gives the story a glossy, aspirational surface instead of a generic back-alley crime look. That makes it easier to market as elevated genre and gives production design a clear lane for visual distinction.",
+          "evidence": "The high-end art gallery, mansion foyer, luxury office, penthouse, and server-farm sequences.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The lead role has a strong temptation arc.",
+          "what_it_means": "The protagonist is written as someone bored by ordinary life and seduced by access, which creates a playable arc for an actor who can move from restraint to appetite. That’s the kind of transformation that can attract mid-career dramatic leads looking for a morally slippery showcase rather than a standard hero turn.",
+          "evidence": "The apartment opening, the “I’m tired of being predictable” beat, and the repeated choice scenes where the protagonist keeps stepping deeper into Locke’s world.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script has a clear premium-thriller lane.",
+          "what_it_means": "This is sized like a streamer or premium-cable crime feature: adult, stylish, and dialogue-driven with enough danger to sell on premise and cast. That lane is attractive to buyers who want contained genre with a polished surface and a recognizable lead performance.",
+          "evidence": "The contemporary setting, moderate action footprint, and recurring focus on deals, betrayals, and hidden networks rather than large-scale spectacle.",
+          "source": "both"
+        }
+      ],
+      "headline": "This script’s biggest asset is the Adrian Locke role: a magnetic, dangerous power player who can sell the movie on charisma alone. Pair that with a protagonist who’s seduced by access and then forced to choose a side, and you have a contained crime thriller with real packaging value and a clean trailer promise."
+    },
+    "lead_characters": [
+      {
+        "name": "PROTAGONIST",
+        "role_type": "Lead",
+        "demographics": "Male or female · 30s · working-class-presenting",
+        "hook": "A restless, underpowered everyperson who starts out trapped in a gray, repetitive life and is quickly intoxicated by the idea that danger might finally make them matter. They are defined by hunger, curiosity, and a willingness to cross lines once someone offers them a door.",
+        "why_actor_wants_this": "This is the showcase territory of Michael Shannon in *Take Shelter* or Jesse Plemons in *The Power of the Dog*—a contained, internal lead whose face does half the storytelling while the character slowly reveals appetite under restraint. Actors who want to play moral drift, quiet escalation, and the moment ordinary becomes dangerous will see the role’s value immediately."
+      },
+      {
+        "name": "ADRIAN LOCKE",
+        "role_type": "Lead",
+        "demographics": "Male · 40s · 6'2\" imposing physical presence",
+        "hook": "A wealthy, controlled, predatory kingmaker who speaks like a mentor and moves like a threat. He is all polish on the surface, but the script keeps letting the audience glimpse loneliness, calculation, and the need to own the room before anyone else can.",
+        "why_actor_wants_this": "This is the showcase territory of Bryan Cranston in *Breaking Bad* or Oscar Isaac in *A Most Violent Year*—a man whose authority is the performance, and whose inner fracture becomes more compelling as the mask slips. Prestige actors and charismatic leading men who want a role with menace, elegance, and emotional shadow will chase this hard."
+      },
+      {
+        "name": "ELARA",
+        "role_type": "Supporting",
+        "demographics": "Female · 20s-30s · journalist",
+        "hook": "An ambitious journalist who clocks Locke as larger-than-life and dangerous from the moment she sees him. She functions as an outside eye on the world’s seduction, giving the story a civilian perspective on power and appetite.",
+        "why_actor_wants_this": "This is the kind of sharp, scene-stealing supporting part that Rosamund Pike had in *Gone Girl* before the full machinery of the plot took over—smart, observant, and loaded with subtext in limited screen time. Actors who like elegant, high-status supporting roles with a few precise turns will be drawn to it."
+      },
+      {
+        "name": "MARCUS",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "Locke’s trusted lieutenant with a nervous edge and a survival instinct that never fully hides. He reads as the kind of man who knows too much, trusts too little, and can turn from ally to liability in a breath.",
+        "why_actor_wants_this": "This is the showcase lane of Shea Whigham in *Boardwalk Empire*—a volatile, watchful operator who can shift the temperature of a scene without taking over the movie. Character actors who specialize in pressure-cooker loyalty and betrayal material will want this part."
+      },
+      {
+        "name": "SILAS",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "A shadowy power broker with the calm of someone who believes he is the real architect of the room. He carries the energy of a man who has spent years turning other people’s systems into his own leverage.",
+        "why_actor_wants_this": "This is the kind of late-arrival authority role that Ben Mendelsohn or Giancarlo Esposito can make unforgettable—precise, controlled, and dangerous without raising his voice. Actors who like elegant villainy and strategic menace will see immediate value here."
+      },
+      {
+        "name": "AURORA",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-50s",
+        "hook": "A cool, composed strategist watching the collapse from a luxury penthouse with the calm of someone who planned for it. She feels less like a follower than a rival intelligence with her own agenda.",
+        "why_actor_wants_this": "This is the kind of icy, high-control supporting role that Cate Blanchett has turned into a signature in projects like *Tár*—commanding, cerebral, and dangerous because she never appears rushed. Actors who want a polished, power-forward antagonist or co-conspirator will be interested."
+      },
+      {
+        "name": "CHLOE",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "A presumed-dead partner who re-enters the story with history, grievance, and her own philosophy of control. She widens the moral field by showing that every faction in this world has a past and a price.",
+        "why_actor_wants_this": "This is the kind of late-plot reveal role that Rebecca Ferguson in *Dune* or Carrie Coon in *The Leftovers* can elevate—enigmatic, emotionally loaded, and able to reframe the story in one entrance. Actors who like secret-history material and morally ambiguous power plays will chase it."
+      },
+      {
+        "name": "FINN",
+        "role_type": "Supporting",
+        "demographics": "Male · 30s-40s",
+        "hook": "A twitchy informant who looks like he’s always one second from bolting. He gives the story a street-level pulse and a sense that everyone in this world is one bad conversation away from disappearing.",
+        "why_actor_wants_this": "This is the kind of nervous, high-wire supporting role that Stephen Root or Paul Dano can make memorable by turning anxiety into texture. Character actors who thrive on jittery intelligence and scene-specific tension will find a lot to play."
+      },
+      {
+        "name": "KAI",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s",
+        "hook": "A younger employee who looks loyal on the surface but is easy to pressure because he wants to belong. He adds a useful layer of vulnerability inside Locke’s machine.",
+        "why_actor_wants_this": "This is the sort of subordinate-with-a-conscience role that Lucas Hedges has used well in ensemble dramas—watchful, conflicted, and emotionally legible without needing a huge arc. Younger dramatic actors looking for a credible pressure-cooker part will respond to it."
+      },
+      {
+        "name": "Martha",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-60s",
+        "hook": "A sharp-eyed insider who immediately clocks the protagonist as an outsider. She gives the mansion scenes a social hierarchy and a sense that the inner circle has its own rules.",
+        "why_actor_wants_this": "This is the kind of clipped, authority-rich supporting role that Ann Dowd or Cherry Jones can make sing in a few scenes—status, judgment, and subtext all at once. Actors who specialize in institutional power and verbal precision will want it."
+      },
+      {
+        "name": "Aria",
+        "role_type": "Supporting",
+        "demographics": "Female · 30s-40s",
+        "hook": "A tactical operator who arrives with competence and a no-nonsense presence. She broadens the film’s final-act energy by introducing a more procedural, mission-oriented force.",
+        "why_actor_wants_this": "This is the kind of efficient, command-forward role that Regina King or Jurnee Smollett can make feel bigger than the page count. Actors who like crisp authority and tactical intelligence will see the appeal."
+      },
+      {
+        "name": "Elias Thorne",
+        "role_type": "Supporting",
+        "demographics": "Male · 40s-60s",
+        "hook": "A final-act mastermind figure who carries the weight of legacy, revenge, and institutional control. He functions as the story’s larger shadow, the man behind the man behind the man.",
+        "why_actor_wants_this": "This is the kind of late-game power role that David Strathairn or Michael Stuhlbarg can make resonate—intellectual, wounded, and dangerous in a way that feels earned. Actors who like cerebral antagonists with history will be drawn to it."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a sleek crime thriller where performance and power dynamics do the heavy lifting.",
+        "fit_profile": "Established indie directors with at least one or two features, plus TV directors ready to step into a feature lane, will recognize the opportunity here. The material rewards controlled blocking, elegant tension, and actors playing subtext across rooms rather than big spectacle.",
+        "detail": "The script gives a director a chance to stage seduction, betrayal, and status shifts in visually rich interiors—gallery, mansion, penthouse, warehouse, server farm—without needing a giant action canvas. It will appeal to filmmakers who like to turn dialogue scenes into pressure cookers and who can make luxury feel ominous."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Premium streamer / prestige crime-thriller lane",
+        "detail": "The project can be packaged around one magnetic male lead and one strong protagonist, so it does not require a large ensemble of name talent to function. The contemporary setting, contained interiors, and mature crime material fit the current streamer appetite for adult genre features that travel cleanly and play well on a thumbnail."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The protagonist’s inner engine stays abstract.",
+        "detail": "A next pass could give the lead one or two concrete personal stakes that are visible in action rather than stated in dialogue—something the audience can track from the apartment opening through the first loyalty test. That would make the temptation arc land with more force and give the actor a clearer emotional spine to play against Locke.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The conspiracy keeps widening.",
+        "detail": "The draft moves from Locke to Silas to Aurora to Elias Thorne and then to additional factions, which gives the story scale but also diffuses the central engine. One direction would be to consolidate the shadow hierarchy so the audience can feel one dominant force tightening around the protagonist instead of several successive reveals.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The ending runs long on aftermath.",
+        "detail": "The final stretch includes multiple reflective codas—warehouse, cliffside, apartment, community center, rooftop, and repeated quiet-resolution beats. Protecting the strongest ending image and trimming the extra epilogues would keep the emotional landing cleaner and preserve momentum for a buyer or audience.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The location footprint is moderately wide.",
+        "detail": "The story moves through roughly sixteen distinct spaces, including mansion interiors, warehouses, bars, clubs, apartments, a subway tunnel, and a server farm. A simplification lever would be to fold some of the late-story interiors into a smaller set of recurring locations so the production footprint stays elegant without changing the story’s core power-play structure.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The night work is substantial.",
+        "detail": "A large share of the story plays after dark, with rain, neon, alleyways, and industrial spaces driving the mood. That supports the noir identity, but a production-minded pass could consider whether a few dialogue-heavy exchanges can move into controlled day interiors to protect schedule and budget.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 47.7,
+  "tier": "Needs Development",
+  "inputTokens": 27335,
+  "outputTokens": 4739,
+  "cost": 0.04182675,
+  "declaredFormat": "Feature film"
+}

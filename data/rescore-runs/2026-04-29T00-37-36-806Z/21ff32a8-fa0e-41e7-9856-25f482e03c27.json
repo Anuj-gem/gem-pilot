@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-29T01:48:04.617Z",
+  "submission_id": "21ff32a8-fa0e-41e7-9856-25f482e03c27",
+  "eval_id": "cb57ee05-ad18-4bdc-8a78-dd6049e7eaab",
+  "title": "Pretty words kill",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 8,
+  "lead_characters_summary": [
+    {
+      "name": "SASHA",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · Black"
+    },
+    {
+      "name": "TERRY / TERRENCE / MARCUS / JAMES",
+      "role_type": "Lead",
+      "demographics": "Male · 30s · Black"
+    },
+    {
+      "name": "BRITTANY",
+      "role_type": "Lead",
+      "demographics": "Female · 17 · Black"
+    },
+    {
+      "name": "TONYA",
+      "role_type": "Lead",
+      "demographics": "Female · 40s · Black"
+    },
+    {
+      "name": "REBECA",
+      "role_type": "Lead",
+      "demographics": "Female · 30s · White"
+    },
+    {
+      "name": "BYRON",
+      "role_type": "Lead",
+      "demographics": "Male · 40s · Black"
+    },
+    {
+      "name": "LISA",
+      "role_type": "Supporting",
+      "demographics": "Female · mid-30s · Black"
+    },
+    {
+      "name": "VERONICA",
+      "role_type": "Supporting",
+      "demographics": "Female · 17-18 · Black"
+    }
+  ],
+  "positioning_hook": "A Charlotte woman in recovery falls for a polished stranger who’s grooming her daughter and her ex-husband under different names, until the same predator detonates the whole family.",
+  "cost_usd": 0.042288,
+  "input_tokens": 28634,
+  "output_tokens": 4625,
+  "status": "wrote:leads_ok"
+}

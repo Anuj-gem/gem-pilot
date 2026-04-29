@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-29T01:50:19.037Z",
+  "submission_id": "3f2ecccb-45ae-4672-89dd-aece3bbb2905",
+  "eval_id": "c3855a7d-8f37-4181-9010-9b0d40531143",
+  "title": "Documentary (1)",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 9,
+  "lead_characters_summary": [
+    {
+      "name": "Jessilyn King",
+      "role_type": "Lead",
+      "demographics": "Female · 30s-40s · real person"
+    },
+    {
+      "name": "Dena",
+      "role_type": "Lead",
+      "demographics": "Female · 50s-70s · real person"
+    },
+    {
+      "name": "Don",
+      "role_type": "Supporting",
+      "demographics": "Male · 50s-70s · real person"
+    },
+    {
+      "name": "Peggi",
+      "role_type": "Supporting",
+      "demographics": "Female · 60s-80s · real person"
+    },
+    {
+      "name": "Stephanie",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · real person"
+    },
+    {
+      "name": "Lily",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · real person"
+    },
+    {
+      "name": "Julie",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-60s · real person"
+    },
+    {
+      "name": "Kathy",
+      "role_type": "Supporting",
+      "demographics": "Female · 30s-60s · real person"
+    },
+    {
+      "name": "Ben",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-50s · real person"
+    }
+  ],
+  "positioning_hook": "Jessilyn King turns a family reckoning into an investigation, confronting a man who denied her at the door and forcing a buried pattern of abuse into the open.",
+  "cost_usd": 0.03321675,
+  "input_tokens": 18237,
+  "output_tokens": 4342,
+  "status": "wrote:leads_ok"
+}

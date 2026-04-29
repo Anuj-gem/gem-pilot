@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-04-29T01:47:50.846Z",
+  "submission_id": "d91365bf-d320-473f-b081-4d22b3b643e5",
+  "eval_id": "7e3574dc-0c48-43b1-9a3a-ab1e6bb3cf6b",
+  "title": "Takedown",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 15,
+  "lead_characters_summary": [
+    {
+      "name": "DeShawn Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · mid 20s · African American · athletic, elite fight shape"
+    },
+    {
+      "name": "Lorraine Johnson",
+      "role_type": "Lead",
+      "demographics": "Female · mid 70s · African American · warm but formidable matriarch"
+    },
+    {
+      "name": "Berlinda Taylor",
+      "role_type": "Lead",
+      "demographics": "Female · mid 30s · African American · stylish, intelligent, emotionally direct"
+    },
+    {
+      "name": "E.J. Johnson",
+      "role_type": "Lead",
+      "demographics": "Male · early 30s · African American · thin, recovering addict"
+    },
+    {
+      "name": "Terrell Booker",
+      "role_type": "Supporting",
+      "demographics": "Male · mid 50s · African American · large, expensive, imposing"
+    },
+    {
+      "name": "Olivia Stone",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · Caucasian · polished, cold, image-management type"
+    },
+    {
+      "name": "Shane Ryan",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · Caucasian · chiseled MMA champion"
+    },
+    {
+      "name": "Jazmine",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 20s · Black · heavily made-up, skimpily dressed, vulnerable"
+    },
+    {
+      "name": "Alexei",
+      "role_type": "Supporting",
+      "demographics": "Male · late 30s · Russian · scarred former fighter"
+    },
+    {
+      "name": "Demetrius",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · African American · massive bodyguard"
+    },
+    {
+      "name": "Marquis",
+      "role_type": "Supporting",
+      "demographics": "Male · late 20s · African American · tattooed bodyguard"
+    },
+    {
+      "name": "Fritz",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s/30s · African American · recovering addict"
+    },
+    {
+      "name": "David Berg",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Caucasian · lawyerly, slightly frazzled"
+    },
+    {
+      "name": "Liam Yang",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s · Asian American · fit, harried detective"
+    },
+    {
+      "name": "Mrs. Washington",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 50s · African American · poor, proud, bitter"
+    }
+  ],
+  "positioning_hook": "A disgraced fighter forced into a rigged comeback match must protect his family, expose a crime boss, and decide whether redemption means winning or finally telling the truth.",
+  "cost_usd": 0.05421075,
+  "input_tokens": 38405,
+  "output_tokens": 5646,
+  "status": "wrote:leads_ok"
+}

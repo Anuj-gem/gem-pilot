@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-29T01:47:55.256Z",
+  "submission_id": "21a13f7d-b906-488b-9627-7d8a7f0c74b6",
+  "eval_id": "85476fd6-8b09-468d-bbad-43de65ad9f78",
+  "title": "Power Rangers Next Generation (Pilot)",
+  "declared_format": "Series",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 41001,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 12,
+  "lead_characters_summary": [
+    {
+      "name": "Marcus Howard",
+      "role_type": "Lead",
+      "demographics": "Male · 16 · African American"
+    },
+    {
+      "name": "Steven Bryant",
+      "role_type": "Lead",
+      "demographics": "Male · 16 · Caucasian · autistic"
+    },
+    {
+      "name": "Kayla Richards",
+      "role_type": "Lead",
+      "demographics": "Female · 16 · Caucasian"
+    },
+    {
+      "name": "Danni Gonzalez",
+      "role_type": "Lead",
+      "demographics": "Female · 15 · Hispanic"
+    },
+    {
+      "name": "Jordan Bradley",
+      "role_type": "Lead",
+      "demographics": "Male · 17 · Asian American"
+    },
+    {
+      "name": "Princess Adela",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · humanoid alien princess"
+    },
+    {
+      "name": "Zena Repulsa",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-30s · sorceress"
+    },
+    {
+      "name": "Rorgar",
+      "role_type": "Supporting",
+      "demographics": "Male · 20s-40s · lion-like warrior"
+    },
+    {
+      "name": "Hornia",
+      "role_type": "Supporting",
+      "demographics": "Female · 20s-40s · bee-like warrior"
+    },
+    {
+      "name": "Marcus' Mother",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s · African American"
+    },
+    {
+      "name": "Ms. Louis",
+      "role_type": "Supporting",
+      "demographics": "Female · 40s-50s · Asian American"
+    },
+    {
+      "name": "Principal Collins",
+      "role_type": "Supporting",
+      "demographics": "Male · late 40s"
+    }
+  ],
+  "positioning_hook": "A new generation of Angel Grove teens inherits the Power Coins when a vengeful sorceress attacks, forcing a reluctant karate champ to lead the next Power Rangers.",
+  "cost_usd": 0.044333250000000005,
+  "input_tokens": 28757,
+  "output_tokens": 5059,
+  "status": "wrote:leads_ok"
+}

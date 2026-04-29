@@ -1,0 +1,270 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Drama",
+      "genre_tags": [
+        "Coming-of-age",
+        "Inspirational"
+      ],
+      "tone": "Grounded, intimate, hopeful"
+    },
+    "positioning_hook": "A burned-out Pennsylvania custodian with a secret screenplay deadline gets one last shot at the life he shelved, while his daughter, a sharp-eyed student, and a perceptive teacher push him to choose himself.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 6,
+        "reasoning": "The emotional promise is clear and accessible: a working-class father trying to reclaim a buried creative life while holding his family together. It has a defined audience in adult drama and uplift stories, though the appeal is more heartfelt than broad-genre."
+      },
+      "conceptual_hook_clarity": {
+        "score": 7,
+        "reasoning": "The premise lands quickly in the opening pages: Ralph is a two-job custodian in coal-country Pennsylvania who starts writing again after a student finds his notebook. The screenplay contest deadline gives the story a clean engine, even as the material stays character-first."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Ralph has a strong contradiction at the center — exhausted provider, hidden writer, emotionally guarded father — and Maddie, Sarah, and Jayden each press a different part of him. The ensemble is functional and appealing, with the lead carrying most of the weight."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The working-class creative awakening angle gives the script a specific identity, especially in the coal-region setting and the custodial-school ecosystem. The choice to make the protagonist’s dream a screenplay itself adds a self-reflexive layer that feels purposeful rather than gimmicky."
+      },
+      "narrative_momentum_engagement": {
+        "score": 6,
+        "reasoning": "The deadline, the contest flyer, and the escalating writing process give the story forward motion, and the later suspension and producer call add shape. The middle section leans on repeated affirmation beats, so the propulsion is steady rather than especially urgent."
+      },
+      "resonant_originality": {
+        "score": 7,
+        "reasoning": "A custodial supervisor in a struggling Pennsylvania town trying to become a screenwriter is a fresh, immediately legible hook. The story feels like it could only happen in this world, even though the emotional arc is familiar in the best way."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The coal-region roads, church maintenance, school buildings, and small-town routines create a lived-in working-class ecosystem with visible pressure points. The school district and church are not just backdrops; they generate the daily friction that shapes Ralph’s life."
+      },
+      "tonal_specificity": {
+        "score": 6,
+        "reasoning": "The script maintains a consistent earnest, reflective tone with light humor in the Ralph/Jayden/Sarah exchanges. It is recognizable and coherent, though it stays mostly in one emotional register rather than building a more singular tonal signature."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the surface story about finishing a script, there’s a deeper layer about class, self-worth, grief, and the stories working people tell themselves about permission. The Diane material and Ralph’s relationship to failure give the piece more emotional reserve than the premise initially advertises."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 6,
+        "reasoning": "Ralph/Maddie, Ralph/Sarah, and Ralph/Jayden each carry a clear function, and the script knows how to use them. The relationships are effective, but the story still lives primarily through Ralph rather than through a web of equally combustible dynamics."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 7,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "Male lead in late 40s",
+          "Female teen daughter",
+          "Female teacher in 30s",
+          "Teen male student",
+          "Supporting 60s priest",
+          "Working-class Pennsylvania texture"
+        ]
+      },
+      "locations": {
+        "distinct_count": 12,
+        "interior_exterior_ratio": "Mostly interior with some exterior connective tissue",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Pennsylvania coal-region look",
+          "Church interiors",
+          "Three-building school district",
+          "Diner",
+          "Family homestead",
+          "Cemetery"
+        ]
+      },
+      "technical": {
+        "vfx_level": "none",
+        "vfx_details": "No meaningful VFX requirements beyond simple screen inserts and title pages.",
+        "stunts_level": "none",
+        "sfx_needs": "Practical water leak/burst pipe sequence, minor classroom and hallway dressing.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "brand",
+          "detail": "Screenwriting software and film references are generic; no prominent brand dependency is apparent."
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Prestige streaming drama / festival-to-platform feature",
+        "content_level": "PG-13 equivalent",
+        "series_engine_or_release_model": "Feature release model with festival launch or streamer acquisition; the engine is a contained character arc around a deadline-driven creative pursuit."
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "low",
+          "note": "Contemporary, grounded drama with modest locations and no VFX or stunt load."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The lead is age-specific and the daughter/teacher/student roles need credible casting, with a teen actor required for Jayden and Maddie."
+        },
+        "location": {
+          "level": "medium",
+          "note": "The story moves across a church, homestead, diner, school buildings, cemetery, and classroom spaces, with multiple night interiors."
+        },
+        "content": {
+          "level": "low",
+          "note": "The material stays in emotional drama territory with mild language and no explicit content."
+        },
+        "rights": {
+          "level": "low",
+          "note": "No named IP, real people, or plot-critical music references are apparent."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "The protagonist is built from contradiction.",
+          "what_it_means": "That gives the movie a lead role an actor can inhabit with restraint, humor, and ache at once, which is exactly the kind of part that can anchor a prestige indie or streamer drama. Mid-career dramatic leads and actor-driven buyers looking for a blue-collar showcase will respond to a character who is both invisible at work and vivid on the page.",
+          "evidence": "Ralph changes church bulbs by day, supervises the school by afternoon, and secretly writes at 2:14 AM while bills sit on the kitchen table.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The coal-country setting has lived-in texture.",
+          "what_it_means": "The church, school district, homestead, diner, and cemetery create a specific working-class ecosystem that feels producible and emotionally legible. Buyers who want regional specificity without period cost, and directors who like place as character, will see immediate value here.",
+          "evidence": "The script keeps returning to old coal banks, empty storefronts, worn church interiors, and the three-building school campus.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The screenplay deadline gives the story a clean engine.",
+          "what_it_means": "The 30-day contest clock turns an intimate character piece into a forward-moving feature with a built-in finish line, which helps both pacing and market pitch. Streamers and festival programmers alike tend to respond to a contained emotional arc with a visible objective.",
+          "evidence": "The flyer for the Pennsylvania Independent Film Initiative open screenplay category becomes the catalyst, and the story tracks Ralph from blank page to submission to workshop call.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jayden is a sharp, catalytic supporting role.",
+          "what_it_means": "He gives the movie a younger counterpoint and a scene-stealing truth-teller who can puncture the lead’s self-protective habits without turning the film into a lecture. Teen actors with presence, and buyers looking for a credible intergenerational dynamic, will notice the role’s utility.",
+          "evidence": "Jayden reads Ralph’s notebook, calls out quitting when he sees it, and then helps format the pages on a school computer.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The father-daughter dynamic carries real emotional currency.",
+          "what_it_means": "Maddie gives the script a second emotional spine and a built-in audience bridge, because the story is not only about artistic self-reclamation but about what a parent’s deferred dream costs a child. Family-drama buyers and actors who excel in restrained domestic scenes will see a strong two-hander inside the larger story.",
+          "evidence": "Maddie challenges Ralph on the diner booth, the missed dinners, and the line between providing and disappearing.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The script understands working-class time pressure.",
+          "what_it_means": "The repeated radio calls, night shifts, and physical fatigue make the stakes feel economic rather than abstract, which broadens the emotional credibility of the piece. That specificity is attractive to buyers who want grounded adult drama with a clear social reality underneath it.",
+          "evidence": "Ralph is constantly pulled between church repairs, school emergencies, and the notebook he hides in a storage room.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a grounded, actor-forward feature with a clean emotional engine: a burned-out Pennsylvania custodian secretly writes a screenplay while the people around him force him to stop treating his own life like a postponed draft. The coal-country setting, the 30-day contest clock, and the father-daughter pressure give the piece a commercial shape that feels intimate but still pitchable."
+    },
+    "lead_characters": [
+      {
+        "name": "Ralph Bennett",
+        "role_type": "Lead",
+        "demographics": "Male · late 40s · working-class Pennsylvania custodian/school supervisor",
+        "hook": "Ralph is a man who has made survival into a personality. He’s dry, observant, physically worn down, and emotionally trained to keep moving, but the notebook in his kitchen reveals a private self that never stopped wanting more; the whole movie lives in the tension between the man who fixes other people’s problems and the man who has quietly stopped believing he deserves his own.",
+        "why_actor_wants_this": "This is the showcase territory of Casey Affleck in Manchester by the Sea — a contained, inward performance where silence, fatigue, and buried feeling do as much work as dialogue. Actors who want a prestige lead that can play blue-collar restraint, dry humor, and emotional release in one arc will chase this hard."
+      },
+      {
+        "name": "Maddie Bennett",
+        "role_type": "Lead",
+        "demographics": "Female · 17 · Ralph’s daughter",
+        "hook": "Maddie is bright, guarded, and old enough to see the cost of her father’s self-erasure before he does. She loves him without romanticizing him, and her intelligence gives the script a teenager who can carry emotional weight without becoming a device.",
+        "why_actor_wants_this": "This is the kind of grounded, emotionally precise daughter role that Saoirse Ronan had in Lady Bird — a young woman whose honesty is the engine of the scene and whose love is expressed through pressure. Rising teen and young-adult actors looking for a role with intelligence, bite, and heart will want this immediately."
+      },
+      {
+        "name": "Sarah Martin",
+        "role_type": "Lead",
+        "demographics": "Female · early 30s · English teacher",
+        "hook": "Sarah is warm without being ornamental, perceptive without being performative, and she understands the difference between encouraging someone and rescuing them. She functions as both witness and catalyst, with enough interiority that her interest in Ralph feels earned rather than assigned.",
+        "why_actor_wants_this": "This is the showcase space of Michelle Williams in Manchester by the Sea or Laura Linney in You Can Count on Me — a role built on quiet intelligence, emotional restraint, and the power of a look that changes the temperature of a scene. Mid-career actresses who want a subtle, adult romantic thread inside a character drama will be drawn to it."
+      },
+      {
+        "name": "Jayden",
+        "role_type": "Lead",
+        "demographics": "Male · 17 · student",
+        "hook": "Jayden is the kind of teenager who sees through adults faster than they can explain themselves. He’s blunt, calm, and unexpectedly generous, with the rare gift of being able to challenge Ralph without humiliating him, which makes him feel like a real person rather than a plot function.",
+        "why_actor_wants_this": "This is the breakout-supporting territory of Lucas Hedges in Manchester by the Sea — a young role that gets to be smart, funny, and emotionally catalytic without overplaying the sentiment. Teen actors with naturalism and edge will see a scene-stealing opportunity here."
+      },
+      {
+        "name": "Father Phillips",
+        "role_type": "Supporting",
+        "demographics": "Male · 60s · priest",
+        "hook": "Father Phillips is kind, sharp, and quietly attuned to the people around him. He gives the story a moral witness who never turns preachy, and his easy rapport with Ralph makes the church feel like part of the same working-class ecosystem as the school.",
+        "why_actor_wants_this": "This is the kind of understated authority role that Richard Jenkins had in The Visitor — a humane, observant presence who can carry warmth and wisdom without speeches. Character actors who specialize in grounded, compassionate authority will be drawn to it."
+      },
+      {
+        "name": "Mike",
+        "role_type": "Supporting",
+        "demographics": "Male · 20s-30s · school custodian",
+        "hook": "Mike is the younger workingman in the system, practical and respectful, with just enough self-awareness to know Ralph is carrying too much. He helps define Ralph by contrast and gives the school world a believable second gear.",
+        "why_actor_wants_this": "This is the kind of lived-in supporting role that Brian Tyree Henry often makes memorable in ensemble drama — a working-class peer who can land humor, loyalty, and pressure in a few scenes. Actors who like efficient, scene-smart roles with authenticity will respond to it."
+      },
+      {
+        "name": "Diane Bennett",
+        "role_type": "Supporting",
+        "demographics": "Female · 40s-50s in flashback · Ralph’s late wife",
+        "hook": "Diane exists as memory, pressure, and unfinished argument. She’s not written as a saint or a villain; she’s the voice of practical survival that still lives inside Ralph, and the flashbacks give the film its emotional origin point.",
+        "why_actor_wants_this": "This is the kind of memory-role territory that Elisabeth Moss had in The Invisible Man’s emotional backstory or that Laura Dern has in family-memory dramas — a part that shapes the lead’s inner life even in limited screen time. An actress with presence can make the flashback scenes feel like the movie’s emotional spine."
+      },
+      {
+        "name": "ADMIN",
+        "role_type": "Supporting",
+        "demographics": "Any gender · 40s-60s · school administrator",
+        "hook": "The administrator is the face of institutional pressure: practical, unsentimental, and focused on consequences. The role gives the school system a human voice and keeps the story grounded in real workplace stakes.",
+        "why_actor_wants_this": "This is the kind of authority role that actors like J. K. Simmons have used to make institutional scenes crackle — concise, controlled, and capable of shifting the whole room with a few lines. Strong character actors who can play pressure without caricature will be interested."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a blue-collar character piece with emotional lift and real place texture.",
+        "fit_profile": "Established indie directors with at least one or two festival features, or TV directors moving into features, who already work comfortably with performance-first material and grounded regional settings. The material rewards restraint, clean scene construction, and an eye for the dignity of ordinary labor.",
+        "detail": "The film gives a director a contained emotional arc, a strong lead performance, and a setting that can be shot with authenticity rather than scale. It will attract filmmakers who like to turn small spaces — kitchens, classrooms, church aisles, hallways — into pressure chambers."
+      },
+      "buyer_appeal": {
+        "tier": "$2-8M feature",
+        "lane": "Prestige indie / streamer drama lane",
+        "detail": "The package can be built around one lead performance and a modest supporting ensemble, so a buyer can respond to the script without needing heavy star attachment. The working-class uplift lane travels well on streamers and at festivals, especially when the setting and emotional stakes are this legible."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle section repeats the same encouragement beat.",
+        "detail": "The writing process is compelling, and the Jayden/Sarah/Maddie support system is doing real work, but several pages in Act Two circle the same affirmation. One lever would be to let a single turning-point scene carry more of the emotional shift so the middle feels more like escalation than reiteration.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The contest path can be streamlined.",
+        "detail": "The flyer, the typing help, the submission, the workshop call, and the producer outreach all serve the same endgame. A next pass could collapse one of those steps so the screenplay engine stays clean while preserving the sense that Ralph is being pulled into a larger world.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The school and church worlds are the budget sweet spot.",
+        "detail": "The story already lives in a modest footprint, and the strongest version keeps leaning into classrooms, hallways, the homestead, and the church rather than expanding outward. That protects the intimate scale that makes the piece producible and keeps the focus on performance.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "Ralph’s inner turn is already visible; the ending can stay simple.",
+        "detail": "The final cemetery scene and the last walk with Sarah land because they stay emotionally direct. The next pass should protect that simplicity rather than adding explanatory dialogue around the choice to keep writing.",
+        "is_primary_lever": false,
+        "source": "script"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 64.7,
+  "tier": "Optionable",
+  "inputTokens": 18276,
+  "outputTokens": 4220,
+  "cost": 0.032697000000000004,
+  "declaredFormat": "Feature film"
+}

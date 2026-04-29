@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-29T01:49:10.689Z",
+  "submission_id": "4b4ebdc1-7488-4500-bf62-59a11330ec30",
+  "eval_id": "4737670f-143a-4090-ba2f-ffccde8da036",
+  "title": "ONE LAST DANCE 1st out come",
+  "declared_format": "Feature film",
+  "prompt_hash": "65ec008fec81",
+  "prompt_v53_markers_present": true,
+  "prompt_length_chars": 40999,
+  "prompt_first_200": "You are a senior development executive AND an advocate for the writer. Your job is to read this screenplay and build the strongest honest case for why it deserves attention from producers, managers, a",
+  "prompt_last_200": "tions draw on Steps 3 and 6.** The weakest dimension becomes a craft push; a real production complexity driver becomes a simplification lever. Do not invent pushes that contradict the scores or facts.",
+  "lead_characters_count": 13,
+  "lead_characters_summary": [
+    {
+      "name": "Ralph Bennett",
+      "role_type": "Lead",
+      "demographics": "Male · late 50s"
+    },
+    {
+      "name": "Skylar Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · early 40s"
+    },
+    {
+      "name": "Maddie Bennett",
+      "role_type": "Lead",
+      "demographics": "Female · 20s to early 30s"
+    },
+    {
+      "name": "Jack Monroe",
+      "role_type": "Supporting",
+      "demographics": "Male · early 70s"
+    },
+    {
+      "name": "Renee Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female · early 70s"
+    },
+    {
+      "name": "Lisa Monroe",
+      "role_type": "Supporting",
+      "demographics": "Female · mid 40s"
+    },
+    {
+      "name": "Father Phillips",
+      "role_type": "Supporting",
+      "demographics": "Male · late 70s"
+    },
+    {
+      "name": "Dr. David Anckles",
+      "role_type": "Supporting",
+      "demographics": "Male · 40s to 50s"
+    },
+    {
+      "name": "Sharon",
+      "role_type": "Supporting",
+      "demographics": "Female · early 50s"
+    },
+    {
+      "name": "Antonio Bennett",
+      "role_type": "Supporting",
+      "demographics": "Male · 9 at present, 16 in later time jump"
+    },
+    {
+      "name": "Angelo Bennett",
+      "role_type": "Supporting",
+      "demographics": "Male · 9 at present, 16 in later time jump"
+    },
+    {
+      "name": "Hannah Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 7 at present, 14 in later time jump"
+    },
+    {
+      "name": "Olivia Bennett",
+      "role_type": "Supporting",
+      "demographics": "Female · 7 at present, 14 in later time jump"
+    }
+  ],
+  "positioning_hook": "A beloved school administrator and church volunteer faces a sudden cardiac crisis, forcing his family to rally around the man who quietly built their whole world before time runs out.",
+  "cost_usd": 0.05012175000000001,
+  "input_tokens": 34519,
+  "output_tokens": 5385,
+  "status": "wrote:leads_ok"
+}

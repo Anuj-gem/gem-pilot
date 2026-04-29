@@ -1,0 +1,384 @@
+{
+  "evaluation": {
+    "classification": {
+      "format": "Feature film",
+      "genre_primary": "Crime thriller",
+      "genre_tags": [
+        "family tragedy",
+        "religious drama"
+      ],
+      "tone": "Gritty, mournful, morally charged, operatic"
+    },
+    "positioning_hook": "A grief-stricken Catholic father hunts the gang that destroyed his family, only to discover the truth is buried inside his own sister’s investigation and the mob’s broken sons.",
+    "scores": {
+      "audience_appeal_marketability": {
+        "score": 7,
+        "reasoning": "The script has a clear commercial engine: family annihilation, revenge, cops, and a Catholic moral frame all give buyers an easy way in. It’s more adult and intense than broad four-quadrant fare, but the emotional promise is immediate and the final confrontation gives the audience a clean payoff."
+      },
+      "conceptual_hook_clarity": {
+        "score": 8,
+        "reasoning": "The premise lands fast in the opening pages: a family is slaughtered, the surviving brother is pulled into a revenge path, and the sister on the force is caught between duty and blood. The story engine stays legible through the church, the confession booth, and the Risaldi family structure."
+      },
+      "character_appeal_and_long_term_potential": {
+        "score": 7,
+        "reasoning": "Jacob and Jodie are both playable, emotionally loaded leads, and Ethan gives the script a compelling moral hinge. Victor is a strong patriarchal antagonist, though several of the Risaldi brothers function more as pressure points than fully independent characters."
+      },
+      "creative_originality_and_boldness": {
+        "score": 7,
+        "reasoning": "The Catholic confession structure, the recurring liturgical language, and the use of prayer, music, and ritual as dramatic counterpoint give the script a distinct identity. The revenge-crime spine is familiar, but the spiritual framing and family dynamics give it a sharper edge than a standard mob thriller."
+      },
+      "narrative_momentum_engagement": {
+        "score": 7,
+        "reasoning": "The script keeps moving through escalating set pieces: the home invasion, the alley confrontation, the docks, the hotel, and the final mansion showdown. There is some repetition in the middle around speeches and moral debate, but the momentum stays active and the final act pays off the setup."
+      },
+      "resonant_originality": {
+        "score": 8,
+        "reasoning": "The combination of Catholic guilt, family annihilation, and a crime-family structure that treats morality as a weapon feels fresh and immediately usable. The confession booth, the church sermons, and the recurring songs turn a familiar revenge framework into something that feels authored rather than assembled."
+      },
+      "world_density_and_texture": {
+        "score": 7,
+        "reasoning": "The world has real institutional texture: police briefings, prosecutorial maneuvering, church life, docks, clubs, and the Risaldi mansion all feel like parts of a larger civic ecosystem. The city itself is not overexplained, but the script gives enough texture to make the crime, faith, and public fallout feel interconnected."
+      },
+      "tonal_specificity": {
+        "score": 8,
+        "reasoning": "This has a very specific tonal identity: mournful, devotional, violent, and occasionally darkly ironic. The contrast between confession, choir music, and brutal killings is consistent enough that the script would be recognizable from a single scene."
+      },
+      "latent_depth_slow_burn_potential": {
+        "score": 7,
+        "reasoning": "Beneath the revenge plot, the script is really about grief, complicity, spiritual surrender, and the difference between justice and vengeance. The recurring religious language and the family hierarchy suggest more thematic depth than the surface crime story alone."
+      },
+      "relationship_density_and_ensemble_engine": {
+        "score": 7,
+        "reasoning": "Jacob/Jodie, Jacob/Ethan, Ethan/Victor, and Victor/the sons all generate usable dramatic tension, and the family structure gives the story multiple pressure points. The ensemble is strongest when it’s built around those power relationships; a few supporting players are more functional than combustible."
+      }
+    },
+    "production_reality": {
+      "cast": {
+        "speaking_roles": 17,
+        "leads": 4,
+        "series_regulars": 0,
+        "child_actors": true,
+        "casting_characteristics": [
+          "One child role is central to the emotional stakes",
+          "Multiple late-20s to 60s male roles",
+          "Catholic family and law-enforcement casting continuity matters"
+        ]
+      },
+      "locations": {
+        "distinct_count": 15,
+        "interior_exterior_ratio": "roughly 70/30 interior-heavy",
+        "period_or_contemporary": "Contemporary",
+        "notable_requirements": [
+          "Church/chapel/confessional spaces",
+          "Large mansion interiors",
+          "Club with private decks and mosh pit",
+          "Docks/warehouses",
+          "Police station and courtroom spaces"
+        ]
+      },
+      "technical": {
+        "vfx_level": "minor",
+        "vfx_details": "Mostly practical visual storytelling; smoke, fire aftermath, and a few stylized transitions/montage moments.",
+        "stunts_level": "moderate",
+        "sfx_needs": "Gunfire, blood effects, body impacts, hammer violence, fire aftermath, and crowd chaos.",
+        "night_shoots": "significant",
+        "animals": false
+      },
+      "rights_flags": [
+        {
+          "type": "named_music",
+          "detail": "Come Back by The Five Stairsteps"
+        },
+        {
+          "type": "named_music",
+          "detail": "Let All Mortal Flesh Keep Silent"
+        },
+        {
+          "type": "named_music",
+          "detail": "O Holy Night"
+        },
+        {
+          "type": "named_music",
+          "detail": "500 Miles by Peter, Paul and Mary"
+        },
+        {
+          "type": "named_music",
+          "detail": "Clair de Lune"
+        },
+        {
+          "type": "named_music",
+          "detail": "L’Amour Toujours"
+        },
+        {
+          "type": "named_music",
+          "detail": "Good Looking by Suki Waterhouse"
+        },
+        {
+          "type": "brand",
+          "detail": "Celexa"
+        },
+        {
+          "type": "brand",
+          "detail": "Bahamas"
+        },
+        {
+          "type": "real_person",
+          "detail": "Michelangelo (artwork reference: The Creation of Adam)"
+        }
+      ],
+      "platform_fit": {
+        "recommended_lane": "Premium streaming or theatrical crime drama lane",
+        "content_level": "Mature",
+        "series_engine_or_release_model": "Feature release model with festival-to-platform or limited theatrical potential"
+      },
+      "risk_rubric": {
+        "cost": {
+          "level": "medium",
+          "note": "Interior-heavy, but the club, docks, mansion, police, and fire aftermath sequences create a mid-level production footprint."
+        },
+        "cast": {
+          "level": "medium",
+          "note": "The script needs four strong leads, a child performer, and a sizable supporting crime-family and law-enforcement ensemble."
+        },
+        "location": {
+          "level": "medium",
+          "note": "Multiple recurring environments drive the story, including church spaces, a mansion, a club, docks, and police facilities."
+        },
+        "content": {
+          "level": "high",
+          "note": "Graphic family violence, murder, gunplay, and trauma-heavy material place it firmly in mature-content territory."
+        },
+        "rights": {
+          "level": "medium",
+          "note": "Several named songs and a branded antidepressant are embedded in the script, plus an art reference to Michelangelo’s Creation of Adam."
+        }
+      }
+    },
+    "whats_special": {
+      "strengths": [
+        {
+          "dimension_or_area": "Catholic ritual drives the drama.",
+          "what_it_means": "The confession booth, adoration chapel, mass, and prayer language give the movie a built-in emotional and thematic spine that elevates it above a standard revenge thriller. That makes it especially attractive to prestige buyers and actors who want material with moral weight, not just plot mechanics.",
+          "evidence": "Jacob’s confession scene, Father Michael’s sermons, and the repeated Act of Contrition structure the ending.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jacob is a showcase lead.",
+          "what_it_means": "The role gives an actor grief, rage, guilt, physical action, and spiritual collapse in one part, which is exactly the kind of range that can anchor a feature. Mid-career dramatic leads looking for a bruising, awards-adjacent turn would see real value here.",
+          "evidence": "Jacob’s therapy breakdown, the alley killing, the final ballroom confrontation, and the confession booth ending.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "Jodie has a strong emotional counterweight.",
+          "what_it_means": "She is not just the cop side of the plot; she is the sibling who has to choose between procedure, grief, and loyalty, which gives the film a second lead with real audience pull. Actresses who specialize in contained intensity and moral conflict will recognize the part immediately.",
+          "evidence": "Jodie’s grief at the docks, her confrontation with Jacob in his apartment, and her final choice to arrest Victor.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The villain is a true patriarchal engine.",
+          "what_it_means": "Victor is written as a commanding, humiliating, family-destroying force, which gives the film a memorable central antagonist and a clear emotional target. This is the kind of role that attracts actors who like authority, menace, and verbal dominance in the same performance.",
+          "evidence": "Victor’s ballroom speeches, the photo-ripping sequence, and his final orchestration of the mansion showdown.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The family structure is story-generating.",
+          "what_it_means": "The Risaldi household is built like a pressure cooker, with brothers, a wife, and a child all trapped under one hierarchy, which gives the movie multiple emotional and tactical angles. That kind of web is useful to producers because it creates more than one scene partner dynamic and more than one marketing hook.",
+          "evidence": "Victor’s treatment of Martin, Ethan, Frankie, Alicia, and Marcus across the ballroom scenes.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The music and liturgy create a signature tone.",
+          "what_it_means": "Songs like O Holy Night, 500 Miles, and Clair de Lune are used as emotional punctuation, not wallpaper, so the movie has a memorable sonic identity. Buyers who want a crime film with a distinct emotional texture will notice that immediately.",
+          "evidence": "The opening song performance, Father Michael’s sermon over L’Amour Toujours, and the Clair de Lune climax.",
+          "source": "script"
+        },
+        {
+          "dimension_or_area": "The ending lands on redemption, not just revenge.",
+          "what_it_means": "The final movement gives the movie a cathartic release valve: confession, forgiveness, and a return to family rather than a pure body-count finish. That broadens the audience beyond hard-edged crime fans and gives the project a more durable emotional aftertaste.",
+          "evidence": "Jacob’s confession, Jodie and Jacob’s reconciliation, and the final empty-space montage.",
+          "source": "script"
+        }
+      ],
+      "headline": "This is a crime thriller with a real identity: Catholic guilt, family annihilation, and revenge are fused into one operatic engine. The script gives a producer a strong lead role, a strong counter-lead, a memorable villain, and a tonal signature that feels built for prestige genre buyers."
+    },
+    "lead_characters": [
+      {
+        "name": "Jacob Smith",
+        "role_type": "Lead",
+        "demographics": "Male · late 30s to early 40s · Catholic father/brother",
+        "hook": "Jacob is a devastated family man whose faith is no longer comforting, only necessary. He carries himself like someone trying to remain decent while every scene pulls him closer to violence, and the script keeps him split between tenderness, rage, and self-condemnation.",
+        "why_actor_wants_this": "This is the showcase territory of Casey Affleck in Manchester by the Sea crossed with the physical release valve of a revenge lead: a man whose grief is so specific it becomes behavior. Actors who want a role that can play quiet devastation, explosive confrontation, and spiritual reckoning in the same feature will chase this hard."
+      },
+      {
+        "name": "Jodie Smith",
+        "role_type": "Lead",
+        "demographics": "Female · late 30s to early 40s · police officer",
+        "hook": "Jodie is a work-first cop whose competence is inseparable from her grief and guilt. She is sharp, guarded, and emotionally overclocked, but the script lets her be vulnerable without ever making her passive, which gives her real star presence.",
+        "why_actor_wants_this": "This is the showcase lane of Jodie Comer in The Last Duel or Toni Collette in Hereditary: a woman who has to hold authority while the emotional floor keeps moving under her. Actresses looking for a prestige genre role with procedural muscle and sibling pain will see a lot to play here."
+      },
+      {
+        "name": "Ethan Risaldi",
+        "role_type": "Lead",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "Ethan is the family’s moral fracture point: the brother who can still hear his conscience, even while trapped inside the machine. He is anxious, principled, and perpetually on the edge of collapse, which makes him the script’s most volatile conscience.",
+        "why_actor_wants_this": "This is the showcase space of Jesse Plemons in Judas and the Black Messiah or Paul Dano in There Will Be Blood: a soft-spoken man whose moral hesitation becomes the dramatic engine. Actors who excel at internal conflict, fear, and sudden resolve will want this part because it keeps turning the knife on itself."
+      },
+      {
+        "name": "Victor Risaldi",
+        "role_type": "Lead",
+        "demographics": "Male · late 60s",
+        "hook": "Victor is a patriarch who treats love as ownership and obedience as morality. He is composed, theatrical, and terrifyingly certain, which makes him feel less like a gangster than a private theology of power.",
+        "why_actor_wants_this": "This is the territory of Brian Cox in Succession or Anthony Hopkins in The Father, but with a criminal patriarch’s command of the room and the language. Veteran actors who want a late-career role with authority, cruelty, and monologue power will be drawn to it immediately."
+      },
+      {
+        "name": "Father Michael",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s",
+        "hook": "Father Michael is the film’s spiritual ballast: warm, witty, and quietly authoritative without ever becoming a sermon machine. He gives the movie a humane center and a voice that can absorb the story’s violence without collapsing under it.",
+        "why_actor_wants_this": "This is the kind of supporting role that gives an actor the moral authority of Mark Rylance in Bridge of Spies with the conversational ease of a great character actor. Performers who like playing wisdom without sentimentality will be very interested."
+      },
+      {
+        "name": "Captain Ricks",
+        "role_type": "Supporting",
+        "demographics": "Male · 50s",
+        "hook": "Captain Ricks is a weary lawman trying to keep a collapsing city from becoming a spectacle. He has institutional weight, but the script lets him feel human, compromised, and exhausted rather than generic authority.",
+        "why_actor_wants_this": "This is the grounded law-enforcement lane of Jeffrey Wright in a prestige procedural: a man whose authority comes from fatigue and experience, not bluster. Character actors who can make a briefing room feel lived-in will gravitate toward it."
+      },
+      {
+        "name": "Chief Pitts",
+        "role_type": "Supporting",
+        "demographics": "Male · late 50s",
+        "hook": "Chief Pitts is the public face of order, but he’s also one of the few people in the story who can speak plainly about grief. He reads as a leader who knows the machine is failing and is trying, imperfectly, to keep it from swallowing everyone.",
+        "why_actor_wants_this": "This is the kind of role that gives an actor the moral texture of John Goodman in a serious drama: institutional power with a human pulse. Buyers and casting directors looking for a credible, seasoned authority figure will see immediate utility."
+      },
+      {
+        "name": "Officer Daniels",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s",
+        "hook": "Officer Daniels is the grounded colleague who keeps trying to pull Jodie back from the edge. He functions as a pressure-release character, but he also gives the police world a face that feels lived-in and observant.",
+        "why_actor_wants_this": "This is the dependable, scene-stealing support slot that actors like Shea Whigham or Scoot McNairy often turn into memorable texture. It’s a role with enough humanity to matter and enough restraint to stay useful."
+      },
+      {
+        "name": "Martin Risaldi",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s",
+        "hook": "Martin is the family’s most visibly unstable son, a man whose cruelty and panic keep colliding in public. He’s dangerous, needy, and humiliatingly desperate for approval, which makes him a volatile antagonist in his own right.",
+        "why_actor_wants_this": "This is the kind of feral, self-destructive supporting role that actors use to make a mark in a prestige crime film. It has the volatility of Jesse Plemons in a darker register and gives an actor a lot of combustible behavior to play."
+      },
+      {
+        "name": "Eddie / Edward Risaldi",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s · mountain of muscle",
+        "hook": "Edward is the family’s blunt instrument, a physically imposing enforcer whose silence makes him more frightening. He is less verbal than the others, but the script uses him as a pure embodiment of the family’s violence.",
+        "why_actor_wants_this": "This is the kind of role that lets a physically commanding actor do menace with minimal dialogue, similar to the function of a great heavy in a crime drama. Stunt-capable character actors and imposing screen presences will be drawn to it."
+      },
+      {
+        "name": "Tyler Risaldi",
+        "role_type": "Supporting",
+        "demographics": "Male · early 30s",
+        "hook": "Tyler is the sadistic brother with a cruel sense of humor and a talent for psychological torture. He’s the one who turns violence into performance, which makes him especially memorable in the alley and hotel sequences.",
+        "why_actor_wants_this": "This is the kind of villainous supporting role that gives an actor the same nasty showcase energy as a great crime-film tormentor in a Coen or Fincher register. It’s a juicy part for someone who wants to be hated and remembered."
+      },
+      {
+        "name": "Frankie Risaldi",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "Frankie is the brother who still wants to believe there’s a way out, even while carrying a gun for the family. He has the most visible conscience among the siblings, which makes his scenes with Ethan especially painful.",
+        "why_actor_wants_this": "This is the kind of conflicted supporting role that gives an actor the emotional space of Michael Shannon in a smaller, more fragile key. It’s a part with real pathos because the audience can see the exit he can’t take."
+      },
+      {
+        "name": "Alicia",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 50s · former stripper",
+        "hook": "Alicia is a woman who has survived by shrinking herself inside Victor’s world, and the script makes that survival visible in every scene. She carries humiliation, fear, and maternal grief at once, which gives her a tragic dignity.",
+        "why_actor_wants_this": "This is the kind of role that gives a veteran actress the emotional authority of Patricia Clarkson in a prestige family drama. It’s a bruised, specific part with real subtext and a devastating final stretch."
+      },
+      {
+        "name": "Marcus Risaldi",
+        "role_type": "Supporting",
+        "demographics": "Male · 11",
+        "hook": "Marcus is the so-called pure one, a child trapped inside a violent dynasty he doesn’t understand. He functions as the story’s moral remainder, the one person Victor still imagines as salvageable.",
+        "why_actor_wants_this": "This is a meaningful child role with emotional stakes, the kind that can give a young actor a memorable dramatic anchor. Casting will want a child who can hold stillness and innocence under pressure."
+      },
+      {
+        "name": "Lucy Winters",
+        "role_type": "Supporting",
+        "demographics": "Female · early 30s",
+        "hook": "Lucy is a survivor whose testimony gives the movie one of its most devastating moral pivots. She is composed on the surface, but the script reveals a deep reservoir of pain and clarity that makes her testimony land hard.",
+        "why_actor_wants_this": "This is the kind of survivor role that gives an actress the emotional precision of a prestige-drama witness scene, with the added force of moral testimony. It’s a compact but unforgettable part for someone who can carry trauma without melodrama."
+      },
+      {
+        "name": "Xavier Winters",
+        "role_type": "Supporting",
+        "demographics": "Male · late 20s to early 30s",
+        "hook": "Xavier is the husband trying to keep a family intact while the past keeps bleeding into the present. He’s gentle, observant, and quietly devastated, which gives the domestic material real texture.",
+        "why_actor_wants_this": "This is the grounded husband role that actors use to make a world feel real, similar to the steady emotional function of a strong supporting husband in a prestige drama. It’s a useful, human part with clean scene utility."
+      },
+      {
+        "name": "Mayor Adams",
+        "role_type": "Supporting",
+        "demographics": "Male · late 40s",
+        "hook": "Mayor Adams is polished public language wrapped around civic failure. He’s the kind of politician who can sound compassionate while the city is burning, which makes him an effective public-face antagonist.",
+        "why_actor_wants_this": "This is a great role for an actor who can weaponize charm and spin, the kind of part that recalls the polished civic figures in prestige political drama. It gives a performer a chance to play hypocrisy with a smile."
+      },
+      {
+        "name": "Dr. Owens",
+        "role_type": "Supporting",
+        "demographics": "Female · mid 30s",
+        "hook": "Dr. Owens is the calm professional voice Jacob keeps trying to reject. She’s compassionate without being soft, and she gives the film a credible psychological counterpoint to the religious material.",
+        "why_actor_wants_this": "This is the kind of therapist role that can become memorable in a prestige drama because the actor has to project empathy, intelligence, and restraint in very little time. It’s a clean, useful part for a strong character actress."
+      }
+    ],
+    "package_angles": {
+      "director_appeal": {
+        "hook": "A director who wants to make a crime film that feels like a moral reckoning, not just a body count.",
+        "fit_profile": "Established indie filmmakers with at least one or two features, especially those who already work in performance-forward drama, prestige crime, or spiritually inflected material. This material rewards directors who care about ritual, silence, and actor-facing tension more than kinetic excess.",
+        "detail": "The script gives a director a chance to stage violence, confession, and family confrontation as one continuous emotional argument. It’s especially attractive to filmmakers who can make churches, police rooms, and a mansion ballroom feel like different chambers of the same moral machine."
+      },
+      "buyer_appeal": {
+        "tier": "$5-15M feature",
+        "lane": "Prestige crime thriller / streamer drama lane",
+        "detail": "The project can be packaged around one strong male lead, one strong female co-lead, and a veteran antagonist, which is a clean buyer-facing triangle. The Catholic framing, holiday setting, and crime-family hook give it exportable genre appeal with a distinct identity that can travel beyond the U.S. market."
+      }
+    },
+    "considerations": [
+      {
+        "area": "The middle leans on repeated moral speeches.",
+        "detail": "The church, therapy, and family scenes all carry strong thematic intent, and the next pass could look for one or two places where the emotional turn arrives before the explanation. That would keep the same spiritual argument while giving the back half a little more snap.",
+        "is_primary_lever": true,
+        "source": "script"
+      },
+      {
+        "area": "The Risaldi brothers could differentiate further.",
+        "detail": "Martin, Tyler, Edward, and Frankie each serve the family machine well, and one direction would be to sharpen the specific emotional function of each brother in a few key scenes. That would make the ensemble even more memorable without changing the plot spine.",
+        "is_primary_lever": false,
+        "source": "script"
+      },
+      {
+        "area": "The music rights list is doing real work.",
+        "detail": "Come Back, O Holy Night, 500 Miles, Clair de Lune, L’Amour Toujours, and Good Looking all appear as meaningful tonal markers, so a production pass should decide which cues are essential versus replaceable. Protecting the emotional function while simplifying the clearance load would make the package easier to move.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The child role needs careful protection.",
+        "detail": "Jay and Marcus both sit close to the emotional center of the story, and the version of the production that keeps the child-facing material concentrated and efficient will be easier to mount. That preserves the impact while keeping the schedule and performance demands manageable.",
+        "is_primary_lever": false,
+        "source": "production"
+      },
+      {
+        "area": "The final mansion sequence is the biggest production swing.",
+        "detail": "The ballroom climax, stair movement, gunfire, blood effects, and snowstorm atmosphere make the ending the most technically loaded stretch of the film. A next pass could consider whether any of the surrounding movement can be collapsed into fewer spaces without losing the confrontation’s scale.",
+        "is_primary_lever": false,
+        "source": "production"
+      }
+    ],
+    "craft_note": ""
+  },
+  "weightedScore": 73,
+  "tier": "Optionable",
+  "inputTokens": 46616,
+  "outputTokens": 5865,
+  "cost": 0.061354500000000006,
+  "declaredFormat": "Feature film"
+}
