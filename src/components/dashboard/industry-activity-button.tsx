@@ -364,14 +364,19 @@ function ActivityRow({
 }) {
   // Display name. Names + emails reveal once a producer has marked
   // Interested or Commented (or Passed-with-comment); pre-Interested rows
-  // stay anonymous as "A producer".
+  // stay anonymous. Anuj 2026-04-29: anonymous label now reflects the
+  // viewer's industry role so the writer sees a mix of "A representative
+  // viewed" and "A producer viewed" — flat "A producer" for every row
+  // hid the rep/producer split.
   const showName =
     row.status === 'interested' ||
     row.status === 'commented' ||
     (row.status === 'passed' && (row.comment ?? '').trim().length > 0)
+  const anonymousLabel =
+    row.producerRole === 'representative' ? 'A representative' : 'A producer'
   const displayName = showName
-    ? row.producerName ?? 'A producer'
-    : 'A producer'
+    ? row.producerName ?? anonymousLabel
+    : anonymousLabel
   const company = showName ? row.producerCompany?.trim() : ''
   // Role display — surface "Producer" / "Representative" alongside the
   // name once the identity has been revealed. Pre-reveal we use a generic
