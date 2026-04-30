@@ -211,7 +211,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     }
   }
   const myReviewStats = await getScriptStats(submissionIds)
-  const myCards: ScriptCardData[] = visible
+  const allMyCards: ScriptCardData[] = visible
     .map((s): ScriptCardData | null => {
       const ev = myEvalBySub.get(s.id)
       if (!ev) return null
@@ -224,6 +224,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         genre: ev.genre,
         logline: ev.logline,
         selznick_score: ev.weighted_score,
+        is_public: !!s.is_public,
         writer_handle: profile?.handle ?? null,
         writer_name: profile?.full_name ?? null,
         writer_avatar_url: profile?.avatar_url ?? null,
@@ -232,6 +233,10 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       }
     })
     .filter((c): c is ScriptCardData => c !== null)
+  // Show only the 3 most recent on the dashboard. The rest live behind
+  // a "View all" link → public profile page (Anuj 2026-04-30).
+  const myCards: ScriptCardData[] = allMyCards.slice(0, 3)
+  const hasMoreScripts = allMyCards.length > myCards.length
 
   // ---------- ACTIVITY STRIP (publishes + reviews) ----------
   const feedScriptById = new Map(feedScripts.map((s) => [s.id, s]))
@@ -298,19 +303,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
           {/* MAIN COL.
               Mobile: order-2 so YourPanel is on top. */}
           <section className="md:order-1 order-2 min-w-0 space-y-10">
-            {/* YOUR SCRIPTS — primary content for the writer */}
+            {/* YOUR LATEST SCRIPTS — capped at 3, "View all" links to profile */}
             {myCards.length > 0 && (
               <div>
                 <header className="mb-4 flex items-end justify-between gap-3">
                   <div>
                     <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1">Your work</p>
                     <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                      {myCards.length === 1 ? 'Your script' : 'Your scripts'}
+                      Your latest scripts
                     </h2>
                   </div>
                   {profile?.handle && (
                     <Link href={`/w/${profile.handle}`} prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-                      View profile →
+                      {hasMoreScripts ? `View all (${allMyCards.length}) →` : 'View profile →'}
                     </Link>
                   )}
                 </header>

@@ -31,6 +31,9 @@ export interface ScriptCardData {
   selznick_score: number | null
   tier?: string | null
   headline?: string | null
+  /** Whether the submission is currently visible on Discover. Used to
+   *  drive the "Published / Private" pill on owner-viewed cards. */
+  is_public?: boolean
   // Writer
   writer_handle: string | null
   writer_name: string | null
@@ -133,65 +136,43 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
   if (density === 'poster') {
     const score = s.selznick_score == null ? null : Math.round(Number(s.selznick_score))
     const metaText = [s.format, s.genre].filter(Boolean).join(' · ')
+    const isPublic = !!s.is_public
     return (
       <div
-        className="group relative flex flex-col rounded-xl border transition-all hover:-translate-y-0.5 hover:shadow-md overflow-hidden"
+        className="group relative flex flex-col rounded-xl border transition-shadow hover:shadow-md"
         style={{
           background: CARD.bg,
           borderColor: CARD.border,
         }}
       >
         {/* Overlay link — full card click target → report. Lives below
-            interactive children (z-10) so they get clicks first. */}
+            interactive children (z-10) so they get clicks first.
+            (No transform/translate on the parent — that breaks
+            position:fixed for the IndustryStats modal.) */}
         <Link
           href={href}
           prefetch={false}
           aria-label={s.title}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 rounded-xl"
         />
 
-        <div className="relative flex flex-col pointer-events-none" style={{ padding: '18px 18px 14px 18px' }}>
-          {/* Title — orienting element, top of card */}
-          <div
-            className="font-bold text-gray-900 leading-[1.1] line-clamp-3"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 20 }}
-          >
-            {s.title}
-          </div>
-
-          {/* Logline as italic pull-quote */}
-          {s.logline && (
-            <div
-              className="italic text-gray-700 mt-2 leading-snug line-clamp-3"
-              style={{ fontFamily: 'Georgia, serif', fontSize: 13 }}
-            >
-              &ldquo;{s.logline}&rdquo;
-            </div>
-          )}
-
-          {/* Meta block — byline + format/genre on left, score chip right */}
-          <div
-            className="mt-3 pt-3 flex items-center justify-between gap-3"
-            style={{ borderTop: `1px solid ${CARD.border}` }}
-          >
-            <div className="min-w-0 flex-1">
-              <WriterLink
-                handle={s.writer_handle}
-                name={s.writer_name}
-                avatar={s.writer_avatar_url}
-                ink={CARD.ink}
-              />
-              <div
-                className="mt-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
-                style={{ color: CARD.ink }}
-              >
-                {metaText || '—'}
-                <span className="normal-case tracking-normal text-gray-500">
-                  {' · '}
-                  {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
+        <div className="relative flex flex-col pointer-events-none p-4">
+          {/* Status pill (owner only) + score chip */}
+          <div className="flex items-start justify-between gap-2 mb-3">
+            {isOwner ? (
+              isPublic ? (
+                <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-green-800 bg-green-100 border border-green-200 rounded-full px-2 py-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  Published
                 </span>
-              </div>
-            </div>
+              ) : (
+                <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-gray-600 bg-white border border-gray-200 rounded-full px-2 py-0.5">
+                  Private
+                </span>
+              )
+            ) : (
+              <span />
+            )}
             {score != null && (
               <div
                 className="shrink-0 rounded-md text-white font-extrabold flex flex-col items-center justify-center leading-none"
@@ -208,9 +189,54 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             )}
           </div>
 
-          {/* Owner-only Industry stats CTA — extends below the main card body */}
+          {/* Title — orienting element */}
+          <div
+            className="font-bold text-gray-900 leading-[1.15] line-clamp-2"
+            style={{ fontFamily: 'Georgia, serif', fontSize: 19 }}
+          >
+            {s.title}
+          </div>
+
+          {/* Logline */}
+          {s.logline && (
+            <div
+              className="italic text-gray-700 mt-2 leading-snug line-clamp-3"
+              style={{ fontFamily: 'Georgia, serif', fontSize: 13 }}
+            >
+              &ldquo;{s.logline}&rdquo;
+            </div>
+          )}
+
+          {/* Divider */}
+          <div className="mt-3 pt-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
+            {/* Byline */}
+            <WriterLink
+              handle={s.writer_handle}
+              name={s.writer_name}
+              avatar={s.writer_avatar_url}
+              ink={CARD.ink}
+            />
+            {/* Meta line — format · genre · reviews */}
+            <div
+              className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.06em] truncate"
+              style={{ color: CARD.ink }}
+            >
+              {metaText || '—'}
+              <span className="normal-case tracking-normal text-gray-500 font-normal">
+                {' · '}
+                {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
+              </span>
+            </div>
+          </div>
+
+          {/* Owner-only Industry stats — clean footer */}
           {isOwner && (
-            <div className="mt-2.5 flex justify-end">
+            <div className="mt-3 -mx-4 -mb-4 px-4 py-2.5 border-t bg-white/40 rounded-b-xl flex items-center justify-between gap-2"
+              style={{ borderColor: CARD.border }}
+            >
+              <span className="text-[10.5px] uppercase tracking-[0.08em] font-bold text-gray-500">
+                Industry
+              </span>
               <IndustryStatsButton submissionId={s.submission_id} />
             </div>
           )}

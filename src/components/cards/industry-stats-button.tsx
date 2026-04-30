@@ -2,15 +2,24 @@
 
 // IndustryStatsButton — owner-only chip on a script card. Clicking opens
 // a small modal that fetches the four industry stats: viewed, interested,
-// passed, emailed. Other writers' cards never render this.
+// passed, emailed.
 //
-// The fetch happens lazily (on click) so the dashboard server-render
-// doesn't waste DB bandwidth on hidden numbers. The endpoint is
-// /api/scripts/[id]/industry-stats; if it 404s the modal shows zeros.
+// Why createPortal: the parent card uses transitions/transforms which
+// create a containing block, so a `position:fixed` modal rendered inline
+// positions relative to the card instead of the viewport. Portaling to
+// document.body escapes that.
+//
+// Click handling: the open-button uses `pointer-events-auto` and stops
+// propagation so the parent overlay <Link> doesn't navigate to the
+// report on the same click. The backdrop close handler only fires on
+// MOUSEUP (not click) so the click that OPENED the modal can't
+// immediately close it again — that's the "opens then closes" bug we
+// were hitting.
 //
 // Anuj 2026-04-30 v0.7.
 
 import { useState, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { BarChart3, X, Eye, Heart, Slash, Mail } from 'lucide-react'
 
 interface Props {
@@ -30,6 +39,12 @@ export function IndustryStatsButton({ submissionId }: Props) {
   const [open, setOpen] = useState(false)
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  // Portal target only exists on the client.
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const fetchStats = useCallback(async () => {
     setLoading(true)
@@ -57,7 +72,7 @@ export function IndustryStatsButton({ submissionId }: Props) {
     if (open && !stats) fetchStats()
   }, [open, stats, fetchStats])
 
-  // Close on Escape.
+  // Close on Escape — but only when the modal is actually open.
   useEffect(() => {
     if (!open) return
     function onKey(e: KeyboardEvent) {
@@ -66,6 +81,22 @@ export function IndustryStatsButton({ submissionId }: Props) {
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [open])
+
+  // Lock body scroll while open.
+  useEffect(() => {
+    if (!open) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [open])
+
+  // Backdrop close — fires on MOUSEUP so the original click that
+  // opened the modal can't bubble back into a close action.
+  const onBackdropMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) setOpen(false)
+  }
 
   return (
     <>
@@ -76,23 +107,30 @@ export function IndustryStatsButton({ submissionId }: Props) {
           e.stopPropagation()
           setOpen(true)
         }}
-        className="relative z-10 pointer-events-auto inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-[0.08em] text-purple-700 bg-white/70 hover:bg-white border border-purple-200 hover:border-purple-300 rounded-md px-2 py-1 transition-colors"
-        title="Industry stats"
+        onMouseDown={(e) => {
+          // Stop the parent overlay <Link> from racing this click.
+          e.stopPropagation()
+        }}
+        className="relative z-10 pointer-events-auto inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-purple-700 bg-white hover:bg-purple-50 border border-purple-200 hover:border-purple-300 rounded-md px-2.5 py-1 transition-colors"
+        title="See producer activity"
       >
-        <BarChart3 size={11} />
-        Industry stats
+        <BarChart3 size={12} />
+        Stats
       </button>
 
-      {open && (
+      {mounted && open && createPortal(
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/40 backdrop-blur-sm"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(false)
-          }}
+          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/45 backdrop-blur-sm"
+          onMouseUp={onBackdropMouseUp}
         >
-          <div className="w-full sm:max-w-sm bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl">
+          <div
+            className="w-full sm:max-w-sm bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl"
+            onMouseDown={(e) => e.stopPropagation()}
+            onMouseUp={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-gray-100">
               <div>
                 <p className="text-[10.5px] uppercase tracking-[0.16em] font-bold text-purple-700 mb-0.5">Industry</p>
@@ -129,7 +167,8 @@ export function IndustryStatsButton({ submissionId }: Props) {
               </p>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   )
