@@ -311,7 +311,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   events.sort((a, b) => b.ts - a.ts)
   const topEvents = events.slice(0, 8)
 
-  const isProcessing = myScripts.some((s) => s.status === 'processing')
+  const isProcessing = visible.some((s) => s.status === 'processing')
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
