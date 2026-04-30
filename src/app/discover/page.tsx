@@ -25,7 +25,17 @@ function svc() {
 export const revalidate = 60
 
 interface PageProps {
-  searchParams: Promise<{ sort?: string; format?: string; genre?: string }>
+  searchParams: Promise<{ sort?: string; format?: string; genres?: string; budgets?: string }>
+}
+
+const VALID_GENRE_IDS = ['drama', 'comedy', 'thriller', 'horror', 'sci-fi', 'fantasy', 'crime', 'romance', 'action', 'family', 'documentary', 'musical', 'western'] as const
+type GenreId = (typeof VALID_GENRE_IDS)[number]
+const VALID_BUDGET_IDS = ['micro', 'indie', 'mid', 'studio', 'agnostic'] as const
+type BudgetId = (typeof VALID_BUDGET_IDS)[number]
+
+function parseCsv<T extends string>(input: string | undefined, valid: readonly T[]): T[] {
+  if (!input) return []
+  return input.split(',').map((s) => s.trim()).filter((s): s is T => (valid as readonly string[]).includes(s))
 }
 
 export default async function DiscoverPage({ searchParams }: PageProps) {
@@ -40,9 +50,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const initialFormat = (['all', 'feature', 'series'].includes(sp.format || '')
     ? sp.format
     : 'all') as 'all' | 'feature' | 'series'
-  const ALL_GENRE_IDS = ['all', 'drama', 'comedy', 'thriller', 'horror', 'sci-fi', 'fantasy', 'crime', 'romance', 'action', 'family', 'documentary', 'musical', 'western'] as const
-  type GenreFilter = (typeof ALL_GENRE_IDS)[number]
-  const initialGenre = (ALL_GENRE_IDS.includes(sp.genre as GenreFilter) ? sp.genre : 'all') as GenreFilter
+  const initialGenres = parseCsv<GenreId>(sp.genres, VALID_GENRE_IDS)
+  const initialBudgets = parseCsv<BudgetId>(sp.budgets, VALID_BUDGET_IDS)
 
   const service = svc()
 
@@ -67,7 +76,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     getScriptStats(submissionIds),
   ])
 
-  type EvalRow = { id: string; weighted_score: number | null; logline: string | null; genre: string | null }
+  type EvalRow = { id: string; weighted_score: number | null; logline: string | null; genre: string | null; genreKey: string | null; budget: BudgetId | null }
   const evalBySubmission = new Map<string, EvalRow>()
   for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
     const evJson = e.evaluation as Record<string, unknown> | null
@@ -81,8 +90,13 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
       (cls.genre_primary as string | undefined) ||
       (fmt.genre_primary as string | undefined) ||
       null
+    const genreKey = genre ? genre.toLowerCase().replace(/[^a-z]/g, '') : null
+    const packaging = (evJson?.packaging as Record<string, unknown> | undefined) || {}
+    const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
+    const rawBudget = (budgetTier?.tier as string | undefined)?.toLowerCase() ?? null
+    const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
     evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, logline, genre,
+      id: e.id, weighted_score: e.weighted_score, logline, genre, genreKey, budget,
     })
   }
 
@@ -119,6 +133,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         recentTs: new Date(s.created_at).getTime(),
         selznick: Number(ev.weighted_score ?? 0),
         reviews: st?.reviewCount ?? 0,
+        genreKey: ev.genreKey,
+        budget: ev.budget,
       }
     })
     .filter((c): c is DiscoverCard => c !== null)
@@ -133,8 +149,11 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         <DiscoverGrid
           cards={cards}
           initialSort={initialSort}
-          initialFormat={initialFormat}
-          initialGenre={initialGenre}
+          initialFilters={{
+            format: initialFormat,
+            genres: initialGenres,
+            budgets: initialBudgets,
+          }}
         />
       </main>
     </div>

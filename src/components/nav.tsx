@@ -11,6 +11,7 @@ import {
   X,
   Plus,
   ChevronDown,
+  Users,
 } from 'lucide-react'
 
 // LOGGED-OUT NAV (Anuj 2026-04-28 redesign):
@@ -85,8 +86,12 @@ export default function Nav() {
     router.refresh()
   }
 
+  // Right-side cluster for logged-in users. The Community tab uses a
+  // small underline-style active state so users always know which page
+  // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
   const loggedInLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/discover', label: 'Community', icon: Users },
   ]
 
   return (
@@ -176,7 +181,9 @@ export default function Nav() {
                   )}
                 </div>
 
-                {/* RIGHT: Dashboard + Submit + Sign out */}
+                {/* RIGHT: Dashboard + Community + Submit + Sign out.
+                    Active tab uses an underline accent so users can always
+                    see where they are. */}
                 <div className="flex items-center gap-1">
                   {loggedInLinks.map(link => {
                     const Icon = link.icon
@@ -185,14 +192,21 @@ export default function Nav() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                        className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
                           active
-                            ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
+                            ? 'text-[var(--gem-white)] font-semibold'
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
                         <Icon size={16} />
                         {link.label}
+                        {active && (
+                          <span
+                            aria-hidden
+                            className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full"
+                            style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }}
+                          />
+                        )}
                       </Link>
                     )
                   })}
