@@ -91,9 +91,16 @@ export default async function DashboardPage({
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name')
+    .select('subscription_status, full_name, handle, headline, avatar_url')
     .eq('id', user.id)
     .single()
+
+  // Forced profile onboarding (Anuj 2026-04-29 v0.3) — every user must
+  // have a handle + headline before they can use the rest of the app.
+  // Bounces straight to /profile?onboarding=1 which shows the welcome state.
+  if (!profile?.handle || !profile?.headline) {
+    redirect('/profile?onboarding=1')
+  }
 
   const isSubscribed = profile?.subscription_status === 'active'
 
@@ -338,14 +345,28 @@ export default async function DashboardPage({
               </p>
             )}
           </div>
-          <Link
-            href="/submit"
-            className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors shrink-0"
-            style={{ boxShadow: '0 1px 2px rgba(124,58,237,0.30)' }}
-          >
-            <Plus size={16} />
-            New script
-          </Link>
+          <div className="flex items-center gap-2 shrink-0">
+            <Link
+              href={profile?.handle ? `/w/${profile.handle}` : '/profile'}
+              className="px-3 py-2 rounded-lg text-xs font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] hover:bg-[var(--gem-gray-800)] transition-colors"
+            >
+              View public profile
+            </Link>
+            <Link
+              href="/profile"
+              className="px-3 py-2 rounded-lg text-xs font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] hover:bg-[var(--gem-gray-800)] transition-colors"
+            >
+              Edit profile
+            </Link>
+            <Link
+              href="/submit"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+              style={{ boxShadow: '0 1px 2px rgba(124,58,237,0.30)' }}
+            >
+              <Plus size={16} />
+              New script
+            </Link>
+          </div>
         </div>
 
         {scripts.length === 0 && <EmptyState />}

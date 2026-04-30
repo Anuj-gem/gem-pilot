@@ -55,31 +55,6 @@ export default async function PublicProfile({ params }: PageProps) {
   }
   const publicScripts = (scripts as Script[] | null) || []
 
-  // Reviews received — peer reviews on this writer's scripts
-  const { data: receivedRaw } = await service
-    .from('peer_reviews')
-    .select(`
-      id, score, body, suggestion, created_at, reviewer_id, submission_id,
-      script_submissions ( id, title, script_evaluations ( id ) ),
-      profiles!peer_reviews_reviewer_id_fkey ( id, full_name, handle, headline, avatar_url )
-    `)
-    .in('submission_id', publicScripts.map((s) => s.id).concat(['00000000-0000-0000-0000-000000000000']))
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-    .limit(20)
-  const reviewsReceived = ((receivedRaw as any[]) || []).map((r) => ({
-    id: r.id, score: r.score, body: r.body, suggestion: r.suggestion,
-    created_at: r.created_at,
-    script: r.script_submissions ? {
-      id: r.script_submissions.id, title: r.script_submissions.title,
-      eval_id: r.script_submissions.script_evaluations?.[0]?.id ?? null,
-    } : null,
-    reviewer: r.profiles ? {
-      id: r.profiles.id, full_name: r.profiles.full_name, handle: r.profiles.handle,
-      headline: r.profiles.headline, avatar_url: r.profiles.avatar_url,
-    } : null,
-  }))
-
   // Reviews written — peer reviews this user has authored
   const { data: writtenRaw } = await service
     .from('peer_reviews')
@@ -109,7 +84,6 @@ export default async function PublicProfile({ params }: PageProps) {
   const stats = {
     publicScripts: publicScripts.length,
     topScore: topScore || null,
-    reviewsReceived: reviewsReceived.length,
     reviewsWritten: reviewsWritten.length,
   }
 
@@ -157,11 +131,10 @@ export default async function PublicProfile({ params }: PageProps) {
         </header>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-3 mb-10">
+        <div className="grid grid-cols-3 gap-3 mb-10">
           <Stat label="Scripts" value={stats.publicScripts} />
           <Stat label="Top score" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
-          <Stat label="Reviews in" value={stats.reviewsReceived} />
-          <Stat label="Reviews out" value={stats.reviewsWritten} />
+          <Stat label="Reviews given" value={stats.reviewsWritten} />
         </div>
 
         {/* Public scripts */}
@@ -195,37 +168,6 @@ export default async function PublicProfile({ params }: PageProps) {
                   </Link>
                 )
               })}
-            </div>
-          )}
-        </Section>
-
-        {/* Reviews received */}
-        <Section title="Reviews received">
-          {reviewsReceived.length === 0 ? (
-            <Empty>No reviews yet.</Empty>
-          ) : (
-            <div className="space-y-3">
-              {reviewsReceived.map((r) => (
-                <div key={r.id} className="rounded-xl border border-gray-200 bg-white p-4">
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    {r.reviewer && (
-                      <WriterCard writer={r.reviewer} size="sm" />
-                    )}
-                    <ScoreBadge score={r.score} />
-                  </div>
-                  <div className="text-[13px] text-gray-500 mb-2">
-                    on{' '}
-                    {r.script?.eval_id ? (
-                      <Link href={`/report/${r.script.eval_id}`} className="font-semibold text-gray-900 hover:underline">
-                        {r.script.title}
-                      </Link>
-                    ) : (
-                      <span className="font-semibold text-gray-900">{r.script?.title ?? 'a script'}</span>
-                    )}
-                  </div>
-                  <p className="text-[14px] text-gray-700 leading-relaxed line-clamp-4">{r.body}</p>
-                </div>
-              ))}
             </div>
           )}
         </Section>

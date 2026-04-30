@@ -7,7 +7,13 @@ import Nav from '@/components/nav'
 import Link from 'next/link'
 import { ProfileEditor } from './editor'
 
-export default async function ProfilePage() {
+interface PageProps {
+  searchParams: Promise<{ onboarding?: string }>
+}
+
+export default async function ProfilePage({ searchParams }: PageProps) {
+  const sp = await searchParams
+  const isOnboarding = sp.onboarding === '1'
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login?redirect=/profile')
@@ -33,18 +39,35 @@ export default async function ProfilePage() {
     <div className="min-h-screen bg-white">
       <Nav />
       <main className="max-w-2xl mx-auto px-6 py-10">
-        <div className="mb-6 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">Your profile</h1>
-          {profile.handle && (
-            <Link
-              href={`/w/${profile.handle}`}
-              className="text-sm font-semibold text-purple-700 hover:text-purple-900"
-            >
-              View public profile →
-            </Link>
-          )}
-        </div>
-        <ProfileEditor initial={profile} />
+        {isOnboarding ? (
+          <div className="mb-6">
+            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-2">
+              Welcome to GEM
+            </p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+              Let's set up your profile.
+            </h1>
+            <p className="text-[15px] text-gray-600 leading-relaxed">
+              GEM is built around your public writer profile — it's how other
+              writers, reviewers, and industry partners find your work. Pick
+              a handle and a one-line headline to get going. The rest is
+              optional and you can come back to it any time.
+            </p>
+          </div>
+        ) : (
+          <div className="mb-6 flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-gray-900">Your profile</h1>
+            {profile.handle && (
+              <Link
+                href={`/w/${profile.handle}`}
+                className="text-sm font-semibold text-purple-700 hover:text-purple-900"
+              >
+                View public profile →
+              </Link>
+            )}
+          </div>
+        )}
+        <ProfileEditor initial={profile} returnTo={isOnboarding ? '/dashboard' : null} />
       </main>
     </div>
   )

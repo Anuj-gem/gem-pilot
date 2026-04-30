@@ -19,9 +19,9 @@ interface ProfileShape {
   avatar_url: string | null
 }
 
-interface Props { initial: ProfileShape }
+interface Props { initial: ProfileShape; returnTo?: string | null }
 
-export function ProfileEditor({ initial }: Props) {
+export function ProfileEditor({ initial, returnTo }: Props) {
   const router = useRouter()
   const [fullName, setFullName] = useState(initial.full_name ?? '')
   const [handle, setHandle] = useState(initial.handle ?? '')
@@ -73,6 +73,10 @@ export function ProfileEditor({ initial }: Props) {
       })
       if (res.error) { setErr(res.error); return }
       setSavedAt(new Date().toLocaleTimeString())
+      if (returnTo) {
+        router.push(returnTo)
+        return
+      }
       router.refresh()
     })
   }
