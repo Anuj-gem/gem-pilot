@@ -65,8 +65,9 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
   const submissionIds = visible.map((s) => s.id)
   const stats = await getScriptStats(submissionIds)
 
-  const allCards: (ScriptCardData & { status: string })[] = visible
-    .map((sub) => {
+  type CardWithStatus = ScriptCardData & { status: string }
+  const allCards: CardWithStatus[] = visible
+    .map((sub): CardWithStatus | null => {
       const ev = Array.isArray(sub.script_evaluations) ? sub.script_evaluations[0] : sub.script_evaluations
       if (!ev) return null
       const evJson = (ev.evaluation as Record<string, unknown> | null) || null
@@ -99,7 +100,7 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
         status: sub.status,
       }
     })
-    .filter((c): c is ScriptCardData & { status: string } => c !== null)
+    .filter((c): c is CardWithStatus => c !== null)
 
   const counts = {
     all: allCards.length,
