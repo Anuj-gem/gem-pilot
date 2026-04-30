@@ -45,6 +45,7 @@ import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
+import { PeerReviews } from '@/components/report/peer-reviews'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
@@ -244,14 +245,32 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   }
 
   let viewerIsSubscribed = false
+  let viewerIsReviewer = false
   if (user) {
     const { data: viewerProfile } = await serviceClient
       .from('profiles')
-      .select('subscription_status')
+      .select('subscription_status, is_reviewer')
       .eq('id', user.id)
       .single()
     viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
+    viewerIsReviewer = viewerProfile?.is_reviewer === true
   }
+
+  // Peer reviews — fetched for any viewer; the section component decides
+  // visibility based on whether there are reviews and whether the viewer
+  // is a reviewer themselves (Anuj 2026-04-29 peer-reviews v0.1).
+  const { data: peerReviewsRaw } = await serviceClient
+    .from('peer_reviews')
+    .select('id, score, body, suggestion, created_at, updated_at, reviewer_id, profiles!peer_reviews_reviewer_id_fkey ( full_name )')
+    .eq('submission_id', submission.id)
+    .is('deleted_at', null)
+    .order('created_at', { ascending: false })
+  const peerReviews = (peerReviewsRaw || []).map((r: any) => ({
+    id: r.id, score: r.score, body: r.body, suggestion: r.suggestion,
+    created_at: r.created_at, updated_at: r.updated_at,
+    reviewer_id: r.reviewer_id,
+    reviewer_name: r.profiles?.full_name ?? null,
+  }))
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
   const locked = !ownerIsSubscribed
@@ -1262,6 +1281,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
       </div>
+
+      {/* Peer reviews — community Reads on this script. Visible to any
+          authenticated viewer when reviews exist; reviewers also see a
+          "Review this script" CTA. (Anuj 2026-04-29 peer-reviews v0.1.) */}
+      {user && (
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <PeerReviews
+            submissionId={submission.id}
+            reviews={peerReviews}
+            viewerIsReviewer={viewerIsReviewer}
+            viewerId={user.id}
+          />
+        </div>
+      )}
 
       {!viewerIsSubscribed && user && (
         <SubscribeGate evaluationId={id} isLoggedIn={true} />
