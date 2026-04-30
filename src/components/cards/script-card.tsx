@@ -208,7 +208,7 @@ function WriterMiniCard({
 
   if (!handle) {
     return (
-      <div className="mt-3 flex items-center gap-2 px-2 py-1.5 rounded-lg">
+      <div className="flex items-center gap-2 min-w-0">
         {inner}
       </div>
     )
@@ -218,7 +218,7 @@ function WriterMiniCard({
     <Link
       href={`/w/${handle}`}
       prefetch={false}
-      className="relative z-10 pointer-events-auto mt-3 flex items-center gap-2 px-2 py-1.5 rounded-lg border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-colors"
+      className="relative z-10 pointer-events-auto flex items-center gap-2 min-w-0 -mx-1 px-1 py-1 rounded-md hover:bg-gray-50 transition-colors"
       title={`Open ${display}'s profile`}
     >
       {inner}
@@ -235,8 +235,16 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
 
   if (density === 'poster') {
     const score = s.selznick_score == null ? null : Math.round(Number(s.selznick_score))
-    const metaText = [s.format, s.genre].filter(Boolean).join(' · ')
     const isPublic = !!s.is_public
+    // Meta line components — small-caps, owner status inline as TEXT
+    // (not a pill) per Layout B. (Anuj 2026-04-30 council redesign.)
+    const metaParts = [
+      isOwner ? (isPublic ? 'Published' : 'Private') : null,
+      s.format,
+      s.genre,
+      `${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'}`,
+    ].filter(Boolean) as string[]
+
     return (
       <div
         className="group relative flex flex-col rounded-xl border transition-shadow hover:shadow-md"
@@ -246,9 +254,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
         }}
       >
         {/* Overlay link — full card click target → report. Lives below
-            interactive children (z-10) so they get clicks first.
-            (No transform/translate on the parent — that breaks
-            position:fixed for the IndustryStats modal.) */}
+            interactive children (z-10) so they get clicks first. */}
         <Link
           href={href}
           prefetch={false}
@@ -256,74 +262,56 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
           className="absolute inset-0 z-0 rounded-xl"
         />
 
-        {/* Top-corner overlays — score top-right, owner status pill
-            top-left if any. Floating so the title can start at the
-            top of the card and use the full width. (Anuj 2026-04-30.)
-            Both sit above the overlay-link via z-10. */}
-        {score != null && (
-          <div className="absolute top-3 right-3 z-10 pointer-events-none">
-            <ScorePill score={score} />
-          </div>
-        )}
-        {isOwner && (
-          <div className="absolute top-3 left-3 z-10 pointer-events-none">
-            {isPublic ? (
-              <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-green-800 bg-green-100 border border-green-200 rounded-full px-2 py-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                Published
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-gray-600 bg-white border border-gray-200 rounded-full px-2 py-0.5">
-                Private
-              </span>
-            )}
-          </div>
-        )}
-
         <div className="relative flex flex-col pointer-events-none p-5">
-          {/* Title at very top of the card. Right-padded to leave room
-              for the floating score pill on the first line. */}
+          {/* TITLE — at the very top of the card, full width, no
+              competing chrome on this line. */}
           <div
             className="font-bold text-gray-900 leading-[1.2] line-clamp-2"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em', paddingRight: '90px' }}
+            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em' }}
           >
             {s.title}
           </div>
 
-          {/* Logline */}
+          {/* LOGLINE — italic pull-quote, 3-line clamp, generous leading. */}
           {s.logline && (
             <div
               className="italic text-gray-700 mt-2.5 leading-snug line-clamp-3"
-              style={{ fontFamily: 'Georgia, serif', fontSize: 13 }}
+              style={{ fontFamily: 'Georgia, serif', fontSize: 13, minHeight: '3em' }}
             >
               &ldquo;{s.logline}&rdquo;
             </div>
           )}
 
-          {/* Format · Genre · Reviews — small chrome row */}
+          {/* META STRIP — small caps, status inline (owner only),
+              format · genre · review count. No pills here. */}
           <div
             className="mt-4 pt-3 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
             style={{ borderTop: `1px solid ${CARD.border}`, color: CARD.ink }}
           >
-            {metaText || '—'}
-            <span className="normal-case tracking-normal text-gray-500 font-normal">
-              {' · '}
-              {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
-            </span>
+            {metaParts.join(' · ') || '—'}
           </div>
 
-          {/* Writer mini-card — interactive byline. Hover state on
-              desktop telegraphs that this is a separate click target
-              (profile, not the report). */}
-          <WriterMiniCard
-            handle={s.writer_handle}
-            name={s.writer_name}
-            avatar={s.writer_avatar_url}
-          />
+          {/* FOOTER — writer mini-card LEFT, GEM SCORE pill RIGHT.
+              Verdict-at-the-bottom pattern (Letterboxd). */}
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <WriterMiniCard
+                handle={s.writer_handle}
+                name={s.writer_name}
+                avatar={s.writer_avatar_url}
+              />
+            </div>
+            {score != null && (
+              <div className="shrink-0">
+                <ScorePill score={score} />
+              </div>
+            )}
+          </div>
 
-          {/* Owner-only Industry stats — compact, single row */}
+          {/* OWNER-ONLY Industry stats — small ghost button below the
+              score, right-aligned. */}
           {isOwner && (
-            <div className="mt-2 flex justify-end">
+            <div className="mt-2.5 flex justify-end">
               <IndustryStatsButton submissionId={s.submission_id} />
             </div>
           )}
