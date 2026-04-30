@@ -128,6 +128,44 @@ function Avatar({ ini, size }: { ini: string; size: number }) {
 }
 
 /**
+ * ScorePill — the canonical "GEM SCORE 72" pill used everywhere a
+ * score is shown on a card. Hard rule (Anuj 2026-04-30): the words
+ * "GEM SCORE" must always render with the number — never abbreviated
+ * to "GEM" or stripped entirely.
+ */
+function ScorePill({ score }: { score: number }) {
+  return (
+    <span
+      className="shrink-0 inline-flex items-stretch rounded-full overflow-hidden text-white font-extrabold leading-none"
+      style={{
+        background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+      }}
+      title={`GEM score: ${score}`}
+    >
+      <span
+        className="inline-flex items-center px-2"
+        style={{
+          fontSize: 8,
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          background: 'rgba(0,0,0,0.18)',
+        }}
+      >
+        GEM&nbsp;Score
+      </span>
+      <span
+        className="inline-flex items-center px-2.5"
+        style={{ fontSize: 13, fontVariantNumeric: 'tabular-nums', paddingTop: 4, paddingBottom: 4 }}
+      >
+        {score}
+      </span>
+    </span>
+  )
+}
+
+/**
  * WriterMiniCard — full-width byline tile on poster cards. Clickable,
  * sits ABOVE the overlay-link via z-10 so its click goes to the writer
  * profile (not the report). Hover state on desktop signals it's a
@@ -151,16 +189,16 @@ function WriterMiniCard({
     <>
       {avatar ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={avatar} alt="" className="w-7 h-7 rounded-full object-cover bg-gray-100 shrink-0" />
+        <img src={avatar} alt="" className="w-6 h-6 rounded-full object-cover bg-gray-100 shrink-0" />
       ) : (
-        <Avatar ini={ini} size={28} />
+        <Avatar ini={ini} size={24} />
       )}
       <div className="flex-1 min-w-0">
-        <div className="text-[12.5px] font-bold text-gray-900 truncate leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+        <div className="text-[12px] font-bold text-gray-900 leading-tight line-clamp-1" style={{ fontFamily: 'Georgia, serif' }}>
           {display}
         </div>
         {subtitle && (
-          <div className="text-[10.5px] text-purple-700 font-semibold truncate leading-tight">
+          <div className="text-[10px] text-purple-700 font-semibold truncate leading-tight">
             {subtitle}
           </div>
         )}
@@ -218,11 +256,11 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
           className="absolute inset-0 z-0 rounded-xl"
         />
 
-        <div className="relative flex flex-col pointer-events-none p-4">
-          {/* Status pill (owner only) + small inline score chip.
-              Shrunk score from 44x44 to a slim pill so the title gets
-              full-width breathing room (Anuj 2026-04-30 cleanup). */}
-          <div className="flex items-start justify-between gap-2 mb-2.5 min-h-[20px]">
+        <div className="relative flex flex-col pointer-events-none p-5">
+          {/* Status pill (owner only) + GEM SCORE pill.
+              Score pill always reads "GEM SCORE 72" — never truncate
+              the label (Anuj 2026-04-30, hard rule). */}
+          <div className="flex items-start justify-between gap-2 mb-3 min-h-[24px]">
             {isOwner ? (
               isPublic ? (
                 <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-green-800 bg-green-100 border border-green-200 rounded-full px-2 py-0.5">
@@ -237,23 +275,10 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             ) : (
               <span />
             )}
-            {score != null && (
-              <span
-                className="shrink-0 inline-flex items-center gap-1 rounded-full text-white font-extrabold leading-none px-2 py-1"
-                style={{
-                  background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
-                  fontSize: 12,
-                  fontVariantNumeric: 'tabular-nums',
-                }}
-                title="GEM score"
-              >
-                <span style={{ fontSize: 8, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', opacity: 0.9 }}>GEM</span>
-                {score}
-              </span>
-            )}
+            {score != null && <ScorePill score={score} />}
           </div>
 
-          {/* Title — full width now that score is inline above. */}
+          {/* Title — full width, generous leading. */}
           <div
             className="font-bold text-gray-900 leading-[1.2] line-clamp-2"
             style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em' }}
@@ -264,7 +289,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
           {/* Logline */}
           {s.logline && (
             <div
-              className="italic text-gray-700 mt-2 leading-snug line-clamp-3"
+              className="italic text-gray-700 mt-2.5 leading-snug line-clamp-3"
               style={{ fontFamily: 'Georgia, serif', fontSize: 13 }}
             >
               &ldquo;{s.logline}&rdquo;
@@ -273,7 +298,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
 
           {/* Format · Genre · Reviews — small chrome row */}
           <div
-            className="mt-3 pt-3 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
+            className="mt-4 pt-3 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
             style={{ borderTop: `1px solid ${CARD.border}`, color: CARD.ink }}
           >
             {metaText || '—'}
@@ -285,7 +310,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
 
           {/* Writer mini-card — interactive byline. Hover state on
               desktop telegraphs that this is a separate click target
-              (profile, not the report). Anuj 2026-04-30 v0.8. */}
+              (profile, not the report). */}
           <WriterMiniCard
             handle={s.writer_handle}
             name={s.writer_name}
