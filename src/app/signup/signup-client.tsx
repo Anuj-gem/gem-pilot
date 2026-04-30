@@ -67,12 +67,13 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
     setError('')
     trackSignupStart()
 
+    const next = redirect || '/submit'
     const { data, error: signupError } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: { full_name: fullName },
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
+        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
       },
     })
 

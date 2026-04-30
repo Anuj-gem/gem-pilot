@@ -27,14 +27,25 @@ export async function submitReview(input: SubmitInput) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { error: 'Not signed in.' }
 
-  // Reviewer gate
+  // Reviewer gate — global is_reviewer OR accepted invite for this script.
   const { data: profile } = await supabase
     .from('profiles')
     .select('is_reviewer')
     .eq('id', user.id)
     .single<{ is_reviewer: boolean }>()
-  if (!profile?.is_reviewer) {
-    return { error: 'You do not have reviewer permissions.' }
+  let allowed = !!profile?.is_reviewer
+  if (!allowed) {
+    const { data: invite } = await supabase
+      .from('review_invites')
+      .select('id')
+      .eq('submission_id', submissionId)
+      .eq('invited_user_id', user.id)
+      .in('status', ['accepted', 'completed'])
+      .maybeSingle<{ id: string }>()
+    allowed = !!invite
+  }
+  if (!allowed) {
+    return { error: 'You do not have reviewer permissions for this script.' }
   }
 
   // Upsert: one active review per (submission_id, reviewer_id)
