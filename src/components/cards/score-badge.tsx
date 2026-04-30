@@ -12,14 +12,14 @@ interface Props {
 }
 
 const SIZES = {
-  xs: { box: 32, num: 12, lab: 7 },
-  sm: { box: 40, num: 15, lab: 8 },
-  md: { box: 48, num: 18, lab: 8 },
-  lg: { box: 64, num: 24, lab: 9 },
+  xs: { box: 36, num: 12, lab: 6 },
+  sm: { box: 44, num: 14, lab: 7 },
+  md: { box: 52, num: 17, lab: 7 },
+  lg: { box: 68, num: 22, lab: 9 },
 }
 
 const KINDS = {
-  selznick: { bg: 'linear-gradient(135deg,#7c3aed,#a855f7)', label: 'Selznick' },
+  selznick: { bg: 'linear-gradient(135deg,#7c3aed,#a855f7)', label: 'GEM score' },
   community: { bg: 'linear-gradient(135deg,#d4a017,#f59e0b)', label: 'Community' },
   neutral: { bg: '#f3f3f3', label: 'Score' },
 }
@@ -40,7 +40,7 @@ export function ScoreBadge({ score, kind = 'selznick', size = 'md', showLabel = 
       }}
     >
       {showLabel && (
-        <span style={{ fontSize: lab, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.9, lineHeight: 1, marginBottom: 1 }}>
+        <span style={{ fontSize: lab, fontWeight: 700, letterSpacing: '0.02em', textTransform: 'uppercase', opacity: 0.9, lineHeight: 1, marginBottom: 1, whiteSpace: 'nowrap' }}>
           {k.label}
         </span>
       )}

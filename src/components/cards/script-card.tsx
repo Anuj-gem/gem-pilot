@@ -36,7 +36,8 @@ export function ScriptCard({ s, density = 'list' }: Props) {
   const href = s.evaluation_id ? `/report/${s.evaluation_id}` : null
   if (!href) return null
 
-  const showCommunity = (s.review_count ?? 0) >= 1
+  const reviewCount = s.review_count ?? 0
+  const reviewLabel = `${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'}`
 
   if (density === 'compact') {
     return (
@@ -44,7 +45,7 @@ export function ScriptCard({ s, density = 'list' }: Props) {
         href={href}
         className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition-colors"
       >
-        <ScoreBadge score={s.selznick_score} size="sm" kind="selznick" />
+        <ScoreBadge score={s.selznick_score} size="sm" kind="selznick" showLabel />
         <div className="flex-1 min-w-0">
           <div className="font-bold text-[14px] text-gray-900 truncate" style={{ fontFamily: 'Georgia, serif' }}>{s.title}</div>
           <div className="text-[11.5px] text-gray-500 truncate">
@@ -52,6 +53,7 @@ export function ScriptCard({ s, density = 'list' }: Props) {
             {s.writer_handle && (
               <> · <span className="text-purple-700 font-semibold">@{s.writer_handle}</span></>
             )}
+            <> · {reviewLabel}</>
           </div>
         </div>
       </Link>
@@ -78,14 +80,10 @@ export function ScriptCard({ s, density = 'list' }: Props) {
                 <span className="text-purple-700 font-semibold">@{s.writer_handle}</span>
               </>
             )}
-            {showCommunity && (
-              <>
-                <span>·</span>
-                <span><strong className="text-gray-800">{s.review_count}</strong> {s.review_count === 1 ? 'review' : 'reviews'}</span>
-                {s.avg_peer_score != null && (
-                  <span>· community <strong className="text-amber-700">{Math.round(s.avg_peer_score)}</strong></span>
-                )}
-              </>
+            <span>·</span>
+            <span><strong className="text-gray-800">{reviewCount}</strong> {reviewCount === 1 ? 'review' : 'reviews'}</span>
+            {s.avg_peer_score != null && (
+              <span>· community <strong className="text-amber-700">{Math.round(s.avg_peer_score)}</strong></span>
             )}
           </div>
         </div>
@@ -102,7 +100,7 @@ export function ScriptCard({ s, density = 'list' }: Props) {
       href={href}
       className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
     >
-      <ScoreBadge score={s.selznick_score} size="md" kind="selznick" />
+      <ScoreBadge score={s.selznick_score} size="md" kind="selznick" showLabel />
       <div className="flex-1 min-w-0">
         <div className="font-bold text-[15px] text-gray-900 truncate" style={{ fontFamily: 'Georgia, serif' }}>{s.title}</div>
         {s.logline && (
@@ -116,12 +114,8 @@ export function ScriptCard({ s, density = 'list' }: Props) {
               <span className="text-purple-700 font-semibold">@{s.writer_handle}</span>
             </>
           )}
-          {showCommunity && (
-            <>
-              <span>·</span>
-              <span><strong className="text-gray-700">{s.review_count}</strong> {s.review_count === 1 ? 'review' : 'reviews'}</span>
-            </>
-          )}
+          <span>·</span>
+          <span><strong className="text-gray-700">{reviewCount}</strong> {reviewCount === 1 ? 'review' : 'reviews'}</span>
         </div>
       </div>
     </Link>
