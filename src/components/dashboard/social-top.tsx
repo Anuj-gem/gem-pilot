@@ -103,82 +103,6 @@ export async function SocialDashboardTop({ user, profile }: Props) {
     .filter((r) => r.script_submissions?.user_id === user.id)
     .slice(0, 5)
 
-  // Followed users → activity feed
-  const { data: followsRows } = await service
-    .from('follows')
-    .select('followee_id')
-    .eq('follower_id', user.id)
-  const followedIds = (followsRows || []).map((r: any) => r.followee_id) as string[]
-
-  let feed: Array<{
-    type: 'script' | 'review' | 'follow'
-    when: string
-    actor: { name: string; handle: string | null }
-    payload: any
-  }> = []
-
-  if (followedIds.length > 0) {
-    const [{ data: pubScripts }, { data: pubReviews }] = await Promise.all([
-      service
-        .from('script_submissions')
-        .select(`
-          id, title, declared_format, created_at, user_id,
-          script_evaluations ( id, weighted_score ),
-          profiles ( handle, full_name )
-        `)
-        .in('user_id', followedIds)
-        .eq('is_public', true)
-        .eq('status', 'completed')
-        .order('created_at', { ascending: false })
-        .limit(15),
-      service
-        .from('peer_reviews')
-        .select(`
-          id, score, body, created_at, reviewer_id, submission_id,
-          script_submissions ( id, title, script_evaluations ( id ), profiles ( handle, full_name ) ),
-          profiles!peer_reviews_reviewer_id_fkey ( handle, full_name )
-        `)
-        .in('reviewer_id', followedIds)
-        .is('deleted_at', null)
-        .order('created_at', { ascending: false })
-        .limit(15),
-    ])
-    for (const s of (pubScripts as any[]) || []) {
-      feed.push({
-        type: 'script', when: s.created_at,
-        actor: { name: s.profiles?.full_name || 'Writer', handle: s.profiles?.handle ?? null },
-        payload: { script_id: s.id, eval_id: s.script_evaluations?.[0]?.id ?? null, title: s.title, format: s.declared_format, score: s.script_evaluations?.[0]?.weighted_score ?? null },
-      })
-    }
-    for (const r of (pubReviews as any[]) || []) {
-      feed.push({
-        type: 'review', when: r.created_at,
-        actor: { name: r.profiles?.full_name || 'Reviewer', handle: r.profiles?.handle ?? null },
-        payload: {
-          score: r.score, body: r.body, eval_id: r.script_submissions?.script_evaluations?.[0]?.id ?? null,
-          script_title: r.script_submissions?.title ?? '—',
-          writer_handle: r.script_submissions?.profiles?.handle ?? null,
-          writer_name: r.script_submissions?.profiles?.full_name ?? null,
-        },
-      })
-    }
-    feed.sort((a, b) => new Date(b.when).getTime() - new Date(a.when).getTime())
-    feed = feed.slice(0, 8)
-  }
-
-  // Discover preview — 3 most recent public scripts
-  const { data: discoverScripts } = await service
-    .from('script_submissions')
-    .select(`
-      id, title, declared_format, created_at,
-      script_evaluations ( id, weighted_score ),
-      profiles ( handle )
-    `)
-    .eq('is_public', true)
-    .eq('status', 'completed')
-    .order('created_at', { ascending: false })
-    .limit(3)
-
   return (
     <div className="bg-white text-[#0f0f0f]">
       {/* Profile hero */}
@@ -244,6 +168,93 @@ export async function SocialDashboardTop({ user, profile }: Props) {
         </div>
       ) : null}
 
+    </div>
+  )
+}
+
+// Bottom social section — Following feed + Discover preview. Rendered
+// AFTER the user's own scripts list so the personal stuff stays primary.
+export async function SocialFeedSection({ user }: { user: { id: string } }) {
+  const service = svc()
+
+  // Followed users → activity feed
+  const { data: followsRows } = await service
+    .from('follows')
+    .select('followee_id')
+    .eq('follower_id', user.id)
+  const followedIds = (followsRows || []).map((r: any) => r.followee_id) as string[]
+
+  let feed: Array<{
+    type: 'script' | 'review'
+    when: string
+    actor: { name: string; handle: string | null }
+    payload: any
+  }> = []
+
+  if (followedIds.length > 0) {
+    const [{ data: pubScripts }, { data: pubReviews }] = await Promise.all([
+      service
+        .from('script_submissions')
+        .select(`
+          id, title, declared_format, created_at, user_id,
+          script_evaluations ( id, weighted_score ),
+          profiles ( handle, full_name )
+        `)
+        .in('user_id', followedIds)
+        .eq('is_public', true)
+        .eq('status', 'completed')
+        .order('created_at', { ascending: false })
+        .limit(15),
+      service
+        .from('peer_reviews')
+        .select(`
+          id, score, body, created_at, reviewer_id, submission_id,
+          script_submissions ( id, title, script_evaluations ( id ), profiles ( handle, full_name ) ),
+          profiles!peer_reviews_reviewer_id_fkey ( handle, full_name )
+        `)
+        .in('reviewer_id', followedIds)
+        .is('deleted_at', null)
+        .order('created_at', { ascending: false })
+        .limit(15),
+    ])
+    for (const s of (pubScripts as any[]) || []) {
+      feed.push({
+        type: 'script', when: s.created_at,
+        actor: { name: s.profiles?.full_name || 'Writer', handle: s.profiles?.handle ?? null },
+        payload: { script_id: s.id, eval_id: s.script_evaluations?.[0]?.id ?? null, title: s.title, format: s.declared_format, score: s.script_evaluations?.[0]?.weighted_score ?? null },
+      })
+    }
+    for (const r of (pubReviews as any[]) || []) {
+      feed.push({
+        type: 'review', when: r.created_at,
+        actor: { name: r.profiles?.full_name || 'Reviewer', handle: r.profiles?.handle ?? null },
+        payload: {
+          score: r.score, body: r.body, eval_id: r.script_submissions?.script_evaluations?.[0]?.id ?? null,
+          script_title: r.script_submissions?.title ?? '—',
+          writer_handle: r.script_submissions?.profiles?.handle ?? null,
+          writer_name: r.script_submissions?.profiles?.full_name ?? null,
+        },
+      })
+    }
+    feed.sort((a, b) => new Date(b.when).getTime() - new Date(a.when).getTime())
+    feed = feed.slice(0, 8)
+  }
+
+  // Discover preview — top-scoring public scripts
+  const { data: discoverScripts } = await service
+    .from('script_submissions')
+    .select(`
+      id, title, declared_format, created_at,
+      script_evaluations!inner ( id, weighted_score ),
+      profiles ( handle )
+    `)
+    .eq('is_public', true)
+    .eq('status', 'completed')
+    .order('weighted_score', { foreignTable: 'script_evaluations', ascending: false })
+    .limit(3)
+
+  return (
+    <div className="bg-white text-[#0f0f0f] mt-10">
       {/* Following feed */}
       <SectionLabel>Following</SectionLabel>
       {feed.length === 0 ? (

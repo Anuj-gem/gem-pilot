@@ -45,7 +45,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
-import { SocialDashboardTop } from '@/components/dashboard/social-top'
+import { SocialDashboardTop, SocialFeedSection } from '@/components/dashboard/social-top'
 import {
   IndustryActivityButton,
   type IndustryActivityRow,
@@ -76,7 +76,7 @@ interface ScriptSummary {
 export default async function DashboardPage({
   searchParams,
 }: {
-  searchParams: Promise<{ welcome_back?: string; draft_saved?: string; just_signed_up?: string }>
+  searchParams: Promise<{ welcome_back?: string; draft_saved?: string; just_signed_up?: string; show?: string }>
 }) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -89,6 +89,7 @@ export default async function DashboardPage({
   const justDraftSaved = sp.draft_saved === '1'
   const justSignedUp = sp.just_signed_up === '1'
   const welcomeBack = sp.welcome_back === '1'
+  const showAllScripts = sp.show === 'all'
 
   const { data: profile } = await supabase
     .from('profiles')
@@ -382,22 +383,35 @@ export default async function DashboardPage({
           !heroScript.isLockedReport &&
           !isSubscribed && <FirstScriptProUpsell />}
 
-        {/* Returning user — compact card list */}
+        {/* Returning user — compact card list, sliced to 5 unless ?show=all */}
         {scripts.length > 1 && (
           <>
-            <div className="flex items-baseline gap-3 mb-4">
-              <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-[var(--gem-gray-400)]">
-                Your scripts
-              </span>
-              <span className="flex-1 h-px bg-[var(--gem-gray-700)]" />
-            </div>
             <div className="space-y-3">
-              {scripts.map((s) => (
+              {(showAllScripts ? scripts : scripts.slice(0, 5)).map((s) => (
                 <CompactCard key={s.id} script={s} isSubscribed={isSubscribed} />
               ))}
             </div>
+            {scripts.length > 5 && (
+              <div className="mt-4 text-center">
+                {showAllScripts ? (
+                  <Link href="/dashboard" className="text-[12px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)]">
+                    Show fewer ↑
+                  </Link>
+                ) : (
+                  <Link href="/dashboard?show=all" className="text-[12px] font-semibold text-[var(--gem-accent)] hover:text-[var(--gem-gray-50)]">
+                    View all {scripts.length} →
+                  </Link>
+                )}
+              </div>
+            )}
           </>
         )}
+
+        {/* Social feed (Following + Discover preview) lives BELOW your own
+            scripts so the personal stuff is primary. Anuj 2026-04-29 v0.4. */}
+        <div className="mt-2">
+          <SocialFeedSection user={{ id: user.id }} />
+        </div>
 
         {/* Slim Pro upsell footer — only after the writer has used their
             free eval AND they're past the heroScript single-card view
