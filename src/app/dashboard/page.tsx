@@ -381,7 +381,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                     prefetch={false}
                     className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold rounded-lg bg-purple-600 hover:bg-purple-700 text-white px-3.5 py-2"
                   >
-                    Find posts to review →
+                    Browse community →
                   </Link>
                 </div>
               ) : (

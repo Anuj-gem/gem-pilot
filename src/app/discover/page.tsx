@@ -11,7 +11,6 @@ import { createServerClient } from '@supabase/ssr'
 import type { ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
 import { DiscoverGrid, type DiscoverCard } from '@/components/discover/discover-grid'
-import { ActivityStrip, type ActivityEvent } from '@/components/discover/activity-strip'
 
 function svc() {
   return createServerClient(
@@ -26,7 +25,7 @@ function svc() {
 export const revalidate = 60
 
 interface PageProps {
-  searchParams: Promise<{ sort?: string; format?: string }>
+  searchParams: Promise<{ sort?: string; format?: string; genre?: string }>
 }
 
 export default async function DiscoverPage({ searchParams }: PageProps) {
@@ -41,6 +40,9 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const initialFormat = (['all', 'feature', 'series'].includes(sp.format || '')
     ? sp.format
     : 'all') as 'all' | 'feature' | 'series'
+  const ALL_GENRE_IDS = ['all', 'drama', 'comedy', 'thriller', 'horror', 'sci-fi', 'fantasy', 'crime', 'romance', 'action', 'family', 'documentary', 'musical', 'western'] as const
+  type GenreFilter = (typeof ALL_GENRE_IDS)[number]
+  const initialGenre = (ALL_GENRE_IDS.includes(sp.genre as GenreFilter) ? sp.genre : 'all') as GenreFilter
 
   const service = svc()
 
@@ -121,63 +123,19 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     })
     .filter((c): c is DiscoverCard => c !== null)
 
-  // ---- Activity strip: last 5 publishes + last 5 reviews, merged + sorted ----
-  const events: ActivityEvent[] = []
-  // Publishes from `cards` (we already have them, recent first).
-  for (const c of cards.slice(0, 8)) {
-    events.push({
-      kind: 'publish',
-      ts: c.recentTs,
-      title: c.data.title,
-      evaluation_id: c.data.evaluation_id,
-      writerHandle: c.data.writer_handle,
-      writerName: c.data.writer_name,
-      writerAvatar: c.data.writer_avatar_url ?? null,
-    })
-  }
-  // Reviews — recent peer_reviews joined with reviewer profile + script title
-  const { data: revRows } = await service
-    .from('peer_reviews')
-    .select('id, submission_id, created_at, reviewer:profiles!peer_reviews_reviewer_id_fkey(handle, full_name, avatar_url)')
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-    .limit(8)
-  type ReviewRow = {
-    id: string
-    submission_id: string
-    created_at: string
-    reviewer: { handle: string | null; full_name: string | null; avatar_url: string | null } | null
-  }
-  for (const r of (revRows as unknown as ReviewRow[] | null) || []) {
-    const sub = scripts.find((s) => s.id === r.submission_id)
-    const ev = sub ? evalBySubmission.get(sub.id) : null
-    events.push({
-      kind: 'review',
-      ts: new Date(r.created_at).getTime(),
-      title: sub?.title || 'a script',
-      evaluation_id: ev?.id ?? null,
-      reviewerHandle: r.reviewer?.handle ?? null,
-      reviewerName: r.reviewer?.full_name ?? null,
-      writerAvatar: r.reviewer?.avatar_url ?? null,
-    })
-  }
-  events.sort((a, b) => b.ts - a.ts)
-  const topEvents = events.slice(0, 8)
-
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <Nav />
-      <main className="max-w-6xl mx-auto px-5 py-8">
-        <header className="mb-6">
-          <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-2">Discover</p>
-          <h1 className="text-[28px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-            What the GEM community is making.
-          </h1>
-        </header>
-
-        <ActivityStrip events={topEvents} />
-
-        <DiscoverGrid cards={cards} initialSort={initialSort} initialFormat={initialFormat} />
+      <main className="max-w-6xl mx-auto px-5 py-6">
+        {/* No big page title — sort tabs + filter pills do the chrome work,
+            and the nav already tells the user where they are. App-shell
+            feel, not blog-post feel. (Anuj 2026-04-30) */}
+        <DiscoverGrid
+          cards={cards}
+          initialSort={initialSort}
+          initialFormat={initialFormat}
+          initialGenre={initialGenre}
+        />
       </main>
     </div>
   )
