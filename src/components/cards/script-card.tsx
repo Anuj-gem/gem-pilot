@@ -19,6 +19,7 @@
 
 import Link from 'next/link'
 import { ScoreBadge } from './score-badge'
+import { IndustryStatsButton } from './industry-stats-button'
 
 export interface ScriptCardData {
   submission_id: string
@@ -42,6 +43,9 @@ export interface ScriptCardData {
 interface Props {
   s: ScriptCardData
   density?: 'compact' | 'list' | 'full' | 'poster'
+  /** Whether the viewer owns this script. Owner-only chrome
+   *  (e.g. Industry stats button) is gated on this flag. */
+  isOwner?: boolean
 }
 
 function initialsOf(s: ScriptCardData) {
@@ -119,7 +123,7 @@ function Avatar({ ini, size }: { ini: string; size: number }) {
   )
 }
 
-export function ScriptCard({ s, density = 'list' }: Props) {
+export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
   const href = s.evaluation_id ? `/report/${s.evaluation_id}` : null
   if (!href) return null
 
@@ -128,17 +132,17 @@ export function ScriptCard({ s, density = 'list' }: Props) {
 
   if (density === 'poster') {
     const score = s.selznick_score == null ? null : Math.round(Number(s.selznick_score))
+    const metaText = [s.format, s.genre].filter(Boolean).join(' · ')
     return (
       <div
         className="group relative flex flex-col rounded-xl border transition-all hover:-translate-y-0.5 hover:shadow-md overflow-hidden"
         style={{
           background: CARD.bg,
           borderColor: CARD.border,
-          aspectRatio: '4 / 5',
         }}
       >
-        {/* Overlay link — full card click target → report. Lives below the
-            interactive byline (z-10) so the byline gets the click. */}
+        {/* Overlay link — full card click target → report. Lives below
+            interactive children (z-10) so they get clicks first. */}
         <Link
           href={href}
           prefetch={false}
@@ -146,61 +150,70 @@ export function ScriptCard({ s, density = 'list' }: Props) {
           className="absolute inset-0 z-0"
         />
 
-        <div className="relative flex flex-col h-full pointer-events-none" style={{ padding: '18px 18px 16px 18px' }}>
-          {/* Top row: byline (left) + score chip (right) */}
-          <div className="flex items-start justify-between gap-2 mb-3">
-            <WriterLink
-              handle={s.writer_handle}
-              name={s.writer_name}
-              avatar={s.writer_avatar_url}
-              ink={CARD.ink}
-            />
+        <div className="relative flex flex-col pointer-events-none" style={{ padding: '18px 18px 14px 18px' }}>
+          {/* Title — orienting element, top of card */}
+          <div
+            className="font-bold text-gray-900 leading-[1.1] line-clamp-3"
+            style={{ fontFamily: 'Georgia, serif', fontSize: 20 }}
+          >
+            {s.title}
+          </div>
+
+          {/* Logline as italic pull-quote */}
+          {s.logline && (
+            <div
+              className="italic text-gray-700 mt-2 leading-snug line-clamp-3"
+              style={{ fontFamily: 'Georgia, serif', fontSize: 13 }}
+            >
+              &ldquo;{s.logline}&rdquo;
+            </div>
+          )}
+
+          {/* Meta block — byline + format/genre on left, score chip right */}
+          <div
+            className="mt-3 pt-3 flex items-center justify-between gap-3"
+            style={{ borderTop: `1px solid ${CARD.border}` }}
+          >
+            <div className="min-w-0 flex-1">
+              <WriterLink
+                handle={s.writer_handle}
+                name={s.writer_name}
+                avatar={s.writer_avatar_url}
+                ink={CARD.ink}
+              />
+              <div
+                className="mt-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
+                style={{ color: CARD.ink }}
+              >
+                {metaText || '—'}
+                <span className="normal-case tracking-normal text-gray-500">
+                  {' · '}
+                  {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
+                </span>
+              </div>
+            </div>
             {score != null && (
               <div
                 className="shrink-0 rounded-md text-white font-extrabold flex flex-col items-center justify-center leading-none"
                 style={{
                   background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
-                  width: 40, height: 40,
+                  width: 44, height: 44,
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
                 title="GEM score"
               >
-                <span style={{ fontSize: 6, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', opacity: 0.9, marginBottom: 1 }}>GEM</span>
-                <span style={{ fontSize: 15, fontVariantNumeric: 'tabular-nums' }}>{score}</span>
+                <span style={{ fontSize: 6.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', opacity: 0.9, marginBottom: 1 }}>GEM</span>
+                <span style={{ fontSize: 16, fontVariantNumeric: 'tabular-nums' }}>{score}</span>
               </div>
             )}
           </div>
 
-          {/* Title + logline take the middle, justified to bottom of free space */}
-          <div className="flex-1 min-h-0 flex flex-col justify-end">
-            <div
-              className="font-bold text-gray-900 leading-[1.05] line-clamp-3"
-              style={{ fontFamily: 'Georgia, serif', fontSize: 22 }}
-            >
-              {s.title}
+          {/* Owner-only Industry stats CTA — extends below the main card body */}
+          {isOwner && (
+            <div className="mt-2.5 flex justify-end">
+              <IndustryStatsButton submissionId={s.submission_id} />
             </div>
-            {s.logline && (
-              <div
-                className="italic text-gray-700 mt-2 leading-snug line-clamp-3"
-                style={{ fontFamily: 'Georgia, serif', fontSize: 12.5 }}
-              >
-                &ldquo;{s.logline}&rdquo;
-              </div>
-            )}
-          </div>
-
-          {/* Footer chrome */}
-          <div
-            className="mt-3 pt-2.5 flex items-center justify-between text-[10.5px] font-semibold uppercase tracking-[0.08em]"
-            style={{ borderTop: `1px solid ${CARD.border}`, color: CARD.ink }}
-          >
-            <span className="truncate">
-              {[s.format, s.genre].filter(Boolean).join(' · ') || '—'}
-            </span>
-            <span className="shrink-0 ml-2 normal-case tracking-normal">
-              {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
-            </span>
-          </div>
+          )}
         </div>
       </div>
     )

@@ -189,7 +189,49 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       }
     })
     .filter((c): c is ScriptCardData => c !== null)
-    .slice(0, 24)
+    .slice(0, 6)
+
+  // ---------- YOUR scripts as poster cards ----------
+  // Render the user's own published-or-completed scripts as poster cards
+  // in the main column. Owner-only Industry stats button surfaces here.
+  // Pull eval rows for our own scripts the same way we did for the feed.
+  const myEvalBySub = new Map<string, FeedEval>()
+  if (submissionIds.length > 0) {
+    const { data: myEvs } = await service
+      .from('script_evaluations')
+      .select('id, submission_id, weighted_score, evaluation')
+      .in('submission_id', submissionIds)
+    for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
+      const evJson = e.evaluation as Record<string, unknown> | null
+      const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
+      const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
+      const logline = (fmt.logline_one_line as string | undefined) || (evJson?.positioning_hook as string | undefined) || null
+      const genre = (cls.genre_primary as string | undefined) || (fmt.genre_primary as string | undefined) || null
+      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, logline, genre })
+    }
+  }
+  const myReviewStats = await getScriptStats(submissionIds)
+  const myCards: ScriptCardData[] = visible
+    .map((s): ScriptCardData | null => {
+      const ev = myEvalBySub.get(s.id)
+      if (!ev) return null
+      const st = myReviewStats.get(s.id)
+      return {
+        submission_id: s.id,
+        evaluation_id: ev.id,
+        title: s.title,
+        format: s.declared_format,
+        genre: ev.genre,
+        logline: ev.logline,
+        selznick_score: ev.weighted_score,
+        writer_handle: profile?.handle ?? null,
+        writer_name: profile?.full_name ?? null,
+        writer_avatar_url: profile?.avatar_url ?? null,
+        review_count: st?.reviewCount ?? 0,
+        avg_peer_score: st?.avgPeerScore ?? null,
+      }
+    })
+    .filter((c): c is ScriptCardData => c !== null)
 
   // ---------- ACTIVITY STRIP (publishes + reviews) ----------
   const feedScriptById = new Map(feedScripts.map((s) => [s.id, s]))
@@ -253,30 +295,59 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         <ActivityStrip events={topEvents} />
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] gap-6 lg:gap-8">
-          {/* MAIN COL — community feed.
+          {/* MAIN COL.
               Mobile: order-2 so YourPanel is on top. */}
-          <section className="md:order-1 order-2 min-w-0">
-            <header className="mb-4 flex items-end justify-between gap-3">
+          <section className="md:order-1 order-2 min-w-0 space-y-10">
+            {/* YOUR SCRIPTS — primary content for the writer */}
+            {myCards.length > 0 && (
               <div>
-                <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1">Community</p>
-                <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                  What writers are making
-                </h2>
+                <header className="mb-4 flex items-end justify-between gap-3">
+                  <div>
+                    <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1">Your work</p>
+                    <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                      {myCards.length === 1 ? 'Your script' : 'Your scripts'}
+                    </h2>
+                  </div>
+                  {profile?.handle && (
+                    <Link href={`/w/${profile.handle}`} prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
+                      View profile →
+                    </Link>
+                  )}
+                </header>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {myCards.map((c) => (
+                    <ScriptCard key={c.submission_id} s={c} density="poster" isOwner />
+                  ))}
+                </div>
               </div>
-              <Link href="/discover" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-                See more →
-              </Link>
-            </header>
+            )}
 
-            {feedCards.length === 0 ? (
-              <div className="rounded-xl border border-dashed border-gray-200 px-5 py-10 text-center text-sm text-gray-400">
-                No public scripts yet — be the first.
+            {/* LATEST COMMUNITY — slim sliver, not a wall */}
+            {feedCards.length > 0 && (
+              <div>
+                <header className="mb-4 flex items-end justify-between gap-3">
+                  <div>
+                    <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-amber-700 mb-1">Community</p>
+                    <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                      Latest community
+                    </h2>
+                  </div>
+                  <Link href="/discover" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
+                    See all →
+                  </Link>
+                </header>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {feedCards.map((c) => (
+                    <ScriptCard key={c.submission_id} s={c} density="poster" />
+                  ))}
+                </div>
               </div>
-            ) : (
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                {feedCards.map((c) => (
-                  <ScriptCard key={c.submission_id} s={c} density="poster" />
-                ))}
+            )}
+
+            {/* EMPTY-EMPTY fallback — neither owns nor finds anything */}
+            {myCards.length === 0 && feedCards.length === 0 && (
+              <div className="rounded-xl border border-dashed border-gray-200 px-5 py-10 text-center text-sm text-gray-400">
+                Nothing here yet. Submit a script to get started.
               </div>
             )}
           </section>

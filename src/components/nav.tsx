@@ -112,40 +112,105 @@ export default function Nav() {
 
           {user ? (
             <>
-              {/* Desktop logged-in */}
-              <div className="hidden md:flex items-center gap-1">
-                {loggedInLinks.map(link => {
-                  const Icon = link.icon
-                  const active = pathname.startsWith(link.href)
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                        active
-                          ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
-                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
-                      }`}
+              {/* Desktop logged-in. Layout intent (Anuj 2026-04-30):
+                    Left of nav:  Resources ▾ (lower-priority browse)
+                    Right of nav: Dashboard, Submit (operative actions)
+                  The page logo + Resources sit on one side; the
+                  user-action cluster sits on the other. The flex parent
+                  uses justify-between, so an inline `flex-1` spacer
+                  between the two clusters keeps each end pinned. */}
+              <div className="hidden md:flex flex-1 items-center justify-between ml-6">
+                {/* LEFT: Resources dropdown */}
+                <div ref={learnMoreRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setLearnMoreOpen(o => !o)}
+                    aria-expanded={learnMoreOpen}
+                    aria-haspopup="menu"
+                    className={`inline-flex items-center gap-1 text-sm transition-colors ${
+                      LEARN_MORE_LINKS.some(l => pathname.startsWith(l.href))
+                        ? 'text-[var(--gem-white)]'
+                        : 'text-[var(--gem-gray-300)] hover:text-[var(--gem-white)]'
+                    }`}
+                  >
+                    Resources
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${learnMoreOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {learnMoreOpen && (
+                    <div
+                      role="menu"
+                      className="absolute left-0 top-full mt-2 min-w-[280px] rounded-xl bg-white p-2 z-50"
+                      style={{
+                        border: '1px solid var(--gem-gray-700)',
+                        boxShadow: '0 18px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05)',
+                      }}
                     >
-                      <Icon size={16} />
-                      {link.label}
-                    </Link>
-                  )
-                })}
-                <Link
-                  href="/submit"
-                  className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-                >
-                  <Plus size={16} />
-                  Submit
-                </Link>
-                <button
-                  onClick={handleSignOut}
-                  className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-                  title="Sign out"
-                >
-                  <LogOut size={16} />
-                </button>
+                      {LEARN_MORE_LINKS.map(link => {
+                        const active = pathname.startsWith(link.href)
+                        return (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setLearnMoreOpen(false)}
+                            role="menuitem"
+                            className="block px-3 py-2 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
+                            style={
+                              active
+                                ? { background: 'rgba(124,58,237,0.06)' }
+                                : undefined
+                            }
+                          >
+                            <span className="block text-[13.5px] font-semibold text-[var(--gem-gray-50)] leading-tight">
+                              {link.label}
+                            </span>
+                            <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug mt-0.5">
+                              {link.description}
+                            </span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                {/* RIGHT: Dashboard + Submit + Sign out */}
+                <div className="flex items-center gap-1">
+                  {loggedInLinks.map(link => {
+                    const Icon = link.icon
+                    const active = pathname.startsWith(link.href)
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                          active
+                            ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
+                            : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                        }`}
+                      >
+                        <Icon size={16} />
+                        {link.label}
+                      </Link>
+                    )
+                  })}
+                  <Link
+                    href="/submit"
+                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                  >
+                    <Plus size={16} />
+                    Submit
+                  </Link>
+                  <button
+                    onClick={handleSignOut}
+                    className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                    title="Sign out"
+                  >
+                    <LogOut size={16} />
+                  </button>
+                </div>
               </div>
 
               {/* Mobile logged-in — Submit pill (always except on /submit
@@ -296,6 +361,26 @@ export default function Nav() {
                     active={pathname.startsWith(link.href)}
                   />
                 ))}
+
+                {/* Resources group */}
+                <div className="pt-2">
+                  <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2 px-1">
+                    Resources
+                  </p>
+                  <div className="space-y-2">
+                    {LEARN_MORE_LINKS.map(link => (
+                      <NavMenuRow
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        label={link.label}
+                        hint={link.description}
+                        active={pathname.startsWith(link.href)}
+                      />
+                    ))}
+                  </div>
+                </div>
+
                 <button
                   onClick={() => { setMobileOpen(false); handleSignOut() }}
                   className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
