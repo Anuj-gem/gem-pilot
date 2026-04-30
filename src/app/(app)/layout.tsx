@@ -64,6 +64,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     { count: following },
     { count: reviewsGiven },
     { count: scriptCount },
+    { data: ownPubs },
+    { data: ownReviews },
   ] = await Promise.all([
     service.from('follows').select('id', { count: 'exact', head: true }).eq('followee_id', user.id),
     service.from('follows').select('id', { count: 'exact', head: true }).eq('follower_id', user.id),
@@ -72,7 +74,38 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     // only (so the rail's number stays consistent with the user's
     // library). Anuj 2026-04-30 cleanup.
     service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null).eq('status', 'completed'),
+    // Own most-recent publishes — for the rail's "Recent activity" list.
+    service.from('script_submissions')
+      .select('id, title, created_at, script_evaluations(id)')
+      .eq('user_id', user.id)
+      .eq('is_public', true)
+      .eq('status', 'completed')
+      .order('created_at', { ascending: false })
+      .limit(3),
+    // Own most-recent reviews given.
+    service.from('peer_reviews')
+      .select('id, created_at, submission_id, script_submissions(title, script_evaluations(id))')
+      .eq('reviewer_id', user.id)
+      .is('deleted_at', null)
+      .order('created_at', { ascending: false })
+      .limit(3),
   ])
+
+  // Merge into a single recent-activity list, top 3.
+  type ActivityItem = { kind: 'publish' | 'review'; ts: number; title: string; href: string }
+  const activity: ActivityItem[] = []
+  for (const p of (ownPubs as Array<{ id: string; title: string; created_at: string; script_evaluations: { id: string }[] | null }> | null) || []) {
+    const evId = p.script_evaluations?.[0]?.id
+    if (!evId) continue
+    activity.push({ kind: 'publish', ts: new Date(p.created_at).getTime(), title: p.title, href: `/report/${evId}` })
+  }
+  for (const r of (ownReviews as Array<{ id: string; created_at: string; submission_id: string; script_submissions: { title: string; script_evaluations: { id: string }[] | null } | null }> | null) || []) {
+    const evId = r.script_submissions?.script_evaluations?.[0]?.id
+    if (!evId || !r.script_submissions) continue
+    activity.push({ kind: 'review', ts: new Date(r.created_at).getTime(), title: r.script_submissions.title, href: `/report/${evId}` })
+  }
+  activity.sort((a, b) => b.ts - a.ts)
+  const recentActivity = activity.slice(0, 3)
 
   const isPro = profile?.subscription_status === 'active'
 
@@ -94,6 +127,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             following: following ?? 0,
             reviewsGiven: reviewsGiven ?? 0,
           }}
+          recentActivity={recentActivity}
         >
           {children}
         </AppRail>

@@ -15,7 +15,7 @@
 // Anuj 2026-04-30 v0.7.
 
 import { usePathname } from 'next/navigation'
-import { YourPanel, type YourPanelProfile } from './your-panel'
+import { YourPanel, type YourPanelProfile, type RecentActivityItem } from './your-panel'
 
 interface Props {
   profile: YourPanelProfile
@@ -25,10 +25,11 @@ interface Props {
     following: number
     reviewsGiven: number
   }
+  recentActivity?: RecentActivityItem[]
   children: React.ReactNode
 }
 
-export function AppRail({ profile, stats, children }: Props) {
+export function AppRail({ profile, stats, recentActivity = [], children }: Props) {
   const pathname = usePathname() ?? ''
   // Reader-mode pages give the canvas the full width — no rail. The
   // top nav still shows where the user is, so they're not lost.
@@ -41,7 +42,7 @@ export function AppRail({ profile, stats, children }: Props) {
   return (
     <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-6">
       <aside className="hidden lg:block lg:sticky lg:top-4 self-start py-4">
-        <YourPanel profile={profile} stats={stats} />
+        <YourPanel profile={profile} stats={stats} recentActivity={recentActivity} />
       </aside>
       <main className="min-w-0 py-4">{children}</main>
     </div>

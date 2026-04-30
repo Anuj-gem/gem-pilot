@@ -18,6 +18,13 @@ export interface YourPanelProfile {
   isPro?: boolean
 }
 
+export interface RecentActivityItem {
+  kind: 'publish' | 'review'
+  ts: number
+  title: string
+  href: string
+}
+
 interface Props {
   profile: YourPanelProfile
   stats: {
@@ -26,6 +33,7 @@ interface Props {
     following: number
     reviewsGiven: number
   }
+  recentActivity?: RecentActivityItem[]
 }
 
 function initials(name: string | null | undefined, handle: string | null | undefined) {
@@ -33,7 +41,7 @@ function initials(name: string | null | undefined, handle: string | null | undef
   return src.split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase() ?? '').join('') || '·'
 }
 
-export function YourPanel({ profile, stats }: Props) {
+export function YourPanel({ profile, stats, recentActivity = [] }: Props) {
   const ini = initials(profile.full_name, profile.handle)
   const profileHref = profile.handle ? `/w/${profile.handle}` : '/profile'
 
@@ -99,6 +107,34 @@ export function YourPanel({ profile, stats }: Props) {
           </Link>
         </div>
       </div>
+
+      {/* RECENT ACTIVITY — your last 3 publishes/reviews as plain text
+          links. Always-visible quick way back into recent work.
+          (Anuj 2026-04-30 v0.8.) */}
+      {recentActivity.length > 0 && (
+        <div className="px-1">
+          <p className="text-[10px] uppercase tracking-[0.16em] font-bold text-gray-500 mb-2">
+            Recent activity
+          </p>
+          <ul className="space-y-1.5">
+            {recentActivity.map((a, i) => (
+              <li key={i} className="text-[12px] leading-snug">
+                <span className="text-gray-400 mr-1">
+                  {a.kind === 'publish' ? 'Published' : 'Reviewed'}
+                </span>
+                <Link
+                  href={a.href}
+                  prefetch={false}
+                  className="text-gray-800 hover:text-purple-700 hover:underline"
+                  title={a.title}
+                >
+                  {a.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* PERSISTENT SUBMIT — quiet, not a hero CTA */}
       <Link

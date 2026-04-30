@@ -127,6 +127,68 @@ function Avatar({ ini, size }: { ini: string; size: number }) {
   )
 }
 
+/**
+ * WriterMiniCard — full-width byline tile on poster cards. Clickable,
+ * sits ABOVE the overlay-link via z-10 so its click goes to the writer
+ * profile (not the report). Hover state on desktop signals it's a
+ * separate target. Shows display name first, handle subtitle below.
+ *
+ * Anuj 2026-04-30 v0.8.
+ */
+function WriterMiniCard({
+  handle, name, avatar,
+}: {
+  handle: string | null
+  name: string | null
+  avatar?: string | null
+}) {
+  if (!handle && !name) return null
+  const ini = (name || handle || '·').split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase() ?? '').join('') || '·'
+  const display = name || (handle ? `@${handle}` : '')
+  const subtitle = name && handle ? `@${handle}` : null
+
+  const inner = (
+    <>
+      {avatar ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={avatar} alt="" className="w-7 h-7 rounded-full object-cover bg-gray-100 shrink-0" />
+      ) : (
+        <Avatar ini={ini} size={28} />
+      )}
+      <div className="flex-1 min-w-0">
+        <div className="text-[12.5px] font-bold text-gray-900 truncate leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+          {display}
+        </div>
+        {subtitle && (
+          <div className="text-[10.5px] text-purple-700 font-semibold truncate leading-tight">
+            {subtitle}
+          </div>
+        )}
+      </div>
+    </>
+  )
+
+  if (!handle) {
+    return (
+      <div className="mt-3 flex items-center gap-2 px-2 py-1.5 rounded-lg">
+        {inner}
+      </div>
+    )
+  }
+
+  return (
+    <Link
+      href={`/w/${handle}`}
+      prefetch={false}
+      onClick={(e) => e.stopPropagation()}
+      className="relative z-10 pointer-events-auto mt-3 flex items-center gap-2 px-2 py-1.5 rounded-lg border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-colors"
+      title={`Open ${display}'s profile`}
+    >
+      {inner}
+    </Link>
+  )
+}
+
 export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
   const href = s.evaluation_id ? `/report/${s.evaluation_id}` : null
   if (!href) return null
@@ -158,8 +220,10 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
         />
 
         <div className="relative flex flex-col pointer-events-none p-4">
-          {/* Status pill (owner only) + score chip */}
-          <div className="flex items-start justify-between gap-2 mb-3">
+          {/* Status pill (owner only) + small inline score chip.
+              Shrunk score from 44x44 to a slim pill so the title gets
+              full-width breathing room (Anuj 2026-04-30 cleanup). */}
+          <div className="flex items-start justify-between gap-2 mb-2.5 min-h-[20px]">
             {isOwner ? (
               isPublic ? (
                 <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-green-800 bg-green-100 border border-green-200 rounded-full px-2 py-0.5">
@@ -175,26 +239,25 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
               <span />
             )}
             {score != null && (
-              <div
-                className="shrink-0 rounded-md text-white font-extrabold flex flex-col items-center justify-center leading-none"
+              <span
+                className="shrink-0 inline-flex items-center gap-1 rounded-full text-white font-extrabold leading-none px-2 py-1"
                 style={{
                   background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
-                  width: 44, height: 44,
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  fontSize: 12,
+                  fontVariantNumeric: 'tabular-nums',
                 }}
                 title="GEM score"
               >
-                <span style={{ fontSize: 6.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', opacity: 0.9, marginBottom: 1 }}>GEM</span>
-                <span style={{ fontSize: 16, fontVariantNumeric: 'tabular-nums' }}>{score}</span>
-              </div>
+                <span style={{ fontSize: 8, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', opacity: 0.9 }}>GEM</span>
+                {score}
+              </span>
             )}
           </div>
 
-          {/* Title — orienting element. min-height keeps grid rows
-              aligned across cards with 1- vs 2-line titles. */}
+          {/* Title — full width now that score is inline above. */}
           <div
-            className="font-bold text-gray-900 leading-[1.15] line-clamp-2"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 19, minHeight: '2.3em' }}
+            className="font-bold text-gray-900 leading-[1.2] line-clamp-2"
+            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em' }}
           >
             {s.title}
           </div>
@@ -209,31 +272,30 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             </div>
           )}
 
-          {/* Divider */}
-          <div className="mt-3 pt-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
-            {/* Byline */}
-            <WriterLink
-              handle={s.writer_handle}
-              name={s.writer_name}
-              avatar={s.writer_avatar_url}
-              ink={CARD.ink}
-            />
-            {/* Meta line — format · genre · reviews */}
-            <div
-              className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.06em] truncate"
-              style={{ color: CARD.ink }}
-            >
-              {metaText || '—'}
-              <span className="normal-case tracking-normal text-gray-500 font-normal">
-                {' · '}
-                {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
-              </span>
-            </div>
+          {/* Format · Genre · Reviews — small chrome row */}
+          <div
+            className="mt-3 pt-3 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
+            style={{ borderTop: `1px solid ${CARD.border}`, color: CARD.ink }}
+          >
+            {metaText || '—'}
+            <span className="normal-case tracking-normal text-gray-500 font-normal">
+              {' · '}
+              {reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}
+            </span>
           </div>
+
+          {/* Writer mini-card — interactive byline. Hover state on
+              desktop telegraphs that this is a separate click target
+              (profile, not the report). Anuj 2026-04-30 v0.8. */}
+          <WriterMiniCard
+            handle={s.writer_handle}
+            name={s.writer_name}
+            avatar={s.writer_avatar_url}
+          />
 
           {/* Owner-only Industry stats — compact, single row */}
           {isOwner && (
-            <div className="mt-2.5 flex justify-end">
+            <div className="mt-2 flex justify-end">
               <IndustryStatsButton submissionId={s.submission_id} />
             </div>
           )}
