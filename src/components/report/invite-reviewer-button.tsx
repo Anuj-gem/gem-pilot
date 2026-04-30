@@ -6,7 +6,7 @@
 
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { createReviewInvite } from '@/app/report/[id]/invite-actions'
+import { createReviewInvite } from '@/app/(app)/report/[id]/invite-actions'
 
 interface Props {
   submissionId: string

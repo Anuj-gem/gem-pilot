@@ -5,7 +5,7 @@
 
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { followUser, unfollowUser } from '@/app/w/[handle]/follow-actions'
+import { followUser, unfollowUser } from '@/app/(app)/w/[handle]/follow-actions'
 
 interface Props {
   followeeId: string
