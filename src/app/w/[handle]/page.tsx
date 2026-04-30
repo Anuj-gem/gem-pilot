@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase-server'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import { WriterCard } from '@/components/writer-card'
+import { FollowButton } from '@/components/follow-button'
 
 interface PageProps { params: Promise<{ handle: string }> }
 
@@ -76,6 +77,22 @@ export default async function PublicProfile({ params }: PageProps) {
     } : null,
   }))
 
+  // Follow counts + viewer's follow state
+  const [{ count: followerCount }, { count: followingCount }] = await Promise.all([
+    service.from('follows').select('id', { count: 'exact', head: true }).eq('followee_id', profile.id),
+    service.from('follows').select('id', { count: 'exact', head: true }).eq('follower_id', profile.id),
+  ])
+  let viewerFollows = false
+  if (viewer && viewer.id !== profile.id) {
+    const { data: rel } = await service
+      .from('follows')
+      .select('id')
+      .eq('follower_id', viewer.id)
+      .eq('followee_id', profile.id)
+      .maybeSingle<{ id: string }>()
+    viewerFollows = !!rel
+  }
+
   // Stats
   const topScore = publicScripts.reduce((m, s) => {
     const w = s.script_evaluations?.[0]?.weighted_score ?? null
@@ -85,6 +102,8 @@ export default async function PublicProfile({ params }: PageProps) {
     publicScripts: publicScripts.length,
     topScore: topScore || null,
     reviewsWritten: reviewsWritten.length,
+    followers: followerCount ?? 0,
+    following: followingCount ?? 0,
   }
 
   const displayName = profile.full_name || profile.handle || 'Anonymous writer'
@@ -114,6 +133,9 @@ export default async function PublicProfile({ params }: PageProps) {
                 <p className="text-[15px] text-gray-800 mt-3 leading-snug font-medium">{profile.headline}</p>
               )}
               <div className="flex items-center gap-3 mt-3 flex-wrap">
+                {!isOwner && viewer && (
+                  <FollowButton followeeId={profile.id} initiallyFollowing={viewerFollows} />
+                )}
                 {profile.imdb_url && (
                   <a
                     href={profile.imdb_url}
@@ -125,9 +147,14 @@ export default async function PublicProfile({ params }: PageProps) {
                   </a>
                 )}
                 {isOwner && (
-                  <Link href="/profile" className="text-xs font-semibold text-gray-500 hover:text-gray-900">
-                    Edit profile →
-                  </Link>
+                  <>
+                    <Link href="/profile" className="text-xs font-semibold text-gray-500 hover:text-gray-900">
+                      Edit profile →
+                    </Link>
+                    <Link href="/following" className="text-xs font-semibold text-gray-500 hover:text-gray-900">
+                      Manage follows →
+                    </Link>
+                  </>
                 )}
               </div>
             </div>
@@ -140,10 +167,12 @@ export default async function PublicProfile({ params }: PageProps) {
         </header>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 mb-10">
+        <div className="grid grid-cols-5 gap-3 mb-10">
+          <Stat label="Followers" value={stats.followers} />
+          <Stat label="Following" value={stats.following} />
           <Stat label="Scripts" value={stats.publicScripts} />
           <Stat label="Top score" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
-          <Stat label="Reviews given" value={stats.reviewsWritten} />
+          <Stat label="Reviews" value={stats.reviewsWritten} />
         </div>
 
         {/* Public scripts */}

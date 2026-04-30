@@ -45,6 +45,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { SocialDashboardTop } from '@/components/dashboard/social-top'
 import {
   IndustryActivityButton,
   type IndustryActivityRow,
@@ -305,6 +306,20 @@ export default async function DashboardPage({
         active={scripts.some((s) => s.status === 'processing')}
       />
       <div className="max-w-3xl mx-auto px-4 py-8 sm:py-10">
+        {/* v0.4 social-feel top: hero + action-needed + following feed +
+            Discover preview. Renders before the personal-scripts list so
+            the network IS the dashboard. Anuj 2026-04-29. */}
+        <SocialDashboardTop
+          user={{ id: user.id, email: user.email }}
+          profile={{
+            id: user.id,
+            full_name: profile?.full_name ?? null,
+            handle: profile?.handle ?? null,
+            headline: profile?.headline ?? null,
+            avatar_url: profile?.avatar_url ?? null,
+          }}
+        />
+
         {/* Free writers with their first script see a Pro upsell at the
             very top of the dashboard — replaces the lighter "you're
             signed up" banner with a banner that lands the upgrade pitch
