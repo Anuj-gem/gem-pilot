@@ -35,6 +35,7 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound, redirect } from 'next/navigation'
+import Link from 'next/link'
 import Nav from '@/components/nav'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
@@ -501,7 +502,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 pb-24">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 pb-24">
+        {/* Back-to-Community affordance for logged-in viewers — gives
+            users a way out of a report that isn't the browser back button.
+            Anuj 2026-04-30 cleanup. */}
+        {user && (
+          <div className="gem-no-print mb-4">
+            <Link
+              href="/discover"
+              prefetch={false}
+              className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-100)] transition-colors"
+            >
+              ← Community
+            </Link>
+          </div>
+        )}
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
         {isAnonymousSubmission && (
@@ -1148,10 +1163,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             the prompt; we can re-mount this surface later if we want a
             producer-direct framing somewhere. */}
 
-        {/* REFERENCE — Score detail + Production specs grouped under a
-            collapsible "Reference" disclosure, folded by default so the
-            editorial flow (Hit case → Issues → Project Complexity) is
-            what the reader lands on. Anuj 2026-04-28. */}
+        {/* REFERENCE — Production specs disclosure for legacy v4 evals
+            only. v5.2+ evals carry their detail in `riskDetails` and
+            render that section instead, so we suppress the empty-shell
+            "Reference" disclosure when there's nothing to put in it.
+            Anuj 2026-04-30 cleanup. */}
+        {!riskDetails && production && (isOwnerOrAdmin || (submission.is_public ?? false)) && (
         <details className="gem-no-print group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
           <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
             <div
@@ -1307,6 +1324,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
           </div>
         </details>
+        )}
 
         {/* Free-tier soft upgrade CTA */}
         {showUpgradeCTA && isOwner && (

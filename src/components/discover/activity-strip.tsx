@@ -117,7 +117,7 @@ function ActivityItem({ e }: { e: ActivityEvent }) {
           <Avatar ini={ini} />
         )
       )}
-      <div className="whitespace-nowrap">
+      <div className="whitespace-nowrap max-w-[280px] truncate" title={(e.title || '') + (e.kind === 'review' ? ' (review)' : ' (publish)')}>
         {sentence}
         <span className="text-gray-400 ml-2">{timeAgo(e.ts)}</span>
       </div>

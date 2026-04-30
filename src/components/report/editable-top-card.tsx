@@ -356,32 +356,14 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
         {/* Author byline + format on one line for compactness on mobile.
             Format is the only metadata in the primary view; genre/tone/posted
             move into the (collapsed) Tags expander to keep the cover quiet. */}
-        <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] m-0 mb-5 sm:mb-7">
-          {authorName && authorName.trim().length > 0 && (
-            <>
-              By{' '}
-              {authorHandle ? (
-                <Link href={`/w/${authorHandle}`} prefetch={false} className="text-[var(--gem-gray-200)] hover:underline">
-                  {authorName}
-                </Link>
-              ) : (
-                <span className="text-[var(--gem-gray-200)]">{authorName}</span>
-              )}
-              {authorHandle && (
-                <>
-                  {' '}
-                  <Link href={`/w/${authorHandle}`} prefetch={false} className="text-purple-400 hover:underline">
-                    @{authorHandle}
-                  </Link>
-                </>
-              )}
-            </>
-          )}
-          {authorName && authorName.trim().length > 0 && initial.format && (
-            <span className="text-[var(--gem-gray-600)] mx-1.5">·</span>
-          )}
-          {initial.format}
-        </p>
+        {/* Format-only metadata. Author byline lives directly above the
+            title in the WriterCard chip, so we stopped repeating "By
+            [name]" here (Anuj 2026-04-30 cleanup). */}
+        {initial.format && (
+          <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] m-0 mb-5 sm:mb-7">
+            {initial.format}
+          </p>
+        )}
 
         {/* HEADLINE as clean editorial prose — no rule, no box, no label.
             Just a generously-sized paragraph in the column. This is the

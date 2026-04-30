@@ -68,7 +68,10 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     service.from('follows').select('id', { count: 'exact', head: true }).eq('followee_id', user.id),
     service.from('follows').select('id', { count: 'exact', head: true }).eq('follower_id', user.id),
     service.from('peer_reviews').select('id', { count: 'exact', head: true }).eq('reviewer_id', user.id).is('deleted_at', null),
-    service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null),
+    // Match the /scripts page count — completed evaluated submissions
+    // only (so the rail's number stays consistent with the user's
+    // library). Anuj 2026-04-30 cleanup.
+    service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null).eq('status', 'completed'),
   ])
 
   const isPro = profile?.subscription_status === 'active'

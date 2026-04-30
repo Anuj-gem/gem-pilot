@@ -203,7 +203,7 @@ export default async function PublicProfile({ params }: PageProps) {
                     href={profile.imdb_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md hover:bg-amber-100"
+                    className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-gray-700 bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md hover:bg-gray-100"
                   >
                     IMDb ↗
                   </a>
@@ -244,7 +244,7 @@ export default async function PublicProfile({ params }: PageProps) {
           <Stat label="Followers" value={stats.followers} href={`/w/${profile.handle}/followers`} />
           <Stat label="Following" value={stats.following} href={`/w/${profile.handle}/following`} />
           <Stat label="Scripts" value={stats.publicScripts} />
-          <Stat label="Top Selznick" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
+          <Stat label="Top GEM" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
           <Stat label="Community avg" value={stats.communityAvg != null ? Math.round(stats.communityAvg) : '—'} />
           <Stat label="Reviews in" value={stats.reviewsReceived} />
         </div>
@@ -254,7 +254,7 @@ export default async function PublicProfile({ params }: PageProps) {
           const badges: { label: string; cls: string }[] = []
           if (stats.publicScripts >= 1) badges.push({ label: 'Writer', cls: 'bg-purple-50 text-purple-700 border-purple-200' })
           if (stats.publicScripts >= 5) badges.push({ label: 'Prolific', cls: 'bg-purple-100 text-purple-800 border-purple-300' })
-          if (stats.communityAvg != null && stats.communityAvg >= 80) badges.push({ label: 'Strong community score', cls: 'bg-amber-50 text-amber-800 border-amber-200' })
+          if (stats.communityAvg != null && stats.communityAvg >= 80) badges.push({ label: 'Strong community score', cls: 'bg-purple-50 text-purple-800 border-purple-200' })
           if (stats.reviewsWritten >= 1) badges.push({ label: 'Reviewer', cls: 'bg-emerald-50 text-emerald-800 border-emerald-200' })
           if (stats.reviewsWritten >= 10) badges.push({ label: 'Top reviewer', cls: 'bg-emerald-100 text-emerald-900 border-emerald-300' })
           if (stats.followers >= 10) badges.push({ label: 'Followed', cls: 'bg-pink-50 text-pink-800 border-pink-200' })

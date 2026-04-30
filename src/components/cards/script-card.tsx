@@ -190,10 +190,11 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             )}
           </div>
 
-          {/* Title — orienting element */}
+          {/* Title — orienting element. min-height keeps grid rows
+              aligned across cards with 1- vs 2-line titles. */}
           <div
             className="font-bold text-gray-900 leading-[1.15] line-clamp-2"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 19 }}
+            style={{ fontFamily: 'Georgia, serif', fontSize: 19, minHeight: '2.3em' }}
           >
             {s.title}
           </div>
@@ -230,14 +231,9 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             </div>
           </div>
 
-          {/* Owner-only Industry stats — clean footer */}
+          {/* Owner-only Industry stats — compact, single row */}
           {isOwner && (
-            <div className="mt-3 -mx-4 -mb-4 px-4 py-2.5 border-t bg-white/40 rounded-b-xl flex items-center justify-between gap-2"
-              style={{ borderColor: CARD.border }}
-            >
-              <span className="text-[10.5px] uppercase tracking-[0.08em] font-bold text-gray-500">
-                Industry
-              </span>
+            <div className="mt-2.5 flex justify-end">
               <IndustryStatsButton submissionId={s.submission_id} />
             </div>
           )}
