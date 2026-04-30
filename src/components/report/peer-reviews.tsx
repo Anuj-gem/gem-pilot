@@ -55,17 +55,35 @@ export function PeerReviews({ submissionId, reviews, viewerIsReviewer, viewerId 
       </div>
 
       {reviews.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-200 px-5 py-8 text-center">
-          <p className="text-sm text-gray-500">
-            No peer reviews yet. {viewerIsReviewer && 'Be the first.'}
-          </p>
+        <div className="rounded-xl border border-dashed border-gray-200 px-5 py-10 text-center">
+          <p className="text-sm text-gray-500 mb-4">No peer reviews yet.</p>
+          {viewerIsReviewer && (
+            <Link
+              href={`/review/${submissionId}`}
+              className="inline-block px-5 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700"
+            >
+              Write the first review →
+            </Link>
+          )}
         </div>
       ) : (
-        <div className="space-y-4">
-          {reviews.map((r) => (
-            <ReviewCard key={r.id} r={r} />
-          ))}
-        </div>
+        <>
+          <div className="space-y-4">
+            {reviews.map((r) => (
+              <ReviewCard key={r.id} r={r} />
+            ))}
+          </div>
+          {viewerIsReviewer && !viewersOwnReview && (
+            <div className="mt-5 text-center">
+              <Link
+                href={`/review/${submissionId}`}
+                className="inline-block px-5 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700"
+              >
+                Add your review →
+              </Link>
+            </div>
+          )}
+        </>
       )}
     </section>
   )
