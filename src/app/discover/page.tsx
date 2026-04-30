@@ -7,6 +7,8 @@ import Link from 'next/link'
 import Nav from '@/components/nav'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
+import { getScriptStats } from '@/lib/script-stats'
 
 function svc() {
   return createServerClient(
@@ -46,6 +48,9 @@ export default async function DiscoverPage() {
     profiles: { handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null } | null
   }
   const scripts = (rows as Row[] | null) || []
+
+  // Batch-fetch community stats for the recent scripts
+  const stats = await getScriptStats(scripts.map((s) => s.id))
 
   // Most prolific writers — top by count of public scripts. Computed
   // client-side from the same recent-posts pull plus a wider count query
@@ -144,34 +149,22 @@ export default async function DiscoverPage() {
             {scripts.length === 0 ? (
               <Empty>No public scripts yet.</Empty>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {scripts.map((s) => {
                   const ev = s.script_evaluations?.[0]
-                  const score = ev?.weighted_score != null ? Math.round(Number(ev.weighted_score)) : null
-                  const handle = s.profiles?.handle
-                  return (
-                    <div key={s.id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
-                      <Link href={ev ? `/report/${ev.id}` : '#'} className="flex items-center gap-3 flex-1 min-w-0">
-                        {score != null ? (
-                          <div className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-white font-extrabold text-[17px]" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>{score}</div>
-                        ) : (
-                          <div className="shrink-0 w-12 h-12 rounded-lg bg-gray-100" />
-                        )}
-                        <div className="flex-1 min-w-0">
-                          <div className="font-bold text-gray-900 truncate" style={{ fontFamily: 'Georgia, serif', fontSize: 15 }}>{s.title}</div>
-                          <div className="text-[12px] text-gray-500 mt-0.5 truncate">{s.declared_format || '—'}</div>
-                        </div>
-                      </Link>
-                      {handle && (
-                        <Link
-                          href={`/w/${handle}`}
-                          className="text-[12px] text-purple-700 font-semibold hover:underline shrink-0"
-                        >
-                          @{handle}
-                        </Link>
-                      )}
-                    </div>
-                  )
+                  const st = stats.get(s.id)
+                  const cardData: ScriptCardData = {
+                    submission_id: s.id,
+                    evaluation_id: ev?.id ?? null,
+                    title: s.title,
+                    format: s.declared_format,
+                    selznick_score: ev?.weighted_score ?? null,
+                    writer_handle: s.profiles?.handle ?? null,
+                    writer_name: s.profiles?.full_name ?? null,
+                    review_count: st?.reviewCount ?? 0,
+                    avg_peer_score: st?.avgPeerScore ?? null,
+                  }
+                  return <ScriptCard key={s.id} s={cardData} density="list" />
                 })}
               </div>
             )}

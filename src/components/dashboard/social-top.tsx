@@ -8,6 +8,8 @@
 
 import Link from 'next/link'
 import { createServerClient } from '@supabase/ssr'
+import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
+import { getScriptStats } from '@/lib/script-stats'
 
 interface ProfileShape {
   id: string
@@ -309,24 +311,32 @@ export async function SocialFeedSection({ user }: { user: { id: string } }) {
         <SectionLabel inline>Discover</SectionLabel>
         <Link href="/discover" className="text-[12px] font-bold text-purple-700 hover:underline">All scripts →</Link>
       </div>
-      <div className="mb-8 flex flex-col gap-2">
-        {((discoverScripts as any[]) || []).map((s) => {
-          const ev = s.script_evaluations?.[0]
-          const score = ev?.weighted_score != null ? Math.round(Number(ev.weighted_score)) : null
-          return (
-            <Link key={s.id} href={ev ? `/report/${ev.id}` : '#'} className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition-colors">
-              <div className="w-10 h-10 rounded-md text-white flex items-center justify-center font-extrabold text-[15px]" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>{score ?? '—'}</div>
-              <div className="flex-1 min-w-0">
-                <div className="font-bold text-[14px] truncate" style={{ fontFamily: 'Georgia, serif' }}>{s.title}</div>
-                <div className="text-[11.5px] text-gray-500 mt-0.5 truncate">
-                  {s.declared_format || '—'}
-                  {s.profiles?.handle && <> · <span className="text-purple-700 font-semibold">@{s.profiles.handle}</span></>}
-                </div>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
+      <DiscoverPreview rows={(discoverScripts as any[]) || []} />
+    </div>
+  )
+}
+
+async function DiscoverPreview({ rows }: { rows: any[] }) {
+  const stats = await getScriptStats(rows.map((r) => r.id))
+  return (
+    <div className="mb-8 flex flex-col gap-1">
+      {rows.map((s) => {
+        const ev = s.script_evaluations?.[0]
+        if (!ev) return null
+        const st = stats.get(s.id)
+        const cardData: ScriptCardData = {
+          submission_id: s.id,
+          evaluation_id: ev.id,
+          title: s.title,
+          format: s.declared_format,
+          selznick_score: ev.weighted_score,
+          writer_handle: s.profiles?.handle ?? null,
+          writer_name: null,
+          review_count: st?.reviewCount ?? 0,
+          avg_peer_score: st?.avgPeerScore ?? null,
+        }
+        return <ScriptCard key={s.id} s={cardData} density="compact" />
+      })}
     </div>
   )
 }
