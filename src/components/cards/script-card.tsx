@@ -180,7 +180,6 @@ function WriterMiniCard({
     <Link
       href={`/w/${handle}`}
       prefetch={false}
-      onClick={(e) => e.stopPropagation()}
       className="relative z-10 pointer-events-auto mt-3 flex items-center gap-2 px-2 py-1.5 rounded-lg border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-colors"
       title={`Open ${display}'s profile`}
     >
