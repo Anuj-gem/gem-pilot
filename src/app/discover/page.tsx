@@ -65,7 +65,10 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     .eq('status', 'completed')
     .limit(200)
   if (format !== 'all') {
-    baseQuery = baseQuery.eq('declared_format', format)
+    // Stored DB values are "Feature film" and "Series" (capitalized, full
+    // string). Map our URL slugs to the actual values.
+    const dbValue = format === 'feature' ? 'Feature film' : 'Series'
+    baseQuery = baseQuery.eq('declared_format', dbValue)
   }
   const { data: rows } = await baseQuery
 
