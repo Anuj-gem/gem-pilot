@@ -26,7 +26,6 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { ActivityStrip, type ActivityEvent } from '@/components/discover/activity-strip'
 import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
 import Link from 'next/link'
@@ -259,48 +258,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     }
   }
 
-  // ---------- ACTIVITY STRIP (publishes + reviews) ----------
-  const feedScriptById = new Map(feedScripts.map((s) => [s.id, s]))
-  const events: ActivityEvent[] = []
-  for (const c of feedCards.slice(0, 8)) {
-    const sub = feedScriptById.get(c.submission_id)
-    if (!sub) continue
-    events.push({
-      kind: 'publish',
-      ts: new Date(sub.created_at).getTime(),
-      title: c.title,
-      evaluation_id: c.evaluation_id,
-      writerHandle: c.writer_handle,
-      writerName: c.writer_name,
-      writerAvatar: c.writer_avatar_url ?? null,
-    })
-  }
-  const { data: revRows } = await service
-    .from('peer_reviews')
-    .select('id, submission_id, created_at, reviewer:profiles!peer_reviews_reviewer_id_fkey(handle, full_name, avatar_url)')
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-    .limit(8)
-  type ReviewRow = {
-    id: string; submission_id: string; created_at: string
-    reviewer: { handle: string | null; full_name: string | null; avatar_url: string | null } | null
-  }
-  for (const r of (revRows as unknown as ReviewRow[] | null) || []) {
-    const sub = feedScripts.find((s) => s.id === r.submission_id)
-    const ev = sub ? feedEvalBySub.get(sub.id) : null
-    events.push({
-      kind: 'review',
-      ts: new Date(r.created_at).getTime(),
-      title: sub?.title || 'a script',
-      evaluation_id: ev?.id ?? null,
-      reviewerHandle: r.reviewer?.handle ?? null,
-      reviewerName: r.reviewer?.full_name ?? null,
-      writerAvatar: r.reviewer?.avatar_url ?? null,
-    })
-  }
-  events.sort((a, b) => b.ts - a.ts)
-  const topEvents = events.slice(0, 8)
-
   const isProcessing = visible.some((s) => s.status === 'processing')
 
   return (
@@ -316,8 +273,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
             Welcome to GEM. Your evaluation is queued — you can scroll the community while you wait.
           </div>
         )}
-
-        <ActivityStrip events={topEvents} />
 
         <div>
           <section className="min-w-0 space-y-10">
@@ -387,7 +342,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                   <div>
                     <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-gray-500 mb-1">Community</p>
                     <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                      Latest community
+                      Latest from the GEM community
                     </h2>
                   </div>
                   <Link href="/discover" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
