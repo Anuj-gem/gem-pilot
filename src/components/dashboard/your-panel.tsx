@@ -210,16 +210,9 @@ function ProcessingCard({ script }: { script: YourPanelScript }) {
       className="rounded-xl border p-4 relative overflow-hidden"
       style={{ background: CARD.bg, borderColor: CARD.border }}
     >
-      {/* Animated shimmer band */}
-      <div
-        className="absolute inset-x-0 top-0 h-0.5 overflow-hidden"
-      >
-        <div
-          className="h-full w-1/3 animate-[shimmer_1.6s_ease-in-out_infinite]"
-          style={{ background: 'linear-gradient(90deg,transparent,#7c3aed,transparent)' }}
-        />
-      </div>
-      <style>{`@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }`}</style>
+      {/* Soft pulsing top accent — uses Tailwind animate-pulse instead of a
+          custom keyframe so this stays a clean RSC render. */}
+      <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-pulse" />
 
       <div className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.14em] font-bold text-purple-700 mb-2">
         <Loader2 size={12} className="animate-spin" />

@@ -192,11 +192,14 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .slice(0, 24)
 
   // ---------- ACTIVITY STRIP (publishes + reviews) ----------
+  const feedScriptById = new Map(feedScripts.map((s) => [s.id, s]))
   const events: ActivityEvent[] = []
   for (const c of feedCards.slice(0, 8)) {
+    const sub = feedScriptById.get(c.submission_id)
+    if (!sub) continue
     events.push({
       kind: 'publish',
-      ts: new Date(feedScripts.find((s) => s.id === c.submission_id)!.created_at).getTime(),
+      ts: new Date(sub.created_at).getTime(),
       title: c.title,
       evaluation_id: c.evaluation_id,
       writerHandle: c.writer_handle,
