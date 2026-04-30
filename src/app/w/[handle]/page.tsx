@@ -183,26 +183,27 @@ export default async function PublicProfile({ params }: PageProps) {
             <div className="space-y-3">
               {publicScripts.map((s) => {
                 const ev = s.script_evaluations?.[0]
-                const score = ev?.weighted_score != null ? Math.round(Number(ev.weighted_score)) : null
+                if (!ev) return null
+                const score = ev.weighted_score != null ? Math.round(Number(ev.weighted_score)) : null
                 return (
                   <Link
                     key={s.id}
-                    href={ev ? `/report/${ev.id}` : '#'}
-                    className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 hover:bg-gray-50 transition-colors"
+                    href={`/report/${ev.id}`}
+                    className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 hover:bg-purple-50/40 hover:border-purple-200 transition-colors cursor-pointer"
                   >
                     {score != null && (
-                      <div className="shrink-0 flex flex-col items-center justify-center rounded-lg" style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.30)', minWidth: 52, padding: '6px 10px' }}>
-                        <span className="text-[8px] uppercase tracking-[0.14em] font-bold text-purple-700">Score</span>
-                        <span className="text-lg font-bold text-gray-900 tabular-nums leading-none mt-0.5">{score}</span>
+                      <div className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-white font-extrabold text-[16px]" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>
+                        {score}
                       </div>
                     )}
                     <div className="flex-1 min-w-0">
                       <div className="text-[15px] font-bold text-gray-900 truncate" style={{ fontFamily: 'Georgia, serif' }}>{s.title}</div>
                       <div className="text-xs text-gray-500 mt-0.5">
                         {s.declared_format ?? '—'}
-                        {ev?.tier && <span> · {ev.tier}</span>}
+                        {ev.tier && <span> · {ev.tier}</span>}
                       </div>
                     </div>
+                    <span className="text-[11px] font-semibold text-purple-700 shrink-0">Open →</span>
                   </Link>
                 )
               })}
