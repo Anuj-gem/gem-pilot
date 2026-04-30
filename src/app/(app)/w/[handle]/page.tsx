@@ -41,22 +41,47 @@ export default async function PublicProfile({ params }: PageProps) {
   const isOwner = viewer?.id === profile.id
 
   // Public scripts (Discover-published) — used as the portfolio surface.
-  const { data: scripts } = await service
+  // Two-pass query: pull submissions first, then evaluations in a batch.
+  // The embedded `script_evaluations(...)` join was silently dropping
+  // scripts because PostgREST has multiple FK paths from the eval table
+  // to submissions (active + pending tables) and the embedded shape
+  // came back empty for some scripts. Anuj 2026-04-30 fix.
+  const { data: subs } = await service
     .from('script_submissions')
-    .select(`
-      id, title, created_at, declared_format,
-      script_evaluations ( id, weighted_score, tier, evaluation )
-    `)
+    .select('id, title, created_at, declared_format')
     .eq('user_id', profile.id)
     .eq('is_public', true)
     .eq('status', 'completed')
     .order('created_at', { ascending: false })
+  type SubRow = { id: string; title: string; created_at: string; declared_format: string | null }
+  const subRows = (subs as SubRow[] | null) || []
+
+  type EvalRow = { id: string; submission_id: string; weighted_score: number | null; tier: string | null; evaluation: unknown }
+  const evalBySub = new Map<string, EvalRow>()
+  if (subRows.length > 0) {
+    const { data: evs } = await service
+      .from('script_evaluations')
+      .select('id, submission_id, weighted_score, tier, evaluation')
+      .in('submission_id', subRows.map((s) => s.id))
+    for (const e of (evs as EvalRow[] | null) || []) evalBySub.set(e.submission_id, e)
+  }
 
   type Script = {
     id: string; title: string; created_at: string; declared_format: string | null
-    script_evaluations: { id: string; weighted_score: number | null; tier: string | null; evaluation: any }[] | null
+    script_evaluations: { id: string; weighted_score: number | null; tier: string | null; evaluation: unknown }[] | null
   }
-  const publicScripts = (scripts as Script[] | null) || []
+  const publicScripts: Script[] = subRows.map((s) => {
+    const ev = evalBySub.get(s.id)
+    return {
+      id: s.id,
+      title: s.title,
+      created_at: s.created_at,
+      declared_format: s.declared_format,
+      script_evaluations: ev
+        ? [{ id: ev.id, weighted_score: ev.weighted_score, tier: ev.tier, evaluation: ev.evaluation }]
+        : null,
+    }
+  })
 
   // Batch script community stats (review count + avg peer score)
   const scriptStats = await getScriptStats(publicScripts.map((s) => s.id))
