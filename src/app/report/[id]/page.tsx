@@ -257,12 +257,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     viewerIsReviewer = viewerProfile?.is_reviewer === true
   }
 
-  // Peer reviews — fetched for any viewer; the section component decides
-  // visibility based on whether there are reviews and whether the viewer
-  // is a reviewer themselves (Anuj 2026-04-29 peer-reviews v0.1).
+  // Peer reviews — fetched for any viewer.
   const { data: peerReviewsRaw } = await serviceClient
     .from('peer_reviews')
-    .select('id, score, body, suggestion, created_at, updated_at, reviewer_id, profiles!peer_reviews_reviewer_id_fkey ( full_name )')
+    .select('id, score, body, suggestion, created_at, updated_at, reviewer_id, profiles!peer_reviews_reviewer_id_fkey ( full_name, handle, headline, avatar_url )')
     .eq('submission_id', submission.id)
     .is('deleted_at', null)
     .order('created_at', { ascending: false })
@@ -271,6 +269,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     created_at: r.created_at, updated_at: r.updated_at,
     reviewer_id: r.reviewer_id,
     reviewer_name: r.profiles?.full_name ?? null,
+    reviewer_handle: r.profiles?.handle ?? null,
+    reviewer_headline: r.profiles?.headline ?? null,
+    reviewer_avatar_url: r.profiles?.avatar_url ?? null,
   }))
 
   // Pending invites count (visible to owner only). Anuj 2026-04-29 v0.2.
