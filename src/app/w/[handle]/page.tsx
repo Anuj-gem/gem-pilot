@@ -219,13 +219,31 @@ export default async function PublicProfile({ params }: PageProps) {
 
         {/* Stats */}
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-10">
-          <Stat label="Followers" value={stats.followers} />
-          <Stat label="Following" value={stats.following} />
+          <Stat label="Followers" value={stats.followers} href={`/w/${profile.handle}/followers`} />
+          <Stat label="Following" value={stats.following} href={`/w/${profile.handle}/following`} />
           <Stat label="Scripts" value={stats.publicScripts} />
           <Stat label="Top Selznick" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
           <Stat label="Community avg" value={stats.communityAvg != null ? Math.round(stats.communityAvg) : '—'} />
           <Stat label="Reviews in" value={stats.reviewsReceived} />
         </div>
+
+        {/* Earned tiers — derived from current stats */}
+        {(() => {
+          const badges: { label: string; cls: string }[] = []
+          if (stats.publicScripts >= 1) badges.push({ label: 'Writer', cls: 'bg-purple-50 text-purple-700 border-purple-200' })
+          if (stats.publicScripts >= 5) badges.push({ label: 'Prolific', cls: 'bg-purple-100 text-purple-800 border-purple-300' })
+          if (stats.communityAvg != null && stats.communityAvg >= 80) badges.push({ label: 'Strong community score', cls: 'bg-amber-50 text-amber-800 border-amber-200' })
+          if (stats.reviewsWritten >= 1) badges.push({ label: 'Reviewer', cls: 'bg-emerald-50 text-emerald-800 border-emerald-200' })
+          if (stats.reviewsWritten >= 10) badges.push({ label: 'Top reviewer', cls: 'bg-emerald-100 text-emerald-900 border-emerald-300' })
+          if (stats.followers >= 10) badges.push({ label: 'Followed', cls: 'bg-pink-50 text-pink-800 border-pink-200' })
+          return badges.length ? (
+            <div className="flex flex-wrap gap-2 -mt-7 mb-10">
+              {badges.map((b) => (
+                <span key={b.label} className={`text-[10px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-full border ${b.cls}`}>{b.label}</span>
+              ))}
+            </div>
+          ) : null
+        })()}
 
         {/* Public scripts */}
         <Section title="Scripts">
@@ -313,12 +331,22 @@ export default async function PublicProfile({ params }: PageProps) {
   )
 }
 
-function Stat({ label, value }: { label: string; value: number | string | null }) {
-  return (
-    <div className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-center">
+function Stat({ label, value, href }: { label: string; value: number | string | null; href?: string }) {
+  const inner = (
+    <>
       <div className="text-2xl font-bold text-gray-900 tabular-nums">{value ?? '—'}</div>
       <div className="text-[10px] uppercase tracking-[0.14em] font-bold text-gray-500 mt-1">{label}</div>
-    </div>
+    </>
+  )
+  if (href) {
+    return (
+      <Link href={href} className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-center hover:bg-gray-50 hover:border-purple-200 transition-colors">
+        {inner}
+      </Link>
+    )
+  }
+  return (
+    <div className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-center">{inner}</div>
   )
 }
 

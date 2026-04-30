@@ -45,7 +45,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
-import { SocialDashboardTop, SocialFeedSection } from '@/components/dashboard/social-top'
+import { SocialDashboardTop, SocialFeedSection, SuggestedWriters } from '@/components/dashboard/social-top'
 import {
   IndustryActivityButton,
   type IndustryActivityRow,
@@ -411,6 +411,7 @@ export default async function DashboardPage({
             scripts so the personal stuff is primary. Anuj 2026-04-29 v0.4. */}
         <div className="mt-2">
           <SocialFeedSection user={{ id: user.id }} />
+          <SuggestedWriters user={{ id: user.id }} />
         </div>
 
         {/* Slim Pro upsell footer — only after the writer has used their

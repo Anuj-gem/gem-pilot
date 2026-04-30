@@ -316,6 +316,58 @@ export async function SocialFeedSection({ user }: { user: { id: string } }) {
   )
 }
 
+// Suggested writers — three writers the viewer doesn't follow yet.
+export async function SuggestedWriters({ user }: { user: { id: string } }) {
+  const service = svc()
+  const { data: followsRows } = await service
+    .from('follows').select('followee_id').eq('follower_id', user.id)
+  const exclude = new Set<string>([user.id, ...((followsRows || []).map((r: any) => r.followee_id))])
+  const { data: candidates } = await service
+    .from('script_submissions')
+    .select('user_id, profiles ( id, handle, full_name, headline, avatar_url )')
+    .eq('is_public', true)
+    .eq('status', 'completed')
+    .order('created_at', { ascending: false })
+    .limit(30)
+  const seen = new Set<string>()
+  const suggested: Array<{ id: string; handle: string | null; full_name: string | null; headline: string | null; avatar_url: string | null }> = []
+  for (const r of (candidates as any[]) || []) {
+    if (!r.profiles?.id) continue
+    if (exclude.has(r.profiles.id) || seen.has(r.profiles.id)) continue
+    seen.add(r.profiles.id)
+    suggested.push({
+      id: r.profiles.id, handle: r.profiles.handle, full_name: r.profiles.full_name,
+      headline: r.profiles.headline, avatar_url: r.profiles.avatar_url,
+    })
+    if (suggested.length >= 3) break
+  }
+  if (suggested.length === 0) return null
+  return (
+    <div className="mt-2 mb-8">
+      <SectionLabel>Writers to follow</SectionLabel>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {suggested.map((w) => {
+          const ini = (w.full_name || w.handle || '·').split(/\s+/).slice(0,2).map((p) => p[0]?.toUpperCase() ?? '').join('') || '·'
+          return (
+            <Link key={w.id} href={w.handle ? `/w/${w.handle}` : '#'} className="rounded-xl border border-gray-200 bg-white p-3 hover:border-purple-200 hover:bg-purple-50/30 transition-colors flex items-center gap-3">
+              {w.avatar_url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={w.avatar_url} alt="" className="w-11 h-11 rounded-full object-cover bg-gray-100 shrink-0" />
+              ) : (
+                <div className="w-11 h-11 rounded-full text-white flex items-center justify-center font-bold text-[13px] shrink-0" style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}>{ini}</div>
+              )}
+              <div className="flex-1 min-w-0">
+                <div className="font-bold text-[13.5px] text-gray-900 truncate">{w.full_name || w.handle}</div>
+                <div className="text-[11px] text-gray-500 truncate">{w.headline || `@${w.handle}`}</div>
+              </div>
+            </Link>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 async function DiscoverPreview({ rows }: { rows: any[] }) {
   const stats = await getScriptStats(rows.map((r) => r.id))
   return (
