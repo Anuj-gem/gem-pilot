@@ -256,32 +256,36 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
           className="absolute inset-0 z-0 rounded-xl"
         />
 
-        <div className="relative flex flex-col pointer-events-none p-5">
-          {/* Status pill (owner only) + GEM SCORE pill.
-              Score pill always reads "GEM SCORE 72" — never truncate
-              the label (Anuj 2026-04-30, hard rule). */}
-          <div className="flex items-start justify-between gap-2 mb-3 min-h-[24px]">
-            {isOwner ? (
-              isPublic ? (
-                <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-green-800 bg-green-100 border border-green-200 rounded-full px-2 py-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                  Published
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-gray-600 bg-white border border-gray-200 rounded-full px-2 py-0.5">
-                  Private
-                </span>
-              )
-            ) : (
-              <span />
-            )}
-            {score != null && <ScorePill score={score} />}
+        {/* Top-corner overlays — score top-right, owner status pill
+            top-left if any. Floating so the title can start at the
+            top of the card and use the full width. (Anuj 2026-04-30.)
+            Both sit above the overlay-link via z-10. */}
+        {score != null && (
+          <div className="absolute top-3 right-3 z-10 pointer-events-none">
+            <ScorePill score={score} />
           </div>
+        )}
+        {isOwner && (
+          <div className="absolute top-3 left-3 z-10 pointer-events-none">
+            {isPublic ? (
+              <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-green-800 bg-green-100 border border-green-200 rounded-full px-2 py-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                Published
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-gray-600 bg-white border border-gray-200 rounded-full px-2 py-0.5">
+                Private
+              </span>
+            )}
+          </div>
+        )}
 
-          {/* Title — full width, generous leading. */}
+        <div className="relative flex flex-col pointer-events-none p-5">
+          {/* Title at very top of the card. Right-padded to leave room
+              for the floating score pill on the first line. */}
           <div
             className="font-bold text-gray-900 leading-[1.2] line-clamp-2"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em' }}
+            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em', paddingRight: '90px' }}
           >
             {s.title}
           </div>
