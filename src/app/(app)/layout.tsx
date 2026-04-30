@@ -74,35 +74,61 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     // only (so the rail's number stays consistent with the user's
     // library). Anuj 2026-04-30 cleanup.
     service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null).eq('status', 'completed'),
-    // Own most-recent publishes — for the rail's "Recent activity" list.
+    // Own most-recent publishes — bare submissions, no embedded join
+    // (PostgREST chokes on multi-FK ambiguity to script_evaluations).
     service.from('script_submissions')
-      .select('id, title, created_at, script_evaluations(id)')
+      .select('id, title, created_at')
       .eq('user_id', user.id)
       .eq('is_public', true)
       .eq('status', 'completed')
       .order('created_at', { ascending: false })
       .limit(3),
-    // Own most-recent reviews given.
+    // Own most-recent reviews given — bare rows, two-pass eval lookup.
     service.from('peer_reviews')
-      .select('id, created_at, submission_id, script_submissions(title, script_evaluations(id))')
+      .select('id, created_at, submission_id')
       .eq('reviewer_id', user.id)
       .is('deleted_at', null)
       .order('created_at', { ascending: false })
       .limit(3),
   ])
 
-  // Merge into a single recent-activity list, top 3.
+  type PubRow = { id: string; title: string; created_at: string }
+  type RevRow = { id: string; created_at: string; submission_id: string }
+  const pubRows = (ownPubs as PubRow[] | null) || []
+  const revRows = (ownReviews as RevRow[] | null) || []
+
+  // Second pass: resolve eval IDs + (for reviews) submission titles.
+  const submissionIdsForActivity = Array.from(new Set([
+    ...pubRows.map((p) => p.id),
+    ...revRows.map((r) => r.submission_id),
+  ]))
+  const evIdBySub = new Map<string, string>()
+  const titleBySub = new Map<string, string>()
+  if (submissionIdsForActivity.length > 0) {
+    const [{ data: evs }, { data: subs }] = await Promise.all([
+      service.from('script_evaluations').select('id, submission_id').in('submission_id', submissionIdsForActivity),
+      service.from('script_submissions').select('id, title').in('id', submissionIdsForActivity),
+    ])
+    for (const e of (evs as Array<{ id: string; submission_id: string }> | null) || []) {
+      evIdBySub.set(e.submission_id, e.id)
+    }
+    for (const s of (subs as Array<{ id: string; title: string }> | null) || []) {
+      titleBySub.set(s.id, s.title)
+    }
+  }
+
   type ActivityItem = { kind: 'publish' | 'review'; ts: number; title: string; href: string }
   const activity: ActivityItem[] = []
-  for (const p of (ownPubs as Array<{ id: string; title: string; created_at: string; script_evaluations: { id: string }[] | null }> | null) || []) {
-    const evId = p.script_evaluations?.[0]?.id
+  for (const p of pubRows) {
+    const evId = evIdBySub.get(p.id)
     if (!evId) continue
     activity.push({ kind: 'publish', ts: new Date(p.created_at).getTime(), title: p.title, href: `/report/${evId}` })
   }
-  for (const r of (ownReviews as Array<{ id: string; created_at: string; submission_id: string; script_submissions: { title: string; script_evaluations: { id: string }[] | null } | null }> | null) || []) {
-    const evId = r.script_submissions?.script_evaluations?.[0]?.id
-    if (!evId || !r.script_submissions) continue
-    activity.push({ kind: 'review', ts: new Date(r.created_at).getTime(), title: r.script_submissions.title, href: `/report/${evId}` })
+  for (const r of revRows) {
+    const evId = evIdBySub.get(r.submission_id)
+    const title = titleBySub.get(r.submission_id) || 'a script'
+    if (!evId) continue
+    activity.push({ kind: 'review', ts: new Date(r.created_at).getTime(), title, href: `/report/${evId}` })
   }
   activity.sort((a, b) => b.ts - a.ts)
   const recentActivity = activity.slice(0, 3)
