@@ -94,7 +94,6 @@ function WriterLink({
     <Link
       href={`/w/${handle}`}
       prefetch={false}
-      onClick={(e) => e.stopPropagation()}
       className={`relative z-10 inline-flex items-center gap-1.5 text-[12px] font-semibold hover:underline pointer-events-auto ${colorClass}`}
       style={ink ? { color: ink } : undefined}
     >
