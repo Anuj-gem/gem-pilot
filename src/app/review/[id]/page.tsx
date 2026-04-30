@@ -43,14 +43,27 @@ export default async function ReviewPage({ params }: PageProps) {
     redirect(`/login?next=${encodeURIComponent(`/review/${id}`)}`)
   }
 
-  // Reviewer gate
+  // Reviewer gate — allow if global is_reviewer OR the user has an
+  // accepted/completed invite for this specific script (Anuj 2026-04-29 v0.2).
   const { data: profile } = await supabase
     .from('profiles')
     .select('is_reviewer, full_name')
     .eq('id', user.id)
     .single<{ is_reviewer: boolean; full_name: string | null }>()
 
+  let hasInvite = false
   if (!profile?.is_reviewer) {
+    const { data: invite } = await supabase
+      .from('review_invites')
+      .select('id')
+      .eq('submission_id', id)
+      .eq('invited_user_id', user.id)
+      .in('status', ['accepted', 'completed'])
+      .maybeSingle<{ id: string }>()
+    hasInvite = !!invite
+  }
+
+  if (!profile?.is_reviewer && !hasInvite) {
     return (
       <div className="min-h-screen bg-white">
         <Nav />
@@ -221,7 +234,7 @@ export default async function ReviewPage({ params }: PageProps) {
         <ReviewForm
           submissionId={submission.id}
           existing={existingReview ?? null}
-          reviewerName={profile.full_name ?? 'You'}
+          reviewerName={profile?.full_name ?? 'You'}
         />
       </main>
     </div>

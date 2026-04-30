@@ -46,6 +46,7 @@ import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { PeerReviews } from '@/components/report/peer-reviews'
+import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
@@ -271,6 +272,30 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     reviewer_id: r.reviewer_id,
     reviewer_name: r.profiles?.full_name ?? null,
   }))
+
+  // Pending invites count (visible to owner only). Anuj 2026-04-29 v0.2.
+  let pendingInviteCount = 0
+  let viewerHasInvite = false
+  if (user) {
+    if (isOwner) {
+      const { count } = await serviceClient
+        .from('review_invites')
+        .select('id', { count: 'exact', head: true })
+        .eq('submission_id', submission.id)
+        .in('status', ['pending', 'accepted'])
+      pendingInviteCount = count ?? 0
+    }
+    // Has the viewer been invited to this specific script?
+    const { data: viewerInvite } = await serviceClient
+      .from('review_invites')
+      .select('id')
+      .eq('submission_id', submission.id)
+      .eq('invited_user_id', user.id)
+      .in('status', ['accepted', 'completed'])
+      .maybeSingle<{ id: string }>()
+    viewerHasInvite = !!viewerInvite
+  }
+  const viewerCanReview = viewerIsReviewer || viewerHasInvite
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
   const locked = !ownerIsSubscribed
@@ -1282,15 +1307,30 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
       </div>
 
+      {/* Invite a Reviewer — visible to script owner only (Anuj 2026-04-29 v0.2). */}
+      {isOwner && (
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-8 flex items-center justify-between gap-3">
+          <div className="text-sm text-gray-600">
+            <span className="font-semibold text-gray-900">Want a real read?</span>{' '}
+            Invite a friend, peer, or mentor to leave a review.
+          </div>
+          <InviteReviewerButton
+            submissionId={submission.id}
+            pendingCount={pendingInviteCount}
+          />
+        </div>
+      )}
+
       {/* Peer reviews — community Reads on this script. Visible to any
-          authenticated viewer when reviews exist; reviewers also see a
-          "Review this script" CTA. (Anuj 2026-04-29 peer-reviews v0.1.) */}
+          authenticated viewer when reviews exist; reviewers (global or
+          per-script invitees) also see a "Review this script" CTA.
+          (Anuj 2026-04-29 peer-reviews v0.2.) */}
       {user && (
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <PeerReviews
             submissionId={submission.id}
             reviews={peerReviews}
-            viewerIsReviewer={viewerIsReviewer}
+            viewerIsReviewer={viewerCanReview}
             viewerId={user.id}
           />
         </div>

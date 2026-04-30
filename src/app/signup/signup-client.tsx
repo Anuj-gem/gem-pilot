@@ -33,9 +33,10 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect')
+  const prefilledEmail = searchParams.get('email') || ''
   const supabase = createClient()
   const [fullName, setFullName] = useState('')
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(prefilledEmail)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
