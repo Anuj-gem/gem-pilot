@@ -95,39 +95,48 @@ export default async function PublicProfile({ params }: PageProps) {
       <Nav />
       <main className="max-w-3xl mx-auto px-6 py-10">
         {/* Header */}
-        <header className="flex items-start gap-5 mb-8">
-          {profile.avatar_url ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={profile.avatar_url} alt="" className="w-24 h-24 rounded-full object-cover bg-gray-100 shrink-0" />
-          ) : (
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-white text-3xl font-bold shrink-0">
-              {initials}
-            </div>
-          )}
-          <div className="flex-1 min-w-0">
-            <h1 className="text-[26px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-              {displayName}
-              <span className="text-gray-400 text-[18px] font-normal ml-2">@{profile.handle}</span>
-            </h1>
-            {profile.headline && (
-              <p className="text-[15px] text-gray-700 mt-1.5 leading-snug">{profile.headline}</p>
+        <header className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
+          <div className="flex items-start gap-5">
+            {profile.avatar_url ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={profile.avatar_url} alt="" className="w-24 h-24 rounded-full object-cover bg-gray-100 shrink-0 ring-2 ring-purple-100" />
+            ) : (
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-white text-3xl font-bold shrink-0 ring-2 ring-purple-100">
+                {initials}
+              </div>
             )}
-            {profile.bio && (
-              <p className="text-[14px] text-gray-600 mt-3 leading-relaxed whitespace-pre-wrap">{profile.bio}</p>
-            )}
-            <div className="flex items-center gap-3 mt-3 flex-wrap">
-              {profile.imdb_url && (
-                <a href={profile.imdb_url} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-amber-600 hover:text-amber-800">
-                  IMDb ↗
-                </a>
+            <div className="flex-1 min-w-0">
+              <h1 className="text-[28px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                {displayName}
+              </h1>
+              <div className="text-[14px] text-purple-700 font-mono mt-0.5">@{profile.handle}</div>
+              {profile.headline && (
+                <p className="text-[15px] text-gray-800 mt-3 leading-snug font-medium">{profile.headline}</p>
               )}
-              {isOwner && (
-                <Link href="/profile" className="text-xs font-semibold text-purple-700 hover:text-purple-900">
-                  Edit profile →
-                </Link>
-              )}
+              <div className="flex items-center gap-3 mt-3 flex-wrap">
+                {profile.imdb_url && (
+                  <a
+                    href={profile.imdb_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md hover:bg-amber-100"
+                  >
+                    IMDb ↗
+                  </a>
+                )}
+                {isOwner && (
+                  <Link href="/profile" className="text-xs font-semibold text-gray-500 hover:text-gray-900">
+                    Edit profile →
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
+          {profile.bio && (
+            <p className="text-[15px] text-gray-700 mt-5 leading-relaxed whitespace-pre-wrap border-t border-gray-100 pt-5">
+              {profile.bio}
+            </p>
+          )}
         </header>
 
         {/* Stats */}

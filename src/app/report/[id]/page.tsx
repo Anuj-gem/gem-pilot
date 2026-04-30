@@ -47,6 +47,7 @@ import { PublicContactCard } from '@/components/report/public-contact-card'
 import { SectionGate } from '@/components/report/section-gate'
 import { PeerReviews } from '@/components/report/peer-reviews'
 import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
+import { WriterCard } from '@/components/writer-card'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
@@ -96,7 +97,7 @@ interface V5Extras {
 }
 
 type SubmissionWithPrivacy = ScriptSubmission & {
-  profiles: { full_name: string; avatar_url: string | null } | null
+  profiles: { full_name: string; avatar_url: string | null; handle: string | null; headline: string | null } | null
   report_privacy?: ReportPrivacy | null
   contact_enabled?: boolean | null
   privacy_review_needed?: boolean | null
@@ -133,7 +134,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         id, user_id, title, filename, file_size, status, is_public, created_at,
         expires_at, declared_format, report_privacy, contact_enabled,
         privacy_review_needed, tags,
-        profiles ( full_name, avatar_url )
+        profiles ( full_name, avatar_url, handle, headline )
       )
     `)
     .eq('id', id)
@@ -562,6 +563,24 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             panel was removed on 2026-04-23 — too many conflicting controls
             when the modal already owns preset selection, custom toggles,
             contact settings, publish, and unpublish. */}
+
+        {/* Writer card — clickable link to /w/{handle}. Same component used
+            on review bylines so the visual language is consistent across the
+            social surface. (Anuj 2026-04-29 v0.3.) */}
+        {!isAnonymousSubmission && submission.profiles && (
+          <div className="mb-4">
+            <WriterCard
+              writer={{
+                id: submission.user_id ?? '',
+                full_name: submission.profiles.full_name,
+                handle: submission.profiles.handle,
+                headline: submission.profiles.headline,
+                avatar_url: submission.profiles.avatar_url,
+              }}
+              size="lg"
+            />
+          </div>
+        )}
 
         {/* HEADLINE / TOP CARD — always rendered. The top card (title +
             author + format + tags + posted date + headline) is the bare
