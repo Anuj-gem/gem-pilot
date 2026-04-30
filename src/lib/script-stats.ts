@@ -23,11 +23,15 @@ export async function getScriptStats(submissionIds: string[]): Promise<Map<strin
   const out = new Map<string, ScriptStats>()
   if (submissionIds.length === 0) return out
   const service = svc()
+  // Owner-hidden reviews are excluded from public stats — that's the
+  // cost the writer pays for hiding them ("Most reviewed" sorting and
+  // the public review count both ignore them). Anuj 2026-04-30 v0.7.
   const { data: rows } = await service
     .from('peer_reviews')
     .select('submission_id, score')
     .in('submission_id', submissionIds)
     .is('deleted_at', null)
+    .is('owner_hidden_at', null)
   const totals = new Map<string, { sum: number; n: number }>()
   for (const r of (rows as { submission_id: string; score: number }[] | null) || []) {
     const t = totals.get(r.submission_id) || { sum: 0, n: 0 }

@@ -27,25 +27,20 @@ export async function submitReview(input: SubmitInput) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { error: 'Not signed in.' }
 
-  // Reviewer gate — global is_reviewer OR accepted invite for this script.
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('is_reviewer')
-    .eq('id', user.id)
-    .single<{ is_reviewer: boolean }>()
-  let allowed = !!profile?.is_reviewer
-  if (!allowed) {
-    const { data: invite } = await supabase
-      .from('review_invites')
-      .select('id')
-      .eq('submission_id', submissionId)
-      .eq('invited_user_id', user.id)
-      .in('status', ['accepted', 'completed'])
-      .maybeSingle<{ id: string }>()
-    allowed = !!invite
+  // Open reviews (Anuj 2026-04-30 v0.7): any GEM member can review any
+  // public, completed submission they don't own. The writer can hide
+  // individual reviews from their report page; that's the safety valve.
+  const { data: subRow } = await supabase
+    .from('script_submissions')
+    .select('user_id, is_public, status')
+    .eq('id', submissionId)
+    .single<{ user_id: string; is_public: boolean; status: string }>()
+  if (!subRow) return { error: 'Script not found.' }
+  if (subRow.user_id === user.id) {
+    return { error: "You can't review your own script." }
   }
-  if (!allowed) {
-    return { error: 'You do not have reviewer permissions for this script.' }
+  if (!subRow.is_public || subRow.status !== 'completed') {
+    return { error: 'This script is not open for community review.' }
   }
 
   // Upsert: one active review per (submission_id, reviewer_id)
@@ -91,6 +86,37 @@ export async function deleteReview({ reviewId }: DeleteInput) {
     .update({ deleted_at: new Date().toISOString() })
     .eq('id', reviewId)
     .eq('reviewer_id', user.id)
+  if (error) return { error: error.message }
+  return { ok: true }
+}
+
+// Writer-side hide/unhide for reviews on their own scripts. The review
+// stays in the database (and on the reviewer's profile) — it just
+// disappears from the writer's report page AND stops contributing to
+// review counts / "Most reviewed" sorting. That's the cost of hiding.
+//
+// Anuj 2026-04-30 v0.7.
+interface HideInput { reviewId: string; hide: boolean }
+export async function setReviewHidden({ reviewId, hide }: HideInput) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Not signed in.' }
+
+  // Look up the review + its submission to verify the caller owns the script.
+  const { data: row } = await supabase
+    .from('peer_reviews')
+    .select('id, submission_id, script_submissions!inner ( user_id )')
+    .eq('id', reviewId)
+    .single<{ id: string; submission_id: string; script_submissions: { user_id: string } }>()
+  if (!row) return { error: 'Review not found.' }
+  if (row.script_submissions.user_id !== user.id) {
+    return { error: 'Only the script owner can hide reviews.' }
+  }
+
+  const { error } = await supabase
+    .from('peer_reviews')
+    .update({ owner_hidden_at: hide ? new Date().toISOString() : null })
+    .eq('id', reviewId)
   if (error) return { error: error.message }
   return { ok: true }
 }

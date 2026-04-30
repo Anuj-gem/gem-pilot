@@ -43,7 +43,7 @@ import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
-import { PublicContactCard } from '@/components/report/public-contact-card'
+import { CommunityReviewCta } from '@/components/report/community-review-cta'
 import { SectionGate } from '@/components/report/section-gate'
 import { PeerReviews } from '@/components/report/peer-reviews'
 import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
@@ -262,24 +262,34 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     viewerIsReviewer = viewerProfile?.is_reviewer === true
   }
 
-  // Peer reviews — fetched for any viewer.
+  // Peer reviews — fetched for any viewer. Owner-hidden reviews are
+  // filtered out for non-owners (and don't count toward review totals).
+  // The owner sees them dimmed with an "Unhide" affordance so they can
+  // reverse the choice. Anuj 2026-04-30 v0.7.
   const { data: peerReviewsRaw } = await serviceClient
     .from('peer_reviews')
-    .select('id, score, body, suggestion, created_at, updated_at, reviewer_id, profiles!peer_reviews_reviewer_id_fkey ( full_name, handle, headline, avatar_url )')
+    .select('id, score, body, suggestion, created_at, updated_at, reviewer_id, owner_hidden_at, profiles!peer_reviews_reviewer_id_fkey ( full_name, handle, headline, avatar_url )')
     .eq('submission_id', submission.id)
     .is('deleted_at', null)
     .order('created_at', { ascending: false })
-  const peerReviews = (peerReviewsRaw || []).map((r: any) => ({
-    id: r.id, score: r.score, body: r.body, suggestion: r.suggestion,
-    created_at: r.created_at, updated_at: r.updated_at,
-    reviewer_id: r.reviewer_id,
-    reviewer_name: r.profiles?.full_name ?? null,
-    reviewer_handle: r.profiles?.handle ?? null,
-    reviewer_headline: r.profiles?.headline ?? null,
-    reviewer_avatar_url: r.profiles?.avatar_url ?? null,
-  }))
+  const isOwnerForReviews = !!user && user.id === submission.user_id
+  const peerReviews = (peerReviewsRaw || [])
+    .filter((r: any) => isOwnerForReviews || !r.owner_hidden_at)
+    .map((r: any) => ({
+      id: r.id, score: r.score, body: r.body, suggestion: r.suggestion,
+      created_at: r.created_at, updated_at: r.updated_at,
+      reviewer_id: r.reviewer_id,
+      owner_hidden_at: r.owner_hidden_at,
+      reviewer_name: r.profiles?.full_name ?? null,
+      reviewer_handle: r.profiles?.handle ?? null,
+      reviewer_headline: r.profiles?.headline ?? null,
+      reviewer_avatar_url: r.profiles?.avatar_url ?? null,
+    }))
 
   // Pending invites count (visible to owner only). Anuj 2026-04-29 v0.2.
+  // Open reviews (Anuj 2026-04-30 v0.7): any signed-in non-owner can
+  // review a public completed script. The legacy invite/reviewer gate
+  // still allows reviews on private scripts via explicit invite.
   let pendingInviteCount = 0
   let viewerHasInvite = false
   if (user) {
@@ -301,7 +311,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .maybeSingle<{ id: string }>()
     viewerHasInvite = !!viewerInvite
   }
-  const viewerCanReview = viewerIsReviewer || viewerHasInvite
+  const isPublicCompleted = !!submission.is_public && submission.status === 'completed'
+  const viewerCanReview =
+    !!user &&
+    !isOwner &&
+    (viewerIsReviewer || viewerHasInvite || isPublicCompleted)
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
   const locked = !ownerIsSubscribed
@@ -1315,14 +1329,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             2026-04-28 — redundant for the owner who already sees their
             publish status + privacy controls at the top of the page. */}
 
-        {/* Non-owner: single contact card at the bottom. */}
-        {!isOwnerOrAdmin && !isAnonymousSubmission && (
-          <PublicContactCard
+        {/* Non-owner non-producer: open community-review CTA. Replaces
+            the legacy "Request to contact" card (Anuj 2026-04-30 v0.7).
+            Producers keep their dedicated outreach panel below. */}
+        {!isOwnerOrAdmin && !isAnonymousSubmission && !isViewerProducer && (
+          <CommunityReviewCta
             evaluationId={id}
+            submissionId={submission.id}
             writerName={writerName}
-            hiddenSectionCount={hiddenSectionCount}
-            contactEnabled={contactEnabled}
             isLoggedIn={!!user}
+            canReview={viewerCanReview}
+            reviewCount={peerReviews.length}
           />
         )}
 
@@ -1369,6 +1386,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             reviews={peerReviews}
             viewerIsReviewer={viewerCanReview}
             viewerId={user.id}
+            isOwner={isOwner}
           />
         </div>
       )}
