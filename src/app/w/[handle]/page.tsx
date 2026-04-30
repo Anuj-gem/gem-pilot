@@ -103,13 +103,48 @@ export default async function PublicProfile({ params }: PageProps) {
     const w = s.script_evaluations?.[0]?.weighted_score ?? null
     return w != null && w > m ? w : m
   }, 0)
+  // Community average across this writer's public scripts (only those with reviews)
+  const scoresWithReviews: number[] = []
+  for (const id of publicScripts.map((s) => s.id)) {
+    const st = scriptStats.get(id)
+    if (st && st.reviewCount > 0 && st.avgPeerScore != null) {
+      scoresWithReviews.push(st.avgPeerScore)
+    }
+  }
+  const writerCommunityAvg = scoresWithReviews.length
+    ? scoresWithReviews.reduce((a, b) => a + b, 0) / scoresWithReviews.length
+    : null
+  const totalReviewsReceived = publicScripts.reduce(
+    (sum, s) => sum + (scriptStats.get(s.id)?.reviewCount ?? 0),
+    0
+  )
   const stats = {
     publicScripts: publicScripts.length,
     topScore: topScore || null,
+    communityAvg: writerCommunityAvg,
+    reviewsReceived: totalReviewsReceived,
     reviewsWritten: reviewsWritten.length,
     followers: followerCount ?? 0,
     following: followingCount ?? 0,
   }
+
+  // Activity recency — last published + last review given
+  const lastPublishedAt = publicScripts[0]?.created_at ?? null
+  const lastReviewWrittenAt = reviewsWritten[0]?.created_at ?? null
+  function ago(iso: string | null): string | null {
+    if (!iso) return null
+    const d = Date.now() - new Date(iso).getTime()
+    const day = 86_400_000
+    const days = Math.floor(d / day)
+    if (days < 1) return 'today'
+    if (days === 1) return 'yesterday'
+    if (days < 7) return `${days} days ago`
+    if (days < 30) return `${Math.floor(days / 7)}w ago`
+    if (days < 365) return `${Math.floor(days / 30)}mo ago`
+    return `${Math.floor(days / 365)}y ago`
+  }
+  const lastPub = ago(lastPublishedAt)
+  const lastRev = ago(lastReviewWrittenAt)
 
   const displayName = profile.full_name || profile.handle || 'Anonymous writer'
   const initials = displayName.split(/\s+/).slice(0, 2).map((s) => s[0]?.toUpperCase() ?? '').join('') || '·'
@@ -169,15 +204,27 @@ export default async function PublicProfile({ params }: PageProps) {
               {profile.bio}
             </p>
           )}
+          {(lastPub || lastRev) && (
+            <div className="mt-4 pt-4 border-t border-gray-100 text-[12px] text-gray-500 flex items-center gap-3 flex-wrap">
+              {lastPub && (
+                <span><span className="font-semibold text-gray-700">Last published</span> {lastPub}</span>
+              )}
+              {lastPub && lastRev && <span className="text-gray-300">·</span>}
+              {lastRev && (
+                <span><span className="font-semibold text-gray-700">Last review given</span> {lastRev}</span>
+              )}
+            </div>
+          )}
         </header>
 
         {/* Stats */}
-        <div className="grid grid-cols-5 gap-3 mb-10">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-10">
           <Stat label="Followers" value={stats.followers} />
           <Stat label="Following" value={stats.following} />
           <Stat label="Scripts" value={stats.publicScripts} />
-          <Stat label="Top score" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
-          <Stat label="Reviews" value={stats.reviewsWritten} />
+          <Stat label="Top Selznick" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
+          <Stat label="Community avg" value={stats.communityAvg != null ? Math.round(stats.communityAvg) : '—'} />
+          <Stat label="Reviews in" value={stats.reviewsReceived} />
         </div>
 
         {/* Public scripts */}

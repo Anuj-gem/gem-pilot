@@ -510,7 +510,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       }}
                     />
                     {submission.is_public
-                      ? 'Visible to industry partners'
+                      ? 'Public to GEM members'
                       : 'Unpublished'}
                     {isAdmin && !isOwner && (
                       <span
@@ -1074,7 +1074,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </p>
                   {isOwner && !isScoreVisible(privacy) && (
                     <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
-                      You&apos;ve hidden this score from industry partners. Only
+                      You&apos;ve hidden this score from other GEM members. Only
                       you (and admins) see it here.
                     </p>
                   )}

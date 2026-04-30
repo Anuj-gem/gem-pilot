@@ -679,7 +679,7 @@ function HeroCard({
         )}
         {script.is_public && !showFreeBadge && (
           <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-4">
-            Visible to industry partners
+            Public to GEM members
           </p>
         )}
       </div>
@@ -834,7 +834,7 @@ function CompactCard({
     }
   } else if (script.is_public) {
     statusLabel = {
-      text: 'Visible to industry partners',
+      text: 'Public to GEM members',
       color: '#059669',
       bg: 'rgba(16,185,129,0.10)',
       border: 'rgba(16,185,129,0.35)',

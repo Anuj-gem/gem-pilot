@@ -49,7 +49,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
             </h1>
             <p className="text-[15px] text-gray-600 leading-relaxed">
               GEM is built around your public writer profile — it's how other
-              writers, reviewers, and industry partners find your work. Pick
+              writers and reviewers on GEM find your work. Pick
               a handle and a one-line headline to get going. The rest is
               optional and you can come back to it any time.
             </p>
