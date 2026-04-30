@@ -165,7 +165,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const topEvents = events.slice(0, 8)
 
   return (
-    <div className="min-h-screen" style={{ background: '#FAF7F1' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <Nav />
       <main className="max-w-6xl mx-auto px-5 py-8">
         <header className="mb-6">

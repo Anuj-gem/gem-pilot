@@ -46,9 +46,9 @@ export function ActivityStrip({ events }: { events: ActivityEvent[] }) {
     <div className="mb-6 rounded-xl border border-gray-200 bg-white/80 backdrop-blur px-3 py-2 overflow-x-auto">
       <div className="flex items-center gap-3 min-w-max">
         <span
-          className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-amber-700 pl-1 pr-2"
+          className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-purple-700 pl-1 pr-2"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
           Live
         </span>
         {events.map((e, i) => (

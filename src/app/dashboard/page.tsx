@@ -238,6 +238,67 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const myCards: ScriptCardData[] = allMyCards.slice(0, 3)
   const hasMoreScripts = allMyCards.length > myCards.length
 
+  // ---------- POSTS YOU'VE REVIEWED ----------
+  // Last 3 peer reviews the user has given. The submission for each
+  // review may not be public, but since the reviewer can see what they
+  // reviewed (and the submission owner explicitly let them in), the
+  // service client is fine here.
+  const { data: myReviewRows } = await service
+    .from('peer_reviews')
+    .select('id, submission_id, score, body, created_at')
+    .eq('reviewer_id', user.id)
+    .is('deleted_at', null)
+    .order('created_at', { ascending: false })
+    .limit(3)
+  type MyReviewRow = { id: string; submission_id: string; score: number | null; body: string | null; created_at: string }
+  const myReviews = (myReviewRows as MyReviewRow[] | null) || []
+  const reviewedSubIds = myReviews.map((r) => r.submission_id)
+
+  type ReviewedCard = ScriptCardData & { reviewedAt: string; myScore: number | null }
+  const reviewedCards: ReviewedCard[] = []
+  if (reviewedSubIds.length > 0) {
+    const [{ data: revSubs }, { data: revEvs }] = await Promise.all([
+      service.from('script_submissions').select('id, title, declared_format, user_id').in('id', reviewedSubIds),
+      service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', reviewedSubIds),
+    ])
+    const subById = new Map((revSubs as { id: string; title: string; declared_format: string | null; user_id: string }[] | null)?.map((s) => [s.id, s]) || [])
+    const writerIds = Array.from(new Set((revSubs as { user_id: string }[] | null)?.map((s) => s.user_id) || []))
+    const { data: writerRows } = await service.from('profiles').select('id, handle, full_name, avatar_url').in('id', writerIds)
+    const writerById = new Map((writerRows as { id: string; handle: string | null; full_name: string | null; avatar_url: string | null }[] | null)?.map((w) => [w.id, w]) || [])
+
+    type EvRow = { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }
+    const evBySub = new Map<string, EvRow>()
+    for (const e of ((revEvs as EvRow[] | null) || [])) evBySub.set(e.submission_id, e)
+
+    for (const r of myReviews) {
+      const sub = subById.get(r.submission_id)
+      const ev = evBySub.get(r.submission_id)
+      if (!sub || !ev) continue
+      const evJson = (ev.evaluation as Record<string, unknown> | null) || null
+      const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
+      const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
+      const logline = (fmt.logline_one_line as string | undefined) || (evJson?.positioning_hook as string | undefined) || null
+      const genre = (cls.genre_primary as string | undefined) || (fmt.genre_primary as string | undefined) || null
+      const wp = writerById.get(sub.user_id)
+      reviewedCards.push({
+        submission_id: sub.id,
+        evaluation_id: ev.id,
+        title: sub.title,
+        format: sub.declared_format,
+        genre,
+        logline,
+        selznick_score: ev.weighted_score,
+        writer_handle: wp?.handle ?? null,
+        writer_name: wp?.full_name ?? null,
+        writer_avatar_url: wp?.avatar_url ?? null,
+        review_count: 0,
+        avg_peer_score: null,
+        reviewedAt: r.created_at,
+        myScore: r.score,
+      })
+    }
+  }
+
   // ---------- ACTIVITY STRIP (publishes + reviews) ----------
   const feedScriptById = new Map(feedScripts.map((s) => [s.id, s]))
   const events: ActivityEvent[] = []
@@ -283,7 +344,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const isProcessing = myScripts.some((s) => s.status === 'processing')
 
   return (
-    <div className="min-h-screen" style={{ background: '#FAF7F1' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <Nav />
       <ProcessingPoller active={isProcessing} />
       {submissionIds.length > 0 && (
@@ -313,11 +374,9 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                       Your latest scripts
                     </h2>
                   </div>
-                  {profile?.handle && (
-                    <Link href={`/w/${profile.handle}`} prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-                      {hasMoreScripts ? `View all (${allMyCards.length}) →` : 'View profile →'}
-                    </Link>
-                  )}
+                  <Link href="/scripts" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
+                    {hasMoreScripts ? `View all (${allMyCards.length}) →` : 'My scripts →'}
+                  </Link>
                 </header>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {myCards.map((c) => (
@@ -327,12 +386,49 @@ export default async function DashboardPage({ searchParams }: PageProps) {
               </div>
             )}
 
+            {/* POSTS YOU'VE REVIEWED — last 3 + view-all link, with empty state */}
+            <div>
+              <header className="mb-4 flex items-end justify-between gap-3">
+                <div>
+                  <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-gray-500 mb-1">Reviews</p>
+                  <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                    Posts you&apos;ve reviewed
+                  </h2>
+                </div>
+                {reviewedCards.length > 0 && profile?.handle && (
+                  <Link href={`/w/${profile.handle}`} prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
+                    View all →
+                  </Link>
+                )}
+              </header>
+              {reviewedCards.length === 0 ? (
+                <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+                  <p className="text-[13.5px] text-gray-600 mb-3">
+                    You haven&apos;t reviewed any posts yet.
+                  </p>
+                  <Link
+                    href="/discover"
+                    prefetch={false}
+                    className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold rounded-lg bg-purple-600 hover:bg-purple-700 text-white px-3.5 py-2"
+                  >
+                    Find posts to review →
+                  </Link>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {reviewedCards.map((c) => (
+                    <ScriptCard key={c.submission_id} s={c} density="poster" />
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* LATEST COMMUNITY — slim sliver, not a wall */}
             {feedCards.length > 0 && (
               <div>
                 <header className="mb-4 flex items-end justify-between gap-3">
                   <div>
-                    <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-amber-700 mb-1">Community</p>
+                    <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-gray-500 mb-1">Community</p>
                     <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
                       Latest community
                     </h2>

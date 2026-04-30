@@ -56,13 +56,14 @@ function initialsOf(s: ScriptCardData) {
   return (src || '·').split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase() ?? '').join('') || '·'
 }
 
-// Single shared palette for every script card (no genre-based randomness).
-// Warm cream background that reads "editorial" / "magazine paper" — sits
-// nicely on the warm-cream page background without disappearing.
+// Single shared palette for every script card. Light, neutral, pastel —
+// no warm cream/amber. The page sits on a soft cool off-white; cards
+// render pure white with a hairline border so the score chip and title
+// can carry the visual weight (Anuj 2026-04-30).
 const CARD = {
-  bg:     '#FBF1DC',  // warm cream
-  border: '#ECDDB4',  // soft warm border
-  ink:    '#8a6a2e',  // warm chrome ink
+  bg:     '#FFFFFF',  // white
+  border: '#E5E7EB',  // gray-200
+  ink:    '#6B7280',  // gray-500 chrome text
 }
 
 /**
@@ -292,7 +293,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
               <span>·</span>
               <span><strong className="text-gray-800">{reviewCount}</strong> {reviewCount === 1 ? 'review' : 'reviews'}</span>
               {s.avg_peer_score != null && (
-                <span>· community <strong className="text-amber-700">{Math.round(s.avg_peer_score)}</strong></span>
+                <span>· community <strong className="text-gray-700">{Math.round(s.avg_peer_score)}</strong></span>
               )}
             </div>
           </div>

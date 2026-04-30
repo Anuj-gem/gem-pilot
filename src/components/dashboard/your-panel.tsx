@@ -54,9 +54,9 @@ interface Props {
 }
 
 const CARD = {
-  bg:     '#FBF1DC',
-  border: '#ECDDB4',
-  ink:    '#8a6a2e',
+  bg:     '#FFFFFF',
+  border: '#E5E7EB',
+  ink:    '#6B7280',
 }
 
 function initials(name: string | null | undefined, handle: string | null | undefined) {
@@ -123,6 +123,24 @@ export function YourPanel({ profile, stats, latest, others }: Props) {
           <Stat label="Followers" value={stats.followers} href={profile.handle ? `/w/${profile.handle}/followers` : null} />
           <Stat label="Following" value={stats.following} href={profile.handle ? `/w/${profile.handle}/following` : null} />
           <Stat label="Reviews" value={stats.reviewsGiven} />
+        </div>
+
+        {/* Profile control row — View public profile + Edit profile */}
+        <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-2">
+          <Link
+            href={profileHref}
+            prefetch={false}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 text-[12px] font-semibold rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-800 py-2 transition-colors"
+          >
+            View profile
+          </Link>
+          <Link
+            href="/profile"
+            prefetch={false}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 text-[12px] font-semibold rounded-lg bg-gray-900 hover:bg-black text-white py-2 transition-colors"
+          >
+            Edit profile
+          </Link>
         </div>
       </div>
 
@@ -240,7 +258,7 @@ function AwaitingPdfCard({ script }: { script: YourPanelScript }) {
       className="block rounded-xl border p-4 hover:shadow-md transition-shadow"
       style={{ background: CARD.bg, borderColor: CARD.border }}
     >
-      <div className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.14em] font-bold text-amber-700 mb-2">
+      <div className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.14em] font-bold text-purple-700 mb-2">
         <Upload size={12} />
         One more step
       </div>
