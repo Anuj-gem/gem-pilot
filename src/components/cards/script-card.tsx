@@ -113,13 +113,7 @@ export function ScriptCard({ s, density = 'list' }: Props) {
           {s.writer_handle && (
             <>
               {metaParts.length > 0 && <span>·</span>}
-              <Link
-                href={`/w/${s.writer_handle}`}
-                onClick={(e) => e.stopPropagation()}
-                className="text-purple-700 font-semibold hover:underline"
-              >
-                @{s.writer_handle}
-              </Link>
+              <span className="text-purple-700 font-semibold">@{s.writer_handle}</span>
             </>
           )}
           {showCommunity && (
