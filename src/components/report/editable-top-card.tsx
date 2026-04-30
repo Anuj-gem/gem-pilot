@@ -44,6 +44,10 @@ interface Props {
    *  "By {name}" under the title. Null/empty when the submission is anonymous
    *  or the profile has no name set, in which case the line is omitted. */
   authorName?: string | null
+  /** Writer's @handle (from profiles.handle). When present, the byline
+   *  becomes a link to /w/{handle} so anyone can jump to the writer's
+   *  profile from the report. */
+  authorHandle?: string | null
   /** Commercial score (0-100). Surfaced as a small color-coded badge inline
    *  with the title. Null/undefined hides the badge entirely. */
   commercialScore?: number | null
@@ -88,7 +92,7 @@ function dedupeTags(tags: string[]): string[] {
   return out
 }
 
-export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, commercialScore, scoreShownToIndustry = true, isProSubscriber = true, headerActionsLeft }: Props) {
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, authorHandle, commercialScore, scoreShownToIndustry = true, isProSubscriber = true, headerActionsLeft }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
@@ -354,7 +358,24 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             move into the (collapsed) Tags expander to keep the cover quiet. */}
         <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] m-0 mb-5 sm:mb-7">
           {authorName && authorName.trim().length > 0 && (
-            <>By <span className="text-[var(--gem-gray-200)]">{authorName}</span></>
+            <>
+              By{' '}
+              {authorHandle ? (
+                <Link href={`/w/${authorHandle}`} prefetch={false} className="text-[var(--gem-gray-200)] hover:underline">
+                  {authorName}
+                </Link>
+              ) : (
+                <span className="text-[var(--gem-gray-200)]">{authorName}</span>
+              )}
+              {authorHandle && (
+                <>
+                  {' '}
+                  <Link href={`/w/${authorHandle}`} prefetch={false} className="text-purple-400 hover:underline">
+                    @{authorHandle}
+                  </Link>
+                </>
+              )}
+            </>
           )}
           {authorName && authorName.trim().length > 0 && initial.format && (
             <span className="text-[var(--gem-gray-600)] mx-1.5">·</span>

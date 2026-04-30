@@ -597,6 +597,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           authorName={
             isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
           }
+          authorHandle={
+            isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+          }
           commercialScore={
             // Anuj 2026-04-29: top-of-page score badge retired. The GEM
             // Score now lives in its own dedicated section near the
