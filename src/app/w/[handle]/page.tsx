@@ -45,7 +45,7 @@ export default async function PublicProfile({ params }: PageProps) {
     .from('script_submissions')
     .select(`
       id, title, created_at, declared_format,
-      script_evaluations ( id, weighted_score, tier )
+      script_evaluations ( id, weighted_score, tier, evaluation )
     `)
     .eq('user_id', profile.id)
     .eq('is_public', true)
@@ -54,7 +54,7 @@ export default async function PublicProfile({ params }: PageProps) {
 
   type Script = {
     id: string; title: string; created_at: string; declared_format: string | null
-    script_evaluations: { id: string; weighted_score: number | null; tier: string | null }[] | null
+    script_evaluations: { id: string; weighted_score: number | null; tier: string | null; evaluation: any }[] | null
   }
   const publicScripts = (scripts as Script[] | null) || []
 
@@ -255,11 +255,16 @@ export default async function PublicProfile({ params }: PageProps) {
                 const ev = s.script_evaluations?.[0]
                 if (!ev) return null
                 const st = scriptStats.get(s.id)
+                const evJson = ev.evaluation as any
+                const logline = evJson?.format_detection?.logline_one_line || evJson?.positioning_hook || null
+                const genre = evJson?.classification?.genre_primary || evJson?.format_detection?.genre_primary || null
                 const cardData: ScriptCardData = {
                   submission_id: s.id,
                   evaluation_id: ev.id,
                   title: s.title,
                   format: s.declared_format,
+                  genre,
+                  logline,
                   selznick_score: ev.weighted_score,
                   tier: ev.tier,
                   writer_handle: profile.handle,
@@ -267,7 +272,7 @@ export default async function PublicProfile({ params }: PageProps) {
                   review_count: st?.reviewCount ?? 0,
                   avg_peer_score: st?.avgPeerScore ?? null,
                 }
-                return <ScriptCard key={s.id} s={cardData} density="full" />
+                return <ScriptCard key={s.id} s={cardData} density="list" />
               })}
             </div>
           )}

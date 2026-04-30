@@ -14,6 +14,8 @@ export interface ScriptCardData {
   evaluation_id: string | null
   title: string
   format: string | null
+  genre?: string | null
+  logline?: string | null
   selznick_score: number | null
   tier?: string | null
   headline?: string | null
@@ -91,35 +93,43 @@ export function ScriptCard({ s, density = 'list' }: Props) {
     )
   }
 
-  // list (default)
+  // list (default) — score, title, logline, format · genre · writer · reviews
+  const metaParts: string[] = []
+  if (s.format) metaParts.push(s.format)
+  if (s.genre) metaParts.push(s.genre)
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
+      className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
     >
       <ScoreBadge score={s.selznick_score} size="md" kind="selznick" />
       <div className="flex-1 min-w-0">
         <div className="font-bold text-[15px] text-gray-900 truncate" style={{ fontFamily: 'Georgia, serif' }}>{s.title}</div>
-        <div className="text-[12px] text-gray-500 truncate">
-          {s.format || '—'}
+        {s.logline && (
+          <div className="text-[12.5px] text-gray-700 leading-snug mt-0.5 line-clamp-2">{s.logline}</div>
+        )}
+        <div className="text-[11.5px] text-gray-500 mt-1 truncate flex items-center gap-1.5 flex-wrap">
+          {metaParts.length > 0 && <span>{metaParts.join(' · ')}</span>}
           {s.writer_handle && (
-            <> · <span className="text-purple-700 font-semibold">@{s.writer_handle}</span></>
+            <>
+              {metaParts.length > 0 && <span>·</span>}
+              <Link
+                href={`/w/${s.writer_handle}`}
+                onClick={(e) => e.stopPropagation()}
+                className="text-purple-700 font-semibold hover:underline"
+              >
+                @{s.writer_handle}
+              </Link>
+            </>
+          )}
+          {showCommunity && (
+            <>
+              <span>·</span>
+              <span><strong className="text-gray-700">{s.review_count}</strong> {s.review_count === 1 ? 'review' : 'reviews'}</span>
+            </>
           )}
         </div>
       </div>
-      {showCommunity ? (
-        <div className="shrink-0 flex items-center gap-2 text-right">
-          {s.avg_peer_score != null && (
-            <ScoreBadge score={s.avg_peer_score} size="sm" kind="community" />
-          )}
-          <div className="text-[11px] text-gray-500 leading-tight">
-            <div className="font-semibold text-gray-700 tabular-nums">{s.review_count}</div>
-            <div>{s.review_count === 1 ? 'review' : 'reviews'}</div>
-          </div>
-        </div>
-      ) : (
-        <span className="text-[11px] font-semibold text-purple-700 shrink-0 opacity-0 group-hover:opacity-100">Open →</span>
-      )}
     </Link>
   )
 }

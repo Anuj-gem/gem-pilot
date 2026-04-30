@@ -28,9 +28,8 @@ interface PageProps {
 }
 
 const SORTS = [
-  { id: 'recent', label: 'Recent' },
-  { id: 'top_selznick', label: 'Top Selznick' },
-  { id: 'top_community', label: 'Top community' },
+  { id: 'recent', label: 'Most recent' },
+  { id: 'top_gem', label: 'Top GEM score' },
   { id: 'most_reviewed', label: 'Most reviewed' },
 ] as const
 type SortId = (typeof SORTS)[number]['id']
@@ -73,13 +72,24 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const writerIds = Array.from(new Set(scripts.map((s) => s.user_id).filter(Boolean) as string[]))
 
   const [{ data: evs }, { data: writers }, stats] = await Promise.all([
-    service.from('script_evaluations').select('id, submission_id, weighted_score').in('submission_id', submissionIds),
+    service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', submissionIds),
     service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
     getScriptStats(submissionIds),
   ])
-  const evalBySubmission = new Map<string, { id: string; weighted_score: number | null }>()
+  const evalBySubmission = new Map<string, { id: string; weighted_score: number | null; logline: string | null; genre: string | null }>()
   for (const e of (evs as any[] | null) || []) {
-    evalBySubmission.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score })
+    const evJson = e.evaluation as any
+    const logline =
+      evJson?.format_detection?.logline_one_line ||
+      evJson?.positioning_hook ||
+      null
+    const genre =
+      evJson?.classification?.genre_primary ||
+      evJson?.format_detection?.genre_primary ||
+      null
+    evalBySubmission.set(e.submission_id, {
+      id: e.id, weighted_score: e.weighted_score, logline, genre,
+    })
   }
   const writerById = new Map<string, { handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null }>()
   for (const w of (writers as any[] | null) || []) {
@@ -97,7 +107,6 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         sortable: {
           recent: new Date(s.created_at).getTime(),
           selznick: Number(ev.weighted_score ?? 0),
-          community: st?.avgPeerScore ?? 0,
           reviews: st?.reviewCount ?? 0,
         },
         data: {
@@ -105,6 +114,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
           evaluation_id: ev.id,
           title: s.title,
           format: s.declared_format,
+          genre: ev.genre,
+          logline: ev.logline,
           selznick_score: ev.weighted_score,
           writer_handle: wp?.handle ?? null,
           writer_name: wp?.full_name ?? null,
@@ -117,8 +128,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
 
   // Apply sort
   const sortKey: keyof typeof cards[0]['sortable'] =
-    sort === 'top_selznick' ? 'selznick'
-    : sort === 'top_community' ? 'community'
+    sort === 'top_gem' ? 'selznick'
     : sort === 'most_reviewed' ? 'reviews'
     : 'recent'
   const sortedCards = [...cards].sort((a, b) => b.sortable[sortKey] - a.sortable[sortKey])
@@ -182,14 +192,16 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8">
-          {/* Sidebar leaderboards */}
-          <aside className="space-y-7">
-            <Leaderboard title="Most prolific" rows={prolific.map((w) => ({ ...w, secondary: `${w.count} ${w.count === 1 ? 'script' : 'scripts'}` }))} />
+          {/* Sidebar leaderboards. On mobile this sits BELOW the scripts;
+              on desktop it sits in the left column. Anuj 2026-04-29: scripts
+              are the primary content — writers are supporting context. */}
+          <aside className="space-y-7 md:order-1 order-2">
+            <Leaderboard title="Most prolific" rows={prolific.map((w) => ({ ...w, secondary: `${w.count} public ${w.count === 1 ? 'script' : 'scripts'}` }))} />
             <Leaderboard title="Top reviewers" rows={topReviewers.map((w) => ({ ...w, secondary: `${w.count} ${w.count === 1 ? 'review' : 'reviews'}` }))} />
           </aside>
 
           {/* Main column */}
-          <section>
+          <section className="md:order-2 order-1">
             {/* Featured row */}
             {showFeatured && (
               <div className="mb-7">
