@@ -81,7 +81,7 @@ import {
 
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string; download?: string }>
+  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string; download?: string; embedded?: string }>
 }
 
 interface V5Extras {
@@ -119,7 +119,11 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam, pending: pendingParam, download: downloadParam } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam, pending: pendingParam, download: downloadParam, embedded: embeddedParam } = await searchParams
+  // Embedded mode: the report is loaded inside the dashboard's modal
+  // iframe. Skip the global Nav and footer so the modal chrome doesn't
+  // double up. Anuj 2026-04-30.
+  const embedded = embeddedParam === '1'
   const autoOpenPrivacy = openPrivacyParam === '1'
   const autoOpenDownload = downloadParam === '1'
   const supabase = await createClient()
@@ -473,7 +477,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   return (
     <>
-      <Nav />
+      {/* Embedded mode (loaded inside the dashboard report-modal iframe)
+          skips the global Nav and the layout-rendered SiteFooter via a
+          scoped style block, so the modal's own chrome doesn't double
+          up with our nav. Anuj 2026-04-30. */}
+      {!embedded && <Nav />}
+      {embedded && (
+        <style>{`
+          body > div > footer { display: none; }
+          body > footer { display: none; }
+        `}</style>
+      )}
       {justSubscribed === 'true' && <PostUpgradeEmail />}
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
