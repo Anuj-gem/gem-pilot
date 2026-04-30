@@ -291,8 +291,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             {metaParts.join(' · ') || '—'}
           </div>
 
-          {/* FOOTER — writer mini-card LEFT, GEM SCORE pill RIGHT.
-              Verdict-at-the-bottom pattern (Letterboxd). */}
+          {/* WRITER + SCORE — verdict-at-the-bottom pattern (Letterboxd). */}
           <div className="mt-3 flex items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
               <WriterMiniCard
@@ -308,13 +307,34 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             )}
           </div>
 
-          {/* OWNER-ONLY Industry stats — small ghost button below the
-              score, right-aligned. */}
-          {isOwner && (
-            <div className="mt-2.5 flex justify-end">
+          {/* ACTION ROW — every card gets two explicit buttons.
+              Owner: View stats (left) + View report (right).
+              Non-owner: Submit review (left) + View report (right).
+              "View report" is always present so the action is never
+              ambiguous (Anuj 2026-04-30: 'sometimes some people get
+              confused without it'). */}
+          <div className="mt-3.5 pt-3 flex items-center gap-2" style={{ borderTop: `1px solid ${CARD.border}` }}>
+            {isOwner ? (
               <IndustryStatsButton submissionId={s.submission_id} />
-            </div>
-          )}
+            ) : (
+              <Link
+                href={`/review/${s.submission_id}`}
+                prefetch={false}
+                className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md border border-purple-200 bg-white hover:bg-purple-50 hover:border-purple-300 text-purple-700 px-2.5 py-1.5 transition-colors"
+                title="Write a review for this script"
+              >
+                Submit review
+              </Link>
+            )}
+            <span className="flex-1" />
+            <Link
+              href={href}
+              prefetch={false}
+              className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors"
+            >
+              View report →
+            </Link>
+          </div>
         </div>
       </div>
     )

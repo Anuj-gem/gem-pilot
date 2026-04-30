@@ -111,11 +111,11 @@ export function IndustryStatsButton({ submissionId }: Props) {
           // Stop the parent overlay <Link> from racing this click.
           e.stopPropagation()
         }}
-        className="relative z-10 pointer-events-auto inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-purple-700 bg-white hover:bg-purple-50 border border-purple-200 hover:border-purple-300 rounded-md px-2.5 py-1 transition-colors"
+        className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md border border-purple-200 bg-white hover:bg-purple-50 hover:border-purple-300 text-purple-700 px-2.5 py-1.5 transition-colors"
         title="See producer activity"
       >
         <BarChart3 size={12} />
-        Stats
+        View stats
       </button>
 
       {mounted && open && createPortal(
