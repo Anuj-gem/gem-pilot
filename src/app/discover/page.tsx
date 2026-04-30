@@ -52,60 +52,68 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
 
   const service = svc()
 
-  // Pull a wide pool of public scripts. We sort and filter client-side so we
-  // can apply community-stat-based sorts without nasty SQL.
+  // Pull scripts first, then enrich with evaluations + profiles via separate
+  // batched queries. Avoids any PostgREST relation-name ambiguity caused by
+  // having multiple tables with FKs to script_submissions.
   let baseQuery = service
     .from('script_submissions')
-    .select(`
-      id, title, declared_format, created_at, user_id,
-      script_evaluations!inner ( id, weighted_score ),
-      profiles!inner ( handle, full_name, avatar_url, headline )
-    `)
+    .select('id, title, declared_format, created_at, user_id')
     .eq('is_public', true)
     .eq('status', 'completed')
     .order('created_at', { ascending: false })
     .limit(200)
   if (format !== 'all') {
-    // Stored DB values are "Feature film" and "Series" (capitalized, full
-    // string). Map our URL slugs to the actual values.
     const dbValue = format === 'feature' ? 'Feature film' : 'Series'
     baseQuery = baseQuery.eq('declared_format', dbValue)
   }
   const { data: rows } = await baseQuery
+  type SubRow = { id: string; title: string; declared_format: string | null; created_at: string; user_id: string | null }
+  const scripts = (rows as SubRow[] | null) || []
+  const submissionIds = scripts.map((s) => s.id)
+  const writerIds = Array.from(new Set(scripts.map((s) => s.user_id).filter(Boolean) as string[]))
 
-  type Row = {
-    id: string; title: string; declared_format: string | null
-    created_at: string; user_id: string | null
-    script_evaluations: { id: string; weighted_score: number | null }[] | null
-    profiles: { handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null } | null
+  const [{ data: evs }, { data: writers }, stats] = await Promise.all([
+    service.from('script_evaluations').select('id, submission_id, weighted_score').in('submission_id', submissionIds),
+    service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
+    getScriptStats(submissionIds),
+  ])
+  const evalBySubmission = new Map<string, { id: string; weighted_score: number | null }>()
+  for (const e of (evs as any[] | null) || []) {
+    evalBySubmission.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score })
   }
-  const scripts = (rows as Row[] | null) || []
-  const stats = await getScriptStats(scripts.map((s) => s.id))
+  const writerById = new Map<string, { handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null }>()
+  for (const w of (writers as any[] | null) || []) {
+    writerById.set(w.id, { handle: w.handle, full_name: w.full_name, avatar_url: w.avatar_url, headline: w.headline })
+  }
 
-  // Build card data with stats
-  const cards = scripts.map((s) => {
-    const ev = s.script_evaluations?.[0]
-    const st = stats.get(s.id)
-    return {
-      sortable: {
-        recent: new Date(s.created_at).getTime(),
-        selznick: ev?.weighted_score ?? 0,
-        community: st?.avgPeerScore ?? 0,
-        reviews: st?.reviewCount ?? 0,
-      },
-      data: {
-        submission_id: s.id,
-        evaluation_id: ev?.id ?? null,
-        title: s.title,
-        format: s.declared_format,
-        selznick_score: ev?.weighted_score ?? null,
-        writer_handle: s.profiles?.handle ?? null,
-        writer_name: s.profiles?.full_name ?? null,
-        review_count: st?.reviewCount ?? 0,
-        avg_peer_score: st?.avgPeerScore ?? null,
-      } as ScriptCardData,
-    }
-  })
+  // Build card data with stats. Drop scripts with no evaluation.
+  const cards = scripts
+    .map((s) => {
+      const ev = evalBySubmission.get(s.id)
+      if (!ev) return null
+      const wp = s.user_id ? writerById.get(s.user_id) : null
+      const st = stats.get(s.id)
+      return {
+        sortable: {
+          recent: new Date(s.created_at).getTime(),
+          selznick: Number(ev.weighted_score ?? 0),
+          community: st?.avgPeerScore ?? 0,
+          reviews: st?.reviewCount ?? 0,
+        },
+        data: {
+          submission_id: s.id,
+          evaluation_id: ev.id,
+          title: s.title,
+          format: s.declared_format,
+          selznick_score: ev.weighted_score,
+          writer_handle: wp?.handle ?? null,
+          writer_name: wp?.full_name ?? null,
+          review_count: st?.reviewCount ?? 0,
+          avg_peer_score: st?.avgPeerScore ?? null,
+        } as ScriptCardData,
+      }
+    })
+    .filter((c): c is NonNullable<typeof c> => c !== null)
 
   // Apply sort
   const sortKey: keyof typeof cards[0]['sortable'] =
