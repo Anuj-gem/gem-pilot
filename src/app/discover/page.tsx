@@ -58,11 +58,12 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     .from('script_submissions')
     .select(`
       id, title, declared_format, created_at, user_id,
-      script_evaluations ( id, weighted_score ),
-      profiles ( handle, full_name, avatar_url, headline )
+      script_evaluations!inner ( id, weighted_score ),
+      profiles!inner ( handle, full_name, avatar_url, headline )
     `)
     .eq('is_public', true)
     .eq('status', 'completed')
+    .order('created_at', { ascending: false })
     .limit(200)
   if (format !== 'all') {
     // Stored DB values are "Feature film" and "Series" (capitalized, full
