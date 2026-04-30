@@ -128,39 +128,24 @@ function Avatar({ ini, size }: { ini: string; size: number }) {
 }
 
 /**
- * ScorePill — the canonical "GEM SCORE 72" pill used everywhere a
- * score is shown on a card. Hard rule (Anuj 2026-04-30): the words
- * "GEM SCORE" must always render with the number — never abbreviated
- * to "GEM" or stripped entirely.
+ * ScorePill — compact score readout: "69 / 100".
+ * Anuj 2026-04-30 v0.9: dropped the "GEM SCORE" label in favor of an
+ * out-of-100 readout so the pill is small enough to leave the writer
+ * name room to breathe in the footer.
  */
 function ScorePill({ score }: { score: number }) {
   return (
     <span
-      className="shrink-0 inline-flex items-stretch rounded-full overflow-hidden text-white font-extrabold leading-none"
+      className="shrink-0 inline-flex items-baseline gap-0.5 rounded-full text-white font-extrabold leading-none px-2.5 py-1.5"
       style={{
         background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        fontVariantNumeric: 'tabular-nums',
       }}
-      title={`GEM score: ${score}`}
+      title={`GEM score: ${score} out of 100`}
     >
-      <span
-        className="inline-flex items-center px-2"
-        style={{
-          fontSize: 8,
-          fontWeight: 700,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          background: 'rgba(0,0,0,0.18)',
-        }}
-      >
-        GEM&nbsp;Score
-      </span>
-      <span
-        className="inline-flex items-center px-2.5"
-        style={{ fontSize: 13, fontVariantNumeric: 'tabular-nums', paddingTop: 4, paddingBottom: 4 }}
-      >
-        {score}
-      </span>
+      <span style={{ fontSize: 14 }}>{score}</span>
+      <span style={{ fontSize: 9, opacity: 0.75, fontWeight: 600 }}>/100</span>
     </span>
   )
 }
@@ -263,20 +248,21 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
         />
 
         <div className="relative flex flex-col pointer-events-none p-5">
-          {/* TITLE — at the very top of the card, full width, no
-              competing chrome on this line. */}
+          {/* TITLE — 3-line clamp so most titles fit without
+              cutting off (Anuj 2026-04-30 v0.9). */}
           <div
-            className="font-bold text-gray-900 leading-[1.2] line-clamp-2"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em' }}
+            className="font-bold text-gray-900 leading-[1.2] line-clamp-3"
+            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '3.6em' }}
           >
             {s.title}
           </div>
 
-          {/* LOGLINE — italic pull-quote, 3-line clamp, generous leading. */}
+          {/* LOGLINE — italic pull-quote, 5-line clamp so most fit without
+              ellipsis. Cards in the same row align via min-height. */}
           {s.logline && (
             <div
-              className="italic text-gray-700 mt-2.5 leading-snug line-clamp-3"
-              style={{ fontFamily: 'Georgia, serif', fontSize: 13, minHeight: '3em' }}
+              className="italic text-gray-700 mt-2.5 leading-snug line-clamp-5"
+              style={{ fontFamily: 'Georgia, serif', fontSize: 13, minHeight: '5em' }}
             >
               &ldquo;{s.logline}&rdquo;
             </div>
