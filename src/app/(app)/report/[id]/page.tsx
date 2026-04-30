@@ -491,17 +491,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   return (
     <>
-      {/* Embedded mode (loaded inside the dashboard report-modal iframe)
-          skips the global Nav and the layout-rendered SiteFooter via a
-          scoped style block, so the modal's own chrome doesn't double
-          up with our nav. Anuj 2026-04-30. */}
-      {!embedded && <Nav />}
-      {embedded && (
-        <style>{`
-          body > div > footer { display: none; }
-          body > footer { display: none; }
-        `}</style>
-      )}
+      {/* Nav is rendered by the (app) layout. Report sits in the
+          full-width canvas (rail is hidden on /report by AppRail) so
+          the deep-read column gets the page to itself. */}
       {justSubscribed === 'true' && <PostUpgradeEmail />}
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />

@@ -22,12 +22,10 @@
 // no longer a CRM.
 
 import { redirect } from 'next/navigation'
-import Nav from '@/components/nav'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { YourPanel } from '@/components/dashboard/your-panel'
 import { ActivityStrip, type ActivityEvent } from '@/components/discover/activity-strip'
 import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
@@ -93,14 +91,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .order('created_at', { ascending: false })
   const visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
   const submissionIds = visible.map((s) => s.id)
-  const myScriptCount = visible.length
-
-  // ---------- YOUR stats (followers / following / reviews given) ----------
-  const [{ count: followers }, { count: following }, { count: reviewsGiven }] = await Promise.all([
-    service.from('follows').select('id', { count: 'exact', head: true }).eq('followee_id', user.id),
-    service.from('follows').select('id', { count: 'exact', head: true }).eq('follower_id', user.id),
-    service.from('peer_reviews').select('id', { count: 'exact', head: true }).eq('reviewer_id', user.id).is('deleted_at', null),
-  ])
 
   // ---------- COMMUNITY FEED (Discover-style poster grid, 24 cards) ----------
   const { data: pubRows } = await service
@@ -314,26 +304,23 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const isProcessing = visible.some((s) => s.status === 'processing')
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav />
+    <>
       <ProcessingPoller active={isProcessing} />
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
 
-      <main className="max-w-6xl mx-auto px-5 py-8">
+      <div className="space-y-6">
         {justSignedUp && (
-          <div className="mb-5 rounded-xl bg-purple-50 border border-purple-200 px-4 py-3 text-[13px] text-purple-800">
+          <div className="rounded-xl bg-purple-50 border border-purple-200 px-4 py-3 text-[13px] text-purple-800">
             Welcome to GEM. Your evaluation is queued — you can scroll the community while you wait.
           </div>
         )}
 
         <ActivityStrip events={topEvents} />
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] gap-6 lg:gap-8">
-          {/* MAIN COL.
-              Mobile: order-2 so YourPanel is on top. */}
-          <section className="md:order-1 order-2 min-w-0 space-y-10">
+        <div>
+          <section className="min-w-0 space-y-10">
             {/* YOUR LATEST SCRIPTS — capped at 3, "View all" links to profile */}
             {myCards.length > 0 && (
               <div>
@@ -422,28 +409,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
               </div>
             )}
           </section>
-
-          {/* SIDEBAR — Your Panel.
-              Mobile: order-1 so it shows on top. Desktop: sticky right rail. */}
-          <div className="md:order-2 order-1 md:sticky md:top-4 self-start">
-            <YourPanel
-              profile={{
-                full_name: profile?.full_name ?? null,
-                handle: profile?.handle ?? null,
-                headline: profile?.headline ?? null,
-                avatar_url: profile?.avatar_url ?? null,
-                isPro,
-              }}
-              stats={{
-                scripts: myScriptCount,
-                followers: followers ?? 0,
-                following: following ?? 0,
-                reviewsGiven: reviewsGiven ?? 0,
-              }}
-            />
-          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   )
 }

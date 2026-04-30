@@ -114,10 +114,8 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
     : allCards
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav />
-      <main className="max-w-5xl mx-auto px-5 py-8">
-        <header className="mb-6">
+    <div>
+      <header className="mb-6">
           <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-2">My library</p>
           <h1 className="text-[28px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
             All your scripts
@@ -178,7 +176,6 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
             ))}
           </div>
         )}
-      </main>
     </div>
   )
 }

@@ -140,22 +140,14 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     .filter((c): c is DiscoverCard => c !== null)
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav />
-      <main className="max-w-6xl mx-auto px-5 py-6">
-        {/* No big page title — sort tabs + filter pills do the chrome work,
-            and the nav already tells the user where they are. App-shell
-            feel, not blog-post feel. (Anuj 2026-04-30) */}
-        <DiscoverGrid
-          cards={cards}
-          initialSort={initialSort}
-          initialFilters={{
-            format: initialFormat,
-            genres: initialGenres,
-            budgets: initialBudgets,
-          }}
-        />
-      </main>
-    </div>
+    <DiscoverGrid
+      cards={cards}
+      initialSort={initialSort}
+      initialFilters={{
+        format: initialFormat,
+        genres: initialGenres,
+        budgets: initialBudgets,
+      }}
+    />
   )
 }

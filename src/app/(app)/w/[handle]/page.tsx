@@ -150,11 +150,8 @@ export default async function PublicProfile({ params }: PageProps) {
   const initials = displayName.split(/\s+/).slice(0, 2).map((s) => s[0]?.toUpperCase() ?? '').join('') || '·'
 
   return (
-    <div className="min-h-screen bg-white">
-      <Nav />
-      <main className="max-w-3xl mx-auto px-6 py-10">
-        {/* Header */}
-        <header className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
+    <div>
+      <header className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
           <div className="flex items-start gap-5">
             {profile.avatar_url ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -331,7 +328,6 @@ export default async function PublicProfile({ params }: PageProps) {
             </div>
           )}
         </Section>
-      </main>
     </div>
   )
 }
