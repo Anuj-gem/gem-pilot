@@ -278,6 +278,7 @@ export default async function DashboardPage({
   })
 
   const totalSubmissions = scripts.length
+  const publishedCount = scripts.filter((s) => s.is_public).length
   const totalInterested = Array.from(interestedBySubmission.values()).reduce(
     (n, v) => n + v,
     0
@@ -337,19 +338,15 @@ export default async function DashboardPage({
           )
         )}
 
-        {/* Greeting strip — gold rule, big editorial title, supporting line */}
-        <div className="flex items-end justify-between gap-4 flex-wrap mb-8">
+        {/* Your scripts — section header replaces the old "Welcome back"
+            hero, which now lives in the social profile-card at top.
+            Anuj 2026-04-29 v0.4. */}
+        <div className="flex items-end justify-between gap-4 flex-wrap mb-5 mt-2">
           <div>
-            <div
-              className="w-12 h-0.5 mb-3.5 rounded-sm"
-              style={{ background: 'var(--gem-gold)' }}
-            />
-            <h1 className="text-3xl sm:text-[32px] font-extrabold font-[family-name:var(--font-display)] tracking-tight text-[var(--gem-gray-50)] leading-tight m-0">
-              Welcome back, {firstName}.
-            </h1>
+            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] mb-1">Your scripts</p>
             {totalSubmissions > 0 && (
-              <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-2">
-                {totalSubmissions} active script{totalSubmissions === 1 ? '' : 's'}
+              <p className="text-[13px] text-[var(--gem-gray-400)] m-0">
+                {totalSubmissions} total · {publishedCount} published
                 {totalInterested > 0 && (
                   <>
                     <span className="text-[var(--gem-gray-500)] mx-2">·</span>
@@ -360,28 +357,13 @@ export default async function DashboardPage({
               </p>
             )}
           </div>
-          <div className="flex items-center gap-2 shrink-0">
-            <Link
-              href={profile?.handle ? `/w/${profile.handle}` : '/profile'}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] hover:bg-[var(--gem-gray-800)] transition-colors"
-            >
-              View public profile
-            </Link>
-            <Link
-              href="/profile"
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-[var(--gem-gray-300)] hover:text-[var(--gem-gray-50)] hover:bg-[var(--gem-gray-800)] transition-colors"
-            >
-              Edit profile
-            </Link>
-            <Link
-              href="/submit"
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-              style={{ boxShadow: '0 1px 2px rgba(124,58,237,0.30)' }}
-            >
-              <Plus size={16} />
-              New script
-            </Link>
-          </div>
+          <Link
+            href="/submit"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+          >
+            <Plus size={14} />
+            New script
+          </Link>
         </div>
 
         {scripts.length === 0 && <EmptyState />}

@@ -69,12 +69,12 @@ export async function SocialDashboardTop({ user, profile }: Props) {
     { count: followerCount },
     { count: followingCount },
     { count: reviewCount },
-    { count: scriptCount },
+    { count: publishedCount },
   ] = await Promise.all([
     service.from('follows').select('id', { count: 'exact', head: true }).eq('followee_id', user.id),
     service.from('follows').select('id', { count: 'exact', head: true }).eq('follower_id', user.id),
     service.from('peer_reviews').select('id', { count: 'exact', head: true }).eq('reviewer_id', user.id).is('deleted_at', null),
-    service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).eq('status', 'completed'),
+    service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).eq('is_public', true),
   ])
 
   // Action-needed: pending review invites for this user + recent peer reviews on user's scripts
@@ -206,7 +206,7 @@ export async function SocialDashboardTop({ user, profile }: Props) {
           <div className="flex items-center gap-2 sm:gap-3">
             <StatChip label="Followers" value={followerCount ?? 0} />
             <StatChip label="Reviews" value={reviewCount ?? 0} />
-            <StatChip label="Scripts" value={scriptCount ?? 0} />
+            <StatChip label="Published" value={publishedCount ?? 0} />
           </div>
         </div>
       </div>
