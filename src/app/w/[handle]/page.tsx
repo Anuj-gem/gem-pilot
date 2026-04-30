@@ -187,32 +187,50 @@ export default async function PublicProfile({ params }: PageProps) {
             <Empty>No reviews written yet.</Empty>
           ) : (
             <div className="space-y-3">
-              {reviewsWritten.map((r) => (
-                <div key={r.id} className="rounded-xl border border-gray-200 bg-white p-4">
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <div className="text-[13px] text-gray-500">
-                      Reviewed{' '}
-                      {r.script?.eval_id ? (
-                        <Link href={`/report/${r.script.eval_id}`} className="font-semibold text-gray-900 hover:underline">
-                          {r.script.title}
-                        </Link>
-                      ) : (
-                        <span className="font-semibold text-gray-900">{r.script?.title ?? 'a script'}</span>
-                      )}{' '}
-                      by{' '}
-                      {r.script?.writer_handle ? (
-                        <Link href={`/w/${r.script.writer_handle}`} className="font-semibold text-purple-700 hover:underline">
-                          {r.script.writer_name || `@${r.script.writer_handle}`}
-                        </Link>
-                      ) : (
-                        <span>{r.script?.writer_name || '—'}</span>
-                      )}
+              {reviewsWritten.map((r) => {
+                const cardHref = r.script?.eval_id ? `/report/${r.script.eval_id}` : null
+                const card = (
+                  <div className={`rounded-xl border border-gray-200 bg-white p-4 ${cardHref ? 'hover:bg-gray-50 hover:border-purple-200 transition-colors cursor-pointer' : ''}`}>
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <div className="text-[13px] text-gray-500 leading-snug">
+                        Reviewed{' '}
+                        <span className="font-semibold text-gray-900">
+                          {r.script?.title ?? 'a script'}
+                        </span>{' '}
+                        by{' '}
+                        {r.script?.writer_handle ? (
+                          <span className="font-semibold text-purple-700">
+                            {r.script.writer_name || `@${r.script.writer_handle}`}
+                          </span>
+                        ) : (
+                          <span>{r.script?.writer_name || '—'}</span>
+                        )}
+                      </div>
+                      <ScoreBadge score={r.score} />
                     </div>
-                    <ScoreBadge score={r.score} />
+                    <p className="text-[14px] text-gray-700 leading-relaxed line-clamp-3">{r.body}</p>
+                    {r.script?.writer_handle && (
+                      <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-400">
+                        View writer:{' '}
+                        <Link
+                          href={`/w/${r.script.writer_handle}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="font-semibold text-purple-700 hover:underline"
+                        >
+                          @{r.script.writer_handle}
+                        </Link>
+                      </div>
+                    )}
                   </div>
-                  <p className="text-[14px] text-gray-700 leading-relaxed line-clamp-3">{r.body}</p>
-                </div>
-              ))}
+                )
+                return cardHref ? (
+                  <Link key={r.id} href={cardHref} className="block">
+                    {card}
+                  </Link>
+                ) : (
+                  <div key={r.id}>{card}</div>
+                )
+              })}
             </div>
           )}
         </Section>
