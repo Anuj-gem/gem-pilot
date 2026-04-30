@@ -27,7 +27,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { YourPanel, type YourPanelScript } from '@/components/dashboard/your-panel'
+import { YourPanel } from '@/components/dashboard/your-panel'
 import { ActivityStrip, type ActivityEvent } from '@/components/discover/activity-strip'
 import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
@@ -92,38 +92,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
   const visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
-
-  function shapeMy(sub: MySubRow): YourPanelScript {
-    const ev = Array.isArray(sub.script_evaluations) ? sub.script_evaluations[0] : sub.script_evaluations
-    const evJson = (ev?.evaluation as Record<string, unknown> | null) || null
-    const editedFields = (ev?.edited_fields as Record<string, unknown> | null) || null
-    const editedLogline = typeof editedFields?.logline === 'string' && (editedFields.logline as string).trim().length > 0
-      ? (editedFields.logline as string)
-      : null
-    const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
-    const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
-    const logline = editedLogline
-      || (fmt.logline_one_line as string | undefined)
-      || (evJson?.positioning_hook as string | undefined)
-      || null
-    const genre = (cls.genre_primary as string | undefined) || (fmt.genre_primary as string | undefined) || null
-    return {
-      id: sub.id,
-      title: sub.title,
-      status: sub.status,
-      declared_format: sub.declared_format,
-      evaluationId: ev?.id ?? null,
-      weighted_score: ev?.weighted_score ?? null,
-      logline,
-      genre,
-      is_public: !!sub.is_public,
-      created_at: sub.created_at,
-    }
-  }
-  const myScripts: YourPanelScript[] = visible.map(shapeMy)
-  const latestScript = myScripts[0] ?? null
-  const otherScripts = myScripts.slice(1)
   const submissionIds = visible.map((s) => s.id)
+  const myScriptCount = visible.length
 
   // ---------- YOUR stats (followers / following / reviews given) ----------
   const [{ count: followers }, { count: following }, { count: reviewsGiven }] = await Promise.all([
@@ -465,13 +435,11 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                 isPro,
               }}
               stats={{
-                scripts: myScripts.length,
+                scripts: myScriptCount,
                 followers: followers ?? 0,
                 following: following ?? 0,
                 reviewsGiven: reviewsGiven ?? 0,
               }}
-              latest={latestScript}
-              others={otherScripts}
             />
           </div>
         </div>

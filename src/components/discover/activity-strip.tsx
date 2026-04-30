@@ -43,17 +43,19 @@ function initialsOf(name: string | null | undefined, handle: string | null | und
 export function ActivityStrip({ events }: { events: ActivityEvent[] }) {
   if (events.length === 0) return null
   return (
-    <div className="mb-6 rounded-xl border border-gray-200 bg-white/80 backdrop-blur px-3 py-2 overflow-x-auto">
-      <div className="flex items-center gap-3 min-w-max">
-        <span
-          className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-purple-700 pl-1 pr-2"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
-          Live
-        </span>
-        {events.map((e, i) => (
-          <ActivityItem key={i} e={e} />
-        ))}
+    <div className="mb-6">
+      <p className="text-[10.5px] uppercase tracking-[0.16em] font-bold text-gray-500 mb-2 px-1">
+        Live activity
+      </p>
+      <div className="rounded-xl border border-gray-200 bg-white px-3 py-2.5 overflow-x-auto">
+        <div className="flex items-center gap-3 min-w-max">
+          <span className="shrink-0 inline-flex items-center pl-1 pr-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+          </span>
+          {events.map((e, i) => (
+            <ActivityItem key={i} e={e} />
+          ))}
+        </div>
       </div>
     </div>
   )
