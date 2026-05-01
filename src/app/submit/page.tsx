@@ -35,11 +35,12 @@ import {
   gtagSubscribeCompleted,
   gtagSubscribeClicked,
 } from '@/lib/gtag'
-import { ProgressHeader } from '@/components/submit/progress-header'
 import { FormatStep, type DeclaredFormat } from '@/components/submit/format-step'
 import { ScriptStep } from '@/components/submit/script-step'
 import { AccountStep, type AccountMode } from '@/components/submit/account-step'
 import { ScoringTerminal, DraftSavedTerminal } from '@/components/submit/terminals'
+import { OnboardingShell } from '@/components/onboarding/onboarding-shell'
+import type { ChecklistItem } from '@/components/onboarding/onboarding-checklist'
 
 type FlowStep = 'format' | 'script' | 'account' | 'scoring' | 'draft_saved'
 
@@ -608,103 +609,142 @@ function SubmitPageInner() {
     )
   }
 
+  // Build the per-step checklist. Both with-file and without-file
+  // journeys end at the report (with-file) or dashboard (no-file/draft).
+  // Anuj 2026-04-30 v0.10.7 — checklist visible across the whole flow,
+  // so the user can always see where they are and where they land.
+  const hasFile = !!file
+  const checklistItems: ChecklistItem[] = (() => {
+    function s(active: typeof step) {
+      if (step === active) return 'current'
+      // Step ordering for "done" comparison
+      const order = ['format', 'script', 'account', 'scoring'] as const
+      const idx = (k: typeof step) => order.indexOf(k as typeof order[number])
+      return idx(step) > idx(active) ? 'done' : 'pending'
+    }
+    if (hasFile) {
+      // Path A — PDF in flight. "Got your script" already done.
+      return [
+        { label: 'Got your script', state: 'done' },
+        { label: 'Tell us the format', state: s('format') },
+        { label: 'Create your account', state: s('account') },
+        { label: 'Confirm privacy', state: 'pending' },
+        { label: 'Set up your profile', state: 'pending', hint: 'Skippable' },
+        { label: 'Open your report', state: 'pending', hint: 'Selznick is reading it now' },
+      ]
+    }
+    // No file yet — they're picking format then deciding to upload or draft.
+    return [
+      { label: 'Tell us the format', state: s('format') },
+      { label: 'Add your script', state: s('script'), hint: mode === 'draft' ? 'Or save as a draft' : undefined },
+      { label: 'Create your account', state: s('account') },
+      { label: 'Confirm privacy', state: 'pending' },
+      { label: 'Set up your profile', state: 'pending', hint: 'Skippable' },
+      { label: 'Open your dashboard', state: 'pending' },
+    ]
+  })()
+
+  // Per-step heading + subhead. Drives the OnboardingShell h1/sub.
+  const stepHeading: { heading: string; subhead?: string } = (() => {
+    if (step === 'format')
+      return {
+        heading: hasFile ? 'Got it. Quick question first.' : "Let's get your GEM account started.",
+        subhead: hasFile
+          ? 'Is this a feature or a series? Selznick uses different rubrics for each.'
+          : 'Is this a feature or a series? You can also pick if you don’t have a script ready yet — we’ll save your spot.',
+      }
+    if (step === 'script')
+      return {
+        heading: 'Add your script.',
+        subhead: 'Drop a PDF and we’ll start the read. No PDF yet? Save your spot — we’ll come back to this.',
+      }
+    if (step === 'account')
+      return {
+        heading: mode === 'upload' ? 'Where should we send it?' : 'Save your spot.',
+        subhead:
+          mode === 'upload'
+            ? 'Your report is ready in 60 seconds. We’ll email you when it lands.'
+            : 'Hold this draft on your dashboard. Upload your PDF anytime.',
+      }
+    if (step === 'scoring')
+      return { heading: 'Selznick is reading…', subhead: 'Hang tight. Your report drops in about a minute.' }
+    return { heading: 'Draft saved.', subhead: 'You can come back anytime to finish uploading your script.' }
+  })()
+
+  // Account step renders its own h1 — hide the shell heading there to
+  // avoid double-stacking.
+  const shellHeading = step === 'account' ? undefined : stepHeading.heading
+  const shellSubhead = step === 'account' ? undefined : stepHeading.subhead
+
   return (
-    <main className="min-h-screen bg-[var(--gem-black)]">
-      <div className="max-w-[680px] mx-auto px-3 sm:px-6 py-3 sm:py-6">
-        <div
-          className="rounded-2xl overflow-hidden"
-          style={{
-            background: 'var(--gem-black)',
-            border: '1px solid var(--gem-gray-700)',
-          }}
-        >
-          {step !== 'scoring' && step !== 'draft_saved' && (
-            <ProgressHeader
-              step={step === 'format' ? 1 : step === 'script' ? 2 : 3}
-              onBack={() => {
-                if (step === 'script') {
-                  // Clear the format so FormatStep doesn't auto-advance us
-                  // straight back forward — the writer should explicitly
-                  // re-confirm Feature/Series before continuing.
-                  setDeclaredFormat(null)
-                  setStep('format')
-                } else if (step === 'account') {
-                  setStep('script')
-                }
-              }}
-              badge={
-                step === 'account'
-                  ? mode === 'upload'
-                    ? 'with PDF'
-                    : 'draft only'
-                  : undefined
-              }
-            />
-          )}
-
-          <div className="px-5 sm:px-12 pt-6 pb-2">
-            {step === 'format' && (
-              <FormatStep initial={declaredFormat} onSelect={handleFormatSelected} />
-            )}
-
-            {step === 'script' && (
-              <>
-                <ScriptStep
-                  initialFileName={file?.name ?? null}
-                  onFileChosen={handleFileChosen}
-                  onSkip={continueFromScriptStepWithoutFile}
-                />
-                {file && (
-                  <div className="max-w-[520px] mx-auto pb-8 -mt-4">
-                    <button
-                      type="button"
-                      onClick={continueFromScriptStepWithFile}
-                      className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60"
-                      style={{ background: 'var(--gem-accent)' }}
-                    >
-                      Continue with this script →
-                    </button>
-                  </div>
-                )}
-                {paywalled && <PaywallCard onUpgrade={handleUpgrade} loading={upgradeLoading} />}
-                {error && <ErrorBanner message={error} />}
-              </>
-            )}
-
-            {step === 'account' && (
-              <AccountStep
-                mode={mode}
-                signingUp={signingUp}
-                googleLoading={googleLoading}
-                error={error}
-                onGoogle={handleGoogle}
-                onEmailSignup={handleEmailSignup}
-              />
-            )}
-
-            {step === 'scoring' && <ScoringTerminal />}
-
-            {step === 'draft_saved' && (
-              <DraftSavedTerminal
-                onUploadNow={() => {
-                  setStep('script')
-                  setMode('upload')
-                  setFile(null)
-                }}
-                onLater={() => router.push('/dashboard?draft_saved=1')}
-              />
-            )}
-          </div>
-        </div>
-
-        <p className="text-center text-[12px] text-[var(--gem-gray-500)] mt-5">
+    <OnboardingShell
+      checklistTitle="Your GEM account"
+      checklistItems={checklistItems}
+      heading={shellHeading}
+      subhead={shellSubhead}
+      footer={
+        <span>
           Already have an account?{' '}
           <Link href="/login" className="text-[var(--gem-accent)] hover:underline">
             Log in
           </Link>
-        </p>
+        </span>
+      }
+    >
+      <div className="max-w-[520px]">
+        {step === 'format' && (
+          <FormatStep initial={declaredFormat} onSelect={handleFormatSelected} />
+        )}
+
+        {step === 'script' && (
+          <>
+            <ScriptStep
+              initialFileName={file?.name ?? null}
+              onFileChosen={handleFileChosen}
+              onSkip={continueFromScriptStepWithoutFile}
+            />
+            {file && (
+              <div className="pb-4 -mt-4">
+                <button
+                  type="button"
+                  onClick={continueFromScriptStepWithFile}
+                  className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60"
+                  style={{ background: 'var(--gem-accent)' }}
+                >
+                  Continue with this script →
+                </button>
+              </div>
+            )}
+            {paywalled && <PaywallCard onUpgrade={handleUpgrade} loading={upgradeLoading} />}
+            {error && <ErrorBanner message={error} />}
+          </>
+        )}
+
+        {step === 'account' && (
+          <AccountStep
+            mode={mode}
+            signingUp={signingUp}
+            googleLoading={googleLoading}
+            error={error}
+            onGoogle={handleGoogle}
+            onEmailSignup={handleEmailSignup}
+          />
+        )}
+
+        {step === 'scoring' && <ScoringTerminal />}
+
+        {step === 'draft_saved' && (
+          <DraftSavedTerminal
+            onUploadNow={() => {
+              setStep('script')
+              setMode('upload')
+              setFile(null)
+            }}
+            onLater={() => router.push('/dashboard?draft_saved=1')}
+          />
+        )}
       </div>
-    </main>
+    </OnboardingShell>
   )
 }
 

@@ -14,8 +14,9 @@ import { OnboardingChecklist, type ChecklistItem } from './onboarding-checklist'
 interface Props {
   checklistTitle?: string
   checklistItems: ChecklistItem[]
-  /** Big page heading above the active step's content. */
-  heading: string
+  /** Big page heading above the active step's content. Optional —
+   *  some step components carry their own heading. */
+  heading?: string
   /** One-line subhead under the heading. */
   subhead?: string
   children: React.ReactNode
