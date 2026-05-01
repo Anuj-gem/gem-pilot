@@ -58,10 +58,11 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .eq('id', user.id)
     .single()
 
-  // Forced profile onboarding — every user must have a handle + headline.
-  if (!profile?.handle || !profile?.headline) {
-    redirect('/profile?onboarding=1')
-  }
+  // Anuj 2026-04-30 v0.10.11 — REMOVED the forced "must have handle +
+  // headline" gate. The new onboarding flow (/onboarding/profile) lets
+  // users skip profile setup intentionally; the old gate was bouncing
+  // them right back to /profile?onboarding=1, undoing the Skip. Profile
+  // setup is now strictly opt-in and lives in the nav avatar dropdown.
 
   const isPro = profile?.subscription_status === 'active'
   const service = svc()
