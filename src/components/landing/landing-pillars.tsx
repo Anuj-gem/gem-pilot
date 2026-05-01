@@ -41,8 +41,8 @@ export function LandingPillars() {
         />
         <Pillar
           eyebrow="Direct industry contact"
-          title="Reach the people who actually buy."
-          body="Pro members message producers, agents, and managers directly. No gatekeepers, no inbox roulette."
+          title="Get connected to the people who actually buy."
+          body="Producers, agents, and managers come to GEM looking for new scripts and promising writers. Pro unlocks the connection — when your work catches their eye, they reach out directly through GEM."
           mockup={<IndustryMockup />}
           align="right"
         />
@@ -101,14 +101,14 @@ function Pillar({
 }
 
 // ── Mockup 1: Selznick read ───────────────────────────────────────
-// The lead pillar. Shows the GEM Score + the five named dimensions
-// (no weights — that's a hard rule) + a snippet from "Why this is a
-// hit" so the sophistication is visible in 200ms of skim, not
-// asserted in marketing adjectives. Anuj 2026-04-30 v0.12.0.
+// The lead pillar. Now shows actual outputs from the report —
+// "Why this is a hit" notes + budget tier + production complexity
+// pills — instead of input dimensions, so a visitor sees what they
+// actually GET, not how the read is scored. Anuj 2026-05-01 v0.12.1.
 function SelznickReportMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <div className="flex items-start justify-between gap-3 mb-3">
+      <div className="flex items-start justify-between gap-3 mb-4">
         <div className="min-w-0">
           <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
             Selznick read
@@ -138,62 +138,84 @@ function SelznickReportMockup() {
         </div>
       </div>
 
-      {/* Headline pull-quote — the same artifact the report shows. */}
+      {/* Why this is a hit — 2 short numbered notes. The shape mirrors
+          the actual report section. */}
       <div
-        className="rounded-lg px-3 py-2.5 mb-4"
+        className="rounded-lg p-3.5 mb-3"
         style={{
-          background:
-            'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%)',
-          border: '1px solid rgba(212,160,23,0.30)',
+          background: 'var(--gem-gray-900)',
+          border: '1px solid var(--gem-gray-700)',
         }}
       >
-        <p className="text-[8.5px] uppercase tracking-[0.16em] font-bold m-0 mb-1" style={{ color: '#92710f' }}>
-          Headline
+        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
+          Why this is a hit
         </p>
-        <p
-          className="text-[12.5px] font-semibold m-0 leading-snug text-[var(--gem-gray-50)]"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          A New Jersey mob boss in therapy races to hide his panic attacks before
-          family and rivals expose him.
-        </p>
+        <div className="space-y-1.5">
+          <WhyRow n="01" text="The premise is a built-in engine for tonal whiplash." />
+          <WhyRow n="02" text="Tony is a star-making contradiction in lead-actor terms." />
+        </div>
       </div>
 
-      {/* Five named dimensions — names only, never weights. The bars
-          render as visual proof that the read is structured. Heights
-          are illustrative, not real data. */}
-      <div className="space-y-1.5">
-        <DimensionRow label="Audience appeal" pct={88} />
-        <DimensionRow label="Characters" pct={82} />
-        <DimensionRow label="Originality" pct={74} />
-        <DimensionRow label="Hook" pct={91} />
-        <DimensionRow label="Momentum" pct={68} />
+      {/* Production reality — two pills mirroring the report's
+          packaging + complexity badges. */}
+      <div className="grid grid-cols-2 gap-2">
+        <ReadTile label="Budget" value="Indie" hint="$2–5M" tone="indie" />
+        <ReadTile label="Complexity" value="Manageable" hint="2 main locations" tone="manageable" />
       </div>
     </div>
   )
 }
 
-function DimensionRow({ label, pct }: { label: string; pct: number }) {
+function WhyRow({ n, text }: { n: string; text: string }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-[11.5px] font-semibold text-[var(--gem-gray-200)] w-[120px] shrink-0">
+    <div className="flex gap-2">
+      <span className="text-[10px] font-bold tabular-nums shrink-0" style={{ color: 'var(--gem-gold)' }}>
+        {n}
+      </span>
+      <p className="text-[12px] m-0 leading-snug text-[var(--gem-gray-100)]">
+        {text}
+      </p>
+    </div>
+  )
+}
+
+function ReadTile({
+  label,
+  value,
+  hint,
+  tone,
+}: {
+  label: string
+  value: string
+  hint: string
+  tone: 'indie' | 'manageable'
+}) {
+  const toneColor = tone === 'manageable' ? '#16a34a' : 'var(--gem-accent)'
+  const toneBg =
+    tone === 'manageable'
+      ? 'rgba(22,163,74,0.08)'
+      : 'rgba(124,58,237,0.08)'
+  const toneBorder =
+    tone === 'manageable'
+      ? 'rgba(22,163,74,0.30)'
+      : 'rgba(124,58,237,0.30)'
+  return (
+    <div
+      className="rounded-lg p-3"
+      style={{
+        background: toneBg,
+        border: `1px solid ${toneBorder}`,
+      }}
+    >
+      <p className="text-[9px] uppercase tracking-[0.18em] font-bold m-0 mb-1" style={{ color: toneColor }}>
         {label}
-      </span>
-      <div
-        className="flex-1 h-1.5 rounded-full overflow-hidden"
-        style={{ background: 'var(--gem-gray-900)' }}
-      >
-        <div
-          className="h-full rounded-full"
-          style={{
-            width: `${pct}%`,
-            background: 'linear-gradient(90deg, var(--gem-accent), #a855f7)',
-          }}
-        />
-      </div>
-      <span className="text-[11px] font-bold tabular-nums text-[var(--gem-gray-100)] w-[26px] text-right">
-        {pct}
-      </span>
+      </p>
+      <p className="text-[14px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]" style={{ fontFamily: 'Georgia, serif' }}>
+        {value}
+      </p>
+      <p className="text-[10.5px] m-0 mt-0.5 text-[var(--gem-gray-400)] leading-snug">
+        {hint}
+      </p>
     </div>
   )
 }
