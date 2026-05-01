@@ -601,6 +601,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             when the modal already owns preset selection, custom toggles,
             contact settings, publish, and unpublish. */}
 
+        {/* Anuj 2026-04-30 v0.10.13 — wrap the body of the report in a
+            single white card so it sits cleanly on the gray (app)
+            background instead of having text float against #F7F8FA.
+            Chrome (back link + upgrade banner + status line + privacy
+            modal triggers) stays outside the card. */}
+        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm">
+
         {/* Writer card — clickable link to /w/{handle}. Same component used
             on review bylines so the visual language is consistent across the
             social surface. (Anuj 2026-04-29 v0.3.) */}
@@ -1367,6 +1374,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </p>
           </div>
         )}
+        </div>
+        {/* /v0.10.13 white card wrapper closes here. */}
       </div>
 
       {/* Invite a Reviewer — visible to script owner only (Anuj 2026-04-29 v0.2). */}
