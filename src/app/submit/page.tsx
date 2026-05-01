@@ -647,8 +647,8 @@ function SubmitPageInner() {
         { label: 'Tell us the format', state: s('format') },
         { label: 'Create your account', state: s('account') },
         { label: 'Confirm privacy', state: 'pending' },
-        { label: 'Set up your profile', state: 'pending', hint: 'Skippable' },
-        { label: 'Open your report', state: 'pending', hint: 'Selznick is reading it now' },
+        { label: 'Polish your profile', state: 'pending' },
+        { label: 'Open your report', state: 'pending', hint: 'Your report is processing' },
       ]
     }
     // No file yet — they're picking format then deciding to upload or draft.
@@ -657,7 +657,7 @@ function SubmitPageInner() {
       { label: 'Add your script', state: s('script'), hint: mode === 'draft' ? 'Or save as a draft' : undefined },
       { label: 'Create your account', state: s('account') },
       { label: 'Confirm privacy', state: 'pending' },
-      { label: 'Set up your profile', state: 'pending', hint: 'Skippable' },
+      { label: 'Polish your profile', state: 'pending' },
       { label: 'Open your dashboard', state: 'pending' },
     ]
   })()
@@ -685,7 +685,7 @@ function SubmitPageInner() {
             : 'Hold this draft on your dashboard. Upload your PDF anytime.',
       }
     if (step === 'scoring')
-      return { heading: 'Selznick is reading…', subhead: 'Hang tight. Your report drops in about a minute.' }
+      return { heading: 'Your script report is processing.', subhead: 'Hang tight — your report is ready in about a minute.' }
     return { heading: 'Draft saved.', subhead: 'You can come back anytime to finish uploading your script.' }
   })()
 
@@ -697,7 +697,7 @@ function SubmitPageInner() {
   // Persistent framing banner — same on every step. Tells the user what
   // they're working toward so each step doesn't feel like a fresh ask.
   const framingBanner = hasFile
-    ? 'Selznick is reading your script. Just a couple steps to make your post and profile look perfect for the GEM community.'
+    ? "Your script report is processing. Finalize these quick steps and we'll take you to it."
     : "Let's get your GEM account set up. A few quick steps."
 
   // Top action bar — Back goes to previous step; Continue and Skip

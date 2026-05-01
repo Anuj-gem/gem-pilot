@@ -64,19 +64,19 @@ export function OnboardingProfileClient({ profile, next }: Props) {
         { label: 'Format chosen', state: 'done' },
         { label: 'Account created', state: 'done' },
         { label: 'Privacy confirmed', state: 'done' },
-        { label: 'Polish your profile', state: 'current', hint: 'Skippable' },
+        { label: 'Polish your profile', state: 'current' },
         { label: 'Open your report', state: 'pending' },
       ]
     : [
         { label: 'Account created', state: 'done' },
         { label: 'Privacy confirmed', state: 'done' },
-        { label: 'Polish your profile', state: 'current', hint: 'Skippable' },
+        { label: 'Polish your profile', state: 'current' },
         { label: 'Open your dashboard', state: 'pending' },
       ]
 
   const framing = isPathA
-    ? 'Your report is almost ready. Polish how you appear to the GEM community — or skip and come back to this later.'
-    : 'Last step. Polish how you appear to writers and producers — or skip and come back later.'
+    ? "Almost there. Add a photo or a one-line headline so people know who wrote this — or skip and come back to it from your profile."
+    : "Last step. Add a photo or a one-line headline so people know who you are — or skip and come back to it later."
 
   function save() {
     setError(null)

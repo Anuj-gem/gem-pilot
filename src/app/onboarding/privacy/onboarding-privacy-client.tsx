@@ -50,18 +50,18 @@ export function OnboardingPrivacyClient({ initial, next }: Props) {
         { label: 'Format chosen', state: 'done' },
         { label: 'Account created', state: 'done' },
         { label: 'Confirm privacy', state: 'current' },
-        { label: 'Polish your profile', state: 'pending', hint: 'Skippable' },
+        { label: 'Polish your profile', state: 'pending' },
         { label: 'Open your report', state: 'pending' },
       ]
     : [
         { label: 'Account created', state: 'done' },
         { label: 'Confirm privacy', state: 'current' },
-        { label: 'Polish your profile', state: 'pending', hint: 'Skippable' },
+        { label: 'Polish your profile', state: 'pending' },
         { label: 'Open your dashboard', state: 'pending' },
       ]
 
   const framing = isPathA
-    ? 'Selznick is reading your script. Just a couple steps to make your post and profile look perfect for the GEM community.'
+    ? "Your script report is processing. Finalize these quick steps and we'll take you to it."
     : 'Get your account set up. Two quick steps.'
 
   function persist() {

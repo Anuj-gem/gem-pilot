@@ -19,6 +19,7 @@ import { OnboardingShell } from '@/components/onboarding/onboarding-shell'
 import type { ChecklistItem } from '@/components/onboarding/onboarding-checklist'
 import { slugifyHandle, HANDLE_RE } from '@/lib/handle-suggest'
 import { updateProfile } from '@/app/profile/actions'
+import { HandleField } from '@/components/submit/account-step'
 
 const PATH_B_NEXT_KEY = 'gem_onboarding_next'
 
@@ -122,7 +123,7 @@ export function OnboardingAccountClient() {
   const checklistItems: ChecklistItem[] = [
     { label: 'Create your account', state: 'current' },
     { label: 'Confirm privacy', state: 'pending' },
-    { label: 'Polish your profile', state: 'pending', hint: 'Skippable' },
+    { label: 'Polish your profile', state: 'pending' },
     { label: 'Open your dashboard', state: 'pending' },
   ]
 
@@ -188,33 +189,13 @@ export function OnboardingAccountClient() {
             className="w-full rounded-xl px-4 py-3 text-[14px]"
             style={{ background: '#fff', border: '1px solid var(--gem-gray-700)', color: '#111' }}
           />
-          <div>
-            <div className="relative">
-              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[14px] text-[var(--gem-gray-500)] font-mono">
-                gem.studio/w/
-              </span>
-              <input
-                type="text"
-                placeholder="your-handle"
-                value={handle}
-                onChange={(e) => {
-                  setHandleEdited(true)
-                  setHandle(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 32))
-                }}
-                required
-                minLength={3}
-                maxLength={32}
-                className="w-full rounded-xl py-3 text-[14px] font-mono"
-                style={{
-                  background: '#fff',
-                  border: '1px solid var(--gem-gray-700)',
-                  color: '#111',
-                  paddingLeft: 122,
-                  paddingRight: 16,
-                }}
-              />
-            </div>
-          </div>
+          <HandleField
+            value={handle}
+            onChange={(next, edited) => {
+              if (edited) setHandleEdited(true)
+              setHandle(next)
+            }}
+          />
           <input
             type="email"
             placeholder="Email"

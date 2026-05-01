@@ -15,7 +15,7 @@
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
-import { findAvailableHandle } from '@/lib/handle-suggest'
+import { fallbackHandle, findAvailableHandle } from '@/lib/handle-suggest'
 
 export default async function OnboardingEntry() {
   const supabase = await createClient()
@@ -32,7 +32,7 @@ export default async function OnboardingEntry() {
   // without one because Google doesn't ask for it; email/password users
   // pick their own in the account form so they already have one set.
   if (profile && !profile.handle) {
-    const candidate = profile.full_name || user.email?.split('@')[0] || 'writer'
+    const candidate = fallbackHandle(profile.full_name || user.email?.split('@')[0] || '')
     const handle = await findAvailableHandle(supabase, candidate, user.id)
     await supabase.from('profiles').update({ handle }).eq('id', user.id)
   }

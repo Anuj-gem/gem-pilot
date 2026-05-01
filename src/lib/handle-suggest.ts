@@ -9,17 +9,25 @@ import { SupabaseClient } from '@supabase/supabase-js'
 export const HANDLE_RE = /^[a-z0-9-]{3,32}$/
 
 /** Slugify a string into a candidate handle. Lowercase, alphanumerics +
- *  dashes, collapsed. Falls back to "writer" if the input is empty. */
+ *  dashes, collapsed. Returns "" when the input is empty so the caller
+ *  doesn't surface a stupid placeholder ("writer") to the user.
+ *  Anuj 2026-04-30 v0.10.17 — empty stays empty in the form. */
 export function slugifyHandle(input: string): string {
-  const slug = (input || '')
+  return (input || '')
     .toLowerCase()
     .replace(/['']/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .slice(0, 32)
+}
+
+/** Server-side fallback for users who arrive without a handle (Google
+ *  OAuth flow). Never returns empty — pads short slugs and uses a
+ *  generic stem only when the input is truly unusable. */
+export function fallbackHandle(input: string): string {
+  const slug = slugifyHandle(input)
   if (slug.length >= 3) return slug
-  // Pad short slugs to meet the 3-char minimum.
-  return (slug || 'writer').padEnd(3, '0').slice(0, 32)
+  return (slug || 'gem-writer').padEnd(3, '0').slice(0, 32)
 }
 
 /** Find a unique handle starting from a candidate. If the candidate is
