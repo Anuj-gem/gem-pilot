@@ -22,6 +22,8 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { AppRail } from '@/components/dashboard/app-rail'
 import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
+import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
+import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 
 function svc() {
   return createServerClient(
@@ -54,7 +56,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // pages via usePathname.
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, headline, avatar_url')
+    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at')
     .eq('id', user.id)
     .single()
 
@@ -134,10 +136,13 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const recentActivity = activity.slice(0, 3)
 
   const isPro = profile?.subscription_status === 'active'
+  const needsPrivacyConfirm = !(profile as { privacy_confirmed_at?: string | null } | null)?.privacy_confirmed_at
+  const initialPrivacy = normalizePrivacyDefaults((profile as { privacy_defaults?: unknown } | null)?.privacy_defaults)
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <Nav />
+      {needsPrivacyConfirm && <PrivacyConfirmPrompt initial={initialPrivacy} />}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
         <AppRail
           profile={{

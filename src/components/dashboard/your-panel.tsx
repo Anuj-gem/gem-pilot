@@ -106,6 +106,15 @@ export function YourPanel({ profile, stats, recentActivity = [] }: Props) {
             Edit profile
           </Link>
         </div>
+        <div className="mt-2">
+          <Link
+            href="/profile/privacy"
+            prefetch={false}
+            className="block w-full text-center text-[11.5px] font-semibold text-gray-500 hover:text-gray-900 hover:underline py-1"
+          >
+            Privacy settings →
+          </Link>
+        </div>
       </div>
 
       {/* RECENT ACTIVITY — your last 3 publishes/reviews as plain text

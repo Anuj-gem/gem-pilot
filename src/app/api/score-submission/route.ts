@@ -226,24 +226,29 @@ export async function POST(request: NextRequest) {
       .select("user_id")
       .eq("id", submission.id)
       .single()
-    let ownerIsPro = false
     let ownerIsProducer = false
+    let ownerPublicDefault = true
     if (ownedCheck?.user_id) {
       const { data: ownerProfile } = await serviceClient
         .from("profiles")
-        .select("subscription_status, account_type")
+        .select("account_type, privacy_defaults")
         .eq("id", ownedCheck.user_id)
-        .single()
-      ownerIsPro = ownerProfile?.subscription_status === "active"
+        .single<{ account_type: string | null; privacy_defaults: { public_default?: boolean } | null }>()
       ownerIsProducer = ownerProfile?.account_type === "producer"
+      // Public-by-default reads from the writer's account-level
+      // privacy setting (Anuj 2026-04-30 v0.10).
+      if (typeof ownerProfile?.privacy_defaults?.public_default === "boolean") {
+        ownerPublicDefault = ownerProfile.privacy_defaults.public_default
+      }
     }
     await serviceClient
       .from("script_submissions")
       .update({
         status: "completed",
-        // Producer-owned scripts stay private regardless of subscription.
-        // Pro writers default to public on completion.
-        ...(ownerIsPro && !ownerIsProducer ? { is_public: true } : {}),
+        // Producer-owned scripts stay private regardless of writer
+        // defaults. Otherwise inherit the writer's account-level
+        // public_default toggle.
+        ...(!ownerIsProducer ? { is_public: ownerPublicDefault } : {}),
       })
       .eq("id", submission.id)
 
