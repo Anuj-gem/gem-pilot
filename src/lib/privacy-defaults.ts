@@ -34,13 +34,12 @@ export interface PrivacyDefaults {
 }
 
 export const DEFAULT_PRIVACY: PrivacyDefaults = {
+  // All toggles default ON (Anuj 2026-04-30): users start fully open
+  // and dial back what they don't want, rather than starting closed
+  // and missing reach.
   public_default: true,
-  // Producer-side is opt-in. Anuj 2026-04-30: deprioritize industry
-  // funnel; prioritize community + reviews.
-  allow_industry: false,
-  // Reviewer script access is opt-in. Off keeps reviews on the report
-  // only; on attracts more readers + deeper reviews.
-  allow_reviewer_script_access: false,
+  allow_industry: true,
+  allow_reviewer_script_access: true,
   sections: {
     headline: true,
     cast: true,

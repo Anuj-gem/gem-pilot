@@ -27,18 +27,18 @@ interface Props {
 const TOGGLES = [
   {
     key: 'public_default' as const,
-    title: 'Public to GEM members',
-    sub: 'Your scripts appear on Community and on your profile page. Other GEM members can find and review them.',
+    title: 'Publish posts to the GEM community',
+    sub: 'Your scripts appear to other GEM members and our industry partners.',
   },
   {
     key: 'allow_industry' as const,
-    title: 'Allow GEM industry partners to access your script and reach out',
-    sub: 'Producers and reps can read your full report, download your script PDF, and email you directly. You’ll see exactly who’s looking from your dashboard.',
+    title: 'Allow GEM industry partners to reach out',
+    sub: 'Producers and reps can mark themselves interested, download your script, and email you directly.',
   },
   {
     key: 'allow_reviewer_script_access' as const,
     title: 'Let reviewers read your script',
-    sub: 'When a community member reviews your script, they can also pull the PDF. Off means reviewers can only see the report. Turning this on tends to attract more (and deeper) reviews.',
+    sub: 'When community members want to review your script, they’ll be able to access it through the review tool. You’ll always see who accessed your script.',
   },
 ]
 
