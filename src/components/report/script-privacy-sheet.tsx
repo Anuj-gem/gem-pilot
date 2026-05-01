@@ -3,19 +3,36 @@
 // ScriptPrivacySheet — per-script privacy modal launched from the
 // report-page triple-dot menu.
 //
-// Mirrors the account-level PrivacyForm shape (the same two toggles a
-// writer set during onboarding), but scoped to a single submission. No
-// Pro gating — anybody with a published post owns these settings.
+// Five controls, all scoped to the one script (override account-level
+// defaults):
+//   1. Published — visible in the community feed at all
+//   2. Allow reviews — peers can read + leave reviews
+//   3. Allow industry access — producers/agents/managers can read + reach out
+//   4. Show GEM Score — render the score badge to non-owners (you can
+//      always see your own)
+//   5. Show all report sections — when off, expand to per-section toggles
 //
-// Anuj 2026-04-30 v0.10. Replaces the heavier DashboardPrivacyButton
-// panel that was inlined in the report status bar with Pro upsells +
-// per-section toggles. The per-section detail still lives in the
-// account-level /profile/privacy form; per-script the writer just gets
-// the two top-level switches.
+// Anuj 2026-05-01 v0.12.4 — restored the score + per-section controls
+// the writer used to have. They live behind a single "Show all" toggle
+// so the default flow stays one click; customizing is one extra click.
 
 import { useEffect, useState } from 'react'
-import { Briefcase, Globe, MessageSquare, X } from 'lucide-react'
+import {
+  Briefcase,
+  Globe,
+  MessageSquare,
+  Star,
+  LayoutList,
+  X,
+} from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import {
+  SECTION_KEYS,
+  SECTION_META,
+  type ReportPrivacy,
+  type SectionKey,
+  type Visibility,
+} from '@/lib/report-privacy'
 
 interface Props {
   open: boolean
@@ -24,6 +41,15 @@ interface Props {
   initialIsPublic: boolean
   initialAllowReviews: boolean
   initialAllowIndustry: boolean
+  /** Defaults true. When false, score badge is hidden from non-owners
+   *  and the script is excluded from Top-GEM sort. */
+  initialShowScore?: boolean
+  /** Per-section visibility map. Missing keys default to 'public'. */
+  initialSections?: Partial<Record<SectionKey, Visibility>>
+}
+
+function allSectionsPublic(sections: Partial<Record<SectionKey, Visibility>>): boolean {
+  return SECTION_KEYS.every((k) => (sections[k] ?? 'public') === 'public')
 }
 
 export function ScriptPrivacySheet({
@@ -33,11 +59,19 @@ export function ScriptPrivacySheet({
   initialIsPublic,
   initialAllowReviews,
   initialAllowIndustry,
+  initialShowScore = true,
+  initialSections = {},
 }: Props) {
   const router = useRouter()
   const [isPublic, setIsPublic] = useState(initialIsPublic)
   const [allowReviews, setAllowReviews] = useState(initialAllowReviews)
   const [allowIndustry, setAllowIndustry] = useState(initialAllowIndustry)
+  const [showScore, setShowScore] = useState(initialShowScore)
+  const [sections, setSections] = useState<Partial<Record<SectionKey, Visibility>>>(initialSections)
+  // "Show all sections" is the single-toggle abstraction over the
+  // per-section state. ON = every section public; OFF = expand to flip
+  // individual sections.
+  const [showAllSections, setShowAllSections] = useState(allSectionsPublic(initialSections))
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -47,9 +81,13 @@ export function ScriptPrivacySheet({
       setIsPublic(initialIsPublic)
       setAllowReviews(initialAllowReviews)
       setAllowIndustry(initialAllowIndustry)
+      setShowScore(initialShowScore)
+      setSections(initialSections)
+      setShowAllSections(allSectionsPublic(initialSections))
       setError(null)
     }
-  }, [open, initialIsPublic, initialAllowReviews, initialAllowIndustry])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, initialIsPublic, initialAllowReviews, initialAllowIndustry, initialShowScore])
 
   // Lock body scroll while open.
   useEffect(() => {
@@ -67,14 +105,34 @@ export function ScriptPrivacySheet({
     return () => document.removeEventListener('keydown', onKey)
   }, [open, onClose])
 
-  async function persist(payload: { is_public?: boolean; allow_reviews?: boolean; allow_industry?: boolean }) {
+  async function persist(payload: {
+    is_public?: boolean
+    allow_reviews?: boolean
+    allow_industry?: boolean
+    show_score?: boolean
+    sections?: Partial<Record<SectionKey, Visibility>>
+  }) {
     setBusy(true)
     setError(null)
     try {
+      // Build the privacy object if we're touching show_score or sections.
+      const wantsPrivacyUpdate = payload.show_score !== undefined || payload.sections !== undefined
+      const body: Record<string, unknown> = {}
+      if (payload.is_public !== undefined) body.is_public = payload.is_public
+      if (payload.allow_reviews !== undefined) body.allow_reviews = payload.allow_reviews
+      if (payload.allow_industry !== undefined) body.allow_industry = payload.allow_industry
+      if (wantsPrivacyUpdate) {
+        const nextPrivacy: ReportPrivacy = {
+          version: 1,
+          sections: payload.sections ?? sections,
+          show_score: payload.show_score ?? showScore,
+        }
+        body.privacy = nextPrivacy
+      }
       const res = await fetch(`/api/scripts/${encodeURIComponent(submissionId)}/privacy`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(body),
       })
       if (!res.ok) {
         const j = await res.json().catch(() => ({}))
@@ -83,10 +141,13 @@ export function ScriptPrivacySheet({
       router.refresh()
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not save.')
-      // Roll local state back to source of truth so the toggle reflects reality.
+      // Roll back local state to source of truth.
       setIsPublic(initialIsPublic)
       setAllowReviews(initialAllowReviews)
       setAllowIndustry(initialAllowIndustry)
+      setShowScore(initialShowScore)
+      setSections(initialSections)
+      setShowAllSections(allSectionsPublic(initialSections))
     } finally {
       setBusy(false)
     }
@@ -107,6 +168,32 @@ export function ScriptPrivacySheet({
     setAllowIndustry(next)
     persist({ allow_industry: next })
   }
+  function toggleScore() {
+    const next = !showScore
+    setShowScore(next)
+    persist({ show_score: next })
+  }
+  function toggleShowAllSections() {
+    const next = !showAllSections
+    setShowAllSections(next)
+    if (next) {
+      // Flipping ON resets every section to public.
+      const nextSections: Partial<Record<SectionKey, Visibility>> = {}
+      for (const k of SECTION_KEYS) nextSections[k] = 'public'
+      setSections(nextSections)
+      persist({ sections: nextSections })
+    }
+    // Flipping OFF just expands the panel — saves happen as the user
+    // taps individual sections below.
+  }
+  function toggleSection(key: SectionKey) {
+    const current = sections[key] ?? 'public'
+    const nextVis: Visibility = current === 'public' ? 'private' : 'public'
+    const nextSections = { ...sections, [key]: nextVis }
+    setSections(nextSections)
+    setShowAllSections(allSectionsPublic(nextSections))
+    persist({ sections: nextSections })
+  }
 
   if (!open) return null
 
@@ -120,11 +207,11 @@ export function ScriptPrivacySheet({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white w-full sm:max-w-md sm:w-[min(92vw,460px)] sm:rounded-2xl rounded-t-2xl shadow-xl"
+        className="bg-white w-full sm:max-w-md sm:w-[min(92vw,460px)] sm:rounded-2xl rounded-t-2xl shadow-xl max-h-[90vh] overflow-y-auto"
         style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       >
         <div aria-hidden className="sm:hidden w-10 h-1 rounded-full mx-auto mt-2.5 mb-1 bg-gray-200" />
-        <div className="flex items-start justify-between gap-3 px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100">
+        <div className="flex items-start justify-between gap-3 px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100 sticky top-0 bg-white z-10">
           <div>
             <h2
               id="script-privacy-title"
@@ -151,7 +238,7 @@ export function ScriptPrivacySheet({
           <ToggleRow
             icon={<Globe size={16} className="text-purple-700" />}
             title="Published"
-            sub="On Discover and visible to other GEM members."
+            sub="Listed in the community feed."
             on={isPublic}
             disabled={busy}
             onToggle={togglePublished}
@@ -167,11 +254,59 @@ export function ScriptPrivacySheet({
           <ToggleRow
             icon={<Briefcase size={16} className="text-purple-700" />}
             title="Allow industry access"
-            sub="Producers and reps can read this script and reach out."
+            sub="Producers and reps can read and reach out."
             on={allowIndustry}
             disabled={busy}
             onToggle={toggleIndustry}
           />
+          <ToggleRow
+            icon={<Star size={16} className="text-purple-700" />}
+            title="Show your GEM Score"
+            sub="Hide it and you won't appear in Top-GEM rankings."
+            on={showScore}
+            disabled={busy}
+            onToggle={toggleScore}
+          />
+          <ToggleRow
+            icon={<LayoutList size={16} className="text-purple-700" />}
+            title="Show all report sections"
+            sub="Off lets you hide individual sections from non-owners."
+            on={showAllSections}
+            disabled={busy}
+            onToggle={toggleShowAllSections}
+          />
+
+          {!showAllSections && (
+            <div className="pl-11 pr-1 pt-1 space-y-1">
+              {SECTION_KEYS.map((k) => {
+                const meta = SECTION_META[k]
+                const visible = (sections[k] ?? 'public') === 'public'
+                return (
+                  <div key={k} className="flex items-start gap-3 py-1.5">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[13px] font-semibold text-gray-900 m-0 leading-tight">{meta.label}</p>
+                      <p className="text-[11.5px] text-gray-500 m-0 mt-0.5 leading-snug">{meta.hint}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => toggleSection(k)}
+                      disabled={busy}
+                      aria-pressed={visible}
+                      className={`shrink-0 inline-flex items-center h-5 w-9 rounded-full transition-colors ${
+                        visible ? 'bg-emerald-500' : 'bg-gray-300'
+                      } ${busy ? 'opacity-60' : ''}`}
+                    >
+                      <span
+                        className={`block w-4 h-4 rounded-full bg-white shadow transition-transform ${
+                          visible ? 'translate-x-[18px]' : 'translate-x-0.5'
+                        }`}
+                      />
+                    </button>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
 
         {error && (

@@ -49,12 +49,17 @@ interface Props {
    *  `?download=1` so the report page auto-opens the modal. */
   downloadHref?: string
   /** Per-script privacy state. When provided, the menu exposes a
-   *  "Privacy settings" item that opens a 3-toggle sheet (Published +
-   *  Allow reviews + Allow industry access) — same shape as account-level
-   *  privacy. Anuj 2026-04-30 v0.10. */
+   *  "Privacy settings" item that opens the privacy sheet (Published,
+   *  Allow reviews, Allow industry access, Show GEM Score, Show all
+   *  report sections). Anuj 2026-04-30 v0.10 → 2026-05-01 v0.12.4. */
   isPublic?: boolean
   allowReviews?: boolean
   allowIndustry?: boolean
+  /** Optional — defaults to true. Drives the Show GEM Score toggle. */
+  showScore?: boolean
+  /** Optional — per-section visibility map for the "Show all sections"
+   *  expander. Missing keys default to public. */
+  reportSections?: Partial<Record<import('@/lib/report-privacy').SectionKey, import('@/lib/report-privacy').Visibility>>
 }
 
 export function OwnerActionsMenu({
@@ -69,6 +74,8 @@ export function OwnerActionsMenu({
   isPublic,
   allowReviews,
   allowIndustry,
+  showScore,
+  reportSections,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
@@ -278,6 +285,8 @@ export function OwnerActionsMenu({
           initialIsPublic={isPublic}
           initialAllowReviews={allowReviews}
           initialAllowIndustry={allowIndustry}
+          initialShowScore={showScore}
+          initialSections={reportSections}
         />
       )}
     </div>

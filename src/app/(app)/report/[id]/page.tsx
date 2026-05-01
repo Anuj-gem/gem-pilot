@@ -591,6 +591,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   isPublic={submission.is_public ?? false}
                   allowReviews={submission.allow_reviews ?? true}
                   allowIndustry={submission.allow_industry ?? true}
+                  showScore={privacy?.show_score !== false}
+                  reportSections={privacy?.sections}
                 />
               )}
             </div>
@@ -661,7 +663,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             null
           }
           scoreShownToIndustry={isScoreVisible(privacy)}
-          isProSubscriber={ownerIsSubscribed || isAdmin}
+          isProSubscriber={true}
         />
 
         {/* Producer-mode action row (Interested / Pass). Sits right under
@@ -733,7 +735,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
-          isProSubscriber={ownerIsSubscribed || isAdmin}
+          isProSubscriber={true}
         >
           {(whatsSpecial.headline || allStrengths.length > 0) && (
             <div data-pdf-section="whats_working">
@@ -803,7 +805,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
-          isProSubscriber={ownerIsSubscribed || isAdmin}
+          isProSubscriber={true}
         >
           {leadCharacters.length > 0 && (
             <div data-pdf-section="cast">
@@ -888,7 +890,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isOwnerOrAdmin={isOwnerOrAdmin}
           submissionId={privacyControlId}
           isPublic={submission.is_public ?? false}
-          isProSubscriber={ownerIsSubscribed || isAdmin}
+          isProSubscriber={true}
         >
           <div data-pdf-section="packaging">
             {/* PACKAGING — modern card UI. Renders for every eval; the
@@ -922,7 +924,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isOwnerOrAdmin={isOwnerOrAdmin}
             submissionId={privacyControlId}
             isPublic={submission.is_public ?? false}
-            isProSubscriber={ownerIsSubscribed || isAdmin}
+            isProSubscriber={true}
           >
           {(() => {
             // Selznick 3.8: every eval emits `issues.items` directly.
@@ -1047,7 +1049,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isOwnerOrAdmin={isOwnerOrAdmin}
             submissionId={privacyControlId}
             isPublic={submission.is_public ?? false}
-            isProSubscriber={ownerIsSubscribed || isAdmin}
+            isProSubscriber={true}
           >
             <div
               data-pdf-section="project_complexity"
