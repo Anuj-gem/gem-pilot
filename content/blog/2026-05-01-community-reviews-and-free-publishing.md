@@ -2,12 +2,12 @@
 title: "Community reviews are here. And free writers can now publish on GEM."
 slug: community-reviews-and-free-publishing
 date: 2026-05-01
-summary: "Three big changes: peer reviews on every script, free publishing with peer feedback and the chance to get noticed, and a simpler privacy model with one set of defaults."
+summary: "Four big changes: peer reviews on every script, a real public profile for every writer, free publishing with peer feedback and the chance to get noticed, and a simpler privacy model with one set of defaults."
 author: "Anuj Kommareddy"
 draft: false
 ---
 
-Another big update. Three changes that together make GEM feel a lot more like a real place where writers can grow.
+Another big update. Four changes that together make GEM feel a lot more like a real place where writers can grow.
 
 ## 1. Community reviews on every script
 
@@ -64,7 +64,44 @@ A few details writers tend to ask about:
 - **Reviews live on the reviewer's profile too.** Good reviews build the reviewer's reputation as much as they help the writer.
 - **No drive-by drama.** Reviews are tied to real GEM accounts with public profiles. If the community is going to mean something, the people in it have to mean something.
 
-## 2. Free writers can now publish on GEM
+## 2. A real public profile
+
+Every writer on GEM gets a public profile at `gem.studio/w/your-handle` — your photo, your headline, your bio, every script you've published, and the reviews you've written for other writers. It's the page you'd actually want to drop in your Twitter bio or send a producer who asks "what else have you written?"
+
+The profile fills in as you go. Post a script, it shows up there. Leave a review, it shows up there. Pick up followers, that shows up too. By the time an industry partner clicks through, they don't see one script — they see a body of work.
+
+<div class="gem-blog-mock">
+  <p class="gem-blog-mock-title">Public profile</p>
+  <div style="background:var(--gem-gray-900);border:1px solid var(--gem-gray-700);border-radius:10px;padding:14px;margin:0 0 10px">
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:9999px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-weight:700;font-size:18px;flex-shrink:0">JS</span>
+      <div style="flex:1;min-width:0">
+        <p style="font-family:Georgia,serif;font-size:16px;font-weight:700;color:var(--gem-gray-50);margin:0;line-height:1.2">Jordan Sato</p>
+        <p style="font-family:monospace;font-size:12px;color:var(--gem-accent);margin:2px 0 0">@jordansato</p>
+        <p style="font-size:13px;color:var(--gem-gray-300);margin:6px 0 0;line-height:1.4">Half-hour comedy + features. Looking for staffing.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;padding:10px 0;border-top:1px solid var(--gem-gray-700);border-bottom:1px solid var(--gem-gray-700)">
+      <div><div style="font-size:15px;font-weight:700;color:var(--gem-gray-50)">4</div><div style="font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;color:var(--gem-gray-500);margin-top:2px">Scripts</div></div>
+      <div><div style="font-size:15px;font-weight:700;color:var(--gem-gray-50)">23</div><div style="font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;color:var(--gem-gray-500);margin-top:2px">Reviews</div></div>
+      <div><div style="font-size:15px;font-weight:700;color:var(--gem-gray-50)">89</div><div style="font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;color:var(--gem-gray-500);margin-top:2px">Followers</div></div>
+    </div>
+    <div style="margin-top:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:var(--gem-black);border:1px solid var(--gem-gray-700);border-radius:6px;margin-bottom:6px">
+        <span style="font-family:Georgia,serif;font-size:12.5px;font-weight:700;color:var(--gem-gray-50)">The Quiet Part</span>
+        <span style="font-size:11px;font-weight:700;color:var(--gem-accent);background:rgba(124,58,237,0.10);padding:2px 7px;border-radius:5px">84</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:var(--gem-black);border:1px solid var(--gem-gray-700);border-radius:6px">
+        <span style="font-family:Georgia,serif;font-size:12.5px;font-weight:700;color:var(--gem-gray-50)">Lawn Order</span>
+        <span style="font-size:11px;font-weight:700;color:var(--gem-accent);background:rgba(124,58,237,0.10);padding:2px 7px;border-radius:5px">71</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+You can edit any of it from your dashboard — photo, headline, bio, IMDb link. Or skip it and the profile still works on the basics.
+
+## 3. Free writers can now publish on GEM
 
 We've always wanted GEM to be a place writers could use for free. Now it really is.
 
@@ -104,7 +141,7 @@ If you're on the free plan, you can publish your script publicly, get peer revie
 
 The shape of it: GEM is open to anyone who writes. If you want to send producers your script directly through the app, or you've got more than one script to put out, that's where Pro picks up.
 
-## 3. Simpler privacy
+## 4. Simpler privacy
 
 Privacy used to be a per-section toggle. It was thorough and kind of a lot. We've collapsed it down to **three account-level defaults** that apply to every script you post.
 
