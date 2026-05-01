@@ -10,8 +10,9 @@
 
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChevronDown, Check, Loader2 } from 'lucide-react'
-import { DEFAULT_PRIVACY, type PrivacyDefaults } from '@/lib/privacy-defaults'
+import { ChevronDown, Check, Loader2, Globe, MessageSquare, Briefcase } from 'lucide-react'
+import { DEFAULT_PRIVACY, privacySectionList, type PrivacyDefaults } from '@/lib/privacy-defaults'
+import { type SectionKey } from '@/lib/report-privacy'
 
 interface Props {
   initial: PrivacyDefaults
@@ -27,31 +28,29 @@ interface Props {
 const TOGGLES = [
   {
     key: 'public_default' as const,
-    title: 'Publish posts to the GEM community',
-    sub: 'Your scripts appear to other GEM members and our industry partners.',
+    icon: Globe,
+    title: 'Auto-publish new scripts',
+    sub: 'You can unpublish any post later.',
+  },
+  {
+    key: 'allow_reviews' as const,
+    icon: MessageSquare,
+    title: 'Allow reviews',
+    sub: 'GEM members can read and review your script.',
   },
   {
     key: 'allow_industry' as const,
-    title: 'Allow GEM industry partners to reach out',
-    sub: 'Producers and reps can mark themselves interested, download your script, and email you directly.',
-  },
-  {
-    key: 'allow_reviewer_script_access' as const,
-    title: 'Let reviewers read your script',
-    sub: 'When community members want to review your script, they’ll be able to access it through the review tool. You’ll always see who accessed your script.',
+    icon: Briefcase,
+    title: 'Allow industry access',
+    sub: 'Producers and reps can read your script and reach out.',
   },
 ]
 
-const SECTIONS = [
-  { key: 'headline' as const,   label: 'Headline (logline)' },
-  { key: 'score' as const,      label: 'GEM Score' },
-  { key: 'cast' as const,       label: 'Cast / Lead characters' },
-  { key: 'packaging' as const,  label: 'Packaging' },
-  { key: 'issues' as const,     label: 'Issues / Development priorities' },
-  { key: 'complexity' as const, label: 'Project Complexity' },
-  { key: 'risk' as const,       label: 'Risk details' },
-  { key: 'comps' as const,      label: 'Comparable scripts' },
-]
+// Real sections from src/lib/report-privacy.ts SECTION_KEYS — pulled
+// via privacySectionList() so the form stays in sync with what
+// actually renders on the report page. Plus a "GEM Score" entry that
+// maps to PrivacyDefaults.show_score.
+const SECTIONS = privacySectionList()
 
 export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', showOnboardingHelp = false }: Props) {
   const router = useRouter()
@@ -85,11 +84,9 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
   return (
     <div className="space-y-5">
       {showOnboardingHelp && (
-        <div className="rounded-xl bg-purple-50 border border-purple-200 px-4 py-3">
-          <p className="text-[13px] text-purple-900 m-0">
-            These defaults apply to <strong>all your scripts</strong>. You can change them anytime from your profile.
-          </p>
-        </div>
+        <p className="text-[13px] text-gray-600 leading-snug">
+          You can change these anytime.
+        </p>
       )}
 
       {/* TOP-LEVEL TOGGLES */}
@@ -97,6 +94,7 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
         {TOGGLES.map((t) => (
           <ToggleRow
             key={t.key}
+            icon={<t.icon size={18} />}
             title={t.title}
             sub={t.sub}
             value={v[t.key]}
@@ -122,15 +120,22 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
           />
         </summary>
         <div className="px-4 pt-1 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {SECTIONS.map((s) => (
-            <label key={s.key} className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer">
-              <span className="text-[13px] text-gray-800">{s.label}</span>
-              <Switch
-                checked={v.sections[s.key]}
-                onChange={(next) => setV({ ...v, sections: { ...v.sections, [s.key]: next } })}
-              />
-            </label>
-          ))}
+          {SECTIONS.map((s) => {
+            const checked = s.key === 'show_score' ? v.show_score : v.sections[s.key as SectionKey]
+            const onChange = (next: boolean) => {
+              if (s.key === 'show_score') {
+                setV({ ...v, show_score: next })
+              } else {
+                setV({ ...v, sections: { ...v.sections, [s.key]: next } })
+              }
+            }
+            return (
+              <label key={s.key} className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer">
+                <span className="text-[13px] text-gray-800">{s.label}</span>
+                <Switch checked={checked} onChange={onChange} />
+              </label>
+            )
+          })}
         </div>
       </details>
 
@@ -153,8 +158,9 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
 }
 
 function ToggleRow({
-  title, sub, value, onChange,
+  icon, title, sub, value, onChange,
 }: {
+  icon?: React.ReactNode
   title: string
   sub: string
   value: boolean
@@ -162,9 +168,16 @@ function ToggleRow({
 }) {
   return (
     <label className="flex items-start justify-between gap-4 px-4 py-3.5 cursor-pointer">
-      <div className="flex-1 min-w-0">
-        <p className="text-[14px] font-bold text-gray-900 m-0 leading-snug">{title}</p>
-        <p className="text-[12.5px] text-gray-600 m-0 mt-1 leading-snug">{sub}</p>
+      <div className="flex items-start gap-3 flex-1 min-w-0">
+        {icon && (
+          <span className="shrink-0 w-9 h-9 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center mt-0.5">
+            {icon}
+          </span>
+        )}
+        <div className="flex-1 min-w-0">
+          <p className="text-[14px] font-bold text-gray-900 m-0 leading-snug">{title}</p>
+          <p className="text-[12.5px] text-gray-600 m-0 mt-0.5 leading-snug">{sub}</p>
+        </div>
       </div>
       <Switch checked={value} onChange={onChange} />
     </label>
