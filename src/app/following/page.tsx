@@ -53,7 +53,7 @@ export default async function FollowingPage() {
         {list.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-200 p-10 text-center text-sm text-gray-400">
             You're not following anyone yet. Browse{' '}
-            <Link href="/discover" className="text-purple-700 font-semibold hover:underline">Discover</Link> to find writers to follow.
+            <Link href="/community" className="text-purple-700 font-semibold hover:underline">Community</Link> to find writers to follow.
           </div>
         ) : (
           <div className="space-y-2">

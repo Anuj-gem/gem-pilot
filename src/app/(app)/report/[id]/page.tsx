@@ -513,7 +513,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {user && (
           <div className="gem-no-print mb-4">
             <Link
-              href="/discover"
+              href="/community"
               prefetch={false}
               className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-100)] transition-colors"
             >

@@ -50,7 +50,7 @@ export function MobileTabBar() {
 
   const tabs = [
     { href: '/dashboard',  label: 'Home',      icon: Home,     match: (p: string) => p === '/dashboard' || p === '/' },
-    { href: '/discover',   label: 'Community', icon: Users,    match: (p: string) => p.startsWith('/discover') },
+    { href: '/community',  label: 'Community', icon: Users,    match: (p: string) => p.startsWith('/community') || p.startsWith('/discover') },
     { href: '/scripts',    label: 'Scripts',   icon: FileText, match: (p: string) => p.startsWith('/scripts') },
     { href: profileHref,   label: 'Profile',   icon: User,     match: (p: string) => p.startsWith('/w/') || p.startsWith('/profile') },
   ] as const

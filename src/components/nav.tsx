@@ -91,7 +91,7 @@ export default function Nav() {
   // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
   const loggedInLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'Community', icon: Users },
+    { href: '/community', label: 'Community', icon: Users },
   ]
 
   return (

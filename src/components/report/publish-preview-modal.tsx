@@ -259,7 +259,7 @@ export function PublishPreviewModal({
             You choose what industry partners see. They&apos;ll find your script on
             the{' '}
             <a
-              href="/discover"
+              href="/community"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"

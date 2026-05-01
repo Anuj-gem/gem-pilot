@@ -257,15 +257,17 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             {s.title}
           </div>
 
-          {/* LOGLINE — italic pull-quote, 5-line clamp so most fit without
-              ellipsis. Cards in the same row align via min-height. */}
+          {/* LOGLINE — article-preview style: clean sans-serif body text,
+              no italics, no smart-quotes, no tiny pull-quote serif. Reads
+              like a story dek under the headline (Anuj 2026-04-30 v0.10.4
+              — "the weird italic font in quotes was hard to read"). */}
           {s.logline && (
-            <div
-              className="italic text-gray-700 mt-2.5 leading-snug line-clamp-5"
-              style={{ fontFamily: 'Georgia, serif', fontSize: 13, minHeight: '5em' }}
+            <p
+              className="text-[14px] text-gray-700 mt-2.5 leading-[1.5] line-clamp-4 m-0"
+              style={{ minHeight: '4.5em' }}
             >
-              &ldquo;{s.logline}&rdquo;
-            </div>
+              {s.logline}
+            </p>
           )}
 
           {/* META STRIP — small caps, status inline (owner only),

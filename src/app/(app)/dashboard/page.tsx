@@ -320,7 +320,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                     You haven&apos;t reviewed any posts yet.
                   </p>
                   <Link
-                    href="/discover"
+                    href="/community"
                     prefetch={false}
                     className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold rounded-lg bg-purple-600 hover:bg-purple-700 text-white px-3.5 py-2"
                   >
@@ -346,7 +346,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                       Latest from the GEM community
                     </h2>
                   </div>
-                  <Link href="/discover" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
+                  <Link href="/community" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
                     See all →
                   </Link>
                 </header>

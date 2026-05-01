@@ -262,7 +262,7 @@ export async function SocialFeedSection({ user }: { user: { id: string } }) {
       {feed.length === 0 ? (
         <div className="rounded-xl border border-dashed border-gray-200 p-7 mb-7 text-center">
           <p className="text-sm text-gray-500 mb-3">You're not following anyone yet.</p>
-          <Link href="/discover" className="inline-block px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-bold hover:bg-purple-700">Browse Discover →</Link>
+          <Link href="/community" className="inline-block px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-bold hover:bg-purple-700">Browse Community →</Link>
         </div>
       ) : (
         <div className="mb-7">
@@ -308,8 +308,8 @@ export async function SocialFeedSection({ user }: { user: { id: string } }) {
 
       {/* Discover preview */}
       <div className="flex items-center justify-between mb-3">
-        <SectionLabel inline>Discover</SectionLabel>
-        <Link href="/discover" className="text-[12px] font-bold text-purple-700 hover:underline">All scripts →</Link>
+        <SectionLabel inline>Community</SectionLabel>
+        <Link href="/community" className="text-[12px] font-bold text-purple-700 hover:underline">All scripts →</Link>
       </div>
       <DiscoverPreview rows={(discoverScripts as any[]) || []} />
     </div>
