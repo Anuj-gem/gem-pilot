@@ -529,7 +529,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
-        {isAnonymousSubmission && (
+        {/* Anonymous submission = script_submissions.user_id IS NULL.
+            Show the "Claim your report" card to anyone EXCEPT admin —
+            admin gets the owner action chrome below so they can remove
+            problematic anonymous posts. Anuj 2026-05-01 v0.12.2. */}
+        {isAnonymousSubmission && !isAdmin && (
           <div id="inline-signup" className="rounded-xl transition-shadow duration-500 mb-8">
             <InlineSignup submissionId={submission.id} evaluationId={id} />
           </div>
@@ -540,8 +544,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             settings" link + dashboard privacy panel were too heavy for
             something the writer rarely changes. The two account-level
             toggles (Allow reviews / Allow industry access) now live in
-            ScriptPrivacySheet, mounted off the menu. */}
-        {!isAnonymousSubmission && (
+            ScriptPrivacySheet, mounted off the menu.
+            Anuj 2026-05-01 v0.12.2: also show this for admin on
+            anonymous submissions so admin can remove unowned posts. */}
+        {(!isAnonymousSubmission || isAdmin) && (
           <div className="gem-no-print flex items-center justify-between gap-3 flex-wrap mb-6">
             <div className="flex items-center gap-2 min-w-0 flex-wrap">
               {(isOwner || isAdmin) && (
