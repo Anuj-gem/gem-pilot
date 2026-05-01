@@ -55,16 +55,24 @@ export default async function ProfilePage({ searchParams }: PageProps) {
             </p>
           </div>
         ) : (
-          <div className="mb-6 flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">Your profile</h1>
-            {profile.handle && (
-              <Link
-                href={`/w/${profile.handle}`}
-                className="text-sm font-semibold text-purple-700 hover:text-purple-900"
-              >
-                View public profile →
-              </Link>
-            )}
+          <div className="mb-6">
+            <Link
+              href="/dashboard"
+              className="text-[12px] text-gray-500 hover:text-gray-900 font-semibold"
+            >
+              ← Back to dashboard
+            </Link>
+            <div className="mt-3 flex items-center justify-between">
+              <h1 className="text-2xl font-bold text-gray-900">Your profile</h1>
+              {profile.handle && (
+                <Link
+                  href={`/w/${profile.handle}`}
+                  className="text-sm font-semibold text-purple-700 hover:text-purple-900"
+                >
+                  View public profile →
+                </Link>
+              )}
+            </div>
           </div>
         )}
         <ProfileEditor initial={profile} returnTo={isOnboarding ? '/dashboard' : null} />

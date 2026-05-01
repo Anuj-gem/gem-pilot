@@ -25,8 +25,8 @@ export default async function PrivacyPage() {
   return (
     <div>
       <header className="mb-6">
-        <Link href="/profile" prefetch={false} className="text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-          ← Profile
+        <Link href="/dashboard" prefetch={false} className="text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
+          ← Back to dashboard
         </Link>
         <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-purple-700 mt-3 mb-2">Privacy</p>
         <h1 className="text-[28px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
