@@ -19,8 +19,10 @@ import {
   RefreshCw,
   Trash2,
   Activity,
+  Shield,
 } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
+import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
 import {
   IndustryActivitySheet,
   type IndustryActivityRow,
@@ -46,6 +48,12 @@ interface Props {
    *  rendered report DOM is available). The href should include
    *  `?download=1` so the report page auto-opens the modal. */
   downloadHref?: string
+  /** Per-script privacy state. When provided, the menu exposes a
+   *  "Privacy settings" item that opens a 2-toggle sheet (Allow reviews +
+   *  Allow industry access) — same shape as account-level privacy.
+   *  Anuj 2026-04-30 v0.10. */
+  allowReviews?: boolean
+  allowIndustry?: boolean
 }
 
 export function OwnerActionsMenu({
@@ -57,12 +65,15 @@ export function OwnerActionsMenu({
   activity,
   editHref,
   downloadHref,
+  allowReviews,
+  allowIndustry,
 }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [removeConfirm, setRemoveConfirm] = useState(false)
   const [removing, setRemoving] = useState(false)
   const [activityOpen, setActivityOpen] = useState(false)
+  const [privacyOpen, setPrivacyOpen] = useState(false)
   // Avoid unused param warnings for `evaluationId` and `title` — they're
   // still in the public API surface for future callers (e.g. a server-
   // side PDF endpoint we may bring back).
@@ -212,6 +223,17 @@ export function OwnerActionsMenu({
           >
             Submit a revision
           </MenuLink>
+          {allowReviews !== undefined && allowIndustry !== undefined && (
+            <MenuItem
+              icon={<Shield size={14} />}
+              onClick={() => {
+                setOpen(false)
+                setPrivacyOpen(true)
+              }}
+            >
+              Privacy settings
+            </MenuItem>
+          )}
           <div className="my-1 border-t border-[var(--gem-gray-700)]" />
           <MenuItem
             icon={<Trash2 size={14} />}
@@ -243,6 +265,16 @@ export function OwnerActionsMenu({
           open={activityOpen}
           onClose={() => setActivityOpen(false)}
           rows={activity}
+        />
+      )}
+
+      {allowReviews !== undefined && allowIndustry !== undefined && (
+        <ScriptPrivacySheet
+          open={privacyOpen}
+          onClose={() => setPrivacyOpen(false)}
+          submissionId={submissionId}
+          initialAllowReviews={allowReviews}
+          initialAllowIndustry={allowIndustry}
         />
       )}
     </div>

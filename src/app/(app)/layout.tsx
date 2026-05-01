@@ -83,6 +83,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       .eq('user_id', user.id)
       .eq('is_public', true)
       .eq('status', 'completed')
+      .is('hidden_at', null)
       .order('created_at', { ascending: false })
       .limit(3),
     // Own most-recent reviews given — bare rows, two-pass eval lookup.

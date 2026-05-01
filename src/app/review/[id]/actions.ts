@@ -30,17 +30,24 @@ export async function submitReview(input: SubmitInput) {
   // Open reviews (Anuj 2026-04-30 v0.7): any GEM member can review any
   // public, completed submission they don't own. The writer can hide
   // individual reviews from their report page; that's the safety valve.
+  //
+  // v0.10 (2026-04-30): also gate on `allow_reviews`. Writers can opt out
+  // per-script from the triple-dot menu — when off we reject the submission
+  // even if the script is otherwise public.
   const { data: subRow } = await supabase
     .from('script_submissions')
-    .select('user_id, is_public, status')
+    .select('user_id, is_public, status, allow_reviews, hidden_at')
     .eq('id', submissionId)
-    .single<{ user_id: string; is_public: boolean; status: string }>()
+    .single<{ user_id: string; is_public: boolean; status: string; allow_reviews: boolean | null; hidden_at: string | null }>()
   if (!subRow) return { error: 'Script not found.' }
   if (subRow.user_id === user.id) {
     return { error: "You can't review your own script." }
   }
-  if (!subRow.is_public || subRow.status !== 'completed') {
+  if (!subRow.is_public || subRow.status !== 'completed' || subRow.hidden_at) {
     return { error: 'This script is not open for community review.' }
+  }
+  if (subRow.allow_reviews === false) {
+    return { error: 'The writer has turned off reviews for this script.' }
   }
 
   // Upsert: one active review per (submission_id, reviewer_id)

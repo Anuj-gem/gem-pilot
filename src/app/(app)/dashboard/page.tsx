@@ -97,6 +97,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .select('id, title, declared_format, created_at, user_id')
     .eq('is_public', true)
     .eq('status', 'completed')
+    .is('hidden_at', null)
     .order('created_at', { ascending: false })
     .limit(80)
   type FeedSub = { id: string; title: string; declared_format: string | null; created_at: string; user_id: string | null }

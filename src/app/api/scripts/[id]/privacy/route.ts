@@ -5,8 +5,10 @@
 // Body shape (all fields optional, all atomic):
 //   { privacy?: ReportPrivacy }       — full or partial privacy object
 //   { show_score?: boolean }          — targeted score-visibility flip
-//   { is_public?: boolean }           — master "Visible to industry" toggle
+//   { is_public?: boolean }           — master "published" toggle
 //   { contact_enabled?: boolean }     — let producers email the writer
+//   { allow_reviews?: boolean }       — GEM members may read + review (Anuj 2026-04-30 v0.10)
+//   { allow_industry?: boolean }      — producers/reps may match + reach out (v0.10)
 //
 // When a caller sets `is_public`, we also write the matching `report_privacy`
 // shape if not provided: unpublishing flips every section to private (so
@@ -77,6 +79,10 @@ export async function PATCH(
     typeof body?.is_public === 'boolean' ? body.is_public : undefined
   const contactEnabled =
     typeof body?.contact_enabled === 'boolean' ? body.contact_enabled : undefined
+  const allowReviews =
+    typeof body?.allow_reviews === 'boolean' ? body.allow_reviews : undefined
+  const allowIndustry =
+    typeof body?.allow_industry === 'boolean' ? body.allow_industry : undefined
   const privacyProvided = body?.privacy !== undefined && body.privacy !== null
 
   // Start from whatever shape the caller sent (may be empty). If they
@@ -130,6 +136,8 @@ export async function PATCH(
   }
   if (isPublic !== undefined) update.is_public = isPublic
   if (contactEnabled !== undefined) update.contact_enabled = contactEnabled
+  if (allowReviews !== undefined) update.allow_reviews = allowReviews
+  if (allowIndustry !== undefined) update.allow_industry = allowIndustry
 
   const updateQuery = writeClient
     .from('script_submissions')
@@ -138,18 +146,41 @@ export async function PATCH(
   const { data, error } = await (isAdmin
     ? updateQuery
         .select(
-          'id, report_privacy, contact_enabled, privacy_review_needed, is_public'
+          'id, report_privacy, contact_enabled, privacy_review_needed, is_public, allow_reviews, allow_industry'
         )
         .single()
     : updateQuery
         .eq('user_id', user.id)
         .select(
-          'id, report_privacy, contact_enabled, privacy_review_needed, is_public'
+          'id, report_privacy, contact_enabled, privacy_review_needed, is_public, allow_reviews, allow_industry'
         )
         .single())
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 400 })
+  }
+
+  // Propagation: if the writer just turned `allow_industry` off (or the
+  // master is_public off), pull this script out of every active producer
+  // inbox by stamping unmatched_at on the open script_matches rows.
+  // Same pattern as /api/submissions/[id]/hide. Anuj 2026-04-30 v0.10.
+  // Failures are swallowed — the privacy save already succeeded; the
+  // matches just won't disappear until the next backfill / cron run.
+  const shouldDepropagate = allowIndustry === false || isPublic === false
+  if (shouldDepropagate) {
+    try {
+      await writeClient
+        .from('script_matches')
+        .update({
+          unmatched_at: new Date().toISOString(),
+          unmatched_by: 'writer',
+          unmatch_reason: allowIndustry === false ? 'industry_access_off' : 'unpublished',
+        })
+        .eq('submission_id', submissionId)
+        .is('unmatched_at', null)
+    } catch (propagationErr) {
+      console.error('[scripts/privacy] propagation failed:', propagationErr)
+    }
   }
 
   return NextResponse.json(data)

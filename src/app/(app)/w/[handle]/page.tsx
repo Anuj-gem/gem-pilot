@@ -52,6 +52,7 @@ export default async function PublicProfile({ params }: PageProps) {
     .eq('user_id', profile.id)
     .eq('is_public', true)
     .eq('status', 'completed')
+    .is('hidden_at', null)
     .order('created_at', { ascending: false })
   type SubRow = { id: string; title: string; created_at: string; declared_format: string | null }
   const subRows = (subs as SubRow[] | null) || []

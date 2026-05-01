@@ -185,17 +185,22 @@ type SubmissionRow = {
   is_sample?: boolean | null
   hidden_at?: string | null
   tags?: string[] | null
+  allow_industry?: boolean | null
 }
 
 // A script is eligible for industry matching only when the writer has
 // explicitly published it (is_public=true), it has a real owner (user_id not
-// null), it isn't a sample/test, isn't hidden, and is fully scored.
+// null), it isn't a sample/test, isn't hidden, is fully scored, AND the
+// per-script `allow_industry` flag is on. The allow_industry flag is the
+// per-script override of the account-level industry-access default
+// (Anuj 2026-04-30 v0.10).
 function isEligibleForMatching(s: SubmissionRow): boolean {
   if (s.is_sample === true) return false
   if (!s.user_id) return false
   if (s.is_public !== true) return false
   if (s.hidden_at) return false
   if (s.status && s.status !== "completed") return false
+  if (s.allow_industry === false) return false
   return true
 }
 
@@ -230,7 +235,7 @@ export async function createMatchesForSubmission(
 ): Promise<MatchingResult> {
   const { data: submissionRaw, error: subErr } = await supabase
     .from("script_submissions")
-    .select("id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags")
+    .select("id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags, allow_industry")
     .eq("id", submissionId)
     .single()
 
@@ -381,7 +386,7 @@ export async function createMatchesForProducer(
     .from("script_evaluations")
     .select(
       `id, weighted_score, evaluation,
-       submission:script_submissions!inner ( id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags )`
+       submission:script_submissions!inner ( id, declared_format, user_id, status, is_public, is_sample, hidden_at, tags, allow_industry )`
     )
     .order("weighted_score", { ascending: false })
     .limit(10_000)

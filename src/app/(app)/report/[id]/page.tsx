@@ -54,7 +54,9 @@ import { SupportingCharactersCarousel } from '@/components/report/supporting-cha
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
-import { DashboardPrivacyButton } from '@/components/dashboard/privacy-button'
+// DashboardPrivacyButton retired from the report status line on
+// 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
+// ScriptPrivacySheet. The dashboard surface still uses it.
 import { IndustryActivityButton } from '@/components/dashboard/industry-activity-button'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
@@ -101,6 +103,8 @@ type SubmissionWithPrivacy = ScriptSubmission & {
   profiles: { full_name: string; avatar_url: string | null; handle: string | null; headline: string | null } | null
   report_privacy?: ReportPrivacy | null
   contact_enabled?: boolean | null
+  allow_reviews?: boolean | null
+  allow_industry?: boolean | null
   privacy_review_needed?: boolean | null
   tags?: string[] | null
 }
@@ -120,12 +124,11 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter, subscribed: justSubscribed, privacy: openPrivacyParam, pending: pendingParam, download: downloadParam, embedded: embeddedParam } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed, pending: pendingParam, download: downloadParam, embedded: embeddedParam } = await searchParams
   // Embedded mode: the report is loaded inside the dashboard's modal
   // iframe. Skip the global Nav and footer so the modal chrome doesn't
   // double up. Anuj 2026-04-30.
   const embedded = embeddedParam === '1'
-  const autoOpenPrivacy = openPrivacyParam === '1'
   const autoOpenDownload = downloadParam === '1'
   const supabase = await createClient()
   const serviceClient = createServiceClient()
@@ -138,6 +141,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       script_submissions (
         id, user_id, title, filename, file_size, status, is_public, created_at,
         expires_at, declared_format, report_privacy, contact_enabled,
+        allow_reviews, allow_industry,
         privacy_review_needed, tags,
         profiles ( full_name, avatar_url, handle, headline )
       )
@@ -525,51 +529,42 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Selznick-4 v4 (2026-04-27): no giant publish CTA. Every new post
-            is public by default. The status line below tells the owner
-            where they stand and links into the same privacy panel the
-            dashboard uses (master toggle + per-section + score). */}
+        {/* Owner status line. Privacy moved into the triple-dot menu on
+            the right (Anuj 2026-04-30 v0.10) — the inline "Privacy
+            settings" link + dashboard privacy panel were too heavy for
+            something the writer rarely changes. The two account-level
+            toggles (Allow reviews / Allow industry access) now live in
+            ScriptPrivacySheet, mounted off the menu. */}
         {!isAnonymousSubmission && (
           <div className="gem-no-print flex items-center justify-between gap-3 flex-wrap mb-6">
             <div className="flex items-center gap-2 min-w-0 flex-wrap">
               {(isOwner || isAdmin) && (
-                <>
-                  <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
-                    <span
-                      aria-hidden
-                      className="inline-block w-1.5 h-1.5 rounded-full"
-                      style={{
-                        background: submission.is_public
-                          ? '#059669'
-                          : 'var(--gem-gray-500)',
-                      }}
-                    />
-                    {submission.is_public
-                      ? 'Public to GEM members'
-                      : 'Unpublished'}
-                    {isAdmin && !isOwner && (
-                      <span
-                        className="ml-1 text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
-                        style={{
-                          color: '#dc2626',
-                          background: 'rgba(220,38,38,0.07)',
-                          border: '1px solid rgba(220,38,38,0.25)',
-                        }}
-                      >
-                        Admin
-                      </span>
-                    )}
-                  </span>
-                  <span className="text-[var(--gem-gray-600)]">·</span>
-                  <DashboardPrivacyButton
-                    submissionId={submission.id}
-                    initialPrivacy={privacy}
-                    initialIsPublic={submission.is_public ?? false}
-                    isProSubscriber={ownerIsSubscribed || isAdmin}
-                    triggerLabel="Privacy settings"
-                    triggerVariant="link"
+                <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
+                  <span
+                    aria-hidden
+                    className="inline-block w-1.5 h-1.5 rounded-full"
+                    style={{
+                      background: submission.is_public
+                        ? '#059669'
+                        : 'var(--gem-gray-500)',
+                    }}
                   />
-                </>
+                  {submission.is_public
+                    ? 'Public to GEM members'
+                    : 'Unpublished'}
+                  {isAdmin && !isOwner && (
+                    <span
+                      className="ml-1 text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
+                      style={{
+                        color: '#dc2626',
+                        background: 'rgba(220,38,38,0.07)',
+                        border: '1px solid rgba(220,38,38,0.25)',
+                      }}
+                    >
+                      Admin
+                    </span>
+                  )}
+                </span>
               )}
             </div>
             <div className="flex items-center gap-2">
@@ -581,6 +576,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   declaredFormat={submission.declared_format ?? null}
                   isSubscribed={ownerIsSubscribed || isAdmin}
                   activity={ownerActivity}
+                  allowReviews={submission.allow_reviews ?? true}
+                  allowIndustry={submission.allow_industry ?? true}
                 />
               )}
             </div>
