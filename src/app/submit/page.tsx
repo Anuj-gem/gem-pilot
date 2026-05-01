@@ -676,12 +676,50 @@ function SubmitPageInner() {
   const shellHeading = step === 'account' ? undefined : stepHeading.heading
   const shellSubhead = step === 'account' ? undefined : stepHeading.subhead
 
+  // Persistent framing banner — same on every step. Tells the user what
+  // they're working toward so each step doesn't feel like a fresh ask.
+  const framingBanner = hasFile
+    ? 'Selznick is reading your script. Just a couple steps to make your post and profile look perfect for the GEM community.'
+    : "Let's get your GEM account set up. A few quick steps."
+
+  // Top action bar — Back goes to previous step; Continue and Skip
+  // depend on which step we're on.
+  const actionBar = (() => {
+    function back() {
+      if (step === 'script') { setDeclaredFormat(null); setStep('format') }
+      else if (step === 'account') { setStep(hasFile ? 'format' : 'script') }
+    }
+    if (step === 'format') {
+      return undefined  // FormatStep auto-advances on selection; no continue needed.
+    }
+    if (step === 'script') {
+      return {
+        onBack: back,
+        onContinue: file ? continueFromScriptStepWithFile : undefined,
+        onSkip: continueFromScriptStepWithoutFile,
+        continueLabel: 'Continue with this script',
+        continueDisabled: !file,
+        label: 'Script',
+      }
+    }
+    if (step === 'account') {
+      return {
+        onBack: back,
+        // AccountStep owns its own form submit — top bar just shows back.
+        label: 'Account',
+      }
+    }
+    return undefined
+  })()
+
   return (
     <OnboardingShell
       checklistTitle="Your GEM account"
       checklistItems={checklistItems}
+      framingBanner={framingBanner}
       heading={shellHeading}
       subhead={shellSubhead}
+      actionBar={actionBar}
       footer={
         <span>
           Already have an account?{' '}
@@ -703,18 +741,6 @@ function SubmitPageInner() {
               onFileChosen={handleFileChosen}
               onSkip={continueFromScriptStepWithoutFile}
             />
-            {file && (
-              <div className="pb-4 -mt-4">
-                <button
-                  type="button"
-                  onClick={continueFromScriptStepWithFile}
-                  className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60"
-                  style={{ background: 'var(--gem-accent)' }}
-                >
-                  Continue with this script →
-                </button>
-              </div>
-            )}
             {paywalled && <PaywallCard onUpgrade={handleUpgrade} loading={upgradeLoading} />}
             {error && <ErrorBanner message={error} />}
           </>

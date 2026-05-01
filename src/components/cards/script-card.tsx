@@ -82,7 +82,10 @@ function WriterLink({
 }) {
   if (!handle && !name) return null
   const ini = (name || handle || '·').split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase() ?? '').join('') || '·'
-  const display = handle ? `@${handle}` : (name || '')
+  // Anuj 2026-04-30 v0.10.8: prefer name, fall back to @handle only when
+  // there's no name. Cards across the platform should de-emphasize the
+  // handle (it's still the URL, just not the display string).
+  const display = name || (handle ? `@${handle}` : '')
   const colorClass = dark ? 'text-purple-700 hover:underline' : ''
   if (!handle) {
     // No handle = no profile to link to; render as plain text.
@@ -167,8 +170,10 @@ function WriterMiniCard({
 }) {
   if (!handle && !name) return null
   const ini = (name || handle || '·').split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase() ?? '').join('') || '·'
+  // Anuj 2026-04-30 v0.10.8: dropped the @handle subtitle. Handle is
+  // de-emphasized across the platform — display name does the heavy
+  // lifting on cards. Handle still routes the profile link.
   const display = name || (handle ? `@${handle}` : '')
-  const subtitle = name && handle ? `@${handle}` : null
 
   const inner = (
     <>
@@ -182,11 +187,6 @@ function WriterMiniCard({
         <div className="text-[12px] font-bold text-gray-900 leading-tight line-clamp-1" style={{ fontFamily: 'Georgia, serif' }}>
           {display}
         </div>
-        {subtitle && (
-          <div className="text-[10px] text-purple-700 font-semibold truncate leading-tight">
-            {subtitle}
-          </div>
-        )}
       </div>
     </>
   )
@@ -341,7 +341,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
               {s.writer_handle && (
                 <>
                   <span>·</span>
-                  <WriterLink handle={s.writer_handle} name={null} dark />
+                  <WriterLink handle={s.writer_handle} name={s.writer_name} dark />
                 </>
               )}
               <span>·</span>
@@ -369,7 +369,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
               {s.writer_handle && (
                 <>
                   <span>·</span>
-                  <WriterLink handle={s.writer_handle} name={null} dark />
+                  <WriterLink handle={s.writer_handle} name={s.writer_name} dark />
                 </>
               )}
               <span>·</span>
@@ -403,7 +403,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
             {s.writer_handle && (
               <>
                 {metaParts.length > 0 && <span>·</span>}
-                <WriterLink handle={s.writer_handle} name={null} dark />
+                <WriterLink handle={s.writer_handle} name={s.writer_name} dark />
               </>
             )}
             <span>·</span>

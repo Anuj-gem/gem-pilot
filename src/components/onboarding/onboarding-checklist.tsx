@@ -26,9 +26,41 @@ interface Props {
   items: ChecklistItem[]
   /** Optional eyebrow shown above the list — e.g. "Your report" or "Get set up". */
   title?: string
+  /** 'vertical' (default) renders the full timeline. 'compact' renders a
+   *  horizontal pill strip — used on mobile so the progress doesn't get
+   *  scrolled off the page on tall forms. */
+  variant?: 'vertical' | 'compact'
 }
 
-export function OnboardingChecklist({ items, title }: Props) {
+export function OnboardingChecklist({ items, title, variant = 'vertical' }: Props) {
+  if (variant === 'compact') {
+    const current = items.find((i) => i.state === 'current')
+    return (
+      <div className="text-[var(--gem-gray-200)]">
+        <div className="flex items-center gap-1.5 mb-1.5">
+          {items.map((item, i) => (
+            <span
+              key={i}
+              aria-hidden
+              className="block flex-1 h-1 rounded-full transition-colors"
+              style={{
+                background:
+                  item.state === 'done' || item.state === 'current'
+                    ? 'var(--gem-accent)'
+                    : 'var(--gem-gray-700)',
+                opacity: item.state === 'pending' ? 0.6 : 1,
+              }}
+            />
+          ))}
+        </div>
+        <p className="m-0 text-[11px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-500)]">
+          {title ? `${title} · ` : ''}
+          <span className="text-[var(--gem-gray-200)]">{current?.label ?? ''}</span>
+        </p>
+      </div>
+    )
+  }
+
   return (
     <div className="text-[var(--gem-gray-200)]">
       {title && (
