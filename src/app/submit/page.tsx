@@ -163,12 +163,23 @@ function SubmitPageInner() {
             Date.now() - new Date(authUser.created_at).getTime()
           const returning = accountAgeMs > 60_000
           const wb = returning ? '&welcome_back=1' : ''
+          // Anuj 2026-04-30 v0.10.6: brand-new accounts route through the
+          // onboarding privacy + profile sequence before the destination.
+          // Returning accounts (already onboarded) skip straight to it —
+          // /onboarding/privacy server checks privacy_confirmed_at and
+          // forwards them on if it's already set.
+          let dest: string
           if (pending.mode === 'upload' && pending.evaluation_id) {
-            router.replace(`/report/${pending.evaluation_id}?from=submit${wb}`)
+            dest = `/report/${pending.evaluation_id}?from=submit${wb}`
           } else if (pending.mode === 'upload') {
-            router.replace(`/dashboard?just_signed_up=1${wb}`)
+            dest = `/dashboard?just_signed_up=1${wb}`
           } else {
-            router.replace(`/dashboard?draft_saved=1${wb}`)
+            dest = `/dashboard?draft_saved=1${wb}`
+          }
+          if (returning) {
+            router.replace(dest)
+          } else {
+            router.replace(`/onboarding/privacy?next=${encodeURIComponent(dest)}`)
           }
           return
         }
@@ -536,12 +547,16 @@ function SubmitPageInner() {
         evalFailedRef.current = null
         return
       }
+      // Anuj 2026-04-30 v0.10.6: post-account, send Path A users through
+      // privacy + profile (skippable) before they land on the report.
+      // The eval is still finishing in the background while they confirm
+      // privacy + edit profile. By the time they hit "Open my report"
+      // the eval is virtually always ready.
       const evaluationId = evalResultRef.current?.evaluation_id
-      if (evaluationId) {
-        router.push(`/report/${evaluationId}`)
-      } else {
-        router.push('/dashboard?just_signed_up=1')
-      }
+      const next = evaluationId
+        ? `/report/${evaluationId}?from=submit`
+        : '/dashboard?just_signed_up=1&from=submit'
+      router.push(`/onboarding/privacy?next=${encodeURIComponent(next)}`)
     } else {
       const deadline = Date.now() + 6000
       while (!draftSubmissionIdRef.current && Date.now() < deadline) {

@@ -7,9 +7,11 @@
 //   1) User drags / picks a PDF in the drop zone → we stash it via
 //      setPendingFile() and route to /submit. The submit page detects the
 //      pending file on mount and lets the writer skip the script step
-//      (they've already uploaded), so they go Format → Account directly.
-//   2) User clicks "Get Started — Free" → routes to /submit with no file.
-//      Normal Format → Script → Account flow.
+//      (they've already uploaded), so they go Format → Account → Privacy
+//      → Profile (skip ok) → Report.
+//   2) User clicks "Get Started — Free" → routes to /onboarding (no
+//      script). Account → Privacy → Profile (skip ok) → Dashboard.
+//      (Anuj 2026-04-30 v0.10.6: split signup-only from the script flow.)
 'use client'
 
 import { useRef, useState } from 'react'
@@ -45,7 +47,9 @@ export function LandingHero() {
     try {
       trackEvent('cta_clicked', { location: 'hero', label: 'Get Started — Free' })
     } catch {}
-    router.push('/submit?from=hero')
+    // Path B — no script in flight. Goes to the dedicated signup-only
+    // onboarding flow (account → privacy → profile → dashboard).
+    router.push('/onboarding')
   }
 
   return (
