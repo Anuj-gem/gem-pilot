@@ -9,7 +9,7 @@
 // Anuj 2026-04-30 v0.10.8.
 
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { AlertCircle, Loader2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase-browser'
@@ -17,6 +17,8 @@ import { identifyUser, trackSignupComplete } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
 import { OnboardingShell } from '@/components/onboarding/onboarding-shell'
 import type { ChecklistItem } from '@/components/onboarding/onboarding-checklist'
+import { slugifyHandle, HANDLE_RE } from '@/lib/handle-suggest'
+import { updateProfile } from '@/app/profile/actions'
 
 const PATH_B_NEXT_KEY = 'gem_onboarding_next'
 
@@ -25,11 +27,22 @@ export function OnboardingAccountClient() {
   const supabase = createClient()
   const formRef = useRef<HTMLFormElement>(null)
   const [fullName, setFullName] = useState('')
+  const [handle, setHandle] = useState('')
+  const [handleEdited, setHandleEdited] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [signingUp, setSigningUp] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Auto-suggest a handle from the user's name as they type, but only
+  // until they touch the handle field themselves. Anuj 2026-04-30
+  // v0.10.15 — every signup leaves with a handle set so a "Skip
+  // profile" doesn't leave the user with a broken /w/ URL.
+  useEffect(() => {
+    if (handleEdited) return
+    setHandle(slugifyHandle(fullName))
+  }, [fullName, handleEdited])
 
   async function handleGoogle() {
     if (googleLoading) return
@@ -56,6 +69,10 @@ export function OnboardingAccountClient() {
       setError('Fill in your name, email, and password.')
       return
     }
+    if (!HANDLE_RE.test(handle)) {
+      setError('Handle must be 3–32 characters: lowercase letters, numbers, dashes.')
+      return
+    }
     setSigningUp(true)
     setError(null)
 
@@ -72,6 +89,16 @@ export function OnboardingAccountClient() {
     }
     if (signupData.user && !signupData.session) {
       setError('Check your email to confirm your account, then log back in.')
+      setSigningUp(false)
+      return
+    }
+
+    // Save the handle the user picked. If it's taken, surface the error
+    // and let them try again on the same screen — much friendlier than
+    // landing them in /onboarding/profile to discover the collision.
+    const handleResult = await updateProfile({ handle })
+    if ('error' in handleResult && handleResult.error) {
+      setError(handleResult.error)
       setSigningUp(false)
       return
     }
@@ -109,7 +136,8 @@ export function OnboardingAccountClient() {
       actionBar={{
         onContinue: () => handleEmailSignup(),
         continueLabel: 'Create account',
-        continueDisabled: !fullName || !email || !password || password.length < 6,
+        continueDisabled:
+          !fullName || !email || !password || password.length < 6 || !HANDLE_RE.test(handle),
         continueLoading: signingUp,
         label: 'Account',
       }}
@@ -160,6 +188,33 @@ export function OnboardingAccountClient() {
             className="w-full rounded-xl px-4 py-3 text-[14px]"
             style={{ background: '#fff', border: '1px solid var(--gem-gray-700)', color: '#111' }}
           />
+          <div>
+            <div className="relative">
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[14px] text-[var(--gem-gray-500)] font-mono">
+                gem.studio/w/
+              </span>
+              <input
+                type="text"
+                placeholder="your-handle"
+                value={handle}
+                onChange={(e) => {
+                  setHandleEdited(true)
+                  setHandle(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 32))
+                }}
+                required
+                minLength={3}
+                maxLength={32}
+                className="w-full rounded-xl py-3 text-[14px] font-mono"
+                style={{
+                  background: '#fff',
+                  border: '1px solid var(--gem-gray-700)',
+                  color: '#111',
+                  paddingLeft: 122,
+                  paddingRight: 16,
+                }}
+              />
+            </div>
+          </div>
           <input
             type="email"
             placeholder="Email"

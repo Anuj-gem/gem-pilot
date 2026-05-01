@@ -4,18 +4,18 @@
 // they've already completed:
 //
 //   anon                 → /onboarding/account
+//   no handle            → auto-generate one (Google OAuth users) so the
+//                          user always has a working public profile
+//                          even if they skip /onboarding/profile.
 //   no privacy_confirmed → /onboarding/privacy
-//   no profile.handle    → /onboarding/profile
 //   everything done      → /dashboard
 //
-// All three sub-routes are independent pages so /onboarding/profile
-// remains a stable bookmark for "I'd like to fill out my profile now"
-// even after a user has fully onboarded — useful from the dashboard.
-//
-// Anuj 2026-04-30 v0.10.6.
+// Anuj 2026-04-30 v0.10.6 → v0.10.15: auto-set handle for Google
+// users so a brand-new account is never broken when they hit Skip.
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
+import { findAvailableHandle } from '@/lib/handle-suggest'
 
 export default async function OnboardingEntry() {
   const supabase = await createClient()
@@ -24,11 +24,19 @@ export default async function OnboardingEntry() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('handle, privacy_confirmed_at')
+    .select('handle, full_name, privacy_confirmed_at')
     .eq('id', user.id)
-    .single<{ handle: string | null; privacy_confirmed_at: string | null }>()
+    .single<{ handle: string | null; full_name: string | null; privacy_confirmed_at: string | null }>()
+
+  // Auto-generate a handle if missing. Google OAuth users land here
+  // without one because Google doesn't ask for it; email/password users
+  // pick their own in the account form so they already have one set.
+  if (profile && !profile.handle) {
+    const candidate = profile.full_name || user.email?.split('@')[0] || 'writer'
+    const handle = await findAvailableHandle(supabase, candidate, user.id)
+    await supabase.from('profiles').update({ handle }).eq('id', user.id)
+  }
 
   if (!profile?.privacy_confirmed_at) redirect('/onboarding/privacy')
-  if (!profile?.handle) redirect('/onboarding/profile')
   redirect('/dashboard')
 }
