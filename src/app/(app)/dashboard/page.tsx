@@ -76,6 +76,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     created_at: string
     is_public: boolean
     hidden_at: string | null
+    allow_reviews: boolean | null
+    allow_industry: boolean | null
     script_evaluations:
       | { id: string; weighted_score: number | null; evaluation: unknown; edited_fields: unknown }
       | { id: string; weighted_score: number | null; evaluation: unknown; edited_fields: unknown }[]
@@ -85,6 +87,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .from('script_submissions')
     .select(`
       id, title, status, declared_format, created_at, is_public, hidden_at,
+      allow_reviews, allow_industry,
       script_evaluations ( id, weighted_score, evaluation, edited_fields )
     `)
     .eq('user_id', user.id)
@@ -186,6 +189,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         logline: ev.logline,
         selznick_score: ev.weighted_score,
         is_public: !!s.is_public,
+        allow_reviews: s.allow_reviews ?? true,
+        allow_industry: s.allow_industry ?? true,
         writer_handle: profile?.handle ?? null,
         writer_name: profile?.full_name ?? null,
         writer_avatar_url: profile?.avatar_url ?? null,

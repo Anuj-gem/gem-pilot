@@ -20,6 +20,7 @@
 import Link from 'next/link'
 import { ScoreBadge } from './score-badge'
 import { IndustryStatsButton } from './industry-stats-button'
+import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 
 export interface ScriptCardData {
   submission_id: string
@@ -34,6 +35,13 @@ export interface ScriptCardData {
   /** Whether the submission is currently visible on Discover. Used to
    *  drive the "Published / Private" pill on owner-viewed cards. */
   is_public?: boolean
+  /** Per-script privacy toggles — needed to hydrate the owner triple-dot
+   *  menu on dashboard cards. (Anuj 2026-04-30 v0.10.12.) */
+  allow_reviews?: boolean
+  allow_industry?: boolean
+  /** Per-script industry-activity rows surfaced in the menu's "Industry
+   *  activity" item. Optional — when omitted the item doesn't render. */
+  industry_activity?: import('@/components/dashboard/industry-activity-button').IndustryActivityRow[]
   // Writer
   writer_handle: string | null
   writer_name: string | null
@@ -315,6 +323,28 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
               </Link>
             )}
             <span className="flex-1" />
+            {/* Owner triple-dot — same OwnerActionsMenu the report page
+                hosts. Edit + Download + Privacy + Remove. Anuj 2026-04-30
+                v0.10.12. */}
+            {isOwner && s.evaluation_id && (
+              <div className="relative z-10 pointer-events-auto">
+                <OwnerActionsMenu
+                  submissionId={s.submission_id}
+                  evaluationId={s.evaluation_id}
+                  title={s.title}
+                  declaredFormat={
+                    s.format === 'Feature film' || s.format === 'Series' ? s.format : null
+                  }
+                  isSubscribed={true}
+                  activity={s.industry_activity}
+                  isPublic={s.is_public ?? false}
+                  allowReviews={s.allow_reviews ?? true}
+                  allowIndustry={s.allow_industry ?? true}
+                  editHref={`/report/${s.evaluation_id}`}
+                  downloadHref={`/report/${s.evaluation_id}?download=1`}
+                />
+              </div>
+            )}
             <Link
               href={href}
               prefetch={false}

@@ -40,7 +40,7 @@ import Nav from '@/components/nav'
 import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
-import { InlineUpgradeCTA } from '@/components/report/inline-upgrade-cta'
+import { UpgradeTopBanner } from '@/components/report/upgrade-top-banner'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
@@ -521,6 +521,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </Link>
           </div>
         )}
+        {/* Free-tier owner upgrade banner — slim, top-mounted, single
+            message ("Upgrade to GEM Pro to submit new drafts"). Replaces
+            the heavier mid-page InlineUpgradeCTA. Anuj 2026-04-30 v0.10.12. */}
+        {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
         {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
         {isAnonymousSubmission && (
@@ -1324,14 +1328,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </details>
         )}
 
-        {/* Free-tier soft upgrade CTA */}
-        {showUpgradeCTA && isOwner && (
-          <InlineUpgradeCTA
-            evaluationId={id}
-            submissionCount={0}
-            cta="Go Pro — $20/mo"
-          />
-        )}
+        {/* Mid-page upgrade CTA retired 2026-04-30 v0.10.12 — replaced
+            with a slim hovering banner mounted at the top of the report
+            (see UpgradeTopBanner below the back-to-Community link).
+            Single message: "submit another draft." */}
 
         {/* Owner "You're reachable / Contact open" card removed
             2026-04-28 — redundant for the owner who already sees their
