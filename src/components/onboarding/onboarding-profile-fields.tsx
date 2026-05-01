@@ -80,7 +80,7 @@ export function OnboardingProfileFields({ userId, email, value, onChange }: Prop
             </div>
           )}
           <div className="flex flex-col gap-1.5">
-            <label className="inline-block px-4 py-2 rounded-lg border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)] text-sm font-semibold text-[var(--gem-gray-100)] hover:bg-[var(--gem-gray-800)] cursor-pointer transition-colors">
+            <label className="inline-block px-4 py-2 rounded-lg border border-gray-300 bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors">
               {uploading ? 'Uploading…' : value.avatar_url ? 'Change photo' : 'Upload photo'}
               <input
                 type="file"
@@ -115,7 +115,7 @@ export function OnboardingProfileFields({ userId, email, value, onChange }: Prop
           value={value.full_name}
           onChange={(e) => patch({ full_name: e.target.value })}
           maxLength={80}
-          className="w-full rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] px-3 py-2.5 text-[15px] text-[var(--gem-gray-50)] placeholder-[var(--gem-gray-500)] focus:border-[var(--gem-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--gem-accent)]"
+          className="w-full rounded-lg bg-white border border-gray-300 px-3 py-2.5 text-[15px] text-gray-900 placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
         />
       </Field>
 
@@ -141,7 +141,7 @@ export function OnboardingProfileFields({ userId, email, value, onChange }: Prop
           onChange={(e) => patch({ headline: e.target.value })}
           maxLength={120}
           placeholder="Half-hour comedy + features. Repped by ___."
-          className="w-full rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] px-3 py-2.5 text-[15px] text-[var(--gem-gray-50)] placeholder-[var(--gem-gray-500)] focus:border-[var(--gem-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--gem-accent)]"
+          className="w-full rounded-lg bg-white border border-gray-300 px-3 py-2.5 text-[15px] text-gray-900 placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
         />
       </Field>
 
@@ -152,7 +152,7 @@ export function OnboardingProfileFields({ userId, email, value, onChange }: Prop
           maxLength={600}
           rows={4}
           placeholder="Optional. A few sentences about who you are."
-          className="w-full rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] px-3 py-2.5 text-[15px] text-[var(--gem-gray-50)] placeholder-[var(--gem-gray-500)] focus:border-[var(--gem-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--gem-accent)]"
+          className="w-full rounded-lg bg-white border border-gray-300 px-3 py-2.5 text-[15px] text-gray-900 placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
         />
       </Field>
 
@@ -162,13 +162,13 @@ export function OnboardingProfileFields({ userId, email, value, onChange }: Prop
           value={value.imdb_url}
           onChange={(e) => patch({ imdb_url: e.target.value })}
           placeholder="https://www.imdb.com/name/nm0000000/"
-          className="w-full rounded-lg bg-[var(--gem-gray-900)] border border-[var(--gem-gray-700)] px-3 py-2.5 text-[15px] text-[var(--gem-gray-50)] placeholder-[var(--gem-gray-500)] focus:border-[var(--gem-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--gem-accent)]"
+          className="w-full rounded-lg bg-white border border-gray-300 px-3 py-2.5 text-[15px] text-gray-900 placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
         />
       </Field>
 
       <div>
         <Label muted>Email</Label>
-        <div className="text-sm text-[var(--gem-gray-500)]">{email}</div>
+        <div className="text-sm text-gray-500">{email}</div>
       </div>
     </div>
   )
@@ -178,7 +178,7 @@ function Label({ children, muted }: { children: React.ReactNode; muted?: boolean
   return (
     <label
       className={`block text-[11px] uppercase tracking-[0.16em] font-bold mb-2 ${
-        muted ? 'text-[var(--gem-gray-500)]' : 'text-[var(--gem-gray-300)]'
+        muted ? 'text-gray-400' : 'text-gray-700'
       }`}
     >
       {children}

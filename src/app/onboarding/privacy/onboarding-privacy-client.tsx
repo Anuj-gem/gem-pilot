@@ -77,7 +77,12 @@ export function OnboardingPrivacyClient({ initial, next }: Props) {
         setError(j.error || `Save failed (${res.status})`)
         return
       }
-      router.replace(next)
+      // ALWAYS route through /onboarding/profile next, carrying the
+      // ultimate destination forward. Without this, Path A users
+      // (with PDF) skipped profile entirely because `next` was the
+      // report URL and we'd jump straight there. Anuj 2026-04-30
+      // v0.10.9 — keep the profile step in the new-user flow.
+      router.replace(`/onboarding/profile?next=${encodeURIComponent(next)}`)
     })
   }
 

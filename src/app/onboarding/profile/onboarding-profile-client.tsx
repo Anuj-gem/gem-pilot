@@ -128,12 +128,14 @@ export function OnboardingProfileClient({ profile, next }: Props) {
       }}
     >
       <div className="max-w-[520px]">
-        <OnboardingProfileFields
-          userId={profile.id}
-          email={profile.email}
-          value={v}
-          onChange={setV}
-        />
+        <div className="rounded-2xl border border-[var(--gem-gray-700)] bg-white p-5 sm:p-6">
+          <OnboardingProfileFields
+            userId={profile.id}
+            email={profile.email}
+            value={v}
+            onChange={setV}
+          />
+        </div>
         {error && (
           <div className="mt-4 rounded-lg border border-red-300/40 bg-red-500/10 px-3 py-2 text-[12.5px] text-red-300">
             {error}

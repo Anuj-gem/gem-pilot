@@ -25,11 +25,19 @@ export default async function OnboardingPrivacyPage({ searchParams }: PageProps)
     .eq('id', user.id)
     .single<{ privacy_defaults: unknown; privacy_confirmed_at: string | null; handle: string | null }>()
 
-  // Already confirmed? Skip to whatever's next.
+  // Already confirmed? Send the user along — but route through profile
+  // first so brand-new flows always touch every step, even for users
+  // who confirmed privacy on a previous visit. Returning users with a
+  // handle skip to next directly.
   if (profile?.privacy_confirmed_at) {
-    if (sp.next) redirect(sp.next)
-    if (!profile.handle) redirect('/onboarding/profile')
-    redirect('/dashboard')
+    if (profile.handle) {
+      if (sp.next) redirect(sp.next)
+      redirect('/dashboard')
+    }
+    // No handle yet → still send through profile so they get the
+    // chance to set it up, carrying next forward.
+    const profileQs = sp.next ? `?next=${encodeURIComponent(sp.next)}` : ''
+    redirect(`/onboarding/profile${profileQs}`)
   }
 
   const initial = normalizePrivacyDefaults(profile?.privacy_defaults)
