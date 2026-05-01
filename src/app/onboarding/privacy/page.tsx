@@ -41,7 +41,14 @@ export default async function OnboardingPrivacyPage({ searchParams }: PageProps)
   }
 
   const initial = normalizePrivacyDefaults(profile?.privacy_defaults)
-  const next = sp.next || '/onboarding/profile'
+  // `next` is the FINAL destination after the whole onboarding chain
+  // completes (report URL for Path A, /dashboard for Path B). The
+  // privacy client routes to /onboarding/profile?next=<this> on save,
+  // and the profile client lands on this URL when the user hits Save
+  // or Skip. Anuj 2026-04-30 v0.10.10 — fixes the Path B skip-loop
+  // where next defaulted to /onboarding/profile and Skip bounced the
+  // user right back to profile.
+  const next = sp.next || '/dashboard'
 
   return (
     <OnboardingPrivacyClient
