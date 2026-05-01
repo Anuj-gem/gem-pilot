@@ -11,7 +11,20 @@ import {
   X,
   Plus,
   ChevronDown,
+  Users,
 } from 'lucide-react'
+import {
+  NavUserMenu,
+  type NavUserMenuProfile,
+  type NavUserMenuStats,
+  type NavUserMenuActivity,
+} from '@/components/nav/nav-user-menu'
+
+export interface NavUserData {
+  profile: NavUserMenuProfile
+  stats: NavUserMenuStats
+  recentActivity?: NavUserMenuActivity[]
+}
 
 // LOGGED-OUT NAV (Anuj 2026-04-28 redesign):
 //   Desktop: [GEM]   [Learn more ▾]   [Submit a script]  [Sign up]  [Log in]
@@ -48,7 +61,15 @@ const LEARN_MORE_LINKS: { href: string; label: string; description: string }[] =
   },
 ]
 
-export default function Nav() {
+interface NavProps {
+  /** Server-provided profile data for the avatar dropdown. Optional —
+   *  when omitted (e.g. on marketing pages that mount <Nav/> bare), the
+   *  avatar dropdown isn't rendered and we fall back to a small Sign out
+   *  button. (Anuj 2026-04-30 v0.10.5.) */
+  userData?: NavUserData
+}
+
+export default function Nav({ userData }: NavProps = {}) {
   const pathname = usePathname()
   const router = useRouter()
   const supabase = createClient()
@@ -85,8 +106,12 @@ export default function Nav() {
     router.refresh()
   }
 
+  // Right-side cluster for logged-in users. The Community tab uses a
+  // small underline-style active state so users always know which page
+  // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
   const loggedInLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/community', label: 'Community', icon: Users },
   ]
 
   return (
@@ -112,45 +137,141 @@ export default function Nav() {
 
           {user ? (
             <>
-              {/* Desktop logged-in */}
-              <div className="hidden md:flex items-center gap-1">
-                {loggedInLinks.map(link => {
-                  const Icon = link.icon
-                  const active = pathname.startsWith(link.href)
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                        active
-                          ? 'bg-[var(--gem-gray-800)] text-[var(--gem-white)] font-medium'
-                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
-                      }`}
+              {/* Desktop logged-in. Layout intent (Anuj 2026-04-30):
+                    Left of nav:  Resources ▾ (lower-priority browse)
+                    Right of nav: Dashboard, Submit (operative actions)
+                  The page logo + Resources sit on one side; the
+                  user-action cluster sits on the other. The flex parent
+                  uses justify-between, so an inline `flex-1` spacer
+                  between the two clusters keeps each end pinned. */}
+              <div className="hidden md:flex flex-1 items-center justify-between ml-6">
+                {/* LEFT: Resources dropdown */}
+                <div ref={learnMoreRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setLearnMoreOpen(o => !o)}
+                    aria-expanded={learnMoreOpen}
+                    aria-haspopup="menu"
+                    className={`inline-flex items-center gap-1 text-sm transition-colors ${
+                      LEARN_MORE_LINKS.some(l => pathname.startsWith(l.href))
+                        ? 'text-[var(--gem-white)]'
+                        : 'text-[var(--gem-gray-300)] hover:text-[var(--gem-white)]'
+                    }`}
+                  >
+                    Resources
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${learnMoreOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {learnMoreOpen && (
+                    <div
+                      role="menu"
+                      className="absolute left-0 top-full mt-2 min-w-[280px] rounded-xl bg-white p-2 z-50"
+                      style={{
+                        border: '1px solid var(--gem-gray-700)',
+                        boxShadow: '0 18px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05)',
+                      }}
                     >
-                      <Icon size={16} />
-                      {link.label}
-                    </Link>
-                  )
-                })}
-                <Link
-                  href="/submit"
-                  className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
-                >
-                  <Plus size={16} />
-                  Submit
-                </Link>
-                <button
-                  onClick={handleSignOut}
-                  className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-                  title="Sign out"
-                >
-                  <LogOut size={16} />
-                </button>
+                      {LEARN_MORE_LINKS.map(link => {
+                        const active = pathname.startsWith(link.href)
+                        return (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setLearnMoreOpen(false)}
+                            role="menuitem"
+                            className="block px-3 py-2 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
+                            style={
+                              active
+                                ? { background: 'rgba(124,58,237,0.06)' }
+                                : undefined
+                            }
+                          >
+                            <span className="block text-[13.5px] font-semibold text-[var(--gem-gray-50)] leading-tight">
+                              {link.label}
+                            </span>
+                            <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug mt-0.5">
+                              {link.description}
+                            </span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                {/* RIGHT: Dashboard + Community + Submit + Sign out.
+                    Active tab uses an underline accent so users can always
+                    see where they are. */}
+                <div className="flex items-center gap-1">
+                  {loggedInLinks.map(link => {
+                    const Icon = link.icon
+                    const active = pathname.startsWith(link.href)
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                          active
+                            ? 'text-[var(--gem-white)] font-semibold'
+                            : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                        }`}
+                      >
+                        <Icon size={16} />
+                        {link.label}
+                        {active && (
+                          <span
+                            aria-hidden
+                            className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full"
+                            style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }}
+                          />
+                        )}
+                      </Link>
+                    )
+                  })}
+                  <Link
+                    href="/submit"
+                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                  >
+                    <Plus size={16} />
+                    Submit
+                  </Link>
+                  {userData ? (
+                    <div className="ml-2">
+                      <NavUserMenu
+                        profile={userData.profile}
+                        stats={userData.stats}
+                        recentActivity={userData.recentActivity}
+                        onSignOut={handleSignOut}
+                      />
+                    </div>
+                  ) : (
+                    <button
+                      onClick={handleSignOut}
+                      className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                      title="Sign out"
+                    >
+                      <LogOut size={16} />
+                    </button>
+                  )}
+                </div>
               </div>
 
-              {/* Mobile logged-in — Submit pill (always except on /submit
-                  itself) + hamburger. */}
+              {/* Mobile logged-in — avatar + Submit (except on /submit
+                  itself) + hamburger. The avatar carries the same
+                  dropdown the desktop nav uses (View profile, Edit
+                  profile, Privacy, Sign out). The hamburger keeps the
+                  page navigation list. (Anuj 2026-04-30 v0.10.5.) */}
               <div className="md:hidden flex items-center gap-2">
+                {userData && (
+                  <NavUserMenu
+                    profile={userData.profile}
+                    stats={userData.stats}
+                    recentActivity={userData.recentActivity}
+                    onSignOut={handleSignOut}
+                  />
+                )}
                 {!pathname.startsWith('/submit') && (
                   <Link
                     href="/submit"
@@ -296,6 +417,26 @@ export default function Nav() {
                     active={pathname.startsWith(link.href)}
                   />
                 ))}
+
+                {/* Resources group */}
+                <div className="pt-2">
+                  <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2 px-1">
+                    Resources
+                  </p>
+                  <div className="space-y-2">
+                    {LEARN_MORE_LINKS.map(link => (
+                      <NavMenuRow
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        label={link.label}
+                        hint={link.description}
+                        active={pathname.startsWith(link.href)}
+                      />
+                    ))}
+                  </div>
+                </div>
+
                 <button
                   onClick={() => { setMobileOpen(false); handleSignOut() }}
                   className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"

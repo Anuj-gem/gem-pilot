@@ -51,3 +51,11 @@ next-env.d.ts
 /data/rescore-cache.*-stale/
 /data/rescore-runs/
 /data/rescore-backup/
+
+# macOS iCloud/sync duplicates
+* 2.ts
+* 2.tsx
+* 3.ts
+* 3.tsx
+* 2/
+* 3/

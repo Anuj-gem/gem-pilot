@@ -82,10 +82,14 @@ export async function POST(
       return NextResponse.json({ ok: true, alreadyHidden: true })
     }
 
-    // 3. Mark hidden
+    // 3. Mark hidden AND force private. A hidden script must not leak
+    //    onto Community even if its `is_public` flag was true.
+    //    (Anuj 2026-04-30 bug: removing a script left it visible in
+    //    /discover until the next page refresh of the Community
+    //    queries, because they only filtered on is_public.)
     const { error: updErr } = await svc
       .from('script_submissions')
-      .update({ hidden_at: new Date().toISOString() })
+      .update({ hidden_at: new Date().toISOString(), is_public: false })
       .eq('id', submissionId)
 
     if (updErr) {

@@ -12,6 +12,7 @@
 
 import { useEffect, useState } from 'react'
 import { Loader2, AlertCircle, Check, FileClock } from 'lucide-react'
+import { slugifyHandle, HANDLE_RE } from '@/lib/handle-suggest'
 
 export type AccountMode = 'upload' | 'draft'
 
@@ -25,14 +26,25 @@ export function AccountStep({
 }: {
   mode: AccountMode
   onGoogle: () => void
-  onEmailSignup: (data: { full_name: string; email: string; password: string }) => void
+  // Anuj 2026-04-30 v0.10.16 — Path A signup also collects the handle
+  // so a brand-new writer ends up with a working public profile even
+  // if they later skip the optional /onboarding/profile step.
+  onEmailSignup: (data: { full_name: string; handle: string; email: string; password: string }) => void
   signingUp: boolean
   googleLoading: boolean
   error?: string | null
 }) {
   const [fullName, setFullName] = useState('')
+  const [handle, setHandle] = useState('')
+  const [handleEdited, setHandleEdited] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  // Auto-suggest handle from name until the user touches the field.
+  useEffect(() => {
+    if (handleEdited) return
+    setHandle(slugifyHandle(fullName))
+  }, [fullName, handleEdited])
 
   const heading = mode === 'upload' ? 'Where should we send it?' : 'Save your spot.'
   const subhead =
@@ -105,7 +117,7 @@ export function AccountStep({
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          onEmailSignup({ full_name: fullName, email, password })
+          onEmailSignup({ full_name: fullName, handle, email, password })
         }}
         className="space-y-2.5"
       >
@@ -118,6 +130,13 @@ export function AccountStep({
           autoComplete="name"
           className="w-full rounded-xl px-4 py-3 text-[14px] text-[var(--gem-gray-50)]"
           style={{ background: '#fff', border: '1px solid var(--gem-gray-700)' }}
+        />
+        <HandleField
+          value={handle}
+          onChange={(next, edited) => {
+            if (edited) setHandleEdited(true)
+            setHandle(next)
+          }}
         />
         <input
           type="email"
@@ -155,7 +174,7 @@ export function AccountStep({
         )}
         <button
           type="submit"
-          disabled={signingUp || googleLoading}
+          disabled={signingUp || googleLoading || !HANDLE_RE.test(handle)}
           className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           style={{ background: 'var(--gem-accent)' }}
         >
@@ -167,6 +186,76 @@ export function AccountStep({
       <p className="text-center text-[12px] text-[var(--gem-gray-500)] mt-3.5 m-0">
         {trustLine}
       </p>
+    </div>
+  )
+}
+
+// HandleField — text input with an "@" prefix, plain-language label,
+// and live validation. Strips invalid characters silently as the user
+// types (so they can paste anything without getting yelled at), and
+// shows an error only when they've typed something that's clearly a
+// problem (spaces, etc. that we couldn't fix). Anuj 2026-04-30 v0.10.17.
+export function HandleField({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (next: string, edited: boolean) => void
+}) {
+  const [rawInput, setRawInput] = useState(value)
+  // If parent value changes (auto-suggest from name), reflect it in the raw
+  // input too — but only when user hasn't typed something themselves yet.
+  useEffect(() => {
+    setRawInput(value)
+  }, [value])
+
+  const hasInvalidChar = /[^a-z0-9-]/i.test(rawInput) || /\s/.test(rawInput)
+  const tooShort = rawInput.length > 0 && rawInput.length < 3
+
+  return (
+    <div>
+      <div className="relative">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-[var(--gem-gray-500)] font-mono"
+        >
+          @
+        </span>
+        <input
+          type="text"
+          placeholder="your-handle"
+          value={value}
+          onChange={(e) => {
+            const raw = e.target.value
+            setRawInput(raw)
+            const cleaned = raw.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 32)
+            onChange(cleaned, true)
+          }}
+          required
+          minLength={3}
+          maxLength={32}
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          className="w-full rounded-xl py-3 text-[14px] font-mono text-gray-900"
+          style={{
+            background: '#fff',
+            border: '1px solid var(--gem-gray-700)',
+            paddingLeft: 32,
+            paddingRight: 16,
+          }}
+        />
+      </div>
+      {hasInvalidChar && (
+        <p className="text-[11.5px] text-red-400 mt-1.5">
+          Letters, numbers, and dashes only — no spaces.
+        </p>
+      )}
+      {!hasInvalidChar && tooShort && (
+        <p className="text-[11.5px] text-[var(--gem-gray-500)] mt-1.5">
+          A few characters more — handles are at least 3.
+        </p>
+      )}
     </div>
   )
 }
