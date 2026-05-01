@@ -22,6 +22,11 @@ export interface DiscoverCard {
   recentTs: number
   selznick: number
   reviews: number
+  /** Whether the writer has elected to show their score publicly. When
+   *  false, the script is excluded from Top-GEM sort entirely — you
+   *  can't hide your score and still rank on it. (Anuj 2026-05-01
+   *  v0.12.3.) */
+  scoreVisible: boolean
   /** Raw genre_primary string from the eval, lowercased + stripped to
    *  alpha so we can match GenreId loosely. */
   genreKey: string | null
@@ -99,7 +104,13 @@ export function DiscoverGrid({ cards, initialSort, initialFilters }: Props) {
     if (filters.budgets.length > 0) {
       list = list.filter((c) => c.budget != null && filters.budgets.includes(c.budget))
     }
-    const key: keyof DiscoverCard =
+    // Top-GEM sort excludes scripts where the writer hid their score —
+    // you can't suppress your number and still get ranked on it.
+    // Anuj 2026-05-01 v0.12.3.
+    if (sort === 'top_gem') {
+      list = list.filter((c) => c.scoreVisible)
+    }
+    const key: 'selznick' | 'reviews' | 'recentTs' =
       sort === 'top_gem' ? 'selznick'
       : sort === 'most_reviewed' ? 'reviews'
       : 'recentTs'

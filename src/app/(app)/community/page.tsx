@@ -61,13 +61,22 @@ export default async function CommunityPage({ searchParams }: PageProps) {
   // having multiple tables with FKs to script_submissions.
   const { data: rows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id')
+    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry')
     .eq('is_public', true)
     .eq('status', 'completed')
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
     .limit(200)
-  type SubRow = { id: string; title: string; declared_format: string | null; created_at: string; user_id: string | null }
+  type SubRow = {
+    id: string
+    title: string
+    declared_format: string | null
+    created_at: string
+    user_id: string | null
+    report_privacy: { show_score?: boolean } | null
+    allow_reviews: boolean | null
+    allow_industry: boolean | null
+  }
   const scripts = (rows as SubRow[] | null) || []
   const submissionIds = scripts.map((s) => s.id)
   const writerIds = Array.from(new Set(scripts.map((s) => s.user_id).filter(Boolean) as string[]))
@@ -116,6 +125,7 @@ export default async function CommunityPage({ searchParams }: PageProps) {
       if (!ev) return null
       const wp = s.user_id ? writerById.get(s.user_id) : null
       const st = stats.get(s.id)
+      const scoreVisible = s.report_privacy?.show_score !== false
       const data: ScriptCardData = {
         submission_id: s.id,
         evaluation_id: ev.id,
@@ -129,11 +139,15 @@ export default async function CommunityPage({ searchParams }: PageProps) {
         writer_avatar_url: wp?.avatar_url ?? null,
         review_count: st?.reviewCount ?? 0,
         avg_peer_score: st?.avgPeerScore ?? null,
+        score_visible: scoreVisible,
+        allow_reviews: s.allow_reviews ?? true,
+        allow_industry: s.allow_industry ?? true,
       }
       return {
         data,
         recentTs: new Date(s.created_at).getTime(),
         selznick: Number(ev.weighted_score ?? 0),
+        scoreVisible,
         reviews: st?.reviewCount ?? 0,
         genreKey: ev.genreKey,
         budget: ev.budget,

@@ -98,13 +98,22 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   // ---------- COMMUNITY FEED (Discover-style poster grid, 24 cards) ----------
   const { data: pubRows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id')
+    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry')
     .eq('is_public', true)
     .eq('status', 'completed')
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
     .limit(80)
-  type FeedSub = { id: string; title: string; declared_format: string | null; created_at: string; user_id: string | null }
+  type FeedSub = {
+    id: string
+    title: string
+    declared_format: string | null
+    created_at: string
+    user_id: string | null
+    report_privacy: { show_score?: boolean } | null
+    allow_reviews: boolean | null
+    allow_industry: boolean | null
+  }
   const feedScripts = (pubRows as FeedSub[] | null) || []
   const feedSubIds = feedScripts.map((s) => s.id)
   const feedWriterIds = Array.from(new Set(feedScripts.map((s) => s.user_id).filter(Boolean) as string[]))
@@ -150,6 +159,9 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         writer_avatar_url: wp?.avatar_url ?? null,
         review_count: st?.reviewCount ?? 0,
         avg_peer_score: st?.avgPeerScore ?? null,
+        score_visible: s.report_privacy?.show_score !== false,
+        allow_reviews: s.allow_reviews ?? true,
+        allow_industry: s.allow_industry ?? true,
       }
     })
     .filter((c): c is ScriptCardData => c !== null)

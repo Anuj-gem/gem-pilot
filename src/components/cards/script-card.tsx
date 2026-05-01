@@ -39,6 +39,10 @@ export interface ScriptCardData {
    *  menu on dashboard cards. (Anuj 2026-04-30 v0.10.12.) */
   allow_reviews?: boolean
   allow_industry?: boolean
+  /** Whether the score badge should render to non-owners. Pulled from
+   *  report_privacy.show_score. Defaults to true when unset. Owners
+   *  always see their own score regardless. (Anuj 2026-05-01 v0.12.3) */
+  score_visible?: boolean
   /** Per-script industry-activity rows surfaced in the menu's "Industry
    *  activity" item. Optional — when omitted the item doesn't render. */
   industry_activity?: import('@/components/dashboard/industry-activity-button').IndustryActivityRow[]
@@ -227,8 +231,16 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
   const reviewLabel = `${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'}`
 
   if (density === 'poster') {
-    const score = s.selznick_score == null ? null : Math.round(Number(s.selznick_score))
+    // Score badge respects report_privacy.show_score for non-owners.
+    // Owner always sees their own score. Anuj 2026-05-01 v0.12.3.
+    const scoreVisibleToViewer = isOwner || s.score_visible !== false
+    const score =
+      s.selznick_score == null || !scoreVisibleToViewer
+        ? null
+        : Math.round(Number(s.selznick_score))
     const isPublic = !!s.is_public
+    // Submit-review CTA only renders when the writer has reviews on.
+    const reviewsAllowed = s.allow_reviews !== false
     // Meta line components — small-caps, owner status inline as TEXT
     // (not a pill) per Layout B. (Anuj 2026-04-30 council redesign.)
     const metaParts = [
@@ -312,7 +324,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
           <div className="mt-3.5 pt-3 flex items-center gap-2" style={{ borderTop: `1px solid ${CARD.border}` }}>
             {isOwner ? (
               <IndustryStatsButton submissionId={s.submission_id} />
-            ) : (
+            ) : reviewsAllowed ? (
               <Link
                 href={`/review/${s.submission_id}`}
                 prefetch={false}
@@ -321,7 +333,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
               >
                 Submit review
               </Link>
-            )}
+            ) : null}
             <span className="flex-1" />
             {/* Owner triple-dot — same OwnerActionsMenu the report page
                 hosts. Edit + Download + Privacy + Remove. Anuj 2026-04-30
