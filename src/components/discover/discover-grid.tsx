@@ -136,7 +136,7 @@ export function DiscoverGrid({ cards, initialSort, initialFilters }: Props) {
           No scripts match these filters yet.
         </div>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {visible.map((c) => (
             <ScriptCard key={c.data.submission_id} s={c.data} density="poster" />
           ))}
