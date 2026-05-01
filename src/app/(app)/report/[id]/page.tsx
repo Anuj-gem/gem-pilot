@@ -44,7 +44,8 @@ import { UpgradeTopBanner } from '@/components/report/upgrade-top-banner'
 import { ReportAnalytics } from '@/components/report/report-analytics'
 import { PrivateDemoBanner } from '@/components/report/private-demo-banner'
 import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
-import { CommunityReviewCta } from '@/components/report/community-review-cta'
+// CommunityReviewCta retired (2026-04-30 v0.10.14). PeerReviews owns
+// the empty-state write-a-review CTA now.
 import { SectionGate } from '@/components/report/section-gate'
 import { PeerReviews } from '@/components/report/peer-reviews'
 import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
@@ -1344,19 +1345,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             2026-04-28 — redundant for the owner who already sees their
             publish status + privacy controls at the top of the page. */}
 
-        {/* Non-owner non-producer: open community-review CTA. Replaces
-            the legacy "Request to contact" card (Anuj 2026-04-30 v0.7).
-            Producers keep their dedicated outreach panel below. */}
-        {!isOwnerOrAdmin && !isAnonymousSubmission && !isViewerProducer && (
-          <CommunityReviewCta
-            evaluationId={id}
-            submissionId={submission.id}
-            writerName={writerName}
-            isLoggedIn={!!user}
-            canReview={viewerCanReview}
-            reviewCount={peerReviews.length}
-          />
-        )}
+        {/* CommunityReviewCta retired 2026-04-30 v0.10.14. The Peer
+            reviews section below now owns the "be the first to review"
+            empty-state CTA, so we don't double-stack two cards that
+            both ask the same person to write the same review. */}
 
         {/* Fallback if writer has everything private and the page would
             render empty for visitors. */}
@@ -1401,7 +1393,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           <PeerReviews
             submissionId={submission.id}
             reviews={peerReviews}
-            viewerIsReviewer={viewerCanReview}
+            viewerCanReview={viewerCanReview}
             viewerId={user.id}
             isOwner={isOwner}
           />

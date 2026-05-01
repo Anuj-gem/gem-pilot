@@ -1,17 +1,15 @@
 // Reviewer page — /review/[script_id]
 //
-// Anuj 2026-04-29 (peer-reviews v0.1).
+// Anuj 2026-04-29 (peer-reviews v0.1) → opened up 2026-04-30 v0.10.14:
+// any signed-in GEM member can review any public completed script. The
+// old `is_reviewer` / per-script-invite gate is gone — the actual rules
+// (auth, not-the-owner, public+completed, allow_reviews on) live in
+// /app/review/[id]/actions.ts where they belong.
 //
-// Gated to profiles.is_reviewer = true. Shows the script's metadata + the
-// Selznick anchor (score, headline, logline) so the reviewer can read the
-// system's take alongside their own. Reviewer fills a 3-field form (score,
-// body, suggestion) and submits via a server action.
-//
-// The page intentionally does NOT enforce that the reviewer must download
-// the script — they may write a Review on the basis of headline / logline
-// alone (Anuj 2026-04-29: "I'm not gonna necessarily read your script. But
-// I'm gonna give you my honest take"). Download button is offered, not
-// required.
+// The page shows the script's metadata + the Selznick anchor (score,
+// headline, logline) so the reviewer can read the system's take
+// alongside their own. Reviewer fills a 3-field form (score, body,
+// suggestion) and submits via a server action.
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
@@ -43,52 +41,15 @@ export default async function ReviewPage({ params }: PageProps) {
     redirect(`/login?next=${encodeURIComponent(`/review/${id}`)}`)
   }
 
-  // Reviewer gate — allow if global is_reviewer OR the user has an
-  // accepted/completed invite for this specific script (Anuj 2026-04-29 v0.2).
+  // No more reviewer gate (Anuj 2026-04-30 v0.10.14). Reviews are open
+  // to anyone in the GEM community on any public, completed script.
+  // The action handler in actions.ts enforces all the real rules
+  // (not-the-owner, allow_reviews on, etc.).
   const { data: profile } = await supabase
     .from('profiles')
-    .select('is_reviewer, full_name')
+    .select('full_name')
     .eq('id', user.id)
-    .single<{ is_reviewer: boolean; full_name: string | null }>()
-
-  let hasInvite = false
-  if (!profile?.is_reviewer) {
-    const { data: invite } = await supabase
-      .from('review_invites')
-      .select('id')
-      .eq('submission_id', id)
-      .eq('invited_user_id', user.id)
-      .in('status', ['accepted', 'completed'])
-      .maybeSingle<{ id: string }>()
-    hasInvite = !!invite
-  }
-
-  if (!profile?.is_reviewer && !hasInvite) {
-    return (
-      <div className="min-h-screen bg-white">
-        <Nav />
-        <main className="max-w-2xl mx-auto px-6 py-20 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-3">
-            Reviewer access required
-          </h1>
-          <p className="text-gray-600 mb-8">
-            This page is only available to GEM reviewers. If you'd like to
-            be added, reach out to{' '}
-            <a href="mailto:anuj@gem.studio" className="text-purple-600 underline">
-              anuj@gem.studio
-            </a>
-            .
-          </p>
-          <Link
-            href="/dashboard"
-            className="inline-block px-5 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700"
-          >
-            Back to dashboard
-          </Link>
-        </main>
-      </div>
-    )
-  }
+    .single<{ full_name: string | null }>()
 
   // Fetch the submission + evaluation + writer info via service client
   // (RLS would block a reviewer from seeing other writers' rows otherwise).

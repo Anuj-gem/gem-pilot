@@ -7,10 +7,14 @@
 // extra "Hide" toggle on each review which dims it on their page and
 // removes it from public review counts / "Most reviewed" sorting. The
 // reviewer still keeps the review on their own profile.
+//
+// v0.10.14 (2026-04-30): empty state redesigned as a real card (was
+// dashed border + floating text). Owner-side empty state now reads as
+// a complete section, not a placeholder.
 
 import Link from 'next/link'
 import { useState, useTransition } from 'react'
-import { EyeOff, Eye } from 'lucide-react'
+import { EyeOff, Eye, MessageSquare, Sparkles } from 'lucide-react'
 import { WriterCard, type WriterCardData } from '@/components/writer-card'
 import { setReviewHidden } from '@/app/review/[id]/actions'
 
@@ -35,36 +39,47 @@ export interface PeerReviewItem {
 interface Props {
   submissionId: string
   reviews: PeerReviewItem[]
-  viewerIsReviewer: boolean
+  /** True when the viewer is allowed to write a review on this script
+   *  (signed in, not the owner, public+completed, allow_reviews on). */
+  viewerCanReview: boolean
   viewerId: string | null
   /** Owner-only: enables Hide / Unhide controls on each review. */
   isOwner?: boolean
 }
 
-export function PeerReviews({ submissionId, reviews, viewerIsReviewer, viewerId, isOwner = false }: Props) {
+export function PeerReviews({ submissionId, reviews, viewerCanReview, viewerId, isOwner = false }: Props) {
   const viewersOwnReview = viewerId
     ? reviews.find((r) => r.reviewer_id === viewerId)
     : null
 
   const visibleCount = reviews.filter((r) => !r.owner_hidden_at).length
 
-  if (reviews.length === 0 && !viewerIsReviewer) return null
+  // Owner with no reviews still sees the section — it's a real piece
+  // of their report, just empty for now. Non-owner with no reviews
+  // also sees a friendly invite to be the first.
 
   return (
-    <section className="mt-10">
-      <div className="flex items-baseline justify-between mb-4">
-        <h2 className="text-xl font-bold text-gray-900">
-          Peer reviews
-          {visibleCount > 0 && (
-            <span className="ml-2 text-base font-semibold text-gray-400">
-              {visibleCount}
-            </span>
-          )}
-        </h2>
-        {viewerIsReviewer && (
+    <section
+      className="mt-10 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 sm:p-7"
+    >
+      <div className="flex items-baseline justify-between mb-5 gap-3 flex-wrap">
+        <div>
+          <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-gray-500 m-0 mb-1">
+            Community
+          </p>
+          <h2 className="text-[20px] sm:text-[22px] font-bold text-gray-900 m-0 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            Peer reviews
+            {visibleCount > 0 && (
+              <span className="ml-2 text-[16px] font-semibold text-gray-400 align-baseline">
+                {visibleCount}
+              </span>
+            )}
+          </h2>
+        </div>
+        {viewerCanReview && reviews.length > 0 && (
           <Link
             href={`/review/${submissionId}`}
-            className="text-sm font-semibold text-purple-700 hover:text-purple-900"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-purple-700 hover:text-purple-900"
           >
             {viewersOwnReview ? 'Edit your review →' : 'Write a review →'}
           </Link>
@@ -72,37 +87,70 @@ export function PeerReviews({ submissionId, reviews, viewerIsReviewer, viewerId,
       </div>
 
       {reviews.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-200 px-5 py-10 text-center">
-          <p className="text-sm text-gray-500 mb-4">No peer reviews yet.</p>
-          {viewerIsReviewer && (
-            <Link
-              href={`/review/${submissionId}`}
-              className="inline-block px-5 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700"
-            >
-              Write the first review →
-            </Link>
-          )}
-        </div>
+        <EmptyReviewsState
+          submissionId={submissionId}
+          isOwner={isOwner}
+          viewerCanReview={viewerCanReview}
+        />
       ) : (
-        <>
-          <div className="space-y-4">
-            {reviews.map((r) => (
-              <ReviewCard key={r.id} r={r} isOwner={isOwner} />
-            ))}
-          </div>
-          {viewerIsReviewer && !viewersOwnReview && (
-            <div className="mt-5 text-center">
-              <Link
-                href={`/review/${submissionId}`}
-                className="inline-block px-5 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700"
-              >
-                Write a review →
-              </Link>
-            </div>
-          )}
-        </>
+        <div className="space-y-4">
+          {reviews.map((r) => (
+            <ReviewCard key={r.id} r={r} isOwner={isOwner} />
+          ))}
+        </div>
       )}
     </section>
+  )
+}
+
+// Friendly empty state. Owner sees a "your reviews land here" framing;
+// any non-owner who can review gets a write CTA. Anuj 2026-04-30 v0.10.14.
+function EmptyReviewsState({
+  submissionId,
+  isOwner,
+  viewerCanReview,
+}: {
+  submissionId: string
+  isOwner: boolean
+  viewerCanReview: boolean
+}) {
+  if (isOwner) {
+    return (
+      <div className="rounded-xl bg-gray-50 px-5 py-7 text-center">
+        <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-purple-100 text-purple-700 mb-3">
+          <Sparkles size={18} />
+        </div>
+        <p className="text-[14.5px] font-bold text-gray-900 m-0 mb-1">
+          No reviews yet — and that&rsquo;s okay.
+        </p>
+        <p className="text-[13px] text-gray-600 m-0 leading-snug max-w-[44ch] mx-auto">
+          When other GEM writers and producers leave you feedback, it&rsquo;ll
+          show up here. Share your script to get the first read.
+        </p>
+      </div>
+    )
+  }
+  return (
+    <div className="rounded-xl bg-gray-50 px-5 py-7 text-center">
+      <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-purple-100 text-purple-700 mb-3">
+        <MessageSquare size={18} />
+      </div>
+      <p className="text-[14.5px] font-bold text-gray-900 m-0 mb-1">
+        Be the first to weigh in.
+      </p>
+      <p className="text-[13px] text-gray-600 m-0 mb-4 leading-snug max-w-[44ch] mx-auto">
+        Anyone in the GEM community can leave a review.
+      </p>
+      {viewerCanReview && (
+        <Link
+          href={`/review/${submissionId}`}
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-purple-600 text-white text-[13px] font-semibold hover:bg-purple-700 transition-colors"
+        >
+          <MessageSquare size={13} />
+          Write the first review
+        </Link>
+      )}
+    </div>
   )
 }
 
