@@ -576,6 +576,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   declaredFormat={submission.declared_format ?? null}
                   isSubscribed={ownerIsSubscribed || isAdmin}
                   activity={ownerActivity}
+                  isPublic={submission.is_public ?? false}
                   allowReviews={submission.allow_reviews ?? true}
                   allowIndustry={submission.allow_industry ?? true}
                 />

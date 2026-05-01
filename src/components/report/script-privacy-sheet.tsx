@@ -14,13 +14,14 @@
 // the two top-level switches.
 
 import { useEffect, useState } from 'react'
-import { Briefcase, MessageSquare, X } from 'lucide-react'
+import { Briefcase, Globe, MessageSquare, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 interface Props {
   open: boolean
   onClose: () => void
   submissionId: string
+  initialIsPublic: boolean
   initialAllowReviews: boolean
   initialAllowIndustry: boolean
 }
@@ -29,10 +30,12 @@ export function ScriptPrivacySheet({
   open,
   onClose,
   submissionId,
+  initialIsPublic,
   initialAllowReviews,
   initialAllowIndustry,
 }: Props) {
   const router = useRouter()
+  const [isPublic, setIsPublic] = useState(initialIsPublic)
   const [allowReviews, setAllowReviews] = useState(initialAllowReviews)
   const [allowIndustry, setAllowIndustry] = useState(initialAllowIndustry)
   const [busy, setBusy] = useState(false)
@@ -41,11 +44,12 @@ export function ScriptPrivacySheet({
   // Re-sync if the parent re-opens with new props.
   useEffect(() => {
     if (open) {
+      setIsPublic(initialIsPublic)
       setAllowReviews(initialAllowReviews)
       setAllowIndustry(initialAllowIndustry)
       setError(null)
     }
-  }, [open, initialAllowReviews, initialAllowIndustry])
+  }, [open, initialIsPublic, initialAllowReviews, initialAllowIndustry])
 
   // Lock body scroll while open.
   useEffect(() => {
@@ -63,7 +67,7 @@ export function ScriptPrivacySheet({
     return () => document.removeEventListener('keydown', onKey)
   }, [open, onClose])
 
-  async function persist(payload: { allow_reviews?: boolean; allow_industry?: boolean }) {
+  async function persist(payload: { is_public?: boolean; allow_reviews?: boolean; allow_industry?: boolean }) {
     setBusy(true)
     setError(null)
     try {
@@ -80,6 +84,7 @@ export function ScriptPrivacySheet({
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not save.')
       // Roll local state back to source of truth so the toggle reflects reality.
+      setIsPublic(initialIsPublic)
       setAllowReviews(initialAllowReviews)
       setAllowIndustry(initialAllowIndustry)
     } finally {
@@ -87,6 +92,11 @@ export function ScriptPrivacySheet({
     }
   }
 
+  function togglePublished() {
+    const next = !isPublic
+    setIsPublic(next)
+    persist({ is_public: next })
+  }
   function toggleReviews() {
     const next = !allowReviews
     setAllowReviews(next)
@@ -138,6 +148,14 @@ export function ScriptPrivacySheet({
         </div>
 
         <div className="px-5 sm:px-6 py-4 space-y-2">
+          <ToggleRow
+            icon={<Globe size={16} className="text-purple-700" />}
+            title="Published"
+            sub="On Discover and visible to other GEM members."
+            on={isPublic}
+            disabled={busy}
+            onToggle={togglePublished}
+          />
           <ToggleRow
             icon={<MessageSquare size={16} className="text-purple-700" />}
             title="Allow reviews"

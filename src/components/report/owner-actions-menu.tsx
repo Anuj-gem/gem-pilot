@@ -49,9 +49,10 @@ interface Props {
    *  `?download=1` so the report page auto-opens the modal. */
   downloadHref?: string
   /** Per-script privacy state. When provided, the menu exposes a
-   *  "Privacy settings" item that opens a 2-toggle sheet (Allow reviews +
-   *  Allow industry access) — same shape as account-level privacy.
-   *  Anuj 2026-04-30 v0.10. */
+   *  "Privacy settings" item that opens a 3-toggle sheet (Published +
+   *  Allow reviews + Allow industry access) — same shape as account-level
+   *  privacy. Anuj 2026-04-30 v0.10. */
+  isPublic?: boolean
   allowReviews?: boolean
   allowIndustry?: boolean
 }
@@ -65,6 +66,7 @@ export function OwnerActionsMenu({
   activity,
   editHref,
   downloadHref,
+  isPublic,
   allowReviews,
   allowIndustry,
 }: Props) {
@@ -223,7 +225,7 @@ export function OwnerActionsMenu({
           >
             Submit a revision
           </MenuLink>
-          {allowReviews !== undefined && allowIndustry !== undefined && (
+          {isPublic !== undefined && allowReviews !== undefined && allowIndustry !== undefined && (
             <MenuItem
               icon={<Shield size={14} />}
               onClick={() => {
@@ -268,11 +270,12 @@ export function OwnerActionsMenu({
         />
       )}
 
-      {allowReviews !== undefined && allowIndustry !== undefined && (
+      {isPublic !== undefined && allowReviews !== undefined && allowIndustry !== undefined && (
         <ScriptPrivacySheet
           open={privacyOpen}
           onClose={() => setPrivacyOpen(false)}
           submissionId={submissionId}
+          initialIsPublic={isPublic}
           initialAllowReviews={allowReviews}
           initialAllowIndustry={allowIndustry}
         />
