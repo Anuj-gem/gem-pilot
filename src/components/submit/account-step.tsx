@@ -214,9 +214,6 @@ export function HandleField({
 
   return (
     <div>
-      <label className="block text-[11px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-300)] mb-2">
-        Handle
-      </label>
       <div className="relative">
         <span
           aria-hidden
