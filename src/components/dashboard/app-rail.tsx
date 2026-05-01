@@ -1,50 +1,30 @@
 'use client'
 
-// AppRail — the persistent left rail across all logged-in (app) pages.
-// Wraps YourPanel and decides per-route whether to render it or yield
-// the canvas to the page (e.g. on /report/[id] which is reader mode).
+// AppRail — was the persistent left rail across logged-in pages.
 //
-// Layout:
-//   ┌─────────────┬──────────────────────────────────┐
-//   │ rail (280)  │  children (flex-1)               │
-//   └─────────────┴──────────────────────────────────┘
+// Anuj 2026-04-30 v0.10.5: the rail is gone. The profile control center
+// it used to host (avatar + name + stats + view/edit + recent activity +
+// sign out) now lives in the NavUserMenu dropdown in the top nav, so
+// every page on every viewport gets the same one-tap path back to the
+// user's profile. Mobile + desktop are now consistent.
 //
-// Below `lg`, the rail collapses entirely — the bottom tab bar takes
-// over for navigation and the canvas renders edge-to-edge.
-//
-// Anuj 2026-04-30 v0.7.
-
-import { usePathname } from 'next/navigation'
-import { YourPanel, type YourPanelProfile, type RecentActivityItem } from './your-panel'
+// We keep this component as a thin pass-through so layout.tsx and any
+// route that imports it doesn't need to change. Future cleanup: inline
+// the children render into layout.tsx and delete this file.
 
 interface Props {
-  profile: YourPanelProfile
-  stats: {
-    scripts: number
-    followers: number
-    following: number
-    reviewsGiven: number
-  }
-  recentActivity?: RecentActivityItem[]
   children: React.ReactNode
+  // Props retained for back-compat with callers passing the old YourPanel
+  // payload. We ignore them — kept only so the build doesn't break while
+  // we tear out the rail end-to-end.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  profile?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  stats?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  recentActivity?: any
 }
 
-export function AppRail({ profile, stats, recentActivity = [], children }: Props) {
-  const pathname = usePathname() ?? ''
-  // Reader-mode pages give the canvas the full width — no rail. The
-  // top nav still shows where the user is, so they're not lost.
-  const railHidden = pathname.startsWith('/report')
-
-  if (railHidden) {
-    return <div className="w-full">{children}</div>
-  }
-
-  return (
-    <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-6">
-      <aside className="hidden lg:block lg:sticky lg:top-4 self-start py-4">
-        <YourPanel profile={profile} stats={stats} recentActivity={recentActivity} />
-      </aside>
-      <main className="min-w-0 py-4">{children}</main>
-    </div>
-  )
+export function AppRail({ children }: Props) {
+  return <main className="min-w-0 py-4">{children}</main>
 }

@@ -13,6 +13,18 @@ import {
   ChevronDown,
   Users,
 } from 'lucide-react'
+import {
+  NavUserMenu,
+  type NavUserMenuProfile,
+  type NavUserMenuStats,
+  type NavUserMenuActivity,
+} from '@/components/nav/nav-user-menu'
+
+export interface NavUserData {
+  profile: NavUserMenuProfile
+  stats: NavUserMenuStats
+  recentActivity?: NavUserMenuActivity[]
+}
 
 // LOGGED-OUT NAV (Anuj 2026-04-28 redesign):
 //   Desktop: [GEM]   [Learn more ▾]   [Submit a script]  [Sign up]  [Log in]
@@ -49,7 +61,15 @@ const LEARN_MORE_LINKS: { href: string; label: string; description: string }[] =
   },
 ]
 
-export default function Nav() {
+interface NavProps {
+  /** Server-provided profile data for the avatar dropdown. Optional —
+   *  when omitted (e.g. on marketing pages that mount <Nav/> bare), the
+   *  avatar dropdown isn't rendered and we fall back to a small Sign out
+   *  button. (Anuj 2026-04-30 v0.10.5.) */
+  userData?: NavUserData
+}
+
+export default function Nav({ userData }: NavProps = {}) {
   const pathname = usePathname()
   const router = useRouter()
   const supabase = createClient()
@@ -217,19 +237,41 @@ export default function Nav() {
                     <Plus size={16} />
                     Submit
                   </Link>
-                  <button
-                    onClick={handleSignOut}
-                    className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-                    title="Sign out"
-                  >
-                    <LogOut size={16} />
-                  </button>
+                  {userData ? (
+                    <div className="ml-2">
+                      <NavUserMenu
+                        profile={userData.profile}
+                        stats={userData.stats}
+                        recentActivity={userData.recentActivity}
+                        onSignOut={handleSignOut}
+                      />
+                    </div>
+                  ) : (
+                    <button
+                      onClick={handleSignOut}
+                      className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                      title="Sign out"
+                    >
+                      <LogOut size={16} />
+                    </button>
+                  )}
                 </div>
               </div>
 
-              {/* Mobile logged-in — Submit pill (always except on /submit
-                  itself) + hamburger. */}
+              {/* Mobile logged-in — avatar + Submit (except on /submit
+                  itself) + hamburger. The avatar carries the same
+                  dropdown the desktop nav uses (View profile, Edit
+                  profile, Privacy, Sign out). The hamburger keeps the
+                  page navigation list. (Anuj 2026-04-30 v0.10.5.) */}
               <div className="md:hidden flex items-center gap-2">
+                {userData && (
+                  <NavUserMenu
+                    profile={userData.profile}
+                    stats={userData.stats}
+                    recentActivity={userData.recentActivity}
+                    onSignOut={handleSignOut}
+                  />
+                )}
                 {!pathname.startsWith('/submit') && (
                   <Link
                     href="/submit"

@@ -140,29 +140,29 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const needsPrivacyConfirm = !(profile as { privacy_confirmed_at?: string | null } | null)?.privacy_confirmed_at
   const initialPrivacy = normalizePrivacyDefaults((profile as { privacy_defaults?: unknown } | null)?.privacy_defaults)
 
+  const navUserData = {
+    profile: {
+      full_name: profile?.full_name ?? null,
+      handle: profile?.handle ?? null,
+      headline: profile?.headline ?? null,
+      avatar_url: profile?.avatar_url ?? null,
+      isPro,
+    },
+    stats: {
+      scripts: scriptCount ?? 0,
+      followers: followers ?? 0,
+      following: following ?? 0,
+      reviewsGiven: reviewsGiven ?? 0,
+    },
+    recentActivity,
+  }
+
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav />
+      <Nav userData={navUserData} />
       {needsPrivacyConfirm && <PrivacyConfirmPrompt initial={initialPrivacy} />}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
-        <AppRail
-          profile={{
-            full_name: profile?.full_name ?? null,
-            handle: profile?.handle ?? null,
-            headline: profile?.headline ?? null,
-            avatar_url: profile?.avatar_url ?? null,
-            isPro,
-          }}
-          stats={{
-            scripts: scriptCount ?? 0,
-            followers: followers ?? 0,
-            following: following ?? 0,
-            reviewsGiven: reviewsGiven ?? 0,
-          }}
-          recentActivity={recentActivity}
-        >
-          {children}
-        </AppRail>
+        <AppRail>{children}</AppRail>
       </div>
       <MobileTabBar />
     </div>
