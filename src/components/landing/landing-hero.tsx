@@ -75,8 +75,8 @@ export function LandingHero() {
         </h1>
 
         <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[640px] mx-auto">
-          Post your script. Trade reads with other writers. Get on the
-          radar of the people who buy.
+          Post a script. Get a producer-grade read in a minute, real notes
+          from other writers, and a profile the industry can find.
         </p>
 
         {/* Primary CTA */}

@@ -11,7 +11,7 @@ const STEPS = [
   {
     icon: FileText,
     title: 'Post',
-    sub: 'Drop your script. Make it public when you’re ready.',
+    sub: 'Drop a PDF. Get your structured read in under a minute.',
   },
   {
     icon: MessageSquare,
