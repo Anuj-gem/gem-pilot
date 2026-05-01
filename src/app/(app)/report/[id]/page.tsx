@@ -58,7 +58,8 @@ import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
 // ScriptPrivacySheet. The dashboard surface still uses it.
-import { IndustryActivityButton } from '@/components/dashboard/industry-activity-button'
+// IndustryActivityButton retired from the report page on 2026-04-30
+// v0.10.19 (still used on the dashboard via OwnerActionsMenu).
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
@@ -700,16 +701,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             free writers and as live engagement signal for Pro. Admin
             sees the same stats so they can review activity on any post.
             Anuj 2026-04-28. */}
-        {(isOwner || isAdmin) &&
-          !isAnonymousSubmission &&
-          (submission.is_public ?? false) && (
-            <div className="gem-no-print mb-6">
-              <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
-                Industry activity
-              </p>
-              <IndustryActivityButton rows={ownerActivity} />
-            </div>
-          )}
+        {/* Industry activity panel retired from the report page on
+            2026-04-30 v0.10.19 — the dashboard cards already surface
+            this same widget in the owner triple-dot menu, and the
+            report page has the same triple-dot menu at the top, so
+            mounting it twice on the same page is just noise. */}
 
         {/* Mini score card removed 2026-04-23 — qualification banner above
             now handles the owner's primary signal. Free-tier owners still
@@ -1129,21 +1125,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
               </div>
 
-              {/* Per-dimension breakdown — folded under the score so the
-                  read defaults to the headline number, with the math one
-                  click away. Anuj 2026-04-29: pulled out of the old
-                  "Reference" disclosure so the score and its components
-                  live in one place. */}
+              {/* Additional scoring dimensions — folded under the score so
+                  the read defaults to the headline number, with the math
+                  one click away. Anuj 2026-04-30 v0.10.19: renamed from
+                  "per-dimension breakdown" to plain language a normal
+                  reader can parse. */}
               {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
                 <details className="group mt-5 [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="cursor-pointer list-none inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-accent)] hover:text-[var(--gem-accent-hover)] transition-colors">
-                    See the per-dimension breakdown
-                    <span
-                      aria-hidden
-                      className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                    >
-                      ▾
+                  <summary className="cursor-pointer list-none">
+                    <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-accent)] hover:text-[var(--gem-accent-hover)] transition-colors">
+                      See additional scoring dimensions
+                      <span
+                        aria-hidden
+                        className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                      >
+                        ▾
+                      </span>
                     </span>
+                    <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug max-w-[56ch]">
+                      In addition to everything above, these are other factors we score your script on that contribute to your overall score.
+                    </p>
                   </summary>
                   <div className="mt-4 space-y-3">
                     {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
