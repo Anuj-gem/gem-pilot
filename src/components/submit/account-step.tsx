@@ -12,6 +12,7 @@
 
 import { useEffect, useState } from 'react'
 import { Loader2, AlertCircle, Check, FileClock } from 'lucide-react'
+import { slugifyHandle, HANDLE_RE } from '@/lib/handle-suggest'
 
 export type AccountMode = 'upload' | 'draft'
 
@@ -25,14 +26,25 @@ export function AccountStep({
 }: {
   mode: AccountMode
   onGoogle: () => void
-  onEmailSignup: (data: { full_name: string; email: string; password: string }) => void
+  // Anuj 2026-04-30 v0.10.16 — Path A signup also collects the handle
+  // so a brand-new writer ends up with a working public profile even
+  // if they later skip the optional /onboarding/profile step.
+  onEmailSignup: (data: { full_name: string; handle: string; email: string; password: string }) => void
   signingUp: boolean
   googleLoading: boolean
   error?: string | null
 }) {
   const [fullName, setFullName] = useState('')
+  const [handle, setHandle] = useState('')
+  const [handleEdited, setHandleEdited] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  // Auto-suggest handle from name until the user touches the field.
+  useEffect(() => {
+    if (handleEdited) return
+    setHandle(slugifyHandle(fullName))
+  }, [fullName, handleEdited])
 
   const heading = mode === 'upload' ? 'Where should we send it?' : 'Save your spot.'
   const subhead =
@@ -105,7 +117,7 @@ export function AccountStep({
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          onEmailSignup({ full_name: fullName, email, password })
+          onEmailSignup({ full_name: fullName, handle, email, password })
         }}
         className="space-y-2.5"
       >
@@ -119,6 +131,30 @@ export function AccountStep({
           className="w-full rounded-xl px-4 py-3 text-[14px] text-[var(--gem-gray-50)]"
           style={{ background: '#fff', border: '1px solid var(--gem-gray-700)' }}
         />
+        <div className="relative">
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[14px] text-[var(--gem-gray-500)] font-mono">
+            gem.studio/w/
+          </span>
+          <input
+            type="text"
+            placeholder="your-handle"
+            value={handle}
+            onChange={(e) => {
+              setHandleEdited(true)
+              setHandle(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 32))
+            }}
+            required
+            minLength={3}
+            maxLength={32}
+            className="w-full rounded-xl py-3 text-[14px] font-mono text-gray-900"
+            style={{
+              background: '#fff',
+              border: '1px solid var(--gem-gray-700)',
+              paddingLeft: 122,
+              paddingRight: 16,
+            }}
+          />
+        </div>
         <input
           type="email"
           placeholder="Email"
@@ -155,7 +191,7 @@ export function AccountStep({
         )}
         <button
           type="submit"
-          disabled={signingUp || googleLoading}
+          disabled={signingUp || googleLoading || !HANDLE_RE.test(handle)}
           className="w-full rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           style={{ background: 'var(--gem-accent)' }}
         >

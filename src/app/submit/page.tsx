@@ -41,6 +41,7 @@ import { AccountStep, type AccountMode } from '@/components/submit/account-step'
 import { ScoringTerminal, DraftSavedTerminal } from '@/components/submit/terminals'
 import { OnboardingShell } from '@/components/onboarding/onboarding-shell'
 import type { ChecklistItem } from '@/components/onboarding/onboarding-checklist'
+import { updateProfile } from '@/app/profile/actions'
 
 type FlowStep = 'format' | 'script' | 'account' | 'scoring' | 'draft_saved'
 
@@ -456,6 +457,7 @@ function SubmitPageInner() {
 
   async function handleEmailSignup(data: {
     full_name: string
+    handle: string
     email: string
     password: string
   }) {
@@ -475,6 +477,22 @@ function SubmitPageInner() {
     }
     if (signupData.user && !signupData.session) {
       setError('Check your email to confirm your account, then log back in to pick up where you left off.')
+      setSigningUp(false)
+      return
+    }
+
+    // Persist the handle the writer picked. If it's taken, surface the
+    // error in-place rather than letting them discover it later in
+    // /onboarding/profile. Anuj 2026-04-30 v0.10.16.
+    try {
+      const handleResult = await updateProfile({ handle: data.handle })
+      if ('error' in handleResult && handleResult.error) {
+        setError(handleResult.error)
+        setSigningUp(false)
+        return
+      }
+    } catch (e: any) {
+      setError(e?.message || 'Could not save your handle.')
       setSigningUp(false)
       return
     }
