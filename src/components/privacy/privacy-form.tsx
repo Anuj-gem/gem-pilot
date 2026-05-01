@@ -58,14 +58,24 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
   const [error, setError] = useState<string | null>(null)
   const [v, setV] = useState<PrivacyDefaults>(initial ?? DEFAULT_PRIVACY)
   const [sectionsOpen, setSectionsOpen] = useState(false)
+  const [confirmOpen, setConfirmOpen] = useState(false)
 
-  const handleSubmit = () => {
+  // Did the per-post toggles change since the form loaded? If so, on save
+  // we offer to apply the change to every existing script too — otherwise
+  // "off" only affects future posts and writers get surprised that old
+  // posts still take reviews / industry inquiries (Anuj 2026-04-30 v0.10.1).
+  const reviewsChanged = (initial?.allow_reviews ?? true) !== v.allow_reviews
+  const industryChanged = (initial?.allow_industry ?? true) !== v.allow_industry
+  const perPostToggleChanged = reviewsChanged || industryChanged
+
+  const persist = (applyToAll: boolean) => {
     setError(null)
+    setConfirmOpen(false)
     startTransition(async () => {
       const res = await fetch('/api/profile/privacy', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(v),
+        body: JSON.stringify({ ...v, apply_to_all: applyToAll }),
       })
       if (!res.ok) {
         const j = await res.json().catch(() => ({}))
@@ -79,6 +89,14 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
         router.refresh()
       }
     })
+  }
+
+  const handleSubmit = () => {
+    if (perPostToggleChanged) {
+      setConfirmOpen(true)
+      return
+    }
+    persist(false)
   }
 
   return (
@@ -153,6 +171,93 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
         {pending ? <Loader2 size={16} className="animate-spin" /> : <Check size={16} />}
         {pending ? 'Saving…' : submitLabel}
       </button>
+
+      {confirmOpen && (
+        <ApplyToAllConfirm
+          reviewsChanged={reviewsChanged}
+          industryChanged={industryChanged}
+          newReviews={v.allow_reviews}
+          newIndustry={v.allow_industry}
+          onCancel={() => setConfirmOpen(false)}
+          onApplyToAll={() => persist(true)}
+          onJustFuture={() => persist(false)}
+          pending={pending}
+        />
+      )}
+    </div>
+  )
+}
+
+function ApplyToAllConfirm({
+  reviewsChanged,
+  industryChanged,
+  newReviews,
+  newIndustry,
+  onCancel,
+  onApplyToAll,
+  onJustFuture,
+  pending,
+}: {
+  reviewsChanged: boolean
+  industryChanged: boolean
+  newReviews: boolean
+  newIndustry: boolean
+  onCancel: () => void
+  onApplyToAll: () => void
+  onJustFuture: () => void
+  pending: boolean
+}) {
+  const lines: string[] = []
+  if (reviewsChanged) lines.push(newReviews ? 'open reviews on every existing post' : 'close reviews on every existing post')
+  if (industryChanged) lines.push(newIndustry ? 'allow industry access on every existing post' : 'remove industry access from every existing post')
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      onClick={onCancel}
+      className="fixed inset-0 z-[90] bg-black/55 backdrop-blur-sm flex items-end sm:items-center justify-center p-4"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white w-full sm:max-w-md rounded-2xl shadow-xl"
+        style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+      >
+        <div className="px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100">
+          <h3 className="text-[18px] font-bold text-gray-900 m-0 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            Apply to all your existing posts?
+          </h3>
+          <p className="text-[13px] text-gray-600 m-0 mt-1.5 leading-snug">
+            By default these settings only affect new posts. We can also{' '}
+            {lines.join(' and ')} you&rsquo;ve already published.
+          </p>
+        </div>
+        <div className="px-5 sm:px-6 py-4 flex flex-col gap-2">
+          <button
+            type="button"
+            onClick={onApplyToAll}
+            disabled={pending}
+            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-[14px] py-3 transition-colors disabled:opacity-60"
+          >
+            Apply to all my posts
+          </button>
+          <button
+            type="button"
+            onClick={onJustFuture}
+            disabled={pending}
+            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-semibold text-[13.5px] py-2.5 transition-colors disabled:opacity-60"
+          >
+            Just new posts from now on
+          </button>
+          <button
+            type="button"
+            onClick={onCancel}
+            disabled={pending}
+            className="text-[12.5px] text-gray-500 hover:text-gray-900 font-medium mt-1"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
