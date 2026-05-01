@@ -1,69 +1,52 @@
 'use client'
 
-// PrivacyForm — the canonical form for the 3 top-level toggles + the
-// section-visibility panel. Used by:
+// PrivacyForm — account-level privacy defaults.
+// Used by:
 //   - /profile/privacy (standalone settings page)
 //   - the new-user onboarding step
 //   - the existing-user blocking prompt on the dashboard
 //
-// Anuj 2026-04-30 v0.10.
+// v0.12.5 — replaced <details> panel with toggle-with-expand pattern
+// matching ScriptPrivacySheet. Five top-level toggles + section expand.
 
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChevronDown, Check, Loader2, Globe, MessageSquare, Briefcase } from 'lucide-react'
-import { DEFAULT_PRIVACY, privacySectionList, type PrivacyDefaults } from '@/lib/privacy-defaults'
-import { type SectionKey } from '@/lib/report-privacy'
+import {
+  Check,
+  Loader2,
+  Globe,
+  MessageSquare,
+  Briefcase,
+  Star,
+  LayoutList,
+} from 'lucide-react'
+import { DEFAULT_PRIVACY, type PrivacyDefaults } from '@/lib/privacy-defaults'
+import { SECTION_KEYS, SECTION_META, type SectionKey } from '@/lib/report-privacy'
 
 interface Props {
   initial: PrivacyDefaults
-  /** Where to send the user after a successful save. Onboarding +
-   *  blocking prompt → /dashboard. Standalone page → null (stay). */
   redirectTo?: string | null
-  /** Submit-button label. Defaults to "Save". */
   submitLabel?: string
-  /** Render an explanatory eyebrow above the form. */
   showOnboardingHelp?: boolean
 }
 
-const TOGGLES = [
-  {
-    key: 'public_default' as const,
-    icon: Globe,
-    title: 'Auto-publish new scripts',
-    sub: 'You can unpublish any post later.',
-  },
-  {
-    key: 'allow_reviews' as const,
-    icon: MessageSquare,
-    title: 'Allow reviews',
-    sub: 'GEM members can read and review your script.',
-  },
-  {
-    key: 'allow_industry' as const,
-    icon: Briefcase,
-    title: 'Allow industry access',
-    sub: 'Producers and reps can read your script and reach out.',
-  },
-]
+function allSectionsOn(sections: Record<SectionKey, boolean>): boolean {
+  return SECTION_KEYS.every((k) => sections[k] !== false)
+}
 
-// Real sections from src/lib/report-privacy.ts SECTION_KEYS — pulled
-// via privacySectionList() so the form stays in sync with what
-// actually renders on the report page. Plus a "GEM Score" entry that
-// maps to PrivacyDefaults.show_score.
-const SECTIONS = privacySectionList()
-
-export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', showOnboardingHelp = false }: Props) {
+export function PrivacyForm({
+  initial,
+  redirectTo = null,
+  submitLabel = 'Save',
+  showOnboardingHelp = false,
+}: Props) {
   const router = useRouter()
   const [pending, startTransition] = useTransition()
   const [error, setError] = useState<string | null>(null)
   const [v, setV] = useState<PrivacyDefaults>(initial ?? DEFAULT_PRIVACY)
-  const [sectionsOpen, setSectionsOpen] = useState(false)
+  const [showAllSections, setShowAllSections] = useState(allSectionsOn(v.sections))
   const [confirmOpen, setConfirmOpen] = useState(false)
 
-  // Did the per-post toggles change since the form loaded? If so, on save
-  // we offer to apply the change to every existing script too — otherwise
-  // "off" only affects future posts and writers get surprised that old
-  // posts still take reviews / industry inquiries (Anuj 2026-04-30 v0.10.1).
   const reviewsChanged = (initial?.allow_reviews ?? true) !== v.allow_reviews
   const industryChanged = (initial?.allow_industry ?? true) !== v.allow_industry
   const perPostToggleChanged = reviewsChanged || industryChanged
@@ -99,63 +82,94 @@ export function PrivacyForm({ initial, redirectTo = null, submitLabel = 'Save', 
     persist(false)
   }
 
+  function toggleShowAll() {
+    const next = !showAllSections
+    setShowAllSections(next)
+    if (next) {
+      const allOn = SECTION_KEYS.reduce((acc, k) => {
+        acc[k] = true
+        return acc
+      }, {} as Record<SectionKey, boolean>)
+      setV({ ...v, sections: allOn })
+    }
+  }
+
+  function toggleSection(key: SectionKey) {
+    const nextSections = { ...v.sections, [key]: !v.sections[key] }
+    setV({ ...v, sections: nextSections })
+    setShowAllSections(allSectionsOn(nextSections))
+  }
+
   return (
     <div className="space-y-5">
       {showOnboardingHelp && (
         <p className="text-[13px] text-gray-600 leading-snug">
-          You can change these anytime.
+          These are your defaults for new scripts. You can override any of them per-script later.
         </p>
       )}
 
-      {/* TOP-LEVEL TOGGLES */}
       <div className="rounded-xl border border-gray-200 bg-white divide-y divide-gray-100">
-        {TOGGLES.map((t) => (
-          <ToggleRow
-            key={t.key}
-            icon={<t.icon size={18} />}
-            title={t.title}
-            sub={t.sub}
-            value={v[t.key]}
-            onChange={(next) => setV({ ...v, [t.key]: next })}
-          />
-        ))}
+        <ToggleRow
+          icon={<Globe size={18} />}
+          title="Auto-publish new scripts"
+          sub="You can unpublish any post later."
+          value={v.public_default}
+          onChange={(next) => setV({ ...v, public_default: next })}
+        />
+        <ToggleRow
+          icon={<MessageSquare size={18} />}
+          title="Allow reviews"
+          sub="GEM members can read and review your script."
+          value={v.allow_reviews}
+          onChange={(next) => setV({ ...v, allow_reviews: next })}
+        />
+        <ToggleRow
+          icon={<Briefcase size={18} />}
+          title="Allow industry access"
+          sub="Producers and reps can read your script and reach out."
+          value={v.allow_industry}
+          onChange={(next) => setV({ ...v, allow_industry: next })}
+        />
+        <ToggleRow
+          icon={<Star size={18} />}
+          title="Show your GEM Score"
+          sub="Hide it and new scripts won't appear in Top-GEM rankings."
+          value={v.show_score}
+          onChange={(next) => setV({ ...v, show_score: next })}
+        />
+        <ToggleRow
+          icon={<LayoutList size={18} />}
+          title="Show all report sections"
+          sub="Off lets you hide individual sections by default."
+          value={showAllSections}
+          onChange={toggleShowAll}
+        />
       </div>
 
-      {/* SECTION VISIBILITY PANEL */}
-      <details
-        open={sectionsOpen}
-        onToggle={(e) => setSectionsOpen((e.target as HTMLDetailsElement).open)}
-        className="rounded-xl border border-gray-200 bg-white"
-      >
-        <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between">
-          <div>
-            <p className="text-[14px] font-bold text-gray-900 m-0">What viewers see when they open your report</p>
-            <p className="text-[12px] text-gray-600 m-0 mt-0.5">Toggle individual sections on or off. Defaults to everything on.</p>
-          </div>
-          <ChevronDown
-            size={16}
-            className={`shrink-0 text-gray-400 transition-transform ${sectionsOpen ? 'rotate-180' : ''}`}
-          />
-        </summary>
-        <div className="px-4 pt-1 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {SECTIONS.map((s) => {
-            const checked = s.key === 'show_score' ? v.show_score : v.sections[s.key as SectionKey]
-            const onChange = (next: boolean) => {
-              if (s.key === 'show_score') {
-                setV({ ...v, show_score: next })
-              } else {
-                setV({ ...v, sections: { ...v.sections, [s.key]: next } })
-              }
-            }
+      {!showAllSections && (
+        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 space-y-1">
+          <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider m-0 mb-2">
+            Section defaults for new scripts
+          </p>
+          {SECTION_KEYS.map((k) => {
+            const meta = SECTION_META[k]
+            const visible = v.sections[k] !== false
             return (
-              <label key={s.key} className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer">
-                <span className="text-[13px] text-gray-800">{s.label}</span>
-                <Switch checked={checked} onChange={onChange} />
-              </label>
+              <div key={k} className="flex items-center justify-between gap-3 py-1.5">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[13px] font-semibold text-gray-900 m-0 leading-tight">
+                    {meta.label}
+                  </p>
+                  <p className="text-[11.5px] text-gray-500 m-0 mt-0.5 leading-snug">
+                    {meta.hint}
+                  </p>
+                </div>
+                <Switch checked={visible} onChange={() => toggleSection(k)} />
+              </div>
             )
           })}
         </div>
-      </details>
+      )}
 
       {error && (
         <div className="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-[12.5px] text-red-700">
@@ -208,8 +222,18 @@ function ApplyToAllConfirm({
   pending: boolean
 }) {
   const lines: string[] = []
-  if (reviewsChanged) lines.push(newReviews ? 'open reviews on every existing post' : 'close reviews on every existing post')
-  if (industryChanged) lines.push(newIndustry ? 'allow industry access on every existing post' : 'remove industry access from every existing post')
+  if (reviewsChanged)
+    lines.push(
+      newReviews
+        ? 'open reviews on every existing post'
+        : 'close reviews on every existing post',
+    )
+  if (industryChanged)
+    lines.push(
+      newIndustry
+        ? 'allow industry access on every existing post'
+        : 'remove industry access from every existing post',
+    )
   return (
     <div
       role="dialog"
@@ -223,7 +247,10 @@ function ApplyToAllConfirm({
         style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       >
         <div className="px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100">
-          <h3 className="text-[18px] font-bold text-gray-900 m-0 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+          <h3
+            className="text-[18px] font-bold text-gray-900 m-0 leading-tight"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
             Apply to all your existing posts?
           </h3>
           <p className="text-[13px] text-gray-600 m-0 mt-1.5 leading-snug">
@@ -263,7 +290,11 @@ function ApplyToAllConfirm({
 }
 
 function ToggleRow({
-  icon, title, sub, value, onChange,
+  icon,
+  title,
+  sub,
+  value,
+  onChange,
 }: {
   icon?: React.ReactNode
   title: string
@@ -289,7 +320,13 @@ function ToggleRow({
   )
 }
 
-function Switch({ checked, onChange }: { checked: boolean; onChange: (next: boolean) => void }) {
+function Switch({
+  checked,
+  onChange,
+}: {
+  checked: boolean
+  onChange: (next: boolean) => void
+}) {
   return (
     <button
       type="button"
