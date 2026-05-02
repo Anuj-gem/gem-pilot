@@ -42,7 +42,7 @@ function svc() {
 }
 
 interface PageProps {
-  searchParams: Promise<{ welcome_back?: string; draft_saved?: string; just_signed_up?: string }>
+  searchParams: Promise<Record<string, string | undefined>>
 }
 
 export default async function DashboardPage({ searchParams }: PageProps) {
@@ -50,8 +50,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login?redirect=/dashboard')
 
-  const sp = await searchParams
-  const justSignedUp = sp.just_signed_up === '1'
 
   const { data: profile } = await supabase
     .from('profiles')
@@ -308,11 +306,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       )}
 
       <div className="space-y-6">
-        {justSignedUp && (
-          <div className="rounded-xl bg-purple-50 border border-purple-200 px-4 py-3 text-[13px] text-purple-800">
-            Welcome to GEM. Your evaluation is queued — you can scroll the community while you wait.
-          </div>
-        )}
 
         <div>
           <section className="min-w-0 space-y-10">
