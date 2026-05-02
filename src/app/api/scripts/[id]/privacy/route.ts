@@ -111,6 +111,22 @@ export async function PATCH(
     privacy = normalizePrivacy(existing?.report_privacy)
   }
 
+  // Gate: publishing requires Pro. Block non-active users from setting
+  // is_public = true through this endpoint. Anuj 2026-05-02.
+  if (isPublic === true && !isAdmin) {
+    const { data: callerProfile } = await supabase
+      .from('profiles')
+      .select('subscription_status')
+      .eq('id', user.id)
+      .single()
+    if (callerProfile?.subscription_status !== 'active') {
+      return NextResponse.json(
+        { error: 'Upgrade to Pro to publish on Discover.' },
+        { status: 403 }
+      )
+    }
+  }
+
   // Master "Published / Unpublished" toggle: when the caller flips
   // is_public, rewrite the entire privacy shape so the writer's pills +
   // score badge mirror the new state. Unpublish → all sections private +

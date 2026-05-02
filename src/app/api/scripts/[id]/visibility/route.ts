@@ -34,7 +34,8 @@ export async function PATCH(
   const body = await request.json()
   const is_public = Boolean(body.is_public)
 
-  // Gate: publishing to Discover requires an active subscription
+  // Gate: publishing to Discover requires an active subscription.
+  // Also blocks free users from publishing locked (2nd+) scripts.
   if (is_public) {
     const { data: profile } = await supabase
       .from('profiles')

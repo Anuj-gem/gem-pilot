@@ -227,16 +227,19 @@ export async function POST(request: NextRequest) {
       .eq("id", submission.id)
       .single()
     let ownerIsProducer = false
+    let ownerIsPro = false
     let ownerPublicDefault = true
     let ownerAllowReviews = true
     let ownerAllowIndustry = true
+    let isLockedScript = false
     if (ownedCheck?.user_id) {
       const { data: ownerProfile } = await serviceClient
         .from("profiles")
-        .select("account_type, privacy_defaults")
+        .select("account_type, privacy_defaults, subscription_status")
         .eq("id", ownedCheck.user_id)
         .single<{
           account_type: string | null
+          subscription_status: string | null
           privacy_defaults: {
             public_default?: boolean
             allow_reviews?: boolean
@@ -244,6 +247,7 @@ export async function POST(request: NextRequest) {
           } | null
         }>()
       ownerIsProducer = ownerProfile?.account_type === "producer"
+      ownerIsPro = ownerProfile?.subscription_status === "active"
       // Public-by-default + per-script defaults all read from the writer's
       // account-level privacy settings (Anuj 2026-04-30 v0.10). The two
       // booleans (allow_reviews, allow_industry) get persisted to the
@@ -253,19 +257,47 @@ export async function POST(request: NextRequest) {
       if (typeof pd?.public_default === "boolean") ownerPublicDefault = pd.public_default
       if (typeof pd?.allow_reviews === "boolean") ownerAllowReviews = pd.allow_reviews
       if (typeof pd?.allow_industry === "boolean") ownerAllowIndustry = pd.allow_industry
+
+      // Free-tier lock: if this isn't the writer's first completed script
+      // and they're not Pro, force private + no reviews/industry. The 2nd+
+      // script is locked behind the paywall — it must not leak onto
+      // Community or get matched to producers. Anuj 2026-05-02.
+      if (!ownerIsPro && !ownerIsProducer) {
+        const { data: firstSub } = await serviceClient
+          .from("script_submissions")
+          .select("id")
+          .eq("user_id", ownedCheck.user_id)
+          .eq("status", "completed")
+          .order("created_at", { ascending: true })
+          .limit(1)
+          .maybeSingle()
+        // If firstSub exists and isn't this submission, this is the 2nd+
+        // script. If firstSub is null, this submission is about to become
+        // the first (we haven't updated its status to completed yet).
+        if (firstSub && firstSub.id !== submission.id) {
+          isLockedScript = true
+        }
+      }
     }
     await serviceClient
       .from("script_submissions")
       .update({
         status: "completed",
         // Producer-owned scripts stay private regardless of writer
-        // defaults. Otherwise inherit the writer's account-level
+        // defaults. Locked (2nd+ free-tier) scripts are forced private.
+        // Otherwise inherit the writer's account-level
         // public_default + privacy toggles.
-        ...(!ownerIsProducer
+        ...(!ownerIsProducer && !isLockedScript
           ? {
               is_public: ownerPublicDefault,
               allow_reviews: ownerAllowReviews,
               allow_industry: ownerAllowIndustry,
+            }
+          : isLockedScript
+          ? {
+              is_public: false,
+              allow_reviews: false,
+              allow_industry: false,
             }
           : {}),
       })
