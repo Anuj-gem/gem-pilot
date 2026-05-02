@@ -94,7 +94,11 @@ function dedupeTags(tags: string[]): string[] {
 
 export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, authorHandle, commercialScore, scoreShownToIndustry = true, isProSubscriber = true, headerActionsLeft }: Props) {
   const router = useRouter()
-  const searchParams = useSearchParams()
+  // useSearchParams can suspend without a Suspense boundary in Next 14+,
+  // which delays event-listener registration and causes the "blink but
+  // doesn't open" bug for some users. Fallback to null if it throws.
+  let searchParams: ReturnType<typeof useSearchParams> | null = null
+  try { searchParams = useSearchParams() } catch { /* suspended — ignore */ }
   const autoEdit = isOwner && searchParams?.get('edit') === '1'
 
   const [editing, setEditing] = useState<boolean>(autoEdit)
@@ -330,7 +334,11 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             right of the title and shrinks to a compact pill. Title is sized
             mobile-first so it doesn't overflow narrow screens. */}
         <div className="flex items-start justify-between gap-3 sm:gap-4 mb-1.5 sm:mb-2">
-          <h1 className="text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0">
+          <h1
+            className={`text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0${isOwner ? ' cursor-pointer hover:opacity-80 transition-opacity' : ''}`}
+            onClick={isOwner ? () => { resetLocalToInitial(); setEditing(true); setError(null) } : undefined}
+            title={isOwner ? 'Click to edit' : undefined}
+          >
             {initial.title}
           </h1>
           {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
@@ -369,7 +377,11 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             Just a generously-sized paragraph in the column. This is the
             screenshot-able moment. */}
         {initial.logline && (
-          <p className="text-[20px] sm:text-[28px] text-[var(--gem-gray-50)] leading-[1.35] font-semibold tracking-[-0.005em] m-0 mb-6 sm:mb-8">
+          <p
+            className={`text-[20px] sm:text-[28px] text-[var(--gem-gray-50)] leading-[1.35] font-semibold tracking-[-0.005em] m-0 mb-6 sm:mb-8${isOwner ? ' cursor-pointer hover:opacity-80 transition-opacity' : ''}`}
+            onClick={isOwner ? () => { resetLocalToInitial(); setEditing(true); setError(null) } : undefined}
+            title={isOwner ? 'Click to edit' : undefined}
+          >
             {initial.logline}
           </p>
         )}
