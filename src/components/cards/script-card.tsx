@@ -1,3 +1,4 @@
+'use client'
 // ScriptCard — canonical script preview used everywhere a script appears.
 // Anuj 2026-04-30 v0.6 cards kit.
 //
@@ -61,6 +62,14 @@ interface Props {
   /** Whether the viewer owns this script. Owner-only chrome
    *  (e.g. Industry stats button) is gated on this flag. */
   isOwner?: boolean
+  /** Script is locked behind the Pro paywall (2nd+ script for free users).
+   *  Shows title + logline teaser with upgrade CTA, no edit/menu. */
+  isLocked?: boolean
+  /** Script is still being evaluated. Shows spinner + processing label. */
+  isProcessing?: boolean
+  /** This is the user's first free evaluation — show "Free evaluation" badge
+   *  and messaging that they get full access on this one. */
+  isFreePost?: boolean
 }
 
 function initialsOf(s: ScriptCardData) {
@@ -223,14 +232,100 @@ function WriterMiniCard({
   )
 }
 
-export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
+export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = false, isProcessing = false, isFreePost = false }: Props) {
   const href = s.evaluation_id ? `/report/${s.evaluation_id}` : null
-  if (!href) return null
+  // Processing scripts have no eval yet — don't bail, render a processing card
+  if (!href && !isProcessing) return null
 
   const reviewCount = s.review_count ?? 0
   const reviewLabel = `${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'}`
 
   if (density === 'poster') {
+    // ── PROCESSING STATE ─────────────────────────────────────
+    // Script submitted but evaluation not yet complete. Show the
+    // title with a spinner so the user knows it's working.
+    if (isProcessing) {
+      return (
+        <div
+          className="group relative flex flex-col rounded-xl border"
+          style={{ background: CARD.bg, borderColor: CARD.border }}
+        >
+          <div className="relative flex flex-col p-5">
+            <div
+              className="font-bold text-gray-900 leading-[1.2] line-clamp-3"
+              style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '3.6em' }}
+            >
+              {s.title}
+            </div>
+            <div className="mt-4 pt-3 flex items-center gap-2.5" style={{ borderTop: `1px solid ${CARD.border}` }}>
+              <svg className="animate-spin h-4 w-4 text-purple-600 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+              </svg>
+              <span className="text-[13px] font-semibold text-purple-700">
+                Evaluating your script…
+              </span>
+            </div>
+            <p className="text-[12px] text-gray-500 mt-2 leading-snug">
+              This usually takes under a minute. Feel free to explore the community while you wait.
+            </p>
+          </div>
+        </div>
+      )
+    }
+
+    // ── LOCKED STATE (2nd+ script, free user) ────────────────
+    // Show title + logline as a teaser. No edit, no menu, no
+    // view-report. Clear upgrade CTA.
+    if (isLocked) {
+      return (
+        <div
+          className="group relative flex flex-col rounded-xl border"
+          style={{ background: CARD.bg, borderColor: CARD.border }}
+        >
+          <div className="relative flex flex-col p-5">
+            {/* Locked badge */}
+            <div className="inline-flex items-center gap-1.5 mb-3">
+              <span
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold"
+                style={{ background: '#FEF3C7', color: '#92400E' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3">
+                  <path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" />
+                </svg>
+                Upgrade to unlock
+              </span>
+            </div>
+
+            <div
+              className="font-bold text-gray-900 leading-[1.2] line-clamp-3"
+              style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '3.6em' }}
+            >
+              {s.title}
+            </div>
+
+            {s.logline && (
+              <p className="text-[14px] text-gray-500 mt-2.5 leading-[1.5] line-clamp-2 m-0">
+                {s.logline}
+              </p>
+            )}
+
+            <div className="mt-4 pt-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
+              <p className="text-[13px] text-gray-600 leading-snug mb-3">
+                Your report is ready. Upgrade to Pro to access it, publish on Discover, and evaluate unlimited scripts.
+              </p>
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+                className="relative z-10 pointer-events-auto w-full inline-flex items-center justify-center gap-2 text-[12.5px] font-bold rounded-lg bg-purple-600 hover:bg-purple-700 text-white px-4 py-2.5 transition-colors"
+              >
+                Upgrade to Pro — $20/mo
+              </button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     // Score badge respects report_privacy.show_score for non-owners.
     // Owner always sees their own score. Anuj 2026-05-01 v0.12.3.
     const scoreVisibleToViewer = isOwner || s.score_visible !== false
@@ -260,14 +355,31 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
       >
         {/* Overlay link — full card click target → report. Lives below
             interactive children (z-10) so they get clicks first. */}
-        <Link
-          href={href}
-          prefetch={false}
-          aria-label={s.title}
-          className="absolute inset-0 z-0 rounded-xl"
-        />
+        {href && (
+          <Link
+            href={href}
+            prefetch={false}
+            aria-label={s.title}
+            className="absolute inset-0 z-0 rounded-xl"
+          />
+        )}
 
         <div className="relative flex flex-col pointer-events-none p-5">
+          {/* FREE POST BADGE — first eval for trial users */}
+          {isFreePost && isOwner && (
+            <div className="inline-flex items-center gap-1.5 mb-2">
+              <span
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold"
+                style={{ background: '#ECFDF5', color: '#065F46' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3">
+                  <path fillRule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z" clipRule="evenodd" />
+                </svg>
+                Your free evaluation — full access
+              </span>
+            </div>
+          )}
+
           {/* TITLE — 3-line clamp so most titles fit without
               cutting off (Anuj 2026-04-30 v0.9). */}
           <div
@@ -352,18 +464,20 @@ export function ScriptCard({ s, density = 'list', isOwner = false }: Props) {
                   isPublic={s.is_public ?? false}
                   allowReviews={s.allow_reviews ?? true}
                   allowIndustry={s.allow_industry ?? true}
-                  editHref={`/report/${s.evaluation_id}`}
+                  editHref={`/report/${s.evaluation_id}?edit=1`}
                   downloadHref={`/report/${s.evaluation_id}?download=1`}
                 />
               </div>
             )}
-            <Link
-              href={href}
-              prefetch={false}
-              className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors"
-            >
-              View report →
-            </Link>
+            {href && (
+              <Link
+                href={href}
+                prefetch={false}
+                className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors"
+              >
+                View report →
+              </Link>
+            )}
           </div>
         </div>
       </div>

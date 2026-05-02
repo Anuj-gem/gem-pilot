@@ -25,6 +25,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
@@ -187,19 +188,35 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     }
   }
   const myReviewStats = await getScriptStats(submissionIds)
-  const allMyCards: ScriptCardData[] = visible
-    .map((s): ScriptCardData | null => {
+
+  // ── Free-tier paywall logic ──────────────────────────────
+  // Find the user's first completed submission (by created_at ASC).
+  // That one gets full access (the "free evaluation"). All subsequent
+  // completed scripts are locked behind Pro. Processing scripts always
+  // render with a spinner regardless of tier.
+  const completedSubs = visible
+    .filter((s) => s.status === 'completed')
+    .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+  const firstCompletedId = completedSubs[0]?.id ?? null
+  const isTrial = !isPro
+
+  type MyCard = ScriptCardData & { _isLocked: boolean; _isProcessing: boolean; _isFreePost: boolean }
+  const allMyCards: MyCard[] = visible
+    .map((s): MyCard | null => {
       const ev = myEvalBySub.get(s.id)
-      if (!ev) return null
+      const stillProcessing = s.status === 'processing' || s.status === 'queued'
+      // Processing scripts have no eval — render them anyway
+      if (!ev && !stillProcessing) return null
       const st = myReviewStats.get(s.id)
+      const isFirstCompleted = s.id === firstCompletedId
       return {
         submission_id: s.id,
-        evaluation_id: ev.id,
+        evaluation_id: ev?.id ?? null,
         title: s.title,
         format: s.declared_format,
-        genre: ev.genre,
-        logline: ev.logline,
-        selznick_score: ev.weighted_score,
+        genre: ev?.genre ?? null,
+        logline: ev?.logline ?? null,
+        selznick_score: ev?.weighted_score ?? null,
         is_public: !!s.is_public,
         allow_reviews: s.allow_reviews ?? true,
         allow_industry: s.allow_industry ?? true,
@@ -208,12 +225,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         writer_avatar_url: profile?.avatar_url ?? null,
         review_count: st?.reviewCount ?? 0,
         avg_peer_score: st?.avgPeerScore ?? null,
+        _isProcessing: stillProcessing,
+        _isLocked: isTrial && !stillProcessing && !isFirstCompleted,
+        _isFreePost: isTrial && isFirstCompleted,
       }
     })
-    .filter((c): c is ScriptCardData => c !== null)
+    .filter((c): c is MyCard => c !== null)
   // Show only the 3 most recent on the dashboard. The rest live behind
   // a "View all" link → public profile page (Anuj 2026-04-30).
-  const myCards: ScriptCardData[] = allMyCards.slice(0, 3)
+  const myCards = allMyCards.slice(0, 3)
   const hasMoreScripts = allMyCards.length > myCards.length
 
   // ---------- POSTS YOU'VE REVIEWED ----------
@@ -277,11 +297,12 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     }
   }
 
-  const isProcessing = visible.some((s) => s.status === 'processing')
+  const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
 
   return (
     <>
       <ProcessingPoller active={isProcessing} />
+      {isTrial && <UpgradeModalListener />}
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
@@ -311,7 +332,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                 </header>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {myCards.map((c) => (
-                    <ScriptCard key={c.submission_id} s={c} density="poster" isOwner />
+                    <ScriptCard
+                      key={c.submission_id}
+                      s={c}
+                      density="poster"
+                      isOwner
+                      isLocked={c._isLocked}
+                      isProcessing={c._isProcessing}
+                      isFreePost={c._isFreePost}
+                    />
                   ))}
                 </div>
               </div>
