@@ -228,9 +228,13 @@ export async function POST(request: NextRequest) {
       .single()
     let ownerIsProducer = false
     let ownerIsPro = false
-    let ownerPublicDefault = true
-    let ownerAllowReviews = true
-    let ownerAllowIndustry = true
+    // Anonymous submissions (no user_id) must never auto-publish.
+    // They stay private until the user claims the report and creates
+    // an account. Anuj 2026-05-02.
+    const isAnonymous = !ownedCheck?.user_id
+    let ownerPublicDefault = isAnonymous ? false : true
+    let ownerAllowReviews = isAnonymous ? false : true
+    let ownerAllowIndustry = isAnonymous ? false : true
     let isLockedScript = false
     if (ownedCheck?.user_id) {
       const { data: ownerProfile } = await serviceClient
