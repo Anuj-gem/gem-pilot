@@ -484,6 +484,9 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
     )
   }
 
+  // Non-poster densities require a valid href (completed eval).
+  if (!href) return null
+
   if (density === 'compact') {
     return (
       <div className="relative flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition-colors">
