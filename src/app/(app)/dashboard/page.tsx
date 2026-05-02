@@ -192,10 +192,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   // That one gets full access (the "free evaluation"). All subsequent
   // completed scripts are locked behind Pro. Processing scripts always
   // render with a spinner regardless of tier.
-  const completedSubs = visible
+  //
+  // IMPORTANT: use ALL submissions (including hidden/removed) to find the
+  // first completed one. Hiding a script doesn't give you another free
+  // eval — mirrors the report page's lockedAfterFreeEval query.
+  const allSubs = (mySubs as MySubRow[] | null) || []
+  const allCompleted = allSubs
     .filter((s) => s.status === 'completed')
     .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
-  const firstCompletedId = completedSubs[0]?.id ?? null
+  const firstCompletedId = allCompleted[0]?.id ?? null
   const isTrial = !isPro
 
   type MyCard = ScriptCardData & { _isLocked: boolean; _isProcessing: boolean; _isFreePost: boolean }
