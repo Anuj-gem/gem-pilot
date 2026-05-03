@@ -17,6 +17,22 @@ export interface OpportunityData {
   status: string
   posted_by: string | null
   slug: string | null
+  perspective: string | null
+  deal_type: string | null
+}
+
+export const PERSPECTIVE_LABELS: Record<string, string> = {
+  producer: 'Producer',
+  lit_rep: 'Lit Rep',
+  actor_rep: 'Talent Rep',
+  financier: 'Financier',
+}
+
+export const DEAL_TYPE_LABELS: Record<string, string> = {
+  option: 'Option',
+  purchase: 'Purchase',
+  representation: 'Representation',
+  co_finance: 'Production Finance',
 }
 
 export interface QualifyingScript {
@@ -89,6 +105,20 @@ export function OpportunityCard({ opportunity, qualifyingScripts = [], compact =
             {opportunity.description}
           </p>
         )}
+
+        {/* Perspective + Deal type pills — most important info at a glance */}
+        <div className="flex flex-wrap gap-1.5 mb-2">
+          {opportunity.deal_type && (
+            <span className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+              {DEAL_TYPE_LABELS[opportunity.deal_type] ?? opportunity.deal_type}
+            </span>
+          )}
+          {opportunity.perspective && (
+            <span className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
+              {PERSPECTIVE_LABELS[opportunity.perspective] ?? opportunity.perspective}
+            </span>
+          )}
+        </div>
 
         {/* Filter pills */}
         <div className="flex flex-wrap gap-1.5 mb-3">

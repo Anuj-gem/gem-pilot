@@ -23,7 +23,7 @@ import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { type OpportunityData, type QualifyingScript } from '@/components/opportunities/opportunity-card'
+import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -229,12 +229,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const pendingCount = activeSubs.filter(s => s.status === 'pending').length
   const reviewedCount = activeSubs.filter(s => s.status === 'reviewed').length
 
-  const GENRE_LABELS: Record<string, string> = {
-    thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
-    comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
-    action: 'Action', family: 'Family', western: 'Western', musical: 'Musical',
-  }
-
   return (
     <>
       <ProcessingPoller active={isProcessing} />
@@ -354,10 +348,17 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                     >
                       <div className="min-w-0 flex-1">
                         <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{opp.title}</p>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          {opp.genres.slice(0, 1).map(g => (
-                            <span key={g} className="text-[10px] font-bold text-blue-600">{GENRE_LABELS[g] ?? g}</span>
-                          ))}
+                        <div className="flex items-center gap-2 mt-1">
+                          {opp.deal_type && (
+                            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                              {DEAL_TYPE_LABELS[opp.deal_type] ?? opp.deal_type}
+                            </span>
+                          )}
+                          {opp.perspective && (
+                            <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
+                              {PERSPECTIVE_LABELS[opp.perspective] ?? opp.perspective}
+                            </span>
+                          )}
                           {daysLeft != null && daysLeft > 0 && (
                             <span className={`text-[10.5px] font-medium ${daysLeft <= 7 ? 'text-red-400' : 'text-gray-300'}`}>
                               {daysLeft}d left
