@@ -7,7 +7,8 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { SubmitForConsideration, type SubmissionState } from '@/components/opportunities/submit-button'
+import { type SubmissionState } from '@/components/opportunities/submit-button'
+import { SubmissionList } from '@/components/opportunities/submission-list'
 
 function svc() {
   return createServerClient(
@@ -69,7 +70,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   let qualifyingScripts: { id: string; title: string; evaluation_id: string }[] = []
   const existingSubmissions = new Map<string, SubmissionState>()
   let totalActiveSubmissions = 0
-  const ACTIVE_SUBMISSION_LIMIT = 3
+  // Limit is enforced client-side in SubmissionList (5 pending max)
 
   if (user) {
     const { data: userSubs } = await service
@@ -131,8 +132,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .eq('status', 'pending')
     totalActiveSubmissions = activeCount ?? 0
   }
-
-  const atLimit = totalActiveSubmissions >= ACTIVE_SUBMISSION_LIMIT
 
   const deadline = opp.deadline ? new Date(opp.deadline) : null
   const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
@@ -221,23 +220,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 Your scripts
               </h2>
               {qualifyingScripts.length > 0 ? (
-                <div className="flex flex-col gap-2">
-                  {qualifyingScripts.map(s => (
-                    <SubmitForConsideration
-                      key={s.id}
-                      opportunityId={opp.id}
-                      submissionId={s.id}
-                      scriptTitle={s.title}
-                      existing={existingSubmissions.get(s.id) ?? null}
-                      atLimit={atLimit && !existingSubmissions.has(s.id)}
-                    />
-                  ))}
-                  {atLimit && (
-                    <p className="text-[12.5px] text-gray-400 mt-1 m-0">
-                      You have {totalActiveSubmissions} scripts in consideration (limit {ACTIVE_SUBMISSION_LIMIT}).
-                    </p>
-                  )}
-                </div>
+                <SubmissionList
+                  opportunityId={opp.id}
+                  scripts={qualifyingScripts.map(s => ({ id: s.id, title: s.title }))}
+                  existingSubmissions={Object.fromEntries(existingSubmissions)}
+                  pendingCount={totalActiveSubmissions}
+                />
               ) : (
                 <div className="px-3 py-3 rounded-lg bg-gray-50 border border-gray-100">
                   <p className="text-[13px] text-gray-500 m-0">

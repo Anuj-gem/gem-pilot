@@ -33,9 +33,13 @@ interface SubmitButtonProps {
   existing?: SubmissionState | null
   /** Whether the writer has hit the active (pending) submission limit */
   atLimit?: boolean
+  /** Called after a successful submit — parent can update its count */
+  onSubmitted?: () => void
+  /** Called after a successful withdraw — parent can update its count */
+  onWithdrawn?: () => void
 }
 
-export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit }: SubmitButtonProps) {
+export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, onSubmitted, onWithdrawn }: SubmitButtonProps) {
   const [state, setState] = useState<SubmissionState | null>(existing ?? null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -66,6 +70,7 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     }
     setState(data as SubmissionState)
     setLoading(false)
+    onSubmitted?.()
     router.refresh()
   }
 
@@ -87,6 +92,7 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     }
     setState(null)
     setLoading(false)
+    onWithdrawn?.()
     router.refresh()
   }
 
