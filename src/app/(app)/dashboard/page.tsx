@@ -25,6 +25,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { MarkViewed } from '@/components/dashboard/mark-viewed'
 import { CollapsibleOpportunity } from '@/components/dashboard/collapsible-opportunity'
+import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
 import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
@@ -290,9 +291,22 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const pendingOppIds = new Set(pendingOppGroups.map(g => g.opportunityId))
   const feedbackOppGroups = groupByOpp(activeSubs.filter(s => s.status === 'reviewed' && !pendingOppIds.has(s.opportunity_id)))
 
-  // Pending submission count for limit check (limit = 3 pending across all opps)
-  const totalPendingSubmissions = activeSubs.filter(s => s.status === 'pending').length
-  const atSubmitLimit = totalPendingSubmissions >= 3
+  // Monthly submission limit (Pro: 3/month; Free: 0 — gated entirely)
+  const MONTHLY_LIMIT = 3
+  let monthlyUsed = 0
+  {
+    const now = new Date()
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const { count } = await service
+      .from('opportunity_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .gte('submitted_at', monthStart)
+    monthlyUsed = count ?? 0
+  }
+  const monthlyRemaining = Math.max(0, MONTHLY_LIMIT - monthlyUsed)
+  const atSubmitLimit = !isPro || monthlyRemaining <= 0
 
   const NEXT_STEPS_LABELS: Record<string, string> = {
     revise_resubmit: 'Revise & resubmit',
@@ -541,10 +555,20 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                   {totalAvailableOpps} available
                 </span>
               </h2>
-              <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                See all
-              </Link>
+              <div className="flex items-center gap-3">
+                {isPro && (
+                  <span className="text-[11px] text-gray-400 font-medium">
+                    {monthlyRemaining} of {MONTHLY_LIMIT} submissions left
+                  </span>
+                )}
+                <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                  See all
+                </Link>
+              </div>
             </header>
+            {isTrial && (
+              <UpgradeBanner message="Upgrade to Pro to submit to opportunities" />
+            )}
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               {oppWithQualifications
                 .filter(({ opportunity, qualifyingScripts }) => {
@@ -571,6 +595,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                       dealTypeLabels={DEAL_TYPE_LABELS}
                       perspectiveLabels={PERSPECTIVE_LABELS}
                       atLimit={atSubmitLimit}
+                      isPro={isPro}
                     />
                   )
                 })}

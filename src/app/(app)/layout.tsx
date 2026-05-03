@@ -140,6 +140,20 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const needsPrivacyConfirm = !(profile as { privacy_confirmed_at?: string | null } | null)?.privacy_confirmed_at
   const initialPrivacy = normalizePrivacyDefaults((profile as { privacy_defaults?: unknown } | null)?.privacy_defaults)
 
+  // Monthly opportunity submissions for nav display
+  let monthlySubmissions: { used: number; limit: number } | undefined
+  if (isPro) {
+    const now = new Date()
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const { count } = await service
+      .from('opportunity_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .gte('submitted_at', monthStart)
+    monthlySubmissions = { used: count ?? 0, limit: 3 }
+  }
+
   const navUserData = {
     profile: {
       full_name: profile?.full_name ?? null,
@@ -153,6 +167,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       followers: followers ?? 0,
       following: following ?? 0,
       reviewsGiven: reviewsGiven ?? 0,
+      monthlySubmissions,
     },
     recentActivity,
   }

@@ -28,6 +28,8 @@ export interface NavUserMenuStats {
   followers: number
   following: number
   reviewsGiven: number
+  /** Monthly opportunity submissions used / limit (Pro only) */
+  monthlySubmissions?: { used: number; limit: number }
 }
 export interface NavUserMenuActivity {
   kind: 'publish' | 'review'
@@ -163,8 +165,42 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
               <Stat label="Reviews" value={stats.reviewsGiven} />
             </div>
 
+            {/* Plan status */}
+            <div className="mt-3 pt-3 border-t border-gray-100">
+              {profile.isPro ? (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <ProBadge />
+                    <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
+                  </div>
+                  {stats.monthlySubmissions && (
+                    <span className="text-[11px] text-gray-400 font-medium">
+                      {Math.max(0, stats.monthlySubmissions.limit - stats.monthlySubmissions.used)}/{stats.monthlySubmissions.limit} submissions left
+                    </span>
+                  )}
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false)
+                    window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+                  }}
+                  className="w-full flex items-center justify-between py-1 group"
+                >
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Free</span>
+                    <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-purple-600 group-hover:underline">
+                    Upgrade →
+                  </span>
+                </button>
+              )}
+            </div>
+
             {/* View / Edit */}
-            <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-2">
+            <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2">
               <Link
                 href={profileHref}
                 prefetch={false}

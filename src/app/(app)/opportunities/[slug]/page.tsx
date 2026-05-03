@@ -10,6 +10,7 @@ import type { Metadata } from 'next'
 import { type SubmissionState } from '@/components/opportunities/submit-button'
 import { SubmissionList } from '@/components/opportunities/submission-list'
 import { PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 
 function svc() {
   return createServerClient(
@@ -72,8 +73,8 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
   let qualifyingScripts: { id: string; title: string; evaluation_id: string }[] = []
   const existingSubmissions = new Map<string, SubmissionState>()
-  let totalActiveSubmissions = 0
-  // Limit is enforced client-side in SubmissionList (5 pending max)
+  let monthlyUsed = 0
+  let isPro = false
 
   if (user) {
     const { data: userSubs } = await service
@@ -127,13 +128,24 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       }
     }
 
-    // Count active submissions across ALL opportunities for limit check
-    const { count: activeCount } = await service
+    // Check subscription status
+    const { data: profile } = await auth
+      .from('profiles')
+      .select('subscription_status')
+      .eq('id', user.id)
+      .single()
+    isPro = profile?.subscription_status === 'active'
+
+    // Count this month's submissions for limit check
+    const now = new Date()
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const { count: monthCount } = await service
       .from('opportunity_submissions')
       .select('id', { count: 'exact', head: true })
       .eq('writer_id', user.id)
-      .eq('status', 'pending')
-    totalActiveSubmissions = activeCount ?? 0
+      .neq('status', 'withdrawn')
+      .gte('submitted_at', monthStart)
+    monthlyUsed = monthCount ?? 0
   }
 
   const deadline = opp.deadline ? new Date(opp.deadline) : null
@@ -223,17 +235,26 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           )}
 
           {/* ── Your scripts / qualification ── */}
+          {!isPro && user && <UpgradeModalListener />}
           {user ? (
             <div className="border-t border-gray-100 pt-4">
-              <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide m-0 mb-3">
-                Your qualifying scripts
-              </h2>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide m-0">
+                  Your qualifying scripts
+                </h2>
+                {isPro && (
+                  <span className="text-[11px] text-gray-400 font-medium">
+                    {Math.max(0, 3 - monthlyUsed)} of 3 submissions left
+                  </span>
+                )}
+              </div>
               {qualifyingScripts.length > 0 ? (
                 <SubmissionList
                   opportunityId={opp.id}
                   scripts={qualifyingScripts.map(s => ({ id: s.id, title: s.title }))}
                   existingSubmissions={Object.fromEntries(existingSubmissions)}
-                  pendingCount={totalActiveSubmissions}
+                  pendingCount={monthlyUsed}
+                  isPro={isPro}
                 />
               ) : (
                 <div className="px-3 py-3 rounded-lg bg-gray-50 border border-gray-100">

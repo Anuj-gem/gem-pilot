@@ -67,12 +67,12 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           </div>
           <ul className="space-y-2 mt-3">
             {[
+              'Submit to industry opportunities — 3 per month',
               'Industry matching — producers and reps scouting your lane',
               'Producer intros routed straight to your inbox',
               'Unlimited script evaluations',
               'Submit revisions and rescore old reports',
               'Per-section privacy + score-eye toggles',
-              'Branded PDF download of every report',
             ].map(item => (
               <li
                 key={item}

@@ -33,7 +33,7 @@ export function UpgradeTopBanner({ evaluationId }: Props) {
         }}
       >
         <p className="text-[12.5px] sm:text-[13px] font-semibold text-[var(--gem-gray-100)] m-0 leading-snug">
-          Upgrade to GEM Pro to submit new drafts.
+          Upgrade to submit new drafts and apply to industry opportunities.
         </p>
         <button
           type="button"

@@ -28,11 +28,13 @@ interface Props {
   dealTypeLabels: Record<string, string>
   perspectiveLabels: Record<string, string>
   atLimit: boolean
+  /** Whether the writer has an active Pro subscription */
+  isPro?: boolean
 }
 
 export function CollapsibleOpportunity({
   opportunityId, title, slug, dealType, perspective, deadline,
-  qualifyingScripts, dealTypeLabels, perspectiveLabels, atLimit,
+  qualifyingScripts, dealTypeLabels, perspectiveLabels, atLimit, isPro = true,
 }: Props) {
   const [open, setOpen] = useState(false)
   const [submitting, setSubmitting] = useState<string | null>(null)
@@ -140,13 +142,23 @@ export function CollapsibleOpportunity({
                 </div>
                 <span className="text-[13px] text-gray-900 truncate">{s.title}</span>
               </div>
-              <button
-                onClick={(e) => { e.stopPropagation(); handleSubmit(s.id) }}
-                disabled={submitting === s.id || atLimit}
-                className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-3 py-1 rounded-md transition-colors"
-              >
-                {submitting === s.id ? '…' : 'Submit'}
-              </button>
+              {isPro ? (
+                <button
+                  onClick={(e) => { e.stopPropagation(); handleSubmit(s.id) }}
+                  disabled={submitting === s.id || atLimit}
+                  className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-3 py-1 rounded-md transition-colors"
+                >
+                  {submitting === s.id ? '…' : atLimit ? 'Limit reached' : 'Submit'}
+                </button>
+              ) : (
+                <button
+                  onClick={(e) => { e.stopPropagation(); window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal')) }}
+                  className="shrink-0 text-[11px] font-bold text-gray-400 bg-gray-100 px-3 py-1 rounded-md transition-colors hover:bg-gray-200 flex items-center gap-1"
+                >
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5" rx="1" stroke="currentColor" strokeWidth="1.2"/><path d="M4 5.5V4a2 2 0 114 0v1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                  Pro
+                </button>
+              )}
             </div>
           ))}
           {visibleScripts.length > 5 && (

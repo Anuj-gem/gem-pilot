@@ -5,6 +5,8 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { OpportunityCard, type OpportunityData, type QualifyingScript } from '@/components/opportunities/opportunity-card'
+import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import Link from 'next/link'
 
 function svc() {
@@ -23,6 +25,28 @@ export default async function OpportunitiesPage() {
   if (!user) redirect('/login?redirect=/opportunities')
 
   const service = svc()
+
+  // Check subscription
+  const { data: profile } = await auth
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+  const isPro = profile?.subscription_status === 'active'
+
+  // Monthly submission count for Pro users
+  let monthlyUsed = 0
+  if (isPro) {
+    const now = new Date()
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const { count } = await service
+      .from('opportunity_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .gte('submitted_at', monthStart)
+    monthlyUsed = count ?? 0
+  }
 
   // Fetch active opportunities
   const { data: opps } = await service
@@ -90,6 +114,7 @@ export default async function OpportunitiesPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      {!isPro && <UpgradeModalListener />}
       <div className="flex items-end justify-between mb-5">
         <div>
           <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1 m-0">Browse</p>
@@ -98,6 +123,7 @@ export default async function OpportunitiesPage() {
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
             {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} accepting submissions
+            {isPro && <span className="ml-2 text-purple-500 font-medium">&middot; {Math.max(0, 3 - monthlyUsed)} of 3 submissions left</span>}
           </p>
         </div>
         <Link
@@ -107,6 +133,10 @@ export default async function OpportunitiesPage() {
           &larr; Dashboard
         </Link>
       </div>
+
+      {!isPro && (
+        <UpgradeBanner message="Upgrade to Pro to submit to opportunities" />
+      )}
 
       <div className="flex flex-col gap-3">
         {oppWithQualifications.length === 0 ? (

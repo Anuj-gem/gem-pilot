@@ -33,13 +33,15 @@ interface SubmitButtonProps {
   existing?: SubmissionState | null
   /** Whether the writer has hit the active (pending) submission limit */
   atLimit?: boolean
+  /** Whether the writer is a Pro subscriber. Free users see a locked button. */
+  isPro?: boolean
   /** Called after a successful submit — parent can update its count */
   onSubmitted?: () => void
   /** Called after a successful withdraw — parent can update its count */
   onWithdrawn?: () => void
 }
 
-export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, onSubmitted, onWithdrawn }: SubmitButtonProps) {
+export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, onSubmitted, onWithdrawn }: SubmitButtonProps) {
   const [state, setState] = useState<SubmissionState | null>(existing ?? null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -135,7 +137,29 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     )
   }
 
-  // Not submitted (or withdrawn) — show submit button
+  // Not submitted (or withdrawn) — show submit button (or locked for free users)
+  if (!isPro) {
+    return (
+      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-gray-50 border border-gray-200">
+        <div className="flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="8" fill="#6b7280" opacity="0.10"/>
+            <rect x="4.5" y="7" width="7" height="5" rx="1" stroke="#9ca3af" strokeWidth="1.2"/>
+            <path d="M6 7V5.5a2 2 0 114 0V7" stroke="#9ca3af" strokeWidth="1.2" strokeLinecap="round"/>
+          </svg>
+          <span className="text-[13.5px] font-semibold text-gray-400">{scriptTitle}</span>
+        </div>
+        <button
+          onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+          className="text-[12px] font-bold text-gray-400 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors flex items-center gap-1"
+        >
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5" rx="1" stroke="currentColor" strokeWidth="1.2"/><path d="M4 5.5V4a2 2 0 114 0v1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+          Pro feature
+        </button>
+      </div>
+    )
+  }
+
   return (
     <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-emerald-50 border border-emerald-100">
       <div className="flex items-center gap-2">
