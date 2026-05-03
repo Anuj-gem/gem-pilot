@@ -1,11 +1,17 @@
 'use client'
 
-// SubmitForConsideration — button that lets a writer submit a qualifying
-// script to an opportunity. Shows submission status + feedback if reviewed.
-// Two states: pending (in consideration) or reviewed (feedback received).
+// SubmitForConsideration — lets a writer submit a qualifying script to an
+// opportunity, withdraw a pending submission, or view feedback.
+//
+// States: pending (in consideration) → reviewed (feedback received)
+//         pending → withdrawn (writer pulled out, frees slot)
+//
+// Limit: 3 pending submissions total across all opportunities.
+// Reviewed/withdrawn submissions don't count toward the limit.
 // opportunities-v1.
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { createBrowserClient } from '@supabase/ssr'
 
 const supabase = createBrowserClient(
@@ -15,7 +21,7 @@ const supabase = createBrowserClient(
 
 export interface SubmissionState {
   id: string
-  status: 'pending' | 'reviewed'
+  status: 'pending' | 'reviewed' | 'withdrawn'
   feedback: string | null
 }
 
@@ -25,7 +31,7 @@ interface SubmitButtonProps {
   scriptTitle: string
   /** Pre-loaded submission state (from server) */
   existing?: SubmissionState | null
-  /** Whether the writer has hit the active submission limit */
+  /** Whether the writer has hit the active (pending) submission limit */
   atLimit?: boolean
 }
 
@@ -33,6 +39,7 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
   const [state, setState] = useState<SubmissionState | null>(existing ?? null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const router = useRouter()
 
   async function handleSubmit() {
     setLoading(true)
@@ -59,18 +66,37 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     }
     setState(data as SubmissionState)
     setLoading(false)
+    router.refresh()
   }
 
-  // Already submitted — show status + feedback
-  if (state) {
-    const isReviewed = state.status === 'reviewed'
+  async function handleWithdraw() {
+    if (!state) return
+    setLoading(true)
+    setError(null)
+
+    // Delete the row (RLS policy allows writers to delete their own pending submissions)
+    const { error: err } = await supabase
+      .from('opportunity_submissions')
+      .delete()
+      .eq('id', state.id)
+
+    if (err) {
+      setError('Could not withdraw')
+      setLoading(false)
+      return
+    }
+    setState(null)
+    setLoading(false)
+    router.refresh()
+  }
+
+  // Reviewed — show feedback, no actions needed
+  if (state && state.status === 'reviewed') {
     return (
-      <div className={`rounded-lg ${isReviewed ? 'bg-white border-gray-200' : 'bg-amber-50 border-amber-100'} border px-3 py-2.5`}>
+      <div className="rounded-lg bg-white border border-gray-200 px-3 py-2.5">
         <div className="flex items-center justify-between">
           <span className="text-[13.5px] font-semibold text-gray-800">{scriptTitle}</span>
-          <span className={`text-[12px] font-medium ${isReviewed ? 'text-emerald-600' : 'text-amber-600'}`}>
-            {isReviewed ? 'Feedback received' : 'In consideration'}
-          </span>
+          <span className="text-[12px] font-medium text-emerald-600">Feedback received</span>
         </div>
         {state.feedback && (
           <div className="mt-2.5 pt-2.5 border-t border-gray-100">
@@ -82,7 +108,28 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     )
   }
 
-  // Not yet submitted — show button
+  // Pending — show status + withdraw button
+  if (state && state.status === 'pending') {
+    return (
+      <div className="rounded-lg bg-amber-50 border border-amber-100 px-3 py-2.5">
+        <div className="flex items-center justify-between">
+          <span className="text-[13.5px] font-semibold text-gray-800">{scriptTitle}</span>
+          <div className="flex items-center gap-2">
+            <span className="text-[12px] font-medium text-amber-600">In consideration</span>
+            <button
+              onClick={handleWithdraw}
+              disabled={loading}
+              className="text-[11px] font-semibold text-gray-400 hover:text-red-500 transition-colors disabled:opacity-50"
+            >
+              {loading ? '…' : 'Withdraw'}
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Not submitted (or withdrawn) — show submit button
   return (
     <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-emerald-50 border border-emerald-100">
       <div className="flex items-center gap-2">

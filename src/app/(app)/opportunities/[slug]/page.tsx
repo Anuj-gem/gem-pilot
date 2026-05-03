@@ -117,6 +117,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         .select('id, submission_id, status, feedback')
         .eq('opportunity_id', opp.id)
         .in('submission_id', qualifyingSubIds)
+        .neq('status', 'withdrawn')
       for (const es of (existingSubs || []) as { id: string; submission_id: string; status: string; feedback: string | null }[]) {
         existingSubmissions.set(es.submission_id, { id: es.id, status: es.status as any, feedback: es.feedback })
       }
