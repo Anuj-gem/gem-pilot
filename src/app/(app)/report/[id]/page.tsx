@@ -550,18 +550,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <div className="flex items-center gap-2 min-w-0 flex-wrap">
               {(isOwner || isAdmin) && (
                 <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
-                  <span
-                    aria-hidden
-                    className="inline-block w-1.5 h-1.5 rounded-full"
-                    style={{
-                      background: submission.is_public
-                        ? '#059669'
-                        : 'var(--gem-gray-500)',
-                    }}
-                  />
-                  {submission.is_public
-                    ? 'Public to GEM members'
-                    : 'Unpublished'}
+                  {/* Publish status badge hidden — opportunities-v1 */}
                   {isAdmin && !isOwner && (
                     <span
                       className="ml-1 text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
@@ -586,11 +575,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   declaredFormat={submission.declared_format ?? null}
                   isSubscribed={ownerIsSubscribed || isAdmin}
                   activity={ownerActivity}
-                  isPublic={submission.is_public ?? false}
-                  allowReviews={submission.allow_reviews ?? true}
-                  allowIndustry={submission.allow_industry ?? true}
-                  showScore={privacy?.show_score !== false}
-                  reportSections={privacy?.sections}
+                  {/* Privacy props omitted — opportunities-v1 hides all
+                      privacy controls. The OwnerActionsMenu conditionally
+                      renders the Privacy item only when these are set,
+                      so omitting them hides the button + sheet. Backend
+                      settings unchanged for production. */}
                 />
               )}
             </div>
