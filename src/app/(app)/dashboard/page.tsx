@@ -26,6 +26,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { MarkViewed } from '@/components/dashboard/mark-viewed'
 import { CollapsibleOpportunity } from '@/components/dashboard/collapsible-opportunity'
 import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
+import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
@@ -629,11 +630,13 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                 return (
                   <div key={s.submissionId} className="relative">
                     {s.isLocked && (
-                      <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center">
-                        <span className="text-[11px] font-bold text-gray-400 bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5" rx="1" stroke="currentColor" strokeWidth="1.2"/><path d="M4 5.5V4a2 2 0 114 0v1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-                          Upgrade to view
-                        </span>
+                      <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center gap-2">
+                        {s.oppCount > 0 && (
+                          <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+                            Qualifies for {s.oppCount} {s.oppCount === 1 ? 'opportunity' : 'opportunities'}
+                          </span>
+                        )}
+                        <UpgradePill />
                       </div>
                     )}
                     <div className="px-4 py-3">
@@ -645,7 +648,10 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                           {s.isProcessing ? (
                             <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
                           ) : s.score != null ? (
-                            <span className="text-[14px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                            <span className="text-[14px] font-bold" style={{
+                              color: s.score >= 75 ? '#7c3aed' : '#6b7280',
+                              ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
+                            }}>
                               {Math.round(s.score)}
                             </span>
                           ) : (
