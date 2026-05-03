@@ -575,7 +575,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   title={submission.title}
                   declaredFormat={submission.declared_format ?? null}
                   isSubscribed={ownerIsSubscribed || isAdmin}
-                  activity={ownerActivity}
                 />
               )}
             </div>
