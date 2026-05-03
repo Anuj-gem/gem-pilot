@@ -24,7 +24,7 @@ import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { MarkViewed } from '@/components/dashboard/mark-viewed'
-import { ExpandablePastFeedback } from '@/components/dashboard/expandable-feedback'
+import { CollapsibleOpportunity } from '@/components/dashboard/collapsible-opportunity'
 import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
@@ -155,8 +155,10 @@ export default async function DashboardPage({ searchParams }: PageProps) {
 
   // ---------- SUBMISSION STATUS ----------
   type ActiveSub = {
-    id: string; opportunity_title: string; opportunity_slug: string
-    script_title: string; evaluationId: string | null; status: 'pending' | 'reviewed'
+    id: string; opportunity_id: string; opportunity_title: string; opportunity_slug: string
+    deal_type: string | null; perspective: string | null; deadline: string | null
+    script_title: string; evaluationId: string | null; score: number | null
+    status: 'pending' | 'reviewed'
     feedback: string | null; nextSteps: string | null
     submitted_at: string; isNewFeedback: boolean
   }
@@ -176,10 +178,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       const ev = myEvalBySub.get(os.submission_id)
       activeSubs.push({
         id: os.id,
+        opportunity_id: os.opportunity_id,
         opportunity_title: opp.title,
         opportunity_slug: opp.slug ?? opp.id,
+        deal_type: opp.deal_type ?? null,
+        perspective: opp.perspective ?? null,
+        deadline: opp.deadline ?? null,
         script_title: sub.title,
         evaluationId: ev?.id ?? null,
+        score: ev?.weighted_score ?? null,
         status: os.status as 'pending' | 'reviewed',
         feedback: os.feedback,
         nextSteps: os.next_steps,
@@ -244,6 +251,49 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const pendingSubs = activeSubs.filter(s => s.status === 'pending')
   const pastFeedbackSubs = activeSubs.filter(s => s.status === 'reviewed' && !s.isNewFeedback)
 
+  // Group submissions by opportunity
+  type OppGroup = {
+    opportunityId: string; title: string; slug: string
+    dealType: string | null; perspective: string | null; deadline: string | null
+    scripts: ActiveSub[]
+    hasPending: boolean; hasReviewed: boolean
+    primaryNextSteps: string | null
+  }
+  function groupByOpp(subs: ActiveSub[]): OppGroup[] {
+    const map = new Map<string, ActiveSub[]>()
+    for (const s of subs) {
+      if (!map.has(s.opportunity_id)) map.set(s.opportunity_id, [])
+      map.get(s.opportunity_id)!.push(s)
+    }
+    const groups: OppGroup[] = []
+    for (const [oppId, scripts] of map) {
+      const first = scripts[0]
+      groups.push({
+        opportunityId: oppId,
+        title: first.opportunity_title,
+        slug: first.opportunity_slug,
+        dealType: first.deal_type,
+        perspective: first.perspective,
+        deadline: first.deadline,
+        scripts,
+        hasPending: scripts.some(s => s.status === 'pending'),
+        hasReviewed: scripts.some(s => s.status === 'reviewed'),
+        primaryNextSteps: scripts.find(s => s.nextSteps)?.nextSteps ?? null,
+      })
+    }
+    return groups
+  }
+
+  // Pending groups: opportunities with at least one pending submission
+  const pendingOppGroups = groupByOpp(activeSubs.filter(s => s.status === 'pending'))
+  // Feedback groups: opportunities where submission is reviewed (and not in pending groups)
+  const pendingOppIds = new Set(pendingOppGroups.map(g => g.opportunityId))
+  const feedbackOppGroups = groupByOpp(activeSubs.filter(s => s.status === 'reviewed' && !pendingOppIds.has(s.opportunity_id)))
+
+  // Pending submission count for limit check (limit = 3 pending across all opps)
+  const totalPendingSubmissions = activeSubs.filter(s => s.status === 'pending').length
+  const atSubmitLimit = totalPendingSubmissions >= 3
+
   const NEXT_STEPS_LABELS: Record<string, string> = {
     revise_resubmit: 'Revise & resubmit',
     new_concept: 'Send a different concept',
@@ -299,11 +349,11 @@ export default async function DashboardPage({ searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* ── SCRIPTS YOU'VE SUBMITTED ─────────────────────── */}
-        {activeSubs.length > 0 && (
+        {/* ── PENDING OPPORTUNITIES (grouped by opportunity) ── */}
+        {(pendingOppGroups.length > 0 || feedbackOppGroups.length > 0) && (
           <section>
             <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">
-              Scripts you&apos;ve submitted
+              Pending opportunities
               {newFeedbackCount > 0 && (
                 <span className="ml-2 text-[11px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
                   {newFeedbackCount} new
@@ -312,126 +362,160 @@ export default async function DashboardPage({ searchParams }: PageProps) {
             </h2>
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
 
-              {/* ── New feedback tier ── */}
-              {newFeedbackSubs.length > 0 && (
-                <>
-                  <div className="px-4 py-1.5 bg-purple-50/60">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">New feedback</span>
-                  </div>
-                  {newFeedbackSubs.map((sub) => {
-                    const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / (1000 * 60 * 60 * 24))
-                    return (
-                      <div key={sub.id} className="px-4 py-3.5 border-t border-purple-100 bg-purple-50/30">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2">
-                              <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
-                              <Link
-                                href={`/opportunities/${sub.opportunity_slug}`}
-                                className="text-[13.5px] font-semibold text-gray-900 hover:text-purple-700 truncate transition-colors"
-                              >
-                                {sub.opportunity_title}
-                              </Link>
-                            </div>
-                            <div className="flex items-center gap-1.5 mt-1 ml-4 text-[11.5px] text-gray-400">
-                              <span>{sub.script_title}</span>
-                              {daysAgo > 0 && <span>&middot; {daysAgo}d ago</span>}
-                            </div>
-                          </div>
-                          {sub.nextSteps && (
-                            <span className={`shrink-0 text-[10.5px] font-bold px-2.5 py-1 rounded-full ${
-                              sub.nextSteps === 'in_touch'
-                                ? 'text-emerald-700 bg-emerald-50'
-                                : sub.nextSteps === 'revise_resubmit'
-                                ? 'text-amber-700 bg-amber-50'
-                                : 'text-gray-600 bg-gray-100'
-                            }`}>
-                              {NEXT_STEPS_LABELS[sub.nextSteps] ?? sub.nextSteps}
+              {/* ── In consideration groups ── */}
+              {pendingOppGroups.map((group, gi) => {
+                const daysLeft = group.deadline
+                  ? Math.ceil((new Date(group.deadline).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+                  : null
+                return (
+                  <div key={group.opportunityId} className={`px-4 py-3.5 ${gi > 0 ? 'border-t border-gray-200' : ''}`}>
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <Link
+                          href={`/opportunities/${group.slug}`}
+                          className="text-[14px] font-semibold text-gray-900 hover:text-purple-700 transition-colors truncate block"
+                        >
+                          {group.title}
+                        </Link>
+                        <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                          {group.dealType && (
+                            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                              {DEAL_TYPE_LABELS[group.dealType] ?? group.dealType}
+                            </span>
+                          )}
+                          {group.perspective && (
+                            <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
+                              {PERSPECTIVE_LABELS[group.perspective] ?? group.perspective}
+                            </span>
+                          )}
+                          {daysLeft != null && daysLeft > 0 && (
+                            <span className={`text-[10.5px] font-medium ${daysLeft <= 7 ? 'text-red-400' : 'text-gray-300'}`}>
+                              {daysLeft}d left
                             </span>
                           )}
                         </div>
-                        {sub.feedback && (
-                          <div className="mt-2.5 ml-4">
-                            <p className="text-[12.5px] text-gray-600 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
-                            {sub.evaluationId && (
-                              <Link
-                                href={`/report/${sub.evaluationId}`}
-                                className="inline-flex items-center gap-1 mt-2 text-[11.5px] font-semibold text-purple-600 hover:text-purple-800 transition-colors"
-                              >
-                                View report &rarr;
-                              </Link>
-                            )}
-                          </div>
-                        )}
                       </div>
-                    )
-                  })}
-                </>
-              )}
+                      <span className="shrink-0 text-[11px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
+                        In consideration
+                      </span>
+                    </div>
 
-              {/* ── In consideration tier ── */}
-              {pendingSubs.length > 0 && (
-                <>
-                  <div className="px-4 py-1.5 bg-amber-50/50 border-t border-gray-200">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-amber-500">In consideration</span>
-                  </div>
-                  {pendingSubs.map((sub) => {
-                    const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / (1000 * 60 * 60 * 24))
-                    return (
-                      <div key={sub.id} className="px-4 py-3 border-t border-gray-100">
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="min-w-0 flex-1">
-                            <Link
-                              href={`/opportunities/${sub.opportunity_slug}`}
-                              className="text-[13.5px] font-semibold text-gray-900 hover:text-purple-700 truncate block transition-colors"
-                            >
-                              {sub.opportunity_title}
-                            </Link>
-                            <div className="flex items-center gap-1.5 mt-1 text-[11.5px] text-gray-400">
-                              <span>{sub.script_title}</span>
-                              {daysAgo > 0 && <span>&middot; {daysAgo}d ago</span>}
+                    <div className="mt-3 pt-2.5 border-t border-gray-100">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-gray-400 m-0 mb-2">Scripts submitted</p>
+                      {group.scripts.map((sub, si) => (
+                        <div key={sub.id} className={`flex items-center justify-between py-2 ${si > 0 ? 'border-t border-gray-50' : ''}`}>
+                          <div className="flex items-center gap-2 min-w-0">
+                            <div className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{
+                              background: sub.score != null && sub.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                            }}>
+                              {sub.score != null ? (
+                                <span className="text-[13px] font-bold" style={{ color: sub.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                                  {Math.round(sub.score)}
+                                </span>
+                              ) : (
+                                <span className="text-[10px] text-gray-300">&mdash;</span>
+                              )}
                             </div>
+                            <span className="text-[13px] text-gray-900 truncate">{sub.script_title}</span>
                           </div>
                           <div className="flex items-center gap-2 shrink-0">
-                            <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
-                              Pending
-                            </span>
+                            <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Pending</span>
                             {sub.evaluationId && (
                               <Link
                                 href={`/report/${sub.evaluationId}`}
-                                className="text-[11px] font-medium text-gray-400 hover:text-purple-600 transition-colors"
+                                className="text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
                               >
-                                Report
+                                View report
                               </Link>
                             )}
                           </div>
                         </div>
-                      </div>
-                    )
-                  })}
-                </>
-              )}
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
 
-              {/* ── Past feedback tier (collapsed) ── */}
-              {pastFeedbackSubs.length > 0 && (
+              {/* ── Past feedback groups ── */}
+              {feedbackOppGroups.length > 0 && (
                 <>
                   <div className="px-4 py-1.5 bg-gray-50 border-t border-gray-200">
                     <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-gray-400">Past feedback</span>
                   </div>
-                  <div className="divide-y divide-gray-50 border-t border-gray-100">
-                    {pastFeedbackSubs.map((sub) => (
-                      <ExpandablePastFeedback
-                        key={sub.id}
-                        opportunityTitle={sub.opportunity_title}
-                        opportunitySlug={sub.opportunity_slug}
-                        scriptTitle={sub.script_title}
-                        evaluationId={sub.evaluationId}
-                        feedback={sub.feedback}
-                        nextSteps={sub.nextSteps}
-                        submittedAt={sub.submitted_at}
-                      />
-                    ))}
-                  </div>
+                  {feedbackOppGroups.map((group) => (
+                    <div key={group.opportunityId} className="px-4 py-3.5 border-t border-gray-100">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0 flex-1">
+                          <Link
+                            href={`/opportunities/${group.slug}`}
+                            className="text-[14px] font-semibold text-gray-500 hover:text-purple-700 transition-colors truncate block"
+                          >
+                            {group.title}
+                          </Link>
+                          <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                            {group.dealType && (
+                              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                                {DEAL_TYPE_LABELS[group.dealType] ?? group.dealType}
+                              </span>
+                            )}
+                            {group.perspective && (
+                              <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
+                                {PERSPECTIVE_LABELS[group.perspective] ?? group.perspective}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        {group.primaryNextSteps && (
+                          <span className={`shrink-0 text-[10.5px] font-bold px-2.5 py-1 rounded-full ${
+                            group.primaryNextSteps === 'in_touch'
+                              ? 'text-emerald-700 bg-emerald-50'
+                              : group.primaryNextSteps === 'revise_resubmit'
+                              ? 'text-amber-700 bg-amber-50'
+                              : 'text-gray-600 bg-gray-100'
+                          }`}>
+                            {NEXT_STEPS_LABELS[group.primaryNextSteps] ?? group.primaryNextSteps}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="mt-3 pt-2.5 border-t border-gray-100">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-gray-400 m-0 mb-2">Scripts submitted</p>
+                        {group.scripts.map((sub, si) => (
+                          <div key={sub.id}>
+                            <div className={`flex items-center justify-between py-2 ${si > 0 ? 'border-t border-gray-50' : ''}`}>
+                              <div className="flex items-center gap-2 min-w-0">
+                                <div className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{
+                                  background: sub.score != null && sub.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                                }}>
+                                  {sub.score != null ? (
+                                    <span className="text-[13px] font-bold" style={{ color: sub.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                                      {Math.round(sub.score)}
+                                    </span>
+                                  ) : (
+                                    <span className="text-[10px] text-gray-300">&mdash;</span>
+                                  )}
+                                </div>
+                                <span className="text-[13px] text-gray-700 truncate">{sub.script_title}</span>
+                              </div>
+                              {sub.evaluationId && (
+                                <Link
+                                  href={`/report/${sub.evaluationId}`}
+                                  className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                                >
+                                  View report
+                                </Link>
+                              )}
+                            </div>
+                            {sub.feedback && (
+                              <div className="ml-10 mb-2 px-3 py-2.5 bg-gray-50 rounded-lg">
+                                <p className="text-[12px] text-gray-500 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </>
               )}
 
@@ -447,7 +531,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
           </section>
         )}
 
-        {/* ── OPPORTUNITIES FOR YOU ──────────────────────── */}
+        {/* ── OPPORTUNITIES FOR YOU (collapsible) ────────── */}
         {totalAvailableOpps > 0 && (
           <section>
             <header className="flex items-end justify-between gap-3 mb-2.5">
@@ -461,7 +545,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                 See all
               </Link>
             </header>
-            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+            <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               {oppWithQualifications
                 .filter(({ opportunity, qualifyingScripts }) => {
                   const submitted = existingOppSubs.get(opportunity.id) ?? new Set()
@@ -469,41 +553,25 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                 })
                 .slice(0, 5)
                 .map(({ opportunity: opp, qualifyingScripts: qs }) => {
-                  const deadline = opp.deadline ? new Date(opp.deadline) : null
-                  const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
                   const submitted = existingOppSubs.get(opp.id) ?? new Set()
-                  const availableCount = qs.filter(q => !submitted.has(q.id)).length
-
+                  const unsubmitted = qs.filter(q => !submitted.has(q.id))
                   return (
-                    <Link
+                    <CollapsibleOpportunity
                       key={opp.id}
-                      href={`/opportunities/${opp.slug ?? opp.id}`}
-                      className="flex items-center gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{opp.title}</p>
-                        <div className="flex items-center gap-2 mt-1">
-                          {opp.deal_type && (
-                            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
-                              {DEAL_TYPE_LABELS[opp.deal_type] ?? opp.deal_type}
-                            </span>
-                          )}
-                          {opp.perspective && (
-                            <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
-                              {PERSPECTIVE_LABELS[opp.perspective] ?? opp.perspective}
-                            </span>
-                          )}
-                          {daysLeft != null && daysLeft > 0 && (
-                            <span className={`text-[10.5px] font-medium ${daysLeft <= 7 ? 'text-red-400' : 'text-gray-300'}`}>
-                              {daysLeft}d left
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <span className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                        {availableCount} {availableCount === 1 ? 'script qualifies' : 'scripts qualify'}
-                      </span>
-                    </Link>
+                      opportunityId={opp.id}
+                      title={opp.title}
+                      slug={opp.slug ?? opp.id}
+                      dealType={opp.deal_type}
+                      perspective={opp.perspective}
+                      deadline={opp.deadline}
+                      qualifyingScripts={unsubmitted.map(q => {
+                        const ev = myEvalBySub.get(q.id)
+                        return { id: q.id, title: q.title, score: ev?.weighted_score ?? null, evaluationId: q.evaluation_id }
+                      })}
+                      dealTypeLabels={DEAL_TYPE_LABELS}
+                      perspectiveLabels={PERSPECTIVE_LABELS}
+                      atLimit={atSubmitLimit}
+                    />
                   )
                 })}
             </div>
@@ -531,7 +599,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
           ) : (
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
               {scriptRows.map((s) => {
-                const reportHref = s.evaluationId ? `/report/${s.evaluationId}` : '#'
+                // Count pending submissions for this specific script
+                const scriptPendingCount = activeSubs.filter(a => a.script_title === s.title && a.status === 'pending').length
                 return (
                   <div key={s.submissionId} className="relative">
                     {s.isLocked && (
@@ -545,13 +614,13 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                     <div className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         {/* Score badge */}
-                        <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{
+                        <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{
                           background: s.isProcessing ? '#f3f4f6' : s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
                         }}>
                           {s.isProcessing ? (
                             <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
                           ) : s.score != null ? (
-                            <span className="text-[15px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                            <span className="text-[14px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
                               {Math.round(s.score)}
                             </span>
                           ) : (
@@ -561,7 +630,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
 
                         {/* Title + meta */}
                         <div className="min-w-0 flex-1">
-                          <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
+                          <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
                           <div className="flex items-center gap-1.5 mt-0.5">
                             {s.format && <span className="text-[10.5px] text-gray-400">{s.format}</span>}
                             {s.genre && (
@@ -576,39 +645,26 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                           </div>
                         </div>
 
-                        {/* Opportunity match count */}
-                        {!s.isLocked && !s.isProcessing && s.oppCount > 0 && (
-                          <Link
-                            href="/opportunities"
-                            className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 hover:bg-emerald-100 px-2.5 py-1 rounded-full transition-colors"
-                          >
-                            {s.oppCount} {s.oppCount === 1 ? 'opp' : 'opps'}
-                          </Link>
+                        {/* Opportunity status — spelled out */}
+                        {!s.isLocked && !s.isProcessing && scriptPendingCount > 0 && (
+                          <span className="shrink-0 text-[11px] font-semibold text-amber-600">
+                            {scriptPendingCount} {scriptPendingCount === 1 ? 'opportunity' : 'opportunities'} pending
+                          </span>
+                        )}
+                        {!s.isLocked && !s.isProcessing && scriptPendingCount === 0 && s.oppCount > 0 && (
+                          <span className="shrink-0 text-[11px] font-semibold text-emerald-600">
+                            {s.oppCount} {s.oppCount === 1 ? 'opportunity' : 'opportunities'}
+                          </span>
                         )}
 
-                        {/* View report */}
+                        {/* View report button */}
                         {!s.isLocked && !s.isProcessing && s.evaluationId && (
                           <Link
-                            href={reportHref}
-                            className="shrink-0 text-[11px] font-medium text-gray-400 hover:text-gray-700 transition-colors"
+                            href={`/report/${s.evaluationId}`}
+                            className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
                           >
-                            Report
+                            View report
                           </Link>
-                        )}
-
-                        {/* Three-dot menu placeholder */}
-                        {!s.isLocked && !s.isProcessing && (
-                          <button
-                            type="button"
-                            className="shrink-0 w-7 h-7 rounded-md flex items-center justify-center text-gray-300 hover:text-gray-600 hover:bg-gray-100 transition-colors"
-                            title="More options"
-                          >
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                              <circle cx="7" cy="3" r="1.2" fill="currentColor"/>
-                              <circle cx="7" cy="7" r="1.2" fill="currentColor"/>
-                              <circle cx="7" cy="11" r="1.2" fill="currentColor"/>
-                            </svg>
-                          </button>
                         )}
                       </div>
                     </div>
