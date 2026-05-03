@@ -78,12 +78,13 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const submissionIds = visible.map((s) => s.id)
 
   // ---------- OPPORTUNITIES ----------
-  const { data: oppRows } = await service
+  // Fetch ALL opportunities (need inactive ones too for submission lookups)
+  const { data: allOppRows } = await service
     .from('opportunities')
     .select('*')
-    .eq('status', 'active')
     .order('created_at', { ascending: false })
-  const opportunities = (oppRows || []) as OpportunityData[]
+  const allOpportunities = (allOppRows || []) as OpportunityData[]
+  const opportunities = allOpportunities.filter(o => o.status === 'active')
 
   type FeedEval = { id: string; weighted_score: number | null; logline: string | null; genre: string | null; budget: string | null }
   const myEvalBySub = new Map<string, FeedEval>()
@@ -181,7 +182,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     }
 
     for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; created_at: string }[]) {
-      const opp = opportunities.find(o => o.id === os.opportunity_id)
+      const opp = allOpportunities.find(o => o.id === os.opportunity_id)
       const sub = visible.find(s => s.id === os.submission_id)
       if (!opp || !sub) continue
       const ev = myEvalBySub.get(os.submission_id)
@@ -298,7 +299,12 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         {activeSubs.length > 0 && (
           <section>
             <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">
-              Your opportunities
+              Scripts you&apos;ve submitted
+              {reviewedCount > 0 && (
+                <span className="ml-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  {reviewedCount} with feedback
+                </span>
+              )}
             </h2>
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
               {activeSubs.map((sub) => {
