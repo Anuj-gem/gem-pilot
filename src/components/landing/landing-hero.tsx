@@ -1,16 +1,9 @@
 // Landing hero — client component.
 //
-// Anuj 2026-04-30 v0.11.0 — community-first relaunch. The headline
-// promises identity ("Where screenwriters get seen.") and the page
-// flows into the four-step Arc + three product pillars. The PDF
-// drop-zone is still here as the secondary path for writers who
-// want to dive in with a script; "Join free" is the primary CTA.
-//
-// Two ways in from here:
-//   1) Click "Join free" → /onboarding (account → privacy → profile
-//      → dashboard).
-//   2) Drop / pick a PDF → /submit?from=hero (account → privacy →
-//      profile → report).
+// v0.13.0 — messaging-v3. Headline: "Advanced script evaluation.
+// Direct industry access. One platform." Clear, functional, anyone
+// can understand what GEM does from the headline alone.
+// Primary CTA → /submit (free eval). PDF drop zone secondary.
 'use client'
 
 import { useRef, useState } from 'react'
@@ -42,9 +35,9 @@ export function LandingHero() {
 
   function handleJoinClick() {
     try {
-      trackEvent('cta_clicked', { location: 'hero', label: 'Create account' })
+      trackEvent('cta_clicked', { location: 'hero', label: 'Get your free evaluation' })
     } catch {}
-    router.push('/onboarding')
+    router.push('/submit')
   }
 
   return (
@@ -64,19 +57,24 @@ export function LandingHero() {
         </p>
 
         <h1
-          className="font-semibold leading-[1.05] tracking-tight mb-5 text-[var(--gem-gray-50)]"
+          className="font-semibold leading-[1.08] tracking-tight mb-5 text-[var(--gem-gray-50)]"
           style={{
             fontFamily: 'Georgia, "Times New Roman", serif',
-            fontSize: 'clamp(38px, 6vw, 60px)',
+            fontSize: 'clamp(34px, 5.5vw, 52px)',
           }}
         >
-          Where screenwriters
-          <br className="hidden sm:block" /> get seen.
+          Advanced script evaluation.
+          <br className="hidden sm:block" />
+          Direct industry access.
+          <br className="hidden sm:block" />
+          One platform.
         </h1>
 
         <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[640px] mx-auto">
-          Post a script. Get a producer-grade read in a minute, real notes
-          from other writers, and a profile the industry can find.
+          Upload your screenplay and get a structured, producer-grade
+          evaluation in under a minute. Then match directly to real
+          opportunities from producers, reps, and financiers. Your first
+          evaluation is free.
         </p>
 
         {/* Primary CTA */}
@@ -91,11 +89,11 @@ export function LandingHero() {
               boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
             }}
           >
-            Create account <ArrowRight size={16} />
+            Get your free evaluation <ArrowRight size={16} />
           </button>
         </div>
         <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mb-8">
-          Free to start · No card needed
+          No card needed
         </p>
 
         {/* Secondary path — drop zone, visually demoted from the
@@ -103,7 +101,7 @@ export function LandingHero() {
             dive in with a script in hand. */}
         <div className="max-w-[460px] mx-auto">
           <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] mb-3">
-            Or start with your script
+            Or drop your script here
           </p>
           <label
             onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
@@ -145,7 +143,7 @@ export function LandingHero() {
             </div>
             <div className="flex-1 min-w-0 text-left">
               <p className="text-[13.5px] font-semibold text-[var(--gem-gray-100)] m-0 leading-tight">
-                Drop a PDF and start with a review.
+                Drop a PDF to start with your evaluation.
               </p>
               <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-0.5">
                 or{' '}

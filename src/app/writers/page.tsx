@@ -1,18 +1,15 @@
 // /writers — the writer product page.
-//
-// Deep-dive into what writers actually get from GEM. Trial structure,
-// what's in the report, Pro value props, sample report annotations.
-// We don't expose model specifics or scoring formulas — that's
-// /selznick.
+// v0.13.0 messaging-v3. Evaluation + opportunities value prop.
+// Replaces community/peer-review framing with opportunity matching.
 
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { ArrowRight, Check, Eye, Clock, Sparkles, ThumbsUp, X as XIcon, Mail } from 'lucide-react'
+import { ArrowRight, Check, Sparkles, Eye, Target } from 'lucide-react'
 
 export const metadata = {
   title: 'For writers — GEM',
   description:
-    "Upload your screenplay. Get a producer's-eye read in 60 seconds — and the industry to actually see it. First read free.",
+    'Unlimited script evaluations. Real industry opportunities. Upload your screenplay, get a structured evaluation in under a minute, then match to opportunities from producers, reps, and financiers.',
 }
 
 export default function WritersPage() {
@@ -29,14 +26,14 @@ export default function WritersPage() {
             For writers
           </p>
           <h1 className="text-[36px] sm:text-[52px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-5 font-[family-name:var(--font-display)]">
-            A real read on your script. And the industry to actually see it.
+            Unlimited script evaluations. Real industry opportunities.
           </h1>
           <p className="text-[17px] sm:text-[19px] text-[var(--gem-gray-200)] leading-[1.55] m-0 mb-7 max-w-[60ch]">
-            Upload your screenplay. In 60 seconds, GEM gives you a producer&apos;s-eye
-            report: what works, who would star in it, what it would take to make,
-            and the case a producer would walk into a meeting with. Then we put
-            it in front of working industry partners — only the ones you choose
-            to share with.
+            Upload your screenplay. In under a minute, get a structured
+            evaluation covering every dimension a producer weighs &mdash;
+            characters, packaging, budget, the honest development notes. Then
+            match to active opportunities from producers, reps, and financiers
+            who are looking for exactly your kind of work. First evaluation free.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -47,7 +44,7 @@ export default function WritersPage() {
                 boxShadow: '0 2px 10px rgba(124,58,237,0.30)',
               }}
             >
-              Get my read — free
+              Get my free evaluation
               <ArrowRight size={15} />
             </Link>
             <Link
@@ -59,34 +56,34 @@ export default function WritersPage() {
                 color: 'var(--gem-gray-50)',
               }}
             >
-              How GEM reads scripts
+              How GEM evaluates scripts
             </Link>
           </div>
         </div>
 
-        {/* THE FREE TIER */}
-        <Section eyebrow="The free tier" title="One full evaluation. Yours forever. Sharable with anyone.">
+        {/* FREE TIER */}
+        <Section eyebrow="The free tier" title="One full evaluation. Yours forever.">
           <div className="grid sm:grid-cols-3 gap-3">
             <TrialBlock
               icon={<Sparkles size={16} />}
-              label="1 free evaluation"
-              body="Upload your first screenplay free. Full report, full score, no blur."
+              label="Full evaluation"
+              body="Upload your first screenplay free. Full report, full score, no paywall. The same evaluation Pro members get."
             />
             <TrialBlock
               icon={<Eye size={16} />}
               label="Sharable URL"
-              body="Send your report link to anyone — agents, producers in your network, friends. They see the same report you see."
+              body="Send your report link to anyone — agents, producers, friends. They see the same report you see."
             />
             <TrialBlock
-              icon={<Clock size={16} />}
-              label="Pro for the network"
-              body="Industry matching, privacy controls, unlimited evaluations, and producer intros to your inbox are on Pro."
+              icon={<Target size={16} />}
+              label="See your matches"
+              body="Even free, you can see which active opportunities your script qualifies for. Pro unlocks submissions."
             />
           </div>
         </Section>
 
-        {/* WHAT YOU GET */}
-        <Section eyebrow="What's in the report" title="A structured read on every dimension a producer weighs.">
+        {/* WHAT'S IN THE REPORT */}
+        <Section eyebrow="The evaluation" title="Every dimension a producer weighs.">
           <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-6 max-w-[64ch]">
             Every GEM evaluation produces a structured report covering the
             same axes a producer would weigh in a development meeting. Full
@@ -96,73 +93,69 @@ export default function WritersPage() {
             <ReportBlock
               number="01"
               title="Headline + Why this is a hit"
-              body="A sharpened version of your headline plus the strongest commercial notes about the script — the case a manager could forward verbatim."
+              body="A sharpened version of your premise plus the strongest commercial case — the pitch a manager could forward verbatim."
             />
             <ReportBlock
               number="02"
               title="Cast"
-              body="Lead and supporting characters with the actor-want angle: who chases this part, what performance comp it pulls from."
+              body="Lead and supporting characters with the actor-want angle: who chases this part, what performance it pulls from."
             />
             <ReportBlock
               number="03"
               title="Packaging"
-              body="Audience target, budget tier (per-episode for series), and whether the project has franchise upside."
+              body="Audience target, budget tier (per-episode for series), franchise potential."
             />
             <ReportBlock
               number="04"
-              title="Project Complexity"
+              title="Project complexity"
               body="What a producer would plan for on production and casting — the lift, the dependencies, the heads-up."
             />
             <ReportBlock
               number="05"
               title="Development considerations"
-              body="The case against: the sharpest lever and every other note a buyer would weigh before saying yes."
+              body="The sharpest lever and every other note a buyer would weigh before saying yes."
             />
             <ReportBlock
               number="06"
-              title="A GEM Score on the cover"
-              body="One number for fast triage — but the substance is the report underneath. The score sits on the cover; the read is what you (and producers) actually use."
+              title="GEM Score"
+              body="One number for fast triage. But the substance is the report underneath."
             />
           </div>
         </Section>
 
-        {/* WHAT HAPPENS NEXT — show writers the matching loop end-to-end:
-            producer-side feed, producer-side mark Interested / Pass, then
-            writer-side stats. Demystifies what actually happens after the
-            read, which is the part most writers undersell when they hear
-            "AI script reader." Anuj 2026-04-28. */}
-        <Section eyebrow="What happens next" title="Producers find it. Mark interest. You see it all.">
+        {/* HOW OPPORTUNITIES WORK */}
+        <Section eyebrow="Opportunities" title="Your script matches to real opportunities. Automatically.">
           <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-6 max-w-[64ch]">
-            The report isn&apos;t the end. Once your script qualifies, it lands
-            in the matched feed of producers and reps actively scouting your
-            lane. They mark Interested or Pass in one tap — and you see the
-            engagement live on your dashboard.
+            Every active opportunity on GEM has specific requirements &mdash;
+            genre, format, budget tier, minimum score. When your script meets
+            the criteria, it qualifies. You decide whether to submit. No query
+            letters. No entry fees. No waiting months for a form rejection.
           </p>
           <div className="space-y-5">
             <FlowCard
-              caption="They see your script in their lane"
-              body="Producers filter to their genre, format, and budget. Your script appears in the feed of every partner who matches."
-              visual={<ProducerFeedMock />}
+              caption="Industry partners post what they're looking for"
+              body="Producers, lit reps, talent reps, and financiers list active opportunities — option deals, purchases, representation, production financing. Each with specific requirements."
+              visual={<OpportunitiesListMock />}
             />
             <FlowCard
-              caption="One tap: Interested or Pass"
-              body="Each script opens to a full report. Interested moves the writer's script onto their slate; Pass closes the loop with an optional note."
-              visual={<ProducerDetailMock />}
+              caption="GEM checks your script against every opportunity"
+              body="The moment your evaluation completes, GEM matches your script's qualities against all active opportunities. Qualifying matches appear on your dashboard."
+              visual={<DashboardMatchMock />}
             />
             <FlowCard
-              caption="You see it all happen"
-              body="Your dashboard shows live engagement — views, interested partners, who emailed you, who passed. No guessing whether the script is being read."
-              visual={<WriterActivityMock />}
+              caption="Review the opportunity. Submit your qualifying script."
+              body="Read what the buyer is looking for. If your script fits, submit. They get your full evaluation and writer profile."
+              visual={<SubmitMock />}
             />
           </div>
         </Section>
 
-        {/* PRO */}
+        {/* GEM PRO */}
         <Section eyebrow="GEM Pro" title="$20/mo. Unlimited everything.">
           <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0 mb-6 max-w-[64ch]">
-            One free eval gets you the door. Pro keeps it open — unlimited
-            scripts, indefinite industry exposure, and the toolkit a working
-            screenwriter actually uses.
+            One free eval gets you in the door. Pro keeps it open &mdash; unlimited
+            scripts, unlimited opportunity submissions, revisions and rescores, and a
+            full profile visible to every industry partner on the platform.
           </p>
           <div
             className="rounded-2xl px-6 sm:px-8 py-7"
@@ -177,15 +170,15 @@ export default function WritersPage() {
                 $20
               </span>
               <span className="text-[15px] text-[var(--gem-gray-500)] font-medium">
-                / month · cancel anytime
+                / month &middot; cancel anytime
               </span>
             </div>
             <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2.5 list-none m-0 p-0">
               <ProBullet>Unlimited script evaluations</ProBullet>
-              <ProBullet>Posts stay live on Industry indefinitely</ProBullet>
-              <ProBullet>Submit revisions and rescore old reports</ProBullet>
-              <ProBullet>Producer intros routed to your inbox</ProBullet>
-              <ProBullet>Per-section privacy + score-eye toggles</ProBullet>
+              <ProBullet>Submit to every opportunity you qualify for</ProBullet>
+              <ProBullet>Revise and rescore any script</ProBullet>
+              <ProBullet>Full writer profile visible to industry</ProBullet>
+              <ProBullet>Priority in opportunity matching</ProBullet>
               <ProBullet>Branded PDF download of every report</ProBullet>
             </ul>
             <div className="mt-7">
@@ -194,14 +187,29 @@ export default function WritersPage() {
                 className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold text-white"
                 style={{ background: 'var(--gem-accent)' }}
               >
-                Start with a free eval
+                Start with a free evaluation
                 <ArrowRight size={14} />
               </Link>
             </div>
           </div>
+
+          {/* Competitor comparison */}
+          <div
+            className="mt-5 rounded-xl px-5 py-4"
+            style={{
+              background: 'rgba(255,255,255,0.02)',
+              border: '1px solid var(--gem-gray-700)',
+            }}
+          >
+            <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-[1.6] m-0">
+              The Blacklist charges $100 per evaluation. Competitions charge
+              $50-80 per entry and take months. Coverage services run $75-150
+              per read. GEM Pro: unlimited everything, $20/mo.
+            </p>
+          </div>
         </Section>
 
-        {/* CROSS-LINK */}
+        {/* CROSS-LINKS */}
         <div className="mt-16 sm:mt-20 pt-10 border-t border-[var(--gem-gray-800)]">
           <p
             className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-5"
@@ -212,13 +220,13 @@ export default function WritersPage() {
           <div className="grid sm:grid-cols-2 gap-3">
             <CrossLink
               href="/selznick"
-              label="The Selznick rubric"
-              body="The producer's-eye lens behind every GEM evaluation."
+              label="The Selznick engine"
+              body="The technology behind every GEM evaluation."
             />
             <CrossLink
               href="/industry"
               label="For industry partners"
-              body="Producers and reps: see how the matched feed works on your side."
+              body="Producers and reps: see how the platform works on your side."
             />
           </div>
         </div>
@@ -226,6 +234,8 @@ export default function WritersPage() {
     </>
   )
 }
+
+// ─── Shared layout components ───────────────────────────────────────
 
 function Section({
   eyebrow,
@@ -340,7 +350,6 @@ function ProBullet({ children }: { children: React.ReactNode }) {
   )
 }
 
-// ─── "What happens next" mocks ───────────────────────────────────────
 function FlowCard({
   caption,
   body,
@@ -375,8 +384,9 @@ function FlowCard({
   )
 }
 
-// Producer-side feed showing the writer's script in their lane.
-function ProducerFeedMock() {
+// ─── Opportunity flow mockups ───────────────────────────────────────
+
+function OpportunitiesListMock() {
   return (
     <div
       className="rounded-xl p-3.5"
@@ -385,334 +395,146 @@ function ProducerFeedMock() {
         border: '1px solid var(--gem-gray-700)',
       }}
     >
-      <div className="flex items-center justify-between mb-3 pb-2.5" style={{ borderBottom: '1px solid var(--gem-gray-800)' }}>
-        <p className="text-[9.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
-          Producer feed · drama
-        </p>
-        <span className="text-[8.5px] italic" style={{ color: 'var(--gem-gray-500)' }}>demo</span>
-      </div>
-      <div className="space-y-2">
-        <ProdFeedRow title="Untitled mob therapy pilot" meta="Series · 1 hr drama" score="78" highlight />
-        <ProdFeedRow title="The Northern Line" meta="Series · 1 hr drama" score="74" />
-        <ProdFeedRow title="Glass Cathedral" meta="Series · 1 hr drama" score="71" />
-      </div>
-    </div>
-  )
-}
-
-function ProdFeedRow({
-  title,
-  meta,
-  score,
-  highlight = false,
-}: {
-  title: string
-  meta: string
-  score: string
-  highlight?: boolean
-}) {
-  return (
-    <div
-      className="rounded-lg px-3 py-2 flex items-center gap-2.5"
-      style={{
-        background: highlight ? 'rgba(124,58,237,0.06)' : '#fff',
-        border: highlight ? '1px solid rgba(124,58,237,0.30)' : '1px solid var(--gem-gray-700)',
-      }}
-    >
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <p className="text-[12px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
-            {title}
-          </p>
-          {highlight && (
-            <span
-              className="text-[8px] font-bold uppercase tracking-wider px-1 py-[1px] rounded text-white"
-              style={{ background: 'var(--gem-accent)' }}
-            >
-              You
-            </span>
-          )}
-        </div>
-        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-tight">{meta}</p>
-      </div>
-      <span
-        className="shrink-0 text-[10.5px] font-bold px-1.5 py-0.5 rounded tabular-nums"
-        style={{
-          background: 'rgba(124,58,237,0.08)',
-          border: '1px solid rgba(124,58,237,0.25)',
-          color: 'var(--gem-gray-50)',
-        }}
-      >
-        {score}
-      </span>
-    </div>
-  )
-}
-
-// Producer-side script detail (Interested/Pass) → arrow → email-this-
-// writer preview. Tells the cause/effect: tap Interested, the email
-// writer surface opens. Mirrors the actual app flow on the producer
-// side without going overboard on detail.
-function ProducerDetailMock() {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-3 sm:gap-2 items-stretch">
-      {/* Detail card */}
-      <div
-        className="rounded-xl p-3.5 flex flex-col"
-        style={{
-          background: '#fff',
-          border: '1px solid var(--gem-gray-700)',
-          boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
-        }}
-      >
-        <div className="flex items-start justify-between gap-3 mb-2.5">
-          <div className="min-w-0 flex-1">
-            <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-0.5">
-              Producer view
-            </p>
-            <p
-              className="text-[12.5px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Untitled mob therapy pilot
-            </p>
-          </div>
-          <span
-            className="shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded tabular-nums"
-            style={{
-              background: 'rgba(124,58,237,0.08)',
-              border: '1px solid rgba(124,58,237,0.25)',
-              color: 'var(--gem-gray-50)',
-            }}
-          >
-            78
-          </span>
-        </div>
-        <div
-          className="rounded-lg px-2.5 py-1.5 mb-3"
-          style={{
-            background:
-              'linear-gradient(135deg, rgba(212,160,23,0.10), #fff 70%)',
-            border: '1px solid rgba(212,160,23,0.30)',
-          }}
-        >
-          <p
-            className="text-[10.5px] font-semibold m-0 leading-[1.35] text-[var(--gem-gray-50)]"
-            style={{ fontFamily: 'Georgia, serif' }}
-          >
-            A mob boss in therapy races to hide panic attacks before family expose him.
-          </p>
-        </div>
-        <div className="flex gap-1.5 mt-auto">
-          <button
-            type="button"
-            className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded-lg text-[11px] font-semibold text-white"
-            style={{ background: '#16a34a', cursor: 'default' }}
-          >
-            <ThumbsUp size={11} />
-            Interested
-          </button>
-          <button
-            type="button"
-            className="inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold"
-            style={{
-              background: '#fff',
-              border: '1px solid var(--gem-gray-700)',
-              color: 'var(--gem-gray-400)',
-              cursor: 'default',
-            }}
-          >
-            <XIcon size={11} />
-            Pass
-          </button>
-        </div>
-      </div>
-
-      {/* Arrow connector — horizontal on desktop, vertical (down) on mobile */}
-      <div className="flex items-center justify-center px-1">
-        <svg
-          aria-hidden
-          className="hidden sm:block text-[var(--gem-gray-500)]"
-          width="28"
-          height="14"
-          viewBox="0 0 28 14"
-          fill="none"
-        >
-          <path
-            d="M2 7h22M18 2l5 5-5 5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <svg
-          aria-hidden
-          className="sm:hidden text-[var(--gem-gray-500)]"
-          width="14"
-          height="22"
-          viewBox="0 0 14 22"
-          fill="none"
-        >
-          <path
-            d="M7 2v18M2 14l5 5 5-5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-
-      {/* Email-this-writer preview */}
-      <div
-        className="rounded-xl p-3.5 flex flex-col"
-        style={{
-          background: '#fff',
-          border: '1px solid var(--gem-gray-700)',
-          boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
-        }}
-      >
-        <div className="flex items-center gap-1.5 mb-2.5">
-          <span
-            className="inline-flex items-center justify-center w-5 h-5 rounded-md"
-            style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}
-          >
-            <Mail size={11} />
-          </span>
-          <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
-            Email writer
-          </p>
-        </div>
-        <div className="space-y-1.5 mb-2.5">
-          <EmailRow label="To" value="anuj@gem.studio" />
-          <EmailRow label="Subject" value="Loved the mob therapy pilot — open to a chat?" />
-        </div>
-        <div
-          className="rounded-md px-2.5 py-2 text-[10.5px] text-[var(--gem-gray-300)] leading-[1.4] mb-3"
-          style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
-        >
-          Hi Anuj — read your pilot through Selznick. The Tony voice and the
-          family/crew triangulation are exactly the lane I&apos;m scouting.
-          Free to grab fifteen this week?
-        </div>
-        <button
-          type="button"
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-white mt-auto"
-          style={{
-            background: 'var(--gem-accent)',
-            cursor: 'default',
-          }}
-        >
-          Send email
-          <ArrowRight size={11} />
-        </button>
-      </div>
-    </div>
-  )
-}
-
-function EmailRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-baseline gap-2 text-[10px]">
-      <span
-        className="font-bold uppercase tracking-[0.14em] shrink-0"
-        style={{ color: 'var(--gem-gray-500)', minWidth: 38 }}
-      >
-        {label}
-      </span>
-      <span className="text-[var(--gem-gray-50)] truncate">{value}</span>
-    </div>
-  )
-}
-
-// Writer-side activity dashboard — shows live engagement signals.
-function WriterActivityMock() {
-  return (
-    <div
-      className="rounded-xl p-4"
-      style={{
-        background: '#fff',
-        border: '1px solid var(--gem-gray-700)',
-        boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
-      }}
-    >
       <p className="text-[9.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-        Industry activity
+        Active opportunities
       </p>
-      <div className="flex items-center gap-4 mb-4">
-        <ActivityStat label="Views" value="14" />
-        <span className="text-[var(--gem-gray-700)]">·</span>
-        <ActivityStat label="Interested" value="3" />
-        <span className="text-[var(--gem-gray-700)]">·</span>
-        <ActivityStat label="Passed" value="2" />
-        <span className="text-[var(--gem-gray-700)]">·</span>
-        <ActivityStat label="Emailed" value="2" />
-      </div>
-      <div className="space-y-1.5">
-        <ActivityRow name="Lena Park" company="Westview Pictures" status="reached out" />
-        <ActivityRow name="Marcus Hill" company="Lighthouse Studios" status="interested" />
-        <ActivityRow name="Priya Shah" company="Halcyon Films" status="passed" />
+      <div className="space-y-2">
+        <OppRow title="Character-driven thriller — limited series" deal="Option" perspective="Producer" />
+        <OppRow title="Underrepresented voices — comedy features" deal="Representation" perspective="Lit Rep" />
+        <OppRow title="Action/thriller IP acquisition" deal="Purchase" perspective="Producer" />
       </div>
     </div>
   )
 }
 
-function ActivityStat({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <p className="text-[16px] font-bold tabular-nums m-0 leading-none text-[var(--gem-gray-50)]">
-        {value}
-      </p>
-      <p className="text-[9px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mt-1">
-        {label}
-      </p>
-    </div>
-  )
-}
-
-function ActivityRow({
-  name,
-  company,
-  status,
-}: {
-  name: string
-  company: string
-  status: 'reached out' | 'interested' | 'passed'
-}) {
-  const config =
-    status === 'reached out'
-      ? { Icon: Mail, color: 'var(--gem-accent)', bg: 'rgba(124,58,237,0.10)', label: 'Reached out' }
-      : status === 'interested'
-        ? { Icon: ThumbsUp, color: '#16a34a', bg: 'rgba(22,163,74,0.10)', label: 'Interested' }
-        : { Icon: XIcon, color: 'var(--gem-gray-500)', bg: 'var(--gem-gray-800)', label: 'Passed' }
-  const Icon = config.Icon
+function OppRow({ title, deal, perspective }: { title: string; deal: string; perspective: string }) {
   return (
     <div
-      className="rounded-lg px-2.5 py-1.5 flex items-center gap-2"
+      className="rounded-lg px-3 py-2"
+      style={{ background: '#fff', border: '1px solid var(--gem-gray-700)' }}
+    >
+      <div className="flex flex-wrap gap-1.5 mb-1">
+        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+          {deal}
+        </span>
+        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
+          {perspective}
+        </span>
+      </div>
+      <p className="text-[11.5px] font-semibold m-0 text-[var(--gem-gray-50)] leading-tight">
+        {title}
+      </p>
+    </div>
+  )
+}
+
+function DashboardMatchMock() {
+  return (
+    <div
+      className="rounded-xl p-3.5"
       style={{
         background: 'var(--gem-gray-900)',
         border: '1px solid var(--gem-gray-700)',
       }}
     >
-      <span
-        className="inline-flex items-center justify-center w-5 h-5 rounded-full shrink-0"
-        style={{ background: config.bg, color: config.color }}
+      <p className="text-[9.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+        Your scripts
+      </p>
+      <div
+        className="rounded-lg px-3 py-2.5 flex items-center justify-between gap-3"
+        style={{ background: '#fff', border: '1px solid var(--gem-gray-700)' }}
       >
-        <Icon size={10} />
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className="text-[11px] font-semibold m-0 text-[var(--gem-gray-50)] truncate leading-tight">
-          {name}
-          <span className="text-[var(--gem-gray-400)] font-normal"> · {company}</span>
+        <div className="min-w-0 flex-1">
+          <p
+            className="text-[12.5px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            Untitled mob-therapy pilot
+          </p>
+          <p className="text-[10px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+            Series &middot; 1 hr drama &middot; Score 78
+          </p>
+        </div>
+        <span className="shrink-0 inline-flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.15"/><path d="M3.5 6.2L5.2 7.8L8.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          3 opportunities
+        </span>
+      </div>
+      <div className="mt-2 pl-3 space-y-1">
+        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 leading-snug">
+          &bull; Character-driven thriller — limited series
+        </p>
+        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 leading-snug">
+          &bull; Premium cable drama — returning showrunner
+        </p>
+        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 leading-snug">
+          &bull; Indie drama — first-time features
         </p>
       </div>
-      <span
-        className="shrink-0 text-[8.5px] font-bold uppercase tracking-wider px-1.5 py-[1px] rounded"
-        style={{ color: config.color, background: config.bg }}
+    </div>
+  )
+}
+
+function SubmitMock() {
+  return (
+    <div
+      className="rounded-xl p-3.5"
+      style={{
+        background: '#fff',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <div className="flex flex-wrap gap-1.5 mb-2">
+        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+          Option
+        </span>
+        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
+          Producer
+        </span>
+      </div>
+      <p
+        className="text-[13px] font-bold m-0 mb-1 leading-tight text-[var(--gem-gray-50)]"
+        style={{ fontFamily: 'Georgia, serif' }}
       >
-        {config.label}
-      </span>
+        Character-driven thriller — limited series
+      </p>
+      <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-3 leading-snug">
+        Looking for contained, high-tension pilots with a strong singular lead.
+      </p>
+
+      {/* The opportunity box */}
+      <div
+        className="rounded-lg px-3 py-2.5 mb-3"
+        style={{ background: 'rgba(22,163,74,0.06)', border: '1px solid rgba(22,163,74,0.25)' }}
+      >
+        <p className="text-[8.5px] font-bold uppercase tracking-wider text-emerald-700 m-0 mb-1">
+          The opportunity
+        </p>
+        <p className="text-[11px] text-emerald-800 leading-snug m-0">
+          Option your script with a path to production. You retain rights until a purchase is triggered.
+        </p>
+      </div>
+
+      {/* Qualifying script + submit */}
+      <div
+        className="rounded-lg px-3 py-2 flex items-center justify-between gap-2"
+        style={{ background: 'var(--gem-gray-900)', border: '1px solid rgba(16,185,129,0.30)' }}
+      >
+        <div className="min-w-0">
+          <p className="text-[10px] font-bold uppercase tracking-wider text-[var(--gem-gray-500)] m-0 mb-0.5">
+            Your qualifying script
+          </p>
+          <p className="text-[11.5px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+            Untitled mob-therapy pilot
+          </p>
+        </div>
+        <span
+          className="shrink-0 text-[10px] font-bold px-2.5 py-1 rounded-lg text-white"
+          style={{ background: 'var(--gem-accent)', cursor: 'default' }}
+        >
+          Submit
+        </span>
+      </div>
     </div>
   )
 }

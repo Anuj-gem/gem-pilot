@@ -7,12 +7,12 @@
 
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { ArrowRight, Inbox, Filter, Mail, FileText, Shield } from 'lucide-react'
+import { ArrowRight, Inbox, Filter, Mail, FileText, Shield, Handshake, DollarSign, Users, BadgeCheck } from 'lucide-react'
 
 export const metadata = {
   title: 'For industry partners — GEM',
   description:
-    'A curated feed of new screenplays, evaluated and matched to your lane. Producer and rep accounts are vetted. Apply for access.',
+    'Post what you are looking for. Get qualified, pre-evaluated scripts from writers who match your requirements. Producer and rep accounts are vetted.',
 }
 
 export default function IndustryPage() {
@@ -29,13 +29,14 @@ export default function IndustryPage() {
             For industry partners
           </p>
           <h1 className="text-[36px] sm:text-[52px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-5 font-[family-name:var(--font-display)]">
-            Filter, find, and reach out — without the inbox.
+            Post what you&apos;re looking for. Get qualified scripts.
           </h1>
           <p className="text-[17px] sm:text-[19px] text-[var(--gem-gray-200)] leading-[1.55] m-0 mb-7 max-w-[60ch]">
-            GEM gives producers and reps a searchable feed of new
-            screenplays — every one already read. Filter by genre, format,
-            and budget. Skim the structured report. Email the writer in one
-            click. No portals, no triage.
+            GEM gives producers, reps, and financiers a direct channel to
+            evaluated screenplays. Post an opportunity with your requirements
+            &mdash; genre, format, budget tier, deal type &mdash; and qualified
+            writers submit directly. Every script comes with a full structured
+            evaluation. No slush pile. No triage.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -66,54 +67,84 @@ export default function IndustryPage() {
         {/* MATCHED FEED MOCK */}
         <FeedFilterMock />
 
+        {/* DEAL TYPES */}
+        <Section eyebrow="Deal types" title="Four ways to work with writers on GEM.">
+          <div className="grid sm:grid-cols-2 gap-3">
+            <DealTypeBlock
+              icon={<Handshake size={16} />}
+              title="Option"
+              body="Low upfront commitment with a path to production. The writer retains rights until purchase is triggered."
+              color="#16a34a"
+            />
+            <DealTypeBlock
+              icon={<DollarSign size={16} />}
+              title="Purchase"
+              body="Outright acquisition at WGA scale or above. Writer stays attached for credit."
+              color="var(--gem-accent)"
+            />
+            <DealTypeBlock
+              icon={<Users size={16} />}
+              title="Representation"
+              body="Build your roster. Writers on GEM come with structured evaluations and track records — you can see exactly what you're signing."
+              color="#6366f1"
+            />
+            <DealTypeBlock
+              icon={<BadgeCheck size={16} />}
+              title="Production finance"
+              body="Shared backend model. You put up the financing, the writer shares in distribution revenue."
+              color="var(--gem-gold)"
+            />
+          </div>
+        </Section>
+
         {/* WHAT YOU GET */}
-        <Section eyebrow="What you get" title="A searchable slate, not an inbox.">
+        <Section eyebrow="The platform" title="Every script pre-evaluated. Every submission qualified.">
           <div className="grid sm:grid-cols-2 gap-3">
             <ValueBlock
-              icon={<Filter size={16} />}
-              title="Filter by your lane"
-              body="Genre, format, budget tier — narrow the feed in two clicks. Save your filter as your default and the slate refreshes against it."
-            />
-            <ValueBlock
               icon={<FileText size={16} />}
-              title="Full report on every script"
-              body="Headline, Why this is a hit, Cast, Packaging, Project Complexity, Development considerations — already there before you click in."
+              title="Pre-evaluated scripts"
+              body="Every script comes with a full structured report: headline, characters, packaging, budget tier, production complexity. You're reading the evaluation, not the first 10 pages."
             />
             <ValueBlock
-              icon={<Mail size={16} />}
-              title="Email the writer in one click"
-              body="Mark Interested or send a one-line intro. We route it with your email as the Reply-To; their reply lands directly in your inbox."
+              icon={<Filter size={16} />}
+              title="Qualified submissions only"
+              body="You set the requirements. Only scripts that meet your criteria can submit. No slush, no off-lane pitches."
             />
             <ValueBlock
               icon={<Inbox size={16} />}
-              title="Slate management"
-              body="Inbox / Slate / Passed columns. Pass-with-comment lets you give the writer a private note even when the script isn't for you."
+              title="Writer profiles"
+              body="Every submission includes the writer's full profile: scripts, scores, track record. One page tells you who you're working with."
+            />
+            <ValueBlock
+              icon={<Mail size={16} />}
+              title="Direct contact"
+              body="When you're interested, reach the writer directly. GEM routes the connection; the conversation happens between you."
             />
           </div>
         </Section>
 
         {/* HOW MATCHING WORKS */}
-        <Section eyebrow="How it works" title="Onboard your lane. The slate fills itself.">
+        <Section eyebrow="How it works" title="Post an opportunity. Qualified writers come to you.">
           <div className="space-y-5">
             <Step
               number="1"
               title="Tell us your lane."
-              body="Genre preferences, format (feature / series / both), budget tier you typically work in. Five minutes during onboarding."
+              body="Genre preferences, format, budget tier, what kind of deal you're offering. Five minutes."
             />
             <Step
               number="2"
-              title="GEM matches new scripts to you."
-              body="Every published script is run through your lane filter. New scripts that fit show up in your inbox; the rest don't compete for your attention."
+              title="Post an opportunity."
+              body="Describe what you're looking for. Your listing goes live with your requirements as automatic filters."
             />
             <Step
               number="3"
-              title="React in one tap."
-              body="Interested moves the script into your Slate and signals the writer. Pass closes the loop — with or without a comment. Send Intro fires the email."
+              title="Qualified writers submit."
+              body="Only scripts meeting your criteria can apply. Every submission comes with the full evaluation and writer profile."
             />
             <Step
               number="4"
-              title="Talk to the writer."
-              body="Once they reply to your intro, the conversation moves to email. GEM stays out of the way."
+              title="Review and connect."
+              body="Read the evaluation. Check the writer's profile. Reach out directly when you find the right fit."
             />
           </div>
         </Section>
@@ -186,13 +217,13 @@ export default function IndustryPage() {
           <div className="grid sm:grid-cols-2 gap-3">
             <CrossLink
               href="/selznick"
-              label="The Selznick rubric"
-              body="The producer's-eye lens behind every GEM evaluation."
+              label="The Selznick engine"
+              body="The technology behind every GEM evaluation."
             />
             <CrossLink
               href="/writers"
               label="For writers"
-              body="Writers: see what your side of the platform looks like."
+              body="Writers: see what the platform looks like on your side."
             />
           </div>
         </div>
@@ -435,6 +466,47 @@ function Step({
           {body}
         </p>
       </div>
+    </div>
+  )
+}
+
+function DealTypeBlock({
+  icon,
+  title,
+  body,
+  color,
+}: {
+  icon: React.ReactNode
+  title: string
+  body: string
+  color: string
+}) {
+  return (
+    <div
+      className="rounded-xl p-5"
+      style={{
+        background: 'rgba(255,255,255,0.02)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <span
+        aria-hidden
+        className="inline-flex items-center justify-center rounded-md mb-3"
+        style={{
+          width: 28,
+          height: 28,
+          background: `${color}15`,
+          color,
+        }}
+      >
+        {icon}
+      </span>
+      <p className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5 leading-tight">
+        {title}
+      </p>
+      <p className="text-[13.5px] text-[var(--gem-gray-300)] leading-[1.55] m-0">
+        {body}
+      </p>
     </div>
   )
 }

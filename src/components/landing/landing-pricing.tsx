@@ -24,42 +24,47 @@ export function LandingPricing() {
             className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Free to start. Pro when you’re ready.
+            Free to start. One plan when you're ready.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto mb-6">
           <PriceCard
             tier="Free"
             price="$0"
             period="forever"
-            blurb="Everything you need to start."
+            blurb="See what your script is worth."
             features={[
-              'Post your script publicly',
-              'Get peer reviews from other writers',
-              'Public writer profile',
-              'Browse the community',
+              'One full evaluation — no blur, no paywall',
+              'Sharable report URL',
+              'See which opportunities your script qualifies for',
             ]}
-            cta="Join free"
-            href="/onboarding"
+            cta="Get your free evaluation"
+            href="/submit"
             primary={false}
           />
           <PriceCard
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="For writers building a real portfolio."
+            blurb="Unlimited evaluations. Unlimited submissions."
             features={[
-              'Everything in Free',
-              'Submit multiple scripts and drafts',
-              'Direct contact with producers, agents, and managers',
-              'Priority placement in the community',
+              'Unlimited script evaluations',
+              'Submit to every opportunity you qualify for',
+              'Revise and rescore any script',
+              'Full writer profile visible to industry',
+              'Priority in opportunity matching',
             ]}
             cta="Go Pro"
-            href="/onboarding"
+            href="/submit"
             primary={true}
           />
         </div>
+
+        <p className="text-[13px] text-[var(--gem-gray-400)] text-center m-0 max-w-[580px] mx-auto leading-relaxed">
+          Other platforms charge $75-150 per evaluation. Competitions charge
+          $50-80 per entry. GEM Pro is $20/mo for everything, unlimited.
+        </p>
       </div>
     </section>
   )
