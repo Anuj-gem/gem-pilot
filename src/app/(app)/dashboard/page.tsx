@@ -155,16 +155,16 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   type ActiveSub = {
     id: string; opportunity_title: string; opportunity_slug: string
     script_title: string; evaluationId: string | null; status: 'pending' | 'reviewed'; feedback: string | null
-    annotationCount: number; created_at: string
+    annotationCount: number; submitted_at: string
   }
   const activeSubs: ActiveSub[] = []
   if (submissionIds.length > 0) {
     const { data: myOppSubs } = await service
       .from('opportunity_submissions')
-      .select('id, opportunity_id, submission_id, status, feedback, created_at')
+      .select('id, opportunity_id, submission_id, status, feedback, submitted_at')
       .eq('writer_id', user.id)
       .neq('status', 'withdrawn')
-      .order('created_at', { ascending: false })
+      .order('submitted_at', { ascending: false })
 
     // Fetch annotation counts for reviewed submissions
     const reviewedOppSubIds = (myOppSubs || [])
@@ -181,7 +181,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       }
     }
 
-    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; created_at: string }[]) {
+    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; submitted_at: string }[]) {
       const opp = allOpportunities.find(o => o.id === os.opportunity_id)
       const sub = visible.find(s => s.id === os.submission_id)
       if (!opp || !sub) continue
@@ -195,7 +195,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         status: os.status as 'pending' | 'reviewed',
         feedback: os.feedback,
         annotationCount: annotationCounts.get(os.id) ?? 0,
-        created_at: os.created_at,
+        submitted_at: os.submitted_at,
       })
     }
   }
@@ -308,7 +308,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
             </h2>
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
               {activeSubs.map((sub) => {
-                const daysAgo = Math.floor((Date.now() - new Date(sub.created_at).getTime()) / (1000 * 60 * 60 * 24))
+                const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / (1000 * 60 * 60 * 24))
                 return (
                   <div key={sub.id} className="px-4 py-3.5">
                     <div className="flex items-start justify-between gap-3">
