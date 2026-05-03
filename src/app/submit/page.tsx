@@ -39,8 +39,6 @@ import { FormatStep, type DeclaredFormat } from '@/components/submit/format-step
 import { ScriptStep } from '@/components/submit/script-step'
 import { AccountStep, type AccountMode } from '@/components/submit/account-step'
 import { ScoringTerminal, DraftSavedTerminal } from '@/components/submit/terminals'
-import { OnboardingShell } from '@/components/onboarding/onboarding-shell'
-import type { ChecklistItem } from '@/components/onboarding/onboarding-checklist'
 import { updateProfile } from '@/app/profile/actions'
 
 type FlowStep = 'format' | 'script' | 'account' | 'scoring' | 'draft_saved'
@@ -165,11 +163,7 @@ function SubmitPageInner() {
             Date.now() - new Date(authUser.created_at).getTime()
           const returning = accountAgeMs > 60_000
           const wb = returning ? '&welcome_back=1' : ''
-          // Anuj 2026-04-30 v0.10.6: brand-new accounts route through the
-          // onboarding privacy + profile sequence before the destination.
-          // Returning accounts (already onboarded) skip straight to it —
-          // /onboarding/privacy server checks privacy_confirmed_at and
-          // forwards them on if it's already set.
+          // opportunities-v1: skip privacy/profile — go straight to destination.
           let dest: string
           if (pending.mode === 'upload' && pending.evaluation_id) {
             dest = `/report/${pending.evaluation_id}?from=submit${wb}`
@@ -178,11 +172,7 @@ function SubmitPageInner() {
           } else {
             dest = `/dashboard?draft_saved=1${wb}`
           }
-          if (returning) {
-            router.replace(dest)
-          } else {
-            router.replace(`/onboarding/privacy?next=${encodeURIComponent(dest)}`)
-          }
+          router.replace(dest)
           return
         }
       }
@@ -566,16 +556,14 @@ function SubmitPageInner() {
         evalFailedRef.current = null
         return
       }
-      // Anuj 2026-04-30 v0.10.6: post-account, send Path A users through
-      // privacy + profile (skippable) before they land on the report.
-      // The eval is still finishing in the background while they confirm
-      // privacy + edit profile. By the time they hit "Open my report"
-      // the eval is virtually always ready.
+      // opportunities-v1: skip privacy/profile — straight to dashboard.
+      // The eval may still be running; dashboard processing card picks it up.
       const evaluationId = evalResultRef.current?.evaluation_id
-      const next = evaluationId
-        ? `/report/${evaluationId}?from=submit`
-        : '/dashboard?just_signed_up=1&from=submit'
-      router.push(`/onboarding/privacy?next=${encodeURIComponent(next)}`)
+      if (evaluationId) {
+        router.push(`/report/${evaluationId}?from=submit`)
+      } else {
+        router.push('/dashboard?just_signed_up=1&from=submit')
+      }
     } else {
       const deadline = Date.now() + 6000
       while (!draftSubmissionIdRef.current && Date.now() < deadline) {
@@ -627,127 +615,91 @@ function SubmitPageInner() {
     )
   }
 
-  // Build the per-step checklist. Both with-file and without-file
-  // journeys end at the report (with-file) or dashboard (no-file/draft).
-  // Anuj 2026-04-30 v0.10.7 — checklist visible across the whole flow,
-  // so the user can always see where they are and where they land.
+  // Heading per step
   const hasFile = !!file
-  const checklistItems: ChecklistItem[] = (() => {
-    function s(active: typeof step) {
-      if (step === active) return 'current'
-      // Step ordering for "done" comparison
-      const order = ['format', 'script', 'account', 'scoring'] as const
-      const idx = (k: typeof step) => order.indexOf(k as typeof order[number])
-      return idx(step) > idx(active) ? 'done' : 'pending'
-    }
-    if (hasFile) {
-      // Path A — PDF in flight. "Got your script" already done.
-      return [
-        { label: 'Got your script', state: 'done' },
-        { label: 'Tell us the format', state: s('format') },
-        { label: 'Create your account', state: s('account') },
-        { label: 'Confirm privacy', state: 'pending' },
-        { label: 'Polish your profile', state: 'pending' },
-        { label: 'Open your report', state: 'pending', hint: 'Your report is processing' },
-      ]
-    }
-    // No file yet — they're picking format then deciding to upload or draft.
-    return [
-      { label: 'Tell us the format', state: s('format') },
-      { label: 'Add your script', state: s('script'), hint: mode === 'draft' ? 'Or save as a draft' : undefined },
-      { label: 'Create your account', state: s('account') },
-      { label: 'Confirm privacy', state: 'pending' },
-      { label: 'Polish your profile', state: 'pending' },
-      { label: 'Open your dashboard', state: 'pending' },
-    ]
-  })()
-
-  // Per-step heading + subhead. Drives the OnboardingShell h1/sub.
-  const stepHeading: { heading: string; subhead?: string } = (() => {
+  const stepHeading: { heading: string; subhead: string } | null = (() => {
     if (step === 'format')
       return {
-        heading: hasFile ? 'Got it. Quick question first.' : "Let's get your GEM account started.",
-        subhead: hasFile
-          ? 'Is this a feature or a series? Selznick uses different rubrics for each.'
-          : 'Is this a feature or a series? You can also pick if you don’t have a script ready yet — we’ll save your spot.',
+        heading: hasFile ? 'One quick question.' : 'What are you working on?',
+        subhead: 'Feature film or series?',
       }
     if (step === 'script')
       return {
-        heading: 'Add your script.',
-        subhead: 'Drop a PDF and we’ll start the read. No PDF yet? Save your spot — we’ll come back to this.',
+        heading: 'Drop your script.',
+        subhead: 'PDF only, 10MB max',
       }
-    if (step === 'account')
-      return {
-        heading: mode === 'upload' ? 'Where should we send it?' : 'Save your spot.',
-        subhead:
-          mode === 'upload'
-            ? 'Your report is ready in 60 seconds. We’ll email you when it lands.'
-            : 'Hold this draft on your dashboard. Upload your PDF anytime.',
-      }
+    if (step === 'account') return null
     if (step === 'scoring')
-      return { heading: 'Your script report is processing.', subhead: 'Hang tight — your report is ready in about a minute.' }
-    return { heading: 'Draft saved.', subhead: 'You can come back anytime to finish uploading your script.' }
+      return { heading: 'Processing your script.', subhead: 'This takes about a minute.' }
+    return { heading: 'Draft saved.', subhead: 'Upload your PDF anytime from the dashboard.' }
   })()
 
-  // Account step renders its own h1 — hide the shell heading there to
-  // avoid double-stacking.
-  const shellHeading = step === 'account' ? undefined : stepHeading.heading
-  const shellSubhead = step === 'account' ? undefined : stepHeading.subhead
+  function goBack() {
+    if (step === 'script') { setDeclaredFormat(null); setStep('format') }
+    else if (step === 'account') { setStep(hasFile ? 'format' : 'script') }
+  }
 
-  // Persistent framing banner — same on every step. Tells the user what
-  // they're working toward so each step doesn't feel like a fresh ask.
-  const framingBanner = hasFile
-    ? "Your script report is processing. Finalize these quick steps and we'll take you to it."
-    : "Let's get your GEM account set up. A few quick steps."
-
-  // Top action bar — Back goes to previous step; Continue and Skip
-  // depend on which step we're on.
-  const actionBar = (() => {
-    function back() {
-      if (step === 'script') { setDeclaredFormat(null); setStep('format') }
-      else if (step === 'account') { setStep(hasFile ? 'format' : 'script') }
-    }
-    if (step === 'format') {
-      return undefined  // FormatStep auto-advances on selection; no continue needed.
-    }
-    if (step === 'script') {
-      return {
-        onBack: back,
-        onContinue: file ? continueFromScriptStepWithFile : undefined,
-        onSkip: continueFromScriptStepWithoutFile,
-        continueLabel: 'Continue with this script',
-        continueDisabled: !file,
-        label: 'Script',
-      }
-    }
-    if (step === 'account') {
-      return {
-        onBack: back,
-        // AccountStep owns its own form submit — top bar just shows back.
-        label: 'Account',
-      }
-    }
-    return undefined
-  })()
+  const showBack = step === 'script' || step === 'account'
 
   return (
-    <OnboardingShell
-      checklistTitle="Your GEM account"
-      checklistItems={checklistItems}
-      framingBanner={framingBanner}
-      heading={shellHeading}
-      subhead={shellSubhead}
-      actionBar={actionBar}
-      footer={
-        <span>
-          Already have an account?{' '}
-          <Link href="/login" className="text-[var(--gem-accent)] hover:underline">
-            Log in
+    <main className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
+      {/* Minimal top bar */}
+      <div className="sticky top-0 z-30 border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm">
+        <div className="max-w-[520px] mx-auto px-5 h-14 flex items-center justify-between">
+          <Link href="/" prefetch={false} className="inline-flex items-center gap-2 group shrink-0">
+            <span
+              aria-hidden="true"
+              className="inline-block w-3 h-3 rotate-45"
+              style={{
+                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
+              }}
+            />
+            <span className="text-[14px] font-bold tracking-tight text-[var(--gem-gray-50)] group-hover:text-white transition-colors">
+              GEM
+            </span>
           </Link>
-        </span>
-      }
-    >
-      <div className="max-w-[520px]">
+          <div className="flex items-center gap-3">
+            {showBack && (
+              <button
+                type="button"
+                onClick={goBack}
+                className="text-[13px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] transition-colors"
+              >
+                ← Back
+              </button>
+            )}
+            {step === 'script' && file && (
+              <button
+                type="button"
+                onClick={continueFromScriptStepWithFile}
+                className="rounded-lg px-3.5 py-2 text-[13px] font-semibold text-white transition-all hover:brightness-110"
+                style={{ background: 'var(--gem-accent)' }}
+              >
+                Continue →
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-[520px] mx-auto px-5 py-10">
+        {stepHeading && (
+          <header className="mb-8">
+            <h1
+              className="m-0 text-[26px] sm:text-[32px] font-bold tracking-tight leading-[1.15] text-[var(--gem-gray-50)]"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              {stepHeading.heading}
+            </h1>
+            {stepHeading.subhead && (
+              <p className="m-0 mt-2 text-[14.5px] text-[var(--gem-gray-300)] leading-[1.55]">
+                {stepHeading.subhead}
+              </p>
+            )}
+          </header>
+        )}
+
         {step === 'format' && (
           <FormatStep initial={declaredFormat} onSelect={handleFormatSelected} />
         )}
@@ -787,8 +739,17 @@ function SubmitPageInner() {
             onLater={() => router.push('/dashboard?draft_saved=1')}
           />
         )}
+
+        {!user && step !== 'scoring' && step !== 'draft_saved' && (
+          <p className="text-[12.5px] text-[var(--gem-gray-500)] mt-10">
+            Already have an account?{' '}
+            <Link href="/login" className="text-[var(--gem-accent)] hover:underline">
+              Log in
+            </Link>
+          </p>
+        )}
       </div>
-    </OnboardingShell>
+    </main>
   )
 }
 

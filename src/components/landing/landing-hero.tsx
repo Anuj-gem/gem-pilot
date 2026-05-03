@@ -42,7 +42,7 @@ export function LandingHero() {
 
   function handleJoinClick() {
     try {
-      trackEvent('cta_clicked', { location: 'hero', label: 'Join free' })
+      trackEvent('cta_clicked', { location: 'hero', label: 'Create account' })
     } catch {}
     router.push('/onboarding')
   }
@@ -91,7 +91,7 @@ export function LandingHero() {
               boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
             }}
           >
-            Join free <ArrowRight size={16} />
+            Create account <ArrowRight size={16} />
           </button>
         </div>
         <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mb-8">

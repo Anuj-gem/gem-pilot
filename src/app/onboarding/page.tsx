@@ -37,6 +37,6 @@ export default async function OnboardingEntry() {
     await supabase.from('profiles').update({ handle }).eq('id', user.id)
   }
 
-  if (!profile?.privacy_confirmed_at) redirect('/onboarding/privacy')
+  // opportunities-v1: skip privacy/profile — straight to dashboard.
   redirect('/dashboard')
 }
