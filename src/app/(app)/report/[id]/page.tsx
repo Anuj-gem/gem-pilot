@@ -567,10 +567,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               )}
             </div>
             <div className="flex items-center gap-2">
+              {/* opportunities-v1: privacy props removed to hide privacy controls */}
               {(isOwner || isAdmin) && (
-                {/* Privacy props (isPublic, allowReviews, allowIndustry,
-                    showScore, reportSections) omitted — opportunities-v1
-                    hides all privacy controls. Backend unchanged. */}
                 <OwnerActionsMenu
                   submissionId={submission.id}
                   evaluationId={id}
