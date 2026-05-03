@@ -101,14 +101,14 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             </p>
           )}
 
-          {/* Read report link */}
+          {/* Read report link — opens in review mode with annotations */}
           {item.evaluationId && (
             <Link
-              href={`/report/${item.evaluationId}`}
+              href={`/report/${item.evaluationId}?review=${item.submissionRowId}`}
               target="_blank"
               className="inline-flex items-center gap-1 text-[12px] font-semibold text-purple-600 hover:text-purple-800"
             >
-              Read full report →
+              {reviewed ? 'View report & annotations →' : 'Review report & annotate →'}
             </Link>
           )}
 

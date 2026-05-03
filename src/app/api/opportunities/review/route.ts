@@ -31,6 +31,10 @@ export async function POST(req: NextRequest) {
   if (!['pending', 'reviewed'].includes(status)) {
     return NextResponse.json({ error: 'Invalid status' }, { status: 400 })
   }
+  // Closing comment is required when marking as reviewed
+  if (status === 'reviewed' && !feedback?.trim()) {
+    return NextResponse.json({ error: 'Closing comment is required' }, { status: 400 })
+  }
 
   const service = svc()
 

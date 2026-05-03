@@ -153,8 +153,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   // ---------- SUBMISSION STATUS ----------
   type ActiveSub = {
     id: string; opportunity_title: string; opportunity_slug: string
-    script_title: string; status: 'pending' | 'reviewed'; feedback: string | null
-    created_at: string
+    script_title: string; evaluationId: string | null; status: 'pending' | 'reviewed'; feedback: string | null
+    annotationCount: number; created_at: string
   }
   const activeSubs: ActiveSub[] = []
   if (submissionIds.length > 0) {
@@ -165,17 +165,35 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       .neq('status', 'withdrawn')
       .order('created_at', { ascending: false })
 
+    // Fetch annotation counts for reviewed submissions
+    const reviewedOppSubIds = (myOppSubs || [])
+      .filter((os: any) => os.status === 'reviewed')
+      .map((os: any) => os.id)
+    const annotationCounts = new Map<string, number>()
+    if (reviewedOppSubIds.length > 0) {
+      const { data: annCounts } = await service
+        .from('submission_annotations')
+        .select('submission_id')
+        .in('submission_id', reviewedOppSubIds)
+      for (const ac of (annCounts || []) as { submission_id: string }[]) {
+        annotationCounts.set(ac.submission_id, (annotationCounts.get(ac.submission_id) ?? 0) + 1)
+      }
+    }
+
     for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; created_at: string }[]) {
       const opp = opportunities.find(o => o.id === os.opportunity_id)
       const sub = visible.find(s => s.id === os.submission_id)
       if (!opp || !sub) continue
+      const ev = myEvalBySub.get(os.submission_id)
       activeSubs.push({
         id: os.id,
         opportunity_title: opp.title,
         opportunity_slug: opp.slug ?? opp.id,
         script_title: sub.title,
+        evaluationId: ev?.id ?? null,
         status: os.status as 'pending' | 'reviewed',
         feedback: os.feedback,
+        annotationCount: annotationCounts.get(os.id) ?? 0,
         created_at: os.created_at,
       })
     }
@@ -303,7 +321,18 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                     </div>
                     {sub.status === 'reviewed' && sub.feedback && (
                       <div className="mt-2.5 pt-2.5 border-t border-gray-100">
+                        <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1">
+                          What they&apos;re looking for next
+                        </p>
                         <p className="text-[12.5px] text-gray-600 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
+                        {sub.annotationCount > 0 && sub.evaluationId && (
+                          <Link
+                            href={`/report/${sub.evaluationId}`}
+                            className="inline-flex items-center gap-1 mt-2 text-[11.5px] font-semibold text-purple-600 hover:text-purple-800"
+                          >
+                            {sub.annotationCount} annotation{sub.annotationCount !== 1 ? 's' : ''} on your report &rarr;
+                          </Link>
+                        )}
                       </div>
                     )}
                   </div>
