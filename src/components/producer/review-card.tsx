@@ -1,7 +1,8 @@
 'use client'
 
 // ProducerReviewCard — inline review UI for a single submission.
-// Shows script info + status picker + feedback textarea.
+// Simple: read the script info, write feedback, send it.
+// Status is just "pending" (in consideration) or "reviewed" (feedback sent).
 // opportunities-v1 (2026-05-02).
 
 import { useState } from 'react'
@@ -24,21 +25,15 @@ interface ReviewItem {
   reviewedAt: string | null
 }
 
-const STATUS_OPTIONS = [
-  { value: 'pending', label: 'Pending', color: 'text-amber-700' },
-  { value: 'request', label: 'Request', color: 'text-emerald-700' },
-  { value: 'consider', label: 'Consider', color: 'text-blue-700' },
-  { value: 'pass', label: 'Pass', color: 'text-gray-500' },
-] as const
-
 export function ProducerReviewCard({ item }: { item: ReviewItem }) {
-  const [status, setStatus] = useState(item.status)
   const [feedback, setFeedback] = useState(item.feedback ?? '')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [reviewed, setReviewed] = useState(item.status === 'reviewed')
   const [expanded, setExpanded] = useState(item.status === 'pending')
 
-  async function handleSave() {
+  async function handleSend() {
+    if (!feedback.trim()) return
     setSaving(true)
     setSaved(false)
     const res = await fetch('/api/opportunities/review', {
@@ -46,18 +41,18 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         submission_id: item.submissionRowId,
-        status,
-        feedback: feedback.trim() || null,
+        status: 'reviewed',
+        feedback: feedback.trim(),
       }),
     })
     setSaving(false)
     if (res.ok) {
+      setReviewed(true)
       setSaved(true)
       setTimeout(() => setSaved(false), 2000)
     }
   }
 
-  const statusColor = STATUS_OPTIONS.find(o => o.value === status)?.color ?? 'text-gray-500'
   const daysAgo = Math.floor((Date.now() - new Date(item.submittedAt).getTime()) / (1000 * 60 * 60 * 24))
 
   return (
@@ -84,8 +79,8 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          <span className={`text-[12px] font-semibold ${statusColor}`}>
-            {STATUS_OPTIONS.find(o => o.value === status)?.label ?? status}
+          <span className={`text-[12px] font-semibold ${reviewed ? 'text-emerald-600' : 'text-amber-600'}`}>
+            {reviewed ? 'Reviewed' : 'In consideration'}
           </span>
           <svg
             width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -117,46 +112,26 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             </Link>
           )}
 
-          {/* Status picker */}
-          <div className="flex items-center gap-1.5">
-            {STATUS_OPTIONS.map(opt => (
-              <button
-                key={opt.value}
-                onClick={() => setStatus(opt.value)}
-                className={`text-[12px] font-semibold px-3 py-1.5 rounded-md border transition-colors ${
-                  status === opt.value
-                    ? opt.value === 'request' ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
-                    : opt.value === 'consider' ? 'bg-blue-50 border-blue-200 text-blue-700'
-                    : opt.value === 'pass' ? 'bg-gray-100 border-gray-200 text-gray-600'
-                    : 'bg-amber-50 border-amber-200 text-amber-700'
-                    : 'bg-white border-gray-200 text-gray-500 hover:bg-gray-50'
-                }`}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
-
           {/* Feedback textarea */}
           <textarea
             value={feedback}
             onChange={e => setFeedback(e.target.value)}
-            placeholder="Notes for the writer (optional) — why this works or doesn't for this call..."
-            rows={3}
-            className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-none focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
+            placeholder="Write your feedback — what works, what doesn't, and why this may or may not fit this call..."
+            rows={4}
+            className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
           />
 
-          {/* Save button */}
+          {/* Send button */}
           <div className="flex items-center gap-2">
             <button
-              onClick={handleSave}
-              disabled={saving}
-              className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-4 py-1.5 rounded-md transition-colors"
+              onClick={handleSend}
+              disabled={saving || !feedback.trim()}
+              className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1.5 rounded-md transition-colors"
             >
-              {saving ? 'Saving…' : 'Save'}
+              {saving ? 'Sending…' : reviewed ? 'Update feedback' : 'Send feedback'}
             </button>
             {saved && (
-              <span className="text-[12px] text-emerald-600 font-medium">Saved ✓</span>
+              <span className="text-[12px] text-emerald-600 font-medium">Sent</span>
             )}
           </div>
         </div>

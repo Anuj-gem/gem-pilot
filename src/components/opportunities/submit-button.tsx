@@ -2,6 +2,7 @@
 
 // SubmitForConsideration — button that lets a writer submit a qualifying
 // script to an opportunity. Shows submission status + feedback if reviewed.
+// Two states: pending (in consideration) or reviewed (feedback received).
 // opportunities-v1.
 
 import { useState } from 'react'
@@ -14,7 +15,7 @@ const supabase = createBrowserClient(
 
 export interface SubmissionState {
   id: string
-  status: 'pending' | 'request' | 'consider' | 'pass'
+  status: 'pending' | 'reviewed'
   feedback: string | null
 }
 
@@ -26,13 +27,6 @@ interface SubmitButtonProps {
   existing?: SubmissionState | null
   /** Whether the writer has hit the active submission limit */
   atLimit?: boolean
-}
-
-const STATUS_DISPLAY: Record<string, { label: string; color: string; bg: string; border: string }> = {
-  pending:  { label: 'In consideration', color: 'text-amber-700', bg: 'bg-amber-50', border: 'border-amber-100' },
-  request:  { label: 'Requested',        color: 'text-emerald-700', bg: 'bg-emerald-50', border: 'border-emerald-100' },
-  consider: { label: 'Under review',     color: 'text-blue-700', bg: 'bg-blue-50', border: 'border-blue-100' },
-  pass:     { label: 'Not selected',     color: 'text-gray-500', bg: 'bg-gray-50', border: 'border-gray-100' },
 }
 
 export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit }: SubmitButtonProps) {
@@ -67,26 +61,21 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     setLoading(false)
   }
 
-  // Already submitted — show status
+  // Already submitted — show status + feedback
   if (state) {
-    const display = STATUS_DISPLAY[state.status] || STATUS_DISPLAY.pending
+    const isReviewed = state.status === 'reviewed'
     return (
-      <div className={`rounded-lg ${display.bg} border ${display.border} px-3 py-2.5`}>
+      <div className={`rounded-lg ${isReviewed ? 'bg-white border-gray-200' : 'bg-amber-50 border-amber-100'} border px-3 py-2.5`}>
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {state.status === 'request' && (
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="8" fill="#10b981" opacity="0.15"/>
-                <path d="M5 8.3L7 10.2L11 6" stroke="#10b981" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-            <span className={`text-[13.5px] font-semibold ${display.color}`}>{scriptTitle}</span>
-          </div>
-          <span className={`text-[12px] font-medium ${display.color}`}>{display.label}</span>
+          <span className="text-[13.5px] font-semibold text-gray-800">{scriptTitle}</span>
+          <span className={`text-[12px] font-medium ${isReviewed ? 'text-emerald-600' : 'text-amber-600'}`}>
+            {isReviewed ? 'Feedback received' : 'In consideration'}
+          </span>
         </div>
         {state.feedback && (
-          <div className="mt-2 pt-2 border-t border-gray-100">
-            <p className="text-[12.5px] text-gray-600 leading-[1.55] m-0 whitespace-pre-line">{state.feedback}</p>
+          <div className="mt-2.5 pt-2.5 border-t border-gray-100">
+            <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-gray-400 mb-1.5">Feedback</p>
+            <p className="text-[13px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">{state.feedback}</p>
           </div>
         )}
       </div>

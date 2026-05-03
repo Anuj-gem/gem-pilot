@@ -21,14 +21,14 @@ export async function POST(req: NextRequest) {
   const body = await req.json()
   const { submission_id, status, feedback } = body as {
     submission_id: string
-    status: 'pending' | 'request' | 'consider' | 'pass'
+    status: 'pending' | 'reviewed'
     feedback?: string
   }
 
   if (!submission_id || !status) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
   }
-  if (!['pending', 'request', 'consider', 'pass'].includes(status)) {
+  if (!['pending', 'reviewed'].includes(status)) {
     return NextResponse.json({ error: 'Invalid status' }, { status: 400 })
   }
 
