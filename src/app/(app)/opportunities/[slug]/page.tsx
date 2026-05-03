@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { SubmitForConsideration, type SubmissionState } from '@/components/opportunities/submit-button'
 
 function svc() {
   return createServerClient(
@@ -66,6 +67,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const { data: { user } } = await auth.auth.getUser()
 
   let qualifyingScripts: { id: string; title: string; evaluation_id: string }[] = []
+  const existingSubmissions = new Map<string, SubmissionState>()
+  let totalActiveSubmissions = 0
+  const ACTIVE_SUBMISSION_LIMIT = 3
 
   if (user) {
     const { data: userSubs } = await service
@@ -104,7 +108,30 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         }
       }
     }
+
+    // Fetch existing submissions for this opportunity
+    const qualifyingSubIds = qualifyingScripts.map(s => s.id)
+    if (qualifyingSubIds.length > 0) {
+      const { data: existingSubs } = await service
+        .from('opportunity_submissions')
+        .select('id, submission_id, status, feedback')
+        .eq('opportunity_id', opp.id)
+        .in('submission_id', qualifyingSubIds)
+      for (const es of (existingSubs || []) as { id: string; submission_id: string; status: string; feedback: string | null }[]) {
+        existingSubmissions.set(es.submission_id, { id: es.id, status: es.status as any, feedback: es.feedback })
+      }
+    }
+
+    // Count active submissions across ALL opportunities for limit check
+    const { count: activeCount } = await service
+      .from('opportunity_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .eq('status', 'pending')
+    totalActiveSubmissions = activeCount ?? 0
   }
+
+  const atLimit = totalActiveSubmissions >= ACTIVE_SUBMISSION_LIMIT
 
   const deadline = opp.deadline ? new Date(opp.deadline) : null
   const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
@@ -195,23 +222,20 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               {qualifyingScripts.length > 0 ? (
                 <div className="flex flex-col gap-2">
                   {qualifyingScripts.map(s => (
-                    <div
+                    <SubmitForConsideration
                       key={s.id}
-                      className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-emerald-50 border border-emerald-100"
-                    >
-                      <div className="flex items-center gap-2">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <circle cx="8" cy="8" r="8" fill="#10b981" opacity="0.15"/>
-                          <path d="M5 8.3L7 10.2L11 6" stroke="#10b981" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        <span className="text-[13.5px] font-semibold text-emerald-800">{s.title}</span>
-                      </div>
-                      <span className="text-[12px] text-emerald-600 font-medium">Qualifies</span>
-                    </div>
+                      opportunityId={opp.id}
+                      submissionId={s.id}
+                      scriptTitle={s.title}
+                      existing={existingSubmissions.get(s.id) ?? null}
+                      atLimit={atLimit && !existingSubmissions.has(s.id)}
+                    />
                   ))}
-                  <p className="text-[12.5px] text-gray-400 mt-1 m-0">
-                    Submit for consideration coming soon.
-                  </p>
+                  {atLimit && (
+                    <p className="text-[12.5px] text-gray-400 mt-1 m-0">
+                      You have {totalActiveSubmissions} scripts in consideration (limit {ACTIVE_SUBMISSION_LIMIT}).
+                    </p>
+                  )}
                 </div>
               ) : (
                 <div className="px-3 py-3 rounded-lg bg-gray-50 border border-gray-100">
