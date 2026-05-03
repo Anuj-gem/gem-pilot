@@ -568,6 +568,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
             <div className="flex items-center gap-2">
               {(isOwner || isAdmin) && (
+                {/* Privacy props (isPublic, allowReviews, allowIndustry,
+                    showScore, reportSections) omitted — opportunities-v1
+                    hides all privacy controls. Backend unchanged. */}
                 <OwnerActionsMenu
                   submissionId={submission.id}
                   evaluationId={id}
@@ -575,11 +578,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   declaredFormat={submission.declared_format ?? null}
                   isSubscribed={ownerIsSubscribed || isAdmin}
                   activity={ownerActivity}
-                  {/* Privacy props omitted — opportunities-v1 hides all
-                      privacy controls. The OwnerActionsMenu conditionally
-                      renders the Privacy item only when these are set,
-                      so omitting them hides the button + sheet. Backend
-                      settings unchanged for production. */}
                 />
               )}
             </div>
