@@ -1,18 +1,21 @@
-// /dashboard — writer status center (v0.14 opportunities-v1).
-// Anuj 2026-05-02.
+// /dashboard — writer pipeline center (v0.15 opportunities-v1).
+// Anuj 2026-05-03.
 //
-// Council-recommended layout (mobile-first):
+// Pipeline-focused layout:
 //
-//   ┌──────────────────────────────────────┐
-//   │  STATUS STRIP                         │
-//   │  script count · pending subs · opps   │
-//   ├──────────────────────────────────────┤
-//   │  OPPORTUNITIES                        │
-//   │  vertical list rows + action chips    │
-//   ├──────────────────────────────────────┤
-//   │  YOUR SCRIPTS                         │
-//   │  compact vertical stack               │
-//   └──────────────────────────────────────┘
+//   +--------------------------------------+
+//   |  STAT CARDS (clickable)               |
+//   |  scripts · in consideration · opps    |
+//   +--------------------------------------+
+//   |  IN CONSIDERATION (front & center)    |
+//   |  active subs + feedback               |
+//   +--------------------------------------+
+//   |  AVAILABLE OPPORTUNITIES              |
+//   |  matched but not yet submitted        |
+//   +--------------------------------------+
+//   |  YOUR SCRIPTS                         |
+//   |  match count + 3-dot + subtle report  |
+//   +--------------------------------------+
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
@@ -123,12 +126,68 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     qualifyingScripts: scriptsQualifyingFor(opp),
   }))
 
-  // ---------- SUBMISSION COUNTS ----------
-  const { count: pendingSubCount } = await service
-    .from('opportunity_submissions')
-    .select('id', { count: 'exact', head: true })
-    .eq('writer_id', user.id)
-    .eq('status', 'pending')
+  // Per-script: how many opportunities does it qualify for?
+  const oppCountByScript = new Map<string, number>()
+  for (const { qualifyingScripts } of oppWithQualifications) {
+    for (const qs of qualifyingScripts) {
+      oppCountByScript.set(qs.id, (oppCountByScript.get(qs.id) ?? 0) + 1)
+    }
+  }
+
+  // Available = matched but not yet submitted
+  // We need to know which scripts are already submitted to which opportunities
+  const allQualifyingSubIds = [...new Set(oppWithQualifications.flatMap(o => o.qualifyingScripts.map(q => q.id)))]
+  const existingOppSubs = new Map<string, Set<string>>() // opp_id -> Set<submission_id>
+  if (allQualifyingSubIds.length > 0) {
+    const { data: oppSubs } = await service
+      .from('opportunity_submissions')
+      .select('opportunity_id, submission_id, status')
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+    for (const os of (oppSubs || []) as { opportunity_id: string; submission_id: string; status: string }[]) {
+      if (!existingOppSubs.has(os.opportunity_id)) existingOppSubs.set(os.opportunity_id, new Set())
+      existingOppSubs.get(os.opportunity_id)!.add(os.submission_id)
+    }
+  }
+
+  // ---------- SUBMISSION STATUS ----------
+  type ActiveSub = {
+    id: string; opportunity_title: string; opportunity_slug: string
+    script_title: string; status: 'pending' | 'reviewed'; feedback: string | null
+    created_at: string
+  }
+  const activeSubs: ActiveSub[] = []
+  if (submissionIds.length > 0) {
+    const { data: myOppSubs } = await service
+      .from('opportunity_submissions')
+      .select('id, opportunity_id, submission_id, status, feedback, created_at')
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .order('created_at', { ascending: false })
+
+    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; created_at: string }[]) {
+      const opp = opportunities.find(o => o.id === os.opportunity_id)
+      const sub = visible.find(s => s.id === os.submission_id)
+      if (!opp || !sub) continue
+      activeSubs.push({
+        id: os.id,
+        opportunity_title: opp.title,
+        opportunity_slug: opp.slug ?? opp.id,
+        script_title: sub.title,
+        status: os.status as 'pending' | 'reviewed',
+        feedback: os.feedback,
+        created_at: os.created_at,
+      })
+    }
+  }
+
+  // ---------- AVAILABLE OPP COUNT ----------
+  let totalAvailableOpps = 0
+  for (const { opportunity, qualifyingScripts } of oppWithQualifications) {
+    const submitted = existingOppSubs.get(opportunity.id) ?? new Set()
+    const unsubmitted = qualifyingScripts.filter(qs => !submitted.has(qs.id))
+    if (unsubmitted.length > 0) totalAvailableOpps++
+  }
 
   // ---------- PAYWALL LOGIC ----------
   const allSubs = (mySubs as MySubRow[] | null) || []
@@ -141,7 +200,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   type ScriptRow = {
     submissionId: string; evaluationId: string | null; title: string
     format: string | null; genre: string | null; score: number | null
-    isProcessing: boolean; isLocked: boolean
+    isProcessing: boolean; isLocked: boolean; oppCount: number
+    createdAt: string
   }
   const scriptRows: ScriptRow[] = visible
     .map((s): ScriptRow | null => {
@@ -158,16 +218,17 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         score: ev?.weighted_score ?? null,
         isProcessing: stillProcessing,
         isLocked: isTrial && !stillProcessing && !isFirstCompleted,
+        oppCount: oppCountByScript.get(s.id) ?? 0,
+        createdAt: s.created_at,
       }
     })
     .filter((r): r is ScriptRow => r !== null)
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
-  const totalQualifying = oppWithQualifications.reduce((sum, o) => sum + o.qualifyingScripts.length, 0)
   const completedCount = allCompleted.length
-  const pendingSubs = pendingSubCount ?? 0
+  const pendingCount = activeSubs.filter(s => s.status === 'pending').length
+  const reviewedCount = activeSubs.filter(s => s.status === 'reviewed').length
 
-  // ---------- GENRE/BUDGET labels ----------
   const GENRE_LABELS: Record<string, string> = {
     thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
     comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
@@ -182,171 +243,160 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
 
-      <div className="max-w-2xl mx-auto space-y-6">
+      <div className="max-w-2xl mx-auto space-y-5">
 
-        {/* ── STATUS STRIP ─────────────────────────────────────── */}
-        <div
-          className="rounded-xl px-4 py-4 sm:px-5"
-          style={{ background: '#fff', border: '1px solid #e5e7eb' }}
-        >
-          <div className="flex items-center gap-3 flex-wrap">
-            {/* Script count */}
-            <div className="flex items-center gap-1.5">
-              <span className="text-[22px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
-                {completedCount}
-              </span>
-              <span className="text-[12.5px] text-gray-400 font-medium">
-                {completedCount === 1 ? 'script' : 'scripts'}
-              </span>
-            </div>
-
-            <span className="text-gray-200">·</span>
-
-            {/* Pending submissions */}
-            <div className="flex items-center gap-1.5">
-              <span className="text-[22px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
-                {pendingSubs}
-              </span>
-              <span className="text-[12.5px] text-gray-400 font-medium">
-                in consideration
-              </span>
-            </div>
-
-            {totalQualifying > 0 && (
-              <>
-                <span className="text-gray-200">·</span>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[22px] font-bold text-emerald-600" style={{ fontFamily: 'Georgia, serif' }}>
-                    {totalQualifying}
-                  </span>
-                  <span className="text-[12.5px] text-emerald-600 font-medium">
-                    {totalQualifying === 1 ? 'match' : 'matches'}
-                  </span>
-                </div>
-              </>
-            )}
-
-            {/* Pro/Free badge */}
-            <span className="ml-auto">
-              {isPro ? (
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">Pro</span>
-              ) : (
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Free</span>
-              )}
-            </span>
+        {/* ── STAT CARDS ──────────────────────────────────── */}
+        <div className="grid grid-cols-3 gap-3">
+          <div className="rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-center">
+            <p className="text-[28px] font-bold text-gray-900 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {completedCount}
+            </p>
+            <p className="text-[11.5px] text-gray-400 font-medium mt-1 m-0">
+              {completedCount === 1 ? 'Script' : 'Scripts'}
+            </p>
           </div>
+          <div className="rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-center">
+            <p className="text-[28px] font-bold text-amber-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {pendingCount}
+            </p>
+            <p className="text-[11.5px] text-gray-400 font-medium mt-1 m-0">
+              In consideration
+            </p>
+          </div>
+          <div className="rounded-xl bg-white border border-gray-200 px-4 py-3.5 text-center">
+            <p className="text-[28px] font-bold text-emerald-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {totalAvailableOpps}
+            </p>
+            <p className="text-[11.5px] text-gray-400 font-medium mt-1 m-0">
+              Available opps
+            </p>
+          </div>
+        </div>
 
-          {/* Submit CTA — always visible */}
-          <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
-            <span className="text-[12.5px] text-gray-400">
-              {completedCount === 0
-                ? 'Submit your first script to get started'
-                : isTrial
-                  ? 'Upgrade to evaluate more scripts'
-                  : 'Submit another script'}
-            </span>
+        {/* ── IN CONSIDERATION ────────────────────────────── */}
+        {activeSubs.length > 0 && (
+          <section>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">
+              In consideration
+              {reviewedCount > 0 && (
+                <span className="ml-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  {reviewedCount} feedback
+                </span>
+              )}
+            </h2>
+            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+              {activeSubs.map((sub) => {
+                const daysAgo = Math.floor((Date.now() - new Date(sub.created_at).getTime()) / (1000 * 60 * 60 * 24))
+                return (
+                  <div key={sub.id} className="px-4 py-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{sub.script_title}</p>
+                        <p className="text-[11.5px] text-gray-400 m-0 mt-0.5">
+                          <Link href={`/opportunities/${sub.opportunity_slug}`} className="text-purple-600 hover:underline">
+                            {sub.opportunity_title}
+                          </Link>
+                          {daysAgo > 0 && <span> &middot; {daysAgo}d ago</span>}
+                        </p>
+                      </div>
+                      <span className={`shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full ${
+                        sub.status === 'reviewed'
+                          ? 'text-emerald-600 bg-emerald-50'
+                          : 'text-amber-600 bg-amber-50'
+                      }`}>
+                        {sub.status === 'reviewed' ? 'Feedback' : 'Pending'}
+                      </span>
+                    </div>
+                    {sub.status === 'reviewed' && sub.feedback && (
+                      <div className="mt-2.5 pt-2.5 border-t border-gray-100">
+                        <p className="text-[12.5px] text-gray-600 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* ── AVAILABLE OPPORTUNITIES ─────────────────────── */}
+        {totalAvailableOpps > 0 && (
+          <section>
+            <header className="flex items-end justify-between gap-3 mb-2.5">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">
+                Opportunities for you
+                <span className="ml-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  {totalAvailableOpps} available
+                </span>
+              </h2>
+              <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                See all
+              </Link>
+            </header>
+            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+              {oppWithQualifications
+                .filter(({ opportunity, qualifyingScripts }) => {
+                  const submitted = existingOppSubs.get(opportunity.id) ?? new Set()
+                  return qualifyingScripts.some(qs => !submitted.has(qs.id))
+                })
+                .slice(0, 5)
+                .map(({ opportunity: opp, qualifyingScripts: qs }) => {
+                  const deadline = opp.deadline ? new Date(opp.deadline) : null
+                  const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
+                  const submitted = existingOppSubs.get(opp.id) ?? new Set()
+                  const availableCount = qs.filter(q => !submitted.has(q.id)).length
+
+                  return (
+                    <Link
+                      key={opp.id}
+                      href={`/opportunities/${opp.slug ?? opp.id}`}
+                      className="flex items-center gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{opp.title}</p>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {opp.genres.slice(0, 1).map(g => (
+                            <span key={g} className="text-[10px] font-bold text-blue-600">{GENRE_LABELS[g] ?? g}</span>
+                          ))}
+                          {daysLeft != null && daysLeft > 0 && (
+                            <span className={`text-[10.5px] font-medium ${daysLeft <= 7 ? 'text-red-400' : 'text-gray-300'}`}>
+                              {daysLeft}d left
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <span className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
+                        {availableCount} {availableCount === 1 ? 'script qualifies' : 'scripts qualify'}
+                      </span>
+                    </Link>
+                  )
+                })}
+            </div>
+          </section>
+        )}
+
+        {/* ── YOUR SCRIPTS ────────────────────────────────── */}
+        <section>
+          <header className="flex items-end justify-between gap-3 mb-2.5">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">
+              Your scripts
+            </h2>
             <Link
               href="/submit"
               className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1.5 rounded-md transition-colors"
             >
-              Submit script
-            </Link>
-          </div>
-        </div>
-
-        {/* ── OPPORTUNITIES ──────────────────────────────────── */}
-        <section>
-          <header className="flex items-end justify-between gap-3 mb-3">
-            <h2 className="text-[17px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-              Open calls
-            </h2>
-            <Link href="/opportunities" prefetch={false} className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-              See all →
+              + Submit script
             </Link>
           </header>
 
-          {oppWithQualifications.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-4 py-6 text-center">
-              <p className="text-[13px] text-gray-400 m-0">No open calls right now. Check back soon.</p>
+          {scriptRows.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[13.5px] text-gray-400 m-0">Submit your first script to get started.</p>
             </div>
           ) : (
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-              {oppWithQualifications.map(({ opportunity: opp, qualifyingScripts: qs }) => {
-                const deadline = opp.deadline ? new Date(opp.deadline) : null
-                const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
-                const hasMatch = qs.length > 0
-                const slug = opp.slug ?? opp.id
-
-                return (
-                  <Link
-                    key={opp.id}
-                    href={`/opportunities/${slug}`}
-                    className="flex items-center gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors"
-                  >
-                    {/* Genre/format pill */}
-                    <div className="flex flex-col gap-1 shrink-0" style={{ minWidth: 56 }}>
-                      {opp.genres.slice(0, 1).map(g => (
-                        <span key={g} className="text-[10.5px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full text-center">
-                          {GENRE_LABELS[g] ?? g}
-                        </span>
-                      ))}
-                      {opp.genres.length === 0 && opp.formats.slice(0, 1).map(f => (
-                        <span key={f} className="text-[10.5px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full text-center">
-                          {f}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Title + deadline */}
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp.title}</p>
-                      {daysLeft != null && daysLeft > 0 && (
-                        <p className={`text-[11.5px] m-0 mt-0.5 font-medium ${daysLeft <= 7 ? 'text-red-400' : 'text-gray-300'}`}>
-                          {daysLeft} {daysLeft === 1 ? 'day' : 'days'} left
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Status chip */}
-                    <div className="shrink-0">
-                      {hasMatch ? (
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="5" fill="currentColor" opacity="0.2"/><path d="M3 5.2L4.3 6.5L7 3.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                          {qs.length} {qs.length === 1 ? 'match' : 'matches'}
-                        </span>
-                      ) : (
-                        <span className="text-[11px] font-medium text-gray-300">
-                          No match
-                        </span>
-                      )}
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          )}
-        </section>
-
-        {/* ── YOUR SCRIPTS ───────────────────────────────────── */}
-        {scriptRows.length > 0 && (
-          <section>
-            <header className="flex items-end justify-between gap-3 mb-3">
-              <h2 className="text-[17px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-                Your scripts
-              </h2>
-              <Link href="/scripts" prefetch={false} className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                {scriptRows.length > 3 ? `All (${scriptRows.length}) →` : 'View all →'}
-              </Link>
-            </header>
-
-            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-              {scriptRows.slice(0, 5).map((s) => {
-                const href = s.isLocked
-                  ? '#'
-                  : s.evaluationId
-                    ? `/report/${s.evaluationId}`
-                    : '#'
-
+              {scriptRows.map((s) => {
+                const reportHref = s.evaluationId ? `/report/${s.evaluationId}` : '#'
                 return (
                   <div key={s.submissionId} className="relative">
                     {s.isLocked && (
@@ -357,64 +407,96 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                         </span>
                       </div>
                     )}
-                    <Link
-                      href={href}
-                      className={`flex items-center gap-3 px-4 py-3 ${s.isLocked ? 'pointer-events-none' : 'hover:bg-gray-50'} transition-colors`}
-                    >
-                      {/* Score */}
-                      <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{
-                        background: s.isProcessing ? '#f3f4f6' : s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
-                      }}>
-                        {s.isProcessing ? (
-                          <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
-                        ) : s.score != null ? (
-                          <span className="text-[15px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
-                            {Math.round(s.score)}
-                          </span>
-                        ) : (
-                          <span className="text-[11px] text-gray-300">—</span>
-                        )}
-                      </div>
-
-                      {/* Title + meta */}
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                        <div className="flex items-center gap-1.5 mt-0.5">
-                          {s.format && (
-                            <span className="text-[10.5px] font-medium text-gray-400">{s.format}</span>
-                          )}
-                          {s.genre && (
-                            <>
-                              {s.format && <span className="text-gray-200">·</span>}
-                              <span className="text-[10.5px] font-medium text-gray-400">{s.genre}</span>
-                            </>
-                          )}
-                          {s.isProcessing && (
-                            <span className="text-[10.5px] font-medium text-purple-500">Processing…</span>
+                    <div className={`px-4 py-3 ${s.isLocked ? '' : ''}`}>
+                      <div className="flex items-center gap-3">
+                        {/* Score badge */}
+                        <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{
+                          background: s.isProcessing ? '#f3f4f6' : s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                        }}>
+                          {s.isProcessing ? (
+                            <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
+                          ) : s.score != null ? (
+                            <span className="text-[15px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                              {Math.round(s.score)}
+                            </span>
+                          ) : (
+                            <span className="text-[11px] text-gray-300">&mdash;</span>
                           )}
                         </div>
-                      </div>
 
-                      {/* Arrow */}
-                      {!s.isLocked && !s.isProcessing && (
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 text-gray-200">
-                          <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                    </Link>
+                        {/* Title + meta */}
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
+                          <div className="flex items-center gap-1.5 mt-0.5">
+                            {s.format && <span className="text-[10.5px] text-gray-400">{s.format}</span>}
+                            {s.genre && (
+                              <>
+                                {s.format && <span className="text-gray-200">&middot;</span>}
+                                <span className="text-[10.5px] text-gray-400">{s.genre}</span>
+                              </>
+                            )}
+                            {s.isProcessing && (
+                              <span className="text-[10.5px] font-medium text-purple-500">Processing&hellip;</span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Opportunity match count — prominent */}
+                        {!s.isLocked && !s.isProcessing && s.oppCount > 0 && (
+                          <Link
+                            href="/opportunities"
+                            className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 hover:bg-emerald-100 px-2.5 py-1 rounded-full transition-colors"
+                          >
+                            {s.oppCount} {s.oppCount === 1 ? 'opp' : 'opps'}
+                          </Link>
+                        )}
+
+                        {/* View report — subtle */}
+                        {!s.isLocked && !s.isProcessing && s.evaluationId && (
+                          <Link
+                            href={reportHref}
+                            className="shrink-0 text-[11px] font-medium text-gray-400 hover:text-gray-700 transition-colors"
+                          >
+                            Report
+                          </Link>
+                        )}
+
+                        {/* Three-dot menu placeholder — TODO: wire up edit/settings */}
+                        {!s.isLocked && !s.isProcessing && (
+                          <button
+                            type="button"
+                            className="shrink-0 w-7 h-7 rounded-md flex items-center justify-center text-gray-300 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+                            title="More options"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                              <circle cx="7" cy="3" r="1.2" fill="currentColor"/>
+                              <circle cx="7" cy="7" r="1.2" fill="currentColor"/>
+                              <circle cx="7" cy="11" r="1.2" fill="currentColor"/>
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 )
               })}
             </div>
-          </section>
-        )}
+          )}
 
-        {/* Empty state — no scripts AND no opportunities */}
-        {scriptRows.length === 0 && opportunities.length === 0 && (
-          <div className="rounded-xl border border-dashed border-gray-200 px-5 py-10 text-center">
-            <p className="text-[14px] text-gray-400 m-0">Submit a script to get started.</p>
+          {/* Pro/Free badge + upgrade nudge */}
+          <div className="flex items-center justify-between mt-3">
+            {isPro ? (
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">Pro</span>
+            ) : (
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Free</span>
+            )}
+            {isTrial && (
+              <span className="text-[11.5px] text-gray-400">
+                Upgrade to evaluate more scripts
+              </span>
+            )}
           </div>
-        )}
+        </section>
       </div>
     </>
   )
