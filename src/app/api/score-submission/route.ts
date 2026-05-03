@@ -98,6 +98,43 @@ async function evaluateScript(
   const data = await response.json()
   const evaluation = JSON.parse(data.choices[0].message.content) as GEMEvaluation
 
+  // Validate required fields — the model occasionally nests `issues`
+  // inside `whats_special` instead of the top level, or drops it entirely.
+  // Promote nested issues first, then fall back to a placeholder.
+  if (!(evaluation as any).issues && (evaluation as any).whats_special?.issues) {
+    ;(evaluation as any).issues = (evaluation as any).whats_special.issues
+    console.warn(`[score-submission] promoted issues from whats_special.issues`)
+  }
+
+  const issues = (evaluation as any).issues as
+    | { headline?: string; items?: unknown[]; craft_note?: string }
+    | undefined
+  if (
+    !issues ||
+    !Array.isArray(issues.items) ||
+    issues.items.length === 0
+  ) {
+    ;(evaluation as any).issues = {
+      headline:
+        issues?.headline ||
+        'Development notes were not generated for this evaluation.',
+      items: issues?.items?.length
+        ? issues.items
+        : [
+            {
+              area: 'Evaluation incomplete',
+              detail:
+                'The scoring model did not produce development considerations for this script. Re-submit or contact support if this persists.',
+              is_primary_lever: true,
+            },
+          ],
+      ...(issues?.craft_note ? { craft_note: issues.craft_note } : {}),
+    }
+    console.warn(
+      `[score-submission] issues field missing or empty — injected placeholder`
+    )
+  }
+
   const scores = evaluation.scores as Record<string, { score: number }>
   const safeScores: Record<string, { score: number }> = {}
   for (const dim of DIMENSION_IDS) {

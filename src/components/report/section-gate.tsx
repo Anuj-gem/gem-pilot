@@ -134,31 +134,9 @@ export function SectionGate({
 
   return (
     <div className="relative">
-      {isOwnerOrAdmin && !hideOwnerPill && submissionId && (
-        <button
-          onClick={() => {
-            if (!isProSubscriber) {
-              setProPromptOpen(true)
-              return
-            }
-            setConfirmOpen(true)
-          }}
-          disabled={pending}
-          className={`${pillPositioning} z-10 inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] uppercase tracking-[0.12em] font-bold transition-colors ${
-            currentVis === 'public'
-              ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100'
-              : 'text-[var(--gem-gray-500)] bg-white border border-[var(--gem-gray-700)] hover:text-[var(--gem-gray-300)]'
-          } ${pending ? 'opacity-60 cursor-wait' : ''} ${!isProSubscriber ? 'opacity-60' : ''}`}
-          title={
-            !isProSubscriber
-              ? 'Privacy controls are a Pro feature — tap to upgrade'
-              : `Tap to make ${sectionLabel} ${nextVis}`
-          }
-        >
-          {currentVis === 'public' ? <Eye size={10} /> : <Lock size={10} />}
-          {currentVis === 'public' ? 'Visible' : 'Hidden'}
-        </button>
-      )}
+      {/* Privacy pills hidden — opportunities-v1. All sections are fully
+          visible; per-section privacy controls will return in a later release.
+          Pill rendering code preserved but gated off. */}
       {children}
       <PrivacyConfirmSheet
         open={confirmOpen}
