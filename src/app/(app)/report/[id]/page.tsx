@@ -61,9 +61,7 @@ import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 // IndustryActivityButton retired from the report page on 2026-04-30
 // v0.10.19 (still used on the dashboard via OwnerActionsMenu).
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
-import { AnnotationProvider, SectionAnnotations } from '@/components/report/annotation-layer'
-import { ReviewModeBanner } from '@/components/report/review-mode-banner'
-import { FeedbackBanner } from '@/components/report/feedback-banner'
+// Annotations removed — synthesized feedback + next-steps tag instead.
 import { PackagingSection } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
 // Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
@@ -90,7 +88,7 @@ import {
 
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string; download?: string; embedded?: string; review?: string }>
+  searchParams: Promise<{ for?: string; subscribed?: string; privacy?: string; pending?: string; download?: string; embedded?: string }>
 }
 
 interface V5Extras {
@@ -130,7 +128,7 @@ function createServiceClient() {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { id } = await params
-  const { for: forWriter, subscribed: justSubscribed, pending: pendingParam, download: downloadParam, embedded: embeddedParam, review: reviewSubmissionId } = await searchParams
+  const { for: forWriter, subscribed: justSubscribed, pending: pendingParam, download: downloadParam, embedded: embeddedParam } = await searchParams
   // Embedded mode: the report is loaded inside the dashboard's modal
   // iframe. Skip the global Nav and footer so the modal chrome doesn't
   // double up. Anuj 2026-04-30.
@@ -327,78 +325,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     !!user &&
     !isOwner &&
     (viewerIsReviewer || viewerHasInvite || isPublicCompleted)
-
-  // ─── Annotation / Review Mode ────────────────────────────────────
-  // ?review=<opportunity_submission_id> triggers review mode for the
-  // opportunity owner. Also fetch annotations for the writer if they
-  // have reviewed feedback on this script.
-  type AnnotationRow = { id: string; anchor: string; comment: string; sentiment: 'strength' | 'concern' | 'context' | null; created_at: string }
-  let annotationMode: 'reviewer' | 'writer' | 'none' = 'none'
-  let annotations: AnnotationRow[] = []
-  let reviewOpportunityTitle: string | null = null
-  let reviewSubmissionRowId: string | null = null
-  let reviewExistingFeedback: string | null = null
-
-  if (reviewSubmissionId && user) {
-    // Reviewer mode: verify the user owns the opportunity
-    const { data: oppSub } = await serviceClient
-      .from('opportunity_submissions')
-      .select('id, opportunity_id, feedback, status')
-      .eq('id', reviewSubmissionId)
-      .single()
-    if (oppSub) {
-      const { data: opp } = await serviceClient
-        .from('opportunities')
-        .select('owner_id, title')
-        .eq('id', oppSub.opportunity_id)
-        .single()
-      if (opp?.owner_id === user.id) {
-        annotationMode = 'reviewer'
-        reviewOpportunityTitle = opp.title
-        reviewSubmissionRowId = oppSub.id
-        reviewExistingFeedback = oppSub.feedback
-        // Fetch existing annotations
-        const { data: anns } = await serviceClient
-          .from('submission_annotations')
-          .select('id, anchor, comment, sentiment, created_at')
-          .eq('submission_id', oppSub.id)
-          .order('created_at', { ascending: true })
-        annotations = (anns ?? []) as AnnotationRow[]
-      }
-    }
-  } else if (isOwner && user) {
-    // Writer mode: check if any opportunity_submissions for this script
-    // have been reviewed with annotations
-    const { data: reviewedSubs } = await serviceClient
-      .from('opportunity_submissions')
-      .select('id, opportunity_id, feedback, status')
-      .eq('submission_id', submission.id)
-      .eq('writer_id', user.id)
-      .eq('status', 'reviewed')
-      .order('reviewed_at', { ascending: false })
-      .limit(1)
-    if (reviewedSubs && reviewedSubs.length > 0) {
-      const rs = reviewedSubs[0]
-      const { data: opp } = await serviceClient
-        .from('opportunities')
-        .select('title')
-        .eq('id', rs.opportunity_id)
-        .single()
-      // Fetch annotations for this reviewed submission
-      const { data: anns } = await serviceClient
-        .from('submission_annotations')
-        .select('id, anchor, comment, sentiment, created_at')
-        .eq('submission_id', rs.id)
-        .order('created_at', { ascending: true })
-      if (anns && anns.length > 0) {
-        annotationMode = 'writer'
-        annotations = anns as AnnotationRow[]
-        reviewOpportunityTitle = opp?.title ?? 'Opportunity'
-        reviewSubmissionRowId = rs.id
-        reviewExistingFeedback = rs.feedback
-      }
-    }
-  }
 
   const showUpgradeCTA = !viewerIsSubscribed && !!user
   const locked = !ownerIsSubscribed
@@ -674,27 +600,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             background instead of having text float against #F7F8FA.
             Chrome (back link + upgrade banner + status line + privacy
             modal triggers) stays outside the card. */}
-        <AnnotationProvider
-          initialAnnotations={annotations}
-          mode={annotationMode}
-          opportunityTitle={reviewOpportunityTitle}
-          submissionRowId={reviewSubmissionRowId}
-        >
-        {/* Annotation banners */}
-        {annotationMode === 'reviewer' && reviewSubmissionRowId && reviewOpportunityTitle && (
-          <ReviewModeBanner
-            submissionRowId={reviewSubmissionRowId}
-            opportunityTitle={reviewOpportunityTitle}
-            existingFeedback={reviewExistingFeedback}
-          />
-        )}
-        {annotationMode === 'writer' && reviewOpportunityTitle && reviewExistingFeedback && (
-          <FeedbackBanner
-            opportunityTitle={reviewOpportunityTitle}
-            closingComment={reviewExistingFeedback}
-            annotationCount={annotations.length}
-          />
-        )}
         <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm">
 
         {/* Writer card — clickable link to /w/{handle}. Same component used
@@ -838,7 +743,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </ol>
               )}
             </EditorialSection>
-            <SectionAnnotations anchor="whats_special" />
             </div>
           )}
         </SectionGate>
@@ -923,7 +827,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </Section>
             )
           })()}
-            <SectionAnnotations anchor="lead_characters" />
             </div>
           )}
         </SectionGate>
@@ -948,7 +851,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 aria-hidden={applyPaywallBlur ? true : undefined}
               >
                 <PackagingSection data={packaging} />
-                <SectionAnnotations anchor="packaging" />
               </div>
             )}
           </div>
@@ -1082,7 +984,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </EditorialSection>
             )
           })()}
-          <SectionAnnotations anchor="issues" />
           </SectionGate>
         )}
 
@@ -1105,7 +1006,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               aria-hidden={applyPaywallBlur ? true : undefined}
             >
               <RiskDetailsSection data={riskDetails} production={production} />
-              <SectionAnnotations anchor="production_reality" />
             </div>
           </SectionGate>
         )}
@@ -1221,7 +1121,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </div>
                 </details>
               )}
-              <SectionAnnotations anchor="overall_score" />
             </section>
           )}
 
@@ -1427,7 +1326,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
         </div>
         {/* /v0.10.13 white card wrapper closes here. */}
-        </AnnotationProvider>
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.

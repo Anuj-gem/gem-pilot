@@ -1,12 +1,19 @@
 'use client'
 
 // ProducerReviewCard — inline review UI for a single submission.
-// Simple: read the script info, write feedback, send it.
-// Status is just "pending" (in consideration) or "reviewed" (feedback sent).
-// opportunities-v1 (2026-05-02).
+// Feedback = synthesized comment + next-steps tag.
+// opportunities-v1 (2026-05-03).
 
 import { useState } from 'react'
 import Link from 'next/link'
+
+const NEXT_STEPS_OPTIONS = [
+  { value: 'revise_resubmit', label: 'Revise & resubmit' },
+  { value: 'new_concept', label: 'Send a different concept' },
+  { value: 'in_touch', label: "We'll be in touch" },
+] as const
+
+type NextSteps = typeof NEXT_STEPS_OPTIONS[number]['value'] | null
 
 interface ReviewItem {
   submissionRowId: string
@@ -21,12 +28,14 @@ interface ReviewItem {
   writerHandle: string | null
   status: string
   feedback: string | null
+  nextSteps: string | null
   submittedAt: string
   reviewedAt: string | null
 }
 
 export function ProducerReviewCard({ item }: { item: ReviewItem }) {
   const [feedback, setFeedback] = useState(item.feedback ?? '')
+  const [nextSteps, setNextSteps] = useState<NextSteps>((item.nextSteps as NextSteps) ?? null)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [reviewed, setReviewed] = useState(item.status === 'reviewed')
@@ -43,6 +52,7 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
         submission_id: item.submissionRowId,
         status: 'reviewed',
         feedback: feedback.trim(),
+        next_steps: nextSteps,
       }),
     })
     setSaving(false)
@@ -101,14 +111,14 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             </p>
           )}
 
-          {/* Read report link — opens in review mode with annotations */}
+          {/* Read report link */}
           {item.evaluationId && (
             <Link
-              href={`/report/${item.evaluationId}?review=${item.submissionRowId}`}
+              href={`/report/${item.evaluationId}`}
               target="_blank"
               className="inline-flex items-center gap-1 text-[12px] font-semibold text-purple-600 hover:text-purple-800"
             >
-              {reviewed ? 'View report & annotations →' : 'Review report & annotate →'}
+              View report →
             </Link>
           )}
 
@@ -120,6 +130,29 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             rows={4}
             className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
           />
+
+          {/* Next steps tag */}
+          <div>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+              Suggested next steps
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {NEXT_STEPS_OPTIONS.map(opt => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setNextSteps(nextSteps === opt.value ? null : opt.value)}
+                  className={`text-[11.5px] font-semibold px-3 py-1.5 rounded-full border transition-colors ${
+                    nextSteps === opt.value
+                      ? 'border-purple-300 bg-purple-50 text-purple-700'
+                      : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300'
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
           {/* Send button */}
           <div className="flex items-center gap-2">

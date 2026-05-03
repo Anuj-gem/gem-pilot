@@ -154,34 +154,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   // ---------- SUBMISSION STATUS ----------
   type ActiveSub = {
     id: string; opportunity_title: string; opportunity_slug: string
-    script_title: string; evaluationId: string | null; status: 'pending' | 'reviewed'; feedback: string | null
-    annotationCount: number; submitted_at: string
+    script_title: string; evaluationId: string | null; status: 'pending' | 'reviewed'
+    feedback: string | null; nextSteps: string | null; submitted_at: string
   }
   const activeSubs: ActiveSub[] = []
   if (submissionIds.length > 0) {
     const { data: myOppSubs } = await service
       .from('opportunity_submissions')
-      .select('id, opportunity_id, submission_id, status, feedback, submitted_at')
+      .select('id, opportunity_id, submission_id, status, feedback, next_steps, submitted_at')
       .eq('writer_id', user.id)
       .neq('status', 'withdrawn')
       .order('submitted_at', { ascending: false })
 
-    // Fetch annotation counts for reviewed submissions
-    const reviewedOppSubIds = (myOppSubs || [])
-      .filter((os: any) => os.status === 'reviewed')
-      .map((os: any) => os.id)
-    const annotationCounts = new Map<string, number>()
-    if (reviewedOppSubIds.length > 0) {
-      const { data: annCounts } = await service
-        .from('submission_annotations')
-        .select('submission_id')
-        .in('submission_id', reviewedOppSubIds)
-      for (const ac of (annCounts || []) as { submission_id: string }[]) {
-        annotationCounts.set(ac.submission_id, (annotationCounts.get(ac.submission_id) ?? 0) + 1)
-      }
-    }
-
-    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; submitted_at: string }[]) {
+    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; next_steps: string | null; submitted_at: string }[]) {
       const opp = allOpportunities.find(o => o.id === os.opportunity_id)
       const sub = visible.find(s => s.id === os.submission_id)
       if (!opp || !sub) continue
@@ -194,7 +179,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         evaluationId: ev?.id ?? null,
         status: os.status as 'pending' | 'reviewed',
         feedback: os.feedback,
-        annotationCount: annotationCounts.get(os.id) ?? 0,
+        nextSteps: os.next_steps,
         submitted_at: os.submitted_at,
       })
     }
@@ -344,28 +329,29 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                     {/* Feedback section for reviewed submissions */}
                     {sub.status === 'reviewed' && sub.feedback && (
                       <div className="mt-2.5 pt-2.5 border-t border-gray-100">
-                        <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1">
-                          What they&apos;re looking for next
-                        </p>
+                        {sub.nextSteps && (
+                          <span className={`inline-block text-[10.5px] font-bold px-2.5 py-1 rounded-full mb-2 ${
+                            sub.nextSteps === 'in_touch'
+                              ? 'text-emerald-700 bg-emerald-50'
+                              : sub.nextSteps === 'revise_resubmit'
+                              ? 'text-amber-700 bg-amber-50'
+                              : 'text-gray-600 bg-gray-100'
+                          }`}>
+                            {sub.nextSteps === 'revise_resubmit' ? 'Revise & resubmit'
+                              : sub.nextSteps === 'new_concept' ? 'Send a different concept'
+                              : sub.nextSteps === 'in_touch' ? "We'll be in touch"
+                              : sub.nextSteps}
+                          </span>
+                        )}
                         <p className="text-[12.5px] text-gray-600 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
-                        <div className="flex items-center gap-3 mt-2">
-                          {sub.annotationCount > 0 && sub.evaluationId && (
-                            <Link
-                              href={`/report/${sub.evaluationId}`}
-                              className="text-[11.5px] font-semibold text-purple-600 hover:text-purple-800"
-                            >
-                              {sub.annotationCount} annotation{sub.annotationCount !== 1 ? 's' : ''} on your report &rarr;
-                            </Link>
-                          )}
-                          {sub.evaluationId && sub.annotationCount === 0 && (
-                            <Link
-                              href={`/report/${sub.evaluationId}`}
-                              className="text-[11.5px] font-semibold text-purple-600 hover:text-purple-800"
-                            >
-                              View report &rarr;
-                            </Link>
-                          )}
-                        </div>
+                        {sub.evaluationId && (
+                          <Link
+                            href={`/report/${sub.evaluationId}`}
+                            className="inline-block mt-2 text-[11.5px] font-semibold text-purple-600 hover:text-purple-800"
+                          >
+                            View report &rarr;
+                          </Link>
+                        )}
                       </div>
                     )}
 

@@ -45,14 +45,14 @@ export default async function ProducerOpportunitiesPage() {
   // Fetch all submissions for these opportunities
   const { data: allSubs } = await service
     .from('opportunity_submissions')
-    .select('id, opportunity_id, submission_id, writer_id, status, feedback, submitted_at, reviewed_at')
+    .select('id, opportunity_id, submission_id, writer_id, status, feedback, next_steps, submitted_at, reviewed_at')
     .in('opportunity_id', oppIds)
     .order('submitted_at', { ascending: false })
 
   type SubRow = {
     id: string; opportunity_id: string; submission_id: string;
     writer_id: string; status: string; feedback: string | null;
-    submitted_at: string; reviewed_at: string | null
+    next_steps: string | null; submitted_at: string; reviewed_at: string | null
   }
   const submissions = (allSubs || []) as SubRow[]
 
@@ -106,6 +106,7 @@ export default async function ProducerOpportunitiesPage() {
     writerHandle: string | null
     status: string
     feedback: string | null
+    nextSteps: string | null
     submittedAt: string
     reviewedAt: string | null
   }
@@ -130,6 +131,7 @@ export default async function ProducerOpportunitiesPage() {
           writerHandle: writer?.handle ?? null,
           status: s.status,
           feedback: s.feedback,
+          nextSteps: s.next_steps,
           submittedAt: s.submitted_at,
           reviewedAt: s.reviewed_at,
         }
