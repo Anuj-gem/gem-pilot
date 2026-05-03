@@ -43,12 +43,16 @@ export function CollapsibleOpportunity({
     ? Math.ceil((new Date(deadline).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
     : null
 
+  const [error, setError] = useState<string | null>(null)
+
   async function handleSubmit(scriptId: string) {
     setSubmitting(scriptId)
+    setError(null)
     const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { setSubmitting(null); return }
+    if (!user) { setError('Please sign in'); setSubmitting(null); return }
 
-    const { error } = await supabase
+    // Try insert first; if unique constraint fails, upsert the withdrawn row
+    const { error: insertErr } = await supabase
       .from('opportunity_submissions')
       .insert({
         opportunity_id: opportunityId,
@@ -57,11 +61,31 @@ export function CollapsibleOpportunity({
         status: 'pending',
       })
 
-    setSubmitting(null)
-    if (!error) {
-      setSubmitted(prev => new Set(prev).add(scriptId))
-      router.refresh()
+    if (insertErr) {
+      if (insertErr.code === '23505') {
+        // Already exists (likely withdrawn) — update status back to pending
+        const { error: updateErr } = await supabase
+          .from('opportunity_submissions')
+          .update({ status: 'pending', feedback: null, next_steps: null, reviewed_at: null })
+          .eq('opportunity_id', opportunityId)
+          .eq('submission_id', scriptId)
+          .eq('writer_id', user.id)
+
+        if (updateErr) {
+          setError('Could not resubmit')
+          setSubmitting(null)
+          return
+        }
+      } else {
+        setError(insertErr.message)
+        setSubmitting(null)
+        return
+      }
     }
+
+    setSubmitting(null)
+    setSubmitted(prev => new Set(prev).add(scriptId))
+    router.refresh()
   }
 
   const visibleScripts = qualifyingScripts.filter(s => !submitted.has(s.id))
@@ -131,6 +155,9 @@ export function CollapsibleOpportunity({
                 + {visibleScripts.length - 5} more qualifying scripts
               </Link>
             </p>
+          )}
+          {error && (
+            <p className="text-[11px] text-red-500 text-center mt-2 m-0">{error}</p>
           )}
           {submitted.size > 0 && (
             <p className="text-[11px] text-emerald-600 text-center mt-2 m-0 font-medium">

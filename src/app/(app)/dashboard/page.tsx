@@ -522,7 +522,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
               {/* View all link */}
               {activeSubs.length > 3 && (
                 <div className="px-4 py-2.5 border-t border-gray-100 text-center">
-                  <Link href="/opportunities" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                  <Link href="/opportunity-history" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
                     View all submissions &rarr;
                   </Link>
                 </div>

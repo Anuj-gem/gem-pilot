@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import {
   LayoutDashboard,
+  History,
   LogOut,
   Menu,
   X,
@@ -110,8 +111,7 @@ export default function Nav({ userData }: NavProps = {}) {
   // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
   const loggedInLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    // Community hidden — replaced by Opportunities (v0.13 opportunities-v1)
-    // { href: '/community', label: 'Community', icon: Users },
+    { href: '/opportunity-history', label: 'History', icon: History },
   ]
 
   return (
