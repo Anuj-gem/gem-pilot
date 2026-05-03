@@ -11,7 +11,6 @@ import {
   X,
   Plus,
   ChevronDown,
-  Users,
 } from 'lucide-react'
 import {
   NavUserMenu,
@@ -111,7 +110,8 @@ export default function Nav({ userData }: NavProps = {}) {
   // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
   const loggedInLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/community', label: 'Community', icon: Users },
+    // Community hidden — replaced by Opportunities (v0.13 opportunities-v1)
+    // { href: '/community', label: 'Community', icon: Users },
   ]
 
   return (

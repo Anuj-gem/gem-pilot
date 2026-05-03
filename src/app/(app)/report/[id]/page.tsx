@@ -509,17 +509,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 pb-24">
-        {/* Back-to-Community affordance for logged-in viewers — gives
-            users a way out of a report that isn't the browser back button.
-            Anuj 2026-04-30 cleanup. */}
+        {/* Back link — was Community, now Dashboard (opportunities-v1). */}
         {user && (
           <div className="gem-no-print mb-4">
             <Link
-              href="/community"
+              href="/dashboard"
               prefetch={false}
               className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-100)] transition-colors"
             >
-              ← Community
+              ← Dashboard
             </Link>
           </div>
         )}
@@ -1379,35 +1377,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* /v0.10.13 white card wrapper closes here. */}
       </div>
 
-      {/* Invite a Reviewer — visible to script owner only (Anuj 2026-04-29 v0.2). */}
-      {isOwner && (
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-8 flex items-center justify-between gap-3">
-          <div className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-900">Want a real read?</span>{' '}
-            Invite a friend, peer, or mentor to leave a review.
-          </div>
-          <InviteReviewerButton
-            submissionId={submission.id}
-            pendingCount={pendingInviteCount}
-          />
-        </div>
-      )}
-
-      {/* Peer reviews — community Reads on this script. Visible to any
-          authenticated viewer when reviews exist; reviewers (global or
-          per-script invitees) also see a "Review this script" CTA.
-          (Anuj 2026-04-29 peer-reviews v0.2.) */}
-      {user && (
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <PeerReviews
-            submissionId={submission.id}
-            reviews={peerReviews}
-            viewerCanReview={viewerCanReview}
-            viewerId={user.id}
-            isOwner={isOwner}
-          />
-        </div>
-      )}
+      {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
+          Code preserved, just not rendered. */}
 
       {!viewerIsSubscribed && user && (
         <SubscribeGate evaluationId={id} isLoggedIn={true} />
