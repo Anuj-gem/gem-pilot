@@ -20,7 +20,8 @@
 
 import Link from 'next/link'
 import { ScoreBadge } from './score-badge'
-import { IndustryStatsButton } from './industry-stats-button'
+// IndustryStatsButton hidden — opportunities-v1 strips industry stats.
+// import { IndustryStatsButton } from './industry-stats-button'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 
 export interface ScriptCardData {
@@ -427,16 +428,10 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
             )}
           </div>
 
-          {/* ACTION ROW — every card gets two explicit buttons.
-              Owner: View stats (left) + View report (right).
-              Non-owner: Submit review (left) + View report (right).
-              "View report" is always present so the action is never
-              ambiguous (Anuj 2026-04-30: 'sometimes some people get
-              confused without it'). */}
+          {/* ACTION ROW — opportunities-v1: industry stats button removed for owners.
+              Non-owner: Submit review (left) + View report (right). */}
           <div className="mt-3.5 pt-3 flex items-center gap-2" style={{ borderTop: `1px solid ${CARD.border}` }}>
-            {isOwner ? (
-              <IndustryStatsButton submissionId={s.submission_id} />
-            ) : reviewsAllowed ? (
+            {!isOwner && reviewsAllowed ? (
               <Link
                 href={`/review/${s.submission_id}`}
                 prefetch={false}
@@ -447,9 +442,8 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
               </Link>
             ) : null}
             <span className="flex-1" />
-            {/* Owner triple-dot — same OwnerActionsMenu the report page
-                hosts. Edit + Download + Privacy + Remove. Anuj 2026-04-30
-                v0.10.12. */}
+            {/* Owner triple-dot — privacy + industry activity props
+                removed (opportunities-v1). */}
             {isOwner && s.evaluation_id && (
               <div className="relative z-10 pointer-events-auto">
                 <OwnerActionsMenu
@@ -460,10 +454,6 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                     s.format === 'Feature film' || s.format === 'Series' ? s.format : null
                   }
                   isSubscribed={true}
-                  activity={s.industry_activity}
-                  isPublic={s.is_public ?? false}
-                  allowReviews={s.allow_reviews ?? true}
-                  allowIndustry={s.allow_industry ?? true}
                   editHref={`/report/${s.evaluation_id}?edit=1`}
                   downloadHref={`/report/${s.evaluation_id}?download=1`}
                 />
