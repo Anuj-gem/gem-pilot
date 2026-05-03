@@ -313,7 +313,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
 
             <div className="mt-4 pt-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
               <p className="text-[13px] text-gray-600 leading-snug mb-3">
-                Your report is ready. Upgrade to Pro to access it, publish on Discover, and evaluate unlimited scripts.
+                Your report is ready. Upgrade to view it, submit to industry opportunities, and evaluate unlimited scripts.
               </p>
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}

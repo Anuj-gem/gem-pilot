@@ -133,7 +133,10 @@ export function CollapsibleOpportunity({
                   background: s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
                 }}>
                   {s.score != null ? (
-                    <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                    <span className="text-[12px] font-bold" style={{
+                      color: s.score >= 75 ? '#7c3aed' : '#6b7280',
+                      ...(!isPro ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
+                    }}>
                       {Math.round(s.score)}
                     </span>
                   ) : (
