@@ -77,6 +77,12 @@ export function OpportunityCard({ opportunity, qualifyingScripts = [], compact =
   const hasQualifying = qualifyingScripts.length > 0
   const href = opportunity.slug ? `/opportunities/${opportunity.slug}` : '#'
 
+  // Build the secondary info line: "Feature · Thriller, Crime · Indie budget · Min 70"
+  const infoParts: string[] = []
+  if (opportunity.formats.length > 0) infoParts.push(opportunity.formats.join(', '))
+  if (opportunity.budget_tiers.length > 0) infoParts.push(opportunity.budget_tiers.map(b => BUDGET_LABELS[b] ?? b).join(', ') + ' budget')
+  if (opportunity.min_score) infoParts.push(`Min score ${opportunity.min_score}`)
+
   return (
     <Link
       href={href}
@@ -87,89 +93,67 @@ export function OpportunityCard({ opportunity, qualifyingScripts = [], compact =
       }}
     >
       <div className="px-4 py-3.5 sm:px-5 sm:py-4">
-        {/* Title + deadline */}
-        <div className="flex items-start justify-between gap-3 mb-1.5">
-          <h3 className="text-[14.5px] font-semibold text-gray-900 leading-snug m-0">
+        {/* Row 1: Title + deadline */}
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="text-[15px] font-bold text-gray-900 leading-snug m-0">
             {opportunity.title}
           </h3>
           {opportunity.deadline && (
-            <span className="flex-shrink-0 text-[11.5px] text-gray-400 font-medium whitespace-nowrap mt-0.5">
+            <span className="flex-shrink-0 text-[11px] text-gray-400 font-medium whitespace-nowrap mt-0.5">
               {formatDeadline(opportunity.deadline)}
             </span>
           )}
         </div>
 
-        {/* Description (hidden in compact mode) */}
-        {!compact && (
-          <p className="text-[13px] text-gray-500 leading-[1.55] m-0 mb-3 line-clamp-2">
-            {opportunity.description}
+        {/* Row 2: Deal type + perspective as text */}
+        {(opportunity.deal_type || opportunity.perspective) && (
+          <p className="text-[12.5px] font-semibold text-gray-500 mt-1 m-0">
+            {[
+              opportunity.perspective && (PERSPECTIVE_LABELS[opportunity.perspective] ?? opportunity.perspective),
+              opportunity.deal_type && (DEAL_TYPE_LABELS[opportunity.deal_type] ?? opportunity.deal_type),
+            ].filter(Boolean).join(' · ')}
           </p>
         )}
 
-        {/* Perspective + Deal type pills — most important info at a glance */}
-        <div className="flex flex-wrap gap-1.5 mb-2">
-          {opportunity.deal_type && (
-            <span className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
-              {DEAL_TYPE_LABELS[opportunity.deal_type] ?? opportunity.deal_type}
-            </span>
-          )}
-          {opportunity.perspective && (
-            <span className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
-              {PERSPECTIVE_LABELS[opportunity.perspective] ?? opportunity.perspective}
-            </span>
-          )}
-        </div>
-
-        {/* Filter pills */}
-        <div className="flex flex-wrap gap-1.5 mb-3">
-          {opportunity.formats.map(f => (
-            <span key={f} className="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full bg-purple-50 text-purple-700">
-              {f}
-            </span>
-          ))}
-          {opportunity.genres.map(g => (
-            <span key={g} className="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">
-              {GENRE_LABELS[g] ?? g}
-            </span>
-          ))}
-          {opportunity.budget_tiers.map(b => (
-            <span key={b} className="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-700">
-              {BUDGET_LABELS[b] ?? b}
-            </span>
-          ))}
-          {opportunity.min_score && (
-            <span className="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
-              Min score: {opportunity.min_score}
-            </span>
-          )}
-        </div>
-
-        {/* Qualification status */}
-        {hasQualifying ? (
-          <div className="flex flex-wrap gap-1.5">
-            {qualifyingScripts.map(s => (
-              <span
-                key={s.id}
-                className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700"
-              >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.15"/><path d="M3.5 6.2L5.2 7.8L8.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                {s.title} qualifies
+        {/* Row 3: Genres — prominent pills */}
+        {opportunity.genres.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-2.5">
+            {opportunity.genres.map(g => (
+              <span key={g} className="inline-block text-[11.5px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700">
+                {GENRE_LABELS[g] ?? g}
               </span>
             ))}
           </div>
-        ) : (
-          <span className="inline-flex items-center gap-1 text-[11.5px] font-medium text-gray-400">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="currentColor" strokeWidth="1" opacity="0.4"/><path d="M4 6h4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/></svg>
-            No matching scripts yet
-          </span>
         )}
 
-        {/* Posted by */}
-        {opportunity.posted_by && !compact && (
-          <p className="text-[11px] text-gray-400 mt-2.5 m-0">
-            Posted by {opportunity.posted_by}
+        {/* Row 4: Format, budget, min score as a quiet info line */}
+        {infoParts.length > 0 && (
+          <p className="text-[11.5px] text-gray-400 mt-2 m-0">
+            {infoParts.join(' · ')}
           </p>
         )}
+
+        {/* Row 5: Qualification status */}
+        <div className="mt-3 pt-2.5 border-t border-gray-100">
+          {hasQualifying ? (
+            <div className="flex flex-wrap gap-1.5">
+              {qualifyingScripts.map(s => (
+                <span
+                  key={s.id}
+                  className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700"
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.15"/><path d="M3.5 6.2L5.2 7.8L8.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  {s.title} qualifies
+                </span>
+              ))}
+            </div>
+          ) : (
+            <span className="inline-flex items-center gap-1 text-[11.5px] font-medium text-gray-400">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="currentColor" strokeWidth="1" opacity="0.4"/><path d="M4 6h4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/></svg>
+              No matching scripts yet
+            </span>
+          )}
+        </div>
       </div>
     </Link>
   )
