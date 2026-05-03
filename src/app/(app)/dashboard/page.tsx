@@ -23,6 +23,8 @@ import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
+import { MarkViewed } from '@/components/dashboard/mark-viewed'
+import { ExpandablePastFeedback } from '@/components/dashboard/expandable-feedback'
 import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
@@ -155,18 +157,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   type ActiveSub = {
     id: string; opportunity_title: string; opportunity_slug: string
     script_title: string; evaluationId: string | null; status: 'pending' | 'reviewed'
-    feedback: string | null; nextSteps: string | null; submitted_at: string
+    feedback: string | null; nextSteps: string | null
+    submitted_at: string; isNewFeedback: boolean
   }
   const activeSubs: ActiveSub[] = []
   if (submissionIds.length > 0) {
     const { data: myOppSubs } = await service
       .from('opportunity_submissions')
-      .select('id, opportunity_id, submission_id, status, feedback, next_steps, submitted_at')
+      .select('id, opportunity_id, submission_id, status, feedback, next_steps, submitted_at, feedback_viewed_at')
       .eq('writer_id', user.id)
       .neq('status', 'withdrawn')
       .order('submitted_at', { ascending: false })
 
-    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; next_steps: string | null; submitted_at: string }[]) {
+    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; next_steps: string | null; submitted_at: string; feedback_viewed_at: string | null }[]) {
       const opp = allOpportunities.find(o => o.id === os.opportunity_id)
       const sub = visible.find(s => s.id === os.submission_id)
       if (!opp || !sub) continue
@@ -181,6 +184,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         feedback: os.feedback,
         nextSteps: os.next_steps,
         submitted_at: os.submitted_at,
+        isNewFeedback: os.status === 'reviewed' && !os.feedback_viewed_at,
       })
     }
   }
@@ -232,7 +236,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const completedCount = allCompleted.length
   const pendingCount = activeSubs.filter(s => s.status === 'pending').length
   const reviewedCount = activeSubs.filter(s => s.status === 'reviewed').length
+  const newFeedbackCount = activeSubs.filter(s => s.isNewFeedback).length
   const qualifyingScriptCount = [...oppCountByScript.values()].filter(c => c > 0).length
+
+  // Sort: new feedback first, then pending, then past feedback
+  const newFeedbackSubs = activeSubs.filter(s => s.isNewFeedback)
+  const pendingSubs = activeSubs.filter(s => s.status === 'pending')
+  const pastFeedbackSubs = activeSubs.filter(s => s.status === 'reviewed' && !s.isNewFeedback)
+
+  const NEXT_STEPS_LABELS: Record<string, string> = {
+    revise_resubmit: 'Revise & resubmit',
+    new_concept: 'Send a different concept',
+    in_touch: "We'll be in touch",
+  }
 
   return (
     <>
@@ -241,139 +257,197 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
+      {newFeedbackSubs.length > 0 && (
+        <MarkViewed submissionIds={newFeedbackSubs.map(s => s.id)} />
+      )}
 
       <div className="max-w-2xl mx-auto space-y-5">
 
         {/* ── STAT CARDS ──────────────────────────────────── */}
         <div className="grid grid-cols-4 gap-2.5">
-          <div className="rounded-xl bg-white border border-gray-200 px-3 py-3.5 text-center">
-            <p className="text-[26px] font-bold text-gray-900 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+          <div className="rounded-xl bg-gray-50 border border-gray-100 px-3 py-3.5 text-center">
+            <p className="text-[26px] font-bold text-gray-800 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {completedCount}
             </p>
             <p className="text-[10.5px] text-gray-400 font-medium mt-1 m-0">
               {completedCount === 1 ? 'Script' : 'Scripts'}
             </p>
           </div>
-          <div className="rounded-xl bg-white border border-gray-200 px-3 py-3.5 text-center">
+          <div className="rounded-xl bg-purple-50 border border-purple-100 px-3 py-3.5 text-center">
             <p className="text-[26px] font-bold text-purple-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {qualifyingScriptCount}
             </p>
-            <p className="text-[10.5px] text-gray-400 font-medium mt-1 m-0">
+            <p className="text-[10.5px] text-purple-400 font-medium mt-1 m-0">
               Qualifying
             </p>
           </div>
-          <div className="rounded-xl bg-white border border-gray-200 px-3 py-3.5 text-center">
+          <div className="rounded-xl bg-amber-50 border border-amber-100 px-3 py-3.5 text-center">
             <p className="text-[26px] font-bold text-amber-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {pendingCount}
             </p>
-            <p className="text-[10.5px] text-gray-400 font-medium mt-1 m-0">
+            <p className="text-[10.5px] text-amber-500 font-medium mt-1 m-0">
               In consideration
             </p>
           </div>
-          <div className="rounded-xl bg-white border border-gray-200 px-3 py-3.5 text-center">
+          <div className="rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-3.5 text-center">
             <p className="text-[26px] font-bold text-emerald-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {reviewedCount}
             </p>
-            <p className="text-[10.5px] text-gray-400 font-medium mt-1 m-0">
+            <p className="text-[10.5px] text-emerald-500 font-medium mt-1 m-0">
               Feedback
             </p>
           </div>
         </div>
 
-        {/* ── YOUR OPPORTUNITIES ────────────────────────────── */}
+        {/* ── SCRIPTS YOU'VE SUBMITTED ─────────────────────── */}
         {activeSubs.length > 0 && (
           <section>
             <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">
               Scripts you&apos;ve submitted
-              {reviewedCount > 0 && (
-                <span className="ml-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
-                  {reviewedCount} with feedback
+              {newFeedbackCount > 0 && (
+                <span className="ml-2 text-[11px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
+                  {newFeedbackCount} new
                 </span>
               )}
             </h2>
-            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-              {activeSubs.map((sub) => {
-                const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / (1000 * 60 * 60 * 24))
-                return (
-                  <div key={sub.id} className="px-4 py-3.5">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0 flex-1">
-                        {/* Opportunity title — primary */}
-                        <Link
-                          href={`/opportunities/${sub.opportunity_slug}`}
-                          className="text-[13.5px] font-semibold text-gray-900 hover:text-purple-700 m-0 truncate block transition-colors"
-                        >
-                          {sub.opportunity_title}
-                        </Link>
-                        {/* Script title + meta — secondary */}
-                        <div className="flex items-center gap-1.5 mt-1 text-[11.5px] text-gray-400">
-                          {sub.evaluationId ? (
-                            <Link href={`/report/${sub.evaluationId}`} className="text-purple-600 hover:text-purple-800 font-medium">
-                              {sub.script_title}
-                            </Link>
-                          ) : (
-                            <span>{sub.script_title}</span>
+            <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
+
+              {/* ── New feedback tier ── */}
+              {newFeedbackSubs.length > 0 && (
+                <>
+                  <div className="px-4 py-1.5 bg-purple-50/60">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">New feedback</span>
+                  </div>
+                  {newFeedbackSubs.map((sub) => {
+                    const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / (1000 * 60 * 60 * 24))
+                    return (
+                      <div key={sub.id} className="px-4 py-3.5 border-t border-purple-100 bg-purple-50/30">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                              <Link
+                                href={`/opportunities/${sub.opportunity_slug}`}
+                                className="text-[13.5px] font-semibold text-gray-900 hover:text-purple-700 truncate transition-colors"
+                              >
+                                {sub.opportunity_title}
+                              </Link>
+                            </div>
+                            <div className="flex items-center gap-1.5 mt-1 ml-4 text-[11.5px] text-gray-400">
+                              <span>{sub.script_title}</span>
+                              {daysAgo > 0 && <span>&middot; {daysAgo}d ago</span>}
+                            </div>
+                          </div>
+                          {sub.nextSteps && (
+                            <span className={`shrink-0 text-[10.5px] font-bold px-2.5 py-1 rounded-full ${
+                              sub.nextSteps === 'in_touch'
+                                ? 'text-emerald-700 bg-emerald-50'
+                                : sub.nextSteps === 'revise_resubmit'
+                                ? 'text-amber-700 bg-amber-50'
+                                : 'text-gray-600 bg-gray-100'
+                            }`}>
+                              {NEXT_STEPS_LABELS[sub.nextSteps] ?? sub.nextSteps}
+                            </span>
                           )}
-                          {daysAgo > 0 && <span>&middot; {daysAgo}d ago</span>}
+                        </div>
+                        {sub.feedback && (
+                          <div className="mt-2.5 ml-4">
+                            <p className="text-[12.5px] text-gray-600 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
+                            {sub.evaluationId && (
+                              <Link
+                                href={`/report/${sub.evaluationId}`}
+                                className="inline-flex items-center gap-1 mt-2 text-[11.5px] font-semibold text-purple-600 hover:text-purple-800 transition-colors"
+                              >
+                                View report &rarr;
+                              </Link>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </>
+              )}
+
+              {/* ── In consideration tier ── */}
+              {pendingSubs.length > 0 && (
+                <>
+                  <div className="px-4 py-1.5 bg-amber-50/50 border-t border-gray-200">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-amber-500">In consideration</span>
+                  </div>
+                  {pendingSubs.map((sub) => {
+                    const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / (1000 * 60 * 60 * 24))
+                    return (
+                      <div key={sub.id} className="px-4 py-3 border-t border-gray-100">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="min-w-0 flex-1">
+                            <Link
+                              href={`/opportunities/${sub.opportunity_slug}`}
+                              className="text-[13.5px] font-semibold text-gray-900 hover:text-purple-700 truncate block transition-colors"
+                            >
+                              {sub.opportunity_title}
+                            </Link>
+                            <div className="flex items-center gap-1.5 mt-1 text-[11.5px] text-gray-400">
+                              <span>{sub.script_title}</span>
+                              {daysAgo > 0 && <span>&middot; {daysAgo}d ago</span>}
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2 shrink-0">
+                            <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
+                              Pending
+                            </span>
+                            {sub.evaluationId && (
+                              <Link
+                                href={`/report/${sub.evaluationId}`}
+                                className="text-[11px] font-medium text-gray-400 hover:text-purple-600 transition-colors"
+                              >
+                                Report
+                              </Link>
+                            )}
+                          </div>
                         </div>
                       </div>
-                      <span className={`shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full ${
-                        sub.status === 'reviewed'
-                          ? 'text-emerald-600 bg-emerald-50'
-                          : 'text-amber-600 bg-amber-50'
-                      }`}>
-                        {sub.status === 'reviewed' ? 'Feedback' : 'In consideration'}
-                      </span>
-                    </div>
+                    )
+                  })}
+                </>
+              )}
 
-                    {/* Feedback section for reviewed submissions */}
-                    {sub.status === 'reviewed' && sub.feedback && (
-                      <div className="mt-2.5 pt-2.5 border-t border-gray-100">
-                        {sub.nextSteps && (
-                          <span className={`inline-block text-[10.5px] font-bold px-2.5 py-1 rounded-full mb-2 ${
-                            sub.nextSteps === 'in_touch'
-                              ? 'text-emerald-700 bg-emerald-50'
-                              : sub.nextSteps === 'revise_resubmit'
-                              ? 'text-amber-700 bg-amber-50'
-                              : 'text-gray-600 bg-gray-100'
-                          }`}>
-                            {sub.nextSteps === 'revise_resubmit' ? 'Revise & resubmit'
-                              : sub.nextSteps === 'new_concept' ? 'Send a different concept'
-                              : sub.nextSteps === 'in_touch' ? "We'll be in touch"
-                              : sub.nextSteps}
-                          </span>
-                        )}
-                        <p className="text-[12.5px] text-gray-600 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
-                        {sub.evaluationId && (
-                          <Link
-                            href={`/report/${sub.evaluationId}`}
-                            className="inline-block mt-2 text-[11.5px] font-semibold text-purple-600 hover:text-purple-800"
-                          >
-                            View report &rarr;
-                          </Link>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Pending — still show report link */}
-                    {sub.status === 'pending' && sub.evaluationId && (
-                      <div className="mt-2 flex items-center">
-                        <Link
-                          href={`/report/${sub.evaluationId}`}
-                          className="text-[11.5px] font-medium text-gray-400 hover:text-purple-600 transition-colors"
-                        >
-                          View report &rarr;
-                        </Link>
-                      </div>
-                    )}
+              {/* ── Past feedback tier (collapsed) ── */}
+              {pastFeedbackSubs.length > 0 && (
+                <>
+                  <div className="px-4 py-1.5 bg-gray-50 border-t border-gray-200">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-gray-400">Past feedback</span>
                   </div>
-                )
-              })}
+                  <div className="divide-y divide-gray-50 border-t border-gray-100">
+                    {pastFeedbackSubs.map((sub) => (
+                      <ExpandablePastFeedback
+                        key={sub.id}
+                        opportunityTitle={sub.opportunity_title}
+                        opportunitySlug={sub.opportunity_slug}
+                        scriptTitle={sub.script_title}
+                        evaluationId={sub.evaluationId}
+                        feedback={sub.feedback}
+                        nextSteps={sub.nextSteps}
+                        submittedAt={sub.submitted_at}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* View all link */}
+              {activeSubs.length > 3 && (
+                <div className="px-4 py-2.5 border-t border-gray-100 text-center">
+                  <Link href="/opportunities" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                    View all submissions &rarr;
+                  </Link>
+                </div>
+              )}
             </div>
           </section>
         )}
 
-        {/* ── AVAILABLE OPPORTUNITIES ─────────────────────── */}
+        {/* ── OPPORTUNITIES FOR YOU ──────────────────────── */}
         {totalAvailableOpps > 0 && (
           <section>
             <header className="flex items-end justify-between gap-3 mb-2.5">
@@ -468,7 +542,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                         </span>
                       </div>
                     )}
-                    <div className={`px-4 py-3 ${s.isLocked ? '' : ''}`}>
+                    <div className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         {/* Score badge */}
                         <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{
@@ -502,7 +576,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                           </div>
                         </div>
 
-                        {/* Opportunity match count — prominent */}
+                        {/* Opportunity match count */}
                         {!s.isLocked && !s.isProcessing && s.oppCount > 0 && (
                           <Link
                             href="/opportunities"
@@ -512,7 +586,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                           </Link>
                         )}
 
-                        {/* View report — subtle */}
+                        {/* View report */}
                         {!s.isLocked && !s.isProcessing && s.evaluationId && (
                           <Link
                             href={reportHref}
@@ -522,7 +596,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                           </Link>
                         )}
 
-                        {/* Three-dot menu placeholder — TODO: wire up edit/settings */}
+                        {/* Three-dot menu placeholder */}
                         {!s.isLocked && !s.isProcessing && (
                           <button
                             type="button"
@@ -541,6 +615,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                   </div>
                 )
               })}
+
+              {/* View all scripts link */}
+              {scriptRows.length > 5 && (
+                <div className="px-4 py-2.5 border-t border-gray-100 text-center">
+                  <Link href="/scripts" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                    View all {scriptRows.length} scripts &rarr;
+                  </Link>
+                </div>
+              )}
             </div>
           )}
 
