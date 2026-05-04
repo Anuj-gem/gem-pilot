@@ -36,6 +36,7 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const prefilledEmail = searchParams.get('email') || ''
   const supabase = createClient()
   const [fullName, setFullName] = useState('')
+  const [handle, setHandle] = useState('')
   const [email, setEmail] = useState(prefilledEmail)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -90,6 +91,17 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
         email,
         full_name: fullName,
       })
+
+      // Save handle to profile if provided
+      if (handle.trim()) {
+        const slug = handle.trim().toLowerCase().replace(/[^a-z0-9_-]/g, '')
+        if (slug) {
+          await supabase
+            .from('profiles')
+            .update({ handle: slug })
+            .eq('id', data.user.id)
+        }
+      }
     }
 
     trackSignupComplete()
@@ -178,6 +190,22 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
                 required
                 placeholder="Your name"
               />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Handle</label>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--gem-gray-500)] text-sm pointer-events-none">@</span>
+                <input
+                  type="text"
+                  value={handle}
+                  onChange={e => setHandle(e.target.value.replace(/[^a-zA-Z0-9_-]/g, ''))}
+                  required
+                  placeholder="yourhandle"
+                  className="!pl-7"
+                  maxLength={30}
+                />
+              </div>
+              <p className="text-[10px] text-[var(--gem-gray-500)] mt-0.5">This is your public profile URL</p>
             </div>
             <div>
               <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Email</label>
