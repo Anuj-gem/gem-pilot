@@ -244,7 +244,9 @@ export function normalizePrivacy(input: unknown): ReportPrivacy {
 export function isScoreVisible(
   privacy: ReportPrivacy | null | undefined
 ): boolean {
-  return privacy?.show_score !== false
+  // opportunities-v1: score always visible to everyone. Old per-script
+  // show_score toggles are dead — matches isSectionVisible behavior.
+  return true
 }
 
 /** Default privacy used when creating a new published report. */
