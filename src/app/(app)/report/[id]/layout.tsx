@@ -55,8 +55,8 @@ async function getReportMeta(id: string): Promise<ReportMeta | null> {
         .select('subscription_status')
         .eq('id', ownerUserId)
         .single()
-      ownerIsSubscribed =
-        ((ownerProfile as any)?.subscription_status as string | null) === 'active'
+      const ownerSubStatus = ((ownerProfile as any)?.subscription_status as string | null)
+      ownerIsSubscribed = ownerSubStatus === 'active' || ownerSubStatus === 'trialing'
     }
     const unlocked = ownerIsSubscribed || isPublic
 

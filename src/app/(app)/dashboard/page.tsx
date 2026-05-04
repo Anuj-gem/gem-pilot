@@ -55,7 +55,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .eq('id', user.id)
     .single()
 
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   const isTrial = !isPro
   const service = svc()
 
@@ -295,8 +295,10 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   // Monthly submission limit (Pro: 3/month; Free: 0 — gated entirely)
   const MONTHLY_LIMIT = 3
   let monthlyUsed = 0
+  const now = new Date()
+  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+  const resetDaysLeft = Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
   {
-    const now = new Date()
     const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
     const { count } = await service
       .from('opportunity_submissions')
@@ -559,7 +561,9 @@ export default async function DashboardPage({ searchParams }: PageProps) {
               <div className="flex items-center gap-3">
                 {isPro && (
                   <span className="text-[11px] text-gray-400 font-medium">
-                    {monthlyRemaining} of {MONTHLY_LIMIT} submissions left
+                    {monthlyRemaining > 0
+                      ? `${monthlyRemaining}/${MONTHLY_LIMIT} submissions left`
+                      : `Resets in ${resetDaysLeft}d`}
                   </span>
                 )}
                 <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
@@ -597,6 +601,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                       perspectiveLabels={PERSPECTIVE_LABELS}
                       atLimit={atSubmitLimit}
                       isPro={isPro}
+                      resetDaysLeft={atSubmitLimit && isPro ? resetDaysLeft : undefined}
                     />
                   )
                 })}

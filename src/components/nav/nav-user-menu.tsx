@@ -29,7 +29,7 @@ export interface NavUserMenuStats {
   following: number
   reviewsGiven: number
   /** Monthly opportunity submissions used / limit (Pro only) */
-  monthlySubmissions?: { used: number; limit: number }
+  monthlySubmissions?: { used: number; limit: number; resetsAt: string }
 }
 export interface NavUserMenuActivity {
   kind: 'publish' | 'review'
@@ -155,11 +155,23 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
                     <ProBadge />
                     <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
                   </div>
-                  {stats.monthlySubmissions && (
-                    <span className="text-[11px] text-gray-400 font-medium">
-                      {Math.max(0, stats.monthlySubmissions.limit - stats.monthlySubmissions.used)}/{stats.monthlySubmissions.limit} submissions left
-                    </span>
-                  )}
+                  {stats.monthlySubmissions && (() => {
+                    const remaining = Math.max(0, stats.monthlySubmissions.limit - stats.monthlySubmissions.used)
+                    if (remaining > 0) {
+                      return (
+                        <span className="text-[11px] text-gray-400 font-medium">
+                          {remaining}/{stats.monthlySubmissions.limit} submissions left
+                        </span>
+                      )
+                    }
+                    const resetDate = new Date(stats.monthlySubmissions.resetsAt)
+                    const daysLeft = Math.ceil((resetDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+                    return (
+                      <span className="text-[11px] text-gray-400 font-medium">
+                        Resets in {daysLeft}d
+                      </span>
+                    )
+                  })()}
                 </div>
               ) : (
                 <button

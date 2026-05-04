@@ -32,7 +32,7 @@ export default async function OpportunitiesPage() {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
   // Monthly submission count for Pro users
   let monthlyUsed = 0

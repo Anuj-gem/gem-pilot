@@ -39,9 +39,11 @@ interface SubmitButtonProps {
   onSubmitted?: () => void
   /** Called after a successful withdraw — parent can update its count */
   onWithdrawn?: () => void
+  /** Days until monthly limit resets */
+  resetDaysLeft?: number
 }
 
-export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, onSubmitted, onWithdrawn }: SubmitButtonProps) {
+export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, onSubmitted, onWithdrawn, resetDaysLeft }: SubmitButtonProps) {
   const [state, setState] = useState<SubmissionState | null>(existing ?? null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -174,7 +176,7 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
         disabled={loading || atLimit}
         className="text-[12px] font-bold text-white bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1.5 rounded-md transition-colors"
       >
-        {loading ? 'Submitting…' : atLimit ? 'Limit reached' : 'Submit'}
+        {loading ? 'Submitting…' : atLimit ? (resetDaysLeft ? `Resets in ${resetDaysLeft}d` : 'Limit reached') : 'Submit'}
       </button>
       {error && <span className="text-[11px] text-red-500 ml-2">{error}</span>}
     </div>

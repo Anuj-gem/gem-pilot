@@ -38,7 +38,7 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
     .eq('id', user.id)
     .single()
 
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
   // Pull every submission the user owns (incl. drafts/processing). Filter
   // hidden_at out so soft-deleted scripts don't show up.

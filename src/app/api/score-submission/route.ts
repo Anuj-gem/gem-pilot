@@ -288,7 +288,7 @@ export async function POST(request: NextRequest) {
           } | null
         }>()
       ownerIsProducer = ownerProfile?.account_type === "producer"
-      ownerIsPro = ownerProfile?.subscription_status === "active"
+      ownerIsPro = ownerProfile?.subscription_status === "active" || ownerProfile?.subscription_status === "trialing"
       // Public-by-default + per-script defaults all read from the writer's
       // account-level privacy settings (Anuj 2026-04-30 v0.10). The two
       // booleans (allow_reviews, allow_industry) get persisted to the
@@ -397,7 +397,7 @@ export async function POST(request: NextRequest) {
         if (profile?.email) {
           const firstName = profile.full_name?.split(" ")[0] || "there"
           const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`
-          const isSub = profile.subscription_status === "active"
+          const isSub = profile.subscription_status === "active" || profile.subscription_status === "trialing"
           const templateAlias = isSub ? "post_submission_pro" : "post_submission_free"
 
           // MUST await — see /api/evaluate for the full explanation. Without

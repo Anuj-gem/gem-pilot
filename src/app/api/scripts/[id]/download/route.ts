@@ -92,7 +92,7 @@ export async function GET(
       .select('subscription_status')
       .eq('id', submission.user_id)
       .maybeSingle()
-    isSubscribed = profile?.subscription_status === 'active'
+    isSubscribed = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   }
 
   // 5. Pick scope. Free writers ALWAYS get 'free' regardless of requested type.

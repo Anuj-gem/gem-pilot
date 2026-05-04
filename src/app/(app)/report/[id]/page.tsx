@@ -255,7 +255,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .select('subscription_status, account_type')
       .eq('id', submission.user_id)
       .single()
-    ownerIsSubscribed = ownerProfile?.subscription_status === 'active'
+    ownerIsSubscribed = ownerProfile?.subscription_status === 'active' || ownerProfile?.subscription_status === 'trialing'
     ownerIsProducer = ownerProfile?.account_type === 'producer'
   }
 
@@ -267,7 +267,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .select('subscription_status, is_reviewer')
       .eq('id', user.id)
       .single()
-    viewerIsSubscribed = viewerProfile?.subscription_status === 'active'
+    viewerIsSubscribed = viewerProfile?.subscription_status === 'active' || viewerProfile?.subscription_status === 'trialing'
     viewerIsReviewer = viewerProfile?.is_reviewer === true
   }
 

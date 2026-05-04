@@ -136,22 +136,23 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   activity.sort((a, b) => b.ts - a.ts)
   const recentActivity = activity.slice(0, 3)
 
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   const needsPrivacyConfirm = !(profile as { privacy_confirmed_at?: string | null } | null)?.privacy_confirmed_at
   const initialPrivacy = normalizePrivacyDefaults((profile as { privacy_defaults?: unknown } | null)?.privacy_defaults)
 
   // Monthly opportunity submissions for nav display
-  let monthlySubmissions: { used: number; limit: number } | undefined
+  let monthlySubmissions: { used: number; limit: number; resetsAt: string } | undefined
   if (isPro) {
     const now = new Date()
     const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
     const { count } = await service
       .from('opportunity_submissions')
       .select('id', { count: 'exact', head: true })
       .eq('writer_id', user.id)
       .neq('status', 'withdrawn')
       .gte('submitted_at', monthStart)
-    monthlySubmissions = { used: count ?? 0, limit: 3 }
+    monthlySubmissions = { used: count ?? 0, limit: 3, resetsAt: nextMonth.toISOString() }
   }
 
   const navUserData = {

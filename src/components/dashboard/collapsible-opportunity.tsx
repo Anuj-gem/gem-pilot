@@ -30,11 +30,13 @@ interface Props {
   atLimit: boolean
   /** Whether the writer has an active Pro subscription */
   isPro?: boolean
+  /** Days until monthly submission limit resets */
+  resetDaysLeft?: number
 }
 
 export function CollapsibleOpportunity({
   opportunityId, title, slug, dealType, perspective, deadline,
-  qualifyingScripts, dealTypeLabels, perspectiveLabels, atLimit, isPro = true,
+  qualifyingScripts, dealTypeLabels, perspectiveLabels, atLimit, isPro = true, resetDaysLeft,
 }: Props) {
   const [open, setOpen] = useState(false)
   const [submitting, setSubmitting] = useState<string | null>(null)
@@ -151,7 +153,7 @@ export function CollapsibleOpportunity({
                   disabled={submitting === s.id || atLimit}
                   className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-3 py-1 rounded-md transition-colors"
                 >
-                  {submitting === s.id ? '…' : atLimit ? 'Limit reached' : 'Submit'}
+                  {submitting === s.id ? '…' : atLimit ? (resetDaysLeft ? `Resets in ${resetDaysLeft}d` : 'Limit reached') : 'Submit'}
                 </button>
               ) : (
                 <button
