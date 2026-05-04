@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { sendEmail, type TemplateAlias } from '@/lib/email'
 
 function svc() {
   return createServerClient(
@@ -48,7 +49,7 @@ export async function POST(req: NextRequest) {
   // Verify the user owns the opportunity this submission belongs to
   const { data: sub } = await service
     .from('opportunity_submissions')
-    .select('id, opportunity_id, writer_id')
+    .select('id, opportunity_id, submission_id, writer_id')
     .eq('id', submission_id)
     .single()
 
@@ -56,7 +57,7 @@ export async function POST(req: NextRequest) {
 
   const { data: opp } = await service
     .from('opportunities')
-    .select('owner_id')
+    .select('owner_id, title')
     .eq('id', sub.opportunity_id)
     .single()
 
@@ -88,6 +89,39 @@ export async function POST(req: NextRequest) {
       await service.rpc('increment_bonus_submissions', { user_id_input: sub.writer_id })
     } catch (err: unknown) {
       console.error('[review] bonus_submissions increment failed:', err)
+    }
+  }
+
+  // Send outcome email to the writer
+  if (status === 'reviewed' && outcome && sub.writer_id) {
+    const OUTCOME_TEMPLATE: Record<string, TemplateAlias> = {
+      pass: 'outcome_pass',
+      developing: 'outcome_developing',
+      revise_resubmit: 'outcome_revise_resubmit',
+      advancing: 'outcome_advancing',
+    }
+    const templateAlias = OUTCOME_TEMPLATE[outcome]
+    if (templateAlias) {
+      // Look up writer email + name, and script title
+      const [{ data: writer }, { data: script }] = await Promise.all([
+        service.from('profiles').select('email, full_name').eq('id', sub.writer_id).single(),
+        service.from('script_submissions').select('title').eq('id', sub.submission_id).single(),
+      ])
+      if (writer?.email) {
+        const firstName = writer.full_name?.split(' ')[0] || 'there'
+        await sendEmail({
+          templateAlias,
+          to: writer.email,
+          variables: {
+            first_name: firstName,
+            script_title: script?.title || 'your script',
+            opportunity_title: opp.title || 'an opportunity',
+            feedback: (feedback ?? '').trim(),
+          },
+          dedupeKey: `outcome_${submission_id}_${outcome}`,
+          tag: templateAlias,
+        }, service)
+      }
     }
   }
 

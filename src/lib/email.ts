@@ -42,6 +42,11 @@ export type TemplateAlias =
   // Broadcast — fires when a new opportunity is added to GEM.
   // Triggered by /api/cron/opportunity-broadcast.
   | 'new_opportunity_broadcast'
+  // Outcome emails — triggered when producer reviews a submission.
+  | 'outcome_pass'
+  | 'outcome_developing'
+  | 'outcome_revise_resubmit'
+  | 'outcome_advancing'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias
