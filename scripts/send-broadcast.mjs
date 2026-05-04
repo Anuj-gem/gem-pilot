@@ -32,7 +32,7 @@ try {
 console.log(`━━━ Step 2: Broadcast "${slug}" to all users ━━━\n`)
 
 try {
-  const res = await fetch(`${SITE_URL}/api/cron/opportunity-broadcast?slug=${slug}`, {
+  const res = await fetch(`${SITE_URL}/api/broadcast?slug=${slug}`, {
     method: "POST",
   })
   const data = await res.json()
