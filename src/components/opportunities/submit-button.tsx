@@ -73,6 +73,24 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
       return
     }
     setState(data as SubmissionState)
+
+    // If this submission is using a bonus slot (beyond the base 3),
+    // decrement bonus_submissions so it's truly one-time.
+    try {
+      const now = new Date()
+      const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+      const { count } = await supabase
+        .from('opportunity_submissions')
+        .select('id', { count: 'exact', head: true })
+        .eq('writer_id', user.id)
+        .neq('status', 'withdrawn')
+        .gte('submitted_at', monthStart)
+      if ((count ?? 0) > 3) {
+        // This submission dipped into bonus — decrement by 1
+        await supabase.rpc('decrement_bonus_submissions', { p_user_id: user.id, amount: 1 })
+      }
+    } catch {} // non-critical — don't block the submit
+
     setLoading(false)
     onSubmitted?.()
     router.refresh()
@@ -176,9 +194,26 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
         disabled={loading || atLimit}
         className="text-[12px] font-bold text-white bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1.5 rounded-md transition-colors"
       >
-        {loading ? 'Submitting…' : atLimit ? (resetDaysLeft ? `Resets in ${resetDaysLeft}d` : 'Limit reached') : 'Submit'}
+        {loading ? 'Submitting…' : atLimit ? 'No submissions left' : 'Submit'}
       </button>
       {error && <span className="text-[11px] text-red-500 ml-2">{error}</span>}
+      {atLimit && (
+        <div className="w-full mt-1.5 px-1">
+          <p className="text-[11px] text-gray-400 m-0">
+            {resetDaysLeft ? `Your submissions reset in ${resetDaysLeft} days. ` : ''}
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.querySelector('[aria-label="Open profile menu"]') as HTMLElement | null
+                el?.click()
+              }}
+              className="text-purple-600 font-semibold hover:underline bg-transparent border-none p-0 cursor-pointer text-[11px]"
+            >
+              Earn 2 more by referring a friend →
+            </button>
+          </p>
+        </div>
+      )}
     </div>
   )
 }

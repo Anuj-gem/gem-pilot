@@ -49,13 +49,23 @@ export function SubmissionList({ opportunityId, scripts, existingSubmissions, pe
         />
       ))}
       {isPro && atLimit && (
-        <div className="mt-1">
-          <p className="text-[12.5px] text-gray-400 m-0">
-            {currentPending} of {monthlyLimit} submissions used this month.
+        <div className="mt-2 rounded-lg bg-gray-50 border border-gray-100 px-3 py-2.5">
+          <p className="text-[12.5px] font-semibold text-gray-700 m-0">
+            You&apos;ve used all your submissions this month.
           </p>
-          <p className="text-[11.5px] text-purple-500 m-0 mt-1">
-            Refer a friend to earn 2 more — check your profile menu for your code.
+          <p className="text-[11.5px] text-gray-400 m-0 mt-1">
+            Your 3 monthly submissions reset at the start of next month.
           </p>
+          <button
+            type="button"
+            onClick={() => {
+              const el = document.querySelector('[aria-label="Open profile menu"]') as HTMLElement | null
+              el?.click()
+            }}
+            className="text-[12px] text-purple-600 font-semibold mt-1.5 bg-transparent border-none p-0 cursor-pointer hover:underline"
+          >
+            Earn 2 bonus submissions by referring a friend →
+          </button>
         </div>
       )}
       {!isPro && (

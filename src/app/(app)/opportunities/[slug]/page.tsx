@@ -244,11 +244,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide m-0">
                   Your qualifying scripts
                 </h2>
-                {isPro && (
-                  <span className="text-[11px] text-gray-400 font-medium">
-                    {Math.max(0, monthlyLimit - monthlyUsed)} of {monthlyLimit} submissions left
-                  </span>
-                )}
+                {isPro && (() => {
+                  const remaining = Math.max(0, monthlyLimit - monthlyUsed)
+                  return remaining > 0
+                    ? <span className="text-[11px] text-gray-400 font-medium">{remaining} submission{remaining !== 1 ? 's' : ''} left</span>
+                    : <span className="text-[11px] text-gray-400 font-medium">All used · resets next month</span>
+                })()}
               </div>
               {qualifyingScripts.length > 0 ? (
                 <SubmissionList

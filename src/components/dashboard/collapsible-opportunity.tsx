@@ -153,7 +153,7 @@ export function CollapsibleOpportunity({
                   disabled={submitting === s.id || atLimit}
                   className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-3 py-1 rounded-md transition-colors"
                 >
-                  {submitting === s.id ? '…' : atLimit ? (resetDaysLeft ? `Resets in ${resetDaysLeft}d` : 'Limit reached') : 'Submit'}
+                  {submitting === s.id ? '…' : atLimit ? 'No submissions left' : 'Submit'}
                 </button>
               ) : (
                 <button

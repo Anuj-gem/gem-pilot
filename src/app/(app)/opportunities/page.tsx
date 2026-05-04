@@ -143,7 +143,12 @@ export default async function OpportunitiesPage() {
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
             {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} accepting submissions
-            {user && isPro && <span className="ml-2 text-purple-500 font-medium">&middot; {Math.max(0, monthlyLimit - monthlyUsed)} of {monthlyLimit} submissions left</span>}
+            {user && isPro && (() => {
+              const remaining = Math.max(0, monthlyLimit - monthlyUsed)
+              return remaining > 0
+                ? <span className="ml-2 text-purple-500 font-medium">&middot; {remaining} submission{remaining !== 1 ? 's' : ''} left</span>
+                : <span className="ml-2 text-gray-400 font-medium">&middot; All used · resets next month</span>
+            })()}
           </p>
         </div>
         {user && (

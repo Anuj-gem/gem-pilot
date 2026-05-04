@@ -151,29 +151,51 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
               </div>
             </div>
 
-            {/* Plan status */}
+            {/* Plan status + submissions */}
             <div className="mt-3 pt-3 border-t border-gray-100">
               {profile.isPro ? (
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5">
-                    <ProBadge />
-                    <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <ProBadge />
+                      <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
+                    </div>
                   </div>
                   {stats.monthlySubmissions && (() => {
-                    const remaining = Math.max(0, stats.monthlySubmissions.limit - stats.monthlySubmissions.used)
-                    if (remaining > 0) {
-                      return (
-                        <span className="text-[11px] text-gray-400 font-medium">
-                          {remaining}/{stats.monthlySubmissions.limit} submissions left
-                        </span>
-                      )
-                    }
+                    const used = stats.monthlySubmissions.used
+                    const bonusCount = (profile.bonusSubmissions ?? 0)
+                    const monthlyUsed = Math.min(used, 3)
+                    const bonusUsed = Math.max(0, used - 3)
+                    const bonusRemaining = Math.max(0, bonusCount - bonusUsed)
+                    const monthlyRemaining = Math.max(0, 3 - monthlyUsed)
+                    const totalRemaining = monthlyRemaining + bonusRemaining
                     const resetDate = new Date(stats.monthlySubmissions.resetsAt)
                     const daysLeft = Math.ceil((resetDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
                     return (
-                      <span className="text-[11px] text-gray-400 font-medium">
-                        Resets in {daysLeft}d
-                      </span>
+                      <div className="mt-2 rounded-lg bg-gray-50 px-3 py-2.5">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-[13px] font-bold text-gray-900">
+                            {totalRemaining} submission{totalRemaining !== 1 ? 's' : ''} remaining
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-gray-500 leading-[1.6]">
+                          <div className="flex items-center justify-between">
+                            <span>{monthlyRemaining} of 3 monthly submissions left</span>
+                            <span className="text-gray-400">resets in {daysLeft}d</span>
+                          </div>
+                          {bonusCount > 0 && (
+                            <div className="flex items-center justify-between mt-0.5">
+                              <span className="text-purple-600 font-semibold">{bonusRemaining} bonus from referrals</span>
+                              <span className="text-gray-400">one-time</span>
+                            </div>
+                          )}
+                        </div>
+                        {totalRemaining === 0 && (
+                          <p className="text-[11.5px] text-purple-600 font-semibold m-0 mt-1.5">
+                            Earn 2 more — share your referral code below
+                          </p>
+                        )}
+                      </div>
                     )
                   })()}
                 </div>
