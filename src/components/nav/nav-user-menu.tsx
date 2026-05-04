@@ -22,6 +22,9 @@ export interface NavUserMenuProfile {
   headline: string | null
   avatar_url: string | null
   isPro?: boolean
+  referralCode?: string | null
+  bonusSubmissions?: number
+  referralCount?: number
 }
 export interface NavUserMenuStats {
   scripts: number
@@ -52,6 +55,7 @@ function initialsOf(name: string | null | undefined, handle: string | null | und
 
 export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: Props) {
   const [open, setOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
   const ini = initialsOf(profile.full_name, profile.handle)
   const profileHref = profile.handle ? `/w/${profile.handle}` : '/profile'
@@ -213,6 +217,44 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
               </Link>
             </div>
           </div>
+
+          {/* REFERRAL */}
+          {profile.referralCode && (
+            <div className="border-t border-gray-100 px-4 py-3">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Earn submissions</span>
+                {(profile.bonusSubmissions ?? 0) > 0 && (
+                  <span className="text-[10.5px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">
+                    +{profile.bonusSubmissions} earned
+                  </span>
+                )}
+              </div>
+              <p className="text-[12px] text-gray-500 leading-snug m-0 mb-2">
+                Share your code — they get $5 off, you get 2 extra submissions.
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 text-[13px] font-mono font-bold text-gray-800 tracking-wide text-center select-all">
+                  {profile.referralCode}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(profile.referralCode!)
+                    setCopied(true)
+                    setTimeout(() => setCopied(false), 2000)
+                  }}
+                  className="shrink-0 px-3 py-1.5 rounded-lg text-[12px] font-semibold border border-gray-200 hover:bg-gray-50 transition-colors"
+                >
+                  {copied ? '✓ Copied' : 'Copy'}
+                </button>
+              </div>
+              {(profile.referralCount ?? 0) > 0 && (
+                <p className="text-[11px] text-gray-400 mt-2 m-0 text-center">
+                  {profile.referralCount} {profile.referralCount === 1 ? 'referral' : 'referrals'} converted
+                </p>
+              )}
+            </div>
+          )}
 
           {/* SIGN OUT */}
           <div className="border-t border-gray-100 p-2">

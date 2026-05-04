@@ -56,7 +56,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // pages via usePathname.
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at')
+    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at, referral_code, bonus_submissions')
     .eq('id', user.id)
     .single()
 
@@ -152,7 +152,19 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       .eq('writer_id', user.id)
       .neq('status', 'withdrawn')
       .gte('submitted_at', monthStart)
-    monthlySubmissions = { used: count ?? 0, limit: 3, resetsAt: nextMonth.toISOString() }
+    const bonusSubs = (profile as { bonus_submissions?: number } | null)?.bonus_submissions ?? 0
+    monthlySubmissions = { used: count ?? 0, limit: 3 + bonusSubs, resetsAt: nextMonth.toISOString() }
+  }
+
+  // Count successful referrals
+  let referralCount = 0
+  if ((profile as any)?.referral_code) {
+    const { count: refCount } = await service
+      .from('referrals')
+      .select('id', { count: 'exact', head: true })
+      .eq('referrer_id', user.id)
+      .eq('status', 'converted')
+    referralCount = refCount ?? 0
   }
 
   const navUserData = {
@@ -162,6 +174,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       headline: profile?.headline ?? null,
       avatar_url: profile?.avatar_url ?? null,
       isPro,
+      referralCode: (profile as any)?.referral_code ?? null,
+      bonusSubmissions: (profile as any)?.bonus_submissions ?? 0,
+      referralCount,
     },
     stats: {
       scripts: scriptCount ?? 0,

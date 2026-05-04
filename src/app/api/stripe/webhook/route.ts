@@ -74,6 +74,44 @@ export async function POST(request: NextRequest) {
             supabase
           )
         }
+
+        // ── Referral conversion: if a promo code was used, credit the referrer ──
+        try {
+          const discounts = (session as any).total_details?.breakdown?.discounts as any[] | undefined
+          if (discounts?.length) {
+            for (const d of discounts) {
+              const promoId = typeof d.discount.promotion_code === 'string'
+                ? d.discount.promotion_code
+                : d.discount.promotion_code?.id
+              if (!promoId) continue
+
+              const promo = await stripe.promotionCodes.retrieve(promoId)
+              const referrerId = promo.metadata?.referrer_user_id
+              if (!referrerId || referrerId === userId) continue // don't self-refer
+
+              // Record the referral
+              await supabase.from('referrals').insert({
+                referrer_id: referrerId,
+                referred_user_id: userId,
+                referred_email: profile?.email || null,
+                stripe_promo_code_id: promoId,
+                status: 'converted',
+                converted_at: new Date().toISOString(),
+              })
+
+              // Grant +2 bonus submissions
+              await supabase.rpc('increment_bonus_submissions', {
+                user_id: referrerId,
+                amount: 2,
+              })
+
+              console.log(`Referral converted: ${referrerId} gets +2 submissions (referred ${userId})`)
+            }
+          }
+        } catch (refErr) {
+          // Don't fail the whole webhook for referral errors
+          console.error('Referral processing error:', refErr)
+        }
       }
       break
     }

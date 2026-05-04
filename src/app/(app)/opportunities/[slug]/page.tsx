@@ -74,6 +74,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   let qualifyingScripts: { id: string; title: string; evaluation_id: string }[] = []
   const existingSubmissions = new Map<string, SubmissionState>()
   let monthlyUsed = 0
+  let monthlyLimit = 3
   let isPro = false
 
   if (user) {
@@ -131,10 +132,11 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     // Check subscription status
     const { data: profile } = await auth
       .from('profiles')
-      .select('subscription_status')
+      .select('subscription_status, bonus_submissions')
       .eq('id', user.id)
       .single()
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    monthlyLimit = 3 + ((profile as any)?.bonus_submissions ?? 0)
 
     // Count this month's submissions for limit check
     const now = new Date()
@@ -244,7 +246,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 </h2>
                 {isPro && (
                   <span className="text-[11px] text-gray-400 font-medium">
-                    {Math.max(0, 3 - monthlyUsed)} of 3 submissions left
+                    {Math.max(0, monthlyLimit - monthlyUsed)} of {monthlyLimit} submissions left
                   </span>
                 )}
               </div>
@@ -254,6 +256,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                   scripts={qualifyingScripts.map(s => ({ id: s.id, title: s.title }))}
                   existingSubmissions={Object.fromEntries(existingSubmissions)}
                   pendingCount={monthlyUsed}
+                  monthlyLimit={monthlyLimit}
                   isPro={isPro}
                 />
               ) : (

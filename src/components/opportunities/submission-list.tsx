@@ -8,22 +8,22 @@
 import { useState } from 'react'
 import { SubmitForConsideration, type SubmissionState } from './submit-button'
 
-const MONTHLY_LIMIT = 3
-
 interface SubmissionListProps {
   opportunityId: string
   scripts: { id: string; title: string }[]
   existingSubmissions: Record<string, SubmissionState>
   /** Current monthly submission count (from server) */
   pendingCount: number
+  /** Monthly submission limit (3 + bonus) */
+  monthlyLimit?: number
   /** Whether the writer is a Pro subscriber */
   isPro?: boolean
 }
 
-export function SubmissionList({ opportunityId, scripts, existingSubmissions, pendingCount, isPro = true }: SubmissionListProps) {
+export function SubmissionList({ opportunityId, scripts, existingSubmissions, pendingCount, monthlyLimit = 3, isPro = true }: SubmissionListProps) {
   const [currentPending, setCurrentPending] = useState(pendingCount)
 
-  const atLimit = !isPro || currentPending >= MONTHLY_LIMIT
+  const atLimit = !isPro || currentPending >= monthlyLimit
 
   function onSubmitted() {
     setCurrentPending(prev => prev + 1)
@@ -49,9 +49,14 @@ export function SubmissionList({ opportunityId, scripts, existingSubmissions, pe
         />
       ))}
       {isPro && atLimit && (
-        <p className="text-[12.5px] text-gray-400 mt-1 m-0">
-          {currentPending} of {MONTHLY_LIMIT} submissions used this month.
-        </p>
+        <div className="mt-1">
+          <p className="text-[12.5px] text-gray-400 m-0">
+            {currentPending} of {monthlyLimit} submissions used this month.
+          </p>
+          <p className="text-[11.5px] text-purple-500 m-0 mt-1">
+            Refer a friend to earn 2 more — check your profile menu for your code.
+          </p>
+        </div>
       )}
       {!isPro && (
         <p className="text-[12.5px] text-purple-600 font-medium mt-1 m-0">

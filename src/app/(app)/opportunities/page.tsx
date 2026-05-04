@@ -36,13 +36,15 @@ export default async function OpportunitiesPage() {
   // Check subscription (only if logged in)
   let isPro = false
   let monthlyUsed = 0
+  let monthlyLimit = 3
   if (user) {
     const { data: profile } = await auth
       .from('profiles')
-      .select('subscription_status')
+      .select('subscription_status, bonus_submissions')
       .eq('id', user.id)
       .single()
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    monthlyLimit = 3 + ((profile as any)?.bonus_submissions ?? 0)
 
     if (isPro) {
       const now = new Date()
@@ -141,7 +143,7 @@ export default async function OpportunitiesPage() {
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
             {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} accepting submissions
-            {user && isPro && <span className="ml-2 text-purple-500 font-medium">&middot; {Math.max(0, 3 - monthlyUsed)} of 3 submissions left</span>}
+            {user && isPro && <span className="ml-2 text-purple-500 font-medium">&middot; {Math.max(0, monthlyLimit - monthlyUsed)} of {monthlyLimit} submissions left</span>}
           </p>
         </div>
         {user && (
