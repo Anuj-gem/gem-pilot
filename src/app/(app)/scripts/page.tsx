@@ -9,6 +9,7 @@ import Nav from '@/components/nav'
 import { createClient } from '@/lib/supabase-server'
 import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 
 export const dynamic = 'force-dynamic'
 
@@ -33,9 +34,11 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('full_name, handle, avatar_url')
+    .select('full_name, handle, avatar_url, subscription_status')
     .eq('id', user.id)
     .single()
+
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
   // Pull every submission the user owns (incl. drafts/processing). Filter
   // hidden_at out so soft-deleted scripts don't show up.
@@ -61,6 +64,13 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
   const visible = ((rows as SubRow[] | null) || []).filter((s) => !s.hidden_at)
+
+  // Paywall: free users only get full access to their first completed eval.
+  const isTrial = !isPro
+  const allCompleted = visible
+    .filter((s) => s.status === 'completed')
+    .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+  const firstCompletedId = allCompleted[0]?.id ?? null
 
   const submissionIds = visible.map((s) => s.id)
   const stats = await getScriptStats(submissionIds)
@@ -115,6 +125,7 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
 
   return (
     <div>
+      {isTrial && <UpgradeModalListener />}
       <header className="mb-6">
           <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-2">My library</p>
           <h1 className="text-[28px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
@@ -171,9 +182,20 @@ export default async function ScriptsPage({ searchParams }: PageProps) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cards.map((c) => (
-              <ScriptCard key={c.submission_id} s={c} density="poster" isOwner />
-            ))}
+            {cards.map((c) => {
+              const isFirstCompleted = c.submission_id === firstCompletedId
+              const locked = isTrial && c.status === 'completed' && !isFirstCompleted
+              return (
+                <ScriptCard
+                  key={c.submission_id}
+                  s={c}
+                  density="poster"
+                  isOwner
+                  isLocked={locked}
+                  isFreePost={isTrial && isFirstCompleted}
+                />
+              )
+            })}
           </div>
         )}
     </div>

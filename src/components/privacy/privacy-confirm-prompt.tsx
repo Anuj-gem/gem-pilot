@@ -33,11 +33,14 @@ export function PrivacyConfirmPrompt({ initial }: Props) {
     >
       <div className="w-full sm:max-w-xl bg-white sm:rounded-2xl shadow-2xl my-0 sm:my-8">
         <div className="px-5 sm:px-7 pt-6 pb-4 border-b border-gray-100">
+          <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-2">
+            One quick step
+          </p>
           <h2 className="text-[22px] sm:text-[24px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-            Your privacy defaults
+            Set your privacy defaults
           </h2>
-          <p className="text-[13px] text-gray-600 mt-1.5 leading-snug">
-            You can change these anytime.
+          <p className="text-[13.5px] text-gray-600 mt-2 leading-snug">
+            We changed how privacy works. Confirm your defaults so your scripts behave the way you expect. You can change these anytime from your profile.
           </p>
         </div>
         <div className="px-5 sm:px-7 py-5">

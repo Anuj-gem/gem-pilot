@@ -1,30 +1,16 @@
-// Landing page — v0.11.0 community-first relaunch (2026-04-30).
+// Landing page — v0.14.0 consolidated (2026-05-03).
 //
-// The pitch: GEM is where screenwriters get seen — post your script,
-// trade peer reviews, build a public profile, get on the radar of the
-// people who buy.
+// Single page for everything. /writers, /industry, /selznick now
+// redirect here. The pitch: structured evaluation + exclusive curated
+// opportunities + real feedback from industry + writer profiles.
 //
-// Page architecture (locked by council 2026-04-30):
-//   1. Hero — "Where screenwriters get seen." Primary CTA "Join free",
-//      secondary path is the PDF drop zone.
-//   2. The Arc — Post → Get peer reviews → Build your profile → Get
-//      noticed. Single visual that carries the whole story.
-//   3. Three pillars — peer reviews, public profile, direct industry
-//      contact. Each is paired with an illustrative product mockup
-//      (NOT live data — we don't promise what we can't yet show).
-//   4. Pricing — Free vs Pro $20/mo. Pro is the conversion driver.
-//   5. Final CTA.
-//
-// What we deliberately don't have here yet (per the council):
-//   - No marquee of real writers / badges
-//   - No real /community grid screenshots or user counts
-//   - No testimonials, founder story, FAQ, "as featured in" logos
-//   - No video / animated hero
-// These get added once we have density behind them. Today's job is to
-// sell the IDEA of the platform, not the success of it.
-//
-// Hero-upload handoff unchanged: LandingHero stashes the picked PDF
-// via setPendingFile() and routes to /submit?from=hero.
+// Page architecture:
+//   1. Hero — "Advanced script evaluation. Direct industry access."
+//   2. Arc — Upload → Get evaluated → Match → Submit
+//   3. Five pillars — evaluation, exclusive opportunities, real
+//      feedback, profile, vision (Selznick)
+//   4. Pricing — Free vs Pro $20/mo
+//   5. Final CTA
 
 import { redirect } from 'next/navigation'
 import { LandingTracking } from '@/components/landing-tracking'

@@ -1,50 +1,48 @@
-// LandingPillars — three product pillars rendered as paired
-// "headline + designed mockup" blocks. Each pillar gets one
-// illustrative product mockup (NOT a real screenshot of /community
-// or live data — we don't promise what we can't show yet) and one
-// sentence of copy.
-//
-// Anuj 2026-04-30 v0.11.0 — community-first relaunch. The mockups
-// are intentionally generic (placeholder writer names, illustrative
-// review text) so they sell the IDEA of what the product does, not
-// a specific user's success.
+// LandingPillars — five product pillars as paired text + mockup blocks.
+// v0.14.0 consolidated landing page. Folds /writers, /industry, /selznick
+// content into one page. Sections: evaluation, opportunities, feedback,
+// profile, vision.
 
-import { MessageSquare, User2, Briefcase, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export function LandingPillars() {
   return (
     <section className="px-5 sm:px-8 pb-8 sm:pb-12">
       <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
-        {/* Lead pillar — the report. Anchors the page and makes the
-            other three pillars feel like "what happens with the read"
-            instead of a flat feature list. Anuj 2026-04-30 v0.12.0. */}
         <Pillar
-          eyebrow="Your Selznick read"
-          title="A producer-grade read on every script."
-          body="A structured report with a headline, character notes, packaging angle, and the honest stuff a development exec would say. Generated the moment you post."
-          mockup={<SelznickReportMockup />}
+          eyebrow="The evaluation"
+          title="Every dimension a producer weighs. In under a minute."
+          body="Headline, character breakdowns, packaging angle, budget tier, production complexity, and the honest development notes a buyer would weigh before saying yes. Not a score and a paragraph — the full structured read."
+          mockup={<EvaluationReportMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="Peer reviews"
-          title="Every writer here reviews and gets reviewed."
-          body="That's how you grow. Get a real read from someone in the trenches with you — and give one back."
-          mockup={<PeerReviewMockup />}
+          eyebrow="Exclusive opportunities"
+          title="Curated listings from working industry. Limited submissions keep the signal high."
+          body="Active opportunities from producers, lit reps, talent reps, and financiers — each with specific requirements. When your script qualifies, submit directly. Three submissions per month means every one counts. No query letters, no entry fees, no months of waiting."
+          mockup={<OpportunityCardsMockup />}
           align="right"
         />
         <Pillar
-          eyebrow="Your public profile"
-          title="A real home for your work."
-          body="Your scripts, your voice, all in one place. The kind of page you'd actually drop in your bio."
+          eyebrow="Real feedback"
+          title="Industry partners read your evaluation. Then they respond."
+          body="When you submit to an opportunity, the reviewer gets your full structured evaluation — not a logline and a prayer. They respond with real feedback: what worked, what didn't, and whether there's a path forward. This isn't a form rejection."
+          mockup={<FeedbackMockup />}
+          align="left"
+        />
+        <Pillar
+          eyebrow="Your profile"
+          title="One page for everything you've written."
+          body="Your scripts, your scores, your track record — all in one place. When industry partners look at your submission, this is what they see. A career page that grows with every script you evaluate."
           mockup={<ProfileMockup />}
-          align="left"
+          align="right"
         />
         <Pillar
-          eyebrow="Direct industry contact"
-          title="Get connected to the people who actually buy."
-          body="Producers, agents, and managers come to GEM looking for new scripts and promising writers. Pro unlocks the connection — when your work catches their eye, they reach out directly through GEM."
-          mockup={<IndustryMockup />}
-          align="right"
+          eyebrow="Named for the producer who set the standard"
+          title="Built to get great work made."
+          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation opens the door, opportunities are on the other side. Every feature we build moves toward the same thing: closing the gap between great scripts and the people who can make them."
+          mockup={<VisionFlowMockup />}
+          align="left"
         />
       </div>
     </section>
@@ -100,18 +98,14 @@ function Pillar({
   )
 }
 
-// ── Mockup 1: Selznick read ───────────────────────────────────────
-// The lead pillar. Now shows actual outputs from the report —
-// "Why this is a hit" notes + budget tier + production complexity
-// pills — instead of input dimensions, so a visitor sees what they
-// actually GET, not how the read is scored. Anuj 2026-05-01 v0.12.1.
-function SelznickReportMockup() {
+// ── Mockup 1: Evaluation report (expanded from /writers) ────────
+function EvaluationReportMockup() {
   return (
     <div className="p-5 sm:p-6">
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="min-w-0">
           <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
-            Selznick read
+            GEM evaluation
           </p>
           <p
             className="text-[15px] font-bold m-0 leading-tight text-[var(--gem-gray-50)] truncate"
@@ -138,43 +132,37 @@ function SelznickReportMockup() {
         </div>
       </div>
 
-      {/* Why this is a hit — 2 short numbered notes. The shape mirrors
-          the actual report section. */}
-      <div
-        className="rounded-lg p-3.5 mb-3"
-        style={{
-          background: 'var(--gem-gray-900)',
-          border: '1px solid var(--gem-gray-700)',
-        }}
-      >
-        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
-          Why this is a hit
-        </p>
-        <div className="space-y-1.5">
-          <WhyRow n="01" text="The premise is a built-in engine for tonal whiplash." />
-          <WhyRow n="02" text="Tony is a star-making contradiction in lead-actor terms." />
-        </div>
+      {/* Report sections — the 6 things every eval covers */}
+      <div className="space-y-0">
+        <ReportRow n="01" title="Headline + Why this is a hit" preview="A sharpened pitch a manager could forward verbatim." />
+        <ReportRow n="02" title="Cast" preview="Lead + supporting with the actor-want angle." />
+        <ReportRow n="03" title="Packaging" preview="Audience, budget tier, franchise potential." />
+        <ReportRow n="04" title="Production complexity" preview="The lift, the dependencies, the heads-up." />
+        <ReportRow n="05" title="Development notes" preview="The sharpest lever and every note a buyer would weigh." />
       </div>
 
-      {/* Production reality — two pills mirroring the report's
-          packaging + complexity badges. */}
-      <div className="grid grid-cols-2 gap-2">
-        <ReadTile label="Budget" value="Indie" hint="$2–5M" tone="indie" />
+      <div className="grid grid-cols-2 gap-2 mt-3">
+        <ReadTile label="Budget" value="Indie" hint="$2-5M" tone="indie" />
         <ReadTile label="Complexity" value="Manageable" hint="2 main locations" tone="manageable" />
       </div>
     </div>
   )
 }
 
-function WhyRow({ n, text }: { n: string; text: string }) {
+function ReportRow({ n, title, preview }: { n: string; title: string; preview: string }) {
   return (
-    <div className="flex gap-2">
-      <span className="text-[10px] font-bold tabular-nums shrink-0" style={{ color: 'var(--gem-gold)' }}>
+    <div className="grid grid-cols-[32px_1fr] gap-x-2 py-2 border-b last:border-0 border-[var(--gem-gray-800)]">
+      <span className="text-[13px] font-bold tabular-nums leading-tight" style={{ color: 'var(--gem-gold)' }}>
         {n}
       </span>
-      <p className="text-[12px] m-0 leading-snug text-[var(--gem-gray-100)]">
-        {text}
-      </p>
+      <div className="min-w-0">
+        <p className="text-[12.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
+          {title}
+        </p>
+        <p className="text-[10.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+          {preview}
+        </p>
+      </div>
     </div>
   )
 }
@@ -220,90 +208,174 @@ function ReadTile({
   )
 }
 
-// ── Mockup 2: Peer review thread ──────────────────────────────────
-// Anuj 2026-04-30 v0.12.0 — dropped the orphan "Score 78" header
-// badge that was a Selznick number masquerading as a peer thing.
-// Per-review numeric badges stay (peers DO score 0-100 in product).
-// Footer adds a "Peer average" stat which IS computed today as
-// avg_peer_score on every public script card.
-function PeerReviewMockup() {
+// ── Mockup 2: Opportunity cards ─────────────────────────────────
+function OpportunityCardsMockup() {
   return (
     <div className="p-5 sm:p-6">
       <div className="flex items-center justify-between mb-3">
         <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
-          Peer reviews
+          Active opportunities
         </p>
-      </div>
-      <div className="space-y-3">
-        <ReviewRow
-          name="Maya R."
-          score={82}
-          body="Tonal control is great in the cold open. Page 14 turn could land harder if Joel doesn’t telegraph it in the diner scene."
-        />
-        <ReviewRow
-          name="Andre P."
-          score={74}
-          body="The mob-therapy premise hooks instantly. Second act sags — try collapsing the courthouse beats into one scene."
-        />
-      </div>
-      <div
-        className="mt-4 pt-3 flex items-baseline justify-between"
-        style={{ borderTop: '1px solid var(--gem-gray-700)' }}
-      >
-        <span className="text-[10.5px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-500)]">
-          Peer average
+        <span className="text-[10px] font-bold text-[var(--gem-gray-500)] px-2 py-0.5 rounded-full" style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}>
+          3 of 3 submissions used
         </span>
-        <span className="text-[15px] font-bold tabular-nums text-[var(--gem-gray-50)]">
-          78
-          <span className="text-[11px] font-medium text-[var(--gem-gray-500)] ml-1">
-            from 2 reviews
-          </span>
-        </span>
+      </div>
+      <div className="space-y-2.5">
+        <OppCard
+          title="Character-driven thriller — limited series"
+          description="Looking for contained, high-tension pilots with a strong singular lead."
+          dealType="Option"
+          perspective="Producer"
+          tags={['Thriller', 'Series', 'Indie']}
+          qualifies
+        />
+        <OppCard
+          title="Underrepresented voices — comedy features"
+          description="Fresh comedic POVs from writers with a distinct voice."
+          dealType="Representation"
+          perspective="Lit Rep"
+          tags={['Comedy', 'Feature']}
+        />
+        <OppCard
+          title="Action/thriller IP acquisition"
+          description="High-concept action scripts with franchise potential."
+          dealType="Purchase"
+          perspective="Producer"
+          tags={['Action', 'Feature', 'Studio']}
+        />
       </div>
     </div>
   )
 }
 
-function ReviewRow({ name, score, body }: { name: string; score: number; body: string }) {
-  const initials = name.split(' ').map((p) => p[0]).join('')
+function OppCard({
+  title,
+  description,
+  dealType,
+  perspective,
+  tags,
+  qualifies = false,
+}: {
+  title: string
+  description: string
+  dealType: string
+  perspective: string
+  tags: string[]
+  qualifies?: boolean
+}) {
   return (
     <div
       className="rounded-xl p-3.5"
       style={{
         background: 'var(--gem-gray-900)',
-        border: '1px solid var(--gem-gray-700)',
+        border: qualifies
+          ? '1px solid rgba(16,185,129,0.35)'
+          : '1px solid var(--gem-gray-700)',
       }}
     >
-      <div className="flex items-start justify-between gap-3 mb-1.5">
-        <div className="flex items-center gap-2 min-w-0">
-          <span
-            className="shrink-0 w-6 h-6 rounded-full grid place-items-center text-white font-bold text-[10px]"
-            style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-          >
-            {initials}
-          </span>
-          <span className="text-[12px] font-bold text-[var(--gem-gray-50)] truncate">
-            {name}
-          </span>
-        </div>
-        <span
-          className="shrink-0 inline-flex items-center gap-1 text-[10px] font-bold tabular-nums px-1.5 py-0.5 rounded"
-          style={{
-            color: 'var(--gem-accent)',
-            background: 'rgba(124,58,237,0.10)',
-          }}
-        >
-          {score}
+      <div className="flex flex-wrap gap-1.5 mb-2">
+        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+          {dealType}
+        </span>
+        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
+          {perspective}
         </span>
       </div>
-      <p className="text-[12.5px] leading-snug text-[var(--gem-gray-200)] m-0">
-        {body}
+      <p
+        className="text-[13px] font-bold m-0 mb-1 leading-tight text-[var(--gem-gray-50)]"
+        style={{ fontFamily: 'Georgia, serif' }}
+      >
+        {title}
       </p>
+      <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-2 leading-snug line-clamp-1">
+        {description}
+      </p>
+      <div className="flex flex-wrap items-center gap-1.5">
+        {tags.map(t => (
+          <span key={t} className="text-[9.5px] font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">
+            {t}
+          </span>
+        ))}
+        {qualifies && (
+          <span className="inline-flex items-center gap-1 text-[9.5px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 ml-auto">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.15"/><path d="M3.5 6.2L5.2 7.8L8.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            Your script qualifies
+          </span>
+        )}
+      </div>
     </div>
   )
 }
 
-// ── Mockup 2: Public profile card ─────────────────────────────────
+// ── Mockup 3: Feedback from industry ────────────────────────────
+function FeedbackMockup() {
+  return (
+    <div className="p-5 sm:p-6">
+      <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+        Submission feedback
+      </p>
+
+      {/* The opportunity context */}
+      <div
+        className="rounded-lg px-3 py-2.5 mb-3"
+        style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
+      >
+        <div className="flex flex-wrap gap-1.5 mb-1.5">
+          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+            Option
+          </span>
+          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
+            Producer
+          </span>
+        </div>
+        <p
+          className="text-[12px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          Character-driven thriller — limited series
+        </p>
+      </div>
+
+      {/* The script submitted */}
+      <div
+        className="rounded-lg px-3 py-2 mb-3 flex items-center justify-between gap-2"
+        style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.25)' }}
+      >
+        <div className="min-w-0">
+          <p className="text-[9px] font-bold uppercase tracking-wider text-emerald-700 m-0 mb-0.5">
+            Your script
+          </p>
+          <p className="text-[11.5px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+            Untitled mob-therapy pilot
+          </p>
+        </div>
+        <span className="shrink-0 text-[10px] font-bold px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">
+          Feedback received
+        </span>
+      </div>
+
+      {/* The feedback */}
+      <div
+        className="rounded-lg px-3.5 py-3"
+        style={{ background: 'rgba(124,58,237,0.04)', border: '1px solid rgba(124,58,237,0.20)' }}
+      >
+        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
+          Reviewer feedback
+        </p>
+        <p className="text-[12px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-2">
+          Strong premise and the lead is compelling. The contained setting works for our budget range. We&apos;d want to see the pilot tightened in act two — the therapy sessions lose tension after the midpoint reveal.
+        </p>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}>
+            Requesting revision
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Mockup 4: Profile card ──────────────────────────────────────
 function ProfileMockup() {
   return (
     <div className="p-5 sm:p-6">
@@ -333,9 +405,9 @@ function ProfileMockup() {
         className="grid grid-cols-3 gap-2 text-center pt-3 border-t"
         style={{ borderColor: 'var(--gem-gray-700)' }}
       >
-        <Stat label="Scripts" value="4" />
-        <Stat label="Reviews" value="23" />
-        <Stat label="Followers" value="89" />
+        <ProfileStat label="Scripts" value="4" />
+        <ProfileStat label="Avg Score" value="78" />
+        <ProfileStat label="Submissions" value="6" />
       </div>
       <div className="mt-3 space-y-1.5">
         <ScriptStub title="The Quiet Part" format="Pilot" score={84} />
@@ -345,7 +417,7 @@ function ProfileMockup() {
   )
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function ProfileStat({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <div className="text-[15px] font-bold text-[var(--gem-gray-50)] tabular-nums">{value}</div>
@@ -387,94 +459,105 @@ function ScriptStub({ title, format, score }: { title: string; format: string; s
   )
 }
 
-// ── Mockup 3: Industry inbox ──────────────────────────────────────
-function IndustryMockup() {
+// ── Mockup 5: Vision flow — Script → Evaluation → Opportunity ───
+function VisionFlowMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <div className="flex items-center justify-between mb-3">
-        <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
-          Industry inbox
-        </p>
-        <span
-          className="inline-flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-wider px-1.5 py-[2px] rounded"
-          style={{
-            color: 'var(--gem-accent)',
-            background: 'rgba(124,58,237,0.10)',
-          }}
-        >
-          Pro
-        </span>
-      </div>
-      <div className="space-y-2">
-        <InboxRow
-          icon={<Briefcase size={12} />}
-          name="Lena Park"
-          company="Westview Pictures"
-          status="interested"
+      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-0">
+        <FlowNode
+          label="Your screenplay"
+          sub="Upload a PDF"
+          color="var(--gem-gray-50)"
+          bg="var(--gem-gray-900)"
+          border="var(--gem-gray-700)"
         />
-        <InboxRow
-          icon={<MessageSquare size={12} />}
-          name="Marcus Hill"
-          company="Lighthouse Studios"
-          status="reached out"
+        <FlowArrow />
+        <FlowNode
+          label="Evaluation"
+          sub="Structured producer-grade read"
+          color="var(--gem-accent)"
+          bg="rgba(124,58,237,0.06)"
+          border="rgba(124,58,237,0.30)"
         />
-        <InboxRow
-          icon={<User2 size={12} />}
-          name="Devi Iyer"
-          company="Anchor & Tide Mgmt."
-          status="reached out"
+        <FlowArrow />
+        <FlowNode
+          label="Opportunities"
+          sub="Matched to real buyers"
+          color="#16a34a"
+          bg="rgba(22,163,74,0.06)"
+          border="rgba(22,163,74,0.30)"
         />
       </div>
+      <p className="text-[12px] text-[var(--gem-gray-400)] text-center m-0 mt-5 leading-snug max-w-[44ch] mx-auto">
+        David O. Selznick set the standard for what a great evaluation looks like. We named the engine after him because that&apos;s the bar.
+      </p>
     </div>
   )
 }
 
-function InboxRow({
-  icon,
-  name,
-  company,
-  status,
+function FlowNode({
+  label,
+  sub,
+  color,
+  bg,
+  border,
 }: {
-  icon: React.ReactNode
-  name: string
-  company: string
-  status: 'interested' | 'reached out'
+  label: string
+  sub: string
+  color: string
+  bg: string
+  border: string
 }) {
-  const accent = status === 'reached out' ? 'var(--gem-accent)' : '#16a34a'
-  const bg =
-    status === 'reached out'
-      ? 'rgba(124,58,237,0.10)'
-      : 'rgba(22,163,74,0.10)'
   return (
     <div
-      className="rounded-lg px-3 py-2 flex items-center justify-between gap-2"
-      style={{
-        background: 'var(--gem-gray-900)',
-        border: '1px solid var(--gem-gray-700)',
-      }}
+      className="flex-1 w-full sm:w-auto rounded-xl px-4 py-3.5 text-center"
+      style={{ background: bg, border: `1px solid ${border}` }}
     >
-      <div className="flex items-center gap-2.5 min-w-0">
-        <span
-          className="shrink-0 w-6 h-6 rounded-full grid place-items-center"
-          style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}
-        >
-          {icon}
-        </span>
-        <div className="min-w-0">
-          <p className="text-[12px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight truncate">
-            {name}
-          </p>
-          <p className="text-[10.5px] text-[var(--gem-gray-500)] m-0 leading-tight truncate">
-            {company}
-          </p>
-        </div>
-      </div>
-      <span
-        className="shrink-0 text-[9.5px] font-bold uppercase tracking-wider px-1.5 py-[2px] rounded"
-        style={{ color: accent, background: bg }}
+      <p className="text-[13px] font-bold m-0 leading-tight" style={{ color, fontFamily: 'Georgia, serif' }}>
+        {label}
+      </p>
+      <p className="text-[10.5px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug">
+        {sub}
+      </p>
+    </div>
+  )
+}
+
+function FlowArrow() {
+  return (
+    <div className="flex items-center justify-center px-1.5 py-1 sm:py-0">
+      <svg
+        aria-hidden
+        className="hidden sm:block text-[var(--gem-gray-500)]"
+        width="28"
+        height="14"
+        viewBox="0 0 28 14"
+        fill="none"
       >
-        {status === 'reached out' ? 'Reached out' : 'Interested'}
-      </span>
+        <path
+          d="M2 7h22M18 2l5 5-5 5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <svg
+        aria-hidden
+        className="sm:hidden text-[var(--gem-gray-500)]"
+        width="14"
+        height="22"
+        viewBox="0 0 14 22"
+        fill="none"
+      >
+        <path
+          d="M7 2v18M2 14l5 5 5-5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     </div>
   )
 }

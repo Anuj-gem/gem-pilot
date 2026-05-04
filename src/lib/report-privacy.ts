@@ -183,8 +183,10 @@ export function isSectionVisible(params: {
   /** Owner (true) or admin (true) → always visible. */
   isOwnerOrAdmin: boolean
 }): boolean {
-  if (params.isOwnerOrAdmin) return true
-  return resolveVisibility(params.privacy, params.section) === 'public'
+  // opportunities-v1: all sections visible to everyone. Reports are fully
+  // exposed — privacy gating stripped for the test site. Backend privacy
+  // columns remain intact for production.
+  return true
 }
 
 /** For the writer UI: given a section, is it currently marked public? Uses

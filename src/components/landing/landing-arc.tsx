@@ -5,28 +5,28 @@
 // picture: every visitor sees what GEM does for them as a writer
 // before they decide whether to scroll the rest of the page.
 
-import { FileText, MessageSquare, User2, Sparkles } from 'lucide-react'
+import { FileText, Sparkles, Target, Send } from 'lucide-react'
 
 const STEPS = [
   {
     icon: FileText,
-    title: 'Post',
-    sub: 'Drop a PDF. Get your structured read in under a minute.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Get peer reviews',
-    sub: 'Other writers read it and weigh in. So do you.',
-  },
-  {
-    icon: User2,
-    title: 'Build your profile',
-    sub: 'Your work, your voice — all in one place.',
+    title: 'Upload',
+    sub: 'Drop your screenplay. PDF, any length.',
   },
   {
     icon: Sparkles,
-    title: 'Get noticed',
-    sub: 'Producers and reps reach out about scripts they love.',
+    title: 'Get evaluated',
+    sub: 'A structured report covering story, characters, packaging, budget, and what it would take to make. Under a minute.',
+  },
+  {
+    icon: Target,
+    title: 'Match',
+    sub: "Your script's qualities are matched against active opportunities from producers, reps, and financiers.",
+  },
+  {
+    icon: Send,
+    title: 'Submit',
+    sub: 'When you qualify, submit directly. No query letters. No blind submissions.',
   },
 ]
 
@@ -45,7 +45,7 @@ export function LandingArc() {
             className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            From draft to discovered.
+            From upload to opportunity.
           </h2>
         </div>
 

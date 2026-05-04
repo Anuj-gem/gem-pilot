@@ -136,9 +136,24 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   activity.sort((a, b) => b.ts - a.ts)
   const recentActivity = activity.slice(0, 3)
 
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   const needsPrivacyConfirm = !(profile as { privacy_confirmed_at?: string | null } | null)?.privacy_confirmed_at
   const initialPrivacy = normalizePrivacyDefaults((profile as { privacy_defaults?: unknown } | null)?.privacy_defaults)
+
+  // Monthly opportunity submissions for nav display
+  let monthlySubmissions: { used: number; limit: number; resetsAt: string } | undefined
+  if (isPro) {
+    const now = new Date()
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+    const { count } = await service
+      .from('opportunity_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .gte('submitted_at', monthStart)
+    monthlySubmissions = { used: count ?? 0, limit: 3, resetsAt: nextMonth.toISOString() }
+  }
 
   const navUserData = {
     profile: {
@@ -153,6 +168,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       followers: followers ?? 0,
       following: following ?? 0,
       reviewsGiven: reviewsGiven ?? 0,
+      monthlySubmissions,
     },
     recentActivity,
   }
@@ -160,7 +176,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <Nav userData={navUserData} />
-      {needsPrivacyConfirm && <PrivacyConfirmPrompt initial={initialPrivacy} />}
+      {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
+          Backend settings + profile columns unchanged for production. */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
         <AppRail>{children}</AppRail>
       </div>

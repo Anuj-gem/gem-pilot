@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { Home, Users, FileText, User } from 'lucide-react'
+import { Home, Briefcase, FileText, User } from 'lucide-react'
 
 export function MobileTabBar() {
   const pathname = usePathname() ?? ''
@@ -50,7 +50,7 @@ export function MobileTabBar() {
 
   const tabs = [
     { href: '/dashboard',  label: 'Home',      icon: Home,     match: (p: string) => p === '/dashboard' || p === '/' },
-    { href: '/community',  label: 'Community', icon: Users,    match: (p: string) => p.startsWith('/community') || p.startsWith('/discover') },
+    { href: '/opportunities', label: 'Opps', icon: Briefcase, match: (p: string) => p.startsWith('/opportunities') },
     { href: '/scripts',    label: 'Scripts',   icon: FileText, match: (p: string) => p.startsWith('/scripts') },
     { href: profileHref,   label: 'Profile',   icon: User,     match: (p: string) => p.startsWith('/w/') || p.startsWith('/profile') },
   ] as const

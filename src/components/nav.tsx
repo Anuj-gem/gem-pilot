@@ -2,16 +2,15 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import {
   LayoutDashboard,
+  History,
   LogOut,
   Menu,
   X,
   Plus,
-  ChevronDown,
-  Users,
 } from 'lucide-react'
 import {
   NavUserMenu,
@@ -26,39 +25,16 @@ export interface NavUserData {
   recentActivity?: NavUserMenuActivity[]
 }
 
-// LOGGED-OUT NAV (Anuj 2026-04-28 redesign):
-//   Desktop: [GEM]   [Learn more ▾]   [Submit a script]  [Sign up]  [Log in]
+// LOGGED-OUT NAV (v0.14.0 consolidated):
+//   Desktop: [GEM]   [Opportunities]  [Blog]   [Submit a script]  [Sign up]  [Log in]
 //   Mobile:  [GEM]                          [Submit] [☰]
-//   Hamburger: Learn more (For writers / For producers / About Selznick),
-//              Sign up, Log in.
+//   Hamburger: Opportunities, Blog, Sign up, Log in.
 //
-// Same nav renders on every marketing page (/, /writers, /industry,
-// /selznick, /login, /signup) so the user can always navigate back to
-// any other page without learning a new chrome layout.
-//
-// LOGGED-IN NAV: unchanged — Dashboard, Submit, Sign out.
+// LOGGED-IN NAV: Dashboard, History, Submit, avatar dropdown.
 
-const LEARN_MORE_LINKS: { href: string; label: string; description: string }[] = [
-  {
-    href: '/writers',
-    label: 'For writers',
-    description: 'Upload, get a producer-grade read, share with anyone.',
-  },
-  {
-    href: '/industry',
-    label: 'For producers',
-    description: 'Filter the matched feed and reach writers directly.',
-  },
-  {
-    href: '/selznick',
-    label: 'About Selznick',
-    description: 'How GEM reads every script.',
-  },
-  {
-    href: '/blog',
-    label: 'Blog',
-    description: 'Product updates, behind-the-scenes notes, screenwriting deep-dives.',
-  },
+const PUBLIC_NAV_LINKS: { href: string; label: string }[] = [
+  { href: '/opportunities', label: 'Opportunities' },
+  { href: '/blog', label: 'Blog' },
 ]
 
 interface NavProps {
@@ -75,30 +51,9 @@ export default function Nav({ userData }: NavProps = {}) {
   const supabase = createClient()
   const [user, setUser] = useState<{ id: string } | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [learnMoreOpen, setLearnMoreOpen] = useState(false)
-  const learnMoreRef = useRef<HTMLDivElement>(null)
-
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user))
   }, [])
-
-  // Close the desktop "Learn more" dropdown on outside click + Escape.
-  useEffect(() => {
-    if (!learnMoreOpen) return
-    function onDocClick(e: MouseEvent) {
-      if (!learnMoreRef.current) return
-      if (!learnMoreRef.current.contains(e.target as Node)) setLearnMoreOpen(false)
-    }
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setLearnMoreOpen(false)
-    }
-    document.addEventListener('mousedown', onDocClick)
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('mousedown', onDocClick)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [learnMoreOpen])
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
@@ -111,7 +66,7 @@ export default function Nav({ userData }: NavProps = {}) {
   // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
   const loggedInLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/community', label: 'Community', icon: Users },
+    { href: '/opportunity-history', label: 'History', icon: History },
   ]
 
   return (
@@ -137,73 +92,8 @@ export default function Nav({ userData }: NavProps = {}) {
 
           {user ? (
             <>
-              {/* Desktop logged-in. Layout intent (Anuj 2026-04-30):
-                    Left of nav:  Resources ▾ (lower-priority browse)
-                    Right of nav: Dashboard, Submit (operative actions)
-                  The page logo + Resources sit on one side; the
-                  user-action cluster sits on the other. The flex parent
-                  uses justify-between, so an inline `flex-1` spacer
-                  between the two clusters keeps each end pinned. */}
-              <div className="hidden md:flex flex-1 items-center justify-between ml-6">
-                {/* LEFT: Resources dropdown */}
-                <div ref={learnMoreRef} className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setLearnMoreOpen(o => !o)}
-                    aria-expanded={learnMoreOpen}
-                    aria-haspopup="menu"
-                    className={`inline-flex items-center gap-1 text-sm transition-colors ${
-                      LEARN_MORE_LINKS.some(l => pathname.startsWith(l.href))
-                        ? 'text-[var(--gem-white)]'
-                        : 'text-[var(--gem-gray-300)] hover:text-[var(--gem-white)]'
-                    }`}
-                  >
-                    Resources
-                    <ChevronDown
-                      size={14}
-                      className={`transition-transform ${learnMoreOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  {learnMoreOpen && (
-                    <div
-                      role="menu"
-                      className="absolute left-0 top-full mt-2 min-w-[280px] rounded-xl bg-white p-2 z-50"
-                      style={{
-                        border: '1px solid var(--gem-gray-700)',
-                        boxShadow: '0 18px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05)',
-                      }}
-                    >
-                      {LEARN_MORE_LINKS.map(link => {
-                        const active = pathname.startsWith(link.href)
-                        return (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setLearnMoreOpen(false)}
-                            role="menuitem"
-                            className="block px-3 py-2 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
-                            style={
-                              active
-                                ? { background: 'rgba(124,58,237,0.06)' }
-                                : undefined
-                            }
-                          >
-                            <span className="block text-[13.5px] font-semibold text-[var(--gem-gray-50)] leading-tight">
-                              {link.label}
-                            </span>
-                            <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug mt-0.5">
-                              {link.description}
-                            </span>
-                          </Link>
-                        )
-                      })}
-                    </div>
-                  )}
-                </div>
-
-                {/* RIGHT: Dashboard + Community + Submit + Sign out.
-                    Active tab uses an underline accent so users can always
-                    see where they are. */}
+              {/* Desktop logged-in — flat nav links on the right */}
+              <div className="hidden md:flex flex-1 items-center justify-end ml-6">
                 <div className="flex items-center gap-1">
                   {loggedInLinks.map(link => {
                     const Icon = link.icon
@@ -296,63 +186,21 @@ export default function Nav({ userData }: NavProps = {}) {
             </>
           ) : (
             <>
-              {/* Desktop logged-out — Learn more dropdown + Submit primary
-                  + Sign up + Log in (to the side). */}
+              {/* Desktop logged-out — flat links + Submit + Sign up + Log in */}
               <div className="hidden md:flex items-center gap-3">
-                <div ref={learnMoreRef} className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setLearnMoreOpen(o => !o)}
-                    aria-expanded={learnMoreOpen}
-                    aria-haspopup="menu"
-                    className={`inline-flex items-center gap-1 text-sm transition-colors ${
-                      LEARN_MORE_LINKS.some(l => pathname.startsWith(l.href))
-                        ? 'text-[var(--gem-white)]'
+                {PUBLIC_NAV_LINKS.map(link => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-sm transition-colors ${
+                      pathname.startsWith(link.href)
+                        ? 'text-[var(--gem-white)] font-semibold'
                         : 'text-[var(--gem-gray-300)] hover:text-[var(--gem-white)]'
                     }`}
                   >
-                    Learn more
-                    <ChevronDown
-                      size={14}
-                      className={`transition-transform ${learnMoreOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  {learnMoreOpen && (
-                    <div
-                      role="menu"
-                      className="absolute right-0 top-full mt-2 min-w-[280px] rounded-xl bg-white p-2 z-50"
-                      style={{
-                        border: '1px solid var(--gem-gray-700)',
-                        boxShadow: '0 18px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05)',
-                      }}
-                    >
-                      {LEARN_MORE_LINKS.map(link => {
-                        const active = pathname.startsWith(link.href)
-                        return (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setLearnMoreOpen(false)}
-                            role="menuitem"
-                            className="block px-3 py-2 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
-                            style={
-                              active
-                                ? { background: 'rgba(124,58,237,0.06)' }
-                                : undefined
-                            }
-                          >
-                            <span className="block text-[13.5px] font-semibold text-[var(--gem-gray-50)] leading-tight">
-                              {link.label}
-                            </span>
-                            <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug mt-0.5">
-                              {link.description}
-                            </span>
-                          </Link>
-                        )
-                      })}
-                    </div>
-                  )}
-                </div>
+                    {link.label}
+                  </Link>
+                ))}
                 <Link
                   href="/submit"
                   className="text-sm px-4 py-1.5 rounded-lg bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
@@ -418,23 +266,17 @@ export default function Nav({ userData }: NavProps = {}) {
                   />
                 ))}
 
-                {/* Resources group */}
-                <div className="pt-2">
-                  <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2 px-1">
-                    Resources
-                  </p>
-                  <div className="space-y-2">
-                    {LEARN_MORE_LINKS.map(link => (
-                      <NavMenuRow
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMobileOpen(false)}
-                        label={link.label}
-                        hint={link.description}
-                        active={pathname.startsWith(link.href)}
-                      />
-                    ))}
-                  </div>
+                {/* Browse links */}
+                <div className="pt-2 space-y-2">
+                  {PUBLIC_NAV_LINKS.map(link => (
+                    <NavMenuRow
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      label={link.label}
+                      active={pathname.startsWith(link.href)}
+                    />
+                  ))}
                 </div>
 
                 <button
@@ -456,25 +298,17 @@ export default function Nav({ userData }: NavProps = {}) {
               </>
             ) : (
               <>
-                {/* Learn more group — small section header + the three
-                    sub-pages as direct rows. Avoids a nested
-                    accordion-in-a-hamburger UX. */}
-                <div>
-                  <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2 px-1">
-                    Learn more
-                  </p>
-                  <div className="space-y-2">
-                    {LEARN_MORE_LINKS.map(link => (
-                      <NavMenuRow
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMobileOpen(false)}
-                        label={link.label}
-                        hint={link.description}
-                        active={pathname.startsWith(link.href)}
-                      />
-                    ))}
-                  </div>
+                {/* Browse links */}
+                <div className="space-y-2">
+                  {PUBLIC_NAV_LINKS.map(link => (
+                    <NavMenuRow
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      label={link.label}
+                      active={pathname.startsWith(link.href)}
+                    />
+                  ))}
                 </div>
 
                 {/* Account actions — separated by a divider so they read

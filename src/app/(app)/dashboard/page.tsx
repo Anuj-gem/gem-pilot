@@ -1,25 +1,21 @@
-// /dashboard — community-first writer home (v0.7).
-// Anuj 2026-04-30.
+// /dashboard — writer pipeline center (v0.15 opportunities-v1).
+// Anuj 2026-05-03.
 //
-// Replaces the old SaaS-shaped scripts table with a feed-first layout:
+// Pipeline-focused layout:
 //
-//   ┌─────────────── max-w-6xl ────────────────────────────┐
-//   │  Activity strip                                       │
-//   │  ┌────────────────────────┬─────────────────────────┐ │
-//   │  │  COMMUNITY FEED        │  YOUR PANEL (sidebar)   │ │
-//   │  │  poster grid 2/3 cols  │  profile + latest +     │ │
-//   │  │                        │  others + submit btn    │ │
-//   │  └────────────────────────┴─────────────────────────┘ │
-//   └───────────────────────────────────────────────────────┘
-//
-// Mobile collapses to single column with YourPanel above the feed (so a
-// writer who just submitted sees their script processing right at the
-// top while they scroll the feed).
-//
-// The detail-management surfaces (per-script privacy, drafts, producer
-// activity, paywalls, every Upgrade CTA on the page) all moved to the
-// public profile (/w/[handle]) and the report page. The dashboard is
-// no longer a CRM.
+//   +--------------------------------------+
+//   |  STAT CARDS (clickable)               |
+//   |  scripts · in consideration · opps    |
+//   +--------------------------------------+
+//   |  IN CONSIDERATION (front & center)    |
+//   |  active subs + feedback               |
+//   +--------------------------------------+
+//   |  AVAILABLE OPPORTUNITIES              |
+//   |  matched but not yet submitted        |
+//   +--------------------------------------+
+//   |  YOUR SCRIPTS                         |
+//   |  match count + 3-dot + subtle report  |
+//   +--------------------------------------+
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
@@ -27,8 +23,11 @@ import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
-import { getScriptStats } from '@/lib/script-stats'
+import { MarkViewed } from '@/components/dashboard/mark-viewed'
+import { CollapsibleOpportunity } from '@/components/dashboard/collapsible-opportunity'
+import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
+import { UpgradePill } from '@/components/dashboard/upgrade-pill'
+import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -50,33 +49,21 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login?redirect=/dashboard')
 
-
   const { data: profile } = await supabase
     .from('profiles')
     .select('subscription_status, full_name, handle, headline, avatar_url')
     .eq('id', user.id)
     .single()
 
-  // Anuj 2026-04-30 v0.10.11 — REMOVED the forced "must have handle +
-  // headline" gate. The new onboarding flow (/onboarding/profile) lets
-  // users skip profile setup intentionally; the old gate was bouncing
-  // them right back to /profile?onboarding=1, undoing the Skip. Profile
-  // setup is now strictly opt-in and lives in the nav avatar dropdown.
-
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  const isTrial = !isPro
   const service = svc()
 
   // ---------- YOUR scripts ----------
   type MySubRow = {
-    id: string
-    title: string
-    status: string
-    declared_format: string | null
-    created_at: string
-    is_public: boolean
-    hidden_at: string | null
-    allow_reviews: boolean | null
-    allow_industry: boolean | null
+    id: string; title: string; status: string; declared_format: string | null
+    created_at: string; is_public: boolean; hidden_at: string | null
+    allow_reviews: boolean | null; allow_industry: boolean | null
     script_evaluations:
       | { id: string; weighted_score: number | null; evaluation: unknown; edited_fields: unknown }
       | { id: string; weighted_score: number | null; evaluation: unknown; edited_fields: unknown }[]
@@ -94,82 +81,16 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
   const submissionIds = visible.map((s) => s.id)
 
-  // ---------- COMMUNITY FEED (Discover-style poster grid, 24 cards) ----------
-  const { data: pubRows } = await service
-    .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry')
-    .eq('is_public', true)
-    .eq('status', 'completed')
-    .is('hidden_at', null)
+  // ---------- OPPORTUNITIES ----------
+  // Fetch ALL opportunities (need inactive ones too for submission lookups)
+  const { data: allOppRows } = await service
+    .from('opportunities')
+    .select('*')
     .order('created_at', { ascending: false })
-    .limit(80)
-  type FeedSub = {
-    id: string
-    title: string
-    declared_format: string | null
-    created_at: string
-    user_id: string | null
-    report_privacy: { show_score?: boolean } | null
-    allow_reviews: boolean | null
-    allow_industry: boolean | null
-  }
-  const feedScripts = (pubRows as FeedSub[] | null) || []
-  const feedSubIds = feedScripts.map((s) => s.id)
-  const feedWriterIds = Array.from(new Set(feedScripts.map((s) => s.user_id).filter(Boolean) as string[]))
+  const allOpportunities = (allOppRows || []) as OpportunityData[]
+  const opportunities = allOpportunities.filter(o => o.status === 'active')
 
-  const [{ data: feedEvs }, { data: feedWriters }, feedStats] = await Promise.all([
-    service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', feedSubIds),
-    service.from('profiles').select('id, handle, full_name, avatar_url').in('id', feedWriterIds),
-    getScriptStats(feedSubIds),
-  ])
-
-  type FeedEval = { id: string; weighted_score: number | null; logline: string | null; genre: string | null }
-  const feedEvalBySub = new Map<string, FeedEval>()
-  for (const e of (feedEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
-    const evJson = e.evaluation as Record<string, unknown> | null
-    const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
-    const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
-    const logline = (fmt.logline_one_line as string | undefined) || (evJson?.positioning_hook as string | undefined) || null
-    const genre = (cls.genre_primary as string | undefined) || (fmt.genre_primary as string | undefined) || null
-    feedEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, logline, genre })
-  }
-  type FeedWriter = { handle: string | null; full_name: string | null; avatar_url: string | null }
-  const feedWriterById = new Map<string, FeedWriter>()
-  for (const w of (feedWriters as Array<FeedWriter & { id: string }> | null) || []) {
-    feedWriterById.set(w.id, { handle: w.handle, full_name: w.full_name, avatar_url: w.avatar_url })
-  }
-
-  const feedCards: ScriptCardData[] = feedScripts
-    .map((s): ScriptCardData | null => {
-      const ev = feedEvalBySub.get(s.id)
-      if (!ev) return null
-      const wp = s.user_id ? feedWriterById.get(s.user_id) : null
-      const st = feedStats.get(s.id)
-      return {
-        submission_id: s.id,
-        evaluation_id: ev.id,
-        title: s.title,
-        format: s.declared_format,
-        genre: ev.genre,
-        logline: ev.logline,
-        selznick_score: ev.weighted_score,
-        writer_handle: wp?.handle ?? null,
-        writer_name: wp?.full_name ?? null,
-        writer_avatar_url: wp?.avatar_url ?? null,
-        review_count: st?.reviewCount ?? 0,
-        avg_peer_score: st?.avgPeerScore ?? null,
-        score_visible: s.report_privacy?.show_score !== false,
-        allow_reviews: s.allow_reviews ?? true,
-        allow_industry: s.allow_industry ?? true,
-      }
-    })
-    .filter((c): c is ScriptCardData => c !== null)
-    .slice(0, 6)
-
-  // ---------- YOUR scripts as poster cards ----------
-  // Render the user's own published-or-completed scripts as poster cards
-  // in the main column. Owner-only Industry stats button surfaces here.
-  // Pull eval rows for our own scripts the same way we did for the feed.
+  type FeedEval = { id: string; weighted_score: number | null; logline: string | null; genre: string | null; budget: string | null }
   const myEvalBySub = new Map<string, FeedEval>()
   if (submissionIds.length > 0) {
     const { data: myEvs } = await service
@@ -178,129 +99,223 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       .in('submission_id', submissionIds)
     for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
       const evJson = e.evaluation as Record<string, unknown> | null
-      const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
-      const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
-      const logline = (fmt.logline_one_line as string | undefined) || (evJson?.positioning_hook as string | undefined) || null
-      const genre = (cls.genre_primary as string | undefined) || (fmt.genre_primary as string | undefined) || null
-      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, logline, genre })
+      const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
+      const cls = (evJson?.classification as Record<string, unknown>) || {}
+      const logline = (fmt.logline_one_line as string) || (evJson?.positioning_hook as string) || null
+      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+      const packaging = (evJson?.packaging as Record<string, unknown>) || {}
+      const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
+      const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
+      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, logline, genre, budget })
     }
   }
-  const myReviewStats = await getScriptStats(submissionIds)
 
-  // ── Free-tier paywall logic ──────────────────────────────
-  // Find the user's first completed submission (by created_at ASC).
-  // That one gets full access (the "free evaluation"). All subsequent
-  // completed scripts are locked behind Pro. Processing scripts always
-  // render with a spinner regardless of tier.
-  //
-  // IMPORTANT: use ALL submissions (including hidden/removed) to find the
-  // first completed one. Hiding a script doesn't give you another free
-  // eval — mirrors the report page's lockedAfterFreeEval query.
+  // ---------- QUALIFICATION ----------
+  function scriptsQualifyingFor(opp: OpportunityData): QualifyingScript[] {
+    const qualifying: QualifyingScript[] = []
+    for (const sub of visible) {
+      if (sub.status !== 'completed') continue
+      const ev = myEvalBySub.get(sub.id)
+      if (!ev) continue
+      const genreKey = ev.genre?.toLowerCase().replace(/[^a-z-]/g, '') || null
+      if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format ?? '')) continue
+      if (opp.genres.length > 0 && genreKey && !opp.genres.includes(genreKey)) continue
+      if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
+      if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) continue
+      qualifying.push({ id: sub.id, title: sub.title, evaluation_id: ev.id })
+    }
+    return qualifying
+  }
+  const oppWithQualifications = opportunities.map(opp => ({
+    opportunity: opp,
+    qualifyingScripts: scriptsQualifyingFor(opp),
+  }))
+
+  // Per-script: how many opportunities does it qualify for?
+  const oppCountByScript = new Map<string, number>()
+  for (const { qualifyingScripts } of oppWithQualifications) {
+    for (const qs of qualifyingScripts) {
+      oppCountByScript.set(qs.id, (oppCountByScript.get(qs.id) ?? 0) + 1)
+    }
+  }
+
+  // Available = matched but not yet submitted
+  // We need to know which scripts are already submitted to which opportunities
+  const allQualifyingSubIds = [...new Set(oppWithQualifications.flatMap(o => o.qualifyingScripts.map(q => q.id)))]
+  const existingOppSubs = new Map<string, Set<string>>() // opp_id -> Set<submission_id>
+  if (allQualifyingSubIds.length > 0) {
+    const { data: oppSubs } = await service
+      .from('opportunity_submissions')
+      .select('opportunity_id, submission_id, status')
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+    for (const os of (oppSubs || []) as { opportunity_id: string; submission_id: string; status: string }[]) {
+      if (!existingOppSubs.has(os.opportunity_id)) existingOppSubs.set(os.opportunity_id, new Set())
+      existingOppSubs.get(os.opportunity_id)!.add(os.submission_id)
+    }
+  }
+
+  // ---------- SUBMISSION STATUS ----------
+  type ActiveSub = {
+    id: string; opportunity_id: string; opportunity_title: string; opportunity_slug: string
+    deal_type: string | null; perspective: string | null; deadline: string | null
+    script_title: string; evaluationId: string | null; score: number | null
+    status: 'pending' | 'reviewed'
+    feedback: string | null; nextSteps: string | null
+    submitted_at: string; isNewFeedback: boolean
+  }
+  const activeSubs: ActiveSub[] = []
+  if (submissionIds.length > 0) {
+    const { data: myOppSubs } = await service
+      .from('opportunity_submissions')
+      .select('id, opportunity_id, submission_id, status, feedback, next_steps, submitted_at, feedback_viewed_at')
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .order('submitted_at', { ascending: false })
+
+    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; next_steps: string | null; submitted_at: string; feedback_viewed_at: string | null }[]) {
+      const opp = allOpportunities.find(o => o.id === os.opportunity_id)
+      const sub = visible.find(s => s.id === os.submission_id)
+      if (!opp || !sub) continue
+      const ev = myEvalBySub.get(os.submission_id)
+      activeSubs.push({
+        id: os.id,
+        opportunity_id: os.opportunity_id,
+        opportunity_title: opp.title,
+        opportunity_slug: opp.slug ?? opp.id,
+        deal_type: opp.deal_type ?? null,
+        perspective: opp.perspective ?? null,
+        deadline: opp.deadline ?? null,
+        script_title: sub.title,
+        evaluationId: ev?.id ?? null,
+        score: ev?.weighted_score ?? null,
+        status: os.status as 'pending' | 'reviewed',
+        feedback: os.feedback,
+        nextSteps: os.next_steps,
+        submitted_at: os.submitted_at,
+        isNewFeedback: os.status === 'reviewed' && !os.feedback_viewed_at,
+      })
+    }
+  }
+
+  // ---------- AVAILABLE OPP COUNT ----------
+  let totalAvailableOpps = 0
+  for (const { opportunity, qualifyingScripts } of oppWithQualifications) {
+    const submitted = existingOppSubs.get(opportunity.id) ?? new Set()
+    const unsubmitted = qualifyingScripts.filter(qs => !submitted.has(qs.id))
+    if (unsubmitted.length > 0) totalAvailableOpps++
+  }
+
+  // ---------- PAYWALL LOGIC ----------
   const allSubs = (mySubs as MySubRow[] | null) || []
   const allCompleted = allSubs
     .filter((s) => s.status === 'completed')
     .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
   const firstCompletedId = allCompleted[0]?.id ?? null
-  const isTrial = !isPro
 
-  type MyCard = ScriptCardData & { _isLocked: boolean; _isProcessing: boolean; _isFreePost: boolean }
-  const allMyCards: MyCard[] = visible
-    .map((s): MyCard | null => {
+  // Build script data
+  type ScriptRow = {
+    submissionId: string; evaluationId: string | null; title: string
+    format: string | null; genre: string | null; score: number | null
+    isProcessing: boolean; isLocked: boolean; oppCount: number
+    createdAt: string
+  }
+  const scriptRows: ScriptRow[] = visible
+    .map((s): ScriptRow | null => {
       const ev = myEvalBySub.get(s.id)
       const stillProcessing = s.status === 'processing' || s.status === 'queued'
-      // Processing scripts have no eval — render them anyway
       if (!ev && !stillProcessing) return null
-      const st = myReviewStats.get(s.id)
       const isFirstCompleted = s.id === firstCompletedId
       return {
-        submission_id: s.id,
-        evaluation_id: ev?.id ?? null,
+        submissionId: s.id,
+        evaluationId: ev?.id ?? null,
         title: s.title,
         format: s.declared_format,
         genre: ev?.genre ?? null,
-        logline: ev?.logline ?? null,
-        selznick_score: ev?.weighted_score ?? null,
-        is_public: !!s.is_public,
-        allow_reviews: s.allow_reviews ?? true,
-        allow_industry: s.allow_industry ?? true,
-        writer_handle: profile?.handle ?? null,
-        writer_name: profile?.full_name ?? null,
-        writer_avatar_url: profile?.avatar_url ?? null,
-        review_count: st?.reviewCount ?? 0,
-        avg_peer_score: st?.avgPeerScore ?? null,
-        _isProcessing: stillProcessing,
-        _isLocked: isTrial && !stillProcessing && !isFirstCompleted,
-        _isFreePost: isTrial && isFirstCompleted,
+        score: ev?.weighted_score ?? null,
+        isProcessing: stillProcessing,
+        isLocked: isTrial && !stillProcessing && !isFirstCompleted,
+        oppCount: oppCountByScript.get(s.id) ?? 0,
+        createdAt: s.created_at,
       }
     })
-    .filter((c): c is MyCard => c !== null)
-  // Show only the 3 most recent on the dashboard. The rest live behind
-  // a "View all" link → public profile page (Anuj 2026-04-30).
-  const myCards = allMyCards.slice(0, 3)
-  const hasMoreScripts = allMyCards.length > myCards.length
-
-  // ---------- POSTS YOU'VE REVIEWED ----------
-  // Last 3 peer reviews the user has given. The submission for each
-  // review may not be public, but since the reviewer can see what they
-  // reviewed (and the submission owner explicitly let them in), the
-  // service client is fine here.
-  const { data: myReviewRows } = await service
-    .from('peer_reviews')
-    .select('id, submission_id, score, body, created_at')
-    .eq('reviewer_id', user.id)
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-    .limit(3)
-  type MyReviewRow = { id: string; submission_id: string; score: number | null; body: string | null; created_at: string }
-  const myReviews = (myReviewRows as MyReviewRow[] | null) || []
-  const reviewedSubIds = myReviews.map((r) => r.submission_id)
-
-  type ReviewedCard = ScriptCardData & { reviewedAt: string; myScore: number | null }
-  const reviewedCards: ReviewedCard[] = []
-  if (reviewedSubIds.length > 0) {
-    const [{ data: revSubs }, { data: revEvs }] = await Promise.all([
-      service.from('script_submissions').select('id, title, declared_format, user_id').in('id', reviewedSubIds),
-      service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', reviewedSubIds),
-    ])
-    const subById = new Map((revSubs as { id: string; title: string; declared_format: string | null; user_id: string }[] | null)?.map((s) => [s.id, s]) || [])
-    const writerIds = Array.from(new Set((revSubs as { user_id: string }[] | null)?.map((s) => s.user_id) || []))
-    const { data: writerRows } = await service.from('profiles').select('id, handle, full_name, avatar_url').in('id', writerIds)
-    const writerById = new Map((writerRows as { id: string; handle: string | null; full_name: string | null; avatar_url: string | null }[] | null)?.map((w) => [w.id, w]) || [])
-
-    type EvRow = { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }
-    const evBySub = new Map<string, EvRow>()
-    for (const e of ((revEvs as EvRow[] | null) || [])) evBySub.set(e.submission_id, e)
-
-    for (const r of myReviews) {
-      const sub = subById.get(r.submission_id)
-      const ev = evBySub.get(r.submission_id)
-      if (!sub || !ev) continue
-      const evJson = (ev.evaluation as Record<string, unknown> | null) || null
-      const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
-      const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
-      const logline = (fmt.logline_one_line as string | undefined) || (evJson?.positioning_hook as string | undefined) || null
-      const genre = (cls.genre_primary as string | undefined) || (fmt.genre_primary as string | undefined) || null
-      const wp = writerById.get(sub.user_id)
-      reviewedCards.push({
-        submission_id: sub.id,
-        evaluation_id: ev.id,
-        title: sub.title,
-        format: sub.declared_format,
-        genre,
-        logline,
-        selznick_score: ev.weighted_score,
-        writer_handle: wp?.handle ?? null,
-        writer_name: wp?.full_name ?? null,
-        writer_avatar_url: wp?.avatar_url ?? null,
-        review_count: 0,
-        avg_peer_score: null,
-        reviewedAt: r.created_at,
-        myScore: r.score,
-      })
-    }
-  }
+    .filter((r): r is ScriptRow => r !== null)
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
+  const completedCount = allCompleted.length
+  const pendingCount = activeSubs.filter(s => s.status === 'pending').length
+  const reviewedCount = activeSubs.filter(s => s.status === 'reviewed').length
+  const newFeedbackCount = activeSubs.filter(s => s.isNewFeedback).length
+  const qualifyingScriptCount = [...oppCountByScript.values()].filter(c => c > 0).length
+
+  // Sort: new feedback first, then pending, then past feedback
+  const newFeedbackSubs = activeSubs.filter(s => s.isNewFeedback)
+  const pendingSubs = activeSubs.filter(s => s.status === 'pending')
+  const pastFeedbackSubs = activeSubs.filter(s => s.status === 'reviewed' && !s.isNewFeedback)
+
+  // Group submissions by opportunity
+  type OppGroup = {
+    opportunityId: string; title: string; slug: string
+    dealType: string | null; perspective: string | null; deadline: string | null
+    scripts: ActiveSub[]
+    hasPending: boolean; hasReviewed: boolean
+    primaryNextSteps: string | null
+  }
+  function groupByOpp(subs: ActiveSub[]): OppGroup[] {
+    const map = new Map<string, ActiveSub[]>()
+    for (const s of subs) {
+      if (!map.has(s.opportunity_id)) map.set(s.opportunity_id, [])
+      map.get(s.opportunity_id)!.push(s)
+    }
+    const groups: OppGroup[] = []
+    for (const [oppId, scripts] of map) {
+      const first = scripts[0]
+      groups.push({
+        opportunityId: oppId,
+        title: first.opportunity_title,
+        slug: first.opportunity_slug,
+        dealType: first.deal_type,
+        perspective: first.perspective,
+        deadline: first.deadline,
+        scripts,
+        hasPending: scripts.some(s => s.status === 'pending'),
+        hasReviewed: scripts.some(s => s.status === 'reviewed'),
+        primaryNextSteps: scripts.find(s => s.nextSteps)?.nextSteps ?? null,
+      })
+    }
+    return groups
+  }
+
+  // Pending groups: opportunities with at least one pending submission
+  const pendingOppGroups = groupByOpp(activeSubs.filter(s => s.status === 'pending'))
+  // Feedback groups: opportunities where submission is reviewed (and not in pending groups)
+  const pendingOppIds = new Set(pendingOppGroups.map(g => g.opportunityId))
+  const feedbackOppGroups = groupByOpp(activeSubs.filter(s => s.status === 'reviewed' && !pendingOppIds.has(s.opportunity_id)))
+
+  // Monthly submission limit (Pro: 3/month; Free: 0 — gated entirely)
+  const MONTHLY_LIMIT = 3
+  let monthlyUsed = 0
+  const now = new Date()
+  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+  const resetDaysLeft = Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+  {
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+    const { count } = await service
+      .from('opportunity_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .neq('status', 'withdrawn')
+      .gte('submitted_at', monthStart)
+    monthlyUsed = count ?? 0
+  }
+  const monthlyRemaining = Math.max(0, MONTHLY_LIMIT - monthlyUsed)
+  const atSubmitLimit = !isPro || monthlyRemaining <= 0
+
+  const NEXT_STEPS_LABELS: Record<string, string> = {
+    revise_resubmit: 'Revise & resubmit',
+    new_concept: 'Send a different concept',
+    in_touch: "We'll be in touch",
+  }
 
   return (
     <>
@@ -309,108 +324,415 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
+      {newFeedbackSubs.length > 0 && (
+        <MarkViewed submissionIds={newFeedbackSubs.map(s => s.id)} />
+      )}
 
-      <div className="space-y-6">
+      <div className="max-w-2xl mx-auto space-y-5">
 
-        <div>
-          <section className="min-w-0 space-y-10">
-            {/* YOUR LATEST SCRIPTS — capped at 3, "View all" links to profile */}
-            {myCards.length > 0 && (
-              <div>
-                <header className="mb-4 flex items-end justify-between gap-3">
-                  <div>
-                    <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1">Your work</p>
-                    <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                      Your latest scripts
-                    </h2>
+        {/* ── STAT CARDS ──────────────────────────────────── */}
+        <div className="grid grid-cols-4 gap-2.5">
+          <div className="rounded-xl bg-gray-50 border border-gray-100 px-3 py-3.5 text-center">
+            <p className="text-[26px] font-bold text-gray-800 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {completedCount}
+            </p>
+            <p className="text-[10.5px] text-gray-400 font-medium mt-1 m-0">
+              {completedCount === 1 ? 'Script' : 'Scripts'}
+            </p>
+          </div>
+          <div className="rounded-xl bg-purple-50 border border-purple-100 px-3 py-3.5 text-center">
+            <p className="text-[26px] font-bold text-purple-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {qualifyingScriptCount}
+            </p>
+            <p className="text-[10.5px] text-purple-400 font-medium mt-1 m-0">
+              Qualifying
+            </p>
+          </div>
+          <div className="rounded-xl bg-amber-50 border border-amber-100 px-3 py-3.5 text-center">
+            <p className="text-[26px] font-bold text-amber-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {pendingCount}
+            </p>
+            <p className="text-[10.5px] text-amber-500 font-medium mt-1 m-0">
+              In consideration
+            </p>
+          </div>
+          <div className="rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-3.5 text-center">
+            <p className="text-[26px] font-bold text-emerald-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
+              {reviewedCount}
+            </p>
+            <p className="text-[10.5px] text-emerald-500 font-medium mt-1 m-0">
+              Feedback
+            </p>
+          </div>
+        </div>
+
+        {/* ── PENDING OPPORTUNITIES (grouped by opportunity) ── */}
+        {(pendingOppGroups.length > 0 || feedbackOppGroups.length > 0) && (
+          <section>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">
+              Pending opportunities
+              {newFeedbackCount > 0 && (
+                <span className="ml-2 text-[11px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
+                  {newFeedbackCount} new
+                </span>
+              )}
+            </h2>
+            <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
+
+              {/* ── In consideration groups ── */}
+              {pendingOppGroups.map((group, gi) => {
+                const daysLeft = group.deadline
+                  ? Math.ceil((new Date(group.deadline).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+                  : null
+                return (
+                  <div key={group.opportunityId} className={`px-4 py-3.5 ${gi > 0 ? 'border-t border-gray-200' : ''}`}>
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <Link
+                          href={`/opportunities/${group.slug}`}
+                          className="text-[14px] font-semibold text-gray-900 hover:text-purple-700 transition-colors truncate block"
+                        >
+                          {group.title}
+                        </Link>
+                        <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                          {group.dealType && (
+                            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                              {DEAL_TYPE_LABELS[group.dealType] ?? group.dealType}
+                            </span>
+                          )}
+                          {group.perspective && (
+                            <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
+                              {PERSPECTIVE_LABELS[group.perspective] ?? group.perspective}
+                            </span>
+                          )}
+                          {daysLeft != null && daysLeft > 0 && (
+                            <span className={`text-[10.5px] font-medium ${daysLeft <= 7 ? 'text-red-400' : 'text-gray-300'}`}>
+                              {daysLeft}d left
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <span className="shrink-0 text-[11px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
+                        In consideration
+                      </span>
+                    </div>
+
+                    <div className="mt-3 pt-2.5 border-t border-gray-100">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-gray-400 m-0 mb-2">Scripts submitted</p>
+                      {group.scripts.map((sub, si) => (
+                        <div key={sub.id} className={`flex items-center justify-between py-2 ${si > 0 ? 'border-t border-gray-50' : ''}`}>
+                          <div className="flex items-center gap-2 min-w-0">
+                            <div className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{
+                              background: sub.score != null && sub.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                            }}>
+                              {sub.score != null ? (
+                                <span className="text-[13px] font-bold" style={{ color: sub.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                                  {Math.round(sub.score)}
+                                </span>
+                              ) : (
+                                <span className="text-[10px] text-gray-300">&mdash;</span>
+                              )}
+                            </div>
+                            <span className="text-[13px] text-gray-900 truncate">{sub.script_title}</span>
+                          </div>
+                          <div className="flex items-center gap-2 shrink-0">
+                            <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Pending</span>
+                            {sub.evaluationId && (
+                              <Link
+                                href={`/report/${sub.evaluationId}`}
+                                className="text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                              >
+                                View report
+                              </Link>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <Link href="/scripts" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-                    {hasMoreScripts ? `View all (${allMyCards.length}) →` : 'My scripts →'}
-                  </Link>
-                </header>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {myCards.map((c) => (
-                    <ScriptCard
-                      key={c.submission_id}
-                      s={c}
-                      density="poster"
-                      isOwner
-                      isLocked={c._isLocked}
-                      isProcessing={c._isProcessing}
-                      isFreePost={c._isFreePost}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
+                )
+              })}
 
-            {/* POSTS YOU'VE REVIEWED — last 3 + view-all link, with empty state */}
-            <div>
-              <header className="mb-4 flex items-end justify-between gap-3">
-                <div>
-                  <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-gray-500 mb-1">Reviews</p>
-                  <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                    Posts you&apos;ve reviewed
-                  </h2>
-                </div>
-                {reviewedCards.length > 0 && profile?.handle && (
-                  <Link href={`/w/${profile.handle}`} prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-                    View all →
-                  </Link>
-                )}
-              </header>
-              {reviewedCards.length === 0 ? (
-                <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-                  <p className="text-[13.5px] text-gray-600 mb-3">
-                    You haven&apos;t reviewed any posts yet.
-                  </p>
-                  <Link
-                    href="/community"
-                    prefetch={false}
-                    className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold rounded-lg bg-purple-600 hover:bg-purple-700 text-white px-3.5 py-2"
-                  >
-                    Browse community →
-                  </Link>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {reviewedCards.map((c) => (
-                    <ScriptCard key={c.submission_id} s={c} density="poster" />
+              {/* ── Past feedback groups ── */}
+              {feedbackOppGroups.length > 0 && (
+                <>
+                  <div className="px-4 py-1.5 bg-gray-50 border-t border-gray-200">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-gray-400">Past feedback</span>
+                  </div>
+                  {feedbackOppGroups.map((group) => (
+                    <div key={group.opportunityId} className="px-4 py-3.5 border-t border-gray-100">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0 flex-1">
+                          <Link
+                            href={`/opportunities/${group.slug}`}
+                            className="text-[14px] font-semibold text-gray-500 hover:text-purple-700 transition-colors truncate block"
+                          >
+                            {group.title}
+                          </Link>
+                          <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                            {group.dealType && (
+                              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                                {DEAL_TYPE_LABELS[group.dealType] ?? group.dealType}
+                              </span>
+                            )}
+                            {group.perspective && (
+                              <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
+                                {PERSPECTIVE_LABELS[group.perspective] ?? group.perspective}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        {group.primaryNextSteps && (
+                          <span className={`shrink-0 text-[10.5px] font-bold px-2.5 py-1 rounded-full ${
+                            group.primaryNextSteps === 'in_touch'
+                              ? 'text-emerald-700 bg-emerald-50'
+                              : group.primaryNextSteps === 'revise_resubmit'
+                              ? 'text-amber-700 bg-amber-50'
+                              : 'text-gray-600 bg-gray-100'
+                          }`}>
+                            {NEXT_STEPS_LABELS[group.primaryNextSteps] ?? group.primaryNextSteps}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="mt-3 pt-2.5 border-t border-gray-100">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-gray-400 m-0 mb-2">Scripts submitted</p>
+                        {group.scripts.map((sub, si) => (
+                          <div key={sub.id}>
+                            <div className={`flex items-center justify-between py-2 ${si > 0 ? 'border-t border-gray-50' : ''}`}>
+                              <div className="flex items-center gap-2 min-w-0">
+                                <div className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{
+                                  background: sub.score != null && sub.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                                }}>
+                                  {sub.score != null ? (
+                                    <span className="text-[13px] font-bold" style={{ color: sub.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                                      {Math.round(sub.score)}
+                                    </span>
+                                  ) : (
+                                    <span className="text-[10px] text-gray-300">&mdash;</span>
+                                  )}
+                                </div>
+                                <span className="text-[13px] text-gray-700 truncate">{sub.script_title}</span>
+                              </div>
+                              {sub.evaluationId && (
+                                <Link
+                                  href={`/report/${sub.evaluationId}`}
+                                  className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                                >
+                                  View report
+                                </Link>
+                              )}
+                            </div>
+                            {sub.feedback && (
+                              <div className="ml-10 mb-2 px-3 py-2.5 bg-gray-50 rounded-lg">
+                                <p className="text-[12px] text-gray-500 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   ))}
+                </>
+              )}
+
+              {/* View all link */}
+              {activeSubs.length > 3 && (
+                <div className="px-4 py-2.5 border-t border-gray-100 text-center">
+                  <Link href="/opportunity-history" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                    View all submissions &rarr;
+                  </Link>
                 </div>
               )}
             </div>
-
-            {/* LATEST COMMUNITY — slim sliver, not a wall */}
-            {feedCards.length > 0 && (
-              <div>
-                <header className="mb-4 flex items-end justify-between gap-3">
-                  <div>
-                    <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-gray-500 mb-1">Community</p>
-                    <h2 className="text-[20px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                      Latest from the GEM community
-                    </h2>
-                  </div>
-                  <Link href="/community" prefetch={false} className="shrink-0 text-[12px] text-gray-500 hover:text-gray-900 font-semibold">
-                    See all →
-                  </Link>
-                </header>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {feedCards.map((c) => (
-                    <ScriptCard key={c.submission_id} s={c} density="poster" />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* EMPTY-EMPTY fallback — neither owns nor finds anything */}
-            {myCards.length === 0 && feedCards.length === 0 && (
-              <div className="rounded-xl border border-dashed border-gray-200 px-5 py-10 text-center text-sm text-gray-400">
-                Nothing here yet. Submit a script to get started.
-              </div>
-            )}
           </section>
-        </div>
+        )}
+
+        {/* ── OPPORTUNITIES FOR YOU (collapsible) ────────── */}
+        {totalAvailableOpps > 0 && (
+          <section>
+            <header className="flex items-end justify-between gap-3 mb-2.5">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">
+                Opportunities for you
+                <span className="ml-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  {totalAvailableOpps} available
+                </span>
+              </h2>
+              <div className="flex items-center gap-3">
+                {isPro && (
+                  <span className="text-[11px] text-gray-400 font-medium">
+                    {monthlyRemaining > 0
+                      ? `${monthlyRemaining}/${MONTHLY_LIMIT} submissions left`
+                      : `Resets in ${resetDaysLeft}d`}
+                  </span>
+                )}
+                <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                  See all
+                </Link>
+              </div>
+            </header>
+            {isTrial && (
+              <UpgradeBanner message="Upgrade to Pro to submit to opportunities" />
+            )}
+            <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
+              {oppWithQualifications
+                .filter(({ opportunity, qualifyingScripts }) => {
+                  const submitted = existingOppSubs.get(opportunity.id) ?? new Set()
+                  return qualifyingScripts.some(qs => !submitted.has(qs.id))
+                })
+                .slice(0, 5)
+                .map(({ opportunity: opp, qualifyingScripts: qs }) => {
+                  const submitted = existingOppSubs.get(opp.id) ?? new Set()
+                  const unsubmitted = qs.filter(q => !submitted.has(q.id))
+                  return (
+                    <CollapsibleOpportunity
+                      key={opp.id}
+                      opportunityId={opp.id}
+                      title={opp.title}
+                      slug={opp.slug ?? opp.id}
+                      dealType={opp.deal_type}
+                      perspective={opp.perspective}
+                      deadline={opp.deadline}
+                      qualifyingScripts={unsubmitted.map(q => {
+                        const ev = myEvalBySub.get(q.id)
+                        return { id: q.id, title: q.title, score: ev?.weighted_score ?? null, evaluationId: q.evaluation_id }
+                      })}
+                      dealTypeLabels={DEAL_TYPE_LABELS}
+                      perspectiveLabels={PERSPECTIVE_LABELS}
+                      atLimit={atSubmitLimit}
+                      isPro={isPro}
+                      resetDaysLeft={atSubmitLimit && isPro ? resetDaysLeft : undefined}
+                    />
+                  )
+                })}
+            </div>
+          </section>
+        )}
+
+        {/* ── YOUR SCRIPTS ────────────────────────────────── */}
+        <section>
+          <header className="flex items-end justify-between gap-3 mb-2.5">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">
+              Your scripts
+            </h2>
+            <Link
+              href="/submit"
+              className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1.5 rounded-md transition-colors"
+            >
+              + Submit script
+            </Link>
+          </header>
+
+          {scriptRows.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[13.5px] text-gray-400 m-0">Submit your first script to get started.</p>
+            </div>
+          ) : (
+            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+              {scriptRows.map((s) => {
+                // Count pending submissions for this specific script
+                const scriptPendingCount = activeSubs.filter(a => a.script_title === s.title && a.status === 'pending').length
+                return (
+                  <div key={s.submissionId} className="relative">
+                    {s.isLocked && (
+                      <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center gap-2">
+                        {s.oppCount > 0 && (
+                          <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+                            Qualifies for {s.oppCount} {s.oppCount === 1 ? 'opportunity' : 'opportunities'}
+                          </span>
+                        )}
+                        <UpgradePill />
+                      </div>
+                    )}
+                    <div className="px-4 py-3">
+                      <div className="flex items-center gap-3">
+                        {/* Score badge */}
+                        <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{
+                          background: s.isProcessing ? '#f3f4f6' : s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                        }}>
+                          {s.isProcessing ? (
+                            <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
+                          ) : s.score != null ? (
+                            <span className="text-[14px] font-bold" style={{
+                              color: s.score >= 75 ? '#7c3aed' : '#6b7280',
+                              ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
+                            }}>
+                              {Math.round(s.score)}
+                            </span>
+                          ) : (
+                            <span className="text-[11px] text-gray-300">&mdash;</span>
+                          )}
+                        </div>
+
+                        {/* Title + meta */}
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
+                          <div className="flex items-center gap-1.5 mt-0.5">
+                            {s.format && <span className="text-[10.5px] text-gray-400">{s.format}</span>}
+                            {s.genre && (
+                              <>
+                                {s.format && <span className="text-gray-200">&middot;</span>}
+                                <span className="text-[10.5px] text-gray-400">{s.genre}</span>
+                              </>
+                            )}
+                            {s.isProcessing && (
+                              <span className="text-[10.5px] font-medium text-purple-500">Processing&hellip;</span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Opportunity status — spelled out */}
+                        {!s.isLocked && !s.isProcessing && scriptPendingCount > 0 && (
+                          <span className="shrink-0 text-[11px] font-semibold text-amber-600">
+                            {scriptPendingCount} {scriptPendingCount === 1 ? 'opportunity' : 'opportunities'} pending
+                          </span>
+                        )}
+                        {!s.isLocked && !s.isProcessing && scriptPendingCount === 0 && s.oppCount > 0 && (
+                          <span className="shrink-0 text-[11px] font-semibold text-emerald-600">
+                            {s.oppCount} {s.oppCount === 1 ? 'opportunity' : 'opportunities'}
+                          </span>
+                        )}
+
+                        {/* View report button */}
+                        {!s.isLocked && !s.isProcessing && s.evaluationId && (
+                          <Link
+                            href={`/report/${s.evaluationId}`}
+                            className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                          >
+                            View report
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+
+              {/* View all scripts link */}
+              {scriptRows.length > 5 && (
+                <div className="px-4 py-2.5 border-t border-gray-100 text-center">
+                  <Link href="/scripts" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                    View all {scriptRows.length} scripts &rarr;
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Pro/Free badge + upgrade nudge */}
+          <div className="flex items-center justify-between mt-3">
+            {isPro ? (
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">Pro</span>
+            ) : (
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Free</span>
+            )}
+            {isTrial && (
+              <span className="text-[11.5px] text-gray-400">
+                Upgrade to evaluate more scripts
+              </span>
+            )}
+          </div>
+        </section>
       </div>
     </>
   )

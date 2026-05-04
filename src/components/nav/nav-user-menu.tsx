@@ -28,6 +28,8 @@ export interface NavUserMenuStats {
   followers: number
   following: number
   reviewsGiven: number
+  /** Monthly opportunity submissions used / limit (Pro only) */
+  monthlySubmissions?: { used: number; limit: number; resetsAt: string }
 }
 export interface NavUserMenuActivity {
   kind: 'publish' | 'review'
@@ -145,26 +147,54 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
               </div>
             </div>
 
-            {/* Stats row */}
-            <div className="mt-4 pt-3 border-t border-gray-100 grid grid-cols-4 gap-1 text-center">
-              <Stat label="Scripts" value={stats.scripts} />
-              <Stat
-                label="Followers"
-                value={stats.followers}
-                href={profile.handle ? `/w/${profile.handle}/followers` : null}
-                onNavigate={() => setOpen(false)}
-              />
-              <Stat
-                label="Following"
-                value={stats.following}
-                href={profile.handle ? `/w/${profile.handle}/following` : null}
-                onNavigate={() => setOpen(false)}
-              />
-              <Stat label="Reviews" value={stats.reviewsGiven} />
+            {/* Plan status */}
+            <div className="mt-3 pt-3 border-t border-gray-100">
+              {profile.isPro ? (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <ProBadge />
+                    <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
+                  </div>
+                  {stats.monthlySubmissions && (() => {
+                    const remaining = Math.max(0, stats.monthlySubmissions.limit - stats.monthlySubmissions.used)
+                    if (remaining > 0) {
+                      return (
+                        <span className="text-[11px] text-gray-400 font-medium">
+                          {remaining}/{stats.monthlySubmissions.limit} submissions left
+                        </span>
+                      )
+                    }
+                    const resetDate = new Date(stats.monthlySubmissions.resetsAt)
+                    const daysLeft = Math.ceil((resetDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+                    return (
+                      <span className="text-[11px] text-gray-400 font-medium">
+                        Resets in {daysLeft}d
+                      </span>
+                    )
+                  })()}
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false)
+                    window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
+                  }}
+                  className="w-full flex items-center justify-between py-1 group"
+                >
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Free</span>
+                    <span className="text-[11.5px] text-gray-500 font-medium">Plan</span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-purple-600 group-hover:underline">
+                    Upgrade →
+                  </span>
+                </button>
+              )}
             </div>
 
             {/* View / Edit */}
-            <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-2">
+            <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2">
               <Link
                 href={profileHref}
                 prefetch={false}
@@ -182,44 +212,7 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
                 Edit profile
               </Link>
             </div>
-            <div className="mt-2">
-              <Link
-                href="/profile/privacy"
-                prefetch={false}
-                onClick={() => setOpen(false)}
-                className="block w-full text-center text-[11.5px] font-semibold text-gray-500 hover:text-gray-900 hover:underline py-1"
-              >
-                Privacy settings →
-              </Link>
-            </div>
           </div>
-
-          {/* RECENT ACTIVITY */}
-          {recentActivity.length > 0 && (
-            <div className="border-t border-gray-100 px-4 py-3">
-              <p className="text-[10px] uppercase tracking-[0.16em] font-bold text-gray-500 mb-2">
-                Recent activity
-              </p>
-              <ul className="space-y-1.5">
-                {recentActivity.map((a, i) => (
-                  <li key={i} className="text-[12px] leading-snug">
-                    <span className="text-gray-400 mr-1">
-                      {a.kind === 'publish' ? 'Published' : 'Reviewed'}
-                    </span>
-                    <Link
-                      href={a.href}
-                      prefetch={false}
-                      onClick={() => setOpen(false)}
-                      className="text-gray-800 hover:text-purple-700 hover:underline"
-                      title={a.title}
-                    >
-                      {a.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
 
           {/* SIGN OUT */}
           <div className="border-t border-gray-100 p-2">
@@ -238,27 +231,6 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
   )
 }
 
-function Stat({ label, value, href, onNavigate }: { label: string; value: number; href?: string | null; onNavigate?: () => void }) {
-  const inner = (
-    <>
-      <div className="font-bold text-[15px] text-gray-900 leading-none">{value}</div>
-      <div className="text-[10px] uppercase tracking-wider text-gray-500 mt-1">{label}</div>
-    </>
-  )
-  if (href) {
-    return (
-      <Link
-        href={href}
-        prefetch={false}
-        onClick={onNavigate}
-        className="block hover:bg-gray-50 rounded-md py-1 -mx-0.5 transition-colors"
-      >
-        {inner}
-      </Link>
-    )
-  }
-  return <div className="py-1">{inner}</div>
-}
 
 function ProBadge() {
   return (

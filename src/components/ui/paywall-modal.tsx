@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CheckCircle, X, Clock } from 'lucide-react'
+import { CheckCircle, X } from 'lucide-react'
 
 interface PaywallModalProps {
   onClose: () => void
@@ -37,7 +37,7 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
         onClick={onClose}
       />
 
-      <div className="relative w-full max-w-md bg-[var(--gem-gray-800)] rounded-2xl border border-[var(--gem-gray-700)] p-8 shadow-2xl">
+      <div className="relative w-full max-w-md bg-[var(--gem-gray-800)] rounded-2xl border border-[var(--gem-gray-700)] p-7 shadow-2xl">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
@@ -46,44 +46,29 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           <X size={20} />
         </button>
 
-        <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
-          <Clock size={12} />
-          Get matched
-        </p>
-        <h2 className="text-xl font-bold text-[var(--gem-white)] mb-2">
-          Get producers and reps in front of your script.
+        <h2 className="text-[20px] font-bold text-[var(--gem-white)] mb-1.5 pr-6">
+          Upgrade to GEM Pro
         </h2>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-2 leading-relaxed">
-          Your first evaluation is yours forever — share the link with anyone. Pro is what puts your script in front of the producers and reps actively scouting your lane.
-        </p>
-        <p className="text-sm text-[var(--gem-gray-400)] mb-6 leading-relaxed">
-          Industry matching, intro routing, unlimited evaluations, and privacy controls — for the price of one coffee a week.
+        <p className="text-[13.5px] text-[var(--gem-gray-400)] mb-5 leading-relaxed">
+          Submit to opportunities, get unlimited evaluations, and let producers find you.
         </p>
 
-        <div className="rounded-xl border border-[var(--gem-gray-600)] bg-[var(--gem-gray-900)] px-6 py-5 mb-6">
-          <div className="flex items-baseline gap-1 mb-3">
-            <span className="text-3xl font-bold text-[var(--gem-white)]">$20</span>
-            <span className="text-sm text-[var(--gem-gray-400)]">/ month · cancel anytime</span>
-          </div>
-          <ul className="space-y-2 mt-3">
-            {[
-              'Industry matching — producers and reps scouting your lane',
-              'Producer intros routed straight to your inbox',
-              'Unlimited script evaluations',
-              'Submit revisions and rescore old reports',
-              'Per-section privacy + score-eye toggles',
-              'Branded PDF download of every report',
-            ].map(item => (
-              <li
-                key={item}
-                className="flex items-center gap-2 text-sm text-[var(--gem-gray-300)]"
-              >
-                <CheckCircle size={14} className="text-emerald-400 shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="space-y-2.5 mb-5">
+          {[
+            'Submit to industry opportunities — 3 per month',
+            'Unlimited script evaluations',
+            'Revise and rescore past reports',
+            'Producer intros routed to your inbox',
+          ].map(item => (
+            <li
+              key={item}
+              className="flex items-center gap-2 text-[13.5px] text-[var(--gem-gray-300)]"
+            >
+              <CheckCircle size={14} className="text-emerald-400 shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
 
         {error && (
           <div className="text-sm text-red-300 bg-red-950/30 border border-red-800 rounded-lg px-4 py-3 mb-4">
@@ -94,13 +79,13 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
         <button
           onClick={handleSubscribe}
           disabled={loading}
-          className="w-full py-3 rounded-lg bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
+          className="w-full py-3 rounded-xl bg-[var(--gem-accent)] text-white text-[15px] font-semibold hover:brightness-110 disabled:opacity-50 transition-all"
         >
-          {loading ? 'Redirecting to checkout...' : 'Subscribe — $20 / mo'}
+          {loading ? 'Redirecting…' : 'Go Pro — $20/mo'}
         </button>
 
-        <p className="text-xs text-[var(--gem-gray-500)] text-center mt-3">
-          Secure checkout via Stripe. Cancel anytime.
+        <p className="text-[11px] text-[var(--gem-gray-500)] text-center mt-2.5">
+          Cancel anytime · Stripe checkout
         </p>
       </div>
     </div>

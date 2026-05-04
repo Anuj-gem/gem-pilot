@@ -91,8 +91,8 @@ async function getReportData(id: string): Promise<ReportData> {
       if (fullName && fullName.trim().length > 0) {
         author = fullName.trim()
       }
-      ownerIsSubscribed =
-        ((profileRow as any)?.subscription_status as string | null) === 'active'
+      const ogSubStatus = ((profileRow as any)?.subscription_status as string | null)
+      ownerIsSubscribed = ogSubStatus === 'active' || ogSubStatus === 'trialing'
     }
 
     // Same gate as the page: unlocked = owner subscribed OR post is public.

@@ -33,8 +33,8 @@ export function InlineUpgradeCTA({
   const computedLabel =
     label ??
     (submissionCount && submissionCount > 0
-      ? `You have ${submissionCount} script${submissionCount === 1 ? '' : 's'} which should be seen by the industry`
-      : 'Get your scripts in front of the industry')
+      ? `You have ${submissionCount} script${submissionCount === 1 ? '' : 's'} ready to submit to industry opportunities`
+      : 'Upgrade to submit your scripts to industry opportunities')
 
   return (
     <div

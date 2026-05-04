@@ -95,7 +95,7 @@ export function LockedAfterEvalScreen({
             </>
           ),
           ctaSubtext:
-            'Pro: publish to industry · unlimited evals · producers contact you directly',
+            'Pro: submit to opportunities · unlimited evals · producers contact you directly',
         }
       : variant === 'not_qualified'
         ? {
