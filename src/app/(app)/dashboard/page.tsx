@@ -25,6 +25,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { MarkViewed } from '@/components/dashboard/mark-viewed'
 import { CollapsibleOpportunity } from '@/components/dashboard/collapsible-opportunity'
+import { WithdrawButton } from '@/components/dashboard/withdraw-button'
 import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { type OpportunityData, type QualifyingScript, PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
@@ -453,6 +454,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                             <span className="text-[13px] text-gray-900 truncate">{sub.script_title}</span>
                           </div>
                           <div className="flex items-center gap-2 shrink-0">
+                            <WithdrawButton submissionRowId={sub.id} />
                             <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Pending</span>
                             {sub.evaluationId && (
                               <Link
