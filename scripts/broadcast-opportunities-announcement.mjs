@@ -45,7 +45,7 @@ const DRY = !TEST && !SEND
 
 const POSTMARK_TOKEN =
   process.env.POSTMARK_SERVER_TOKEN || 'f6a35ee7-7420-411c-9c85-cde607da9298'
-const STREAM = 'outbound'
+const STREAM = 'broadcast'
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
 
