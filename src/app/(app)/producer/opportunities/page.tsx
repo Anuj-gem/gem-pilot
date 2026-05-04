@@ -42,11 +42,12 @@ export default async function ProducerOpportunitiesPage() {
 
   const oppIds = opps.map(o => o.id)
 
-  // Fetch all submissions for these opportunities
+  // Fetch all submissions for these opportunities (exclude withdrawn)
   const { data: allSubs } = await service
     .from('opportunity_submissions')
     .select('id, opportunity_id, submission_id, writer_id, status, feedback, next_steps, submitted_at, reviewed_at')
     .in('opportunity_id', oppIds)
+    .neq('status', 'withdrawn')
     .order('submitted_at', { ascending: false })
 
   type SubRow = {
