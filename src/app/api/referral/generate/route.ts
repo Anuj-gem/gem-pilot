@@ -70,13 +70,13 @@ export async function POST() {
   try {
     // Create Stripe promo code
     await stripe.promotionCodes.create({
-      coupon: COUPON_ID,
+      promotion: { type: 'coupon', coupon: COUPON_ID },
       code,
       metadata: {
         referrer_user_id: user.id,
         referrer_email: profile?.email || user.email || '',
       },
-    } as any)
+    })
 
     // Save to profile
     await service

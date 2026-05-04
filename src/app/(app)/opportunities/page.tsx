@@ -43,7 +43,7 @@ export default async function OpportunitiesPage() {
       .select('subscription_status, bonus_submissions')
       .eq('id', user.id)
       .single()
-    isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    isPro = profile?.subscription_status === 'active'
     monthlyLimit = 3 + ((profile as any)?.bonus_submissions ?? 0)
 
     if (isPro) {

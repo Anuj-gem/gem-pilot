@@ -136,7 +136,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   activity.sort((a, b) => b.ts - a.ts)
   const recentActivity = activity.slice(0, 3)
 
-  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  const isPro = profile?.subscription_status === 'active'
   const needsPrivacyConfirm = !(profile as { privacy_confirmed_at?: string | null } | null)?.privacy_confirmed_at
   const initialPrivacy = normalizePrivacyDefaults((profile as { privacy_defaults?: unknown } | null)?.privacy_defaults)
 

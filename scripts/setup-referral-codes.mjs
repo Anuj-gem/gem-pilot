@@ -145,9 +145,8 @@ for (const u of users) {
   try {
     // Create Stripe promo code
     const promo = await stripe.promotionCodes.create({
-      coupon: COUPON_ID,
+      promotion: { type: 'coupon', coupon: COUPON_ID },
       code: code,
-      max_redemptions: null, // unlimited — each use gives referrer +2 submissions
       metadata: {
         referrer_user_id: u.id,
         referrer_email: u.email,

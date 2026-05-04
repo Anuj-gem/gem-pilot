@@ -55,7 +55,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     .eq('id', user.id)
     .single()
 
-  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  const isPro = profile?.subscription_status === 'active'
   const isTrial = !isPro
   const service = svc()
 
