@@ -163,12 +163,9 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
                   </div>
                   {stats.monthlySubmissions && (() => {
                     const used = stats.monthlySubmissions.used
-                    const bonusCount = (profile.bonusSubmissions ?? 0)
-                    const monthlyUsed = Math.min(used, 3)
-                    const bonusUsed = Math.max(0, used - 3)
-                    const bonusRemaining = Math.max(0, bonusCount - bonusUsed)
-                    const monthlyRemaining = Math.max(0, 3 - monthlyUsed)
-                    const totalRemaining = monthlyRemaining + bonusRemaining
+                    const bonus = (profile.bonusSubmissions ?? 0)
+                    const monthlyRemaining = Math.max(0, 3 - Math.min(used, 3))
+                    const totalRemaining = monthlyRemaining + bonus
                     const resetDate = new Date(stats.monthlySubmissions.resetsAt)
                     const daysLeft = Math.ceil((resetDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
                     return (
@@ -180,12 +177,12 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
                         </div>
                         <div className="text-[11px] text-gray-500 leading-[1.6]">
                           <div className="flex items-center justify-between">
-                            <span>{monthlyRemaining} of 3 monthly submissions left</span>
+                            <span>{monthlyRemaining} of 3 monthly left</span>
                             <span className="text-gray-400">resets in {daysLeft}d</span>
                           </div>
-                          {bonusCount > 0 && (
+                          {bonus > 0 && (
                             <div className="flex items-center justify-between mt-0.5">
-                              <span className="text-purple-600 font-semibold">{bonusRemaining} bonus from referrals</span>
+                              <span className="text-purple-600 font-semibold">{bonus} bonus from referrals</span>
                               <span className="text-gray-400">one-time</span>
                             </div>
                           )}
@@ -243,13 +240,8 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
           {/* REFERRAL */}
           {profile.referralCode && (
             <div className="border-t border-gray-100 px-4 py-3">
-              <div className="flex items-center justify-between mb-2">
+              <div className="mb-2">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Earn submissions</span>
-                {(profile.bonusSubmissions ?? 0) > 0 && (
-                  <span className="text-[10.5px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">
-                    +{profile.bonusSubmissions} earned
-                  </span>
-                )}
               </div>
               <p className="text-[12px] text-gray-500 leading-snug m-0 mb-2">
                 Share your code — they get $5 off, you get 2 extra submissions.
