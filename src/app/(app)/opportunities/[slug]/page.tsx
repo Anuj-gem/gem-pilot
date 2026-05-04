@@ -245,10 +245,16 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                   Your qualifying scripts
                 </h2>
                 {isPro && (() => {
-                  const remaining = Math.max(0, monthlyLimit - monthlyUsed)
-                  return remaining > 0
-                    ? <span className="text-[11px] text-gray-400 font-medium">{remaining} submission{remaining !== 1 ? 's' : ''} left</span>
-                    : <span className="text-[11px] text-gray-400 font-medium">All used · resets next month</span>
+                  const monthlyLeft = Math.max(0, 3 - Math.min(monthlyUsed, 3))
+                  const bonus = (monthlyLimit - 3)
+                  const total = monthlyLeft + bonus
+                  const now = new Date()
+                  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+                  const resetDays = Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+                  if (total > 0) {
+                    return <span className="text-[11px] text-gray-400 font-medium">{total} submission{total !== 1 ? 's' : ''} left{bonus > 0 ? ` (${bonus} bonus)` : ''}</span>
+                  }
+                  return <span className="text-[11px] text-gray-400 font-medium">All used · 3 more in {resetDays}d</span>
                 })()}
               </div>
               {qualifyingScripts.length > 0 ? (

@@ -309,8 +309,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
       .gte('submitted_at', monthStart)
     monthlyUsed = count ?? 0
   }
-  const totalRemaining = Math.max(0, MONTHLY_LIMIT - monthlyUsed)
-  const atSubmitLimit = !isPro || totalRemaining <= 0
+  const actualRemaining = Math.max(0, 3 - Math.min(monthlyUsed, 3)) + bonusSubs
+  const atSubmitLimit = !isPro || actualRemaining <= 0
 
   const NEXT_STEPS_LABELS: Record<string, string> = {
     revise_resubmit: 'Revise & resubmit',
@@ -560,13 +560,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                 </span>
               </h2>
               <div className="flex items-center gap-3">
-                {isPro && (
-                  <span className="text-[11px] text-gray-400 font-medium">
-                    {totalRemaining > 0
-                      ? `${totalRemaining} submission${totalRemaining !== 1 ? 's' : ''} left`
-                      : `All used · resets in ${resetDaysLeft}d`}
-                  </span>
-                )}
+                {isPro && (() => {
+                  const monthlyLeft = Math.max(0, 3 - Math.min(monthlyUsed, 3))
+                  const bonus = bonusSubs
+                  const total = monthlyLeft + bonus
+                  if (total > 0) {
+                    return <span className="text-[11px] text-gray-400 font-medium">{total} submission{total !== 1 ? 's' : ''} left{bonus > 0 ? ` (${bonus} bonus)` : ''}</span>
+                  }
+                  return <span className="text-[11px] text-gray-400 font-medium">All used · 3 more in {resetDaysLeft}d</span>
+                })()}
                 <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
                   See all
                 </Link>

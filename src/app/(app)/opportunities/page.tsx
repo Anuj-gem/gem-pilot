@@ -44,7 +44,8 @@ export default async function OpportunitiesPage() {
       .eq('id', user.id)
       .single()
     isPro = profile?.subscription_status === 'active'
-    monthlyLimit = 3 + ((profile as any)?.bonus_submissions ?? 0)
+    const bonusSubs = (profile as any)?.bonus_submissions ?? 0
+    monthlyLimit = 3 + bonusSubs
 
     if (isPro) {
       const now = new Date()
@@ -144,10 +145,16 @@ export default async function OpportunitiesPage() {
           <p className="text-[13px] text-gray-400 mt-1 m-0">
             {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} accepting submissions
             {user && isPro && (() => {
-              const remaining = Math.max(0, monthlyLimit - monthlyUsed)
-              return remaining > 0
-                ? <span className="ml-2 text-purple-500 font-medium">&middot; {remaining} submission{remaining !== 1 ? 's' : ''} left</span>
-                : <span className="ml-2 text-gray-400 font-medium">&middot; All used · resets next month</span>
+              const monthlyLeft = Math.max(0, 3 - Math.min(monthlyUsed, 3))
+              const bonus = (monthlyLimit - 3)
+              const total = monthlyLeft + bonus
+              const now = new Date()
+              const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+              const resetDays = Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+              if (total > 0) {
+                return <span className="ml-2 text-purple-500 font-medium">&middot; {total} submission{total !== 1 ? 's' : ''} left{bonus > 0 ? ` (${bonus} bonus)` : ''}</span>
+              }
+              return <span className="ml-2 text-gray-400 font-medium">&middot; All used · 3 more in {resetDays}d</span>
             })()}
           </p>
         </div>
