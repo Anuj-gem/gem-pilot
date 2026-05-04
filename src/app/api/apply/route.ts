@@ -22,6 +22,9 @@ interface ApplyBody {
   phone?: string
   notes?: string
   email?: string
+  goals?: string[]
+  genres?: string[]
+  formats?: string[]
 }
 
 function escapeHtml(s: string): string {
@@ -48,10 +51,13 @@ export async function POST(request: NextRequest) {
   const phone = (body.phone || '').trim()
   const notes = (body.notes || '').trim()
   const email = (body.email || '').trim()
+  const goals = Array.isArray(body.goals) ? body.goals : []
+  const genres = Array.isArray(body.genres) ? body.genres : []
+  const formats = Array.isArray(body.formats) ? body.formats : []
 
-  if (!fullName || !company || !role || !email) {
+  if (!fullName || !company || !role || !email || !phone) {
     return NextResponse.json(
-      { error: 'Name, company, role, and email are required.' },
+      { error: 'Name, company, role, email, and phone are required.' },
       { status: 400 }
     )
   }
@@ -68,16 +74,19 @@ export async function POST(request: NextRequest) {
   const lines: [string, string][] = [
     ['Name', fullName],
     ['Email', email],
+    ['Phone', phone],
     ['Company', company],
     ['Role', role],
     ['IMDb', imdb || '—'],
-    ['Phone', phone || '—'],
+    ['Goals', goals.length ? goals.join(', ') : '—'],
+    ['Genres', genres.length ? genres.join(', ') : '—'],
+    ['Formats', formats.length ? formats.join(', ') : '—'],
   ]
   const textBody =
     lines.map(([k, v]) => `${k}: ${v}`).join('\n') +
-    `\n\nHow they want to work with writers:\n${notes || '—'}\n`
+    `\n\nAdditional notes:\n${notes || '—'}\n`
   const htmlBody = `
-    <h2 style="font-family: Georgia, serif; font-size: 18px; margin: 0 0 14px;">New industry application</h2>
+    <h2 style="font-family: Georgia, serif; font-size: 18px; margin: 0 0 14px;">New industry partner</h2>
     <table style="font-family: -apple-system, sans-serif; font-size: 14px; border-collapse: collapse;">
       ${lines
         .map(
@@ -90,7 +99,7 @@ export async function POST(request: NextRequest) {
         )
         .join('')}
     </table>
-    <p style="margin: 18px 0 6px; font-size: 13px; color: #666;"><strong>How they want to work with writers</strong></p>
+    <p style="margin: 18px 0 6px; font-size: 13px; color: #666;"><strong>Additional notes</strong></p>
     <p style="font-family: -apple-system, sans-serif; font-size: 14px; white-space: pre-wrap; margin: 0;">${escapeHtml(notes || '—')}</p>
   `
 

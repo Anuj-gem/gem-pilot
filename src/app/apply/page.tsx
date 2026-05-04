@@ -1,9 +1,10 @@
 'use client'
 
-// /apply — industry partner application form. Producers and reps
-// submit this; it emails Anuj directly (no DB write, no template).
-// Anuj manually vets and sends a personal invite link to approved
-// applicants. Anuj 2026-04-28.
+// /apply — industry partner form. Producers and reps tell us who they
+// are and what they're looking for. Emails Anuj directly + captures
+// enough structured data to post an opportunity even without follow-up.
+// Anuj 2026-05-04: reframed from "application" to "partner with GEM",
+// phone required, added structured opportunity fields.
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -12,17 +13,45 @@ import { ArrowRight, Loader2, CheckCircle } from 'lucide-react'
 
 type Role = 'producer' | 'representative'
 
+const GENRE_OPTIONS = [
+  'Drama', 'Comedy', 'Thriller', 'Horror', 'Sci-Fi', 'Action',
+  'Romance', 'RomCom', 'Fantasy', 'Adventure', 'Crime', 'Mystery',
+  'Family', 'Documentary', 'Western', 'Musical',
+]
+
+const FORMAT_OPTIONS = ['Feature', 'Pilot', 'Series', 'Short']
+
+const GOAL_OPTIONS_PRODUCER = [
+  'Option or acquire scripts',
+  'Find writers for open assignments',
+  'Discover new talent for general meetings',
+  'Attach writers to existing IP',
+]
+const GOAL_OPTIONS_REP = [
+  'Sign new writers for representation',
+  'Find material to package',
+  'Discover emerging talent',
+  'Build roster in specific genres',
+]
+
 export default function ApplyPage() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [company, setCompany] = useState('')
   const [role, setRole] = useState<Role>('producer')
   const [imdb, setImdb] = useState('')
-  const [phone, setPhone] = useState('')
+  const [goals, setGoals] = useState<string[]>([])
+  const [genres, setGenres] = useState<string[]>([])
+  const [formats, setFormats] = useState<string[]>([])
   const [notes, setNotes] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [submitted, setSubmitted] = useState(false)
+
+  function toggleItem(arr: string[], setArr: (v: string[]) => void, item: string) {
+    setArr(arr.includes(item) ? arr.filter(i => i !== item) : [...arr, item])
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -35,15 +64,18 @@ export default function ApplyPage() {
         body: JSON.stringify({
           full_name: fullName,
           email,
+          phone,
           company,
           role,
           imdb,
-          phone,
+          goals,
+          genres,
+          formats,
           notes,
         }),
       })
       const data = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(data.error || 'Failed to send application.')
+      if (!res.ok) throw new Error(data.error || 'Failed to send.')
       setSubmitted(true)
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -51,6 +83,8 @@ export default function ApplyPage() {
       setSubmitting(false)
     }
   }
+
+  const goalOptions = role === 'producer' ? GOAL_OPTIONS_PRODUCER : GOAL_OPTIONS_REP
 
   return (
     <>
@@ -65,15 +99,16 @@ export default function ApplyPage() {
                 className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-3"
                 style={{ color: 'var(--gem-accent)' }}
               >
-                Industry application
+                Industry partners
               </p>
               <h1 className="text-[34px] sm:text-[44px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-4 font-[family-name:var(--font-display)]">
-                Apply for industry access.
+                We find the writers. You pick the ones that fit.
               </h1>
               <p className="text-[15.5px] sm:text-[16px] text-[var(--gem-gray-300)] leading-[1.6] m-0 max-w-[60ch]">
-                Industry partner accounts are invite-only. Tell us who you are and
-                what you&apos;re scouting — if it&apos;s a fit, we&apos;ll send a
-                personal invite link.
+                GEM has already read thousands of screenplays. Tell us what
+                you&apos;re looking for and we&apos;ll surface the most promising
+                writers that match — by genre, format, budget, and quality. No
+                slush pile, no guesswork.
               </p>
             </div>
 
@@ -86,6 +121,11 @@ export default function ApplyPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
               }}
             >
+              {/* ── About you ── */}
+              <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 pt-1">
+                About you
+              </p>
+
               <Field label="Full name" required>
                 <input
                   type="text"
@@ -105,6 +145,17 @@ export default function ApplyPage() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="you@company.com"
                   autoComplete="email"
+                />
+              </Field>
+
+              <Field label="Phone" required hint="So we can connect quickly — we won't cold-call you.">
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  placeholder="+1 555 123 4567"
+                  autoComplete="tel"
                 />
               </Field>
 
@@ -140,7 +191,7 @@ export default function ApplyPage() {
                         type="button"
                         role="radio"
                         aria-checked={isSelected}
-                        onClick={() => setRole(opt)}
+                        onClick={() => { setRole(opt); setGoals([]) }}
                         className="px-3 py-2 rounded-md text-[13.5px] font-semibold transition-all"
                         style={{
                           background: isSelected ? 'var(--gem-accent)' : 'transparent',
@@ -154,7 +205,7 @@ export default function ApplyPage() {
                 </div>
               </div>
 
-              <Field label="IMDb" hint="Profile or company link — optional but helpful for vetting.">
+              <Field label="IMDb" hint="Profile or company link — optional but helps us learn about you faster.">
                 <input
                   type="url"
                   value={imdb}
@@ -164,25 +215,110 @@ export default function ApplyPage() {
                 />
               </Field>
 
-              <Field label="Phone">
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={e => setPhone(e.target.value)}
-                  placeholder="+1 555 123 4567"
-                  autoComplete="tel"
-                />
-              </Field>
+              {/* ── What you're looking for ── */}
+              <div className="pt-3">
+                <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-400)] m-0 mb-4">
+                  What you&apos;re looking for
+                </p>
+                <p className="text-[13px] text-[var(--gem-gray-400)] m-0 mb-4 leading-snug">
+                  This helps us match you to the right writers immediately. The more
+                  specific you are, the better the matches.
+                </p>
+              </div>
+
+              <div>
+                <label className="block text-[12.5px] font-semibold text-[var(--gem-gray-300)] mb-2">
+                  {role === 'producer' ? "I'm looking to" : "I want to"}{' '}
+                  <span className="font-normal text-[var(--gem-gray-500)]">(select all that apply)</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {goalOptions.map(g => {
+                    const selected = goals.includes(g)
+                    return (
+                      <button
+                        key={g}
+                        type="button"
+                        onClick={() => toggleItem(goals, setGoals, g)}
+                        className="px-3 py-1.5 rounded-full text-[12.5px] font-medium transition-all"
+                        style={{
+                          background: selected ? 'var(--gem-accent)' : 'var(--gem-gray-900)',
+                          color: selected ? '#fff' : 'var(--gem-gray-300)',
+                          border: selected ? '1px solid var(--gem-accent)' : '1px solid var(--gem-gray-700)',
+                        }}
+                      >
+                        {g}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[12.5px] font-semibold text-[var(--gem-gray-300)] mb-2">
+                  Genres{' '}
+                  <span className="font-normal text-[var(--gem-gray-500)]">(select all that apply)</span>
+                </label>
+                <div className="flex flex-wrap gap-1.5">
+                  {GENRE_OPTIONS.map(g => {
+                    const selected = genres.includes(g)
+                    return (
+                      <button
+                        key={g}
+                        type="button"
+                        onClick={() => toggleItem(genres, setGenres, g)}
+                        className="px-2.5 py-1 rounded-md text-[12px] font-medium transition-all"
+                        style={{
+                          background: selected ? 'var(--gem-accent)' : 'var(--gem-gray-900)',
+                          color: selected ? '#fff' : 'var(--gem-gray-300)',
+                          border: selected ? '1px solid var(--gem-accent)' : '1px solid var(--gem-gray-700)',
+                        }}
+                      >
+                        {g}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[12.5px] font-semibold text-[var(--gem-gray-300)] mb-2">
+                  Formats{' '}
+                  <span className="font-normal text-[var(--gem-gray-500)]">(select all that apply)</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {FORMAT_OPTIONS.map(f => {
+                    const selected = formats.includes(f)
+                    return (
+                      <button
+                        key={f}
+                        type="button"
+                        onClick={() => toggleItem(formats, setFormats, f)}
+                        className="px-3 py-1.5 rounded-full text-[12.5px] font-medium transition-all"
+                        style={{
+                          background: selected ? 'var(--gem-accent)' : 'var(--gem-gray-900)',
+                          color: selected ? '#fff' : 'var(--gem-gray-300)',
+                          border: selected ? '1px solid var(--gem-accent)' : '1px solid var(--gem-gray-700)',
+                        }}
+                      >
+                        {f}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
 
               <Field
-                label="How you want to work with writers"
-                hint="Genres, formats, budget tiers, what you're scouting for — anything else worth knowing."
+                label="Anything else"
+                hint="Budget range, tone preferences, specific needs, current slate — whatever helps us find you the right writers."
               >
                 <textarea
                   value={notes}
                   onChange={e => setNotes(e.target.value)}
                   rows={4}
-                  placeholder="Mandate, current slate, what you're chasing this year…"
+                  placeholder={role === 'producer'
+                    ? "e.g. Looking for contained horror under $3M, or a character-driven drama pilot for a streamer pitch…"
+                    : "e.g. Building my roster in genre space — horror, thriller, sci-fi. Especially interested in writers with a strong sample and a second project ready…"
+                  }
                   style={{ resize: 'vertical' }}
                 />
               </Field>
@@ -216,7 +352,7 @@ export default function ApplyPage() {
                   </>
                 ) : (
                   <>
-                    Send application
+                    Get started
                     <ArrowRight size={16} />
                   </>
                 )}
