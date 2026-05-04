@@ -161,19 +161,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     deal_type: string | null; perspective: string | null; deadline: string | null
     script_title: string; evaluationId: string | null; score: number | null
     status: 'pending' | 'reviewed'
-    feedback: string | null; nextSteps: string | null
+    feedback: string | null; nextSteps: string | null; outcome: string | null
     submitted_at: string; isNewFeedback: boolean
   }
   const activeSubs: ActiveSub[] = []
   if (submissionIds.length > 0) {
     const { data: myOppSubs } = await service
       .from('opportunity_submissions')
-      .select('id, opportunity_id, submission_id, status, feedback, next_steps, submitted_at, feedback_viewed_at')
+      .select('id, opportunity_id, submission_id, status, feedback, next_steps, outcome, submitted_at, feedback_viewed_at')
       .eq('writer_id', user.id)
       .neq('status', 'withdrawn')
       .order('submitted_at', { ascending: false })
 
-    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; next_steps: string | null; submitted_at: string; feedback_viewed_at: string | null }[]) {
+    for (const os of (myOppSubs || []) as { id: string; opportunity_id: string; submission_id: string; status: string; feedback: string | null; next_steps: string | null; outcome: string | null; submitted_at: string; feedback_viewed_at: string | null }[]) {
       const opp = allOpportunities.find(o => o.id === os.opportunity_id)
       const sub = visible.find(s => s.id === os.submission_id)
       if (!opp || !sub) continue
@@ -192,6 +192,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         status: os.status as 'pending' | 'reviewed',
         feedback: os.feedback,
         nextSteps: os.next_steps,
+        outcome: os.outcome,
         submitted_at: os.submitted_at,
         isNewFeedback: os.status === 'reviewed' && !os.feedback_viewed_at,
       })
@@ -259,6 +260,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     dealType: string | null; perspective: string | null; deadline: string | null
     scripts: ActiveSub[]
     hasPending: boolean; hasReviewed: boolean
+    primaryOutcome: string | null
     primaryNextSteps: string | null
   }
   function groupByOpp(subs: ActiveSub[]): OppGroup[] {
@@ -280,6 +282,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
         scripts,
         hasPending: scripts.some(s => s.status === 'pending'),
         hasReviewed: scripts.some(s => s.status === 'reviewed'),
+        primaryOutcome: scripts.find(s => s.outcome)?.outcome ?? null,
         primaryNextSteps: scripts.find(s => s.nextSteps)?.nextSteps ?? null,
       })
     }
@@ -312,6 +315,19 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   const actualRemaining = Math.max(0, 3 - Math.min(monthlyUsed, 3)) + bonusSubs
   const atSubmitLimit = !isPro || actualRemaining <= 0
 
+  const OUTCOME_LABELS: Record<string, string> = {
+    pass: 'Not selected',
+    developing: 'Keep developing',
+    revise_resubmit: 'Invited to resubmit',
+    advancing: 'Advancing',
+  }
+  const OUTCOME_COLORS: Record<string, string> = {
+    pass: 'text-gray-500 bg-gray-100',
+    developing: 'text-amber-700 bg-amber-50',
+    revise_resubmit: 'text-purple-700 bg-purple-50',
+    advancing: 'text-emerald-700 bg-emerald-50',
+  }
+  // Legacy fallback
   const NEXT_STEPS_LABELS: Record<string, string> = {
     revise_resubmit: 'Revise & resubmit',
     new_concept: 'Send a different concept',
@@ -483,7 +499,13 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                             )}
                           </div>
                         </div>
-                        {group.primaryNextSteps && (
+                        {group.primaryOutcome ? (
+                          <span className={`shrink-0 text-[10.5px] font-bold px-2.5 py-1 rounded-full ${
+                            OUTCOME_COLORS[group.primaryOutcome] ?? 'text-gray-600 bg-gray-100'
+                          }`}>
+                            {OUTCOME_LABELS[group.primaryOutcome] ?? group.primaryOutcome}
+                          </span>
+                        ) : group.primaryNextSteps ? (
                           <span className={`shrink-0 text-[10.5px] font-bold px-2.5 py-1 rounded-full ${
                             group.primaryNextSteps === 'in_touch'
                               ? 'text-emerald-700 bg-emerald-50'
@@ -493,7 +515,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                           }`}>
                             {NEXT_STEPS_LABELS[group.primaryNextSteps] ?? group.primaryNextSteps}
                           </span>
-                        )}
+                        ) : null}
                       </div>
 
                       <div className="mt-3 pt-2.5 border-t border-gray-100">
@@ -515,18 +537,37 @@ export default async function DashboardPage({ searchParams }: PageProps) {
                                 </div>
                                 <span className="text-[13px] text-gray-700 truncate">{sub.script_title}</span>
                               </div>
-                              {sub.evaluationId && (
-                                <Link
-                                  href={`/report/${sub.evaluationId}`}
-                                  className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
-                                >
-                                  View report
-                                </Link>
-                              )}
+                              <div className="flex items-center gap-2 shrink-0">
+                                {sub.outcome && (
+                                  <span className={`text-[10.5px] font-bold px-2 py-0.5 rounded-full ${
+                                    OUTCOME_COLORS[sub.outcome] ?? 'text-gray-600 bg-gray-100'
+                                  }`}>
+                                    {OUTCOME_LABELS[sub.outcome] ?? sub.outcome}
+                                  </span>
+                                )}
+                                {sub.evaluationId && (
+                                  <Link
+                                    href={`/report/${sub.evaluationId}`}
+                                    className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                                  >
+                                    View report
+                                  </Link>
+                                )}
+                              </div>
                             </div>
                             {sub.feedback && (
                               <div className="ml-10 mb-2 px-3 py-2.5 bg-gray-50 rounded-lg">
                                 <p className="text-[12px] text-gray-500 leading-[1.6] m-0 whitespace-pre-line">{sub.feedback}</p>
+                                {sub.outcome === 'revise_resubmit' && (
+                                  <p className="text-[11px] font-semibold text-purple-600 m-0 mt-2">
+                                    You earned a bonus submission — submit a revised draft or new concept.
+                                  </p>
+                                )}
+                                {sub.outcome === 'advancing' && (
+                                  <p className="text-[11px] font-semibold text-emerald-600 m-0 mt-2">
+                                    You&apos;re moving forward on this opportunity.
+                                  </p>
+                                )}
                               </div>
                             )}
                           </div>

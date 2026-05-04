@@ -18,6 +18,18 @@ function svc() {
   )
 }
 
+const OUTCOME_LABELS: Record<string, string> = {
+  pass: 'Not selected',
+  developing: 'Keep developing',
+  revise_resubmit: 'Invited to resubmit',
+  advancing: 'Advancing',
+}
+const OUTCOME_COLORS: Record<string, string> = {
+  pass: 'text-gray-500 bg-gray-100',
+  developing: 'text-amber-700 bg-amber-50',
+  revise_resubmit: 'text-purple-700 bg-purple-50',
+  advancing: 'text-emerald-700 bg-emerald-50',
+}
 const NEXT_STEPS_LABELS: Record<string, string> = {
   revise_resubmit: 'Revise & resubmit',
   new_concept: 'Send a different concept',
@@ -34,13 +46,13 @@ export default async function OpportunityHistoryPage() {
   // Fetch all submissions for this writer
   const { data: allSubs } = await service
     .from('opportunity_submissions')
-    .select('id, opportunity_id, submission_id, status, feedback, next_steps, submitted_at, reviewed_at')
+    .select('id, opportunity_id, submission_id, status, feedback, next_steps, outcome, submitted_at, reviewed_at')
     .eq('writer_id', user.id)
     .order('submitted_at', { ascending: false })
 
   type SubRow = {
     id: string; opportunity_id: string; submission_id: string
-    status: string; feedback: string | null; next_steps: string | null
+    status: string; feedback: string | null; next_steps: string | null; outcome: string | null
     submitted_at: string; reviewed_at: string | null
   }
   const submissions = (allSubs || []) as SubRow[]
@@ -109,7 +121,7 @@ export default async function OpportunityHistoryPage() {
     scripts: {
       subId: string; scriptTitle: string; evaluationId: string | null
       score: number | null; status: string; feedback: string | null
-      nextSteps: string | null; submittedAt: string; reviewedAt: string | null
+      nextSteps: string | null; outcome: string | null; submittedAt: string; reviewedAt: string | null
     }[]
   }
 
@@ -130,6 +142,7 @@ export default async function OpportunityHistoryPage() {
       status: sub.status,
       feedback: sub.feedback,
       nextSteps: sub.next_steps,
+      outcome: sub.outcome,
       submittedAt: sub.submitted_at,
       reviewedAt: sub.reviewed_at,
     })
@@ -149,13 +162,15 @@ export default async function OpportunityHistoryPage() {
     return bTime - aTime
   })
 
-  function statusBadge(status: string) {
+  function statusBadge(status: string, outcome?: string | null) {
     if (status === 'pending') return 'text-amber-600 bg-amber-50'
+    if (status === 'reviewed' && outcome) return OUTCOME_COLORS[outcome] ?? 'text-emerald-600 bg-emerald-50'
     if (status === 'reviewed') return 'text-emerald-600 bg-emerald-50'
     return 'text-gray-400 bg-gray-100'
   }
-  function statusLabel(status: string) {
+  function statusLabel(status: string, outcome?: string | null) {
     if (status === 'pending') return 'In consideration'
+    if (status === 'reviewed' && outcome) return OUTCOME_LABELS[outcome] ?? 'Feedback received'
     if (status === 'reviewed') return 'Feedback received'
     return 'Withdrawn'
   }
@@ -235,11 +250,23 @@ export default async function OpportunityHistoryPage() {
                     In consideration
                   </span>
                 )}
-                {!hasPending && hasReviewed && (
-                  <span className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                    Feedback received
-                  </span>
-                )}
+                {!hasPending && hasReviewed && (() => {
+                  const bestOutcome = groupScripts.find(s => s.outcome)?.outcome
+                  if (bestOutcome) {
+                    return (
+                      <span className={`shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full ${
+                        OUTCOME_COLORS[bestOutcome] ?? 'text-gray-600 bg-gray-100'
+                      }`}>
+                        {OUTCOME_LABELS[bestOutcome] ?? bestOutcome}
+                      </span>
+                    )
+                  }
+                  return (
+                    <span className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
+                      Feedback received
+                    </span>
+                  )
+                })()}
                 {allWithdrawn && (
                   <span className="shrink-0 text-[11px] font-bold text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
                     Withdrawn
@@ -278,8 +305,8 @@ export default async function OpportunityHistoryPage() {
                         </div>
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
-                        <span className={`text-[10.5px] font-bold px-2 py-0.5 rounded-full ${statusBadge(s.status)}`}>
-                          {statusLabel(s.status)}
+                        <span className={`text-[10.5px] font-bold px-2 py-0.5 rounded-full ${statusBadge(s.status, s.outcome)}`}>
+                          {statusLabel(s.status, s.outcome)}
                         </span>
                         {s.evaluationId && (
                           <Link
@@ -292,10 +319,16 @@ export default async function OpportunityHistoryPage() {
                       </div>
                     </div>
 
-                    {/* Feedback + next steps */}
-                    {s.status === 'reviewed' && (s.feedback || s.nextSteps) && (
+                    {/* Feedback + outcome */}
+                    {s.status === 'reviewed' && (s.feedback || s.outcome || s.nextSteps) && (
                       <div className="mt-2.5 ml-[42px]">
-                        {s.nextSteps && (
+                        {s.outcome ? (
+                          <span className={`inline-block text-[10.5px] font-bold px-2.5 py-1 rounded-full mb-2 ${
+                            OUTCOME_COLORS[s.outcome] ?? 'text-gray-600 bg-gray-100'
+                          }`}>
+                            {OUTCOME_LABELS[s.outcome] ?? s.outcome}
+                          </span>
+                        ) : s.nextSteps ? (
                           <span className={`inline-block text-[10.5px] font-bold px-2.5 py-1 rounded-full mb-2 ${
                             s.nextSteps === 'in_touch'
                               ? 'text-emerald-700 bg-emerald-50'
@@ -305,10 +338,20 @@ export default async function OpportunityHistoryPage() {
                           }`}>
                             {NEXT_STEPS_LABELS[s.nextSteps] ?? s.nextSteps}
                           </span>
-                        )}
+                        ) : null}
                         {s.feedback && (
                           <div className="px-3 py-2.5 bg-gray-50 rounded-lg">
                             <p className="text-[12.5px] text-gray-500 leading-[1.6] m-0 whitespace-pre-line">{s.feedback}</p>
+                            {s.outcome === 'revise_resubmit' && (
+                              <p className="text-[11px] font-semibold text-purple-600 m-0 mt-2">
+                                You earned a bonus submission — submit a revised draft or new concept.
+                              </p>
+                            )}
+                            {s.outcome === 'advancing' && (
+                              <p className="text-[11px] font-semibold text-emerald-600 m-0 mt-2">
+                                You&apos;re moving forward on this opportunity.
+                              </p>
+                            )}
                           </div>
                         )}
                       </div>

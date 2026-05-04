@@ -1,19 +1,44 @@
 'use client'
 
 // ProducerReviewCard — inline review UI for a single submission.
-// Feedback = synthesized comment + next-steps tag.
-// opportunities-v1 (2026-05-03).
+// Feedback = synthesized comment + structured outcome.
+// opportunities-v2 (2026-05-04).
 
 import { useState } from 'react'
 import Link from 'next/link'
 
-const NEXT_STEPS_OPTIONS = [
-  { value: 'revise_resubmit', label: 'Revise & resubmit' },
-  { value: 'new_concept', label: 'Send a different concept' },
-  { value: 'in_touch', label: "We'll be in touch" },
+const OUTCOME_OPTIONS = [
+  {
+    value: 'pass',
+    label: 'Pass',
+    hint: 'Not the right fit for this opportunity.',
+    color: 'border-gray-300 bg-gray-50 text-gray-600',
+    selectedColor: 'border-gray-400 bg-gray-100 text-gray-800',
+  },
+  {
+    value: 'developing',
+    label: 'Keep developing',
+    hint: 'Promising concept but the script needs more work.',
+    color: 'border-gray-200 bg-white text-gray-500',
+    selectedColor: 'border-amber-300 bg-amber-50 text-amber-800',
+  },
+  {
+    value: 'revise_resubmit',
+    label: 'Revise & resubmit',
+    hint: 'We\'d like to see this again. Grants the writer a bonus submission.',
+    color: 'border-gray-200 bg-white text-gray-500',
+    selectedColor: 'border-purple-300 bg-purple-50 text-purple-800',
+  },
+  {
+    value: 'advancing',
+    label: 'Advancing',
+    hint: 'We\'ll be in touch — this writer is moving forward.',
+    color: 'border-gray-200 bg-white text-gray-500',
+    selectedColor: 'border-emerald-300 bg-emerald-50 text-emerald-800',
+  },
 ] as const
 
-type NextSteps = typeof NEXT_STEPS_OPTIONS[number]['value'] | null
+type Outcome = typeof OUTCOME_OPTIONS[number]['value'] | null
 
 interface ReviewItem {
   submissionRowId: string
@@ -29,20 +54,21 @@ interface ReviewItem {
   status: string
   feedback: string | null
   nextSteps: string | null
+  outcome: string | null
   submittedAt: string
   reviewedAt: string | null
 }
 
 export function ProducerReviewCard({ item }: { item: ReviewItem }) {
   const [feedback, setFeedback] = useState(item.feedback ?? '')
-  const [nextSteps, setNextSteps] = useState<NextSteps>((item.nextSteps as NextSteps) ?? null)
+  const [outcome, setOutcome] = useState<Outcome>((item.outcome as Outcome) ?? null)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [reviewed, setReviewed] = useState(item.status === 'reviewed')
   const [expanded, setExpanded] = useState(item.status === 'pending')
 
   async function handleSend() {
-    if (!feedback.trim()) return
+    if (!feedback.trim() || !outcome) return
     setSaving(true)
     setSaved(false)
     const res = await fetch('/api/opportunities/review', {
@@ -52,7 +78,7 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
         submission_id: item.submissionRowId,
         status: 'reviewed',
         feedback: feedback.trim(),
-        next_steps: nextSteps,
+        outcome,
       }),
     })
     setSaving(false)
@@ -64,6 +90,7 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
   }
 
   const daysAgo = Math.floor((Date.now() - new Date(item.submittedAt).getTime()) / (1000 * 60 * 60 * 24))
+  const selectedOutcome = OUTCOME_OPTIONS.find(o => o.value === outcome)
 
   return (
     <div className="px-5 py-4">
@@ -122,47 +149,58 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             </Link>
           )}
 
+          {/* Outcome picker */}
+          <div>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+              Outcome <span className="text-red-400">*</span>
+            </p>
+            <div className="grid grid-cols-2 gap-1.5">
+              {OUTCOME_OPTIONS.map(opt => {
+                const isSelected = outcome === opt.value
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setOutcome(outcome === opt.value ? null : opt.value)}
+                    className={`text-left px-3 py-2 rounded-lg border transition-colors ${
+                      isSelected ? opt.selectedColor : opt.color
+                    } hover:border-gray-300`}
+                  >
+                    <span className="text-[12px] font-bold block">{opt.label}</span>
+                    <span className="text-[10.5px] opacity-70 block mt-0.5 leading-snug">{opt.hint}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
           {/* Feedback textarea */}
           <textarea
             value={feedback}
             onChange={e => setFeedback(e.target.value)}
-            placeholder="Write your feedback — what works, what doesn't, and why this may or may not fit this call..."
+            placeholder={
+              outcome === 'pass' ? "Brief note on why this isn't the right fit..."
+              : outcome === 'developing' ? "What's working, what needs more work, and what would make this ready..."
+              : outcome === 'revise_resubmit' ? "What you'd like to see addressed in the next draft..."
+              : outcome === 'advancing' ? "What excited you about this and next steps..."
+              : "Write your feedback — what works, what doesn't, and why..."
+            }
             rows={4}
             className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
           />
-
-          {/* Next steps tag */}
-          <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
-              Suggested next steps
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {NEXT_STEPS_OPTIONS.map(opt => (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() => setNextSteps(nextSteps === opt.value ? null : opt.value)}
-                  className={`text-[11.5px] font-semibold px-3 py-1.5 rounded-full border transition-colors ${
-                    nextSteps === opt.value
-                      ? 'border-purple-300 bg-purple-50 text-purple-700'
-                      : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300'
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {/* Send button */}
           <div className="flex items-center gap-2">
             <button
               onClick={handleSend}
-              disabled={saving || !feedback.trim()}
+              disabled={saving || !feedback.trim() || !outcome}
               className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1.5 rounded-md transition-colors"
             >
               {saving ? 'Sending…' : reviewed ? 'Update feedback' : 'Send feedback'}
             </button>
+            {!outcome && feedback.trim() && (
+              <span className="text-[11px] text-amber-600">Pick an outcome</span>
+            )}
             {saved && (
               <span className="text-[12px] text-emerald-600 font-medium">Sent</span>
             )}

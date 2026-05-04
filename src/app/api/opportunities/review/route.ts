@@ -1,5 +1,5 @@
 // POST /api/opportunities/review — producer updates a submission's status + feedback.
-// opportunities-v1.
+// opportunities-v2: structured outcomes (pass/developing/revise_resubmit/advancing).
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
@@ -13,17 +13,20 @@ function svc() {
   )
 }
 
+const VALID_OUTCOMES = ['pass', 'developing', 'revise_resubmit', 'advancing'] as const
+type Outcome = typeof VALID_OUTCOMES[number]
+
 export async function POST(req: NextRequest) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { submission_id, status, feedback, next_steps } = body as {
+  const { submission_id, status, feedback, outcome } = body as {
     submission_id: string
     status: 'pending' | 'reviewed'
     feedback?: string
-    next_steps?: 'revise_resubmit' | 'new_concept' | 'in_touch' | null
+    outcome?: Outcome | null
   }
 
   if (!submission_id || !status) {
@@ -32,9 +35,12 @@ export async function POST(req: NextRequest) {
   if (!['pending', 'reviewed'].includes(status)) {
     return NextResponse.json({ error: 'Invalid status' }, { status: 400 })
   }
-  // Closing comment is required when marking as reviewed
+  // Closing comment + outcome are required when marking as reviewed
   if (status === 'reviewed' && !feedback?.trim()) {
     return NextResponse.json({ error: 'Closing comment is required' }, { status: 400 })
+  }
+  if (status === 'reviewed' && (!outcome || !VALID_OUTCOMES.includes(outcome))) {
+    return NextResponse.json({ error: 'Outcome is required' }, { status: 400 })
   }
 
   const service = svc()
@@ -42,7 +48,7 @@ export async function POST(req: NextRequest) {
   // Verify the user owns the opportunity this submission belongs to
   const { data: sub } = await service
     .from('opportunity_submissions')
-    .select('id, opportunity_id')
+    .select('id, opportunity_id, writer_id')
     .eq('id', submission_id)
     .single()
 
@@ -64,12 +70,26 @@ export async function POST(req: NextRequest) {
     .update({
       status,
       feedback: feedback ?? null,
-      next_steps: next_steps ?? null,
+      outcome: outcome ?? null,
+      // Map outcome to legacy next_steps for backward compat
+      next_steps: outcome === 'revise_resubmit' ? 'revise_resubmit'
+        : outcome === 'developing' ? 'new_concept'
+        : outcome === 'advancing' ? 'in_touch'
+        : null,
       reviewed_at: status !== 'pending' ? new Date().toISOString() : null,
     })
     .eq('id', submission_id)
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+  // Grant bonus submission when outcome is revise_resubmit
+  if (status === 'reviewed' && outcome === 'revise_resubmit' && sub.writer_id) {
+    try {
+      await service.rpc('increment_bonus_submissions', { user_id_input: sub.writer_id })
+    } catch (err: unknown) {
+      console.error('[review] bonus_submissions increment failed:', err)
+    }
+  }
 
   return NextResponse.json({ ok: true })
 }
