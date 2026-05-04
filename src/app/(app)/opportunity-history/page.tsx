@@ -98,7 +98,7 @@ export default async function OpportunityHistoryPage() {
   // Fetch script details + evaluations
   const [{ data: scripts }, { data: evals }] = await Promise.all([
     service.from('script_submissions').select('id, title, declared_format').in('id', scriptIds),
-    service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', scriptIds),
+    service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation, edited_fields').in('submission_id', scriptIds),
   ])
 
   const scriptMap = new Map<string, { title: string; format: string | null }>()
@@ -107,11 +107,12 @@ export default async function OpportunityHistoryPage() {
   }
 
   const evalMap = new Map<string, { id: string; score: number | null; genre: string | null }>()
-  for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[]) {
+  for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown; edited_fields: Record<string, unknown> | null }[]) {
     const evJson = e.evaluation as Record<string, unknown> | null
+    const ef = e.edited_fields as Record<string, unknown> | null
     const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
     const cls = (evJson?.classification as Record<string, unknown>) || {}
-    const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+    const genre = (ef?.genre_primary as string) || (cls.genre_primary as string) || (fmt.genre_primary as string) || null
     evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score, genre })
   }
 

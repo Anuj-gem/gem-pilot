@@ -96,14 +96,15 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   if (submissionIds.length > 0) {
     const { data: myEvs } = await service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, evaluation')
+      .select('id, submission_id, weighted_score, evaluation, edited_fields')
       .in('submission_id', submissionIds)
-    for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
+    for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown; edited_fields: Record<string, unknown> | null }[] | null) || []) {
       const evJson = e.evaluation as Record<string, unknown> | null
+      const ef = e.edited_fields as Record<string, unknown> | null
       const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
       const cls = (evJson?.classification as Record<string, unknown>) || {}
-      const logline = (fmt.logline_one_line as string) || (evJson?.positioning_hook as string) || null
-      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+      const logline = (ef?.logline as string) || (fmt.logline_one_line as string) || (evJson?.positioning_hook as string) || null
+      const genre = (ef?.genre_primary as string) || (cls.genre_primary as string) || (fmt.genre_primary as string) || null
       const packaging = (evJson?.packaging as Record<string, unknown>) || {}
       const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
       const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null

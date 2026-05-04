@@ -68,17 +68,18 @@ export default async function ProducerOpportunitiesPage() {
   if (scriptIds.length > 0) {
     const [{ data: scripts }, { data: evals }] = await Promise.all([
       service.from('script_submissions').select('id, title, declared_format').in('id', scriptIds),
-      service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', scriptIds),
+      service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation, edited_fields').in('submission_id', scriptIds),
     ])
     for (const s of (scripts || []) as { id: string; title: string; declared_format: string | null }[]) {
       scriptMap.set(s.id, { title: s.title, format: s.declared_format })
     }
-    for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[]) {
+    for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown; edited_fields: Record<string, unknown> | null }[]) {
       const evJson = e.evaluation as Record<string, unknown> | null
+      const ef = e.edited_fields as Record<string, unknown> | null
       const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
       const cls = (evJson?.classification as Record<string, unknown>) || {}
-      const logline = (fmt.logline_one_line as string) || (evJson?.positioning_hook as string) || null
-      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+      const logline = (ef?.logline as string) || (fmt.logline_one_line as string) || (evJson?.positioning_hook as string) || null
+      const genre = (ef?.genre_primary as string) || (cls.genre_primary as string) || (fmt.genre_primary as string) || null
       evalMap.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, logline, genre })
     }
   }

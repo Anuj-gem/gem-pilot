@@ -57,19 +57,19 @@ export default async function PublicProfile({ params }: PageProps) {
   type SubRow = { id: string; title: string; created_at: string; declared_format: string | null }
   const subRows = (subs as SubRow[] | null) || []
 
-  type EvalRow = { id: string; submission_id: string; weighted_score: number | null; tier: string | null; evaluation: unknown }
+  type EvalRow = { id: string; submission_id: string; weighted_score: number | null; tier: string | null; evaluation: unknown; edited_fields: unknown }
   const evalBySub = new Map<string, EvalRow>()
   if (subRows.length > 0) {
     const { data: evs } = await service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, tier, evaluation')
+      .select('id, submission_id, weighted_score, tier, evaluation, edited_fields')
       .in('submission_id', subRows.map((s) => s.id))
     for (const e of (evs as EvalRow[] | null) || []) evalBySub.set(e.submission_id, e)
   }
 
   type Script = {
     id: string; title: string; created_at: string; declared_format: string | null
-    script_evaluations: { id: string; weighted_score: number | null; tier: string | null; evaluation: unknown }[] | null
+    script_evaluations: { id: string; weighted_score: number | null; tier: string | null; evaluation: unknown; edited_fields: unknown }[] | null
   }
   const publicScripts: Script[] = subRows.map((s) => {
     const ev = evalBySub.get(s.id)
@@ -79,7 +79,7 @@ export default async function PublicProfile({ params }: PageProps) {
       created_at: s.created_at,
       declared_format: s.declared_format,
       script_evaluations: ev
-        ? [{ id: ev.id, weighted_score: ev.weighted_score, tier: ev.tier, evaluation: ev.evaluation }]
+        ? [{ id: ev.id, weighted_score: ev.weighted_score, tier: ev.tier, evaluation: ev.evaluation, edited_fields: ev.edited_fields }]
         : null,
     }
   })
@@ -279,8 +279,9 @@ export default async function PublicProfile({ params }: PageProps) {
                 if (!ev) return null
                 const st = scriptStats.get(s.id)
                 const evJson = ev.evaluation as any
-                const logline = evJson?.format_detection?.logline_one_line || evJson?.positioning_hook || null
-                const genre = evJson?.classification?.genre_primary || evJson?.format_detection?.genre_primary || null
+                const ef = ev.edited_fields as any
+                const logline = ef?.logline || evJson?.format_detection?.logline_one_line || evJson?.positioning_hook || null
+                const genre = ef?.genre_primary || evJson?.classification?.genre_primary || evJson?.format_detection?.genre_primary || null
                 const cardData: ScriptCardData = {
                   submission_id: s.id,
                   evaluation_id: ev.id,
