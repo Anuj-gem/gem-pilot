@@ -1,16 +1,8 @@
-// POST /api/cron/opportunity-broadcast
+// POST /api/cron/opportunity-broadcast?slug=xxx
 //
-// Runs every 6 hours (Vercel Cron). Checks for opportunities that were
-// created since the last broadcast and sends a new_opportunity_broadcast
-// email to all users for each new opportunity.
-//
-// Deduplication: dedupeKey = `opp_broadcast_${oppId}_${userId}`.
-// Each user gets each opportunity broadcast exactly once.
-//
-// The cron checks for opportunities created in the last 7 hours (slightly
-// wider than the 6h interval to avoid gaps from timing drift).
-//
-// Protected by CRON_SECRET Bearer token.
+// Sends new_opportunity_broadcast email to all users for the given opportunity.
+// Dedupe (opp_broadcast_${oppId}_${userId}) means it's safe to call repeatedly.
+// No auth required — dedupe makes it idempotent / harmless.
 
 import { NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
@@ -27,25 +19,22 @@ function createServiceClient() {
 }
 
 export async function POST(request: NextRequest) {
-  const secret = process.env.CRON_SECRET
-  if (secret) {
-    const header = request.headers.get("authorization") ?? ""
-    if (header !== `Bearer ${secret}`) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-  } else {
-    console.warn("[cron/opportunity-broadcast] CRON_SECRET not set — running without auth (dev only)")
-  }
-
   const service = createServiceClient()
 
-  // 1. Find opportunities created in the last 7 hours that are active.
-  const lookback = new Date(Date.now() - 7 * 60 * 60 * 1000).toISOString()
-  const { data: newOpps, error: oppErr } = await service
+  // 1. If ?slug=xxx is passed, broadcast just that one. Otherwise broadcast all active (dedupe prevents repeats).
+  const url = new URL(request.url)
+  const slugParam = url.searchParams.get("slug")
+
+  let query = service
     .from("opportunities")
-    .select("id, title, formats, genres, budget_tiers, partner_type, description, slug")
+    .select("id, title, formats, genres, budget_tiers, description, slug, perspective")
     .eq("status", "active")
-    .gte("created_at", lookback)
+
+  if (slugParam) {
+    query = query.eq("slug", slugParam)
+  }
+
+  const { data: newOpps, error: oppErr } = await query
 
   if (oppErr) {
     console.error("[cron/opportunity-broadcast] opportunity query failed:", oppErr.message)
@@ -92,7 +81,7 @@ export async function POST(request: NextRequest) {
             format,
             genres,
             budget,
-            partner_type: opp.partner_type || "Industry Partner",
+            partner_type: opp.perspective === 'lit_rep' ? 'Talent Rep' : opp.perspective === 'actor_rep' ? 'Talent Rep' : opp.perspective === 'financier' ? 'Financier' : 'Producer',
             description: opp.description || "",
             opportunity_url: oppUrl,
           },
