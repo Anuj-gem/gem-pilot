@@ -1,10 +1,7 @@
 // LandingPricing — two-column Free vs Pro card. Pro is the
 // conversion driver, Free is the on-ramp.
 //
-// Anuj 2026-04-30 v0.11.0 — community-first relaunch. Free now
-// means you can post publicly + get peer reviews. Pro unlocks
-// multiple scripts/drafts and direct industry contact, which are
-// the two things conversion is currently driven on.
+// v0.14.0 — consolidated landing page. No competitor comparison.
 
 import { ArrowRight, Check } from 'lucide-react'
 import Link from 'next/link'
@@ -47,13 +44,14 @@ export function LandingPricing() {
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="Unlimited evaluations. Unlimited submissions."
+            blurb="Unlimited evaluations. Real industry access."
             features={[
               'Unlimited script evaluations',
-              'Submit to every opportunity you qualify for',
+              '3 opportunity submissions per month',
+              'Structured feedback from industry reviewers',
               'Revise and rescore any script',
               'Full writer profile visible to industry',
-              'Priority in opportunity matching',
+              'Branded PDF download of every report',
             ]}
             cta="Go Pro"
             href="/submit"
@@ -61,9 +59,8 @@ export function LandingPricing() {
           />
         </div>
 
-        <p className="text-[13px] text-[var(--gem-gray-400)] text-center m-0 max-w-[580px] mx-auto leading-relaxed">
-          Other platforms charge $75-150 per evaluation. Competitions charge
-          $50-80 per entry. GEM Pro is $20/mo for everything, unlimited.
+        <p className="text-[13px] text-[var(--gem-gray-400)] text-center m-0 max-w-[480px] mx-auto leading-relaxed">
+          Cancel anytime. No contracts, no hidden fees.
         </p>
       </div>
     </section>

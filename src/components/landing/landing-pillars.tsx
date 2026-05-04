@@ -1,6 +1,7 @@
-// LandingPillars �� four product pillars as paired text + mockup blocks.
-// v0.13.0 messaging-v3: evaluation, opportunities, profile, vision.
-// Peer reviews mockup → opportunity cards. Industry inbox → vision flow.
+// LandingPillars — five product pillars as paired text + mockup blocks.
+// v0.14.0 consolidated landing page. Folds /writers, /industry, /selznick
+// content into one page. Sections: evaluation, opportunities, feedback,
+// profile, vision.
 
 import { ArrowRight } from 'lucide-react'
 
@@ -10,31 +11,38 @@ export function LandingPillars() {
       <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         <Pillar
           eyebrow="The evaluation"
-          title="A structured read on every dimension a producer weighs."
-          body="Headline, character breakdowns, packaging angle, budget tier, production complexity, and the honest development notes a buyer would weigh before saying yes. Not a score and a paragraph. The full read."
-          mockup={<SelznickReportMockup />}
+          title="Every dimension a producer weighs. In under a minute."
+          body="Headline, character breakdowns, packaging angle, budget tier, production complexity, and the honest development notes a buyer would weigh before saying yes. Not a score and a paragraph — the full structured read."
+          mockup={<EvaluationReportMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="Opportunities"
-          title="Real opportunities from working industry."
-          body="Active listings from producers, lit reps, talent reps, and financiers — each with specific requirements. When your script qualifies, submit in one click. No query letters, no entry fees, no months of waiting."
+          eyebrow="Exclusive opportunities"
+          title="Curated listings from working industry. Limited submissions keep the signal high."
+          body="Active opportunities from producers, lit reps, talent reps, and financiers — each with specific requirements. When your script qualifies, submit directly. Three submissions per month means every one counts. No query letters, no entry fees, no months of waiting."
           mockup={<OpportunityCardsMockup />}
           align="right"
         />
         <Pillar
-          eyebrow="Your profile"
-          title="One page for everything you've written."
-          body="Your scripts, your scores, your track record — all in one place. When industry partners look at your submission, this is what they see."
-          mockup={<ProfileMockup />}
+          eyebrow="Real feedback"
+          title="Industry partners read your evaluation. Then they respond."
+          body="When you submit to an opportunity, the reviewer gets your full structured evaluation — not a logline and a prayer. They respond with real feedback: what worked, what didn't, and whether there's a path forward. This isn't a form rejection."
+          mockup={<FeedbackMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="The bigger picture"
-          title="Built to get great work made."
-          body="Most platforms stop at the evaluation. GEM keeps going. The read is the beginning — opportunities, matching, and direct industry contact are what come next. Every feature we build moves toward the same thing: closing the gap between great scripts and the people who can make them."
-          mockup={<VisionFlowMockup />}
+          eyebrow="Your profile"
+          title="One page for everything you've written."
+          body="Your scripts, your scores, your track record — all in one place. When industry partners look at your submission, this is what they see. A career page that grows with every script you evaluate."
+          mockup={<ProfileMockup />}
           align="right"
+        />
+        <Pillar
+          eyebrow="Named for the producer who set the standard"
+          title="Built to get great work made."
+          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation opens the door, opportunities are on the other side. Every feature we build moves toward the same thing: closing the gap between great scripts and the people who can make them."
+          mockup={<VisionFlowMockup />}
+          align="left"
         />
       </div>
     </section>
@@ -90,14 +98,14 @@ function Pillar({
   )
 }
 
-// ── Mockup 1: Selznick evaluation report ─────────────────────────
-function SelznickReportMockup() {
+// ── Mockup 1: Evaluation report (expanded from /writers) ────────
+function EvaluationReportMockup() {
   return (
     <div className="p-5 sm:p-6">
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="min-w-0">
           <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
-            Selznick evaluation
+            GEM evaluation
           </p>
           <p
             className="text-[15px] font-bold m-0 leading-tight text-[var(--gem-gray-50)] truncate"
@@ -124,23 +132,16 @@ function SelznickReportMockup() {
         </div>
       </div>
 
-      <div
-        className="rounded-lg p-3.5 mb-3"
-        style={{
-          background: 'var(--gem-gray-900)',
-          border: '1px solid var(--gem-gray-700)',
-        }}
-      >
-        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
-          Why this is a hit
-        </p>
-        <div className="space-y-1.5">
-          <WhyRow n="01" text="The premise is a built-in engine for tonal whiplash." />
-          <WhyRow n="02" text="Tony is a star-making contradiction in lead-actor terms." />
-        </div>
+      {/* Report sections — the 6 things every eval covers */}
+      <div className="space-y-0">
+        <ReportRow n="01" title="Headline + Why this is a hit" preview="A sharpened pitch a manager could forward verbatim." />
+        <ReportRow n="02" title="Cast" preview="Lead + supporting with the actor-want angle." />
+        <ReportRow n="03" title="Packaging" preview="Audience, budget tier, franchise potential." />
+        <ReportRow n="04" title="Production complexity" preview="The lift, the dependencies, the heads-up." />
+        <ReportRow n="05" title="Development notes" preview="The sharpest lever and every note a buyer would weigh." />
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2 mt-3">
         <ReadTile label="Budget" value="Indie" hint="$2-5M" tone="indie" />
         <ReadTile label="Complexity" value="Manageable" hint="2 main locations" tone="manageable" />
       </div>
@@ -148,15 +149,20 @@ function SelznickReportMockup() {
   )
 }
 
-function WhyRow({ n, text }: { n: string; text: string }) {
+function ReportRow({ n, title, preview }: { n: string; title: string; preview: string }) {
   return (
-    <div className="flex gap-2">
-      <span className="text-[10px] font-bold tabular-nums shrink-0" style={{ color: 'var(--gem-gold)' }}>
+    <div className="grid grid-cols-[32px_1fr] gap-x-2 py-2 border-b last:border-0 border-[var(--gem-gray-800)]">
+      <span className="text-[13px] font-bold tabular-nums leading-tight" style={{ color: 'var(--gem-gold)' }}>
         {n}
       </span>
-      <p className="text-[12px] m-0 leading-snug text-[var(--gem-gray-100)]">
-        {text}
-      </p>
+      <div className="min-w-0">
+        <p className="text-[12.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
+          {title}
+        </p>
+        <p className="text-[10.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
+          {preview}
+        </p>
+      </div>
     </div>
   )
 }
@@ -202,7 +208,7 @@ function ReadTile({
   )
 }
 
-// ── Mockup 2: Opportunity cards stack ────────────────────────────
+// ── Mockup 2: Opportunity cards ─────────────────────────────────
 function OpportunityCardsMockup() {
   return (
     <div className="p-5 sm:p-6">
@@ -210,6 +216,9 @@ function OpportunityCardsMockup() {
         <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
           Active opportunities
         </p>
+        <span className="text-[10px] font-bold text-[var(--gem-gray-500)] px-2 py-0.5 rounded-full" style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}>
+          3 of 3 submissions used
+        </span>
       </div>
       <div className="space-y-2.5">
         <OppCard
@@ -298,7 +307,75 @@ function OppCard({
   )
 }
 
-// ── Mockup 3: Profile card ──────���─────────────────────────────���──
+// ── Mockup 3: Feedback from industry ────────────────────────────
+function FeedbackMockup() {
+  return (
+    <div className="p-5 sm:p-6">
+      <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+        Submission feedback
+      </p>
+
+      {/* The opportunity context */}
+      <div
+        className="rounded-lg px-3 py-2.5 mb-3"
+        style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
+      >
+        <div className="flex flex-wrap gap-1.5 mb-1.5">
+          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
+            Option
+          </span>
+          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
+            Producer
+          </span>
+        </div>
+        <p
+          className="text-[12px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          Character-driven thriller — limited series
+        </p>
+      </div>
+
+      {/* The script submitted */}
+      <div
+        className="rounded-lg px-3 py-2 mb-3 flex items-center justify-between gap-2"
+        style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.25)' }}
+      >
+        <div className="min-w-0">
+          <p className="text-[9px] font-bold uppercase tracking-wider text-emerald-700 m-0 mb-0.5">
+            Your script
+          </p>
+          <p className="text-[11.5px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+            Untitled mob-therapy pilot
+          </p>
+        </div>
+        <span className="shrink-0 text-[10px] font-bold px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">
+          Feedback received
+        </span>
+      </div>
+
+      {/* The feedback */}
+      <div
+        className="rounded-lg px-3.5 py-3"
+        style={{ background: 'rgba(124,58,237,0.04)', border: '1px solid rgba(124,58,237,0.20)' }}
+      >
+        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
+          Reviewer feedback
+        </p>
+        <p className="text-[12px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-2">
+          Strong premise and the lead is compelling. The contained setting works for our budget range. We&apos;d want to see the pilot tightened in act two — the therapy sessions lose tension after the midpoint reveal.
+        </p>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}>
+            Requesting revision
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Mockup 4: Profile card ──────────────────────────────────────
 function ProfileMockup() {
   return (
     <div className="p-5 sm:p-6">
@@ -382,7 +459,7 @@ function ScriptStub({ title, format, score }: { title: string; format: string; s
   )
 }
 
-// ── Mockup 4: Vision flow — Script → Evaluation → Opportunity ────
+// ── Mockup 5: Vision flow — Script → Evaluation → Opportunity ───
 function VisionFlowMockup() {
   return (
     <div className="p-5 sm:p-6">
@@ -411,8 +488,8 @@ function VisionFlowMockup() {
           border="rgba(22,163,74,0.30)"
         />
       </div>
-      <p className="text-[12px] text-[var(--gem-gray-400)] text-center m-0 mt-5 leading-snug max-w-[38ch] mx-auto">
-        Most platforms stop at the evaluation. We keep going until your script reaches the right people.
+      <p className="text-[12px] text-[var(--gem-gray-400)] text-center m-0 mt-5 leading-snug max-w-[44ch] mx-auto">
+        David O. Selznick set the standard for what a great evaluation looks like. We named the engine after him because that&apos;s the bar.
       </p>
     </div>
   )
@@ -449,7 +526,6 @@ function FlowNode({
 function FlowArrow() {
   return (
     <div className="flex items-center justify-center px-1.5 py-1 sm:py-0">
-      {/* Horizontal arrow (desktop) */}
       <svg
         aria-hidden
         className="hidden sm:block text-[var(--gem-gray-500)]"
@@ -466,7 +542,6 @@ function FlowArrow() {
           strokeLinejoin="round"
         />
       </svg>
-      {/* Vertical arrow (mobile) */}
       <svg
         aria-hidden
         className="sm:hidden text-[var(--gem-gray-500)]"
