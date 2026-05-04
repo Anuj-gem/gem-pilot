@@ -177,15 +177,9 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
                         </div>
                         <div className="text-[11px] text-gray-500 leading-[1.6]">
                           <div className="flex items-center justify-between">
-                            <span>{monthlyRemaining} of 3 monthly left</span>
+                            <span>{monthlyRemaining} of 3 monthly left{bonus > 0 ? ` + ${bonus} bonus` : ''}</span>
                             <span className="text-gray-400">resets in {daysLeft}d</span>
                           </div>
-                          {bonus > 0 && (
-                            <div className="flex items-center justify-between mt-0.5">
-                              <span className="text-purple-600 font-semibold">{bonus} bonus from referrals</span>
-                              <span className="text-gray-400">one-time</span>
-                            </div>
-                          )}
                         </div>
                         {totalRemaining === 0 && (
                           <p className="text-[11.5px] text-purple-600 font-semibold m-0 mt-1.5">
