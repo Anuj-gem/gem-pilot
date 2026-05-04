@@ -170,16 +170,11 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
                     const daysLeft = Math.ceil((resetDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
                     return (
                       <div className="mt-2 rounded-lg bg-gray-50 px-3 py-2.5">
-                        <div className="flex items-center justify-between mb-1.5">
+                        <div className="flex items-center justify-between">
                           <span className="text-[13px] font-bold text-gray-900">
                             {totalRemaining} submission{totalRemaining !== 1 ? 's' : ''} remaining
                           </span>
-                        </div>
-                        <div className="text-[11px] text-gray-500 leading-[1.6]">
-                          <div className="flex items-center justify-between">
-                            <span>{monthlyRemaining} of 3 monthly left{bonus > 0 ? ` + ${bonus} bonus` : ''}</span>
-                            <span className="text-gray-400">resets in {daysLeft}d</span>
-                          </div>
+                          <span className="text-[11px] text-gray-400">3 more in {daysLeft}d</span>
                         </div>
                         {totalRemaining === 0 && (
                           <p className="text-[11.5px] text-purple-600 font-semibold m-0 mt-1.5">
