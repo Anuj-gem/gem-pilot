@@ -27,6 +27,21 @@ export type TemplateAlias =
   // ReplyTo is set to the producer's email so a Reply lands in the
   // producer's inbox directly.
   | 'producer_intro_to_writer'
+  // Drip sequence — user HAS submitted at least one script but hasn't
+  // upgraded to Pro. Triggered by /api/cron/drip-emails.
+  | 'drip_24h'
+  | 'drip_72h'
+  | 'drip_7d'
+  | 'drip_14d'
+  // Drip sequence — user signed up but NEVER submitted a script.
+  // Triggered by /api/cron/drip-emails.
+  | 'drip_24h_nosub'
+  | 'drip_72h_nosub'
+  | 'drip_7d_nosub'
+  | 'drip_14d_nosub'
+  // Broadcast — fires when a new opportunity is added to GEM.
+  // Triggered by /api/cron/opportunity-broadcast.
+  | 'new_opportunity_broadcast'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias

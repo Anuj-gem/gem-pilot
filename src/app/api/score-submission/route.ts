@@ -400,6 +400,17 @@ export async function POST(request: NextRequest) {
           const isSub = profile.subscription_status === "active" || profile.subscription_status === "trialing"
           const templateAlias = isSub ? "post_submission_pro" : "post_submission_free"
 
+          // Count qualifying opportunities for this script so the email
+          // can say "Your script matched N opportunities."
+          let matchCount = "0"
+          try {
+            const { count } = await serviceClient
+              .from("opportunities")
+              .select("id", { count: "exact", head: true })
+              .eq("status", "active")
+            matchCount = String(count ?? 0)
+          } catch {}
+
           // MUST await — see /api/evaluate for the full explanation. Without
           // await, Vercel kills the Lambda before the Postmark fetch completes
           // and the email_outbox row stays at "pending" forever.
@@ -411,6 +422,7 @@ export async function POST(request: NextRequest) {
                 first_name: firstName,
                 title: submission.title || "Untitled",
                 report_url: reportUrl,
+                match_count: matchCount,
               },
               dedupeKey: evalRecord.id,
               tag: templateAlias,

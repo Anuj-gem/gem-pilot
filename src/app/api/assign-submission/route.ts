@@ -111,6 +111,17 @@ export async function POST(request: NextRequest) {
 
     if (profile?.email && evalRecord) {
       const reportUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.gem.studio"}/report/${evalRecord.id}`;
+
+      // Count active opportunities for the match_count variable.
+      let matchCount = "0";
+      try {
+        const { count } = await serviceClient
+          .from("opportunities")
+          .select("id", { count: "exact", head: true })
+          .eq("status", "active");
+        matchCount = String(count ?? 0);
+      } catch {}
+
       // MUST await — see /api/evaluate. Without await Vercel kills the
       // Lambda before Postmark responds and the row stays pending forever.
       try {
@@ -122,6 +133,7 @@ export async function POST(request: NextRequest) {
               first_name: profile.full_name?.split(" ")[0] || "there",
               title: sub?.title || "Untitled",
               report_url: reportUrl,
+              match_count: matchCount,
             },
             dedupeKey: evalRecord.id,
             tag: "post_submission_free",
