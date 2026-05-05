@@ -187,7 +187,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
   const isAdmin = user?.email === 'anuj@gem.studio'
-  const isOwnerOrAdmin = isOwner || isAdmin
+  // viewerIsProducer is set below after the profile fetch; forward-declare
+  // isOwnerOrAdmin as a let so we can widen it once we know the viewer role.
+  let isOwnerOrAdmin = isOwner || isAdmin
   const isAnonymousSubmission = !submission.user_id
 
   // Producer-mode detection (Anuj 2026-04-29). If a logged-in non-owner
@@ -261,15 +263,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   let viewerIsSubscribed = false
   let viewerIsReviewer = false
+  let viewerIsProducer = false
   if (user) {
     const { data: viewerProfile } = await serviceClient
       .from('profiles')
-      .select('subscription_status, is_reviewer')
+      .select('subscription_status, is_reviewer, account_type')
       .eq('id', user.id)
       .single()
     viewerIsSubscribed = viewerProfile?.subscription_status === 'active' || viewerProfile?.subscription_status === 'trialing'
     viewerIsReviewer = viewerProfile?.is_reviewer === true
+    viewerIsProducer = viewerProfile?.account_type === 'producer'
   }
+  // Producer accounts get full report visibility (same as owner/admin).
+  if (viewerIsProducer) isOwnerOrAdmin = true
 
   // Peer reviews — fetched for any viewer. Owner-hidden reviews are
   // filtered out for non-owners (and don't count toward review totals).
