@@ -11,28 +11,35 @@ import { useRouter } from "next/navigation"
  */
 export function RerunBanner({ submissionId }: { submissionId: string }) {
   const [state, setState] = useState<"idle" | "running" | "error">("idle")
+  const [errorMsg, setErrorMsg] = useState<string | null>(null)
   const router = useRouter()
 
   async function handleRerun() {
     setState("running")
+    setErrorMsg(null)
     try {
       const res = await fetch("/api/rerun-evaluation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ submission_id: submissionId }),
       })
+      // Handle non-JSON responses (e.g. Vercel 504 timeout page)
+      const contentType = res.headers.get("content-type") ?? ""
+      if (!contentType.includes("application/json")) {
+        throw new Error(`Server returned ${res.status} (non-JSON). The evaluation may have timed out.`)
+      }
       const data = await res.json()
       if (!res.ok) {
-        throw new Error(data.error ?? "Failed to re-run evaluation")
+        throw new Error(data.error ?? `Failed (${res.status})`)
       }
       if (data.status === "already_current") {
         router.refresh()
         return
       }
-      // Redirect to the new evaluation report
       router.push(`/report/${data.evaluation_id}`)
     } catch (err: any) {
       console.error("Rerun failed:", err)
+      setErrorMsg(err?.message ?? "Unknown error")
       setState("error")
     }
   }
@@ -69,7 +76,7 @@ export function RerunBanner({ submissionId }: { submissionId: string }) {
             Update failed
           </p>
           <p className="text-[13px] text-red-600 m-0 mt-1 leading-snug">
-            Something went wrong. Please try again.
+            {errorMsg ?? "Something went wrong."} Please try again.
           </p>
         </div>
         <button
