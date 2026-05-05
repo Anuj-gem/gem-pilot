@@ -94,10 +94,10 @@ export default async function OpportunitiesPage() {
         <div>
           <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1 m-0">Browse</p>
           <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-            Open opportunities
+            Open calls
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
-            {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} currently open
+            {opportunities.length} {opportunities.length === 1 ? 'call' : 'calls'} currently open
           </p>
         </div>
         {user && (

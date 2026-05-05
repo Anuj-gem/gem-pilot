@@ -68,8 +68,8 @@ export default function Nav({ userData }: NavProps = {}) {
   // Logged-in nav tabs — consideration model (2026-05-05).
   const loggedInLinks = [
     { href: '/dashboard', label: 'Home', icon: LayoutDashboard },
-    { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
-    { href: '/scripts', label: 'Scripts', icon: FileText },
+    { href: '/opportunities', label: 'Open calls', icon: Briefcase },
+    { href: '/scripts', label: 'My Scripts', icon: FileText },
     { href: '/feedback', label: 'Feedback', icon: MessageCircle },
   ]
 
@@ -125,8 +125,15 @@ export default function Nav({ userData }: NavProps = {}) {
                     )
                   })}
                   <Link
+                    href="/submit"
+                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[var(--gem-gray-200)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-600)] hover:border-[var(--gem-gray-400)] transition-colors font-medium"
+                  >
+                    <Plus size={14} />
+                    New script
+                  </Link>
+                  <Link
                     href="/consideration/submit"
-                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
+                    className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
                   >
                     <Sparkles size={14} />
                     Request consideration

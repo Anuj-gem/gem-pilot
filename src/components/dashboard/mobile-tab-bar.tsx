@@ -13,11 +13,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { Home, Briefcase, FileText, MessageCircle, User } from 'lucide-react'
+import { Home, Briefcase, FileText, MessageCircle } from 'lucide-react'
 
 export function MobileTabBar() {
   const pathname = usePathname() ?? ''
-  const [profileHref, setProfileHref] = useState<string>('/profile')
   const [authed, setAuthed] = useState<boolean>(false)
 
   useEffect(() => {
@@ -25,23 +24,7 @@ export function MobileTabBar() {
     const supabase = createClient()
     supabase.auth.getUser().then(({ data }) => {
       if (cancelled) return
-      const u = data.user
-      if (!u) {
-        setAuthed(false)
-        return
-      }
-      setAuthed(true)
-      // Look up handle for the profile tab. Fall back to /profile if
-      // they haven't completed onboarding yet.
-      supabase
-        .from('profiles')
-        .select('handle')
-        .eq('id', u.id)
-        .single()
-        .then(({ data }) => {
-          if (cancelled) return
-          if (data?.handle) setProfileHref(`/w/${data.handle}`)
-        })
+      setAuthed(!!data.user)
     })
     return () => { cancelled = true }
   }, [])
@@ -49,11 +32,10 @@ export function MobileTabBar() {
   if (!authed) return null
 
   const tabs = [
-    { href: '/dashboard',     label: 'Home',      icon: Home,           match: (p: string) => p === '/dashboard' || p === '/' },
-    { href: '/opportunities', label: 'Opps',      icon: Briefcase,      match: (p: string) => p.startsWith('/opportunities') },
-    { href: '/scripts',       label: 'Scripts',   icon: FileText,       match: (p: string) => p.startsWith('/scripts') },
-    { href: '/feedback',      label: 'Feedback',  icon: MessageCircle,  match: (p: string) => p.startsWith('/feedback') },
-    { href: profileHref,      label: 'Profile',   icon: User,           match: (p: string) => p.startsWith('/w/') || p.startsWith('/profile') },
+    { href: '/dashboard',     label: 'Home',       icon: Home,           match: (p: string) => p === '/dashboard' || p === '/' },
+    { href: '/opportunities', label: 'Open calls', icon: Briefcase,      match: (p: string) => p.startsWith('/opportunities') },
+    { href: '/scripts',       label: 'My Scripts', icon: FileText,       match: (p: string) => p.startsWith('/scripts') },
+    { href: '/feedback',      label: 'Feedback',   icon: MessageCircle,  match: (p: string) => p.startsWith('/feedback') },
   ] as const
 
   return (
@@ -62,7 +44,7 @@ export function MobileTabBar() {
       className="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-gray-200 bg-white/95 backdrop-blur"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
-      <ul className="grid grid-cols-5">
+      <ul className="grid grid-cols-4">
         {tabs.map((t) => {
           const Icon = t.icon
           const active = t.match(pathname)

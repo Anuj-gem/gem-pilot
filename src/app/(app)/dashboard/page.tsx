@@ -274,7 +274,7 @@ export default async function DashboardPage() {
               {totalOpenCallMatches}
             </p>
             <p className="text-[10.5px] text-emerald-500 font-medium mt-1 m-0">
-              Open calls qualified
+              Open calls matched
             </p>
           </div>
         </div>
