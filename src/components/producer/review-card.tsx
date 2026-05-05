@@ -52,11 +52,19 @@ export interface ReviewItem {
   reviewedAt: string | null
   oppTitle?: string
   oppSlug?: string | null
+  aiDecision?: string | null
+  aiReasoning?: string | null
+  aiNextSteps?: string | null
 }
 
 export function ProducerReviewCard({ item }: { item: ReviewItem }) {
-  const [feedback, setFeedback] = useState(item.feedback ?? '')
-  const [outcome, setOutcome] = useState<Outcome>((item.outcome as Outcome) ?? null)
+  // AI prefill: if no human feedback/outcome yet, use AI draft
+  const initialFeedback = item.feedback ?? (item.aiReasoning && item.aiNextSteps ? `${item.aiReasoning}\n\n${item.aiNextSteps}` : item.aiReasoning ?? '')
+  const initialOutcome = (item.outcome ?? item.aiDecision ?? null) as Outcome
+  const hasAiDraft = !item.feedback && !item.outcome && (item.aiDecision || item.aiReasoning)
+
+  const [feedback, setFeedback] = useState(initialFeedback)
+  const [outcome, setOutcome] = useState<Outcome>(initialOutcome)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [reviewed, setReviewed] = useState(item.status === 'reviewed')
@@ -177,6 +185,14 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
               })}
             </div>
           </div>
+
+          {/* AI draft indicator */}
+          {hasAiDraft && (
+            <div className="flex items-center gap-1.5 px-2 py-1.5 rounded-md bg-purple-50 border border-purple-100">
+              <span className="text-[11px] font-semibold text-purple-600">AI draft</span>
+              <span className="text-[11px] text-purple-400">— edit before sending</span>
+            </div>
+          )}
 
           {/* Feedback textarea */}
           <textarea

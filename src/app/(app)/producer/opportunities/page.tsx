@@ -47,7 +47,7 @@ export default async function ProducerOpportunitiesPage() {
   // Fetch all submissions for these opportunities (exclude withdrawn)
   const { data: allSubs } = await service
     .from('opportunity_submissions')
-    .select('id, opportunity_id, submission_id, writer_id, status, feedback, next_steps, outcome, submitted_at, reviewed_at')
+    .select('id, opportunity_id, submission_id, writer_id, status, feedback, next_steps, outcome, submitted_at, reviewed_at, ai_decision, ai_reasoning, ai_next_steps')
     .in('opportunity_id', oppIds)
     .neq('status', 'withdrawn')
     .order('submitted_at', { ascending: true })
@@ -55,7 +55,8 @@ export default async function ProducerOpportunitiesPage() {
   type SubRow = {
     id: string; opportunity_id: string; submission_id: string;
     writer_id: string; status: string; feedback: string | null;
-    next_steps: string | null; outcome: string | null; submitted_at: string; reviewed_at: string | null
+    next_steps: string | null; outcome: string | null; submitted_at: string; reviewed_at: string | null;
+    ai_decision: string | null; ai_reasoning: string | null; ai_next_steps: string | null
   }
   const submissions = (allSubs || []) as SubRow[]
 
@@ -116,6 +117,9 @@ export default async function ProducerOpportunitiesPage() {
     reviewedAt: string | null
     oppTitle: string
     oppSlug: string | null
+    aiDecision: string | null
+    aiReasoning: string | null
+    aiNextSteps: string | null
   }
 
   const allItems: ReviewItemWithOpp[] = submissions.map(s => {
@@ -142,6 +146,9 @@ export default async function ProducerOpportunitiesPage() {
       reviewedAt: s.reviewed_at,
       oppTitle: opp?.title ?? 'Unknown',
       oppSlug: opp?.slug ?? null,
+      aiDecision: s.ai_decision,
+      aiReasoning: s.ai_reasoning,
+      aiNextSteps: s.ai_next_steps,
     }
   })
 
