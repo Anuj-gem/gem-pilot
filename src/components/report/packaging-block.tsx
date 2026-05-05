@@ -191,6 +191,7 @@ function BudgetTierCard({ tier }: { tier: Packaging['budget_tier'] }) {
 }
 
 function IpPotentialCard({ ip }: { ip: Packaging['ip_potential'] }) {
+  if (!ip) return null
   const teaserText = ip.has_potential ? 'Franchise potential' : 'Standalone'
   const teaserColor = ip.has_potential ? '#059669' : 'var(--gem-gray-300)'
   return (

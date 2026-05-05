@@ -387,11 +387,11 @@ export interface IpPotential {
 }
 
 export interface Packaging {
-  comp_set: CompEntry[];
+  comp_set?: CompEntry[];
   audience_target: AudienceTarget;
   budget_tier: BudgetTier;
-  lane_fit: LaneFit;
-  ip_potential: IpPotential;
+  lane_fit?: LaneFit;
+  ip_potential?: IpPotential;
 }
 
 export interface IssueItem {
@@ -431,6 +431,10 @@ export interface GEMEvaluation {
 
   // v5 fields — optional, absent on legacy evaluations
   package_angles?: PackageAngles;
+
+  // v3.9 fields — plot summary + content description
+  content_description?: string;
+  plot_summary?: string;
 
   // v5.4 (Selznick interim) — new producer-decision fields
   risk_details?: RiskDetails;

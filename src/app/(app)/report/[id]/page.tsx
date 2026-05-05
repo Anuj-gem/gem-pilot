@@ -462,6 +462,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const production = report.production_reality
   const scores = report.scores ?? {}
   const craftNote = report.craft_note ?? null
+  const plotSummary = report.plot_summary ?? null
+  const contentDescription = report.content_description ?? null
   // Selznick 3.8 fields — every eval has these directly. The legacy
   // bridge (and the legacy `considerations` / `package_angles` /
   // `risk_rubric` reads) was retired 2026-04-29 after the rescore moved
@@ -682,6 +684,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             Score is now an internal ranking signal only — not a section
             visitors or writers can toggle. Qualification banner above
             surfaces the only score-derived signal (≥50 qualifies). */}
+
+        {/* PLOT SUMMARY (v3.9+) — collapsible */}
+        {plotSummary && (
+          <Collapsible title={contentDescription ?? 'Plot Summary'}>
+            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 max-w-[62ch]">
+              {plotSummary}
+            </p>
+          </Collapsible>
+        )}
 
         {/* WHAT'S WORKING */}
         <SectionGate
