@@ -152,8 +152,8 @@ export default async function OpportunitiesPage() {
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-[14.5px] font-bold text-gray-900 m-0 leading-snug">{opp.title}</h3>
-                      {opp.company && (
-                        <p className="text-[12px] text-gray-400 m-0 mt-0.5">{opp.company}</p>
+                      {opp.posted_by && (
+                        <p className="text-[12px] text-gray-400 m-0 mt-0.5">{opp.posted_by}</p>
                       )}
                       <p className="text-[12.5px] text-gray-500 m-0 mt-1.5 line-clamp-2 leading-[1.5]">
                         {opp.description}
