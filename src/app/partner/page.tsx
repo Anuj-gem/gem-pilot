@@ -1,49 +1,17 @@
-// /partner — producer "industry partner" dashboard.
-//
-// Selznick-4 v4 design pass (2026-04-25): cut chrome down to the bare
-// minimum — small header, small tab links, one feed of cards. Everything
-// the producer doesn't need to see while scanning is gone.
-//
-// Server component. Auth + role gating sequence:
-//   1. Not signed in           → /login?redirect=/partner
-//   2. Signed in, not producer → /dashboard (writer side)
-//   3. Producer with no lane   → /onboarding/producer
-//   4. Producer with lane      → render this page
-//
-// Data shape: pull all script_matches for the current producer (status
-// filtered client-side via tabs). Sort interested → commented → opened →
-// pending, then created_at DESC. Cap at 100.
-//
-// Visit tracking preserved — read OLD `last_visited_partner_at` BEFORE
-// updating it so we can mark each card "New since last visit".
-//
-// What's gone vs the prior v3 layout:
-//   - "X new since you last visited" banner strip → just per-card "New" pills
-//   - "Welcome back" + "Your inbox this week" greeting block → one line
-//   - Industry partner badge → dropped (the existence of the page is enough)
-//   - "Showing matches in your lane" filter row → dropped
-//   - LaneChip (large) → small text "Lane: X · Edit" in the header
-//   - Tag filter bar + sort row → dropped (default is score desc)
-//   - "Top choice for you this week" hero card → dropped (every card same size)
-//   - "Load more" pagination → dropped (show all, scroll)
+// /partner — producer dashboard (consideration model).
+// Shows writers who have scripts in consideration, expandable to show
+// their portfolio + feedback form.
 
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
-import { Inbox } from 'lucide-react'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Nav from '@/components/nav'
-import { DashboardTabs, type DashboardMatchData } from '@/components/partner/dashboard-tabs'
-import { RealtimeRefresh } from '@/components/partner/realtime-refresh'
-import { isScoreVisible, normalizePrivacy } from '@/lib/report-privacy'
-import { createMatchesForProducer } from '@/lib/matching'
+import { ConsiderationReviewCard } from '@/components/producer/consideration-review-card'
+import Link from 'next/link'
 
-// Inline service-role client — bypasses RLS so the aggregate "X views ·
-// Y interested · Z emailed" stats query can count matches across ALL
-// producers, not just the viewer's own match rows. Same pattern other
-// routes in this app use (see /api/start-submission, /api/send-upgrade-
-// email). Anuj 2026-04-29.
-function createServiceClient() {
+export const dynamic = 'force-dynamic'
+
+function svc() {
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -51,687 +19,166 @@ function createServiceClient() {
   )
 }
 
-export const dynamic = 'force-dynamic'
-
-type MatchStatus = 'pending' | 'opened' | 'interested' | 'passed' | 'commented'
-
-const STATUS_RANK: Record<MatchStatus, number> = {
-  interested: 0,
-  commented: 1,
-  opened: 2,
-  pending: 3,
-  passed: 4,
-}
-
-const FORMAT_LABEL: Record<string, string> = {
-  feature: 'Feature',
-  series: 'Series',
-  'feature film': 'Feature',
-}
-
-const BUDGET_TAG_LABEL: Record<string, string> = {
-  micro: 'Sub-$1M',
-  indie: '$1–15M',
-  mid: '$15–50M',
-  studio: '$50M+',
-}
-
-function titleCase(s: string): string {
-  return s
-    .split(/[\s_-]+/)
-    .filter(Boolean)
-    .map((w) => w[0]?.toUpperCase() + w.slice(1).toLowerCase())
-    .join(' ')
-}
-
-interface RawMatchRow {
-  id: string
-  status: MatchStatus
-  created_at: string
-  unmatched_at: string | null
-  script_submissions: {
-    id: string
-    title: string
-    declared_format: string | null
-    tags: string[] | null
-    hidden_at: string | null
-    is_public: boolean | null
-    report_privacy: unknown
-    script_evaluations:
-      | Array<{
-          weighted_score: number | null
-          tier: string | null
-          evaluation: {
-            classification?: {
-              genre_primary?: string
-              genre_secondary?: string[]
-              genre_tags?: string[]
-            }
-            positioning_hook?: string
-            packaging?: { budget_tier?: { tier?: string } }
-            risk_details?: {
-              budget?: { level?: string }
-              casting?: { level?: string }
-            }
-          } | null
-          edited_fields?: { logline?: string } | null
-        }>
-      | {
-          weighted_score: number | null
-          tier: string | null
-          evaluation: {
-            classification?: {
-              genre_primary?: string
-              genre_secondary?: string[]
-              genre_tags?: string[]
-            }
-            positioning_hook?: string
-            packaging?: { budget_tier?: { tier?: string } }
-            risk_details?: {
-              budget?: { level?: string }
-              casting?: { level?: string }
-            }
-          } | null
-          edited_fields?: { logline?: string } | null
-        }
-      | null
-  } | null
-}
-
-function shapeMatch(row: RawMatchRow): DashboardMatchData | null {
-  const sub = row.script_submissions
-  if (!sub) return null
-  // Removed posts (hidden_at set) are dropped regardless — that's the
-  // writer ending the post entirely.
-  if (sub.hidden_at) return null
-  // Unpublished posts (is_public=false) only get hidden from producers
-  // who hadn't already engaged. Producers already in the slate
-  // (interested/commented) keep access — the writer can mark the post
-  // private to limit comms from new producers while continuing to work
-  // with the ones already in flight. (Anuj 2026-04-27.)
-  if (sub.is_public !== true) {
-    if (row.status !== 'interested' && row.status !== 'commented') {
-      return null
-    }
-  }
-  const evalRaw = Array.isArray(sub.script_evaluations)
-    ? sub.script_evaluations[0]
-    : sub.script_evaluations
-  const evaluation = evalRaw?.evaluation ?? null
-
-  const editedHeadline =
-    typeof evalRaw?.edited_fields?.logline === 'string' &&
-    evalRaw.edited_fields.logline.trim().length > 0
-      ? evalRaw.edited_fields.logline.trim()
-      : null
-  const headline = editedHeadline ?? evaluation?.positioning_hook ?? null
-
-  const rawScore =
-    typeof evalRaw?.weighted_score === 'number'
-      ? evalRaw.weighted_score
-      : evalRaw?.weighted_score != null
-        ? Number(evalRaw.weighted_score)
-        : null
-  // Honor the writer's score-eye toggle. If they hid the score, producers
-  // shouldn't see a number on the dashboard card — they just see "—".
-  // Anuj 2026-04-29: this matches the report-page behavior; otherwise
-  // hiding the score on the report doesn't actually hide it.
-  const writerPrivacy = normalizePrivacy(sub.report_privacy)
-  const score = isScoreVisible(writerPrivacy) ? rawScore : null
-
-  const formatRaw =
-    sub.declared_format ?? evaluation?.classification?.genre_primary ?? ''
-  const formatTag = formatRaw
-    ? FORMAT_LABEL[formatRaw.toLowerCase()] || titleCase(formatRaw)
-    : null
-
-  const genreTags: string[] = []
-  if (evaluation?.classification?.genre_primary) {
-    genreTags.push(titleCase(evaluation.classification.genre_primary))
-  }
-  const secondaryGenres =
-    evaluation?.classification?.genre_secondary ??
-    evaluation?.classification?.genre_tags ??
-    []
-  for (const t of secondaryGenres) {
-    if (typeof t === 'string' && t.trim() && !genreTags.includes(titleCase(t))) {
-      genreTags.push(titleCase(t))
-    }
-  }
-
-  const budgetTier = evaluation?.packaging?.budget_tier?.tier
-  const budgetTag = budgetTier
-    ? BUDGET_TAG_LABEL[budgetTier.toLowerCase()] || titleCase(budgetTier)
-    : null
-
-  // Display tags shown on the match card (format / genre / budget summary).
-  const tags: string[] = []
-  if (formatTag) tags.push(formatTag)
-  for (const g of genreTags.slice(0, 2)) tags.push(g)
-  if (budgetTag) tags.push(budgetTag)
-
-  // Writer-editable freeform tags (lowercase-hyphenated). Kept separately
-  // from `tags` so the dashboard can index on the canonical token form
-  // without polluting the pretty card chips. (Filter UI is gone in v4 but
-  // we keep the data so it's there if/when we re-introduce it.)
-  const scriptTags: string[] = Array.isArray(sub.tags)
-    ? sub.tags.filter((t): t is string => typeof t === 'string' && t.trim().length > 0)
-    : []
-
-  // sortScore is the always-raw score used ONLY for ranking the producer
-  // feed. The user-facing `score` respects the writer's score-eye toggle
-  // (null when hidden), but ranking still uses the real number — so a
-  // writer who hides their score (e.g. Dan Stevens) doesn't get sunk to
-  // the bottom of the producer feed. Anuj 2026-04-29.
-  const sortScoreVal =
-    typeof rawScore === 'number' && !Number.isNaN(rawScore) ? rawScore : null
-
-  // Filter axes — surface the eval's complexity levels + budget tier as
-  // canonical tokens so the producer-side filter pills can index on them
-  // (Anuj 2026-04-30). Stored separately from the display `tags` chips so
-  // matching stays exact instead of fuzzy-matching display strings.
-  type Level = 'low' | 'medium' | 'high'
-  const normalizeLevel = (raw: unknown): Level | null => {
-    if (typeof raw !== 'string') return null
-    const lc = raw.toLowerCase()
-    if (lc === 'low' || lc === 'medium' || lc === 'high') return lc
-    return null
-  }
-  const productionLevel = normalizeLevel(
-    evaluation?.risk_details?.budget?.level
-  )
-  const castLevel = normalizeLevel(evaluation?.risk_details?.casting?.level)
-  const budgetTierKey =
-    typeof budgetTier === 'string' && budgetTier.trim().length > 0
-      ? budgetTier.toLowerCase().trim()
-      : null
-  // Format is a fixed enum — feature | series | null. Anything else
-  // (genres, tones, etc.) is dropped so they don't leak into the
-  // producer's Format filter chips. Anuj 2026-04-30: the prior loose
-  // fallback was surfacing genre values in the Format row.
-  const formatKey = (() => {
-    const lc = (sub.declared_format ?? '').toLowerCase()
-    if (lc.includes('series')) return 'series'
-    if (lc.includes('feature')) return 'feature'
-    return null
-  })()
-  const genreKeys = uniqueLowercase([
-    evaluation?.classification?.genre_primary,
-    ...(evaluation?.classification?.genre_secondary ?? []),
-    ...(evaluation?.classification?.genre_tags ?? []),
-  ])
-
-  return {
-    matchId: row.id,
-    submissionId: sub.id,
-    status: row.status,
-    title: sub.title || 'Untitled',
-    score: typeof score === 'number' && !Number.isNaN(score) ? score : null,
-    sortScore: sortScoreVal,
-    headline,
-    tags,
-    scriptTags,
-    createdAt: row.created_at,
-    unmatchedAt: row.unmatched_at,
-    filterAxes: {
-      productionLevel,
-      castLevel,
-      budgetTier: budgetTierKey,
-      format: formatKey,
-      genres: genreKeys,
-      scriptTags,
-    },
-  }
-}
-
-function uniqueLowercase(values: (string | undefined | null)[]): string[] {
-  const out = new Set<string>()
-  for (const v of values) {
-    if (typeof v === 'string') {
-      const norm = v.toLowerCase().trim()
-      if (norm) out.add(norm)
-    }
-  }
-  return Array.from(out)
-}
-
-function laneSummary(lane: any): string {
-  if (!lane || typeof lane !== 'object') return ''
-  const parts: string[] = []
-  if (Array.isArray(lane.genres) && lane.genres.length > 0) {
-    const genres = lane.genres.slice(0, 2).map((g: string) => titleCase(g))
-    parts.push(genres.join(' / '))
-  }
-  if (typeof lane.format === 'string' && lane.format !== 'both') {
-    parts.push(titleCase(lane.format))
-  }
-  if (typeof lane.budget_tier === 'string' && lane.budget_tier !== 'agnostic') {
-    parts.push(titleCase(lane.budget_tier))
-  }
-  return parts.join(' · ')
-}
-
 export default async function PartnerDashboardPage() {
   const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user) {
-    redirect('/login?redirect=/partner')
-  }
+  if (!user) redirect('/login?redirect=/partner')
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('full_name, account_type, lane, last_visited_partner_at')
+    .select('full_name, account_type, lane')
     .eq('id', user.id)
     .single()
 
-  if (profile?.account_type !== 'producer') {
-    redirect('/dashboard')
-  }
-  if (!profile?.lane) {
-    redirect('/onboarding/producer')
-  }
+  if (profile?.account_type !== 'producer') redirect('/dashboard')
+  if (!profile?.lane) redirect('/onboarding/producer')
 
-  const oldLastVisitedAt: string | null =
-    profile?.last_visited_partner_at ?? null
+  const firstName = profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
+  const service = svc()
 
-  // Stamp this visit so the next load knows when the producer was last
-  // here. Fire-and-forget — if the write fails, the dashboard still renders.
-  await supabase
-    .from('profiles')
-    .update({ last_visited_partner_at: new Date().toISOString() })
-    .eq('id', user.id)
+  // Get all considerations (pending first, then reviewed)
+  const { data: allConsiderations } = await service
+    .from('considerations')
+    .select('id, writer_id, status, submitted_at, reviewed_at, feedback, outcome, next_steps')
+    .order('submitted_at', { ascending: true })
 
-  // Sync matches every visit. Anuj 2026-04-29: the dashboard is now
-  // "every public Pro script in your lane", not a curated 50-row inbox.
-  // The matching engine creates a row for each new eligible script and
-  // the UNIQUE constraint silently dedupes existing ones. Uses service
-  // role so insert RLS doesn't block the writes.
-  try {
-    const serviceForMatching = createServiceClient()
-    await createMatchesForProducer(user.id, serviceForMatching)
-  } catch (err) {
-    console.warn('[partner] inline match sync failed:', err)
-  }
+  const considerations = (allConsiderations || []) as {
+    id: string; writer_id: string; status: string; submitted_at: string
+    reviewed_at: string | null; feedback: string | null; outcome: string | null; next_steps: string | null
+  }[]
 
-  const firstName =
-    profile?.full_name?.split(' ')[0] ||
-    user.email?.split('@')[0] ||
-    'there'
+  const pending = considerations.filter(c => c.status === 'pending')
+  const reviewed = considerations.filter(c => c.status === 'reviewed')
 
-  // Drop unmatched rows entirely. When the writer unmatches (or removes
-  // the post), the producer should have NO view of the match anymore —
-  // can't see it, can't act on it, can't email. Anuj 2026-04-28: better
-  // to disappear the row than park it in Passed where it competes for
-  // attention but can't be acted on.
-  const { data: rawMatches } = await supabase
-    .from('script_matches')
-    .select(
-      `
-      id, status, created_at, unmatched_at,
-      script_submissions (
-        id, title, declared_format, tags, hidden_at, is_public, user_id, report_privacy,
-        script_evaluations ( weighted_score, tier, evaluation, edited_fields )
-      )
-      `
-    )
-    .eq('producer_id', user.id)
-    .is('unmatched_at', null)
-    .order('created_at', { ascending: false })
-
-  // Anuj 2026-04-28: industry matching is Pro-only on the writer side.
-  // Pull the subscription_status of every writer in this feed so we can
-  // hide free-writer rows (defense in depth — the matching engine
-  // already skips them at write time, but stale rows from before the
-  // gate could still surface).
-  const writerUserIds = Array.from(
-    new Set(
-      ((rawMatches ?? []) as Array<{
-        script_submissions?: { user_id?: string | null } | null
-      }>)
-        .map((r) => r.script_submissions?.user_id)
-        .filter((u): u is string => typeof u === 'string' && u.length > 0)
-    )
-  )
-  const proWriterIds = new Set<string>()
-  if (writerUserIds.length > 0) {
-    const { data: subRows } = await supabase
+  // Get writer profiles
+  const writerIds = [...new Set(considerations.map(c => c.writer_id))]
+  const writerMap = new Map<string, { name: string; handle: string | null }>()
+  if (writerIds.length > 0) {
+    const { data: profiles } = await service
       .from('profiles')
-      .select('id, subscription_status')
-      .in('id', writerUserIds)
-    for (const row of (subRows ?? []) as Array<{
-      id: string
-      subscription_status: string | null
-    }>) {
-      if (row.subscription_status === 'active') proWriterIds.add(row.id)
+      .select('id, full_name, handle')
+      .in('id', writerIds)
+    for (const p of (profiles || []) as { id: string; full_name: string | null; handle: string | null }[]) {
+      writerMap.set(p.id, { name: p.full_name || 'Unknown', handle: p.handle })
     }
   }
 
-  const matches = ((rawMatches ?? []) as unknown as RawMatchRow[])
-    .filter((r) => {
-      const sub = r.script_submissions
-      if (!sub) return false
-      const ownerId = (sub as unknown as { user_id?: string | null }).user_id
-      return !!ownerId && proWriterIds.has(ownerId)
-    })
-    .map(shapeMatch)
-    .filter((m): m is DashboardMatchData => m !== null)
-    .sort((a, b) => {
-      const ar = STATUS_RANK[a.status] ?? 99
-      const br = STATUS_RANK[b.status] ?? 99
-      if (ar !== br) return ar - br
-      return 0 // created_at order is preserved by the SQL sort
-    })
+  // Get scripts for each consideration
+  const considerationIds = considerations.map(c => c.id)
+  type ConsiderationScript = { consideration_id: string; title: string; score: number | null; evaluationId: string | null; format: string | null }
+  const scriptsByConsideration = new Map<string, ConsiderationScript[]>()
 
-  // Aggregate engagement stats across the whole industry for each script
-  // in this producer's feed. Producers don't see per-person breakdowns
-  // (that's writer-side only), but they DO see "X views · Y interested ·
-  // Z emailed" inline on each card so they can read social signal at a
-  // glance. Excludes unmatched rows.
-  const submissionIdsInFeed = Array.from(
-    new Set(
-      matches
-        .map((m) => m.submissionId)
-        .filter((s): s is string => typeof s === 'string' && s.length > 0)
-    )
-  )
-  const statsBySubmission = new Map<
-    string,
-    { views: number; interested: number; emailed: number }
-  >()
-  if (submissionIdsInFeed.length > 0) {
-    // Service role — RLS on script_matches scopes to producer_id, so the
-    // user-scoped client only sees this producer's own rows. We need
-    // every producer's rows to compute the aggregate "X views · Y
-    // interested · Z emailed" social-signal counts. Anuj 2026-04-29.
-    const serviceForStats = createServiceClient()
-    const { data: aggRows } = await serviceForStats
-      .from('script_matches')
-      .select('submission_id, status, producer_emailed_at, unmatched_at')
-      .in('submission_id', submissionIdsInFeed)
-      .in('status', ['opened', 'interested', 'commented', 'passed'])
-      .is('unmatched_at', null)
-    for (const row of (aggRows ?? []) as Array<{
-      submission_id: string
-      status: string
-      producer_emailed_at: string | null
-    }>) {
-      const cur = statsBySubmission.get(row.submission_id) ?? {
-        views: 0,
-        interested: 0,
-        emailed: 0,
-      }
-      cur.views += 1
-      if (row.status === 'interested' || row.status === 'commented') {
-        cur.interested += 1
-      }
-      if (row.producer_emailed_at) {
-        cur.emailed += 1
-      }
-      statsBySubmission.set(row.submission_id, cur)
-    }
-  }
-  // Hydrate each match with its aggregate stats so MatchCard can render
-  // the stats strip without a second client-side fetch.
-  for (const m of matches) {
-    if (m.submissionId) {
-      m.stats = statsBySubmission.get(m.submissionId) ?? {
-        views: 0,
-        interested: 0,
-        emailed: 0,
-      }
-    }
-  }
+  if (considerationIds.length > 0) {
+    const { data: cs } = await service
+      .from('consideration_scripts')
+      .select('consideration_id, script_submission_id')
+      .in('consideration_id', considerationIds)
 
-  // Producer's own submissions — the private scripts they've added via
-  // /partner/submit. Surfaced on the In Development tab alongside their
-  // GEM-script slate so they can flip between curated reads and their
-  // own work in one place. Anuj 2026-04-30.
-  const { data: ownedSubs } = await supabase
-    .from('script_submissions')
-    .select(
-      `
-      id, title, declared_format, tags, hidden_at, is_public, status, created_at, report_privacy,
-      script_evaluations ( id, weighted_score, tier, evaluation, edited_fields )
-      `
-    )
-    .eq('user_id', user.id)
-    .is('hidden_at', null)
-    .order('created_at', { ascending: false })
+    const scriptIds = [...new Set((cs || []).map((r: { script_submission_id: string }) => r.script_submission_id))]
 
-  const ownedMatches: DashboardMatchData[] = []
-  for (const row of (ownedSubs ?? []) as Array<{
-    id: string
-    title: string | null
-    declared_format: string | null
-    tags: string[] | null
-    is_public: boolean | null
-    status: string | null
-    created_at: string
-    report_privacy: unknown
-    script_evaluations:
-      | Array<{
-          id: string
-          weighted_score: number | null
-          tier: string | null
-          evaluation: unknown
-          edited_fields?: { logline?: string } | null
-        }>
-      | {
-          id: string
-          weighted_score: number | null
-          tier: string | null
-          evaluation: unknown
-          edited_fields?: { logline?: string } | null
+    if (scriptIds.length > 0) {
+      const { data: subs } = await service
+        .from('script_submissions')
+        .select('id, title, declared_format')
+        .in('id', scriptIds)
+      const subMap = new Map<string, { title: string; format: string | null }>()
+      for (const s of (subs || []) as { id: string; title: string; declared_format: string | null }[]) {
+        subMap.set(s.id, { title: s.title, format: s.declared_format })
+      }
+
+      const { data: evals } = await service
+        .from('script_evaluations')
+        .select('id, submission_id, weighted_score')
+        .in('submission_id', scriptIds)
+      const evalMap = new Map<string, { id: string; score: number | null }>()
+      for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null }[]) {
+        evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score })
+      }
+
+      for (const row of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
+        if (!scriptsByConsideration.has(row.consideration_id)) {
+          scriptsByConsideration.set(row.consideration_id, [])
         }
-      | null
-  }>) {
-    const evalRaw = Array.isArray(row.script_evaluations)
-      ? row.script_evaluations[0]
-      : row.script_evaluations
-    if (!evalRaw?.id) continue // skip drafts that haven't scored yet
-    const evaluation = (evalRaw.evaluation ?? null) as {
-      classification?: { genre_primary?: string; genre_secondary?: string[] }
-      positioning_hook?: string
-      packaging?: { budget_tier?: { tier?: string } }
-      risk_details?: {
-        budget?: { level?: string }
-        casting?: { level?: string }
-      }
-    } | null
-
-    const editedHeadline =
-      typeof evalRaw.edited_fields?.logline === 'string' &&
-      evalRaw.edited_fields.logline.trim().length > 0
-        ? evalRaw.edited_fields.logline.trim()
-        : null
-    const headline = editedHeadline ?? evaluation?.positioning_hook ?? null
-    const rawScore =
-      typeof evalRaw.weighted_score === 'number'
-        ? evalRaw.weighted_score
-        : null
-
-    // Format + genre + budget tags for the card chips.
-    const formatRaw =
-      row.declared_format ?? evaluation?.classification?.genre_primary ?? ''
-    const formatTag = formatRaw
-      ? FORMAT_LABEL[formatRaw.toLowerCase()] || titleCase(formatRaw)
-      : null
-    const genreTags: string[] = []
-    if (evaluation?.classification?.genre_primary) {
-      genreTags.push(titleCase(evaluation.classification.genre_primary))
-    }
-    for (const t of evaluation?.classification?.genre_secondary ?? []) {
-      if (typeof t === 'string' && t.trim() && !genreTags.includes(titleCase(t))) {
-        genreTags.push(titleCase(t))
+        const sub = subMap.get(row.script_submission_id)
+        const ev = evalMap.get(row.script_submission_id)
+        if (sub) {
+          scriptsByConsideration.get(row.consideration_id)!.push({
+            consideration_id: row.consideration_id,
+            title: sub.title,
+            score: ev?.score ?? null,
+            evaluationId: ev?.id ?? null,
+            format: sub.format,
+          })
+        }
       }
     }
-    const budgetTier = evaluation?.packaging?.budget_tier?.tier
-    const budgetTag = budgetTier
-      ? BUDGET_TAG_LABEL[budgetTier.toLowerCase()] || titleCase(budgetTier)
-      : null
-    const tags: string[] = []
-    if (formatTag) tags.push(formatTag)
-    for (const g of genreTags.slice(0, 2)) tags.push(g)
-    if (budgetTag) tags.push(budgetTag)
-
-    type Level = 'low' | 'medium' | 'high'
-    const normLevel = (raw: unknown): Level | null => {
-      if (raw === 'low' || raw === 'medium' || raw === 'high') return raw
-      return null
-    }
-
-    ownedMatches.push({
-      // matchId is unused for owned cards — they don't have a script_match
-      // row. Using the eval id keeps React keys unique across matches +
-      // owned scripts mixed in the same list.
-      matchId: `owned:${evalRaw.id}`,
-      submissionId: row.id,
-      // 'owned' is a synthetic status outside the script_matches enum.
-      // The producer-side card render path treats it specially (no
-      // Interested/Pass actions, just open report).
-      status: 'owned' as never,
-      title: row.title || 'Untitled',
-      score: typeof rawScore === 'number' && !Number.isNaN(rawScore) ? rawScore : null,
-      sortScore: rawScore,
-      headline,
-      tags,
-      scriptTags: Array.isArray(row.tags)
-        ? row.tags.filter(
-            (t): t is string => typeof t === 'string' && t.trim().length > 0
-          )
-        : [],
-      createdAt: row.created_at,
-      unmatchedAt: null,
-      stats: { views: 0, interested: 0, emailed: 0 },
-      filterAxes: {
-        productionLevel: normLevel(evaluation?.risk_details?.budget?.level),
-        castLevel: normLevel(evaluation?.risk_details?.casting?.level),
-        budgetTier: budgetTier ? budgetTier.toLowerCase() : null,
-        // Same fixed-enum rule as the matched-cards path above —
-        // declared_format is the only legitimate source of feature|series.
-        format: (() => {
-          const lc = (row.declared_format ?? '').toLowerCase()
-          if (lc.includes('series')) return 'series'
-          if (lc.includes('feature')) return 'feature'
-          return null
-        })(),
-        genres: uniqueLowercase([
-          evaluation?.classification?.genre_primary,
-          ...(evaluation?.classification?.genre_secondary ?? []),
-        ]),
-        scriptTags: Array.isArray(row.tags)
-          ? row.tags
-              .filter((t): t is string => typeof t === 'string')
-              .map((t) => t.toLowerCase().trim())
-              .filter(Boolean)
-          : [],
-      },
-      ownedEvalId: evalRaw.id,
-    })
   }
-
-  // "New since last visit": active matches created after the OLD timestamp.
-  // Only meaningful if the producer has visited before; on the very first
-  // visit (oldLastVisitedAt === null) we don't tag anything as new.
-  const activeMatches = matches.filter(
-    (m) => !m.unmatchedAt && m.status !== 'passed'
-  )
-  const newMatchIds =
-    oldLastVisitedAt != null
-      ? activeMatches
-          .filter(
-            (m) =>
-              new Date(m.createdAt).getTime() >
-              new Date(oldLastVisitedAt).getTime()
-          )
-          .map((m) => m.matchId)
-      : []
-
-  // (laneSummary helper kept for back-compat; the header lane chip was
-  // retired 2026-04-30 in favor of inline filter chips seeded from
-  // profile.lane via the laneDefaults prop on DashboardTabs.)
 
   return (
     <>
       <Nav />
-      <RealtimeRefresh producerId={user.id} />
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10 pb-16">
-        {/* Slim header: greeting on the left, lane chip on the right.
-            One line of supporting text (active count). No badges, no
-            verbose "your inbox this week" copy. */}
-        {/* Header: greeting + active-match count. Lane chip retired
-            2026-04-30 — the lane preferences now pre-populate the
-            inline filter chips below, so a separate header lane
-            indicator was redundant. The "Edit filter defaults" link
-            inside the Discover filter bar is the entry point to
-            adjusting saved lane preferences. */}
-        <div className="mb-6">
-          <div
-            aria-hidden
-            className="w-12 h-0.5 mb-3.5 rounded-sm"
-            style={{ background: 'var(--gem-gold)' }}
-          />
-          <h1 className="text-3xl sm:text-[32px] font-extrabold font-[family-name:var(--font-display)] tracking-tight text-[var(--gem-gray-50)] leading-tight m-0">
-            Welcome back, {firstName}.
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <header className="mb-6">
+          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+            Writers in consideration
           </h1>
-          {activeMatches.length > 0 && (
-            <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-2">
-              {activeMatches.length} active{' '}
-              {activeMatches.length === 1 ? 'match' : 'matches'}
-              {newMatchIds.length > 0 && (
-                <>
-                  <span className="text-[var(--gem-gray-500)] mx-2">·</span>
-                  <span className="font-semibold" style={{ color: 'var(--gem-accent)' }}>
-                    {newMatchIds.length} new
-                  </span>
-                </>
-              )}
-            </p>
-          )}
-        </div>
+          <p className="text-[13px] text-gray-400 mt-1 m-0">
+            {pending.length} pending · {reviewed.length} reviewed
+          </p>
+        </header>
 
-        {matches.length === 0 && ownedMatches.length === 0 ? (
-          <div
-            className="text-center rounded-2xl px-6 py-16 bg-white"
-            style={{ border: '1px dashed var(--gem-gray-700)' }}
-          >
-            <Inbox
-              size={28}
-              className="mx-auto mb-3 text-[var(--gem-gray-500)]"
-            />
-            <p className="text-[15px] font-semibold text-[var(--gem-gray-100)] m-0 mb-1">
-              No matches yet.
-            </p>
-            <p className="text-[13.5px] text-[var(--gem-gray-400)] m-0">
-              We&apos;ll notify you the moment a script in your lane comes through.
-            </p>
+        {/* Pending considerations */}
+        {pending.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+            <p className="text-[13.5px] text-gray-400 m-0">No writers pending review.</p>
           </div>
         ) : (
-          <DashboardTabs
-            matches={matches}
-            ownedMatches={ownedMatches}
-            newMatchIds={newMatchIds}
-            laneDefaults={{
-              genres: Array.isArray(profile.lane?.genres)
-                ? (profile.lane.genres as string[])
-                    .map((g) => g.toLowerCase().trim())
-                    .filter(Boolean)
-                : [],
-              format:
-                typeof profile.lane?.format === 'string' &&
-                profile.lane.format !== 'both'
-                  ? profile.lane.format.toLowerCase()
-                  : null,
-              budgetTier:
-                typeof profile.lane?.budget_tier === 'string' &&
-                profile.lane.budget_tier !== 'agnostic'
-                  ? profile.lane.budget_tier.toLowerCase()
-                  : null,
-            }}
-          />
+          <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+            {pending.map(c => {
+              const writer = writerMap.get(c.writer_id)
+              return (
+                <ConsiderationReviewCard
+                  key={c.id}
+                  considerationId={c.id}
+                  writerName={writer?.name ?? 'Unknown'}
+                  writerHandle={writer?.handle ?? null}
+                  submittedAt={c.submitted_at}
+                  scripts={scriptsByConsideration.get(c.id) ?? []}
+                  status={c.status}
+                  feedback={c.feedback}
+                  outcome={c.outcome}
+                  nextSteps={c.next_steps}
+                />
+              )
+            })}
+          </div>
+        )}
+
+        {/* Reviewed (collapsed) */}
+        {reviewed.length > 0 && (
+          <div className="mt-6">
+            <p className="text-[12px] text-gray-400 font-medium mb-2">{reviewed.length} reviewed</p>
+            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden opacity-75">
+              {reviewed.map(c => {
+                const writer = writerMap.get(c.writer_id)
+                return (
+                  <ConsiderationReviewCard
+                    key={c.id}
+                    considerationId={c.id}
+                    writerName={writer?.name ?? 'Unknown'}
+                    writerHandle={writer?.handle ?? null}
+                    submittedAt={c.submitted_at}
+                    scripts={scriptsByConsideration.get(c.id) ?? []}
+                    status={c.status}
+                    feedback={c.feedback}
+                    outcome={c.outcome}
+                    nextSteps={c.next_steps}
+                  />
+                )
+              })}
+            </div>
+          </div>
         )}
       </div>
     </>
