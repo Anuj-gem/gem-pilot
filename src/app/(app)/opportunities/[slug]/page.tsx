@@ -71,7 +71,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
 
-  let qualifyingScripts: { id: string; title: string; evaluation_id: string }[] = []
+  let qualifyingScripts: { id: string; title: string; evaluation_id: string; prompt_version: string | null }[] = []
   const existingSubmissions = new Map<string, SubmissionState>()
   let monthlyUsed = 0
   let monthlyLimit = 3
@@ -89,7 +89,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     if (subIds.length > 0) {
       const { data: evals } = await service
         .from('script_evaluations')
-        .select('id, submission_id, weighted_score, evaluation')
+        .select('id, submission_id, weighted_score, evaluation, prompt_version')
         .in('submission_id', subIds)
 
       for (const sub of (userSubs || []) as any[]) {
@@ -110,7 +110,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) qualifies = false
 
         if (qualifies) {
-          qualifyingScripts.push({ id: sub.id, title: sub.title, evaluation_id: ev.id })
+          qualifyingScripts.push({ id: sub.id, title: sub.title, evaluation_id: ev.id, prompt_version: ev.prompt_version ?? null })
         }
       }
     }
@@ -260,7 +260,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               {qualifyingScripts.length > 0 ? (
                 <SubmissionList
                   opportunityId={opp.id}
-                  scripts={qualifyingScripts.map(s => ({ id: s.id, title: s.title }))}
+                  scripts={qualifyingScripts.map(s => ({ id: s.id, title: s.title, promptVersion: s.prompt_version, evaluationId: s.evaluation_id }))}
                   existingSubmissions={Object.fromEntries(existingSubmissions)}
                   pendingCount={monthlyUsed}
                   monthlyLimit={monthlyLimit}

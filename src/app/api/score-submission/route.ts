@@ -16,7 +16,7 @@ import { cookies } from "next/headers"
 // Anuj 2026-04-29: collapsed selznick-3-8 + v5-4 + v5.3 down to one
 // file. The rescore script reads the same file off disk, so editing the
 // prompt updates both code paths.
-import { buildGemEvaluationPrompt, type DeclaredFormat } from "@/lib/evaluation-prompt"
+import { buildGemEvaluationPrompt, CURRENT_PROMPT_VERSION, type DeclaredFormat } from "@/lib/evaluation-prompt"
 import { calculateWeightedScore, calculateTier, DIMENSION_IDS } from "@/types"
 import type { GEMEvaluation } from "@/types"
 import { sendEmail } from "@/lib/email"
@@ -235,6 +235,7 @@ export async function POST(request: NextRequest) {
         tier,
         evaluation,
         model: "gpt-5.4-mini",
+        prompt_version: CURRENT_PROMPT_VERSION,
         input_tokens: inputTokens,
         output_tokens: outputTokens,
         cost_usd: cost,

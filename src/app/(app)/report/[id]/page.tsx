@@ -32,6 +32,7 @@
 //
 // Visitor experience: only public sections render, single "Reach out to
 // {writer}" card at the bottom. No blur anywhere — clean writer-curated snapshot.
+import { CURRENT_PROMPT_VERSION } from '@/lib/evaluation-prompt'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound, redirect } from 'next/navigation'
@@ -60,6 +61,7 @@ import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 // ScriptPrivacySheet. The dashboard surface still uses it.
 // IndustryActivityButton retired from the report page on 2026-04-30
 // v0.10.19 (still used on the dashboard via OwnerActionsMenu).
+import { RerunBanner } from '@/components/report/rerun-banner'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 // Annotations removed — synthesized feedback + next-steps tag instead.
 import { PackagingSection } from '@/components/report/packaging-block'
@@ -191,6 +193,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // isOwnerOrAdmin as a let so we can widen it once we know the viewer role.
   let isOwnerOrAdmin = isOwner || isAdmin
   const isAnonymousSubmission = !submission.user_id
+  const isStaleEval = isOwner && (eval_ as any).prompt_version !== CURRENT_PROMPT_VERSION
 
   // Producer-mode detection (Anuj 2026-04-29). If a logged-in non-owner
   // has a script_match for this submission AND it isn't unmatched, render
@@ -684,6 +687,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             Score is now an internal ranking signal only — not a section
             visitors or writers can toggle. Qualification banner above
             surfaces the only score-derived signal (≥50 qualifies). */}
+
+        {/* RERUN BANNER — shown to owner when eval is stale */}
+        {isStaleEval && <RerunBanner submissionId={submission.id} />}
 
         {/* PLOT SUMMARY (v3.9+) — collapsible */}
         {plotSummary && (

@@ -1,4 +1,8 @@
 // GEM Evaluation Prompt — Selznick 3.9 — 2026-05-05
+
+/** Current prompt version — stamped on every new evaluation. Used to detect
+ *  stale reports that should be re-scored before opportunity submission. */
+export const CURRENT_PROMPT_VERSION = "3.9"
 //
 // 3.9 changes from 3.8.1:
 //

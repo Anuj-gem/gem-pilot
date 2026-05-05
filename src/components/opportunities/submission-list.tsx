@@ -10,7 +10,7 @@ import { SubmitForConsideration, type SubmissionState } from './submit-button'
 
 interface SubmissionListProps {
   opportunityId: string
-  scripts: { id: string; title: string }[]
+  scripts: { id: string; title: string; promptVersion?: string | null; evaluationId?: string }[]
   existingSubmissions: Record<string, SubmissionState>
   /** Current monthly submission count (from server) */
   pendingCount: number
@@ -46,6 +46,8 @@ export function SubmissionList({ opportunityId, scripts, existingSubmissions, pe
           isPro={isPro}
           onSubmitted={onSubmitted}
           onWithdrawn={onWithdrawn}
+          promptVersion={s.promptVersion}
+          evaluationId={s.evaluationId}
         />
       ))}
       {isPro && atLimit && (

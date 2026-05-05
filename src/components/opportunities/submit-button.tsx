@@ -41,13 +41,23 @@ interface SubmitButtonProps {
   onWithdrawn?: () => void
   /** Days until monthly limit resets */
   resetDaysLeft?: number
+  /** The prompt version this eval was scored on — if stale, gate submission */
+  promptVersion?: string | null
+  /** The evaluation ID — used to redirect to report after rerun */
+  evaluationId?: string
 }
 
-export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, onSubmitted, onWithdrawn, resetDaysLeft }: SubmitButtonProps) {
+/** Current prompt version — must match evaluation-prompt.ts */
+const CURRENT_PROMPT_VERSION = "3.9"
+
+export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, onSubmitted, onWithdrawn, resetDaysLeft, promptVersion, evaluationId }: SubmitButtonProps) {
   const [state, setState] = useState<SubmissionState | null>(existing ?? null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [rerunning, setRerunning] = useState(false)
   const router = useRouter()
+
+  const isStale = promptVersion !== CURRENT_PROMPT_VERSION
 
   async function handleSubmit() {
     setLoading(true)
@@ -118,6 +128,25 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     router.refresh()
   }
 
+  async function handleRerun() {
+    setRerunning(true)
+    setError(null)
+    try {
+      const res = await fetch("/api/rerun-evaluation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ submission_id: submissionId }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error ?? "Rerun failed")
+      // Redirect to the new report so they can review before applying
+      router.push(`/report/${data.evaluation_id}`)
+    } catch (err: any) {
+      setError(err?.message ?? "Rerun failed")
+      setRerunning(false)
+    }
+  }
+
   // Reviewed — show feedback, no actions needed
   if (state && state.status === 'reviewed') {
     return (
@@ -176,6 +205,28 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5" rx="1" stroke="currentColor" strokeWidth="1.2"/><path d="M4 5.5V4a2 2 0 114 0v1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
           Pro feature
         </button>
+      </div>
+    )
+  }
+
+  // Stale eval — must update before submitting
+  if (isStale) {
+    return (
+      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-amber-50 border border-amber-200">
+        <div className="flex-1 min-w-0">
+          <span className="text-[13.5px] font-semibold text-gray-800 block truncate">{scriptTitle}</span>
+          <span className="text-[11.5px] text-amber-700 mt-0.5 block">
+            Report needs to be updated before you can apply.
+          </span>
+        </div>
+        <button
+          onClick={handleRerun}
+          disabled={rerunning}
+          className="text-[12px] font-bold text-white bg-amber-600 hover:bg-amber-700 disabled:opacity-50 px-3 py-1.5 rounded-md transition-colors whitespace-nowrap ml-3"
+        >
+          {rerunning ? 'Updating…' : 'Update report'}
+        </button>
+        {error && <span className="text-[11px] text-red-500 ml-2">{error}</span>}
       </div>
     )
   }
