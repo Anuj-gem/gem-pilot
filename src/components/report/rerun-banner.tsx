@@ -36,7 +36,8 @@ export function RerunBanner({ submissionId }: { submissionId: string }) {
         router.refresh()
         return
       }
-      router.push(`/report/${data.evaluation_id}`)
+      // Eval was updated in place (same ID) — hard reload to show fresh data
+      window.location.reload()
     } catch (err: any) {
       console.error("Rerun failed:", err)
       setErrorMsg(err?.message ?? "Unknown error")

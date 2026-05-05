@@ -178,11 +178,12 @@ export async function POST(request: NextRequest) {
     const { evaluation, weightedScore, tier, inputTokens, outputTokens, cost } =
       await evaluateScript(scriptText, declaredFormat)
 
-    // Insert new eval row (keeps history — old eval still in DB)
+    // Update the existing eval row in place (unique constraint on submission_id
+    // means we can't insert a second row — and keeping the same eval ID means
+    // the report URL doesn't change).
     const { data: evalRecord, error: evalError } = await serviceClient
       .from("script_evaluations")
-      .insert({
-        submission_id: submission.id,
+      .update({
         weighted_score: weightedScore,
         tier,
         evaluation,
@@ -192,10 +193,12 @@ export async function POST(request: NextRequest) {
         output_tokens: outputTokens,
         cost_usd: cost,
       })
+      .eq("id", currentEval!.id)
       .select("id")
       .single()
 
     if (evalError || !evalRecord) {
+      console.error("[rerun-evaluation] update error:", evalError)
       throw new Error("Failed to store new evaluation")
     }
 
