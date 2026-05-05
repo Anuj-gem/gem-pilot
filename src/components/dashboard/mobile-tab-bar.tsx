@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase-browser'
-import { Home, Briefcase, FileText, User } from 'lucide-react'
+import { Home, Briefcase, FileText, MessageCircle, User } from 'lucide-react'
 
 export function MobileTabBar() {
   const pathname = usePathname() ?? ''
@@ -49,10 +49,11 @@ export function MobileTabBar() {
   if (!authed) return null
 
   const tabs = [
-    { href: '/dashboard',  label: 'Home',      icon: Home,     match: (p: string) => p === '/dashboard' || p === '/' },
-    { href: '/opportunities', label: 'Opps', icon: Briefcase, match: (p: string) => p.startsWith('/opportunities') },
-    { href: '/scripts',    label: 'Scripts',   icon: FileText, match: (p: string) => p.startsWith('/scripts') },
-    { href: profileHref,   label: 'Profile',   icon: User,     match: (p: string) => p.startsWith('/w/') || p.startsWith('/profile') },
+    { href: '/dashboard',     label: 'Home',      icon: Home,           match: (p: string) => p === '/dashboard' || p === '/' },
+    { href: '/opportunities', label: 'Opps',      icon: Briefcase,      match: (p: string) => p.startsWith('/opportunities') },
+    { href: '/scripts',       label: 'Scripts',   icon: FileText,       match: (p: string) => p.startsWith('/scripts') },
+    { href: '/feedback',      label: 'Feedback',  icon: MessageCircle,  match: (p: string) => p.startsWith('/feedback') },
+    { href: profileHref,      label: 'Profile',   icon: User,           match: (p: string) => p.startsWith('/w/') || p.startsWith('/profile') },
   ] as const
 
   return (
@@ -61,7 +62,7 @@ export function MobileTabBar() {
       className="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-gray-200 bg-white/95 backdrop-blur"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
-      <ul className="grid grid-cols-4">
+      <ul className="grid grid-cols-5">
         {tabs.map((t) => {
           const Icon = t.icon
           const active = t.match(pathname)

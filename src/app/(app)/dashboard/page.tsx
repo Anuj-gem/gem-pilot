@@ -20,7 +20,6 @@ import { createServerClient } from '@supabase/ssr'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { type OpportunityData } from '@/components/opportunities/opportunity-card'
 import { ConsiderationStatus } from '@/components/dashboard/consideration-status'
@@ -307,7 +306,7 @@ export default async function DashboardPage() {
             </div>
           ) : (
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-              {scriptRows.map((s) => (
+              {scriptRows.slice(0, 5).map((s) => (
                 <div key={s.submissionId} className="relative">
                   {s.isLocked && (
                     <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center gap-2">
@@ -400,19 +399,21 @@ export default async function DashboardPage() {
           </div>
         </section>
 
-        {/* ── LATEST FEEDBACK ─────────────────────────────── */}
-        {latestReviewed && latestReviewed.feedback && (
-          <section>
-            <header className="flex items-end justify-between gap-3 mb-2.5">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">
-                Latest feedback
-              </h2>
-              {allConsiderations.filter(c => c.status === 'reviewed').length > 1 && (
-                <Link href="/feedback" className="text-[12px] text-purple-600 hover:text-purple-800 font-semibold">
-                  View history →
-                </Link>
-              )}
-            </header>
+        {/* ── FEEDBACK ────────────────────────────────────── */}
+        <section>
+          <header className="flex items-end justify-between gap-3 mb-2.5">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">
+              Feedback
+            </h2>
+            {allConsiderations.filter(c => c.status === 'reviewed').length > 1 && (
+              <Link href="/feedback" className="text-[12px] text-purple-600 hover:text-purple-800 font-semibold">
+                View history →
+              </Link>
+            )}
+          </header>
+
+          {latestReviewed && latestReviewed.feedback ? (
+            /* Has feedback — show latest */
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               <div className="px-5 py-4">
                 {latestReviewed.outcome && (
@@ -443,8 +444,31 @@ export default async function DashboardPage() {
                 )}
               </div>
             </div>
-          </section>
-        )}
+          ) : hasActiveConsideration ? (
+            /* In consideration — being reviewed */
+            <div className="rounded-xl bg-white border border-gray-200 px-5 py-6 text-center">
+              <p className="text-[13.5px] text-gray-500 m-0">Your portfolio is being reviewed. Feedback expected within 5–7 days.</p>
+            </div>
+          ) : completedCount > 0 ? (
+            /* Has scripts but no feedback — prompt to submit */
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
+              <p className="text-[13.5px] text-gray-500 m-0 mb-3">No feedback yet. Submit your portfolio for consideration to receive holistic notes.</p>
+              {canRequestConsideration && (
+                <Link
+                  href="/consideration/submit"
+                  className="inline-flex items-center gap-1.5 text-[12px] font-bold text-purple-600 hover:text-purple-800"
+                >
+                  Request consideration →
+                </Link>
+              )}
+            </div>
+          ) : (
+            /* No scripts at all */
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
+              <p className="text-[13.5px] text-gray-400 m-0">Upload scripts to start receiving feedback.</p>
+            </div>
+          )}
+        </section>
 
         {/* ── OPEN CALLS LINK ─────────────────────────────── */}
         {totalOpenCallMatches > 0 && (

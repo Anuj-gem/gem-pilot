@@ -1,13 +1,11 @@
-// /opportunities — browse open opportunities. PUBLIC page (no login required).
-// Logged-in users see which of their scripts qualify for each opportunity.
-// Logged-out users see the opportunities with a CTA to sign up.
-// opportunities-v3 (2026-05-03).
+// /opportunities — browse open calls. PUBLIC page (no login required).
+// Consideration model: writers don't apply per-opportunity. Instead, this
+// page shows which of their scripts qualify as an informational signal.
+// opportunities-v4 consideration (2026-05-05).
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { OpportunityCard, type OpportunityData, type QualifyingScript } from '@/components/opportunities/opportunity-card'
-import { UpgradeBanner } from '@/components/dashboard/upgrade-banner'
-import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
+import { type OpportunityData } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -24,7 +22,7 @@ export const revalidate = 60
 export const metadata = {
   title: 'Opportunities — GEM',
   description:
-    'Browse active opportunities from producers, lit reps, and financiers. Submit your qualifying scripts directly — no query letters, no entry fees.',
+    'Browse active opportunities from producers, lit reps, and financiers looking for new voices.',
 }
 
 export default async function OpportunitiesPage() {
@@ -32,33 +30,6 @@ export default async function OpportunitiesPage() {
   const { data: { user } } = await auth.auth.getUser()
 
   const service = svc()
-
-  // Check subscription (only if logged in)
-  let isPro = false
-  let monthlyUsed = 0
-  let monthlyLimit = 3
-  if (user) {
-    const { data: profile } = await auth
-      .from('profiles')
-      .select('subscription_status, bonus_submissions')
-      .eq('id', user.id)
-      .single()
-    isPro = profile?.subscription_status === 'active'
-    const bonusSubs = (profile as any)?.bonus_submissions ?? 0
-    monthlyLimit = 3 + bonusSubs
-
-    if (isPro) {
-      const now = new Date()
-      const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
-      const { count } = await service
-        .from('opportunity_submissions')
-        .select('id', { count: 'exact', head: true })
-        .eq('writer_id', user.id)
-        .neq('status', 'withdrawn')
-        .gte('submitted_at', monthStart)
-      monthlyUsed = count ?? 0
-    }
-  }
 
   // Fetch active opportunities
   const { data: opps } = await service
@@ -69,19 +40,20 @@ export default async function OpportunitiesPage() {
 
   const opportunities = (opps || []) as OpportunityData[]
 
-  // Fetch user's completed scripts with their eval data (only if logged in)
-  let oppWithQualifications: { opportunity: OpportunityData; qualifyingScripts: QualifyingScript[] }[] = []
+  // Fetch user's completed scripts + qualification matching (only if logged in)
+  type QualScript = { id: string; title: string; evaluationId: string }
+  const qualByOpp = new Map<string, QualScript[]>()
 
   if (user) {
     const { data: userSubs } = await service
       .from('script_submissions')
-      .select('id, title, declared_format, user_id')
+      .select('id, title, declared_format')
       .eq('user_id', user.id)
       .eq('status', 'completed')
 
     const subIds = (userSubs || []).map((s: any) => s.id)
 
-    let evalsBySubmission = new Map<string, { id: string; weighted_score: number | null; genre: string | null; budget: string | null }>()
+    const evalsBySubmission = new Map<string, { id: string; weighted_score: number | null; genre: string | null; budget: string | null }>()
 
     if (subIds.length > 0) {
       const { data: evals } = await service
@@ -97,45 +69,27 @@ export default async function OpportunitiesPage() {
         const packaging = (evJson?.packaging as Record<string, unknown>) || {}
         const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
         const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
-        evalsBySubmission.set(ev.submission_id, {
-          id: ev.id,
-          weighted_score: ev.weighted_score,
-          genre,
-          budget,
-        })
+        evalsBySubmission.set(ev.submission_id, { id: ev.id, weighted_score: ev.weighted_score, genre, budget })
       }
     }
 
-    function scriptsQualifyingFor(opp: OpportunityData): QualifyingScript[] {
-      if (!userSubs) return []
-      const qualifying: QualifyingScript[] = []
-      for (const sub of userSubs as any[]) {
+    for (const opp of opportunities) {
+      const qualifying: QualScript[] = []
+      for (const sub of (userSubs || []) as any[]) {
         const ev = evalsBySubmission.get(sub.id)
         if (!ev) continue
         if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format)) continue
         if (opp.genres.length > 0 && ev.genre && !opp.genres.includes(ev.genre)) continue
         if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
         if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) continue
-        qualifying.push({ id: sub.id, title: sub.title, evaluation_id: ev.id })
+        qualifying.push({ id: sub.id, title: sub.title, evaluationId: ev.id })
       }
-      return qualifying
+      if (qualifying.length > 0) qualByOpp.set(opp.id, qualifying)
     }
-
-    oppWithQualifications = opportunities.map(opp => ({
-      opportunity: opp,
-      qualifyingScripts: scriptsQualifyingFor(opp),
-    }))
-  } else {
-    // Logged-out: show opportunities without qualification data
-    oppWithQualifications = opportunities.map(opp => ({
-      opportunity: opp,
-      qualifyingScripts: [],
-    }))
   }
 
   return (
     <div className="max-w-2xl mx-auto">
-      {user && !isPro && <UpgradeModalListener />}
       <div className="flex items-end justify-between mb-5">
         <div>
           <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1 m-0">Browse</p>
@@ -143,19 +97,7 @@ export default async function OpportunitiesPage() {
             Open opportunities
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
-            {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} accepting submissions
-            {user && isPro && (() => {
-              const monthlyLeft = Math.max(0, 3 - Math.min(monthlyUsed, 3))
-              const bonus = (monthlyLimit - 3)
-              const total = monthlyLeft + bonus
-              const now = new Date()
-              const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
-              const resetDays = Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
-              if (total > 0) {
-                return <span className="ml-2 text-purple-500 font-medium">&middot; {total} submission{total !== 1 ? 's' : ''} left{bonus > 0 ? ` (${bonus} bonus)` : ''}</span>
-              }
-              return <span className="ml-2 text-gray-400 font-medium">&middot; All used · 3 more in {resetDays}d</span>
-            })()}
+            {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} currently open
           </p>
         </div>
         {user && (
@@ -179,10 +121,10 @@ export default async function OpportunitiesPage() {
         >
           <div>
             <p className="text-[14px] font-bold text-gray-900 m-0 leading-snug">
-              Submit your script and see which opportunities you qualify for
+              Upload your script to see which opportunities you qualify for
             </p>
             <p className="text-[12.5px] text-gray-500 m-0 mt-1">
-              Upload your screenplay, get a structured evaluation, and match to real opportunities.
+              Get a free evaluation and we&apos;ll match you to open calls automatically.
             </p>
           </div>
           <Link
@@ -190,42 +132,90 @@ export default async function OpportunitiesPage() {
             className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
             style={{ background: '#7c3aed' }}
           >
-            Get your free evaluation <ArrowRight size={14} />
+            Get started <ArrowRight size={14} />
           </Link>
         </div>
       )}
 
-      {user && !isPro && (
-        <UpgradeBanner message="Upgrade to Pro to submit to opportunities" />
-      )}
-
+      {/* Opportunity list */}
       <div className="flex flex-col gap-3">
-        {oppWithQualifications.length === 0 ? (
+        {opportunities.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-[14px] text-gray-400">No open opportunities right now. Check back soon.</p>
           </div>
         ) : (
-          oppWithQualifications.map(({ opportunity, qualifyingScripts }) => (
-            <div key={opportunity.id}>
-              <OpportunityCard
-                opportunity={opportunity}
-                qualifyingScripts={qualifyingScripts}
-              />
-              {/* Logged-out: show sign-in prompt per card */}
-              {!user && (
-                <div className="mt-1.5 mb-1 px-3">
-                  <Link
-                    href="/submit"
-                    className="text-[11.5px] font-medium text-purple-600 hover:text-purple-800 transition-colors"
-                  >
-                    Sign in to see if your scripts qualify →
-                  </Link>
-                </div>
-              )}
-            </div>
-          ))
+          opportunities.map((opp) => {
+            const quals = qualByOpp.get(opp.id) || []
+            return (
+              <div key={opp.id} className="rounded-xl bg-white border border-gray-200 overflow-hidden">
+                <Link href={`/opportunities/${opp.slug ?? opp.id}`} className="block px-5 py-4 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-[14.5px] font-bold text-gray-900 m-0 leading-snug">{opp.title}</h3>
+                      {opp.company && (
+                        <p className="text-[12px] text-gray-400 m-0 mt-0.5">{opp.company}</p>
+                      )}
+                      <p className="text-[12.5px] text-gray-500 m-0 mt-1.5 line-clamp-2 leading-[1.5]">
+                        {opp.description}
+                      </p>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {opp.formats.length > 0 && opp.formats.map(f => (
+                          <span key={f} className="text-[10.5px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{f}</span>
+                        ))}
+                        {opp.genres.length > 0 && opp.genres.slice(0, 3).map(g => (
+                          <span key={g} className="text-[10.5px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{g}</span>
+                        ))}
+                        {opp.min_score != null && (
+                          <span className="text-[10.5px] text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full font-medium">
+                            {opp.min_score}+ score
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <ArrowRight size={16} className="text-gray-300 shrink-0 mt-1" />
+                  </div>
+                </Link>
+
+                {/* Qualifying scripts (logged-in only) */}
+                {quals.length > 0 && (
+                  <div className="border-t border-gray-100 px-5 py-2.5 bg-emerald-50/50">
+                    <p className="text-[10.5px] font-bold text-emerald-700 m-0 mb-1.5">
+                      {quals.length} qualifying {quals.length === 1 ? 'script' : 'scripts'}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {quals.map(q => (
+                        <Link
+                          key={q.id}
+                          href={`/report/${q.evaluationId}`}
+                          className="text-[11.5px] font-medium text-gray-700 bg-white border border-gray-200 px-2.5 py-1 rounded-lg hover:border-purple-300 hover:text-purple-700 transition-colors truncate max-w-[200px]"
+                        >
+                          {q.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })
         )}
       </div>
+
+      {/* Consideration CTA for logged-in users */}
+      {user && (
+        <div className="mt-6 text-center">
+          <p className="text-[12.5px] text-gray-400 m-0 mb-2">
+            Qualifying scripts are automatically included when you request consideration.
+          </p>
+          <Link
+            href="/consideration/submit"
+            className="inline-flex items-center gap-1.5 text-[13px] font-bold text-purple-600 hover:text-purple-800 transition-colors"
+          >
+            Request consideration →
+          </Link>
+        </div>
+      )}
     </div>
   )
 }

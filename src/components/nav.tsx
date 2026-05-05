@@ -6,11 +6,14 @@ import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import {
   LayoutDashboard,
-  History,
+  Briefcase,
+  FileText,
+  MessageCircle,
   LogOut,
   Menu,
   X,
   Plus,
+  Sparkles,
 } from 'lucide-react'
 import {
   NavUserMenu,
@@ -25,12 +28,13 @@ export interface NavUserData {
   recentActivity?: NavUserMenuActivity[]
 }
 
-// LOGGED-OUT NAV (v0.14.0 consolidated):
+// LOGGED-OUT NAV:
 //   Desktop: [GEM]   [Opportunities]  [Blog]   [Submit a script]  [Sign up]  [Log in]
 //   Mobile:  [GEM]                          [Submit] [☰]
-//   Hamburger: Opportunities, Blog, Sign up, Log in.
 //
-// LOGGED-IN NAV: Dashboard, History, Submit, avatar dropdown.
+// LOGGED-IN NAV (consideration model v1):
+//   Desktop: [GEM]   [Opportunities] [Scripts] [Feedback]   [Request consideration]  [avatar]
+//   Mobile:  [GEM]                     [Request consideration] [☰]
 
 const PUBLIC_NAV_LINKS: { href: string; label: string }[] = [
   { href: '/opportunities', label: 'Opportunities' },
@@ -61,12 +65,12 @@ export default function Nav({ userData }: NavProps = {}) {
     router.refresh()
   }
 
-  // Right-side cluster for logged-in users. The Community tab uses a
-  // small underline-style active state so users always know which page
-  // they're on (Anuj 2026-04-30 — "needs to feel less like SaaS").
+  // Logged-in nav tabs — consideration model (2026-05-05).
   const loggedInLinks = [
-    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/opportunity-history', label: 'History', icon: History },
+    { href: '/dashboard', label: 'Home', icon: LayoutDashboard },
+    { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
+    { href: '/scripts', label: 'Scripts', icon: FileText },
+    { href: '/feedback', label: 'Feedback', icon: MessageCircle },
   ]
 
   return (
@@ -121,11 +125,11 @@ export default function Nav({ userData }: NavProps = {}) {
                     )
                   })}
                   <Link
-                    href="/submit"
-                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors"
+                    href="/consideration/submit"
+                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
                   >
-                    <Plus size={16} />
-                    Submit
+                    <Sparkles size={14} />
+                    Request consideration
                   </Link>
                   {userData ? (
                     <div className="ml-2">
@@ -148,11 +152,7 @@ export default function Nav({ userData }: NavProps = {}) {
                 </div>
               </div>
 
-              {/* Mobile logged-in — avatar + Submit (except on /submit
-                  itself) + hamburger. The avatar carries the same
-                  dropdown the desktop nav uses (View profile, Edit
-                  profile, Privacy, Sign out). The hamburger keeps the
-                  page navigation list. (Anuj 2026-04-30 v0.10.5.) */}
+              {/* Mobile logged-in — consideration CTA always visible + hamburger */}
               <div className="md:hidden flex items-center gap-2">
                 {userData && (
                   <NavUserMenu
@@ -162,17 +162,17 @@ export default function Nav({ userData }: NavProps = {}) {
                     onSignOut={handleSignOut}
                   />
                 )}
-                {!pathname.startsWith('/submit') && (
+                {!pathname.startsWith('/consideration') && (
                   <Link
-                    href="/submit"
+                    href="/consideration/submit"
                     className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
                     style={{
                       background: 'var(--gem-accent)',
                       boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
                     }}
                   >
-                    <Plus size={13} />
-                    Submit
+                    <Sparkles size={12} />
+                    Consideration
                   </Link>
                 )}
                 <button
@@ -266,17 +266,20 @@ export default function Nav({ userData }: NavProps = {}) {
                   />
                 ))}
 
-                {/* Browse links */}
+                {/* Upload + Blog */}
                 <div className="pt-2 space-y-2">
-                  {PUBLIC_NAV_LINKS.map(link => (
-                    <NavMenuRow
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      label={link.label}
-                      active={pathname.startsWith(link.href)}
-                    />
-                  ))}
+                  <NavMenuRow
+                    href="/submit"
+                    onClick={() => setMobileOpen(false)}
+                    label="Upload a script"
+                    active={pathname.startsWith('/submit')}
+                  />
+                  <NavMenuRow
+                    href="/blog"
+                    onClick={() => setMobileOpen(false)}
+                    label="Blog"
+                    active={pathname.startsWith('/blog')}
+                  />
                 </div>
 
                 <button
