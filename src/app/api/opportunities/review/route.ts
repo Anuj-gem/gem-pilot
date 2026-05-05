@@ -1,5 +1,6 @@
 // POST /api/opportunities/review — producer updates a submission's status + feedback.
-// opportunities-v2: structured outcomes (pass/developing/revise_resubmit/advancing).
+// opportunities-v2: structured outcomes (pass/developing/advancing).
+// Note: revise_resubmit kept in VALID_OUTCOMES for backward compat with existing DB rows.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
@@ -73,8 +74,7 @@ export async function POST(req: NextRequest) {
       feedback: feedback ?? null,
       outcome: outcome ?? null,
       // Map outcome to legacy next_steps for backward compat
-      next_steps: outcome === 'revise_resubmit' ? 'revise_resubmit'
-        : outcome === 'developing' ? 'new_concept'
+      next_steps: outcome === 'developing' ? 'new_concept'
         : outcome === 'advancing' ? 'in_touch'
         : null,
       reviewed_at: status !== 'pending' ? new Date().toISOString() : null,
@@ -83,8 +83,8 @@ export async function POST(req: NextRequest) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-  // Grant bonus submission when outcome is revise_resubmit
-  if (status === 'reviewed' && outcome === 'revise_resubmit' && sub.writer_id) {
+  // Grant bonus submission when outcome is developing (keep developing)
+  if (status === 'reviewed' && outcome === 'developing' && sub.writer_id) {
     try {
       await service.rpc('increment_bonus_submissions', { user_id_input: sub.writer_id })
     } catch (err: unknown) {

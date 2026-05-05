@@ -18,16 +18,9 @@ const OUTCOME_OPTIONS = [
   {
     value: 'developing',
     label: 'Keep developing',
-    hint: 'Promising concept but the script needs more work.',
+    hint: 'Promising concept but not ready yet. Grants the writer a bonus submission.',
     color: 'border-gray-200 bg-white text-gray-500',
     selectedColor: 'border-amber-300 bg-amber-50 text-amber-800',
-  },
-  {
-    value: 'revise_resubmit',
-    label: 'Revise & resubmit',
-    hint: 'We\'d like to see this again. Grants the writer a bonus submission.',
-    color: 'border-gray-200 bg-white text-gray-500',
-    selectedColor: 'border-purple-300 bg-purple-50 text-purple-800',
   },
   {
     value: 'advancing',
@@ -192,7 +185,6 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             placeholder={
               outcome === 'pass' ? "Brief note on why this isn't the right fit..."
               : outcome === 'developing' ? "What's working, what needs more work, and what would make this ready..."
-              : outcome === 'revise_resubmit' ? "What you'd like to see addressed in the next draft..."
               : outcome === 'advancing' ? "What excited you about this and next steps..."
               : "Write your feedback — what works, what doesn't, and why..."
             }

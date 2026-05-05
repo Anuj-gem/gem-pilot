@@ -21,13 +21,13 @@ function svc() {
 const OUTCOME_LABELS: Record<string, string> = {
   pass: 'Not selected',
   developing: 'Keep developing',
-  revise_resubmit: 'Invited to resubmit',
+  revise_resubmit: 'Keep developing', // legacy compat
   advancing: 'Advancing',
 }
 const OUTCOME_COLORS: Record<string, string> = {
   pass: 'text-gray-500 bg-gray-100',
   developing: 'text-amber-700 bg-amber-50',
-  revise_resubmit: 'text-purple-700 bg-purple-50',
+  revise_resubmit: 'text-amber-700 bg-amber-50', // legacy compat
   advancing: 'text-emerald-700 bg-emerald-50',
 }
 const NEXT_STEPS_LABELS: Record<string, string> = {
@@ -343,9 +343,9 @@ export default async function OpportunityHistoryPage() {
                         {s.feedback && (
                           <div className="px-3 py-2.5 bg-gray-50 rounded-lg">
                             <p className="text-[12.5px] text-gray-500 leading-[1.6] m-0 whitespace-pre-line">{s.feedback}</p>
-                            {s.outcome === 'revise_resubmit' && (
-                              <p className="text-[11px] font-semibold text-purple-600 m-0 mt-2">
-                                You earned a bonus submission — submit a revised draft or new concept.
+                            {(s.outcome === 'developing' || s.outcome === 'revise_resubmit') && (
+                              <p className="text-[11px] font-semibold text-amber-600 m-0 mt-2">
+                                You earned a bonus submission — keep developing and submit again when ready.
                               </p>
                             )}
                             {s.outcome === 'advancing' && (
