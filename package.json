@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "blog:index": "node scripts/build-blog-index.mjs"
+    "blog:index": "node scripts/build-blog-index.mjs",
+    "deploy": "git push origin main && curl -s -X POST https://api.vercel.com/v1/integrations/deploy/prj_fFx782RZ5qiOyVIjyeEcirjGHI5p/4srN6NNmHZ && echo '\n✓ Deploy triggered'"
   },
   "dependencies": {
     "@stripe/stripe-js": "^9.0.1",

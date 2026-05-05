@@ -1,12 +1,13 @@
-// /producer/opportunities — producer review dashboard.
-// Shows all opportunities owned by the logged-in producer, with
-// submission queues and inline review controls.
-// opportunities-v1 (2026-05-02).
+// /producer/opportunities — producer review queue.
+// Flat list of all submissions across all owned opportunities,
+// sortable by date (oldest first = fair queue) or score.
+// v3 (2026-05-04).
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ProducerReviewCard } from '@/components/producer/review-card'
+import { ReviewQueueSort } from '@/components/producer/review-queue-sort'
 
 export const dynamic = 'force-dynamic'
 
@@ -41,6 +42,7 @@ export default async function ProducerOpportunitiesPage() {
   }
 
   const oppIds = opps.map(o => o.id)
+  const oppMap = new Map(opps.map(o => [o.id, { title: o.title, slug: o.slug }]))
 
   // Fetch all submissions for these opportunities (exclude withdrawn)
   const { data: allSubs } = await service
@@ -48,7 +50,7 @@ export default async function ProducerOpportunitiesPage() {
     .select('id, opportunity_id, submission_id, writer_id, status, feedback, next_steps, outcome, submitted_at, reviewed_at')
     .in('opportunity_id', oppIds)
     .neq('status', 'withdrawn')
-    .order('submitted_at', { ascending: false })
+    .order('submitted_at', { ascending: true })
 
   type SubRow = {
     id: string; opportunity_id: string; submission_id: string;
@@ -94,8 +96,8 @@ export default async function ProducerOpportunitiesPage() {
     }
   }
 
-  // Build per-opportunity data
-  type ReviewItem = {
+  // Build flat list of all review items
+  type ReviewItemWithOpp = {
     submissionRowId: string
     scriptId: string
     evaluationId: string | null
@@ -112,74 +114,53 @@ export default async function ProducerOpportunitiesPage() {
     outcome: string | null
     submittedAt: string
     reviewedAt: string | null
+    oppTitle: string
+    oppSlug: string | null
   }
 
-  const oppData = opps.map(opp => {
-    const items: ReviewItem[] = submissions
-      .filter(s => s.opportunity_id === opp.id)
-      .map(s => {
-        const script = scriptMap.get(s.submission_id)
-        const ev = evalMap.get(s.submission_id)
-        const writer = writerMap.get(s.writer_id)
-        return {
-          submissionRowId: s.id,
-          scriptId: s.submission_id,
-          evaluationId: ev?.id ?? null,
-          title: script?.title ?? 'Unknown',
-          format: script?.format ?? null,
-          genre: ev?.genre ?? null,
-          logline: ev?.logline ?? null,
-          score: ev?.weighted_score ?? null,
-          writerName: writer?.full_name ?? null,
-          writerHandle: writer?.handle ?? null,
-          status: s.status,
-          feedback: s.feedback,
-          nextSteps: s.next_steps,
-          outcome: s.outcome,
-          submittedAt: s.submitted_at,
-          reviewedAt: s.reviewed_at,
-        }
-      })
-    const pendingCount = items.filter(i => i.status === 'pending').length
-    return { ...opp, items, pendingCount }
+  const allItems: ReviewItemWithOpp[] = submissions.map(s => {
+    const script = scriptMap.get(s.submission_id)
+    const ev = evalMap.get(s.submission_id)
+    const writer = writerMap.get(s.writer_id)
+    const opp = oppMap.get(s.opportunity_id)
+    return {
+      submissionRowId: s.id,
+      scriptId: s.submission_id,
+      evaluationId: ev?.id ?? null,
+      title: script?.title ?? 'Unknown',
+      format: script?.format ?? null,
+      genre: ev?.genre ?? null,
+      logline: ev?.logline ?? null,
+      score: ev?.weighted_score ?? null,
+      writerName: writer?.full_name ?? null,
+      writerHandle: writer?.handle ?? null,
+      status: s.status,
+      feedback: s.feedback,
+      nextSteps: s.next_steps,
+      outcome: s.outcome,
+      submittedAt: s.submitted_at,
+      reviewedAt: s.reviewed_at,
+      oppTitle: opp?.title ?? 'Unknown',
+      oppSlug: opp?.slug ?? null,
+    }
   })
 
+  const pendingCount = allItems.filter(i => i.status === 'pending').length
+  const reviewedCount = allItems.filter(i => i.status === 'reviewed').length
+
   return (
-    <div className="max-w-3xl mx-auto space-y-8">
+    <div className="max-w-3xl mx-auto space-y-4">
       <div>
         <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1">Producer</p>
-        <h1 className="text-[22px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
-          Your opportunities
+        <h1 className="text-[22px] font-bold text-gray-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          Review queue
         </h1>
+        <p className="text-[13px] text-gray-400 m-0">
+          {pendingCount} pending{reviewedCount > 0 ? ` · ${reviewedCount} reviewed` : ''}
+        </p>
       </div>
 
-      {oppData.map(opp => (
-        <section key={opp.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
-            <div>
-              <h2 className="text-[16px] font-bold text-gray-900 m-0">{opp.title}</h2>
-              <span className="text-[12px] text-gray-400">
-                {opp.items.length} submission{opp.items.length !== 1 ? 's' : ''}
-                {opp.pendingCount > 0 && (
-                  <span className="ml-2 text-amber-600 font-semibold">{opp.pendingCount} pending</span>
-                )}
-              </span>
-            </div>
-          </div>
-
-          {opp.items.length === 0 ? (
-            <div className="px-5 py-6 text-center">
-              <p className="text-[13.5px] text-gray-400 m-0">No submissions yet.</p>
-            </div>
-          ) : (
-            <div className="divide-y divide-gray-50">
-              {opp.items.map(item => (
-                <ProducerReviewCard key={item.submissionRowId} item={item} />
-              ))}
-            </div>
-          )}
-        </section>
-      ))}
+      <ReviewQueueSort items={allItems} />
     </div>
   )
 }

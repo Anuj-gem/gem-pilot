@@ -40,7 +40,7 @@ const OUTCOME_OPTIONS = [
 
 type Outcome = typeof OUTCOME_OPTIONS[number]['value'] | null
 
-interface ReviewItem {
+export interface ReviewItem {
   submissionRowId: string
   scriptId: string
   evaluationId: string | null
@@ -57,6 +57,8 @@ interface ReviewItem {
   outcome: string | null
   submittedAt: string
   reviewedAt: string | null
+  oppTitle?: string
+  oppSlug?: string | null
 }
 
 export function ProducerReviewCard({ item }: { item: ReviewItem }) {
@@ -114,6 +116,15 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             {item.genre && <span>· {item.genre}</span>}
             <span>· {daysAgo === 0 ? 'Today' : `${daysAgo}d ago`}</span>
           </div>
+          {item.oppTitle && (
+            <Link
+              href={`/opportunities/${item.oppSlug || ''}`}
+              className="text-[11px] text-purple-500 hover:text-purple-700 mt-0.5 inline-block"
+              onClick={e => e.stopPropagation()}
+            >
+              {item.oppTitle}
+            </Link>
+          )}
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           <span className={`text-[12px] font-semibold ${reviewed ? 'text-emerald-600' : 'text-amber-600'}`}>
