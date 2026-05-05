@@ -10,7 +10,11 @@ You've gotten feedback on "{{script_title}}"
     <p style="font-size: 13.5px; margin: 0; color: #1C1917;"><strong>Feedback:</strong></p>
     <p style="font-size: 13.5px; margin: 8px 0 0; color: #44403C;">{{feedback}}</p>
   </div>
-  <p style="font-size: 15px; margin: 0 0 22px;">Use this feedback to strengthen the draft. When you feel it's ready, submit it to new opportunities as they come up — or try a different concept entirely.</p>
+  <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 14px 16px; margin: 0 0 22px;">
+    <p style="font-size: 14px; font-weight: 700; margin: 0; color: #15803D;">You've earned a bonus submission.</p>
+    <p style="font-size: 13.5px; margin: 6px 0 0; color: #166534;">Keep developing and submit again when you're ready — to this opportunity or any other.</p>
+  </div>
+  <p style="font-size: 15px; margin: 0 0 22px;">Use this feedback to keep refining. When the script is stronger, submit again.</p>
   <p style="margin: 0 0 26px; text-align: center;">
     <a href="https://www.gem.studio/dashboard" style="display: inline-block; padding: 12px 22px; border-radius: 10px; background: #7C3AED; color: #fff; font-weight: 600; text-decoration: none; font-size: 15px;">Go to your dashboard →</a>
   </p>
@@ -26,6 +30,8 @@ Your submission to {{opportunity_title}} has been reviewed. There's something he
 Feedback:
 {{feedback}}
 
-Use this feedback to strengthen the draft. When you feel it's ready, submit it to new opportunities as they come up — or try a different concept entirely.
+You've earned a bonus submission. Keep developing and submit again when you're ready — to this opportunity or any other.
+
+Use this feedback to keep refining. When the script is stronger, submit again.
 
 Go to your dashboard: https://www.gem.studio/dashboard
