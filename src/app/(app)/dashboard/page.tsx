@@ -261,7 +261,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* ── STAT CARDS ──────────────────────────────────── */}
-        <div className="grid grid-cols-3 gap-2.5">
+        <div className="grid grid-cols-2 gap-2.5">
           <div className="rounded-xl bg-purple-50 border border-purple-100 px-3 py-3.5 text-center">
             <p className="text-[26px] font-bold text-purple-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {completedCount}
@@ -270,20 +270,12 @@ export default async function DashboardPage() {
               {completedCount === 1 ? 'Script' : 'Scripts'}
             </p>
           </div>
-          <div className="rounded-xl bg-amber-50 border border-amber-100 px-3 py-3.5 text-center">
-            <p className="text-[26px] font-bold text-amber-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
-              {activeConsideration ? 1 : 0}
-            </p>
-            <p className="text-[10.5px] text-amber-500 font-medium mt-1 m-0">
-              In review
-            </p>
-          </div>
           <div className="rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-3.5 text-center">
             <p className="text-[26px] font-bold text-emerald-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {totalOpenCallMatches}
             </p>
             <p className="text-[10.5px] text-emerald-500 font-medium mt-1 m-0">
-              Open calls
+              Open calls qualified
             </p>
           </div>
         </div>
@@ -353,25 +345,28 @@ export default async function DashboardPage() {
                               <span className="text-[10.5px] text-gray-400">{s.genre}</span>
                             </>
                           )}
+                          {!s.isProcessing && !s.isLocked && s.openCallMatches.length > 0 && (
+                            <>
+                              <span className="text-gray-200">&middot;</span>
+                              <OpenCallsDropdown
+                                count={s.openCallMatches.length}
+                                matches={s.openCallMatches.map(m => ({ title: m.oppTitle, slug: m.oppSlug }))}
+                              />
+                            </>
+                          )}
                           {s.isProcessing && (
                             <span className="text-[10.5px] font-medium text-purple-500">Processing&hellip;</span>
                           )}
                         </div>
                       </div>
 
-                      {/* Open call count + consideration status */}
+                      {/* Actions */}
                       {!s.isLocked && !s.isProcessing && (
                         <div className="flex items-center gap-2 shrink-0">
                           {s.inConsideration && (
                             <span className="text-[10.5px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
                               In consideration
                             </span>
-                          )}
-                          {s.openCallMatches.length > 0 && (
-                            <OpenCallsDropdown
-                              count={s.openCallMatches.length}
-                              matches={s.openCallMatches.map(m => ({ title: m.oppTitle, slug: m.oppSlug }))}
-                            />
                           )}
                           {s.evaluationId && (
                             <Link

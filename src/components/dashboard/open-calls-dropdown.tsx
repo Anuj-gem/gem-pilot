@@ -15,15 +15,15 @@ export function OpenCallsDropdown({
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="relative">
+    <span className="relative inline-flex items-center">
       <button
-        onClick={() => setOpen(!open)}
-        className="text-[11px] font-bold text-purple-600 bg-purple-50 hover:bg-purple-100 px-2.5 py-1 rounded-full transition-colors"
+        onClick={(e) => { e.stopPropagation(); setOpen(!open) }}
+        className="text-[10.5px] font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
       >
-        {count} open {count === 1 ? 'call' : 'calls'} {open ? '▴' : '▾'}
+        Open calls ({count}) {open ? '▴' : '▾'}
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1.5">
+        <div className="absolute left-0 top-full mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1.5">
           {matches.map((m) => (
             <Link
               key={m.slug}
@@ -35,6 +35,6 @@ export function OpenCallsDropdown({
           ))}
         </div>
       )}
-    </div>
+    </span>
   )
 }
