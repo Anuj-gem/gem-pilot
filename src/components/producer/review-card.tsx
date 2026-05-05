@@ -59,11 +59,13 @@ export interface ReviewItem {
 
 export function ProducerReviewCard({ item }: { item: ReviewItem }) {
   // AI prefill: if no human feedback/outcome yet, use AI draft
-  const initialFeedback = item.feedback ?? (item.aiReasoning && item.aiNextSteps ? `${item.aiReasoning}\n\n${item.aiNextSteps}` : item.aiReasoning ?? '')
+  const initialFeedback = item.feedback ?? item.aiReasoning ?? ''
+  const initialNextSteps = item.nextSteps ?? item.aiNextSteps ?? ''
   const initialOutcome = (item.outcome ?? item.aiDecision ?? null) as Outcome
   const hasAiDraft = !item.feedback && !item.outcome && (item.aiDecision || item.aiReasoning)
 
   const [feedback, setFeedback] = useState(initialFeedback)
+  const [nextSteps, setNextSteps] = useState(initialNextSteps)
   const [outcome, setOutcome] = useState<Outcome>(initialOutcome)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
@@ -82,6 +84,7 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
         status: 'reviewed',
         feedback: feedback.trim(),
         outcome,
+        next_steps_text: nextSteps.trim() || null,
       }),
     })
     setSaving(false)
@@ -194,19 +197,43 @@ export function ProducerReviewCard({ item }: { item: ReviewItem }) {
             </div>
           )}
 
-          {/* Feedback textarea */}
-          <textarea
-            value={feedback}
-            onChange={e => setFeedback(e.target.value)}
-            placeholder={
-              outcome === 'pass' ? "Brief note on why this isn't the right fit..."
-              : outcome === 'developing' ? "What's working, what needs more work, and what would make this ready..."
-              : outcome === 'advancing' ? "What excited you about this and next steps..."
-              : "Write your feedback — what works, what doesn't, and why..."
-            }
-            rows={4}
-            className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
-          />
+          {/* Reasoning textarea */}
+          <div>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+              Assessment
+            </p>
+            <textarea
+              value={feedback}
+              onChange={e => setFeedback(e.target.value)}
+              placeholder={
+                outcome === 'pass' ? "Why this isn't the right fit for this opportunity..."
+                : outcome === 'developing' ? "What's commercially promising and what's holding it back..."
+                : outcome === 'advancing' ? "Why this is a strong match — what makes it packagable..."
+                : "Your assessment of this script's fit for the opportunity..."
+              }
+              rows={4}
+              className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
+            />
+          </div>
+
+          {/* Next steps textarea */}
+          <div>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+              Suggested next steps
+            </p>
+            <textarea
+              value={nextSteps}
+              onChange={e => setNextSteps(e.target.value)}
+              placeholder={
+                outcome === 'pass' ? "What kind of opportunities this script is better suited for..."
+                : outcome === 'developing' ? "What would change the commercial calculus on the next pass..."
+                : outcome === 'advancing' ? "What happens next in the process..."
+                : "Forward-looking guidance for the writer..."
+              }
+              rows={2}
+              className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
+            />
+          </div>
 
           {/* Send button */}
           <div className="flex items-center gap-2">

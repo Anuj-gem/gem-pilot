@@ -24,11 +24,12 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { submission_id, status, feedback, outcome } = body as {
+  const { submission_id, status, feedback, outcome, next_steps_text } = body as {
     submission_id: string
     status: 'pending' | 'reviewed'
     feedback?: string
     outcome?: Outcome | null
+    next_steps_text?: string | null
   }
 
   if (!submission_id || !status) {
@@ -73,10 +74,9 @@ export async function POST(req: NextRequest) {
       status,
       feedback: feedback ?? null,
       outcome: outcome ?? null,
-      // Map outcome to legacy next_steps for backward compat
-      next_steps: outcome === 'developing' ? 'new_concept'
+      next_steps: next_steps_text ?? (outcome === 'developing' ? 'new_concept'
         : outcome === 'advancing' ? 'in_touch'
-        : null,
+        : null),
       reviewed_at: status !== 'pending' ? new Date().toISOString() : null,
     })
     .eq('id', submission_id)

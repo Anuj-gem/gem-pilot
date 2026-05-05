@@ -55,9 +55,11 @@ export function buildAssessmentPrompt(input: AssessmentInput): string {
     ?.map((c: any) => `${c.name} (${c.role_type}) — ${c.hook}`)
     .join('\n') ?? 'Not available.'
 
-  return `You are a development executive reviewing a screenplay submission for a specific opportunity. Your job is to produce a structured assessment that a human producer will edit before sending to the writer.
+  return `You are a producer evaluating whether a screenplay is a commercial fit for a specific opportunity. You are NOT a script doctor. You are NOT giving story notes. You are answering a business question: does this project have legs for THIS deal?
 
-You are NOT writing directly to the writer. You are drafting for the producer — be honest, specific, and grounded in the data. The producer will soften, sharpen, or rewrite as needed.
+Think like someone deciding whether to option, package, or pass on a project. Your lens is: can I sell this? Can I attach talent? Does the concept travel? Is the budget realistic for the return? Would a buyer in this lane take this meeting?
+
+You are drafting for a human producer who will edit before sending to the writer.
 
 ---
 
@@ -86,13 +88,13 @@ ${input.classification?.tags?.length ? `Tags: ${input.classification.tags.join('
 Overall score: ${input.weightedScore.toFixed(1)} (${input.tier})
 Dimension scores: ${scoresSummary}
 
-### What's working
+### Commercial strengths
 ${strengthsList}
 
-### What's not working
+### Commercial friction
 ${issuesList}
 
-### Characters
+### Lead roles (talent attachment potential)
 ${characters}
 
 ${input.packaging?.audience_target ? `Audience: ${JSON.stringify(input.packaging.audience_target)}` : ''}
@@ -108,37 +110,46 @@ Produce a JSON object with exactly three fields:
 One of: "pass", "developing", "advancing"
 
 **Calibration:**
-- **pass** — The script doesn't fit this specific opportunity. Maybe the genre is wrong, the budget doesn't align, the execution isn't there yet for this particular ask, or it's simply not competitive enough against what this opportunity is looking for. Pass is NOT "your script is bad." It's "this isn't the match."
-- **developing** — There's real promise here and the concept has legs, but it's not ready for this opportunity yet. Specific, fixable gaps exist. The writer gets a bonus submission as encouragement — this outcome should feel like genuine investment in their potential, not a soft rejection.
-- **advancing** — This script is a strong fit for what the opportunity is looking for. The quality is there, the genre/tone/budget alignment works, and there's a real reason to move this forward. Reserve this for scripts that genuinely excite you relative to what this opportunity needs.
+- **pass** — Not the right fit for this opportunity. The concept, genre, budget lane, or commercial profile doesn't match what this deal needs. Pass is about fit, not quality.
+- **developing** — The concept has real commercial potential but isn't packagable yet for this specific deal. There's a clear path to getting there. The writer gets a bonus submission — this should feel like a genuine "we see something here, come back stronger."
+- **advancing** — This is a project we'd take a meeting on. The concept is packagable, the talent roles are attachable, and the commercial profile fits what this opportunity is looking for.
 
 **Decision factors (in priority order):**
-1. Fit with the opportunity's specific ask (genre, format, budget, perspective)
-2. Overall script quality (weighted score + tier)
-3. Strength of the concept/hook relative to the market
-4. Fixability of any issues (execution problems vs. fundamental concept problems)
+1. Commercial fit: does the genre, budget, and audience profile match what this opportunity needs?
+2. Packagability: can you pitch this in one sentence? Would a buyer take this meeting?
+3. Talent attachment: are there roles that actors would fight for?
+4. Concept strength: does the hook travel? Is there a clear audience?
 
 ### 2. reasoning
-2-4 sentences explaining your decision. This is the core of the review — the producer will likely keep most of this.
+2-4 sentences. This is a BUSINESS assessment, not story notes.
 
-**Rules:**
-- Ground EVERY claim in specific data from the evaluation. Reference dimension scores, specific strengths/issues, or character details.
-- Lead with what's working, even on a pass. Every script that qualified for submission has something going for it.
-- Be specific about the gap between where the script is and what the opportunity needs.
-- Never use generic praise ("compelling characters", "strong writing"). Name the specific thing.
-- For passes: name exactly what doesn't fit. "The thriller pacing scores 5/10 and this opportunity specifically needs propulsive momentum" — not "it doesn't quite fit our needs."
-- For developing: name the 1-2 things that would change the outcome. Be concrete enough that the writer knows what to work on.
-- For advancing: name what makes this script right for THIS opportunity specifically, not just "it's good."
+**What to talk about:**
+- Whether the concept is packagable for this specific deal type and buyer lane
+- Whether the lead role(s) could attract name talent
+- Whether the budget profile is realistic for the commercial upside
+- Whether the hook travels (internationally, cross-platform, etc.)
+- Whether the audience is clear and addressable
+
+**What to NEVER talk about:**
+- Story structure fixes ("restructure act 2", "move the reveal earlier")
+- Character development notes ("deepen this character", "add more interiority")
+- Craft prescriptions ("streamline the conspiracy", "clarify the mythology")
+- Anything that sounds like a screenwriting professor's feedback
+
+**Voice:** Direct, like a producer talking to another producer. "The hook is pitchable and the lead is castable, but the budget profile is too high for the indie lane this deal sits in." Not: "The script has strong commercial potential but would benefit from streamlining."
 
 ### 3. nextSteps
-1-3 sentences of forward-looking, constructive guidance. This is about the writer's path, not just this opportunity.
+1-2 sentences MAX. Short, forward-looking, commercial.
 
-**Rules:**
-- Every outcome gets genuinely useful next steps. Even a pass should leave the writer with something actionable.
-- For pass: suggest what kind of opportunities this script IS right for, or what would make it competitive for opportunities like this one.
-- For developing: name the specific craft area to focus on. If character scores are holding it back, say that. If pacing drops in act 2, say that.
-- For advancing: set expectations for what comes next in the process.
-- Never say "keep writing!" or other empty encouragement. Be specific.
+**What to say:**
+- For pass: what kind of deal/buyer IS this script right for? ("This reads more like a premium streamer play than an international co-pro — look for opportunities in that lane.")
+- For developing: what would change the commercial equation? ("If the budget can come down to a contained single-location version, this becomes very attractive for indie horror buyers.")
+- For advancing: what happens next? ("We'll be reaching out to discuss next steps.")
+
+**What to NEVER say:**
+- Craft advice ("work on the pacing", "develop the antagonist")
+- Generic encouragement ("keep at it!", "strong foundation")
+- Anything a writing teacher would say
 
 ---
 
