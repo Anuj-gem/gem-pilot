@@ -26,8 +26,8 @@ const OUTCOME_LABELS: Record<string, string> = {
 }
 const OUTCOME_COLORS: Record<string, string> = {
   pass: 'text-gray-500 bg-gray-100',
-  developing: 'text-amber-700 bg-amber-50',
-  revise_resubmit: 'text-amber-700 bg-amber-50', // legacy compat
+  developing: 'text-amber-800 bg-amber-100 border border-amber-300',
+  revise_resubmit: 'text-amber-800 bg-amber-100 border border-amber-300', // legacy compat
   advancing: 'text-emerald-700 bg-emerald-50',
 }
 const NEXT_STEPS_LABELS: Record<string, string> = {
@@ -344,9 +344,10 @@ export default async function OpportunityHistoryPage() {
                           <div className="px-3 py-2.5 bg-gray-50 rounded-lg">
                             <p className="text-[12.5px] text-gray-500 leading-[1.6] m-0 whitespace-pre-line">{s.feedback}</p>
                             {(s.outcome === 'developing' || s.outcome === 'revise_resubmit') && (
-                              <p className="text-[11px] font-semibold text-amber-600 m-0 mt-2">
-                                You earned a bonus submission — keep developing and submit again when ready.
-                              </p>
+                              <div className="flex items-center gap-1.5 mt-2 bg-green-50 border border-green-200 rounded-md px-2.5 py-1.5">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0"><circle cx="7" cy="7" r="7" fill="#16A34A"/><path d="M4.5 7.5L6 9L9.5 5.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                                <p className="text-[11px] font-semibold text-green-700 m-0">+1 bonus submission earned</p>
+                              </div>
                             )}
                             {s.outcome === 'advancing' && (
                               <p className="text-[11px] font-semibold text-emerald-600 m-0 mt-2">
