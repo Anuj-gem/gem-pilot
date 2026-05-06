@@ -24,6 +24,7 @@ import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { type OpportunityData } from '@/components/opportunities/opportunity-card'
 import { ConsiderationStatus } from '@/components/dashboard/consideration-status'
 import { OpenCallsDropdown } from '@/components/dashboard/open-calls-dropdown'
+import { FeedbackCycle } from '@/components/consideration/feedback-cycle'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -395,69 +396,27 @@ export default async function DashboardPage() {
         <section>
           <header className="flex items-end justify-between gap-3 mb-2.5">
             <h2 className="text-[15px] font-bold text-gray-900 m-0">
-              Feedback
+              Recent feedback
             </h2>
-            {allConsiderations.filter(c => c.status === 'reviewed').length > 1 && (
-              <Link href="/feedback" className="text-[12px] text-purple-600 hover:text-purple-800 font-semibold">
-                View history →
-              </Link>
-            )}
+            <Link href="/feedback" className="text-[12px] text-purple-600 hover:text-purple-800 font-semibold">
+              View all feedback
+            </Link>
           </header>
 
           {latestReviewed && latestReviewed.feedback ? (
-            /* Has feedback — show latest */
-            <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
-              <div className="px-5 py-4">
-                <p className="text-[13.5px] text-gray-600 leading-[1.65] m-0 whitespace-pre-line">
-                  {latestReviewed.feedback}
-                </p>
-                {latestReviewed.next_steps && (
-                  <div className="mt-3 px-4 py-3 bg-gray-50 rounded-lg">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-gray-400 m-0 mb-1">What to do next</p>
-                    <p className="text-[13px] text-gray-700 m-0 leading-[1.55]">{latestReviewed.next_steps}</p>
-                  </div>
-                )}
-                {latestReviewedScripts.length > 0 && (
-                  <div className="mt-3 pt-3 border-t border-gray-100">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-gray-400 m-0 mb-2">Scripts reviewed</p>
-                    <div className="space-y-1">
-                      {latestReviewedScripts.slice(0, 3).map((s, i) => (
-                        <div key={i} className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-md">
-                          {s.score != null && (
-                            <span className="text-[13px] font-bold min-w-[24px]" style={{
-                              color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                            }}>
-                              {Math.round(s.score)}
-                            </span>
-                          )}
-                          <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                    {latestReviewedScripts.length > 3 && (
-                      <Link
-                        href="/feedback"
-                        className="text-[13px] font-medium text-purple-600 hover:text-purple-800 mt-2 inline-block"
-                      >
-                        + {latestReviewedScripts.length - 3} more scripts
-                      </Link>
-                    )}
-                  </div>
-                )}
-                {latestReviewed.reviewed_at && (
-                  <p className="text-[12px] text-gray-300 m-0 mt-3">
-                    {new Date(latestReviewed.reviewed_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                  </p>
-                )}
-              </div>
-            </div>
+            <FeedbackCycle
+              submittedAt={latestReviewed.submitted_at}
+              reviewedAt={latestReviewed.reviewed_at}
+              feedback={latestReviewed.feedback}
+              nextSteps={latestReviewed.next_steps}
+              scriptCount={latestReviewedScripts.length}
+              linkToFull
+            />
           ) : hasActiveConsideration ? (
-            /* In consideration — being reviewed */
             <div className="rounded-xl bg-white border border-gray-200 px-5 py-6 text-center">
               <p className="text-[13.5px] text-gray-500 m-0">Your portfolio is being reviewed. Feedback expected within 5–7 days.</p>
             </div>
           ) : completedCount > 0 ? (
-            /* Has scripts but no feedback — prompt to submit */
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
               <p className="text-[13.5px] text-gray-500 m-0 mb-3">No feedback yet. Request consideration to get notes on your work.</p>
               {canRequestConsideration && (
@@ -470,21 +429,11 @@ export default async function DashboardPage() {
               )}
             </div>
           ) : (
-            /* No scripts at all */
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
               <p className="text-[13.5px] text-gray-400 m-0">Upload scripts to start receiving feedback.</p>
             </div>
           )}
         </section>
-
-        {/* ── OPEN CALLS LINK ─────────────────────────────── */}
-        {totalOpenCallMatches > 0 && (
-          <div className="text-center py-2">
-            <Link href="/opportunities" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
-              Browse {opportunities.length} open calls →
-            </Link>
-          </div>
-        )}
       </div>
     </>
   )

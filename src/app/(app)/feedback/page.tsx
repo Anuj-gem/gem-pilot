@@ -1,4 +1,4 @@
-// /feedback — Feedback history showing all past review cycles.
+// /feedback — Full feedback history.
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
@@ -23,70 +23,36 @@ export default async function FeedbackPage() {
 
   const service = svc()
 
-  // Get all reviewed considerations (oldest first so we can identify the first one)
+  // Get all reviewed considerations (newest first)
   const { data: considerations } = await service
     .from('considerations')
     .select('id, status, submitted_at, reviewed_at, feedback, outcome, next_steps')
     .eq('writer_id', user.id)
     .eq('status', 'reviewed')
-    .order('reviewed_at', { ascending: true })
+    .order('reviewed_at', { ascending: false })
 
   const reviewed = (considerations || []) as {
     id: string; status: string; submitted_at: string; reviewed_at: string | null
     feedback: string | null; outcome: string | null; next_steps: string | null
   }[]
 
-  // Get scripts for each consideration WITH carried_forward flag
+  // Count scripts per consideration
   const considerationIds = reviewed.map(c => c.id)
-  const scriptsByConsideration = new Map<string, { title: string; score: number | null; carriedForward: boolean }[]>()
+  const scriptCountByConsideration = new Map<string, number>()
 
   if (considerationIds.length > 0) {
     const { data: cs } = await service
       .from('consideration_scripts')
-      .select('consideration_id, script_submission_id, carried_forward')
+      .select('consideration_id, script_submission_id')
       .in('consideration_id', considerationIds)
 
-    const allRows = (cs || []) as { consideration_id: string; script_submission_id: string; carried_forward: boolean }[]
-    const scriptIds = [...new Set(allRows.map(r => r.script_submission_id))]
-
-    // Get script details
-    const scriptMap = new Map<string, { title: string; score: number | null }>()
-    if (scriptIds.length > 0) {
-      const { data: subs } = await service
-        .from('script_submissions')
-        .select('id, title')
-        .in('id', scriptIds)
-      for (const s of (subs || []) as { id: string; title: string }[]) {
-        scriptMap.set(s.id, { title: s.title, score: null })
-      }
-      const { data: evals } = await service
-        .from('script_evaluations')
-        .select('submission_id, weighted_score')
-        .in('submission_id', scriptIds)
-      for (const e of (evals || []) as { submission_id: string; weighted_score: number | null }[]) {
-        const existing = scriptMap.get(e.submission_id)
-        if (existing) existing.score = e.weighted_score
-      }
-    }
-
-    // Group by consideration
-    for (const row of allRows) {
-      if (!scriptsByConsideration.has(row.consideration_id)) {
-        scriptsByConsideration.set(row.consideration_id, [])
-      }
-      const script = scriptMap.get(row.script_submission_id)
-      if (script) {
-        scriptsByConsideration.get(row.consideration_id)!.push({
-          ...script,
-          carriedForward: row.carried_forward ?? false,
-        })
-      }
+    for (const row of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
+      scriptCountByConsideration.set(
+        row.consideration_id,
+        (scriptCountByConsideration.get(row.consideration_id) ?? 0) + 1
+      )
     }
   }
-
-  // Display newest first but track which is the chronologically first review
-  const firstId = reviewed[0]?.id ?? null
-  const displayOrder = [...reviewed].reverse()
 
   return (
     <div className="max-w-2xl mx-auto space-y-5">
@@ -97,20 +63,20 @@ export default async function FeedbackPage() {
         </Link>
       </header>
 
-      {displayOrder.length === 0 ? (
+      {reviewed.length === 0 ? (
         <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
           <p className="text-[13.5px] text-gray-400 m-0">No feedback yet. Request consideration to get started.</p>
         </div>
       ) : (
-        <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-          {displayOrder.map(c => (
+        <div className="space-y-4">
+          {reviewed.map(c => (
             <FeedbackCycle
               key={c.id}
+              submittedAt={c.submitted_at}
               reviewedAt={c.reviewed_at}
               feedback={c.feedback}
               nextSteps={c.next_steps}
-              scripts={scriptsByConsideration.get(c.id) ?? []}
-              isFirst={c.id === firstId}
+              scriptCount={scriptCountByConsideration.get(c.id) ?? 0}
             />
           ))}
         </div>

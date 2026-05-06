@@ -1,89 +1,87 @@
 'use client'
 
-// FeedbackCycle — one review cycle in the feedback history.
-// Shows feedback + next steps + new scripts considered (Option B layout).
+// FeedbackCycle — one review cycle card.
+// Used on both /feedback page and dashboard.
+// Design: timeline bar → feedback text → "Your next move" hero → script count footer.
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export function FeedbackCycle({
+  submittedAt,
   reviewedAt,
   feedback,
   nextSteps,
-  scripts,
-  isFirst,
+  scriptCount,
+  linkToFull,
 }: {
+  submittedAt: string | null
   reviewedAt: string | null
   feedback: string | null
   nextSteps: string | null
-  scripts: { title: string; score: number | null; carriedForward: boolean }[]
-  isFirst: boolean
+  scriptCount: number
+  linkToFull?: boolean
 }) {
-  const [showAll, setShowAll] = useState(false)
-  const dateLabel = reviewedAt
-    ? new Date(reviewedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
-    : 'Unknown date'
-
-  // First consideration shows all scripts; subsequent ones show only new work
-  const newScripts = isFirst ? scripts : scripts.filter(s => !s.carriedForward)
-  const displayScripts = showAll ? newScripts : newScripts.slice(0, 3)
-  const hiddenCount = newScripts.length - 3
+  const fmtDate = (d: string) =>
+    new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
   return (
-    <div className="px-5 py-5">
-      {/* Date */}
-      <p className="text-[14px] font-medium text-gray-400 m-0 mb-3">{dateLabel}</p>
-
-      {/* Feedback body */}
-      {feedback && (
-        <p className="text-[14px] text-gray-800 leading-[1.65] m-0 mb-4 whitespace-pre-line">
-          {feedback}
-        </p>
-      )}
-
-      {/* Next steps */}
-      {nextSteps && (
-        <div className="mb-4 px-4 py-3 bg-gray-50 rounded-lg">
-          <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-gray-400 m-0 mb-1">What to do next</p>
-          <p className="text-[13px] text-gray-700 m-0 leading-[1.55]">{nextSteps}</p>
-        </div>
-      )}
-
-      {/* Scripts considered */}
-      {newScripts.length > 0 && (
-        <div className="pt-3 border-t border-gray-100">
-          <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-gray-400 m-0 mb-2">
-            {isFirst ? 'Scripts reviewed' : 'New work considered'}
-          </p>
-
-          <div className="space-y-1">
-            {displayScripts.map((s, i) => (
-              <div key={i} className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-md">
-                {s.score != null && (
-                  <span className="text-[13px] font-bold min-w-[24px]" style={{
-                    color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                  }}>
-                    {Math.round(s.score)}
-                  </span>
-                )}
-                <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
-              </div>
-            ))}
+    <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
+      {/* Timeline bar */}
+      <div className="flex items-center gap-3 px-5 py-2.5 bg-gray-50 border-b border-gray-100">
+        {submittedAt && (
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+            <span className="text-[12px] text-gray-500">Submitted {fmtDate(submittedAt)}</span>
           </div>
+        )}
+        {submittedAt && reviewedAt && (
+          <svg width="16" height="2" className="shrink-0"><line x1="0" y1="1" x2="16" y2="1" stroke="#d1d5db" strokeWidth="1" strokeDasharray="2,2"/></svg>
+        )}
+        {reviewedAt && (
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+            <span className="text-[12px] text-gray-500">Feedback received {fmtDate(reviewedAt)}</span>
+          </div>
+        )}
+      </div>
 
-          {!showAll && hiddenCount > 0 && (
-            <button
-              onClick={() => setShowAll(true)}
-              className="text-[13px] font-medium text-purple-600 hover:text-purple-800 bg-transparent border-none cursor-pointer mt-2 p-0"
-            >
-              + {hiddenCount} more {hiddenCount === 1 ? 'script' : 'scripts'}
-            </button>
-          )}
+      {/* Body */}
+      <div className="px-5 py-4">
+        {/* Feedback text */}
+        {feedback && (
+          <p className="text-[14px] text-gray-800 leading-[1.65] m-0 mb-4 whitespace-pre-line">
+            {feedback}
+          </p>
+        )}
 
-          {!isFirst && (
-            <p className="text-[12px] text-gray-300 m-0 mt-2">Your full portfolio is reviewed each time.</p>
+        {/* Your next move — the hero */}
+        {nextSteps && (
+          <div className="mb-4 pl-4 py-3 pr-4 rounded-r-lg" style={{
+            background: '#f5f3ff',
+            borderLeft: '3px solid #7c3aed',
+          }}>
+            <p className="text-[12px] font-bold uppercase tracking-[0.04em] m-0 mb-1" style={{ color: '#7c3aed' }}>
+              Your next move
+            </p>
+            <p className="text-[14px] leading-[1.55] m-0" style={{ color: '#4c1d95' }}>
+              {nextSteps}
+            </p>
+          </div>
+        )}
+
+        {/* Footer */}
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+          <span className="text-[13px] text-gray-400">
+            {scriptCount} {scriptCount === 1 ? 'script' : 'scripts'} reviewed
+          </span>
+          {linkToFull && (
+            <Link href="/feedback" className="text-[13px] font-medium text-purple-600 hover:text-purple-800">
+              View full feedback
+            </Link>
           )}
         </div>
-      )}
+      </div>
     </div>
   )
 }
