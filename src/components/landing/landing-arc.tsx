@@ -10,23 +10,23 @@ import { FileText, Sparkles, Send, MessageCircle } from 'lucide-react'
 const STEPS = [
   {
     icon: FileText,
-    title: 'Upload',
-    sub: 'Drop your screenplay. PDF, any length.',
+    title: "Upload",
+    sub: "Drop your screenplay. PDF, any length.",
   },
   {
     icon: Sparkles,
-    title: 'Get evaluated',
-    sub: 'A structured report covering story, characters, packaging, budget, and what it would take to make. Under a minute.',
+    title: "Get evaluated",
+    sub: "A structured report covering story, characters, packaging, budget, and what it would take to make. Under a minute.",
   },
   {
     icon: Send,
-    title: ‘Request consideration’,
-    sub: "Put your scripts in front of producers, managers, and agents. They read your full evaluation — not just a logline.",
+    title: "Request consideration",
+    sub: "Put your scripts in front of producers, managers, and agents. They read your full evaluation, not just a logline.",
   },
   {
     icon: MessageCircle,
-    title: ‘Get feedback’,
-    sub: "Hear back with real notes — what worked, what needs work, and whether they want to see more from you.",
+    title: "Get feedback",
+    sub: "Hear back with real notes. What worked, what needs work, and whether they want to see more from you.",
   },
 ]
 
