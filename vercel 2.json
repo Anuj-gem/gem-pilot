@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "regions": ["iad1"],
+  "crons": [
+    {
+      "path": "/api/cron/auto-pass-matches",
+      "schedule": "0 */6 * * *"
+    },
+    {
+      "path": "/api/cron/drip-emails",
+      "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/cron/opportunity-broadcast",
+      "schedule": "0 0 1 1 *"
+    }
+  ]
+}

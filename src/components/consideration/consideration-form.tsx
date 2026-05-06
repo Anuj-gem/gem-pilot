@@ -19,6 +19,8 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
   const carried = scripts.filter(s => s.carriedForward)
   const selectable = scripts.filter(s => !s.carriedForward)
 
+  // New scripts first (not previously considered), then carried forward below
+  const newScripts = selectable
   const [selected, setSelected] = useState<Set<string>>(new Set(selectable.map(s => s.id)))
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -65,40 +67,13 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
         Select which scripts to include. Previously submitted scripts carry forward automatically.
       </p>
 
-      {/* Carried forward scripts */}
-      {carried.length > 0 && (
+      {/* New scripts — shown first */}
+      {newScripts.length > 0 && (
         <>
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
-            Already submitted
+          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-purple-600 m-0 mb-2">
+            {carried.length > 0 ? 'New scripts' : 'Your scripts'}
           </p>
-          {carried.map(s => (
-            <div
-              key={s.id}
-              className="flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-xl mb-2 bg-gray-50 opacity-75"
-            >
-              <div className="w-5 h-5 rounded bg-gray-400 flex items-center justify-center shrink-0">
-                <span className="text-white text-[11px] font-bold">✓</span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[13.5px] font-semibold text-gray-700 m-0 truncate">{s.title}</p>
-                <p className="text-[11px] text-gray-400 m-0 mt-0.5">
-                  {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
-                </p>
-              </div>
-              <span className="text-[10.5px] text-gray-400 font-medium shrink-0">Carries forward</span>
-            </div>
-          ))}
-          <div className="h-4" />
-        </>
-      )}
-
-      {/* Selectable scripts */}
-      {selectable.length > 0 && (
-        <>
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
-            Add to consideration
-          </p>
-          {selectable.map(s => {
+          {newScripts.map(s => {
             const isSelected = selected.has(s.id)
             return (
               <button
@@ -125,6 +100,33 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
               </button>
             )
           })}
+        </>
+      )}
+
+      {/* Previously considered scripts — carried forward */}
+      {carried.length > 0 && (
+        <>
+          <div className="h-2" />
+          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
+            Previously considered
+          </p>
+          {carried.map(s => (
+            <div
+              key={s.id}
+              className="flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-xl mb-2 bg-gray-50 opacity-75"
+            >
+              <div className="w-5 h-5 rounded bg-gray-400 flex items-center justify-center shrink-0">
+                <span className="text-white text-[11px] font-bold">✓</span>
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[13.5px] font-semibold text-gray-700 m-0 truncate">{s.title}</p>
+                <p className="text-[11px] text-gray-400 m-0 mt-0.5">
+                  {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
+                </p>
+              </div>
+              <span className="text-[10.5px] text-gray-400 font-medium shrink-0">Included</span>
+            </div>
+          ))}
         </>
       )}
 

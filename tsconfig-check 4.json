@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": true },
+  "include": [
+    "src/app/dashboard/page.tsx",
+    "src/app/api/submissions/[id]/hide/route.ts",
+    "src/components/dashboard/remove-button.tsx",
+    "src/lib/**/*.ts",
+    "src/types/**/*.ts",
+    "src/components/**/*.tsx"
+  ],
+  "exclude": ["src/**/* 2.ts", "src/**/* 2.tsx", "node_modules"]
+}
