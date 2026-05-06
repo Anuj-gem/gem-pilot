@@ -232,7 +232,7 @@ export default async function DashboardPage() {
               className="w-11 h-11 rounded-full text-white flex items-center justify-center font-bold shrink-0"
               style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)', fontSize: 15 }}
             >
-              {(profile?.full_name || profile?.handle || '·').split(/\s+/).slice(0, 2).map(p => p[0]?.toUpperCase() ?? '').join('') || '·'}
+              {(profile?.full_name || profile?.handle || '·').split(/\s+/).slice(0, 2).map((p: string) => p[0]?.toUpperCase() ?? '').join('') || '·'}
             </div>
           )}
           <div className="min-w-0 flex-1">
