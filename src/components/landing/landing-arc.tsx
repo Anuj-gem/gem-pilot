@@ -20,13 +20,13 @@ const STEPS = [
   },
   {
     icon: Send,
-    title: 'Request consideration',
-    sub: 'Submit your portfolio for review by our industry partners. They see your evaluation, your scores, everything.',
+    title: ‘Request consideration’,
+    sub: ‘Put your scripts in front of producers, managers, and agents. They read your full evaluation — not just a logline.’,
   },
   {
     icon: MessageCircle,
-    title: 'Get feedback',
-    sub: 'Real feedback on your work — what landed, what didn’t, and whether there’s a path forward.',
+    title: ‘Get feedback’,
+    sub: ‘Hear back with real notes — what worked, what needs work, and whether they want to see more from you.’,
   },
 ]
 

@@ -44,10 +44,10 @@ export function LandingPricing() {
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="Unlimited scripts, ongoing industry consideration, and a shareable portfolio."
+            blurb="Unlimited scripts, ongoing consideration from producers and reps, and a shareable portfolio."
             features={[
               'Unlimited script evaluations',
-              'Ongoing industry consideration as you write',
+              'Ongoing consideration as you write new scripts',
               'Shareable writer portfolio',
             ]}
             cta="Go Pro"

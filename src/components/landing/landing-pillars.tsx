@@ -9,36 +9,36 @@ export function LandingPillars() {
       <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         <Pillar
           eyebrow="The evaluation"
-          title="Every dimension a producer weighs. In under a minute."
-          body="Headline, character breakdowns, packaging angle, budget tier, production complexity, and the honest development notes a buyer would weigh before saying yes. Not a score and a paragraph — the full structured read."
+          title="The full picture of your script. In under a minute."
+          body="A one-line pitch, character breakdowns, budget estimate, production complexity, and honest development notes — everything someone would need to decide whether to say yes. Not a score and a paragraph. A complete read."
           mockup={<EvaluationReportMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="Industry consideration"
-          title="Your portfolio, reviewed by working industry."
-          body="Request consideration and our industry partners review your full body of work — every script, every score, every evaluation. They're not reading a query letter. They're reading what a producer would read before taking a meeting. As you write new scripts, request consideration again."
+          eyebrow="Get considered"
+          title="Put your scripts in front of producers, managers, and agents."
+          body="Request consideration and real people in the entertainment industry review your work — every script, every score, every evaluation. They're not reading a query letter. They're reading what they'd read before taking a meeting. Write something new? Request consideration again."
           mockup={<ConsiderationMockup />}
           align="right"
         />
         <Pillar
           eyebrow="Real feedback"
           title="Not a form rejection. An actual response."
-          body="When industry partners review your portfolio, they respond with real feedback — what landed, what needs work, and whether there's a path forward. The kind of notes you'd get from a development executive, not a contest judge."
+          body="When producers and reps review your work, they respond with real notes — what landed, what needs work, and whether they want to see more. The kind of feedback you'd get in a development meeting, not from a contest."
           mockup={<FeedbackMockup />}
           align="left"
         />
         <Pillar
           eyebrow="Your portfolio"
           title="A shareable record of everything you've written."
-          body="Your scripts, your scores, your track record — all in one place. When industry partners consider your work, this is what they see. A portfolio that grows with every script you evaluate."
+          body="Your scripts, your scores, your track record — all in one place. When producers and reps look at your work, this is what they see. A portfolio that grows with every script you upload."
           mockup={<ProfileMockup />}
           align="right"
         />
         <Pillar
           eyebrow="Named for the producer who set the standard"
           title="Built to get great work made."
-          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation builds your case, consideration puts it in front of the right people. Every feature we build moves toward the same thing: closing the gap between great scripts and the people who can make them."
+          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation builds your case, and then you put it in front of producers and reps who can actually do something with it. Everything we build moves toward the same thing: connecting great scripts with the people who can make them."
           mockup={<VisionFlowMockup />}
           align="left"
         />
@@ -132,11 +132,11 @@ function EvaluationReportMockup() {
 
       {/* Report sections — the 6 things every eval covers */}
       <div className="space-y-0">
-        <ReportRow n="01" title="Headline + Why this is a hit" preview="A sharpened pitch a manager could forward verbatim." />
-        <ReportRow n="02" title="Cast" preview="Lead + supporting with the actor-want angle." />
-        <ReportRow n="03" title="Packaging" preview="Audience, budget tier, franchise potential." />
-        <ReportRow n="04" title="Production complexity" preview="The lift, the dependencies, the heads-up." />
-        <ReportRow n="05" title="Development notes" preview="The sharpest lever and every note a buyer would weigh." />
+        <ReportRow n="01" title="Headline" preview="A one-line pitch someone could forward to their boss." />
+        <ReportRow n="02" title="Cast breakdown" preview="Lead and supporting characters, who'd want to play them." />
+        <ReportRow n="03" title="Audience and budget" preview="Who this is for, what it would cost to make." />
+        <ReportRow n="04" title="Production complexity" preview="Locations, VFX, anything that affects the budget." />
+        <ReportRow n="05" title="Development notes" preview="What's working, what's not, and what to fix." />
       </div>
 
       <div className="grid grid-cols-2 gap-2 mt-3">
@@ -214,7 +214,7 @@ function ConsiderationMockup() {
         Request consideration
       </p>
       <p className="text-[12px] text-[var(--gem-gray-300)] m-0 mb-4 leading-snug">
-        Select which scripts to include. Our industry partners will consider everything you submit.
+        Select which scripts to include. Producers and reps will review everything you submit.
       </p>
       <div className="space-y-2">
         <ConsiderationScriptRow title="The Quiet Part" format="Pilot" score={84} selected />
@@ -422,7 +422,7 @@ function VisionFlowMockup() {
         <FlowArrow />
         <FlowNode
           label="Consideration"
-          sub="Reviewed by working industry"
+          sub="Producers and reps review your work"
           color="#16a34a"
           bg="rgba(22,163,74,0.06)"
           border="rgba(22,163,74,0.30)"
