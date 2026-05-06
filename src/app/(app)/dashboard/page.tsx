@@ -158,7 +158,7 @@ export default async function DashboardPage() {
     const scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
     latestReviewedScripts = visible
       .filter(s => scriptIds.includes(s.id))
-      .map(s => ({ title: s.title, score: evalBySub.get(s.id)?.score ?? null }))
+      .map(s => ({ title: s.title, score: myEvalBySub.get(s.id)?.weighted_score ?? null }))
       .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
   }
 
