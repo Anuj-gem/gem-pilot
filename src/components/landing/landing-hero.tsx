@@ -72,9 +72,8 @@ export function LandingHero() {
 
         <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[640px] mx-auto">
           Upload your screenplay and get a structured, producer-grade
-          evaluation in under a minute. Then match directly to real
-          opportunities from producers, reps, and financiers. Your first
-          evaluation is free.
+          evaluation in under a minute. Then submit your portfolio for
+          consideration by our industry partners. Your first script is free.
         </p>
 
         {/* Primary CTA */}

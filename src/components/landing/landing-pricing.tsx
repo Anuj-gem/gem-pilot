@@ -32,9 +32,9 @@ export function LandingPricing() {
             period="forever"
             blurb="See what your script is worth."
             features={[
-              'One full evaluation — no blur, no paywall',
-              'Sharable report URL',
-              'See which opportunities your script qualifies for',
+              'One full script evaluation',
+              'One consideration request',
+              'Shareable report URL',
             ]}
             cta="Get your free evaluation"
             href="/submit"
@@ -44,14 +44,11 @@ export function LandingPricing() {
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="Unlimited evaluations. Real industry access."
+            blurb="Unlimited scripts, ongoing industry consideration, and a shareable portfolio."
             features={[
               'Unlimited script evaluations',
-              '3 opportunity submissions per month',
-              'Structured feedback from industry reviewers',
-              'Revise and rescore any script',
-              'Full writer profile visible to industry',
-              'Branded PDF download of every report',
+              'Ongoing industry consideration as you write',
+              'Shareable writer portfolio',
             ]}
             cta="Go Pro"
             href="/submit"

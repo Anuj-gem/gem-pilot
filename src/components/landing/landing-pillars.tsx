@@ -3,8 +3,6 @@
 // content into one page. Sections: evaluation, opportunities, feedback,
 // profile, vision.
 
-import { ArrowRight } from 'lucide-react'
-
 export function LandingPillars() {
   return (
     <section className="px-5 sm:px-8 pb-8 sm:pb-12">
@@ -17,30 +15,30 @@ export function LandingPillars() {
           align="left"
         />
         <Pillar
-          eyebrow="Exclusive opportunities"
-          title="Curated listings from working industry. Limited submissions keep the signal high."
-          body="Active opportunities from producers, lit reps, talent reps, and financiers — each with specific requirements. When your script qualifies, submit directly. Three submissions per month means every one counts. No query letters, no entry fees, no months of waiting."
-          mockup={<OpportunityCardsMockup />}
+          eyebrow="Industry consideration"
+          title="Your portfolio, reviewed by working industry."
+          body="Request consideration and our industry partners review your full body of work — every script, every score, every evaluation. They're not reading a query letter. They're reading what a producer would read before taking a meeting. As you write new scripts, request consideration again."
+          mockup={<ConsiderationMockup />}
           align="right"
         />
         <Pillar
           eyebrow="Real feedback"
-          title="Industry partners read your evaluation. Then they respond."
-          body="When you submit to an opportunity, the reviewer gets your full structured evaluation — not a logline and a prayer. They respond with real feedback: what worked, what didn't, and whether there's a path forward. This isn't a form rejection."
+          title="Not a form rejection. An actual response."
+          body="When industry partners review your portfolio, they respond with real feedback — what landed, what needs work, and whether there's a path forward. The kind of notes you'd get from a development executive, not a contest judge."
           mockup={<FeedbackMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="Your profile"
-          title="One page for everything you've written."
-          body="Your scripts, your scores, your track record — all in one place. When industry partners look at your submission, this is what they see. A career page that grows with every script you evaluate."
+          eyebrow="Your portfolio"
+          title="A shareable record of everything you've written."
+          body="Your scripts, your scores, your track record — all in one place. When industry partners consider your work, this is what they see. A portfolio that grows with every script you evaluate."
           mockup={<ProfileMockup />}
           align="right"
         />
         <Pillar
           eyebrow="Named for the producer who set the standard"
           title="Built to get great work made."
-          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation opens the door, opportunities are on the other side. Every feature we build moves toward the same thing: closing the gap between great scripts and the people who can make them."
+          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation builds your case, consideration puts it in front of the right people. Every feature we build moves toward the same thing: closing the gap between great scripts and the people who can make them."
           mockup={<VisionFlowMockup />}
           align="left"
         />
@@ -208,100 +206,63 @@ function ReadTile({
   )
 }
 
-// ── Mockup 2: Opportunity cards ─────────────────────────────────
-function OpportunityCardsMockup() {
+// ── Mockup 2: Consideration ─────────────────────────────────────
+function ConsiderationMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <div className="flex items-center justify-between mb-3">
-        <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
-          Active opportunities
-        </p>
-        <span className="text-[10px] font-bold text-[var(--gem-gray-500)] px-2 py-0.5 rounded-full" style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}>
-          3 of 3 submissions used
-        </span>
+      <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+        Request consideration
+      </p>
+      <p className="text-[12px] text-[var(--gem-gray-300)] m-0 mb-4 leading-snug">
+        Select which scripts to include. Our industry partners will consider everything you submit.
+      </p>
+      <div className="space-y-2">
+        <ConsiderationScriptRow title="The Quiet Part" format="Pilot" score={84} selected />
+        <ConsiderationScriptRow title="Lawn Order" format="Feature" score={71} selected />
+        <ConsiderationScriptRow title="Burning Daylight" format="Pilot" score={67} selected={false} />
       </div>
-      <div className="space-y-2.5">
-        <OppCard
-          title="Character-driven thriller — limited series"
-          description="Looking for contained, high-tension pilots with a strong singular lead."
-          dealType="Option"
-          perspective="Producer"
-          tags={['Thriller', 'Series', 'Indie']}
-          qualifies
-        />
-        <OppCard
-          title="Underrepresented voices — comedy features"
-          description="Fresh comedic POVs from writers with a distinct voice."
-          dealType="Representation"
-          perspective="Lit Rep"
-          tags={['Comedy', 'Feature']}
-        />
-        <OppCard
-          title="Action/thriller IP acquisition"
-          description="High-concept action scripts with franchise potential."
-          dealType="Purchase"
-          perspective="Producer"
-          tags={['Action', 'Feature', 'Studio']}
-        />
+      <div
+        className="mt-3 rounded-lg px-3.5 py-2.5"
+        style={{ background: 'rgba(124,58,237,0.06)', border: '1px solid rgba(124,58,237,0.20)' }}
+      >
+        <p className="text-[11px] text-[var(--gem-accent)] m-0 leading-snug">
+          <strong>2 scripts</strong> will be reviewed together as your portfolio.
+        </p>
+      </div>
+      <div
+        className="mt-3 w-full rounded-xl py-2.5 text-center text-[13px] font-semibold text-white"
+        style={{ background: 'var(--gem-accent)' }}
+      >
+        Request consideration
       </div>
     </div>
   )
 }
 
-function OppCard({
-  title,
-  description,
-  dealType,
-  perspective,
-  tags,
-  qualifies = false,
-}: {
-  title: string
-  description: string
-  dealType: string
-  perspective: string
-  tags: string[]
-  qualifies?: boolean
-}) {
+function ConsiderationScriptRow({ title, format, score, selected }: { title: string; format: string; score: number; selected: boolean }) {
   return (
     <div
-      className="rounded-xl p-3.5"
+      className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl"
       style={{
-        background: 'var(--gem-gray-900)',
-        border: qualifies
-          ? '1px solid rgba(16,185,129,0.35)'
-          : '1px solid var(--gem-gray-700)',
+        border: selected ? '1px solid rgba(124,58,237,0.30)' : '1px solid var(--gem-gray-700)',
+        background: selected ? 'rgba(124,58,237,0.04)' : 'var(--gem-gray-900)',
       }}
     >
-      <div className="flex flex-wrap gap-1.5 mb-2">
-        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
-          {dealType}
-        </span>
-        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
-          {perspective}
-        </span>
-      </div>
-      <p
-        className="text-[13px] font-bold m-0 mb-1 leading-tight text-[var(--gem-gray-50)]"
-        style={{ fontFamily: 'Georgia, serif' }}
+      <div
+        className="w-4.5 h-4.5 rounded flex items-center justify-center shrink-0"
+        style={{
+          width: 18, height: 18,
+          background: selected ? 'var(--gem-accent)' : 'transparent',
+          border: selected ? 'none' : '2px solid var(--gem-gray-600)',
+        }}
       >
-        {title}
-      </p>
-      <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-2 leading-snug line-clamp-1">
-        {description}
-      </p>
-      <div className="flex flex-wrap items-center gap-1.5">
-        {tags.map(t => (
-          <span key={t} className="text-[9.5px] font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">
-            {t}
-          </span>
-        ))}
-        {qualifies && (
-          <span className="inline-flex items-center gap-1 text-[9.5px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 ml-auto">
-            <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.15"/><path d="M3.5 6.2L5.2 7.8L8.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            Your script qualifies
-          </span>
-        )}
+        {selected && <span className="text-white text-[10px] font-bold">✓</span>}
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-[12.5px] font-bold text-[var(--gem-gray-50)] m-0 truncate leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+          {title}
+        </p>
+        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 mt-0.5">{format} · {score}</p>
       </div>
     </div>
   )
@@ -312,41 +273,20 @@ function FeedbackMockup() {
   return (
     <div className="p-5 sm:p-6">
       <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-        Submission feedback
+        Consideration feedback
       </p>
 
-      {/* The opportunity context */}
+      {/* Portfolio context */}
       <div
-        className="rounded-lg px-3 py-2.5 mb-3"
+        className="rounded-lg px-3 py-2.5 mb-3 flex items-center justify-between gap-2"
         style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
       >
-        <div className="flex flex-wrap gap-1.5 mb-1.5">
-          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700">
-            Option
-          </span>
-          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700">
-            Producer
-          </span>
-        </div>
-        <p
-          className="text-[12px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          Character-driven thriller — limited series
-        </p>
-      </div>
-
-      {/* The script submitted */}
-      <div
-        className="rounded-lg px-3 py-2 mb-3 flex items-center justify-between gap-2"
-        style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.25)' }}
-      >
         <div className="min-w-0">
-          <p className="text-[9px] font-bold uppercase tracking-wider text-emerald-700 m-0 mb-0.5">
-            Your script
+          <p className="text-[9px] font-bold uppercase tracking-wider text-[var(--gem-gray-500)] m-0 mb-0.5">
+            Your portfolio
           </p>
           <p className="text-[11.5px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
-            Untitled mob-therapy pilot
+            2 scripts submitted
           </p>
         </div>
         <span className="shrink-0 text-[10px] font-bold px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">
@@ -360,14 +300,14 @@ function FeedbackMockup() {
         style={{ background: 'rgba(124,58,237,0.04)', border: '1px solid rgba(124,58,237,0.20)' }}
       >
         <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
-          Reviewer feedback
+          Industry feedback
         </p>
         <p className="text-[12px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-2">
-          Strong premise and the lead is compelling. The contained setting works for our budget range. We&apos;d want to see the pilot tightened in act two — the therapy sessions lose tension after the midpoint reveal.
+          Strong voice across both scripts. The pilot has a compelling lead and the contained setting works. The feature needs tightening in act two — momentum drops after the midpoint. We&apos;d want to see a revision before moving forward, but there&apos;s real potential here.
         </p>
         <div className="flex items-center gap-1.5">
           <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}>
-            Requesting revision
+            Upload new work to be reconsidered
           </span>
         </div>
       </div>
@@ -407,7 +347,7 @@ function ProfileMockup() {
       >
         <ProfileStat label="Scripts" value="4" />
         <ProfileStat label="Avg Score" value="78" />
-        <ProfileStat label="Submissions" value="6" />
+        <ProfileStat label="Considerations" value="3" />
       </div>
       <div className="mt-3 space-y-1.5">
         <ScriptStub title="The Quiet Part" format="Pilot" score={84} />
@@ -481,8 +421,8 @@ function VisionFlowMockup() {
         />
         <FlowArrow />
         <FlowNode
-          label="Opportunities"
-          sub="Matched to real buyers"
+          label="Consideration"
+          sub="Reviewed by working industry"
           color="#16a34a"
           bg="rgba(22,163,74,0.06)"
           border="rgba(22,163,74,0.30)"

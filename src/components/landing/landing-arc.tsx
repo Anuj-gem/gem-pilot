@@ -5,7 +5,7 @@
 // picture: every visitor sees what GEM does for them as a writer
 // before they decide whether to scroll the rest of the page.
 
-import { FileText, Sparkles, Target, Send } from 'lucide-react'
+import { FileText, Sparkles, Send, MessageCircle } from 'lucide-react'
 
 const STEPS = [
   {
@@ -19,14 +19,14 @@ const STEPS = [
     sub: 'A structured report covering story, characters, packaging, budget, and what it would take to make. Under a minute.',
   },
   {
-    icon: Target,
-    title: 'Match',
-    sub: "Your script's qualities are matched against active opportunities from producers, reps, and financiers.",
+    icon: Send,
+    title: 'Request consideration',
+    sub: 'Submit your portfolio for review by our industry partners. They see your evaluation, your scores, everything.',
   },
   {
-    icon: Send,
-    title: 'Submit',
-    sub: 'When you qualify, submit directly. No query letters. No blind submissions.',
+    icon: MessageCircle,
+    title: 'Get feedback',
+    sub: 'Real feedback on your work — what landed, what didn’t, and whether there’s a path forward.',
   },
 ]
 
@@ -45,7 +45,7 @@ export function LandingArc() {
             className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            From upload to opportunity.
+            From upload to consideration.
           </h2>
         </div>
 
