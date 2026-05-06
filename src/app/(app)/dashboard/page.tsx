@@ -122,7 +122,6 @@ export default async function DashboardPage() {
     }
   }
 
-  const totalOpenCallMatches = new Set([...matchesByScript.values()].flatMap(m => m.map(x => x.oppId))).size
 
   // ---------- CONSIDERATIONS ----------
   const { data: considerations } = await service
@@ -318,25 +317,6 @@ export default async function DashboardPage() {
           </div>
         )}
 
-        {/* ── STAT CARDS ──────────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-2.5">
-          <div className="rounded-xl bg-purple-50 border border-purple-100 px-3 py-3.5 text-center">
-            <p className="text-[26px] font-bold text-purple-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
-              {completedCount}
-            </p>
-            <p className="text-[12px] text-purple-400 font-medium mt-1 m-0">
-              {completedCount === 1 ? 'Script' : 'Scripts'}
-            </p>
-          </div>
-          <div className="rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-3.5 text-center">
-            <p className="text-[26px] font-bold text-emerald-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
-              {totalOpenCallMatches}
-            </p>
-            <p className="text-[12px] text-emerald-500 font-medium mt-1 m-0">
-              Open calls you fit
-            </p>
-          </div>
-        </div>
 
         {/* ── CONSIDERATION STATUS ────────────────────────── */}
         {activeConsideration && (
