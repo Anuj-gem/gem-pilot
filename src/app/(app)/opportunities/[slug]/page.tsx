@@ -1,16 +1,14 @@
 // /opportunities/[slug] — individual opportunity detail page.
-// Proper listing layout with perspective + deal type prominent.
-// opportunities-v1 (2026-05-03).
+// Consideration model: informational only — no per-opportunity submissions.
+// opportunities-v5 consideration (2026-05-06).
 
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { type SubmissionState } from '@/components/opportunities/submit-button'
-import { SubmissionList } from '@/components/opportunities/submission-list'
 import { PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
-import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
+import { ArrowRight } from 'lucide-react'
 
 function svc() {
   return createServerClient(
@@ -71,11 +69,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
 
-  let qualifyingScripts: { id: string; title: string; evaluation_id: string; prompt_version: string | null }[] = []
-  const existingSubmissions = new Map<string, SubmissionState>()
-  let monthlyUsed = 0
-  let monthlyLimit = 3
-  let isPro = false
+  let qualifyingScripts: { id: string; title: string; evaluationId: string }[] = []
 
   if (user) {
     const { data: userSubs } = await service
@@ -89,7 +83,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     if (subIds.length > 0) {
       const { data: evals } = await service
         .from('script_evaluations')
-        .select('id, submission_id, weighted_score, evaluation, prompt_version')
+        .select('id, submission_id, weighted_score, evaluation')
         .in('submission_id', subIds)
 
       for (const sub of (userSubs || []) as any[]) {
@@ -110,44 +104,10 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) qualifies = false
 
         if (qualifies) {
-          qualifyingScripts.push({ id: sub.id, title: sub.title, evaluation_id: ev.id, prompt_version: ev.prompt_version ?? null })
+          qualifyingScripts.push({ id: sub.id, title: sub.title, evaluationId: ev.id })
         }
       }
     }
-
-    // Fetch existing submissions for this opportunity
-    const qualifyingSubIds = qualifyingScripts.map(s => s.id)
-    if (qualifyingSubIds.length > 0) {
-      const { data: existingSubs } = await service
-        .from('opportunity_submissions')
-        .select('id, submission_id, status, feedback')
-        .eq('opportunity_id', opp.id)
-        .in('submission_id', qualifyingSubIds)
-        .neq('status', 'withdrawn')
-      for (const es of (existingSubs || []) as { id: string; submission_id: string; status: string; feedback: string | null }[]) {
-        existingSubmissions.set(es.submission_id, { id: es.id, status: es.status as any, feedback: es.feedback })
-      }
-    }
-
-    // Check subscription status
-    const { data: profile } = await auth
-      .from('profiles')
-      .select('subscription_status, bonus_submissions')
-      .eq('id', user.id)
-      .single()
-    isPro = profile?.subscription_status === 'active'
-    monthlyLimit = 3 + ((profile as any)?.bonus_submissions ?? 0)
-
-    // Count this month's submissions for limit check
-    const now = new Date()
-    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
-    const { count: monthCount } = await service
-      .from('opportunity_submissions')
-      .select('id', { count: 'exact', head: true })
-      .eq('writer_id', user.id)
-      .neq('status', 'withdrawn')
-      .gte('submitted_at', monthStart)
-    monthlyUsed = monthCount ?? 0
   }
 
   const deadline = opp.deadline ? new Date(opp.deadline) : null
@@ -237,41 +197,42 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           )}
 
           {/* ── Your scripts / qualification ── */}
-          {!isPro && user && <UpgradeModalListener />}
           {user ? (
             <div className="border-t border-gray-100 pt-4">
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide m-0">
-                  Your qualifying scripts
-                </h2>
-                {isPro && (() => {
-                  const monthlyLeft = Math.max(0, 3 - Math.min(monthlyUsed, 3))
-                  const bonus = (monthlyLimit - 3)
-                  const total = monthlyLeft + bonus
-                  const now = new Date()
-                  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
-                  const resetDays = Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
-                  if (total > 0) {
-                    return <span className="text-[11px] text-gray-400 font-medium">{total} submission{total !== 1 ? 's' : ''} left{bonus > 0 ? ` (${bonus} bonus)` : ''}</span>
-                  }
-                  return <span className="text-[11px] text-gray-400 font-medium">All used · 3 more in {resetDays}d</span>
-                })()}
-              </div>
+              <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide m-0 mb-3">
+                Your qualifying scripts
+              </h2>
               {qualifyingScripts.length > 0 ? (
-                <SubmissionList
-                  opportunityId={opp.id}
-                  scripts={qualifyingScripts.map(s => ({ id: s.id, title: s.title, promptVersion: s.prompt_version, evaluationId: s.evaluation_id }))}
-                  existingSubmissions={Object.fromEntries(existingSubmissions)}
-                  pendingCount={monthlyUsed}
-                  monthlyLimit={monthlyLimit}
-                  isPro={isPro}
-                />
+                <>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {qualifyingScripts.map(s => (
+                      <Link
+                        key={s.id}
+                        href={`/report/${s.evaluationId}`}
+                        className="text-[12px] font-medium text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-lg hover:border-purple-300 hover:text-purple-700 transition-colors truncate max-w-[220px]"
+                      >
+                        {s.title}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="rounded-lg bg-purple-50 border border-purple-100 px-4 py-3">
+                    <p className="text-[13px] text-purple-800 m-0 leading-snug">
+                      {qualifyingScripts.length === 1 ? 'This script is' : 'These scripts are'} automatically included when you request consideration.
+                    </p>
+                    <Link
+                      href="/consideration/submit"
+                      className="inline-flex items-center gap-1.5 mt-2 text-[13px] font-bold text-purple-600 hover:text-purple-800 transition-colors"
+                    >
+                      Request consideration <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </>
               ) : (
                 <div className="px-3 py-3 rounded-lg bg-gray-50 border border-gray-100">
                   <p className="text-[13px] text-gray-500 m-0">
-                    None of your scripts match yet.{' '}
+                    None of your scripts match this opportunity yet.{' '}
                     <Link href="/submit" className="text-purple-600 font-semibold hover:underline">
-                      Submit a script
+                      Upload a script
                     </Link>{' '}
                     that fits the criteria above.
                   </p>
@@ -283,9 +244,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               <div className="px-3 py-3 rounded-lg bg-gray-50 border border-gray-100">
                 <p className="text-[13px] text-gray-500 m-0">
                   <Link href={`/login?redirect=/opportunities/${opp.slug}`} className="text-purple-600 font-semibold hover:underline">
-                    Sign in
+                    Log in
                   </Link>{' '}
-                  to see if your scripts qualify.
+                  to see if your scripts qualify for this opportunity.
                 </p>
               </div>
             </div>
