@@ -18,7 +18,7 @@ export function OpenCallsDropdown({
     <span className="relative inline-flex items-center">
       <button
         onClick={(e) => { e.stopPropagation(); setOpen(!open) }}
-        className="text-[10.5px] font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+        className="text-[12px] font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
       >
         Open calls ({count}) {open ? '▴' : '▾'}
       </button>

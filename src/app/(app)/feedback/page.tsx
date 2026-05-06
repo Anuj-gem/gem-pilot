@@ -83,7 +83,7 @@ export default async function FeedbackHistoryPage() {
   return (
     <div className="max-w-2xl mx-auto space-y-5">
       <header className="flex items-end justify-between gap-3">
-        <h1 className="text-[18px] font-bold text-gray-900 m-0">Feedback history</h1>
+        <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>Feedback</h1>
         <Link href="/dashboard" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
           ← Dashboard
         </Link>
@@ -91,7 +91,7 @@ export default async function FeedbackHistoryPage() {
 
       {reviewed.length === 0 ? (
         <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-          <p className="text-[13.5px] text-gray-400 m-0">No feedback yet. Submit for consideration to get started.</p>
+          <p className="text-[13.5px] text-gray-400 m-0">No feedback yet. Request consideration to get started.</p>
         </div>
       ) : (
         <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">

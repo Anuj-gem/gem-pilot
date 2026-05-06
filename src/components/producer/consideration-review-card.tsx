@@ -143,7 +143,7 @@ export function ConsiderationReviewCard({
                       </span>
                     )}
                     <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
-                    {s.format && <span className="text-[10.5px] text-gray-400 shrink-0">{s.format}</span>}
+                    {s.format && <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>}
                   </div>
                   {s.evaluationId && (
                     <Link
@@ -177,7 +177,7 @@ export function ConsiderationReviewCard({
                     } hover:border-gray-300`}
                   >
                     <span className="text-[12px] font-bold block">{opt.label}</span>
-                    <span className="text-[10.5px] opacity-70 block mt-0.5 leading-snug">{opt.hint}</span>
+                    <span className="text-[12px] opacity-70 block mt-0.5 leading-snug">{opt.hint}</span>
                   </button>
                 )
               })}
@@ -187,12 +187,12 @@ export function ConsiderationReviewCard({
           {/* Feedback textarea */}
           <div>
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
-              Holistic assessment
+              Overall assessment
             </p>
             <textarea
               value={feedback}
               onChange={e => setFeedback(e.target.value)}
-              placeholder="Commercial positioning, strengths across their portfolio, where they're placeable..."
+              placeholder="Strengths across their portfolio, positioning, where they're placeable..."
               rows={4}
               className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
             />

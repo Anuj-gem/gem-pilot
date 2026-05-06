@@ -58,7 +58,7 @@ export function FeedbackCycle({
       {/* Next steps */}
       {nextSteps && (
         <div className="mt-3 px-3.5 py-3 bg-emerald-50 border border-emerald-200 rounded-lg">
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-emerald-700 m-0 mb-1">Next steps</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-emerald-700 m-0 mb-1">Next steps</p>
           <p className="text-[13px] text-emerald-800 m-0 leading-[1.55]">{nextSteps}</p>
         </div>
       )}

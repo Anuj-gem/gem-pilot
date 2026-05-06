@@ -129,7 +129,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[var(--gem-gray-200)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-600)] hover:border-[var(--gem-gray-400)] transition-colors font-medium"
                   >
                     <Plus size={14} />
-                    New script
+                    Upload a script
                   </Link>
                   <Link
                     href="/consideration/submit"
@@ -179,7 +179,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     }}
                   >
                     <Sparkles size={12} />
-                    Consideration
+                    Request consideration
                   </Link>
                 )}
                 <button

@@ -237,7 +237,7 @@ export default async function DashboardPage() {
             href="/submit"
             className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
           >
-            + Upload a script
+            Upload a script
           </Link>
           {canRequestConsideration ? (
             <Link
@@ -251,11 +251,12 @@ export default async function DashboardPage() {
               In consideration
             </div>
           ) : (
-            <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-400 text-[13px] font-bold text-center cursor-default"
-              title="Upload a new script to unlock your next consideration cycle"
+            <Link
+              href="/submit"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-500 text-[13px] font-bold text-center hover:bg-gray-200 transition-colors"
             >
-              Upload new work to resubmit
-            </div>
+              Upload a new script to resubmit
+            </Link>
           )}
         </div>
 
@@ -265,7 +266,7 @@ export default async function DashboardPage() {
             <p className="text-[26px] font-bold text-purple-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {completedCount}
             </p>
-            <p className="text-[10.5px] text-purple-400 font-medium mt-1 m-0">
+            <p className="text-[12px] text-purple-400 font-medium mt-1 m-0">
               {completedCount === 1 ? 'Script' : 'Scripts'}
             </p>
           </div>
@@ -273,8 +274,8 @@ export default async function DashboardPage() {
             <p className="text-[26px] font-bold text-emerald-600 m-0 leading-none" style={{ fontFamily: 'Georgia, serif' }}>
               {totalOpenCallMatches}
             </p>
-            <p className="text-[10.5px] text-emerald-500 font-medium mt-1 m-0">
-              Open calls matched
+            <p className="text-[12px] text-emerald-500 font-medium mt-1 m-0">
+              Open calls you fit
             </p>
           </div>
         </div>
@@ -337,11 +338,11 @@ export default async function DashboardPage() {
                       <div className="min-w-0 flex-1">
                         <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
                         <div className="flex items-center gap-1.5 mt-0.5">
-                          {s.format && <span className="text-[10.5px] text-gray-400">{s.format}</span>}
+                          {s.format && <span className="text-[12px] text-gray-400">{s.format}</span>}
                           {s.genre && (
                             <>
                               {s.format && <span className="text-gray-200">&middot;</span>}
-                              <span className="text-[10.5px] text-gray-400">{s.genre}</span>
+                              <span className="text-[12px] text-gray-400">{s.genre}</span>
                             </>
                           )}
                           {!s.isProcessing && !s.isLocked && s.openCallMatches.length > 0 && (
@@ -354,7 +355,7 @@ export default async function DashboardPage() {
                             </>
                           )}
                           {s.isProcessing && (
-                            <span className="text-[10.5px] font-medium text-purple-500">Processing&hellip;</span>
+                            <span className="text-[12px] font-medium text-purple-500">Processing&hellip;</span>
                           )}
                         </div>
                       </div>
@@ -363,16 +364,17 @@ export default async function DashboardPage() {
                       {!s.isLocked && !s.isProcessing && (
                         <div className="flex items-center gap-2 shrink-0">
                           {s.inConsideration && (
-                            <span className="text-[10.5px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
+                            <span className="text-[12px] font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">
                               In consideration
                             </span>
                           )}
                           {s.evaluationId && (
                             <Link
                               href={`/report/${s.evaluationId}`}
-                              className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                              className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-colors"
+                              title="View report"
                             >
-                              Report
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                             </Link>
                           )}
                         </div>
@@ -387,13 +389,13 @@ export default async function DashboardPage() {
           {/* Pro/Free badge */}
           <div className="flex items-center justify-between mt-3">
             {isPro ? (
-              <span className="text-[10.5px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">Pro</span>
+              <span className="text-[12px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full">Pro</span>
             ) : (
-              <span className="text-[10.5px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Free</span>
+              <span className="text-[12px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full">Free</span>
             )}
             {isTrial && (
-              <span className="text-[11.5px] text-gray-400">
-                Upgrade for unlimited scripts &amp; ongoing consideration
+              <span className="text-[12px] text-gray-400">
+                Upgrade for unlimited scripts
               </span>
             )}
           </div>
@@ -452,7 +454,7 @@ export default async function DashboardPage() {
           ) : completedCount > 0 ? (
             /* Has scripts but no feedback — prompt to submit */
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-              <p className="text-[13.5px] text-gray-500 m-0 mb-3">No feedback yet. Submit your portfolio for consideration to receive holistic notes.</p>
+              <p className="text-[13.5px] text-gray-500 m-0 mb-3">No feedback yet. Request consideration to get notes on your work.</p>
               {canRequestConsideration && (
                 <Link
                   href="/consideration/submit"

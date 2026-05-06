@@ -140,7 +140,7 @@ export default async function ScriptsPage() {
           href="/submit"
           className="text-[12px] font-bold text-white bg-gray-900 hover:bg-gray-800 px-3 py-1.5 rounded-lg transition-colors"
         >
-          + New script
+          Upload a script
         </Link>
       </header>
 
@@ -149,7 +149,7 @@ export default async function ScriptsPage() {
         <div className="rounded-xl bg-purple-50 border border-purple-100 px-4 py-3.5 mb-4 flex items-center justify-between">
           <div>
             <p className="text-[13px] font-bold text-purple-900 m-0">Ready for consideration</p>
-            <p className="text-[11.5px] text-purple-600 m-0 mt-0.5">Submit your portfolio for holistic feedback.</p>
+            <p className="text-[12px] text-purple-600 m-0 mt-0.5">Get feedback on your strengths and next steps.</p>
           </div>
           <Link
             href="/consideration/submit"
@@ -232,15 +232,15 @@ export default async function ScriptsPage() {
                     <div className="min-w-0 flex-1">
                       <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
                       <div className="flex items-center gap-1.5 mt-0.5">
-                        {s.declared_format && <span className="text-[10.5px] text-gray-400">{s.declared_format}</span>}
+                        {s.declared_format && <span className="text-[12px] text-gray-400">{s.declared_format}</span>}
                         {ev?.genre && (
                           <>
                             {s.declared_format && <span className="text-gray-200">&middot;</span>}
-                            <span className="text-[10.5px] text-gray-400">{ev.genre}</span>
+                            <span className="text-[12px] text-gray-400">{ev.genre}</span>
                           </>
                         )}
                         {stillProcessing && (
-                          <span className="text-[10.5px] font-medium text-purple-500">Processing&hellip;</span>
+                          <span className="text-[12px] font-medium text-purple-500">Processing&hellip;</span>
                         )}
                       </div>
                     </div>
@@ -249,21 +249,22 @@ export default async function ScriptsPage() {
                     {!isLocked && !stillProcessing && (
                       <div className="flex items-center gap-2 shrink-0">
                         {inActive && (
-                          <span className="text-[10.5px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
+                          <span className="text-[12px] font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">
                             In consideration
                           </span>
                         )}
                         {!inActive && wasReviewed && (
-                          <span className="text-[10.5px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
-                            Considered
+                          <span className="text-[12px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                            Reviewed
                           </span>
                         )}
                         {ev && (
                           <Link
                             href={`/report/${ev.id}`}
-                            className="shrink-0 text-[11px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded-md transition-colors"
+                            className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-colors"
+                            title="View report"
                           >
-                            Report
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                           </Link>
                         )}
                       </div>
@@ -279,13 +280,13 @@ export default async function ScriptsPage() {
       {/* Pro/Free badge */}
       <div className="flex items-center justify-between mt-3">
         {isPro ? (
-          <span className="text-[10.5px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">Pro</span>
+          <span className="text-[12px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full">Pro</span>
         ) : (
-          <span className="text-[10.5px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">Free</span>
+          <span className="text-[12px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full">Free</span>
         )}
         {isTrial && (
-          <span className="text-[11.5px] text-gray-400">
-            Upgrade for unlimited scripts &amp; consideration
+          <span className="text-[12px] text-gray-400">
+            Upgrade for unlimited scripts
           </span>
         )}
       </div>

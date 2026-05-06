@@ -58,7 +58,7 @@ export function MobileTabBar() {
                 }`}
               >
                 <Icon size={18} strokeWidth={active ? 2.4 : 2} />
-                <span className="text-[10.5px] font-semibold">{t.label}</span>
+                <span className="text-[11px] font-semibold">{t.label}</span>
               </Link>
             </li>
           )

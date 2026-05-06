@@ -92,7 +92,7 @@ export default async function OpportunitiesPage() {
     <div className="max-w-2xl mx-auto">
       <div className="flex items-end justify-between mb-5">
         <div>
-          <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1 m-0">Browse</p>
+          <p className="text-[12px] uppercase tracking-[0.18em] font-bold text-purple-700 mb-1 m-0">Browse</p>
           <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
             Open calls
           </h1>
@@ -161,13 +161,13 @@ export default async function OpportunitiesPage() {
                       {/* Tags */}
                       <div className="flex flex-wrap gap-1.5 mt-2">
                         {opp.formats.length > 0 && opp.formats.map(f => (
-                          <span key={f} className="text-[10.5px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{f}</span>
+                          <span key={f} className="text-[12px] text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">{f}</span>
                         ))}
                         {opp.genres.length > 0 && opp.genres.slice(0, 3).map(g => (
-                          <span key={g} className="text-[10.5px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{g}</span>
+                          <span key={g} className="text-[12px] text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">{g}</span>
                         ))}
                         {opp.min_score != null && (
-                          <span className="text-[10.5px] text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full font-medium">
+                          <span className="text-[12px] text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full font-medium">
                             {opp.min_score}+ score
                           </span>
                         )}
@@ -180,8 +180,8 @@ export default async function OpportunitiesPage() {
                 {/* Qualifying scripts (logged-in only) */}
                 {quals.length > 0 && (
                   <div className="border-t border-gray-100 px-5 py-2.5 bg-emerald-50/50">
-                    <p className="text-[10.5px] font-bold text-emerald-700 m-0 mb-1.5">
-                      {quals.length} qualifying {quals.length === 1 ? 'script' : 'scripts'}
+                    <p className="text-[12px] font-bold text-emerald-700 m-0 mb-1.5">
+                      {quals.length} of your {quals.length === 1 ? 'script fits' : 'scripts fit'}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {quals.map(q => (

@@ -70,7 +70,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
       {/* New scripts — shown first */}
       {newScripts.length > 0 && (
         <>
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-purple-600 m-0 mb-2">
+          <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-purple-600 m-0 mb-2">
             {carried.length > 0 ? 'New scripts' : 'Your scripts'}
           </p>
           {newScripts.map(s => {
@@ -107,7 +107,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
       {carried.length > 0 && (
         <>
           <div className="h-2" />
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
+          <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
             Previously considered
           </p>
           {carried.map(s => (
@@ -124,7 +124,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
                   {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
                 </p>
               </div>
-              <span className="text-[10.5px] text-gray-400 font-medium shrink-0">Included</span>
+              <span className="text-[12px] text-gray-400 font-medium shrink-0">Included</span>
             </div>
           ))}
         </>
@@ -135,7 +135,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
         <div className="mt-4 px-4 py-3 bg-purple-50 border border-purple-100 rounded-xl">
           <p className="text-[12.5px] text-purple-700 m-0 leading-[1.5]">
             <strong>{totalCount} {totalCount === 1 ? 'script' : 'scripts'}</strong> will be reviewed together as your portfolio.
-            You&apos;ll receive holistic feedback on your commercial positioning and next steps.
+            You&apos;ll receive feedback on your strengths, positioning, and next steps.
           </p>
         </div>
       )}
@@ -149,7 +149,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
         disabled={submitting || totalCount === 0}
         className="w-full mt-5 px-4 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[14px] font-bold transition-colors"
       >
-        {submitting ? 'Submitting…' : 'Submit for consideration'}
+        {submitting ? 'Submitting…' : 'Request consideration'}
       </button>
 
       <p className="text-[11.5px] text-gray-400 text-center mt-3 m-0">
