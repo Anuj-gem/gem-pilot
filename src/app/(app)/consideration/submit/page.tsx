@@ -36,6 +36,30 @@ export default async function ConsiderationSubmitPage() {
     redirect('/dashboard')
   }
 
+  // Check if eligible — must have new work since last review
+  const { data: lastReview } = await service
+    .from('considerations')
+    .select('reviewed_at')
+    .eq('writer_id', user.id)
+    .eq('status', 'reviewed')
+    .order('reviewed_at', { ascending: false })
+    .limit(1)
+    .maybeSingle()
+
+  if (lastReview?.reviewed_at) {
+    const { data: newerScripts } = await supabase
+      .from('script_submissions')
+      .select('id')
+      .eq('user_id', user.id)
+      .eq('status', 'completed')
+      .gt('created_at', lastReview.reviewed_at)
+      .limit(1)
+
+    if (!newerScripts || newerScripts.length === 0) {
+      redirect('/dashboard')
+    }
+  }
+
   // Check subscription status
   const { data: profile } = await supabase
     .from('profiles')

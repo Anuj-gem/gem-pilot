@@ -273,34 +273,50 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* ── TWO CTAs ──────────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-2.5">
-          <Link
-            href="/submit"
-            className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
-          >
-            Upload a script
-          </Link>
-          {canRequestConsideration ? (
+        {/* ── CTAs ──────────────────────────────────── */}
+        {canRequestConsideration ? (
+          <div className="grid grid-cols-2 gap-2.5">
+            <Link
+              href="/submit"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
+            >
+              Upload a script
+            </Link>
             <Link
               href="/consideration/submit"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors text-center"
             >
               Request consideration
             </Link>
-          ) : hasActiveConsideration ? (
+          </div>
+        ) : hasActiveConsideration ? (
+          <div className="grid grid-cols-2 gap-2.5">
+            <Link
+              href="/submit"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
+            >
+              Upload a script
+            </Link>
             <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-100 text-purple-600 text-[13px] font-bold text-center cursor-default">
               In consideration
             </div>
-          ) : (
+          </div>
+        ) : (
+          <div className="space-y-2.5">
             <Link
               href="/submit"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-500 text-[13px] font-bold text-center hover:bg-gray-200 transition-colors"
+              className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
             >
-              Upload a new script to resubmit
+              Upload a script
             </Link>
-          )}
-        </div>
+            <div className="rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+              <p className="text-[13px] font-bold text-gray-500 m-0">Not yet eligible for consideration</p>
+              <p className="text-[12px] text-gray-400 m-0 mt-1 leading-snug">
+                Upload a new script to be considered again. Check your <Link href="/feedback" className="text-purple-600 font-semibold hover:text-purple-800">previous feedback</Link> for guidance.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* ── STAT CARDS ──────────────────────────────────── */}
         <div className="grid grid-cols-2 gap-2.5">
