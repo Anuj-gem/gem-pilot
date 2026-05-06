@@ -17,14 +17,14 @@ export function LandingPillars() {
         <Pillar
           eyebrow="Get considered"
           title="Put your scripts in front of producers, managers, and agents."
-          body="Request consideration and real people in the entertainment industry review your work — every script, every score, every evaluation. They're not reading a query letter. They're reading what they'd read before taking a meeting. Write something new? Request consideration again."
+          body="Request consideration and real people in the entertainment industry review your work. Every script, every score, every evaluation. Not a query letter. What someone would actually read before taking a meeting. Write something new? Request consideration again."
           mockup={<ConsiderationMockup />}
           align="right"
         />
         <Pillar
           eyebrow="Real feedback"
           title="Not a form rejection. An actual response."
-          body="When producers and reps review your work, they respond with real notes — what landed, what needs work, and whether they want to see more. The kind of feedback you'd get in a development meeting, not from a contest."
+          body="When producers and reps review your work, they respond with real notes. What landed, what needs work, and whether they want to see more. The kind of feedback you get in a development meeting, not from a contest."
           mockup={<FeedbackMockup />}
           align="left"
         />
@@ -133,7 +133,7 @@ function EvaluationReportMockup() {
       {/* Report sections — the 6 things every eval covers */}
       <div className="space-y-0">
         <ReportRow n="01" title="Headline" preview="A one-line pitch someone could forward to their boss." />
-        <ReportRow n="02" title="Cast breakdown" preview="Lead and supporting characters, who'd want to play them." />
+        <ReportRow n="02" title="Cast breakdown" preview="Lead and supporting characters, who would want to play them." />
         <ReportRow n="03" title="Audience and budget" preview="Who this is for, what it would cost to make." />
         <ReportRow n="04" title="Production complexity" preview="Locations, VFX, anything that affects the budget." />
         <ReportRow n="05" title="Development notes" preview="What's working, what's not, and what to fix." />
@@ -303,7 +303,7 @@ function FeedbackMockup() {
           Industry feedback
         </p>
         <p className="text-[12px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-2">
-          Strong voice across both scripts. The pilot has a compelling lead and the contained setting works. The feature needs tightening in act two — momentum drops after the midpoint. We&apos;d want to see a revision before moving forward, but there&apos;s real potential here.
+          Strong voice across both scripts. The pilot has a compelling lead and the contained setting works. The feature needs tightening in act two. We want to see a revision before moving forward, but there is real potential here.
         </p>
         <div className="flex items-center gap-1.5">
           <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}>

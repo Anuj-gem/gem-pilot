@@ -21,12 +21,12 @@ const STEPS = [
   {
     icon: Send,
     title: ‘Request consideration’,
-    sub: ‘Put your scripts in front of producers, managers, and agents. They read your full evaluation — not just a logline.’,
+    sub: "Put your scripts in front of producers, managers, and agents. They read your full evaluation — not just a logline.",
   },
   {
     icon: MessageCircle,
     title: ‘Get feedback’,
-    sub: ‘Hear back with real notes — what worked, what needs work, and whether they want to see more from you.’,
+    sub: "Hear back with real notes — what worked, what needs work, and whether they want to see more from you.",
   },
 ]
 
