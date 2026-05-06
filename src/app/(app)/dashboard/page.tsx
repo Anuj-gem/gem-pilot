@@ -149,16 +149,17 @@ export default async function DashboardPage() {
   }
 
   // Get scripts in latest reviewed consideration (for feedback display)
-  let latestReviewedScriptTitles: string[] = []
+  let latestReviewedScripts: { title: string; score: number | null }[] = []
   if (latestReviewed) {
     const { data: cs } = await service
       .from('consideration_scripts')
       .select('script_submission_id')
       .eq('consideration_id', latestReviewed.id)
     const scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
-    latestReviewedScriptTitles = visible
+    latestReviewedScripts = visible
       .filter(s => scriptIds.includes(s.id))
-      .map(s => s.title)
+      .map(s => ({ title: s.title, score: evalBySub.get(s.id)?.score ?? null }))
+      .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
   }
 
   // ---------- GATE LOGIC ----------
@@ -416,13 +417,35 @@ export default async function DashboardPage() {
                     <p className="text-[13px] text-gray-700 m-0 leading-[1.55]">{latestReviewed.next_steps}</p>
                   </div>
                 )}
-                {latestReviewedScriptTitles.length > 0 && (
-                  <p className="text-[11px] text-gray-400 m-0 mt-3">
-                    Scripts reviewed: {latestReviewedScriptTitles.join(', ')}
-                  </p>
+                {latestReviewedScripts.length > 0 && (
+                  <div className="mt-3 pt-3 border-t border-gray-100">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-gray-400 m-0 mb-2">Scripts reviewed</p>
+                    <div className="space-y-1">
+                      {latestReviewedScripts.slice(0, 3).map((s, i) => (
+                        <div key={i} className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-md">
+                          {s.score != null && (
+                            <span className="text-[13px] font-bold min-w-[24px]" style={{
+                              color: s.score >= 75 ? '#7c3aed' : '#6b7280',
+                            }}>
+                              {Math.round(s.score)}
+                            </span>
+                          )}
+                          <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {latestReviewedScripts.length > 3 && (
+                      <Link
+                        href="/feedback"
+                        className="text-[13px] font-medium text-purple-600 hover:text-purple-800 mt-2 inline-block"
+                      >
+                        + {latestReviewedScripts.length - 3} more scripts
+                      </Link>
+                    )}
+                  </div>
                 )}
                 {latestReviewed.reviewed_at && (
-                  <p className="text-[11px] text-gray-300 m-0 mt-1">
+                  <p className="text-[12px] text-gray-300 m-0 mt-3">
                     {new Date(latestReviewed.reviewed_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                   </p>
                 )}
