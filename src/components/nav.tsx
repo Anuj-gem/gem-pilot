@@ -47,9 +47,12 @@ interface NavProps {
    *  avatar dropdown isn't rendered and we fall back to a small Sign out
    *  button. (Anuj 2026-04-30 v0.10.5.) */
   userData?: NavUserData
+  /** Whether the user can request consideration. When false, the CTA
+   *  is grayed out and shows "Ineligible" instead. */
+  canRequestConsideration?: boolean
 }
 
-export default function Nav({ userData }: NavProps = {}) {
+export default function Nav({ userData, canRequestConsideration = true }: NavProps = {}) {
   const pathname = usePathname()
   const router = useRouter()
   const supabase = createClient()
@@ -126,18 +129,27 @@ export default function Nav({ userData }: NavProps = {}) {
                   })}
                   <Link
                     href="/submit"
-                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[var(--gem-gray-200)] hover:text-[var(--gem-white)] border border-[var(--gem-gray-600)] hover:border-[var(--gem-gray-400)] transition-colors font-medium"
+                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-white text-gray-900 hover:bg-gray-100 transition-colors font-semibold"
                   >
                     <Plus size={14} />
                     Upload a script
                   </Link>
-                  <Link
-                    href="/consideration/submit"
-                    className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
-                  >
-                    <Sparkles size={14} />
-                    Request consideration
-                  </Link>
+                  {canRequestConsideration ? (
+                    <Link
+                      href="/consideration/submit"
+                      className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
+                    >
+                      <Sparkles size={14} />
+                      Request consideration
+                    </Link>
+                  ) : (
+                    <span
+                      className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-gray-700)] text-[var(--gem-gray-400)] cursor-not-allowed font-medium"
+                      title="Upload new work to be considered again"
+                    >
+                      Ineligible
+                    </span>
+                  )}
                   {userData ? (
                     <div className="ml-2">
                       <NavUserMenu
@@ -170,17 +182,23 @@ export default function Nav({ userData }: NavProps = {}) {
                   />
                 )}
                 {!pathname.startsWith('/consideration') && (
-                  <Link
-                    href="/consideration/submit"
-                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
-                    style={{
-                      background: 'var(--gem-accent)',
-                      boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
-                    }}
-                  >
-                    <Sparkles size={12} />
-                    Request consideration
-                  </Link>
+                  canRequestConsideration ? (
+                    <Link
+                      href="/consideration/submit"
+                      className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
+                      style={{
+                        background: 'var(--gem-accent)',
+                        boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
+                      }}
+                    >
+                      <Sparkles size={12} />
+                      Request consideration
+                    </Link>
+                  ) : (
+                    <span className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium text-[var(--gem-gray-400)] bg-[var(--gem-gray-700)] cursor-not-allowed">
+                      Ineligible
+                    </span>
+                  )
                 )}
                 <button
                   className="p-1.5 text-[var(--gem-gray-300)]"

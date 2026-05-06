@@ -167,6 +167,40 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     referralCount = refCount ?? 0
   }
 
+  // Consideration eligibility — determines whether nav CTA is active or grayed out.
+  // Eligible = no active (pending) consideration AND (never reviewed OR has new work since last review).
+  let canRequestConsideration = true
+  const { data: activeCon } = await service
+    .from('considerations')
+    .select('id')
+    .eq('writer_id', user.id)
+    .eq('status', 'pending')
+    .limit(1)
+  if (activeCon && activeCon.length > 0) {
+    canRequestConsideration = false
+  } else {
+    const { data: lastReview } = await service
+      .from('considerations')
+      .select('reviewed_at')
+      .eq('writer_id', user.id)
+      .eq('status', 'reviewed')
+      .order('reviewed_at', { ascending: false })
+      .limit(1)
+      .maybeSingle()
+    if (lastReview?.reviewed_at) {
+      const { data: newerScripts } = await service
+        .from('script_submissions')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('status', 'completed')
+        .gt('created_at', lastReview.reviewed_at)
+        .limit(1)
+      if (!newerScripts || newerScripts.length === 0) {
+        canRequestConsideration = false
+      }
+    }
+  }
+
   const navUserData = {
     profile: {
       full_name: profile?.full_name ?? null,
@@ -190,7 +224,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav userData={navUserData} />
+      <Nav userData={navUserData} canRequestConsideration={canRequestConsideration} />
       {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
           Backend settings + profile columns unchanged for production. */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
