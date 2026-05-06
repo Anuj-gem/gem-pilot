@@ -147,7 +147,7 @@ export default async function PartnerDashboardPage() {
                   scripts={scriptsByConsideration.get(c.id) ?? []}
                   status={c.status}
                   feedback={c.feedback}
-                  outcome={c.outcome}
+
                   nextSteps={c.next_steps}
                 />
               )
@@ -172,7 +172,7 @@ export default async function PartnerDashboardPage() {
                     scripts={scriptsByConsideration.get(c.id) ?? []}
                     status={c.status}
                     feedback={c.feedback}
-                    outcome={c.outcome}
+  
                     nextSteps={c.next_steps}
                   />
                 )

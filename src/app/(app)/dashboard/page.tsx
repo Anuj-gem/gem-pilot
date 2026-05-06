@@ -210,17 +210,6 @@ export default async function DashboardPage() {
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
   const completedCount = allCompleted.length
 
-  const OUTCOME_LABELS: Record<string, string> = {
-    pass: 'Pass',
-    developing: 'Keep developing',
-    advancing: 'Advancing',
-  }
-  const OUTCOME_COLORS: Record<string, string> = {
-    pass: 'text-gray-600 bg-gray-100',
-    developing: 'text-amber-800 bg-amber-100 border border-amber-300',
-    advancing: 'text-emerald-700 bg-emerald-50 border border-emerald-300',
-  }
-
   return (
     <>
       <ProcessingPoller active={isProcessing} />
@@ -418,20 +407,13 @@ export default async function DashboardPage() {
             /* Has feedback — show latest */
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               <div className="px-5 py-4">
-                {latestReviewed.outcome && (
-                  <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full mb-3 ${
-                    OUTCOME_COLORS[latestReviewed.outcome] ?? 'text-gray-600 bg-gray-100'
-                  }`}>
-                    {OUTCOME_LABELS[latestReviewed.outcome] ?? latestReviewed.outcome}
-                  </span>
-                )}
                 <p className="text-[13.5px] text-gray-600 leading-[1.65] m-0 whitespace-pre-line">
                   {latestReviewed.feedback}
                 </p>
                 {latestReviewed.next_steps && (
-                  <div className="mt-3 px-3.5 py-3 bg-emerald-50 border border-emerald-200 rounded-lg">
-                    <p className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-emerald-700 m-0 mb-1">Next steps</p>
-                    <p className="text-[13px] text-emerald-800 m-0 leading-[1.55]">{latestReviewed.next_steps}</p>
+                  <div className="mt-3 px-4 py-3 bg-gray-50 rounded-lg">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-gray-400 m-0 mb-1">What to do next</p>
+                    <p className="text-[13px] text-gray-700 m-0 leading-[1.55]">{latestReviewed.next_steps}</p>
                   </div>
                 )}
                 {latestReviewedScriptTitles.length > 0 && (

@@ -16,37 +16,38 @@ function svc() {
   )
 }
 
-export default async function FeedbackHistoryPage() {
+export default async function FeedbackPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login?redirect=/feedback')
 
   const service = svc()
 
-  // Get all reviewed considerations
+  // Get all reviewed considerations (oldest first so we can identify the first one)
   const { data: considerations } = await service
     .from('considerations')
     .select('id, status, submitted_at, reviewed_at, feedback, outcome, next_steps')
     .eq('writer_id', user.id)
     .eq('status', 'reviewed')
-    .order('reviewed_at', { ascending: false })
+    .order('reviewed_at', { ascending: true })
 
   const reviewed = (considerations || []) as {
     id: string; status: string; submitted_at: string; reviewed_at: string | null
     feedback: string | null; outcome: string | null; next_steps: string | null
   }[]
 
-  // Get scripts for each consideration
+  // Get scripts for each consideration WITH carried_forward flag
   const considerationIds = reviewed.map(c => c.id)
-  const scriptsByConsideration = new Map<string, { title: string; score: number | null }[]>()
+  const scriptsByConsideration = new Map<string, { title: string; score: number | null; carriedForward: boolean }[]>()
 
   if (considerationIds.length > 0) {
     const { data: cs } = await service
       .from('consideration_scripts')
-      .select('consideration_id, script_submission_id')
+      .select('consideration_id, script_submission_id, carried_forward')
       .in('consideration_id', considerationIds)
 
-    const scriptIds = [...new Set((cs || []).map((r: { script_submission_id: string }) => r.script_submission_id))]
+    const allRows = (cs || []) as { consideration_id: string; script_submission_id: string; carried_forward: boolean }[]
+    const scriptIds = [...new Set(allRows.map(r => r.script_submission_id))]
 
     // Get script details
     const scriptMap = new Map<string, { title: string; score: number | null }>()
@@ -69,16 +70,23 @@ export default async function FeedbackHistoryPage() {
     }
 
     // Group by consideration
-    for (const row of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
+    for (const row of allRows) {
       if (!scriptsByConsideration.has(row.consideration_id)) {
         scriptsByConsideration.set(row.consideration_id, [])
       }
       const script = scriptMap.get(row.script_submission_id)
       if (script) {
-        scriptsByConsideration.get(row.consideration_id)!.push(script)
+        scriptsByConsideration.get(row.consideration_id)!.push({
+          ...script,
+          carriedForward: row.carried_forward ?? false,
+        })
       }
     }
   }
+
+  // Display newest first but track which is the chronologically first review
+  const firstId = reviewed[0]?.id ?? null
+  const displayOrder = [...reviewed].reverse()
 
   return (
     <div className="max-w-2xl mx-auto space-y-5">
@@ -89,20 +97,20 @@ export default async function FeedbackHistoryPage() {
         </Link>
       </header>
 
-      {reviewed.length === 0 ? (
+      {displayOrder.length === 0 ? (
         <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
           <p className="text-[13.5px] text-gray-400 m-0">No feedback yet. Request consideration to get started.</p>
         </div>
       ) : (
         <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-          {reviewed.map(c => (
+          {displayOrder.map(c => (
             <FeedbackCycle
               key={c.id}
               reviewedAt={c.reviewed_at}
               feedback={c.feedback}
-              outcome={c.outcome}
               nextSteps={c.next_steps}
               scripts={scriptsByConsideration.get(c.id) ?? []}
+              isFirst={c.id === firstId}
             />
           ))}
         </div>

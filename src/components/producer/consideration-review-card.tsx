@@ -1,36 +1,10 @@
 'use client'
 
 // ConsiderationReviewCard — producer review UI for a writer's consideration.
-// Per-writer holistic review: see full portfolio, provide feedback + outcome.
+// Per-writer review: see full portfolio, provide feedback + next steps.
 
 import { useState } from 'react'
 import Link from 'next/link'
-
-const OUTCOME_OPTIONS = [
-  {
-    value: 'pass',
-    label: 'Pass',
-    hint: 'Not ready for our partners right now.',
-    color: 'border-gray-300 bg-gray-50 text-gray-600',
-    selectedColor: 'border-gray-400 bg-gray-100 text-gray-800',
-  },
-  {
-    value: 'developing',
-    label: 'Keep developing',
-    hint: 'Promising — specific feedback on what to do next.',
-    color: 'border-gray-200 bg-white text-gray-500',
-    selectedColor: 'border-amber-300 bg-amber-50 text-amber-800',
-  },
-  {
-    value: 'advancing',
-    label: 'Advancing',
-    hint: 'Moving this writer forward to partners.',
-    color: 'border-gray-200 bg-white text-gray-500',
-    selectedColor: 'border-emerald-300 bg-emerald-50 text-emerald-800',
-  },
-] as const
-
-type Outcome = typeof OUTCOME_OPTIONS[number]['value'] | null
 
 export function ConsiderationReviewCard({
   considerationId,
@@ -40,7 +14,6 @@ export function ConsiderationReviewCard({
   scripts,
   status,
   feedback: initialFeedback,
-  outcome: initialOutcome,
   nextSteps: initialNextSteps,
 }: {
   considerationId: string
@@ -50,12 +23,10 @@ export function ConsiderationReviewCard({
   scripts: { title: string; score: number | null; evaluationId: string | null; format: string | null }[]
   status: string
   feedback: string | null
-  outcome: string | null
   nextSteps: string | null
 }) {
   const [feedback, setFeedback] = useState(initialFeedback ?? '')
   const [nextSteps, setNextSteps] = useState(initialNextSteps ?? '')
-  const [outcome, setOutcome] = useState<Outcome>((initialOutcome as Outcome) ?? null)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [reviewed, setReviewed] = useState(status === 'reviewed')
@@ -67,7 +38,7 @@ export function ConsiderationReviewCard({
     : null
 
   async function handleSend() {
-    if (!feedback.trim() || !outcome) return
+    if (!feedback.trim()) return
     setSaving(true)
     setSaved(false)
     const res = await fetch('/api/consideration/review', {
@@ -76,7 +47,6 @@ export function ConsiderationReviewCard({
       body: JSON.stringify({
         consideration_id: considerationId,
         feedback: feedback.trim(),
-        outcome,
         next_steps: nextSteps.trim() || null,
       }),
     })
@@ -99,7 +69,7 @@ export function ConsiderationReviewCard({
           <div className="flex items-center gap-2 mb-0.5">
             <span className="text-[14.5px] font-semibold text-gray-900">{writerName}</span>
             {writerHandle && (
-              <span className="text-[11px] text-gray-400">@{writerHandle}</span>
+              <span className="text-[12px] text-gray-400">@{writerHandle}</span>
             )}
             {avgScore != null && (
               <span className="text-[12px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">
@@ -130,7 +100,7 @@ export function ConsiderationReviewCard({
         <div className="mt-3 pt-3 border-t border-gray-100 space-y-3">
           {/* Portfolio */}
           <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-2">Portfolio</p>
+            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-2">Portfolio</p>
             <div className="space-y-1.5">
               {scripts.map((s, i) => (
                 <div key={i} className="flex items-center justify-between px-3 py-2 bg-gray-50 rounded-lg">
@@ -149,7 +119,7 @@ export function ConsiderationReviewCard({
                     <Link
                       href={`/report/${s.evaluationId}`}
                       target="_blank"
-                      className="text-[11px] font-bold text-purple-600 hover:text-purple-800 shrink-0"
+                      className="text-[12px] font-bold text-purple-600 hover:text-purple-800 shrink-0"
                     >
                       Report →
                     </Link>
@@ -159,34 +129,9 @@ export function ConsiderationReviewCard({
             </div>
           </div>
 
-          {/* Outcome picker */}
-          <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
-              Outcome <span className="text-red-400">*</span>
-            </p>
-            <div className="grid grid-cols-3 gap-1.5">
-              {OUTCOME_OPTIONS.map(opt => {
-                const isSelected = outcome === opt.value
-                return (
-                  <button
-                    key={opt.value}
-                    type="button"
-                    onClick={() => setOutcome(outcome === opt.value ? null : opt.value)}
-                    className={`text-left px-3 py-2 rounded-lg border transition-colors ${
-                      isSelected ? opt.selectedColor : opt.color
-                    } hover:border-gray-300`}
-                  >
-                    <span className="text-[12px] font-bold block">{opt.label}</span>
-                    <span className="text-[12px] opacity-70 block mt-0.5 leading-snug">{opt.hint}</span>
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-
           {/* Feedback textarea */}
           <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
               Overall assessment
             </p>
             <textarea
@@ -200,13 +145,13 @@ export function ConsiderationReviewCard({
 
           {/* Next steps */}
           <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
               Next steps for writer
             </p>
             <textarea
               value={nextSteps}
               onChange={e => setNextSteps(e.target.value)}
-              placeholder="What to write/submit next, what would change the commercial equation..."
+              placeholder="What to write or submit next, what would strengthen their portfolio..."
               rows={2}
               className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
             />
@@ -216,14 +161,11 @@ export function ConsiderationReviewCard({
           <div className="flex items-center gap-2">
             <button
               onClick={handleSend}
-              disabled={saving || !feedback.trim() || !outcome}
+              disabled={saving || !feedback.trim()}
               className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1.5 rounded-md transition-colors"
             >
               {saving ? 'Sending…' : reviewed ? 'Update feedback' : 'Send feedback'}
             </button>
-            {!outcome && feedback.trim() && (
-              <span className="text-[11px] text-amber-600">Pick an outcome</span>
-            )}
             {saved && (
               <span className="text-[12px] text-emerald-600 font-medium">Sent</span>
             )}

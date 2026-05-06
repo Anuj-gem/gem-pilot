@@ -117,12 +117,6 @@ export default async function ScriptsPage() {
     : true
   const canRequestConsideration = !hasActiveConsideration && hasNewScriptSinceLastReview
 
-  const OUTCOME_LABELS: Record<string, string> = {
-    pass: 'Pass',
-    developing: 'Keep developing',
-    advancing: 'Advancing',
-  }
-
   return (
     <div className="max-w-2xl mx-auto">
       {isTrial && <UpgradeModalListener />}
@@ -164,12 +158,7 @@ export default async function ScriptsPage() {
       {latestReviewed && latestReviewed.feedback && (
         <div className="rounded-xl bg-white border border-gray-200 px-4 py-3 mb-4">
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Latest feedback</span>
-            {latestReviewed.outcome && (
-              <span className="text-[10.5px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
-                {OUTCOME_LABELS[latestReviewed.outcome] ?? latestReviewed.outcome}
-              </span>
-            )}
+            <span className="text-[12px] font-bold text-gray-400 uppercase tracking-wide">Latest feedback</span>
           </div>
           <p className="text-[12.5px] text-gray-600 m-0 line-clamp-2 leading-[1.5]">
             {latestReviewed.feedback}

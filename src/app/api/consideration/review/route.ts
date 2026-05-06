@@ -12,26 +12,20 @@ function svc() {
   )
 }
 
-const VALID_OUTCOMES = ['pass', 'developing', 'advancing'] as const
-
 export async function POST(req: NextRequest) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, feedback, outcome, next_steps } = body as {
+  const { consideration_id, feedback, next_steps } = body as {
     consideration_id: string
     feedback: string
-    outcome: string
     next_steps: string | null
   }
 
-  if (!consideration_id || !feedback?.trim() || !outcome) {
+  if (!consideration_id || !feedback?.trim()) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-  }
-  if (!VALID_OUTCOMES.includes(outcome as any)) {
-    return NextResponse.json({ error: 'Invalid outcome' }, { status: 400 })
   }
 
   const service = svc()
@@ -42,7 +36,6 @@ export async function POST(req: NextRequest) {
     .update({
       status: 'reviewed',
       feedback: feedback.trim(),
-      outcome,
       next_steps: next_steps?.trim() || null,
       reviewed_at: new Date().toISOString(),
     })
