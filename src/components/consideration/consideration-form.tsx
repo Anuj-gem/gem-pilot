@@ -1,9 +1,11 @@
 'use client'
 
 // ConsiderationForm — select scripts and submit for consideration.
+// Trial users can only include their first script. Pro users can include all.
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 type ScriptOption = {
   id: string
@@ -12,15 +14,15 @@ type ScriptOption = {
   score: number | null
   carriedForward: boolean
   createdAt: string
+  eligible: boolean
 }
 
-export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
+export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[]; isPro: boolean }) {
   const router = useRouter()
-  const carried = scripts.filter(s => s.carriedForward)
-  const selectable = scripts.filter(s => !s.carriedForward)
+  const carried = scripts.filter(s => s.carriedForward && s.eligible)
+  const selectable = scripts.filter(s => !s.carriedForward && s.eligible)
+  const locked = scripts.filter(s => !s.eligible)
 
-  // New scripts first (not previously considered), then carried forward below
-  const newScripts = selectable
   const [selected, setSelected] = useState<Set<string>>(new Set(selectable.map(s => s.id)))
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -64,16 +66,16 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
     <div>
       <h1 className="text-[22px] font-bold text-gray-900 m-0">Request consideration</h1>
       <p className="text-[14px] text-gray-500 mt-1.5 mb-6">
-        Select which scripts to include. Previously submitted scripts carry forward automatically.
+        Select which scripts to include. Our partners review your full portfolio at once.
       </p>
 
-      {/* New scripts — shown first */}
-      {newScripts.length > 0 && (
+      {/* Eligible scripts */}
+      {selectable.length > 0 && (
         <>
           <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-purple-600 m-0 mb-2">
             {carried.length > 0 ? 'New scripts' : 'Your scripts'}
           </p>
-          {newScripts.map(s => {
+          {selectable.map(s => {
             const isSelected = selected.has(s.id)
             return (
               <button
@@ -93,7 +95,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                  <p className="text-[11px] text-gray-400 m-0 mt-0.5">
+                  <p className="text-[12px] text-gray-400 m-0 mt-0.5">
                     {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
                   </p>
                 </div>
@@ -120,7 +122,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
               </div>
               <div className="min-w-0 flex-1">
                 <p className="text-[13.5px] font-semibold text-gray-700 m-0 truncate">{s.title}</p>
-                <p className="text-[11px] text-gray-400 m-0 mt-0.5">
+                <p className="text-[12px] text-gray-400 m-0 mt-0.5">
                   {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
                 </p>
               </div>
@@ -129,6 +131,63 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
           ))}
         </>
       )}
+
+      {/* Locked scripts (trial users with multiple scripts) */}
+      {locked.length > 0 && (
+        <>
+          <div className="h-2" />
+          <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
+            Requires GEM Pro
+          </p>
+          {locked.map(s => (
+            <div
+              key={s.id}
+              className="flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-xl mb-2 bg-gray-50 opacity-60"
+            >
+              <div className="w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center shrink-0">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-gray-400">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[13.5px] font-semibold text-gray-500 m-0 truncate">{s.title}</p>
+                <p className="text-[12px] text-gray-400 m-0 mt-0.5">
+                  {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
+                </p>
+              </div>
+            </div>
+          ))}
+        </>
+      )}
+
+      {/* Trial upgrade nudge */}
+      {!isPro && (
+        <div className="mt-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl">
+          <p className="text-[12.5px] text-gray-600 m-0 leading-[1.5]">
+            Only your first script is eligible on the free trial. <Link href="/pricing" className="text-purple-600 font-semibold hover:text-purple-800">Upgrade to GEM Pro</Link> to submit your full portfolio for consideration.
+          </p>
+        </div>
+      )}
+
+      {/* Add a new script CTA */}
+      <div className="mt-4">
+        {isPro ? (
+          <Link
+            href="/submit"
+            className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-[13px] font-semibold text-gray-500 hover:border-purple-400 hover:text-purple-600 transition-colors"
+          >
+            + Submit a new script
+          </Link>
+        ) : (
+          <Link
+            href="/pricing"
+            className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-[13px] font-semibold text-gray-400 hover:border-purple-400 hover:text-purple-600 transition-colors"
+          >
+            + Submit additional scripts — GEM Pro
+          </Link>
+        )}
+      </div>
 
       {/* Summary */}
       {totalCount > 0 && (
@@ -152,7 +211,7 @@ export function ConsiderationForm({ scripts }: { scripts: ScriptOption[] }) {
         {submitting ? 'Submitting…' : 'Request consideration'}
       </button>
 
-      <p className="text-[11.5px] text-gray-400 text-center mt-3 m-0">
+      <p className="text-[12px] text-gray-400 text-center mt-3 m-0">
         You&apos;ll receive feedback within 5–7 days
       </p>
     </div>

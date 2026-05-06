@@ -47,13 +47,37 @@ export async function POST(req: NextRequest) {
   // Verify scripts belong to this user
   const { data: userScripts } = await supabase
     .from('script_submissions')
-    .select('id')
+    .select('id, created_at')
     .eq('user_id', user.id)
     .eq('status', 'completed')
     .in('id', script_ids)
+    .order('created_at', { ascending: true })
 
   const validIds = new Set((userScripts || []).map((s: { id: string }) => s.id))
-  const verifiedIds = script_ids.filter(id => validIds.has(id))
+  let verifiedIds = script_ids.filter(id => validIds.has(id))
+
+  // Trial users can only submit their first (oldest) script
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+
+  if (profile?.subscription_status !== 'active' && userScripts && userScripts.length > 0) {
+    // Get the user's very first script (oldest created_at across ALL their scripts)
+    const { data: firstScript } = await supabase
+      .from('script_submissions')
+      .select('id')
+      .eq('user_id', user.id)
+      .eq('status', 'completed')
+      .order('created_at', { ascending: true })
+      .limit(1)
+      .single()
+
+    if (firstScript) {
+      verifiedIds = verifiedIds.filter(id => id === firstScript.id)
+    }
+  }
 
   if (verifiedIds.length === 0) {
     return NextResponse.json({ error: 'No valid scripts found' }, { status: 400 })

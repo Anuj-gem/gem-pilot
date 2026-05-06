@@ -34,6 +34,14 @@ export default async function ConsiderationSubmitPage() {
     redirect('/dashboard')
   }
 
+  // Check subscription status
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+  const isPro = profile?.subscription_status === 'active'
+
   // Get all completed scripts
   const { data: scripts } = await supabase
     .from('script_submissions')
@@ -41,7 +49,7 @@ export default async function ConsiderationSubmitPage() {
     .eq('user_id', user.id)
     .eq('status', 'completed')
     .is('hidden_at', null)
-    .order('created_at', { ascending: false })
+    .order('created_at', { ascending: true }) // oldest first so [0] is the first script
 
   const completedScripts = (scripts || []) as {
     id: string; title: string; declared_format: string | null; created_at: string
@@ -78,6 +86,9 @@ export default async function ConsiderationSubmitPage() {
     carriedScriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
   }
 
+  // For trial users, only their first (oldest) script is eligible
+  const firstScriptId = completedScripts.length > 0 ? completedScripts[0].id : null
+
   const scriptData = completedScripts.map(s => ({
     id: s.id,
     title: s.title,
@@ -85,11 +96,12 @@ export default async function ConsiderationSubmitPage() {
     score: evalMap.get(s.id) ?? null,
     carriedForward: carriedScriptIds.includes(s.id),
     createdAt: s.created_at,
+    eligible: isPro || s.id === firstScriptId,
   }))
 
   return (
     <div className="max-w-lg mx-auto py-8 px-4">
-      <ConsiderationForm scripts={scriptData} />
+      <ConsiderationForm scripts={scriptData} isPro={isPro} />
     </div>
   )
 }
