@@ -1,8 +1,11 @@
 // POST /api/consideration/submit — writer submits scripts for consideration.
+// After creating the consideration, fires background re-evaluations for any
+// scripts still on an old prompt version (fire-and-forget — doesn't block).
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { CURRENT_PROMPT_VERSION } from '@/lib/evaluation-prompt'
 
 function svc() {
   return createServerClient(
@@ -87,6 +90,39 @@ export async function POST(req: NextRequest) {
     // Rollback consideration
     await service.from('considerations').delete().eq('id', consideration.id)
     return NextResponse.json({ error: insertError.message }, { status: 500 })
+  }
+
+  // --- Background re-eval for stale scripts (fire-and-forget) ---
+  // Find scripts whose latest eval is on an old prompt version and kick off
+  // reruns via the existing /api/rerun-evaluation endpoint.
+  try {
+    const { data: evals } = await service
+      .from('script_evaluations')
+      .select('submission_id, prompt_version')
+      .in('submission_id', verifiedIds)
+
+    const staleIds = (evals || [])
+      .filter((e: { submission_id: string; prompt_version: string | null }) =>
+        e.prompt_version !== CURRENT_PROMPT_VERSION
+      )
+      .map((e: { submission_id: string }) => e.submission_id)
+
+    if (staleIds.length > 0) {
+      // Forward the user's cookies so the rerun route can authenticate
+      const cookie = req.headers.get('cookie') || ''
+      const origin = req.nextUrl.origin
+
+      // Fire and forget — don't await
+      for (const subId of staleIds) {
+        fetch(`${origin}/api/rerun-evaluation`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', cookie },
+          body: JSON.stringify({ submission_id: subId }),
+        }).catch(() => {}) // swallow errors silently
+      }
+    }
+  } catch {
+    // Non-critical — don't fail the consideration submission
   }
 
   return NextResponse.json({ ok: true, consideration_id: consideration.id })
