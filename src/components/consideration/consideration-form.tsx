@@ -6,6 +6,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { OpenCallsDropdown } from '@/components/dashboard/open-calls-dropdown'
 
 type ScriptOption = {
   id: string
@@ -15,6 +16,7 @@ type ScriptOption = {
   carriedForward: boolean
   createdAt: string
   eligible: boolean
+  openCallMatches: { title: string; slug: string }[]
 }
 
 function openUpgrade() {
@@ -70,7 +72,7 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
     <div>
       <h1 className="text-[22px] font-bold text-gray-900 m-0">Request consideration</h1>
       <p className="text-[14px] text-gray-500 mt-1.5 mb-6">
-        Select which scripts to include. Our partners review your full portfolio at once.
+        Select which scripts to include. Our industry partners will consider everything you submit when deciding whether to move forward with you.
       </p>
 
       {/* Eligible scripts */}
@@ -99,9 +101,20 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-[13.5px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                  <p className="text-[12px] text-gray-400 m-0 mt-0.5">
-                    {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
-                  </p>
+                  <div className="flex items-center gap-1.5 mt-0.5">
+                    <span className="text-[12px] text-gray-400">
+                      {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
+                    </span>
+                    {s.openCallMatches.length > 0 && (
+                      <>
+                        <span className="text-gray-200">&middot;</span>
+                        <OpenCallsDropdown
+                          count={s.openCallMatches.length}
+                          matches={s.openCallMatches}
+                        />
+                      </>
+                    )}
+                  </div>
                 </div>
               </button>
             )
@@ -126,9 +139,20 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
               </div>
               <div className="min-w-0 flex-1">
                 <p className="text-[13.5px] font-semibold text-gray-700 m-0 truncate">{s.title}</p>
-                <p className="text-[12px] text-gray-400 m-0 mt-0.5">
-                  {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
-                </p>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <span className="text-[12px] text-gray-400">
+                    {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
+                  </span>
+                  {s.openCallMatches.length > 0 && (
+                    <>
+                      <span className="text-gray-200">&middot;</span>
+                      <OpenCallsDropdown
+                        count={s.openCallMatches.length}
+                        matches={s.openCallMatches}
+                      />
+                    </>
+                  )}
+                </div>
               </div>
               <span className="text-[12px] text-gray-400 font-medium shrink-0">Included</span>
             </div>
