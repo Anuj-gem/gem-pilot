@@ -2,10 +2,10 @@
 
 // ConsiderationForm — select scripts and submit for consideration.
 // Trial users can only include their first script. Pro users can include all.
+// Locked scripts + upgrade CTAs open the paywall modal via gem:open-upgrade-modal.
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 
 type ScriptOption = {
   id: string
@@ -15,6 +15,10 @@ type ScriptOption = {
   carriedForward: boolean
   createdAt: string
   eligible: boolean
+}
+
+function openUpgrade() {
+  window.dispatchEvent(new Event('gem:open-upgrade-modal'))
 }
 
 export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[]; isPro: boolean }) {
@@ -136,13 +140,23 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
       {locked.length > 0 && (
         <>
           <div className="h-2" />
-          <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0 mb-2">
-            Requires GEM Pro
-          </p>
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-gray-400 m-0">
+              Requires GEM Pro
+            </p>
+            <button
+              onClick={openUpgrade}
+              className="text-[12px] font-semibold text-purple-600 hover:text-purple-800"
+            >
+              Upgrade →
+            </button>
+          </div>
           {locked.map(s => (
-            <div
+            <button
               key={s.id}
-              className="flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-xl mb-2 bg-gray-50 opacity-60"
+              type="button"
+              onClick={openUpgrade}
+              className="w-full flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-xl mb-2 bg-gray-50 opacity-60 text-left hover:border-purple-300 hover:opacity-80 transition-all cursor-pointer"
             >
               <div className="w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center shrink-0">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-gray-400">
@@ -156,7 +170,7 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
                   {s.format || 'Script'}{s.score != null ? ` · ${s.score.toFixed(1)}` : ''}
                 </p>
               </div>
-            </div>
+            </button>
           ))}
         </>
       )}
@@ -165,7 +179,14 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
       {!isPro && (
         <div className="mt-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl">
           <p className="text-[12.5px] text-gray-600 m-0 leading-[1.5]">
-            Only your first script is eligible on the free trial. <Link href="/pricing" className="text-purple-600 font-semibold hover:text-purple-800">Upgrade to GEM Pro</Link> to submit your full portfolio for consideration.
+            Only your first script is eligible on the free trial.{' '}
+            <button
+              onClick={openUpgrade}
+              className="text-purple-600 font-semibold hover:text-purple-800 underline"
+            >
+              Upgrade to GEM Pro
+            </button>{' '}
+            to submit your full portfolio for consideration.
           </p>
         </div>
       )}
@@ -173,19 +194,19 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
       {/* Add a new script CTA */}
       <div className="mt-4">
         {isPro ? (
-          <Link
+          <a
             href="/submit"
             className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-[13px] font-semibold text-gray-500 hover:border-purple-400 hover:text-purple-600 transition-colors"
           >
             + Submit a new script
-          </Link>
+          </a>
         ) : (
-          <Link
-            href="/pricing"
+          <button
+            onClick={openUpgrade}
             className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-[13px] font-semibold text-gray-400 hover:border-purple-400 hover:text-purple-600 transition-colors"
           >
             + Submit additional scripts — GEM Pro
-          </Link>
+          </button>
         )}
       </div>
 

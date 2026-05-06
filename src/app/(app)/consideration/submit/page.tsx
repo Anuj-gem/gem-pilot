@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ConsiderationForm } from '@/components/consideration/consideration-form'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 
 export const dynamic = 'force-dynamic'
 
@@ -102,6 +103,7 @@ export default async function ConsiderationSubmitPage() {
   return (
     <div className="max-w-lg mx-auto py-8 px-4">
       <ConsiderationForm scripts={scriptData} isPro={isPro} />
+      {!isPro && <UpgradeModalListener />}
     </div>
   )
 }
