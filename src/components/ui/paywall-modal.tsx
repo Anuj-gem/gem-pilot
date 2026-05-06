@@ -50,15 +50,14 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           Upgrade to GEM Pro
         </h2>
         <p className="text-[13.5px] text-[var(--gem-gray-400)] mb-5 leading-relaxed">
-          Submit to opportunities, get unlimited evaluations, and let producers find you.
+          Unlimited scripts, ongoing industry consideration, and a shareable portfolio.
         </p>
 
         <ul className="space-y-2.5 mb-5">
           {[
-            'Submit to industry opportunities — 3 per month',
             'Unlimited script evaluations',
-            'Revise and rescore past reports',
-            'Producer intros routed to your inbox',
+            'Ongoing industry consideration as you write',
+            'Shareable writer portfolio',
           ].map(item => (
             <li
               key={item}
