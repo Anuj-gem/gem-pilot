@@ -3,6 +3,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { sendEmail } from '@/lib/email'
 
 function svc() {
   return createServerClient(
@@ -43,6 +44,40 @@ export async function POST(req: NextRequest) {
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
+  }
+
+  // Send feedback notification email to the writer
+  try {
+    const { data: consideration } = await service
+      .from('considerations')
+      .select('writer_id')
+      .eq('id', consideration_id)
+      .single()
+
+    if (consideration) {
+      const { data: profile } = await service
+        .from('profiles')
+        .select('full_name, email')
+        .eq('id', consideration.writer_id)
+        .single()
+
+      if (profile?.email) {
+        const firstName = profile.full_name?.split(' ')[0] || 'there'
+        await sendEmail({
+          templateAlias: 'consideration_feedback',
+          to: profile.email,
+          variables: {
+            first_name: firstName,
+            feedback_url: 'https://www.gem.studio/consideration/feedback',
+          },
+          dedupeKey: `consideration_feedback_${consideration_id}`,
+          tag: 'consideration_feedback',
+        }, service)
+      }
+    }
+  } catch (emailErr) {
+    // Non-critical — don't fail the review if email fails
+    console.error('[consideration/review] Email send failed:', emailErr)
   }
 
   return NextResponse.json({ ok: true })

@@ -22,11 +22,6 @@ export type TemplateAlias =
   | 'post_submission_free'
   | 'post_submission_pro'
   | 'post_upgrade'
-  // Producer-to-writer intro. Triggered from the partner script detail
-  // page when a producer hits "Send intro." The writer is the recipient;
-  // ReplyTo is set to the producer's email so a Reply lands in the
-  // producer's inbox directly.
-  | 'producer_intro_to_writer'
   // Drip sequence — user HAS submitted at least one script but hasn't
   // upgraded to Pro. Triggered by /api/cron/drip-emails.
   | 'drip_24h'
@@ -42,11 +37,8 @@ export type TemplateAlias =
   // Broadcast — fires when a new opportunity is added to GEM.
   // Triggered by /api/cron/opportunity-broadcast.
   | 'new_opportunity_broadcast'
-  // Outcome emails — triggered when producer reviews a submission.
-  | 'outcome_pass'
-  | 'outcome_developing'
-  | 'outcome_revise_resubmit'
-  | 'outcome_advancing'
+  // Consideration feedback — sent when a consideration is reviewed.
+  | 'consideration_feedback'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias

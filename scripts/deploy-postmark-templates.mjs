@@ -26,7 +26,8 @@
  *   node scripts/deploy-postmark-templates.mjs --dry           # show diff, send nothing
  *   node scripts/deploy-postmark-templates.mjs                 # deploy ALL templates
  *   node scripts/deploy-postmark-templates.mjs --alias=post_signup    # one template
- *   node scripts/deploy-postmark-templates.mjs --alias=post_upgrade --dry
+ *   node scripts/deploy-postmark-templates.mjs --prune          # deploy + delete orphaned templates from Postmark
+ *   node scripts/deploy-postmark-templates.mjs --prune --dry    # show what would be deleted without doing it
  *
  * Env (auto-loaded from .env.local):
  *   POSTMARK_SERVER_TOKEN    — required. Server Token, must have Templates write scope
@@ -48,6 +49,7 @@ try {
 
 // ── Flags ───────────────────────────────────────────────────────────
 const DRY = process.argv.includes('--dry') || process.argv.includes('--dry-run')
+const PRUNE = process.argv.includes('--prune')
 const aliasArg = process.argv.find((a) => a.startsWith('--alias='))
 const ONLY_ALIAS = aliasArg ? aliasArg.split('=')[1] : null
 
@@ -108,6 +110,17 @@ async function pmPost(pathSuffix, body) {
       'X-Postmark-Server-Token': TOKEN,
     },
     body: JSON.stringify(body),
+  })
+  return { ok: res.ok, status: res.status, body: await res.json().catch(() => ({})) }
+}
+
+async function pmDelete(pathSuffix) {
+  const res = await fetch(`https://api.postmarkapp.com${pathSuffix}`, {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'X-Postmark-Server-Token': TOKEN,
+    },
   })
   return { ok: res.ok, status: res.status, body: await res.json().catch(() => ({})) }
 }
@@ -214,7 +227,7 @@ async function main() {
     results.push(result)
   }
 
-  console.log('\n— summary')
+  console.log('\n— deploy summary')
   for (const r of results) {
     const tag = r.ok ? '✓' : '✗'
     const detail = r.ok ? r.action || 'ok' : r.error || 'failed'
@@ -222,6 +235,52 @@ async function main() {
   }
   const failed = results.filter((r) => !r.ok)
   if (failed.length > 0) process.exit(1)
+
+  // ── Prune: delete Postmark templates that have no local .md file ──
+  if (PRUNE) {
+    console.log('\n— prune: checking for orphaned Postmark templates')
+
+    // Get all local aliases (always from full dir, not filtered by --alias)
+    const allLocal = (await fs.readdir(TEMPLATES_DIR))
+      .filter((f) => f.endsWith('.md') && f !== 'README.md')
+      .map((f) => f.replace(/\.md$/, ''))
+    const localSet = new Set(allLocal)
+
+    // List all templates in Postmark (paginated, 300 per page)
+    let offset = 0
+    const remoteTemplates = []
+    while (true) {
+      const r = await pmGet(`/templates?count=300&offset=${offset}&TemplateType=Standard`)
+      if (!r.ok) {
+        console.log(`  ✗ failed to list Postmark templates: ${r.status}`, r.body)
+        break
+      }
+      const templates = r.body.Templates || []
+      remoteTemplates.push(...templates)
+      if (templates.length < 300) break
+      offset += 300
+    }
+
+    const orphans = remoteTemplates.filter((t) => t.Alias && !localSet.has(t.Alias))
+
+    if (orphans.length === 0) {
+      console.log('  · no orphaned templates found')
+    } else {
+      console.log(`  · found ${orphans.length} orphaned template(s): ${orphans.map((t) => t.Alias).join(', ')}`)
+      for (const t of orphans) {
+        if (DRY) {
+          console.log(`  · DRY — would delete "${t.Alias}" (id=${t.TemplateId})`)
+        } else {
+          const r = await pmDelete(`/templates/${encodeURIComponent(t.Alias)}`)
+          if (r.ok) {
+            console.log(`  ✓ deleted "${t.Alias}" (id=${t.TemplateId})`)
+          } else {
+            console.log(`  ✗ failed to delete "${t.Alias}": ${r.status}`, r.body)
+          }
+        }
+      }
+    }
+  }
 }
 
 main().catch((err) => {
