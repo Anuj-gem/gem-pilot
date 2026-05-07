@@ -2,6 +2,8 @@
 
 // ConsiderationStatus — banner showing active consideration status.
 
+import Link from 'next/link'
+
 export function ConsiderationStatus({
   submittedAt,
   scriptCount,
@@ -22,8 +24,14 @@ export function ConsiderationStatus({
           {scriptCount} {scriptCount === 1 ? 'script' : 'scripts'} submitted · Feedback expected soon
         </p>
       </div>
+      <Link
+        href="/consideration/submit"
+        className="text-[11.5px] text-amber-700 font-semibold shrink-0 hover:text-amber-900 transition-colors"
+      >
+        Edit →
+      </Link>
       <span className="text-[11px] text-amber-600 font-medium shrink-0">
-        Submitted {dateLabel}
+        {dateLabel}
       </span>
     </div>
   )

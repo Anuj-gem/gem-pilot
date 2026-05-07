@@ -24,7 +24,7 @@ export default async function ConsiderationSubmitPage() {
 
   const service = svc()
 
-  // Check if there's already an active consideration
+  // Check if there's already an active consideration (edit mode)
   const { data: existing } = await service
     .from('considerations')
     .select('id')
@@ -32,31 +32,39 @@ export default async function ConsiderationSubmitPage() {
     .eq('status', 'pending')
     .limit(1)
 
-  if (existing && existing.length > 0) {
-    redirect('/dashboard')
-  }
+  const isEditing = existing && existing.length > 0
+  let currentScriptIds: string[] = []
 
-  // Check if eligible — must have new work since last review
-  const { data: lastReview } = await service
-    .from('considerations')
-    .select('reviewed_at')
-    .eq('writer_id', user.id)
-    .eq('status', 'reviewed')
-    .order('reviewed_at', { ascending: false })
-    .limit(1)
-    .maybeSingle()
-
-  if (lastReview?.reviewed_at) {
-    const { data: newerScripts } = await supabase
-      .from('script_submissions')
-      .select('id')
-      .eq('user_id', user.id)
-      .eq('status', 'completed')
-      .gt('created_at', lastReview.reviewed_at)
+  if (isEditing) {
+    // Load current scripts for this consideration
+    const { data: cs } = await service
+      .from('consideration_scripts')
+      .select('script_submission_id')
+      .eq('consideration_id', existing[0].id)
+    currentScriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
+  } else {
+    // Check if eligible — must have new work since last review
+    const { data: lastReview } = await service
+      .from('considerations')
+      .select('reviewed_at')
+      .eq('writer_id', user.id)
+      .eq('status', 'reviewed')
+      .order('reviewed_at', { ascending: false })
       .limit(1)
+      .maybeSingle()
 
-    if (!newerScripts || newerScripts.length === 0) {
-      redirect('/dashboard')
+    if (lastReview?.reviewed_at) {
+      const { data: newerScripts } = await supabase
+        .from('script_submissions')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('status', 'completed')
+        .gt('created_at', lastReview.reviewed_at)
+        .limit(1)
+
+      if (!newerScripts || newerScripts.length === 0) {
+        redirect('/dashboard')
+      }
     }
   }
 
@@ -159,7 +167,7 @@ export default async function ConsiderationSubmitPage() {
 
   return (
     <div className="max-w-lg mx-auto py-8 px-4">
-      <ConsiderationForm scripts={scriptData} isPro={isPro} />
+      <ConsiderationForm scripts={scriptData} isPro={isPro} isEditing={!!isEditing} currentScriptIds={currentScriptIds} />
       {!isPro && <UpgradeModalListener />}
     </div>
   )

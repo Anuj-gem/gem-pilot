@@ -296,9 +296,12 @@ export default async function DashboardPage() {
             >
               Upload a script
             </Link>
-            <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-100 text-purple-600 text-[13px] font-bold text-center cursor-default">
-              In consideration
-            </div>
+            <Link
+              href="/consideration/submit"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-100 text-purple-600 text-[13px] font-bold text-center hover:bg-purple-200 transition-colors"
+            >
+              Edit consideration
+            </Link>
           </div>
         ) : (
           <div className="space-y-2.5">

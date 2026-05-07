@@ -23,13 +23,24 @@ function openUpgrade() {
   window.dispatchEvent(new Event('gem:open-upgrade-modal'))
 }
 
-export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[]; isPro: boolean }) {
+export function ConsiderationForm({
+  scripts, isPro, isEditing = false, currentScriptIds = [],
+}: {
+  scripts: ScriptOption[]; isPro: boolean; isEditing?: boolean; currentScriptIds?: string[]
+}) {
   const router = useRouter()
-  const carried = scripts.filter(s => s.carriedForward && s.eligible)
-  const selectable = scripts.filter(s => !s.carriedForward && s.eligible)
+  const carried = isEditing ? [] : scripts.filter(s => s.carriedForward && s.eligible)
+  const selectable = isEditing
+    ? scripts.filter(s => s.eligible)
+    : scripts.filter(s => !s.carriedForward && s.eligible)
   const locked = scripts.filter(s => !s.eligible)
 
-  const [selected, setSelected] = useState<Set<string>>(new Set(selectable.map(s => s.id)))
+  const currentSet = new Set(currentScriptIds)
+  const [selected, setSelected] = useState<Set<string>>(
+    isEditing
+      ? new Set(selectable.filter(s => currentSet.has(s.id)).map(s => s.id))
+      : new Set(selectable.map(s => s.id))
+  )
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -49,8 +60,10 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
     setSubmitting(true)
     setError(null)
 
-    const res = await fetch('/api/consideration/submit', {
-      method: 'POST',
+    const endpoint = isEditing ? '/api/consideration/update' : '/api/consideration/submit'
+    const method = isEditing ? 'PATCH' : 'POST'
+    const res = await fetch(endpoint, {
+      method,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         script_ids: [...carried.map(s => s.id), ...selected],
@@ -70,9 +83,13 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
 
   return (
     <div>
-      <h1 className="text-[22px] font-bold text-gray-900 m-0">Request consideration</h1>
+      <h1 className="text-[22px] font-bold text-gray-900 m-0">
+        {isEditing ? 'Edit consideration' : 'Request consideration'}
+      </h1>
       <p className="text-[14px] text-gray-500 mt-1.5 mb-6">
-        Select which scripts to include. Our industry partners will consider everything you submit when deciding whether to move forward with you.
+        {isEditing
+          ? 'Update which scripts are included. Your consideration will be reviewed with whatever you select below.'
+          : 'Select which scripts to include. Our industry partners will consider everything you submit when deciding whether to move forward with you.'}
       </p>
 
       {/* Eligible scripts */}
@@ -253,7 +270,7 @@ export function ConsiderationForm({ scripts, isPro }: { scripts: ScriptOption[];
         disabled={submitting || totalCount === 0}
         className="w-full mt-5 px-4 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[14px] font-bold transition-colors"
       >
-        {submitting ? 'Submitting…' : 'Request consideration'}
+        {submitting ? 'Submitting…' : isEditing ? 'Update consideration' : 'Request consideration'}
       </button>
 
       <p className="text-[12px] text-gray-400 text-center mt-3 m-0">
