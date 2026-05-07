@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
           to: profile.email,
           variables: {
             first_name: firstName,
-            feedback_url: 'https://www.gem.studio/consideration/feedback',
+            feedback_url: 'https://www.gem.studio/dashboard',
           },
           dedupeKey: `consideration_feedback_${consideration_id}`,
           tag: 'consideration_feedback',
