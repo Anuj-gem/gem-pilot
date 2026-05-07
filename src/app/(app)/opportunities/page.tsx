@@ -20,9 +20,21 @@ function svc() {
 export const revalidate = 60
 
 export const metadata = {
-  title: 'Opportunities — GEM',
+  title: 'Open Calls — GEM',
   description:
-    'Browse active opportunities from producers, lit reps, and financiers looking for new voices.',
+    "Open calls from producers and lit reps. See what's looking for scripts like yours.",
+  openGraph: {
+    title: 'Open Calls — GEM',
+    description:
+      "Open calls from producers and lit reps. See what's looking for scripts like yours.",
+    type: 'website' as const,
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    title: 'Open Calls — GEM',
+    description:
+      "Open calls from producers and lit reps. See what's looking for scripts like yours.",
+  },
 }
 
 export default async function OpportunitiesPage() {

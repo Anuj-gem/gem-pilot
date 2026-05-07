@@ -35,9 +35,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!opp) return { title: 'Opportunity not found — GEM' }
   const dealLabel = opp.deal_type ? DEAL_TYPE_LABELS[opp.deal_type] : null
   const desc = [dealLabel, opp.description?.slice(0, 140)].filter(Boolean).join(' — ')
+  const title = `${opp.title} — GEM`
   return {
-    title: `${opp.title} — GEM Opportunities`,
+    title,
     description: desc,
+    openGraph: {
+      title,
+      description: desc,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+    },
   }
 }
 
