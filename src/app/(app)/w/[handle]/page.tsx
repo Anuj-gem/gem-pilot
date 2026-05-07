@@ -1,15 +1,11 @@
 // /w/[handle] — public writer profile.
-// Anuj 2026-04-29 (v0.3).
+// Redesign 2026-05-07: clean portfolio page, no scores, no dead social features.
 
 import { notFound } from 'next/navigation'
 import { createServerClient } from '@supabase/ssr'
 import { createClient } from '@/lib/supabase-server'
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { WriterCard } from '@/components/writer-card'
-import { FollowButton } from '@/components/follow-button'
-import { ScriptCard, type ScriptCardData } from '@/components/cards/script-card'
-import { getScriptStats } from '@/lib/script-stats'
 
 interface PageProps { params: Promise<{ handle: string }> }
 
@@ -40,12 +36,7 @@ export default async function PublicProfile({ params }: PageProps) {
 
   const isOwner = viewer?.id === profile.id
 
-  // Public scripts (Discover-published) — used as the portfolio surface.
-  // Two-pass query: pull submissions first, then evaluations in a batch.
-  // The embedded `script_evaluations(...)` join was silently dropping
-  // scripts because PostgREST has multiple FK paths from the eval table
-  // to submissions (active + pending tables) and the embedded shape
-  // came back empty for some scripts. Anuj 2026-04-30 fix.
+  // Public scripts
   const { data: subs } = await service
     .from('script_submissions')
     .select('id, title, created_at, declared_format')
@@ -57,349 +48,200 @@ export default async function PublicProfile({ params }: PageProps) {
   type SubRow = { id: string; title: string; created_at: string; declared_format: string | null }
   const subRows = (subs as SubRow[] | null) || []
 
-  type EvalRow = { id: string; submission_id: string; weighted_score: number | null; tier: string | null; evaluation: unknown; edited_fields: unknown }
+  // Evaluations — for genre extraction only (no scores displayed)
+  type EvalRow = { id: string; submission_id: string; evaluation: unknown }
   const evalBySub = new Map<string, EvalRow>()
   if (subRows.length > 0) {
     const { data: evs } = await service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, tier, evaluation, edited_fields')
-      .in('submission_id', subRows.map((s) => s.id))
+      .select('id, submission_id, evaluation')
+      .in('submission_id', subRows.map(s => s.id))
     for (const e of (evs as EvalRow[] | null) || []) evalBySub.set(e.submission_id, e)
   }
 
-  type Script = {
-    id: string; title: string; created_at: string; declared_format: string | null
-    script_evaluations: { id: string; weighted_score: number | null; tier: string | null; evaluation: unknown; edited_fields: unknown }[] | null
-  }
-  const publicScripts: Script[] = subRows.map((s) => {
+  // Build script list with genre
+  const scripts = subRows.map(s => {
     const ev = evalBySub.get(s.id)
+    const evJson = ev?.evaluation as Record<string, unknown> | null
+    const cls = (evJson?.classification as Record<string, unknown>) || {}
+    const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
+    const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
     return {
       id: s.id,
+      evalId: ev?.id ?? null,
       title: s.title,
-      created_at: s.created_at,
-      declared_format: s.declared_format,
-      script_evaluations: ev
-        ? [{ id: ev.id, weighted_score: ev.weighted_score, tier: ev.tier, evaluation: ev.evaluation, edited_fields: ev.edited_fields }]
-        : null,
+      format: s.declared_format,
+      genre,
+      createdAt: s.created_at,
     }
   })
 
-  // Batch script community stats (review count + avg peer score)
-  const scriptStats = await getScriptStats(publicScripts.map((s) => s.id))
-
-  // Reviews written — peer reviews this user has authored
-  const { data: writtenRaw } = await service
-    .from('peer_reviews')
-    .select(`
-      id, score, body, created_at, submission_id,
-      script_submissions ( id, title, script_evaluations ( id ), profiles ( handle, full_name ) )
-    `)
-    .eq('reviewer_id', profile.id)
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-    .limit(20)
-  const reviewsWritten = ((writtenRaw as any[]) || []).map((r) => ({
-    id: r.id, score: r.score, body: r.body, created_at: r.created_at,
-    script: r.script_submissions ? {
-      id: r.script_submissions.id, title: r.script_submissions.title,
-      eval_id: r.script_submissions.script_evaluations?.[0]?.id ?? null,
-      writer_handle: r.script_submissions.profiles?.handle ?? null,
-      writer_name: r.script_submissions.profiles?.full_name ?? null,
-    } : null,
-  }))
-
-  // Follow counts + viewer's follow state
-  const [{ count: followerCount }, { count: followingCount }] = await Promise.all([
-    service.from('follows').select('id', { count: 'exact', head: true }).eq('followee_id', profile.id),
-    service.from('follows').select('id', { count: 'exact', head: true }).eq('follower_id', profile.id),
-  ])
-  let viewerFollows = false
-  if (viewer && viewer.id !== profile.id) {
-    const { data: rel } = await service
-      .from('follows')
-      .select('id')
-      .eq('follower_id', viewer.id)
-      .eq('followee_id', profile.id)
-      .maybeSingle<{ id: string }>()
-    viewerFollows = !!rel
+  // Auto-derive genre/format focus from their scripts
+  const genreCounts = new Map<string, number>()
+  const formatCounts = new Map<string, number>()
+  for (const s of scripts) {
+    if (s.genre) genreCounts.set(s.genre, (genreCounts.get(s.genre) ?? 0) + 1)
+    if (s.format) formatCounts.set(s.format, (formatCounts.get(s.format) ?? 0) + 1)
   }
-
-  // Stats
-  const topScore = publicScripts.reduce((m, s) => {
-    const w = s.script_evaluations?.[0]?.weighted_score ?? null
-    return w != null && w > m ? w : m
-  }, 0)
-  // Community average across this writer's public scripts (only those with reviews)
-  const scoresWithReviews: number[] = []
-  for (const id of publicScripts.map((s) => s.id)) {
-    const st = scriptStats.get(id)
-    if (st && st.reviewCount > 0 && st.avgPeerScore != null) {
-      scoresWithReviews.push(st.avgPeerScore)
-    }
-  }
-  const writerCommunityAvg = scoresWithReviews.length
-    ? scoresWithReviews.reduce((a, b) => a + b, 0) / scoresWithReviews.length
-    : null
-  const totalReviewsReceived = publicScripts.reduce(
-    (sum, s) => sum + (scriptStats.get(s.id)?.reviewCount ?? 0),
-    0
-  )
-  const stats = {
-    publicScripts: publicScripts.length,
-    topScore: topScore || null,
-    communityAvg: writerCommunityAvg,
-    reviewsReceived: totalReviewsReceived,
-    reviewsWritten: reviewsWritten.length,
-    followers: followerCount ?? 0,
-    following: followingCount ?? 0,
-  }
-
-  // Activity recency — last published + last review given
-  const lastPublishedAt = publicScripts[0]?.created_at ?? null
-  const lastReviewWrittenAt = reviewsWritten[0]?.created_at ?? null
-  function ago(iso: string | null): string | null {
-    if (!iso) return null
-    const d = Date.now() - new Date(iso).getTime()
-    const day = 86_400_000
-    const days = Math.floor(d / day)
-    if (days < 1) return 'today'
-    if (days === 1) return 'yesterday'
-    if (days < 7) return `${days} days ago`
-    if (days < 30) return `${Math.floor(days / 7)}w ago`
-    if (days < 365) return `${Math.floor(days / 30)}mo ago`
-    return `${Math.floor(days / 365)}y ago`
-  }
-  const lastPub = ago(lastPublishedAt)
-  const lastRev = ago(lastReviewWrittenAt)
+  const topGenres = [...genreCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([g]) => g)
+  const topFormats = [...formatCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 2)
+    .map(([f]) => f)
 
   const displayName = profile.full_name || profile.handle || 'Anonymous writer'
-  const initials = displayName.split(/\s+/).slice(0, 2).map((s) => s[0]?.toUpperCase() ?? '').join('') || '·'
+  const initials = displayName
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(s => s[0]?.toUpperCase() ?? '')
+    .join('') || '·'
+
+  // Member since
+  const memberSince = new Date(profile.created_at).toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+  })
 
   return (
-    <div>
-      <header className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
+    <div className="min-h-screen bg-gray-50">
+      <Nav />
+      <main className="max-w-2xl mx-auto px-6 py-10">
+
+        {/* ── PROFILE HEADER ── */}
+        <div className="mb-8">
           <div className="flex items-start gap-5">
             {profile.avatar_url ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={profile.avatar_url} alt="" className="w-24 h-24 rounded-full object-cover bg-gray-100 shrink-0 ring-2 ring-purple-100" />
+              <img
+                src={profile.avatar_url}
+                alt=""
+                className="w-20 h-20 rounded-full object-cover bg-gray-100 shrink-0"
+              />
             ) : (
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-white text-3xl font-bold shrink-0 ring-2 ring-purple-100">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-white text-2xl font-bold shrink-0">
                 {initials}
               </div>
             )}
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[28px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="flex-1 min-w-0 pt-1">
+              <h1
+                className="text-[26px] font-bold text-gray-900 leading-tight"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
                 {displayName}
               </h1>
-              <div className="text-[14px] text-purple-700 font-mono mt-0.5">@{profile.handle}</div>
               {profile.headline && (
-                <p className="text-[15px] text-gray-800 mt-3 leading-snug font-medium">{profile.headline}</p>
+                <p className="text-[14px] text-gray-600 mt-1 leading-snug">{profile.headline}</p>
               )}
-              <div className="flex items-center gap-3 mt-3 flex-wrap">
-                {!isOwner && viewer && (
-                  <FollowButton followeeId={profile.id} initiallyFollowing={viewerFollows} />
-                )}
+              <div className="flex items-center gap-2.5 mt-2.5 flex-wrap">
+                <span className="text-[12px] text-gray-400">Member since {memberSince}</span>
                 {profile.imdb_url && (
-                  <a
-                    href={profile.imdb_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-gray-700 bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-md hover:bg-gray-100"
-                  >
-                    IMDb ↗
-                  </a>
+                  <>
+                    <span className="text-gray-200">&middot;</span>
+                    <a
+                      href={profile.imdb_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[12px] font-semibold text-gray-500 hover:text-gray-900 transition-colors"
+                    >
+                      IMDb ↗
+                    </a>
+                  </>
                 )}
                 {isOwner && (
                   <>
-                    <Link href="/profile" className="text-xs font-semibold text-gray-500 hover:text-gray-900">
-                      Edit profile →
-                    </Link>
-                    <Link href="/following" className="text-xs font-semibold text-gray-500 hover:text-gray-900">
-                      Manage follows →
+                    <span className="text-gray-200">&middot;</span>
+                    <Link
+                      href="/profile"
+                      className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors"
+                    >
+                      Edit profile
                     </Link>
                   </>
                 )}
               </div>
             </div>
           </div>
+
+          {/* Bio */}
           {profile.bio && (
-            <p className="text-[15px] text-gray-700 mt-5 leading-relaxed whitespace-pre-wrap border-t border-gray-100 pt-5">
+            <p className="text-[14px] text-gray-600 mt-5 leading-relaxed whitespace-pre-wrap">
               {profile.bio}
             </p>
           )}
-          {(lastPub || lastRev) && (
-            <div className="mt-4 pt-4 border-t border-gray-100 text-[12px] text-gray-500 flex items-center gap-3 flex-wrap">
-              {lastPub && (
-                <span><span className="font-semibold text-gray-700">Last published</span> {lastPub}</span>
-              )}
-              {lastPub && lastRev && <span className="text-gray-300">·</span>}
-              {lastRev && (
-                <span><span className="font-semibold text-gray-700">Last review given</span> {lastRev}</span>
-              )}
-            </div>
-          )}
-        </header>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-10">
-          <Stat label="Followers" value={stats.followers} href={`/w/${profile.handle}/followers`} />
-          <Stat label="Following" value={stats.following} href={`/w/${profile.handle}/following`} />
-          <Stat label="Scripts" value={stats.publicScripts} />
-          <Stat label="Top GEM" value={stats.topScore != null ? Math.round(stats.topScore) : '—'} />
-          <Stat label="Community avg" value={stats.communityAvg != null ? Math.round(stats.communityAvg) : '—'} />
-          <Stat label="Reviews in" value={stats.reviewsReceived} />
-        </div>
-
-        {/* Earned tiers — derived from current stats */}
-        {(() => {
-          const badges: { label: string; cls: string }[] = []
-          if (stats.publicScripts >= 1) badges.push({ label: 'Writer', cls: 'bg-purple-50 text-purple-700 border-purple-200' })
-          if (stats.publicScripts >= 5) badges.push({ label: 'Prolific', cls: 'bg-purple-100 text-purple-800 border-purple-300' })
-          if (stats.communityAvg != null && stats.communityAvg >= 80) badges.push({ label: 'Strong community score', cls: 'bg-purple-50 text-purple-800 border-purple-200' })
-          if (stats.reviewsWritten >= 1) badges.push({ label: 'Reviewer', cls: 'bg-emerald-50 text-emerald-800 border-emerald-200' })
-          if (stats.reviewsWritten >= 10) badges.push({ label: 'Top reviewer', cls: 'bg-emerald-100 text-emerald-900 border-emerald-300' })
-          if (stats.followers >= 10) badges.push({ label: 'Followed', cls: 'bg-pink-50 text-pink-800 border-pink-200' })
-          return badges.length ? (
-            <div className="flex flex-wrap gap-2 -mt-7 mb-10">
-              {badges.map((b) => (
-                <span key={b.label} className={`text-[10px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-full border ${b.cls}`}>{b.label}</span>
+          {/* Genre/format focus tags */}
+          {(topGenres.length > 0 || topFormats.length > 0) && (
+            <div className="flex items-center gap-2 mt-4 flex-wrap">
+              {topFormats.map(f => (
+                <span
+                  key={f}
+                  className="text-[11px] font-bold uppercase tracking-[0.08em] text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full"
+                >
+                  {f}
+                </span>
+              ))}
+              {topGenres.map(g => (
+                <span
+                  key={g}
+                  className="text-[11px] font-bold uppercase tracking-[0.08em] text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full"
+                >
+                  {g}
+                </span>
               ))}
             </div>
-          ) : null
-        })()}
-
-        {/* Public scripts */}
-        <Section title="Scripts">
-          {publicScripts.length === 0 ? (
-            <Empty>No public scripts yet.</Empty>
-          ) : (
-            <div className="space-y-3">
-              {publicScripts.map((s) => {
-                const ev = s.script_evaluations?.[0]
-                if (!ev) return null
-                const st = scriptStats.get(s.id)
-                const evJson = ev.evaluation as any
-                const ef = ev.edited_fields as any
-                const logline = ef?.logline || evJson?.format_detection?.logline_one_line || evJson?.positioning_hook || null
-                const genre = ef?.genre_primary || evJson?.classification?.genre_primary || evJson?.format_detection?.genre_primary || null
-                const cardData: ScriptCardData = {
-                  submission_id: s.id,
-                  evaluation_id: ev.id,
-                  title: s.title,
-                  format: s.declared_format,
-                  genre,
-                  logline,
-                  selznick_score: ev.weighted_score,
-                  tier: ev.tier,
-                  writer_handle: profile.handle,
-                  writer_name: profile.full_name,
-                  review_count: st?.reviewCount ?? 0,
-                  avg_peer_score: st?.avgPeerScore ?? null,
-                }
-                return <ScriptCard key={s.id} s={cardData} density="list" />
-              })}
-            </div>
           )}
-        </Section>
+        </div>
 
-        {/* Reviews written */}
-        <Section title="Reviews written">
-          {reviewsWritten.length === 0 ? (
-            <Empty>No reviews written yet.</Empty>
+        {/* ── SCRIPTS ── */}
+        <section>
+          <h2 className="text-[12px] uppercase tracking-[0.14em] font-bold text-gray-400 mb-3">
+            Scripts{scripts.length > 0 ? ` (${scripts.length})` : ''}
+          </h2>
+
+          {scripts.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[13px] text-gray-400 m-0">No published scripts yet.</p>
+            </div>
           ) : (
-            <div className="space-y-3">
-              {reviewsWritten.map((r) => {
-                const cardHref = r.script?.eval_id ? `/report/${r.script.eval_id}` : null
-                const card = (
-                  <div className={`rounded-xl border border-gray-200 bg-white p-4 ${cardHref ? 'hover:bg-gray-50 hover:border-purple-200 transition-colors cursor-pointer' : ''}`}>
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <div className="text-[13px] text-gray-500 leading-snug">
-                        Reviewed{' '}
-                        <span className="font-semibold text-gray-900">
-                          {r.script?.title ?? 'a script'}
-                        </span>{' '}
-                        by{' '}
-                        {r.script?.writer_handle ? (
-                          <span className="font-semibold text-purple-700">
-                            {r.script.writer_name || `@${r.script.writer_handle}`}
-                          </span>
-                        ) : (
-                          <span>{r.script?.writer_name || '—'}</span>
+            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+              {scripts.map(s => (
+                <div key={s.id} className="px-4 py-3.5">
+                  <div className="flex items-center gap-3">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
+                        {s.title}
+                      </p>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        {s.format && (
+                          <span className="text-[12px] text-gray-400">{s.format}</span>
+                        )}
+                        {s.genre && (
+                          <>
+                            {s.format && <span className="text-gray-200">&middot;</span>}
+                            <span className="text-[12px] text-gray-400">{s.genre}</span>
+                          </>
                         )}
                       </div>
-                      <ScoreBadge score={r.score} />
                     </div>
-                    <p className="text-[14px] text-gray-700 leading-relaxed line-clamp-3">{r.body}</p>
-                    {r.script?.writer_handle && (
-                      <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-400">
-                        View writer:{' '}
-                        <Link
-                          href={`/w/${r.script.writer_handle}`}
-                          onClick={(e) => e.stopPropagation()}
-                          className="font-semibold text-purple-700 hover:underline"
-                        >
-                          @{r.script.writer_handle}
-                        </Link>
-                      </div>
+                    {s.evalId && (
+                      <Link
+                        href={`/report/${s.evalId}`}
+                        className="shrink-0 text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors"
+                      >
+                        View →
+                      </Link>
                     )}
                   </div>
-                )
-                return cardHref ? (
-                  <Link key={r.id} href={cardHref} className="block">
-                    {card}
-                  </Link>
-                ) : (
-                  <div key={r.id}>{card}</div>
-                )
-              })}
+                </div>
+              ))}
             </div>
           )}
-        </Section>
-    </div>
-  )
-}
+        </section>
 
-function Stat({ label, value, href }: { label: string; value: number | string | null; href?: string }) {
-  const inner = (
-    <>
-      <div className="text-2xl font-bold text-gray-900 tabular-nums">{value ?? '—'}</div>
-      <div className="text-[10px] uppercase tracking-[0.14em] font-bold text-gray-500 mt-1">{label}</div>
-    </>
-  )
-  if (href) {
-    return (
-      <Link href={href} className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-center hover:bg-gray-50 hover:border-purple-200 transition-colors">
-        {inner}
-      </Link>
-    )
-  }
-  return (
-    <div className="rounded-lg border border-gray-200 bg-white px-3 py-3 text-center">{inner}</div>
-  )
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mb-8">
-      <h2 className="text-[11px] uppercase tracking-[0.18em] font-bold text-gray-500 mb-3">{title}</h2>
-      {children}
-    </section>
-  )
-}
-
-function Empty({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="rounded-xl border border-dashed border-gray-200 px-5 py-6 text-center text-sm text-gray-400">
-      {children}
-    </div>
-  )
-}
-
-function ScoreBadge({ score }: { score: number }) {
-  return (
-    <div className="shrink-0 flex flex-col items-center justify-center rounded" style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.30)', minWidth: 44, padding: '3px 8px' }}>
-      <span className="text-[8px] uppercase tracking-[0.14em] font-bold text-purple-700 leading-none">Score</span>
-      <span className="text-[15px] font-bold text-gray-900 tabular-nums leading-none mt-0.5">{score}</span>
+      </main>
     </div>
   )
 }
