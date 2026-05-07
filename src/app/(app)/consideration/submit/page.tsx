@@ -35,6 +35,14 @@ export default async function ConsiderationSubmitPage() {
   const isEditing = existing && existing.length > 0
   let currentScriptIds: string[] = []
 
+  // Check subscription status (needed for gate logic below)
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+  const isPro = profile?.subscription_status === 'active'
+
   if (isEditing) {
     // Load current scripts for this consideration
     const { data: cs } = await service
@@ -72,14 +80,6 @@ export default async function ConsiderationSubmitPage() {
       }
     }
   }
-
-  // Check subscription status
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('subscription_status')
-    .eq('id', user.id)
-    .single()
-  const isPro = profile?.subscription_status === 'active'
 
   // Get all completed scripts
   const { data: scripts } = await supabase
