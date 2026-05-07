@@ -164,12 +164,15 @@ export default async function DashboardPage() {
 
   // ---------- GATE LOGIC ----------
   // Can they request consideration? Need: no active consideration + (no past review OR new script since last review)
+  // TRIAL GATE: trial users who've been reviewed once cannot resubmit until they upgrade.
   const hasActiveConsideration = !!activeConsideration
+  const hasBeenReviewed = !!latestReviewed
+  const trialReviewedGate = isTrial && hasBeenReviewed // hard block for free users
   const lastReviewDate = latestReviewed?.reviewed_at ? new Date(latestReviewed.reviewed_at) : null
   const hasNewScriptSinceLastReview = lastReviewDate
     ? visible.some(s => s.status === 'completed' && new Date(s.created_at) > lastReviewDate)
     : true // No past review = can submit
-  const canRequestConsideration = !hasActiveConsideration && hasNewScriptSinceLastReview
+  const canRequestConsideration = !hasActiveConsideration && !trialReviewedGate && hasNewScriptSinceLastReview
 
   // ---------- BUILD SCRIPT DATA ----------
   type ScriptRow = {
@@ -302,6 +305,32 @@ export default async function DashboardPage() {
             >
               Edit consideration
             </Link>
+          </div>
+        ) : trialReviewedGate ? (
+          <div className="space-y-2.5">
+            <div className="grid grid-cols-2 gap-2.5">
+              <Link
+                href="/submit"
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
+              >
+                Upload a script
+              </Link>
+              <div className="flex items-center justify-center px-4 py-3 rounded-xl bg-gray-100 text-gray-400 text-[13px] font-bold text-center cursor-not-allowed">
+                Request consideration
+              </div>
+            </div>
+            <div className="rounded-xl bg-purple-50 border border-purple-200/50 px-4 py-3.5">
+              <p className="text-[13px] font-bold text-purple-900 m-0">Want more feedback?</p>
+              <p className="text-[12px] text-purple-700 m-0 mt-1 leading-snug">
+                Upgrade to Pro for unlimited considerations, full access to all your reports, and priority review.
+              </p>
+              <Link
+                href="/upgrade"
+                className="inline-flex items-center gap-1.5 mt-2.5 px-4 py-2 rounded-lg bg-purple-600 text-white text-[12px] font-bold hover:bg-purple-700 transition-colors"
+              >
+                Upgrade to Pro — $20/mo
+              </Link>
+            </div>
           </div>
         ) : (
           <div className="space-y-2.5">

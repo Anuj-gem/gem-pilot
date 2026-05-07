@@ -54,6 +54,11 @@ export default async function ConsiderationSubmitPage() {
       .maybeSingle()
 
     if (lastReview?.reviewed_at) {
+      // TRIAL GATE: free users who've been reviewed once cannot resubmit
+      if (!isPro) {
+        redirect('/dashboard')
+      }
+
       const { data: newerScripts } = await supabase
         .from('script_submissions')
         .select('id')

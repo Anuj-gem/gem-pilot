@@ -44,6 +44,25 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'You already have an active consideration' }, { status: 409 })
   }
 
+  // TRIAL GATE: free users who've been reviewed once cannot resubmit
+  const { data: profileCheck } = await service
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+
+  if (profileCheck?.subscription_status !== 'active') {
+    const { data: pastReview } = await service
+      .from('considerations')
+      .select('id')
+      .eq('writer_id', user.id)
+      .eq('status', 'reviewed')
+      .limit(1)
+    if (pastReview && pastReview.length > 0) {
+      return NextResponse.json({ error: 'Upgrade to Pro for additional considerations' }, { status: 403 })
+    }
+  }
+
   // Verify scripts belong to this user
   const { data: userScripts } = await supabase
     .from('script_submissions')
