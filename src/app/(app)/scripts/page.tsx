@@ -1,5 +1,4 @@
-// /scripts — "My Scripts" — full list in dashboard row format.
-// Shows consideration status per script + latest feedback summary.
+// /scripts — "My Scripts" — full list with sort, bulk hide, three-dot menu.
 // Consideration model v1 (2026-05-05).
 
 import { redirect } from 'next/navigation'
@@ -7,7 +6,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
-import { UpgradePill } from '@/components/dashboard/upgrade-pill'
+import { ScriptsList } from '@/components/dashboard/scripts-list'
 
 export const dynamic = 'force-dynamic'
 
@@ -34,7 +33,7 @@ export default async function ScriptsPage() {
   const isTrial = !isPro
   const service = svc()
 
-  // Fetch scripts
+  // Fetch ALL scripts (including hidden — client toggles visibility)
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null
@@ -45,8 +44,8 @@ export default async function ScriptsPage() {
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
-  const visible = ((mySubs as SubRow[] | null) || []).filter(s => !s.hidden_at)
-  const submissionIds = visible.map(s => s.id)
+  const allScripts = (mySubs as SubRow[] | null) || []
+  const submissionIds = allScripts.map(s => s.id)
 
   // Evaluations
   const evalBySub = new Map<string, { id: string; score: number | null; genre: string | null }>()
@@ -64,7 +63,7 @@ export default async function ScriptsPage() {
     }
   }
 
-  // Considerations — figure out which scripts are in active consideration or were previously considered
+  // Considerations
   const { data: considerations } = await service
     .from('considerations')
     .select('id, status, submitted_at, reviewed_at, feedback, outcome')
@@ -79,7 +78,6 @@ export default async function ScriptsPage() {
   const activeConsideration = allConsiderations.find(c => c.status === 'pending')
   const latestReviewed = allConsiderations.find(c => c.status === 'reviewed')
 
-  // Scripts in active consideration
   let activeScriptIds = new Set<string>()
   if (activeConsideration) {
     const { data: cs } = await service
@@ -91,7 +89,6 @@ export default async function ScriptsPage() {
     }
   }
 
-  // Scripts in latest reviewed consideration
   let reviewedScriptIds = new Set<string>()
   if (latestReviewed) {
     const { data: cs } = await service
@@ -103,9 +100,9 @@ export default async function ScriptsPage() {
     }
   }
 
-  // Paywall logic
-  const allCompleted = visible
-    .filter(s => s.status === 'completed')
+  // Paywall: first completed script is free
+  const allCompleted = allScripts
+    .filter(s => s.status === 'completed' && !s.hidden_at)
     .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
   const firstCompletedId = allCompleted[0]?.id ?? null
 
@@ -113,9 +110,34 @@ export default async function ScriptsPage() {
   const hasActiveConsideration = !!activeConsideration
   const lastReviewDate = latestReviewed?.reviewed_at ? new Date(latestReviewed.reviewed_at) : null
   const hasNewScriptSinceLastReview = lastReviewDate
-    ? visible.some(s => s.status === 'completed' && new Date(s.created_at) > lastReviewDate)
+    ? allScripts.some(s => s.status === 'completed' && !s.hidden_at && new Date(s.created_at) > lastReviewDate)
     : true
   const canRequestConsideration = !hasActiveConsideration && hasNewScriptSinceLastReview
+
+  // Build script rows for client component
+  const scriptRows = allScripts.map(s => {
+    const ev = evalBySub.get(s.id)
+    const stillProcessing = s.status === 'processing' || s.status === 'queued'
+    const isFirstCompleted = s.id === firstCompletedId
+    const isLocked = isTrial && !stillProcessing && s.status === 'completed' && !isFirstCompleted
+
+    return {
+      id: s.id,
+      title: s.title,
+      format: s.declared_format,
+      genre: ev?.genre ?? null,
+      score: ev?.score ?? null,
+      evalId: ev?.id ?? null,
+      createdAt: s.created_at,
+      isProcessing: stillProcessing,
+      isLocked,
+      inConsideration: activeScriptIds.has(s.id),
+      wasReviewed: reviewedScriptIds.has(s.id),
+      hidden: !!s.hidden_at,
+    }
+  })
+
+  const visibleCount = scriptRows.filter(s => !s.hidden).length
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -127,7 +149,7 @@ export default async function ScriptsPage() {
             My Scripts
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
-            {allCompleted.length} {allCompleted.length === 1 ? 'script' : 'scripts'} evaluated
+            {visibleCount} {visibleCount === 1 ? 'script' : 'scripts'} evaluated
           </p>
         </div>
         <Link
@@ -169,102 +191,8 @@ export default async function ScriptsPage() {
         </div>
       )}
 
-      {/* Script list */}
-      {visible.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-10 text-center">
-          <p className="text-[14px] text-gray-400 m-0 mb-3">No scripts yet. Upload your first to get started.</p>
-          <Link
-            href="/submit"
-            className="inline-flex items-center gap-1.5 text-[13px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors"
-          >
-            Upload a script
-          </Link>
-        </div>
-      ) : (
-        <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-          {visible.map(s => {
-            const ev = evalBySub.get(s.id)
-            const stillProcessing = s.status === 'processing' || s.status === 'queued'
-            const isFirstCompleted = s.id === firstCompletedId
-            const isLocked = isTrial && !stillProcessing && s.status === 'completed' && !isFirstCompleted
-            const inActive = activeScriptIds.has(s.id)
-            const wasReviewed = reviewedScriptIds.has(s.id)
-
-            return (
-              <div key={s.id} className="relative">
-                {isLocked && (
-                  <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center">
-                    <UpgradePill />
-                  </div>
-                )}
-                <div className="px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    {/* Score */}
-                    <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{
-                      background: stillProcessing ? '#f3f4f6' : ev?.score != null && ev.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
-                    }}>
-                      {stillProcessing ? (
-                        <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
-                      ) : ev?.score != null ? (
-                        <span className="text-[14px] font-bold" style={{
-                          color: ev.score >= 75 ? '#7c3aed' : '#6b7280',
-                          ...(isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
-                        }}>
-                          {Math.round(ev.score)}
-                        </span>
-                      ) : (
-                        <span className="text-[11px] text-gray-300">&mdash;</span>
-                      )}
-                    </div>
-
-                    {/* Title + meta */}
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                      <div className="flex items-center gap-1.5 mt-0.5">
-                        {s.declared_format && <span className="text-[12px] text-gray-400">{s.declared_format}</span>}
-                        {ev?.genre && (
-                          <>
-                            {s.declared_format && <span className="text-gray-200">&middot;</span>}
-                            <span className="text-[12px] text-gray-400">{ev.genre}</span>
-                          </>
-                        )}
-                        {stillProcessing && (
-                          <span className="text-[12px] font-medium text-purple-500">Processing&hellip;</span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Status + action */}
-                    {!isLocked && !stillProcessing && (
-                      <div className="flex items-center gap-2 shrink-0">
-                        {inActive && (
-                          <span className="text-[12px] font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">
-                            In consideration
-                          </span>
-                        )}
-                        {!inActive && wasReviewed && (
-                          <span className="text-[12px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                            Reviewed
-                          </span>
-                        )}
-                        {ev && (
-                          <Link
-                            href={`/report/${ev.id}`}
-                            className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-colors"
-                            title="View report"
-                          >
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                          </Link>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      )}
+      {/* Script list (client component) */}
+      <ScriptsList scripts={scriptRows} isPro={isPro} />
 
       {/* Pro/Free badge */}
       <div className="flex items-center justify-between mt-3">
