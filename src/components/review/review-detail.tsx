@@ -56,6 +56,7 @@ type Script = {
   id: string; title: string; format: string | null
   genre: string | null; score: number | null; evaluationId: string | null
   createdAt: string
+  matchingOpportunities?: { title: string; slug: string }[]
 }
 
 // Lock icon
@@ -414,6 +415,7 @@ export function ReviewDetail({
                   score: s.score,
                   evaluationId: s.evaluationId,
                   createdAt: s.createdAt,
+                  matchingOpportunities: s.matchingOpportunities,
                 }}
                 checkbox={isDraft}
                 checked={selectedIds.has(s.id)}

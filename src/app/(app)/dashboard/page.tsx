@@ -142,21 +142,6 @@ export default async function DashboardPage() {
 
   // ---------- SCRIPTS PENDING REVIEW ----------
   // "Pending review" = completed visible scripts NOT attached to ANY consideration
-  const pendingScripts = visible
-    .filter(s => s.status === 'completed' && !allReviewedScriptIds.has(s.id))
-    .map(s => {
-      const ev = myEvalBySub.get(s.id)
-      return {
-        id: s.id,
-        title: s.title,
-        format: s.declared_format,
-        score: ev?.weighted_score ?? null,
-        evaluationId: ev?.id ?? null,
-        genre: ev?.genre ?? null,
-      }
-    })
-
-  // Build ScriptRowData for the unified card
   function matchOpportunities(format: string | null, genre: string | null) {
     if (!format && !genre) return []
     return allOpenOpps.filter(o => {
@@ -166,17 +151,23 @@ export default async function DashboardPage() {
     }).map(o => ({ title: o.title, slug: o.slug }))
   }
 
-  const pendingScriptCards: ScriptRowData[] = pendingScripts.map(s => ({
-    id: s.id,
-    title: s.title,
-    format: s.format,
-    genre: s.genre,
-    score: s.score,
-    evaluationId: s.evaluationId,
-    createdAt: '',
-    status: 'ready' as const,
-    matchingOpportunities: matchOpportunities(s.format, s.genre),
-  }))
+  const pendingScriptCards: ScriptRowData[] = visible
+    .filter(s => s.status === 'completed' && !allReviewedScriptIds.has(s.id))
+    .map(s => {
+      const ev = myEvalBySub.get(s.id)
+      const genre = ev?.genre ?? null
+      return {
+        id: s.id,
+        title: s.title,
+        format: s.declared_format,
+        genre,
+        score: ev?.weighted_score ?? null,
+        evaluationId: ev?.id ?? null,
+        createdAt: s.created_at,
+        status: 'ready' as const,
+        matchingOpportunities: matchOpportunities(s.declared_format, genre),
+      }
+    })
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
   const completedCount = visible.filter(s => s.status === 'completed').length

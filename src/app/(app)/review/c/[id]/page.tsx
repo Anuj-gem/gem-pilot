@@ -105,10 +105,30 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
   }
 
+  // Open opportunities for matching
+  const { data: openOpps } = await service
+    .from('opportunities')
+    .select('id, title, slug, formats, genres')
+    .eq('status', 'open')
+  const allOpenOpps = (openOpps || []) as {
+    id: string; title: string; slug: string
+    formats: string[] | null; genres: string[] | null
+  }[]
+
+  function matchOpportunities(format: string | null, genre: string | null) {
+    if (!format && !genre) return []
+    return allOpenOpps.filter(o => {
+      const fmtMatch = !o.formats || o.formats.length === 0 || (format && o.formats.some(f => f.toLowerCase() === format.toLowerCase()))
+      const genreMatch = !o.genres || o.genres.length === 0 || (genre && o.genres.some(g => genre.toLowerCase().includes(g.toLowerCase())))
+      return fmtMatch || genreMatch
+    }).map(o => ({ title: o.title, slug: o.slug }))
+  }
+
   let scripts: {
     id: string; title: string; format: string | null
     genre: string | null; score: number | null; evaluationId: string | null
     createdAt: string
+    matchingOpportunities: { title: string; slug: string }[]
   }[] = []
 
   if (scriptIds.length > 0) {
@@ -148,6 +168,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         score: ev?.weighted_score ?? null,
         evaluationId: ev?.id ?? null,
         createdAt: s.created_at,
+        matchingOpportunities: matchOpportunities(s.declared_format, genre),
       }
     })
   }
