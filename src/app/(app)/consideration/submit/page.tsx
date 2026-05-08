@@ -51,31 +51,44 @@ export default async function ConsiderationSubmitPage() {
       .eq('consideration_id', existing[0].id)
     currentScriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
   } else {
-    // Check if eligible — must have new work since last review
-    const { data: lastReview } = await service
+    // Check eligibility — must have unreviewed scripts (not attached to any consideration)
+    const { data: pastCons } = await service
       .from('considerations')
-      .select('reviewed_at')
+      .select('id')
       .eq('writer_id', user.id)
-      .eq('status', 'reviewed')
-      .order('reviewed_at', { ascending: false })
-      .limit(1)
-      .maybeSingle()
+    const hasBeenReviewed = (pastCons || []).length > 0
 
-    if (lastReview?.reviewed_at) {
+    if (hasBeenReviewed) {
       // TRIAL GATE: free users who've been reviewed once cannot resubmit
       if (!isPro) {
         redirect('/dashboard')
       }
 
-      const { data: newerScripts } = await supabase
+      // Check for scripts NOT in any consideration
+      const conIds = (pastCons || []).map((c: { id: string }) => c.id)
+      let reviewedScriptIds: Set<string> = new Set()
+      if (conIds.length > 0) {
+        const { data: conScripts } = await service
+          .from('consideration_scripts')
+          .select('script_submission_id')
+          .in('consideration_id', conIds)
+        for (const r of (conScripts || []) as { script_submission_id: string }[]) {
+          reviewedScriptIds.add(r.script_submission_id)
+        }
+      }
+
+      const { data: allCompleted } = await supabase
         .from('script_submissions')
         .select('id')
         .eq('user_id', user.id)
         .eq('status', 'completed')
-        .gt('created_at', lastReview.reviewed_at)
-        .limit(1)
+        .is('hidden_at', null)
 
-      if (!newerScripts || newerScripts.length === 0) {
+      const hasUnreviewed = (allCompleted || []).some(
+        (s: { id: string }) => !reviewedScriptIds.has(s.id)
+      )
+
+      if (!hasUnreviewed) {
         redirect('/dashboard')
       }
     }
