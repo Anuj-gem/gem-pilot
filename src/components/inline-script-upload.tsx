@@ -142,6 +142,15 @@ export function InlineScriptUpload({
         body: JSON.stringify({ submission_id: startData.submission_id }),
       }).catch(() => {})
 
+      // Dispatch event so all pages can show an instant processing card
+      window.dispatchEvent(new CustomEvent('gem:script-uploaded', {
+        detail: {
+          id: startData.submission_id,
+          title: title.trim(),
+          format,
+        },
+      }))
+
       reset()
       onClose?.()
       router.refresh()

@@ -15,14 +15,13 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import Link from 'next/link'
 import { NewReviewButton } from '@/components/dashboard/new-review-button'
 import { DashboardActions } from '@/components/dashboard/dashboard-actions'
-import { ScriptRowCard } from '@/components/cards/script-row-card'
+import { DashboardPendingScripts } from '@/components/dashboard/dashboard-pending-scripts'
 import type { ScriptRowData } from '@/components/cards/script-row-card'
 
 export const dynamic = 'force-dynamic'
@@ -205,7 +204,6 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <ProcessingPoller active={isProcessing} />
       {isTrial && <UpgradeModalListener />}
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
@@ -412,19 +410,7 @@ export default async function DashboardPage() {
             </Link>
           </header>
 
-          {pendingScriptCards.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-              <p className="text-[13px] text-gray-500 m-0">
-                No scripts pending review.
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-2">
-              {pendingScriptCards.map((s) => (
-                <ScriptRowCard key={s.id} script={s} />
-              ))}
-            </div>
-          )}
+          <DashboardPendingScripts scripts={pendingScriptCards} isProcessing={isProcessing} />
         </section>
       </div>
     </>

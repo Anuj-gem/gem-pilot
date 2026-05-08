@@ -8,6 +8,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ScriptRowCard, type ScriptRowData } from '@/components/cards/script-row-card'
+import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { useNewUploads } from '@/hooks/use-new-uploads'
 
 const STAGES = [
   {
@@ -96,6 +98,10 @@ export function ReviewDetail({
   const [submitting, setSubmitting] = useState(false)
   const router = useRouter()
 
+  // Optimistic processing cards from new uploads
+  const optimistic = useNewUploads(scripts.map(s => s.id))
+  const hasProcessing = optimistic.length > 0
+
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
@@ -149,6 +155,8 @@ export function ReviewDetail({
 
   return (
     <>
+      <ProcessingPoller active={hasProcessing} />
+
       {/* Back link + page title */}
       <div className="mb-1">
         <Link href="/review" className="text-[12px] font-medium text-gray-400 hover:text-gray-600">
@@ -366,7 +374,16 @@ export function ReviewDetail({
           )}
         </header>
 
-        {reviewScripts.length === 0 ? (
+        {/* Optimistic processing cards from new uploads */}
+        {optimistic.length > 0 && (
+          <div className="space-y-2 mb-2">
+            {optimistic.map(s => (
+              <ScriptRowCard key={s.id} script={s} />
+            ))}
+          </div>
+        )}
+
+        {reviewScripts.length === 0 && optimistic.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
             <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts eligible for review</p>
             <p className="text-[13px] text-gray-400 m-0 mb-3">Upload and evaluate new scripts to include them in this review.</p>

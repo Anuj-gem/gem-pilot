@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { ScriptRowCard, type ScriptRowData } from '@/components/cards/script-row-card'
+import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { useNewUploads } from '@/hooks/use-new-uploads'
 
 type ScriptRow = ScriptRowData & {
   isProcessing?: boolean
@@ -27,6 +29,10 @@ export function ScriptsList({
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [showHidden, setShowHidden] = useState(false)
   const [hiding, setHiding] = useState<Set<string>>(new Set())
+
+  // Optimistic processing cards from new uploads + auto-refresh poller
+  const optimistic = useNewUploads(scripts.map(s => s.id))
+  const hasProcessing = scripts.some(s => s.isProcessing) || optimistic.length > 0
 
   const visible = scripts.filter((s: ScriptRow) => !s.hidden)
   const hidden = scripts.filter((s: ScriptRow) => s.hidden)
@@ -127,6 +133,17 @@ export function ScriptsList({
 
   return (
     <div>
+      <ProcessingPoller active={hasProcessing} />
+
+      {/* Optimistic processing cards (instant, before server refresh) */}
+      {optimistic.length > 0 && (
+        <div className="space-y-2 mb-2">
+          {optimistic.map(s => (
+            <ScriptRowCard key={s.id} script={s} />
+          ))}
+        </div>
+      )}
+
       {/* Sort controls */}
       <div className="flex items-center gap-1 mb-3">
         <span className="text-[11px] text-gray-400 mr-1">Sort:</span>
