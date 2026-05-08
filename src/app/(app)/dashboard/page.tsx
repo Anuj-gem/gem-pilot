@@ -21,7 +21,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import Link from 'next/link'
 import { NewReviewButton } from '@/components/dashboard/new-review-button'
-// InlineScriptUpload removed — upload now lives in the nav's "+ New" modal
+import { DashboardActions } from '@/components/dashboard/dashboard-actions'
 
 export const dynamic = 'force-dynamic'
 
@@ -139,6 +139,15 @@ export default async function DashboardPage() {
   )
   const canRequestConsideration = !hasActiveConsideration && !trialReviewedGate && hasUnreviewedScripts
 
+  // Disabled reason for portfolio review button (shown when grayed out)
+  const reviewDisabledReason = hasActiveConsideration
+    ? 'Review already in progress'
+    : trialReviewedGate
+    ? 'Upgrade to Pro for more reviews'
+    : !hasUnreviewedScripts
+    ? 'Submit a new script first'
+    : null
+
   // ---------- SCRIPTS PENDING REVIEW ----------
   // "Pending review" = completed visible scripts NOT attached to ANY consideration
   const pendingScripts = visible
@@ -240,12 +249,11 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* ── PORTFOLIO REVIEW CTA ─────────────────────── */}
-        {canRequestConsideration && pendingScripts.length > 0 && (
-          <NewReviewButton
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[14px] font-bold text-white transition-colors hover:opacity-90"
-          />
-        )}
+        {/* ── ACTIONS — always visible ─────────────────── */}
+        <DashboardActions
+          canRequestReview={canRequestConsideration}
+          disabledReason={reviewDisabledReason}
+        />
 
         {/* ── REVIEWS ─────────────────────────────────── */}
         {allConsiderations.length > 0 ? (
@@ -378,14 +386,7 @@ export default async function DashboardPage() {
           <section>
             <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Your reviews</h2>
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-              <p className="text-[13px] text-gray-500 m-0 mb-3">No reviews yet. Submit your scripts for a portfolio review.</p>
-              {canRequestConsideration && (
-                <NewReviewButton
-                  className="inline-flex items-center gap-1.5 text-[12px] font-bold text-purple-600 hover:text-purple-800 bg-transparent border-0 cursor-pointer"
-                >
-                  <span>Start portfolio review</span>
-                </NewReviewButton>
-              )}
+              <p className="text-[13px] text-gray-500 m-0">No reviews yet. Use the buttons above to get started.</p>
             </div>
           </section>
         ) : null}
