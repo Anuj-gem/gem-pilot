@@ -20,6 +20,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import Link from 'next/link'
+import { InlineScriptUpload } from '@/components/inline-script-upload'
 
 export const dynamic = 'force-dynamic'
 
@@ -404,21 +405,19 @@ export default async function DashboardPage() {
         <section>
           <header className="flex items-end justify-between gap-3 mb-2.5">
             <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts pending review</h2>
-            <div className="flex items-center gap-3">
-              <Link href="/submit" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
-                + Add new
-              </Link>
-              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                View full portfolio
-              </Link>
-            </div>
+            <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+              View full portfolio
+            </Link>
           </header>
 
           {pendingScripts.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-              <p className="text-[13px] text-gray-500 m-0">
-                No scripts pending review. Upload a new script to get your portfolio reviewed.
-              </p>
+            <div className="space-y-2.5">
+              <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
+                <p className="text-[13px] text-gray-500 m-0">
+                  No scripts pending review.
+                </p>
+              </div>
+              <InlineScriptUpload />
             </div>
           ) : (
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
@@ -474,6 +473,7 @@ export default async function DashboardPage() {
               ))}
             </div>
           )}
+          {pendingScripts.length > 0 && <InlineScriptUpload className="mt-2.5" />}
         </section>
       </div>
     </>

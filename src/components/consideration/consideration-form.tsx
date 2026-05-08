@@ -7,6 +7,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { OpenCallsDropdown } from '@/components/dashboard/open-calls-dropdown'
+import { InlineScriptUpload } from '@/components/inline-script-upload'
 
 type ScriptOption = {
   id: string
@@ -235,12 +236,7 @@ export function ConsiderationForm({
       {/* Add a new script CTA */}
       <div className="mt-4">
         {isPro ? (
-          <a
-            href="/submit"
-            className="flex items-center justify-center gap-2 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-[13px] font-semibold text-gray-500 hover:border-purple-400 hover:text-purple-600 transition-colors"
-          >
-            + Submit a new script
-          </a>
+          <InlineScriptUpload />
         ) : (
           <button
             onClick={openUpgrade}

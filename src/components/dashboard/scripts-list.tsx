@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
+import { InlineScriptUpload } from '@/components/inline-script-upload'
 
 type ScriptRow = {
   id: string
@@ -194,14 +195,11 @@ export function ScriptsList({
 
       {/* Script list */}
       {sortedVisible.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-10 text-center">
-          <p className="text-[14px] text-gray-400 m-0 mb-3">No scripts yet. Upload your first to get started.</p>
-          <Link
-            href="/submit"
-            className="inline-flex items-center gap-1.5 text-[13px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors"
-          >
-            Upload a script
-          </Link>
+        <div className="space-y-3">
+          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+            <p className="text-[14px] text-gray-400 m-0">No scripts yet. Upload your first to get started.</p>
+          </div>
+          <InlineScriptUpload />
         </div>
       ) : (
         <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
@@ -368,6 +366,8 @@ export function ScriptsList({
           ))}
         </div>
       )}
+
+      {sortedVisible.length > 0 && <InlineScriptUpload className="mt-3" />}
 
       {/* Hidden scripts */}
       {hidden.length > 0 && (

@@ -65,6 +65,10 @@ export async function POST(request: NextRequest) {
     const title = formData.get("title") as string | null
     const declaredFormatRaw = formData.get("declared_format") as string | null
     const resumeSubmissionId = (formData.get("resume_submission_id") as string | null) || null
+    const declaredTitle = (formData.get("declared_title") as string | null) || null
+    const declaredGenrePrimary = (formData.get("declared_genre_primary") as string | null) || null
+    const declaredGenreSecondary = (formData.get("declared_genre_secondary") as string | null) || null
+    const declaredLogline = (formData.get("declared_logline") as string | null) || null
 
     if (!file || !title) {
       return NextResponse.json(
@@ -136,6 +140,10 @@ export async function POST(request: NextRequest) {
           status: "processing",
           declared_format: declaredFormat,
           submitted_by_ip: clientIp,
+          ...(declaredTitle ? { declared_title: declaredTitle } : {}),
+          ...(declaredGenrePrimary ? { declared_genre_primary: declaredGenrePrimary } : {}),
+          ...(declaredGenreSecondary ? { declared_genre_secondary: declaredGenreSecondary } : {}),
+          ...(declaredLogline ? { declared_logline: declaredLogline } : {}),
         })
         .eq("id", resumeSubmissionId)
 
@@ -165,6 +173,10 @@ export async function POST(request: NextRequest) {
           submitted_by_ip: clientIp,
           declared_format: declaredFormat,
           ...(expiresAt ? { expires_at: expiresAt } : {}),
+          ...(declaredTitle ? { declared_title: declaredTitle } : {}),
+          ...(declaredGenrePrimary ? { declared_genre_primary: declaredGenrePrimary } : {}),
+          ...(declaredGenreSecondary ? { declared_genre_secondary: declaredGenreSecondary } : {}),
+          ...(declaredLogline ? { declared_logline: declaredLogline } : {}),
         })
         .select("id")
         .single()
