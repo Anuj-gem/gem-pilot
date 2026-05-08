@@ -223,71 +223,66 @@ export function ConsiderationReviewCard({
             </div>
           </div>
 
-          {/* Feedback textarea */}
+          {/* Feedback / message — unified send box */}
           <div>
             <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
-              Overall assessment
+              Send feedback
             </p>
             <textarea
               value={feedback}
               onChange={e => setFeedback(e.target.value)}
-              placeholder="Strengths across their portfolio, positioning, where they're placeable..."
-              rows={4}
+              placeholder="Portfolio notes, strengths, questions for the writer..."
+              rows={3}
               className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
             />
-          </div>
-
-          {/* Next steps */}
-          <div>
-            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
-              Next steps for writer
-            </p>
-            <textarea
-              value={nextSteps}
-              onChange={e => setNextSteps(e.target.value)}
-              placeholder="What to write or submit next, what would strengthen their portfolio..."
-              rows={2}
-              className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
-            />
-          </div>
-
-          {/* Send feedback button */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handleSendFeedback}
-              disabled={saving || !feedback.trim()}
-              className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1.5 rounded-md transition-colors"
-            >
-              {saving ? 'Sending…' : reviewed ? 'Update feedback' : 'Send feedback'}
-            </button>
-            {saved && (
-              <span className="text-[12px] text-emerald-600 font-medium">Sent</span>
-            )}
-          </div>
-
-          {/* Quick message */}
-          <div className="pt-2 border-t border-gray-100">
-            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
-              Send a message
-            </p>
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                value={messageText}
-                onChange={e => setMessageText(e.target.value)}
-                placeholder="Quick note to the writer..."
-                className="flex-1 text-[13px] text-gray-700 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
-                onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage() } }}
-              />
+            <div className="flex items-center gap-2 mt-2">
               <button
-                onClick={handleSendMessage}
-                disabled={!messageText.trim() || saving}
-                className="text-[12px] font-bold text-purple-600 bg-purple-50 hover:bg-purple-100 disabled:opacity-50 px-3 py-2 rounded-lg transition-colors"
+                onClick={handleSendFeedback}
+                disabled={saving || !feedback.trim()}
+                className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1.5 rounded-md transition-colors"
               >
-                Send
+                {saving ? 'Sending…' : 'Send'}
               </button>
+              {saved && (
+                <span className="text-[12px] text-emerald-600 font-medium">Sent</span>
+              )}
             </div>
           </div>
+
+          {/* Next steps — only visible when stage is complete */}
+          {stage === 'complete' && (
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+                Next steps for writer
+              </p>
+              <textarea
+                value={nextSteps}
+                onChange={e => setNextSteps(e.target.value)}
+                placeholder="What to write or submit next, what would strengthen their portfolio..."
+                rows={2}
+                className="w-full text-[13px] text-gray-700 leading-[1.55] border border-gray-200 rounded-lg px-3 py-2.5 resize-y focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
+              />
+              <button
+                onClick={async () => {
+                  setSaving(true)
+                  const res = await fetch('/api/consideration/review', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      consideration_id: considerationId,
+                      next_steps: nextSteps.trim() || null,
+                    }),
+                  })
+                  setSaving(false)
+                  if (res.ok) { setSaved(true); setTimeout(() => setSaved(false), 2000) }
+                }}
+                disabled={saving}
+                className="text-[12px] font-bold text-purple-600 bg-purple-50 hover:bg-purple-100 disabled:opacity-50 px-3 py-1.5 rounded-md mt-2 transition-colors"
+              >
+                {saving ? 'Saving…' : 'Save next steps'}
+              </button>
+            </div>
+          )}
 
           {/* Event timeline */}
           {events.length > 0 && (

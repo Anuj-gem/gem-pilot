@@ -230,8 +230,97 @@ export function ReviewHub({
         )}
       </div>
 
-      {/* ── ACTIVE REVIEW STATUS ──────────────────────── */}
-      {activeReview && currentStage && (
+      {/* ── COMPLETED REVIEW ─────────────────────────── */}
+      {activeReview && activeReview.reviewStage === 'complete' && (
+        <>
+          {/* Prominent completion banner */}
+          <div className="rounded-xl border-[1.5px] border-emerald-200 bg-emerald-50 px-5 py-4">
+            <div className="flex items-center gap-2 mb-2">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#059669" strokeWidth="1.5" />
+                <path d="M6.5 10.5l2 2 5-5" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <p className="text-[15px] font-bold text-emerald-800 m-0">Review complete</p>
+            </div>
+            <p className="text-[13px] text-emerald-700 m-0 leading-snug">
+              Your portfolio review is finished. See the feedback and suggested next steps below.
+            </p>
+          </div>
+
+          {/* Feedback */}
+          {activeReview.feedback && (
+            <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
+              <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
+                Feedback from GEM
+              </p>
+              <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
+                {activeReview.feedback}
+              </p>
+            </div>
+          )}
+
+          {/* Next steps — distinct card */}
+          {activeReview.nextSteps && (
+            <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
+              <div className="px-5 py-4" style={{ borderLeft: '4px solid #7c3aed' }}>
+                <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
+                  Suggested next steps
+                </p>
+                <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
+                  {activeReview.nextSteps}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Begin new review CTA */}
+          <div className="rounded-xl bg-purple-50 border border-purple-200 px-5 py-4 text-center">
+            <p className="text-[13px] text-gray-600 m-0 mb-3">
+              Ready to keep going? Start a new portfolio review with your latest work.
+            </p>
+            <Link
+              href="/consideration/submit"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+            >
+              Begin new portfolio review
+            </Link>
+          </div>
+
+          {/* Activity timeline */}
+          {activeReview.events.length > 0 && (
+            <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
+              <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
+              <div className="space-y-2">
+                {activeReview.events.map(ev => (
+                  <div key={ev.id} className="flex items-start gap-2.5">
+                    <div
+                      className="shrink-0 mt-1.5 w-2 h-2 rounded-full"
+                      style={{
+                        background: ev.event_type === 'status_change' ? '#7c3aed'
+                          : ev.event_type === 'feedback' ? '#059669'
+                          : '#6b7280',
+                      }}
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[13px] text-gray-600 m-0 leading-snug">
+                        {ev.event_type === 'feedback'
+                          ? 'Feedback received from GEM'
+                          : ev.message || 'Status updated'}
+                      </p>
+                      <p className="text-[11px] text-gray-400 m-0 mt-0.5">
+                        {fmtDateTime(ev.created_at)}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      )}
+
+      {/* ── IN-PROGRESS REVIEW STATUS ─────────────────── */}
+      {activeReview && currentStage && activeReview.reviewStage !== 'complete' && (
         <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
           <div className="px-5 py-4">
 
@@ -286,7 +375,7 @@ export function ReviewHub({
               {currentStage.description}
             </p>
 
-            {/* Feedback (if any) */}
+            {/* Feedback messages (shown inline in feed) */}
             {activeReview.feedback && (
               <div className="bg-gray-50 rounded-lg border border-gray-100 p-4 mb-4">
                 <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
@@ -295,16 +384,6 @@ export function ReviewHub({
                 <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
                   {activeReview.feedback}
                 </p>
-                {activeReview.nextSteps && (
-                  <div className="mt-3 pt-3 border-t border-gray-200">
-                    <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1">
-                      Your next move
-                    </p>
-                    <p className="text-[13.5px] text-purple-900 leading-[1.5] m-0">
-                      {activeReview.nextSteps}
-                    </p>
-                  </div>
-                )}
               </div>
             )}
 

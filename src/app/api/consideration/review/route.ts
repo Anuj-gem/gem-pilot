@@ -69,16 +69,26 @@ export async function POST(req: NextRequest) {
     })
   }
 
-  // --- Feedback (overall assessment + next steps) ---
+  // --- Next steps (set independently, typically on complete) ---
+  if (next_steps !== undefined && !feedback?.trim()) {
+    await service
+      .from('considerations')
+      .update({ next_steps: next_steps?.trim() || null })
+      .eq('id', consideration_id)
+  }
+
+  // --- Feedback (does NOT change status — status is controlled by stage selector) ---
   if (feedback?.trim()) {
+    // Append latest feedback to the consideration record
+    const updateFields: Record<string, unknown> = {
+      feedback: feedback.trim(),
+    }
+    if (next_steps !== undefined) {
+      updateFields.next_steps = next_steps?.trim() || null
+    }
     const { error } = await service
       .from('considerations')
-      .update({
-        status: 'reviewed',
-        feedback: feedback.trim(),
-        next_steps: next_steps?.trim() || null,
-        reviewed_at: new Date().toISOString(),
-      })
+      .update(updateFields)
       .eq('id', consideration_id)
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
