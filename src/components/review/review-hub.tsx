@@ -366,18 +366,26 @@ export function ReviewHub({
           <header className="flex items-center justify-between mb-2.5">
             <div className="flex items-center gap-2">
               <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
-              {isLocked && <LockIcon className="text-gray-300" />}
-            </div>
-            <div className="flex items-center gap-3">
-              {!isLocked && (
-                <Link href="/consideration/submit" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
-                  Edit portfolio
+              {isLocked ? (
+                <LockIcon className="text-gray-300" />
+              ) : (
+                <Link
+                  href="/consideration/submit"
+                  className="text-[12px] font-semibold text-purple-600 hover:text-purple-800"
+                >
+                  Edit
                 </Link>
               )}
-              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                View all scripts
-              </Link>
             </div>
+            <Link
+              href="/submit"
+              className="flex items-center gap-1 text-[12px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg transition-colors"
+            >
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              Upload script
+            </Link>
           </header>
 
           {reviewScripts.length === 0 ? (
