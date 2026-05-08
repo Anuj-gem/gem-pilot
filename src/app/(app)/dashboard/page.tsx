@@ -238,78 +238,36 @@ export default async function DashboardPage() {
         </div>
 
         {/* ── CTAs ──────────────────────────────────── */}
-        {canRequestConsideration ? (
-          <div className="grid grid-cols-2 gap-2.5">
-            <Link
-              href="/submit"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
-            >
-              Upload a script
-            </Link>
+        <div className="grid grid-cols-2 gap-2.5">
+          <Link
+            href="/submit"
+            className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
+          >
+            Add new script
+          </Link>
+          {canRequestConsideration ? (
             <Link
               href="/consideration/submit"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors text-center"
             >
               Start portfolio review
             </Link>
-          </div>
-        ) : hasActiveConsideration ? (
-          <div className="grid grid-cols-2 gap-2.5">
-            <Link
-              href="/submit"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
-            >
-              Upload a script
-            </Link>
-            <Link
-              href={`/review/c/${activeConsideration.id}`}
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-100 text-purple-600 text-[13px] font-bold text-center hover:bg-purple-200 transition-colors"
-            >
-              View current review
-            </Link>
-          </div>
-        ) : trialReviewedGate ? (
-          <div className="space-y-2.5">
-            <div className="grid grid-cols-2 gap-2.5">
-              <Link
-                href="/submit"
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
-              >
-                Upload a script
-              </Link>
-              <div className="flex items-center justify-center px-4 py-3 rounded-xl bg-gray-100 text-gray-400 text-[13px] font-bold text-center cursor-not-allowed">
-                Start portfolio review
-              </div>
+          ) : (
+            <div className="relative flex flex-col items-center justify-center px-4 py-3 rounded-xl bg-gray-100 text-gray-400 text-[13px] font-bold text-center cursor-not-allowed select-none opacity-60">
+              <span className="absolute top-1.5 right-2 text-[9px] font-bold uppercase tracking-wide text-gray-400">
+                Ineligible
+              </span>
+              <span>Start portfolio review</span>
+              <span className="text-[10px] font-normal text-gray-400 mt-0.5 leading-tight">
+                {hasActiveConsideration
+                  ? 'Review already in progress'
+                  : trialReviewedGate
+                  ? 'Upgrade to Pro for more reviews'
+                  : 'Submit a new script first'}
+              </span>
             </div>
-            <div className="rounded-xl bg-purple-50 border border-purple-200/50 px-4 py-3.5">
-              <p className="text-[13px] font-bold text-purple-900 m-0">Want more feedback?</p>
-              <p className="text-[12px] text-purple-700 m-0 mt-1 leading-snug">
-                Upgrade to Pro for unlimited reviews, full access to all your reports, and priority review.
-              </p>
-              <Link
-                href="/upgrade"
-                className="inline-flex items-center gap-1.5 mt-2.5 px-4 py-2 rounded-lg bg-purple-600 text-white text-[12px] font-bold hover:bg-purple-700 transition-colors"
-              >
-                Upgrade to Pro — $20/mo
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-2.5">
-            <Link
-              href="/submit"
-              className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
-            >
-              Upload a script
-            </Link>
-            <div className="rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-              <p className="text-[13px] font-bold text-gray-500 m-0">Not yet eligible for review</p>
-              <p className="text-[12px] text-gray-400 m-0 mt-1 leading-snug">
-                Upload a new script to submit for another portfolio review.
-              </p>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* ── MOST RECENT REVIEW ──────────────────────── */}
         {latestReview ? (
