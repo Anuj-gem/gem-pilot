@@ -1,18 +1,48 @@
 'use client'
 
 // ReviewHub — the portfolio review experience.
-// Two modes:
-//   1. Active review: status tracker + event feed + feedback
-//   2. No active review: prompt to submit or past reviews
+// Profile at top, then active review status, scripts, past reviews.
 
 import { useState } from 'react'
 import Link from 'next/link'
 
 const STAGES = [
-  { key: 'submitted', label: 'Submitted' },
-  { key: 'initial_review', label: 'Initial review' },
-  { key: 'advanced_review', label: 'Advanced review' },
-  { key: 'complete', label: 'Complete' },
+  {
+    key: 'draft',
+    label: 'Draft',
+    color: '#6b7280',
+    description: 'Your portfolio review is in draft. Add your best scripts and submit when ready.',
+  },
+  {
+    key: 'pending',
+    label: 'Pending',
+    color: '#d97706',
+    description: 'Your portfolio has been submitted. Our team will begin reviewing shortly.',
+  },
+  {
+    key: 'initial_review',
+    label: 'Initial review',
+    color: '#7c3aed',
+    description: 'The GEM team is doing a detailed review of your portfolio to match it against opportunities in our network.',
+  },
+  {
+    key: 'advanced_review',
+    label: 'Advanced review',
+    color: '#2563eb',
+    description: "Your work stood out. We’re reviewing alongside our partners to find the right fit.",
+  },
+  {
+    key: 'partner_match',
+    label: 'Partner match',
+    color: '#059669',
+    description: "We’ve identified a partner match. Details incoming.",
+  },
+  {
+    key: 'complete',
+    label: 'Complete',
+    color: '#16a34a',
+    description: 'Your review is complete. Check your feedback below.',
+  },
 ] as const
 
 type EventRow = { id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }
@@ -21,6 +51,16 @@ type PastReview = {
   id: string; review_stage: string; submitted_at: string; reviewed_at: string | null
   feedback: string | null; next_steps: string | null; scriptCount: number
   events: EventRow[]
+}
+
+// Lock icon SVG
+function LockIcon({ className }: { className?: string }) {
+  return (
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className={className}>
+      <rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
 }
 
 export function ReviewHub({
@@ -55,10 +95,17 @@ export function ReviewHub({
   const fmtDateTime = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
 
-  // Find current stage index for progress bar
+  const currentStage = activeReview
+    ? STAGES.find(s => s.key === activeReview.reviewStage) || STAGES[0]
+    : null
   const currentStageIdx = activeReview
     ? STAGES.findIndex(s => s.key === activeReview.reviewStage)
     : -1
+
+  // Locked = initial_review or beyond (not draft, not pending)
+  const isLocked = activeReview
+    ? ['initial_review', 'advanced_review', 'partner_match', 'complete'].includes(activeReview.reviewStage)
+    : false
 
   const profileComplete = !!(profile.fullName && profile.bio)
 
@@ -77,165 +124,7 @@ export function ReviewHub({
         </p>
       </div>
 
-      {/* ── ACTIVE REVIEW ─────────────────────────────── */}
-      {activeReview && (
-        <div
-          className="rounded-xl border-[1.5px] border-purple-200 overflow-hidden"
-          style={{ background: '#faf5ff' }}
-        >
-          <div className="px-5 py-4">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-3">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.12em] font-semibold text-purple-600 m-0 mb-1">
-                  Current review
-                </p>
-                <p className="text-[15px] font-bold text-gray-900 m-0">
-                  Portfolio review
-                </p>
-              </div>
-              <span
-                className="text-[11px] font-bold px-2.5 py-1 rounded-full"
-                style={{
-                  background: activeReview.reviewStage === 'complete' ? '#dcfce7' : '#f3e8ff',
-                  color: activeReview.reviewStage === 'complete' ? '#166534' : '#7c3aed',
-                }}
-              >
-                {STAGES.find(s => s.key === activeReview.reviewStage)?.label || activeReview.reviewStage}
-              </span>
-            </div>
-
-            {/* Progress bar */}
-            <div className="flex items-center gap-1.5 mb-4">
-              {STAGES.map((s, i) => (
-                <div
-                  key={s.key}
-                  className="flex-1 h-[3px] rounded-full"
-                  style={{
-                    background: i <= currentStageIdx ? '#7c3aed' : '#e9d5ff',
-                  }}
-                />
-              ))}
-            </div>
-
-            {/* Stage descriptions */}
-            {activeReview.reviewStage === 'submitted' && (
-              <p className="text-[13px] text-gray-500 m-0 mb-4 leading-snug">
-                Your portfolio has been submitted. Our team will begin reviewing your work shortly.
-              </p>
-            )}
-            {activeReview.reviewStage === 'initial_review' && (
-              <p className="text-[13px] text-gray-500 m-0 mb-4 leading-snug">
-                Your work is being reviewed by the GEM team. We&apos;re reading through your scripts and assessing your portfolio.
-              </p>
-            )}
-            {activeReview.reviewStage === 'advanced_review' && (
-              <p className="text-[13px] text-purple-700 m-0 mb-4 leading-snug font-medium">
-                This is looking strong. We&apos;re doing a deeper review alongside our partners to find the right opportunity for your work.
-              </p>
-            )}
-            {activeReview.reviewStage === 'partner_match' && (
-              <p className="text-[13px] text-emerald-700 m-0 mb-4 leading-snug font-medium">
-                We&apos;ve identified a partner match. Details incoming.
-              </p>
-            )}
-
-            {/* Feedback (if review complete or partial feedback given) */}
-            {activeReview.feedback && (
-              <div className="bg-white rounded-lg border border-purple-100 p-4 mb-4">
-                <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
-                  Feedback from GEM
-                </p>
-                <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
-                  {activeReview.feedback}
-                </p>
-                {activeReview.nextSteps && (
-                  <div className="mt-3 pt-3 border-t border-purple-50">
-                    <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1">
-                      Your next move
-                    </p>
-                    <p className="text-[13.5px] text-purple-900 leading-[1.5] m-0">
-                      {activeReview.nextSteps}
-                    </p>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Scripts in this review */}
-            <div className="bg-white rounded-lg border border-purple-100 p-3 mb-4">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-[12px] font-semibold text-gray-500 m-0">Scripts in this review</p>
-                <Link
-                  href="/consideration/submit"
-                  className="text-[12px] font-medium text-purple-600 hover:text-purple-800"
-                >
-                  Edit
-                </Link>
-              </div>
-              <div className="space-y-1.5">
-                {scripts.filter(s => s.inReview).map(s => (
-                  <div
-                    key={s.id}
-                    className="flex items-center justify-between px-2.5 py-1.5 bg-gray-50 rounded-md"
-                  >
-                    <span className="text-[13px] font-medium text-gray-700 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                      {s.title}
-                    </span>
-                    {s.score != null && (
-                      <span
-                        className="text-[12px] font-bold shrink-0 px-1.5 py-0.5 rounded"
-                        style={{
-                          color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                          background: s.score >= 75 ? 'rgba(124,58,237,0.06)' : 'rgba(0,0,0,0.03)',
-                        }}
-                      >
-                        {Math.round(s.score)}
-                      </span>
-                    )}
-                  </div>
-                ))}
-                {scripts.filter(s => s.inReview).length === 0 && (
-                  <p className="text-[12px] text-gray-400 m-0 py-2 text-center">No scripts selected</p>
-                )}
-              </div>
-            </div>
-
-            {/* Event timeline */}
-            {activeReview.events.length > 0 && (
-              <div>
-                <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
-                <div className="space-y-2">
-                  {activeReview.events.map(ev => (
-                    <div key={ev.id} className="flex items-start gap-2.5">
-                      <div
-                        className="shrink-0 mt-1.5 w-2 h-2 rounded-full"
-                        style={{
-                          background: ev.event_type === 'status_change' ? '#7c3aed'
-                            : ev.event_type === 'feedback' ? '#059669'
-                            : '#6b7280',
-                        }}
-                      />
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[13px] text-gray-600 m-0 leading-snug">
-                          {ev.event_type === 'feedback'
-                            ? 'Feedback received from GEM'
-                            : ev.message || 'Status updated'}
-                        </p>
-                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">
-                          {fmtDateTime(ev.created_at)}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* ── PROFILE CARD ──────────────────────────────── */}
+      {/* ── PROFILE CARD (always at top) ──────────────── */}
       <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
         <div className="flex items-center justify-between mb-3">
           <p className="text-[12px] font-semibold text-gray-500 m-0">Your profile</p>
@@ -279,6 +168,176 @@ export function ReviewHub({
           </p>
         )}
       </div>
+
+      {/* ── ACTIVE REVIEW ─────────────────────────────── */}
+      {activeReview && currentStage && (
+        <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+          <div className="px-5 py-4">
+
+            {/* Stage badge + lock */}
+            <div className="flex items-center gap-2 mb-3">
+              <span
+                className="text-[11px] font-bold px-2.5 py-1 rounded-full"
+                style={{
+                  background: `${currentStage.color}15`,
+                  color: currentStage.color,
+                }}
+              >
+                {currentStage.label}
+              </span>
+              {isLocked && (
+                <span className="flex items-center gap-1 text-[11px] text-gray-400">
+                  <LockIcon className="text-gray-400" />
+                  Locked
+                </span>
+              )}
+            </div>
+
+            {/* Progress steps */}
+            <div className="flex items-center gap-0.5 mb-4">
+              {STAGES.filter(s => s.key !== 'complete').map((s, i) => {
+                const filled = i <= currentStageIdx
+                const isCurrent = s.key === activeReview.reviewStage
+                return (
+                  <div key={s.key} className="flex-1 flex flex-col items-center gap-1.5">
+                    <div
+                      className="w-full h-[3px] rounded-full transition-colors"
+                      style={{
+                        background: filled ? currentStage.color : '#e5e7eb',
+                      }}
+                    />
+                    <span
+                      className="text-[10px] leading-none transition-colors"
+                      style={{
+                        color: isCurrent ? currentStage.color : filled ? '#6b7280' : '#d1d5db',
+                        fontWeight: isCurrent ? 700 : 500,
+                      }}
+                    >
+                      {s.label}
+                    </span>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* Stage description */}
+            <p className="text-[13px] text-gray-500 m-0 mb-4 leading-snug">
+              {currentStage.description}
+            </p>
+
+            {/* Feedback (if any) */}
+            {activeReview.feedback && (
+              <div className="bg-gray-50 rounded-lg border border-gray-100 p-4 mb-4">
+                <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
+                  Feedback from GEM
+                </p>
+                <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
+                  {activeReview.feedback}
+                </p>
+                {activeReview.nextSteps && (
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1">
+                      Your next move
+                    </p>
+                    <p className="text-[13.5px] text-purple-900 leading-[1.5] m-0">
+                      {activeReview.nextSteps}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Scripts in this review */}
+            <div className="bg-gray-50 rounded-lg border border-gray-100 p-3 mb-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-[12px] font-semibold text-gray-500 m-0">
+                  Scripts in this review
+                  {isLocked && (
+                    <span className="text-gray-400 font-normal ml-1.5">
+                      <LockIcon className="inline text-gray-300 -mt-0.5" />
+                    </span>
+                  )}
+                </p>
+                {!isLocked && (
+                  <Link
+                    href="/consideration/submit"
+                    className="text-[12px] font-medium text-purple-600 hover:text-purple-800"
+                  >
+                    Edit
+                  </Link>
+                )}
+              </div>
+              <div className="space-y-1.5">
+                {scripts.filter(s => s.inReview).map(s => (
+                  <div
+                    key={s.id}
+                    className="flex items-center justify-between px-2.5 py-1.5 bg-white rounded-md"
+                  >
+                    <span className="text-[13px] font-medium text-gray-700 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+                      {s.title}
+                    </span>
+                    {s.score != null && (
+                      <span
+                        className="text-[12px] font-bold shrink-0 px-1.5 py-0.5 rounded"
+                        style={{
+                          color: s.score >= 75 ? '#7c3aed' : '#6b7280',
+                          background: s.score >= 75 ? 'rgba(124,58,237,0.06)' : 'rgba(0,0,0,0.03)',
+                        }}
+                      >
+                        {Math.round(s.score)}
+                      </span>
+                    )}
+                  </div>
+                ))}
+                {scripts.filter(s => s.inReview).length === 0 && (
+                  <p className="text-[12px] text-gray-400 m-0 py-2 text-center">No scripts selected</p>
+                )}
+              </div>
+            </div>
+
+            {/* Draft CTA */}
+            {activeReview.reviewStage === 'draft' && (
+              <Link
+                href="/consideration/submit"
+                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+              >
+                Finish and submit
+              </Link>
+            )}
+
+            {/* Event timeline */}
+            {activeReview.events.length > 0 && (
+              <div className="pt-3 border-t border-gray-100">
+                <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
+                <div className="space-y-2">
+                  {activeReview.events.map(ev => (
+                    <div key={ev.id} className="flex items-start gap-2.5">
+                      <div
+                        className="shrink-0 mt-1.5 w-2 h-2 rounded-full"
+                        style={{
+                          background: ev.event_type === 'status_change' ? '#7c3aed'
+                            : ev.event_type === 'feedback' ? '#059669'
+                            : '#6b7280',
+                        }}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13px] text-gray-600 m-0 leading-snug">
+                          {ev.event_type === 'feedback'
+                            ? 'Feedback received from GEM'
+                            : ev.message || 'Status updated'}
+                        </p>
+                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">
+                          {fmtDateTime(ev.created_at)}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* ── NO ACTIVE REVIEW CTA ──────────────────────── */}
       {!activeReview && (

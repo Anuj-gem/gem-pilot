@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { sendEmail } from '@/lib/email'
 
-const VALID_STAGES = ['submitted', 'initial_review', 'advanced_review', 'partner_match', 'complete'] as const
+const VALID_STAGES = ['draft', 'pending', 'submitted', 'initial_review', 'advanced_review', 'partner_match', 'complete'] as const
 
 function svc() {
   return createServerClient(
@@ -52,8 +52,10 @@ export async function POST(req: NextRequest) {
 
     // Log status change event
     const stageLabels: Record<string, string> = {
+      draft: 'Portfolio review created',
+      pending: 'Portfolio submitted',
       submitted: 'Portfolio submitted',
-      initial_review: 'Initial review started',
+      initial_review: 'Your review has begun',
       advanced_review: 'Advanced review — reviewing with partners',
       partner_match: 'Partner match identified',
       complete: 'Review complete',

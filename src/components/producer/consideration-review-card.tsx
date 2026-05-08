@@ -7,7 +7,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const STAGES = [
-  { value: 'submitted', label: 'Submitted', color: '#d97706' },
+  { value: 'draft', label: 'Draft', color: '#6b7280' },
+  { value: 'pending', label: 'Pending', color: '#d97706' },
   { value: 'initial_review', label: 'Initial review', color: '#7c3aed' },
   { value: 'advanced_review', label: 'Advanced review', color: '#2563eb' },
   { value: 'partner_match', label: 'Partner match', color: '#059669' },

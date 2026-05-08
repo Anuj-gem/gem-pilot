@@ -362,7 +362,9 @@ export default async function DashboardPage() {
                   className="text-[11px] font-bold px-2 py-0.5 rounded-full"
                   style={{ background: '#f3e8ff', color: '#7c3aed' }}
                 >
-                  {activeConsideration.review_stage === 'submitted' ? 'Submitted'
+                  {activeConsideration.review_stage === 'draft' ? 'Draft'
+                    : activeConsideration.review_stage === 'pending' ? 'Pending'
+                    : activeConsideration.review_stage === 'submitted' ? 'Submitted'
                     : activeConsideration.review_stage === 'initial_review' ? 'Initial review'
                     : activeConsideration.review_stage === 'advanced_review' ? 'Advanced review'
                     : activeConsideration.review_stage === 'partner_match' ? 'Partner match'
@@ -370,8 +372,8 @@ export default async function DashboardPage() {
                 </span>
               </div>
               <div className="flex items-center gap-1.5 mb-2">
-                {['submitted', 'initial_review', 'advanced_review', 'complete'].map((s, i) => {
-                  const stageIdx = ['submitted', 'initial_review', 'advanced_review', 'complete'].indexOf(activeConsideration.review_stage)
+                {['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].map((s, i) => {
+                  const stageIdx = ['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].indexOf(activeConsideration.review_stage)
                   return (
                     <div
                       key={s}
