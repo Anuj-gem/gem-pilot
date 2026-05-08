@@ -5,6 +5,7 @@
 // status block with outcome, assessment, next steps, scripts.
 
 import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const STAGES = [
@@ -137,6 +138,8 @@ export function ReviewDetail({
   events: EventRow[]
 }) {
   const [removedIds, setRemovedIds] = useState<Set<string>>(new Set())
+  const [submitting, setSubmitting] = useState(false)
+  const router = useRouter()
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -156,7 +159,41 @@ export function ReviewDetail({
 
   async function handleRemoveScript(scriptId: string) {
     setRemovedIds(prev => new Set([...prev, scriptId]))
-    // TODO: API call to remove from consideration_scripts
+    try {
+      await fetch('/api/consideration/remove-script', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ consideration_id: review.id, script_id: scriptId }),
+      })
+    } catch {
+      // Revert on failure
+      setRemovedIds(prev => {
+        const next = new Set(prev)
+        next.delete(scriptId)
+        return next
+      })
+    }
+  }
+
+  async function handleSubmitForReview() {
+    if (submitting) return
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/consideration/submit-draft', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ consideration_id: review.id }),
+      })
+      if (res.ok) {
+        router.refresh()
+      }
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  function openUploadModal() {
+    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
   }
 
   return (
@@ -363,27 +400,18 @@ export function ReviewDetail({
         <header className="flex items-center justify-between mb-2.5">
           <div className="flex items-center gap-2">
             <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
-            {isLocked ? (
-              <LockIcon className="text-gray-300" />
-            ) : (
-              <Link
-                href="/consideration/submit"
-                className="text-[12px] font-semibold text-purple-600 hover:text-purple-800"
-              >
-                Edit
-              </Link>
-            )}
+            {isLocked && <LockIcon className="text-gray-300" />}
           </div>
           {!isLocked && (
-            <Link
-              href="/submit"
+            <button
+              onClick={openUploadModal}
               className="flex items-center gap-1 text-[12px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
               Upload script
-            </Link>
+            </button>
           )}
         </header>
 
@@ -391,12 +419,12 @@ export function ReviewDetail({
           <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
             <p className="text-[13px] text-gray-400 m-0 mb-3">No scripts in this review yet.</p>
             {isDraft && (
-              <Link
-                href="/consideration/submit"
-                className="text-[13px] font-bold text-purple-600 hover:text-purple-800"
+              <button
+                onClick={openUploadModal}
+                className="text-[13px] font-bold text-purple-600 hover:text-purple-800 bg-transparent border-0 cursor-pointer"
               >
-                Add scripts to your portfolio
-              </Link>
+                Upload a script
+              </button>
             )}
           </div>
         ) : (
@@ -461,18 +489,19 @@ export function ReviewDetail({
         {/* Draft actions */}
         {isDraft && (
           <div className="flex items-center gap-3 mt-3">
-            <Link
-              href="/consideration/submit"
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+            <button
+              onClick={handleSubmitForReview}
+              disabled={submitting || reviewScripts.length === 0}
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors disabled:opacity-50"
             >
-              Submit for review
-            </Link>
-            <Link
-              href="/submit"
+              {submitting ? 'Submitting…' : 'Submit for review'}
+            </button>
+            <button
+              onClick={openUploadModal}
               className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
             >
               + Add new script
-            </Link>
+            </button>
           </div>
         )}
       </section>
@@ -481,10 +510,7 @@ export function ReviewDetail({
       {isComplete && (
         <div className="rounded-xl bg-gray-50 border border-gray-200 px-5 py-3">
           <p className="text-[13px] text-gray-500 m-0">
-            When you upload new work, you can{' '}
-            <Link href="/submit" className="text-purple-600 hover:text-purple-800 font-medium">
-              start a new review
-            </Link>.
+            When you upload new work, you can start a new portfolio review from your dashboard.
           </p>
         </div>
       )}
