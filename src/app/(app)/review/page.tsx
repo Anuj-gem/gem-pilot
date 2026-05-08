@@ -174,6 +174,7 @@ export default async function ReviewPage() {
           events: activeEvents,
         } : null}
         pastReviews={pastReviewData}
+        totalReviewCount={considerations.length}
       />
     </div>
   )

@@ -1,7 +1,8 @@
 'use client'
 
 // ReviewHub — the portfolio review experience.
-// Profile at top, then active review status, scripts in review (one list), past reviews.
+// Matches the v3 mockup: numbered reviews, status block with outcome message,
+// overall assessment, suggested next steps, script cards, past reviews.
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
@@ -121,6 +122,7 @@ export function ReviewHub({
   scripts,
   activeReview,
   pastReviews,
+  totalReviewCount,
 }: {
   profile: {
     fullName: string | null
@@ -137,6 +139,7 @@ export function ReviewHub({
     events: EventRow[]
   } | null
   pastReviews: PastReview[]
+  totalReviewCount: number
 }) {
   const [removedIds, setRemovedIds] = useState<Set<string>>(new Set())
 
@@ -164,28 +167,29 @@ export function ReviewHub({
 
   const reviewScripts = scripts.filter(s => s.inReview && !removedIds.has(s.id))
 
+  // Active review is the latest, so its number = totalReviewCount
+  const activeReviewNumber = activeReview ? totalReviewCount : 0
+
   async function handleRemoveScript(scriptId: string) {
-    // Optimistic removal
     setRemovedIds(prev => new Set([...prev, scriptId]))
     // TODO: API call to remove from consideration_scripts
   }
 
   return (
     <>
-      {/* Page header */}
+      {/* Page title = review number */}
       <div>
         <h1
-          className="text-[22px] font-bold text-gray-900 m-0 mb-1"
+          className="text-[22px] font-bold text-gray-900 m-0"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          Portfolio review
+          {activeReview
+            ? `Portfolio review #${activeReviewNumber}`
+            : 'Portfolio review'}
         </h1>
-        <p className="text-[13px] text-gray-400 m-0">
-          Submit your best work. Our team reviews every portfolio personally.
-        </p>
       </div>
 
-      {/* ── PROFILE CARD (always at top) ──────────────── */}
+      {/* ── PROFILE CARD ──────────────────────────────── */}
       <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
         <div className="flex items-center justify-between mb-3">
           <p className="text-[12px] font-semibold text-gray-500 m-0">Your profile</p>
@@ -233,17 +237,21 @@ export function ReviewHub({
       {/* ── COMPLETED REVIEW ─────────────────────────── */}
       {activeReview && activeReview.reviewStage === 'complete' && (
         <>
-          {/* Prominent completion banner */}
-          <div className="rounded-xl border-[1.5px] border-emerald-200 bg-emerald-50 px-5 py-4">
-            <div className="flex items-center gap-2 mb-2">
+          {/* Status block — communicates the outcome */}
+          <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
+            <div className="flex items-center gap-2 mb-2.5">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="9" stroke="#059669" strokeWidth="1.5" />
                 <path d="M6.5 10.5l2 2 5-5" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <p className="text-[15px] font-bold text-emerald-800 m-0">Review complete</p>
             </div>
-            <p className="text-[13px] text-emerald-700 m-0 leading-snug">
-              Your portfolio review is finished. See the feedback and suggested next steps below.
+            <p className="text-[13px] text-gray-700 m-0 mb-2.5 leading-[1.6]">
+              {"Our team reviewed your portfolio and compared it against active opportunities in our network. We weren't able to match you with a partner at this time, but we see real potential in your work. Please read the assessment and next steps below — we'd welcome a resubmission."}
+            </p>
+            <p className="text-[12px] text-gray-400 m-0">
+              Submitted {fmtDate(activeReview.submittedAt)}
+              {` · ${reviewScripts.length} ${reviewScripts.length === 1 ? 'script' : 'scripts'}`}
             </p>
           </div>
 
@@ -253,61 +261,25 @@ export function ReviewHub({
               <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
                 Overall assessment
               </p>
-              <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
+              <p className="text-[14px] text-gray-700 leading-[1.65] m-0 whitespace-pre-line">
                 {activeReview.feedback}
               </p>
             </div>
           )}
 
-          {/* Suggested next steps — distinct card */}
+          {/* Suggested next steps */}
           {activeReview.nextSteps && (
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               <div className="px-5 py-4" style={{ borderLeft: '4px solid #7c3aed' }}>
                 <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
                   Suggested next steps
                 </p>
-                <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
+                <p className="text-[14px] text-gray-700 leading-[1.65] m-0 whitespace-pre-line">
                   {activeReview.nextSteps}
                 </p>
               </div>
             </div>
           )}
-
-          {/* New review note */}
-          <div className="rounded-xl bg-gray-50 border border-gray-200 px-5 py-3">
-            <p className="text-[13px] text-gray-500 m-0">
-              When you upload new work, you can{' '}
-              <Link href="/submit" className="text-purple-600 hover:text-purple-800 font-medium">
-                start a new review
-              </Link>.
-            </p>
-          </div>
-
-          {/* Activity timeline — status changes only */}
-          {(() => {
-            const statusEvents = activeReview.events.filter(ev => ev.event_type === 'status_change')
-            if (statusEvents.length === 0) return null
-            return (
-              <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
-                <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
-                <div className="space-y-2">
-                  {statusEvents.map(ev => (
-                    <div key={ev.id} className="flex items-start gap-2.5">
-                      <div className="shrink-0 mt-1.5 w-2 h-2 rounded-full" style={{ background: '#7c3aed' }} />
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[13px] text-gray-600 m-0 leading-snug">
-                          {ev.message || 'Status updated'}
-                        </p>
-                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">
-                          {fmtDateTime(ev.created_at)}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )
-          })()}
         </>
       )}
 
@@ -384,9 +356,7 @@ export function ReviewHub({
                       />
                       <div className="min-w-0 flex-1">
                         <p className="text-[13px] text-gray-600 m-0 leading-snug">
-                          {ev.event_type === 'feedback'
-                            ? 'Feedback received from GEM'
-                            : ev.message || 'Status updated'}
+                          {ev.message || 'Status updated'}
                         </p>
                         <p className="text-[11px] text-gray-400 m-0 mt-0.5">
                           {fmtDateTime(ev.created_at)}
@@ -419,7 +389,7 @@ export function ReviewHub({
         </div>
       )}
 
-      {/* ── SCRIPTS IN REVIEW (single unified list) ───── */}
+      {/* ── SCRIPTS IN REVIEW ─────────────────────────── */}
       {activeReview && (
         <section>
           <header className="flex items-center justify-between mb-2.5">
@@ -482,7 +452,7 @@ export function ReviewHub({
                         </p>
                       )}
 
-                      {/* Tags */}
+                      {/* Tags — genre only */}
                       {s.tags.length > 0 && (
                         <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
                           {getDisplayTags(s.tags).map(tag => (
@@ -545,14 +515,31 @@ export function ReviewHub({
         </section>
       )}
 
+      {/* Quiet new review note (completed only) */}
+      {activeReview && activeReview.reviewStage === 'complete' && (
+        <div className="rounded-xl bg-gray-50 border border-gray-200 px-5 py-3">
+          <p className="text-[13px] text-gray-500 m-0">
+            When you upload new work, you can{' '}
+            <Link href="/submit" className="text-purple-600 hover:text-purple-800 font-medium">
+              start a new review
+            </Link>.
+          </p>
+        </div>
+      )}
+
       {/* ── PAST REVIEWS ──────────────────────────────── */}
       {pastReviews.length > 0 && (
         <section>
           <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Past reviews</h2>
           <div className="space-y-3">
-            {pastReviews.map(pr => (
-              <PastReviewCard key={pr.id} review={pr} />
-            ))}
+            {pastReviews.map((pr, idx) => {
+              // pastReviews are newest-first from the server.
+              // Number them chronologically: oldest = #1.
+              const reviewNumber = totalReviewCount - (activeReview ? 1 : 0) - idx
+              return (
+                <PastReviewCard key={pr.id} review={pr} reviewNumber={reviewNumber} />
+              )
+            })}
           </div>
         </section>
       )}
@@ -560,7 +547,7 @@ export function ReviewHub({
   )
 }
 
-function PastReviewCard({ review }: { review: PastReview }) {
+function PastReviewCard({ review, reviewNumber }: { review: PastReview; reviewNumber: number }) {
   const [expanded, setExpanded] = useState(false)
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -572,7 +559,7 @@ function PastReviewCard({ review }: { review: PastReview }) {
         className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-gray-50 transition-colors"
       >
         <div>
-          <p className="text-[14px] font-bold text-gray-900 m-0">Portfolio review</p>
+          <p className="text-[14px] font-bold text-gray-900 m-0">Portfolio review #{reviewNumber}</p>
           <p className="text-[12px] text-gray-400 m-0 mt-0.5">
             Submitted {fmtDate(review.submitted_at)}
             {review.reviewed_at && ` · Reviewed ${fmtDate(review.reviewed_at)}`}
@@ -595,12 +582,17 @@ function PastReviewCard({ review }: { review: PastReview }) {
       {expanded && (
         <div className="px-5 pb-4 border-t border-gray-100 pt-3">
           {review.feedback && (
-            <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 mb-3 whitespace-pre-line">
-              {review.feedback}
-            </p>
+            <>
+              <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1.5">
+                Overall assessment
+              </p>
+              <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 mb-3 whitespace-pre-line">
+                {review.feedback}
+              </p>
+            </>
           )}
           {review.next_steps && (
-            <div className="pl-3 py-2.5 pr-3 rounded-r-lg mb-3" style={{
+            <div className="pl-3 py-2.5 pr-3 mb-3" style={{
               background: '#f5f3ff',
               borderLeft: '3px solid #7c3aed',
             }}>
@@ -616,7 +608,7 @@ function PastReviewCard({ review }: { review: PastReview }) {
             <div className="pt-2 border-t border-gray-100">
               <p className="text-[12px] font-semibold text-gray-400 m-0 mb-2">Activity</p>
               <div className="space-y-1.5">
-                {review.events.slice(0, 5).map(ev => (
+                {review.events.filter(ev => ev.event_type === 'status_change').slice(0, 5).map(ev => (
                   <div key={ev.id} className="flex items-center gap-2">
                     <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-300" />
                     <span className="text-[12px] text-gray-500">{ev.message || 'Status updated'}</span>

@@ -55,14 +55,14 @@ export function FeedbackCycle({
           </p>
         )}
 
-        {/* Your next move — the hero */}
+        {/* Suggested next steps */}
         {nextSteps && (
           <div className="mb-4 pl-4 py-3 pr-4 rounded-r-lg" style={{
             background: '#f5f3ff',
             borderLeft: '3px solid #7c3aed',
           }}>
             <p className="text-[12px] font-bold uppercase tracking-[0.04em] m-0 mb-1" style={{ color: '#7c3aed' }}>
-              Your next move
+              Suggested next steps
             </p>
             <p className="text-[14px] leading-[1.55] m-0" style={{ color: '#4c1d95' }}>
               {nextSteps}
