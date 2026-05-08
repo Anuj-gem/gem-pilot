@@ -55,16 +55,54 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     .single()
 
   // Scripts in this consideration
-  const { data: cs } = await service
-    .from('consideration_scripts')
-    .select('script_submission_id')
-    .eq('consideration_id', id)
-
-  const scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
+  // For DRAFT reviews, dynamically show ALL unreviewed scripts (not just the snapshot).
+  // After submission, show only the attached scripts.
+  const isDraft = consideration.review_stage === 'draft'
 
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; tags: string[] | null
+  }
+
+  let scriptIds: string[] = []
+
+  if (isDraft) {
+    // Find all completed, visible scripts NOT in any consideration
+    const { data: allCons } = await service
+      .from('considerations')
+      .select('id')
+      .eq('writer_id', user.id)
+    const conIds = (allCons || []).map((c: { id: string }) => c.id)
+
+    let reviewedScriptIds: Set<string> = new Set()
+    if (conIds.length > 0) {
+      const { data: conScripts } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .in('consideration_id', conIds)
+      for (const r of (conScripts || []) as { script_submission_id: string }[]) {
+        reviewedScriptIds.add(r.script_submission_id)
+      }
+    }
+
+    const { data: completedScripts } = await service
+      .from('script_submissions')
+      .select('id')
+      .eq('user_id', user.id)
+      .eq('status', 'completed')
+      .is('hidden_at', null)
+      .order('created_at', { ascending: false })
+
+    scriptIds = (completedScripts || [])
+      .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
+      .map((s: { id: string }) => s.id)
+  } else {
+    // Non-draft: show only attached scripts
+    const { data: cs } = await service
+      .from('consideration_scripts')
+      .select('script_submission_id')
+      .eq('consideration_id', id)
+    scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
   }
 
   let scripts: {
