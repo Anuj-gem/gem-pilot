@@ -1,9 +1,9 @@
 'use client'
 
 // ReviewHub — the portfolio review experience.
-// Profile at top, then active review status, scripts, past reviews.
+// Profile at top, then active review status, scripts in review (one list), past reviews.
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 
 const STAGES = [
@@ -23,19 +23,19 @@ const STAGES = [
     key: 'initial_review',
     label: 'Initial review',
     color: '#7c3aed',
-    description: 'The GEM team is doing a detailed review of your portfolio to match it against opportunities in our network.',
+    description: "The GEM team is doing a detailed review of your portfolio to match it against opportunities in our network.",
   },
   {
     key: 'advanced_review',
     label: 'Advanced review',
     color: '#2563eb',
-    description: "Your work stood out. We’re reviewing alongside our partners to find the right fit.",
+    description: "Your work stood out. We're reviewing alongside our partners to find the right fit.",
   },
   {
     key: 'partner_match',
     label: 'Partner match',
     color: '#059669',
-    description: "We’ve identified a partner match. Details incoming.",
+    description: "We've identified a partner match. Details incoming.",
   },
   {
     key: 'complete',
@@ -47,13 +47,20 @@ const STAGES = [
 
 type EventRow = { id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }
 
+type Script = {
+  id: string; title: string; format: string | null
+  score: number | null; evaluationId: string | null
+  headline: string | null; tags: string[]
+  createdAt: string; inReview: boolean
+}
+
 type PastReview = {
   id: string; review_stage: string; submitted_at: string; reviewed_at: string | null
   feedback: string | null; next_steps: string | null; scriptCount: number
   events: EventRow[]
 }
 
-// Lock icon SVG
+// Lock icon
 function LockIcon({ className }: { className?: string }) {
   return (
     <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className={className}>
@@ -61,6 +68,51 @@ function LockIcon({ className }: { className?: string }) {
       <path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )
+}
+
+// Three-dot menu
+function ScriptMenu({ scriptId, onRemove }: { scriptId: string; onRemove: (id: string) => void }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    if (open) document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [open])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={(e) => { e.preventDefault(); e.stopPropagation(); setOpen(!open) }}
+        className="p-1 rounded hover:bg-gray-100 transition-colors"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="3.5" r="1" fill="#9ca3af" />
+          <circle cx="8" cy="8" r="1" fill="#9ca3af" />
+          <circle cx="8" cy="12.5" r="1" fill="#9ca3af" />
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 py-1 min-w-[140px]">
+          <button
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); onRemove(scriptId); setOpen(false) }}
+            className="w-full text-left px-3 py-1.5 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
+          >
+            Remove from review
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// Genre tags to display (first 3 meaningful ones)
+function getDisplayTags(tags: string[]): string[] {
+  const skip = new Set(['male-lead', 'female-lead', 'ensemble', 'contemporary', 'period', 'feature-anchored', 'series-anchored'])
+  return tags.filter(t => !skip.has(t)).slice(0, 3)
 }
 
 export function ReviewHub({
@@ -78,10 +130,7 @@ export function ReviewHub({
     headline: string | null
   }
   isPro: boolean
-  scripts: {
-    id: string; title: string; format: string | null
-    score: number | null; createdAt: string; inReview: boolean
-  }[]
+  scripts: Script[]
   activeReview: {
     id: string; reviewStage: string; submittedAt: string
     feedback: string | null; nextSteps: string | null
@@ -89,6 +138,8 @@ export function ReviewHub({
   } | null
   pastReviews: PastReview[]
 }) {
+  const [removedIds, setRemovedIds] = useState<Set<string>>(new Set())
+
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
@@ -102,12 +153,22 @@ export function ReviewHub({
     ? STAGES.findIndex(s => s.key === activeReview.reviewStage)
     : -1
 
-  // Locked = initial_review or beyond (not draft, not pending)
+  // Locked = initial_review or beyond
   const isLocked = activeReview
     ? ['initial_review', 'advanced_review', 'partner_match', 'complete'].includes(activeReview.reviewStage)
     : false
 
+  const isDraft = activeReview?.reviewStage === 'draft'
+
   const profileComplete = !!(profile.fullName && profile.bio)
+
+  const reviewScripts = scripts.filter(s => s.inReview && !removedIds.has(s.id))
+
+  async function handleRemoveScript(scriptId: string) {
+    // Optimistic removal
+    setRemovedIds(prev => new Set([...prev, scriptId]))
+    // TODO: API call to remove from consideration_scripts
+  }
 
   return (
     <>
@@ -169,7 +230,7 @@ export function ReviewHub({
         )}
       </div>
 
-      {/* ── ACTIVE REVIEW ─────────────────────────────── */}
+      {/* ── ACTIVE REVIEW STATUS ──────────────────────── */}
       {activeReview && currentStage && (
         <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
           <div className="px-5 py-4">
@@ -247,64 +308,6 @@ export function ReviewHub({
               </div>
             )}
 
-            {/* Scripts in this review */}
-            <div className="bg-gray-50 rounded-lg border border-gray-100 p-3 mb-4">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-[12px] font-semibold text-gray-500 m-0">
-                  Scripts in this review
-                  {isLocked && (
-                    <span className="text-gray-400 font-normal ml-1.5">
-                      <LockIcon className="inline text-gray-300 -mt-0.5" />
-                    </span>
-                  )}
-                </p>
-                {!isLocked && (
-                  <Link
-                    href="/consideration/submit"
-                    className="text-[12px] font-medium text-purple-600 hover:text-purple-800"
-                  >
-                    Edit
-                  </Link>
-                )}
-              </div>
-              <div className="space-y-1.5">
-                {scripts.filter(s => s.inReview).map(s => (
-                  <div
-                    key={s.id}
-                    className="flex items-center justify-between px-2.5 py-1.5 bg-white rounded-md"
-                  >
-                    <span className="text-[13px] font-medium text-gray-700 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                      {s.title}
-                    </span>
-                    {s.score != null && (
-                      <span
-                        className="text-[12px] font-bold shrink-0 px-1.5 py-0.5 rounded"
-                        style={{
-                          color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                          background: s.score >= 75 ? 'rgba(124,58,237,0.06)' : 'rgba(0,0,0,0.03)',
-                        }}
-                      >
-                        {Math.round(s.score)}
-                      </span>
-                    )}
-                  </div>
-                ))}
-                {scripts.filter(s => s.inReview).length === 0 && (
-                  <p className="text-[12px] text-gray-400 m-0 py-2 text-center">No scripts selected</p>
-                )}
-              </div>
-            </div>
-
-            {/* Draft CTA */}
-            {activeReview.reviewStage === 'draft' && (
-              <Link
-                href="/consideration/submit"
-                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
-              >
-                Finish and submit
-              </Link>
-            )}
-
             {/* Event timeline */}
             {activeReview.events.length > 0 && (
               <div className="pt-3 border-t border-gray-100">
@@ -357,59 +360,123 @@ export function ReviewHub({
         </div>
       )}
 
-      {/* ── YOUR SCRIPTS ──────────────────────────────── */}
-      <section>
-        <header className="flex items-center justify-between mb-2.5">
-          <h2 className="text-[15px] font-bold text-gray-900 m-0">Your scripts</h2>
-          <div className="flex items-center gap-3">
-            <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-              View all
-            </Link>
-            <Link href="/submit" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
-              + Add script
-            </Link>
-          </div>
-        </header>
-        {scripts.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-            <p className="text-[13px] text-gray-400 m-0">No scripts yet. Upload your first script to get started.</p>
-          </div>
-        ) : (
-          <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-            {scripts.slice(0, 5).map(s => (
-              <div key={s.id} className="flex items-center justify-between px-4 py-2.5">
-                <div className="flex items-center gap-2.5 min-w-0">
-                  {s.score != null && (
-                    <span
-                      className="text-[13px] font-bold shrink-0 w-8 text-center"
-                      style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}
-                    >
-                      {Math.round(s.score)}
-                    </span>
-                  )}
-                  <div className="min-w-0">
-                    <p className="text-[13px] font-medium text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                      {s.title}
-                    </p>
-                    <div className="flex items-center gap-1.5 mt-0.5">
-                      {s.format && <span className="text-[12px] text-gray-400">{s.format}</span>}
-                      {s.inReview && (
-                        <>
-                          {s.format && <span className="text-gray-200">&middot;</span>}
-                          <span className="text-[12px] font-medium text-amber-600">In review</span>
-                        </>
+      {/* ── SCRIPTS IN REVIEW (single unified list) ───── */}
+      {activeReview && (
+        <section>
+          <header className="flex items-center justify-between mb-2.5">
+            <div className="flex items-center gap-2">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
+              {isLocked && <LockIcon className="text-gray-300" />}
+            </div>
+            <div className="flex items-center gap-3">
+              {!isLocked && (
+                <Link href="/consideration/submit" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
+                  Edit portfolio
+                </Link>
+              )}
+              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                View all scripts
+              </Link>
+            </div>
+          </header>
+
+          {reviewScripts.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[13px] text-gray-400 m-0 mb-3">No scripts in this review yet.</p>
+              {isDraft && (
+                <Link
+                  href="/consideration/submit"
+                  className="text-[13px] font-bold text-purple-600 hover:text-purple-800"
+                >
+                  Add scripts to your portfolio
+                </Link>
+              )}
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {reviewScripts.map(s => (
+                <div key={s.id} className="rounded-xl bg-white border border-gray-200 px-4 py-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      {/* Title row */}
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+                          {s.title}
+                        </p>
+                        {s.format && (
+                          <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
+                        )}
+                      </div>
+
+                      {/* Headline */}
+                      {s.headline && (
+                        <p className="text-[12px] text-gray-500 m-0 mt-1 leading-snug line-clamp-2">
+                          {s.headline}
+                        </p>
+                      )}
+
+                      {/* Tags */}
+                      {s.tags.length > 0 && (
+                        <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                          {getDisplayTags(s.tags).map(tag => (
+                            <span
+                              key={tag}
+                              className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded"
+                            >
+                              {tag.replace(/-/g, ' ')}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right side: score + actions */}
+                    <div className="flex items-center gap-2 shrink-0">
+                      {s.score != null && (
+                        <div className="text-right">
+                          <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                            {Math.round(s.score)}
+                          </span>
+                          <span className="text-[10px] text-gray-300 ml-0.5">/100</span>
+                        </div>
+                      )}
+                      {s.evaluationId && (
+                        <Link
+                          href={`/report/${s.evaluationId}`}
+                          className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
+                        >
+                          View report
+                        </Link>
+                      )}
+                      {isDraft && (
+                        <ScriptMenu scriptId={s.id} onRemove={handleRemoveScript} />
                       )}
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
-        <p className="text-[12px] text-gray-400 m-0 mt-2 text-center">
-          All scripts carry forward to future reviews automatically.
-        </p>
-      </section>
+              ))}
+            </div>
+          )}
+
+          {/* Draft actions */}
+          {isDraft && (
+            <div className="flex items-center gap-3 mt-3">
+              <Link
+                href="/consideration/submit"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+              >
+                Submit for review
+              </Link>
+              <Link
+                href="/submit"
+                className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                + Add new script
+              </Link>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* ── PAST REVIEWS ──────────────────────────────── */}
       {pastReviews.length > 0 && (
@@ -478,7 +545,6 @@ function PastReviewCard({ review }: { review: PastReview }) {
               </p>
             </div>
           )}
-          {/* Timeline */}
           {review.events.length > 0 && (
             <div className="pt-2 border-t border-gray-100">
               <p className="text-[12px] font-semibold text-gray-400 m-0 mb-2">Activity</p>
