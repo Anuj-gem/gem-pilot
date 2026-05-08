@@ -1,17 +1,15 @@
-// /dashboard — writer dashboard (consideration model v1).
-// Anuj 2026-05-05.
+// /dashboard — writer dashboard (v4, review-focused).
+// Anuj 2026-05-08.
 //
 // Layout:
 //   +--------------------------------------+
-//   |  TWO CTAs: Upload + Request Consider |
+//   |  PROFILE HEADER                      |
 //   +--------------------------------------+
-//   |  STAT CARDS (scripts · in review · open calls)
+//   |  CTAs: Upload + Start portfolio review|
 //   +--------------------------------------+
-//   |  CONSIDERATION STATUS (if active)    |
+//   |  MOST RECENT REVIEW (with feedback)  |
 //   +--------------------------------------+
-//   |  YOUR SCRIPTS (with open call counts)|
-//   +--------------------------------------+
-//   |  LATEST FEEDBACK (if any)            |
+//   |  SCRIPTS PENDING REVIEW              |
 //   +--------------------------------------+
 
 import { redirect } from 'next/navigation'
@@ -21,10 +19,6 @@ import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
-import { type OpportunityData } from '@/components/opportunities/opportunity-card'
-// ConsiderationStatus replaced by inline review card
-import { OpenCallsDropdown } from '@/components/dashboard/open-calls-dropdown'
-import { FeedbackCycle } from '@/components/consideration/feedback-cycle'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -73,55 +67,21 @@ export default async function DashboardPage() {
   const submissionIds = visible.map((s) => s.id)
 
   // ---------- EVALUATIONS ----------
-  type FeedEval = { id: string; weighted_score: number | null; logline: string | null; genre: string | null; budget: string | null }
+  type FeedEval = { id: string; weighted_score: number | null; genre: string | null }
   const myEvalBySub = new Map<string, FeedEval>()
   if (submissionIds.length > 0) {
     const { data: myEvs } = await service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, evaluation, edited_fields')
+      .select('id, submission_id, weighted_score, evaluation')
       .in('submission_id', submissionIds)
-    for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown; edited_fields: Record<string, unknown> | null }[] | null) || []) {
+    for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
       const evJson = e.evaluation as Record<string, unknown> | null
-      const ef = e.edited_fields as Record<string, unknown> | null
-      const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
       const cls = (evJson?.classification as Record<string, unknown>) || {}
-      const logline = (ef?.logline as string) || (fmt.logline_one_line as string) || (evJson?.positioning_hook as string) || null
-      const genre = (ef?.genre_primary as string) || (cls.genre_primary as string) || (fmt.genre_primary as string) || null
-      const packaging = (evJson?.packaging as Record<string, unknown>) || {}
-      const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
-      const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
-      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, logline, genre, budget })
+      const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
+      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genre })
     }
   }
-
-  // ---------- OPPORTUNITIES (for matching) ----------
-  const { data: allOppRows } = await service
-    .from('opportunities')
-    .select('*')
-    .eq('status', 'active')
-    .order('created_at', { ascending: false })
-  const opportunities = (allOppRows || []) as OpportunityData[]
-
-  // ---------- QUALIFICATION (open call matching) ----------
-  type QualifyingMatch = { oppId: string; oppTitle: string; oppSlug: string }
-  const matchesByScript = new Map<string, QualifyingMatch[]>()
-
-  for (const opp of opportunities) {
-    for (const sub of visible) {
-      if (sub.status !== 'completed') continue
-      const ev = myEvalBySub.get(sub.id)
-      if (!ev) continue
-      const genreKey = ev.genre?.toLowerCase().replace(/[^a-z-]/g, '') || null
-      if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format ?? '')) continue
-      if (opp.genres.length > 0 && genreKey && !opp.genres.includes(genreKey)) continue
-      if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
-      if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) continue
-      // Matches!
-      if (!matchesByScript.has(sub.id)) matchesByScript.set(sub.id, [])
-      matchesByScript.get(sub.id)!.push({ oppId: opp.id, oppTitle: opp.title, oppSlug: opp.slug ?? opp.id })
-    }
-  }
-
 
   // ---------- CONSIDERATIONS ----------
   const { data: considerations } = await service
@@ -136,7 +96,10 @@ export default async function DashboardPage() {
   }[]
 
   const activeConsideration = allConsiderations.find(c => c.review_stage !== 'complete')
-  const latestReviewed = allConsiderations.find(c => c.review_stage === 'complete')
+  const latestReview = allConsiderations[0] // most recent regardless of status
+
+  // Review numbering: chronological, oldest = #1
+  const latestReviewNumber = allConsiderations.length
 
   // Get scripts in active consideration
   let activeConsiderationScriptIds: string[] = []
@@ -148,71 +111,70 @@ export default async function DashboardPage() {
     activeConsiderationScriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
   }
 
-  // Get scripts in latest reviewed consideration (for feedback display)
-  let latestReviewedScripts: { title: string; score: number | null }[] = []
-  if (latestReviewed) {
-    const { data: cs } = await service
-      .from('consideration_scripts')
-      .select('script_submission_id')
-      .eq('consideration_id', latestReviewed.id)
-    const scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
-    latestReviewedScripts = visible
-      .filter(s => scriptIds.includes(s.id))
-      .map(s => ({ title: s.title, score: myEvalBySub.get(s.id)?.weighted_score ?? null }))
-      .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+  // Get script count for latest review (if different from active)
+  let latestReviewScriptCount = 0
+  if (latestReview) {
+    if (latestReview.id === activeConsideration?.id) {
+      latestReviewScriptCount = activeConsiderationScriptIds.length
+    } else {
+      const { data: cs } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .eq('consideration_id', latestReview.id)
+      latestReviewScriptCount = (cs || []).length
+    }
   }
 
   // ---------- GATE LOGIC ----------
-  // Can they request consideration? Need: no active consideration + (no past review OR new script since last review)
-  // TRIAL GATE: trial users who've been reviewed once cannot resubmit until they upgrade.
   const hasActiveConsideration = !!activeConsideration
-  const hasBeenReviewed = !!latestReviewed
-  const trialReviewedGate = isTrial && hasBeenReviewed // hard block for free users
-  const lastReviewDate = latestReviewed?.reviewed_at ? new Date(latestReviewed.reviewed_at) : null
+  const hasBeenReviewed = allConsiderations.some(c => c.review_stage === 'complete')
+  const trialReviewedGate = isTrial && hasBeenReviewed
+  const lastReviewDate = allConsiderations.find(c => c.review_stage === 'complete')?.reviewed_at
+    ? new Date(allConsiderations.find(c => c.review_stage === 'complete')!.reviewed_at!)
+    : null
   const hasNewScriptSinceLastReview = lastReviewDate
     ? visible.some(s => s.status === 'completed' && new Date(s.created_at) > lastReviewDate)
-    : true // No past review = can submit
+    : true
   const canRequestConsideration = !hasActiveConsideration && !trialReviewedGate && hasNewScriptSinceLastReview
 
-  // ---------- BUILD SCRIPT DATA ----------
-  type ScriptRow = {
-    submissionId: string; evaluationId: string | null; title: string
-    format: string | null; genre: string | null; score: number | null
-    isProcessing: boolean; isLocked: boolean
-    openCallMatches: QualifyingMatch[]
-    inConsideration: boolean
-    createdAt: string
-  }
-
-  const allCompleted = visible
-    .filter((s) => s.status === 'completed')
-    .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
-  const firstCompletedId = allCompleted[0]?.id ?? null
-
-  const scriptRows: ScriptRow[] = visible
-    .map((s): ScriptRow | null => {
+  // ---------- SCRIPTS PENDING REVIEW ----------
+  const pendingScripts = visible
+    .filter(s => activeConsiderationScriptIds.includes(s.id))
+    .map(s => {
       const ev = myEvalBySub.get(s.id)
-      const stillProcessing = s.status === 'processing' || s.status === 'queued'
-      if (!ev && !stillProcessing) return null
-      const isFirstCompleted = s.id === firstCompletedId
       return {
-        submissionId: s.id,
-        evaluationId: ev?.id ?? null,
+        id: s.id,
         title: s.title,
         format: s.declared_format,
-        genre: ev?.genre ?? null,
         score: ev?.weighted_score ?? null,
-        isProcessing: stillProcessing,
-        isLocked: isTrial && !stillProcessing && !isFirstCompleted,
-        openCallMatches: matchesByScript.get(s.id) ?? [],
-        inConsideration: activeConsiderationScriptIds.includes(s.id),
-        createdAt: s.created_at,
+        evaluationId: ev?.id ?? null,
+        genre: ev?.genre ?? null,
       }
     })
-    .filter((r): r is ScriptRow => r !== null)
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
-  const completedCount = allCompleted.length
+  const completedCount = visible.filter(s => s.status === 'completed').length
+
+  // Stage labels
+  const STAGE_LABELS: Record<string, string> = {
+    draft: 'Draft',
+    pending: 'Pending',
+    initial_review: 'Initial review',
+    advanced_review: 'Advanced review',
+    partner_match: 'Partner match',
+    complete: 'Complete',
+  }
+  const STAGE_COLORS: Record<string, string> = {
+    draft: '#6b7280',
+    pending: '#d97706',
+    initial_review: '#7c3aed',
+    advanced_review: '#2563eb',
+    partner_match: '#059669',
+    complete: '#16a34a',
+  }
+
+  const fmtDate = (d: string) =>
+    new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
   return (
     <>
@@ -288,7 +250,7 @@ export default async function DashboardPage() {
               href="/consideration/submit"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors text-center"
             >
-              Request consideration
+              Start portfolio review
             </Link>
           </div>
         ) : hasActiveConsideration ? (
@@ -300,10 +262,10 @@ export default async function DashboardPage() {
               Upload a script
             </Link>
             <Link
-              href="/consideration/submit"
+              href={`/review/c/${activeConsideration.id}`}
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-100 text-purple-600 text-[13px] font-bold text-center hover:bg-purple-200 transition-colors"
             >
-              Edit consideration
+              View current review
             </Link>
           </div>
         ) : trialReviewedGate ? (
@@ -316,13 +278,13 @@ export default async function DashboardPage() {
                 Upload a script
               </Link>
               <div className="flex items-center justify-center px-4 py-3 rounded-xl bg-gray-100 text-gray-400 text-[13px] font-bold text-center cursor-not-allowed">
-                Request consideration
+                Start portfolio review
               </div>
             </div>
             <div className="rounded-xl bg-purple-50 border border-purple-200/50 px-4 py-3.5">
               <p className="text-[13px] font-bold text-purple-900 m-0">Want more feedback?</p>
               <p className="text-[12px] text-purple-700 m-0 mt-1 leading-snug">
-                Upgrade to Pro for unlimited considerations, full access to all your reports, and priority review.
+                Upgrade to Pro for unlimited reviews, full access to all your reports, and priority review.
               </p>
               <Link
                 href="/upgrade"
@@ -341,207 +303,217 @@ export default async function DashboardPage() {
               Upload a script
             </Link>
             <div className="rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-              <p className="text-[13px] font-bold text-gray-500 m-0">Not yet eligible for consideration</p>
+              <p className="text-[13px] font-bold text-gray-500 m-0">Not yet eligible for review</p>
               <p className="text-[12px] text-gray-400 m-0 mt-1 leading-snug">
-                Upload a new script to be considered again. Check your <Link href="/feedback" className="text-purple-600 font-semibold hover:text-purple-800">previous feedback</Link> for guidance.
+                Upload a new script to submit for another portfolio review.
               </p>
             </div>
           </div>
         )}
 
+        {/* ── MOST RECENT REVIEW ──────────────────────── */}
+        {latestReview ? (
+          <section>
+            <header className="flex items-end justify-between gap-3 mb-2.5">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Most recent review</h2>
+              {allConsiderations.length > 1 && (
+                <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                  View all
+                </Link>
+              )}
+            </header>
 
-        {/* ── PORTFOLIO REVIEW STATUS ──────────────────────── */}
-        {activeConsideration && (
-          <Link href="/review" className="block">
-            <div className="rounded-xl border-[1.5px] border-purple-200 px-4 py-3.5 hover:bg-purple-50/50 transition-colors" style={{ background: '#faf5ff' }}>
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-[10px] uppercase tracking-[0.12em] font-semibold text-purple-600 m-0">
-                  Portfolio review
-                </p>
-                <span
-                  className="text-[11px] font-bold px-2 py-0.5 rounded-full"
-                  style={{ background: '#f3e8ff', color: '#7c3aed' }}
-                >
-                  {activeConsideration.review_stage === 'draft' ? 'Draft'
-                    : activeConsideration.review_stage === 'pending' ? 'Pending'
-                    : activeConsideration.review_stage === 'submitted' ? 'Submitted'
-                    : activeConsideration.review_stage === 'initial_review' ? 'Initial review'
-                    : activeConsideration.review_stage === 'advanced_review' ? 'Advanced review'
-                    : activeConsideration.review_stage === 'partner_match' ? 'Partner match'
-                    : activeConsideration.review_stage}
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 mb-2">
-                {['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].map((s, i) => {
-                  const stageIdx = ['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].indexOf(activeConsideration.review_stage)
-                  return (
-                    <div
-                      key={s}
-                      className="flex-1 h-[3px] rounded-full"
-                      style={{ background: i <= stageIdx ? '#7c3aed' : '#e9d5ff' }}
-                    />
-                  )
-                })}
-              </div>
-              <p className="text-[12px] text-gray-500 m-0">
-                {activeConsiderationScriptIds.length} {activeConsiderationScriptIds.length === 1 ? 'script' : 'scripts'} · Submitted {new Date(activeConsideration.submitted_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-              </p>
-            </div>
-          </Link>
-        )}
+            <Link href={`/review/c/${latestReview.id}`} className="block">
+              <div className="rounded-xl bg-white border border-gray-200 overflow-hidden hover:border-purple-200 transition-colors">
+                {/* Header */}
+                <div className="px-4 py-3.5 border-b border-gray-100">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[14px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
+                        Portfolio review #{latestReviewNumber}
+                      </span>
+                      <span
+                        className="text-[11px] font-bold px-2 py-0.5 rounded-full"
+                        style={{
+                          background: `${STAGE_COLORS[latestReview.review_stage] || '#6b7280'}15`,
+                          color: STAGE_COLORS[latestReview.review_stage] || '#6b7280',
+                        }}
+                      >
+                        {STAGE_LABELS[latestReview.review_stage] || latestReview.review_stage}
+                      </span>
+                    </div>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
+                      <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
 
-        {/* ── YOUR SCRIPTS ────────────────────────────────── */}
-        <section>
-          <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">
-              Your scripts
-            </h2>
-            {scriptRows.length > 5 && (
-              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                View all
-              </Link>
-            )}
-          </header>
-
-          {scriptRows.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-              <p className="text-[13.5px] text-gray-400 m-0">Upload your first script to get started.</p>
-            </div>
-          ) : (
-            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-              {scriptRows.slice(0, 5).map((s) => (
-                <div key={s.submissionId} className="relative">
-                  {s.isLocked && (
-                    <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center gap-2">
-                      <UpgradePill />
+                  {latestReview.review_stage === 'complete' ? (
+                    <div className="flex items-center gap-1.5">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="9" stroke="#059669" strokeWidth="1.5" />
+                        <path d="M6.5 10.5l2 2 5-5" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span className="text-[12px] text-gray-500">
+                        Reviewed {fmtDate(latestReview.reviewed_at!)}
+                        {` · ${latestReviewScriptCount} ${latestReviewScriptCount === 1 ? 'script' : 'scripts'}`}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[12px] text-gray-500">
+                        Submitted {fmtDate(latestReview.submitted_at)}
+                        {` · ${latestReviewScriptCount} ${latestReviewScriptCount === 1 ? 'script' : 'scripts'}`}
+                      </span>
                     </div>
                   )}
-                  <div className="px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      {/* Score badge */}
-                      <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{
-                        background: s.isProcessing ? '#f3f4f6' : s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
-                      }}>
-                        {s.isProcessing ? (
-                          <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
-                        ) : s.score != null ? (
-                          <span className="text-[14px] font-bold" style={{
-                            color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                            ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
-                          }}>
-                            {Math.round(s.score)}
-                          </span>
-                        ) : (
-                          <span className="text-[11px] text-gray-300">&mdash;</span>
-                        )}
-                      </div>
 
-                      {/* Title + meta */}
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                        <div className="flex items-center gap-1.5 mt-0.5">
-                          {s.format && <span className="text-[12px] text-gray-400">{s.format}</span>}
-                          {s.genre && (
-                            <>
-                              {s.format && <span className="text-gray-200">&middot;</span>}
-                              <span className="text-[12px] text-gray-400">{s.genre}</span>
-                            </>
-                          )}
-                          {!s.isProcessing && !s.isLocked && s.openCallMatches.length > 0 && (
-                            <>
-                              <span className="text-gray-200">&middot;</span>
-                              <OpenCallsDropdown
-                                count={s.openCallMatches.length}
-                                matches={s.openCallMatches.map(m => ({ title: m.oppTitle, slug: m.oppSlug }))}
-                              />
-                            </>
-                          )}
-                          {s.isProcessing && (
-                            <span className="text-[12px] font-medium text-purple-500">Processing&hellip;</span>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Actions */}
-                      {!s.isLocked && !s.isProcessing && (
-                        <div className="flex items-center gap-2 shrink-0">
-                          {s.inConsideration && (
-                            <span className="text-[12px] font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">
-                              In consideration
-                            </span>
-                          )}
-                          {s.evaluationId && (
-                            <Link
-                              href={`/report/${s.evaluationId}`}
-                              className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-colors"
-                              title="View report"
-                            >
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                            </Link>
-                          )}
-                        </div>
-                      )}
+                  {/* Progress bar for in-progress reviews */}
+                  {latestReview.review_stage !== 'complete' && (
+                    <div className="flex items-center gap-1 mt-2.5">
+                      {['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].map((s, i) => {
+                        const stageIdx = ['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].indexOf(latestReview.review_stage)
+                        return (
+                          <div
+                            key={s}
+                            className="flex-1 h-[3px] rounded-full"
+                            style={{ background: i <= stageIdx ? (STAGE_COLORS[latestReview.review_stage] || '#7c3aed') : '#e5e7eb' }}
+                          />
+                        )
+                      })}
                     </div>
-                  </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          )}
 
-          {/* Pro/Free badge */}
-          <div className="flex items-center justify-between mt-3">
-            {isPro ? (
-              <span className="text-[12px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full">Pro</span>
-            ) : (
-              <span className="text-[12px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full">Free</span>
-            )}
-            {isTrial && (
-              <span className="text-[12px] text-gray-400">
-                Upgrade for unlimited scripts
-              </span>
-            )}
-          </div>
-        </section>
+                {/* Feedback body (only if complete and has feedback) */}
+                {latestReview.review_stage === 'complete' && latestReview.feedback && (
+                  <div className="px-4 py-3.5">
+                    <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1.5">
+                      Overall assessment
+                    </p>
+                    <p className="text-[13px] text-gray-600 leading-[1.55] m-0 mb-3 line-clamp-3">
+                      {latestReview.feedback}
+                    </p>
 
-        {/* ── FEEDBACK ────────────────────────────────────── */}
-        <section>
-          <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">
-              Recent feedback
-            </h2>
-            <Link href="/feedback" className="text-[12px] text-purple-600 hover:text-purple-800 font-semibold">
-              View all feedback
+                    {latestReview.next_steps && (
+                      <div className="pl-3 py-2.5 pr-3 rounded-r-lg" style={{
+                        background: '#f5f3ff',
+                        borderLeft: '3px solid #7c3aed',
+                      }}>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.04em] text-purple-600 m-0 mb-1">
+                          Suggested next steps
+                        </p>
+                        <p className="text-[13px] text-purple-900 leading-[1.5] m-0 line-clamp-2">
+                          {latestReview.next_steps}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* In-progress message */}
+                {latestReview.review_stage !== 'complete' && (
+                  <div className="px-4 py-3.5">
+                    <p className="text-[13px] text-gray-500 m-0">
+                      {latestReview.review_stage === 'draft'
+                        ? 'Your review is in draft. Add scripts and submit when ready.'
+                        : latestReview.review_stage === 'pending'
+                        ? 'Your portfolio has been submitted. Our team will begin reviewing shortly.'
+                        : 'Your portfolio is being reviewed. Feedback expected within 5–7 days.'}
+                    </p>
+                  </div>
+                )}
+              </div>
             </Link>
-          </header>
-
-          {latestReviewed && latestReviewed.feedback ? (
-            <FeedbackCycle
-              submittedAt={latestReviewed.submitted_at}
-              reviewedAt={latestReviewed.reviewed_at}
-              feedback={latestReviewed.feedback}
-              nextSteps={latestReviewed.next_steps}
-              scriptCount={latestReviewedScripts.length}
-              linkToFull
-            />
-          ) : hasActiveConsideration ? (
-            <div className="rounded-xl bg-white border border-gray-200 px-5 py-6 text-center">
-              <p className="text-[13.5px] text-gray-500 m-0">Your portfolio is being reviewed. Feedback expected within 5–7 days.</p>
-            </div>
-          ) : completedCount > 0 ? (
+          </section>
+        ) : completedCount > 0 ? (
+          <section>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Most recent review</h2>
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-              <p className="text-[13.5px] text-gray-500 m-0 mb-3">No feedback yet. Request consideration to get notes on your work.</p>
+              <p className="text-[13px] text-gray-500 m-0 mb-3">No reviews yet. Submit your scripts for a portfolio review.</p>
               {canRequestConsideration && (
                 <Link
                   href="/consideration/submit"
                   className="inline-flex items-center gap-1.5 text-[12px] font-bold text-purple-600 hover:text-purple-800"
                 >
-                  Request consideration →
+                  Start portfolio review
                 </Link>
               )}
             </div>
+          </section>
+        ) : null}
+
+        {/* ── SCRIPTS PENDING REVIEW ──────────────────── */}
+        <section>
+          <header className="flex items-end justify-between gap-3 mb-2.5">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts pending review</h2>
+            <div className="flex items-center gap-3">
+              <Link href="/submit" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
+                + Add new
+              </Link>
+              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                View full portfolio
+              </Link>
+            </div>
+          </header>
+
+          {pendingScripts.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[13px] text-gray-500 m-0">
+                No scripts pending review. Upload a new script to get your portfolio reviewed.
+              </p>
+            </div>
           ) : (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-              <p className="text-[13.5px] text-gray-400 m-0">Upload scripts to start receiving feedback.</p>
+            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+              {pendingScripts.map((s) => (
+                <div key={s.id} className="px-4 py-3">
+                  <div className="flex items-center gap-3">
+                    {/* Score badge */}
+                    <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{
+                      background: s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
+                    }}>
+                      {s.score != null ? (
+                        <span className="text-[14px] font-bold" style={{
+                          color: s.score >= 75 ? '#7c3aed' : '#6b7280',
+                        }}>
+                          {Math.round(s.score)}
+                        </span>
+                      ) : (
+                        <span className="text-[11px] text-gray-300">&mdash;</span>
+                      )}
+                    </div>
+
+                    {/* Title + meta */}
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        {s.format && <span className="text-[12px] text-gray-400">{s.format}</span>}
+                        {s.genre && (
+                          <>
+                            {s.format && <span className="text-gray-200">&middot;</span>}
+                            <span className="text-[12px] text-gray-400">{s.genre}</span>
+                          </>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="text-[12px] font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">
+                        In review
+                      </span>
+                      {s.evaluationId && (
+                        <Link
+                          href={`/report/${s.evaluationId}`}
+                          className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-colors"
+                          title="View report"
+                        >
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </section>
