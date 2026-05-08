@@ -64,11 +64,7 @@ export async function POST(req: NextRequest) {
     .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
     .map((s: { id: string }) => s.id)
 
-  if (unreviewedIds.length === 0) {
-    return NextResponse.json({ error: 'No unreviewed scripts' }, { status: 400 })
-  }
-
-  // Create draft consideration
+  // Create draft consideration (even if no eligible scripts — user sees empty state)
   const { data: consideration, error: createError } = await service
     .from('considerations')
     .insert({
@@ -84,20 +80,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: createError?.message || 'Failed to create' }, { status: 500 })
   }
 
-  // Attach only unreviewed scripts (previously reviewed scripts are not eligible)
-  const scriptRows = unreviewedIds.map(id => ({
-    consideration_id: consideration.id,
-    script_submission_id: id,
-    carried_forward: false,
-  }))
+  // Attach unreviewed scripts (if any)
+  if (unreviewedIds.length > 0) {
+    const scriptRows = unreviewedIds.map(id => ({
+      consideration_id: consideration.id,
+      script_submission_id: id,
+      carried_forward: false,
+    }))
 
-  const { error: insertError } = await service
-    .from('consideration_scripts')
-    .insert(scriptRows)
+    const { error: insertError } = await service
+      .from('consideration_scripts')
+      .insert(scriptRows)
 
-  if (insertError) {
-    await service.from('considerations').delete().eq('id', consideration.id)
-    return NextResponse.json({ error: insertError.message }, { status: 500 })
+    if (insertError) {
+      await service.from('considerations').delete().eq('id', consideration.id)
+      return NextResponse.json({ error: insertError.message }, { status: 500 })
+    }
   }
 
   return NextResponse.json({ consideration_id: consideration.id })

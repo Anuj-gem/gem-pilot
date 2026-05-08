@@ -24,8 +24,7 @@ export function DashboardActions() {
       if (data.consideration_id) {
         router.push(`/review/c/${data.consideration_id}`)
       } else {
-        router.push('/dashboard')
-        router.refresh()
+        setCreatingReview(false)
       }
     } catch {
       setCreatingReview(false)
