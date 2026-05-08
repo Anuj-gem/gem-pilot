@@ -1,8 +1,8 @@
 'use client'
 
-// DEPRECATED — replaced by review-list.tsx (listing) + review-detail.tsx (detail).
-// This file is no longer imported anywhere. Safe to delete.
-// Kept temporarily to avoid breaking any cached builds.
+// ReviewDetail — detail page for a single portfolio review.
+// Matches the v3 approved mockup: numbered title, profile card,
+// status block with outcome, assessment, next steps, scripts.
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
@@ -52,13 +52,7 @@ type Script = {
   id: string; title: string; format: string | null
   score: number | null; evaluationId: string | null
   headline: string | null; tags: string[]
-  createdAt: string; inReview: boolean
-}
-
-type PastReview = {
-  id: string; review_stage: string; submitted_at: string; reviewed_at: string | null
-  feedback: string | null; next_steps: string | null; scriptCount: number
-  events: EventRow[]
+  createdAt: string
 }
 
 // Lock icon
@@ -116,14 +110,22 @@ function getDisplayTags(tags: string[]): string[] {
   return tags.filter(t => !skip.has(t)).slice(0, 3)
 }
 
-export function ReviewHub({
+export function ReviewDetail({
+  reviewNumber,
+  review,
   profile,
-  isPro,
   scripts,
-  activeReview,
-  pastReviews,
-  totalReviewCount,
+  events,
 }: {
+  reviewNumber: number
+  review: {
+    id: string
+    reviewStage: string
+    submittedAt: string
+    reviewedAt: string | null
+    feedback: string | null
+    nextSteps: string | null
+  }
   profile: {
     fullName: string | null
     handle: string | null
@@ -131,15 +133,8 @@ export function ReviewHub({
     avatarUrl: string | null
     headline: string | null
   }
-  isPro: boolean
   scripts: Script[]
-  activeReview: {
-    id: string; reviewStage: string; submittedAt: string
-    feedback: string | null; nextSteps: string | null
-    events: EventRow[]
-  } | null
-  pastReviews: PastReview[]
-  totalReviewCount: number
+  events: EventRow[]
 }) {
   const [removedIds, setRemovedIds] = useState<Set<string>>(new Set())
 
@@ -149,26 +144,15 @@ export function ReviewHub({
   const fmtDateTime = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
 
-  const currentStage = activeReview
-    ? STAGES.find(s => s.key === activeReview.reviewStage) || STAGES[0]
-    : null
-  const currentStageIdx = activeReview
-    ? STAGES.findIndex(s => s.key === activeReview.reviewStage)
-    : -1
+  const currentStage = STAGES.find(s => s.key === review.reviewStage) || STAGES[0]
+  const currentStageIdx = STAGES.findIndex(s => s.key === review.reviewStage)
 
-  // Locked = initial_review or beyond
-  const isLocked = activeReview
-    ? ['initial_review', 'advanced_review', 'partner_match', 'complete'].includes(activeReview.reviewStage)
-    : false
-
-  const isDraft = activeReview?.reviewStage === 'draft'
+  const isLocked = ['initial_review', 'advanced_review', 'partner_match', 'complete'].includes(review.reviewStage)
+  const isDraft = review.reviewStage === 'draft'
+  const isComplete = review.reviewStage === 'complete'
 
   const profileComplete = !!(profile.fullName && profile.bio)
-
-  const reviewScripts = scripts.filter(s => s.inReview && !removedIds.has(s.id))
-
-  // Active review is the latest, so its number = totalReviewCount
-  const activeReviewNumber = activeReview ? totalReviewCount : 0
+  const reviewScripts = scripts.filter(s => !removedIds.has(s.id))
 
   async function handleRemoveScript(scriptId: string) {
     setRemovedIds(prev => new Set([...prev, scriptId]))
@@ -177,19 +161,22 @@ export function ReviewHub({
 
   return (
     <>
-      {/* Page title = review number */}
-      <div>
+      {/* Back link + page title */}
+      <div className="mb-1">
+        <Link href="/review" className="text-[12px] font-medium text-gray-400 hover:text-gray-600">
+          &larr; All reviews
+        </Link>
+      </div>
+      <div className="mb-4">
         <h1
           className="text-[22px] font-bold text-gray-900 m-0"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          {activeReview
-            ? `Portfolio review #${activeReviewNumber}`
-            : 'Portfolio review'}
+          Portfolio review #{reviewNumber}
         </h1>
       </div>
 
-      {/* ── PROFILE CARD ──────────────────────────────── */}
+      {/* Profile card */}
       <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
         <div className="flex items-center justify-between mb-3">
           <p className="text-[12px] font-semibold text-gray-500 m-0">Your profile</p>
@@ -235,9 +222,9 @@ export function ReviewHub({
       </div>
 
       {/* ── COMPLETED REVIEW ─────────────────────────── */}
-      {activeReview && activeReview.reviewStage === 'complete' && (
+      {isComplete && (
         <>
-          {/* Status block — communicates the outcome */}
+          {/* Status block */}
           <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
             <div className="flex items-center gap-2 mb-2.5">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
@@ -250,32 +237,33 @@ export function ReviewHub({
               {"Our team reviewed your portfolio and compared it against active opportunities in our network. We weren't able to match you with a partner at this time, but we see real potential in your work. Please read the assessment and next steps below — we'd welcome a resubmission."}
             </p>
             <p className="text-[12px] text-gray-400 m-0">
-              Submitted {fmtDate(activeReview.submittedAt)}
+              Submitted {fmtDate(review.submittedAt)}
+              {review.reviewedAt && ` · Reviewed ${fmtDate(review.reviewedAt)}`}
               {` · ${reviewScripts.length} ${reviewScripts.length === 1 ? 'script' : 'scripts'}`}
             </p>
           </div>
 
           {/* Overall assessment */}
-          {activeReview.feedback && (
+          {review.feedback && (
             <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
               <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
                 Overall assessment
               </p>
               <p className="text-[14px] text-gray-700 leading-[1.65] m-0 whitespace-pre-line">
-                {activeReview.feedback}
+                {review.feedback}
               </p>
             </div>
           )}
 
           {/* Suggested next steps */}
-          {activeReview.nextSteps && (
+          {review.nextSteps && (
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               <div className="px-5 py-4" style={{ borderLeft: '4px solid #7c3aed' }}>
                 <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
                   Suggested next steps
                 </p>
                 <p className="text-[14px] text-gray-700 leading-[1.65] m-0 whitespace-pre-line">
-                  {activeReview.nextSteps}
+                  {review.nextSteps}
                 </p>
               </div>
             </div>
@@ -284,10 +272,9 @@ export function ReviewHub({
       )}
 
       {/* ── IN-PROGRESS REVIEW STATUS ─────────────────── */}
-      {activeReview && currentStage && activeReview.reviewStage !== 'complete' && (
+      {!isComplete && (
         <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
           <div className="px-5 py-4">
-
             {/* Stage badge + lock */}
             <div className="flex items-center gap-2 mb-3">
               <span
@@ -311,7 +298,7 @@ export function ReviewHub({
             <div className="flex items-center gap-0.5 mb-4">
               {STAGES.filter(s => s.key !== 'complete').map((s, i) => {
                 const filled = i <= currentStageIdx
-                const isCurrent = s.key === activeReview.reviewStage
+                const isCurrent = s.key === review.reviewStage
                 return (
                   <div key={s.key} className="flex-1 flex flex-col items-center gap-1.5">
                     <div
@@ -340,11 +327,11 @@ export function ReviewHub({
             </p>
 
             {/* Event timeline */}
-            {activeReview.events.length > 0 && (
+            {events.length > 0 && (
               <div className="pt-3 border-t border-gray-100">
                 <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
                 <div className="space-y-2">
-                  {activeReview.events.map(ev => (
+                  {events.map(ev => (
                     <div key={ev.id} className="flex items-start gap-2.5">
                       <div
                         className="shrink-0 mt-1.5 w-2 h-2 rounded-full"
@@ -371,41 +358,23 @@ export function ReviewHub({
         </div>
       )}
 
-      {/* ── NO ACTIVE REVIEW CTA ──────────────────────── */}
-      {!activeReview && (
-        <div className="rounded-xl bg-purple-50 border border-purple-200 px-5 py-5 text-center">
-          <p className="text-[15px] font-bold text-gray-900 m-0 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
-            Ready for your next review?
-          </p>
-          <p className="text-[13px] text-gray-500 m-0 mb-4">
-            Select your best scripts and submit for a personal portfolio review.
-          </p>
-          <Link
-            href="/consideration/submit"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
-          >
-            Submit for review
-          </Link>
-        </div>
-      )}
-
       {/* ── SCRIPTS IN REVIEW ─────────────────────────── */}
-      {activeReview && (
-        <section>
-          <header className="flex items-center justify-between mb-2.5">
-            <div className="flex items-center gap-2">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
-              {isLocked ? (
-                <LockIcon className="text-gray-300" />
-              ) : (
-                <Link
-                  href="/consideration/submit"
-                  className="text-[12px] font-semibold text-purple-600 hover:text-purple-800"
-                >
-                  Edit
-                </Link>
-              )}
-            </div>
+      <section>
+        <header className="flex items-center justify-between mb-2.5">
+          <div className="flex items-center gap-2">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
+            {isLocked ? (
+              <LockIcon className="text-gray-300" />
+            ) : (
+              <Link
+                href="/consideration/submit"
+                className="text-[12px] font-semibold text-purple-600 hover:text-purple-800"
+              >
+                Edit
+              </Link>
+            )}
+          </div>
+          {!isLocked && (
             <Link
               href="/submit"
               className="flex items-center gap-1 text-[12px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg transition-colors"
@@ -415,108 +384,101 @@ export function ReviewHub({
               </svg>
               Upload script
             </Link>
-          </header>
-
-          {reviewScripts.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-              <p className="text-[13px] text-gray-400 m-0 mb-3">No scripts in this review yet.</p>
-              {isDraft && (
-                <Link
-                  href="/consideration/submit"
-                  className="text-[13px] font-bold text-purple-600 hover:text-purple-800"
-                >
-                  Add scripts to your portfolio
-                </Link>
-              )}
-            </div>
-          ) : (
-            <div className="space-y-2">
-              {reviewScripts.map(s => (
-                <div key={s.id} className="rounded-xl bg-white border border-gray-200 px-4 py-3">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      {/* Title row */}
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                          {s.title}
-                        </p>
-                        {s.format && (
-                          <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
-                        )}
-                      </div>
-
-                      {/* Headline */}
-                      {s.headline && (
-                        <p className="text-[12px] text-gray-500 m-0 mt-1 leading-snug line-clamp-2">
-                          {s.headline}
-                        </p>
-                      )}
-
-                      {/* Tags — genre only */}
-                      {s.tags.length > 0 && (
-                        <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-                          {getDisplayTags(s.tags).map(tag => (
-                            <span
-                              key={tag}
-                              className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded"
-                            >
-                              {tag.replace(/-/g, ' ')}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Right side: score + actions */}
-                    <div className="flex items-center gap-2 shrink-0">
-                      {s.score != null && (
-                        <div className="text-right">
-                          <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
-                            {Math.round(s.score)}
-                          </span>
-                          <span className="text-[10px] text-gray-300 ml-0.5">/100</span>
-                        </div>
-                      )}
-                      {s.evaluationId && (
-                        <Link
-                          href={`/report/${s.evaluationId}`}
-                          className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
-                        >
-                          View report
-                        </Link>
-                      )}
-                      {isDraft && (
-                        <ScriptMenu scriptId={s.id} onRemove={handleRemoveScript} />
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           )}
+        </header>
 
-          {/* Draft actions */}
-          {isDraft && (
-            <div className="flex items-center gap-3 mt-3">
+        {reviewScripts.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+            <p className="text-[13px] text-gray-400 m-0 mb-3">No scripts in this review yet.</p>
+            {isDraft && (
               <Link
                 href="/consideration/submit"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+                className="text-[13px] font-bold text-purple-600 hover:text-purple-800"
               >
-                Submit for review
+                Add scripts to your portfolio
               </Link>
-              <Link
-                href="/submit"
-                className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
-              >
-                + Add new script
-              </Link>
-            </div>
-          )}
-        </section>
-      )}
+            )}
+          </div>
+        ) : (
+          <div className="space-y-2">
+            {reviewScripts.map(s => (
+              <div key={s.id} className="rounded-xl bg-white border border-gray-200 px-4 py-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+                        {s.title}
+                      </p>
+                      {s.format && (
+                        <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
+                      )}
+                    </div>
+                    {s.headline && (
+                      <p className="text-[12px] text-gray-500 m-0 mt-1 leading-snug line-clamp-2">
+                        {s.headline}
+                      </p>
+                    )}
+                    {s.tags.length > 0 && (
+                      <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                        {getDisplayTags(s.tags).map(tag => (
+                          <span
+                            key={tag}
+                            className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded"
+                          >
+                            {tag.replace(/-/g, ' ')}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    {s.score != null && (
+                      <div className="text-right">
+                        <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                          {Math.round(s.score)}
+                        </span>
+                        <span className="text-[10px] text-gray-300 ml-0.5">/100</span>
+                      </div>
+                    )}
+                    {s.evaluationId && (
+                      <Link
+                        href={`/report/${s.evaluationId}`}
+                        className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
+                      >
+                        View report
+                      </Link>
+                    )}
+                    {isDraft && (
+                      <ScriptMenu scriptId={s.id} onRemove={handleRemoveScript} />
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Draft actions */}
+        {isDraft && (
+          <div className="flex items-center gap-3 mt-3">
+            <Link
+              href="/consideration/submit"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+            >
+              Submit for review
+            </Link>
+            <Link
+              href="/submit"
+              className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
+            >
+              + Add new script
+            </Link>
+          </div>
+        )}
+      </section>
 
       {/* Quiet new review note (completed only) */}
-      {activeReview && activeReview.reviewStage === 'complete' && (
+      {isComplete && (
         <div className="rounded-xl bg-gray-50 border border-gray-200 px-5 py-3">
           <p className="text-[13px] text-gray-500 m-0">
             When you upload new work, you can{' '}
@@ -526,102 +488,6 @@ export function ReviewHub({
           </p>
         </div>
       )}
-
-      {/* ── PAST REVIEWS ──────────────────────────────── */}
-      {pastReviews.length > 0 && (
-        <section>
-          <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Past reviews</h2>
-          <div className="space-y-3">
-            {pastReviews.map((pr, idx) => {
-              // pastReviews are newest-first from the server.
-              // Number them chronologically: oldest = #1.
-              const reviewNumber = totalReviewCount - (activeReview ? 1 : 0) - idx
-              return (
-                <PastReviewCard key={pr.id} review={pr} reviewNumber={reviewNumber} />
-              )
-            })}
-          </div>
-        </section>
-      )}
     </>
-  )
-}
-
-function PastReviewCard({ review, reviewNumber }: { review: PastReview; reviewNumber: number }) {
-  const [expanded, setExpanded] = useState(false)
-  const fmtDate = (d: string) =>
-    new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-
-  return (
-    <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-gray-50 transition-colors"
-      >
-        <div>
-          <p className="text-[14px] font-bold text-gray-900 m-0">Portfolio review #{reviewNumber}</p>
-          <p className="text-[12px] text-gray-400 m-0 mt-0.5">
-            Submitted {fmtDate(review.submitted_at)}
-            {review.reviewed_at && ` · Reviewed ${fmtDate(review.reviewed_at)}`}
-            {` · ${review.scriptCount} ${review.scriptCount === 1 ? 'script' : 'scripts'}`}
-          </p>
-        </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="text-[11px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">
-            Complete
-          </span>
-          <svg
-            width="16" height="16" viewBox="0 0 16 16" fill="none"
-            className={`text-gray-300 transition-transform ${expanded ? 'rotate-180' : ''}`}
-          >
-            <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-      </button>
-
-      {expanded && (
-        <div className="px-5 pb-4 border-t border-gray-100 pt-3">
-          {review.feedback && (
-            <>
-              <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1.5">
-                Overall assessment
-              </p>
-              <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 mb-3 whitespace-pre-line">
-                {review.feedback}
-              </p>
-            </>
-          )}
-          {review.next_steps && (
-            <div className="pl-3 py-2.5 pr-3 mb-3" style={{
-              background: '#f5f3ff',
-              borderLeft: '3px solid #7c3aed',
-            }}>
-              <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-purple-600 m-0 mb-1">
-                Suggested next steps
-              </p>
-              <p className="text-[13px] text-purple-900 leading-[1.5] m-0">
-                {review.next_steps}
-              </p>
-            </div>
-          )}
-          {review.events.length > 0 && (
-            <div className="pt-2 border-t border-gray-100">
-              <p className="text-[12px] font-semibold text-gray-400 m-0 mb-2">Activity</p>
-              <div className="space-y-1.5">
-                {review.events.filter(ev => ev.event_type === 'status_change').slice(0, 5).map(ev => (
-                  <div key={ev.id} className="flex items-center gap-2">
-                    <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-300" />
-                    <span className="text-[12px] text-gray-500">{ev.message || 'Status updated'}</span>
-                    <span className="text-[11px] text-gray-300 shrink-0">
-                      {new Date(ev.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
   )
 }

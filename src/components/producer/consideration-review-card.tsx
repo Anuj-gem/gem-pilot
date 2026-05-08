@@ -6,8 +6,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+// Producers only interact with reviews from pending onward.
+// Draft is writer-only (not yet submitted).
 const STAGES = [
-  { value: 'draft', label: 'Draft', color: '#6b7280' },
   { value: 'pending', label: 'Pending', color: '#d97706' },
   { value: 'initial_review', label: 'Initial review', color: '#7c3aed' },
   { value: 'advanced_review', label: 'Advanced review', color: '#2563eb' },
