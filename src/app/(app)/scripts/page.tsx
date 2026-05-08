@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { ScriptsList } from '@/components/dashboard/scripts-list'
+import { NewReviewButton } from '@/components/dashboard/new-review-button'
 
 export const dynamic = 'force-dynamic'
 
@@ -63,21 +64,27 @@ export default async function ScriptsPage() {
     }
   }
 
-  // Considerations
+  // Considerations — use review_stage to distinguish draft / active / complete
   const { data: considerations } = await service
     .from('considerations')
-    .select('id, status, submitted_at, reviewed_at, feedback, outcome')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, outcome')
     .eq('writer_id', user.id)
     .order('submitted_at', { ascending: false })
 
   const allConsiderations = (considerations || []) as {
-    id: string; status: string; submitted_at: string; reviewed_at: string | null
-    feedback: string | null; outcome: string | null
+    id: string; status: string; review_stage: string; submitted_at: string
+    reviewed_at: string | null; feedback: string | null; outcome: string | null
   }[]
 
-  const activeConsideration = allConsiderations.find(c => c.status === 'pending')
-  const latestReviewed = allConsiderations.find(c => c.status === 'reviewed')
+  // Active = submitted and being reviewed (not draft, not complete)
+  const activeConsideration = allConsiderations.find(
+    c => c.review_stage !== 'draft' && c.review_stage !== 'complete'
+  )
+  // Completed considerations — ALL of them, not just the latest
+  const completedConsiderations = allConsiderations.filter(c => c.review_stage === 'complete')
+  const latestReviewed = completedConsiderations[0] || null
 
+  // Scripts in active (submitted) considerations — NOT drafts
   let activeScriptIds = new Set<string>()
   if (activeConsideration) {
     const { data: cs } = await service
@@ -89,12 +96,14 @@ export default async function ScriptsPage() {
     }
   }
 
+  // Scripts from ALL completed considerations
   let reviewedScriptIds = new Set<string>()
-  if (latestReviewed) {
+  const completedIds = completedConsiderations.map(c => c.id)
+  if (completedIds.length > 0) {
     const { data: cs } = await service
       .from('consideration_scripts')
       .select('script_submission_id')
-      .eq('consideration_id', latestReviewed.id)
+      .in('consideration_id', completedIds)
     for (const r of (cs || []) as { script_submission_id: string }[]) {
       reviewedScriptIds.add(r.script_submission_id)
     }
@@ -106,13 +115,14 @@ export default async function ScriptsPage() {
     .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
   const firstCompletedId = allCompleted[0]?.id ?? null
 
-  // Gate logic
-  const hasActiveConsideration = !!activeConsideration
-  const lastReviewDate = latestReviewed?.reviewed_at ? new Date(latestReviewed.reviewed_at) : null
-  const hasNewScriptSinceLastReview = lastReviewDate
-    ? allScripts.some(s => s.status === 'completed' && !s.hidden_at && new Date(s.created_at) > lastReviewDate)
-    : true
-  const canRequestConsideration = !hasActiveConsideration && hasNewScriptSinceLastReview
+  // Gate logic — eligible if no active/draft consideration AND has unreviewed scripts
+  const hasNonCompleteConsideration = allConsiderations.some(
+    c => c.review_stage !== 'complete'
+  )
+  const hasUnreviewedScripts = submissionIds.some(
+    id => !reviewedScriptIds.has(id) && allScripts.find(s => s.id === id)?.status === 'completed' && !allScripts.find(s => s.id === id)?.hidden_at
+  )
+  const canRequestConsideration = !hasNonCompleteConsideration && hasUnreviewedScripts
 
   // Build script rows for client component
   const scriptRows = allScripts.map(s => {
@@ -167,12 +177,9 @@ export default async function ScriptsPage() {
             <p className="text-[13px] font-bold text-purple-900 m-0">Ready for consideration</p>
             <p className="text-[12px] text-purple-600 m-0 mt-0.5">Get feedback on your strengths and next steps.</p>
           </div>
-          <Link
-            href="/consideration/submit"
-            className="shrink-0 text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 px-3.5 py-1.5 rounded-lg transition-colors"
-          >
+          <NewReviewButton className="shrink-0 text-[12px] font-bold text-white px-3.5 py-1.5 rounded-lg transition-colors">
             Request consideration
-          </Link>
+          </NewReviewButton>
         </div>
       )}
 
