@@ -8,7 +8,6 @@ import {
   LayoutDashboard,
   Briefcase,
   FileText,
-  MessageCircle,
   LogOut,
   Menu,
   X,
@@ -72,9 +71,9 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
   // Logged-in nav tabs — consideration model (2026-05-05).
   const loggedInLinks = [
     { href: '/dashboard', label: 'Home', icon: LayoutDashboard },
-    { href: '/opportunities', label: 'Open calls', icon: Briefcase },
-    { href: '/scripts', label: 'My Scripts', icon: FileText },
-    { href: '/feedback', label: 'Feedback', icon: MessageCircle },
+    { href: '/scripts', label: 'Scripts', icon: FileText },
+    { href: '/review', label: 'Reviews', icon: Sparkles },
+    { href: '/opportunities', label: 'Open Calls', icon: Briefcase },
   ]
 
   return (

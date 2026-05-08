@@ -121,7 +121,7 @@ export function ScriptRowCard({
           )}
         </div>
 
-        {/* Title + format */}
+        {/* Title + format + date */}
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
@@ -129,6 +129,12 @@ export function ScriptRowCard({
             </p>
             {s.format && (
               <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
+            )}
+            {s.format && s.createdAt && <span className="text-gray-200 shrink-0">&middot;</span>}
+            {s.createdAt && (
+              <span className="text-[12px] text-gray-300 shrink-0">
+                {new Date(s.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+              </span>
             )}
           </div>
         </div>
@@ -214,9 +220,12 @@ export function ScriptRowCard({
         {s.status === 'reviewed' && s.reviewId && (
           <Link
             href={`/review/c/${s.reviewId}`}
-            className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full hover:bg-emerald-100 transition-colors"
+            className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full hover:bg-emerald-100 transition-colors"
           >
-            {s.reviewLabel || 'Reviewed'}
+            Previously reviewed
+            <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 12L12 4M12 4H6M12 4v6" />
+            </svg>
           </Link>
         )}
         {s.status === 'in-review' && s.reviewId && (
@@ -228,8 +237,8 @@ export function ScriptRowCard({
           </Link>
         )}
         {s.status === 'ready' && (
-          <span className="text-[11px] font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full">
-            Ready for review
+          <span className="text-[11px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
+            Eligible for review
           </span>
         )}
 

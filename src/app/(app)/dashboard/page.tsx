@@ -293,7 +293,7 @@ export default async function DashboardPage() {
         {allConsiderations.length > 0 ? (
           <section>
             <header className="flex items-end justify-between gap-3 mb-2.5">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your reviews</h2>
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your portfolio reviews</h2>
               {allConsiderations.length > 3 && (
                 <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
                   View all
@@ -418,7 +418,7 @@ export default async function DashboardPage() {
           </section>
         ) : completedCount > 0 ? (
           <section>
-            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Your reviews</h2>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Your portfolio reviews</h2>
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
               <p className="text-[13px] text-gray-500 m-0">No reviews yet. Use the buttons above to get started.</p>
             </div>

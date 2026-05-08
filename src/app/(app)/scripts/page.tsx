@@ -195,7 +195,7 @@ export default async function ScriptsPage() {
       <header className="flex items-end justify-between mb-5">
         <div>
           <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-            My Scripts
+            Scripts
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
             {visibleCount} {visibleCount === 1 ? 'script' : 'scripts'} evaluated
@@ -222,37 +222,8 @@ export default async function ScriptsPage() {
         </div>
       )}
 
-      {/* Latest feedback summary */}
-      {latestReviewed && latestReviewed.feedback && (
-        <div className="rounded-xl bg-white border border-gray-200 px-4 py-3 mb-4">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-[12px] font-bold text-gray-400 uppercase tracking-wide">Latest feedback</span>
-          </div>
-          <p className="text-[12.5px] text-gray-600 m-0 line-clamp-2 leading-[1.5]">
-            {latestReviewed.feedback}
-          </p>
-          <Link href="/feedback" className="text-[11px] font-semibold text-purple-600 hover:text-purple-800 mt-1.5 inline-block">
-            View full feedback →
-          </Link>
-        </div>
-      )}
-
       {/* Script list (client component) */}
       <ScriptsList scripts={scriptRows} isPro={isPro} />
-
-      {/* Pro/Free badge */}
-      <div className="flex items-center justify-between mt-3">
-        {isPro ? (
-          <span className="text-[12px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full">Pro</span>
-        ) : (
-          <span className="text-[12px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full">Free</span>
-        )}
-        {isTrial && (
-          <span className="text-[12px] text-gray-400">
-            Upgrade for unlimited scripts
-          </span>
-        )}
-      </div>
     </div>
   )
 }
