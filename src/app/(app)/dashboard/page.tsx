@@ -141,25 +141,6 @@ export default async function DashboardPage() {
     formats: string[] | null; genres: string[] | null
   }[]
 
-  // ---------- GATE LOGIC ----------
-  const hasActiveConsideration = !!activeConsideration
-  const hasBeenReviewed = allConsiderations.some(c => c.review_stage === 'complete')
-  const trialReviewedGate = isTrial && hasBeenReviewed
-  // Eligible if there are completed visible scripts NOT attached to any consideration
-  const hasUnreviewedScripts = visible.some(
-    s => s.status === 'completed' && !allReviewedScriptIds.has(s.id)
-  )
-  const canRequestConsideration = !hasActiveConsideration && !trialReviewedGate && hasUnreviewedScripts
-
-  // Disabled reason for portfolio review button (shown when grayed out)
-  const reviewDisabledReason = hasActiveConsideration
-    ? 'Review already in progress'
-    : trialReviewedGate
-    ? 'Upgrade to Pro for more reviews'
-    : !hasUnreviewedScripts
-    ? 'Submit a new script first'
-    : null
-
   // ---------- SCRIPTS PENDING REVIEW ----------
   // "Pending review" = completed visible scripts NOT attached to ANY consideration
   const pendingScripts = visible
@@ -284,10 +265,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* ── ACTIONS — always visible ─────────────────── */}
-        <DashboardActions
-          canRequestReview={canRequestConsideration}
-          disabledReason={reviewDisabledReason}
-        />
+        <DashboardActions />
 
         {/* ── REVIEWS ─────────────────────────────────── */}
         {allConsiderations.length > 0 ? (

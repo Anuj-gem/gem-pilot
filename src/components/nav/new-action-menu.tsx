@@ -11,11 +11,7 @@ function openUploadModal() {
   window.dispatchEvent(new Event('gem:open-script-upload-modal'))
 }
 
-export function NewActionMenu({
-  canRequestConsideration,
-}: {
-  canRequestConsideration: boolean
-}) {
+export function NewActionMenu() {
   const [open, setOpen] = useState(false)
   const [creatingReview, setCreatingReview] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -71,8 +67,7 @@ export function NewActionMenu({
 
           <div className="border-t border-gray-100 my-0.5" />
 
-          {canRequestConsideration ? (
-            <button
+          <button
               onClick={async () => {
                 setOpen(false)
                 if (creatingReview) return
@@ -96,15 +91,6 @@ export function NewActionMenu({
                 <span className="block text-[11px] text-gray-400 mt-0.5">Submit scripts for review</span>
               </div>
             </button>
-          ) : (
-            <div className="flex items-center gap-2.5 px-3 py-2.5 text-[13px] text-gray-400 cursor-not-allowed">
-              <Sparkles size={15} className="text-gray-300 shrink-0" />
-              <div>
-                <span className="font-medium">Portfolio review</span>
-                <span className="block text-[11px] text-gray-300 mt-0.5">Not eligible right now</span>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>

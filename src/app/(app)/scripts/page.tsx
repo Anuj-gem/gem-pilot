@@ -135,15 +135,6 @@ export default async function ScriptsPage() {
     .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
   const firstCompletedId = allCompleted[0]?.id ?? null
 
-  // Gate logic — eligible if no active/draft consideration AND has unreviewed scripts
-  const hasNonCompleteConsideration = allConsiderations.some(
-    c => c.review_stage !== 'complete'
-  )
-  const hasUnreviewedScripts = submissionIds.some(
-    id => !reviewedScriptIds.has(id) && allScripts.find(s => s.id === id)?.status === 'completed' && !allScripts.find(s => s.id === id)?.hidden_at
-  )
-  const canRequestConsideration = !hasNonCompleteConsideration && hasUnreviewedScripts
-
   // Build script rows for client component (ScriptRowData-compatible)
   const scriptRows = allScripts.map(s => {
     const ev = evalBySub.get(s.id)
@@ -210,17 +201,15 @@ export default async function ScriptsPage() {
       </header>
 
       {/* Consideration CTA */}
-      {canRequestConsideration && (
-        <div className="rounded-xl bg-purple-50 border border-purple-100 px-4 py-3.5 mb-4 flex items-center justify-between">
-          <div>
-            <p className="text-[13px] font-bold text-purple-900 m-0">Ready for consideration</p>
-            <p className="text-[12px] text-purple-600 m-0 mt-0.5">Get feedback on your strengths and next steps.</p>
-          </div>
-          <NewReviewButton className="shrink-0 text-[12px] font-bold text-white px-3.5 py-1.5 rounded-lg transition-colors">
-            Request consideration
-          </NewReviewButton>
+      <div className="rounded-xl bg-purple-50 border border-purple-100 px-4 py-3.5 mb-4 flex items-center justify-between">
+        <div>
+          <p className="text-[13px] font-bold text-purple-900 m-0">Ready for consideration</p>
+          <p className="text-[12px] text-purple-600 m-0 mt-0.5">Get feedback on your strengths and next steps.</p>
         </div>
-      )}
+        <NewReviewButton className="shrink-0 text-[12px] font-bold text-white px-3.5 py-1.5 rounded-lg transition-colors">
+          Request consideration
+        </NewReviewButton>
+      </div>
 
       {/* Script list (client component) */}
       <ScriptsList scripts={scriptRows} isPro={isPro} />

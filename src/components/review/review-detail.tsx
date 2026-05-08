@@ -368,11 +368,12 @@ export function ReviewDetail({
 
         {reviewScripts.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-            <p className="text-[13px] text-gray-400 m-0 mb-3">No scripts in this review yet.</p>
+            <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts eligible for review</p>
+            <p className="text-[13px] text-gray-400 m-0 mb-3">Upload and evaluate new scripts to include them in this review.</p>
             {isDraft && (
               <button
                 onClick={openUploadModal}
-                className="text-[13px] font-bold text-purple-600 hover:text-purple-800 bg-transparent border-0 cursor-pointer"
+                className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
               >
                 Upload a script
               </button>

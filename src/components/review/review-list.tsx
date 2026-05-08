@@ -2,9 +2,12 @@
 
 // ReviewList — listing page for all portfolio reviews.
 // Each review is a card linking to /review/c/[id].
-// No profile card. Just the list + "Start new review" button.
+// No profile card. Just the list + "New portfolio review" button.
 
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Sparkles } from 'lucide-react'
 
 type ReviewSummary = {
   id: string
@@ -25,11 +28,29 @@ const STAGE_COLORS: Record<string, { bg: string; text: string; label: string }> 
 
 export function ReviewList({
   reviews,
-  hasActiveNonComplete,
 }: {
   reviews: ReviewSummary[]
-  hasActiveNonComplete: boolean
 }) {
+  const [creating, setCreating] = useState(false)
+  const router = useRouter()
+
+  async function handleNewReview() {
+    if (creating) return
+    setCreating(true)
+    try {
+      const res = await fetch('/api/consideration/create-draft', { method: 'POST' })
+      const data = await res.json()
+      if (data.consideration_id) {
+        router.push(`/review/c/${data.consideration_id}`)
+      } else {
+        router.push('/dashboard')
+        router.refresh()
+      }
+    } catch {
+      setCreating(false)
+    }
+  }
+
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
@@ -42,27 +63,31 @@ export function ReviewList({
         >
           Portfolio reviews
         </h1>
-        {!hasActiveNonComplete && (
-          <Link
-            href="/consideration/submit"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
-          >
-            Start new review
-          </Link>
-        )}
+        <button
+          onClick={handleNewReview}
+          disabled={creating}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white text-[13px] font-bold hover:opacity-90 transition-colors cursor-pointer"
+          style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
+        >
+          <Sparkles size={14} className="text-white/80" />
+          {creating ? 'Creating…' : 'New portfolio review'}
+        </button>
       </div>
 
       {reviews.length === 0 ? (
         <div className="rounded-xl bg-white border border-gray-200 px-5 py-10 text-center">
           <p className="text-[14px] text-gray-500 m-0 mb-3">
-            You haven't submitted any portfolio reviews yet.
+            You haven't started any portfolio reviews yet.
           </p>
-          <Link
-            href="/consideration/submit"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
+          <button
+            onClick={handleNewReview}
+            disabled={creating}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white text-[13px] font-bold hover:opacity-90 transition-colors cursor-pointer"
+            style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
           >
-            Submit for review
-          </Link>
+            <Sparkles size={14} className="text-white/80" />
+            {creating ? 'Creating…' : 'New portfolio review'}
+          </button>
         </div>
       ) : (
         <div className="space-y-2">

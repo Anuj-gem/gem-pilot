@@ -55,14 +55,9 @@ export default async function ReviewListingPage() {
     })
   )
 
-  const hasActiveNonComplete = considerations.some(c => c.review_stage !== 'complete')
-
   return (
     <div className="max-w-2xl mx-auto">
-      <ReviewList
-        reviews={reviewSummaries}
-        hasActiveNonComplete={hasActiveNonComplete}
-      />
+      <ReviewList reviews={reviewSummaries} />
     </div>
   )
 }

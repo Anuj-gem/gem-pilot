@@ -7,13 +7,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { FileText, Sparkles } from 'lucide-react'
 
-export function DashboardActions({
-  canRequestReview,
-  disabledReason,
-}: {
-  canRequestReview: boolean
-  disabledReason: string | null // e.g. "Submit a new script first" or "Review in progress"
-}) {
+export function DashboardActions() {
   const router = useRouter()
   const [creatingReview, setCreatingReview] = useState(false)
 
@@ -22,7 +16,7 @@ export function DashboardActions({
   }
 
   async function handleNewReview() {
-    if (!canRequestReview || creatingReview) return
+    if (creatingReview) return
     setCreatingReview(true)
     try {
       const res = await fetch('/api/consideration/create-draft', { method: 'POST' })
@@ -49,24 +43,15 @@ export function DashboardActions({
         New script
       </button>
 
-      {/* New portfolio review — disabled when ineligible */}
+      {/* New portfolio review — always active */}
       <button
         onClick={handleNewReview}
-        disabled={!canRequestReview || creatingReview}
-        className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-3 rounded-xl text-[13px] font-bold transition-colors ${
-          canRequestReview
-            ? 'text-white cursor-pointer hover:opacity-90'
-            : 'text-gray-400 bg-gray-100 border border-gray-200 cursor-not-allowed'
-        }`}
-        style={canRequestReview ? { background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' } : undefined}
+        disabled={creatingReview}
+        className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold text-white cursor-pointer hover:opacity-90 transition-colors"
+        style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
       >
-        <span className="flex items-center gap-2">
-          <Sparkles size={15} className={canRequestReview ? 'text-white/80' : 'text-gray-300'} />
-          {creatingReview ? 'Creating…' : 'New portfolio review'}
-        </span>
-        {!canRequestReview && disabledReason && (
-          <span className="text-[11px] font-normal text-gray-400">{disabledReason}</span>
-        )}
+        <Sparkles size={15} className="text-white/80" />
+        {creatingReview ? 'Creating…' : 'New portfolio review'}
       </button>
     </div>
   )

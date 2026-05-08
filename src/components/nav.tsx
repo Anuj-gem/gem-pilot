@@ -47,12 +47,9 @@ interface NavProps {
    *  avatar dropdown isn't rendered and we fall back to a small Sign out
    *  button. (Anuj 2026-04-30 v0.10.5.) */
   userData?: NavUserData
-  /** Whether the user can request consideration. When false, the CTA
-   *  is grayed out and shows "Ineligible" instead. */
-  canRequestConsideration?: boolean
 }
 
-export default function Nav({ userData, canRequestConsideration = true }: NavProps = {}) {
+export default function Nav({ userData }: NavProps = {}) {
   const pathname = usePathname()
   const router = useRouter()
   const supabase = createClient()
@@ -128,7 +125,7 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
                     )
                   })}
                   <div className="ml-2">
-                    <NewActionMenu canRequestConsideration={canRequestConsideration} />
+                    <NewActionMenu />
                   </div>
                   {userData ? (
                     <div className="ml-2">
@@ -153,7 +150,7 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
 
               {/* Mobile logged-in — consideration CTA always visible + hamburger */}
               <div className="md:hidden flex items-center gap-2">
-                <NewActionMenu canRequestConsideration={canRequestConsideration} />
+                <NewActionMenu />
                 {userData && (
                   <NavUserMenu
                     profile={userData.profile}

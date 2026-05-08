@@ -168,61 +168,6 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     referralCount = refCount ?? 0
   }
 
-  // Consideration eligibility — determines whether nav CTA is active or grayed out.
-  // Eligible = no active consideration AND has completed scripts not attached to any consideration.
-  let canRequestConsideration = true
-  const { data: activeCon } = await service
-    .from('considerations')
-    .select('id')
-    .eq('writer_id', user.id)
-    .neq('review_stage', 'complete')
-    .limit(1)
-  if (activeCon && activeCon.length > 0) {
-    canRequestConsideration = false
-  } else {
-    // Check if user has any completed scripts NOT in any consideration
-    const { data: allUserCons } = await service
-      .from('considerations')
-      .select('id')
-      .eq('writer_id', user.id)
-    const conIds = (allUserCons || []).map((c: { id: string }) => c.id)
-
-    let reviewedScriptIds: Set<string> = new Set()
-    if (conIds.length > 0) {
-      const { data: conScripts } = await service
-        .from('consideration_scripts')
-        .select('script_submission_id')
-        .in('consideration_id', conIds)
-      for (const r of (conScripts || []) as { script_submission_id: string }[]) {
-        reviewedScriptIds.add(r.script_submission_id)
-      }
-    }
-
-    const { data: completedScripts } = await service
-      .from('script_submissions')
-      .select('id')
-      .eq('user_id', user.id)
-      .eq('status', 'completed')
-      .is('hidden_at', null)
-
-    const hasUnreviewed = (completedScripts || []).some(
-      (s: { id: string }) => !reviewedScriptIds.has(s.id)
-    )
-
-    // Also gate trial users who've already had a review
-    const isTrial = profile?.subscription_status !== 'active'
-    const { count: reviewedCount } = await service
-      .from('considerations')
-      .select('id', { count: 'exact', head: true })
-      .eq('writer_id', user.id)
-      .eq('review_stage', 'complete')
-    const trialGate = isTrial && (reviewedCount ?? 0) > 0
-
-    if (!hasUnreviewed || trialGate) {
-      canRequestConsideration = false
-    }
-  }
-
   const navUserData = {
     profile: {
       full_name: profile?.full_name ?? null,
@@ -246,7 +191,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav userData={navUserData} canRequestConsideration={canRequestConsideration} />
+      <Nav userData={navUserData} />
       {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
           Backend settings + profile columns unchanged for production. */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
