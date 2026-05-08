@@ -247,11 +247,11 @@ export function ReviewHub({
             </p>
           </div>
 
-          {/* Feedback */}
+          {/* Overall assessment */}
           {activeReview.feedback && (
             <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
               <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
-                Feedback from GEM
+                Overall assessment
               </p>
               <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
                 {activeReview.feedback}
@@ -259,7 +259,7 @@ export function ReviewHub({
             </div>
           )}
 
-          {/* Next steps — distinct card */}
+          {/* Suggested next steps — distinct card */}
           {activeReview.nextSteps && (
             <div className="rounded-xl bg-white border border-gray-200 overflow-hidden">
               <div className="px-5 py-4" style={{ borderLeft: '4px solid #7c3aed' }}>
@@ -273,49 +273,41 @@ export function ReviewHub({
             </div>
           )}
 
-          {/* Begin new review CTA */}
-          <div className="rounded-xl bg-purple-50 border border-purple-200 px-5 py-4 text-center">
-            <p className="text-[13px] text-gray-600 m-0 mb-3">
-              Ready to keep going? Start a new portfolio review with your latest work.
+          {/* New review note */}
+          <div className="rounded-xl bg-gray-50 border border-gray-200 px-5 py-3">
+            <p className="text-[13px] text-gray-500 m-0">
+              When you upload new work, you can{' '}
+              <Link href="/submit" className="text-purple-600 hover:text-purple-800 font-medium">
+                start a new review
+              </Link>.
             </p>
-            <Link
-              href="/consideration/submit"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors"
-            >
-              Begin new portfolio review
-            </Link>
           </div>
 
-          {/* Activity timeline */}
-          {activeReview.events.length > 0 && (
-            <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
-              <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
-              <div className="space-y-2">
-                {activeReview.events.map(ev => (
-                  <div key={ev.id} className="flex items-start gap-2.5">
-                    <div
-                      className="shrink-0 mt-1.5 w-2 h-2 rounded-full"
-                      style={{
-                        background: ev.event_type === 'status_change' ? '#7c3aed'
-                          : ev.event_type === 'feedback' ? '#059669'
-                          : '#6b7280',
-                      }}
-                    />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13px] text-gray-600 m-0 leading-snug">
-                        {ev.event_type === 'feedback'
-                          ? 'Feedback received from GEM'
-                          : ev.message || 'Status updated'}
-                      </p>
-                      <p className="text-[11px] text-gray-400 m-0 mt-0.5">
-                        {fmtDateTime(ev.created_at)}
-                      </p>
+          {/* Activity timeline — status changes only */}
+          {(() => {
+            const statusEvents = activeReview.events.filter(ev => ev.event_type === 'status_change')
+            if (statusEvents.length === 0) return null
+            return (
+              <div className="rounded-xl bg-white border border-gray-200 px-5 py-4">
+                <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Activity</p>
+                <div className="space-y-2">
+                  {statusEvents.map(ev => (
+                    <div key={ev.id} className="flex items-start gap-2.5">
+                      <div className="shrink-0 mt-1.5 w-2 h-2 rounded-full" style={{ background: '#7c3aed' }} />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13px] text-gray-600 m-0 leading-snug">
+                          {ev.message || 'Status updated'}
+                        </p>
+                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">
+                          {fmtDateTime(ev.created_at)}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )
+          })()}
         </>
       )}
 
@@ -374,18 +366,6 @@ export function ReviewHub({
             <p className="text-[13px] text-gray-500 m-0 mb-4 leading-snug">
               {currentStage.description}
             </p>
-
-            {/* Feedback messages (shown inline in feed) */}
-            {activeReview.feedback && (
-              <div className="bg-gray-50 rounded-lg border border-gray-100 p-4 mb-4">
-                <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-2">
-                  Feedback from GEM
-                </p>
-                <p className="text-[13.5px] text-gray-700 leading-[1.6] m-0 whitespace-pre-line">
-                  {activeReview.feedback}
-                </p>
-              </div>
-            )}
 
             {/* Event timeline */}
             {activeReview.events.length > 0 && (
@@ -625,7 +605,7 @@ function PastReviewCard({ review }: { review: PastReview }) {
               borderLeft: '3px solid #7c3aed',
             }}>
               <p className="text-[12px] font-bold uppercase tracking-[0.04em] text-purple-600 m-0 mb-1">
-                Your next move
+                Suggested next steps
               </p>
               <p className="text-[13px] text-purple-900 leading-[1.5] m-0">
                 {review.next_steps}
