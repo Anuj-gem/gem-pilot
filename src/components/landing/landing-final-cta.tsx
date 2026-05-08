@@ -1,8 +1,5 @@
-// LandingFinalCTA — single closing call. The page builds the
-// pitch; this is the off-ramp for visitors who scrolled all the
-// way down without clicking the hero.
-//
-// Anuj 2026-04-30 v0.11.0.
+// LandingFinalCTA — single closing call.
+// v10 — "Upload your script. See what happens."
 
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -18,7 +15,7 @@ export function LandingFinalCTA() {
           Upload your script. See what happens.
         </h2>
         <p className="text-[15.5px] sm:text-[17px] text-[var(--gem-gray-300)] leading-relaxed m-0 mb-8 max-w-[480px] mx-auto">
-          Your first evaluation is free. No card needed.
+          Your first score is free.
         </p>
         <Link
           href="/submit"
@@ -28,7 +25,7 @@ export function LandingFinalCTA() {
             boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
           }}
         >
-          Get your free evaluation <ArrowRight size={16} />
+          Upload your script <ArrowRight size={16} />
         </Link>
       </div>
     </section>

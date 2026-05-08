@@ -1,32 +1,25 @@
-// LandingArc — the four-step story rendered as a horizontal row.
-// Post → Get peer reviews → Build your profile → Get noticed.
+// LandingArc — three-step story.
+// Build your profile → Get your GEM Score → Get matched.
 //
-// Anuj 2026-04-30 v0.11.0. The arc is the whole pitch in one
-// picture: every visitor sees what GEM does for them as a writer
-// before they decide whether to scroll the rest of the page.
+// v10 — simplified from 4 steps to 3.
 
-import { FileText, Sparkles, Send, MessageCircle } from 'lucide-react'
+import { User, Sparkles, Handshake } from 'lucide-react'
 
 const STEPS = [
   {
-    icon: FileText,
-    title: "Upload",
-    sub: "Drop your screenplay. PDF, any length.",
+    icon: User,
+    title: "Build your profile",
+    sub: "Upload your scripts, add your bio and credits. Your whole portfolio in one place.",
   },
   {
     icon: Sparkles,
-    title: "Get evaluated",
-    sub: "A structured report covering story, characters, packaging, budget, and what it would take to make. Under a minute.",
+    title: "Get your GEM Score",
+    sub: "Every script gets a detailed score and report — strengths, weaknesses, where you stand.",
   },
   {
-    icon: Send,
-    title: "Request consideration",
-    sub: "Put your scripts in front of producers, managers, and agents. They read your full evaluation, not just a logline.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Get feedback",
-    sub: "Hear back with real notes. What worked, what needs work, and whether they want to see more from you.",
+    icon: Handshake,
+    title: "Get matched",
+    sub: "Our team reviews strong portfolios and connects you to the right partners.",
   },
 ]
 
@@ -45,11 +38,11 @@ export function LandingArc() {
             className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            From upload to consideration.
+            Three steps to real access.
           </h2>
         </div>
 
-        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none p-0 m-0">
+        <ol className="grid grid-cols-1 sm:grid-cols-3 gap-4 list-none p-0 m-0">
           {STEPS.map((s, i) => {
             const Icon = s.icon
             return (
@@ -68,7 +61,7 @@ export function LandingArc() {
                   >
                     <Icon size={16} />
                   </span>
-                  <span className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)]">
+                  <span className="text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)]">
                     Step {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>

@@ -1,9 +1,7 @@
 // Landing hero — client component.
 //
-// v0.13.0 — messaging-v3. Headline: "Advanced script evaluation.
-// Direct industry access. One platform." Clear, functional, anyone
-// can understand what GEM does from the headline alone.
-// Primary CTA → /submit (free eval). PDF drop zone secondary.
+// v10 — "Get your work in front of the right people."
+// Portfolio-first framing. Primary CTA → /submit. Drop zone secondary.
 'use client'
 
 import { useRef, useState } from 'react'
@@ -35,7 +33,7 @@ export function LandingHero() {
 
   function handleJoinClick() {
     try {
-      trackEvent('cta_clicked', { location: 'hero', label: 'Get your free evaluation' })
+      trackEvent('cta_clicked', { location: 'hero', label: 'Upload your script' })
     } catch {}
     router.push('/submit')
   }
@@ -63,17 +61,14 @@ export function LandingHero() {
             fontSize: 'clamp(34px, 5.5vw, 52px)',
           }}
         >
-          Advanced script evaluation.
+          Get your work in front
           <br className="hidden sm:block" />
-          Direct industry access.
-          <br className="hidden sm:block" />
-          One platform.
+          of the right people.
         </h1>
 
         <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[640px] mx-auto">
-          Upload your screenplay and get a detailed evaluation in under
-          a minute — then put your work in front of producers, managers,
-          and agents who give real feedback. Your first script is free.
+          Build your profile, upload your scripts, and let GEM do the
+          rest — from scoring to partner matching.
         </p>
 
         {/* Primary CTA */}
@@ -88,16 +83,21 @@ export function LandingHero() {
               boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
             }}
           >
-            Get your free evaluation <ArrowRight size={16} />
+            Upload your script <ArrowRight size={16} />
           </button>
         </div>
         <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mb-8">
-          No card needed
+          Not ready yet?{' '}
+          <a
+            href="/submit"
+            className="underline hover:text-[var(--gem-gray-300)] transition-colors"
+          >
+            Create your account
+          </a>{' '}
+          and browse open opportunities.
         </p>
 
-        {/* Secondary path — drop zone, visually demoted from the
-            primary CTA but still present for writers who want to
-            dive in with a script in hand. */}
+        {/* Secondary path — drop zone */}
         <div className="max-w-[460px] mx-auto">
           <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] mb-3">
             Or drop your script here

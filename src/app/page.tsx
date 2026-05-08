@@ -1,14 +1,12 @@
-// Landing page — v0.14.0 consolidated (2026-05-03).
+// Landing page — v10 (2026-05-08).
 //
-// Single page for everything. /writers, /industry, /selznick now
-// redirect here. The pitch: structured evaluation + exclusive curated
-// opportunities + real feedback from industry + writer profiles.
+// Portfolio-first framing. Three steps: build profile → get scored → get matched.
+// Five pillars: GEM Score, human review, matching, profile, opportunities.
 //
 // Page architecture:
-//   1. Hero — "Advanced script evaluation. Direct industry access."
-//   2. Arc — Upload → Get evaluated → Match → Submit
-//   3. Five pillars — evaluation, exclusive opportunities, real
-//      feedback, profile, vision (Selznick)
+//   1. Hero — "Get your work in front of the right people."
+//   2. Arc — Build profile → Get GEM Score → Get matched (3 steps)
+//   3. Five pillars — score, human review, matching, profile, opportunities
 //   4. Pricing — Free vs Pro $20/mo
 //   5. Final CTA
 

@@ -1,45 +1,43 @@
 // LandingPillars — five product pillars as paired text + mockup blocks.
-// v0.14.0 consolidated landing page. Folds /writers, /industry, /selznick
-// content into one page. Sections: evaluation, opportunities, feedback,
-// profile, vision.
+// v10 — GEM Score, Human Review, Matching, Profile, Opportunities.
 
 export function LandingPillars() {
   return (
     <section className="px-5 sm:px-8 pb-8 sm:pb-12">
       <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         <Pillar
-          eyebrow="The evaluation"
-          title="The full picture of your script. In under a minute."
-          body="A one-line pitch, character breakdowns, budget estimate, production complexity, and honest development notes — everything someone would need to decide whether to say yes. Not a score and a paragraph. A complete read."
-          mockup={<EvaluationReportMockup />}
+          eyebrow="Your GEM Score"
+          title="Your GEM Score."
+          body="Every script you upload gets scored and analyzed instantly. You get a detailed report — what's working, what's not, and how your script compares to produced work in the same genre."
+          mockup={<GemScoreMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="Get considered"
-          title="Put your scripts in front of producers, managers, and agents."
-          body="Request consideration and real people in the entertainment industry review your work. Every script, every score, every evaluation. Not a query letter. What someone would actually read before taking a meeting. Write something new? Request consideration again."
-          mockup={<ConsiderationMockup />}
+          eyebrow="Human review"
+          title="Then a human takes a look."
+          body="Our team reviews strong portfolios personally — your scripts, your voice, your range. If there's a fit with one of our partners, we make the connection."
+          mockup={<HumanReviewMockup />}
           align="right"
         />
         <Pillar
-          eyebrow="Real feedback"
-          title="Not a form rejection. An actual response."
-          body="When producers and reps review your work, they respond with real notes. What landed, what needs work, and whether they want to see more. The kind of feedback you get in a development meeting, not from a contest."
-          mockup={<FeedbackMockup />}
+          eyebrow="Matching"
+          title="Matching."
+          body="When there's a fit, a partner reaches out to you directly through GEM."
+          mockup={<MatchingMockup />}
           align="left"
         />
         <Pillar
           eyebrow="Your portfolio"
-          title="A shareable record of everything you've written."
-          body="Your scripts, your scores, your track record — all in one place. When producers and reps look at your work, this is what they see. A portfolio that grows with every script you upload."
+          title="Your whole portfolio. One link."
+          body="Scripts, bio, credits, scores — everything in one shareable profile. When someone asks what you've written, send them your GEM page."
           mockup={<ProfileMockup />}
           align="right"
         />
         <Pillar
-          eyebrow="Named for the producer who set the standard"
-          title="Built to get great work made."
-          body="Most platforms stop at the evaluation. You get a score, maybe some notes, and then nothing. GEM keeps going — the evaluation builds your case, and then you put it in front of producers and reps who can actually do something with it. Everything we build moves toward the same thing: connecting great scripts with the people who can make them."
-          mockup={<VisionFlowMockup />}
+          eyebrow="Open calls"
+          title="Open opportunities."
+          body="Browse open calls from companies actively looking for material. When your work fits, submit directly."
+          mockup={<OpportunitiesMockup />}
           align="left"
         />
       </div>
@@ -96,20 +94,20 @@ function Pillar({
   )
 }
 
-// ── Mockup 1: Evaluation report (expanded from /writers) ────────
-function EvaluationReportMockup() {
+// ── Mockup 1: GEM Score (The Sopranos sample) ─────────────────────
+function GemScoreMockup() {
   return (
     <div className="p-5 sm:p-6">
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="min-w-0">
-          <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
+          <p className="text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-1">
             GEM evaluation
           </p>
           <p
             className="text-[15px] font-bold m-0 leading-tight text-[var(--gem-gray-50)] truncate"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Untitled mob-therapy pilot
+            The Sopranos — Pilot
           </p>
         </div>
         <div
@@ -130,184 +128,137 @@ function EvaluationReportMockup() {
         </div>
       </div>
 
-      {/* Report sections — the 6 things every eval covers */}
+      {/* Report sections */}
       <div className="space-y-0">
-        <ReportRow n="01" title="Headline" preview="A one-line pitch someone could forward to their boss." />
-        <ReportRow n="02" title="Cast breakdown" preview="Lead and supporting characters, who would want to play them." />
-        <ReportRow n="03" title="Audience and budget" preview="Who this is for, what it would cost to make." />
-        <ReportRow n="04" title="Production complexity" preview="Locations, VFX, anything that affects the budget." />
-        <ReportRow n="05" title="Development notes" preview="What's working, what's not, and what to fix." />
-      </div>
-
-      <div className="grid grid-cols-2 gap-2 mt-3">
-        <ReadTile label="Budget" value="Indie" hint="$2-5M" tone="indie" />
-        <ReadTile label="Complexity" value="Manageable" hint="2 main locations" tone="manageable" />
+        <ReportSection
+          title="Why this is a hit"
+          preview="Anti-hero premise with mass appeal. Tony Soprano is one of the most compelling leads in television history..."
+        />
+        <ReportSection
+          title="Comparable projects"
+          preview="Breaking Bad, Ozark, The Shield — morally complex leads in high-stakes worlds..."
+        />
+        <ReportSection
+          title="Development notes"
+          preview="Pilot sets up five seasons of story. The therapy frame is a structural advantage that most dramas lack..."
+        />
+        <ReportSection
+          title="Production reality"
+          preview="New Jersey locations, moderate cast size. Fits cable or premium streaming budget..."
+        />
       </div>
     </div>
   )
 }
 
-function ReportRow({ n, title, preview }: { n: string; title: string; preview: string }) {
+function ReportSection({ title, preview }: { title: string; preview: string }) {
   return (
-    <div className="grid grid-cols-[32px_1fr] gap-x-2 py-2 border-b last:border-0 border-[var(--gem-gray-800)]">
-      <span className="text-[13px] font-bold tabular-nums leading-tight" style={{ color: 'var(--gem-gold)' }}>
-        {n}
-      </span>
-      <div className="min-w-0">
-        <p className="text-[12.5px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
-          {title}
-        </p>
-        <p className="text-[10.5px] text-[var(--gem-gray-400)] m-0 mt-0.5 leading-snug">
-          {preview}
-        </p>
-      </div>
-    </div>
-  )
-}
-
-function ReadTile({
-  label,
-  value,
-  hint,
-  tone,
-}: {
-  label: string
-  value: string
-  hint: string
-  tone: 'indie' | 'manageable'
-}) {
-  const toneColor = tone === 'manageable' ? '#16a34a' : 'var(--gem-accent)'
-  const toneBg =
-    tone === 'manageable'
-      ? 'rgba(22,163,74,0.08)'
-      : 'rgba(124,58,237,0.08)'
-  const toneBorder =
-    tone === 'manageable'
-      ? 'rgba(22,163,74,0.30)'
-      : 'rgba(124,58,237,0.30)'
-  return (
-    <div
-      className="rounded-lg p-3"
-      style={{
-        background: toneBg,
-        border: `1px solid ${toneBorder}`,
-      }}
-    >
-      <p className="text-[9px] uppercase tracking-[0.18em] font-bold m-0 mb-1" style={{ color: toneColor }}>
-        {label}
+    <div className="py-2.5 border-b last:border-0 border-[var(--gem-gray-800)]">
+      <p className="text-[13px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug">
+        {title}
       </p>
-      <p className="text-[14px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]" style={{ fontFamily: 'Georgia, serif' }}>
-        {value}
-      </p>
-      <p className="text-[10.5px] m-0 mt-0.5 text-[var(--gem-gray-400)] leading-snug">
-        {hint}
+      <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug">
+        {preview}
       </p>
     </div>
   )
 }
 
-// ── Mockup 2: Consideration ─────────────────────────────────────
-function ConsiderationMockup() {
+// ── Mockup 2: Human Review ─────────────────────────────────────────
+function HumanReviewMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-        Request consideration
-      </p>
-      <p className="text-[12px] text-[var(--gem-gray-300)] m-0 mb-4 leading-snug">
-        Select which scripts to include. Producers and reps will review everything you submit.
-      </p>
-      <div className="space-y-2">
-        <ConsiderationScriptRow title="The Quiet Part" format="Pilot" score={84} selected />
-        <ConsiderationScriptRow title="Lawn Order" format="Feature" score={71} selected />
-        <ConsiderationScriptRow title="Burning Daylight" format="Pilot" score={67} selected={false} />
-      </div>
-      <div
-        className="mt-3 rounded-lg px-3.5 py-2.5"
-        style={{ background: 'rgba(124,58,237,0.06)', border: '1px solid rgba(124,58,237,0.20)' }}
-      >
-        <p className="text-[11px] text-[var(--gem-accent)] m-0 leading-snug">
-          <strong>2 scripts</strong> will be reviewed together as your portfolio.
+      {/* Notification header */}
+      <div className="flex items-center gap-2 mb-4">
+        <span
+          className="w-2 h-2 rounded-full shrink-0"
+          style={{ background: '#16a34a' }}
+        />
+        <p className="text-[12px] font-bold text-[var(--gem-gray-50)] m-0">
+          Update from GEM
         </p>
       </div>
-      <div
-        className="mt-3 w-full rounded-xl py-2.5 text-center text-[13px] font-semibold text-white"
-        style={{ background: 'var(--gem-accent)' }}
-      >
-        Request consideration
-      </div>
-    </div>
-  )
-}
 
-function ConsiderationScriptRow({ title, format, score, selected }: { title: string; format: string; score: number; selected: boolean }) {
-  return (
-    <div
-      className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl"
-      style={{
-        border: selected ? '1px solid rgba(124,58,237,0.30)' : '1px solid var(--gem-gray-700)',
-        background: selected ? 'rgba(124,58,237,0.04)' : 'var(--gem-gray-900)',
-      }}
-    >
+      {/* Review card */}
       <div
-        className="w-4.5 h-4.5 rounded flex items-center justify-center shrink-0"
+        className="relative rounded-lg px-4 py-3.5"
         style={{
-          width: 18, height: 18,
-          background: selected ? 'var(--gem-accent)' : 'transparent',
-          border: selected ? 'none' : '2px solid var(--gem-gray-600)',
+          background: 'rgba(124,58,237,0.04)',
+          border: '1px solid rgba(124,58,237,0.20)',
         }}
       >
-        {selected && <span className="text-white text-[10px] font-bold">✓</span>}
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-[12.5px] font-bold text-[var(--gem-gray-50)] m-0 truncate leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-          {title}
+        <div
+          aria-hidden
+          className="absolute left-0 top-3 bottom-3 rounded-r"
+          style={{ width: 3, background: 'var(--gem-accent)' }}
+        />
+        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2 pl-2">
+          GEM Review
         </p>
-        <p className="text-[10px] text-[var(--gem-gray-400)] m-0 mt-0.5">{format} · {score}</p>
+        <p className="text-[13px] text-[var(--gem-gray-100)] leading-[1.6] m-0 pl-2">
+          This work is exceptional. We think you&apos;re a strong fit for
+          several of our partners. We&apos;re doing some additional review — please stand by.
+        </p>
       </div>
     </div>
   )
 }
 
-// ── Mockup 3: Feedback from industry ────────────────────────────
-function FeedbackMockup() {
+// ── Mockup 3: Matching (partner message) ───────────────────────────
+function MatchingMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-        Consideration feedback
-      </p>
-
-      {/* Portfolio context */}
-      <div
-        className="rounded-lg px-3 py-2.5 mb-3 flex items-center justify-between gap-2"
-        style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
-      >
-        <div className="min-w-0">
-          <p className="text-[9px] font-bold uppercase tracking-wider text-[var(--gem-gray-500)] m-0 mb-0.5">
-            Your portfolio
-          </p>
-          <p className="text-[11.5px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
-            2 scripts submitted
-          </p>
-        </div>
-        <span className="shrink-0 text-[10px] font-bold px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">
-          Feedback received
-        </span>
+      {/* Notification header */}
+      <div className="flex items-center gap-2 mb-4">
+        <span
+          className="w-2 h-2 rounded-full shrink-0"
+          style={{ background: 'var(--gem-accent)' }}
+        />
+        <p className="text-[12px] font-bold text-[var(--gem-gray-50)] m-0">
+          New message from a GEM partner
+        </p>
       </div>
 
-      {/* The feedback */}
+      {/* Message card */}
       <div
-        className="rounded-lg px-3.5 py-3"
-        style={{ background: 'rgba(124,58,237,0.04)', border: '1px solid rgba(124,58,237,0.20)' }}
+        className="rounded-lg px-4 py-3.5"
+        style={{
+          background: 'var(--gem-gray-900)',
+          border: '1px solid var(--gem-gray-700)',
+        }}
       >
-        <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--gem-accent)] m-0 mb-2">
-          Industry feedback
+        <div className="flex items-center gap-3 mb-3">
+          <span
+            className="shrink-0 w-10 h-10 rounded-full grid place-items-center text-white font-bold text-[13px]"
+            style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+          >
+            SR
+          </span>
+          <div className="min-w-0">
+            <p className="text-[13px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
+              Sarah R.
+            </p>
+            <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-0.5">
+              Development Executive · Meridian Entertainment
+            </p>
+          </div>
+        </div>
+        <p className="text-[13px] text-[var(--gem-gray-200)] leading-[1.55] m-0 mb-3">
+          GEM showed us your pilot and I think it&apos;s a great fit for
+          something we&apos;re developing. Would love to set up a call — are you free Thursday?
         </p>
-        <p className="text-[12px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-2">
-          Strong voice across both scripts. The pilot has a compelling lead and the contained setting works. The feature needs tightening in act two. We want to see a revision before moving forward, but there is real potential here.
-        </p>
-        <div className="flex items-center gap-1.5">
-          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.10)', color: 'var(--gem-accent)' }}>
-            Upload new work to be reconsidered
+        <div className="flex items-center gap-2">
+          <span
+            className="rounded-lg px-3.5 py-2 text-[12px] font-semibold text-white"
+            style={{ background: 'var(--gem-accent)' }}
+          >
+            Reply
+          </span>
+          <span
+            className="rounded-lg px-3.5 py-2 text-[12px] font-semibold text-[var(--gem-gray-200)]"
+            style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
+          >
+            View profile
           </span>
         </div>
       </div>
@@ -315,60 +266,67 @@ function FeedbackMockup() {
   )
 }
 
-// ── Mockup 4: Profile card ──────────────────────────────────────
+// ── Mockup 4: Profile card ─────────────────────────────────────────
 function ProfileMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <div className="flex items-start gap-3 mb-4">
+      <div className="flex items-start gap-3 mb-3">
         <span
           className="shrink-0 w-12 h-12 rounded-full grid place-items-center text-white font-bold text-[16px]"
           style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
         >
-          JS
+          JM
         </span>
         <div className="flex-1 min-w-0">
           <p
             className="text-[16px] font-bold m-0 leading-tight text-[var(--gem-gray-50)]"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Jordan Sato
+            Jordan Mitchell
           </p>
-          <p className="text-[12px] font-mono text-[var(--gem-accent)] m-0 mt-0.5">
-            @jordansato
-          </p>
-          <p className="text-[12.5px] text-[var(--gem-gray-300)] m-0 mt-1.5 leading-snug">
-            Half-hour comedy + features. Looking for staffing.
+          <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1">
+            Drama · Thriller · Limited Series
           </p>
         </div>
       </div>
+
+      {/* Badges */}
+      <div className="flex items-center gap-2 mb-4">
+        <span
+          className="text-[10px] font-bold px-2 py-1 rounded-full"
+          style={{ background: 'rgba(124,58,237,0.08)', color: 'var(--gem-accent)' }}
+        >
+          Exceptional writer
+        </span>
+        <span
+          className="text-[10px] font-bold px-2 py-1 rounded-full"
+          style={{ background: 'rgba(212,160,23,0.10)', color: 'var(--gem-gold)' }}
+        >
+          Top 5%
+        </span>
+      </div>
+
+      {/* Scripts */}
+      <div className="space-y-1.5">
+        <ScriptStub title="The Glass Floor" score={86} />
+        <ScriptStub title="Salt Creek" score={79} />
+        <ScriptStub title="Nightfall Protocol" score={74} />
+      </div>
+
+      {/* Footer stats */}
       <div
-        className="grid grid-cols-3 gap-2 text-center pt-3 border-t"
-        style={{ borderColor: 'var(--gem-gray-700)' }}
+        className="mt-3 pt-3 flex items-center gap-3 text-[12px] text-[var(--gem-gray-400)]"
+        style={{ borderTop: '1px solid var(--gem-gray-700)' }}
       >
-        <ProfileStat label="Scripts" value="4" />
-        <ProfileStat label="Avg Score" value="78" />
-        <ProfileStat label="Considerations" value="3" />
-      </div>
-      <div className="mt-3 space-y-1.5">
-        <ScriptStub title="The Quiet Part" format="Pilot" score={84} />
-        <ScriptStub title="Lawn Order" format="Feature" score={71} />
+        <span>3 scripts</span>
+        <span className="text-[var(--gem-gray-600)]">·</span>
+        <span>Avg: <strong className="text-[var(--gem-gray-50)]">80</strong></span>
       </div>
     </div>
   )
 }
 
-function ProfileStat({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <div className="text-[15px] font-bold text-[var(--gem-gray-50)] tabular-nums">{value}</div>
-      <div className="text-[9.5px] uppercase tracking-wider font-bold text-[var(--gem-gray-500)] mt-0.5">
-        {label}
-      </div>
-    </div>
-  )
-}
-
-function ScriptStub({ title, format, score }: { title: string; format: string; score: number }) {
+function ScriptStub({ title, score }: { title: string; score: number }) {
   return (
     <div
       className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg"
@@ -377,17 +335,14 @@ function ScriptStub({ title, format, score }: { title: string; format: string; s
         border: '1px solid var(--gem-gray-700)',
       }}
     >
-      <div className="min-w-0 flex-1">
-        <p
-          className="text-[12px] font-bold text-[var(--gem-gray-50)] m-0 truncate leading-tight"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          {title}
-        </p>
-        <p className="text-[10px] text-[var(--gem-gray-500)] m-0 mt-0.5">{format}</p>
-      </div>
+      <p
+        className="text-[12px] font-bold text-[var(--gem-gray-50)] m-0 truncate leading-tight"
+        style={{ fontFamily: 'Georgia, serif' }}
+      >
+        {title}
+      </p>
       <span
-        className="shrink-0 text-[10.5px] font-bold tabular-nums px-1.5 py-0.5 rounded"
+        className="shrink-0 text-[12px] font-bold tabular-nums px-1.5 py-0.5 rounded"
         style={{
           color: 'var(--gem-accent)',
           background: 'rgba(124,58,237,0.08)',
@@ -399,105 +354,69 @@ function ScriptStub({ title, format, score }: { title: string; format: string; s
   )
 }
 
-// ── Mockup 5: Vision flow — Script → Evaluation → Opportunity ───
-function VisionFlowMockup() {
+// ── Mockup 5: Opportunities ────────────────────────────────────────
+function OpportunitiesMockup() {
   return (
     <div className="p-5 sm:p-6">
-      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-0">
-        <FlowNode
-          label="Your screenplay"
-          sub="Upload a PDF"
-          color="var(--gem-gray-50)"
-          bg="var(--gem-gray-900)"
-          border="var(--gem-gray-700)"
+      <p className="text-[12px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+        Open opportunities
+      </p>
+      <div className="space-y-2.5">
+        <OpportunityCard
+          title="Seeking: hour-long drama pilots"
+          sub="Production company developing a slate for premium cable."
+          tags={['Drama', 'Open']}
         />
-        <FlowArrow />
-        <FlowNode
-          label="Evaluation"
-          sub="Structured producer-grade read"
-          color="var(--gem-accent)"
-          bg="rgba(124,58,237,0.06)"
-          border="rgba(124,58,237,0.30)"
-        />
-        <FlowArrow />
-        <FlowNode
-          label="Consideration"
-          sub="Producers and reps review your work"
-          color="#16a34a"
-          bg="rgba(22,163,74,0.06)"
-          border="rgba(22,163,74,0.30)"
+        <OpportunityCard
+          title="Half-hour comedies for streaming"
+          sub="Independent financier packaging for streamers."
+          tags={['Comedy', 'Open']}
         />
       </div>
-      <p className="text-[12px] text-[var(--gem-gray-400)] text-center m-0 mt-5 leading-snug max-w-[44ch] mx-auto">
-        David O. Selznick set the standard for what a great evaluation looks like. We named the engine after him because that&apos;s the bar.
-      </p>
     </div>
   )
 }
 
-function FlowNode({
-  label,
+function OpportunityCard({
+  title,
   sub,
-  color,
-  bg,
-  border,
+  tags,
 }: {
-  label: string
+  title: string
   sub: string
-  color: string
-  bg: string
-  border: string
+  tags: string[]
 }) {
   return (
     <div
-      className="flex-1 w-full sm:w-auto rounded-xl px-4 py-3.5 text-center"
-      style={{ background: bg, border: `1px solid ${border}` }}
+      className="rounded-xl px-3.5 py-3"
+      style={{
+        background: 'var(--gem-gray-900)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
     >
-      <p className="text-[13px] font-bold m-0 leading-tight" style={{ color, fontFamily: 'Georgia, serif' }}>
-        {label}
+      <p
+        className="text-[13px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight"
+        style={{ fontFamily: 'Georgia, serif' }}
+      >
+        {title}
       </p>
-      <p className="text-[10.5px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug">
+      <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug">
         {sub}
       </p>
-    </div>
-  )
-}
-
-function FlowArrow() {
-  return (
-    <div className="flex items-center justify-center px-1.5 py-1 sm:py-0">
-      <svg
-        aria-hidden
-        className="hidden sm:block text-[var(--gem-gray-500)]"
-        width="28"
-        height="14"
-        viewBox="0 0 28 14"
-        fill="none"
-      >
-        <path
-          d="M2 7h22M18 2l5 5-5 5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <svg
-        aria-hidden
-        className="sm:hidden text-[var(--gem-gray-500)]"
-        width="14"
-        height="22"
-        viewBox="0 0 14 22"
-        fill="none"
-      >
-        <path
-          d="M7 2v18M2 14l5 5 5-5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <div className="flex items-center gap-1.5 mt-2">
+        {tags.map((t) => (
+          <span
+            key={t}
+            className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+            style={{
+              background: t === 'Open' ? 'rgba(22,163,74,0.08)' : 'rgba(124,58,237,0.08)',
+              color: t === 'Open' ? '#16a34a' : 'var(--gem-accent)',
+            }}
+          >
+            {t}
+          </span>
+        ))}
+      </div>
     </div>
   )
 }

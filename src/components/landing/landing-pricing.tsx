@@ -1,7 +1,5 @@
-// LandingPricing — two-column Free vs Pro card. Pro is the
-// conversion driver, Free is the on-ramp.
-//
-// v0.14.0 — consolidated landing page. No competitor comparison.
+// LandingPricing — two-column Free vs Pro card.
+// v10 — updated features to match portfolio + matching flow.
 
 import { ArrowRight, Check } from 'lucide-react'
 import Link from 'next/link'
@@ -18,11 +16,14 @@ export function LandingPricing() {
             Pricing
           </p>
           <h2
-            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0"
+            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-3"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Free to start. One plan when you're ready.
+            Simple pricing.
           </h2>
+          <p className="text-[15px] text-[var(--gem-gray-300)] m-0">
+            Your first score is free. No credit card required.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto mb-6">
@@ -32,11 +33,12 @@ export function LandingPricing() {
             period="forever"
             blurb="See what your script is worth."
             features={[
-              'One full script evaluation',
-              'One consideration request',
-              'Shareable report URL',
+              '1 script scored',
+              'Full detailed report',
+              'Public profile',
+              'Browse opportunities',
             ]}
-            cta="Get your free evaluation"
+            cta="Get started free"
             href="/submit"
             primary={false}
           />
@@ -44,13 +46,14 @@ export function LandingPricing() {
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="Unlimited scripts, ongoing consideration from producers and reps, and a shareable portfolio."
+            blurb="Unlimited scripts, portfolio review, and partner matching."
             features={[
-              'Unlimited script evaluations',
-              'Ongoing consideration as you write new scripts',
-              'Shareable writer portfolio',
+              'Unlimited scripts scored',
+              'GEM team portfolio review',
+              'Submit to opportunities',
+              'Partner matching',
             ]}
-            cta="Go Pro"
+            cta="Start free trial"
             href="/submit"
             primary={true}
           />
