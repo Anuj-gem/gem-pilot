@@ -40,16 +40,16 @@ export default async function PartnerDashboardPage() {
   // Get all considerations (pending first, then reviewed)
   const { data: allConsiderations } = await service
     .from('considerations')
-    .select('id, writer_id, status, submitted_at, reviewed_at, feedback, outcome, next_steps')
+    .select('id, writer_id, status, review_stage, submitted_at, reviewed_at, feedback, outcome, next_steps')
     .order('submitted_at', { ascending: true })
 
   const considerations = (allConsiderations || []) as {
-    id: string; writer_id: string; status: string; submitted_at: string
+    id: string; writer_id: string; status: string; review_stage: string; submitted_at: string
     reviewed_at: string | null; feedback: string | null; outcome: string | null; next_steps: string | null
   }[]
 
-  const pending = considerations.filter(c => c.status === 'pending')
-  const reviewed = considerations.filter(c => c.status === 'reviewed')
+  const pending = considerations.filter(c => c.review_stage !== 'complete')
+  const reviewed = considerations.filter(c => c.review_stage === 'complete')
 
   // Get writer profiles
   const writerIds = [...new Set(considerations.map(c => c.writer_id))]
@@ -115,6 +115,23 @@ export default async function PartnerDashboardPage() {
     }
   }
 
+  // Get events for all considerations
+  type EventRow = { id: string; consideration_id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }
+  const eventsByConsideration = new Map<string, EventRow[]>()
+  if (considerationIds.length > 0) {
+    const { data: allEvents } = await service
+      .from('consideration_events')
+      .select('id, consideration_id, event_type, message, new_stage, created_at')
+      .in('consideration_id', considerationIds)
+      .order('created_at', { ascending: false })
+    for (const ev of (allEvents || []) as EventRow[]) {
+      if (!eventsByConsideration.has(ev.consideration_id)) {
+        eventsByConsideration.set(ev.consideration_id, [])
+      }
+      eventsByConsideration.get(ev.consideration_id)!.push(ev)
+    }
+  }
+
   return (
     <>
       <Nav />
@@ -124,7 +141,7 @@ export default async function PartnerDashboardPage() {
             Writers in consideration
           </h1>
           <p className="text-[13px] text-gray-400 mt-1 m-0">
-            {pending.length} pending · {reviewed.length} reviewed
+            {pending.length} active · {reviewed.length} complete
           </p>
         </header>
 
@@ -146,9 +163,10 @@ export default async function PartnerDashboardPage() {
                   submittedAt={c.submitted_at}
                   scripts={scriptsByConsideration.get(c.id) ?? []}
                   status={c.status}
+                  reviewStage={c.review_stage}
                   feedback={c.feedback}
-
                   nextSteps={c.next_steps}
+                  events={eventsByConsideration.get(c.id) ?? []}
                 />
               )
             })}
@@ -158,7 +176,7 @@ export default async function PartnerDashboardPage() {
         {/* Reviewed (collapsed) */}
         {reviewed.length > 0 && (
           <div className="mt-6">
-            <p className="text-[12px] text-gray-400 font-medium mb-2">{reviewed.length} reviewed</p>
+            <p className="text-[12px] text-gray-400 font-medium mb-2">{reviewed.length} complete</p>
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden opacity-75">
               {reviewed.map(c => {
                 const writer = writerMap.get(c.writer_id)

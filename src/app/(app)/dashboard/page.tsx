@@ -22,7 +22,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { type OpportunityData } from '@/components/opportunities/opportunity-card'
-import { ConsiderationStatus } from '@/components/dashboard/consideration-status'
+// ConsiderationStatus replaced by inline review card
 import { OpenCallsDropdown } from '@/components/dashboard/open-calls-dropdown'
 import { FeedbackCycle } from '@/components/consideration/feedback-cycle'
 import Link from 'next/link'
@@ -126,17 +126,17 @@ export default async function DashboardPage() {
   // ---------- CONSIDERATIONS ----------
   const { data: considerations } = await service
     .from('considerations')
-    .select('id, status, submitted_at, reviewed_at, feedback, outcome, next_steps')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, outcome, next_steps')
     .eq('writer_id', user.id)
     .order('submitted_at', { ascending: false })
 
   const allConsiderations = (considerations || []) as {
-    id: string; status: string; submitted_at: string; reviewed_at: string | null
+    id: string; status: string; review_stage: string; submitted_at: string; reviewed_at: string | null
     feedback: string | null; outcome: string | null; next_steps: string | null
   }[]
 
-  const activeConsideration = allConsiderations.find(c => c.status === 'pending')
-  const latestReviewed = allConsiderations.find(c => c.status === 'reviewed')
+  const activeConsideration = allConsiderations.find(c => c.review_stage !== 'complete')
+  const latestReviewed = allConsiderations.find(c => c.review_stage === 'complete')
 
   // Get scripts in active consideration
   let activeConsiderationScriptIds: string[] = []
@@ -350,12 +350,42 @@ export default async function DashboardPage() {
         )}
 
 
-        {/* ── CONSIDERATION STATUS ────────────────────────── */}
+        {/* ── PORTFOLIO REVIEW STATUS ──────────────────────── */}
         {activeConsideration && (
-          <ConsiderationStatus
-            submittedAt={activeConsideration.submitted_at}
-            scriptCount={activeConsiderationScriptIds.length}
-          />
+          <Link href="/review" className="block">
+            <div className="rounded-xl border-[1.5px] border-purple-200 px-4 py-3.5 hover:bg-purple-50/50 transition-colors" style={{ background: '#faf5ff' }}>
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-[10px] uppercase tracking-[0.12em] font-semibold text-purple-600 m-0">
+                  Portfolio review
+                </p>
+                <span
+                  className="text-[11px] font-bold px-2 py-0.5 rounded-full"
+                  style={{ background: '#f3e8ff', color: '#7c3aed' }}
+                >
+                  {activeConsideration.review_stage === 'submitted' ? 'Submitted'
+                    : activeConsideration.review_stage === 'initial_review' ? 'Initial review'
+                    : activeConsideration.review_stage === 'advanced_review' ? 'Advanced review'
+                    : activeConsideration.review_stage === 'partner_match' ? 'Partner match'
+                    : activeConsideration.review_stage}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 mb-2">
+                {['submitted', 'initial_review', 'advanced_review', 'complete'].map((s, i) => {
+                  const stageIdx = ['submitted', 'initial_review', 'advanced_review', 'complete'].indexOf(activeConsideration.review_stage)
+                  return (
+                    <div
+                      key={s}
+                      className="flex-1 h-[3px] rounded-full"
+                      style={{ background: i <= stageIdx ? '#7c3aed' : '#e9d5ff' }}
+                    />
+                  )
+                })}
+              </div>
+              <p className="text-[12px] text-gray-500 m-0">
+                {activeConsiderationScriptIds.length} {activeConsiderationScriptIds.length === 1 ? 'script' : 'scripts'} · Submitted {new Date(activeConsideration.submitted_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+              </p>
+            </div>
+          </Link>
         )}
 
         {/* ── YOUR SCRIPTS ────────────────────────────────── */}

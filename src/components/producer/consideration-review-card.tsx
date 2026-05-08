@@ -1,10 +1,18 @@
 'use client'
 
 // ConsiderationReviewCard — producer review UI for a writer's consideration.
-// Per-writer review: see full portfolio, provide feedback + next steps.
+// Shows: stage dropdown, portfolio, feedback textareas, message input, event timeline.
 
 import { useState } from 'react'
 import Link from 'next/link'
+
+const STAGES = [
+  { value: 'submitted', label: 'Submitted', color: '#d97706' },
+  { value: 'initial_review', label: 'Initial review', color: '#7c3aed' },
+  { value: 'advanced_review', label: 'Advanced review', color: '#2563eb' },
+  { value: 'partner_match', label: 'Partner match', color: '#059669' },
+  { value: 'complete', label: 'Complete', color: '#16a34a' },
+] as const
 
 export function ConsiderationReviewCard({
   considerationId,
@@ -13,8 +21,10 @@ export function ConsiderationReviewCard({
   submittedAt,
   scripts,
   status,
+  reviewStage: initialStage,
   feedback: initialFeedback,
   nextSteps: initialNextSteps,
+  events: initialEvents,
 }: {
   considerationId: string
   writerName: string
@@ -22,22 +32,49 @@ export function ConsiderationReviewCard({
   submittedAt: string
   scripts: { title: string; score: number | null; evaluationId: string | null; format: string | null }[]
   status: string
+  reviewStage: string
   feedback: string | null
   nextSteps: string | null
+  events: { id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }[]
 }) {
   const [feedback, setFeedback] = useState(initialFeedback ?? '')
   const [nextSteps, setNextSteps] = useState(initialNextSteps ?? '')
+  const [stage, setStage] = useState(initialStage || 'submitted')
+  const [messageText, setMessageText] = useState('')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [reviewed, setReviewed] = useState(status === 'reviewed')
   const [expanded, setExpanded] = useState(status === 'pending')
+  const [events, setEvents] = useState(initialEvents)
 
   const daysAgo = Math.floor((Date.now() - new Date(submittedAt).getTime()) / (1000 * 60 * 60 * 24))
   const avgScore = scripts.length > 0
     ? scripts.reduce((sum, s) => sum + (s.score ?? 0), 0) / scripts.filter(s => s.score != null).length
     : null
 
-  async function handleSend() {
+  const stageInfo = STAGES.find(s => s.value === stage) || STAGES[0]
+
+  async function handleStageChange(newStage: string) {
+    setStage(newStage)
+    const res = await fetch('/api/consideration/review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ consideration_id: considerationId, review_stage: newStage }),
+    })
+    if (res.ok) {
+      const stageLabel = STAGES.find(s => s.value === newStage)?.label || newStage
+      setEvents(prev => [{
+        id: `temp-${Date.now()}`,
+        event_type: 'status_change',
+        message: `Status changed to ${stageLabel}`,
+        new_stage: newStage,
+        created_at: new Date().toISOString(),
+      }, ...prev])
+      if (newStage === 'complete') setReviewed(true)
+    }
+  }
+
+  async function handleSendFeedback() {
     if (!feedback.trim()) return
     setSaving(true)
     setSaved(false)
@@ -54,7 +91,38 @@ export function ConsiderationReviewCard({
     if (res.ok) {
       setReviewed(true)
       setSaved(true)
+      setEvents(prev => [{
+        id: `temp-${Date.now()}`,
+        event_type: 'feedback',
+        message: feedback.trim(),
+        new_stage: null,
+        created_at: new Date().toISOString(),
+      }, ...prev])
       setTimeout(() => setSaved(false), 2000)
+    }
+  }
+
+  async function handleSendMessage() {
+    if (!messageText.trim()) return
+    setSaving(true)
+    const res = await fetch('/api/consideration/review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        consideration_id: considerationId,
+        message: messageText.trim(),
+      }),
+    })
+    setSaving(false)
+    if (res.ok) {
+      setEvents(prev => [{
+        id: `temp-${Date.now()}`,
+        event_type: 'message',
+        message: messageText.trim(),
+        new_stage: null,
+        created_at: new Date().toISOString(),
+      }, ...prev])
+      setMessageText('')
     }
   }
 
@@ -83,8 +151,11 @@ export function ConsiderationReviewCard({
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          <span className={`text-[12px] font-semibold ${reviewed ? 'text-emerald-600' : 'text-amber-600'}`}>
-            {reviewed ? 'Reviewed' : 'Pending'}
+          <span
+            className="text-[11px] font-bold px-2 py-0.5 rounded-full"
+            style={{ background: `${stageInfo.color}15`, color: stageInfo.color }}
+          >
+            {stageInfo.label}
           </span>
           <svg
             width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -98,6 +169,28 @@ export function ConsiderationReviewCard({
       {/* Expanded panel */}
       {expanded && (
         <div className="mt-3 pt-3 border-t border-gray-100 space-y-3">
+
+          {/* Stage selector */}
+          <div>
+            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">Review stage</p>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {STAGES.map(s => (
+                <button
+                  key={s.value}
+                  onClick={(e) => { e.stopPropagation(); handleStageChange(s.value) }}
+                  className="text-[12px] font-semibold px-2.5 py-1 rounded-full border transition-colors"
+                  style={{
+                    background: stage === s.value ? `${s.color}15` : 'transparent',
+                    borderColor: stage === s.value ? s.color : '#e5e7eb',
+                    color: stage === s.value ? s.color : '#9ca3af',
+                  }}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Portfolio */}
           <div>
             <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-2">Portfolio</p>
@@ -157,10 +250,10 @@ export function ConsiderationReviewCard({
             />
           </div>
 
-          {/* Send button */}
+          {/* Send feedback button */}
           <div className="flex items-center gap-2">
             <button
-              onClick={handleSend}
+              onClick={handleSendFeedback}
               disabled={saving || !feedback.trim()}
               className="text-[12px] font-bold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-1.5 rounded-md transition-colors"
             >
@@ -170,6 +263,61 @@ export function ConsiderationReviewCard({
               <span className="text-[12px] text-emerald-600 font-medium">Sent</span>
             )}
           </div>
+
+          {/* Quick message */}
+          <div className="pt-2 border-t border-gray-100">
+            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-1.5">
+              Send a message
+            </p>
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={messageText}
+                onChange={e => setMessageText(e.target.value)}
+                placeholder="Quick note to the writer..."
+                className="flex-1 text-[13px] text-gray-700 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300 placeholder:text-gray-300"
+                onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage() } }}
+              />
+              <button
+                onClick={handleSendMessage}
+                disabled={!messageText.trim() || saving}
+                className="text-[12px] font-bold text-purple-600 bg-purple-50 hover:bg-purple-100 disabled:opacity-50 px-3 py-2 rounded-lg transition-colors"
+              >
+                Send
+              </button>
+            </div>
+          </div>
+
+          {/* Event timeline */}
+          {events.length > 0 && (
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] m-0 mb-2">Timeline</p>
+              <div className="space-y-2 max-h-48 overflow-y-auto">
+                {events.map(ev => (
+                  <div key={ev.id} className="flex items-start gap-2">
+                    <div className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{
+                      background: ev.event_type === 'status_change' ? '#7c3aed'
+                        : ev.event_type === 'feedback' ? '#059669'
+                        : '#6b7280',
+                    }} />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[12px] text-gray-600 m-0 leading-snug">
+                        {ev.event_type === 'status_change'
+                          ? ev.message
+                          : ev.event_type === 'feedback'
+                          ? 'Feedback sent'
+                          : ev.message
+                        }
+                      </p>
+                      <p className="text-[11px] text-gray-300 m-0 mt-0.5">
+                        {new Date(ev.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
