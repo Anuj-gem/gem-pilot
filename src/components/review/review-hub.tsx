@@ -406,7 +406,7 @@ function PastReviewCard({ review }: { review: PastReview }) {
               {review.feedback}
             </p>
           )}
-          {review.nextSteps && (
+          {review.next_steps && (
             <div className="pl-3 py-2.5 pr-3 rounded-r-lg mb-3" style={{
               background: '#f5f3ff',
               borderLeft: '3px solid #7c3aed',
@@ -415,7 +415,7 @@ function PastReviewCard({ review }: { review: PastReview }) {
                 Your next move
               </p>
               <p className="text-[13px] text-purple-900 leading-[1.5] m-0">
-                {review.nextSteps}
+                {review.next_steps}
               </p>
             </div>
           )}
