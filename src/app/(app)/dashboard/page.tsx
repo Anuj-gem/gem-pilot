@@ -239,7 +239,19 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* CTAs removed — consolidated into nav's "+ New" dropdown */}
+        {/* ── PORTFOLIO REVIEW CTA ─────────────────────── */}
+        {canRequestConsideration && pendingScripts.length > 0 && (
+          <Link
+            href="/consideration/submit"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[14px] font-bold text-white transition-colors hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="8" y1="3" x2="8" y2="13" /><line x1="3" y1="8" x2="13" y2="8" />
+            </svg>
+            New portfolio review
+          </Link>
+        )}
 
         {/* ── REVIEWS ─────────────────────────────────── */}
         {allConsiderations.length > 0 ? (
@@ -434,21 +446,16 @@ export default async function DashboardPage() {
                       </div>
                     </div>
 
-                    {/* Actions */}
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="text-[12px] font-bold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">
-                        In review
-                      </span>
-                      {s.evaluationId && (
-                        <Link
-                          href={`/report/${s.evaluationId}`}
-                          className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-colors"
-                          title="View report"
-                        >
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                        </Link>
-                      )}
-                    </div>
+                    {/* Link to report */}
+                    {s.evaluationId && (
+                      <Link
+                        href={`/report/${s.evaluationId}`}
+                        className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-purple-600 hover:bg-purple-50 transition-colors"
+                        title="View report"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}
