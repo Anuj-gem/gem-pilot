@@ -102,45 +102,46 @@ export default async function DashboardPage() {
   // Review numbering: chronological, oldest = #1
   const latestReviewNumber = allConsiderations.length
 
-  // Get scripts in active consideration
-  let activeConsiderationScriptIds: string[] = []
-  if (activeConsideration) {
-    const { data: cs } = await service
+  // Get ALL consideration_scripts across every consideration for this user.
+  // This tells us which scripts have ever been attached to any review.
+  const allConsiderationIds = allConsiderations.map(c => c.id)
+  let allReviewedScriptIds: Set<string> = new Set()
+  if (allConsiderationIds.length > 0) {
+    const { data: allCs } = await service
       .from('consideration_scripts')
       .select('script_submission_id')
-      .eq('consideration_id', activeConsideration.id)
-    activeConsiderationScriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
+      .in('consideration_id', allConsiderationIds)
+    for (const r of (allCs || []) as { script_submission_id: string }[]) {
+      allReviewedScriptIds.add(r.script_submission_id)
+    }
   }
 
-  // Get script count for latest review (if different from active)
+  // Script count for latest review — only NEW scripts (not carried forward)
   let latestReviewScriptCount = 0
   if (latestReview) {
-    if (latestReview.id === activeConsideration?.id) {
-      latestReviewScriptCount = activeConsiderationScriptIds.length
-    } else {
-      const { data: cs } = await service
-        .from('consideration_scripts')
-        .select('script_submission_id')
-        .eq('consideration_id', latestReview.id)
-      latestReviewScriptCount = (cs || []).length
-    }
+    const { data: cs } = await service
+      .from('consideration_scripts')
+      .select('script_submission_id, carried_forward')
+      .eq('consideration_id', latestReview.id)
+    latestReviewScriptCount = (cs || []).filter(
+      (r: { script_submission_id: string; carried_forward: boolean | null }) => !r.carried_forward
+    ).length
   }
 
   // ---------- GATE LOGIC ----------
   const hasActiveConsideration = !!activeConsideration
   const hasBeenReviewed = allConsiderations.some(c => c.review_stage === 'complete')
   const trialReviewedGate = isTrial && hasBeenReviewed
-  const lastReviewDate = allConsiderations.find(c => c.review_stage === 'complete')?.reviewed_at
-    ? new Date(allConsiderations.find(c => c.review_stage === 'complete')!.reviewed_at!)
-    : null
-  const hasNewScriptSinceLastReview = lastReviewDate
-    ? visible.some(s => s.status === 'completed' && new Date(s.created_at) > lastReviewDate)
-    : true
-  const canRequestConsideration = !hasActiveConsideration && !trialReviewedGate && hasNewScriptSinceLastReview
+  // Eligible if there are completed visible scripts NOT attached to any consideration
+  const hasUnreviewedScripts = visible.some(
+    s => s.status === 'completed' && !allReviewedScriptIds.has(s.id)
+  )
+  const canRequestConsideration = !hasActiveConsideration && !trialReviewedGate && hasUnreviewedScripts
 
   // ---------- SCRIPTS PENDING REVIEW ----------
+  // "Pending review" = completed visible scripts NOT attached to ANY consideration
   const pendingScripts = visible
-    .filter(s => activeConsiderationScriptIds.includes(s.id))
+    .filter(s => s.status === 'completed' && !allReviewedScriptIds.has(s.id))
     .map(s => {
       const ev = myEvalBySub.get(s.id)
       return {
@@ -240,123 +241,136 @@ export default async function DashboardPage() {
 
         {/* CTAs removed — consolidated into nav's "+ New" dropdown */}
 
-        {/* ── MOST RECENT REVIEW ──────────────────────── */}
-        {latestReview ? (
+        {/* ── REVIEWS ─────────────────────────────────── */}
+        {allConsiderations.length > 0 ? (
           <section>
             <header className="flex items-end justify-between gap-3 mb-2.5">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">Most recent review</h2>
-              {allConsiderations.length > 1 && (
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your reviews</h2>
+              {allConsiderations.length > 3 && (
                 <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
                   View all
                 </Link>
               )}
             </header>
 
-            <Link href={`/review/c/${latestReview.id}`} className="block">
-              <div className="rounded-xl bg-white border border-gray-200 overflow-hidden hover:border-purple-200 transition-colors">
-                {/* Header */}
-                <div className="px-4 py-3.5 border-b border-gray-100">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[14px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
-                        Portfolio review #{latestReviewNumber}
-                      </span>
-                      <span
-                        className="text-[11px] font-bold px-2 py-0.5 rounded-full"
-                        style={{
-                          background: `${STAGE_COLORS[latestReview.review_stage] || '#6b7280'}15`,
-                          color: STAGE_COLORS[latestReview.review_stage] || '#6b7280',
-                        }}
-                      >
-                        {STAGE_LABELS[latestReview.review_stage] || latestReview.review_stage}
-                      </span>
-                    </div>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
-                      <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
+            {allConsiderations.length > 1 && (
+              <p className="text-[12px] text-gray-400 m-0 mb-3">
+                Each review builds on previous feedback to track your progress over time.
+              </p>
+            )}
 
-                  {latestReview.review_stage === 'complete' ? (
-                    <div className="flex items-center gap-1.5">
-                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="10" r="9" stroke="#059669" strokeWidth="1.5" />
-                        <path d="M6.5 10.5l2 2 5-5" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <span className="text-[12px] text-gray-500">
-                        Reviewed {fmtDate(latestReview.reviewed_at!)}
-                        {` · ${latestReviewScriptCount} ${latestReviewScriptCount === 1 ? 'script' : 'scripts'}`}
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[12px] text-gray-500">
-                        Submitted {fmtDate(latestReview.submitted_at)}
-                        {` · ${latestReviewScriptCount} ${latestReviewScriptCount === 1 ? 'script' : 'scripts'}`}
-                      </span>
-                    </div>
-                  )}
+            <div className="space-y-2.5">
+              {allConsiderations.slice(0, 3).map((review, idx) => {
+                const reviewNumber = allConsiderations.length - (allConsiderations.indexOf(review))
+                return (
+                  <Link key={review.id} href={`/review/c/${review.id}`} className="block">
+                    <div className={`rounded-xl bg-white border border-gray-200 overflow-hidden hover:border-purple-200 transition-colors ${idx > 0 ? 'opacity-80' : ''}`}>
+                      {/* Header */}
+                      <div className={`px-4 py-3.5 ${(idx === 0 && review.review_stage === 'complete' && review.feedback) || (idx === 0 && review.review_stage !== 'complete') ? 'border-b border-gray-100' : ''}`}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <div className="flex items-center gap-2">
+                            <span className="text-[14px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
+                              Portfolio review #{reviewNumber}
+                            </span>
+                            <span
+                              className="text-[11px] font-bold px-2 py-0.5 rounded-full"
+                              style={{
+                                background: `${STAGE_COLORS[review.review_stage] || '#6b7280'}15`,
+                                color: STAGE_COLORS[review.review_stage] || '#6b7280',
+                              }}
+                            >
+                              {STAGE_LABELS[review.review_stage] || review.review_stage}
+                            </span>
+                          </div>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
+                            <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
 
-                  {/* Progress bar for in-progress reviews */}
-                  {latestReview.review_stage !== 'complete' && (
-                    <div className="flex items-center gap-1 mt-2.5">
-                      {['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].map((s, i) => {
-                        const stageIdx = ['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].indexOf(latestReview.review_stage)
-                        return (
-                          <div
-                            key={s}
-                            className="flex-1 h-[3px] rounded-full"
-                            style={{ background: i <= stageIdx ? (STAGE_COLORS[latestReview.review_stage] || '#7c3aed') : '#e5e7eb' }}
-                          />
-                        )
-                      })}
-                    </div>
-                  )}
-                </div>
+                        {review.review_stage === 'complete' ? (
+                          <div className="flex items-center gap-1.5">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                              <circle cx="10" cy="10" r="9" stroke="#059669" strokeWidth="1.5" />
+                              <path d="M6.5 10.5l2 2 5-5" stroke="#059669" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span className="text-[12px] text-gray-500">
+                              Reviewed {fmtDate(review.reviewed_at!)}
+                              {idx === 0 && ` · ${latestReviewScriptCount} ${latestReviewScriptCount === 1 ? 'script' : 'scripts'}`}
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[12px] text-gray-500">
+                              Submitted {fmtDate(review.submitted_at)}
+                              {idx === 0 && ` · ${latestReviewScriptCount} ${latestReviewScriptCount === 1 ? 'script' : 'scripts'}`}
+                            </span>
+                          </div>
+                        )}
 
-                {/* Feedback body (only if complete and has feedback) */}
-                {latestReview.review_stage === 'complete' && latestReview.feedback && (
-                  <div className="px-4 py-3.5">
-                    <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1.5">
-                      Overall assessment
-                    </p>
-                    <p className="text-[13px] text-gray-600 leading-[1.55] m-0 mb-3 line-clamp-3">
-                      {latestReview.feedback}
-                    </p>
-
-                    {latestReview.next_steps && (
-                      <div className="pl-3 py-2.5 pr-3 rounded-r-lg" style={{
-                        background: '#f5f3ff',
-                        borderLeft: '3px solid #7c3aed',
-                      }}>
-                        <p className="text-[11px] font-bold uppercase tracking-[0.04em] text-purple-600 m-0 mb-1">
-                          Suggested next steps
-                        </p>
-                        <p className="text-[13px] text-purple-900 leading-[1.5] m-0 line-clamp-2">
-                          {latestReview.next_steps}
-                        </p>
+                        {/* Progress bar for in-progress reviews */}
+                        {review.review_stage !== 'complete' && (
+                          <div className="flex items-center gap-1 mt-2.5">
+                            {['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].map((s, i) => {
+                              const stageIdx = ['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].indexOf(review.review_stage)
+                              return (
+                                <div
+                                  key={s}
+                                  className="flex-1 h-[3px] rounded-full"
+                                  style={{ background: i <= stageIdx ? (STAGE_COLORS[review.review_stage] || '#7c3aed') : '#e5e7eb' }}
+                                />
+                              )
+                            })}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                )}
 
-                {/* In-progress message */}
-                {latestReview.review_stage !== 'complete' && (
-                  <div className="px-4 py-3.5">
-                    <p className="text-[13px] text-gray-500 m-0">
-                      {latestReview.review_stage === 'draft'
-                        ? 'Your review is in draft. Add scripts and submit when ready.'
-                        : latestReview.review_stage === 'pending'
-                        ? 'Your portfolio has been submitted. Our team will begin reviewing shortly.'
-                        : 'Your portfolio is being reviewed. Feedback expected within 5–7 days.'}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </Link>
+                      {/* Feedback body — only for the LATEST review, and only if complete with feedback */}
+                      {idx === 0 && review.review_stage === 'complete' && review.feedback && (
+                        <div className="px-4 py-3.5">
+                          <p className="text-[12px] font-bold text-purple-600 uppercase tracking-[0.04em] m-0 mb-1.5">
+                            Overall assessment
+                          </p>
+                          <p className="text-[13px] text-gray-600 leading-[1.55] m-0 mb-3 line-clamp-3">
+                            {review.feedback}
+                          </p>
+
+                          {review.next_steps && (
+                            <div className="pl-3 py-2.5 pr-3 rounded-r-lg" style={{
+                              background: '#f5f3ff',
+                              borderLeft: '3px solid #7c3aed',
+                            }}>
+                              <p className="text-[11px] font-bold uppercase tracking-[0.04em] text-purple-600 m-0 mb-1">
+                                Suggested next steps
+                              </p>
+                              <p className="text-[13px] text-purple-900 leading-[1.5] m-0 line-clamp-2">
+                                {review.next_steps}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* In-progress message — only for the latest review */}
+                      {idx === 0 && review.review_stage !== 'complete' && (
+                        <div className="px-4 py-3.5">
+                          <p className="text-[13px] text-gray-500 m-0">
+                            {review.review_stage === 'draft'
+                              ? 'Your review is in draft. Add scripts and submit when ready.'
+                              : review.review_stage === 'pending'
+                              ? 'Your portfolio has been submitted. Our team will begin reviewing shortly.'
+                              : 'Your portfolio is being reviewed. Feedback expected within 5–7 days.'}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
           </section>
         ) : completedCount > 0 ? (
           <section>
-            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Most recent review</h2>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Your reviews</h2>
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
               <p className="text-[13px] text-gray-500 m-0 mb-3">No reviews yet. Submit your scripts for a portfolio review.</p>
               {canRequestConsideration && (
