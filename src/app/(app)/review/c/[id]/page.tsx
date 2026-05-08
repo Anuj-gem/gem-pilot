@@ -129,6 +129,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     genre: string | null; score: number | null; evaluationId: string | null
     createdAt: string
     matchingOpportunities: { title: string; slug: string }[]
+    status: 'ready' | 'in-review'
   }[] = []
 
   if (scriptIds.length > 0) {
@@ -169,6 +170,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         evaluationId: ev?.id ?? null,
         createdAt: s.created_at,
         matchingOpportunities: matchOpportunities(s.declared_format, genre),
+        status: isDraft ? 'ready' as const : 'in-review' as const,
       }
     })
   }

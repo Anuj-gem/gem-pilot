@@ -32,7 +32,7 @@ interface Props {
   checkbox?: boolean
   checked?: boolean
   onToggle?: (id: string) => void
-  // Three-dot menu
+  // Three-dot menu — shown by default on all completed scripts
   showMenu?: boolean
   onHide?: (id: string) => void
 }
@@ -42,9 +42,15 @@ export function ScriptRowCard({
   checkbox,
   checked,
   onToggle,
-  showMenu = false,
+  showMenu,
   onHide,
 }: Props) {
+  // Three-dot menu shows by default on any completed script (has evaluationId, not processing, not locked)
+  // Callers can override with showMenu={false} to suppress
+  const shouldShowMenu = showMenu !== undefined
+    ? showMenu
+    : !!(s.evaluationId && !s.isProcessing && !s.isLocked)
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [callsOpen, setCallsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -139,8 +145,8 @@ export function ScriptRowCard({
           </div>
         </div>
 
-        {/* Three-dot menu */}
-        {showMenu && !s.isLocked && !s.isProcessing && (
+        {/* Three-dot menu — always visible on completed scripts */}
+        {shouldShowMenu && (
           <div className="relative shrink-0" ref={menuOpen ? menuRef : undefined}>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -164,9 +170,24 @@ export function ScriptRowCard({
                     Edit details
                   </Link>
                 )}
-                {onHide && (
+                {onHide ? (
                   <button
                     onClick={() => { setMenuOpen(false); onHide(s.id) }}
+                    className="block w-full text-left px-3 py-2 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
+                  >
+                    Hide
+                  </button>
+                ) : (
+                  <button
+                    onClick={async () => {
+                      setMenuOpen(false)
+                      await fetch(`/api/scripts/${s.id}/hide`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ hide: true }),
+                      })
+                      router.refresh()
+                    }}
                     className="block w-full text-left px-3 py-2 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
                   >
                     Hide
