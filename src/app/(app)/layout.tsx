@@ -18,6 +18,7 @@
 // route group.
 
 import Nav from '@/components/nav'
+import { ScriptUploadModal } from "@/components/script-upload-modal"
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { AppRail } from '@/components/dashboard/app-rail'
@@ -231,6 +232,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <AppRail>{children}</AppRail>
       </div>
       <MobileTabBar />
+      <ScriptUploadModal />
     </div>
   )
 }

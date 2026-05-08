@@ -16,9 +16,19 @@ const GENRES = [
 
 type Step = 'closed' | 'format' | 'upload' | 'confirm'
 
-export function InlineScriptUpload({ className }: { className?: string }) {
+export function InlineScriptUpload({
+  className,
+  startOpen = false,
+  onClose,
+}: {
+  className?: string
+  /** When true, the component starts on the format step instead of showing the closed button. */
+  startOpen?: boolean
+  /** Called when the user closes the component (X button or after successful upload). */
+  onClose?: () => void
+}) {
   const router = useRouter()
-  const [step, setStep] = useState<Step>('closed')
+  const [step, setStep] = useState<Step>(startOpen ? 'format' : 'closed')
   const [format, setFormat] = useState<DeclaredFormat | null>(null)
   const [file, setFile] = useState<File | null>(null)
   const [title, setTitle] = useState('')
@@ -30,7 +40,7 @@ export function InlineScriptUpload({ className }: { className?: string }) {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   function reset() {
-    setStep('closed')
+    setStep(startOpen ? 'format' : 'closed')
     setFormat(null)
     setFile(null)
     setTitle('')
@@ -39,6 +49,11 @@ export function InlineScriptUpload({ className }: { className?: string }) {
     setLogline('')
     setError(null)
     setSubmitting(false)
+  }
+
+  function handleClose() {
+    reset()
+    onClose?.()
   }
 
   function open() {
@@ -128,6 +143,7 @@ export function InlineScriptUpload({ className }: { className?: string }) {
       }).catch(() => {})
 
       reset()
+      onClose?.()
       router.refresh()
     } catch (e: any) {
       setError(e?.message ?? 'Network error')
@@ -163,7 +179,7 @@ export function InlineScriptUpload({ className }: { className?: string }) {
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
         <span className="text-[14px] font-semibold text-gray-900">Add script</span>
         <button
-          onClick={reset}
+          onClick={handleClose}
           className="w-6 h-6 flex items-center justify-center rounded text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">

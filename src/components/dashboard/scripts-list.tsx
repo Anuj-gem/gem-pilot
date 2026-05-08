@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
-import { InlineScriptUpload } from '@/components/inline-script-upload'
+// InlineScriptUpload removed — upload now lives in the nav's "+ New" modal
 
 type ScriptRow = {
   id: string
@@ -195,11 +195,8 @@ export function ScriptsList({
 
       {/* Script list */}
       {sortedVisible.length === 0 ? (
-        <div className="space-y-3">
-          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-            <p className="text-[14px] text-gray-400 m-0">No scripts yet. Upload your first to get started.</p>
-          </div>
-          <InlineScriptUpload />
+        <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+          <p className="text-[14px] text-gray-400 m-0">No scripts yet. Use <strong>+ New</strong> to upload your first.</p>
         </div>
       ) : (
         <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
@@ -367,7 +364,7 @@ export function ScriptsList({
         </div>
       )}
 
-      {sortedVisible.length > 0 && <InlineScriptUpload className="mt-3" />}
+      {/* Upload button removed — use "+ New" in the nav */}
 
       {/* Hidden scripts */}
       {hidden.length > 0 && (

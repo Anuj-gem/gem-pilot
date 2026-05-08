@@ -20,7 +20,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import Link from 'next/link'
-import { InlineScriptUpload } from '@/components/inline-script-upload'
+// InlineScriptUpload removed — upload now lives in the nav's "+ New" modal
 
 export const dynamic = 'force-dynamic'
 
@@ -238,37 +238,7 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* ── CTAs ──────────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-2.5">
-          <Link
-            href="/submit"
-            className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-[13px] font-bold hover:bg-gray-800 transition-colors text-center"
-          >
-            Add new script
-          </Link>
-          {canRequestConsideration ? (
-            <Link
-              href="/consideration/submit"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors text-center"
-            >
-              Start portfolio review
-            </Link>
-          ) : (
-            <div className="relative flex flex-col items-center justify-center px-4 py-3 rounded-xl bg-gray-100 text-gray-400 text-[13px] font-bold text-center cursor-not-allowed select-none opacity-60">
-              <span className="absolute top-1.5 right-2 text-[9px] font-bold uppercase tracking-wide text-gray-400">
-                Ineligible
-              </span>
-              <span>Start portfolio review</span>
-              <span className="text-[10px] font-normal text-gray-400 mt-0.5 leading-tight">
-                {hasActiveConsideration
-                  ? 'Review already in progress'
-                  : trialReviewedGate
-                  ? 'Upgrade to Pro for more reviews'
-                  : 'Submit a new script first'}
-              </span>
-            </div>
-          )}
-        </div>
+        {/* CTAs removed — consolidated into nav's "+ New" dropdown */}
 
         {/* ── MOST RECENT REVIEW ──────────────────────── */}
         {latestReview ? (
@@ -411,13 +381,10 @@ export default async function DashboardPage() {
           </header>
 
           {pendingScripts.length === 0 ? (
-            <div className="space-y-2.5">
-              <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-                <p className="text-[13px] text-gray-500 m-0">
-                  No scripts pending review.
-                </p>
-              </div>
-              <InlineScriptUpload />
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
+              <p className="text-[13px] text-gray-500 m-0">
+                No scripts pending review.
+              </p>
             </div>
           ) : (
             <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
@@ -473,7 +440,7 @@ export default async function DashboardPage() {
               ))}
             </div>
           )}
-          {pendingScripts.length > 0 && <InlineScriptUpload className="mt-2.5" />}
+          {/* Upload button removed — use "+ New" in the nav */}
         </section>
       </div>
     </>

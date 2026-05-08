@@ -21,6 +21,7 @@ import {
   type NavUserMenuStats,
   type NavUserMenuActivity,
 } from '@/components/nav/nav-user-menu'
+import { NewActionMenu } from '@/components/nav/new-action-menu'
 
 export interface NavUserData {
   profile: NavUserMenuProfile
@@ -127,29 +128,9 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
                       </Link>
                     )
                   })}
-                  <Link
-                    href="/submit"
-                    className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-white text-gray-900 hover:bg-gray-100 transition-colors font-semibold"
-                  >
-                    <Plus size={14} />
-                    Upload a script
-                  </Link>
-                  {canRequestConsideration ? (
-                    <Link
-                      href="/consideration/submit"
-                      className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
-                    >
-                      <Sparkles size={14} />
-                      Request consideration
-                    </Link>
-                  ) : (
-                    <span
-                      className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm bg-[var(--gem-gray-700)] text-[var(--gem-gray-400)] cursor-not-allowed font-medium"
-                      title="Upload new work to be considered again"
-                    >
-                      Ineligible
-                    </span>
-                  )}
+                  <div className="ml-2">
+                    <NewActionMenu canRequestConsideration={canRequestConsideration} />
+                  </div>
                   {userData ? (
                     <div className="ml-2">
                       <NavUserMenu
@@ -173,6 +154,7 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
 
               {/* Mobile logged-in — consideration CTA always visible + hamburger */}
               <div className="md:hidden flex items-center gap-2">
+                <NewActionMenu canRequestConsideration={canRequestConsideration} />
                 {userData && (
                   <NavUserMenu
                     profile={userData.profile}
@@ -180,25 +162,6 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
                     recentActivity={userData.recentActivity}
                     onSignOut={handleSignOut}
                   />
-                )}
-                {!pathname.startsWith('/consideration') && (
-                  canRequestConsideration ? (
-                    <Link
-                      href="/consideration/submit"
-                      className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
-                      style={{
-                        background: 'var(--gem-accent)',
-                        boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
-                      }}
-                    >
-                      <Sparkles size={12} />
-                      Request consideration
-                    </Link>
-                  ) : (
-                    <span className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium text-[var(--gem-gray-400)] bg-[var(--gem-gray-700)] cursor-not-allowed">
-                      Ineligible
-                    </span>
-                  )
                 )}
                 <button
                   className="p-1.5 text-[var(--gem-gray-300)]"
@@ -291,14 +254,8 @@ export default function Nav({ userData, canRequestConsideration = true }: NavPro
                   />
                 ))}
 
-                {/* Upload + Blog */}
+                {/* Blog */}
                 <div className="pt-2 space-y-2">
-                  <NavMenuRow
-                    href="/submit"
-                    onClick={() => setMobileOpen(false)}
-                    label="Upload a script"
-                    active={pathname.startsWith('/submit')}
-                  />
                   <NavMenuRow
                     href="/blog"
                     onClick={() => setMobileOpen(false)}
