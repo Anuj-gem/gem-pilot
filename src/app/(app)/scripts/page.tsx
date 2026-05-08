@@ -96,17 +96,37 @@ export default async function ScriptsPage() {
     }
   }
 
-  // Scripts from ALL completed considerations
+  // Scripts from ALL completed considerations — build a map of scriptId → consideration
   let reviewedScriptIds = new Set<string>()
+  const reviewedScriptConsideration = new Map<string, { id: string; index: number }>()
   const completedIds = completedConsiderations.map(c => c.id)
   if (completedIds.length > 0) {
     const { data: cs } = await service
       .from('consideration_scripts')
-      .select('script_submission_id')
+      .select('script_submission_id, consideration_id')
       .in('consideration_id', completedIds)
-    for (const r of (cs || []) as { script_submission_id: string }[]) {
+    for (const r of (cs || []) as { script_submission_id: string; consideration_id: string }[]) {
       reviewedScriptIds.add(r.script_submission_id)
+      // Find the index (chronological) of this consideration
+      const idx = allConsiderations.findIndex(c => c.id === r.consideration_id)
+      reviewedScriptConsideration.set(r.script_submission_id, { id: r.consideration_id, index: idx + 1 })
     }
+  }
+
+  // Fetch open opportunities for matching
+  const { data: openOpps } = await service
+    .from('opportunities')
+    .select('id, title, slug, formats, genres')
+    .eq('status', 'open')
+  const opportunities = (openOpps || []) as { id: string; title: string; slug: string; formats: string[] | null; genres: string[] | null }[]
+
+  function matchOpportunities(format: string | null, genre: string | null) {
+    if (!format && !genre) return []
+    return opportunities.filter(opp => {
+      const fmtMatch = !opp.formats || opp.formats.length === 0 || (format && opp.formats.includes(format))
+      const genreMatch = !opp.genres || opp.genres.length === 0 || (genre && opp.genres.includes(genre))
+      return fmtMatch && genreMatch
+    }).map(opp => ({ title: opp.title, slug: opp.slug }))
   }
 
   // Paywall: first completed script is free
@@ -124,12 +144,29 @@ export default async function ScriptsPage() {
   )
   const canRequestConsideration = !hasNonCompleteConsideration && hasUnreviewedScripts
 
-  // Build script rows for client component
+  // Build script rows for client component (ScriptRowData-compatible)
   const scriptRows = allScripts.map(s => {
     const ev = evalBySub.get(s.id)
     const stillProcessing = s.status === 'processing' || s.status === 'queued'
     const isFirstCompleted = s.id === firstCompletedId
     const isLocked = isTrial && !stillProcessing && s.status === 'completed' && !isFirstCompleted
+
+    // Determine review status
+    let status: 'ready' | 'in-review' | 'reviewed' | undefined = undefined
+    let reviewId: string | null = null
+    let reviewLabel: string | null = null
+    if (activeScriptIds.has(s.id)) {
+      status = 'in-review'
+      reviewId = activeConsideration?.id ?? null
+      reviewLabel = 'In review'
+    } else if (reviewedScriptIds.has(s.id)) {
+      status = 'reviewed'
+      const rc = reviewedScriptConsideration.get(s.id)
+      reviewId = rc?.id ?? null
+      reviewLabel = rc ? `Portfolio review #${rc.index}` : 'Reviewed'
+    } else if (s.status === 'completed' && !s.hidden_at) {
+      status = 'ready'
+    }
 
     return {
       id: s.id,
@@ -137,12 +174,14 @@ export default async function ScriptsPage() {
       format: s.declared_format,
       genre: ev?.genre ?? null,
       score: ev?.score ?? null,
-      evalId: ev?.id ?? null,
+      evaluationId: ev?.id ?? null,
       createdAt: s.created_at,
       isProcessing: stillProcessing,
       isLocked,
-      inConsideration: activeScriptIds.has(s.id),
-      wasReviewed: reviewedScriptIds.has(s.id),
+      status,
+      reviewId,
+      reviewLabel,
+      matchingOpportunities: matchOpportunities(s.declared_format, ev?.genre ?? null),
       hidden: !!s.hidden_at,
     }
   })

@@ -7,6 +7,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { ScriptRowCard, type ScriptRowData } from '@/components/cards/script-row-card'
 
 const STAGES = [
   {
@@ -51,8 +52,7 @@ type EventRow = { id: string; event_type: string; message: string | null; new_st
 
 type Script = {
   id: string; title: string; format: string | null
-  score: number | null; evaluationId: string | null
-  headline: string | null; tags: string[]
+  genre: string | null; score: number | null; evaluationId: string | null
   createdAt: string
 }
 
@@ -64,12 +64,6 @@ function LockIcon({ className }: { className?: string }) {
       <path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )
-}
-
-// Genre tags to display (first 3 meaningful ones)
-function getDisplayTags(tags: string[]): string[] {
-  const skip = new Set(['male-lead', 'female-lead', 'ensemble', 'contemporary', 'period', 'feature-anchored', 'series-anchored'])
-  return tags.filter(t => !skip.has(t)).slice(0, 3)
 }
 
 export function ReviewDetail({
@@ -391,87 +385,23 @@ export function ReviewDetail({
                 Only scripts not previously included in a portfolio review are shown.
               </p>
             )}
-            {reviewScripts.map(s => {
-              const checked = selectedIds.has(s.id)
-              return (
-                <div
-                  key={s.id}
-                  className={`rounded-xl bg-white border px-4 py-3 transition-colors ${
-                    isDraft
-                      ? checked
-                        ? 'border-purple-200 ring-1 ring-purple-100'
-                        : 'border-gray-200 opacity-60'
-                      : 'border-gray-200'
-                  }`}
-                >
-                  <div className="flex items-start gap-3">
-                    {/* Checkbox in draft mode */}
-                    {isDraft && (
-                      <button
-                        onClick={() => toggleScript(s.id)}
-                        className="shrink-0 mt-0.5 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors"
-                        style={{
-                          borderColor: checked ? '#7c3aed' : '#d1d5db',
-                          background: checked ? '#7c3aed' : 'transparent',
-                        }}
-                      >
-                        {checked && (
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path d="M2.5 6l2.5 2.5 4.5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        )}
-                      </button>
-                    )}
-
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                          {s.title}
-                        </p>
-                        {s.format && (
-                          <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
-                        )}
-                      </div>
-                      {s.headline && (
-                        <p className="text-[12px] text-gray-500 m-0 mt-1 leading-snug line-clamp-2">
-                          {s.headline}
-                        </p>
-                      )}
-                      {s.tags.length > 0 && (
-                        <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-                          {getDisplayTags(s.tags).map(tag => (
-                            <span
-                              key={tag}
-                              className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded"
-                            >
-                              {tag.replace(/-/g, ' ')}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2 shrink-0">
-                      {s.score != null && (
-                        <div className="text-right">
-                          <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
-                            {Math.round(s.score)}
-                          </span>
-                          <span className="text-[10px] text-gray-300 ml-0.5">/100</span>
-                        </div>
-                      )}
-                      {s.evaluationId && (
-                        <Link
-                          href={`/report/${s.evaluationId}`}
-                          className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
-                        >
-                          View report
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+            {reviewScripts.map(s => (
+              <ScriptRowCard
+                key={s.id}
+                script={{
+                  id: s.id,
+                  title: s.title,
+                  format: s.format,
+                  genre: s.genre,
+                  score: s.score,
+                  evaluationId: s.evaluationId,
+                  createdAt: s.createdAt,
+                }}
+                checkbox={isDraft}
+                checked={selectedIds.has(s.id)}
+                onToggle={toggleScript}
+              />
+            ))}
           </div>
         )}
 

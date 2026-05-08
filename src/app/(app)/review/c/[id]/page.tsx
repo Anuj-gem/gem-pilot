@@ -69,8 +69,8 @@ export default async function ReviewDetailPage({ params }: PageProps) {
 
   let scripts: {
     id: string; title: string; format: string | null
-    score: number | null; evaluationId: string | null
-    headline: string | null; tags: string[]; createdAt: string
+    genre: string | null; score: number | null; evaluationId: string | null
+    createdAt: string
   }[] = []
 
   if (scriptIds.length > 0) {
@@ -85,7 +85,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     type EvalData = {
       id: string; submission_id: string; weighted_score: number | null
       edited_fields: { logline?: string } | null
-      evaluation: { positioning_hook?: string } | null
+      evaluation: { positioning_hook?: string; classification?: { genre_primary?: string }; format_detection?: { genre_primary?: string } } | null
     }
     const { data: evals } = await service
       .from('script_evaluations')
@@ -99,18 +99,16 @@ export default async function ReviewDetailPage({ params }: PageProps) {
 
     scripts = subs.map(s => {
       const ev = evalMap.get(s.id)
-      const evalObj = ev?.evaluation as Record<string, unknown> | null
-      const headline: string | null = ev?.edited_fields?.logline
-        || (evalObj?.positioning_hook as string | undefined)
+      const genre = ev?.evaluation?.classification?.genre_primary
+        || ev?.evaluation?.format_detection?.genre_primary
         || null
       return {
         id: s.id,
         title: s.title,
         format: s.declared_format,
+        genre,
         score: ev?.weighted_score ?? null,
         evaluationId: ev?.id ?? null,
-        headline,
-        tags: s.tags || [],
         createdAt: s.created_at,
       }
     })

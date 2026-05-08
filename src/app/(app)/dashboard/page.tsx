@@ -22,6 +22,8 @@ import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import Link from 'next/link'
 import { NewReviewButton } from '@/components/dashboard/new-review-button'
 import { DashboardActions } from '@/components/dashboard/dashboard-actions'
+import { ScriptRowCard } from '@/components/cards/script-row-card'
+import type { ScriptRowData } from '@/components/cards/script-row-card'
 
 export const dynamic = 'force-dynamic'
 
@@ -129,6 +131,16 @@ export default async function DashboardPage() {
     ).length
   }
 
+  // ---------- OPEN OPPORTUNITIES (for script card matching) ----------
+  const { data: openOpps } = await service
+    .from('opportunities')
+    .select('id, title, slug, formats, genres')
+    .eq('status', 'open')
+  const allOpenOpps = (openOpps || []) as {
+    id: string; title: string; slug: string
+    formats: string[] | null; genres: string[] | null
+  }[]
+
   // ---------- GATE LOGIC ----------
   const hasActiveConsideration = !!activeConsideration
   const hasBeenReviewed = allConsiderations.some(c => c.review_stage === 'complete')
@@ -163,6 +175,28 @@ export default async function DashboardPage() {
         genre: ev?.genre ?? null,
       }
     })
+
+  // Build ScriptRowData for the unified card
+  function matchOpportunities(format: string | null, genre: string | null) {
+    if (!format && !genre) return []
+    return allOpenOpps.filter(o => {
+      const fmtMatch = !o.formats || o.formats.length === 0 || (format && o.formats.some(f => f.toLowerCase() === format.toLowerCase()))
+      const genreMatch = !o.genres || o.genres.length === 0 || (genre && o.genres.some(g => genre.toLowerCase().includes(g.toLowerCase())))
+      return fmtMatch || genreMatch
+    }).map(o => ({ title: o.title, slug: o.slug }))
+  }
+
+  const pendingScriptCards: ScriptRowData[] = pendingScripts.map(s => ({
+    id: s.id,
+    title: s.title,
+    format: s.format,
+    genre: s.genre,
+    score: s.score,
+    evaluationId: s.evaluationId,
+    createdAt: '',
+    status: 'ready' as const,
+    matchingOpportunities: matchOpportunities(s.format, s.genre),
+  }))
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
   const completedCount = visible.filter(s => s.status === 'completed').length
@@ -400,62 +434,19 @@ export default async function DashboardPage() {
             </Link>
           </header>
 
-          {pendingScripts.length === 0 ? (
+          {pendingScriptCards.length === 0 ? (
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
               <p className="text-[13px] text-gray-500 m-0">
                 No scripts pending review.
               </p>
             </div>
           ) : (
-            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-              {pendingScripts.map((s) => (
-                <div key={s.id} className="px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    {/* Score badge */}
-                    <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{
-                      background: s.score != null && s.score >= 75 ? 'rgba(124,58,237,0.08)' : 'rgba(107,114,128,0.06)',
-                    }}>
-                      {s.score != null ? (
-                        <span className="text-[14px] font-bold" style={{
-                          color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                        }}>
-                          {Math.round(s.score)}
-                        </span>
-                      ) : (
-                        <span className="text-[11px] text-gray-300">&mdash;</span>
-                      )}
-                    </div>
-
-                    {/* Title + meta */}
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                      <div className="flex items-center gap-1.5 mt-0.5">
-                        {s.format && <span className="text-[12px] text-gray-400">{s.format}</span>}
-                        {s.genre && (
-                          <>
-                            {s.format && <span className="text-gray-200">&middot;</span>}
-                            <span className="text-[12px] text-gray-400">{s.genre}</span>
-                          </>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Link to report */}
-                    {s.evaluationId && (
-                      <Link
-                        href={`/report/${s.evaluationId}`}
-                        className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-purple-600 hover:bg-purple-50 transition-colors"
-                        title="View report"
-                      >
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                      </Link>
-                    )}
-                  </div>
-                </div>
+            <div className="space-y-2">
+              {pendingScriptCards.map((s) => (
+                <ScriptRowCard key={s.id} script={s} />
               ))}
             </div>
           )}
-          {/* Upload button removed — use "+ New" in the nav */}
         </section>
       </div>
     </>
