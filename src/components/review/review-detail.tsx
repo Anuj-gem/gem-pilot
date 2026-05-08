@@ -4,7 +4,7 @@
 // Matches the v3 approved mockup: numbered title, profile card,
 // status block with outcome, assessment, next steps, scripts.
 
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
@@ -66,45 +66,6 @@ function LockIcon({ className }: { className?: string }) {
   )
 }
 
-// Three-dot menu
-function ScriptMenu({ scriptId, onRemove }: { scriptId: string; onRemove: (id: string) => void }) {
-  const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    function handler(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
-    }
-    if (open) document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [open])
-
-  return (
-    <div ref={ref} className="relative">
-      <button
-        onClick={(e) => { e.preventDefault(); e.stopPropagation(); setOpen(!open) }}
-        className="p-1 rounded hover:bg-gray-100 transition-colors"
-      >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="3.5" r="1" fill="#9ca3af" />
-          <circle cx="8" cy="8" r="1" fill="#9ca3af" />
-          <circle cx="8" cy="12.5" r="1" fill="#9ca3af" />
-        </svg>
-      </button>
-      {open && (
-        <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 py-1 min-w-[140px]">
-          <button
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); onRemove(scriptId); setOpen(false) }}
-            className="w-full text-left px-3 py-1.5 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
-          >
-            Remove from review
-          </button>
-        </div>
-      )}
-    </div>
-  )
-}
-
 // Genre tags to display (first 3 meaningful ones)
 function getDisplayTags(tags: string[]): string[] {
   const skip = new Set(['male-lead', 'female-lead', 'ensemble', 'contemporary', 'period', 'feature-anchored', 'series-anchored'])
@@ -137,7 +98,7 @@ export function ReviewDetail({
   scripts: Script[]
   events: EventRow[]
 }) {
-  const [removedIds, setRemovedIds] = useState<Set<string>>(new Set())
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set(scripts.map(s => s.id)))
   const [submitting, setSubmitting] = useState(false)
   const router = useRouter()
 
@@ -155,34 +116,30 @@ export function ReviewDetail({
   const isComplete = review.reviewStage === 'complete'
 
   const profileComplete = !!(profile.fullName && profile.bio)
-  const reviewScripts = scripts.filter(s => !removedIds.has(s.id))
+  const reviewScripts = scripts
 
-  async function handleRemoveScript(scriptId: string) {
-    setRemovedIds(prev => new Set([...prev, scriptId]))
-    try {
-      await fetch('/api/consideration/remove-script', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ consideration_id: review.id, script_id: scriptId }),
-      })
-    } catch {
-      // Revert on failure
-      setRemovedIds(prev => {
-        const next = new Set(prev)
-        next.delete(scriptId)
-        return next
-      })
-    }
+  function toggleScript(id: string) {
+    setSelectedIds(prev => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
   }
 
   async function handleSubmitForReview() {
     if (submitting) return
+    const selected = [...selectedIds]
+    if (selected.length === 0) return
     setSubmitting(true)
     try {
       const res = await fetch('/api/consideration/submit-draft', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ consideration_id: review.id }),
+        body: JSON.stringify({
+          consideration_id: review.id,
+          selected_script_ids: selected,
+        }),
       })
       if (res.ok) {
         router.refresh()
@@ -429,81 +386,118 @@ export function ReviewDetail({
           </div>
         ) : (
           <div className="space-y-2">
-            {reviewScripts.map(s => (
-              <div key={s.id} className="rounded-xl bg-white border border-gray-200 px-4 py-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                        {s.title}
-                      </p>
-                      {s.format && (
-                        <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
+            {isDraft && (
+              <p className="text-[12px] text-gray-400 m-0 mb-1">
+                Only scripts not previously included in a portfolio review are shown.
+              </p>
+            )}
+            {reviewScripts.map(s => {
+              const checked = selectedIds.has(s.id)
+              return (
+                <div
+                  key={s.id}
+                  className={`rounded-xl bg-white border px-4 py-3 transition-colors ${
+                    isDraft
+                      ? checked
+                        ? 'border-purple-200 ring-1 ring-purple-100'
+                        : 'border-gray-200 opacity-60'
+                      : 'border-gray-200'
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    {/* Checkbox in draft mode */}
+                    {isDraft && (
+                      <button
+                        onClick={() => toggleScript(s.id)}
+                        className="shrink-0 mt-0.5 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors"
+                        style={{
+                          borderColor: checked ? '#7c3aed' : '#d1d5db',
+                          background: checked ? '#7c3aed' : 'transparent',
+                        }}
+                      >
+                        {checked && (
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2.5 6l2.5 2.5 4.5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </button>
+                    )}
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+                          {s.title}
+                        </p>
+                        {s.format && (
+                          <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
+                        )}
+                      </div>
+                      {s.headline && (
+                        <p className="text-[12px] text-gray-500 m-0 mt-1 leading-snug line-clamp-2">
+                          {s.headline}
+                        </p>
+                      )}
+                      {s.tags.length > 0 && (
+                        <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                          {getDisplayTags(s.tags).map(tag => (
+                            <span
+                              key={tag}
+                              className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded"
+                            >
+                              {tag.replace(/-/g, ' ')}
+                            </span>
+                          ))}
+                        </div>
                       )}
                     </div>
-                    {s.headline && (
-                      <p className="text-[12px] text-gray-500 m-0 mt-1 leading-snug line-clamp-2">
-                        {s.headline}
-                      </p>
-                    )}
-                    {s.tags.length > 0 && (
-                      <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-                        {getDisplayTags(s.tags).map(tag => (
-                          <span
-                            key={tag}
-                            className="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded"
-                          >
-                            {tag.replace(/-/g, ' ')}
+                    <div className="flex items-center gap-2 shrink-0">
+                      {s.score != null && (
+                        <div className="text-right">
+                          <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
+                            {Math.round(s.score)}
                           </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    {s.score != null && (
-                      <div className="text-right">
-                        <span className="text-[12px] font-bold" style={{ color: s.score >= 75 ? '#7c3aed' : '#6b7280' }}>
-                          {Math.round(s.score)}
-                        </span>
-                        <span className="text-[10px] text-gray-300 ml-0.5">/100</span>
-                      </div>
-                    )}
-                    {s.evaluationId && (
-                      <Link
-                        href={`/report/${s.evaluationId}`}
-                        className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
-                      >
-                        View report
-                      </Link>
-                    )}
-                    {isDraft && (
-                      <ScriptMenu scriptId={s.id} onRemove={handleRemoveScript} />
-                    )}
+                          <span className="text-[10px] text-gray-300 ml-0.5">/100</span>
+                        </div>
+                      )}
+                      {s.evaluationId && (
+                        <Link
+                          href={`/report/${s.evaluationId}`}
+                          className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
+                        >
+                          View report
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         )}
 
         {/* Draft actions */}
-        {isDraft && (
-          <div className="flex items-center gap-3 mt-3">
-            <button
-              onClick={handleSubmitForReview}
-              disabled={submitting || reviewScripts.length === 0}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors disabled:opacity-50"
-            >
-              {submitting ? 'Submitting…' : 'Submit for review'}
-            </button>
-            <button
-              onClick={openUploadModal}
-              className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
-            >
-              + Add new script
-            </button>
-          </div>
-        )}
+        {isDraft && (() => {
+          const selectedCount = reviewScripts.filter(s => selectedIds.has(s.id)).length
+          return (
+            <div className="flex items-center gap-3 mt-3">
+              <button
+                onClick={handleSubmitForReview}
+                disabled={submitting || selectedCount === 0}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors disabled:opacity-50"
+              >
+                {submitting
+                  ? 'Submitting…'
+                  : `Submit ${selectedCount} ${selectedCount === 1 ? 'script' : 'scripts'} for review`}
+              </button>
+              <button
+                onClick={openUploadModal}
+                className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                + Add new script
+              </button>
+            </div>
+          )
+        })()}
       </section>
 
       {/* Quiet new review note (completed only) */}

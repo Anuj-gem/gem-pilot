@@ -84,19 +84,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: createError?.message || 'Failed to create' }, { status: 500 })
   }
 
-  // Attach unreviewed scripts + carry forward previously reviewed scripts
-  const scriptRows = [
-    ...unreviewedIds.map(id => ({
-      consideration_id: consideration.id,
-      script_submission_id: id,
-      carried_forward: false,
-    })),
-    ...[...reviewedScriptIds].map(id => ({
-      consideration_id: consideration.id,
-      script_submission_id: id,
-      carried_forward: true,
-    })),
-  ]
+  // Attach only unreviewed scripts (previously reviewed scripts are not eligible)
+  const scriptRows = unreviewedIds.map(id => ({
+    consideration_id: consideration.id,
+    script_submission_id: id,
+    carried_forward: false,
+  }))
 
   const { error: insertError } = await service
     .from('consideration_scripts')

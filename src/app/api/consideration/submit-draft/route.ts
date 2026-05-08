@@ -19,7 +19,10 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json().catch(() => ({}))
-  const { consideration_id } = body as { consideration_id?: string }
+  const { consideration_id, selected_script_ids } = body as {
+    consideration_id?: string
+    selected_script_ids?: string[]
+  }
 
   const service = svc()
 
@@ -51,14 +54,35 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Already submitted' }, { status: 409 })
   }
 
-  // Make sure there's at least one script
+  // If selected_script_ids provided, remove any scripts NOT in the selection
+  if (selected_script_ids && selected_script_ids.length > 0) {
+    // Get all currently attached scripts
+    const { data: attached } = await service
+      .from('consideration_scripts')
+      .select('script_submission_id')
+      .eq('consideration_id', targetId)
+
+    const toRemove = (attached || [])
+      .map((r: { script_submission_id: string }) => r.script_submission_id)
+      .filter(id => !selected_script_ids.includes(id))
+
+    if (toRemove.length > 0) {
+      await service
+        .from('consideration_scripts')
+        .delete()
+        .eq('consideration_id', targetId)
+        .in('script_submission_id', toRemove)
+    }
+  }
+
+  // Make sure there's at least one script remaining
   const { count } = await service
     .from('consideration_scripts')
     .select('id', { count: 'exact', head: true })
     .eq('consideration_id', targetId)
 
   if (!count || count === 0) {
-    return NextResponse.json({ error: 'Add at least one script before submitting' }, { status: 400 })
+    return NextResponse.json({ error: 'Select at least one script' }, { status: 400 })
   }
 
   // Flip to pending
