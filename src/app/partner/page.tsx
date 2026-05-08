@@ -189,9 +189,10 @@ export default async function PartnerDashboardPage() {
                     submittedAt={c.submitted_at}
                     scripts={scriptsByConsideration.get(c.id) ?? []}
                     status={c.status}
+                    reviewStage={c.review_stage}
                     feedback={c.feedback}
-  
                     nextSteps={c.next_steps}
+                    events={eventsByConsideration.get(c.id) ?? []}
                   />
                 )
               })}
