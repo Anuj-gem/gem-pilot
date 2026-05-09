@@ -79,6 +79,7 @@ export function ReviewDetail({
   review,
   profile,
   scripts,
+  attachedScriptIds = [],
   events,
 }: {
   reviewNumber: number
@@ -99,9 +100,20 @@ export function ReviewDetail({
     headline: string | null
   }
   scripts: Script[]
+  attachedScriptIds?: string[]
   events: EventRow[]
 }) {
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set(scripts.filter(s => !s.isLocked).map(s => s.id)))
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => {
+    if (attachedScriptIds.length > 0) {
+      // Pending review: pre-check only attached scripts
+      return new Set(attachedScriptIds.filter(id => {
+        const s = scripts.find(sc => sc.id === id)
+        return s && !s.isLocked
+      }))
+    }
+    // Draft: check all eligible
+    return new Set(scripts.filter(s => !s.isLocked).map(s => s.id))
+  })
   const [submitting, setSubmitting] = useState(false)
   const [editing, setEditing] = useState(false)
   const router = useRouter()
@@ -554,7 +566,10 @@ export function ReviewDetail({
               <button
                 onClick={() => {
                   setEditing(false)
-                  setSelectedIds(new Set(scripts.filter(s => !s.isLocked).map(s => s.id)))
+                  setSelectedIds(new Set(attachedScriptIds.filter(id => {
+                    const s = scripts.find(sc => sc.id === id)
+                    return s && !s.isLocked
+                  })))
                 }}
                 className="flex items-center justify-center px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
               >

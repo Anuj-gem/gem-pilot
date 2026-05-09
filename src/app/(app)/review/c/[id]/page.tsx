@@ -55,9 +55,11 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     .single()
 
   // Scripts in this consideration
-  // For DRAFT reviews, dynamically show ALL unreviewed scripts (not just the snapshot).
-  // After submission, show only the attached scripts.
+  // For DRAFT and PENDING reviews, dynamically show ALL unreviewed scripts
+  // so users can add/remove scripts. For later stages, show only attached.
   const isDraft = consideration.review_stage === 'draft'
+  const isPending = consideration.review_stage === 'pending'
+  const isEditable = isDraft || isPending
 
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
@@ -65,9 +67,21 @@ export default async function ReviewDetailPage({ params }: PageProps) {
   }
 
   let scriptIds: string[] = []
+  let attachedScriptIds: Set<string> = new Set()
 
-  if (isDraft) {
-    // Find all completed, visible scripts NOT in any consideration
+  if (isEditable) {
+    // For pending reviews, track which scripts are currently attached
+    if (isPending) {
+      const { data: cs } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .eq('consideration_id', id)
+      for (const r of (cs || []) as { script_submission_id: string }[]) {
+        attachedScriptIds.add(r.script_submission_id)
+      }
+    }
+
+    // Find all completed, visible scripts NOT in any OTHER consideration
     const { data: allCons } = await service
       .from('considerations')
       .select('id')
@@ -76,17 +90,20 @@ export default async function ReviewDetailPage({ params }: PageProps) {
 
     let reviewedScriptIds: Set<string> = new Set()
     if (conIds.length > 0) {
-      const { data: conScripts } = await service
-        .from('consideration_scripts')
-        .select('script_submission_id')
-        .in('consideration_id', conIds)
-      for (const r of (conScripts || []) as { script_submission_id: string }[]) {
-        reviewedScriptIds.add(r.script_submission_id)
+      // Scripts in OTHER considerations (exclude current one so its scripts still show)
+      const otherConIds = conIds.filter(cid => cid !== id)
+      if (otherConIds.length > 0) {
+        const { data: conScripts } = await service
+          .from('consideration_scripts')
+          .select('script_submission_id')
+          .in('consideration_id', otherConIds)
+        for (const r of (conScripts || []) as { script_submission_id: string }[]) {
+          reviewedScriptIds.add(r.script_submission_id)
+        }
       }
     }
 
-    // Include completed AND processing/queued scripts so processing cards
-    // show up in the draft view (especially after anonymous upload → signup)
+    // Include completed AND processing/queued scripts
     const { data: eligibleScripts } = await service
       .from('script_submissions')
       .select('id')
@@ -99,7 +116,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
       .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
       .map((s: { id: string }) => s.id)
   } else {
-    // Non-draft: show only attached scripts
+    // Locked stages: show only attached scripts
     const { data: cs } = await service
       .from('consideration_scripts')
       .select('script_submission_id')
@@ -200,7 +217,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         evaluationId: isStillProcessing ? null : (ev?.id ?? null),
         createdAt: s.created_at,
         matchingOpportunities: isStillProcessing ? [] : matchOpportunities(s.declared_format, genre),
-        status: isDraft ? 'ready' as const : 'in-review' as const,
+        status: isEditable ? 'ready' as const : 'in-review' as const,
         isProcessing: isStillProcessing,
         isLocked: isScriptLocked,
       }
@@ -240,6 +257,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         }}
         profile={profileData}
         scripts={scripts}
+        attachedScriptIds={[...attachedScriptIds]}
         events={events}
       />
     </div>
