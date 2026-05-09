@@ -19,24 +19,34 @@ export function ConsiderationReviewCard({
   considerationId,
   writerName,
   writerHandle,
+  isPro = false,
   submittedAt,
   scripts,
   status,
   reviewStage: initialStage,
   feedback: initialFeedback,
   nextSteps: initialNextSteps,
+  aiFeedback,
+  aiNextSteps,
   events: initialEvents,
+  reviewNumber = 1,
+  pastReviews = [],
 }: {
   considerationId: string
   writerName: string
   writerHandle: string | null
+  isPro?: boolean
   submittedAt: string
   scripts: { title: string; score: number | null; evaluationId: string | null; format: string | null }[]
   status: string
   reviewStage: string
   feedback: string | null
   nextSteps: string | null
+  aiFeedback?: string | null
+  aiNextSteps?: string | null
   events: { id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }[]
+  reviewNumber?: number
+  pastReviews?: { id: string; submittedAt: string; feedback: string | null; nextSteps: string | null }[]
 }) {
   const [feedback, setFeedback] = useState(initialFeedback ?? '')
   const [nextSteps, setNextSteps] = useState(initialNextSteps ?? '')
@@ -45,8 +55,9 @@ export function ConsiderationReviewCard({
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [reviewed, setReviewed] = useState(status === 'reviewed')
-  const [expanded, setExpanded] = useState(status === 'pending')
+  const [expanded, setExpanded] = useState(false)
   const [events, setEvents] = useState(initialEvents)
+  const [pastOpen, setPastOpen] = useState(false)
 
   const daysAgo = Math.floor((Date.now() - new Date(submittedAt).getTime()) / (1000 * 60 * 60 * 24))
   const avgScore = scripts.length > 0
@@ -135,11 +146,20 @@ export function ConsiderationReviewCard({
         className="w-full flex items-start justify-between gap-3 text-left"
       >
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 mb-0.5">
+          <div className="flex items-center gap-2 mb-0.5 flex-wrap">
             <span className="text-[14.5px] font-semibold text-gray-900">{writerName}</span>
-            {writerHandle && (
-              <span className="text-[12px] text-gray-400">@{writerHandle}</span>
-            )}
+            <span
+              className="text-[10px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wide"
+              style={{
+                background: isPro ? '#7c3aed15' : '#f3f4f6',
+                color: isPro ? '#7c3aed' : '#9ca3af',
+              }}
+            >
+              {isPro ? 'Pro' : 'Free'}
+            </span>
+            <span className="text-[11px] font-semibold text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">
+              Review #{reviewNumber}
+            </span>
             {avgScore != null && (
               <span className="text-[12px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">
                 avg {avgScore.toFixed(1)}
@@ -222,6 +242,63 @@ export function ConsiderationReviewCard({
               ))}
             </div>
           </div>
+
+          {/* Past reviews dropdown */}
+          {pastReviews.length > 0 && (
+            <div>
+              <button
+                onClick={() => setPastOpen(!pastOpen)}
+                className="flex items-center gap-1.5 text-[12px] font-bold text-gray-400 uppercase tracking-[0.06em] hover:text-gray-600 transition-colors"
+              >
+                <span>Past reviews ({pastReviews.length})</span>
+                <svg
+                  width="12" height="12" viewBox="0 0 16 16" fill="none"
+                  className={`transition-transform ${pastOpen ? 'rotate-180' : ''}`}
+                >
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {pastOpen && (
+                <div className="mt-2 space-y-2">
+                  {pastReviews.map((pr, i) => (
+                    <div key={pr.id} className="bg-gray-50 border border-gray-100 rounded-lg px-3 py-2.5">
+                      <p className="text-[11px] text-gray-400 font-medium m-0 mb-1">
+                        Review #{i + 1} · {new Date(pr.submittedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                      </p>
+                      {pr.feedback && (
+                        <p className="text-[12px] text-gray-600 m-0 leading-relaxed">{pr.feedback}</p>
+                      )}
+                      {pr.nextSteps && (
+                        <p className="text-[12px] text-purple-600 m-0 mt-1 leading-relaxed">Next steps: {pr.nextSteps}</p>
+                      )}
+                      {!pr.feedback && !pr.nextSteps && (
+                        <p className="text-[12px] text-gray-300 italic m-0">No feedback recorded</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* AI prefill — show if available and feedback is empty */}
+          {aiFeedback && !feedback.trim() && (
+            <div className="bg-purple-50 border border-purple-100 rounded-lg px-3 py-2.5">
+              <div className="flex items-center justify-between mb-1.5">
+                <p className="text-[11px] font-bold text-purple-500 uppercase tracking-[0.06em] m-0">AI draft</p>
+                <button
+                  onClick={() => {
+                    setFeedback(aiFeedback)
+                    if (aiNextSteps) setNextSteps(aiNextSteps)
+                  }}
+                  className="text-[11px] font-bold text-purple-600 hover:text-purple-800 transition-colors"
+                >
+                  Use as starting point →
+                </button>
+              </div>
+              <p className="text-[12px] text-purple-700 m-0 leading-relaxed line-clamp-3">{aiFeedback}</p>
+            </div>
+          )}
 
           {/* Feedback / message — unified send box */}
           <div>

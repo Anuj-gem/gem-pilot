@@ -6,8 +6,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Nav from '@/components/nav'
-import { ConsiderationReviewCard } from '@/components/producer/consideration-review-card'
-import Link from 'next/link'
+import { PartnerConsiderationList } from '@/components/producer/partner-consideration-list'
 
 export const dynamic = 'force-dynamic'
 
@@ -34,34 +33,61 @@ export default async function PartnerDashboardPage() {
   if (profile?.account_type !== 'producer') redirect('/dashboard')
   if (!profile?.lane) redirect('/onboarding/producer')
 
-  const firstName = profile?.full_name?.split(' ')[0] || user.email?.split('@')[0] || 'there'
   const service = svc()
 
   // Get all considerations (pending first, then reviewed)
   const { data: allConsiderations } = await service
     .from('considerations')
-    .select('id, writer_id, status, review_stage, submitted_at, reviewed_at, feedback, outcome, next_steps')
+    .select('id, writer_id, status, review_stage, submitted_at, reviewed_at, feedback, outcome, next_steps, ai_feedback, ai_next_steps')
     .neq('review_stage', 'draft')
     .order('submitted_at', { ascending: true })
 
   const considerations = (allConsiderations || []) as {
     id: string; writer_id: string; status: string; review_stage: string; submitted_at: string
     reviewed_at: string | null; feedback: string | null; outcome: string | null; next_steps: string | null
+    ai_feedback: string | null; ai_next_steps: string | null
   }[]
 
-  const pending = considerations.filter(c => c.review_stage !== 'complete')
-  const reviewed = considerations.filter(c => c.review_stage === 'complete')
-
-  // Get writer profiles
+  // Get writer profiles (including subscription status)
   const writerIds = [...new Set(considerations.map(c => c.writer_id))]
-  const writerMap = new Map<string, { name: string; handle: string | null }>()
+  const writerMap = new Map<string, { name: string; handle: string | null; isPro: boolean }>()
   if (writerIds.length > 0) {
     const { data: profiles } = await service
       .from('profiles')
-      .select('id, full_name, handle')
+      .select('id, full_name, handle, subscription_status')
       .in('id', writerIds)
-    for (const p of (profiles || []) as { id: string; full_name: string | null; handle: string | null }[]) {
-      writerMap.set(p.id, { name: p.full_name || 'Unknown', handle: p.handle })
+    for (const p of (profiles || []) as { id: string; full_name: string | null; handle: string | null; subscription_status: string | null }[]) {
+      writerMap.set(p.id, {
+        name: p.full_name || 'Unknown',
+        handle: p.handle,
+        isPro: p.subscription_status === 'active' || p.subscription_status === 'trialing',
+      })
+    }
+  }
+
+  // Compute review number per writer (chronological order)
+  // Group all non-draft considerations by writer_id, sorted by submitted_at
+  const allByWriter = new Map<string, { id: string; submitted_at: string; review_stage: string; feedback: string | null; next_steps: string | null }[]>()
+  for (const c of considerations) {
+    if (!allByWriter.has(c.writer_id)) allByWriter.set(c.writer_id, [])
+    allByWriter.get(c.writer_id)!.push({ id: c.id, submitted_at: c.submitted_at, review_stage: c.review_stage, feedback: c.feedback, next_steps: c.next_steps })
+  }
+  // Sort each writer's considerations chronologically
+  for (const arr of allByWriter.values()) {
+    arr.sort((a, b) => new Date(a.submitted_at).getTime() - new Date(b.submitted_at).getTime())
+  }
+
+  // Build reviewNumber map and pastReviews map
+  const reviewNumberMap = new Map<string, number>()
+  const pastReviewsMap = new Map<string, { id: string; submittedAt: string; feedback: string | null; nextSteps: string | null }[]>()
+  for (const [, arr] of allByWriter) {
+    for (let i = 0; i < arr.length; i++) {
+      reviewNumberMap.set(arr[i].id, i + 1)
+      // Past reviews = all completed reviews before this one
+      const past = arr.slice(0, i).filter(r => r.review_stage === 'complete').map(r => ({
+        id: r.id, submittedAt: r.submitted_at, feedback: r.feedback, nextSteps: r.next_steps,
+      }))
+      pastReviewsMap.set(arr[i].id, past)
     }
   }
 
@@ -133,74 +159,38 @@ export default async function PartnerDashboardPage() {
     }
   }
 
+  // Build serializable items for the client component
+  const items = considerations.map(c => {
+    const writer = writerMap.get(c.writer_id)
+    const scripts = scriptsByConsideration.get(c.id) ?? []
+    const avgScore = scripts.length > 0
+      ? scripts.reduce((sum, s) => sum + (s.score ?? 0), 0) / scripts.filter(s => s.score != null).length
+      : null
+    return {
+      id: c.id,
+      writerId: c.writer_id,
+      writerName: writer?.name ?? 'Unknown',
+      writerHandle: writer?.handle ?? null,
+      isPro: writer?.isPro ?? false,
+      submittedAt: c.submitted_at,
+      scripts,
+      status: c.status,
+      reviewStage: c.review_stage,
+      feedback: c.feedback,
+      nextSteps: c.next_steps,
+      aiFeedback: c.ai_feedback,
+      aiNextSteps: c.ai_next_steps,
+      events: eventsByConsideration.get(c.id) ?? [],
+      reviewNumber: reviewNumberMap.get(c.id) ?? 1,
+      pastReviews: pastReviewsMap.get(c.id) ?? [],
+      avgScore,
+    }
+  })
+
   return (
     <>
       <Nav />
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-        <header className="mb-6">
-          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-            Writers in consideration
-          </h1>
-          <p className="text-[13px] text-gray-400 mt-1 m-0">
-            {pending.length} active · {reviewed.length} complete
-          </p>
-        </header>
-
-        {/* Pending considerations */}
-        {pending.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-            <p className="text-[13.5px] text-gray-400 m-0">No writers pending review.</p>
-          </div>
-        ) : (
-          <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden">
-            {pending.map(c => {
-              const writer = writerMap.get(c.writer_id)
-              return (
-                <ConsiderationReviewCard
-                  key={c.id}
-                  considerationId={c.id}
-                  writerName={writer?.name ?? 'Unknown'}
-                  writerHandle={writer?.handle ?? null}
-                  submittedAt={c.submitted_at}
-                  scripts={scriptsByConsideration.get(c.id) ?? []}
-                  status={c.status}
-                  reviewStage={c.review_stage}
-                  feedback={c.feedback}
-                  nextSteps={c.next_steps}
-                  events={eventsByConsideration.get(c.id) ?? []}
-                />
-              )
-            })}
-          </div>
-        )}
-
-        {/* Reviewed (collapsed) */}
-        {reviewed.length > 0 && (
-          <div className="mt-6">
-            <p className="text-[12px] text-gray-400 font-medium mb-2">{reviewed.length} complete</p>
-            <div className="rounded-xl bg-white border border-gray-200 divide-y divide-gray-100 overflow-hidden opacity-75">
-              {reviewed.map(c => {
-                const writer = writerMap.get(c.writer_id)
-                return (
-                  <ConsiderationReviewCard
-                    key={c.id}
-                    considerationId={c.id}
-                    writerName={writer?.name ?? 'Unknown'}
-                    writerHandle={writer?.handle ?? null}
-                    submittedAt={c.submitted_at}
-                    scripts={scriptsByConsideration.get(c.id) ?? []}
-                    status={c.status}
-                    reviewStage={c.review_stage}
-                    feedback={c.feedback}
-                    nextSteps={c.next_steps}
-                    events={eventsByConsideration.get(c.id) ?? []}
-                  />
-                )
-              })}
-            </div>
-          </div>
-        )}
-      </div>
+      <PartnerConsiderationList items={items} />
     </>
   )
 }
