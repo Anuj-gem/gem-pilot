@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ScriptRowCard, type ScriptRowData } from '@/components/cards/script-row-card'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { useNewUploads } from '@/hooks/use-new-uploads'
 
 const STAGES = [
@@ -59,6 +60,7 @@ type Script = {
   matchingOpportunities?: { title: string; slug: string }[]
   status?: 'ready' | 'in-review' | 'reviewed'
   isProcessing?: boolean
+  isLocked?: boolean
 }
 
 // Lock icon
@@ -73,12 +75,14 @@ function LockIcon({ className }: { className?: string }) {
 
 export function ReviewDetail({
   reviewNumber,
+  isTrial = false,
   review,
   profile,
   scripts,
   events,
 }: {
   reviewNumber: number
+  isTrial?: boolean
   review: {
     id: string
     reviewStage: string
@@ -97,7 +101,7 @@ export function ReviewDetail({
   scripts: Script[]
   events: EventRow[]
 }) {
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set(scripts.map(s => s.id)))
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set(scripts.filter(s => !s.isLocked).map(s => s.id)))
   const [submitting, setSubmitting] = useState(false)
   const router = useRouter()
 
@@ -160,6 +164,7 @@ export function ReviewDetail({
 
   return (
     <>
+      {isTrial && <UpgradeModalListener />}
       <ProcessingPoller active={hasProcessing} />
 
       {/* Back link + page title */}
@@ -419,8 +424,9 @@ export function ReviewDetail({
                   matchingOpportunities: s.matchingOpportunities,
                   status: s.status,
                   isProcessing: s.isProcessing,
+                  isLocked: s.isLocked,
                 }}
-                checkbox={isDraft && !s.isProcessing}
+                checkbox={isDraft && !s.isProcessing && !s.isLocked}
                 checked={selectedIds.has(s.id)}
                 onToggle={toggleScript}
               />
@@ -430,7 +436,7 @@ export function ReviewDetail({
 
         {/* Draft actions */}
         {isDraft && (() => {
-          const selectedCount = reviewScripts.filter(s => selectedIds.has(s.id)).length
+          const selectedCount = reviewScripts.filter(s => selectedIds.has(s.id) && !s.isLocked).length
           return (
             <div className="flex items-center gap-3 mt-3">
               <button

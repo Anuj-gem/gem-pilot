@@ -257,10 +257,18 @@ export function ScriptRowCard({
             {s.reviewLabel || 'In review'}
           </Link>
         )}
-        {s.status === 'ready' && (
+        {s.status === 'ready' && !s.isLocked && (
           <span className="text-[11px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
             Eligible for review
           </span>
+        )}
+        {s.status === 'ready' && s.isLocked && (
+          <button
+            onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
+            className="text-[11px] font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full hover:text-gray-500 transition-colors border-0 cursor-pointer"
+          >
+            Upgrade to view
+          </button>
         )}
 
         {/* View details link */}

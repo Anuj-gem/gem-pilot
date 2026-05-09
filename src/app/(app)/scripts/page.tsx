@@ -117,7 +117,7 @@ export default async function ScriptsPage() {
   const { data: openOpps } = await service
     .from('opportunities')
     .select('id, title, slug, formats, genres')
-    .eq('status', 'open')
+    .eq('status', 'active')
   const opportunities = (openOpps || []) as { id: string; title: string; slug: string; formats: string[] | null; genres: string[] | null }[]
 
   function matchOpportunities(format: string | null, genre: string | null) {

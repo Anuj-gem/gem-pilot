@@ -16,6 +16,12 @@ export function NewReviewButton({ className, children }: { className?: string; c
     try {
       const res = await fetch('/api/consideration/create-draft', { method: 'POST' })
       const data = await res.json()
+      if (res.status === 403 && data.error === 'upgrade_required') {
+        // Trial user already used their one free review — show upgrade modal
+        window.dispatchEvent(new Event('gem:open-upgrade-modal'))
+        setLoading(false)
+        return
+      }
       if (data.consideration_id) {
         router.push(`/review/c/${data.consideration_id}`)
       } else {

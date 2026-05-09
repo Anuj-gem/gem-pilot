@@ -107,11 +107,20 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     scriptIds = (cs || []).map((r: { script_submission_id: string }) => r.script_submission_id)
   }
 
+  // Pro / trial status
+  const { data: writerProfile } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+  const isPro = writerProfile?.subscription_status === 'active'
+  const isTrial = !isPro
+
   // Open opportunities for matching
   const { data: openOpps } = await service
     .from('opportunities')
     .select('id, title, slug, formats, genres')
-    .eq('status', 'open')
+    .eq('status', 'active')  // opportunities use 'active' not 'open'
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null
@@ -126,6 +135,21 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     }).map(o => ({ title: o.title, slug: o.slug }))
   }
 
+  // Paywall: first completed script is free, rest are locked for trial users
+  // We need to find the user's first-ever completed script (chronologically)
+  let firstCompletedId: string | null = null
+  if (isTrial) {
+    const { data: firstCompleted } = await service
+      .from('script_submissions')
+      .select('id')
+      .eq('user_id', user.id)
+      .eq('status', 'completed')
+      .is('hidden_at', null)
+      .order('created_at', { ascending: true })
+      .limit(1)
+    firstCompletedId = firstCompleted?.[0]?.id ?? null
+  }
+
   let scripts: {
     id: string; title: string; format: string | null
     genre: string | null; score: number | null; evaluationId: string | null
@@ -133,6 +157,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     matchingOpportunities: { title: string; slug: string }[]
     status: 'ready' | 'in-review'
     isProcessing?: boolean
+    isLocked?: boolean
   }[] = []
 
   if (scriptIds.length > 0) {
@@ -165,6 +190,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         || ev?.evaluation?.format_detection?.genre_primary
         || null
       const isStillProcessing = s.status === 'processing' || s.status === 'queued'
+      const isScriptLocked = isTrial && !isStillProcessing && s.status === 'completed' && s.id !== firstCompletedId
       return {
         id: s.id,
         title: s.title,
@@ -176,6 +202,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         matchingOpportunities: isStillProcessing ? [] : matchOpportunities(s.declared_format, genre),
         status: isDraft ? 'ready' as const : 'in-review' as const,
         isProcessing: isStillProcessing,
+        isLocked: isScriptLocked,
       }
     })
   }
@@ -202,6 +229,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     <div className="max-w-2xl mx-auto space-y-5">
       <ReviewDetail
         reviewNumber={reviewNumber}
+        isTrial={isTrial}
         review={{
           id: consideration.id,
           reviewStage: consideration.review_stage,

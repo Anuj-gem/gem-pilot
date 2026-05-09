@@ -134,7 +134,7 @@ export default async function DashboardPage() {
   const { data: openOpps } = await service
     .from('opportunities')
     .select('id, title, slug, formats, genres')
-    .eq('status', 'open')
+    .eq('status', 'active')
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null
@@ -151,11 +151,18 @@ export default async function DashboardPage() {
     }).map(o => ({ title: o.title, slug: o.slug }))
   }
 
+  // Paywall: first completed script is free, rest are locked for trial users
+  const allCompletedVisible = visible
+    .filter(s => s.status === 'completed')
+    .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+  const firstCompletedId = allCompletedVisible[0]?.id ?? null
+
   const pendingScriptCards: ScriptRowData[] = visible
     .filter(s => s.status === 'completed' && !allReviewedScriptIds.has(s.id))
     .map(s => {
       const ev = myEvalBySub.get(s.id)
       const genre = ev?.genre ?? null
+      const isScriptLocked = isTrial && s.id !== firstCompletedId
       return {
         id: s.id,
         title: s.title,
@@ -166,6 +173,7 @@ export default async function DashboardPage() {
         createdAt: s.created_at,
         status: 'ready' as const,
         matchingOpportunities: matchOpportunities(s.declared_format, genre),
+        isLocked: isScriptLocked,
       }
     })
 

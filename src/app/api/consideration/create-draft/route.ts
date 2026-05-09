@@ -21,6 +21,29 @@ export async function POST(req: NextRequest) {
 
   const service = svc()
 
+  // Trial users can only have one portfolio review total
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+  const isPro = profile?.subscription_status === 'active'
+
+  if (!isPro) {
+    const { data: completedReviews } = await service
+      .from('considerations')
+      .select('id')
+      .eq('writer_id', user.id)
+      .eq('review_stage', 'complete')
+      .limit(1)
+    if (completedReviews && completedReviews.length > 0) {
+      return NextResponse.json(
+        { error: 'upgrade_required', message: 'Free users are limited to one portfolio review. Upgrade to Pro for unlimited reviews.' },
+        { status: 403 }
+      )
+    }
+  }
+
   // Check no active (non-complete) consideration already exists
   const { data: existing } = await service
     .from('considerations')
