@@ -137,7 +137,6 @@ export function ReviewDetail({
   const isDraft = review.reviewStage === 'draft'
   const isPending = review.reviewStage === 'pending'
   const isComplete = review.reviewStage === 'complete'
-  const canEdit = isDraft || (isPending && editing)
 
   const profileComplete = !!(profile.fullName && profile.bio)
   const reviewScripts = scripts
@@ -443,45 +442,31 @@ export function ReviewDetail({
           </div>
         )}
 
-        {(() => {
+        {/* ── DRAFT MODE: all eligible scripts with checkboxes ── */}
+        {isDraft && (() => {
           const eligibleScripts = reviewScripts.filter(s => !s.isLocked)
 
           return eligibleScripts.length === 0 && optimistic.length === 0 ? (
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
               <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts eligible for review</p>
               <p className="text-[13px] text-gray-400 m-0 mb-3">Upload and evaluate new scripts to include them in this review.</p>
-              {canEdit && (
-                <button
-                  onClick={openUploadModal}
-                  className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
-                >
-                  Upload a script
-                </button>
-              )}
+              <button
+                onClick={openUploadModal}
+                className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
+              >
+                Upload a script
+              </button>
             </div>
           ) : (
             <div className="space-y-2">
-              {canEdit && (
-                <p className="text-[12px] text-gray-400 m-0 mb-1">
-                  Only scripts not previously included in a portfolio review are shown.
-                </p>
-              )}
+              <p className="text-[12px] text-gray-400 m-0 mb-1">
+                Only scripts not previously included in a portfolio review are shown.
+              </p>
               {eligibleScripts.map(s => (
                 <ScriptRowCard
                   key={s.id}
-                  script={{
-                    id: s.id,
-                    title: s.title,
-                    format: s.format,
-                    genre: s.genre,
-                    score: s.score,
-                    evaluationId: s.evaluationId,
-                    createdAt: s.createdAt,
-                    matchingOpportunities: s.matchingOpportunities,
-                    status: s.status,
-                    isProcessing: s.isProcessing,
-                  }}
-                  checkbox={canEdit && !s.isProcessing}
+                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isProcessing: s.isProcessing }}
+                  checkbox={!s.isProcessing}
                   checked={selectedIds.has(s.id)}
                   onToggle={toggleScript}
                 />
@@ -490,8 +475,112 @@ export function ReviewDetail({
           )
         })()}
 
-        {/* Ineligible scripts — locked behind paywall */}
-        {canEdit && reviewScripts.some(s => s.isLocked) && (
+        {/* ── PENDING MODE (not editing): show only attached scripts ── */}
+        {isPending && !editing && (() => {
+          const attachedSet = new Set(attachedScriptIds)
+          const attachedScripts = reviewScripts.filter(s => attachedSet.has(s.id))
+
+          return attachedScripts.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts attached</p>
+              <p className="text-[13px] text-gray-400 m-0">Click Edit to add scripts to this review.</p>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {attachedScripts.map(s => (
+                <ScriptRowCard
+                  key={s.id}
+                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: 'in-review' }}
+                />
+              ))}
+            </div>
+          )
+        })()}
+
+        {/* ── PENDING MODE (editing): attached (checked) + eligible (unchecked) ── */}
+        {isPending && editing && (() => {
+          const attachedSet = new Set(attachedScriptIds)
+          const attachedScripts = reviewScripts.filter(s => attachedSet.has(s.id) && !s.isLocked)
+          const eligibleScripts = reviewScripts.filter(s => !attachedSet.has(s.id) && !s.isLocked)
+          const lockedScripts = reviewScripts.filter(s => s.isLocked)
+
+          return (
+            <>
+              {/* Attached scripts — pre-checked */}
+              {attachedScripts.length > 0 && (
+                <div className="space-y-2">
+                  {attachedScripts.map(s => (
+                    <ScriptRowCard
+                      key={s.id}
+                      script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isProcessing: s.isProcessing }}
+                      checkbox={!s.isProcessing}
+                      checked={selectedIds.has(s.id)}
+                      onToggle={toggleScript}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Eligible scripts — not yet attached */}
+              {eligibleScripts.length > 0 && (
+                <div className="mt-4">
+                  <p className="text-[12px] font-semibold text-gray-500 m-0 mb-2">Eligible scripts</p>
+                  <div className="space-y-2">
+                    {eligibleScripts.map(s => (
+                      <ScriptRowCard
+                        key={s.id}
+                        script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isProcessing: s.isProcessing }}
+                        checkbox={!s.isProcessing}
+                        checked={selectedIds.has(s.id)}
+                        onToggle={toggleScript}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Locked scripts (free users) */}
+              {lockedScripts.length > 0 && (
+                <div className="mt-4">
+                  <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5">
+                    <p className="text-[13px] font-semibold text-gray-500 m-0 mb-1">Ineligible for this review</p>
+                    <p className="text-[12px] text-gray-400 m-0 mb-3">
+                      Free accounts can include one script per portfolio review. Upgrade to Pro to include all your scripts.
+                    </p>
+                    <div className="space-y-2 mb-3">
+                      {lockedScripts.map(s => (
+                        <ScriptRowCard key={s.id} script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isLocked: true }} />
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
+                      className="text-[12px] font-bold text-purple-600 hover:text-purple-800 transition-colors border-0 bg-transparent cursor-pointer p-0"
+                    >
+                      Upgrade to Pro →
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          )
+        })()}
+
+        {/* ── LOCKED STAGES: show only attached, no edit ── */}
+        {!isDraft && !isPending && (() => {
+          return reviewScripts.length === 0 ? null : (
+            <div className="space-y-2">
+              {reviewScripts.map(s => (
+                <ScriptRowCard
+                  key={s.id}
+                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status }}
+                />
+              ))}
+            </div>
+          )
+        })()}
+
+        {/* Ineligible scripts — draft mode only */}
+        {isDraft && reviewScripts.some(s => s.isLocked) && (
           <div className="mt-4">
             <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5">
               <p className="text-[13px] font-semibold text-gray-500 m-0 mb-1">Ineligible for this review</p>
@@ -500,21 +589,7 @@ export function ReviewDetail({
               </p>
               <div className="space-y-2 mb-3">
                 {reviewScripts.filter(s => s.isLocked).map(s => (
-                  <ScriptRowCard
-                    key={s.id}
-                    script={{
-                      id: s.id,
-                      title: s.title,
-                      format: s.format,
-                      genre: s.genre,
-                      score: s.score,
-                      evaluationId: s.evaluationId,
-                      createdAt: s.createdAt,
-                      matchingOpportunities: s.matchingOpportunities,
-                      status: s.status,
-                      isLocked: true,
-                    }}
-                  />
+                  <ScriptRowCard key={s.id} script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isLocked: true }} />
                 ))}
               </div>
               <button
