@@ -1,25 +1,25 @@
 // LandingArc — three-step story.
-// Evaluate → GEM Review → Get matched.
+// Instant coverage → Human review → Get matched.
 //
-// v11 — reframed around eval tech + human review + matching.
+// v12 — simplified copy: coverage, human review, matching.
 
 import { Zap, Eye, Handshake } from 'lucide-react'
 
 const STEPS = [
   {
     icon: Zap,
-    title: "Instant evaluation",
-    sub: "Upload your script and get a detailed evaluation in under a minute. Powered by Selznick — the most advanced screenplay analysis ever built.",
+    title: "Instant coverage",
+    sub: "Detailed script coverage instantly, powered by the most advanced screenplay analysis ever built. For free.",
   },
   {
     icon: Eye,
-    title: "The GEM Review",
-    sub: "Our team does an in-depth review of your entire portfolio. A real person reads your work, assesses your range, and identifies specific matches.",
+    title: "Human review",
+    sub: "Our team and our partner network review your work in depth to determine whether there's a good fit.",
   },
   {
     icon: Handshake,
     title: "Get matched",
-    sub: "We connect work that fits what our partners are looking for — reps, producers, financiers, and development executives.",
+    sub: "Partners reach out directly to advance discussions further.",
   },
 ]
 

@@ -1,30 +1,30 @@
 // LandingPillars — three product pillars.
-// v11 — Evaluation, GEM Review, Matching. Dropped profile + opportunities pillars.
+// v12 — Instant coverage, Human review, Get matched.
 
 export function LandingPillars() {
   return (
     <section className="px-5 sm:px-8 pb-8 sm:pb-12">
       <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         <Pillar
-          eyebrow="The evaluation"
-          title="Instant. Detailed. Free."
-          body="Upload your screenplay and get a full evaluation in under a minute — what's working, what's not, comparable projects, production reality, and where your script sits in the landscape. Powered by Selznick, the most advanced screenplay analysis technology ever built. Most companies charge hundreds of dollars for less."
+          eyebrow="Instant coverage"
+          title="Detailed script coverage, instantly. For free."
+          body="Upload your screenplay and get a full evaluation in under a minute — what's working, what's not, comparable projects, production reality, and where your script sits in the landscape. Powered by the most advanced screenplay analysis technology ever built."
           secondLine="Your first evaluation is completely free."
           mockup={<EvaluationMockup />}
           align="left"
         />
         <Pillar
-          eyebrow="The GEM Review"
-          title="Real people review your work."
-          body="Our team does a holistic review of your portfolio — not just your scripts, but your voice, range, and long-term potential. We work with our partner network to identify the right opportunities for you."
-          secondLine="Every review is done by a person on our team."
+          eyebrow="Human review"
+          title="Our team and partners review your work."
+          body="We do an in-depth review of your portfolio — not just your scripts, but your voice, range, and long-term potential. Our partner network helps identify whether there's a good fit."
+          secondLine="Every review is done by a real person."
           mockup={<PortfolioReviewMockup />}
           align="right"
         />
         <Pillar
-          eyebrow="The match"
+          eyebrow="Get matched"
           title="Partners reach out directly."
-          body="When there's a fit, the introduction happens. Reps, producers, financiers, development executives — reaching out to you directly to develop work together."
+          body="When there's a fit, partners reach out to you directly to advance discussions further — reps, producers, financiers, and development executives."
           mockup={<MatchingMockup />}
           align="left"
         />
