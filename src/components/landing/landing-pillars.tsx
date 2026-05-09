@@ -15,16 +15,16 @@ export function LandingPillars() {
         />
         <Pillar
           eyebrow="The GEM Review"
-          title="A real person reviews your work."
-          body="The GEM team reviews your entire portfolio in detail and does an in-depth assessment to determine whether you're a fit for any of the opportunities in our partner network."
-          secondLine="Every portfolio review is done by a person on our team."
+          title="Real people review your work."
+          body="Our team does a holistic review of your portfolio — not just your scripts, but your voice, range, and long-term potential. We work with our partner network to identify the right opportunities for you."
+          secondLine="Every review is done by a person on our team."
           mockup={<PortfolioReviewMockup />}
           align="right"
         />
         <Pillar
           eyebrow="The match"
-          title="We connect you to the right people."
-          body="When there's a fit, we make the introduction. Reps, producers, financiers, development executives — people actively looking for material like yours."
+          title="Partners reach out directly."
+          body="When there's a fit, the introduction happens. Reps, producers, financiers, development executives — reaching out to you directly to develop work together."
           mockup={<MatchingMockup />}
           align="left"
         />

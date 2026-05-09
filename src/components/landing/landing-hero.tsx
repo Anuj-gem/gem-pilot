@@ -47,8 +47,7 @@ export function LandingHero() {
         </h1>
 
         <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[640px] mx-auto">
-          Upload your screenplay, get a detailed evaluation in under a
-          minute, and let our team connect you to the right partners.
+          Upload your screenplay and get a detailed evaluation in under a minute — then our team reviews your work to find matches across our network of producers, reps, and financiers.
         </p>
 
         {/* Primary CTA */}

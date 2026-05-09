@@ -29,7 +29,7 @@ const STAGES = [
     key: 'in_review',
     label: 'In review',
     color: '#7c3aed',
-    description: "The GEM team is reviewing your portfolio in detail to determine whether you're a fit for opportunities in our partner network.",
+    description: "Your portfolio is being reviewed by our team. Our partner network will be in touch if there's a good fit for you.",
   },
   {
     key: 'partner_match',
