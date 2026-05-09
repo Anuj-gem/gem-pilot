@@ -31,33 +31,45 @@ export type ConsiderationItem = {
 }
 
 type SortKey = 'date' | 'score' | 'review_num'
+type SortDir = 'asc' | 'desc'
 
 export function PartnerConsiderationList({ items }: { items: ConsiderationItem[] }) {
   const [pendingOpen, setPendingOpen] = useState(true)
   const [reviewedOpen, setReviewedOpen] = useState(false)
   const [sortBy, setSortBy] = useState<SortKey>('date')
+  const [sortDir, setSortDir] = useState<SortDir>('desc')
 
   const pending = useMemo(() => items.filter(c => c.reviewStage !== 'complete'), [items])
   const reviewed = useMemo(() => items.filter(c => c.reviewStage === 'complete'), [items])
 
+  function handleSortClick(key: SortKey) {
+    if (sortBy === key) {
+      setSortDir(d => d === 'desc' ? 'asc' : 'desc')
+    } else {
+      setSortBy(key)
+      setSortDir('desc')
+    }
+  }
+
   function sortItems(list: ConsiderationItem[]): ConsiderationItem[] {
     const sorted = [...list]
+    const dir = sortDir === 'desc' ? 1 : -1
     switch (sortBy) {
       case 'date':
-        sorted.sort((a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime())
+        sorted.sort((a, b) => dir * (new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()))
         break
       case 'score':
-        sorted.sort((a, b) => (b.avgScore ?? 0) - (a.avgScore ?? 0))
+        sorted.sort((a, b) => dir * ((b.avgScore ?? 0) - (a.avgScore ?? 0)))
         break
       case 'review_num':
-        sorted.sort((a, b) => b.reviewNumber - a.reviewNumber)
+        sorted.sort((a, b) => dir * (b.reviewNumber - a.reviewNumber))
         break
     }
     return sorted
   }
 
-  const sortedPending = useMemo(() => sortItems(pending), [pending, sortBy])
-  const sortedReviewed = useMemo(() => sortItems(reviewed), [reviewed, sortBy])
+  const sortedPending = useMemo(() => sortItems(pending), [pending, sortBy, sortDir])
+  const sortedReviewed = useMemo(() => sortItems(reviewed), [reviewed, sortBy, sortDir])
 
   const sortOptions: { key: SortKey; label: string }[] = [
     { key: 'date', label: 'Date' },
@@ -82,20 +94,28 @@ export function PartnerConsiderationList({ items }: { items: ConsiderationItem[]
         {/* Sort controls */}
         <div className="flex items-center gap-1.5 mt-3">
           <span className="text-[11px] text-gray-400 font-medium mr-1">Sort:</span>
-          {sortOptions.map(opt => (
-            <button
-              key={opt.key}
-              onClick={() => setSortBy(opt.key)}
-              className="text-[11px] font-semibold px-2 py-0.5 rounded-full border transition-colors"
-              style={{
-                background: sortBy === opt.key ? '#7c3aed15' : 'transparent',
-                borderColor: sortBy === opt.key ? '#7c3aed' : '#e5e7eb',
-                color: sortBy === opt.key ? '#7c3aed' : '#9ca3af',
-              }}
-            >
-              {opt.label}
-            </button>
-          ))}
+          {sortOptions.map(opt => {
+            const active = sortBy === opt.key
+            return (
+              <button
+                key={opt.key}
+                onClick={() => handleSortClick(opt.key)}
+                className="text-[11px] font-semibold px-2 py-0.5 rounded-full border transition-colors inline-flex items-center gap-0.5"
+                style={{
+                  background: active ? '#7c3aed15' : 'transparent',
+                  borderColor: active ? '#7c3aed' : '#e5e7eb',
+                  color: active ? '#7c3aed' : '#9ca3af',
+                }}
+              >
+                {opt.label}
+                {active && (
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none" className={`transition-transform ${sortDir === 'asc' ? 'rotate-180' : ''}`}>
+                    <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </button>
+            )
+          })}
         </div>
       </header>
 

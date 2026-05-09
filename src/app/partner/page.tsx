@@ -60,7 +60,7 @@ export default async function PartnerDashboardPage() {
       writerMap.set(p.id, {
         name: p.full_name || 'Unknown',
         handle: p.handle,
-        isPro: p.subscription_status === 'active' || p.subscription_status === 'trialing',
+        isPro: p.subscription_status === 'active',
       })
     }
   }
