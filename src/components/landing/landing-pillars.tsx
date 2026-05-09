@@ -16,7 +16,7 @@ export function LandingPillars() {
         <Pillar
           eyebrow="The GEM Review"
           title="A real person reviews your work."
-          body="This isn't a form letter. Our team reads your scripts, reviews your entire portfolio, and does an in-depth assessment — your voice, your range, what you're ready for. We identify specific partners and opportunities that match your work."
+          body="The GEM team reviews your entire portfolio in detail and does an in-depth assessment to determine whether you're a fit for any of the opportunities in our partner network."
           secondLine="Every portfolio review is done by a person on our team."
           mockup={<PortfolioReviewMockup />}
           align="right"
