@@ -5,6 +5,7 @@
 // Authenticated with active review: redirects to that review
 
 import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Nav from '@/components/nav'
@@ -37,6 +38,30 @@ export default async function StartPage() {
   }
 
   const service = svc()
+
+  // ── Claim anonymous uploads ──────────────────────────────────────────
+  // When a user uploads before signing up, the script_submissions row has
+  // user_id = null. The upload component stores those IDs in a cookie.
+  // Now that they're authenticated, claim those rows.
+  const cookieStore = await cookies()
+  const anonCookie = cookieStore.get('gem_anon_scripts')
+  if (anonCookie?.value) {
+    const anonIds = anonCookie.value.split(',').filter(Boolean)
+    if (anonIds.length > 0) {
+      // Claim: set user_id on rows that are still anonymous
+      await service
+        .from('script_submissions')
+        .update({ user_id: user.id })
+        .in('id', anonIds)
+        .is('user_id', null)
+
+      // Also move storage files from anonymous/ to user/ path
+      // (not critical — scoring already has the file_url, and the row
+      // is what matters for the draft. Storage path stays as-is.)
+    }
+    // Clear the cookie
+    cookieStore.set('gem_anon_scripts', '', { path: '/', maxAge: 0 })
+  }
 
   // Check for existing non-complete consideration
   const { data: existing } = await service
@@ -74,14 +99,16 @@ export default async function StartPage() {
     }
   }
 
-  const { data: completedScripts } = await service
+  // Include completed AND processing/queued scripts — a just-claimed anonymous
+  // upload may still be processing when the user signs up
+  const { data: eligibleScripts } = await service
     .from('script_submissions')
     .select('id')
     .eq('user_id', user.id)
-    .eq('status', 'completed')
+    .in('status', ['completed', 'processing', 'queued'])
     .is('hidden_at', null)
 
-  const unreviewedIds = (completedScripts || [])
+  const unreviewedIds = (eligibleScripts || [])
     .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
     .map((s: { id: string }) => s.id)
 

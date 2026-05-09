@@ -142,6 +142,19 @@ export function InlineScriptUpload({
         body: JSON.stringify({ submission_id: startData.submission_id }),
       }).catch(() => {})
 
+      // Store anonymous upload IDs in a cookie so the server can claim them
+      // after the user signs up. The /start server page reads this cookie,
+      // sets user_id on the matching rows, then clears it.
+      {
+        const existing = document.cookie
+          .split('; ')
+          .find(c => c.startsWith('gem_anon_scripts='))
+          ?.split('=')[1] || ''
+        const ids = existing ? existing.split(',') : []
+        ids.push(startData.submission_id)
+        document.cookie = `gem_anon_scripts=${ids.join(',')};path=/;max-age=3600;SameSite=Lax`
+      }
+
       // Dispatch event so all pages can show an instant processing card
       window.dispatchEvent(new CustomEvent('gem:script-uploaded', {
         detail: {
