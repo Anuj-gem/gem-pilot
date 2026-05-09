@@ -11,7 +11,6 @@ import {
   LogOut,
   Menu,
   X,
-  Plus,
   Sparkles,
 } from 'lucide-react'
 import {
@@ -28,18 +27,10 @@ export interface NavUserData {
   recentActivity?: NavUserMenuActivity[]
 }
 
-// LOGGED-OUT NAV:
-//   Desktop: [GEM]   [Opportunities]  [Blog]   [Submit a script]  [Sign up]  [Log in]
-//   Mobile:  [GEM]                          [Submit] [☰]
-//
-// LOGGED-IN NAV (consideration model v1):
-//   Desktop: [GEM]   [Opportunities] [Scripts] [Feedback]   [Request consideration]  [avatar]
-//   Mobile:  [GEM]                     [Request consideration] [☰]
-
-const PUBLIC_NAV_LINKS: { href: string; label: string }[] = [
-  { href: '/opportunities', label: 'Opportunities' },
-  { href: '/blog', label: 'Blog' },
-]
+// NAV (unified layout):
+//   Logged in:  [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [+ New]  [avatar]
+//   Logged out: [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [Sign up]
+//   Mobile:     [GEM]                              [CTA] [☰]
 
 interface NavProps {
   /** Server-provided profile data for the avatar dropdown. Optional —
@@ -65,9 +56,10 @@ export default function Nav({ userData }: NavProps = {}) {
     router.refresh()
   }
 
-  // Logged-in nav tabs — consideration model (2026-05-05).
-  const loggedInLinks = [
-    { href: '/dashboard', label: 'Home', icon: LayoutDashboard },
+  // Nav tabs — same structure for logged-in and logged-out.
+  // "Home" points to /dashboard (logged in) or / (logged out).
+  const navLinks = [
+    { href: user ? '/dashboard' : '/', label: 'Home', icon: LayoutDashboard },
     { href: '/scripts', label: 'Scripts', icon: FileText },
     { href: '/review', label: 'Reviews', icon: Sparkles },
     { href: '/opportunities', label: 'Open Calls', icon: Briefcase },
@@ -99,7 +91,7 @@ export default function Nav({ userData }: NavProps = {}) {
               {/* Desktop logged-in — flat nav links on the right */}
               <div className="hidden md:flex flex-1 items-center justify-end ml-6">
                 <div className="flex items-center gap-1">
-                  {loggedInLinks.map(link => {
+                  {navLinks.map(link => {
                     const Icon = link.icon
                     const active = pathname.startsWith(link.href)
                     return (
@@ -170,58 +162,61 @@ export default function Nav({ userData }: NavProps = {}) {
             </>
           ) : (
             <>
-              {/* Desktop logged-out — flat links + Submit + Sign up + Log in */}
-              <div className="hidden md:flex items-center gap-3">
-                {PUBLIC_NAV_LINKS.map(link => (
+              {/* Desktop logged-out — same links as logged-in + Sign up button */}
+              <div className="hidden md:flex flex-1 items-center justify-end ml-6">
+                <div className="flex items-center gap-1">
+                  {navLinks.map(link => {
+                    const Icon = link.icon
+                    const active = link.href === '/'
+                      ? pathname === '/'
+                      : pathname.startsWith(link.href)
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                          active
+                            ? 'text-[var(--gem-white)] font-semibold'
+                            : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                        }`}
+                      >
+                        <Icon size={16} />
+                        {link.label}
+                        {active && (
+                          <span
+                            aria-hidden
+                            className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full"
+                            style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }}
+                          />
+                        )}
+                      </Link>
+                    )
+                  })}
                   <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`text-sm transition-colors ${
-                      pathname.startsWith(link.href)
-                        ? 'text-[var(--gem-white)] font-semibold'
-                        : 'text-[var(--gem-gray-300)] hover:text-[var(--gem-white)]'
-                    }`}
+                    href="/start"
+                    className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110"
+                    style={{
+                      background: 'var(--gem-accent)',
+                      boxShadow: '0 4px 12px rgba(124,58,237,0.25)',
+                    }}
                   >
-                    {link.label}
+                    Sign up
                   </Link>
-                ))}
+                </div>
+              </div>
+
+              {/* Mobile logged-out — Sign up pill + hamburger */}
+              <div className="md:hidden flex items-center gap-2">
                 <Link
-                  href="/submit"
-                  className="text-sm px-4 py-1.5 rounded-lg bg-[var(--gem-accent)] text-white hover:bg-[var(--gem-accent-hover)] transition-colors font-semibold"
-                >
-                  Submit a script
-                </Link>
-                <Link
-                  href="/signup"
-                  className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
+                  href="/start"
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
+                  style={{
+                    background: 'var(--gem-accent)',
+                    boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
+                  }}
                 >
                   Sign up
                 </Link>
-                <span aria-hidden className="w-px h-4 bg-[var(--gem-gray-700)]" />
-                <Link
-                  href="/login"
-                  className="text-sm text-[var(--gem-gray-300)] hover:text-[var(--gem-white)] transition-colors"
-                >
-                  Log in
-                </Link>
-              </div>
-
-              {/* Mobile logged-out — Submit pill + hamburger. Learn more
-                  sub-items + Sign up + Log in live in the hamburger. */}
-              <div className="md:hidden flex items-center gap-2">
-                {!pathname.startsWith('/submit') && (
-                  <Link
-                    href="/submit"
-                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
-                    style={{
-                      background: 'var(--gem-accent)',
-                      boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
-                    }}
-                  >
-                    <Plus size={13} />
-                    Submit
-                  </Link>
-                )}
                 <button
                   className="p-1.5 text-[var(--gem-gray-300)]"
                   onClick={() => setMobileOpen(!mobileOpen)}
@@ -239,7 +234,7 @@ export default function Nav({ userData }: NavProps = {}) {
           <div className="md:hidden border-t border-[var(--gem-gray-700)] px-4 py-3 space-y-3">
             {user ? (
               <>
-                {loggedInLinks.map(link => (
+                {navLinks.map(link => (
                   <NavMenuRow
                     key={link.href}
                     href={link.href}
@@ -279,32 +274,24 @@ export default function Nav({ userData }: NavProps = {}) {
               </>
             ) : (
               <>
-                {/* Browse links */}
-                <div className="space-y-2">
-                  {PUBLIC_NAV_LINKS.map(link => (
-                    <NavMenuRow
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      label={link.label}
-                      active={pathname.startsWith(link.href)}
-                    />
-                  ))}
-                </div>
-
-                {/* Account actions — separated by a divider so they read
-                    as a different group from the marketing pages. */}
-                <div className="pt-2 border-t border-[var(--gem-gray-700)] space-y-2">
+                {/* Same nav links as logged-in */}
+                {navLinks.map(link => (
                   <NavMenuRow
-                    href="/signup"
+                    key={link.href}
+                    href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    label="Sign up"
-                    hint="Free first read"
+                    icon={<link.icon size={15} />}
+                    label={link.label}
+                    active={link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)}
                   />
+                ))}
+
+                <div className="pt-2 space-y-2">
                   <NavMenuRow
-                    href="/login"
+                    href="/blog"
                     onClick={() => setMobileOpen(false)}
-                    label="Log in"
+                    label="Blog"
+                    active={pathname.startsWith('/blog')}
                   />
                 </div>
               </>

@@ -1,7 +1,6 @@
 // /scripts — "My Scripts" — full list with sort, bulk hide, three-dot menu.
 // Consideration model v1 (2026-05-05).
 
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
@@ -22,7 +21,32 @@ function svc() {
 export default async function ScriptsPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login?redirect=/scripts')
+
+  if (!user) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <header className="flex items-end justify-between mb-5">
+          <div>
+            <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+              Scripts
+            </h1>
+            <p className="text-[13px] text-gray-400 mt-1 m-0">0 scripts evaluated</p>
+          </div>
+        </header>
+        <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
+          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
+          <p className="text-[13px] text-gray-400 m-0 mb-4">Upload a screenplay to get your first evaluation.</p>
+          <a
+            href="/start"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors"
+            style={{ background: 'var(--gem-accent)' }}
+          >
+            Get started
+          </a>
+        </div>
+      </div>
+    )
+  }
 
   const { data: profile } = await supabase
     .from('profiles')

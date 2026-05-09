@@ -2,7 +2,6 @@
 // Shows all reviews as cards linking to /review/c/[id].
 // No profile card. "Start new review" button if no active review.
 
-import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { ReviewList } from '@/components/review/review-list'
@@ -20,7 +19,30 @@ function svc() {
 export default async function ReviewListingPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login?redirect=/review')
+
+  if (!user) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <header className="mb-5">
+          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+            Reviews
+          </h1>
+          <p className="text-[13px] text-gray-400 mt-1 m-0">Your portfolio reviews will appear here.</p>
+        </header>
+        <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
+          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No reviews yet</p>
+          <p className="text-[13px] text-gray-400 m-0 mb-4">Upload scripts and request a portfolio review from the GEM team.</p>
+          <a
+            href="/start"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors"
+            style={{ background: 'var(--gem-accent)' }}
+          >
+            Get started
+          </a>
+        </div>
+      </div>
+    )
+  }
 
   const service = svc()
 

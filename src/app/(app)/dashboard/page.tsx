@@ -37,7 +37,7 @@ function svc() {
 export default async function DashboardPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login?redirect=/dashboard')
+  if (!user) redirect('/')
 
   const { data: profile } = await supabase
     .from('profiles')
