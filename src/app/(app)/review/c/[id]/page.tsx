@@ -85,15 +85,17 @@ export default async function ReviewDetailPage({ params }: PageProps) {
       }
     }
 
-    const { data: completedScripts } = await service
+    // Include completed AND processing/queued scripts so processing cards
+    // show up in the draft view (especially after anonymous upload → signup)
+    const { data: eligibleScripts } = await service
       .from('script_submissions')
       .select('id')
       .eq('user_id', user.id)
-      .eq('status', 'completed')
+      .in('status', ['completed', 'processing', 'queued'])
       .is('hidden_at', null)
       .order('created_at', { ascending: false })
 
-    scriptIds = (completedScripts || [])
+    scriptIds = (eligibleScripts || [])
       .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
       .map((s: { id: string }) => s.id)
   } else {
@@ -130,6 +132,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     createdAt: string
     matchingOpportunities: { title: string; slug: string }[]
     status: 'ready' | 'in-review'
+    isProcessing?: boolean
   }[] = []
 
   if (scriptIds.length > 0) {
@@ -161,16 +164,18 @@ export default async function ReviewDetailPage({ params }: PageProps) {
       const genre = ev?.evaluation?.classification?.genre_primary
         || ev?.evaluation?.format_detection?.genre_primary
         || null
+      const isStillProcessing = s.status === 'processing' || s.status === 'queued'
       return {
         id: s.id,
         title: s.title,
         format: s.declared_format,
         genre,
-        score: ev?.weighted_score ?? null,
-        evaluationId: ev?.id ?? null,
+        score: isStillProcessing ? null : (ev?.weighted_score ?? null),
+        evaluationId: isStillProcessing ? null : (ev?.id ?? null),
         createdAt: s.created_at,
-        matchingOpportunities: matchOpportunities(s.declared_format, genre),
+        matchingOpportunities: isStillProcessing ? [] : matchOpportunities(s.declared_format, genre),
         status: isDraft ? 'ready' as const : 'in-review' as const,
+        isProcessing: isStillProcessing,
       }
     })
   }

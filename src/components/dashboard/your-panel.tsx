@@ -89,15 +89,8 @@ export function YourPanel({ profile, stats, recentActivity = [] }: Props) {
           <Stat label="Reviews" value={stats.reviewsGiven} />
         </div>
 
-        {/* Profile control row — View public profile + Edit profile */}
+        {/* Profile control row */}
         <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-2">
-          <Link
-            href={profileHref}
-            prefetch={false}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 text-[12px] font-semibold rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-800 py-2 transition-colors"
-          >
-            View profile
-          </Link>
           <Link
             href="/profile"
             prefetch={false}

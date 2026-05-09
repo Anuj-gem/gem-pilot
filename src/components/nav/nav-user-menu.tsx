@@ -5,7 +5,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { LogOut, User, Settings } from 'lucide-react'
+import { LogOut, User } from 'lucide-react'
 
 export interface NavUserMenuProfile {
   full_name: string | null
@@ -47,7 +47,7 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
   const [open, setOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
   const ini = initialsOf(profile.full_name, profile.handle)
-  const profileHref = profile.handle ? `/w/${profile.handle}` : '/profile'
+  // profileHref removed — public profiles disabled
 
   useEffect(() => {
     if (!open) return
@@ -96,22 +96,13 @@ export function NavUserMenu({ profile, stats, recentActivity = [], onSignOut }: 
           }}
         >
           <Link
-            href={profileHref}
-            prefetch={false}
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-2.5 px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            <User size={14} className="text-gray-400" />
-            View profile
-          </Link>
-          <Link
             href="/profile"
             prefetch={false}
             onClick={() => setOpen(false)}
             className="flex items-center gap-2.5 px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
           >
-            <Settings size={14} className="text-gray-400" />
-            Settings
+            <User size={14} className="text-gray-400" />
+            Edit profile
           </Link>
           <div className="border-t border-gray-100 my-1" />
           <button

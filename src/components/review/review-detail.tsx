@@ -58,6 +58,7 @@ type Script = {
   createdAt: string
   matchingOpportunities?: { title: string; slug: string }[]
   status?: 'ready' | 'in-review' | 'reviewed'
+  isProcessing?: boolean
 }
 
 // Lock icon
@@ -102,7 +103,9 @@ export function ReviewDetail({
 
   // Optimistic processing cards from new uploads
   const optimistic = useNewUploads(scripts.map(s => s.id))
-  const hasProcessing = optimistic.length > 0
+  // Poll when ANY script is processing — either optimistic (new upload) or server-side
+  const serverProcessing = scripts.some(s => s.isProcessing)
+  const hasProcessing = optimistic.length > 0 || serverProcessing
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -415,8 +418,9 @@ export function ReviewDetail({
                   createdAt: s.createdAt,
                   matchingOpportunities: s.matchingOpportunities,
                   status: s.status,
+                  isProcessing: s.isProcessing,
                 }}
-                checkbox={isDraft}
+                checkbox={isDraft && !s.isProcessing}
                 checked={selectedIds.has(s.id)}
                 onToggle={toggleScript}
               />
