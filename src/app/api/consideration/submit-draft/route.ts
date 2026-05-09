@@ -54,28 +54,29 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Already submitted' }, { status: 409 })
   }
 
-  // If selected_script_ids provided, remove any scripts NOT in the selection
+  // Sync consideration_scripts to match the user's selection
   if (selected_script_ids && selected_script_ids.length > 0) {
-    // Get all currently attached scripts
-    const { data: attached } = await service
+    // Wipe and re-insert: the draft review page dynamically shows eligible
+    // scripts, so some may never have been in consideration_scripts
+    await service
       .from('consideration_scripts')
-      .select('script_submission_id')
+      .delete()
       .eq('consideration_id', targetId)
 
-    const toRemove = (attached || [])
-      .map((r: { script_submission_id: string }) => r.script_submission_id)
-      .filter(id => !selected_script_ids.includes(id))
-
-    if (toRemove.length > 0) {
-      await service
-        .from('consideration_scripts')
-        .delete()
-        .eq('consideration_id', targetId)
-        .in('script_submission_id', toRemove)
+    const scriptRows = selected_script_ids.map((id: string) => ({
+      consideration_id: targetId,
+      script_submission_id: id,
+      carried_forward: false,
+    }))
+    const { error: insertErr } = await service
+      .from('consideration_scripts')
+      .insert(scriptRows)
+    if (insertErr) {
+      return NextResponse.json({ error: insertErr.message }, { status: 500 })
     }
   }
 
-  // Make sure there's at least one script remaining
+  // Make sure there's at least one script
   const { count } = await service
     .from('consideration_scripts')
     .select('id', { count: 'exact', head: true })

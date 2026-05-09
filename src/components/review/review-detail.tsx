@@ -138,7 +138,10 @@ export function ReviewDetail({
 
   async function handleSubmitForReview() {
     if (submitting) return
-    const selected = [...selectedIds]
+    const selected = [...selectedIds].filter(id => {
+      const s = scripts.find(sc => sc.id === id)
+      return s && !s.isLocked
+    })
     if (selected.length === 0) return
     setSubmitting(true)
     try {
@@ -151,6 +154,7 @@ export function ReviewDetail({
         }),
       })
       if (res.ok) {
+        // Force full re-render so status change is visible immediately
         router.refresh()
       }
     } finally {
@@ -390,47 +394,88 @@ export function ReviewDetail({
           </div>
         )}
 
-        {reviewScripts.length === 0 && optimistic.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-            <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts eligible for review</p>
-            <p className="text-[13px] text-gray-400 m-0 mb-3">Upload and evaluate new scripts to include them in this review.</p>
-            {isDraft && (
-              <button
-                onClick={openUploadModal}
-                className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
-              >
-                Upload a script
-              </button>
-            )}
-          </div>
-        ) : (
-          <div className="space-y-2">
-            {isDraft && (
-              <p className="text-[12px] text-gray-400 m-0 mb-1">
-                Only scripts not previously included in a portfolio review are shown.
+        {(() => {
+          const eligibleScripts = reviewScripts.filter(s => !s.isLocked)
+          const ineligibleScripts = reviewScripts.filter(s => s.isLocked)
+
+          return eligibleScripts.length === 0 && optimistic.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+              <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts eligible for review</p>
+              <p className="text-[13px] text-gray-400 m-0 mb-3">Upload and evaluate new scripts to include them in this review.</p>
+              {isDraft && (
+                <button
+                  onClick={openUploadModal}
+                  className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
+                >
+                  Upload a script
+                </button>
+              )}
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {isDraft && (
+                <p className="text-[12px] text-gray-400 m-0 mb-1">
+                  Only scripts not previously included in a portfolio review are shown.
+                </p>
+              )}
+              {eligibleScripts.map(s => (
+                <ScriptRowCard
+                  key={s.id}
+                  script={{
+                    id: s.id,
+                    title: s.title,
+                    format: s.format,
+                    genre: s.genre,
+                    score: s.score,
+                    evaluationId: s.evaluationId,
+                    createdAt: s.createdAt,
+                    matchingOpportunities: s.matchingOpportunities,
+                    status: s.status,
+                    isProcessing: s.isProcessing,
+                  }}
+                  checkbox={isDraft && !s.isProcessing}
+                  checked={selectedIds.has(s.id)}
+                  onToggle={toggleScript}
+                />
+              ))}
+            </div>
+          )
+        })()}
+
+        {/* Ineligible scripts — locked behind paywall */}
+        {isDraft && reviewScripts.some(s => s.isLocked) && (
+          <div className="mt-4">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5">
+              <p className="text-[13px] font-semibold text-gray-500 m-0 mb-1">Ineligible for this review</p>
+              <p className="text-[12px] text-gray-400 m-0 mb-3">
+                Free accounts can include one script per portfolio review. Upgrade to Pro to include all your scripts.
               </p>
-            )}
-            {reviewScripts.map(s => (
-              <ScriptRowCard
-                key={s.id}
-                script={{
-                  id: s.id,
-                  title: s.title,
-                  format: s.format,
-                  genre: s.genre,
-                  score: s.score,
-                  evaluationId: s.evaluationId,
-                  createdAt: s.createdAt,
-                  matchingOpportunities: s.matchingOpportunities,
-                  status: s.status,
-                  isProcessing: s.isProcessing,
-                  isLocked: s.isLocked,
-                }}
-                checkbox={isDraft && !s.isProcessing && !s.isLocked}
-                checked={selectedIds.has(s.id)}
-                onToggle={toggleScript}
-              />
-            ))}
+              <div className="space-y-2 mb-3">
+                {reviewScripts.filter(s => s.isLocked).map(s => (
+                  <ScriptRowCard
+                    key={s.id}
+                    script={{
+                      id: s.id,
+                      title: s.title,
+                      format: s.format,
+                      genre: s.genre,
+                      score: s.score,
+                      evaluationId: s.evaluationId,
+                      createdAt: s.createdAt,
+                      matchingOpportunities: s.matchingOpportunities,
+                      status: s.status,
+                      isLocked: true,
+                    }}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
+                className="text-[12px] font-bold text-purple-600 hover:text-purple-800 transition-colors border-0 bg-transparent cursor-pointer p-0"
+              >
+                Upgrade to Pro →
+              </button>
+            </div>
           </div>
         )}
 
