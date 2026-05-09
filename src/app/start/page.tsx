@@ -9,6 +9,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Nav from '@/components/nav'
 import { StartPageClient } from '@/components/start/start-page-client'
+import { ScriptUploadModal } from '@/components/script-upload-modal'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,12 +25,13 @@ export default async function StartPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Not logged in — show the full onboarding page
+  // Not logged in — show the product in empty state (light theme)
   if (!user) {
     return (
-      <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
+      <div className="min-h-screen bg-gray-50">
         <Nav />
         <StartPageClient user={null} profile={null} scripts={[]} hasActiveDraft={null} />
+        <ScriptUploadModal />
       </div>
     )
   }
@@ -139,7 +141,7 @@ export default async function StartPage() {
   const draftId = existing?.[0]?.id ?? null
 
   return (
-    <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
+    <div className="min-h-screen bg-gray-50">
       <Nav />
       <StartPageClient
         user={{ id: user.id, email: user.email || '' }}
@@ -154,6 +156,7 @@ export default async function StartPage() {
         scripts={[...processing, ...scriptsWithScores]}
         hasActiveDraft={draftId}
       />
+      <ScriptUploadModal />
     </div>
   )
 }

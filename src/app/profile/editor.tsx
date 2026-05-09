@@ -24,7 +24,6 @@ interface Props { initial: ProfileShape; returnTo?: string | null }
 export function ProfileEditor({ initial, returnTo }: Props) {
   const router = useRouter()
   const [fullName, setFullName] = useState(initial.full_name ?? '')
-  const [handle, setHandle] = useState(initial.handle ?? '')
   const [headline, setHeadline] = useState(initial.headline ?? '')
   const [bio, setBio] = useState(initial.bio ?? '')
   const [imdbUrl, setImdbUrl] = useState(initial.imdb_url ?? '')
@@ -66,7 +65,6 @@ export function ProfileEditor({ initial, returnTo }: Props) {
     startTransition(async () => {
       const res = await updateProfile({
         full_name: fullName,
-        handle,
         headline,
         bio,
         imdb_url: imdbUrl,
@@ -131,19 +129,6 @@ export function ProfileEditor({ initial, returnTo }: Props) {
           maxLength={80}
           required
           className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-[15px] text-gray-900 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
-        />
-      </Field>
-
-      <Field label="Handle" required hint={`gem.studio/w/${(handle || 'your-handle').toLowerCase()}`}>
-        <input
-          type="text"
-          value={handle}
-          onChange={(e) => setHandle(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ''))}
-          maxLength={32}
-          minLength={3}
-          required
-          placeholder="your-handle"
-          className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-[15px] text-gray-900 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 font-mono"
         />
       </Field>
 

@@ -197,9 +197,6 @@ export function ReviewDetail({
             <p className="text-[14px] font-bold text-gray-900 m-0 truncate">
               {profile.fullName || 'Your name'}
             </p>
-            {profile.handle && (
-              <p className="text-[12px] text-gray-400 m-0 mt-0.5">@{profile.handle}</p>
-            )}
           </div>
         </div>
         <div className="space-y-1 mb-3">
