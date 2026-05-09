@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { sendEmail } from '@/lib/email'
 
 function svc() {
   return createServerClient(
@@ -97,6 +98,28 @@ export async function POST(req: NextRequest) {
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
+  }
+
+  // Send submission confirmation email
+  try {
+    const { data: profile } = await service
+      .from('profiles')
+      .select('full_name, email')
+      .eq('id', user.id)
+      .single()
+
+    if (profile?.email) {
+      const firstName = profile.full_name?.split(' ')[0] || 'there'
+      await sendEmail({
+        templateAlias: 'consideration_submitted',
+        to: profile.email,
+        variables: { first_name: firstName },
+        dedupeKey: `consideration_submitted_${targetId}`,
+        tag: 'consideration_submitted',
+      }, service)
+    }
+  } catch (emailErr) {
+    console.error('[submit-draft] Email send failed:', emailErr)
   }
 
   return NextResponse.json({ ok: true, consideration_id: targetId })

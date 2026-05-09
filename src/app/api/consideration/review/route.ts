@@ -66,6 +66,41 @@ export async function POST(req: NextRequest) {
       new_stage: review_stage,
       created_by: user.id,
     })
+
+    // Send review complete email when stage moves to complete
+    if (review_stage === 'complete') {
+      try {
+        const { data: con } = await service
+          .from('considerations')
+          .select('writer_id')
+          .eq('id', consideration_id)
+          .single()
+
+        if (con) {
+          const { data: writerProfile } = await service
+            .from('profiles')
+            .select('full_name, email')
+            .eq('id', con.writer_id)
+            .single()
+
+          if (writerProfile?.email) {
+            const firstName = writerProfile.full_name?.split(' ')[0] || 'there'
+            await sendEmail({
+              templateAlias: 'consideration_complete',
+              to: writerProfile.email,
+              variables: {
+                first_name: firstName,
+                feedback_url: 'https://www.gem.studio/dashboard',
+              },
+              dedupeKey: `consideration_complete_${consideration_id}`,
+              tag: 'consideration_complete',
+            }, service)
+          }
+        }
+      } catch (emailErr) {
+        console.error('[consideration/review] Complete email failed:', emailErr)
+      }
+    }
   }
 
   // --- Next steps (set independently, typically on complete) ---
@@ -99,38 +134,7 @@ export async function POST(req: NextRequest) {
       created_by: user.id,
     })
 
-    // Send feedback notification email
-    try {
-      const { data: consideration } = await service
-        .from('considerations')
-        .select('writer_id')
-        .eq('id', consideration_id)
-        .single()
-
-      if (consideration) {
-        const { data: profile } = await service
-          .from('profiles')
-          .select('full_name, email')
-          .eq('id', consideration.writer_id)
-          .single()
-
-        if (profile?.email) {
-          const firstName = profile.full_name?.split(' ')[0] || 'there'
-          await sendEmail({
-            templateAlias: 'consideration_feedback',
-            to: profile.email,
-            variables: {
-              first_name: firstName,
-              feedback_url: 'https://www.gem.studio/dashboard',
-            },
-            dedupeKey: `consideration_feedback_${consideration_id}_${Date.now()}`,
-            tag: 'consideration_feedback',
-          }, service)
-        }
-      }
-    } catch (emailErr) {
-      console.error('[consideration/review] Email send failed:', emailErr)
-    }
+    // Email is now triggered by stage→complete, not by feedback save
   }
 
   // --- Standalone message (no feedback, just a note) ---

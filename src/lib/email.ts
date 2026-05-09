@@ -37,8 +37,10 @@ export type TemplateAlias =
   // Broadcast — fires when a new opportunity is added to GEM.
   // Triggered by /api/cron/opportunity-broadcast.
   | 'new_opportunity_broadcast'
-  // Consideration feedback — sent when a consideration is reviewed.
-  | 'consideration_feedback'
+  // Consideration lifecycle — submission, review complete, resubmission nudge.
+  | 'consideration_submitted'
+  | 'consideration_complete'
+  | 'consideration_nudge'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias
