@@ -1,12 +1,12 @@
-// Landing page — v10 (2026-05-08).
+// Landing page — v11 (2026-05-08).
 //
-// Portfolio-first framing. Three steps: build profile → get scored → get matched.
-// Five pillars: GEM Score, human review, matching, profile, opportunities.
+// Evaluation-first framing. Three steps: instant eval → GEM Review → get matched.
+// Three pillars: evaluation (Selznick), human review, matching.
 //
 // Page architecture:
 //   1. Hero — "Get your work in front of the right people."
-//   2. Arc — Build profile → Get GEM Score → Get matched (3 steps)
-//   3. Five pillars — score, human review, matching, profile, opportunities
+//   2. Arc — Instant evaluation → GEM Review → Get matched (3 steps)
+//   3. Three pillars — evaluation, GEM Review, matching
 //   4. Pricing — Free vs Pro $20/mo
 //   5. Final CTA
 

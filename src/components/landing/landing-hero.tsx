@@ -1,7 +1,7 @@
 // Landing hero — client component.
 //
-// v10 — "Get your work in front of the right people."
-// Portfolio-first framing. Primary CTA → /submit. Drop zone secondary.
+// v11 — "Get your work in front of the right people."
+// Evaluation + human review + matching framing. Primary CTA → /start.
 'use client'
 
 import { useRouter } from 'next/navigation'
@@ -47,8 +47,8 @@ export function LandingHero() {
         </h1>
 
         <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[640px] mx-auto">
-          Build your profile, upload your scripts, and let GEM do the
-          rest — from scoring to partner matching.
+          Upload your screenplay, get a detailed evaluation in under a
+          minute, and let our team connect you to the right partners.
         </p>
 
         {/* Primary CTA */}

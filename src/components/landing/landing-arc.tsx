@@ -1,25 +1,25 @@
 // LandingArc — three-step story.
-// Build your profile → Get your GEM Score → Get matched.
+// Evaluate → GEM Review → Get matched.
 //
-// v10 — simplified from 4 steps to 3.
+// v11 — reframed around eval tech + human review + matching.
 
-import { User, Sparkles, Handshake } from 'lucide-react'
+import { Zap, Eye, Handshake } from 'lucide-react'
 
 const STEPS = [
   {
-    icon: User,
-    title: "Build your profile",
-    sub: "Upload your scripts, add your bio and credits. Your whole portfolio in one place.",
+    icon: Zap,
+    title: "Instant evaluation",
+    sub: "Upload your script and get a detailed evaluation in under a minute. Powered by Selznick — the most advanced screenplay analysis ever built.",
   },
   {
-    icon: Sparkles,
-    title: "Get your GEM Score",
-    sub: "Every script gets a detailed score and report — strengths, weaknesses, where you stand.",
+    icon: Eye,
+    title: "The GEM Review",
+    sub: "Our team does an in-depth review of your entire portfolio. A real person reads your work, assesses your range, and identifies specific matches.",
   },
   {
     icon: Handshake,
     title: "Get matched",
-    sub: "Our team reviews strong portfolios and connects you to the right partners.",
+    sub: "We connect work that fits what our partners are looking for — reps, producers, financiers, and development executives.",
   },
 ]
 
