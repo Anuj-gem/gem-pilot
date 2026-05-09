@@ -185,7 +185,7 @@ function PortfolioReviewMockup() {
 
       {/* Progress bar */}
       <div className="flex items-center gap-0.5 mb-4">
-        {['Submitted', 'Initial review', 'Advanced review', 'Partner match'].map((label, i) => (
+        {['Submitted', 'In review', 'Partner match'].map((label, i) => (
           <div key={label} className="flex-1 flex flex-col items-center gap-1.5">
             <div
               className="w-full h-[3px] rounded-full"

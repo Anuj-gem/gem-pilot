@@ -184,16 +184,14 @@ export default async function DashboardPage() {
   const STAGE_LABELS: Record<string, string> = {
     draft: 'Draft',
     pending: 'Pending',
-    initial_review: 'Initial review',
-    advanced_review: 'Advanced review',
+    in_review: 'In review',
     partner_match: 'Partner match',
     complete: 'Complete',
   }
   const STAGE_COLORS: Record<string, string> = {
     draft: '#6b7280',
     pending: '#d97706',
-    initial_review: '#7c3aed',
-    advanced_review: '#2563eb',
+    in_review: '#7c3aed',
     partner_match: '#059669',
     complete: '#16a34a',
   }
@@ -325,8 +323,8 @@ export default async function DashboardPage() {
                         {/* Progress bar for in-progress reviews */}
                         {review.review_stage !== 'complete' && (
                           <div className="flex items-center gap-1 mt-2.5">
-                            {['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].map((s, i) => {
-                              const stageIdx = ['draft', 'pending', 'initial_review', 'advanced_review', 'partner_match'].indexOf(review.review_stage)
+                            {['draft', 'pending', 'in_review', 'partner_match'].map((s, i) => {
+                              const stageIdx = ['draft', 'pending', 'in_review', 'partner_match'].indexOf(review.review_stage)
                               return (
                                 <div
                                   key={s}

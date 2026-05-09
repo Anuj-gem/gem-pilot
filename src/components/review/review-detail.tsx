@@ -26,16 +26,10 @@ const STAGES = [
     description: 'Your portfolio has been submitted. Our team will begin reviewing shortly.',
   },
   {
-    key: 'initial_review',
-    label: 'Initial review',
+    key: 'in_review',
+    label: 'In review',
     color: '#7c3aed',
-    description: "The GEM team is doing a detailed review of your portfolio to match it against opportunities in our network.",
-  },
-  {
-    key: 'advanced_review',
-    label: 'Advanced review',
-    color: '#2563eb',
-    description: "Your work stood out. We're reviewing alongside our partners to find the right fit.",
+    description: "The GEM team is reviewing your portfolio in detail to determine whether you're a fit for opportunities in our partner network.",
   },
   {
     key: 'partner_match',
@@ -133,7 +127,7 @@ export function ReviewDetail({
   const currentStage = STAGES.find(s => s.key === review.reviewStage) || STAGES[0]
   const currentStageIdx = STAGES.findIndex(s => s.key === review.reviewStage)
 
-  const isLocked = ['initial_review', 'advanced_review', 'partner_match', 'complete'].includes(review.reviewStage)
+  const isLocked = ['in_review', 'partner_match', 'complete'].includes(review.reviewStage)
   const isDraft = review.reviewStage === 'draft'
   const isPending = review.reviewStage === 'pending'
   const isComplete = review.reviewStage === 'complete'

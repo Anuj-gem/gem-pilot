@@ -10,8 +10,7 @@ import Link from 'next/link'
 // Draft is writer-only (not yet submitted).
 const STAGES = [
   { value: 'pending', label: 'Pending', color: '#d97706' },
-  { value: 'initial_review', label: 'Initial review', color: '#7c3aed' },
-  { value: 'advanced_review', label: 'Advanced review', color: '#2563eb' },
+  { value: 'in_review', label: 'In review', color: '#7c3aed' },
   { value: 'partner_match', label: 'Partner match', color: '#059669' },
   { value: 'complete', label: 'Complete', color: '#16a34a' },
 ] as const

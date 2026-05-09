@@ -20,8 +20,7 @@ type ReviewSummary = {
 const STAGE_COLORS: Record<string, { bg: string; text: string; label: string }> = {
   draft: { bg: '#6b728015', text: '#6b7280', label: 'Draft' },
   pending: { bg: '#d9770615', text: '#d97706', label: 'Pending' },
-  initial_review: { bg: '#7c3aed15', text: '#7c3aed', label: 'Initial review' },
-  advanced_review: { bg: '#2563eb15', text: '#2563eb', label: 'Advanced review' },
+  in_review: { bg: '#7c3aed15', text: '#7c3aed', label: 'In review' },
   partner_match: { bg: '#05966915', text: '#059669', label: 'Partner match' },
   complete: { bg: '#16a34a15', text: '#16a34a', label: 'Complete' },
 }
