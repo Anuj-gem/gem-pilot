@@ -103,6 +103,7 @@ export function ReviewDetail({
 }) {
   const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set(scripts.filter(s => !s.isLocked).map(s => s.id)))
   const [submitting, setSubmitting] = useState(false)
+  const [editing, setEditing] = useState(false)
   const router = useRouter()
 
   // Optimistic processing cards from new uploads
@@ -122,7 +123,9 @@ export function ReviewDetail({
 
   const isLocked = ['initial_review', 'advanced_review', 'partner_match', 'complete'].includes(review.reviewStage)
   const isDraft = review.reviewStage === 'draft'
+  const isPending = review.reviewStage === 'pending'
   const isComplete = review.reviewStage === 'complete'
+  const canEdit = isDraft || (isPending && editing)
 
   const profileComplete = !!(profile.fullName && profile.bio)
   const reviewScripts = scripts
@@ -155,6 +158,32 @@ export function ReviewDetail({
       })
       if (res.ok) {
         // Force full re-render so status change is visible immediately
+        router.refresh()
+      }
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  async function handleSaveEdit() {
+    if (submitting) return
+    const selected = [...selectedIds].filter(id => {
+      const s = scripts.find(sc => sc.id === id)
+      return s && !s.isLocked
+    })
+    if (selected.length === 0) return
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/consideration/update', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          script_ids: selected,
+          carried_ids: [],
+        }),
+      })
+      if (res.ok) {
+        setEditing(false)
         router.refresh()
       }
     } finally {
@@ -372,7 +401,7 @@ export function ReviewDetail({
             <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
             {isLocked && <LockIcon className="text-gray-300" />}
           </div>
-          {!isLocked && (
+          {isDraft && (
             <button
               onClick={openUploadModal}
               className="flex items-center gap-1 text-[12px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg transition-colors"
@@ -381,6 +410,14 @@ export function ReviewDetail({
                 <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
               Upload script
+            </button>
+          )}
+          {isPending && !editing && (
+            <button
+              onClick={() => setEditing(true)}
+              className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors border-0 bg-transparent cursor-pointer p-0"
+            >
+              Edit
             </button>
           )}
         </header>
@@ -396,13 +433,12 @@ export function ReviewDetail({
 
         {(() => {
           const eligibleScripts = reviewScripts.filter(s => !s.isLocked)
-          const ineligibleScripts = reviewScripts.filter(s => s.isLocked)
 
           return eligibleScripts.length === 0 && optimistic.length === 0 ? (
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
               <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts eligible for review</p>
               <p className="text-[13px] text-gray-400 m-0 mb-3">Upload and evaluate new scripts to include them in this review.</p>
-              {isDraft && (
+              {canEdit && (
                 <button
                   onClick={openUploadModal}
                   className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
@@ -413,7 +449,7 @@ export function ReviewDetail({
             </div>
           ) : (
             <div className="space-y-2">
-              {isDraft && (
+              {canEdit && (
                 <p className="text-[12px] text-gray-400 m-0 mb-1">
                   Only scripts not previously included in a portfolio review are shown.
                 </p>
@@ -433,7 +469,7 @@ export function ReviewDetail({
                     status: s.status,
                     isProcessing: s.isProcessing,
                   }}
-                  checkbox={isDraft && !s.isProcessing}
+                  checkbox={canEdit && !s.isProcessing}
                   checked={selectedIds.has(s.id)}
                   onToggle={toggleScript}
                 />
@@ -443,7 +479,7 @@ export function ReviewDetail({
         })()}
 
         {/* Ineligible scripts — locked behind paywall */}
-        {isDraft && reviewScripts.some(s => s.isLocked) && (
+        {canEdit && reviewScripts.some(s => s.isLocked) && (
           <div className="mt-4">
             <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5">
               <p className="text-[13px] font-semibold text-gray-500 m-0 mb-1">Ineligible for this review</p>
@@ -498,6 +534,31 @@ export function ReviewDetail({
                 className="flex items-center justify-center gap-1 px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
               >
                 + Add new script
+              </button>
+            </div>
+          )
+        })()}
+
+        {/* Edit mode actions (pending review) */}
+        {isPending && editing && (() => {
+          const selectedCount = reviewScripts.filter(s => selectedIds.has(s.id) && !s.isLocked).length
+          return (
+            <div className="flex items-center gap-3 mt-3">
+              <button
+                onClick={handleSaveEdit}
+                disabled={submitting || selectedCount === 0}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-purple-600 text-white text-[13px] font-bold hover:bg-purple-700 transition-colors disabled:opacity-50"
+              >
+                {submitting ? 'Saving…' : `Save changes (${selectedCount} ${selectedCount === 1 ? 'script' : 'scripts'})`}
+              </button>
+              <button
+                onClick={() => {
+                  setEditing(false)
+                  setSelectedIds(new Set(scripts.filter(s => !s.isLocked).map(s => s.id)))
+                }}
+                className="flex items-center justify-center px-4 py-2.5 rounded-lg border border-gray-200 text-[13px] font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                Cancel
               </button>
             </div>
           )
