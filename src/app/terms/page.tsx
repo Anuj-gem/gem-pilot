@@ -36,6 +36,12 @@ export default function TermsPage() {
 
         <H2>2. Your account</H2>
         <P>
+          Each person may only create and maintain one GEM account. Don&apos;t
+          create multiple accounts to access additional free evaluations or to
+          circumvent any limits. We may suspend or terminate duplicate accounts
+          without notice.
+        </P>
+        <P>
           You&apos;re responsible for keeping your login credentials secure and
           for everything that happens on your account. Don&apos;t share your
           account. Tell us right away if you think your account is compromised.
