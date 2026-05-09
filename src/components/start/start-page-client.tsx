@@ -68,8 +68,18 @@ export function StartPageClient({ user, profile, scripts, hasActiveDraft }: Star
 function UnauthenticatedView() {
   const [showSignup, setShowSignup] = useState(false)
 
+  // Track anonymous uploads so processing cards appear instantly
+  const optimistic = useNewUploads([])
+  const hasUploads = optimistic.length > 0
+
+  function openUploadModal() {
+    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+  }
+
   return (
     <main className="max-w-2xl mx-auto px-6 py-10">
+      <ProcessingPoller active={hasUploads} />
+
       {/* Page title */}
       <div className="mb-4">
         <h1
@@ -93,7 +103,7 @@ function UnauthenticatedView() {
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-[14px] font-bold text-gray-400 m-0">Your name</p>
-            <p className="text-[12px] text-gray-300 m-0 mt-0.5 italic">[no bio]</p>
+            <p className="text-[12px] text-gray-300 m-0 mt-0.5 italic">Add your bio</p>
           </div>
         </div>
         <button
@@ -140,14 +150,12 @@ function UnauthenticatedView() {
         </div>
       </div>
 
-      {/* Scripts — empty state */}
+      {/* Scripts section */}
       <section className="mb-4">
         <header className="flex items-center justify-between mb-2.5">
           <h2 className="text-[15px] font-bold text-gray-900 m-0">Scripts in this review</h2>
           <button
-            onClick={() => {
-              window.dispatchEvent(new Event('gem:open-script-upload-modal'))
-            }}
+            onClick={openUploadModal}
             className="flex items-center gap-1 text-[12px] font-semibold text-purple-600 bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg transition-colors border-0 cursor-pointer"
           >
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -156,18 +164,28 @@ function UnauthenticatedView() {
             Upload script
           </button>
         </header>
-        <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-          <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-400 m-0 mb-3">Upload your screenplay to include it in your portfolio review.</p>
-          <button
-            onClick={() => {
-              window.dispatchEvent(new Event('gem:open-script-upload-modal'))
-            }}
-            className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
-          >
-            Upload a script
-          </button>
-        </div>
+
+        {/* Optimistic processing cards from anonymous uploads */}
+        {optimistic.length > 0 && (
+          <div className="space-y-2 mb-2">
+            {optimistic.map(s => (
+              <ScriptRowCard key={s.id} script={s} />
+            ))}
+          </div>
+        )}
+
+        {optimistic.length === 0 && (
+          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
+            <p className="text-[14px] font-semibold text-gray-600 m-0 mb-1">No scripts yet</p>
+            <p className="text-[13px] text-gray-400 m-0 mb-3">Upload your screenplay to include it in your portfolio review.</p>
+            <button
+              onClick={openUploadModal}
+              className="text-[13px] font-bold text-white px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 border-0 cursor-pointer transition-colors"
+            >
+              Upload a script
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Disabled submit */}

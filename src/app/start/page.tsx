@@ -46,28 +46,17 @@ export default async function StartPage() {
     .neq('review_stage', 'complete')
     .limit(1)
 
-  // If they have an active (non-draft) review, go straight there
-  if (existing && existing.length > 0 && existing[0].review_stage !== 'draft') {
+  // If they have ANY active consideration (draft or in-progress), go straight there
+  if (existing && existing.length > 0) {
     redirect(`/review/c/${existing[0].id}`)
   }
 
-  // Get profile
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('full_name, handle, bio, avatar_url, headline, phone')
-    .eq('id', user.id)
-    .single()
+  // Authenticated user with no active review — auto-create a draft and redirect
+  // This handles the post-signup flow: user lands on /start, we create their
+  // draft consideration with any unreviewed scripts, then send them to the real
+  // review page immediately.
 
-  // Get completed scripts
-  const { data: completedScripts } = await service
-    .from('script_submissions')
-    .select('id, title, status, declared_format, created_at')
-    .eq('user_id', user.id)
-    .eq('status', 'completed')
-    .is('hidden_at', null)
-    .order('created_at', { ascending: false })
-
-  // Get scripts already in any consideration
+  // Find all scripts NOT in any consideration
   const { data: allCons } = await service
     .from('considerations')
     .select('id')
@@ -85,78 +74,43 @@ export default async function StartPage() {
     }
   }
 
-  // Filter to unreviewed scripts
-  const unreviewedScripts = (completedScripts || [])
-    .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
-    .map((s: any) => ({
-      id: s.id,
-      title: s.title,
-      format: s.declared_format,
-      createdAt: s.created_at,
-    }))
+  const { data: completedScripts } = await service
+    .from('script_submissions')
+    .select('id')
+    .eq('user_id', user.id)
+    .eq('status', 'completed')
+    .is('hidden_at', null)
 
-  // Evaluations for scores
-  const scriptIds = unreviewedScripts.map((s: { id: string }) => s.id)
-  let evalMap = new Map<string, { id: string; score: number | null; genre: string | null }>()
-  if (scriptIds.length > 0) {
-    const { data: evals } = await service
-      .from('script_evaluations')
-      .select('id, submission_id, weighted_score, evaluation')
-      .in('submission_id', scriptIds)
-    for (const e of (evals || []) as any[]) {
-      const evJson = e.evaluation as Record<string, unknown> | null
-      const cls = (evJson?.classification as Record<string, unknown>) || {}
-      const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
-      evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score, genre })
+  const unreviewedIds = (completedScripts || [])
+    .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
+    .map((s: { id: string }) => s.id)
+
+  // Create a new draft consideration
+  const { data: newDraft } = await service
+    .from('considerations')
+    .insert({
+      writer_id: user.id,
+      status: 'pending',
+      review_stage: 'draft',
+      submitted_at: new Date().toISOString(),
+    })
+    .select('id')
+    .single()
+
+  if (newDraft) {
+    // Attach unreviewed scripts if any
+    if (unreviewedIds.length > 0) {
+      await service
+        .from('consideration_scripts')
+        .insert(unreviewedIds.map(id => ({
+          consideration_id: newDraft.id,
+          script_submission_id: id,
+          carried_forward: false,
+        })))
     }
+    redirect(`/review/c/${newDraft.id}`)
   }
 
-  const scriptsWithScores = unreviewedScripts.map((s: any) => {
-    const ev = evalMap.get(s.id)
-    return {
-      ...s,
-      score: ev?.score ?? null,
-      evaluationId: ev?.id ?? null,
-      genre: ev?.genre ?? null,
-    }
-  })
-
-  // Processing scripts
-  const { data: processingScripts } = await service
-    .from('script_submissions')
-    .select('id, title, declared_format, created_at')
-    .eq('user_id', user.id)
-    .in('status', ['processing', 'queued'])
-    .order('created_at', { ascending: false })
-
-  const processing = (processingScripts || []).map((s: any) => ({
-    id: s.id,
-    title: s.title,
-    format: s.declared_format,
-    createdAt: s.created_at,
-    isProcessing: true,
-  }))
-
-  const draftId = existing?.[0]?.id ?? null
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Nav />
-      <StartPageClient
-        user={{ id: user.id, email: user.email || '' }}
-        profile={profile ? {
-          fullName: profile.full_name,
-          handle: profile.handle,
-          bio: profile.bio,
-          avatarUrl: profile.avatar_url,
-          headline: profile.headline,
-          phone: profile.phone,
-        } : null}
-        scripts={[...processing, ...scriptsWithScores]}
-        hasActiveDraft={draftId}
-      />
-      <ScriptUploadModal />
-    </div>
-  )
+  // Fallback — shouldn't happen, but redirect home if draft creation fails
+  redirect('/')
 }

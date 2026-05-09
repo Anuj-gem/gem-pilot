@@ -205,7 +205,7 @@ export function ReviewDetail({
             {profile.bio ? (
               <span className="text-[12px] text-gray-600 truncate">{profile.bio.slice(0, 80)}{profile.bio.length > 80 ? '…' : ''}</span>
             ) : (
-              <span className="text-[12px] text-gray-300 italic">[no bio]</span>
+              <Link href="/profile" className="text-[12px] text-purple-500 hover:text-purple-700 no-underline">Add your bio</Link>
             )}
           </div>
         </div>
