@@ -1,13 +1,15 @@
 <!-- SUBJECT -->
-Big updates to GEM this week
+A simpler, more focused experience around portfolio reviews
 
 <!-- HTML -->
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 24px; color: #1C1917; line-height: 1.6;">
   <p style="font-size: 16px; margin: 0 0 16px; color: #1C1917;">Hey {{first_name}},</p>
 
-  <p style="font-size: 16px; margin: 0 0 16px; color: #1C1917;">We've added portfolio reviews by our partner network to GEM — thank you for your patience as we've been building this out. We also made a bunch of app updates to focus the experience around it.</p>
+  <p style="font-size: 16px; margin: 0 0 16px; color: #1C1917;">This week we launched portfolio reviews by our partner network — we really appreciate your patience as we've been building this out.</p>
 
-  <p style="font-size: 16px; margin: 0 0 24px; color: #1C1917;">Here's what's new.</p>
+  <p style="font-size: 16px; margin: 0 0 16px; color: #1C1917;">When you log back in, you'll find a slightly different but much more focused and simple experience built around the portfolio reviews. Your core experience isn't changing much — we've just improved clarity in the review process and made the app better overall.</p>
+
+  <p style="font-size: 16px; margin: 0 0 24px; color: #1C1917;">Some highlights below.</p>
 
   <!-- ── Visual: How it works now ─────────────────────── -->
   <div style="background: #FAFAF9; border: 1px solid #E7E5E4; border-radius: 12px; padding: 20px; margin: 0 0 28px;">
@@ -142,6 +144,8 @@ Big updates to GEM this week
     <a href="https://www.gem.studio/dashboard" style="display: inline-block; padding: 14px 32px; border-radius: 10px; background: #7C3AED; color: #fff; font-weight: 700; text-decoration: none; font-size: 16px;">Open your dashboard →</a>
   </p>
 
+  <p style="font-size: 15px; margin: 0 0 16px; color: #1C1917;">If you've already submitted for a portfolio review — we have reviews in progress and you should expect yours early next week.</p>
+
   <p style="font-size: 15px; color: #57534E; margin: 0 0 8px;">Thanks for being part of this. More coming soon.</p>
 
   <hr style="border: 0; border-top: 1px solid #E7E5E4; margin: 20px 0 14px;" />
@@ -149,13 +153,15 @@ Big updates to GEM this week
 </div>
 
 <!-- TEXT -->
-Big updates to GEM this week
+A simpler, more focused experience around portfolio reviews
 
 Hey {{first_name}},
 
-We've added portfolio reviews by our partner network to GEM — thank you for your patience as we've been building this out. We also made a bunch of app updates to focus the experience around it.
+This week we launched portfolio reviews by our partner network — we really appreciate your patience as we've been building this out.
 
-Here's what's new.
+When you log back in, you'll find a slightly different but much more focused and simple experience built around the portfolio reviews. Your core experience isn't changing much — we've just improved clarity in the review process and made the app better overall.
+
+Some highlights below.
 
 HOW IT WORKS NOW
 1. Upload — drop in your screenplay
@@ -180,6 +186,8 @@ If you've got a bunch of scripts piling up, it's now easier to clean things up. 
 Go check it out — we think you'll notice the difference right away.
 
 Open your dashboard: https://www.gem.studio/dashboard
+
+If you've already submitted for a portfolio review — we have reviews in progress and you should expect yours early next week.
 
 Thanks for being part of this. More coming soon.
 

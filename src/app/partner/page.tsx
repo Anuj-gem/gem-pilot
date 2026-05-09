@@ -41,6 +41,7 @@ export default async function PartnerDashboardPage() {
   const { data: allConsiderations } = await service
     .from('considerations')
     .select('id, writer_id, status, review_stage, submitted_at, reviewed_at, feedback, outcome, next_steps')
+    .neq('review_stage', 'draft')
     .order('submitted_at', { ascending: true })
 
   const considerations = (allConsiderations || []) as {
