@@ -37,6 +37,7 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const supabase = createClient()
   const [fullName, setFullName] = useState('')
   const [handle, setHandle] = useState('')
+  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState(prefilledEmail)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -92,15 +93,19 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
         full_name: fullName,
       })
 
-      // Save handle to profile if provided
+      // Save handle + phone to profile
+      const updates: Record<string, string> = {}
       if (handle.trim()) {
-        const slug = handle.trim().toLowerCase().replace(/[^a-z0-9_-]/g, '')
-        if (slug) {
-          await supabase
-            .from('profiles')
-            .update({ handle: slug })
-            .eq('id', data.user.id)
-        }
+        updates.handle = handle.trim().toLowerCase().replace(/[^a-z0-9_-]/g, '')
+      }
+      if (phone.trim()) {
+        updates.phone = phone.trim()
+      }
+      if (Object.keys(updates).length > 0) {
+        await supabase
+          .from('profiles')
+          .update(updates)
+          .eq('id', data.user.id)
       }
     }
 
@@ -206,6 +211,17 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
                 />
               </div>
               <p className="text-[10px] text-[var(--gem-gray-500)] mt-0.5">This is your public profile URL</p>
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Phone</label>
+              <input
+                type="tel"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                required
+                placeholder="(555) 555-5555"
+              />
+              <p className="text-[10px] text-[var(--gem-gray-500)] mt-0.5">So our team can reach you if your work stands out</p>
             </div>
             <div>
               <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Email</label>

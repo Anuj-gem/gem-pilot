@@ -4,38 +4,18 @@
 // Portfolio-first framing. Primary CTA → /submit. Drop zone secondary.
 'use client'
 
-import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ArrowRight, Upload } from 'lucide-react'
-import { setPendingFile } from '@/lib/pending-file'
-import { trackEvent, trackHeroUpload } from '@/lib/posthog'
+import { ArrowRight } from 'lucide-react'
+import { trackEvent } from '@/lib/posthog'
 
 export function LandingHero() {
   const router = useRouter()
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [error, setError] = useState<string | null>(null)
-  const [dragOver, setDragOver] = useState(false)
-
-  function acceptFile(file: File) {
-    setError(null)
-    if (file.type !== 'application/pdf') {
-      setError('Please upload a PDF — Final Draft, WriterSolo, or Highland all export to it.')
-      return
-    }
-    if (file.size > 10 * 1024 * 1024) {
-      setError('That file is over 10MB. Try re-exporting from your screenwriting app.')
-      return
-    }
-    setPendingFile(file)
-    try { trackHeroUpload() } catch {}
-    router.push('/submit?from=hero')
-  }
 
   function handleJoinClick() {
     try {
-      trackEvent('cta_clicked', { location: 'hero', label: 'Upload your script' })
+      trackEvent('cta_clicked', { location: 'hero', label: 'Get started' })
     } catch {}
-    router.push('/submit')
+    router.push('/start')
   }
 
   return (
@@ -83,89 +63,12 @@ export function LandingHero() {
               boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
             }}
           >
-            Upload your script <ArrowRight size={16} />
+            Get started <ArrowRight size={16} />
           </button>
         </div>
-        <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mb-8">
-          Not ready yet?{' '}
-          <a
-            href="/submit"
-            className="underline hover:text-[var(--gem-gray-300)] transition-colors"
-          >
-            Create your account
-          </a>{' '}
-          and browse open opportunities.
+        <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
+          Free to start. No credit card required.
         </p>
-
-        {/* Secondary path — drop zone */}
-        <div className="max-w-[460px] mx-auto">
-          <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] mb-3">
-            Or drop your script here
-          </p>
-          <label
-            onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
-            onDragLeave={() => setDragOver(false)}
-            onDrop={(e) => {
-              e.preventDefault()
-              setDragOver(false)
-              const f = e.dataTransfer.files?.[0]
-              if (f) acceptFile(f)
-            }}
-            className="flex items-center gap-3 p-3.5 rounded-xl cursor-pointer transition-all duration-150"
-            style={{
-              border: dragOver
-                ? '2px dashed var(--gem-accent)'
-                : '1px dashed var(--gem-gray-600)',
-              background: dragOver
-                ? 'rgba(124,58,237,0.04)'
-                : 'transparent',
-            }}
-          >
-            <input
-              ref={inputRef}
-              type="file"
-              accept="application/pdf"
-              className="sr-only"
-              onChange={(e) => {
-                const f = e.target.files?.[0]
-                if (f) acceptFile(f)
-              }}
-            />
-            <div
-              className="w-9 h-9 rounded-full grid place-items-center flex-shrink-0"
-              style={{
-                background: 'rgba(124,58,237,0.10)',
-                color: 'var(--gem-accent)',
-              }}
-            >
-              <Upload size={16} />
-            </div>
-            <div className="flex-1 min-w-0 text-left">
-              <p className="text-[13.5px] font-semibold text-[var(--gem-gray-100)] m-0 leading-tight">
-                Drop a PDF to start with your evaluation.
-              </p>
-              <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-0.5">
-                or{' '}
-                <span style={{ color: 'var(--gem-accent)', textDecoration: 'underline' }}>
-                  choose a file
-                </span>
-              </p>
-            </div>
-          </label>
-
-          {error && (
-            <div
-              className="mt-3 rounded-lg px-3.5 py-2.5 text-[13px] text-left"
-              style={{
-                background: 'rgba(220,38,38,0.06)',
-                border: '1px solid rgba(220,38,38,0.25)',
-                color: '#b91c1c',
-              }}
-            >
-              {error}
-            </div>
-          )}
-        </div>
       </div>
     </section>
   )

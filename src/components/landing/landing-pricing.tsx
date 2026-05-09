@@ -39,7 +39,7 @@ export function LandingPricing() {
               'Browse opportunities',
             ]}
             cta="Get started free"
-            href="/submit"
+            href="/start"
             primary={false}
           />
           <PriceCard
@@ -54,7 +54,7 @@ export function LandingPricing() {
               'Partner matching',
             ]}
             cta="Start free trial"
-            href="/submit"
+            href="/start"
             primary={true}
           />
         </div>
