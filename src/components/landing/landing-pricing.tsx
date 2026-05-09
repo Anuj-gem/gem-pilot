@@ -1,5 +1,5 @@
 // LandingPricing — two-column Free vs Pro card.
-// v10 — updated features to match portfolio + matching flow.
+// v11 — aligned with evaluation → review → matching pillars.
 
 import { ArrowRight, Check } from 'lucide-react'
 import Link from 'next/link'
@@ -22,7 +22,7 @@ export function LandingPricing() {
             Simple pricing.
           </h2>
           <p className="text-[15px] text-[var(--gem-gray-300)] m-0">
-            Your first score is free. No credit card required.
+            Your first evaluation is free. No credit card required.
           </p>
         </div>
 
@@ -31,12 +31,12 @@ export function LandingPricing() {
             tier="Free"
             price="$0"
             period="forever"
-            blurb="See what your script is worth."
+            blurb="Get a full evaluation on your first script."
             features={[
-              '1 script scored',
+              '1 script evaluated',
               'Full detailed report',
-              'Public profile',
-              'Browse opportunities',
+              'Comparable projects',
+              'Development notes',
             ]}
             cta="Get started free"
             href="/start"
@@ -46,12 +46,12 @@ export function LandingPricing() {
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="Unlimited scripts, portfolio review, and partner matching."
+            blurb="Unlimited evaluations, a GEM Review, and partner matching."
             features={[
-              'Unlimited scripts scored',
-              'GEM team portfolio review',
-              'Submit to opportunities',
-              'Partner matching',
+              'Unlimited scripts evaluated',
+              'GEM Review by our team',
+              'Matched to partners',
+              'Priority consideration',
             ]}
             cta="Start free trial"
             href="/start"
