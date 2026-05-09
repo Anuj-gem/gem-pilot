@@ -12,6 +12,7 @@ import {
   Menu,
   X,
   Sparkles,
+  BookOpen,
 } from 'lucide-react'
 import {
   NavUserMenu,
@@ -63,6 +64,7 @@ export default function Nav({ userData }: NavProps = {}) {
     { href: '/scripts', label: 'Scripts', icon: FileText },
     { href: '/review', label: 'Reviews', icon: Sparkles },
     { href: '/opportunities', label: 'Open Calls', icon: Briefcase },
+    { href: '/blog', label: 'Blog', icon: BookOpen },
   ]
 
   return (
@@ -202,6 +204,12 @@ export default function Nav({ userData }: NavProps = {}) {
                   >
                     Sign up
                   </Link>
+                  <Link
+                    href="/login"
+                    className="ml-1 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                  >
+                    Log in
+                  </Link>
                 </div>
               </div>
 
@@ -245,16 +253,6 @@ export default function Nav({ userData }: NavProps = {}) {
                   />
                 ))}
 
-                {/* Blog */}
-                <div className="pt-2 space-y-2">
-                  <NavMenuRow
-                    href="/blog"
-                    onClick={() => setMobileOpen(false)}
-                    label="Blog"
-                    active={pathname.startsWith('/blog')}
-                  />
-                </div>
-
                 <button
                   onClick={() => { setMobileOpen(false); handleSignOut() }}
                   className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
@@ -286,12 +284,11 @@ export default function Nav({ userData }: NavProps = {}) {
                   />
                 ))}
 
-                <div className="pt-2 space-y-2">
+                <div className="pt-2 border-t border-[var(--gem-gray-700)] space-y-2">
                   <NavMenuRow
-                    href="/blog"
+                    href="/login"
                     onClick={() => setMobileOpen(false)}
-                    label="Blog"
-                    active={pathname.startsWith('/blog')}
+                    label="Log in"
                   />
                 </div>
               </>

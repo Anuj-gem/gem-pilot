@@ -140,7 +140,7 @@ export default async function OpportunitiesPage() {
             </p>
           </div>
           <Link
-            href="/submit"
+            href="/start"
             className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
             style={{ background: '#7c3aed' }}
           >
