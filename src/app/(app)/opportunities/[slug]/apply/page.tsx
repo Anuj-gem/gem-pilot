@@ -1,5 +1,6 @@
 // /opportunities/[slug]/apply — apply to an opportunity.
-// Writer selects qualifying scripts + optional pitch, then submits.
+// Writer selects ONE qualifying script + optional pitch, then submits.
+// One script per application — keeps feedback specific and pointed.
 
 'use client'
 
@@ -36,7 +37,7 @@ export default function ApplyPage() {
 
   const [opportunity, setOpportunity] = useState<Opportunity | null>(null)
   const [scripts, setScripts] = useState<Script[]>([])
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set(preselectedScript ? [preselectedScript] : []))
+  const [selectedId, setSelectedId] = useState<string | null>(preselectedScript)
   const [pitch, setPitch] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
@@ -80,9 +81,7 @@ export default function ApplyPage() {
           return { id: s.id, title: s.title, score, format, genre }
         })
         .filter((s: Script) => {
-          // Check score threshold
           if (opp.min_score && (!s.score || s.score < opp.min_score)) return false
-          // Check format/genre match
           const noFormatFilter = !opp.formats || opp.formats.length === 0
           const noGenreFilter = !opp.genres || opp.genres.length === 0
           if (noFormatFilter && noGenreFilter) return true
@@ -97,17 +96,8 @@ export default function ApplyPage() {
     load()
   }, [slug, router, preselectedScript])
 
-  function toggleScript(id: string) {
-    setSelectedIds(prev => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      return next
-    })
-  }
-
   async function handleSubmit() {
-    if (selectedIds.size === 0) { setError('Select at least one script'); return }
+    if (!selectedId) { setError('Select a script'); return }
     setSubmitting(true)
     setError('')
 
@@ -116,7 +106,7 @@ export default function ApplyPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         opportunity_id: opportunity!.id,
-        script_ids: Array.from(selectedIds),
+        script_ids: [selectedId],
         writer_pitch: pitch.trim() || undefined,
       }),
     })
@@ -165,9 +155,10 @@ export default function ApplyPage() {
         </div>
       </div>
 
-      {/* Script selection */}
+      {/* Script selection — single select */}
       <div>
-        <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-2">Select your script{scripts.length > 1 ? 's' : ''}</h2>
+        <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1">Select your script</h2>
+        <p className="text-[12px] text-gray-400 m-0 mb-2.5">One script per application. You can apply again with a different script after receiving feedback.</p>
         {scripts.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
             <p className="text-[13px] text-gray-500 m-0">None of your scripts currently qualify for this opportunity.</p>
@@ -179,21 +170,19 @@ export default function ApplyPage() {
               <button
                 key={s.id}
                 type="button"
-                onClick={() => toggleScript(s.id)}
+                onClick={() => setSelectedId(s.id)}
                 className={`w-full text-left rounded-xl border px-4 py-3 transition-colors ${
-                  selectedIds.has(s.id)
+                  selectedId === s.id
                     ? 'border-purple-400 bg-purple-50/50'
                     : 'border-gray-200 bg-white hover:border-gray-300'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 ${
-                    selectedIds.has(s.id) ? 'border-purple-600 bg-purple-600' : 'border-gray-300'
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                    selectedId === s.id ? 'border-purple-600' : 'border-gray-300'
                   }`}>
-                    {selectedIds.has(s.id) && (
-                      <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                        <path d="M2.5 6.5L5 9L9.5 3.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                    {selectedId === s.id && (
+                      <div className="w-2 h-2 rounded-full bg-purple-600" />
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -242,7 +231,7 @@ export default function ApplyPage() {
       <div className="flex items-center gap-3">
         <button
           onClick={handleSubmit}
-          disabled={submitting || selectedIds.size === 0}
+          disabled={submitting || !selectedId}
           className="inline-flex items-center text-[14px] font-semibold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-5 py-2.5 rounded-xl transition-colors"
         >
           {submitting ? 'Submitting...' : 'Submit application'}
