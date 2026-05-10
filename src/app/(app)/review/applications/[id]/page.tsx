@@ -23,14 +23,9 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/')
 
-  // Admin check
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('email')
-    .eq('id', user.id)
-    .single()
-  const isAdmin = profile?.email === 'anujkommareddy@gmail.com' || profile?.email === 'anuj@gem.studio'
-  if (!isAdmin) redirect('/dashboard')
+  // Admin check — use auth email directly (profiles.email may be null)
+  const ADMIN_EMAILS = ['anuj@gem.studio', 'anujkommareddy@gmail.com', 'anuj+producer@gem.studio']
+  if (!ADMIN_EMAILS.includes(user.email || '')) redirect('/dashboard')
 
   const service = svc()
 

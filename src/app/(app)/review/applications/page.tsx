@@ -17,9 +17,10 @@ function svc() {
   )
 }
 
-// Only Anuj can see this page
-const ADMIN_IDS = [
-  '1032108e-48a0-4727-b4e1-681be498eaborned', // placeholder — will be replaced
+const ADMIN_EMAILS = [
+  'anuj@gem.studio',
+  'anujkommareddy@gmail.com',
+  'anuj+producer@gem.studio',
 ]
 
 export default async function ApplicationsReviewPage() {
@@ -27,17 +28,9 @@ export default async function ApplicationsReviewPage() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/')
 
+  if (!ADMIN_EMAILS.includes(user.email || '')) redirect('/dashboard')
+
   const service = svc()
-
-  // Check if user is admin (Anuj) — check by email for simplicity
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('email')
-    .eq('id', user.id)
-    .single()
-
-  const isAdmin = profile?.email === 'anujkommareddy@gmail.com' || profile?.email === 'anuj@gem.studio'
-  if (!isAdmin) redirect('/dashboard')
 
   // Load all opportunity applications (considerations with opportunity_id)
   const { data: rawApps } = await service
