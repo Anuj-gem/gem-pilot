@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter, useParams, useSearchParams } from 'next/navigation'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
 
 type Script = {
@@ -42,10 +42,9 @@ export default function ApplyPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
 
-  const supabase = createClientComponentClient()
-
   useEffect(() => {
     async function load() {
+      const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) { router.push('/'); return }
 
@@ -96,7 +95,7 @@ export default function ApplyPage() {
       setLoading(false)
     }
     load()
-  }, [slug, supabase, router, preselectedScript])
+  }, [slug, router, preselectedScript])
 
   function toggleScript(id: string) {
     setSelectedIds(prev => {
