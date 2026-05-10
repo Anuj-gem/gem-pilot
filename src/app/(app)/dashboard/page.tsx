@@ -378,7 +378,7 @@ export default async function DashboardPage() {
                   genre={script.genre}
                   evaluationId={script.evaluationId}
                   createdAt={script.createdAt}
-                  qualifyingOpps={script.qualifyingOpps}
+                  qualifyingOpps={[]}
                 />
               ))}
               {completedScripts.length > 5 && (
