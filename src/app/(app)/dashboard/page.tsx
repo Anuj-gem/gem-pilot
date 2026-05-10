@@ -1,13 +1,16 @@
-// /dashboard — writer dashboard (v6, opportunity-centric).
+// /dashboard — writer dashboard (v7, opportunity-centric).
 //
 // Layout:
 //   +----------------------------------------------+
-//   |  PROFILE HEADER  +  New script button        |
+//   |  PROFILE HEADER                              |
 //   +----------------------------------------------+
 //   |  APPLICATIONS (the heartbeat)                |
 //   |  — or empty-state nudge toward opportunities |
 //   +----------------------------------------------+
-//   |  YOUR SCRIPTS (compact, no scores)           |
+//   |  AVAILABLE OPPORTUNITIES                     |
+//   |  — opps you qualify for but haven't applied  |
+//   +----------------------------------------------+
+//   |  YOUR RECENT SCRIPTS (interactive cards)     |
 //   +----------------------------------------------+
 
 import { redirect } from 'next/navigation'
@@ -15,6 +18,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
+import { DashboardScriptCard } from '@/components/dashboard/dashboard-script-card'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -114,7 +118,10 @@ export default async function DashboardPage() {
     })
   }
 
-  // Build script cards with matching opps
+  // IDs of opportunities the user has already applied to
+  const appliedOppIds = new Set(allApplications.map(a => a.opportunity_id))
+
+  // Build script cards with matching opps (full objects for dropdown)
   const completedScripts = visible
     .filter(s => s.status === 'completed')
     .map(s => {
@@ -126,14 +133,32 @@ export default async function DashboardPage() {
         format: ev?.format || s.declared_format,
         genre: ev?.genre || null,
         evaluationId: ev?.id ?? null,
-        qualifyingOppCount: qualifyingOpps.length,
+        createdAt: s.created_at,
+        qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug })),
       }
     })
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
 
   // Total qualifying opps across all scripts (for empty-state nudge)
-  const totalQualifying = completedScripts.reduce((sum, s) => sum + s.qualifyingOppCount, 0)
+  const totalQualifying = completedScripts.reduce((sum, s) => sum + s.qualifyingOpps.length, 0)
+
+  // Available opportunities: opps the user qualifies for but hasn't applied to yet
+  const availableOpps = allOpenOpps.filter(o => {
+    if (appliedOppIds.has(o.id)) return false
+    // Check if any completed script qualifies
+    return completedScripts.some(s => {
+      const ev = myEvalBySub.get(s.id)
+      const score = ev?.weighted_score || null
+      if (o.min_score && (!score || score < o.min_score)) return false
+      const noFmt = !o.formats || o.formats.length === 0
+      const noGenre = !o.genres || o.genres.length === 0
+      if (noFmt && noGenre) return true
+      const fmtMatch = noFmt || (s.format && o.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
+      const genreMatch = noGenre || (s.genre && o.genres!.some(g => s.genre!.toLowerCase().includes(g.toLowerCase())))
+      return fmtMatch || genreMatch
+    })
+  })
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -192,8 +217,9 @@ export default async function DashboardPage() {
           <header className="flex items-end justify-between gap-3 mb-2.5">
             <h2 className="text-[15px] font-bold text-gray-900 m-0">Your applications</h2>
             {allApplications.length > 0 && (
-              <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                View all
+              <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
+                All
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             )}
           </header>
@@ -281,13 +307,52 @@ export default async function DashboardPage() {
           )}
         </section>
 
-        {/* ── YOUR SCRIPTS ───────────────────────────────── */}
+        {/* ── AVAILABLE OPPORTUNITIES ───────────────────── */}
+        {availableOpps.length > 0 && (
+          <section>
+            <header className="flex items-end justify-between gap-3 mb-2.5">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Available opportunities</h2>
+              <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
+                All
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </Link>
+            </header>
+            <div className="space-y-2">
+              {availableOpps.slice(0, 3).map(opp => (
+                <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block">
+                  <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp.title}</p>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {opp.formats && opp.formats.length > 0 && (
+                            <span className="text-[12px] text-gray-400">{opp.formats.join(', ')}</span>
+                          )}
+                          {opp.genres && opp.genres.length > 0 && (
+                            <span className="text-[12px] text-gray-400">· {opp.genres.join(', ')}</span>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-[12px] text-purple-600 font-semibold shrink-0 flex items-center gap-0.5">
+                        Apply
+                        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── YOUR RECENT SCRIPTS ──────────────────────── */}
         <section>
           <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your scripts</h2>
-            {completedScripts.length > 0 && (
-              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-                View all
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your recent scripts</h2>
+            {completedScripts.length > 5 && (
+              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
+                All
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             )}
           </header>
@@ -305,31 +370,20 @@ export default async function DashboardPage() {
                 </div>
               )}
               {completedScripts.slice(0, 5).map(script => (
-                <div key={script.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:border-purple-200 transition-colors">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <Link href={`/report/${script.evaluationId}`} className="text-[14px] font-semibold text-gray-900 truncate hover:text-purple-700 block">
-                        {script.title}
-                      </Link>
-                      <div className="flex items-center gap-2 mt-0.5">
-                        {script.format && <span className="text-[12px] text-gray-400">{script.format}</span>}
-                        {script.genre && <span className="text-[12px] text-gray-400">· {script.genre}</span>}
-                      </div>
-                    </div>
-                    {script.qualifyingOppCount > 0 && (
-                      <Link
-                        href="/opportunities"
-                        className="text-[12px] text-purple-600 font-semibold whitespace-nowrap shrink-0 hover:text-purple-700"
-                      >
-                        {script.qualifyingOppCount} open {script.qualifyingOppCount === 1 ? 'call' : 'calls'}
-                      </Link>
-                    )}
-                  </div>
-                </div>
+                <DashboardScriptCard
+                  key={script.id}
+                  scriptId={script.id}
+                  title={script.title}
+                  format={script.format}
+                  genre={script.genre}
+                  evaluationId={script.evaluationId}
+                  createdAt={script.createdAt}
+                  qualifyingOpps={script.qualifyingOpps}
+                />
               ))}
               {completedScripts.length > 5 && (
                 <Link href="/scripts" className="block text-center text-[12px] text-gray-400 hover:text-purple-600 font-semibold py-2">
-                  View all {completedScripts.length} scripts →
+                  All {completedScripts.length} scripts →
                 </Link>
               )}
             </div>
