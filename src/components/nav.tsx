@@ -62,7 +62,7 @@ export default function Nav({ userData }: NavProps = {}) {
   const navLinks = [
     { href: user ? '/dashboard' : '/', label: 'Home', icon: LayoutDashboard },
     { href: '/scripts', label: 'Scripts', icon: FileText },
-    { href: '/review', label: 'Reviews', icon: Sparkles },
+    { href: '/review', label: 'Applications', icon: Sparkles },
     { href: '/opportunities', label: 'Open Calls', icon: Briefcase },
     { href: '/blog', label: 'Blog', icon: BookOpen },
   ]
