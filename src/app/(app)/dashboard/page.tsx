@@ -319,7 +319,7 @@ export default async function DashboardPage() {
             </header>
             <div className="space-y-2">
               {availableOpps.slice(0, 3).map(opp => (
-                <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block">
+                <Link key={opp.id} href={`/opportunities/${opp.slug}/apply`} className="block">
                   <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
                     <div className="flex items-center justify-between gap-3">
                       <div className="min-w-0 flex-1">
