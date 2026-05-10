@@ -22,12 +22,14 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, feedback, next_steps, review_stage, message } = body as {
+  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags } = body as {
     consideration_id: string
     feedback?: string
     next_steps?: string | null
     review_stage?: string
     message?: string
+    feedback_tags?: string[]
+    next_steps_tags?: string[]
   }
 
   if (!consideration_id) {
@@ -111,6 +113,17 @@ export async function POST(req: NextRequest) {
       .eq('id', consideration_id)
   }
 
+  // --- Tags (can be set independently of feedback text) ---
+  if (feedback_tags || next_steps_tags) {
+    const tagUpdate: Record<string, unknown> = {}
+    if (feedback_tags) tagUpdate.feedback_tags = feedback_tags
+    if (next_steps_tags) tagUpdate.next_steps_tags = next_steps_tags
+    await service
+      .from('considerations')
+      .update(tagUpdate)
+      .eq('id', consideration_id)
+  }
+
   // --- Feedback (does NOT change status — status is controlled by stage selector) ---
   if (feedback?.trim()) {
     // Append latest feedback to the consideration record
@@ -120,6 +133,8 @@ export async function POST(req: NextRequest) {
     if (next_steps !== undefined) {
       updateFields.next_steps = next_steps?.trim() || null
     }
+    if (feedback_tags) updateFields.feedback_tags = feedback_tags
+    if (next_steps_tags) updateFields.next_steps_tags = next_steps_tags
     const { error } = await service
       .from('considerations')
       .update(updateFields)

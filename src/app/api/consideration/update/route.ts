@@ -19,9 +19,23 @@ export async function PATCH(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { script_ids, carried_ids } = body as {
-    script_ids: string[]
-    carried_ids: string[]
+  const { script_ids, carried_ids, consideration_id, writer_response } = body as {
+    script_ids?: string[]
+    carried_ids?: string[]
+    consideration_id?: string
+    writer_response?: string
+  }
+
+  // --- Writer response update (simple path) ---
+  if (writer_response !== undefined && consideration_id) {
+    const service = svc()
+    const { error } = await service
+      .from('considerations')
+      .update({ writer_response: writer_response.trim() })
+      .eq('id', consideration_id)
+      .eq('writer_id', user.id)
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ ok: true })
   }
 
   if (!script_ids || script_ids.length === 0) {
