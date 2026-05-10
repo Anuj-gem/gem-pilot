@@ -13,7 +13,8 @@ export function NewActionMenu() {
   return (
     <button
       onClick={openUploadModal}
-      className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm bg-white text-gray-900 hover:bg-gray-100 transition-colors font-semibold"
+      className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm text-white hover:brightness-110 transition-all font-semibold"
+      style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
     >
       <Plus size={14} />
       New script

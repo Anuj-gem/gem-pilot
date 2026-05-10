@@ -1,23 +1,20 @@
-// /dashboard — writer dashboard (v5, opportunity-centric).
-// Anuj 2026-05-10.
+// /dashboard — writer dashboard (v6, opportunity-centric).
 //
 // Layout:
-//   +--------------------------------------+
-//   |  PROFILE HEADER                      |
-//   +--------------------------------------+
-//   |  YOUR SCRIPTS (with scores + opps)   |
-//   +--------------------------------------+
-//   |  YOUR APPLICATIONS (per opportunity) |
-//   +--------------------------------------+
-//   |  OPEN OPPORTUNITIES (apply grid)     |
-//   +--------------------------------------+
+//   +----------------------------------------------+
+//   |  PROFILE HEADER  +  New script button        |
+//   +----------------------------------------------+
+//   |  APPLICATIONS (the heartbeat)                |
+//   |  — or empty-state nudge toward opportunities |
+//   +----------------------------------------------+
+//   |  YOUR SCRIPTS (compact, no scores)           |
+//   +----------------------------------------------+
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
-import { DashboardActions } from '@/components/dashboard/dashboard-actions'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -79,11 +76,11 @@ export default async function DashboardPage() {
   // ---------- OPEN OPPORTUNITIES ----------
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, description, formats, genres, min_score, deal_type')
+    .select('id, title, slug, formats, genres, min_score')
     .eq('status', 'active')
   const allOpenOpps = (openOpps || []) as {
-    id: string; title: string; slug: string; description: string
-    formats: string[] | null; genres: string[] | null; min_score: number | null; deal_type: string | null
+    id: string; title: string; slug: string
+    formats: string[] | null; genres: string[] | null; min_score: number | null
   }[]
 
   // ---------- APPLICATIONS (considerations with opportunity_id) ----------
@@ -101,15 +98,13 @@ export default async function DashboardPage() {
     opportunity_id: string; writer_pitch: string | null; writer_response: string | null
   }[]
 
-  // Map opportunity IDs to titles
-  const oppTitleMap = new Map(allOpenOpps.map(o => [o.id, o.title]))
+  // Map opportunity IDs to info
+  const oppMap = new Map(allOpenOpps.map(o => [o.id, o]))
 
   // ---------- MATCHING LOGIC ----------
   function getQualifyingOpps(format: string | null, genre: string | null, score: number | null) {
     return allOpenOpps.filter(o => {
-      // Score check
       if (o.min_score && (!score || score < o.min_score)) return false
-      // Format/genre check — if both empty, matches anything (like wildcard)
       const noFormatFilter = !o.formats || o.formats.length === 0
       const noGenreFilter = !o.genres || o.genres.length === 0
       if (noFormatFilter && noGenreFilter) return true
@@ -130,22 +125,18 @@ export default async function DashboardPage() {
         title: s.title,
         format: ev?.format || s.declared_format,
         genre: ev?.genre || null,
-        score: ev?.weighted_score ?? null,
         evaluationId: ev?.id ?? null,
-        createdAt: s.created_at,
-        qualifyingOpps,
+        qualifyingOppCount: qualifyingOpps.length,
       }
     })
 
   const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
 
+  // Total qualifying opps across all scripts (for empty-state nudge)
+  const totalQualifying = completedScripts.reduce((sum, s) => sum + s.qualifyingOppCount, 0)
+
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-
-  const fmtScore = (score: number | null) => {
-    if (!score) return null
-    return Math.round(score)
-  }
 
   return (
     <>
@@ -156,7 +147,7 @@ export default async function DashboardPage() {
 
       <div className="max-w-2xl mx-auto space-y-6">
 
-        {/* ── PROFILE HEADER ─────────────────────────────── */}
+        {/* ── PROFILE HEADER + NEW SCRIPT ──────────────── */}
         <div className="flex items-center gap-3">
           {profile?.avatar_url ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -196,97 +187,62 @@ export default async function DashboardPage() {
           </Link>
         </div>
 
-        {/* ── ACTIONS ─────────────────────────────────── */}
-        <DashboardActions />
-
-        {/* ── YOUR SCRIPTS ───────────────────────────────── */}
+        {/* ── APPLICATIONS (the heartbeat) ─────────────── */}
         <section>
           <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your scripts</h2>
-            <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-              View all
-            </Link>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your applications</h2>
+            {allApplications.length > 0 && (
+              <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                View all
+              </Link>
+            )}
           </header>
 
-          {completedScripts.length === 0 && !isProcessing ? (
-            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
-              <p className="text-[13px] text-gray-500 m-0">Upload a script to get your free report and see which opportunities you qualify for.</p>
+          {allApplications.length === 0 ? (
+            /* Empty state — nudge toward opportunities */
+            <div className="rounded-xl border border-gray-200 bg-white px-5 py-6 text-center">
+              {totalQualifying > 0 ? (
+                <>
+                  <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">
+                    You qualify for {allOpenOpps.length} open {allOpenOpps.length === 1 ? 'call' : 'calls'}
+                  </p>
+                  <p className="text-[13px] text-gray-400 m-0 mb-4">
+                    Pick an opportunity and apply with one of your scripts.
+                  </p>
+                  <Link
+                    href="/opportunities"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors hover:brightness-110"
+                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                  >
+                    Browse opportunities
+                  </Link>
+                </>
+              ) : completedScripts.length > 0 ? (
+                <>
+                  <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
+                  <p className="text-[13px] text-gray-400 m-0 mb-4">
+                    Check open calls to see what you qualify for.
+                  </p>
+                  <Link
+                    href="/opportunities"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition-colors"
+                  >
+                    View open calls
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">Get started</p>
+                  <p className="text-[13px] text-gray-400 m-0">
+                    Upload a script to get your report — then apply to open calls.
+                  </p>
+                </>
+              )}
             </div>
           ) : (
             <div className="space-y-2">
-              {isProcessing && (
-                <div className="rounded-xl border border-purple-100 bg-purple-50/50 px-4 py-3 flex items-center gap-2.5">
-                  <div className="w-3 h-3 border-2 border-purple-400 border-t-transparent rounded-full animate-spin shrink-0" />
-                  <span className="text-[13px] text-purple-700">Your script is being evaluated...</span>
-                </div>
-              )}
-              {completedScripts.slice(0, 5).map(script => (
-                <div key={script.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:border-purple-200 transition-colors">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <Link href={`/report/${script.evaluationId}`} className="text-[14px] font-semibold text-gray-900 truncate hover:text-purple-700">
-                          {script.title}
-                        </Link>
-                        {script.score && (
-                          <span className={`text-[12px] font-bold px-1.5 py-0.5 rounded ${
-                            script.score >= 80 ? 'bg-green-50 text-green-700' :
-                            script.score >= 70 ? 'bg-blue-50 text-blue-700' :
-                            script.score >= 60 ? 'bg-yellow-50 text-yellow-700' :
-                            'bg-gray-50 text-gray-600'
-                          }`}>
-                            {fmtScore(script.score)}
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2 mt-0.5">
-                        {script.format && <span className="text-[11px] text-gray-400">{script.format}</span>}
-                        {script.genre && <span className="text-[11px] text-gray-400">· {script.genre}</span>}
-                      </div>
-                    </div>
-                    {script.qualifyingOpps.length > 0 && (
-                      <span className="text-[11px] text-purple-600 font-semibold whitespace-nowrap shrink-0">
-                        {script.qualifyingOpps.length} {script.qualifyingOpps.length === 1 ? 'opportunity' : 'opportunities'}
-                      </span>
-                    )}
-                  </div>
-                  {/* Qualifying opportunities pills */}
-                  {script.qualifyingOpps.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mt-2 pt-2 border-t border-gray-50">
-                      {script.qualifyingOpps.slice(0, 3).map(opp => (
-                        <Link
-                          key={opp.id}
-                          href={`/opportunities/${opp.slug}/apply?script=${script.id}`}
-                          className="text-[11px] px-2 py-1 rounded-full bg-purple-50 text-purple-700 hover:bg-purple-100 transition-colors font-medium"
-                        >
-                          Apply → {opp.title}
-                        </Link>
-                      ))}
-                      {script.qualifyingOpps.length > 3 && (
-                        <span className="text-[11px] px-2 py-1 text-gray-400">
-                          +{script.qualifyingOpps.length - 3} more
-                        </span>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
-              {completedScripts.length > 5 && (
-                <Link href="/scripts" className="block text-center text-[12px] text-gray-400 hover:text-purple-600 font-semibold py-2">
-                  View all {completedScripts.length} scripts →
-                </Link>
-              )}
-            </div>
-          )}
-        </section>
-
-        {/* ── YOUR APPLICATIONS ──────────────────────────── */}
-        {allApplications.length > 0 && (
-          <section>
-            <h2 className="text-[15px] font-bold text-gray-900 m-0 mb-2.5">Your applications</h2>
-            <div className="space-y-2">
               {allApplications.map(app => {
-                const oppTitle = oppTitleMap.get(app.opportunity_id) || 'Opportunity'
+                const opp = oppMap.get(app.opportunity_id)
                 const isPending = app.status === 'pending'
                 const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
                 return (
@@ -294,7 +250,9 @@ export default async function DashboardPage() {
                     <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
                       <div className="flex items-center justify-between gap-3">
                         <div className="min-w-0 flex-1">
-                          <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{oppTitle}</p>
+                          <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
+                            {opp?.title || 'Opportunity'}
+                          </p>
                           <p className="text-[12px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
                         </div>
                         <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0 ${
@@ -305,7 +263,6 @@ export default async function DashboardPage() {
                           {isReviewed ? 'Reviewed' : isPending ? 'Pending' : 'In review'}
                         </span>
                       </div>
-                      {/* Show feedback tags if reviewed */}
                       {isReviewed && app.feedback_tags && app.feedback_tags.length > 0 && (
                         <div className="flex flex-wrap gap-1 mt-2 pt-2 border-t border-gray-50">
                           {app.feedback_tags.map((tag, i) => (
@@ -321,69 +278,62 @@ export default async function DashboardPage() {
                 )
               })}
             </div>
-          </section>
-        )}
+          )}
+        </section>
 
-        {/* ── OPEN OPPORTUNITIES ─────────────────────────── */}
+        {/* ── YOUR SCRIPTS ───────────────────────────────── */}
         <section>
           <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">Open opportunities</h2>
-            <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-              View all
-            </Link>
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your scripts</h2>
+            {completedScripts.length > 0 && (
+              <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+                View all
+              </Link>
+            )}
           </header>
 
-          <div className="grid gap-2.5">
-            {allOpenOpps.map(opp => {
-              // Count how many of the user's scripts qualify
-              const qualifyingCount = completedScripts.filter(s =>
-                s.qualifyingOpps.some(q => q.id === opp.id)
-              ).length
-              // Check if already applied
-              const alreadyApplied = allApplications.some(a => a.opportunity_id === opp.id)
-              return (
-                <div key={opp.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
-                  <div className="flex items-start justify-between gap-3">
+          {completedScripts.length === 0 && !isProcessing ? (
+            <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
+              <p className="text-[13px] text-gray-500 m-0">Upload a script to get your free report.</p>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {isProcessing && (
+                <div className="rounded-xl border border-purple-100 bg-purple-50/50 px-4 py-3 flex items-center gap-2.5">
+                  <div className="w-3 h-3 border-2 border-purple-400 border-t-transparent rounded-full animate-spin shrink-0" />
+                  <span className="text-[13px] text-purple-700">Your script is being evaluated...</span>
+                </div>
+              )}
+              {completedScripts.slice(0, 5).map(script => (
+                <div key={script.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:border-purple-200 transition-colors">
+                  <div className="flex items-center justify-between gap-3">
                     <div className="min-w-0 flex-1">
-                      <Link href={`/opportunities/${opp.slug}`} className="text-[14px] font-semibold text-gray-900 hover:text-purple-700 m-0">
-                        {opp.title}
+                      <Link href={`/report/${script.evaluationId}`} className="text-[14px] font-semibold text-gray-900 truncate hover:text-purple-700 block">
+                        {script.title}
                       </Link>
-                      <p className="text-[12px] text-gray-500 m-0 mt-1 line-clamp-2">{opp.description}</p>
-                      <div className="flex items-center gap-2 mt-2">
-                        {opp.min_score && (
-                          <span className="text-[11px] text-gray-400">Min score: {opp.min_score}</span>
-                        )}
-                        {opp.deal_type && (
-                          <span className="text-[11px] px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 font-medium capitalize">
-                            {opp.deal_type.replace('_', ' ')}
-                          </span>
-                        )}
+                      <div className="flex items-center gap-2 mt-0.5">
+                        {script.format && <span className="text-[12px] text-gray-400">{script.format}</span>}
+                        {script.genre && <span className="text-[12px] text-gray-400">· {script.genre}</span>}
                       </div>
                     </div>
-                    <div className="shrink-0">
-                      {alreadyApplied ? (
-                        <span className="text-[11px] font-semibold text-green-600">Applied</span>
-                      ) : qualifyingCount > 0 ? (
-                        <Link
-                          href={`/opportunities/${opp.slug}/apply`}
-                          className="inline-flex items-center text-[12px] font-semibold text-white bg-purple-600 hover:bg-purple-700 px-3 py-1.5 rounded-lg transition-colors"
-                        >
-                          Apply
-                        </Link>
-                      ) : (
-                        <span className="text-[11px] text-gray-400">Not yet qualifying</span>
-                      )}
-                    </div>
+                    {script.qualifyingOppCount > 0 && (
+                      <Link
+                        href="/opportunities"
+                        className="text-[12px] text-purple-600 font-semibold whitespace-nowrap shrink-0 hover:text-purple-700"
+                      >
+                        {script.qualifyingOppCount} open {script.qualifyingOppCount === 1 ? 'call' : 'calls'}
+                      </Link>
+                    )}
                   </div>
-                  {qualifyingCount > 0 && !alreadyApplied && (
-                    <p className="text-[11px] text-purple-600 m-0 mt-1.5">
-                      {qualifyingCount} qualifying {qualifyingCount === 1 ? 'script' : 'scripts'}
-                    </p>
-                  )}
                 </div>
-              )
-            })}
-          </div>
+              ))}
+              {completedScripts.length > 5 && (
+                <Link href="/scripts" className="block text-center text-[12px] text-gray-400 hover:text-purple-600 font-semibold py-2">
+                  View all {completedScripts.length} scripts →
+                </Link>
+              )}
+            </div>
+          )}
         </section>
 
       </div>
