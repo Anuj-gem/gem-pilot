@@ -98,7 +98,7 @@ export default function ApplyPage() {
           if (noFormatFilter && noGenreFilter) return true
           const fmtMatch = noFormatFilter || (s.format && opp.formats!.some((f: string) => f.toLowerCase() === s.format!.toLowerCase()))
           const genreMatch = noGenreFilter || (s.genre && opp.genres!.some((g: string) => s.genre!.toLowerCase().includes(g.toLowerCase())))
-          return fmtMatch || genreMatch
+          return fmtMatch && genreMatch
         })
 
       setScripts(qualifying)

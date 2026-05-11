@@ -117,7 +117,7 @@ export default async function DashboardPage() {
       if (noFormatFilter && noGenreFilter) return true
       const fmtMatch = noFormatFilter || (format && o.formats!.some(f => f.toLowerCase() === format.toLowerCase()))
       const genreMatch = noGenreFilter || (genre && o.genres!.some(g => genre.toLowerCase().includes(g.toLowerCase())))
-      return fmtMatch || genreMatch
+      return fmtMatch && genreMatch
     })
   }
 
