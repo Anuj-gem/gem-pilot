@@ -1,79 +1,140 @@
-// LandingCredibility — trust-building section.
-// v13b — "Every writer deserves a chance at real access."
-// Establishes: free evals, partner network, how access works.
+// LandingCredibility — "The GEM Evaluation" + "How partners work with us."
+// v13c — producer-level read, free forever, partner workflow.
+
+import { BookOpen, TrendingUp, Target, Search, MessageSquare, Link2 } from 'lucide-react'
 
 export function LandingCredibility() {
   return (
-    <section className="px-5 sm:px-8 py-16 sm:py-20">
-      <div className="max-w-3xl mx-auto">
-        <p
-          className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
-          style={{ color: 'var(--gem-gold)' }}
-        >
-          Who we are
-        </p>
-        <h2
-          className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-8"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          Every writer deserves a chance
-          <br className="hidden sm:block" />
-          {' '}at real access.
-        </h2>
+    <>
+      {/* ── Section 1: The GEM Evaluation ── */}
+      <section className="px-5 sm:px-8 py-16 sm:py-20">
+        <div className="max-w-3xl mx-auto">
+          <p
+            className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
+            style={{ color: 'var(--gem-gold)' }}
+          >
+            The GEM evaluation
+          </p>
+          <h2
+            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-4"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            A real producer-level read.
+            <br className="hidden sm:block" />
+            {' '}Not just script coverage.
+          </h2>
+          <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed m-0 mb-8 max-w-[58ch]">
+            We built Selznick using everything we know about what our industry
+            partners are actually looking for — combined with deep research on
+            what gets greenlit, what finds an audience, and why. You get a
+            producer-level evaluation, not a grading rubric.
+          </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-          {/* Left: what you get */}
-          <div>
-            <h3
-              className="text-[18px] font-bold text-[var(--gem-gray-50)] m-0 mb-3"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              A full evaluation, free.
-              <br />
-              As many as you want.
-            </h3>
-            <p className="text-[15px] text-[var(--gem-gray-300)] leading-relaxed m-0">
-              Upload your screenplay and get a detailed evaluation — story,
-              character, market positioning, comparable projects, and
-              development notes. Unlimited. Free forever.
-            </p>
+          {/* Visual: what the evaluation covers */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+            <EvalFeature icon={BookOpen} label="Story & character" />
+            <EvalFeature icon={TrendingUp} label="Market positioning" />
+            <EvalFeature icon={Target} label="Comparable projects" />
+            <EvalFeature icon={Search} label="Production reality" />
+            <EvalFeature icon={MessageSquare} label="Development notes" />
+            <EvalFeature icon={Link2} label="Partner matching" />
           </div>
 
-          {/* Right: the network */}
-          <div>
-            <h3
-              className="text-[18px] font-bold text-[var(--gem-gray-50)] m-0 mb-3"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Your work, visible to
-              <br />
-              our partner network.
-            </h3>
-            <p className="text-[15px] text-[var(--gem-gray-300)] leading-relaxed m-0">
-              Every member&apos;s work is accessible to our network of
-              producers, reps, and financiers. When there&apos;s a fit, they
-              reach out to you directly.
-            </p>
+          <p className="text-[14px] font-semibold m-0" style={{ color: 'var(--gem-accent)' }}>
+            100% free. Unlimited evaluations. Forever.
+          </p>
+        </div>
+      </section>
+
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+
+      {/* ── Section 2: How partners work with us ── */}
+      <section className="px-5 sm:px-8 py-16 sm:py-20">
+        <div className="max-w-3xl mx-auto">
+          <p
+            className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
+            style={{ color: 'var(--gem-gold)' }}
+          >
+            Our network
+          </p>
+          <h2
+            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-8"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            How partners work with GEM.
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <PartnerCard
+              number="01"
+              title="Discover promising writers"
+              description="Partners browse evaluated work on GEM and find writers whose scripts match what they're looking for."
+            />
+            <PartnerCard
+              number="02"
+              title="Post opportunities"
+              description="When partners are looking for something specific, they post it on GEM — with genre, format, and budget criteria."
+            />
+            <PartnerCard
+              number="03"
+              title="Provide feedback"
+              description="Writers who apply get real feedback on their work through the platform."
+            />
+            <PartnerCard
+              number="04"
+              title="Connect directly"
+              description="When there&apos;s a fit, partners and writers connect directly to advance discussions."
+            />
           </div>
         </div>
+      </section>
+    </>
+  )
+}
 
-        {/* Partner types */}
-        <div className="flex flex-wrap gap-2">
-          {['Producers', 'Lit Reps', 'Financiers', 'Development Executives'].map(p => (
-            <span
-              key={p}
-              className="text-[12px] font-semibold px-3 py-1.5 rounded-full"
-              style={{
-                background: 'var(--gem-gray-800)',
-                color: 'var(--gem-gray-300)',
-                border: '1px solid var(--gem-gray-700)',
-              }}
-            >
-              {p}
-            </span>
-          ))}
-        </div>
-      </div>
-    </section>
+function EvalFeature({ icon: Icon, label }: { icon: typeof BookOpen; label: string }) {
+  return (
+    <div
+      className="flex items-center gap-2.5 rounded-lg px-3.5 py-3"
+      style={{
+        background: 'var(--gem-gray-900)',
+        border: '1px solid var(--gem-gray-700)',
+      }}
+    >
+      <Icon size={16} style={{ color: 'var(--gem-accent)' }} className="shrink-0" />
+      <span className="text-[13px] font-semibold text-[var(--gem-gray-200)]">
+        {label}
+      </span>
+    </div>
+  )
+}
+
+function PartnerCard({
+  number,
+  title,
+  description,
+}: {
+  number: string
+  title: string
+  description: string
+}) {
+  return (
+    <div className="rounded-xl p-5 card-glass">
+      <span
+        className="text-[11px] font-bold tracking-wider mb-2 block"
+        style={{ color: 'var(--gem-gold)' }}
+      >
+        {number}
+      </span>
+      <h3
+        className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 mb-2 leading-snug"
+        style={{ fontFamily: 'Georgia, serif' }}
+      >
+        {title}
+      </h3>
+      <p className="text-[13px] text-[var(--gem-gray-300)] m-0 leading-snug">
+        {description}
+      </p>
+    </div>
   )
 }

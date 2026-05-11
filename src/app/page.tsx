@@ -1,7 +1,7 @@
-// Landing page — v13 (2026-05-11).
+// Landing page — v13c (2026-05-11).
 //
-// Above fold: Hero (compact upload) + Live opportunities from DB.
-// Below fold: Credibility → How it works → GEM Pro → Pricing → Final CTA.
+// Above fold: Hero (compact upload + flow graphic) + Live opportunities.
+// Below fold: GEM Evaluation → How partners work → GEM Pro → Final CTA.
 
 import { redirect } from 'next/navigation'
 import { createServerClient } from '@supabase/ssr'
@@ -11,7 +11,6 @@ import { LandingHero } from '@/components/landing/landing-hero'
 import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
 import { LandingCredibility } from '@/components/landing/landing-credibility'
 import { LandingPro } from '@/components/landing/landing-pro'
-import { LandingPricing } from '@/components/landing/landing-pricing'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
 import { createClient } from '@/lib/supabase-server'
@@ -62,8 +61,6 @@ export default async function Home({
       <LandingCredibility />
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingPro />
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingPricing />
       <LandingFinalCTA />
 
       <ScriptUploadModal redirectTo="/start" />

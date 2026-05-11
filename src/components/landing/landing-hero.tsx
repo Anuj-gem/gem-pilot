@@ -1,9 +1,8 @@
-// Landing hero — compact upload zone + sign up.
-// v13 — "Get your script in front of the right people."
-// Compact CTA: Upload a script | or sign up
+// Landing hero — v13c.
+// Headline + compact CTA + visual flow (Script → Evaluation → Network).
 'use client'
 
-import { ArrowRight, Upload } from 'lucide-react'
+import { Upload, ArrowRight, FileText, Sparkles, Users } from 'lucide-react'
 import Link from 'next/link'
 import { trackEvent } from '@/lib/posthog'
 
@@ -16,7 +15,7 @@ export function LandingHero() {
   }
 
   return (
-    <section className="relative px-6 sm:px-8 pt-16 pb-10 sm:pt-24 sm:pb-14 hero-backdrop">
+    <section className="relative px-6 sm:px-8 pt-16 pb-12 sm:pt-24 sm:pb-16 hero-backdrop">
       <div className="max-w-3xl mx-auto text-center">
         <p
           className="text-[11px] tracking-[0.32em] uppercase font-semibold mb-5"
@@ -26,7 +25,7 @@ export function LandingHero() {
         </p>
 
         <h1
-          className="font-semibold leading-[1.08] tracking-tight mb-5 text-[var(--gem-gray-50)]"
+          className="font-semibold leading-[1.08] tracking-tight mb-8 text-[var(--gem-gray-50)]"
           style={{
             fontFamily: 'Georgia, "Times New Roman", serif',
             fontSize: 'clamp(34px, 5.5vw, 52px)',
@@ -37,13 +36,8 @@ export function LandingHero() {
           {' '}of the right people.
         </h1>
 
-        <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-300)] leading-relaxed mb-10 max-w-[580px] mx-auto">
-          Upload your screenplay and get a detailed evaluation — then our team
-          and partner network work to find the right fit for your work.
-        </p>
-
-        {/* Compact CTA row */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+        {/* CTA row */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
           <button
             type="button"
             onClick={handleUploadClick}
@@ -66,10 +60,80 @@ export function LandingHero() {
           </Link>
         </div>
 
-        <p className="text-[12px] text-[var(--gem-gray-500)] m-0">
-          Free forever. Unlimited evaluations. No credit card required.
-        </p>
+        {/* Visual flow: Script → Evaluation → Network */}
+        <div className="flex items-center justify-center gap-3 sm:gap-5">
+          <FlowStep
+            icon={FileText}
+            label="Your script"
+          />
+          <FlowArrow />
+          <FlowStep
+            icon={Sparkles}
+            label="GEM evaluation"
+            accent
+          />
+          <FlowArrow />
+          <FlowStep
+            icon={Users}
+            label="Industry network"
+          />
+        </div>
       </div>
     </section>
+  )
+}
+
+function FlowStep({
+  icon: Icon,
+  label,
+  accent = false,
+}: {
+  icon: typeof FileText
+  label: string
+  accent?: boolean
+}) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <span
+        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full grid place-items-center"
+        style={{
+          background: accent
+            ? 'rgba(124,58,237,0.10)'
+            : 'var(--gem-gray-800)',
+          border: accent
+            ? '1.5px solid rgba(124,58,237,0.25)'
+            : '1px solid var(--gem-gray-700)',
+        }}
+      >
+        <Icon
+          size={18}
+          style={{ color: accent ? 'var(--gem-accent)' : 'var(--gem-gray-400)' }}
+        />
+      </span>
+      <span
+        className="text-[11px] sm:text-[12px] font-semibold leading-tight"
+        style={{ color: accent ? 'var(--gem-accent)' : 'var(--gem-gray-400)' }}
+      >
+        {label}
+      </span>
+    </div>
+  )
+}
+
+function FlowArrow() {
+  return (
+    <div
+      className="w-6 sm:w-10 h-px mb-5"
+      style={{ background: 'var(--gem-gray-600)' }}
+    >
+      <div
+        className="w-0 h-0 ml-auto -mt-[3px]"
+        style={{
+          borderTop: '3.5px solid transparent',
+          borderBottom: '3.5px solid transparent',
+          borderLeft: '5px solid var(--gem-gray-600)',
+        }}
+      />
+    </div>
   )
 }
