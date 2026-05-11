@@ -259,41 +259,80 @@ export default async function DashboardPage() {
             <div className="space-y-3">
               {reviewedApps.slice(0, 2).map(app => {
                 const opp = oppMap.get(app.opportunity_id)
+
+                // Decision: first next_steps_tag, or fallback
+                const decisionTag = app.next_steps_tags?.[0] || null
+                const positiveDecisions = ['Ready for meetings', 'Attach to producer']
+                const decisionColor = decisionTag
+                  ? positiveDecisions.includes(decisionTag)
+                    ? { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' }   // green
+                    : { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' }   // amber
+                  : { bg: '#f3f4f6', text: '#6b7280', border: '#e5e7eb' }     // gray fallback
+
+                // Remaining next_steps_tags (skip the first one used as decision)
+                const remainingNextSteps = (app.next_steps_tags || []).slice(1)
+
+                // Perspective label
+                const perspLabels: Record<string, string> = {
+                  producer: 'Producer', lit_rep: 'Literary Rep',
+                  actor_rep: 'Talent Rep', financier: 'Financier',
+                }
+                const perspLabel = opp?.perspective ? perspLabels[opp.perspective] || null : null
+
                 return (
                   <Link key={app.id} href={`/applications/${app.id}`} className="block">
                     <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all">
-                      {/* Header: opp name + reviewed badge */}
-                      <div className="flex items-center justify-between gap-3 mb-2">
-                        <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                          {opp?.title || 'Opportunity'}
-                        </p>
-                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-green-50 text-green-700 shrink-0">
-                          Reviewed
-                        </span>
-                      </div>
 
-                      {/* Feedback text — prominent, not truncated to one line */}
+                      {/* Decision pill — THE headline */}
+                      <span
+                        className="inline-block text-[12px] font-bold px-3 py-1 rounded-lg mb-2.5"
+                        style={{ background: decisionColor.bg, color: decisionColor.text, border: `1px solid ${decisionColor.border}` }}
+                      >
+                        {decisionTag || 'Feedback received'}
+                      </span>
+
+                      {/* Opportunity title as context */}
+                      <p className="text-[13px] font-semibold text-gray-700 m-0 truncate">
+                        {opp?.title || 'Opportunity'}
+                      </p>
+
+                      {/* Feedback quote — pull-quote style */}
                       {app.feedback && (
-                        <p className="text-[13px] text-gray-600 m-0 leading-relaxed line-clamp-4">
+                        <p className="text-[13px] text-gray-500 m-0 mt-2 leading-relaxed line-clamp-2 italic border-l-2 border-gray-200 pl-3">
                           {app.feedback}
                         </p>
                       )}
 
-                      {/* Tags row: feedback tags + next steps */}
-                      {((app.feedback_tags && app.feedback_tags.length > 0) || (app.next_steps_tags && app.next_steps_tags.length > 0)) && (
-                        <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-gray-100">
-                          {app.feedback_tags?.map((tag, i) => (
-                            <span key={`f-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 font-medium">{tag}</span>
-                          ))}
-                          {app.next_steps_tags?.map((tag, i) => (
-                            <span key={`n-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-medium">{tag}</span>
-                          ))}
+                      {/* Feedback tags — labeled */}
+                      {app.feedback_tags && app.feedback_tags.length > 0 && (
+                        <div className="mt-3">
+                          <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 m-0 mb-1.5">Feedback</p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {app.feedback_tags.map((tag, i) => (
+                              <span key={`f-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 font-medium">{tag}</span>
+                            ))}
+                          </div>
                         </div>
                       )}
 
-                      {/* Footer */}
-                      <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-50">
-                        <span className="text-[12px] text-gray-400">Reviewed {app.reviewed_at ? fmtDate(app.reviewed_at) : fmtDate(app.submitted_at)}</span>
+                      {/* Next steps tags — labeled (remaining after decision) */}
+                      {remainingNextSteps.length > 0 && (
+                        <div className="mt-2.5">
+                          <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 m-0 mb-1.5">Next steps</p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {remainingNextSteps.map((tag, i) => (
+                              <span key={`n-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-medium">{tag}</span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Footer: timeline beat + view details */}
+                      <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-gray-100">
+                        <span className="text-[12px] text-gray-400">
+                          {app.reviewed_at ? fmtDate(app.reviewed_at) : fmtDate(app.submitted_at)}
+                          {perspLabel && <> · {perspLabel}</>}
+                        </span>
                         <span className="text-[12px] font-semibold text-purple-600 flex items-center gap-1">
                           View details
                           <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
