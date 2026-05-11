@@ -1,8 +1,6 @@
-// /start — Public onboarding page.
+// /start — Public onboarding / signup page.
 // Unauthenticated: shows inline signup (Google + email/password + phone)
-// Authenticated with no scripts: shows upload prompt
-// Authenticated with scripts + draft: shows draft review flow
-// Authenticated with active review: redirects to that review
+// Authenticated: claims anonymous uploads, redirects to dashboard.
 
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
@@ -63,81 +61,6 @@ export default async function StartPage() {
     cookieStore.set('gem_anon_scripts', '', { path: '/', maxAge: 0 })
   }
 
-  // Check for existing non-complete consideration
-  const { data: existing } = await service
-    .from('considerations')
-    .select('id, review_stage')
-    .eq('writer_id', user.id)
-    .neq('review_stage', 'complete')
-    .limit(1)
-
-  // If they have ANY active consideration (draft or in-progress), go straight there
-  if (existing && existing.length > 0) {
-    redirect(`/review/c/${existing[0].id}`)
-  }
-
-  // Authenticated user with no active review — auto-create a draft and redirect
-  // This handles the post-signup flow: user lands on /start, we create their
-  // draft consideration with any unreviewed scripts, then send them to the real
-  // review page immediately.
-
-  // Find all scripts NOT in any consideration
-  const { data: allCons } = await service
-    .from('considerations')
-    .select('id')
-    .eq('writer_id', user.id)
-  const conIds = (allCons || []).map((c: { id: string }) => c.id)
-
-  let reviewedScriptIds = new Set<string>()
-  if (conIds.length > 0) {
-    const { data: conScripts } = await service
-      .from('consideration_scripts')
-      .select('script_submission_id')
-      .in('consideration_id', conIds)
-    for (const r of (conScripts || []) as { script_submission_id: string }[]) {
-      reviewedScriptIds.add(r.script_submission_id)
-    }
-  }
-
-  // Include completed AND processing/queued scripts — a just-claimed anonymous
-  // upload may still be processing when the user signs up
-  const { data: eligibleScripts } = await service
-    .from('script_submissions')
-    .select('id')
-    .eq('user_id', user.id)
-    .in('status', ['completed', 'processing', 'queued'])
-    .is('hidden_at', null)
-
-  const unreviewedIds = (eligibleScripts || [])
-    .filter((s: { id: string }) => !reviewedScriptIds.has(s.id))
-    .map((s: { id: string }) => s.id)
-
-  // Create a new draft consideration
-  const { data: newDraft } = await service
-    .from('considerations')
-    .insert({
-      writer_id: user.id,
-      status: 'pending',
-      review_stage: 'draft',
-      submitted_at: new Date().toISOString(),
-    })
-    .select('id')
-    .single()
-
-  if (newDraft) {
-    // Attach unreviewed scripts if any
-    if (unreviewedIds.length > 0) {
-      await service
-        .from('consideration_scripts')
-        .insert(unreviewedIds.map(id => ({
-          consideration_id: newDraft.id,
-          script_submission_id: id,
-          carried_forward: false,
-        })))
-    }
-    redirect(`/review/c/${newDraft.id}`)
-  }
-
-  // Fallback — shouldn't happen, but redirect home if draft creation fails
-  redirect('/')
+  // Authenticated — scripts claimed, send to dashboard.
+  redirect('/dashboard')
 }

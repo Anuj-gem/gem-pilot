@@ -63,7 +63,7 @@ export default async function Home({
       <LandingPro />
       <LandingFinalCTA />
 
-      <ScriptUploadModal redirectTo="/start" />
+      <ScriptUploadModal redirectTo="/evaluating" />
     </div>
   )
 }
