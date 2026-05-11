@@ -458,7 +458,7 @@ export function ReviewDetail({
               {eligibleScripts.map(s => (
                 <ScriptRowCard
                   key={s.id}
-                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isProcessing: s.isProcessing }}
+                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, isProcessing: s.isProcessing }}
                   checkbox={!s.isProcessing}
                   checked={selectedIds.has(s.id)}
                   onToggle={toggleScript}
@@ -505,7 +505,7 @@ export function ReviewDetail({
                   {attachedScripts.map(s => (
                     <ScriptRowCard
                       key={s.id}
-                      script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isProcessing: s.isProcessing }}
+                      script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, isProcessing: s.isProcessing }}
                       checkbox={!s.isProcessing}
                       checked={selectedIds.has(s.id)}
                       onToggle={toggleScript}
@@ -522,7 +522,7 @@ export function ReviewDetail({
                     {eligibleScripts.map(s => (
                       <ScriptRowCard
                         key={s.id}
-                        script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isProcessing: s.isProcessing }}
+                        script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, isProcessing: s.isProcessing }}
                         checkbox={!s.isProcessing}
                         checked={selectedIds.has(s.id)}
                         onToggle={toggleScript}
