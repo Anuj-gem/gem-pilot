@@ -1,5 +1,6 @@
-// LandingCredibility — who GEM is and what the technology does.
-// v13 — below-fold credibility section.
+// LandingCredibility — trust-building section.
+// v13b — "Every writer deserves a chance at real access."
+// Establishes: free evals, partner network, how access works.
 
 export function LandingCredibility() {
   return (
@@ -12,28 +13,65 @@ export function LandingCredibility() {
           Who we are
         </p>
         <h2
-          className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-6"
+          className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-8"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          The most advanced screenplay
+          Every writer deserves a chance
           <br className="hidden sm:block" />
-          {' '}evaluation ever built.
+          {' '}at real access.
         </h2>
-        <div className="space-y-4 text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed max-w-[60ch]">
-          <p className="m-0">
-            GEM evaluates your screenplay the way a development executive
-            would — analyzing story, character, market positioning, comparable
-            projects, and production reality. You get a detailed report in
-            under a minute.
-          </p>
-          <p className="m-0">
-            Every member&apos;s work is accessible to our partner network of
-            producers, reps, and financiers. When there&apos;s a fit, they
-            reach out to you directly.
-          </p>
-          <p className="m-0 font-semibold text-[var(--gem-gray-100)]">
-            Evaluations are free. Unlimited. Forever.
-          </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          {/* Left: what you get */}
+          <div>
+            <h3
+              className="text-[18px] font-bold text-[var(--gem-gray-50)] m-0 mb-3"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              A full evaluation, free.
+              <br />
+              As many as you want.
+            </h3>
+            <p className="text-[15px] text-[var(--gem-gray-300)] leading-relaxed m-0">
+              Upload your screenplay and get a detailed evaluation — story,
+              character, market positioning, comparable projects, and
+              development notes. Unlimited. Free forever.
+            </p>
+          </div>
+
+          {/* Right: the network */}
+          <div>
+            <h3
+              className="text-[18px] font-bold text-[var(--gem-gray-50)] m-0 mb-3"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              Your work, visible to
+              <br />
+              our partner network.
+            </h3>
+            <p className="text-[15px] text-[var(--gem-gray-300)] leading-relaxed m-0">
+              Every member&apos;s work is accessible to our network of
+              producers, reps, and financiers. When there&apos;s a fit, they
+              reach out to you directly.
+            </p>
+          </div>
+        </div>
+
+        {/* Partner types */}
+        <div className="flex flex-wrap gap-2">
+          {['Producers', 'Lit Reps', 'Financiers', 'Development Executives'].map(p => (
+            <span
+              key={p}
+              className="text-[12px] font-semibold px-3 py-1.5 rounded-full"
+              style={{
+                background: 'var(--gem-gray-800)',
+                color: 'var(--gem-gray-300)',
+                border: '1px solid var(--gem-gray-700)',
+              }}
+            >
+              {p}
+            </span>
+          ))}
         </div>
       </div>
     </section>

@@ -10,7 +10,6 @@ import Nav from '@/components/nav'
 import { LandingHero } from '@/components/landing/landing-hero'
 import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
 import { LandingCredibility } from '@/components/landing/landing-credibility'
-import { LandingArc } from '@/components/landing/landing-arc'
 import { LandingPro } from '@/components/landing/landing-pro'
 import { LandingPricing } from '@/components/landing/landing-pricing'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
@@ -61,8 +60,6 @@ export default async function Home({
       {/* ── Below fold ── */}
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingCredibility />
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingArc />
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingPro />
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />

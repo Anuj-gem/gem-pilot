@@ -1,9 +1,9 @@
-// LandingPro — GEM Pro benefit-first section.
-// v13 — "We actively work on your behalf."
-// Benefit-first: active matching, team advocacy, priority consideration.
+// LandingPro — GEM Pro section.
+// v13b — Pro = apply for specific opportunities (not "team advocacy").
+// Free = in the partner database. Pro = apply for specific things.
 'use client'
 
-import { ArrowRight, Users, MessageCircle, Star } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { trackEvent } from '@/lib/posthog'
 
 export function LandingPro() {
@@ -27,29 +27,45 @@ export function LandingPro() {
           className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-3"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          We actively work on your behalf.
+          Apply for specific opportunities.
         </h2>
         <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-300)] leading-relaxed m-0 mb-8 max-w-[56ch]">
-          Pro members get a dedicated team working with our partner network to
-          find the right opportunities for their work.
+          Every member&apos;s work is available to our partner network. Pro
+          members can also apply directly to specific opportunities — open
+          calls from producers, reps, and financiers looking for scripts like
+          yours.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <ProBenefit
-            icon={Users}
-            title="Active matching"
-            description="Our team reviews your portfolio and actively matches you with partners looking for work like yours."
-          />
-          <ProBenefit
-            icon={MessageCircle}
-            title="Team advocacy"
-            description="We pitch your work directly to producers, reps, and financiers in our network."
-          />
-          <ProBenefit
-            icon={Star}
-            title="Priority consideration"
-            description="Your submissions are reviewed first when new opportunities open."
-          />
+        <div
+          className="rounded-xl p-5 sm:p-6 mb-8 card-glass"
+          style={{
+            borderColor: 'rgba(124,58,237,0.20)',
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <p className="text-[12px] uppercase tracking-[0.14em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+                Free — every member
+              </p>
+              <ul className="list-none p-0 m-0 space-y-1.5">
+                <BulletItem>Unlimited evaluations</BulletItem>
+                <BulletItem>Full detailed reports</BulletItem>
+                <BulletItem>Work visible to partner network</BulletItem>
+                <BulletItem>Partners can reach out to you</BulletItem>
+              </ul>
+            </div>
+            <div>
+              <p className="text-[12px] uppercase tracking-[0.14em] font-bold m-0 mb-2" style={{ color: 'var(--gem-accent)' }}>
+                Pro — $20/month
+              </p>
+              <ul className="list-none p-0 m-0 space-y-1.5">
+                <BulletItem accent>Everything in Free</BulletItem>
+                <BulletItem accent>Apply to specific opportunities</BulletItem>
+                <BulletItem accent>Portfolio review by our team</BulletItem>
+                <BulletItem accent>Priority consideration</BulletItem>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center gap-4">
@@ -63,8 +79,8 @@ export function LandingPro() {
           >
             Get started <ArrowRight size={14} />
           </button>
-          <span className="text-[14px] text-[var(--gem-gray-400)]">
-            $20 / month · Cancel anytime
+          <span className="text-[13px] text-[var(--gem-gray-400)]">
+            Start free · Upgrade anytime
           </span>
         </div>
       </div>
@@ -72,32 +88,14 @@ export function LandingPro() {
   )
 }
 
-function ProBenefit({
-  icon: Icon,
-  title,
-  description,
-}: {
-  icon: typeof Users
-  title: string
-  description: string
-}) {
+function BulletItem({ children, accent = false }: { children: React.ReactNode; accent?: boolean }) {
   return (
-    <div className="rounded-xl p-5 card-glass">
+    <li className="flex items-start gap-2 text-[13.5px] leading-snug" style={{ color: 'var(--gem-gray-200)' }}>
       <span
-        className="inline-flex w-9 h-9 rounded-full items-center justify-center text-white mb-3"
-        style={{ background: 'var(--gem-accent)' }}
-      >
-        <Icon size={16} />
-      </span>
-      <h3
-        className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
-        style={{ fontFamily: 'Georgia, serif' }}
-      >
-        {title}
-      </h3>
-      <p className="text-[13px] text-[var(--gem-gray-300)] m-0 leading-snug">
-        {description}
-      </p>
-    </div>
+        className="shrink-0 w-1.5 h-1.5 rounded-full mt-[7px]"
+        style={{ background: accent ? 'var(--gem-accent)' : 'var(--gem-gray-600)' }}
+      />
+      {children}
+    </li>
   )
 }
