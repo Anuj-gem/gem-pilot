@@ -8,6 +8,7 @@ import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, FileText, Clock, Target } from 'lucide-react'
+import { UploadCTAButton } from '@/components/upload-cta-button'
 
 const DEAL_TYPE_LABELS: Record<string, string> = {
   option: 'Option Deal', purchase: 'Purchase',
@@ -393,13 +394,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               <p className="text-[13px] text-gray-400 m-0 mb-4">
                 Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Your first evaluation is free.
               </p>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110"
+              <UploadCTAButton
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
                 style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
               >
                 Upload a script <ArrowRight size={16} />
-              </Link>
+              </UploadCTAButton>
             </div>
           )}
 

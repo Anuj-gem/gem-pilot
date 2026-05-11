@@ -5,6 +5,7 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
+import { UploadCTAButton } from '@/components/upload-cta-button'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,13 +33,12 @@ export default async function ApplicationsPage() {
         <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
           <p className="text-[13px] text-gray-400 m-0 mb-4">Upload a script, get your report, then apply to open opportunities.</p>
-          <a
-            href="/"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors"
+          <UploadCTAButton
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors cursor-pointer border-0"
             style={{ background: 'var(--gem-accent)' }}
           >
             Upload a script
-          </a>
+          </UploadCTAButton>
         </div>
       </div>
     )

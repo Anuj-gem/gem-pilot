@@ -7,6 +7,7 @@ import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import { OpportunityListingCard, type QualScript } from '@/components/opportunities/opportunity-listing-card'
 import { ArrowRight } from 'lucide-react'
+import { UploadCTAButton } from '@/components/upload-cta-button'
 
 function svc() {
   return createServerClient(
@@ -175,13 +176,12 @@ export default async function OpportunitiesPage() {
               Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Your first evaluation is free.
             </p>
           </div>
-          <Link
-            href="/"
-            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110"
+          <UploadCTAButton
+            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
             style={{ background: '#7c3aed' }}
           >
             Upload a script <ArrowRight size={15} />
-          </Link>
+          </UploadCTAButton>
         </div>
       )}
 

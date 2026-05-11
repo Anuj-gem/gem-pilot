@@ -194,16 +194,16 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
-                  <Link
-                    href="/"
-                    className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110"
+                  <button
+                    onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
+                    className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110 cursor-pointer border-0"
                     style={{
                       background: 'var(--gem-accent)',
                       boxShadow: '0 4px 12px rgba(124,58,237,0.25)',
                     }}
                   >
                     Sign up
-                  </Link>
+                  </button>
                   <Link
                     href="/login"
                     className="ml-1 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
@@ -215,16 +215,16 @@ export default function Nav({ userData }: NavProps = {}) {
 
               {/* Mobile logged-out — Sign up pill + hamburger */}
               <div className="md:hidden flex items-center gap-2">
-                <Link
-                  href="/"
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
+                <button
+                  onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white cursor-pointer border-0"
                   style={{
                     background: 'var(--gem-accent)',
                     boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
                   }}
                 >
                   Sign up
-                </Link>
+                </button>
                 <button
                   className="p-1.5 text-[var(--gem-gray-300)]"
                   onClick={() => setMobileOpen(!mobileOpen)}
