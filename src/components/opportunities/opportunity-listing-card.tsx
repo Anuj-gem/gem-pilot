@@ -94,22 +94,18 @@ export function OpportunityListingCard({
       style={{ border: '1.5px solid #e5e7eb' }}
     >
       <div className="px-6 py-5">
-        {/* Row 1: Deal badge + byline */}
-        <div className="flex items-center justify-between gap-3 mb-3">
-          {dealLabel && colors ? (
+        {/* Row 1: Deal badge + perspective */}
+        <div className="flex items-center gap-3 mb-3">
+          {dealLabel && colors && (
             <span
               className="text-[12px] font-bold uppercase tracking-wide px-3 py-1 rounded-md"
               style={{ background: colors.bg, color: colors.text, border: `1px solid ${colors.border}` }}
             >
               {dealLabel}
             </span>
-          ) : (
-            <span />
           )}
-          {posted_by && (
-            <span className="text-[13px] text-gray-500 font-medium">
-              {posted_by}{perspLabel ? ` — ${perspLabel}` : ''}
-            </span>
+          {perspLabel && (
+            <span className="text-[13px] text-gray-400 font-medium">{perspLabel}</span>
           )}
         </div>
 

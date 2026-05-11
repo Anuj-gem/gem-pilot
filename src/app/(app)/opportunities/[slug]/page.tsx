@@ -7,7 +7,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, FileText, Clock, Target, Users } from 'lucide-react'
+import { ArrowRight, FileText, Clock, Target } from 'lucide-react'
 
 const DEAL_TYPE_LABELS: Record<string, string> = {
   option: 'Option Deal', purchase: 'Purchase',
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = svc()
   const { data: opp } = await service
     .from('opportunities')
-    .select('title, description, deal_type, perspective, posted_by')
+    .select('title, description, deal_type, perspective')
     .eq('slug', slug)
     .eq('status', 'active')
     .single()
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!opp) return { title: 'Opportunity not found — GEM' }
   const dealLabel = opp.deal_type ? DEAL_TYPE_LABELS[opp.deal_type] : null
   const desc = dealLabel
-    ? `${dealLabel} from ${opp.posted_by || 'GEM'} — ${opp.description?.slice(0, 100) ?? ''}`
+    ? `${dealLabel} — ${opp.description?.slice(0, 110) ?? ''}`
     : opp.description?.slice(0, 140) ?? ''
   const title = `${opp.title} — GEM`
   return {
@@ -193,22 +193,18 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       <div className="bg-white rounded-2xl overflow-hidden" style={{ border: '1.5px solid #e5e7eb' }}>
         <div className="px-6 py-6 sm:px-8 sm:py-8">
 
-          {/* ── Header: Deal badge + byline ── */}
-          <div className="flex items-center justify-between gap-3 mb-4">
-            {dealLabel && dealColors ? (
+          {/* ── Header: Deal badge + perspective ── */}
+          <div className="flex items-center gap-3 mb-4">
+            {dealLabel && dealColors && (
               <span
                 className="text-[12px] font-bold uppercase tracking-wide px-3 py-1 rounded-md"
                 style={{ background: dealColors.bg, color: dealColors.text, border: `1px solid ${dealColors.border}` }}
               >
                 {dealLabel}
               </span>
-            ) : (
-              <span />
             )}
-            {opp.posted_by && (
-              <span className="text-[14px] text-gray-500 font-medium">
-                {opp.posted_by}{perspLabel ? ` — ${perspLabel}` : ''}
-              </span>
+            {perspLabel && (
+              <span className="text-[14px] text-gray-400 font-medium">{perspLabel}</span>
             )}
           </div>
 
@@ -250,31 +246,16 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
             {opp.description}
           </p>
 
-          {/* ── Requirements grid ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            {/* Score requirement */}
-            {opp.min_score != null && (
-              <div className="flex items-start gap-3 rounded-xl bg-gray-50 px-4 py-3 border border-gray-100">
-                <Target size={16} className="text-purple-600 shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0">Minimum score</p>
-                  <p className="text-[16px] font-bold text-gray-900 m-0">{Math.round(opp.min_score)}+</p>
-                </div>
+          {/* ── Score requirement ── */}
+          {opp.min_score != null && (
+            <div className="flex items-start gap-3 rounded-xl bg-gray-50 px-4 py-3 border border-gray-100 mb-6">
+              <Target size={16} className="text-purple-600 shrink-0 mt-0.5" />
+              <div>
+                <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0">Minimum score</p>
+                <p className="text-[16px] font-bold text-gray-900 m-0">{Math.round(opp.min_score)}+</p>
               </div>
-            )}
-
-            {/* Posted by */}
-            {opp.posted_by && (
-              <div className="flex items-start gap-3 rounded-xl bg-gray-50 px-4 py-3 border border-gray-100">
-                <Users size={16} className="text-purple-600 shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0">Posted by</p>
-                  <p className="text-[14px] font-bold text-gray-900 m-0">{opp.posted_by}</p>
-                  {perspLabel && <p className="text-[12px] text-gray-500 m-0">{perspLabel}</p>}
-                </div>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
 
           {/* ── Looking for (genres, formats, budget) ── */}
           {((opp.formats?.length > 0) || (opp.genres?.length > 0) || (opp.budget_tiers?.length > 0)) && (
