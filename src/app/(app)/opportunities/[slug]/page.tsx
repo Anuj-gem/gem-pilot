@@ -1,20 +1,21 @@
 // /opportunities/[slug] — individual opportunity detail page.
-// v3 — council-recommended redesign: deal explanation leads, plain English, conditional CTAs.
+// v4 — vivid redesign: color-coded deal badge, real status pills,
+//       qualifying scripts list, strong logged-out CTA.
 
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, FileText, Clock, Target, Users } from 'lucide-react'
 
 const DEAL_TYPE_LABELS: Record<string, string> = {
-  option: 'Option deal', purchase: 'Purchase',
-  representation: 'Representation', co_finance: 'Production finance',
+  option: 'Option Deal', purchase: 'Purchase',
+  representation: 'Representation', co_finance: 'Production Finance',
 }
 const PERSPECTIVE_LABELS: Record<string, string> = {
-  producer: 'Producer', lit_rep: 'Lit rep',
-  actor_rep: 'Talent rep', financier: 'Financier',
+  producer: 'Producer', lit_rep: 'Literary Representative',
+  actor_rep: 'Talent Representative', financier: 'Financier',
 }
 const GENRE_LABELS: Record<string, string> = {
   thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
@@ -22,14 +23,32 @@ const GENRE_LABELS: Record<string, string> = {
   action: 'Action', family: 'Family', western: 'Western', musical: 'Musical',
 }
 const BUDGET_LABELS: Record<string, string> = {
-  micro: 'Micro budget', indie: 'Indie budget', mid: 'Mid budget',
-  studio: 'Studio budget', premium: 'Premium', tentpole: 'Tentpole',
+  micro: 'Micro', indie: 'Indie', mid: 'Mid', studio: 'Studio', premium: 'Premium', tentpole: 'Tentpole',
 }
+const FORMAT_LABELS: Record<string, string> = {
+  feature: 'Feature', pilot: 'Pilot', limited_series: 'Limited Series', short: 'Short',
+}
+
+const DEAL_COLORS: Record<string, { bg: string; text: string; border: string }> = {
+  option:         { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' },
+  purchase:       { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' },
+  representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
+  co_finance:     { bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' },
+}
+
 const DEAL_DESCRIPTIONS: Record<string, string> = {
   option: 'They option your script with a path to production. You retain rights until a purchase is triggered. WGA minimums apply.',
   purchase: 'Outright script purchase at WGA scale or above. Writer stays attached for credit and rewrites.',
   representation: 'Join their roster and have someone actively selling your work to producers and studios.',
   co_finance: 'Production financing with shared backend. They put up the money, you share in distribution revenue.',
+}
+
+const STAGE_DISPLAY: Record<string, { label: string; bg: string; text: string; description: string }> = {
+  pending:       { label: 'Application Pending', bg: '#fef3c7', text: '#92400e', description: 'Your application has been submitted and is awaiting review.' },
+  submitted:     { label: 'Application Pending', bg: '#fef3c7', text: '#92400e', description: 'Your application has been submitted and is awaiting review.' },
+  in_review:     { label: 'In Review',           bg: '#dbeafe', text: '#1e40af', description: 'Your script is being reviewed. You\'ll hear back soon.' },
+  partner_match: { label: 'Partner Match',       bg: '#ede9fe', text: '#5b21b6', description: 'A partner match has been identified for your script.' },
+  complete:      { label: 'Reviewed',            bg: '#d1fae5', text: '#065f46', description: 'Your application has been reviewed. Check your dashboard for feedback.' },
 }
 
 function svc() {
@@ -49,17 +68,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = svc()
   const { data: opp } = await service
     .from('opportunities')
-    .select('title, description, deal_type, perspective')
+    .select('title, description, deal_type, perspective, posted_by')
     .eq('slug', slug)
     .eq('status', 'active')
     .single()
 
   if (!opp) return { title: 'Opportunity not found — GEM' }
-  const perspLabel = opp.perspective ? PERSPECTIVE_LABELS[opp.perspective] : null
   const dealLabel = opp.deal_type ? DEAL_TYPE_LABELS[opp.deal_type] : null
-  const subtitle = [dealLabel, perspLabel].filter(Boolean).join(' · ')
-  const desc = subtitle
-    ? `${subtitle} — ${opp.description?.slice(0, 120) ?? ''}`
+  const desc = dealLabel
+    ? `${dealLabel} from ${opp.posted_by || 'GEM'} — ${opp.description?.slice(0, 100) ?? ''}`
     : opp.description?.slice(0, 140) ?? ''
   const title = `${opp.title} — GEM`
   return {
@@ -85,33 +102,37 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
 
-  // Qualification + application check (logged-in only)
-  let qualifies = false
-  let hasApplied = false
+  // User-specific data
+  type QScript = { id: string; title: string | null; score: number | null; format: string | null }
+  let qualifyingScripts: QScript[] = []
+  let reviewStage: string | null = null
   let isPro = false
 
   if (user) {
-    // Check Pro status
     const { data: profile } = await service
       .from('profiles')
       .select('subscription_status')
       .eq('id', user.id)
       .single()
     isPro = profile?.subscription_status === 'active'
-    // Check for existing application
-    const { data: existingApp } = await service
+
+    // Get consideration status
+    const { data: consideration } = await service
       .from('considerations')
-      .select('id')
+      .select('review_stage')
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
       .limit(1)
+      .single()
 
-    hasApplied = (existingApp || []).length > 0
+    if (consideration?.review_stage && consideration.review_stage !== 'draft') {
+      reviewStage = consideration.review_stage
+    }
 
-    // Check qualifying scripts (non-hidden only)
+    // Get qualifying scripts
     const { data: userSubs } = await service
       .from('script_submissions')
-      .select('id, declared_format, hidden_at')
+      .select('id, title, declared_format, hidden_at')
       .eq('user_id', user.id)
       .eq('status', 'completed')
 
@@ -141,7 +162,14 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         if (opp.budget_tiers?.length > 0 && budget && !opp.budget_tiers.includes(budget)) ok = false
         if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) ok = false
 
-        if (ok) { qualifies = true; break }
+        if (ok) {
+          qualifyingScripts.push({
+            id: sub.id,
+            title: sub.title,
+            score: ev.weighted_score,
+            format: sub.declared_format,
+          })
+        }
       }
     }
   }
@@ -150,146 +178,247 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
   const perspLabel = opp.perspective ? PERSPECTIVE_LABELS[opp.perspective] ?? opp.perspective : null
   const dealLabel = opp.deal_type ? DEAL_TYPE_LABELS[opp.deal_type] ?? opp.deal_type : null
-
-  // Build subtitle line: "Option deal · Producer · Apex Entertainment · 14 days left"
-  const subtitleParts = [dealLabel, perspLabel, opp.posted_by].filter(Boolean)
-  const deadlineText = daysLeft != null
-    ? daysLeft <= 0 ? 'Closed' : daysLeft === 1 ? 'Closes tomorrow' : `${daysLeft} days left`
-    : null
+  const dealColors = opp.deal_type ? DEAL_COLORS[opp.deal_type] : null
+  const stageInfo = reviewStage ? STAGE_DISPLAY[reviewStage] : null
 
   return (
     <div className="max-w-2xl mx-auto">
       <Link
         href="/opportunities"
-        className="inline-flex items-center gap-1 text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors mb-4"
+        className="inline-flex items-center gap-1 text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors mb-5"
       >
         &larr; All opportunities
       </Link>
 
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div className="px-5 py-5 sm:px-6 sm:py-6">
+      <div className="bg-white rounded-2xl overflow-hidden" style={{ border: '1.5px solid #e5e7eb' }}>
+        <div className="px-6 py-6 sm:px-8 sm:py-8">
 
-          {/* ── Title + subtitle ── */}
-          <h1 className="text-[22px] font-bold text-gray-900 m-0 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          {/* ── Header: Deal badge + byline ── */}
+          <div className="flex items-center justify-between gap-3 mb-4">
+            {dealLabel && dealColors ? (
+              <span
+                className="text-[12px] font-bold uppercase tracking-wide px-3 py-1 rounded-md"
+                style={{ background: dealColors.bg, color: dealColors.text, border: `1px solid ${dealColors.border}` }}
+              >
+                {dealLabel}
+              </span>
+            ) : (
+              <span />
+            )}
+            {opp.posted_by && (
+              <span className="text-[14px] text-gray-500 font-medium">
+                {opp.posted_by}{perspLabel ? ` — ${perspLabel}` : ''}
+              </span>
+            )}
+          </div>
+
+          {/* ── Title ── */}
+          <h1
+            className="text-[28px] sm:text-[32px] font-bold text-gray-900 m-0 mb-2 leading-tight"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
             {opp.title}
           </h1>
-          <p className="text-[12.5px] text-gray-400 m-0 mb-5">
-            {subtitleParts.join(' · ')}
-            {deadlineText && (
-              <>
-                {subtitleParts.length > 0 && ' · '}
-                <span className={daysLeft != null && daysLeft <= 7 && daysLeft > 0 ? 'text-red-500' : daysLeft != null && daysLeft <= 0 ? 'text-gray-400' : ''}>
-                  {deadlineText}
-                </span>
-              </>
-            )}
-          </p>
 
-          {/* ── 1. Deal explanation — FIRST, above the fold ── */}
-          {opp.deal_type && DEAL_DESCRIPTIONS[opp.deal_type] && (
-            <div className="rounded-lg bg-emerald-50 border border-emerald-100 px-4 py-3 mb-5">
-              <p className="text-[11px] font-bold text-emerald-700 uppercase tracking-wide m-0 mb-1">What you get</p>
-              <p className="text-[13.5px] text-emerald-800 leading-[1.6] m-0">
-                <span className="font-semibold">{dealLabel}.</span>{' '}
+          {/* ── Deadline ── */}
+          {daysLeft != null && daysLeft > 0 && (
+            <div className="flex items-center gap-1.5 mb-5">
+              <Clock size={13} className={daysLeft <= 7 ? 'text-red-500' : 'text-gray-400'} />
+              <span className={`text-[13px] font-semibold ${daysLeft <= 7 ? 'text-red-600' : 'text-gray-500'}`}>
+                {daysLeft === 1 ? 'Closes tomorrow' : `${daysLeft} days left`}
+              </span>
+            </div>
+          )}
+
+          {/* ── Deal explanation ── */}
+          {opp.deal_type && DEAL_DESCRIPTIONS[opp.deal_type] && dealColors && (
+            <div
+              className="rounded-xl px-5 py-4 mb-6"
+              style={{ background: dealColors.bg, border: `1px solid ${dealColors.border}` }}
+            >
+              <p className="text-[13px] font-bold m-0 mb-1" style={{ color: dealColors.text }}>
+                What you get
+              </p>
+              <p className="text-[14px] leading-relaxed m-0" style={{ color: dealColors.text }}>
                 {DEAL_DESCRIPTIONS[opp.deal_type]}
               </p>
             </div>
           )}
 
-          {/* ── 2. Description ── */}
-          <div className="mb-5">
-            <p className="text-[14px] text-gray-700 leading-[1.7] m-0 whitespace-pre-line">
-              {opp.description}
-            </p>
+          {/* ── Description ── */}
+          <p className="text-[15px] text-gray-700 leading-[1.7] m-0 mb-6 whitespace-pre-line">
+            {opp.description}
+          </p>
+
+          {/* ── Requirements grid ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            {/* Score requirement */}
+            {opp.min_score != null && (
+              <div className="flex items-start gap-3 rounded-xl bg-gray-50 px-4 py-3 border border-gray-100">
+                <Target size={16} className="text-purple-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0">Minimum score</p>
+                  <p className="text-[16px] font-bold text-gray-900 m-0">{Math.round(opp.min_score)}+</p>
+                </div>
+              </div>
+            )}
+
+            {/* Posted by */}
+            {opp.posted_by && (
+              <div className="flex items-start gap-3 rounded-xl bg-gray-50 px-4 py-3 border border-gray-100">
+                <Users size={16} className="text-purple-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0">Posted by</p>
+                  <p className="text-[14px] font-bold text-gray-900 m-0">{opp.posted_by}</p>
+                  {perspLabel && <p className="text-[12px] text-gray-500 m-0">{perspLabel}</p>}
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* ── 3. Requirements ── */}
+          {/* ── Looking for (genres, formats, budget) ── */}
           {((opp.formats?.length > 0) || (opp.genres?.length > 0) || (opp.budget_tiers?.length > 0)) && (
-            <div className="border-t border-gray-100 pt-4 mb-5">
-              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Looking for</p>
-              <div className="flex flex-wrap gap-1.5">
+            <div className="mb-6">
+              <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Looking for</p>
+              <div className="flex flex-wrap gap-2">
                 {opp.formats?.map((f: string) => (
-                  <span key={f} className="text-[12px] font-medium px-2.5 py-1 rounded-full bg-purple-50 text-purple-700">{f}</span>
+                  <span key={f} className="text-[13px] font-semibold text-gray-700 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
+                    {FORMAT_LABELS[f] ?? f}
+                  </span>
                 ))}
                 {opp.genres?.map((g: string) => (
-                  <span key={g} className="text-[12px] font-medium px-2.5 py-1 rounded-full bg-blue-50 text-blue-700">{GENRE_LABELS[g] ?? g}</span>
+                  <span key={g} className="text-[13px] font-semibold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    {GENRE_LABELS[g] ?? g}
+                  </span>
                 ))}
                 {opp.budget_tiers?.map((b: string) => (
-                  <span key={b} className="text-[12px] font-medium px-2.5 py-1 rounded-full bg-amber-50 text-amber-700">{BUDGET_LABELS[b] ?? b}</span>
+                  <span key={b} className="text-[13px] font-semibold text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                    {BUDGET_LABELS[b] ?? b} budget
+                  </span>
                 ))}
               </div>
             </div>
           )}
 
-          {/* ── 4. CTA — conditional on auth + qualification ── */}
-          <div className="border-t border-gray-100 pt-5">
-            {user ? (
-              hasApplied ? (
-                <div className="rounded-lg bg-gray-50 border border-gray-100 px-4 py-3 flex items-center justify-between">
-                  <p className="text-[13px] text-gray-500 m-0 font-medium">You&apos;ve already applied to this opportunity.</p>
-                  <Link href="/dashboard" className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 shrink-0">
-                    View status &rarr;
-                  </Link>
+          {/* ── Divider ── */}
+          <div className="h-px bg-gray-100 mb-6" />
+
+          {/* ── CTA section ── */}
+          {user ? (
+            // ── LOGGED IN ──
+            stageInfo ? (
+              // Has applied — show status
+              <div
+                className="rounded-xl px-5 py-4"
+                style={{ background: stageInfo.bg, border: `1px solid ${stageInfo.bg}` }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span
+                    className="text-[12px] font-bold px-3 py-0.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.6)', color: stageInfo.text }}
+                  >
+                    {stageInfo.label}
+                  </span>
                 </div>
-              ) : qualifies ? (
-                isPro ? (
-                  <div className="rounded-lg bg-purple-50 border border-purple-100 px-4 py-3">
-                    <p className="text-[13px] text-purple-800 m-0 mb-3 font-medium">
-                      You have a qualifying script. Apply now and we&apos;ll share it with the {perspLabel?.toLowerCase() ?? 'reviewer'}.
-                    </p>
-                    <Link
-                      href={`/opportunities/${opp.slug}/apply`}
-                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-[14px] font-semibold text-white transition-all hover:brightness-110"
-                      style={{ background: '#7c3aed' }}
-                    >
-                      Apply now <ArrowRight size={14} />
+                <p className="text-[14px] m-0 mb-3" style={{ color: stageInfo.text }}>
+                  {stageInfo.description}
+                </p>
+                {reviewStage === 'complete' && (
+                  <p className="text-[13px] m-0" style={{ color: stageInfo.text }}>
+                    You can submit another script for this opportunity.{' '}
+                    <Link href={`/opportunities/${opp.slug}/apply`} className="font-bold underline" style={{ color: stageInfo.text }}>
+                      Apply again
                     </Link>
-                  </div>
-                ) : (
-                  <div className="rounded-lg bg-gray-50 border border-gray-200 px-4 py-3">
-                    <p className="text-[13px] text-gray-700 m-0 mb-1 font-medium">
-                      You have a qualifying script for this opportunity.
-                    </p>
-                    <p className="text-[12.5px] text-gray-500 m-0 mb-3">
-                      Upgrade to Pro to apply directly and get your script in front of the {perspLabel?.toLowerCase() ?? 'reviewer'}.
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <Link
-                        href="/#pricing"
-                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-[14px] font-semibold text-white transition-all hover:brightness-110"
-                        style={{ background: '#7c3aed' }}
-                      >
-                        Upgrade to Pro <ArrowRight size={14} />
-                      </Link>
-                      <span className="text-[12px] text-gray-400">$20/mo</span>
-                    </div>
-                  </div>
-                )
-              ) : (
-                <div className="rounded-lg bg-gray-50 border border-gray-100 px-4 py-3">
-                  <p className="text-[13px] text-gray-500 m-0">
-                    None of your scripts currently match this opportunity&apos;s requirements. Upload a new script that fits the criteria above.
                   </p>
-                </div>
-              )
-            ) : (
-              <div className="rounded-lg px-4 py-4" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.06), rgba(124,58,237,0.02) 65%)', border: '1.5px solid rgba(124,58,237,0.20)' }}>
-                <p className="text-[14.5px] font-bold text-gray-900 m-0 mb-1">
-                  Interested? Here&apos;s how it works.
-                </p>
-                <p className="text-[13px] text-gray-500 m-0 mb-3 leading-[1.5]">
-                  Upload your script, get scored in 60 seconds, and we&apos;ll match you to this opportunity automatically. Your first evaluation is free.
-                </p>
-                <Link
-                  href="/start"
-                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-[14px] font-semibold text-white transition-all hover:brightness-110"
-                  style={{ background: '#7c3aed' }}
-                >
-                  Get started free <ArrowRight size={14} />
+                )}
+                <Link href="/dashboard" className="text-[13px] font-bold mt-2 inline-block" style={{ color: stageInfo.text }}>
+                  View on dashboard &rarr;
                 </Link>
               </div>
-            )}
-          </div>
+            ) : qualifyingScripts.length > 0 ? (
+              // Has qualifying scripts — show them + apply
+              <div>
+                <p className="text-[13px] font-bold text-green-700 m-0 mb-3">
+                  {qualifyingScripts.length} {qualifyingScripts.length === 1 ? 'script qualifies' : 'scripts qualify'} for this opportunity
+                </p>
+                <div className="space-y-2 mb-4">
+                  {qualifyingScripts.map(s => (
+                    <div key={s.id} className="flex items-center gap-3 rounded-lg bg-green-50 border border-green-100 px-4 py-2.5">
+                      <FileText size={15} className="text-green-600 shrink-0" />
+                      <span className="text-[14px] text-gray-800 font-medium truncate flex-1">{s.title || 'Untitled'}</span>
+                      {s.score != null && (
+                        <span className="text-[13px] font-bold text-purple-600 shrink-0">
+                          Score: {Math.round(s.score)}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {isPro ? (
+                  <Link
+                    href={`/opportunities/${opp.slug}/apply`}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110"
+                    style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
+                  >
+                    Apply now <ArrowRight size={16} />
+                  </Link>
+                ) : (
+                  <div>
+                    <p className="text-[13px] text-gray-500 m-0 mb-3">
+                      Upgrade to Pro to apply and get your script in front of the {perspLabel?.toLowerCase() ?? 'reviewer'}.
+                    </p>
+                    <Link
+                      href="/#pricing"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110"
+                      style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
+                    >
+                      Upgrade to Pro — $20/mo <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                )}
+              </div>
+            ) : (
+              // No qualifying scripts
+              <div className="rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
+                <p className="text-[14px] text-gray-600 font-medium m-0 mb-1">
+                  None of your scripts match this opportunity yet.
+                </p>
+                <p className="text-[13px] text-gray-400 m-0">
+                  Upload a script that matches the requirements above.{' '}
+                  <Link href="/dashboard" className="font-semibold text-purple-600 hover:text-purple-700">
+                    Upload a script
+                  </Link>
+                </p>
+              </div>
+            )
+          ) : (
+            // ── NOT LOGGED IN — strong CTA ──
+            <div
+              className="rounded-xl px-6 py-6"
+              style={{
+                background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(124,58,237,0.03) 65%), #fff',
+                border: '1.5px solid rgba(124,58,237,0.25)',
+              }}
+            >
+              <h3
+                className="text-[20px] font-bold text-gray-900 m-0 mb-2"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                Want to apply?
+              </h3>
+              <p className="text-[14px] text-gray-600 m-0 mb-4 leading-relaxed">
+                Upload your script and get scored in 60 seconds. If you meet the requirements, you can apply directly. Your first evaluation is free.
+              </p>
+              <Link
+                href="/start"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110"
+                style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
+              >
+                Get started free <ArrowRight size={16} />
+              </Link>
+            </div>
+          )}
+
         </div>
       </div>
     </div>
