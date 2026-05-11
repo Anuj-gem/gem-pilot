@@ -28,6 +28,7 @@ interface DashboardScriptCardProps {
   createdAt: string
   score: number | null
   qualifyingOpps: QualifyingOpp[]
+  isProcessing?: boolean
 }
 
 
@@ -40,6 +41,7 @@ export function DashboardScriptCard({
   createdAt,
   score,
   qualifyingOpps,
+  isProcessing: processing,
 }: DashboardScriptCardProps) {
   const [oppsOpen, setOppsOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -84,8 +86,15 @@ export function DashboardScriptCard({
   return (
     <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
       <div className="flex items-start gap-3">
-        {/* Score badge — single neutral color */}
-        {score != null && (
+        {/* Score badge — spinner when processing, score when done */}
+        {processing ? (
+          <div
+            className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+            style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}
+          >
+            <div className="w-5 h-5 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
+          </div>
+        ) : score != null ? (
           <div
             className="shrink-0 w-12 h-12 rounded-lg flex flex-col items-center justify-center"
             style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}
@@ -97,7 +106,7 @@ export function DashboardScriptCard({
               Score
             </span>
           </div>
-        )}
+        ) : null}
 
         {/* Content */}
         <div className="min-w-0 flex-1">
@@ -113,7 +122,10 @@ export function DashboardScriptCard({
             </div>
 
             <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
-              {evaluationId && (
+              {processing && (
+                <span className="text-[12px] text-purple-600 font-medium">Evaluating...</span>
+              )}
+              {!processing && evaluationId && (
                 <Link
                   href={`/report/${evaluationId}`}
                   className="text-[12px] text-purple-600 hover:text-purple-700 font-semibold whitespace-nowrap flex items-center gap-1"
@@ -124,7 +136,7 @@ export function DashboardScriptCard({
                   </svg>
                 </Link>
               )}
-              <div ref={menuRef} className="relative">
+              {!processing && <div ref={menuRef} className="relative">
                 <button
                   onClick={() => setMenuOpen(o => !o)}
                   className="inline-flex items-center justify-center w-7 h-7 rounded-lg hover:bg-gray-100 transition-colors text-gray-400"
@@ -146,12 +158,12 @@ export function DashboardScriptCard({
                     </button>
                   </div>
                 )}
-              </div>
+              </div>}
             </div>
           </div>
 
-          {/* Qualifying opps — contextual line + expandable */}
-          {qualifyingOpps.length > 0 && (
+          {/* Qualifying opps — contextual line + expandable (hidden while processing) */}
+          {!processing && qualifyingOpps.length > 0 && (
             <div className="mt-2">
               <button
                 onClick={() => setOppsOpen(o => !o)}

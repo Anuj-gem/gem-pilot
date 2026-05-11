@@ -142,7 +142,17 @@ export default async function DashboardPage() {
       }
     })
 
-  const isProcessing = visible.some((s) => s.status === 'processing' || s.status === 'queued')
+  // Scripts still being evaluated — show as individual processing cards
+  const processingScripts = visible
+    .filter(s => s.status === 'processing' || s.status === 'queued')
+    .map(s => ({
+      id: s.id,
+      title: s.title,
+      format: s.declared_format,
+      createdAt: s.created_at,
+    }))
+
+  const isProcessing = processingScripts.length > 0
 
   // Total qualifying opps across all scripts (for empty-state nudge)
   const totalQualifying = completedScripts.reduce((sum, s) => sum + s.qualifyingOpps.length, 0)
@@ -485,18 +495,26 @@ export default async function DashboardPage() {
             )}
           </header>
 
-          {completedScripts.length === 0 && !isProcessing ? (
+          {completedScripts.length === 0 && processingScripts.length === 0 ? (
             <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
               <p className="text-[13px] text-gray-500 m-0">Upload a script to get your free report.</p>
             </div>
           ) : (
             <div className="space-y-2">
-              {isProcessing && (
-                <div className="rounded-xl border border-purple-100 bg-purple-50/50 px-4 py-3 flex items-center gap-2.5">
-                  <div className="w-3 h-3 border-2 border-purple-400 border-t-transparent rounded-full animate-spin shrink-0" />
-                  <span className="text-[13px] text-purple-700">Your script is being evaluated...</span>
-                </div>
-              )}
+              {processingScripts.map(script => (
+                <DashboardScriptCard
+                  key={script.id}
+                  scriptId={script.id}
+                  title={script.title}
+                  format={script.format}
+                  genre={null}
+                  evaluationId={null}
+                  createdAt={script.createdAt}
+                  score={null}
+                  qualifyingOpps={[]}
+                  isProcessing={true}
+                />
+              ))}
               {completedScripts.slice(0, 5).map(script => (
                 <DashboardScriptCard
                   key={script.id}
