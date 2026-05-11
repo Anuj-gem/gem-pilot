@@ -37,11 +37,11 @@ export default async function ScriptsPage() {
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
           <p className="text-[13px] text-gray-400 m-0 mb-4">Upload a screenplay to get your first evaluation.</p>
           <a
-            href="/start"
+            href="/"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors"
             style={{ background: 'var(--gem-accent)' }}
           >
-            Get started
+            Upload a script
           </a>
         </div>
       </div>

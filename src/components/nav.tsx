@@ -195,7 +195,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     )
                   })}
                   <Link
-                    href="/start"
+                    href="/"
                     className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110"
                     style={{
                       background: 'var(--gem-accent)',
@@ -216,7 +216,7 @@ export default function Nav({ userData }: NavProps = {}) {
               {/* Mobile logged-out — Sign up pill + hamburger */}
               <div className="md:hidden flex items-center gap-2">
                 <Link
-                  href="/start"
+                  href="/"
                   className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
                   style={{
                     background: 'var(--gem-accent)',

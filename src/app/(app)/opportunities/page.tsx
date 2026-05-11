@@ -172,15 +172,15 @@ export default async function OpportunitiesPage() {
               Upload your script to see which calls you qualify for
             </p>
             <p className="text-[13px] text-gray-500 m-0 mt-1">
-              Get scored in 60 seconds. Your first evaluation is free.
+              Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Your first evaluation is free.
             </p>
           </div>
           <Link
-            href="/start"
+            href="/"
             className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110"
             style={{ background: '#7c3aed' }}
           >
-            Get started <ArrowRight size={15} />
+            Upload a script <ArrowRight size={15} />
           </Link>
         </div>
       )}

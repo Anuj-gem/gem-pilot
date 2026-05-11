@@ -190,7 +190,7 @@ export function OpportunityListingCard({
                   </Link>
                 ) : (
                   <span className="text-[12px] font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-500 border border-purple-200">
-                    Pro required
+                    GEM Pro
                   </span>
                 )
               ) : (

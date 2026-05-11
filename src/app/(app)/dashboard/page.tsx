@@ -260,7 +260,7 @@ export default async function DashboardPage() {
                 </>
               ) : (
                 <>
-                  <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">Get started</p>
+                  <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">Upload a script</p>
                   <p className="text-[13px] text-gray-400 m-0">
                     Upload a script to get your report — then apply to open calls.
                   </p>
