@@ -357,6 +357,26 @@ export async function POST(request: NextRequest) {
         .eq("id", submission.id)
     }
 
+    // Auto-update title from the LLM extraction. The eval prompt (v3.10+)
+    // extracts the proper title from the script's title page. We overwrite
+    // the filename-inferred placeholder — UNLESS the writer manually set a
+    // declared_title (meaning they intentionally typed a title).
+    const extractedTitle = (evaluation as any)?.title
+    if (extractedTitle && typeof extractedTitle === "string" && extractedTitle !== "Untitled") {
+      // Only overwrite if no declared_title was set (i.e. user didn't manually type one)
+      const { data: sub } = await serviceClient
+        .from("script_submissions")
+        .select("declared_title")
+        .eq("id", submission.id)
+        .single()
+      if (!sub?.declared_title) {
+        await serviceClient
+          .from("script_submissions")
+          .update({ title: extractedTitle.trim() })
+          .eq("id", submission.id)
+      }
+    }
+
     // Producer matching — fan out to producer dashboards for any whose lane
     // overlaps. Don't block the response if anything goes wrong; the cron
     // backfill / admin trigger can recover. Skipped entirely for producer-

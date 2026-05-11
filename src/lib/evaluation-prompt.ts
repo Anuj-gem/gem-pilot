@@ -1,8 +1,16 @@
-// GEM Evaluation Prompt — Selznick 3.9 — 2026-05-05
+// GEM Evaluation Prompt — Selznick 3.10 — 2026-05-11
 
 /** Current prompt version — stamped on every new evaluation. Used to detect
  *  stale reports that should be re-scored before opportunity submission. */
-export const CURRENT_PROMPT_VERSION = "3.9"
+export const CURRENT_PROMPT_VERSION = "3.10"
+//
+// 3.10 changes from 3.9:
+//
+//   1. ADDED: Title extraction in STEP 1 Classification.
+//      - LLM reads the title page and extracts the proper script title.
+//      - New "title" field in the output JSON, at the top level.
+//      - score-submission route uses this to overwrite the filename-inferred
+//        placeholder title on script_submissions.
 //
 // 3.9 changes from 3.8.1:
 //
@@ -54,6 +62,7 @@ ${formatLine}
 
 ## STEP 1: Classification
 
+- **Title**: The script's proper title as written on its title page. Read the first page carefully — screenplays almost always have a title page with the project name. Extract it exactly as written (title case, no quotes). If no title page exists or the title is genuinely unreadable, output "Untitled".
 - **Format**: ${declaredFormat} (declared by the writer — do not reclassify)
 - **Genre**: Primary genre + 0–2 secondary genres (locked vocabulary, see KEY RULE below)
 - **Tone**: 1-2 word stylistic descriptor (see KEY RULE on tone below)
@@ -597,6 +606,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 
 \`\`\`json
 {
+  "title": "",                    // extracted from the title page — proper title case
   "classification": {
     "format": "",
     "genre_primary": "",        // exactly one from the locked vocab
@@ -716,6 +726,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 
 Before you return the response, scan your JSON and confirm ALL of these top-level keys are present:
 
+- \`title\` (extracted from the title page)
 - \`classification\`
 - \`content_description\`
 - \`plot_summary\`
