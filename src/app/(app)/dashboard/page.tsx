@@ -130,6 +130,7 @@ export default async function DashboardPage() {
     .map(s => {
       const ev = myEvalBySub.get(s.id)
       const qualifyingOpps = getQualifyingOpps(ev?.format || s.declared_format, ev?.genre || null, ev?.weighted_score || null)
+        .filter(o => !appliedOppIds.has(o.id))  // exclude already-applied
       return {
         id: s.id,
         title: s.title,
@@ -169,6 +170,21 @@ export default async function DashboardPage() {
       if (b.deadline) return 1
       return 0
     })
+
+  // Count qualifying scripts per opportunity (for "N scripts qualify" label)
+  function countQualifyingScripts(opp: typeof allOpenOpps[0]) {
+    return completedScripts.filter(s => {
+      const ev = myEvalBySub.get(s.id)
+      const score = ev?.weighted_score || null
+      if (opp.min_score && (!score || score < opp.min_score)) return false
+      const noFmt = !opp.formats || opp.formats.length === 0
+      const noGenre = !opp.genres || opp.genres.length === 0
+      if (noFmt && noGenre) return true
+      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
+      const genreMatch = noGenre || (s.genre && opp.genres!.some(g => s.genre!.toLowerCase().includes(g.toLowerCase())))
+      return fmtMatch || genreMatch
+    }).length
+  }
 
   // Split applications into reviewed (with feedback) and pending
   const reviewedApps = allApplications.filter(a => a.status === 'reviewed' || a.review_stage === 'complete')
@@ -425,13 +441,23 @@ export default async function DashboardPage() {
                         <p className="text-[13px] text-gray-500 m-0 mt-1.5 line-clamp-2 leading-relaxed">{opp.description}</p>
                       )}
 
-                      {/* Footer: score req + Apply */}
+                      {/* Footer: score req + qualifying count + Apply */}
                       <div className="flex items-center justify-between mt-3">
-                        {opp.min_score != null && (
-                          <span className="text-[12px] font-bold text-gray-600">
-                            Requires {Math.round(opp.min_score)}+ score
-                          </span>
-                        )}
+                        <div className="flex items-center gap-3">
+                          {opp.min_score != null && (
+                            <span className="text-[12px] font-bold text-gray-600">
+                              Requires {Math.round(opp.min_score)}+ score
+                            </span>
+                          )}
+                          {(() => {
+                            const qCount = countQualifyingScripts(opp)
+                            return qCount > 0 ? (
+                              <span className="text-[12px] text-gray-400 font-medium">
+                                {qCount} {qCount === 1 ? 'script qualifies' : 'scripts qualify'}
+                              </span>
+                            ) : null
+                          })()}
+                        </div>
                         <span className="text-[13px] font-bold text-purple-600 flex items-center gap-1 ml-auto">
                           Apply
                           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
