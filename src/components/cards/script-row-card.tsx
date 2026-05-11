@@ -7,13 +7,6 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-function scoreTier(score: number): { label: string; bg: string; text: string; border: string } {
-  if (score >= 80) return { label: 'Exceptional', bg: '#dcfce7', text: '#166534', border: '#86efac' }
-  if (score >= 70) return { label: 'Strong',      bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' }
-  if (score >= 60) return { label: 'Promising',   bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' }
-  if (score >= 50) return { label: 'Early Stage',  bg: '#fef3c7', text: '#92400e', border: '#fcd34d' }
-  return              { label: 'Needs Work',   bg: '#fee2e2', text: '#991b1b', border: '#fca5a5' }
-}
 
 export type ScriptRowData = {
   id: string
@@ -103,7 +96,7 @@ export function ScriptRowCard({
           </button>
         )}
 
-        {/* Score badge — tier-colored */}
+        {/* Score badge — single neutral color */}
         {s.isProcessing ? (
           <div
             className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
@@ -115,16 +108,16 @@ export function ScriptRowCard({
           <div
             className="shrink-0 w-11 h-11 rounded-lg flex flex-col items-center justify-center"
             style={{
-              background: scoreTier(s.score).bg,
-              border: `1.5px solid ${scoreTier(s.score).border}`,
+              background: '#f3f4f6',
+              border: '1.5px solid #e5e7eb',
               ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
             }}
           >
-            <span className="text-[16px] font-extrabold leading-none" style={{ color: scoreTier(s.score).text }}>
+            <span className="text-[16px] font-extrabold leading-none text-gray-800">
               {Math.round(s.score)}
             </span>
-            <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5" style={{ color: scoreTier(s.score).text, opacity: 0.7 }}>
-              {scoreTier(s.score).label}
+            <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-gray-400">
+              Score
             </span>
           </div>
         ) : (

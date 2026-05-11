@@ -170,12 +170,9 @@ export default async function DashboardPage() {
       return 0
     })
 
-  // Stats for status strip
-  const bestScore = completedScripts.reduce((max, s) => {
-    const sc = myEvalBySub.get(s.id)?.weighted_score
-    return sc != null && sc > max ? sc : max
-  }, 0)
-  const activeApps = allApplications.filter(a => a.status !== 'reviewed' && a.review_stage !== 'complete').length
+  // Split applications into reviewed (with feedback) and pending
+  const reviewedApps = allApplications.filter(a => a.status === 'reviewed' || a.review_stage === 'complete')
+  const pendingApps = allApplications.filter(a => a.status !== 'reviewed' && a.review_stage !== 'complete')
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -209,46 +206,112 @@ export default async function DashboardPage() {
               </span>
             )}
           </div>
-          <div className="flex items-center gap-3 shrink-0">
-            {bestScore > 0 && (
-              <div className="flex items-center gap-1">
-                <span className="text-[11px] text-gray-400">Best score</span>
-                <span className="text-[13px] font-bold text-gray-700">{Math.round(bestScore)}</span>
-              </div>
-            )}
-            {activeApps > 0 && (
-              <div className="flex items-center gap-1">
-                <span className="text-[11px] text-gray-400">Active</span>
-                <span className="text-[13px] font-bold text-purple-600">{activeApps}</span>
-              </div>
-            )}
-            <Link
-              href="/profile"
-              className="inline-flex items-center justify-center w-7 h-7 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-gray-400 shrink-0"
-              title="Settings"
-            >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-              </svg>
-            </Link>
-          </div>
+          <Link
+            href="/profile"
+            className="inline-flex items-center justify-center w-7 h-7 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-gray-400 shrink-0"
+            title="Settings"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </Link>
         </div>
 
-        {/* ── APPLICATIONS (the heartbeat) ─────────────── */}
-        <section>
-          <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your applications</h2>
-            {allApplications.length > 0 && (
-              <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
-                All
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </Link>
-            )}
-          </header>
+        {/* ── YOUR FEEDBACK (hero section) ─────────────── */}
+        {reviewedApps.length > 0 && (
+          <section>
+            <header className="flex items-end justify-between gap-3 mb-2.5">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your feedback</h2>
+              {allApplications.length > 2 && (
+                <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
+                  View all
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </Link>
+              )}
+            </header>
+            <div className="space-y-3">
+              {reviewedApps.slice(0, 2).map(app => {
+                const opp = oppMap.get(app.opportunity_id)
+                return (
+                  <Link key={app.id} href={`/applications/${app.id}`} className="block">
+                    <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all">
+                      {/* Header: opp name + reviewed badge */}
+                      <div className="flex items-center justify-between gap-3 mb-2">
+                        <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+                          {opp?.title || 'Opportunity'}
+                        </p>
+                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-green-50 text-green-700 shrink-0">
+                          Reviewed
+                        </span>
+                      </div>
 
-          {allApplications.length === 0 ? (
-            /* Empty state — nudge toward opportunities */
+                      {/* Feedback text — prominent, not truncated to one line */}
+                      {app.feedback && (
+                        <p className="text-[13px] text-gray-600 m-0 leading-relaxed line-clamp-4">
+                          {app.feedback}
+                        </p>
+                      )}
+
+                      {/* Tags row: feedback tags + next steps */}
+                      {((app.feedback_tags && app.feedback_tags.length > 0) || (app.next_steps_tags && app.next_steps_tags.length > 0)) && (
+                        <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-gray-100">
+                          {app.feedback_tags?.map((tag, i) => (
+                            <span key={`f-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 font-medium">{tag}</span>
+                          ))}
+                          {app.next_steps_tags?.map((tag, i) => (
+                            <span key={`n-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-medium">{tag}</span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-50">
+                        <span className="text-[12px] text-gray-400">Reviewed {app.reviewed_at ? fmtDate(app.reviewed_at) : fmtDate(app.submitted_at)}</span>
+                        <span className="text-[12px] font-semibold text-purple-600 flex items-center gap-1">
+                          View details
+                          <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* ── PENDING APPLICATIONS ─────────────────────── */}
+        {pendingApps.length > 0 && (
+          <section>
+            <header className="mb-2">
+              <h2 className="text-[13px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Pending</h2>
+            </header>
+            <div className="space-y-1.5">
+              {pendingApps.map(app => {
+                const opp = oppMap.get(app.opportunity_id)
+                return (
+                  <Link key={app.id} href={`/applications/${app.id}`} className="block">
+                    <div className="rounded-lg border border-gray-100 bg-gray-50/50 px-4 py-2.5 hover:border-gray-200 transition-colors flex items-center justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13px] font-medium text-gray-700 m-0 truncate">{opp?.title || 'Opportunity'}</p>
+                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
+                      </div>
+                      <span className="text-[11px] text-gray-400 font-medium shrink-0">Under review</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* ── EMPTY STATE (no applications at all) ──────── */}
+        {allApplications.length === 0 && (
+          <section>
+            <header className="mb-2.5">
+              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your applications</h2>
+            </header>
             <div className="rounded-xl border border-gray-200 bg-white px-5 py-6 text-center">
               {totalQualifying > 0 ? (
                 <>
@@ -288,47 +351,8 @@ export default async function DashboardPage() {
                 </>
               )}
             </div>
-          ) : (
-            <div className="space-y-2">
-              {allApplications.map(app => {
-                const opp = oppMap.get(app.opportunity_id)
-                const isPending = app.status === 'pending'
-                const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
-                return (
-                  <Link key={app.id} href={`/applications/${app.id}`} className="block">
-                    <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="min-w-0 flex-1">
-                          <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
-                            {opp?.title || 'Opportunity'}
-                          </p>
-                          <p className="text-[12px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
-                        </div>
-                        <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0 ${
-                          isReviewed ? 'bg-green-50 text-green-700' :
-                          isPending ? 'bg-yellow-50 text-yellow-700' :
-                          'bg-purple-50 text-purple-700'
-                        }`}>
-                          {isReviewed ? 'Reviewed' : isPending ? 'Pending' : 'In review'}
-                        </span>
-                      </div>
-                      {isReviewed && app.feedback_tags && app.feedback_tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-2 pt-2 border-t border-gray-50">
-                          {app.feedback_tags.map((tag, i) => (
-                            <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">{tag}</span>
-                          ))}
-                        </div>
-                      )}
-                      {isReviewed && app.feedback && (
-                        <p className="text-[12px] text-gray-500 m-0 mt-2 pt-2 border-t border-gray-50 line-clamp-2">{app.feedback}</p>
-                      )}
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          )}
-        </section>
+          </section>
+        )}
 
         {/* ── AVAILABLE OPPORTUNITIES ───────────────────── */}
         {availableOpps.length > 0 && (

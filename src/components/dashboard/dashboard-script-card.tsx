@@ -30,13 +30,6 @@ interface DashboardScriptCardProps {
   qualifyingOpps: QualifyingOpp[]
 }
 
-function scoreTier(score: number): { label: string; bg: string; text: string; border: string } {
-  if (score >= 80) return { label: 'Exceptional', bg: '#dcfce7', text: '#166534', border: '#86efac' }
-  if (score >= 70) return { label: 'Strong',      bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' }
-  if (score >= 60) return { label: 'Promising',   bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' }
-  if (score >= 50) return { label: 'Early Stage',  bg: '#fef3c7', text: '#92400e', border: '#fcd34d' }
-  return              { label: 'Needs Work',   bg: '#fee2e2', text: '#991b1b', border: '#fca5a5' }
-}
 
 export function DashboardScriptCard({
   scriptId,
@@ -60,7 +53,6 @@ export function DashboardScriptCard({
     year: 'numeric',
   })
 
-  const tier = score != null ? scoreTier(score) : null
 
   useEffect(() => {
     if (!menuOpen) return
@@ -92,17 +84,17 @@ export function DashboardScriptCard({
   return (
     <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
       <div className="flex items-start gap-3">
-        {/* Score badge */}
-        {tier && score != null && (
+        {/* Score badge — single neutral color */}
+        {score != null && (
           <div
             className="shrink-0 w-12 h-12 rounded-lg flex flex-col items-center justify-center"
-            style={{ background: tier.bg, border: `1.5px solid ${tier.border}` }}
+            style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}
           >
-            <span className="text-[18px] font-extrabold leading-none" style={{ color: tier.text }}>
+            <span className="text-[18px] font-extrabold leading-none text-gray-800">
               {Math.round(score)}
             </span>
-            <span className="text-[8px] font-bold uppercase tracking-wide mt-0.5" style={{ color: tier.text, opacity: 0.7 }}>
-              {tier.label}
+            <span className="text-[8px] font-bold uppercase tracking-wide mt-0.5 text-gray-400">
+              Score
             </span>
           </div>
         )}
