@@ -9,6 +9,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, FileText, Clock, Target } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
+import { SubscribeCTA } from '@/components/subscribe-cta'
 
 const GENRE_LABELS: Record<string, string> = {
   thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
@@ -298,13 +299,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     <p className="text-[13px] text-gray-500 m-0 mb-3">
                       Upgrade to Pro to apply and get your script in front of the reviewer.
                     </p>
-                    <Link
-                      href="/#pricing"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110"
+                    <SubscribeCTA
+                      location="opportunity_detail_upgrade"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
                       style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
-                    >
-                      Upgrade to Pro — $20/mo <ArrowRight size={16} />
-                    </Link>
+                      label="Upgrade to Pro — $20/mo"
+                    />
                   </div>
                 )}
               </div>

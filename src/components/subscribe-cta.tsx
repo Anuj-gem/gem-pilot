@@ -9,6 +9,7 @@ interface SubscribeCTAProps {
   location: string
   label?: string
   className?: string
+  style?: React.CSSProperties
   children?: React.ReactNode
 }
 
@@ -28,6 +29,7 @@ export function SubscribeCTA({
   location,
   label = 'Start with Pro',
   className = '',
+  style,
   children,
 }: SubscribeCTAProps) {
   const [loading, setLoading] = useState(false)
@@ -60,6 +62,7 @@ export function SubscribeCTA({
       disabled={loading}
       data-cta-label={label}
       className={className}
+      style={style}
     >
       {loading ? 'Redirecting to checkout…' : children ?? label}
       {!loading && <ArrowRight size={14} />}
