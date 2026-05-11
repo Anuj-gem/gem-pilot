@@ -1,5 +1,5 @@
-// LandingPricing — two-column Free vs Pro card.
-// v11 — aligned with evaluation → review → matching pillars.
+// LandingPricing — simplified Free vs Pro.
+// v13 — Free = unlimited evaluations (CORRECT). Pro = active matching.
 'use client'
 
 import { ArrowRight, Check } from 'lucide-react'
@@ -24,14 +24,11 @@ export function LandingPricing() {
             Pricing
           </p>
           <h2
-            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-3"
+            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0"
             style={{ fontFamily: 'Georgia, serif' }}
           >
             Simple pricing.
           </h2>
-          <p className="text-[15px] text-[var(--gem-gray-300)] m-0">
-            Your first evaluation is free. No credit card required.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto mb-6">
@@ -39,14 +36,15 @@ export function LandingPricing() {
             tier="Free"
             price="$0"
             period="forever"
-            blurb="Get a full evaluation on your first script."
+            blurb="Unlimited evaluations. Full reports. No strings attached."
             features={[
-              '1 script evaluated',
-              'Full detailed report',
+              'Unlimited script evaluations',
+              'Full detailed reports',
               'Comparable projects',
               'Development notes',
+              'Work visible to partner network',
             ]}
-            cta="Get started free"
+            cta="Get started"
             onCTA={() => handleCTA('Get started free')}
             primary={false}
           />
@@ -54,15 +52,16 @@ export function LandingPricing() {
             tier="Pro"
             price="$20"
             period="/ month"
-            blurb="Unlimited evaluations, a GEM Review, and partner matching."
+            blurb="Everything free, plus active matching and team advocacy."
             features={[
-              'Unlimited scripts evaluated',
-              'GEM Review by our team',
-              'Matched to partners',
+              'Everything in Free',
+              'Portfolio review by our team',
+              'Active matching with partners',
+              'Team pitches your work directly',
               'Priority consideration',
             ]}
-            cta="Start free trial"
-            onCTA={() => handleCTA('Start free trial')}
+            cta="Get started"
+            onCTA={() => handleCTA('Get started pro')}
             primary={true}
           />
         </div>

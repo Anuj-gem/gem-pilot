@@ -1,25 +1,24 @@
 // LandingArc — three-step story.
 // Instant coverage → Human review → Get matched.
-//
-// v12 — simplified copy: coverage, human review, matching.
+// v13 — corrected copy: evaluations are free and unlimited.
 
 import { Zap, Eye, Handshake } from 'lucide-react'
 
 const STEPS = [
   {
     icon: Zap,
-    title: "Instant coverage",
-    sub: "Detailed script coverage instantly, powered by the most advanced screenplay analysis ever built. For free.",
+    title: 'Instant coverage',
+    sub: 'Upload your screenplay and get a detailed evaluation in under a minute — story, character, market positioning, comparables, and development notes.',
   },
   {
     icon: Eye,
-    title: "Human review",
-    sub: "Our team and our partner network review your work in depth to determine whether there's a good fit.",
+    title: 'Human review',
+    sub: 'Our team and partner network review your work in depth to determine whether there\'s a good fit.',
   },
   {
     icon: Handshake,
-    title: "Get matched",
-    sub: "Partners reach out directly to advance discussions further.",
+    title: 'Get matched',
+    sub: 'Partners reach out to you directly to advance discussions — reps, producers, financiers, and development executives.',
   },
 ]
 
@@ -48,11 +47,7 @@ export function LandingArc() {
             return (
               <li
                 key={s.title}
-                className="relative rounded-2xl p-5 sm:p-6 flex flex-col"
-                style={{
-                  background: '#fff',
-                  border: '1px solid var(--gem-gray-700)',
-                }}
+                className="relative rounded-2xl p-5 sm:p-6 flex flex-col card-glass"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span

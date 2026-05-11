@@ -1,25 +1,23 @@
-// Landing page — v12 (2026-05-08).
+// Landing page — v13 (2026-05-11).
 //
-// Three steps: instant coverage → human review → get matched.
-// Three pillars: instant coverage, human review, matching.
-//
-// Page architecture:
-//   1. Hero — "Get your work in front of the right people."
-//   2. Arc — Instant coverage → Human review → Get matched (3 steps)
-//   3. Three pillars — instant coverage, human review, matching
-//   4. Pricing — Free vs Pro $20/mo
-//   5. Final CTA
+// Above fold: Hero (compact upload) + Live opportunities from DB.
+// Below fold: Credibility → How it works → GEM Pro → Pricing → Final CTA.
 
 import { redirect } from 'next/navigation'
+import { createServerClient } from '@supabase/ssr'
 import { LandingTracking } from '@/components/landing-tracking'
 import Nav from '@/components/nav'
 import { LandingHero } from '@/components/landing/landing-hero'
+import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
+import { LandingCredibility } from '@/components/landing/landing-credibility'
 import { LandingArc } from '@/components/landing/landing-arc'
-import { LandingPillars } from '@/components/landing/landing-pillars'
+import { LandingPro } from '@/components/landing/landing-pro'
 import { LandingPricing } from '@/components/landing/landing-pricing'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
 import { createClient } from '@/lib/supabase-server'
+
+export const revalidate = 60
 
 export default async function Home({
   searchParams,
@@ -36,17 +34,41 @@ export default async function Home({
   const { data: { user } } = await supabase.auth.getUser()
   if (user) redirect('/dashboard')
 
+  // Query live opportunities for above-fold section.
+  const service = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { cookies: { getAll() { return [] }, setAll() {} } }
+  )
+  const { data: opps } = await service
+    .from('opportunities')
+    .select('id, title, slug, description, formats, genres, budget_tiers, min_score, deadline, perspective, deal_type')
+    .eq('status', 'active')
+    .order('created_at', { ascending: false })
+    .limit(3)
+
+  const opportunities = (opps || []) as LandingOpportunity[]
+
   return (
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
       <LandingTracking />
       <Nav />
+
+      {/* ── Above fold ── */}
       <LandingHero />
-      <div className="h-px bg-[var(--gem-gray-700)]" />
+      <LandingOpportunities opportunities={opportunities} />
+
+      {/* ── Below fold ── */}
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingCredibility />
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingArc />
-      <LandingPillars />
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingPro />
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingPricing />
       <LandingFinalCTA />
+
       <ScriptUploadModal redirectTo="/start" />
     </div>
   )
