@@ -29,20 +29,22 @@ export function ApplicationReply({ applicationId }: { applicationId: string }) {
 
   return (
     <section>
-      <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1.5">Reply to feedback</h2>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-2">Write a response</p>
       <textarea
         value={reply}
         onChange={(e) => setReply(e.target.value)}
-        placeholder="Let us know your thoughts, questions, or next steps..."
-        className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
+        placeholder="Share your thoughts, questions, or next steps..."
+        className="w-full rounded-xl bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:ring-1 focus:ring-purple-200"
+        style={{ border: '1.5px solid #e5e7eb' }}
         rows={3}
       />
       <button
         onClick={handleSubmit}
         disabled={submitting || !reply.trim()}
-        className="mt-2 inline-flex items-center text-[13px] font-semibold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-4 py-2 rounded-lg transition-colors"
+        className="mt-2 inline-flex items-center text-[13px] font-bold text-white disabled:opacity-50 px-4 py-2 rounded-lg transition-all hover:brightness-110"
+        style={{ background: '#7c3aed' }}
       >
-        {submitting ? 'Sending...' : 'Send reply'}
+        {submitting ? 'Sending...' : 'Send response'}
       </button>
     </section>
   )

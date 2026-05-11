@@ -1,5 +1,5 @@
 // /applications/[id] — view a single application (consideration with opportunity).
-// Shows: status, scripts submitted, pitch, feedback (tags + note), reply field.
+// Redesigned: opportunity context → script → feedback centerpiece → response.
 
 import { redirect, notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
@@ -8,6 +8,15 @@ import Link from 'next/link'
 import { ApplicationReply } from '@/components/applications/application-reply'
 
 export const dynamic = 'force-dynamic'
+
+const DEAL_LABELS: Record<string, string> = {
+  option: 'Option Deal', purchase: 'Purchase',
+  representation: 'Representation', co_finance: 'Production Finance',
+}
+const PERSP_LABELS: Record<string, string> = {
+  producer: 'Producer', lit_rep: 'Literary Representative',
+  actor_rep: 'Talent Representative', financier: 'Financier',
+}
 
 function svc() {
   return createServerClient(
@@ -35,10 +44,10 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   if (!app || !app.opportunity_id) notFound()
 
-  // Load the opportunity
+  // Load the opportunity (include perspective)
   const { data: opp } = await service
     .from('opportunities')
-    .select('id, title, slug, description, deal_type')
+    .select('id, title, slug, description, deal_type, perspective')
     .eq('id', app.opportunity_id)
     .single()
 
@@ -70,128 +79,249 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
   const isPending = app.status === 'pending'
+  const dealLabel = opp?.deal_type ? DEAL_LABELS[opp.deal_type] : null
+  const perspLabel = opp?.perspective ? PERSP_LABELS[opp.perspective] : null
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
+  const hasFeedbackContent = isReviewed && (
+    (app.feedback_tags && app.feedback_tags.length > 0) ||
+    (app.next_steps_tags && app.next_steps_tags.length > 0) ||
+    app.feedback
+  )
+
   return (
-    <div className="max-w-lg mx-auto space-y-6">
-      {/* Back */}
-      <Link href="/dashboard" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
-        ← Back to dashboard
+    <div className="max-w-lg mx-auto space-y-8">
+
+      {/* ── BACK LINK ─────────────────────────────────── */}
+      <Link href="/dashboard" className="inline-flex items-center gap-1 text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4l-4 4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        Back to dashboard
       </Link>
 
-      {/* Header */}
+      {/* ── HEADER ────────────────────────────────────── */}
       <div>
-        <h1 className="text-[20px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-          {opp?.title || 'Application'}
-        </h1>
-        <div className="flex items-center gap-3 mt-1.5">
-          <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
-            isReviewed ? 'bg-green-50 text-green-700' :
-            isPending ? 'bg-yellow-50 text-yellow-700' :
-            'bg-purple-50 text-purple-700'
-          }`}>
+        <div className="flex items-center gap-2.5 mb-2">
+          <span
+            className="text-[11px] font-bold px-2.5 py-0.5 rounded-full"
+            style={{ background: '#ede9fe', color: '#5b21b6' }}
+          >
             {isReviewed ? 'Reviewed' : isPending ? 'Pending' : 'In review'}
           </span>
           <span className="text-[12px] text-gray-400">Applied {fmtDate(app.submitted_at)}</span>
-          {opp?.deal_type && (
-            <span className="text-[11px] px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 font-medium capitalize">
-              {opp.deal_type.replace('_', ' ')}
-            </span>
-          )}
         </div>
+        <h1 className="text-[22px] font-bold text-gray-900 m-0 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+          {opp?.title || 'Application'}
+        </h1>
       </div>
 
-      {/* Scripts submitted */}
+      {/* ── OPPORTUNITY CONTEXT ───────────────────────── */}
+      <section
+        className="rounded-xl px-5 py-4"
+        style={{ background: '#fafafa', border: '1px solid #e5e7eb' }}
+      >
+        <div className="flex items-center gap-2.5 mb-2.5">
+          {dealLabel && (
+            <span
+              className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-md"
+              style={{ background: '#ede9fe', color: '#5b21b6', border: '1px solid #c4b5fd' }}
+            >
+              {dealLabel}
+            </span>
+          )}
+          {perspLabel && (
+            <span className="text-[12px] text-gray-400 font-medium">{perspLabel}</span>
+          )}
+        </div>
+
+        {opp?.description && (
+          <p className="text-[13px] text-gray-500 m-0 leading-relaxed line-clamp-3">
+            {opp.description}
+          </p>
+        )}
+
+        <Link
+          href={`/opportunities/${opp?.slug ?? opp?.id}`}
+          className="inline-flex items-center gap-1 text-[12px] font-semibold text-purple-600 hover:text-purple-700 mt-2.5"
+        >
+          View full opportunity
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </Link>
+      </section>
+
+      {/* ── SCRIPT SUBMITTED ──────────────────────────── */}
       <section>
-        <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-2">Scripts submitted</h2>
-        <div className="space-y-1.5">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-2">
+          Script considered
+        </p>
+        <div className="space-y-2">
           {scripts.map(s => (
-            <Link key={s.id} href={`/report/${s.id}`} className="block">
-              <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-3.5 py-2.5 hover:border-purple-200 transition-colors">
-                <span className="text-[13px] font-medium text-gray-900 truncate">{s.title}</span>
-                {s.score && (
-                  <span className={`text-[12px] font-bold px-1.5 py-0.5 rounded ${
-                    s.score >= 80 ? 'bg-green-50 text-green-700' :
-                    s.score >= 70 ? 'bg-blue-50 text-blue-700' :
-                    'bg-yellow-50 text-yellow-700'
-                  }`}>{Math.round(s.score)}</span>
-                )}
+            <Link key={s.id} href={`/report/${s.id}`} className="block group">
+              <div
+                className="flex items-center justify-between rounded-xl bg-white px-4 py-3 hover:border-purple-200 transition-colors"
+                style={{ border: '1.5px solid #e5e7eb' }}
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                  <span className="text-[14px] font-semibold text-gray-900 truncate group-hover:text-purple-700 transition-colors">
+                    {s.title}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  {s.score != null && (
+                    <span
+                      className="text-[13px] font-bold px-2 py-0.5 rounded-md"
+                      style={{ background: '#f3f4f6', color: '#6b7280' }}
+                    >
+                      {Math.round(s.score)}
+                    </span>
+                  )}
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-gray-300 group-hover:text-purple-400 transition-colors">
+                    <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Pitch */}
+      {/* ── PITCH (if submitted) ──────────────────────── */}
       {app.writer_pitch && (
         <section>
-          <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1.5">Your pitch</h2>
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-1.5">Your pitch</p>
           <p className="text-[13px] text-gray-600 m-0 leading-relaxed">{app.writer_pitch}</p>
         </section>
       )}
 
-      {/* Feedback — only if reviewed */}
-      {isReviewed && (
-        <section className="rounded-xl border border-green-100 bg-green-50/30 p-4 space-y-3">
-          <h2 className="text-[14px] font-bold text-gray-900 m-0">Feedback</h2>
+      {/* ── FEEDBACK — the centerpiece ────────────────── */}
+      {hasFeedbackContent && (
+        <section
+          className="rounded-2xl px-6 py-5 space-y-5"
+          style={{
+            background: 'linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #ede9fe 100%)',
+            border: '1px solid #c4b5fd',
+          }}
+        >
+          {/* Producer note — pull-quote editorial treatment */}
+          {app.feedback && (
+            <div
+              className="pl-4"
+              style={{ borderLeft: '3px solid #c4b5fd' }}
+            >
+              <p
+                className="text-[16px] text-gray-800 m-0 leading-relaxed italic"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                &ldquo;{app.feedback}&rdquo;
+              </p>
+            </div>
+          )}
+
+          {/* Next steps */}
+          {app.next_steps_tags && app.next_steps_tags.length > 0 && (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-purple-400 m-0 mb-1.5">
+                Suggested next steps
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {app.next_steps_tags.map((tag: string, i: number) => (
+                  <span
+                    key={i}
+                    className="text-[12px] px-2.5 py-1 rounded-full font-semibold"
+                    style={{ background: '#ede9fe', color: '#5b21b6', border: '1px solid #c4b5fd' }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Feedback tags */}
           {app.feedback_tags && app.feedback_tags.length > 0 && (
             <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wide m-0 mb-1">Reason</p>
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-1.5">
+                Feedback
+              </p>
               <div className="flex flex-wrap gap-1.5">
                 {app.feedback_tags.map((tag: string, i: number) => (
-                  <span key={i} className="text-[12px] px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">{tag}</span>
+                  <span
+                    key={i}
+                    className="text-[12px] px-2.5 py-1 rounded-full bg-white/70 text-gray-600 font-medium"
+                    style={{ border: '1px solid rgba(196, 181, 253, 0.3)' }}
+                  >
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Next steps tags */}
-          {app.next_steps_tags && app.next_steps_tags.length > 0 && (
-            <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wide m-0 mb-1">Next steps</p>
-              <div className="flex flex-wrap gap-1.5">
-                {app.next_steps_tags.map((tag: string, i: number) => (
-                  <span key={i} className="text-[12px] px-2.5 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-700">{tag}</span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Optional human note */}
-          {app.feedback && (
-            <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wide m-0 mb-1">Note</p>
-              <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.feedback}</p>
-            </div>
+          {/* Reviewed date */}
+          {app.reviewed_at && (
+            <p className="text-[11px] text-purple-400 m-0 pt-1">
+              Reviewed {fmtDate(app.reviewed_at)}
+            </p>
           )}
         </section>
       )}
 
-      {/* Writer reply — only if reviewed and hasn't replied yet */}
+      {/* Reviewed but no feedback content */}
+      {isReviewed && !hasFeedbackContent && (
+        <section
+          className="rounded-2xl px-6 py-5"
+          style={{
+            background: 'linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #ede9fe 100%)',
+            border: '1px solid #c4b5fd',
+          }}
+        >
+          <p className="text-[13px] text-gray-500 m-0">
+            Your application has been reviewed. No additional feedback was provided.
+          </p>
+          {app.reviewed_at && (
+            <p className="text-[11px] text-purple-400 m-0 mt-2">
+              Reviewed {fmtDate(app.reviewed_at)}
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* ── WRITER RESPONSE ───────────────────────────── */}
       {isReviewed && !app.writer_response && (
         <ApplicationReply applicationId={app.id} />
       )}
 
-      {/* Show existing reply */}
       {app.writer_response && (
         <section>
-          <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1.5">Your response</h2>
-          <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-            <p className="text-[13px] text-gray-600 m-0 leading-relaxed">{app.writer_response}</p>
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-2">Your response</p>
+          <div
+            className="rounded-xl bg-white px-4 py-3"
+            style={{ border: '1.5px solid #e5e7eb' }}
+          >
+            <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.writer_response}</p>
           </div>
         </section>
       )}
 
-      {/* Pending state */}
+      {/* ── PENDING STATE ─────────────────────────────── */}
       {isPending && (
-        <div className="rounded-xl border border-yellow-100 bg-yellow-50/30 px-4 py-3.5">
-          <p className="text-[13px] text-gray-600 m-0">Your application is being reviewed. You'll receive feedback within a few days.</p>
-        </div>
+        <section
+          className="rounded-xl px-5 py-4"
+          style={{ background: '#ede9fe', border: '1px solid #c4b5fd' }}
+        >
+          <p className="text-[13px] text-purple-700 m-0 font-medium">
+            Your application is being reviewed. You&apos;ll receive feedback soon.
+          </p>
+        </section>
       )}
+
     </div>
   )
 }
