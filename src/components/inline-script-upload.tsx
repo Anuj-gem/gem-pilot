@@ -16,12 +16,15 @@ export function InlineScriptUpload({
   className,
   startOpen = false,
   onClose,
+  redirectTo,
 }: {
   className?: string
   /** When true, the component starts on the format step instead of showing the closed button. */
   startOpen?: boolean
   /** Called when the user closes the component (X button or after successful upload). */
   onClose?: () => void
+  /** If set, navigate here after successful upload instead of refreshing the current page. */
+  redirectTo?: string
 }) {
   const router = useRouter()
   const [step, setStep] = useState<Step>(startOpen ? 'format' : 'closed')
@@ -145,7 +148,11 @@ export function InlineScriptUpload({
 
       reset()
       onClose?.()
-      router.refresh()
+      if (redirectTo) {
+        router.push(redirectTo)
+      } else {
+        router.refresh()
+      }
     } catch (e: any) {
       setError(e?.message ?? 'Network error')
       setSubmitting(false)

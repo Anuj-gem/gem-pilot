@@ -8,7 +8,7 @@
 import { useEffect, useState } from 'react'
 import { InlineScriptUpload } from '@/components/inline-script-upload'
 
-export function ScriptUploadModal() {
+export function ScriptUploadModal({ redirectTo }: { redirectTo?: string } = {}) {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function ScriptUploadModal() {
 
       {/* Modal */}
       <div className="relative w-full max-w-md mx-4 animate-in fade-in zoom-in-95 duration-150">
-        <InlineScriptUpload startOpen onClose={() => setOpen(false)} />
+        <InlineScriptUpload startOpen onClose={() => setOpen(false)} redirectTo={redirectTo} />
       </div>
     </div>
   )

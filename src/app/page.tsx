@@ -47,7 +47,7 @@ export default async function Home({
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingPricing />
       <LandingFinalCTA />
-      <ScriptUploadModal />
+      <ScriptUploadModal redirectTo="/start" />
     </div>
   )
 }
