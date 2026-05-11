@@ -7,6 +7,14 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
+function scoreTier(score: number): { label: string; bg: string; text: string; border: string } {
+  if (score >= 80) return { label: 'Exceptional', bg: '#dcfce7', text: '#166534', border: '#86efac' }
+  if (score >= 70) return { label: 'Strong',      bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' }
+  if (score >= 60) return { label: 'Promising',   bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' }
+  if (score >= 50) return { label: 'Early Stage',  bg: '#fef3c7', text: '#92400e', border: '#fcd34d' }
+  return              { label: 'Needs Work',   bg: '#fee2e2', text: '#991b1b', border: '#fca5a5' }
+}
+
 export type ScriptRowData = {
   id: string
   title: string
@@ -15,10 +23,6 @@ export type ScriptRowData = {
   score: number | null
   evaluationId: string | null
   createdAt: string
-  // Status
-  status?: 'ready' | 'in-review' | 'reviewed'
-  reviewId?: string | null     // link to /review/c/[id] when in-review or reviewed
-  reviewLabel?: string | null  // e.g. "Portfolio review #2"
   // Opportunities
   matchingOpportunities?: { title: string; slug: string }[]
   // States
@@ -99,33 +103,38 @@ export function ScriptRowCard({
           </button>
         )}
 
-        {/* Score badge */}
-        <div
-          className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
-          style={{
-            background: s.isProcessing
-              ? '#f3f4f6'
-              : s.score != null && s.score >= 75
-              ? 'rgba(124,58,237,0.08)'
-              : 'rgba(107,114,128,0.06)',
-          }}
-        >
-          {s.isProcessing ? (
+        {/* Score badge — tier-colored */}
+        {s.isProcessing ? (
+          <div
+            className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+            style={{ background: '#f3f4f6' }}
+          >
             <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
-          ) : s.score != null ? (
-            <span
-              className="text-[14px] font-bold"
-              style={{
-                color: s.score >= 75 ? '#7c3aed' : '#6b7280',
-                ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
-              }}
-            >
+          </div>
+        ) : s.score != null ? (
+          <div
+            className="shrink-0 w-11 h-11 rounded-lg flex flex-col items-center justify-center"
+            style={{
+              background: scoreTier(s.score).bg,
+              border: `1.5px solid ${scoreTier(s.score).border}`,
+              ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
+            }}
+          >
+            <span className="text-[16px] font-extrabold leading-none" style={{ color: scoreTier(s.score).text }}>
               {Math.round(s.score)}
             </span>
-          ) : (
+            <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5" style={{ color: scoreTier(s.score).text, opacity: 0.7 }}>
+              {scoreTier(s.score).label}
+            </span>
+          </div>
+        ) : (
+          <div
+            className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+            style={{ background: 'rgba(107,114,128,0.06)' }}
+          >
             <span className="text-[11px] text-gray-300">&mdash;</span>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Title + format + date */}
         <div className="min-w-0 flex-1">
@@ -199,8 +208,8 @@ export function ScriptRowCard({
         )}
       </div>
 
-      {/* Row 2: genre · opportunities · status · view details */}
-      <div className="flex items-center gap-2 mt-2 ml-0" style={{ paddingLeft: checkbox ? 32 : 48 }}>
+      {/* Row 2: genre · opportunities · view details */}
+      <div className="flex items-center gap-2 mt-2 ml-0" style={{ paddingLeft: checkbox ? 32 : 56 }}>
         {/* Genre */}
         {s.genre && (
           <span className="text-[12px] text-gray-400">{s.genre}</span>
@@ -236,40 +245,6 @@ export function ScriptRowCard({
 
         {/* Spacer */}
         <span className="flex-1" />
-
-        {/* Status */}
-        {s.status === 'reviewed' && s.reviewId && (
-          <Link
-            href={`/review/c/${s.reviewId}`}
-            className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full hover:bg-emerald-100 transition-colors"
-          >
-            Previously reviewed
-            <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 12L12 4M12 4H6M12 4v6" />
-            </svg>
-          </Link>
-        )}
-        {s.status === 'in-review' && s.reviewId && (
-          <Link
-            href={`/review/c/${s.reviewId}`}
-            className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full hover:bg-amber-100 transition-colors"
-          >
-            {s.reviewLabel || 'In review'}
-          </Link>
-        )}
-        {s.status === 'ready' && !s.isLocked && (
-          <span className="text-[11px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
-            Eligible for review
-          </span>
-        )}
-        {s.status === 'ready' && s.isLocked && (
-          <button
-            onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
-            className="text-[11px] font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full hover:text-gray-500 transition-colors border-0 cursor-pointer"
-          >
-            Upgrade to view
-          </button>
-        )}
 
         {/* View details link */}
         {s.evaluationId && !s.isLocked && !s.isProcessing && (

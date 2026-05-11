@@ -52,7 +52,6 @@ type Script = {
   genre: string | null; score: number | null; evaluationId: string | null
   createdAt: string
   matchingOpportunities?: { title: string; slug: string }[]
-  status?: 'ready' | 'in-review' | 'reviewed'
   isProcessing?: boolean
   isLocked?: boolean
 }
@@ -484,7 +483,7 @@ export function ReviewDetail({
               {attachedScripts.map(s => (
                 <ScriptRowCard
                   key={s.id}
-                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: 'in-review' }}
+                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities }}
                 />
               ))}
             </div>

@@ -1,12 +1,10 @@
 // /scripts — "My Scripts" — full list with sort, bulk hide, three-dot menu.
-// Consideration model v1 (2026-05-05).
 
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { ScriptsList } from '@/components/dashboard/scripts-list'
-import { NewReviewButton } from '@/components/dashboard/new-review-button'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 
 export const dynamic = 'force-dynamic'
@@ -88,55 +86,6 @@ export default async function ScriptsPage() {
     }
   }
 
-  // Considerations — use review_stage to distinguish draft / active / complete
-  const { data: considerations } = await service
-    .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, outcome')
-    .eq('writer_id', user.id)
-    .order('submitted_at', { ascending: false })
-
-  const allConsiderations = (considerations || []) as {
-    id: string; status: string; review_stage: string; submitted_at: string
-    reviewed_at: string | null; feedback: string | null; outcome: string | null
-  }[]
-
-  // Active = submitted and being reviewed (not draft, not complete)
-  const activeConsideration = allConsiderations.find(
-    c => c.review_stage !== 'draft' && c.review_stage !== 'complete'
-  )
-  // Completed considerations — ALL of them, not just the latest
-  const completedConsiderations = allConsiderations.filter(c => c.review_stage === 'complete')
-  const latestReviewed = completedConsiderations[0] || null
-
-  // Scripts in active (submitted) considerations — NOT drafts
-  let activeScriptIds = new Set<string>()
-  if (activeConsideration) {
-    const { data: cs } = await service
-      .from('consideration_scripts')
-      .select('script_submission_id')
-      .eq('consideration_id', activeConsideration.id)
-    for (const r of (cs || []) as { script_submission_id: string }[]) {
-      activeScriptIds.add(r.script_submission_id)
-    }
-  }
-
-  // Scripts from ALL completed considerations — build a map of scriptId → consideration
-  let reviewedScriptIds = new Set<string>()
-  const reviewedScriptConsideration = new Map<string, { id: string; index: number }>()
-  const completedIds = completedConsiderations.map(c => c.id)
-  if (completedIds.length > 0) {
-    const { data: cs } = await service
-      .from('consideration_scripts')
-      .select('script_submission_id, consideration_id')
-      .in('consideration_id', completedIds)
-    for (const r of (cs || []) as { script_submission_id: string; consideration_id: string }[]) {
-      reviewedScriptIds.add(r.script_submission_id)
-      // Find the index (chronological) of this consideration
-      const idx = allConsiderations.findIndex(c => c.id === r.consideration_id)
-      reviewedScriptConsideration.set(r.script_submission_id, { id: r.consideration_id, index: idx + 1 })
-    }
-  }
-
   // Fetch open opportunities for matching
   const { data: openOpps } = await service
     .from('opportunities')
@@ -166,23 +115,6 @@ export default async function ScriptsPage() {
     const isFirstCompleted = s.id === firstCompletedId
     const isLocked = isTrial && !stillProcessing && s.status === 'completed' && !isFirstCompleted
 
-    // Determine review status
-    let status: 'ready' | 'in-review' | 'reviewed' | undefined = undefined
-    let reviewId: string | null = null
-    let reviewLabel: string | null = null
-    if (activeScriptIds.has(s.id)) {
-      status = 'in-review'
-      reviewId = activeConsideration?.id ?? null
-      reviewLabel = 'In review'
-    } else if (reviewedScriptIds.has(s.id)) {
-      status = 'reviewed'
-      const rc = reviewedScriptConsideration.get(s.id)
-      reviewId = rc?.id ?? null
-      reviewLabel = rc ? `Portfolio review #${rc.index}` : 'Reviewed'
-    } else if (s.status === 'completed' && !s.hidden_at) {
-      status = 'ready'
-    }
-
     return {
       id: s.id,
       title: s.title,
@@ -193,9 +125,6 @@ export default async function ScriptsPage() {
       createdAt: s.created_at,
       isProcessing: stillProcessing,
       isLocked,
-      status,
-      reviewId,
-      reviewLabel,
       matchingOpportunities: matchOpportunities(s.declared_format, ev?.genre ?? null),
       hidden: !!s.hidden_at,
     }
@@ -223,17 +152,6 @@ export default async function ScriptsPage() {
           Upload a script
         </Link>
       </header>
-
-      {/* Consideration CTA */}
-      <div className="rounded-xl bg-purple-50 border border-purple-100 px-4 py-3.5 mb-4 flex items-center justify-between">
-        <div>
-          <p className="text-[13px] font-bold text-purple-900 m-0">Ready for consideration</p>
-          <p className="text-[12px] text-purple-600 m-0 mt-0.5">Get feedback on your strengths and next steps.</p>
-        </div>
-        <NewReviewButton className="shrink-0 text-[12px] font-bold text-white px-3.5 py-1.5 rounded-lg transition-colors">
-          Request consideration
-        </NewReviewButton>
-      </div>
 
       {/* Script list (client component) */}
       <ScriptsList scripts={scriptRows} isPro={isPro} />

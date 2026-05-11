@@ -172,7 +172,6 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     genre: string | null; score: number | null; evaluationId: string | null
     createdAt: string
     matchingOpportunities: { title: string; slug: string }[]
-    status: 'ready' | 'in-review'
     isProcessing?: boolean
     isLocked?: boolean
   }[] = []
@@ -217,7 +216,6 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         evaluationId: isStillProcessing ? null : (ev?.id ?? null),
         createdAt: s.created_at,
         matchingOpportunities: isStillProcessing ? [] : matchOpportunities(s.declared_format, genre),
-        status: isEditable ? 'ready' as const : 'in-review' as const,
         isProcessing: isStillProcessing,
         isLocked: isScriptLocked,
       }
