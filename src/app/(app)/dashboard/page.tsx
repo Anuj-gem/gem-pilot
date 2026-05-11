@@ -18,6 +18,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
+import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { DashboardScriptCard } from '@/components/dashboard/dashboard-script-card'
 import Link from 'next/link'
 
@@ -169,6 +170,7 @@ export default async function DashboardPage() {
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
+      <ProcessingPoller active={isProcessing} />
 
       <div className="max-w-2xl mx-auto space-y-6">
 

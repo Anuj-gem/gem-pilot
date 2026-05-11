@@ -1,11 +1,10 @@
 'use client'
 
 // EvaluatingClient — progress bar + inline signup form.
-// Signup fields are visible immediately. Progress runs in parallel.
-// CTA: "Create your account" while processing → "View your report" when done.
-// After signup, redirects to /dashboard (which shows their report + opportunities).
+// Signup fields visible immediately. Progress runs in parallel.
+// After signup, waits for eval to finish, then redirects to /dashboard.
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { Loader2, FileText, Sparkles, CheckCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase-browser'
@@ -17,6 +16,7 @@ export function EvaluatingClient() {
   const router = useRouter()
   const supabase = createClient()
   const [done, setDone] = useState(false)
+  const [signedUp, setSignedUp] = useState(false)
   const [title, setTitle] = useState<string | null>(null)
   const [progress, setProgress] = useState(0)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -29,6 +29,18 @@ export function EvaluatingClient() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
+
+  // Redirect once both signup AND eval are done
+  const goToDashboard = useCallback(() => {
+    router.push('/dashboard')
+    router.refresh()
+  }, [router])
+
+  useEffect(() => {
+    if (signedUp && done) {
+      goToDashboard()
+    }
+  }, [signedUp, done, goToDashboard])
 
   // Read submission ID from cookie + start polling
   useEffect(() => {
@@ -80,7 +92,7 @@ export function EvaluatingClient() {
     if (googleLoading) return
     setGoogleLoading(true)
     setError('')
-    // After Google OAuth, /auth/callback will redirect to /start which claims scripts → dashboard
+    // Google OAuth goes through /auth/callback → /start → claims scripts → /dashboard
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent('/start')}`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -135,10 +147,61 @@ export function EvaluatingClient() {
       keepalive: true,
     }).catch(() => {})
 
-    // Claim anonymous scripts via API, then go to dashboard
+    // Claim anonymous scripts
     await fetch('/api/claim-scripts', { method: 'POST' }).catch(() => {})
-    router.push('/dashboard')
-    router.refresh()
+
+    // Mark as signed up — if eval is already done, the useEffect redirects immediately
+    setSignedUp(true)
+
+    // If eval is already done, go now
+    if (done) {
+      goToDashboard()
+    }
+    // Otherwise, loading stays true and we show "Finishing up..." until eval completes
+  }
+
+  // After signup, waiting for eval
+  if (signedUp && !done) {
+    return (
+      <div className="max-w-sm mx-auto px-5 pt-20 sm:pt-28 pb-16 text-center">
+        <span
+          className="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
+          style={{
+            background: 'rgba(124,58,237,0.08)',
+            border: '1.5px solid rgba(124,58,237,0.20)',
+          }}
+        >
+          <Sparkles size={22} style={{ color: 'var(--gem-accent)' }} />
+        </span>
+        <h1
+          className="text-[22px] sm:text-[26px] font-bold tracking-tight mb-2 text-[var(--gem-gray-50)]"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          Finishing up...
+        </h1>
+        {title && (
+          <p className="text-[13px] font-medium text-[var(--gem-gray-300)] mb-1 flex items-center justify-center gap-2">
+            <FileText size={13} className="shrink-0" />
+            {title}
+          </p>
+        )}
+        <p className="text-[13px] text-[var(--gem-gray-400)] mb-6">
+          Your account is ready. Just waiting for your evaluation to complete.
+        </p>
+        <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--gem-gray-800)' }}>
+          <div
+            className="h-full rounded-full transition-all duration-500 ease-out"
+            style={{
+              width: `${progress}%`,
+              background: 'linear-gradient(90deg, var(--gem-accent), #a78bfa)',
+            }}
+          />
+        </div>
+        <p className="text-[11px] text-[var(--gem-gray-500)] tabular-nums mt-1">
+          {Math.round(progress)}%
+        </p>
+      </div>
+    )
   }
 
   return (
@@ -317,8 +380,8 @@ export function EvaluatingClient() {
             {loading
               ? 'Creating account…'
               : done
-                ? 'View your report'
-                : 'Create your account'
+                ? 'Create account and view report'
+                : 'Create account and view report'
             }
           </button>
         </form>
