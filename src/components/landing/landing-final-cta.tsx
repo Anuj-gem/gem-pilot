@@ -1,10 +1,18 @@
 // LandingFinalCTA — single closing call.
-// v10 — "Upload your script. See what happens."
+// v10 — "Ready to get your work out there?"
+'use client'
 
 import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { trackEvent } from '@/lib/posthog'
 
 export function LandingFinalCTA() {
+  function handleClick() {
+    try {
+      trackEvent('cta_clicked', { location: 'final_cta', label: 'Get started' })
+    } catch {}
+    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+  }
+
   return (
     <section className="px-5 sm:px-8 py-20 sm:py-24">
       <div className="max-w-2xl mx-auto text-center">
@@ -17,8 +25,8 @@ export function LandingFinalCTA() {
         <p className="text-[15.5px] sm:text-[17px] text-[var(--gem-gray-300)] leading-relaxed m-0 mb-8 max-w-[480px] mx-auto">
           Free to start. No credit card required.
         </p>
-        <Link
-          href="/start"
+        <button
+          onClick={handleClick}
           className="inline-flex items-center gap-2 rounded-xl px-6 py-4 text-[16px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
           style={{
             background: 'var(--gem-accent)',
@@ -26,7 +34,7 @@ export function LandingFinalCTA() {
           }}
         >
           Get started <ArrowRight size={16} />
-        </Link>
+        </button>
       </div>
     </section>
   )

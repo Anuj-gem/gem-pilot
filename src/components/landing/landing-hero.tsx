@@ -4,18 +4,16 @@
 // Evaluation + human review + matching framing. Primary CTA → /start.
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { ArrowRight } from 'lucide-react'
 import { trackEvent } from '@/lib/posthog'
 
 export function LandingHero() {
-  const router = useRouter()
 
   function handleJoinClick() {
     try {
       trackEvent('cta_clicked', { location: 'hero', label: 'Get started' })
     } catch {}
-    router.push('/start')
+    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
   }
 
   return (

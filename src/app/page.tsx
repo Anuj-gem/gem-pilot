@@ -18,6 +18,7 @@ import { LandingArc } from '@/components/landing/landing-arc'
 import { LandingPillars } from '@/components/landing/landing-pillars'
 import { LandingPricing } from '@/components/landing/landing-pricing'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
+import { ScriptUploadModal } from '@/components/script-upload-modal'
 import { createClient } from '@/lib/supabase-server'
 
 export default async function Home({
@@ -46,6 +47,7 @@ export default async function Home({
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingPricing />
       <LandingFinalCTA />
+      <ScriptUploadModal />
     </div>
   )
 }

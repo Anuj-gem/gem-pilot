@@ -1,10 +1,18 @@
 // LandingPricing — two-column Free vs Pro card.
 // v11 — aligned with evaluation → review → matching pillars.
+'use client'
 
 import { ArrowRight, Check } from 'lucide-react'
-import Link from 'next/link'
+import { trackEvent } from '@/lib/posthog'
 
 export function LandingPricing() {
+  function handleCTA(label: string) {
+    try {
+      trackEvent('cta_clicked', { location: 'pricing', label })
+    } catch {}
+    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+  }
+
   return (
     <section className="px-5 sm:px-8 py-16 sm:py-20">
       <div className="max-w-5xl mx-auto">
@@ -39,7 +47,7 @@ export function LandingPricing() {
               'Development notes',
             ]}
             cta="Get started free"
-            href="/start"
+            onCTA={() => handleCTA('Get started free')}
             primary={false}
           />
           <PriceCard
@@ -54,7 +62,7 @@ export function LandingPricing() {
               'Priority consideration',
             ]}
             cta="Start free trial"
-            href="/start"
+            onCTA={() => handleCTA('Start free trial')}
             primary={true}
           />
         </div>
@@ -74,7 +82,7 @@ function PriceCard({
   blurb,
   features,
   cta,
-  href,
+  onCTA,
   primary,
 }: {
   tier: string
@@ -83,7 +91,7 @@ function PriceCard({
   blurb: string
   features: string[]
   cta: string
-  href: string
+  onCTA: () => void
   primary: boolean
 }) {
   return (
@@ -137,8 +145,8 @@ function PriceCard({
           </li>
         ))}
       </ul>
-      <Link
-        href={href}
+      <button
+        onClick={onCTA}
         className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-3 text-[14px] font-semibold transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
         style={{
           background: primary ? 'var(--gem-accent)' : 'var(--gem-gray-900)',
@@ -147,7 +155,7 @@ function PriceCard({
         }}
       >
         {cta} <ArrowRight size={14} />
-      </Link>
+      </button>
     </div>
   )
 }
