@@ -199,7 +199,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <AppRail>{children}</AppRail>
       </div>
       <MobileTabBar />
-      <ScriptUploadModal redirectTo="/evaluating" />
+      <ScriptUploadModal redirectTo="/dashboard" />
     </div>
   )
 }
