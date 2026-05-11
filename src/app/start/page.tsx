@@ -57,8 +57,10 @@ export default async function StartPage() {
       // (not critical — scoring already has the file_url, and the row
       // is what matters for the draft. Storage path stays as-is.)
     }
-    // Clear the cookie
-    cookieStore.set('gem_anon_scripts', '', { path: '/', maxAge: 0 })
+    // Clear the cookie (wrapped in try/catch — can fail during client nav)
+    try {
+      cookieStore.set('gem_anon_scripts', '', { path: '/', maxAge: 0 })
+    } catch {}
   }
 
   // Authenticated — scripts claimed, send to dashboard.

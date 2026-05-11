@@ -80,6 +80,7 @@ export function EvaluatingClient() {
     if (googleLoading) return
     setGoogleLoading(true)
     setError('')
+    // After Google OAuth, /auth/callback will redirect to /start which claims scripts → dashboard
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent('/start')}`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -102,7 +103,7 @@ export function EvaluatingClient() {
       password,
       options: {
         data: { full_name: fullName },
-        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent('/start')}`,
+        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent('/dashboard')}`,
       },
     })
 
@@ -134,8 +135,9 @@ export function EvaluatingClient() {
       keepalive: true,
     }).catch(() => {})
 
-    // Go to /start which claims anonymous scripts then redirects to /dashboard
-    router.push('/start')
+    // Claim anonymous scripts via API, then go to dashboard
+    await fetch('/api/claim-scripts', { method: 'POST' }).catch(() => {})
+    router.push('/dashboard')
     router.refresh()
   }
 
