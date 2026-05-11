@@ -81,11 +81,13 @@ export default async function DashboardPage() {
   // ---------- OPEN OPPORTUNITIES ----------
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, formats, genres, min_score')
+    .select('id, title, slug, formats, genres, min_score, deal_type, perspective, description, deadline, budget_tiers')
     .eq('status', 'active')
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null; min_score: number | null
+    deal_type: string | null; perspective: string | null; description: string | null
+    deadline: string | null; budget_tiers: string[] | null
   }[]
 
   // ---------- APPLICATIONS (considerations with opportunity_id) ----------
@@ -145,21 +147,35 @@ export default async function DashboardPage() {
   const totalQualifying = completedScripts.reduce((sum, s) => sum + s.qualifyingOpps.length, 0)
 
   // Available opportunities: opps the user qualifies for but hasn't applied to yet
-  const availableOpps = allOpenOpps.filter(o => {
-    if (appliedOppIds.has(o.id)) return false
-    // Check if any completed script qualifies
-    return completedScripts.some(s => {
-      const ev = myEvalBySub.get(s.id)
-      const score = ev?.weighted_score || null
-      if (o.min_score && (!score || score < o.min_score)) return false
-      const noFmt = !o.formats || o.formats.length === 0
-      const noGenre = !o.genres || o.genres.length === 0
-      if (noFmt && noGenre) return true
-      const fmtMatch = noFmt || (s.format && o.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
-      const genreMatch = noGenre || (s.genre && o.genres!.some(g => s.genre!.toLowerCase().includes(g.toLowerCase())))
-      return fmtMatch || genreMatch
+  // Sorted by deadline urgency (soonest first, then no-deadline last)
+  const availableOpps = allOpenOpps
+    .filter(o => {
+      if (appliedOppIds.has(o.id)) return false
+      return completedScripts.some(s => {
+        const ev = myEvalBySub.get(s.id)
+        const score = ev?.weighted_score || null
+        if (o.min_score && (!score || score < o.min_score)) return false
+        const noFmt = !o.formats || o.formats.length === 0
+        const noGenre = !o.genres || o.genres.length === 0
+        if (noFmt && noGenre) return true
+        const fmtMatch = noFmt || (s.format && o.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
+        const genreMatch = noGenre || (s.genre && o.genres!.some(g => s.genre!.toLowerCase().includes(g.toLowerCase())))
+        return fmtMatch || genreMatch
+      })
     })
-  })
+    .sort((a, b) => {
+      if (a.deadline && b.deadline) return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
+      if (a.deadline) return -1
+      if (b.deadline) return 1
+      return 0
+    })
+
+  // Stats for status strip
+  const bestScore = completedScripts.reduce((max, s) => {
+    const sc = myEvalBySub.get(s.id)?.weighted_score
+    return sc != null && sc > max ? sc : max
+  }, 0)
+  const activeApps = allApplications.filter(a => a.status !== 'reviewed' && a.review_stage !== 'complete').length
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -174,44 +190,49 @@ export default async function DashboardPage() {
 
       <div className="max-w-2xl mx-auto space-y-6">
 
-        {/* ── PROFILE HEADER + NEW SCRIPT ──────────────── */}
-        <div className="flex items-center gap-3">
-          {profile?.avatar_url ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={profile.avatar_url} alt="" className="w-11 h-11 rounded-full object-cover bg-gray-100 shrink-0" />
-          ) : (
-            <div
-              className="w-11 h-11 rounded-full text-white flex items-center justify-center font-bold shrink-0"
-              style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)', fontSize: 15 }}
-            >
-              {(profile?.full_name || '·').split(/\s+/).slice(0, 2).map((p: string) => p[0]?.toUpperCase() ?? '').join('') || '·'}
-            </div>
-          )}
-          <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-1.5">
-              <h1 className="text-[17px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                {profile?.full_name || 'Welcome'}
-              </h1>
-              {isPro && (
-                <span
-                  className="inline-flex items-center text-[8.5px] font-extrabold uppercase tracking-[0.12em] text-white px-1.5 py-0.5 rounded shrink-0"
-                  style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                >
-                  Pro
-                </span>
-              )}
-            </div>
+        {/* ── STATUS STRIP ──────────────────────────────── */}
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <h1 className="text-[17px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+              {profile?.full_name || 'Welcome'}
+            </h1>
+            {isPro ? (
+              <span
+                className="inline-flex items-center text-[8.5px] font-extrabold uppercase tracking-[0.12em] text-white px-1.5 py-0.5 rounded shrink-0"
+                style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+              >
+                Pro
+              </span>
+            ) : (
+              <span className="text-[10px] font-bold uppercase tracking-wide text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
+                Free
+              </span>
+            )}
           </div>
-          <Link
-            href="/profile"
-            className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-gray-500 shrink-0"
-            title="Settings"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-          </Link>
+          <div className="flex items-center gap-3 shrink-0">
+            {bestScore > 0 && (
+              <div className="flex items-center gap-1">
+                <span className="text-[11px] text-gray-400">Best score</span>
+                <span className="text-[13px] font-bold text-gray-700">{Math.round(bestScore)}</span>
+              </div>
+            )}
+            {activeApps > 0 && (
+              <div className="flex items-center gap-1">
+                <span className="text-[11px] text-gray-400">Active</span>
+                <span className="text-[13px] font-bold text-purple-600">{activeApps}</span>
+              </div>
+            )}
+            <Link
+              href="/profile"
+              className="inline-flex items-center justify-center w-7 h-7 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-gray-400 shrink-0"
+              title="Settings"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </Link>
+          </div>
         </div>
 
         {/* ── APPLICATIONS (the heartbeat) ─────────────── */}
@@ -315,34 +336,89 @@ export default async function DashboardPage() {
             <header className="flex items-end justify-between gap-3 mb-2.5">
               <h2 className="text-[15px] font-bold text-gray-900 m-0">Available opportunities</h2>
               <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
-                All
+                See all
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             </header>
-            <div className="space-y-2">
-              {availableOpps.slice(0, 3).map(opp => (
-                <Link key={opp.id} href={`/opportunities/${opp.slug}/apply`} className="block">
-                  <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp.title}</p>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          {opp.formats && opp.formats.length > 0 && (
-                            <span className="text-[12px] text-gray-400">{opp.formats.join(', ')}</span>
-                          )}
-                          {opp.genres && opp.genres.length > 0 && (
-                            <span className="text-[12px] text-gray-400">· {opp.genres.join(', ')}</span>
-                          )}
-                        </div>
+            <div className="space-y-3">
+              {availableOpps.slice(0, 3).map(opp => {
+                const dealColors: Record<string, { bg: string; text: string; border: string }> = {
+                  option:         { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' },
+                  purchase:       { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' },
+                  representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
+                  co_finance:     { bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' },
+                }
+                const dealLabels: Record<string, string> = {
+                  option: 'Option Deal', purchase: 'Purchase',
+                  representation: 'Representation', co_finance: 'Production Finance',
+                }
+                const perspLabels: Record<string, string> = {
+                  producer: 'Producer', lit_rep: 'Literary Representative',
+                  actor_rep: 'Talent Representative', financier: 'Financier',
+                }
+                const dc = opp.deal_type ? dealColors[opp.deal_type] : null
+                const dl = opp.deal_type ? dealLabels[opp.deal_type] : null
+                const pl = opp.perspective ? perspLabels[opp.perspective] : null
+                const deadlineDays = opp.deadline
+                  ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
+                  : null
+
+                return (
+                  <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
+                    <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all">
+                      {/* Badge row */}
+                      <div className="flex items-center gap-2.5 mb-2">
+                        {dl && dc && (
+                          <span
+                            className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-md"
+                            style={{ background: dc.bg, color: dc.text, border: `1px solid ${dc.border}` }}
+                          >
+                            {dl}
+                          </span>
+                        )}
+                        {pl && <span className="text-[12px] text-gray-400 font-medium">{pl}</span>}
+                        {deadlineDays != null && deadlineDays > 0 && (
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ml-auto ${
+                            deadlineDays <= 7
+                              ? 'bg-red-50 text-red-600 border border-red-200'
+                              : 'bg-gray-50 text-gray-400 border border-gray-200'
+                          }`}>
+                            {deadlineDays === 1 ? 'Closes tomorrow' : deadlineDays <= 7 ? `${deadlineDays} days left` : new Date(opp.deadline!).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                          </span>
+                        )}
                       </div>
-                      <span className="text-[12px] text-purple-600 font-semibold shrink-0 flex items-center gap-0.5">
-                        Apply
-                        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                      </span>
+
+                      {/* Title */}
+                      <h3
+                        className="text-[16px] font-bold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors"
+                        style={{ fontFamily: 'Georgia, serif' }}
+                      >
+                        {opp.title}
+                      </h3>
+
+                      {/* Description */}
+                      {opp.description && (
+                        <p className="text-[13px] text-gray-500 m-0 mt-1.5 line-clamp-2 leading-relaxed">{opp.description}</p>
+                      )}
+
+                      {/* Footer: score req + Apply */}
+                      <div className="flex items-center justify-between mt-3">
+                        {opp.min_score != null && (
+                          <span className="text-[12px] font-bold text-gray-600">
+                            Requires {Math.round(opp.min_score)}+ score
+                          </span>
+                        )}
+                        <span className="text-[13px] font-bold text-purple-600 flex items-center gap-1 ml-auto">
+                          Apply
+                          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                )
+              })}
             </div>
           </section>
         )}
@@ -380,7 +456,8 @@ export default async function DashboardPage() {
                   genre={script.genre}
                   evaluationId={script.evaluationId}
                   createdAt={script.createdAt}
-                  qualifyingOpps={[]}
+                  score={myEvalBySub.get(script.id)?.weighted_score ?? null}
+                  qualifyingOpps={script.qualifyingOpps}
                 />
               ))}
               {completedScripts.length > 5 && (
