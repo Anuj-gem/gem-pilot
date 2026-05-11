@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { ChevronDown, ChevronUp, FileText, ArrowRight } from 'lucide-react'
 
 const DEAL_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  option:         { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' },
-  purchase:       { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' },
+  option:         { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
+  purchase:       { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
   representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  co_finance:     { bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' },
+  co_finance:     { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
 }
 
 const DEAL_LABELS: Record<string, string> = {
@@ -32,11 +32,11 @@ const GENRE_LABELS: Record<string, string> = {
 }
 
 const STAGE_DISPLAY: Record<string, { label: string; bg: string; text: string }> = {
-  pending:       { label: 'Application Pending', bg: '#fef3c7', text: '#92400e' },
-  submitted:     { label: 'Application Pending', bg: '#fef3c7', text: '#92400e' },
-  in_review:     { label: 'In Review',           bg: '#dbeafe', text: '#1e40af' },
+  pending:       { label: 'Application Pending', bg: '#ede9fe', text: '#5b21b6' },
+  submitted:     { label: 'Application Pending', bg: '#ede9fe', text: '#5b21b6' },
+  in_review:     { label: 'In Review',           bg: '#ede9fe', text: '#5b21b6' },
   partner_match: { label: 'Partner Match',       bg: '#ede9fe', text: '#5b21b6' },
-  complete:      { label: 'Reviewed',            bg: '#d1fae5', text: '#065f46' },
+  complete:      { label: 'Reviewed',            bg: '#ede9fe', text: '#5b21b6' },
 }
 
 export interface QualScript {

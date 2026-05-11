@@ -31,10 +31,10 @@ const FORMAT_LABELS: Record<string, string> = {
 }
 
 const DEAL_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  option:         { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' },
-  purchase:       { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' },
+  option:         { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
+  purchase:       { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
   representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  co_finance:     { bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' },
+  co_finance:     { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
 }
 
 const DEAL_DESCRIPTIONS: Record<string, string> = {
@@ -45,11 +45,11 @@ const DEAL_DESCRIPTIONS: Record<string, string> = {
 }
 
 const STAGE_DISPLAY: Record<string, { label: string; bg: string; text: string; description: string }> = {
-  pending:       { label: 'Application Pending', bg: '#fef3c7', text: '#92400e', description: 'Your application has been submitted and is awaiting review.' },
-  submitted:     { label: 'Application Pending', bg: '#fef3c7', text: '#92400e', description: 'Your application has been submitted and is awaiting review.' },
-  in_review:     { label: 'In Review',           bg: '#dbeafe', text: '#1e40af', description: 'Your script is being reviewed. You\'ll hear back soon.' },
+  pending:       { label: 'Application Pending', bg: '#ede9fe', text: '#5b21b6', description: 'Your application has been submitted and is awaiting review.' },
+  submitted:     { label: 'Application Pending', bg: '#ede9fe', text: '#5b21b6', description: 'Your application has been submitted and is awaiting review.' },
+  in_review:     { label: 'In Review',           bg: '#ede9fe', text: '#5b21b6', description: 'Your script is being reviewed. You\'ll hear back soon.' },
   partner_match: { label: 'Partner Match',       bg: '#ede9fe', text: '#5b21b6', description: 'A partner match has been identified for your script.' },
-  complete:      { label: 'Reviewed',            bg: '#d1fae5', text: '#065f46', description: 'Your application has been reviewed. Check your dashboard for feedback.' },
+  complete:      { label: 'Reviewed',            bg: '#ede9fe', text: '#5b21b6', description: 'Your application has been reviewed. Check your dashboard for feedback.' },
 }
 
 function svc() {

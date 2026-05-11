@@ -262,12 +262,9 @@ export default async function DashboardPage() {
 
                 // Decision: first next_steps_tag, or fallback
                 const decisionTag = app.next_steps_tags?.[0] || null
-                const positiveDecisions = ['Ready for meetings', 'Attach to producer']
                 const decisionColor = decisionTag
-                  ? positiveDecisions.includes(decisionTag)
-                    ? { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' }   // green
-                    : { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' }   // amber
-                  : { bg: '#f3f4f6', text: '#6b7280', border: '#e5e7eb' }     // gray fallback
+                  ? { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' }
+                  : { bg: '#f3f4f6', text: '#6b7280', border: '#e5e7eb' }
 
                 // Remaining next_steps_tags (skip the first one used as decision)
                 const remainingNextSteps = (app.next_steps_tags || []).slice(1)
@@ -432,10 +429,10 @@ export default async function DashboardPage() {
             <div className="space-y-3">
               {availableOpps.slice(0, 3).map(opp => {
                 const dealColors: Record<string, { bg: string; text: string; border: string }> = {
-                  option:         { bg: '#fef3c7', text: '#92400e', border: '#fcd34d' },
-                  purchase:       { bg: '#d1fae5', text: '#065f46', border: '#6ee7b7' },
+                  option:         { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
+                  purchase:       { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
                   representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-                  co_finance:     { bg: '#dbeafe', text: '#1e40af', border: '#93c5fd' },
+                  co_finance:     { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
                 }
                 const dealLabels: Record<string, string> = {
                   option: 'Option Deal', purchase: 'Purchase',
