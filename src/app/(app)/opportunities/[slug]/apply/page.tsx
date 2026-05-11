@@ -49,6 +49,17 @@ export default function ApplyPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) { router.push('/'); return }
 
+      // Check Pro status — free users can't apply
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('subscription_status')
+        .eq('id', user.id)
+        .single()
+      if (profile?.subscription_status !== 'active') {
+        router.push(`/opportunities/${slug}`)
+        return
+      }
+
       // Load opportunity
       const { data: opp } = await supabase
         .from('opportunities')

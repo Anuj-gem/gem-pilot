@@ -1,5 +1,5 @@
 // /opportunities — browse open calls. PUBLIC page (no login required).
-// v2 — clean cards, apply-per-opportunity model, no per-script clutter.
+// v3 — plain-English labels, better descriptions, social-ready OG metadata.
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
@@ -7,17 +7,23 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 const DEAL_TYPE_LABELS: Record<string, string> = {
-  option: 'Option',
+  option: 'Option deal',
   purchase: 'Purchase',
   representation: 'Representation',
-  co_finance: 'Production Finance',
+  co_finance: 'Production finance',
 }
 
 const PERSPECTIVE_LABELS: Record<string, string> = {
   producer: 'Producer',
-  lit_rep: 'Lit Rep',
-  actor_rep: 'Talent Rep',
+  lit_rep: 'Lit rep',
+  actor_rep: 'Talent rep',
   financier: 'Financier',
+}
+
+const GENRE_LABELS: Record<string, string> = {
+  thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
+  comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
+  action: 'Action', family: 'Family', western: 'Western', musical: 'Musical',
 }
 
 function svc() {
@@ -39,6 +45,7 @@ export const metadata = {
     description:
       "Open calls from producers and lit reps. See what's looking for scripts like yours.",
     type: 'website' as const,
+    siteName: 'GEM',
   },
   twitter: {
     card: 'summary_large_image' as const,
@@ -59,6 +66,17 @@ export default async function OpportunitiesPage() {
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
   const service = svc()
+
+  // Check Pro status
+  let isPro = false
+  if (user) {
+    const { data: profile } = await service
+      .from('profiles')
+      .select('subscription_status')
+      .eq('id', user.id)
+      .single()
+    isPro = profile?.subscription_status === 'active'
+  }
 
   const { data: opps } = await service
     .from('opportunities')
@@ -165,10 +183,10 @@ export default async function OpportunitiesPage() {
         >
           <div>
             <p className="text-[14px] font-bold text-gray-900 m-0 leading-snug">
-              Upload your script to see which opportunities you qualify for
+              Upload your script to see which calls you qualify for
             </p>
             <p className="text-[12.5px] text-gray-500 m-0 mt-1">
-              Get a free evaluation and we&apos;ll match you automatically.
+              Get scored in 60 seconds. Your first evaluation is free.
             </p>
           </div>
           <Link
@@ -205,9 +223,9 @@ export default async function OpportunitiesPage() {
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-[15px] font-bold text-gray-900 m-0 leading-snug">{opp.title}</h3>
-                      {/* Poster + deal type */}
+                      {/* Plain-English subtitle: "Option deal · Producer · Apex Entertainment" */}
                       <p className="text-[12px] text-gray-400 m-0 mt-0.5">
-                        {[perspLabel, dealLabel, opp.posted_by].filter(Boolean).join(' · ')}
+                        {[dealLabel, perspLabel, opp.posted_by].filter(Boolean).join(' · ')}
                       </p>
                     </div>
                     {/* Right side: status */}
@@ -217,9 +235,15 @@ export default async function OpportunitiesPage() {
                           Applied
                         </span>
                       ) : qualifies ? (
-                        <span className="text-[12px] font-semibold text-purple-600 shrink-0 flex items-center gap-0.5">
-                          Apply <ArrowRight size={13} />
-                        </span>
+                        isPro ? (
+                          <span className="text-[12px] font-semibold text-purple-600 shrink-0 flex items-center gap-0.5">
+                            Apply <ArrowRight size={13} />
+                          </span>
+                        ) : (
+                          <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-purple-400 shrink-0">
+                            Pro
+                          </span>
+                        )
                       ) : (
                         <ArrowRight size={15} className="text-gray-300 shrink-0 mt-0.5" />
                       )
@@ -235,13 +259,13 @@ export default async function OpportunitiesPage() {
                     {opp.description}
                   </p>
 
-                  {/* Tags row */}
+                  {/* Tags row — genres + deadline */}
                   <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
-                    {opp.formats.length > 0 && opp.formats.map(f => (
-                      <span key={f} className="text-[11px] font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{f}</span>
-                    ))}
                     {opp.genres.length > 0 && opp.genres.slice(0, 3).map(g => (
-                      <span key={g} className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">{g}</span>
+                      <span key={g} className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">{GENRE_LABELS[g] ?? g}</span>
+                    ))}
+                    {opp.budget_tiers.length > 0 && opp.budget_tiers.slice(0, 1).map(b => (
+                      <span key={b} className="text-[11px] font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">{b.charAt(0).toUpperCase() + b.slice(1)}</span>
                     ))}
                     {opp.deadline && (
                       <span className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${

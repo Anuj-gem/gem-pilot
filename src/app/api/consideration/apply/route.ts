@@ -35,6 +35,16 @@ export async function POST(req: NextRequest) {
 
   const service = svc()
 
+  // Pro gate — free users cannot apply to opportunities
+  const { data: profile } = await service
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', user.id)
+    .single()
+  if (profile?.subscription_status !== 'active') {
+    return NextResponse.json({ error: 'Upgrade to Pro to apply to opportunities' }, { status: 403 })
+  }
+
   // Verify opportunity exists and is active
   const { data: opp } = await service
     .from('opportunities')
