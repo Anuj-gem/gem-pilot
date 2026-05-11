@@ -42,7 +42,7 @@ type OppRow = {
   id: string; title: string; description: string; slug: string | null
   formats: string[]; genres: string[]; budget_tiers: string[]
   min_score: number | null; deadline: string | null; status: string
-  posted_by: string | null; perspective: string | null; deal_type: string | null
+  posted_by: string | null; subtitle: string | null
 }
 
 export default async function OpportunitiesPage() {
@@ -198,9 +198,8 @@ export default async function OpportunitiesPage() {
               id={opp.id}
               slug={opp.slug}
               title={opp.title}
+              subtitle={opp.subtitle}
               description={opp.description}
-              deal_type={opp.deal_type}
-              perspective={opp.perspective}
               posted_by={opp.posted_by}
               genres={opp.genres || []}
               formats={opp.formats || []}

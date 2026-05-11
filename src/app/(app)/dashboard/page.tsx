@@ -81,12 +81,12 @@ export default async function DashboardPage() {
   // ---------- OPEN OPPORTUNITIES ----------
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, formats, genres, min_score, deal_type, perspective, description, deadline, budget_tiers')
+    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers')
     .eq('status', 'active')
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null; min_score: number | null
-    deal_type: string | null; perspective: string | null; description: string | null
+    subtitle: string | null; description: string | null
     deadline: string | null; budget_tiers: string[] | null
   }[]
 
@@ -260,13 +260,6 @@ export default async function DashboardPage() {
               {reviewedApps.slice(0, 2).map(app => {
                 const opp = oppMap.get(app.opportunity_id)
 
-                // Perspective label
-                const perspLabels: Record<string, string> = {
-                  producer: 'Producer', lit_rep: 'Literary Rep',
-                  actor_rep: 'Talent Rep', financier: 'Financier',
-                }
-                const perspLabel = opp?.perspective ? perspLabels[opp.perspective] || null : null
-
                 // All next_steps_tags combined for display
                 const allNextSteps = app.next_steps_tags || []
 
@@ -330,7 +323,6 @@ export default async function DashboardPage() {
                       <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-purple-200/50">
                         <span className="text-[12px] text-purple-400">
                           {app.reviewed_at ? fmtDate(app.reviewed_at) : fmtDate(app.submitted_at)}
-                          {perspLabel && <> · {perspLabel}</>}
                         </span>
                         <span className="text-[12px] font-semibold text-purple-600 flex items-center gap-1">
                           View details
@@ -430,23 +422,6 @@ export default async function DashboardPage() {
             </header>
             <div className="space-y-3">
               {availableOpps.slice(0, 3).map(opp => {
-                const dealColors: Record<string, { bg: string; text: string; border: string }> = {
-                  option:         { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-                  purchase:       { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-                  representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-                  co_finance:     { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-                }
-                const dealLabels: Record<string, string> = {
-                  option: 'Option Deal', purchase: 'Purchase',
-                  representation: 'Representation', co_finance: 'Production Finance',
-                }
-                const perspLabels: Record<string, string> = {
-                  producer: 'Producer', lit_rep: 'Literary Representative',
-                  actor_rep: 'Talent Representative', financier: 'Financier',
-                }
-                const dc = opp.deal_type ? dealColors[opp.deal_type] : null
-                const dl = opp.deal_type ? dealLabels[opp.deal_type] : null
-                const pl = opp.perspective ? perspLabels[opp.perspective] : null
                 const deadlineDays = opp.deadline
                   ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
                   : null
@@ -456,15 +431,6 @@ export default async function DashboardPage() {
                     <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all">
                       {/* Badge row */}
                       <div className="flex items-center gap-2.5 mb-2">
-                        {dl && dc && (
-                          <span
-                            className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-md"
-                            style={{ background: dc.bg, color: dc.text, border: `1px solid ${dc.border}` }}
-                          >
-                            {dl}
-                          </span>
-                        )}
-                        {pl && <span className="text-[12px] text-gray-400 font-medium">{pl}</span>}
                         {deadlineDays != null && deadlineDays > 0 && (
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ml-auto ${
                             deadlineDays <= 7
@@ -483,6 +449,9 @@ export default async function DashboardPage() {
                       >
                         {opp.title}
                       </h3>
+                      {opp.subtitle && (
+                        <p className="text-[13px] text-gray-400 m-0 mt-0.5 font-medium">{opp.subtitle}</p>
+                      )}
 
                       {/* Description */}
                       {opp.description && (

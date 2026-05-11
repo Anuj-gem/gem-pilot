@@ -9,15 +9,6 @@ import { ApplicationReply } from '@/components/applications/application-reply'
 
 export const dynamic = 'force-dynamic'
 
-const DEAL_LABELS: Record<string, string> = {
-  option: 'Option Deal', purchase: 'Purchase',
-  representation: 'Representation', co_finance: 'Production Finance',
-}
-const PERSP_LABELS: Record<string, string> = {
-  producer: 'Producer', lit_rep: 'Literary Representative',
-  actor_rep: 'Talent Representative', financier: 'Financier',
-}
-
 function svc() {
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -47,7 +38,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   // Load the opportunity (include perspective)
   const { data: opp } = await service
     .from('opportunities')
-    .select('id, title, slug, description, deal_type, perspective')
+    .select('id, title, slug, description, subtitle')
     .eq('id', app.opportunity_id)
     .single()
 
@@ -79,9 +70,6 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
   const isPending = app.status === 'pending'
-  const dealLabel = opp?.deal_type ? DEAL_LABELS[opp.deal_type] : null
-  const perspLabel = opp?.perspective ? PERSP_LABELS[opp.perspective] : null
-
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
@@ -121,19 +109,11 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
         className="rounded-xl px-5 py-4"
         style={{ background: '#fafafa', border: '1px solid #e5e7eb' }}
       >
-        <div className="flex items-center gap-2.5 mb-2.5">
-          {dealLabel && (
-            <span
-              className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-md"
-              style={{ background: '#ede9fe', color: '#5b21b6', border: '1px solid #c4b5fd' }}
-            >
-              {dealLabel}
-            </span>
-          )}
-          {perspLabel && (
-            <span className="text-[12px] text-gray-400 font-medium">{perspLabel}</span>
-          )}
-        </div>
+        {opp?.subtitle && (
+          <p className="text-[13px] text-gray-500 m-0 mb-2 font-medium leading-snug">
+            {opp.subtitle}
+          </p>
+        )}
 
         {opp?.description && (
           <p className="text-[13px] text-gray-500 m-0 leading-relaxed line-clamp-3">

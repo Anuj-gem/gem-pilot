@@ -21,12 +21,9 @@ interface Props {
   opportunityId: string
   title: string
   slug: string
-  dealType: string | null
-  perspective: string | null
+  subtitle: string | null
   deadline: string | null
   qualifyingScripts: QScript[]
-  dealTypeLabels: Record<string, string>
-  perspectiveLabels: Record<string, string>
   atLimit: boolean
   /** Whether the writer has an active Pro subscription */
   isPro?: boolean
@@ -35,8 +32,8 @@ interface Props {
 }
 
 export function CollapsibleOpportunity({
-  opportunityId, title, slug, dealType, perspective, deadline,
-  qualifyingScripts, dealTypeLabels, perspectiveLabels, atLimit, isPro = true, resetDaysLeft,
+  opportunityId, title, slug, subtitle, deadline,
+  qualifyingScripts, atLimit, isPro = true, resetDaysLeft,
 }: Props) {
   const [open, setOpen] = useState(false)
   const [submitting, setSubmitting] = useState<string | null>(null)
@@ -104,14 +101,9 @@ export function CollapsibleOpportunity({
         <div className="min-w-0 flex-1">
           <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{title}</p>
           <div className="flex items-center gap-1.5 mt-1 flex-wrap">
-            {dealType && (
-              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
-                {dealTypeLabels[dealType] ?? dealType}
-              </span>
-            )}
-            {perspective && (
-              <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
-                {perspectiveLabels[perspective] ?? perspective}
+            {subtitle && (
+              <span className="text-[11px] text-gray-400 font-medium truncate max-w-[200px]">
+                {subtitle}
               </span>
             )}
             {daysLeft != null && daysLeft > 0 && (

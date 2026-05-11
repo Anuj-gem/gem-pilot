@@ -13,8 +13,7 @@ export interface LandingOpportunity {
   budget_tiers: string[]
   min_score: number | null
   deadline: string | null
-  perspective: string | null
-  deal_type: string | null
+  subtitle: string | null
 }
 
 const GENRE_LABELS: Record<string, string> = {
@@ -27,14 +26,6 @@ const GENRE_LABELS: Record<string, string> = {
 const BUDGET_LABELS: Record<string, string> = {
   micro: 'Micro', indie: 'Indie', mid: 'Mid', studio: 'Studio',
   premium: 'Premium', tentpole: 'Tentpole',
-}
-
-const PERSPECTIVE_LABELS: Record<string, string> = {
-  producer: 'Producer', lit_rep: 'Lit Rep', actor_rep: 'Talent Rep', financier: 'Financier',
-}
-
-const DEAL_TYPE_LABELS: Record<string, string> = {
-  option: 'Option', purchase: 'Purchase', representation: 'Representation', co_finance: 'Production Finance',
 }
 
 function formatDeadline(d: string) {
@@ -78,13 +69,6 @@ export function LandingOpportunities({ opportunities }: { opportunities: Landing
         <div className="flex flex-col gap-3">
           {opportunities.slice(0, 3).map(opp => {
             const href = `/opportunities/${opp.slug ?? opp.id}`
-            const perspLabel = opp.perspective
-              ? PERSPECTIVE_LABELS[opp.perspective] ?? opp.perspective
-              : null
-            const dealLabel = opp.deal_type
-              ? DEAL_TYPE_LABELS[opp.deal_type] ?? opp.deal_type
-              : null
-
             return (
               <Link
                 key={opp.id}
@@ -106,10 +90,10 @@ export function LandingOpportunities({ opportunities }: { opportunities: Landing
                   )}
                 </div>
 
-                {/* Deal type + perspective */}
-                {(dealLabel || perspLabel) && (
+                {/* Subtitle */}
+                {opp.subtitle && (
                   <p className="text-[12.5px] font-medium text-[var(--gem-gray-400)] mt-1 m-0">
-                    {[dealLabel, perspLabel].filter(Boolean).join(' · ')}
+                    {opp.subtitle}
                   </p>
                 )}
 

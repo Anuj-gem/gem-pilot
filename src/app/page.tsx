@@ -40,7 +40,7 @@ export default async function Home({
   )
   const { data: opps } = await service
     .from('opportunities')
-    .select('id, title, slug, description, formats, genres, budget_tiers, min_score, deadline, perspective, deal_type')
+    .select('id, title, slug, description, formats, genres, budget_tiers, min_score, deadline, subtitle')
     .eq('status', 'active')
     .order('created_at', { ascending: false })
     .limit(3)

@@ -10,14 +10,6 @@ import type { Metadata } from 'next'
 import { ArrowRight, FileText, Clock, Target } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 
-const DEAL_TYPE_LABELS: Record<string, string> = {
-  option: 'Option Deal', purchase: 'Purchase',
-  representation: 'Representation', co_finance: 'Production Finance',
-}
-const PERSPECTIVE_LABELS: Record<string, string> = {
-  producer: 'Producer', lit_rep: 'Literary Representative',
-  actor_rep: 'Talent Representative', financier: 'Financier',
-}
 const GENRE_LABELS: Record<string, string> = {
   thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
   comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
@@ -28,20 +20,6 @@ const BUDGET_LABELS: Record<string, string> = {
 }
 const FORMAT_LABELS: Record<string, string> = {
   feature: 'Feature', pilot: 'Pilot', limited_series: 'Limited Series', short: 'Short',
-}
-
-const DEAL_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  option:         { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  purchase:       { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  co_finance:     { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-}
-
-const DEAL_DESCRIPTIONS: Record<string, string> = {
-  option: 'They option your script with a path to production. You retain rights until a purchase is triggered. WGA minimums apply.',
-  purchase: 'Outright script purchase at WGA scale or above. Writer stays attached for credit and rewrites.',
-  representation: 'Join their roster and have someone actively selling your work to producers and studios.',
-  co_finance: 'Production financing with shared backend. They put up the money, you share in distribution revenue.',
 }
 
 const STAGE_DISPLAY: Record<string, { label: string; bg: string; text: string; description: string }> = {
@@ -69,16 +47,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = svc()
   const { data: opp } = await service
     .from('opportunities')
-    .select('title, description, deal_type, perspective')
+    .select('title, subtitle, description')
     .eq('slug', slug)
     .eq('status', 'active')
     .single()
 
   if (!opp) return { title: 'Opportunity not found — GEM' }
-  const dealLabel = opp.deal_type ? DEAL_TYPE_LABELS[opp.deal_type] : null
-  const desc = dealLabel
-    ? `${dealLabel} — ${opp.description?.slice(0, 110) ?? ''}`
-    : opp.description?.slice(0, 140) ?? ''
+  const desc = opp.subtitle ?? opp.description?.slice(0, 140) ?? ''
   const title = `${opp.title} — GEM`
   return {
     title, description: desc,
@@ -177,9 +152,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
   const deadline = opp.deadline ? new Date(opp.deadline) : null
   const daysLeft = deadline ? Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null
-  const perspLabel = opp.perspective ? PERSPECTIVE_LABELS[opp.perspective] ?? opp.perspective : null
-  const dealLabel = opp.deal_type ? DEAL_TYPE_LABELS[opp.deal_type] ?? opp.deal_type : null
-  const dealColors = opp.deal_type ? DEAL_COLORS[opp.deal_type] : null
   const stageInfo = reviewStage ? STAGE_DISPLAY[reviewStage] : null
 
   return (
@@ -194,28 +166,20 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       <div className="bg-white rounded-2xl overflow-hidden" style={{ border: '1.5px solid #e5e7eb' }}>
         <div className="px-6 py-6 sm:px-8 sm:py-8">
 
-          {/* ── Header: Deal badge + perspective ── */}
-          <div className="flex items-center gap-3 mb-4">
-            {dealLabel && dealColors && (
-              <span
-                className="text-[12px] font-bold uppercase tracking-wide px-3 py-1 rounded-md"
-                style={{ background: dealColors.bg, color: dealColors.text, border: `1px solid ${dealColors.border}` }}
-              >
-                {dealLabel}
-              </span>
-            )}
-            {perspLabel && (
-              <span className="text-[14px] text-gray-400 font-medium">{perspLabel}</span>
-            )}
-          </div>
-
           {/* ── Title ── */}
           <h1
-            className="text-[28px] sm:text-[32px] font-bold text-gray-900 m-0 mb-2 leading-tight"
+            className="text-[28px] sm:text-[32px] font-bold text-gray-900 m-0 mb-1 leading-tight"
             style={{ fontFamily: 'Georgia, serif' }}
           >
             {opp.title}
           </h1>
+
+          {/* ── Subtitle ── */}
+          {opp.subtitle && (
+            <p className="text-[15px] text-gray-500 m-0 mb-2 font-medium leading-snug">
+              {opp.subtitle}
+            </p>
+          )}
 
           {/* ── Deadline ── */}
           {daysLeft != null && daysLeft > 0 && (
@@ -224,21 +188,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               <span className={`text-[13px] font-semibold ${daysLeft <= 7 ? 'text-red-600' : 'text-gray-500'}`}>
                 {daysLeft === 1 ? 'Closes tomorrow' : `${daysLeft} days left`}
               </span>
-            </div>
-          )}
-
-          {/* ── Deal explanation ── */}
-          {opp.deal_type && DEAL_DESCRIPTIONS[opp.deal_type] && dealColors && (
-            <div
-              className="rounded-xl px-5 py-4 mb-6"
-              style={{ background: dealColors.bg, border: `1px solid ${dealColors.border}` }}
-            >
-              <p className="text-[13px] font-bold m-0 mb-1" style={{ color: dealColors.text }}>
-                What you get
-              </p>
-              <p className="text-[14px] leading-relaxed m-0" style={{ color: dealColors.text }}>
-                {DEAL_DESCRIPTIONS[opp.deal_type]}
-              </p>
             </div>
           )}
 
@@ -347,7 +296,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 ) : (
                   <div>
                     <p className="text-[13px] text-gray-500 m-0 mb-3">
-                      Upgrade to Pro to apply and get your script in front of the {perspLabel?.toLowerCase() ?? 'reviewer'}.
+                      Upgrade to Pro to apply and get your script in front of the reviewer.
                     </p>
                     <Link
                       href="/#pricing"

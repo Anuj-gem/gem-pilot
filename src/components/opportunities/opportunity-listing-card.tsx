@@ -4,27 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, FileText, ArrowRight } from 'lucide-react'
 
-const DEAL_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  option:         { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  purchase:       { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  representation: { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-  co_finance:     { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' },
-}
-
-const DEAL_LABELS: Record<string, string> = {
-  option: 'Option Deal',
-  purchase: 'Purchase',
-  representation: 'Representation',
-  co_finance: 'Production Finance',
-}
-
-const PERSPECTIVE_LABELS: Record<string, string> = {
-  producer: 'Producer',
-  lit_rep: 'Literary Representative',
-  actor_rep: 'Talent Representative',
-  financier: 'Financier',
-}
-
 const GENRE_LABELS: Record<string, string> = {
   thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
   comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
@@ -50,9 +29,8 @@ interface Props {
   id: string
   slug: string | null
   title: string
+  subtitle: string | null
   description: string
-  deal_type: string | null
-  perspective: string | null
   posted_by: string | null
   genres: string[]
   formats: string[]
@@ -75,14 +53,11 @@ function formatDeadline(d: string) {
 }
 
 export function OpportunityListingCard({
-  id, slug, title, description, deal_type, perspective, posted_by,
+  id, slug, title, subtitle, description, posted_by,
   genres, formats, budget_tiers, min_score, deadline,
   review_stage, qualifying_scripts, is_pro, is_logged_in,
 }: Props) {
   const [expanded, setExpanded] = useState(false)
-  const colors = deal_type ? DEAL_COLORS[deal_type] : null
-  const dealLabel = deal_type ? DEAL_LABELS[deal_type] : null
-  const perspLabel = perspective ? PERSPECTIVE_LABELS[perspective] : null
   const stageInfo = review_stage && review_stage !== 'draft' ? STAGE_DISPLAY[review_stage] : null
   const hasApplied = !!stageInfo
   const qualCount = qualifying_scripts.length
@@ -94,22 +69,7 @@ export function OpportunityListingCard({
       style={{ border: '1.5px solid #e5e7eb' }}
     >
       <div className="px-6 py-5">
-        {/* Row 1: Deal badge + perspective */}
-        <div className="flex items-center gap-3 mb-3">
-          {dealLabel && colors && (
-            <span
-              className="text-[12px] font-bold uppercase tracking-wide px-3 py-1 rounded-md"
-              style={{ background: colors.bg, color: colors.text, border: `1px solid ${colors.border}` }}
-            >
-              {dealLabel}
-            </span>
-          )}
-          {perspLabel && (
-            <span className="text-[13px] text-gray-400 font-medium">{perspLabel}</span>
-          )}
-        </div>
-
-        {/* Row 2: Title — the hero */}
+        {/* Title */}
         <Link href={href} className="block group">
           <h3
             className="text-[20px] font-bold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors"
@@ -119,7 +79,14 @@ export function OpportunityListingCard({
           </h3>
         </Link>
 
-        {/* Row 3: Description */}
+        {/* Subtitle */}
+        {subtitle && (
+          <p className="text-[14px] text-gray-500 m-0 mt-1 font-medium leading-snug">
+            {subtitle}
+          </p>
+        )}
+
+        {/* Description */}
         <p className="text-[14px] text-gray-500 m-0 mt-2 line-clamp-2 leading-relaxed">
           {description}
         </p>
@@ -189,9 +156,9 @@ export function OpportunityListingCard({
                     Apply <ArrowRight size={14} />
                   </Link>
                 ) : (
-                  <span className="text-[12px] font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-500 border border-purple-200">
+                  <Link href={href} className="text-[12px] font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-500 border border-purple-200">
                     GEM Pro
-                  </span>
+                  </Link>
                 )
               ) : (
                 <Link href={href} className="text-[13px] font-semibold text-gray-400 hover:text-gray-600 flex items-center gap-1">

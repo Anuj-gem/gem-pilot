@@ -25,7 +25,7 @@ type Opportunity = {
   min_score: number | null
   formats: string[] | null
   genres: string[] | null
-  deal_type: string | null
+  subtitle: string | null
 }
 
 export default function ApplyPage() {
@@ -63,7 +63,7 @@ export default function ApplyPage() {
       // Load opportunity
       const { data: opp } = await supabase
         .from('opportunities')
-        .select('id, title, slug, description, min_score, formats, genres, deal_type')
+        .select('id, title, slug, description, min_score, formats, genres, subtitle')
         .eq('slug', slug)
         .eq('status', 'active')
         .single()
@@ -158,10 +158,8 @@ export default function ApplyPage() {
           {opportunity.min_score && (
             <span className="text-[11px] text-gray-400">Min score: {opportunity.min_score}</span>
           )}
-          {opportunity.deal_type && (
-            <span className="text-[11px] px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 font-medium capitalize">
-              {opportunity.deal_type.replace('_', ' ')}
-            </span>
+          {opportunity.subtitle && (
+            <span className="text-[11px] text-gray-400">{opportunity.subtitle}</span>
           )}
         </div>
       </div>

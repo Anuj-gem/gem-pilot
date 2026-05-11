@@ -17,22 +17,7 @@ export interface OpportunityData {
   status: string
   posted_by: string | null
   slug: string | null
-  perspective: string | null
-  deal_type: string | null
-}
-
-export const PERSPECTIVE_LABELS: Record<string, string> = {
-  producer: 'Producer',
-  lit_rep: 'Lit Rep',
-  actor_rep: 'Talent Rep',
-  financier: 'Financier',
-}
-
-export const DEAL_TYPE_LABELS: Record<string, string> = {
-  option: 'Option',
-  purchase: 'Purchase',
-  representation: 'Representation',
-  co_finance: 'Production Finance',
+  subtitle: string | null
 }
 
 export interface QualifyingScript {
@@ -105,13 +90,10 @@ export function OpportunityCard({ opportunity, qualifyingScripts = [], compact =
           )}
         </div>
 
-        {/* Row 2: Deal type + perspective as text */}
-        {(opportunity.deal_type || opportunity.perspective) && (
+        {/* Row 2: Subtitle */}
+        {opportunity.subtitle && (
           <p className="text-[12.5px] font-semibold text-gray-500 mt-1 m-0">
-            {[
-              opportunity.perspective && (PERSPECTIVE_LABELS[opportunity.perspective] ?? opportunity.perspective),
-              opportunity.deal_type && (DEAL_TYPE_LABELS[opportunity.deal_type] ?? opportunity.deal_type),
-            ].filter(Boolean).join(' · ')}
+            {opportunity.subtitle}
           </p>
         )}
 

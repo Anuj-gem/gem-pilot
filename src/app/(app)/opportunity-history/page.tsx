@@ -5,7 +5,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { PERSPECTIVE_LABELS, DEAL_TYPE_LABELS } from '@/components/opportunities/opportunity-card'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -83,12 +82,12 @@ export default async function OpportunityHistoryPage() {
   // Fetch opportunity details
   const { data: oppRows } = await service
     .from('opportunities')
-    .select('id, title, slug, status, deadline, deal_type, perspective')
+    .select('id, title, slug, status, deadline, subtitle')
     .in('id', oppIds)
 
   type OppRow = {
     id: string; title: string; slug: string | null; status: string
-    deadline: string | null; deal_type: string | null; perspective: string | null
+    deadline: string | null; subtitle: string | null
   }
   const oppMap = new Map<string, OppRow>()
   for (const o of (oppRows || []) as OppRow[]) {
@@ -224,14 +223,9 @@ export default async function OpportunityHistoryPage() {
                     {opp.title}
                   </Link>
                   <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-                    {opp.deal_type && (
-                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-full">
-                        {DEAL_TYPE_LABELS[opp.deal_type] ?? opp.deal_type}
-                      </span>
-                    )}
-                    {opp.perspective && (
-                      <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full">
-                        {PERSPECTIVE_LABELS[opp.perspective] ?? opp.perspective}
+                    {opp.subtitle && (
+                      <span className="text-[11px] text-gray-400 font-medium">
+                        {opp.subtitle}
                       </span>
                     )}
                     {opp.status !== 'active' && (
