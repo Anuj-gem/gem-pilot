@@ -542,7 +542,7 @@ export function ReviewDetail({
                     </p>
                     <div className="space-y-2 mb-3">
                       {lockedScripts.map(s => (
-                        <ScriptRowCard key={s.id} script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isLocked: true }} />
+                        <ScriptRowCard key={s.id} script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, isLocked: true }} />
                       ))}
                     </div>
                     <button
@@ -565,7 +565,7 @@ export function ReviewDetail({
               {reviewScripts.map(s => (
                 <ScriptRowCard
                   key={s.id}
-                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status }}
+                  script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities }}
                 />
               ))}
             </div>
@@ -582,7 +582,7 @@ export function ReviewDetail({
               </p>
               <div className="space-y-2 mb-3">
                 {reviewScripts.filter(s => s.isLocked).map(s => (
-                  <ScriptRowCard key={s.id} script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, status: s.status, isLocked: true }} />
+                  <ScriptRowCard key={s.id} script={{ id: s.id, title: s.title, format: s.format, genre: s.genre, score: s.score, evaluationId: s.evaluationId, createdAt: s.createdAt, matchingOpportunities: s.matchingOpportunities, isLocked: true }} />
                 ))}
               </div>
               <button
