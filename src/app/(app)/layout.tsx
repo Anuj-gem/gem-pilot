@@ -47,6 +47,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <div className="max-w-6xl mx-auto px-4 sm:px-5 pt-4 pb-24">
           {children}
         </div>
+        <ScriptUploadModal redirectTo="/evaluating" />
       </div>
     )
   }
