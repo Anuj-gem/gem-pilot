@@ -34,6 +34,8 @@
     "node_modules",
     "src/**/* 2.ts",
     "src/**/* 2.tsx",
-    "supabase/migrations/* 2.sql"
+    "supabase/migrations/* 2.sql",
+    "playwright.config.ts",
+    "tests"
   ]
 }
