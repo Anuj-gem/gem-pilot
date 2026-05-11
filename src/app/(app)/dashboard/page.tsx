@@ -260,15 +260,6 @@ export default async function DashboardPage() {
               {reviewedApps.slice(0, 2).map(app => {
                 const opp = oppMap.get(app.opportunity_id)
 
-                // Decision: first next_steps_tag, or fallback
-                const decisionTag = app.next_steps_tags?.[0] || null
-                const decisionColor = decisionTag
-                  ? { bg: '#ede9fe', text: '#5b21b6', border: '#c4b5fd' }
-                  : { bg: '#f3f4f6', text: '#6b7280', border: '#e5e7eb' }
-
-                // Remaining next_steps_tags (skip the first one used as decision)
-                const remainingNextSteps = (app.next_steps_tags || []).slice(1)
-
                 // Perspective label
                 const perspLabels: Record<string, string> = {
                   producer: 'Producer', lit_rep: 'Literary Rep',
@@ -276,57 +267,68 @@ export default async function DashboardPage() {
                 }
                 const perspLabel = opp?.perspective ? perspLabels[opp.perspective] || null : null
 
+                // All next_steps_tags combined for display
+                const allNextSteps = app.next_steps_tags || []
+
                 return (
                   <Link key={app.id} href={`/applications/${app.id}`} className="block">
-                    <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all">
+                    <div
+                      className="rounded-xl px-5 py-4 hover:shadow-md transition-all"
+                      style={{
+                        background: 'linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #ede9fe 100%)',
+                        border: '1px solid #c4b5fd',
+                      }}
+                    >
 
-                      {/* Decision pill — THE headline */}
-                      <span
-                        className="inline-block text-[12px] font-bold px-3 py-1 rounded-lg mb-2.5"
-                        style={{ background: decisionColor.bg, color: decisionColor.text, border: `1px solid ${decisionColor.border}` }}
-                      >
-                        {decisionTag || 'Feedback received'}
-                      </span>
-
-                      {/* Opportunity title as context */}
-                      <p className="text-[13px] font-semibold text-gray-700 m-0 truncate">
+                      {/* Opportunity title — the headline */}
+                      <p className="text-[15px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
                         {opp?.title || 'Opportunity'}
                       </p>
 
-                      {/* Feedback quote — pull-quote style */}
+                      {/* Suggested next steps */}
+                      {allNextSteps.length > 0 && (
+                        <div className="mt-2.5">
+                          <p className="text-[11px] font-semibold uppercase tracking-wide text-purple-400 m-0 mb-1">
+                            Suggested next steps
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {allNextSteps.map((tag, i) => (
+                              <span
+                                key={`n-${i}`}
+                                className="text-[12px] px-2.5 py-0.5 rounded-full font-semibold"
+                                style={{ background: '#ede9fe', color: '#5b21b6', border: '1px solid #c4b5fd' }}
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Feedback tags */}
+                      {app.feedback_tags && app.feedback_tags.length > 0 && (
+                        <div className="mt-2.5">
+                          <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-1">
+                            Feedback
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {app.feedback_tags.map((tag, i) => (
+                              <span key={`f-${i}`} className="text-[12px] px-2.5 py-0.5 rounded-full bg-white/70 text-gray-600 font-medium">{tag}</span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Producer note */}
                       {app.feedback && (
-                        <p className="text-[13px] text-gray-500 m-0 mt-2 leading-relaxed line-clamp-2 italic border-l-2 border-gray-200 pl-3">
-                          {app.feedback}
+                        <p className="text-[13px] text-gray-600 m-0 mt-3 leading-relaxed line-clamp-2 italic">
+                          &ldquo;{app.feedback}&rdquo;
                         </p>
                       )}
 
-                      {/* Feedback tags — labeled */}
-                      {app.feedback_tags && app.feedback_tags.length > 0 && (
-                        <div className="mt-3">
-                          <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 m-0 mb-1.5">Feedback</p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {app.feedback_tags.map((tag, i) => (
-                              <span key={`f-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 font-medium">{tag}</span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Next steps tags — labeled (remaining after decision) */}
-                      {remainingNextSteps.length > 0 && (
-                        <div className="mt-2.5">
-                          <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400 m-0 mb-1.5">Next steps</p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {remainingNextSteps.map((tag, i) => (
-                              <span key={`n-${i}`} className="text-[11px] px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-medium">{tag}</span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Footer: timeline beat + view details */}
-                      <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-gray-100">
-                        <span className="text-[12px] text-gray-400">
+                      {/* Footer */}
+                      <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-purple-200/50">
+                        <span className="text-[12px] text-purple-400">
                           {app.reviewed_at ? fmtDate(app.reviewed_at) : fmtDate(app.submitted_at)}
                           {perspLabel && <> · {perspLabel}</>}
                         </span>
