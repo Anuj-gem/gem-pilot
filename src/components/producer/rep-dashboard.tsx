@@ -42,6 +42,47 @@ const PASS_TAG_OPTIONS = [
   'Too early-stage',
 ]
 
+function TagInput({ tags, onAdd, onRemove }: { tags: string[]; onAdd: (t: string) => void; onRemove: (t: string) => void }) {
+  const [value, setValue] = useState('')
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if ((e.key === 'Enter' || e.key === ',') && value.trim()) {
+      e.preventDefault()
+      const tag = value.trim()
+      if (!tags.includes(tag)) onAdd(tag)
+      setValue('')
+    }
+    if (e.key === 'Backspace' && !value && tags.length > 0) {
+      onRemove(tags[tags.length - 1])
+    }
+  }
+  return (
+    <div className="flex flex-wrap items-center gap-1.5 p-2 rounded-lg border border-gray-200 bg-white min-h-[38px] focus-within:border-purple-300 transition-colors">
+      {tags.map(tag => (
+        <span
+          key={tag}
+          className="inline-flex items-center gap-1 text-[12px] px-2.5 py-1 rounded-full"
+          style={{ background: '#EEEDFE', color: '#534AB7' }}
+        >
+          {tag}
+          <button
+            onClick={() => onRemove(tag)}
+            className="text-[10px] opacity-60 hover:opacity-100 ml-0.5"
+          >
+            ×
+          </button>
+        </span>
+      ))}
+      <input
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder={tags.length === 0 ? 'Add your own tags…' : ''}
+        className="flex-1 min-w-[100px] text-[12px] outline-none bg-transparent placeholder:text-gray-400"
+      />
+    </div>
+  )
+}
+
 function WriterCard({ item }: { item: RepAssignmentItem }) {
   const [expanded, setExpanded] = useState(item.status === 'pending')
   const [showAllScripts, setShowAllScripts] = useState(false)
@@ -50,6 +91,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
   const [selectedTags, setSelectedTags] = useState<string[]>(item.passTags ?? [])
   const [saving, setSaving] = useState(false)
   const [showPassForm, setShowPassForm] = useState(false)
+  const [customTags, setCustomTags] = useState<string[]>([])
 
   const initials = item.writerName
     .split(' ')
@@ -85,7 +127,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
           assignment_id: item.id,
           status: 'passed',
           rep_note: repNote,
-          pass_tags: selectedTags.length > 0 ? selectedTags : null,
+          pass_tags: [...selectedTags, ...customTags].length > 0 ? [...selectedTags, ...customTags] : null,
         }),
       })
       if (res.ok) {
@@ -308,13 +350,18 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
                   </button>
                 ))}
               </div>
+              <div className="mb-3">
+                <TagInput
+                  tags={customTags}
+                  onAdd={t => setCustomTags(prev => [...prev, t])}
+                  onRemove={t => setCustomTags(prev => prev.filter(x => x !== t))}
+                />
+              </div>
               <textarea
                 value={repNote}
                 onChange={e => setRepNote(e.target.value)}
-                placeholder="Tell us a bit more — this goes to the GEM team only, and we'll use it to send the writer helpful feedback."
-                className={`w-full text-[13px] p-3 rounded-lg border resize-none focus:outline-none focus:border-purple-300 transition-colors mb-1 ${
-                  !repNote.trim() ? 'border-gray-200' : 'border-gray-200'
-                }`}
+                placeholder="Tell us a bit more — this helps the GEM team learn and sharpen recommendations over time."
+                className="w-full text-[13px] p-3 rounded-lg border border-gray-200 resize-none focus:outline-none focus:border-purple-300 transition-colors mb-1"
                 rows={2}
               />
               <div className="text-[11px] text-gray-400 mb-3">Required</div>
