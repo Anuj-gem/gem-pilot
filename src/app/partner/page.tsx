@@ -1,12 +1,11 @@
-// /partner — producer dashboard (consideration model).
-// Shows writers who have scripts in consideration, expandable to show
-// their portfolio + feedback form.
+// /partner — rep talent review dashboard.
+// Shows writers that admin has sent to this rep for review.
+// Clean, curated experience — no writer-side nav or features.
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import Nav from '@/components/nav'
-import { PartnerConsiderationList } from '@/components/producer/partner-consideration-list'
+import { RepDashboard } from '@/components/producer/rep-dashboard'
 
 export const dynamic = 'force-dynamic'
 
@@ -35,162 +34,140 @@ export default async function PartnerDashboardPage() {
 
   const service = svc()
 
-  // Get all considerations (pending first, then reviewed)
-  const { data: allConsiderations } = await service
-    .from('considerations')
-    .select('id, writer_id, status, review_stage, submitted_at, reviewed_at, feedback, outcome, next_steps, ai_feedback, ai_next_steps')
-    .neq('review_stage', 'draft')
-    .order('submitted_at', { ascending: true })
+  // Fetch assignments for this rep
+  const { data: assignments } = await service
+    .from('rep_assignments')
+    .select('id, writer_id, gem_note, featured_script_ids, status, rep_note, pass_tags, created_at, responded_at')
+    .eq('rep_id', user.id)
+    .order('created_at', { ascending: true })
 
-  const considerations = (allConsiderations || []) as {
-    id: string; writer_id: string; status: string; review_stage: string; submitted_at: string
-    reviewed_at: string | null; feedback: string | null; outcome: string | null; next_steps: string | null
-    ai_feedback: string | null; ai_next_steps: string | null
+  const rows = (assignments || []) as {
+    id: string; writer_id: string; gem_note: string | null
+    featured_script_ids: string[] | null; status: string
+    rep_note: string | null; pass_tags: string[] | null
+    created_at: string; responded_at: string | null
   }[]
 
-  // Get writer profiles (including subscription status)
-  const writerIds = [...new Set(considerations.map(c => c.writer_id))]
-  const writerMap = new Map<string, { name: string; handle: string | null; isPro: boolean }>()
+  // Fetch writer profiles
+  const writerIds = [...new Set(rows.map(r => r.writer_id))]
+  const writerMap = new Map<string, { name: string; bio: string | null; email: string | null }>()
   if (writerIds.length > 0) {
     const { data: profiles } = await service
       .from('profiles')
-      .select('id, full_name, handle, subscription_status')
+      .select('id, full_name, bio, email')
       .in('id', writerIds)
-    for (const p of (profiles || []) as { id: string; full_name: string | null; handle: string | null; subscription_status: string | null }[]) {
+    for (const p of (profiles || []) as { id: string; full_name: string | null; bio: string | null; email: string | null }[]) {
       writerMap.set(p.id, {
         name: p.full_name || 'Unknown',
-        handle: p.handle,
-        isPro: p.subscription_status === 'active',
+        bio: p.bio,
+        email: p.email,
       })
     }
   }
 
-  // Compute review number per writer (chronological order)
-  // Group all non-draft considerations by writer_id, sorted by submitted_at
-  const allByWriter = new Map<string, { id: string; submitted_at: string; review_stage: string; feedback: string | null; next_steps: string | null }[]>()
-  for (const c of considerations) {
-    if (!allByWriter.has(c.writer_id)) allByWriter.set(c.writer_id, [])
-    allByWriter.get(c.writer_id)!.push({ id: c.id, submitted_at: c.submitted_at, review_stage: c.review_stage, feedback: c.feedback, next_steps: c.next_steps })
+  // Fetch ALL completed scripts + evaluations for these writers
+  type ScriptWithEval = {
+    submissionId: string; title: string; format: string | null
+    score: number | null; evalId: string | null
   }
-  // Sort each writer's considerations chronologically
-  for (const arr of allByWriter.values()) {
-    arr.sort((a, b) => new Date(a.submitted_at).getTime() - new Date(b.submitted_at).getTime())
-  }
+  const scriptsByWriter = new Map<string, ScriptWithEval[]>()
 
-  // Build reviewNumber map and pastReviews map
-  const reviewNumberMap = new Map<string, number>()
-  const pastReviewsMap = new Map<string, { id: string; submittedAt: string; feedback: string | null; nextSteps: string | null }[]>()
-  for (const [, arr] of allByWriter) {
-    for (let i = 0; i < arr.length; i++) {
-      reviewNumberMap.set(arr[i].id, i + 1)
-      // Past reviews = all completed reviews before this one
-      const past = arr.slice(0, i).filter(r => r.review_stage === 'complete').map(r => ({
-        id: r.id, submittedAt: r.submitted_at, feedback: r.feedback, nextSteps: r.next_steps,
-      }))
-      pastReviewsMap.set(arr[i].id, past)
+  if (writerIds.length > 0) {
+    const { data: subs } = await service
+      .from('script_submissions')
+      .select('id, user_id, title, declared_format')
+      .in('user_id', writerIds)
+      .eq('status', 'completed')
+
+    const subIds = (subs || []).map((s: any) => s.id)
+    const subMap = new Map<string, { userId: string; title: string; format: string | null }>()
+    for (const s of (subs || []) as { id: string; user_id: string; title: string; declared_format: string | null }[]) {
+      subMap.set(s.id, { userId: s.user_id, title: s.title, format: s.declared_format })
     }
-  }
 
-  // Get scripts for each consideration
-  const considerationIds = considerations.map(c => c.id)
-  type ConsiderationScript = { consideration_id: string; title: string; score: number | null; evaluationId: string | null; format: string | null }
-  const scriptsByConsideration = new Map<string, ConsiderationScript[]>()
-
-  if (considerationIds.length > 0) {
-    const { data: cs } = await service
-      .from('consideration_scripts')
-      .select('consideration_id, script_submission_id')
-      .in('consideration_id', considerationIds)
-
-    const scriptIds = [...new Set((cs || []).map((r: { script_submission_id: string }) => r.script_submission_id))]
-
-    if (scriptIds.length > 0) {
-      const { data: subs } = await service
-        .from('script_submissions')
-        .select('id, title, declared_format')
-        .in('id', scriptIds)
-      const subMap = new Map<string, { title: string; format: string | null }>()
-      for (const s of (subs || []) as { id: string; title: string; declared_format: string | null }[]) {
-        subMap.set(s.id, { title: s.title, format: s.declared_format })
-      }
-
+    if (subIds.length > 0) {
       const { data: evals } = await service
         .from('script_evaluations')
         .select('id, submission_id, weighted_score')
-        .in('submission_id', scriptIds)
+        .in('submission_id', subIds)
+
       const evalMap = new Map<string, { id: string; score: number | null }>()
       for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null }[]) {
         evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score })
       }
 
-      for (const row of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
-        if (!scriptsByConsideration.has(row.consideration_id)) {
-          scriptsByConsideration.set(row.consideration_id, [])
-        }
-        const sub = subMap.get(row.script_submission_id)
-        const ev = evalMap.get(row.script_submission_id)
-        if (sub) {
-          scriptsByConsideration.get(row.consideration_id)!.push({
-            consideration_id: row.consideration_id,
-            title: sub.title,
-            score: ev?.score ?? null,
-            evaluationId: ev?.id ?? null,
-            format: sub.format,
-          })
-        }
+      for (const [subId, sub] of subMap) {
+        const ev = evalMap.get(subId)
+        if (!scriptsByWriter.has(sub.userId)) scriptsByWriter.set(sub.userId, [])
+        scriptsByWriter.get(sub.userId)!.push({
+          submissionId: subId,
+          title: sub.title,
+          format: sub.format,
+          score: ev?.score ?? null,
+          evalId: ev?.id ?? null,
+        })
+      }
+
+      // Sort each writer's scripts by score descending
+      for (const arr of scriptsByWriter.values()) {
+        arr.sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
       }
     }
   }
 
-  // Get events for all considerations
-  type EventRow = { id: string; consideration_id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }
-  const eventsByConsideration = new Map<string, EventRow[]>()
-  if (considerationIds.length > 0) {
-    const { data: allEvents } = await service
-      .from('consideration_events')
-      .select('id, consideration_id, event_type, message, new_stage, created_at')
-      .in('consideration_id', considerationIds)
-      .order('created_at', { ascending: false })
-    for (const ev of (allEvents || []) as EventRow[]) {
-      if (!eventsByConsideration.has(ev.consideration_id)) {
-        eventsByConsideration.set(ev.consideration_id, [])
-      }
-      eventsByConsideration.get(ev.consideration_id)!.push(ev)
-    }
-  }
+  // Build serializable items
+  const items = rows.map(r => {
+    const writer = writerMap.get(r.writer_id)
+    const allScripts = scriptsByWriter.get(r.writer_id) ?? []
+    const featuredIds = new Set(r.featured_script_ids ?? [])
+    const featured = featuredIds.size > 0
+      ? allScripts.filter(s => featuredIds.has(s.submissionId))
+      : allScripts.slice(0, 3) // auto-top-3 by score if no featured set
+    const rest = allScripts.filter(s => !featured.some(f => f.submissionId === s.submissionId))
 
-  // Build serializable items for the client component
-  const items = considerations.map(c => {
-    const writer = writerMap.get(c.writer_id)
-    const scripts = scriptsByConsideration.get(c.id) ?? []
-    const avgScore = scripts.length > 0
-      ? scripts.reduce((sum, s) => sum + (s.score ?? 0), 0) / scripts.filter(s => s.score != null).length
-      : null
     return {
-      id: c.id,
-      writerId: c.writer_id,
+      id: r.id,
+      writerId: r.writer_id,
       writerName: writer?.name ?? 'Unknown',
-      writerHandle: writer?.handle ?? null,
-      isPro: writer?.isPro ?? false,
-      submittedAt: c.submitted_at,
-      scripts,
-      status: c.status,
-      reviewStage: c.review_stage,
-      feedback: c.feedback,
-      nextSteps: c.next_steps,
-      aiFeedback: c.ai_feedback,
-      aiNextSteps: c.ai_next_steps,
-      events: eventsByConsideration.get(c.id) ?? [],
-      reviewNumber: reviewNumberMap.get(c.id) ?? 1,
-      pastReviews: pastReviewsMap.get(c.id) ?? [],
-      avgScore,
+      writerBio: writer?.bio ?? null,
+      writerEmail: writer?.email ?? null,
+      gemNote: r.gem_note,
+      status: r.status as 'pending' | 'interested' | 'passed',
+      repNote: r.rep_note,
+      passTags: r.pass_tags,
+      respondedAt: r.responded_at,
+      featuredScripts: featured,
+      otherScripts: rest,
+      totalScripts: allScripts.length,
     }
   })
 
+  const repName = profile.full_name?.split(' ')[0] || 'there'
+
   return (
     <>
-      <Nav />
-      <PartnerConsiderationList items={items} />
+      {/* Stripped nav — just GEM logo + sign out */}
+      <div className="h-14" aria-hidden />
+      <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
+          <span className="flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="inline-block w-3 h-3 rotate-45"
+              style={{
+                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
+              }}
+            />
+            <span className="text-lg font-bold tracking-tight text-white">GEM</span>
+          </span>
+          <span className="text-[13px] text-[var(--gem-gray-400)]">
+            {profile.full_name}
+          </span>
+        </div>
+      </nav>
+
+      <RepDashboard items={items} repName={repName} />
     </>
   )
 }

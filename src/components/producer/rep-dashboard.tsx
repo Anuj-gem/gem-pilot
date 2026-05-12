@@ -1,0 +1,434 @@
+'use client'
+
+// RepDashboard — the rep/partner talent review experience.
+// Shows writer cards with bio, featured scripts, GEM note,
+// and Interested / Pass actions.
+
+import { useState } from 'react'
+import Link from 'next/link'
+
+type Script = {
+  submissionId: string
+  title: string
+  format: string | null
+  score: number | null
+  evalId: string | null
+}
+
+export type RepAssignmentItem = {
+  id: string
+  writerId: string
+  writerName: string
+  writerBio: string | null
+  writerEmail: string | null
+  gemNote: string | null
+  status: 'pending' | 'interested' | 'passed'
+  repNote: string | null
+  passTags: string[] | null
+  respondedAt: string | null
+  featuredScripts: Script[]
+  otherScripts: Script[]
+  totalScripts: number
+}
+
+const PASS_TAG_OPTIONS = [
+  'Not right for my slate',
+  'Needs another draft',
+  'Wrong genre for me',
+  'Strong but not now',
+  'Too early-stage',
+]
+
+function WriterCard({ item }: { item: RepAssignmentItem }) {
+  const [expanded, setExpanded] = useState(item.status === 'pending')
+  const [showAllScripts, setShowAllScripts] = useState(false)
+  const [status, setStatus] = useState(item.status)
+  const [repNote, setRepNote] = useState(item.repNote ?? '')
+  const [selectedTags, setSelectedTags] = useState<string[]>(item.passTags ?? [])
+  const [saving, setSaving] = useState(false)
+  const [showPassForm, setShowPassForm] = useState(false)
+
+  const initials = item.writerName
+    .split(' ')
+    .map(w => w[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2)
+
+  // Deterministic color from name
+  const colors = [
+    { bg: '#EEEDFE', text: '#3C3489' },
+    { bg: '#E1F5EE', text: '#085041' },
+    { bg: '#FAECE7', text: '#712B13' },
+    { bg: '#E6F1FB', text: '#0C447C' },
+    { bg: '#FAEEDA', text: '#633806' },
+  ]
+  const colorIdx = item.writerName.length % colors.length
+  const avatarColor = colors[colorIdx]
+
+  async function handleInterested() {
+    setSaving(true)
+    try {
+      const res = await fetch('/api/rep/respond', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          assignment_id: item.id,
+          status: 'interested',
+          rep_note: repNote || null,
+        }),
+      })
+      if (res.ok) setStatus('interested')
+    } catch {}
+    setSaving(false)
+  }
+
+  async function handlePass() {
+    setSaving(true)
+    try {
+      const res = await fetch('/api/rep/respond', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          assignment_id: item.id,
+          status: 'passed',
+          rep_note: repNote || null,
+          pass_tags: selectedTags.length > 0 ? selectedTags : null,
+        }),
+      })
+      if (res.ok) {
+        setStatus('passed')
+        setShowPassForm(false)
+      }
+    } catch {}
+    setSaving(false)
+  }
+
+  function toggleTag(tag: string) {
+    setSelectedTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    )
+  }
+
+  const statusBadge = status === 'interested'
+    ? { label: 'Interested', bg: '#E1F5EE', color: '#085041' }
+    : status === 'passed'
+    ? { label: 'Passed', bg: '#F1EFE8', color: '#5F5E5A' }
+    : { label: 'New', bg: '#EEEDFE', color: '#534AB7' }
+
+  return (
+    <div
+      className="border rounded-xl overflow-hidden mb-4"
+      style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#fff' }}
+    >
+      {/* Header — always visible, clickable to toggle */}
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full text-left px-5 py-4 flex items-center gap-3.5 hover:bg-gray-50 transition-colors"
+      >
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium shrink-0"
+          style={{ background: avatarColor.bg, color: avatarColor.text }}
+        >
+          {initials}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="text-[15px] font-medium text-gray-900">{item.writerName}</div>
+          {item.writerBio && (
+            <div className="text-[13px] text-gray-500 mt-0.5 line-clamp-1">{item.writerBio}</div>
+          )}
+        </div>
+        <span className="text-[12px] text-gray-400 shrink-0 mr-2">
+          {item.totalScripts} script{item.totalScripts !== 1 ? 's' : ''}
+        </span>
+        <span
+          className="text-[11px] font-medium px-2.5 py-1 rounded-full shrink-0"
+          style={{ background: statusBadge.bg, color: statusBadge.color }}
+        >
+          {statusBadge.label}
+        </span>
+        <span
+          className="text-gray-400 text-[13px] shrink-0 transition-transform duration-150"
+          style={{ transform: expanded ? 'rotate(180deg)' : undefined }}
+        >
+          ▾
+        </span>
+      </button>
+
+      {/* Expanded body */}
+      {expanded && (
+        <div className="px-5 pb-5 border-t border-gray-100">
+          {/* GEM note */}
+          {item.gemNote && (
+            <div
+              className="mt-4 p-3.5 rounded-lg"
+              style={{ background: '#EEEDFE', border: '1px solid rgba(124,58,237,0.12)' }}
+            >
+              <div
+                className="text-[11px] uppercase tracking-[0.15em] font-medium mb-1.5"
+                style={{ color: '#534AB7' }}
+              >
+                GEM note
+              </div>
+              <div className="text-[13px] leading-[1.55]" style={{ color: '#3C3489' }}>
+                {item.gemNote}
+              </div>
+            </div>
+          )}
+
+          {/* Featured scripts */}
+          <div className="mt-4">
+            {item.featuredScripts.length > 0 && (
+              <div className="text-[11px] uppercase tracking-[0.15em] font-medium text-gray-400 mb-2">
+                Featured scripts
+              </div>
+            )}
+            {item.featuredScripts.map(s => (
+              <ScriptRow key={s.submissionId} script={s} />
+            ))}
+          </div>
+
+          {/* Other scripts (collapsible) */}
+          {item.otherScripts.length > 0 && (
+            <div className="mt-2">
+              <button
+                onClick={(e) => { e.stopPropagation(); setShowAllScripts(!showAllScripts) }}
+                className="text-[12px] font-medium text-purple-600 hover:text-purple-700 transition-colors"
+              >
+                {showAllScripts
+                  ? 'Hide other scripts'
+                  : `Show all scripts (${item.otherScripts.length} more)`}
+              </button>
+              {showAllScripts && (
+                <div className="mt-2">
+                  {item.otherScripts.map(s => (
+                    <ScriptRow key={s.submissionId} script={s} />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Already responded — show response */}
+          {status === 'interested' && (
+            <div
+              className="mt-4 p-3.5 rounded-lg"
+              style={{ background: '#E1F5EE', border: '1px solid rgba(5,150,105,0.15)' }}
+            >
+              <div className="text-[12px] font-medium mb-1" style={{ color: '#0F6E56' }}>
+                Interested
+              </div>
+              {repNote && (
+                <div className="text-[13px] text-gray-700 leading-[1.5]">{repNote}</div>
+              )}
+              {item.writerEmail && (
+                <div className="mt-3 pt-3" style={{ borderTop: '1px solid rgba(5,150,105,0.15)' }}>
+                  <div className="text-[11px] uppercase tracking-[0.12em] font-medium text-gray-400 mb-1">
+                    Writer contact
+                  </div>
+                  <a
+                    href={`mailto:${item.writerEmail}`}
+                    className="text-[13px] font-medium text-purple-600 hover:text-purple-700"
+                  >
+                    {item.writerEmail}
+                  </a>
+                </div>
+              )}
+            </div>
+          )}
+
+          {status === 'passed' && (
+            <div
+              className="mt-4 p-3.5 rounded-lg"
+              style={{ background: '#F7F7F5', border: '1px solid rgba(0,0,0,0.06)' }}
+            >
+              <div className="text-[12px] font-medium text-gray-500 mb-1">Passed</div>
+              {selectedTags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  {selectedTags.map(tag => (
+                    <span
+                      key={tag}
+                      className="text-[11px] px-2 py-0.5 rounded-full bg-gray-200 text-gray-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {repNote && (
+                <div className="text-[13px] text-gray-600 leading-[1.5]">{repNote}</div>
+              )}
+            </div>
+          )}
+
+          {/* Action buttons — only for pending */}
+          {status === 'pending' && !showPassForm && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              {/* Note field */}
+              <textarea
+                value={repNote}
+                onChange={e => setRepNote(e.target.value)}
+                placeholder="Add a note (optional) — e.g. what caught your eye, or why you're passing"
+                className="w-full text-[13px] p-3 rounded-lg border border-gray-200 resize-none focus:outline-none focus:border-purple-300 transition-colors mb-3"
+                rows={2}
+              />
+              <div className="flex gap-2.5">
+                <button
+                  onClick={handleInterested}
+                  disabled={saving}
+                  className="text-[13px] font-medium px-5 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
+                  style={{ background: '#0F6E56' }}
+                >
+                  {saving ? 'Saving...' : 'Interested — connect me'}
+                </button>
+                <button
+                  onClick={() => setShowPassForm(true)}
+                  disabled={saving}
+                  className="text-[13px] font-medium px-5 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors disabled:opacity-50"
+                >
+                  Pass
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Pass form — tag selection */}
+          {status === 'pending' && showPassForm && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <div className="text-[12px] font-medium text-gray-500 mb-2">
+                Why are you passing? (select any that apply)
+              </div>
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {PASS_TAG_OPTIONS.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => toggleTag(tag)}
+                    className="text-[12px] px-3 py-1.5 rounded-full border transition-colors"
+                    style={{
+                      background: selectedTags.includes(tag) ? '#EEEDFE' : '#fff',
+                      borderColor: selectedTags.includes(tag) ? '#7c3aed' : 'rgba(0,0,0,0.1)',
+                      color: selectedTags.includes(tag) ? '#534AB7' : '#666',
+                    }}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                value={repNote}
+                onChange={e => setRepNote(e.target.value)}
+                placeholder="Any additional notes (optional)"
+                className="w-full text-[13px] p-3 rounded-lg border border-gray-200 resize-none focus:outline-none focus:border-purple-300 transition-colors mb-3"
+                rows={2}
+              />
+              <div className="flex gap-2.5">
+                <button
+                  onClick={handlePass}
+                  disabled={saving}
+                  className="text-[13px] font-medium px-5 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors disabled:opacity-50"
+                >
+                  {saving ? 'Saving...' : 'Confirm pass'}
+                </button>
+                <button
+                  onClick={() => setShowPassForm(false)}
+                  className="text-[13px] text-gray-400 hover:text-gray-600 px-3 py-2"
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ScriptRow({ script }: { script: Script }) {
+  const scoreColor = (script.score ?? 0) >= 75
+    ? { bg: 'rgba(5,150,105,0.08)', text: '#0F6E56', border: 'rgba(5,150,105,0.2)' }
+    : { bg: 'rgba(124,58,237,0.08)', text: '#534AB7', border: 'rgba(124,58,237,0.2)' }
+
+  return (
+    <div className="flex items-center gap-3 py-2.5 border-b border-gray-100 last:border-b-0">
+      {script.score != null && (
+        <div
+          className="w-9 h-9 rounded-lg flex items-center justify-center text-[14px] font-medium shrink-0"
+          style={{ background: scoreColor.bg, color: scoreColor.text, border: `1px solid ${scoreColor.border}` }}
+        >
+          {Math.round(script.score)}
+        </div>
+      )}
+      <div className="flex-1 min-w-0">
+        <div className="text-[14px] font-medium text-gray-900 truncate">{script.title}</div>
+        {script.format && (
+          <div className="text-[12px] text-gray-400 mt-0.5">{script.format}</div>
+        )}
+      </div>
+      {script.evalId && (
+        <Link
+          href={`/report/${script.evalId}`}
+          className="text-[12px] font-medium text-purple-600 hover:text-purple-700 shrink-0"
+        >
+          View report →
+        </Link>
+      )}
+    </div>
+  )
+}
+
+export function RepDashboard({
+  items,
+  repName,
+}: {
+  items: RepAssignmentItem[]
+  repName: string
+}) {
+  const pending = items.filter(i => i.status === 'pending')
+  const responded = items.filter(i => i.status !== 'pending')
+
+  return (
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <header className="mb-6">
+        <h1
+          className="text-[22px] font-bold text-gray-900 m-0"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          Writers for your review
+        </h1>
+        <p className="text-[14px] text-gray-500 mt-2 m-0 leading-[1.55] max-w-[520px]">
+          These writers were selected from GEM based on the quality of their work.
+          Take a look and let us know who you&apos;d like to connect with.
+        </p>
+        <p className="text-[12px] text-gray-400 mt-2 m-0">
+          {pending.length} new · {responded.length} reviewed
+        </p>
+      </header>
+
+      {pending.length > 0 && (
+        <div className="mb-6">
+          {pending.map(item => (
+            <WriterCard key={item.id} item={item} />
+          ))}
+        </div>
+      )}
+
+      {responded.length > 0 && (
+        <div>
+          <div className="text-[11px] uppercase tracking-[0.15em] font-medium text-gray-400 mb-3">
+            Reviewed
+          </div>
+          {responded.map(item => (
+            <WriterCard key={item.id} item={item} />
+          ))}
+        </div>
+      )}
+
+      {items.length === 0 && (
+        <div className="text-center py-16">
+          <p className="text-[15px] text-gray-400">No writers to review yet. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  )
+}
