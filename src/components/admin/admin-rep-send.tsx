@@ -8,7 +8,7 @@ import { useState } from 'react'
 type Rep = { id: string; name: string; email: string }
 type WriterScript = { id: string; title: string; format: string | null; score: number | null; evalId: string | null }
 type Writer = { id: string; name: string; email: string; bio: string | null; scripts: WriterScript[]; topScore: number | null }
-type Assignment = { id: string; repId: string; writerId: string; status: string; gemNote: string | null; featuredScriptIds: string[] | null; createdAt: string }
+type Assignment = { id: string; repId: string; writerId: string; writerName: string; status: string; gemNote: string | null; featuredScriptIds: string[] | null; createdAt: string }
 
 // Pending writer to send — holds form state before sending
 type PendingWriter = {
@@ -124,10 +124,9 @@ export function AdminRepSend({
           </div>
           <div className="space-y-1.5">
             {repAssignments.map(a => {
-              const w = writers.find(wr => wr.id === a.writerId)
               return (
                 <div key={a.id} className="flex items-center justify-between text-[13px]">
-                  <span className="text-gray-700">{w?.name ?? 'Unknown'}</span>
+                  <span className="text-gray-700">{a.writerName}</span>
                   <span className={`text-[11px] px-2 py-0.5 rounded-full ${
                     a.status === 'interested' ? 'bg-green-50 text-green-700'
                     : a.status === 'passed' ? 'bg-gray-100 text-gray-500'

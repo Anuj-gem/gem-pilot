@@ -111,10 +111,24 @@ export default async function AdminRepsPage() {
     .select('id, rep_id, writer_id, status, gem_note, featured_script_ids, created_at')
     .order('created_at', { ascending: false })
 
+  // Fetch names for assigned writers (don't rely on the writers array — it may be truncated)
+  const assignedWriterIds = [...new Set((existingAssignments || []).map((a: any) => a.writer_id))]
+  const assignedNameMap = new Map<string, string>()
+  if (assignedWriterIds.length > 0) {
+    const { data: assignedProfiles } = await service
+      .from('profiles')
+      .select('id, full_name, email')
+      .in('id', assignedWriterIds)
+    for (const p of (assignedProfiles || []) as { id: string; full_name: string | null; email: string }[]) {
+      assignedNameMap.set(p.id, p.full_name || p.email)
+    }
+  }
+
   const assignments = (existingAssignments || []).map((a: any) => ({
     id: a.id,
     repId: a.rep_id,
     writerId: a.writer_id,
+    writerName: assignedNameMap.get(a.writer_id) || 'Unknown',
     status: a.status,
     gemNote: a.gem_note,
     featuredScriptIds: a.featured_script_ids,
