@@ -143,7 +143,7 @@ export async function POST(request: NextRequest) {
       const { data: cancelledProfile } = await supabase
         .from('profiles')
         .update({
-          subscription_status: 'cancelled',
+          subscription_status: 'canceled',
           stripe_subscription_id: null,
         })
         .eq('stripe_customer_id', customerId)
