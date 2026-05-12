@@ -48,19 +48,20 @@ export default async function PartnerDashboardPage() {
     created_at: string; responded_at: string | null
   }[]
 
-  // Fetch writer profiles
+  // Fetch writer profiles (including avatar_url)
   const writerIds = [...new Set(rows.map(r => r.writer_id))]
-  const writerMap = new Map<string, { name: string; bio: string | null; email: string | null }>()
+  const writerMap = new Map<string, { name: string; bio: string | null; email: string | null; avatarUrl: string | null }>()
   if (writerIds.length > 0) {
     const { data: profiles } = await service
       .from('profiles')
-      .select('id, full_name, bio, email')
+      .select('id, full_name, bio, email, avatar_url')
       .in('id', writerIds)
-    for (const p of (profiles || []) as { id: string; full_name: string | null; bio: string | null; email: string | null }[]) {
+    for (const p of (profiles || []) as { id: string; full_name: string | null; bio: string | null; email: string | null; avatar_url: string | null }[]) {
       writerMap.set(p.id, {
         name: p.full_name || 'Unknown',
         bio: p.bio,
         email: p.email,
+        avatarUrl: p.avatar_url,
       })
     }
   }
@@ -69,6 +70,7 @@ export default async function PartnerDashboardPage() {
   type ScriptWithEval = {
     submissionId: string; title: string; format: string | null
     score: number | null; evalId: string | null
+    logline: string | null; genres: string[] | null
   }
   const scriptsByWriter = new Map<string, ScriptWithEval[]>()
 
@@ -86,14 +88,41 @@ export default async function PartnerDashboardPage() {
     }
 
     if (subIds.length > 0) {
+      // Fetch evals with logline + genre from the evaluation JSON
       const { data: evals } = await service
         .from('script_evaluations')
-        .select('id, submission_id, weighted_score')
+        .select('id, submission_id, weighted_score, evaluation')
         .in('submission_id', subIds)
 
-      const evalMap = new Map<string, { id: string; score: number | null }>()
-      for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null }[]) {
-        evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score })
+      const evalMap = new Map<string, {
+        id: string; score: number | null
+        logline: string | null; genres: string[] | null
+      }>()
+      for (const e of (evals || []) as {
+        id: string; submission_id: string; weighted_score: number | null
+        evaluation: Record<string, any> | null
+      }[]) {
+        const ev = e.evaluation
+        const logline = ev?.positioning_hook ?? null
+        const classification = ev?.classification
+        const genrePrimary = classification?.genre_primary
+        const genreTags = classification?.genre_tags as string[] | undefined
+        // Build genres array: primary first, then tags (deduplicated)
+        let genres: string[] | null = null
+        if (genrePrimary && genrePrimary !== 'unable to determine') {
+          genres = [genrePrimary]
+          if (genreTags?.length) {
+            for (const t of genreTags) {
+              if (t.toLowerCase() !== genrePrimary.toLowerCase() && !genres.includes(t)) {
+                genres.push(t)
+              }
+            }
+          }
+        } else if (genreTags?.length) {
+          genres = genreTags
+        }
+
+        evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score, logline, genres })
       }
 
       for (const [subId, sub] of subMap) {
@@ -105,6 +134,8 @@ export default async function PartnerDashboardPage() {
           format: sub.format,
           score: ev?.score ?? null,
           evalId: ev?.id ?? null,
+          logline: ev?.logline ?? null,
+          genres: ev?.genres ?? null,
         })
       }
 
@@ -131,6 +162,7 @@ export default async function PartnerDashboardPage() {
       writerName: writer?.name ?? 'Unknown',
       writerBio: writer?.bio ?? null,
       writerEmail: writer?.email ?? null,
+      writerAvatarUrl: writer?.avatarUrl ?? null,
       gemNote: r.gem_note,
       status: r.status as 'pending' | 'interested' | 'passed',
       repNote: r.rep_note,

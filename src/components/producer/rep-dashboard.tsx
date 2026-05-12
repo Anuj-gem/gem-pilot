@@ -13,6 +13,8 @@ type Script = {
   format: string | null
   score: number | null
   evalId: string | null
+  logline: string | null
+  genres: string[] | null
 }
 
 export type RepAssignmentItem = {
@@ -21,6 +23,7 @@ export type RepAssignmentItem = {
   writerName: string
   writerBio: string | null
   writerEmail: string | null
+  writerAvatarUrl: string | null
   gemNote: string | null
   status: 'pending' | 'interested' | 'passed'
   repNote: string | null
@@ -55,17 +58,6 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
     .toUpperCase()
     .slice(0, 2)
 
-  // Deterministic color from name
-  const colors = [
-    { bg: '#EEEDFE', text: '#3C3489' },
-    { bg: '#E1F5EE', text: '#085041' },
-    { bg: '#FAECE7', text: '#712B13' },
-    { bg: '#E6F1FB', text: '#0C447C' },
-    { bg: '#FAEEDA', text: '#633806' },
-  ]
-  const colorIdx = item.writerName.length % colors.length
-  const avatarColor = colors[colorIdx]
-
   async function handleInterested() {
     setSaving(true)
     try {
@@ -75,7 +67,6 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
         body: JSON.stringify({
           assignment_id: item.id,
           status: 'interested',
-          rep_note: repNote || null,
         }),
       })
       if (res.ok) setStatus('interested')
@@ -84,6 +75,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
   }
 
   async function handlePass() {
+    if (!repNote.trim()) return // required
     setSaving(true)
     try {
       const res = await fetch('/api/rep/respond', {
@@ -92,7 +84,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
         body: JSON.stringify({
           assignment_id: item.id,
           status: 'passed',
-          rep_note: repNote || null,
+          rep_note: repNote,
           pass_tags: selectedTags.length > 0 ? selectedTags : null,
         }),
       })
@@ -126,17 +118,22 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
         onClick={() => setExpanded(!expanded)}
         className="w-full text-left px-5 py-4 flex items-center gap-3.5 hover:bg-gray-50 transition-colors"
       >
-        <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium shrink-0"
-          style={{ background: avatarColor.bg, color: avatarColor.text }}
-        >
-          {initials}
-        </div>
+        {item.writerAvatarUrl ? (
+          <img
+            src={item.writerAvatarUrl}
+            alt={item.writerName}
+            className="w-10 h-10 rounded-full object-cover shrink-0"
+          />
+        ) : (
+          <div
+            className="w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium shrink-0"
+            style={{ background: '#EEEDFE', color: '#534AB7' }}
+          >
+            {initials}
+          </div>
+        )}
         <div className="flex-1 min-w-0">
           <div className="text-[15px] font-medium text-gray-900">{item.writerName}</div>
-          {item.writerBio && (
-            <div className="text-[13px] text-gray-500 mt-0.5 line-clamp-1">{item.writerBio}</div>
-          )}
         </div>
         <span className="text-[12px] text-gray-400 shrink-0 mr-2">
           {item.totalScripts} script{item.totalScripts !== 1 ? 's' : ''}
@@ -158,6 +155,13 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
       {/* Expanded body */}
       {expanded && (
         <div className="px-5 pb-5 border-t border-gray-100">
+          {/* Bio — full, not truncated */}
+          {item.writerBio && (
+            <div className="mt-4 text-[13px] text-gray-600 leading-[1.6]">
+              {item.writerBio}
+            </div>
+          )}
+
           {/* GEM note */}
           {item.gemNote && (
             <div
@@ -209,7 +213,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
             </div>
           )}
 
-          {/* Already responded — show response */}
+          {/* Already responded — Interested */}
           {status === 'interested' && (
             <div
               className="mt-4 p-3.5 rounded-lg"
@@ -218,11 +222,8 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
               <div className="text-[12px] font-medium mb-1" style={{ color: '#0F6E56' }}>
                 Interested
               </div>
-              {repNote && (
-                <div className="text-[13px] text-gray-700 leading-[1.5]">{repNote}</div>
-              )}
               {item.writerEmail && (
-                <div className="mt-3 pt-3" style={{ borderTop: '1px solid rgba(5,150,105,0.15)' }}>
+                <div className="mt-2">
                   <div className="text-[11px] uppercase tracking-[0.12em] font-medium text-gray-400 mb-1">
                     Writer contact
                   </div>
@@ -237,6 +238,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
             </div>
           )}
 
+          {/* Already responded — Passed */}
           {status === 'passed' && (
             <div
               className="mt-4 p-3.5 rounded-lg"
@@ -261,17 +263,9 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
             </div>
           )}
 
-          {/* Action buttons — only for pending */}
+          {/* Action buttons — only for pending, no pass form showing */}
           {status === 'pending' && !showPassForm && (
             <div className="mt-4 pt-4 border-t border-gray-100">
-              {/* Note field */}
-              <textarea
-                value={repNote}
-                onChange={e => setRepNote(e.target.value)}
-                placeholder="Add a note (optional) — e.g. what caught your eye, or why you're passing"
-                className="w-full text-[13px] p-3 rounded-lg border border-gray-200 resize-none focus:outline-none focus:border-purple-300 transition-colors mb-3"
-                rows={2}
-              />
               <div className="flex gap-2.5">
                 <button
                   onClick={handleInterested}
@@ -279,7 +273,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
                   className="text-[13px] font-medium px-5 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
                   style={{ background: '#0F6E56' }}
                 >
-                  {saving ? 'Saving...' : 'Interested — connect me'}
+                  {saving ? 'Saving...' : 'Interested'}
                 </button>
                 <button
                   onClick={() => setShowPassForm(true)}
@@ -292,7 +286,7 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
             </div>
           )}
 
-          {/* Pass form — tag selection */}
+          {/* Pass form — tag selection + required note */}
           {status === 'pending' && showPassForm && (
             <div className="mt-4 pt-4 border-t border-gray-100">
               <div className="text-[12px] font-medium text-gray-500 mb-2">
@@ -317,14 +311,17 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
               <textarea
                 value={repNote}
                 onChange={e => setRepNote(e.target.value)}
-                placeholder="Any additional notes (optional)"
-                className="w-full text-[13px] p-3 rounded-lg border border-gray-200 resize-none focus:outline-none focus:border-purple-300 transition-colors mb-3"
+                placeholder="Tell us a bit more — this goes to the GEM team only, and we'll use it to send the writer helpful feedback."
+                className={`w-full text-[13px] p-3 rounded-lg border resize-none focus:outline-none focus:border-purple-300 transition-colors mb-1 ${
+                  !repNote.trim() ? 'border-gray-200' : 'border-gray-200'
+                }`}
                 rows={2}
               />
+              <div className="text-[11px] text-gray-400 mb-3">Required</div>
               <div className="flex gap-2.5">
                 <button
                   onClick={handlePass}
-                  disabled={saving}
+                  disabled={saving || !repNote.trim()}
                   className="text-[13px] font-medium px-5 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors disabled:opacity-50"
                 >
                   {saving ? 'Saving...' : 'Confirm pass'}
@@ -345,33 +342,46 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
 }
 
 function ScriptRow({ script }: { script: Script }) {
-  const scoreColor = (script.score ?? 0) >= 75
-    ? { bg: 'rgba(5,150,105,0.08)', text: '#0F6E56', border: 'rgba(5,150,105,0.2)' }
-    : { bg: 'rgba(124,58,237,0.08)', text: '#534AB7', border: 'rgba(124,58,237,0.2)' }
-
   return (
-    <div className="flex items-center gap-3 py-2.5 border-b border-gray-100 last:border-b-0">
-      {script.score != null && (
-        <div
-          className="w-9 h-9 rounded-lg flex items-center justify-center text-[14px] font-medium shrink-0"
-          style={{ background: scoreColor.bg, color: scoreColor.text, border: `1px solid ${scoreColor.border}` }}
-        >
-          {Math.round(script.score)}
+    <div className="py-3 border-b border-gray-100 last:border-b-0">
+      <div className="flex items-center gap-3">
+        {script.score != null && (
+          <div
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-[14px] font-medium shrink-0"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              color: '#534AB7',
+              border: '1px solid rgba(124,58,237,0.2)',
+            }}
+          >
+            {Math.round(script.score)}
+          </div>
+        )}
+        <div className="flex-1 min-w-0">
+          <div className="text-[14px] font-medium text-gray-900 truncate">{script.title}</div>
+          {script.genres && script.genres.length > 0 && (
+            <div className="text-[12px] text-gray-400 mt-0.5">
+              {script.genres.join(' · ')}
+              {script.format ? ` · ${script.format}` : ''}
+            </div>
+          )}
+          {!script.genres?.length && script.format && (
+            <div className="text-[12px] text-gray-400 mt-0.5">{script.format}</div>
+          )}
         </div>
-      )}
-      <div className="flex-1 min-w-0">
-        <div className="text-[14px] font-medium text-gray-900 truncate">{script.title}</div>
-        {script.format && (
-          <div className="text-[12px] text-gray-400 mt-0.5">{script.format}</div>
+        {script.evalId && (
+          <Link
+            href={`/report/${script.evalId}`}
+            className="text-[12px] font-medium text-purple-600 hover:text-purple-700 shrink-0"
+          >
+            View report →
+          </Link>
         )}
       </div>
-      {script.evalId && (
-        <Link
-          href={`/report/${script.evalId}`}
-          className="text-[12px] font-medium text-purple-600 hover:text-purple-700 shrink-0"
-        >
-          View report →
-        </Link>
+      {script.logline && (
+        <div className="text-[12px] text-gray-500 leading-[1.5] mt-1.5 ml-12">
+          {script.logline}
+        </div>
       )}
     </div>
   )
