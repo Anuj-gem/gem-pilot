@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 
-const FEEDBACK_TAGS = [
+// Presets — shown as quick-fill suggestions
+const FEEDBACK_PRESETS = [
   'Strong writing voice',
   'Compelling characters',
   'Marketable concept',
@@ -18,7 +19,7 @@ const FEEDBACK_TAGS = [
   'Underdeveloped world',
 ]
 
-const NEXT_STEPS_TAGS = [
+const NEXT_STEPS_PRESETS = [
   'Rewrite and resubmit',
   'Submit to another opportunity',
   'Consider a writing partner',
@@ -31,11 +32,126 @@ const NEXT_STEPS_TAGS = [
   'Keep writing — almost there',
 ]
 
+// Combo tag input — type to add custom, presets as suggestions, search previously used
+function TagComboInput({
+  tags,
+  setTags,
+  presets,
+  allUsed,
+  placeholder,
+  accentColor,
+}: {
+  tags: string[]
+  setTags: (t: string[]) => void
+  presets: string[]
+  allUsed: string[]
+  placeholder: string
+  accentColor: 'purple' | 'green'
+}) {
+  const [input, setInput] = useState('')
+  const [focused, setFocused] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  // Merge presets + previously used, deduplicate, exclude already-selected
+  const allSuggestions = [...new Set([...presets, ...allUsed])]
+  const filtered = input.trim()
+    ? allSuggestions.filter(s => s.toLowerCase().includes(input.toLowerCase()) && !tags.includes(s))
+    : allSuggestions.filter(s => !tags.includes(s))
+
+  function addTag(tag: string) {
+    const trimmed = tag.trim()
+    if (trimmed && !tags.includes(trimmed)) {
+      setTags([...tags, trimmed])
+    }
+    setInput('')
+  }
+
+  function removeTag(tag: string) {
+    setTags(tags.filter(t => t !== tag))
+  }
+
+  const colors = accentColor === 'purple'
+    ? { pill: 'border-purple-300 bg-purple-50 text-purple-700', suggestion: 'hover:bg-purple-50', ring: 'focus-within:border-purple-300' }
+    : { pill: 'border-green-300 bg-green-50 text-green-700', suggestion: 'hover:bg-green-50', ring: 'focus-within:border-green-300' }
+
+  return (
+    <div>
+      {/* Selected tags */}
+      {tags.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mb-2">
+          {tags.map(tag => (
+            <span key={tag} className={`inline-flex items-center gap-1 text-[12px] px-2.5 py-1 rounded-full border font-semibold ${colors.pill}`}>
+              {tag}
+              <button
+                type="button"
+                onClick={() => removeTag(tag)}
+                className="opacity-60 hover:opacity-100 ml-0.5"
+              >
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Input + dropdown */}
+      <div className="relative">
+        <input
+          ref={inputRef}
+          type="text"
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setTimeout(() => setFocused(false), 150)}
+          onKeyDown={e => {
+            if (e.key === 'Enter' && input.trim()) {
+              e.preventDefault()
+              addTag(input)
+            }
+            if (e.key === 'Backspace' && !input && tags.length > 0) {
+              removeTag(tags[tags.length - 1])
+            }
+          }}
+          placeholder={tags.length === 0 ? placeholder : 'Add another...'}
+          className={`w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 bg-white focus:outline-none ${colors.ring}`}
+        />
+
+        {/* Suggestions dropdown */}
+        {focused && filtered.length > 0 && (
+          <div className="absolute z-10 mt-1 w-full border border-gray-200 rounded-lg bg-white shadow-sm max-h-48 overflow-y-auto">
+            {filtered.slice(0, 12).map(s => (
+              <button
+                key={s}
+                type="button"
+                onMouseDown={e => { e.preventDefault(); addTag(s); inputRef.current?.focus() }}
+                className={`w-full text-left px-3 py-2 text-[12px] text-gray-700 ${colors.suggestion} border-b border-gray-50 last:border-b-0`}
+              >
+                {s}
+              </button>
+            ))}
+            {input.trim() && !allSuggestions.some(s => s.toLowerCase() === input.trim().toLowerCase()) && (
+              <button
+                type="button"
+                onMouseDown={e => { e.preventDefault(); addTag(input); inputRef.current?.focus() }}
+                className={`w-full text-left px-3 py-2 text-[12px] font-medium text-gray-500 ${colors.suggestion} border-t border-gray-100`}
+              >
+                Add "{input.trim()}"
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 interface TagFeedbackFormProps {
   considerationId: string
   currentFeedbackTags?: string[]
   currentNextStepsTags?: string[]
   currentFeedback?: string
+  allUsedFeedbackTags?: string[]
+  allUsedNextStepsTags?: string[]
 }
 
 export function TagFeedbackForm({
@@ -43,6 +159,8 @@ export function TagFeedbackForm({
   currentFeedbackTags = [],
   currentNextStepsTags = [],
   currentFeedback = '',
+  allUsedFeedbackTags = [],
+  allUsedNextStepsTags = [],
 }: TagFeedbackFormProps) {
   const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
   const [nextStepsTags, setNextStepsTags] = useState<string[]>(currentNextStepsTags)
@@ -51,14 +169,8 @@ export function TagFeedbackForm({
   const [saved, setSaved] = useState(false)
   const router = useRouter()
 
-  function toggleTag(tag: string, list: string[], setter: (v: string[]) => void) {
-    if (list.includes(tag)) {
-      setter(list.filter(t => t !== tag))
-    } else {
-      setter([...list, tag])
-    }
-    setSaved(false)
-  }
+  function updateFeedbackTags(tags: string[]) { setFeedbackTags(tags); setSaved(false) }
+  function updateNextStepsTags(tags: string[]) { setNextStepsTags(tags); setSaved(false) }
 
   async function handleSave() {
     setSaving(true)
@@ -101,43 +213,27 @@ export function TagFeedbackForm({
       {/* Feedback tags */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-2">Reason tags</label>
-        <div className="flex flex-wrap gap-1.5">
-          {FEEDBACK_TAGS.map(tag => (
-            <button
-              key={tag}
-              type="button"
-              onClick={() => toggleTag(tag, feedbackTags, setFeedbackTags)}
-              className={`text-[12px] px-2.5 py-1 rounded-full border transition-colors ${
-                feedbackTags.includes(tag)
-                  ? 'border-purple-400 bg-purple-50 text-purple-700 font-semibold'
-                  : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
+        <TagComboInput
+          tags={feedbackTags}
+          setTags={updateFeedbackTags}
+          presets={FEEDBACK_PRESETS}
+          allUsed={allUsedFeedbackTags}
+          placeholder="Type to add or pick a suggestion..."
+          accentColor="purple"
+        />
       </div>
 
       {/* Next steps tags */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-2">Next steps</label>
-        <div className="flex flex-wrap gap-1.5">
-          {NEXT_STEPS_TAGS.map(tag => (
-            <button
-              key={tag}
-              type="button"
-              onClick={() => toggleTag(tag, nextStepsTags, setNextStepsTags)}
-              className={`text-[12px] px-2.5 py-1 rounded-full border transition-colors ${
-                nextStepsTags.includes(tag)
-                  ? 'border-green-400 bg-green-50 text-green-700 font-semibold'
-                  : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
+        <TagComboInput
+          tags={nextStepsTags}
+          setTags={updateNextStepsTags}
+          presets={NEXT_STEPS_PRESETS}
+          allUsed={allUsedNextStepsTags}
+          placeholder="Type to add or pick a suggestion..."
+          accentColor="green"
+        />
       </div>
 
       {/* Optional note */}

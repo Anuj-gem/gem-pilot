@@ -78,6 +78,19 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
     }))
   }
 
+  // Query all previously-used tags across all considerations (for autocomplete)
+  const { data: allConsiderations } = await service
+    .from('considerations')
+    .select('feedback_tags, next_steps_tags')
+    .not('feedback_tags', 'is', null)
+
+  const usedFeedbackTags = [...new Set(
+    (allConsiderations || []).flatMap((c: any) => c.feedback_tags || [])
+  )]
+  const usedNextStepsTags = [...new Set(
+    (allConsiderations || []).flatMap((c: any) => c.next_steps_tags || [])
+  )]
+
   const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
@@ -176,6 +189,8 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
           currentFeedbackTags={app.feedback_tags || []}
           currentNextStepsTags={app.next_steps_tags || []}
           currentFeedback={app.feedback || ''}
+          allUsedFeedbackTags={usedFeedbackTags}
+          allUsedNextStepsTags={usedNextStepsTags}
         />
       </section>
     </div>
