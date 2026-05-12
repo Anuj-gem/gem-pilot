@@ -25,7 +25,7 @@ export type RepAssignmentItem = {
   writerEmail: string | null
   writerAvatarUrl: string | null
   gemNote: string | null
-  status: 'pending' | 'interested' | 'passed'
+  status: 'pending' | 'more_info' | 'introduce' | 'passed'
   repNote: string | null
   passTags: string[] | null
   respondedAt: string | null
@@ -91,6 +91,8 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
   const [selectedTags, setSelectedTags] = useState<string[]>(item.passTags ?? [])
   const [saving, setSaving] = useState(false)
   const [showPassForm, setShowPassForm] = useState(false)
+  const [showMoreInfoForm, setShowMoreInfoForm] = useState(false)
+  const [showIntroduceConfirm, setShowIntroduceConfirm] = useState(false)
   const [customTags, setCustomTags] = useState<string[]>([])
 
   const initials = item.writerName
@@ -100,7 +102,8 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
     .toUpperCase()
     .slice(0, 2)
 
-  async function handleInterested() {
+  async function handleMoreInfo() {
+    if (!repNote.trim()) return
     setSaving(true)
     try {
       const res = await fetch('/api/rep/respond', {
@@ -108,16 +111,39 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           assignment_id: item.id,
-          status: 'interested',
+          status: 'more_info',
+          rep_note: repNote,
         }),
       })
-      if (res.ok) setStatus('interested')
+      if (res.ok) {
+        setStatus('more_info')
+        setShowMoreInfoForm(false)
+      }
+    } catch {}
+    setSaving(false)
+  }
+
+  async function handleIntroduce() {
+    setSaving(true)
+    try {
+      const res = await fetch('/api/rep/respond', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          assignment_id: item.id,
+          status: 'introduce',
+        }),
+      })
+      if (res.ok) {
+        setStatus('introduce')
+        setShowIntroduceConfirm(false)
+      }
     } catch {}
     setSaving(false)
   }
 
   async function handlePass() {
-    if (!repNote.trim()) return // required
+    if (!repNote.trim()) return
     setSaving(true)
     try {
       const res = await fetch('/api/rep/respond', {
@@ -144,8 +170,10 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
     )
   }
 
-  const statusBadge = status === 'interested'
-    ? { label: 'Interested', bg: '#E1F5EE', color: '#085041' }
+  const statusBadge = status === 'more_info'
+    ? { label: 'See more', bg: '#EEF4FF', color: '#1E40AF' }
+    : status === 'introduce'
+    ? { label: 'Introduce', bg: '#E1F5EE', color: '#085041' }
     : status === 'passed'
     ? { label: 'Passed', bg: '#F1EFE8', color: '#5F5E5A' }
     : { label: 'New', bg: '#EEEDFE', color: '#534AB7' }
@@ -255,28 +283,35 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
             </div>
           )}
 
-          {/* Already responded — Interested */}
-          {status === 'interested' && (
+          {/* Already responded — See more */}
+          {status === 'more_info' && (
+            <div
+              className="mt-4 p-3.5 rounded-lg"
+              style={{ background: '#EEF4FF', border: '1px solid rgba(30,64,175,0.12)' }}
+            >
+              <div className="text-[12px] font-medium mb-1" style={{ color: '#1E40AF' }}>
+                Wants to see more
+              </div>
+              {repNote && (
+                <div className="text-[13px] leading-[1.5] mt-1" style={{ color: '#1E3A5F' }}>
+                  {repNote}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Already responded — Introduce */}
+          {status === 'introduce' && (
             <div
               className="mt-4 p-3.5 rounded-lg"
               style={{ background: '#E1F5EE', border: '1px solid rgba(5,150,105,0.15)' }}
             >
               <div className="text-[12px] font-medium mb-1" style={{ color: '#0F6E56' }}>
-                Interested
+                Introduction requested
               </div>
-              {item.writerEmail && (
-                <div className="mt-2">
-                  <div className="text-[11px] uppercase tracking-[0.12em] font-medium text-gray-400 mb-1">
-                    Writer contact
-                  </div>
-                  <a
-                    href={`mailto:${item.writerEmail}`}
-                    className="text-[13px] font-medium text-purple-600 hover:text-purple-700"
-                  >
-                    {item.writerEmail}
-                  </a>
-                </div>
-              )}
+              <div className="text-[13px] leading-[1.5] mt-1" style={{ color: '#085041' }}>
+                We&apos;ll follow up with you to confirm and get an introduction set up.
+              </div>
             </div>
           )}
 
@@ -305,17 +340,25 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
             </div>
           )}
 
-          {/* Action buttons — only for pending, no pass form showing */}
-          {status === 'pending' && !showPassForm && (
+          {/* Action buttons — only for pending, no sub-form showing */}
+          {status === 'pending' && !showMoreInfoForm && !showPassForm && !showIntroduceConfirm && (
             <div className="mt-4 pt-4 border-t border-gray-100">
               <div className="flex gap-2.5">
                 <button
-                  onClick={handleInterested}
+                  onClick={() => setShowMoreInfoForm(true)}
+                  disabled={saving}
+                  className="text-[13px] font-medium px-5 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
+                  style={{ background: '#1E40AF' }}
+                >
+                  See more
+                </button>
+                <button
+                  onClick={() => setShowIntroduceConfirm(true)}
                   disabled={saving}
                   className="text-[13px] font-medium px-5 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
                   style={{ background: '#0F6E56' }}
                 >
-                  {saving ? 'Saving...' : 'Interested'}
+                  Introduce us
                 </button>
                 <button
                   onClick={() => setShowPassForm(true)}
@@ -323,6 +366,69 @@ function WriterCard({ item }: { item: RepAssignmentItem }) {
                   className="text-[13px] font-medium px-5 py-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors disabled:opacity-50"
                 >
                   Pass
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* See more form — required note */}
+          {status === 'pending' && showMoreInfoForm && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <div className="text-[12px] font-medium text-gray-500 mb-2">
+                What would you like to see?
+              </div>
+              <textarea
+                value={repNote}
+                onChange={e => setRepNote(e.target.value)}
+                placeholder="e.g. I'd love to see another draft, or I'm curious if they have anything in the thriller space…"
+                className="w-full text-[13px] p-3 rounded-lg border border-gray-200 resize-none focus:outline-none focus:border-blue-300 transition-colors mb-1"
+                rows={2}
+              />
+              <div className="text-[11px] text-gray-400 mb-3">Required</div>
+              <div className="flex gap-2.5">
+                <button
+                  onClick={handleMoreInfo}
+                  disabled={saving || !repNote.trim()}
+                  className="text-[13px] font-medium px-5 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
+                  style={{ background: '#1E40AF' }}
+                >
+                  {saving ? 'Saving...' : 'Send request'}
+                </button>
+                <button
+                  onClick={() => setShowMoreInfoForm(false)}
+                  className="text-[13px] text-gray-400 hover:text-gray-600 px-3 py-2"
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Introduce us confirmation */}
+          {status === 'pending' && showIntroduceConfirm && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <div
+                className="p-3.5 rounded-lg mb-3"
+                style={{ background: '#E1F5EE', border: '1px solid rgba(5,150,105,0.15)' }}
+              >
+                <div className="text-[13px] leading-[1.55]" style={{ color: '#085041' }}>
+                  We&apos;ll follow up with you to confirm and get an introduction set up with {item.writerName}.
+                </div>
+              </div>
+              <div className="flex gap-2.5">
+                <button
+                  onClick={handleIntroduce}
+                  disabled={saving}
+                  className="text-[13px] font-medium px-5 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
+                  style={{ background: '#0F6E56' }}
+                >
+                  {saving ? 'Saving...' : 'Confirm'}
+                </button>
+                <button
+                  onClick={() => setShowIntroduceConfirm(false)}
+                  className="text-[13px] text-gray-400 hover:text-gray-600 px-3 py-2"
+                >
+                  Back
                 </button>
               </div>
             </div>

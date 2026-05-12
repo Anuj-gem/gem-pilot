@@ -164,7 +164,7 @@ export default async function PartnerDashboardPage() {
       writerEmail: writer?.email ?? null,
       writerAvatarUrl: writer?.avatarUrl ?? null,
       gemNote: r.gem_note,
-      status: r.status as 'pending' | 'interested' | 'passed',
+      status: r.status as 'pending' | 'more_info' | 'introduce' | 'passed',
       repNote: r.rep_note,
       passTags: r.pass_tags,
       respondedAt: r.responded_at,

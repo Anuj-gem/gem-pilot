@@ -20,12 +20,12 @@ export async function POST(req: NextRequest) {
   const body = await req.json()
   const { assignment_id, status, rep_note, pass_tags } = body as {
     assignment_id: string
-    status: 'interested' | 'passed'
+    status: 'more_info' | 'introduce' | 'passed'
     rep_note?: string | null
     pass_tags?: string[] | null
   }
 
-  if (!assignment_id || !['interested', 'passed'].includes(status)) {
+  if (!assignment_id || !['more_info', 'introduce', 'passed'].includes(status)) {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
 

@@ -95,7 +95,7 @@ export default async function AdminRepsPage() {
   // Load existing assignments for reference
   const { data: existingAssignments } = await service
     .from('rep_assignments')
-    .select('id, rep_id, writer_id, status, gem_note, featured_script_ids, created_at')
+    .select('id, rep_id, writer_id, status, gem_note, rep_note, featured_script_ids, created_at')
     .order('created_at', { ascending: false })
 
   // Fetch names for assigned writers (don't rely on the writers array — it may be truncated)
@@ -118,6 +118,7 @@ export default async function AdminRepsPage() {
     writerName: assignedNameMap.get(a.writer_id) || 'Unknown',
     status: a.status,
     gemNote: a.gem_note,
+    repNote: a.rep_note,
     featuredScriptIds: a.featured_script_ids,
     createdAt: a.created_at,
   }))

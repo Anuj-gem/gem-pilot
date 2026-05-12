@@ -8,7 +8,7 @@ import { useState } from 'react'
 type Rep = { id: string; name: string; email: string }
 type WriterScript = { id: string; title: string; format: string | null; score: number | null; evalId: string | null }
 type Writer = { id: string; name: string; email: string; bio: string | null; scripts: WriterScript[]; topScore: number | null }
-type Assignment = { id: string; repId: string; writerId: string; writerName: string; status: string; gemNote: string | null; featuredScriptIds: string[] | null; createdAt: string }
+type Assignment = { id: string; repId: string; writerId: string; writerName: string; status: string; gemNote: string | null; repNote: string | null; featuredScriptIds: string[] | null; createdAt: string }
 
 // Pending writer to send — holds form state before sending
 type PendingWriter = {
@@ -125,15 +125,23 @@ export function AdminRepSend({
           <div className="space-y-1.5">
             {repAssignments.map(a => {
               return (
-                <div key={a.id} className="flex items-center justify-between text-[13px]">
-                  <span className="text-gray-700">{a.writerName}</span>
-                  <span className={`text-[11px] px-2 py-0.5 rounded-full ${
-                    a.status === 'interested' ? 'bg-green-50 text-green-700'
-                    : a.status === 'passed' ? 'bg-gray-100 text-gray-500'
-                    : 'bg-purple-50 text-purple-700'
-                  }`}>
-                    {a.status}
-                  </span>
+                <div key={a.id} className="text-[13px]">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">{a.writerName}</span>
+                    <span className={`text-[11px] px-2 py-0.5 rounded-full ${
+                      a.status === 'introduce' ? 'bg-green-50 text-green-700'
+                      : a.status === 'more_info' ? 'bg-blue-50 text-blue-700'
+                      : a.status === 'passed' ? 'bg-gray-100 text-gray-500'
+                      : 'bg-purple-50 text-purple-700'
+                    }`}>
+                      {a.status === 'more_info' ? 'see more' : a.status === 'introduce' ? 'introduce' : a.status}
+                    </span>
+                  </div>
+                  {a.repNote && (
+                    <div className="text-[11px] text-gray-500 mt-0.5 pl-1 italic">
+                      &ldquo;{a.repNote}&rdquo;
+                    </div>
+                  )}
                 </div>
               )
             })}
