@@ -44,17 +44,19 @@ export default async function AdminRepsPage() {
   }))
 
   // Load all writers with completed scripts
+  // Override Supabase's default 1000-row limit with .range()
   const { data: writerSubs } = await service
     .from('script_submissions')
     .select('user_id')
     .eq('status', 'completed')
+    .range(0, 4999)
 
   const writerIds = [...new Set((writerSubs || []).map((s: any) => s.user_id))]
 
   const { data: writerProfiles } = await service
     .from('profiles')
     .select('id, full_name, email, bio')
-    .in('id', writerIds)
+    .in('id', writerIds.length > 0 ? writerIds : ['none'])
     .eq('account_type', 'writer')
     .order('full_name')
 
@@ -62,15 +64,17 @@ export default async function AdminRepsPage() {
   const { data: scriptData } = await service
     .from('script_submissions')
     .select('id, user_id, title, declared_format, status')
-    .in('user_id', writerIds)
+    .in('user_id', writerIds.length > 0 ? writerIds : ['none'])
     .eq('status', 'completed')
     .order('created_at', { ascending: false })
+    .range(0, 4999)
 
   const subIds = (scriptData || []).map((s: any) => s.id)
   const { data: evalData } = await service
     .from('script_evaluations')
     .select('id, submission_id, weighted_score')
     .in('submission_id', subIds.length > 0 ? subIds : ['none'])
+    .range(0, 4999)
 
   const evalMap = new Map<string, { evalId: string; score: number | null }>()
   for (const e of (evalData || []) as any[]) {
