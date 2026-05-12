@@ -43,50 +43,29 @@ export default async function AdminRepsPage() {
     email: p.email,
   }))
 
-  // Load all writers with completed scripts
-  // Override Supabase's default 1000-row limit with .range()
-  const { data: writerSubs } = await service
-    .from('script_submissions')
-    .select('user_id')
-    .eq('status', 'completed')
-    .range(0, 4999)
-
-  const writerIds = [...new Set((writerSubs || []).map((s: any) => s.user_id))]
-
-  const { data: writerProfiles } = await service
-    .from('profiles')
-    .select('id, full_name, email, bio')
-    .in('id', writerIds.length > 0 ? writerIds : ['none'])
-    .eq('account_type', 'writer')
-    .order('full_name')
-
-  // Get script counts + top scores per writer
-  const { data: scriptData } = await service
-    .from('script_submissions')
-    .select('id, user_id, title, declared_format, status')
-    .in('user_id', writerIds.length > 0 ? writerIds : ['none'])
-    .eq('status', 'completed')
-    .order('created_at', { ascending: false })
-    .range(0, 4999)
-
-  const subIds = (scriptData || []).map((s: any) => s.id)
-  const { data: evalData } = await service
-    .from('script_evaluations')
-    .select('id, submission_id, weighted_score')
-    .in('submission_id', subIds.length > 0 ? subIds : ['none'])
-    .range(0, 4999)
-
-  const evalMap = new Map<string, { evalId: string; score: number | null }>()
-  for (const e of (evalData || []) as any[]) {
-    evalMap.set(e.submission_id, { evalId: e.id, score: e.weighted_score })
-  }
-
-  // Build writer list with scripts
+  // Load all data with parallel queries — no .in() with large ID arrays (URL length limit)
   type WriterScript = { id: string; title: string; format: string | null; score: number | null; evalId: string | null }
   type WriterOption = { id: string; name: string; email: string; bio: string | null; scripts: WriterScript[]; topScore: number | null }
 
+  const [
+    { data: allProfiles },
+    { data: allScripts },
+    { data: allEvals },
+  ] = await Promise.all([
+    service.from('profiles').select('id, full_name, email, bio').eq('account_type', 'writer').order('full_name').range(0, 4999),
+    service.from('script_submissions').select('id, user_id, title, declared_format').eq('status', 'completed').order('created_at', { ascending: false }).range(0, 4999),
+    service.from('script_evaluations').select('id, submission_id, weighted_score').range(0, 9999),
+  ])
+
+  // Build eval lookup
+  const evalMap = new Map<string, { evalId: string; score: number | null }>()
+  for (const e of (allEvals || []) as any[]) {
+    evalMap.set(e.submission_id, { evalId: e.id, score: e.weighted_score })
+  }
+
+  // Group scripts by writer
   const scriptsByWriter = new Map<string, WriterScript[]>()
-  for (const s of (scriptData || []) as any[]) {
+  for (const s of (allScripts || []) as any[]) {
     if (!scriptsByWriter.has(s.user_id)) scriptsByWriter.set(s.user_id, [])
     const ev = evalMap.get(s.id)
     scriptsByWriter.get(s.user_id)!.push({
@@ -103,11 +82,15 @@ export default async function AdminRepsPage() {
     arr.sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
   }
 
-  const writers: WriterOption[] = (writerProfiles || []).map((p: any) => {
-    const scripts = scriptsByWriter.get(p.id) ?? []
-    const topScore = scripts.length > 0 ? Math.max(...scripts.map(s => s.score ?? 0)) : null
-    return { id: p.id, name: p.full_name || 'Unknown', email: p.email, bio: p.bio, scripts, topScore }
-  }).sort((a: WriterOption, b: WriterOption) => (b.topScore ?? 0) - (a.topScore ?? 0))
+  // Only include writers who have at least one completed script
+  const writers: WriterOption[] = (allProfiles || [])
+    .filter((p: any) => scriptsByWriter.has(p.id))
+    .map((p: any) => {
+      const scripts = scriptsByWriter.get(p.id) ?? []
+      const topScore = scripts.length > 0 ? Math.max(...scripts.map(s => s.score ?? 0)) : null
+      return { id: p.id, name: p.full_name || 'Unknown', email: p.email, bio: p.bio, scripts, topScore }
+    })
+    .sort((a: WriterOption, b: WriterOption) => (b.topScore ?? 0) - (a.topScore ?? 0))
 
   // Load existing assignments for reference
   const { data: existingAssignments } = await service
