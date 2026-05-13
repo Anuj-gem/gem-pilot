@@ -163,13 +163,25 @@ export default async function ApplicationsPage() {
                         <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
                           {opp?.title || 'Opportunity'}
                         </p>
-                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${
-                          isReviewed ? 'bg-green-50 text-green-700' :
-                          isPending ? 'bg-yellow-50 text-yellow-700' :
-                          'bg-purple-50 text-purple-700'
-                        }`}>
-                          {isReviewed ? 'Reviewed' : isPending ? 'Pending' : 'In review'}
-                        </span>
+                        {(() => {
+                          const stageMap: Record<string, { label: string; bg: string; color: string }> = {
+                            pending: { label: 'Pending', bg: '#fef3c7', color: '#92400e' },
+                            in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
+                            shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
+                            partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
+                            complete: { label: 'Complete', bg: '#d1fae5', color: '#065f46' },
+                          }
+                          const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
+                          const s = stageMap[stage] || stageMap.pending
+                          return (
+                            <span
+                              className="text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0"
+                              style={{ background: s.bg, color: s.color }}
+                            >
+                              {s.label}
+                            </span>
+                          )
+                        })()}
                       </div>
                       <div className="flex items-center gap-2 mt-1">
                         {scripts.map((s, i) => (
