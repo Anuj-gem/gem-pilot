@@ -1,16 +1,18 @@
-// /dashboard — writer dashboard (v7, opportunity-centric).
+// /dashboard — writer dashboard (v8, stat cards + reskinned feedback).
 //
 // Layout:
 //   +----------------------------------------------+
 //   |  PROFILE HEADER                              |
 //   +----------------------------------------------+
-//   |  APPLICATIONS (the heartbeat)                |
-//   |  — or empty-state nudge toward opportunities |
+//   |  STAT CARDS (scripts · applications · heat)  |
 //   +----------------------------------------------+
-//   |  AVAILABLE OPPORTUNITIES                     |
-//   |  — opps you qualify for but haven't applied  |
+//   |  YOUR FEEDBACK (white cards, left border)    |
 //   +----------------------------------------------+
-//   |  YOUR RECENT SCRIPTS (interactive cards)     |
+//   |  PENDING APPLICATIONS                        |
+//   +----------------------------------------------+
+//   |  AVAILABLE OPPORTUNITIES (progress bars)     |
+//   +----------------------------------------------+
+//   |  YOUR RECENT SCRIPTS                         |
 //   +----------------------------------------------+
 
 import { redirect } from 'next/navigation'
@@ -101,7 +103,7 @@ export default async function DashboardPage() {
   // ---------- APPLICATIONS (considerations with opportunity_id) ----------
   const { data: applications } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned')
     .eq('writer_id', user.id)
     .not('opportunity_id', 'is', null)
     .order('submitted_at', { ascending: false })
@@ -111,6 +113,7 @@ export default async function DashboardPage() {
     reviewed_at: string | null; feedback: string | null
     feedback_tags: string[] | null; next_steps_tags: string[] | null
     opportunity_id: string; writer_pitch: string | null; writer_response: string | null
+    heat_earned: number
   }[]
 
   // Map opportunity IDs to info
@@ -222,6 +225,19 @@ export default async function DashboardPage() {
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
+  // Best score per opportunity (for progress bars)
+  function bestScoreForOpp(opp: typeof allOpenOpps[0]) {
+    let best = 0
+    for (const s of completedScripts) {
+      const ev = myEvalBySub.get(s.id)
+      const score = ev?.weighted_score ?? 0
+      if (score > best) best = score
+    }
+    return best
+  }
+
+  const totalHeat = (profile as any)?.heat_score ?? 0
+
   return (
     <>
       {isTrial && <UpgradeModalListener />}
@@ -232,7 +248,7 @@ export default async function DashboardPage() {
 
       <div className="max-w-2xl mx-auto space-y-6">
 
-        {/* ── STATUS STRIP ──────────────────────────────── */}
+        {/* ── PROFILE HEADER ───────────────────────────── */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 min-w-0">
             <h1 className="text-[17px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
@@ -250,23 +266,6 @@ export default async function DashboardPage() {
                 Free
               </span>
             )}
-            {(profile as any)?.heat_score > 0 && (
-              <span className="inline-flex items-center gap-1 shrink-0">
-                <span className="text-[14px] font-bold" style={{ color: '#f97316' }}>
-                  🔥 {(profile as any).heat_score}
-                </span>
-                <span className="relative group">
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-gray-300 hover:text-gray-500 cursor-help transition-colors">
-                    <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M8 7v4M8 5.5v0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                  <span className="absolute left-1/2 -translate-x-1/2 top-6 w-56 bg-gray-900 text-white text-[11px] leading-snug rounded-lg px-3 py-2.5 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50">
-                    <span className="font-semibold block mb-1">How you earn heat</span>
-                    Shortlisted = +2 · Partner match = +3 · Positive pass = +1 bonus. Heat builds across all your applications.
-                  </span>
-                </span>
-              </span>
-            )}
           </div>
           <Link
             href="/profile"
@@ -280,11 +279,30 @@ export default async function DashboardPage() {
           </Link>
         </div>
 
-        {/* ── YOUR FEEDBACK (hero section) ─────────────── */}
+        {/* ── STAT CARDS ───────────────────────────────── */}
+        <div className="grid grid-cols-3 gap-3">
+          <div className="rounded-xl px-4 py-4" style={{ background: '#f9fafb' }}>
+            <p className="text-[13px] text-gray-400 m-0 mb-1">Scripts</p>
+            <p className="text-[24px] font-medium text-gray-900 m-0 leading-none">{completedScripts.length + processingScripts.length}</p>
+          </div>
+          <div className="rounded-xl px-4 py-4" style={{ background: '#f9fafb' }}>
+            <p className="text-[13px] text-gray-400 m-0 mb-1">Applications</p>
+            <p className="text-[24px] font-medium text-gray-900 m-0 leading-none">{allApplications.length}</p>
+          </div>
+          <div className="rounded-xl px-4 py-4" style={{ background: '#fff7ed' }}>
+            <p className="text-[13px] m-0 mb-1" style={{ color: '#9a3412' }}>Heat score</p>
+            <div className="flex items-baseline gap-1.5">
+              <p className="text-[48px] font-medium m-0 leading-none" style={{ color: '#ea580c' }}>{totalHeat}</p>
+              <span className="text-[16px]">🔥</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ── YOUR FEEDBACK (reskinned) ────────────────── */}
         {reviewedApps.length > 0 && (
           <section>
-            <header className="flex items-end justify-between gap-3 mb-2.5">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your feedback</h2>
+            <header className="flex items-end justify-between gap-3 mb-3">
+              <h2 className="text-[12px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Your feedback</h2>
               {allApplications.length > 2 && (
                 <Link href="/review" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
                   View all
@@ -292,75 +310,67 @@ export default async function DashboardPage() {
                 </Link>
               )}
             </header>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {reviewedApps.slice(0, 2).map(app => {
                 const opp = oppMap.get(app.opportunity_id)
-
-                // All next_steps_tags combined for display
                 const allNextSteps = app.next_steps_tags || []
+                const heatEarned = (app as any).heat_earned ?? 0
 
                 return (
                   <Link key={app.id} href={`/applications/${app.id}`} className="block">
                     <div
-                      className="rounded-xl px-5 py-4 hover:shadow-md transition-all"
+                      className="bg-white px-5 py-4 hover:shadow-sm transition-all"
                       style={{
-                        background: 'linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #ede9fe 100%)',
-                        border: '1px solid #c4b5fd',
+                        border: '1px solid #e5e7eb',
+                        borderLeft: '3px solid #7c3aed',
+                        borderRadius: '0 12px 12px 0',
                       }}
                     >
-
-                      {/* Opportunity title — the headline */}
-                      <p className="text-[15px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
-                        {opp?.title || 'Opportunity'}
-                      </p>
-
-                      {/* Suggested next steps */}
-                      {allNextSteps.length > 0 && (
-                        <div className="mt-2.5">
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-purple-400 m-0 mb-1">
-                            Suggested next steps
+                      {/* Title row + Pass badge + heat */}
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <p className="text-[15px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>
+                            {opp?.title || 'Opportunity'}
                           </p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {allNextSteps.map((tag, i) => (
-                              <span
-                                key={`n-${i}`}
-                                className="text-[12px] px-2.5 py-0.5 rounded-full font-semibold"
-                                style={{ background: '#ede9fe', color: '#5b21b6', border: '1px solid #c4b5fd' }}
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
+                          <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full shrink-0" style={{ background: '#f3f4f6', color: '#6b7280' }}>
+                            Pass
+                          </span>
                         </div>
-                      )}
+                        {heatEarned > 0 && (
+                          <span className="text-[12px] font-bold shrink-0" style={{ color: '#ea580c' }}>
+                            +{heatEarned} 🔥
+                          </span>
+                        )}
+                      </div>
 
-                      {/* Feedback tags */}
-                      {app.feedback_tags && app.feedback_tags.length > 0 && (
-                        <div className="mt-2.5">
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-1">
-                            Feedback
-                          </p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {app.feedback_tags.map((tag, i) => (
-                              <span key={`f-${i}`} className="text-[12px] px-2.5 py-0.5 rounded-full bg-white/70 text-gray-600 font-medium">{tag}</span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Producer note */}
+                      {/* Producer feedback quote */}
                       {app.feedback && (
-                        <p className="text-[13px] text-gray-600 m-0 mt-3 leading-relaxed line-clamp-2 italic">
+                        <p className="text-[13px] text-gray-500 m-0 mb-2.5 leading-relaxed line-clamp-2 italic">
                           &ldquo;{app.feedback}&rdquo;
                         </p>
                       )}
 
+                      {/* Suggested next steps */}
+                      {allNextSteps.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-2.5">
+                          {allNextSteps.map((tag: string, i: number) => (
+                            <span
+                              key={`n-${i}`}
+                              className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
+                              style={{ background: '#ede9fe', color: '#5b21b6' }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
                       {/* Footer */}
-                      <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-purple-200/50">
-                        <span className="text-[12px] text-purple-400">
+                      <div className="flex items-center justify-between pt-2.5" style={{ borderTop: '1px solid #f3f4f6' }}>
+                        <span className="text-[12px] text-gray-400">
                           {app.reviewed_at ? fmtDate(app.reviewed_at) : fmtDate(app.submitted_at)}
                         </span>
-                        <span className="text-[12px] font-semibold text-purple-600 flex items-center gap-1">
+                        <span className="text-[12px] font-semibold flex items-center gap-1" style={{ color: '#7c3aed' }}>
                           View details
                           <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </span>
@@ -376,10 +386,10 @@ export default async function DashboardPage() {
         {/* ── PENDING APPLICATIONS ─────────────────────── */}
         {pendingApps.length > 0 && (
           <section>
-            <header className="mb-2">
-              <h2 className="text-[13px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Pending</h2>
+            <header className="mb-3">
+              <h2 className="text-[12px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Pending</h2>
             </header>
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               {pendingApps.map(app => {
                 const opp = oppMap.get(app.opportunity_id)
                 const stageMap: Record<string, { label: string; bg: string; color: string }> = {
@@ -394,7 +404,7 @@ export default async function DashboardPage() {
                     <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:border-purple-200 transition-colors flex items-center justify-between gap-3">
                       <div className="min-w-0 flex-1">
                         <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
+                        <p className="text-[12px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
                       </div>
                       <span
                         className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0"
@@ -413,8 +423,8 @@ export default async function DashboardPage() {
         {/* ── EMPTY STATE (no applications at all) ──────── */}
         {allApplications.length === 0 && (
           <section>
-            <header className="mb-2.5">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">Your applications</h2>
+            <header className="mb-3">
+              <h2 className="text-[12px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Your applications</h2>
             </header>
             <div className="rounded-xl border border-gray-200 bg-white px-5 py-6 text-center">
               {totalQualifying > 0 ? (
@@ -428,7 +438,7 @@ export default async function DashboardPage() {
                   <Link
                     href="/opportunities"
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors hover:brightness-110"
-                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                    style={{ background: '#7c3aed' }}
                   >
                     Browse opportunities
                   </Link>
@@ -458,29 +468,37 @@ export default async function DashboardPage() {
           </section>
         )}
 
-        {/* ── AVAILABLE OPPORTUNITIES ───────────────────── */}
+        {/* ── AVAILABLE OPPORTUNITIES (with progress bars) ── */}
         {availableOpps.length > 0 && (
           <section>
-            <header className="flex items-end justify-between gap-3 mb-2.5">
-              <h2 className="text-[15px] font-bold text-gray-900 m-0">Available opportunities</h2>
+            <header className="flex items-end justify-between gap-3 mb-3">
+              <h2 className="text-[12px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Available opportunities</h2>
               <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
                 See all
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             </header>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {availableOpps.slice(0, 3).map(opp => {
                 const deadlineDays = opp.deadline
                   ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
                   : null
+                const qCount = countQualifyingScripts(opp)
+                const best = bestScoreForOpp(opp)
 
                 return (
                   <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
                     <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all">
-                      {/* Badge row */}
-                      <div className="flex items-center gap-2.5 mb-2">
+                      {/* Title + deadline */}
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <h3
+                          className="text-[16px] font-bold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors"
+                          style={{ fontFamily: 'Georgia, serif' }}
+                        >
+                          {opp.title}
+                        </h3>
                         {deadlineDays != null && deadlineDays > 0 && (
-                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ml-auto ${
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${
                             deadlineDays <= 7
                               ? 'bg-red-50 text-red-600 border border-red-200'
                               : 'bg-gray-50 text-gray-400 border border-gray-200'
@@ -490,40 +508,36 @@ export default async function DashboardPage() {
                         )}
                       </div>
 
-                      {/* Title */}
-                      <h3
-                        className="text-[16px] font-bold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors"
-                        style={{ fontFamily: 'Georgia, serif' }}
-                      >
-                        {opp.title}
-                      </h3>
-                      {opp.subtitle && (
-                        <p className="text-[13px] text-gray-400 m-0 mt-0.5 font-medium">{opp.subtitle}</p>
-                      )}
-
                       {/* Description */}
                       {opp.description && (
-                        <p className="text-[13px] text-gray-500 m-0 mt-1.5 line-clamp-2 leading-relaxed">{opp.description}</p>
+                        <p className="text-[13px] text-gray-500 m-0 mb-3 line-clamp-2 leading-relaxed">{opp.description}</p>
                       )}
 
-                      {/* Footer: score req + qualifying count + Apply */}
-                      <div className="flex items-center justify-between mt-3">
-                        <div className="flex items-center gap-3">
-                          {opp.min_score != null && (
-                            <span className="text-[12px] font-bold text-gray-600">
-                              Requires {Math.round(opp.min_score)}+ score
-                            </span>
-                          )}
-                          {(() => {
-                            const qCount = countQualifyingScripts(opp)
-                            return qCount > 0 ? (
-                              <span className="text-[12px] text-gray-400 font-medium">
-                                {qCount} {qCount === 1 ? 'script qualifies' : 'scripts qualify'}
-                              </span>
-                            ) : null
-                          })()}
+                      {/* Score progress bar */}
+                      {opp.min_score != null && (
+                        <div className="mb-3">
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-[12px] text-gray-400">Your best: {Math.round(best)}</span>
+                            <span className="text-[12px] text-gray-400">Requires {Math.round(opp.min_score)}+</span>
+                          </div>
+                          <div className="h-1 rounded-full overflow-hidden" style={{ background: '#f3f4f6' }}>
+                            <div
+                              className="h-full rounded-full"
+                              style={{
+                                width: `${Math.min(100, Math.round((best / opp.min_score) * 100))}%`,
+                                background: best >= opp.min_score ? '#22c55e' : '#f59e0b',
+                              }}
+                            />
+                          </div>
                         </div>
-                        <span className="text-[13px] font-bold text-purple-600 flex items-center gap-1 ml-auto">
+                      )}
+
+                      {/* Footer: qualifying count + Apply */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-[12px] text-gray-400 font-medium">
+                          {qCount > 0 ? `${qCount} ${qCount === 1 ? 'script qualifies' : 'scripts qualify'}` : ''}
+                        </span>
+                        <span className="text-[13px] font-bold flex items-center gap-1 ml-auto" style={{ color: '#7c3aed' }}>
                           Apply
                           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -540,8 +554,8 @@ export default async function DashboardPage() {
 
         {/* ── YOUR RECENT SCRIPTS ──────────────────────── */}
         <section>
-          <header className="flex items-end justify-between gap-3 mb-2.5">
-            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your recent scripts</h2>
+          <header className="flex items-end justify-between gap-3 mb-3">
+            <h2 className="text-[12px] font-semibold text-gray-400 m-0 uppercase tracking-wide">Your recent scripts</h2>
             {completedScripts.length > 5 && (
               <Link href="/scripts" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold flex items-center gap-0.5">
                 All
