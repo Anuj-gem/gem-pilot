@@ -120,28 +120,45 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
           {ALL_STAGES.map((s, i) => {
             const reached = i <= currentStageIndex
             const isCurrent = i === currentStageIndex
+            // Skipped = passed but this stage was never reached (between last reached + 1 and pass)
+            const isSkipped = isReviewed && !reached && i < ALL_STAGES.length - 1
+            // Pass node itself: reached only if isReviewed
+            const isPassNode = i === ALL_STAGES.length - 1
+
+            let circle
+            if (reached) {
+              // Completed stage — purple check
+              circle = (
+                <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#7c3aed' }}>
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 8l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              )
+            } else if (isSkipped) {
+              // Skipped stage — gray X
+              circle = (
+                <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }}>
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                    <path d="M4 4l8 8M12 4l-8 8" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+              )
+            } else {
+              // Future stage — empty circle
+              circle = (
+                <div className="w-7 h-7 rounded-full" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }} />
+              )
+            }
+
             return (
               <div key={s.key} className="flex items-center flex-1 last:flex-initial" style={i === ALL_STAGES.length - 1 ? { flex: '0 0 auto' } : undefined}>
                 <div className="flex flex-col items-center" style={{ minWidth: 28 }}>
-                  {reached ? (
-                    <div
-                      className="w-7 h-7 rounded-full flex items-center justify-center"
-                      style={{ background: '#7c3aed' }}
-                    >
-                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                        <path d="M4 8l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  ) : (
-                    <div
-                      className="w-7 h-7 rounded-full"
-                      style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }}
-                    />
-                  )}
+                  {circle}
                   <span
                     className="text-[10px] mt-1.5 text-center whitespace-nowrap"
                     style={{
-                      color: reached ? '#7c3aed' : '#9ca3af',
+                      color: reached ? '#7c3aed' : isSkipped ? '#9ca3af' : '#9ca3af',
                       fontWeight: isCurrent ? 600 : 500,
                     }}
                   >
@@ -152,7 +169,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
                   <div
                     className="h-0.5 flex-1 mx-1"
                     style={{
-                      background: i < currentStageIndex ? '#7c3aed' : '#e5e7eb',
+                      background: i < currentStageIndex ? '#7c3aed' : (isReviewed ? '#d1d5db' : '#e5e7eb'),
                       marginTop: -10,
                     }}
                   />
@@ -236,20 +253,30 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
             <span className="text-[16px]">🔥</span>
             <span className="text-[18px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} heat</span>
           </div>
-          <p className="text-[12px] m-0 leading-relaxed" style={{ color: '#9a3412' }}>
-            This application earned {app.heat_earned} heat on your score. Every review builds your standing. Your total: {totalHeat} heat.
-          </p>
+          <div className="flex items-center justify-between mt-2">
+            <p className="text-[12px] m-0 leading-relaxed" style={{ color: '#9a3412' }}>
+              This application earned {app.heat_earned} heat on your score. Your total: {totalHeat} heat.
+            </p>
+            <Link href="/dashboard" className="text-[12px] font-semibold shrink-0 ml-3" style={{ color: '#ea580c' }}>
+              View dashboard
+            </Link>
+          </div>
         </div>
       ) : (
         <div
           className="rounded-xl px-5 py-4 mb-5"
           style={{ background: '#f9fafb' }}
         >
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="text-[16px]">🔥</span>
-            <span className="text-[15px] font-semibold text-gray-400">&mdash; heat</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[16px]">🔥</span>
+              <span className="text-[15px] font-semibold text-gray-400">&mdash; heat</span>
+            </div>
+            <Link href="/dashboard" className="text-[12px] font-semibold text-gray-400 hover:text-gray-600">
+              View dashboard
+            </Link>
           </div>
-          <p className="text-[12px] text-gray-400 m-0 leading-relaxed">
+          <p className="text-[12px] text-gray-400 m-0 mt-1.5 leading-relaxed">
             Heat is earned when your application is reviewed. Your total heat score: {totalHeat}.
           </p>
         </div>
