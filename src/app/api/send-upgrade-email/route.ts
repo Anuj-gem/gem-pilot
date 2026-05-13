@@ -63,6 +63,7 @@ export async function POST(request: NextRequest) {
         variables: { first_name: firstName },
         dedupeKey: `${user.id}_post_upgrade`,
         tag: "post_upgrade",
+        userId: user.id,
       },
       serviceClient
     );

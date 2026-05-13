@@ -51,6 +51,7 @@ export async function POST(request: NextRequest) {
     .select("id, email")
     .not("email", "is", null)
     .or("account_type.is.null,account_type.eq.writer")
+    .or("email_unsubscribed.is.null,email_unsubscribed.eq.false")
 
   if (usersErr || !users) {
     console.error("[cron/opportunity-broadcast] user query failed:", usersErr?.message)
@@ -76,6 +77,7 @@ export async function POST(request: NextRequest) {
         {
           templateAlias: "new_opportunity_broadcast",
           to: user.email,
+          userId: user.id,
           variables: {
             opportunity_title: opp.title || "New Opportunity",
             format,

@@ -54,6 +54,7 @@ export async function GET(request: Request) {
                 variables: { first_name: firstName },
                 dedupeKey: user.id,
                 tag: 'post_signup',
+                userId: user.id,
               },
               adminClient
             )

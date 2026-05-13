@@ -116,6 +116,7 @@ export async function POST(req: NextRequest) {
         variables: { first_name: firstName },
         dedupeKey: `consideration_submitted_${targetId}`,
         tag: 'consideration_submitted',
+        userId: user.id,
       }, service)
     }
   } catch (emailErr) {

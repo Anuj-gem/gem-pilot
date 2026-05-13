@@ -91,6 +91,7 @@ export async function POST(request: NextRequest) {
       variables: { first_name: firstName },
       dedupeKey: `consideration_nudge_${con.id}`,
       tag: 'consideration_nudge',
+      userId: con.user_id,
     }, service)
 
     if (didSend) sent++

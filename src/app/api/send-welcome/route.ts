@@ -99,6 +99,7 @@ export async function POST(request: NextRequest) {
         variables: { first_name: firstName },
         dedupeKey: userId, // dedupes per-user — only the first call actually sends
         tag: 'post_signup',
+        userId,
       },
       serviceClient
     )

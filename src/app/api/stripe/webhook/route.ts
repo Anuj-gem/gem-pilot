@@ -70,6 +70,7 @@ export async function POST(request: NextRequest) {
               },
               dedupeKey: `${userId}_post_upgrade`,
               tag: 'post_upgrade',
+              userId,
             },
             supabase
           )

@@ -171,6 +171,7 @@ export async function POST(req: NextRequest) {
               },
               dedupeKey: `consideration_complete_${consideration_id}`,
               tag: 'consideration_complete',
+              userId: con.writer_id,
             }, service)
           }
         }

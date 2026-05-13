@@ -68,6 +68,7 @@ export async function POST(request: NextRequest) {
     .or("subscription_status.is.null,subscription_status.neq.active")
     .or("account_type.is.null,account_type.eq.writer")
     .not("email", "is", null)
+    .or("email_unsubscribed.is.null,email_unsubscribed.eq.false")
 
   if (usersErr) {
     console.error("[cron/drip-emails] user query failed:", usersErr.message)
@@ -142,7 +143,7 @@ export async function POST(request: NextRequest) {
       }
 
       const sent = await sendEmail(
-        { templateAlias: alias, to: user.email, variables, dedupeKey, tag: alias },
+        { templateAlias: alias, to: user.email, variables, dedupeKey, tag: alias, userId: user.id },
         service
       )
 

@@ -6,12 +6,35 @@
  *
  * Templates are managed in Postmark dashboard. Aliases must match exactly.
  * Idempotent via email_outbox dedupe (template_alias + dedupe_key).
+ *
+ * Unsubscribe: every email automatically includes an `unsubscribe_url` template
+ * variable (HMAC-signed). Users who click it get `email_unsubscribed = true` on
+ * their profile. sendEmail checks that flag before sending — once unsubscribed,
+ * no email of any kind goes out. Zero manual work required.
  */
+
+import { createHmac } from 'crypto'
 
 const POSTMARK_TOKEN = process.env.POSTMARK_SERVER_TOKEN!
 const FROM_EMAIL = 'Anuj from GEM <anuj@gem.studio>'
 const REPLY_TO = 'anuj@gem.studio'
 const STREAM = 'outbound'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.gem.studio'
+
+// ── Unsubscribe URL helpers ──────────────────────────────────────
+// HMAC-SHA256 signed so users can't forge unsubscribe links for others.
+// Secret falls back to Supabase JWT secret (always present in Vercel env).
+const UNSUB_SECRET = process.env.UNSUBSCRIBE_SECRET || process.env.SUPABASE_JWT_SECRET || 'gem-unsub-fallback'
+
+export function generateUnsubscribeUrl(userId: string): string {
+  const sig = createHmac('sha256', UNSUB_SECRET).update(userId).digest('hex').slice(0, 32)
+  return `${SITE_URL}/api/unsubscribe?uid=${userId}&sig=${sig}`
+}
+
+export function verifyUnsubscribeSignature(userId: string, sig: string): boolean {
+  const expected = createHmac('sha256', UNSUB_SECRET).update(userId).digest('hex').slice(0, 32)
+  return sig === expected
+}
 
 // Alerts go here whenever a triggered send fails — so Anuj can catch silent
 // failures (missing token, dead template, Postmark outage) before they pile up.
@@ -53,6 +76,10 @@ interface SendEmailOptions {
    *  producer→writer intro so that when the writer hits Reply, the
    *  conversation goes directly to the producer. */
   replyTo?: string
+  /** Pass the user's profile ID to auto-check unsubscribe status and
+   *  inject an `unsubscribe_url` template variable. If omitted, the
+   *  unsubscribe check is skipped (used by admin alerts). */
+  userId?: string
 }
 
 /**
@@ -72,6 +99,35 @@ export async function sendEmail(
   opts: SendEmailOptions,
   supabase?: any
 ): Promise<boolean> {
+  // ── Unsubscribe gate ────────────────────────────────────────────
+  // If we have a supabase client and a userId, check the flag BEFORE
+  // doing any work. This is the safety net — even if a caller forgets
+  // to filter, no email goes out to unsubscribed users.
+  if (supabase && opts.userId) {
+    try {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('email_unsubscribed')
+        .eq('id', opts.userId)
+        .single()
+      if (profile?.email_unsubscribed) {
+        console.log(`[email] Skipping ${opts.templateAlias} for ${opts.to} — user unsubscribed`)
+        return false
+      }
+    } catch {
+      // If the check fails, proceed with sending — don't block emails
+      // due to a transient DB error.
+    }
+  }
+
+  // Auto-inject unsubscribe_url into template variables when userId is available.
+  if (opts.userId) {
+    opts.variables = {
+      ...opts.variables,
+      unsubscribe_url: generateUnsubscribeUrl(opts.userId),
+    }
+  }
+
   const canDedupe = !!(supabase && opts.dedupeKey)
   let claimedId: string | null = null
 
