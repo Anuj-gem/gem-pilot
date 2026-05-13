@@ -365,14 +365,26 @@ export default async function DashboardPage() {
             <div className="space-y-1.5">
               {pendingApps.map(app => {
                 const opp = oppMap.get(app.opportunity_id)
+                const stageMap: Record<string, { label: string; bg: string; color: string }> = {
+                  pending: { label: 'Pending', bg: '#fef3c7', color: '#92400e' },
+                  in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
+                  shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
+                  partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
+                }
+                const stage = stageMap[app.review_stage || 'pending'] || stageMap.pending
                 return (
                   <Link key={app.id} href={`/applications/${app.id}`} className="block">
-                    <div className="rounded-lg border border-gray-100 bg-gray-50/50 px-4 py-2.5 hover:border-gray-200 transition-colors flex items-center justify-between gap-3">
+                    <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:border-purple-200 transition-colors flex items-center justify-between gap-3">
                       <div className="min-w-0 flex-1">
-                        <p className="text-[13px] font-medium text-gray-700 m-0 truncate">{opp?.title || 'Opportunity'}</p>
+                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
                         <p className="text-[11px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
                       </div>
-                      <span className="text-[11px] text-gray-400 font-medium shrink-0">Under review</span>
+                      <span
+                        className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0"
+                        style={{ background: stage.bg, color: stage.color }}
+                      >
+                        {stage.label}
+                      </span>
                     </div>
                   </Link>
                 )
