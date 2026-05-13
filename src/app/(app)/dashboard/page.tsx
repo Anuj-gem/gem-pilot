@@ -251,8 +251,20 @@ export default async function DashboardPage() {
               </span>
             )}
             {(profile as any)?.heat_score > 0 && (
-              <span className="text-[11px] font-bold shrink-0" style={{ color: '#f97316' }}>
-                🔥 {(profile as any).heat_score}
+              <span className="inline-flex items-center gap-1 shrink-0">
+                <span className="text-[14px] font-bold" style={{ color: '#f97316' }}>
+                  🔥 {(profile as any).heat_score}
+                </span>
+                <span className="relative group">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-gray-300 hover:text-gray-500 cursor-help transition-colors">
+                    <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M8 7v4M8 5.5v0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  <span className="absolute left-1/2 -translate-x-1/2 top-6 w-56 bg-gray-900 text-white text-[11px] leading-snug rounded-lg px-3 py-2.5 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50">
+                    <span className="font-semibold block mb-1">How you earn heat</span>
+                    Shortlisted = +2 · Partner match = +3 · Positive pass = +1 bonus. Heat builds across all your applications.
+                  </span>
+                </span>
               </span>
             )}
           </div>

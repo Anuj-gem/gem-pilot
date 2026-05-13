@@ -176,7 +176,7 @@ export default async function ApplicationsPage() {
                           const s = stageMap[stage] || stageMap.pending
                           return (
                             <span
-                              className="text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0"
+                              className="text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0"
                               style={{ background: s.bg, color: s.color }}
                             >
                               {s.label}
@@ -200,7 +200,7 @@ export default async function ApplicationsPage() {
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
                       {isReviewed && app.heat_earned > 0 && (
-                        <span className="text-[11px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned}</span>
+                        <span className="text-[13px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned}</span>
                       )}
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300">
                         <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -208,14 +208,6 @@ export default async function ApplicationsPage() {
                     </div>
                   </div>
 
-                  {/* Feedback tags if reviewed */}
-                  {isReviewed && app.feedback_tags && app.feedback_tags.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-2 pt-2 border-t border-gray-50">
-                      {app.feedback_tags.map((tag, i) => (
-                        <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">{tag}</span>
-                      ))}
-                    </div>
-                  )}
                   {isReviewed && app.feedback && (
                     <p className="text-[12px] text-gray-500 m-0 mt-2 pt-2 border-t border-gray-50 line-clamp-2">{app.feedback}</p>
                   )}

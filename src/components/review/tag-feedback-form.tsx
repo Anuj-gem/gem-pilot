@@ -286,33 +286,7 @@ export function TagFeedbackForm({
         </div>
       </div>
 
-      {/* Feedback tags */}
-      <div>
-        <label className="text-[13px] font-bold text-gray-900 block mb-2">Reason tags</label>
-        <TagComboInput
-          tags={feedbackTags}
-          setTags={updateFeedbackTags}
-          presets={FEEDBACK_PRESETS}
-          allUsed={allUsedFeedbackTags}
-          placeholder="Type to add or pick a suggestion..."
-          accentColor="purple"
-        />
-      </div>
-
-      {/* Next steps tags */}
-      <div>
-        <label className="text-[13px] font-bold text-gray-900 block mb-2">Next steps</label>
-        <TagComboInput
-          tags={nextStepsTags}
-          setTags={updateNextStepsTags}
-          presets={NEXT_STEPS_PRESETS}
-          allUsed={allUsedNextStepsTags}
-          placeholder="Type to add or pick a suggestion..."
-          accentColor="green"
-        />
-      </div>
-
-      {/* Optional note */}
+      {/* Note — the primary feedback vehicle */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
           Note <span className="text-[11px] font-normal text-gray-400">(visible to writer)</span>

@@ -100,11 +100,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   }
   const badge = STAGE_BADGE[currentStage] || STAGE_BADGE.pending
 
-  const hasFeedbackContent = isReviewed && (
-    (app.feedback_tags && app.feedback_tags.length > 0) ||
-    (app.next_steps_tags && app.next_steps_tags.length > 0) ||
-    app.feedback
-  )
+  const hasFeedbackContent = isReviewed && !!app.feedback
 
   return (
     <div className="max-w-lg mx-auto space-y-8">
@@ -119,14 +115,26 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
       <div>
         <div className="flex items-center gap-2.5 mb-2">
           <span
-            className="text-[11px] font-bold px-2.5 py-0.5 rounded-full"
+            className="text-[13px] font-bold px-3 py-1 rounded-full"
             style={{ background: badge.bg, color: badge.color }}
           >
             {badge.label}
           </span>
-          <span className="text-[12px] text-gray-400">Applied {fmtDate(app.submitted_at)}</span>
+          <span className="text-[13px] text-gray-400">Applied {fmtDate(app.submitted_at)}</span>
           {isReviewed && app.heat_earned > 0 && (
-            <span className="text-[11px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned} heat</span>
+            <span className="inline-flex items-center gap-1">
+              <span className="text-[14px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned} heat</span>
+              <span className="relative group">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-gray-300 hover:text-gray-500 cursor-help transition-colors">
+                  <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M8 7v4M8 5.5v0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+                <span className="absolute left-1/2 -translate-x-1/2 top-6 w-56 bg-gray-900 text-white text-[11px] leading-snug rounded-lg px-3 py-2.5 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50">
+                  <span className="font-semibold block mb-1">How you earn heat</span>
+                  Shortlisted = +2 · Partner match = +3 · Positive pass = +1 bonus. Check your dashboard for your total heat score.
+                </span>
+              </span>
+            </span>
           )}
         </div>
         <h1 className="text-[22px] font-bold text-gray-900 m-0 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
@@ -231,46 +239,6 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
               >
                 &ldquo;{app.feedback}&rdquo;
               </p>
-            </div>
-          )}
-
-          {/* Next steps */}
-          {app.next_steps_tags && app.next_steps_tags.length > 0 && (
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-purple-400 m-0 mb-1.5">
-                Suggested next steps
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {app.next_steps_tags.map((tag: string, i: number) => (
-                  <span
-                    key={i}
-                    className="text-[12px] px-2.5 py-1 rounded-full font-semibold"
-                    style={{ background: '#ede9fe', color: '#5b21b6', border: '1px solid #c4b5fd' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Feedback tags */}
-          {app.feedback_tags && app.feedback_tags.length > 0 && (
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-1.5">
-                Feedback
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {app.feedback_tags.map((tag: string, i: number) => (
-                  <span
-                    key={i}
-                    className="text-[12px] px-2.5 py-1 rounded-full bg-white/70 text-gray-600 font-medium"
-                    style={{ border: '1px solid rgba(196, 181, 253, 0.3)' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
           )}
 
