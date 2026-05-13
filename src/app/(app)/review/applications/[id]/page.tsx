@@ -95,6 +95,15 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
+  const STAGE_DISPLAY: Record<string, { label: string; classes: string }> = {
+    pending: { label: 'Pending', classes: 'bg-yellow-50 text-yellow-700' },
+    in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
+    shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
+    partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
+    complete: { label: 'Reviewed', classes: 'bg-green-50 text-green-700' },
+  }
+  const currentStage = STAGE_DISPLAY[app.review_stage || 'pending'] || STAGE_DISPLAY.pending
+
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       {/* Back */}
@@ -110,12 +119,8 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
           </h1>
           <p className="text-[13px] text-gray-400 m-0 mt-1">Applied {fmtDate(app.submitted_at)}</p>
         </div>
-        <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0 ${
-          isReviewed ? 'bg-green-50 text-green-700' :
-          app.status === 'pending' ? 'bg-yellow-50 text-yellow-700' :
-          'bg-purple-50 text-purple-700'
-        }`}>
-          {isReviewed ? 'Reviewed' : app.status === 'pending' ? 'Pending' : 'In review'}
+        <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0 ${currentStage.classes}`}>
+          {currentStage.label}
         </span>
       </div>
 
@@ -191,6 +196,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
           currentFeedback={app.feedback || ''}
           allUsedFeedbackTags={usedFeedbackTags}
           allUsedNextStepsTags={usedNextStepsTags}
+          currentReviewStage={app.review_stage || 'pending'}
         />
       </section>
     </div>

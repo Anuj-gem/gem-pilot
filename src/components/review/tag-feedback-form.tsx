@@ -145,6 +145,13 @@ function TagComboInput({
   )
 }
 
+const REVIEW_STAGES = [
+  { value: 'pending', label: 'Pending', color: '#d97706', bg: '#fef3c7' },
+  { value: 'in_consideration', label: 'In consideration', color: '#7c3aed', bg: '#ede9fe' },
+  { value: 'shortlisted', label: 'Shortlisted', color: '#2563eb', bg: '#dbeafe' },
+  { value: 'partner_match', label: 'Partner match', color: '#059669', bg: '#d1fae5' },
+] as const
+
 interface TagFeedbackFormProps {
   considerationId: string
   currentFeedbackTags?: string[]
@@ -152,6 +159,7 @@ interface TagFeedbackFormProps {
   currentFeedback?: string
   allUsedFeedbackTags?: string[]
   allUsedNextStepsTags?: string[]
+  currentReviewStage?: string
 }
 
 export function TagFeedbackForm({
@@ -161,13 +169,31 @@ export function TagFeedbackForm({
   currentFeedback = '',
   allUsedFeedbackTags = [],
   allUsedNextStepsTags = [],
+  currentReviewStage = 'pending',
 }: TagFeedbackFormProps) {
   const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
   const [nextStepsTags, setNextStepsTags] = useState<string[]>(currentNextStepsTags)
   const [note, setNote] = useState(currentFeedback)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [stage, setStage] = useState(currentReviewStage)
+  const [stageSaving, setStageSaving] = useState(false)
   const router = useRouter()
+
+  async function handleStageChange(newStage: string) {
+    if (newStage === stage) return
+    setStageSaving(true)
+    const res = await fetch('/api/consideration/review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ consideration_id: considerationId, review_stage: newStage }),
+    })
+    setStageSaving(false)
+    if (res.ok) {
+      setStage(newStage)
+      router.refresh()
+    }
+  }
 
   function updateFeedbackTags(tags: string[]) { setFeedbackTags(tags); setSaved(false) }
   function updateNextStepsTags(tags: string[]) { setNextStepsTags(tags); setSaved(false) }
@@ -210,6 +236,32 @@ export function TagFeedbackForm({
 
   return (
     <div className="space-y-5">
+      {/* Stage picker */}
+      <div>
+        <label className="text-[13px] font-bold text-gray-900 block mb-2">Status</label>
+        <div className="flex flex-wrap gap-1.5">
+          {REVIEW_STAGES.map(s => {
+            const isActive = stage === s.value
+            return (
+              <button
+                key={s.value}
+                onClick={() => handleStageChange(s.value)}
+                disabled={stageSaving}
+                className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors disabled:opacity-50"
+                style={{
+                  background: isActive ? s.bg : 'transparent',
+                  borderColor: isActive ? s.color : '#e5e7eb',
+                  color: isActive ? s.color : '#9ca3af',
+                }}
+              >
+                {s.label}
+              </button>
+            )
+          })}
+          {stageSaving && <span className="text-[11px] text-gray-400 self-center ml-1">Saving...</span>}
+        </div>
+      </div>
+
       {/* Feedback tags */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-2">Reason tags</label>

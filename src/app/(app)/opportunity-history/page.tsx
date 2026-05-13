@@ -17,6 +17,21 @@ function svc() {
   )
 }
 
+const STAGE_LABELS: Record<string, string> = {
+  pending: 'Pending',
+  in_consideration: 'In consideration',
+  shortlisted: 'Shortlisted',
+  partner_match: 'Partner match',
+  complete: 'Complete',
+}
+const STAGE_COLORS: Record<string, string> = {
+  pending: 'text-amber-600 bg-amber-50',
+  in_consideration: 'text-purple-700 bg-purple-50',
+  shortlisted: 'text-blue-700 bg-blue-50',
+  partner_match: 'text-emerald-700 bg-emerald-50',
+  complete: 'text-green-700 bg-green-50',
+}
+
 const OUTCOME_LABELS: Record<string, string> = {
   pass: 'Not selected',
   developing: 'Keep developing',
@@ -48,6 +63,37 @@ export default async function OpportunityHistoryPage() {
     .select('id, opportunity_id, submission_id, status, feedback, next_steps, outcome, submitted_at, reviewed_at')
     .eq('writer_id', user.id)
     .order('submitted_at', { ascending: false })
+
+  // Fetch considerations for this writer (to get review_stage + events)
+  const { data: writerConsiderations } = await service
+    .from('considerations')
+    .select('id, opportunity_id, review_stage')
+    .eq('writer_id', user.id)
+    .not('opportunity_id', 'is', null)
+
+  // Map opportunity_id → review_stage
+  const stageByOpp = new Map<string, string>()
+  const conIdByOpp = new Map<string, string>()
+  for (const c of (writerConsiderations || []) as { id: string; opportunity_id: string; review_stage: string | null }[]) {
+    if (c.review_stage) stageByOpp.set(c.opportunity_id, c.review_stage)
+    conIdByOpp.set(c.opportunity_id, c.id)
+  }
+
+  // Fetch timeline events for all relevant considerations
+  const conIds = [...conIdByOpp.values()]
+  let eventsByConId = new Map<string, { event_type: string; message: string | null; new_stage: string | null; created_at: string }[]>()
+  if (conIds.length > 0) {
+    const { data: events } = await service
+      .from('consideration_events')
+      .select('consideration_id, event_type, message, new_stage, created_at')
+      .in('consideration_id', conIds)
+      .eq('event_type', 'status_change')
+      .order('created_at', { ascending: true })
+    for (const ev of (events || []) as { consideration_id: string; event_type: string; message: string | null; new_stage: string | null; created_at: string }[]) {
+      if (!eventsByConId.has(ev.consideration_id)) eventsByConId.set(ev.consideration_id, [])
+      eventsByConId.get(ev.consideration_id)!.push(ev)
+    }
+  }
 
   type SubRow = {
     id: string; opportunity_id: string; submission_id: string
@@ -240,11 +286,14 @@ export default async function OpportunityHistoryPage() {
                     )}
                   </div>
                 </div>
-                {hasPending && (
-                  <span className="shrink-0 text-[11px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
-                    In consideration
-                  </span>
-                )}
+                {hasPending && (() => {
+                  const stage = stageByOpp.get(opp.id) || 'pending'
+                  return (
+                    <span className={`shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full ${STAGE_COLORS[stage] || STAGE_COLORS.pending}`}>
+                      {STAGE_LABELS[stage] || 'Pending'}
+                    </span>
+                  )
+                })()}
                 {!hasPending && hasReviewed && (() => {
                   const bestOutcome = groupScripts.find(s => s.outcome)?.outcome
                   if (bestOutcome) {
@@ -356,6 +405,31 @@ export default async function OpportunityHistoryPage() {
                 )
               })}
             </div>
+
+            {/* Timeline — show stage changes */}
+            {(() => {
+              const conId = conIdByOpp.get(opp.id)
+              const events = conId ? eventsByConId.get(conId) : undefined
+              if (!events || events.length === 0) return null
+              return (
+                <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/50">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Timeline</p>
+                  <div className="space-y-1.5">
+                    {events.map((ev, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gray-300 shrink-0" />
+                        <span className="text-[12px] text-gray-500">
+                          {ev.message || STAGE_LABELS[ev.new_stage || ''] || ev.new_stage}
+                        </span>
+                        <span className="text-[11px] text-gray-300">
+                          {new Date(ev.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })()}
           </section>
         )
       })}

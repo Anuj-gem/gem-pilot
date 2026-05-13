@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { sendEmail } from '@/lib/email'
 
-const VALID_STAGES = ['draft', 'pending', 'submitted', 'in_review', 'partner_match', 'complete'] as const
+const VALID_STAGES = ['draft', 'pending', 'submitted', 'in_review', 'in_consideration', 'shortlisted', 'partner_match', 'complete'] as const
 
 function svc() {
   return createServerClient(
@@ -58,6 +58,8 @@ export async function POST(req: NextRequest) {
       pending: 'Portfolio submitted',
       submitted: 'Portfolio submitted',
       in_review: 'Your review has begun',
+      in_consideration: 'Your application is in consideration',
+      shortlisted: "You've been shortlisted",
       partner_match: 'Partner match identified',
       complete: 'Review complete',
     }
