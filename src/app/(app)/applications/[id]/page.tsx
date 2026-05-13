@@ -76,6 +76,22 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
     }))
   }
 
+  // Load timeline events to determine highest stage reached
+  const { data: evts } = await service
+    .from('consideration_events')
+    .select('new_stage')
+    .eq('consideration_id', app.id)
+    .eq('event_type', 'status_change')
+    .order('created_at', { ascending: true })
+
+  const stageOrder = ['pending', 'in_consideration', 'shortlisted', 'partner_match', 'complete']
+  const reachedStages = new Set<string>(['pending']) // always starts at pending
+  for (const ev of (evts || []) as { new_stage: string | null }[]) {
+    if (ev.new_stage) reachedStages.add(ev.new_stage)
+  }
+  // Also add the current review_stage
+  if (app.review_stage) reachedStages.add(app.review_stage)
+
   // Load writer's total heat score
   const { data: profile } = await service
     .from('profiles')
@@ -90,8 +106,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
-  // Stage tracker: which index is current
-  const currentStageIndex = ALL_STAGES.findIndex(s => s.key === currentStage)
+  // Stage tracker: use reachedStages set for accurate display
 
   return (
     <div className="max-w-lg mx-auto">
@@ -118,16 +133,17 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
       <div className="mb-6">
         <div className="flex items-start">
           {ALL_STAGES.map((s, i) => {
-            const reached = i <= currentStageIndex
-            const isCurrent = i === currentStageIndex
-            // Skipped = passed but this stage was never reached (between last reached + 1 and pass)
-            const isSkipped = isReviewed && !reached && i < ALL_STAGES.length - 1
-            // Pass node itself: reached only if isReviewed
-            const isPassNode = i === ALL_STAGES.length - 1
+            const reached = reachedStages.has(s.key)
+            // Skipped = review is done but this stage was never reached (and it's not the Pass node)
+            const isSkipped = isReviewed && !reached && s.key !== 'complete'
+            // Is this the current active stage (for pending states)
+            const isCurrent = s.key === currentStage
+
+            // Find if the previous stage was reached (for connector color)
+            const prevReached = i > 0 ? reachedStages.has(ALL_STAGES[i - 1].key) : false
 
             let circle
             if (reached) {
-              // Completed stage — purple check
               circle = (
                 <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#7c3aed' }}>
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
@@ -136,7 +152,6 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
                 </div>
               )
             } else if (isSkipped) {
-              // Skipped stage — gray X
               circle = (
                 <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }}>
                   <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
@@ -145,7 +160,6 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
                 </div>
               )
             } else {
-              // Future stage — empty circle
               circle = (
                 <div className="w-7 h-7 rounded-full" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }} />
               )
@@ -158,7 +172,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
                   <span
                     className="text-[10px] mt-1.5 text-center whitespace-nowrap"
                     style={{
-                      color: reached ? '#7c3aed' : isSkipped ? '#9ca3af' : '#9ca3af',
+                      color: reached ? '#7c3aed' : '#9ca3af',
                       fontWeight: isCurrent ? 600 : 500,
                     }}
                   >
@@ -169,7 +183,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
                   <div
                     className="h-0.5 flex-1 mx-1"
                     style={{
-                      background: i < currentStageIndex ? '#7c3aed' : (isReviewed ? '#d1d5db' : '#e5e7eb'),
+                      background: reached && reachedStages.has(ALL_STAGES[i + 1]?.key) ? '#7c3aed' : '#e5e7eb',
                       marginTop: -10,
                     }}
                   />
@@ -261,6 +275,24 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
               View dashboard
             </Link>
           </div>
+        </div>
+      ) : isReviewed ? (
+        <div
+          className="rounded-xl px-5 py-4 mb-5"
+          style={{ background: '#f9fafb' }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[16px]">🔥</span>
+              <span className="text-[15px] font-semibold text-gray-400">+0 heat</span>
+            </div>
+            <Link href="/dashboard" className="text-[12px] font-semibold text-gray-400 hover:text-gray-600">
+              View dashboard
+            </Link>
+          </div>
+          <p className="text-[12px] text-gray-400 m-0 mt-1.5 leading-relaxed">
+            No heat was earned on this application. Your total heat score: {totalHeat}.
+          </p>
         </div>
       ) : (
         <div
