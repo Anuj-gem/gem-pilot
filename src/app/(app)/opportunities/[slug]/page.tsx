@@ -122,20 +122,47 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         .select('submission_id, weighted_score, evaluation')
         .in('submission_id', subIds)
 
+      // Normalize genre string: lowercase, unify dashes, strip junk
+      function normGenre(g: string | null | undefined): string {
+        return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+      }
+
+      function collectGenres(...sources: (string | string[] | null | undefined)[]): string[] {
+        const set = new Set<string>()
+        for (const s of sources) {
+          if (!s) continue
+          const items = Array.isArray(s) ? s : [s]
+          for (const item of items) {
+            const n = normGenre(item)
+            if (n) set.add(n)
+          }
+        }
+        return Array.from(set)
+      }
+
       for (const sub of visibleSubs) {
         const ev = ((evals || []) as any[]).find((e: any) => e.submission_id === sub.id)
         if (!ev) continue
         const evJson = ev.evaluation as Record<string, unknown> | null
         const cls = (evJson?.classification as Record<string, unknown>) || {}
-        const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-        const genre = ((cls.genre_primary as string) || (fmt.genre_primary as string) || '').toLowerCase().replace(/[^a-z-]/g, '') || null
+        const genres = collectGenres(
+          cls.genre_primary as string,
+          cls.genre_secondary as string[],
+          cls.genre_tags as string[],
+        )
         const packaging = (evJson?.packaging as Record<string, unknown>) || {}
         const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
         const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
 
         let ok = true
         if (opp.formats?.length > 0 && !opp.formats.includes(sub.declared_format)) ok = false
-        if (opp.genres?.length > 0 && genre && !opp.genres.includes(genre)) ok = false
+        if (opp.genres?.length > 0 && genres.length > 0) {
+          const oppGenresNorm = opp.genres.map(normGenre)
+          const hasOverlap = genres.some((sg: string) =>
+            oppGenresNorm.some((og: string) => sg.includes(og) || og.includes(sg))
+          )
+          if (!hasOverlap) ok = false
+        }
         if (opp.budget_tiers?.length > 0 && budget && !opp.budget_tiers.includes(budget)) ok = false
         if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) ok = false
 

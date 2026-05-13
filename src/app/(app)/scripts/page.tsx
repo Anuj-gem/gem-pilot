@@ -71,7 +71,7 @@ export default async function ScriptsPage() {
   const submissionIds = allScripts.map(s => s.id)
 
   // Evaluations
-  const evalBySub = new Map<string, { id: string; score: number | null; genre: string | null }>()
+  const evalBySub = new Map<string, { id: string; score: number | null; genres: string[] }>()
   if (submissionIds.length > 0) {
     const { data: evs } = await service
       .from('script_evaluations')
@@ -81,8 +81,16 @@ export default async function ScriptsPage() {
       const evJson = e.evaluation as Record<string, unknown> | null
       const cls = (evJson?.classification as Record<string, unknown>) || {}
       const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
-      evalBySub.set(e.submission_id, { id: e.id, score: e.weighted_score, genre })
+      // Collect ALL genres: primary + secondary + legacy genre_tags
+      function normGenre(g: string | null | undefined): string {
+        return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+      }
+      const genres: string[] = []
+      for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
+        const n = normGenre(raw)
+        if (n && !genres.includes(n)) genres.push(n)
+      }
+      evalBySub.set(e.submission_id, { id: e.id, score: e.weighted_score, genres })
     }
   }
 
@@ -93,12 +101,19 @@ export default async function ScriptsPage() {
     .eq('status', 'active')
   const opportunities = (openOpps || []) as { id: string; title: string; slug: string; formats: string[] | null; genres: string[] | null }[]
 
-  function matchOpportunities(format: string | null, genre: string | null) {
-    if (!format && !genre) return []
+  function normGenreOuter(g: string | null | undefined): string {
+    return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+  }
+
+  function matchOpportunities(format: string | null, scriptGenres: string[]) {
+    if (!format && scriptGenres.length === 0) return []
     return opportunities.filter(opp => {
       const fmtMatch = !opp.formats || opp.formats.length === 0 || (format && opp.formats.includes(format))
-      const genreMatch = !opp.genres || opp.genres.length === 0 || (genre && opp.genres.includes(genre))
-      return fmtMatch && genreMatch
+      if (!fmtMatch) return false
+      if (!opp.genres || opp.genres.length === 0) return true
+      if (scriptGenres.length === 0) return false
+      const oppNorm = opp.genres.map(normGenreOuter)
+      return scriptGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
     }).map(opp => ({ title: opp.title, slug: opp.slug }))
   }
 
@@ -119,13 +134,13 @@ export default async function ScriptsPage() {
       id: s.id,
       title: s.title,
       format: s.declared_format,
-      genre: ev?.genre ?? null,
+      genre: ev?.genres[0] ?? null,
       score: ev?.score ?? null,
       evaluationId: ev?.id ?? null,
       createdAt: s.created_at,
       isProcessing: stillProcessing,
       isLocked,
-      matchingOpportunities: matchOpportunities(s.declared_format, ev?.genre ?? null),
+      matchingOpportunities: matchOpportunities(s.declared_format, ev?.genres ?? []),
       hidden: !!s.hidden_at,
     }
   })

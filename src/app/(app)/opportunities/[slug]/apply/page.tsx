@@ -14,7 +14,7 @@ type Script = {
   title: string
   score: number | null
   format: string | null
-  genre: string | null
+  genres: string[]
 }
 
 type Opportunity = {
@@ -87,9 +87,13 @@ export default function ApplyPage() {
           const evJson = ev?.evaluation as Record<string, unknown> | null
           const cls = (evJson?.classification as Record<string, unknown>) || {}
           const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-          const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+          const genreSet = new Set<string>()
+          for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
+            const n = (raw ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+            if (n) genreSet.add(n)
+          }
           const format = (cls.format as string) || (fmt.format as string) || s.declared_format || null
-          return { id: s.id, title: s.title, score, format, genre }
+          return { id: s.id, title: s.title, score, format, genres: Array.from(genreSet) }
         })
         .filter((s: Script) => {
           if (opp.min_score && (!s.score || s.score < opp.min_score)) return false
@@ -97,8 +101,11 @@ export default function ApplyPage() {
           const noGenreFilter = !opp.genres || opp.genres.length === 0
           if (noFormatFilter && noGenreFilter) return true
           const fmtMatch = noFormatFilter || (s.format && opp.formats!.some((f: string) => f.toLowerCase() === s.format!.toLowerCase()))
-          const genreMatch = noGenreFilter || (s.genre && opp.genres!.some((g: string) => s.genre!.toLowerCase().includes(g.toLowerCase())))
-          return fmtMatch && genreMatch
+          if (!fmtMatch) return false
+          if (noGenreFilter) return true
+          if (s.genres.length === 0) return false
+          const oppNorm = opp.genres!.map((g: string) => g.toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim())
+          return s.genres.some((sg: string) => oppNorm.some((og: string) => sg.includes(og) || og.includes(sg)))
         })
 
       setScripts(qualifying)
@@ -198,7 +205,7 @@ export default function ApplyPage() {
                     <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
                     <div className="flex items-center gap-2 mt-0.5">
                       {s.format && <span className="text-[11px] text-gray-400">{s.format}</span>}
-                      {s.genre && <span className="text-[11px] text-gray-400">· {s.genre}</span>}
+                      {s.genres[0] && <span className="text-[11px] text-gray-400">· {s.genres[0]}</span>}
                     </div>
                   </div>
                   {s.score && (

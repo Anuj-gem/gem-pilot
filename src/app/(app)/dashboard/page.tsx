@@ -61,7 +61,11 @@ export default async function DashboardPage() {
   const submissionIds = visible.map((s) => s.id)
 
   // ---------- EVALUATIONS ----------
-  type FeedEval = { id: string; weighted_score: number | null; genre: string | null; format: string | null }
+  function normGenre(g: string | null | undefined): string {
+    return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+  }
+
+  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null }
   const myEvalBySub = new Map<string, FeedEval>()
   if (submissionIds.length > 0) {
     const { data: myEvs } = await service
@@ -72,9 +76,13 @@ export default async function DashboardPage() {
       const evJson = e.evaluation as Record<string, unknown> | null
       const cls = (evJson?.classification as Record<string, unknown>) || {}
       const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+      const genreSet = new Set<string>()
+      for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
+        const n = normGenre(raw)
+        if (n) genreSet.add(n)
+      }
       const format = (cls.format as string) || (fmt.format as string) || null
-      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genre, format })
+      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: Array.from(genreSet), format })
     }
   }
 
@@ -109,15 +117,18 @@ export default async function DashboardPage() {
   const oppMap = new Map(allOpenOpps.map(o => [o.id, o]))
 
   // ---------- MATCHING LOGIC ----------
-  function getQualifyingOpps(format: string | null, genre: string | null, score: number | null) {
+  function getQualifyingOpps(format: string | null, scriptGenres: string[], score: number | null) {
     return allOpenOpps.filter(o => {
       if (o.min_score && (!score || score < o.min_score)) return false
       const noFormatFilter = !o.formats || o.formats.length === 0
       const noGenreFilter = !o.genres || o.genres.length === 0
       if (noFormatFilter && noGenreFilter) return true
       const fmtMatch = noFormatFilter || (format && o.formats!.some(f => f.toLowerCase() === format.toLowerCase()))
-      const genreMatch = noGenreFilter || (genre && o.genres!.some(g => genre.toLowerCase().includes(g.toLowerCase())))
-      return fmtMatch && genreMatch
+      if (!fmtMatch) return false
+      if (noGenreFilter) return true
+      if (scriptGenres.length === 0) return false
+      const oppNorm = o.genres!.map(normGenre)
+      return scriptGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
     })
   }
 
@@ -129,13 +140,13 @@ export default async function DashboardPage() {
     .filter(s => s.status === 'completed')
     .map(s => {
       const ev = myEvalBySub.get(s.id)
-      const qualifyingOpps = getQualifyingOpps(ev?.format || s.declared_format, ev?.genre || null, ev?.weighted_score || null)
+      const qualifyingOpps = getQualifyingOpps(ev?.format || s.declared_format, ev?.genres || [], ev?.weighted_score || null)
         .filter(o => !appliedOppIds.has(o.id))  // exclude already-applied
       return {
         id: s.id,
         title: s.title,
         format: ev?.format || s.declared_format,
-        genre: ev?.genre || null,
+        genres: ev?.genres || [],
         evaluationId: ev?.id ?? null,
         createdAt: s.created_at,
         qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug })),
@@ -170,8 +181,12 @@ export default async function DashboardPage() {
         const noGenre = !o.genres || o.genres.length === 0
         if (noFmt && noGenre) return true
         const fmtMatch = noFmt || (s.format && o.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
-        const genreMatch = noGenre || (s.genre && o.genres!.some(g => s.genre!.toLowerCase().includes(g.toLowerCase())))
-        return fmtMatch || genreMatch
+        if (!fmtMatch) return false
+        if (noGenre) return true
+        const sGenres = myEvalBySub.get(s.id)?.genres || []
+        if (sGenres.length === 0) return false
+        const oppNorm = o.genres!.map(normGenre)
+        return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
       })
     })
     .sort((a, b) => {
@@ -191,8 +206,12 @@ export default async function DashboardPage() {
       const noGenre = !opp.genres || opp.genres.length === 0
       if (noFmt && noGenre) return true
       const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
-      const genreMatch = noGenre || (s.genre && opp.genres!.some(g => s.genre!.toLowerCase().includes(g.toLowerCase())))
-      return fmtMatch || genreMatch
+      if (!fmtMatch) return false
+      if (noGenre) return true
+      const sGenres = ev?.genres || []
+      if (sGenres.length === 0) return false
+      const oppNorm = opp.genres!.map(normGenre)
+      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
     }).length
   }
 
@@ -528,7 +547,7 @@ export default async function DashboardPage() {
                   scriptId={script.id}
                   title={script.title}
                   format={script.format}
-                  genre={script.genre}
+                  genre={script.genres[0] || null}
                   evaluationId={script.evaluationId}
                   createdAt={script.createdAt}
                   score={myEvalBySub.get(script.id)?.weighted_score ?? null}

@@ -109,7 +109,11 @@ export default async function ConsiderationSubmitPage() {
 
   // Get evaluations for scores + matching data
   const scriptIds = completedScripts.map(s => s.id)
-  type EvalInfo = { score: number | null; genre: string | null; budget: string | null }
+  function normGenre(g: string | null | undefined): string {
+    return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+  }
+
+  type EvalInfo = { score: number | null; genres: string[]; budget: string | null }
   const evalMap = new Map<string, EvalInfo>()
   if (scriptIds.length > 0) {
     const { data: evals } = await service
@@ -119,12 +123,15 @@ export default async function ConsiderationSubmitPage() {
     for (const e of (evals || []) as { submission_id: string; weighted_score: number | null; evaluation: unknown }[]) {
       const evJson = e.evaluation as Record<string, unknown> | null
       const cls = (evJson?.classification as Record<string, unknown>) || {}
-      const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-      const genre = (cls.genre_primary as string) || (fmt.genre_primary as string) || null
+      const genreSet = new Set<string>()
+      for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
+        const n = normGenre(raw)
+        if (n) genreSet.add(n)
+      }
       const packaging = (evJson?.packaging as Record<string, unknown>) || {}
       const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
       const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
-      evalMap.set(e.submission_id, { score: e.weighted_score, genre, budget })
+      evalMap.set(e.submission_id, { score: e.weighted_score, genres: Array.from(genreSet), budget })
     }
   }
 
@@ -141,9 +148,12 @@ export default async function ConsiderationSubmitPage() {
     for (const sub of completedScripts) {
       const ev = evalMap.get(sub.id)
       if (!ev) continue
-      const genreKey = ev.genre?.toLowerCase().replace(/[^a-z-]/g, '') || null
       if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format ?? '')) continue
-      if (opp.genres.length > 0 && genreKey && !opp.genres.includes(genreKey)) continue
+      if (opp.genres.length > 0 && ev.genres.length > 0) {
+        const oppNorm = opp.genres.map(normGenre)
+        const hasOverlap = ev.genres.some((sg: string) => oppNorm.some((og: string) => sg.includes(og) || og.includes(sg)))
+        if (!hasOverlap) continue
+      }
       if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
       if (opp.min_score != null && (ev.score == null || ev.score < opp.min_score)) continue
       if (!matchesByScript.has(sub.id)) matchesByScript.set(sub.id, [])

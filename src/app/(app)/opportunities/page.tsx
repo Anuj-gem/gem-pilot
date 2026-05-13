@@ -90,16 +90,39 @@ export default async function OpportunitiesPage() {
         .select('id, submission_id, weighted_score, evaluation')
         .in('submission_id', subIds)
 
-      const evalMap = new Map<string, { weighted_score: number | null; genre: string | null; budget: string | null }>()
+      // Normalize genre string: lowercase, unify dashes, strip junk
+      function normGenre(g: string | null | undefined): string {
+        return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
+      }
+
+      // Collect unique non-empty normalized genres
+      function collectGenres(...sources: (string | string[] | null | undefined)[]): string[] {
+        const set = new Set<string>()
+        for (const s of sources) {
+          if (!s) continue
+          const items = Array.isArray(s) ? s : [s]
+          for (const item of items) {
+            const n = normGenre(item)
+            if (n) set.add(n)
+          }
+        }
+        return Array.from(set)
+      }
+
+      const evalMap = new Map<string, { weighted_score: number | null; genres: string[]; budget: string | null }>()
       for (const ev of (evals || []) as any[]) {
         const evJson = ev.evaluation as Record<string, unknown> | null
         const cls = (evJson?.classification as Record<string, unknown>) || {}
-        const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-        const genre = ((cls.genre_primary as string) || (fmt.genre_primary as string) || '').toLowerCase().replace(/[^a-z-]/g, '') || null
+        // Collect ALL genres: primary + secondary + legacy genre_tags
+        const genres = collectGenres(
+          cls.genre_primary as string,
+          cls.genre_secondary as string[],
+          cls.genre_tags as string[],
+        )
         const packaging = (evJson?.packaging as Record<string, unknown>) || {}
         const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
         const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
-        evalMap.set(ev.submission_id, { weighted_score: ev.weighted_score, genre, budget })
+        evalMap.set(ev.submission_id, { weighted_score: ev.weighted_score, genres, budget })
       }
 
       // Build qualifying scripts per opportunity
@@ -109,7 +132,15 @@ export default async function OpportunitiesPage() {
           const ev = evalMap.get(sub.id)
           if (!ev) continue
           if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format)) continue
-          if (opp.genres.length > 0 && ev.genre && !opp.genres.includes(ev.genre)) continue
+          // Genre match: any of the script's genres (primary + secondary + tags)
+          // overlaps with any of the opportunity's genres (substring match both ways)
+          if (opp.genres.length > 0 && ev.genres.length > 0) {
+            const oppGenresNorm = opp.genres.map(normGenre)
+            const hasOverlap = ev.genres.some(sg =>
+              oppGenresNorm.some(og => sg.includes(og) || og.includes(sg))
+            )
+            if (!hasOverlap) continue
+          }
           if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
           if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) continue
           scripts.push({
