@@ -100,7 +100,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
     in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
     shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
     partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
-    complete: { label: 'Reviewed', classes: 'bg-green-50 text-green-700' },
+    complete: { label: 'Complete', classes: 'bg-green-50 text-green-700' },
   }
   const currentStage = STAGE_DISPLAY[app.review_stage || 'pending'] || STAGE_DISPLAY.pending
 

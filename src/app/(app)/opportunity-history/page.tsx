@@ -216,8 +216,8 @@ export default async function OpportunityHistoryPage() {
   }
   function statusLabel(status: string, outcome?: string | null) {
     if (status === 'pending') return 'In consideration'
-    if (status === 'reviewed' && outcome) return OUTCOME_LABELS[outcome] ?? 'Feedback received'
-    if (status === 'reviewed') return 'Feedback received'
+    if (status === 'reviewed' && outcome) return OUTCOME_LABELS[outcome] ?? 'Complete'
+    if (status === 'reviewed') return 'Complete'
     return 'Withdrawn'
   }
 
@@ -307,7 +307,7 @@ export default async function OpportunityHistoryPage() {
                   }
                   return (
                     <span className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                      Feedback received
+                      Complete
                     </span>
                   )
                 })()}

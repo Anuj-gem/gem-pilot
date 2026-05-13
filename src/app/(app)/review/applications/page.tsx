@@ -163,13 +163,22 @@ export default async function ApplicationsReviewPage() {
                               <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
                                 {writer?.full_name || writer?.email || 'Unknown writer'}
                               </p>
-                              <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${
-                                isReviewed ? 'bg-green-50 text-green-700' :
-                                isPending ? 'bg-yellow-50 text-yellow-700' :
-                                'bg-purple-50 text-purple-700'
-                              }`}>
-                                {isReviewed ? 'Reviewed' : isPending ? 'Pending' : 'In review'}
-                              </span>
+                              {(() => {
+                                const stageMap: Record<string, { label: string; classes: string }> = {
+                                  pending: { label: 'Pending', classes: 'bg-yellow-50 text-yellow-700' },
+                                  in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
+                                  shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
+                                  partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
+                                  complete: { label: 'Complete', classes: 'bg-green-50 text-green-700' },
+                                }
+                                const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
+                                const s = stageMap[stage] || stageMap.pending
+                                return (
+                                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${s.classes}`}>
+                                    {s.label}
+                                  </span>
+                                )
+                              })()}
                             </div>
                             <div className="flex items-center gap-2 mt-1">
                               {scripts.map(s => (

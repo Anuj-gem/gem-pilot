@@ -96,7 +96,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
     in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
     shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
     partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
-    complete: { label: 'Reviewed', bg: '#d1fae5', color: '#065f46' },
+    complete: { label: 'Complete', bg: '#d1fae5', color: '#065f46' },
   }
   const badge = STAGE_BADGE[currentStage] || STAGE_BADGE.pending
 
