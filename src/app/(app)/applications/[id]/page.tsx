@@ -68,10 +68,37 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
     }))
   }
 
+  // Fetch timeline events
+  const { data: evts } = await service
+    .from('consideration_events')
+    .select('event_type, message, new_stage, created_at')
+    .eq('consideration_id', app.id)
+    .eq('event_type', 'status_change')
+    .order('created_at', { ascending: true })
+
+  const timelineEvents = (evts || []) as { event_type: string; message: string | null; new_stage: string | null; created_at: string }[]
+
   const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
-  const isPending = app.status === 'pending'
+  const isPending = !isReviewed
+  const currentStage = app.review_stage || 'pending'
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+
+  const STAGES = [
+    { key: 'pending', label: 'Pending' },
+    { key: 'in_consideration', label: 'In consideration' },
+    { key: 'shortlisted', label: 'Shortlisted' },
+    { key: 'partner_match', label: 'Partner match' },
+  ]
+  const stageIndex = STAGES.findIndex(s => s.key === currentStage)
+  const STAGE_BADGE: Record<string, { label: string; bg: string; color: string }> = {
+    pending: { label: 'Pending', bg: '#fef3c7', color: '#92400e' },
+    in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
+    shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
+    partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
+    complete: { label: 'Reviewed', bg: '#d1fae5', color: '#065f46' },
+  }
+  const badge = STAGE_BADGE[currentStage] || STAGE_BADGE.pending
 
   const hasFeedbackContent = isReviewed && (
     (app.feedback_tags && app.feedback_tags.length > 0) ||
@@ -93,9 +120,9 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
         <div className="flex items-center gap-2.5 mb-2">
           <span
             className="text-[11px] font-bold px-2.5 py-0.5 rounded-full"
-            style={{ background: '#ede9fe', color: '#5b21b6' }}
+            style={{ background: badge.bg, color: badge.color }}
           >
-            {isReviewed ? 'Reviewed' : isPending ? 'Pending' : 'In review'}
+            {badge.label}
           </span>
           <span className="text-[12px] text-gray-400">Applied {fmtDate(app.submitted_at)}</span>
         </div>
@@ -290,15 +317,83 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
         </section>
       )}
 
-      {/* ── PENDING STATE ─────────────────────────────── */}
+      {/* ── PENDING STATE — progress tracker + timeline ── */}
       {isPending && (
-        <section
-          className="rounded-xl px-5 py-4"
-          style={{ background: '#ede9fe', border: '1px solid #c4b5fd' }}
-        >
-          <p className="text-[13px] text-purple-700 m-0 font-medium">
-            Your application is being reviewed. You&apos;ll receive feedback soon.
-          </p>
+        <section className="space-y-4">
+          {/* Progress tracker */}
+          <div
+            className="rounded-xl px-5 py-4"
+            style={{ background: '#fafafa', border: '1px solid #e5e7eb' }}
+          >
+            <div className="flex items-center gap-0">
+              {STAGES.map((s, i) => {
+                const reached = i <= stageIndex
+                const isCurrent = i === stageIndex
+                return (
+                  <div key={s.key} className="flex items-center flex-1 last:flex-none">
+                    <div className="flex flex-col items-center">
+                      <div
+                        className="w-3 h-3 rounded-full border-2 shrink-0"
+                        style={{
+                          borderColor: reached ? '#7c3aed' : '#d1d5db',
+                          background: reached ? '#7c3aed' : 'white',
+                        }}
+                      />
+                      <span
+                        className="text-[10px] mt-1.5 text-center whitespace-nowrap"
+                        style={{
+                          color: isCurrent ? '#7c3aed' : reached ? '#6b7280' : '#9ca3af',
+                          fontWeight: isCurrent ? 700 : 500,
+                        }}
+                      >
+                        {s.label}
+                      </span>
+                    </div>
+                    {i < STAGES.length - 1 && (
+                      <div
+                        className="h-0.5 flex-1 mx-1 -mt-4"
+                        style={{ background: i < stageIndex ? '#7c3aed' : '#e5e7eb' }}
+                      />
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Timeline events */}
+          {timelineEvents.length > 0 && (
+            <div
+              className="rounded-xl px-5 py-3.5"
+              style={{ background: '#fafafa', border: '1px solid #e5e7eb' }}
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 m-0 mb-2">Timeline</p>
+              <div className="space-y-2">
+                {timelineEvents.map((ev, i) => (
+                  <div key={i} className="flex items-center gap-2.5">
+                    <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#7c3aed' }} />
+                    <span className="text-[12px] text-gray-600">{ev.message}</span>
+                    <span className="text-[11px] text-gray-300 ml-auto shrink-0">
+                      {new Date(ev.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Status message */}
+          <div
+            className="rounded-xl px-5 py-4"
+            style={{ background: '#ede9fe', border: '1px solid #c4b5fd' }}
+          >
+            <p className="text-[13px] text-purple-700 m-0 font-medium">
+              {currentStage === 'pending' && "Your application is being reviewed. You'll receive feedback soon."}
+              {currentStage === 'in_consideration' && "Your application is in consideration. We're evaluating your work."}
+              {currentStage === 'shortlisted' && "You've been shortlisted. Your application stood out and is being reviewed closely."}
+              {currentStage === 'partner_match' && "We've identified a potential partner match. Details incoming."}
+            </p>
+          </div>
         </section>
       )}
 
