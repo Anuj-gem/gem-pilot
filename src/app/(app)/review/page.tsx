@@ -49,7 +49,7 @@ export default async function ApplicationsPage() {
   // Load all opportunity applications (considerations with opportunity_id)
   const { data: rawApps } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, heat_earned')
     .eq('writer_id', user.id)
     .not('opportunity_id', 'is', null)
     .order('submitted_at', { ascending: false })
@@ -59,6 +59,7 @@ export default async function ApplicationsPage() {
     reviewed_at: string | null; feedback: string | null
     feedback_tags: string[] | null; next_steps_tags: string[] | null
     opportunity_id: string; writer_pitch: string | null
+    heat_earned: number
   }[]
 
   // Load opportunity titles
@@ -169,7 +170,7 @@ export default async function ApplicationsPage() {
                             in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
                             shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
                             partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
-                            complete: { label: 'Complete', bg: '#d1fae5', color: '#065f46' },
+                            complete: { label: 'Pass', bg: '#d1fae5', color: '#065f46' },
                           }
                           const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
                           const s = stageMap[stage] || stageMap.pending
@@ -197,9 +198,14 @@ export default async function ApplicationsPage() {
                         <p className="text-[12px] text-gray-400 m-0 mt-1 line-clamp-1 italic">&ldquo;{app.writer_pitch}&rdquo;</p>
                       )}
                     </div>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
-                      <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <div className="flex items-center gap-2 shrink-0">
+                      {isReviewed && app.heat_earned > 0 && (
+                        <span className="text-[11px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned}</span>
+                      )}
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300">
+                        <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
 
                   {/* Feedback tags if reviewed */}

@@ -135,7 +135,7 @@ function TagComboInput({
                 onMouseDown={e => { e.preventDefault(); addTag(input); inputRef.current?.focus() }}
                 className={`w-full text-left px-3 py-2 text-[12px] font-medium text-gray-500 ${colors.suggestion} border-t border-gray-100`}
               >
-                Add "{input.trim()}"
+                Add &ldquo;{input.trim()}&rdquo;
               </button>
             )}
           </div>
@@ -152,6 +152,18 @@ const REVIEW_STAGES = [
   { value: 'partner_match', label: 'Partner match', color: '#059669', bg: '#d1fae5' },
 ] as const
 
+// Heat points by stage: shortlisted earns +2 automatically
+const STAGE_HEAT: Record<string, number> = {
+  shortlisted: 2,
+  partner_match: 3,
+}
+
+function calcHeatPreview(currentStage: string, sentiment: 'positive' | 'negative' | null): number {
+  const stageHeat = STAGE_HEAT[currentStage] || 0
+  const sentimentHeat = sentiment === 'positive' ? 1 : 0
+  return stageHeat + sentimentHeat
+}
+
 interface TagFeedbackFormProps {
   considerationId: string
   currentFeedbackTags?: string[]
@@ -160,6 +172,8 @@ interface TagFeedbackFormProps {
   allUsedFeedbackTags?: string[]
   allUsedNextStepsTags?: string[]
   currentReviewStage?: string
+  currentSentiment?: string | null
+  currentHeatEarned?: number
 }
 
 export function TagFeedbackForm({
@@ -170,6 +184,8 @@ export function TagFeedbackForm({
   allUsedFeedbackTags = [],
   allUsedNextStepsTags = [],
   currentReviewStage = 'pending',
+  currentSentiment = null,
+  currentHeatEarned = 0,
 }: TagFeedbackFormProps) {
   const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
   const [nextStepsTags, setNextStepsTags] = useState<string[]>(currentNextStepsTags)
@@ -178,7 +194,13 @@ export function TagFeedbackForm({
   const [saved, setSaved] = useState(false)
   const [stage, setStage] = useState(currentReviewStage)
   const [stageSaving, setStageSaving] = useState(false)
+  const [sentiment, setSentiment] = useState<'positive' | 'negative' | null>(
+    (currentSentiment as 'positive' | 'negative' | null) || null
+  )
   const router = useRouter()
+
+  const isAlreadyComplete = currentReviewStage === 'complete'
+  const heatPreview = calcHeatPreview(stage, sentiment)
 
   async function handleStageChange(newStage: string) {
     if (newStage === stage) return
@@ -198,7 +220,8 @@ export function TagFeedbackForm({
   function updateFeedbackTags(tags: string[]) { setFeedbackTags(tags); setSaved(false) }
   function updateNextStepsTags(tags: string[]) { setNextStepsTags(tags); setSaved(false) }
 
-  async function handleSave() {
+  async function handlePass() {
+    if (!sentiment) return
     setSaving(true)
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
@@ -209,6 +232,7 @@ export function TagFeedbackForm({
         next_steps_tags: nextStepsTags,
         feedback: note.trim() || undefined,
         review_stage: 'complete',
+        sentiment,
       }),
     })
     setSaving(false)
@@ -246,7 +270,7 @@ export function TagFeedbackForm({
               <button
                 key={s.value}
                 onClick={() => handleStageChange(s.value)}
-                disabled={stageSaving}
+                disabled={stageSaving || isAlreadyComplete}
                 className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors disabled:opacity-50"
                 style={{
                   background: isActive ? s.bg : 'transparent',
@@ -291,7 +315,7 @@ export function TagFeedbackForm({
       {/* Optional note */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
-          Note <span className="text-[11px] font-normal text-gray-400">(optional, visible to writer)</span>
+          Note <span className="text-[11px] font-normal text-gray-400">(visible to writer)</span>
         </label>
         <textarea
           value={note}
@@ -302,22 +326,89 @@ export function TagFeedbackForm({
         />
       </div>
 
+      {/* Sentiment toggle — required to pass */}
+      {!isAlreadyComplete && (
+        <div>
+          <label className="text-[13px] font-bold text-gray-900 block mb-2">
+            Sentiment <span className="text-[11px] font-normal text-gray-400">(internal — determines heat)</span>
+          </label>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => { setSentiment('negative'); setSaved(false) }}
+              className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors"
+              style={{
+                background: sentiment === 'negative' ? '#fef2f2' : 'transparent',
+                borderColor: sentiment === 'negative' ? '#ef4444' : '#e5e7eb',
+                color: sentiment === 'negative' ? '#dc2626' : '#9ca3af',
+              }}
+            >
+              Negative
+            </button>
+            <button
+              type="button"
+              onClick={() => { setSentiment('positive'); setSaved(false) }}
+              className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors"
+              style={{
+                background: sentiment === 'positive' ? '#f0fdf4' : 'transparent',
+                borderColor: sentiment === 'positive' ? '#22c55e' : '#e5e7eb',
+                color: sentiment === 'positive' ? '#16a34a' : '#9ca3af',
+              }}
+            >
+              Positive
+            </button>
+            {sentiment && (
+              <span className="text-[12px] font-bold ml-2" style={{ color: heatPreview > 0 ? '#f97316' : '#9ca3af' }}>
+                🔥 {heatPreview} heat
+              </span>
+            )}
+          </div>
+          {sentiment && heatPreview > 0 && (
+            <p className="text-[11px] text-gray-400 mt-1 m-0">
+              {STAGE_HEAT[stage] ? `+${STAGE_HEAT[stage]} from ${stage === 'shortlisted' ? 'shortlist' : stage === 'partner_match' ? 'partner match' : stage}` : ''}
+              {STAGE_HEAT[stage] && sentiment === 'positive' ? ' + ' : ''}
+              {sentiment === 'positive' ? '+1 positive sentiment' : ''}
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* Already completed — show what was recorded */}
+      {isAlreadyComplete && currentSentiment && (
+        <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
+          <span className="text-[12px] text-gray-500">
+            Sentiment: <span className="font-semibold" style={{ color: currentSentiment === 'positive' ? '#16a34a' : '#dc2626' }}>
+              {currentSentiment}
+            </span>
+            {currentHeatEarned > 0 && (
+              <span className="ml-2 font-bold" style={{ color: '#f97316' }}>🔥 {currentHeatEarned} heat awarded</span>
+            )}
+          </span>
+        </div>
+      )}
+
       {/* Actions */}
       <div className="flex items-center gap-3">
-        <button
-          onClick={handleSave}
-          disabled={saving || (feedbackTags.length === 0 && nextStepsTags.length === 0)}
-          className="inline-flex items-center text-[13px] font-semibold text-white bg-green-600 hover:bg-green-700 disabled:opacity-50 px-4 py-2 rounded-lg transition-colors"
-        >
-          {saving ? 'Saving...' : 'Complete review'}
-        </button>
-        <button
-          onClick={handleSaveDraft}
-          disabled={saving}
-          className="inline-flex items-center text-[13px] font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
-        >
-          Save draft
-        </button>
+        {!isAlreadyComplete ? (
+          <>
+            <button
+              onClick={handlePass}
+              disabled={saving || !sentiment}
+              className="inline-flex items-center text-[13px] font-semibold text-white bg-green-600 hover:bg-green-700 disabled:opacity-50 px-4 py-2 rounded-lg transition-colors"
+            >
+              {saving ? 'Saving...' : 'Pass'}
+            </button>
+            <button
+              onClick={handleSaveDraft}
+              disabled={saving}
+              className="inline-flex items-center text-[13px] font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
+            >
+              Save draft
+            </button>
+          </>
+        ) : (
+          <span className="text-[12px] text-gray-400 font-medium">Review complete</span>
+        )}
         {saved && <span className="text-[12px] text-green-600 font-medium">Saved</span>}
       </div>
     </div>

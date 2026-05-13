@@ -22,7 +22,7 @@ const STAGE_LABELS: Record<string, string> = {
   in_consideration: 'In consideration',
   shortlisted: 'Shortlisted',
   partner_match: 'Partner match',
-  complete: 'Complete',
+  complete: 'Pass',
 }
 const STAGE_COLORS: Record<string, string> = {
   pending: 'text-amber-600 bg-amber-50',
@@ -216,8 +216,8 @@ export default async function OpportunityHistoryPage() {
   }
   function statusLabel(status: string, outcome?: string | null) {
     if (status === 'pending') return 'In consideration'
-    if (status === 'reviewed' && outcome) return OUTCOME_LABELS[outcome] ?? 'Complete'
-    if (status === 'reviewed') return 'Complete'
+    if (status === 'reviewed' && outcome) return OUTCOME_LABELS[outcome] ?? 'Pass'
+    if (status === 'reviewed') return 'Pass'
     return 'Withdrawn'
   }
 
@@ -307,7 +307,7 @@ export default async function OpportunityHistoryPage() {
                   }
                   return (
                     <span className="shrink-0 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                      Complete
+                      Pass
                     </span>
                   )
                 })()}

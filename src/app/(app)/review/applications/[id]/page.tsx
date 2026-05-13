@@ -32,7 +32,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
   // Load the application
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned')
     .eq('id', id)
     .single()
 
@@ -100,7 +100,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
     in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
     shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
     partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
-    complete: { label: 'Complete', classes: 'bg-green-50 text-green-700' },
+    complete: { label: 'Pass', classes: 'bg-green-50 text-green-700' },
   }
   const currentStage = STAGE_DISPLAY[app.review_stage || 'pending'] || STAGE_DISPLAY.pending
 
@@ -197,6 +197,8 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
           allUsedFeedbackTags={usedFeedbackTags}
           allUsedNextStepsTags={usedNextStepsTags}
           currentReviewStage={app.review_stage || 'pending'}
+          currentSentiment={app.sentiment || null}
+          currentHeatEarned={app.heat_earned || 0}
         />
       </section>
     </div>

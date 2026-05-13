@@ -1,5 +1,5 @@
 // POST /api/consideration/review — producer reviews a consideration.
-// Supports: sending feedback, updating review_stage, posting messages.
+// Supports: sending feedback, updating review_stage, posting messages, sentiment + heat.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
@@ -7,6 +7,12 @@ import { createServerClient } from '@supabase/ssr'
 import { sendEmail } from '@/lib/email'
 
 const VALID_STAGES = ['draft', 'pending', 'submitted', 'in_review', 'in_consideration', 'shortlisted', 'partner_match', 'complete'] as const
+
+// Heat points awarded automatically when moving to these stages
+const STAGE_HEAT: Record<string, number> = {
+  shortlisted: 2,
+  partner_match: 3,
+}
 
 function svc() {
   return createServerClient(
@@ -22,7 +28,7 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags } = body as {
+  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags, sentiment } = body as {
     consideration_id: string
     feedback?: string
     next_steps?: string | null
@@ -30,6 +36,7 @@ export async function POST(req: NextRequest) {
     message?: string
     feedback_tags?: string[]
     next_steps_tags?: string[]
+    sentiment?: 'positive' | 'negative'
   }
 
   if (!consideration_id) {
@@ -41,11 +48,60 @@ export async function POST(req: NextRequest) {
   // --- Stage change ---
   if (review_stage && VALID_STAGES.includes(review_stage as typeof VALID_STAGES[number])) {
     const stageUpdate: Record<string, unknown> = { review_stage }
-    // If moving to complete, also mark legacy status
+
+    // If moving to complete (pass), also mark legacy status + handle sentiment/heat
     if (review_stage === 'complete') {
       stageUpdate.status = 'reviewed'
       stageUpdate.reviewed_at = new Date().toISOString()
+
+      // Save sentiment if provided
+      if (sentiment) {
+        stageUpdate.sentiment = sentiment
+
+        // Calculate heat: stage heat (from highest stage reached) + sentiment bonus
+        // First, get the current stage to know what stage heat to award
+        const { data: currentCon } = await service
+          .from('considerations')
+          .select('review_stage, writer_id, heat_earned')
+          .eq('id', consideration_id)
+          .single()
+
+        if (currentCon) {
+          const currentStage = currentCon.review_stage || 'pending'
+          const stageHeat = STAGE_HEAT[currentStage] || 0
+          const sentimentHeat = sentiment === 'positive' ? 1 : 0
+          const totalHeat = stageHeat + sentimentHeat
+
+          stageUpdate.heat_earned = totalHeat
+
+          // Update writer's running heat_score
+          if (totalHeat > 0) {
+            const previousHeat = currentCon.heat_earned || 0
+            const heatDelta = totalHeat - previousHeat // In case of re-review, only add the difference
+            if (heatDelta > 0) {
+              await service.rpc('increment_heat_score', {
+                p_user_id: currentCon.writer_id,
+                p_amount: heatDelta,
+              }).then(async (res) => {
+                // Fallback if RPC doesn't exist yet — direct update
+                if (res.error) {
+                  const { data: profile } = await service
+                    .from('profiles')
+                    .select('heat_score')
+                    .eq('id', currentCon.writer_id)
+                    .single()
+                  await service
+                    .from('profiles')
+                    .update({ heat_score: (profile?.heat_score || 0) + heatDelta })
+                    .eq('id', currentCon.writer_id)
+                }
+              })
+            }
+          }
+        }
+      }
     }
+
     const { error: stageErr } = await service
       .from('considerations')
       .update(stageUpdate)
@@ -70,6 +126,23 @@ export async function POST(req: NextRequest) {
       new_stage: review_stage,
       created_by: user.id,
     })
+
+    // Log heat event if heat was awarded
+    if (review_stage === 'complete' && sentiment) {
+      const { data: updatedCon } = await service
+        .from('considerations')
+        .select('heat_earned')
+        .eq('id', consideration_id)
+        .single()
+      if (updatedCon && updatedCon.heat_earned > 0) {
+        await service.from('consideration_events').insert({
+          consideration_id,
+          event_type: 'heat_awarded',
+          message: `+${updatedCon.heat_earned} heat earned`,
+          created_by: user.id,
+        })
+      }
+    }
 
     // Send review complete email when stage moves to complete
     if (review_stage === 'complete') {
@@ -150,8 +223,6 @@ export async function POST(req: NextRequest) {
       message: feedback.trim(),
       created_by: user.id,
     })
-
-    // Email is now triggered by stage→complete, not by feedback save
   }
 
   // --- Standalone message (no feedback, just a note) ---

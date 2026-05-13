@@ -28,7 +28,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   // Load the consideration
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned')
     .eq('id', id)
     .eq('writer_id', user.id)
     .single()
@@ -96,7 +96,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
     in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
     shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
     partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
-    complete: { label: 'Complete', bg: '#d1fae5', color: '#065f46' },
+    complete: { label: 'Pass', bg: '#d1fae5', color: '#065f46' },
   }
   const badge = STAGE_BADGE[currentStage] || STAGE_BADGE.pending
 
@@ -125,6 +125,9 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
             {badge.label}
           </span>
           <span className="text-[12px] text-gray-400">Applied {fmtDate(app.submitted_at)}</span>
+          {isReviewed && app.heat_earned > 0 && (
+            <span className="text-[11px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned} heat</span>
+          )}
         </div>
         <h1 className="text-[22px] font-bold text-gray-900 m-0 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
           {opp?.title || 'Application'}

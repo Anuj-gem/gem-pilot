@@ -40,7 +40,7 @@ const STAGES = [
   },
   {
     key: 'complete',
-    label: 'Complete',
+    label: 'Pass',
     color: '#16a34a',
     description: 'Your review is complete. Check your feedback below.',
   },

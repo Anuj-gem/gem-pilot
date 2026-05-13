@@ -22,7 +22,7 @@ const STAGE_COLORS: Record<string, { bg: string; text: string; label: string }> 
   pending: { bg: '#d9770615', text: '#d97706', label: 'Pending' },
   in_review: { bg: '#7c3aed15', text: '#7c3aed', label: 'In review' },
   partner_match: { bg: '#05966915', text: '#059669', label: 'Partner match' },
-  complete: { bg: '#16a34a15', text: '#16a34a', label: 'Complete' },
+  complete: { bg: '#16a34a15', text: '#16a34a', label: 'Pass' },
 }
 
 export function ReviewList({

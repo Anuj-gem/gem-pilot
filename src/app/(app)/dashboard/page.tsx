@@ -39,7 +39,7 @@ export default async function DashboardPage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, avatar_url')
+    .select('subscription_status, full_name, handle, avatar_url, heat_score')
     .eq('id', user.id)
     .single()
 
@@ -248,6 +248,11 @@ export default async function DashboardPage() {
             ) : (
               <span className="text-[10px] font-bold uppercase tracking-wide text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
                 Free
+              </span>
+            )}
+            {(profile as any)?.heat_score > 0 && (
+              <span className="text-[11px] font-bold shrink-0" style={{ color: '#f97316' }}>
+                🔥 {(profile as any).heat_score}
               </span>
             )}
           </div>

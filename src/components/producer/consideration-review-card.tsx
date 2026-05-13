@@ -12,7 +12,7 @@ const STAGES = [
   { value: 'pending', label: 'Pending', color: '#d97706' },
   { value: 'in_review', label: 'In review', color: '#7c3aed' },
   { value: 'partner_match', label: 'Partner match', color: '#059669' },
-  { value: 'complete', label: 'Complete', color: '#16a34a' },
+  { value: 'complete', label: 'Pass', color: '#16a34a' },
 ] as const
 
 export function ConsiderationReviewCard({
