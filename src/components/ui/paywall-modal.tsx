@@ -47,16 +47,17 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
         </button>
 
         <h2 className="text-[20px] font-bold text-[var(--gem-white)] mb-1.5 pr-6">
-          Try GEM Pro free for 7 days
+          Become a Member
         </h2>
         <p className="text-[13.5px] text-[var(--gem-gray-400)] mb-5 leading-relaxed">
-          Full access to everything — unlimited evaluations, producer matching, and a shareable portfolio.
+          Start your 7-day free trial — unlimited evaluations, apply to opportunities, and get connected to industry partners.
         </p>
 
         <ul className="space-y-2.5 mb-5">
           {[
             'Unlimited script evaluations',
-            'Ongoing consideration as you write new scripts',
+            'Apply to all live opportunities',
+            'Get matched directly to industry partners',
             'Shareable writer portfolio',
           ].map(item => (
             <li

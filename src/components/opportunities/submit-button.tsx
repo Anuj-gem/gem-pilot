@@ -186,24 +186,17 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     )
   }
 
-  // Not submitted (or withdrawn) — show submit button (or locked for free users)
+  // Not submitted (or withdrawn) — free users see normal Apply button that opens membership modal
   if (!isPro) {
     return (
-      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-gray-50 border border-gray-200">
-        <div className="flex items-center gap-2">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="8" cy="8" r="8" fill="#6b7280" opacity="0.10"/>
-            <rect x="4.5" y="7" width="7" height="5" rx="1" stroke="#9ca3af" strokeWidth="1.2"/>
-            <path d="M6 7V5.5a2 2 0 114 0V7" stroke="#9ca3af" strokeWidth="1.2" strokeLinecap="round"/>
-          </svg>
-          <span className="text-[13.5px] font-semibold text-gray-400">{scriptTitle}</span>
-        </div>
+      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-white border border-gray-200">
+        <span className="text-[13.5px] font-semibold text-gray-800 truncate">{scriptTitle}</span>
         <button
           onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
-          className="text-[12px] font-bold text-gray-400 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors flex items-center gap-1"
+          className="text-[13px] font-bold text-white px-4 py-1.5 rounded-lg transition-all hover:brightness-110 shrink-0"
+          style={{ background: '#7c3aed' }}
         >
-          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5" rx="1" stroke="currentColor" strokeWidth="1.2"/><path d="M4 5.5V4a2 2 0 114 0v1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-          Pro feature
+          Apply
         </button>
       </div>
     )

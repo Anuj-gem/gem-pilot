@@ -70,11 +70,7 @@ export function SubmissionList({ opportunityId, scripts, existingSubmissions, pe
           </button>
         </div>
       )}
-      {!isPro && (
-        <p className="text-[12.5px] text-purple-600 font-medium mt-1 m-0">
-          Become a member to submit to opportunities.
-        </p>
-      )}
+      {/* Free user message removed — Apply buttons now open membership modal directly */}
     </div>
   )
 }

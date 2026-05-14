@@ -324,17 +324,13 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     Apply now <ArrowRight size={16} />
                   </Link>
                 ) : (
-                  <div>
-                    <p className="text-[13px] text-gray-500 m-0 mb-3">
-                      Become a member to apply and get your script in front of the reviewer.
-                    </p>
-                    <SubscribeCTA
-                      location="opportunity_detail_upgrade"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
-                      style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
-                      label="Become a Member — $20/mo"
-                    />
-                  </div>
+                  <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
+                    style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
+                  >
+                    Apply now <ArrowRight size={16} />
+                  </button>
                 )}
               </div>
             ) : (

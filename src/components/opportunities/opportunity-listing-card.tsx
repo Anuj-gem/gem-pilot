@@ -147,7 +147,6 @@ export function OpportunityListingCard({
               </span>
             ) : is_logged_in ? (
               qualCount > 0 ? (
-                is_pro ? (
                   <Link
                     href={href}
                     className="inline-flex items-center gap-1.5 text-[13px] font-bold text-white px-4 py-1.5 rounded-lg transition-all hover:brightness-110"
@@ -155,11 +154,6 @@ export function OpportunityListingCard({
                   >
                     Apply <ArrowRight size={14} />
                   </Link>
-                ) : (
-                  <Link href={href} className="text-[12px] font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-500 border border-purple-200">
-                    GEM Pro
-                  </Link>
-                )
               ) : (
                 <Link href={href} className="text-[13px] font-semibold text-gray-400 hover:text-gray-600 flex items-center gap-1">
                   Details <ArrowRight size={13} />
