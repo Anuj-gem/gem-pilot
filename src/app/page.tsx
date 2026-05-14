@@ -1,15 +1,15 @@
-// Landing page — v13c (2026-05-11).
+// Landing page — v16 (2026-05-14).
 //
-// Above fold: Hero (compact upload + flow graphic) + Live opportunities.
-// Below fold: GEM Evaluation → How partners work → GEM Pro → Final CTA.
+// Hero → Free Evaluation → Opportunities → Competitor Comparison → Membership → Final CTA.
 
 import { redirect } from 'next/navigation'
 import { createServerClient } from '@supabase/ssr'
 import { LandingTracking } from '@/components/landing-tracking'
 import Nav from '@/components/nav'
 import { LandingHero } from '@/components/landing/landing-hero'
-import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
 import { LandingCredibility } from '@/components/landing/landing-credibility'
+import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
+import { LandingCompare } from '@/components/landing/landing-compare'
 import { LandingPro } from '@/components/landing/landing-pro'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
@@ -55,13 +55,24 @@ export default async function Home({
 
       {/* ── Above fold ── */}
       <LandingHero />
-      <LandingOpportunities opportunities={opportunities} />
 
-      {/* ── Below fold ── */}
+      {/* ── How it works: Free evaluation ── */}
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingCredibility />
+
+      {/* ── Opportunities ── */}
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingOpportunities opportunities={opportunities} />
+
+      {/* ── Competitor comparison ── */}
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingCompare />
+
+      {/* ── Membership ── */}
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingPro />
+
+      {/* ── Final CTA ── */}
       <LandingFinalCTA />
 
       <ScriptUploadModal redirectTo="/evaluating" />

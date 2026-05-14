@@ -1,6 +1,5 @@
-// LandingCredibility — v15c.
-// "How it works" — three visual rows: technology, matching, connection.
-// Replaces the old evaluation detail + partner workflow sections.
+// LandingEvaluation — v16.
+// "Free script evaluations" — product graphic + detailed explanation.
 'use client'
 
 import { trackEvent } from '@/lib/posthog'
@@ -8,14 +7,14 @@ import { trackEvent } from '@/lib/posthog'
 export function LandingCredibility() {
   function handleCTA() {
     try {
-      trackEvent('cta_clicked', { location: 'how_it_works', label: 'Get started' })
+      trackEvent('cta_clicked', { location: 'free_eval', label: 'Get your free evaluation' })
     } catch {}
     window.dispatchEvent(new Event('gem:open-script-upload-modal'))
   }
 
   return (
     <section className="px-5 sm:px-8 py-16 sm:py-20">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <p
           className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
           style={{ color: 'var(--gem-gold)' }}
@@ -23,163 +22,160 @@ export function LandingCredibility() {
           How it works
         </p>
         <h2
-          className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-10"
+          className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-4"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          Upload. Evaluate. Get discovered.
+          Free script evaluations.
         </h2>
+        <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-400)] leading-relaxed m-0 mb-10 max-w-[560px]">
+          Every writer gets a full evaluation at no cost. Upload your screenplay
+          and see exactly how your script compares — no account required, no credit card, no catch.
+        </p>
 
-        {/* ── Row 1: Technology + objectivity ── */}
-        <div className="flex gap-5 items-start mb-8">
+        {/* Two-column: product graphic + feature details */}
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+
+          {/* Left: Report preview card */}
           <div
-            className="shrink-0 w-[140px] sm:w-[160px] rounded-xl p-4 text-center"
+            className="w-full md:w-[380px] shrink-0 rounded-2xl p-5 text-left"
             style={{
-              background: 'var(--gem-gray-900)',
+              background: 'var(--gem-gray-800)',
               border: '1px solid var(--gem-gray-700)',
             }}
           >
-            <div
-              className="w-11 h-11 mx-auto mb-2 rounded-lg grid place-items-center"
-              style={{
-                background: 'rgba(124,58,237,0.08)',
-                border: '1px solid rgba(124,58,237,0.15)',
-              }}
-            >
+            {/* Title + score row */}
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mb-1 uppercase tracking-wider font-semibold">
+                  Sample evaluation
+                </p>
+                <p
+                  className="text-[17px] font-bold text-[var(--gem-gray-50)] m-0 leading-snug"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  Untitled Crime Pilot
+                </p>
+                <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1">
+                  TV Pilot &middot; Crime &middot; Drama
+                </p>
+              </div>
               <div
-                className="w-5 h-5 rounded-full relative"
-                style={{ border: '2px solid var(--gem-accent)' }}
+                className="shrink-0 w-[52px] h-[52px] rounded-lg grid place-items-center"
+                style={{ background: 'var(--gem-gray-900)', border: '1px solid var(--gem-gray-700)' }}
               >
-                <div
-                  className="w-1.5 h-1.5 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  style={{ background: 'var(--gem-accent)' }}
-                />
+                <span className="text-[22px] font-extrabold" style={{ color: '#16a34a' }}>78</span>
+                <span className="text-[7px] uppercase tracking-wider text-[var(--gem-gray-500)] font-semibold -mt-1">
+                  Score
+                </span>
               </div>
             </div>
-            <p className="text-[24px] font-bold text-[var(--gem-gray-50)] m-0 leading-none">78</p>
-            <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mt-1">objective score</p>
-          </div>
-          <div className="flex-1 pt-1">
-            <h3
-              className="text-[16px] sm:text-[17px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Incredible technology, totally objective.
-            </h3>
-            <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
-              Every script is evaluated using research drawn from thousands of
-              produced screenplays — what got made, what found an audience,
-              and why. No personal bias. No gatekeeping. Just a clear,
-              data-informed read of your work&apos;s commercial potential,
-              strengths, and development priorities.
-            </p>
-          </div>
-        </div>
 
-        {/* ── Row 2: Matched to partner network ── */}
-        <div className="flex gap-5 items-start mb-8">
-          <div
-            className="shrink-0 w-[140px] sm:w-[160px] rounded-xl p-4 text-center"
-            style={{
-              background: 'var(--gem-gray-900)',
-              border: '1px solid var(--gem-gray-700)',
-            }}
-          >
-            <div className="flex justify-center gap-1.5 mb-2">
-              {['P', 'L', 'F'].map(letter => (
-                <div
-                  key={letter}
-                  className="w-7 h-7 rounded-md grid place-items-center text-[11px] font-bold text-[var(--gem-gray-300)]"
-                  style={{
-                    background: 'var(--gem-gray-800)',
-                    border: '1px solid var(--gem-gray-700)',
-                  }}
-                >
-                  {letter}
+            <div className="h-px mb-3" style={{ background: 'var(--gem-gray-700)' }} />
+
+            {/* Why this can be a hit */}
+            <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-2 uppercase tracking-wider font-semibold">
+              Why this can be a hit
+            </p>
+            <p className="text-[13px] text-[var(--gem-gray-200)] m-0 mb-1.5 leading-snug">
+              Strong protagonist with clear internal conflict that drives every scene choice.
+            </p>
+            <p className="text-[13px] text-[var(--gem-gray-200)] m-0 leading-snug">
+              High-tension pilot hook — audience is locked in within the first five pages.
+            </p>
+
+            <div className="h-px mt-3 mb-3" style={{ background: 'var(--gem-gray-700)' }} />
+
+            {/* Dimension scores preview */}
+            <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-2 uppercase tracking-wider font-semibold">
+              Scored across 5 dimensions
+            </p>
+            {[
+              { label: 'Audience appeal', score: 8.2 },
+              { label: 'Character strength', score: 7.9 },
+              { label: 'Creative originality', score: 7.4 },
+              { label: 'Conceptual hook', score: 8.0 },
+              { label: 'Narrative momentum', score: 6.8 },
+            ].map(d => (
+              <div key={d.label} className="flex items-center gap-2 mb-1.5">
+                <span className="text-[12px] text-[var(--gem-gray-300)] w-[140px] shrink-0">{d.label}</span>
+                <div className="flex-1 h-[6px] rounded-full overflow-hidden" style={{ background: 'var(--gem-gray-700)' }}>
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${d.score * 10}%`,
+                      background: 'var(--gem-accent)',
+                    }}
+                  />
                 </div>
-              ))}
-            </div>
-            <div
-              className="w-6 h-px mx-auto mb-1.5"
-              style={{ background: 'var(--gem-gray-600)' }}
-            />
-            <span
-              className="text-[11px] font-bold px-2 py-0.5 rounded"
-              style={{
-                background: 'rgba(124,58,237,0.08)',
-                color: 'var(--gem-accent)',
-              }}
-            >
-              match
-            </span>
-          </div>
-          <div className="flex-1 pt-1">
-            <h3
-              className="text-[16px] sm:text-[17px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Matched to our partner network.
-            </h3>
-            <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
-              Based on your evaluation, we match your script to opportunities
-              from producers, lit reps, and financiers who are actively looking
-              for material like yours. Genre, format, budget tier, score —
-              everything lines up before you ever apply. No cold queries.
-              No entry fees.
+                <span className="text-[12px] font-semibold text-[var(--gem-gray-300)] w-[28px] text-right">{d.score}</span>
+              </div>
+            ))}
+
+            <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
+              From a real GEM evaluation report
             </p>
           </div>
-        </div>
 
-        {/* ── Row 3: Partners + writers develop ── */}
-        <div className="flex gap-5 items-start mb-8">
-          <div
-            className="shrink-0 w-[140px] sm:w-[160px] rounded-xl p-4 text-center"
-            style={{
-              background: 'var(--gem-gray-900)',
-              border: '1px solid var(--gem-gray-700)',
-            }}
-          >
-            <div className="flex items-center justify-center gap-1 mb-1.5">
-              <span className="text-[18px]">🔥</span>
-              <span className="text-[22px] font-bold" style={{ color: '#ea580c' }}>12</span>
+          {/* Right: Feature details */}
+          <div className="flex-1 pt-2">
+            <div className="space-y-5">
+              <div>
+                <h3
+                  className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  100% free. No strings attached.
+                </h3>
+                <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
+                  Every writer gets a full evaluation — scored across five dimensions,
+                  with detailed notes on what&apos;s working and where to develop. No paywall.
+                  No limited preview. The full report, completely free.
+                </p>
+              </div>
+
+              <div>
+                <h3
+                  className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  See how your script compares.
+                </h3>
+                <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
+                  Your score is based on research drawn from thousands of produced
+                  screenplays — what got made, what found an audience, and why.
+                  You get a clear, data-informed read of your work&apos;s commercial
+                  potential, strengths, and development priorities.
+                </p>
+              </div>
+
+              <div>
+                <h3
+                  className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  Development notes you can actually use.
+                </h3>
+                <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
+                  Every report includes specific, actionable feedback — not vague
+                  encouragement. You&apos;ll know exactly what a development executive
+                  would flag and what they&apos;d greenlight.
+                </p>
+              </div>
             </div>
-            <span
-              className="text-[11px] font-bold px-2 py-0.5 rounded inline-block mb-1"
-              style={{ background: 'rgba(22,163,74,0.08)', color: 'var(--gem-success)' }}
-            >
-              shortlisted
-            </span>
-            <p className="text-[11px] text-[var(--gem-gray-400)] m-0">real feedback</p>
-          </div>
-          <div className="flex-1 pt-1">
-            <h3
-              className="text-[16px] sm:text-[17px] font-bold text-[var(--gem-gray-50)] m-0 mb-1.5"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              Partners and writers develop great work.
-            </h3>
-            <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
-              When a partner engages with your script, your heat score rises.
-              You get real feedback — shortlists, passes, and development notes
-              from people who actually make things. GEM&apos;s team works
-              alongside our partner network to surface groundbreaking scripts
-              that would otherwise be ignored. Everything stays completely
-              private until you choose to share it.
-            </p>
-          </div>
-        </div>
 
-        {/* Mid-page CTA */}
-        <div className="text-center mt-4">
-          <button
-            onClick={handleCTA}
-            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-[14px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
-            style={{
-              background: 'var(--gem-accent)',
-              boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
-            }}
-          >
-            Get started — upload your script
-          </button>
+            <div className="mt-8">
+              <button
+                onClick={handleCTA}
+                className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-[14px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
+                style={{
+                  background: 'var(--gem-accent)',
+                  boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
+                }}
+              >
+                Get your free evaluation
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
