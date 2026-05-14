@@ -20,21 +20,21 @@ function svc() {
 export const revalidate = 60
 
 export const metadata = {
-  title: 'Open Calls — GEM',
+  title: 'Opportunities — GEM',
   description:
-    "Open calls from producers and lit reps. See what's looking for scripts like yours.",
+    "Opportunities from our partner network. See what's looking for scripts like yours.",
   openGraph: {
-    title: 'Open Calls — GEM',
+    title: 'Opportunities — GEM',
     description:
-      "Open calls from producers and lit reps. See what's looking for scripts like yours.",
+      "Opportunities from our partner network. See what's looking for scripts like yours.",
     type: 'website' as const,
     siteName: 'GEM',
   },
   twitter: {
     card: 'summary_large_image' as const,
-    title: 'Open Calls — GEM',
+    title: 'Opportunities — GEM',
     description:
-      "Open calls from producers and lit reps. See what's looking for scripts like yours.",
+      "Opportunities from our partner network. See what's looking for scripts like yours.",
   },
 }
 
@@ -172,23 +172,27 @@ export default async function OpportunitiesPage() {
   return (
     <div className="max-w-2xl mx-auto">
       {/* Header */}
-      <div className="flex items-end justify-between mb-6">
-        <div>
+      <div className="mb-6">
+        <div className="flex items-end justify-between mb-2">
           <h1
             className="text-[28px] font-bold text-gray-900 m-0"
             style={{ fontFamily: 'Georgia, serif' }}
           >
-            Open Calls
+            Opportunities
           </h1>
-          <p className="text-[14px] text-gray-500 mt-1 m-0">
-            {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} currently open
-          </p>
+          {user && (
+            <Link href="/dashboard" className="text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors">
+              &larr; Dashboard
+            </Link>
+          )}
         </div>
-        {user && (
-          <Link href="/dashboard" className="text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors">
-            &larr; Dashboard
-          </Link>
-        )}
+        <p className="text-[14px] text-gray-500 m-0 leading-relaxed max-w-[520px]">
+          Real opportunities from our partner network — producers, lit reps, and financiers
+          looking for scripts. Apply with your evaluated screenplay and get connected directly.
+        </p>
+        <p className="text-[13px] text-gray-400 mt-2 m-0">
+          {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} currently open
+        </p>
       </div>
 
       {/* Logged-out CTA */}
@@ -202,7 +206,7 @@ export default async function OpportunitiesPage() {
         >
           <div>
             <p className="text-[15px] font-bold text-gray-900 m-0 leading-snug">
-              Upload your script to see which calls you qualify for
+              Upload your script to see which opportunities you qualify for
             </p>
             <p className="text-[13px] text-gray-500 m-0 mt-1">
               Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Try Pro free for 7 days.

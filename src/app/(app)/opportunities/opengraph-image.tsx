@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Open Calls — GEM'
+export const alt = 'Opportunities — GEM'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -50,7 +50,7 @@ export default async function OpengraphImage() {
             marginBottom: 20,
           }}
         >
-          Open Calls
+          Opportunities
         </div>
         <div
           style={{
@@ -75,7 +75,7 @@ export default async function OpengraphImage() {
             textAlign: 'center',
           }}
         >
-          Open calls from producers and lit reps looking for new voices.
+          Opportunities from producers and lit reps looking for new voices.
         </div>
       </div>
     ),

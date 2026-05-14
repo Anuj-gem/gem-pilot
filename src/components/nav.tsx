@@ -29,8 +29,8 @@ export interface NavUserData {
 }
 
 // NAV (unified layout):
-//   Logged in:  [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [+ New]  [avatar]
-//   Logged out: [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [Get started]
+//   Logged in:  [GEM]  [Home] [Scripts] [Reviews] [Opportunities]  [+ New]  [avatar]
+//   Logged out: [GEM]  [Home] [Scripts] [Reviews] [Opportunities]  [Get started]
 //   Mobile:     [GEM]                              [CTA] [☰]
 
 interface NavProps {
@@ -63,7 +63,7 @@ export default function Nav({ userData }: NavProps = {}) {
     { href: user ? '/dashboard' : '/', label: 'Home', icon: LayoutDashboard },
     { href: '/scripts', label: 'Scripts', icon: FileText },
     { href: '/review', label: 'Applications', icon: Sparkles },
-    { href: '/opportunities', label: 'Open Calls', icon: Briefcase },
+    { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
     { href: '/blog', label: 'Blog', icon: BookOpen },
   ]
 

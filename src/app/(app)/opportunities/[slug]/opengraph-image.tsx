@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 import { createServerClient } from '@supabase/ssr'
 
 export const runtime = 'edge'
-export const alt = 'GEM — Open Call'
+export const alt = 'GEM — Opportunity'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -46,7 +46,7 @@ export default async function OpengraphImage({
     .single()
 
   // Fallback if not found
-  const title = opp?.title || 'Open Call'
+  const title = opp?.title || 'Opportunity'
   const description = opp?.description?.slice(0, 120) || ''
   const format = opp?.format ? FORMAT_LABELS[opp.format] || opp.format : null
   const genres: string[] = opp?.genres || []
@@ -94,7 +94,7 @@ export default async function OpengraphImage({
             marginBottom: 16,
           }}
         >
-          Open Call
+          Opportunity
         </div>
         <div
           style={{

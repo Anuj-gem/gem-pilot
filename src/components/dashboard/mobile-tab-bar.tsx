@@ -33,7 +33,7 @@ export function MobileTabBar() {
 
   const tabs = [
     { href: '/dashboard',     label: 'Home',       icon: Home,           match: (p: string) => p === '/dashboard' || p === '/' },
-    { href: '/opportunities', label: 'Open calls', icon: Briefcase,      match: (p: string) => p.startsWith('/opportunities') },
+    { href: '/opportunities', label: 'Opportunities', icon: Briefcase,      match: (p: string) => p.startsWith('/opportunities') },
     { href: '/scripts',       label: 'My Scripts', icon: FileText,       match: (p: string) => p.startsWith('/scripts') },
     { href: '/feedback',      label: 'Feedback',   icon: MessageCircle,  match: (p: string) => p.startsWith('/feedback') },
   ] as const

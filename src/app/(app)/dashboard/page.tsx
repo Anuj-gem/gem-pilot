@@ -447,20 +447,20 @@ export default async function DashboardPage() {
                 <>
                   <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
                   <p className="text-[13px] text-gray-400 m-0 mb-4">
-                    Check open calls to see what you qualify for.
+                    Check opportunities to see what you qualify for.
                   </p>
                   <Link
                     href="/opportunities"
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition-colors"
                   >
-                    View open calls
+                    View opportunities
                   </Link>
                 </>
               ) : (
                 <>
                   <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">Upload a script</p>
                   <p className="text-[13px] text-gray-400 m-0">
-                    Upload a script to get your report — then apply to open calls.
+                    Upload a script to get your report — then apply to opportunities.
                   </p>
                 </>
               )}

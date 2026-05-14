@@ -20,7 +20,7 @@ export function OpenCallsDropdown({
         onClick={(e) => { e.stopPropagation(); setOpen(!open) }}
         className="text-[12px] font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
       >
-        Open calls ({count}) {open ? '▴' : '▾'}
+        Opportunities ({count}) {open ? '▴' : '▾'}
       </button>
       {open && (
         <div className="absolute left-0 top-full mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1.5">
