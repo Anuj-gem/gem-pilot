@@ -8,7 +8,7 @@ export function LandingHeat() {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row gap-8 items-start">
 
-          {/* Left: Explanation */}
+          {/* Left: Value prop bullets */}
           <div className="flex-1">
             <p
               className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
@@ -22,25 +22,29 @@ export function LandingHeat() {
             >
               Build heat. Get found.
             </h2>
-            <p className="text-[15px] text-[var(--gem-gray-300)] m-0 mb-5 leading-relaxed">
-              Every time an industry partner engages with your work, you earn heat.
-              Even when they pass — if they think your writing is strong, your
-              heat score still goes up.
+            <p className="text-[15px] text-[var(--gem-gray-300)] m-0 mb-6 leading-relaxed max-w-[440px]">
+              Every time an industry partner engages with your work, your heat
+              score goes up. The more heat you build, the more visible you become.
             </p>
-            <p className="text-[15px] text-[var(--gem-gray-300)] m-0 mb-5 leading-relaxed">
-              The more heat you build, the more visible you become to new partners.
-              Your heat score signals real traction — not self-reported credits,
-              not contest placements, but actual engagement from people who
-              make things.
-            </p>
-            <p className="text-[15px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
-              Partners browsing GEM see your heat score before they read your
-              script. High heat means other industry professionals already took
-              notice. That changes the conversation before it starts.
-            </p>
+
+            <div className="space-y-3 mb-6">
+              {[
+                'Apply to more opportunities — earn more heat',
+                'Get read by partners — earn more heat',
+                'Higher heat = more visibility to new partners',
+                'Partners see your heat before they read your script',
+              ].map(item => (
+                <div key={item} className="flex items-start gap-2.5">
+                  <span className="text-[14px] font-bold mt-0.5 shrink-0" style={{ color: '#ea580c' }}>
+                    &#x1F525;
+                  </span>
+                  <span className="text-[14px] text-[var(--gem-gray-200)]">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right: Visual example */}
+          {/* Right: Mini portfolio with heat per script */}
           <div className="w-full md:w-[320px] shrink-0">
             <div
               className="rounded-2xl p-5"
@@ -50,23 +54,27 @@ export function LandingHeat() {
               }}
             >
               <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-3 uppercase tracking-wider font-semibold">
-                How heat works
+                Your scripts
               </p>
 
               {[
-                { action: 'Partner reads your script', heat: '+1' },
-                { action: 'Partner shortlists you', heat: '+3' },
-                { action: 'Partner passes but flags as strong', heat: '+1' },
-                { action: 'Partner requests a meeting', heat: '+5' },
-              ].map((item, i) => (
+                { title: 'Untitled Crime Pilot', format: 'TV Pilot', heat: 5 },
+                { title: 'Desert Highway', format: 'Feature', heat: 4 },
+                { title: 'The Last Signal', format: 'TV Pilot', heat: 3 },
+              ].map((script, i) => (
                 <div
-                  key={item.action}
+                  key={script.title}
                   className="flex items-center justify-between gap-3 py-2.5"
                   style={{ borderTop: i > 0 ? '1px solid var(--gem-gray-700)' : undefined }}
                 >
-                  <span className="text-[13px] text-[var(--gem-gray-200)]">{item.action}</span>
-                  <span className="text-[13px] font-bold shrink-0" style={{ color: '#ea580c' }}>
-                    {item.heat}
+                  <div className="min-w-0">
+                    <p className="text-[13px] font-semibold text-[var(--gem-gray-100)] m-0 truncate">
+                      {script.title}
+                    </p>
+                    <p className="text-[11px] text-[var(--gem-gray-500)] m-0">{script.format}</p>
+                  </div>
+                  <span className="text-[14px] font-bold shrink-0 flex items-center gap-1" style={{ color: '#ea580c' }}>
+                    +{script.heat} &#x1F525;
                   </span>
                 </div>
               ))}
@@ -78,14 +86,11 @@ export function LandingHeat() {
                 <span className="text-[13px] font-semibold text-[var(--gem-gray-200)]">
                   Total heat
                 </span>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[20px] font-bold" style={{ color: '#ea580c' }}>12</span>
-                </div>
+                <span className="text-[20px] font-bold flex items-center gap-1" style={{ color: '#ea580c' }}>
+                  12 &#x1F525;
+                </span>
               </div>
             </div>
-            <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-2.5 italic">
-              Heat accumulates across all your scripts and submissions
-            </p>
           </div>
         </div>
       </div>
