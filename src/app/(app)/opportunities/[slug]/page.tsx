@@ -10,6 +10,7 @@ import type { Metadata } from 'next'
 import { ArrowRight, FileText, Clock, Target } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 import { SubscribeCTA } from '@/components/subscribe-cta'
+import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
 
 const GENRE_LABELS: Record<string, string> = {
   thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
@@ -324,13 +325,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     Apply now <ArrowRight size={16} />
                   </Link>
                 ) : (
-                  <button
-                    onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
-                    style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
-                  >
-                    Apply now <ArrowRight size={16} />
-                  </button>
+                  <ApplyUpgradeButton />
                 )}
               </div>
             ) : (
@@ -366,7 +361,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 Upload your script and we&apos;ll evaluate it against the requirements above. If you qualify, you can submit directly.
               </p>
               <p className="text-[13px] text-gray-400 m-0 mb-4">
-                Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Your first evaluation is free.
+                Applying to opportunities is a <span className="font-semibold text-purple-600">members-only</span> feature. Your first evaluation is free.
               </p>
               <UploadCTAButton
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
