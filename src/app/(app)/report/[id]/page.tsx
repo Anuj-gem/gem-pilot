@@ -38,7 +38,6 @@ import { createServerClient } from '@supabase/ssr'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/nav'
-import { SubscribeGate } from '@/components/report/subscribe-gate'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
 import { UpgradeTopBanner } from '@/components/report/upgrade-top-banner'
@@ -361,26 +360,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // must always see the full report on their own work — they're not
   // running through the writer trial → Pro conversion funnel. Anuj
   // 2026-04-30: bypass the lock entirely for producer-owned scripts.
-  let lockedAfterFreeEval = false
-  if (
-    isOwner &&
-    !ownerIsSubscribed &&
-    !ownerIsProducer &&
-    submission.user_id &&
-    !isAdmin
-  ) {
-    const { data: firstSub } = await serviceClient
-      .from('script_submissions')
-      .select('id')
-      .eq('user_id', submission.user_id)
-      .eq('status', 'completed')
-      .order('created_at', { ascending: true })
-      .limit(1)
-      .single()
-    if (firstSub?.id !== submission.id) {
-      lockedAfterFreeEval = true
-    }
-  }
+  // All evals are free — no locking. Membership only gates opportunity applications.
+  const lockedAfterFreeEval = false
 
   // Industry activity for this submission — drives the "Industry activity"
   // item in the owner "···" menu. Owner-only fetch (skip for non-owners).
@@ -486,15 +467,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const designation = scoreDesignation(commercialScore)
 
-  // Anuj 2026-04-28: free-tier 2nd+ eval used to land on
-  // <LockedAfterEvalScreen> as a dedicated upgrade bridge. Dropped — the
-  // dashboard now handles this surface (locked card + value-prop upsell
-  // + the writer's industry stats so they see the carrot inline). Bounce
-  // them back to the dashboard so they pick up that context instead of
-  // the bridge screen.
-  if (lockedAfterFreeEval) {
-    redirect('/dashboard')
-  }
+  // All evals unlocked — redirect removed.
 
   // Count hidden sections (for the visitor contact card copy).
   const hiddenSectionCount = isOwnerOrAdmin
@@ -1354,9 +1327,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
           Code preserved, just not rendered. */}
 
-      {!viewerIsSubscribed && user && (
-        <SubscribeGate evaluationId={id} isLoggedIn={true} />
-      )}
+      {/* SubscribeGate removed — UpgradeModalListener in app layout handles all upgrade modals */}
 
       {/* opportunities-v1: reach-out panel + sticky Interested/Pass bar removed.
           Producer interaction now flows through /producer/opportunities. */}
