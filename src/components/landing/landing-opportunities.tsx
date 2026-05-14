@@ -1,5 +1,6 @@
-// LandingOpportunities — live opportunities from the DB, shown on landing page.
-// v13 — shows qualification criteria (format, genre, budget, min score).
+// LandingOpportunities — v15c.
+// Live opportunities + CTA.
+'use client'
 
 import Link from 'next/link'
 
@@ -143,9 +144,26 @@ export function LandingOpportunities({ opportunities }: { opportunities: Landing
           })}
         </div>
 
-        <p className="text-[13px] text-[var(--gem-gray-400)] text-center mt-4 m-0">
-          Upload a script to see which opportunities you qualify for.
-        </p>
+        <div className="text-center mt-5 space-y-3">
+          <Link
+            href="/opportunities"
+            className="text-[14px] font-semibold block"
+            style={{ color: 'var(--gem-accent)' }}
+          >
+            View all opportunities →
+          </Link>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
+            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-[14px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
+            style={{
+              background: 'var(--gem-accent)',
+              boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
+            }}
+          >
+            Get started
+          </button>
+        </div>
       </div>
     </section>
   )

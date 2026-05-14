@@ -1,5 +1,5 @@
-// LandingFinalCTA — single closing call.
-// v10 — "Ready to get your work out there?"
+// LandingFinalCTA — v15c.
+// "Ready to get your work out there?"
 'use client'
 
 import { ArrowRight } from 'lucide-react'
@@ -23,7 +23,7 @@ export function LandingFinalCTA() {
           Ready to get your work out there?
         </h2>
         <p className="text-[15.5px] sm:text-[17px] text-[var(--gem-gray-300)] leading-relaxed m-0 mb-8 max-w-[480px] mx-auto">
-          Your first evaluation is free. Try Pro for 7 days.
+          Upload your screenplay. 7 days free.
         </p>
         <button
           onClick={handleClick}

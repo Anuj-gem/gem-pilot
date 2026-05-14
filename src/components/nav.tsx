@@ -30,7 +30,7 @@ export interface NavUserData {
 
 // NAV (unified layout):
 //   Logged in:  [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [+ New]  [avatar]
-//   Logged out: [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [Sign up]
+//   Logged out: [GEM]  [Home] [Scripts] [Reviews] [Open Calls]  [Get started]
 //   Mobile:     [GEM]                              [CTA] [☰]
 
 interface NavProps {
@@ -202,7 +202,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       boxShadow: '0 4px 12px rgba(124,58,237,0.25)',
                     }}
                   >
-                    Sign up
+                    Get started
                   </button>
                   <Link
                     href="/login"
@@ -223,7 +223,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
                   }}
                 >
-                  Sign up
+                  Get started
                 </button>
                 <button
                   className="p-1.5 text-[var(--gem-gray-300)]"
