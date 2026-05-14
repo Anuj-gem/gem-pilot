@@ -33,7 +33,7 @@ export function UpgradeTopBanner({ evaluationId }: Props) {
         }}
       >
         <p className="text-[12.5px] sm:text-[13px] font-semibold text-[var(--gem-gray-100)] m-0 leading-snug">
-          Start your free trial to submit new drafts and apply to opportunities.
+          Become a member to apply to opportunities and get matched with industry partners.
         </p>
         <button
           type="button"
@@ -41,7 +41,7 @@ export function UpgradeTopBanner({ evaluationId }: Props) {
           className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[12px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.97]"
           style={{ background: 'var(--gem-accent)' }}
         >
-          Upgrade
+          Become a Member
           <ArrowRight size={11} />
         </button>
       </div>

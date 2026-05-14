@@ -117,18 +117,11 @@ export default async function ScriptsPage() {
     }).map(opp => ({ title: opp.title, slug: opp.slug }))
   }
 
-  // Paywall: first completed script is free
-  const allCompleted = allScripts
-    .filter(s => s.status === 'completed' && !s.hidden_at)
-    .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
-  const firstCompletedId = allCompleted[0]?.id ?? null
-
   // Build script rows for client component (ScriptRowData-compatible)
+  // Free users can see ALL their scripts — no locking.
   const scriptRows = allScripts.map(s => {
     const ev = evalBySub.get(s.id)
     const stillProcessing = s.status === 'processing' || s.status === 'queued'
-    const isFirstCompleted = s.id === firstCompletedId
-    const isLocked = isTrial && !stillProcessing && s.status === 'completed' && !isFirstCompleted
 
     return {
       id: s.id,
@@ -139,7 +132,7 @@ export default async function ScriptsPage() {
       evaluationId: ev?.id ?? null,
       createdAt: s.created_at,
       isProcessing: stillProcessing,
-      isLocked,
+      isLocked: false,
       matchingOpportunities: matchOpportunities(s.declared_format, ev?.genres ?? []),
       hidden: !!s.hidden_at,
     }

@@ -206,7 +206,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
         || ev?.evaluation?.format_detection?.genre_primary
         || null
       const isStillProcessing = s.status === 'processing' || s.status === 'queued'
-      const isScriptLocked = isTrial && !isStillProcessing && s.status === 'completed' && s.id !== firstCompletedId
+      const isScriptLocked = false // Free users can access all their scripts
       return {
         id: s.id,
         title: s.title,
