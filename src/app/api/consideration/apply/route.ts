@@ -51,6 +51,7 @@ export async function POST(req: NextRequest) {
     .select('id, title, min_score')
     .eq('id', opportunity_id)
     .eq('status', 'active')
+    .eq('published', true)
     .single()
 
   if (!opp) {

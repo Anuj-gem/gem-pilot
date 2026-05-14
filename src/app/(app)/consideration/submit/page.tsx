@@ -140,6 +140,7 @@ export default async function ConsiderationSubmitPage() {
     .from('opportunities')
     .select('*')
     .eq('status', 'active')
+    .eq('published', true)
   const opportunities = (allOppRows || []) as OpportunityData[]
 
   // Match scripts to open calls

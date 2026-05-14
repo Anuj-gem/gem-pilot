@@ -93,6 +93,7 @@ export default async function DashboardPage() {
     .from('opportunities')
     .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers')
     .eq('status', 'active')
+    .eq('published', true)
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null; min_score: number | null

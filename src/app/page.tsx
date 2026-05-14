@@ -42,6 +42,7 @@ export default async function Home({
     .from('opportunities')
     .select('id, title, slug, description, formats, genres, budget_tiers, min_score, deadline, subtitle')
     .eq('status', 'active')
+    .eq('published', true)
     .order('created_at', { ascending: false })
     .limit(3)
 

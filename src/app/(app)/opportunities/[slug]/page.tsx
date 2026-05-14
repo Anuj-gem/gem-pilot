@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .select('title, subtitle, description')
     .eq('slug', slug)
     .eq('status', 'active')
+    .eq('published', true)
     .single()
 
   if (!opp) return { title: 'Opportunity not found — GEM' }
@@ -72,6 +73,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     .select('*')
     .eq('slug', slug)
     .eq('status', 'active')
+    .eq('published', true)
     .single()
 
   if (!opp) notFound()

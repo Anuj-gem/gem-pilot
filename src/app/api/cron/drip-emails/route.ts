@@ -98,6 +98,7 @@ export async function POST(request: NextRequest) {
       .from("opportunities")
       .select("id", { count: "exact", head: true })
       .eq("status", "active")
+      .eq("published", true)
     oppCount = String(count ?? 0)
   } catch {}
 

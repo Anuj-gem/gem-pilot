@@ -29,6 +29,7 @@ export async function POST(request: NextRequest) {
     .from("opportunities")
     .select("id, title, formats, genres, budget_tiers, description, slug, perspective")
     .eq("status", "active")
+    .eq("published", true)
 
   if (slugParam) {
     query = query.eq("slug", slugParam)

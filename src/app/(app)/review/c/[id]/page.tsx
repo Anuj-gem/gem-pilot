@@ -138,6 +138,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     .from('opportunities')
     .select('id, title, slug, formats, genres')
     .eq('status', 'active')  // opportunities use 'active' not 'open'
+    .eq('published', true)
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null

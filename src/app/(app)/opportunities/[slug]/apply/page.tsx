@@ -66,6 +66,7 @@ export default function ApplyPage() {
         .select('id, title, slug, description, min_score, formats, genres, subtitle')
         .eq('slug', slug)
         .eq('status', 'active')
+        .eq('published', true)
         .single()
 
       if (!opp) { router.push('/opportunities'); return }

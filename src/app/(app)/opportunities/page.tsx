@@ -65,6 +65,7 @@ export default async function OpportunitiesPage() {
     .from('opportunities')
     .select('*')
     .eq('status', 'active')
+    .eq('published', true)
     .order('created_at', { ascending: false })
 
   const opportunities = (opps || []) as OppRow[]

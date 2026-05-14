@@ -118,7 +118,8 @@ export async function POST(request: NextRequest) {
         const { count } = await serviceClient
           .from("opportunities")
           .select("id", { count: "exact", head: true })
-          .eq("status", "active");
+          .eq("status", "active")
+          .eq("published", true);
         matchCount = String(count ?? 0);
       } catch {}
 

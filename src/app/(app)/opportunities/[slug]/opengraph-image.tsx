@@ -43,6 +43,7 @@ export default async function OpengraphImage({
     .select('title, description, format, genres')
     .eq('slug', slug)
     .eq('status', 'active')
+    .eq('published', true)
     .single()
 
   // Fallback if not found
