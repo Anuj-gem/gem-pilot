@@ -25,6 +25,7 @@ import { AppRail } from '@/components/dashboard/app-rail'
 import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
+import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 
 function svc() {
   return createServerClient(
@@ -200,6 +201,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       </div>
       <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" />
+      {!isPro && <UpgradeModalListener />}
     </div>
   )
 }
