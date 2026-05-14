@@ -230,7 +230,7 @@ function SectionUpgradePrompt({
           Upgrade to Pro
         </h3>
         <p className="text-[13.5px] text-[var(--gem-gray-300)] m-0 mt-1.5 leading-snug">
-          Hide specific sections and publish to industry partners &mdash; Pro only.
+          7 days free, then $20/mo &middot; Cancel anytime
         </p>
         {error && (
           <p className="text-[12px] text-red-600 m-0 mt-3">{error}</p>
@@ -242,7 +242,7 @@ function SectionUpgradePrompt({
           className="w-full mt-4 py-2.5 rounded-lg font-semibold text-white text-[14px] disabled:opacity-60 transition-opacity hover:opacity-95"
           style={{ background: 'var(--gem-accent)' }}
         >
-          {busy ? 'Redirecting\u2026' : 'Upgrade \u2014 $20/mo'}
+          {busy ? 'Redirecting\u2026' : 'Start free trial'}
         </button>
       </div>
     </div>

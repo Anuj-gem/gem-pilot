@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id)
       .single();
 
-    if (!profile?.email || profile.subscription_status !== "active") {
+    if (!profile?.email || (profile.subscription_status !== "active" && profile.subscription_status !== "trialing")) {
       return NextResponse.json({ error: "Not subscribed" }, { status: 400 });
     }
 

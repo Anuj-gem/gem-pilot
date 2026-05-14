@@ -41,7 +41,7 @@ export function LandingCredibility() {
           </div>
 
           <p className="text-[14px] font-semibold m-0" style={{ color: 'var(--gem-accent)' }}>
-            100% free. Unlimited evaluations. Forever.
+            Your first evaluation is free. Try Pro for 7 days to unlock everything.
           </p>
         </div>
       </section>

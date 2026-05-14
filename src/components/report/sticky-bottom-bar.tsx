@@ -18,7 +18,7 @@ export function StickyBottomBar({ evaluationId, isLoggedIn }: StickyBottomBarPro
         <div className="min-w-0">
           <span className="text-sm font-semibold text-[var(--gem-white)]">Got more scripts?</span>
           <span className="text-xs sm:text-sm text-[var(--gem-gray-400)]">
-            {' '}— <span className="hidden sm:inline">go Pro for unlimited evaluations</span><span className="sm:hidden">unlimited with Pro</span>
+            {' '}— <span className="hidden sm:inline">start your free trial for unlimited evaluations</span><span className="sm:hidden">free trial for unlimited</span>
           </span>
         </div>
         <a

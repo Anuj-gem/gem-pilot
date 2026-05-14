@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
       .select("subscription_status")
       .eq("id", user.id)
       .single();
-    const ownerIsPro = ownerProfile?.subscription_status === "active";
+    const ownerIsPro = ownerProfile?.subscription_status === "active" || ownerProfile?.subscription_status === "trialing";
     await serviceClient
       .from("script_submissions")
       .update({
@@ -118,8 +118,7 @@ export async function POST(request: NextRequest) {
         const { count } = await serviceClient
           .from("opportunities")
           .select("id", { count: "exact", head: true })
-          .eq("status", "active")
-          .eq("published", true);
+          .eq("status", "active");
         matchCount = String(count ?? 0);
       } catch {}
 

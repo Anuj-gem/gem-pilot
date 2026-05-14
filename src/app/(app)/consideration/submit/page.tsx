@@ -41,7 +41,7 @@ export default async function ConsiderationSubmitPage() {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
   if (isEditing) {
     // Load current scripts for this consideration
@@ -140,7 +140,6 @@ export default async function ConsiderationSubmitPage() {
     .from('opportunities')
     .select('*')
     .eq('status', 'active')
-    .eq('published', true)
   const opportunities = (allOppRows || []) as OpportunityData[]
 
   // Match scripts to open calls

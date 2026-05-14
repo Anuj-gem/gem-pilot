@@ -267,7 +267,7 @@ export async function createMatchesForSubmission(
     if (writerProfile?.account_type === 'producer') {
       return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
     }
-    if (writerProfile?.subscription_status !== "active") {
+    if (writerProfile?.subscription_status !== "active" && writerProfile?.subscription_status !== "trialing") {
       return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
     }
   }
@@ -427,7 +427,7 @@ export async function createMatchesForProducer(
       id: string
       subscription_status: string | null
     }>) {
-      if (row.subscription_status === "active") proWriterIds.add(row.id)
+      if (row.subscription_status === "active" || row.subscription_status === "trialing") proWriterIds.add(row.id)
     }
   }
 

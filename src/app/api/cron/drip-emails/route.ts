@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
   const { data: freeUsers, error: usersErr } = await service
     .from("profiles")
     .select("id, email, full_name, created_at")
-    .or("subscription_status.is.null,subscription_status.neq.active")
+    .or("subscription_status.is.null,subscription_status.eq.free,subscription_status.eq.past_due,subscription_status.eq.canceled,subscription_status.eq.trial_expired")
     .or("account_type.is.null,account_type.eq.writer")
     .not("email", "is", null)
     .or("email_unsubscribed.is.null,email_unsubscribed.eq.false")
@@ -98,7 +98,6 @@ export async function POST(request: NextRequest) {
       .from("opportunities")
       .select("id", { count: "exact", head: true })
       .eq("status", "active")
-      .eq("published", true)
     oppCount = String(count ?? 0)
   } catch {}
 

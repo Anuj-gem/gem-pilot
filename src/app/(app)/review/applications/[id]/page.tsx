@@ -131,9 +131,9 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
         <div className="flex items-center gap-2 mt-0.5">
           {writer?.email && <span className="text-[12px] text-gray-500">{writer.email}</span>}
           <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
-            writer?.subscription_status === 'active' ? 'bg-purple-50 text-purple-700' : 'bg-gray-100 text-gray-500'
+            (writer?.subscription_status === 'active' || writer?.subscription_status === 'trialing') ? 'bg-purple-50 text-purple-700' : 'bg-gray-100 text-gray-500'
           }`}>
-            {writer?.subscription_status === 'active' ? 'Pro' : 'Free'}
+            {(writer?.subscription_status === 'active' || writer?.subscription_status === 'trialing') ? 'Pro' : 'Free'}
           </span>
         </div>
       </section>

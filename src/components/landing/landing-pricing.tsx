@@ -50,8 +50,8 @@ export function LandingPricing() {
           />
           <PriceCard
             tier="Pro"
-            price="$20"
-            period="/ month"
+            price="7 days free"
+            period="then $20/mo"
             blurb="Everything free, plus active matching and team advocacy."
             features={[
               'Everything in Free',
@@ -60,14 +60,14 @@ export function LandingPricing() {
               'Team pitches your work directly',
               'Priority consideration',
             ]}
-            cta="Get started"
-            onCTA={() => handleCTA('Get started pro')}
+            cta="Start free trial"
+            onCTA={() => handleCTA('Start free trial')}
             primary={true}
           />
         </div>
 
         <p className="text-[13px] text-[var(--gem-gray-400)] text-center m-0 max-w-[480px] mx-auto leading-relaxed">
-          Cancel anytime. No contracts, no hidden fees.
+          7 days free, then $20/mo. Cancel anytime.
         </p>
       </div>
     </section>

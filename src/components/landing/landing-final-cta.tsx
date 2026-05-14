@@ -23,7 +23,7 @@ export function LandingFinalCTA() {
           Ready to get your work out there?
         </h2>
         <p className="text-[15.5px] sm:text-[17px] text-[var(--gem-gray-300)] leading-relaxed m-0 mb-8 max-w-[480px] mx-auto">
-          Free to start. No credit card required.
+          Your first evaluation is free. Try Pro for 7 days.
         </p>
         <button
           onClick={handleClick}

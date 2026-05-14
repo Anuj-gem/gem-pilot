@@ -37,7 +37,7 @@ export function LockedReportUpgrade({ evaluationId }: Props) {
       className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-white text-base font-semibold hover:brightness-110 disabled:opacity-50 transition-all cursor-pointer"
       style={{ background: 'var(--gem-gold)' }}
     >
-      {loading ? 'Redirecting to checkout…' : 'Go Pro — $20/mo'}
+      {loading ? 'Redirecting to checkout…' : 'Start free trial'}
       {!loading && <ArrowRight size={16} />}
     </button>
   )

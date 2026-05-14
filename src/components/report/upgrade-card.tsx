@@ -24,10 +24,10 @@ export function UpgradeCard({ evaluationId, isLoggedIn, evalsUsed = 0 }: Upgrade
   const [loading, setLoading] = useState(false)
 
   const usedBoth = evalsUsed >= 2
-  const headline = usedBoth ? "You've used your 2 free evaluations" : 'Want unlimited evaluations?'
+  const headline = usedBoth ? "You've used your free evaluation" : 'Want the full experience?'
   const body = usedBoth
-    ? 'Upgrade to GEM Pro to evaluate unlimited drafts — and compare scores across every revision.'
-    : 'Upgrade to GEM Pro for unlimited evaluations on every draft. Track progress across revisions.'
+    ? 'Start your 7-day free trial to evaluate unlimited drafts and get matched with producers.'
+    : 'Try GEM Pro free for 7 days — unlimited evaluations, producer matching, and portfolio tools.'
 
   const handleUpgrade = async () => {
     trackSubscribeClick('upgrade_card')
@@ -70,12 +70,12 @@ export function UpgradeCard({ evaluationId, isLoggedIn, evalsUsed = 0 }: Upgrade
         disabled={loading}
         className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-lg bg-[var(--gem-gold)] text-white text-[13px] sm:text-sm font-semibold hover:brightness-110 disabled:opacity-50 transition-all cursor-pointer"
       >
-        {loading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
+        {loading ? 'Redirecting to checkout…' : 'Start free trial'}
         {!loading && <ArrowRight size={14} />}
       </button>
 
       <p className="text-[10px] text-[var(--gem-gray-500)] text-center mt-2">
-        Cancel anytime · Secure checkout via Stripe
+        7 days free, then $20/mo · Cancel anytime
       </p>
     </div>
   )

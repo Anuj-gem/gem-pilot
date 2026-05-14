@@ -52,7 +52,7 @@ export default async function ScriptsPage() {
     .eq('id', user.id)
     .single()
 
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   const isTrial = !isPro
   const service = svc()
 
@@ -99,7 +99,6 @@ export default async function ScriptsPage() {
     .from('opportunities')
     .select('id, title, slug, formats, genres')
     .eq('status', 'active')
-    .eq('published', true)
   const opportunities = (openOpps || []) as { id: string; title: string; slug: string; formats: string[] | null; genres: string[] | null }[]
 
   function normGenreOuter(g: string | null | undefined): string {

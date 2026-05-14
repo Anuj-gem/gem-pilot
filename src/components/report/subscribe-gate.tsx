@@ -75,10 +75,10 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
         </div>
 
         <h3 className="text-base font-bold text-[var(--gem-white)] mb-1 leading-snug">
-          Publish on Discover and let producers find you — $20/mo
+          Try GEM Pro free for 7 days
         </h3>
         <p className="text-[13px] text-[var(--gem-gray-400)] mb-4 leading-snug">
-          Go Pro to feature your scripts where producers and reps browse, enable direct contact, and evaluate unlimited drafts.
+          Full access to Discover, producer matching, unlimited evaluations, and direct contact — free for a week.
         </p>
 
         <ul className="space-y-1.5 mb-5">
@@ -101,12 +101,12 @@ export function SubscribeGate({ evaluationId, isLoggedIn }: SubscribeGateProps) 
           disabled={loading}
           className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--gem-accent)] text-white text-sm font-semibold hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
         >
-          {loading ? 'Redirecting…' : 'Upgrade to Pro — $20/mo'}
+          {loading ? 'Redirecting…' : 'Start free trial'}
           {!loading && <ArrowRight size={14} />}
         </button>
 
         <p className="text-[11px] text-[var(--gem-gray-500)] mt-2.5 text-center">
-          Cancel anytime. Secure checkout via Stripe.
+          7 days free, then $20/mo · Cancel anytime
         </p>
       </div>
     </div>

@@ -71,8 +71,7 @@ export function ProUpsellCard() {
               gap: '4px',
             }}
           >
-            Upgrade
-            <span className="font-semibold opacity-85 ml-0.5">— $20/mo</span>
+            Start free trial
           </span>
         </UnlockTrigger>
       </div>

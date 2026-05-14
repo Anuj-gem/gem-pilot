@@ -47,10 +47,10 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
         </button>
 
         <h2 className="text-[20px] font-bold text-[var(--gem-white)] mb-1.5 pr-6">
-          Upgrade to GEM Pro
+          Try GEM Pro free for 7 days
         </h2>
         <p className="text-[13.5px] text-[var(--gem-gray-400)] mb-5 leading-relaxed">
-          Unlimited scripts, ongoing consideration from producers and reps, and a shareable portfolio.
+          Full access to everything — unlimited evaluations, producer matching, and a shareable portfolio.
         </p>
 
         <ul className="space-y-2.5 mb-5">
@@ -80,11 +80,11 @@ export function PaywallModal({ onClose, trialExpired = true }: PaywallModalProps
           disabled={loading}
           className="w-full py-3 rounded-xl bg-[var(--gem-accent)] text-white text-[15px] font-semibold hover:brightness-110 disabled:opacity-50 transition-all"
         >
-          {loading ? 'Redirecting…' : 'Go Pro — $20/mo'}
+          {loading ? 'Redirecting…' : 'Start free trial'}
         </button>
 
         <p className="text-[11px] text-[var(--gem-gray-500)] text-center mt-2.5">
-          Cancel anytime · Stripe checkout
+          7 days free, then $20/mo · Cancel anytime
         </p>
       </div>
     </div>

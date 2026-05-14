@@ -297,11 +297,11 @@ function UpgradeNudge({ evaluationId }: { evaluationId: string }) {
           boxShadow: '0 6px 16px rgba(124,58,237,0.30)',
         }}
       >
-        {loading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
+        {loading ? 'Redirecting to checkout…' : 'Start free trial'}
         {!loading && <ArrowRight size={14} />}
       </button>
       <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-2">
-        Cancel anytime · Secure checkout via Stripe
+        7 days free, then $20/mo · Cancel anytime
       </p>
     </div>
   )
@@ -393,7 +393,7 @@ function StickyUpgradeBar({
             Publish to industry partners + unlock the full report
           </p>
           <p className="text-[11.5px] sm:text-[12px] text-white/60 m-0 mt-0.5 leading-tight">
-            $20/mo · unlimited submissions · cancel anytime
+            7 days free, then $20/mo · Cancel anytime
           </p>
         </div>
         <button
@@ -405,7 +405,7 @@ function StickyUpgradeBar({
             boxShadow: '0 6px 16px rgba(124,58,237,0.35)',
           }}
         >
-          {loading ? '…' : 'Go Pro'}
+          {loading ? '…' : 'Start free trial'}
           {!loading && <ArrowRight size={13} />}
         </button>
       </div>

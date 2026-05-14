@@ -41,12 +41,11 @@ export function LandingPro() {
             </div>
             <div className="flex items-baseline gap-1.5 shrink-0">
               <span
-                className="text-[32px] font-bold leading-none text-[var(--gem-gray-50)]"
+                className="text-[24px] font-bold leading-none text-[var(--gem-gray-50)]"
                 style={{ fontFamily: 'Georgia, serif' }}
               >
-                $20
+                7 days free
               </span>
-              <span className="text-[13px] text-[var(--gem-gray-400)] font-medium">/ month</span>
             </div>
           </div>
 
@@ -64,10 +63,10 @@ export function LandingPro() {
               boxShadow: '0 4px 16px rgba(124,58,237,0.25)',
             }}
           >
-            Get started <ArrowRight size={14} />
+            Start free trial <ArrowRight size={14} />
           </button>
           <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-3">
-            Everything else is free. Cancel anytime.
+            7 days free, then $20/mo. Cancel anytime.
           </p>
         </div>
       </div>

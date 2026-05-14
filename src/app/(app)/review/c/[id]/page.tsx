@@ -130,7 +130,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = writerProfile?.subscription_status === 'active'
+  const isPro = writerProfile?.subscription_status === 'active' || writerProfile?.subscription_status === 'trialing'
   const isTrial = !isPro
 
   // Open opportunities for matching
@@ -138,7 +138,6 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     .from('opportunities')
     .select('id, title, slug, formats, genres')
     .eq('status', 'active')  // opportunities use 'active' not 'open'
-    .eq('published', true)
   const allOpenOpps = (openOpps || []) as {
     id: string; title: string; slug: string
     formats: string[] | null; genres: string[] | null

@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = profile?.subscription_status === 'active'
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
   if (!isPro) {
     const { data: completedReviews } = await service

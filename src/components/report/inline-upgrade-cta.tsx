@@ -19,7 +19,7 @@ export function InlineUpgradeCTA({
   evaluationId,
   label,
   submissionCount,
-  cta = 'Go Pro — $20/mo',
+  cta = 'Start free trial',
 }: Props) {
   const handleClick = () => {
     trackSubscribeClick('inline_upgrade_cta')

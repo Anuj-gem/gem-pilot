@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       allow_promotion_codes: true,
+      subscription_data: { trial_period_days: 7 },
       line_items: [
         {
           price: process.env.STRIPE_PRICE_ID!,
@@ -76,10 +77,14 @@ export async function POST(request: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  // If already active, redirect to portal instead
-  if (profile?.subscription_status === 'active') {
+  // Block if already active or currently trialing
+  if (profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing') {
     return NextResponse.json({ error: 'Already subscribed' }, { status: 400 })
   }
+
+  // Determine trial eligibility: only 'free' users get a trial.
+  // trial_expired, canceled, past_due → no trial, straight to paid.
+  const eligibleForTrial = profile?.subscription_status === 'free' || !profile?.subscription_status
 
   // Reuse or create Stripe customer
   let customerId = profile?.stripe_customer_id
@@ -110,6 +115,7 @@ export async function POST(request: NextRequest) {
     customer: customerId,
     mode: 'subscription',
     allow_promotion_codes: true,
+    ...(eligibleForTrial ? { subscription_data: { trial_period_days: 7 } } : {}),
     line_items: [
       {
         price: process.env.STRIPE_PRICE_ID!,

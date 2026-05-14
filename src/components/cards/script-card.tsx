@@ -343,7 +343,6 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
       isOwner ? (isPublic ? 'Published' : 'Private') : null,
       s.format,
       s.genre,
-      `${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'}`,
     ].filter(Boolean) as string[]
 
     return (
@@ -431,16 +430,6 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
           {/* ACTION ROW — opportunities-v1: industry stats button removed for owners.
               Non-owner: Submit review (left) + View report (right). */}
           <div className="mt-3.5 pt-3 flex items-center gap-2" style={{ borderTop: `1px solid ${CARD.border}` }}>
-            {!isOwner && reviewsAllowed ? (
-              <Link
-                href={`/review/${s.submission_id}`}
-                prefetch={false}
-                className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md border border-purple-200 bg-white hover:bg-purple-50 hover:border-purple-300 text-purple-700 px-2.5 py-1.5 transition-colors"
-                title="Write a review for this script"
-              >
-                Submit review
-              </Link>
-            ) : null}
             <span className="flex-1" />
             {/* Owner triple-dot — privacy + industry activity props
                 removed (opportunities-v1). */}

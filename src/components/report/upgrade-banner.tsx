@@ -56,15 +56,13 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
           <div className="flex-1 mb-5 sm:mb-0">
             <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
               <Clock size={12} />
-              {trialExpired ? 'Your free trial has ended' : 'You\'ve used your free evaluation'}
+              {trialExpired ? 'Try GEM Pro free' : 'Try GEM Pro free'}
             </p>
             <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-              Keep evaluating. Keep getting surfaced to producers.
+              Get the full GEM Pro experience — free for 7 days.
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">
-              {trialExpired
-                ? 'Your 48-hour trial is over. For $20/month, unlock unlimited evaluations and feature every script on Discover for producers and reps.'
-                : 'For $20/month, get unlimited evaluations and feature as many scripts as you want on Discover. Every draft positioned. Every idea surfaced to industry.'}
+              Unlimited evaluations, producer matching, and your scripts featured on Discover. Try it free, then $20/mo.
             </p>
             <ul className="space-y-1.5 text-sm text-[var(--gem-gray-300)]">
               {[
@@ -90,11 +88,11 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
               disabled={loading}
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--gem-accent)] text-white font-medium hover:bg-[var(--gem-accent-hover)] disabled:opacity-50 transition-colors"
             >
-              {loading ? 'Redirecting...' : 'Subscribe now'}
+              {loading ? 'Redirecting...' : 'Start free trial'}
               {!loading && <ArrowRight size={16} />}
             </button>
             <p className="text-xs text-[var(--gem-gray-500)] mt-2 text-center sm:text-right">
-              Cancel anytime. Secure checkout via Stripe.
+              7 days free, then $20/mo · Cancel anytime
             </p>
           </div>
         </div>

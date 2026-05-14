@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  if (profile?.subscription_status !== 'active') {
+  if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing') {
     return NextResponse.json({ error: 'Upgrade to Pro to apply to opportunities' }, { status: 403 })
   }
 
@@ -51,7 +51,6 @@ export async function POST(req: NextRequest) {
     .select('id, title, min_score')
     .eq('id', opportunity_id)
     .eq('status', 'active')
-    .eq('published', true)
     .single()
 
   if (!opp) {

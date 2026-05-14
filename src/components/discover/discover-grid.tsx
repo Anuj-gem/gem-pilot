@@ -66,9 +66,11 @@ interface Props {
   cards: DiscoverCard[]
   initialSort: SortId
   initialFilters: FilterValue
+  /** Base path for URL sync — defaults to '/community'. */
+  basePath?: string
 }
 
-export function DiscoverGrid({ cards, initialSort, initialFilters }: Props) {
+export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/community' }: Props) {
   const router = useRouter()
   const sp = useSearchParams()
   const [sort, setSort] = useState<SortId>(initialSort)
@@ -84,7 +86,7 @@ export function DiscoverGrid({ cards, initialSort, initialFilters }: Props) {
     if (filters.genres.length === 0) params.delete('genres'); else params.set('genres', filters.genres.join(','))
     if (filters.budgets.length === 0) params.delete('budgets'); else params.set('budgets', filters.budgets.join(','))
     const qs = params.toString()
-    const next = qs ? `/community?${qs}` : '/community'
+    const next = qs ? `${basePath}?${qs}` : basePath
     startTransition(() => router.replace(next, { scroll: false }))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sort, filters])

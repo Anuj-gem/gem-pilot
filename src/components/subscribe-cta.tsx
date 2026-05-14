@@ -27,7 +27,7 @@ interface SubscribeCTAProps {
  */
 export function SubscribeCTA({
   location,
-  label = 'Start with Pro',
+  label = 'Start free trial',
   className = '',
   style,
   children,

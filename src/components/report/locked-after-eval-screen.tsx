@@ -183,7 +183,7 @@ export function LockedAfterEvalScreen({
           className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(124,58,237,0.30)] transition-all duration-150 hover:brightness-110 active:scale-[0.985] disabled:opacity-70 disabled:cursor-wait"
           style={{ background: 'var(--gem-accent)' }}
         >
-          {upgrading ? 'Redirecting to checkout…' : 'Upgrade to GEM Pro — $20/mo'}
+          {upgrading ? 'Redirecting to checkout…' : 'Start free trial'}
           {!upgrading && <ArrowRight size={15} />}
         </button>
         <Link
@@ -195,7 +195,7 @@ export function LockedAfterEvalScreen({
         </Link>
       </div>
       <p className="text-[12px] text-[var(--gem-gray-500)] m-0 mt-4">
-        {content.ctaSubtext}
+        7 days free, then $20/mo · Cancel anytime
       </p>
     </div>
   )

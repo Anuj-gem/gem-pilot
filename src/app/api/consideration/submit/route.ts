@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (profileCheck?.subscription_status !== 'active') {
+  if (profileCheck?.subscription_status !== 'active' && profileCheck?.subscription_status !== 'trialing') {
     const { data: pastReview } = await service
       .from('considerations')
       .select('id')
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (profile?.subscription_status !== 'active' && userScripts && userScripts.length > 0) {
+  if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing' && userScripts && userScripts.length > 0) {
     // Get the user's very first script (oldest created_at across ALL their scripts)
     const { data: firstScript } = await supabase
       .from('script_submissions')

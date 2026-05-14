@@ -35,11 +35,11 @@ export function SectionLock({ variant, evaluationId, position = 'center' }: Sect
 
   const subtext =
     variant === 'pro'
-      ? 'Read every writer on the board in full and message them directly.'
+      ? '7 days free, then $20/mo · Cancel anytime'
       : 'Free account gets you previews. Members read everything.'
 
   const cta =
-    variant === 'signup' ? 'Create free account' : 'Upgrade — $20/mo'
+    variant === 'signup' ? 'Create free account' : 'Start free trial'
 
   const handleClick = async () => {
     if (variant === 'signup') {

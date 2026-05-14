@@ -58,7 +58,7 @@ export default async function OpportunitiesPage() {
       .select('subscription_status')
       .eq('id', user.id)
       .single()
-    isPro = profile?.subscription_status === 'active'
+    isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   }
 
   const { data: opps } = await service
@@ -205,7 +205,7 @@ export default async function OpportunitiesPage() {
               Upload your script to see which calls you qualify for
             </p>
             <p className="text-[13px] text-gray-500 m-0 mt-1">
-              Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Your first evaluation is free.
+              Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Try Pro free for 7 days.
             </p>
           </div>
           <UploadCTAButton

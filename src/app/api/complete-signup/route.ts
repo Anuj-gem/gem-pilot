@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
     .from('profiles')
     .update({
       stripe_customer_id: stripeCustomerId,
-      subscription_status: 'active',
+      subscription_status: 'trialing',
     })
     .eq('id', userId)
 

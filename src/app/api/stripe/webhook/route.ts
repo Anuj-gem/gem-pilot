@@ -44,12 +44,16 @@ export async function POST(request: NextRequest) {
         : session.subscription?.id
 
       if (userId && subscriptionId) {
+        // Check actual subscription status — could be 'trialing' or 'active'
+        const sub = await stripe.subscriptions.retrieve(subscriptionId)
+        const dbStatus = sub.status === 'trialing' ? 'trialing' : 'active'
+
         await supabase
           .from('profiles')
           .update({
             stripe_customer_id: session.customer as string,
             stripe_subscription_id: subscriptionId,
-            subscription_status: 'active',
+            subscription_status: dbStatus,
           })
           .eq('id', userId)
 
@@ -123,9 +127,10 @@ export async function POST(request: NextRequest) {
         ? subscription.customer
         : subscription.customer.id
 
-      const status = subscription.status === 'active' || subscription.status === 'trialing'
-        ? 'active'
-        : subscription.status
+      let status: string
+      if (subscription.status === 'active') status = 'active'
+      else if (subscription.status === 'trialing') status = 'trialing'
+      else status = subscription.status
 
       await supabase
         .from('profiles')
@@ -140,11 +145,22 @@ export async function POST(request: NextRequest) {
         ? subscription.customer
         : subscription.customer.id
 
+      // Check if this was a trial that ended vs a paid subscription cancel
+      const { data: existingProfile } = await supabase
+        .from('profiles')
+        .select('id, subscription_status')
+        .eq('stripe_customer_id', customerId)
+        .single()
+
+      const newStatus = existingProfile?.subscription_status === 'trialing'
+        ? 'trial_expired'
+        : 'canceled'
+
       // 1. Update profile status
       const { data: cancelledProfile } = await supabase
         .from('profiles')
         .update({
-          subscription_status: 'canceled',
+          subscription_status: newStatus,
           stripe_subscription_id: null,
         })
         .eq('stripe_customer_id', customerId)

@@ -76,7 +76,7 @@ export async function PATCH(req: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (profile?.subscription_status !== 'active' && userScripts && userScripts.length > 0) {
+  if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing' && userScripts && userScripts.length > 0) {
     const { data: firstScript } = await supabase
       .from('script_submissions')
       .select('id')

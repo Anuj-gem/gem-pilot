@@ -93,7 +93,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .select('subscription_status')
       .eq('id', user.id)
       .single()
-    isPro = profile?.subscription_status === 'active'
+    isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
     // Get consideration status
     const { data: consideration } = await service

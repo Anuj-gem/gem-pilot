@@ -119,7 +119,7 @@ export async function PATCH(
       .select('subscription_status')
       .eq('id', user.id)
       .single()
-    if (callerProfile?.subscription_status !== 'active') {
+    if (callerProfile?.subscription_status !== 'active' && callerProfile?.subscription_status !== 'trialing') {
       return NextResponse.json(
         { error: 'Upgrade to Pro to publish on Discover.' },
         { status: 403 }
