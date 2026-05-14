@@ -319,7 +319,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                 onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
                 className="relative z-10 pointer-events-auto w-full inline-flex items-center justify-center gap-2 text-[12.5px] font-bold rounded-lg bg-purple-600 hover:bg-purple-700 text-white px-4 py-2.5 transition-colors"
               >
-                Upgrade to Pro — $20/mo
+                Become a Member — $20/mo
               </button>
             </div>
           </div>

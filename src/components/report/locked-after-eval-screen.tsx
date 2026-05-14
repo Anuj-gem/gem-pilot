@@ -91,7 +91,7 @@ export function LockedAfterEvalScreen({
               <span className="text-[var(--gem-gray-100)] font-semibold">
                 &ldquo;{title}&rdquo;
               </span>{' '}
-              qualifies. Upgrade to GEM Pro to view the full report and publish to industry partners.
+              qualifies. Become a member to view the full report and publish to industry partners.
             </>
           ),
           ctaSubtext:
@@ -132,7 +132,7 @@ export function LockedAfterEvalScreen({
                 <span className="text-[var(--gem-gray-100)] font-semibold">
                   &ldquo;{title}&rdquo;
                 </span>{' '}
-                are ready. Upgrade to GEM Pro to view them and publish for industry visibility.
+                are ready. Become a member to view them and publish for industry visibility.
               </>
             ),
             ctaSubtext:

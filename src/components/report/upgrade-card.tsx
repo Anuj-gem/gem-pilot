@@ -27,7 +27,7 @@ export function UpgradeCard({ evaluationId, isLoggedIn, evalsUsed = 0 }: Upgrade
   const headline = usedBoth ? "You've used your free evaluation" : 'Want the full experience?'
   const body = usedBoth
     ? 'Start your 7-day free trial to evaluate unlimited drafts and get matched with producers.'
-    : 'Try GEM Pro free for 7 days — unlimited evaluations, producer matching, and portfolio tools.'
+    : 'Try membership free for 7 days — unlimited evaluations, producer matching, and portfolio tools.'
 
   const handleUpgrade = async () => {
     trackSubscribeClick('upgrade_card')

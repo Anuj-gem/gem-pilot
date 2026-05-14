@@ -226,7 +226,7 @@ export function ConsiderationForm({
               onClick={openUpgrade}
               className="text-purple-600 font-semibold hover:text-purple-800 underline"
             >
-              Upgrade to GEM Pro
+              Become a Member
             </button>{' '}
             to submit your full portfolio for consideration.
           </p>

@@ -56,10 +56,10 @@ export function UpgradeBanner({ delayMs = 60000, trialExpired = true }: UpgradeB
           <div className="flex-1 mb-5 sm:mb-0">
             <p className="text-xs uppercase tracking-widest text-[var(--gem-accent)] mb-2 flex items-center gap-1.5">
               <Clock size={12} />
-              {trialExpired ? 'Try GEM Pro free' : 'Try GEM Pro free'}
+              {trialExpired ? 'Try membership free' : 'Try membership free'}
             </p>
             <h3 className="text-lg font-bold text-[var(--gem-white)] mb-2">
-              Get the full GEM Pro experience — free for 7 days.
+              Get the full GEM experience — free for 7 days.
             </h3>
             <p className="text-sm text-[var(--gem-gray-400)] leading-relaxed mb-4">
               Unlimited evaluations, producer matching, and your scripts featured on Discover. Try it free, then $20/mo.

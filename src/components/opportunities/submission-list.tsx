@@ -72,7 +72,7 @@ export function SubmissionList({ opportunityId, scripts, existingSubmissions, pe
       )}
       {!isPro && (
         <p className="text-[12.5px] text-purple-600 font-medium mt-1 m-0">
-          Upgrade to Pro to submit to opportunities.
+          Become a member to submit to opportunities.
         </p>
       )}
     </div>

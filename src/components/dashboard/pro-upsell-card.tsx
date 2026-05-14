@@ -57,7 +57,7 @@ export function ProUpsellCard() {
         </div>
 
         <UnlockTrigger
-          ariaLabel="Upgrade to Pro"
+          ariaLabel="Become a Member"
           className="inline-flex items-center justify-center gap-1 text-[14px] font-bold rounded-xl whitespace-nowrap transition-all duration-150 hover:brightness-110 active:scale-[0.97] text-white"
         >
           <span

@@ -227,7 +227,7 @@ function SectionUpgradePrompt({
           </button>
         </div>
         <h3 className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
-          Upgrade to Pro
+          Become a Member
         </h3>
         <p className="text-[13.5px] text-[var(--gem-gray-300)] m-0 mt-1.5 leading-snug">
           7 days free, then $20/mo &middot; Cancel anytime

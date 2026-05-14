@@ -538,7 +538,7 @@ export function ReviewDetail({
                   <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5">
                     <p className="text-[13px] font-semibold text-gray-500 m-0 mb-1">Ineligible for this review</p>
                     <p className="text-[12px] text-gray-400 m-0 mb-3">
-                      Free accounts can include one script per portfolio review. Upgrade to Pro to include all your scripts.
+                      Free accounts can include one script per portfolio review. Become a member to include all your scripts.
                     </p>
                     <div className="space-y-2 mb-3">
                       {lockedScripts.map(s => (
@@ -549,7 +549,7 @@ export function ReviewDetail({
                       onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
                       className="text-[12px] font-bold text-purple-600 hover:text-purple-800 transition-colors border-0 bg-transparent cursor-pointer p-0"
                     >
-                      Upgrade to Pro →
+                      Become a Member →
                     </button>
                   </div>
                 </div>
@@ -578,7 +578,7 @@ export function ReviewDetail({
             <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5">
               <p className="text-[13px] font-semibold text-gray-500 m-0 mb-1">Ineligible for this review</p>
               <p className="text-[12px] text-gray-400 m-0 mb-3">
-                Free accounts can include one script per portfolio review. Upgrade to Pro to include all your scripts.
+                Free accounts can include one script per portfolio review. Become a member to include all your scripts.
               </p>
               <div className="space-y-2 mb-3">
                 {reviewScripts.filter(s => s.isLocked).map(s => (
@@ -589,7 +589,7 @@ export function ReviewDetail({
                 onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
                 className="text-[12px] font-bold text-purple-600 hover:text-purple-800 transition-colors border-0 bg-transparent cursor-pointer p-0"
               >
-                Upgrade to Pro →
+                Become a Member →
               </button>
             </div>
           </div>
