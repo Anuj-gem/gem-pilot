@@ -1,5 +1,5 @@
 // POST /api/consideration/review — producer reviews a consideration.
-// Supports: sending feedback, updating review_stage, posting messages, sentiment + heat.
+// Supports: sending feedback, updating review_stage, posting messages, per-script heat.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
@@ -8,7 +8,7 @@ import { sendEmail } from '@/lib/email'
 
 const VALID_STAGES = ['draft', 'pending', 'submitted', 'in_review', 'in_consideration', 'shortlisted', 'partner_match', 'complete'] as const
 
-// Heat points awarded automatically when moving to these stages
+// Stage bonus heat (added on top of per-script hearts)
 const STAGE_HEAT: Record<string, number> = {
   shortlisted: 2,
   partner_match: 3,
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags, sentiment } = body as {
+  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags } = body as {
     consideration_id: string
     feedback?: string
     next_steps?: string | null
@@ -36,7 +36,6 @@ export async function POST(req: NextRequest) {
     message?: string
     feedback_tags?: string[]
     next_steps_tags?: string[]
-    sentiment?: 'positive' | 'negative'
   }
 
   if (!consideration_id) {
@@ -49,54 +48,88 @@ export async function POST(req: NextRequest) {
   if (review_stage && VALID_STAGES.includes(review_stage as typeof VALID_STAGES[number])) {
     const stageUpdate: Record<string, unknown> = { review_stage }
 
-    // If moving to complete (pass), also mark legacy status + handle sentiment/heat
+    // Shortlist requires at least one hearted script
+    if (review_stage === 'shortlisted' || review_stage === 'partner_match') {
+      const { data: heartedScripts } = await service
+        .from('consideration_scripts')
+        .select('id')
+        .eq('consideration_id', consideration_id)
+        .eq('hearted', true)
+      if (!heartedScripts || heartedScripts.length === 0) {
+        return NextResponse.json({ error: 'Must heart at least one script before shortlisting' }, { status: 400 })
+      }
+    }
+
+    // If moving to complete (pass), calculate and distribute heat
     if (review_stage === 'complete') {
       stageUpdate.status = 'reviewed'
       stageUpdate.reviewed_at = new Date().toISOString()
 
-      // Save sentiment if provided
-      if (sentiment) {
-        stageUpdate.sentiment = sentiment
+      // Get consideration details + hearted scripts
+      const { data: currentCon } = await service
+        .from('considerations')
+        .select('review_stage, writer_id, heat_earned')
+        .eq('id', consideration_id)
+        .single()
 
-        // Calculate heat: stage heat (from highest stage reached) + sentiment bonus
-        // First, get the current stage to know what stage heat to award
-        const { data: currentCon } = await service
-          .from('considerations')
-          .select('review_stage, writer_id, heat_earned')
-          .eq('id', consideration_id)
-          .single()
+      const { data: heartedScripts } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .eq('consideration_id', consideration_id)
+        .eq('hearted', true)
 
-        if (currentCon) {
-          const currentStage = currentCon.review_stage || 'pending'
-          const stageHeat = STAGE_HEAT[currentStage] || 0
-          const sentimentHeat = sentiment === 'positive' ? 1 : 0
-          const totalHeat = stageHeat + sentimentHeat
+      if (currentCon) {
+        const currentStage = currentCon.review_stage || 'pending'
+        const stageBonus = STAGE_HEAT[currentStage] || 0
+        const heartCount = heartedScripts?.length || 0
+        const totalHeat = heartCount + stageBonus // +1 per hearted script + stage bonus
 
-          stageUpdate.heat_earned = totalHeat
+        stageUpdate.heat_earned = totalHeat
 
-          // Update writer's running heat_score
-          if (totalHeat > 0) {
-            const previousHeat = currentCon.heat_earned || 0
-            const heatDelta = totalHeat - previousHeat // In case of re-review, only add the difference
-            if (heatDelta > 0) {
-              await service.rpc('increment_heat_score', {
-                p_user_id: currentCon.writer_id,
-                p_amount: heatDelta,
-              }).then(async (res) => {
-                // Fallback if RPC doesn't exist yet — direct update
-                if (res.error) {
-                  const { data: profile } = await service
-                    .from('profiles')
-                    .select('heat_score')
-                    .eq('id', currentCon.writer_id)
-                    .single()
-                  await service
-                    .from('profiles')
-                    .update({ heat_score: (profile?.heat_score || 0) + heatDelta })
-                    .eq('id', currentCon.writer_id)
-                }
-              })
-            }
+        // Award +1 heat to each hearted script
+        if (heartedScripts && heartedScripts.length > 0) {
+          for (const hs of heartedScripts) {
+            await service.rpc('increment_script_heat', {
+              p_script_id: hs.script_submission_id,
+              p_amount: 1,
+            }).then(async (res) => {
+              // Fallback if RPC doesn't exist yet
+              if (res.error) {
+                const { data: script } = await service
+                  .from('script_submissions')
+                  .select('heat_score')
+                  .eq('id', hs.script_submission_id)
+                  .single()
+                await service
+                  .from('script_submissions')
+                  .update({ heat_score: (script?.heat_score || 0) + 1 })
+                  .eq('id', hs.script_submission_id)
+              }
+            })
+          }
+        }
+
+        // Recalculate writer's total heat_score from all their scripts
+        if (totalHeat > 0) {
+          const previousHeat = currentCon.heat_earned || 0
+          const heatDelta = totalHeat - previousHeat
+          if (heatDelta > 0) {
+            await service.rpc('increment_heat_score', {
+              p_user_id: currentCon.writer_id,
+              p_amount: heatDelta,
+            }).then(async (res) => {
+              if (res.error) {
+                const { data: profile } = await service
+                  .from('profiles')
+                  .select('heat_score')
+                  .eq('id', currentCon.writer_id)
+                  .single()
+                await service
+                  .from('profiles')
+                  .update({ heat_score: (profile?.heat_score || 0) + heatDelta })
+                  .eq('id', currentCon.writer_id)
+              }
+            })
           }
         }
       }
@@ -128,7 +161,7 @@ export async function POST(req: NextRequest) {
     })
 
     // Log heat event if heat was awarded
-    if (review_stage === 'complete' && sentiment) {
+    if (review_stage === 'complete') {
       const { data: updatedCon } = await service
         .from('considerations')
         .select('heat_earned')

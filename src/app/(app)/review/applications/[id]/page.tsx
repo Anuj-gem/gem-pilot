@@ -32,7 +32,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
   // Load the application
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, heat_earned')
     .eq('id', id)
     .single()
 
@@ -52,14 +52,15 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
     .eq('id', app.writer_id)
     .single()
 
-  // Load scripts
+  // Load scripts with hearted status
   const { data: scriptLinks } = await service
     .from('consideration_scripts')
-    .select('script_submission_id')
+    .select('script_submission_id, hearted')
     .eq('consideration_id', app.id)
 
   const scriptIds = (scriptLinks || []).map((l: { script_submission_id: string }) => l.script_submission_id)
-  let scripts: { id: string; title: string; score: number | null; evalId: string | null }[] = []
+  const heartedMap = new Map((scriptLinks || []).map((l: any) => [l.script_submission_id, l.hearted || false]))
+  let scripts: { id: string; title: string; score: number | null; evalId: string | null; hearted: boolean }[] = []
   if (scriptIds.length > 0) {
     const { data: subs } = await service
       .from('script_submissions')
@@ -75,6 +76,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
       title: s.title,
       score: evalMap.get(s.id)?.score ?? null,
       evalId: evalMap.get(s.id)?.evalId ?? null,
+      hearted: heartedMap.get(s.id) || false,
     }))
   }
 
@@ -197,8 +199,8 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
           allUsedFeedbackTags={usedFeedbackTags}
           allUsedNextStepsTags={usedNextStepsTags}
           currentReviewStage={app.review_stage || 'pending'}
-          currentSentiment={app.sentiment || null}
           currentHeatEarned={app.heat_earned || 0}
+          scripts={scripts.map(s => ({ script_submission_id: s.id, title: s.title || 'Untitled', hearted: s.hearted }))}
         />
       </section>
     </div>

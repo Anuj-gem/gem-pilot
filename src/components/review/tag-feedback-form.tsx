@@ -152,16 +152,21 @@ const REVIEW_STAGES = [
   { value: 'partner_match', label: 'Partner match', color: '#059669', bg: '#d1fae5' },
 ] as const
 
-// Heat points by stage: shortlisted earns +2 automatically
+// Heat points by stage bonus
 const STAGE_HEAT: Record<string, number> = {
   shortlisted: 2,
   partner_match: 3,
 }
 
-function calcHeatPreview(currentStage: string, sentiment: 'positive' | 'negative' | null): number {
+function calcHeatPreview(currentStage: string, heartedCount: number): number {
   const stageHeat = STAGE_HEAT[currentStage] || 0
-  const sentimentHeat = sentiment === 'positive' ? 1 : 0
-  return stageHeat + sentimentHeat
+  return heartedCount + stageHeat
+}
+
+interface ScriptItem {
+  script_submission_id: string
+  title: string
+  hearted: boolean
 }
 
 interface TagFeedbackFormProps {
@@ -172,8 +177,8 @@ interface TagFeedbackFormProps {
   allUsedFeedbackTags?: string[]
   allUsedNextStepsTags?: string[]
   currentReviewStage?: string
-  currentSentiment?: string | null
   currentHeatEarned?: number
+  scripts?: ScriptItem[]
 }
 
 export function TagFeedbackForm({
@@ -184,8 +189,8 @@ export function TagFeedbackForm({
   allUsedFeedbackTags = [],
   allUsedNextStepsTags = [],
   currentReviewStage = 'pending',
-  currentSentiment = null,
   currentHeatEarned = 0,
+  scripts = [],
 }: TagFeedbackFormProps) {
   const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
   const [nextStepsTags, setNextStepsTags] = useState<string[]>(currentNextStepsTags)
@@ -194,16 +199,32 @@ export function TagFeedbackForm({
   const [saved, setSaved] = useState(false)
   const [stage, setStage] = useState(currentReviewStage)
   const [stageSaving, setStageSaving] = useState(false)
-  const [sentiment, setSentiment] = useState<'positive' | 'negative' | null>(
-    (currentSentiment as 'positive' | 'negative' | null) || null
+  const [heartedScripts, setHeartedScripts] = useState<Record<string, boolean>>(
+    Object.fromEntries(scripts.map(s => [s.script_submission_id, s.hearted]))
   )
   const router = useRouter()
 
   const isAlreadyComplete = currentReviewStage === 'complete'
-  const heatPreview = calcHeatPreview(stage, sentiment)
+  const heartedCount = Object.values(heartedScripts).filter(Boolean).length
+  const heatPreview = calcHeatPreview(stage, heartedCount)
+
+  async function handleHeartToggle(scriptId: string) {
+    const newVal = !heartedScripts[scriptId]
+    setHeartedScripts(prev => ({ ...prev, [scriptId]: newVal }))
+    setSaved(false)
+    await fetch('/api/consideration/heart-script', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ consideration_id: considerationId, script_submission_id: scriptId, hearted: newVal }),
+    })
+  }
 
   async function handleStageChange(newStage: string) {
     if (newStage === stage) return
+    // Shortlist/partner match requires at least one hearted script
+    if ((newStage === 'shortlisted' || newStage === 'partner_match') && heartedCount === 0) {
+      return
+    }
     setStageSaving(true)
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
@@ -221,7 +242,6 @@ export function TagFeedbackForm({
   function updateNextStepsTags(tags: string[]) { setNextStepsTags(tags); setSaved(false) }
 
   async function handlePass() {
-    if (!sentiment) return
     setSaving(true)
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
@@ -232,7 +252,6 @@ export function TagFeedbackForm({
         next_steps_tags: nextStepsTags,
         feedback: note.trim() || undefined,
         review_stage: 'complete',
-        sentiment,
       }),
     })
     setSaving(false)
@@ -300,63 +319,55 @@ export function TagFeedbackForm({
         />
       </div>
 
-      {/* Sentiment toggle — required to pass */}
-      {!isAlreadyComplete && (
+      {/* Script hearts — heart scripts you liked */}
+      {scripts.length > 0 && (
         <div>
           <label className="text-[13px] font-bold text-gray-900 block mb-2">
-            Sentiment <span className="text-[11px] font-normal text-gray-400">(internal — determines heat)</span>
+            Scripts <span className="text-[11px] font-normal text-gray-400">(heart scripts to award heat)</span>
           </label>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => { setSentiment('negative'); setSaved(false) }}
-              className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors"
-              style={{
-                background: sentiment === 'negative' ? '#fef2f2' : 'transparent',
-                borderColor: sentiment === 'negative' ? '#ef4444' : '#e5e7eb',
-                color: sentiment === 'negative' ? '#dc2626' : '#9ca3af',
-              }}
-            >
-              Negative
-            </button>
-            <button
-              type="button"
-              onClick={() => { setSentiment('positive'); setSaved(false) }}
-              className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors"
-              style={{
-                background: sentiment === 'positive' ? '#f0fdf4' : 'transparent',
-                borderColor: sentiment === 'positive' ? '#22c55e' : '#e5e7eb',
-                color: sentiment === 'positive' ? '#16a34a' : '#9ca3af',
-              }}
-            >
-              Positive
-            </button>
-            {sentiment && (
-              <span className="text-[12px] font-bold ml-2" style={{ color: heatPreview > 0 ? '#f97316' : '#9ca3af' }}>
-                🔥 {heatPreview} heat
-              </span>
-            )}
+          <div className="space-y-1.5">
+            {scripts.map(s => {
+              const isHearted = heartedScripts[s.script_submission_id]
+              return (
+                <button
+                  key={s.script_submission_id}
+                  type="button"
+                  onClick={() => !isAlreadyComplete && handleHeartToggle(s.script_submission_id)}
+                  disabled={isAlreadyComplete}
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-lg border transition-colors disabled:opacity-60"
+                  style={{
+                    background: isHearted ? '#fef2f2' : 'transparent',
+                    borderColor: isHearted ? '#f87171' : '#e5e7eb',
+                  }}
+                >
+                  <span style={{ color: isHearted ? '#ef4444' : '#d1d5db' }} className="text-[16px]">
+                    {isHearted ? '❤️' : '🤍'}
+                  </span>
+                  <span className="text-[12px] font-medium text-gray-700 truncate">{s.title || 'Untitled'}</span>
+                </button>
+              )
+            })}
           </div>
-          {sentiment && heatPreview > 0 && (
-            <p className="text-[11px] text-gray-400 mt-1 m-0">
-              {STAGE_HEAT[stage] ? `+${STAGE_HEAT[stage]} from ${stage === 'shortlisted' ? 'shortlist' : stage === 'partner_match' ? 'partner match' : stage}` : ''}
-              {STAGE_HEAT[stage] && sentiment === 'positive' ? ' + ' : ''}
-              {sentiment === 'positive' ? '+1 positive sentiment' : ''}
+          {heartedCount > 0 && (
+            <p className="text-[11px] text-gray-400 mt-2 m-0">
+              🔥 {heatPreview} heat preview
+              ({heartedCount} script{heartedCount > 1 ? 's' : ''}
+              {STAGE_HEAT[stage] ? ` + ${STAGE_HEAT[stage]} ${stage === 'shortlisted' ? 'shortlist' : 'partner match'} bonus` : ''})
+            </p>
+          )}
+          {heartedCount === 0 && !isAlreadyComplete && (
+            <p className="text-[11px] text-orange-500 mt-2 m-0">
+              Heart at least one script to shortlist or pass
             </p>
           )}
         </div>
       )}
 
-      {/* Already completed — show what was recorded */}
-      {isAlreadyComplete && currentSentiment && (
+      {/* Already completed — show heat awarded */}
+      {isAlreadyComplete && currentHeatEarned > 0 && (
         <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
           <span className="text-[12px] text-gray-500">
-            Sentiment: <span className="font-semibold" style={{ color: currentSentiment === 'positive' ? '#16a34a' : '#dc2626' }}>
-              {currentSentiment}
-            </span>
-            {currentHeatEarned > 0 && (
-              <span className="ml-2 font-bold" style={{ color: '#f97316' }}>🔥 {currentHeatEarned} heat awarded</span>
-            )}
+            <span className="font-bold" style={{ color: '#f97316' }}>🔥 {currentHeatEarned} heat awarded</span>
           </span>
         </div>
       )}
@@ -367,10 +378,10 @@ export function TagFeedbackForm({
           <>
             <button
               onClick={handlePass}
-              disabled={saving || !sentiment}
+              disabled={saving}
               className="inline-flex items-center text-[13px] font-semibold text-white bg-green-600 hover:bg-green-700 disabled:opacity-50 px-4 py-2 rounded-lg transition-colors"
             >
-              {saving ? 'Saving...' : 'Pass'}
+              {saving ? 'Saving...' : 'Complete review'}
             </button>
             <button
               onClick={handleSaveDraft}
