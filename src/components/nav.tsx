@@ -118,6 +118,17 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
+                  {userData && !userData.profile.isPro && (
+                    <button
+                      onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+                      className="ml-2 text-[12px] font-semibold px-3 py-1.5 rounded-lg transition-all duration-150 hover:brightness-110 cursor-pointer border-0 text-white"
+                      style={{
+                        background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
+                      }}
+                    >
+                      Become a Member
+                    </button>
+                  )}
                   <div className="ml-2">
                     <NewActionMenu />
                   </div>
@@ -144,6 +155,15 @@ export default function Nav({ userData }: NavProps = {}) {
 
               {/* Mobile logged-in — consideration CTA always visible + hamburger */}
               <div className="md:hidden flex items-center gap-2">
+                {userData && !userData.profile.isPro && (
+                  <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+                    className="text-[11px] font-semibold px-2.5 py-1 rounded-md cursor-pointer border-0 text-white"
+                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                  >
+                    Member
+                  </button>
+                )}
                 <NewActionMenu />
                 {userData && (
                   <NavUserMenu

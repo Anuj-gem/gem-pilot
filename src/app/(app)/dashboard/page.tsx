@@ -19,6 +19,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
+import { DashboardUpgradeBanner } from '@/components/dashboard/dashboard-upgrade-banner'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { DashboardScriptCard } from '@/components/dashboard/dashboard-script-card'
@@ -240,7 +241,7 @@ export default async function DashboardPage() {
 
   return (
     <>
-      {isTrial && <UpgradeModalListener />}
+      {/* UpgradeModalListener is in app layout — no duplicate needed here */}
       {submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
@@ -278,6 +279,8 @@ export default async function DashboardPage() {
             </svg>
           </Link>
         </div>
+
+        {isTrial && <DashboardUpgradeBanner />}
 
         {/* ── STAT CARDS ───────────────────────────────── */}
         <div className="grid grid-cols-3 gap-3">
