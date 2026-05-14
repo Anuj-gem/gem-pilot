@@ -23,7 +23,7 @@ export function LandingPro() {
               className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
               style={{ color: 'var(--gem-gold)' }}
             >
-              Simple pricing
+              Members only
             </p>
             <h2
               className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-2"
@@ -36,11 +36,11 @@ export function LandingPro() {
             </p>
 
             <p className="text-[14px] text-[var(--gem-gray-300)] m-0 mb-8 leading-relaxed max-w-[440px]">
-              Everything GEM has to offer. Unlimited script evaluations,
-              unlimited opportunity applications, real feedback from our
-              partner network, and your heat score tracking it all.
-              Way cheaper than a single coverage read anywhere else —
-              and it actually leads somewhere.
+              GEM is a membership network. Your subscription gets you
+              full access to evaluations, opportunities, partner feedback,
+              and direct matching — everything you need to get your work
+              in front of the right people. Way cheaper than a single
+              coverage read anywhere else, and it actually leads somewhere.
             </p>
 
             <button
@@ -69,10 +69,8 @@ export function LandingPro() {
             {[
               'Unlimited script evaluations',
               'Apply to all live opportunities',
-              'Real feedback from partners on every submission',
-              'Heat score that builds as partners engage',
-              'Dashboard tracking all your scripts and applications',
-              "Portfolio review by GEM's development team",
+              'Get your heat score',
+              'Get matched directly to industry partners',
             ].map(item => (
               <div
                 key={item}

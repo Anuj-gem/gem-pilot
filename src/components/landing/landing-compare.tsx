@@ -1,5 +1,5 @@
 // LandingCompare — v16.
-// "We're not script coverage" — competitor comparison + value prop.
+// "We're not script coverage" — GEM vs The Black List.
 'use client'
 
 export function LandingCompare() {
@@ -24,14 +24,14 @@ export function LandingCompare() {
           and the only thing we charge for is access to real opportunities.
         </p>
 
-        {/* Comparison table */}
+        {/* Comparison table — GEM vs The Black List */}
         <div
           className="rounded-2xl overflow-hidden mb-10"
           style={{ border: '1px solid var(--gem-gray-700)' }}
         >
           {/* Header row */}
           <div
-            className="grid grid-cols-4 text-center"
+            className="grid grid-cols-3 text-center"
             style={{ background: 'var(--gem-gray-900)' }}
           >
             <div className="p-3 text-left">
@@ -45,9 +45,6 @@ export function LandingCompare() {
             <div className="p-3" style={{ borderLeft: '1px solid var(--gem-gray-700)' }}>
               <span className="text-[13px] font-semibold text-[var(--gem-gray-300)]">The Black List</span>
             </div>
-            <div className="p-3" style={{ borderLeft: '1px solid var(--gem-gray-700)' }}>
-              <span className="text-[13px] font-semibold text-[var(--gem-gray-300)]">Coverfly</span>
-            </div>
           </div>
 
           {/* Rows */}
@@ -56,36 +53,31 @@ export function LandingCompare() {
               label: 'Script evaluation',
               gem: 'Free',
               blacklist: '$75 per read',
-              coverfly: 'Varies by contest',
             },
             {
               label: 'Monthly cost',
               gem: '$20/mo',
               blacklist: '$30/mo hosting',
-              coverfly: 'Free (limited)',
             },
             {
               label: 'Feedback quality',
-              gem: 'Detailed, 5-dimension report with development notes',
+              gem: 'Detailed report with development notes',
               blacklist: 'Brief reader evaluation',
-              coverfly: 'Contest-dependent',
             },
             {
               label: 'Access to partners',
-              gem: 'Direct matching to producers, lit reps, financiers',
-              blacklist: 'Industry browsing if score 8+',
-              coverfly: 'No direct access',
+              gem: 'Direct — matched to producers and lit reps',
+              blacklist: 'Passive — industry can browse if score 8+',
             },
             {
               label: 'Ongoing feedback',
               gem: 'Heat score + real partner feedback on every submission',
               blacklist: 'One-time read',
-              coverfly: 'Contest placement only',
             },
           ].map((row, i) => (
             <div
               key={row.label}
-              className="grid grid-cols-4"
+              className="grid grid-cols-3"
               style={{
                 background: i % 2 === 0 ? 'var(--gem-gray-800)' : 'var(--gem-gray-900)',
                 borderTop: '1px solid var(--gem-gray-700)',
@@ -112,14 +104,6 @@ export function LandingCompare() {
                   {row.blacklist}
                 </span>
               </div>
-              <div
-                className="p-3"
-                style={{ borderLeft: '1px solid var(--gem-gray-700)' }}
-              >
-                <span className="text-[13px] text-[var(--gem-gray-400)]">
-                  {row.coverfly}
-                </span>
-              </div>
             </div>
           ))}
         </div>
@@ -128,10 +112,9 @@ export function LandingCompare() {
         <div className="max-w-[600px]">
           <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
             The Black List charges $75 per evaluation and $30/month just to host
-            your script. Coverfly locks feedback behind contest entry fees. GEM gives
-            you a better evaluation for free — and $20/month gets you unlimited access
-            to real opportunities with real feedback from real people. No per-script
-            charges. No entry fees. No gatekeeping.
+            your script. GEM gives you a better evaluation for free — and $20/month
+            gets you unlimited access to real opportunities with real feedback from
+            real people. No per-script charges. No gatekeeping.
           </p>
         </div>
       </div>

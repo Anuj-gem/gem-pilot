@@ -10,6 +10,7 @@ import { LandingHero } from '@/components/landing/landing-hero'
 import { LandingCredibility } from '@/components/landing/landing-credibility'
 import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
 import { LandingCompare } from '@/components/landing/landing-compare'
+import { LandingHeat } from '@/components/landing/landing-heat'
 import { LandingPro } from '@/components/landing/landing-pro'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
@@ -67,6 +68,10 @@ export default async function Home({
       {/* ── Competitor comparison ── */}
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
       <LandingCompare />
+
+      {/* ── Heat score ── */}
+      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingHeat />
 
       {/* ── Membership ── */}
       <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />

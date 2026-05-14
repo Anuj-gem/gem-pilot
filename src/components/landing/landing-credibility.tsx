@@ -85,31 +85,23 @@ export function LandingCredibility() {
 
             <div className="h-px mt-3 mb-3" style={{ background: 'var(--gem-gray-700)' }} />
 
-            {/* Dimension scores preview */}
-            <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-2 uppercase tracking-wider font-semibold">
-              Scored across 5 dimensions
-            </p>
-            {[
-              { label: 'Audience appeal', score: 8.2 },
-              { label: 'Character strength', score: 7.9 },
-              { label: 'Creative originality', score: 7.4 },
-              { label: 'Conceptual hook', score: 8.0 },
-              { label: 'Narrative momentum', score: 6.8 },
-            ].map(d => (
-              <div key={d.label} className="flex items-center gap-2 mb-1.5">
-                <span className="text-[12px] text-[var(--gem-gray-300)] w-[140px] shrink-0">{d.label}</span>
-                <div className="flex-1 h-[6px] rounded-full overflow-hidden" style={{ background: 'var(--gem-gray-700)' }}>
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${d.score * 10}%`,
-                      background: 'var(--gem-accent)',
-                    }}
-                  />
-                </div>
-                <span className="text-[12px] font-semibold text-[var(--gem-gray-300)] w-[28px] text-right">{d.score}</span>
-              </div>
-            ))}
+            {/* Quick-read production facts */}
+            <div className="flex flex-wrap gap-2">
+              {[
+                'Production complexity: High',
+                'Casting complexity: High',
+                'Location count: 14',
+                'VFX level: Moderate',
+              ].map(tag => (
+                <span
+                  key={tag}
+                  className="text-[11px] font-medium px-2.5 py-1 rounded-lg"
+                  style={{ background: 'var(--gem-gray-900)', color: 'var(--gem-gray-300)', border: '1px solid var(--gem-gray-700)' }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             <p className="text-[11px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
               From a real GEM evaluation report
@@ -127,8 +119,8 @@ export function LandingCredibility() {
                   100% free. No strings attached.
                 </h3>
                 <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-relaxed">
-                  Every writer gets a full evaluation — scored across five dimensions,
-                  with detailed notes on what&apos;s working and where to develop. No paywall.
+                  Every writer gets a full evaluation with detailed notes on
+                  what&apos;s working and where to develop. No paywall.
                   No limited preview. The full report, completely free.
                 </p>
               </div>
