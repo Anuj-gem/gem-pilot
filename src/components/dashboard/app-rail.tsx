@@ -26,7 +26,7 @@ export function AppRail({ children, profile }: Props) {
   const initial = (fullName?.[0] || 'W').toUpperCase()
 
   const links = [
-    { href: '/script', label: 'Dashboard', icon: (
+    { href: '/dashboard', label: 'Dashboard', icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
       </svg>
@@ -54,7 +54,7 @@ export function AppRail({ children, profile }: Props) {
   ]
 
   function isActive(href: string) {
-    if (href === '/script') return pathname === '/script' || pathname === '/dashboard'
+    if (href === '/dashboard') return pathname === '/script' || pathname === '/dashboard'
     return pathname.startsWith(href)
   }
 

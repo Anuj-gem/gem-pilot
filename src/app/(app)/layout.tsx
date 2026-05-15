@@ -193,9 +193,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      <Nav userData={navUserData} />
-      {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
-          Backend settings + profile columns unchanged for production. */}
+      {/* Top nav removed for logged-in users — sidebar handles navigation */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
         <AppRail profile={navUserData.profile}>{children}</AppRail>
       </div>
