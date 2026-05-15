@@ -51,7 +51,7 @@ export function LandingHeroSection() {
           }}
         >
           {/* Back / close button */}
-          <div className="max-w-lg mx-auto w-full px-4 pt-6">
+          <div className="max-w-2xl mx-auto w-full px-4 sm:px-6 pt-6">
             <button
               onClick={() => setShowOnboarding(false)}
               className="flex items-center gap-1.5 text-sm transition-colors hover:opacity-100"
@@ -65,12 +65,12 @@ export function LandingHeroSection() {
           </div>
 
           {/* Onboarding in a white card */}
-          <div className="flex-1 flex items-start justify-center px-4 pb-12">
+          <div className="flex-1 flex items-start justify-center px-4 sm:px-6 pb-12">
             <div
-              className="w-full max-w-lg mt-4 rounded-2xl"
+              className="w-full max-w-2xl mt-4 rounded-2xl overflow-hidden"
               style={{
                 background: '#ffffff',
-                boxShadow: '0 8px 40px rgba(0,0,0,0.2)',
+                boxShadow: '0 0 0 1px rgba(255,255,255,0.08), 0 8px 40px rgba(0,0,0,0.25), 0 0 80px rgba(124,58,237,0.08)',
               }}
             >
               <OnboardingClient />

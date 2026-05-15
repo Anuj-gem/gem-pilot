@@ -67,6 +67,7 @@ export function OnboardingClient() {
   // Global state
   const [step, setStep] = useState<Step>('name')
   const [firstName, setFirstName] = useState('')
+  const [intent, setIntent] = useState<string | null>(null)
 
   // Upload state
   const [scripts, setScripts] = useState<UploadedScript[]>([])
@@ -387,17 +388,17 @@ export function OnboardingClient() {
         }
       `}</style>
       <div className="py-12 px-4" key={animKey} style={fadeSlide}>
-      {/* Step 1: Name */}
+      {/* Step 1: Name + Intent */}
       {step === 'name' && (
-        <div className="mx-auto max-w-md">
+        <div className="mx-auto max-w-lg">
             <h1
-              className="text-[28px] font-bold text-gray-900 text-center mb-2"
+              className="text-[32px] font-bold text-gray-900 text-center mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Hey. What&apos;s your first name?
+              What should we call you?
             </h1>
             <p className="text-[15px] text-gray-500 text-center mb-8">
-              We use this to personalize your reports.
+              Just your first name is fine.
             </p>
 
             <input
@@ -406,26 +407,52 @@ export function OnboardingClient() {
               onChange={e => setFirstName(e.target.value)}
               placeholder="First name"
               autoFocus
-              className="w-full text-[17px] text-center px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-600 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors"
+              className="w-full text-[17px] text-center px-5 py-3.5 rounded-xl border border-gray-200 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/20 transition-all"
               onKeyDown={e => {
-                if (e.key === 'Enter' && firstName.trim()) setStep('upload')
+                if (e.key === 'Enter' && firstName.trim() && intent) setStep('upload')
               }}
             />
 
+            {/* Intent pills */}
+            <div className="mt-8">
+              <p className="text-[15px] font-medium text-gray-900 text-center mb-3">
+                What brings you here?
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  { value: 'discover', label: 'Get my script discovered' },
+                  { value: 'evaluate', label: 'Evaluate my work' },
+                  { value: 'explore', label: 'Just exploring' },
+                ].map(option => (
+                  <button
+                    key={option.value}
+                    onClick={() => setIntent(option.value)}
+                    className={`px-4 py-2.5 rounded-xl text-[14px] font-medium transition-all ${
+                      intent === option.value
+                        ? 'bg-purple-600 text-white shadow-md shadow-purple-600/20'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <button
-              onClick={() => { if (firstName.trim()) setStep('upload') }}
-              disabled={!firstName.trim()}
-              className="w-full mt-4 py-3 rounded-xl text-white font-medium text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              onClick={() => { if (firstName.trim() && intent) setStep('upload') }}
+              disabled={!firstName.trim() || !intent}
+              className="w-full mt-8 py-3.5 rounded-xl text-white font-semibold text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-lg shadow-purple-600/20"
             >
               Continue
             </button>
 
-            <div className="mt-6 rounded-xl border px-4 py-3 flex items-start gap-3" style={{ backgroundColor: '#f0fdf4', borderColor: '#bbf7d0' }}>
-              <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <div className="mt-6 rounded-xl border px-4 py-3 flex items-start gap-3" style={{ backgroundColor: '#f9fafb', borderColor: '#e5e7eb' }}>
+              <svg className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
               </svg>
-              <p className="text-[13px] text-green-800 leading-relaxed">
-                Privacy first. Delete your scripts or account anytime. You control what&apos;s visible.
+              <p className="text-[13px] text-gray-500 leading-relaxed">
+                Your scripts stay private. You control what&apos;s visible.
               </p>
             </div>
           </div>
@@ -435,13 +462,13 @@ export function OnboardingClient() {
       {step === 'upload' && (
         <div className="mx-auto max-w-lg">
             <h1
-              className="text-[28px] font-bold text-gray-900 text-center mb-2"
+              className="text-[32px] font-bold text-gray-900 text-center mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Evaluate your scripts
+              Upload your script
             </h1>
             <p className="text-[15px] text-gray-500 text-center mb-8">
-              Upload a PDF and your evaluation starts immediately.
+              Drop a PDF and your evaluation starts immediately.
             </p>
 
             {/* Uploaded scripts list */}
@@ -548,7 +575,7 @@ export function OnboardingClient() {
             {scripts.some(s => s.status === 'completed') && (
               <button
                 onClick={() => setStep('results')}
-                className="w-full mt-4 py-3 rounded-xl text-white font-medium text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all"
+                className="w-full mt-4 py-3.5 rounded-xl text-white font-semibold text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all shadow-lg shadow-purple-600/20"
               >
                 View results
               </button>
@@ -558,7 +585,7 @@ export function OnboardingClient() {
 
       {/* Step 3: Results */}
       {step === 'results' && selectedScript && (
-        <div className="pb-20">
+        <div className="pb-4">
             <div className="w-full max-w-lg mx-auto">
               {/* Script selector (2 scripts) */}
               {scripts.length === 2 && (
@@ -724,15 +751,15 @@ export function OnboardingClient() {
               </div>
             </div>
 
-          {/* Fixed bottom bar */}
-          <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 z-50">
+          {/* Bottom bar */}
+          <div className="border-t border-gray-200 px-4 py-4 mt-2">
             <div className="max-w-lg mx-auto flex items-center justify-between">
               <span className="text-[13px] text-gray-500">
                 {scripts.length} of 2 free evaluations used
               </span>
               <button
                 onClick={() => setStep('account')}
-                className="px-6 py-2.5 rounded-xl text-white font-medium text-[14px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all"
+                className="px-6 py-2.5 rounded-xl text-white font-semibold text-[14px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all shadow-lg shadow-purple-600/20"
               >
                 Save your scripts
               </button>
@@ -743,9 +770,9 @@ export function OnboardingClient() {
 
       {/* Step 4: Account */}
       {step === 'account' && (
-        <div className="mx-auto max-w-md">
+        <div className="mx-auto max-w-lg">
             <h1
-              className="text-[28px] font-bold text-gray-900 text-center mb-2"
+              className="text-[32px] font-bold text-gray-900 text-center mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
             >
               Save your scripts
@@ -803,7 +830,7 @@ export function OnboardingClient() {
             <button
               onClick={handleEmailSignup}
               disabled={!email || !password || accountLoading}
-              className="w-full mt-4 py-3 rounded-xl text-white font-medium text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="w-full mt-4 py-3.5 rounded-xl text-white font-semibold text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-lg shadow-purple-600/20"
             >
               {accountLoading ? 'Creating account...' : 'Create account'}
             </button>
