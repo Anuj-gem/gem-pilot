@@ -32,7 +32,7 @@ export function EvaluatingClient() {
 
   // Redirect once both signup AND eval are done
   const goToDashboard = useCallback(() => {
-    router.push('/onboarding')
+    router.push('/script')
     router.refresh()
   }, [router])
 

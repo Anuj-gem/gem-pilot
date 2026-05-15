@@ -117,8 +117,8 @@ export function OnboardingAccountClient() {
       keepalive: true,
     }).catch(() => {})
 
-    // opportunities-v1: skip privacy/profile — straight to dashboard.
-    router.push('/dashboard?just_signed_up=1')
+    // opportunities-v1: skip privacy/profile — straight to script page.
+    router.push('/script')
   }
 
   const checklistItems: ChecklistItem[] = [
