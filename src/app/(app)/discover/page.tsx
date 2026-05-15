@@ -1,14 +1,10 @@
-// /discover — shell page.
-// Anuj 2026-05-14 v0.4.
+// /discover — renders within the unified OnboardingClient app shell.
+// The standalone DiscoverShell is preserved in discover-shell.tsx for reference.
 
-import { createClient } from '@/lib/supabase-server'
-import { DiscoverShell } from './discover-shell'
+import { OnboardingClient } from '../onboarding/onboarding-client'
 
 export const dynamic = 'force-dynamic'
 
 export default async function DiscoverPage() {
-  const auth = await createClient()
-  const { data: { user } } = await auth.auth.getUser()
-
-  return <DiscoverShell loggedIn={!!user} />
+  return <OnboardingClient />
 }

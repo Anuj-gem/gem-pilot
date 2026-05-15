@@ -102,21 +102,23 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // ── URL ↔ activePage sync ──────────────────────────────────────
   // Each page has a real URL so links are shareable and the browser
   // back/forward buttons work. The mapping:
-  //   /onboarding            → new-script
-  //   /onboarding/history    → my-history
-  //   /onboarding/discover   → discover
-  //   /onboarding/opportunities → opportunities
+  //   /home            → new-script  (default logged-in page)
+  //   /history         → my-history
+  //   /discover        → discover
+  //   /opportunities   → opportunities
+  //   /onboarding      → new-script  (fallback for onboarding entry)
   const PAGE_TO_PATH: Record<string, string> = {
-    'new-script': '/onboarding',
-    'my-history': '/onboarding/history',
-    'discover': '/onboarding/discover',
-    'opportunities': '/onboarding/opportunities',
+    'new-script': '/home',
+    'my-history': '/history',
+    'discover': '/discover',
+    'opportunities': '/opportunities',
   }
   const PATH_TO_PAGE: Record<string, 'new-script' | 'my-history' | 'discover' | 'opportunities'> = {
+    '/home': 'new-script',
+    '/history': 'my-history',
+    '/discover': 'discover',
+    '/opportunities': 'opportunities',
     '/onboarding': 'new-script',
-    '/onboarding/history': 'my-history',
-    '/onboarding/discover': 'discover',
-    '/onboarding/opportunities': 'opportunities',
   }
 
   // Read initial page from URL
@@ -130,7 +132,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // Wrapped setter: updates state AND pushes URL
   const setActivePage = useCallback((page: typeof activePage) => {
     setActivePageRaw(page)
-    const path = PAGE_TO_PATH[page] || '/onboarding'
+    const path = PAGE_TO_PATH[page] || '/home'
     if (window.location.pathname !== path) {
       window.history.pushState({ page }, '', path)
     }
@@ -468,12 +470,11 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   async function handleGoogleSignup() {
     trackSignupStart()
     const origin = window.location.origin
-    // Redirect back to current page after OAuth, not to /dashboard
-    const currentPath = window.location.pathname + window.location.search
+    // Redirect to /home after OAuth — the main logged-in page
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(currentPath)}`,
+        redirectTo: `${origin}/auth/callback?next=/home`,
       },
     })
   }

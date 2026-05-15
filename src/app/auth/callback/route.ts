@@ -7,7 +7,7 @@ import { sendEmail } from '@/lib/email'
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
-  const next = searchParams.get('next') ?? '/submit'
+  const next = searchParams.get('next') ?? '/home'
   // Surface the upstream OAuth error if Google bounced back with one
   // (e.g. user denied consent, invalid client). Otherwise we lose all
   // context and the user gets a generic "auth_callback_error".
