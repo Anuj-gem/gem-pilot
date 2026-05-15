@@ -1,4 +1,4 @@
-// Landing page — v16 (2026-05-14).
+// Landing page — v17 (2026-05-14).
 //
 // Hero → Free Evaluation → Opportunities → Competitor Comparison → Membership → Final CTA.
 
@@ -54,30 +54,32 @@ export default async function Home({
       <LandingTracking />
       <Nav />
 
-      {/* ── Above fold ── */}
+      {/* ── Above fold: dark cinematic hero (handles its own bg) ── */}
       <LandingHero />
 
-      {/* ── How it works: Free evaluation ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingCredibility />
+      {/* ── Below fold: light-themed sections ── */}
+      <div style={{ background: '#F7F8FA', color: '#18181b' }}>
+        {/* ── How it works: Free evaluation ── */}
+        <LandingCredibility />
 
-      {/* ── Opportunities ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingOpportunities opportunities={opportunities} />
+        {/* ── Opportunities ── */}
+        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
+        <LandingOpportunities opportunities={opportunities} />
 
-      {/* ── Competitor comparison ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingCompare />
+        {/* ── Competitor comparison ── */}
+        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
+        <LandingCompare />
 
-      {/* ── Heat score ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingHeat />
+        {/* ── Heat score ── */}
+        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
+        <LandingHeat />
 
-      {/* ── Membership ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingPro />
+        {/* ── Membership ── */}
+        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
+        <LandingPro />
+      </div>
 
-      {/* ── Final CTA ── */}
+      {/* ── Final CTA (dark band) ── */}
       <LandingFinalCTA />
 
       <ScriptUploadModal redirectTo="/evaluating" />
