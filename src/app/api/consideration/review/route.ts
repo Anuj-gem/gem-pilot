@@ -82,16 +82,17 @@ export async function POST(req: NextRequest) {
         const currentStage = currentCon.review_stage || 'pending'
         const stageBonus = STAGE_HEAT[currentStage] || 0
         const heartCount = heartedScripts?.length || 0
-        const totalHeat = heartCount + stageBonus // +1 per hearted script + stage bonus
+        const totalHeat = heartCount * (1 + stageBonus) // each hearted script gets (1 + stage bonus)
 
         stageUpdate.heat_earned = totalHeat
 
-        // Award +1 heat to each hearted script
+        // Award (1 + stage bonus) heat to each hearted script
+        const perScriptHeat = 1 + stageBonus
         if (heartedScripts && heartedScripts.length > 0) {
           for (const hs of heartedScripts) {
             await service.rpc('increment_script_heat', {
               p_script_id: hs.script_submission_id,
-              p_amount: 1,
+              p_amount: perScriptHeat,
             }).then(async (res) => {
               // Fallback if RPC doesn't exist yet
               if (res.error) {
@@ -102,7 +103,7 @@ export async function POST(req: NextRequest) {
                   .single()
                 await service
                   .from('script_submissions')
-                  .update({ heat_score: (script?.heat_score || 0) + 1 })
+                  .update({ heat_score: (script?.heat_score || 0) + perScriptHeat })
                   .eq('id', hs.script_submission_id)
               }
             })

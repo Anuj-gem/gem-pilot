@@ -159,8 +159,8 @@ const STAGE_HEAT: Record<string, number> = {
 }
 
 function calcHeatPreview(currentStage: string, heartedCount: number): number {
-  const stageHeat = STAGE_HEAT[currentStage] || 0
-  return heartedCount + stageHeat
+  const stageBonus = STAGE_HEAT[currentStage] || 0
+  return heartedCount * (1 + stageBonus)
 }
 
 interface ScriptItem {
@@ -347,8 +347,8 @@ export function TagFeedbackForm({
           {heartedCount > 0 && (
             <p className="text-[11px] text-gray-400 mt-1.5 m-0">
               🔥 {heatPreview} heat
-              ({heartedCount} script{heartedCount > 1 ? 's' : ''}
-              {STAGE_HEAT[stage] ? ` + ${STAGE_HEAT[stage]} ${stage === 'shortlisted' ? 'shortlist' : 'partner match'} bonus` : ''})
+              ({heartedCount} × {1 + (STAGE_HEAT[stage] || 0)} per script
+              {STAGE_HEAT[stage] ? ` — includes ${stage === 'shortlisted' ? 'shortlist' : 'partner match'} bonus` : ''})
             </p>
           )}
           {heartedCount === 0 && !isAlreadyComplete && (
