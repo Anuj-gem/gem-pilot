@@ -197,7 +197,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
           Backend settings + profile columns unchanged for production. */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
-        <AppRail>{children}</AppRail>
+        <AppRail profile={navUserData.profile}>{children}</AppRail>
       </div>
       <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" />
