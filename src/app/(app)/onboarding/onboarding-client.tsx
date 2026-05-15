@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
-import Link from 'next/link'
+// Link import removed — report opens inline via iframe now
 
 // ─── Types ──────────────────────────────────────────────────────────
 
@@ -101,6 +101,10 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
   // Sidebar active page
   const [activePage, setActivePage] = useState<'new-script' | 'my-history' | 'discover' | 'opportunities'>('new-script')
+
+  // Inline report view — when set, center panel shows report iframe
+  const [activeReportEvalId, setActiveReportEvalId] = useState<string | null>(null)
+  const [reportPreviousPage, setReportPreviousPage] = useState<typeof activePage>('new-script')
 
   // History page tab: 'scripts' or 'applications'
   const [historyTab, setHistoryTab] = useState<'scripts' | 'applications'>('scripts')
@@ -771,13 +775,16 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           <div className="flex items-center gap-5 mt-4">
             {script.evaluation && script.evalId && (
               authedUser ? (
-                <Link
-                  href={`/report/${script.evalId}`}
-                  className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
+                <button
+                  onClick={() => {
+                    setReportPreviousPage(activePage)
+                    setActiveReportEvalId(script.evalId!)
+                  }}
+                  className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 bg-transparent border-0 cursor-pointer p-0"
                 >
                   View full report
                   <span className="ml-0.5">&rarr;</span>
-                </Link>
+                </button>
               ) : (
                 <button
                   onClick={() => setShowAccountForm(true)}
@@ -1417,7 +1424,25 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </div>
           </div>
 
-          <div className="px-6 lg:px-10 py-6">
+          {/* ── Inline report iframe ── */}
+          {activeReportEvalId && (
+            <div className="relative" style={{ height: 'calc(100vh - 80px)' }}>
+              <button
+                onClick={() => setActiveReportEvalId(null)}
+                className="absolute top-3 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-200 text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-colors cursor-pointer"
+                aria-label="Close report"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+              </button>
+              <iframe
+                src={`/report/${activeReportEvalId}?embedded=1`}
+                className="w-full h-full border-0 rounded-b-2xl"
+                title="Script Report"
+              />
+            </div>
+          )}
+
+          {!activeReportEvalId && <div className="px-6 lg:px-10 py-6">
             {/* ── Page content based on activePage ── */}
             <div key={`${activePage}-${animKey}`} style={fadeSlide}>
 
@@ -2119,7 +2144,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               )}
 
             </div>
-          </div>
+          </div>}
         </main>
       </div>
 

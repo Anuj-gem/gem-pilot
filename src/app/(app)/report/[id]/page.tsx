@@ -487,6 +487,29 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {/* Nav is rendered by the (app) layout. Report sits in the
           full-width canvas (rail is hidden on /report by AppRail) so
           the deep-read column gets the page to itself. */}
+      {embedded && (
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* Hide (app) layout chrome when embedded in onboarding iframe.
+             data-embedded is set by the EmbeddedModeInit script below. */
+          [data-embedded] > nav { display: none !important; }
+          [data-embedded] .max-w-\\[1280px\\] { max-width: 100% !important; padding: 0 !important; }
+          [data-embedded] .max-w-6xl { max-width: 100% !important; padding: 0 !important; }
+        ` }} />
+      )}
+      {embedded && (
+        <script dangerouslySetInnerHTML={{ __html: `
+          // Mark the top-level layout wrapper so CSS can target it
+          document.addEventListener('DOMContentLoaded', function() {
+            var el = document.querySelector('.min-h-screen');
+            if (el) el.setAttribute('data-embedded', '1');
+          });
+          // Also run immediately in case DOMContentLoaded already fired
+          (function() {
+            var el = document.querySelector('.min-h-screen');
+            if (el) el.setAttribute('data-embedded', '1');
+          })();
+        ` }} />
+      )}
       {justSubscribed === 'true' && <PostUpgradeEmail />}
       {hasExpiry && !isExpired && (
         <ExpiryCountdown expiresAt={submission.expires_at!} evaluationId={id} />
@@ -495,8 +518,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 pb-24">
-        {/* Back link — was Community, now Dashboard (opportunities-v1). */}
-        {user && (
+        {/* Back link — was Community, now Dashboard (opportunities-v1). Hidden in embedded mode. */}
+        {user && !embedded && (
           <div className="gem-no-print mb-4">
             <Link
               href="/dashboard"
