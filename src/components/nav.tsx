@@ -43,11 +43,17 @@ export default function Nav({ userData }: NavProps = {}) {
   const pathname = usePathname()
   const router = useRouter()
   const supabase = createClient()
-  const [user, setUser] = useState<{ id: string } | null>(null)
+  // Use userData (server-provided) as the instant auth signal so we never
+  // flash logged-out UI while the client-side check resolves.
+  const [clientUser, setClientUser] = useState<{ id: string } | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setUser(data.user))
+    if (!userData) {
+      supabase.auth.getUser().then(({ data }) => setClientUser(data.user))
+    }
   }, [])
+
+  const isLoggedIn = !!userData || !!clientUser
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
@@ -58,7 +64,7 @@ export default function Nav({ userData }: NavProps = {}) {
   // Nav tabs — same 3 links for both logged-in and logged-out.
   // Only difference: logged-in "Home" points to /dashboard.
   const navLinks = [
-    { href: user ? '/dashboard' : '/', label: user ? 'Dashboard' : 'Home', icon: LayoutDashboard },
+    { href: isLoggedIn ? '/dashboard' : '/', label: isLoggedIn ? 'Dashboard' : 'Home', icon: LayoutDashboard },
     { href: '/discover', label: 'Discover', icon: Compass },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
   ]
@@ -72,7 +78,7 @@ export default function Nav({ userData }: NavProps = {}) {
       <div className="h-14" aria-hidden />
       <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href={user ? '/dashboard' : '/'} className="flex items-center gap-2">
+          <Link href={isLoggedIn ? '/dashboard' : '/'} className="flex items-center gap-2">
             <span
               aria-hidden="true"
               className="inline-block w-3 h-3 rotate-45"
@@ -84,7 +90,7 @@ export default function Nav({ userData }: NavProps = {}) {
             <span className="text-lg font-bold tracking-tight">GEM</span>
           </Link>
 
-          {user ? (
+          {isLoggedIn ? (
             <>
               {/* Desktop logged-in — flat nav links on the right */}
               <div className="hidden md:flex flex-1 items-center justify-end ml-6">
@@ -232,7 +238,7 @@ export default function Nav({ userData }: NavProps = {}) {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="md:hidden border-t border-[var(--gem-gray-700)] px-4 py-3 space-y-3">
-            {user ? (
+            {isLoggedIn ? (
               <>
                 {navLinks.map(link => (
                   <NavMenuRow
