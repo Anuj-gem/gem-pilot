@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
-// Link import removed — report opens inline via iframe now
+import Link from 'next/link'
 
 // ─── Types ──────────────────────────────────────────────────────────
 
@@ -99,12 +99,52 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [firstName, setFirstName] = useState(initialName || '')
   const [intent, setIntent] = useState<string | null>(initialIntent || null)
 
-  // Sidebar active page
-  const [activePage, setActivePage] = useState<'new-script' | 'my-history' | 'discover' | 'opportunities'>('new-script')
+  // ── URL ↔ activePage sync ──────────────────────────────────────
+  // Each page has a real URL so links are shareable and the browser
+  // back/forward buttons work. The mapping:
+  //   /onboarding            → new-script
+  //   /onboarding/history    → my-history
+  //   /onboarding/discover   → discover
+  //   /onboarding/opportunities → opportunities
+  const PAGE_TO_PATH: Record<string, string> = {
+    'new-script': '/onboarding',
+    'my-history': '/onboarding/history',
+    'discover': '/onboarding/discover',
+    'opportunities': '/onboarding/opportunities',
+  }
+  const PATH_TO_PAGE: Record<string, 'new-script' | 'my-history' | 'discover' | 'opportunities'> = {
+    '/onboarding': 'new-script',
+    '/onboarding/history': 'my-history',
+    '/onboarding/discover': 'discover',
+    '/onboarding/opportunities': 'opportunities',
+  }
 
-  // Inline report view — when set, center panel shows report iframe
-  const [activeReportEvalId, setActiveReportEvalId] = useState<string | null>(null)
-  const [reportPreviousPage, setReportPreviousPage] = useState<typeof activePage>('new-script')
+  // Read initial page from URL
+  const initialPage = (() => {
+    if (typeof window === 'undefined') return 'new-script' as const
+    return PATH_TO_PAGE[window.location.pathname] || 'new-script' as const
+  })()
+
+  const [activePage, setActivePageRaw] = useState<'new-script' | 'my-history' | 'discover' | 'opportunities'>(initialPage)
+
+  // Wrapped setter: updates state AND pushes URL
+  const setActivePage = useCallback((page: typeof activePage) => {
+    setActivePageRaw(page)
+    const path = PAGE_TO_PATH[page] || '/onboarding'
+    if (window.location.pathname !== path) {
+      window.history.pushState({ page }, '', path)
+    }
+  }, [])
+
+  // Listen for back/forward navigation
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      const page = PATH_TO_PAGE[window.location.pathname] || 'new-script'
+      setActivePageRaw(page)
+    }
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [])
 
   // History page tab: 'scripts' or 'applications'
   const [historyTab, setHistoryTab] = useState<'scripts' | 'applications'>('scripts')
@@ -775,16 +815,13 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           <div className="flex items-center gap-5 mt-4">
             {script.evaluation && script.evalId && (
               authedUser ? (
-                <button
-                  onClick={() => {
-                    setReportPreviousPage(activePage)
-                    setActiveReportEvalId(script.evalId!)
-                  }}
-                  className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 bg-transparent border-0 cursor-pointer p-0"
+                <Link
+                  href={`/report/${script.evalId}`}
+                  className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
                 >
                   View full report
                   <span className="ml-0.5">&rarr;</span>
-                </button>
+                </Link>
               ) : (
                 <button
                   onClick={() => setShowAccountForm(true)}
@@ -1424,25 +1461,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </div>
           </div>
 
-          {/* ── Inline report iframe ── */}
-          {activeReportEvalId && (
-            <div className="relative" style={{ height: 'calc(100vh - 80px)' }}>
-              <button
-                onClick={() => setActiveReportEvalId(null)}
-                className="absolute top-3 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-200 text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-colors cursor-pointer"
-                aria-label="Close report"
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
-              </button>
-              <iframe
-                src={`/report/${activeReportEvalId}?embedded=1`}
-                className="w-full h-full border-0 rounded-b-2xl"
-                title="Script Report"
-              />
-            </div>
-          )}
-
-          {!activeReportEvalId && <div className="px-6 lg:px-10 py-6">
+          <div className="px-6 lg:px-10 py-6">
             {/* ── Page content based on activePage ── */}
             <div key={`${activePage}-${animKey}`} style={fadeSlide}>
 
@@ -2144,7 +2163,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               )}
 
             </div>
-          </div>}
+          </div>
         </main>
       </div>
 
