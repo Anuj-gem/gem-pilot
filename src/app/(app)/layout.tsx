@@ -59,7 +59,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // pages via usePathname.
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at, referral_code, bonus_submissions')
+    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at, referral_code, bonus_submissions, heat_score')
     .eq('id', user.id)
     .single()
 
@@ -177,6 +177,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       headline: profile?.headline ?? null,
       avatar_url: profile?.avatar_url ?? null,
       isPro,
+      heatScore: (profile as any)?.heat_score ?? 0,
       referralCode: (profile as any)?.referral_code ?? null,
       bonusSubmissions: (profile as any)?.bonus_submissions ?? 0,
       referralCount,
@@ -194,7 +195,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="min-h-screen" style={{ background: '#13111a' }}>
       <AppRail profile={navUserData.profile} stats={navUserData.stats}>
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-6 pb-28 lg:pb-8">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 pt-6 pb-28 lg:pb-8">
           {children}
         </div>
       </AppRail>
