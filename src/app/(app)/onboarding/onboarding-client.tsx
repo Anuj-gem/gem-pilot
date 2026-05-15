@@ -136,11 +136,21 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     }
   }, [])
 
-  // If we're at /onboarding but user already completed onboarding (has name),
-  // redirect to /script. /onboarding is ONLY for the name step.
+  // URL ↔ step enforcement:
+  // - Name step MUST show at /onboarding (not /script or bare domain)
+  // - Upload/app step MUST show at /script (not /onboarding)
   useEffect(() => {
-    if (window.location.pathname === '/onboarding' && step !== 'name') {
-      window.history.replaceState({ page: 'new-script' }, '', '/script')
+    const path = window.location.pathname
+    if (step === 'name') {
+      // Name step should always be at /onboarding
+      if (path !== '/onboarding' && path !== '/') {
+        window.history.replaceState({}, '', '/onboarding')
+      }
+    } else {
+      // Past name step — if still at /onboarding or bare domain, push to /script
+      if (path === '/onboarding' || path === '/') {
+        window.history.replaceState({ page: 'new-script' }, '', '/script')
+      }
     }
   }, [step])
 
@@ -998,6 +1008,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                 if (e.key === 'Enter' && firstName.trim() && intent) {
                   onNameSubmit?.(firstName.trim(), intent)
                   setStep('upload')
+                  window.history.replaceState({ page: 'new-script' }, '', '/script')
                   onEnterApp?.()
                 }
               }}
@@ -1034,6 +1045,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                 if (firstName.trim() && intent) {
                   onNameSubmit?.(firstName.trim(), intent)
                   setStep('upload')
+                  window.history.replaceState({ page: 'new-script' }, '', '/script')
                   onEnterApp?.()
                 }
               }}
