@@ -21,7 +21,7 @@ import Nav from '@/components/nav'
 import { ScriptUploadModal } from "@/components/script-upload-modal"
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-// AppRail removed — dashboard now uses top nav + inline profile card
+import { AppSidebar } from '@/components/dashboard/app-sidebar'
 import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
@@ -69,6 +69,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     { count: following },
     { count: reviewsGiven },
     { count: scriptCount },
+    { count: appCount },
     { data: ownPubs },
     { data: ownReviews },
   ] = await Promise.all([
@@ -79,6 +80,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     // only (so the rail's number stays consistent with the user's
     // library). Anuj 2026-04-30 cleanup.
     service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null).eq('status', 'completed'),
+    // Application count (considerations with an opportunity_id)
+    service.from('considerations').select('id', { count: 'exact', head: true }).eq('writer_id', user.id).not('opportunity_id', 'is', null),
     // Own most-recent publishes — bare submissions, no embedded join
     // (PostgREST chokes on multi-FK ambiguity to script_evaluations).
     service.from('script_submissions')
@@ -192,11 +195,26 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     recentActivity,
   }
 
+  const sidebarData = {
+    userName: profile?.full_name || 'Writer',
+    avatarUrl: profile?.avatar_url ?? null,
+    headline: profile?.headline ?? null,
+    isPro,
+    scriptCount: scriptCount ?? 0,
+    appCount: appCount ?? 0,
+    heatScore: (profile as any)?.heat_score ?? 0,
+  }
+
   return (
-    <div className="min-h-screen" style={{ background: '#13111a' }}>
+    <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
       <Nav userData={navUserData} />
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 lg:pb-8">
-        {children}
+        <div className="flex gap-8">
+          <AppSidebar {...sidebarData} />
+          <main className="flex-1 min-w-0">
+            {children}
+          </main>
+        </div>
       </div>
       <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" />

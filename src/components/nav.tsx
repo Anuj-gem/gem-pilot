@@ -7,12 +7,10 @@ import { createClient } from '@/lib/supabase-browser'
 import {
   LayoutDashboard,
   Briefcase,
-  FileText,
   LogOut,
   Menu,
   X,
-  Sparkles,
-  BookOpen,
+  Compass,
 } from 'lucide-react'
 import {
   NavUserMenu,
@@ -60,11 +58,9 @@ export default function Nav({ userData }: NavProps = {}) {
   // Nav tabs — same structure for logged-in and logged-out.
   // "Home" points to /dashboard (logged in) or / (logged out).
   const navLinks = [
-    { href: user ? '/dashboard' : '/', label: 'Home', icon: LayoutDashboard },
-    { href: '/scripts', label: 'Scripts', icon: FileText },
-    { href: '/review', label: 'Applications', icon: Sparkles },
+    { href: user ? '/dashboard' : '/', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/discover', label: 'Discover', icon: Compass },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
-    { href: '/blog', label: 'Blog', icon: BookOpen },
   ]
 
   return (
