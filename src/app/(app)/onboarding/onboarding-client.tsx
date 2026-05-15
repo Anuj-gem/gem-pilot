@@ -746,17 +746,22 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               {/* Upload step */}
               {step === 'upload' && (
                 <div>
+                  {/* ── Conversational heading ── */}
                   <h1
                     className="text-[24px] font-bold mb-1"
                     style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
                   >
-                    Submit a script
+                    {scripts.length === 0
+                      ? `What are you working on, ${firstName}?`
+                      : 'Submit a script'}
                   </h1>
                   <p className="text-[14px] mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    Upload a PDF to get your evaluation in under a minute.
+                    {scripts.length === 0
+                      ? 'Pick a format and upload your screenplay. Your first evaluation is free.'
+                      : 'Upload a PDF to get your evaluation in under a minute.'}
                   </p>
 
-                  {/* Uploaded scripts list */}
+                  {/* ── Uploaded scripts list ── */}
                   <div className="space-y-3 mb-4">
                     {scripts.map(script => (
                       <div key={script.id} className="rounded-xl bg-white p-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
@@ -803,61 +808,74 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     ))}
                   </div>
 
-                  {/* Add script button / format picker */}
+                  {/* ── Format-first flow ── */}
                   {scripts.length < 2 ? (
-                    <>
-                      {!showFormatPicker ? (
-                        <button
-                          onClick={() => setShowFormatPicker(true)}
-                          className="w-full rounded-xl border-2 border-dashed py-8 px-4 text-center transition-colors group"
-                          style={{ borderColor: 'rgba(255,255,255,0.15)' }}
-                          onMouseOver={e => (e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)')}
-                          onMouseOut={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)')}
-                        >
-                          <div className="flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors" style={{ background: 'rgba(255,255,255,0.08)' }}>
-                              <svg className="w-6 h-6" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
-                              </svg>
-                            </div>
-                            <span className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                              {scripts.length === 0 ? 'Upload your screenplay (PDF)' : 'Add another script — 1 free eval left'}
-                            </span>
-                            <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                              {scripts.length === 0 ? 'Your first evaluation is free' : ''}
-                            </span>
+                    <div className="rounded-2xl bg-white p-6" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
+                      {/* Format selector — always visible when no format chosen */}
+                      {!pendingFormat && !showFormatPicker ? (
+                        <>
+                          <div className="flex gap-3 mb-4">
+                            {(['Series', 'Feature film'] as DeclaredFormat[]).map(fmt => (
+                              <button
+                                key={fmt}
+                                onClick={() => {
+                                  setShowFormatPicker(true)
+                                  setPendingFormat(fmt)
+                                  setTimeout(() => fileInputRef.current?.click(), 50)
+                                }}
+                                className="flex-1 rounded-xl border-2 py-5 px-4 text-center transition-all hover:border-purple-400 group"
+                                style={{ borderColor: '#e5e7eb', background: '#ffffff' }}
+                              >
+                                <div className="flex flex-col items-center gap-2">
+                                  {fmt === 'Series' ? (
+                                    <svg className="w-7 h-7 text-gray-400 group-hover:text-purple-500 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H2.625c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+                                    </svg>
+                                  ) : (
+                                    <svg className="w-7 h-7 text-gray-400 group-hover:text-purple-500 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                  )}
+                                  <span className="text-[14px] font-semibold text-gray-800">{fmt}</span>
+                                  <span className="text-[12px] text-gray-400">
+                                    {fmt === 'Series' ? 'Pilot or episode' : 'Full screenplay'}
+                                  </span>
+                                </div>
+                              </button>
+                            ))}
                           </div>
-                        </button>
-                      ) : !pendingFormat ? (
-                        <div className="rounded-xl bg-white p-5" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-                          <p className="text-[14px] text-gray-600 mb-3 text-center font-medium">What format is your script?</p>
-                          <div className="flex gap-3">
-                            <button
-                              onClick={() => handleFormatSelect('Feature film')}
-                              className="flex-1 py-3 rounded-xl border border-gray-200 text-[14px] text-gray-700 font-medium hover:border-purple-400 hover:bg-purple-50 transition-colors"
-                            >
-                              Feature film
-                            </button>
-                            <button
-                              onClick={() => handleFormatSelect('Series')}
-                              className="flex-1 py-3 rounded-xl border border-gray-200 text-[14px] text-gray-700 font-medium hover:border-purple-400 hover:bg-purple-50 transition-colors"
-                            >
-                              Series
-                            </button>
-                          </div>
-                        </div>
+                          <p className="text-[12px] text-gray-400 text-center">
+                            {scripts.length === 0 ? 'Your first evaluation is free' : '1 free evaluation left'}
+                          </p>
+                        </>
                       ) : (
-                        <div className="rounded-xl bg-white p-5 text-center" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-                          <p className="text-[14px] text-gray-500 mb-3">Drop your PDF here or click to browse</p>
+                        /* Upload zone — shown after format is picked */
+                        <div className="text-center">
+                          <div className="flex items-center justify-center gap-2 mb-4">
+                            <span className="inline-block px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 text-[12px] font-medium">
+                              {pendingFormat}
+                            </span>
+                            <button
+                              onClick={() => { setPendingFormat(null); setShowFormatPicker(false) }}
+                              className="text-[12px] text-gray-400 hover:text-gray-600 transition-colors"
+                            >
+                              Change
+                            </button>
+                          </div>
                           <button
                             onClick={() => fileInputRef.current?.click()}
-                            className="px-5 py-2.5 rounded-lg bg-purple-50 text-purple-600 text-[14px] font-medium hover:bg-purple-100 transition-colors"
+                            className="w-full rounded-xl border-2 border-dashed border-gray-200 py-6 px-4 hover:border-purple-400 hover:bg-purple-50/30 transition-colors group"
                           >
-                            Choose file
+                            <div className="flex flex-col items-center gap-2">
+                              <svg className="w-8 h-8 text-gray-300 group-hover:text-purple-400 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                              </svg>
+                              <span className="text-[14px] text-gray-500 group-hover:text-purple-600 font-medium">Upload your screenplay (PDF)</span>
+                            </div>
                           </button>
                         </div>
                       )}
-                    </>
+                    </div>
                   ) : (
                     <div className="w-full rounded-xl py-4 px-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
                       <span className="text-[14px]" style={{ color: 'rgba(255,255,255,0.4)' }}>2 of 2 free evaluations used</span>
@@ -880,6 +898,28 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     >
                       View results
                     </button>
+                  )}
+
+                  {/* ── Opportunities teaser ── */}
+                  {scripts.length === 0 && (
+                    <div className="mt-6 rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(167,139,250,0.15)' }}>
+                          <svg className="w-4 h-4" style={{ color: '#a78bfa' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                            Scripts that score well qualify for open opportunities
+                          </p>
+                          <p className="text-[12px] mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                            Producers and reps are actively looking. Your score determines eligibility.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   )}
                 </div>
               )}
