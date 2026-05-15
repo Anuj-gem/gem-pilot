@@ -15,9 +15,5 @@ export default async function OnboardingPage() {
   // Already logged in — send to dashboard
   if (user) redirect('/dashboard')
 
-  return (
-    <div className="min-h-screen bg-white">
-      <OnboardingClient />
-    </div>
-  )
+  return <OnboardingClient />
 }

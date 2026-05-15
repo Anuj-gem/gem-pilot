@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, type CSSProperties } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
@@ -362,14 +362,34 @@ export function OnboardingClient() {
 
   const totalOppsSelected = scripts.reduce((acc, s) => acc + s.selectedOpps.length, 0)
 
+  // ─── Transition key — triggers fade on step change ─────────────────
+  const [animKey, setAnimKey] = useState(0)
+  const prevStepRef = useRef(step)
+  useEffect(() => {
+    if (step !== prevStepRef.current) {
+      setAnimKey(k => k + 1)
+      prevStepRef.current = step
+    }
+  }, [step])
+
+  const fadeSlide: CSSProperties = {
+    animation: 'onboard-fade-in 0.35s ease-out both',
+  }
+
   // ─── Render ────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <>
+      <style>{`
+        @keyframes onboard-fade-in {
+          from { opacity: 0; transform: translateY(12px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+      <div className="py-12 px-4" key={animKey} style={fadeSlide}>
       {/* Step 1: Name */}
       {step === 'name' && (
-        <div className="flex-1 flex items-center justify-center px-4">
-          <div className="w-full max-w-md">
+        <div className="mx-auto max-w-md">
             <h1
               className="text-[28px] font-bold text-gray-900 text-center mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
@@ -409,13 +429,11 @@ export function OnboardingClient() {
               </p>
             </div>
           </div>
-        </div>
       )}
 
       {/* Step 2: Upload */}
       {step === 'upload' && (
-        <div className="flex-1 flex items-center justify-center px-4">
-          <div className="w-full max-w-lg">
+        <div className="mx-auto max-w-lg">
             <h1
               className="text-[28px] font-bold text-gray-900 text-center mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
@@ -536,14 +554,12 @@ export function OnboardingClient() {
               </button>
             )}
           </div>
-        </div>
       )}
 
       {/* Step 3: Results */}
       {step === 'results' && selectedScript && (
-        <div className="flex-1 flex flex-col pb-20">
-          <div className="flex-1 overflow-y-auto">
-            <div className="w-full max-w-lg mx-auto px-4 pt-8 pb-8">
+        <div className="pb-20">
+            <div className="w-full max-w-lg mx-auto">
               {/* Script selector (2 scripts) */}
               {scripts.length === 2 && (
                 <div className="grid grid-cols-2 gap-3 mb-6">
@@ -707,7 +723,6 @@ export function OnboardingClient() {
                 )}
               </div>
             </div>
-          </div>
 
           {/* Fixed bottom bar */}
           <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 z-50">
@@ -728,8 +743,7 @@ export function OnboardingClient() {
 
       {/* Step 4: Account */}
       {step === 'account' && (
-        <div className="flex-1 flex items-center justify-center px-4">
-          <div className="w-full max-w-md">
+        <div className="mx-auto max-w-md">
             <h1
               className="text-[28px] font-bold text-gray-900 text-center mb-2"
               style={{ fontFamily: 'Georgia, serif' }}
@@ -812,7 +826,6 @@ export function OnboardingClient() {
               Leave without saving
             </button>
           </div>
-        </div>
       )}
 
       {/* Leave confirm dialog */}
@@ -846,5 +859,6 @@ export function OnboardingClient() {
         </div>
       )}
     </div>
+    </>
   )
 }
