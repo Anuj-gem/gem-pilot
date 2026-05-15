@@ -21,7 +21,7 @@ import Nav from '@/components/nav'
 import { ScriptUploadModal } from "@/components/script-upload-modal"
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { AppRail } from '@/components/dashboard/app-rail'
+// AppRail removed — dashboard now uses top nav + inline profile card
 import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
@@ -194,11 +194,10 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen" style={{ background: '#13111a' }}>
-      <AppRail profile={navUserData.profile} stats={navUserData.stats}>
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 pt-6 pb-28 lg:pb-8">
-          {children}
-        </div>
-      </AppRail>
+      <Nav userData={navUserData} />
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 lg:pb-8">
+        {children}
+      </div>
       <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" />
       {!isPro && <UpgradeModalListener />}

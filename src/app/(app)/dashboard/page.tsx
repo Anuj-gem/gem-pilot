@@ -1,28 +1,20 @@
-// /dashboard — writer dashboard (v8, stat cards + reskinned feedback).
+// /dashboard — writer dashboard (v9, two-column dark layout).
 //
-// Layout:
-//   +----------------------------------------------+
-//   |  PROFILE HEADER                              |
-//   +----------------------------------------------+
-//   |  STAT CARDS (scripts · applications · heat)  |
-//   +----------------------------------------------+
-//   |  YOUR FEEDBACK (white cards, left border)    |
-//   +----------------------------------------------+
-//   |  PENDING APPLICATIONS                        |
-//   +----------------------------------------------+
-//   |  AVAILABLE OPPORTUNITIES (progress bars)     |
-//   +----------------------------------------------+
-//   |  YOUR RECENT SCRIPTS                         |
-//   +----------------------------------------------+
+// Layout (lg+):
+//   +----------+-----------------------------------+
+//   | PROFILE  |  "What are you working on?"       |
+//   | CARD     |  [Upload card — white]            |
+//   | (240px)  |  Recent scripts (dark cards)      |
+//   |          |  Opportunities (dark cards)        |
+//   +----------+-----------------------------------+
+//
+// Mobile: compact identity strip + single column stacked.
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
-import { DashboardUpgradeBanner } from '@/components/dashboard/dashboard-upgrade-banner'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
-import { DashboardScriptCard } from '@/components/dashboard/dashboard-script-card'
 import Link from 'next/link'
 import { InlineScriptUpload } from '@/components/inline-script-upload'
 
@@ -43,7 +35,7 @@ export default async function DashboardPage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, avatar_url, heat_score')
+    .select('subscription_status, full_name, handle, avatar_url, heat_score, headline')
     .eq('id', user.id)
     .single()
 
@@ -54,11 +46,11 @@ export default async function DashboardPage() {
   // ---------- YOUR scripts ----------
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
-    created_at: string; hidden_at: string | null
+    created_at: string; hidden_at: string | null; is_public: boolean | null
   }
   const { data: mySubs } = await supabase
     .from('script_submissions')
-    .select('id, title, status, declared_format, created_at, hidden_at')
+    .select('id, title, status, declared_format, created_at, hidden_at, is_public')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
   const visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -69,7 +61,7 @@ export default async function DashboardPage() {
     return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
   }
 
-  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null }
+  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null }
   const myEvalBySub = new Map<string, FeedEval>()
   if (submissionIds.length > 0) {
     const { data: myEvs } = await service
@@ -86,7 +78,8 @@ export default async function DashboardPage() {
         if (n) genreSet.add(n)
       }
       const format = (cls.format as string) || (fmt.format as string) || null
-      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: Array.from(genreSet), format })
+      const logline = (evJson?.positioning_hook as string) || (cls.logline as string) || null
+      myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: Array.from(genreSet), format, logline })
     }
   }
 
@@ -155,6 +148,8 @@ export default async function DashboardPage() {
         evaluationId: ev?.id ?? null,
         createdAt: s.created_at,
         qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug })),
+        isPublic: s.is_public ?? false,
+        logline: ev?.logline ?? null,
       }
     })
 
@@ -247,6 +242,20 @@ export default async function DashboardPage() {
   const dashboardOpps = [...availableOpps, ...nonMatchedOpps].slice(0, 3)
   const matchedOppIds = new Set(availableOpps.map(o => o.id))
 
+  const userName = profile?.full_name || 'Writer'
+  const userHeadline = (profile as any)?.headline as string | null
+  const avatarUrl = profile?.avatar_url as string | null
+  const scriptCount = completedScripts.length + processingScripts.length
+  const appCount = allApplications.length
+
+  // Score color helper
+  function scoreColor(s: number): string {
+    if (s >= 80) return '#22c55e'
+    if (s >= 60) return '#a855f7'
+    if (s >= 40) return '#eab308'
+    return '#6b7280'
+  }
+
   return (
     <>
       {submissionIds.length > 0 && (
@@ -254,25 +263,120 @@ export default async function DashboardPage() {
       )}
       <ProcessingPoller active={isProcessing} />
 
-      <div className="space-y-8">
-
-        {/* ── UPLOAD SECTION — vivid, full width ─────── */}
-        <section>
-          <h2 className="text-[22px] font-bold text-white m-0 mb-5">What are you working on?</h2>
-          <div className="max-w-xl">
-            <InlineScriptUpload startOpen redirectTo="/dashboard" />
+      {/* ── MOBILE IDENTITY STRIP (below lg) ──────── */}
+      <div className="lg:hidden mb-6 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="flex items-center gap-3">
+          {/* Avatar */}
+          {avatarUrl ? (
+            <img src={avatarUrl} alt="" className="w-9 h-9 rounded-full object-cover shrink-0" />
+          ) : (
+            <div className="w-9 h-9 rounded-full shrink-0 flex items-center justify-center text-[14px] font-bold text-white"
+              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
+              {userName.charAt(0).toUpperCase()}
+            </div>
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="text-[15px] font-semibold text-white truncate">{userName}</span>
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0"
+                style={{ background: isPro ? 'rgba(168,85,247,0.15)' : 'rgba(255,255,255,0.08)', color: isPro ? '#a855f7' : 'rgba(255,255,255,0.4)' }}>
+                {isPro ? 'Pro' : 'Free'}
+              </span>
+            </div>
+            <div className="text-[12px] mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+              {scriptCount} {scriptCount === 1 ? 'script' : 'scripts'}
+              <span className="mx-1.5" style={{ color: 'rgba(255,255,255,0.15)' }}>&middot;</span>
+              <span style={{ color: '#ea580c' }}>{totalHeat} heat</span>
+            </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* ── TWO-COLUMN: Scripts + Opportunities ────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* ── TWO-COLUMN LAYOUT (desktop) / SINGLE COLUMN (mobile) ── */}
+      <div className="flex gap-6">
 
-          {/* Recent scripts */}
+        {/* ── LEFT: PROFILE CARD (desktop only, ~240px) ── */}
+        <aside className="hidden lg:block w-[240px] shrink-0">
+          <div className="rounded-xl p-4 sticky top-6"
+            style={{ background: '#0d0b14', borderLeft: '3px solid #7c3aed' }}>
+
+            {/* Identity */}
+            <div className="flex items-center gap-3 mb-4">
+              {avatarUrl ? (
+                <img src={avatarUrl} alt="" className="w-11 h-11 rounded-full object-cover shrink-0" />
+              ) : (
+                <div className="w-11 h-11 rounded-full shrink-0 flex items-center justify-center text-[16px] font-bold text-white"
+                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
+                  {userName.charAt(0).toUpperCase()}
+                </div>
+              )}
+              <div className="min-w-0">
+                <div className="text-[16px] font-semibold text-white truncate">{userName}</div>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full inline-block mt-0.5"
+                  style={{ background: isPro ? 'rgba(168,85,247,0.15)' : 'rgba(255,255,255,0.08)', color: isPro ? '#a855f7' : 'rgba(255,255,255,0.4)' }}>
+                  {isPro ? 'Pro' : 'Free'}
+                </span>
+              </div>
+            </div>
+
+            {/* Headline / bio */}
+            {userHeadline ? (
+              <p className="text-[12px] leading-relaxed mb-4 m-0" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                {userHeadline}
+              </p>
+            ) : (
+              <Link href="/settings" className="text-[12px] mb-4 block hover:underline" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                + Add a bio
+              </Link>
+            )}
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              {[
+                { label: 'Scripts', value: scriptCount, color: '#f5f5f5' },
+                { label: 'Apps', value: appCount, color: '#f5f5f5' },
+                { label: 'Heat', value: totalHeat, color: '#ea580c' },
+              ].map(stat => (
+                <div key={stat.label} className="rounded-lg py-2 px-1 text-center" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                  <div className="text-[18px] font-bold" style={{ color: stat.color }}>{stat.value}</div>
+                  <div className="text-[10px] font-medium" style={{ color: 'rgba(255,255,255,0.35)' }}>{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Links */}
+            <nav className="space-y-1">
+              {[
+                { label: 'My Scripts', href: '/scripts' },
+                { label: 'Applications', href: '/applications' },
+                { label: 'Settings', href: '/settings' },
+              ].map(link => (
+                <Link key={link.href} href={link.href}
+                  className="flex items-center justify-between py-1.5 px-1 rounded-md text-[13px] font-medium transition-colors hover:bg-white/5"
+                  style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  {link.label}
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </aside>
+
+        {/* ── RIGHT: MAIN CONTENT ── */}
+        <div className="flex-1 min-w-0 space-y-6">
+
+          {/* ── UPLOAD SECTION ── */}
+          <section>
+            <h2 className="text-[28px] font-bold text-white m-0 mb-4">What are you working on?</h2>
+            <InlineScriptUpload startOpen redirectTo="/dashboard" />
+          </section>
+
+          {/* ── RECENT SCRIPTS ── */}
           <section>
             <header className="flex items-end justify-between gap-3 mb-3">
-              <h2 className="text-[13px] font-semibold m-0 uppercase tracking-wide" style={{ color: '#9ca3af' }}>Recent scripts</h2>
+              <h2 className="text-[14px] font-medium m-0" style={{ color: 'rgba(255,255,255,0.45)' }}>Recent scripts</h2>
               {completedScripts.length > 3 && (
-                <Link href="/scripts" className="text-[12px] font-semibold flex items-center gap-0.5 hover:text-purple-400 transition-colors" style={{ color: '#6b7280' }}>
+                <Link href="/scripts" className="text-[12px] font-semibold flex items-center gap-0.5 hover:text-purple-400 transition-colors" style={{ color: 'rgba(255,255,255,0.35)' }}>
                   All scripts
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
@@ -280,67 +384,127 @@ export default async function DashboardPage() {
             </header>
 
             {completedScripts.length === 0 && processingScripts.length === 0 ? (
-              <div className="rounded-xl border border-dashed px-5 py-8 text-center" style={{ borderColor: '#374151' }}>
-                <div className="flex justify-center mb-3">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" />
-                  </svg>
-                </div>
-                <p className="text-[14px] font-semibold m-0 mb-1" style={{ color: '#e5e7eb' }}>No scripts yet</p>
-                <p className="text-[13px] m-0" style={{ color: '#6b7280' }}>Upload your first script above to get started.</p>
+              <div className="rounded-xl border border-dashed px-5 py-6 text-center" style={{ borderColor: 'rgba(255,255,255,0.1)', background: '#1e1c27' }}>
+                <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.35)' }}>No scripts yet. Upload one above to get started.</p>
               </div>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-2.5">
+                {/* Processing scripts */}
                 {processingScripts.map(script => (
-                  <DashboardScriptCard
-                    key={script.id}
-                    scriptId={script.id}
-                    title={script.title}
-                    format={script.format}
-                    genre={null}
-                    evaluationId={null}
-                    createdAt={script.createdAt}
-                    score={null}
-                    qualifyingOpps={[]}
-                    isProcessing={true}
-                  />
+                  <div key={script.id} className="rounded-xl px-4 py-3.5"
+                    style={{ background: '#1e1c27', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div className="flex items-center gap-3">
+                      {/* Spinner in place of score */}
+                      <div className="w-[42px] h-[42px] rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: 'rgba(255,255,255,0.06)' }}>
+                        <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M12 2a10 10 0 019.95 9" stroke="#a855f7" strokeWidth="2.5" strokeLinecap="round" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[15px] font-semibold text-white truncate">{script.title}</div>
+                        <div className="text-[12px] mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                          Evaluating...
+                          {script.format && <span className="ml-2">{script.format}</span>}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-                {completedScripts.slice(0, 3).map(script => (
-                  <DashboardScriptCard
-                    key={script.id}
-                    scriptId={script.id}
-                    title={script.title}
-                    format={script.format}
-                    genre={script.genres[0] || null}
-                    evaluationId={script.evaluationId}
-                    createdAt={script.createdAt}
-                    score={myEvalBySub.get(script.id)?.weighted_score ?? null}
-                    qualifyingOpps={script.qualifyingOpps}
-                  />
-                ))}
+
+                {/* Completed scripts */}
+                {completedScripts.slice(0, 3).map(script => {
+                  const ev = myEvalBySub.get(script.id)
+                  const score = ev?.weighted_score ?? null
+                  const roundedScore = score ? Math.round(score) : null
+
+                  return (
+                    <div key={script.id} className="rounded-xl px-4 py-3.5 group"
+                      style={{ background: '#1e1c27', border: '1px solid rgba(255,255,255,0.08)' }}>
+                      <div className="flex items-start gap-3">
+                        {/* Score badge */}
+                        <div className="w-[42px] h-[42px] rounded-lg flex items-center justify-center shrink-0 text-[16px] font-bold"
+                          style={{ background: 'rgba(255,255,255,0.06)', color: roundedScore ? scoreColor(roundedScore) : 'rgba(255,255,255,0.3)' }}>
+                          {roundedScore ?? '—'}
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[15px] font-semibold text-white truncate">{script.title}</div>
+
+                          {/* Logline */}
+                          {script.logline && (
+                            <p className="text-[13px] leading-relaxed m-0 mt-0.5 line-clamp-2" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                              {script.logline}
+                            </p>
+                          )}
+
+                          {/* Meta line */}
+                          <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                            {script.format && (
+                              <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>{script.format}</span>
+                            )}
+                            {script.genres[0] && (
+                              <>
+                                <span style={{ color: 'rgba(255,255,255,0.15)' }}>&middot;</span>
+                                <span className="text-[11px] capitalize" style={{ color: 'rgba(255,255,255,0.3)' }}>{script.genres[0]}</span>
+                              </>
+                            )}
+                            <span style={{ color: 'rgba(255,255,255,0.15)' }}>&middot;</span>
+                            <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>{fmtDate(script.createdAt)}</span>
+                          </div>
+
+                          {/* Action row */}
+                          <div className="flex items-center gap-3 mt-2 flex-wrap">
+                            {/* View report */}
+                            {script.evaluationId && (
+                              <Link href={`/report/${script.evaluationId}`}
+                                className="text-[12px] font-semibold flex items-center gap-0.5 hover:underline transition-colors"
+                                style={{ color: '#a855f7' }}>
+                                View report
+                                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                              </Link>
+                            )}
+
+                            {/* Qualifying opps */}
+                            {script.qualifyingOpps.length > 0 && (
+                              <span className="text-[11px] font-medium" style={{ color: '#22c55e' }}>
+                                Qualifies for {script.qualifyingOpps.length} {script.qualifyingOpps.length === 1 ? 'call' : 'calls'}
+                              </span>
+                            )}
+
+                            {/* Publish to Discover */}
+                            {!script.isPublic && (
+                              <Link href={script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'}
+                                className="text-[11px] font-bold px-2.5 py-1 rounded-full transition-colors hover:opacity-90"
+                                style={{ background: 'rgba(168,85,247,0.15)', color: '#a855f7' }}>
+                                Publish to Discover
+                              </Link>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             )}
           </section>
 
-          {/* Opportunities */}
+          {/* ── OPPORTUNITIES ── */}
           <section>
             <header className="flex items-end justify-between gap-3 mb-3">
-              <h2 className="text-[13px] font-semibold m-0 uppercase tracking-wide" style={{ color: '#9ca3af' }}>Opportunities</h2>
-              <Link href="/opportunities" className="text-[12px] font-semibold flex items-center gap-0.5 hover:text-purple-400 transition-colors" style={{ color: '#6b7280' }}>
+              <h2 className="text-[14px] font-medium m-0" style={{ color: 'rgba(255,255,255,0.45)' }}>Opportunities</h2>
+              <Link href="/opportunities" className="text-[12px] font-semibold flex items-center gap-0.5 hover:text-purple-400 transition-colors" style={{ color: 'rgba(255,255,255,0.35)' }}>
                 See all
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
             </header>
 
             {dashboardOpps.length === 0 ? (
-              <div className="rounded-xl border border-dashed px-5 py-8 text-center" style={{ borderColor: '#374151' }}>
-                <div className="flex justify-center mb-3">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </div>
-                <p className="text-[14px] font-semibold m-0 mb-1" style={{ color: '#e5e7eb' }}>No opportunities yet</p>
-                <p className="text-[13px] m-0" style={{ color: '#6b7280' }}>New opportunities are posted regularly. Check back soon.</p>
+              <div className="rounded-xl border border-dashed px-5 py-6 text-center" style={{ borderColor: 'rgba(255,255,255,0.1)', background: '#1e1c27' }}>
+                <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.35)' }}>No opportunities right now. Check back soon.</p>
               </div>
             ) : (
               <div className="space-y-2.5">
@@ -353,36 +517,38 @@ export default async function DashboardPage() {
 
                   return (
                     <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
-                      <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 hover:shadow-sm transition-all">
+                      <div className="rounded-xl px-4 py-3.5 transition-all hover:border-purple-500/30"
+                        style={{ background: '#1e1c27', border: '1px solid rgba(255,255,255,0.08)' }}>
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <h3 className="text-[14px] font-bold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
+                          <h3 className="text-[14px] font-semibold m-0 leading-snug group-hover:text-purple-400 transition-colors" style={{ color: '#f5f5f5' }}>
                             {opp.title}
                           </h3>
                           <div className="flex items-center gap-1.5 shrink-0">
                             {isMatch && (
-                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: '#dcfce7', color: '#166534' }}>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                                style={{ background: 'rgba(34,197,94,0.12)', color: '#22c55e' }}>
                                 Match
                               </span>
                             )}
                             {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
-                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                                deadlineDays <= 7
-                                  ? 'bg-red-50 text-red-600 border border-red-200'
-                                  : 'bg-gray-50 text-gray-400 border border-gray-200'
-                              }`}>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                                style={{
+                                  background: deadlineDays <= 7 ? 'rgba(239,68,68,0.12)' : 'rgba(245,158,11,0.12)',
+                                  color: deadlineDays <= 7 ? '#ef4444' : '#f59e0b',
+                                }}>
                                 {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
                               </span>
                             )}
                           </div>
                         </div>
                         {opp.description && (
-                          <p className="text-[12px] text-gray-500 m-0 mb-2 line-clamp-2 leading-relaxed">{opp.description}</p>
+                          <p className="text-[13px] m-0 mb-1.5 line-clamp-2 leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>{opp.description}</p>
                         )}
                         <div className="flex items-center justify-between">
-                          <span className="text-[11px] text-gray-400 font-medium">
+                          <span className="text-[11px] font-medium" style={{ color: qCount > 0 ? '#22c55e' : 'transparent' }}>
                             {qCount > 0 ? `${qCount} ${qCount === 1 ? 'script qualifies' : 'scripts qualify'}` : ''}
                           </span>
-                          <span className="text-[12px] font-bold flex items-center gap-1 ml-auto" style={{ color: '#7c3aed' }}>
+                          <span className="text-[12px] font-bold flex items-center gap-0.5 ml-auto group-hover:underline" style={{ color: '#a855f7' }}>
                             View
                             <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
                               <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
