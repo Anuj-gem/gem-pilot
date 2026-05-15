@@ -13,15 +13,20 @@ function svc() {
   )
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   const service = svc()
+  const { searchParams } = new URL(request.url)
+  const all = searchParams.get('all') === 'true'
 
-  const { data: opps } = await service
+  let query = service
     .from('opportunities')
     .select('id, title, subtitle, deadline, min_score')
     .eq('status', 'active')
     .order('created_at', { ascending: false })
-    .limit(3)
+
+  if (!all) query = query.limit(3)
+
+  const { data: opps } = await query
 
   return NextResponse.json({
     opportunities: (opps || []).map(o => ({
