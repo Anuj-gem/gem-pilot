@@ -64,5 +64,5 @@ export default async function StartPage() {
   }
 
   // Authenticated — scripts claimed, send to onboarding (the main app).
-  redirect('/script')
+  redirect('/submit')
 }

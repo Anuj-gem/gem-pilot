@@ -9,7 +9,7 @@ export default async function SignupPage() {
   // than see another sign-up form.
   const { data: { user } } = await supabase.auth.getUser()
   if (user) {
-    redirect('/script')
+    redirect('/submit')
   }
 
   // Show the 3 most recent public scripts on Discover — social proof that

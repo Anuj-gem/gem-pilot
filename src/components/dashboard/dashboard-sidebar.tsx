@@ -15,8 +15,9 @@ interface DashboardSidebarProps {
 export function DashboardSidebar({ fullName, isPro, avatarUrl }: DashboardSidebarProps) {
   const pathname = usePathname()
 
-  // Only show sidebar on dashboard pages
-  const showSidebar = pathname === '/dashboard' || pathname.startsWith('/dashboard/')
+  // Show sidebar on all main app pages
+  const appRoutes = ['/dashboard', '/submit', '/scripts', '/applications', '/opportunities', '/discover', '/profile']
+  const showSidebar = appRoutes.some(r => pathname === r || pathname.startsWith(r + '/'))
 
   if (!showSidebar) return null
 
@@ -24,14 +25,13 @@ export function DashboardSidebar({ fullName, isPro, avatarUrl }: DashboardSideba
 
   const sidebarLinks = [
     {
-      href: '/dashboard',
-      label: 'Overview',
+      href: '/submit',
+      label: 'Submit',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="3" width="7" height="7" rx="1" />
-          <rect x="14" y="3" width="7" height="7" rx="1" />
-          <rect x="3" y="14" width="7" height="7" rx="1" />
-          <rect x="14" y="14" width="7" height="7" rx="1" />
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="17 8 12 3 7 8" />
+          <line x1="12" y1="3" x2="12" y2="15" />
         </svg>
       ),
       exact: true,
@@ -47,8 +47,8 @@ export function DashboardSidebar({ fullName, isPro, avatarUrl }: DashboardSideba
       ),
     },
     {
-      href: '/review',
-      label: 'Applications',
+      href: '/applications',
+      label: 'My Applications',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -57,17 +57,23 @@ export function DashboardSidebar({ fullName, isPro, avatarUrl }: DashboardSideba
       ),
     },
     {
-      href: '/review',
-      label: 'Activity',
+      href: '/opportunities',
+      label: 'Opportunities',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 20V10" />
-          <path d="M18 20V4" />
-          <path d="M6 20v-4" />
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       ),
-      // Activity shares the same href as Applications for now
-      disabled: true,
+    },
+    {
+      href: '/discover',
+      label: 'Discover',
+      icon: (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      ),
     },
   ]
 
@@ -110,7 +116,7 @@ export function DashboardSidebar({ fullName, isPro, avatarUrl }: DashboardSideba
       {/* Main nav links */}
       <nav className="flex-1 px-3">
         <ul className="list-none p-0 m-0 space-y-0.5">
-          {sidebarLinks.filter(l => !l.disabled).map(link => {
+          {sidebarLinks.filter(l => !(l as any).disabled).map(link => {
             const active = isActive(link.href, link.exact)
             return (
               <li key={link.label}>

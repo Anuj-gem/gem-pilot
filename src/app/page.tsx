@@ -26,12 +26,12 @@ export default async function Home({
   // OAuth safety net — forward dangling ?code= to /auth/callback.
   const sp = await searchParams
   if (sp.code) {
-    redirect(`/auth/callback?code=${encodeURIComponent(sp.code)}&next=/script`)
+    redirect(`/auth/callback?code=${encodeURIComponent(sp.code)}&next=/submit`)
   }
 
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (user) redirect('/script')
+  if (user) redirect('/submit')
 
   // Query live opportunities for above-fold section.
   const service = createServerClient(

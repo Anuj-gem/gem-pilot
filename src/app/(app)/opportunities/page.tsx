@@ -181,8 +181,8 @@ export default async function OpportunitiesPage() {
             Opportunities
           </h1>
           {user && (
-            <Link href="/dashboard" className="text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors">
-              &larr; Dashboard
+            <Link href="/submit" className="text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors">
+              &larr; Home
             </Link>
           )}
         </div>

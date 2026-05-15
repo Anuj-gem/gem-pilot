@@ -42,7 +42,7 @@ export async function middleware(request: NextRequest) {
   // Redirect logged-in users away from login/signup
   if (user && (pathname === '/login' || pathname === '/signup')) {
     const url = request.nextUrl.clone()
-    url.pathname = '/script'
+    url.pathname = '/submit'
     return NextResponse.redirect(url)
   }
 
@@ -87,7 +87,7 @@ export async function middleware(request: NextRequest) {
         // Writers hitting the old /dashboard get sent to /script (the new home).
         if (pathname === '/dashboard' || pathname.startsWith('/dashboard/')) {
           const url = request.nextUrl.clone()
-          url.pathname = '/script'
+          url.pathname = '/submit'
           return NextResponse.redirect(url)
         }
       }
