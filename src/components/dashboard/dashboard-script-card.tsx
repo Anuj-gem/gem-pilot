@@ -30,6 +30,7 @@ interface DashboardScriptCardProps {
   qualifyingOpps: QualifyingOpp[]
   isProcessing?: boolean
   heatScore?: number
+  isPublic?: boolean
 }
 
 
@@ -44,6 +45,7 @@ export function DashboardScriptCard({
   qualifyingOpps,
   isProcessing: processing,
   heatScore,
+  isPublic,
 }: DashboardScriptCardProps) {
   const [oppsOpen, setOppsOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -153,9 +155,25 @@ export function DashboardScriptCard({
                 </button>
                 {menuOpen && (
                   <div
-                    className="absolute right-0 top-full mt-1 w-[160px] rounded-lg bg-white z-[60] overflow-hidden py-1"
+                    className="absolute right-0 top-full mt-1 w-[190px] rounded-lg bg-white z-[60] overflow-hidden py-1"
                     style={{ border: '1px solid #E5E7EB', boxShadow: '0 8px 24px rgba(0,0,0,0.10)' }}
                   >
+                    {evaluationId && (
+                      <button
+                        onClick={async () => {
+                          setMenuOpen(false)
+                          await fetch(`/api/scripts/${scriptId}/visibility`, {
+                            method: 'PATCH',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ is_public: !isPublic }),
+                          })
+                          router.refresh()
+                        }}
+                        className="w-full flex items-center gap-2 px-3 py-2 text-[13px] text-gray-600 hover:bg-gray-50 transition-colors text-left"
+                      >
+                        {isPublic ? 'Remove from Discover' : 'Publish to Discover'}
+                      </button>
+                    )}
                     <button
                       onClick={handleHide}
                       disabled={hiding}

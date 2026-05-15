@@ -59,11 +59,11 @@ export default async function ScriptsPage() {
   // Fetch ALL scripts (including hidden — client toggles visibility)
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
-    created_at: string; hidden_at: string | null; heat_score: number | null
+    created_at: string; hidden_at: string | null; heat_score: number | null; is_public: boolean | null
   }
   const { data: mySubs } = await supabase
     .from('script_submissions')
-    .select('id, title, status, declared_format, created_at, hidden_at, heat_score')
+    .select('id, title, status, declared_format, created_at, hidden_at, heat_score, is_public')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
@@ -135,6 +135,7 @@ export default async function ScriptsPage() {
       isLocked: false,
       matchingOpportunities: matchOpportunities(s.declared_format, ev?.genres ?? []),
       heatScore: s.heat_score || 0,
+      isPublic: !!s.is_public,
       hidden: !!s.hidden_at,
     }
   })

@@ -20,6 +20,8 @@ export type ScriptRowData = {
   matchingOpportunities?: { title: string; slug: string }[]
   // Heat
   heatScore?: number
+  // Discover
+  isPublic?: boolean
   // States
   isProcessing?: boolean
   isLocked?: boolean
@@ -164,7 +166,7 @@ export function ScriptRowCard({
             </button>
 
             {menuOpen && (
-              <div className="absolute right-0 top-9 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
+              <div className="absolute right-0 top-9 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
                 {s.evaluationId && (
                   <Link
                     href={`/report/${s.evaluationId}?edit=1`}
@@ -173,6 +175,22 @@ export function ScriptRowCard({
                   >
                     Edit details
                   </Link>
+                )}
+                {s.evaluationId && (
+                  <button
+                    onClick={async () => {
+                      setMenuOpen(false)
+                      await fetch(`/api/scripts/${s.id}/visibility`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ is_public: !s.isPublic }),
+                      })
+                      router.refresh()
+                    }}
+                    className="block w-full text-left px-3 py-2 text-[12px] text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    {s.isPublic ? 'Remove from Discover' : 'Publish to Discover'}
+                  </button>
                 )}
                 {onHide ? (
                   <button

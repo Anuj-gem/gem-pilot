@@ -53,11 +53,11 @@ export default async function DashboardPage() {
   // ---------- YOUR scripts ----------
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
-    created_at: string; hidden_at: string | null; heat_score: number | null
+    created_at: string; hidden_at: string | null; heat_score: number | null; is_public: boolean | null
   }
   const { data: mySubs } = await supabase
     .from('script_submissions')
-    .select('id, title, status, declared_format, created_at, hidden_at, heat_score')
+    .select('id, title, status, declared_format, created_at, hidden_at, heat_score, is_public')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
   const visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -601,6 +601,7 @@ export default async function DashboardPage() {
                     score={myEvalBySub.get(script.id)?.weighted_score ?? null}
                     qualifyingOpps={script.qualifyingOpps}
                     heatScore={sub?.heat_score || 0}
+                    isPublic={!!sub?.is_public}
                   />
                 )
               })}

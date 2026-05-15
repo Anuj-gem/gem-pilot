@@ -13,6 +13,7 @@ import {
   X,
   Sparkles,
   BookOpen,
+  Compass,
 } from 'lucide-react'
 import {
   NavUserMenu,
@@ -62,6 +63,7 @@ export default function Nav({ userData }: NavProps = {}) {
   const navLinks = [
     { href: user ? '/dashboard' : '/', label: 'Home', icon: LayoutDashboard },
     { href: '/scripts', label: 'Scripts', icon: FileText },
+    { href: '/discover', label: 'Discover', icon: Compass },
     { href: '/review', label: 'Applications', icon: Sparkles },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
     { href: '/blog', label: 'Blog', icon: BookOpen },

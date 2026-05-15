@@ -1,17 +1,14 @@
-// /discover — public script directory, ranked by score.
+// /discover — shows scripts published to Discover.
 //
-// Shows all non-hidden completed scripts (up to 25), sorted by GEM score.
-// Login-gated for now. Loglines stripped from cards — writers and public
-// see title, genre, format, score, writer name only.
+// Own scripts: full details (title, format, genre, score, link to report).
+// Other people's scripts: title + format only (blurred/minimal).
 //
-// Anuj 2026-05-13 v0.1.
+// Anuj 2026-05-14 v0.2.
 
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import type { ScriptCardData } from '@/components/cards/script-card'
-import { getScriptStats } from '@/lib/script-stats'
-import { DiscoverGrid, type DiscoverCard } from '@/components/discover/discover-grid'
 
 function svc() {
   return createServerClient(
@@ -21,149 +18,135 @@ function svc() {
   )
 }
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
-const VALID_GENRE_IDS = ['drama', 'comedy', 'thriller', 'horror', 'sci-fi', 'fantasy', 'crime', 'romance', 'action', 'family', 'documentary', 'musical', 'western'] as const
-type GenreId = (typeof VALID_GENRE_IDS)[number]
-const VALID_BUDGET_IDS = ['micro', 'indie', 'mid', 'studio', 'agnostic'] as const
-type BudgetId = (typeof VALID_BUDGET_IDS)[number]
-
-function parseCsv<T extends string>(input: string | undefined, valid: readonly T[]): T[] {
-  if (!input) return []
-  return input.split(',').map((s) => s.trim()).filter((s): s is T => (valid as readonly string[]).includes(s))
-}
-
-interface PageProps {
-  searchParams: Promise<{ sort?: string; format?: string; genres?: string; budgets?: string }>
-}
-
-export default async function DiscoverPage({ searchParams }: PageProps) {
-  // Auth-gated for now — Anuj wants to open it up later.
+export default async function DiscoverPage() {
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
   if (!user) redirect('/login?redirect=/discover')
 
-  const sp = await searchParams
-  const initialSort = (['recent', 'top_gem', 'most_reviewed'].includes(sp.sort || '')
-    ? sp.sort
-    : 'top_gem') as 'recent' | 'top_gem' | 'most_reviewed'
-  const initialFormat = (['all', 'feature', 'series'].includes(sp.format || '')
-    ? sp.format
-    : 'all') as 'all' | 'feature' | 'series'
-  const initialGenres = parseCsv<GenreId>(sp.genres, VALID_GENRE_IDS)
-  const initialBudgets = parseCsv<BudgetId>(sp.budgets, VALID_BUDGET_IDS)
-
   const service = svc()
 
-  // All non-hidden completed scripts, capped at 25.
-  // NOT filtered by is_public — we show everything that isn't hidden.
+  // Only show scripts that have is_public = true
   const { data: rows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry')
+    .select('id, title, declared_format, user_id, created_at')
     .eq('status', 'completed')
+    .eq('is_public', true)
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
-    .limit(25)
+    .limit(50)
+
   type SubRow = {
     id: string
     title: string
     declared_format: string | null
-    created_at: string
     user_id: string | null
-    report_privacy: { show_score?: boolean } | null
-    allow_reviews: boolean | null
-    allow_industry: boolean | null
+    created_at: string
   }
   const scripts = (rows as SubRow[] | null) || []
-  const submissionIds = scripts.map((s) => s.id)
-  const writerIds = Array.from(new Set(scripts.map((s) => s.user_id).filter(Boolean) as string[]))
+  const submissionIds = scripts.map(s => s.id)
 
-  const [{ data: evs }, { data: writers }, stats] = await Promise.all([
-    service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', submissionIds),
-    service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
-    getScriptStats(submissionIds),
-  ])
-
-  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null }
-  const evalBySubmission = new Map<string, EvalRow>()
-  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
-    const evJson = e.evaluation as Record<string, unknown> | null
-    const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
-    const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
-    const genre =
-      (cls.genre_primary as string | undefined) ||
-      (fmt.genre_primary as string | undefined) ||
-      null
-    const genreKey = genre ? genre.toLowerCase().replace(/[^a-z]/g, '') : null
-    const packaging = (evJson?.packaging as Record<string, unknown> | undefined) || {}
-    const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
-    const rawBudget = (budgetTier?.tier as string | undefined)?.toLowerCase() ?? null
-    const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
-    evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget,
-    })
+  // Fetch evaluations for score + genre
+  const evalBySubmission = new Map<string, { id: string; score: number | null; genre: string | null }>()
+  if (submissionIds.length > 0) {
+    const { data: evs } = await service
+      .from('script_evaluations')
+      .select('id, submission_id, weighted_score, evaluation')
+      .in('submission_id', submissionIds)
+    for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
+      const evJson = e.evaluation as Record<string, unknown> | null
+      const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
+      const genre = (cls.genre_primary as string | undefined) || null
+      evalBySubmission.set(e.submission_id, { id: e.id, score: e.weighted_score, genre })
+    }
   }
 
-  type WriterRow = { handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null }
-  type WriterRowWithId = WriterRow & { id: string }
-  const writerById = new Map<string, WriterRow>()
-  for (const w of (writers as WriterRowWithId[] | null) || []) {
-    writerById.set(w.id, { handle: w.handle, full_name: w.full_name, avatar_url: w.avatar_url, headline: w.headline })
-  }
-
-  // Build card data — strip loglines for Discover view.
-  const cards: DiscoverCard[] = scripts
-    .map((s): DiscoverCard | null => {
-      const ev = evalBySubmission.get(s.id)
-      if (!ev) return null
-      const wp = s.user_id ? writerById.get(s.user_id) : null
-      const st = stats.get(s.id)
-      const scoreVisible = s.report_privacy?.show_score !== false
-      const data: ScriptCardData = {
-        submission_id: s.id,
-        evaluation_id: ev.id,
-        title: s.title,
-        format: s.declared_format,
-        genre: ev.genre,
-        logline: null, // intentionally stripped — Discover hides loglines
-        selznick_score: ev.weighted_score,
-        writer_handle: wp?.handle ?? null,
-        writer_name: wp?.full_name ?? null,
-        writer_avatar_url: wp?.avatar_url ?? null,
-        review_count: st?.reviewCount ?? 0,
-        avg_peer_score: st?.avgPeerScore ?? null,
-        score_visible: scoreVisible,
-        allow_reviews: s.allow_reviews ?? true,
-        allow_industry: s.allow_industry ?? true,
-      }
-      return {
-        data,
-        recentTs: new Date(s.created_at).getTime(),
-        selznick: Number(ev.weighted_score ?? 0),
-        scoreVisible,
-        reviews: st?.reviewCount ?? 0,
-        genreKey: ev.genreKey,
-        budget: ev.budget,
-      }
-    })
-    .filter((c): c is DiscoverCard => c !== null)
+  // Split into own vs others
+  const ownScripts = scripts.filter(s => s.user_id === user.id)
+  const otherScripts = scripts.filter(s => s.user_id !== user.id)
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-3xl px-4 py-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Discover</h1>
-        <p className="mt-1 text-sm text-gray-500">Scripts from the GEM community, ranked by score.</p>
+        <h1 className="text-[22px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>Discover</h1>
+        <p className="mt-1 text-[13px] text-gray-400">Scripts published by the GEM community.</p>
       </div>
-      <DiscoverGrid
-        cards={cards}
-        initialSort={initialSort}
-        initialFilters={{
-          format: initialFormat,
-          genres: initialGenres,
-          budgets: initialBudgets,
-        }}
-        basePath="/discover"
-      />
+
+      {scripts.length === 0 && (
+        <div className="rounded-xl border border-dashed border-gray-200 bg-white px-6 py-10 text-center">
+          <p className="text-[14px] text-gray-500 m-0 mb-1">No scripts published yet.</p>
+          <p className="text-[13px] text-gray-400 m-0">Publish your scripts from the three-dot menu on the Scripts page.</p>
+        </div>
+      )}
+
+      {/* Own scripts — full details */}
+      {ownScripts.length > 0 && (
+        <div className="mb-6">
+          <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide mb-3">Your scripts</h2>
+          <div className="space-y-2">
+            {ownScripts.map(s => {
+              const ev = evalBySubmission.get(s.id)
+              return (
+                <div key={s.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
+                  <div className="flex items-center gap-3">
+                    {ev?.score != null && (
+                      <div
+                        className="shrink-0 w-11 h-11 rounded-lg flex flex-col items-center justify-center"
+                        style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}
+                      >
+                        <span className="text-[16px] font-extrabold leading-none text-gray-800">{Math.round(ev.score)}</span>
+                        <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-gray-400">Score</span>
+                      </div>
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[14px] font-bold text-gray-900 m-0 truncate" style={{ fontFamily: 'Georgia, serif' }}>{s.title}</p>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        {s.declared_format && <span className="text-[12px] text-gray-400">{s.declared_format}</span>}
+                        {ev?.genre && <><span className="text-[12px] text-gray-300">·</span><span className="text-[12px] text-gray-400">{ev.genre}</span></>}
+                      </div>
+                    </div>
+                    {ev && (
+                      <Link
+                        href={`/report/${ev.id}`}
+                        className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 whitespace-nowrap"
+                      >
+                        View report →
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Other scripts — title + format only */}
+      {otherScripts.length > 0 && (
+        <div>
+          {ownScripts.length > 0 && (
+            <h2 className="text-[13px] font-bold text-gray-500 uppercase tracking-wide mb-3">Community</h2>
+          )}
+          <div className="space-y-2">
+            {otherScripts.map(s => (
+              <div key={s.id} className="rounded-xl border border-gray-100 bg-gray-50/50 px-4 py-3.5">
+                <div className="flex items-center gap-3">
+                  <div className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center" style={{ background: '#f3f4f6' }}>
+                    <span className="text-[11px] text-gray-300">&mdash;</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[14px] font-medium text-gray-600 m-0 truncate">{s.title}</p>
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      {s.declared_format && <span className="text-[12px] text-gray-400">{s.declared_format}</span>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
