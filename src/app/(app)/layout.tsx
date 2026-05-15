@@ -192,11 +192,12 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
-      {/* Top nav removed for logged-in users — sidebar handles navigation */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
-        <AppRail profile={navUserData.profile}>{children}</AppRail>
-      </div>
+    <div className="min-h-screen" style={{ background: '#13111a' }}>
+      <AppRail profile={navUserData.profile} stats={navUserData.stats}>
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 pt-6 pb-28 lg:pb-8">
+          {children}
+        </div>
+      </AppRail>
       <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" />
       {!isPro && <UpgradeModalListener />}
