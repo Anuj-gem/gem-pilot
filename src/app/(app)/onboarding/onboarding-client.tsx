@@ -651,23 +651,25 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     const genrePrimary = evalObj?.classification?.genre_primary as string | undefined
     const genreLabel = [script.format, genrePrimary].filter(Boolean).join(' · ')
 
-    // ── Processing state ──
+    // ── Processing state — indeterminate animated bar (never looks stuck) ──
     if (script.status === 'processing') {
-      const pct = script.progress || 0
-      const msg = pct < 25 ? 'Reading your screenplay...'
-        : pct < 50 ? 'Analyzing characters and story...'
-        : pct < 75 ? 'Evaluating across five dimensions...'
-        : 'Finalizing your score...'
       return (
         <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
+          <style>{`
+            @keyframes eval-shimmer {
+              0% { transform: translateX(-100%); }
+              100% { transform: translateX(200%); }
+            }
+          `}</style>
           <div className="px-6 py-5">
-            <p className="text-[16px] font-semibold text-purple-700 m-0">{msg}</p>
-            <div className="mt-3 h-2 bg-gray-100 rounded-full overflow-hidden">
+            <p className="text-[16px] font-semibold text-purple-700 m-0">Evaluating your screenplay...</p>
+            <div className="mt-3 h-2 bg-purple-100 rounded-full overflow-hidden relative">
               <div
-                className="h-full rounded-full transition-all duration-700 ease-out"
+                className="absolute inset-0 rounded-full"
                 style={{
-                  width: `${pct}%`,
-                  background: 'linear-gradient(90deg, #7c3aed, #a855f7)',
+                  width: '50%',
+                  background: 'linear-gradient(90deg, transparent, #7c3aed, #a855f7, transparent)',
+                  animation: 'eval-shimmer 1.8s ease-in-out infinite',
                 }}
               />
             </div>
@@ -679,14 +681,14 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
     // ── Completed state ──
     return (
-      <div key={script.id} className="relative rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
+      <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
         <div className="px-6 pt-5 pb-4">
-          {/* Two-column: left info, right score */}
-          <div className="flex items-start gap-5">
-            {/* Left: title, genre, logline */}
+          {/* Top row: title + three-dot + score */}
+          <div className="flex items-start gap-4">
+            {/* Left: title + genre + logline */}
             <div className="flex-1 min-w-0">
               <h3
-                className="text-[22px] font-bold text-gray-900 m-0 leading-tight pr-8"
+                className="text-[22px] font-bold text-gray-900 m-0 leading-tight"
                 style={{ fontFamily: 'Georgia, serif' }}
               >
                 {displayTitle}
@@ -699,63 +701,64 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               )}
             </div>
 
-            {/* Right: score badge */}
-            {script.score != null && (
-              <div
-                className="flex-shrink-0 rounded-xl px-5 py-3 text-center"
-                style={{ background: '#16a34a' }}
-              >
-                <p className="text-[10px] font-bold text-white/70 uppercase tracking-widest m-0">GEM Score</p>
-                <p className="text-[30px] font-bold text-white leading-none m-0 mt-0.5">{script.score}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Three-dot menu — absolute top right */}
-          <div className="absolute top-3 right-3">
-            <div className="relative">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setMenuOpenId(isMenuOpen ? null : script.id)
-                }}
-                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400"
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <circle cx="8" cy="3" r="1.5" />
-                  <circle cx="8" cy="8" r="1.5" />
-                  <circle cx="8" cy="13" r="1.5" />
-                </svg>
-              </button>
-              {isMenuOpen && (
-                <div
-                  className="absolute right-0 top-9 z-20 w-44 bg-white rounded-lg shadow-lg border border-gray-100 py-1"
-                  onClick={(e) => e.stopPropagation()}
+            {/* Right: three-dot + score badge in a column */}
+            <div className="flex-shrink-0 flex flex-col items-end gap-2">
+              {/* Three-dot menu */}
+              <div className="relative">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setMenuOpenId(isMenuOpen ? null : script.id)
+                  }}
+                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400"
                 >
-                  <button
-                    onClick={() => setMenuOpenId(null)}
-                    className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <circle cx="8" cy="3" r="1.5" />
+                    <circle cx="8" cy="8" r="1.5" />
+                    <circle cx="8" cy="13" r="1.5" />
+                  </svg>
+                </button>
+                {isMenuOpen && (
+                  <div
+                    className="absolute right-0 top-9 z-20 w-44 bg-white rounded-lg shadow-lg border border-gray-100 py-1"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    Edit details
-                  </button>
-                  <button
-                    onClick={() => {
-                      setMenuOpenId(null)
-                      window.open(`/report/${script.id}?download=1`, '_blank')
-                    }}
-                    className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    Download PDF
-                  </button>
-                  <button
-                    onClick={() => {
-                      setMenuOpenId(null)
-                      setDeleteConfirmId(script.id)
-                    }}
-                    className="w-full text-left px-3.5 py-2 text-[14px] text-red-600 hover:bg-red-50 transition-colors"
-                  >
-                    Delete script
-                  </button>
+                    <button
+                      onClick={() => setMenuOpenId(null)}
+                      className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
+                    >
+                      Edit details
+                    </button>
+                    <button
+                      onClick={() => {
+                        setMenuOpenId(null)
+                        window.open(`/report/${script.id}?download=1`, '_blank')
+                      }}
+                      className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
+                    >
+                      Download PDF
+                    </button>
+                    <button
+                      onClick={() => {
+                        setMenuOpenId(null)
+                        setDeleteConfirmId(script.id)
+                      }}
+                      className="w-full text-left px-3.5 py-2 text-[14px] text-red-600 hover:bg-red-50 transition-colors"
+                    >
+                      Delete script
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Score badge */}
+              {script.score != null && (
+                <div
+                  className="rounded-xl px-4 py-2.5 text-center"
+                  style={{ background: '#16a34a' }}
+                >
+                  <p className="text-[9px] font-bold text-white/80 uppercase tracking-widest m-0">GEM Score</p>
+                  <p className="text-[28px] font-bold text-white leading-none m-0 mt-0.5">{script.score}</p>
                 </div>
               )}
             </div>
@@ -773,13 +776,23 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                 <span className="ml-0.5">&rarr;</span>
               </Link>
             )}
+            {/* Publish button — clear, obvious, can't be missed */}
             <button
               onClick={() => toggleDiscover(script.id)}
-              className="text-[14px] font-medium flex items-center gap-1.5 transition-colors ml-auto"
-              style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
+              className={`ml-auto px-4 py-2 rounded-lg text-[14px] font-semibold transition-all flex items-center gap-2 ${
+                script.discoverOn
+                  ? 'bg-purple-600 text-white'
+                  : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-50'
+              }`}
             >
-              <span className={`inline-block w-4 h-4 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
-              {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
+              {script.discoverOn ? (
+                <>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 7.5l3.5 3.5L12 3" /></svg>
+                  Published to GEM Insiders
+                </>
+              ) : (
+                'Publish to GEM Insiders'
+              )}
             </button>
           </div>
         </div>
