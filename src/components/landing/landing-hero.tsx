@@ -1,6 +1,7 @@
-// LandingHero — v17.
+// LandingHero — v18.
 // Full-viewport cinematic hero with 4-step journey graphic.
 // Dark band fills ~95vh so "How it works" peeks at the bottom.
+// White cards with dark text to match the app theme.
 'use client'
 
 import { CSSProperties } from 'react'
@@ -9,49 +10,50 @@ import { trackEvent } from '@/lib/posthog'
 /* ── Shared inline styles ── */
 
 const card: CSSProperties = {
-  background: '#18181b',
-  border: '1px solid #27272a',
+  background: '#ffffff',
+  border: '1px solid #e4e4e7',
   borderRadius: 12,
+  boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
 }
 
 const innerCard: CSSProperties = {
-  background: '#111113',
-  border: '1px solid #27272a',
+  background: '#f4f4f5',
+  border: '1px solid #e4e4e7',
   borderRadius: 8,
 }
 
 const stepBadge = (color = '#7c3aed'): CSSProperties => ({
-  width: 20,
-  height: 20,
-  borderRadius: 10,
+  width: 22,
+  height: 22,
+  borderRadius: 11,
   background: color,
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  fontSize: 10,
+  fontSize: 11,
   fontWeight: 700,
   color: 'white',
   flexShrink: 0,
 })
 
-const stepLabel = (color = '#a78bfa'): CSSProperties => ({
-  fontSize: 10,
-  fontWeight: 600,
+const stepLabel = (color = '#7c3aed'): CSSProperties => ({
+  fontSize: 11,
+  fontWeight: 700,
   color,
   letterSpacing: 0.5,
 })
 
 const divider: CSSProperties = {
   height: 1,
-  background: '#27272a',
+  background: '#e4e4e7',
   margin: '10px 0',
 }
 
 const tag: CSSProperties = {
   ...innerCard,
   padding: '3px 10px',
-  fontSize: 9,
-  color: '#a1a1aa',
+  fontSize: 10,
+  color: '#71717a',
   display: 'inline-block',
   borderRadius: 6,
 }
@@ -92,26 +94,31 @@ export function LandingHero() {
       />
 
       {/* ── Title area ── */}
-      <div className="text-center pt-10 sm:pt-14 pb-8 sm:pb-10 px-4">
+      <div className="text-center pt-12 sm:pt-16 pb-10 sm:pb-12 px-4">
         <h1
-          className="font-semibold leading-[1.08] tracking-tight mb-4 text-[var(--gem-gray-50)]"
+          className="font-semibold leading-[1.08] tracking-tight mb-5"
           style={{
             fontFamily: 'Georgia, "Times New Roman", serif',
-            fontSize: 'clamp(30px, 4.5vw, 44px)',
+            fontSize: 'clamp(34px, 5vw, 52px)',
+            color: '#ffffff',
           }}
         >
           Where writers get discovered.
         </h1>
 
-        <p className="text-[15px] sm:text-[16px] text-[#a1a1aa] m-0 mb-7 max-w-[480px] mx-auto leading-relaxed">
+        <p
+          className="m-0 mb-8 max-w-[520px] mx-auto leading-relaxed"
+          style={{ fontSize: 'clamp(16px, 2vw, 19px)', color: '#d4d4d8' }}
+        >
           Upload your script. Get evaluated. Get in front of the right people.
         </p>
 
         <button
           type="button"
           onClick={handleCTA}
-          className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-[14px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
+          className="inline-flex items-center gap-2 rounded-xl px-8 py-4 font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
           style={{
+            fontSize: 'clamp(15px, 1.5vw, 17px)',
             background: 'var(--gem-accent)',
             boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
           }}
@@ -122,9 +129,9 @@ export function LandingHero() {
 
       {/* ── Journey cards ── */}
       <div className="flex-1 flex items-center justify-center px-4 pb-12 sm:pb-16">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-4 lg:gap-0 max-w-[900px] w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-4 lg:gap-0 max-w-[940px] w-full">
           {/* Step 1 — Your Report */}
-          <div className="w-full lg:w-[240px] shrink-0" style={card}>
+          <div className="w-full lg:w-[248px] shrink-0" style={card}>
             <div className="p-4">
               <div className="flex items-center gap-2 mb-3">
                 <span style={stepBadge()}>1</span>
@@ -133,24 +140,24 @@ export function LandingHero() {
 
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div>
-                  <p className="text-[14px] font-bold text-[#fafafa] m-0" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-[14px] font-bold m-0" style={{ fontFamily: 'Georgia, serif', color: '#18181b' }}>
                     The Last Witness
                   </p>
-                  <p className="text-[10px] text-[#71717a] m-0 mt-0.5">TV Pilot · Thriller</p>
+                  <p className="text-[10px] m-0 mt-0.5" style={{ color: '#71717a' }}>TV Pilot · Thriller</p>
                 </div>
                 <div
                   className="shrink-0 grid place-items-center"
                   style={{ ...innerCard, width: 44, height: 38, borderRadius: 8 }}
                 >
-                  <span className="text-[18px] font-extrabold" style={{ color: '#22c55e', lineHeight: 1 }}>82</span>
-                  <span className="text-[6px] font-semibold tracking-wider text-[#71717a]" style={{ marginTop: -2 }}>SCORE</span>
+                  <span className="text-[18px] font-extrabold" style={{ color: '#16a34a', lineHeight: 1 }}>82</span>
+                  <span className="text-[6px] font-semibold tracking-wider" style={{ color: '#a1a1aa', marginTop: -2 }}>SCORE</span>
                 </div>
               </div>
 
               <div style={divider} />
 
-              <p className="text-[8px] font-semibold tracking-wider text-[#a78bfa] m-0 mb-2">WHY THIS CAN BE A HIT</p>
-              <p className="text-[10.5px] text-[#d4d4d8] m-0 leading-snug">
+              <p className="text-[9px] font-semibold tracking-wider m-0 mb-2" style={{ color: '#7c3aed' }}>WHY THIS CAN BE A HIT</p>
+              <p className="text-[11px] m-0 leading-snug" style={{ color: '#3f3f46' }}>
                 Strong protagonist with clear internal conflict. High-tension hook locks viewers in fast.
               </p>
 
@@ -167,7 +174,7 @@ export function LandingHero() {
           <Arrow />
 
           {/* Step 2 — Opportunities */}
-          <div className="w-full lg:w-[220px] shrink-0 self-center" style={card}>
+          <div className="w-full lg:w-[224px] shrink-0 self-center" style={card}>
             <div className="p-4">
               <div className="flex items-center gap-2 mb-3">
                 <span style={stepBadge()}>2</span>
@@ -177,22 +184,22 @@ export function LandingHero() {
               <div className="space-y-2">
                 <div style={{ ...innerCard, padding: '8px 10px' }}>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="inline-block w-2 h-2 rounded-full" style={{ background: '#22c55e' }} />
-                    <span className="text-[10.5px] font-semibold text-[#fafafa]">Seeking: Thrillers</span>
+                    <span className="inline-block w-2 h-2 rounded-full" style={{ background: '#16a34a' }} />
+                    <span className="text-[11px] font-semibold" style={{ color: '#18181b' }}>Seeking: Thrillers</span>
                   </div>
-                  <p className="text-[9px] text-[#71717a] m-0 pl-4">Indie prod co · Sub-$5M</p>
+                  <p className="text-[9px] m-0 pl-4" style={{ color: '#71717a' }}>Indie prod co · Sub-$5M</p>
                 </div>
 
                 <div style={{ ...innerCard, padding: '8px 10px' }}>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="inline-block w-2 h-2 rounded-full" style={{ background: '#22c55e' }} />
-                    <span className="text-[10.5px] font-semibold text-[#fafafa]">Open Call: Drama Pilots</span>
+                    <span className="inline-block w-2 h-2 rounded-full" style={{ background: '#16a34a' }} />
+                    <span className="text-[11px] font-semibold" style={{ color: '#18181b' }}>Open Call: Drama Pilots</span>
                   </div>
-                  <p className="text-[9px] text-[#71717a] m-0 pl-4">Lit rep · Accepting queries</p>
+                  <p className="text-[9px] m-0 pl-4" style={{ color: '#71717a' }}>Lit rep · Accepting queries</p>
                 </div>
               </div>
 
-              <p className="text-[9.5px] font-semibold text-[#a78bfa] m-0 mt-3">Your script qualifies for 3 →</p>
+              <p className="text-[10px] font-semibold m-0 mt-3" style={{ color: '#7c3aed' }}>Your script qualifies for 3 →</p>
             </div>
           </div>
 
@@ -200,7 +207,7 @@ export function LandingHero() {
           <Arrow />
 
           {/* Step 3 — Getting Noticed */}
-          <div className="w-full lg:w-[220px] shrink-0 self-center" style={card}>
+          <div className="w-full lg:w-[224px] shrink-0 self-center" style={card}>
             <div className="p-4">
               <div className="flex items-center gap-2 mb-3">
                 <span style={stepBadge()}>3</span>
@@ -209,10 +216,10 @@ export function LandingHero() {
 
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-[22px] font-extrabold" style={{ color: '#f97316' }}>🔥 3</span>
-                <span className="text-[11px] text-[#d4d4d8]">Heat earned</span>
+                <span className="text-[11px]" style={{ color: '#3f3f46' }}>Heat earned</span>
               </div>
 
-              <div className="rounded-full overflow-hidden mb-4" style={{ height: 6, background: '#27272a' }}>
+              <div className="rounded-full overflow-hidden mb-4" style={{ height: 6, background: '#e4e4e7' }}>
                 <div
                   className="h-full rounded-full"
                   style={{
@@ -225,12 +232,12 @@ export function LandingHero() {
               <div
                 className="rounded-lg p-3"
                 style={{
-                  background: 'rgba(124,58,237,0.08)',
-                  border: '1px solid rgba(124,58,237,0.25)',
+                  background: 'rgba(124,58,237,0.06)',
+                  border: '1px solid rgba(124,58,237,0.18)',
                 }}
               >
-                <p className="text-[9px] font-bold tracking-wide text-[#a78bfa] m-0 mb-1">STATUS UPDATE</p>
-                <p className="text-[12px] font-semibold text-[#d4d4d8] m-0">Shortlisted for review</p>
+                <p className="text-[9px] font-bold tracking-wide m-0 mb-1" style={{ color: '#7c3aed' }}>STATUS UPDATE</p>
+                <p className="text-[12px] font-semibold m-0" style={{ color: '#18181b' }}>Shortlisted for review</p>
               </div>
             </div>
           </div>
@@ -240,42 +247,42 @@ export function LandingHero() {
 
           {/* Step 4 — Partner Match */}
           <div
-            className="w-full lg:w-[210px] shrink-0"
-            style={{ ...card, borderColor: 'rgba(34,197,94,0.35)', borderWidth: 1.5 }}
+            className="w-full lg:w-[214px] shrink-0"
+            style={{ ...card, borderColor: 'rgba(22,163,106,0.4)', borderWidth: 1.5 }}
           >
             <div className="p-4">
               <div className="flex items-center gap-2 mb-3">
-                <span style={stepBadge('#22c55e')}>4</span>
-                <span style={stepLabel('#22c55e')}>PARTNER MATCH</span>
+                <span style={stepBadge('#16a34a')}>4</span>
+                <span style={stepLabel('#16a34a')}>PARTNER MATCH</span>
               </div>
 
               <div className="flex items-center gap-3 mb-3">
                 <div
-                  className="shrink-0 w-8 h-8 rounded-full grid place-items-center text-[11px] text-[#a1a1aa]"
-                  style={{ background: '#27272a' }}
+                  className="shrink-0 w-8 h-8 rounded-full grid place-items-center text-[11px]"
+                  style={{ background: '#f4f4f5', color: '#71717a' }}
                 >
                   JR
                 </div>
                 <div>
-                  <p className="text-[11px] font-semibold text-[#fafafa] m-0">Jordan Rivera</p>
-                  <p className="text-[9.5px] text-[#71717a] m-0">Lit Rep · Verve</p>
+                  <p className="text-[11px] font-semibold m-0" style={{ color: '#18181b' }}>Jordan Rivera</p>
+                  <p className="text-[9.5px] m-0" style={{ color: '#71717a' }}>Lit Rep · Verve</p>
                 </div>
               </div>
 
               <div style={divider} />
 
-              <p className="text-[11px] text-[#d4d4d8] m-0 leading-snug" style={{ fontStyle: 'italic' }}>
+              <p className="text-[11px] m-0 leading-snug" style={{ fontStyle: 'italic', color: '#3f3f46' }}>
                 &ldquo;We loved The Last Witness. Would love to set up a call.&rdquo;
               </p>
 
               <div
                 className="mt-3 rounded-lg py-2 text-center"
                 style={{
-                  background: 'rgba(34,197,94,0.1)',
-                  border: '1px solid rgba(34,197,94,0.3)',
+                  background: 'rgba(22,163,106,0.08)',
+                  border: '1px solid rgba(22,163,106,0.25)',
                 }}
               >
-                <span className="text-[11px] font-semibold" style={{ color: '#22c55e' }}>Schedule a call →</span>
+                <span className="text-[11px] font-semibold" style={{ color: '#16a34a' }}>Schedule a call →</span>
               </div>
             </div>
           </div>
@@ -297,7 +304,7 @@ function Arrow() {
         viewBox="0 0 24 16"
         fill="none"
       >
-        <path d="M0 8h20m0 0l-5-5m5 5l-5 5" stroke="#a78bfa" strokeWidth="1.5" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M0 8h20m0 0l-5-5m5 5l-5 5" stroke="#a78bfa" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       {/* Mobile: vertical */}
       <svg
@@ -307,7 +314,7 @@ function Arrow() {
         viewBox="0 0 16 24"
         fill="none"
       >
-        <path d="M8 0v20m0 0l-5-5m5 5l5-5" stroke="#a78bfa" strokeWidth="1.5" strokeOpacity="0.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 0v20m0 0l-5-5m5 5l5-5" stroke="#a78bfa" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   )
