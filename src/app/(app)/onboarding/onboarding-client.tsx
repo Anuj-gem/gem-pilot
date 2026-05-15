@@ -316,18 +316,20 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // ─── Delete handler ──────────────────────────────────────────────
 
   async function handleDeleteScript(scriptId: string) {
-    try {
-      const res = await fetch(`/api/scripts/${scriptId}/hide`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ hide: true }),
-      })
-      if (res.ok) {
-        setScripts(prev => prev.filter(s => s.id !== scriptId))
-      }
-    } catch {}
+    // Remove from local state immediately (works for both anon and logged-in)
+    setScripts(prev => prev.filter(s => s.id !== scriptId))
     setDeleteConfirmId(null)
     setMenuOpenId(null)
+    // If logged in, also soft-delete in DB
+    if (authedUser) {
+      try {
+        await fetch(`/api/scripts/${scriptId}/hide`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ hide: true }),
+        })
+      } catch {}
+    }
   }
 
   // ─── Upload handlers ───────────────────────────────────────────────
@@ -651,22 +653,25 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
     // ── Processing state ──
     if (script.status === 'processing') {
+      const pct = script.progress || 0
+      const msg = pct < 25 ? 'Reading your screenplay...'
+        : pct < 50 ? 'Analyzing characters and story...'
+        : pct < 75 ? 'Evaluating across five dimensions...'
+        : 'Finalizing your score...'
       return (
         <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
-          <div className="p-5">
-            <h3
-              className="text-[18px] font-bold text-gray-900 m-0 truncate"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              {script.title}
-            </h3>
-            <p className="text-[13px] text-purple-600 mt-1.5 m-0 font-medium">Evaluating your script...</p>
-            <div className="mt-4 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div className="px-6 py-5">
+            <p className="text-[16px] font-semibold text-purple-700 m-0">{msg}</p>
+            <div className="mt-3 h-2 bg-gray-100 rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 ease-out"
-                style={{ width: `${script.progress}%` }}
+                className="h-full rounded-full transition-all duration-700 ease-out"
+                style={{
+                  width: `${pct}%`,
+                  background: 'linear-gradient(90deg, #7c3aed, #a855f7)',
+                }}
               />
             </div>
+            <p className="text-[13px] text-gray-400 mt-2 m-0">{script.title}</p>
           </div>
         </div>
       )
@@ -674,10 +679,39 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
     // ── Completed state ──
     return (
-      <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
-        {/* Header: title + format/genre + three-dot menu */}
-        <div className="relative px-5 pt-5 pb-3">
-          {/* Three-dot menu — top right corner */}
+      <div key={script.id} className="relative rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
+        <div className="px-6 pt-5 pb-4">
+          {/* Two-column: left info, right score */}
+          <div className="flex items-start gap-5">
+            {/* Left: title, genre, logline */}
+            <div className="flex-1 min-w-0">
+              <h3
+                className="text-[22px] font-bold text-gray-900 m-0 leading-tight pr-8"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                {displayTitle}
+              </h3>
+              {genreLabel && (
+                <p className="text-[14px] text-gray-400 mt-1 m-0">{genreLabel}</p>
+              )}
+              {logline && (
+                <p className="text-[15px] text-gray-600 italic mt-2.5 m-0 line-clamp-2 leading-relaxed">{logline}</p>
+              )}
+            </div>
+
+            {/* Right: score badge */}
+            {script.score != null && (
+              <div
+                className="flex-shrink-0 rounded-xl px-5 py-3 text-center"
+                style={{ background: '#16a34a' }}
+              >
+                <p className="text-[10px] font-bold text-white/70 uppercase tracking-widest m-0">GEM Score</p>
+                <p className="text-[30px] font-bold text-white leading-none m-0 mt-0.5">{script.score}</p>
+              </div>
+            )}
+          </div>
+
+          {/* Three-dot menu — absolute top right */}
           <div className="absolute top-3 right-3">
             <div className="relative">
               <button
@@ -700,13 +734,16 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                 >
                   <button
                     onClick={() => setMenuOpenId(null)}
-                    className="w-full text-left px-3.5 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
+                    className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
                   >
                     Edit details
                   </button>
                   <button
-                    onClick={() => setMenuOpenId(null)}
-                    className="w-full text-left px-3.5 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
+                    onClick={() => {
+                      setMenuOpenId(null)
+                      window.open(`/report/${script.id}?download=1`, '_blank')
+                    }}
+                    className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
                   >
                     Download PDF
                   </button>
@@ -715,7 +752,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       setMenuOpenId(null)
                       setDeleteConfirmId(script.id)
                     }}
-                    className="w-full text-left px-3.5 py-2 text-[13px] text-red-600 hover:bg-red-50 transition-colors"
+                    className="w-full text-left px-3.5 py-2 text-[14px] text-red-600 hover:bg-red-50 transition-colors"
                   >
                     Delete script
                   </button>
@@ -724,59 +761,27 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </div>
           </div>
 
-          <h3
-            className="text-[20px] font-bold text-gray-900 m-0 pr-10 leading-tight"
-            style={{ fontFamily: 'Georgia, serif' }}
-          >
-            {displayTitle}
-          </h3>
-          {genreLabel && (
-            <p className="text-[13px] text-gray-400 mt-1 m-0">{genreLabel}</p>
-          )}
-        </div>
-
-        {/* Score band */}
-        {script.score != null && (
-          <div className="mx-5 rounded-lg px-4 py-3 flex items-center justify-between" style={{ background: '#f0fdf4' }}>
-            <div>
-              <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider m-0">GEM Score</p>
-              <p className="text-[32px] font-bold leading-none m-0 mt-0.5" style={{ color: '#16a34a' }}>
-                {script.score}
-              </p>
-            </div>
-            {script.tier && (
-              <span className={`px-3 py-1 rounded-full text-[12px] font-semibold ${tierColor(script.tier)}`}>
-                {script.tier}
-              </span>
+          {/* Actions row */}
+          <div className="flex items-center gap-5 mt-4">
+            {script.evaluation && (
+              <Link
+                href={`/report/${script.id}`}
+                target="_blank"
+                className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
+              >
+                View full report
+                <span className="ml-0.5">&rarr;</span>
+              </Link>
             )}
-          </div>
-        )}
-
-        {/* Logline */}
-        {logline && (
-          <p className="text-[13px] text-gray-500 italic mx-5 mt-3 m-0 line-clamp-2 leading-relaxed">{logline}</p>
-        )}
-
-        {/* Actions row */}
-        <div className="flex items-center gap-4 mx-5 mt-3 pb-4">
-          {script.evaluation && (
-            <Link
-              href={`/report/${script.id}`}
-              target="_blank"
-              className="text-[13px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
+            <button
+              onClick={() => toggleDiscover(script.id)}
+              className="text-[14px] font-medium flex items-center gap-1.5 transition-colors ml-auto"
+              style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
             >
-              View full report
-              <span className="ml-0.5">&rarr;</span>
-            </Link>
-          )}
-          <button
-            onClick={() => toggleDiscover(script.id)}
-            className="text-[13px] font-medium flex items-center gap-1.5 transition-colors ml-auto"
-            style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
-          >
-            <span className={`inline-block w-3.5 h-3.5 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
-            {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
-          </button>
+              <span className={`inline-block w-4 h-4 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
+              {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
+            </button>
+          </div>
         </div>
 
         {/* Opportunities dropdown */}
@@ -788,14 +793,14 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               else next.add(script.id)
               return next
             })}
-            className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-between px-6 py-3.5 text-left hover:bg-gray-50 transition-colors"
           >
             {scriptOpps.length > 0 ? (
-              <span className="text-[13px] font-semibold text-purple-600">
+              <span className="text-[14px] font-semibold text-purple-600">
                 Qualifies for {scriptOpps.length} opportunit{scriptOpps.length === 1 ? 'y' : 'ies'}
               </span>
             ) : (
-              <span className="text-[13px] text-gray-400">
+              <span className="text-[14px] text-gray-400">
                 Doesn&apos;t qualify for current opportunities
               </span>
             )}
@@ -807,25 +812,25 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </svg>
           </button>
           {isExpanded && scriptOpps.length > 0 && (
-            <div className="px-5 pb-4 space-y-2">
+            <div className="px-6 pb-4 space-y-2">
               {scriptOpps.map(opp => {
                 const isApplied = script.selectedOpps.includes(opp.id)
                 return (
                   <div
                     key={opp.id}
-                    className="flex items-center justify-between py-2.5 px-3 rounded-lg transition-colors"
+                    className="flex items-center justify-between py-3 px-4 rounded-lg transition-colors"
                     style={{ background: isApplied ? '#f5f3ff' : '#f9fafb' }}
                   >
                     <div className="flex-1 min-w-0 mr-3">
-                      <p className="text-[13px] font-medium text-gray-900 m-0">{opp.title}</p>
+                      <p className="text-[14px] font-medium text-gray-900 m-0">{opp.title}</p>
                       <div className="flex items-center gap-2 mt-0.5">
                         {opp.deadline && (
-                          <span className="text-[11px] text-gray-400">
+                          <span className="text-[12px] text-gray-400">
                             {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                           </span>
                         )}
                         {opp.min_score != null && (
-                          <span className="text-[11px] text-gray-400">
+                          <span className="text-[12px] text-gray-400">
                             {opp.min_score}+ score
                           </span>
                         )}
@@ -839,7 +844,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                         }
                         toggleOpp(script.id, opp.id)
                       }}
-                      className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all flex-shrink-0 ${
+                      className={`px-4 py-2 rounded-lg text-[13px] font-semibold transition-all flex-shrink-0 ${
                         isApplied
                           ? 'bg-purple-600 text-white'
                           : 'bg-white border border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
@@ -851,7 +856,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                 )
               })}
               {!showAccountForm && (
-                <p className="text-[11px] text-gray-400 mt-1 m-0">Create an account to apply for opportunities</p>
+                <p className="text-[12px] text-gray-400 mt-1 m-0">Create an account to apply for opportunities</p>
               )}
             </div>
           )}
@@ -859,20 +864,20 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
         {/* Delete confirmation dialog */}
         {isDeleteConfirm && (
-          <div style={{ borderTop: '1px solid #fecaca' }} className="px-5 py-4 bg-red-50">
-            <p className="text-[13px] text-gray-700 m-0 mb-3">
+          <div style={{ borderTop: '1px solid #fecaca' }} className="px-6 py-4 bg-red-50">
+            <p className="text-[14px] text-gray-700 m-0 mb-3">
               This will permanently delete your script from GEM. You&apos;ll need to resubmit it.
             </p>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => handleDeleteScript(script.id)}
-                className="px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors"
+                className="px-4 py-2 rounded-lg text-[13px] font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors"
               >
                 Delete
               </button>
               <button
                 onClick={() => setDeleteConfirmId(null)}
-                className="px-3 py-1.5 rounded-lg text-[12px] font-semibold text-gray-600 hover:bg-gray-100 transition-colors"
+                className="px-4 py-2 rounded-lg text-[13px] font-semibold text-gray-600 hover:bg-gray-100 transition-colors"
               >
                 Cancel
               </button>
