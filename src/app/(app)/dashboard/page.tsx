@@ -10,7 +10,6 @@
 //
 // Mobile: compact identity strip + single column stacked.
 
-import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
@@ -31,8 +30,92 @@ function svc() {
 export default async function DashboardPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/')
 
+  const service = svc()
+
+  // ── ANONYMOUS STATE ──
+  // No redirect — show upload + newest opportunities.
+  if (!user) {
+    const { data: openOpps } = await service
+      .from('opportunities')
+      .select('id, title, slug, subtitle, description, deadline')
+      .eq('status', 'active')
+    const anonOpps = (openOpps || []) as {
+      id: string; title: string; slug: string
+      subtitle: string | null; description: string | null; deadline: string | null
+    }[]
+
+    return (
+      <div className="space-y-10">
+        {/* Upload */}
+        <section>
+          <InlineScriptUpload startOpen redirectTo="/dashboard" />
+        </section>
+
+        {/* Newest opportunities */}
+        <section>
+          <header className="flex items-center justify-between gap-3 mb-4">
+            <h2 className="text-[16px] font-bold text-gray-900 m-0">Newest opportunities</h2>
+            <Link href="/opportunities" className="text-[13px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
+              View all
+            </Link>
+          </header>
+
+          {anonOpps.length === 0 ? (
+            <div className="rounded-2xl bg-white px-6 py-10 text-center"
+              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+              <p className="text-[14px] text-gray-400 m-0">No opportunities right now. Check back soon.</p>
+            </div>
+          ) : (
+            <div className="grid gap-3">
+              {anonOpps.slice(0, 5).map(opp => {
+                const deadlineDays = opp.deadline
+                  ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
+                  : null
+
+                return (
+                  <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
+                    <div className="rounded-2xl bg-white px-5 py-4 transition-shadow duration-150 hover:shadow-md"
+                      style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+                      <div className="flex items-start gap-4">
+                        <div className="w-1 self-stretch rounded-full shrink-0 mt-0.5" style={{ background: '#e5e7eb' }} />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between gap-2 mb-1">
+                            <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
+                              {opp.title}
+                            </h3>
+                            {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
+                              <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full"
+                                style={{
+                                  background: deadlineDays <= 7 ? '#dc2626' : '#d97706',
+                                  color: 'white',
+                                }}>
+                                {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
+                              </span>
+                            )}
+                          </div>
+                          {(opp.subtitle || opp.description) && (
+                            <p className="text-[13px] text-gray-500 m-0 mb-2 line-clamp-2 leading-relaxed">
+                              {opp.subtitle || opp.description}
+                            </p>
+                          )}
+                          <span className="text-[12px] font-medium text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                            View details →
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          )}
+        </section>
+      </div>
+    )
+  }
+
+  // ── LOGGED-IN STATE ──
   const { data: profile } = await supabase
     .from('profiles')
     .select('subscription_status, full_name, handle, avatar_url, heat_score, headline')
@@ -41,7 +124,6 @@ export default async function DashboardPage() {
 
   const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   const isTrial = !isPro
-  const service = svc()
 
   // ---------- YOUR scripts ----------
   type MySubRow = {

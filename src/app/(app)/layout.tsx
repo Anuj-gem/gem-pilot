@@ -39,14 +39,20 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Logged-out: render the page with just the nav. /report and /w pages
-  // remain accessible to anonymous viewers (they're share-link surfaces).
+  // Logged-out: render the page with the anonymous sidebar + nav.
+  // /report and /w pages remain accessible. /dashboard shows the
+  // anonymous onboarding state (upload + newest opportunities).
   if (!user) {
     return (
-      <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+      <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
         <Nav />
-        <div className="max-w-6xl mx-auto px-4 sm:px-5 pt-4 pb-24">
-          {children}
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 lg:pb-8">
+          <div className="flex gap-8">
+            <AppSidebar {...{ anonymous: true as const }} />
+            <main className="flex-1 min-w-0">
+              {children}
+            </main>
+          </div>
         </div>
         <ScriptUploadModal redirectTo="/evaluating" />
       </div>
