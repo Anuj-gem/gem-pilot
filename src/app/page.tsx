@@ -31,7 +31,7 @@ export default async function Home({
 
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (user) redirect('/dashboard')
+  if (user) redirect('/onboarding')
 
   // Query live opportunities for above-fold section.
   const service = createServerClient(

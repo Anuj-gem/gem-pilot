@@ -63,6 +63,6 @@ export default async function StartPage() {
     } catch {}
   }
 
-  // Authenticated — scripts claimed, send to dashboard.
-  redirect('/dashboard')
+  // Authenticated — scripts claimed, send to onboarding (the main app).
+  redirect('/onboarding')
 }

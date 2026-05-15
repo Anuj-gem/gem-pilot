@@ -1,19 +1,13 @@
-// /onboarding — New user onboarding flow.
+// /onboarding — The main app experience for all users.
 // Anonymous users: upload scripts → see results → create account.
-// Authenticated users: redirect to dashboard.
+// Authenticated users: see saved scripts, upload new ones, browse opportunities.
 
-import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase-server'
 import { OnboardingClient } from './onboarding-client'
 
 export const dynamic = 'force-dynamic'
 
 export default async function OnboardingPage() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  // Already logged in — send to dashboard
-  if (user) redirect('/dashboard')
-
+  // Both anonymous and authenticated users use this page.
+  // The client component detects auth state and shows saved scripts.
   return <OnboardingClient />
 }

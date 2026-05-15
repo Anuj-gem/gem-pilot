@@ -2,7 +2,7 @@
 
 // EvaluatingClient — progress bar + inline signup form.
 // Signup fields visible immediately. Progress runs in parallel.
-// After signup, waits for eval to finish, then redirects to /dashboard.
+// After signup, waits for eval to finish, then redirects to /onboarding.
 
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
@@ -32,7 +32,7 @@ export function EvaluatingClient() {
 
   // Redirect once both signup AND eval are done
   const goToDashboard = useCallback(() => {
-    router.push('/dashboard')
+    router.push('/onboarding')
     router.refresh()
   }, [router])
 
@@ -92,7 +92,7 @@ export function EvaluatingClient() {
     if (googleLoading) return
     setGoogleLoading(true)
     setError('')
-    // Google OAuth goes through /auth/callback → /start → claims scripts → /dashboard
+    // Google OAuth goes through /auth/callback → /start → claims scripts → /onboarding
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent('/start')}`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -115,7 +115,7 @@ export function EvaluatingClient() {
       password,
       options: {
         data: { full_name: fullName },
-        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent('/dashboard')}`,
+        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent('/onboarding')}`,
       },
     })
 

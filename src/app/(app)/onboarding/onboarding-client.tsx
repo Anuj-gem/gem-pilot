@@ -375,14 +375,68 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           .eq('id', user.id)
           .single()
           .then(({ data: profile }) => {
+            const name = profile?.full_name || user.user_metadata?.full_name || firstName
             setAuthedUser({
               id: user.id,
               email: user.email || '',
-              full_name: profile?.full_name || user.user_metadata?.full_name || firstName,
+              full_name: name,
               avatar_url: profile?.avatar_url || user.user_metadata?.avatar_url || null,
               bio: profile?.bio || null,
               plan: profile?.plan || 'free',
             })
+            // Skip name step for logged-in users
+            if (!firstName && name) setFirstName(name)
+            setStep('upload')
+
+            // Load user's saved scripts from DB
+            supabase
+              .from('script_submissions')
+              .select('id, title, status, declared_format, hidden_at')
+              .eq('user_id', user.id)
+              .is('hidden_at', null)
+              .order('created_at', { ascending: false })
+              .then(({ data: subs }) => {
+                if (subs && subs.length > 0) {
+                  // Fetch evaluations for completed scripts
+                  const subIds = subs.map(s => s.id)
+                  supabase
+                    .from('script_evaluations')
+                    .select('submission_id, weighted_score, evaluation')
+                    .in('submission_id', subIds)
+                    .then(({ data: evals }) => {
+                      const evalMap = new Map<string, { score: number | null; tier: string | null; genres: string[]; evaluation: any }>()
+                      for (const ev of (evals || [])) {
+                        const evaluation = ev.evaluation as any
+                        const genres = evaluation?.genres || []
+                        const tier = evaluation?.tier || null
+                        evalMap.set(ev.submission_id, { score: ev.weighted_score, tier, genres, evaluation })
+                      }
+                      setScripts(prev => {
+                        // Merge DB scripts with any in-memory scripts (from current session uploads)
+                        const existingIds = new Set(prev.map(s => s.id))
+                        const dbScripts: UploadedScript[] = subs
+                          .filter(s => !existingIds.has(s.id))
+                          .map(s => {
+                            const ev = evalMap.get(s.id)
+                            return {
+                              id: s.id,
+                              title: s.title || 'Untitled',
+                              format: (s.declared_format === 'Series' ? 'Series' : 'Feature film') as DeclaredFormat,
+                              status: s.status === 'completed' ? 'completed' as const : 'processing' as const,
+                              progress: s.status === 'completed' ? 100 : 50,
+                              score: ev?.score ?? undefined,
+                              tier: ev?.tier ?? undefined,
+                              genres: ev?.genres ?? [],
+                              evaluation: ev?.evaluation ?? undefined,
+                              discoverOn: false,
+                              selectedOpps: [],
+                            }
+                          })
+                        return [...prev, ...dbScripts]
+                      })
+                    })
+                }
+              })
           })
       }
     })
