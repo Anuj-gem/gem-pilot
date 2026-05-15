@@ -42,10 +42,12 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // remain accessible to anonymous viewers (they're share-link surfaces).
   if (!user) {
     return (
-      <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+      <div className="min-h-screen">
         <Nav />
-        <div className="max-w-6xl mx-auto px-4 sm:px-5 pt-4 pb-24">
-          {children}
+        <div className="max-w-6xl mx-auto px-3 sm:px-5 pt-4 pb-24">
+          <div className="rounded-2xl p-4 sm:p-6" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            {children}
+          </div>
         </div>
         <ScriptUploadModal redirectTo="/evaluating" />
       </div>
@@ -191,18 +193,18 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+    <div className="min-h-screen">
       <Nav userData={navUserData} />
       {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
           Backend settings + profile columns unchanged for production. */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-8">
+      <div className="max-w-[1280px] mx-auto px-3 sm:px-5 pt-4 pb-8">
         <div className="flex gap-6">
           <DashboardSidebar
             fullName={profile?.full_name ?? null}
             isPro={isPro}
             avatarUrl={profile?.avatar_url ?? null}
           />
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 rounded-2xl p-4 sm:p-5" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             {children}
           </div>
         </div>

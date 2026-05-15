@@ -57,26 +57,27 @@ export default async function Home({
       {/* ── Above fold: dark cinematic hero (handles its own bg) ── */}
       <LandingHero />
 
-      {/* ── Below fold: light-themed sections ── */}
-      <div style={{ background: '#F7F8FA', color: '#18181b' }}>
-        {/* ── How it works: Free evaluation ── */}
-        <LandingCredibility />
+      {/* ── Below fold: white card sections on dark canvas ── */}
+      <div className="max-w-5xl mx-auto px-3 sm:px-5 py-8 space-y-6" style={{ color: '#18181b' }}>
+        <div className="rounded-2xl p-5 sm:p-8" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <LandingCredibility />
+        </div>
 
-        {/* ── Opportunities ── */}
-        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
-        <LandingOpportunities opportunities={opportunities} />
+        <div className="rounded-2xl p-5 sm:p-8" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <LandingOpportunities opportunities={opportunities} />
+        </div>
 
-        {/* ── Competitor comparison ── */}
-        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
-        <LandingCompare />
+        <div className="rounded-2xl p-5 sm:p-8" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <LandingCompare />
+        </div>
 
-        {/* ── Heat score ── */}
-        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
-        <LandingHeat />
+        <div className="rounded-2xl p-5 sm:p-8" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <LandingHeat />
+        </div>
 
-        {/* ── Membership ── */}
-        <div className="h-px mx-auto max-w-5xl" style={{ background: '#e4e4e7' }} />
-        <LandingPro />
+        <div className="rounded-2xl p-5 sm:p-8" style={{ background: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <LandingPro />
+        </div>
       </div>
 
       {/* ── Final CTA (dark band) ── */}

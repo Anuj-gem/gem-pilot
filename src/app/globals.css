@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  /* ── Light theme: vivid, premium, Hollywood editorial ── */
-  --gem-black: #FFFFFF;         /* page background — pure white */
+  /* ── Premium dark-canvas theme: deep purple base, white card surfaces ── */
+  --gem-black: #110a1a;         /* page background — deep purple-black */
+  --gem-surface: #ffffff;       /* card/content surfaces */
   --gem-white: #1a1a1a;        /* primary text — near-black */
   --gem-gray-50: #1C1917;      /* stone-900 — heaviest text */
   --gem-gray-100: #292524;     /* stone-800 */
@@ -52,15 +53,15 @@ body {
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
-/* Scrollbar — light */
+/* Scrollbar — dark canvas */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--gem-gray-800);
+  background: #1a1025;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gem-gray-600);
+  background: #2d2244;
   border-radius: 3px;
 }
 
