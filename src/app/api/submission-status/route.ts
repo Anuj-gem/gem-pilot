@@ -1,10 +1,12 @@
 // GET /api/submission-status?id=xxx
 // Returns the status of a script submission. Anonymous-friendly —
-// only returns status + title, no sensitive data. Used by the
-// /evaluating page to poll while the eval runs.
+// used by the /evaluating and /onboarding pages to poll while the
+// eval runs. When completed, also returns score, tier, and genres
+// from the evaluation.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
+import { calculateTier } from '@/types'
 
 function svc() {
   return createServerClient(
@@ -23,7 +25,7 @@ export async function GET(req: NextRequest) {
   const service = svc()
   const { data, error } = await service
     .from('script_submissions')
-    .select('id, status, title')
+    .select('id, status, title, declared_format')
     .eq('id', id)
     .single()
 
@@ -31,9 +33,40 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Not found' }, { status: 404 })
   }
 
-  return NextResponse.json({
+  // Base response — always returned
+  const response: Record<string, any> = {
     id: data.id,
     status: data.status,
     title: data.title,
-  })
+  }
+
+  // If completed, enrich with score, tier, genres from the evaluation
+  if (data.status === 'completed') {
+    const { data: evalData } = await service
+      .from('script_evaluations')
+      .select('weighted_score, evaluation')
+      .eq('submission_id', id)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single()
+
+    if (evalData) {
+      const score = Math.round(evalData.weighted_score ?? 0)
+      response.score = score
+      response.tier = calculateTier(score)
+
+      // Extract genres from the evaluation JSON classification
+      const evaluation = evalData.evaluation as any
+      const tags = evaluation?.classification?.tags
+      const genreField = evaluation?.classification?.genre || evaluation?.classification?.genres
+      response.genres = Array.isArray(genreField)
+        ? genreField
+        : Array.isArray(tags)
+        ? tags.slice(0, 5)
+        : []
+      response.format = data.declared_format
+    }
+  }
+
+  return NextResponse.json(response)
 }
