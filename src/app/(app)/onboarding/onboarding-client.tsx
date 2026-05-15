@@ -125,6 +125,45 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // Opportunity detail expand state (for inline opportunities page)
   const [expandedOppId, setExpandedOppId] = useState<string | null>(null)
 
+  // Opportunities page tab: 'open' (browse) or 'applications' (my submissions)
+  const [oppTab, setOppTab] = useState<'open' | 'applications'>('open')
+
+  // My applications data (fetched when authedUser switches to applications tab)
+  const [myApplications, setMyApplications] = useState<{
+    opportunity_id: string
+    opportunity_title: string
+    opportunity_subtitle: string | null
+    deadline: string | null
+    submissions: {
+      id: string
+      script_title: string
+      script_format: string | null
+      score: number | null
+      status: string
+      feedback: string | null
+      outcome: string | null
+      submitted_at: string
+      reviewed_at: string | null
+    }[]
+  }[]>([])
+  const [appsLoading, setAppsLoading] = useState(false)
+  const [appsFetched, setAppsFetched] = useState(false)
+
+  // Fetch my applications when user switches to that tab
+  useEffect(() => {
+    if (oppTab === 'applications' && authedUser && !appsFetched) {
+      setAppsLoading(true)
+      fetch('/api/my-applications')
+        .then(r => r.ok ? r.json() : { applications: [] })
+        .then(data => {
+          setMyApplications(data.applications || [])
+          setAppsFetched(true)
+        })
+        .catch(() => setMyApplications([]))
+        .finally(() => setAppsLoading(false))
+    }
+  }, [oppTab, authedUser, appsFetched])
+
   // beforeunload — warn user about unsaved progress (skip if logged in)
   useEffect(() => {
     function handleBeforeUnload(e: BeforeUnloadEvent) {
@@ -1408,7 +1447,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       </div>
                     )
                   })() : (
-                    /* Grid view */
+                    /* Tabbed view: Open Opportunities / My Applications */
                     <div>
                       <h1
                         className="text-[22px] font-bold mb-1"
@@ -1416,63 +1455,241 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       >
                         Opportunities
                       </h1>
-                      <p className="text-[14px] mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                      <p className="text-[14px] mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>
                         Real opportunities from our insider network
                       </p>
 
-                      {allOppsExpanded.length === 0 ? (
-                        <div
-                          className="rounded-xl py-12 px-6 text-center"
-                          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
-                        >
-                          <svg className="w-10 h-10 mx-auto mb-3 animate-spin" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                          </svg>
-                          <p className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Loading opportunities...</p>
-                        </div>
-                      ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {allOppsExpanded.map(opp => {
-                            const deadlineStr = opp.deadline
-                              ? (() => {
-                                  const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
-                                  if (days <= 0) return 'Closed'
-                                  if (days === 1) return 'Closes tomorrow'
-                                  if (days <= 7) return `${days} days left`
-                                  return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-                                })()
-                              : null
-                            return (
+                      {/* Tab bar */}
+                      <div className="flex items-center gap-1 mb-5 p-1 rounded-lg" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                        {([
+                          { id: 'open' as const, label: 'Open opportunities' },
+                          { id: 'applications' as const, label: 'My applications' },
+                        ]).map(tab => {
+                          const active = oppTab === tab.id
+                          const disabled = tab.id === 'applications' && !authedUser
+                          return (
+                            <button
+                              key={tab.id}
+                              onClick={() => {
+                                if (disabled) { setShowAccountForm(true); return }
+                                setOppTab(tab.id)
+                              }}
+                              className={`flex-1 text-[13px] font-semibold py-2 rounded-md transition-all ${
+                                active
+                                  ? 'text-white'
+                                  : disabled
+                                    ? 'text-gray-500 cursor-default'
+                                    : 'text-gray-400 hover:text-gray-200'
+                              }`}
+                              style={active ? { background: 'rgba(255,255,255,0.12)' } : {}}
+                            >
+                              {tab.label}
+                            </button>
+                          )
+                        })}
+                      </div>
+
+                      {/* ── OPEN OPPORTUNITIES TAB ── */}
+                      {oppTab === 'open' && (
+                        <>
+                          {allOppsExpanded.length === 0 ? (
+                            <div
+                              className="rounded-xl py-12 px-6 text-center"
+                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                            >
+                              <svg className="w-10 h-10 mx-auto mb-3 animate-spin" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                              </svg>
+                              <p className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Loading opportunities...</p>
+                            </div>
+                          ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {allOppsExpanded.map(opp => {
+                                const deadlineStr = opp.deadline
+                                  ? (() => {
+                                      const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
+                                      if (days <= 0) return 'Closed'
+                                      if (days === 1) return 'Closes tomorrow'
+                                      if (days <= 7) return `${days} days left`
+                                      return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+                                    })()
+                                  : null
+                                return (
+                                  <button
+                                    key={opp.id}
+                                    onClick={() => setExpandedOppId(opp.id)}
+                                    className="block rounded-xl bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-0.5 group text-left w-full border-0 cursor-pointer"
+                                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
+                                  >
+                                    <h4
+                                      className="text-[15px] font-bold text-gray-900 m-0 mb-2 group-hover:text-purple-700 transition-colors leading-snug"
+                                      style={{ fontFamily: 'Georgia, serif' }}
+                                    >
+                                      {opp.title}
+                                    </h4>
+                                    {opp.subtitle && (
+                                      <p className="text-[13px] text-gray-500 m-0 mb-3 leading-relaxed">{opp.subtitle}</p>
+                                    )}
+                                    <div className="flex items-center gap-3 mt-auto pt-2" style={{ borderTop: '1px solid #f3f4f6' }}>
+                                      {opp.min_score != null && (
+                                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
+                                          {Math.round(opp.min_score)}+ score
+                                        </span>
+                                      )}
+                                      {deadlineStr && (
+                                        <span className="text-[11px] font-medium text-gray-400">{deadlineStr}</span>
+                                      )}
+                                    </div>
+                                  </button>
+                                )
+                              })}
+                            </div>
+                          )}
+                        </>
+                      )}
+
+                      {/* ── MY APPLICATIONS TAB ── */}
+                      {oppTab === 'applications' && (
+                        <>
+                          {appsLoading ? (
+                            <div
+                              className="rounded-xl py-12 px-6 text-center"
+                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                            >
+                              <svg className="w-10 h-10 mx-auto mb-3 animate-spin" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                              </svg>
+                              <p className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Loading applications...</p>
+                            </div>
+                          ) : myApplications.length === 0 ? (
+                            <div
+                              className="rounded-xl py-12 px-6 text-center"
+                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                            >
+                              <svg className="w-10 h-10 mx-auto mb-3" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                              </svg>
+                              <p className="text-[14px] font-medium mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>No applications yet</p>
                               <button
-                                key={opp.id}
-                                onClick={() => setExpandedOppId(opp.id)}
-                                className="block rounded-xl bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-0.5 group text-left w-full border-0 cursor-pointer"
-                                style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
+                                onClick={() => setOppTab('open')}
+                                className="px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
+                                style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
                               >
-                                <h4
-                                  className="text-[15px] font-bold text-gray-900 m-0 mb-2 group-hover:text-purple-700 transition-colors leading-snug"
-                                  style={{ fontFamily: 'Georgia, serif' }}
-                                >
-                                  {opp.title}
-                                </h4>
-                                {opp.subtitle && (
-                                  <p className="text-[13px] text-gray-500 m-0 mb-3 leading-relaxed">{opp.subtitle}</p>
-                                )}
-                                <div className="flex items-center gap-3 mt-auto pt-2" style={{ borderTop: '1px solid #f3f4f6' }}>
-                                  {opp.min_score != null && (
-                                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
-                                      {Math.round(opp.min_score)}+ score
-                                    </span>
-                                  )}
-                                  {deadlineStr && (
-                                    <span className="text-[11px] font-medium text-gray-400">{deadlineStr}</span>
-                                  )}
-                                </div>
+                                Browse opportunities
                               </button>
+                            </div>
+                          ) : (() => {
+                            // Split into pending and reviewed, sorted by submitted_at (newest first)
+                            const pending = myApplications.filter(a => a.submissions.some(s => s.status === 'pending'))
+                            const reviewed = myApplications.filter(a => a.submissions.every(s => s.status !== 'pending'))
+                            const outcomeLabel: Record<string, string> = {
+                              advancing: 'Advancing',
+                              developing: 'Developing',
+                              revise_resubmit: 'Revise & resubmit',
+                              pass: 'Pass',
+                            }
+                            const outcomeBg: Record<string, string> = {
+                              advancing: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+                              developing: 'bg-blue-50 text-blue-700 border border-blue-200',
+                              revise_resubmit: 'bg-amber-50 text-amber-700 border border-amber-200',
+                              pass: 'bg-gray-100 text-gray-500',
+                            }
+
+                            function renderAppGroup(group: typeof myApplications[0]) {
+                              return (
+                                <div key={group.opportunity_id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
+                                  <div className="p-5">
+                                    <h4
+                                      className="text-[15px] font-bold text-gray-900 m-0 mb-1"
+                                      style={{ fontFamily: 'Georgia, serif' }}
+                                    >
+                                      {group.opportunity_title}
+                                    </h4>
+                                    {group.opportunity_subtitle && (
+                                      <p className="text-[12px] text-gray-400 m-0 mb-3">{group.opportunity_subtitle}</p>
+                                    )}
+
+                                    <div className="space-y-2">
+                                      {group.submissions.map(sub => {
+                                        const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / 86400000)
+                                        const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? 'Yesterday' : `${daysAgo}d ago`
+                                        return (
+                                          <div key={sub.id}>
+                                            <div
+                                              className="flex items-center justify-between py-2.5 px-3 rounded-lg"
+                                              style={{ background: '#f9fafb' }}
+                                            >
+                                              <div className="flex items-center gap-3 flex-1 min-w-0">
+                                                {sub.score != null && (
+                                                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-[12px] font-bold bg-gradient-to-br flex-shrink-0 ${scoreGradient(sub.score)}`}>
+                                                    {sub.score}
+                                                  </div>
+                                                )}
+                                                <div className="min-w-0">
+                                                  <p className="text-[13px] font-medium text-gray-900 m-0 truncate">{sub.script_title}</p>
+                                                  <p className="text-[11px] text-gray-400 m-0">Submitted {timeLabel}</p>
+                                                </div>
+                                              </div>
+                                              <div className="flex-shrink-0 ml-3">
+                                                {sub.status === 'pending' ? (
+                                                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-200">
+                                                    Pending
+                                                  </span>
+                                                ) : sub.outcome ? (
+                                                  <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${outcomeBg[sub.outcome] || 'bg-gray-100 text-gray-500'}`}>
+                                                    {outcomeLabel[sub.outcome] || sub.outcome}
+                                                  </span>
+                                                ) : (
+                                                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-500">
+                                                    Reviewed
+                                                  </span>
+                                                )}
+                                              </div>
+                                            </div>
+                                            {/* Feedback */}
+                                            {sub.feedback && (
+                                              <div className="ml-3 mt-1.5 mb-1 px-3 py-2 rounded-lg" style={{ background: '#f3f4f6' }}>
+                                                <p className="text-[12px] text-gray-600 m-0 leading-relaxed">{sub.feedback}</p>
+                                              </div>
+                                            )}
+                                          </div>
+                                        )
+                                      })}
+                                    </div>
+                                  </div>
+                                </div>
+                              )
+                            }
+
+                            return (
+                              <div className="space-y-6">
+                                {pending.length > 0 && (
+                                  <div>
+                                    <p className="text-[12px] font-semibold uppercase tracking-wider mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                                      Pending review
+                                    </p>
+                                    <div className="space-y-4">
+                                      {pending.map(renderAppGroup)}
+                                    </div>
+                                  </div>
+                                )}
+                                {reviewed.length > 0 && (
+                                  <div>
+                                    <p className="text-[12px] font-semibold uppercase tracking-wider mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                                      Completed
+                                    </p>
+                                    <div className="space-y-4">
+                                      {reviewed.map(renderAppGroup)}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
                             )
-                          })}
-                        </div>
+                          })()}
+                        </>
                       )}
                     </div>
                   )}
