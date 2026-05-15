@@ -625,6 +625,42 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </ul>
           </nav>
 
+          {/* ── Writer Stats ── */}
+          <div className="px-5 py-4 border-t" style={{ borderColor: '#f0f0f0' }}>
+            <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-wider m-0 mb-3">Your Stats</h3>
+            {(() => {
+              const completed = scripts.filter(s => s.status === 'completed')
+              const pending = scripts.filter(s => s.status === 'processing')
+              const avgScore = completed.length > 0
+                ? Math.round(completed.reduce((sum, s) => sum + (s.score || 0), 0) / completed.length)
+                : null
+              return (
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12px] text-gray-500">Scripts submitted</span>
+                    <span className="text-[13px] font-semibold text-gray-900">{scripts.length}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12px] text-gray-500">Pending</span>
+                    <span className="text-[13px] font-semibold" style={{ color: pending.length > 0 ? '#7c3aed' : '#111827' }}>{pending.length}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12px] text-gray-500">Industry matches</span>
+                    <span className="text-[13px] font-semibold text-gray-900">{opportunities.length}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12px] text-gray-500">Avg GEM score</span>
+                    <span className="text-[13px] font-semibold" style={{ color: avgScore != null ? '#059669' : '#111827' }}>{avgScore != null ? avgScore : '—'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12px] text-gray-500">Insider heat</span>
+                    <span className="text-[13px] font-semibold" style={{ color: '#f59e0b' }}>0</span>
+                  </div>
+                </div>
+              )
+            })()}
+          </div>
+
           {/* Ephemeral warning */}
           <div className="px-4 pb-4 mt-auto">
             <div className="rounded-xl bg-amber-50 border border-amber-200 px-3 py-3">
@@ -672,65 +708,12 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </div>
           </div>
 
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-6">
-            {/* ── Your Writer Stats — persistent white card ── */}
-            {(() => {
-              const completed = scripts.filter(s => s.status === 'completed')
-              const pending = scripts.filter(s => s.status === 'processing')
-              const avgScore = completed.length > 0
-                ? Math.round(completed.reduce((sum, s) => sum + (s.score || 0), 0) / completed.length)
-                : null
-
-              return (
-                <div
-                  className="mb-6 rounded-2xl bg-white overflow-hidden"
-                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
-                >
-                  <div className="px-5 pt-4 pb-1">
-                    <h2 className="text-[13px] font-bold text-gray-400 uppercase tracking-wider m-0">Your Stats</h2>
-                  </div>
-                  <div className="grid grid-cols-5 divide-x divide-gray-100 px-2 pb-4 pt-2">
-                    {/* Scripts Submitted */}
-                    <div className="text-center px-2">
-                      <p className="text-[22px] font-bold text-gray-900 m-0">{scripts.length}</p>
-                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Scripts submitted</p>
-                    </div>
-                    {/* Pending Evaluation */}
-                    <div className="text-center px-2">
-                      <p className="text-[22px] font-bold m-0" style={{ color: pending.length > 0 ? '#7c3aed' : '#111827' }}>
-                        {pending.length}
-                      </p>
-                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Pending</p>
-                    </div>
-                    {/* Industry Matches */}
-                    <div className="text-center px-2">
-                      <p className="text-[22px] font-bold text-gray-900 m-0">{opportunities.length}</p>
-                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Industry matches</p>
-                    </div>
-                    {/* Average GEM Score */}
-                    <div className="text-center px-2">
-                      <p className="text-[22px] font-bold m-0" style={{ color: avgScore != null ? '#059669' : '#111827' }}>
-                        {avgScore != null ? avgScore : '—'}
-                      </p>
-                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Avg GEM score</p>
-                    </div>
-                    {/* Insider Heat */}
-                    <div className="text-center px-2">
-                      <p className="text-[22px] font-bold m-0" style={{ color: '#f59e0b' }}>
-                        0
-                      </p>
-                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Insider heat</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })()}
-
+          <div className="px-6 lg:px-10 py-6">
             {/* Account creation inline card (when toggled) */}
             {showAccountForm && (
               <div
                 key="account-form"
-                className="mb-6 rounded-2xl p-5"
+                className="mb-6 rounded-2xl p-5 max-w-md"
                 style={{ background: '#ffffff', boxShadow: '0 8px 40px rgba(0,0,0,0.25)', ...fadeSlide }}
               >
                 <div className="flex items-center justify-between mb-4">
@@ -810,174 +793,182 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               {/* Upload step */}
               {step === 'upload' && (
                 <div>
-                  {/* ── Conversational heading ── */}
-                  <h1
-                    className="text-[24px] font-bold mb-1"
-                    style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
-                  >
-                    {scripts.length === 0
-                      ? `What are you working on, ${firstName}?`
-                      : 'Submit a script'}
-                  </h1>
-                  <p className="text-[14px] mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    {scripts.length === 0
-                      ? 'Pick a format and upload your screenplay. Your first evaluation is free.'
-                      : 'Upload a PDF to get your evaluation in under a minute.'}
-                  </p>
+                  {/* ── Submission section — top-left aligned ── */}
+                  <div className="mb-8">
+                    <h1
+                      className="text-[22px] font-bold mb-1"
+                      style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
+                    >
+                      {scripts.length === 0
+                        ? `What are you working on, ${firstName}?`
+                        : 'Submit a script'}
+                    </h1>
+                    <p className="text-[14px] mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                      {scripts.length === 0
+                        ? 'Pick a format and upload your screenplay. Your first evaluation is free.'
+                        : 'Upload a PDF to get your evaluation in under a minute.'}
+                    </p>
 
-                  {/* ── Uploaded scripts list ── */}
-                  <div className="space-y-3 mb-4">
-                    {scripts.map(script => (
-                      <div key={script.id} className="rounded-xl bg-white p-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                            </svg>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[15px] font-medium text-gray-900 truncate">{script.title}</p>
-                            <div className="flex items-center gap-2 mt-0.5">
-                              <span className="text-[13px] text-gray-400">{script.format}</span>
-                              <span className="text-gray-300">·</span>
-                              {script.status === 'processing' ? (
-                                <span className="text-[13px] text-purple-600">Evaluating...</span>
-                              ) : (
-                                <span className="text-[13px] text-emerald-600 flex items-center gap-1">
-                                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                  </svg>
-                                  Done
-                                </span>
+                    {/* ── Uploaded scripts list ── */}
+                    {scripts.length > 0 && (
+                      <div className="space-y-3 mb-4 max-w-lg">
+                        {scripts.map(script => (
+                          <div key={script.id} className="rounded-xl bg-white p-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0">
+                                <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-[15px] font-medium text-gray-900 truncate">{script.title}</p>
+                                <div className="flex items-center gap-2 mt-0.5">
+                                  <span className="text-[13px] text-gray-400">{script.format}</span>
+                                  <span className="text-gray-300">·</span>
+                                  {script.status === 'processing' ? (
+                                    <span className="text-[13px] text-purple-600">Evaluating...</span>
+                                  ) : (
+                                    <span className="text-[13px] text-emerald-600 flex items-center gap-1">
+                                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                      </svg>
+                                      Done
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              {script.status === 'completed' && script.score != null && (
+                                <div
+                                  className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-[15px] font-bold bg-gradient-to-br ${scoreGradient(script.score)}`}
+                                >
+                                  {script.score}
+                                </div>
                               )}
                             </div>
+                            {script.status === 'processing' && (
+                              <div className="mt-3 h-1 bg-gray-100 rounded-full overflow-hidden">
+                                <div
+                                  className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 ease-out"
+                                  style={{ width: `${script.progress}%` }}
+                                />
+                              </div>
+                            )}
                           </div>
-                          {script.status === 'completed' && script.score != null && (
-                            <div
-                              className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-[15px] font-bold bg-gradient-to-br ${scoreGradient(script.score)}`}
-                            >
-                              {script.score}
+                        ))}
+                      </div>
+                    )}
+
+                    {/* ── Format-first flow ── */}
+                    {scripts.length < 2 ? (
+                      <div className="max-w-lg">
+                        {!pendingFormat && !showFormatPicker ? (
+                          <>
+                            <div className="flex gap-3 mb-3">
+                              {(['Series', 'Feature film'] as DeclaredFormat[]).map(fmt => (
+                                <button
+                                  key={fmt}
+                                  onClick={() => {
+                                    setShowFormatPicker(true)
+                                    setPendingFormat(fmt)
+                                    setTimeout(() => fileInputRef.current?.click(), 50)
+                                  }}
+                                  className="flex-1 rounded-xl py-4 px-4 text-center transition-all group"
+                                  style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}
+                                  onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)' }}
+                                  onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)' }}
+                                >
+                                  <div className="flex flex-col items-center gap-1.5">
+                                    {fmt === 'Series' ? (
+                                      <svg className="w-6 h-6 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H2.625c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+                                      </svg>
+                                    ) : (
+                                      <svg className="w-6 h-6 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                      </svg>
+                                    )}
+                                    <span className="text-[14px] font-semibold" style={{ color: '#ffffff' }}>{fmt}</span>
+                                    <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                                      {fmt === 'Series' ? 'Pilot or episode' : 'Full screenplay'}
+                                    </span>
+                                  </div>
+                                </button>
+                              ))}
                             </div>
-                          )}
-                        </div>
-                        {script.status === 'processing' && (
-                          <div className="mt-3 h-1 bg-gray-100 rounded-full overflow-hidden">
-                            <div
-                              className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 ease-out"
-                              style={{ width: `${script.progress}%` }}
-                            />
+                            <p className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                              {scripts.length === 0 ? 'Your first evaluation is free' : '1 free evaluation left'}
+                            </p>
+                          </>
+                        ) : (
+                          <div>
+                            <div className="flex items-center gap-2 mb-3">
+                              <span className="inline-block px-2.5 py-1 rounded-full text-[12px] font-medium" style={{ background: 'rgba(124,58,237,0.15)', color: '#a78bfa' }}>
+                                {pendingFormat}
+                              </span>
+                              <button
+                                onClick={() => { setPendingFormat(null); setShowFormatPicker(false) }}
+                                className="text-[12px] transition-colors"
+                                style={{ color: 'rgba(255,255,255,0.4)' }}
+                                onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+                                onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+                              >
+                                Change
+                              </button>
+                            </div>
+                            <button
+                              onClick={() => fileInputRef.current?.click()}
+                              className="w-full rounded-xl border-2 border-dashed py-6 px-4 transition-colors group"
+                              style={{ borderColor: 'rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)' }}
+                              onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)'; e.currentTarget.style.background = 'rgba(167,139,250,0.08)' }}
+                              onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
+                            >
+                              <div className="flex flex-col items-center gap-2">
+                                <svg className="w-8 h-8 transition-colors" style={{ color: 'rgba(255,255,255,0.25)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                                </svg>
+                                <span className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Upload your screenplay (PDF)</span>
+                              </div>
+                            </button>
                           </div>
                         )}
                       </div>
-                    ))}
+                    ) : (
+                      <div className="max-w-lg rounded-xl py-4 px-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span className="text-[14px]" style={{ color: 'rgba(255,255,255,0.4)' }}>2 of 2 free evaluations used</span>
+                      </div>
+                    )}
+
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".pdf"
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
+
+                    {/* View results button */}
+                    {scripts.some(s => s.status === 'completed') && (
+                      <button
+                        onClick={() => setStep('results')}
+                        className="mt-4 py-3 px-8 rounded-xl text-white font-semibold text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all shadow-lg shadow-purple-600/20"
+                      >
+                        View results
+                      </button>
+                    )}
                   </div>
 
-                  {/* ── Format-first flow ── */}
-                  {scripts.length < 2 ? (
-                    <div className="rounded-2xl bg-white p-6" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
-                      {/* Format selector — always visible when no format chosen */}
-                      {!pendingFormat && !showFormatPicker ? (
-                        <>
-                          <div className="flex gap-3 mb-4">
-                            {(['Series', 'Feature film'] as DeclaredFormat[]).map(fmt => (
-                              <button
-                                key={fmt}
-                                onClick={() => {
-                                  setShowFormatPicker(true)
-                                  setPendingFormat(fmt)
-                                  setTimeout(() => fileInputRef.current?.click(), 50)
-                                }}
-                                className="flex-1 rounded-xl border-2 py-5 px-4 text-center transition-all hover:border-purple-400 group"
-                                style={{ borderColor: '#e5e7eb', background: '#ffffff' }}
-                              >
-                                <div className="flex flex-col items-center gap-2">
-                                  {fmt === 'Series' ? (
-                                    <svg className="w-7 h-7 text-gray-400 group-hover:text-purple-500 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H2.625c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
-                                    </svg>
-                                  ) : (
-                                    <svg className="w-7 h-7 text-gray-400 group-hover:text-purple-500 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-                                    </svg>
-                                  )}
-                                  <span className="text-[14px] font-semibold text-gray-800">{fmt}</span>
-                                  <span className="text-[12px] text-gray-400">
-                                    {fmt === 'Series' ? 'Pilot or episode' : 'Full screenplay'}
-                                  </span>
-                                </div>
-                              </button>
-                            ))}
-                          </div>
-                          <p className="text-[12px] text-gray-400 text-center">
-                            {scripts.length === 0 ? 'Your first evaluation is free' : '1 free evaluation left'}
-                          </p>
-                        </>
-                      ) : (
-                        /* Upload zone — shown after format is picked */
-                        <div className="text-center">
-                          <div className="flex items-center justify-center gap-2 mb-4">
-                            <span className="inline-block px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 text-[12px] font-medium">
-                              {pendingFormat}
-                            </span>
-                            <button
-                              onClick={() => { setPendingFormat(null); setShowFormatPicker(false) }}
-                              className="text-[12px] text-gray-400 hover:text-gray-600 transition-colors"
-                            >
-                              Change
-                            </button>
-                          </div>
-                          <button
-                            onClick={() => fileInputRef.current?.click()}
-                            className="w-full rounded-xl border-2 border-dashed border-gray-200 py-6 px-4 hover:border-purple-400 hover:bg-purple-50/30 transition-colors group"
-                          >
-                            <div className="flex flex-col items-center gap-2">
-                              <svg className="w-8 h-8 text-gray-300 group-hover:text-purple-400 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
-                              </svg>
-                              <span className="text-[14px] text-gray-500 group-hover:text-purple-600 font-medium">Upload your screenplay (PDF)</span>
-                            </div>
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="w-full rounded-xl py-4 px-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      <span className="text-[14px]" style={{ color: 'rgba(255,255,255,0.4)' }}>2 of 2 free evaluations used</span>
-                    </div>
-                  )}
-
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept=".pdf"
-                    onChange={handleFileChange}
-                    className="hidden"
-                  />
-
-                  {/* View results button */}
-                  {scripts.some(s => s.status === 'completed') && (
-                    <button
-                      onClick={() => setStep('results')}
-                      className="w-full mt-4 py-3.5 rounded-xl text-white font-semibold text-[15px] bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all shadow-lg shadow-purple-600/20"
-                    >
-                      View results
-                    </button>
-                  )}
-
-                  {/* ── New Opportunities preview ── */}
+                  {/* ── Opportunities — wide grid ── */}
                   {allOpps.length > 0 && (
-                    <div className="mt-6">
-                      <div className="flex items-baseline justify-between mb-3">
-                        <div>
-                          <h3 className="text-[15px] font-bold m-0" style={{ color: '#ffffff' }}>
-                            New Opportunities
-                          </h3>
-                          <p className="text-[12px] mt-0.5 m-0" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                            Real opportunities from our insider network your script may qualify for
-                          </p>
-                        </div>
+                    <div>
+                      <div className="mb-4">
+                        <h2 className="text-[18px] font-bold m-0" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
+                          New Opportunities
+                        </h2>
+                        <p className="text-[13px] mt-1 m-0" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                          Real opportunities from our insider network your script may qualify for
+                        </p>
                       </div>
-                      <div className="space-y-3">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {allOpps.slice(0, 3).map(opp => {
                           const deadlineStr = opp.deadline
                             ? (() => {
@@ -994,26 +985,31 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                               href={`/opportunities/${opp.id}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block rounded-xl bg-white p-4 transition-shadow hover:shadow-lg group"
+                              className="block rounded-xl bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-0.5 group"
                               style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)', textDecoration: 'none' }}
                             >
-                              <h4
-                                className="text-[15px] font-bold text-gray-900 m-0 group-hover:text-purple-700 transition-colors leading-snug"
-                                style={{ fontFamily: 'Georgia, serif' }}
-                              >
-                                {opp.title}
-                              </h4>
+                              <div className="flex items-start justify-between gap-2 mb-2">
+                                <h4
+                                  className="text-[15px] font-bold text-gray-900 m-0 group-hover:text-purple-700 transition-colors leading-snug"
+                                  style={{ fontFamily: 'Georgia, serif' }}
+                                >
+                                  {opp.title}
+                                </h4>
+                                <svg className="w-4 h-4 text-gray-300 group-hover:text-purple-400 flex-shrink-0 mt-0.5 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                </svg>
+                              </div>
                               {opp.subtitle && (
-                                <p className="text-[13px] text-gray-500 m-0 mt-1 leading-snug">{opp.subtitle}</p>
+                                <p className="text-[13px] text-gray-500 m-0 mb-3 leading-relaxed">{opp.subtitle}</p>
                               )}
-                              <div className="flex items-center gap-3 mt-2">
+                              <div className="flex items-center gap-3 mt-auto pt-2" style={{ borderTop: '1px solid #f3f4f6' }}>
                                 {opp.min_score != null && (
-                                  <span className="text-[12px] font-semibold text-gray-500">
-                                    Requires {Math.round(opp.min_score)}+ score
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
+                                    {Math.round(opp.min_score)}+ score
                                   </span>
                                 )}
                                 {deadlineStr && (
-                                  <span className="text-[12px] font-semibold text-gray-400">
+                                  <span className="text-[11px] font-medium text-gray-400">
                                     {deadlineStr}
                                   </span>
                                 )}
@@ -1022,25 +1018,22 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                           )
                         })}
                       </div>
-                      <a
-                        href="/opportunities"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1.5 mt-3 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
-                        style={{
-                          color: 'rgba(255,255,255,0.5)',
-                          background: 'rgba(255,255,255,0.06)',
-                          border: '1px solid rgba(255,255,255,0.1)',
-                          textDecoration: 'none',
-                        }}
-                        onMouseOver={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)' }}
-                        onMouseOut={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; e.currentTarget.style.background = 'rgba(255,255,255,0.06)' }}
-                      >
-                        View all opportunities
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </a>
+                      <div className="mt-4">
+                        <a
+                          href="/opportunities"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-[13px] font-semibold transition-colors"
+                          style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
+                          onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+                          onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+                        >
+                          View all opportunities
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1048,7 +1041,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
               {/* Results step */}
               {step === 'results' && selectedScript && (
-                <div>
+                <div className="max-w-2xl">
                   {/* Back to upload */}
                   <button
                     onClick={() => setStep('upload')}
