@@ -14,6 +14,7 @@ type DeclaredFormat = 'Feature film' | 'Series'
 
 type UploadedScript = {
   id: string
+  evalId?: string
   title: string
   format: DeclaredFormat
   status: 'processing' | 'completed'
@@ -289,6 +290,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     tier: data.tier,
                     genres: data.genres || [],
                     evaluation: data.evaluation,
+                    evalId: data.eval_id,
                   }
                 : s
             )
@@ -469,10 +471,10 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                   const subIds = subs.map(s => s.id)
                   supabase
                     .from('script_evaluations')
-                    .select('submission_id, weighted_score, evaluation')
+                    .select('id, submission_id, weighted_score, evaluation')
                     .in('submission_id', subIds)
                     .then(({ data: evals }) => {
-                      const evalMap = new Map<string, { score: number | null; tier: string | null; genres: string[]; evaluation: any }>()
+                      const evalMap = new Map<string, { evalId: string; score: number | null; tier: string | null; genres: string[]; evaluation: any }>()
                       for (const ev of (evals || [])) {
                         const evaluation = ev.evaluation as any
                         const gp = evaluation?.classification?.genre_primary
@@ -481,7 +483,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                         if (gp) genres.push(gp)
                         if (Array.isArray(gs)) genres.push(...gs)
                         const tier = evaluation?.tier || null
-                        evalMap.set(ev.submission_id, { score: ev.weighted_score, tier, genres, evaluation })
+                        evalMap.set(ev.submission_id, { evalId: ev.id, score: ev.weighted_score, tier, genres, evaluation })
                       }
                       setScripts(prev => {
                         // Merge DB scripts with any in-memory scripts (from current session uploads)
@@ -492,6 +494,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                             const ev = evalMap.get(s.id)
                             return {
                               id: s.id,
+                              evalId: ev?.evalId ?? undefined,
                               title: s.title || 'Untitled',
                               format: (s.declared_format === 'Series' ? 'Series' : 'Feature film') as DeclaredFormat,
                               status: s.status === 'completed' ? 'completed' as const : 'processing' as const,
@@ -732,7 +735,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     <button
                       onClick={() => {
                         setMenuOpenId(null)
-                        window.open(`/report/${script.id}?download=1`, '_blank')
+                        if (script.evalId) window.open(`/report/${script.evalId}?download=1`, '_blank')
                       }}
                       className="w-full text-left px-3.5 py-2 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors"
                     >
@@ -766,19 +769,28 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
           {/* Actions row */}
           <div className="flex items-center gap-5 mt-4">
-            {script.evaluation && (
-              <Link
-                href={`/report/${script.id}`}
-                target="_blank"
-                className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
-              >
-                View full report
-                <span className="ml-0.5">&rarr;</span>
-              </Link>
+            {script.evaluation && script.evalId && (
+              authedUser ? (
+                <Link
+                  href={`/report/${script.evalId}`}
+                  className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
+                >
+                  View full report
+                  <span className="ml-0.5">&rarr;</span>
+                </Link>
+              ) : (
+                <button
+                  onClick={() => setShowAccountForm(true)}
+                  className="text-[14px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 bg-transparent border-0 cursor-pointer p-0"
+                >
+                  Create account to view report
+                  <span className="ml-0.5">&rarr;</span>
+                </button>
+              )
             )}
             {/* Publish button — clear, obvious, can't be missed */}
             <button
-              onClick={() => toggleDiscover(script.id)}
+              onClick={() => authedUser ? toggleDiscover(script.id) : setShowAccountForm(true)}
               className={`ml-auto px-4 py-2 rounded-lg text-[14px] font-semibold transition-all flex items-center gap-2 ${
                 script.discoverOn
                   ? 'bg-purple-600 text-white'
@@ -851,7 +863,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     </div>
                     <button
                       onClick={() => {
-                        if (!isApplied) {
+                        if (!authedUser) {
                           setShowAccountForm(true)
                           return
                         }
@@ -1517,10 +1529,24 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     />
                   </div>
 
-                  {/* ── Script cards below upload ── */}
+                  {/* ── Your recent scripts ── */}
                   {scripts.length > 0 && (
                     <div className="space-y-4 mb-6">
-                      {scripts.map(script => renderScriptCard(script))}
+                      <div className="flex items-center justify-between">
+                        <p className="text-[14px] font-semibold m-0" style={{ color: 'rgba(255,255,255,0.7)' }}>Your recent scripts</p>
+                        {scripts.length > 3 && (
+                          <button
+                            onClick={() => setActivePage('my-history')}
+                            className="text-[12px] font-medium bg-transparent border-0 cursor-pointer transition-colors"
+                            style={{ color: 'rgba(255,255,255,0.4)' }}
+                            onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+                            onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+                          >
+                            View all &rarr;
+                          </button>
+                        )}
+                      </div>
+                      {scripts.slice(0, 3).map(script => renderScriptCard(script))}
 
                       {/* Save your work CTA (hidden when logged in) */}
                       {scripts.some(s => s.status === 'completed') && !showAccountForm && !authedUser && (

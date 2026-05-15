@@ -44,13 +44,14 @@ export async function GET(req: NextRequest) {
   if (data.status === 'completed') {
     const { data: evalData } = await service
       .from('script_evaluations')
-      .select('weighted_score, evaluation')
+      .select('id, weighted_score, evaluation')
       .eq('submission_id', id)
       .order('created_at', { ascending: false })
       .limit(1)
       .single()
 
     if (evalData) {
+      response.eval_id = evalData.id
       const score = Math.round(evalData.weighted_score ?? 0)
       response.score = score
       response.tier = calculateTier(score)
