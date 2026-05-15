@@ -99,6 +99,9 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [selectedScriptId, setSelectedScriptId] = useState<string | null>(null)
   const [opportunities, setOpportunities] = useState<MatchedOpp[]>([])
 
+  // All active opportunities (for preview section)
+  const [allOpps, setAllOpps] = useState<{ id: string; title: string; subtitle: string | null; deadline: string | null; min_score: number | null }[]>([])
+
   // Account state
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -126,6 +129,14 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     return () => {
       pollingRefs.current.forEach(t => clearInterval(t))
     }
+  }, [])
+
+  // Fetch all active opportunities on mount (for preview)
+  useEffect(() => {
+    fetch('/api/opportunities-preview')
+      .then(r => r.ok ? r.json() : { opportunities: [] })
+      .then(data => setAllOpps(data.opportunities || []))
+      .catch(() => {})
   }, [])
 
   // Auto-select first script when entering results
@@ -662,54 +673,55 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           </div>
 
           <div className="max-w-2xl mx-auto px-4 sm:px-6 py-6">
-            {/* ── Persistent stats bar ── */}
+            {/* ── Your Writer Stats — persistent white card ── */}
             {(() => {
               const completed = scripts.filter(s => s.status === 'completed')
               const pending = scripts.filter(s => s.status === 'processing')
               const avgScore = completed.length > 0
                 ? Math.round(completed.reduce((sum, s) => sum + (s.score || 0), 0) / completed.length)
                 : null
-              const stats = [
-                { label: 'Scripts', value: scripts.length, icon: (
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                  </svg>
-                )},
-                { label: 'Pending', value: pending.length, icon: (
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                  </svg>
-                )},
-                { label: 'Matches', value: opportunities.length, icon: (
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                  </svg>
-                )},
-                { label: 'Avg Score', value: avgScore != null ? avgScore : '—', icon: (
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                  </svg>
-                )},
-              ]
+
               return (
                 <div
-                  className="grid grid-cols-4 gap-3 mb-6 rounded-xl p-3"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  className="mb-6 rounded-2xl bg-white overflow-hidden"
+                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
                 >
-                  {stats.map(s => (
-                    <div key={s.label} className="text-center py-2">
-                      <div className="flex items-center justify-center mb-1.5" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                        {s.icon}
-                      </div>
-                      <p className="text-[20px] font-bold" style={{ color: '#ffffff' }}>
-                        {s.value}
-                      </p>
-                      <p className="text-[11px] font-medium mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                        {s.label}
-                      </p>
+                  <div className="px-5 pt-4 pb-1">
+                    <h2 className="text-[13px] font-bold text-gray-400 uppercase tracking-wider m-0">Your Stats</h2>
+                  </div>
+                  <div className="grid grid-cols-5 divide-x divide-gray-100 px-2 pb-4 pt-2">
+                    {/* Scripts Submitted */}
+                    <div className="text-center px-2">
+                      <p className="text-[22px] font-bold text-gray-900 m-0">{scripts.length}</p>
+                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Scripts submitted</p>
                     </div>
-                  ))}
+                    {/* Pending Evaluation */}
+                    <div className="text-center px-2">
+                      <p className="text-[22px] font-bold m-0" style={{ color: pending.length > 0 ? '#7c3aed' : '#111827' }}>
+                        {pending.length}
+                      </p>
+                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Pending</p>
+                    </div>
+                    {/* Industry Matches */}
+                    <div className="text-center px-2">
+                      <p className="text-[22px] font-bold text-gray-900 m-0">{opportunities.length}</p>
+                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Industry matches</p>
+                    </div>
+                    {/* Average GEM Score */}
+                    <div className="text-center px-2">
+                      <p className="text-[22px] font-bold m-0" style={{ color: avgScore != null ? '#059669' : '#111827' }}>
+                        {avgScore != null ? avgScore : '—'}
+                      </p>
+                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Avg GEM score</p>
+                    </div>
+                    {/* Insider Heat */}
+                    <div className="text-center px-2">
+                      <p className="text-[22px] font-bold m-0" style={{ color: '#f59e0b' }}>
+                        0
+                      </p>
+                      <p className="text-[11px] font-medium text-gray-400 mt-0.5 m-0">Insider heat</p>
+                    </div>
+                  </div>
                 </div>
               )
             })()}
@@ -952,25 +964,83 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     </button>
                   )}
 
-                  {/* ── Opportunities teaser ── */}
-                  {scripts.length === 0 && (
-                    <div className="mt-6 rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(167,139,250,0.15)' }}>
-                          <svg className="w-4 h-4" style={{ color: '#a78bfa' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                          </svg>
-                        </div>
+                  {/* ── New Opportunities preview ── */}
+                  {allOpps.length > 0 && (
+                    <div className="mt-6">
+                      <div className="flex items-baseline justify-between mb-3">
                         <div>
-                          <p className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                            Scripts that score well qualify for open opportunities
-                          </p>
-                          <p className="text-[12px] mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
-                            Producers and reps are actively looking. Your score determines eligibility.
+                          <h3 className="text-[15px] font-bold m-0" style={{ color: '#ffffff' }}>
+                            New Opportunities
+                          </h3>
+                          <p className="text-[12px] mt-0.5 m-0" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                            Real opportunities from our insider network your script may qualify for
                           </p>
                         </div>
                       </div>
+                      <div className="space-y-3">
+                        {allOpps.slice(0, 3).map(opp => {
+                          const deadlineStr = opp.deadline
+                            ? (() => {
+                                const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
+                                if (days <= 0) return 'Closed'
+                                if (days === 1) return 'Closes tomorrow'
+                                if (days <= 7) return `${days} days left`
+                                return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+                              })()
+                            : null
+                          return (
+                            <a
+                              key={opp.id}
+                              href={`/opportunities/${opp.id}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block rounded-xl bg-white p-4 transition-shadow hover:shadow-lg group"
+                              style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)', textDecoration: 'none' }}
+                            >
+                              <h4
+                                className="text-[15px] font-bold text-gray-900 m-0 group-hover:text-purple-700 transition-colors leading-snug"
+                                style={{ fontFamily: 'Georgia, serif' }}
+                              >
+                                {opp.title}
+                              </h4>
+                              {opp.subtitle && (
+                                <p className="text-[13px] text-gray-500 m-0 mt-1 leading-snug">{opp.subtitle}</p>
+                              )}
+                              <div className="flex items-center gap-3 mt-2">
+                                {opp.min_score != null && (
+                                  <span className="text-[12px] font-semibold text-gray-500">
+                                    Requires {Math.round(opp.min_score)}+ score
+                                  </span>
+                                )}
+                                {deadlineStr && (
+                                  <span className="text-[12px] font-semibold text-gray-400">
+                                    {deadlineStr}
+                                  </span>
+                                )}
+                              </div>
+                            </a>
+                          )
+                        })}
+                      </div>
+                      <a
+                        href="/opportunities"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5 mt-3 py-2.5 rounded-xl text-[13px] font-semibold transition-colors"
+                        style={{
+                          color: 'rgba(255,255,255,0.5)',
+                          background: 'rgba(255,255,255,0.06)',
+                          border: '1px solid rgba(255,255,255,0.1)',
+                          textDecoration: 'none',
+                        }}
+                        onMouseOver={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)' }}
+                        onMouseOut={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; e.currentTarget.style.background = 'rgba(255,255,255,0.06)' }}
+                      >
+                        View all opportunities
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </a>
                     </div>
                   )}
                 </div>
