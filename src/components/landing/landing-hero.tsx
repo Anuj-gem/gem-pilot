@@ -2,14 +2,17 @@
 // "Where writers get discovered" + clear value prop + single CTA.
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { trackEvent } from '@/lib/posthog'
 
 export function LandingHero() {
+  const router = useRouter()
+
   function handleCTA() {
     try {
       trackEvent('cta_clicked', { location: 'hero', label: 'Get started' })
     } catch {}
-    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+    router.push('/dashboard')
   }
 
   return (
