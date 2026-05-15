@@ -11,7 +11,6 @@ import {
   LogOut,
   Menu,
   X,
-  Sparkles,
   BookOpen,
   Compass,
 } from 'lucide-react'
@@ -21,7 +20,7 @@ import {
   type NavUserMenuStats,
   type NavUserMenuActivity,
 } from '@/components/nav/nav-user-menu'
-import { NewActionMenu } from '@/components/nav/new-action-menu'
+// NewActionMenu removed from top nav — upload trigger moved to dashboard sidebar
 
 export interface NavUserData {
   profile: NavUserMenuProfile
@@ -58,16 +57,21 @@ export default function Nav({ userData }: NavProps = {}) {
     router.refresh()
   }
 
-  // Nav tabs — same structure for logged-in and logged-out.
-  // "Home" points to /dashboard (logged in) or / (logged out).
-  const navLinks = [
-    { href: user ? '/dashboard' : '/', label: 'Home', icon: LayoutDashboard },
+  // Nav tabs — logged-in users see a simplified 3-link set.
+  // Logged-out users see the full marketing nav.
+  const loggedInLinks = [
+    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/discover', label: 'Discover', icon: Compass },
+    { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
+  ]
+  const loggedOutLinks = [
+    { href: '/', label: 'Home', icon: LayoutDashboard },
     { href: '/scripts', label: 'Scripts', icon: FileText },
     { href: '/discover', label: 'Discover', icon: Compass },
-    { href: '/review', label: 'Applications', icon: Sparkles },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
     { href: '/blog', label: 'Blog', icon: BookOpen },
   ]
+  const navLinks = user ? loggedInLinks : loggedOutLinks
 
   return (
     <>
@@ -120,20 +124,6 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
-                  {userData && !userData.profile.isPro && (
-                    <button
-                      onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
-                      className="ml-2 text-[12px] font-semibold px-3 py-1.5 rounded-lg transition-all duration-150 hover:brightness-110 cursor-pointer border-0 text-white"
-                      style={{
-                        background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
-                      }}
-                    >
-                      Become a Member
-                    </button>
-                  )}
-                  <div className="ml-2">
-                    <NewActionMenu />
-                  </div>
                   {userData ? (
                     <div className="ml-2">
                       <NavUserMenu
@@ -157,16 +147,6 @@ export default function Nav({ userData }: NavProps = {}) {
 
               {/* Mobile logged-in — consideration CTA always visible + hamburger */}
               <div className="md:hidden flex items-center gap-2">
-                {userData && !userData.profile.isPro && (
-                  <button
-                    onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
-                    className="text-[11px] font-semibold px-2.5 py-1 rounded-md cursor-pointer border-0 text-white"
-                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                  >
-                    Member
-                  </button>
-                )}
-                <NewActionMenu />
                 {userData && (
                   <NavUserMenu
                     profile={userData.profile}

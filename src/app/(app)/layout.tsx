@@ -21,8 +21,7 @@ import Nav from '@/components/nav'
 import { ScriptUploadModal } from "@/components/script-upload-modal"
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { AppRail } from '@/components/dashboard/app-rail'
-import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
+import { DashboardSidebar } from '@/components/dashboard/dashboard-sidebar'
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
@@ -196,10 +195,18 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <Nav userData={navUserData} />
       {/* PrivacyConfirmPrompt hidden — opportunities-v1 strips privacy controls.
           Backend settings + profile columns unchanged for production. */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-28 lg:pb-8">
-        <AppRail>{children}</AppRail>
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-5 pt-4 pb-8">
+        <div className="flex gap-6">
+          <DashboardSidebar
+            fullName={profile?.full_name ?? null}
+            isPro={isPro}
+            avatarUrl={profile?.avatar_url ?? null}
+          />
+          <div className="flex-1 min-w-0">
+            {children}
+          </div>
+        </div>
       </div>
-      <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" />
       {!isPro && <UpgradeModalListener />}
     </div>

@@ -316,18 +316,30 @@ export function OnboardingClient() {
           })
         } catch {}
 
-        // Log opportunity applications (API not yet built)
+        // Submit opportunity applications
         const appliedOpps = scripts.flatMap(s =>
           s.selectedOpps.map(oppId => ({ script_id: s.id, opportunity_id: oppId }))
         )
         if (appliedOpps.length > 0) {
-          console.log('[Onboarding] Opportunity applications to submit:', appliedOpps)
+          try {
+            await fetch('/api/opportunity/batch-apply', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ applications: appliedOpps }),
+            })
+          } catch {}
         }
 
-        // Log Discover toggles (will PATCH after API exists)
+        // Publish selected scripts to Discover
         const discoverScripts = scripts.filter(s => s.discoverOn)
-        if (discoverScripts.length > 0) {
-          console.log('[Onboarding] Scripts to make public:', discoverScripts.map(s => s.id))
+        for (const s of discoverScripts) {
+          try {
+            await fetch(`/api/scripts/${s.id}/visibility`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ is_public: true }),
+            })
+          } catch {}
         }
 
         router.push('/dashboard')
