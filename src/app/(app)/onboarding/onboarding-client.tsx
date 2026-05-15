@@ -616,17 +616,23 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
           </div>
         </aside>
 
-        {/* ── CENTER CONTENT ── */}
-        <main className="flex-1 min-w-0 overflow-y-auto">
+        {/* ── CENTER CONTENT — dark canvas ── */}
+        <main
+          className="flex-1 min-w-0 overflow-y-auto"
+          style={{ background: 'linear-gradient(180deg, #1a1025 0%, #0f0a18 60%, #0a0a0f 100%)' }}
+        >
           {/* Mobile top bar (visible on < lg) */}
-          <div className="lg:hidden flex items-center justify-between px-4 h-14 border-b bg-white" style={{ borderColor: '#e5e7eb' }}>
+          <div
+            className="lg:hidden flex items-center justify-between px-4 h-14"
+            style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+          >
             <button onClick={onExitApp} className="flex items-center gap-2">
               <span
                 aria-hidden
                 className="inline-block w-2.5 h-2.5 rotate-45"
                 style={{ background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)' }}
               />
-              <span className="text-[15px] font-bold text-gray-900">GEM</span>
+              <span className="text-[15px] font-bold" style={{ color: '#ffffff' }}>GEM</span>
             </button>
             <div className="flex items-center gap-2">
               {!showAccountForm && (
@@ -652,8 +658,8 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
             {showAccountForm && (
               <div
                 key="account-form"
-                className="mb-6 rounded-2xl border p-5"
-                style={{ borderColor: '#e5e7eb', background: '#ffffff', ...fadeSlide }}
+                className="mb-6 rounded-2xl p-5"
+                style={{ background: '#ffffff', boxShadow: '0 8px 40px rgba(0,0,0,0.25)', ...fadeSlide }}
               >
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-[16px] font-bold text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
@@ -733,19 +739,19 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
               {step === 'upload' && (
                 <div>
                   <h1
-                    className="text-[24px] font-bold text-gray-900 mb-1"
-                    style={{ fontFamily: 'Georgia, serif' }}
+                    className="text-[24px] font-bold mb-1"
+                    style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
                   >
                     Submit a script
                   </h1>
-                  <p className="text-[14px] text-gray-500 mb-6">
+                  <p className="text-[14px] mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
                     Upload a PDF to get your evaluation in under a minute.
                   </p>
 
                   {/* Uploaded scripts list */}
                   <div className="space-y-3 mb-4">
                     {scripts.map(script => (
-                      <div key={script.id} className="rounded-xl border border-gray-200 bg-white p-4">
+                      <div key={script.id} className="rounded-xl bg-white p-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0">
                             <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -795,24 +801,27 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                       {!showFormatPicker ? (
                         <button
                           onClick={() => setShowFormatPicker(true)}
-                          className="w-full rounded-xl border-2 border-dashed border-gray-300 py-8 px-4 text-center hover:border-purple-400 hover:bg-purple-50/30 transition-colors group"
+                          className="w-full rounded-xl border-2 border-dashed py-8 px-4 text-center transition-colors group"
+                          style={{ borderColor: 'rgba(255,255,255,0.15)' }}
+                          onMouseOver={e => (e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)')}
+                          onMouseOut={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)')}
                         >
                           <div className="flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-purple-100 flex items-center justify-center transition-colors">
-                              <svg className="w-6 h-6 text-gray-400 group-hover:text-purple-500" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                              <svg className="w-6 h-6" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                               </svg>
                             </div>
-                            <span className="text-[14px] text-gray-500 group-hover:text-purple-600 font-medium">
+                            <span className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
                               {scripts.length === 0 ? 'Upload your screenplay (PDF)' : 'Add another script — 1 free eval left'}
                             </span>
-                            <span className="text-[12px] text-gray-400">
+                            <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
                               {scripts.length === 0 ? 'Your first evaluation is free' : ''}
                             </span>
                           </div>
                         </button>
                       ) : !pendingFormat ? (
-                        <div className="rounded-xl border border-gray-200 bg-white p-5">
+                        <div className="rounded-xl bg-white p-5" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
                           <p className="text-[14px] text-gray-600 mb-3 text-center font-medium">What format is your script?</p>
                           <div className="flex gap-3">
                             <button
@@ -830,7 +839,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                           </div>
                         </div>
                       ) : (
-                        <div className="rounded-xl border border-gray-200 bg-white p-5 text-center">
+                        <div className="rounded-xl bg-white p-5 text-center" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
                           <p className="text-[14px] text-gray-500 mb-3">Drop your PDF here or click to browse</p>
                           <button
                             onClick={() => fileInputRef.current?.click()}
@@ -842,8 +851,8 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                       )}
                     </>
                   ) : (
-                    <div className="w-full rounded-xl border border-gray-200 bg-white py-4 px-4 text-center">
-                      <span className="text-[14px] text-gray-400">2 of 2 free evaluations used</span>
+                    <div className="w-full rounded-xl py-4 px-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <span className="text-[14px]" style={{ color: 'rgba(255,255,255,0.4)' }}>2 of 2 free evaluations used</span>
                     </div>
                   )}
 
@@ -873,7 +882,10 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                   {/* Back to upload */}
                   <button
                     onClick={() => setStep('upload')}
-                    className="flex items-center gap-1.5 text-[13px] text-gray-400 hover:text-gray-600 mb-4 transition-colors"
+                    className="flex items-center gap-1.5 text-[13px] mb-4 transition-colors"
+                    style={{ color: 'rgba(255,255,255,0.4)' }}
+                    onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+                    onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
                   >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -888,11 +900,12 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                         <button
                           key={script.id}
                           onClick={() => setSelectedScriptId(script.id)}
-                          className={`rounded-xl border p-3 text-left transition-all ${
+                          className="rounded-xl p-3 text-left transition-all"
+                          style={
                             script.id === selectedScriptId
-                              ? 'border-purple-400 bg-purple-50/50 ring-1 ring-purple-200'
-                              : 'border-gray-200 hover:border-gray-300'
-                          }`}
+                              ? { background: '#ffffff', boxShadow: '0 2px 12px rgba(0,0,0,0.15), 0 0 0 2px rgba(124,58,237,0.3)' }
+                              : { background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }
+                          }
                         >
                           <div className="flex items-center gap-2.5">
                             <div
@@ -901,7 +914,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                               {script.score ?? '--'}
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-[13px] font-medium text-gray-900 truncate">{script.title}</p>
+                              <p className="text-[13px] font-medium truncate" style={{ color: script.id === selectedScriptId ? '#111827' : '#ffffff' }}>{script.title}</p>
                               {script.tier && (
                                 <span className={`inline-block mt-1 px-2 py-0.5 rounded-full text-[11px] font-medium ${tierColor(script.tier)}`}>
                                   {script.tier}
@@ -915,7 +928,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                   )}
 
                   {/* Score hero */}
-                  <div className="rounded-2xl border border-gray-200 bg-white p-6 mb-4">
+                  <div className="rounded-2xl bg-white p-6 mb-4" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
                     <div className="flex items-center gap-5">
                       <div
                         className={`w-20 h-20 rounded-full flex items-center justify-center text-white text-[24px] font-bold bg-gradient-to-br flex-shrink-0 ${scoreGradient(selectedScript.score)}`}
@@ -964,7 +977,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                   </div>
 
                   {/* Discover toggle */}
-                  <div className="rounded-xl border border-gray-200 bg-white p-4 mb-4">
+                  <div className="rounded-xl bg-white p-4 mb-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
                     <div className="flex items-center justify-between">
                       <div className="flex-1 mr-4">
                         <p className="text-[14px] font-medium text-gray-900">Publish to Industry</p>
@@ -988,7 +1001,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                   {/* Opportunities */}
                   <div className="mb-4">
                     {opportunities.length > 0 ? (
-                      <div className="rounded-xl border border-gray-200 bg-white p-4">
+                      <div className="rounded-xl bg-white p-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
                         <h3 className="text-[15px] font-semibold text-gray-900 mb-1">
                           Qualifies for {opportunities.length} opportunit{opportunities.length === 1 ? 'y' : 'ies'}
                         </h3>
@@ -1040,9 +1053,9 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                         </div>
                       </div>
                     ) : (
-                      <div className="rounded-xl border border-gray-200 bg-white text-center py-6 px-4">
-                        <p className="text-[14px] text-gray-400">No matching opportunities right now.</p>
-                        <p className="text-[13px] text-gray-400 mt-1">New opportunities drop regularly.</p>
+                      <div className="rounded-xl text-center py-6 px-4" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <p className="text-[14px]" style={{ color: 'rgba(255,255,255,0.4)' }}>No matching opportunities right now.</p>
+                        <p className="text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.3)' }}>New opportunities drop regularly.</p>
                       </div>
                     )}
                   </div>
@@ -1051,7 +1064,10 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
                   {scripts.length < 2 && (
                     <button
                       onClick={() => setStep('upload')}
-                      className="w-full py-3 rounded-xl border border-gray-200 bg-white text-[14px] text-gray-600 font-medium hover:border-purple-300 hover:text-purple-600 transition-colors"
+                      className="w-full py-3 rounded-xl text-[14px] font-medium transition-colors"
+                      style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.5)' }}
+                      onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.4)'; e.currentTarget.style.color = 'rgba(167,139,250,0.8)' }}
+                      onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
                     >
                       + Submit another script (1 free eval left)
                     </button>
