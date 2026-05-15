@@ -15,6 +15,8 @@ const fadeIn: CSSProperties = {
 export function LandingHeroSection() {
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [appMode, setAppMode] = useState(false)
+  const [capturedName, setCapturedName] = useState('')
+  const [capturedIntent, setCapturedIntent] = useState('')
 
   // Scroll to top when entering onboarding
   useEffect(() => {
@@ -54,6 +56,8 @@ export function LandingHeroSection() {
           style={{ background: '#f8f8fa', ...fadeIn }}
         >
           <OnboardingClient
+            initialName={capturedName}
+            initialIntent={capturedIntent}
             onEnterApp={() => {}}
             onExitApp={() => {
               setAppMode(false)
@@ -104,6 +108,10 @@ export function LandingHeroSection() {
                 >
                   <OnboardingClient
                     onEnterApp={() => setAppMode(true)}
+                    onNameSubmit={(name, intent) => {
+                      setCapturedName(name)
+                      setCapturedIntent(intent)
+                    }}
                   />
                 </div>
               </div>

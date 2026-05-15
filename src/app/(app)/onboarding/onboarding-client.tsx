@@ -66,18 +66,24 @@ interface OnboardingClientProps {
   onEnterApp?: () => void
   /** Called when user wants to go back from app mode to landing */
   onExitApp?: () => void
+  /** Pre-filled name — skips the name step when provided */
+  initialName?: string
+  /** Pre-filled intent */
+  initialIntent?: string
+  /** Called with name+intent when user submits the name step */
+  onNameSubmit?: (name: string, intent: string) => void
 }
 
 // ─── Component ──────────────────────────────────────────────────────
 
-export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProps) {
+export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIntent, onNameSubmit }: OnboardingClientProps) {
   const router = useRouter()
   const supabase = createClient()
 
-  // Global state
-  const [step, setStep] = useState<Step>('name')
-  const [firstName, setFirstName] = useState('')
-  const [intent, setIntent] = useState<string | null>(null)
+  // Global state — skip name step if pre-filled
+  const [step, setStep] = useState<Step>(initialName ? 'upload' : 'name')
+  const [firstName, setFirstName] = useState(initialName || '')
+  const [intent, setIntent] = useState<string | null>(initialIntent || null)
 
   // Sidebar active page (for future nav)
   const [activePage, setActivePage] = useState<'new-script' | 'discover' | 'opportunities'>('new-script')
@@ -418,6 +424,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
               className="w-full text-[17px] text-center px-5 py-3.5 rounded-xl border border-gray-200 focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600/20 transition-all"
               onKeyDown={e => {
                 if (e.key === 'Enter' && firstName.trim() && intent) {
+                  onNameSubmit?.(firstName.trim(), intent)
                   setStep('upload')
                   onEnterApp?.()
                 }
@@ -453,6 +460,7 @@ export function OnboardingClient({ onEnterApp, onExitApp }: OnboardingClientProp
             <button
               onClick={() => {
                 if (firstName.trim() && intent) {
+                  onNameSubmit?.(firstName.trim(), intent)
                   setStep('upload')
                   onEnterApp?.()
                 }
