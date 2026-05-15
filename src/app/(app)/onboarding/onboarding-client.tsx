@@ -102,23 +102,21 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // ── URL ↔ activePage sync ──────────────────────────────────────
   // Each page has a real URL so links are shareable and the browser
   // back/forward buttons work. The mapping:
-  //   /home            → new-script  (default logged-in page)
+  //   /script          → new-script  (default logged-in page)
   //   /history         → my-history
   //   /discover        → discover
   //   /opportunities   → opportunities
-  //   /onboarding      → new-script  (fallback for onboarding entry)
   const PAGE_TO_PATH: Record<string, string> = {
-    'new-script': '/home',
+    'new-script': '/script',
     'my-history': '/history',
     'discover': '/discover',
     'opportunities': '/opportunities',
   }
   const PATH_TO_PAGE: Record<string, 'new-script' | 'my-history' | 'discover' | 'opportunities'> = {
-    '/home': 'new-script',
+    '/script': 'new-script',
     '/history': 'my-history',
     '/discover': 'discover',
     '/opportunities': 'opportunities',
-    '/onboarding': 'new-script',
   }
 
   // Read initial page from URL
@@ -132,11 +130,19 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // Wrapped setter: updates state AND pushes URL
   const setActivePage = useCallback((page: typeof activePage) => {
     setActivePageRaw(page)
-    const path = PAGE_TO_PATH[page] || '/home'
+    const path = PAGE_TO_PATH[page] || '/script'
     if (window.location.pathname !== path) {
       window.history.pushState({ page }, '', path)
     }
   }, [])
+
+  // If we're at /onboarding but user already completed onboarding (has name),
+  // redirect to /script. /onboarding is ONLY for the name step.
+  useEffect(() => {
+    if (window.location.pathname === '/onboarding' && step !== 'name') {
+      window.history.replaceState({ page: 'new-script' }, '', '/script')
+    }
+  }, [step])
 
   // Listen for back/forward navigation
   useEffect(() => {
@@ -474,7 +480,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${origin}/auth/callback?next=/home`,
+        redirectTo: `${origin}/auth/callback?next=/script`,
       },
     })
   }
