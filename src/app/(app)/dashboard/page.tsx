@@ -324,13 +324,11 @@ export default async function DashboardPage() {
                 const colors = roundedScore ? scoreBg(roundedScore) : { bg: '#f9fafb', color: '#d1d5db' }
 
                 return (
-                  <div key={script.id} className="rounded-xl bg-white px-5 py-4 group transition-all duration-150"
+                  <div key={script.id} className="rounded-xl bg-white px-5 py-4 group transition-shadow duration-150 hover:shadow-md"
                     style={{
                       border: '1px solid rgba(0,0,0,0.06)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
                     }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)' }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)' }}
                   >
                     <div className="flex items-start gap-4">
                       {/* Score badge — solid colored square */}
@@ -418,13 +416,11 @@ export default async function DashboardPage() {
 
                 return (
                   <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
-                    <div className="rounded-xl bg-white px-5 py-4 transition-all duration-150"
+                    <div className="rounded-xl bg-white px-5 py-4 transition-shadow duration-150 hover:shadow-md"
                       style={{
                         border: isMatch ? '1px solid rgba(5,150,105,0.15)' : '1px solid rgba(0,0,0,0.06)',
                         boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
                       }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)' }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)' }}
                     >
                       <div className="flex items-start justify-between gap-3 mb-1.5">
                         <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
