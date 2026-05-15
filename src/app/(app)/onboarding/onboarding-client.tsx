@@ -112,20 +112,30 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [accountLoading, setAccountLoading] = useState(false)
   const [showAccountForm, setShowAccountForm] = useState(false)
 
+  // Authenticated user state — populated after signup, keeps user on same page
+  const [authedUser, setAuthedUser] = useState<{
+    id: string
+    email: string
+    full_name: string
+    avatar_url: string | null
+    bio: string | null
+    plan: string
+  } | null>(null)
+
   // Opportunity detail expand state (for inline opportunities page)
   const [expandedOppId, setExpandedOppId] = useState<string | null>(null)
 
-  // beforeunload — warn user about unsaved progress
+  // beforeunload — warn user about unsaved progress (skip if logged in)
   useEffect(() => {
     function handleBeforeUnload(e: BeforeUnloadEvent) {
-      if (scripts.length > 0) {
+      if (scripts.length > 0 && !authedUser) {
         e.preventDefault()
         e.returnValue = ''
       }
     }
     window.addEventListener('beforeunload', handleBeforeUnload)
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
-  }, [scripts.length])
+  }, [scripts.length, authedUser])
 
   // Auto-advance progress animation
   useEffect(() => {
@@ -302,13 +312,39 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   async function handleGoogleSignup() {
     trackSignupStart()
     const origin = window.location.origin
+    // Redirect back to current page after OAuth, not to /dashboard
+    const currentPath = window.location.pathname + window.location.search
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${origin}/auth/callback?next=/start`,
+        redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(currentPath)}`,
       },
     })
   }
+
+  // Check for existing auth session on mount (handles Google OAuth return + page refresh)
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user && !authedUser) {
+        const user = session.user
+        supabase
+          .from('profiles')
+          .select('full_name, avatar_url, bio, plan')
+          .eq('id', user.id)
+          .single()
+          .then(({ data: profile }) => {
+            setAuthedUser({
+              id: user.id,
+              email: user.email || '',
+              full_name: profile?.full_name || user.user_metadata?.full_name || firstName,
+              avatar_url: profile?.avatar_url || user.user_metadata?.avatar_url || null,
+              bio: profile?.bio || null,
+              plan: profile?.plan || 'free',
+            })
+          })
+      }
+    })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleEmailSignup() {
     setAccountError('')
@@ -386,7 +422,24 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           } catch {}
         }
 
-        router.push('/dashboard')
+        // Fetch profile data to hydrate sidebar
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('full_name, avatar_url, bio, plan')
+          .eq('id', userId)
+          .single()
+
+        setAuthedUser({
+          id: userId,
+          email,
+          full_name: profile?.full_name || firstName,
+          avatar_url: profile?.avatar_url || null,
+          bio: profile?.bio || null,
+          plan: profile?.plan || 'free',
+        })
+
+        // Close overlay — user stays on current page
+        setShowAccountForm(false)
       }
     } catch {
       setAccountError('Something went wrong. Please try again.')
@@ -762,20 +815,35 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           {/* Profile card */}
           <div className="px-5 py-5 border-b" style={{ borderColor: '#f0f0f0' }}>
             <div className="flex items-center gap-3">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-[16px] font-bold text-white flex-shrink-0"
-                style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-              >
-                {initial}
-              </div>
+              {authedUser?.avatar_url ? (
+                <img
+                  src={authedUser.avatar_url}
+                  alt=""
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                />
+              ) : (
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-[16px] font-bold text-white flex-shrink-0"
+                  style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                >
+                  {(authedUser?.full_name || firstName || 'U').charAt(0).toUpperCase()}
+                </div>
+              )}
               <div className="min-w-0">
                 <p className="text-[14px] font-semibold text-gray-900 truncate">
-                  Hi, {firstName}
+                  {authedUser ? authedUser.full_name : `Hi, ${firstName}`}
                 </p>
-                <p className="text-[12px] text-gray-400">Guest</p>
+                <p className="text-[12px] text-gray-400">
+                  {authedUser
+                    ? (authedUser.plan === 'pro' || authedUser.plan === 'trialing' ? 'GEM Pro' : 'Free plan')
+                    : 'Guest'}
+                </p>
               </div>
             </div>
-            {!showAccountForm && (
+            {authedUser?.bio && (
+              <p className="text-[12px] text-gray-500 mt-2 line-clamp-2">{authedUser.bio}</p>
+            )}
+            {!authedUser && !showAccountForm && (
               <button
                 onClick={() => setShowAccountForm(true)}
                 className="mt-3 w-full text-[12px] font-semibold py-2 rounded-lg text-purple-600 border border-purple-200 bg-purple-50 hover:bg-purple-100 transition-colors"
@@ -981,8 +1049,8 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       </div>
                     )}
 
-                    {/* ── Save your work CTA — prominent banner ── */}
-                    {scripts.some(s => s.status === 'completed') && !showAccountForm && (
+                    {/* ── Save your work CTA — prominent banner (hidden when logged in) ── */}
+                    {scripts.some(s => s.status === 'completed') && !showAccountForm && !authedUser && (
                       <div
                         className="mb-5 rounded-xl p-4 flex items-center justify-between gap-4"
                         style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.1))', border: '1px solid rgba(167,139,250,0.3)' }}
@@ -1169,8 +1237,8 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     <div className="space-y-4">
                       {scripts.map(script => renderScriptCard(script))}
 
-                      {/* Save your work CTA */}
-                      {scripts.some(s => s.status === 'completed') && !showAccountForm && (
+                      {/* Save your work CTA (hidden when logged in) */}
+                      {scripts.some(s => s.status === 'completed') && !showAccountForm && !authedUser && (
                         <div
                           className="rounded-xl p-4 flex items-center justify-between gap-4"
                           style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.1))', border: '1px solid rgba(167,139,250,0.3)' }}
