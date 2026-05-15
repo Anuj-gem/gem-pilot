@@ -29,6 +29,7 @@ interface DashboardScriptCardProps {
   score: number | null
   qualifyingOpps: QualifyingOpp[]
   isProcessing?: boolean
+  heatScore?: number
 }
 
 
@@ -42,6 +43,7 @@ export function DashboardScriptCard({
   score,
   qualifyingOpps,
   isProcessing: processing,
+  heatScore,
 }: DashboardScriptCardProps) {
   const [oppsOpen, setOppsOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -118,6 +120,12 @@ export function DashboardScriptCard({
                 {genre && <span className="text-[12px] text-gray-400">· {genre}</span>}
                 <span className="text-[12px] text-gray-300">·</span>
                 <span className="text-[12px] text-gray-400">{fmtDate}</span>
+                {!!heatScore && heatScore > 0 && (
+                  <>
+                    <span className="text-[12px] text-gray-300">·</span>
+                    <span className="text-[12px] font-semibold" style={{ color: '#f97316' }}>🔥 {heatScore} Insider Heat</span>
+                  </>
+                )}
               </div>
             </div>
 

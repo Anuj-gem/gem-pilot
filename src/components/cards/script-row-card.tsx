@@ -18,6 +18,8 @@ export type ScriptRowData = {
   createdAt: string
   // Opportunities
   matchingOpportunities?: { title: string; slug: string }[]
+  // Heat
+  heatScore?: number
   // States
   isProcessing?: boolean
   isLocked?: boolean
@@ -201,13 +203,23 @@ export function ScriptRowCard({
         )}
       </div>
 
-      {/* Row 2: genre · opportunities · view details */}
+      {/* Row 2: genre · heat · opportunities · view details */}
       <div className="flex items-center gap-2 mt-2 ml-0" style={{ paddingLeft: checkbox ? 32 : 56 }}>
         {/* Genre */}
         {s.genre && (
           <span className="text-[12px] text-gray-400">{s.genre}</span>
         )}
-        {s.genre && matches.length > 0 && (
+        {s.genre && (s.heatScore || matches.length > 0) && (
+          <span className="text-gray-200">&middot;</span>
+        )}
+
+        {/* Insider Heat */}
+        {!!s.heatScore && s.heatScore > 0 && (
+          <span className="text-[12px] font-semibold" style={{ color: '#f97316' }}>
+            🔥 {s.heatScore} Insider Heat
+          </span>
+        )}
+        {!!s.heatScore && s.heatScore > 0 && matches.length > 0 && (
           <span className="text-gray-200">&middot;</span>
         )}
 

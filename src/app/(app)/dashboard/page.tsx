@@ -53,11 +53,11 @@ export default async function DashboardPage() {
   // ---------- YOUR scripts ----------
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
-    created_at: string; hidden_at: string | null
+    created_at: string; hidden_at: string | null; heat_score: number | null
   }
   const { data: mySubs } = await supabase
     .from('script_submissions')
-    .select('id, title, status, declared_format, created_at, hidden_at')
+    .select('id, title, status, declared_format, created_at, hidden_at, heat_score')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
   const visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -587,19 +587,23 @@ export default async function DashboardPage() {
                   isProcessing={true}
                 />
               ))}
-              {completedScripts.slice(0, 5).map(script => (
-                <DashboardScriptCard
-                  key={script.id}
-                  scriptId={script.id}
-                  title={script.title}
-                  format={script.format}
-                  genre={script.genres[0] || null}
-                  evaluationId={script.evaluationId}
-                  createdAt={script.createdAt}
-                  score={myEvalBySub.get(script.id)?.weighted_score ?? null}
-                  qualifyingOpps={script.qualifyingOpps}
-                />
-              ))}
+              {completedScripts.slice(0, 5).map(script => {
+                const sub = visible.find(v => v.id === script.id)
+                return (
+                  <DashboardScriptCard
+                    key={script.id}
+                    scriptId={script.id}
+                    title={script.title}
+                    format={script.format}
+                    genre={script.genres[0] || null}
+                    evaluationId={script.evaluationId}
+                    createdAt={script.createdAt}
+                    score={myEvalBySub.get(script.id)?.weighted_score ?? null}
+                    qualifyingOpps={script.qualifyingOpps}
+                    heatScore={sub?.heat_score || 0}
+                  />
+                )
+              })}
               {completedScripts.length > 5 && (
                 <Link href="/scripts" className="block text-center text-[12px] text-gray-400 hover:text-purple-600 font-semibold py-2">
                   All {completedScripts.length} scripts →

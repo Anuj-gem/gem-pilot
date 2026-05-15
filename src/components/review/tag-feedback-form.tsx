@@ -319,45 +319,41 @@ export function TagFeedbackForm({
         />
       </div>
 
-      {/* Script hearts — heart scripts you liked */}
+      {/* Script hearts — inline heart next to each script */}
       {scripts.length > 0 && (
         <div>
           <label className="text-[13px] font-bold text-gray-900 block mb-2">
-            Scripts <span className="text-[11px] font-normal text-gray-400">(heart scripts to award heat)</span>
+            Scripts <span className="text-[11px] font-normal text-gray-400">(heart to award heat)</span>
           </label>
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             {scripts.map(s => {
               const isHearted = heartedScripts[s.script_submission_id]
               return (
-                <button
-                  key={s.script_submission_id}
-                  type="button"
-                  onClick={() => !isAlreadyComplete && handleHeartToggle(s.script_submission_id)}
-                  disabled={isAlreadyComplete}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-lg border transition-colors disabled:opacity-60"
-                  style={{
-                    background: isHearted ? '#fef2f2' : 'transparent',
-                    borderColor: isHearted ? '#f87171' : '#e5e7eb',
-                  }}
-                >
-                  <span style={{ color: isHearted ? '#ef4444' : '#d1d5db' }} className="text-[16px]">
-                    {isHearted ? '❤️' : '🤍'}
-                  </span>
+                <div key={s.script_submission_id} className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => !isAlreadyComplete && handleHeartToggle(s.script_submission_id)}
+                    disabled={isAlreadyComplete}
+                    className="shrink-0 disabled:opacity-60 hover:scale-110 transition-transform"
+                    title={isHearted ? 'Remove heart' : 'Heart this script'}
+                  >
+                    <span className="text-[14px]">{isHearted ? '❤️' : '🩶'}</span>
+                  </button>
                   <span className="text-[12px] font-medium text-gray-700 truncate">{s.title || 'Untitled'}</span>
-                </button>
+                </div>
               )
             })}
           </div>
           {heartedCount > 0 && (
-            <p className="text-[11px] text-gray-400 mt-2 m-0">
-              🔥 {heatPreview} heat preview
+            <p className="text-[11px] text-gray-400 mt-1.5 m-0">
+              🔥 {heatPreview} heat
               ({heartedCount} script{heartedCount > 1 ? 's' : ''}
               {STAGE_HEAT[stage] ? ` + ${STAGE_HEAT[stage]} ${stage === 'shortlisted' ? 'shortlist' : 'partner match'} bonus` : ''})
             </p>
           )}
           {heartedCount === 0 && !isAlreadyComplete && (
-            <p className="text-[11px] text-orange-500 mt-2 m-0">
-              Heart at least one script to shortlist or pass
+            <p className="text-[11px] text-orange-500 mt-1.5 m-0">
+              Heart at least one script to shortlist or complete
             </p>
           )}
         </div>
