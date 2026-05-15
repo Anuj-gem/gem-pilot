@@ -170,7 +170,8 @@ export function InlineScriptUpload({
     return (
       <button
         onClick={open}
-        className={`flex items-center justify-center gap-2 w-full py-3 border-[1.5px] border-dashed border-gray-300 rounded-xl text-[13px] font-semibold text-gray-500 hover:border-purple-400 hover:text-purple-600 hover:bg-purple-50/30 transition-colors ${className ?? ''}`}
+        className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-[13px] font-semibold text-gray-400 hover:text-gray-600 hover:bg-white transition-all ${className ?? ''}`}
+        style={{ border: '1px solid rgba(0,0,0,0.08)' }}
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
           <line x1="7" y1="2" x2="7" y2="12" /><line x1="2" y1="7" x2="12" y2="7" />
@@ -181,7 +182,8 @@ export function InlineScriptUpload({
   }
 
   return (
-    <div className={`rounded-xl border-[1.5px] border-purple-400 bg-white overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 ${className ?? ''}`}>
+    <div className={`rounded-xl bg-white overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 ${className ?? ''}`}
+      style={{ border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
         <span className="text-[14px] font-semibold text-gray-900">Add script</span>
