@@ -119,6 +119,8 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
   // Three-dot menu state
   const [menuOpenId, setMenuOpenId] = useState<string | null>(null)
+  // Delete confirmation state
+  const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null)
 
   // Results state
   const [opportunities, setOpportunities] = useState<MatchedOpp[]>([])
@@ -311,6 +313,23 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
       .catch(() => setOpportunities([]))
   }, [scripts])
 
+  // ─── Delete handler ──────────────────────────────────────────────
+
+  async function handleDeleteScript(scriptId: string) {
+    try {
+      const res = await fetch(`/api/scripts/${scriptId}/hide`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ hide: true }),
+      })
+      if (res.ok) {
+        setScripts(prev => prev.filter(s => s.id !== scriptId))
+      }
+    } catch {}
+    setDeleteConfirmId(null)
+    setMenuOpenId(null)
+  }
+
   // ─── Upload handlers ───────────────────────────────────────────────
 
   async function handleFileUpload(file: File, format: DeclaredFormat) {
@@ -454,7 +473,11 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       const evalMap = new Map<string, { score: number | null; tier: string | null; genres: string[]; evaluation: any }>()
                       for (const ev of (evals || [])) {
                         const evaluation = ev.evaluation as any
-                        const genres = evaluation?.genres || []
+                        const gp = evaluation?.classification?.genre_primary
+                        const gs = evaluation?.classification?.genre_secondary
+                        const genres: string[] = []
+                        if (gp) genres.push(gp)
+                        if (Array.isArray(gs)) genres.push(...gs)
                         const tier = evaluation?.tier || null
                         evalMap.set(ev.submission_id, { score: ev.weighted_score, tier, genres, evaluation })
                       }
@@ -617,32 +640,28 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     const isExpanded = expandedOpps.has(script.id)
     const scriptOpps = script.status === 'completed' ? opportunities : []
     const isMenuOpen = menuOpenId === script.id
-    const logline = script.evaluation?.positioning_hook as string | undefined
-    const evalId = script.id
+    const isDeleteConfirm = deleteConfirmId === script.id
+
+    // ── Data extraction ──
+    const evalObj = script.evaluation
+    const displayTitle = evalObj?.title || script.title
+    const logline = evalObj?.positioning_hook as string | undefined
+    const genrePrimary = evalObj?.classification?.genre_primary as string | undefined
+    const genreLabel = [script.format, genrePrimary].filter(Boolean).join(' · ')
 
     // ── Processing state ──
     if (script.status === 'processing') {
       return (
-        <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
+        <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
           <div className="p-5">
-            <div className="flex items-start justify-between">
-              <div className="flex-1 min-w-0">
-                <h3
-                  className="text-[17px] font-bold text-gray-900 m-0 truncate"
-                  style={{ fontFamily: 'Georgia, serif' }}
-                >
-                  {script.title}
-                </h3>
-                <p className="text-[13px] text-purple-600 mt-1 m-0">Evaluating...</p>
-              </div>
-              <div className="w-8 h-8 flex items-center justify-center flex-shrink-0 ml-3">
-                <svg className="w-6 h-6 text-purple-500 animate-spin" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                </svg>
-              </div>
-            </div>
-            <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
+            <h3
+              className="text-[18px] font-bold text-gray-900 m-0 truncate"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              {script.title}
+            </h3>
+            <p className="text-[13px] text-purple-600 mt-1.5 m-0 font-medium">Evaluating your script...</p>
+            <div className="mt-4 h-1.5 bg-gray-100 rounded-full overflow-hidden">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 ease-out"
                 style={{ width: `${script.progress}%` }}
@@ -655,41 +674,18 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
 
     // ── Completed state ──
     return (
-      <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-        <div className="p-5">
-          {/* Top row: title + menu + score */}
-          <div className="flex items-start gap-3">
-            <div className="flex-1 min-w-0">
-              <h3
-                className="text-[17px] font-bold text-gray-900 m-0 truncate"
-                style={{ fontFamily: 'Georgia, serif' }}
-              >
-                {script.title}
-              </h3>
-              <div className="flex items-center gap-1.5 mt-1 flex-wrap">
-                <span className="text-[13px] text-gray-400">{script.format}</span>
-                {script.genres && script.genres.length > 0 && (
-                  <>
-                    <span className="text-gray-300">&middot;</span>
-                    <span className="text-[13px] text-gray-400">{script.genres.join(', ')}</span>
-                  </>
-                )}
-              </div>
-              {script.tier && (
-                <span className={`inline-block mt-2 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${tierColor(script.tier)}`}>
-                  {script.tier}
-                </span>
-              )}
-            </div>
-
-            {/* Three-dot menu */}
-            <div className="relative flex-shrink-0">
+      <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.08)' }}>
+        {/* Header: title + format/genre + three-dot menu */}
+        <div className="relative px-5 pt-5 pb-3">
+          {/* Three-dot menu — top right corner */}
+          <div className="absolute top-3 right-3">
+            <div className="relative">
               <button
                 onClick={(e) => {
                   e.stopPropagation()
                   setMenuOpenId(isMenuOpen ? null : script.id)
                 }}
-                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400"
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                   <circle cx="8" cy="3" r="1.5" />
@@ -699,65 +695,88 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               </button>
               {isMenuOpen && (
                 <div
-                  className="absolute right-0 top-8 z-20 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-1"
+                  className="absolute right-0 top-9 z-20 w-44 bg-white rounded-lg shadow-lg border border-gray-100 py-1"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <button
                     onClick={() => setMenuOpenId(null)}
-                    className="w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
+                    className="w-full text-left px-3.5 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
                   >
                     Edit details
                   </button>
                   <button
                     onClick={() => setMenuOpenId(null)}
-                    className="w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    Hide script
-                  </button>
-                  <button
-                    onClick={() => setMenuOpenId(null)}
-                    className="w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
+                    className="w-full text-left px-3.5 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
                   >
                     Download PDF
+                  </button>
+                  <button
+                    onClick={() => {
+                      setMenuOpenId(null)
+                      setDeleteConfirmId(script.id)
+                    }}
+                    className="w-full text-left px-3.5 py-2 text-[13px] text-red-600 hover:bg-red-50 transition-colors"
+                  >
+                    Delete script
                   </button>
                 </div>
               )}
             </div>
-
-            {/* Score badge */}
-            {script.score != null && (
-              <div className="w-[52px] h-[52px] rounded-full flex items-center justify-center text-white text-[18px] font-bold bg-gradient-to-br from-emerald-500 to-emerald-400 flex-shrink-0">
-                {script.score}
-              </div>
-            )}
           </div>
 
-          {/* Logline */}
-          {logline && (
-            <p className="text-[13px] text-gray-500 italic mt-3 m-0 line-clamp-2">{logline}</p>
+          <h3
+            className="text-[20px] font-bold text-gray-900 m-0 pr-10 leading-tight"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            {displayTitle}
+          </h3>
+          {genreLabel && (
+            <p className="text-[13px] text-gray-400 mt-1 m-0">{genreLabel}</p>
           )}
+        </div>
 
-          {/* Actions row */}
-          <div className="flex items-center gap-4 mt-3">
-            {script.evaluation && (
-              <Link
-                href={`/report/${evalId}`}
-                target="_blank"
-                className="text-[12px] text-purple-600 font-medium hover:text-purple-700 flex items-center gap-1"
-              >
-                View full report
-                <span className="ml-0.5">&rarr;</span>
-              </Link>
+        {/* Score band */}
+        {script.score != null && (
+          <div className="mx-5 rounded-lg px-4 py-3 flex items-center justify-between" style={{ background: '#f0fdf4' }}>
+            <div>
+              <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider m-0">GEM Score</p>
+              <p className="text-[32px] font-bold leading-none m-0 mt-0.5" style={{ color: '#16a34a' }}>
+                {script.score}
+              </p>
+            </div>
+            {script.tier && (
+              <span className={`px-3 py-1 rounded-full text-[12px] font-semibold ${tierColor(script.tier)}`}>
+                {script.tier}
+              </span>
             )}
-            <button
-              onClick={() => toggleDiscover(script.id)}
-              className="text-[12px] font-medium flex items-center gap-1.5 transition-colors"
-              style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
-            >
-              <span className={`inline-block w-3 h-3 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
-              {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
-            </button>
           </div>
+        )}
+
+        {/* Logline */}
+        {logline && (
+          <p className="text-[13px] text-gray-500 italic mx-5 mt-3 m-0 line-clamp-2 leading-relaxed">{logline}</p>
+        )}
+
+        {/* Actions row */}
+        <div className="flex items-center gap-4 mx-5 mt-3 pb-4">
+          {script.evaluation && (
+            <Link
+              href={`/report/${script.id}`}
+              target="_blank"
+              className="text-[13px] text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-1 no-underline"
+            >
+              View full report
+              <span className="ml-0.5">&rarr;</span>
+            </Link>
+          )}
+          <button
+            onClick={() => toggleDiscover(script.id)}
+            className="text-[13px] font-medium flex items-center gap-1.5 transition-colors ml-auto"
+            style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
+          >
+            <span className={`inline-block w-3.5 h-3.5 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
+            {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
+          </button>
         </div>
 
         {/* Opportunities dropdown */}
@@ -814,7 +833,6 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     </div>
                     <button
                       onClick={() => {
-                        // Gate behind account creation
                         if (!isApplied) {
                           setShowAccountForm(true)
                           return
@@ -838,6 +856,29 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
             </div>
           )}
         </div>
+
+        {/* Delete confirmation dialog */}
+        {isDeleteConfirm && (
+          <div style={{ borderTop: '1px solid #fecaca' }} className="px-5 py-4 bg-red-50">
+            <p className="text-[13px] text-gray-700 m-0 mb-3">
+              This will permanently delete your script from GEM. You&apos;ll need to resubmit it.
+            </p>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => handleDeleteScript(script.id)}
+                className="px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors"
+              >
+                Delete
+              </button>
+              <button
+                onClick={() => setDeleteConfirmId(null)}
+                className="px-3 py-1.5 rounded-lg text-[12px] font-semibold text-gray-600 hover:bg-gray-100 transition-colors"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     )
   }

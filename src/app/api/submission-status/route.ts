@@ -57,14 +57,15 @@ export async function GET(req: NextRequest) {
 
       // Extract genres from the evaluation JSON classification
       const evaluation = evalData.evaluation as any
-      const tags = evaluation?.classification?.tags
-      const genreField = evaluation?.classification?.genre || evaluation?.classification?.genres
-      response.genres = Array.isArray(genreField)
-        ? genreField
-        : Array.isArray(tags)
-        ? tags.slice(0, 5)
-        : []
+      const genrePrimary = evaluation?.classification?.genre_primary
+      const genreSecondary = evaluation?.classification?.genre_secondary
+      // Build clean genre list: primary first, then any secondaries
+      const genres: string[] = []
+      if (genrePrimary) genres.push(genrePrimary)
+      if (Array.isArray(genreSecondary)) genres.push(...genreSecondary)
+      response.genres = genres
       response.format = data.declared_format
+      response.evaluation = evaluation
     }
   }
 
