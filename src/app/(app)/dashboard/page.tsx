@@ -248,12 +248,12 @@ export default async function DashboardPage() {
   const scriptCount = completedScripts.length + processingScripts.length
   const appCount = allApplications.length
 
-  // Score color + background helper
-  function scoreBg(s: number): { bg: string; color: string } {
-    if (s >= 80) return { bg: '#ecfdf5', color: '#059669' }
-    if (s >= 60) return { bg: '#f5f3ff', color: '#7c3aed' }
-    if (s >= 40) return { bg: '#fffbeb', color: '#d97706' }
-    return { bg: '#f9fafb', color: '#9ca3af' }
+  // Score badge: solid color, white text — these should POP
+  function scoreBadge(s: number): { bg: string } {
+    if (s >= 80) return { bg: '#059669' }
+    if (s >= 60) return { bg: '#7c3aed' }
+    if (s >= 40) return { bg: '#d97706' }
+    return { bg: '#9ca3af' }
   }
 
   return (
@@ -263,83 +263,87 @@ export default async function DashboardPage() {
       )}
       <ProcessingPoller active={isProcessing} />
 
-      <div className="space-y-8">
+      <div className="space-y-10">
 
         {/* ── UPLOAD SECTION ── */}
         <section>
-          <h2 className="text-[20px] font-bold text-gray-800 m-0 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-            What are you working on?
-          </h2>
           <InlineScriptUpload startOpen redirectTo="/dashboard" />
         </section>
 
         {/* ── RECENT SCRIPTS ── */}
         <section>
-          <header className="flex items-end justify-between gap-3 mb-3">
-            <h2 className="text-[13px] font-semibold uppercase tracking-wider text-gray-400 m-0">Recent scripts</h2>
+          <header className="flex items-center justify-between gap-3 mb-4">
+            <h2 className="text-[16px] font-bold text-gray-900 m-0">Your scripts</h2>
             {completedScripts.length > 3 && (
-              <Link href="/scripts" className="text-[12px] font-medium text-gray-500 hover:text-gray-900 flex items-center gap-0.5 transition-colors">
-                All scripts
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <Link href="/scripts" className="text-[13px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
+                View all
               </Link>
             )}
           </header>
 
           {completedScripts.length === 0 && processingScripts.length === 0 ? (
-            <div className="rounded-xl bg-white px-6 py-8 text-center"
-              style={{ border: '1px solid rgba(0,0,0,0.06)' }}>
-              <p className="text-[14px] text-gray-400 m-0">No scripts yet. Upload one above to get started.</p>
+            <div className="rounded-2xl bg-white px-6 py-10 text-center"
+              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+              <div className="w-12 h-12 rounded-2xl mx-auto mb-3 flex items-center justify-center"
+                style={{ background: '#f5f3ff' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
+              <p className="text-[13px] text-gray-400 m-0">Upload a screenplay above to get your first evaluation.</p>
             </div>
           ) : (
-            <div className="space-y-2.5">
+            <div className="rounded-2xl bg-white overflow-hidden"
+              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
               {/* Processing scripts */}
-              {processingScripts.map(script => (
-                <div key={script.id} className="rounded-xl bg-white px-5 py-4"
-                  style={{ border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
+              {processingScripts.map((script, i) => (
+                <div key={script.id} className="px-5 py-4"
+                  style={{ borderBottom: (i < processingScripts.length - 1 || completedScripts.length > 0) ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
                   <div className="flex items-center gap-4">
-                    <div className="w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: '#f5f3ff' }}>
-                      <svg className="animate-spin" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#ede9fe" strokeWidth="2.5" />
+                    <div className="w-[44px] h-[44px] rounded-full flex items-center justify-center shrink-0"
+                      style={{ background: 'linear-gradient(135deg, #ede9fe, #f5f3ff)' }}>
+                      <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
                         <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
                       </svg>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</div>
-                      <div className="text-[13px] text-gray-400 mt-0.5">
-                        Evaluating your script...
-                        {script.format && <span className="ml-1.5 text-gray-300">&middot;</span>}
-                        {script.format && <span className="ml-1.5">{script.format}</span>}
-                      </div>
+                      <div className="text-[13px] text-gray-400 mt-0.5">Evaluating...</div>
                     </div>
                   </div>
                 </div>
               ))}
 
-              {/* Completed scripts */}
-              {completedScripts.slice(0, 3).map(script => {
+              {/* Completed scripts — rows inside the shared card */}
+              {completedScripts.slice(0, 3).map((script, i) => {
                 const ev = myEvalBySub.get(script.id)
                 const score = ev?.weighted_score ?? null
                 const roundedScore = score ? Math.round(score) : null
-                const colors = roundedScore ? scoreBg(roundedScore) : { bg: '#f9fafb', color: '#d1d5db' }
+                const badge = roundedScore ? scoreBadge(roundedScore) : { bg: '#d1d5db' }
 
                 return (
-                  <div key={script.id} className="rounded-xl bg-white px-5 py-4 group transition-shadow duration-150 hover:shadow-md"
-                    style={{
-                      border: '1px solid rgba(0,0,0,0.06)',
-                      boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
-                    }}
-                  >
+                  <div key={script.id} className="px-5 py-4 group transition-colors hover:bg-gray-50/50"
+                    style={{ borderBottom: i < Math.min(completedScripts.length, 3) - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
                     <div className="flex items-start gap-4">
-                      {/* Score badge — solid colored square */}
-                      <div className="w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 text-[18px] font-bold"
-                        style={{ background: colors.bg, color: colors.color }}>
+                      {/* Score badge — bold solid circle */}
+                      <div className="w-[44px] h-[44px] rounded-full flex items-center justify-center shrink-0 text-[16px] font-bold text-white"
+                        style={{ background: badge.bg }}>
                         {roundedScore ?? '—'}
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <div className="text-[15px] font-semibold text-gray-900 truncate leading-snug">{script.title}</div>
+                        <div className="flex items-center gap-2">
+                          <div className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</div>
+                          {script.qualifyingOpps.length > 0 && (
+                            <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full text-emerald-700"
+                              style={{ background: '#ecfdf5' }}>
+                              {script.qualifyingOpps.length} {script.qualifyingOpps.length === 1 ? 'match' : 'matches'}
+                            </span>
+                          )}
+                        </div>
 
                         {script.logline && (
                           <p className="text-[13px] leading-relaxed text-gray-500 m-0 mt-1 line-clamp-2">
@@ -347,36 +351,23 @@ export default async function DashboardPage() {
                           </p>
                         )}
 
-                        <div className="flex items-center gap-1.5 mt-2 flex-wrap">
-                          {script.format && (
-                            <span className="text-[11px] text-gray-400 bg-gray-50 px-2 py-0.5 rounded">{script.format}</span>
-                          )}
-                          {script.genres[0] && (
-                            <span className="text-[11px] text-gray-400 bg-gray-50 px-2 py-0.5 rounded capitalize">{script.genres[0]}</span>
-                          )}
-                          <span className="text-[11px] text-gray-300 ml-1">{fmtDate(script.createdAt)}</span>
+                        <div className="flex items-center gap-3 mt-2">
+                          <span className="text-[12px] text-gray-400">
+                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
+                          </span>
                         </div>
 
-                        <div className="flex items-center gap-3 mt-2.5 flex-wrap">
+                        <div className="flex items-center gap-3 mt-2.5">
                           {script.evaluationId && (
                             <Link href={`/report/${script.evaluationId}`}
-                              className="text-[12px] font-semibold text-gray-600 hover:text-gray-900 flex items-center gap-0.5 transition-colors">
-                              View report
-                              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                              className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                              View report →
                             </Link>
-                          )}
-
-                          {script.qualifyingOpps.length > 0 && (
-                            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full"
-                              style={{ background: '#ecfdf5', color: '#059669' }}>
-                              Qualifies for {script.qualifyingOpps.length} {script.qualifyingOpps.length === 1 ? 'call' : 'calls'}
-                            </span>
                           )}
 
                           {!script.isPublic && (
                             <Link href={script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'}
-                              className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full transition-colors hover:opacity-90"
-                              style={{ background: 'rgba(124,58,237,0.06)', color: '#7c3aed' }}>
+                              className="text-[12px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
                               Publish to Discover
                             </Link>
                           )}
@@ -392,21 +383,20 @@ export default async function DashboardPage() {
 
         {/* ── OPPORTUNITIES ── */}
         <section>
-          <header className="flex items-end justify-between gap-3 mb-3">
-            <h2 className="text-[13px] font-semibold uppercase tracking-wider text-gray-400 m-0">Opportunities</h2>
-            <Link href="/opportunities" className="text-[12px] font-medium text-gray-500 hover:text-gray-900 flex items-center gap-0.5 transition-colors">
-              See all
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <header className="flex items-center justify-between gap-3 mb-4">
+            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
+            <Link href="/opportunities" className="text-[13px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
+              View all
             </Link>
           </header>
 
           {dashboardOpps.length === 0 ? (
-            <div className="rounded-xl bg-white px-6 py-8 text-center"
-              style={{ border: '1px solid rgba(0,0,0,0.06)' }}>
+            <div className="rounded-2xl bg-white px-6 py-10 text-center"
+              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
               <p className="text-[14px] text-gray-400 m-0">No opportunities right now. Check back soon.</p>
             </div>
           ) : (
-            <div className="space-y-2.5">
+            <div className="grid gap-3">
               {dashboardOpps.map(opp => {
                 const isMatch = matchedOppIds.has(opp.id)
                 const deadlineDays = opp.deadline
@@ -416,50 +406,55 @@ export default async function DashboardPage() {
 
                 return (
                   <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
-                    <div className="rounded-xl bg-white px-5 py-4 transition-shadow duration-150 hover:shadow-md"
+                    <div className="rounded-2xl bg-white px-5 py-4 transition-shadow duration-150 hover:shadow-md"
                       style={{
-                        border: isMatch ? '1px solid rgba(5,150,105,0.15)' : '1px solid rgba(0,0,0,0.06)',
-                        boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+                        boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)',
                       }}
                     >
-                      <div className="flex items-start justify-between gap-3 mb-1.5">
-                        <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
-                          {opp.title}
-                        </h3>
-                        <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
-                          {isMatch && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                              style={{ background: '#ecfdf5', color: '#059669' }}>
-                              Match
-                            </span>
+                      <div className="flex items-start gap-4">
+                        {/* Left accent */}
+                        <div className="w-1 self-stretch rounded-full shrink-0 mt-0.5"
+                          style={{ background: isMatch ? '#059669' : '#e5e7eb' }} />
+
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between gap-2 mb-1">
+                            <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
+                              {opp.title}
+                            </h3>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              {isMatch && (
+                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white"
+                                  style={{ background: '#059669' }}>
+                                  Match
+                                </span>
+                              )}
+                              {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
+                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                                  style={{
+                                    background: deadlineDays <= 7 ? '#dc2626' : '#d97706',
+                                    color: 'white',
+                                  }}>
+                                  {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          {(opp.subtitle || opp.description) && (
+                            <p className="text-[13px] text-gray-500 m-0 mb-2 line-clamp-2 leading-relaxed">
+                              {opp.subtitle || opp.description}
+                            </p>
                           )}
-                          {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                              style={{
-                                background: deadlineDays <= 7 ? '#fef2f2' : '#fffbeb',
-                                color: deadlineDays <= 7 ? '#dc2626' : '#d97706',
-                              }}>
-                              {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
+                          <div className="flex items-center gap-3">
+                            {qCount > 0 && (
+                              <span className="text-[11px] font-semibold text-emerald-600">
+                                {qCount} {qCount === 1 ? 'script qualifies' : 'scripts qualify'}
+                              </span>
+                            )}
+                            <span className="text-[12px] font-medium text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity ml-auto">
+                              View details →
                             </span>
-                          )}
+                          </div>
                         </div>
-                      </div>
-                      {opp.subtitle && (
-                        <p className="text-[13px] text-gray-500 m-0 mb-2 leading-relaxed">{opp.subtitle}</p>
-                      )}
-                      {!opp.subtitle && opp.description && (
-                        <p className="text-[13px] text-gray-500 m-0 mb-2 line-clamp-2 leading-relaxed">{opp.description}</p>
-                      )}
-                      <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-semibold" style={{ color: qCount > 0 ? '#059669' : 'transparent' }}>
-                          {qCount > 0 ? `${qCount} ${qCount === 1 ? 'script qualifies' : 'scripts qualify'}` : ''}
-                        </span>
-                        <span className="text-[12px] font-medium text-gray-400 group-hover:text-gray-700 flex items-center gap-0.5 transition-colors">
-                          View details
-                          <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                            <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </span>
                       </div>
                     </div>
                   </Link>
