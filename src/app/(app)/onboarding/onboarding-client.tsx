@@ -33,6 +33,19 @@ type MatchedOpp = {
   min_score: number | null
 }
 
+type OppData = {
+  id: string
+  title: string
+  slug: string | null
+  subtitle: string | null
+  description: string | null
+  deadline: string | null
+  min_score: number | null
+  formats: string[] | null
+  genres: string[] | null
+  budget_tiers: string[] | null
+}
+
 // ─── Helpers ────────────────────────────────────────────────────────
 
 function getCookie(name: string): string {
@@ -95,7 +108,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [historyDropdownOpen, setHistoryDropdownOpen] = useState(false)
 
   // All opportunities (for inline opportunities page)
-  const [allOppsExpanded, setAllOppsExpanded] = useState<{ id: string; title: string; subtitle: string | null; deadline: string | null; min_score: number | null }[]>([])
+  const [allOppsExpanded, setAllOppsExpanded] = useState<OppData[]>([])
 
   // Upload state
   const [scripts, setScripts] = useState<UploadedScript[]>([])
@@ -108,7 +121,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [opportunities, setOpportunities] = useState<MatchedOpp[]>([])
 
   // All active opportunities (for preview section)
-  const [allOpps, setAllOpps] = useState<{ id: string; title: string; subtitle: string | null; deadline: string | null; min_score: number | null }[]>([])
+  const [allOpps, setAllOpps] = useState<OppData[]>([])
 
   // Account state
   const [email, setEmail] = useState('')
@@ -152,6 +165,9 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [appsLoading, setAppsLoading] = useState(false)
   const [appsFetched, setAppsFetched] = useState(false)
 
+  // Per-opportunity application status (for card badges)
+  const [oppApplications, setOppApplications] = useState<Map<string, { count: number; stage: string }>>(new Map())
+
   // Fetch my applications when user switches to applications tab in history
   useEffect(() => {
     if (historyTab === 'applications' && authedUser && !appsFetched) {
@@ -166,6 +182,26 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
         .finally(() => setAppsLoading(false))
     }
   }, [historyTab, authedUser, appsFetched])
+
+  // Eagerly fetch application status for opportunity card badges
+  useEffect(() => {
+    if (authedUser) {
+      fetch('/api/my-applications')
+        .then(r => r.ok ? r.json() : { applications: [] })
+        .then(data => {
+          const map = new Map<string, { count: number; stage: string }>()
+          for (const app of (data.applications || [])) {
+            const latestSub = app.submissions?.[0]
+            map.set(app.opportunity_id, {
+              count: app.submissions?.length || 0,
+              stage: latestSub?.status || 'pending',
+            })
+          }
+          setOppApplications(map)
+        })
+        .catch(() => {})
+    }
+  }, [authedUser])
 
   // beforeunload — warn user about unsaved progress (skip if logged in)
   useEffect(() => {
@@ -728,58 +764,6 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     )
   }
 
-  function renderOppCard(opp: { id: string; title: string; subtitle: string | null; deadline: string | null; min_score: number | null }) {
-    const deadlineStr = opp.deadline
-      ? (() => {
-          const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
-          if (days <= 0) return 'Closed'
-          if (days === 1) return 'Closes tomorrow'
-          if (days <= 7) return `${days} days left`
-          return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-        })()
-      : null
-    return (
-      <button
-        key={opp.id}
-        onClick={() => {
-          setActivePage('opportunities')
-          setExpandedOppId(opp.id)
-          // Ensure allOppsExpanded has this opp
-          if (!allOppsExpanded.find(o => o.id === opp.id)) {
-            fetch('/api/opportunities-preview?all=true')
-              .then(r => r.ok ? r.json() : { opportunities: [] })
-              .then(data => setAllOppsExpanded(data.opportunities || []))
-              .catch(() => {})
-          }
-        }}
-        className="block rounded-xl bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-0.5 group text-left w-full border-0 cursor-pointer"
-        style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
-      >
-        <h4
-          className="text-[15px] font-bold text-gray-900 m-0 mb-2 group-hover:text-purple-700 transition-colors leading-snug"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          {opp.title}
-        </h4>
-        {opp.subtitle && (
-          <p className="text-[13px] text-gray-500 m-0 mb-3 leading-relaxed">{opp.subtitle}</p>
-        )}
-        <div className="flex items-center gap-3 mt-auto pt-2" style={{ borderTop: '1px solid #f3f4f6' }}>
-          {opp.min_score != null && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
-              {Math.round(opp.min_score)}+ score
-            </span>
-          )}
-          {deadlineStr && (
-            <span className="text-[11px] font-medium text-gray-400">
-              {deadlineStr}
-            </span>
-          )}
-        </div>
-      </button>
-    )
-  }
-
   // ─── NAME STEP (rendered inside parent card wrapper) ───────────────
 
   if (step === 'name') {
@@ -872,6 +856,135 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
       </>
     )
   }
+
+  // ─── Unified opportunity card ──────────────────────────────────────
+
+  const renderOppCard = useCallback((opp: OppData, compact = false) => {
+    const deadlineStr = opp.deadline
+      ? (() => {
+          const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
+          if (days <= 0) return 'Closed'
+          if (days === 1) return 'Closes tomorrow'
+          if (days <= 7) return `${days} days left`
+          return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+        })()
+      : null
+
+    const completedScripts = scripts.filter(s => s.status === 'completed' && s.score != null)
+    const qualifyingCount = opp.min_score != null
+      ? completedScripts.filter(s => (s.score || 0) >= opp.min_score!).length
+      : completedScripts.length
+
+    const appStatus = oppApplications.get(opp.id)
+    const hasApplied = !!appStatus && appStatus.count > 0
+    const isInReview = hasApplied && (appStatus.stage === 'in_review' || appStatus.stage === 'submitted' || appStatus.stage === 'pending')
+
+    const hasScripts = scripts.some(s => s.status === 'completed')
+    const canApply = hasScripts && qualifyingCount > 0 && !hasApplied
+
+    return (
+      <button
+        key={opp.id}
+        onClick={() => {
+          if (activePage !== 'opportunities') {
+            setActivePage('opportunities')
+            if (allOppsExpanded.length === 0) {
+              fetch('/api/opportunities-preview?all=true')
+                .then(r => r.ok ? r.json() : { opportunities: [] })
+                .then(data => setAllOppsExpanded(data.opportunities || []))
+                .catch(() => {})
+            }
+          }
+          setExpandedOppId(opp.id)
+        }}
+        className="block rounded-xl bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-0.5 group text-left w-full border-0 cursor-pointer"
+        style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
+      >
+        <h4
+          className={`font-bold text-gray-900 m-0 group-hover:text-purple-700 transition-colors leading-snug ${compact ? 'text-[13px] mb-1' : 'text-[15px] mb-1'}`}
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          {opp.title}
+        </h4>
+
+        {opp.subtitle && (
+          <p className={`text-gray-500 m-0 leading-relaxed ${compact ? 'text-[11px] mb-2 line-clamp-2' : 'text-[13px] mb-2'}`}>
+            {opp.subtitle}
+          </p>
+        )}
+
+        {!compact && opp.description && (
+          <p className="text-[12px] text-gray-400 m-0 mb-3 leading-relaxed line-clamp-3">
+            {opp.description}
+          </p>
+        )}
+
+        <div className={`flex items-center flex-wrap gap-2 ${compact ? 'mb-2' : 'mb-3'}`}>
+          {opp.min_score != null && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
+              {Math.round(opp.min_score)}+ score
+            </span>
+          )}
+          {opp.formats && opp.formats.length > 0 && opp.formats.map(f => (
+            <span key={f} className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
+              {f === 'feature' ? 'Feature' : f === 'pilot' ? 'Pilot' : f === 'limited_series' ? 'Limited Series' : f === 'short' ? 'Short' : f}
+            </span>
+          ))}
+          {deadlineStr && (
+            <span className="text-[10px] font-medium text-gray-400">{deadlineStr}</span>
+          )}
+        </div>
+
+        <div style={{ borderTop: '1px solid #f3f4f6' }} className="pt-2.5">
+          {hasApplied ? (
+            <div className="flex items-center gap-2">
+              <span
+                className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                style={{ background: '#ede9fe', color: '#7c3aed' }}
+              >
+                {isInReview ? 'In review' : 'Applied'}
+              </span>
+              <span className="text-[10px] text-gray-400">
+                {appStatus!.count} {appStatus!.count === 1 ? 'script' : 'scripts'} submitted
+              </span>
+            </div>
+          ) : canApply ? (
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-medium" style={{ color: '#7c3aed' }}>
+                {qualifyingCount} {qualifyingCount === 1 ? 'script qualifies' : 'scripts qualify'}
+              </span>
+              <span
+                className="text-[11px] font-semibold px-3 py-1 rounded-lg text-white"
+                style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+              >
+                Apply
+              </span>
+            </div>
+          ) : hasScripts && qualifyingCount === 0 ? (
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] text-gray-400">No qualifying scripts yet</span>
+              <span
+                className="text-[11px] font-semibold px-3 py-1 rounded-lg"
+                style={{ background: '#f3f4f6', color: '#9ca3af' }}
+              >
+                Apply
+              </span>
+            </div>
+          ) : (
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] text-gray-400">Submit a script to see if you qualify</span>
+              <span
+                className="text-[11px] font-semibold px-3 py-1 rounded-lg"
+                style={{ background: '#f3f4f6', color: '#9ca3af' }}
+              >
+                Apply
+              </span>
+            </div>
+          )}
+        </div>
+      </button>
+    )
+  }, [scripts, oppApplications, activePage, allOppsExpanded])
 
   // ─── APP MODE: sidebar + center layout ─────────────────────────────
 
@@ -1310,51 +1423,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                         See what industry partners are looking for
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        {allOpps.slice(0, 3).map(opp => {
-                          const deadlineStr = opp.deadline
-                            ? (() => {
-                                const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
-                                if (days <= 0) return 'Closed'
-                                if (days === 1) return 'Tomorrow'
-                                if (days <= 7) return `${days}d left`
-                                return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-                              })()
-                            : null
-                          return (
-                            <button
-                              key={opp.id}
-                              onClick={() => {
-                                setActivePage('opportunities')
-                                setExpandedOppId(opp.id)
-                                if (!allOppsExpanded.find(o => o.id === opp.id)) {
-                                  fetch('/api/opportunities-preview?all=true')
-                                    .then(r => r.ok ? r.json() : { opportunities: [] })
-                                    .then(data => setAllOppsExpanded(data.opportunities || []))
-                                    .catch(() => {})
-                                }
-                              }}
-                              className="block rounded-lg bg-white p-3.5 transition-all hover:shadow-md group text-left w-full border-0 cursor-pointer"
-                              style={{ boxShadow: '0 1px 6px rgba(0,0,0,0.12)' }}
-                            >
-                              <h4
-                                className="text-[13px] font-bold text-gray-900 m-0 mb-1 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2"
-                                style={{ fontFamily: 'Georgia, serif' }}
-                              >
-                                {opp.title}
-                              </h4>
-                              <div className="flex items-center gap-2">
-                                {opp.min_score != null && (
-                                  <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
-                                    {Math.round(opp.min_score)}+
-                                  </span>
-                                )}
-                                {deadlineStr && (
-                                  <span className="text-[10px] font-medium text-gray-400">{deadlineStr}</span>
-                                )}
-                              </div>
-                            </button>
-                          )
-                        })}
+                        {allOpps.slice(0, 3).map(opp => renderOppCard(opp, true))}
                       </div>
                       <button
                         onClick={() => {
@@ -1784,46 +1853,8 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                               <p className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Loading opportunities...</p>
                             </div>
                           ) : (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                              {allOppsExpanded.map(opp => {
-                                const deadlineStr = opp.deadline
-                                  ? (() => {
-                                      const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
-                                      if (days <= 0) return 'Closed'
-                                      if (days === 1) return 'Closes tomorrow'
-                                      if (days <= 7) return `${days} days left`
-                                      return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-                                    })()
-                                  : null
-                                return (
-                                  <button
-                                    key={opp.id}
-                                    onClick={() => setExpandedOppId(opp.id)}
-                                    className="block rounded-xl bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-0.5 group text-left w-full border-0 cursor-pointer"
-                                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
-                                  >
-                                    <h4
-                                      className="text-[15px] font-bold text-gray-900 m-0 mb-2 group-hover:text-purple-700 transition-colors leading-snug"
-                                      style={{ fontFamily: 'Georgia, serif' }}
-                                    >
-                                      {opp.title}
-                                    </h4>
-                                    {opp.subtitle && (
-                                      <p className="text-[13px] text-gray-500 m-0 mb-3 leading-relaxed">{opp.subtitle}</p>
-                                    )}
-                                    <div className="flex items-center gap-3 mt-auto pt-2" style={{ borderTop: '1px solid #f3f4f6' }}>
-                                      {opp.min_score != null && (
-                                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
-                                          {Math.round(opp.min_score)}+ score
-                                        </span>
-                                      )}
-                                      {deadlineStr && (
-                                        <span className="text-[11px] font-medium text-gray-400">{deadlineStr}</span>
-                                      )}
-                                    </div>
-                                  </button>
-                                )
-                              })}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              {allOppsExpanded.map(opp => renderOppCard(opp, false))}
                             </div>
                           )}
                     </div>

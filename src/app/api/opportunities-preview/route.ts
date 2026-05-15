@@ -20,7 +20,7 @@ export async function GET(request: Request) {
 
   let query = service
     .from('opportunities')
-    .select('id, title, subtitle, deadline, min_score')
+    .select('id, title, slug, subtitle, description, deadline, min_score, formats, genres, budget_tiers')
     .eq('status', 'active')
     .order('created_at', { ascending: false })
 
@@ -32,9 +32,14 @@ export async function GET(request: Request) {
     opportunities: (opps || []).map(o => ({
       id: o.id,
       title: o.title,
+      slug: o.slug,
       subtitle: o.subtitle,
+      description: o.description,
       deadline: o.deadline,
       min_score: o.min_score,
+      formats: o.formats,
+      genres: o.genres,
+      budget_tiers: o.budget_tiers,
     })),
   })
 }
