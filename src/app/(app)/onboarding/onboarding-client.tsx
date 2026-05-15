@@ -117,6 +117,9 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const fileInputRef = useRef<HTMLInputElement>(null)
   const pollingRefs = useRef<Map<string, NodeJS.Timeout>>(new Map())
 
+  // Three-dot menu state
+  const [menuOpenId, setMenuOpenId] = useState<string | null>(null)
+
   // Results state
   const [opportunities, setOpportunities] = useState<MatchedOpp[]>([])
 
@@ -214,6 +217,14 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
     window.addEventListener('beforeunload', handleBeforeUnload)
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
   }, [scripts.length, authedUser])
+
+  // Close three-dot menu on click outside
+  useEffect(() => {
+    if (!menuOpenId) return
+    function handleClick() { setMenuOpenId(null) }
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [menuOpenId])
 
   // Auto-advance progress animation
   useEffect(() => {
@@ -605,24 +616,49 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   function renderScriptCard(script: UploadedScript) {
     const isExpanded = expandedOpps.has(script.id)
     const scriptOpps = script.status === 'completed' ? opportunities : []
-    return (
-      <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-        <div className="p-5">
-          <div className="flex items-start gap-4">
-            {script.status === 'completed' && script.score != null ? (
-              <div
-                className={`w-16 h-16 rounded-full flex items-center justify-center text-white text-[20px] font-bold bg-gradient-to-br flex-shrink-0 ${scoreGradient(script.score)}`}
-              >
-                {script.score}
+    const isMenuOpen = menuOpenId === script.id
+    const logline = script.evaluation?.positioning_hook as string | undefined
+    const evalId = script.id
+
+    // ── Processing state ──
+    if (script.status === 'processing') {
+      return (
+        <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
+          <div className="p-5">
+            <div className="flex items-start justify-between">
+              <div className="flex-1 min-w-0">
+                <h3
+                  className="text-[17px] font-bold text-gray-900 m-0 truncate"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  {script.title}
+                </h3>
+                <p className="text-[13px] text-purple-600 mt-1 m-0">Evaluating...</p>
               </div>
-            ) : (
-              <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: '#f3f4f6' }}>
+              <div className="w-8 h-8 flex items-center justify-center flex-shrink-0 ml-3">
                 <svg className="w-6 h-6 text-purple-500 animate-spin" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
               </div>
-            )}
+            </div>
+            <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 ease-out"
+                style={{ width: `${script.progress}%` }}
+              />
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    // ── Completed state ──
+    return (
+      <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
+        <div className="p-5">
+          {/* Top row: title + menu + score */}
+          <div className="flex items-start gap-3">
             <div className="flex-1 min-w-0">
               <h3
                 className="text-[17px] font-bold text-gray-900 m-0 truncate"
@@ -630,17 +666,11 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               >
                 {script.title}
               </h3>
-              <div className="flex items-center gap-2 mt-1">
+              <div className="flex items-center gap-1.5 mt-1 flex-wrap">
                 <span className="text-[13px] text-gray-400">{script.format}</span>
-                {script.status === 'processing' && (
-                  <>
-                    <span className="text-gray-300">·</span>
-                    <span className="text-[13px] text-purple-600">Evaluating...</span>
-                  </>
-                )}
                 {script.genres && script.genres.length > 0 && (
                   <>
-                    <span className="text-gray-300">·</span>
+                    <span className="text-gray-300">&middot;</span>
                     <span className="text-[13px] text-gray-400">{script.genres.join(', ')}</span>
                   </>
                 )}
@@ -650,116 +680,164 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                   {script.tier}
                 </span>
               )}
-              {script.status === 'completed' && (
-                <div className="flex items-center gap-3 mt-3">
-                  {script.evaluation && (
-                    <Link
-                      href={`/report/${script.id}`}
-                      target="_blank"
-                      className="text-[12px] text-purple-600 font-medium hover:text-purple-700 flex items-center gap-1"
-                    >
-                      View report
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                      </svg>
-                    </Link>
-                  )}
+            </div>
+
+            {/* Three-dot menu */}
+            <div className="relative flex-shrink-0">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setMenuOpenId(isMenuOpen ? null : script.id)
+                }}
+                className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <circle cx="8" cy="3" r="1.5" />
+                  <circle cx="8" cy="8" r="1.5" />
+                  <circle cx="8" cy="13" r="1.5" />
+                </svg>
+              </button>
+              {isMenuOpen && (
+                <div
+                  className="absolute right-0 top-8 z-20 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-1"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <button
-                    onClick={() => toggleDiscover(script.id)}
-                    className="text-[12px] font-medium flex items-center gap-1.5 transition-colors"
-                    style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
+                    onClick={() => setMenuOpenId(null)}
+                    className="w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
                   >
-                    <span className={`inline-block w-3 h-3 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
-                    {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
+                    Edit details
+                  </button>
+                  <button
+                    onClick={() => setMenuOpenId(null)}
+                    className="w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    Hide script
+                  </button>
+                  <button
+                    onClick={() => setMenuOpenId(null)}
+                    className="w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    Download PDF
                   </button>
                 </div>
               )}
             </div>
-          </div>
-          {script.status === 'processing' && (
-            <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-purple-600 to-purple-400 transition-all duration-500 ease-out"
-                style={{ width: `${script.progress}%` }}
-              />
-            </div>
-          )}
-        </div>
 
-        {/* Opportunities dropdown */}
-        {script.status === 'completed' && scriptOpps.length > 0 && (
-          <div style={{ borderTop: '1px solid #f3f4f6' }}>
-            <button
-              onClick={() => setExpandedOpps(prev => {
-                const next = new Set(prev)
-                if (next.has(script.id)) next.delete(script.id)
-                else next.add(script.id)
-                return next
-              })}
-              className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-gray-50 transition-colors"
-            >
-              <span className="text-[13px] font-semibold text-purple-600">
-                Qualifies for {scriptOpps.length} opportunit{scriptOpps.length === 1 ? 'y' : 'ies'}
-              </span>
-              <svg
-                className={`w-4 h-4 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-                fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-            {isExpanded && (
-              <div className="px-5 pb-4 space-y-2">
-                {scriptOpps.map(opp => {
-                  const isApplied = script.selectedOpps.includes(opp.id)
-                  return (
-                    <div
-                      key={opp.id}
-                      className="flex items-center justify-between py-2.5 px-3 rounded-lg transition-colors"
-                      style={{ background: isApplied ? '#f5f3ff' : '#f9fafb' }}
-                    >
-                      <div className="flex-1 min-w-0 mr-3">
-                        <p className="text-[13px] font-medium text-gray-900 m-0">{opp.title}</p>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          {opp.deadline && (
-                            <span className="text-[11px] text-gray-400">
-                              {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                            </span>
-                          )}
-                          {opp.min_score != null && (
-                            <span className="text-[11px] text-gray-400">
-                              {opp.min_score}+ score
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <button
-                        onClick={() => {
-                          // Gate behind account creation
-                          if (!isApplied) {
-                            setShowAccountForm(true)
-                            return
-                          }
-                          toggleOpp(script.id, opp.id)
-                        }}
-                        className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all flex-shrink-0 ${
-                          isApplied
-                            ? 'bg-purple-600 text-white'
-                            : 'bg-white border border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
-                        }`}
-                      >
-                        {isApplied ? 'Applied' : 'Apply'}
-                      </button>
-                    </div>
-                  )
-                })}
-                {!showAccountForm && (
-                  <p className="text-[11px] text-gray-400 mt-1 m-0">Create an account to apply for opportunities</p>
-                )}
+            {/* Score badge */}
+            {script.score != null && (
+              <div className="w-[52px] h-[52px] rounded-full flex items-center justify-center text-white text-[18px] font-bold bg-gradient-to-br from-emerald-500 to-emerald-400 flex-shrink-0">
+                {script.score}
               </div>
             )}
           </div>
-        )}
+
+          {/* Logline */}
+          {logline && (
+            <p className="text-[13px] text-gray-500 italic mt-3 m-0 line-clamp-2">{logline}</p>
+          )}
+
+          {/* Actions row */}
+          <div className="flex items-center gap-4 mt-3">
+            {script.evaluation && (
+              <Link
+                href={`/report/${evalId}`}
+                target="_blank"
+                className="text-[12px] text-purple-600 font-medium hover:text-purple-700 flex items-center gap-1"
+              >
+                View full report
+                <span className="ml-0.5">&rarr;</span>
+              </Link>
+            )}
+            <button
+              onClick={() => toggleDiscover(script.id)}
+              className="text-[12px] font-medium flex items-center gap-1.5 transition-colors"
+              style={{ color: script.discoverOn ? '#7c3aed' : '#9ca3af' }}
+            >
+              <span className={`inline-block w-3 h-3 rounded-full border-2 transition-colors ${script.discoverOn ? 'bg-purple-600 border-purple-600' : 'border-gray-300'}`} />
+              {script.discoverOn ? 'Published to Industry' : 'Publish to Industry'}
+            </button>
+          </div>
+        </div>
+
+        {/* Opportunities dropdown */}
+        <div style={{ borderTop: '1px solid #f3f4f6' }}>
+          <button
+            onClick={() => setExpandedOpps(prev => {
+              const next = new Set(prev)
+              if (next.has(script.id)) next.delete(script.id)
+              else next.add(script.id)
+              return next
+            })}
+            className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-gray-50 transition-colors"
+          >
+            {scriptOpps.length > 0 ? (
+              <span className="text-[13px] font-semibold text-purple-600">
+                Qualifies for {scriptOpps.length} opportunit{scriptOpps.length === 1 ? 'y' : 'ies'}
+              </span>
+            ) : (
+              <span className="text-[13px] text-gray-400">
+                Doesn&apos;t qualify for current opportunities
+              </span>
+            )}
+            <svg
+              className={`w-4 h-4 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+              fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          {isExpanded && scriptOpps.length > 0 && (
+            <div className="px-5 pb-4 space-y-2">
+              {scriptOpps.map(opp => {
+                const isApplied = script.selectedOpps.includes(opp.id)
+                return (
+                  <div
+                    key={opp.id}
+                    className="flex items-center justify-between py-2.5 px-3 rounded-lg transition-colors"
+                    style={{ background: isApplied ? '#f5f3ff' : '#f9fafb' }}
+                  >
+                    <div className="flex-1 min-w-0 mr-3">
+                      <p className="text-[13px] font-medium text-gray-900 m-0">{opp.title}</p>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        {opp.deadline && (
+                          <span className="text-[11px] text-gray-400">
+                            {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                          </span>
+                        )}
+                        {opp.min_score != null && (
+                          <span className="text-[11px] text-gray-400">
+                            {opp.min_score}+ score
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => {
+                        // Gate behind account creation
+                        if (!isApplied) {
+                          setShowAccountForm(true)
+                          return
+                        }
+                        toggleOpp(script.id, opp.id)
+                      }}
+                      className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all flex-shrink-0 ${
+                        isApplied
+                          ? 'bg-purple-600 text-white'
+                          : 'bg-white border border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
+                      }`}
+                    >
+                      {isApplied ? 'Applied' : 'Apply'}
+                    </button>
+                  </div>
+                )
+              })}
+              {!showAccountForm && (
+                <p className="text-[11px] text-gray-400 mt-1 m-0">Create an account to apply for opportunities</p>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     )
   }
