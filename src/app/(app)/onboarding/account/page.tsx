@@ -15,6 +15,6 @@ import { OnboardingAccountClient } from './onboarding-account-client'
 export default async function OnboardingAccountPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (user) redirect('/onboarding')
+  if (user) redirect('/script')
   return <OnboardingAccountClient />
 }

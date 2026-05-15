@@ -209,7 +209,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           </div>
         </div>
       </div>
-      <ScriptUploadModal redirectTo="/onboarding" />
+      <ScriptUploadModal redirectTo="/script" />
       {!isPro && <UpgradeModalListener />}
     </div>
   )

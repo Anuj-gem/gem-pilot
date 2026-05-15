@@ -50,9 +50,9 @@ export function OnboardingAccountClient() {
     setGoogleLoading(true)
     setError(null)
     try {
-      window.localStorage.setItem(PATH_B_NEXT_KEY, '/onboarding')
+      window.localStorage.setItem(PATH_B_NEXT_KEY, '/script')
     } catch {}
-    const redirectTo = `${window.location.origin}/auth/callback?next=/onboarding`
+    const redirectTo = `${window.location.origin}/auth/callback?next=/script`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo },
