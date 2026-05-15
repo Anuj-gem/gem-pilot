@@ -86,7 +86,13 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [intent, setIntent] = useState<string | null>(initialIntent || null)
 
   // Sidebar active page
-  const [activePage, setActivePage] = useState<'new-script' | 'my-scripts' | 'discover' | 'opportunities'>('new-script')
+  const [activePage, setActivePage] = useState<'new-script' | 'my-history' | 'discover' | 'opportunities'>('new-script')
+
+  // History page tab: 'scripts' or 'applications'
+  const [historyTab, setHistoryTab] = useState<'scripts' | 'applications'>('scripts')
+
+  // Sidebar dropdown state for My History
+  const [historyDropdownOpen, setHistoryDropdownOpen] = useState(false)
 
   // All opportunities (for inline opportunities page)
   const [allOppsExpanded, setAllOppsExpanded] = useState<{ id: string; title: string; subtitle: string | null; deadline: string | null; min_score: number | null }[]>([])
@@ -125,10 +131,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   // Opportunity detail expand state (for inline opportunities page)
   const [expandedOppId, setExpandedOppId] = useState<string | null>(null)
 
-  // Opportunities page tab: 'open' (browse) or 'applications' (my submissions)
-  const [oppTab, setOppTab] = useState<'open' | 'applications'>('open')
-
-  // My applications data (fetched when authedUser switches to applications tab)
+  // My applications data (fetched when user switches to applications tab in history)
   const [myApplications, setMyApplications] = useState<{
     opportunity_id: string
     opportunity_title: string
@@ -149,9 +152,9 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
   const [appsLoading, setAppsLoading] = useState(false)
   const [appsFetched, setAppsFetched] = useState(false)
 
-  // Fetch my applications when user switches to that tab
+  // Fetch my applications when user switches to applications tab in history
   useEffect(() => {
-    if (oppTab === 'applications' && authedUser && !appsFetched) {
+    if (historyTab === 'applications' && authedUser && !appsFetched) {
       setAppsLoading(true)
       fetch('/api/my-applications')
         .then(r => r.ok ? r.json() : { applications: [] })
@@ -162,7 +165,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
         .catch(() => setMyApplications([]))
         .finally(() => setAppsLoading(false))
     }
-  }, [oppTab, authedUser, appsFetched])
+  }, [historyTab, authedUser, appsFetched])
 
   // beforeunload — warn user about unsaved progress (skip if logged in)
   useEffect(() => {
@@ -895,83 +898,123 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
           {/* Nav links */}
           <nav className="flex-1 px-3 pt-3">
             <ul className="list-none p-0 m-0 space-y-0.5">
-              {[
-                {
-                  id: 'new-script' as const,
-                  label: 'New Script',
-                  icon: (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 4.5v15m7.5-7.5h-15" />
-                    </svg>
-                  ),
-                },
-                {
-                  id: 'my-scripts' as const,
-                  label: 'My Scripts',
-                  icon: (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                      <polyline points="14 2 14 8 20 8" />
-                    </svg>
-                  ),
-                },
-                {
-                  id: 'opportunities' as const,
-                  label: 'Opportunities',
-                  icon: (
+              {/* New Script */}
+              <li>
+                <button
+                  onClick={() => { setActivePage('new-script'); if (scripts.length === 0) setStep('upload') }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
+                    activePage === 'new-script' ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  }`}
+                >
+                  <span className={activePage === 'new-script' ? 'text-purple-600' : 'text-gray-400'}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                  </span>
+                  New Script
+                </button>
+              </li>
+
+              {/* My History — with dropdown */}
+              <li>
+                <div className="relative">
+                  <button
+                    onClick={() => { setActivePage('my-history'); setHistoryTab('scripts') }}
+                    className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
+                      activePage === 'my-history' ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    }`}
+                  >
+                    <span className={activePage === 'my-history' ? 'text-purple-600' : 'text-gray-400'}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                        <polyline points="14 2 14 8 20 8" />
+                      </svg>
+                    </span>
+                    My History
+                    {scripts.length > 0 && (
+                      <span className="ml-auto mr-1 text-[11px] font-semibold text-gray-400">{scripts.length}</span>
+                    )}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setHistoryDropdownOpen(prev => !prev) }}
+                      className="ml-auto p-0.5 rounded hover:bg-gray-200 transition-colors flex-shrink-0"
+                      style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
+                    >
+                      <svg
+                        width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                        className={`transition-transform ${historyDropdownOpen ? 'rotate-180' : ''}`}
+                        style={{ color: activePage === 'my-history' ? '#7c3aed' : '#9ca3af' }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </button>
+                  </button>
+                  {historyDropdownOpen && (
+                    <ul className="list-none p-0 m-0 ml-7 mt-0.5 space-y-0">
+                      <li>
+                        <button
+                          onClick={() => { setActivePage('my-history'); setHistoryTab('scripts'); setHistoryDropdownOpen(false) }}
+                          className={`w-full text-left px-3 py-1.5 rounded-md text-[12px] font-medium transition-colors ${
+                            activePage === 'my-history' && historyTab === 'scripts' ? 'text-purple-700 bg-purple-50' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          My Scripts
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          onClick={() => { setActivePage('my-history'); setHistoryTab('applications'); setHistoryDropdownOpen(false) }}
+                          className={`w-full text-left px-3 py-1.5 rounded-md text-[12px] font-medium transition-colors ${
+                            activePage === 'my-history' && historyTab === 'applications' ? 'text-purple-700 bg-purple-50' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          My Applications
+                        </button>
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </li>
+
+              {/* Opportunities */}
+              <li>
+                <button
+                  onClick={() => {
+                    setActivePage('opportunities')
+                    setExpandedOppId(null)
+                    fetch('/api/opportunities-preview?all=true')
+                      .then(r => r.ok ? r.json() : { opportunities: [] })
+                      .then(data => setAllOppsExpanded(data.opportunities || []))
+                      .catch(() => {})
+                  }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
+                    activePage === 'opportunities' ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  }`}
+                >
+                  <span className={activePage === 'opportunities' ? 'text-purple-600' : 'text-gray-400'}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                  ),
-                },
-                {
-                  id: 'discover' as const,
-                  label: 'Discover',
-                  icon: (
+                  </span>
+                  Opportunities
+                </button>
+              </li>
+
+              {/* Discover */}
+              <li>
+                <button
+                  onClick={() => setActivePage('discover')}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
+                    activePage === 'discover' ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  }`}
+                >
+                  <span className={activePage === 'discover' ? 'text-purple-600' : 'text-gray-400'}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="12" cy="12" r="10" />
                       <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
                     </svg>
-                  ),
-                },
-              ].map(link => {
-                const active = activePage === link.id
-                return (
-                  <li key={link.id}>
-                    <button
-                      onClick={() => {
-                        if (link.id === 'opportunities') {
-                          setActivePage('opportunities')
-                          setExpandedOppId(null)
-                          fetch('/api/opportunities-preview?all=true')
-                            .then(r => r.ok ? r.json() : { opportunities: [] })
-                            .then(data => setAllOppsExpanded(data.opportunities || []))
-                            .catch(() => {})
-                        } else if (link.id === 'my-scripts') {
-                          setActivePage('my-scripts')
-                        } else if (link.id === 'discover') {
-                          setActivePage('discover')
-                        } else {
-                          setActivePage(link.id as any)
-                          if (scripts.length === 0) setStep('upload')
-                        }
-                      }}
-                      className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
-                        active
-                          ? 'bg-purple-50 text-purple-700'
-                          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                      }`}
-                    >
-                      <span className={active ? 'text-purple-600' : 'text-gray-400'}>{link.icon}</span>
-                      {link.label}
-                      {scripts.length > 0 && link.id === 'my-scripts' && (
-                        <span className="ml-auto text-[11px] font-semibold text-gray-400">{scripts.length}</span>
-                      )}
-                    </button>
-                  </li>
-                )
-              })}
+                  </span>
+                  Discover
+                </button>
+              </li>
             </ul>
           </nav>
 
@@ -1065,61 +1108,28 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
               {/* ════════ NEW SCRIPT PAGE ════════ */}
               {activePage === 'new-script' && step === 'upload' && (
                 <div>
-                  {/* ── Submission section — top-left aligned ── */}
-                  <div className="mb-8">
+                  {/* ── Primary: Submit a script — centered, prominent ── */}
+                  <div className="flex flex-col items-center text-center mb-6 pt-4">
                     <h1
-                      className="text-[22px] font-bold mb-1"
+                      className="text-[26px] font-bold mb-2"
                       style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
                     >
                       {scripts.length === 0
                         ? `What are you working on, ${firstName}?`
-                        : 'Submit a script'}
+                        : 'Submit another script'}
                     </h1>
-                    <p className="text-[14px] mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    <p className="text-[15px] mb-6 max-w-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
                       {scripts.length === 0
                         ? 'Pick a format and upload your screenplay. Your first evaluation is free.'
                         : 'Upload a PDF to get your evaluation in under a minute.'}
                     </p>
 
-                    {/* ── Script cards — rich inline view ── */}
-                    {scripts.length > 0 && (
-                      <div className="space-y-4 mb-5">
-                        {scripts.map(script => renderScriptCard(script))}
-                      </div>
-                    )}
-
-                    {/* ── Save your work CTA — prominent banner (hidden when logged in) ── */}
-                    {scripts.some(s => s.status === 'completed') && !showAccountForm && !authedUser && (
-                      <div
-                        className="mb-5 rounded-xl p-4 flex items-center justify-between gap-4"
-                        style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.1))', border: '1px solid rgba(167,139,250,0.3)' }}
-                      >
-                        <div>
-                          <p className="text-[14px] font-semibold m-0" style={{ color: '#ffffff' }}>
-                            Create your account to save your work
-                          </p>
-                          <p className="text-[12px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                            Your scripts, scores, and applications will be lost if you leave
-                          </p>
-                        </div>
-                        <button
-                          onClick={() => setShowAccountForm(true)}
-                          className="flex-shrink-0 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-all"
-                          style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                          onMouseOver={e => (e.currentTarget.style.opacity = '0.9')}
-                          onMouseOut={e => (e.currentTarget.style.opacity = '1')}
-                        >
-                          Create account
-                        </button>
-                      </div>
-                    )}
-
-                    {/* ── Format-first flow ── */}
+                    {/* ── Format-first flow — centered ── */}
                     {scripts.length < 2 ? (
-                      <div className="max-w-lg">
+                      <div className="w-full max-w-md">
                         {!pendingFormat && !showFormatPicker ? (
                           <>
-                            <div className="flex gap-3 mb-3">
+                            <div className="flex gap-4 mb-3">
                               {(['Series', 'Feature film'] as DeclaredFormat[]).map(fmt => (
                                 <button
                                   key={fmt}
@@ -1128,22 +1138,22 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                                     setPendingFormat(fmt)
                                     setTimeout(() => fileInputRef.current?.click(), 50)
                                   }}
-                                  className="flex-1 rounded-xl py-4 px-4 text-center transition-all group"
-                                  style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}
+                                  className="flex-1 rounded-xl py-6 px-5 text-center transition-all group"
+                                  style={{ background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)' }}
                                   onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)' }}
                                   onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)' }}
                                 >
-                                  <div className="flex flex-col items-center gap-1.5">
+                                  <div className="flex flex-col items-center gap-2">
                                     {fmt === 'Series' ? (
-                                      <svg className="w-6 h-6 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                      <svg className="w-8 h-8 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H2.625c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
                                       </svg>
                                     ) : (
-                                      <svg className="w-6 h-6 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                      <svg className="w-8 h-8 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
                                       </svg>
                                     )}
-                                    <span className="text-[14px] font-semibold" style={{ color: '#ffffff' }}>{fmt}</span>
+                                    <span className="text-[15px] font-semibold" style={{ color: '#ffffff' }}>{fmt}</span>
                                     <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.35)' }}>
                                       {fmt === 'Series' ? 'Pilot or episode' : 'Full screenplay'}
                                     </span>
@@ -1157,7 +1167,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                           </>
                         ) : (
                           <div>
-                            <div className="flex items-center gap-2 mb-3">
+                            <div className="flex items-center justify-center gap-2 mb-3">
                               <span className="inline-block px-2.5 py-1 rounded-full text-[12px] font-medium" style={{ background: 'rgba(124,58,237,0.15)', color: '#a78bfa' }}>
                                 {pendingFormat}
                               </span>
@@ -1173,23 +1183,23 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                             </div>
                             <button
                               onClick={() => fileInputRef.current?.click()}
-                              className="w-full rounded-xl border-2 border-dashed py-6 px-4 transition-colors group"
+                              className="w-full rounded-xl border-2 border-dashed py-10 px-4 transition-colors group"
                               style={{ borderColor: 'rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)' }}
                               onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(167,139,250,0.5)'; e.currentTarget.style.background = 'rgba(167,139,250,0.08)' }}
                               onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
                             >
                               <div className="flex flex-col items-center gap-2">
-                                <svg className="w-8 h-8 transition-colors" style={{ color: 'rgba(255,255,255,0.25)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                <svg className="w-10 h-10 transition-colors" style={{ color: 'rgba(255,255,255,0.25)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                                 </svg>
-                                <span className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Upload your screenplay (PDF)</span>
+                                <span className="text-[15px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Upload your screenplay (PDF)</span>
                               </div>
                             </button>
                           </div>
                         )}
                       </div>
                     ) : (
-                      <div className="max-w-lg rounded-xl py-4 px-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <div className="w-full max-w-md rounded-xl py-4 px-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
                         <span className="text-[14px]" style={{ color: 'rgba(255,255,255,0.4)' }}>2 of 2 free evaluations used</span>
                       </div>
                     )}
@@ -1203,77 +1213,9 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                     />
                   </div>
 
-                  {/* ── Opportunities preview — wide grid ── */}
-                  {allOpps.length > 0 && (
-                    <div>
-                      <div className="mb-4">
-                        <h2 className="text-[18px] font-bold m-0" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
-                          New Opportunities
-                        </h2>
-                        <p className="text-[13px] mt-1 m-0" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                          Real opportunities from our insider network your script may qualify for
-                        </p>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {allOpps.slice(0, 3).map(opp => renderOppCard(opp))}
-                      </div>
-                      <div className="mt-4">
-                        <button
-                          onClick={() => {
-                            setActivePage('opportunities')
-                            fetch('/api/opportunities-preview?all=true')
-                              .then(r => r.ok ? r.json() : { opportunities: [] })
-                              .then(data => setAllOppsExpanded(data.opportunities || []))
-                              .catch(() => {})
-                          }}
-                          className="inline-flex items-center gap-1.5 text-[13px] font-semibold transition-colors border-0 bg-transparent cursor-pointer"
-                          style={{ color: 'rgba(255,255,255,0.5)' }}
-                          onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
-                          onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
-                        >
-                          View all opportunities
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* ════════ MY SCRIPTS PAGE ════════ */}
-              {activePage === 'my-scripts' && (
-                <div>
-                  <h1
-                    className="text-[22px] font-bold mb-1"
-                    style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
-                  >
-                    My Scripts
-                  </h1>
-                  <p className="text-[14px] mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    {scripts.length === 0 ? 'No scripts yet. Submit your first one to get started.' : `${scripts.length} script${scripts.length === 1 ? '' : 's'} submitted`}
-                  </p>
-
-                  {scripts.length === 0 ? (
-                    <div
-                      className="rounded-xl py-12 px-6 text-center"
-                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
-                    >
-                      <svg className="w-10 h-10 mx-auto mb-3" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                      </svg>
-                      <p className="text-[14px] font-medium mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>No scripts yet</p>
-                      <button
-                        onClick={() => { setActivePage('new-script'); setStep('upload') }}
-                        className="px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
-                        style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                      >
-                        Submit your first script
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="space-y-4">
+                  {/* ── Script cards below upload ── */}
+                  {scripts.length > 0 && (
+                    <div className="space-y-4 mb-6">
                       {scripts.map(script => renderScriptCard(script))}
 
                       {/* Save your work CTA (hidden when logged in) */}
@@ -1287,7 +1229,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                               Create your account to save your work
                             </p>
                             <p className="text-[12px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                              Your scripts and scores will be lost if you leave
+                              Your scripts, scores, and applications will be lost if you leave
                             </p>
                           </div>
                           <button
@@ -1300,6 +1242,323 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                         </div>
                       )}
                     </div>
+                  )}
+
+                  {/* ── Subtle divider ── */}
+                  {allOpps.length > 0 && (
+                    <div className="my-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }} />
+                  )}
+
+                  {/* ── Opportunities preview — compact secondary section ── */}
+                  {allOpps.length > 0 && (
+                    <div>
+                      <p className="text-[13px] font-medium mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                        See what industry partners are looking for
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        {allOpps.slice(0, 3).map(opp => {
+                          const deadlineStr = opp.deadline
+                            ? (() => {
+                                const days = Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
+                                if (days <= 0) return 'Closed'
+                                if (days === 1) return 'Tomorrow'
+                                if (days <= 7) return `${days}d left`
+                                return new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+                              })()
+                            : null
+                          return (
+                            <button
+                              key={opp.id}
+                              onClick={() => {
+                                setActivePage('opportunities')
+                                setExpandedOppId(opp.id)
+                                if (!allOppsExpanded.find(o => o.id === opp.id)) {
+                                  fetch('/api/opportunities-preview?all=true')
+                                    .then(r => r.ok ? r.json() : { opportunities: [] })
+                                    .then(data => setAllOppsExpanded(data.opportunities || []))
+                                    .catch(() => {})
+                                }
+                              }}
+                              className="block rounded-lg bg-white p-3.5 transition-all hover:shadow-md group text-left w-full border-0 cursor-pointer"
+                              style={{ boxShadow: '0 1px 6px rgba(0,0,0,0.12)' }}
+                            >
+                              <h4
+                                className="text-[13px] font-bold text-gray-900 m-0 mb-1 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2"
+                                style={{ fontFamily: 'Georgia, serif' }}
+                              >
+                                {opp.title}
+                              </h4>
+                              <div className="flex items-center gap-2">
+                                {opp.min_score != null && (
+                                  <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280' }}>
+                                    {Math.round(opp.min_score)}+
+                                  </span>
+                                )}
+                                {deadlineStr && (
+                                  <span className="text-[10px] font-medium text-gray-400">{deadlineStr}</span>
+                                )}
+                              </div>
+                            </button>
+                          )
+                        })}
+                      </div>
+                      <button
+                        onClick={() => {
+                          setActivePage('opportunities')
+                          fetch('/api/opportunities-preview?all=true')
+                            .then(r => r.ok ? r.json() : { opportunities: [] })
+                            .then(data => setAllOppsExpanded(data.opportunities || []))
+                            .catch(() => {})
+                        }}
+                        className="inline-flex items-center gap-1 mt-3 text-[12px] font-medium transition-colors border-0 bg-transparent cursor-pointer"
+                        style={{ color: 'rgba(255,255,255,0.4)' }}
+                        onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+                        onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+                      >
+                        View all
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* ════════ MY HISTORY PAGE (Scripts + Applications tabs) ════════ */}
+              {activePage === 'my-history' && (
+                <div>
+                  <h1
+                    className="text-[22px] font-bold mb-1"
+                    style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
+                  >
+                    My History
+                  </h1>
+                  <p className="text-[14px] mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    Your scripts and applications in one place
+                  </p>
+
+                  {/* Tab bar */}
+                  <div className="flex items-center gap-1 mb-5 p-1 rounded-lg" style={{ background: 'rgba(255,255,255,0.06)', display: 'inline-flex' }}>
+                    {([
+                      { id: 'scripts' as const, label: 'My Scripts' },
+                      { id: 'applications' as const, label: 'My Applications' },
+                    ]).map(tab => {
+                      const active = historyTab === tab.id
+                      return (
+                        <button
+                          key={tab.id}
+                          onClick={() => setHistoryTab(tab.id)}
+                          className={`text-[13px] font-semibold px-4 py-2 rounded-md transition-all ${
+                            active ? 'text-white' : 'text-gray-400 hover:text-gray-200'
+                          }`}
+                          style={active ? { background: 'rgba(255,255,255,0.12)' } : {}}
+                        >
+                          {tab.label}
+                        </button>
+                      )
+                    })}
+                  </div>
+
+                  {/* ── SCRIPTS TAB ── */}
+                  {historyTab === 'scripts' && (
+                    <>
+                      {scripts.length === 0 ? (
+                        <div
+                          className="rounded-xl py-12 px-6 text-center"
+                          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        >
+                          <svg className="w-10 h-10 mx-auto mb-3" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                          </svg>
+                          <p className="text-[14px] font-medium mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>No scripts yet</p>
+                          <button
+                            onClick={() => { setActivePage('new-script'); setStep('upload') }}
+                            className="px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
+                            style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                          >
+                            Submit your first script
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="space-y-4">
+                          {scripts.map(script => renderScriptCard(script))}
+
+                          {/* Save your work CTA (hidden when logged in) */}
+                          {scripts.some(s => s.status === 'completed') && !showAccountForm && !authedUser && (
+                            <div
+                              className="rounded-xl p-4 flex items-center justify-between gap-4"
+                              style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.1))', border: '1px solid rgba(167,139,250,0.3)' }}
+                            >
+                              <div>
+                                <p className="text-[14px] font-semibold m-0" style={{ color: '#ffffff' }}>
+                                  Create your account to save your work
+                                </p>
+                                <p className="text-[12px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                                  Your scripts and scores will be lost if you leave
+                                </p>
+                              </div>
+                              <button
+                                onClick={() => setShowAccountForm(true)}
+                                className="flex-shrink-0 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-all"
+                                style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                              >
+                                Create account
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* ── APPLICATIONS TAB ── */}
+                  {historyTab === 'applications' && (
+                    <>
+                      {!authedUser ? (
+                        <div
+                          className="rounded-xl py-12 px-6 text-center"
+                          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        >
+                          <svg className="w-10 h-10 mx-auto mb-3" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                          </svg>
+                          <p className="text-[14px] font-medium mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>Submit a script to apply for opportunities</p>
+                          <p className="text-[12px] mb-4" style={{ color: 'rgba(255,255,255,0.3)' }}>Your applications will appear here</p>
+                          <button
+                            onClick={() => { setActivePage('new-script'); setStep('upload') }}
+                            className="px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
+                            style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                          >
+                            Submit a script
+                          </button>
+                        </div>
+                      ) : appsLoading ? (
+                        <div
+                          className="rounded-xl py-12 px-6 text-center"
+                          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        >
+                          <svg className="w-10 h-10 mx-auto mb-3 animate-spin" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                          </svg>
+                          <p className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Loading applications...</p>
+                        </div>
+                      ) : myApplications.length === 0 ? (
+                        <div
+                          className="rounded-xl py-12 px-6 text-center"
+                          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        >
+                          <svg className="w-10 h-10 mx-auto mb-3" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                          </svg>
+                          <p className="text-[14px] font-medium mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>No applications yet</p>
+                          <button
+                            onClick={() => {
+                              setActivePage('opportunities')
+                              setExpandedOppId(null)
+                              fetch('/api/opportunities-preview?all=true')
+                                .then(r => r.ok ? r.json() : { opportunities: [] })
+                                .then(data => setAllOppsExpanded(data.opportunities || []))
+                                .catch(() => {})
+                            }}
+                            className="px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
+                            style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                          >
+                            Browse opportunities
+                          </button>
+                        </div>
+                      ) : (() => {
+                        const pending = myApplications.filter(a => a.submissions.some(s => s.status === 'pending'))
+                        const reviewed = myApplications.filter(a => a.submissions.every(s => s.status !== 'pending'))
+                        const outcomeLabel: Record<string, string> = {
+                          advancing: 'Advancing',
+                          developing: 'Developing',
+                          revise_resubmit: 'Revise & resubmit',
+                          pass: 'Pass',
+                        }
+                        const outcomeBg: Record<string, string> = {
+                          advancing: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+                          developing: 'bg-blue-50 text-blue-700 border border-blue-200',
+                          revise_resubmit: 'bg-amber-50 text-amber-700 border border-amber-200',
+                          pass: 'bg-gray-100 text-gray-500',
+                        }
+
+                        function renderAppGroup(group: typeof myApplications[0]) {
+                          return (
+                            <div key={group.opportunity_id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
+                              <div className="p-5">
+                                <h4
+                                  className="text-[15px] font-bold text-gray-900 m-0 mb-1"
+                                  style={{ fontFamily: 'Georgia, serif' }}
+                                >
+                                  {group.opportunity_title}
+                                </h4>
+                                {group.opportunity_subtitle && (
+                                  <p className="text-[12px] text-gray-400 m-0 mb-3">{group.opportunity_subtitle}</p>
+                                )}
+                                <div className="space-y-2">
+                                  {group.submissions.map(sub => {
+                                    const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / 86400000)
+                                    const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? 'Yesterday' : `${daysAgo}d ago`
+                                    return (
+                                      <div key={sub.id}>
+                                        <div className="flex items-center justify-between py-2.5 px-3 rounded-lg" style={{ background: '#f9fafb' }}>
+                                          <div className="flex items-center gap-3 flex-1 min-w-0">
+                                            {sub.score != null && (
+                                              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-[12px] font-bold bg-gradient-to-br flex-shrink-0 ${scoreGradient(sub.score)}`}>
+                                                {sub.score}
+                                              </div>
+                                            )}
+                                            <div className="min-w-0">
+                                              <p className="text-[13px] font-medium text-gray-900 m-0 truncate">{sub.script_title}</p>
+                                              <p className="text-[11px] text-gray-400 m-0">Submitted {timeLabel}</p>
+                                            </div>
+                                          </div>
+                                          <div className="flex-shrink-0 ml-3">
+                                            {sub.status === 'pending' ? (
+                                              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-200">Pending</span>
+                                            ) : sub.outcome ? (
+                                              <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${outcomeBg[sub.outcome] || 'bg-gray-100 text-gray-500'}`}>
+                                                {outcomeLabel[sub.outcome] || sub.outcome}
+                                              </span>
+                                            ) : (
+                                              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-500">Reviewed</span>
+                                            )}
+                                          </div>
+                                        </div>
+                                        {sub.feedback && (
+                                          <div className="ml-3 mt-1.5 mb-1 px-3 py-2 rounded-lg" style={{ background: '#f3f4f6' }}>
+                                            <p className="text-[12px] text-gray-600 m-0 leading-relaxed">{sub.feedback}</p>
+                                          </div>
+                                        )}
+                                      </div>
+                                    )
+                                  })}
+                                </div>
+                              </div>
+                            </div>
+                          )
+                        }
+
+                        return (
+                          <div className="space-y-6">
+                            {pending.length > 0 && (
+                              <div>
+                                <p className="text-[12px] font-semibold uppercase tracking-wider mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Pending review</p>
+                                <div className="space-y-4">{pending.map(renderAppGroup)}</div>
+                              </div>
+                            )}
+                            {reviewed.length > 0 && (
+                              <div>
+                                <p className="text-[12px] font-semibold uppercase tracking-wider mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Completed</p>
+                                <div className="space-y-4">{reviewed.map(renderAppGroup)}</div>
+                              </div>
+                            )}
+                          </div>
+                        )
+                      })()}
+                    </>
                   )}
                 </div>
               )}
@@ -1447,7 +1706,7 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       </div>
                     )
                   })() : (
-                    /* Tabbed view: Open Opportunities / My Applications */
+                    /* Simple opportunities listing */
                     <div>
                       <h1
                         className="text-[22px] font-bold mb-1"
@@ -1455,44 +1714,11 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                       >
                         Opportunities
                       </h1>
-                      <p className="text-[14px] mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                      <p className="text-[14px] mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
                         Real opportunities from our insider network
                       </p>
 
-                      {/* Tab bar */}
-                      <div className="flex items-center gap-1 mb-5 p-1 rounded-lg" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                        {([
-                          { id: 'open' as const, label: 'Open opportunities' },
-                          { id: 'applications' as const, label: 'My applications' },
-                        ]).map(tab => {
-                          const active = oppTab === tab.id
-                          const disabled = tab.id === 'applications' && !authedUser
-                          return (
-                            <button
-                              key={tab.id}
-                              onClick={() => {
-                                if (disabled) { setShowAccountForm(true); return }
-                                setOppTab(tab.id)
-                              }}
-                              className={`flex-1 text-[13px] font-semibold py-2 rounded-md transition-all ${
-                                active
-                                  ? 'text-white'
-                                  : disabled
-                                    ? 'text-gray-500 cursor-default'
-                                    : 'text-gray-400 hover:text-gray-200'
-                              }`}
-                              style={active ? { background: 'rgba(255,255,255,0.12)' } : {}}
-                            >
-                              {tab.label}
-                            </button>
-                          )
-                        })}
-                      </div>
-
-                      {/* ── OPEN OPPORTUNITIES TAB ── */}
-                      {oppTab === 'open' && (
-                        <>
-                          {allOppsExpanded.length === 0 ? (
+                      {allOppsExpanded.length === 0 ? (
                             <div
                               className="rounded-xl py-12 px-6 text-center"
                               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
@@ -1546,151 +1772,6 @@ export function OnboardingClient({ onEnterApp, onExitApp, initialName, initialIn
                               })}
                             </div>
                           )}
-                        </>
-                      )}
-
-                      {/* ── MY APPLICATIONS TAB ── */}
-                      {oppTab === 'applications' && (
-                        <>
-                          {appsLoading ? (
-                            <div
-                              className="rounded-xl py-12 px-6 text-center"
-                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
-                            >
-                              <svg className="w-10 h-10 mx-auto mb-3 animate-spin" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                              </svg>
-                              <p className="text-[14px] font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>Loading applications...</p>
-                            </div>
-                          ) : myApplications.length === 0 ? (
-                            <div
-                              className="rounded-xl py-12 px-6 text-center"
-                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
-                            >
-                              <svg className="w-10 h-10 mx-auto mb-3" style={{ color: 'rgba(255,255,255,0.2)' }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                              </svg>
-                              <p className="text-[14px] font-medium mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>No applications yet</p>
-                              <button
-                                onClick={() => setOppTab('open')}
-                                className="px-4 py-2 rounded-lg text-[13px] font-semibold text-white"
-                                style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                              >
-                                Browse opportunities
-                              </button>
-                            </div>
-                          ) : (() => {
-                            // Split into pending and reviewed, sorted by submitted_at (newest first)
-                            const pending = myApplications.filter(a => a.submissions.some(s => s.status === 'pending'))
-                            const reviewed = myApplications.filter(a => a.submissions.every(s => s.status !== 'pending'))
-                            const outcomeLabel: Record<string, string> = {
-                              advancing: 'Advancing',
-                              developing: 'Developing',
-                              revise_resubmit: 'Revise & resubmit',
-                              pass: 'Pass',
-                            }
-                            const outcomeBg: Record<string, string> = {
-                              advancing: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
-                              developing: 'bg-blue-50 text-blue-700 border border-blue-200',
-                              revise_resubmit: 'bg-amber-50 text-amber-700 border border-amber-200',
-                              pass: 'bg-gray-100 text-gray-500',
-                            }
-
-                            function renderAppGroup(group: typeof myApplications[0]) {
-                              return (
-                                <div key={group.opportunity_id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-                                  <div className="p-5">
-                                    <h4
-                                      className="text-[15px] font-bold text-gray-900 m-0 mb-1"
-                                      style={{ fontFamily: 'Georgia, serif' }}
-                                    >
-                                      {group.opportunity_title}
-                                    </h4>
-                                    {group.opportunity_subtitle && (
-                                      <p className="text-[12px] text-gray-400 m-0 mb-3">{group.opportunity_subtitle}</p>
-                                    )}
-
-                                    <div className="space-y-2">
-                                      {group.submissions.map(sub => {
-                                        const daysAgo = Math.floor((Date.now() - new Date(sub.submitted_at).getTime()) / 86400000)
-                                        const timeLabel = daysAgo === 0 ? 'Today' : daysAgo === 1 ? 'Yesterday' : `${daysAgo}d ago`
-                                        return (
-                                          <div key={sub.id}>
-                                            <div
-                                              className="flex items-center justify-between py-2.5 px-3 rounded-lg"
-                                              style={{ background: '#f9fafb' }}
-                                            >
-                                              <div className="flex items-center gap-3 flex-1 min-w-0">
-                                                {sub.score != null && (
-                                                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-[12px] font-bold bg-gradient-to-br flex-shrink-0 ${scoreGradient(sub.score)}`}>
-                                                    {sub.score}
-                                                  </div>
-                                                )}
-                                                <div className="min-w-0">
-                                                  <p className="text-[13px] font-medium text-gray-900 m-0 truncate">{sub.script_title}</p>
-                                                  <p className="text-[11px] text-gray-400 m-0">Submitted {timeLabel}</p>
-                                                </div>
-                                              </div>
-                                              <div className="flex-shrink-0 ml-3">
-                                                {sub.status === 'pending' ? (
-                                                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-200">
-                                                    Pending
-                                                  </span>
-                                                ) : sub.outcome ? (
-                                                  <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${outcomeBg[sub.outcome] || 'bg-gray-100 text-gray-500'}`}>
-                                                    {outcomeLabel[sub.outcome] || sub.outcome}
-                                                  </span>
-                                                ) : (
-                                                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-gray-100 text-gray-500">
-                                                    Reviewed
-                                                  </span>
-                                                )}
-                                              </div>
-                                            </div>
-                                            {/* Feedback */}
-                                            {sub.feedback && (
-                                              <div className="ml-3 mt-1.5 mb-1 px-3 py-2 rounded-lg" style={{ background: '#f3f4f6' }}>
-                                                <p className="text-[12px] text-gray-600 m-0 leading-relaxed">{sub.feedback}</p>
-                                              </div>
-                                            )}
-                                          </div>
-                                        )
-                                      })}
-                                    </div>
-                                  </div>
-                                </div>
-                              )
-                            }
-
-                            return (
-                              <div className="space-y-6">
-                                {pending.length > 0 && (
-                                  <div>
-                                    <p className="text-[12px] font-semibold uppercase tracking-wider mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                                      Pending review
-                                    </p>
-                                    <div className="space-y-4">
-                                      {pending.map(renderAppGroup)}
-                                    </div>
-                                  </div>
-                                )}
-                                {reviewed.length > 0 && (
-                                  <div>
-                                    <p className="text-[12px] font-semibold uppercase tracking-wider mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                                      Completed
-                                    </p>
-                                    <div className="space-y-4">
-                                      {reviewed.map(renderAppGroup)}
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-                            )
-                          })()}
-                        </>
-                      )}
                     </div>
                   )}
                 </div>
