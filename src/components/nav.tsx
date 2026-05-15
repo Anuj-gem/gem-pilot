@@ -217,7 +217,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     )
                   })}
                   <button
-                    onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
+                    onClick={() => window.location.href = '/onboarding'}
                     className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110 cursor-pointer border-0"
                     style={{
                       background: 'var(--gem-accent)',
@@ -238,7 +238,7 @@ export default function Nav({ userData }: NavProps = {}) {
               {/* Mobile logged-out — Sign up pill + hamburger */}
               <div className="md:hidden flex items-center gap-2">
                 <button
-                  onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
+                  onClick={() => window.location.href = '/onboarding'}
                   className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white cursor-pointer border-0"
                   style={{
                     background: 'var(--gem-accent)',

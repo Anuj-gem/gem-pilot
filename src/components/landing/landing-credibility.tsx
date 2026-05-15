@@ -9,7 +9,7 @@ export function LandingCredibility() {
     try {
       trackEvent('cta_clicked', { location: 'free_eval', label: 'Get your free evaluation' })
     } catch {}
-    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+    window.location.href = '/onboarding'
   }
 
   return (

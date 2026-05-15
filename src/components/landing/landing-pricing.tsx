@@ -10,7 +10,7 @@ export function LandingPricing() {
     try {
       trackEvent('cta_clicked', { location: 'pricing', label })
     } catch {}
-    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+    window.location.href = '/onboarding'
   }
 
   return (

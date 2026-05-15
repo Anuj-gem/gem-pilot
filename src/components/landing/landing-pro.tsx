@@ -9,7 +9,7 @@ export function LandingPro() {
     try {
       trackEvent('cta_clicked', { location: 'membership_section', label: 'Get started' })
     } catch {}
-    window.dispatchEvent(new Event('gem:open-script-upload-modal'))
+    window.location.href = '/onboarding'
   }
 
   return (
