@@ -58,12 +58,16 @@ const tag: CSSProperties = {
   borderRadius: 6,
 }
 
-export function LandingHero() {
+export function LandingHero({ onStart }: { onStart?: () => void } = {}) {
   function handleCTA() {
     try {
       trackEvent('cta_clicked', { location: 'hero', label: 'Get started' })
     } catch {}
-    window.location.href = '/onboarding'
+    if (onStart) {
+      onStart()
+    } else {
+      window.location.href = '/onboarding'
+    }
   }
 
   return (

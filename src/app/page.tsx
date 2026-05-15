@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation'
 import { createServerClient } from '@supabase/ssr'
 import { LandingTracking } from '@/components/landing-tracking'
 import Nav from '@/components/nav'
-import { LandingHero } from '@/components/landing/landing-hero'
+import { LandingHeroSection } from '@/components/landing/landing-hero-section'
 import { LandingCredibility } from '@/components/landing/landing-credibility'
 import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
 import { LandingCompare } from '@/components/landing/landing-compare'
@@ -54,8 +54,8 @@ export default async function Home({
       <LandingTracking />
       <Nav />
 
-      {/* ── Above fold: dark cinematic hero (handles its own bg) ── */}
-      <LandingHero />
+      {/* ── Above fold: dark cinematic hero / inline onboarding ── */}
+      <LandingHeroSection />
 
       {/* ── Below fold: white card sections on dark canvas ── */}
       <div className="max-w-5xl mx-auto px-3 sm:px-5 py-8 space-y-6" style={{ color: '#18181b' }}>

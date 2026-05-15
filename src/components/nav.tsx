@@ -76,7 +76,7 @@ export default function Nav({ userData }: NavProps = {}) {
           wrapper). The spacer reserves the layout slot so page content
           starts below the nav instead of underneath it. */}
       <div className="h-14" aria-hidden />
-      <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+      <nav className="border-b bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
           <Link href={isLoggedIn ? '/dashboard' : '/'} className="flex items-center gap-2">
             <span
@@ -87,7 +87,7 @@ export default function Nav({ userData }: NavProps = {}) {
                 boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
               }}
             />
-            <span className="text-lg font-bold tracking-tight">GEM</span>
+            <span className="text-lg font-bold tracking-tight" style={{ color: '#ffffff' }}>GEM</span>
           </Link>
 
           {isLoggedIn ? (
@@ -104,9 +104,10 @@ export default function Nav({ userData }: NavProps = {}) {
                         href={link.href}
                         className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
                           active
-                            ? 'text-[var(--gem-white)] font-semibold'
-                            : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                            ? 'font-semibold'
+                            : 'hover:opacity-100'
                         }`}
+                        style={{ color: active ? '#ffffff' : 'rgba(255,255,255,0.55)' }}
                       >
                         <Icon size={16} />
                         {link.label}
@@ -132,7 +133,8 @@ export default function Nav({ userData }: NavProps = {}) {
                   ) : (
                     <button
                       onClick={handleSignOut}
-                      className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                      className="ml-2 p-1.5 rounded-lg transition-colors"
+                      style={{ color: 'rgba(255,255,255,0.55)' }}
                       title="Sign out"
                     >
                       <LogOut size={16} />
@@ -152,7 +154,7 @@ export default function Nav({ userData }: NavProps = {}) {
                   />
                 )}
                 <button
-                  className="p-1.5 text-[var(--gem-gray-300)]"
+                  className="p-1.5" style={{ color: 'rgba(255,255,255,0.6)' }}
                   onClick={() => setMobileOpen(!mobileOpen)}
                   aria-label="Toggle menu"
                 >
@@ -176,9 +178,10 @@ export default function Nav({ userData }: NavProps = {}) {
                         href={link.href}
                         className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
                           active
-                            ? 'text-[var(--gem-white)] font-semibold'
-                            : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                            ? 'font-semibold'
+                            : 'hover:opacity-100'
                         }`}
+                        style={{ color: active ? '#ffffff' : 'rgba(255,255,255,0.55)' }}
                       >
                         <Icon size={16} />
                         {link.label}
@@ -193,7 +196,14 @@ export default function Nav({ userData }: NavProps = {}) {
                     )
                   })}
                   <button
-                    onClick={() => window.location.href = '/onboarding'}
+                    onClick={() => {
+                      if (pathname === '/') {
+                        window.dispatchEvent(new Event('gem:start-onboarding'))
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      } else {
+                        window.location.href = '/onboarding'
+                      }
+                    }}
                     className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110 cursor-pointer border-0"
                     style={{
                       background: 'var(--gem-accent)',
@@ -204,7 +214,8 @@ export default function Nav({ userData }: NavProps = {}) {
                   </button>
                   <Link
                     href="/login"
-                    className="ml-1 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
+                    className="ml-1 text-sm transition-colors hover:opacity-100"
+                    style={{ color: 'rgba(255,255,255,0.55)' }}
                   >
                     Log in
                   </Link>
@@ -214,7 +225,14 @@ export default function Nav({ userData }: NavProps = {}) {
               {/* Mobile logged-out — Sign up pill + hamburger */}
               <div className="md:hidden flex items-center gap-2">
                 <button
-                  onClick={() => window.location.href = '/onboarding'}
+                  onClick={() => {
+                      if (pathname === '/') {
+                        window.dispatchEvent(new Event('gem:start-onboarding'))
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      } else {
+                        window.location.href = '/onboarding'
+                      }
+                    }}
                   className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white cursor-pointer border-0"
                   style={{
                     background: 'var(--gem-accent)',
@@ -224,7 +242,7 @@ export default function Nav({ userData }: NavProps = {}) {
                   Get started
                 </button>
                 <button
-                  className="p-1.5 text-[var(--gem-gray-300)]"
+                  className="p-1.5" style={{ color: 'rgba(255,255,255,0.6)' }}
                   onClick={() => setMobileOpen(!mobileOpen)}
                   aria-label="Toggle menu"
                 >
