@@ -45,9 +45,9 @@ export default async function CommunityPage({ searchParams }: PageProps) {
   if (!user) redirect('/login?redirect=/community')
 
   const sp = await searchParams
-  const initialSort = (['recent', 'top_gem', 'most_reviewed'].includes(sp.sort || '')
+  const initialSort = (['recent', 'top_gem', 'top_heat'].includes(sp.sort || '')
     ? sp.sort
-    : 'recent') as 'recent' | 'top_gem' | 'most_reviewed'
+    : 'top_gem') as 'recent' | 'top_gem' | 'top_heat'
   const initialFormat = (['all', 'feature', 'series'].includes(sp.format || '')
     ? sp.format
     : 'all') as 'all' | 'feature' | 'series'
