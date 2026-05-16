@@ -71,6 +71,9 @@ interface Props {
   /** This is the user's first free evaluation — show "Free evaluation" badge
    *  and messaging that they get full access on this one. */
   isFreePost?: boolean
+  /** Whether the viewer is a GEM insider (Pro member). When false on
+   *  leaderboard cards, author names are blurred and report links locked. */
+  isInsider?: boolean
 }
 
 function initialsOf(s: ScriptCardData) {
@@ -233,7 +236,7 @@ function WriterMiniCard({
   )
 }
 
-export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = false, isProcessing = false, isFreePost = false }: Props) {
+export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = false, isProcessing = false, isFreePost = false, isInsider = true }: Props) {
   const href = s.evaluation_id ? `/report/${s.evaluation_id}` : null
   // Processing scripts have no eval yet — don't bail, render a processing card
   if (!href && !isProcessing) return null
@@ -354,8 +357,9 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
         }}
       >
         {/* Overlay link — full card click target → report. Lives below
-            interactive children (z-10) so they get clicks first. */}
-        {href && (
+            interactive children (z-10) so they get clicks first.
+            Non-insiders can't click through — report is gated. */}
+        {href && isInsider && (
           <Link
             href={href}
             prefetch={false}
@@ -414,11 +418,21 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
           {/* WRITER + SCORE — verdict-at-the-bottom pattern (Letterboxd). */}
           <div className="mt-3 flex items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
-              <WriterMiniCard
-                handle={s.writer_handle}
-                name={s.writer_name}
-                avatar={s.writer_avatar_url}
-              />
+              {isInsider ? (
+                <WriterMiniCard
+                  handle={s.writer_handle}
+                  name={s.writer_name}
+                  avatar={s.writer_avatar_url}
+                />
+              ) : (
+                /* Non-insider: blur the author name */
+                <div className="flex items-center gap-2 min-w-0">
+                  <div className="w-6 h-6 rounded-full bg-gray-200 shrink-0" />
+                  <div className="text-[12px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif', filter: 'blur(5px)', userSelect: 'none' }}>
+                    {s.writer_name || 'Writer Name'}
+                  </div>
+                </div>
+              )}
             </div>
             {score != null && (
               <div className="shrink-0">
@@ -448,7 +462,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                 />
               </div>
             )}
-            {href && (
+            {href && isInsider && (
               <Link
                 href={href}
                 prefetch={false}
@@ -456,6 +470,15 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
               >
                 View report →
               </Link>
+            )}
+            {href && !isInsider && (
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+                className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors border-none cursor-pointer"
+              >
+                <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" /></svg>
+                Insiders only
+              </button>
             )}
           </div>
         </div>

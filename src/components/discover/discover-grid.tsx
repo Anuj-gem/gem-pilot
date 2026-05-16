@@ -68,9 +68,12 @@ interface Props {
   initialFilters: FilterValue
   /** Base path for URL sync — defaults to '/community'. */
   basePath?: string
+  /** Whether the viewer is a GEM insider (Pro member). When false,
+   *  author names are blurred and report links are locked. */
+  isInsider?: boolean
 }
 
-export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/leaderboard' }: Props) {
+export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/leaderboard', isInsider = false }: Props) {
   const router = useRouter()
   const sp = useSearchParams()
   const [sort, setSort] = useState<SortId>(initialSort)
@@ -151,7 +154,7 @@ export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {visible.map((c) => (
-            <ScriptCard key={c.data.submission_id} s={c.data} density="poster" />
+            <ScriptCard key={c.data.submission_id} s={c.data} density="poster" isInsider={isInsider} />
           ))}
         </div>
       )}
