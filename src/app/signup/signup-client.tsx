@@ -50,7 +50,7 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
     // OAuth users default to 'writer' (account_type defaults in the DB).
     // Producer accounts are invite-only — they never come through this
     // public signup path.
-    const next = redirect || '/submit'
+    const next = redirect || '/onboarding/profile'
     const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -68,7 +68,7 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
     setError('')
     trackSignupStart()
 
-    const next = redirect || '/submit'
+    const next = redirect || '/onboarding/profile'
     const { data, error: signupError } = await supabase.auth.signUp({
       email,
       password,
@@ -117,9 +117,9 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
       keepalive: true,
     }).catch(() => {})
 
-    // Writers continue to the submit flow (or wherever they were headed).
+    // Writers continue to profile setup (or wherever they were headed).
     // Producers don't reach this path — invite-only.
-    const destination = redirect || '/submit'
+    const destination = redirect || '/onboarding/profile'
     router.push(destination)
     router.refresh()
   }

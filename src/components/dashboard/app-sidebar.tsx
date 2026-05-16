@@ -49,13 +49,13 @@ export function AppSidebar(props: AppSidebarData | { anonymous: true }) {
                 </div>
               </div>
 
-              <button
-                onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
-                className="w-full py-2 rounded-lg text-[13px] font-semibold text-white cursor-pointer border-0 transition-all hover:brightness-110"
+              <Link
+                href="/signup"
+                className="block w-full py-2 rounded-lg text-[13px] font-semibold text-white text-center no-underline transition-all hover:brightness-110"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
               >
                 Get started free
-              </button>
+              </Link>
             </>
           ) : (
             <>
