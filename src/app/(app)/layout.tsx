@@ -48,7 +48,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     return (
       <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
         <Nav />
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-16">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-32">
           <div className="flex gap-8">
             <AppSidebar {...{ anonymous: true as const }} />
             <main className="flex-1 min-w-0">
@@ -221,7 +221,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
       <Nav userData={navUserData} />
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-16">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-32">
         <div className="flex gap-8">
           <AppSidebar {...sidebarData} />
           <main className="flex-1 min-w-0">
