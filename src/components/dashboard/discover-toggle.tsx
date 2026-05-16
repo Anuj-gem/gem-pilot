@@ -53,7 +53,8 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
         color: on ? '#059669' : '#9ca3af',
       }}
     >
-      <span className="text-[11px]">Share on Leaderboard</span>
+      <span className="text-[11px] hidden lg:inline">Share on Leaderboard</span>
+      <span className="text-[11px] lg:hidden">Share</span>
       {/* Toggle switch */}
       <span
         className="relative inline-flex items-center rounded-full transition-colors"

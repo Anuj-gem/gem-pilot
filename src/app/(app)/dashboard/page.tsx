@@ -380,93 +380,102 @@ export default async function DashboardPage() {
         <FormatSelectorHero evalsRemaining={isPro ? 99 : evalsRemaining} />
 
         {/* ── THREE VALUE CARDS ── */}
-        <section className="grid grid-cols-3 gap-3">
+        <section className="grid grid-cols-3 gap-2 lg:gap-3">
 
           {/* Scripts Evaluated */}
-          <Link href="/scripts" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[16px]">📄</span>
-              <span className="text-[13px] font-semibold text-gray-500">Scripts Evaluated</span>
+          <Link href="/scripts" className="block rounded-xl bg-white px-3 py-3 lg:px-4 lg:py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="flex items-center gap-1.5 lg:gap-2 mb-1">
+              <span className="text-[14px] lg:text-[16px]">📄</span>
+              <span className="text-[11px] lg:text-[13px] font-semibold text-gray-500">Scripts</span>
             </div>
-            <div className="text-[28px] font-bold text-gray-900 leading-none mb-1.5">
+            <div className="text-[24px] lg:text-[28px] font-bold text-gray-900 leading-none mb-1 lg:mb-1.5">
               {scriptCount}
             </div>
+            {/* Detail rows — desktop only */}
             {completedScripts.length > 0 ? (
-              <div className="space-y-0.5">
-                {completedScripts.slice(0, 2).map(s => {
-                  const r = s.score ? Math.round(s.score) : null
-                  return (
-                    <div key={s.id} className="flex items-center justify-between gap-2">
-                      <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
-                      {r && (
-                        <span className="text-[12px] font-bold text-white px-1.5 py-0.5 rounded shrink-0"
-                          style={{ background: scoreBadge(r).bg }}>{r}</span>
-                      )}
-                    </div>
-                  )
-                })}
-                <span className="text-[12px] font-medium text-purple-600">View all →</span>
-              </div>
+              <>
+                <div className="hidden lg:block space-y-0.5">
+                  {completedScripts.slice(0, 2).map(s => {
+                    const r = s.score ? Math.round(s.score) : null
+                    return (
+                      <div key={s.id} className="flex items-center justify-between gap-2">
+                        <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
+                        {r && (
+                          <span className="text-[12px] font-bold text-white px-1.5 py-0.5 rounded shrink-0"
+                            style={{ background: scoreBadge(r).bg }}>{r}</span>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+                <span className="text-[11px] lg:text-[12px] font-medium text-purple-600">View all →</span>
+              </>
             ) : (
-              <p className="text-[13px] text-gray-500 m-0">Upload a script to get started</p>
+              <p className="text-[11px] lg:text-[13px] text-gray-500 m-0">Upload to get started</p>
             )}
           </Link>
 
           {/* Your Opportunities */}
-          <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[16px]">💰</span>
-              <span className="text-[13px] font-semibold text-gray-500">Your Opportunities</span>
+          <Link href="/review" className="block rounded-xl bg-white px-3 py-3 lg:px-4 lg:py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="flex items-center gap-1.5 lg:gap-2 mb-1">
+              <span className="text-[14px] lg:text-[16px]">💰</span>
+              <span className="text-[11px] lg:text-[13px] font-semibold text-gray-500">Opportunities</span>
             </div>
-            <div className="text-[28px] font-bold text-gray-900 leading-none mb-1.5">
+            <div className="text-[24px] lg:text-[28px] font-bold text-gray-900 leading-none mb-1 lg:mb-1.5">
               {user ? pendingCount : 0}
-              <span className="text-[13px] font-medium text-gray-400 ml-1.5">pending</span>
+              <span className="text-[11px] lg:text-[13px] font-medium text-gray-400 ml-1">pending</span>
             </div>
+            {/* Detail rows — desktop only */}
             {user && pendingApps.length > 0 ? (
-              <div className="space-y-0.5">
-                {pendingApps.slice(0, 2).map(app => {
-                  const opp = oppMap.get(app.opportunity_id)
-                  return (
-                    <div key={app.id} className="flex items-center justify-between gap-2">
-                      <span className="text-[13px] text-gray-700 truncate">{opp?.title || 'Opportunity'}</span>
-                      <span className="text-[11px] font-bold px-1.5 py-0.5 rounded shrink-0"
-                        style={{ background: '#fef3c7', color: '#92400e' }}>Pending</span>
-                    </div>
-                  )
-                })}
-                <span className="text-[12px] font-medium text-purple-600">View all →</span>
-              </div>
+              <>
+                <div className="hidden lg:block space-y-0.5">
+                  {pendingApps.slice(0, 2).map(app => {
+                    const opp = oppMap.get(app.opportunity_id)
+                    return (
+                      <div key={app.id} className="flex items-center justify-between gap-2">
+                        <span className="text-[13px] text-gray-700 truncate">{opp?.title || 'Opportunity'}</span>
+                        <span className="text-[11px] font-bold px-1.5 py-0.5 rounded shrink-0"
+                          style={{ background: '#fef3c7', color: '#92400e' }}>Pending</span>
+                      </div>
+                    )
+                  })}
+                </div>
+                <span className="text-[11px] lg:text-[12px] font-medium text-purple-600">View all →</span>
+              </>
             ) : (
-              <p className="text-[13px] text-gray-500 m-0">Apply to opportunities below</p>
+              <p className="text-[11px] lg:text-[13px] text-gray-500 m-0">Apply below</p>
             )}
           </Link>
 
           {/* Industry Heat */}
-          <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[16px]">🔥</span>
-              <span className="text-[13px] font-semibold text-gray-500">Industry Heat</span>
+          <Link href="/review" className="block rounded-xl bg-white px-3 py-3 lg:px-4 lg:py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="flex items-center gap-1.5 lg:gap-2 mb-1">
+              <span className="text-[14px] lg:text-[16px]">🔥</span>
+              <span className="text-[11px] lg:text-[13px] font-semibold text-gray-500">Heat</span>
             </div>
-            <div className="text-[28px] font-bold text-gray-900 leading-none mb-1.5">
+            <div className="text-[24px] lg:text-[28px] font-bold text-gray-900 leading-none mb-1 lg:mb-1.5">
               {user ? totalHeat : 0}
             </div>
+            {/* Detail rows — desktop only */}
             {user && reviewedApps.length > 0 ? (
-              <div className="space-y-0.5">
-                {reviewedApps.slice(0, 2).map(app => {
-                  const opp = oppMap.get(app.opportunity_id)
-                  return (
-                    <div key={app.id} className="flex items-center justify-between gap-2">
-                      <span className="text-[13px] text-gray-700 truncate">{opp?.title || 'Review'}</span>
-                      {app.heat_earned > 0 && (
-                        <span className="text-[12px] font-bold shrink-0" style={{ color: '#ea580c' }}>+{app.heat_earned}</span>
-                      )}
-                    </div>
-                  )
-                })}
-                <span className="text-[12px] font-medium text-purple-600">View all →</span>
-              </div>
+              <>
+                <div className="hidden lg:block space-y-0.5">
+                  {reviewedApps.slice(0, 2).map(app => {
+                    const opp = oppMap.get(app.opportunity_id)
+                    return (
+                      <div key={app.id} className="flex items-center justify-between gap-2">
+                        <span className="text-[13px] text-gray-700 truncate">{opp?.title || 'Review'}</span>
+                        {app.heat_earned > 0 && (
+                          <span className="text-[12px] font-bold shrink-0" style={{ color: '#ea580c' }}>+{app.heat_earned}</span>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+                <span className="text-[11px] lg:text-[12px] font-medium text-purple-600">View all →</span>
+              </>
             ) : (
-              <p className="text-[13px] text-gray-500 m-0">Earn heat from reviews</p>
+              <p className="text-[11px] lg:text-[13px] text-gray-500 m-0">Earn heat from reviews</p>
             )}
           </Link>
 
@@ -547,18 +556,18 @@ export default async function DashboardPage() {
               <p className="text-[13px] text-gray-500 m-0">Upload a screenplay above to get started.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
               {/* Processing scripts */}
               {processingScripts.slice(0, 2).map(script => (
-                <div key={script.id} className="rounded-xl bg-white p-4 flex flex-col" style={{ boxShadow: cardShadow }}>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</span>
+                <div key={script.id} className="rounded-xl bg-white p-3 lg:p-4 flex flex-col" style={{ boxShadow: cardShadow }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[14px] lg:text-[15px] font-semibold text-gray-900 truncate">{script.title}</span>
                     <svg className="animate-spin shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
                       <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <p className="text-[13px] text-gray-500 m-0">Evaluating your script...</p>
+                  <p className="text-[12px] lg:text-[13px] text-gray-500 m-0 mt-1">Evaluating your script...</p>
                 </div>
               ))}
 
@@ -575,90 +584,117 @@ export default async function DashboardPage() {
                     {/* Full-card link (behind everything) */}
                     <Link href={reportHref} className="absolute inset-0 z-0" aria-label={`View report for ${script.title}`} />
 
-                    <div className="relative z-10 p-4 flex flex-col flex-1 pointer-events-none">
+                    <div className="relative z-10 p-3 lg:p-4 flex flex-col flex-1 pointer-events-none">
 
                       {/* Delete menu — top right */}
-                      <div className="absolute top-2 right-2 pointer-events-auto z-20">
+                      <div className="absolute top-1.5 right-1.5 lg:top-2 lg:right-2 pointer-events-auto z-20">
                         <DeleteScriptButton scriptId={script.id} title={script.title} />
                       </div>
 
-                      {/* GEM Score + Heat badges — always visible */}
-                      <div className="flex items-center gap-2 mb-2">
-                        {/* GEM Score */}
-                        <div className="relative group/score">
-                          {badge && rounded ? (
-                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
-                              <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
-                              <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
-                            </div>
-                          ) : (
-                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}>
-                              <div className="text-[9px] font-semibold text-gray-400 uppercase leading-none tracking-wide">GEM Score</div>
-                              <div className="text-[20px] font-bold text-gray-300 leading-tight">&mdash;</div>
-                            </div>
-                          )}
-                          <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/score:opacity-100 transition-opacity z-30 text-center">
-                            Your script score from evaluation
+                      {/* Mobile: compact row — badges + title inline */}
+                      <div className="flex lg:hidden items-center gap-2">
+                        {/* Score badge — small */}
+                        {badge && rounded ? (
+                          <div className="text-center rounded-md px-2 py-1 shrink-0" style={{ background: badge.bg }}>
+                            <div className="text-[8px] font-semibold text-white/80 uppercase leading-none tracking-wide">Score</div>
+                            <div className="text-[16px] font-bold text-white leading-tight">{rounded}</div>
                           </div>
+                        ) : (
+                          <div className="text-center rounded-md px-2 py-1 shrink-0" style={{ background: '#f3f4f6', border: '1px solid #e5e7eb' }}>
+                            <div className="text-[8px] font-semibold text-gray-400 uppercase leading-none tracking-wide">Score</div>
+                            <div className="text-[16px] font-bold text-gray-300 leading-tight">&mdash;</div>
+                          </div>
+                        )}
+                        {/* Heat badge — small */}
+                        <div className="text-center rounded-md px-2 py-1 shrink-0" style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}>
+                          <div className="text-[8px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
+                          <div className={`text-[16px] font-bold leading-tight ${script.heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>{script.heat}</div>
                         </div>
-                        {/* Industry Heat */}
-                        <div className="relative group/heat">
-                          {script.heat > 0 ? (
-                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
-                              <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
-                              <div className="text-[20px] font-bold text-orange-600 leading-tight">{script.heat}</div>
-                            </div>
-                          ) : (
-                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
-                              <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
-                              <div className="text-[20px] font-bold text-orange-300 leading-tight">0</div>
-                            </div>
-                          )}
-                          <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center">
-                            Apply for opportunities to earn heat as your script gets attention
+                        {/* Title + format */}
+                        <div className="min-w-0 flex-1 mr-6">
+                          <h3 className="text-[14px] font-bold text-gray-900 m-0 leading-snug truncate group-hover:text-purple-700 transition-colors">
+                            {script.title}
+                          </h3>
+                          <div className="text-[12px] font-medium text-gray-400 truncate">
+                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
                           </div>
                         </div>
                       </div>
 
-                      {/* Title — full width, no collision */}
-                      <h3 className="text-[16px] font-bold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">
-                        {script.title}
-                      </h3>
+                      {/* Desktop: original rich layout */}
+                      <div className="hidden lg:block">
+                        {/* GEM Score + Heat badges */}
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="relative group/score">
+                            {badge && rounded ? (
+                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
+                                <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
+                                <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
+                              </div>
+                            ) : (
+                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}>
+                                <div className="text-[9px] font-semibold text-gray-400 uppercase leading-none tracking-wide">GEM Score</div>
+                                <div className="text-[20px] font-bold text-gray-300 leading-tight">&mdash;</div>
+                              </div>
+                            )}
+                            <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/score:opacity-100 transition-opacity z-30 text-center">
+                              Your script score from evaluation
+                            </div>
+                          </div>
+                          <div className="relative group/heat">
+                            {script.heat > 0 ? (
+                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
+                                <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
+                                <div className="text-[20px] font-bold text-orange-600 leading-tight">{script.heat}</div>
+                              </div>
+                            ) : (
+                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
+                                <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
+                                <div className="text-[20px] font-bold text-orange-300 leading-tight">0</div>
+                              </div>
+                            )}
+                            <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center">
+                              Apply for opportunities to earn heat as your script gets attention
+                            </div>
+                          </div>
+                        </div>
 
-                      {/* Logline */}
-                      {script.logline && (
-                        <p className="text-[13px] leading-snug text-gray-700 m-0 mb-2 line-clamp-2">
-                          {script.logline}
-                        </p>
-                      )}
+                        <h3 className="text-[16px] font-bold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">
+                          {script.title}
+                        </h3>
 
-                      {/* Format · Genre */}
-                      <div className="text-[13px] font-medium text-gray-500">
-                        {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
-                      </div>
+                        {script.logline && (
+                          <p className="text-[13px] leading-snug text-gray-700 m-0 mb-2 line-clamp-2">
+                            {script.logline}
+                          </p>
+                        )}
 
-                      {/* Spacer */}
-                      <div className="flex-1" />
+                        <div className="text-[13px] font-medium text-gray-500">
+                          {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
+                        </div>
 
-                      {/* Action buttons — proper buttons, not text links */}
-                      <div className="flex items-center gap-2 pointer-events-auto pt-3 mt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                        {script.qualifyingOpps.length > 0 ? (
-                          <QuickApplyDropdown
+                        <div className="flex-1" />
+
+                        {/* Action buttons — desktop only */}
+                        <div className="flex items-center gap-2 pointer-events-auto pt-3 mt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                          {script.qualifyingOpps.length > 0 ? (
+                            <QuickApplyDropdown
+                              scriptId={script.id}
+                              opportunities={script.qualifyingOpps}
+                              appliedOppIds={appliedOppIdsArr}
+                              isAnon={!user}
+                            />
+                          ) : (
+                            <span className="text-[13px] text-gray-400">No matching opportunities</span>
+                          )}
+                          <div className="flex-1" />
+                          <DiscoverToggle
                             scriptId={script.id}
-                            opportunities={script.qualifyingOpps}
-                            appliedOppIds={appliedOppIdsArr}
+                            isPublic={script.isPublic}
+                            isPro={isPro}
                             isAnon={!user}
                           />
-                        ) : (
-                          <span className="text-[13px] text-gray-400">No matching opportunities</span>
-                        )}
-                        <div className="flex-1" />
-                        <DiscoverToggle
-                          scriptId={script.id}
-                          isPublic={script.isPublic}
-                          isPro={isPro}
-                          isAnon={!user}
-                        />
+                        </div>
                       </div>
                     </div>
                   </div>
