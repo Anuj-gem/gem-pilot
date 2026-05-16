@@ -10,7 +10,7 @@
 // NO stats (already shown in dashboard stat cards).
 // NO page navigation for signup (everything inline).
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-browser'
@@ -383,9 +383,10 @@ function LoggedInProfileCard({
   const [bio, setBio] = useState<string | null>(null)
   const [bioLoaded, setBioLoaded] = useState(false)
 
-  // Load bio on first edit click (not passed from server to avoid layout bloat)
-  async function startEditing() {
-    if (!bioLoaded) {
+  // Load bio eagerly on mount so display mode shows it immediately
+  useEffect(() => {
+    if (bioLoaded) return
+    ;(async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
         const { data } = await supabase.from('profiles').select('bio').eq('id', user.id).single()
@@ -394,7 +395,10 @@ function LoggedInProfileCard({
         setEditBio(b)
       }
       setBioLoaded(true)
-    }
+    })()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  function startEditing() {
     setEditing(true)
   }
 
@@ -528,8 +532,7 @@ function LoggedInProfileCard({
 function NavLinks({ pathname }: { pathname: string }) {
   const links = [
     { label: 'My Scripts', href: '/scripts', match: (p: string) => p.startsWith('/scripts') },
-    { label: 'Applications', href: '/applications', match: (p: string) => p.startsWith('/applications') || p.startsWith('/review') },
-    { label: 'Settings', href: '/settings', match: (p: string) => p.startsWith('/settings') },
+    { label: 'My Opportunities', href: '/review', match: (p: string) => p.startsWith('/review') || p.startsWith('/applications') },
   ]
 
   return (
