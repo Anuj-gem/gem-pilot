@@ -52,6 +52,7 @@ export default async function DashboardPage() {
     formats: string[] | null; genres: string[] | null; min_score: number | null
     subtitle: string | null; description: string | null
     deadline: string | null; budget_tiers: string[] | null
+    created_at: string
   }
   let allOpenOpps: OppRow[] = []
 
@@ -66,7 +67,7 @@ export default async function DashboardPage() {
 
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers')
+    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, created_at')
     .eq('status', 'active')
   allOpenOpps = (openOpps || []) as OppRow[]
 
@@ -215,7 +216,20 @@ export default async function DashboardPage() {
   qualifiedOpps.sort(sortByDeadline)
   unqualifiedOpps.sort(sortByDeadline)
 
-  const dashboardOpps = [...qualifiedOpps, ...unqualifiedOpps].slice(0, 4)
+  // Always show 3 opps: qualified first, then unqualified, then fill with most-recent-posted
+  const combinedOpps = [...qualifiedOpps, ...unqualifiedOpps]
+  // If we don't have 3, fill from all open opps sorted by created_at (most recent first)
+  if (combinedOpps.length < 3) {
+    const shown = new Set(combinedOpps.map(o => o.id))
+    const filler = allOpenOpps
+      .filter(o => !shown.has(o.id))
+      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+    for (const o of filler) {
+      if (combinedOpps.length >= 3) break
+      combinedOpps.push(o)
+    }
+  }
+  const dashboardOpps = combinedOpps.slice(0, 3)
   const qualifiedOppIds = new Set(qualifiedOpps.map(o => o.id))
 
   // Count how many scripts match each opp
@@ -257,7 +271,7 @@ export default async function DashboardPage() {
         <section className="grid grid-cols-3 gap-3">
 
           {/* Scripts Evaluated */}
-          <div className="rounded-xl bg-white px-4 py-3.5" style={{ boxShadow: cardShadow }}>
+          <Link href="/scripts" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
             <div className="flex items-center gap-2 mb-1.5">
               <span className="text-[16px]">📄</span>
               <span className="text-[13px] font-semibold text-gray-500">Scripts Evaluated</span>
@@ -279,11 +293,12 @@ export default async function DashboardPage() {
                     </div>
                   )
                 })}
+                <span className="text-[12px] font-medium text-purple-600">View all →</span>
               </div>
             ) : (
               <p className="text-[13px] text-gray-500 m-0">Upload a script to get started</p>
             )}
-          </div>
+          </Link>
 
           {/* Your Opportunities */}
           <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
@@ -307,6 +322,7 @@ export default async function DashboardPage() {
                     </div>
                   )
                 })}
+                <span className="text-[12px] font-medium text-purple-600">View all →</span>
               </div>
             ) : (
               <p className="text-[13px] text-gray-500 m-0">Apply to opportunities below</p>
@@ -335,6 +351,7 @@ export default async function DashboardPage() {
                     </div>
                   )
                 })}
+                <span className="text-[12px] font-medium text-purple-600">View all →</span>
               </div>
             ) : (
               <p className="text-[13px] text-gray-500 m-0">Earn heat from reviews</p>
@@ -343,11 +360,11 @@ export default async function DashboardPage() {
 
         </section>
 
-        {/* ── YOUR SCRIPTS — 3-column grid ── */}
+        {/* ── YOUR SCRIPTS — 2-column grid ── */}
         <section>
           <header className="flex items-center gap-2 mb-3">
             <h2 className="text-[16px] font-bold text-gray-900 m-0">Your scripts</h2>
-            {completedScripts.length > 3 && (
+            {completedScripts.length > 2 && (
               <Link href="/scripts" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
                 View all →
               </Link>
@@ -360,12 +377,12 @@ export default async function DashboardPage() {
               <p className="text-[13px] text-gray-500 m-0">Upload a screenplay above to get started.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {/* Processing scripts */}
-              {processingScripts.slice(0, 3).map(script => (
+              {processingScripts.slice(0, 2).map(script => (
                 <div key={script.id} className="rounded-xl bg-white p-4 flex flex-col" style={{ boxShadow: cardShadow }}>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[14px] font-semibold text-gray-900 truncate">{script.title}</span>
+                    <span className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</span>
                     <svg className="animate-spin shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
                       <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
@@ -376,7 +393,7 @@ export default async function DashboardPage() {
               ))}
 
               {/* Completed script cards */}
-              {completedScripts.slice(0, 3 - processingScripts.length).map(script => {
+              {completedScripts.slice(0, 2 - processingScripts.length).map(script => {
                 const rounded = script.score ? Math.round(script.score) : null
                 const badge = rounded ? scoreBadge(rounded) : null
                 const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
@@ -389,19 +406,21 @@ export default async function DashboardPage() {
                     <Link href={reportHref} className="absolute inset-0 z-0" aria-label={`View report for ${script.title}`} />
 
                     <div className="relative z-10 p-4 flex flex-col flex-1 pointer-events-none">
-                      {/* Title row */}
-                      <div className="flex items-start justify-between gap-2 mb-2">
-                        <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug truncate group-hover:text-purple-700 transition-colors">
-                          {script.title}
-                        </h3>
-                        {/* Two-line GEM Score badge */}
-                        {badge && rounded && (
-                          <div className="shrink-0 text-center rounded-lg px-2.5 py-1.5" style={{ background: badge.bg }}>
+
+                      {/* GEM Score badge — own row */}
+                      {badge && rounded && (
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
                             <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
-                            <div className="text-[18px] font-bold text-white leading-tight">{rounded}</div>
+                            <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
                           </div>
-                        )}
-                      </div>
+                        </div>
+                      )}
+
+                      {/* Title — full width, no collision */}
+                      <h3 className="text-[16px] font-bold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">
+                        {script.title}
+                      </h3>
 
                       {/* Logline */}
                       {script.logline && (
@@ -411,33 +430,35 @@ export default async function DashboardPage() {
                       )}
 
                       {/* Format · Genre */}
-                      <div className="text-[13px] font-medium text-gray-500 mb-3">
+                      <div className="text-[13px] font-medium text-gray-500">
                         {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
                       </div>
 
                       {/* Spacer */}
                       <div className="flex-1" />
 
-                      {/* Actions row — pointer events enabled */}
-                      <div className="flex items-center gap-2 pointer-events-auto pt-2" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                        <Link href={reportHref}
-                          className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
-                          View report →
-                        </Link>
-                        <div className="flex-1" />
-                        {script.qualifyingOpps.length > 0 && (
+                      {/* Action buttons — proper buttons, not text links */}
+                      <div className="flex items-center gap-2 pointer-events-auto pt-3 mt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                        {script.qualifyingOpps.length > 0 ? (
                           <QuickApplyDropdown
                             scriptId={script.id}
                             opportunities={script.qualifyingOpps}
                             appliedOppIds={appliedOppIdsArr}
                           />
+                        ) : (
+                          <span className="text-[13px] text-gray-400">No matching opportunities</span>
                         )}
+                        <div className="flex-1" />
                         {script.isPublic ? (
-                          <span className="text-[12px] font-semibold text-emerald-600">✓ Published</span>
+                          <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-emerald-600 px-3 py-1.5 rounded-lg"
+                            style={{ background: '#ecfdf5' }}>
+                            ✓ On Discover
+                          </span>
                         ) : (
                           <Link href={reportHref}
-                            className="text-[12px] font-semibold text-gray-400 hover:text-purple-600 transition-colors">
-                            Publish to Industry
+                            className="inline-flex items-center text-[13px] font-semibold text-purple-600 px-3 py-1.5 rounded-lg hover:bg-purple-50 transition-colors"
+                            style={{ background: '#f5f3ff' }}>
+                            Publish to Discover
                           </Link>
                         )}
                       </div>
@@ -464,72 +485,75 @@ export default async function DashboardPage() {
             </div>
           ) : (
             <div className="grid grid-cols-3 gap-3">
-              {dashboardOpps.slice(0, 3).map(opp => {
+              {dashboardOpps.map(opp => {
                 const matchCount = matchingScriptCount(opp)
+                const postedDate = new Date(opp.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
                 return (
-                  <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
-                    <div className="rounded-xl bg-white overflow-hidden h-full hover:shadow-md transition-shadow flex flex-col"
-                      style={{ boxShadow: cardShadow }}>
+                  <div key={opp.id} className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
+                    style={{ boxShadow: cardShadow }}>
 
-                      {/* Card body */}
-                      <div className="p-4 flex-1 flex flex-col">
+                    {/* Full-card link for "View details" */}
+                    <Link href={`/opportunities/${opp.slug}`} className="absolute inset-0 z-0" aria-label={opp.title} />
 
-                        {/* 💰 Paid badge — top right */}
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-[12px] font-bold px-2 py-0.5 rounded"
-                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
-                            💰 Paid
-                          </span>
-                          {opp.deadline && (
-                            <span className="text-[12px] text-gray-500">
-                              Due {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                            </span>
-                          )}
-                        </div>
+                    {/* Card body */}
+                    <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
 
-                        {/* Title */}
-                        <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
-                          {opp.title}
-                        </h3>
-
-                        {/* Format + Genre as labeled lines */}
-                        <div className="space-y-0.5 mb-2">
-                          {opp.formats && opp.formats.length > 0 && (
-                            <div className="text-[13px] text-gray-700">
-                              <span className="text-gray-400">Format:</span> {opp.formats.join(', ')}
-                            </div>
-                          )}
-                          {opp.genres && opp.genres.length > 0 && (
-                            <div className="text-[13px] text-gray-700">
-                              <span className="text-gray-400">Genre:</span> {opp.genres.slice(0, 3).join(', ')}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Subtitle / description */}
-                        {(opp.subtitle || opp.description) && (
-                          <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
-                            {opp.subtitle || opp.description}
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Bottom bar — View details + match count */}
-                      <div className="px-4 py-2.5 flex items-center justify-between"
-                        style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                        <span className="text-[13px] font-semibold text-purple-600 group-hover:text-purple-800 transition-colors">
-                          View details →
+                      {/* Top row: Paid badge + posted date */}
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[12px] font-bold px-2 py-0.5 rounded"
+                          style={{ background: '#eff6ff', color: '#1d4ed8' }}>
+                          💼 Paid
                         </span>
-                        {matchCount > 0 && (
-                          <span className="text-[12px] font-semibold text-purple-600">
-                            {matchCount} {matchCount === 1 ? 'script matches' : 'scripts match'}
-                          </span>
+                        <span className="text-[12px] text-gray-500">Posted {postedDate}</span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
+                        {opp.title}
+                      </h3>
+
+                      {/* Format + Genre as labeled lines */}
+                      <div className="space-y-0.5 mb-2">
+                        {opp.formats && opp.formats.length > 0 && (
+                          <div className="text-[13px]">
+                            <span className="text-gray-400">Format:</span>{' '}
+                            <span className="text-gray-700">{opp.formats.join(', ')}</span>
+                          </div>
+                        )}
+                        {opp.genres && opp.genres.length > 0 && (
+                          <div className="text-[13px]">
+                            <span className="text-gray-400">Genre:</span>{' '}
+                            <span className="text-gray-700">{opp.genres.slice(0, 3).join(', ')}</span>
+                          </div>
                         )}
                       </div>
 
+                      {/* Subtitle / description */}
+                      {(opp.subtitle || opp.description) && (
+                        <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
+                          {opp.subtitle || opp.description}
+                        </p>
+                      )}
                     </div>
-                  </Link>
+
+                    {/* Bottom bar — View details + match count / apply dropdown */}
+                    <div className="relative z-10 px-4 py-2.5 flex items-center justify-between pointer-events-auto"
+                      style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                      <Link href={`/opportunities/${opp.slug}`}
+                        className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                        View details →
+                      </Link>
+                      {matchCount > 0 ? (
+                        <span className="text-[13px] font-semibold text-purple-600">
+                          {matchCount} {matchCount === 1 ? 'script matches' : 'scripts match'}
+                        </span>
+                      ) : (
+                        <span className="text-[13px] text-gray-400">0 scripts match</span>
+                      )}
+                    </div>
+
+                  </div>
                 )
               })}
             </div>
