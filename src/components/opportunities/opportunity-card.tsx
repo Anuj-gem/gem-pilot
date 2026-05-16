@@ -49,8 +49,8 @@ export function OpportunityCard({
   const href = `/opportunities/${slug ?? id}`
   const postedDate = new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   const cfg = STATUS_CONFIG[status]
-  const showScriptCount = status !== 'pending' && matchingScriptCount > 0
-  const showApply = status !== 'pending'
+  const showScriptCount = status === 'available' && matchingScriptCount > 0
+  const showApply = status === 'available'
 
   return (
     <div className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"

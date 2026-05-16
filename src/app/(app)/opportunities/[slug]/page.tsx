@@ -105,8 +105,8 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .limit(1)
       .maybeSingle()
 
-    if (consideration?.review_stage && consideration.review_stage !== 'draft') {
-      reviewStage = consideration.review_stage
+    if (consideration) {
+      reviewStage = consideration.review_stage || 'submitted'
     }
 
     // Get qualifying scripts

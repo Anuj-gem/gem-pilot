@@ -156,8 +156,8 @@ export default async function OpportunitiesPage() {
       .not('opportunity_id', 'is', null)
 
     for (const c of (considerations || []) as any[]) {
-      if (c.opportunity_id && c.review_stage) {
-        oppStage.set(c.opportunity_id, c.review_stage)
+      if (c.opportunity_id) {
+        oppStage.set(c.opportunity_id, c.review_stage || 'submitted')
       }
     }
   }

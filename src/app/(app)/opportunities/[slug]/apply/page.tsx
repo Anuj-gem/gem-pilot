@@ -42,6 +42,7 @@ export default function ApplyPage() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
+  const [alreadyApplied, setAlreadyApplied] = useState(false)
 
   useEffect(() => {
     async function load() {
@@ -70,6 +71,21 @@ export default function ApplyPage() {
 
       if (!opp) { router.push('/opportunities'); return }
       setOpportunity(opp)
+
+      // Check if user already has a consideration for this opportunity
+      const { data: existing } = await supabase
+        .from('considerations')
+        .select('id')
+        .eq('writer_id', user.id)
+        .eq('opportunity_id', opp.id)
+        .limit(1)
+        .maybeSingle()
+
+      if (existing) {
+        setAlreadyApplied(true)
+        setLoading(false)
+        return
+      }
 
       // Load user's completed scripts with evaluations
       const { data: subs } = await supabase
@@ -149,6 +165,28 @@ export default function ApplyPage() {
   }
 
   if (!opportunity) return null
+
+  if (alreadyApplied) {
+    return (
+      <div className="max-w-lg mx-auto space-y-6">
+        <div>
+          <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+            ← Back to opportunities
+          </Link>
+          <h1 className="text-[20px] font-bold text-gray-900 mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+            {opportunity.title}
+          </h1>
+        </div>
+        <div className="rounded-xl border border-purple-200 bg-purple-50/50 px-5 py-6 text-center">
+          <p className="text-[15px] font-semibold text-purple-800 m-0 mb-1">Application Pending</p>
+          <p className="text-[13px] text-gray-600 m-0">You already have a pending application for this opportunity. We'll notify you when there's an update.</p>
+        </div>
+        <Link href="/opportunities" className="inline-flex items-center text-[13px] font-semibold text-purple-600 hover:text-purple-800">
+          ← View all opportunities
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <div className="max-w-lg mx-auto space-y-6">
