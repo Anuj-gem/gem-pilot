@@ -11,6 +11,8 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
 import { QuickApplyDropdown } from '@/components/dashboard/quick-apply-dropdown'
+import { OppScriptDropdown } from '@/components/dashboard/opp-script-dropdown'
+import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -267,6 +269,25 @@ export default async function DashboardPage() {
     }).length
   }
 
+  // Get matching scripts for an opportunity (for OppScriptDropdown)
+  function getMatchingScriptsForOpp(opp: OppRow) {
+    return completedScripts.filter(s => {
+      const ev = myEvalBySub.get(s.id)
+      const score = ev?.weighted_score ?? null
+      if (opp.min_score && (!score || score < opp.min_score)) return false
+      const noFmt = !opp.formats || opp.formats.length === 0
+      const noGenre = !opp.genres || opp.genres.length === 0
+      if (noFmt && noGenre) return true
+      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
+      if (!fmtMatch) return false
+      if (noGenre) return true
+      const sGenres = ev?.genres || []
+      if (sGenres.length === 0) return false
+      const oppNorm = opp.genres!.map(normGenre)
+      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
+    }).map(s => ({ id: s.id, title: s.title, score: s.score ? Math.round(s.score) : null }))
+  }
+
   // ── RENDER ──
 
   const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
@@ -449,20 +470,18 @@ export default async function DashboardPage() {
                       )}
                     </div>
 
-                    {/* Bottom bar — View details + match count / apply dropdown */}
+                    {/* Bottom bar — scripts match dropdown LEFT, View details RIGHT */}
                     <div className="relative z-10 px-4 py-2.5 flex items-center justify-between pointer-events-auto"
                       style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                      <OppScriptDropdown
+                        opportunityId={opp.id}
+                        matchingScripts={getMatchingScriptsForOpp(opp)}
+                        appliedOppIds={appliedOppIdsArr}
+                      />
                       <Link href={`/opportunities/${opp.slug}`}
                         className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
                         View details →
                       </Link>
-                      {matchCount > 0 ? (
-                        <span className="text-[13px] font-semibold text-purple-600">
-                          {matchCount} {matchCount === 1 ? 'script matches' : 'scripts match'}
-                        </span>
-                      ) : (
-                        <span className="text-[13px] text-gray-400">0 scripts match</span>
-                      )}
                     </div>
 
                   </div>
@@ -567,18 +586,11 @@ export default async function DashboardPage() {
                           <span className="text-[13px] text-gray-400">No matching opportunities</span>
                         )}
                         <div className="flex-1" />
-                        {script.isPublic ? (
-                          <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-emerald-600 px-3 py-1.5 rounded-lg"
-                            style={{ background: '#ecfdf5' }}>
-                            ✓ On Discover
-                          </span>
-                        ) : (
-                          <Link href={reportHref}
-                            className="inline-flex items-center text-[13px] font-semibold text-purple-600 px-3 py-1.5 rounded-lg hover:bg-purple-50 transition-colors"
-                            style={{ background: '#f5f3ff' }}>
-                            Publish to Discover
-                          </Link>
-                        )}
+                        <DiscoverToggle
+                          scriptId={script.id}
+                          isPublic={script.isPublic}
+                          isPro={isPro}
+                        />
                       </div>
                     </div>
                   </div>
