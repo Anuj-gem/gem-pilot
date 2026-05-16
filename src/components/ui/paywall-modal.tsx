@@ -1,7 +1,7 @@
 'use client'
 
-// PaywallModal — two-column Guest vs Member comparison.
-// Shows dynamic usage counters. Works on mobile (stacked).
+// PaywallModal — journey-first upgrade prompt.
+// Leads with narrative ("continue your journey"), keeps usage context small.
 // Triggered by gem:open-upgrade-modal event or "Become a member" button.
 
 import { useState } from 'react'
@@ -10,7 +10,7 @@ interface PaywallModalProps {
   onClose: () => void
   evalsUsed?: number
   appsUsed?: number
-  /** Optional context message shown at top, e.g. "You've used all your free evaluations" */
+  /** Optional context message shown at top, e.g. "You've used your 2 free evaluations" */
   contextMessage?: string
 }
 
@@ -39,14 +39,14 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
     }
   }
 
-  const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - evalsUsed)
-  const appsRemaining = Math.max(0, FREE_APP_LIMIT - appsUsed)
+  // Show usage line only if they've actually used something
+  const hasUsage = evalsUsed > 0 || appsUsed > 0
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
-      <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -56,56 +56,42 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
         </button>
 
-        <div className="px-6 pt-6 pb-2">
-          {/* Context message */}
+        <div className="px-6 pt-8 pb-2 text-center">
+          {/* Context message — why this appeared */}
           {contextMessage && (
-            <div className="mb-4 px-3 py-2 rounded-lg text-[13px] font-medium text-center"
+            <div className="mb-4 px-3 py-2 rounded-lg text-[13px] font-medium"
               style={{ background: '#fef3c7', color: '#92400e' }}>
               {contextMessage}
             </div>
           )}
 
-          <h2 className="text-[18px] font-bold text-gray-900 text-center mb-1">
-            Upgrade your plan
+          {/* Headline — the journey pitch */}
+          <h2 className="text-[22px] font-bold text-gray-900 mb-2">
+            Keep building. Keep getting seen.
           </h2>
-          <p className="text-[13px] text-gray-500 text-center mb-5">
-            Get unlimited access to everything on GEM.
+          <p className="text-[14px] text-gray-600 leading-relaxed mb-6 max-w-sm mx-auto">
+            Members post unlimited scripts, apply to every opportunity, and build heat as industry partners discover their work.
           </p>
 
-          {/* Two columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
-            {/* Guest column */}
-            <div className="rounded-xl border border-gray-200 p-4">
-              <div className="text-[11px] uppercase tracking-wider font-bold text-gray-400 mb-1">Guest</div>
-              <div className="text-[20px] font-bold text-gray-900 mb-3">Free</div>
-              <ul className="space-y-2.5">
-                <PlanRow label="Script evaluations" value={`${evalsUsed} of ${FREE_EVAL_LIMIT} used`} remaining={evalsRemaining} />
-                <PlanRow label="Opportunity applications" value={`${appsUsed} of ${FREE_APP_LIMIT} used`} remaining={appsRemaining} />
-                <PlanRow label="Post to Discover" value="Unlimited" check />
-                <PlanRow label="View your reports" value="Unlimited" check />
-              </ul>
+          {/* What membership unlocks — simple, not a comparison grid */}
+          <div className="text-left rounded-xl p-4 mb-5" style={{ background: '#faf5ff', border: '1px solid #ede9fe' }}>
+            <div className="text-[12px] uppercase tracking-wider font-bold mb-3" style={{ color: '#7c3aed' }}>
+              $20/mo membership
             </div>
-
-            {/* Member column */}
-            <div className="rounded-xl border-2 p-4 relative"
-              style={{ borderColor: '#7c3aed', background: '#faf5ff' }}>
-              <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full text-[10px] font-bold text-white"
-                style={{ background: '#7c3aed' }}>
-                RECOMMENDED
-              </div>
-              <div className="text-[11px] uppercase tracking-wider font-bold mt-0.5 mb-1" style={{ color: '#7c3aed' }}>Member</div>
-              <div className="text-[20px] font-bold text-gray-900 mb-3">
-                $20<span className="text-[13px] font-normal text-gray-400">/mo</span>
-              </div>
-              <ul className="space-y-2.5">
-                <PlanRow label="Script evaluations" value="Unlimited" check accent />
-                <PlanRow label="Opportunity applications" value="Unlimited" check accent />
-                <PlanRow label="Post to Discover" value="Unlimited" check accent />
-                <PlanRow label="Priority access to new drops" value="" check accent />
-                <PlanRow label="Matched to industry partners" value="" check accent />
-              </ul>
+            <div className="space-y-2.5">
+              <JourneyRow text="Unlimited script evaluations" />
+              <JourneyRow text="Unlimited opportunity applications" />
+              <JourneyRow text="Build heat and get matched to industry" />
+              <JourneyRow text="Early access to new opportunity drops" />
             </div>
           </div>
+
+          {/* Small usage context — not the headline, just grounding */}
+          {hasUsage && (
+            <div className="text-[12px] text-gray-400 mb-4">
+              Guest plan: {evalsUsed}/{FREE_EVAL_LIMIT} evaluations · {appsUsed}/{FREE_APP_LIMIT} applications used
+            </div>
+          )}
         </div>
 
         {/* CTA footer */}
@@ -119,13 +105,13 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
           <button
             onClick={handleSubscribe}
             disabled={loading}
-            className="w-full py-3 rounded-xl text-white text-[15px] font-semibold disabled:opacity-50 transition-all hover:brightness-110 border-0 cursor-pointer"
+            className="w-full py-3.5 rounded-xl text-white text-[15px] font-semibold disabled:opacity-50 transition-all hover:brightness-110 border-0 cursor-pointer"
             style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
           >
-            {loading ? 'Redirecting…' : 'Start free trial'}
+            {loading ? 'Redirecting…' : 'Become a member'}
           </button>
 
-          <p className="text-[11px] text-gray-400 text-center mt-2">
+          <p className="text-[11px] text-gray-400 text-center mt-2.5">
             7 days free, then $20/mo · Cancel anytime
           </p>
         </div>
@@ -134,36 +120,13 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
   )
 }
 
-function PlanRow({ label, value, remaining, check, accent }: {
-  label: string
-  value: string
-  remaining?: number
-  check?: boolean
-  accent?: boolean
-}) {
+function JourneyRow({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-[12.5px] leading-snug" style={{ listStyle: 'none' }}>
-      {check ? (
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5">
-          <path d="M3 8.5l3 3 7-7" stroke={accent ? '#7c3aed' : '#059669'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ) : (
-        <span className="w-[14px] shrink-0" />
-      )}
-      <div>
-        <span className="text-gray-700 font-medium">{label}</span>
-        {value && (
-          <div className="text-gray-400 text-[11px] mt-0.5">
-            {value}
-            {remaining !== undefined && remaining <= 0 && (
-              <span className="ml-1 text-amber-600 font-semibold">· Limit reached</span>
-            )}
-            {remaining !== undefined && remaining > 0 && remaining < FREE_EVAL_LIMIT && (
-              <span className="ml-1 text-amber-600 font-medium">· {remaining} left</span>
-            )}
-          </div>
-        )}
-      </div>
-    </li>
+    <div className="flex items-center gap-2.5 text-[13px] text-gray-700 font-medium">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
+        <path d="M3 8.5l3 3 7-7" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+      {text}
+    </div>
   )
 }
