@@ -575,7 +575,7 @@ export default async function DashboardPage() {
                 const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
 
                 return (
-                  <div key={script.id} className="relative rounded-xl bg-white overflow-hidden group hover:shadow-md transition-shadow flex flex-col"
+                  <div key={script.id} className="relative rounded-xl bg-white group hover:shadow-md transition-shadow flex flex-col"
                     style={{ boxShadow: cardShadow }}>
 
                     <div className="relative p-3 lg:p-5 flex flex-col flex-1">
