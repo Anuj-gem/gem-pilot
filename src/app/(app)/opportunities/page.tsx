@@ -201,9 +201,7 @@ export default async function OpportunitiesPage() {
             <p className="text-[15px] font-bold text-gray-900 m-0 leading-snug">
               Upload your script to see which opportunities you qualify for
             </p>
-            <p className="text-[13px] text-gray-500 m-0 mt-1">
-              Applying to opportunities is a <span className="font-semibold text-purple-600">GEM Pro</span> feature. Try Pro free for 7 days.
-            </p>
+            {/* Pro upsell line hidden for anonymous users */}
           </div>
           <UploadCTAButton
             className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
