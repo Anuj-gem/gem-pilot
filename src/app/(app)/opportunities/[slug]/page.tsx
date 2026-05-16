@@ -86,6 +86,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   type QScript = { id: string; title: string | null; score: number | null; format: string | null }
   let qualifyingScripts: QScript[] = []
   let reviewStage: string | null = null
+  let considerationId: string | null = null
   let isPro = false
 
   if (user) {
@@ -99,13 +100,15 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     // Get consideration status
     const { data: considerations } = await service
       .from('considerations')
-      .select('review_stage')
+      .select('id, review_stage')
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
       .limit(1)
 
     if (considerations && considerations.length > 0) {
-      reviewStage = (considerations[0] as any).review_stage || 'submitted'
+      const c = considerations[0] as any
+      reviewStage = c.review_stage || 'submitted'
+      considerationId = c.id
     }
 
     // Get qualifying scripts
@@ -267,33 +270,25 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           {/* ── CTA section ── */}
           {user ? (
             // ── LOGGED IN ──
-            stageInfo ? (
-              // Has applied — show status
+            considerationId ? (
+              // Has applied — show pending status + link to application
               <div
                 className="rounded-xl px-5 py-4"
-                style={{ background: stageInfo.bg, border: `1px solid ${stageInfo.bg}` }}
+                style={{ background: '#ede9fe', border: '1px solid #ede9fe' }}
               >
                 <div className="flex items-center gap-2 mb-2">
                   <span
                     className="text-[12px] font-bold px-3 py-0.5 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.6)', color: stageInfo.text }}
+                    style={{ background: 'rgba(255,255,255,0.6)', color: '#5b21b6' }}
                   >
-                    {stageInfo.label}
+                    Application Pending
                   </span>
                 </div>
-                <p className="text-[14px] m-0 mb-3" style={{ color: stageInfo.text }}>
-                  {stageInfo.description}
+                <p className="text-[14px] m-0 mb-3" style={{ color: '#5b21b6' }}>
+                  You have an active application for this opportunity.
                 </p>
-                {reviewStage === 'complete' && (
-                  <p className="text-[13px] m-0" style={{ color: stageInfo.text }}>
-                    You can submit another script for this opportunity.{' '}
-                    <Link href={`/opportunities/${opp.slug}/apply`} className="font-bold underline" style={{ color: stageInfo.text }}>
-                      Apply again
-                    </Link>
-                  </p>
-                )}
-                <Link href="/dashboard" className="text-[13px] font-bold mt-2 inline-block" style={{ color: stageInfo.text }}>
-                  View on dashboard &rarr;
+                <Link href={`/applications/${considerationId}`} className="text-[13px] font-bold inline-block" style={{ color: '#5b21b6' }}>
+                  View your application &rarr;
                 </Link>
               </div>
             ) : qualifyingScripts.length > 0 ? (
