@@ -533,23 +533,43 @@ export default async function DashboardPage() {
 
                     <div className="relative z-10 p-4 flex flex-col flex-1 pointer-events-none">
 
-                      {/* GEM Score + Heat badges — own row */}
-                      {(badge && rounded || script.heat > 0) && (
-                        <div className="flex items-center gap-2 mb-2">
-                          {badge && rounded && (
+                      {/* GEM Score + Heat badges — always visible */}
+                      <div className="flex items-center gap-2 mb-2">
+                        {/* GEM Score */}
+                        <div className="relative group/score">
+                          {badge && rounded ? (
                             <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
                               <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
                               <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
                             </div>
-                          )}
-                          {script.heat > 0 && (
-                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
-                              <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
-                              <div className="text-[20px] font-bold text-orange-600 leading-tight">🔥 {script.heat}</div>
+                          ) : (
+                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}>
+                              <div className="text-[9px] font-semibold text-gray-400 uppercase leading-none tracking-wide">GEM Score</div>
+                              <div className="text-[20px] font-bold text-gray-300 leading-tight">&mdash;</div>
                             </div>
                           )}
+                          <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/score:opacity-100 transition-opacity z-30 text-center">
+                            Your script score from evaluation
+                          </div>
                         </div>
-                      )}
+                        {/* Industry Heat */}
+                        <div className="relative group/heat">
+                          {script.heat > 0 ? (
+                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
+                              <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
+                              <div className="text-[20px] font-bold text-orange-600 leading-tight">{script.heat}</div>
+                            </div>
+                          ) : (
+                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
+                              <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
+                              <div className="text-[20px] font-bold text-orange-300 leading-tight">0</div>
+                            </div>
+                          )}
+                          <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center">
+                            Apply for opportunities to earn heat as your script gets attention
+                          </div>
+                        </div>
+                      </div>
 
                       {/* Title — full width, no collision */}
                       <h3 className="text-[16px] font-bold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">

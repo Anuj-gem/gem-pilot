@@ -98,7 +98,7 @@ export function ScriptRowCard({
           </button>
         )}
 
-        {/* Score badge — single neutral color */}
+        {/* Score badge with tooltip */}
         {s.isProcessing ? (
           <div
             className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
@@ -106,43 +106,58 @@ export function ScriptRowCard({
           >
             <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
           </div>
-        ) : s.score != null ? (
-          <div
-            className="shrink-0 w-11 h-11 rounded-lg flex flex-col items-center justify-center"
-            style={{
-              background: '#f3f4f6',
-              border: '1.5px solid #e5e7eb',
-              ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
-            }}
-          >
-            <span className="text-[16px] font-extrabold leading-none text-gray-800">
-              {Math.round(s.score)}
-            </span>
-            <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-gray-400">
-              Score
-            </span>
-          </div>
         ) : (
-          <div
-            className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
-            style={{ background: 'rgba(107,114,128,0.06)' }}
-          >
-            <span className="text-[11px] text-gray-300">&mdash;</span>
+          <div className="relative group/score shrink-0">
+            {s.score != null ? (
+              <div
+                className="w-11 h-11 rounded-lg flex flex-col items-center justify-center"
+                style={{
+                  background: '#f3f4f6',
+                  border: '1.5px solid #e5e7eb',
+                  ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
+                }}
+              >
+                <span className="text-[16px] font-extrabold leading-none text-gray-800">
+                  {Math.round(s.score)}
+                </span>
+                <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-gray-400">
+                  Score
+                </span>
+              </div>
+            ) : (
+              <div
+                className="w-11 h-11 rounded-lg flex flex-col items-center justify-center"
+                style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}
+              >
+                <span className="text-[14px] font-extrabold leading-none text-gray-300">&mdash;</span>
+                <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-gray-400">
+                  Score
+                </span>
+              </div>
+            )}
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/score:opacity-100 transition-opacity z-30 text-center pointer-events-none">
+              Your script score from evaluation
+            </div>
           </div>
         )}
 
-        {/* Heat badge — shown next to score when heat > 0 */}
-        {!s.isProcessing && !s.isLocked && s.heat != null && s.heat > 0 && (
-          <div
-            className="shrink-0 w-11 h-11 rounded-lg flex flex-col items-center justify-center"
-            style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}
-          >
-            <span className="text-[14px] font-extrabold leading-none text-orange-600">
-              {s.heat}
-            </span>
-            <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-orange-400">
-              🔥 Heat
-            </span>
+        {/* Heat badge — always shown on completed scripts (zero state included) */}
+        {!s.isProcessing && !s.isLocked && s.evaluationId && (
+          <div className="relative group/heat shrink-0">
+            <div
+              className="w-11 h-11 rounded-lg flex flex-col items-center justify-center"
+              style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}
+            >
+              <span className={`text-[14px] font-extrabold leading-none ${s.heat && s.heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>
+                {s.heat ?? 0}
+              </span>
+              <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-orange-400">
+                Heat
+              </span>
+            </div>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center pointer-events-none">
+              Apply for opportunities to earn heat as your script gets attention
+            </div>
           </div>
         )}
 
