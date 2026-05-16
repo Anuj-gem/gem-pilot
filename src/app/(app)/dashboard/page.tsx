@@ -5,6 +5,7 @@
 // Three value cards: Scripts Evaluated, Your Opportunities, 🔥 Industry Heat.
 // Recent scripts with action checklist (apply + publish) and score pill.
 
+import { cookies } from 'next/headers'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
@@ -120,6 +121,44 @@ export default async function DashboardPage() {
     allApplications = (applications || []) as AppRow[]
   }
 
+  // ── ANONYMOUS USER: read script IDs from cookie ──
+  if (!user) {
+    const cookieStore = await cookies()
+    const anonCookie = cookieStore.get('gem_anon_scripts')?.value
+    if (anonCookie) {
+      const anonIds = anonCookie.split(',').filter(Boolean)
+      if (anonIds.length > 0) {
+        const { data: anonSubs } = await service
+          .from('script_submissions')
+          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score')
+          .in('id', anonIds)
+          .order('created_at', { ascending: false })
+        visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
+        submissionIds = visible.map((s) => s.id)
+
+        if (submissionIds.length > 0) {
+          const { data: anonEvs } = await service
+            .from('script_evaluations')
+            .select('id, submission_id, weighted_score, evaluation')
+            .in('submission_id', submissionIds)
+          for (const e of (anonEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
+            const evJson = e.evaluation as Record<string, unknown> | null
+            const cls = (evJson?.classification as Record<string, unknown>) || {}
+            const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
+            const genreSet = new Set<string>()
+            for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
+              const n = normGenre(raw)
+              if (n) genreSet.add(n)
+            }
+            const format = (cls.format as string) || (fmt.format as string) || null
+            const logline = (evJson?.positioning_hook as string) || (cls.logline as string) || null
+            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: Array.from(genreSet), format, logline })
+          }
+        }
+      }
+    }
+  }
+
   // Per-opp applied script tracking (which scripts have been submitted to which opps)
   const appliedScriptsByOpp = new Map<string, Set<string>>()
   const pendingOppIds = new Set<string>()
@@ -158,6 +197,9 @@ export default async function DashboardPage() {
       .eq('user_id', user.id)
     totalSubmissions = subCount ?? 0
     totalApps = allApplications.length
+  } else if (!user) {
+    // Anonymous: count from cookie
+    totalSubmissions = visible.length
   }
   const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
   const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
@@ -346,9 +388,9 @@ export default async function DashboardPage() {
               <span className="text-[13px] font-semibold text-gray-500">Scripts Evaluated</span>
             </div>
             <div className="text-[28px] font-bold text-gray-900 leading-none mb-1.5">
-              {user ? scriptCount : 0}
+              {scriptCount}
             </div>
-            {user && completedScripts.length > 0 ? (
+            {completedScripts.length > 0 ? (
               <div className="space-y-0.5">
                 {completedScripts.slice(0, 2).map(s => {
                   const r = s.score ? Math.round(s.score) : null
@@ -484,7 +526,7 @@ export default async function DashboardPage() {
         <section>
           <header className="flex items-center gap-2 mb-3">
             <h2 className="text-[16px] font-bold text-gray-900 m-0">Your scripts</h2>
-            {user && !isPro && (
+            {!isPro && (
               <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
                 style={{ background: evalsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: evalsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
                 {evalsRemaining > 0 ? `${evalsRemaining} eval${evalsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
