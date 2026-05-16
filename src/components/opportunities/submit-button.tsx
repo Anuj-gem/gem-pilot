@@ -33,8 +33,10 @@ interface SubmitButtonProps {
   existing?: SubmissionState | null
   /** Whether the writer has hit the active (pending) submission limit */
   atLimit?: boolean
-  /** Whether the writer is a Pro subscriber. Free users see a locked button. */
+  /** Whether the writer is a Pro subscriber. */
   isPro?: boolean
+  /** Number of free applications remaining (for non-Pro users). */
+  freeRemaining?: number
   /** Called after a successful submit — parent can update its count */
   onSubmitted?: () => void
   /** Called after a successful withdraw — parent can update its count */
@@ -50,7 +52,7 @@ interface SubmitButtonProps {
 /** Current prompt version — must match evaluation-prompt.ts */
 const CURRENT_PROMPT_VERSION = "3.9"
 
-export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, onSubmitted, onWithdrawn, resetDaysLeft, promptVersion, evaluationId }: SubmitButtonProps) {
+export function SubmitForConsideration({ opportunityId, submissionId, scriptTitle, existing, atLimit, isPro = true, freeRemaining = 2, onSubmitted, onWithdrawn, resetDaysLeft, promptVersion, evaluationId }: SubmitButtonProps) {
   const [state, setState] = useState<SubmissionState | null>(existing ?? null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -186,13 +188,13 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
     )
   }
 
-  // Not submitted (or withdrawn) — free users see Apply button with lock that opens membership modal
-  if (!isPro) {
+  // Not submitted (or withdrawn) — free users with 0 remaining see locked state
+  if (!isPro && freeRemaining <= 0) {
     return (
       <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-white border border-gray-200">
         <span className="text-[13.5px] font-semibold text-gray-800 truncate">{scriptTitle}</span>
         <div className="flex items-center gap-2 shrink-0">
-          <span className="text-[11px] text-gray-400">Members only</span>
+          <span className="text-[11px] text-gray-400">0 free remaining</span>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
             className="inline-flex items-center gap-1.5 text-[13px] font-bold text-white px-4 py-1.5 rounded-lg transition-all hover:brightness-110"
@@ -236,13 +238,18 @@ export function SubmitForConsideration({ opportunityId, submissionId, scriptTitl
         </svg>
         <span className="text-[13.5px] font-semibold text-emerald-800">{scriptTitle}</span>
       </div>
-      <button
-        onClick={handleSubmit}
-        disabled={loading || atLimit}
-        className="text-[12px] font-bold text-white bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1.5 rounded-md transition-colors"
-      >
-        {loading ? 'Submitting…' : atLimit ? 'No submissions left' : 'Submit'}
-      </button>
+      <div className="flex items-center gap-2 shrink-0">
+        {!isPro && freeRemaining > 0 && (
+          <span className="text-[11px] text-gray-400">{freeRemaining} free remaining</span>
+        )}
+        <button
+          onClick={handleSubmit}
+          disabled={loading || atLimit}
+          className="text-[12px] font-bold text-white bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1.5 rounded-md transition-colors"
+        >
+          {loading ? 'Submitting…' : atLimit ? 'No submissions left' : 'Apply'}
+        </button>
+      </div>
       {error && <span className="text-[11px] text-red-500 ml-2">{error}</span>}
       {atLimit && (
         <div className="w-full mt-1.5 px-1">

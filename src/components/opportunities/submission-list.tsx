@@ -18,9 +18,11 @@ interface SubmissionListProps {
   monthlyLimit?: number
   /** Whether the writer is a Pro subscriber */
   isPro?: boolean
+  /** Number of free applications remaining (for non-Pro users) */
+  freeRemaining?: number
 }
 
-export function SubmissionList({ opportunityId, scripts, existingSubmissions, pendingCount, monthlyLimit = 3, isPro = true }: SubmissionListProps) {
+export function SubmissionList({ opportunityId, scripts, existingSubmissions, pendingCount, monthlyLimit = 3, isPro = true, freeRemaining = 2 }: SubmissionListProps) {
   const [currentPending, setCurrentPending] = useState(pendingCount)
 
   const atLimit = !isPro || currentPending >= monthlyLimit
@@ -44,6 +46,7 @@ export function SubmissionList({ opportunityId, scripts, existingSubmissions, pe
           existing={existingSubmissions[s.id] ?? null}
           atLimit={atLimit && !existingSubmissions[s.id]}
           isPro={isPro}
+          freeRemaining={freeRemaining}
           onSubmitted={onSubmitted}
           onWithdrawn={onWithdrawn}
           promptVersion={s.promptVersion}

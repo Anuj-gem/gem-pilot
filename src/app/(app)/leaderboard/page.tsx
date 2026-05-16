@@ -6,7 +6,6 @@
 //
 // Anuj 2026-05-13 v0.1.
 
-import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import type { ScriptCardData } from '@/components/cards/script-card'
@@ -38,10 +37,20 @@ interface PageProps {
 }
 
 export default async function LeaderboardPage({ searchParams }: PageProps) {
-  // Auth-gated for now — Anuj wants to open it up later.
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
-  if (!user) redirect('/login?redirect=/leaderboard')
+
+  // Determine insider status (Pro/trialing member)
+  let isInsider = false
+  if (user) {
+    const service = svc()
+    const { data: profile } = await service
+      .from('profiles')
+      .select('subscription_status')
+      .eq('id', user.id)
+      .single()
+    isInsider = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  }
 
   const sp = await searchParams
   const initialSort = (['recent', 'top_gem', 'most_reviewed'].includes(sp.sort || '')
@@ -163,6 +172,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
           budgets: initialBudgets,
         }}
         basePath="/leaderboard"
+        isInsider={isInsider}
       />
     </div>
   )

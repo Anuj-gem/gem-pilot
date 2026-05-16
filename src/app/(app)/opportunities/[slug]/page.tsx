@@ -88,6 +88,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   let reviewStage: string | null = null
   let considerationId: string | null = null
   let isPro = false
+  let freeRemaining = 2
 
   if (user) {
     const { data: profile } = await service
@@ -96,6 +97,19 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .eq('id', user.id)
       .single()
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+
+    // Compute free applications remaining for non-Pro users
+    if (!isPro) {
+      const now = new Date()
+      const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+      const { count } = await service
+        .from('opportunity_submissions')
+        .select('id', { count: 'exact', head: true })
+        .eq('writer_id', user.id)
+        .neq('status', 'withdrawn')
+        .gte('submitted_at', monthStart)
+      freeRemaining = Math.max(0, 2 - (count ?? 0))
+    }
 
     // Get consideration status
     const { data: considerations } = await service
@@ -319,7 +333,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     Apply now <ArrowRight size={16} />
                   </Link>
                 ) : (
-                  <ApplyUpgradeButton />
+                  <ApplyUpgradeButton freeRemaining={freeRemaining} applyHref={`/opportunities/${opp.slug}/apply`} />
                 )}
               </div>
             ) : (
