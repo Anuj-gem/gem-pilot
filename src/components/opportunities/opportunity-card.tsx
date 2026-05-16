@@ -38,7 +38,7 @@ export interface OpportunityCardProps {
 
 const STATUS_CONFIG: Record<OppStatus, { label: string; bg: string; color: string }> = {
   available:          { label: 'Available',          bg: '#ecfdf5', color: '#0f6e56' },
-  pending:            { label: 'Pending',            bg: '#fef3c7', color: '#92400e' },
+  pending:            { label: 'Application Pending', bg: '#ede9fe', color: '#5b21b6' },
   previously_applied: { label: 'Previously applied', bg: '#e1f5ee', color: '#0f6e56' },
 }
 

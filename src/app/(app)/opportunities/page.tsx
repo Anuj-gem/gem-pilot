@@ -5,7 +5,7 @@
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
-import { OpportunityListingCard, type QualScript } from '@/components/opportunities/opportunity-listing-card'
+import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { ArrowRight } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 
@@ -42,7 +42,7 @@ type OppRow = {
   id: string; title: string; description: string; slug: string | null
   formats: string[]; genres: string[]; budget_tiers: string[]
   min_score: number | null; deadline: string | null; status: string
-  posted_by: string | null; subtitle: string | null
+  posted_by: string | null; subtitle: string | null; created_at: string
 }
 
 export default async function OpportunitiesPage() {
@@ -70,8 +70,8 @@ export default async function OpportunitiesPage() {
 
   const opportunities = (opps || []) as OppRow[]
 
-  // For logged-in users: qualification + application status + qualifying scripts per opp
-  const oppQualScripts = new Map<string, QualScript[]>()
+  // For logged-in users: qualification + application status
+  const oppMatchCount = new Map<string, number>()
   const oppStage = new Map<string, string>() // opp_id → review_stage
 
   if (user) {
@@ -126,15 +126,13 @@ export default async function OpportunitiesPage() {
         evalMap.set(ev.submission_id, { weighted_score: ev.weighted_score, genres, budget })
       }
 
-      // Build qualifying scripts per opportunity
+      // Count qualifying scripts per opportunity
       for (const opp of opportunities) {
-        const scripts: QualScript[] = []
+        let count = 0
         for (const sub of visibleSubs) {
           const ev = evalMap.get(sub.id)
           if (!ev) continue
           if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format)) continue
-          // Genre match: any of the script's genres (primary + secondary + tags)
-          // overlaps with any of the opportunity's genres (substring match both ways)
           if (opp.genres.length > 0 && ev.genres.length > 0) {
             const oppGenresNorm = opp.genres.map(normGenre)
             const hasOverlap = ev.genres.some(sg =>
@@ -144,14 +142,9 @@ export default async function OpportunitiesPage() {
           }
           if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
           if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) continue
-          scripts.push({
-            id: sub.id,
-            title: sub.title,
-            score: ev.weighted_score,
-            format: sub.declared_format,
-          })
+          count++
         }
-        oppQualScripts.set(opp.id, scripts)
+        oppMatchCount.set(opp.id, count)
       }
     }
 
@@ -222,32 +215,34 @@ export default async function OpportunitiesPage() {
       )}
 
       {/* Opportunity cards */}
-      <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {opportunities.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-[15px] text-gray-400">No open opportunities right now. Check back soon.</p>
           </div>
         ) : (
-          opportunities.map((opp) => (
-            <OpportunityListingCard
-              key={opp.id}
-              id={opp.id}
-              slug={opp.slug}
-              title={opp.title}
-              subtitle={opp.subtitle}
-              description={opp.description}
-              posted_by={opp.posted_by}
-              genres={opp.genres || []}
-              formats={opp.formats || []}
-              budget_tiers={opp.budget_tiers || []}
-              min_score={opp.min_score}
-              deadline={opp.deadline}
-              review_stage={oppStage.get(opp.id) ?? null}
-              qualifying_scripts={oppQualScripts.get(opp.id) ?? []}
-              is_pro={isPro}
-              is_logged_in={!!user}
-            />
-          ))
+          opportunities.map((opp) => {
+            const stage = oppStage.get(opp.id)
+            const status: OppStatus = (stage && stage !== 'complete') ? 'pending'
+              : stage === 'complete' ? 'previously_applied'
+              : 'available'
+            return (
+              <OpportunityCard
+                key={opp.id}
+                id={opp.id}
+                slug={opp.slug}
+                title={opp.title}
+                subtitle={opp.subtitle}
+                description={opp.description}
+                genres={opp.genres || []}
+                formats={opp.formats || []}
+                createdAt={opp.created_at}
+                deadline={opp.deadline}
+                status={status}
+                matchingScriptCount={oppMatchCount.get(opp.id) ?? 0}
+              />
+            )
+          })
         )}
       </div>
     </div>
