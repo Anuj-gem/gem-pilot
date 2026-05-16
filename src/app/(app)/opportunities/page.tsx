@@ -222,10 +222,8 @@ export default async function OpportunitiesPage() {
           </div>
         ) : (
           opportunities.map((opp) => {
-            const stage = oppStage.get(opp.id)
-            const status: OppStatus = (stage && stage !== 'complete') ? 'pending'
-              : stage === 'complete' ? 'previously_applied'
-              : 'available'
+            const hasConsideration = oppStage.has(opp.id)
+            const status: OppStatus = hasConsideration ? 'pending' : 'available'
             return (
               <OpportunityCard
                 key={opp.id}

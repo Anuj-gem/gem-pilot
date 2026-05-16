@@ -97,16 +97,15 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
     // Get consideration status
-    const { data: consideration } = await service
+    const { data: considerations } = await service
       .from('considerations')
       .select('review_stage')
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
       .limit(1)
-      .maybeSingle()
 
-    if (consideration) {
-      reviewStage = consideration.review_stage || 'submitted'
+    if (considerations && considerations.length > 0) {
+      reviewStage = (considerations[0] as any).review_stage || 'submitted'
     }
 
     // Get qualifying scripts
