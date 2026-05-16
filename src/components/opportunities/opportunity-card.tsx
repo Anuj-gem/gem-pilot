@@ -124,7 +124,7 @@ export function OpportunityCard({
             View details
           </Link>
           {showApply && (
-            <Link href={href}
+            <Link href={`${href}/apply`}
               className="text-[13px] font-semibold text-white px-3.5 py-1 rounded-lg transition-all hover:brightness-110"
               style={{ background: '#7c3aed' }}>
               Apply
