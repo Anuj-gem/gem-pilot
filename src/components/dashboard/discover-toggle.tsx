@@ -9,10 +9,10 @@ import { useRouter } from 'next/navigation'
 type Props = {
   scriptId: string
   isPublic: boolean
-  isPro: boolean
+  isPro?: boolean
 }
 
-export function DiscoverToggle({ scriptId, isPublic, isPro }: Props) {
+export function DiscoverToggle({ scriptId, isPublic }: Props) {
   const [on, setOn] = useState(isPublic)
   const [busy, setBusy] = useState(false)
   const [isPending, startTransition] = useTransition()
@@ -20,15 +20,6 @@ export function DiscoverToggle({ scriptId, isPublic, isPro }: Props) {
 
   async function toggle() {
     if (busy) return
-
-    // Gate non-Pro users
-    if (!on && !isPro) {
-      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
-        detail: { contextMessage: 'Become a member to share your script on the leaderboard.' },
-      }))
-      return
-    }
-
     setBusy(true)
     try {
       const res = await fetch(`/api/scripts/${scriptId}/visibility`, {
@@ -39,10 +30,6 @@ export function DiscoverToggle({ scriptId, isPublic, isPro }: Props) {
       if (res.ok) {
         setOn(!on)
         startTransition(() => router.refresh())
-      } else if (res.status === 403) {
-        window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
-          detail: { contextMessage: 'Become a member to share your script on the leaderboard.' },
-        }))
       }
     } finally {
       setBusy(false)

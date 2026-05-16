@@ -34,23 +34,6 @@ export async function PATCH(
   const body = await request.json()
   const is_public = Boolean(body.is_public)
 
-  // Gate: publishing to Discover requires an active subscription.
-  // Also blocks free users from publishing locked (2nd+) scripts.
-  if (is_public) {
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('subscription_status')
-      .eq('id', user.id)
-      .single()
-
-    if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing') {
-      return NextResponse.json(
-        { error: 'Upgrade to Pro to publish on Discover.' },
-        { status: 403 }
-      )
-    }
-  }
-
   // Update — RLS ensures only the owner can update
   const { data, error } = await supabase
     .from('script_submissions')
