@@ -1,142 +1,121 @@
-'use client'
-
-// OpportunityCard — a single opportunity listing with qualification badges.
-// Used on both /opportunities and the dashboard.
+// OpportunityCard — unified card for opportunity display.
+// Works in dashboard 3-col grid and opportunities listing page.
+// Pure server component — Apply links to detail page, no inline actions.
 
 import Link from 'next/link'
 
-export interface OpportunityData {
+export type OppStatus = 'available' | 'pending' | 'previously_applied'
+
+export interface OpportunityCardProps {
   id: string
-  title: string
-  description: string
-  formats: string[]
-  genres: string[]
-  budget_tiers: string[]
-  min_score: number | null
-  deadline: string | null
-  status: string
-  posted_by: string | null
   slug: string | null
-  subtitle: string | null
-}
-
-export interface QualifyingScript {
-  id: string
   title: string
-  evaluation_id: string
+  subtitle: string | null
+  description: string | null
+  genres: string[]
+  formats: string[]
+  createdAt: string
+  deadline: string | null
+  status: OppStatus
+  matchingScriptCount: number
 }
 
-interface OpportunityCardProps {
-  opportunity: OpportunityData
-  /** Scripts the viewer owns that qualify for this opportunity */
-  qualifyingScripts?: QualifyingScript[]
-  /** Compact mode for dashboard embed (hides description) */
-  compact?: boolean
+const STATUS_CONFIG: Record<OppStatus, { label: string; bg: string; color: string }> = {
+  available:          { label: 'Available',          bg: '#ecfdf5', color: '#0f6e56' },
+  pending:            { label: 'Pending',            bg: '#fef3c7', color: '#92400e' },
+  previously_applied: { label: 'Previously applied', bg: '#e1f5ee', color: '#0f6e56' },
 }
 
-function formatDeadline(deadline: string): string {
-  const d = new Date(deadline)
-  const now = new Date()
-  const diff = d.getTime() - now.getTime()
-  const days = Math.ceil(diff / (1000 * 60 * 60 * 24))
-  if (days < 0) return 'Closed'
-  if (days === 0) return 'Closes today'
-  if (days === 1) return 'Closes tomorrow'
-  if (days <= 7) return `Closes in ${days} days`
-  return `Closes ${d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
-}
-
-const GENRE_LABELS: Record<string, string> = {
-  thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
-  comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
-  action: 'Action', family: 'Family', western: 'Western', musical: 'Musical',
-  documentary: 'Documentary',
-}
-
-const BUDGET_LABELS: Record<string, string> = {
-  micro: 'Micro', indie: 'Indie', mid: 'Mid', studio: 'Studio',
-  premium: 'Premium', tentpole: 'Tentpole',
-}
-
-export function OpportunityCard({ opportunity, qualifyingScripts = [], compact = false }: OpportunityCardProps) {
-  const hasQualifying = qualifyingScripts.length > 0
-  const href = opportunity.slug ? `/opportunities/${opportunity.slug}` : '#'
-
-  // Build the secondary info line: "Feature · Thriller, Crime · Indie budget · Min 70"
-  const infoParts: string[] = []
-  if (opportunity.formats.length > 0) infoParts.push(opportunity.formats.join(', '))
-  if (opportunity.budget_tiers.length > 0) infoParts.push(opportunity.budget_tiers.map(b => BUDGET_LABELS[b] ?? b).join(', ') + ' budget')
-  if (opportunity.min_score) infoParts.push(`Min score ${opportunity.min_score}`)
+export function OpportunityCard({
+  id, slug, title, subtitle, description, genres, formats,
+  createdAt, deadline, status, matchingScriptCount,
+}: OpportunityCardProps) {
+  const href = `/opportunities/${slug ?? id}`
+  const postedDate = new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  const cfg = STATUS_CONFIG[status]
+  const showScriptCount = status !== 'pending' && matchingScriptCount > 0
+  const showApply = status !== 'pending'
 
   return (
-    <Link
-      href={href}
-      className="block rounded-xl transition-all hover:shadow-sm"
-      style={{
-        background: '#fff',
-        border: `1px solid ${hasQualifying ? 'rgba(16,185,129,0.3)' : 'var(--gem-gray-200, #e5e7eb)'}`,
-      }}
-    >
-      <div className="px-4 py-3.5 sm:px-5 sm:py-4">
-        {/* Row 1: Title + deadline */}
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="text-[15px] font-bold text-gray-900 leading-snug m-0">
-            {opportunity.title}
-          </h3>
-          {opportunity.deadline && (
-            <span className="flex-shrink-0 text-[11px] text-gray-400 font-medium whitespace-nowrap mt-0.5">
-              {formatDeadline(opportunity.deadline)}
+    <div className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
+      style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+
+      {/* Full-card link */}
+      <Link href={href} className="absolute inset-0 z-0" aria-label={title} />
+
+      {/* Card body */}
+      <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
+
+        {/* Top row: Paid badge + posted date */}
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[12px] font-bold px-2 py-0.5 rounded"
+            style={{ background: '#eff6ff', color: '#1d4ed8' }}>
+            Paid
+          </span>
+          <span className="text-[12px] text-gray-500">Posted {postedDate}</span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
+          {title}
+        </h3>
+
+        {/* Format + Genre as labeled lines */}
+        <div className="space-y-0.5 mb-2">
+          {formats.length > 0 && (
+            <div className="text-[13px]">
+              <span className="text-gray-400">Format:</span>{' '}
+              <span className="text-gray-700">{formats.join(', ')}</span>
+            </div>
+          )}
+          {genres.length > 0 && (
+            <div className="text-[13px]">
+              <span className="text-gray-400">Genre:</span>{' '}
+              <span className="text-gray-700">{genres.slice(0, 3).join(', ')}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Subtitle / description */}
+        {(subtitle || description) && (
+          <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
+            {subtitle || description}
+          </p>
+        )}
+      </div>
+
+      {/* Bottom bar — two rows for compact columns */}
+      <div className="relative z-10 px-4 py-2.5 pointer-events-auto"
+        style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+
+        {/* Row 1: Status pill + script match count */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
+            style={{ background: cfg.bg, color: cfg.color }}>
+            {cfg.label}
+          </span>
+          {showScriptCount && (
+            <span className="text-[12px] font-medium" style={{ color: '#7c3aed' }}>
+              {matchingScriptCount} {matchingScriptCount === 1 ? 'script matches' : 'scripts match'}
             </span>
           )}
         </div>
 
-        {/* Row 2: Subtitle */}
-        {opportunity.subtitle && (
-          <p className="text-[12.5px] font-semibold text-gray-500 mt-1 m-0">
-            {opportunity.subtitle}
-          </p>
-        )}
-
-        {/* Row 3: Genres — prominent pills */}
-        {opportunity.genres.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-2.5">
-            {opportunity.genres.map(g => (
-              <span key={g} className="inline-block text-[11.5px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700">
-                {GENRE_LABELS[g] ?? g}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* Row 4: Format, budget, min score as a quiet info line */}
-        {infoParts.length > 0 && (
-          <p className="text-[11.5px] text-gray-400 mt-2 m-0">
-            {infoParts.join(' · ')}
-          </p>
-        )}
-
-        {/* Row 5: Qualification status */}
-        <div className="mt-3 pt-2.5 border-t border-gray-100">
-          {hasQualifying ? (
-            <div className="flex flex-wrap gap-1.5">
-              {qualifyingScripts.map(s => (
-                <span
-                  key={s.id}
-                  className="inline-flex items-center gap-1 text-[11.5px] font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700"
-                >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.15"/><path d="M3.5 6.2L5.2 7.8L8.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  {s.title} qualifies
-                </span>
-              ))}
-            </div>
-          ) : (
-            <span className="inline-flex items-center gap-1 text-[11.5px] font-medium text-gray-400">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="currentColor" strokeWidth="1" opacity="0.4"/><path d="M4 6h4" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/></svg>
-              No matching scripts yet
-            </span>
+        {/* Row 2: View details + Apply */}
+        <div className="flex items-center justify-between">
+          <Link href={href}
+            className="text-[13px] text-gray-500 hover:text-gray-700 transition-colors">
+            View details
+          </Link>
+          {showApply && (
+            <Link href={href}
+              className="text-[13px] font-semibold text-white px-3.5 py-1 rounded-lg transition-all hover:brightness-110"
+              style={{ background: '#7c3aed' }}>
+              Apply
+            </Link>
           )}
         </div>
       </div>
-    </Link>
+    </div>
   )
 }

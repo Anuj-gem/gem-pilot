@@ -11,7 +11,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
 import { QuickApplyDropdown } from '@/components/dashboard/quick-apply-dropdown'
-import { OppScriptDropdown } from '@/components/dashboard/opp-script-dropdown'
+import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import Link from 'next/link'
 
@@ -449,72 +449,24 @@ export default async function DashboardPage() {
           ) : (
             <div className="grid grid-cols-3 gap-3">
               {dashboardOpps.map(opp => {
-                const matchCount = matchingScriptCount(opp)
-                const postedDate = new Date(opp.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                const status: OppStatus = appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
+                const matchCount = getMatchingScriptsForOpp(opp).length
 
                 return (
-                  <div key={opp.id} className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
-                    style={{ boxShadow: cardShadow }}>
-
-                    {/* Full-card link for "View details" */}
-                    <Link href={`/opportunities/${opp.slug}`} className="absolute inset-0 z-0" aria-label={opp.title} />
-
-                    {/* Card body */}
-                    <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
-
-                      {/* Top row: Paid badge + posted date */}
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-[12px] font-bold px-2 py-0.5 rounded"
-                          style={{ background: '#eff6ff', color: '#1d4ed8' }}>
-                          💼 Paid
-                        </span>
-                        <span className="text-[12px] text-gray-500">Posted {postedDate}</span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
-                        {opp.title}
-                      </h3>
-
-                      {/* Format + Genre as labeled lines */}
-                      <div className="space-y-0.5 mb-2">
-                        {opp.formats && opp.formats.length > 0 && (
-                          <div className="text-[13px]">
-                            <span className="text-gray-400">Format:</span>{' '}
-                            <span className="text-gray-700">{opp.formats.join(', ')}</span>
-                          </div>
-                        )}
-                        {opp.genres && opp.genres.length > 0 && (
-                          <div className="text-[13px]">
-                            <span className="text-gray-400">Genre:</span>{' '}
-                            <span className="text-gray-700">{opp.genres.slice(0, 3).join(', ')}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Subtitle / description */}
-                      {(opp.subtitle || opp.description) && (
-                        <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
-                          {opp.subtitle || opp.description}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Bottom bar — scripts match dropdown LEFT, View details RIGHT */}
-                    <div className="relative z-10 px-4 py-2.5 flex items-center justify-between pointer-events-auto"
-                      style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                      <OppScriptDropdown
-                        opportunityId={opp.id}
-                        matchingScripts={getMatchingScriptsForOpp(opp)}
-                        appliedOppIds={appliedOppIdsArr}
-                      />
-                      <Link href={`/opportunities/${opp.slug}`}
-                        className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
-                        View details →
-                      </Link>
-                    </div>
-
-                  </div>
+                  <OpportunityCard
+                    key={opp.id}
+                    id={opp.id}
+                    slug={opp.slug}
+                    title={opp.title}
+                    subtitle={opp.subtitle}
+                    description={opp.description}
+                    genres={opp.genres || []}
+                    formats={opp.formats || []}
+                    createdAt={opp.created_at}
+                    deadline={opp.deadline}
+                    status={status}
+                    matchingScriptCount={matchCount}
+                  />
                 )
               })}
             </div>
