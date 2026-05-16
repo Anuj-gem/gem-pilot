@@ -10,7 +10,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
-import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
+import { DashboardHeroSection } from '@/components/dashboard/dashboard-hero-section'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
@@ -374,8 +374,11 @@ export default async function DashboardPage() {
 
       <div className="space-y-5">
 
-        {/* ── FORMAT SELECTOR HERO ── */}
-        <FormatSelectorHero evalsRemaining={isPro ? 99 : evalsRemaining} />
+        {/* ── HERO — landing for fresh anon visitors, upload flow otherwise ── */}
+        <DashboardHeroSection
+          showLanding={!user && completedScripts.length === 0 && processingScripts.length === 0}
+          evalsRemaining={isPro ? 99 : evalsRemaining}
+        />
 
         {/* ── THREE VALUE CARDS ── */}
         <section className="grid grid-cols-3 gap-2 lg:gap-3">
