@@ -220,6 +220,8 @@ export default async function DashboardPage() {
 
   // ── RENDER ──
 
+  const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
+
   return (
     <>
       {user && submissionIds.length > 0 && (
@@ -227,127 +229,34 @@ export default async function DashboardPage() {
       )}
       <ProcessingPoller active={isProcessing} />
 
-      <div className="space-y-8">
+      <div className="space-y-6">
 
         {/* ── FORMAT SELECTOR HERO ── */}
-        <section>
-          <FormatSelectorHero />
-        </section>
+        <FormatSelectorHero />
 
         {/* ── THREE VALUE CARDS ── */}
         <section className="grid grid-cols-3 gap-3">
-
-          {/* Card 1: Scripts Evaluated */}
-          <div className="rounded-2xl bg-white px-5 py-4"
-            style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">Scripts Evaluated</div>
-            <div className="text-[28px] font-bold text-gray-900 leading-none mb-2">
-              {user ? scriptCount : 0}
-            </div>
-            {user && completedScripts.length > 0 ? (
-              <div className="space-y-1">
-                {completedScripts.slice(0, 2).map(s => {
-                  const rounded = s.score ? Math.round(s.score) : null
-                  return (
-                    <div key={s.id} className="flex items-center justify-between gap-2">
-                      <span className="text-[12px] text-gray-600 truncate">{s.title}</span>
-                      {rounded && (
-                        <span className="text-[11px] font-bold text-white px-1.5 py-0.5 rounded shrink-0"
-                          style={{ background: scoreBadge(rounded).bg }}>
-                          {rounded}
-                        </span>
-                      )}
-                    </div>
-                  )
-                })}
-                {completedScripts.length > 2 && (
-                  <Link href="/scripts" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                    View all →
-                  </Link>
-                )}
-              </div>
-            ) : (
-              <p className="text-[12px] text-gray-400 m-0">Upload a script to get started</p>
-            )}
+          <div className="rounded-xl bg-white px-4 py-3" style={{ boxShadow: cardShadow }}>
+            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">Scripts Evaluated</div>
+            <div className="text-[26px] font-bold text-gray-900 leading-tight">{user ? scriptCount : 0}</div>
           </div>
-
-          {/* Card 2: Your Opportunities (pending applications) */}
-          <div className="rounded-2xl bg-white px-5 py-4"
-            style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">Your Opportunities</div>
-            <div className="text-[28px] font-bold text-gray-900 leading-none mb-2">
+          <Link href="/review" className="block rounded-xl bg-white px-4 py-3 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">Your Opportunities</div>
+            <div className="text-[26px] font-bold text-gray-900 leading-tight">
               {user ? pendingCount : 0}
-              <span className="text-[13px] font-medium text-gray-400 ml-1.5">pending</span>
+              <span className="text-[12px] font-medium text-gray-400 ml-1">pending</span>
             </div>
-            {user && pendingApps.length > 0 ? (
-              <div className="space-y-1">
-                {pendingApps.slice(0, 2).map(app => {
-                  const opp = oppMap.get(app.opportunity_id)
-                  return (
-                    <div key={app.id} className="flex items-center justify-between gap-2">
-                      <span className="text-[12px] text-gray-600 truncate">
-                        {opp?.title || 'Opportunity'}
-                      </span>
-                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0"
-                        style={{ background: '#fef3c7', color: '#92400e' }}>
-                        Pending
-                      </span>
-                    </div>
-                  )
-                })}
-                {allApplications.length > 2 && (
-                  <Link href="/review" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                    View all →
-                  </Link>
-                )}
-              </div>
-            ) : (
-              <p className="text-[12px] text-gray-400 m-0">Apply to opportunities below</p>
-            )}
-          </div>
-
-          {/* Card 3: 🔥 Industry Heat */}
-          <div className="rounded-2xl bg-white px-5 py-4"
-            style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">🔥 Industry Heat</div>
-            <div className="text-[28px] font-bold text-gray-900 leading-none mb-2">
-              {user ? totalHeat : 0}
-            </div>
-            {user && reviewedApps.length > 0 ? (
-              <div className="space-y-1">
-                {reviewedApps.slice(0, 2).map(app => {
-                  const opp = oppMap.get(app.opportunity_id)
-                  return (
-                    <Link key={app.id} href={`/applications/${app.id}`}
-                      className="flex items-center justify-between gap-2 group">
-                      <span className="text-[12px] text-gray-600 truncate group-hover:text-purple-600 transition-colors">
-                        {opp?.title || 'Review'}
-                      </span>
-                      {app.heat_earned > 0 && (
-                        <span className="text-[11px] font-bold shrink-0" style={{ color: '#ea580c' }}>
-                          +{app.heat_earned} 🔥
-                        </span>
-                      )}
-                    </Link>
-                  )
-                })}
-                {reviewedApps.length > 2 && (
-                  <Link href="/review" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                    View details →
-                  </Link>
-                )}
-              </div>
-            ) : (
-              <p className="text-[12px] text-gray-400 m-0">Earn heat from reviews</p>
-            )}
-          </div>
-
+          </Link>
+          <Link href="/review" className="block rounded-xl bg-white px-4 py-3 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">Industry Heat</div>
+            <div className="text-[26px] font-bold text-gray-900 leading-tight">{user ? totalHeat : 0}</div>
+          </Link>
         </section>
 
-        {/* ── RECENT SCRIPTS ── */}
+        {/* ── YOUR SCRIPTS — 3-column grid ── */}
         <section>
-          <header className="flex items-center justify-between gap-3 mb-4">
-            <h2 className="text-[16px] font-bold text-gray-900 m-0">Your scripts</h2>
+          <header className="flex items-center justify-between gap-3 mb-3">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Your scripts</h2>
             {completedScripts.length > 3 && (
               <Link href="/scripts" className="text-[13px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
                 View all
@@ -356,106 +265,93 @@ export default async function DashboardPage() {
           </header>
 
           {completedScripts.length === 0 && processingScripts.length === 0 ? (
-            <div className="rounded-2xl bg-white px-6 py-10 text-center"
-              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-              <div className="w-12 h-12 rounded-2xl mx-auto mb-3 flex items-center justify-center"
-                style={{ background: '#f5f3ff' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+              <div className="w-10 h-10 rounded-xl mx-auto mb-2 flex items-center justify-center" style={{ background: '#f5f3ff' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
                 </svg>
               </div>
-              <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-              <p className="text-[13px] text-gray-400 m-0">Upload a screenplay above to get your first evaluation.</p>
+              <p className="text-[14px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
+              <p className="text-[13px] text-gray-500 m-0">Upload a screenplay above to get started.</p>
             </div>
           ) : (
-            <div className="rounded-2xl bg-white overflow-hidden"
-              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-
+            <div className="grid grid-cols-3 gap-3">
               {/* Processing scripts */}
-              {processingScripts.map((script, i) => (
-                <div key={script.id} className="px-5 py-4"
-                  style={{ borderBottom: (i < processingScripts.length - 1 || completedScripts.length > 0) ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
-                  <div className="flex items-center gap-4">
-                    <div className="w-[44px] h-[44px] rounded-full flex items-center justify-center shrink-0"
-                      style={{ background: 'linear-gradient(135deg, #ede9fe, #f5f3ff)' }}>
-                      <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
-                        <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</div>
-                      <div className="text-[13px] text-gray-400 mt-0.5">Evaluating...</div>
-                    </div>
+              {processingScripts.slice(0, 3).map(script => (
+                <div key={script.id} className="rounded-xl bg-white p-4 flex flex-col" style={{ boxShadow: cardShadow }}>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[14px] font-semibold text-gray-900 truncate">{script.title}</span>
+                    <svg className="animate-spin shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
+                      <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+                    </svg>
                   </div>
+                  <p className="text-[13px] text-gray-500 m-0">Evaluating...</p>
                 </div>
               ))}
 
-              {/* Completed scripts — action-checklist layout */}
-              {completedScripts.slice(0, 5).map((script, i) => {
-                const roundedScore = script.score ? Math.round(script.score) : null
-                const badge = roundedScore ? scoreBadge(roundedScore) : null
+              {/* Completed script cards */}
+              {completedScripts.slice(0, 3 - processingScripts.length).map(script => {
+                const rounded = script.score ? Math.round(script.score) : null
+                const badge = rounded ? scoreBadge(rounded) : null
+                const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
 
                 return (
-                  <div key={script.id} className="px-5 py-4 transition-colors hover:bg-gray-50/50"
-                    style={{ borderBottom: i < Math.min(completedScripts.length, 5) - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
+                  <div key={script.id} className="relative rounded-xl bg-white overflow-hidden group hover:shadow-md transition-shadow"
+                    style={{ boxShadow: cardShadow }}>
 
-                    {/* Top row: title + GEM Score pill */}
-                    <div className="flex items-start justify-between gap-3 mb-1">
-                      <div className="min-w-0 flex-1">
-                        <div className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</div>
+                    {/* Full-card link (behind everything) */}
+                    <Link href={reportHref} className="absolute inset-0 z-0" aria-label={`View report for ${script.title}`} />
+
+                    <div className="relative z-10 p-4 flex flex-col h-full pointer-events-none">
+                      {/* Title + score */}
+                      <div className="flex items-start justify-between gap-2 mb-1.5">
+                        <h3 className="text-[14px] font-semibold text-gray-900 m-0 leading-snug truncate group-hover:text-purple-700 transition-colors">
+                          {script.title}
+                        </h3>
+                        {badge && rounded && (
+                          <span className="shrink-0 text-[12px] font-bold text-white px-2 py-0.5 rounded-full"
+                            style={{ background: badge.bg }}>
+                            {rounded}
+                          </span>
+                        )}
                       </div>
-                      {badge && roundedScore && (
-                        <span className="shrink-0 text-[12px] font-bold text-white px-2.5 py-1 rounded-full"
-                          style={{ background: badge.bg }}>
-                          GEM Score {roundedScore}
-                        </span>
+
+                      {/* Logline */}
+                      {script.logline && (
+                        <p className="text-[13px] leading-snug text-gray-600 m-0 mb-2 line-clamp-2">
+                          {script.logline}
+                        </p>
                       )}
-                    </div>
 
-                    {/* Logline */}
-                    {script.logline && (
-                      <p className="text-[13px] leading-relaxed text-gray-500 m-0 mt-0.5 mb-2 line-clamp-2">
-                        {script.logline}
-                      </p>
-                    )}
+                      {/* Format · Genre */}
+                      <div className="text-[12px] font-medium text-gray-500 mb-3">
+                        {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
+                      </div>
 
-                    {/* Meta line */}
-                    <div className="text-[12px] text-gray-400 mb-3">
-                      {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
-                    </div>
+                      {/* Spacer to push actions to bottom */}
+                      <div className="flex-1" />
 
-                    {/* Action checklist */}
-                    <div className="space-y-1.5 mb-2">
-                      {/* Apply for opportunities */}
-                      <QuickApplyDropdown
-                        scriptId={script.id}
-                        opportunities={script.qualifyingOpps}
-                        appliedOppIds={appliedOppIdsArr}
-                      />
-
-                      {/* Publish to Discover */}
-                      <div className="flex items-center gap-2">
+                      {/* Actions — these need pointer events */}
+                      <div className="flex items-center gap-2 pointer-events-auto">
+                        {script.qualifyingOpps.length > 0 && (
+                          <QuickApplyDropdown
+                            scriptId={script.id}
+                            opportunities={script.qualifyingOpps}
+                            appliedOppIds={appliedOppIdsArr}
+                            className="flex-1"
+                          />
+                        )}
                         {script.isPublic ? (
-                          <span className="text-[13px] text-emerald-600 font-medium">✓ Published to Discover</span>
+                          <span className="text-[12px] font-semibold text-emerald-600 px-2 py-1">Published</span>
                         ) : (
-                          <Link href={script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'}
-                            className="text-[13px] font-medium text-gray-500 hover:text-purple-600 transition-colors">
-                            ○ Publish to Discover
+                          <Link href={reportHref}
+                            className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors px-2 py-1">
+                            Publish
                           </Link>
                         )}
                       </div>
                     </div>
-
-                    {/* View report link — bottom right */}
-                    {script.evaluationId && (
-                      <div className="flex justify-end">
-                        <Link href={`/report/${script.evaluationId}`}
-                          className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
-                          View report →
-                        </Link>
-                      </div>
-                    )}
                   </div>
                 )
               })}
@@ -463,99 +359,81 @@ export default async function DashboardPage() {
           )}
         </section>
 
-        {/* ── OPPORTUNITIES FOR YOU ── */}
+        {/* ── OPPORTUNITIES FOR YOU — 3-column grid ── */}
         <section>
-          <header className="flex items-center justify-between gap-3 mb-4">
-            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
+          <header className="flex items-center justify-between gap-3 mb-3">
+            <h2 className="text-[15px] font-bold text-gray-900 m-0">Opportunities for you</h2>
             <Link href="/opportunities" className="text-[13px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
               View all
             </Link>
           </header>
 
           {dashboardOpps.length === 0 ? (
-            <div className="rounded-2xl bg-white px-6 py-10 text-center"
-              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-              <p className="text-[14px] text-gray-400 m-0">No opportunities right now. Check back soon.</p>
+            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+              <p className="text-[13px] text-gray-500 m-0">No opportunities right now. Check back soon.</p>
             </div>
           ) : (
-            <div className="grid gap-3">
-              {dashboardOpps.map(opp => {
+            <div className="grid grid-cols-3 gap-3">
+              {dashboardOpps.slice(0, 3).map(opp => {
                 const isQualified = qualifiedOppIds.has(opp.id)
                 const deadlineDays = opp.deadline
                   ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
                   : null
 
-                // Build qualification details
-                const quals: string[] = []
-                if (opp.formats && opp.formats.length > 0) quals.push(opp.formats.join(', '))
-                if (opp.genres && opp.genres.length > 0) quals.push(opp.genres.slice(0, 3).join(', '))
-
                 return (
                   <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
-                    <div className="rounded-2xl bg-white px-5 py-4 transition-shadow duration-150 hover:shadow-md"
-                      style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+                    <div className="rounded-xl bg-white p-4 h-full hover:shadow-md transition-shadow"
+                      style={{ boxShadow: cardShadow }}>
 
-                      {/* Title row */}
-                      <div className="flex items-start justify-between gap-3 mb-1.5">
-                        <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
-                          {opp.title}
-                        </h3>
-                        <div className="flex items-center gap-1.5 shrink-0">
-                          {isQualified && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white"
-                              style={{ background: '#7c3aed' }}>
-                              You qualify
-                            </span>
-                          )}
-                          {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                              style={{
-                                background: deadlineDays <= 7 ? '#dc2626' : '#d97706',
-                                color: 'white',
-                              }}>
-                              {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
-                            </span>
-                          )}
-                        </div>
+                      {/* Badges row */}
+                      <div className="flex items-center gap-1.5 mb-2">
+                        {isQualified && (
+                          <span className="text-[11px] font-bold px-2 py-0.5 rounded-full text-white"
+                            style={{ background: '#7c3aed' }}>
+                            You qualify
+                          </span>
+                        )}
+                        {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
+                          <span className="text-[11px] font-bold px-2 py-0.5 rounded-full text-white"
+                            style={{ background: deadlineDays <= 7 ? '#dc2626' : '#d97706' }}>
+                            {deadlineDays === 1 ? 'Tomorrow' : `${deadlineDays}d left`}
+                          </span>
+                        )}
                       </div>
 
-                      {/* Subtitle / description */}
+                      {/* Title */}
+                      <h3 className="text-[14px] font-semibold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">
+                        {opp.title}
+                      </h3>
+
+                      {/* Description */}
                       {(opp.subtitle || opp.description) && (
-                        <p className="text-[13px] text-gray-500 m-0 mb-2.5 line-clamp-2 leading-relaxed">
+                        <p className="text-[13px] text-gray-600 m-0 mb-2 line-clamp-2 leading-snug">
                           {opp.subtitle || opp.description}
                         </p>
                       )}
 
-                      {/* Qualification criteria */}
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                      {/* Criteria pills */}
+                      <div className="flex flex-wrap items-center gap-1.5">
                         {opp.min_score && (
                           <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
                             style={{ background: '#f5f3ff', color: '#7c3aed' }}>
-                            Min score: {opp.min_score}
+                            Min {opp.min_score}
                           </span>
                         )}
                         {opp.formats && opp.formats.length > 0 && (
                           <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-                            style={{ background: '#f0fdf4', color: '#059669' }}>
+                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
                             {opp.formats.join(' / ')}
                           </span>
                         )}
                         {opp.genres && opp.genres.length > 0 && (
                           <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-                            style={{ background: '#fefce8', color: '#a16207' }}>
-                            {opp.genres.slice(0, 3).join(', ')}
-                          </span>
-                        )}
-                        {opp.deadline && (
-                          <span className="text-[11px] text-gray-400">
-                            Deadline: {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
+                            {opp.genres.slice(0, 2).join(', ')}
                           </span>
                         )}
                       </div>
-
-                      <span className="text-[12px] font-medium text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                        View details →
-                      </span>
                     </div>
                   </Link>
                 )
