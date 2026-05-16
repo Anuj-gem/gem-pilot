@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 type DeclaredFormat = 'Feature film' | 'Series'
 type HeroState = 'pick' | 'upload' | 'success'
 
-export function FormatSelectorHero() {
+export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: number }) {
   const router = useRouter()
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [state, setState] = useState<HeroState>('pick')
@@ -138,7 +138,7 @@ export function FormatSelectorHero() {
         </h1>
 
         {/* FORMAT SELECTION — default state */}
-        {state === 'pick' && (
+        {state === 'pick' && evalsRemaining > 0 && (
           <div className="flex items-center justify-center gap-4 animate-in fade-in duration-300">
             <button
               onClick={() => handleFormatSelect('Feature film')}
@@ -153,6 +153,36 @@ export function FormatSelectorHero() {
               style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', boxShadow: '0 4px 14px rgba(124,58,237,0.4)' }}
             >
               Series
+            </button>
+          </div>
+        )}
+
+        {/* LOCKED STATE — at limit */}
+        {state === 'pick' && evalsRemaining <= 0 && (
+          <div className="flex flex-col items-center gap-5 animate-in fade-in duration-300">
+            <div className="flex items-center justify-center gap-4">
+              <button
+                disabled
+                className="px-10 py-4 rounded-full text-[17px] font-semibold text-white/40 border-0 cursor-not-allowed"
+                style={{ background: 'rgba(124,58,237,0.25)' }}
+              >
+                Film
+              </button>
+              <button
+                disabled
+                className="px-10 py-4 rounded-full text-[17px] font-semibold text-white/40 border-0 cursor-not-allowed"
+                style={{ background: 'rgba(124,58,237,0.25)' }}
+              >
+                Series
+              </button>
+            </div>
+            <p className="text-[14px] text-white/60 m-0">You&apos;ve used your free evaluations</p>
+            <button
+              onClick={() => window.dispatchEvent(new Event('gem:open-upgrade-modal'))}
+              className="px-8 py-3.5 rounded-full text-[16px] font-bold text-white border-0 cursor-pointer transition-all hover:scale-[1.03] active:scale-[0.98]"
+              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', boxShadow: '0 4px 14px rgba(124,58,237,0.4)' }}
+            >
+              Become a member to keep uploading
             </button>
           </div>
         )}

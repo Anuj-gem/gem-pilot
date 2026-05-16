@@ -376,7 +376,7 @@ export default async function DashboardPage() {
       <div className="space-y-5">
 
         {/* ── FORMAT SELECTOR HERO ── */}
-        <FormatSelectorHero />
+        <FormatSelectorHero evalsRemaining={isPro ? 99 : evalsRemaining} />
 
         {/* ── THREE VALUE CARDS ── */}
         <section className="grid grid-cols-3 gap-3">
