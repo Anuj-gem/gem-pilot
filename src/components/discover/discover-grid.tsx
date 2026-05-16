@@ -21,11 +21,11 @@ export interface DiscoverCard {
   data: ScriptCardData
   recentTs: number
   selznick: number
+  heat: number
   reviews: number
   /** Whether the writer has elected to show their score publicly. When
    *  false, the script is excluded from Top-GEM sort entirely — you
-   *  can't hide your score and still rank on it. (Anuj 2026-05-01
-   *  v0.12.3.) */
+   *  can't hide your score and still rank on it. */
   scoreVisible: boolean
   /** Raw genre_primary string from the eval, lowercased + stripped to
    *  alpha so we can match GenreId loosely. */
@@ -36,9 +36,9 @@ export interface DiscoverCard {
 }
 
 const SORTS = [
-  { id: 'recent', label: 'Most recent' },
-  { id: 'top_gem', label: 'Top GEM score' },
-  { id: 'most_reviewed', label: 'Most reviewed' },
+  { id: 'top_gem', label: 'GEM Score' },
+  { id: 'top_heat', label: 'Heat' },
+  { id: 'recent', label: 'Recent' },
 ] as const
 type SortId = (typeof SORTS)[number]['id']
 
@@ -84,7 +84,7 @@ export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/
   // Sync URL whenever state changes.
   useEffect(() => {
     const params = new URLSearchParams(sp?.toString() || '')
-    if (sort === 'recent') params.delete('sort'); else params.set('sort', sort)
+    if (sort === 'top_gem') params.delete('sort'); else params.set('sort', sort)
     if (filters.format === 'all') params.delete('format'); else params.set('format', filters.format)
     if (filters.genres.length === 0) params.delete('genres'); else params.set('genres', filters.genres.join(','))
     if (filters.budgets.length === 0) params.delete('budgets'); else params.set('budgets', filters.budgets.join(','))
@@ -109,15 +109,13 @@ export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/
     if (filters.budgets.length > 0) {
       list = list.filter((c) => c.budget != null && filters.budgets.includes(c.budget))
     }
-    // Top-GEM sort excludes scripts where the writer hid their score —
-    // you can't suppress your number and still get ranked on it.
-    // Anuj 2026-05-01 v0.12.3.
+    // Top-GEM sort excludes scripts where the writer hid their score.
     if (sort === 'top_gem') {
       list = list.filter((c) => c.scoreVisible)
     }
-    const key: 'selznick' | 'reviews' | 'recentTs' =
+    const key: 'selznick' | 'heat' | 'recentTs' =
       sort === 'top_gem' ? 'selznick'
-      : sort === 'most_reviewed' ? 'reviews'
+      : sort === 'top_heat' ? 'heat'
       : 'recentTs'
     return [...list].sort((a, b) => Number(b[key]) - Number(a[key])).slice(0, 60)
   }, [cards, sort, filters])

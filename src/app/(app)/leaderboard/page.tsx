@@ -53,9 +53,9 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   }
 
   const sp = await searchParams
-  const initialSort = (['recent', 'top_gem', 'most_reviewed'].includes(sp.sort || '')
+  const initialSort = (['recent', 'top_gem', 'top_heat'].includes(sp.sort || '')
     ? sp.sort
-    : 'top_gem') as 'recent' | 'top_gem' | 'most_reviewed'
+    : 'top_gem') as 'recent' | 'top_gem' | 'top_heat'
   const initialFormat = (['all', 'feature', 'series'].includes(sp.format || '')
     ? sp.format
     : 'all') as 'all' | 'feature' | 'series'
@@ -64,15 +64,14 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
 
   const service = svc()
 
-  // All non-hidden completed scripts, capped at 25.
-  // NOT filtered by is_public — we show everything that isn't hidden.
+  // All public completed scripts — the leaderboard.
   const { data: rows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry')
+    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry, heat_score')
     .eq('status', 'completed')
+    .eq('is_public', true)
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
-    .limit(25)
   type SubRow = {
     id: string
     title: string
@@ -82,6 +81,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
     report_privacy: { show_score?: boolean } | null
     allow_reviews: boolean | null
     allow_industry: boolean | null
+    heat_score: number | null
   }
   const scripts = (rows as SubRow[] | null) || []
   const submissionIds = scripts.map((s) => s.id)
@@ -149,6 +149,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
         data,
         recentTs: new Date(s.created_at).getTime(),
         selznick: Number(ev.weighted_score ?? 0),
+        heat: s.heat_score ?? 0,
         scoreVisible,
         reviews: st?.reviewCount ?? 0,
         genreKey: ev.genreKey,
@@ -160,8 +161,8 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Leaderboard</h1>
-        <p className="mt-1 text-sm text-gray-500">Scripts from the GEM community, ranked by score.</p>
+        <h1 className="text-2xl font-bold text-gray-900">Discover</h1>
+        <p className="mt-1 text-sm text-gray-500">{cards.length} scripts from the GEM community</p>
       </div>
       <DiscoverGrid
         cards={cards}
