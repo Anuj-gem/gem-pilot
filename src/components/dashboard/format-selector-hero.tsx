@@ -132,24 +132,24 @@ export function FormatSelectorHero() {
         backgroundImage: 'radial-gradient(1px 1px at 20% 30%, white, transparent), radial-gradient(1px 1px at 70% 20%, white, transparent), radial-gradient(1px 1px at 40% 70%, white, transparent), radial-gradient(1px 1px at 80% 60%, white, transparent), radial-gradient(1px 1px at 10% 80%, white, transparent), radial-gradient(1px 1px at 90% 40%, white, transparent), radial-gradient(1px 1px at 55% 10%, white, transparent), radial-gradient(1px 1px at 30% 50%, white, transparent)',
       }} />
 
-      <div className="relative w-full max-w-md">
-        <h1 className="text-[28px] font-bold text-white m-0 mb-6">
+      <div className="relative w-full max-w-lg">
+        <h1 className="text-[36px] font-bold text-white m-0 mb-8">
           What are you working on?
         </h1>
 
         {/* FORMAT SELECTION — default state */}
         {state === 'pick' && (
-          <div className="flex items-center justify-center gap-3 animate-in fade-in duration-300">
+          <div className="flex items-center justify-center gap-4 animate-in fade-in duration-300">
             <button
               onClick={() => handleFormatSelect('Feature film')}
-              className="px-8 py-3 rounded-full text-[15px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
+              className="px-10 py-4 rounded-full text-[17px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', boxShadow: '0 4px 14px rgba(124,58,237,0.4)' }}
             >
               Film
             </button>
             <button
               onClick={() => handleFormatSelect('Series')}
-              className="px-8 py-3 rounded-full text-[15px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
+              className="px-10 py-4 rounded-full text-[17px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', boxShadow: '0 4px 14px rgba(124,58,237,0.4)' }}
             >
               Series
@@ -157,44 +157,55 @@ export function FormatSelectorHero() {
           </div>
         )}
 
-        {/* FILE PICKER — slides in from left after format selected */}
+        {/* DRAG & DROP ZONE — slides in from left after format selected */}
         {state === 'upload' && (
           <div className="animate-in slide-in-from-left-4 fade-in duration-300">
-            <button
+            <div
               onClick={() => fileInputRef.current?.click()}
-              className="px-8 py-3 rounded-full text-[15px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
-              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', boxShadow: '0 4px 14px rgba(124,58,237,0.4)' }}
+              onDragOver={e => { e.preventDefault(); e.currentTarget.style.borderColor = '#a855f7' }}
+              onDragLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)' }}
+              onDrop={e => {
+                e.preventDefault()
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'
+                const f = e.dataTransfer.files?.[0]
+                if (!f) return
+                if (f.type !== 'application/pdf') { setError('Only PDF files are accepted'); return }
+                if (f.size > 10 * 1024 * 1024) { setError('File too large (max 10 MB)'); return }
+                setError(null)
+                submitFile(f)
+              }}
+              className="w-full rounded-2xl py-12 px-8 text-center cursor-pointer transition-all hover:border-purple-400"
+              style={{ border: '2px dashed rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.05)' }}
             >
-              <span className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
-                </svg>
-                Upload your screenplay
-              </span>
-            </button>
-            <p className="text-[12px] text-white/50 mt-3">PDF only, up to 10 MB</p>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-4 opacity-70">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              <p className="text-[16px] text-white font-medium m-0 mb-2">Drop your screenplay here</p>
+              <p className="text-[13px] text-white/50 m-0">or click to browse · PDF, up to 10 MB</p>
+            </div>
+            <p className="text-[12px] text-white/40 mt-4">Your scripts are completely private to you</p>
           </div>
         )}
 
-        {/* SUCCESS — checkmark then fades out to right */}
+        {/* SUCCESS — checkmark then fades out */}
         {state === 'success' && (
           <div className="animate-in slide-in-from-left-2 fade-in duration-200">
-            <div className="flex items-center justify-center gap-2">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="10" fill="#22c55e" />
-                <path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <div className="flex items-center justify-center gap-3">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="14" fill="#22c55e" />
+                <path d="M8 14.5l3.5 3.5 8-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="text-[15px] font-semibold text-white">Upload successful</span>
+              <span className="text-[18px] font-semibold text-white">Upload successful</span>
             </div>
           </div>
         )}
 
         {/* Error message */}
         {error && (
-          <p className="text-[12px] text-red-300 mt-3">{error}</p>
+          <p className="text-[13px] text-red-300 mt-4">{error}</p>
         )}
 
-        {/* Hidden file input */}
+        {/* Hidden file input (fallback for click-to-browse) */}
         <input
           ref={fileInputRef}
           type="file"

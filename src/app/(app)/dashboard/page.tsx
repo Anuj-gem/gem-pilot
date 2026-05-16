@@ -376,6 +376,102 @@ export default async function DashboardPage() {
 
         </section>
 
+        {/* ── OPPORTUNITIES FOR YOU — 3-column grid ── */}
+        <section>
+          <header className="flex items-center gap-2 mb-3">
+            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
+            {user && !isPro && (
+              <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
+                style={{ background: appsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: appsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
+                {appsRemaining > 0 ? `${appsRemaining} application${appsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
+              </span>
+            )}
+            <Link href="/opportunities" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
+              View all →
+            </Link>
+          </header>
+
+          {dashboardOpps.length === 0 ? (
+            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+              <p className="text-[13px] text-gray-500 m-0">No opportunities right now. Check back soon.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-3">
+              {dashboardOpps.map(opp => {
+                const matchCount = matchingScriptCount(opp)
+                const postedDate = new Date(opp.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+
+                return (
+                  <div key={opp.id} className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
+                    style={{ boxShadow: cardShadow }}>
+
+                    {/* Full-card link for "View details" */}
+                    <Link href={`/opportunities/${opp.slug}`} className="absolute inset-0 z-0" aria-label={opp.title} />
+
+                    {/* Card body */}
+                    <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
+
+                      {/* Top row: Paid badge + posted date */}
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[12px] font-bold px-2 py-0.5 rounded"
+                          style={{ background: '#eff6ff', color: '#1d4ed8' }}>
+                          💼 Paid
+                        </span>
+                        <span className="text-[12px] text-gray-500">Posted {postedDate}</span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
+                        {opp.title}
+                      </h3>
+
+                      {/* Format + Genre as labeled lines */}
+                      <div className="space-y-0.5 mb-2">
+                        {opp.formats && opp.formats.length > 0 && (
+                          <div className="text-[13px]">
+                            <span className="text-gray-400">Format:</span>{' '}
+                            <span className="text-gray-700">{opp.formats.join(', ')}</span>
+                          </div>
+                        )}
+                        {opp.genres && opp.genres.length > 0 && (
+                          <div className="text-[13px]">
+                            <span className="text-gray-400">Genre:</span>{' '}
+                            <span className="text-gray-700">{opp.genres.slice(0, 3).join(', ')}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Subtitle / description */}
+                      {(opp.subtitle || opp.description) && (
+                        <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
+                          {opp.subtitle || opp.description}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Bottom bar — View details + match count / apply dropdown */}
+                    <div className="relative z-10 px-4 py-2.5 flex items-center justify-between pointer-events-auto"
+                      style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                      <Link href={`/opportunities/${opp.slug}`}
+                        className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                        View details →
+                      </Link>
+                      {matchCount > 0 ? (
+                        <span className="text-[13px] font-semibold text-purple-600">
+                          {matchCount} {matchCount === 1 ? 'script matches' : 'scripts match'}
+                        </span>
+                      ) : (
+                        <span className="text-[13px] text-gray-400">0 scripts match</span>
+                      )}
+                    </div>
+
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </section>
+
         {/* ── YOUR SCRIPTS — 2-column grid ── */}
         <section>
           <header className="flex items-center gap-2 mb-3">
@@ -485,102 +581,6 @@ export default async function DashboardPage() {
                         )}
                       </div>
                     </div>
-                  </div>
-                )
-              })}
-            </div>
-          )}
-        </section>
-
-        {/* ── OPPORTUNITIES FOR YOU — 3-column grid ── */}
-        <section>
-          <header className="flex items-center gap-2 mb-3">
-            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
-            {user && !isPro && (
-              <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
-                style={{ background: appsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: appsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
-                {appsRemaining > 0 ? `${appsRemaining} application${appsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
-              </span>
-            )}
-            <Link href="/opportunities" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-              View all →
-            </Link>
-          </header>
-
-          {dashboardOpps.length === 0 ? (
-            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
-              <p className="text-[13px] text-gray-500 m-0">No opportunities right now. Check back soon.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-3 gap-3">
-              {dashboardOpps.map(opp => {
-                const matchCount = matchingScriptCount(opp)
-                const postedDate = new Date(opp.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-
-                return (
-                  <div key={opp.id} className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
-                    style={{ boxShadow: cardShadow }}>
-
-                    {/* Full-card link for "View details" */}
-                    <Link href={`/opportunities/${opp.slug}`} className="absolute inset-0 z-0" aria-label={opp.title} />
-
-                    {/* Card body */}
-                    <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
-
-                      {/* Top row: Paid badge + posted date */}
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-[12px] font-bold px-2 py-0.5 rounded"
-                          style={{ background: '#eff6ff', color: '#1d4ed8' }}>
-                          💼 Paid
-                        </span>
-                        <span className="text-[12px] text-gray-500">Posted {postedDate}</span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
-                        {opp.title}
-                      </h3>
-
-                      {/* Format + Genre as labeled lines */}
-                      <div className="space-y-0.5 mb-2">
-                        {opp.formats && opp.formats.length > 0 && (
-                          <div className="text-[13px]">
-                            <span className="text-gray-400">Format:</span>{' '}
-                            <span className="text-gray-700">{opp.formats.join(', ')}</span>
-                          </div>
-                        )}
-                        {opp.genres && opp.genres.length > 0 && (
-                          <div className="text-[13px]">
-                            <span className="text-gray-400">Genre:</span>{' '}
-                            <span className="text-gray-700">{opp.genres.slice(0, 3).join(', ')}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Subtitle / description */}
-                      {(opp.subtitle || opp.description) && (
-                        <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
-                          {opp.subtitle || opp.description}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Bottom bar — View details + match count / apply dropdown */}
-                    <div className="relative z-10 px-4 py-2.5 flex items-center justify-between pointer-events-auto"
-                      style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                      <Link href={`/opportunities/${opp.slug}`}
-                        className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
-                        View details →
-                      </Link>
-                      {matchCount > 0 ? (
-                        <span className="text-[13px] font-semibold text-purple-600">
-                          {matchCount} {matchCount === 1 ? 'script matches' : 'scripts match'}
-                        </span>
-                      ) : (
-                        <span className="text-[13px] text-gray-400">0 scripts match</span>
-                      )}
-                    </div>
-
                   </div>
                 )
               })}
