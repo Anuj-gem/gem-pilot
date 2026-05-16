@@ -16,6 +16,8 @@ export type ScriptRowData = {
   score: number | null
   evaluationId: string | null
   createdAt: string
+  // Heat — total industry heat accrued by this script
+  heat?: number
   // Opportunities
   matchingOpportunities?: { title: string; slug: string }[]
   // States
@@ -126,6 +128,21 @@ export function ScriptRowCard({
             style={{ background: 'rgba(107,114,128,0.06)' }}
           >
             <span className="text-[11px] text-gray-300">&mdash;</span>
+          </div>
+        )}
+
+        {/* Heat badge — shown next to score when heat > 0 */}
+        {!s.isProcessing && !s.isLocked && s.heat != null && s.heat > 0 && (
+          <div
+            className="shrink-0 w-11 h-11 rounded-lg flex flex-col items-center justify-center"
+            style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}
+          >
+            <span className="text-[14px] font-extrabold leading-none text-orange-600">
+              {s.heat}
+            </span>
+            <span className="text-[7px] font-bold uppercase tracking-wide mt-0.5 text-orange-400">
+              🔥 Heat
+            </span>
           </div>
         )}
 

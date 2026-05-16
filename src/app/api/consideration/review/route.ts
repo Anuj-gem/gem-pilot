@@ -79,6 +79,7 @@ export async function POST(req: NextRequest) {
             const previousHeat = currentCon.heat_earned || 0
             const heatDelta = totalHeat - previousHeat // In case of re-review, only add the difference
             if (heatDelta > 0) {
+              // Update profile-level heat
               await service.rpc('increment_heat_score', {
                 p_user_id: currentCon.writer_id,
                 p_amount: heatDelta,
@@ -96,6 +97,25 @@ export async function POST(req: NextRequest) {
                     .eq('id', currentCon.writer_id)
                 }
               })
+
+              // Update script-level heat — distribute to all scripts in this consideration
+              const { data: csRows } = await service
+                .from('consideration_scripts')
+                .select('script_id')
+                .eq('consideration_id', consideration_id)
+              if (csRows && csRows.length > 0) {
+                for (const cs of csRows) {
+                  const { data: sub } = await service
+                    .from('script_submissions')
+                    .select('heat_score')
+                    .eq('id', cs.script_id)
+                    .single()
+                  await service
+                    .from('script_submissions')
+                    .update({ heat_score: ((sub as any)?.heat_score || 0) + heatDelta })
+                    .eq('id', cs.script_id)
+                }
+              }
             }
           }
         }

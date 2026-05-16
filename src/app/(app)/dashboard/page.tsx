@@ -38,6 +38,7 @@ export default async function DashboardPage() {
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; is_public: boolean | null
+    heat_score: number | null
   }
   let visible: MySubRow[] = []
   let submissionIds: string[] = []
@@ -84,7 +85,7 @@ export default async function DashboardPage() {
 
     const { data: mySubs } = await supabase
       .from('script_submissions')
-      .select('id, title, status, declared_format, created_at, hidden_at, is_public')
+      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
     visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -195,6 +196,7 @@ export default async function DashboardPage() {
         score: ev?.weighted_score ?? null,
         evaluationId: ev?.id ?? null,
         createdAt: s.created_at,
+        heat: s.heat_score ?? 0,
         qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug, subtitle: o.subtitle })),
         isPublic: s.is_public ?? false,
         logline: ev?.logline ?? null,
@@ -531,13 +533,21 @@ export default async function DashboardPage() {
 
                     <div className="relative z-10 p-4 flex flex-col flex-1 pointer-events-none">
 
-                      {/* GEM Score badge — own row */}
-                      {badge && rounded && (
+                      {/* GEM Score + Heat badges — own row */}
+                      {(badge && rounded || script.heat > 0) && (
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
-                            <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
-                            <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
-                          </div>
+                          {badge && rounded && (
+                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
+                              <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
+                              <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
+                            </div>
+                          )}
+                          {script.heat > 0 && (
+                            <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
+                              <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
+                              <div className="text-[20px] font-bold text-orange-600 leading-tight">🔥 {script.heat}</div>
+                            </div>
+                          )}
                         </div>
                       )}
 
