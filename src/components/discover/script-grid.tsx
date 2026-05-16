@@ -45,7 +45,7 @@ function ScriptRow({
     e.preventDefault()
     e.stopPropagation()
     if (!loggedIn) {
-      router.push(`/login?redirect=/discover`)
+      router.push(`/login?redirect=/leaderboard`)
       return
     }
     setLoading(true)

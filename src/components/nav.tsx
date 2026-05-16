@@ -58,7 +58,7 @@ export default function Nav({ userData }: NavProps = {}) {
   // "Home" points to /dashboard (logged in) or / (logged out).
   const navLinks = [
     { href: user ? '/dashboard' : '/', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/discover', label: 'Discover', icon: Compass },
+    { href: '/leaderboard', label: 'Leaderboard', icon: Compass },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
   ]
 

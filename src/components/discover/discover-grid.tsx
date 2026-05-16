@@ -70,7 +70,7 @@ interface Props {
   basePath?: string
 }
 
-export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/community' }: Props) {
+export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/leaderboard' }: Props) {
   const router = useRouter()
   const sp = useSearchParams()
   const [sort, setSort] = useState<SortId>(initialSort)

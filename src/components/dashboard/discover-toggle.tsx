@@ -1,6 +1,6 @@
 'use client'
 
-// DiscoverToggle — compact pill toggle for publishing a script to Discover.
+// DiscoverToggle — "Share on Leaderboard" with on/off toggle switch.
 // Sits in the footer row of script cards. Calls /api/scripts/[id]/visibility.
 
 import { useState, useTransition } from 'react'
@@ -24,7 +24,7 @@ export function DiscoverToggle({ scriptId, isPublic, isPro }: Props) {
     // Gate non-Pro users
     if (!on && !isPro) {
       window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
-        detail: { contextMessage: 'Become a member to publish on Discover.' },
+        detail: { contextMessage: 'Become a member to share your script on the leaderboard.' },
       }))
       return
     }
@@ -41,7 +41,7 @@ export function DiscoverToggle({ scriptId, isPublic, isPro }: Props) {
         startTransition(() => router.refresh())
       } else if (res.status === 403) {
         window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
-          detail: { contextMessage: 'Become a member to publish on Discover.' },
+          detail: { contextMessage: 'Become a member to share your script on the leaderboard.' },
         }))
       }
     } finally {
@@ -59,12 +59,26 @@ export function DiscoverToggle({ scriptId, isPublic, isPro }: Props) {
         color: on ? '#059669' : '#9ca3af',
       }}
     >
-      {/* Toggle dot */}
+      <span className="text-[11px]">Share on Leaderboard</span>
+      {/* Toggle switch */}
       <span
-        className="w-2 h-2 rounded-full transition-colors"
-        style={{ background: on ? '#059669' : '#d1d5db' }}
-      />
-      {busy ? '...' : on ? 'On Discover' : 'Discover'}
+        className="relative inline-flex items-center rounded-full transition-colors"
+        style={{
+          width: 28,
+          height: 16,
+          background: on ? '#059669' : '#d1d5db',
+        }}
+      >
+        <span
+          className="absolute rounded-full bg-white transition-all shadow-sm"
+          style={{
+            width: 12,
+            height: 12,
+            top: 2,
+            left: on ? 14 : 2,
+          }}
+        />
+      </span>
     </button>
   )
 }
