@@ -103,7 +103,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
       .limit(1)
-      .single()
+      .maybeSingle()
 
     if (consideration?.review_stage && consideration.review_stage !== 'draft') {
       reviewStage = consideration.review_stage

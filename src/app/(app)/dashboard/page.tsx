@@ -263,10 +263,10 @@ export default async function DashboardPage() {
 
   // Always show 3 opps: qualified first, then unqualified, then fill with most-recent-posted
   const combinedOpps = [...qualifiedOpps, ...unqualifiedOpps]
-  // If we don't have 3, fill from all open opps sorted by created_at (most recent first)
+  // If we don't have 3, fill from non-pending opps sorted by created_at (most recent first)
   if (combinedOpps.length < 3) {
     const shown = new Set(combinedOpps.map(o => o.id))
-    const filler = allOpenOpps
+    const filler = unappliedOpps
       .filter(o => !shown.has(o.id))
       .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
     for (const o of filler) {
@@ -442,14 +442,19 @@ export default async function DashboardPage() {
             </Link>
           </header>
 
-          {dashboardOpps.length === 0 ? (
+          {dashboardOpps.length === 0 && pendingOppIds.size > 0 ? (
+            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+              <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">You&apos;ve applied to all open opportunities</p>
+              <p className="text-[13px] text-gray-500 m-0">We&apos;ll notify you when new opportunities open up.</p>
+            </div>
+          ) : dashboardOpps.length === 0 ? (
             <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
               <p className="text-[13px] text-gray-500 m-0">No opportunities right now. Check back soon.</p>
             </div>
           ) : (
             <div className="grid grid-cols-3 gap-3">
               {dashboardOpps.map(opp => {
-                const status: OppStatus = appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
+                const status: OppStatus = pendingOppIds.has(opp.id) ? 'pending' : appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
                 const matchCount = getMatchingScriptsForOpp(opp).length
 
                 return (
