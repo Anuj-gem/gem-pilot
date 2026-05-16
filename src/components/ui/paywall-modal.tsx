@@ -1,7 +1,7 @@
 'use client'
 
-// PaywallModal — journey-first upgrade prompt.
-// Leads with narrative ("continue your journey"), keeps usage context small.
+// PaywallModal — visual upgrade prompt with three benefit cards.
+// Uses the same emoji icons as the dashboard stat cards for consistency.
 // Triggered by gem:open-upgrade-modal event or "Become a member" button.
 
 import { useState } from 'react'
@@ -39,9 +39,6 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
     }
   }
 
-  // Show usage line only if they've actually used something
-  const hasUsage = evalsUsed > 0 || appsUsed > 0
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
@@ -65,33 +62,40 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
             </div>
           )}
 
-          {/* Headline — the journey pitch */}
-          <h2 className="text-[22px] font-bold text-gray-900 mb-2">
-            Keep building. Keep getting seen.
+          {/* Headline */}
+          <h2 className="text-[22px] font-bold text-gray-900 mb-1">
+            One membership for your writing career
           </h2>
-          <p className="text-[14px] text-gray-600 leading-relaxed mb-6 max-w-sm mx-auto">
-            Members post unlimited scripts, apply to every opportunity, and build heat as industry partners discover their work.
+          <p className="text-[14px] text-gray-500 mb-6">
+            Everything you need to get your work seen — $20/mo
           </p>
 
-          {/* What membership unlocks — simple, not a comparison grid */}
-          <div className="text-left rounded-xl p-4 mb-5" style={{ background: '#faf5ff', border: '1px solid #ede9fe' }}>
-            <div className="text-[12px] uppercase tracking-wider font-bold mb-3" style={{ color: '#7c3aed' }}>
-              $20/mo membership
-            </div>
-            <div className="space-y-2.5">
-              <JourneyRow text="Unlimited script evaluations" />
-              <JourneyRow text="Unlimited opportunity applications" />
-              <JourneyRow text="Build heat and get matched to industry" />
-              <JourneyRow text="Early access to new opportunity drops" />
-            </div>
+          {/* Three benefit cards */}
+          <div className="space-y-3 text-left mb-5">
+            <BenefitCard
+              emoji="📄"
+              bgColor="#ecfdf5"
+              borderColor="#d1fae5"
+              title="Unlimited evaluations"
+              description="Get scored reports on every script you write"
+              usage={evalsUsed > 0 ? `${evalsUsed} of ${FREE_EVAL_LIMIT} free used` : undefined}
+            />
+            <BenefitCard
+              emoji="💰"
+              bgColor="#fefce8"
+              borderColor="#fef08a"
+              title="Unlimited opportunities"
+              description="Apply to every opportunity that drops"
+              usage={appsUsed > 0 ? `${appsUsed} of ${FREE_APP_LIMIT} free used` : undefined}
+            />
+            <BenefitCard
+              emoji="🔥"
+              bgColor="#fff7ed"
+              borderColor="#fed7aa"
+              title="Build heat"
+              description="Get discovered as industry finds top-scoring work"
+            />
           </div>
-
-          {/* Small usage context — not the headline, just grounding */}
-          {hasUsage && (
-            <div className="text-[12px] text-gray-400 mb-4">
-              Guest plan: {evalsUsed}/{FREE_EVAL_LIMIT} evaluations · {appsUsed}/{FREE_APP_LIMIT} applications used
-            </div>
-          )}
         </div>
 
         {/* CTA footer */}
@@ -120,13 +124,34 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
   )
 }
 
-function JourneyRow({ text }: { text: string }) {
+function BenefitCard({
+  emoji,
+  bgColor,
+  borderColor,
+  title,
+  description,
+  usage,
+}: {
+  emoji: string
+  bgColor: string
+  borderColor: string
+  title: string
+  description: string
+  usage?: string
+}) {
   return (
-    <div className="flex items-center gap-2.5 text-[13px] text-gray-700 font-medium">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
-        <path d="M3 8.5l3 3 7-7" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-      {text}
+    <div className="flex items-start gap-3 rounded-xl p-3.5" style={{ background: bgColor, border: `1px solid ${borderColor}` }}>
+      <span className="text-[22px] leading-none mt-0.5">{emoji}</span>
+      <div className="flex-1 min-w-0">
+        <div className="text-[14px] font-semibold text-gray-900">{title}</div>
+        <div className="text-[12px] text-gray-500 mt-0.5">{description}</div>
+        {usage && (
+          <div className="text-[11px] font-medium mt-1.5 px-2 py-0.5 rounded-full inline-block"
+            style={{ background: 'rgba(0,0,0,0.06)', color: '#6b7280' }}>
+            {usage}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
