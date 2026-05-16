@@ -218,6 +218,25 @@ export default async function DashboardPage() {
   const dashboardOpps = [...qualifiedOpps, ...unqualifiedOpps].slice(0, 4)
   const qualifiedOppIds = new Set(qualifiedOpps.map(o => o.id))
 
+  // Count how many scripts match each opp
+  function matchingScriptCount(opp: OppRow) {
+    return completedScripts.filter(s => {
+      const ev = myEvalBySub.get(s.id)
+      const score = ev?.weighted_score ?? null
+      if (opp.min_score && (!score || score < opp.min_score)) return false
+      const noFmt = !opp.formats || opp.formats.length === 0
+      const noGenre = !opp.genres || opp.genres.length === 0
+      if (noFmt && noGenre) return true
+      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
+      if (!fmtMatch) return false
+      if (noGenre) return true
+      const sGenres = ev?.genres || []
+      if (sGenres.length === 0) return false
+      const oppNorm = opp.genres!.map(normGenre)
+      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
+    }).length
+  }
+
   // ── RENDER ──
 
   const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
@@ -446,75 +465,69 @@ export default async function DashboardPage() {
           ) : (
             <div className="grid grid-cols-3 gap-3">
               {dashboardOpps.slice(0, 3).map(opp => {
-                const isQualified = qualifiedOppIds.has(opp.id)
-                const deadlineDays = opp.deadline
-                  ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
-                  : null
+                const matchCount = matchingScriptCount(opp)
 
                 return (
                   <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
-                    <div className="rounded-xl bg-white p-4 h-full hover:shadow-md transition-shadow flex flex-col"
+                    <div className="rounded-xl bg-white overflow-hidden h-full hover:shadow-md transition-shadow flex flex-col"
                       style={{ boxShadow: cardShadow }}>
 
-                      {/* Badges row */}
-                      {(isQualified || (deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14)) && (
-                        <div className="flex items-center gap-1.5 mb-2">
-                          {isQualified && (
-                            <span className="text-[12px] font-bold px-2.5 py-0.5 rounded-full text-white"
-                              style={{ background: '#7c3aed' }}>
-                              You qualify
-                            </span>
-                          )}
-                          {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
-                            <span className="text-[12px] font-bold px-2.5 py-0.5 rounded-full text-white"
-                              style={{ background: deadlineDays <= 7 ? '#dc2626' : '#d97706' }}>
-                              {deadlineDays === 1 ? 'Tomorrow' : `${deadlineDays}d left`}
+                      {/* Card body */}
+                      <div className="p-4 flex-1 flex flex-col">
+
+                        {/* 💰 Paid badge — top right */}
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-[12px] font-bold px-2 py-0.5 rounded"
+                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
+                            💰 Paid
+                          </span>
+                          {opp.deadline && (
+                            <span className="text-[12px] text-gray-500">
+                              Due {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                             </span>
                           )}
                         </div>
-                      )}
 
-                      {/* Title */}
-                      <h3 className="text-[15px] font-semibold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">
-                        {opp.title}
-                      </h3>
+                        {/* Title */}
+                        <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
+                          {opp.title}
+                        </h3>
 
-                      {/* Description */}
-                      {(opp.subtitle || opp.description) && (
-                        <p className="text-[13px] text-gray-600 m-0 mb-3 line-clamp-2 leading-snug">
-                          {opp.subtitle || opp.description}
-                        </p>
-                      )}
+                        {/* Format + Genre as labeled lines */}
+                        <div className="space-y-0.5 mb-2">
+                          {opp.formats && opp.formats.length > 0 && (
+                            <div className="text-[13px] text-gray-700">
+                              <span className="text-gray-400">Format:</span> {opp.formats.join(', ')}
+                            </div>
+                          )}
+                          {opp.genres && opp.genres.length > 0 && (
+                            <div className="text-[13px] text-gray-700">
+                              <span className="text-gray-400">Genre:</span> {opp.genres.slice(0, 3).join(', ')}
+                            </div>
+                          )}
+                        </div>
 
-                      {/* Spacer */}
-                      <div className="flex-1" />
-
-                      {/* Criteria pills */}
-                      <div className="flex flex-wrap items-center gap-1.5 pt-2" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                        {opp.min_score && (
-                          <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
-                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
-                            Min {opp.min_score}
-                          </span>
+                        {/* Subtitle / description */}
+                        {(opp.subtitle || opp.description) && (
+                          <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
+                            {opp.subtitle || opp.description}
+                          </p>
                         )}
-                        {opp.formats && opp.formats.length > 0 && (
-                          <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
-                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
-                            {opp.formats.join(' / ')}
-                          </span>
-                        )}
-                        {opp.genres && opp.genres.length > 0 && (
-                          <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
-                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
-                            {opp.genres.slice(0, 2).join(', ')}
-                          </span>
-                        )}
-                        {opp.deadline && (
-                          <span className="text-[12px] text-gray-500">
-                            Due {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                      </div>
+
+                      {/* Bottom bar — View details + match count */}
+                      <div className="px-4 py-2.5 flex items-center justify-between"
+                        style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                        <span className="text-[13px] font-semibold text-purple-600 group-hover:text-purple-800 transition-colors">
+                          View details →
+                        </span>
+                        {matchCount > 0 && (
+                          <span className="text-[12px] font-semibold text-purple-600">
+                            {matchCount} {matchCount === 1 ? 'script matches' : 'scripts match'}
                           </span>
                         )}
                       </div>
+
                     </div>
                   </Link>
                 )
