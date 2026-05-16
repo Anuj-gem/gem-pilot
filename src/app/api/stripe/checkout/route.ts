@@ -82,9 +82,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Already subscribed' }, { status: 400 })
   }
 
-  // Determine trial eligibility: only 'free' users get a trial.
-  // trial_expired, canceled, past_due → no trial, straight to paid.
-  const eligibleForTrial = profile?.subscription_status === 'free' || !profile?.subscription_status
+  // No trial — all users pay immediately at checkout.
+  const eligibleForTrial = false
 
   // Reuse or create Stripe customer
   let customerId = profile?.stripe_customer_id
