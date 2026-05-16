@@ -47,30 +47,25 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
     <button
       onClick={toggle}
       disabled={busy}
-      className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[12px] font-semibold transition-all cursor-pointer border-0 disabled:opacity-50 shrink-0"
-      style={{
-        background: on ? '#ecfdf5' : '#f3f4f6',
-        color: on ? '#059669' : '#9ca3af',
-      }}
+      className="inline-flex items-center cursor-pointer border-0 bg-transparent p-0 disabled:opacity-50 shrink-0"
+      aria-label={on ? 'Visible on Discover' : 'Hidden from Discover'}
     >
-      <span className="text-[11px] hidden lg:inline">Share on Leaderboard</span>
-      <span className="text-[11px] lg:hidden">Share</span>
       {/* Toggle switch */}
       <span
         className="relative inline-flex items-center rounded-full transition-colors"
         style={{
-          width: 28,
-          height: 16,
-          background: on ? '#059669' : '#d1d5db',
+          width: 36,
+          height: 20,
+          background: on ? '#534AB7' : '#d1d5db',
         }}
       >
         <span
           className="absolute rounded-full bg-white transition-all shadow-sm"
           style={{
-            width: 12,
-            height: 12,
+            width: 16,
+            height: 16,
             top: 2,
-            left: on ? 14 : 2,
+            left: on ? 18 : 2,
           }}
         />
       </span>

@@ -11,10 +11,9 @@ import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
-import { QuickApplyDropdown } from '@/components/dashboard/quick-apply-dropdown'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
-import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
+import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -269,7 +268,6 @@ export default async function DashboardPage() {
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
-  const appliedOppIdsArr = Array.from(appliedOppIds)
 
   // ── OPPORTUNITIES FOR YOU: filter out applied, sort qualified first then recency ──
   // Check if ANY completed script qualifies for a given opp
@@ -574,128 +572,86 @@ export default async function DashboardPage() {
               {/* Completed script cards */}
               {completedScripts.slice(0, 2 - processingScripts.length).map(script => {
                 const rounded = script.score ? Math.round(script.score) : null
-                const badge = rounded ? scoreBadge(rounded) : null
                 const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
 
                 return (
                   <div key={script.id} className="relative rounded-xl bg-white overflow-hidden group hover:shadow-md transition-shadow flex flex-col"
                     style={{ boxShadow: cardShadow }}>
 
-                    {/* Full-card link (behind everything) */}
-                    <Link href={reportHref} className="absolute inset-0 z-0" aria-label={`View report for ${script.title}`} />
+                    <div className="relative p-3 lg:p-5 flex flex-col flex-1">
 
-                    <div className="relative z-10 p-3 lg:p-4 flex flex-col flex-1 pointer-events-none">
-
-                      {/* Delete menu — top right */}
-                      <div className="absolute top-1.5 right-1.5 lg:top-2 lg:right-2 pointer-events-auto z-20">
-                        <DeleteScriptButton scriptId={script.id} title={script.title} />
-                      </div>
-
-                      {/* Mobile: compact row — badges + title inline */}
-                      <div className="flex lg:hidden items-center gap-2">
-                        {/* Score badge — small */}
-                        {badge && rounded ? (
-                          <div className="text-center rounded-md px-2 py-1 shrink-0" style={{ background: badge.bg }}>
-                            <div className="text-[8px] font-semibold text-white/80 uppercase leading-none tracking-wide">Score</div>
-                            <div className="text-[16px] font-bold text-white leading-tight">{rounded}</div>
-                          </div>
-                        ) : (
-                          <div className="text-center rounded-md px-2 py-1 shrink-0" style={{ background: '#f3f4f6', border: '1px solid #e5e7eb' }}>
-                            <div className="text-[8px] font-semibold text-gray-400 uppercase leading-none tracking-wide">Score</div>
-                            <div className="text-[16px] font-bold text-gray-300 leading-tight">&mdash;</div>
-                          </div>
-                        )}
-                        {/* Heat badge — small */}
-                        <div className="text-center rounded-md px-2 py-1 shrink-0" style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}>
-                          <div className="text-[8px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
-                          <div className={`text-[16px] font-bold leading-tight ${script.heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>{script.heat}</div>
-                        </div>
-                        {/* Title + format */}
-                        <div className="min-w-0 flex-1 mr-6">
-                          <h3 className="text-[14px] font-bold text-gray-900 m-0 leading-snug truncate group-hover:text-purple-700 transition-colors">
+                      {/* Row 1: Title + 3-dot menu */}
+                      <div className="flex justify-between items-start gap-2 mb-1 lg:mb-2">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-[15px] lg:text-[17px] font-bold text-gray-900 m-0 leading-snug truncate group-hover:text-purple-700 transition-colors">
                             {script.title}
                           </h3>
-                          <div className="text-[12px] font-medium text-gray-400 truncate">
-                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Desktop: original rich layout */}
-                      <div className="hidden lg:block">
-                        {/* GEM Score + Heat badges */}
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="relative group/score">
-                            {badge && rounded ? (
-                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: badge.bg }}>
-                                <div className="text-[9px] font-semibold text-white/80 uppercase leading-none tracking-wide">GEM Score</div>
-                                <div className="text-[20px] font-bold text-white leading-tight">{rounded}</div>
-                              </div>
-                            ) : (
-                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#f3f4f6', border: '1.5px solid #e5e7eb' }}>
-                                <div className="text-[9px] font-semibold text-gray-400 uppercase leading-none tracking-wide">GEM Score</div>
-                                <div className="text-[20px] font-bold text-gray-300 leading-tight">&mdash;</div>
-                              </div>
-                            )}
-                            <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/score:opacity-100 transition-opacity z-30 text-center">
-                              Your script score from evaluation
-                            </div>
-                          </div>
-                          <div className="relative group/heat">
-                            {script.heat > 0 ? (
-                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
-                                <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
-                                <div className="text-[20px] font-bold text-orange-600 leading-tight">{script.heat}</div>
-                              </div>
-                            ) : (
-                              <div className="text-center rounded-lg px-3 py-1.5" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}>
-                                <div className="text-[9px] font-semibold text-orange-400 uppercase leading-none tracking-wide">Heat</div>
-                                <div className="text-[20px] font-bold text-orange-300 leading-tight">0</div>
-                              </div>
-                            )}
-                            <div className="pointer-events-auto absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center">
-                              Apply for opportunities to earn heat as your script gets attention
-                            </div>
-                          </div>
-                        </div>
-
-                        <h3 className="text-[16px] font-bold text-gray-900 m-0 mb-1.5 leading-snug group-hover:text-purple-700 transition-colors">
-                          {script.title}
-                        </h3>
-
-                        {script.logline && (
-                          <p className="text-[13px] leading-snug text-gray-700 m-0 mb-2 line-clamp-2">
-                            {script.logline}
+                          <p className="text-[12px] lg:text-[13px] text-gray-500 m-0 mt-0.5">
+                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' / ')}
                           </p>
-                        )}
-
-                        <div className="text-[13px] font-medium text-gray-500">
-                          {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
                         </div>
-
-                        <div className="flex-1" />
-
-                        {/* Action buttons — desktop only */}
-                        <div className="flex items-center gap-2 pointer-events-auto pt-3 mt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                          {script.qualifyingOpps.length > 0 ? (
-                            <QuickApplyDropdown
-                              scriptId={script.id}
-                              opportunities={script.qualifyingOpps}
-                              appliedOppIds={appliedOppIdsArr}
-                              isAnon={!user}
-                            />
-                          ) : (
-                            <span className="text-[13px] text-gray-400">No matching opportunities</span>
-                          )}
-                          <div className="flex-1" />
-                          <DiscoverToggle
-                            scriptId={script.id}
-                            isPublic={script.isPublic}
-                            isPro={isPro}
-                            isAnon={!user}
-                          />
+                        <div className="shrink-0">
+                          <DeleteScriptButton scriptId={script.id} title={script.title} />
                         </div>
                       </div>
+
+                      {/* Logline */}
+                      {script.logline && (
+                        <p className="text-[12px] lg:text-[13px] leading-relaxed text-gray-500 m-0 mb-2.5 lg:mb-3 line-clamp-2">
+                          {script.logline}
+                        </p>
+                      )}
+
+                      {/* Score + Heat pills */}
+                      <div className="flex items-center gap-2 lg:gap-2.5 mb-3 lg:mb-4">
+                        {/* Score pill with gem diamond */}
+                        <div className="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1 lg:py-1.5 rounded-full" style={{ background: '#EEEDFE' }}>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0 w-[13px] h-[13px] lg:w-[15px] lg:h-[15px]">
+                            <path d="M12 2L4 9L12 22L20 9L12 2Z" fill="url(#gem-score-grad1)" />
+                            <path d="M12 2L4 9H20L12 2Z" fill="url(#gem-score-grad2)" opacity="0.7" />
+                            <path d="M8 9H16L12 22L8 9Z" fill="url(#gem-score-grad3)" />
+                            <defs>
+                              <linearGradient id="gem-score-grad1" x1="4" y1="2" x2="20" y2="22"><stop stopColor="#AFA9EC" /><stop offset="1" stopColor="#534AB7" /></linearGradient>
+                              <linearGradient id="gem-score-grad2" x1="4" y1="2" x2="20" y2="9"><stop stopColor="#CECBF6" /><stop offset="1" stopColor="#7F77DD" /></linearGradient>
+                              <linearGradient id="gem-score-grad3" x1="12" y1="9" x2="12" y2="22"><stop stopColor="#7F77DD" /><stop offset="1" stopColor="#3C3489" /></linearGradient>
+                            </defs>
+                          </svg>
+                          <span className="text-[12px] lg:text-[13px] font-semibold" style={{ color: '#3C3489' }}>
+                            Score {rounded ?? '—'}
+                          </span>
+                        </div>
+                        {/* Heat pill with fire emoji */}
+                        <div className="inline-flex items-center gap-1 px-2.5 lg:px-3 py-1 lg:py-1.5 rounded-full" style={{ background: '#FFF3E0' }}>
+                          <span className="text-[12px] lg:text-[14px]">🔥</span>
+                          <span className="text-[12px] lg:text-[13px] font-semibold" style={{ color: '#E65100' }}>
+                            Heat {script.heat}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex-1" />
+
+                      {/* Bottom row: Pending actions (left) + View report (right) */}
+                      <div className="flex items-center justify-between gap-2 pt-2.5 lg:pt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                        <PendingActionsDropdown
+                          scriptId={script.id}
+                          isPublic={script.isPublic}
+                          isPro={isPro}
+                          isAnon={!user}
+                          qualifyingOppsCount={script.qualifyingOpps.length}
+                        />
+                        <Link
+                          href={reportHref}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-[12px] lg:text-[13px] font-semibold text-white no-underline transition-all hover:opacity-90"
+                          style={{ background: '#534AB7' }}
+                        >
+                          View report
+                          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" className="w-[13px] h-[13px] lg:w-[14px] lg:h-[14px]">
+                            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638l-3.96-4.158a.75.75 0 011.08-1.04l5.25 5.5a.75.75 0 010 1.04l-5.25 5.5a.75.75 0 11-1.08-1.04l3.96-4.158H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                          </svg>
+                        </Link>
+                      </div>
+
                     </div>
                   </div>
                 )
