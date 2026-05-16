@@ -28,7 +28,7 @@ export function UnlockTrigger({ children, className, as = 'button', ariaLabel = 
       >
         {children}
       </Tag>
-      {open && <PaywallModal onClose={() => setOpen(false)} trialExpired={false} />}
+      {open && <PaywallModal onClose={() => setOpen(false)} />}
     </>
   )
 }

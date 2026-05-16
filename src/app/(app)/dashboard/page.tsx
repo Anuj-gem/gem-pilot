@@ -117,6 +117,22 @@ export default async function DashboardPage() {
     allApplications = (applications || []) as AppRow[]
   }
 
+  // Usage gate data for guest users
+  const FREE_EVAL_LIMIT = 2
+  const FREE_APP_LIMIT = 2
+  let totalSubmissions = 0
+  let totalApps = 0
+  if (user && !isPro) {
+    const { count: subCount } = await service
+      .from('script_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('user_id', user.id)
+    totalSubmissions = subCount ?? 0
+    totalApps = allApplications.length
+  }
+  const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
+  const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
+
   // ── DERIVED DATA ──
 
   const appliedOppIds = new Set(allApplications.map(a => a.opportunity_id))
@@ -364,6 +380,12 @@ export default async function DashboardPage() {
         <section>
           <header className="flex items-center gap-2 mb-3">
             <h2 className="text-[16px] font-bold text-gray-900 m-0">Your scripts</h2>
+            {user && !isPro && (
+              <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
+                style={{ background: evalsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: evalsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
+                {evalsRemaining > 0 ? `${evalsRemaining} eval${evalsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
+              </span>
+            )}
             {completedScripts.length > 2 && (
               <Link href="/scripts" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
                 View all →
@@ -474,6 +496,12 @@ export default async function DashboardPage() {
         <section>
           <header className="flex items-center gap-2 mb-3">
             <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
+            {user && !isPro && (
+              <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
+                style={{ background: appsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: appsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
+                {appsRemaining > 0 ? `${appsRemaining} application${appsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
+              </span>
+            )}
             <Link href="/opportunities" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
               View all →
             </Link>

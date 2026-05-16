@@ -1,25 +1,40 @@
 'use client'
 
 // Mounts the PaywallModal under control of the global
-// `gem:open-upgrade-modal` event. Mirrors the pattern used by
-// SubscribeGate on the report page so dashboard CTAs that paywall a
-// flow can dispatch the same event without owning their own modal.
+// `gem:open-upgrade-modal` event. The event can carry a contextMessage
+// via CustomEvent detail. Also renders when opened manually.
 //
-// Mount this once near the top of the writer dashboard for free-tier
-// users. Pro users don't need the listener at all.
+// Mount once in the (app) layout for non-Pro users.
 
 import { useEffect, useState } from 'react'
 import { PaywallModal } from '@/components/ui/paywall-modal'
 
-export function UpgradeModalListener() {
+interface Props {
+  evalsUsed?: number
+  appsUsed?: number
+}
+
+export function UpgradeModalListener({ evalsUsed = 0, appsUsed = 0 }: Props) {
   const [open, setOpen] = useState(false)
+  const [contextMessage, setContextMessage] = useState<string | undefined>()
 
   useEffect(() => {
-    const handler = () => setOpen(true)
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      setContextMessage(detail?.contextMessage)
+      setOpen(true)
+    }
     window.addEventListener('gem:open-upgrade-modal', handler)
     return () => window.removeEventListener('gem:open-upgrade-modal', handler)
   }, [])
 
   if (!open) return null
-  return <PaywallModal onClose={() => setOpen(false)} trialExpired={false} />
+  return (
+    <PaywallModal
+      onClose={() => { setOpen(false); setContextMessage(undefined) }}
+      evalsUsed={evalsUsed}
+      appsUsed={appsUsed}
+      contextMessage={contextMessage}
+    />
+  )
 }

@@ -80,7 +80,7 @@ export function AppSidebar(props: AppSidebarData | { anonymous: true }) {
                       color: props.isPro ? '#7c3aed' : '#9ca3af',
                     }}
                   >
-                    {props.isPro ? 'Pro' : 'Free'}
+                    {props.isPro ? 'Pro' : 'Guest'}
                   </span>
                 </div>
               </div>
@@ -114,6 +114,17 @@ export function AppSidebar(props: AppSidebarData | { anonymous: true }) {
             </>
           )}
         </div>
+
+        {/* Become a member CTA — only for logged-in guest users */}
+        {!isAnon && !props.isPro && (
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
+            className="w-full py-2.5 rounded-lg text-[13px] font-semibold text-white cursor-pointer border-0 transition-all hover:brightness-110 mb-4"
+            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+          >
+            Become a member
+          </button>
+        )}
 
         {/* Links — only for logged-in users */}
         {!isAnon && (

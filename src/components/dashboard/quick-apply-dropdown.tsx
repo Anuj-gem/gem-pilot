@@ -48,6 +48,11 @@ export function QuickApplyDropdown({ scriptId, opportunities, appliedOppIds, cla
       if (res.ok) {
         setLocalApplied(prev => new Set([...prev, oppId]))
         startTransition(() => router.refresh())
+      } else if (res.status === 403) {
+        // Usage limit hit — show upgrade modal
+        window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
+          detail: { contextMessage: "You've used your 2 free applications. Become a member for unlimited access." },
+        }))
       }
     } finally {
       setApplying(null)

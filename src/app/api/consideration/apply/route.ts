@@ -35,14 +35,22 @@ export async function POST(req: NextRequest) {
 
   const service = svc()
 
-  // Pro gate — free users cannot apply to opportunities
+  // Usage gate — free/guest users get 2 applications, Pro gets unlimited
   const { data: profile } = await service
     .from('profiles')
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing') {
-    return NextResponse.json({ error: 'Upgrade to Pro to apply to opportunities' }, { status: 403 })
+  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  if (!isPro) {
+    const { count: appCount } = await service
+      .from('considerations')
+      .select('id', { count: 'exact', head: true })
+      .eq('writer_id', user.id)
+      .not('opportunity_id', 'is', null)
+    if ((appCount ?? 0) >= 2) {
+      return NextResponse.json({ error: 'You\'ve used your 2 free applications. Become a member for unlimited access.' }, { status: 403 })
+    }
   }
 
   // Verify opportunity exists and is active
