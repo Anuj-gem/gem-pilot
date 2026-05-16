@@ -1,5 +1,7 @@
-// LandingHero — v17.
-// Journey: script with score → producer message. Single "Get started" CTA.
+// LandingHero — v18.
+// Full-bleed purple gradient. Bigger headline, high-contrast cards, more breathing room.
+// Script card: title + format + genre + score + GEM Report hint.
+// Producer card: message from Meridian Productions.
 'use client'
 
 import { useRouter } from 'next/navigation'
@@ -16,114 +18,125 @@ export function LandingHero() {
   }
 
   return (
-    <section className="relative px-4 sm:px-8 pt-8 sm:pt-16 pb-10 sm:pb-16">
-      <div className="max-w-[700px] mx-auto">
+    <section
+      className="relative overflow-hidden px-6 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-28"
+      style={{
+        background: 'linear-gradient(160deg, #0f0a1a 0%, #1a1035 30%, #2d1b4e 60%, #4c1d95 100%)',
+      }}
+    >
+      {/* Star dots */}
+      <div className="absolute inset-0 opacity-15" style={{
+        backgroundImage: 'radial-gradient(1.5px 1.5px at 15% 25%, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 35% 65%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 8% 75%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 92% 35%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 50% 8%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.4), transparent), radial-gradient(1px 1px at 75% 80%, rgba(255,255,255,0.5), transparent), radial-gradient(1.5px 1.5px at 45% 90%, rgba(255,255,255,0.6), transparent)',
+      }} />
 
-        {/* Purple gradient container — same style as dashboard hero */}
-        <div
-          className="relative overflow-hidden rounded-2xl px-6 lg:px-8 py-12 lg:py-16 text-center flex flex-col items-center justify-center"
-          style={{
-            background: 'linear-gradient(135deg, #1a1025 0%, #2d1b4e 40%, #4c1d95 100%)',
-          }}
-        >
-          {/* Star dots */}
-          <div className="absolute inset-0 opacity-20" style={{
-            backgroundImage: 'radial-gradient(1px 1px at 20% 30%, white, transparent), radial-gradient(1px 1px at 70% 20%, white, transparent), radial-gradient(1px 1px at 40% 70%, white, transparent), radial-gradient(1px 1px at 80% 60%, white, transparent), radial-gradient(1px 1px at 10% 80%, white, transparent), radial-gradient(1px 1px at 90% 40%, white, transparent), radial-gradient(1px 1px at 55% 10%, white, transparent), radial-gradient(1px 1px at 30% 50%, white, transparent)',
-          }} />
+      {/* Subtle radial glow behind cards */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse 600px 400px at 50% 65%, rgba(124,58,237,0.15), transparent)',
+      }} />
 
-          <div className="relative w-full max-w-xl">
-            {/* Headline */}
-            <h1 className="text-[24px] lg:text-[30px] font-bold text-white m-0 mb-2 lg:mb-3 leading-tight">
-              Get your screenplay in front of the right people
-            </h1>
-            <p className="text-[14px] lg:text-[15px] m-0 mb-8 lg:mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-              Upload your script. Build your profile. Let the industry come to you.
+      <div className="relative max-w-3xl mx-auto text-center">
+        {/* Headline */}
+        <h1 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.1] tracking-tight m-0 mb-4 sm:mb-5">
+          Get your screenplay in front of the right people
+        </h1>
+        <p className="text-[16px] sm:text-[18px] m-0 mb-12 sm:mb-16 max-w-lg mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          Upload your script. Get scored. Let the industry come to you.
+        </p>
+
+        {/* Journey cards */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 mb-12 sm:mb-16">
+
+          {/* Card 1: Script with score + GEM Report */}
+          <div
+            className="rounded-2xl p-5 lg:p-6 w-full max-w-[280px] lg:max-w-none lg:w-[260px] text-left"
+            style={{
+              background: 'rgba(255,255,255,0.07)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(12px)',
+            }}
+          >
+            {/* Title + meta */}
+            <p className="text-[15px] font-semibold text-white m-0 mb-1">Nightfall</p>
+            <p className="text-[13px] m-0 mb-4" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              Feature Film &middot; Drama
             </p>
 
-            {/* Journey cards */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 mb-8 lg:mb-10">
-
-              {/* Card 1: Script with score */}
-              <div
-                className="rounded-xl px-4 py-3 lg:px-5 lg:py-4 w-full lg:w-auto lg:min-w-[170px] text-left"
-                style={{
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                }}
-              >
-                <div className="flex items-center gap-2 mb-2.5">
-                  <div
-                    className="w-6 h-7 rounded flex items-center justify-center"
-                    style={{ background: 'rgba(255,255,255,0.1)' }}
-                  >
-                    <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.5)' }}>PDF</span>
-                  </div>
-                  <div>
-                    <p className="text-[12px] font-semibold text-white m-0">Nightfall</p>
-                    <p className="text-[10px] m-0" style={{ color: 'rgba(255,255,255,0.45)' }}>Feature film</p>
-                  </div>
-                </div>
-                <div
-                  className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5"
-                  style={{ background: 'rgba(255,255,255,0.1)' }}
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                    <path d="M12 2L4 9L12 22L20 9L12 2Z" fill="#a855f7" opacity="0.4" />
-                    <path d="M12 2L4 9L12 14L20 9L12 2Z" fill="#a855f7" />
-                  </svg>
-                  <span className="text-[11px] font-semibold" style={{ color: '#d8b4fe' }}>Score 82</span>
-                </div>
-              </div>
-
-              {/* Arrow — vertical on mobile, horizontal on desktop */}
-              <svg
-                width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="rgba(255,255,255,0.25)" strokeWidth="1.5"
-                className="shrink-0 rotate-90 lg:rotate-0"
-              >
-                <path d="M5 12h14m-6-6l6 6-6 6" />
+            {/* Score badge */}
+            <div
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 mb-3"
+              style={{ background: 'rgba(168,85,247,0.2)', border: '1px solid rgba(168,85,247,0.4)' }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                <path d="M12 2L4 9L12 22L20 9L12 2Z" fill="#a855f7" opacity="0.4" />
+                <path d="M12 2L4 9L12 14L20 9L12 2Z" fill="#a855f7" />
               </svg>
-
-              {/* Card 2: Producer message */}
-              <div
-                className="rounded-xl px-4 py-3 lg:px-5 lg:py-4 w-full lg:w-auto lg:min-w-[210px] text-left"
-                style={{
-                  background: 'rgba(255,255,255,0.12)',
-                  border: '1px solid rgba(168,85,247,0.5)',
-                }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div
-                    className="w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{ background: 'rgba(255,255,255,0.15)' }}
-                  >
-                    <span className="text-[9px] text-white font-semibold">M</span>
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-semibold text-white m-0">Meridian Productions</p>
-                    <p className="text-[9px] m-0" style={{ color: 'rgba(255,255,255,0.4)' }}>2 min ago</p>
-                  </div>
-                </div>
-                <p className="text-[12px] m-0 leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                  &ldquo;We love this. We&apos;d like to explore developing it with you.&rdquo;
-                </p>
-              </div>
+              <span className="text-[13px] font-bold" style={{ color: '#d8b4fe' }}>Score 82</span>
             </div>
 
-            {/* CTA */}
-            <button
-              type="button"
-              onClick={handleCTA}
-              className="px-10 py-4 rounded-full text-[17px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
-              style={{
-                background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
-                boxShadow: '0 4px 14px rgba(124,58,237,0.4)',
-              }}
+            {/* GEM Report indicator */}
+            <div
+              className="flex items-center gap-2 rounded-lg px-3 py-2"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
-              Get started
-            </button>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                <path d="M9 12h6M9 16h6M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9l-7-7z" stroke="rgba(168,85,247,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M13 2v7h7" stroke="rgba(168,85,247,0.7)" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+              <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.5)' }}>GEM Report</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" className="shrink-0 ml-auto">
+                <path d="M6 9l6 6 6-6" stroke="rgba(255,255,255,0.3)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <svg
+            width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="rgba(255,255,255,0.3)" strokeWidth="1.5"
+            className="shrink-0 rotate-90 lg:rotate-0"
+          >
+            <path d="M5 12h14m-6-6l6 6-6 6" />
+          </svg>
+
+          {/* Card 2: Producer message */}
+          <div
+            className="rounded-2xl p-5 lg:p-6 w-full max-w-[280px] lg:max-w-none lg:w-[300px] text-left"
+            style={{
+              background: 'rgba(168,85,247,0.12)',
+              border: '1px solid rgba(168,85,247,0.45)',
+              backdropFilter: 'blur(12px)',
+            }}
+          >
+            <div className="flex items-center gap-2.5 mb-3">
+              <div
+                className="w-8 h-8 rounded-full flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.4), rgba(124,58,237,0.5))' }}
+              >
+                <span className="text-[12px] text-white font-bold">M</span>
+              </div>
+              <div>
+                <p className="text-[14px] font-semibold text-white m-0">Meridian Productions</p>
+                <p className="text-[11px] m-0" style={{ color: 'rgba(255,255,255,0.4)' }}>2 min ago</p>
+              </div>
+            </div>
+            <p className="text-[14px] m-0 leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
+              &ldquo;We love this. We&apos;d like to explore developing it with you.&rdquo;
+            </p>
           </div>
         </div>
+
+        {/* CTA */}
+        <button
+          type="button"
+          onClick={handleCTA}
+          className="px-12 py-4 rounded-full text-[17px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
+          style={{
+            background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+            boxShadow: '0 4px 20px rgba(124,58,237,0.45)',
+          }}
+        >
+          Get started
+        </button>
       </div>
     </section>
   )
