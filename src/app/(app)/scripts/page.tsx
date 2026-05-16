@@ -56,7 +56,7 @@ export default async function ScriptsPage() {
   const isTrial = !isPro
   const service = svc()
 
-  // Fetch ALL scripts (including hidden — client toggles visibility)
+  // Fetch scripts (exclude hidden legacy rows)
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; heat_score: number | null
@@ -65,6 +65,7 @@ export default async function ScriptsPage() {
     .from('script_submissions')
     .select('id, title, status, declared_format, created_at, hidden_at, heat_score')
     .eq('user_id', user.id)
+    .is('hidden_at', null)
     .order('created_at', { ascending: false })
 
   const allScripts = (mySubs as SubRow[] | null) || []

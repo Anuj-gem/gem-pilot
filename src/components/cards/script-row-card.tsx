@@ -31,9 +31,9 @@ interface Props {
   checkbox?: boolean
   checked?: boolean
   onToggle?: (id: string) => void
-  // Three-dot menu — shown by default on all completed scripts
+  // Three-dot menu ��� shown by default on all completed scripts
   showMenu?: boolean
-  onHide?: (id: string) => void
+  onDelete?: (id: string) => void
 }
 
 export function ScriptRowCard({
@@ -42,7 +42,7 @@ export function ScriptRowCard({
   checked,
   onToggle,
   showMenu,
-  onHide,
+  onDelete,
 }: Props) {
   // Three-dot menu shows by default on any completed script (has evaluationId, not processing, not locked)
   // Callers can override with showMenu={false} to suppress
@@ -52,6 +52,8 @@ export function ScriptRowCard({
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [callsOpen, setCallsOpen] = useState(false)
+  const [confirmDelete, setConfirmDelete] = useState(false)
+  const [deleting, setDeleting] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const callsRef = useRef<HTMLSpanElement>(null)
   const router = useRouter()
@@ -208,30 +210,54 @@ export function ScriptRowCard({
                     Edit details
                   </Link>
                 )}
-                {onHide ? (
-                  <button
-                    onClick={() => { setMenuOpen(false); onHide(s.id) }}
-                    className="block w-full text-left px-3 py-2 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
-                  >
-                    Hide
-                  </button>
-                ) : (
-                  <button
-                    onClick={async () => {
-                      setMenuOpen(false)
-                      await fetch(`/api/scripts/${s.id}/hide`, {
-                        method: 'PATCH',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ hide: true }),
-                      })
-                      router.refresh()
-                    }}
-                    className="block w-full text-left px-3 py-2 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
-                  >
-                    Hide
-                  </button>
-                )}
+                <button
+                  onClick={() => { setMenuOpen(false); setConfirmDelete(true) }}
+                  className="block w-full text-left px-3 py-2 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
+                >
+                  Delete
+                </button>
               </div>
+            )}
+
+            {/* Delete confirmation modal */}
+            {confirmDelete && (
+              <>
+                <div className="fixed inset-0 z-50 bg-black/40" onClick={() => setConfirmDelete(false)} />
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setConfirmDelete(false)}>
+                  <div className="bg-white rounded-xl shadow-xl p-5 max-w-sm w-full" onClick={e => e.stopPropagation()}>
+                    <p className="text-[15px] font-semibold text-gray-900 m-0 mb-2">Delete this script?</p>
+                    <p className="text-[13px] text-gray-500 m-0 mb-4">
+                      This will permanently delete &ldquo;{s.title}&rdquo; and its evaluation. This action cannot be undone.
+                    </p>
+                    <div className="flex gap-2 justify-end">
+                      <button
+                        onClick={() => setConfirmDelete(false)}
+                        className="px-3 py-2 text-[13px] font-medium text-gray-700 rounded-lg hover:bg-gray-100 transition-colors border-0 bg-transparent cursor-pointer"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        disabled={deleting}
+                        onClick={async () => {
+                          setDeleting(true)
+                          if (onDelete) {
+                            onDelete(s.id)
+                          } else {
+                            await fetch(`/api/scripts/${s.id}/hide`, { method: 'DELETE' })
+                            router.refresh()
+                          }
+                          setConfirmDelete(false)
+                          setDeleting(false)
+                        }}
+                        className="px-3 py-2 text-[13px] font-semibold text-white rounded-lg transition-colors border-0 cursor-pointer disabled:opacity-50"
+                        style={{ background: '#dc2626' }}
+                      >
+                        {deleting ? 'Deleting...' : 'Delete permanently'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         )}

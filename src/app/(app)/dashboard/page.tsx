@@ -14,6 +14,7 @@ import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
 import { QuickApplyDropdown } from '@/components/dashboard/quick-apply-dropdown'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
+import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -575,6 +576,11 @@ export default async function DashboardPage() {
                     <Link href={reportHref} className="absolute inset-0 z-0" aria-label={`View report for ${script.title}`} />
 
                     <div className="relative z-10 p-4 flex flex-col flex-1 pointer-events-none">
+
+                      {/* Delete menu — top right */}
+                      <div className="absolute top-2 right-2 pointer-events-auto z-20">
+                        <DeleteScriptButton scriptId={script.id} title={script.title} />
+                      </div>
 
                       {/* GEM Score + Heat badges — always visible */}
                       <div className="flex items-center gap-2 mb-2">

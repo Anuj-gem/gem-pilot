@@ -10,7 +10,7 @@ import { useNewUploads } from '@/hooks/use-new-uploads'
 type ScriptRow = ScriptRowData & {
   isProcessing?: boolean
   isLocked?: boolean
-  hidden: boolean
+  hidden?: boolean
 }
 
 type SortKey = 'date' | 'title' | 'score'
@@ -27,15 +27,13 @@ export function ScriptsList({
   const [sortKey, setSortKey] = useState<SortKey>('date')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [selected, setSelected] = useState<Set<string>>(new Set())
-  const [showHidden, setShowHidden] = useState(false)
-  const [hiding, setHiding] = useState<Set<string>>(new Set())
+  const [deleting, setDeleting] = useState<Set<string>>(new Set())
 
   // Optimistic processing cards from new uploads + auto-refresh poller
   const optimistic = useNewUploads(scripts.map(s => s.id))
   const hasProcessing = scripts.some(s => s.isProcessing) || optimistic.length > 0
 
   const visible = scripts.filter((s: ScriptRow) => !s.hidden)
-  const hidden = scripts.filter((s: ScriptRow) => s.hidden)
 
   function sorted(rows: ScriptRow[]) {
     const mul = sortDir === 'asc' ? 1 : -1
@@ -89,44 +87,21 @@ export function ScriptsList({
     }
   }
 
-  async function hideScript(id: string) {
-    setHiding(prev => new Set(prev).add(id))
-    await fetch(`/api/scripts/${id}/hide`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ hide: true }),
-    })
+  async function deleteScript(id: string) {
+    setDeleting(prev => new Set(prev).add(id))
+    await fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' })
     router.refresh()
   }
 
-  async function unhideScript(id: string) {
-    setHiding(prev => new Set(prev).add(id))
-    await fetch(`/api/scripts/${id}/hide`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ hide: false }),
-    })
-    router.refresh()
-  }
-
-  async function bulkHide() {
+  async function bulkDelete() {
     const ids = [...selected]
-    setHiding(new Set(ids))
-    await Promise.all(
-      ids.map(id =>
-        fetch(`/api/scripts/${id}/hide`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ hide: true }),
-        })
-      )
-    )
+    setDeleting(new Set(ids))
+    await Promise.all(ids.map(id => fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' })))
     setSelected(new Set())
     router.refresh()
   }
 
   const sortedVisible = sorted(visible)
-  const sortedHidden = sorted(hidden)
 
   const arrow = (key: SortKey) =>
     sortKey === key ? (sortDir === 'asc' ? ' ↑' : ' ↓') : ''
@@ -167,10 +142,10 @@ export function ScriptsList({
         <div className="flex items-center gap-3 mb-3 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg">
           <span className="text-[12px] text-gray-600 font-medium">{selected.size} selected</span>
           <button
-            onClick={bulkHide}
+            onClick={bulkDelete}
             className="text-[12px] font-semibold text-red-600 hover:text-red-800 transition-colors"
           >
-            Hide selected
+            Delete selected
           </button>
           <button
             onClick={() => setSelected(new Set())}
@@ -206,7 +181,7 @@ export function ScriptsList({
           {sortedVisible.map(s => (
             <div
               key={s.id}
-              className={`relative ${hiding.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}
+              className={`relative ${deleting.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}
             >
               {s.isLocked && (
                 <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center rounded-xl">
@@ -216,7 +191,7 @@ export function ScriptsList({
               <ScriptRowCard
                 script={s}
                 showMenu={!s.isLocked && !s.isProcessing}
-                onHide={hideScript}
+                onDelete={deleteScript}
               />
             </div>
           ))}
@@ -224,39 +199,6 @@ export function ScriptsList({
       )}
 
       {/* Upload button removed — use "+ New" in the nav */}
-
-      {/* Hidden scripts */}
-      {hidden.length > 0 && (
-        <div className="mt-4">
-          <button
-            onClick={() => setShowHidden(!showHidden)}
-            className="text-[12px] text-gray-400 hover:text-gray-600 font-medium transition-colors"
-          >
-            {showHidden ? 'Hide' : 'Show'} {hidden.length} hidden {hidden.length === 1 ? 'script' : 'scripts'}
-          </button>
-
-          {showHidden && (
-            <div className="mt-2 space-y-2 opacity-60">
-              {sortedHidden.map(s => (
-                <div
-                  key={s.id}
-                  className={`flex items-center gap-2 ${hiding.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}
-                >
-                  <div className="flex-1">
-                    <ScriptRowCard script={s} />
-                  </div>
-                  <button
-                    onClick={() => unhideScript(s.id)}
-                    className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 shrink-0 transition-colors"
-                  >
-                    Restore
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   )
 }
