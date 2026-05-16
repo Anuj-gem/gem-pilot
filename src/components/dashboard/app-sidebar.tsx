@@ -62,7 +62,10 @@ export function AppSidebar(props: AppSidebarData | { anonymous: true }) {
 
         {/* Links — only for logged-in users */}
         {!isAnon && (
-          <NavLinks pathname={pathname} />
+          <>
+            <NavLinks pathname={pathname} />
+            <SignOutButton />
+          </>
         )}
       </div>
     </aside>
@@ -524,6 +527,28 @@ function LoggedInProfileCard({
         </div>
       </div>
     </div>
+  )
+}
+
+// ─── SIGN OUT BUTTON ────────────────────────────────────────────────────────
+
+function SignOutButton() {
+  const router = useRouter()
+  const supabase = createClient()
+
+  async function handleSignOut() {
+    await supabase.auth.signOut()
+    router.push('/')
+    router.refresh()
+  }
+
+  return (
+    <button
+      onClick={handleSignOut}
+      className="w-full mt-4 py-2 text-[12px] text-gray-400 hover:text-gray-600 cursor-pointer border-0 bg-transparent transition-colors text-left px-3"
+    >
+      Sign out
+    </button>
   )
 }
 

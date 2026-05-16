@@ -13,7 +13,6 @@ import {
   Compass,
 } from 'lucide-react'
 import {
-  NavUserMenu,
   type NavUserMenuProfile,
   type NavUserMenuStats,
   type NavUserMenuActivity,
@@ -128,24 +127,6 @@ export default function Nav({ userData }: NavProps = {}) {
                   <div className="ml-2">
                     <NewActionMenu />
                   </div>
-                  {userData ? (
-                    <div className="ml-2">
-                      <NavUserMenu
-                        profile={userData.profile}
-                        stats={userData.stats}
-                        recentActivity={userData.recentActivity}
-                        onSignOut={handleSignOut}
-                      />
-                    </div>
-                  ) : (
-                    <button
-                      onClick={handleSignOut}
-                      className="ml-2 p-1.5 rounded-lg text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
-                      title="Sign out"
-                    >
-                      <LogOut size={16} />
-                    </button>
-                  )}
                 </div>
               </div>
 
@@ -161,14 +142,6 @@ export default function Nav({ userData }: NavProps = {}) {
                   </button>
                 )}
                 <NewActionMenu />
-                {userData && (
-                  <NavUserMenu
-                    profile={userData.profile}
-                    stats={userData.stats}
-                    recentActivity={userData.recentActivity}
-                    onSignOut={handleSignOut}
-                  />
-                )}
                 <button
                   className="p-1.5 text-[var(--gem-gray-300)]"
                   onClick={() => setMobileOpen(!mobileOpen)}
