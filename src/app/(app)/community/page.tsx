@@ -61,7 +61,7 @@ export default async function CommunityPage({ searchParams }: PageProps) {
   // having multiple tables with FKs to script_submissions.
   const { data: rows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry')
+    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry, heat_score')
     .eq('is_public', true)
     .eq('status', 'completed')
     .is('hidden_at', null)
@@ -76,6 +76,7 @@ export default async function CommunityPage({ searchParams }: PageProps) {
     report_privacy: { show_score?: boolean } | null
     allow_reviews: boolean | null
     allow_industry: boolean | null
+    heat_score: number | null
   }
   const scripts = (rows as SubRow[] | null) || []
   const submissionIds = scripts.map((s) => s.id)
@@ -147,6 +148,7 @@ export default async function CommunityPage({ searchParams }: PageProps) {
         data,
         recentTs: new Date(s.created_at).getTime(),
         selznick: Number(ev.weighted_score ?? 0),
+        heat: s.heat_score ?? 0,
         scoreVisible,
         reviews: st?.reviewCount ?? 0,
         genreKey: ev.genreKey,
