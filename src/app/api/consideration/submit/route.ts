@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { CURRENT_PROMPT_VERSION } from '@/lib/evaluation-prompt'
-import { sendEmail } from '@/lib/email'
+// sendEmail import removed — consideration_submitted template deleted (May 2026)
 
 function svc() {
   return createServerClient(
@@ -169,28 +169,7 @@ export async function POST(req: NextRequest) {
     // Non-critical — don't fail the consideration submission
   }
 
-  // Send submission confirmation email
-  try {
-    const { data: writerProfile } = await service
-      .from('profiles')
-      .select('full_name, email')
-      .eq('id', user.id)
-      .single()
-
-    if (writerProfile?.email) {
-      const firstName = writerProfile.full_name?.split(' ')[0] || 'there'
-      await sendEmail({
-        templateAlias: 'consideration_submitted',
-        to: writerProfile.email,
-        variables: { first_name: firstName },
-        dedupeKey: `consideration_submitted_${consideration.id}`,
-        tag: 'consideration_submitted',
-        userId: user.id,
-      }, service)
-    }
-  } catch (emailErr) {
-    console.error('[consideration/submit] Email send failed:', emailErr)
-  }
+  // Email removed — consideration_submitted template deleted in email cleanup (May 2026)
 
   return NextResponse.json({ ok: true, consideration_id: consideration.id })
 }

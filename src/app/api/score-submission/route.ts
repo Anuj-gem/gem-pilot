@@ -444,6 +444,8 @@ export async function POST(request: NextRequest) {
                 title: submission.title || "Untitled",
                 report_url: reportUrl,
                 match_count: matchCount,
+                score: String(Math.round(weightedScore)),
+                tier,
               },
               dedupeKey: evalRecord.id,
               tag: templateAlias,

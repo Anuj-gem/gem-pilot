@@ -10,16 +10,8 @@
       "schedule": "0 */6 * * *"
     },
     {
-      "path": "/api/cron/drip-emails",
-      "schedule": "0 13 * * *"
-    },
-    {
       "path": "/api/cron/opportunity-broadcast",
       "schedule": "0 0 1 1 *"
-    },
-    {
-      "path": "/api/cron/consideration-nudge",
-      "schedule": "0 14 * * *"
     }
   ]
 }

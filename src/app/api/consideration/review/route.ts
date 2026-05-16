@@ -169,25 +169,76 @@ export async function POST(req: NextRequest) {
       try {
         const { data: con } = await service
           .from('considerations')
-          .select('writer_id')
+          .select('writer_id, heat_earned, opportunity_id')
           .eq('id', consideration_id)
           .single()
 
         if (con) {
           const { data: writerProfile } = await service
             .from('profiles')
-            .select('full_name, email')
+            .select('full_name, email, heat_score')
             .eq('id', con.writer_id)
             .single()
 
+          // Get opportunity details
+          let opportunityTitle = 'an opportunity'
+          let opportunityGenres = ''
+          let opportunityType = 'Paid'
+          let opportunityBadgeBg = '#DCFCE7'
+          let opportunityBadgeColor = '#166534'
+          if (con.opportunity_id) {
+            const { data: opp } = await service
+              .from('opportunities')
+              .select('title, genres, deal_type')
+              .eq('id', con.opportunity_id)
+              .single()
+            if (opp) {
+              opportunityTitle = opp.title || opportunityTitle
+              opportunityGenres = Array.isArray(opp.genres) ? opp.genres.join(', ') : (opp.genres || '')
+              opportunityType = opp.deal_type === 'unpaid' ? 'Unpaid' : 'Paid'
+              opportunityBadgeBg = opp.deal_type === 'unpaid' ? '#FEF3C7' : '#DCFCE7'
+              opportunityBadgeColor = opp.deal_type === 'unpaid' ? '#92400E' : '#166534'
+            }
+          }
+
+          // Get script title from consideration_scripts
+          let scriptTitle = 'your script'
+          const { data: csRows } = await service
+            .from('consideration_scripts')
+            .select('script_id')
+            .eq('consideration_id', consideration_id)
+            .limit(1)
+          if (csRows && csRows.length > 0) {
+            const { data: script } = await service
+              .from('script_submissions')
+              .select('title')
+              .eq('id', csRows[0].script_id)
+              .single()
+            if (script?.title) scriptTitle = script.title
+          }
+
+          // Count matching opportunities for this writer
+          let matchCount = '0'
+          const { count } = await service
+            .from('opportunities')
+            .select('*', { count: 'exact', head: true })
+            .eq('is_active', true)
+          matchCount = String(count || 0)
+
           if (writerProfile?.email) {
-            const firstName = writerProfile.full_name?.split(' ')[0] || 'there'
             await sendEmail({
               templateAlias: 'consideration_complete',
               to: writerProfile.email,
               variables: {
-                first_name: firstName,
-                feedback_url: 'https://www.gem.studio/dashboard',
+                script_title: scriptTitle,
+                opportunity_title: opportunityTitle,
+                opportunity_genres: opportunityGenres,
+                opportunity_type: opportunityType,
+                opportunity_badge_bg: opportunityBadgeBg,
+                opportunity_badge_color: opportunityBadgeColor,
+                heat_earned: String(con.heat_earned || 0),
+                total_heat: String(writerProfile.heat_score || 0),
+                match_count: matchCount,
               },
               dedupeKey: `consideration_complete_${consideration_id}`,
               tag: 'consideration_complete',

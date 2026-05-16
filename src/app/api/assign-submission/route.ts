@@ -122,6 +122,21 @@ export async function POST(request: NextRequest) {
         matchCount = String(count ?? 0);
       } catch {}
 
+      // Get score and tier from the evaluation
+      let score = "0";
+      let tier = "Promising";
+      try {
+        const { data: evalData } = await serviceClient
+          .from("script_evaluations")
+          .select("weighted_score, tier")
+          .eq("id", evalRecord.id)
+          .single();
+        if (evalData) {
+          score = String(Math.round(evalData.weighted_score || 0));
+          tier = evalData.tier || "Promising";
+        }
+      } catch {}
+
       // MUST await — see /api/evaluate. Without await Vercel kills the
       // Lambda before Postmark responds and the row stays pending forever.
       try {
@@ -134,6 +149,8 @@ export async function POST(request: NextRequest) {
               title: sub?.title || "Untitled",
               report_url: reportUrl,
               match_count: matchCount,
+              score,
+              tier,
             },
             dedupeKey: evalRecord.id,
             tag: "post_submission_free",
