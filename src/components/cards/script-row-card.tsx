@@ -71,7 +71,7 @@ export function ScriptRowCard({
 
   return (
     <div
-      className={`rounded-xl bg-white border px-4 py-3 transition-colors ${
+      className={`rounded-xl bg-white border px-3 py-2.5 lg:px-4 lg:py-3 transition-colors ${
         checkbox
           ? checked
             ? 'border-purple-200 ring-1 ring-purple-100'
@@ -101,7 +101,7 @@ export function ScriptRowCard({
         {/* Score badge with tooltip */}
         {s.isProcessing ? (
           <div
-            className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+            className="shrink-0 w-9 h-9 lg:w-11 lg:h-11 rounded-lg flex items-center justify-center"
             style={{ background: '#f3f4f6' }}
           >
             <div className="w-4 h-4 border-2 border-gray-300 border-t-purple-500 rounded-full animate-spin" />
@@ -110,7 +110,7 @@ export function ScriptRowCard({
           <div className="relative group/score shrink-0">
             {s.score != null ? (
               <div
-                className="h-11 rounded-lg flex items-center gap-1.5 justify-center px-2.5"
+                className="h-9 lg:h-11 rounded-lg flex items-center gap-1 lg:gap-1.5 justify-center px-2 lg:px-2.5"
                 style={{
                   background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
                   ...(s.isLocked ? { filter: 'blur(6px)', userSelect: 'none' as const } : {}),
@@ -128,7 +128,7 @@ export function ScriptRowCard({
               </div>
             ) : (
               <div
-                className="h-11 rounded-lg flex items-center gap-1.5 justify-center px-2.5"
+                className="h-9 lg:h-11 rounded-lg flex items-center gap-1 lg:gap-1.5 justify-center px-2 lg:px-2.5"
                 style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
               >
                 <span
@@ -150,7 +150,7 @@ export function ScriptRowCard({
         {!s.isProcessing && !s.isLocked && s.evaluationId && (
           <div className="relative group/heat shrink-0">
             <div
-              className="h-11 rounded-lg flex items-center gap-1 justify-center px-2.5"
+              className="h-9 lg:h-11 rounded-lg flex items-center gap-1 justify-center px-2 lg:px-2.5"
               style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}
             >
               <span className="text-[12px] leading-none" aria-hidden="true">🔥</span>
@@ -172,11 +172,11 @@ export function ScriptRowCard({
               {s.title}
             </p>
             {s.format && (
-              <span className="text-[12px] text-gray-400 shrink-0">{s.format}</span>
+              <span className="hidden lg:inline text-[12px] text-gray-400 shrink-0">{s.format}</span>
             )}
-            {s.format && s.createdAt && <span className="text-gray-200 shrink-0">&middot;</span>}
+            {s.format && s.createdAt && <span className="hidden lg:inline text-gray-200 shrink-0">&middot;</span>}
             {s.createdAt && (
-              <span className="text-[12px] text-gray-300 shrink-0">
+              <span className="hidden lg:inline text-[12px] text-gray-300 shrink-0">
                 {new Date(s.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
               </span>
             )}

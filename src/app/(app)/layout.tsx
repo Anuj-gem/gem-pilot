@@ -22,7 +22,7 @@ import { ScriptUploadModal } from "@/components/script-upload-modal"
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { AppSidebar } from '@/components/dashboard/app-sidebar'
-import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
+import { MobileTabBar, type MobileTabBarProps } from '@/components/dashboard/mobile-tab-bar'
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
@@ -58,6 +58,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         </div>
         <ScriptUploadModal redirectTo="/evaluating" />
         <SignupGateModal />
+        <MobileTabBar isAnon />
       </div>
     )
   }
@@ -228,7 +229,14 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           </main>
         </div>
       </div>
-      <MobileTabBar />
+      <MobileTabBar
+        isAnon={false}
+        userName={sidebarData.userName}
+        avatarUrl={sidebarData.avatarUrl}
+        headline={sidebarData.headline}
+        isPro={isPro}
+        heatScore={sidebarData.heatScore}
+      />
       <ScriptUploadModal redirectTo="/dashboard" guestEvalsUsed={isPro ? undefined : (totalSubmissions ?? 0)} />
       {!isPro && <UpgradeModalListener evalsUsed={totalSubmissions ?? 0} appsUsed={appCount ?? 0} />}
       <InsiderGateModal />

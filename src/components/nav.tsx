@@ -1,15 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import {
   LayoutDashboard,
   Briefcase,
-  LogOut,
-  Menu,
-  X,
   Compass,
 } from 'lucide-react'
 import {
@@ -40,19 +37,11 @@ interface NavProps {
 
 export default function Nav({ userData }: NavProps = {}) {
   const pathname = usePathname()
-  const router = useRouter()
   const supabase = createClient()
   const [user, setUser] = useState<{ id: string } | null>(null)
-  const [mobileOpen, setMobileOpen] = useState(false)
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user))
   }, [])
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    router.push('/')
-    router.refresh()
-  }
 
   // Nav tabs — same structure for logged-in and logged-out.
   // "Home" points to /dashboard (logged in) or / (logged out).
@@ -130,7 +119,7 @@ export default function Nav({ userData }: NavProps = {}) {
                 </div>
               </div>
 
-              {/* Mobile logged-in — consideration CTA always visible + hamburger */}
+              {/* Mobile logged-in — compact: upgrade CTA + new action menu. Nav handled by bottom tab bar. */}
               <div className="md:hidden flex items-center gap-2">
                 {userData && !userData.profile.isPro && (
                   <button
@@ -142,13 +131,6 @@ export default function Nav({ userData }: NavProps = {}) {
                   </button>
                 )}
                 <NewActionMenu />
-                <button
-                  className="p-1.5 text-[var(--gem-gray-300)]"
-                  onClick={() => setMobileOpen(!mobileOpen)}
-                  aria-label="Toggle menu"
-                >
-                  {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
               </div>
             </>
           ) : (
@@ -204,7 +186,7 @@ export default function Nav({ userData }: NavProps = {}) {
                 </div>
               </div>
 
-              {/* Mobile logged-out — Sign up pill + hamburger */}
+              {/* Mobile logged-out — compact: Get started CTA. Nav handled by bottom tab bar. */}
               <div className="md:hidden flex items-center gap-2">
                 {pathname !== '/dashboard' && (
                   <button
@@ -218,124 +200,14 @@ export default function Nav({ userData }: NavProps = {}) {
                     Get started
                   </button>
                 )}
-                <button
-                  className="p-1.5 text-[var(--gem-gray-300)]"
-                  onClick={() => setMobileOpen(!mobileOpen)}
-                  aria-label="Toggle menu"
-                >
-                  {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
               </div>
             </>
           )}
         </div>
 
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="md:hidden border-t border-[var(--gem-gray-700)] px-4 py-3 space-y-3">
-            {user ? (
-              <>
-                {navLinks.map(link => (
-                  <NavMenuRow
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    icon={<link.icon size={15} />}
-                    label={link.label}
-                    active={pathname.startsWith(link.href)}
-                  />
-                ))}
-
-                <button
-                  onClick={() => { setMobileOpen(false); handleSignOut() }}
-                  className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
-                  style={{
-                    border: '1px solid var(--gem-gray-700)',
-                    background: 'var(--gem-gray-900)',
-                  }}
-                >
-                  <span
-                    className="flex-shrink-0 w-7 h-7 rounded-md grid place-items-center text-[var(--gem-gray-300)]"
-                    style={{ background: 'var(--gem-gray-800)' }}
-                  >
-                    <LogOut size={15} />
-                  </span>
-                  <span className="text-[14px] font-semibold text-[var(--gem-gray-50)]">Sign out</span>
-                </button>
-              </>
-            ) : (
-              <>
-                {/* Same nav links as logged-in */}
-                {navLinks.map(link => (
-                  <NavMenuRow
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    icon={<link.icon size={15} />}
-                    label={link.label}
-                    active={link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)}
-                  />
-                ))}
-
-                <div className="pt-2 border-t border-[var(--gem-gray-700)] space-y-2">
-                  <NavMenuRow
-                    href="/login"
-                    onClick={() => setMobileOpen(false)}
-                    label="Log in"
-                  />
-                </div>
-              </>
-            )}
-          </div>
-        )}
+        {/* Mobile navigation is handled by the bottom tab bar (MobileTabBar) */}
       </nav>
     </>
   )
 }
 
-function NavMenuRow({
-  href,
-  onClick,
-  icon,
-  label,
-  hint,
-  active = false,
-}: {
-  href: string
-  onClick: () => void
-  icon?: React.ReactNode
-  label: string
-  hint?: string
-  active?: boolean
-}) {
-  return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-colors hover:bg-[var(--gem-gray-900)]"
-      style={{
-        border: `1px solid ${active ? 'var(--gem-accent)' : 'var(--gem-gray-700)'}`,
-        background: active ? 'rgba(124,58,237,0.08)' : 'var(--gem-gray-900)',
-      }}
-    >
-      {icon && (
-        <span
-          className="flex-shrink-0 w-7 h-7 rounded-md grid place-items-center text-[var(--gem-gray-300)]"
-          style={{ background: active ? 'rgba(124,58,237,0.15)' : 'var(--gem-gray-800)' }}
-        >
-          {icon}
-        </span>
-      )}
-      <span className="flex-1 min-w-0">
-        <span className="block text-[14px] font-semibold text-[var(--gem-gray-50)] leading-tight">
-          {label}
-        </span>
-        {hint && (
-          <span className="block text-[11.5px] text-[var(--gem-gray-500)] mt-0.5 leading-tight">
-            {hint}
-          </span>
-        )}
-      </span>
-    </Link>
-  )
-}
