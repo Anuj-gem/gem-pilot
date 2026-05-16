@@ -32,6 +32,7 @@ export interface ScriptCardData {
   genre?: string | null
   logline?: string | null
   selznick_score: number | null
+  heat_score?: number | null
   tier?: string | null
   headline?: string | null
   /** Whether the submission is currently visible on Discover. Used to
@@ -337,16 +338,10 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
       s.selznick_score == null || !scoreVisibleToViewer
         ? null
         : Math.round(Number(s.selznick_score))
-    const isPublic = !!s.is_public
-    // Submit-review CTA only renders when the writer has reviews on.
-    const reviewsAllowed = s.allow_reviews !== false
-    // Meta line components — small-caps, owner status inline as TEXT
-    // (not a pill) per Layout B. (Anuj 2026-04-30 council redesign.)
-    const metaParts = [
-      isOwner ? (isPublic ? 'Published' : 'Private') : null,
-      s.format,
-      s.genre,
-    ].filter(Boolean) as string[]
+    const heat = s.heat_score ?? 0
+
+    // Format · Genre meta line
+    const metaParts = [s.format, s.genre].filter(Boolean) as string[]
 
     return (
       <div
@@ -384,39 +379,58 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
             </div>
           )}
 
-          {/* TITLE — 3-line clamp so most titles fit without
-              cutting off (Anuj 2026-04-30 v0.9). */}
+          {/* TITLE — 3-line clamp */}
           <div
             className="font-bold text-gray-900 leading-[1.2] line-clamp-3"
-            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '3.6em' }}
+            style={{ fontFamily: 'Georgia, serif', fontSize: 20, minHeight: '2.4em' }}
           >
             {s.title}
           </div>
 
-          {/* LOGLINE — article-preview style: clean sans-serif body text,
-              no italics, no smart-quotes, no tiny pull-quote serif. Reads
-              like a story dek under the headline (Anuj 2026-04-30 v0.10.4
-              — "the weird italic font in quotes was hard to read"). */}
-          {s.logline && (
-            <p
-              className="text-[14px] text-gray-700 mt-2.5 leading-[1.5] line-clamp-4 m-0"
-              style={{ minHeight: '4.5em' }}
+          {/* FORMAT · GENRE — right below title */}
+          {metaParts.length > 0 && (
+            <div
+              className="mt-1.5 text-[12px] font-semibold uppercase tracking-[0.06em] text-gray-400"
             >
-              {s.logline}
-            </p>
+              {metaParts.join(' · ')}
+            </div>
           )}
 
-          {/* META STRIP — small caps, status inline (owner only),
-              format · genre · review count. No pills here. */}
-          <div
-            className="mt-4 pt-3 text-[10.5px] font-semibold uppercase tracking-[0.08em] truncate"
-            style={{ borderTop: `1px solid ${CARD.border}`, color: CARD.ink }}
-          >
-            {metaParts.join(' · ') || '—'}
+          {/* SCORE + HEAT ROW */}
+          <div className="mt-4 pt-3 flex items-center gap-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
+            {/* GEM Score badge */}
+            {score != null ? (
+              <div
+                className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5"
+                style={{ background: '#f3f4f6', border: '1px solid #e5e7eb' }}
+              >
+                <span className="text-[14px] font-extrabold text-gray-800">{score}</span>
+                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-wide">Score</span>
+              </div>
+            ) : (
+              <div
+                className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5"
+                style={{ background: '#f3f4f6', border: '1px solid #e5e7eb' }}
+              >
+                <span className="text-[14px] font-extrabold text-gray-300">&mdash;</span>
+                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-wide">Score</span>
+              </div>
+            )}
+
+            {/* Insider Heat badge */}
+            <div
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5"
+              style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}
+            >
+              <span className={`text-[14px] font-extrabold ${heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>
+                {heat}
+              </span>
+              <span className="text-[9px] font-bold text-orange-400 uppercase tracking-wide">Heat</span>
+            </div>
           </div>
 
-          {/* WRITER + SCORE — verdict-at-the-bottom pattern (Letterboxd). */}
-          <div className="mt-3 flex items-center justify-between gap-3">
+          {/* BLURRED AUTHOR + LOGLINE + INSIDERS CTA */}
+          <div className="mt-3 pt-3 flex items-center justify-between gap-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
             <div className="min-w-0 flex-1">
               {isInsider ? (
                 <WriterMiniCard
@@ -425,29 +439,40 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                   avatar={s.writer_avatar_url}
                 />
               ) : (
-                /* Non-insider: blur the author name */
+                /* Non-insider: blur the author name + logline hint */
                 <div className="flex items-center gap-2 min-w-0">
                   <div className="w-6 h-6 rounded-full bg-gray-200 shrink-0" />
-                  <div className="text-[12px] font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif', filter: 'blur(5px)', userSelect: 'none' }}>
+                  <div className="text-[12px] font-bold text-gray-400 leading-tight truncate" style={{ fontFamily: 'Georgia, serif', filter: 'blur(5px)', userSelect: 'none' }}>
                     {s.writer_name || 'Writer Name'}
                   </div>
                 </div>
               )}
             </div>
-            {score != null && (
-              <div className="shrink-0">
-                <ScorePill score={score} />
-              </div>
+
+            {/* Insiders only / View report */}
+            {href && isInsider && (
+              <Link
+                href={href}
+                prefetch={false}
+                className="relative z-10 pointer-events-auto shrink-0 inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors"
+              >
+                View report →
+              </Link>
+            )}
+            {href && !isInsider && (
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('gem:open-insider-gate'))}
+                className="relative z-10 pointer-events-auto shrink-0 inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors border-none cursor-pointer"
+              >
+                <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" /></svg>
+                Insiders only
+              </button>
             )}
           </div>
 
-          {/* ACTION ROW — opportunities-v1: industry stats button removed for owners.
-              Non-owner: Submit review (left) + View report (right). */}
-          <div className="mt-3.5 pt-3 flex items-center gap-2" style={{ borderTop: `1px solid ${CARD.border}` }}>
-            <span className="flex-1" />
-            {/* Owner triple-dot — privacy + industry activity props
-                removed (opportunities-v1). */}
-            {isOwner && s.evaluation_id && (
+          {/* Owner actions */}
+          {isOwner && s.evaluation_id && (
+            <div className="mt-2 flex justify-end">
               <div className="relative z-10 pointer-events-auto">
                 <OwnerActionsMenu
                   submissionId={s.submission_id}
@@ -461,26 +486,8 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                   downloadHref={`/report/${s.evaluation_id}?download=1`}
                 />
               </div>
-            )}
-            {href && isInsider && (
-              <Link
-                href={href}
-                prefetch={false}
-                className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors"
-              >
-                View report →
-              </Link>
-            )}
-            {href && !isInsider && (
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
-                className="relative z-10 pointer-events-auto inline-flex items-center justify-center gap-1.5 text-[11.5px] font-bold rounded-md bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 transition-colors border-none cursor-pointer"
-              >
-                <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" /></svg>
-                Insiders only
-              </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     )

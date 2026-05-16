@@ -26,6 +26,7 @@ import { MobileTabBar } from '@/components/dashboard/mobile-tab-bar'
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
+import { InsiderGateModal } from '@/components/discover/insider-gate-modal'
 
 function svc() {
   return createServerClient(
@@ -228,6 +229,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <MobileTabBar />
       <ScriptUploadModal redirectTo="/dashboard" guestEvalsUsed={isPro ? undefined : (totalSubmissions ?? 0)} />
       {!isPro && <UpgradeModalListener evalsUsed={totalSubmissions ?? 0} appsUsed={appCount ?? 0} />}
+      <InsiderGateModal />
     </div>
   )
 }

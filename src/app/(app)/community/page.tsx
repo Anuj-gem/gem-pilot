@@ -135,6 +135,7 @@ export default async function CommunityPage({ searchParams }: PageProps) {
         genre: ev.genre,
         logline: ev.logline,
         selznick_score: ev.weighted_score,
+        heat_score: s.heat_score ?? 0,
         writer_handle: wp?.handle ?? null,
         writer_name: wp?.full_name ?? null,
         writer_avatar_url: wp?.avatar_url ?? null,
