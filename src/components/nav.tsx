@@ -46,7 +46,7 @@ export default function Nav({ userData }: NavProps = {}) {
   // Nav tabs — same structure for logged-in and logged-out.
   // "Home" points to /dashboard (logged in) or / (logged out).
   const navLinks = [
-    { href: user ? '/dashboard' : '/', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/leaderboard', label: 'Leaderboard', icon: Compass },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
   ]
@@ -60,7 +60,7 @@ export default function Nav({ userData }: NavProps = {}) {
       <div className="h-14" aria-hidden />
       <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href={user ? '/dashboard' : '/'} className="flex items-center gap-2">
+          <Link href="/dashboard" className="flex items-center gap-2">
             <span
               aria-hidden="true"
               className="inline-block w-3 h-3 rotate-45"
