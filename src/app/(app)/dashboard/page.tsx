@@ -119,6 +119,32 @@ export default async function DashboardPage() {
     allApplications = (applications || []) as AppRow[]
   }
 
+  // Per-opp applied script tracking (which scripts have been submitted to which opps)
+  const appliedScriptsByOpp = new Map<string, Set<string>>()
+  const pendingOppIds = new Set<string>()
+
+  if (user && allApplications.length > 0) {
+    const considerationIds = allApplications.map(a => a.id)
+    const { data: csRows } = await service
+      .from('consideration_scripts')
+      .select('script_id, consideration_id')
+      .in('consideration_id', considerationIds)
+
+    const considerationToOpp = new Map(allApplications.map(a => [a.id, a.opportunity_id]))
+    for (const row of (csRows || []) as { script_id: string; consideration_id: string }[]) {
+      const oppId = considerationToOpp.get(row.consideration_id)
+      if (!oppId) continue
+      if (!appliedScriptsByOpp.has(oppId)) appliedScriptsByOpp.set(oppId, new Set())
+      appliedScriptsByOpp.get(oppId)!.add(row.script_id)
+    }
+
+    for (const app of allApplications) {
+      if (app.status !== 'reviewed' && app.review_stage !== 'complete') {
+        pendingOppIds.add(app.opportunity_id)
+      }
+    }
+  }
+
   // Usage gate data for guest users
   const FREE_EVAL_LIMIT = 2
   const FREE_APP_LIMIT = 2
@@ -220,7 +246,8 @@ export default async function DashboardPage() {
     })
   }
 
-  const unappliedOpps = allOpenOpps.filter(o => !appliedOppIds.has(o.id))
+  // Filter out opps with pending applications — but keep previously-applied opps (can apply more scripts)
+  const unappliedOpps = allOpenOpps.filter(o => !pendingOppIds.has(o.id))
   const qualifiedOpps = unappliedOpps.filter(o => anyScriptQualifies(o))
   const unqualifiedOpps = unappliedOpps.filter(o => !anyScriptQualifies(o))
 
@@ -270,8 +297,11 @@ export default async function DashboardPage() {
   }
 
   // Get matching scripts for an opportunity (for OppScriptDropdown)
+  // Excludes scripts already applied to THIS specific opp
   function getMatchingScriptsForOpp(opp: OppRow) {
+    const alreadyAppliedScripts = appliedScriptsByOpp.get(opp.id) || new Set<string>()
     return completedScripts.filter(s => {
+      if (alreadyAppliedScripts.has(s.id)) return false
       const ev = myEvalBySub.get(s.id)
       const score = ev?.weighted_score ?? null
       if (opp.min_score && (!score || score < opp.min_score)) return false

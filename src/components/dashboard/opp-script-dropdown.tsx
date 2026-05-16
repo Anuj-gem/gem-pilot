@@ -20,17 +20,16 @@ type Props = {
 
 export function OppScriptDropdown({ opportunityId, matchingScripts, appliedOppIds }: Props) {
   const [open, setOpen] = useState(false)
-  const [localApplied, setLocalApplied] = useState(false)
+  const [justApplied, setJustApplied] = useState(false)
   const [applying, setApplying] = useState<string | null>(null)
+  const [localAppliedScripts, setLocalAppliedScripts] = useState<Set<string>>(new Set())
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
 
-  const alreadyApplied = appliedOppIds.includes(opportunityId) || localApplied
-  const count = matchingScripts.length
-
-  if (count === 0) {
-    return <span className="text-[13px] text-gray-400">0 scripts match</span>
-  }
+  const previouslyApplied = appliedOppIds.includes(opportunityId)
+  // Filter out scripts the user just applied in this session
+  const availableScripts = matchingScripts.filter(s => !localAppliedScripts.has(s.id))
+  const count = availableScripts.length
 
   async function handleApply(scriptId: string) {
     setApplying(scriptId)
@@ -44,8 +43,9 @@ export function OppScriptDropdown({ opportunityId, matchingScripts, appliedOppId
         }),
       })
       if (res.ok) {
-        setLocalApplied(true)
-        setOpen(false)
+        setLocalAppliedScripts(prev => new Set([...prev, scriptId]))
+        setJustApplied(true)
+        if (availableScripts.length <= 1) setOpen(false)
         startTransition(() => router.refresh())
       } else if (res.status === 403) {
         window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
@@ -57,7 +57,8 @@ export function OppScriptDropdown({ opportunityId, matchingScripts, appliedOppId
     }
   }
 
-  if (alreadyApplied) {
+  // All scripts applied, none remaining
+  if ((previouslyApplied || justApplied) && count === 0) {
     return (
       <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-emerald-600">
         ✓ Applied
@@ -65,20 +66,31 @@ export function OppScriptDropdown({ opportunityId, matchingScripts, appliedOppId
     )
   }
 
+  // No scripts match at all (never applied)
+  if (count === 0) {
+    return <span className="text-[13px] text-gray-400">0 scripts match</span>
+  }
+
+  // Has available scripts — show dropdown
+  const label = previouslyApplied || justApplied
+    ? `Applied · ${count} more`
+    : `${count} ${count === 1 ? 'script matches' : 'scripts match'}`
+
   return (
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-[13px] font-semibold text-purple-600 hover:text-purple-800 transition-colors bg-transparent border-none cursor-pointer p-0"
+        className="flex items-center gap-1 text-[13px] font-semibold transition-colors bg-transparent border-none cursor-pointer p-0"
+        style={{ color: previouslyApplied || justApplied ? '#059669' : '#7c3aed' }}
       >
-        {count} {count === 1 ? 'script matches' : 'scripts match'}
+        {previouslyApplied || justApplied ? '✓ ' : ''}{label}
         <span className="text-[10px]">{open ? '▴' : '▾'}</span>
       </button>
 
       {open && (
         <div className="absolute left-0 bottom-full mb-1 w-[240px] bg-white rounded-lg shadow-lg border border-gray-100 py-1.5 z-20">
           <div className="px-3 py-1 text-[10px] font-bold text-gray-400 uppercase">Apply with</div>
-          {matchingScripts.map(s => (
+          {availableScripts.map(s => (
             <button
               key={s.id}
               onClick={() => handleApply(s.id)}
