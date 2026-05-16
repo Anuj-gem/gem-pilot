@@ -165,18 +165,6 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
-                  {pathname !== '/dashboard' && (
-                    <button
-                      onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
-                      className="ml-2 text-sm px-4 py-1.5 rounded-lg text-white font-semibold transition-all duration-150 hover:brightness-110 cursor-pointer border-0"
-                      style={{
-                        background: 'var(--gem-accent)',
-                        boxShadow: '0 4px 12px rgba(124,58,237,0.25)',
-                      }}
-                    >
-                      Get started
-                    </button>
-                  )}
                   <Link
                     href="/login"
                     className="ml-1 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
@@ -186,20 +174,8 @@ export default function Nav({ userData }: NavProps = {}) {
                 </div>
               </div>
 
-              {/* Mobile logged-out — compact: Get started CTA. Nav handled by bottom tab bar. */}
+              {/* Mobile logged-out — nav handled by bottom tab bar */}
               <div className="md:hidden flex items-center gap-2">
-                {pathname !== '/dashboard' && (
-                  <button
-                    onClick={() => window.dispatchEvent(new Event('gem:open-script-upload-modal'))}
-                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white cursor-pointer border-0"
-                    style={{
-                      background: 'var(--gem-accent)',
-                      boxShadow: '0 4px 12px rgba(124,58,237,0.30)',
-                    }}
-                  >
-                    Get started
-                  </button>
-                )}
               </div>
             </>
           )}
