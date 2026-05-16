@@ -122,7 +122,7 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl px-8 text-center flex flex-col items-center justify-center min-h-[48vh]"
+    <div className="relative overflow-hidden rounded-2xl px-6 lg:px-8 py-10 lg:py-12 text-center flex flex-col items-center justify-center"
       style={{
         background: 'linear-gradient(135deg, #1a1025 0%, #2d1b4e 40%, #4c1d95 100%)',
       }}>
@@ -133,7 +133,7 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
       }} />
 
       <div className="relative w-full max-w-lg">
-        <h1 className="text-[36px] font-bold text-white m-0 mb-8">
+        <h1 className="text-[24px] lg:text-[30px] font-bold text-white m-0 mb-5 lg:mb-6">
           What are you working on?
         </h1>
 
