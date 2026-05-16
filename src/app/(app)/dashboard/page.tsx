@@ -2,8 +2,8 @@
 //
 // Same layout for anonymous + logged-in (empty states for anon).
 // Hero: "What are you working on?" format selector → fires upload modal.
-// Three value cards: Scripts Evaluated, Your Applications, 🔥 Industry Heat.
-// Recent scripts with one-click apply dropdowns.
+// Three value cards: Scripts Evaluated, Your Opportunities, 🔥 Industry Heat.
+// Recent scripts with action checklist (apply + publish) and score pill.
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
@@ -28,7 +28,7 @@ export default async function DashboardPage() {
   const { data: { user } } = await supabase.auth.getUser()
   const service = svc()
 
-  // ── DATA QUERIES (logged-in only; anon gets empty defaults) ──
+  // ── DATA QUERIES ──
 
   let profile: { subscription_status: string | null; full_name: string | null; handle: string | null; avatar_url: string | null; heat_score: number | null; headline: string | null } | null = null
   let isPro = false
@@ -64,7 +64,6 @@ export default async function DashboardPage() {
   }
   let allApplications: AppRow[] = []
 
-  // Fetch opportunities for everyone (anon needs them for empty-state context)
   const { data: openOpps } = await service
     .from('opportunities')
     .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers')
@@ -78,10 +77,8 @@ export default async function DashboardPage() {
       .eq('id', user.id)
       .single()
     profile = p
-
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
-    // Scripts
     const { data: mySubs } = await supabase
       .from('script_submissions')
       .select('id, title, status, declared_format, created_at, hidden_at, is_public')
@@ -90,7 +87,6 @@ export default async function DashboardPage() {
     visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
     submissionIds = visible.map((s) => s.id)
 
-    // Evaluations
     if (submissionIds.length > 0) {
       const { data: myEvs } = await service
         .from('script_evaluations')
@@ -111,7 +107,6 @@ export default async function DashboardPage() {
       }
     }
 
-    // Applications (considerations with opportunity_id)
     const { data: applications } = await service
       .from('considerations')
       .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned')
@@ -184,8 +179,44 @@ export default async function DashboardPage() {
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
-  // All applied opp IDs as array for QuickApplyDropdown
   const appliedOppIdsArr = Array.from(appliedOppIds)
+
+  // ── OPPORTUNITIES FOR YOU: filter out applied, sort qualified first then recency ──
+  // Check if ANY completed script qualifies for a given opp
+  function anyScriptQualifies(opp: OppRow) {
+    return completedScripts.some(s => {
+      const ev = myEvalBySub.get(s.id)
+      const score = ev?.weighted_score ?? null
+      if (opp.min_score && (!score || score < opp.min_score)) return false
+      const noFmt = !opp.formats || opp.formats.length === 0
+      const noGenre = !opp.genres || opp.genres.length === 0
+      if (noFmt && noGenre) return true
+      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
+      if (!fmtMatch) return false
+      if (noGenre) return true
+      const sGenres = ev?.genres || []
+      if (sGenres.length === 0) return false
+      const oppNorm = opp.genres!.map(normGenre)
+      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
+    })
+  }
+
+  const unappliedOpps = allOpenOpps.filter(o => !appliedOppIds.has(o.id))
+  const qualifiedOpps = unappliedOpps.filter(o => anyScriptQualifies(o))
+  const unqualifiedOpps = unappliedOpps.filter(o => !anyScriptQualifies(o))
+
+  // Sort each group by deadline (soonest first), then no-deadline last
+  const sortByDeadline = (a: OppRow, b: OppRow) => {
+    if (a.deadline && b.deadline) return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
+    if (a.deadline) return -1
+    if (b.deadline) return 1
+    return 0
+  }
+  qualifiedOpps.sort(sortByDeadline)
+  unqualifiedOpps.sort(sortByDeadline)
+
+  const dashboardOpps = [...qualifiedOpps, ...unqualifiedOpps].slice(0, 4)
+  const qualifiedOppIds = new Set(qualifiedOpps.map(o => o.id))
 
   // ── RENDER ──
 
@@ -240,10 +271,10 @@ export default async function DashboardPage() {
             )}
           </div>
 
-          {/* Card 2: Your Applications */}
+          {/* Card 2: Your Opportunities (pending applications) */}
           <div className="rounded-2xl bg-white px-5 py-4"
             style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">Your Applications</div>
+            <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">Your Opportunities</div>
             <div className="text-[28px] font-bold text-gray-900 leading-none mb-2">
               {user ? pendingCount : 0}
               <span className="text-[13px] font-medium text-gray-400 ml-1.5">pending</span>
@@ -255,7 +286,7 @@ export default async function DashboardPage() {
                   return (
                     <div key={app.id} className="flex items-center justify-between gap-2">
                       <span className="text-[12px] text-gray-600 truncate">
-                        {opp?.title || 'Application'}
+                        {opp?.title || 'Opportunity'}
                       </span>
                       <span className="text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0"
                         style={{ background: '#fef3c7', color: '#92400e' }}>
@@ -265,7 +296,7 @@ export default async function DashboardPage() {
                   )
                 })}
                 {allApplications.length > 2 && (
-                  <Link href="/applications" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
+                  <Link href="/review" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
                     View all →
                   </Link>
                 )}
@@ -301,7 +332,7 @@ export default async function DashboardPage() {
                   )
                 })}
                 {reviewedApps.length > 2 && (
-                  <Link href="/applications" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
+                  <Link href="/review" className="text-[11px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
                     View details →
                   </Link>
                 )}
@@ -360,61 +391,71 @@ export default async function DashboardPage() {
                 </div>
               ))}
 
-              {/* Completed scripts with one-click apply */}
+              {/* Completed scripts — action-checklist layout */}
               {completedScripts.slice(0, 5).map((script, i) => {
                 const roundedScore = script.score ? Math.round(script.score) : null
-                const badge = roundedScore ? scoreBadge(roundedScore) : { bg: '#d1d5db' }
+                const badge = roundedScore ? scoreBadge(roundedScore) : null
 
                 return (
-                  <div key={script.id} className="px-5 py-4 group transition-colors hover:bg-gray-50/50"
+                  <div key={script.id} className="px-5 py-4 transition-colors hover:bg-gray-50/50"
                     style={{ borderBottom: i < Math.min(completedScripts.length, 5) - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
-                    <div className="flex items-start gap-4">
-                      {/* Score badge */}
-                      <div className="w-[44px] h-[44px] rounded-full flex items-center justify-center shrink-0 text-[16px] font-bold text-white"
-                        style={{ background: badge.bg }}>
-                        {roundedScore ?? '—'}
-                      </div>
 
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
+                    {/* Top row: title + GEM Score pill */}
+                    <div className="flex items-start justify-between gap-3 mb-1">
+                      <div className="min-w-0 flex-1">
                         <div className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</div>
+                      </div>
+                      {badge && roundedScore && (
+                        <span className="shrink-0 text-[12px] font-bold text-white px-2.5 py-1 rounded-full"
+                          style={{ background: badge.bg }}>
+                          GEM Score {roundedScore}
+                        </span>
+                      )}
+                    </div>
 
-                        {script.logline && (
-                          <p className="text-[13px] leading-relaxed text-gray-500 m-0 mt-1 line-clamp-2">
-                            {script.logline}
-                          </p>
+                    {/* Logline */}
+                    {script.logline && (
+                      <p className="text-[13px] leading-relaxed text-gray-500 m-0 mt-0.5 mb-2 line-clamp-2">
+                        {script.logline}
+                      </p>
+                    )}
+
+                    {/* Meta line */}
+                    <div className="text-[12px] text-gray-400 mb-3">
+                      {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
+                    </div>
+
+                    {/* Action checklist */}
+                    <div className="space-y-1.5 mb-2">
+                      {/* Apply for opportunities */}
+                      <QuickApplyDropdown
+                        scriptId={script.id}
+                        opportunities={script.qualifyingOpps}
+                        appliedOppIds={appliedOppIdsArr}
+                      />
+
+                      {/* Publish to Discover */}
+                      <div className="flex items-center gap-2">
+                        {script.isPublic ? (
+                          <span className="text-[13px] text-emerald-600 font-medium">✓ Published to Discover</span>
+                        ) : (
+                          <Link href={script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'}
+                            className="text-[13px] font-medium text-gray-500 hover:text-purple-600 transition-colors">
+                            ○ Publish to Discover
+                          </Link>
                         )}
-
-                        <div className="flex items-center gap-3 mt-1.5">
-                          <span className="text-[12px] text-gray-400">
-                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center gap-3 mt-2">
-                          {script.evaluationId && (
-                            <Link href={`/report/${script.evaluationId}`}
-                              className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
-                              View report →
-                            </Link>
-                          )}
-                          {!script.isPublic && (
-                            <Link href={script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'}
-                              className="text-[12px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
-                              Publish to Industry
-                            </Link>
-                          )}
-                        </div>
-
-                        {/* One-click apply dropdown */}
-                        <QuickApplyDropdown
-                          scriptId={script.id}
-                          opportunities={script.qualifyingOpps}
-                          appliedOppIds={appliedOppIdsArr}
-                          className="mt-2.5"
-                        />
                       </div>
                     </div>
+
+                    {/* View report link — bottom right */}
+                    {script.evaluationId && (
+                      <div className="flex justify-end">
+                        <Link href={`/report/${script.evaluationId}`}
+                          className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+                          View report →
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 )
               })}
@@ -422,68 +463,99 @@ export default async function DashboardPage() {
           )}
         </section>
 
-        {/* ── OPPORTUNITIES ── */}
+        {/* ── OPPORTUNITIES FOR YOU ── */}
         <section>
           <header className="flex items-center justify-between gap-3 mb-4">
-            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities</h2>
+            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
             <Link href="/opportunities" className="text-[13px] font-medium text-gray-400 hover:text-gray-600 transition-colors">
               View all
             </Link>
           </header>
 
-          {allOpenOpps.length === 0 ? (
+          {dashboardOpps.length === 0 ? (
             <div className="rounded-2xl bg-white px-6 py-10 text-center"
               style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
               <p className="text-[14px] text-gray-400 m-0">No opportunities right now. Check back soon.</p>
             </div>
           ) : (
             <div className="grid gap-3">
-              {allOpenOpps.slice(0, 4).map(opp => {
-                const isApplied = appliedOppIds.has(opp.id)
+              {dashboardOpps.map(opp => {
+                const isQualified = qualifiedOppIds.has(opp.id)
                 const deadlineDays = opp.deadline
                   ? Math.ceil((new Date(opp.deadline).getTime() - Date.now()) / 86400000)
                   : null
+
+                // Build qualification details
+                const quals: string[] = []
+                if (opp.formats && opp.formats.length > 0) quals.push(opp.formats.join(', '))
+                if (opp.genres && opp.genres.length > 0) quals.push(opp.genres.slice(0, 3).join(', '))
 
                 return (
                   <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block group">
                     <div className="rounded-2xl bg-white px-5 py-4 transition-shadow duration-150 hover:shadow-md"
                       style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-                      <div className="flex items-start gap-4">
-                        <div className="w-1 self-stretch rounded-full shrink-0 mt-0.5"
-                          style={{ background: isApplied ? '#059669' : '#e5e7eb' }} />
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between gap-2 mb-1">
-                            <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
-                              {opp.title}
-                            </h3>
-                            <div className="flex items-center gap-1.5 shrink-0">
-                              {isApplied && (
-                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white"
-                                  style={{ background: '#059669' }}>
-                                  Applied ✓
-                                </span>
-                              )}
-                              {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
-                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                  style={{
-                                    background: deadlineDays <= 7 ? '#dc2626' : '#d97706',
-                                    color: 'white',
-                                  }}>
-                                  {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                          {(opp.subtitle || opp.description) && (
-                            <p className="text-[13px] text-gray-500 m-0 mb-2 line-clamp-2 leading-relaxed">
-                              {opp.subtitle || opp.description}
-                            </p>
+
+                      {/* Title row */}
+                      <div className="flex items-start justify-between gap-3 mb-1.5">
+                        <h3 className="text-[15px] font-semibold text-gray-900 m-0 leading-snug group-hover:text-purple-700 transition-colors">
+                          {opp.title}
+                        </h3>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          {isQualified && (
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white"
+                              style={{ background: '#7c3aed' }}>
+                              You qualify
+                            </span>
                           )}
-                          <span className="text-[12px] font-medium text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                            View details →
-                          </span>
+                          {deadlineDays != null && deadlineDays > 0 && deadlineDays <= 14 && (
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                              style={{
+                                background: deadlineDays <= 7 ? '#dc2626' : '#d97706',
+                                color: 'white',
+                              }}>
+                              {deadlineDays === 1 ? 'Closes tomorrow' : `${deadlineDays}d left`}
+                            </span>
+                          )}
                         </div>
                       </div>
+
+                      {/* Subtitle / description */}
+                      {(opp.subtitle || opp.description) && (
+                        <p className="text-[13px] text-gray-500 m-0 mb-2.5 line-clamp-2 leading-relaxed">
+                          {opp.subtitle || opp.description}
+                        </p>
+                      )}
+
+                      {/* Qualification criteria */}
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        {opp.min_score && (
+                          <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                            style={{ background: '#f5f3ff', color: '#7c3aed' }}>
+                            Min score: {opp.min_score}
+                          </span>
+                        )}
+                        {opp.formats && opp.formats.length > 0 && (
+                          <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                            style={{ background: '#f0fdf4', color: '#059669' }}>
+                            {opp.formats.join(' / ')}
+                          </span>
+                        )}
+                        {opp.genres && opp.genres.length > 0 && (
+                          <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                            style={{ background: '#fefce8', color: '#a16207' }}>
+                            {opp.genres.slice(0, 3).join(', ')}
+                          </span>
+                        )}
+                        {opp.deadline && (
+                          <span className="text-[11px] text-gray-400">
+                            Deadline: {new Date(opp.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                          </span>
+                        )}
+                      </div>
+
+                      <span className="text-[12px] font-medium text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                        View details →
+                      </span>
                     </div>
                   </Link>
                 )
