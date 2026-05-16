@@ -3,6 +3,7 @@ import { createServerClient } from '@supabase/ssr'
 import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase-server'
 import { sendEmail } from '@/lib/email'
+import { cookies } from 'next/headers'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -63,6 +64,33 @@ export async function GET(request: Request) {
           // Never let an email failure block sign-in. The failure-alert system
           // in lib/email.ts will surface this if Postmark itself errored.
           console.error('[auth/callback] post_signup send failed:', e)
+        }
+      }
+
+      // ── Claim anonymous scripts from cookie ──
+      if (user) {
+        try {
+          const cookieStore = await cookies()
+          const anonCookie = cookieStore.get('gem_anon_scripts')?.value
+          if (anonCookie) {
+            const anonIds = anonCookie.split(',').filter(Boolean)
+            if (anonIds.length > 0) {
+              const adminClient2 = createSupabaseClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                process.env.SUPABASE_SERVICE_ROLE_KEY!,
+                { auth: { persistSession: false } }
+              )
+              await adminClient2
+                .from('script_submissions')
+                .update({ user_id: user.id, expires_at: null })
+                .in('id', anonIds)
+                .is('user_id', null)
+            }
+            // Clear the cookie
+            cookieStore.set('gem_anon_scripts', '', { path: '/', maxAge: 0 })
+          }
+        } catch (e) {
+          console.error('[auth/callback] claim-scripts failed:', e)
         }
       }
 

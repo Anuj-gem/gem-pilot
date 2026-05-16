@@ -20,29 +20,36 @@ export async function POST(req: NextRequest) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user) {
+  // Also accept user_id + script_ids from body as fallback
+  // (session cookie may not be set yet right after signUp)
+  let body: { user_id?: string; script_ids?: string[] } = {}
+  try { body = await req.json() } catch {}
+
+  const userId = user?.id || body.user_id
+  if (!userId) {
     return NextResponse.json({ error: 'Not authenticated' }, { status: 401 })
   }
 
-  // Read anonymous script IDs from cookie
+  // Determine script IDs to claim: prefer body, fall back to cookie
   const cookieStore = await cookies()
   const anonCookie = cookieStore.get('gem_anon_scripts')
+  const scriptIds = (body.script_ids?.length ? body.script_ids : anonCookie?.value?.split(',').filter(Boolean)) || []
   let claimed = 0
 
-  if (anonCookie?.value) {
-    const anonIds = anonCookie.value.split(',').filter(Boolean)
-    if (anonIds.length > 0) {
-      const service = svc()
-      const { data } = await service
-        .from('script_submissions')
-        .update({ user_id: user.id })
-        .in('id', anonIds)
-        .is('user_id', null)
-        .select('id')
+  if (scriptIds.length > 0) {
+    const service = svc()
+    const { data } = await service
+      .from('script_submissions')
+      .update({ user_id: userId, expires_at: null })
+      .in('id', scriptIds)
+      .is('user_id', null)
+      .select('id')
 
-      claimed = data?.length ?? 0
-    }
-    // Clear the cookie
+    claimed = data?.length ?? 0
+  }
+
+  // Clear the cookie either way
+  if (anonCookie?.value) {
     cookieStore.set('gem_anon_scripts', '', { path: '/', maxAge: 0 })
   }
 
