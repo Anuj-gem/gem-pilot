@@ -6,6 +6,22 @@ import Link from 'next/link'
 
 export type OppStatus = 'available' | 'pending' | 'previously_applied'
 
+// Legacy type used by consideration/submit for opportunity matching
+export type OpportunityData = {
+  id: string
+  title: string
+  slug: string | null
+  formats: string[]
+  genres: string[]
+  budget_tiers: string[]
+  min_score: number | null
+  deadline: string | null
+  subtitle: string | null
+  description: string | null
+  status: string
+  posted_by: string | null
+}
+
 export interface OpportunityCardProps {
   id: string
   slug: string | null
