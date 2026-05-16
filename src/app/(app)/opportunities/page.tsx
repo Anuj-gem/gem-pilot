@@ -236,6 +236,7 @@ export default async function OpportunitiesPage() {
                 deadline={opp.deadline}
                 status={status}
                 matchingScriptCount={oppMatchCount.get(opp.id) ?? 0}
+                isAnon={!user}
               />
             )
           })

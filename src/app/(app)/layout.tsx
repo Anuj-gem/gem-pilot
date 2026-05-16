@@ -27,6 +27,7 @@ import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-promp
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { InsiderGateModal } from '@/components/discover/insider-gate-modal'
+import { SignupGateModal } from '@/components/dashboard/signup-gate-modal'
 
 function svc() {
   return createServerClient(
@@ -56,6 +57,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           </div>
         </div>
         <ScriptUploadModal redirectTo="/evaluating" />
+        <SignupGateModal />
       </div>
     )
   }

@@ -515,6 +515,7 @@ export default async function DashboardPage() {
                     deadline={opp.deadline}
                     status={status}
                     matchingScriptCount={matchCount}
+                    isAnon={!user}
                   />
                 )
               })}
@@ -640,6 +641,7 @@ export default async function DashboardPage() {
                             scriptId={script.id}
                             opportunities={script.qualifyingOpps}
                             appliedOppIds={appliedOppIdsArr}
+                            isAnon={!user}
                           />
                         ) : (
                           <span className="text-[13px] text-gray-400">No matching opportunities</span>
@@ -649,6 +651,7 @@ export default async function DashboardPage() {
                           scriptId={script.id}
                           isPublic={script.isPublic}
                           isPro={isPro}
+                          isAnon={!user}
                         />
                       </div>
                     </div>

@@ -10,9 +10,10 @@ type Props = {
   scriptId: string
   isPublic: boolean
   isPro?: boolean
+  isAnon?: boolean
 }
 
-export function DiscoverToggle({ scriptId, isPublic }: Props) {
+export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
   const [on, setOn] = useState(isPublic)
   const [busy, setBusy] = useState(false)
   const [isPending, startTransition] = useTransition()
@@ -20,6 +21,12 @@ export function DiscoverToggle({ scriptId, isPublic }: Props) {
 
   async function toggle() {
     if (busy) return
+    if (isAnon && !on) {
+      window.dispatchEvent(new CustomEvent('gem:open-signup-gate', {
+        detail: { contextMessage: 'Create an account to save your scripts, post to the leaderboard, and apply for opportunities.' },
+      }))
+      return
+    }
     setBusy(true)
     try {
       const res = await fetch(`/api/scripts/${scriptId}/visibility`, {

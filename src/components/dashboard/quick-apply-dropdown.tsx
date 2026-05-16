@@ -19,9 +19,10 @@ type Props = {
   opportunities: Opportunity[]
   appliedOppIds: string[]  // opportunity IDs already applied to (across ALL scripts)
   className?: string
+  isAnon?: boolean
 }
 
-export function QuickApplyDropdown({ scriptId, opportunities, appliedOppIds, className }: Props) {
+export function QuickApplyDropdown({ scriptId, opportunities, appliedOppIds, className, isAnon }: Props) {
   const [open, setOpen] = useState(false)
   const [localApplied, setLocalApplied] = useState<Set<string>>(new Set())
   const [applying, setApplying] = useState<string | null>(null)
@@ -35,6 +36,12 @@ export function QuickApplyDropdown({ scriptId, opportunities, appliedOppIds, cla
   const unappliedCount = opportunities.filter(o => !isApplied(o.id)).length
 
   async function handleApply(oppId: string) {
+    if (isAnon) {
+      window.dispatchEvent(new CustomEvent('gem:open-signup-gate', {
+        detail: { contextMessage: 'Create an account to save your scripts and apply for opportunities.' },
+      }))
+      return
+    }
     setApplying(oppId)
     try {
       const res = await fetch('/api/consideration/apply', {

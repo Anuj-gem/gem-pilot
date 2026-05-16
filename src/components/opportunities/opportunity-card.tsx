@@ -3,6 +3,7 @@
 // Pure server component — Apply links to detail page, no inline actions.
 
 import Link from 'next/link'
+import { ApplyButton } from './apply-button'
 
 export type OppStatus = 'available' | 'pending' | 'previously_applied'
 
@@ -34,6 +35,7 @@ export interface OpportunityCardProps {
   deadline: string | null
   status: OppStatus
   matchingScriptCount: number
+  isAnon?: boolean
 }
 
 const STATUS_CONFIG: Record<OppStatus, { label: string; bg: string; color: string }> = {
@@ -44,7 +46,7 @@ const STATUS_CONFIG: Record<OppStatus, { label: string; bg: string; color: strin
 
 export function OpportunityCard({
   id, slug, title, subtitle, description, genres, formats,
-  createdAt, deadline, status, matchingScriptCount,
+  createdAt, deadline, status, matchingScriptCount, isAnon,
 }: OpportunityCardProps) {
   const href = `/opportunities/${slug ?? id}`
   const postedDate = new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
@@ -124,11 +126,7 @@ export function OpportunityCard({
             View details
           </Link>
           {showApply && (
-            <Link href={`${href}/apply`}
-              className="text-[13px] font-semibold text-white px-3.5 py-1 rounded-lg transition-all hover:brightness-110"
-              style={{ background: '#7c3aed' }}>
-              Apply
-            </Link>
+            <ApplyButton href={href} isAnon={isAnon} />
           )}
         </div>
       </div>
