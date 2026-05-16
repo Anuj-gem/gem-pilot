@@ -20,19 +20,7 @@ export function FormatSelectorHero() {
       }} />
 
       <div className="relative">
-        {/* Clapperboard icon */}
-        <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl mb-3"
-          style={{ background: 'rgba(255,255,255,0.1)' }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 20h16a2 2 0 002-2V8H2v10a2 2 0 002 2z" />
-            <path d="M2 8l2-4h16l2 4" />
-            <path d="M6 4l2 4" />
-            <path d="M10 4l2 4" />
-            <path d="M14 4l2 4" />
-          </svg>
-        </div>
-
-        <h1 className="text-[20px] font-bold text-white m-0 mb-4">
+        <h1 className="text-[22px] font-bold text-white m-0 mb-4">
           What are you working on?
         </h1>
 
