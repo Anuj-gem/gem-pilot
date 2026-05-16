@@ -124,6 +124,7 @@ export function ScriptRowCard({
                 <span className="text-[16px] font-extrabold leading-none text-white">
                   {Math.round(s.score)}
                 </span>
+                <span className="text-[9px] font-bold text-white/70 uppercase tracking-wider leading-none">Score</span>
               </div>
             ) : (
               <div
@@ -136,6 +137,7 @@ export function ScriptRowCard({
                   style={{ width: 9, height: 9, transform: 'rotate(45deg)', background: 'rgba(255,255,255,0.3)', borderRadius: 1 }}
                 />
                 <span className="text-[14px] font-extrabold leading-none text-white/50">&mdash;</span>
+                <span className="text-[9px] font-bold text-white/40 uppercase tracking-wider leading-none">Score</span>
               </div>
             )}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/score:opacity-100 transition-opacity z-30 text-center pointer-events-none">
@@ -155,6 +157,7 @@ export function ScriptRowCard({
               <span className={`text-[16px] font-extrabold leading-none ${s.heat && s.heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>
                 {s.heat ?? 0}
               </span>
+              <span className={`text-[9px] font-bold uppercase tracking-wider leading-none ${s.heat && s.heat > 0 ? 'text-orange-400' : 'text-orange-200'}`}>Heat</span>
             </div>
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center pointer-events-none">
               Apply for opportunities to earn heat as your script gets attention

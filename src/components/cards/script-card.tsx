@@ -410,6 +410,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                   style={{ width: 10, height: 10, transform: 'rotate(45deg)', background: 'rgba(255,255,255,0.3)', borderRadius: 1 }}
                 />
                 <span className="text-[16px] font-extrabold text-white leading-none">{score}</span>
+                <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider leading-none">Score</span>
               </div>
             ) : (
               <div
@@ -422,6 +423,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                   style={{ width: 10, height: 10, transform: 'rotate(45deg)', background: 'rgba(255,255,255,0.3)', borderRadius: 1 }}
                 />
                 <span className="text-[16px] font-extrabold text-white/50 leading-none">&mdash;</span>
+                <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider leading-none">Score</span>
               </div>
             )}
 
@@ -434,6 +436,7 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
               <span className={`text-[16px] font-extrabold leading-none ${heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>
                 {heat}
               </span>
+              <span className={`text-[10px] font-bold uppercase tracking-wider leading-none ${heat > 0 ? 'text-orange-400' : 'text-orange-200'}`}>Heat</span>
             </div>
           </div>
 
