@@ -39,7 +39,7 @@ export default async function Home({
       <Nav />
 
       <LandingHero />
-      {/* <LandingActivity /> — hidden until leaderboard is ready */}
+      <LandingActivity />
       <LandingJourney />
       <LandingCompare />
       <LandingPrivacy />
