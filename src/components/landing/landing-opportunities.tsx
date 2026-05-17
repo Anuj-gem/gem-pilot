@@ -6,32 +6,32 @@ import { trackEvent } from '@/lib/posthog'
 
 const OPPORTUNITIES = [
   {
-    id: '1',
-    posted: 'May 12',
-    title: 'Seeking bold debut features',
-    genre: 'Drama, Thriller',
-    description: 'Literary manager building roster of emerging feature writers with a distinctive voice.',
+    slug: 'vertical-drama',
+    posted: 'May 11',
+    title: 'Vertical Drama Series',
+    genre: 'Drama, Crime, Thriller',
+    description: 'Short-form drama built to prove itself on social before scaling up.',
   },
   {
-    id: '2',
-    posted: 'May 10',
-    title: 'Half-hour comedies for streaming',
-    genre: 'Comedy, Half-hour',
-    description: 'Production company with first-look deal at major streamer seeking fresh comedy voices.',
+    slug: 'producible-thriller',
+    posted: 'May 11',
+    title: 'Producible Thriller',
+    genre: 'Thriller, Crime, Horror',
+    description: 'High-tension scripts where the writing does the heavy lifting.',
   },
   {
-    id: '3',
-    posted: 'May 8',
-    title: 'Genre-elevated horror & thriller',
-    genre: 'Horror, Thriller',
-    description: 'Financier actively packaging for Q3 production slate. Budget range $5–15M.',
+    slug: 'comedy-revival',
+    posted: 'May 11',
+    title: 'Comedy Revival',
+    genre: 'Comedy, Comedy-Drama',
+    description: 'Comedies with a built-in cast and a path that doesn\'t need a network.',
   },
   {
-    id: '4',
-    posted: 'May 6',
-    title: 'Sci-fi limited series for cable',
-    genre: 'Sci-fi, Drama',
-    description: 'Network looking for grounded sci-fi with strong character dynamics. 6–8 episodes.',
+    slug: 'faith-inspirational',
+    posted: 'May 11',
+    title: 'Faith and Inspirational',
+    genre: 'Drama, Family, Historical',
+    description: 'Stories for the massive audience Hollywood keeps ignoring.',
   },
 ]
 
@@ -64,7 +64,7 @@ export function LandingOpportunities() {
         >
           {OPPORTUNITIES.map(opp => (
             <div
-              key={opp.id}
+              key={opp.slug}
               className="flex flex-col gap-2 rounded-xl p-4"
               style={{
                 background: '#FFFFFF',
@@ -94,11 +94,12 @@ export function LandingOpportunities() {
               <p className="text-[13px] text-[var(--gem-gray-300)] m-0" style={{ lineHeight: 1.4 }}>
                 {opp.description}
               </p>
-              <span
-                className="text-[13px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-accent)] transition-colors cursor-pointer mt-auto"
+              <Link
+                href={`/opportunities/${opp.slug}`}
+                className="text-[13px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-accent)] transition-colors no-underline mt-auto"
               >
                 View details &rarr;
-              </span>
+              </Link>
             </div>
           ))}
         </div>
