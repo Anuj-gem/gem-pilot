@@ -93,7 +93,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
     getScriptStats(submissionIds),
   ])
 
-  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null }
+  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null; logline: string | null }
   const evalBySubmission = new Map<string, EvalRow>()
   for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
     const evJson = e.evaluation as Record<string, unknown> | null
@@ -108,8 +108,9 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
     const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
     const rawBudget = (budgetTier?.tier as string | undefined)?.toLowerCase() ?? null
     const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
+    const logline = (evJson?.positioning_hook as string | undefined) || null
     evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget,
+      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, logline,
     })
   }
 
@@ -120,7 +121,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
     writerById.set(w.id, { handle: w.handle, full_name: w.full_name, avatar_url: w.avatar_url, headline: w.headline })
   }
 
-  // Build card data — strip loglines for Leaderboard view.
+  // Build card data — loglines passed through (shown blurred for non-insiders).
   const cards: DiscoverCard[] = scripts
     .map((s): DiscoverCard | null => {
       const ev = evalBySubmission.get(s.id)
@@ -134,7 +135,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
         title: s.title,
         format: s.declared_format,
         genre: ev.genre,
-        logline: null, // intentionally stripped — Leaderboard hides loglines
+        logline: ev.logline,
         selznick_score: ev.weighted_score,
         heat_score: s.heat_score ?? 0,
         writer_handle: wp?.handle ?? null,
@@ -162,7 +163,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Discover</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Leaderboard</h1>
         <p className="mt-1 text-sm text-gray-500">{cards.length} scripts from the GEM community</p>
       </div>
       <DiscoverGrid

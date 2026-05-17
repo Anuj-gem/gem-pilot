@@ -440,7 +440,20 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
             </div>
           </div>
 
-          {/* BLURRED AUTHOR + LOGLINE + INSIDERS CTA */}
+          {/* LOGLINE — blurred for non-insiders */}
+          {s.logline && (
+            <div className="mt-2.5">
+              {isInsider ? (
+                <p className="text-[13px] text-gray-600 leading-[1.4] line-clamp-2 m-0">{s.logline}</p>
+              ) : (
+                <p className="text-[13px] text-gray-400 leading-[1.4] line-clamp-2 m-0" style={{ filter: 'blur(5px)', userSelect: 'none' }}>
+                  {s.logline}
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* AUTHOR + VIEW REPORT */}
           <div className="mt-3 pt-3 flex items-center justify-between gap-3" style={{ borderTop: `1px solid ${CARD.border}` }}>
             <div className="min-w-0 flex-1">
               {isInsider ? (
@@ -450,17 +463,22 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
                   avatar={s.writer_avatar_url}
                 />
               ) : (
-                /* Non-insider: blur the author name + logline hint */
-                <div className="flex items-center gap-2 min-w-0">
-                  <div className="w-6 h-6 rounded-full bg-gray-200 shrink-0" />
-                  <div className="text-[12px] font-bold text-gray-400 leading-tight truncate" style={{ fontFamily: 'Georgia, serif', filter: 'blur(5px)', userSelect: 'none' }}>
+                /* Non-insider: blur the author avatar + name */
+                <div className="flex items-center gap-2 min-w-0" style={{ filter: 'blur(5px)', userSelect: 'none' }}>
+                  {s.writer_avatar_url ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={s.writer_avatar_url} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
+                  ) : (
+                    <Avatar ini={initialsOf(s)} size={24} />
+                  )}
+                  <div className="text-[12px] font-bold text-gray-700 leading-tight truncate" style={{ fontFamily: 'Georgia, serif' }}>
                     {s.writer_name || 'Writer Name'}
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Insiders only / View report */}
+            {/* View report (insiders) / Industry partners only (non-insiders) */}
             {href && isInsider && (
               <Link
                 href={href}
@@ -471,18 +489,10 @@ export function ScriptCard({ s, density = 'list', isOwner = false, isLocked = fa
               </Link>
             )}
             {href && !isInsider && (
-              <div className="shrink-0 flex flex-col items-center gap-0.5">
-                <span className="inline-flex items-center gap-1.5 text-[11.5px] font-bold text-gray-400">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" /></svg>
-                  View report
-                </span>
-                <button
-                  onClick={() => window.dispatchEvent(new CustomEvent('gem:open-insider-gate'))}
-                  className="relative z-10 pointer-events-auto text-[10px] font-semibold text-purple-600 hover:underline border-none bg-transparent cursor-pointer p-0"
-                >
-                  Insiders only — apply
-                </button>
-              </div>
+              <span className="shrink-0 inline-flex items-center gap-1.5 text-[11px] font-semibold text-gray-400 bg-gray-100 rounded-md px-3 py-1.5 cursor-default">
+                <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" /></svg>
+                Industry partners only
+              </span>
             )}
           </div>
 
