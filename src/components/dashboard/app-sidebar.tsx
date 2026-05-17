@@ -80,6 +80,7 @@ function AnonProfileCard() {
   const router = useRouter()
   const supabase = createClient()
   const [step, setStep] = useState<AnonStep>('empty')
+  const [showExitConfirm, setShowExitConfirm] = useState(false)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -172,7 +173,7 @@ function AnonProfileCard() {
 
   return (
     <div
-      className="rounded-xl bg-white px-4 py-4 mb-4 overflow-hidden"
+      className="relative rounded-xl bg-white px-4 py-4 mb-4 overflow-hidden"
       style={{ border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
     >
       {/* ── EMPTY STATE: profile shape ── */}
@@ -220,7 +221,7 @@ function AnonProfileCard() {
         }}
       >
         <div className="pt-1">
-          {/* Small avatar + title */}
+          {/* Small avatar + title + close button */}
           <div className="flex items-center gap-2.5 mb-3">
             <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
@@ -228,10 +229,20 @@ function AnonProfileCard() {
                 <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
               </svg>
             </div>
-            <div>
+            <div className="flex-1 min-w-0">
               <p className="text-[13px] font-semibold text-gray-900 m-0">Create your profile</p>
               <p className="text-[10px] text-gray-400 m-0">Free forever</p>
             </div>
+            <button
+              type="button"
+              onClick={() => setShowExitConfirm(true)}
+              className="shrink-0 w-6 h-6 flex items-center justify-center rounded-full text-gray-300 hover:text-gray-500 hover:bg-gray-100 cursor-pointer border-0 bg-transparent transition-colors"
+              aria-label="Close signup"
+            >
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M4 4l8 8M12 4l-8 8" />
+              </svg>
+            </button>
           </div>
 
           {/* Google OAuth */}
@@ -360,6 +371,39 @@ function AnonProfileCard() {
           </div>
         </div>
       </div>
+
+      {/* ── EXIT CONFIRM OVERLAY ── */}
+      {showExitConfirm && (
+        <div className="absolute inset-0 z-20 rounded-xl flex items-center justify-center p-4"
+          style={{ background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(4px)' }}>
+          <div className="text-center">
+            <p className="text-[13px] font-semibold text-gray-900 m-0 mb-1.5">Delete your script?</p>
+            <p className="text-[11px] text-gray-500 m-0 mb-4 leading-relaxed">
+              You must have an account to keep your submissions. Your script will be permanently deleted.
+            </p>
+            <div className="space-y-2">
+              <button
+                onClick={() => {
+                  document.cookie = 'gem_anon_scripts=;path=/;max-age=0'
+                  setShowExitConfirm(false)
+                  setStep('empty')
+                  window.location.reload()
+                }}
+                className="w-full py-2 rounded-lg text-[12px] font-semibold text-white cursor-pointer border-0 transition-all hover:brightness-110"
+                style={{ background: '#dc2626' }}
+              >
+                Delete and exit
+              </button>
+              <button
+                onClick={() => setShowExitConfirm(false)}
+                className="w-full py-2 rounded-lg text-[12px] font-medium text-gray-600 cursor-pointer border-0 bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                Keep creating account
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
