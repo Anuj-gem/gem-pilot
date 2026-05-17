@@ -124,7 +124,7 @@ export default async function ApplicationsReviewPage() {
         <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
           Opportunity applications
         </h1>
-        <p className="text-[13px] text-gray-400 mt-1 m-0">{apps.length} total applications</p>
+        <p className="text-[13px] text-gray-400 mt-1 m-0">{apps.filter(a => a.review_stage !== 'complete').length} pending · {apps.length} total</p>
       </header>
 
       {apps.length === 0 ? (
