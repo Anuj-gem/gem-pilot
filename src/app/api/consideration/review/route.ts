@@ -101,19 +101,19 @@ export async function POST(req: NextRequest) {
               // Update script-level heat — distribute to all scripts in this consideration
               const { data: csRows } = await service
                 .from('consideration_scripts')
-                .select('script_id')
+                .select('script_submission_id')
                 .eq('consideration_id', consideration_id)
               if (csRows && csRows.length > 0) {
                 for (const cs of csRows) {
                   const { data: sub } = await service
                     .from('script_submissions')
                     .select('heat_score')
-                    .eq('id', cs.script_id)
+                    .eq('id', cs.script_submission_id)
                     .single()
                   await service
                     .from('script_submissions')
                     .update({ heat_score: ((sub as any)?.heat_score || 0) + heatDelta })
-                    .eq('id', cs.script_id)
+                    .eq('id', cs.script_submission_id)
                 }
               }
             }
