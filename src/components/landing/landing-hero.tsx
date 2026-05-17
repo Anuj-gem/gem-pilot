@@ -4,18 +4,10 @@
 // Producer card: message from Meridian Productions.
 'use client'
 
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { trackEvent } from '@/lib/posthog'
 
 export function LandingHero() {
-  const router = useRouter()
-
-  function handleCTA() {
-    try {
-      trackEvent('cta_clicked', { location: 'hero', label: 'Get started' })
-    } catch {}
-    router.push('/dashboard')
-  }
 
   return (
     <section
@@ -126,17 +118,17 @@ export function LandingHero() {
         </div>
 
         {/* CTA */}
-        <button
-          type="button"
-          onClick={handleCTA}
-          className="px-12 py-4 rounded-full text-[17px] font-semibold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
+        <Link
+          href="/dashboard"
+          onClick={() => { try { trackEvent('cta_clicked', { location: 'hero', label: 'Get started' }) } catch {} }}
+          className="inline-block px-12 py-4 rounded-full text-[17px] font-semibold text-white no-underline cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
           style={{
             background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
             boxShadow: '0 4px 20px rgba(124,58,237,0.45)',
           }}
         >
           Get started
-        </button>
+        </Link>
       </div>
     </section>
   )

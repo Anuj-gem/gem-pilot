@@ -1,22 +1,22 @@
-// Landing page — v16 (2026-05-14).
+// Landing page — v17 (2026-05-16).
 //
-// Hero → Free Evaluation → Opportunities → Competitor Comparison → Membership → Final CTA.
+// Hero → Activity → Journey → Compare → Privacy → Steps → Opportunities → Partners → Pro → Final CTA.
 
 import { redirect } from 'next/navigation'
-import { createServerClient } from '@supabase/ssr'
 import { LandingTracking } from '@/components/landing-tracking'
 import Nav from '@/components/nav'
 import { LandingHero } from '@/components/landing/landing-hero'
-import { LandingCredibility } from '@/components/landing/landing-credibility'
-import { LandingOpportunities, type LandingOpportunity } from '@/components/landing/landing-opportunities'
+import { LandingActivity } from '@/components/landing/landing-activity'
+import { LandingJourney } from '@/components/landing/landing-journey'
 import { LandingCompare } from '@/components/landing/landing-compare'
-import { LandingHeat } from '@/components/landing/landing-heat'
+import { LandingPrivacy } from '@/components/landing/landing-privacy'
+import { LandingSteps } from '@/components/landing/landing-steps'
+import { LandingOpportunities } from '@/components/landing/landing-opportunities'
+import { LandingPartners } from '@/components/landing/landing-partners'
 import { LandingPro } from '@/components/landing/landing-pro'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
 import { createClient } from '@/lib/supabase-server'
-
-export const revalidate = 60
 
 export default async function Home({
   searchParams,
@@ -33,51 +33,20 @@ export default async function Home({
   const { data: { user } } = await supabase.auth.getUser()
   if (user) redirect('/dashboard')
 
-  // Query live opportunities for above-fold section.
-  const service = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { cookies: { getAll() { return [] }, setAll() {} } }
-  )
-  const { data: opps } = await service
-    .from('opportunities')
-    .select('id, title, slug, description, formats, genres, budget_tiers, min_score, deadline, subtitle')
-    .eq('status', 'active')
-    .eq('published', true)
-    .order('created_at', { ascending: false })
-    .limit(3)
-
-  const opportunities = (opps || []) as LandingOpportunity[]
-
   return (
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
       <LandingTracking />
       <Nav />
 
-      {/* ── Above fold ── */}
       <LandingHero />
-
-      {/* ── How it works: Free evaluation ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingCredibility />
-
-      {/* ── Opportunities ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingOpportunities opportunities={opportunities} />
-
-      {/* ── Competitor comparison ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingActivity />
+      <LandingJourney />
       <LandingCompare />
-
-      {/* ── Heat score ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
-      <LandingHeat />
-
-      {/* ── Membership ── */}
-      <div className="h-px bg-[var(--gem-gray-700)] mx-auto max-w-5xl" />
+      <LandingPrivacy />
+      <LandingSteps />
+      <LandingOpportunities />
+      <LandingPartners />
       <LandingPro />
-
-      {/* ── Final CTA ── */}
       <LandingFinalCTA />
 
       <ScriptUploadModal redirectTo="/evaluating" />
