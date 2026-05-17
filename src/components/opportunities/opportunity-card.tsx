@@ -51,8 +51,8 @@ export function OpportunityCard({
   const href = `/opportunities/${slug ?? id}`
   const postedDate = new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   const cfg = STATUS_CONFIG[status]
-  const showScriptCount = status === 'available' && matchingScriptCount > 0
-  const showApply = status === 'available'
+  const showScriptCount = status === 'available' && matchingScriptCount > 0 && !isAnon
+  const showApply = status === 'available' && !isAnon
 
   return (
     <div className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
@@ -109,10 +109,17 @@ export function OpportunityCard({
         <div className="flex items-center justify-between gap-2">
           {/* Left: Status pill + script match count */}
           <div className="flex items-center gap-2 min-w-0">
-            <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
-              style={{ background: cfg.bg, color: cfg.color }}>
-              {cfg.label}
-            </span>
+            {isAnon ? (
+              <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
+                style={{ background: '#f5f3ff', color: '#6b21a8' }}>
+                Upload a script to apply
+              </span>
+            ) : (
+              <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
+                style={{ background: cfg.bg, color: cfg.color }}>
+                {cfg.label}
+              </span>
+            )}
             {showScriptCount && (
               <span className="text-[12px] font-medium shrink-0" style={{ color: '#7c3aed' }}>
                 {matchingScriptCount} {matchingScriptCount === 1 ? 'script matches' : 'scripts match'}
