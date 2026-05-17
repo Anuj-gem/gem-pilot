@@ -16,6 +16,7 @@ export function SignupGateModal() {
 
   // Form state
   const [fullName, setFullName] = useState('')
+  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -57,7 +58,7 @@ export function SignupGateModal() {
       email,
       password,
       options: {
-        data: { full_name: fullName },
+        data: { full_name: fullName, phone },
         emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent('/dashboard')}`,
       },
     })
@@ -141,6 +142,15 @@ export function SignupGateModal() {
             placeholder="Full name"
             value={fullName}
             onChange={e => setFullName(e.target.value)}
+            required
+            className="w-full px-3.5 py-2.5 rounded-lg border text-[14px] outline-none focus:border-purple-400 transition-colors"
+            style={{ borderColor: '#e5e7eb' }}
+          />
+          <input
+            type="tel"
+            placeholder="Phone number"
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
             required
             className="w-full px-3.5 py-2.5 rounded-lg border text-[14px] outline-none focus:border-purple-400 transition-colors"
             style={{ borderColor: '#e5e7eb' }}

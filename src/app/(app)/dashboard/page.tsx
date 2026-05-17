@@ -10,6 +10,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { AnonSignupPrompt } from '@/components/dashboard/anon-signup-prompt'
 import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
@@ -371,6 +372,7 @@ export default async function DashboardPage() {
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
       <ProcessingPoller active={isProcessing} />
+      {!user && isProcessing && <AnonSignupPrompt />}
 
       <div className="space-y-5">
 
