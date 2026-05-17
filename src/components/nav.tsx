@@ -13,6 +13,7 @@ import {
   type NavUserMenuProfile,
   type NavUserMenuStats,
   type NavUserMenuActivity,
+  NavUserMenu,
 } from '@/components/nav/nav-user-menu'
 import { NewActionMenu } from '@/components/nav/new-action-menu'
 
@@ -116,6 +117,19 @@ export default function Nav({ userData }: NavProps = {}) {
                   <div className="ml-2">
                     <NewActionMenu />
                   </div>
+                  {userData && (
+                    <div className="ml-2">
+                      <NavUserMenu
+                        profile={userData.profile}
+                        stats={userData.stats}
+                        recentActivity={userData.recentActivity}
+                        onSignOut={async () => {
+                          await supabase.auth.signOut()
+                          window.location.href = '/'
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 

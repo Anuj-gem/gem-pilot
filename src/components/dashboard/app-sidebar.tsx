@@ -30,8 +30,8 @@ export interface AppSidebarData {
 export function AppSidebar(props: AppSidebarData | { anonymous: true }) {
   const pathname = usePathname() ?? ''
 
-  // Hide sidebar on report pages (full-width reading experience)
-  if (pathname.startsWith('/report/')) return null
+  // Only show sidebar on dashboard (report, leaderboard, opportunities, etc. are full-width)
+  if (pathname !== '/dashboard') return null
 
   const isAnon = 'anonymous' in props
 
