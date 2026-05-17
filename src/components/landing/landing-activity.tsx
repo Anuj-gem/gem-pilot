@@ -5,7 +5,7 @@
 
 export function LandingActivity() {
   return (
-    <section className="px-6 sm:px-10 py-20 sm:py-28" style={{ background: 'var(--gem-black)' }}>
+    <section className="px-6 sm:px-10 pt-20 sm:pt-28 pb-10 sm:pb-14" style={{ background: 'var(--gem-black)' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -21,7 +21,7 @@ export function LandingActivity() {
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 sm:mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { icon: '📄', number: '1,847', label: 'Scripts evaluated' },
             { icon: '👥', number: '412', label: 'Writers on GEM' },
