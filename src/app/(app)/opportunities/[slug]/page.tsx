@@ -111,18 +111,38 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       freeRemaining = Math.max(0, 2 - (count ?? 0))
     }
 
-    // Get consideration status
+    // Get consideration status (exclude completed reviews so writer can reapply)
     const { data: considerations } = await service
       .from('considerations')
       .select('id, review_stage')
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
+      .neq('review_stage', 'complete')
       .limit(1)
 
     if (considerations && considerations.length > 0) {
       const c = considerations[0] as any
       reviewStage = c.review_stage || 'submitted'
       considerationId = c.id
+    }
+
+    // Get scripts already submitted to completed considerations for this opp
+    const { data: allConsForOpp } = await service
+      .from('considerations')
+      .select('id, review_stage')
+      .eq('writer_id', user.id)
+      .eq('opportunity_id', opp.id)
+      .eq('review_stage', 'complete')
+    const completedConIds = ((allConsForOpp || []) as any[]).map((c: any) => c.id)
+    let alreadySubmittedScriptIds = new Set<string>()
+    if (completedConIds.length > 0) {
+      const { data: prevScripts } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .in('consideration_id', completedConIds)
+      for (const ps of (prevScripts || []) as any[]) {
+        alreadySubmittedScriptIds.add(ps.script_submission_id)
+      }
     }
 
     // Get qualifying scripts
@@ -132,7 +152,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .eq('user_id', user.id)
       .eq('status', 'completed')
 
-    const visibleSubs = ((userSubs || []) as any[]).filter((s: any) => !s.hidden_at)
+    const visibleSubs = ((userSubs || []) as any[]).filter((s: any) => !s.hidden_at && !alreadySubmittedScriptIds.has(s.id))
     const subIds = visibleSubs.map((s: any) => s.id)
 
     if (subIds.length > 0) {
