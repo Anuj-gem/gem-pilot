@@ -102,31 +102,33 @@ export function OpportunityCard({
         )}
       </div>
 
-      {/* Bottom bar — two rows for compact columns */}
+      {/* Bottom bar */}
       <div className="relative z-10 px-4 py-2.5 pointer-events-auto"
         style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
 
-        {/* Row 1: Status pill + script match count */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
-            style={{ background: cfg.bg, color: cfg.color }}>
-            {cfg.label}
-          </span>
-          {showScriptCount && (
-            <span className="text-[12px] font-medium" style={{ color: '#7c3aed' }}>
-              {matchingScriptCount} {matchingScriptCount === 1 ? 'script matches' : 'scripts match'}
+        <div className="flex items-center justify-between gap-2">
+          {/* Left: Status pill + script match count */}
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
+              style={{ background: cfg.bg, color: cfg.color }}>
+              {cfg.label}
             </span>
-          )}
-        </div>
+            {showScriptCount && (
+              <span className="text-[12px] font-medium shrink-0" style={{ color: '#7c3aed' }}>
+                {matchingScriptCount} {matchingScriptCount === 1 ? 'script matches' : 'scripts match'}
+              </span>
+            )}
+          </div>
 
-        {/* Row 2: View details + Apply */}
-        <div className="flex items-center justify-between">
-          <Link href={href}
-            className="text-[13px] text-gray-500 hover:text-gray-700 transition-colors">
-            View details
-          </Link>
-          {showApply && (
+          {/* Right: Apply button or View details */}
+          {showApply ? (
             <ApplyButton href={href} isAnon={isAnon} />
+          ) : (
+            <Link href={href}
+              className="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
+              View details
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
           )}
         </div>
       </div>

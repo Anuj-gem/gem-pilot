@@ -4,7 +4,6 @@
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { ArrowRight } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
@@ -166,19 +165,12 @@ export default async function OpportunitiesPage() {
     <div className="max-w-2xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-end justify-between mb-2">
-          <h1
-            className="text-[28px] font-bold text-gray-900 m-0"
-            style={{ fontFamily: 'Georgia, serif' }}
-          >
-            Opportunities
-          </h1>
-          {user && (
-            <Link href="/dashboard" className="text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors">
-              &larr; Dashboard
-            </Link>
-          )}
-        </div>
+        <h1
+          className="text-[28px] font-bold text-gray-900 m-0 mb-2"
+          style={{ fontFamily: 'Georgia, serif' }}
+        >
+          Opportunities
+        </h1>
         <p className="text-[14px] text-gray-500 m-0 leading-relaxed max-w-[520px]">
           Real opportunities from our partner network — producers, lit reps, and financiers
           looking for scripts. Apply with your evaluated screenplay and get connected directly.
