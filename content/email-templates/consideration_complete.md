@@ -25,17 +25,13 @@ Your review is complete — "{{script_title}}"
     <p style="font-size: 13px; color: #9A3412; margin: 0;">Total heat: {{total_heat}}</p>
   </div>
 
-  <p style="font-size: 15px; margin: 0 0 16px; color: #44403C;">You still have plenty of opportunities waiting for you:</p>
+  <p style="font-size: 15px; margin: 0 0 24px; color: #44403C;">You still have plenty of other opportunities to check out — and as your heat grows, you'll rise on Discover, making it easier for industry partners to notice your work.</p>
 
-  <div style="background: #EEEDFE; border-radius: 10px; padding: 16px 18px; margin: 0 0 22px; text-align: center;">
-    <p style="font-size: 28px; font-weight: 600; margin: 0 0 2px; color: #534AB7;">{{match_count}}</p>
-    <p style="font-size: 14px; color: #534AB7; margin: 0;">opportunities you can apply for</p>
-  </div>
-
-  <p style="font-size: 15px; margin: 0 0 24px; color: #44403C;">As your heat grows, you'll rise on the leaderboard — making it easier for industry partners to notice your work. Keep submitting, keep building.</p>
-
+  <p style="margin: 0 0 16px; text-align: center;">
+    <a href="{{feedback_url}}" style="display: inline-block; padding: 12px 22px; border-radius: 10px; background: #7C3AED; color: #fff; font-weight: 600; text-decoration: none; font-size: 15px;">View your feedback</a>
+  </p>
   <p style="margin: 0 0 26px; text-align: center;">
-    <a href="https://www.gem.studio/opportunities" style="display: inline-block; padding: 12px 22px; border-radius: 10px; background: #7C3AED; color: #fff; font-weight: 600; text-decoration: none; font-size: 15px;">View opportunities</a>
+    <a href="https://www.gem.studio/opportunities" style="font-size: 14px; color: #7C3AED; text-decoration: underline;">Browse opportunities</a>
   </p>
   <hr style="border: 0; border-top: 1px solid #E7E5E4; margin: 0 0 16px;" />
   <p style="font-size: 12px; color: #78716C; margin: 0;">Anuj — founder, GEM</p>
@@ -55,12 +51,10 @@ The good news is that reviewers responded positively to your work, so your appli
 
 +{{heat_earned}} heat earned (Total: {{total_heat}})
 
-You still have plenty of opportunities waiting for you:
+You still have plenty of other opportunities to check out — and as your heat grows, you'll rise on Discover, making it easier for industry partners to notice your work.
 
-{{match_count}} opportunities you can apply for
+View your feedback: {{feedback_url}}
 
-As your heat grows, you'll rise on the leaderboard — making it easier for industry partners to notice your work. Keep submitting, keep building.
-
-View opportunities: https://www.gem.studio/opportunities
+Browse opportunities: https://www.gem.studio/opportunities
 
 — Anuj, founder, GEM

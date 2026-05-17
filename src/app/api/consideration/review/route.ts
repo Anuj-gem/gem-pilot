@@ -205,25 +205,20 @@ export async function POST(req: NextRequest) {
           let scriptTitle = 'your script'
           const { data: csRows } = await service
             .from('consideration_scripts')
-            .select('script_id')
+            .select('script_submission_id')
             .eq('consideration_id', consideration_id)
             .limit(1)
           if (csRows && csRows.length > 0) {
             const { data: script } = await service
               .from('script_submissions')
               .select('title')
-              .eq('id', csRows[0].script_id)
+              .eq('id', csRows[0].script_submission_id)
               .single()
             if (script?.title) scriptTitle = script.title
           }
 
-          // Count matching opportunities for this writer
-          let matchCount = '0'
-          const { count } = await service
-            .from('opportunities')
-            .select('*', { count: 'exact', head: true })
-            .eq('is_active', true)
-          matchCount = String(count || 0)
+          // Build feedback URL for this consideration
+          const feedbackUrl = `https://www.gem.studio/applications/${consideration_id}`
 
           if (writerProfile?.email) {
             await sendEmail({
@@ -238,7 +233,7 @@ export async function POST(req: NextRequest) {
                 opportunity_badge_color: opportunityBadgeColor,
                 heat_earned: String(con.heat_earned || 0),
                 total_heat: String(writerProfile.heat_score || 0),
-                match_count: matchCount,
+                feedback_url: feedbackUrl,
               },
               dedupeKey: `consideration_complete_${consideration_id}`,
               tag: 'consideration_complete',
