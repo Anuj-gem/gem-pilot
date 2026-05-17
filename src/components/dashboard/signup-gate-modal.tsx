@@ -22,6 +22,8 @@ export function SignupGateModal() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
+  const [showExitConfirm, setShowExitConfirm] = useState(false)
+  const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
     function handleOpen(e: Event) {
@@ -105,13 +107,60 @@ export function SignupGateModal() {
       <div className="relative w-full max-w-md mx-4 bg-white rounded-2xl shadow-2xl p-8">
         {/* Close button */}
         <button
-          onClick={() => setOpen(false)}
+          onClick={() => setShowExitConfirm(true)}
           className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors border-0 cursor-pointer bg-transparent"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M4 4l8 8M12 4l-8 8" />
           </svg>
         </button>
+
+        {/* Exit confirmation overlay */}
+        {showExitConfirm && (
+          <div className="absolute inset-0 z-10 bg-white rounded-2xl flex flex-col items-center justify-center p-8 text-center">
+            <p className="text-[15px] font-semibold text-gray-900 m-0 mb-2">
+              Your script will be deleted
+            </p>
+            <p className="text-[13px] text-gray-500 m-0 mb-6">
+              You must create an account to keep your evaluation. If you exit, your script will be permanently removed.
+            </p>
+            <div className="flex flex-col gap-2 w-full max-w-[260px]">
+              <button
+                onClick={async () => {
+                  setDeleting(true)
+                  // Delete anon scripts via cookie
+                  const anonCookie = document.cookie
+                    .split('; ')
+                    .find(c => c.startsWith('gem_anon_scripts='))
+                    ?.split('=')[1]
+                  if (anonCookie) {
+                    const ids = anonCookie.split(',')
+                    for (const id of ids) {
+                      await fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' }).catch(() => {})
+                    }
+                    document.cookie = 'gem_anon_scripts=;path=/;max-age=0'
+                  }
+                  setDeleting(false)
+                  setShowExitConfirm(false)
+                  setOpen(false)
+                  router.refresh()
+                }}
+                disabled={deleting}
+                className="w-full py-2.5 rounded-lg text-[14px] font-semibold border-0 cursor-pointer transition-colors disabled:opacity-50"
+                style={{ background: '#fef2f2', color: '#dc2626' }}
+              >
+                {deleting ? 'Deleting...' : 'Delete and exit'}
+              </button>
+              <button
+                onClick={() => setShowExitConfirm(false)}
+                className="w-full py-2.5 rounded-lg text-[14px] font-semibold border-0 cursor-pointer transition-colors"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', color: 'white' }}
+              >
+                Keep creating account
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Context message */}
         <p className="text-[15px] font-semibold text-gray-900 m-0 mb-6 pr-8 leading-snug">
