@@ -1,12 +1,12 @@
 // LandingNav — sticky nav for the landing page.
-// Transparent at top. Once the hero CTA scrolls out of view,
-// transitions to white bg + shadow and reveals an inline "Get started free" button.
+// Always white bg with dark text. Once the hero CTA scrolls out of view,
+// adds shadow and reveals an inline "Get started free" button.
 // Mobile: 3 nav links collapse into a hamburger menu.
 'use client'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { LayoutDashboard, Compass, Briefcase, Menu, X } from 'lucide-react'
+import { Compass, Briefcase, Menu, X } from 'lucide-react'
 import { trackEvent } from '@/lib/posthog'
 
 const NAV_LINKS = [
@@ -34,55 +34,46 @@ export function LandingNav() {
   return (
     <>
       {/* Spacer */}
-      <div className="h-14" aria-hidden />
+      <div className="h-16" aria-hidden />
 
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          background: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
-          boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : 'none',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          background: 'rgba(255,255,255,0.97)',
+          boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : '0 1px 4px rgba(0,0,0,0.04)',
+          backdropFilter: 'blur(12px)',
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 no-underline">
+          <Link href="/" className="flex items-center gap-2.5 no-underline">
             <span
               aria-hidden="true"
-              className="inline-block w-3 h-3 rotate-45 transition-all duration-300"
+              className="inline-block w-3.5 h-3.5 rotate-45"
               style={{
                 background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
                 boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
               }}
             />
-            <span
-              className="text-lg font-bold tracking-tight transition-colors duration-300"
-              style={{ color: scrolled ? '#1c1917' : '#ffffff' }}
-            >
+            <span className="text-xl font-bold tracking-tight" style={{ color: '#1c1917' }}>
               GEM
             </span>
           </Link>
 
           {/* Desktop: links + CTA */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             {NAV_LINKS.map(link => {
               const Icon = link.icon
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors no-underline"
-                  style={{
-                    color: scrolled ? '#57534e' : 'rgba(255,255,255,0.6)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = scrolled ? '#1c1917' : '#ffffff'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = scrolled ? '#57534e' : 'rgba(255,255,255,0.6)'
-                  }}
+                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[15px] font-medium no-underline transition-colors hover:bg-gray-50"
+                  style={{ color: '#44403c' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#1c1917' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = '#44403c' }}
                 >
-                  <Icon size={16} />
+                  <Icon size={17} />
                   {link.label}
                 </Link>
               )
@@ -90,14 +81,10 @@ export function LandingNav() {
 
             <Link
               href="/login"
-              className="ml-1 text-sm transition-colors no-underline"
-              style={{ color: scrolled ? '#78716c' : 'rgba(255,255,255,0.5)' }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = scrolled ? '#1c1917' : '#ffffff'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = scrolled ? '#78716c' : 'rgba(255,255,255,0.5)'
-              }}
+              className="ml-1 px-3 py-2 text-[15px] font-medium no-underline transition-colors hover:bg-gray-50 rounded-lg"
+              style={{ color: '#78716c' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#1c1917' }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = '#78716c' }}
             >
               Log in
             </Link>
@@ -114,7 +101,7 @@ export function LandingNav() {
               <Link
                 href="/dashboard"
                 onClick={() => { try { trackEvent('cta_clicked', { location: 'nav', label: 'Get started free' }) } catch {} }}
-                className="whitespace-nowrap inline-block px-5 py-2 rounded-full text-[13px] font-bold text-white no-underline transition-all hover:brightness-110"
+                className="whitespace-nowrap inline-block px-5 py-2.5 rounded-full text-[14px] font-bold text-white no-underline transition-all hover:brightness-110"
                 style={{
                   background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
                   boxShadow: '0 2px 12px rgba(124,58,237,0.3)',
@@ -139,7 +126,7 @@ export function LandingNav() {
               <Link
                 href="/dashboard"
                 onClick={() => { try { trackEvent('cta_clicked', { location: 'nav_mobile', label: 'Get started free' }) } catch {} }}
-                className="whitespace-nowrap inline-block px-4 py-1.5 rounded-full text-[12px] font-bold text-white no-underline"
+                className="whitespace-nowrap inline-block px-4 py-2 rounded-full text-[13px] font-bold text-white no-underline"
                 style={{
                   background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
                 }}
@@ -151,11 +138,11 @@ export function LandingNav() {
             {/* Hamburger toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-1.5 rounded-lg border-0 bg-transparent cursor-pointer transition-colors"
-              style={{ color: scrolled ? '#1c1917' : '#ffffff' }}
+              className="p-2 rounded-lg border-0 bg-transparent cursor-pointer transition-colors"
+              style={{ color: '#1c1917' }}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -163,9 +150,9 @@ export function LandingNav() {
         {/* Mobile dropdown */}
         {mobileOpen && (
           <div
-            className="md:hidden px-4 pb-4 pt-1"
+            className="md:hidden px-5 pb-4 pt-1"
             style={{
-              background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(15,10,26,0.95)',
+              background: 'rgba(255,255,255,0.97)',
               backdropFilter: 'blur(12px)',
             }}
           >
@@ -176,8 +163,8 @@ export function LandingNav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2.5 px-3 py-3 rounded-lg text-[15px] font-medium no-underline transition-colors"
-                  style={{ color: scrolled ? '#1c1917' : 'rgba(255,255,255,0.8)' }}
+                  className="flex items-center gap-2.5 px-3 py-3 rounded-lg text-[16px] font-medium no-underline transition-colors"
+                  style={{ color: '#1c1917' }}
                 >
                   <Icon size={18} />
                   {link.label}
@@ -187,8 +174,8 @@ export function LandingNav() {
             <Link
               href="/login"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2.5 px-3 py-3 rounded-lg text-[15px] font-medium no-underline transition-colors"
-              style={{ color: scrolled ? '#78716c' : 'rgba(255,255,255,0.5)' }}
+              className="flex items-center gap-2.5 px-3 py-3 rounded-lg text-[16px] font-medium no-underline transition-colors"
+              style={{ color: '#78716c' }}
             >
               Log in
             </Link>
