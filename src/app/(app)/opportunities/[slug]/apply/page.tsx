@@ -37,6 +37,7 @@ export default function ApplyPage() {
 
   const [opportunity, setOpportunity] = useState<Opportunity | null>(null)
   const [scripts, setScripts] = useState<Script[]>([])
+  const [previouslyConsidered, setPreviouslyConsidered] = useState<Script[]>([])
   const [selectedId, setSelectedId] = useState<string | null>(preselectedScript)
   const [pitch, setPitch] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -116,9 +117,7 @@ export default function ApplyPage() {
         .is('hidden_at', null)
         .order('created_at', { ascending: false })
 
-      const qualifying = (subs || [])
-        .filter((s: any) => !alreadySubmittedIds.has(s.id))
-        .map((s: any) => {
+      const allMapped = (subs || []).map((s: any) => {
           const ev = Array.isArray(s.script_evaluations) ? s.script_evaluations[0] : s.script_evaluations
           const score = ev?.weighted_score ?? null
           const evJson = ev?.evaluation as Record<string, unknown> | null
@@ -132,6 +131,11 @@ export default function ApplyPage() {
           const format = (cls.format as string) || (fmt.format as string) || s.declared_format || null
           return { id: s.id, title: s.title, score, format, genres: Array.from(genreSet) }
         })
+
+      // Split into previously considered vs available
+      const prevConsidered = allMapped.filter((s: Script) => alreadySubmittedIds.has(s.id))
+      const qualifying = allMapped
+        .filter((s: Script) => !alreadySubmittedIds.has(s.id))
         .filter((s: Script) => {
           if (opp.min_score && (!s.score || s.score < opp.min_score)) return false
           const noFormatFilter = !opp.formats || opp.formats.length === 0
@@ -146,6 +150,7 @@ export default function ApplyPage() {
         })
 
       setScripts(qualifying)
+      setPreviouslyConsidered(prevConsidered)
       setLoading(false)
     }
     load()
@@ -280,6 +285,25 @@ export default function ApplyPage() {
               </button>
             ))}
           </div>
+          {previouslyConsidered.length > 0 && (
+            <div className="mt-3 space-y-2">
+              <p className="text-[11px] text-gray-400 font-semibold uppercase tracking-wide m-0">Already considered</p>
+              {previouslyConsidered.map(s => (
+                <div
+                  key={s.id}
+                  className="w-full text-left rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 opacity-60"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full border-2 border-gray-200 shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[13px] font-semibold text-gray-500 m-0 truncate">{s.title}</p>
+                      <p className="text-[11px] text-gray-400 m-0 mt-0.5">Previously reviewed for this opportunity</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         )}
       </div>
 
