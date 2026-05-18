@@ -87,30 +87,26 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   const submissionIds = scripts.map((s) => s.id)
   const writerIds = Array.from(new Set(scripts.map((s) => s.user_id).filter(Boolean) as string[]))
 
+  // Only extract the 3 fields we need from the evaluation JSONB — avoids
+  // pulling the full ~50KB blob per script.  Anuj 2026-05-18 perf fix.
   const [{ data: evs }, { data: writers }, stats] = await Promise.all([
-    service.from('script_evaluations').select('id, submission_id, weighted_score, evaluation').in('submission_id', submissionIds),
+    service
+      .from('script_evaluations')
+      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier, logline:evaluation->>positioning_hook')
+      .in('submission_id', submissionIds),
     service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
     getScriptStats(submissionIds),
   ])
 
   type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null; logline: string | null }
   const evalBySubmission = new Map<string, EvalRow>()
-  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
-    const evJson = e.evaluation as Record<string, unknown> | null
-    const fmt = (evJson?.format_detection as Record<string, unknown> | undefined) || {}
-    const cls = (evJson?.classification as Record<string, unknown> | undefined) || {}
-    const genre =
-      (cls.genre_primary as string | undefined) ||
-      (fmt.genre_primary as string | undefined) ||
-      null
+  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null; logline: string | null }[] | null) || []) {
+    const genre = e.genre_cls || e.genre_fmt || null
     const genreKey = genre ? genre.toLowerCase().replace(/[^a-z]/g, '') : null
-    const packaging = (evJson?.packaging as Record<string, unknown> | undefined) || {}
-    const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
-    const rawBudget = (budgetTier?.tier as string | undefined)?.toLowerCase() ?? null
+    const rawBudget = e.budget_raw?.toLowerCase() ?? null
     const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
-    const logline = (evJson?.positioning_hook as string | undefined) || null
     evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, logline,
+      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, logline: e.logline,
     })
   }
 
