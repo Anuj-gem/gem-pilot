@@ -84,6 +84,7 @@ function AnonProfileCard() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [phone, setPhone] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
@@ -117,7 +118,7 @@ function AnonProfileCard() {
       email,
       password,
       options: {
-        data: { full_name: fullName },
+        data: { full_name: fullName, phone },
         emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent('/dashboard')}`,
       },
     })
@@ -164,7 +165,7 @@ function AnonProfileCard() {
     if (user) {
       await supabase
         .from('profiles')
-        .update({ headline: headline.trim() || null, bio: bio.trim() || null })
+        .update({ headline: headline.trim() || null, bio: bio.trim() || null, phone: phone.trim() || null })
         .eq('id', user.id)
     }
     setSaving(false)
@@ -296,6 +297,13 @@ function AnonProfileCard() {
               placeholder="Password (6+ chars)"
               className="w-full px-3 py-2 rounded-lg text-[12px] border border-gray-200 focus:border-purple-400 focus:outline-none transition-colors"
             />
+            <input
+              type="tel"
+              value={phone}
+              onChange={e => setPhone(e.target.value)}
+              placeholder="Phone number"
+              className="w-full px-3 py-2 rounded-lg text-[12px] border border-gray-200 focus:border-purple-400 focus:outline-none transition-colors"
+            />
 
             {error && <p className="text-[11px] text-red-400 m-0">{error}</p>}
 
@@ -332,6 +340,16 @@ function AnonProfileCard() {
           <p className="text-[10px] text-gray-400 text-center m-0 mb-4">Make your first impression count</p>
 
           <div className="space-y-2.5">
+            <div>
+              <label className="text-[10px] font-medium text-gray-500 block mb-1">Phone number</label>
+              <input
+                type="tel"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                placeholder="(555) 555-5555"
+                className="w-full px-3 py-2 rounded-lg text-[12px] border border-gray-200 focus:border-purple-400 focus:outline-none transition-colors"
+              />
+            </div>
             <div>
               <label className="text-[10px] font-medium text-gray-500 block mb-1">Headline</label>
               <input
