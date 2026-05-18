@@ -506,7 +506,7 @@ export default async function DashboardPage() {
               <p className="text-[13px] text-gray-500 m-0">No opportunities right now. Check back soon.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {dashboardOpps.map(opp => {
                 const status: OppStatus = pendingOppIds.has(opp.id) ? 'pending' : appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
                 const matchCount = getMatchingScriptsForOpp(opp).length

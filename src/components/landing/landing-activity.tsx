@@ -23,8 +23,8 @@ export function LandingActivity() {
         {/* Stats row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { icon: '📄', number: '1,847', label: 'Scripts evaluated' },
-            { icon: '👥', number: '412', label: 'Writers on GEM' },
+            { icon: '📄', number: '1,027', label: 'Scripts evaluated' },
+            { icon: '👥', number: '251', label: 'Writers on GEM' },
             { icon: '💰', number: '8', label: 'Open opportunities' },
           ].map((stat) => (
             <div
