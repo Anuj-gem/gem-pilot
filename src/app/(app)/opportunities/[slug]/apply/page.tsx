@@ -245,65 +245,67 @@ export default function ApplyPage() {
             <p className="text-[12px] text-gray-400 m-0 mt-1">Upload a new script or improve your scores.</p>
           </div>
         ) : (
-          <div className="space-y-2">
-            {scripts.map(s => (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => setSelectedId(s.id)}
-                className={`w-full text-left rounded-xl border px-4 py-3 transition-colors ${
-                  selectedId === s.id
-                    ? 'border-purple-400 bg-purple-50/50'
-                    : 'border-gray-200 bg-white hover:border-gray-300'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                    selectedId === s.id ? 'border-purple-600' : 'border-gray-300'
-                  }`}>
-                    {selectedId === s.id && (
-                      <div className="w-2 h-2 rounded-full bg-purple-600" />
-                    )}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-                    <div className="flex items-center gap-2 mt-0.5">
-                      {s.format && <span className="text-[11px] text-gray-400">{s.format}</span>}
-                      {s.genres[0] && <span className="text-[11px] text-gray-400">· {s.genres[0]}</span>}
-                    </div>
-                  </div>
-                  {s.score && (
-                    <span className={`text-[12px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
-                      s.score >= 80 ? 'bg-green-50 text-green-700' :
-                      s.score >= 70 ? 'bg-blue-50 text-blue-700' :
-                      'bg-yellow-50 text-yellow-700'
-                    }`}>
-                      {Math.round(s.score)}
-                    </span>
-                  )}
-                </div>
-              </button>
-            ))}
-          </div>
-          {previouslyConsidered.length > 0 && (
-            <div className="mt-3 space-y-2">
-              <p className="text-[11px] text-gray-400 font-semibold uppercase tracking-wide m-0">Already considered</p>
-              {previouslyConsidered.map(s => (
-                <div
+          <>
+            <div className="space-y-2">
+              {scripts.map(s => (
+                <button
                   key={s.id}
-                  className="w-full text-left rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 opacity-60"
+                  type="button"
+                  onClick={() => setSelectedId(s.id)}
+                  className={`w-full text-left rounded-xl border px-4 py-3 transition-colors ${
+                    selectedId === s.id
+                      ? 'border-purple-400 bg-purple-50/50'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-4 h-4 rounded-full border-2 border-gray-200 shrink-0" />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13px] font-semibold text-gray-500 m-0 truncate">{s.title}</p>
-                      <p className="text-[11px] text-gray-400 m-0 mt-0.5">Previously reviewed for this opportunity</p>
+                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                      selectedId === s.id ? 'border-purple-600' : 'border-gray-300'
+                    }`}>
+                      {selectedId === s.id && (
+                        <div className="w-2 h-2 rounded-full bg-purple-600" />
+                      )}
                     </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        {s.format && <span className="text-[11px] text-gray-400">{s.format}</span>}
+                        {s.genres[0] && <span className="text-[11px] text-gray-400">· {s.genres[0]}</span>}
+                      </div>
+                    </div>
+                    {s.score && (
+                      <span className={`text-[12px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
+                        s.score >= 80 ? 'bg-green-50 text-green-700' :
+                        s.score >= 70 ? 'bg-blue-50 text-blue-700' :
+                        'bg-yellow-50 text-yellow-700'
+                      }`}>
+                        {Math.round(s.score)}
+                      </span>
+                    )}
                   </div>
-                </div>
+                </button>
               ))}
             </div>
-          )}
+            {previouslyConsidered.length > 0 && (
+              <div className="mt-3 space-y-2">
+                <p className="text-[11px] text-gray-400 font-semibold uppercase tracking-wide m-0">Already considered</p>
+                {previouslyConsidered.map(s => (
+                  <div
+                    key={s.id}
+                    className="w-full text-left rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 opacity-60"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-4 rounded-full border-2 border-gray-200 shrink-0" />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[13px] font-semibold text-gray-500 m-0 truncate">{s.title}</p>
+                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">Previously reviewed for this opportunity</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
         )}
       </div>
 
