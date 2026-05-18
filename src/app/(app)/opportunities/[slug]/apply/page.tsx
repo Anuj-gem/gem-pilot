@@ -72,12 +72,13 @@ export default function ApplyPage() {
       if (!opp) { router.push('/opportunities'); return }
       setOpportunity(opp)
 
-      // Check if user already has a consideration for this opportunity
+      // Check if user already has an ACTIVE (non-complete) consideration for this opportunity
       const { data: existing } = await supabase
         .from('considerations')
         .select('id')
         .eq('writer_id', user.id)
         .eq('opportunity_id', opp.id)
+        .neq('review_stage', 'complete')
         .limit(1)
         .maybeSingle()
 
@@ -85,6 +86,25 @@ export default function ApplyPage() {
         setAlreadyApplied(true)
         setLoading(false)
         return
+      }
+
+      // Get scripts already submitted in completed considerations for this opp
+      const { data: completedCons } = await supabase
+        .from('considerations')
+        .select('id')
+        .eq('writer_id', user.id)
+        .eq('opportunity_id', opp.id)
+        .eq('review_stage', 'complete')
+      const completedConIds = (completedCons || []).map((c: any) => c.id)
+      const alreadySubmittedIds = new Set<string>()
+      if (completedConIds.length > 0) {
+        const { data: prevScripts } = await supabase
+          .from('consideration_scripts')
+          .select('script_submission_id')
+          .in('consideration_id', completedConIds)
+        for (const ps of (prevScripts || []) as any[]) {
+          alreadySubmittedIds.add(ps.script_submission_id)
+        }
       }
 
       // Load user's completed scripts with evaluations
@@ -97,6 +117,7 @@ export default function ApplyPage() {
         .order('created_at', { ascending: false })
 
       const qualifying = (subs || [])
+        .filter((s: any) => !alreadySubmittedIds.has(s.id))
         .map((s: any) => {
           const ev = Array.isArray(s.script_evaluations) ? s.script_evaluations[0] : s.script_evaluations
           const score = ev?.weighted_score ?? null
