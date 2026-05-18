@@ -2,14 +2,16 @@
 
 import { useEffect, useRef } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { initPostHog, trackPageView, posthog } from '@/lib/posthog'
+import { initPostHog, trackPageView, identifyUser, posthog } from '@/lib/posthog'
 import { gtagPageView } from '@/lib/gtag'
+import { createClient } from '@/lib/supabase-browser'
 
 const UTM_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const
 
 /**
  * Initializes PostHog and tracks page views on SPA navigation.
  * Also captures UTM parameters and fires Google Ads page views.
+ * Listens for Supabase auth state changes to identify users in PostHog.
  * Drop this into the root layout inside a <Suspense> boundary.
  */
 export function PostHogProvider() {
@@ -19,6 +21,33 @@ export function PostHogProvider() {
 
   useEffect(() => {
     initPostHog()
+  }, [])
+
+  // Identify user in PostHog on every auth state change (login, signup, OAuth, session restore)
+  useEffect(() => {
+    const supabase = createClient()
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user) {
+        const u = session.user
+        identifyUser(u.id, {
+          email: u.email,
+          full_name: u.user_metadata?.full_name,
+          auth_provider: u.app_metadata?.provider ?? 'email',
+        })
+      }
+    })
+    // Also check if there's already a session (page refresh / returning user)
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        const u = session.user
+        identifyUser(u.id, {
+          email: u.email,
+          full_name: u.user_metadata?.full_name,
+          auth_provider: u.app_metadata?.provider ?? 'email',
+        })
+      }
+    })
+    return () => { subscription.unsubscribe() }
   }, [])
 
   // Capture UTM params on first load (once per session)
