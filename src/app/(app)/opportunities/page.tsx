@@ -209,7 +209,7 @@ export default async function OpportunitiesPage() {
       )}
 
       {/* Opportunity cards */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {opportunities.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-[15px] text-gray-400">No open opportunities right now. Check back soon.</p>
