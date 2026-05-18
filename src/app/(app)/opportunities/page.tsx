@@ -156,7 +156,11 @@ export default async function OpportunitiesPage() {
 
     for (const c of (considerations || []) as any[]) {
       if (c.opportunity_id) {
-        oppStage.set(c.opportunity_id, c.review_stage || 'submitted')
+        const existing = oppStage.get(c.opportunity_id)
+        // Non-complete stages take priority (writer has an active application)
+        if (!existing || (existing === 'complete' && c.review_stage !== 'complete')) {
+          oppStage.set(c.opportunity_id, c.review_stage || 'submitted')
+        }
       }
     }
   }
@@ -212,8 +216,8 @@ export default async function OpportunitiesPage() {
           </div>
         ) : (
           opportunities.map((opp) => {
-            const hasConsideration = oppStage.has(opp.id)
-            const status: OppStatus = hasConsideration ? 'pending' : 'available'
+            const stage = oppStage.get(opp.id)
+            const status: OppStatus = stage ? (stage === 'complete' ? 'previously_applied' : 'pending') : 'available'
             return (
               <OpportunityCard
                 key={opp.id}
