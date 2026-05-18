@@ -4,7 +4,7 @@
 
 import { redirect } from 'next/navigation'
 import { LandingTracking } from '@/components/landing-tracking'
-import Nav from '@/components/nav'
+import { LandingNav } from '@/components/landing/landing-nav'
 import { LandingHero } from '@/components/landing/landing-hero'
 import { LandingActivity } from '@/components/landing/landing-activity'
 import { LandingJourney } from '@/components/landing/landing-journey'
@@ -36,7 +36,7 @@ export default async function Home({
   return (
     <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
       <LandingTracking />
-      <Nav />
+      <LandingNav />
 
       <LandingHero />
       <LandingActivity />

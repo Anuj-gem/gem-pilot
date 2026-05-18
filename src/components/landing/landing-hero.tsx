@@ -119,15 +119,16 @@ export function LandingHero() {
 
         {/* CTA */}
         <Link
+          id="hero-cta"
           href="/dashboard"
-          onClick={() => { try { trackEvent('cta_clicked', { location: 'hero', label: 'Get started' }) } catch {} }}
+          onClick={() => { try { trackEvent('cta_clicked', { location: 'hero', label: 'Get started free' }) } catch {} }}
           className="inline-block px-12 py-4 rounded-full text-[17px] font-semibold text-white no-underline cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
           style={{
             background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
             boxShadow: '0 4px 20px rgba(124,58,237,0.45)',
           }}
         >
-          Get started
+          Get started free
         </Link>
       </div>
     </section>
