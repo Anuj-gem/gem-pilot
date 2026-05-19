@@ -287,7 +287,7 @@ export default function GetStartedClient() {
               email: authUser.email,
               name: s.name,
             })
-            trackSignupComplete({ method: 'google' })
+            trackSignupComplete()
             gtagSignupCompleted()
 
             localStorage.removeItem(ONBOARDING_KEY)
@@ -485,7 +485,7 @@ export default function GetStartedClient() {
       }
 
       identifyUser(uid, { email, name })
-      trackSignupComplete({ method: 'email' })
+      trackSignupComplete()
       gtagSignupCompleted()
 
       // Welcome email (non-blocking)
