@@ -42,8 +42,11 @@ export async function GET(req: NextRequest) {
 
   const evalBlob = evalRow?.evaluation as Record<string, any> | null
   const logline = evalBlob?.positioning_hook ?? ''
-  const genres: string[] =
-    evalBlob?.classification?.genres ?? evalBlob?.genre_tags ?? []
+  const cls = (evalBlob?.classification as Record<string, any>) || {}
+  const genres: string[] = [
+    cls.genre_primary,
+    ...(cls.genre_secondary ?? []),
+  ].filter(Boolean)
 
   // ─── Active opportunities ─────────────────────────────────────────────
   const { data: opps } = await supabase

@@ -1338,20 +1338,20 @@ export default function GetStartedClient() {
 
         {/* Bottom CTAs */}
         <div className="flex gap-3">
-          <Link
+          <a
             href="/opportunities"
             className="flex-1 py-3 rounded-[10px] text-sm font-semibold text-center transition-all"
             style={{ border: '1px solid #E7E5E4', color: '#1a1a1a' }}
           >
             View all opportunities
-          </Link>
-          <Link
+          </a>
+          <a
             href="/dashboard"
             className="flex-1 py-3 rounded-[10px] text-sm font-semibold text-center transition-all"
             style={{ border: '1px solid #E7E5E4', color: '#1a1a1a' }}
           >
             Go to my dashboard
-          </Link>
+          </a>
         </div>
       </div>
     )
