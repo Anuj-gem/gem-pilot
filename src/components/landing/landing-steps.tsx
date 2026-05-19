@@ -40,7 +40,7 @@ export function LandingSteps() {
           It takes about 60 seconds.
         </h2>
         <Link
-          href="/dashboard"
+          href="/get-started"
           className="inline-block rounded-lg px-5 py-2.5 font-semibold text-[15px] mb-9"
           style={{ background: 'var(--gem-accent)', color: '#ffffff' }}
         >

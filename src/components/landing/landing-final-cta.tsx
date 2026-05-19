@@ -27,7 +27,7 @@ export function LandingFinalCTA() {
           Upload your script. Get your free evaluation. See what happens next.
         </p>
         <Link
-          href="/dashboard"
+          href="/get-started"
           className="inline-block rounded-full px-12 py-4 text-[17px] font-semibold text-white transition-all duration-150 hover:scale-105 active:scale-[0.98]"
           style={{
             background: 'linear-gradient(135deg, #7c3aed, #a855f7)',

@@ -80,7 +80,7 @@ export function LandingPro() {
         </p>
 
         <Link
-          href="/dashboard"
+          href="/get-started"
           className="inline-block rounded-xl px-10 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
           style={{
             background: 'var(--gem-accent)',

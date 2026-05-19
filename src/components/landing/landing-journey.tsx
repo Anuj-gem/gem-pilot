@@ -122,7 +122,7 @@ export function LandingJourney() {
         {/* Bottom CTA */}
         <div className="text-center mt-14">
           <Link
-            href="/dashboard"
+            href="/get-started"
             onClick={() => { try { trackEvent('cta_clicked', { location: 'journey', label: 'Get started free' }) } catch {} }}
             className="text-[16px] font-semibold no-underline hover:underline"
             style={{ color: 'var(--gem-accent)' }}

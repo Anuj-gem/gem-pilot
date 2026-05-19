@@ -99,7 +99,7 @@ export function LandingNav() {
               }}
             >
               <Link
-                href="/dashboard"
+                href="/get-started"
                 onClick={() => { try { trackEvent('cta_clicked', { location: 'nav', label: 'Get started free' }) } catch {} }}
                 className="whitespace-nowrap inline-block px-5 py-2.5 rounded-full text-[14px] font-bold text-white no-underline transition-all hover:brightness-110"
                 style={{
@@ -124,7 +124,7 @@ export function LandingNav() {
               }}
             >
               <Link
-                href="/dashboard"
+                href="/get-started"
                 onClick={() => { try { trackEvent('cta_clicked', { location: 'nav_mobile', label: 'Get started free' }) } catch {} }}
                 className="whitespace-nowrap inline-block px-4 py-2 rounded-full text-[13px] font-bold text-white no-underline"
                 style={{
