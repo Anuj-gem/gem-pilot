@@ -61,6 +61,11 @@ async function handleDelete({ id: submissionId }: { id: string }) {
     return NextResponse.json({ error: 'Not found' }, { status: 404 })
   }
 
+  // Delete the PDF from storage
+  await service.storage
+    .from('scripts')
+    .remove([`${user.id}/${submissionId}/script.pdf`])
+
   // Delete evaluation first (FK reference)
   await service
     .from('script_evaluations')
