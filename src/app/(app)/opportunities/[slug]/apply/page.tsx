@@ -57,7 +57,7 @@ export default function ApplyPage() {
         .select('subscription_status')
         .eq('id', user.id)
         .single()
-      if (profile?.subscription_status !== 'active') {
+      if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing') {
         router.push(`/opportunities/${slug}`)
         return
       }
