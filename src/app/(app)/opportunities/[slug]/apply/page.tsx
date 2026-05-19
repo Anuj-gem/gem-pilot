@@ -44,6 +44,8 @@ export default function ApplyPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
   const [alreadyApplied, setAlreadyApplied] = useState(false)
+  const [atCap, setAtCap] = useState(false)
+  const [isPro, setIsPro] = useState(false)
 
   useEffect(() => {
     async function load() {
@@ -51,15 +53,26 @@ export default function ApplyPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) { router.push('/'); return }
 
-      // Check Pro status — free users can't apply
+      // Check subscription + free cap
       const { data: profile } = await supabase
         .from('profiles')
         .select('subscription_status')
         .eq('id', user.id)
         .single()
-      if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing') {
-        router.push(`/opportunities/${slug}`)
-        return
+      const pro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+      setIsPro(pro)
+      if (!pro) {
+        const now = new Date()
+        const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+        const { count } = await supabase
+          .from('considerations')
+          .select('id', { count: 'exact', head: true })
+          .eq('writer_id', user.id)
+          .not('opportunity_id', 'is', null)
+          .gte('created_at', monthStart)
+        if ((count ?? 0) >= 2) {
+          setAtCap(true)
+        }
       }
 
       // Load opportunity
@@ -206,6 +219,34 @@ export default function ApplyPage() {
         <div className="rounded-xl border border-purple-200 bg-purple-50/50 px-5 py-6 text-center">
           <p className="text-[15px] font-semibold text-purple-800 m-0 mb-1">Application Pending</p>
           <p className="text-[13px] text-gray-600 m-0">You already have a pending application for this opportunity. We'll notify you when there's an update.</p>
+        </div>
+        <Link href="/opportunities" className="inline-flex items-center text-[13px] font-semibold text-purple-600 hover:text-purple-800">
+          ← View all opportunities
+        </Link>
+      </div>
+    )
+  }
+
+  if (atCap) {
+    return (
+      <div className="max-w-lg mx-auto space-y-6">
+        <div>
+          <Link href={`/opportunities/${slug}`} className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+            ← Back to opportunity
+          </Link>
+          <h1 className="text-[20px] font-bold text-gray-900 mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+            {opportunity.title}
+          </h1>
+        </div>
+        <div className="rounded-xl border border-gray-200 bg-white px-5 py-6 text-center">
+          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">You've used your 2 free applications this month</p>
+          <p className="text-[13px] text-gray-500 m-0 mb-4">Become a member for unlimited applications and full access to all opportunities.</p>
+          <Link
+            href="/pricing"
+            className="inline-block rounded-xl px-6 py-2.5 text-[14px] font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-colors"
+          >
+            Become a member
+          </Link>
         </div>
         <Link href="/opportunities" className="inline-flex items-center text-[13px] font-semibold text-purple-600 hover:text-purple-800">
           ← View all opportunities

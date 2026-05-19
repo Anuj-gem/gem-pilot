@@ -43,13 +43,16 @@ export async function POST(req: NextRequest) {
     .single()
   const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   if (!isPro) {
+    const now = new Date()
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
     const { count: appCount } = await service
       .from('considerations')
       .select('id', { count: 'exact', head: true })
       .eq('writer_id', user.id)
       .not('opportunity_id', 'is', null)
+      .gte('created_at', monthStart)
     if ((appCount ?? 0) >= 2) {
-      return NextResponse.json({ error: 'You\'ve used your 2 free applications. Become a member for unlimited access.' }, { status: 403 })
+      return NextResponse.json({ error: 'You\'ve used your 2 free applications this month. Become a member for unlimited access.' }, { status: 403 })
     }
   }
 
