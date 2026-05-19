@@ -613,11 +613,11 @@ export default function GetStartedClient() {
         <div
           className={`transition-opacity duration-150 ${fading ? 'opacity-0' : 'opacity-100'}`}
         >
-          {step === 'welcome' && <WelcomeStep />}
-          {step === 'upload' && <UploadStep />}
-          {step === 'account' && <AccountStep />}
-          {step === 'profile' && <ProfileStep />}
-          {step === 'results' && <ResultsStep />}
+          {step === 'welcome' && WelcomeStep()}
+          {step === 'upload' && UploadStep()}
+          {step === 'account' && AccountStep()}
+          {step === 'profile' && ProfileStep()}
+          {step === 'results' && ResultsStep()}
         </div>
       </div>
     </div>
