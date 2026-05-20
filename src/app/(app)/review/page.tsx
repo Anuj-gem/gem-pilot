@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import { UploadCTAButton } from '@/components/upload-cta-button'
+import { ApplicationsList } from '@/components/applications/applications-list'
 
 export const dynamic = 'force-dynamic'
 
@@ -49,7 +50,7 @@ export default async function ApplicationsPage() {
   // Load all opportunity applications (considerations with opportunity_id)
   const { data: rawApps } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, heat_earned')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned')
     .eq('writer_id', user.id)
     .not('opportunity_id', 'is', null)
     .order('submitted_at', { ascending: false })
@@ -59,7 +60,7 @@ export default async function ApplicationsPage() {
     reviewed_at: string | null; feedback: string | null
     feedback_tags: string[] | null; next_steps_tags: string[] | null
     opportunity_id: string; writer_pitch: string | null
-    heat_earned: number
+    writer_response: string | null; heat_earned: number
   }[]
 
   // Load opportunity titles
@@ -115,8 +116,19 @@ export default async function ApplicationsPage() {
     }
   }
 
-  const fmtDate = (d: string) =>
-    new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  // Load writer's total heat score
+  const { data: profile } = await service
+    .from('profiles')
+    .select('heat_score')
+    .eq('id', user.id)
+    .single()
+  const totalHeat = (profile as any)?.heat_score ?? 0
+
+  // Convert Maps to plain objects for client component
+  const oppMapObj: Record<string, { title: string; slug: string }> = {}
+  for (const [k, v] of oppMap) oppMapObj[k] = v
+  const scriptsByAppObj: Record<string, { title: string; score: number | null }[]> = {}
+  for (const [k, v] of scriptsByApp) scriptsByAppObj[k] = v
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -148,74 +160,12 @@ export default async function ApplicationsPage() {
           </Link>
         </div>
       ) : (
-        <div className="space-y-2">
-          {apps.map(app => {
-            const opp = oppMap.get(app.opportunity_id)
-            const scripts = scriptsByApp.get(app.id) || []
-            const isPending = app.status === 'pending'
-            const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
-
-            return (
-              <Link key={app.id} href={`/applications/${app.id}`} className="block">
-                <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
-                          {opp?.title || 'Opportunity'}
-                        </p>
-                        {(() => {
-                          const stageMap: Record<string, { label: string; bg: string; color: string }> = {
-                            pending: { label: 'Pending', bg: '#fef3c7', color: '#92400e' },
-                            in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
-                            shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
-                            partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
-                            complete: { label: 'Pass', bg: '#d1fae5', color: '#065f46' },
-                          }
-                          const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
-                          const s = stageMap[stage] || stageMap.pending
-                          return (
-                            <span
-                              className="text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0"
-                              style={{ background: s.bg, color: s.color }}
-                            >
-                              {s.label}
-                            </span>
-                          )
-                        })()}
-                      </div>
-                      <div className="flex items-center gap-2 mt-1">
-                        {scripts.map((s, i) => (
-                          <span key={i} className="text-[12px] text-gray-500">
-                            {s.title}
-                            {s.score && <span className="text-[11px] font-semibold text-gray-400 ml-1">({Math.round(s.score)})</span>}
-                          </span>
-                        ))}
-                        <span className="text-[11px] text-gray-300">·</span>
-                        <span className="text-[11px] text-gray-400">{fmtDate(app.submitted_at)}</span>
-                      </div>
-                      {app.writer_pitch && (
-                        <p className="text-[12px] text-gray-400 m-0 mt-1 line-clamp-1 italic">&ldquo;{app.writer_pitch}&rdquo;</p>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2 shrink-0">
-                      {isReviewed && app.heat_earned > 0 && (
-                        <span className="text-[13px] font-bold" style={{ color: '#f97316' }}>🔥 +{app.heat_earned}</span>
-                      )}
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300">
-                        <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-
-                  {isReviewed && app.feedback && (
-                    <p className="text-[12px] text-gray-500 m-0 mt-2 pt-2 border-t border-gray-50 line-clamp-2">{app.feedback}</p>
-                  )}
-                </div>
-              </Link>
-            )
-          })}
-        </div>
+        <ApplicationsList
+          apps={apps}
+          oppMap={oppMapObj}
+          scriptsByApp={scriptsByAppObj}
+          totalHeat={totalHeat}
+        />
       )}
     </div>
   )

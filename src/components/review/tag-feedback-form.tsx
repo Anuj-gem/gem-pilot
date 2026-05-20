@@ -3,33 +3,32 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 
-// Presets — shown as quick-fill suggestions
-const FEEDBACK_PRESETS = [
-  'Strong writing voice',
-  'Compelling characters',
-  'Marketable concept',
-  'Needs tighter structure',
-  'Dialogue needs work',
-  'Concept not differentiated',
-  'Tone inconsistent',
-  'Too similar to existing IP',
-  'Budget concerns',
-  'Great pilot potential',
-  'Pacing issues',
-  'Underdeveloped world',
+// Presets — "What stood out" (positive signals, each = heat)
+const POSITIVE_PRESETS = [
+  'Strong voice',
+  'Compelling lead',
+  'Fresh concept',
+  'Great dialogue',
+  'Clear market',
+  'Timely concept',
+  'Castable roles',
+  'Low budget friendly',
+  'Strong ensemble',
+  'Visual storytelling',
 ]
 
-const NEXT_STEPS_PRESETS = [
-  'Rewrite and resubmit',
-  'Submit to another opportunity',
-  'Consider a writing partner',
-  'Develop a series bible',
-  'Tighten the first 10 pages',
-  'Clarify the hook',
-  'Explore different format',
-  'Ready for meetings',
-  'Attach to producer',
-  'Keep writing — almost there',
+// Presets — "Why passing" (pass reasons)
+const PASS_REASON_PRESETS = [
+  'Conflicting project',
+  'Similar to something in development',
+  'Crowded space',
+  'Budget concerns',
+  'Slate full',
+  'Not our genre',
+  'Casting difficult',
+  'Needs development',
+  'Pacing issues',
+  'Concept unclear',
 ]
 
 // Combo tag input — type to add custom, presets as suggestions, search previously used
@@ -46,7 +45,7 @@ function TagComboInput({
   presets: string[]
   allUsed: string[]
   placeholder: string
-  accentColor: 'purple' | 'green'
+  accentColor: 'purple' | 'gray'
 }) {
   const [input, setInput] = useState('')
   const [focused, setFocused] = useState(false)
@@ -72,7 +71,7 @@ function TagComboInput({
 
   const colors = accentColor === 'purple'
     ? { pill: 'border-purple-300 bg-purple-50 text-purple-700', suggestion: 'hover:bg-purple-50', ring: 'focus-within:border-purple-300' }
-    : { pill: 'border-green-300 bg-green-50 text-green-700', suggestion: 'hover:bg-green-50', ring: 'focus-within:border-green-300' }
+    : { pill: 'border-gray-300 bg-gray-100 text-gray-600', suggestion: 'hover:bg-gray-50', ring: 'focus-within:border-gray-300' }
 
   return (
     <div>
@@ -158,10 +157,10 @@ const STAGE_HEAT: Record<string, number> = {
   partner_match: 3,
 }
 
-function calcHeatPreview(currentStage: string, sentiment: 'positive' | 'negative' | null): number {
+function calcHeatPreview(currentStage: string, hasFeedbackTags: boolean): number {
   const stageHeat = STAGE_HEAT[currentStage] || 0
-  const sentimentHeat = sentiment === 'positive' ? 1 : 0
-  return stageHeat + sentimentHeat
+  const positiveHeat = hasFeedbackTags ? 1 : 0
+  return stageHeat + positiveHeat
 }
 
 interface TagFeedbackFormProps {
@@ -188,22 +187,29 @@ export function TagFeedbackForm({
   currentHeatEarned = 0,
 }: TagFeedbackFormProps) {
   const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
-  const [nextStepsTags, setNextStepsTags] = useState<string[]>(currentNextStepsTags)
+  const [passReasonTags, setPassReasonTags] = useState<string[]>(currentNextStepsTags)
   const [note, setNote] = useState(currentFeedback)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [stage, setStage] = useState(currentReviewStage)
   const [stageSaving, setStageSaving] = useState(false)
-  const [sentiment, setSentiment] = useState<'positive' | 'negative' | null>(
-    (currentSentiment as 'positive' | 'negative' | null) || null
-  )
+  const [validationError, setValidationError] = useState<string | null>(null)
   const router = useRouter()
 
   const isAlreadyComplete = currentReviewStage === 'complete'
-  const heatPreview = calcHeatPreview(stage, sentiment)
+  const heatPreview = calcHeatPreview(stage, feedbackTags.length > 0)
+
+  // Shortlisted or partner_match requires at least one positive tag
+  const requiresPositiveTag = stage === 'shortlisted' || stage === 'partner_match'
 
   async function handleStageChange(newStage: string) {
     if (newStage === stage) return
+    // If moving to shortlisted/partner_match, require positive tags
+    if ((newStage === 'shortlisted' || newStage === 'partner_match') && feedbackTags.length === 0) {
+      setValidationError('Add at least one "What stood out" tag before shortlisting.')
+      return
+    }
+    setValidationError(null)
     setStageSaving(true)
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
@@ -217,22 +223,38 @@ export function TagFeedbackForm({
     }
   }
 
-  function updateFeedbackTags(tags: string[]) { setFeedbackTags(tags); setSaved(false) }
-  function updateNextStepsTags(tags: string[]) { setNextStepsTags(tags); setSaved(false) }
+  function updateFeedbackTags(tags: string[]) {
+    setFeedbackTags(tags)
+    setSaved(false)
+    if (tags.length > 0) setValidationError(null)
+  }
+  function updatePassReasonTags(tags: string[]) { setPassReasonTags(tags); setSaved(false) }
 
   async function handlePass() {
-    if (!sentiment) return
+    // Require some form of feedback
+    if (feedbackTags.length === 0 && passReasonTags.length === 0 && !note.trim()) {
+      setValidationError('Add at least one tag or a note before completing the review.')
+      return
+    }
+    // If shortlisted/partner_match, require positive tags
+    if (requiresPositiveTag && feedbackTags.length === 0) {
+      setValidationError('Add at least one "What stood out" tag before shortlisting.')
+      return
+    }
+    setValidationError(null)
     setSaving(true)
+    // Derive sentiment from positive tags for backward compat
+    const derivedSentiment = feedbackTags.length > 0 ? 'positive' : 'negative'
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         consideration_id: considerationId,
         feedback_tags: feedbackTags,
-        next_steps_tags: nextStepsTags,
+        next_steps_tags: passReasonTags,
         feedback: note.trim() || undefined,
         review_stage: 'complete',
-        sentiment,
+        sentiment: derivedSentiment,
       }),
     })
     setSaving(false)
@@ -250,13 +272,18 @@ export function TagFeedbackForm({
       body: JSON.stringify({
         consideration_id: considerationId,
         feedback_tags: feedbackTags,
-        next_steps_tags: nextStepsTags,
+        next_steps_tags: passReasonTags,
         feedback: note.trim() || undefined,
       }),
     })
     setSaving(false)
     setSaved(true)
   }
+
+  // Build heat explanation string
+  const heatParts: string[] = []
+  if (feedbackTags.length > 0) heatParts.push('+1 positive signals')
+  if (STAGE_HEAT[stage]) heatParts.push(`+${STAGE_HEAT[stage]} ${stage === 'shortlisted' ? 'shortlisted' : 'partner match'}`)
 
   return (
     <div className="space-y-5">
@@ -286,7 +313,43 @@ export function TagFeedbackForm({
         </div>
       </div>
 
-      {/* Note — the primary feedback vehicle */}
+      {/* What stood out — positive tags */}
+      <div>
+        <div className="flex items-center justify-between mb-1.5">
+          <label className="text-[13px] font-bold text-gray-900">What stood out</label>
+          <span className="text-[11px] text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full font-medium">
+            Tags = positive signal &middot; Writer earns 🔥 +1
+          </span>
+        </div>
+        <TagComboInput
+          tags={feedbackTags}
+          setTags={updateFeedbackTags}
+          presets={POSITIVE_PRESETS}
+          allUsed={allUsedFeedbackTags}
+          placeholder="Select or type what stood out..."
+          accentColor="purple"
+        />
+        {feedbackTags.length > 0 && (
+          <p className="text-[11px] text-gray-400 mt-1 m-0">{feedbackTags.length} selected</p>
+        )}
+      </div>
+
+      {/* Why passing — pass reason tags */}
+      <div>
+        <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
+          Why passing <span className="text-[11px] font-normal text-gray-400">(if applicable)</span>
+        </label>
+        <TagComboInput
+          tags={passReasonTags}
+          setTags={updatePassReasonTags}
+          presets={PASS_REASON_PRESETS}
+          allUsed={allUsedNextStepsTags}
+          placeholder="Select or type reason..."
+          accentColor="gray"
+        />
+      </div>
+
+      {/* Note */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
           Note <span className="text-[11px] font-normal text-gray-400">(visible to writer)</span>
@@ -300,65 +363,38 @@ export function TagFeedbackForm({
         />
       </div>
 
-      {/* Sentiment toggle — required to pass */}
+      {/* Heat preview */}
       {!isAlreadyComplete && (
-        <div>
-          <label className="text-[13px] font-bold text-gray-900 block mb-2">
-            Sentiment <span className="text-[11px] font-normal text-gray-400">(internal — determines heat)</span>
-          </label>
+        <div className="rounded-lg px-3 py-2" style={{ background: heatPreview > 0 ? '#fff7ed' : '#f9fafb' }}>
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => { setSentiment('negative'); setSaved(false) }}
-              className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors"
-              style={{
-                background: sentiment === 'negative' ? '#fef2f2' : 'transparent',
-                borderColor: sentiment === 'negative' ? '#ef4444' : '#e5e7eb',
-                color: sentiment === 'negative' ? '#dc2626' : '#9ca3af',
-              }}
-            >
-              Negative
-            </button>
-            <button
-              type="button"
-              onClick={() => { setSentiment('positive'); setSaved(false) }}
-              className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors"
-              style={{
-                background: sentiment === 'positive' ? '#f0fdf4' : 'transparent',
-                borderColor: sentiment === 'positive' ? '#22c55e' : '#e5e7eb',
-                color: sentiment === 'positive' ? '#16a34a' : '#9ca3af',
-              }}
-            >
-              Positive
-            </button>
-            {sentiment && (
-              <span className="text-[12px] font-bold ml-2" style={{ color: heatPreview > 0 ? '#f97316' : '#9ca3af' }}>
-                🔥 {heatPreview} heat
+            <span className="text-[14px]">🔥</span>
+            <span className="text-[14px] font-bold" style={{ color: heatPreview > 0 ? '#ea580c' : '#9ca3af' }}>
+              {heatPreview} heat
+            </span>
+            {heatParts.length > 0 && (
+              <span className="text-[11px] text-gray-400 ml-1">
+                ({heatParts.join(' + ')})
               </span>
             )}
           </div>
-          {sentiment && heatPreview > 0 && (
-            <p className="text-[11px] text-gray-400 mt-1 m-0">
-              {STAGE_HEAT[stage] ? `+${STAGE_HEAT[stage]} from ${stage === 'shortlisted' ? 'shortlist' : stage === 'partner_match' ? 'partner match' : stage}` : ''}
-              {STAGE_HEAT[stage] && sentiment === 'positive' ? ' + ' : ''}
-              {sentiment === 'positive' ? '+1 positive sentiment' : ''}
-            </p>
-          )}
         </div>
       )}
 
       {/* Already completed — show what was recorded */}
-      {isAlreadyComplete && currentSentiment && (
+      {isAlreadyComplete && (
         <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
           <span className="text-[12px] text-gray-500">
-            Sentiment: <span className="font-semibold" style={{ color: currentSentiment === 'positive' ? '#16a34a' : '#dc2626' }}>
-              {currentSentiment}
-            </span>
+            Review complete
             {currentHeatEarned > 0 && (
               <span className="ml-2 font-bold" style={{ color: '#f97316' }}>🔥 {currentHeatEarned} heat awarded</span>
             )}
           </span>
         </div>
+      )}
+
+      {/* Validation error */}
+      {validationError && (
+        <p className="text-[12px] text-red-600 font-medium m-0">{validationError}</p>
       )}
 
       {/* Actions */}
@@ -367,10 +403,10 @@ export function TagFeedbackForm({
           <>
             <button
               onClick={handlePass}
-              disabled={saving || !sentiment}
+              disabled={saving}
               className="inline-flex items-center text-[13px] font-semibold text-white bg-green-600 hover:bg-green-700 disabled:opacity-50 px-4 py-2 rounded-lg transition-colors"
             >
-              {saving ? 'Saving...' : 'Pass'}
+              {saving ? 'Saving...' : 'Complete review'}
             </button>
             <button
               onClick={handleSaveDraft}

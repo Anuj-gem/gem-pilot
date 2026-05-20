@@ -47,9 +47,14 @@ export async function POST(req: NextRequest) {
 
   // --- Stage change ---
   if (review_stage && VALID_STAGES.includes(review_stage as typeof VALID_STAGES[number])) {
+    // Server-side validation: shortlisted/partner_match requires at least one positive tag
+    if ((review_stage === 'shortlisted' || review_stage === 'partner_match') && (!feedback_tags || feedback_tags.length === 0)) {
+      return NextResponse.json({ error: 'At least one positive tag required for shortlisting' }, { status: 400 })
+    }
+
     const stageUpdate: Record<string, unknown> = { review_stage }
 
-    // If moving to complete (pass), also mark legacy status + handle sentiment/heat
+    // If moving to complete, mark legacy status + calculate heat from positive tags
     if (review_stage === 'complete') {
       stageUpdate.status = 'reviewed'
       stageUpdate.reviewed_at = new Date().toISOString()
@@ -69,8 +74,9 @@ export async function POST(req: NextRequest) {
         if (currentCon) {
           const currentStage = currentCon.review_stage || 'pending'
           const stageHeat = STAGE_HEAT[currentStage] || 0
-          const sentimentHeat = sentiment === 'positive' ? 1 : 0
-          const totalHeat = stageHeat + sentimentHeat
+          const positiveTags = feedback_tags || []
+          const positiveTagHeat = positiveTags.length > 0 ? 1 : 0
+          const totalHeat = stageHeat + positiveTagHeat
 
           stageUpdate.heat_earned = totalHeat
 
