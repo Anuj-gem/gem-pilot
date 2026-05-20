@@ -214,7 +214,7 @@ export function TagFeedbackForm({
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ consideration_id: considerationId, review_stage: newStage }),
+      body: JSON.stringify({ consideration_id: considerationId, review_stage: newStage, feedback_tags: feedbackTags }),
     })
     setStageSaving(false)
     if (res.ok) {
