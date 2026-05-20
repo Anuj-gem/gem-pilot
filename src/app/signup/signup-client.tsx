@@ -8,6 +8,7 @@ import { createClient } from '@/lib/supabase-browser'
 import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posthog'
 import { gtagSignupCompleted } from '@/lib/gtag'
 import { GoogleMark } from '@/components/auth/google-mark'
+import SmsConsent from '@/components/sms-consent'
 
 // topScripts kept in the signature for backwards compat with the server
 // page; the value-props + Discover tease blocks below were stripped to
@@ -37,6 +38,7 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
   const supabase = createClient()
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [email, setEmail] = useState(prefilledEmail)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -92,11 +94,11 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
         full_name: fullName,
       })
 
-      // Save phone to profile
-      if (phone.trim()) {
+      // Save phone + SMS consent to profile
+      if (phone.trim() || smsConsent) {
         await supabase
           .from('profiles')
-          .update({ phone: phone.trim() })
+          .update({ phone: phone.trim() || null, sms_consent: smsConsent })
           .eq('id', data.user.id)
       }
     }
@@ -198,6 +200,9 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
                 placeholder="(555) 555-5555"
               />
               <p className="text-[10px] text-[var(--gem-gray-500)] mt-0.5">So our team can reach you if your work stands out</p>
+              <div className="mt-2">
+                <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
+              </div>
             </div>
             <div>
               <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Email</label>

@@ -7,6 +7,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
+import SmsConsent from '@/components/sms-consent'
 
 export function SignupGateModal() {
   const [open, setOpen] = useState(false)
@@ -17,6 +18,7 @@ export function SignupGateModal() {
   // Form state
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -69,6 +71,14 @@ export function SignupGateModal() {
       setError(signupError.message)
       setLoading(false)
       return
+    }
+
+    // Save phone + SMS consent to profile
+    if (data.user?.id && (phone.trim() || smsConsent)) {
+      await supabase
+        .from('profiles')
+        .update({ phone: phone.trim() || null, sms_consent: smsConsent })
+        .eq('id', data.user.id)
     }
 
     // Claim anonymous uploads
@@ -204,6 +214,7 @@ export function SignupGateModal() {
             className="w-full px-3.5 py-2.5 rounded-lg border text-[14px] outline-none focus:border-purple-400 transition-colors"
             style={{ borderColor: '#e5e7eb' }}
           />
+          <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
           <input
             type="email"
             placeholder="Email"

@@ -29,6 +29,7 @@ import {
   gtagEvalStarted,
 } from '@/lib/gtag'
 import { updateProfile } from '@/app/profile/actions'
+import SmsConsent from '@/components/sms-consent'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -239,6 +240,7 @@ export default function GetStartedClient() {
 
   // Step 4
   const [phone, setPhone] = useState('')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [bio, setBio] = useState('')
   const [headline, setHeadline] = useState('')
   const [profileSaving, setProfileSaving] = useState(false)
@@ -506,8 +508,8 @@ export default function GetStartedClient() {
     if (!user) return
     setProfileSaving(true)
     try {
-      if (phone) {
-        await supabase.from('profiles').update({ phone }).eq('id', user.id)
+      if (phone || smsConsent) {
+        await supabase.from('profiles').update({ phone: phone || null, sms_consent: smsConsent }).eq('id', user.id)
       }
       if (headline || bio || name) {
         await updateProfile({
@@ -1080,10 +1082,13 @@ export default function GetStartedClient() {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="(555) 555-5555"
-          className={`${inputClass} mb-4`}
+          className={`${inputClass} mb-2`}
           style={inputStyle}
           {...inputFocus}
         />
+        <div className="mb-4">
+          <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
+        </div>
 
         {/* Bio */}
         <label

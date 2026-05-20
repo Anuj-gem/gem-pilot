@@ -13,6 +13,7 @@ import { trackSignupStart, trackSignupComplete, identifyUser } from '@/lib/posth
 import { gtagSignupCompleted } from '@/lib/gtag'
 import { GoogleMark } from '@/components/auth/google-mark'
 import { ScriptRowCard, type ScriptRowData } from '@/components/cards/script-row-card'
+import SmsConsent from '@/components/sms-consent'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { useNewUploads } from '@/hooks/use-new-uploads'
 
@@ -329,6 +330,7 @@ function SignupModal({ onClose }: { onClose: () => void }) {
   const supabase = createClient()
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -374,11 +376,11 @@ function SignupModal({ onClose }: { onClose: () => void }) {
     if (data.user?.id) {
       identifyUser(data.user.id, { email, full_name: fullName })
 
-      // Save phone to profile
-      if (phone.trim()) {
+      // Save phone + SMS consent to profile
+      if (phone.trim() || smsConsent) {
         await supabase
           .from('profiles')
-          .update({ phone: phone.trim() })
+          .update({ phone: phone.trim() || null, sms_consent: smsConsent })
           .eq('id', data.user.id)
       }
     }
@@ -471,6 +473,9 @@ function SignupModal({ onClose }: { onClose: () => void }) {
               className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-[14px] text-gray-900 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
             <p className="text-[10px] text-gray-400 mt-0.5">So our team can reach you if your work stands out</p>
+            <div className="mt-2">
+              <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
+            </div>
           </div>
           <div>
             <label className="block text-xs font-medium text-gray-500 mb-1">Email</label>
