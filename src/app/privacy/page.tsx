@@ -99,6 +99,14 @@ export default function PrivacyPage() {
         </Bullets>
         <P>We do not sell your information.</P>
 
+        <H2>Text messaging</H2>
+        <P>
+          If you provide your phone number, we may send you text messages related
+          to your account, such as evaluation updates or opportunity
+          notifications. All categories of text messaging opt-in data and consent
+          will not be shared with any third parties.
+        </P>
+
         <H2>Your script content and AI</H2>
         <P>
           When you upload a screenplay, we send the extracted text to OpenAI to
