@@ -1082,13 +1082,12 @@ export default function GetStartedClient() {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="(555) 555-5555"
-          className={`${inputClass} mb-2`}
+          className={`${inputClass} mb-4`}
           style={inputStyle}
           {...inputFocus}
         />
-        <div className="mb-4">
-          <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
-        </div>
+
+        <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
 
         {/* Bio */}
         <label

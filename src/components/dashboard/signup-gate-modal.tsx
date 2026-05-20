@@ -214,7 +214,6 @@ export function SignupGateModal() {
             className="w-full px-3.5 py-2.5 rounded-lg border text-[14px] outline-none focus:border-purple-400 transition-colors"
             style={{ borderColor: '#e5e7eb' }}
           />
-          <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
           <input
             type="email"
             placeholder="Email"
@@ -234,6 +233,8 @@ export function SignupGateModal() {
             className="w-full px-3.5 py-2.5 rounded-lg border text-[14px] outline-none focus:border-purple-400 transition-colors"
             style={{ borderColor: '#e5e7eb' }}
           />
+
+          <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
 
           {error && (
             <p className="text-[13px] text-red-600 m-0">{error}</p>

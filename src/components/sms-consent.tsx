@@ -9,21 +9,17 @@ interface SmsConsentProps {
 
 export default function SmsConsent({ checked, onChange }: SmsConsentProps) {
   return (
-    <label className="flex items-start gap-2.5 cursor-pointer">
+    <label className="flex items-start gap-2 cursor-pointer">
       <input
         type="checkbox"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        className="mt-0.5 h-4 w-4 rounded border-gray-300 accent-[var(--gem-accent,#7c3aed)] shrink-0"
+        className="mt-[3px] h-3.5 w-3.5 rounded shrink-0 accent-[var(--gem-accent,#7c3aed)]"
       />
-      <span className="text-[11px] leading-relaxed text-gray-500">
-        <span className="font-medium text-gray-700">I would like to receive updates by text</span>
-        <br />
-        We&apos;ll be sending you updates from GEM. Message and data rates may
-        apply. Message frequency varies. At any time you can text HELP for help
-        or STOP to opt out.
-        <br />
-        <Link href="/privacy" className="underline text-gray-500 hover:text-gray-700">
+      <span className="text-[10px] leading-[1.5] text-current opacity-50">
+        I agree to receive text updates from GEM. Msg &amp; data rates may
+        apply. Msg frequency varies. Reply HELP for help, STOP to cancel.{' '}
+        <Link href="/privacy" className="underline">
           Privacy Policy
         </Link>
       </span>

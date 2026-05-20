@@ -200,9 +200,6 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
                 placeholder="(555) 555-5555"
               />
               <p className="text-[10px] text-[var(--gem-gray-500)] mt-0.5">So our team can reach you if your work stands out</p>
-              <div className="mt-2">
-                <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
-              </div>
             </div>
             <div>
               <label className="block text-xs font-medium text-[var(--gem-gray-300)] mb-1">Email</label>
@@ -225,6 +222,8 @@ function SignupPageInner({ topScripts: _topScripts }: SignupPageClientProps) {
                 placeholder="At least 6 characters"
               />
             </div>
+
+            <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
 
             {error && (
               <p className="text-sm text-red-400">{error}</p>

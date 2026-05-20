@@ -473,9 +473,6 @@ function SignupModal({ onClose }: { onClose: () => void }) {
               className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-[14px] text-gray-900 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
             <p className="text-[10px] text-gray-400 mt-0.5">So our team can reach you if your work stands out</p>
-            <div className="mt-2">
-              <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
-            </div>
           </div>
           <div>
             <label className="block text-xs font-medium text-gray-500 mb-1">Email</label>
@@ -500,6 +497,8 @@ function SignupModal({ onClose }: { onClose: () => void }) {
               className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-[14px] text-gray-900 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
           </div>
+
+          <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
 
           {error && <p className="text-sm text-red-500">{error}</p>}
 
