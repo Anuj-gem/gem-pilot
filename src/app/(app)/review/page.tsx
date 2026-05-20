@@ -116,6 +116,32 @@ export default async function ApplicationsPage() {
     }
   }
 
+  // Load stage history per application (for the progression tracker)
+  let stagesByApp: Record<string, string[]> = {}
+  if (appIds.length > 0) {
+    const { data: evts } = await service
+      .from('consideration_events')
+      .select('consideration_id, new_stage')
+      .in('consideration_id', appIds)
+      .eq('event_type', 'status_change')
+      .order('created_at', { ascending: true })
+    for (const ev of (evts || []) as { consideration_id: string; new_stage: string | null }[]) {
+      if (ev.new_stage) {
+        if (!stagesByApp[ev.consideration_id]) stagesByApp[ev.consideration_id] = ['pending']
+        if (!stagesByApp[ev.consideration_id].includes(ev.new_stage)) {
+          stagesByApp[ev.consideration_id].push(ev.new_stage)
+        }
+      }
+    }
+    // Also ensure current review_stage is included
+    for (const app of apps) {
+      if (!stagesByApp[app.id]) stagesByApp[app.id] = ['pending']
+      if (app.review_stage && !stagesByApp[app.id].includes(app.review_stage)) {
+        stagesByApp[app.id].push(app.review_stage)
+      }
+    }
+  }
+
   // Load writer's total heat score
   const { data: profile } = await service
     .from('profiles')
@@ -164,6 +190,7 @@ export default async function ApplicationsPage() {
           apps={apps}
           oppMap={oppMapObj}
           scriptsByApp={scriptsByAppObj}
+          stagesByApp={stagesByApp}
           totalHeat={totalHeat}
         />
       )}

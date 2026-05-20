@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { ApplicationReply } from './application-reply'
 
 interface AppData {
@@ -33,13 +32,82 @@ interface ApplicationsListProps {
   apps: AppData[]
   oppMap: Record<string, OppInfo>
   scriptsByApp: Record<string, ScriptInfo[]>
+  stagesByApp: Record<string, string[]>
   totalHeat: number
 }
 
 const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
-export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat }: ApplicationsListProps) {
+const ALL_STAGES = [
+  { key: 'pending', label: 'Pending' },
+  { key: 'in_consideration', label: 'In consideration' },
+  { key: 'shortlisted', label: 'Shortlisted' },
+  { key: 'partner_match', label: 'Partner match' },
+  { key: 'complete', label: 'Pass' },
+]
+
+function StageTracker({ reachedStages, isReviewed }: { reachedStages: Set<string>; isReviewed: boolean }) {
+  return (
+    <div className="flex items-start">
+      {ALL_STAGES.map((s, i) => {
+        const reached = reachedStages.has(s.key)
+        const isSkipped = isReviewed && !reached && s.key !== 'complete'
+
+        let circle
+        if (reached) {
+          circle = (
+            <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#7c3aed' }}>
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                <path d="M4 8l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          )
+        } else if (isSkipped) {
+          circle = (
+            <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }}>
+              <svg width="8" height="8" viewBox="0 0 16 16" fill="none">
+                <path d="M4 4l8 8M12 4l-8 8" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            </div>
+          )
+        } else {
+          circle = (
+            <div className="w-6 h-6 rounded-full" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }} />
+          )
+        }
+
+        return (
+          <div key={s.key} className="flex items-center flex-1 last:flex-initial" style={i === ALL_STAGES.length - 1 ? { flex: '0 0 auto' } : undefined}>
+            <div className="flex flex-col items-center" style={{ minWidth: 24 }}>
+              {circle}
+              <span
+                className="text-[9px] mt-1 text-center whitespace-nowrap"
+                style={{
+                  color: reached ? '#7c3aed' : '#9ca3af',
+                  fontWeight: reached ? 600 : 500,
+                }}
+              >
+                {s.label}
+              </span>
+            </div>
+            {i < ALL_STAGES.length - 1 && (
+              <div
+                className="h-0.5 flex-1 mx-0.5"
+                style={{
+                  background: reached && reachedStages.has(ALL_STAGES[i + 1]?.key) ? '#7c3aed' : '#e5e7eb',
+                  marginTop: -10,
+                }}
+              />
+            )}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, totalHeat }: ApplicationsListProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
   return (
@@ -50,12 +118,18 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat }: Appl
         const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
         const isExpanded = expandedId === app.id
 
+        // Build reachedStages set from server data
+        const reachedArr = stagesByApp[app.id] || ['pending']
+        const reachedStages = new Set(reachedArr)
+        if (isReviewed) reachedStages.add('complete')
+
+        // Status badge — "Pass" in amber for completed reviews, stage-colored for in-progress
         const stageMap: Record<string, { label: string; bg: string; color: string }> = {
           pending: { label: 'Pending', bg: '#fef3c7', color: '#92400e' },
           in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
           shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
           partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
-          complete: { label: 'Complete', bg: '#d1fae5', color: '#065f46' },
+          complete: { label: 'Pass', bg: '#fef3c7', color: '#92400e' },
         }
         const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
         const s = stageMap[stage] || stageMap.pending
@@ -90,8 +164,22 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat }: Appl
                     <span className="text-[11px] text-gray-300">&middot;</span>
                     <span className="text-[11px] text-gray-400">{fmtDate(app.submitted_at)}</span>
                   </div>
-                  {app.writer_pitch && (
-                    <p className="text-[12px] text-gray-400 m-0 mt-1 line-clamp-1 italic">&ldquo;{app.writer_pitch}&rdquo;</p>
+                  {/* Collapsed state: show positive tags + heat */}
+                  {!isExpanded && isReviewed && (
+                    <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                      {app.feedback_tags && app.feedback_tags.length > 0 && app.feedback_tags.slice(0, 3).map(tag => (
+                        <span
+                          key={tag}
+                          className="text-[11px] font-semibold px-2 py-0.5 rounded-full"
+                          style={{ background: '#ede9fe', color: '#7c3aed' }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {app.feedback_tags && app.feedback_tags.length > 3 && (
+                        <span className="text-[11px] text-gray-400">+{app.feedback_tags.length - 3} more</span>
+                      )}
+                    </div>
                   )}
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
@@ -113,6 +201,11 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat }: Appl
               <div className="border-t border-gray-100 px-4 py-4 space-y-4">
                 {isReviewed ? (
                   <>
+                    {/* Stage progression tracker */}
+                    <div className="pb-3 border-b border-gray-100">
+                      <StageTracker reachedStages={reachedStages} isReviewed={isReviewed} />
+                    </div>
+
                     {/* Positive tags — what stood out */}
                     {app.feedback_tags && app.feedback_tags.length > 0 && (
                       <div>
@@ -165,7 +258,8 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat }: Appl
                           <span className="text-[11px] text-gray-400">
                             ({[
                               app.feedback_tags && app.feedback_tags.length > 0 ? '+1 positive signals' : null,
-                              stage === 'complete' ? null : null, // heat from stage already counted in total
+                              reachedStages.has('shortlisted') ? '+2 shortlisted' : null,
+                              reachedStages.has('partner_match') ? '+3 partner match' : null,
                             ].filter(Boolean).join(' + ') || 'from review'})
                           </span>
                         </div>
@@ -193,22 +287,18 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat }: Appl
                     )}
                   </>
                 ) : (
-                  <div className="text-center py-4">
-                    <p className="text-[13px] text-gray-400 m-0">
-                      Your application is under review. Feedback will appear here once it&apos;s been reviewed.
-                    </p>
-                  </div>
+                  <>
+                    {/* Stage progression tracker for in-progress too */}
+                    <div className="pb-3 border-b border-gray-100">
+                      <StageTracker reachedStages={reachedStages} isReviewed={false} />
+                    </div>
+                    <div className="text-center py-4">
+                      <p className="text-[13px] text-gray-400 m-0">
+                        Your application is under review. Feedback will appear here once it&apos;s been reviewed.
+                      </p>
+                    </div>
+                  </>
                 )}
-
-                {/* Link to full detail page */}
-                <div className="flex justify-end">
-                  <Link
-                    href={`/applications/${app.id}`}
-                    className="text-[12px] font-medium text-gray-400 hover:text-purple-600 transition-colors"
-                  >
-                    Full details &rarr;
-                  </Link>
-                </div>
               </div>
             )}
           </div>
