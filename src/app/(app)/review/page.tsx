@@ -50,7 +50,7 @@ export default async function ApplicationsPage() {
   // Load all opportunity applications (considerations with opportunity_id)
   const { data: rawApps } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, heat_earned')
     .eq('writer_id', user.id)
     .not('opportunity_id', 'is', null)
     .order('submitted_at', { ascending: false })
@@ -60,19 +60,19 @@ export default async function ApplicationsPage() {
     reviewed_at: string | null; feedback: string | null
     feedback_tags: string[] | null; next_steps_tags: string[] | null
     opportunity_id: string; writer_pitch: string | null
-    writer_response: string | null; heat_earned: number
+    heat_earned: number
   }[]
 
-  // Load opportunity titles
+  // Load opportunity titles + active status
   const oppIds = [...new Set(apps.map(a => a.opportunity_id))]
-  let oppMap = new Map<string, { title: string; slug: string }>()
+  let oppMap = new Map<string, { title: string; slug: string; isActive: boolean }>()
   if (oppIds.length > 0) {
     const { data: opps } = await service
       .from('opportunities')
-      .select('id, title, slug')
+      .select('id, title, slug, status')
       .in('id', oppIds)
-    for (const o of (opps || []) as { id: string; title: string; slug: string }[]) {
-      oppMap.set(o.id, { title: o.title, slug: o.slug })
+    for (const o of (opps || []) as { id: string; title: string; slug: string; status: string }[]) {
+      oppMap.set(o.id, { title: o.title, slug: o.slug, isActive: o.status === 'active' })
     }
   }
 
@@ -150,8 +150,15 @@ export default async function ApplicationsPage() {
     .single()
   const totalHeat = (profile as any)?.heat_score ?? 0
 
+  // Count matching scripts per opportunity for reapply CTA
+  const matchingScriptCounts: Record<string, number> = {}
+  for (const app of apps) {
+    const scripts = scriptsByApp.get(app.id) || []
+    matchingScriptCounts[app.opportunity_id] = scripts.length
+  }
+
   // Convert Maps to plain objects for client component
-  const oppMapObj: Record<string, { title: string; slug: string }> = {}
+  const oppMapObj: Record<string, { title: string; slug: string; isActive: boolean }> = {}
   for (const [k, v] of oppMap) oppMapObj[k] = v
   const scriptsByAppObj: Record<string, { title: string; score: number | null }[]> = {}
   for (const [k, v] of scriptsByApp) scriptsByAppObj[k] = v
@@ -192,6 +199,7 @@ export default async function ApplicationsPage() {
           scriptsByApp={scriptsByAppObj}
           stagesByApp={stagesByApp}
           totalHeat={totalHeat}
+          matchingScriptCounts={matchingScriptCounts}
         />
       )}
     </div>

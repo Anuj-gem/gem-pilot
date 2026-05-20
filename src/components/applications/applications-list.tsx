@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ApplicationReply } from './application-reply'
+import Link from 'next/link'
 
 interface AppData {
   id: string
@@ -14,13 +14,13 @@ interface AppData {
   next_steps_tags: string[] | null
   opportunity_id: string
   writer_pitch: string | null
-  writer_response?: string | null
   heat_earned: number
 }
 
 interface OppInfo {
   title: string
   slug: string
+  isActive: boolean
 }
 
 interface ScriptInfo {
@@ -34,25 +34,25 @@ interface ApplicationsListProps {
   scriptsByApp: Record<string, ScriptInfo[]>
   stagesByApp: Record<string, string[]>
   totalHeat: number
+  matchingScriptCounts?: Record<string, number>
 }
 
 const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
-const ALL_STAGES = [
+const TRACKER_STAGES = [
   { key: 'pending', label: 'Pending' },
   { key: 'in_consideration', label: 'In consideration' },
   { key: 'shortlisted', label: 'Shortlisted' },
   { key: 'partner_match', label: 'Partner match' },
-  { key: 'complete', label: 'Pass' },
 ]
 
 function StageTracker({ reachedStages, isReviewed }: { reachedStages: Set<string>; isReviewed: boolean }) {
   return (
     <div className="flex items-start">
-      {ALL_STAGES.map((s, i) => {
+      {TRACKER_STAGES.map((s, i) => {
         const reached = reachedStages.has(s.key)
-        const isSkipped = isReviewed && !reached && s.key !== 'complete'
+        const isSkipped = isReviewed && !reached
 
         let circle
         if (reached) {
@@ -78,7 +78,7 @@ function StageTracker({ reachedStages, isReviewed }: { reachedStages: Set<string
         }
 
         return (
-          <div key={s.key} className="flex items-center flex-1 last:flex-initial" style={i === ALL_STAGES.length - 1 ? { flex: '0 0 auto' } : undefined}>
+          <div key={s.key} className="flex items-center flex-1 last:flex-initial" style={i === TRACKER_STAGES.length - 1 ? { flex: '0 0 auto' } : undefined}>
             <div className="flex flex-col items-center" style={{ minWidth: 24 }}>
               {circle}
               <span
@@ -91,11 +91,11 @@ function StageTracker({ reachedStages, isReviewed }: { reachedStages: Set<string
                 {s.label}
               </span>
             </div>
-            {i < ALL_STAGES.length - 1 && (
+            {i < TRACKER_STAGES.length - 1 && (
               <div
                 className="h-0.5 flex-1 mx-0.5"
                 style={{
-                  background: reached && reachedStages.has(ALL_STAGES[i + 1]?.key) ? '#7c3aed' : '#e5e7eb',
+                  background: reached && reachedStages.has(TRACKER_STAGES[i + 1]?.key) ? '#7c3aed' : '#e5e7eb',
                   marginTop: -10,
                 }}
               />
@@ -107,7 +107,7 @@ function StageTracker({ reachedStages, isReviewed }: { reachedStages: Set<string
   )
 }
 
-export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, totalHeat }: ApplicationsListProps) {
+export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, totalHeat, matchingScriptCounts }: ApplicationsListProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
   return (
@@ -121,7 +121,6 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
         // Build reachedStages set from server data
         const reachedArr = stagesByApp[app.id] || ['pending']
         const reachedStages = new Set(reachedArr)
-        if (isReviewed) reachedStages.add('complete')
 
         // Status badge — "Pass" in amber for completed reviews, stage-colored for in-progress
         const stageMap: Record<string, { label: string; bg: string; color: string }> = {
@@ -133,6 +132,9 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
         }
         const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
         const s = stageMap[stage] || stageMap.pending
+
+        const matchCount = matchingScriptCounts?.[app.opportunity_id] ?? 0
+        const canReapply = opp?.isActive
 
         return (
           <div key={app.id} className="rounded-xl border border-gray-200 bg-white overflow-hidden">
@@ -184,7 +186,7 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   {isReviewed && app.heat_earned > 0 && (
-                    <span className="text-[13px] font-bold" style={{ color: '#f97316' }}>+{app.heat_earned}</span>
+                    <span className="text-[14px] font-bold" style={{ color: '#ea580c' }}>🔥 +{app.heat_earned}</span>
                   )}
                   <svg
                     width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -252,21 +254,21 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
 
                     {/* Heat earned */}
                     {app.heat_earned > 0 ? (
-                      <div className="rounded-lg px-3 py-2" style={{ background: '#fff7ed' }}>
-                        <div className="flex items-center gap-2">
-                          <span className="text-[14px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} heat earned</span>
-                          <span className="text-[11px] text-gray-400">
-                            ({[
-                              app.feedback_tags && app.feedback_tags.length > 0 ? '+1 positive signals' : null,
-                              reachedStages.has('shortlisted') ? '+2 shortlisted' : null,
-                              reachedStages.has('partner_match') ? '+3 partner match' : null,
-                            ].filter(Boolean).join(' + ') || 'from review'})
-                          </span>
+                      <div className="rounded-lg px-3 py-2.5" style={{ background: '#fff7ed' }}>
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[16px] font-bold" style={{ color: '#ea580c' }}>🔥 +{app.heat_earned} heat earned</span>
                         </div>
+                        <p className="text-[11px] text-gray-400 m-0 mt-1">
+                          {[
+                            app.feedback_tags && app.feedback_tags.length > 0 ? '+1 positive signals' : null,
+                            reachedStages.has('shortlisted') ? '+2 shortlisted' : null,
+                            reachedStages.has('partner_match') ? '+3 partner match' : null,
+                          ].filter(Boolean).join(' + ') || 'from review'}
+                        </p>
                       </div>
                     ) : (
                       <div className="rounded-lg px-3 py-2" style={{ background: '#f9fafb' }}>
-                        <span className="text-[12px] text-gray-400">No heat earned on this application</span>
+                        <span className="text-[12px] text-gray-400">🔥 No heat earned on this application</span>
                       </div>
                     )}
 
@@ -274,17 +276,27 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
                       <p className="text-[11px] text-gray-300 m-0">Reviewed {fmtDate(app.reviewed_at)}</p>
                     )}
 
-                    {/* Writer response */}
-                    {app.writer_response ? (
-                      <div className="border-t border-gray-100 pt-3">
-                        <p className="text-[12px] font-semibold text-gray-500 m-0 mb-1">Your response</p>
-                        <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.writer_response}</p>
-                      </div>
-                    ) : (
-                      <div className="border-t border-gray-100 pt-3">
-                        <ApplicationReply applicationId={app.id} />
-                      </div>
-                    )}
+                    {/* Reapply CTA */}
+                    <div className="border-t border-gray-100 pt-3">
+                      {canReapply ? (
+                        <div className="flex items-center justify-between">
+                          <Link
+                            href={`/opportunities/${opp.slug}`}
+                            className="text-[13px] font-semibold transition-colors"
+                            style={{ color: '#7c3aed' }}
+                          >
+                            Available to reapply →
+                          </Link>
+                          {matchCount > 0 && (
+                            <span className="text-[12px] font-semibold" style={{ color: '#059669' }}>
+                              {matchCount} {matchCount === 1 ? 'script' : 'scripts'} match
+                            </span>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="text-[12px] text-gray-400 m-0">Unable to reapply — opportunity closed</p>
+                      )}
+                    </div>
                   </>
                 ) : (
                   <>
