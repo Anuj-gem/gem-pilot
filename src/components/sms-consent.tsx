@@ -14,10 +14,11 @@ export default function SmsConsent({ checked, onChange }: SmsConsentProps) {
         type="checkbox"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        className="mt-[3px] h-3.5 w-3.5 rounded shrink-0 accent-[var(--gem-accent,#7c3aed)]"
+        style={{ width: 14, minWidth: 14, height: 14, background: 'transparent' }}
+        className="mt-[3px] rounded shrink-0 accent-[var(--gem-accent,#7c3aed)]"
       />
       <span className="text-[10px] leading-[1.5] text-current opacity-50 min-w-0">
-        I agree to receive text updates from GEM. Msg &amp; data rates may
+        We&apos;ll send you updates on your script evaluations and industry opportunities. Msg &amp; data rates may
         apply. Msg frequency varies. Reply HELP for help, STOP to cancel.{' '}
         <Link href="/privacy" className="underline">
           Privacy Policy
