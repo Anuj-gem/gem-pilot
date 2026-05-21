@@ -50,6 +50,7 @@ export default function ApplyPage() {
   const [opportunity, setOpportunity] = useState<Opportunity | null>(null)
   const [scripts, setScripts] = useState<Script[]>([])
   const [previouslyConsidered, setPreviouslyConsidered] = useState<Script[]>([])
+  const [previousAppCount, setPreviousAppCount] = useState(0)
   const [selectedId, setSelectedId] = useState<string | null>(preselectedScript)
   const [responses, setResponses] = useState<Record<string, string>>({})
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
@@ -126,6 +127,7 @@ export default function ApplyPage() {
         .eq('opportunity_id', opp.id)
         .eq('review_stage', 'complete')
       const completedConIds = (completedCons || []).map((c: any) => c.id)
+      setPreviousAppCount(completedConIds.length)
       const alreadySubmittedIds = new Set<string>()
       if (completedConIds.length > 0) {
         const { data: prevScripts } = await supabase
@@ -351,25 +353,37 @@ export default function ApplyPage() {
         <h1 className="text-[20px] font-bold text-gray-900 mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
           Apply: {opportunity.title}
         </h1>
-        <p className="text-[13px] text-gray-500 m-0">{opportunity.description}</p>
+        <p className="text-[13px] text-gray-600 m-0">{opportunity.description}</p>
         <div className="flex items-center gap-3 mt-2">
           {opportunity.min_score && (
-            <span className="text-[11px] text-gray-400">Min score: {opportunity.min_score}</span>
+            <span className="text-[11px] text-gray-500">Min score: {opportunity.min_score}</span>
           )}
           {opportunity.subtitle && (
-            <span className="text-[11px] text-gray-400">{opportunity.subtitle}</span>
+            <span className="text-[11px] text-gray-500">{opportunity.subtitle}</span>
           )}
         </div>
       </div>
 
+      {/* Previous applications notice */}
+      {previousAppCount > 0 && (
+        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 flex items-center justify-between">
+          <p className="text-[13px] text-gray-700 m-0">
+            You've applied to this opportunity <strong>{previousAppCount} {previousAppCount === 1 ? 'time' : 'times'}</strong> before.
+          </p>
+          <Link href="/applications" className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 shrink-0 ml-3">
+            View history →
+          </Link>
+        </div>
+      )}
+
       {/* Script selection — single select */}
       <div>
         <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1">Select your script</h2>
-        <p className="text-[12px] text-gray-400 m-0 mb-2.5">One script per application. You can apply again with a different script after receiving feedback.</p>
+        <p className="text-[12px] text-gray-600 m-0 mb-2.5">One script per application. You can apply again with a different script after receiving feedback.</p>
         {scripts.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
             <p className="text-[13px] text-gray-500 m-0">None of your scripts currently qualify for this opportunity.</p>
-            <p className="text-[12px] text-gray-400 m-0 mt-1">Upload a new script or improve your scores.</p>
+            <p className="text-[12px] text-gray-600 m-0 mt-1">Upload a new script or improve your scores.</p>
           </div>
         ) : (
           <>
@@ -396,8 +410,8 @@ export default function ApplyPage() {
                     <div className="min-w-0 flex-1">
                       <p className="text-[13px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
                       <div className="flex items-center gap-2 mt-0.5">
-                        {s.format && <span className="text-[11px] text-gray-400">{s.format}</span>}
-                        {s.genres[0] && <span className="text-[11px] text-gray-400">· {s.genres[0]}</span>}
+                        {s.format && <span className="text-[11px] text-gray-500">{s.format}</span>}
+                        {s.genres[0] && <span className="text-[11px] text-gray-500">· {s.genres[0]}</span>}
                       </div>
                     </div>
                     {s.score && (
@@ -415,7 +429,7 @@ export default function ApplyPage() {
             </div>
             {previouslyConsidered.length > 0 && (
               <div className="mt-3 space-y-2">
-                <p className="text-[11px] text-gray-400 font-semibold uppercase tracking-wide m-0">Already considered</p>
+                <p className="text-[11px] text-gray-600 font-semibold uppercase tracking-wide m-0">Already considered</p>
                 {previouslyConsidered.map(s => (
                   <div
                     key={s.id}
@@ -425,7 +439,7 @@ export default function ApplyPage() {
                       <div className="w-4 h-4 rounded-full border-2 border-gray-200 shrink-0" />
                       <div className="min-w-0 flex-1">
                         <p className="text-[13px] font-semibold text-gray-500 m-0 truncate">{s.title}</p>
-                        <p className="text-[11px] text-gray-400 m-0 mt-0.5">Previously reviewed for this opportunity</p>
+                        <p className="text-[11px] text-gray-500 m-0 mt-0.5">Previously reviewed for this opportunity</p>
                       </div>
                     </div>
                   </div>
@@ -440,15 +454,15 @@ export default function ApplyPage() {
       <div className="space-y-4">
         <div>
           <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-0.5">Application</h2>
-          <p className="text-[12px] text-gray-400 m-0">All fields are optional. Fill in what's relevant.</p>
+          <p className="text-[12px] text-gray-600 m-0">All fields are optional. Fill in what's relevant.</p>
         </div>
 
         {/* Fit & originality */}
         <div>
           <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Fit & originality <span className="text-[12px] font-normal text-gray-400">(optional)</span>
+            Fit & originality <span className="text-[12px] font-normal text-gray-500">(optional)</span>
           </label>
-          <p className="text-[12px] text-gray-400 m-0 mb-1.5">Why is this the right fit for this opportunity? What makes it special?</p>
+          <p className="text-[12px] text-gray-600 m-0 mb-1.5">Why is this the right fit for this opportunity? What makes it special?</p>
           <textarea
             value={responses.fit_originality || ''}
             onChange={(e) => setResponse('fit_originality', e.target.value)}
@@ -461,24 +475,24 @@ export default function ApplyPage() {
         {/* Market potential */}
         <div>
           <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Market potential <span className="text-[12px] font-normal text-gray-400">(optional)</span>
+            Market potential <span className="text-[12px] font-normal text-gray-500">(optional)</span>
           </label>
-          <p className="text-[12px] text-gray-400 m-0 mb-1.5">Where does this distribute, how big is the audience, what's the realistic path to market?</p>
+          <p className="text-[12px] text-gray-600 m-0 mb-1.5">Where does this distribute, how big is the audience, and what comparable projects exist? What's the competitive landscape?</p>
           <textarea
             value={responses.market_potential || ''}
             onChange={(e) => setResponse('market_potential', e.target.value)}
             className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
             rows={3}
-            placeholder="Distribution, audience size, path to market..."
+            placeholder="Distribution, audience, comps, competitive landscape..."
           />
         </div>
 
         {/* Casting */}
         <div>
           <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Casting <span className="text-[12px] font-normal text-gray-400">(optional)</span>
+            Casting <span className="text-[12px] font-normal text-gray-500">(optional)</span>
           </label>
-          <p className="text-[12px] text-gray-400 m-0 mb-1.5">Any talent attached or in mind? What kind of performer does this attract and why?</p>
+          <p className="text-[12px] text-gray-600 m-0 mb-1.5">Any talent attached or in mind? What kind of performer does this attract and why?</p>
           <textarea
             value={responses.casting || ''}
             onChange={(e) => setResponse('casting', e.target.value)}
@@ -488,27 +502,13 @@ export default function ApplyPage() {
           />
         </div>
 
-        {/* Market landscape */}
-        <div>
-          <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Market landscape <span className="text-[12px] font-normal text-gray-400">(optional)</span>
-          </label>
-          <p className="text-[12px] text-gray-400 m-0 mb-1.5">What are the comps? What's in the same space that's worked? Anything in development nearby? Where's the white space?</p>
-          <textarea
-            value={responses.market_landscape || ''}
-            onChange={(e) => setResponse('market_landscape', e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
-            rows={3}
-            placeholder="Comps, market context, white space..."
-          />
-        </div>
 
         {/* Media & references */}
         <div>
           <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Media & references <span className="text-[12px] font-normal text-gray-400">(optional)</span>
+            Media & references <span className="text-[12px] font-normal text-gray-500">(optional)</span>
           </label>
-          <p className="text-[12px] text-gray-400 m-0 mb-2.5">Images, YouTube links, or supporting documents.</p>
+          <p className="text-[12px] text-gray-600 m-0 mb-2.5">Images, YouTube links, or supporting documents.</p>
 
           {/* Existing media previews */}
           {mediaItems.length > 0 && (
@@ -594,7 +594,7 @@ export default function ApplyPage() {
         {(opportunity.application_questions || []).map((q) => (
           <div key={q.id}>
             <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-              {q.prompt} <span className="text-[12px] font-normal text-gray-400">(optional)</span>
+              {q.prompt} <span className="text-[12px] font-normal text-gray-500">(optional)</span>
             </label>
             <textarea
               value={responses[q.id] || ''}
