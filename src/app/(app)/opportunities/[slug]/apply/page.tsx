@@ -15,6 +15,7 @@ type Script = {
   score: number | null
   format: string | null
   genres: string[]
+  evalId?: string | null
 }
 
 type ApplicationQuestion = {
@@ -50,7 +51,6 @@ export default function ApplyPage() {
   const [opportunity, setOpportunity] = useState<Opportunity | null>(null)
   const [scripts, setScripts] = useState<Script[]>([])
   const [previouslyConsidered, setPreviouslyConsidered] = useState<Script[]>([])
-  const [previousAppCount, setPreviousAppCount] = useState(0)
   const [selectedId, setSelectedId] = useState<string | null>(preselectedScript)
   const [responses, setResponses] = useState<Record<string, string>>({})
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
@@ -127,7 +127,6 @@ export default function ApplyPage() {
         .eq('opportunity_id', opp.id)
         .eq('review_stage', 'complete')
       const completedConIds = (completedCons || []).map((c: any) => c.id)
-      setPreviousAppCount(completedConIds.length)
       const alreadySubmittedIds = new Set<string>()
       if (completedConIds.length > 0) {
         const { data: prevScripts } = await supabase
@@ -142,7 +141,7 @@ export default function ApplyPage() {
       // Load user's completed scripts with evaluations
       const { data: subs } = await supabase
         .from('script_submissions')
-        .select('id, title, declared_format, script_evaluations(weighted_score, evaluation)')
+        .select('id, title, declared_format, script_evaluations(id, weighted_score, evaluation)')
         .eq('user_id', user.id)
         .eq('status', 'completed')
         .is('hidden_at', null)
@@ -151,6 +150,7 @@ export default function ApplyPage() {
       const allMapped = (subs || []).map((s: any) => {
           const ev = Array.isArray(s.script_evaluations) ? s.script_evaluations[0] : s.script_evaluations
           const score = ev?.weighted_score ?? null
+          const evalId = ev?.id ?? null
           const evJson = ev?.evaluation as Record<string, unknown> | null
           const cls = (evJson?.classification as Record<string, unknown>) || {}
           const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
@@ -160,7 +160,7 @@ export default function ApplyPage() {
             if (n) genreSet.add(n)
           }
           const format = (cls.format as string) || (fmt.format as string) || s.declared_format || null
-          return { id: s.id, title: s.title, score, format, genres: Array.from(genreSet) }
+          return { id: s.id, title: s.title, score, format, genres: Array.from(genreSet), evalId }
         })
 
       // Split into previously considered vs available
@@ -365,14 +365,25 @@ export default function ApplyPage() {
       </div>
 
       {/* Previous applications notice */}
-      {previousAppCount > 0 && (
-        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 flex items-center justify-between">
-          <p className="text-[13px] text-gray-700 m-0">
-            You've applied to this opportunity <strong>{previousAppCount} {previousAppCount === 1 ? 'time' : 'times'}</strong> before.
+      {previouslyConsidered.length > 0 && (
+        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+          <p className="text-[13px] text-gray-700 m-0 mb-2">
+            You've applied to this opportunity <strong>{previouslyConsidered.length} {previouslyConsidered.length === 1 ? 'time' : 'times'}</strong> before with:
           </p>
-          <Link href="/applications" className="text-[13px] font-semibold text-purple-600 hover:text-purple-800 shrink-0 ml-3">
-            View history →
-          </Link>
+          <div className="space-y-1">
+            {previouslyConsidered.map(s => (
+              <div key={s.id} className="flex items-center gap-2">
+                <span className="text-[12px] text-gray-400">•</span>
+                {s.evalId ? (
+                  <Link href={`/report/${s.evalId}`} className="text-[13px] text-purple-600 hover:text-purple-800 font-medium truncate">
+                    {s.title}
+                  </Link>
+                ) : (
+                  <span className="text-[13px] text-gray-700 font-medium truncate">{s.title}</span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       )}
 

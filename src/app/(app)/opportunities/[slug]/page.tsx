@@ -84,7 +84,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
   // User-specific data
   type QScript = { id: string; title: string | null; score: number | null; format: string | null }
+  type PrevScript = { id: string; title: string | null; evalId: string | null }
   let qualifyingScripts: QScript[] = []
+  let previouslyAppliedScripts: PrevScript[] = []
   let reviewStage: string | null = null
   let considerationId: string | null = null
   let isPro = false
@@ -142,6 +144,30 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         .in('consideration_id', completedConIds)
       for (const ps of (prevScripts || []) as any[]) {
         alreadySubmittedScriptIds.add(ps.script_submission_id)
+      }
+
+      // Fetch titles + eval IDs for previously applied scripts
+      const prevSubIds = Array.from(alreadySubmittedScriptIds)
+      if (prevSubIds.length > 0) {
+        const { data: prevSubs } = await service
+          .from('script_submissions')
+          .select('id, title')
+          .in('id', prevSubIds)
+        const { data: prevEvals } = await service
+          .from('script_evaluations')
+          .select('id, submission_id')
+          .in('submission_id', prevSubIds)
+        const evalMap = new Map<string, string>()
+        for (const e of (prevEvals || []) as any[]) {
+          evalMap.set(e.submission_id, e.id)
+        }
+        for (const s of (prevSubs || []) as any[]) {
+          previouslyAppliedScripts.push({
+            id: s.id,
+            title: s.title,
+            evalId: evalMap.get(s.id) ?? null,
+          })
+        }
       }
     }
 
@@ -344,6 +370,27 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     </div>
                   ))}
                 </div>
+                {previouslyAppliedScripts.length > 0 && (
+                  <div className="mb-4 rounded-lg border border-gray-100 bg-gray-50 px-4 py-3">
+                    <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1.5">
+                      Previously applied with:
+                    </p>
+                    <div className="space-y-1">
+                      {previouslyAppliedScripts.map(s => (
+                        <div key={s.id} className="flex items-center gap-2">
+                          <span className="text-[12px] text-gray-400">•</span>
+                          {s.evalId ? (
+                            <Link href={`/report/${s.evalId}`} className="text-[13px] text-purple-600 hover:text-purple-800 font-medium truncate">
+                              {s.title || 'Untitled'}
+                            </Link>
+                          ) : (
+                            <span className="text-[13px] text-gray-700 font-medium truncate">{s.title || 'Untitled'}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 {isPro ? (
                   <Link
                     href={`/opportunities/${opp.slug}/apply`}
