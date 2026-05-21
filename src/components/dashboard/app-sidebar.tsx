@@ -619,7 +619,7 @@ function SignOutButton() {
 function NavLinks({ pathname }: { pathname: string }) {
   const links = [
     { label: 'My Scripts', href: '/scripts', match: (p: string) => p.startsWith('/scripts') },
-    { label: 'My Opportunities', href: '/review', match: (p: string) => p.startsWith('/review') || p.startsWith('/applications') },
+    { label: 'My Opportunities', href: '/applications', match: (p: string) => p.startsWith('/applications') || p.startsWith('/review') },
   ]
 
   return (

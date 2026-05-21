@@ -169,7 +169,7 @@ export function MobileProfileSheet({
               {/* Links */}
               <div className="space-y-1">
                 <SheetLink href="/scripts" icon={<FileText size={16} />} label="My Scripts" onClick={onClose} />
-                <SheetLink href="/review" icon={<Briefcase size={16} />} label="My Applications" onClick={onClose} />
+                <SheetLink href="/applications" icon={<Briefcase size={16} />} label="My Applications" onClick={onClose} />
                 <SheetLink href="/profile" icon={<Pencil size={16} />} label="Edit profile" onClick={onClose} />
               </div>
 
