@@ -20,10 +20,12 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { opportunity_id, script_ids, writer_pitch } = body as {
+  const { opportunity_id, script_ids, writer_pitch, application_responses, media_urls } = body as {
     opportunity_id: string
     script_ids: string[]
     writer_pitch?: string
+    application_responses?: Record<string, string>
+    media_urls?: Array<{ type: string; url: string; filename?: string }>
   }
 
   if (!opportunity_id) {
@@ -95,6 +97,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Create consideration with opportunity_id
+  const fitOriginality = application_responses?.fit_originality?.trim()
   const { data: consideration, error: createError } = await service
     .from('considerations')
     .insert({
@@ -102,7 +105,9 @@ export async function POST(req: NextRequest) {
       status: 'pending',
       submitted_at: new Date().toISOString(),
       opportunity_id,
-      writer_pitch: writer_pitch?.trim() || null,
+      writer_pitch: writer_pitch?.trim() || fitOriginality || null,
+      application_responses: application_responses || {},
+      media_urls: media_urls || [],
     })
     .select('id')
     .single()

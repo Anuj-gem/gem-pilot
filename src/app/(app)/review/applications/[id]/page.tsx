@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import { TagFeedbackForm } from '@/components/review/tag-feedback-form'
+import { ReviewerNotesForm } from '@/components/review/reviewer-notes-form'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,16 +33,16 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
   // Load the application
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned, application_responses, media_urls, reviewer_strengths, reviewer_concerns')
     .eq('id', id)
     .single()
 
   if (!app || !app.opportunity_id) notFound()
 
-  // Load opportunity
+  // Load opportunity (including custom application questions)
   const { data: opp } = await service
     .from('opportunities')
-    .select('id, title, slug, description')
+    .select('id, title, slug, description, application_questions')
     .eq('id', app.opportunity_id)
     .single()
 
@@ -164,15 +165,108 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
         ))}
       </section>
 
-      {/* Writer's pitch */}
-      {app.writer_pitch && (
-        <section>
-          <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1.5">Writer's pitch</h2>
-          <div className="rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3">
-            <p className="text-[13px] text-gray-600 m-0 leading-relaxed italic">"{app.writer_pitch}"</p>
-          </div>
-        </section>
-      )}
+      {/* Full application responses */}
+      {(() => {
+        const responses = (app.application_responses || {}) as Record<string, string>
+        const mediaItems = (app.media_urls || []) as Array<{ type: string; url: string; filename?: string }>
+        const customQuestions = ((opp as any)?.application_questions || []) as Array<{ id: string; prompt: string }>
+
+        const UNIVERSAL_DIMS: Array<{ key: string; label: string }> = [
+          { key: 'fit_originality', label: 'Fit & originality' },
+          { key: 'market_potential', label: 'Market potential' },
+          { key: 'casting', label: 'Casting' },
+          { key: 'market_landscape', label: 'Market landscape' },
+        ]
+
+        const hasUniversal = UNIVERSAL_DIMS.some(d => responses[d.key]?.trim())
+        const hasCustom = customQuestions.some(q => responses[q.id]?.trim())
+        const hasMedia = mediaItems.length > 0
+        const hasPitch = !hasUniversal && !hasCustom && !hasMedia && app.writer_pitch
+
+        if (!hasUniversal && !hasCustom && !hasMedia && !hasPitch) return null
+
+        function getYoutubeEmbedUrl(url: string): string {
+          const watchMatch = url.match(/[?&]v=([^&]+)/)
+          if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
+          const shortMatch = url.match(/youtu\.be\/([^?]+)/)
+          if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+          return url
+        }
+
+        return (
+          <section>
+            <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-3">Application</h2>
+            <div className="space-y-3">
+              {/* Universal dimensions */}
+              {UNIVERSAL_DIMS.filter(d => responses[d.key]?.trim()).map(d => (
+                <div key={d.key} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{d.label}</p>
+                  <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[d.key]}</p>
+                </div>
+              ))}
+
+              {/* Fallback: legacy writer_pitch */}
+              {hasPitch && (
+                <div className="rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">Pitch</p>
+                  <p className="text-[13px] text-gray-600 m-0 leading-relaxed italic">"{app.writer_pitch}"</p>
+                </div>
+              )}
+
+              {/* Custom questions */}
+              {customQuestions.filter(q => responses[q.id]?.trim()).map(q => (
+                <div key={q.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{q.prompt}</p>
+                  <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[q.id]}</p>
+                </div>
+              ))}
+
+              {/* Media */}
+              {hasMedia && (
+                <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Media & references</p>
+                  <div className="space-y-2">
+                    {mediaItems.map((item, i) => (
+                      <div key={i}>
+                        {item.type === 'image' && (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={item.url} alt={item.filename || 'Image'} className="rounded-lg border border-gray-200 max-h-60 object-cover" />
+                        )}
+                        {item.type === 'youtube' && (
+                          <iframe
+                            src={getYoutubeEmbedUrl(item.url)}
+                            className="w-full rounded-lg border border-gray-200"
+                            style={{ height: '220px' }}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        )}
+                        {item.type === 'file' && (
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-[13px] text-purple-600 hover:text-purple-700 font-semibold"
+                          >
+                            ↓ {item.filename || 'Download document'}
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )
+      })()}
+
+      {/* Reviewer strengths / concerns */}
+      <ReviewerNotesForm
+        considerationId={app.id}
+        initialStrengths={(app as any).reviewer_strengths || ''}
+        initialConcerns={(app as any).reviewer_concerns || ''}
+      />
 
       {/* Writer's response to feedback */}
       {app.writer_response && (

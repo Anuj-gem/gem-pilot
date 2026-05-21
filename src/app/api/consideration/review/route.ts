@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags, sentiment } = body as {
+  const { consideration_id, feedback, next_steps, review_stage, message, feedback_tags, next_steps_tags, sentiment, reviewer_strengths, reviewer_concerns } = body as {
     consideration_id: string
     feedback?: string
     next_steps?: string | null
@@ -37,6 +37,8 @@ export async function POST(req: NextRequest) {
     feedback_tags?: string[]
     next_steps_tags?: string[]
     sentiment?: 'positive' | 'negative'
+    reviewer_strengths?: string | null
+    reviewer_concerns?: string | null
   }
 
   if (!consideration_id) {
@@ -306,6 +308,17 @@ export async function POST(req: NextRequest) {
       message: message.trim(),
       created_by: user.id,
     })
+  }
+
+  // --- Reviewer notes (strengths / concerns — internal, not shown to writer) ---
+  if (reviewer_strengths !== undefined || reviewer_concerns !== undefined) {
+    const notesUpdate: Record<string, unknown> = {}
+    if (reviewer_strengths !== undefined) notesUpdate.reviewer_strengths = reviewer_strengths?.trim() || null
+    if (reviewer_concerns !== undefined) notesUpdate.reviewer_concerns = reviewer_concerns?.trim() || null
+    await service
+      .from('considerations')
+      .update(notesUpdate)
+      .eq('id', consideration_id)
   }
 
   return NextResponse.json({ ok: true })
