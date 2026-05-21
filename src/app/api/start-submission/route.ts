@@ -114,6 +114,7 @@ export async function POST(request: NextRequest) {
             .from('script_submissions')
             .select('id', { count: 'exact', head: true })
             .eq('user_id', user.id)
+            .neq('status', 'failed')
           if ((count ?? 0) >= FREE_EVAL_LIMIT) {
             return NextResponse.json(
               { error: 'limit_reached' },

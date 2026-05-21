@@ -93,8 +93,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null).eq('status', 'completed'),
     // Application count (considerations with an opportunity_id)
     service.from('considerations').select('id', { count: 'exact', head: true }).eq('writer_id', user.id).not('opportunity_id', 'is', null),
-    // Total submissions ever (for usage-based gating — includes hidden/deleted)
-    service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
+    // Total submissions ever (for usage-based gating — includes hidden/deleted, excludes failed)
+    service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).neq('status', 'failed'),
     // Own most-recent publishes — bare submissions, no embedded join
     // (PostgREST chokes on multi-FK ambiguity to script_evaluations).
     service.from('script_submissions')

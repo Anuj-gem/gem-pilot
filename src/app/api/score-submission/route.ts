@@ -469,10 +469,18 @@ export async function POST(request: NextRequest) {
     const errorMessage = e?.message ?? "Unknown scoring error"
     console.error("score-submission error:", errorMessage)
     if (submissionId) {
-      await serviceClient
-        .from("script_submissions")
-        .update({ status: "failed", error_message: errorMessage })
-        .eq("id", submissionId)
+      if (errorMessage === "SCANNED_PDF") {
+        // Delete scanned PDF submissions so they don't count against limits
+        await serviceClient
+          .from("script_submissions")
+          .delete()
+          .eq("id", submissionId)
+      } else {
+        await serviceClient
+          .from("script_submissions")
+          .update({ status: "failed", error_message: errorMessage })
+          .eq("id", submissionId)
+      }
     }
     const friendly =
       errorMessage === "SCANNED_PDF"
