@@ -18,11 +18,9 @@ function svc() {
 }
 
 const ALL_STAGES = [
-  { key: 'pending', label: 'Pending' },
   { key: 'in_consideration', label: 'In consideration' },
   { key: 'shortlisted', label: 'Shortlisted' },
   { key: 'partner_match', label: 'Partner match' },
-  { key: 'complete', label: 'Pass' },
 ]
 
 export default async function ApplicationDetailPage({ params }: { params: { id: string } }) {
@@ -84,8 +82,8 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
     .eq('event_type', 'status_change')
     .order('created_at', { ascending: true })
 
-  const stageOrder = ['pending', 'in_consideration', 'shortlisted', 'partner_match', 'complete']
-  const reachedStages = new Set<string>(['pending']) // always starts at pending
+  const stageOrder = ['in_consideration', 'shortlisted', 'partner_match']
+  const reachedStages = new Set<string>(['in_consideration']) // every application is in consideration
   for (const ev of (evts || []) as { new_stage: string | null }[]) {
     if (ev.new_stage) reachedStages.add(ev.new_stage)
   }
@@ -101,7 +99,8 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   const totalHeat = (profile as any)?.heat_score ?? 0
 
   const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
-  const currentStage = isReviewed ? 'complete' : (app.review_stage || 'pending')
+  const isUpgraded = app.review_stage === 'shortlisted' || app.review_stage === 'partner_match'
+  const currentStage = isUpgraded ? app.review_stage : 'in_consideration'
 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
@@ -134,8 +133,8 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
         <div className="flex items-start">
           {ALL_STAGES.map((s, i) => {
             const reached = reachedStages.has(s.key)
-            // Skipped = review is done but this stage was never reached (and it's not the Pass node)
-            const isSkipped = isReviewed && !reached && s.key !== 'complete'
+            // Skipped = review is done but this stage was never reached
+            const isSkipped = isReviewed && !reached
             // Is this the current active stage (for pending states)
             const isCurrent = s.key === currentStage
 

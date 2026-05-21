@@ -41,7 +41,6 @@ const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
 const TRACKER_STAGES = [
-  { key: 'pending', label: 'Pending' },
   { key: 'in_consideration', label: 'In consideration' },
   { key: 'shortlisted', label: 'Shortlisted' },
   { key: 'partner_match', label: 'Partner match' },
@@ -118,20 +117,23 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
         const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
         const isExpanded = expandedId === app.id
 
-        // Build reachedStages set from server data
+        // Build reachedStages set — in_consideration is always reached
         const reachedArr = stagesByApp[app.id] || ['pending']
         const reachedStages = new Set(reachedArr)
+        reachedStages.add('in_consideration')
 
-        // Status badge — "Pass" in amber for completed reviews, stage-colored for in-progress
+        // Status badge — driven by review_stage directly
         const stageMap: Record<string, { label: string; bg: string; color: string }> = {
-          pending: { label: 'Pending', bg: '#fef3c7', color: '#92400e' },
+          pending: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
           in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
           shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
           partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
           complete: { label: 'Pass', bg: '#fef3c7', color: '#92400e' },
         }
-        const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
-        const s = stageMap[stage] || stageMap.pending
+        // Only show "Pass" if reviewed AND not upgraded to shortlisted/partner_match
+        const isUpgraded = app.review_stage === 'shortlisted' || app.review_stage === 'partner_match'
+        const stage = isReviewed && !isUpgraded ? 'complete' : (app.review_stage || 'in_consideration')
+        const s = stageMap[stage] || stageMap.in_consideration
 
         const matchCount = matchingScriptCounts?.[app.opportunity_id] ?? 0
         const canReapply = opp?.isActive

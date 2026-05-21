@@ -171,7 +171,8 @@ export default async function ApplicationsReviewPage() {
                                   partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
                                   complete: { label: 'Pass', classes: 'bg-green-50 text-green-700' },
                                 }
-                                const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
+                                const isUpgraded = app.review_stage === 'shortlisted' || app.review_stage === 'partner_match'
+                                const stage = isReviewed && !isUpgraded ? 'complete' : (app.review_stage || 'pending')
                                 const s = stageMap[stage] || stageMap.pending
                                 return (
                                   <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${s.classes}`}>
