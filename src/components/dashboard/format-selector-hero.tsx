@@ -1,14 +1,15 @@
 'use client'
 
 // FormatSelectorHero — cinematic hero with inline upload flow.
-// Flow: "What are you working on?" → Film/Series → file picker slides in from left →
+// Flow: "What are you working on?" → Film/Series → file picker →
+// "Checking your file..." → "Your script is ready. Begin analysis?" →
 // auto-submits → checkmark + fade right → resets to pills.
 
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 type DeclaredFormat = 'Feature film' | 'Series'
-type HeroState = 'pick' | 'upload' | 'success'
+type HeroState = 'pick' | 'upload' | 'validating' | 'confirmed' | 'submitting' | 'success'
 
 export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: number }) {
   const router = useRouter()
@@ -16,6 +17,8 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
   const [state, setState] = useState<HeroState>('pick')
   const [format, setFormat] = useState<DeclaredFormat | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [pageEstimate, setPageEstimate] = useState<number | null>(null)
 
   function handleFormatSelect(f: DeclaredFormat) {
     setFormat(f)
@@ -42,17 +45,48 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
       return
     }
     setError(null)
-    submitFile(f)
+    setSelectedFile(f)
+    validateFile(f)
   }
 
-  async function submitFile(f: File) {
-    if (!format) return
-
-    const placeholderTitle = f.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ').trim() || 'Untitled'
-
+  async function validateFile(f: File) {
+    setState('validating')
     try {
       const formData = new FormData()
       formData.append('file', f)
+      const res = await fetch('/api/validate-pdf', {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await res.json().catch(() => null)
+
+      if (data?.valid) {
+        setPageEstimate(data.page_estimate ?? null)
+        setState('confirmed')
+      } else {
+        setError(data?.reason ?? 'We couldn\'t read this file. Try a different PDF.')
+        setState('upload')
+        setSelectedFile(null)
+        // Reset file input so they can pick again
+        if (fileInputRef.current) fileInputRef.current.value = ''
+      }
+    } catch {
+      setError('Something went wrong checking your file. Please try again.')
+      setState('upload')
+      setSelectedFile(null)
+      if (fileInputRef.current) fileInputRef.current.value = ''
+    }
+  }
+
+  async function beginAnalysis() {
+    if (!format || !selectedFile) return
+    setState('submitting')
+
+    const placeholderTitle = selectedFile.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ').trim() || 'Untitled'
+
+    try {
+      const formData = new FormData()
+      formData.append('file', selectedFile)
       formData.append('title', placeholderTitle)
       formData.append('declared_format', format)
 
@@ -69,8 +103,7 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
       }
       if (!startRes.ok || !startData?.submission_id) {
         setError(startData?.error ?? 'Something went wrong')
-        setState('pick')
-        setFormat(null)
+        setState('confirmed') // let them retry
         return
       }
 
@@ -108,8 +141,7 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
 
     } catch (e: any) {
       setError(e?.message ?? 'Network error')
-      setState('pick')
-      setFormat(null)
+      setState('confirmed')
     }
   }
 
@@ -117,7 +149,8 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
     setState('pick')
     setFormat(null)
     setError(null)
-    // Reset file input
+    setSelectedFile(null)
+    setPageEstimate(null)
     if (fileInputRef.current) fileInputRef.current.value = ''
   }
 
@@ -202,7 +235,8 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
                 if (f.type !== 'application/pdf') { setError('Only PDF files are accepted'); return }
                 if (f.size > 10 * 1024 * 1024) { setError('File too large (max 10 MB)'); return }
                 setError(null)
-                submitFile(f)
+                setSelectedFile(f)
+                validateFile(f)
               }}
               className="w-full rounded-2xl py-12 px-8 text-center cursor-pointer transition-all hover:border-purple-400"
               style={{ border: '2px dashed rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.05)' }}
@@ -217,6 +251,52 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
           </div>
         )}
 
+        {/* VALIDATING — checking the PDF */}
+        {state === 'validating' && (
+          <div className="animate-in fade-in duration-200">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <p className="text-[16px] text-white font-medium m-0">Checking your file...</p>
+              <p className="text-[13px] text-white/50 m-0">{selectedFile?.name}</p>
+            </div>
+          </div>
+        )}
+
+        {/* CONFIRMED — file is valid, ready to go */}
+        {state === 'confirmed' && (
+          <div className="animate-in fade-in duration-300">
+            <div className="w-full rounded-2xl py-8 px-8 text-center"
+              style={{ border: '2px solid rgba(34,197,94,0.4)', background: 'rgba(34,197,94,0.08)' }}>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="mx-auto mb-4">
+                <circle cx="16" cy="16" r="16" fill="rgba(34,197,94,0.2)" />
+                <path d="M10 16.5l4 4 8-8" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <p className="text-[17px] text-white font-semibold m-0 mb-1">Your script is ready</p>
+              <p className="text-[13px] text-white/60 m-0 mb-6">
+                {selectedFile?.name}{pageEstimate ? ` · ~${pageEstimate} pages` : ''}
+              </p>
+              <button
+                onClick={beginAnalysis}
+                className="px-10 py-4 rounded-full text-[17px] font-bold text-white border-0 cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', boxShadow: '0 4px 14px rgba(124,58,237,0.4)' }}
+              >
+                Begin analysis
+              </button>
+              <p className="text-[12px] text-white/40 mt-4 mb-0">Your report will appear below. You can delete it anytime.</p>
+            </div>
+          </div>
+        )}
+
+        {/* SUBMITTING — uploading + starting eval */}
+        {state === 'submitting' && (
+          <div className="animate-in fade-in duration-200">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <p className="text-[16px] text-white font-medium m-0">Starting analysis...</p>
+            </div>
+          </div>
+        )}
+
         {/* SUCCESS — checkmark then fades out */}
         {state === 'success' && (
           <div className="animate-in slide-in-from-left-2 fade-in duration-200">
@@ -225,17 +305,27 @@ export function FormatSelectorHero({ evalsRemaining = 99 }: { evalsRemaining?: n
                 <circle cx="14" cy="14" r="14" fill="#22c55e" />
                 <path d="M8 14.5l3.5 3.5 8-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="text-[18px] font-semibold text-white">Upload successful</span>
+              <span className="text-[18px] font-semibold text-white">Analysis started</span>
             </div>
           </div>
         )}
 
         {/* Error message */}
         {error && (
-          <p className="text-[13px] text-red-300 mt-4">{error}</p>
+          <div className="mt-4">
+            <p className="text-[13px] text-red-300 m-0">{error}</p>
+            {state === 'upload' && (
+              <button
+                onClick={() => { setError(null); fileInputRef.current?.click() }}
+                className="mt-3 px-6 py-2 rounded-full text-[13px] font-medium text-white/80 border border-white/20 bg-transparent cursor-pointer hover:bg-white/10 transition-colors"
+              >
+                Try a different file
+              </button>
+            )}
+          </div>
         )}
 
-        {/* Hidden file input (fallback for click-to-browse) */}
+        {/* Hidden file input */}
         <input
           ref={fileInputRef}
           type="file"

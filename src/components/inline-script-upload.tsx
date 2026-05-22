@@ -1,7 +1,7 @@
 'use client'
 
 // InlineScriptUpload — drop-in inline upload component.
-// 2 steps: format → upload PDF → auto-submit.
+// Flow: format → upload PDF → validate → confirm → submit.
 // Title, genre, and logline are extracted automatically by the eval prompt.
 // Works on dashboard, scripts page, and review draft page.
 
@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 
 type DeclaredFormat = 'Feature film' | 'Series'
 
-type Step = 'closed' | 'format' | 'upload'
+type Step = 'closed' | 'format' | 'upload' | 'validating' | 'confirmed' | 'submitting'
 
 export function InlineScriptUpload({
   className,
@@ -30,8 +30,8 @@ export function InlineScriptUpload({
   const [step, setStep] = useState<Step>(startOpen ? 'format' : 'closed')
   const [format, setFormat] = useState<DeclaredFormat | null>(null)
   const [file, setFile] = useState<File | null>(null)
-  const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [pageEstimate, setPageEstimate] = useState<number | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   function reset() {
@@ -39,7 +39,7 @@ export function InlineScriptUpload({
     setFormat(null)
     setFile(null)
     setError(null)
-    setSubmitting(false)
+    setPageEstimate(null)
   }
 
   function handleClose() {
@@ -56,7 +56,7 @@ export function InlineScriptUpload({
     setTimeout(() => setStep('upload'), 350)
   }
 
-  function validateFile(f: File): boolean {
+  function checkFileBasics(f: File): boolean {
     if (f.type !== 'application/pdf') {
       setError('Only PDF files are accepted')
       return false
@@ -70,33 +70,59 @@ export function InlineScriptUpload({
 
   function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0]
-    if (!f || !validateFile(f)) return
+    if (!f || !checkFileBasics(f)) return
     setError(null)
     setFile(f)
-    submitFile(f)
+    validateFile(f)
   }
 
   function handleDrop(e: React.DragEvent) {
     e.preventDefault()
     const f = e.dataTransfer.files?.[0]
-    if (!f || !validateFile(f)) return
+    if (!f || !checkFileBasics(f)) return
     setError(null)
     setFile(f)
-    submitFile(f)
+    validateFile(f)
   }
 
-  async function submitFile(f: File) {
-    if (!format) return
-    setSubmitting(true)
+  async function validateFile(f: File) {
+    setStep('validating')
+    try {
+      const formData = new FormData()
+      formData.append('file', f)
+      const res = await fetch('/api/validate-pdf', {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await res.json().catch(() => null)
+
+      if (data?.valid) {
+        setPageEstimate(data.page_estimate ?? null)
+        setStep('confirmed')
+      } else {
+        setError(data?.reason ?? 'We couldn\'t read this file. Try a different PDF.')
+        setStep('upload')
+        setFile(null)
+        if (fileInputRef.current) fileInputRef.current.value = ''
+      }
+    } catch {
+      setError('Something went wrong checking your file. Please try again.')
+      setStep('upload')
+      setFile(null)
+      if (fileInputRef.current) fileInputRef.current.value = ''
+    }
+  }
+
+  async function beginAnalysis() {
+    if (!format || !file) return
+    setStep('submitting')
     setError(null)
 
-    // Infer a placeholder title from the filename — the eval prompt will
-    // extract the real title from the title page and overwrite this.
-    const placeholderTitle = f.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ').trim() || 'Untitled'
+    const placeholderTitle = file.name.replace(/\.pdf$/i, '').replace(/[_-]/g, ' ').trim() || 'Untitled'
 
     try {
       const form = new FormData()
-      form.append('file', f)
+      form.append('file', file)
       form.append('title', placeholderTitle)
       form.append('declared_format', format)
 
@@ -108,12 +134,12 @@ export function InlineScriptUpload({
 
       if (startRes.status === 402 || startData?.error === 'paywall') {
         window.dispatchEvent(new Event('gem:open-upgrade-modal'))
-        setSubmitting(false)
+        reset()
         return
       }
       if (!startRes.ok || !startData?.submission_id) {
         setError(startData?.error ?? 'Something went wrong')
-        setSubmitting(false)
+        setStep('confirmed')
         return
       }
 
@@ -124,9 +150,7 @@ export function InlineScriptUpload({
         body: JSON.stringify({ submission_id: startData.submission_id }),
       }).catch(() => {})
 
-      // Store anonymous upload IDs in a cookie so the server can claim them
-      // after the user signs up. The /start server page reads this cookie,
-      // sets user_id on the matching rows, then clears it.
+      // Store anonymous upload IDs in a cookie
       {
         const existing = document.cookie
           .split('; ')
@@ -155,14 +179,15 @@ export function InlineScriptUpload({
       }
     } catch (e: any) {
       setError(e?.message ?? 'Network error')
-      setSubmitting(false)
+      setStep('confirmed')
     }
   }
 
+  const activeStepIndex = step === 'format' ? 0 : 1
   const stepDots = (
     <div className="flex items-center gap-1.5 mb-4">
-      <div className={`h-[3px] rounded-full transition-all ${step === 'format' ? 'w-6 bg-purple-600' : 'w-2 bg-purple-600'}`} />
-      <div className={`h-[3px] rounded-full transition-all ${step === 'upload' ? 'w-6 bg-purple-600' : 'w-2 bg-gray-200'}`} />
+      <div className={`h-[3px] rounded-full transition-all ${activeStepIndex === 0 ? 'w-6 bg-purple-600' : 'w-2 bg-purple-600'}`} />
+      <div className={`h-[3px] rounded-full transition-all ${activeStepIndex >= 1 ? 'w-6 bg-purple-600' : 'w-2 bg-gray-200'}`} />
     </div>
   )
 
@@ -235,50 +260,94 @@ export function InlineScriptUpload({
         {/* ── STEP 2: UPLOAD ── */}
         {step === 'upload' && (
           <div>
-            {submitting ? (
-              <div className="py-8 text-center">
-                <div className="flex justify-center mb-3">
-                  <div className="w-6 h-6 border-2 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
-                </div>
-                <p className="text-[13px] font-semibold text-gray-700">Uploading{file ? ` ${file.name}` : ''}...</p>
-                <p className="text-[11px] text-gray-400 mt-1">Your evaluation will start automatically</p>
+            <div
+              onClick={() => fileInputRef.current?.click()}
+              onDragOver={e => e.preventDefault()}
+              onDrop={handleDrop}
+              className="border-[1.5px] border-dashed border-gray-300 rounded-lg py-8 px-4 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/20 transition-colors"
+            >
+              <div className="flex justify-center mb-2 text-gray-400">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
               </div>
-            ) : (
-              <>
-                <div
-                  onClick={() => fileInputRef.current?.click()}
-                  onDragOver={e => e.preventDefault()}
-                  onDrop={handleDrop}
-                  className="border-[1.5px] border-dashed border-gray-300 rounded-lg py-8 px-4 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/20 transition-colors"
+              <p className="text-[13px] text-gray-500">Drop your PDF here or click to browse</p>
+              <p className="text-[11px] text-gray-400 mt-1">PDF only, up to 10 MB</p>
+            </div>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".pdf,application/pdf"
+              onChange={handleFileSelect}
+              className="hidden"
+            />
+            {error && (
+              <div className="mt-2">
+                <p className="text-[12px] text-red-600">{error}</p>
+                <button
+                  onClick={() => { setError(null); fileInputRef.current?.click() }}
+                  className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 mt-1"
                 >
-                  <div className="flex justify-center mb-2 text-gray-400">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
-                    </svg>
-                  </div>
-                  <p className="text-[13px] text-gray-500">Drop your PDF here or click to browse</p>
-                  <p className="text-[11px] text-gray-400 mt-1">PDF only, up to 10 MB</p>
-                </div>
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept=".pdf,application/pdf"
-                  onChange={handleFileSelect}
-                  className="hidden"
-                />
-                {error && (
-                  <p className="text-[12px] text-red-600 mt-2">{error}</p>
-                )}
-                <div className="flex justify-start mt-3">
-                  <button
-                    onClick={() => { setStep('format'); setError(null) }}
-                    className="text-[12px] font-semibold text-gray-500 hover:text-gray-700"
-                  >
-                    &larr; Back
-                  </button>
-                </div>
-              </>
+                  Try a different file
+                </button>
+              </div>
             )}
+            <div className="flex justify-start mt-3">
+              <button
+                onClick={() => { setStep('format'); setError(null) }}
+                className="text-[12px] font-semibold text-gray-500 hover:text-gray-700"
+              >
+                &larr; Back
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── VALIDATING ── */}
+        {step === 'validating' && (
+          <div className="py-8 text-center">
+            <div className="flex justify-center mb-3">
+              <div className="w-6 h-6 border-2 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+            </div>
+            <p className="text-[13px] font-semibold text-gray-700">Checking your file...</p>
+            <p className="text-[11px] text-gray-400 mt-1">{file?.name}</p>
+          </div>
+        )}
+
+        {/* ── CONFIRMED — ready to go ── */}
+        {step === 'confirmed' && (
+          <div className="py-4 text-center">
+            <div className="rounded-lg py-5 px-4" style={{ border: '1px solid rgba(34,197,94,0.3)', background: 'rgba(34,197,94,0.04)' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="mx-auto mb-3">
+                <circle cx="12" cy="12" r="12" fill="rgba(34,197,94,0.15)" />
+                <path d="M7 12.5l3 3 6-6" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <p className="text-[14px] font-semibold text-gray-900 m-0 mb-0.5">Your script is ready</p>
+              <p className="text-[12px] text-gray-500 m-0 mb-4">
+                {file?.name}{pageEstimate ? ` · ~${pageEstimate} pages` : ''}
+              </p>
+              <button
+                onClick={beginAnalysis}
+                className="w-full py-3 rounded-lg text-[14px] font-bold text-white border-0 cursor-pointer transition-all hover:opacity-90 active:scale-[0.98]"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+              >
+                Begin analysis
+              </button>
+              <p className="text-[11px] text-gray-400 mt-3 mb-0">Your report will appear on your dashboard. Delete it anytime.</p>
+            </div>
+            {error && (
+              <p className="text-[12px] text-red-600 mt-2">{error}</p>
+            )}
+          </div>
+        )}
+
+        {/* ── SUBMITTING ── */}
+        {step === 'submitting' && (
+          <div className="py-8 text-center">
+            <div className="flex justify-center mb-3">
+              <div className="w-6 h-6 border-2 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+            </div>
+            <p className="text-[13px] font-semibold text-gray-700">Starting analysis...</p>
           </div>
         )}
       </div>

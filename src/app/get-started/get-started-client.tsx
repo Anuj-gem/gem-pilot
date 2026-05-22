@@ -219,6 +219,10 @@ export default function GetStartedClient() {
   const [fileName, setFileName] = useState('')
   const fileRef = useRef<HTMLInputElement>(null)
 
+  // Upload validation sub-state (within the 'upload' step)
+  const [uploadSubState, setUploadSubState] = useState<'idle' | 'validating' | 'confirmed'>('idle')
+  const [pageEstimate, setPageEstimate] = useState<number | null>(null)
+
   // Eval
   const [submissionId, setSubmissionId] = useState<string | null>(null)
   const [evalDone, setEvalDone] = useState(false)
@@ -407,7 +411,7 @@ export default function GetStartedClient() {
     }, 300_000)
   }
 
-  // ─── Step 2 → 3: file selected ───────────────────────────────────────
+  // ─── Step 2: file selected → validate → confirm → begin ────────────
   function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0]
     if (!f) return
@@ -415,15 +419,51 @@ export default function GetStartedClient() {
       setAuthError('Please upload a PDF file')
       return
     }
+    if (f.size > 10 * 1024 * 1024) {
+      setAuthError('File too large (max 10 MB)')
+      return
+    }
     setFile(f)
     setFileName(f.name)
     setAuthError(null)
+    setEvalFailed(null)
+    validateUploadedFile(f)
+  }
 
-    // Auto-advance after brief visual confirmation
-    setTimeout(() => {
-      fireEval(f, format)
-      goTo('account')
-    }, 800)
+  async function validateUploadedFile(f: File) {
+    setUploadSubState('validating')
+    try {
+      const formData = new FormData()
+      formData.append('file', f)
+      const res = await fetch('/api/validate-pdf', {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await res.json().catch(() => null)
+
+      if (data?.valid) {
+        setPageEstimate(data.page_estimate ?? null)
+        setUploadSubState('confirmed')
+      } else {
+        setAuthError(data?.reason ?? 'We couldn\'t read this file. Try a different PDF.')
+        setUploadSubState('idle')
+        setFile(null)
+        setFileName('')
+        if (fileRef.current) fileRef.current.value = ''
+      }
+    } catch {
+      setAuthError('Something went wrong checking your file. Please try again.')
+      setUploadSubState('idle')
+      setFile(null)
+      setFileName('')
+      if (fileRef.current) fileRef.current.value = ''
+    }
+  }
+
+  function handleBeginAnalysis() {
+    if (!file) return
+    fireEval(file, format)
+    goTo('account')
   }
 
   // ─── Step 3: signup ───────────────────────────────────────────────────
@@ -809,7 +849,7 @@ export default function GetStartedClient() {
           ))}
         </div>
 
-        {/* Drop zone */}
+        {/* Hidden file input */}
         <input
           ref={fileRef}
           type="file"
@@ -817,97 +857,117 @@ export default function GetStartedClient() {
           className="hidden"
           onChange={handleFileSelect}
         />
-        <div
-          onClick={() => !file && fileRef.current?.click()}
-          className="rounded-[14px] p-9 text-center transition-all cursor-pointer mb-5"
-          style={{
-            border: file ? '2px solid #7C3AED' : '2px dashed #D6D3D1',
-            backgroundColor: file
-              ? 'rgba(124,58,237,0.03)'
-              : 'transparent',
-          }}
-          onMouseOver={(e) => {
-            if (!file) {
+
+        {/* ── VALIDATING ── */}
+        {uploadSubState === 'validating' && (
+          <div className="rounded-[14px] p-9 text-center mb-5" style={{ border: '1px solid #E7E5E4', backgroundColor: '#FAFAF9' }}>
+            <div className="w-8 h-8 mx-auto rounded-full border-[3px] border-[#E7E5E4] border-t-[#7C3AED] animate-spin mb-3" />
+            <p className="text-sm font-medium" style={{ color: '#1a1a1a' }}>Checking your file...</p>
+            <p className="text-xs mt-1" style={{ color: '#78716C' }}>{fileName}</p>
+          </div>
+        )}
+
+        {/* ── CONFIRMED — ready to go ── */}
+        {uploadSubState === 'confirmed' && (
+          <div className="rounded-[14px] p-6 text-center mb-5" style={{ border: '1px solid rgba(34,197,94,0.3)', backgroundColor: 'rgba(34,197,94,0.04)' }}>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="mx-auto mb-3">
+              <circle cx="14" cy="14" r="14" fill="rgba(34,197,94,0.15)" />
+              <path d="M8 14.5l3.5 3.5 7-7" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <p className="text-sm font-semibold" style={{ color: '#1a1a1a' }}>Your script is ready</p>
+            <p className="text-xs mt-1 mb-4" style={{ color: '#78716C' }}>
+              {fileName}{pageEstimate ? ` · ~${pageEstimate} pages` : ''}
+            </p>
+            <button
+              onClick={handleBeginAnalysis}
+              className="w-full py-3 rounded-[10px] text-sm font-semibold text-white transition-all active:scale-[0.985]"
+              style={{ backgroundColor: '#7C3AED' }}
+            >
+              Begin analysis
+            </button>
+          </div>
+        )}
+
+        {/* ── IDLE — drop zone ── */}
+        {uploadSubState === 'idle' && (
+          <div
+            onClick={() => fileRef.current?.click()}
+            className="rounded-[14px] p-9 text-center transition-all cursor-pointer mb-5"
+            style={{
+              border: '2px dashed #D6D3D1',
+              backgroundColor: 'transparent',
+            }}
+            onMouseOver={(e) => {
               e.currentTarget.style.borderColor = '#7C3AED'
-              e.currentTarget.style.backgroundColor =
-                'rgba(124,58,237,0.02)'
-            }
-          }}
-          onMouseOut={(e) => {
-            if (!file) {
+              e.currentTarget.style.backgroundColor = 'rgba(124,58,237,0.02)'
+            }}
+            onMouseOut={(e) => {
               e.currentTarget.style.borderColor = '#D6D3D1'
               e.currentTarget.style.backgroundColor = 'transparent'
-            }
-          }}
-        >
-          {file ? (
-            <>
-              <div className="text-2xl mb-2">✓</div>
-              <p
-                className="text-sm font-medium"
-                style={{ color: '#1a1a1a' }}
-              >
-                {fileName}
-              </p>
-              <p className="text-xs mt-1" style={{ color: '#78716C' }}>
-                Ready to evaluate
-              </p>
-            </>
-          ) : (
-            <>
-              <div className="text-3xl mb-2">📄</div>
-              <p
-                className="text-sm font-medium"
-                style={{ color: '#57534E' }}
-              >
-                Drop your script here or click to browse
-              </p>
-              <p className="text-xs mt-1" style={{ color: '#A8A29E' }}>
-                PDF only · Max 200 pages
-              </p>
-            </>
-          )}
-        </div>
+            }}
+          >
+            <div className="text-3xl mb-2">📄</div>
+            <p className="text-sm font-medium" style={{ color: '#57534E' }}>
+              Drop your script here or click to browse
+            </p>
+            <p className="text-xs mt-1" style={{ color: '#A8A29E' }}>
+              PDF only · Max 10 MB
+            </p>
+          </div>
+        )}
 
         {evalFailed && (
           <p className="text-sm text-red-500 mb-4">{evalFailed}</p>
         )}
         {authError && (
-          <p className="text-sm text-red-500 mb-4">{authError}</p>
+          <div className="mb-4">
+            <p className="text-sm text-red-500">{authError}</p>
+            {uploadSubState === 'idle' && (
+              <button
+                onClick={() => { setAuthError(null); fileRef.current?.click() }}
+                className="text-xs font-semibold mt-1"
+                style={{ color: '#7C3AED' }}
+              >
+                Try a different file
+              </button>
+            )}
+          </div>
         )}
 
         {/* Privacy commitment */}
-        <div
-          className="rounded-[14px] p-4"
-          style={{
-            backgroundColor: '#FAFAF9',
-            border: '1px solid #F5F5F4',
-          }}
-        >
-          <p
-            className="text-sm font-semibold mb-2"
-            style={{ color: '#1a1a1a' }}
-          >
-            🔒 Our privacy commitment
-          </p>
+        {uploadSubState !== 'confirmed' && (
           <div
-            className="text-xs space-y-1.5"
-            style={{ color: '#78716C', lineHeight: '1.5' }}
+            className="rounded-[14px] p-4"
+            style={{
+              backgroundColor: '#FAFAF9',
+              border: '1px solid #F5F5F4',
+            }}
           >
-            <p>
-              • Your scripts are private by default — only you can see them
+            <p
+              className="text-sm font-semibold mb-2"
+              style={{ color: '#1a1a1a' }}
+            >
+              🔒 Our privacy commitment
             </p>
-            <p>
-              • Only work you choose to publish is visible to our industry
-              partners
-            </p>
-            <p>• You can delete your script and data at any time</p>
-            <p>
-              • If you don&rsquo;t create an account, uploads are
-              automatically deleted
-            </p>
+            <div
+              className="text-xs space-y-1.5"
+              style={{ color: '#78716C', lineHeight: '1.5' }}
+            >
+              <p>
+                • Your scripts are private by default — only you can see them
+              </p>
+              <p>
+                • Only work you choose to publish is visible to our industry
+                partners
+              </p>
+              <p>• You can delete your script and data at any time</p>
+              <p>
+                • If you don&rsquo;t create an account, uploads are
+                automatically deleted
+              </p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }
