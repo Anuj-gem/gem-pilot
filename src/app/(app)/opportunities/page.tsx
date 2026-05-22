@@ -72,6 +72,7 @@ export default async function OpportunitiesPage() {
   // For logged-in users: qualification + application status
   const oppMatchCount = new Map<string, number>()
   const oppStage = new Map<string, string>() // opp_id → review_stage
+  const oppAppCount = new Map<string, number>() // opp_id → total application count
 
   if (user) {
     // Get non-hidden completed scripts
@@ -156,6 +157,7 @@ export default async function OpportunitiesPage() {
 
     for (const c of (considerations || []) as any[]) {
       if (c.opportunity_id) {
+        oppAppCount.set(c.opportunity_id, (oppAppCount.get(c.opportunity_id) || 0) + 1)
         const existing = oppStage.get(c.opportunity_id)
         // Non-complete stages take priority (writer has an active application)
         if (!existing || (existing === 'complete' && c.review_stage !== 'complete')) {
@@ -233,6 +235,7 @@ export default async function OpportunitiesPage() {
                 status={status}
                 matchingScriptCount={oppMatchCount.get(opp.id) ?? 0}
                 isAnon={!user}
+                applicationCount={oppAppCount.get(opp.id) ?? 0}
               />
             )
           })

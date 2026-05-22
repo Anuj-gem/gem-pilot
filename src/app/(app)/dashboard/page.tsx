@@ -208,6 +208,10 @@ export default async function DashboardPage() {
   // ── DERIVED DATA ──
 
   const appliedOppIds = new Set(allApplications.map(a => a.opportunity_id))
+  const oppAppCount = new Map<string, number>()
+  for (const a of allApplications) {
+    oppAppCount.set(a.opportunity_id, (oppAppCount.get(a.opportunity_id) || 0) + 1)
+  }
   const oppMap = new Map(allOpenOpps.map(o => [o.id, o]))
 
   function getQualifyingOpps(format: string | null, scriptGenres: string[], score: number | null) {
@@ -526,6 +530,7 @@ export default async function DashboardPage() {
                     status={status}
                     matchingScriptCount={matchCount}
                     isAnon={!user}
+                    applicationCount={oppAppCount.get(opp.id) ?? 0}
                   />
                 )
               })}

@@ -36,6 +36,7 @@ export interface OpportunityCardProps {
   status: OppStatus
   matchingScriptCount: number
   isAnon?: boolean
+  applicationCount?: number
 }
 
 const STATUS_CONFIG: Record<OppStatus, { label: string; bg: string; color: string }> = {
@@ -46,13 +47,15 @@ const STATUS_CONFIG: Record<OppStatus, { label: string; bg: string; color: strin
 
 export function OpportunityCard({
   id, slug, title, subtitle, description, genres, formats,
-  createdAt, deadline, status, matchingScriptCount, isAnon,
+  createdAt, deadline, status, matchingScriptCount, isAnon, applicationCount,
 }: OpportunityCardProps) {
   const href = `/opportunities/${slug ?? id}`
+  const applyHref = `/opportunities/${slug ?? id}/apply`
   const postedDate = new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   const cfg = STATUS_CONFIG[status]
   const showScriptCount = status === 'available' && matchingScriptCount > 0 && !isAnon
   const showApply = status === 'available' && !isAnon
+  const showReapply = status === 'previously_applied' && !isAnon
 
   return (
     <div className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
@@ -114,6 +117,10 @@ export function OpportunityCard({
                 style={{ background: '#f5f3ff', color: '#6b21a8' }}>
                 Upload a script to apply
               </span>
+            ) : showReapply ? (
+              <span className="text-[12px] text-gray-400 shrink-0">
+                Applied {applicationCount === 1 ? 'once' : applicationCount === 2 ? 'twice' : `${applicationCount || 1}×`}
+              </span>
             ) : (
               <span className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full shrink-0"
                 style={{ background: cfg.bg, color: cfg.color }}>
@@ -127,9 +134,15 @@ export function OpportunityCard({
             )}
           </div>
 
-          {/* Right: Apply button or View details */}
+          {/* Right: Apply / Reapply / View details */}
           {showApply ? (
             <ApplyButton href={href} isAnon={isAnon} />
+          ) : showReapply ? (
+            <Link href={applyHref}
+              className="shrink-0 inline-flex items-center gap-1 text-[13px] font-bold text-white px-3 py-1.5 rounded-lg transition-colors"
+              style={{ background: '#7c3aed' }}>
+              Reapply <span aria-hidden="true">&rarr;</span>
+            </Link>
           ) : (
             <Link href={href}
               className="shrink-0 inline-flex items-center gap-1 text-[12px] font-semibold text-purple-600 hover:text-purple-800 transition-colors">
