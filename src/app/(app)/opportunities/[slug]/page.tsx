@@ -146,13 +146,14 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         alreadySubmittedScriptIds.add(ps.script_submission_id)
       }
 
-      // Fetch titles + eval IDs for previously applied scripts
+      // Fetch titles + eval IDs for previously applied scripts (exclude hidden)
       const prevSubIds = Array.from(alreadySubmittedScriptIds)
       if (prevSubIds.length > 0) {
         const { data: prevSubs } = await service
           .from('script_submissions')
           .select('id, title')
           .in('id', prevSubIds)
+          .is('hidden_at', null)
         const { data: prevEvals } = await service
           .from('script_evaluations')
           .select('id, submission_id')
