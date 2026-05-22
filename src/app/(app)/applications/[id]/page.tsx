@@ -34,7 +34,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   // Load consideration
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned, application_responses, media_urls')
     .eq('id', id)
     .eq('writer_id', user.id)
     .single()
@@ -44,7 +44,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   // Load opportunity
   const { data: opp } = await service
     .from('opportunities')
-    .select('id, title, slug, description, subtitle')
+    .select('id, title, slug, description, subtitle, application_questions')
     .eq('id', app.opportunity_id)
     .single()
 
@@ -56,7 +56,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   const scriptIds = (scriptLinks || []).map((l: { script_submission_id: string }) => l.script_submission_id)
 
-  let scripts: { id: string; title: string; score: number | null }[] = []
+  let scripts: { id: string; title: string; score: number | null; evalId: string | null }[] = []
   if (scriptIds.length > 0) {
     const { data: subs } = await service
       .from('script_submissions')
@@ -64,13 +64,14 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
       .in('id', scriptIds)
     const { data: evals } = await service
       .from('script_evaluations')
-      .select('submission_id, weighted_score')
+      .select('id, submission_id, weighted_score')
       .in('submission_id', scriptIds)
-    const evalMap = new Map((evals || []).map((e: any) => [e.submission_id, e.weighted_score]))
+    const evalMap = new Map((evals || []).map((e: any) => [e.submission_id, { score: e.weighted_score, evalId: e.id }]))
     scripts = (subs || []).map((s: any) => ({
       id: s.id,
       title: s.title,
-      score: evalMap.get(s.id) ?? null,
+      score: evalMap.get(s.id)?.score ?? null,
+      evalId: evalMap.get(s.id)?.evalId ?? null,
     }))
   }
 
@@ -112,7 +113,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
       {/* ── BACK LINK ── */}
       <Link
-        href="/review"
+        href="/applications"
         className="inline-flex items-center gap-1 text-[13px] font-semibold mb-5"
         style={{ color: '#7c3aed' }}
       >
@@ -193,20 +194,123 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
         </div>
       </div>
 
-      {/* ── CONTEXT: script + pitch ── */}
+      {/* ── SCRIPT ── */}
       <div className="mb-5">
+        <p className="text-[13px] font-bold text-gray-900 m-0 mb-2">Script</p>
         {scripts.map(s => (
-          <Link key={s.id} href={`/report/${s.id}`} className="inline-flex items-center gap-1 text-[13px] hover:text-purple-700 transition-colors" style={{ color: '#111827' }}>
-            <span className="font-semibold">{s.title}</span>
-            {s.score != null && <span className="text-gray-400">· {Math.round(s.score)}</span>}
-          </Link>
+          <div key={s.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3 flex items-center justify-between">
+            <span className="text-[14px] font-semibold text-gray-900">{s.title}</span>
+            <div className="flex items-center gap-3">
+              {s.score != null && (
+                <span className={`text-[13px] font-bold px-2 py-0.5 rounded ${
+                  s.score >= 80 ? 'bg-green-50 text-green-700' :
+                  s.score >= 70 ? 'bg-blue-50 text-blue-700' :
+                  'bg-yellow-50 text-yellow-700'
+                }`}>
+                  {Math.round(s.score)}
+                </span>
+              )}
+              {s.evalId && (
+                <Link href={`/report/${s.evalId}`} className="text-[13px] font-semibold" style={{ color: '#7c3aed' }}>
+                  View report →
+                </Link>
+              )}
+            </div>
+          </div>
         ))}
-        {app.writer_pitch && (
-          <p className="text-[12px] text-gray-400 m-0 mt-1 leading-relaxed italic">
-            &ldquo;{app.writer_pitch}&rdquo;
-          </p>
-        )}
       </div>
+
+      {/* ── APPLICATION RESPONSES ── */}
+      {(() => {
+        const responses = ((app as any).application_responses || {}) as Record<string, string>
+        const mediaItems = ((app as any).media_urls || []) as Array<{ type: string; url: string; filename?: string }>
+        const customQuestions = ((opp as any)?.application_questions || []) as Array<{ id: string; prompt: string }>
+
+        const UNIVERSAL_DIMS: Array<{ key: string; label: string }> = [
+          { key: 'fit_originality', label: 'Fit & originality' },
+          { key: 'market_potential', label: 'Market potential' },
+          { key: 'casting', label: 'Casting' },
+          { key: 'market_landscape', label: 'Market landscape' },
+        ]
+
+        const hasUniversal = UNIVERSAL_DIMS.some(d => responses[d.key]?.trim())
+        const hasCustom = customQuestions.some(q => responses[q.id]?.trim())
+        const hasMedia = mediaItems.length > 0
+        const hasPitch = !hasUniversal && !hasCustom && !hasMedia && app.writer_pitch
+
+        if (!hasUniversal && !hasCustom && !hasMedia && !hasPitch) return null
+
+        function getYoutubeEmbedUrl(url: string): string {
+          const watchMatch = url.match(/[?&]v=([^&]+)/)
+          if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
+          const shortMatch = url.match(/youtu\.be\/([^?]+)/)
+          if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+          return url
+        }
+
+        return (
+          <div className="mb-5">
+            <p className="text-[13px] font-bold text-gray-900 m-0 mb-2">Application</p>
+            <div className="space-y-2">
+              {UNIVERSAL_DIMS.filter(d => responses[d.key]?.trim()).map(d => (
+                <div key={d.key} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{d.label}</p>
+                  <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[d.key]}</p>
+                </div>
+              ))}
+
+              {hasPitch && (
+                <div className="rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">Pitch</p>
+                  <p className="text-[13px] text-gray-600 m-0 leading-relaxed italic">&ldquo;{app.writer_pitch}&rdquo;</p>
+                </div>
+              )}
+
+              {customQuestions.filter(q => responses[q.id]?.trim()).map(q => (
+                <div key={q.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{q.prompt}</p>
+                  <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[q.id]}</p>
+                </div>
+              ))}
+
+              {hasMedia && (
+                <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Media & references</p>
+                  <div className="space-y-2">
+                    {mediaItems.map((item, i) => (
+                      <div key={i}>
+                        {item.type === 'image' && (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={item.url} alt={item.filename || 'Image'} className="rounded-lg border border-gray-200 max-h-60 object-cover" />
+                        )}
+                        {item.type === 'youtube' && (
+                          <iframe
+                            src={getYoutubeEmbedUrl(item.url)}
+                            className="w-full rounded-lg border border-gray-200"
+                            style={{ height: '220px' }}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        )}
+                        {item.type === 'file' && (
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-[13px] text-purple-600 hover:text-purple-700 font-semibold"
+                          >
+                            ↓ {item.filename || 'Download document'}
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )
+      })()}
 
       {/* ── PRODUCER CARD (content swaps by state) ── */}
       {isReviewed ? (

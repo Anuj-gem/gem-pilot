@@ -278,16 +278,22 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
                       <p className="text-[11px] text-gray-300 m-0">Reviewed {fmtDate(app.reviewed_at)}</p>
                     )}
 
-                    {/* Reapply CTA */}
-                    <div className="border-t border-gray-100 pt-3">
+                    {/* View full + Reapply CTA */}
+                    <div className="border-t border-gray-100 pt-3 space-y-2">
+                      <Link
+                        href={`/applications/${app.id}`}
+                        className="block text-[13px] font-semibold transition-colors"
+                        style={{ color: '#7c3aed' }}
+                      >
+                        View full application →
+                      </Link>
                       {canReapply ? (
                         <div className="flex items-center justify-between">
                           <Link
                             href={`/opportunities/${opp.slug}`}
-                            className="text-[13px] font-semibold transition-colors"
-                            style={{ color: '#7c3aed' }}
+                            className="text-[13px] font-semibold transition-colors text-gray-500 hover:text-gray-700"
                           >
-                            Available to reapply →
+                            Reapply →
                           </Link>
                           {matchCount > 0 && (
                             <span className="text-[12px] font-semibold" style={{ color: '#059669' }}>
@@ -310,6 +316,15 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, stagesByApp, tota
                       <p className="text-[13px] text-gray-400 m-0">
                         Your application is under review. Feedback will appear here once it&apos;s been reviewed.
                       </p>
+                    </div>
+                    <div className="border-t border-gray-100 pt-3">
+                      <Link
+                        href={`/applications/${app.id}`}
+                        className="text-[13px] font-semibold transition-colors"
+                        style={{ color: '#7c3aed' }}
+                      >
+                        View full application →
+                      </Link>
                     </div>
                   </>
                 )}
