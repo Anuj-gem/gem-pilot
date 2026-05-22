@@ -51,17 +51,9 @@ export async function POST(request: NextRequest) {
       text = data.text?.trim() ?? ""
       numPages = data.numpages ?? 0
     } catch (parseErr: any) {
-      // pdf-parse throws on corrupt / encrypted / malformed PDFs
-      const msg = parseErr?.message ?? ""
-      if (msg.includes("bad XRef") || msg.includes("Invalid PDF")) {
-        return NextResponse.json({
-          valid: false,
-          reason: "This PDF appears to be damaged or in an unsupported format. Try re-exporting it from your writing software.",
-        })
-      }
       return NextResponse.json({
         valid: false,
-        reason: "We couldn't read this file. Make sure it's a standard PDF exported from your writing software.",
+        reason: "Upload failed. Please try again or use a different file.",
       })
     }
 
@@ -74,25 +66,9 @@ export async function POST(request: NextRequest) {
     const ratio = text.length > 0 ? readableChars.length / text.length : 0
 
     if (words.length < 500 || ratio < 0.75) {
-      // Distinguish between "actually scanned" and "too short"
-      if (ratio < 0.75 && words.length > 100) {
-        return NextResponse.json({
-          valid: false,
-          reason:
-            "This looks like a scanned PDF (image-based). We need a text-based PDF — export directly from Final Draft, WriterSolo, Highland, or Google Docs.",
-        })
-      }
-      if (words.length < 500) {
-        return NextResponse.json({
-          valid: false,
-          reason:
-            "This file doesn't contain enough text for a full evaluation. Make sure you're uploading a complete screenplay or pilot script.",
-        })
-      }
       return NextResponse.json({
         valid: false,
-        reason:
-          "We couldn't extract readable text from this PDF. Try re-exporting it from your writing software as a text-based PDF.",
+        reason: "Upload failed. Please try again or use a different file.",
       })
     }
 
@@ -104,7 +80,7 @@ export async function POST(request: NextRequest) {
   } catch (e: any) {
     console.error("validate-pdf error:", e)
     return NextResponse.json(
-      { valid: false, reason: "Something went wrong checking your file. Please try again." },
+      { valid: false, reason: "Upload failed. Please try again or use a different file." },
       { status: 500 }
     )
   }
