@@ -6,7 +6,6 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import { TagFeedbackForm } from '@/components/review/tag-feedback-form'
-import { ReviewerNotesForm } from '@/components/review/reviewer-notes-form'
 
 export const dynamic = 'force-dynamic'
 
@@ -261,12 +260,6 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
         )
       })()}
 
-      {/* Reviewer strengths / concerns */}
-      <ReviewerNotesForm
-        considerationId={app.id}
-        initialStrengths={(app as any).reviewer_strengths || ''}
-        initialConcerns={(app as any).reviewer_concerns || ''}
-      />
 
       {/* Writer's response to feedback */}
       {app.writer_response && (

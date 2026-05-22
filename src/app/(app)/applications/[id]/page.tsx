@@ -318,24 +318,16 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
           className="rounded-xl px-5 py-5 mb-4"
           style={{ background: 'white', border: '1px solid #e5e7eb' }}
         >
-          {/* Feedback */}
-          <p className="text-[13px] font-semibold text-gray-900 m-0 mb-2">Feedback</p>
-          {app.feedback ? (
-            <p className="text-[13px] text-gray-600 m-0 mb-4 leading-relaxed">{app.feedback}</p>
-          ) : (
-            <p className="text-[13px] text-gray-400 m-0 mb-4">No additional feedback was provided.</p>
-          )}
-
-          {/* Next steps tags */}
-          {app.next_steps_tags && app.next_steps_tags.length > 0 && (
-            <div>
-              <p className="text-[12px] font-semibold text-gray-900 m-0 mb-2">Suggested next steps</p>
+          {/* What stood out */}
+          {app.feedback_tags && app.feedback_tags.length > 0 && (
+            <div className="mb-4">
+              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1.5">What stood out</p>
               <div className="flex flex-wrap gap-1.5">
-                {app.next_steps_tags.map((tag: string) => (
+                {app.feedback_tags.map((tag: string) => (
                   <span
                     key={tag}
-                    className="text-[12px] font-semibold px-3 py-1 rounded-full"
-                    style={{ background: '#d1fae5', color: '#059669' }}
+                    className="text-[12px] font-semibold px-2.5 py-1 rounded-full"
+                    style={{ background: '#ede9fe', color: '#7c3aed', border: '1px solid #c4b5fd' }}
                   >
                     {tag}
                   </span>
@@ -344,8 +336,34 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
             </div>
           )}
 
+          {/* Why passing */}
+          {app.next_steps_tags && app.next_steps_tags.length > 0 && (
+            <div className="mb-4">
+              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1.5">Why passing</p>
+              <div className="flex flex-wrap gap-1.5">
+                {app.next_steps_tags.map((tag: string) => (
+                  <span
+                    key={tag}
+                    className="text-[12px] font-semibold px-2.5 py-1 rounded-full"
+                    style={{ background: '#f3f4f6', color: '#6b7280', border: '1px solid #d1d5db' }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Feedback note */}
+          {app.feedback && (
+            <div className="mb-4">
+              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1">Note</p>
+              <p className="text-[13px] text-gray-600 m-0 leading-relaxed">{app.feedback}</p>
+            </div>
+          )}
+
           {app.reviewed_at && (
-            <p className="text-[11px] text-gray-300 m-0 mt-4">Reviewed {fmtDate(app.reviewed_at)}</p>
+            <p className="text-[11px] text-gray-300 m-0">Reviewed {fmtDate(app.reviewed_at)}</p>
           )}
         </div>
       ) : (
