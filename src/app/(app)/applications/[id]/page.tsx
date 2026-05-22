@@ -116,7 +116,8 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   // Parsed response data
   const responses = ((app as any).application_responses || {}) as Record<string, string>
-  const mediaItems = ((app as any).media_urls || []) as Array<{ type: string; url: string; filename?: string }>
+  const rawMedia = ((app as any).media_urls || []) as Array<string | { type: string; url: string; filename?: string }>
+  const mediaItems = rawMedia.map(m => typeof m === 'string' ? JSON.parse(m) : m) as Array<{ type: string; url: string; filename?: string }>
   const customQuestions = ((opp as any)?.application_questions || []) as Array<{ id: string; prompt: string }>
 
   const UNIVERSAL_DIMS: Array<{ key: string; label: string }> = [
