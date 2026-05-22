@@ -1,5 +1,5 @@
 // /applications/[id] — single application detail.
-// One consistent skeleton: back → header → stage tracker → context → producer card → heat → response.
+// Two-column layout: left = submission content, right = review status + feedback.
 
 import { redirect, notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
@@ -23,6 +23,14 @@ const ALL_STAGES = [
   { key: 'partner_match', label: 'Partner match' },
 ]
 
+function getYoutubeEmbedUrl(url: string): string {
+  const watchMatch = url.match(/[?&]v=([^&]+)/)
+  if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
+  const shortMatch = url.match(/youtu\.be\/([^?]+)/)
+  if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+  return url
+}
+
 export default async function ApplicationDetailPage({ params }: { params: { id: string } }) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -44,7 +52,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   // Load opportunity
   const { data: opp } = await service
     .from('opportunities')
-    .select('id, title, slug, description, subtitle, application_questions')
+    .select('id, title, slug, description, subtitle, application_questions, genres, formats')
     .eq('id', app.opportunity_id)
     .single()
 
@@ -56,11 +64,11 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   const scriptIds = (scriptLinks || []).map((l: { script_submission_id: string }) => l.script_submission_id)
 
-  let scripts: { id: string; title: string; score: number | null; evalId: string | null }[] = []
+  let scripts: { id: string; title: string; score: number | null; evalId: string | null; format: string | null; createdAt: string }[] = []
   if (scriptIds.length > 0) {
     const { data: subs } = await service
       .from('script_submissions')
-      .select('id, title')
+      .select('id, title, declared_format, created_at')
       .in('id', scriptIds)
     const { data: evals } = await service
       .from('script_evaluations')
@@ -72,6 +80,8 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
       title: s.title,
       score: evalMap.get(s.id)?.score ?? null,
       evalId: evalMap.get(s.id)?.evalId ?? null,
+      format: s.declared_format,
+      createdAt: s.created_at,
     }))
   }
 
@@ -83,12 +93,10 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
     .eq('event_type', 'status_change')
     .order('created_at', { ascending: true })
 
-  const stageOrder = ['in_consideration', 'shortlisted', 'partner_match']
-  const reachedStages = new Set<string>(['in_consideration']) // every application is in consideration
+  const reachedStages = new Set<string>(['in_consideration'])
   for (const ev of (evts || []) as { new_stage: string | null }[]) {
     if (ev.new_stage) reachedStages.add(ev.new_stage)
   }
-  // Also add the current review_stage
   if (app.review_stage) reachedStages.add(app.review_stage)
 
   // Load writer's total heat score
@@ -106,10 +114,32 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 
-  // Stage tracker: use reachedStages set for accurate display
+  // Parsed response data
+  const responses = ((app as any).application_responses || {}) as Record<string, string>
+  const mediaItems = ((app as any).media_urls || []) as Array<{ type: string; url: string; filename?: string }>
+  const customQuestions = ((opp as any)?.application_questions || []) as Array<{ id: string; prompt: string }>
+
+  const UNIVERSAL_DIMS: Array<{ key: string; label: string }> = [
+    { key: 'fit_originality', label: 'Fit & originality' },
+    { key: 'market_potential', label: 'Market potential' },
+    { key: 'casting', label: 'Casting' },
+    { key: 'market_landscape', label: 'Market landscape' },
+  ]
+
+  const hasMedia = mediaItems.length > 0
+
+  // Status badge
+  const STAGE_DISPLAY: Record<string, { label: string; bg: string; color: string }> = {
+    in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
+    shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
+    partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
+    complete: { label: 'Pass', bg: '#fef3c7', color: '#92400e' },
+  }
+  const displayStage = isReviewed && !isUpgraded ? 'complete' : (app.review_stage || 'in_consideration')
+  const badge = STAGE_DISPLAY[displayStage] || STAGE_DISPLAY.in_consideration
 
   return (
-    <div className="max-w-lg mx-auto">
+    <div className="max-w-4xl mx-auto">
 
       {/* ── BACK LINK ── */}
       <Link
@@ -121,339 +151,320 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
         Back to applications
       </Link>
 
-      {/* ── HEADER ── */}
-      <div className="mb-5">
-        <h1 className="text-[20px] font-bold text-gray-900 m-0 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-          {opp?.title || 'Application'}
-        </h1>
-        <p className="text-[12px] text-gray-400 m-0">Applied {fmtDate(app.submitted_at)}</p>
-      </div>
+      {/* ── TWO-COLUMN LAYOUT ── */}
+      <div className="flex flex-col lg:flex-row gap-6">
 
-      {/* ── STAGE TRACKER ── */}
-      <div className="mb-6">
-        <div className="flex items-start">
-          {ALL_STAGES.map((s, i) => {
-            const reached = reachedStages.has(s.key)
-            // Skipped = review is done but this stage was never reached
-            const isSkipped = isReviewed && !reached
-            // Is this the current active stage (for pending states)
-            const isCurrent = s.key === currentStage
+        {/* ════ LEFT COLUMN: Submission content ════ */}
+        <div className="flex-1 min-w-0">
 
-            // Find if the previous stage was reached (for connector color)
-            const prevReached = i > 0 ? reachedStages.has(ALL_STAGES[i - 1].key) : false
-
-            let circle
-            if (reached) {
-              circle = (
-                <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#7c3aed' }}>
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                    <path d="M4 8l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+          {/* Opportunity preview card */}
+          <div className="rounded-2xl bg-white overflow-hidden mb-5" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04)' }}>
+            <div className="px-5 py-4">
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[12px] font-bold px-2 py-0.5 rounded" style={{ background: '#eff6ff', color: '#1d4ed8' }}>Paid</span>
+                    <span className="text-[12px] text-gray-400">Applied {fmtDate(app.submitted_at)}</span>
+                  </div>
+                  <h1 className="text-[18px] font-bold text-gray-900 m-0 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                    {opp?.title || 'Application'}
+                  </h1>
+                  {opp?.subtitle && (
+                    <p className="text-[13px] text-gray-600 m-0 mt-1 leading-snug">{opp.subtitle}</p>
+                  )}
                 </div>
-              )
-            } else if (isSkipped) {
-              circle = (
-                <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }}>
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                    <path d="M4 4l8 8M12 4l-8 8" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </div>
-              )
-            } else {
-              circle = (
-                <div className="w-7 h-7 rounded-full" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }} />
-              )
-            }
-
-            return (
-              <div key={s.key} className="flex items-center flex-1 last:flex-initial" style={i === ALL_STAGES.length - 1 ? { flex: '0 0 auto' } : undefined}>
-                <div className="flex flex-col items-center" style={{ minWidth: 28 }}>
-                  {circle}
-                  <span
-                    className="text-[10px] mt-1.5 text-center whitespace-nowrap"
-                    style={{
-                      color: reached ? '#7c3aed' : '#9ca3af',
-                      fontWeight: isCurrent ? 600 : 500,
-                    }}
-                  >
-                    {s.label}
+                <span className="text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0" style={{ background: badge.bg, color: badge.color }}>
+                  {badge.label}
+                </span>
+              </div>
+              {/* Format + genre */}
+              <div className="flex items-center gap-3 mt-2">
+                {(opp as any)?.formats?.length > 0 && (
+                  <span className="text-[12px] text-gray-500">
+                    <span className="text-gray-400">Format:</span> {(opp as any).formats.join(', ')}
                   </span>
-                </div>
-                {i < ALL_STAGES.length - 1 && (
-                  <div
-                    className="h-0.5 flex-1 mx-1"
-                    style={{
-                      background: reached && reachedStages.has(ALL_STAGES[i + 1]?.key) ? '#7c3aed' : '#e5e7eb',
-                      marginTop: -10,
-                    }}
-                  />
+                )}
+                {(opp as any)?.genres?.length > 0 && (
+                  <span className="text-[12px] text-gray-500">
+                    <span className="text-gray-400">Genre:</span> {(opp as any).genres.slice(0, 3).join(', ')}
+                  </span>
                 )}
               </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* ── SCRIPT ── */}
-      <div className="mb-5">
-        <p className="text-[13px] font-bold text-gray-900 m-0 mb-2">Script</p>
-        {scripts.map(s => (
-          <div key={s.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3 flex items-center justify-between">
-            <span className="text-[14px] font-semibold text-gray-900">{s.title}</span>
-            <div className="flex items-center gap-3">
-              {s.score != null && (
-                <span className={`text-[13px] font-bold px-2 py-0.5 rounded ${
-                  s.score >= 80 ? 'bg-green-50 text-green-700' :
-                  s.score >= 70 ? 'bg-blue-50 text-blue-700' :
-                  'bg-yellow-50 text-yellow-700'
-                }`}>
-                  {Math.round(s.score)}
-                </span>
-              )}
-              {s.evalId && (
-                <Link href={`/report/${s.evalId}`} className="text-[13px] font-semibold" style={{ color: '#7c3aed' }}>
-                  View report →
-                </Link>
-              )}
             </div>
           </div>
-        ))}
-      </div>
 
-      {/* ── APPLICATION RESPONSES ── */}
-      {(() => {
-        const responses = ((app as any).application_responses || {}) as Record<string, string>
-        const mediaItems = ((app as any).media_urls || []) as Array<{ type: string; url: string; filename?: string }>
-        const customQuestions = ((opp as any)?.application_questions || []) as Array<{ id: string; prompt: string }>
+          {/* Media at top — most visual element first */}
+          {hasMedia && (
+            <div className="mb-5">
+              <div className="space-y-3">
+                {mediaItems.map((item, i) => (
+                  <div key={i}>
+                    {item.type === 'image' && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={item.url} alt={item.filename || 'Image'} className="rounded-xl border border-gray-200 w-full max-h-80 object-cover" />
+                    )}
+                    {item.type === 'youtube' && (
+                      <iframe
+                        src={getYoutubeEmbedUrl(item.url)}
+                        className="w-full rounded-xl border border-gray-200"
+                        style={{ height: '280px' }}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    )}
+                    {item.type === 'file' && (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-[13px] text-purple-600 hover:text-purple-700 font-semibold rounded-lg border border-gray-200 bg-white px-4 py-2.5"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        {item.filename || 'Download document'}
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
-        const UNIVERSAL_DIMS: Array<{ key: string; label: string }> = [
-          { key: 'fit_originality', label: 'Fit & originality' },
-          { key: 'market_potential', label: 'Market potential' },
-          { key: 'casting', label: 'Casting' },
-          { key: 'market_landscape', label: 'Market landscape' },
-        ]
-
-        const hasUniversal = UNIVERSAL_DIMS.some(d => responses[d.key]?.trim())
-        const hasCustom = customQuestions.some(q => responses[q.id]?.trim())
-        const hasMedia = mediaItems.length > 0
-        const hasPitch = !hasUniversal && !hasCustom && !hasMedia && app.writer_pitch
-
-        if (!hasUniversal && !hasCustom && !hasMedia && !hasPitch) return null
-
-        function getYoutubeEmbedUrl(url: string): string {
-          const watchMatch = url.match(/[?&]v=([^&]+)/)
-          if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
-          const shortMatch = url.match(/youtu\.be\/([^?]+)/)
-          if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
-          return url
-        }
-
-        return (
+          {/* Script card — richer with format + date */}
           <div className="mb-5">
-            <p className="text-[13px] font-bold text-gray-900 m-0 mb-2">Application</p>
-            <div className="space-y-2">
-              {UNIVERSAL_DIMS.filter(d => responses[d.key]?.trim()).map(d => (
-                <div key={d.key} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{d.label}</p>
-                  <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[d.key]}</p>
-                </div>
-              ))}
-
-              {hasPitch && (
-                <div className="rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3">
-                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">Pitch</p>
-                  <p className="text-[13px] text-gray-600 m-0 leading-relaxed italic">&ldquo;{app.writer_pitch}&rdquo;</p>
-                </div>
-              )}
-
-              {customQuestions.filter(q => responses[q.id]?.trim()).map(q => (
-                <div key={q.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{q.prompt}</p>
-                  <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[q.id]}</p>
-                </div>
-              ))}
-
-              {hasMedia && (
-                <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Media & references</p>
-                  <div className="space-y-2">
-                    {mediaItems.map((item, i) => (
-                      <div key={i}>
-                        {item.type === 'image' && (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={item.url} alt={item.filename || 'Image'} className="rounded-lg border border-gray-200 max-h-60 object-cover" />
-                        )}
-                        {item.type === 'youtube' && (
-                          <iframe
-                            src={getYoutubeEmbedUrl(item.url)}
-                            className="w-full rounded-lg border border-gray-200"
-                            style={{ height: '220px' }}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
-                        )}
-                        {item.type === 'file' && (
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-[13px] text-purple-600 hover:text-purple-700 font-semibold"
-                          >
-                            ↓ {item.filename || 'Download document'}
-                          </a>
-                        )}
-                      </div>
-                    ))}
+            <p className="text-[13px] font-semibold text-gray-600 m-0 mb-2">Script submitted</p>
+            {scripts.map(s => (
+              <div key={s.id} className="rounded-xl bg-white px-4 py-3.5 mb-2" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      {s.format && <span className="text-[12px] text-gray-400">{s.format === 'tv' ? 'TV Series' : 'Film'}</span>}
+                      <span className="text-[12px] text-gray-300">&middot;</span>
+                      <span className="text-[12px] text-gray-400">Uploaded {fmtDate(s.createdAt)}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    {s.score != null && (
+                      <span className={`text-[13px] font-bold px-2 py-0.5 rounded ${
+                        s.score >= 80 ? 'bg-green-50 text-green-700' :
+                        s.score >= 70 ? 'bg-blue-50 text-blue-700' :
+                        'bg-yellow-50 text-yellow-700'
+                      }`}>
+                        {Math.round(s.score)}
+                      </span>
+                    )}
+                    {s.evalId && (
+                      <Link href={`/report/${s.evalId}`} className="text-[13px] font-semibold" style={{ color: '#7c3aed' }}>
+                        View report →
+                      </Link>
+                    )}
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            ))}
           </div>
-        )
-      })()}
 
-      {/* ── PRODUCER CARD (content swaps by state) ── */}
-      {isReviewed ? (
-        <div
-          className="rounded-xl px-5 py-5 mb-4"
-          style={{ background: 'white', border: '1px solid #e5e7eb' }}
-        >
-          {/* What stood out */}
-          {app.feedback_tags && app.feedback_tags.length > 0 && (
-            <div className="mb-4">
-              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1.5">What stood out</p>
-              <div className="flex flex-wrap gap-1.5">
-                {app.feedback_tags.map((tag: string) => (
-                  <span
-                    key={tag}
-                    className="text-[12px] font-semibold px-2.5 py-1 rounded-full"
-                    style={{ background: '#ede9fe', color: '#7c3aed', border: '1px solid #c4b5fd' }}
-                  >
-                    {tag}
-                  </span>
+          {/* Application responses */}
+          {UNIVERSAL_DIMS.some(d => responses[d.key]?.trim()) && (
+            <div className="mb-5">
+              <p className="text-[13px] font-semibold text-gray-600 m-0 mb-2">Your application</p>
+              <div className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                {UNIVERSAL_DIMS.filter(d => responses[d.key]?.trim()).map((d, i, arr) => (
+                  <div key={d.key} className="px-5 py-3.5" style={i < arr.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}>
+                    <p className="text-[12px] font-semibold text-gray-400 uppercase tracking-wide m-0 mb-1">{d.label}</p>
+                    <p className="text-[14px] text-gray-700 m-0 leading-relaxed">{responses[d.key]}</p>
+                  </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Why passing */}
-          {app.next_steps_tags && app.next_steps_tags.length > 0 && (
-            <div className="mb-4">
-              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1.5">Why passing</p>
-              <div className="flex flex-wrap gap-1.5">
-                {app.next_steps_tags.map((tag: string) => (
-                  <span
-                    key={tag}
-                    className="text-[12px] font-semibold px-2.5 py-1 rounded-full"
-                    style={{ background: '#f3f4f6', color: '#6b7280', border: '1px solid #d1d5db' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
+          {/* Legacy pitch fallback */}
+          {!UNIVERSAL_DIMS.some(d => responses[d.key]?.trim()) && !customQuestions.some(q => responses[q.id]?.trim()) && !hasMedia && app.writer_pitch && (
+            <div className="mb-5">
+              <p className="text-[13px] font-semibold text-gray-600 m-0 mb-2">Your pitch</p>
+              <div className="rounded-xl bg-white px-5 py-4" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                <p className="text-[14px] text-gray-700 m-0 leading-relaxed italic">&ldquo;{app.writer_pitch}&rdquo;</p>
               </div>
             </div>
           )}
 
-          {/* Feedback note */}
-          {app.feedback && (
-            <div className="mb-4">
-              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-1">Note</p>
-              <p className="text-[13px] text-gray-600 m-0 leading-relaxed">{app.feedback}</p>
+          {/* Custom questions */}
+          {customQuestions.some(q => responses[q.id]?.trim()) && (
+            <div className="mb-5">
+              <div className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                {customQuestions.filter(q => responses[q.id]?.trim()).map((q, i, arr) => (
+                  <div key={q.id} className="px-5 py-3.5" style={i < arr.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}>
+                    <p className="text-[12px] font-semibold text-gray-400 uppercase tracking-wide m-0 mb-1">{q.prompt}</p>
+                    <p className="text-[14px] text-gray-700 m-0 leading-relaxed">{responses[q.id]}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
+        </div>
 
-          {app.reviewed_at && (
-            <p className="text-[11px] text-gray-300 m-0">Reviewed {fmtDate(app.reviewed_at)}</p>
-          )}
-        </div>
-      ) : (
-        <div
-          className="rounded-xl px-5 py-6 mb-4 text-center"
-          style={{ background: '#f9fafb', border: '1px solid #e5e7eb' }}
-        >
-          <p className="text-[13px] text-gray-400 m-0 leading-relaxed">
-            Your application is under review.<br />
-            Feedback will appear here once it&apos;s been reviewed.
-          </p>
-        </div>
-      )}
+        {/* ════ RIGHT COLUMN: Review status + feedback ════ */}
+        <div className="lg:w-[320px] shrink-0">
+          <div className="lg:sticky lg:top-6 space-y-4">
 
-      {/* ── HEAT SECTION ── */}
-      {isReviewed && app.heat_earned > 0 ? (
-        <div
-          className="rounded-xl px-5 py-4 mb-5"
-          style={{ background: '#fff7ed' }}
-        >
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="text-[16px]">🔥</span>
-            <span className="text-[18px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} heat</span>
-          </div>
-          <div className="flex items-center justify-between mt-2">
-            <p className="text-[12px] m-0 leading-relaxed" style={{ color: '#9a3412' }}>
-              This application earned {app.heat_earned} heat on your score. Your total: {totalHeat} heat.
-            </p>
-            <Link href="/dashboard" className="text-[12px] font-semibold shrink-0 ml-3" style={{ color: '#ea580c' }}>
-              View dashboard
-            </Link>
-          </div>
-        </div>
-      ) : isReviewed ? (
-        <div
-          className="rounded-xl px-5 py-4 mb-5"
-          style={{ background: '#f9fafb' }}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[16px]">🔥</span>
-              <span className="text-[15px] font-semibold text-gray-400">+0 heat</span>
+            {/* Stage tracker */}
+            <div className="rounded-xl bg-white px-5 py-4" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+              <p className="text-[12px] font-semibold text-gray-600 m-0 mb-3">Review progress</p>
+              <div className="flex items-start">
+                {ALL_STAGES.map((s, i) => {
+                  const reached = reachedStages.has(s.key)
+                  const isSkipped = isReviewed && !reached
+
+                  let circle
+                  if (reached) {
+                    circle = (
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#7c3aed' }}>
+                        <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                          <path d="M4 8l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    )
+                  } else if (isSkipped) {
+                    circle = (
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }}>
+                        <svg width="8" height="8" viewBox="0 0 16 16" fill="none">
+                          <path d="M4 4l8 8M12 4l-8 8" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+                      </div>
+                    )
+                  } else {
+                    circle = (
+                      <div className="w-6 h-6 rounded-full" style={{ background: '#f3f4f6', border: '2px solid #d1d5db' }} />
+                    )
+                  }
+
+                  return (
+                    <div key={s.key} className="flex items-center flex-1 last:flex-initial" style={i === ALL_STAGES.length - 1 ? { flex: '0 0 auto' } : undefined}>
+                      <div className="flex flex-col items-center" style={{ minWidth: 24 }}>
+                        {circle}
+                        <span className="text-[9px] mt-1 text-center whitespace-nowrap" style={{ color: reached ? '#7c3aed' : '#9ca3af', fontWeight: reached ? 600 : 500 }}>
+                          {s.label}
+                        </span>
+                      </div>
+                      {i < ALL_STAGES.length - 1 && (
+                        <div className="h-0.5 flex-1 mx-0.5" style={{ background: reached && reachedStages.has(ALL_STAGES[i + 1]?.key) ? '#7c3aed' : '#e5e7eb', marginTop: -10 }} />
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
             </div>
-            <Link href="/dashboard" className="text-[12px] font-semibold text-gray-400 hover:text-gray-600">
-              View dashboard
-            </Link>
-          </div>
-          <p className="text-[12px] text-gray-400 m-0 mt-1.5 leading-relaxed">
-            No heat was earned on this application. Your total heat score: {totalHeat}.
-          </p>
-        </div>
-      ) : (
-        <div
-          className="rounded-xl px-5 py-4 mb-5"
-          style={{ background: '#f9fafb' }}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[16px]">🔥</span>
-              <span className="text-[15px] font-semibold text-gray-400">&mdash; heat</span>
-            </div>
-            <Link href="/dashboard" className="text-[12px] font-semibold text-gray-400 hover:text-gray-600">
-              View dashboard
-            </Link>
-          </div>
-          <p className="text-[12px] text-gray-400 m-0 mt-1.5 leading-relaxed">
-            Heat is earned when your application is reviewed. Your total heat score: {totalHeat}.
-          </p>
-        </div>
-      )}
 
-      {/* ── WRITER RESPONSE ── */}
-      {isReviewed && (
-        <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: 16 }}>
-          {app.writer_response ? (
-            <div>
-              <p className="text-[13px] font-semibold text-gray-900 m-0 mb-2">Your response</p>
-              <div
-                className="rounded-xl bg-white px-4 py-3"
-                style={{ border: '1px solid #e5e7eb' }}
+            {/* Feedback card */}
+            {isReviewed ? (
+              <div className="rounded-xl bg-white px-5 py-4" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                <p className="text-[12px] font-semibold text-gray-600 m-0 mb-3">Feedback</p>
+
+                {app.feedback_tags && app.feedback_tags.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1.5">What stood out</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {app.feedback_tags.map((tag: string) => (
+                        <span key={tag} className="text-[12px] font-semibold px-2.5 py-1 rounded-full" style={{ background: '#ede9fe', color: '#7c3aed', border: '1px solid #c4b5fd' }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {app.next_steps_tags && app.next_steps_tags.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1.5">Why passing</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {app.next_steps_tags.map((tag: string) => (
+                        <span key={tag} className="text-[12px] font-semibold px-2.5 py-1 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280', border: '1px solid #d1d5db' }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {app.feedback && (
+                  <div className="mb-3">
+                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1">Note</p>
+                    <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.feedback}</p>
+                  </div>
+                )}
+
+                {app.reviewed_at && (
+                  <p className="text-[11px] text-gray-300 m-0">Reviewed {fmtDate(app.reviewed_at)}</p>
+                )}
+              </div>
+            ) : (
+              <div className="rounded-xl bg-white px-5 py-5 text-center" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                <p className="text-[13px] text-gray-400 m-0 leading-relaxed">
+                  Your application is under review. Feedback will appear here once reviewed.
+                </p>
+              </div>
+            )}
+
+            {/* Heat */}
+            {isReviewed && app.heat_earned > 0 ? (
+              <div className="rounded-xl px-5 py-3.5" style={{ background: '#fff7ed', boxShadow: '0 0 0 1px rgba(234,88,12,0.1)' }}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[14px]">🔥</span>
+                    <span className="text-[16px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} heat</span>
+                  </div>
+                  <Link href="/dashboard" className="text-[12px] font-semibold shrink-0" style={{ color: '#ea580c' }}>
+                    Dashboard →
+                  </Link>
+                </div>
+                <p className="text-[12px] m-0 mt-1" style={{ color: '#9a3412' }}>
+                  Total: {totalHeat} heat
+                </p>
+              </div>
+            ) : isReviewed ? (
+              <div className="rounded-xl px-5 py-3" style={{ background: '#f9fafb' }}>
+                <div className="flex items-center justify-between">
+                  <span className="text-[13px] text-gray-400">🔥 +0 heat</span>
+                  <Link href="/dashboard" className="text-[12px] font-semibold text-gray-400 hover:text-gray-600">Dashboard →</Link>
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-xl px-5 py-3" style={{ background: '#f9fafb' }}>
+                <div className="flex items-center justify-between">
+                  <span className="text-[13px] text-gray-400">🔥 — heat</span>
+                  <Link href="/dashboard" className="text-[12px] font-semibold text-gray-400 hover:text-gray-600">Dashboard →</Link>
+                </div>
+              </div>
+            )}
+
+            {/* Writer response */}
+            {isReviewed && (
+              <div>
+                {app.writer_response ? (
+                  <div className="rounded-xl bg-white px-5 py-4" style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)' }}>
+                    <p className="text-[12px] font-semibold text-gray-600 m-0 mb-2">Your response</p>
+                    <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.writer_response}</p>
+                  </div>
+                ) : (
+                  <ApplicationReply applicationId={app.id} />
+                )}
+              </div>
+            )}
+
+            {/* Reapply CTA */}
+            {isReviewed && opp?.slug && (
+              <Link
+                href={`/opportunities/${opp.slug}/apply`}
+                className="block text-center text-[13px] font-semibold text-purple-600 hover:text-purple-800 py-2 transition-colors"
               >
-                <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.writer_response}</p>
-              </div>
-            </div>
-          ) : (
-            <ApplicationReply applicationId={app.id} />
-          )}
-        </div>
-      )}
+                Reapply to this opportunity →
+              </Link>
+            )}
 
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
