@@ -28,6 +28,7 @@ import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { InsiderGateModal } from '@/components/discover/insider-gate-modal'
 import { SignupGateModal } from '@/components/dashboard/signup-gate-modal'
+import { IntercomIdentity } from '@/components/intercom-identity'
 
 function svc() {
   return createServerClient(
@@ -240,6 +241,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <ScriptUploadModal redirectTo="/dashboard" guestEvalsUsed={isPro ? undefined : (totalSubmissions ?? 0)} />
       {!isPro && <UpgradeModalListener evalsUsed={totalSubmissions ?? 0} appsUsed={appCount ?? 0} />}
       <InsiderGateModal />
+      <IntercomIdentity
+        name={profile?.full_name}
+        email={user.email}
+        userId={user.id}
+      />
     </div>
   )
 }
