@@ -49,6 +49,8 @@ export type TemplateAlias =
   | 'new_opportunity_broadcast'
   // Review complete — sent when a consideration review is finished.
   | 'consideration_complete'
+  // Review complete (no heat) — pass with zero heat earned.
+  | 'consideration_complete_no_heat'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias
