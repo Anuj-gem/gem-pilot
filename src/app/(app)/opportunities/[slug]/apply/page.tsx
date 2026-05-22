@@ -364,28 +364,6 @@ export default function ApplyPage() {
         </div>
       </div>
 
-      {/* Previous applications notice */}
-      {previouslyConsidered.length > 0 && (
-        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-          <p className="text-[13px] text-gray-700 m-0 mb-2">
-            You've applied to this opportunity <strong>{previouslyConsidered.length} {previouslyConsidered.length === 1 ? 'time' : 'times'}</strong> before with:
-          </p>
-          <div className="space-y-1">
-            {previouslyConsidered.map(s => (
-              <div key={s.id} className="flex items-center gap-2">
-                <span className="text-[12px] text-gray-400">•</span>
-                {s.evalId ? (
-                  <Link href={`/report/${s.evalId}`} className="text-[13px] text-purple-600 hover:text-purple-800 font-medium truncate">
-                    {s.title}
-                  </Link>
-                ) : (
-                  <span className="text-[13px] text-gray-700 font-medium truncate">{s.title}</span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Script selection — single select */}
       <div>
@@ -440,17 +418,17 @@ export default function ApplyPage() {
             </div>
             {previouslyConsidered.length > 0 && (
               <div className="mt-3 space-y-2">
-                <p className="text-[11px] text-gray-600 font-semibold uppercase tracking-wide m-0">Already considered</p>
+                <Link href="/applications" className="text-[11px] text-purple-600 hover:text-purple-800 font-semibold uppercase tracking-wide m-0">Already considered · View feedback →</Link>
                 {previouslyConsidered.map(s => (
                   <div
                     key={s.id}
-                    className="w-full text-left rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 opacity-60"
+                    className="w-full text-left rounded-xl border border-gray-200 bg-gray-50 px-4 py-3"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 rounded-full border-2 border-gray-200 shrink-0" />
+                      <div className="w-4 h-4 rounded-full border-2 border-gray-300 shrink-0" />
                       <div className="min-w-0 flex-1">
-                        <p className="text-[13px] font-semibold text-gray-500 m-0 truncate">{s.title}</p>
-                        <p className="text-[11px] text-gray-500 m-0 mt-0.5">Previously reviewed for this opportunity</p>
+                        <p className="text-[13px] font-semibold text-gray-700 m-0 truncate">{s.title}</p>
+                        <p className="text-[11px] text-gray-600 m-0 mt-0.5">Previously reviewed for this opportunity</p>
                       </div>
                     </div>
                   </div>
