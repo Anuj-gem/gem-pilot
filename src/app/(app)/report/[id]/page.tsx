@@ -750,19 +750,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* RERUN BANNER — shown to owner when eval is stale */}
         {isStaleEval && <RerunBanner submissionId={submission.id} />}
 
-        {/* PLOT SUMMARY (v3.9+) — collapsible */}
-        {plotSummary && (
-          <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-          <Collapsible title={contentDescription ?? 'Plot Summary'}>
-            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 max-w-[62ch]">
-              {plotSummary}
-            </p>
-          </Collapsible>
-          </div>
-        )}
-
-        {/* WHY THIS CAN BE A HIT — lede paragraph only (pitch section).
-            Numbered reasons moved to GEM Analysis below. */}
+        {/* ELEVATOR PITCH — combined pitch headline + plot summary */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
@@ -771,13 +759,24 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
           isProSubscriber={true}
         >
-          {whatsSpecial.headline && (
+          {(whatsSpecial.headline || plotSummary) && (
             <div data-pdf-section="whats_working" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-            <EditorialSection label="Why this can be a hit" accent="gold">
-              <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[62ch] font-medium">
-                {whatsSpecial.headline}
-              </p>
-            </EditorialSection>
+              <EditorialSection label="Elevator Pitch" accent="gold">
+                {whatsSpecial.headline && (
+                  <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[62ch] font-medium">
+                    {whatsSpecial.headline}
+                  </p>
+                )}
+                {plotSummary && (
+                  <div className="mt-5">
+                    <Collapsible title="Detailed Plot Summary" defaultOpen={false}>
+                      <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 max-w-[62ch]">
+                        {plotSummary}
+                      </p>
+                    </Collapsible>
+                  </div>
+                )}
+              </EditorialSection>
             </div>
           )}
         </SectionGate>
