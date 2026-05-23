@@ -13,7 +13,7 @@ import { useState } from 'react'
 const TABS = [
   { id: 'overview', label: 'Overview' },
   { id: 'narrative', label: 'Narrative Analysis' },
-  { id: 'production', label: 'Production & Development' },
+  { id: 'production', label: 'Cost' },
   { id: 'audience', label: 'Audience & Distribution' },
 ] as const
 

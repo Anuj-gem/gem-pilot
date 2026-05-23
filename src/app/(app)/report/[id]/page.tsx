@@ -65,7 +65,7 @@ import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
 import { RerunBanner } from '@/components/report/rerun-banner'
 import { RiskDetailsSection } from '@/components/report/risk-details-card'
 // Annotations removed — synthesized feedback + next-steps tag instead.
-import { PackagingSection } from '@/components/report/packaging-block'
+import { PackagingSection, BudgetTierCard } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
 // Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
 // industry partner views this report. The surface is the same as the
@@ -1142,7 +1142,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )}
           </div>
 
-          {/* ── TAB: PRODUCTION & DEVELOPMENT ── */}
+          {/* ── TAB: COST ── */}
           <div className="gem-tab-panel space-y-5" data-tab="production">
             {riskDetails && (
               <SectionGate
@@ -1162,6 +1162,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <RiskDetailsSection data={riskDetails} production={production} />
                 </div>
               </SectionGate>
+            )}
+            {packaging?.budget_tier && (
+              <div
+                className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
+                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                aria-hidden={applyPaywallBlur ? true : undefined}
+              >
+                <BudgetTierCard tier={packaging.budget_tier} />
+              </div>
             )}
           </div>
 

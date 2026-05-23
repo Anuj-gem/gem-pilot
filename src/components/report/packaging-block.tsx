@@ -33,9 +33,8 @@ export function PackagingSection({ data }: Props) {
           interpret it as a market knock. The prompt still emits
           `ip_potential` so the data stays on the eval row; resurrect the
           card from git history if we ever surface this signal again. */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div>
         <AudienceCard target={data.audience_target} />
-        <BudgetTierCard tier={data.budget_tier} />
       </div>
     </Section>
   )
@@ -121,7 +120,7 @@ function AudienceCard({ target }: { target: Packaging['audience_target'] }) {
   )
 }
 
-function BudgetTierCard({ tier }: { tier: Packaging['budget_tier'] }) {
+export function BudgetTierCard({ tier }: { tier: Packaging['budget_tier'] }) {
   // Series evals (Selznick 3.8+) emit per_episode + season_total. Feature
   // evals just have `range`. Teaser shows tier + the most useful single
   // amount (per-episode for series, range for features). Detail panel

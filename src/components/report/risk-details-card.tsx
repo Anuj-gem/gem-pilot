@@ -79,17 +79,17 @@ function ComplexityCard({
   // red-100.
   const pill =
     axis.level === 'low'
-      ? { bg: '#d1fae5', fg: 'var(--gem-gray-50)', border: '#10b981' }
+      ? { bg: 'rgba(16,185,129,0.15)', fg: '#6ee7b7', border: 'rgba(16,185,129,0.4)' }
       : axis.level === 'medium'
-        ? { bg: '#fef9c3', fg: 'var(--gem-gray-50)', border: '#facc15' }
-        : { bg: '#fee2e2', fg: 'var(--gem-gray-50)', border: '#ef4444' }
+        ? { bg: 'rgba(250,204,21,0.15)', fg: '#fde68a', border: 'rgba(250,204,21,0.4)' }
+        : { bg: 'rgba(239,68,68,0.15)', fg: '#fca5a5', border: 'rgba(239,68,68,0.4)' }
   const palette = {
     border: 'var(--gem-gray-700)',
   }
   return (
     <div
       className="rounded-xl p-5 flex flex-col"
-      style={{ border: `1px solid ${palette.border}`, background: '#fff' }}
+      style={{ border: `1px solid ${palette.border}`, background: 'rgba(255,255,255,0.04)' }}
     >
       <div className="flex items-baseline justify-between gap-2 mb-3">
         <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
