@@ -11,13 +11,10 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import {
   Pencil,
   Download,
-  Trash2,
 } from 'lucide-react'
-import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
 import { useEditContextOptional } from './edit-context'
 import {
@@ -74,10 +71,7 @@ export function OwnerActionsMenu({
   showScore,
   reportSections,
 }: Props) {
-  const router = useRouter()
   const editCtx = useEditContextOptional()
-  const [removeConfirm, setRemoveConfirm] = useState(false)
-  const [removing, setRemoving] = useState(false)
   const [activityOpen, setActivityOpen] = useState(false)
   const [privacyOpen, setPrivacyOpen] = useState(false)
   // Avoid unused param warnings for `evaluationId` and `title` — they're
@@ -110,25 +104,6 @@ export function OwnerActionsMenu({
     // The dashboard variant of this menu sets `editHref` to
     // /report/[id]?download=1, which the host auto-opens.
     window.dispatchEvent(new CustomEvent('gem:open-download-pdf'))
-  }
-
-  async function confirmRemove() {
-    setRemoving(true)
-    try {
-      const res = await fetch(`/api/submissions/${submissionId}/hide`, {
-        method: 'POST',
-      })
-      if (res.ok) {
-        router.push('/dashboard')
-        router.refresh()
-        return
-      }
-    } catch {
-      /* fall through */
-    } finally {
-      setRemoving(false)
-      setRemoveConfirm(false)
-    }
   }
 
   const baseBtnClass =
@@ -180,28 +155,7 @@ export function OwnerActionsMenu({
         </button>
       )}
 
-      {/* Delete */}
-      <button
-        type="button"
-        onClick={() => setRemoveConfirm(true)}
-        className={`${baseBtnClass} text-white border-[var(--gem-gray-600)] hover:border-red-400 hover:text-red-400`}
-        title="Remove this script"
-      >
-        <Trash2 size={14} />
-        <span className="hidden sm:inline">Delete</span>
-      </button>
-
-      <PrivacyConfirmSheet
-        open={removeConfirm}
-        title="Remove this script?"
-        body="It will be hidden from your dashboard and from any industry partners who matched it. You can&rsquo;t undo this."
-        confirmLabel="Remove"
-        cancelLabel="Keep it"
-        tone="danger"
-        busy={removing}
-        onConfirm={confirmRemove}
-        onClose={() => setRemoveConfirm(false)}
-      />
+      {/* Delete moved to DangerZoneDelete at page bottom */}
 
       {activity !== undefined && (
         <IndustryActivitySheet

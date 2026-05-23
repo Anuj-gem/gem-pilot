@@ -58,6 +58,7 @@ import { EditWrapper } from '@/components/report/edit-wrapper'
 import { InlineCastField } from '@/components/report/inline-cast-editor'
 import { InlineElevatorPitch } from '@/components/report/inline-elevator-pitch'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
+import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
 import { PosterImage } from '@/components/report/poster-image'
 import MediaGallery from '@/components/report/media-gallery'
 import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
@@ -610,18 +611,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               isOwner={isOwner}
             />
 
-            {/* Info column — `relative` so the absolutely-positioned
-               OwnerActionsMenu resolves against this column, not the
-               flex row. `pt-12` pushes the title below the button row. */}
-            <div className="flex-1 min-w-0 relative pt-12">
-              {/* Owner actions menu — top right corner.
-                 z-20 required: this container is `absolute` resolved against
-                 the flex row parent (line 586 `relative`). EditableTopCard
-                 below is `position:relative` and later in the DOM, so its
-                 content (title row, score badge) paints ON TOP of these
-                 buttons by default stacking order — eating all clicks. */}
+            {/* Info column */}
+            <div className="flex-1 min-w-0 relative">
+              {/* Owner actions — sticky so Edit + Download follow the user
+                 as they scroll through the report. z-30 keeps them above
+                 all section content. */}
               {(isOwner || isAdmin) && (
-                <div className="gem-no-print absolute top-0 right-0 z-20">
+                <div className="gem-no-print sticky top-4 z-30 flex justify-end mb-2">
                   <OwnerActionsMenu
                     submissionId={submission.id}
                     evaluationId={id}
@@ -1361,6 +1357,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {/* opportunities-v1: reach-out panel + sticky Interested/Pass bar removed.
           Producer interaction now flows through /producer/opportunities. */}
+
+      {/* Danger Zone — delete lives at the very bottom, deprioritized */}
+      {(isOwner || isAdmin) && (
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <DangerZoneDelete submissionId={submission.id} />
+        </div>
+      )}
 
       </EditWrapper>
     </>
