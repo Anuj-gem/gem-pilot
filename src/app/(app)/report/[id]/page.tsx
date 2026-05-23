@@ -56,6 +56,7 @@ import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { PosterImage } from '@/components/report/poster-image'
 import MediaGallery from '@/components/report/media-gallery'
+import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
 // ScriptPrivacySheet. The dashboard surface still uses it.
@@ -845,43 +846,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* ═══ GEM ANALYSIS — collapsible group ═══ */}
-        <details open className="gem-analysis-group [&>summary::-webkit-details-marker]:hidden mt-10">
-          <summary className="cursor-pointer list-none mb-6">
-            <div className="flex items-center gap-4">
-              <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
-              <div className="flex items-center gap-2 shrink-0">
-                <span
-                  className="text-[11px] uppercase tracking-[0.25em] font-bold"
-                  style={{ color: 'var(--gem-accent)' }}
-                >
-                  GEM Analysis
-                </span>
-                <span
-                  aria-hidden
-                  className="text-[var(--gem-gray-400)] text-[12px] transition-transform duration-200"
-                  style={{ display: 'inline-block' }}
-                >
-                  ▾
-                </span>
-              </div>
-              <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
-            </div>
-          </summary>
+        {/* ═══ GEM ANALYSIS — tabbed card ═══ */}
+        <GemAnalysisTabs>
 
-          <div className="space-y-8">
+          {/* ── TAB: OVERVIEW ── */}
+          <div className="gem-tab-panel space-y-6" data-tab="overview">
 
-          {/* ── NARRATIVE ANALYSIS ── */}
-          <details open className="gem-subsection [&>summary::-webkit-details-marker]:hidden">
-            <summary className="cursor-pointer list-none flex items-center justify-between gap-3 py-3 px-1 mb-3">
-              <span className="text-[13px] uppercase tracking-[0.18em] font-bold" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Narrative Analysis
-              </span>
-              <span aria-hidden className="text-[var(--gem-gray-500)] text-[12px]">▾</span>
-            </summary>
-            <div className="space-y-5">
-
-        {/* NUMBERED STRENGTHS — moved from pitch to analysis */}
+        {/* NUMBERED STRENGTHS */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
@@ -938,57 +909,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
         </SectionGate>
-            </div>
-          </details>
-          {/* /Narrative Analysis */}
-
-          {/* ── MARKETABILITY & DISTRIBUTION ── */}
-          <details open className="gem-subsection [&>summary::-webkit-details-marker]:hidden">
-            <summary className="cursor-pointer list-none flex items-center justify-between gap-3 py-3 px-1 mb-3">
-              <span className="text-[13px] uppercase tracking-[0.18em] font-bold" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Marketability &amp; Distribution
-              </span>
-              <span aria-hidden className="text-[var(--gem-gray-500)] text-[12px]">▾</span>
-            </summary>
-            <div className="space-y-5">
-
-        {/* PACKAGE ANGLES + PACKAGING — both fall under the
-            "packaging" PDF section toggle. */}
-        <SectionGate
-          section="deep_dive_package"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-          isProSubscriber={true}
-        >
-          <div data-pdf-section="packaging" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-            {/* PACKAGING — modern card UI. Renders for every eval; the
-                bridge derives this shape from legacy `package_angles` +
-                `platform_fit` when the eval is from the older prompt. */}
-            {packaging && (
-              <div
-                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                aria-hidden={applyPaywallBlur ? true : undefined}
-              >
-                <PackagingSection data={packaging} />
-              </div>
-            )}
-          </div>
-        </SectionGate>
-            </div>
-          </details>
-          {/* /Marketability & Distribution */}
-
-          {/* ── PRODUCTION & BUDGET ── */}
-          <details open className="gem-subsection [&>summary::-webkit-details-marker]:hidden">
-            <summary className="cursor-pointer list-none flex items-center justify-between gap-3 py-3 px-1 mb-3">
-              <span className="text-[13px] uppercase tracking-[0.18em] font-bold" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Production &amp; Budget
-              </span>
-              <span aria-hidden className="text-[var(--gem-gray-500)] text-[12px]">▾</span>
-            </summary>
-            <div className="space-y-5">
+        {/* DEVELOPMENT CONSIDERATIONS — weaknesses in Overview tab */}
 
         {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
             craft note as an inline callout, then all other considerations.
@@ -1123,40 +1044,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </SectionGate>
         )}
 
-        {/* PROJECT COMPLEXITY — modern card UI. Renders for every eval;
-            the bridge derives this shape from legacy
-            `production.risk_rubric` when the eval is from the older
-            prompt. */}
-        {riskDetails && (
-          <SectionGate
-            section="project_complexity"
-            privacy={privacy}
-            isOwnerOrAdmin={isOwnerOrAdmin}
-            submissionId={privacyControlId}
-            isPublic={submission.is_public ?? false}
-            isProSubscriber={true}
-          >
-            <div
-              data-pdf-section="project_complexity"
-              className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
-              style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-              aria-hidden={applyPaywallBlur ? true : undefined}
-            >
-              <RiskDetailsSection data={riskDetails} production={production} />
-            </div>
-          </SectionGate>
-        )}
-            </div>
-          </details>
-          {/* /Production & Budget */}
-
-        {/* OVERALL GEM SCORE — moved here from the top-of-page badge
-            (Anuj 2026-04-29). The score now lives at the bottom of the
-            editorial flow, after Why this is a hit / Cast / Packaging /
-            Project Complexity. Reader has to actually scroll to it,
-            which means the first impression is the WORK, not a number.
-            Owner / admin always see it. Non-owners see it only when the
-            writer hasn't toggled the score-eye off. */}
+        {/* OVERALL GEM SCORE — in Overview tab */}
         {typeof commercialScore === 'number' &&
           (isOwnerOrAdmin || isScoreVisible(privacy)) && (
             <section
@@ -1221,52 +1109,86 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   )}
                 </div>
               </div>
-
-              {/* Additional scoring dimensions — folded under the score so
-                  the read defaults to the headline number, with the math
-                  one click away. Anuj 2026-04-30 v0.10.19: renamed from
-                  "per-dimension breakdown" to plain language a normal
-                  reader can parse. */}
-              {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-                <details className="group mt-5 [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="cursor-pointer list-none">
-                    <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-accent)] hover:text-[var(--gem-accent-hover)] transition-colors">
-                      See additional scoring dimensions
-                      <span
-                        aria-hidden
-                        className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                      >
-                        ▾
-                      </span>
-                    </span>
-                    <p className="text-[12px] text-[var(--gem-gray-400)] m-0 mt-1 leading-snug max-w-[56ch]">
-                      In addition to everything above, these are other factors we score your script on that contribute to your overall score.
-                    </p>
-                  </summary>
-                  <div className="mt-4 space-y-3">
-                    {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
-                      const s = scores?.[dimId]
-                      if (typeof s?.score !== 'number') return null
-                      const meta = DIMENSION_META[dimId]
-                      return (
-                        <DimensionRow
-                          key={dimId}
-                          label={meta.label}
-                          score={s.score}
-                          reasoning={s.reasoning}
-                          locked={applyPaywallBlur}
-                        />
-                      )
-                    })}
-                  </div>
-                </details>
-              )}
             </section>
           )}
 
           </div>
-        </details>
-        {/* /GEM Analysis group */}
+          {/* /Overview tab */}
+
+          {/* ── TAB: NARRATIVE ANALYSIS ── */}
+          <div className="gem-tab-panel space-y-3" data-tab="narrative">
+            {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
+              <>
+                <p className="text-[12px] text-[var(--gem-gray-400)] m-0 leading-snug max-w-[56ch]">
+                  In addition to the overall score, these are the individual dimensions we evaluate your script on.
+                </p>
+                <div className="space-y-3">
+                  {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+                    const s = scores?.[dimId]
+                    if (typeof s?.score !== 'number') return null
+                    const meta = DIMENSION_META[dimId]
+                    return (
+                      <DimensionRow
+                        key={dimId}
+                        label={meta.label}
+                        score={s.score}
+                        reasoning={s.reasoning}
+                        locked={applyPaywallBlur}
+                      />
+                    )
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* ── TAB: PRODUCTION & DEVELOPMENT ── */}
+          <div className="gem-tab-panel space-y-5" data-tab="production">
+            {riskDetails && (
+              <SectionGate
+                section="project_complexity"
+                privacy={privacy}
+                isOwnerOrAdmin={isOwnerOrAdmin}
+                submissionId={privacyControlId}
+                isPublic={submission.is_public ?? false}
+                isProSubscriber={true}
+              >
+                <div
+                  data-pdf-section="project_complexity"
+                  className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
+                  style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                  aria-hidden={applyPaywallBlur ? true : undefined}
+                >
+                  <RiskDetailsSection data={riskDetails} production={production} />
+                </div>
+              </SectionGate>
+            )}
+          </div>
+
+          {/* ── TAB: AUDIENCE & DISTRIBUTION ── */}
+          <div className="gem-tab-panel space-y-5" data-tab="audience">
+            <SectionGate
+              section="deep_dive_package"
+              privacy={privacy}
+              isOwnerOrAdmin={isOwnerOrAdmin}
+              submissionId={privacyControlId}
+              isPublic={submission.is_public ?? false}
+              isProSubscriber={true}
+            >
+              <div data-pdf-section="packaging" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
+                {packaging && (
+                  <div
+                    style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                    aria-hidden={applyPaywallBlur ? true : undefined}
+                  >
+                    <PackagingSection data={packaging} />
+                  </div>
+                )}
+              </div>
+            </SectionGate>
+          </div>
+
+        </GemAnalysisTabs>
 
         {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
             the Development Priorities EditorialSection above, which now
