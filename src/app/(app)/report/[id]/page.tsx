@@ -591,11 +591,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               isOwner={isOwner}
             />
 
-            {/* Info column */}
-            <div className="flex-1 min-w-0">
-              {/* Owner actions menu — top right corner */}
+            {/* Info column — `relative` so the absolutely-positioned
+               OwnerActionsMenu resolves against this column, not the
+               flex row. `pt-12` pushes the title below the button row. */}
+            <div className="flex-1 min-w-0 relative pt-12">
+              {/* Owner actions menu — top right corner.
+                 z-20 required: this container is `absolute` resolved against
+                 the flex row parent (line 586 `relative`). EditableTopCard
+                 below is `position:relative` and later in the DOM, so its
+                 content (title row, score badge) paints ON TOP of these
+                 buttons by default stacking order — eating all clicks. */}
               {(isOwner || isAdmin) && (
-                <div className="gem-no-print absolute top-0 right-0">
+                <div className="gem-no-print absolute top-0 right-0 z-20">
                   <OwnerActionsMenu
                     submissionId={submission.id}
                     evaluationId={id}
