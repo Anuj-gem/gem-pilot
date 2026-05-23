@@ -172,6 +172,44 @@ export async function POST(
       }
     }
 
+    // 5b. Characters — optional array of {name, hook, demographics, role_type}
+    if ('characters' in body) {
+      const raw = body.characters
+      if (raw === null || raw === undefined || (Array.isArray(raw) && raw.length === 0)) {
+        delete (next as any).characters
+      } else if (
+        !Array.isArray(raw) ||
+        !raw.every(
+          (c: any) =>
+            typeof c === 'object' &&
+            typeof c.name === 'string' &&
+            typeof c.hook === 'string' &&
+            typeof c.demographics === 'string' &&
+            typeof c.role_type === 'string' &&
+            c.name.length <= MAX_STR &&
+            c.hook.length <= MAX_STR &&
+            c.demographics.length <= MAX_STR
+        )
+      ) {
+        return NextResponse.json(
+          { error: 'characters must be an array of {name, hook, demographics, role_type}.' },
+          { status: 400 }
+        )
+      } else if (raw.length > 20) {
+        return NextResponse.json(
+          { error: 'Too many characters (max 20).' },
+          { status: 400 }
+        )
+      } else {
+        ;(next as any).characters = raw.map((c: any) => ({
+          name: c.name.trim(),
+          hook: c.hook.trim(),
+          demographics: c.demographics.trim(),
+          role_type: c.role_type.trim(),
+        }))
+      }
+    }
+
     // 6. Title (separate table) — optional
     let titleChanged = false
     if ('title' in body) {

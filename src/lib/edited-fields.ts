@@ -18,6 +18,14 @@
 
 import type { GEMEvaluation } from '@/types'
 
+/** Shape of a single cast character edit. */
+export interface CharacterFieldEdit {
+  name: string
+  hook: string
+  demographics: string
+  role_type: string
+}
+
 /** Shape of the edited_fields jsonb column. Keys are optional. */
 export interface EditedFields {
   logline?: string
@@ -28,6 +36,9 @@ export interface EditedFields {
    *  backward compat; new edits go to `genre_secondary`. */
   genre_tags?: string[]
   tone?: string
+  /** Cast character overrides. Mirrors the original lead_characters array
+   *  from the evaluation — each entry overrides name, hook, demographics. */
+  characters?: CharacterFieldEdit[]
 }
 
 /** What the top card renders. All four are strings/arrays the writer can edit. */

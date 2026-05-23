@@ -54,6 +54,8 @@ import { InfoSection } from '@/components/report/info-button'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
+import { EditWrapper } from '@/components/report/edit-wrapper'
+import { InlineCastField } from '@/components/report/inline-cast-editor'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { PosterImage } from '@/components/report/poster-image'
 import MediaGallery from '@/components/report/media-gallery'
@@ -497,6 +499,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
+      <EditWrapper
+        evaluationId={id}
+        submissionId={submission.id}
+        initial={topCard}
+        initialCharacters={(report.lead_characters ?? []).map((c) => ({
+          name: c.name,
+          hook: c.hook,
+          demographics: c.demographics,
+          role_type: c.role_type,
+        }))}
+        isOwner={isOwner}
+      >
+
       {/* ── DARK CANVAS HERO — cinematic top section ──
           Breaks out of the gray (app) layout background with negative
           margins so the dark gradient spans full width. Contains poster,
@@ -735,6 +750,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const supporting = leadCharacters.filter(
               (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
             )
+            // Build a global index map so InlineCastField can address the
+            // right slot in the edit context's characters[] array.
+            const leadGlobalIndices = leads.map((c) => leadCharacters.indexOf(c))
+            const supportGlobalIndices = supporting.map((c) => leadCharacters.indexOf(c))
             return (
               <>
                 <h2
@@ -745,20 +764,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </h2>
                 <div className="space-y-3">
                   {leads.map((c, i) => (
-                    <Collapsible
+                    <InlineCastField
                       key={`lead-${i}`}
-                      title={c.name}
-                      meta={`${c.role_type} · ${c.demographics}`}
-                      titleBlurred={applyPaywallBlur}
-                      defaultOpen
-                    >
-                      <p
-                        className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                        style={bodyBlur}
-                      >
-                        {c.hook}
-                      </p>
-                    </Collapsible>
+                      index={leadGlobalIndices[i]}
+                      character={c}
+                      blurred={applyPaywallBlur}
+                      fallback={
+                        <Collapsible
+                          title={c.name}
+                          meta={`${c.role_type} · ${c.demographics}`}
+                          titleBlurred={applyPaywallBlur}
+                          defaultOpen
+                        >
+                          <p
+                            className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                            style={bodyBlur}
+                          >
+                            {c.hook}
+                          </p>
+                        </Collapsible>
+                      }
+                    />
                   ))}
                 </div>
                 {supporting.length > 0 && (
@@ -766,6 +792,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
                       Supporting cast · {supporting.length}
                     </p>
+                    <div className="space-y-3">
+                      {supporting.map((c, i) => (
+                        <InlineCastField
+                          key={`support-${i}`}
+                          index={supportGlobalIndices[i]}
+                          character={c}
+                          blurred={applyPaywallBlur}
+                          fallback={null}
+                        />
+                      ))}
+                    </div>
                     <SupportingCharactersCarousel
                       characters={supporting}
                       blurred={applyPaywallBlur}
@@ -1308,6 +1345,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {/* opportunities-v1: reach-out panel + sticky Interested/Pass bar removed.
           Producer interaction now flows through /producer/opportunities. */}
+
+      </EditWrapper>
     </>
   )
 }

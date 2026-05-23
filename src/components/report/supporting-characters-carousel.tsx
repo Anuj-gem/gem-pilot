@@ -13,6 +13,7 @@
 
 import { useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useEditContextOptional } from './edit-context'
 
 export interface SupportingCharacter {
   name: string
@@ -35,7 +36,10 @@ const CARD_STRIDE = 212
 export function SupportingCharactersCarousel({ characters, blurred = false }: Props) {
   const scrollerRef = useRef<HTMLDivElement | null>(null)
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const editCtx = useEditContextOptional()
 
+  // Hide carousel during inline editing — InlineCastField handles display
+  if (editCtx?.isEditing) return null
   if (!characters || characters.length === 0) return null
 
   const blurStyle: React.CSSProperties | undefined = blurred
