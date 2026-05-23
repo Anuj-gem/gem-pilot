@@ -123,8 +123,8 @@ export function OwnerActionsMenu({
     }
   }
 
-  const iconBtnClass =
-    'inline-flex items-center justify-center gap-1.5 h-8 rounded-full text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors text-[12px] font-medium'
+  const baseBtnClass =
+    'inline-flex items-center justify-center gap-1.5 h-8 rounded-full border transition-colors text-[12px] font-medium px-3'
 
   return (
     <div ref={wrapRef} className="relative inline-flex items-center gap-2">
@@ -132,20 +132,20 @@ export function OwnerActionsMenu({
       {editHref ? (
         <Link
           href={editHref}
-          className={`${iconBtnClass} px-3 sm:px-3`}
+          className={`${baseBtnClass} text-white border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
           title="Edit title, headline, tags"
         >
-          <Pencil size={14} />
+          <span className="text-[14px]" aria-hidden>&#9998;</span>
           <span className="hidden sm:inline">Edit</span>
         </Link>
       ) : (
         <button
           type="button"
           onClick={triggerEdit}
-          className={`${iconBtnClass} px-3 sm:px-3`}
+          className={`${baseBtnClass} text-white border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
           title="Edit title, headline, tags"
         >
-          <Pencil size={14} />
+          <span className="text-[14px]" aria-hidden>&#9998;</span>
           <span className="hidden sm:inline">Edit</span>
         </button>
       )}
@@ -154,7 +154,7 @@ export function OwnerActionsMenu({
       {downloadHref ? (
         <Link
           href={downloadHref}
-          className={`${iconBtnClass} px-3 sm:px-3`}
+          className={`${baseBtnClass} text-white border-[var(--gem-gray-600)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
           title="Download PDF"
         >
           <Download size={14} />
@@ -164,7 +164,7 @@ export function OwnerActionsMenu({
         <button
           type="button"
           onClick={triggerDownload}
-          className={`${iconBtnClass} px-3 sm:px-3`}
+          className={`${baseBtnClass} text-white border-[var(--gem-gray-600)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
           title="Download PDF"
         >
           <Download size={14} />
@@ -176,9 +176,8 @@ export function OwnerActionsMenu({
       <button
         type="button"
         onClick={() => setRemoveConfirm(true)}
-        className={`${iconBtnClass} px-3 sm:px-3`}
+        className={`${baseBtnClass} text-white border-[var(--gem-gray-600)] hover:border-red-400 hover:text-red-400`}
         title="Remove this script"
-        style={{ '--gem-gold': '#ef4444' } as React.CSSProperties}
       >
         <Trash2 size={14} />
         <span className="hidden sm:inline">Delete</span>
