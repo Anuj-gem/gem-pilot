@@ -381,18 +381,46 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           </p>
         )}
 
-        {/* Tags + secondary metadata — collapsed by default. Tap "Show
-            details" to reveal genre, tone, posted date, and tags. Producer-
-            side filters still index on tags from `script_submissions.tags`;
-            on the page they live behind this expander to keep the cover
-            calm. */}
-        <DetailsExpander
-          tags={initialTagsList}
-          genrePrimary={initial.genre_primary}
-          genreSecondary={initial.genre_secondary}
-          tone={initial.tone}
-          postedAt={postedAt}
-        />
+        {/* Tone + posted date line */}
+        {(initial.tone?.trim() || postedAt) && (
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] mb-4">
+            {initial.tone?.trim() && (
+              <span className="italic text-[var(--gem-gray-300)]">{initial.tone}</span>
+            )}
+            {initial.tone?.trim() && postedAt && (
+              <span className="text-[var(--gem-gray-500)]">·</span>
+            )}
+            {postedAt && (
+              <span className="text-[var(--gem-gray-400)]">
+                Posted{' '}
+                {new Date(postedAt).toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Tags — always visible */}
+        {initialTagsList.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-6 sm:mb-8">
+            {initialTagsList.map((tag, i) => (
+              <span
+                key={`${tag}-${i}`}
+                className="px-2.5 py-1 rounded-full text-[12px] font-medium"
+                style={{
+                  color: 'var(--gem-gray-300)',
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     )
   }
@@ -931,91 +959,3 @@ function ScoreEyeToggle({
   )
 }
 
-/** Tags + secondary metadata, collapsed by default. Click the toggle to
- *  reveal a small block with genre, tone, posted date, and the writer-
- *  editable tag chips. Keeps the cover quiet without losing access to the
- *  detail. */
-function DetailsExpander({
-  tags,
-  genrePrimary,
-  genreSecondary,
-  tone,
-  postedAt,
-}: {
-  tags: string[]
-  genrePrimary: string | null | undefined
-  genreSecondary: string[] | null | undefined
-  tone: string | null | undefined
-  postedAt: string | null
-}) {
-  const [open, setOpen] = useState(false)
-  // Genre removed from details — now shown as prominent pills in the
-  // hero section. Only tone, posted date, and tags remain here.
-  const hasTone = !!(tone && tone.trim().length > 0)
-  const hasDate = !!postedAt
-  const hasTags = tags.length > 0
-  const anyDetail = hasTone || hasDate || hasTags
-
-  if (!anyDetail) return <div className="mb-6 sm:mb-8" />
-
-  return (
-    <div className="mb-6 sm:mb-8">
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="text-[12.5px] text-[var(--gem-gray-400)] hover:text-[var(--gem-gold)] transition-colors inline-flex items-center gap-1.5"
-        aria-expanded={open}
-      >
-        {open ? 'Hide details' : 'Show details'}
-        <span
-          aria-hidden
-          className="transition-transform duration-150"
-          style={{ display: 'inline-block', transform: open ? 'rotate(180deg)' : undefined }}
-        >
-          ▾
-        </span>
-      </button>
-      {open && (
-        <div className="mt-3 space-y-2.5">
-          {(hasTone || hasDate) && (
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-[var(--gem-gray-400)]">
-              {hasTone && (
-                <span className="italic text-[var(--gem-gray-500)]">{tone}</span>
-              )}
-              {hasTone && hasDate && (
-                <span className="text-[var(--gem-gray-600)]">·</span>
-              )}
-              {hasDate && (
-                <span className="text-[var(--gem-gray-500)]">
-                  Posted{' '}
-                  {new Date(postedAt!).toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
-                </span>
-              )}
-            </div>
-          )}
-          {hasTags && (
-            <div className="flex flex-wrap gap-1.5">
-              {tags.map((tag, i) => (
-                <span
-                  key={`${tag}-${i}`}
-                  className="px-2 py-0.5 rounded-full text-[11px] font-medium"
-                  style={{
-                    color: 'var(--gem-gray-500)',
-                    background: 'transparent',
-                    border: '1px solid var(--gem-gray-700)',
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
