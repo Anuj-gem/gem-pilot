@@ -48,7 +48,7 @@ import { PostUpgradeEmail } from '@/components/report/post-upgrade-email'
 import { SectionGate } from '@/components/report/section-gate'
 import { PeerReviews } from '@/components/report/peer-reviews'
 import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
-import { WriterCard } from '@/components/writer-card'
+// WriterCard moved inline into EditableTopCard (compact author card)
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { InfoSection } from '@/components/report/info-button'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
@@ -591,83 +591,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
               )}
 
-              {/* Writer card */}
-              {!isAnonymousSubmission && submission.profiles && (
-                <div className="mb-3">
-                  <WriterCard
-                    writer={{
-                      id: submission.user_id ?? '',
-                      full_name: submission.profiles.full_name,
-                      handle: submission.profiles.handle,
-                      headline: submission.profiles.headline,
-                      avatar_url: submission.profiles.avatar_url,
-                    }}
-                    size="lg"
-                    variant="dark"
-                  />
-                </div>
-              )}
-
-              {/* Classification row — format, genre, tone, posted date */}
-              <div className="flex flex-wrap items-center gap-2 mb-3">
-                  {topCard.format && (
-                    <span
-                      className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-semibold tracking-wide uppercase"
-                      style={{
-                        background: 'rgba(124,77,237,0.15)',
-                        color: '#c4b5fd',
-                        border: '1px solid rgba(124,77,237,0.25)',
-                      }}
-                    >
-                      {topCard.format}
-                    </span>
-                  )}
-                  {topCard.genre_primary && (
-                    <span
-                      className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-semibold"
-                      style={{
-                        background: 'rgba(255,255,255,0.08)',
-                        color: 'rgba(255,255,255,0.75)',
-                        border: '1px solid rgba(255,255,255,0.12)',
-                      }}
-                    >
-                      {topCard.genre_primary}
-                    </span>
-                  )}
-                  {topCard.genre_secondary?.filter(Boolean).map((g, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-medium"
-                      style={{
-                        background: 'rgba(255,255,255,0.05)',
-                        color: 'rgba(255,255,255,0.50)',
-                        border: '1px solid rgba(255,255,255,0.08)',
-                      }}
-                    >
-                      {g}
-                    </span>
-                  ))}
-                  {topCard.tone?.trim() && (
-                    <span className="text-[13px] italic text-[var(--gem-gray-300)]">
-                      {topCard.tone}
-                    </span>
-                  )}
-                  {(topCard.tone?.trim() || topCard.genre_primary) && submission.created_at && (
-                    <span className="text-[var(--gem-gray-500)]">·</span>
-                  )}
-                  {submission.created_at && (
-                    <span className="text-[13px] text-[var(--gem-gray-400)]">
-                      Posted{' '}
-                      {new Date(submission.created_at).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
-                    </span>
-                  )}
-              </div>
-
-              {/* Title + logline + details */}
+              {/* Title + author + logline + collapsible categories */}
               <EditableTopCard
                 evaluationId={id}
                 submissionId={submission.id}
@@ -680,6 +604,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 }
                 authorHandle={
                   isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+                }
+                authorAvatar={
+                  isAnonymousSubmission ? null : submission.profiles?.avatar_url ?? null
+                }
+                authorHeadline={
+                  isAnonymousSubmission ? null : submission.profiles?.headline ?? null
                 }
                 commercialScore={null}
                 scoreShownToIndustry={isScoreVisible(privacy)}

@@ -16,7 +16,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Pencil, Check, X, RotateCcw, Loader2, Eye, EyeOff } from 'lucide-react'
+import { Pencil, Check, X, RotateCcw, Loader2, Eye, EyeOff, ChevronDown } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 import {
   LOGLINE_WORD_CAP,
@@ -48,6 +48,10 @@ interface Props {
    *  becomes a link to /w/{handle} so anyone can jump to the writer's
    *  profile from the report. */
   authorHandle?: string | null
+  /** Writer's avatar URL for the compact author card. */
+  authorAvatar?: string | null
+  /** Writer's headline (bio) for the compact author card. */
+  authorHeadline?: string | null
   /** Commercial score (0-100). Surfaced as a small color-coded badge inline
    *  with the title. Null/undefined hides the badge entirely. */
   commercialScore?: number | null
@@ -92,7 +96,7 @@ function dedupeTags(tags: string[]): string[] {
   return out
 }
 
-export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, authorHandle, commercialScore, scoreShownToIndustry = true, isProSubscriber = true, headerActionsLeft }: Props) {
+export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, hasEdits, postedAt, authorName, authorHandle, authorAvatar, authorHeadline, commercialScore, scoreShownToIndustry = true, isProSubscriber = true, headerActionsLeft }: Props) {
   const router = useRouter()
   // useSearchParams can suspend without a Suspense boundary in Next 14+,
   // which delays event-listener registration and causes the "blink but
@@ -316,24 +320,26 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
 
   // ── Display mode ──────────────────────────────────────────────
   if (!editing) {
+    // Collect classification items for the collapsible section
+    const classificationPills: { label: string; variant: 'format' | 'genre' | 'secondary' }[] = []
+    if (initial.format) classificationPills.push({ label: initial.format, variant: 'format' })
+    if (initial.genre_primary) classificationPills.push({ label: initial.genre_primary, variant: 'genre' })
+    for (const g of initial.genre_secondary?.filter(Boolean) ?? []) {
+      classificationPills.push({ label: g, variant: 'secondary' })
+    }
+    const hasCategories = classificationPills.length > 0 || initial.tone?.trim() || initialTagsList.length > 0 || postedAt
+
+    // Author initials for inline avatar
+    const authorInitials = (authorName || '')
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((s) => s[0]?.toUpperCase() ?? '')
+      .join('')
+
     return (
       <div ref={cardRef} className="relative">
-        {/* Selznick-4 v4 (mobile-first):
-            Reading order: optional small action row → TITLE + score badge →
-            byline → tiny metadata line (format only) → HEADLINE as clean
-            editorial prose (no left rule, no box, no label) → "Show tags"
-            collapsed expander. Everything sized for narrow screens first;
-            desktop just has more breathing room. */}
-
-        {/* Inline Edit + Download buttons removed (Selznick-4 v4): owner
-            actions now live in the "···" menu rendered by the report page,
-            outside this component. The headerActionsLeft slot is no longer
-            used; left in props for back-compat with non-owner callers. */}
-
-        {/* Title row — title + inline score badge. On mobile the badge sits
-            right of the title and shrinks to a compact pill. Title is sized
-            mobile-first so it doesn't overflow narrow screens. */}
-        <div className="flex items-start justify-between gap-3 sm:gap-4 mb-1.5 sm:mb-2">
+        {/* 1. Title + score badge — the hero element, right next to the poster */}
+        <div className="flex items-start justify-between gap-3 sm:gap-4 mb-3">
           <h1
             className="text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0"
           >
@@ -342,10 +348,6 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
             <span
               data-pdf-section="score"
-              // If the writer has hidden the score from industry, don't
-              // bake it into the PDF either — the PDF is the artifact
-              // they'd share, so respect the same posture. Anuj
-              // 2026-04-28.
               className={!scoreShownToIndustry ? 'gem-no-print' : undefined}
             >
               <ScoreBadge
@@ -359,44 +361,138 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           )}
         </div>
 
-        {/* Author byline + format on one line for compactness on mobile.
-            Format is the only metadata in the primary view; genre/tone/posted
-            move into the (collapsed) Tags expander to keep the cover quiet. */}
-        {/* Format line removed — format + genre now rendered as prominent
-            pills by the parent (report page hero). Keeping the edit-mode
-            format display below for context. */}
+        {/* 2. Compact author card */}
+        {authorName && (
+          <div className="mb-3">
+            {authorHandle ? (
+              <Link
+                href={`/w/${authorHandle}`}
+                className="inline-flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+              >
+                <CompactAvatar url={authorAvatar} initials={authorInitials} />
+                <div className="min-w-0">
+                  <span className="text-[14px] font-semibold text-[var(--gem-gray-100)] leading-tight">
+                    {authorName}
+                  </span>
+                  {authorHeadline && (
+                    <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug truncate max-w-[280px]">
+                      {authorHeadline}
+                    </span>
+                  )}
+                </div>
+              </Link>
+            ) : (
+              <div className="inline-flex items-center gap-2.5">
+                <CompactAvatar url={authorAvatar} initials={authorInitials} />
+                <div className="min-w-0">
+                  <span className="text-[14px] font-semibold text-[var(--gem-gray-100)] leading-tight">
+                    {authorName}
+                  </span>
+                  {authorHeadline && (
+                    <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug truncate max-w-[280px]">
+                      {authorHeadline}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
-        {/* HEADLINE as clean editorial prose — no rule, no box, no label.
-            Just a generously-sized paragraph in the column. This is the
-            screenshot-able moment. */}
+        {/* 3. Logline — compact editorial prose */}
         {initial.logline && (
           <p
-            className="text-[20px] sm:text-[28px] text-[var(--gem-gray-50)] leading-[1.35] font-semibold tracking-[-0.005em] m-0 mb-6 sm:mb-8"
+            className="text-[16px] sm:text-[20px] text-[var(--gem-gray-200)] leading-[1.45] font-medium m-0 mb-4 max-w-[56ch]"
           >
             {initial.logline}
           </p>
         )}
 
-        {/* Tone + posted date now rendered by the parent (report page hero)
-            in the classification pill row. Kept in edit mode below. */}
-
-        {/* Tags — always visible */}
-        {initialTagsList.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-6 sm:mb-8">
-            {initialTagsList.map((tag, i) => (
-              <span
-                key={`${tag}-${i}`}
-                className="px-2.5 py-1 rounded-full text-[12px] font-medium"
-                style={{
-                  color: 'var(--gem-gray-300)',
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+        {/* 4. Collapsible categories — format, genre, tone, date, tags */}
+        {hasCategories && (
+          <details className="group mb-4">
+            <summary
+              className="inline-flex items-center gap-1.5 cursor-pointer list-none text-[13px] font-medium text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-200)] transition-colors select-none [&::-webkit-details-marker]:hidden"
+            >
+              View categories
+              <ChevronDown
+                size={14}
+                className="transition-transform duration-200 group-open:rotate-180"
+              />
+            </summary>
+            <div className="mt-3 space-y-3">
+              {/* Classification pills + tone + date */}
+              {(classificationPills.length > 0 || initial.tone?.trim() || postedAt) && (
+                <div className="flex flex-wrap items-center gap-2">
+                  {classificationPills.map((pill, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold"
+                      style={
+                        pill.variant === 'format'
+                          ? {
+                              background: 'rgba(124,77,237,0.15)',
+                              color: '#c4b5fd',
+                              border: '1px solid rgba(124,77,237,0.25)',
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.04em',
+                            }
+                          : pill.variant === 'genre'
+                            ? {
+                                background: 'rgba(255,255,255,0.08)',
+                                color: 'rgba(255,255,255,0.75)',
+                                border: '1px solid rgba(255,255,255,0.12)',
+                              }
+                            : {
+                                background: 'rgba(255,255,255,0.05)',
+                                color: 'rgba(255,255,255,0.50)',
+                                border: '1px solid rgba(255,255,255,0.08)',
+                              }
+                      }
+                    >
+                      {pill.label}
+                    </span>
+                  ))}
+                  {initial.tone?.trim() && (
+                    <span className="text-[12px] italic text-[var(--gem-gray-300)]">
+                      {initial.tone}
+                    </span>
+                  )}
+                  {postedAt && (
+                    <>
+                      <span className="text-[var(--gem-gray-500)]">·</span>
+                      <span className="text-[12px] text-[var(--gem-gray-400)]">
+                        Posted{' '}
+                        {new Date(postedAt).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric',
+                        })}
+                      </span>
+                    </>
+                  )}
+                </div>
+              )}
+              {/* Tags */}
+              {initialTagsList.length > 0 && (
+                <div className="flex flex-wrap gap-1.5">
+                  {initialTagsList.map((tag, i) => (
+                    <span
+                      key={`${tag}-${i}`}
+                      className="px-2.5 py-1 rounded-full text-[12px] font-medium"
+                      style={{
+                        color: 'var(--gem-gray-300)',
+                        background: 'rgba(255,255,255,0.06)',
+                        border: '1px solid rgba(255,255,255,0.10)',
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </details>
         )}
       </div>
     )
@@ -933,6 +1029,34 @@ function ScoreEyeToggle({
         </div>
       )}
     </>
+  )
+}
+
+/** Tiny 32px avatar used in the compact author byline. */
+function CompactAvatar({ url, initials }: { url?: string | null; initials: string }) {
+  if (url) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={url}
+        alt=""
+        className="rounded-full object-cover shrink-0"
+        style={{ width: 32, height: 32 }}
+      />
+    )
+  }
+  return (
+    <div
+      className="rounded-full shrink-0 flex items-center justify-center font-bold text-white"
+      style={{
+        width: 32,
+        height: 32,
+        background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
+        fontSize: 12,
+      }}
+    >
+      {initials || '·'}
+    </div>
   )
 }
 
