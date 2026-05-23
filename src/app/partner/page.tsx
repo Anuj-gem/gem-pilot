@@ -1,11 +1,11 @@
-// /partner — rep talent review dashboard.
-// Shows writers that admin has sent to this rep for review.
-// Clean, curated experience — no writer-side nav or features.
+// /partner — industry partner dashboard.
+// Shows applications submitted to opportunities owned by this partner.
+// Replaces the old rep_assignments view.
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { RepDashboard } from '@/components/producer/rep-dashboard'
+import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
@@ -25,160 +25,114 @@ export default async function PartnerDashboardPage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('full_name, account_type, lane')
+    .select('full_name, account_type')
     .eq('id', user.id)
     .single()
 
   if (profile?.account_type !== 'producer') redirect('/dashboard')
-  if (!profile?.lane) redirect('/onboarding/producer')
 
   const service = svc()
 
-  // Fetch assignments for this rep
-  const { data: assignments } = await service
-    .from('rep_assignments')
-    .select('id, writer_id, gem_note, featured_script_ids, status, rep_note, pass_tags, created_at, responded_at')
-    .eq('rep_id', user.id)
-    .order('created_at', { ascending: true })
+  // Fetch opportunities owned by this partner
+  const { data: opps } = await service
+    .from('opportunities')
+    .select('id, title, slug, status')
+    .eq('owner_id', user.id)
+    .order('created_at', { ascending: false })
 
-  const rows = (assignments || []) as {
-    id: string; writer_id: string; gem_note: string | null
-    featured_script_ids: string[] | null; status: string
-    rep_note: string | null; pass_tags: string[] | null
-    created_at: string; responded_at: string | null
-  }[]
+  const oppList = (opps || []) as { id: string; title: string; slug: string | null; status: string }[]
+  const oppIds = oppList.map(o => o.id)
+  const oppMap = new Map(oppList.map(o => [o.id, o]))
 
-  // Fetch writer profiles (including avatar_url)
-  const writerIds = [...new Set(rows.map(r => r.writer_id))]
-  const writerMap = new Map<string, { name: string; bio: string | null; email: string | null; avatarUrl: string | null }>()
+  // Fetch all considerations for those opportunities
+  let apps: {
+    id: string; status: string; review_stage: string; submitted_at: string
+    reviewed_at: string | null; feedback_tags: string[] | null
+    next_steps_tags: string[] | null; opportunity_id: string; writer_id: string
+    writer_pitch: string | null; heat_earned: number
+  }[] = []
+
+  if (oppIds.length > 0) {
+    const { data: rawApps } = await service
+      .from('considerations')
+      .select('id, status, review_stage, submitted_at, reviewed_at, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, heat_earned')
+      .in('opportunity_id', oppIds)
+      .order('submitted_at', { ascending: false })
+
+    apps = (rawApps || []) as typeof apps
+  }
+
+  // Load writer profiles
+  const writerIds = [...new Set(apps.map(a => a.writer_id))]
+  const writerMap = new Map<string, { full_name: string | null; email: string | null }>()
   if (writerIds.length > 0) {
-    const { data: profiles } = await service
+    const { data: writers } = await service
       .from('profiles')
-      .select('id, full_name, bio, email, avatar_url')
+      .select('id, full_name, email')
       .in('id', writerIds)
-    for (const p of (profiles || []) as { id: string; full_name: string | null; bio: string | null; email: string | null; avatar_url: string | null }[]) {
-      writerMap.set(p.id, {
-        name: p.full_name || 'Unknown',
-        bio: p.bio,
-        email: p.email,
-        avatarUrl: p.avatar_url,
-      })
+    for (const w of (writers || []) as { id: string; full_name: string | null; email: string | null }[]) {
+      writerMap.set(w.id, { full_name: w.full_name, email: w.email })
     }
   }
 
-  // Fetch ALL completed scripts + evaluations for these writers
-  type ScriptWithEval = {
-    submissionId: string; title: string; format: string | null
-    score: number | null; evalId: string | null
-    logline: string | null; genres: string[] | null
-  }
-  const scriptsByWriter = new Map<string, ScriptWithEval[]>()
+  // Load scripts for each application
+  const appIds = apps.map(a => a.id)
+  const scriptsByApp = new Map<string, { title: string; score: number | null; submission_id: string }[]>()
+  if (appIds.length > 0) {
+    const { data: cs } = await service
+      .from('consideration_scripts')
+      .select('consideration_id, script_submission_id')
+      .in('consideration_id', appIds)
 
-  if (writerIds.length > 0) {
-    const { data: subs } = await service
-      .from('script_submissions')
-      .select('id, user_id, title, declared_format')
-      .in('user_id', writerIds)
-      .eq('status', 'completed')
+    const scriptIds = (cs || []).map((c: any) => c.script_submission_id)
+    const evalMap = new Map<string, number | null>()
+    const titleMap = new Map<string, string>()
 
-    const subIds = (subs || []).map((s: any) => s.id)
-    const subMap = new Map<string, { userId: string; title: string; format: string | null }>()
-    for (const s of (subs || []) as { id: string; user_id: string; title: string; declared_format: string | null }[]) {
-      subMap.set(s.id, { userId: s.user_id, title: s.title, format: s.declared_format })
-    }
-
-    if (subIds.length > 0) {
-      // Fetch evals with logline + genre from the evaluation JSON
+    if (scriptIds.length > 0) {
+      const { data: subs } = await service
+        .from('script_submissions')
+        .select('id, title')
+        .in('id', scriptIds)
+      for (const s of (subs || []) as { id: string; title: string }[]) {
+        titleMap.set(s.id, s.title)
+      }
       const { data: evals } = await service
         .from('script_evaluations')
-        .select('id, submission_id, weighted_score, evaluation')
-        .in('submission_id', subIds)
-
-      const evalMap = new Map<string, {
-        id: string; score: number | null
-        logline: string | null; genres: string[] | null
-      }>()
-      for (const e of (evals || []) as {
-        id: string; submission_id: string; weighted_score: number | null
-        evaluation: Record<string, any> | null
-      }[]) {
-        const ev = e.evaluation
-        const logline = ev?.positioning_hook ?? null
-        const classification = ev?.classification
-        const genrePrimary = classification?.genre_primary
-        const genreTags = classification?.genre_tags as string[] | undefined
-        // Build genres array: primary first, then tags (deduplicated)
-        let genres: string[] | null = null
-        if (genrePrimary && genrePrimary !== 'unable to determine') {
-          genres = [genrePrimary]
-          if (genreTags?.length) {
-            for (const t of genreTags) {
-              if (t.toLowerCase() !== genrePrimary.toLowerCase() && !genres.includes(t)) {
-                genres.push(t)
-              }
-            }
-          }
-        } else if (genreTags?.length) {
-          genres = genreTags
-        }
-
-        evalMap.set(e.submission_id, { id: e.id, score: e.weighted_score, logline, genres })
+        .select('submission_id, weighted_score')
+        .in('submission_id', scriptIds)
+      for (const e of (evals || []) as { submission_id: string; weighted_score: number | null }[]) {
+        evalMap.set(e.submission_id, e.weighted_score)
       }
+    }
 
-      for (const [subId, sub] of subMap) {
-        const ev = evalMap.get(subId)
-        if (!scriptsByWriter.has(sub.userId)) scriptsByWriter.set(sub.userId, [])
-        scriptsByWriter.get(sub.userId)!.push({
-          submissionId: subId,
-          title: sub.title,
-          format: sub.format,
-          score: ev?.score ?? null,
-          evalId: ev?.id ?? null,
-          logline: ev?.logline ?? null,
-          genres: ev?.genres ?? null,
-        })
-      }
-
-      // Sort each writer's scripts by score descending
-      for (const arr of scriptsByWriter.values()) {
-        arr.sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
-      }
+    for (const c of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
+      const existing = scriptsByApp.get(c.consideration_id) || []
+      existing.push({
+        submission_id: c.script_submission_id,
+        title: titleMap.get(c.script_submission_id) || 'Untitled',
+        score: evalMap.get(c.script_submission_id) ?? null,
+      })
+      scriptsByApp.set(c.consideration_id, existing)
     }
   }
 
-  // Build serializable items
-  const items = rows.map(r => {
-    const writer = writerMap.get(r.writer_id)
-    const allScripts = scriptsByWriter.get(r.writer_id) ?? []
-    const featuredIds = new Set(r.featured_script_ids ?? [])
-    const featured = featuredIds.size > 0
-      ? allScripts.filter(s => featuredIds.has(s.submissionId))
-      : allScripts.slice(0, 3) // auto-top-3 by score if no featured set
-    const rest = allScripts.filter(s => !featured.some(f => f.submissionId === s.submissionId))
+  // Group by opportunity
+  const byOpp = new Map<string, typeof apps>()
+  for (const app of apps) {
+    const existing = byOpp.get(app.opportunity_id) || []
+    existing.push(app)
+    byOpp.set(app.opportunity_id, existing)
+  }
 
-    return {
-      id: r.id,
-      writerId: r.writer_id,
-      writerName: writer?.name ?? 'Unknown',
-      writerBio: writer?.bio ?? null,
-      writerEmail: writer?.email ?? null,
-      writerAvatarUrl: writer?.avatarUrl ?? null,
-      gemNote: r.gem_note,
-      status: r.status as 'pending' | 'more_info' | 'introduce' | 'passed',
-      repNote: r.rep_note,
-      passTags: r.pass_tags,
-      respondedAt: r.responded_at,
-      featuredScripts: featured,
-      otherScripts: rest,
-      totalScripts: allScripts.length,
-    }
-  })
+  const fmtDate = (d: string) =>
+    new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
-  const repName = profile.full_name?.split(' ')[0] || 'there'
+  const pendingTotal = apps.filter(a => a.review_stage !== 'complete').length
+  const partnerName = profile.full_name?.split(' ')[0] || 'there'
 
   return (
     <>
-      {/* Stripped nav — just GEM logo + sign out */}
+      {/* Nav */}
       <div className="h-14" aria-hidden />
       <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
@@ -199,7 +153,105 @@ export default async function PartnerDashboardPage() {
         </div>
       </nav>
 
-      <RepDashboard items={items} repName={repName} />
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+        <header>
+          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+            Hey {partnerName}
+          </h1>
+          <p className="text-[13px] text-gray-400 mt-1 m-0">
+            {pendingTotal > 0 ? `${pendingTotal} pending review` : 'All caught up'}
+            {' · '}{apps.length} total application{apps.length !== 1 ? 's' : ''}
+          </p>
+        </header>
+
+        {apps.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-6 py-10 text-center">
+            <p className="text-[14px] text-gray-500 m-0">No applications yet.</p>
+          </div>
+        ) : (
+          Array.from(byOpp.entries()).map(([oppId, oppApps]) => {
+            const opp = oppMap.get(oppId)
+            if (!opp) return null
+            const pendingCount = oppApps.filter(a => a.status === 'pending').length
+            return (
+              <section key={oppId}>
+                <header className="flex items-center justify-between gap-3 mb-2.5">
+                  <div>
+                    <h2 className="text-[15px] font-bold text-gray-900 m-0">{opp.title}</h2>
+                    <p className="text-[12px] text-gray-400 m-0 mt-0.5">
+                      {oppApps.length} {oppApps.length === 1 ? 'application' : 'applications'}
+                      {pendingCount > 0 && ` · ${pendingCount} pending`}
+                    </p>
+                  </div>
+                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${
+                    opp.status === 'active' ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'
+                  }`}>
+                    {opp.status === 'active' ? 'Active' : 'Closed'}
+                  </span>
+                </header>
+
+                <div className="space-y-2">
+                  {oppApps.map(app => {
+                    const writer = writerMap.get(app.writer_id)
+                    const scripts = scriptsByApp.get(app.id) || []
+                    const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
+
+                    return (
+                      <Link key={app.id} href={`/partner/applications/${app.id}`} className="block">
+                        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3.5 hover:border-purple-200 transition-colors">
+                          <div className="flex items-center justify-between gap-3">
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-center gap-2">
+                                <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
+                                  {writer?.full_name || writer?.email || 'Unknown writer'}
+                                </p>
+                                {(() => {
+                                  const stageMap: Record<string, { label: string; classes: string }> = {
+                                    draft: { label: 'New', classes: 'bg-yellow-50 text-yellow-700' },
+                                    pending: { label: 'Pending', classes: 'bg-yellow-50 text-yellow-700' },
+                                    in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
+                                    shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
+                                    partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
+                                    complete: { label: 'Reviewed', classes: 'bg-gray-100 text-gray-500' },
+                                  }
+                                  const isUpgraded = app.review_stage === 'shortlisted' || app.review_stage === 'partner_match'
+                                  const stage = isReviewed && !isUpgraded ? 'complete' : (app.review_stage || 'pending')
+                                  const s = stageMap[stage] || stageMap.pending
+                                  return (
+                                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${s.classes}`}>
+                                      {s.label}
+                                    </span>
+                                  )
+                                })()}
+                              </div>
+                              <div className="flex items-center gap-2 mt-1">
+                                {scripts.map(s => (
+                                  <span key={s.submission_id} className="text-[12px] text-gray-500">
+                                    {s.title}
+                                    {s.score && <span className="text-[11px] font-semibold text-gray-400 ml-1">({Math.round(s.score)})</span>}
+                                  </span>
+                                ))}
+                                <span className="text-[11px] text-gray-300">·</span>
+                                <span className="text-[11px] text-gray-400">{fmtDate(app.submitted_at)}</span>
+                              </div>
+                              {app.writer_pitch && (
+                                <p className="text-[12px] text-gray-400 m-0 mt-1 line-clamp-1 italic">&ldquo;{app.writer_pitch}&rdquo;</p>
+                              )}
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
+                              <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          })
+        )}
+      </div>
     </>
   )
 }

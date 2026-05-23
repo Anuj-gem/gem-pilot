@@ -47,6 +47,30 @@ export async function POST(req: NextRequest) {
 
   const service = svc()
 
+  // Authorization: must be admin OR owner of the opportunity this consideration belongs to
+  const ADMIN_EMAILS = ['anuj@gem.studio', 'anujkommareddy@gmail.com']
+  const isAdmin = ADMIN_EMAILS.includes(user.email || '')
+
+  if (!isAdmin) {
+    // Check if user owns the opportunity
+    const { data: con } = await service
+      .from('considerations')
+      .select('opportunity_id')
+      .eq('id', consideration_id)
+      .single()
+    if (!con?.opportunity_id) {
+      return NextResponse.json({ error: 'Not found' }, { status: 404 })
+    }
+    const { data: opp } = await service
+      .from('opportunities')
+      .select('owner_id')
+      .eq('id', con.opportunity_id)
+      .single()
+    if (!opp || opp.owner_id !== user.id) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 403 })
+    }
+  }
+
   // --- Stage change ---
   if (review_stage && VALID_STAGES.includes(review_stage as typeof VALID_STAGES[number])) {
     // Server-side validation: shortlisted/partner_match requires at least one positive tag
