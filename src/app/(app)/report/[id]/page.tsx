@@ -148,7 +148,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         id, user_id, title, filename, file_size, status, is_public, created_at,
         expires_at, declared_format, report_privacy, contact_enabled,
         allow_reviews, allow_industry,
-        privacy_review_needed, tags, poster_url,
+        privacy_review_needed, tags, poster_url, media_urls,
         profiles ( full_name, avatar_url, handle, headline )
       )
     `)
