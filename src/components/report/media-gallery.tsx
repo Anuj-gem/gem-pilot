@@ -18,6 +18,7 @@ interface MediaGalleryProps {
 export default function MediaGallery({ submissionId, initialMedia, isOwner }: MediaGalleryProps) {
   const [media, setMedia] = useState<MediaItem[]>(initialMedia)
   const [uploading, setUploading] = useState(false)
+  const [showAddMenu, setShowAddMenu] = useState(false)
   const [showYoutubeInput, setShowYoutubeInput] = useState(false)
   const [youtubeUrl, setYoutubeUrl] = useState('')
   const [dragOver, setDragOver] = useState(false)
@@ -39,6 +40,7 @@ export default function MediaGallery({ submissionId, initialMedia, isOwner }: Me
       }
       const data = await res.json()
       setMedia(data.media_urls)
+      setShowAddMenu(false)
     } catch {
       alert('Upload failed')
     } finally {
@@ -65,6 +67,7 @@ export default function MediaGallery({ submissionId, initialMedia, isOwner }: Me
       setMedia(data.media_urls)
       setYoutubeUrl('')
       setShowYoutubeInput(false)
+      setShowAddMenu(false)
     } catch {
       alert('Failed to add video')
     } finally {
@@ -105,9 +108,25 @@ export default function MediaGallery({ submissionId, initialMedia, isOwner }: Me
 
   return (
     <div className="mt-6">
-      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-        Media
-      </p>
+      {/* Header row: title + add button */}
+      <div className="flex items-center gap-2 mb-3">
+        <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
+          Additional Media
+        </p>
+        {isOwner && !showAddMenu && (
+          <button
+            onClick={() => setShowAddMenu(true)}
+            className="w-5 h-5 rounded-full flex items-center justify-center transition-all hover:bg-[rgba(255,255,255,0.1)]"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+            title="Add media"
+          >
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2.5">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+        )}
+      </div>
 
       {/* Existing media items */}
       {media.length > 0 && (
@@ -176,106 +195,104 @@ export default function MediaGallery({ submissionId, initialMedia, isOwner }: Me
         </div>
       )}
 
-      {/* Owner upload controls */}
-      {isOwner && (
-        <div className="flex gap-2 items-start flex-wrap">
-          {/* Drop zone / add button */}
-          <div
-            onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
-            onDragLeave={() => setDragOver(false)}
-            onDrop={handleDrop}
-            onClick={() => fileInputRef.current?.click()}
-            className="rounded-xl flex items-center justify-center cursor-pointer transition-all"
-            style={{
-              width: 160,
-              height: 90,
-              background: dragOver ? 'rgba(139,92,246,0.15)' : 'rgba(255,255,255,0.04)',
-              border: dragOver ? '2px dashed rgba(139,92,246,0.5)' : '1px dashed rgba(255,255,255,0.15)',
-            }}
-          >
-            {uploading ? (
-              <div className="w-5 h-5 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
-            ) : (
-              <div className="flex flex-col items-center gap-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
-                <span className="text-[10px] text-[rgba(255,255,255,0.35)]">
-                  Photo or PDF
-                </span>
-              </div>
-            )}
-          </div>
-
-          {/* YouTube button */}
+      {/* Expandable add menu — unfolds when + is clicked */}
+      {isOwner && showAddMenu && (
+        <div
+          className="rounded-xl p-3 mt-1"
+          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+          onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
+          onDragLeave={() => setDragOver(false)}
+          onDrop={handleDrop}
+        >
           {!showYoutubeInput ? (
-            <button
-              onClick={() => setShowYoutubeInput(true)}
-              className="rounded-xl flex items-center justify-center transition-all hover:bg-[rgba(255,255,255,0.06)]"
-              style={{
-                width: 160,
-                height: 90,
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px dashed rgba(255,255,255,0.15)',
-              }}
-            >
-              <div className="flex flex-col items-center gap-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5">
+            <div className="flex items-center gap-3">
+              {/* Photo/PDF upload */}
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all hover:bg-[rgba(255,255,255,0.06)]"
+                style={{
+                  background: dragOver ? 'rgba(139,92,246,0.15)' : 'transparent',
+                  border: dragOver ? '1px dashed rgba(139,92,246,0.5)' : '1px dashed rgba(255,255,255,0.12)',
+                }}
+              >
+                {uploading ? (
+                  <div className="w-4 h-4 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                )}
+                <span className="text-[12px] text-[rgba(255,255,255,0.5)]">Photo or PDF</span>
+              </button>
+
+              {/* YouTube link */}
+              <button
+                onClick={() => setShowYoutubeInput(true)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all hover:bg-[rgba(255,255,255,0.06)]"
+                style={{ border: '1px dashed rgba(255,255,255,0.12)' }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5">
                   <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
                   <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
                 </svg>
-                <span className="text-[10px] text-[rgba(255,255,255,0.35)]">
-                  YouTube link
-                </span>
-              </div>
-            </button>
+                <span className="text-[12px] text-[rgba(255,255,255,0.5)]">YouTube link</span>
+              </button>
+
+              {/* Close */}
+              <button
+                onClick={() => setShowAddMenu(false)}
+                className="ml-auto text-[rgba(255,255,255,0.3)] hover:text-[rgba(255,255,255,0.6)] transition-colors"
+                title="Close"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
           ) : (
-            <div
-              className="rounded-xl flex flex-col items-center justify-center gap-2 p-3"
-              style={{
-                width: 240,
-                height: 90,
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.12)',
-              }}
-            >
+            /* YouTube URL input */
+            <div className="flex items-center gap-2">
               <input
                 type="text"
                 value={youtubeUrl}
                 onChange={(e) => setYoutubeUrl(e.target.value)}
                 placeholder="Paste YouTube URL"
-                className="w-full text-[12px] px-2 py-1.5 rounded-lg bg-[rgba(0,0,0,0.3)] text-white placeholder-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.1)] outline-none focus:border-purple-500"
+                className="flex-1 text-[12px] px-3 py-2 rounded-lg bg-[rgba(0,0,0,0.3)] text-white placeholder-[rgba(255,255,255,0.3)] border border-[rgba(255,255,255,0.1)] outline-none focus:border-purple-500"
                 onKeyDown={(e) => e.key === 'Enter' && addYoutube()}
                 autoFocus
               />
-              <div className="flex gap-2">
-                <button
-                  onClick={addYoutube}
-                  disabled={uploading || !youtubeUrl.trim()}
-                  className="text-[11px] px-3 py-1 rounded-md bg-purple-600 text-white disabled:opacity-40"
-                >
-                  Add
-                </button>
-                <button
-                  onClick={() => { setShowYoutubeInput(false); setYoutubeUrl('') }}
-                  className="text-[11px] px-3 py-1 rounded-md text-[rgba(255,255,255,0.5)] hover:text-white"
-                >
-                  Cancel
-                </button>
-              </div>
+              <button
+                onClick={addYoutube}
+                disabled={uploading || !youtubeUrl.trim()}
+                className="text-[12px] px-3 py-2 rounded-lg bg-purple-600 text-white disabled:opacity-40"
+              >
+                Add
+              </button>
+              <button
+                onClick={() => { setShowYoutubeInput(false); setYoutubeUrl('') }}
+                className="text-[rgba(255,255,255,0.3)] hover:text-[rgba(255,255,255,0.6)] transition-colors"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
             </div>
           )}
-
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*,application/pdf"
-            onChange={handleFileChange}
-            className="hidden"
-          />
         </div>
       )}
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*,application/pdf"
+        onChange={handleFileChange}
+        className="hidden"
+      />
     </div>
   )
 }
