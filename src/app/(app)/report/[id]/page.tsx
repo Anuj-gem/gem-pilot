@@ -494,11 +494,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
-      {/* Override layout background to dark for report page */}
-      <style>{`
-        .min-h-screen[style*="f5f6f8"] { background: #110f1d !important; }
-      `}</style>
-
       {/* ── DARK CANVAS HERO — cinematic top section ──
           Breaks out of the gray (app) layout background with negative
           margins so the dark gradient spans full width. Contains poster,
@@ -671,28 +666,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* No gradient — dark canvas continues */}
+        {/* Gradient transition to content */}
+        <div className="h-12" style={{ background: 'linear-gradient(180deg, #1d1932 0%, #f5f6f8 100%)' }} />
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24"
-        style={{
-          // Continue dark-mode CSS variable overrides into body sections
-          '--gem-gray-50': '#FFFFFF',
-          '--gem-gray-100': 'rgba(255,255,255,0.92)',
-          '--gem-gray-200': 'rgba(255,255,255,0.80)',
-          '--gem-gray-300': 'rgba(255,255,255,0.65)',
-          '--gem-gray-400': 'rgba(255,255,255,0.50)',
-          '--gem-gray-500': 'rgba(255,255,255,0.35)',
-          '--gem-gray-600': 'rgba(255,255,255,0.15)',
-          '--gem-gray-700': 'rgba(255,255,255,0.12)',
-          '--gem-gray-800': 'rgba(255,255,255,0.06)',
-          '--gem-gray-900': 'rgba(255,255,255,0.03)',
-          '--gem-gold': '#E8B825',
-        } as React.CSSProperties}
-      >
-
-        {/* Report body — dark containers instead of white card */}
-        <div className="space-y-6 pt-2">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24">
+        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm -mt-6">
+          <div className="space-y-6">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -1096,7 +1076,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <div
                   className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
                   style={{
-                    background: 'rgba(124,58,237,0.12)',
+                    background: '#fff',
                     border: '1px solid rgba(124,58,237,0.30)',
                     minWidth: 96,
                     padding: '12px 18px',
@@ -1381,8 +1361,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </p>
           </div>
         )}
+          </div>
         </div>
-        {/* /body wrapper closes here. */}
+        {/* /white card wrapper closes here. */}
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
@@ -1480,7 +1461,7 @@ function DimensionRow({
   return (
     <div
       className="rounded-xl p-5"
-      style={{ border: '1px solid var(--gem-gray-700)', background: 'rgba(255,255,255,0.04)' }}
+      style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
     >
       <div className="flex items-baseline justify-between gap-4 mb-3">
         <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
