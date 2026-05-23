@@ -86,6 +86,7 @@ export function OwnerActionsMenu({
   const wrapRef = useRef<HTMLDivElement>(null)
 
   function triggerEdit() {
+    console.log('[GEM DEBUG] triggerEdit fired — dispatching gem:edit-top-card')
     window.dispatchEvent(new CustomEvent('gem:edit-top-card'))
   }
 

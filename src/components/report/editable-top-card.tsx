@@ -77,6 +77,7 @@ export function EditableTopCard({
 }: Props) {
   const editCtx = useEditContextOptional()
   const isEditing = editCtx?.isEditing ?? false
+  console.log('[GEM DEBUG] EditableTopCard render — isOwner:', isOwner, 'editCtx:', !!editCtx, 'isEditing:', isEditing)
 
   let searchParams: ReturnType<typeof useSearchParams> | null = null
   try { searchParams = useSearchParams() } catch { /* suspended */ }
@@ -100,8 +101,13 @@ export function EditableTopCard({
 
   // External "Edit" trigger from OwnerActionsMenu
   useEffect(() => {
-    if (!isOwner || !editCtx) return
+    console.log('[GEM DEBUG] Edit listener useEffect — isOwner:', isOwner, 'editCtx:', !!editCtx)
+    if (!isOwner || !editCtx) {
+      console.log('[GEM DEBUG] Edit listener SKIPPED — isOwner:', isOwner, 'editCtx:', !!editCtx)
+      return
+    }
     const handler = () => {
+      console.log('[GEM DEBUG] gem:edit-top-card handler FIRED — calling startEditing')
       editCtx.startEditing()
       requestAnimationFrame(() => {
         cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })

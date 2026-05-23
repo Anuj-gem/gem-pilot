@@ -192,7 +192,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const report = eval_.evaluation as GEMEvaluation & V5Extras
   const submission = eval_.script_submissions
   const isOwner = user?.id === submission.user_id
-  const isAdmin = user?.email === 'anuj@gem.studio'
+  const isAdmin = user?.email === 'anuj@gem.studio' || user?.email === 'anujkommareddy@gmail.com'
   // viewerIsProducer is set below after the profile fetch; forward-declare
   // isOwnerOrAdmin as a let so we can widen it once we know the viewer role.
   let isOwnerOrAdmin = isOwner || isAdmin
@@ -509,7 +509,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           demographics: c.demographics,
           role_type: c.role_type,
         }))}
-        isOwner={isOwner}
+        isOwner={isOwner || isAdmin}
       >
 
       {/* ── DARK CANVAS HERO — cinematic top section ──
@@ -611,7 +611,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 evaluationId={id}
                 submissionId={submission.id}
                 initial={topCard}
-                isOwner={isOwner}
+                isOwner={isOwner || isAdmin}
                 hasEdits={topCardHasEdits}
                 postedAt={submission.created_at ?? null}
                 authorName={
