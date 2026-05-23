@@ -694,18 +694,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {(whatsSpecial.headline || plotSummary) && (
             <div data-pdf-section="whats_working">
               <h2
-                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                className="text-[18px] sm:text-[20px] font-bold m-0 mb-5"
                 style={{ color: 'var(--gem-gold)' }}
               >
                 Elevator Pitch
               </h2>
                 {whatsSpecial.headline && (
-                  <p className="text-[17px] sm:text-[19px] text-[var(--gem-gray-100)] leading-[1.55] m-0 font-medium">
+                  <p className="text-[18px] sm:text-[21px] text-[var(--gem-gray-50)] leading-[1.5] m-0 font-semibold">
                     {whatsSpecial.headline}
                   </p>
                 )}
                 {plotSummary && (
-                  <div className="mt-5">
+                  <div className="mt-6">
                     <Collapsible title="Detailed Plot Summary" defaultOpen={false}>
                       <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
                         {plotSummary}
@@ -738,7 +738,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             return (
               <>
                 <h2
-                  className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                  className="text-[18px] sm:text-[20px] font-bold m-0 mb-5"
                   style={{ color: 'var(--gem-gold)' }}
                 >
                   Cast
@@ -753,7 +753,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       defaultOpen
                     >
                       <p
-                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                        className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
                         style={bodyBlur}
                       >
                         {c.hook}

@@ -221,6 +221,29 @@ export default function MediaGallery({ submissionId, initialMedia, isOwner }: Me
         )}
       </div>
 
+      {/* Empty state — placeholder box matching media item size */}
+      {media.length === 0 && isOwner && (
+        <button
+          onClick={() => { setMenuOpen(true) }}
+          className="w-full rounded-xl flex flex-col items-center justify-center gap-2 transition-all hover:bg-[rgba(255,255,255,0.06)] cursor-pointer"
+          style={{
+            height: 180,
+            maxWidth: 320,
+            background: 'rgba(255,255,255,0.03)',
+            border: '1px dashed rgba(255,255,255,0.12)',
+          }}
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+          <span className="text-[12px] text-[rgba(255,255,255,0.25)]">
+            Add a photo, PDF, or YouTube link
+          </span>
+        </button>
+      )}
+
       {/* Media items carousel */}
       {media.length > 0 && (
         <div className="flex gap-3 overflow-x-auto pb-3 -mx-2 px-2 snap-x snap-mandatory" style={{ scrollbarWidth: 'none' }}>
