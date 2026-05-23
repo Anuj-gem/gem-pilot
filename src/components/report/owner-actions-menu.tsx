@@ -9,17 +9,13 @@
 // link to /submit. Remove fires a confirm sheet, then PATCHes the hide
 // endpoint and bounces to the dashboard.
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
-  MoreHorizontal,
   Pencil,
   Download,
-  RefreshCw,
   Trash2,
-  Activity,
-  Shield,
 } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
@@ -78,7 +74,6 @@ export function OwnerActionsMenu({
   reportSections,
 }: Props) {
   const router = useRouter()
-  const [open, setOpen] = useState(false)
   const [removeConfirm, setRemoveConfirm] = useState(false)
   const [removing, setRemoving] = useState(false)
   const [activityOpen, setActivityOpen] = useState(false)
@@ -90,34 +85,11 @@ export function OwnerActionsMenu({
   void title
   const wrapRef = useRef<HTMLDivElement>(null)
 
-  // Close on outside click.
-  useEffect(() => {
-    if (!open) return
-    function onDocClick(e: MouseEvent) {
-      if (!wrapRef.current) return
-      if (!wrapRef.current.contains(e.target as Node)) setOpen(false)
-    }
-    document.addEventListener('mousedown', onDocClick)
-    return () => document.removeEventListener('mousedown', onDocClick)
-  }, [open])
-
-  // Close on Escape.
-  useEffect(() => {
-    if (!open) return
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setOpen(false)
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [open])
-
   function triggerEdit() {
-    setOpen(false)
     window.dispatchEvent(new CustomEvent('gem:edit-top-card'))
   }
 
   function triggerDownload() {
-    setOpen(false)
     if (!isSubscribed) {
       // Free writers — gate on subscription. Reuse the global upgrade
       // modal listener so the path matches every other Pro action.
@@ -151,111 +123,66 @@ export function OwnerActionsMenu({
     }
   }
 
-  const reviseHref = declaredFormat
-    ? `/submit?format=${encodeURIComponent(declaredFormat)}`
-    : '/submit'
+  const iconBtnClass =
+    'inline-flex items-center justify-center gap-1.5 h-8 rounded-full text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors text-[12px] font-medium'
 
   return (
-    <div ref={wrapRef} className="relative inline-block">
+    <div ref={wrapRef} className="relative inline-flex items-center gap-2">
+      {/* Edit */}
+      {editHref ? (
+        <Link
+          href={editHref}
+          className={`${iconBtnClass} px-3 sm:px-3`}
+          title="Edit title, headline, tags"
+        >
+          <Pencil size={14} />
+          <span className="hidden sm:inline">Edit</span>
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={triggerEdit}
+          className={`${iconBtnClass} px-3 sm:px-3`}
+          title="Edit title, headline, tags"
+        >
+          <Pencil size={14} />
+          <span className="hidden sm:inline">Edit</span>
+        </button>
+      )}
+
+      {/* Download */}
+      {downloadHref ? (
+        <Link
+          href={downloadHref}
+          className={`${iconBtnClass} px-3 sm:px-3`}
+          title="Download PDF"
+        >
+          <Download size={14} />
+          <span className="hidden sm:inline">Download</span>
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={triggerDownload}
+          className={`${iconBtnClass} px-3 sm:px-3`}
+          title="Download PDF"
+        >
+          <Download size={14} />
+          <span className="hidden sm:inline">Download</span>
+        </button>
+      )}
+
+      {/* Delete */}
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Writer actions"
-        aria-expanded={open}
-        className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[var(--gem-gray-300)] border border-[var(--gem-gray-700)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)] transition-colors"
+        onClick={() => setRemoveConfirm(true)}
+        className={`${iconBtnClass} px-3 sm:px-3`}
+        title="Remove this script"
+        style={{ '--gem-gold': '#ef4444' } as React.CSSProperties}
       >
-        <MoreHorizontal size={16} />
+        <Trash2 size={14} />
+        <span className="hidden sm:inline">Delete</span>
       </button>
-
-      {open && (
-        <div
-          className="absolute right-0 top-full mt-1 z-30 rounded-xl bg-white py-1 min-w-[200px]"
-          style={{
-            border: '1px solid var(--gem-gray-700)',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.10)',
-          }}
-          role="menu"
-        >
-          {activity !== undefined && (
-            <>
-              <MenuItem
-                icon={<Activity size={14} />}
-                onClick={() => {
-                  setOpen(false)
-                  setActivityOpen(true)
-                }}
-              >
-                Industry activity
-              </MenuItem>
-              <div className="my-1 border-t border-[var(--gem-gray-700)]" />
-            </>
-          )}
-          {editHref ? (
-            <MenuLink
-              icon={<Pencil size={14} />}
-              href={editHref}
-              onClick={() => setOpen(false)}
-            >
-              Edit title, headline, tags
-            </MenuLink>
-          ) : (
-            <MenuItem icon={<Pencil size={14} />} onClick={triggerEdit}>
-              Edit title, headline, tags
-            </MenuItem>
-          )}
-          {downloadHref ? (
-            <MenuLink
-              icon={<Download size={14} />}
-              href={downloadHref}
-              onClick={() => setOpen(false)}
-            >
-              <span className="inline-flex items-center gap-1.5">
-                Download PDF
-                {!isSubscribed && <ProMarker />}
-              </span>
-            </MenuLink>
-          ) : (
-            <MenuItem
-              icon={<Download size={14} />}
-              onClick={triggerDownload}
-            >
-              <span className="inline-flex items-center gap-1.5">
-                Download PDF
-                {!isSubscribed && <ProMarker />}
-              </span>
-            </MenuItem>
-          )}
-          <MenuLink
-            icon={<RefreshCw size={14} />}
-            href={reviseHref}
-            onClick={() => setOpen(false)}
-          >
-            Submit a revision
-          </MenuLink>
-          {isPublic !== undefined && allowReviews !== undefined && allowIndustry !== undefined && (
-            <MenuItem
-              icon={<Shield size={14} />}
-              onClick={() => {
-                setOpen(false)
-                setPrivacyOpen(true)
-              }}
-            >
-              Privacy settings
-            </MenuItem>
-          )}
-          <div className="my-1 border-t border-[var(--gem-gray-700)]" />
-          <MenuItem
-            icon={<Trash2 size={14} />}
-            onClick={() => {
-              setOpen(false)
-              setRemoveConfirm(true)
-            }}
-            danger
-          >
-            Remove this script
-          </MenuItem>
-        </div>
-      )}
 
       <PrivacyConfirmSheet
         open={removeConfirm}
@@ -293,70 +220,3 @@ export function OwnerActionsMenu({
   )
 }
 
-function MenuItem({
-  icon,
-  onClick,
-  children,
-  danger = false,
-  disabled = false,
-}: {
-  icon: React.ReactNode
-  onClick: () => void
-  children: React.ReactNode
-  danger?: boolean
-  disabled?: boolean
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-      role="menuitem"
-      className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-left text-[13.5px] hover:bg-[var(--gem-gray-900)] disabled:opacity-50 transition-colors"
-      style={{
-        color: danger ? '#dc2626' : 'var(--gem-gray-100)',
-      }}
-    >
-      <span className="shrink-0">{icon}</span>
-      <span className="flex-1">{children}</span>
-    </button>
-  )
-}
-
-// Tiny "Pro" pill rendered inline next to gated menu items so a free
-// writer can see at a glance which actions require an upgrade. Anuj
-// 2026-04-28.
-function ProMarker() {
-  return (
-    <span
-      className="inline-block px-1.5 py-[1px] rounded text-[9px] font-bold uppercase tracking-wider"
-      style={{ background: 'var(--gem-accent)', color: '#fff' }}
-    >
-      Pro
-    </span>
-  )
-}
-
-function MenuLink({
-  icon,
-  href,
-  onClick,
-  children,
-}: {
-  icon: React.ReactNode
-  href: string
-  onClick: () => void
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      onClick={onClick}
-      role="menuitem"
-      className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-left text-[13.5px] text-[var(--gem-gray-100)] hover:bg-[var(--gem-gray-900)] transition-colors"
-    >
-      <span className="shrink-0">{icon}</span>
-      <span className="flex-1">{children}</span>
-    </Link>
-  )
-}

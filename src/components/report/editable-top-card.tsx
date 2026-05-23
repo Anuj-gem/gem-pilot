@@ -335,9 +335,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             mobile-first so it doesn't overflow narrow screens. */}
         <div className="flex items-start justify-between gap-3 sm:gap-4 mb-1.5 sm:mb-2">
           <h1
-            className={`text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0${isOwner ? ' cursor-pointer hover:opacity-80 transition-opacity' : ''}`}
-            onClick={isOwner ? () => { resetLocalToInitial(); setEditing(true); setError(null) } : undefined}
-            title={isOwner ? 'Click to edit' : undefined}
+            className="text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0"
           >
             {initial.title}
           </h1>
@@ -373,9 +371,7 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
             screenshot-able moment. */}
         {initial.logline && (
           <p
-            className={`text-[20px] sm:text-[28px] text-[var(--gem-gray-50)] leading-[1.35] font-semibold tracking-[-0.005em] m-0 mb-6 sm:mb-8${isOwner ? ' cursor-pointer hover:opacity-80 transition-opacity' : ''}`}
-            onClick={isOwner ? () => { resetLocalToInitial(); setEditing(true); setError(null) } : undefined}
-            title={isOwner ? 'Click to edit' : undefined}
+            className="text-[20px] sm:text-[28px] text-[var(--gem-gray-50)] leading-[1.35] font-semibold tracking-[-0.005em] m-0 mb-6 sm:mb-8"
           >
             {initial.logline}
           </p>
