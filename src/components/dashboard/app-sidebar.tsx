@@ -24,6 +24,7 @@ export interface AppSidebarData {
   scriptCount: number
   appCount: number
   heatScore: number
+  accountType?: string
 }
 
 /** Pass null to render the anonymous state */
@@ -63,7 +64,7 @@ export function AppSidebar(props: AppSidebarData | { anonymous: true }) {
         {/* Links — only for logged-in users */}
         {!isAnon && (
           <>
-            <NavLinks pathname={pathname} />
+            <NavLinks pathname={pathname} accountType={props.accountType} />
             <SignOutButton />
           </>
         )}
@@ -616,11 +617,15 @@ function SignOutButton() {
 
 // ─── NAV LINKS ──────────────────────────────────────────────────────────────
 
-function NavLinks({ pathname }: { pathname: string }) {
+function NavLinks({ pathname, accountType }: { pathname: string; accountType?: string }) {
   const links = [
     { label: 'My Scripts', href: '/scripts', match: (p: string) => p.startsWith('/scripts') },
     { label: 'My Opportunities', href: '/applications', match: (p: string) => p.startsWith('/applications') || p.startsWith('/review') },
   ]
+
+  if (accountType === 'producer') {
+    links.push({ label: 'Manage applications', href: '/partner', match: (p: string) => p.startsWith('/partner') })
+  }
 
   return (
     <nav className="space-y-0.5">

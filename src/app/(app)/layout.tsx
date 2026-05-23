@@ -70,7 +70,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // pages via usePathname.
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at, referral_code, bonus_submissions, heat_score')
+    .select('subscription_status, full_name, handle, headline, avatar_url, privacy_defaults, privacy_confirmed_at, referral_code, bonus_submissions, heat_score, account_type')
     .eq('id', user.id)
     .single()
 
@@ -217,6 +217,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     scriptCount: scriptCount ?? 0,
     appCount: appCount ?? 0,
     heatScore: (profile as any)?.heat_score ?? 0,
+    accountType: (profile as any)?.account_type ?? 'writer',
   }
 
   return (

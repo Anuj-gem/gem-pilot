@@ -114,26 +114,7 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
   const currentStage = STAGE_DISPLAY[app.review_stage || 'pending'] || STAGE_DISPLAY.pending
 
   return (
-    <>
-      {/* Nav */}
-      <div className="h-14" aria-hidden />
-      <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/partner" className="flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="inline-block w-3 h-3 rotate-45"
-              style={{
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
-              }}
-            />
-            <span className="text-lg font-bold tracking-tight text-white">GEM</span>
-          </Link>
-        </div>
-      </nav>
-
-      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+    <div className="max-w-2xl mx-auto space-y-6">
         {/* Back */}
         <Link href="/partner" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
           ← Back to dashboard
@@ -312,7 +293,6 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
             currentHeatEarned={app.heat_earned || 0}
           />
         </section>
-      </div>
-    </>
+    </div>
   )
 }
