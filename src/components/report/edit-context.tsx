@@ -3,8 +3,8 @@
 // Page-level inline edit context for the report page.
 //
 // When `isEditing` is true, all editable sections (top card, elevator
-// pitch, cast) switch their display elements to inline inputs. The
-// sticky save bar appears at the bottom of the viewport.
+// pitch, plot summary, cast) switch their display elements to inline
+// inputs. The sticky save bar appears at the bottom of the viewport.
 //
 // State lives here so it's shared across components. The save function
 // collects all dirty values and posts them in one batch.
@@ -53,6 +53,12 @@ interface EditContextValue {
   tags: string[]
   setTags: (v: string[]) => void
 
+  // Elevator pitch + plot summary
+  elevatorPitch: string
+  setElevatorPitch: (v: string) => void
+  plotSummary: string
+  setPlotSummary: (v: string) => void
+
   // Cast characters
   characters: CharacterEdit[]
   updateCharacter: (index: number, field: keyof CharacterEdit, value: string) => void
@@ -81,6 +87,8 @@ interface EditProviderProps {
   submissionId: string
   initial: TopCardDisplay
   initialCharacters: CharacterEdit[]
+  initialElevatorPitch: string
+  initialPlotSummary: string
   children: ReactNode
 }
 
@@ -113,6 +121,8 @@ export function EditProvider({
   submissionId,
   initial,
   initialCharacters,
+  initialElevatorPitch,
+  initialPlotSummary,
   children,
 }: EditProviderProps) {
   const router = useRouter()
@@ -139,6 +149,10 @@ export function EditProvider({
   )
   const [tags, setTags] = useState<string[]>(() => initialTagsList)
 
+  // Elevator pitch + plot summary
+  const [elevatorPitch, setElevatorPitch] = useState(initialElevatorPitch)
+  const [plotSummary, setPlotSummary] = useState(initialPlotSummary)
+
   // Cast state
   const [characters, setCharacters] = useState<CharacterEdit[]>(
     () => initialCharacters.map((c) => ({ ...c }))
@@ -156,9 +170,11 @@ export function EditProvider({
     )
     setTone(initial.tone)
     setTags(initialTagsList)
+    setElevatorPitch(initialElevatorPitch)
+    setPlotSummary(initialPlotSummary)
     setCharacters(initialCharacters.map((c) => ({ ...c })))
     setError(null)
-  }, [initial, initialTagsList, initialCharacters])
+  }, [initial, initialTagsList, initialCharacters, initialElevatorPitch, initialPlotSummary])
 
   const startEditing = useCallback(() => {
     resetAll()
@@ -196,6 +212,16 @@ export function EditProvider({
       tone,
       genre_secondary: genreSecondary.filter((t) => t.trim().length > 0).slice(0, 2),
       genre_tags: [],
+    }
+
+    // Elevator pitch
+    if (elevatorPitch !== initialElevatorPitch) {
+      editBody.elevator_pitch = elevatorPitch
+    }
+
+    // Plot summary
+    if (plotSummary !== initialPlotSummary) {
+      editBody.plot_summary = plotSummary
     }
 
     // Check if characters changed
@@ -259,6 +285,8 @@ export function EditProvider({
     }
   }, [
     title, logline, genrePrimary, genreSecondary, tone, tags,
+    elevatorPitch, plotSummary,
+    initialElevatorPitch, initialPlotSummary,
     characters, initialCharacters, initialTagsList,
     evaluationId, submissionId, router,
   ])
@@ -275,6 +303,8 @@ export function EditProvider({
       genreSecondary, setGenreSecondary,
       tone, setTone,
       tags, setTags,
+      elevatorPitch, setElevatorPitch,
+      plotSummary, setPlotSummary,
       characters,
       updateCharacter,
       save,
@@ -283,6 +313,7 @@ export function EditProvider({
     [
       isEditing, startEditing, cancelEditing, saving,
       title, logline, genrePrimary, genreSecondary, tone, tags,
+      elevatorPitch, plotSummary,
       characters, updateCharacter, save, error,
     ]
   )

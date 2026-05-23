@@ -125,6 +125,33 @@ export async function POST(
       return trimmed
     }
 
+    // Elevator pitch + plot summary — longer text fields (up to 2000 chars)
+    for (const longKey of ['elevator_pitch', 'plot_summary'] as const) {
+      if (!(longKey in body)) continue
+      const v = body[longKey]
+      if (v === null || v === undefined) {
+        delete (next as any)[longKey]
+        continue
+      }
+      if (typeof v !== 'string') {
+        return NextResponse.json(
+          { error: `${longKey} must be a string.` },
+          { status: 400 }
+        )
+      }
+      const trimmed = v.trim()
+      if (trimmed.length === 0) {
+        delete (next as any)[longKey]
+      } else if (trimmed.length > 2000) {
+        return NextResponse.json(
+          { error: `${longKey} is too long (max 2000 chars).` },
+          { status: 400 }
+        )
+      } else {
+        ;(next as any)[longKey] = trimmed
+      }
+    }
+
     for (const key of ['logline', 'genre_primary', 'tone'] as const) {
       const out = stringField(key)
       if (out === 'invalid' || out === 'too-long') {

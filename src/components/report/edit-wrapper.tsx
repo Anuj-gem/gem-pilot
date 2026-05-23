@@ -13,6 +13,8 @@ interface EditWrapperProps {
   submissionId: string
   initial: TopCardDisplay
   initialCharacters: CharacterEdit[]
+  initialElevatorPitch: string
+  initialPlotSummary: string
   isOwner: boolean
   children: React.ReactNode
 }
@@ -22,6 +24,8 @@ export function EditWrapper({
   submissionId,
   initial,
   initialCharacters,
+  initialElevatorPitch,
+  initialPlotSummary,
   isOwner,
   children,
 }: EditWrapperProps) {
@@ -35,6 +39,8 @@ export function EditWrapper({
       submissionId={submissionId}
       initial={initial}
       initialCharacters={initialCharacters}
+      initialElevatorPitch={initialElevatorPitch}
+      initialPlotSummary={initialPlotSummary}
     >
       {children}
       <StickySaveBar />

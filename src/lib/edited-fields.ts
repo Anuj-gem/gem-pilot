@@ -39,6 +39,10 @@ export interface EditedFields {
   /** Cast character overrides. Mirrors the original lead_characters array
    *  from the evaluation — each entry overrides name, hook, demographics. */
   characters?: CharacterFieldEdit[]
+  /** Elevator pitch override (whats_special.headline). */
+  elevator_pitch?: string
+  /** Plot summary override (report.plot_summary). */
+  plot_summary?: string
 }
 
 /** What the top card renders. All four are strings/arrays the writer can edit. */

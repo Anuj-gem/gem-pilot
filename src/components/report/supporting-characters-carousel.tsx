@@ -20,7 +20,7 @@ export interface SupportingCharacter {
   role_type: string
   demographics: string
   hook: string
-  why_actor_wants_this: string
+  why_actor_wants_this?: string
 }
 
 interface Props {

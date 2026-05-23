@@ -56,6 +56,7 @@ import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { EditWrapper } from '@/components/report/edit-wrapper'
 import { InlineCastField } from '@/components/report/inline-cast-editor'
+import { InlineElevatorPitch } from '@/components/report/inline-elevator-pitch'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { PosterImage } from '@/components/report/poster-image'
 import MediaGallery from '@/components/report/media-gallery'
@@ -447,7 +448,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   }
 
   const allStrengths = whatsSpecial.strengths ?? []
-  const leadCharacters = report.lead_characters ?? []
+  const leadCharacters: { name: string; role_type: string; demographics: string; hook: string; why_actor_wants_this?: string }[] =
+    (editedFields as any)?.characters ?? report.lead_characters ?? []
   const production = report.production_reality
   const scores = report.scores ?? {}
   const craftNote = report.craft_note ?? null
@@ -503,12 +505,29 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         evaluationId={id}
         submissionId={submission.id}
         initial={topCard}
-        initialCharacters={(report.lead_characters ?? []).map((c) => ({
-          name: c.name,
-          hook: c.hook,
-          demographics: c.demographics,
-          role_type: c.role_type,
-        }))}
+        initialCharacters={(() => {
+          // Prefer edited_fields.characters if the writer has saved
+          // character overrides, otherwise fall back to the LLM-generated
+          // lead_characters from the evaluation JSON.
+          const editedChars = (editedFields as any)?.characters as
+            | { name: string; hook: string; demographics: string; role_type: string }[]
+            | undefined
+          const base = editedChars ?? report.lead_characters ?? []
+          return base.map((c) => ({
+            name: c.name,
+            hook: c.hook,
+            demographics: c.demographics,
+            role_type: c.role_type,
+          }))
+        })()}
+        initialElevatorPitch={
+          (editedFields as any)?.elevator_pitch ??
+          (whatsSpecial.headline ?? '')
+        }
+        initialPlotSummary={
+          (editedFields as any)?.plot_summary ??
+          (plotSummary ?? '')
+        }
         isOwner={isOwner || isAdmin}
       >
 
@@ -721,20 +740,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               >
                 Elevator Pitch
               </h2>
-                {whatsSpecial.headline && (
-                  <p className="text-[18px] sm:text-[21px] text-[var(--gem-gray-50)] leading-[1.5] m-0 font-semibold">
-                    {whatsSpecial.headline}
-                  </p>
-                )}
-                {plotSummary && (
-                  <div className="mt-6">
-                    <Collapsible title="Detailed Plot Summary" defaultOpen={false}>
-                      <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
-                        {plotSummary}
-                      </p>
-                    </Collapsible>
-                  </div>
-                )}
+              <InlineElevatorPitch
+                fallbackPitch={whatsSpecial.headline ?? ''}
+                fallbackPlot={plotSummary ?? ''}
+              />
             </div>
           )}
         </SectionGate>
