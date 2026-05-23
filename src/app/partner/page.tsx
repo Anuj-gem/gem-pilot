@@ -131,14 +131,22 @@ export default async function PartnerDashboardPage() {
 
   return (
     <div className="max-w-3xl mx-auto space-y-6">
-      <header>
-        <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
-          Applications
-        </h1>
-        <p className="text-[13px] text-gray-400 mt-1 m-0">
-          {pendingTotal > 0 ? `${pendingTotal} pending review` : 'All caught up'}
-          {' · '}{apps.length} total application{apps.length !== 1 ? 's' : ''}
-        </p>
+      <header className="flex items-center justify-between gap-4">
+        <div>
+          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+            Applications
+          </h1>
+          <p className="text-[13px] text-gray-400 mt-1 m-0">
+            {pendingTotal > 0 ? `${pendingTotal} pending review` : 'All caught up'}
+            {' · '}{apps.length} total application{apps.length !== 1 ? 's' : ''}
+          </p>
+        </div>
+        <Link
+          href="/partner/opportunities/create"
+          className="bg-purple-600 hover:bg-purple-700 text-white text-[13px] font-semibold px-4 py-2 rounded-lg transition-colors shrink-0 no-underline"
+        >
+          Create opportunity
+        </Link>
       </header>
 
       {apps.length === 0 ? (
