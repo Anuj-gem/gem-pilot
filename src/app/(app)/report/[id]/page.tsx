@@ -494,6 +494,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
+      {/* Override layout background to dark for report page */}
+      <style>{`
+        .min-h-screen[style*="f5f6f8"] { background: #110f1d !important; }
+      `}</style>
+
       {/* ── DARK CANVAS HERO — cinematic top section ──
           Breaks out of the gray (app) layout background with negative
           margins so the dark gradient spans full width. Contains poster,
@@ -666,19 +671,28 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* Gradient transition to content */}
-        <div
-          className="h-12"
-          style={{
-            background: 'linear-gradient(180deg, #1d1932 0%, #f5f6f8 100%)',
-          }}
-        />
+        {/* No gradient — dark canvas continues */}
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24"
+        style={{
+          // Continue dark-mode CSS variable overrides into body sections
+          '--gem-gray-50': '#FFFFFF',
+          '--gem-gray-100': 'rgba(255,255,255,0.92)',
+          '--gem-gray-200': 'rgba(255,255,255,0.80)',
+          '--gem-gray-300': 'rgba(255,255,255,0.65)',
+          '--gem-gray-400': 'rgba(255,255,255,0.50)',
+          '--gem-gray-500': 'rgba(255,255,255,0.35)',
+          '--gem-gray-600': 'rgba(255,255,255,0.15)',
+          '--gem-gray-700': 'rgba(255,255,255,0.12)',
+          '--gem-gray-800': 'rgba(255,255,255,0.06)',
+          '--gem-gray-900': 'rgba(255,255,255,0.03)',
+          '--gem-gold': '#E8B825',
+        } as React.CSSProperties}
+      >
 
-        {/* Report body — white card wrapping all evaluation sections */}
-        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm -mt-6">
+        {/* Report body — dark containers instead of white card */}
+        <div className="space-y-6 pt-2">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -719,7 +733,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </Collapsible>
         )}
 
-        {/* WHAT'S WORKING */}
+        {/* WHY THIS CAN BE A HIT — lede paragraph only (pitch section).
+            Numbered reasons moved to GEM Analysis below. */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
@@ -728,62 +743,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
           isProSubscriber={true}
         >
-          {(whatsSpecial.headline || allStrengths.length > 0) && (
+          {whatsSpecial.headline && (
             <div data-pdf-section="whats_working">
             <EditorialSection label="Why this can be a hit" accent="gold">
-              {/* Lede paragraph — always visible. */}
-              {whatsSpecial.headline && (
-                <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
-                  {whatsSpecial.headline}
-                </p>
-              )}
-              {/* Each reason is its own small drop-down — title + tap to
-                  expand the body. Section is always open at the parent
-                  level; the per-row toggles keep the page calm without
-                  hiding the structure. */}
-              {allStrengths.length > 0 && (
-                <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
-                  {allStrengths.map((s, i) => (
-                    <li key={i}>
-                      <details className="group [&_summary::-webkit-details-marker]:hidden">
-                        <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
-                          <span
-                            className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
-                            style={{ color: 'var(--gem-gold)' }}
-                          >
-                            {String(i + 1).padStart(2, '0')}
-                          </span>
-                          <p
-                            className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0"
-                            style={
-                              applyPaywallBlur && i > 0
-                                ? { filter: 'blur(8px)', userSelect: 'none' }
-                                : undefined
-                            }
-                          >
-                            {s.dimension_or_area}
-                          </p>
-                          <span
-                            aria-hidden
-                            className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
-                          >
-                            ▾
-                          </span>
-                        </summary>
-                        <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
-                          <div />
-                          <p
-                            className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
-                            style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
-                          >
-                            {s.what_it_means}
-                          </p>
-                        </div>
-                      </details>
-                    </li>
-                  ))}
-                </ol>
-              )}
+              <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[62ch] font-medium">
+                {whatsSpecial.headline}
+              </p>
             </EditorialSection>
             </div>
           )}
@@ -814,7 +779,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             return (
               <Section
                 label="Cast"
-                subtitle="The parts inside this script and why an actor would chase them."
+                subtitle="The parts inside this script."
                 summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
               >
                 <div className="space-y-3">
@@ -827,31 +792,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       defaultOpen
                     >
                       <p
-                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-5"
+                        className="text-[17px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
                         style={bodyBlur}
                       >
                         {c.hook}
                       </p>
-                      <div
-                        className="rounded-lg p-5"
-                        style={{
-                          background: 'rgba(5,150,105,0.07)',
-                          border: '1px solid rgba(5,150,105,0.20)',
-                        }}
-                      >
-                        <p
-                          className="text-[12px] uppercase tracking-[0.2em] font-bold mb-2 m-0"
-                          style={{ color: '#059669' }}
-                        >
-                          Why an actor would want this part
-                        </p>
-                        <p
-                          className="text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                          style={bodyBlur}
-                        >
-                          {c.why_actor_wants_this}
-                        </p>
-                      </div>
                     </Collapsible>
                   ))}
                 </div>
@@ -870,6 +815,76 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )
           })()}
             </div>
+          )}
+        </SectionGate>
+
+        {/* ═══ GEM ANALYSIS DIVIDER ═══ */}
+        <div className="mt-10 mb-8">
+          <div className="flex items-center gap-4">
+            <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
+            <span
+              className="text-[11px] uppercase tracking-[0.25em] font-bold shrink-0"
+              style={{ color: 'var(--gem-accent)' }}
+            >
+              GEM Analysis
+            </span>
+            <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
+          </div>
+        </div>
+
+        {/* NUMBERED STRENGTHS — moved from pitch to analysis */}
+        <SectionGate
+          section="whats_working"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
+          isProSubscriber={true}
+        >
+          {allStrengths.length > 0 && (
+            <EditorialSection label="Why this can be a hit" accent="gold">
+              <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
+                {allStrengths.map((s, i) => (
+                  <li key={i}>
+                    <details className="group [&_summary::-webkit-details-marker]:hidden">
+                      <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
+                        <span
+                          className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
+                          style={{ color: 'var(--gem-gold)' }}
+                        >
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <p
+                          className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0"
+                          style={
+                            applyPaywallBlur && i > 0
+                              ? { filter: 'blur(8px)', userSelect: 'none' }
+                              : undefined
+                          }
+                        >
+                          {s.dimension_or_area}
+                        </p>
+                        <span
+                          aria-hidden
+                          className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
+                        >
+                          ▾
+                        </span>
+                      </summary>
+                      <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
+                        <div />
+                        <p
+                          className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
+                          style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
+                        >
+                          {s.what_it_means}
+                        </p>
+                      </div>
+                    </details>
+                  </li>
+                ))}
+              </ol>
+            </EditorialSection>
           )}
         </SectionGate>
 
@@ -1081,7 +1096,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <div
                   className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
                   style={{
-                    background: '#fff',
+                    background: 'rgba(124,58,237,0.12)',
                     border: '1px solid rgba(124,58,237,0.30)',
                     minWidth: 96,
                     padding: '12px 18px',
@@ -1367,7 +1382,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
         </div>
-        {/* /white card wrapper closes here. */}
+        {/* /body wrapper closes here. */}
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
@@ -1465,7 +1480,7 @@ function DimensionRow({
   return (
     <div
       className="rounded-xl p-5"
-      style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
+      style={{ border: '1px solid var(--gem-gray-700)', background: 'rgba(255,255,255,0.04)' }}
     >
       <div className="flex items-baseline justify-between gap-4 mb-3">
         <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
