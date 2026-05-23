@@ -50,6 +50,7 @@ import { PeerReviews } from '@/components/report/peer-reviews'
 import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
 import { WriterCard } from '@/components/writer-card'
 import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
+import { InfoSection } from '@/components/report/info-button'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
@@ -63,7 +64,7 @@ import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
 // IndustryActivityButton retired from the report page on 2026-04-30
 // v0.10.19 (still used on the dashboard via OwnerActionsMenu).
 import { RerunBanner } from '@/components/report/rerun-banner'
-import { RiskDetailsSection } from '@/components/report/risk-details-card'
+import { ProductionFactsSection } from '@/components/report/risk-details-card'
 // Annotations removed — synthesized feedback + next-steps tag instead.
 import { PackagingSection, BudgetTierCard } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
@@ -863,7 +864,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         >
           {allStrengths.length > 0 && (
             <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-            <EditorialSection label="Why this can be a hit" accent="gold">
+            <EditorialSection label="Key Strengths" accent="gold">
               <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
                 {allStrengths.map((s, i) => (
                   <li key={i}>
@@ -949,7 +950,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
               <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-              <EditorialSection label="Development considerations" accent="violet">
+              <EditorialSection label="Key Weaknesses" accent="violet">
                 {/* Numbered list — IDENTICAL shape to "Why this can be a
                     hit". Sharpest lever is just #1; no special tag, no
                     differentiated number color, no auto-open. Sort just
@@ -1084,12 +1085,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                    Your GEM Score is calculated from every factor in the
-                    narrative analysis above — story, character, audience,
-                    packaging, production reality. Industry partners use it as
-                    one input alongside genre fit, lane, and what they&apos;re
-                    actively scouting. Not a gate, not a verdict — a quick
-                    read.
+                    Your GEM Score is an overall assessment of your
+                    script&apos;s potential. The strengths and weaknesses above
+                    are the most important considerations when deciding whether
+                    to produce this work.
                   </p>
                   {isOwner && !isScoreVisible(privacy) && (
                     <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
@@ -1109,9 +1108,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           <div className="gem-tab-panel space-y-3" data-tab="narrative">
             {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
               <>
-                <p className="text-[12px] text-[var(--gem-gray-400)] m-0 leading-snug max-w-[56ch]">
-                  In addition to the overall score, these are the individual dimensions we evaluate your script on.
-                </p>
+                <InfoSection text="These are the factors we find most important when evaluating a script's potential.">
+                  <p className="text-[13px] font-semibold text-[var(--gem-gray-200)] m-0">
+                    Dimension Scores
+                  </p>
+                </InfoSection>
                 <div className="space-y-3">
                   {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
                     const s = scores?.[dimId]
@@ -1132,40 +1133,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )}
           </div>
 
-          {/* ── TAB: COST ── */}
+          {/* ── TAB: PACKAGING & PRODUCTION ── */}
           <div className="gem-tab-panel space-y-5" data-tab="production">
-            {riskDetails && (
-              <SectionGate
-                section="project_complexity"
-                privacy={privacy}
-                isOwnerOrAdmin={isOwnerOrAdmin}
-                submissionId={privacyControlId}
-                isPublic={submission.is_public ?? false}
-                isProSubscriber={true}
-              >
-                <div
-                  data-pdf-section="project_complexity"
-                  className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
-                  style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                  aria-hidden={applyPaywallBlur ? true : undefined}
-                >
-                  <RiskDetailsSection data={riskDetails} production={production} />
-                </div>
-              </SectionGate>
-            )}
-            {packaging?.budget_tier && (
-              <div
-                className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
-                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                aria-hidden={applyPaywallBlur ? true : undefined}
-              >
-                <BudgetTierCard tier={packaging.budget_tier} />
-              </div>
-            )}
-          </div>
-
-          {/* ── TAB: AUDIENCE & DISTRIBUTION ── */}
-          <div className="gem-tab-panel space-y-5" data-tab="audience">
+            {/* Audience card (was in Audience & Distribution tab) */}
             <SectionGate
               section="deep_dive_package"
               privacy={privacy}
@@ -1185,6 +1155,38 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 )}
               </div>
             </SectionGate>
+
+            {/* Budget tier card */}
+            {packaging?.budget_tier && (
+              <div
+                className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
+                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                aria-hidden={applyPaywallBlur ? true : undefined}
+              >
+                <BudgetTierCard tier={packaging.budget_tier} />
+              </div>
+            )}
+
+            {/* Production facts (plain display, replaces Project Complexity cards) */}
+            {riskDetails && (
+              <SectionGate
+                section="project_complexity"
+                privacy={privacy}
+                isOwnerOrAdmin={isOwnerOrAdmin}
+                submissionId={privacyControlId}
+                isPublic={submission.is_public ?? false}
+                isProSubscriber={true}
+              >
+                <div
+                  data-pdf-section="project_complexity"
+                  className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
+                  style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
+                  aria-hidden={applyPaywallBlur ? true : undefined}
+                >
+                  <ProductionFactsSection data={riskDetails} production={production} />
+                </div>
+              </SectionGate>
+            )}
           </div>
 
         </GemAnalysisTabs>

@@ -84,7 +84,7 @@ export const SECTION_META: Record<SectionKey, SectionMeta> = {
   },
   development_considerations: {
     key: 'development_considerations',
-    label: 'Development considerations',
+    label: 'Key Weaknesses',
     hint: 'The case-against — issues a buyer would flag.',
     group: 'development',
   },

@@ -239,3 +239,51 @@ function CastDetails({ production }: { production: ProductionReality }) {
     </div>
   )
 }
+
+// ─── Plain production facts (replaces complexity cards) ────────────
+
+/**
+ * Flat list of production facts without the Smooth/Manageable/Complex
+ * pill system. Shows the AI note from each risk axis as a paragraph,
+ * then the raw production facts beneath.
+ */
+export function ProductionFactsSection({ data, production }: Props) {
+  return (
+    <Section label="Production Reality">
+      <div className="space-y-5">
+        {/* Production note */}
+        {data.budget?.note && (
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+              Production
+            </p>
+            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0 max-w-[62ch]">
+              {data.budget.note}
+            </p>
+            {production && (
+              <div className="mt-3">
+                <ProductionDetails production={production} />
+              </div>
+            )}
+          </div>
+        )}
+        {/* Cast note */}
+        {data.casting?.note && (
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+              Cast
+            </p>
+            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0 max-w-[62ch]">
+              {data.casting.note}
+            </p>
+            {production && (
+              <div className="mt-3">
+                <CastDetails production={production} />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </Section>
+  )
+}

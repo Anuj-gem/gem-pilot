@@ -13,8 +13,7 @@ import { useState } from 'react'
 const TABS = [
   { id: 'overview', label: 'Overview' },
   { id: 'narrative', label: 'Narrative Analysis' },
-  { id: 'production', label: 'Cost' },
-  { id: 'audience', label: 'Audience & Distribution' },
+  { id: 'production', label: 'Packaging & Production' },
 ] as const
 
 type TabId = (typeof TABS)[number]['id']
@@ -24,7 +23,7 @@ interface Props {
 }
 
 /**
- * Wrap each tab's content in a <div data-tab="overview|narrative|production|audience">
+ * Wrap each tab's content in a <div data-tab="overview|narrative|production">
  * inside this component. Only the active tab's content is visible.
  */
 export function GemAnalysisTabs({ children }: Props) {

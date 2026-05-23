@@ -72,9 +72,9 @@ export function LandingCredibility() {
 
             <div className="h-px mb-3" style={{ background: 'var(--gem-gray-700)' }} />
 
-            {/* Why this can be a hit */}
+            {/* Key Strengths */}
             <p className="text-[11px] text-[var(--gem-gray-400)] m-0 mb-2 uppercase tracking-wider font-semibold">
-              Why this can be a hit
+              Key Strengths
             </p>
             <p className="text-[13px] text-[var(--gem-gray-200)] m-0 mb-1.5 leading-snug">
               Strong protagonist with clear internal conflict that drives every scene choice.

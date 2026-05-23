@@ -7,6 +7,7 @@
 // chevron. The previous always-open layout is available via `defaultOpen`
 // for callers (e.g. producer-side detail page) that want eyes on by default.
 import { ChevronDown } from 'lucide-react'
+import { InfoSection } from './info-button'
 
 export function Section({
   label,
@@ -16,7 +17,8 @@ export function Section({
   children,
 }: {
   label: string
-  /** Optional verbose intro text shown beneath the section heading. */
+  /** Optional explanation text — shown behind an ⓘ info button, not
+   *  visible by default. Replaces the old always-visible subtitle. */
   subtitle?: string
   /** Legacy prop kept for back-compat (was the collapsed summary line).
    *  No longer rendered now that sections are always open. */
@@ -27,6 +29,11 @@ export function Section({
 }) {
   void _summary
   void _defaultOpen
+  const heading = (
+    <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-tight m-0">
+      {label}
+    </h2>
+  )
   return (
     <section className="mb-12 sm:mb-14">
       <div
@@ -34,13 +41,12 @@ export function Section({
         className="w-12 h-0.5 mb-3 rounded-sm"
         style={{ background: 'var(--gem-gold)' }}
       />
-      <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-tight m-0 mb-2">
-        {label}
-      </h2>
-      {subtitle && (
-        <p className="text-[14.5px] sm:text-[15px] text-[var(--gem-gray-300)] leading-[1.55] m-0 mb-5 max-w-[62ch]">
-          {subtitle}
-        </p>
+      {subtitle ? (
+        <InfoSection text={subtitle}>
+          {heading}
+        </InfoSection>
+      ) : (
+        <div className="mb-2">{heading}</div>
       )}
       <div>{children}</div>
     </section>
