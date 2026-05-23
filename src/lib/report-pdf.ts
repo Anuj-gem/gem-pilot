@@ -520,9 +520,6 @@ export async function generateReportPdf(input: PdfInput): Promise<Buffer> {
     const primary = issueItems.find((c) => c.is_primary_lever === true)
     const secondary = issueItems.filter((c) => c.is_primary_lever !== true)
     sectionHeader(layout, 'Development Considerations')
-    if (input.evaluation?.issues?.headline) {
-      body(layout, input.evaluation.issues.headline)
-    }
     if (primary) {
       subhead(layout, primary.area || 'Primary lever')
       drawWrapped(layout, 'PRIMARY LEVER', {

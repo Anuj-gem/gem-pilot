@@ -943,23 +943,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               detail: i.detail,
               is_primary_lever: i.is_primary_lever,
             }))
-            const issuesHeadline =
-              typeof issues?.headline === 'string' &&
-              issues.headline.trim().length > 0
-                ? issues.headline.trim()
-                : null
-            const empty = merged.length === 0 && !craftNote && !issuesHeadline
+            const empty = merged.length === 0 && !craftNote
             if (empty) return null
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
               <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
               <EditorialSection label="Development considerations" accent="violet">
-                {issuesHeadline && (
-                  <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
-                    {issuesHeadline}
-                  </p>
-                )}
                 {/* Numbered list — IDENTICAL shape to "Why this can be a
                     hit". Sharpest lever is just #1; no special tag, no
                     differentiated number color, no auto-open. Sort just

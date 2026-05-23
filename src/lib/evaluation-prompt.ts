@@ -2,7 +2,20 @@
 
 /** Current prompt version — stamped on every new evaluation. Used to detect
  *  stale reports that should be re-scored before opportunity submission. */
-export const CURRENT_PROMPT_VERSION = "3.11"
+export const CURRENT_PROMPT_VERSION = "3.12"
+//
+// 3.12 changes from 3.11:
+//
+//   1. FIXED: whats_special.headline is now ADVOCATE voice (it's the
+//      Elevator Pitch the producer sees first). Strengths items stay grounded.
+//
+//   2. CUT: content_description, why_actor_wants_this, strengths[].evidence,
+//      strengths[].source, issues[].source — none of these rendered on the
+//      report page. Evidence requirement folded into what_it_means instruction.
+//
+//   3. FIXED: field name mismatches — prompt now emits casting_challenges
+//      (was casting_characteristics) and expensive_flags (was notable_requirements)
+//      to match what the page component reads.
 //
 // 3.11 changes from 3.10:
 //
@@ -82,7 +95,7 @@ export function buildGemEvaluationPrompt(declaredFormat: DeclaredFormat): string
 
 **ADVOCATE voice** (Steps 1-5: Classification, Plot Summary, Positioning Hook, Score Card reasoning prose, Lead Characters): You are the writer's champion inside an agency. Your job is to find the angle, name the opportunity, make someone connect with this material. The positioning hook should make a producer stop scrolling. The character profiles should make an actor say yes. The plot summary should make someone want to read the script. You are packaging this the way a great agent would.
 
-**REALIST voice** (Steps 7-10: Project Complexity, Packaging, What's Excellent, What's Not Working): You are an investor doing due diligence. Your job is to be honest about what's actually here — what's genuinely marketable, what's genuinely problematic, what a smart producer would actually think. If the script is mediocre, say so. If there's a lane for a mediocre script at this budget tier, say that too. If the strengths are modest, don't inflate them. If something "star-making" is actually just competent, call it competent. The writer reads this section to understand where they actually stand, not to feel good.
+**REALIST voice** (Steps 7-8: Project Complexity, Packaging; Step 9 strengths items; Step 10: What's Not Working): You are an investor doing due diligence. Your job is to be honest about what's actually here — what's genuinely marketable, what's genuinely problematic, what a smart producer would actually think. If the script is mediocre, say so. If there's a lane for a mediocre script at this budget tier, say that too. If the strengths are modest, don't inflate them. If something "star-making" is actually just competent, call it competent. The writer reads this section to understand where they actually stand, not to feel good.
 
 **Step 6 (Production Reality)** is neither voice — it's neutral facts. No advocacy, no judgment. Just what's on the page.
 
@@ -130,14 +143,7 @@ Output 5–10 tags total. Lowercase, hyphenated. Mix of:
 
 ---
 
-## STEP 2: Plot Summary & Content Assessment
-
-### Content Description
-One line describing what's actually in this document:
-- Format + approximate page count assessment
-- Examples: "Full feature screenplay, approximately 110 pages" / "TV pilot script, approximately 58 pages" / "Series bible + pilot, approximately 85 pages total" / "Treatment/outline, approximately 22 pages" / "Partial script (appears to be first 40 pages only)"
-
-If the document appears to be a treatment, outline, or incomplete script rather than a finished screenplay, note this plainly.
+## STEP 2: Plot Summary
 
 ### Plot Summary
 Write a 3-5 sentence summary of what happens in this script. A reader should finish this paragraph and understand:
@@ -339,10 +345,6 @@ If you find yourself marking 3+ characters as Lead, stop. Reread the script's st
   omit. The goal is a faithful read of what's on the page, not an
   invented casting brief.
 - **hook**: one dense paragraph describing who the character IS — voice, contradictions, emotional engine. This is also where any aliases / alter egos / multiple identities are mentioned.
-- **why_actor_wants_this**: one paragraph naming **the performance comp AND the showcase dimension** — what specific acting opportunity this unlocks.
-  - Required shape: name a comp performance, then name what that performance GAVE the actor that this role also gives.
-  - Reference performances, not actors being suggested for the role.
-  - Good: *"This is the showcase territory of McConaughey in True Detective season 1 — a slow-burning monologist whose monologues ARE the craft, a role that resets how the industry sees the actor who takes it."*
 
 ---
 
@@ -355,13 +357,13 @@ Neutral facts. No judgments. A producer reading this section should come away wi
 - Number of leads (apply the strict Lead rule from STEP 5 — usually 1, occasionally 2, almost never 3+)
 - Number of series regulars (recurring, non-lead)
 - Child actors required (yes/no)
-- Notable casting characteristics (twins, specific physical requirements, age-specific casting)
+- Casting challenges (twins, specific physical requirements, age-specific casting)
 
 ### Locations & Scale
 - Number of distinct locations
 - Interior/exterior ratio
 - Period or contemporary
-- Notable location requirements (international, underwater, aerial, period-built sets, remote)
+- Expensive flags (international, underwater, aerial, period-built sets, remote)
 
 ### Technical Requirements
 - VFX level: none / minor / moderate / heavy (with specifics)
@@ -521,11 +523,13 @@ For series:
 
 ---
 
-## STEP 9: What's Excellent (REALIST SYNTHESIS — runs after everything above)
+## STEP 9: What's Excellent
 
-**Voice: REALIST.** This is not cheerleading. This is an honest assessment of what's actually marketable and genuinely strong in this script. A producer reading this section should trust that if you say something is excellent, it actually is — and if you don't say much, there isn't much to say.
+Your job is to triangulate across ALL prior analysis — the individual dimension scores + their reasoning, the production reality, and the narrative — to find what's genuinely worth attention.
 
-Your job is to triangulate across ALL prior analysis — the individual dimension scores + their reasoning, the production reality, and the narrative — to find what's genuinely worth attention. Sometimes the answer is "not much, but here's what IS there."
+**The headline is ADVOCATE voice.** This is the Elevator Pitch — 2-3 sentences that make someone want to read the script. It should make a producer stop scrolling. Match the enthusiasm to the actual scores (don't inflate a 5 into sounding like an 8), but frame what IS strong in the most compelling way possible. Even a modest script has an angle — find it.
+
+**The individual strengths items are grounded and honest.** Each one must be anchored in specific dimension scores and script evidence. Don't cheerlead — name what's actually strong and why it matters.
 
 ### How to find what's genuinely strong
 
@@ -561,18 +565,16 @@ Your job is to triangulate across ALL prior analysis — the individual dimensio
 
 List 2-5 genuine strengths (fewer is better if fewer are real). For each:
 - **dimension_or_area**: A SPECIFIC, CONCISE SENTENCE naming the strength. Under ~10 words. Reference the actual source (a dimension, a production fact, a cross-factor combination).
-- **what_it_means**: **Exactly two sentences.** Sentence 1: what this strength actually indicates — what opportunity or potential it creates. Sentence 2: why it matters for the market, for packaging, or for the writer's development. **If the strength is modest, say so.** "This isn't exceptional but it's solid enough to build on" is better than inflating a 6 into sounding like an 8.
-- **evidence**: brief script grounding — a scene, character, structural choice, or production fact.
-- **source**: "script" | "production" | "both"
+- **what_it_means**: **Exactly two sentences.** Sentence 1: what this strength actually indicates — ground it in a specific scene, character, or production fact from the script. Sentence 2: why it matters for the market, for packaging, or for the writer's development. **If the strength is modest, say so.** "This isn't exceptional but it's solid enough to build on" is better than inflating a 6 into sounding like an 8.
 
-THEN write a **headline**: 2-3 sentences that honestly synthesize what's genuinely strong. The headline should reflect what the data actually shows — including when the data shows "decent but not remarkable."
+THEN write a **headline** (ADVOCATE voice): 2-3 sentences that make someone want to read this script. Match enthusiasm to actual scores, but frame what IS strong in the most compelling way. This is the Elevator Pitch a producer sees first.
 
-**Examples of honest, data-driven headlines:**
+**Examples of advocate headlines calibrated to data:**
 
-- High concept (8) + contained budget + strong tone (7.5): *"A genuinely original premise with production economics that make it an easy greenlight at the indie tier — and the tonal specificity means the right director would chase this. The execution gaps are real but closable."*
-- Mid-range across all dimensions (5-6.5), micro budget: *"Nothing here demands attention on craft alone, but the contained production footprint and viable genre premise make this a low-risk development option. The writing is competent without being distinctive — the economics are doing the heavy lifting."*
-- Character appeal (8) but weak concept (5): *"The central relationship is genuinely distinctive — the kind of dynamic that makes an actor say yes. The concept around it is generic, which means the excellence here is in the writer's character instincts, not in this particular project."*
-- Everything at 5-6, nothing standing out: *"This is professional-grade work that reads like a competent first draft. There's no fatal flaw but also no spike that would make a buyer chase it. The writer has the fundamentals — the next draft needs a dimension that breaks out."*
+- High concept (8) + contained budget + strong tone (7.5): *"A genuinely original premise with production economics that make it an easy greenlight at the indie tier — and the tonal specificity means the right director would chase this."*
+- Mid-range across all dimensions (5-6.5), micro budget: *"A contained, producible genre premise at a budget tier where the concept only needs to be good enough — and it is. The smart play is the economics."*
+- Character appeal (8) but weak concept (5): *"The central relationship is genuinely distinctive — the kind of dynamic that makes an actor say yes. The project lives or dies on that performance."*
+- Everything at 5-6, nothing standing out: *"Professional-grade work with the fundamentals in place. The next draft needs a dimension that breaks out — but the bones are here to build on."*
 
 ---
 
@@ -631,7 +633,6 @@ The language should make clear which category without explicitly labeling it. "T
   - Bad: *"The second act needs restructuring"* (script doctor)
 - **detail**: 1-3 sentences expanding. Names the impact on a buying/investment decision. Makes clear whether this is a development note or a fundamental concern.
 - **is_primary_lever**: \`true\` on exactly ONE item — the single biggest thing preventing this from working.
-- **source**: "script" | "production" | "both"
 
 THEN write a **headline**: 1-2 sentences. The honest one-liner on what's holding this back.
 
@@ -658,8 +659,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
     "tone": "",                  // 1-2 words ONLY (e.g. "gritty", "elevated satire")
     "tags": []                   // 5-10 tags: controlled lists + up to 3 distinctive
   },
-  "content_description": "",      // e.g. "Full feature screenplay, approximately 110 pages"
-  "plot_summary": "",              // 3-5 sentence neutral plot description
+  "plot_summary": "",              // 3-5 sentence plot description
   "positioning_hook": "",
   "scores": {
     "audience_appeal_marketability": {"score": 0, "reasoning": ""},
@@ -678,8 +678,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
       "name": "",                 // SINGLE canonical name — NO SLASHES
       "role_type": "Lead|Supporting",  // Lead is reserved (default 1, max 2 only when truly co-protagonist)
       "demographics": "",
-      "hook": "",                 // aliases / alter egos / multi-name characters mentioned here in prose
-      "why_actor_wants_this": ""
+      "hook": ""                  // aliases / alter egos / multi-name characters mentioned here in prose
     }
   ],
   "production_reality": {
@@ -688,13 +687,13 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
       "leads": 0,                 // matches the strict Lead rule (usually 1)
       "series_regulars": 0,
       "child_actors": false,
-      "casting_characteristics": []
+      "casting_challenges": []
     },
     "locations": {
       "distinct_count": 0,
       "interior_exterior_ratio": "",
       "period_or_contemporary": "",
-      "notable_requirements": []
+      "expensive_flags": []
     },
     "technical": {
       "vfx_level": "none|minor|moderate|heavy",
@@ -734,13 +733,13 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
   },
   "whats_special": {
     "strengths": [
-      {"dimension_or_area": "", "what_it_means": "", "evidence": "", "source": "script|production|both"}
+      {"dimension_or_area": "", "what_it_means": ""}
     ],
     "headline": ""
   },
   "issues": {
     "items": [
-      {"area": "", "detail": "", "is_primary_lever": false, "source": "script|production|both"}
+      {"area": "", "detail": "", "is_primary_lever": false}
     ],
     "headline": ""
   }
@@ -749,7 +748,7 @@ Return structured JSON. Do NOT calculate a weighted score or tier — that is ha
 
 ## KEY RULES
 
-1. **Two voices, not one.** Steps 1-5 = advocate (find the angle, make someone care). Steps 7-10 = realist (honest market assessment — if the script is mediocre, say so). Step 6 = neutral facts. Never let the advocate voice bleed into the realist sections.
+1. **Two voices, not one.** Steps 1-5 = advocate (find the angle, make someone care). Step 9 headline = advocate (the Elevator Pitch). Steps 7-8, Step 9 strengths items, Step 10 = realist (honest market assessment). Step 6 = neutral facts.
 2. **Every claim must point to the script.** If you can't cite a specific scene, character, or line, don't say it.
 3. **Step ordering matters — synthesis runs LAST.** Steps 1-8 are factual extraction + scoring + packaging. Steps 9 and 10 (What's Excellent + What's Not Working) are synthesis that draw from everything above. Do not write them first.
 4. **Risk Details forces commitment.** Do not default to Medium across all 3 cards. Rate honestly.
@@ -772,7 +771,6 @@ Before you return the response, scan your JSON and confirm ALL of these top-leve
 
 - \`title\` (extracted from the title page)
 - \`classification\`
-- \`content_description\`
 - \`plot_summary\`
 - \`positioning_hook\`
 - \`scores\` (all 10 dimensions)
