@@ -66,7 +66,7 @@ import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
 import { RerunBanner } from '@/components/report/rerun-banner'
 import { ProductionFactsSection } from '@/components/report/risk-details-card'
 // Annotations removed — synthesized feedback + next-steps tag instead.
-import { PackagingSection, BudgetTierCard } from '@/components/report/packaging-block'
+import { BudgetTierCard } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
 // Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
 // industry partner views this report. The surface is the same as the
@@ -1065,31 +1065,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
           {/* ── TAB: PACKAGING & PRODUCTION ── */}
           <div className="gem-tab-panel space-y-5" data-tab="production">
-            {/* Audience card (was in Audience & Distribution tab) */}
-            <SectionGate
-              section="deep_dive_package"
-              privacy={privacy}
-              isOwnerOrAdmin={isOwnerOrAdmin}
-              submissionId={privacyControlId}
-              isPublic={submission.is_public ?? false}
-              isProSubscriber={true}
-            >
-              <div data-pdf-section="packaging" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-                {packaging && (
-                  <div
-                    style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                    aria-hidden={applyPaywallBlur ? true : undefined}
-                  >
-                    <PackagingSection data={packaging} />
-                  </div>
-                )}
-              </div>
-            </SectionGate>
 
-            {/* Budget tier card */}
+            {/* Budget Tier — prominent lead for this tab */}
             {packaging?.budget_tier && (
               <div
-                className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
                 style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
                 aria-hidden={applyPaywallBlur ? true : undefined}
               >
@@ -1097,7 +1076,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </div>
             )}
 
-            {/* Production facts (plain display, replaces Project Complexity cards) */}
+            {/* Production Reality — single expandable section */}
             {riskDetails && (
               <SectionGate
                 section="project_complexity"
@@ -1109,7 +1088,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               >
                 <div
                   data-pdf-section="project_complexity"
-                  className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
                   style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
                   aria-hidden={applyPaywallBlur ? true : undefined}
                 >
