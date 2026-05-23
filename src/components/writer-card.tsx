@@ -16,9 +16,11 @@ interface Props {
   writer: WriterCardData
   /** "lg" = top-of-report use; "sm" = compact for review byline. */
   size?: 'sm' | 'lg'
+  /** "dark" renders light text for dark backgrounds (report hero). */
+  variant?: 'light' | 'dark'
 }
 
-export function WriterCard({ writer, size = 'lg' }: Props) {
+export function WriterCard({ writer, size = 'lg', variant = 'light' }: Props) {
   const name = (writer.full_name || writer.handle || 'Anonymous writer').trim()
   const handle = writer.handle ? `@${writer.handle}` : ''
   const profileHref = writer.handle ? `/w/${writer.handle}` : null
@@ -33,16 +35,16 @@ export function WriterCard({ writer, size = 'lg' }: Props) {
     <div className={`flex items-center gap-${isLg ? 4 : 3}`}>
       <Avatar url={writer.avatar_url} initials={initials} size={isLg ? 48 : 36} />
       <div className="flex-1 min-w-0">
-        <div className={`font-bold text-gray-900 ${isLg ? 'text-[16px]' : 'text-[14px]'} leading-tight`}>
+        <div className={`font-bold ${variant === 'dark' ? 'text-white' : 'text-gray-900'} ${isLg ? 'text-[16px]' : 'text-[14px]'} leading-tight`}>
           {name}
           {handle && (
-            <span className={`font-normal text-gray-400 ml-1.5 ${isLg ? 'text-[14px]' : 'text-[12px]'}`}>
+            <span className={`font-normal ${variant === 'dark' ? 'text-white/40' : 'text-gray-400'} ml-1.5 ${isLg ? 'text-[14px]' : 'text-[12px]'}`}>
               {handle}
             </span>
           )}
         </div>
         {writer.headline && (
-          <div className={`text-gray-600 ${isLg ? 'text-[13px]' : 'text-[12px]'} leading-snug mt-0.5 truncate`}>
+          <div className={`${variant === 'dark' ? 'text-white/60' : 'text-gray-600'} ${isLg ? 'text-[13px]' : 'text-[12px]'} leading-snug mt-0.5 truncate`}>
             {writer.headline}
           </div>
         )}

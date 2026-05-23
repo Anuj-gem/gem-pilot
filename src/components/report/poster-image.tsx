@@ -77,7 +77,7 @@ export function PosterImage({ submissionId, posterUrl, isOwner }: Props) {
       <div
         className={`
           w-full sm:w-[200px] md:w-[240px] aspect-[2/3] rounded-xl overflow-hidden
-          ${hasPoster ? '' : 'border-2 border-dashed border-gray-300 bg-gray-50'}
+          ${hasPoster ? 'shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4),0_4px_48px_0_rgba(124,77,237,0.12)]' : 'border border-white/10'}
           ${isOwner ? 'cursor-pointer group' : ''}
           relative
         `}
@@ -102,14 +102,17 @@ export function PosterImage({ submissionId, posterUrl, isOwner }: Props) {
             )}
           </>
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
+          <div
+            className="w-full h-full flex flex-col items-center justify-center"
+            style={{ background: 'linear-gradient(180deg, rgba(34,28,56,1) 0%, rgba(18,16,34,1) 100%)' }}
+          >
             {uploading ? (
-              <Loader2 className="w-8 h-8 animate-spin" />
+              <Loader2 className="w-8 h-8 animate-spin text-white/40" />
             ) : (
               <>
-                <ImagePlus className="w-8 h-8 mb-2" />
+                <ImagePlus className="w-8 h-8 mb-2 text-white/30" />
                 {isOwner && (
-                  <span className="text-[12px] text-gray-500 font-medium">
+                  <span className="text-[12px] text-white/40 font-medium">
                     Add poster
                   </span>
                 )}
@@ -120,8 +123,8 @@ export function PosterImage({ submissionId, posterUrl, isOwner }: Props) {
 
         {/* Upload spinner overlay */}
         {uploading && hasPoster && (
-          <div className="absolute inset-0 bg-white/70 flex items-center justify-center">
-            <Loader2 className="w-8 h-8 animate-spin text-gray-500" />
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+            <Loader2 className="w-8 h-8 animate-spin text-white/60" />
           </div>
         )}
       </div>

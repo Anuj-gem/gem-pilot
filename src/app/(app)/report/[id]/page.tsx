@@ -494,121 +494,173 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 pb-24">
-        {/* Free-tier owner upgrade banner — slim, top-mounted, single
-            message ("Upgrade to GEM Pro to submit new drafts"). Replaces
-            the heavier mid-page InlineUpgradeCTA. Anuj 2026-04-30 v0.10.12. */}
-        {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
-        {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
+      {/* ── DARK CANVAS HERO — cinematic top section ──
+          Breaks out of the gray (app) layout background with negative
+          margins so the dark gradient spans full width. Contains poster,
+          title, logline, score, and genre pills on a dark canvas with
+          a subtle purple ambient glow. */}
+      <div
+        className="gem-report-hero -mx-4 sm:-mx-6 lg:-mx-8 -mt-6 mb-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #141220 0%, #1a1630 60%, #211d38 100%)',
+          // Override CSS variables so child components (EditableTopCard,
+          // OwnerActionsMenu, DetailsExpander) render light-on-dark
+          // without needing a variant prop on each one.
+          '--gem-gray-50': '#FFFFFF',
+          '--gem-gray-100': 'rgba(255,255,255,0.92)',
+          '--gem-gray-200': 'rgba(255,255,255,0.80)',
+          '--gem-gray-300': 'rgba(255,255,255,0.65)',
+          '--gem-gray-400': 'rgba(255,255,255,0.50)',
+          '--gem-gray-500': 'rgba(255,255,255,0.35)',
+          '--gem-gray-600': 'rgba(255,255,255,0.15)',
+          '--gem-gray-700': 'rgba(255,255,255,0.12)',
+          '--gem-gray-800': 'rgba(255,255,255,0.06)',
+          '--gem-gray-900': 'rgba(255,255,255,0.03)',
+          '--gem-gold': '#E8B825',
+        } as React.CSSProperties}
+      >
+        {/* Ambient purple glow */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            width: '700px',
+            height: '450px',
+            top: '-40px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: 'radial-gradient(ellipse at center, rgba(124,77,237,0.10) 0%, rgba(124,77,237,0.03) 50%, transparent 70%)',
+          }}
+        />
 
-        {/* Anonymous submission = script_submissions.user_id IS NULL.
-            Show the "Claim your report" card to anyone EXCEPT admin —
-            admin gets the owner action chrome below so they can remove
-            problematic anonymous posts. Anuj 2026-05-01 v0.12.2. */}
-        {isAnonymousSubmission && !isAdmin && (
-          <div id="inline-signup" className="rounded-xl transition-shadow duration-500 mb-8">
-            <InlineSignup submissionId={submission.id} evaluationId={id} />
-          </div>
-        )}
+        {/* Banners inside hero */}
+        <div className="max-w-5xl mx-auto pt-8 relative z-10">
+          {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
+          {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
-        {/* Admin badge — only shown for admin viewing someone else's report */}
-        {isAdmin && !isOwner && (
-          <div className="gem-no-print mb-4">
-            <span
-              className="text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
-              style={{
-                color: '#dc2626',
-                background: 'rgba(220,38,38,0.07)',
-                border: '1px solid rgba(220,38,38,0.25)',
-              }}
-            >
-              Admin
-            </span>
-          </div>
-        )}
+          {isAnonymousSubmission && !isAdmin && (
+            <div id="inline-signup" className="rounded-xl transition-shadow duration-500 mb-6">
+              <InlineSignup submissionId={submission.id} evaluationId={id} />
+            </div>
+          )}
 
-        {/* Visitor snapshot banner + owner privacy-review banner removed
-            (Selznick-4 v4): they were chrome the writer / visitor didn't
-            need every time the page loads. The qualification banner above
-            already carries the publish CTA, and the privacy modal opens
-            on demand from there. */}
+          {isAdmin && !isOwner && (
+            <div className="gem-no-print mb-4">
+              <span
+                className="text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
+                style={{
+                  color: '#ff6b6b',
+                  background: 'rgba(255,107,107,0.12)',
+                  border: '1px solid rgba(255,107,107,0.3)',
+                }}
+              >
+                Admin
+              </span>
+            </div>
+          )}
+        </div>
 
-        {/* Privacy is now fully handled by the publish/privacy modal
-            triggered from the VisibilityToggle button above. The in-page
-            panel was removed on 2026-04-23 — too many conflicting controls
-            when the modal already owns preset selection, custom toggles,
-            contact settings, publish, and unpublish. */}
-
-        {/* Anuj 2026-04-30 v0.10.13 — wrap the body of the report in a
-            single white card so it sits cleanly on the gray (app)
-            background instead of having text float against #F7F8FA.
-            Chrome (back link + upgrade banner + status line + privacy
-            modal triggers) stays outside the card. */}
-        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm">
-
-        {/* ── TOP CARD — poster + info layout ──
-            Desktop: poster image on the left, title/author/format/logline
-            on the right, OwnerActionsMenu in the top-right corner.
-            Mobile: poster at top, info below. */}
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 relative">
-          {/* Poster image area */}
-          <PosterImage
-            submissionId={submission.id}
-            posterUrl={submission.poster_url ?? null}
-            isOwner={isOwner}
-          />
-
-          {/* Info column */}
-          <div className="flex-1 min-w-0">
-            {/* Owner actions menu — top right corner */}
-            {(isOwner || isAdmin) && (
-              <div className="gem-no-print absolute top-0 right-0">
-                <OwnerActionsMenu
-                  submissionId={submission.id}
-                  evaluationId={id}
-                  title={submission.title}
-                  declaredFormat={submission.declared_format ?? null}
-                  isSubscribed={ownerIsSubscribed || isAdmin}
-                />
-              </div>
-            )}
-
-            {/* Writer card */}
-            {!isAnonymousSubmission && submission.profiles && (
-              <div className="mb-3">
-                <WriterCard
-                  writer={{
-                    id: submission.user_id ?? '',
-                    full_name: submission.profiles.full_name,
-                    handle: submission.profiles.handle,
-                    headline: submission.profiles.headline,
-                    avatar_url: submission.profiles.avatar_url,
-                  }}
-                  size="lg"
-                />
-              </div>
-            )}
-
-            {/* Title + format + logline + details */}
-            <EditableTopCard
-              evaluationId={id}
+        {/* Hero content — poster + info */}
+        <div className="max-w-5xl mx-auto pb-12 sm:pb-16 relative z-10">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 relative">
+            {/* Poster image area */}
+            <PosterImage
               submissionId={submission.id}
-              initial={topCard}
+              posterUrl={submission.poster_url ?? null}
               isOwner={isOwner}
-              hasEdits={topCardHasEdits}
-              postedAt={submission.created_at ?? null}
-              authorName={
-                isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-              }
-              authorHandle={
-                isAnonymousSubmission ? null : submission.profiles?.handle ?? null
-              }
-              commercialScore={null}
-              scoreShownToIndustry={isScoreVisible(privacy)}
-              isProSubscriber={true}
             />
+
+            {/* Info column */}
+            <div className="flex-1 min-w-0">
+              {/* Owner actions menu — top right corner */}
+              {(isOwner || isAdmin) && (
+                <div className="gem-no-print absolute top-0 right-0">
+                  <OwnerActionsMenu
+                    submissionId={submission.id}
+                    evaluationId={id}
+                    title={submission.title}
+                    declaredFormat={submission.declared_format ?? null}
+                    isSubscribed={ownerIsSubscribed || isAdmin}
+                  />
+                </div>
+              )}
+
+              {/* Writer card */}
+              {!isAnonymousSubmission && submission.profiles && (
+                <div className="mb-3">
+                  <WriterCard
+                    writer={{
+                      id: submission.user_id ?? '',
+                      full_name: submission.profiles.full_name,
+                      handle: submission.profiles.handle,
+                      headline: submission.profiles.headline,
+                      avatar_url: submission.profiles.avatar_url,
+                    }}
+                    size="lg"
+                    variant="dark"
+                  />
+                </div>
+              )}
+
+              {/* Title + format + logline + details */}
+              <EditableTopCard
+                evaluationId={id}
+                submissionId={submission.id}
+                initial={topCard}
+                isOwner={isOwner}
+                hasEdits={topCardHasEdits}
+                postedAt={submission.created_at ?? null}
+                authorName={
+                  isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+                }
+                authorHandle={
+                  isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+                }
+                commercialScore={null}
+                scoreShownToIndustry={isScoreVisible(privacy)}
+                isProSubscriber={true}
+              />
+
+              {/* Score + tier badge — prominent on the dark canvas */}
+              {commercialScore !== null && (
+                <div className="flex items-center gap-4 mt-6">
+                  <span className="text-[48px] font-bold tabular-nums text-white leading-none">
+                    {Math.round(commercialScore)}
+                  </span>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[12px] uppercase tracking-[0.18em] font-medium text-white/40">
+                      GEM Score
+                    </span>
+                    {designation && (
+                      <span
+                        className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-semibold"
+                        style={{
+                          background: 'rgba(124,77,237,0.2)',
+                          color: '#a78bfa',
+                        }}
+                      >
+                        {designation}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
+
+        {/* Gradient transition to content */}
+        <div
+          className="h-12"
+          style={{
+            background: 'linear-gradient(180deg, #211d38 0%, #f5f6f8 100%)',
+          }}
+        />
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24">
+
+        {/* Report body — white card wrapping all evaluation sections */}
+        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm -mt-6">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -1297,7 +1349,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
         </div>
-        {/* /v0.10.13 white card wrapper closes here. */}
+        {/* /white card wrapper closes here. */}
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
