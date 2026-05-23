@@ -77,7 +77,7 @@ export function Collapsible({
 }) {
   // Primary-lever variant: red accent + auto-open so the sharpest note isn't hidden behind a click.
   const borderColor = primary ? 'rgba(220,38,38,0.5)' : 'var(--gem-gray-700)'
-  const bg = primary ? 'linear-gradient(135deg, rgba(220,38,38,0.04), #fff 60%)' : '#fff'
+  const bg = primary ? 'linear-gradient(135deg, rgba(220,38,38,0.06), rgba(255,255,255,0.03) 60%)' : 'rgba(255,255,255,0.03)'
   return (
     <details
       {...(defaultOpen || primary ? { open: true } : {})}

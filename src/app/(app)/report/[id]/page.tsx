@@ -671,9 +671,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {/* Override the (app) layout light-gray background to dark for report */}
       <style>{`
         .min-h-screen { background: #1d1932 !important; }
+        .gem-dark-section { background: rgba(255,255,255,0.04); }
       `}</style>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24 pt-6">
+      <div
+        className="max-w-5xl mx-auto px-4 sm:px-6 pb-24 pt-2"
+        style={{
+          '--gem-gray-50': '#FFFFFF',
+          '--gem-gray-100': 'rgba(255,255,255,0.92)',
+          '--gem-gray-200': 'rgba(255,255,255,0.80)',
+          '--gem-gray-300': 'rgba(255,255,255,0.65)',
+          '--gem-gray-400': 'rgba(255,255,255,0.50)',
+          '--gem-gray-500': 'rgba(255,255,255,0.35)',
+          '--gem-gray-600': 'rgba(255,255,255,0.15)',
+          '--gem-gray-700': 'rgba(255,255,255,0.12)',
+          '--gem-gray-800': 'rgba(255,255,255,0.06)',
+          '--gem-gray-900': 'rgba(255,255,255,0.03)',
+          '--gem-gold': '#E8B825',
+        } as React.CSSProperties}
+      >
         <div className="space-y-5">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
@@ -708,7 +724,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* PLOT SUMMARY (v3.9+) — collapsible */}
         {plotSummary && (
-          <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+          <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
           <Collapsible title={contentDescription ?? 'Plot Summary'}>
             <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 max-w-[62ch]">
               {plotSummary}
@@ -728,7 +744,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {whatsSpecial.headline && (
-            <div data-pdf-section="whats_working" className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+            <div data-pdf-section="whats_working" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
             <EditorialSection label="Why this can be a hit" accent="gold">
               <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[62ch] font-medium">
                 {whatsSpecial.headline}
@@ -748,7 +764,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {leadCharacters.length > 0 && (
-            <div data-pdf-section="cast" className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+            <div data-pdf-section="cast" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
             {(() => {
             // Split Lead vs Supporting (2026-04-28). Leads keep the full
             // <Collapsible> card treatment. Supporting drops into a
@@ -802,19 +818,41 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* ═══ GEM ANALYSIS DIVIDER ═══ */}
-        <div className="mt-10 mb-8">
-          <div className="flex items-center gap-4">
-            <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
-            <span
-              className="text-[11px] uppercase tracking-[0.25em] font-bold shrink-0"
-              style={{ color: 'var(--gem-accent)' }}
-            >
-              GEM Analysis
-            </span>
-            <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
-          </div>
-        </div>
+        {/* ═══ GEM ANALYSIS — collapsible group ═══ */}
+        <details open className="gem-analysis-group [&>summary::-webkit-details-marker]:hidden mt-10">
+          <summary className="cursor-pointer list-none mb-6">
+            <div className="flex items-center gap-4">
+              <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
+              <div className="flex items-center gap-2 shrink-0">
+                <span
+                  className="text-[11px] uppercase tracking-[0.25em] font-bold"
+                  style={{ color: 'var(--gem-accent)' }}
+                >
+                  GEM Analysis
+                </span>
+                <span
+                  aria-hidden
+                  className="text-[var(--gem-gray-400)] text-[12px] transition-transform duration-200"
+                  style={{ display: 'inline-block' }}
+                >
+                  ▾
+                </span>
+              </div>
+              <div className="h-px flex-1" style={{ background: 'rgba(124,58,237,0.25)' }} />
+            </div>
+          </summary>
+
+          <div className="space-y-8">
+
+          {/* ── NARRATIVE ANALYSIS ── */}
+          <details open className="gem-subsection [&>summary::-webkit-details-marker]:hidden">
+            <summary className="cursor-pointer list-none flex items-center justify-between gap-3 py-3 px-1 mb-3">
+              <span className="text-[13px] uppercase tracking-[0.18em] font-bold" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                Narrative Analysis
+              </span>
+              <span aria-hidden className="text-[var(--gem-gray-500)] text-[12px]">▾</span>
+            </summary>
+            <div className="space-y-5">
 
         {/* NUMBERED STRENGTHS — moved from pitch to analysis */}
         <SectionGate
@@ -826,7 +864,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {allStrengths.length > 0 && (
-            <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+            <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
             <EditorialSection label="Why this can be a hit" accent="gold">
               <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
                 {allStrengths.map((s, i) => (
@@ -873,6 +911,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
         </SectionGate>
+            </div>
+          </details>
+          {/* /Narrative Analysis */}
+
+          {/* ── MARKETABILITY & DISTRIBUTION ── */}
+          <details open className="gem-subsection [&>summary::-webkit-details-marker]:hidden">
+            <summary className="cursor-pointer list-none flex items-center justify-between gap-3 py-3 px-1 mb-3">
+              <span className="text-[13px] uppercase tracking-[0.18em] font-bold" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                Marketability &amp; Distribution
+              </span>
+              <span aria-hidden className="text-[var(--gem-gray-500)] text-[12px]">▾</span>
+            </summary>
+            <div className="space-y-5">
 
         {/* PACKAGE ANGLES + PACKAGING — both fall under the
             "packaging" PDF section toggle. */}
@@ -884,7 +935,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
           isProSubscriber={true}
         >
-          <div data-pdf-section="packaging" className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+          <div data-pdf-section="packaging" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
             {/* PACKAGING — modern card UI. Renders for every eval; the
                 bridge derives this shape from legacy `package_angles` +
                 `platform_fit` when the eval is from the older prompt. */}
@@ -898,6 +949,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )}
           </div>
         </SectionGate>
+            </div>
+          </details>
+          {/* /Marketability & Distribution */}
+
+          {/* ── PRODUCTION & BUDGET ── */}
+          <details open className="gem-subsection [&>summary::-webkit-details-marker]:hidden">
+            <summary className="cursor-pointer list-none flex items-center justify-between gap-3 py-3 px-1 mb-3">
+              <span className="text-[13px] uppercase tracking-[0.18em] font-bold" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                Production &amp; Budget
+              </span>
+              <span aria-hidden className="text-[var(--gem-gray-500)] text-[12px]">▾</span>
+            </summary>
+            <div className="space-y-5">
 
         {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
             craft note as an inline callout, then all other considerations.
@@ -941,7 +1005,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
-              <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+              <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
               <EditorialSection label="Development considerations" accent="violet">
                 {issuesHeadline && (
                   <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
@@ -1047,7 +1111,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           >
             <div
               data-pdf-section="project_complexity"
-              className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm"
+              className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
               style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
               aria-hidden={applyPaywallBlur ? true : undefined}
             >
@@ -1055,6 +1119,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           </SectionGate>
         )}
+            </div>
+          </details>
+          {/* /Production & Budget */}
 
         {/* OVERALL GEM SCORE — moved here from the top-of-page badge
             (Anuj 2026-04-29). The score now lives at the bottom of the
@@ -1067,7 +1134,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           (isOwnerOrAdmin || isScoreVisible(privacy)) && (
             <section
               data-pdf-section="gem_score"
-              className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm"
+              className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
             >
               <p
                 className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-3"
@@ -1085,7 +1152,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <div
                   className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
                   style={{
-                    background: '#fff',
+                    background: 'rgba(124,58,237,0.12)',
                     border: '1px solid rgba(124,58,237,0.30)',
                     minWidth: 96,
                     padding: '12px 18px',
@@ -1170,6 +1237,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </section>
           )}
 
+          </div>
+        </details>
+        {/* /GEM Analysis group */}
+
         {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
             the Development Priorities EditorialSection above, which now
             carries the writer-facing "Issues" label and a lede + see-more
@@ -1183,7 +1254,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             "Reference" disclosure when there's nothing to put in it.
             Anuj 2026-04-30 cleanup. */}
         {!riskDetails && production && (isOwnerOrAdmin || (submission.is_public ?? false)) && (
-        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+        <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
         <details className="gem-no-print group [&_summary::-webkit-details-marker]:hidden">
           <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
             <div
@@ -1359,8 +1430,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Fallback if writer has everything private and the page would
             render empty for visitors. */}
         {!isOwnerOrAdmin && !anyPublic && (
-          <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
-            <p className="text-[14px] text-gray-500 m-0 leading-[1.6]">
+          <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
+            <p className="text-[14px] text-[var(--gem-gray-400)] m-0 leading-[1.6]">
               {writerName} has kept this report private. Request a connection
               below if you&apos;d like to be in touch about this script.
             </p>
@@ -1465,7 +1536,7 @@ function DimensionRow({
   return (
     <div
       className="rounded-xl p-5"
-      style={{ border: '1px solid var(--gem-gray-700)', background: '#fff' }}
+      style={{ border: '1px solid var(--gem-gray-700)', background: 'rgba(255,255,255,0.04)' }}
     >
       <div className="flex items-baseline justify-between gap-4 mb-3">
         <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
