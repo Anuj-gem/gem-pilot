@@ -502,7 +502,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <div
         className="gem-report-hero -mx-4 sm:-mx-6 lg:-mx-8 -mt-6 mb-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         style={{
-          background: 'linear-gradient(180deg, #141220 0%, #1a1630 60%, #211d38 100%)',
+          background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)',
           // Override CSS variables so child components (EditableTopCard,
           // OwnerActionsMenu, DetailsExpander) render light-on-dark
           // without needing a variant prop on each one.
@@ -560,8 +560,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </div>
 
         {/* Hero content — poster + info */}
-        <div className="max-w-5xl mx-auto pb-12 sm:pb-16 relative z-10">
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 relative">
+        <div className="max-w-5xl mx-auto pb-10 sm:pb-14 relative z-10">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 relative">
             {/* Poster image area */}
             <PosterImage
               submissionId={submission.id}
@@ -570,7 +570,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             />
 
             {/* Info column */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 pt-1">
               {/* Owner actions menu — top right corner */}
               {(isOwner || isAdmin) && (
                 <div className="gem-no-print absolute top-0 right-0">
@@ -586,7 +586,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
               {/* Writer card */}
               {!isAnonymousSubmission && submission.profiles && (
-                <div className="mb-3">
+                <div className="mb-4">
                   <WriterCard
                     writer={{
                       id: submission.user_id ?? '',
@@ -601,7 +601,50 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
               )}
 
-              {/* Title + format + logline + details */}
+              {/* Genre + Format pills — prominent classification */}
+              {(topCard.genre_primary || topCard.format) && (
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  {topCard.format && (
+                    <span
+                      className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-semibold tracking-wide uppercase"
+                      style={{
+                        background: 'rgba(124,77,237,0.15)',
+                        color: '#c4b5fd',
+                        border: '1px solid rgba(124,77,237,0.25)',
+                      }}
+                    >
+                      {topCard.format}
+                    </span>
+                  )}
+                  {topCard.genre_primary && (
+                    <span
+                      className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-semibold"
+                      style={{
+                        background: 'rgba(255,255,255,0.08)',
+                        color: 'rgba(255,255,255,0.75)',
+                        border: '1px solid rgba(255,255,255,0.12)',
+                      }}
+                    >
+                      {topCard.genre_primary}
+                    </span>
+                  )}
+                  {topCard.genre_secondary?.filter(Boolean).map((g, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-medium"
+                      style={{
+                        background: 'rgba(255,255,255,0.05)',
+                        color: 'rgba(255,255,255,0.50)',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                      }}
+                    >
+                      {g}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Title + logline + details */}
               <EditableTopCard
                 evaluationId={id}
                 submissionId={submission.id}
@@ -619,31 +662,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 scoreShownToIndustry={isScoreVisible(privacy)}
                 isProSubscriber={true}
               />
-
-              {/* Score + tier badge — prominent on the dark canvas */}
-              {commercialScore !== null && (
-                <div className="flex items-center gap-4 mt-6">
-                  <span className="text-[48px] font-bold tabular-nums text-white leading-none">
-                    {Math.round(commercialScore)}
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[12px] uppercase tracking-[0.18em] font-medium text-white/40">
-                      GEM Score
-                    </span>
-                    {designation && (
-                      <span
-                        className="inline-flex items-center px-3 py-1 rounded-full text-[13px] font-semibold"
-                        style={{
-                          background: 'rgba(124,77,237,0.2)',
-                          color: '#a78bfa',
-                        }}
-                      >
-                        {designation}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -652,7 +670,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         <div
           className="h-12"
           style={{
-            background: 'linear-gradient(180deg, #211d38 0%, #f5f6f8 100%)',
+            background: 'linear-gradient(180deg, #1d1932 0%, #f5f6f8 100%)',
           }}
         />
       </div>
