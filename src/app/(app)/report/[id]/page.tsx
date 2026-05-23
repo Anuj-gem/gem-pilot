@@ -500,9 +500,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           title, logline, score, and genre pills on a dark canvas with
           a subtle purple ambient glow. */}
       <div
-        className="gem-report-hero -mx-4 sm:-mx-6 lg:-mx-8 -mt-6 mb-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+        className="gem-report-hero -mt-6 mb-0 relative overflow-hidden"
         style={{
           background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)',
+          marginLeft: 'calc(-50vw + 50%)',
+          marginRight: 'calc(-50vw + 50%)',
+          paddingLeft: 'calc(50vw - 50%)',
+          paddingRight: 'calc(50vw - 50%)',
           // Override CSS variables so child components (EditableTopCard,
           // OwnerActionsMenu, DetailsExpander) render light-on-dark
           // without needing a variant prop on each one.
