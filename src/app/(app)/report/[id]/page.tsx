@@ -36,7 +36,6 @@ import { CURRENT_PROMPT_VERSION } from '@/lib/evaluation-prompt'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { notFound, redirect } from 'next/navigation'
-import Link from 'next/link'
 import Nav from '@/components/nav'
 import { ExpiryCountdown } from '@/components/report/expiry-countdown'
 import { InlineSignup } from '@/components/report/inline-signup'
@@ -55,6 +54,7 @@ import { SupportingCharactersCarousel } from '@/components/report/supporting-cha
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
+import { PosterImage } from '@/components/report/poster-image'
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
 // ScriptPrivacySheet. The dashboard surface still uses it.
@@ -147,7 +147,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         id, user_id, title, filename, file_size, status, is_public, created_at,
         expires_at, declared_format, report_privacy, contact_enabled,
         allow_reviews, allow_industry,
-        privacy_review_needed, tags,
+        privacy_review_needed, tags, poster_url,
         profiles ( full_name, avatar_url, handle, headline )
       )
     `)
@@ -494,19 +494,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <ReportAnalytics evaluationId={id} isBlurred={applyPaywallBlur} />
       {isOwner && <DownloadPdfModalHost autoOpen={autoOpenDownload} />}
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 pb-24">
-        {/* Back link — was Community, now Dashboard (opportunities-v1). */}
-        {user && (
-          <div className="gem-no-print mb-4">
-            <Link
-              href="/dashboard"
-              prefetch={false}
-              className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-100)] transition-colors"
-            >
-              ← Dashboard
-            </Link>
-          </div>
-        )}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 pb-24">
         {/* Free-tier owner upgrade banner — slim, top-mounted, single
             message ("Upgrade to GEM Pro to submit new drafts"). Replaces
             the heavier mid-page InlineUpgradeCTA. Anuj 2026-04-30 v0.10.12. */}
@@ -523,47 +511,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Owner status line. Privacy moved into the triple-dot menu on
-            the right (Anuj 2026-04-30 v0.10) — the inline "Privacy
-            settings" link + dashboard privacy panel were too heavy for
-            something the writer rarely changes. The two account-level
-            toggles (Allow reviews / Allow industry access) now live in
-            ScriptPrivacySheet, mounted off the menu.
-            Anuj 2026-05-01 v0.12.2: also show this for admin on
-            anonymous submissions so admin can remove unowned posts. */}
-        {(!isAnonymousSubmission || isAdmin) && (
-          <div className="gem-no-print flex items-center justify-between gap-3 flex-wrap mb-6">
-            <div className="flex items-center gap-2 min-w-0 flex-wrap">
-              {(isOwner || isAdmin) && (
-                <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[var(--gem-gray-300)]">
-                  {/* Publish status badge hidden — opportunities-v1 */}
-                  {isAdmin && !isOwner && (
-                    <span
-                      className="ml-1 text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
-                      style={{
-                        color: '#dc2626',
-                        background: 'rgba(220,38,38,0.07)',
-                        border: '1px solid rgba(220,38,38,0.25)',
-                      }}
-                    >
-                      Admin
-                    </span>
-                  )}
-                </span>
-              )}
-            </div>
-            <div className="flex items-center gap-2">
-              {/* opportunities-v1: privacy props removed to hide privacy controls */}
-              {(isOwner || isAdmin) && (
-                <OwnerActionsMenu
-                  submissionId={submission.id}
-                  evaluationId={id}
-                  title={submission.title}
-                  declaredFormat={submission.declared_format ?? null}
-                  isSubscribed={ownerIsSubscribed || isAdmin}
-                />
-              )}
-            </div>
+        {/* Admin badge — only shown for admin viewing someone else's report */}
+        {isAdmin && !isOwner && (
+          <div className="gem-no-print mb-4">
+            <span
+              className="text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
+              style={{
+                color: '#dc2626',
+                background: 'rgba(220,38,38,0.07)',
+                border: '1px solid rgba(220,38,38,0.25)',
+              }}
+            >
+              Admin
+            </span>
           </div>
         )}
 
@@ -586,53 +546,69 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             modal triggers) stays outside the card. */}
         <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm">
 
-        {/* Writer card — clickable link to /w/{handle}. Same component used
-            on review bylines so the visual language is consistent across the
-            social surface. (Anuj 2026-04-29 v0.3.) */}
-        {!isAnonymousSubmission && submission.profiles && (
-          <div className="mb-4">
-            <WriterCard
-              writer={{
-                id: submission.user_id ?? '',
-                full_name: submission.profiles.full_name,
-                handle: submission.profiles.handle,
-                headline: submission.profiles.headline,
-                avatar_url: submission.profiles.avatar_url,
-              }}
-              size="lg"
+        {/* ── TOP CARD — poster + info layout ──
+            Desktop: poster image on the left, title/author/format/logline
+            on the right, OwnerActionsMenu in the top-right corner.
+            Mobile: poster at top, info below. */}
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 relative">
+          {/* Poster image area */}
+          <PosterImage
+            submissionId={submission.id}
+            posterUrl={submission.poster_url ?? null}
+            isOwner={isOwner}
+          />
+
+          {/* Info column */}
+          <div className="flex-1 min-w-0">
+            {/* Owner actions menu — top right corner */}
+            {(isOwner || isAdmin) && (
+              <div className="gem-no-print absolute top-0 right-0">
+                <OwnerActionsMenu
+                  submissionId={submission.id}
+                  evaluationId={id}
+                  title={submission.title}
+                  declaredFormat={submission.declared_format ?? null}
+                  isSubscribed={ownerIsSubscribed || isAdmin}
+                />
+              </div>
+            )}
+
+            {/* Writer card */}
+            {!isAnonymousSubmission && submission.profiles && (
+              <div className="mb-3">
+                <WriterCard
+                  writer={{
+                    id: submission.user_id ?? '',
+                    full_name: submission.profiles.full_name,
+                    handle: submission.profiles.handle,
+                    headline: submission.profiles.headline,
+                    avatar_url: submission.profiles.avatar_url,
+                  }}
+                  size="lg"
+                />
+              </div>
+            )}
+
+            {/* Title + format + logline + details */}
+            <EditableTopCard
+              evaluationId={id}
+              submissionId={submission.id}
+              initial={topCard}
+              isOwner={isOwner}
+              hasEdits={topCardHasEdits}
+              postedAt={submission.created_at ?? null}
+              authorName={
+                isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+              }
+              authorHandle={
+                isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+              }
+              commercialScore={null}
+              scoreShownToIndustry={isScoreVisible(privacy)}
+              isProSubscriber={true}
             />
           </div>
-        )}
-
-        {/* HEADLINE / TOP CARD — always rendered. The top card (title +
-            author + format + tags + posted date + headline) is the bare
-            minimum context any visitor needs; we no longer let writers
-            toggle it off. The privacy modal also no longer offers it as
-            an option. */}
-        <EditableTopCard
-          evaluationId={id}
-          submissionId={submission.id}
-          initial={topCard}
-          isOwner={isOwner}
-          hasEdits={topCardHasEdits}
-          postedAt={submission.created_at ?? null}
-          authorName={
-            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-          }
-          authorHandle={
-            isAnonymousSubmission ? null : submission.profiles?.handle ?? null
-          }
-          commercialScore={
-            // Anuj 2026-04-29: top-of-page score badge retired. The GEM
-            // Score now lives in its own dedicated section near the
-            // bottom of the report — readers have to actually scroll to
-            // it, which means the producer's first impression is the
-            // headline + Why this is a hit, not a number.
-            null
-          }
-          scoreShownToIndustry={isScoreVisible(privacy)}
-          isProSubscriber={true}
-        />
+        </div>
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}

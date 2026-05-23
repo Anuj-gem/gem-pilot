@@ -491,6 +491,7 @@ export interface ScriptSubmission {
   created_at: string;
   expires_at: string | null;
   declared_format: "Feature film" | "Series" | null;
+  poster_url: string | null;
   // joined
   profiles?: { full_name: string; avatar_url: string | null };
   script_evaluations?: ScriptEvaluation[];
