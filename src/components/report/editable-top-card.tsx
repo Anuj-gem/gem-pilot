@@ -377,27 +377,8 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
           </p>
         )}
 
-        {/* Tone + posted date line */}
-        {(initial.tone?.trim() || postedAt) && (
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] mb-4">
-            {initial.tone?.trim() && (
-              <span className="italic text-[var(--gem-gray-300)]">{initial.tone}</span>
-            )}
-            {initial.tone?.trim() && postedAt && (
-              <span className="text-[var(--gem-gray-500)]">·</span>
-            )}
-            {postedAt && (
-              <span className="text-[var(--gem-gray-400)]">
-                Posted{' '}
-                {new Date(postedAt).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </span>
-            )}
-          </div>
-        )}
+        {/* Tone + posted date now rendered by the parent (report page hero)
+            in the classification pill row. Kept in edit mode below. */}
 
         {/* Tags — always visible */}
         {initialTagsList.length > 0 && (
