@@ -364,14 +364,9 @@ export function EditableTopCard({ evaluationId, submissionId, initial, isOwner, 
         {/* Author byline + format on one line for compactness on mobile.
             Format is the only metadata in the primary view; genre/tone/posted
             move into the (collapsed) Tags expander to keep the cover quiet. */}
-        {/* Format-only metadata. Author byline lives directly above the
-            title in the WriterCard chip, so we stopped repeating "By
-            [name]" here (Anuj 2026-04-30 cleanup). */}
-        {initial.format && (
-          <p className="text-[13px] sm:text-[14px] text-[var(--gem-gray-400)] m-0 mb-5 sm:mb-7">
-            {initial.format}
-          </p>
-        )}
+        {/* Format line removed — format + genre now rendered as prominent
+            pills by the parent (report page hero). Keeping the edit-mode
+            format display below for context. */}
 
         {/* HEADLINE as clean editorial prose — no rule, no box, no label.
             Just a generously-sized paragraph in the column. This is the
@@ -954,13 +949,12 @@ function DetailsExpander({
   postedAt: string | null
 }) {
   const [open, setOpen] = useState(false)
-  const hasGenre =
-    (genrePrimary && genrePrimary.trim().length > 0) ||
-    (Array.isArray(genreSecondary) && genreSecondary.length > 0)
+  // Genre removed from details — now shown as prominent pills in the
+  // hero section. Only tone, posted date, and tags remain here.
   const hasTone = !!(tone && tone.trim().length > 0)
   const hasDate = !!postedAt
   const hasTags = tags.length > 0
-  const anyDetail = hasGenre || hasTone || hasDate || hasTags
+  const anyDetail = hasTone || hasDate || hasTags
 
   if (!anyDetail) return <div className="mb-6 sm:mb-8" />
 
@@ -983,36 +977,23 @@ function DetailsExpander({
       </button>
       {open && (
         <div className="mt-3 space-y-2.5">
-          {(hasGenre || hasTone || hasDate) && (
+          {(hasTone || hasDate) && (
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-[var(--gem-gray-400)]">
-              {genrePrimary && <span>{genrePrimary}</span>}
-              {Array.isArray(genreSecondary) &&
-                genreSecondary.map((g, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-0.5 rounded-full text-[11px] text-[var(--gem-gray-400)] border border-[var(--gem-gray-700)]"
-                  >
-                    {g}
-                  </span>
-                ))}
               {hasTone && (
-                <>
-                  <span className="text-[var(--gem-gray-600)]">·</span>
-                  <span className="italic text-[var(--gem-gray-500)]">{tone}</span>
-                </>
+                <span className="italic text-[var(--gem-gray-500)]">{tone}</span>
+              )}
+              {hasTone && hasDate && (
+                <span className="text-[var(--gem-gray-600)]">·</span>
               )}
               {hasDate && (
-                <>
-                  <span className="text-[var(--gem-gray-600)]">·</span>
-                  <span className="text-[var(--gem-gray-500)]">
-                    Posted{' '}
-                    {new Date(postedAt!).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
-                  </span>
-                </>
+                <span className="text-[var(--gem-gray-500)]">
+                  Posted{' '}
+                  {new Date(postedAt!).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </span>
               )}
             </div>
           )}

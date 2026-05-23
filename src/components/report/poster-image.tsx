@@ -76,8 +76,8 @@ export function PosterImage({ submissionId, posterUrl, isOwner }: Props) {
 
       <div
         className={`
-          w-full sm:w-[200px] md:w-[240px] aspect-[2/3] rounded-xl overflow-hidden
-          ${hasPoster ? 'shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4),0_4px_48px_0_rgba(124,77,237,0.12)]' : 'border border-white/10'}
+          w-full sm:w-[200px] md:w-[240px] aspect-[2/3] rounded-lg overflow-hidden bg-black/40
+          ${hasPoster ? 'shadow-[0_8px_32px_-4px_rgba(0,0,0,0.5),0_4px_48px_0_rgba(124,77,237,0.10)]' : 'border border-white/10'}
           ${isOwner ? 'cursor-pointer group' : ''}
           relative
         `}
