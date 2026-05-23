@@ -62,8 +62,8 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
             key={`print-${i}`}
             className="rounded-lg p-4 break-inside-avoid"
             style={{
-              border: '1px solid var(--gem-gray-700)',
-              background: '#fff',
+              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'rgba(255,255,255,0.05)',
             }}
           >
             <p className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
@@ -72,28 +72,9 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
             <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[var(--gem-gray-500)] m-0 mt-1 mb-2">
               {c.role_type} · {c.demographics}
             </p>
-            <p className="text-[14px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-3">
+            <p className="text-[14px] text-[var(--gem-gray-100)] leading-[1.55] m-0">
               {c.hook}
             </p>
-            {c.why_actor_wants_this && (
-              <div
-                className="rounded-md p-3"
-                style={{
-                  background: 'rgba(5,150,105,0.06)',
-                  border: '1px solid rgba(5,150,105,0.20)',
-                }}
-              >
-                <p
-                  className="text-[10.5px] uppercase tracking-[0.18em] font-bold mb-1 m-0"
-                  style={{ color: '#059669' }}
-                >
-                  Why an actor would want this part
-                </p>
-                <p className="text-[13.5px] text-[var(--gem-gray-100)] leading-[1.55] m-0">
-                  {c.why_actor_wants_this}
-                </p>
-              </div>
-            )}
           </div>
         ))}
       </div>
@@ -105,7 +86,8 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
           type="button"
           aria-label="Scroll supporting cast left"
           onClick={() => scrollByCard(-1)}
-          className="hidden sm:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full bg-white shadow-md border border-[var(--gem-gray-700)] text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] hover:border-[var(--gem-gray-500)] transition-colors"
+          className="hidden sm:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full shadow-md transition-colors"
+          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.5)' }}
         >
           <ChevronLeft size={16} />
         </button>
@@ -113,7 +95,8 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
           type="button"
           aria-label="Scroll supporting cast right"
           onClick={() => scrollByCard(1)}
-          className="hidden sm:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full bg-white shadow-md border border-[var(--gem-gray-700)] text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-50)] hover:border-[var(--gem-gray-500)] transition-colors"
+          className="hidden sm:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full shadow-md transition-colors"
+          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.5)' }}
         >
           <ChevronRight size={16} />
         </button>
@@ -132,8 +115,8 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
                 onClick={() => setActiveIndex(isActive ? null : i)}
                 className="flex-shrink-0 snap-start w-[200px] text-left rounded-xl px-4 py-3 transition-colors"
                 style={{
-                  border: `1px solid ${isActive ? 'var(--gem-gold)' : 'var(--gem-gray-700)'}`,
-                  background: isActive ? 'rgba(212,175,55,0.05)' : '#fff',
+                  border: `1px solid ${isActive ? 'var(--gem-gold)' : 'rgba(255,255,255,0.1)'}`,
+                  background: isActive ? 'rgba(212,175,55,0.05)' : 'rgba(255,255,255,0.05)',
                 }}
               >
                 <p
@@ -191,33 +174,11 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
             </button>
           </div>
           <p
-            className="text-[15.5px] text-[var(--gem-gray-100)] leading-[1.6] m-0 mb-4"
+            className="text-[15.5px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
             style={blurStyle}
           >
             {active.hook}
           </p>
-          {active.why_actor_wants_this && (
-            <div
-              className="rounded-lg p-4"
-              style={{
-                background: 'rgba(5,150,105,0.07)',
-                border: '1px solid rgba(5,150,105,0.20)',
-              }}
-            >
-              <p
-                className="text-[11px] uppercase tracking-[0.18em] font-bold mb-1.5 m-0"
-                style={{ color: '#059669' }}
-              >
-                Why an actor would want this part
-              </p>
-              <p
-                className="text-[14.5px] text-[var(--gem-gray-100)] leading-[1.55] m-0"
-                style={blurStyle}
-              >
-                {active.why_actor_wants_this}
-              </p>
-            </div>
-          )}
         </div>
       )}
     </div>
