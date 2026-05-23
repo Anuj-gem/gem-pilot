@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import { PrivacyConfirmSheet } from '@/components/report/privacy-confirm-sheet'
 import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
+import { useEditContextOptional } from './edit-context'
 import {
   IndustryActivitySheet,
   type IndustryActivityRow,
@@ -74,6 +75,7 @@ export function OwnerActionsMenu({
   reportSections,
 }: Props) {
   const router = useRouter()
+  const editCtx = useEditContextOptional()
   const [removeConfirm, setRemoveConfirm] = useState(false)
   const [removing, setRemoving] = useState(false)
   const [activityOpen, setActivityOpen] = useState(false)
@@ -86,7 +88,12 @@ export function OwnerActionsMenu({
   const wrapRef = useRef<HTMLDivElement>(null)
 
   function triggerEdit() {
-    console.log('[GEM DEBUG] triggerEdit fired — dispatching gem:edit-top-card')
+    // Direct context call — no more fragile window event pattern
+    if (editCtx) {
+      editCtx.startEditing()
+      return
+    }
+    // Fallback for dashboard usage (outside EditProvider)
     window.dispatchEvent(new CustomEvent('gem:edit-top-card'))
   }
 
