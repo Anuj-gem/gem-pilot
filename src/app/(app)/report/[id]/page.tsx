@@ -666,13 +666,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* Gradient transition to content */}
-        <div className="h-12" style={{ background: 'linear-gradient(180deg, #1d1932 0%, #f5f6f8 100%)' }} />
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24">
-        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-7 sm:py-9 shadow-sm -mt-6">
-          <div className="space-y-6">
+      {/* Override the (app) layout light-gray background to dark for report */}
+      <style>{`
+        .min-h-screen { background: #1d1932 !important; }
+      `}</style>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-24 pt-6">
+        <div className="space-y-5">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -706,11 +708,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* PLOT SUMMARY (v3.9+) — collapsible */}
         {plotSummary && (
+          <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
           <Collapsible title={contentDescription ?? 'Plot Summary'}>
             <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 max-w-[62ch]">
               {plotSummary}
             </p>
           </Collapsible>
+          </div>
         )}
 
         {/* WHY THIS CAN BE A HIT — lede paragraph only (pitch section).
@@ -724,7 +728,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {whatsSpecial.headline && (
-            <div data-pdf-section="whats_working">
+            <div data-pdf-section="whats_working" className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
             <EditorialSection label="Why this can be a hit" accent="gold">
               <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[62ch] font-medium">
                 {whatsSpecial.headline}
@@ -744,7 +748,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {leadCharacters.length > 0 && (
-            <div data-pdf-section="cast">
+            <div data-pdf-section="cast" className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
             {(() => {
             // Split Lead vs Supporting (2026-04-28). Leads keep the full
             // <Collapsible> card treatment. Supporting drops into a
@@ -822,6 +826,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {allStrengths.length > 0 && (
+            <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
             <EditorialSection label="Why this can be a hit" accent="gold">
               <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
                 {allStrengths.map((s, i) => (
@@ -865,6 +870,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 ))}
               </ol>
             </EditorialSection>
+            </div>
           )}
         </SectionGate>
 
@@ -878,7 +884,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isPublic={submission.is_public ?? false}
           isProSubscriber={true}
         >
-          <div data-pdf-section="packaging">
+          <div data-pdf-section="packaging" className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
             {/* PACKAGING — modern card UI. Renders for every eval; the
                 bridge derives this shape from legacy `package_angles` +
                 `platform_fit` when the eval is from the older prompt. */}
@@ -935,6 +941,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
+              <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
               <EditorialSection label="Development considerations" accent="violet">
                 {issuesHeadline && (
                   <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 mb-5 sm:mb-7 max-w-[62ch] font-medium">
@@ -1019,6 +1026,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </div>
                 )}
               </EditorialSection>
+              </div>
             )
           })()}
           </SectionGate>
@@ -1039,6 +1047,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           >
             <div
               data-pdf-section="project_complexity"
+              className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm"
               style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
               aria-hidden={applyPaywallBlur ? true : undefined}
             >
@@ -1058,7 +1067,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           (isOwnerOrAdmin || isScoreVisible(privacy)) && (
             <section
               data-pdf-section="gem_score"
-              className="mt-12 sm:mt-14 mb-2"
+              className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm"
             >
               <p
                 className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-3"
@@ -1174,7 +1183,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             "Reference" disclosure when there's nothing to put in it.
             Anuj 2026-04-30 cleanup. */}
         {!riskDetails && production && (isOwnerOrAdmin || (submission.is_public ?? false)) && (
-        <details className="gem-no-print group mt-12 sm:mt-14 [&_summary::-webkit-details-marker]:hidden">
+        <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+        <details className="gem-no-print group [&_summary::-webkit-details-marker]:hidden">
           <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
             <div
               aria-hidden
@@ -1329,6 +1339,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
           </div>
         </details>
+        </div>
         )}
 
         {/* Mid-page upgrade CTA retired 2026-04-30 v0.10.12 — replaced
@@ -1348,22 +1359,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Fallback if writer has everything private and the page would
             render empty for visitors. */}
         {!isOwnerOrAdmin && !anyPublic && (
-          <div
-            className="rounded-xl p-6 mt-6"
-            style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid var(--gem-gray-700)',
-            }}
-          >
-            <p className="text-[14px] text-[var(--gem-gray-300)] m-0 leading-[1.6]">
+          <div className="rounded-2xl border border-gray-200 bg-white px-5 sm:px-8 py-6 sm:py-7 shadow-sm">
+            <p className="text-[14px] text-gray-500 m-0 leading-[1.6]">
               {writerName} has kept this report private. Request a connection
               below if you&apos;d like to be in touch about this script.
             </p>
           </div>
         )}
-          </div>
         </div>
-        {/* /white card wrapper closes here. */}
+        {/* /space-y-5 + max-w-5xl wrappers close here. */}
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
