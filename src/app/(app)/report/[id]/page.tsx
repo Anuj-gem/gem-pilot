@@ -55,6 +55,7 @@ import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
 import { EditableTopCard } from '@/components/report/editable-top-card'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { PosterImage } from '@/components/report/poster-image'
+import MediaGallery from '@/components/report/media-gallery'
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
 // ScriptPrivacySheet. The dashboard surface still uses it.
@@ -685,42 +686,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           </div>
 
-          {/* ── MEDIA CAROUSEL — YouTube embeds, images, etc. ── */}
-          {/* Placeholder: wire to submission.media_urls when the column exists */}
-          {(submission as any).media_urls?.length > 0 && (
-            <div className="mt-8">
-              <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-                Media
-              </p>
-              <div className="flex gap-3 overflow-x-auto pb-2 -mx-2 px-2 snap-x snap-mandatory scrollbar-hide">
-                {((submission as any).media_urls as string[]).map((url: string, i: number) => (
-                  <div
-                    key={i}
-                    className="flex-shrink-0 snap-start rounded-xl overflow-hidden"
-                    style={{
-                      width: 320,
-                      height: 180,
-                      background: 'rgba(255,255,255,0.06)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                    }}
-                  >
-                    {url.includes('youtube.com') || url.includes('youtu.be') ? (
-                      <iframe
-                        src={url.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')}
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title={`Media ${i + 1}`}
-                      />
-                    ) : (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={url} alt={`Media ${i + 1}`} className="w-full h-full object-cover" />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* ── MEDIA GALLERY — YouTube embeds, images, PDFs ── */}
+          <MediaGallery
+            submissionId={submission.id}
+            initialMedia={(submission as any).media_urls || []}
+            isOwner={isOwner}
+          />
         </div>
 
       </div>
