@@ -49,7 +49,7 @@ import { SectionGate } from '@/components/report/section-gate'
 import { PeerReviews } from '@/components/report/peer-reviews'
 import { InviteReviewerButton } from '@/components/report/invite-reviewer-button'
 // WriterCard moved inline into EditableTopCard (compact author card)
-import { Section, EditorialSection, Collapsible, FactList, Fact } from '@/components/report/v5-components'
+import { Section, Collapsible, FactList, Fact } from '@/components/report/v5-components'
 import { InfoSection } from '@/components/report/info-button'
 import { SupportingCharactersCarousel } from '@/components/report/supporting-characters-carousel'
 import { DownloadPdfModalHost } from '@/components/report/download-pdf-modal'
@@ -692,23 +692,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {(whatsSpecial.headline || plotSummary) && (
-            <div data-pdf-section="whats_working" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-              <EditorialSection label="Elevator Pitch" accent="gold">
+            <div data-pdf-section="whats_working">
+              <h2
+                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                style={{ color: 'var(--gem-gold)' }}
+              >
+                Elevator Pitch
+              </h2>
                 {whatsSpecial.headline && (
-                  <p className="text-[16px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.55] m-0 max-w-[62ch] font-medium">
+                  <p className="text-[17px] sm:text-[19px] text-[var(--gem-gray-100)] leading-[1.55] m-0 font-medium">
                     {whatsSpecial.headline}
                   </p>
                 )}
                 {plotSummary && (
                   <div className="mt-5">
                     <Collapsible title="Detailed Plot Summary" defaultOpen={false}>
-                      <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.6] m-0 max-w-[62ch]">
+                      <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
                         {plotSummary}
                       </p>
                     </Collapsible>
                   </div>
                 )}
-              </EditorialSection>
             </div>
           )}
         </SectionGate>
@@ -723,12 +727,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {leadCharacters.length > 0 && (
-            <div data-pdf-section="cast" className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
+            <div data-pdf-section="cast">
             {(() => {
-            // Split Lead vs Supporting (2026-04-28). Leads keep the full
-            // <Collapsible> card treatment. Supporting drops into a
-            // horizontal carousel underneath so a 12-character ensemble
-            // doesn't read as a 12-row brick.
             const leads = leadCharacters.filter(
               (c) => (c.role_type ?? '').toLowerCase() === 'lead'
             )
@@ -736,11 +736,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
             )
             return (
-              <Section
-                label="Cast"
-                subtitle="The parts inside this script."
-                summary={`${leadCharacters.length} ${leadCharacters.length === 1 ? 'character' : 'characters'}`}
-              >
+              <>
+                <h2
+                  className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                  style={{ color: 'var(--gem-gold)' }}
+                >
+                  Cast
+                </h2>
                 <div className="space-y-3">
                   {leads.map((c, i) => (
                     <Collapsible
@@ -770,7 +772,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     />
                   </div>
                 )}
-              </Section>
+              </>
             )
           })()}
             </div>

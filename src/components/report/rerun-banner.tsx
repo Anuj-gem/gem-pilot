@@ -95,25 +95,28 @@ export function RerunBanner({ submissionId }: { submissionId: string }) {
     <div
       className="rounded-xl px-5 py-4 mb-6 flex items-center justify-between gap-4 flex-wrap"
       style={{
-        background: "var(--gem-gray-900, #f8f8f8)",
-        border: "1px solid var(--gem-gray-700, #e2e2e2)",
+        background: "rgba(239,68,68,0.08)",
+        border: "1px solid rgba(239,68,68,0.30)",
       }}
     >
       <div className="flex-1 min-w-[200px]">
-        <p className="text-[14px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
-          Updated evaluation available
+        <p className="text-[14px] font-semibold m-0 leading-tight" style={{ color: "#f87171" }}>
+          Selznick 3.11 model now available
         </p>
         <p className="text-[13px] text-[var(--gem-gray-300)] m-0 mt-1 leading-snug">
-          A newer version of our scoring model is available. Update to get the latest analysis.
+          This report was generated with an older model. Update to apply for opportunities.
         </p>
       </div>
       <button
         onClick={handleRerun}
-        className="px-4 py-2 rounded-lg text-[13px] font-semibold transition-all hover:opacity-90"
+        className="px-4 py-2 rounded-lg text-[13px] font-semibold transition-all"
         style={{
-          background: "var(--gem-gray-50, #1a1a1a)",
-          color: "#fff",
+          background: "rgba(239,68,68,0.15)",
+          border: "1px solid rgba(239,68,68,0.40)",
+          color: "#f87171",
         }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(239,68,68,0.25)" }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(239,68,68,0.15)" }}
       >
         Update report
       </button>
