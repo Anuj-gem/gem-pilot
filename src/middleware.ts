@@ -79,12 +79,8 @@ export async function middleware(request: NextRequest) {
           return NextResponse.redirect(url)
         }
 
-        // Producers hitting the writer dashboard get sent to /partner.
-        if (pathname === '/dashboard' || pathname.startsWith('/dashboard/')) {
-          const url = request.nextUrl.clone()
-          url.pathname = '/partner'
-          return NextResponse.redirect(url)
-        }
+        // Producers now use the same dashboard as writers.
+        // /partner is still accessible via the sidebar "Manage applications" link.
       }
     }
   }
