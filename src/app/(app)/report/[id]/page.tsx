@@ -783,6 +783,69 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {/* ── TAB: OVERVIEW ── */}
           <div className="gem-tab-panel space-y-6" data-tab="overview">
 
+        {/* OVERALL GEM SCORE — at top of Overview */}
+        {typeof commercialScore === 'number' &&
+          (isOwnerOrAdmin || isScoreVisible(privacy)) && (
+            <section data-pdf-section="gem_score">
+              <p
+                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-3"
+                style={{ color: 'var(--gem-accent)' }}
+              >
+                Overall GEM Score
+              </p>
+              <div
+                className="rounded-2xl p-6 sm:p-7 flex items-center gap-5 sm:gap-7 flex-wrap"
+                style={{
+                  background: 'rgba(124,58,237,0.08)',
+                  border: '1px solid rgba(124,58,237,0.25)',
+                }}
+              >
+                <div
+                  className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
+                  style={{
+                    background: 'rgba(124,58,237,0.12)',
+                    border: '1px solid rgba(124,58,237,0.30)',
+                    minWidth: 96,
+                    padding: '12px 18px',
+                  }}
+                >
+                  <span
+                    className="text-[10px] uppercase tracking-[0.18em] font-bold leading-none mb-1.5"
+                    style={{ color: 'var(--gem-gray-500)' }}
+                  >
+                    Score
+                  </span>
+                  <span
+                    className="font-bold leading-none text-[var(--gem-gray-50)]"
+                    style={{ fontSize: 44 }}
+                  >
+                    {Math.round(commercialScore)}
+                  </span>
+                  <span
+                    className="text-[11px] font-medium leading-none mt-2"
+                    style={{ color: 'var(--gem-gray-500)' }}
+                  >
+                    /100
+                  </span>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
+                    Your GEM Score is an overall assessment of your
+                    script&apos;s potential. The strengths and weaknesses below
+                    are the most important considerations when deciding whether
+                    to produce this work.
+                  </p>
+                  {isOwner && !isScoreVisible(privacy) && (
+                    <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
+                      You&apos;ve hidden this score from other GEM members. Only
+                      you (and admins) see it here.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
+
         {/* NUMBERED STRENGTHS */}
         <SectionGate
           section="whats_working"
@@ -793,8 +856,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {allStrengths.length > 0 && (
-            <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-            <EditorialSection label="Key Strengths" accent="gold">
+            <div>
+              <h2
+                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                style={{ color: 'var(--gem-gold)' }}
+              >
+                Key Strengths
+              </h2>
               <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
                 {allStrengths.map((s, i) => (
                   <li key={i}>
@@ -836,7 +904,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </li>
                 ))}
               </ol>
-            </EditorialSection>
             </div>
           )}
         </SectionGate>
@@ -879,13 +946,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
-              <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-              <EditorialSection label="Key Weaknesses" accent="violet">
-                {/* Numbered list — IDENTICAL shape to "Why this can be a
-                    hit". Sharpest lever is just #1; no special tag, no
-                    differentiated number color, no auto-open. Sort just
-                    puts the primary lever first so it's positionally
-                    weighted. Anuj 2026-04-28. */}
+              <div>
+                <h2
+                  className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                  style={{ color: 'var(--gem-accent)' }}
+                >
+                  Key Weaknesses
+                </h2>
                 {(() => {
                   const ordered: IssueRow[] = primary
                     ? [primary, ...secondary]
@@ -958,78 +1025,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     </p>
                   </div>
                 )}
-              </EditorialSection>
               </div>
             )
           })()}
           </SectionGate>
         )}
-
-        {/* OVERALL GEM SCORE — in Overview tab */}
-        {typeof commercialScore === 'number' &&
-          (isOwnerOrAdmin || isScoreVisible(privacy)) && (
-            <section
-              data-pdf-section="gem_score"
-              className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section"
-            >
-              <p
-                className="text-[11px] uppercase tracking-[0.22em] font-bold m-0 mb-3"
-                style={{ color: 'var(--gem-accent)' }}
-              >
-                Overall GEM Score
-              </p>
-              <div
-                className="rounded-2xl p-6 sm:p-7 flex items-center gap-5 sm:gap-7 flex-wrap"
-                style={{
-                  background: 'rgba(124,58,237,0.08)',
-                  border: '1px solid rgba(124,58,237,0.25)',
-                }}
-              >
-                <div
-                  className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
-                  style={{
-                    background: 'rgba(124,58,237,0.12)',
-                    border: '1px solid rgba(124,58,237,0.30)',
-                    minWidth: 96,
-                    padding: '12px 18px',
-                  }}
-                >
-                  <span
-                    className="text-[10px] uppercase tracking-[0.18em] font-bold leading-none mb-1.5"
-                    style={{ color: 'var(--gem-gray-500)' }}
-                  >
-                    Score
-                  </span>
-                  <span
-                    className="font-bold leading-none text-[var(--gem-gray-50)]"
-                    style={{ fontSize: 44 }}
-                  >
-                    {Math.round(commercialScore)}
-                  </span>
-                  <span
-                    className="text-[11px] font-medium leading-none mt-2"
-                    style={{ color: 'var(--gem-gray-500)' }}
-                  >
-                    /100
-                  </span>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                    Your GEM Score is an overall assessment of your
-                    script&apos;s potential. The strengths and weaknesses above
-                    are the most important considerations when deciding whether
-                    to produce this work.
-                  </p>
-                  {isOwner && !isScoreVisible(privacy) && (
-                    <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
-                      You&apos;ve hidden this score from other GEM members. Only
-                      you (and admins) see it here.
-                    </p>
-                  )}
-                </div>
-              </div>
-            </section>
-          )}
 
           </div>
           {/* /Overview tab */}
