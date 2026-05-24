@@ -496,15 +496,15 @@ export default async function DashboardPage() {
           {/* Processing scripts */}
           {processingScripts.map(script => (
             <div key={script.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-              <div className="aspect-[3/4] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
+              <div className="aspect-[5/4] sm:aspect-[2/3] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
                 <div className="text-center">
                   <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
                   <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
                 </div>
               </div>
-              <div className="px-4 py-3">
-                <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{script.title}</h3>
-                <p className="text-[12px] text-gray-400 m-0 mt-0.5">{script.format || 'Script'}</p>
+              <div className="px-4 py-4">
+                <h3 className="text-[16px] font-bold text-gray-900 m-0 truncate">{script.title}</h3>
+                <p className="text-[13px] text-gray-600 m-0 mt-0.5">{script.format || 'Script'}</p>
               </div>
             </div>
           ))}
@@ -518,7 +518,7 @@ export default async function DashboardPage() {
               <div key={script.id} className="rounded-2xl overflow-hidden group hover:shadow-lg transition-all duration-200" style={{ background: '#ffffff', boxShadow: cardShadow }}>
                 {/* Poster image area — no score overlay */}
                 <Link href={reportHref} className="block no-underline">
-                  <div className="aspect-[3/4] w-full relative overflow-hidden">
+                  <div className="aspect-[5/4] sm:aspect-[2/3] w-full relative overflow-hidden">
                     {script.posterUrl ? (
                       <img
                         src={script.posterUrl}
@@ -540,17 +540,17 @@ export default async function DashboardPage() {
                 </Link>
 
                 {/* Card info — light background */}
-                <div className="px-4 py-3 relative">
+                <div className="px-4 py-4 relative">
                   {/* Three-dot menu — top right */}
-                  <div className="absolute top-2 right-2">
+                  <div className="absolute top-3 right-3">
                     <DeleteScriptButton scriptId={script.id} title={script.title} evaluationId={script.evaluationId} />
                   </div>
 
                   <Link href={reportHref} className="block no-underline">
-                    <h3 className="text-[14px] font-semibold text-gray-900 m-0 line-clamp-2 pr-8 group-hover:text-purple-700 transition-colors">
+                    <h3 className="text-[16px] font-bold text-gray-900 m-0 line-clamp-2 pr-8 group-hover:text-purple-700 transition-colors">
                       {script.title}
                     </h3>
-                    <p className="text-[12px] text-gray-400 m-0 mt-0.5">
+                    <p className="text-[13px] text-gray-600 m-0 mt-1">
                       {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
                     </p>
                   </Link>
@@ -566,12 +566,12 @@ export default async function DashboardPage() {
                   </div>
 
                   {/* Bottom row: Discover toggle + view report */}
-                  <div className="flex items-center justify-between mt-2.5 pt-2.5" style={{ borderTop: '1px solid #f0f0f0' }}>
+                  <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: '1px solid #f0f0f0' }}>
                     <div className="flex items-center gap-2">
                       <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} isAnon={!user} />
-                      <span className="text-[12px] text-gray-400">{script.isPublic ? 'Public' : 'Private'}</span>
+                      <span className="text-[12px] text-gray-600">{script.isPublic ? 'Published to Discover' : 'Not published to Discover'}</span>
                     </div>
-                    <Link href={reportHref} className="text-[12px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline">
+                    <Link href={reportHref} className="text-[13px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline whitespace-nowrap">
                       View report →
                     </Link>
                   </div>
