@@ -333,8 +333,8 @@ export function PartnerTriageClient({
           })}
         </div>
 
-        {/* RIGHT: Detail panel */}
-        <div className="flex-1 flex flex-col overflow-y-auto">
+        {/* RIGHT: Detail panel — elevated surface */}
+        <div className="flex-1 flex flex-col overflow-y-auto m-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}>
           {!selectedApp ? (
             <div className="flex-1 flex items-center justify-center text-[14px] text-white/25">
               Select an application to review
@@ -493,7 +493,7 @@ export function PartnerTriageClient({
               )}
 
               {/* Action buttons */}
-              <div className="px-6 py-5 mt-auto">
+              <div className="px-6 py-5 mt-auto" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
                 {!triageState[selectedApp.id] && (
                   <>
                     {showPassFeedback !== selectedApp.id ? (
