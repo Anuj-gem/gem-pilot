@@ -746,7 +746,25 @@ export default async function DashboardPage() {
   if (managePanel) panels.manage = managePanel
 
   return (
-    <div className="-mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 -mt-6 pt-6 -mb-16 pb-16" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)', minHeight: 'calc(100vh - 56px)' }}>
+    <>
+    <style>{`html{overflow-x:hidden}`}</style>
+    <div style={{ position: 'relative' }}>
+      {/* Full-bleed dark background — absolutely positioned to paint over layout gray */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '-6rem',
+          bottom: '-6rem',
+          left: '50%',
+          width: '100vw',
+          transform: 'translateX(-50%)',
+          minHeight: '100vh',
+          background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div style={{ position: 'relative', zIndex: 1 }}>
       {user && submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
@@ -801,5 +819,7 @@ export default async function DashboardPage() {
 
       </div>
     </div>
+    </div>
+    </>
   )
 }
