@@ -308,7 +308,7 @@ export function PartnerTriageClient({
           )}
           {displayedApps.map(app => {
             const isPassed = triageState[app.id]?.status === 'pass' || (!triageState[app.id] && (app.triage_status === 'pass' || app.review_stage === 'complete'))
-            const isMet = triageState[app.id]?.status === 'meet' || (!triageState[app.id] && (app.triage_status === 'meet' || app.review_stage === 'shortlisted'))
+            const isMet = triageState[app.id]?.status === 'meet' || (!triageState[app.id] && app.triage_status === 'meet')
             const isSelected = selectedApp?.id === app.id
             const topScript = app.scripts[0]
             const score = topScript?.score ? Math.round(topScript.score) : null
@@ -397,7 +397,7 @@ export function PartnerTriageClient({
                       </span>
                     )}
                     {(() => {
-                      const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : selectedApp.review_stage === 'shortlisted' ? 'meet' : null)
+                      const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : null)
                       if (!st || (st !== 'pass' && st !== 'meet')) return null
                       const isMeet = st === 'meet'
                       return (
@@ -545,17 +545,15 @@ export function PartnerTriageClient({
                     {showPassFeedback !== selectedApp.id ? (
                       <div className="flex gap-3">
                         <button
-                          onClick={handlePassClick}
-                          disabled={triaging}
-                          className="flex-1 py-3 rounded-xl text-[14px] font-medium cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                          disabled
+                          className="flex-1 py-3 rounded-xl text-[14px] font-medium cursor-not-allowed transition-all flex items-center justify-center gap-2 opacity-40"
                           style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)' }}
                         >
                           Pass
                         </button>
                         <button
-                          onClick={() => handleTriage('meet')}
-                          disabled={triaging}
-                          className="flex-[2] py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50 hover:brightness-110"
+                          disabled
+                          className="flex-[2] py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-not-allowed transition-all flex items-center justify-center gap-2 opacity-40"
                           style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
                         >
                           Meet
@@ -705,7 +703,7 @@ export function PartnerTriageClient({
                 )}
 
                 {(() => {
-                  const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : selectedApp.review_stage === 'shortlisted' ? 'meet' : null)
+                  const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : null)
                   if (!st || (st !== 'pass' && st !== 'meet')) return null
                   return (
                     <div className="flex items-center justify-center gap-3 py-2">
