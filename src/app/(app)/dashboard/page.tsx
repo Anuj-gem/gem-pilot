@@ -11,6 +11,7 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { AnonSignupPrompt } from '@/components/dashboard/anon-signup-prompt'
 import { NewScriptButton } from '@/components/dashboard/new-script-button'
+import { ScriptCardActions } from '@/components/dashboard/script-card-actions'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
 import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
@@ -502,7 +503,7 @@ export default async function DashboardPage() {
                             {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
                           </p>
                         </div>
-                        <div className="flex items-center gap-1 shrink-0" onClick={(e: React.MouseEvent) => e.preventDefault()}>
+                        <ScriptCardActions>
                           <PendingActionsDropdown
                             scriptId={script.id}
                             isPublic={script.isPublic}
@@ -511,7 +512,7 @@ export default async function DashboardPage() {
                             qualifyingOppsCount={script.qualifyingOpps.length}
                           />
                           <DeleteScriptButton scriptId={script.id} title={script.title} />
-                        </div>
+                        </ScriptCardActions>
                       </div>
 
                       {script.logline && (
