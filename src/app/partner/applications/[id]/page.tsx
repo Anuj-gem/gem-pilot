@@ -178,21 +178,12 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
           const responses = (app.application_responses || {}) as Record<string, string>
           const rawMedia = (app.media_urls || []) as Array<string | { type: string; url: string; filename?: string }>
           const mediaItems = rawMedia.map(m => typeof m === 'string' ? JSON.parse(m) : m) as Array<{ type: string; url: string; filename?: string }>
-          const customQuestions = ((opp as any)?.application_questions || []) as Array<{ id: string; prompt: string }>
 
-          const UNIVERSAL_DIMS: Array<{ key: string; label: string }> = [
-            { key: 'fit_originality', label: 'Fit & originality' },
-            { key: 'market_potential', label: 'Market potential' },
-            { key: 'casting', label: 'Casting' },
-            { key: 'market_landscape', label: 'Market landscape' },
-          ]
-
-          const hasUniversal = UNIVERSAL_DIMS.some(d => responses[d.key]?.trim())
-          const hasCustom = customQuestions.some(q => responses[q.id]?.trim())
+          const writerNote = responses.fit_originality?.trim()
           const hasMedia = mediaItems.length > 0
-          const hasPitch = !hasUniversal && !hasCustom && !hasMedia && app.writer_pitch
+          const hasPitch = !writerNote && !hasMedia && app.writer_pitch
 
-          if (!hasUniversal && !hasCustom && !hasMedia && !hasPitch) return null
+          if (!writerNote && !hasMedia && !hasPitch) return null
 
           function getYoutubeEmbedUrl(url: string): string {
             const watchMatch = url.match(/[?&]v=([^&]+)/)
@@ -206,26 +197,19 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
             <section>
               <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-3">Application</h2>
               <div className="space-y-3">
-                {UNIVERSAL_DIMS.filter(d => responses[d.key]?.trim()).map(d => (
-                  <div key={d.key} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{d.label}</p>
-                    <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[d.key]}</p>
-                  </div>
-                ))}
-
-                {hasPitch && (
-                  <div className="rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3">
-                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">Pitch</p>
-                    <p className="text-[13px] text-gray-600 m-0 leading-relaxed italic">&ldquo;{app.writer_pitch}&rdquo;</p>
+                {writerNote && (
+                  <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
+                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">Writer&apos;s note</p>
+                    <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{writerNote}</p>
                   </div>
                 )}
 
-                {customQuestions.filter(q => responses[q.id]?.trim()).map(q => (
-                  <div key={q.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">{q.prompt}</p>
-                    <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{responses[q.id]}</p>
+                {hasPitch && (
+                  <div className="rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3">
+                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-1">Writer&apos;s note</p>
+                    <p className="text-[13px] text-gray-600 m-0 leading-relaxed italic">&ldquo;{app.writer_pitch}&rdquo;</p>
                   </div>
-                ))}
+                )}
 
                 {hasMedia && (
                   <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">

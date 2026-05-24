@@ -18,17 +18,6 @@ type Script = {
   evalId?: string | null
 }
 
-type ApplicationQuestion = {
-  id: string
-  prompt: string
-}
-
-type MediaItem = {
-  type: 'image' | 'youtube' | 'file'
-  url: string
-  filename?: string
-}
-
 type Opportunity = {
   id: string
   title: string
@@ -38,7 +27,6 @@ type Opportunity = {
   formats: string[] | null
   genres: string[] | null
   subtitle: string | null
-  application_questions: ApplicationQuestion[] | null
 }
 
 export default function ApplyPage() {
@@ -53,10 +41,6 @@ export default function ApplyPage() {
   const [previouslyConsidered, setPreviouslyConsidered] = useState<Script[]>([])
   const [selectedId, setSelectedId] = useState<string | null>(preselectedScript)
   const [responses, setResponses] = useState<Record<string, string>>({})
-  const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
-  const [youtubeInput, setYoutubeInput] = useState('')
-  const [youtubeError, setYoutubeError] = useState('')
-  const [mediaUploading, setMediaUploading] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
@@ -95,7 +79,7 @@ export default function ApplyPage() {
       // Load opportunity
       const { data: opp } = await supabase
         .from('opportunities')
-        .select('id, title, slug, description, min_score, formats, genres, subtitle, application_questions')
+        .select('id, title, slug, description, min_score, formats, genres, subtitle')
         .eq('slug', slug)
         .eq('status', 'active')
         .single()
@@ -191,71 +175,6 @@ export default function ApplyPage() {
     setResponses(prev => ({ ...prev, [key]: value }))
   }
 
-  function isYoutubeUrl(url: string): boolean {
-    return /^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(url.trim())
-  }
-
-  function addYoutubeUrl() {
-    const url = youtubeInput.trim()
-    if (!url) return
-    if (!isYoutubeUrl(url)) {
-      setYoutubeError('Enter a valid YouTube URL')
-      return
-    }
-    setYoutubeError('')
-    setMediaItems(prev => [...prev, { type: 'youtube', url }])
-    setYoutubeInput('')
-  }
-
-  function removeMedia(index: number) {
-    setMediaItems(prev => prev.filter((_, i) => i !== index))
-  }
-
-  async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file) return
-    setMediaUploading(true)
-    const supabase = createClient()
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { setMediaUploading(false); return }
-    const ext = file.name.split('.').pop()
-    const path = `${user.id}/${Date.now()}.${ext}`
-    const { error } = await supabase.storage.from('application-media').upload(path, file)
-    if (!error) {
-      const { data: { publicUrl } } = supabase.storage.from('application-media').getPublicUrl(path)
-      setMediaItems(prev => [...prev, { type: 'image', url: publicUrl, filename: file.name }])
-    }
-    setMediaUploading(false)
-    e.target.value = ''
-  }
-
-  async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file) return
-    setMediaUploading(true)
-    const supabase = createClient()
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { setMediaUploading(false); return }
-    const ext = file.name.split('.').pop()
-    const path = `${user.id}/${Date.now()}-${file.name}`
-    const { error } = await supabase.storage.from('application-media').upload(path, file)
-    if (!error) {
-      const { data: { publicUrl } } = supabase.storage.from('application-media').getPublicUrl(path)
-      setMediaItems(prev => [...prev, { type: 'file', url: publicUrl, filename: file.name }])
-    }
-    setMediaUploading(false)
-    e.target.value = ''
-  }
-
-  function getYoutubeEmbedUrl(url: string): string {
-    // Convert watch?v= and youtu.be/ links to embed links
-    const watchMatch = url.match(/[?&]v=([^&]+)/)
-    if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
-    const shortMatch = url.match(/youtu\.be\/([^?]+)/)
-    if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
-    return url
-  }
-
   async function handleSubmit() {
     if (!selectedId) { setError('Select a script'); return }
     setSubmitting(true)
@@ -268,7 +187,6 @@ export default function ApplyPage() {
         opportunity_id: opportunity!.id,
         script_ids: [selectedId],
         application_responses: responses,
-        media_urls: mediaItems,
       }),
     })
 
@@ -439,161 +357,19 @@ export default function ApplyPage() {
         )}
       </div>
 
-      {/* Universal application dimensions */}
-      <div className="space-y-4">
-        <div>
-          <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-0.5">Application</h2>
-          <p className="text-[12px] text-gray-600 m-0">All fields are optional. Fill in what's relevant.</p>
-        </div>
-
-        {/* Fit & originality */}
-        <div>
-          <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Fit & originality <span className="text-[12px] font-normal text-gray-500">(optional)</span>
-          </label>
-          <p className="text-[12px] text-gray-600 m-0 mb-1.5">Why is this the right fit for this opportunity? What makes it special?</p>
-          <textarea
-            value={responses.fit_originality || ''}
-            onChange={(e) => setResponse('fit_originality', e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
-            rows={3}
-            placeholder="What makes this script the right fit..."
-          />
-        </div>
-
-        {/* Market potential */}
-        <div>
-          <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Market potential <span className="text-[12px] font-normal text-gray-500">(optional)</span>
-          </label>
-          <p className="text-[12px] text-gray-600 m-0 mb-1.5">Where does this distribute, how big is the audience, and what comparable projects exist? What's the competitive landscape?</p>
-          <textarea
-            value={responses.market_potential || ''}
-            onChange={(e) => setResponse('market_potential', e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
-            rows={3}
-            placeholder="Distribution, audience, comps, competitive landscape..."
-          />
-        </div>
-
-        {/* Casting */}
-        <div>
-          <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Casting <span className="text-[12px] font-normal text-gray-500">(optional)</span>
-          </label>
-          <p className="text-[12px] text-gray-600 m-0 mb-1.5">Any talent attached or in mind? What kind of performer does this attract and why?</p>
-          <textarea
-            value={responses.casting || ''}
-            onChange={(e) => setResponse('casting', e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
-            rows={3}
-            placeholder="Attached talent, casting vision..."
-          />
-        </div>
-
-
-        {/* Media & references */}
-        <div>
-          <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-            Media & references <span className="text-[12px] font-normal text-gray-500">(optional)</span>
-          </label>
-          <p className="text-[12px] text-gray-600 m-0 mb-2.5">Images, YouTube links, or supporting documents.</p>
-
-          {/* Existing media previews */}
-          {mediaItems.length > 0 && (
-            <div className="space-y-2 mb-3">
-              {mediaItems.map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  {item.type === 'image' && (
-                    <div className="relative group flex-1">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={item.url} alt={item.filename || 'Uploaded image'} className="rounded-lg border border-gray-200 max-h-40 object-cover" />
-                      <button
-                        type="button"
-                        onClick={() => removeMedia(i)}
-                        className="absolute top-1 right-1 bg-white/90 rounded-full w-5 h-5 flex items-center justify-center text-[11px] text-gray-500 hover:text-red-500 border border-gray-200"
-                      >×</button>
-                    </div>
-                  )}
-                  {item.type === 'youtube' && (
-                    <div className="relative flex-1">
-                      <iframe
-                        src={getYoutubeEmbedUrl(item.url)}
-                        className="w-full rounded-lg border border-gray-200"
-                        style={{ height: '180px' }}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                      <button
-                        type="button"
-                        onClick={() => removeMedia(i)}
-                        className="absolute top-1 right-1 bg-white/90 rounded-full w-5 h-5 flex items-center justify-center text-[11px] text-gray-500 hover:text-red-500 border border-gray-200"
-                      >×</button>
-                    </div>
-                  )}
-                  {item.type === 'file' && (
-                    <div className="flex items-center gap-2 flex-1 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
-                      <span className="text-[13px] text-gray-700 truncate flex-1">{item.filename || 'Document'}</span>
-                      <button
-                        type="button"
-                        onClick={() => removeMedia(i)}
-                        className="text-[12px] text-gray-400 hover:text-red-500 shrink-0"
-                      >Remove</button>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* YouTube URL input */}
-          <div className="mb-2">
-            <div className="flex gap-2">
-              <input
-                type="url"
-                value={youtubeInput}
-                onChange={(e) => { setYoutubeInput(e.target.value); setYoutubeError('') }}
-                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addYoutubeUrl() } }}
-                placeholder="YouTube URL..."
-                className="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-[13px] text-gray-700 placeholder-gray-400 focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
-              />
-              <button
-                type="button"
-                onClick={addYoutubeUrl}
-                className="text-[13px] font-semibold text-purple-600 hover:text-purple-700 px-3 py-2 rounded-xl border border-purple-200 bg-purple-50/50 hover:bg-purple-100 transition-colors shrink-0"
-              >Add</button>
-            </div>
-            {youtubeError && <p className="text-[12px] text-red-500 mt-1 m-0">{youtubeError}</p>}
-          </div>
-
-          {/* Image + file upload buttons */}
-          <div className="flex gap-2">
-            <label className={`cursor-pointer text-[13px] font-semibold text-gray-600 hover:text-gray-800 px-3 py-2 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors ${mediaUploading ? 'opacity-50 pointer-events-none' : ''}`}>
-              {mediaUploading ? 'Uploading...' : '+ Image'}
-              <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={mediaUploading} />
-            </label>
-            <label className={`cursor-pointer text-[13px] font-semibold text-gray-600 hover:text-gray-800 px-3 py-2 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors ${mediaUploading ? 'opacity-50 pointer-events-none' : ''}`}>
-              {mediaUploading ? 'Uploading...' : '+ Document'}
-              <input type="file" accept=".pdf,.doc,.docx" className="hidden" onChange={handleFileUpload} disabled={mediaUploading} />
-            </label>
-          </div>
-        </div>
-
-        {/* Custom questions from the opportunity */}
-        {(opportunity.application_questions || []).map((q) => (
-          <div key={q.id}>
-            <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-              {q.prompt} <span className="text-[12px] font-normal text-gray-500">(optional)</span>
-            </label>
-            <textarea
-              value={responses[q.id] || ''}
-              onChange={(e) => setResponse(q.id, e.target.value)}
-              className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
-              rows={3}
-              placeholder="Your answer..."
-            />
-          </div>
-        ))}
+      {/* Note to reviewer */}
+      <div>
+        <label className="text-[14px] font-semibold text-gray-800 block mb-1">
+          Note to reviewer <span className="text-[12px] font-normal text-gray-500">(optional)</span>
+        </label>
+        <p className="text-[12px] text-gray-600 m-0 mb-1.5">Explain anything that will help them determine whether this is a fit for what they&apos;re looking for.</p>
+        <textarea
+          value={responses.fit_originality || ''}
+          onChange={(e) => setResponse('fit_originality', e.target.value)}
+          className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
+          rows={4}
+          placeholder="Anything you'd like the reviewer to know..."
+        />
       </div>
 
       {/* Error */}

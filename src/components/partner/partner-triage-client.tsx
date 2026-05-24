@@ -458,15 +458,19 @@ export function PartnerTriageClient({
                 </div>
               ))}
 
-              {/* Writer's pitch */}
-              {selectedApp.writer_pitch && (
-                <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <span className="text-[11px] text-white/25 uppercase tracking-wider font-medium">Writer&apos;s pitch</span>
-                  <p className="text-[13px] text-white/60 m-0 mt-2 leading-relaxed italic">
-                    &ldquo;{selectedApp.writer_pitch}&rdquo;
-                  </p>
-                </div>
-              )}
+              {/* Writer's note */}
+              {(() => {
+                const note = selectedApp.application_responses?.fit_originality || selectedApp.writer_pitch
+                if (!note) return null
+                return (
+                  <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                    <span className="text-[11px] text-white/25 uppercase tracking-wider font-medium">Writer&apos;s note</span>
+                    <p className="text-[13px] text-white/60 m-0 mt-2 leading-relaxed italic">
+                      &ldquo;{note}&rdquo;
+                    </p>
+                  </div>
+                )
+              })()}
 
               {/* Previous applications by this writer */}
               {writerHistory.length > 0 && (

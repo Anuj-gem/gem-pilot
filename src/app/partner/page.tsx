@@ -35,6 +35,7 @@ export type PartnerApp = {
   submitted_at: string
   writer_id: string
   writer_pitch: string | null
+  application_responses: Record<string, string> | null
   opportunity_id: string
   triage_status: string | null
   triage_feedback_tags: string[] | null
@@ -96,13 +97,13 @@ export default async function PartnerPage() {
   // Fetch ALL considerations for those opportunities (not just latest)
   const { data: rawApps } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, writer_id, writer_pitch, opportunity_id, triage_status, triage_feedback_tags')
+    .select('id, status, review_stage, submitted_at, writer_id, writer_pitch, application_responses, opportunity_id, triage_status, triage_feedback_tags')
     .in('opportunity_id', oppIds)
     .order('submitted_at', { ascending: false })
 
   const apps = (rawApps || []) as {
     id: string; status: string; review_stage: string; submitted_at: string
-    writer_id: string; writer_pitch: string | null; opportunity_id: string
+    writer_id: string; writer_pitch: string | null; application_responses: Record<string, string> | null; opportunity_id: string
     triage_status: string | null; triage_feedback_tags: string[] | null
   }[]
 
