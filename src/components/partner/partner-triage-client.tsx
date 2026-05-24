@@ -56,6 +56,7 @@ export function PartnerTriageClient({
   const [triaging, setTriaging] = useState(false)
   const [showOppDropdown, setShowOppDropdown] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
+  const [listTab, setListTab] = useState<'pending' | 'reviewed'>('pending')
   const customLikedRef = useRef<HTMLInputElement>(null)
   const customReasonRef = useRef<HTMLInputElement>(null)
 
@@ -68,34 +69,37 @@ export function PartnerTriageClient({
   const pendingCount = useMemo(() => oppApps.filter(a => !triageState[a.id]).length, [oppApps, triageState])
   const reviewedCount = useMemo(() => oppApps.filter(a => triageState[a.id]).length, [oppApps, triageState])
 
-  // Sort apps
-  const sortedApps = useMemo(() => {
-    const untriaged = oppApps.filter(a => !triageState[a.id] || triageState[a.id].status !== 'pass')
-    const passed = oppApps.filter(a => triageState[a.id]?.status === 'pass')
-
-    const sorter = (a: PartnerApp, b: PartnerApp) => {
-      if (sortMode === 'score') {
-        const aScore = a.scripts[0]?.score ?? 0
-        const bScore = b.scripts[0]?.score ?? 0
-        return bScore - aScore
-      }
-      if (sortMode === 'heat') {
-        const aHeat = a.scripts[0]?.heat_score ?? 0
-        const bHeat = b.scripts[0]?.heat_score ?? 0
-        return bHeat - aHeat
-      }
-      return new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime()
+  // Sort helper
+  const sorter = (a: PartnerApp, b: PartnerApp) => {
+    if (sortMode === 'score') {
+      const aScore = a.scripts[0]?.score ?? 0
+      const bScore = b.scripts[0]?.score ?? 0
+      return bScore - aScore
     }
+    if (sortMode === 'heat') {
+      const aHeat = a.scripts[0]?.heat_score ?? 0
+      const bHeat = b.scripts[0]?.heat_score ?? 0
+      return bHeat - aHeat
+    }
+    return new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime()
+  }
 
-    return [...untriaged.sort(sorter), ...passed]
-  }, [oppApps, sortMode, triageState])
+  // Split into pending (no decision) vs reviewed (pass or meet)
+  const pendingApps = useMemo(() => {
+    return oppApps.filter(a => !triageState[a.id]).sort(sorter)
+  }, [oppApps, triageState, sortMode])
+
+  const reviewedApps = useMemo(() => {
+    return oppApps.filter(a => !!triageState[a.id]).sort(sorter)
+  }, [oppApps, triageState, sortMode])
+
+  const displayedApps = listTab === 'pending' ? pendingApps : reviewedApps
 
   // Selected app details
   const selectedApp = useMemo(() => {
     if (selectedAppId) return applications.find(a => a.id === selectedAppId) || null
-    const first = sortedApps.find(a => !triageState[a.id])
-    return first || sortedApps[0] || null
-  }, [selectedAppId, sortedApps, applications, triageState])
+    return displayedApps[0] || null
+  }, [selectedAppId, displayedApps, applications])
 
   // Previous applications by the same writer for the SAME opportunity
   const writerHistory = useMemo(() => {
@@ -131,7 +135,7 @@ export function PartnerTriageClient({
         resetFeedback()
 
         // Auto-advance to next untriaged app
-        const nextApp = sortedApps.find(a => a.id !== selectedApp.id && !triageState[a.id])
+        const nextApp = pendingApps.find(a => a.id !== selectedApp.id && !triageState[a.id])
         if (nextApp) setSelectedAppId(nextApp.id)
       }
     } finally {
@@ -212,18 +216,18 @@ export function PartnerTriageClient({
                 <div className="fixed inset-0 z-10" onClick={() => setShowOppDropdown(false)} />
                 <div className="absolute top-full left-0 mt-1 py-1 rounded-lg z-20 min-w-[240px] shadow-xl" style={{ background: '#1a1425', border: '1px solid rgba(255,255,255,0.1)' }}>
                   {opportunities.map(opp => {
-                    const count = applications.filter(a => a.opportunity_id === opp.id).length
+                    const oppPending = applications.filter(a => a.opportunity_id === opp.id && !triageState[a.id]).length
                     return (
                       <button
                         key={opp.id}
-                        onClick={() => { setActiveOppId(opp.id); setSelectedAppId(null); setShowPassFeedback(null); resetFeedback(); setShowOppDropdown(false) }}
+                        onClick={() => { setActiveOppId(opp.id); setSelectedAppId(null); setShowPassFeedback(null); resetFeedback(); setShowOppDropdown(false); setListTab('pending') }}
                         className={`w-full text-left px-4 py-2.5 text-[13px] cursor-pointer border-0 transition-colors flex items-center justify-between ${
                           activeOppId === opp.id ? 'text-purple-300 bg-purple-500/10' : 'text-white/70 hover:text-white hover:bg-white/5'
                         }`}
                         style={{ background: activeOppId === opp.id ? 'rgba(124,58,237,0.1)' : 'transparent' }}
                       >
                         <span className="truncate">{opp.title}</span>
-                        <span className="text-[12px] text-white/30 ml-2 shrink-0">{count}</span>
+                        <span className="text-[12px] text-white/30 ml-2 shrink-0">{oppPending} pending</span>
                       </button>
                     )
                   })}
@@ -249,16 +253,37 @@ export function PartnerTriageClient({
       <div className="flex" style={{ height: 'calc(100vh - 130px)' }}>
         {/* LEFT: Applicant list */}
         <div className="w-[340px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
-          {/* Sort controls — above list */}
-          <div className="flex items-center gap-1 px-4 py-2.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          {/* Pending / Reviewed tabs */}
+          <div className="flex items-center" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <button
+              onClick={() => { setListTab('pending'); setSelectedAppId(null) }}
+              className={`flex-1 text-[12px] py-2.5 cursor-pointer border-0 transition-colors font-medium ${
+                listTab === 'pending' ? 'text-white' : 'text-white/30 hover:text-white/50'
+              }`}
+              style={{ background: 'transparent', borderBottom: listTab === 'pending' ? '2px solid #7c3aed' : '2px solid transparent' }}
+            >
+              Pending ({pendingCount})
+            </button>
+            <button
+              onClick={() => { setListTab('reviewed'); setSelectedAppId(null) }}
+              className={`flex-1 text-[12px] py-2.5 cursor-pointer border-0 transition-colors font-medium ${
+                listTab === 'reviewed' ? 'text-white' : 'text-white/30 hover:text-white/50'
+              }`}
+              style={{ background: 'transparent', borderBottom: listTab === 'reviewed' ? '2px solid #7c3aed' : '2px solid transparent' }}
+            >
+              Reviewed ({reviewedCount})
+            </button>
+          </div>
+          {/* Sort controls */}
+          <div className="flex items-center gap-1 px-4 py-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
             {(['score', 'heat', 'new'] as SortMode[]).map(mode => (
               <button
                 key={mode}
                 onClick={() => setSortMode(mode)}
-                className={`text-[12px] px-2.5 py-1.5 rounded-md cursor-pointer border-0 transition-colors ${
+                className={`text-[11px] px-2 py-1 rounded-md cursor-pointer border-0 transition-colors ${
                   sortMode === mode
                     ? 'bg-purple-600 text-white'
-                    : 'text-white/40 hover:text-white/60 hover:bg-white/5'
+                    : 'text-white/30 hover:text-white/50 hover:bg-white/5'
                 }`}
                 style={sortMode !== mode ? { background: 'transparent' } : undefined}
               >
@@ -266,12 +291,14 @@ export function PartnerTriageClient({
               </button>
             ))}
           </div>
-          {/* Scrollable list — hidden scrollbar, visible on hover */}
+          {/* Scrollable list */}
           <div className="flex-1 overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.1) transparent' }}>
-          {sortedApps.length === 0 && (
-            <div className="px-4 py-12 text-center text-[13px] text-white/30">No applications yet</div>
+          {displayedApps.length === 0 && (
+            <div className="px-4 py-12 text-center text-[13px] text-white/30">
+              {listTab === 'pending' ? 'No pending applications' : 'No reviewed applications'}
+            </div>
           )}
-          {sortedApps.map(app => {
+          {displayedApps.map(app => {
             const isPassed = triageState[app.id]?.status === 'pass'
             const isMet = triageState[app.id]?.status === 'meet'
             const isSelected = selectedApp?.id === app.id
