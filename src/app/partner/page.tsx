@@ -57,6 +57,7 @@ export type PartnerOpp = {
   formats: string[]
   genres: string[]
   budget_tiers: string[]
+  tags: string[]
   min_score: number | null
   deadline: string | null
   created_at: string
@@ -81,7 +82,7 @@ export default async function PartnerPage() {
   // Fetch ALL opportunities owned by this partner (active + closed)
   const { data: opps } = await service
     .from('opportunities')
-    .select('id, title, subtitle, description, status, formats, genres, budget_tiers, min_score, deadline, created_at')
+    .select('id, title, subtitle, description, status, formats, genres, budget_tiers, tags, min_score, deadline, created_at')
     .eq('owner_id', user.id)
     .order('created_at', { ascending: false })
 

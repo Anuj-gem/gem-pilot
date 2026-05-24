@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 interface OpportunitySettingsProps {
   opportunity: {
@@ -12,21 +12,22 @@ interface OpportunitySettingsProps {
     formats: string[]
     genres: string[]
     budget_tiers: string[]
-    min_score: number | null
-    deadline: string | null
+    tags: string[]
+    min_score?: number | null
+    deadline?: string | null
   }
   onClose: () => void
   onSaved: () => void
 }
 
 const GENRE_OPTIONS = [
-  'thriller', 'crime', 'horror', 'drama', 'comedy', 'sci-fi', 'fantasy', 'romance', 'action', 'family', 'western', 'musical',
+  'Drama', 'Comedy', 'Thriller', 'Horror', 'Sci-Fi', 'Fantasy', 'Action',
+  'Crime', 'Mystery', 'Romance', 'Western', 'Musical', 'Family',
+  'Historical', 'War', 'Sports', 'Documentary',
 ]
 const FORMAT_OPTIONS = [
-  { value: 'feature', label: 'Feature' },
-  { value: 'pilot', label: 'Pilot' },
-  { value: 'limited_series', label: 'Limited Series' },
-  { value: 'short', label: 'Short' },
+  { value: 'Feature', label: 'Feature' },
+  { value: 'Series', label: 'Series' },
 ]
 const BUDGET_OPTIONS = [
   { value: 'micro', label: 'Micro' },
@@ -37,6 +38,17 @@ const BUDGET_OPTIONS = [
   { value: 'tentpole', label: 'Tentpole' },
 ]
 
+const TAG_SUGGESTIONS = [
+  'biopic', 'true-story', 'adaptation', 'original-ip', 'limited-series',
+  'anthology', 'period-piece', 'contemporary', 'ensemble', 'single-lead',
+  'contained', 'high-concept', 'character-driven', 'procedural',
+  'franchise-potential', 'prestige', 'elevated-genre', 'debut-writer',
+  'diverse-voices', 'international', 'multilingual', 'lgbtq',
+  'coming-of-age', 'workplace', 'family-saga', 'revenge', 'heist',
+  'supernatural', 'dystopian', 'satire', 'mockumentary', 'found-footage',
+  'bottle-episode', 'slow-burn', 'propulsive', 'non-linear',
+]
+
 export function OpportunitySettings({ opportunity, onClose, onSaved }: OpportunitySettingsProps) {
   const [title, setTitle] = useState(opportunity.title)
   const [subtitle, setSubtitle] = useState(opportunity.subtitle || '')
@@ -44,14 +56,46 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
   const [formats, setFormats] = useState<string[]>(opportunity.formats || [])
   const [genres, setGenres] = useState<string[]>(opportunity.genres || [])
   const [budgetTiers, setBudgetTiers] = useState<string[]>(opportunity.budget_tiers || [])
-  const [minScore, setMinScore] = useState(opportunity.min_score?.toString() || '')
-  const [deadline, setDeadline] = useState(opportunity.deadline ? opportunity.deadline.split('T')[0] : '')
+  const [tags, setTags] = useState<string[]>(opportunity.tags || [])
+  const [tagInput, setTagInput] = useState('')
+  const [tagSuggestions, setTagSuggestions] = useState<string[]>([])
+  const [showTagSuggestions, setShowTagSuggestions] = useState(false)
+  const tagInputRef = useRef<HTMLInputElement>(null)
   const [status, setStatus] = useState(opportunity.status)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const toggleItem = (arr: string[], item: string, setter: (v: string[]) => void) => {
     setter(arr.includes(item) ? arr.filter(x => x !== item) : [...arr, item])
+  }
+
+  // Tag fuzzy search
+  useEffect(() => {
+    if (!tagInput.trim()) {
+      setTagSuggestions([])
+      setShowTagSuggestions(false)
+      return
+    }
+    const needle = tagInput.toLowerCase()
+    const matches = TAG_SUGGESTIONS
+      .filter(t => !tags.includes(t) && t.includes(needle))
+      .slice(0, 8)
+    setTagSuggestions(matches)
+    setShowTagSuggestions(matches.length > 0)
+  }, [tagInput, tags])
+
+  const addTag = (tag: string) => {
+    const normalized = tag.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+    if (normalized && !tags.includes(normalized)) {
+      setTags([...tags, normalized])
+    }
+    setTagInput('')
+    setShowTagSuggestions(false)
+    tagInputRef.current?.focus()
+  }
+
+  const removeTag = (tag: string) => {
+    setTags(tags.filter(t => t !== tag))
   }
 
   const handleSave = async () => {
@@ -73,8 +117,7 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
           formats,
           genres,
           budget_tiers: budgetTiers,
-          min_score: minScore ? Number(minScore) : null,
-          deadline: deadline || null,
+          tags,
           status,
         }),
       })
@@ -180,16 +223,16 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
           {/* Genres */}
           <div>
             <label className="block text-[12px] font-semibold text-gray-600 mb-2">Genres</label>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 gap-1.5">
               {GENRE_OPTIONS.map(g => (
                 <button
                   key={g}
                   onClick={() => toggleItem(genres, g, setGenres)}
-                  className="px-3 py-1.5 rounded-full text-[13px] font-semibold transition-colors border capitalize"
+                  className="px-3 py-1.5 rounded-full text-[13px] font-semibold transition-colors border text-left"
                   style={{
-                    background: genres.includes(g) ? '#dbeafe' : '#fff',
-                    color: genres.includes(g) ? '#1e40af' : '#6b7280',
-                    borderColor: genres.includes(g) ? '#93c5fd' : '#e5e7eb',
+                    background: genres.includes(g) ? '#ede9fe' : '#fff',
+                    color: genres.includes(g) ? '#5b21b6' : '#6b7280',
+                    borderColor: genres.includes(g) ? '#c4b5fd' : '#e5e7eb',
                   }}
                 >
                   {g}
@@ -208,9 +251,9 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
                   onClick={() => toggleItem(budgetTiers, b.value, setBudgetTiers)}
                   className="px-3 py-1.5 rounded-full text-[13px] font-semibold transition-colors border"
                   style={{
-                    background: budgetTiers.includes(b.value) ? '#fef3c7' : '#fff',
-                    color: budgetTiers.includes(b.value) ? '#92400e' : '#6b7280',
-                    borderColor: budgetTiers.includes(b.value) ? '#fcd34d' : '#e5e7eb',
+                    background: budgetTiers.includes(b.value) ? '#ede9fe' : '#fff',
+                    color: budgetTiers.includes(b.value) ? '#5b21b6' : '#6b7280',
+                    borderColor: budgetTiers.includes(b.value) ? '#c4b5fd' : '#e5e7eb',
                   }}
                 >
                   {b.label}
@@ -219,29 +262,52 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
             </div>
           </div>
 
-          {/* Min score */}
+          {/* Tags */}
           <div>
-            <label className="block text-[12px] font-semibold text-gray-600 mb-1">Minimum score</label>
-            <input
-              type="number"
-              value={minScore}
-              onChange={e => setMinScore(e.target.value)}
-              placeholder="e.g. 60"
-              min="0"
-              max="100"
-              className="w-24 px-3 py-2 rounded-lg border border-gray-200 text-[14px] text-gray-900 focus:outline-none focus:border-purple-400"
-            />
-          </div>
-
-          {/* Deadline */}
-          <div>
-            <label className="block text-[12px] font-semibold text-gray-600 mb-1">Deadline</label>
-            <input
-              type="date"
-              value={deadline}
-              onChange={e => setDeadline(e.target.value)}
-              className="px-3 py-2 rounded-lg border border-gray-200 text-[14px] text-gray-900 focus:outline-none focus:border-purple-400"
-            />
+            <label className="block text-[12px] font-semibold text-gray-600 mb-2">Tags</label>
+            {tags.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mb-2">
+                {tags.map(t => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[12px] font-semibold bg-purple-50 text-purple-700 border border-purple-200"
+                  >
+                    {t}
+                    <button onClick={() => removeTag(t)} className="text-purple-400 hover:text-purple-700 text-[14px] leading-none">&times;</button>
+                  </span>
+                ))}
+              </div>
+            )}
+            <div className="relative">
+              <input
+                ref={tagInputRef}
+                type="text"
+                value={tagInput}
+                onChange={e => setTagInput(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' && tagInput.trim()) {
+                    e.preventDefault()
+                    addTag(tagInput.trim())
+                  }
+                }}
+                placeholder="Type to search tags..."
+                className="w-full px-3 py-2 rounded-lg border border-gray-200 text-[13px] text-gray-900 focus:outline-none focus:border-purple-400"
+              />
+              {showTagSuggestions && (
+                <div className="absolute left-0 right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-[160px] overflow-y-auto">
+                  {tagSuggestions.map(s => (
+                    <button
+                      key={s}
+                      onClick={() => addTag(s)}
+                      className="block w-full text-left px-3 py-1.5 text-[13px] text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <p className="text-[11px] text-gray-500 mt-1">Press Enter to add custom tags</p>
           </div>
 
           {error && (
