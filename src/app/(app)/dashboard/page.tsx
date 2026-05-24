@@ -542,7 +542,7 @@ export default async function DashboardPage() {
                 {/* Card info — light background */}
                 <div className="px-4 py-3 relative">
                   {/* Three-dot menu — top right */}
-                  <div className="absolute top-2 right-2" onClick={(e) => e.preventDefault()}>
+                  <div className="absolute top-2 right-2">
                     <DeleteScriptButton scriptId={script.id} title={script.title} evaluationId={script.evaluationId} />
                   </div>
 
@@ -567,7 +567,7 @@ export default async function DashboardPage() {
 
                   {/* Bottom row: Discover toggle + view report */}
                   <div className="flex items-center justify-between mt-2.5 pt-2.5" style={{ borderTop: '1px solid #f0f0f0' }}>
-                    <div className="flex items-center gap-2" onClick={(e) => e.preventDefault()}>
+                    <div className="flex items-center gap-2">
                       <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} isAnon={!user} />
                       <span className="text-[12px] text-gray-400">{script.isPublic ? 'Public' : 'Private'}</span>
                     </div>
