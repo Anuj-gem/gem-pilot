@@ -65,11 +65,12 @@ export function PartnerTriageClient({
     return applications.filter(a => a.opportunity_id === activeOppId)
   }, [applications, activeOppId])
 
-  // "Reviewed" = review_stage is 'complete' OR producer triaged as pass/meet in this session
+  // "Reviewed" = triaged as pass/meet (locally or from DB) or review_stage complete/shortlisted
   const isReviewed = (app: PartnerApp) => {
     const localTriage = triageState[app.id]
     if (localTriage && (localTriage.status === 'pass' || localTriage.status === 'meet')) return true
-    return app.review_stage === 'complete'
+    if (app.triage_status === 'pass' || app.triage_status === 'meet') return true
+    return app.review_stage === 'complete' || app.review_stage === 'shortlisted'
   }
 
   // Stats
@@ -292,8 +293,8 @@ export function PartnerTriageClient({
             </div>
           )}
           {displayedApps.map(app => {
-            const isPassed = triageState[app.id]?.status === 'pass'
-            const isMet = triageState[app.id]?.status === 'meet'
+            const isPassed = triageState[app.id]?.status === 'pass' || (!triageState[app.id] && (app.triage_status === 'pass' || app.review_stage === 'complete'))
+            const isMet = triageState[app.id]?.status === 'meet' || (!triageState[app.id] && (app.triage_status === 'meet' || app.review_stage === 'shortlisted'))
             const isSelected = selectedApp?.id === app.id
             const topScript = app.scripts[0]
             const score = topScript?.score ? Math.round(topScript.score) : null
@@ -381,13 +382,17 @@ export function PartnerTriageClient({
                         {selectedApp.writer_app_count} applications
                       </span>
                     )}
-                    {triageState[selectedApp.id] && (
-                      <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${
-                        triageState[selectedApp.id].status === 'meet' ? 'text-green-400' : 'text-white/30'
-                      }`} style={{ background: triageState[selectedApp.id].status === 'meet' ? 'rgba(74,222,128,0.1)' : 'rgba(255,255,255,0.05)' }}>
-                        {triageState[selectedApp.id].status === 'meet' ? 'Meeting' : 'Passed'}
-                      </span>
-                    )}
+                    {(() => {
+                      const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : selectedApp.review_stage === 'shortlisted' ? 'meet' : null)
+                      if (!st || (st !== 'pass' && st !== 'meet')) return null
+                      const isMeet = st === 'meet'
+                      return (
+                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${isMeet ? 'text-green-400' : 'text-white/30'}`}
+                          style={{ background: isMeet ? 'rgba(74,222,128,0.1)' : 'rgba(255,255,255,0.05)' }}>
+                          {isMeet ? 'Meeting' : 'Passed'}
+                        </span>
+                      )
+                    })()}
                   </div>
                   {selectedApp.writer_headline && (
                     <p className="text-[13px] text-white/70 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
@@ -685,26 +690,32 @@ export function PartnerTriageClient({
                   </>
                 )}
 
-                {triageState[selectedApp.id] && (
-                  <div className="flex items-center justify-center gap-3 py-2">
-                    <span className="text-[13px] text-white/30">
-                      {triageState[selectedApp.id].status === 'pass' && 'Passed'}
-                      {triageState[selectedApp.id].status === 'meet' && 'Meeting requested'}
-                    </span>
-                    <button
-                      onClick={() => {
-                        setTriageState(prev => {
-                          const next = { ...prev }
-                          delete next[selectedApp.id]
-                          return next
-                        })
-                      }}
-                      className="text-[12px] text-purple-400 hover:text-purple-300 cursor-pointer bg-transparent border-0 transition-colors"
-                    >
-                      Undo
-                    </button>
-                  </div>
-                )}
+                {(() => {
+                  const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : selectedApp.review_stage === 'shortlisted' ? 'meet' : null)
+                  if (!st || (st !== 'pass' && st !== 'meet')) return null
+                  return (
+                    <div className="flex items-center justify-center gap-3 py-2">
+                      <span className="text-[13px] text-white/30">
+                        {st === 'pass' && 'Passed'}
+                        {st === 'meet' && 'Meeting requested'}
+                      </span>
+                      {triageState[selectedApp.id] && (
+                        <button
+                          onClick={() => {
+                            setTriageState(prev => {
+                              const next = { ...prev }
+                              delete next[selectedApp.id]
+                              return next
+                            })
+                          }}
+                          className="text-[12px] text-purple-400 hover:text-purple-300 cursor-pointer bg-transparent border-0 transition-colors"
+                        >
+                          Undo
+                        </button>
+                      )}
+                    </div>
+                  )
+                })()}
               </div>
             </>
           )}
