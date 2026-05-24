@@ -28,7 +28,9 @@ export type PartnerApp = {
   triage_feedback_tags: string[] | null
   writer_name: string | null
   writer_email: string | null
-  scripts: { submission_id: string; title: string; score: number | null; heat_score: number | null; logline: string | null }[]
+  writer_headline: string | null
+  writer_avatar_url: string | null
+  scripts: { submission_id: string; title: string; score: number | null; heat_score: number | null; logline: string | null; poster_url: string | null }[]
 }
 
 export type PartnerOpp = {
@@ -90,20 +92,20 @@ export default async function PartnerPage() {
 
   // Load writer profiles
   const writerIds = [...new Set(apps.map(a => a.writer_id))]
-  const writerMap = new Map<string, { full_name: string | null; email: string | null }>()
+  const writerMap = new Map<string, { full_name: string | null; email: string | null; headline: string | null; avatar_url: string | null }>()
   if (writerIds.length > 0) {
     const { data: writers } = await service
       .from('profiles')
-      .select('id, full_name, email')
+      .select('id, full_name, email, headline, avatar_url')
       .in('id', writerIds)
-    for (const w of (writers || []) as { id: string; full_name: string | null; email: string | null }[]) {
-      writerMap.set(w.id, { full_name: w.full_name, email: w.email })
+    for (const w of (writers || []) as { id: string; full_name: string | null; email: string | null; headline: string | null; avatar_url: string | null }[]) {
+      writerMap.set(w.id, { full_name: w.full_name, email: w.email, headline: w.headline, avatar_url: w.avatar_url })
     }
   }
 
   // Load scripts + evaluations for each application
   const appIds = apps.map(a => a.id)
-  const scriptsByApp = new Map<string, { submission_id: string; title: string; score: number | null; heat_score: number | null; logline: string | null }[]>()
+  const scriptsByApp = new Map<string, { submission_id: string; title: string; score: number | null; heat_score: number | null; logline: string | null; poster_url: string | null }[]>()
 
   if (appIds.length > 0) {
     const { data: cs } = await service
@@ -116,12 +118,12 @@ export default async function PartnerPage() {
     if (scriptIds.length > 0) {
       const { data: subs } = await service
         .from('script_submissions')
-        .select('id, title, heat_score')
+        .select('id, title, heat_score, poster_url')
         .in('id', scriptIds)
 
-      const titleMap = new Map<string, { title: string; heat_score: number | null }>()
-      for (const s of (subs || []) as { id: string; title: string; heat_score: number | null }[]) {
-        titleMap.set(s.id, { title: s.title, heat_score: s.heat_score })
+      const titleMap = new Map<string, { title: string; heat_score: number | null; poster_url: string | null }>()
+      for (const s of (subs || []) as { id: string; title: string; heat_score: number | null; poster_url: string | null }[]) {
+        titleMap.set(s.id, { title: s.title, heat_score: s.heat_score, poster_url: s.poster_url })
       }
 
       const { data: evals } = await service
@@ -145,6 +147,7 @@ export default async function PartnerPage() {
           score: ev?.score ?? null,
           heat_score: sub?.heat_score ?? null,
           logline: ev?.logline ?? null,
+          poster_url: sub?.poster_url ?? null,
         })
         scriptsByApp.set(c.consideration_id, existing)
       }
@@ -156,6 +159,8 @@ export default async function PartnerPage() {
     ...app,
     writer_name: writerMap.get(app.writer_id)?.full_name || writerMap.get(app.writer_id)?.email || null,
     writer_email: writerMap.get(app.writer_id)?.email || null,
+    writer_headline: writerMap.get(app.writer_id)?.headline || null,
+    writer_avatar_url: writerMap.get(app.writer_id)?.avatar_url || null,
     scripts: scriptsByApp.get(app.id) || [],
   }))
 

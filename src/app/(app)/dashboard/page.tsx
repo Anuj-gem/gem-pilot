@@ -361,7 +361,6 @@ export default async function DashboardPage() {
   const partnerWriterMap = new Map<string, { full_name: string | null; email: string | null }>()
   const partnerScriptsByApp = new Map<string, { title: string; score: number | null }[]>()
 
-  let watchlistCount = 0
   let meetingsCount = 0
   const newCountByOpp = new Map<string, number>()
 
@@ -429,12 +428,6 @@ export default async function DashboardPage() {
       }
     }
 
-    // Get watchlist count
-    const { count: wlCount } = await service
-      .from('writer_watchlist')
-      .select('id', { count: 'exact', head: true })
-      .eq('producer_id', user.id)
-    watchlistCount = wlCount || 0
   }
 
   const partnerPendingTotal = partnerApps.filter(a => a.review_stage !== 'complete').length
@@ -696,7 +689,7 @@ export default async function DashboardPage() {
     </div>
   )
 
-  // Overview panel (producers only) — opportunity cards + watchlist preview
+  // Overview panel (producers only) — opportunity cards + triage CTA
   const overviewPanel = accountType === 'producer' ? (
     <div className="space-y-6">
       {/* Your Opportunities */}
@@ -777,20 +770,6 @@ export default async function DashboardPage() {
         </Link>
       )}
 
-      {/* Watchlist preview */}
-      {watchlistCount > 0 && (
-        <div>
-          <h3 className="text-[14px] font-semibold text-white/70 m-0 mb-3 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Watchlist</h3>
-          <div className="rounded-xl px-4 py-4" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="text-[14px] text-white/80 m-0">
-              Watching {watchlistCount} writer{watchlistCount !== 1 ? 's' : ''}
-            </p>
-            <p className="text-[12px] text-white/50 m-0 mt-1">
-              You&apos;ll see their new scripts and rising heat here.
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   ) : null
 
@@ -840,11 +819,11 @@ export default async function DashboardPage() {
             </Link>
             <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="12" r="3" stroke="#a78bfa" strokeWidth="1.5"/>
+                <path d="M9 11l3 3L22 4" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{watchlistCount}</span>
-              <span className="text-[12px] sm:text-[14px] font-bold text-white">Watchlist</span>
+              <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{partnerApps.filter(a => a.triage_status === 'pass').length}</span>
+              <span className="text-[12px] sm:text-[14px] font-bold text-white">Reviewed</span>
             </div>
             <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
