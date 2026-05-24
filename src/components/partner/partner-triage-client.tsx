@@ -347,7 +347,7 @@ export function PartnerTriageClient({
                 </div>
 
                 {/* Format · Genre · Budget */}
-                <div className="flex items-center gap-1.5 text-[12px] text-white/35 mb-1">
+                <div className="flex items-center gap-1.5 text-[12px] text-white/60 mb-1">
                   {topScript?.format && <span>{topScript.format}</span>}
                   {topScript?.format && topScript?.genre && <span>·</span>}
                   {topScript?.genre && <span>{topScript.genre}</span>}
@@ -409,52 +409,57 @@ export function PartnerTriageClient({
                     )}
                   </div>
                   {selectedApp.writer_headline && (
-                    <p className="text-[12px] text-white/40 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
+                    <p className="text-[13px] text-white/70 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
                   )}
                 </div>
-                <span className="text-[12px] text-white/20">{fmtDate(selectedApp.submitted_at)}</span>
+                <span className="text-[13px] text-white/60">{fmtDate(selectedApp.submitted_at)}</span>
               </div>
 
               {/* Script details */}
               {selectedApp.scripts.map(script => (
                 <div key={script.submission_id} className="px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  {/* Poster — full width if present, hidden if not */}
-                  {script.poster_url && (
-                    <img src={script.poster_url} alt="" className="w-full h-[180px] rounded-lg object-cover mb-4" />
-                  )}
-
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[16px] font-semibold text-white truncate">{script.title}</span>
-                    <div className="flex items-center gap-2 shrink-0">
-                      {(script.heat_score ?? 0) > 0 && <span className="text-[13px] text-orange-400">🔥 {script.heat_score}</span>}
-                      {script.score && (
-                        <span className="flex items-center gap-1 text-[15px] font-bold text-purple-400">
-                          <GemDiamond size={9} /> {Math.round(script.score)}
-                        </span>
+                  {/* Poster + title row */}
+                  <div className="flex gap-4 mb-3">
+                    {script.poster_url && (
+                      <img src={script.poster_url} alt="" className="w-[100px] h-[140px] rounded-lg object-cover shrink-0" />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[17px] font-semibold text-white truncate">{script.title}</span>
+                        <div className="flex items-center gap-2 shrink-0">
+                          {(script.heat_score ?? 0) > 0 && <span className="text-[14px] text-orange-400">🔥 {script.heat_score}</span>}
+                          {script.score && (
+                            <span className="flex items-center gap-1 text-[16px] font-bold text-purple-400">
+                              <GemDiamond size={9} /> {Math.round(script.score)}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      {/* Metadata pills */}
+                      <div className="flex items-center gap-1.5 mb-2">
+                        {script.format && (
+                          <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>{script.format}</span>
+                        )}
+                        {script.genre && (
+                          <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>{script.genre}</span>
+                        )}
+                        {script.budget_tier && (
+                          <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>{script.budget_tier}</span>
+                        )}
+                      </div>
+                      {script.logline && (
+                        <p className="text-[14px] text-white/80 m-0 leading-relaxed">{script.logline}</p>
+                      )}
+                      {script.eval_id && (
+                        <Link
+                          href={`/report/${script.eval_id}`}
+                          className="text-[13px] text-purple-400 mt-2 inline-block hover:text-purple-300 transition-colors no-underline"
+                        >
+                          View full report →
+                        </Link>
                       )}
                     </div>
                   </div>
-                  {/* Metadata pills */}
-                  <div className="flex items-center gap-1.5 mb-2">
-                    {script.format && (
-                      <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.format}</span>
-                    )}
-                    {script.genre && (
-                      <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.genre}</span>
-                    )}
-                    {script.budget_tier && (
-                      <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.budget_tier}</span>
-                    )}
-                  </div>
-                  {script.logline && (
-                    <p className="text-[13px] text-white/60 m-0 leading-relaxed">{script.logline}</p>
-                  )}
-                  <Link
-                    href={`/partner/applications/${selectedApp.id}`}
-                    className="text-[12px] text-purple-400 mt-2 inline-block hover:text-purple-300 transition-colors no-underline"
-                  >
-                    View full report →
-                  </Link>
                 </div>
               ))}
 
@@ -464,8 +469,8 @@ export function PartnerTriageClient({
                 if (!note) return null
                 return (
                   <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                    <span className="text-[11px] text-white/25 uppercase tracking-wider font-medium">Writer&apos;s note</span>
-                    <p className="text-[13px] text-white/60 m-0 mt-2 leading-relaxed italic">
+                    <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">Writer&apos;s note</span>
+                    <p className="text-[14px] text-white/80 m-0 mt-2 leading-relaxed italic">
                       &ldquo;{note}&rdquo;
                     </p>
                   </div>
@@ -477,7 +482,7 @@ export function PartnerTriageClient({
                 <div className="px-6 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <button
                     onClick={() => setShowHistory(!showHistory)}
-                    className="flex items-center gap-2 text-[12px] text-white/40 hover:text-white/60 cursor-pointer bg-transparent border-0 transition-colors"
+                    className="flex items-center gap-2 text-[13px] text-white/70 hover:text-white/90 cursor-pointer bg-transparent border-0 transition-colors"
                   >
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={`transition-transform ${showHistory ? 'rotate-90' : ''}`}>
                       <path d="M3 1.5L6.5 5L3 8.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -498,19 +503,19 @@ export function PartnerTriageClient({
                             style={{ background: 'rgba(255,255,255,0.02)' }}
                           >
                             <div className="flex items-center justify-between">
-                              <span className="text-[12px] text-white/60 truncate">{prev.scripts[0]?.title || 'No script'}</span>
+                              <span className="text-[13px] text-white/80 truncate">{prev.scripts[0]?.title || 'No script'}</span>
                               <div className="flex items-center gap-2 shrink-0">
                                 {prevHeat > 0 && (
-                                  <span className="text-[10px] text-orange-400">🔥 +{prevHeat}</span>
+                                  <span className="text-[11px] text-orange-400">🔥 +{prevHeat}</span>
                                 )}
                                 {prevStatus && (
-                                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${prevStatus === 'meet' ? 'text-green-400' : 'text-white/30'}`} style={{
+                                  <span className={`text-[11px] px-1.5 py-0.5 rounded-full ${prevStatus === 'meet' ? 'text-green-400' : 'text-white/50'}`} style={{
                                     background: prevStatus === 'meet' ? 'rgba(74,222,128,0.08)' : 'rgba(255,255,255,0.04)',
                                   }}>
                                     {prevStatus === 'meet' ? '✓ Shortlisted' : 'Passed'}
                                   </span>
                                 )}
-                                <span className="text-[11px] text-white/20">{fmtDate(prev.submitted_at)}</span>
+                                <span className="text-[12px] text-white/60">{fmtDate(prev.submitted_at)}</span>
                               </div>
                             </div>
                             {prevTags && prevTags.length > 0 && (

@@ -18,6 +18,7 @@ function svc() {
 
 export type PartnerScript = {
   submission_id: string
+  eval_id: string | null
   title: string
   score: number | null
   heat_score: number | null
@@ -153,11 +154,11 @@ export default async function PartnerPage() {
 
       const { data: evals } = await service
         .from('script_evaluations')
-        .select('submission_id, weighted_score, evaluation')
+        .select('id, submission_id, weighted_score, evaluation')
         .in('submission_id', scriptIds)
 
-      const evalMap = new Map<string, { score: number | null; logline: string | null; format: string | null; genre: string | null; budget_tier: string | null }>()
-      for (const e of (evals || []) as { submission_id: string; weighted_score: number | null; evaluation: any }[]) {
+      const evalMap = new Map<string, { eval_id: string; score: number | null; logline: string | null; format: string | null; genre: string | null; budget_tier: string | null }>()
+      for (const e of (evals || []) as { id: string; submission_id: string; weighted_score: number | null; evaluation: any }[]) {
         const ev = e.evaluation || {}
         const cls = ev.classification || {}
         const fmt = ev.format_detection || {}
@@ -167,7 +168,7 @@ export default async function PartnerPage() {
         const genre = cls.genre_primary || null
         const bt = pkg.budget_tier
         const budget_tier = bt ? (bt.label || bt.tier || null) : null
-        evalMap.set(e.submission_id, { score: e.weighted_score, logline, format, genre, budget_tier })
+        evalMap.set(e.submission_id, { eval_id: e.id, score: e.weighted_score, logline, format, genre, budget_tier })
       }
 
       for (const c of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
@@ -176,6 +177,7 @@ export default async function PartnerPage() {
         const ev = evalMap.get(c.script_submission_id)
         existing.push({
           submission_id: c.script_submission_id,
+          eval_id: ev?.eval_id ?? null,
           title: sub?.title || 'Untitled',
           score: ev?.score ?? null,
           heat_score: sub?.heat_score ?? null,
