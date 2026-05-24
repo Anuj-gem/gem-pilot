@@ -60,14 +60,17 @@ export function PartnerTriageClient({
   const customLikedRef = useRef<HTMLInputElement>(null)
   const customReasonRef = useRef<HTMLInputElement>(null)
 
-  // Filter apps for active opportunity
+  // Filter apps for active opportunity (exclude drafts — not yet submitted)
   const oppApps = useMemo(() => {
-    return applications.filter(a => a.opportunity_id === activeOppId)
+    return applications.filter(a => a.opportunity_id === activeOppId && a.review_stage !== 'draft')
   }, [applications, activeOppId])
 
+  // An app is "reviewed" if it has a triage decision OR review_stage is complete
+  const isReviewed = (app: PartnerApp) => !!triageState[app.id] || app.review_stage === 'complete'
+
   // Stats
-  const pendingCount = useMemo(() => oppApps.filter(a => !triageState[a.id]).length, [oppApps, triageState])
-  const reviewedCount = useMemo(() => oppApps.filter(a => triageState[a.id]).length, [oppApps, triageState])
+  const pendingCount = useMemo(() => oppApps.filter(a => !isReviewed(a)).length, [oppApps, triageState])
+  const reviewedCount = useMemo(() => oppApps.filter(a => isReviewed(a)).length, [oppApps, triageState])
 
   // Sort helper
   const sorter = (a: PartnerApp, b: PartnerApp) => {
@@ -84,13 +87,13 @@ export function PartnerTriageClient({
     return new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime()
   }
 
-  // Split into pending (no decision) vs reviewed (pass or meet)
+  // Split into pending (needs attention) vs reviewed (triaged or complete)
   const pendingApps = useMemo(() => {
-    return oppApps.filter(a => !triageState[a.id]).sort(sorter)
+    return oppApps.filter(a => !isReviewed(a)).sort(sorter)
   }, [oppApps, triageState, sortMode])
 
   const reviewedApps = useMemo(() => {
-    return oppApps.filter(a => !!triageState[a.id]).sort(sorter)
+    return oppApps.filter(a => isReviewed(a)).sort(sorter)
   }, [oppApps, triageState, sortMode])
 
   const displayedApps = listTab === 'pending' ? pendingApps : reviewedApps
@@ -134,8 +137,8 @@ export function PartnerTriageClient({
         setShowPassFeedback(null)
         resetFeedback()
 
-        // Auto-advance to next untriaged app
-        const nextApp = pendingApps.find(a => a.id !== selectedApp.id && !triageState[a.id])
+        // Auto-advance to next pending app
+        const nextApp = pendingApps.find(a => a.id !== selectedApp.id && !isReviewed(a))
         if (nextApp) setSelectedAppId(nextApp.id)
       }
     } finally {
@@ -216,7 +219,7 @@ export function PartnerTriageClient({
                 <div className="fixed inset-0 z-10" onClick={() => setShowOppDropdown(false)} />
                 <div className="absolute top-full left-0 mt-1 py-1 rounded-lg z-20 min-w-[240px] shadow-xl" style={{ background: '#1a1425', border: '1px solid rgba(255,255,255,0.1)' }}>
                   {opportunities.map(opp => {
-                    const oppPending = applications.filter(a => a.opportunity_id === opp.id && !triageState[a.id]).length
+                    const oppPending = applications.filter(a => a.opportunity_id === opp.id && a.review_stage !== 'draft' && a.review_stage !== 'complete' && !triageState[a.id]).length
                     return (
                       <button
                         key={opp.id}
