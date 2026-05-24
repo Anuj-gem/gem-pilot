@@ -60,13 +60,17 @@ export function PartnerTriageClient({
   const customLikedRef = useRef<HTMLInputElement>(null)
   const customReasonRef = useRef<HTMLInputElement>(null)
 
-  // Filter apps for active opportunity (exclude drafts — not yet submitted)
+  // Filter apps for active opportunity
   const oppApps = useMemo(() => {
-    return applications.filter(a => a.opportunity_id === activeOppId && a.review_stage !== 'draft')
+    return applications.filter(a => a.opportunity_id === activeOppId)
   }, [applications, activeOppId])
 
-  // An app is "reviewed" if it has a triage decision OR review_stage is complete
-  const isReviewed = (app: PartnerApp) => !!triageState[app.id] || app.review_stage === 'complete'
+  // "Reviewed" = review_stage is 'complete' OR producer triaged as pass/meet in this session
+  const isReviewed = (app: PartnerApp) => {
+    const localTriage = triageState[app.id]
+    if (localTriage && (localTriage.status === 'pass' || localTriage.status === 'meet')) return true
+    return app.review_stage === 'complete'
+  }
 
   // Stats
   const pendingCount = useMemo(() => oppApps.filter(a => !isReviewed(a)).length, [oppApps, triageState])
@@ -219,7 +223,12 @@ export function PartnerTriageClient({
                 <div className="fixed inset-0 z-10" onClick={() => setShowOppDropdown(false)} />
                 <div className="absolute top-full left-0 mt-1 py-1 rounded-lg z-20 min-w-[240px] shadow-xl" style={{ background: '#1a1425', border: '1px solid rgba(255,255,255,0.1)' }}>
                   {opportunities.map(opp => {
-                    const oppPending = applications.filter(a => a.opportunity_id === opp.id && a.review_stage !== 'draft' && a.review_stage !== 'complete' && !triageState[a.id]).length
+                    const oppPending = applications.filter(a => {
+                      if (a.opportunity_id !== opp.id) return false
+                      const lt = triageState[a.id]
+                      if (lt && (lt.status === 'pass' || lt.status === 'meet')) return false
+                      return a.review_stage !== 'complete'
+                    }).length
                     return (
                       <button
                         key={opp.id}
