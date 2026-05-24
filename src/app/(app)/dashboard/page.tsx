@@ -1,9 +1,8 @@
-// /dashboard — value-loop dashboard.
+// /dashboard — unified dashboard for writers and producers.
 //
-// Same layout for anonymous + logged-in (empty states for anon).
-// Hero: "What are you working on?" format selector → fires upload modal.
-// Three value cards: Scripts Evaluated, Your Opportunities, 🔥 Industry Heat.
-// Recent scripts with action checklist (apply + publish) and score pill.
+// Layout: top row (profile + CTA) → stat cards → tabbed content.
+// Writers get Scripts + Applications tabs.
+// Producers get a third "Manage" tab showing applications to their opportunities.
 
 import { cookies } from 'next/headers'
 import { createClient } from '@/lib/supabase-server'
@@ -15,6 +14,7 @@ import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
+import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -34,8 +34,10 @@ export default async function DashboardPage() {
 
   // ── DATA QUERIES ──
 
-  let profile: { subscription_status: string | null; full_name: string | null; handle: string | null; avatar_url: string | null; heat_score: number | null; headline: string | null } | null = null
+  type ProfileRow = { subscription_status: string | null; full_name: string | null; handle: string | null; avatar_url: string | null; heat_score: number | null; headline: string | null; account_type: string | null }
+  let profile: ProfileRow | null = null
   let isPro = false
+  let accountType = 'writer'
 
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
@@ -79,11 +81,12 @@ export default async function DashboardPage() {
   if (user) {
     const { data: p } = await supabase
       .from('profiles')
-      .select('subscription_status, full_name, handle, avatar_url, heat_score, headline')
+      .select('subscription_status, full_name, handle, avatar_url, heat_score, headline, account_type')
       .eq('id', user.id)
       .single()
-    profile = p
+    profile = p as ProfileRow | null
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    accountType = profile?.account_type ?? 'writer'
 
     const { data: mySubs } = await supabase
       .from('script_submissions')
@@ -160,7 +163,7 @@ export default async function DashboardPage() {
     }
   }
 
-  // Per-opp applied script tracking (which scripts have been submitted to which opps)
+  // Per-opp applied script tracking
   const appliedScriptsByOpp = new Map<string, Set<string>>()
   const pendingOppIds = new Set<string>()
 
@@ -186,7 +189,7 @@ export default async function DashboardPage() {
     }
   }
 
-  // Usage gate data for guest users
+  // Usage gate
   const FREE_EVAL_LIMIT = 2
   const FREE_APP_LIMIT = 2
   let totalSubmissions = 0
@@ -199,7 +202,6 @@ export default async function DashboardPage() {
     totalSubmissions = subCount ?? 0
     totalApps = allApplications.length
   } else if (!user) {
-    // Anonymous: count from cookie
     totalSubmissions = visible.length
   }
   const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
@@ -273,9 +275,7 @@ export default async function DashboardPage() {
   const fmtDate = (d: string) =>
     new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
-
-  // ── OPPORTUNITIES FOR YOU: filter out applied, sort qualified first then recency ──
-  // Check if ANY completed script qualifies for a given opp
+  // Opportunity qualification helpers
   function anyScriptQualifies(opp: OppRow) {
     return completedScripts.some(s => {
       const ev = myEvalBySub.get(s.id)
@@ -294,12 +294,10 @@ export default async function DashboardPage() {
     })
   }
 
-  // Filter out opps with pending applications — but keep previously-applied opps (can apply more scripts)
   const unappliedOpps = allOpenOpps.filter(o => !pendingOppIds.has(o.id))
   const qualifiedOpps = unappliedOpps.filter(o => anyScriptQualifies(o))
   const unqualifiedOpps = unappliedOpps.filter(o => !anyScriptQualifies(o))
 
-  // Sort each group by deadline (soonest first), then no-deadline last
   const sortByDeadline = (a: OppRow, b: OppRow) => {
     if (a.deadline && b.deadline) return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
     if (a.deadline) return -1
@@ -309,9 +307,7 @@ export default async function DashboardPage() {
   qualifiedOpps.sort(sortByDeadline)
   unqualifiedOpps.sort(sortByDeadline)
 
-  // Always show 3 opps: qualified first, then unqualified, then fill with most-recent-posted
   const combinedOpps = [...qualifiedOpps, ...unqualifiedOpps]
-  // If we don't have 3, fill from non-pending opps sorted by created_at (most recent first)
   if (combinedOpps.length < 3) {
     const shown = new Set(combinedOpps.map(o => o.id))
     const filler = unappliedOpps
@@ -325,27 +321,6 @@ export default async function DashboardPage() {
   const dashboardOpps = combinedOpps.slice(0, 3)
   const qualifiedOppIds = new Set(qualifiedOpps.map(o => o.id))
 
-  // Count how many scripts match each opp
-  function matchingScriptCount(opp: OppRow) {
-    return completedScripts.filter(s => {
-      const ev = myEvalBySub.get(s.id)
-      const score = ev?.weighted_score ?? null
-      if (opp.min_score && (!score || score < opp.min_score)) return false
-      const noFmt = !opp.formats || opp.formats.length === 0
-      const noGenre = !opp.genres || opp.genres.length === 0
-      if (noFmt && noGenre) return true
-      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
-      if (!fmtMatch) return false
-      if (noGenre) return true
-      const sGenres = ev?.genres || []
-      if (sGenres.length === 0) return false
-      const oppNorm = opp.genres!.map(normGenre)
-      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
-    }).length
-  }
-
-  // Get matching scripts for an opportunity (for OppScriptDropdown)
-  // Excludes scripts already applied to THIS specific opp
   function getMatchingScriptsForOpp(opp: OppRow) {
     const alreadyAppliedScripts = appliedScriptsByOpp.get(opp.id) || new Set<string>()
     return completedScripts.filter(s => {
@@ -366,9 +341,388 @@ export default async function DashboardPage() {
     }).map(s => ({ id: s.id, title: s.title, score: s.score ? Math.round(s.score) : null }))
   }
 
+  // ── PRODUCER DATA (for Manage tab) ──
+
+  type PartnerApp = {
+    id: string; status: string; review_stage: string; submitted_at: string
+    opportunity_id: string; writer_id: string; writer_pitch: string | null; heat_earned: number
+  }
+  let partnerOpps: { id: string; title: string; slug: string | null; status: string }[] = []
+  let partnerApps: PartnerApp[] = []
+  const partnerWriterMap = new Map<string, { full_name: string | null; email: string | null }>()
+  const partnerScriptsByApp = new Map<string, { title: string; score: number | null }[]>()
+
+  if (user && accountType === 'producer') {
+    const { data: opps } = await service
+      .from('opportunities')
+      .select('id, title, slug, status')
+      .eq('owner_id', user.id)
+      .order('created_at', { ascending: false })
+    partnerOpps = (opps || []) as typeof partnerOpps
+    const oppIds = partnerOpps.map(o => o.id)
+
+    if (oppIds.length > 0) {
+      const { data: rawApps } = await service
+        .from('considerations')
+        .select('id, status, review_stage, submitted_at, opportunity_id, writer_id, writer_pitch, heat_earned')
+        .in('opportunity_id', oppIds)
+        .order('submitted_at', { ascending: false })
+        .limit(10)
+      partnerApps = (rawApps || []) as PartnerApp[]
+
+      // Load writer profiles
+      const writerIds = [...new Set(partnerApps.map(a => a.writer_id))]
+      if (writerIds.length > 0) {
+        const { data: writers } = await service
+          .from('profiles')
+          .select('id, full_name, email')
+          .in('id', writerIds)
+        for (const w of (writers || []) as { id: string; full_name: string | null; email: string | null }[]) {
+          partnerWriterMap.set(w.id, { full_name: w.full_name, email: w.email })
+        }
+      }
+
+      // Load scripts
+      const pAppIds = partnerApps.map(a => a.id)
+      if (pAppIds.length > 0) {
+        const { data: cs } = await service
+          .from('consideration_scripts')
+          .select('consideration_id, script_submission_id')
+          .in('consideration_id', pAppIds)
+        const scriptIds = (cs || []).map((c: any) => c.script_submission_id)
+        const evalMap = new Map<string, number | null>()
+        const titleMap = new Map<string, string>()
+        if (scriptIds.length > 0) {
+          const { data: subs } = await service.from('script_submissions').select('id, title').in('id', scriptIds)
+          for (const s of (subs || []) as { id: string; title: string }[]) titleMap.set(s.id, s.title)
+          const { data: evals } = await service.from('script_evaluations').select('submission_id, weighted_score').in('submission_id', scriptIds)
+          for (const e of (evals || []) as { submission_id: string; weighted_score: number | null }[]) evalMap.set(e.submission_id, e.weighted_score)
+        }
+        for (const c of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
+          const existing = partnerScriptsByApp.get(c.consideration_id) || []
+          existing.push({ title: titleMap.get(c.script_submission_id) || 'Untitled', score: evalMap.get(c.script_submission_id) ?? null })
+          partnerScriptsByApp.set(c.consideration_id, existing)
+        }
+      }
+    }
+  }
+
+  const partnerPendingTotal = partnerApps.filter(a => a.review_stage !== 'complete').length
+  const partnerOppMap = new Map(partnerOpps.map(o => [o.id, o]))
+
   // ── RENDER ──
 
   const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
+
+  // Build tabs
+  const tabs: TabDef[] = [
+    { id: 'scripts', label: 'Scripts', count: scriptCount },
+    { id: 'applications', label: 'Applications', count: pendingCount },
+  ]
+  if (accountType === 'producer') {
+    tabs.push({ id: 'manage', label: 'Manage', count: partnerPendingTotal })
+  }
+
+  // ── TAB PANELS ──
+
+  // Scripts panel
+  const scriptsPanel = (
+    <div className="space-y-3">
+      {completedScripts.length === 0 && processingScripts.length === 0 ? (
+        <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
+          <p className="text-[13px] text-gray-600 m-0">Upload a screenplay to get started.</p>
+        </div>
+      ) : (
+        <>
+          {/* Processing */}
+          {processingScripts.slice(0, 5).map(script => (
+            <div key={script.id} className="rounded-xl bg-white p-4 flex items-center justify-between" style={{ boxShadow: cardShadow }}>
+              <div>
+                <span className="text-[14px] font-semibold text-gray-900">{script.title}</span>
+                <p className="text-[12px] text-gray-600 m-0 mt-0.5">Evaluating your script...</p>
+              </div>
+              <svg className="animate-spin shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
+                <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
+            </div>
+          ))}
+
+          {/* Completed scripts */}
+          {completedScripts.slice(0, 5 - processingScripts.length).map(script => {
+            const rounded = script.score ? Math.round(script.score) : null
+            const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
+
+            return (
+              <div key={script.id} className="rounded-xl bg-white group hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                <div className="p-4 flex items-center gap-4">
+                  {/* Left: title + meta */}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
+                        {script.title}
+                      </h3>
+                      <DeleteScriptButton scriptId={script.id} title={script.title} />
+                    </div>
+                    <p className="text-[12px] text-gray-600 m-0 mt-0.5">
+                      {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' / ')}
+                    </p>
+                  </div>
+
+                  {/* Center: pills */}
+                  <div className="flex items-center gap-2 shrink-0">
+                    {rounded && (
+                      <span className="text-[12px] font-bold text-white px-2 py-0.5 rounded" style={{ background: scoreBadge(rounded).bg }}>
+                        {rounded}
+                      </span>
+                    )}
+                    {script.heat > 0 && (
+                      <span className="text-[12px] font-bold px-2 py-0.5 rounded" style={{ background: '#FFF3E0', color: '#E65100' }}>
+                        🔥 {script.heat}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Right: actions */}
+                  <div className="flex items-center gap-2 shrink-0">
+                    <PendingActionsDropdown
+                      scriptId={script.id}
+                      isPublic={script.isPublic}
+                      isPro={isPro}
+                      isAnon={!user}
+                      qualifyingOppsCount={script.qualifyingOpps.length}
+                    />
+                    <Link
+                      href={reportHref}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white no-underline transition-all hover:opacity-90"
+                      style={{ background: '#534AB7' }}
+                    >
+                      View report →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+
+          {/* View all */}
+          {(completedScripts.length + processingScripts.length) > 5 && (
+            <div className="text-center pt-1">
+              <Link href="/scripts" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
+                View all scripts →
+              </Link>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  )
+
+  // Applications panel
+  const applicationsPanel = (
+    <div className="space-y-5">
+      {/* Opportunities for you */}
+      <div>
+        <div className="flex items-center gap-2 mb-3">
+          <h3 className="text-[14px] font-semibold text-gray-900 m-0">Opportunities for you</h3>
+          {user && !isPro && (
+            <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+              style={{ background: appsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: appsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
+              {appsRemaining > 0 ? `${appsRemaining} remaining` : 'Limit reached'}
+            </span>
+          )}
+          <Link href="/opportunities" className="text-[12px] font-medium text-purple-600 hover:text-purple-800 transition-colors ml-auto">
+            View all →
+          </Link>
+        </div>
+
+        {dashboardOpps.length === 0 ? (
+          <div className="rounded-xl bg-white px-6 py-6 text-center" style={{ boxShadow: cardShadow }}>
+            <p className="text-[13px] text-gray-600 m-0">
+              {pendingOppIds.size > 0 ? "You've applied to all open opportunities. We'll notify you when new ones open." : 'No opportunities right now. Check back soon.'}
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {dashboardOpps.map(opp => {
+              const status: OppStatus = pendingOppIds.has(opp.id) ? 'pending' : appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
+              const matchCount = getMatchingScriptsForOpp(opp).length
+              return (
+                <OpportunityCard
+                  key={opp.id}
+                  id={opp.id}
+                  slug={opp.slug}
+                  title={opp.title}
+                  subtitle={opp.subtitle}
+                  description={opp.description}
+                  genres={opp.genres || []}
+                  formats={opp.formats || []}
+                  createdAt={opp.created_at}
+                  deadline={opp.deadline}
+                  status={status}
+                  matchingScriptCount={matchCount}
+                  isAnon={!user}
+                  applicationCount={oppAppCount.get(opp.id) ?? 0}
+                />
+              )
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* Pending applications */}
+      {pendingApps.length > 0 && (
+        <div>
+          <h3 className="text-[14px] font-semibold text-gray-900 m-0 mb-2">Pending</h3>
+          <div className="space-y-2">
+            {pendingApps.slice(0, 5).map(app => {
+              const opp = oppMap.get(app.opportunity_id)
+              return (
+                <Link key={app.id} href={`/review/applications/${app.id}`} className="block">
+                  <div className="rounded-xl bg-white px-4 py-3 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                    <div>
+                      <p className="text-[14px] font-semibold text-gray-900 m-0">{opp?.title || 'Opportunity'}</p>
+                      <p className="text-[12px] text-gray-600 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
+                    </div>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-yellow-50 text-yellow-700 shrink-0">Pending</span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Reviewed applications */}
+      {reviewedApps.length > 0 && (
+        <div>
+          <h3 className="text-[14px] font-semibold text-gray-900 m-0 mb-2">Recent reviews</h3>
+          <div className="space-y-2">
+            {reviewedApps.slice(0, 3).map(app => {
+              const opp = oppMap.get(app.opportunity_id)
+              return (
+                <Link key={app.id} href={`/review/applications/${app.id}`} className="block">
+                  <div className="rounded-xl bg-white px-4 py-3 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                    <div>
+                      <p className="text-[14px] font-semibold text-gray-900 m-0">{opp?.title || 'Opportunity'}</p>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-[12px] text-gray-600">{fmtDate(app.reviewed_at || app.submitted_at)}</span>
+                        {app.heat_earned > 0 && (
+                          <span className="text-[11px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} 🔥</span>
+                        )}
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-green-50 text-green-700 shrink-0">Reviewed</span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          {reviewedApps.length > 3 && (
+            <div className="text-center pt-2">
+              <Link href="/review" className="text-[12px] font-medium text-purple-600 hover:text-purple-800">
+                View all reviews →
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
+
+      {allApplications.length === 0 && dashboardOpps.length === 0 && (
+        <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+          <p className="text-[13px] text-gray-600 m-0">No applications yet. Browse opportunities above to get started.</p>
+        </div>
+      )}
+    </div>
+  )
+
+  // Manage panel (producers)
+  const managePanel = accountType === 'producer' ? (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between mb-1">
+        <p className="text-[13px] text-gray-600 m-0">
+          {partnerPendingTotal > 0 ? `${partnerPendingTotal} pending review` : 'All caught up'}
+          {' · '}{partnerApps.length} total
+        </p>
+        <Link href="/partner/opportunities/create" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
+          + Create opportunity
+        </Link>
+      </div>
+
+      {partnerApps.length === 0 ? (
+        <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+          <p className="text-[13px] text-gray-600 m-0">No applications yet. Create an opportunity to start receiving applications.</p>
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {partnerApps.slice(0, 5).map(app => {
+            const writer = partnerWriterMap.get(app.writer_id)
+            const opp = partnerOppMap.get(app.opportunity_id)
+            const scripts = partnerScriptsByApp.get(app.id) || []
+            const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
+            const stageMap: Record<string, { label: string; classes: string }> = {
+              pending: { label: 'New', classes: 'bg-yellow-50 text-yellow-700' },
+              in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
+              shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
+              partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
+              complete: { label: 'Reviewed', classes: 'bg-gray-100 text-gray-600' },
+            }
+            const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
+            const s = stageMap[stage] || stageMap.pending
+
+            return (
+              <Link key={app.id} href={`/partner/applications/${app.id}`} className="block">
+                <div className="rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
+                          {writer?.full_name || writer?.email || 'Unknown writer'}
+                        </p>
+                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${s.classes}`}>
+                          {s.label}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-[12px] text-gray-600">{opp?.title || ''}</span>
+                        {scripts.length > 0 && (
+                          <>
+                            <span className="text-[11px] text-gray-300">·</span>
+                            <span className="text-[12px] text-gray-600">{scripts[0].title}</span>
+                            {scripts[0].score && <span className="text-[11px] font-semibold text-gray-600">({Math.round(scripts[0].score)})</span>}
+                          </>
+                        )}
+                        <span className="text-[11px] text-gray-300">·</span>
+                        <span className="text-[11px] text-gray-600">{fmtDate(app.submitted_at)}</span>
+                      </div>
+                    </div>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
+                      <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      )}
+
+      {partnerApps.length > 5 && (
+        <div className="text-center pt-1">
+          <Link href="/partner" className="text-[13px] font-medium text-purple-600 hover:text-purple-800">
+            View all applications →
+          </Link>
+        </div>
+      )}
+    </div>
+  ) : null
+
+  const panels: Record<string, React.ReactNode> = {
+    scripts: scriptsPanel,
+    applications: applicationsPanel,
+  }
+  if (managePanel) panels.manage = managePanel
 
   return (
     <>
@@ -380,292 +734,74 @@ export default async function DashboardPage() {
 
       <div className="space-y-5">
 
-        {/* ── HERO — landing for fresh anon visitors, upload flow otherwise ── */}
-        <FormatSelectorHero evalsRemaining={isPro ? 99 : evalsRemaining} />
-
-        {/* ── THREE VALUE CARDS ── */}
-        <section className="grid grid-cols-3 gap-2 lg:gap-3">
-
-          {/* Scripts Evaluated */}
-          <Link href="/scripts" className="block rounded-xl bg-white px-3 py-3 lg:px-4 lg:py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-1.5 lg:gap-2 mb-1">
-              <span className="text-[14px] lg:text-[16px]">📄</span>
-              <span className="text-[11px] lg:text-[13px] font-semibold text-gray-500">Scripts</span>
-            </div>
-            <div className="text-[24px] lg:text-[28px] font-bold text-gray-900 leading-none mb-1 lg:mb-1.5">
-              {scriptCount}
-            </div>
-            {/* Detail rows — desktop only */}
-            {completedScripts.length > 0 ? (
-              <>
-                <div className="hidden lg:block space-y-0.5">
-                  {completedScripts.slice(0, 2).map(s => {
-                    const r = s.score ? Math.round(s.score) : null
-                    return (
-                      <div key={s.id} className="flex items-center justify-between gap-2">
-                        <span className="text-[13px] text-gray-700 truncate">{s.title}</span>
-                        {r && (
-                          <span className="text-[12px] font-bold text-white px-1.5 py-0.5 rounded shrink-0"
-                            style={{ background: scoreBadge(r).bg }}>{r}</span>
-                        )}
-                      </div>
-                    )
-                  })}
+        {/* ── TOP ROW: profile + create script ── */}
+        <div className="flex items-center gap-4">
+          {/* Profile card */}
+          {user && profile ? (
+            <div className="flex items-center gap-3">
+              {profile.avatar_url ? (
+                <img src={profile.avatar_url} alt="" className="w-10 h-10 rounded-full object-cover shrink-0" />
+              ) : (
+                <div className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-[14px] font-semibold text-white"
+                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
+                  {(profile.full_name || 'W').charAt(0).toUpperCase()}
                 </div>
-                <span className="text-[11px] lg:text-[12px] font-medium text-purple-600">View all →</span>
-              </>
-            ) : (
-              <p className="text-[11px] lg:text-[13px] text-gray-500 m-0">Upload to get started</p>
-            )}
+              )}
+              <div>
+                <div className="flex items-center gap-2">
+                  <p className="text-[15px] font-semibold text-gray-900 m-0">{profile.full_name || 'Writer'}</p>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                    style={{ background: isPro ? '#f5f3ff' : '#f9fafb', color: isPro ? '#7c3aed' : '#9ca3af' }}>
+                    {isPro ? 'Member' : 'Guest'}
+                  </span>
+                </div>
+                {profile.headline && (
+                  <p className="text-[12px] text-gray-600 m-0">{profile.headline}</p>
+                )}
+              </div>
+            </div>
+          ) : (
+            <p className="text-[15px] font-semibold text-gray-900 m-0">Dashboard</p>
+          )}
+
+          <div className="flex-1" />
+
+          {/* Create script CTA — opens the upload modal */}
+          <FormatSelectorHero evalsRemaining={isPro ? 99 : evalsRemaining} />
+        </div>
+
+        {/* ── STAT CARDS ── */}
+        <section className="grid grid-cols-3 gap-3">
+          <Link href="/scripts" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[14px]">📄</span>
+              <span className="text-[12px] font-semibold text-gray-600">Scripts</span>
+            </div>
+            <div className="text-[26px] font-bold text-gray-900 leading-none">{scriptCount}</div>
           </Link>
 
-          {/* Your Opportunities */}
-          <Link href="/review" className="block rounded-xl bg-white px-3 py-3 lg:px-4 lg:py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-1.5 lg:gap-2 mb-1">
-              <span className="text-[14px] lg:text-[16px]">💰</span>
-              <span className="text-[11px] lg:text-[13px] font-semibold text-gray-500">Opportunities</span>
+          <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[14px]">💰</span>
+              <span className="text-[12px] font-semibold text-gray-600">Applications</span>
             </div>
-            <div className="text-[24px] lg:text-[28px] font-bold text-gray-900 leading-none mb-1 lg:mb-1.5">
+            <div className="text-[26px] font-bold text-gray-900 leading-none">
               {user ? pendingCount : 0}
-              <span className="text-[11px] lg:text-[13px] font-medium text-gray-400 ml-1">pending</span>
+              <span className="text-[12px] font-medium text-gray-600 ml-1">pending</span>
             </div>
-            {/* Detail rows — desktop only */}
-            {user && pendingApps.length > 0 ? (
-              <>
-                <div className="hidden lg:block space-y-0.5">
-                  {pendingApps.slice(0, 2).map(app => {
-                    const opp = oppMap.get(app.opportunity_id)
-                    return (
-                      <div key={app.id} className="flex items-center justify-between gap-2">
-                        <span className="text-[13px] text-gray-700 truncate">{opp?.title || 'Opportunity'}</span>
-                        <span className="text-[11px] font-bold px-1.5 py-0.5 rounded shrink-0"
-                          style={{ background: '#fef3c7', color: '#92400e' }}>Pending</span>
-                      </div>
-                    )
-                  })}
-                </div>
-                <span className="text-[11px] lg:text-[12px] font-medium text-purple-600">View all →</span>
-              </>
-            ) : (
-              <p className="text-[11px] lg:text-[13px] text-gray-500 m-0">Apply below</p>
-            )}
           </Link>
 
-          {/* Industry Heat */}
-          <Link href="/review" className="block rounded-xl bg-white px-3 py-3 lg:px-4 lg:py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-1.5 lg:gap-2 mb-1">
-              <span className="text-[14px] lg:text-[16px]">🔥</span>
-              <span className="text-[11px] lg:text-[13px] font-semibold text-gray-500">Heat</span>
+          <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[14px]">🔥</span>
+              <span className="text-[12px] font-semibold text-gray-600">Heat</span>
             </div>
-            <div className="text-[24px] lg:text-[28px] font-bold text-gray-900 leading-none mb-1 lg:mb-1.5">
-              {user ? totalHeat : 0}
-            </div>
-            {/* Detail rows — desktop only */}
-            {user && reviewedApps.length > 0 ? (
-              <>
-                <div className="hidden lg:block space-y-0.5">
-                  {reviewedApps.slice(0, 2).map(app => {
-                    const opp = oppMap.get(app.opportunity_id)
-                    return (
-                      <div key={app.id} className="flex items-center justify-between gap-2">
-                        <span className="text-[13px] text-gray-700 truncate">{opp?.title || 'Review'}</span>
-                        {app.heat_earned > 0 && (
-                          <span className="text-[12px] font-bold shrink-0" style={{ color: '#ea580c' }}>+{app.heat_earned}</span>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-                <span className="text-[11px] lg:text-[12px] font-medium text-purple-600">View all →</span>
-              </>
-            ) : (
-              <p className="text-[11px] lg:text-[13px] text-gray-500 m-0">Earn heat from reviews</p>
-            )}
+            <div className="text-[26px] font-bold text-gray-900 leading-none">{user ? totalHeat : 0}</div>
           </Link>
-
         </section>
 
-        {/* ── OPPORTUNITIES FOR YOU — 3-column grid ── */}
-        <section>
-          <header className="flex items-center gap-2 mb-3">
-            <h2 className="text-[16px] font-bold text-gray-900 m-0">Opportunities for you</h2>
-            {user && !isPro && (
-              <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
-                style={{ background: appsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: appsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
-                {appsRemaining > 0 ? `${appsRemaining} application${appsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
-              </span>
-            )}
-            <Link href="/opportunities" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-              View all →
-            </Link>
-          </header>
-
-          {dashboardOpps.length === 0 && pendingOppIds.size > 0 ? (
-            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
-              <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">You&apos;ve applied to all open opportunities</p>
-              <p className="text-[13px] text-gray-500 m-0">We&apos;ll notify you when new opportunities open up.</p>
-            </div>
-          ) : dashboardOpps.length === 0 ? (
-            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
-              <p className="text-[13px] text-gray-500 m-0">No opportunities right now. Check back soon.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {dashboardOpps.map(opp => {
-                const status: OppStatus = pendingOppIds.has(opp.id) ? 'pending' : appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
-                const matchCount = getMatchingScriptsForOpp(opp).length
-
-                return (
-                  <OpportunityCard
-                    key={opp.id}
-                    id={opp.id}
-                    slug={opp.slug}
-                    title={opp.title}
-                    subtitle={opp.subtitle}
-                    description={opp.description}
-                    genres={opp.genres || []}
-                    formats={opp.formats || []}
-                    createdAt={opp.created_at}
-                    deadline={opp.deadline}
-                    status={status}
-                    matchingScriptCount={matchCount}
-                    isAnon={!user}
-                    applicationCount={oppAppCount.get(opp.id) ?? 0}
-                  />
-                )
-              })}
-            </div>
-          )}
-        </section>
-
-        {/* ── YOUR SCRIPTS — 2-column grid ── */}
-        <section>
-          <header className="flex items-center gap-2 mb-3">
-            <h2 className="text-[16px] font-bold text-gray-900 m-0">Your scripts</h2>
-            {!isPro && (
-              <span className="text-[12px] font-medium px-2 py-0.5 rounded-full"
-                style={{ background: evalsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: evalsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
-                {evalsRemaining > 0 ? `${evalsRemaining} eval${evalsRemaining === 1 ? '' : 's'} remaining` : 'Limit reached'}
-              </span>
-            )}
-            {completedScripts.length > 2 && (
-              <Link href="/scripts" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                View all →
-              </Link>
-            )}
-          </header>
-
-          {completedScripts.length === 0 && processingScripts.length === 0 ? (
-            <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
-              <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-              <p className="text-[13px] text-gray-500 m-0">Upload a screenplay above to get started.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-              {/* Processing scripts */}
-              {processingScripts.slice(0, 2).map(script => (
-                <div key={script.id} className="rounded-xl bg-white p-3 lg:p-4 flex flex-col" style={{ boxShadow: cardShadow }}>
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-[14px] lg:text-[15px] font-semibold text-gray-900 truncate">{script.title}</span>
-                    <svg className="animate-spin shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
-                      <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <p className="text-[12px] lg:text-[13px] text-gray-500 m-0 mt-1">Evaluating your script...</p>
-                </div>
-              ))}
-
-              {/* Completed script cards */}
-              {completedScripts.slice(0, 2 - processingScripts.length).map(script => {
-                const rounded = script.score ? Math.round(script.score) : null
-                const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
-
-                return (
-                  <div key={script.id} className="relative rounded-xl bg-white group hover:shadow-md transition-shadow flex flex-col"
-                    style={{ boxShadow: cardShadow }}>
-
-                    <div className="relative p-3 lg:p-5 flex flex-col flex-1">
-
-                      {/* Row 1: Title + 3-dot menu */}
-                      <div className="flex justify-between items-start gap-2 mb-1 lg:mb-2">
-                        <div className="min-w-0 flex-1">
-                          <h3 className="text-[15px] lg:text-[17px] font-bold text-gray-900 m-0 leading-snug truncate group-hover:text-purple-700 transition-colors">
-                            {script.title}
-                          </h3>
-                          <p className="text-[12px] lg:text-[13px] text-gray-500 m-0 mt-0.5">
-                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' / ')}
-                          </p>
-                        </div>
-                        <div className="shrink-0">
-                          <DeleteScriptButton scriptId={script.id} title={script.title} />
-                        </div>
-                      </div>
-
-                      {/* Logline */}
-                      {script.logline && (
-                        <p className="text-[12px] lg:text-[13px] leading-relaxed text-gray-500 m-0 mb-2.5 lg:mb-3 line-clamp-2">
-                          {script.logline}
-                        </p>
-                      )}
-
-                      {/* Score + Heat pills */}
-                      <div className="flex items-center gap-2 lg:gap-2.5 mb-3 lg:mb-4">
-                        {/* Score pill with gem diamond */}
-                        <div className="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1 lg:py-1.5 rounded-full" style={{ background: '#EEEDFE' }}>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0 w-[13px] h-[13px] lg:w-[15px] lg:h-[15px]">
-                            <path d="M12 2L4 9L12 22L20 9L12 2Z" fill="url(#gem-score-grad1)" />
-                            <path d="M12 2L4 9H20L12 2Z" fill="url(#gem-score-grad2)" opacity="0.7" />
-                            <path d="M8 9H16L12 22L8 9Z" fill="url(#gem-score-grad3)" />
-                            <defs>
-                              <linearGradient id="gem-score-grad1" x1="4" y1="2" x2="20" y2="22"><stop stopColor="#AFA9EC" /><stop offset="1" stopColor="#534AB7" /></linearGradient>
-                              <linearGradient id="gem-score-grad2" x1="4" y1="2" x2="20" y2="9"><stop stopColor="#CECBF6" /><stop offset="1" stopColor="#7F77DD" /></linearGradient>
-                              <linearGradient id="gem-score-grad3" x1="12" y1="9" x2="12" y2="22"><stop stopColor="#7F77DD" /><stop offset="1" stopColor="#3C3489" /></linearGradient>
-                            </defs>
-                          </svg>
-                          <span className="text-[12px] lg:text-[13px] font-semibold" style={{ color: '#3C3489' }}>
-                            Score {rounded ?? '—'}
-                          </span>
-                        </div>
-                        {/* Heat pill with fire emoji */}
-                        <div className="inline-flex items-center gap-1 px-2.5 lg:px-3 py-1 lg:py-1.5 rounded-full" style={{ background: '#FFF3E0' }}>
-                          <span className="text-[12px] lg:text-[14px]">🔥</span>
-                          <span className="text-[12px] lg:text-[13px] font-semibold" style={{ color: '#E65100' }}>
-                            Heat {script.heat}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="flex-1" />
-
-                      {/* Bottom row: Pending actions (left) + View report (right) */}
-                      <div className="flex items-center justify-between gap-2 pt-2.5 lg:pt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                        <PendingActionsDropdown
-                          scriptId={script.id}
-                          isPublic={script.isPublic}
-                          isPro={isPro}
-                          isAnon={!user}
-                          qualifyingOppsCount={script.qualifyingOpps.length}
-                        />
-                        <Link
-                          href={reportHref}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-[12px] lg:text-[13px] font-semibold text-white no-underline transition-all hover:opacity-90"
-                          style={{ background: '#534AB7' }}
-                        >
-                          View report
-                          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" className="w-[13px] h-[13px] lg:w-[14px] lg:h-[14px]">
-                            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638l-3.96-4.158a.75.75 0 011.08-1.04l5.25 5.5a.75.75 0 010 1.04l-5.25 5.5a.75.75 0 11-1.08-1.04l3.96-4.158H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                          </svg>
-                        </Link>
-                      </div>
-
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          )}
-        </section>
+        {/* ── TABBED CONTENT ── */}
+        <DashboardTabs tabs={tabs} panels={panels} />
 
       </div>
     </>

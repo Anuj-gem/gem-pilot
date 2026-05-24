@@ -3,8 +3,7 @@
 //
 // What this layout owns:
 //   - Top nav (single canonical placement, pages no longer render <Nav/>)
-//   - Persistent left rail (YourPanel) on browse-shaped pages, hidden on
-//     /report/[id] so the deep-read column has the page to itself
+//   - Sidebar for anonymous users only (signup flow)
 //   - Bottom tab bar on mobile (Home / Community / Scripts / Profile)
 //   - Light background that all child pages sit on
 //
@@ -209,35 +208,21 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     recentActivity,
   }
 
-  const sidebarData = {
-    userName: profile?.full_name || 'Writer',
-    avatarUrl: profile?.avatar_url ?? null,
-    headline: profile?.headline ?? null,
-    isPro,
-    scriptCount: scriptCount ?? 0,
-    appCount: appCount ?? 0,
-    heatScore: (profile as any)?.heat_score ?? 0,
-    accountType: (profile as any)?.account_type ?? 'writer',
-  }
-
   return (
     <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
       <Nav userData={navUserData} />
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-32">
-        <div className="flex gap-8">
-          <AppSidebar {...sidebarData} />
-          <main className="flex-1 min-w-0">
-            {children}
-          </main>
-        </div>
+        <main className="min-w-0">
+          {children}
+        </main>
       </div>
       <MobileTabBar
         isAnon={false}
-        userName={sidebarData.userName}
-        avatarUrl={sidebarData.avatarUrl}
-        headline={sidebarData.headline}
+        userName={profile?.full_name || 'Writer'}
+        avatarUrl={profile?.avatar_url ?? null}
+        headline={profile?.headline ?? null}
         isPro={isPro}
-        heatScore={sidebarData.heatScore}
+        heatScore={(profile as any)?.heat_score ?? 0}
       />
       <ScriptUploadModal redirectTo="/dashboard" guestEvalsUsed={isPro ? undefined : (totalSubmissions ?? 0)} />
       {!isPro && <UpgradeModalListener evalsUsed={totalSubmissions ?? 0} appsUsed={appCount ?? 0} />}
