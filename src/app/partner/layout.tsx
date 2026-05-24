@@ -20,11 +20,9 @@ export default async function PartnerLayout({ children }: { children: React.Reac
 
   if (!user) {
     return (
-      <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
+      <div className="min-h-screen" style={{ background: '#0f0a1a' }}>
         <Nav />
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32">
-          <main>{children}</main>
-        </div>
+        <main>{children}</main>
       </div>
     )
   }
@@ -72,11 +70,9 @@ export default async function PartnerLayout({ children }: { children: React.Reac
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
+    <div className="min-h-screen" style={{ background: '#0f0a1a' }}>
       <Nav userData={navUserData} />
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32">
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
     </div>
   )
 }

@@ -69,11 +69,12 @@ export default async function PartnerPage() {
 
   const service = svc()
 
-  // Fetch opportunities owned by this partner
+  // Fetch only OPEN opportunities owned by this partner
   const { data: opps } = await service
     .from('opportunities')
     .select('id, title, status, created_at')
     .eq('owner_id', user.id)
+    .eq('status', 'open')
     .order('created_at', { ascending: false })
 
   const oppList = (opps || []) as PartnerOpp[]
@@ -105,10 +106,12 @@ export default async function PartnerPage() {
     triage_status: string | null; triage_feedback_tags: string[] | null
   }[]
 
-  // Compute per-writer application count (across all opportunities for this producer)
-  const writerAppCount = new Map<string, number>()
+  // Compute per-writer application count scoped to each opportunity
+  // Key: `${writer_id}:${opportunity_id}` → count
+  const writerOppCount = new Map<string, number>()
   for (const a of apps) {
-    writerAppCount.set(a.writer_id, (writerAppCount.get(a.writer_id) || 0) + 1)
+    const key = `${a.writer_id}:${a.opportunity_id}`
+    writerOppCount.set(key, (writerOppCount.get(key) || 0) + 1)
   }
 
   // Load writer profiles
@@ -193,7 +196,7 @@ export default async function PartnerPage() {
     writer_email: writerMap.get(app.writer_id)?.email || null,
     writer_headline: writerMap.get(app.writer_id)?.headline || null,
     writer_avatar_url: writerMap.get(app.writer_id)?.avatar_url || null,
-    writer_app_count: writerAppCount.get(app.writer_id) || 1,
+    writer_app_count: writerOppCount.get(`${app.writer_id}:${app.opportunity_id}`) || 1,
     scripts: scriptsByApp.get(app.id) || [],
   }))
 

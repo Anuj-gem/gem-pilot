@@ -97,13 +97,13 @@ export function PartnerTriageClient({
     return first || sortedApps[0] || null
   }, [selectedAppId, sortedApps, applications, triageState])
 
-  // Previous applications by the same writer (for history dropdown)
+  // Previous applications by the same writer for the SAME opportunity
   const writerHistory = useMemo(() => {
     if (!selectedApp) return []
     return applications
-      .filter(a => a.writer_id === selectedApp.writer_id && a.id !== selectedApp.id)
+      .filter(a => a.writer_id === selectedApp.writer_id && a.opportunity_id === activeOppId && a.id !== selectedApp.id)
       .sort((a, b) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime())
-  }, [selectedApp, applications])
+  }, [selectedApp, applications, activeOppId])
 
   const activeOpp = opportunities.find(o => o.id === activeOppId)
 
@@ -454,7 +454,6 @@ export function PartnerTriageClient({
                       {writerHistory.map(prev => {
                         const prevStatus = triageState[prev.id]?.status || prev.triage_status
                         const prevTags = triageState[prev.id]?.tags || prev.triage_feedback_tags
-                        const oppTitle = opportunities.find(o => o.id === prev.opportunity_id)?.title
                         return (
                           <div
                             key={prev.id}
@@ -473,7 +472,6 @@ export function PartnerTriageClient({
                                 <span className="text-[11px] text-white/20">{fmtDate(prev.submitted_at)}</span>
                               </div>
                             </div>
-                            {oppTitle && <span className="text-[11px] text-white/25 block mt-0.5">{oppTitle}</span>}
                             {prevTags && prevTags.length > 0 && (
                               <div className="flex flex-wrap gap-1 mt-1.5">
                                 {prevTags.map(tag => (
