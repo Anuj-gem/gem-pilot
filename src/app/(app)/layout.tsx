@@ -21,7 +21,7 @@ import { ScriptUploadModal } from "@/components/script-upload-modal"
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { AppSidebar } from '@/components/dashboard/app-sidebar'
-import { MobileTabBar, type MobileTabBarProps } from '@/components/dashboard/mobile-tab-bar'
+// MobileTabBar removed — using top nav only (with hamburger on mobile)
 import { PrivacyConfirmPrompt } from '@/components/privacy/privacy-confirm-prompt'
 import { normalizePrivacyDefaults } from '@/lib/privacy-defaults'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
@@ -48,7 +48,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     return (
       <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
         <Nav />
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-32">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 lg:pb-16">
           <div className="flex gap-8">
             <AppSidebar {...{ anonymous: true as const }} />
             <main className="flex-1 min-w-0">
@@ -58,7 +58,6 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         </div>
         <ScriptUploadModal redirectTo="/evaluating" />
         <SignupGateModal />
-        <MobileTabBar isAnon />
       </div>
     )
   }
@@ -211,19 +210,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="min-h-screen" style={{ background: '#f5f6f8' }}>
       <Nav userData={navUserData} />
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-32 lg:pb-32">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 lg:pb-16">
         <main className="min-w-0">
           {children}
         </main>
       </div>
-      <MobileTabBar
-        isAnon={false}
-        userName={profile?.full_name || 'Writer'}
-        avatarUrl={profile?.avatar_url ?? null}
-        headline={profile?.headline ?? null}
-        isPro={isPro}
-        heatScore={(profile as any)?.heat_score ?? 0}
-      />
       <ScriptUploadModal redirectTo="/dashboard" guestEvalsUsed={isPro ? undefined : (totalSubmissions ?? 0)} />
       {!isPro && <UpgradeModalListener evalsUsed={totalSubmissions ?? 0} appsUsed={appCount ?? 0} />}
       <InsiderGateModal />

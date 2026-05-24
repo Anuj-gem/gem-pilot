@@ -12,6 +12,7 @@ import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { AnonSignupPrompt } from '@/components/dashboard/anon-signup-prompt'
 import { NewScriptButton } from '@/components/dashboard/new-script-button'
 import { ScriptCardActions } from '@/components/dashboard/script-card-actions'
+import { StickyNewScript } from '@/components/dashboard/sticky-new-script'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
 import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
@@ -42,7 +43,7 @@ export default async function DashboardPage() {
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; is_public: boolean | null
-    heat_score: number | null
+    heat_score: number | null; poster_url: string | null
   }
   let visible: MySubRow[] = []
   let submissionIds: string[] = []
@@ -90,7 +91,7 @@ export default async function DashboardPage() {
 
     const { data: mySubs } = await supabase
       .from('script_submissions')
-      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score')
+      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
     visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -134,7 +135,7 @@ export default async function DashboardPage() {
       if (anonIds.length > 0) {
         const { data: anonSubs } = await service
           .from('script_submissions')
-          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score')
+          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
           .in('id', anonIds)
           .order('created_at', { ascending: false })
         visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -249,6 +250,7 @@ export default async function DashboardPage() {
         qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug, subtitle: o.subtitle })),
         isPublic: s.is_public ?? false,
         logline: ev?.logline ?? null,
+        posterUrl: s.poster_url ?? null,
       }
     })
 
@@ -440,97 +442,133 @@ export default async function DashboardPage() {
 
   // ── TAB PANELS ──
 
-  // Scripts panel — 2-col grid with visual cards
+  // Compute stats for the prominent stats section
+  const avgScore = completedScripts.length > 0
+    ? Math.round(completedScripts.reduce((sum, s) => sum + (s.score ?? 0), 0) / completedScripts.filter(s => s.score).length) || 0
+    : 0
+  const topScore = completedScripts.length > 0
+    ? Math.round(Math.max(...completedScripts.map(s => s.score ?? 0)))
+    : 0
+  const totalOpps = completedScripts.reduce((sum, s) => sum + s.qualifyingOpps.length, 0)
+
+  // Scripts panel — poster-first visual cards
   const scriptsPanel = (
     <div>
       {completedScripts.length === 0 && processingScripts.length === 0 ? (
-        <div className="rounded-xl bg-white px-6 py-12 text-center" style={{ boxShadow: cardShadow }}>
-          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-600 m-0">Upload a screenplay to get your first evaluation.</p>
+        <div className="rounded-2xl bg-white px-8 py-16 text-center" style={{ boxShadow: cardShadow }}>
+          <div className="w-16 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)' }}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 2v6h6M12 18v-6M9 15h6" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <p className="text-[16px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
+          <p className="text-[13px] text-gray-600 m-0 mb-4">Upload your first screenplay to get a full evaluation.</p>
+          <NewScriptButton />
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Processing scripts */}
           {processingScripts.map(script => (
-            <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
-              <div className="flex">
-                <div className="w-20 shrink-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e9d5ff, #c4b5fd)' }}>
-                  <svg className="animate-spin" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <div key={script.id} className="rounded-2xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
+              {/* Poster placeholder — processing */}
+              <div className="aspect-[2/3] w-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)' }}>
+                <div className="text-center">
+                  <svg className="animate-spin mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="#f5f3ff" strokeWidth="2.5" />
                     <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
                   </svg>
+                  <p className="text-[12px] font-medium text-purple-600 m-0">Evaluating...</p>
                 </div>
-                <div className="p-4 min-w-0 flex-1">
-                  <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{script.title}</h3>
-                  <p className="text-[12px] text-gray-600 m-0 mt-1">Evaluating...</p>
-                </div>
+              </div>
+              <div className="px-4 py-3">
+                <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{script.title}</h3>
+                <p className="text-[12px] text-gray-600 m-0 mt-0.5">{script.format || 'Script'}</p>
               </div>
             </div>
           ))}
 
-          {/* Completed scripts */}
+          {/* Completed scripts — poster-first cards */}
           {completedScripts.map(script => {
             const rounded = script.score ? Math.round(script.score) : null
             const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
             const gradient = genreGradient(script.genres, script.format)
 
             return (
-              <Link key={script.id} href={reportHref} className="block no-underline group">
-                <div className="rounded-xl bg-white overflow-hidden hover:shadow-lg transition-shadow" style={{ boxShadow: cardShadow }}>
-                  <div className="flex">
-                    {/* Genre gradient accent block with score overlay */}
-                    <div className="w-20 shrink-0 flex flex-col items-center justify-center gap-1.5 relative" style={{ background: gradient }}>
-                      {rounded ? (
-                        <span className="text-[22px] font-bold text-white leading-none">{rounded}</span>
-                      ) : (
-                        <span className="text-[20px] font-bold text-white/60 leading-none">
+              <div key={script.id} className="rounded-2xl bg-white overflow-hidden group hover:shadow-xl transition-all duration-200" style={{ boxShadow: cardShadow }}>
+                {/* Poster image area */}
+                <Link href={reportHref} className="block no-underline">
+                  <div className="aspect-[2/3] w-full relative overflow-hidden">
+                    {script.posterUrl ? (
+                      <img
+                        src={script.posterUrl}
+                        alt={script.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center" style={{ background: gradient }}>
+                        <span className="text-[48px] font-bold text-white/30 leading-none">
                           {(script.title || '?').charAt(0).toUpperCase()}
                         </span>
+                        <p className="text-[11px] text-white/50 m-0 mt-2">Add a poster on your report page</p>
+                      </div>
+                    )}
+
+                    {/* Score + heat overlay at bottom of poster */}
+                    <div className="absolute bottom-0 left-0 right-0 px-3 py-2 flex items-center justify-between" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
+                      {rounded ? (
+                        <span className="text-[12px] font-semibold text-white/90">
+                          GEM Score: {rounded}
+                        </span>
+                      ) : (
+                        <span />
                       )}
                       {script.heat > 0 && (
-                        <span className="text-[11px] font-bold text-white/90">🔥 {script.heat}</span>
+                        <span className="text-[12px] font-semibold text-white/90">
+                          🔥 {script.heat}
+                        </span>
                       )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-4 min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="min-w-0">
-                          <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
-                            {script.title}
-                          </h3>
-                          <p className="text-[12px] text-gray-600 m-0 mt-0.5">
-                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
-                          </p>
-                        </div>
-                        <ScriptCardActions>
-                          <PendingActionsDropdown
-                            scriptId={script.id}
-                            isPublic={script.isPublic}
-                            isPro={isPro}
-                            isAnon={!user}
-                            qualifyingOppsCount={script.qualifyingOpps.length}
-                          />
-                          <DeleteScriptButton scriptId={script.id} title={script.title} />
-                        </ScriptCardActions>
-                      </div>
-
-                      {script.logline && (
-                        <p className="text-[12px] text-gray-600 m-0 mt-1.5 line-clamp-2 leading-relaxed">{script.logline}</p>
-                      )}
-
-                      <div className="flex items-center gap-3 mt-2">
-                        <span className="text-[11px] text-gray-600">{fmtDate(script.createdAt)}</span>
-                        {script.qualifyingOpps.length > 0 && (
-                          <span className="text-[11px] font-medium text-purple-600">
-                            {script.qualifyingOpps.length} matching {script.qualifyingOpps.length === 1 ? 'opportunity' : 'opportunities'}
-                          </span>
-                        )}
-                      </div>
                     </div>
                   </div>
+                </Link>
+
+                {/* Card content below poster */}
+                <div className="px-4 py-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <Link href={reportHref} className="block no-underline min-w-0 flex-1">
+                      <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
+                        {script.title}
+                      </h3>
+                      <p className="text-[12px] text-gray-600 m-0 mt-0.5">
+                        {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
+                      </p>
+                    </Link>
+                    <ScriptCardActions>
+                      <PendingActionsDropdown
+                        scriptId={script.id}
+                        isPublic={script.isPublic}
+                        isPro={isPro}
+                        isAnon={!user}
+                        qualifyingOppsCount={script.qualifyingOpps.length}
+                      />
+                      <DeleteScriptButton scriptId={script.id} title={script.title} />
+                    </ScriptCardActions>
+                  </div>
+
+                  {script.logline && (
+                    <p className="text-[12px] text-gray-600 m-0 mt-1.5 line-clamp-2 leading-relaxed">{script.logline}</p>
+                  )}
+
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="text-[12px] text-gray-600">{fmtDate(script.createdAt)}</span>
+                    {script.qualifyingOpps.length > 0 && (
+                      <span className="text-[12px] font-medium text-purple-600">
+                        {script.qualifyingOpps.length} {script.qualifyingOpps.length === 1 ? 'opportunity' : 'opportunities'}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </Link>
+              </div>
             )
           })}
         </div>
@@ -700,42 +738,64 @@ export default async function DashboardPage() {
       )}
       <ProcessingPoller active={isProcessing} />
       {!user && isProcessing && <AnonSignupPrompt />}
+      <StickyNewScript />
 
-      <div className="space-y-6">
+      <div className="space-y-8">
 
-        {/* ── COMPACT TOP BAR ── */}
-        <div className="flex items-center gap-4 flex-wrap">
-          <NewScriptButton />
-
-          {/* Inline stats */}
-          <div className="flex items-center gap-4 text-[13px]">
-            <span className="text-gray-600">
-              <span className="font-bold text-gray-900">{scriptCount}</span> {scriptCount === 1 ? 'script' : 'scripts'}
-            </span>
-            <span className="text-gray-300">·</span>
-            <span className="text-gray-600">
-              <span className="font-bold text-gray-900">{user ? pendingCount : 0}</span> pending
-            </span>
-            {(user ? totalHeat : 0) > 0 && (
-              <>
-                <span className="text-gray-300">·</span>
-                <span className="text-gray-600">
-                  🔥 <span className="font-bold text-gray-900">{totalHeat}</span>
-                </span>
-              </>
+        {/* ── HEADER ── */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-[22px] font-bold text-gray-900 m-0">
+              {profile?.full_name ? `${profile.full_name.split(' ')[0]}'s Dashboard` : 'Dashboard'}
+            </h1>
+            {user && (
+              <p className="text-[13px] text-gray-600 m-0 mt-0.5">
+                {isPro ? 'Member' : 'Guest'} · {scriptCount} {scriptCount === 1 ? 'script' : 'scripts'}
+              </p>
             )}
           </div>
-
-          <div className="flex-1" />
-
-          {/* Status pill */}
-          {user && (
-            <span className="text-[11px] font-bold px-2 py-1 rounded-full"
-              style={{ background: isPro ? '#f5f3ff' : '#f3f4f6', color: isPro ? '#7c3aed' : '#9ca3af' }}>
-              {isPro ? 'Member' : 'Guest'}
-            </span>
-          )}
+          <NewScriptButton />
         </div>
+
+        {/* ── STATS CARDS ── */}
+        {(scriptCount > 0 || (user && totalHeat > 0)) && (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
+              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Scripts</p>
+              <p className="text-[28px] font-bold text-gray-900 m-0 mt-1 leading-none">{scriptCount}</p>
+            </div>
+            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
+              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Top Score</p>
+              <p className="text-[28px] font-bold m-0 mt-1 leading-none" style={{ color: topScore >= 80 ? '#059669' : topScore >= 70 ? '#7c3aed' : topScore >= 60 ? '#d97706' : '#6b7280' }}>
+                {topScore > 0 ? topScore : '—'}
+              </p>
+            </div>
+            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
+              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Avg Score</p>
+              <p className="text-[28px] font-bold text-gray-900 m-0 mt-1 leading-none">
+                {avgScore > 0 ? avgScore : '—'}
+              </p>
+            </div>
+            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
+              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Industry Heat</p>
+              <p className="text-[28px] font-bold m-0 mt-1 leading-none" style={{ color: totalHeat > 0 ? '#ea580c' : '#6b7280' }}>
+                {totalHeat > 0 ? (<>🔥 {totalHeat}</>) : '—'}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Zero-state stats */}
+        {scriptCount === 0 && !(user && totalHeat > 0) && (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {['Scripts', 'Top Score', 'Avg Score', 'Industry Heat'].map(label => (
+              <div key={label} className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
+                <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">{label}</p>
+                <p className="text-[28px] font-bold text-gray-300 m-0 mt-1 leading-none">—</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* ── TABBED CONTENT ── */}
         <DashboardTabs tabs={tabs} panels={panels} />

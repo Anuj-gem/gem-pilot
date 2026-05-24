@@ -40,9 +40,12 @@ export default function Nav({ userData }: NavProps = {}) {
   const pathname = usePathname()
   const supabase = createClient()
   const [user, setUser] = useState<{ id: string } | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user))
   }, [])
+  // Close mobile menu on route change
+  useEffect(() => { setMobileMenuOpen(false) }, [pathname])
 
   // Nav tabs — same structure for logged-in and logged-out.
   // "Home" points to /dashboard (logged in) or / (logged out).
@@ -133,18 +136,20 @@ export default function Nav({ userData }: NavProps = {}) {
                 </div>
               </div>
 
-              {/* Mobile logged-in — compact: upgrade CTA + new action menu. Nav handled by bottom tab bar. */}
+              {/* Mobile logged-in — hamburger menu */}
               <div className="md:hidden flex items-center gap-2">
-                {userData && !userData.profile.isPro && (
-                  <button
-                    onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
-                    className="text-[11px] font-semibold px-2.5 py-1 rounded-md cursor-pointer border-0 text-white"
-                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
-                  >
-                    Member
-                  </button>
-                )}
                 <NewActionMenu />
+                <button
+                  onClick={() => setMobileMenuOpen(v => !v)}
+                  className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-white hover:bg-white/10 transition-colors"
+                  aria-label="Menu"
+                >
+                  {mobileMenuOpen ? (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  ) : (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                  )}
+                </button>
               </div>
             </>
           ) : (
@@ -188,14 +193,74 @@ export default function Nav({ userData }: NavProps = {}) {
                 </div>
               </div>
 
-              {/* Mobile logged-out — nav handled by bottom tab bar */}
+              {/* Mobile logged-out — hamburger menu */}
               <div className="md:hidden flex items-center gap-2">
+                <button
+                  onClick={() => setMobileMenuOpen(v => !v)}
+                  className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-white hover:bg-white/10 transition-colors"
+                  aria-label="Menu"
+                >
+                  {mobileMenuOpen ? (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  ) : (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                  )}
+                </button>
               </div>
             </>
           )}
         </div>
 
-        {/* Mobile navigation is handled by the bottom tab bar (MobileTabBar) */}
+        {/* Mobile dropdown menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-white/10 px-4 pb-4 pt-2">
+            <div className="flex flex-col gap-1">
+              {navLinks.map(link => {
+                const Icon = link.icon
+                const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-[14px] transition-colors ${
+                      active ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <Icon size={16} />
+                    {link.label}
+                  </Link>
+                )
+              })}
+              {!user && (
+                <>
+                  <div className="border-t border-white/10 my-1" />
+                  <Link href="/login" className="flex items-center px-3 py-2.5 rounded-lg text-[14px] text-white/70 hover:text-white hover:bg-white/5 transition-colors">
+                    Log in
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className="flex items-center justify-center px-3 py-2.5 rounded-lg text-[14px] font-semibold text-white no-underline"
+                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                  >
+                    Get started
+                  </Link>
+                </>
+              )}
+              {user && userData && !userData.profile.isPro && (
+                <>
+                  <div className="border-t border-white/10 my-1" />
+                  <button
+                    onClick={() => { setMobileMenuOpen(false); window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal')) }}
+                    className="flex items-center justify-center px-3 py-2.5 rounded-lg text-[14px] font-semibold text-white border-0 cursor-pointer"
+                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                  >
+                    Become a Member
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </nav>
     </>
   )
