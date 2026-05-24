@@ -67,12 +67,12 @@ export function PartnerTriageClient({
     return applications.filter(a => a.opportunity_id === activeOppId)
   }, [applications, activeOppId])
 
-  // "Reviewed" = triaged as pass/meet (locally or from DB) or review_stage complete/shortlisted
+  // "Reviewed" = triaged as pass/meet (locally or from DB) or review_stage complete
   const isReviewed = (app: PartnerApp) => {
     const localTriage = triageState[app.id]
     if (localTriage && (localTriage.status === 'pass' || localTriage.status === 'meet')) return true
     if (app.triage_status === 'pass' || app.triage_status === 'meet') return true
-    return app.review_stage === 'complete' || app.review_stage === 'shortlisted'
+    return app.review_stage === 'complete'
   }
 
   // Stats
