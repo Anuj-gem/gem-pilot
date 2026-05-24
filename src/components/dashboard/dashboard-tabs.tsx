@@ -16,7 +16,7 @@ export function DashboardTabs({
   return (
     <div>
       {/* Tab buttons */}
-      <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid rgba(0,0,0,0.08)' }}>
+      <div className="flex gap-1 mb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         {tabs.map(tab => (
           <button
             key={tab.id}
@@ -24,7 +24,7 @@ export function DashboardTabs({
             className="px-4 py-2.5 text-[15px] font-semibold transition-colors cursor-pointer bg-transparent border-0"
             style={{
               borderBottom: active === tab.id ? '2px solid #7c3aed' : '2px solid transparent',
-              color: active === tab.id ? '#111827' : '#6b7280',
+              color: active === tab.id ? '#ffffff' : 'rgba(255,255,255,0.45)',
               marginBottom: '-1px',
             }}
           >
@@ -33,8 +33,8 @@ export function DashboardTabs({
               <span
                 className="ml-1.5 text-[11px] font-bold px-1.5 py-0.5 rounded-full"
                 style={{
-                  background: active === tab.id ? '#f3f0ff' : '#f3f4f6',
-                  color: active === tab.id ? '#7c3aed' : '#6b7280',
+                  background: active === tab.id ? 'rgba(124,58,237,0.2)' : 'rgba(255,255,255,0.08)',
+                  color: active === tab.id ? '#c4b5fd' : 'rgba(255,255,255,0.45)',
                 }}
               >
                 {tab.count}

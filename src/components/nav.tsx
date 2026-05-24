@@ -8,6 +8,9 @@ import {
   LayoutDashboard,
   Briefcase,
   Compass,
+  FileText,
+  Send,
+  ChevronDown,
 } from 'lucide-react'
 import {
   type NavUserMenuProfile,
@@ -48,9 +51,17 @@ export default function Nav({ userData }: NavProps = {}) {
   useEffect(() => { setMobileMenuOpen(false) }, [pathname])
 
   // Nav tabs — same structure for logged-in and logged-out.
-  // "Home" points to /dashboard (logged in) or / (logged out).
-  const navLinks = [
+  const [activityOpen, setActivityOpen] = useState(false)
+  // Close activity dropdown on route change
+  useEffect(() => { setActivityOpen(false) }, [pathname])
+
+  const activitySubLinks = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/scripts', label: 'My Scripts', icon: FileText },
+    { href: '/applications', label: 'My Applications', icon: Send },
+  ]
+
+  const navLinks = [
     { href: '/leaderboard', label: 'Leaderboard', icon: Compass },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
   ]
@@ -78,9 +89,58 @@ export default function Nav({ userData }: NavProps = {}) {
 
           {user ? (
             <>
-              {/* Desktop logged-in — flat nav links on the right */}
+              {/* Desktop logged-in — My Activity dropdown + flat nav links */}
               <div className="hidden md:flex flex-1 items-center justify-end ml-6">
                 <div className="flex items-center gap-1">
+                  {/* My Activity dropdown */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setActivityOpen(v => !v)}
+                      className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors cursor-pointer border-0 bg-transparent ${
+                        pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications')
+                          ? 'text-[var(--gem-white)] font-semibold'
+                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                      }`}
+                    >
+                      <LayoutDashboard size={16} />
+                      My Activity
+                      <ChevronDown size={14} className={`transition-transform ${activityOpen ? 'rotate-180' : ''}`} />
+                      {(pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications')) && (
+                        <span
+                          aria-hidden
+                          className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full"
+                          style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }}
+                        />
+                      )}
+                    </button>
+                    {activityOpen && (
+                      <>
+                        <div className="fixed inset-0 z-40" onClick={() => setActivityOpen(false)} />
+                        <div className="absolute left-0 top-full mt-2 bg-[#1e1b2e] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 min-w-[180px]">
+                          {activitySubLinks.map(link => {
+                            const Icon = link.icon
+                            const active = link.href === '/dashboard' ? pathname === '/dashboard' : pathname.startsWith(link.href)
+                            return (
+                              <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`flex items-center gap-2.5 px-4 py-2.5 text-[13px] transition-colors no-underline ${
+                                  active
+                                    ? 'text-white font-semibold bg-white/10'
+                                    : 'text-white/70 hover:text-white hover:bg-white/5'
+                                }`}
+                              >
+                                <Icon size={15} />
+                                {link.label}
+                              </Link>
+                            )
+                          })}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Flat nav links */}
                   {navLinks.map(link => {
                     const Icon = link.icon
                     const active = pathname.startsWith(link.href)
@@ -215,6 +275,25 @@ export default function Nav({ userData }: NavProps = {}) {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-white/10 px-4 pb-4 pt-2">
             <div className="flex flex-col gap-1">
+              {/* My Activity links */}
+              {activitySubLinks.map(link => {
+                const Icon = link.icon
+                const active = link.href === '/dashboard' ? pathname === '/dashboard' : pathname.startsWith(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-[14px] transition-colors ${
+                      active ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <Icon size={16} />
+                    {link.label}
+                  </Link>
+                )
+              })}
+              <div className="border-t border-white/10 my-1" />
+              {/* Other nav links */}
               {navLinks.map(link => {
                 const Icon = link.icon
                 const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)

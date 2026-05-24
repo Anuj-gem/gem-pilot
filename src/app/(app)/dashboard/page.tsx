@@ -267,6 +267,13 @@ export default async function DashboardPage() {
   const scriptCount = completedScripts.length + processingScripts.length
   const pendingCount = pendingApps.length
 
+  // Find the top-scoring script for linking
+  const topScoringScript = completedScripts.reduce<{ score: number; evaluationId: string | null } | null>((best, s) => {
+    const score = s.score ?? 0
+    if (!best || score > best.score) return { score, evaluationId: s.evaluationId }
+    return best
+  }, null)
+
   function scoreBadge(s: number): { bg: string } {
     if (s >= 80) return { bg: '#059669' }
     if (s >= 60) return { bg: '#7c3aed' }
@@ -414,7 +421,7 @@ export default async function DashboardPage() {
 
   // ── RENDER ──
 
-  const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
+  const cardShadow = '0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.2)'
 
   // Uniform placeholder gradient for scripts without posters
   const placeholderGradient = 'linear-gradient(135deg, #7c3aed, #6d28d9)'
@@ -443,15 +450,15 @@ export default async function DashboardPage() {
   const scriptsPanel = (
     <div>
       {completedScripts.length === 0 && processingScripts.length === 0 ? (
-        <div className="rounded-2xl bg-white px-8 py-16 text-center" style={{ boxShadow: cardShadow }}>
-          <div className="w-16 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)' }}>
+        <div className="rounded-2xl px-8 py-16 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: cardShadow }}>
+          <div className="w-16 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(124,58,237,0.15)' }}>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M14 2v6h6M12 18v-6M9 15h6" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 2v6h6M12 18v-6M9 15h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <p className="text-[16px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-600 m-0 mb-4">Upload your first screenplay to get a full evaluation.</p>
+          <p className="text-[16px] font-semibold text-white m-0 mb-1">No scripts yet</p>
+          <p className="text-[13px] text-white/50 m-0 mb-4">Upload your first screenplay to get a full evaluation.</p>
           <NewScriptButton />
         </div>
       ) : (
@@ -459,20 +466,17 @@ export default async function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Processing scripts */}
           {processingScripts.map(script => (
-            <div key={script.id} className="rounded-2xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
+            <div key={script.id} className="rounded-2xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: cardShadow }}>
               {/* Poster placeholder — processing */}
-              <div className="aspect-[3/4] w-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)' }}>
+              <div className="aspect-[3/4] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
                 <div className="text-center">
-                  <svg className="animate-spin mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" stroke="#f5f3ff" strokeWidth="2.5" />
-                    <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                  <p className="text-[12px] font-medium text-purple-600 m-0">Evaluating...</p>
+                  <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
+                  <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
                 </div>
               </div>
               <div className="px-4 py-3">
-                <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{script.title}</h3>
-                <p className="text-[12px] text-gray-600 m-0 mt-0.5">{script.format || 'Script'}</p>
+                <h3 className="text-[14px] font-semibold text-white m-0 truncate">{script.title}</h3>
+                <p className="text-[12px] text-white/50 m-0 mt-0.5">{script.format || 'Script'}</p>
               </div>
             </div>
           ))}
@@ -484,7 +488,7 @@ export default async function DashboardPage() {
             const gradient = placeholderGradient
 
             return (
-              <div key={script.id} className="rounded-2xl bg-white overflow-hidden group hover:shadow-xl transition-all duration-200" style={{ boxShadow: cardShadow }}>
+              <div key={script.id} className="rounded-2xl overflow-hidden group hover:shadow-xl transition-all duration-200" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: cardShadow }}>
                 {/* Poster image area */}
                 <Link href={reportHref} className="block no-underline">
                   <div className="aspect-[3/4] w-full relative overflow-hidden">
@@ -522,13 +526,13 @@ export default async function DashboardPage() {
                 </Link>
 
                 {/* Card content below poster */}
-                <div className="px-4 py-3">
+                <div className="px-4 py-3" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   <div className="flex items-start justify-between gap-2">
                     <Link href={reportHref} className="block no-underline min-w-0 flex-1">
-                      <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
+                      <h3 className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">
                         {script.title}
                       </h3>
-                      <p className="text-[12px] text-gray-600 m-0 mt-0.5">
+                      <p className="text-[12px] text-white/50 m-0 mt-0.5">
                         {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
                       </p>
                     </Link>
@@ -544,17 +548,26 @@ export default async function DashboardPage() {
                     </ScriptCardActions>
                   </div>
 
-                  {script.logline && (
-                    <p className="text-[12px] text-gray-600 m-0 mt-1.5 line-clamp-2 leading-relaxed">{script.logline}</p>
-                  )}
-
-                  <div className="flex items-center gap-3 mt-2">
-                    <span className="text-[12px] text-gray-600">{fmtDate(script.createdAt)}</span>
-                    {script.qualifyingOpps.length > 0 && (
-                      <span className="text-[12px] font-medium text-purple-600">
-                        {script.qualifyingOpps.length} {script.qualifyingOpps.length === 1 ? 'opportunity' : 'opportunities'}
+                  {/* Score + Heat pills */}
+                  <div className="flex items-center gap-2 mt-2">
+                    {rounded && (
+                      <span className="inline-flex items-center gap-1 text-[12px] font-semibold px-2.5 py-1 rounded-full" style={{ background: 'rgba(124,58,237,0.15)', color: '#c4b5fd' }}>
+                        💎 Score {rounded}
                       </span>
                     )}
+                    {script.heat > 0 && (
+                      <span className="inline-flex items-center gap-1 text-[12px] font-semibold px-2.5 py-1 rounded-full" style={{ background: 'rgba(251,146,60,0.15)', color: '#fdba74' }}>
+                        🔥 Heat {script.heat}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Action row */}
+                  <div className="flex items-center justify-between mt-2.5 pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                    <span className="text-[12px] text-white/40">{fmtDate(script.createdAt)}</span>
+                    <Link href={reportHref} className="text-[12px] font-semibold text-purple-400 hover:text-purple-300 transition-colors no-underline">
+                      View report →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -583,18 +596,18 @@ export default async function DashboardPage() {
       {/* Pending applications */}
       {pendingApps.length > 0 && (
         <div>
-          <h3 className="text-[13px] font-semibold text-gray-900 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Pending</h3>
+          <h3 className="text-[13px] font-semibold text-white/70 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Pending</h3>
           <div className="space-y-2">
             {pendingApps.map(app => {
               const opp = oppMap.get(app.opportunity_id)
               return (
                 <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
-                  <div className="rounded-xl bg-white px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                  <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:brightness-125 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="min-w-0">
-                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                      <p className="text-[12px] text-gray-600 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
+                      <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
+                      <p className="text-[12px] text-white/40 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
                     </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 shrink-0">Pending</span>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd' }}>Pending</span>
                   </div>
                 </Link>
               )
@@ -606,23 +619,23 @@ export default async function DashboardPage() {
       {/* Reviewed applications */}
       {reviewedApps.length > 0 && (
         <div>
-          <h3 className="text-[13px] font-semibold text-gray-900 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Reviewed</h3>
+          <h3 className="text-[13px] font-semibold text-white/70 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Reviewed</h3>
           <div className="space-y-2">
             {reviewedApps.map(app => {
               const opp = oppMap.get(app.opportunity_id)
               return (
                 <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
-                  <div className="rounded-xl bg-white px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                  <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:brightness-125 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="min-w-0">
-                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
+                      <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[12px] text-gray-600">{fmtDate(app.reviewed_at || app.submitted_at)}</span>
+                        <span className="text-[12px] text-white/40">{fmtDate(app.reviewed_at || app.submitted_at)}</span>
                         {app.heat_earned > 0 && (
-                          <span className="text-[11px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} 🔥</span>
+                          <span className="text-[11px] font-bold" style={{ color: '#fb923c' }}>+{app.heat_earned} 🔥</span>
                         )}
                       </div>
                     </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-green-50 text-green-700 shrink-0">Reviewed</span>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: 'rgba(34,197,94,0.15)', color: '#86efac' }}>Reviewed</span>
                   </div>
                 </Link>
               )
@@ -633,9 +646,9 @@ export default async function DashboardPage() {
 
       {/* Empty state */}
       {allApplications.length === 0 && (
-        <div className="rounded-xl bg-white px-6 py-10 text-center" style={{ boxShadow: cardShadow }}>
-          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
-          <p className="text-[13px] text-gray-600 m-0 mb-3">Browse open opportunities and apply with your scripts.</p>
+        <div className="rounded-xl px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <p className="text-[15px] font-semibold text-white m-0 mb-1">No applications yet</p>
+          <p className="text-[13px] text-white/50 m-0 mb-3">Browse open opportunities and apply with your scripts.</p>
           <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed' }}>
             Browse opportunities →
           </Link>
@@ -645,7 +658,7 @@ export default async function DashboardPage() {
       {/* Browse link when there are apps */}
       {allApplications.length > 0 && (
         <div className="pt-1">
-          <Link href="/opportunities" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
+          <Link href="/opportunities" className="text-[13px] font-medium text-purple-400 hover:text-purple-300 transition-colors">
             Browse open opportunities →
           </Link>
         </div>
@@ -657,18 +670,18 @@ export default async function DashboardPage() {
   const managePanel = accountType === 'producer' ? (
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-1">
-        <p className="text-[13px] text-gray-600 m-0">
+        <p className="text-[13px] text-white/50 m-0">
           {partnerPendingTotal > 0 ? `${partnerPendingTotal} pending review` : 'All caught up'}
           {' · '}{partnerApps.length} total
         </p>
-        <Link href="/partner/opportunities/create" className="text-[12px] font-semibold text-purple-600 hover:text-purple-800">
+        <Link href="/partner/opportunities/create" className="text-[12px] font-semibold text-purple-400 hover:text-purple-300">
           + Create opportunity
         </Link>
       </div>
 
       {partnerApps.length === 0 ? (
-        <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
-          <p className="text-[13px] text-gray-600 m-0">No applications yet. Create an opportunity to start receiving applications.</p>
+        <div className="rounded-xl px-6 py-8 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <p className="text-[13px] text-white/50 m-0">No applications yet. Create an opportunity to start receiving applications.</p>
         </div>
       ) : (
         <div className="space-y-2">
@@ -677,43 +690,43 @@ export default async function DashboardPage() {
             const opp = partnerOppMap.get(app.opportunity_id)
             const scripts = partnerScriptsByApp.get(app.id) || []
             const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
-            const stageMap: Record<string, { label: string; classes: string }> = {
-              pending: { label: 'New', classes: 'bg-yellow-50 text-yellow-700' },
-              in_consideration: { label: 'In consideration', classes: 'bg-purple-50 text-purple-700' },
-              shortlisted: { label: 'Shortlisted', classes: 'bg-blue-50 text-blue-700' },
-              partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
-              complete: { label: 'Reviewed', classes: 'bg-gray-100 text-gray-600' },
+            const stageMap: Record<string, { label: string; style: { background: string; color: string } }> = {
+              pending: { label: 'New', style: { background: 'rgba(234,179,8,0.15)', color: '#fde047' } },
+              in_consideration: { label: 'In consideration', style: { background: 'rgba(124,58,237,0.2)', color: '#c4b5fd' } },
+              shortlisted: { label: 'Shortlisted', style: { background: 'rgba(59,130,246,0.15)', color: '#93c5fd' } },
+              partner_match: { label: 'Partner match', style: { background: 'rgba(34,197,94,0.15)', color: '#86efac' } },
+              complete: { label: 'Reviewed', style: { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)' } },
             }
             const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
             const s = stageMap[stage] || stageMap.pending
 
             return (
               <Link key={app.id} href={`/partner/applications/${app.id}`} className="block no-underline">
-                <div className="rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                <div className="rounded-xl px-4 py-3.5 hover:brightness-125 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="flex items-center justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
+                        <p className="text-[14px] font-semibold text-white m-0 truncate">
                           {writer?.full_name || writer?.email || 'Unknown writer'}
                         </p>
-                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0 ${s.classes}`}>
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0" style={s.style}>
                           {s.label}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[12px] text-gray-600">{opp?.title || ''}</span>
+                        <span className="text-[12px] text-white/40">{opp?.title || ''}</span>
                         {scripts.length > 0 && (
                           <>
-                            <span className="text-[11px] text-gray-300">·</span>
-                            <span className="text-[12px] text-gray-600">{scripts[0].title}</span>
-                            {scripts[0].score && <span className="text-[11px] font-semibold text-gray-600">({Math.round(scripts[0].score)})</span>}
+                            <span className="text-[11px] text-white/20">·</span>
+                            <span className="text-[12px] text-white/40">{scripts[0].title}</span>
+                            {scripts[0].score && <span className="text-[11px] font-semibold text-white/40">({Math.round(scripts[0].score)})</span>}
                           </>
                         )}
-                        <span className="text-[11px] text-gray-300">·</span>
-                        <span className="text-[11px] text-gray-600">{fmtDate(app.submitted_at)}</span>
+                        <span className="text-[11px] text-white/20">·</span>
+                        <span className="text-[11px] text-white/40">{fmtDate(app.submitted_at)}</span>
                       </div>
                     </div>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-white/20 shrink-0">
                       <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
@@ -733,7 +746,7 @@ export default async function DashboardPage() {
   if (managePanel) panels.manage = managePanel
 
   return (
-    <>
+    <div className="rounded-2xl px-6 py-6 -mx-4 sm:-mx-6 lg:-mx-8 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)', minHeight: '60vh' }}>
       {user && submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
@@ -745,39 +758,39 @@ export default async function DashboardPage() {
 
         {/* ── STATS CARDS ── */}
         {(scriptCount > 0 || (user && totalHeat > 0)) && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
-              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Scripts</p>
-              <p className="text-[28px] font-bold text-gray-900 m-0 mt-1 leading-none">{scriptCount}</p>
-            </div>
-            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
-              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Top Score</p>
-              <p className="text-[28px] font-bold m-0 mt-1 leading-none" style={{ color: topScore >= 80 ? '#059669' : topScore >= 70 ? '#7c3aed' : topScore >= 60 ? '#d97706' : '#6b7280' }}>
-                {topScore > 0 ? topScore : '—'}
-              </p>
-            </div>
-            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
-              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Avg Score</p>
-              <p className="text-[28px] font-bold text-gray-900 m-0 mt-1 leading-none">
-                {avgScore > 0 ? avgScore : '—'}
-              </p>
-            </div>
-            <div className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
-              <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">Industry Heat</p>
-              <p className="text-[28px] font-bold m-0 mt-1 leading-none" style={{ color: totalHeat > 0 ? '#ea580c' : '#6b7280' }}>
-                {totalHeat > 0 ? (<>🔥 {totalHeat}</>) : '—'}
-              </p>
-            </div>
+          <div className="grid grid-cols-3 gap-4">
+            <Link href="/scripts" className="no-underline block">
+              <div className="rounded-xl px-4 py-4 hover:brightness-125 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <p className="text-[12px] font-medium text-white/50 m-0 uppercase tracking-wide">📄 Scripts</p>
+                <p className="text-[28px] font-bold text-white m-0 mt-1 leading-none">{scriptCount}</p>
+              </div>
+            </Link>
+            <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
+              <div className="rounded-xl px-4 py-4 hover:brightness-125 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <p className="text-[12px] font-medium text-white/50 m-0 uppercase tracking-wide">💎 Top Score</p>
+                <p className="text-[28px] font-bold m-0 mt-1 leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.4)' }}>
+                  {topScore > 0 ? topScore : '—'}
+                </p>
+              </div>
+            </Link>
+            <Link href="/applications" className="no-underline block">
+              <div className="rounded-xl px-4 py-4 hover:brightness-125 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <p className="text-[12px] font-medium text-white/50 m-0 uppercase tracking-wide">🔥 Industry Heat</p>
+                <p className="text-[28px] font-bold m-0 mt-1 leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.4)' }}>
+                  {totalHeat > 0 ? totalHeat : '—'}
+                </p>
+              </div>
+            </Link>
           </div>
         )}
 
         {/* Zero-state stats */}
         {scriptCount === 0 && !(user && totalHeat > 0) && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {['Scripts', 'Top Score', 'Avg Score', 'Industry Heat'].map(label => (
-              <div key={label} className="rounded-xl bg-white px-4 py-4" style={{ boxShadow: cardShadow }}>
-                <p className="text-[12px] font-medium text-gray-500 m-0 uppercase tracking-wide">{label}</p>
-                <p className="text-[28px] font-bold text-gray-300 m-0 mt-1 leading-none">—</p>
+          <div className="grid grid-cols-3 gap-4">
+            {[{ label: '📄 Scripts' }, { label: '💎 Top Score' }, { label: '🔥 Industry Heat' }].map(({ label }) => (
+              <div key={label} className="rounded-xl px-4 py-4" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <p className="text-[12px] font-medium text-white/50 m-0 uppercase tracking-wide">{label}</p>
+                <p className="text-[28px] font-bold text-white/20 m-0 mt-1 leading-none">—</p>
               </div>
             ))}
           </div>
@@ -787,6 +800,6 @@ export default async function DashboardPage() {
         <DashboardTabs tabs={tabs} panels={panels} />
 
       </div>
-    </>
+    </div>
   )
 }
