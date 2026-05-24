@@ -202,26 +202,25 @@ export function PartnerTriageClient({
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#0f0a1a' }}>
-      {/* Top bar: opportunity dropdown + stats */}
-      <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div className="flex items-center gap-3">
+    <div className="h-screen flex" style={{ background: '#0f0a1a' }}>
+        {/* LEFT: Applicant list */}
+        <div className="w-[340px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
           {/* Opportunity dropdown */}
-          <div className="relative">
+          <div className="px-4 py-3 relative" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <button
               onClick={() => setShowOppDropdown(!showOppDropdown)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
+              className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
               style={{ background: 'rgba(255,255,255,0.06)' }}
             >
-              {activeOpp?.title || 'Select opportunity'}
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform ${showOppDropdown ? 'rotate-180' : ''}`}>
+              <span className="truncate">{activeOpp?.title || 'Select opportunity'}</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform shrink-0 ${showOppDropdown ? 'rotate-180' : ''}`}>
                 <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
             {showOppDropdown && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowOppDropdown(false)} />
-                <div className="absolute top-full left-0 mt-1 py-1 rounded-lg z-20 min-w-[240px] shadow-xl" style={{ background: '#1a1425', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div className="absolute top-full left-4 right-4 mt-1 py-1 rounded-lg z-20 shadow-xl" style={{ background: '#1a1425', border: '1px solid rgba(255,255,255,0.1)' }}>
                   {opportunities.map(opp => {
                     const oppPending = applications.filter(a => {
                       if (a.opportunity_id !== opp.id) return false
@@ -239,7 +238,7 @@ export function PartnerTriageClient({
                         style={{ background: activeOppId === opp.id ? 'rgba(124,58,237,0.1)' : 'transparent' }}
                       >
                         <span className="truncate">{opp.title}</span>
-                        <span className="text-[12px] text-white/30 ml-2 shrink-0">{oppPending} pending</span>
+                        <span className="text-[12px] text-white/60 ml-2 shrink-0">{oppPending} pending</span>
                       </button>
                     )
                   })}
@@ -247,24 +246,6 @@ export function PartnerTriageClient({
               </>
             )}
           </div>
-
-          {/* Stats pills */}
-          <div className="flex items-center gap-2 ml-2">
-            <span className="text-[12px] px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(124,58,237,0.15)', color: '#a78bfa' }}>
-              {pendingCount} pending
-            </span>
-            <span className="text-[12px] px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)' }}>
-              {reviewedCount} reviewed
-            </span>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Main content: list + detail */}
-      <div className="flex" style={{ height: 'calc(100vh - 130px)' }}>
-        {/* LEFT: Applicant list */}
-        <div className="w-[340px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
           {/* Pending / Reviewed tabs */}
           <div className="flex items-center" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <button
@@ -375,8 +356,8 @@ export function PartnerTriageClient({
           </div>
         </div>
 
-        {/* RIGHT: Detail panel — elevated surface */}
-        <div className="flex-1 flex flex-col overflow-y-auto m-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}>
+        {/* RIGHT: Detail panel */}
+        <div className="flex-1 flex flex-col overflow-y-auto" style={{ background: 'rgba(255,255,255,0.04)' }}>
           {!selectedApp ? (
             <div className="flex-1 flex items-center justify-center text-[14px] text-white/25">
               Select an application to review
@@ -728,7 +709,6 @@ export function PartnerTriageClient({
             </>
           )}
         </div>
-      </div>
     </div>
   )
 }

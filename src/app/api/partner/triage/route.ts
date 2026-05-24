@@ -56,13 +56,35 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Not authorized' }, { status: 403 })
   }
 
-  // Update the consideration with triage status
+  // Update the consideration with triage status + writer-visible fields
   const updateData: Record<string, unknown> = {
     triage_status: action,
     triaged_at: new Date().toISOString(),
   }
-  if (action === 'pass' && feedback_tags?.length) {
-    updateData.triage_feedback_tags = feedback_tags
+
+  if (action === 'pass') {
+    // Mark as reviewed so writer side sees it
+    updateData.review_stage = 'complete'
+    updateData.status = 'reviewed'
+    updateData.reviewed_at = new Date().toISOString()
+
+    // Split tags: +Tag → feedback_tags (positive), -Tag → next_steps_tags (reasons)
+    if (feedback_tags?.length) {
+      updateData.triage_feedback_tags = feedback_tags
+      const positive = feedback_tags.filter(t => t.startsWith('+')).map(t => t.slice(1))
+      const negative = feedback_tags.filter(t => t.startsWith('-')).map(t => t.slice(1))
+      if (positive.length > 0) updateData.feedback_tags = positive
+      if (negative.length > 0) updateData.next_steps_tags = negative
+
+      // Heat: +1 per positive signal tag
+      if (positive.length > 0) {
+        updateData.heat_earned = positive.length
+      }
+    }
+  }
+
+  if (action === 'meet') {
+    updateData.review_stage = 'shortlisted'
   }
 
   await service
