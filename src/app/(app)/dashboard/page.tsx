@@ -774,33 +774,33 @@ export default async function DashboardPage() {
       <div className="space-y-8">
 
         {/* ── STATS ROW — icon · number · label ── */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
           <Link href="/scripts" className="no-underline block">
-            <div className="rounded-lg px-4 py-4 flex items-center gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0">
+            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M14 2v6h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-[26px] font-bold text-white leading-none">{scriptCount}</span>
-              <span className="text-[14px] font-semibold text-white/70">Scripts</span>
+              <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{scriptCount}</span>
+              <span className="text-[12px] sm:text-[14px] font-bold text-white">Scripts</span>
             </div>
           </Link>
           <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-            <div className="rounded-lg px-4 py-4 flex items-center gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              {gemDiamond(10)}
-              <span className="text-[26px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
+            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="hidden sm:inline-flex">{gemDiamond(10)}</span>
+              <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
                 {topScore > 0 ? topScore : '—'}
               </span>
-              <span className="text-[14px] font-semibold text-white/70">Top Score</span>
+              <span className="text-[12px] sm:text-[14px] font-bold text-white whitespace-nowrap">Top Score</span>
             </div>
           </Link>
           <Link href="/applications" className="no-underline block">
-            <div className="rounded-lg px-4 py-4 flex items-center gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-[20px] leading-none shrink-0">🔥</span>
-              <span className="text-[26px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
+            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="text-[18px] sm:text-[20px] leading-none shrink-0">🔥</span>
+              <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
                 {totalHeat > 0 ? totalHeat : '—'}
               </span>
-              <span className="text-[14px] font-semibold text-white/70">Heat</span>
+              <span className="text-[12px] sm:text-[14px] font-bold text-white">Heat</span>
             </div>
           </Link>
         </div>

@@ -73,7 +73,7 @@ export default function Nav({ userData }: NavProps = {}) {
           wrapper). The spacer reserves the layout slot so page content
           starts below the nav instead of underneath it. */}
       <div className="h-14" aria-hidden />
-      <nav className="border-b border-[var(--gem-gray-700)] bg-[var(--gem-black)]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+      <nav className="border-b border-white/10 bg-[#110f1d]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/dashboard" className="flex items-center gap-2">
             <span
@@ -273,7 +273,7 @@ export default function Nav({ userData }: NavProps = {}) {
 
         {/* Mobile dropdown menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-white/10 px-4 pb-4 pt-2">
+          <div className="md:hidden border-t border-white/10 px-4 pb-4 pt-2 bg-[#110f1d]">
             <div className="flex flex-col gap-1">
               {/* My Activity links */}
               {activitySubLinks.map(link => {
