@@ -73,7 +73,7 @@ export default function Nav({ userData }: NavProps = {}) {
           wrapper). The spacer reserves the layout slot so page content
           starts below the nav instead of underneath it. */}
       <div className="h-14" aria-hidden />
-      <nav className="border-b border-white/10 bg-[#110f1d]/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+      <nav className="border-b border-[var(--gem-gray-700)] bg-white/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/dashboard" className="flex items-center gap-2">
             <span
@@ -201,7 +201,7 @@ export default function Nav({ userData }: NavProps = {}) {
                 <NewActionMenu />
                 <button
                   onClick={() => setMobileMenuOpen(v => !v)}
-                  className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-white hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-[var(--gem-white)] hover:bg-black/5 transition-colors"
                   aria-label="Menu"
                 >
                   {mobileMenuOpen ? (
@@ -257,7 +257,7 @@ export default function Nav({ userData }: NavProps = {}) {
               <div className="md:hidden flex items-center gap-2">
                 <button
                   onClick={() => setMobileMenuOpen(v => !v)}
-                  className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-white hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-[var(--gem-white)] hover:bg-black/5 transition-colors"
                   aria-label="Menu"
                 >
                   {mobileMenuOpen ? (
