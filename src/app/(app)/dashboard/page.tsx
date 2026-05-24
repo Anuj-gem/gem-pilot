@@ -416,20 +416,8 @@ export default async function DashboardPage() {
 
   const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
 
-  // Genre-to-gradient mapping for script card accent blocks
-  function genreGradient(genres: string[], format: string | null): string {
-    const primary = (genres[0] || '').toLowerCase()
-    if (primary.includes('thriller') || primary.includes('crime') || primary.includes('mystery')) return 'linear-gradient(135deg, #1e293b, #334155)'
-    if (primary.includes('horror')) return 'linear-gradient(135deg, #1c1917, #44403c)'
-    if (primary.includes('comedy')) return 'linear-gradient(135deg, #fbbf24, #f59e0b)'
-    if (primary.includes('drama')) return 'linear-gradient(135deg, #7c3aed, #6d28d9)'
-    if (primary.includes('sci-fi') || primary.includes('fantasy')) return 'linear-gradient(135deg, #0ea5e9, #6366f1)'
-    if (primary.includes('romance')) return 'linear-gradient(135deg, #ec4899, #f43f5e)'
-    if (primary.includes('action') || primary.includes('adventure')) return 'linear-gradient(135deg, #dc2626, #ea580c)'
-    if (primary.includes('family') || primary.includes('animation')) return 'linear-gradient(135deg, #10b981, #34d399)'
-    if ((format || '').toLowerCase() === 'film') return 'linear-gradient(135deg, #475569, #64748b)'
-    return 'linear-gradient(135deg, #6366f1, #8b5cf6)'
-  }
+  // Uniform placeholder gradient for scripts without posters
+  const placeholderGradient = 'linear-gradient(135deg, #7c3aed, #6d28d9)'
 
   // Build tabs — 2 tabs for writers, 3 for producers
   const tabs: TabDef[] = [
@@ -467,12 +455,13 @@ export default async function DashboardPage() {
           <NewScriptButton />
         </div>
       ) : (
+        <>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Processing scripts */}
           {processingScripts.map(script => (
             <div key={script.id} className="rounded-2xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
               {/* Poster placeholder — processing */}
-              <div className="aspect-[2/3] w-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)' }}>
+              <div className="aspect-[3/4] w-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)' }}>
                 <div className="text-center">
                   <svg className="animate-spin mx-auto mb-2" width="32" height="32" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="#f5f3ff" strokeWidth="2.5" />
@@ -488,17 +477,17 @@ export default async function DashboardPage() {
             </div>
           ))}
 
-          {/* Completed scripts — poster-first cards */}
-          {completedScripts.map(script => {
+          {/* Completed scripts — poster-first cards (limited to 6) */}
+          {completedScripts.slice(0, 6).map(script => {
             const rounded = script.score ? Math.round(script.score) : null
             const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
-            const gradient = genreGradient(script.genres, script.format)
+            const gradient = placeholderGradient
 
             return (
               <div key={script.id} className="rounded-2xl bg-white overflow-hidden group hover:shadow-xl transition-all duration-200" style={{ boxShadow: cardShadow }}>
                 {/* Poster image area */}
                 <Link href={reportHref} className="block no-underline">
-                  <div className="aspect-[2/3] w-full relative overflow-hidden">
+                  <div className="aspect-[3/4] w-full relative overflow-hidden">
                     {script.posterUrl ? (
                       <img
                         src={script.posterUrl}
@@ -572,6 +561,18 @@ export default async function DashboardPage() {
             )
           })}
         </div>
+        {completedScripts.length > 6 && (
+          <div className="mt-6 text-center">
+            <Link
+              href="/scripts"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[14px] font-semibold text-white no-underline transition-all hover:brightness-110"
+              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+            >
+              View all {completedScripts.length} scripts →
+            </Link>
+          </div>
+        )}
+        </>
       )}
     </div>
   )
@@ -741,21 +742,6 @@ export default async function DashboardPage() {
       <StickyNewScript />
 
       <div className="space-y-8">
-
-        {/* ── HEADER ── */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-[22px] font-bold text-gray-900 m-0">
-              {profile?.full_name ? `${profile.full_name.split(' ')[0]}'s Dashboard` : 'Dashboard'}
-            </h1>
-            {user && (
-              <p className="text-[13px] text-gray-600 m-0 mt-0.5">
-                {isPro ? 'Member' : 'Guest'} · {scriptCount} {scriptCount === 1 ? 'script' : 'scripts'}
-              </p>
-            )}
-          </div>
-          <NewScriptButton />
-        </div>
 
         {/* ── STATS CARDS ── */}
         {(scriptCount > 0 || (user && totalHeat > 0)) && (

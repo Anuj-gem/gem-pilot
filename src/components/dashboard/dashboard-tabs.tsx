@@ -21,10 +21,10 @@ export function DashboardTabs({
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className="px-4 py-2.5 text-[14px] font-medium transition-colors cursor-pointer bg-transparent border-0"
+            className="px-4 py-2.5 text-[15px] font-semibold transition-colors cursor-pointer bg-transparent border-0"
             style={{
               borderBottom: active === tab.id ? '2px solid #7c3aed' : '2px solid transparent',
-              color: active === tab.id ? '#111827' : '#9ca3af',
+              color: active === tab.id ? '#111827' : '#6b7280',
               marginBottom: '-1px',
             }}
           >
@@ -34,7 +34,7 @@ export function DashboardTabs({
                 className="ml-1.5 text-[11px] font-bold px-1.5 py-0.5 rounded-full"
                 style={{
                   background: active === tab.id ? '#f3f0ff' : '#f3f4f6',
-                  color: active === tab.id ? '#7c3aed' : '#9ca3af',
+                  color: active === tab.id ? '#7c3aed' : '#6b7280',
                 }}
               >
                 {tab.count}

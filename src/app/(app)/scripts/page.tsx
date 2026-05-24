@@ -1,6 +1,5 @@
 // /scripts — "My Scripts" — full list with sort, bulk hide, three-dot menu.
 
-import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
@@ -23,18 +22,18 @@ export default async function ScriptsPage() {
 
   if (!user) {
     return (
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <header className="flex items-end justify-between mb-5">
           <div>
             <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
               Scripts
             </h1>
-            <p className="text-[13px] text-gray-400 mt-1 m-0">0 scripts evaluated</p>
+            <p className="text-[13px] text-gray-600 mt-1 m-0">0 scripts evaluated</p>
           </div>
         </header>
         <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-400 m-0 mb-4">Upload a screenplay to get your first evaluation.</p>
+          <p className="text-[13px] text-gray-600 m-0 mb-4">Upload a screenplay to get your first evaluation.</p>
           <UploadCTAButton
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors cursor-pointer border-0"
             style={{ background: 'var(--gem-accent)' }}
@@ -60,10 +59,11 @@ export default async function ScriptsPage() {
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; heat_score: number | null
+    poster_url: string | null
   }
   const { data: mySubs } = await supabase
     .from('script_submissions')
-    .select('id, title, status, declared_format, created_at, hidden_at, heat_score')
+    .select('id, title, status, declared_format, created_at, hidden_at, heat_score, poster_url')
     .eq('user_id', user.id)
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
@@ -129,10 +129,12 @@ export default async function ScriptsPage() {
       title: s.title,
       format: s.declared_format,
       genre: ev?.genres[0] ?? null,
+      genres: ev?.genres ?? [],
       score: ev?.score ?? null,
       evaluationId: ev?.id ?? null,
       createdAt: s.created_at,
       heat: s.heat_score ?? 0,
+      posterUrl: s.poster_url ?? null,
       isProcessing: stillProcessing,
       isLocked: false,
       matchingOpportunities: matchOpportunities(s.declared_format, ev?.genres ?? []),
@@ -143,7 +145,7 @@ export default async function ScriptsPage() {
   const visibleCount = scriptRows.filter(s => !s.hidden).length
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       {isTrial && <UpgradeModalListener />}
 
       <header className="flex items-end justify-between mb-5">
@@ -151,16 +153,10 @@ export default async function ScriptsPage() {
           <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
             Scripts
           </h1>
-          <p className="text-[13px] text-gray-400 mt-1 m-0">
+          <p className="text-[13px] text-gray-600 mt-1 m-0">
             {visibleCount} {visibleCount === 1 ? 'script' : 'scripts'} evaluated
           </p>
         </div>
-        <Link
-          href="/submit"
-          className="text-[12px] font-bold text-white bg-gray-900 hover:bg-gray-800 px-3 py-1.5 rounded-lg transition-colors"
-        >
-          Upload a script
-        </Link>
       </header>
 
       {/* Script list (client component) */}
