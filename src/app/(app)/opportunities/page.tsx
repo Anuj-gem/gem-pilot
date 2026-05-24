@@ -39,8 +39,8 @@ export const metadata = {
 
 type OppRow = {
   id: string; title: string; description: string; slug: string | null
-  formats: string[]; genres: string[]; budget_tiers: string[]
-  min_score: number | null; deadline: string | null; status: string
+  formats: string[]; genres: string[]; budget_tiers: string[]; tags: string[]
+  deadline: string | null; status: string
   posted_by: string | null; subtitle: string | null; created_at: string
 }
 
@@ -110,7 +110,7 @@ export default async function OpportunitiesPage() {
         return Array.from(set)
       }
 
-      const evalMap = new Map<string, { weighted_score: number | null; genres: string[]; budget: string | null }>()
+      const evalMap = new Map<string, { weighted_score: number | null; genres: string[]; budget: string | null; tags: string[] }>()
       for (const ev of (evals || []) as any[]) {
         const evJson = ev.evaluation as Record<string, unknown> | null
         const cls = (evJson?.classification as Record<string, unknown>) || {}
@@ -123,7 +123,8 @@ export default async function OpportunitiesPage() {
         const packaging = (evJson?.packaging as Record<string, unknown>) || {}
         const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
         const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
-        evalMap.set(ev.submission_id, { weighted_score: ev.weighted_score, genres, budget })
+        const tags = ((cls.tags as string[]) || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
+        evalMap.set(ev.submission_id, { weighted_score: ev.weighted_score, genres, budget, tags })
       }
 
       // Count qualifying scripts per opportunity
@@ -132,7 +133,11 @@ export default async function OpportunitiesPage() {
         for (const sub of visibleSubs) {
           const ev = evalMap.get(sub.id)
           if (!ev) continue
-          if (opp.formats.length > 0 && !opp.formats.includes(sub.declared_format)) continue
+          // Format matching: opp stores "Feature"/"Series", declared_format is "Feature film"/"Series"
+          if (opp.formats.length > 0) {
+            const declNorm = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
+            if (!opp.formats.includes(declNorm)) continue
+          }
           if (opp.genres.length > 0 && ev.genres.length > 0) {
             const oppGenresNorm = opp.genres.map(normGenre)
             const hasOverlap = ev.genres.some(sg =>
@@ -141,7 +146,12 @@ export default async function OpportunitiesPage() {
             if (!hasOverlap) continue
           }
           if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
-          if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) continue
+          // Tag matching: opp tags must overlap with script's classification.tags
+          if (opp.tags?.length > 0) {
+            const oppTagsNorm = opp.tags.map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
+            const hasTagOverlap = oppTagsNorm.some((ot: string) => ev.tags.some((st: string) => st === ot || st.includes(ot) || ot.includes(st)))
+            if (!hasTagOverlap) continue
+          }
           count++
         }
         oppMatchCount.set(opp.id, count)
