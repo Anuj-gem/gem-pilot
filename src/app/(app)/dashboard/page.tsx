@@ -11,10 +11,9 @@ import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { AnonSignupPrompt } from '@/components/dashboard/anon-signup-prompt'
 import { NewScriptButton } from '@/components/dashboard/new-script-button'
-import { ScriptCardActions } from '@/components/dashboard/script-card-actions'
 // StickyNewScript removed — collided with Intercom
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
-import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
+import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
 import Link from 'next/link'
 
@@ -541,9 +540,14 @@ export default async function DashboardPage() {
                 </Link>
 
                 {/* Card info — light background */}
-                <div className="px-4 py-3">
+                <div className="px-4 py-3 relative">
+                  {/* Three-dot menu — top right */}
+                  <div className="absolute top-2 right-2" onClick={(e) => e.preventDefault()}>
+                    <DeleteScriptButton scriptId={script.id} title={script.title} evaluationId={script.evaluationId} />
+                  </div>
+
                   <Link href={reportHref} className="block no-underline">
-                    <h3 className="text-[14px] font-semibold text-gray-900 m-0 line-clamp-2 group-hover:text-purple-700 transition-colors">
+                    <h3 className="text-[14px] font-semibold text-gray-900 m-0 line-clamp-2 pr-8 group-hover:text-purple-700 transition-colors">
                       {script.title}
                     </h3>
                     <p className="text-[12px] text-gray-400 m-0 mt-0.5">
@@ -551,28 +555,22 @@ export default async function DashboardPage() {
                     </p>
                   </Link>
 
-                  {/* Score + Heat — prominent */}
+                  {/* Score + Heat — both large and prominent */}
                   <div className="flex items-center gap-4 mt-2.5">
-                    <span className="inline-flex items-center gap-1.5 text-[18px] font-bold" style={{ color: '#7c3aed' }}>
+                    <span className="inline-flex items-center gap-1.5 text-[20px] font-bold" style={{ color: '#7c3aed' }}>
                       {gemDiamond(10)} {rounded || '—'}
                     </span>
-                    <span className="text-[14px] font-semibold" style={{ color: script.heat > 0 ? '#ea580c' : '#9ca3af' }}>
-                      🔥 {script.heat}
+                    <span className="inline-flex items-center gap-1 text-[20px] font-bold" style={{ color: script.heat > 0 ? '#ea580c' : '#9ca3af' }}>
+                      <span className="text-[18px]">🔥</span> {script.heat}
                     </span>
                   </div>
 
-                  {/* Bottom row: actions + view report */}
+                  {/* Bottom row: Discover toggle + view report */}
                   <div className="flex items-center justify-between mt-2.5 pt-2.5" style={{ borderTop: '1px solid #f0f0f0' }}>
-                    <ScriptCardActions>
-                      <PendingActionsDropdown
-                        scriptId={script.id}
-                        isPublic={script.isPublic}
-                        isPro={isPro}
-                        isAnon={!user}
-                        qualifyingOppsCount={script.qualifyingOpps.length}
-                      />
-                      <DeleteScriptButton scriptId={script.id} title={script.title} />
-                    </ScriptCardActions>
+                    <div className="flex items-center gap-2" onClick={(e) => e.preventDefault()}>
+                      <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} isAnon={!user} />
+                      <span className="text-[12px] text-gray-400">{script.isPublic ? 'Public' : 'Private'}</span>
+                    </div>
                     <Link href={reportHref} className="text-[12px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline">
                       View report →
                     </Link>
@@ -755,19 +753,15 @@ export default async function DashboardPage() {
 
   return (
     <div style={{ position: 'relative' }}>
-      {/* Full-bleed dark background — absolutely positioned to paint over layout gray */}
+      {/* Full-bleed dark background — fixed so it doesn't affect scroll behavior */}
       <div
         aria-hidden="true"
         style={{
-          position: 'absolute',
-          top: '-6rem',
-          bottom: '-6rem',
-          left: '50%',
-          width: '100vw',
-          transform: 'translateX(-50%)',
-          minHeight: '100vh',
+          position: 'fixed',
+          inset: 0,
           background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)',
           pointerEvents: 'none',
+          zIndex: 0,
         }}
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
@@ -779,31 +773,34 @@ export default async function DashboardPage() {
 
       <div className="space-y-8">
 
-        {/* ── STATS ROW ── */}
-        <div className="flex items-stretch gap-3">
-          <Link href="/scripts" className="no-underline flex-1">
-            <div className="rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-all h-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-[28px] font-bold text-white leading-none">{scriptCount}</span>
-              <span className="text-[13px] font-medium text-white/50">Scripts</span>
+        {/* ── STATS ROW — icon · number · label ── */}
+        <div className="grid grid-cols-3 gap-3">
+          <Link href="/scripts" className="no-underline block">
+            <div className="rounded-lg px-4 py-4 flex items-center gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M14 2v6h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-[26px] font-bold text-white leading-none">{scriptCount}</span>
+              <span className="text-[14px] font-semibold text-white/70">Scripts</span>
             </div>
           </Link>
-          <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline flex-1">
-            <div className="rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-all h-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="inline-flex items-center gap-2">
-                {gemDiamond(10)}
-                <span className="text-[28px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.25)' }}>
-                  {topScore > 0 ? topScore : '—'}
-                </span>
+          <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
+            <div className="rounded-lg px-4 py-4 flex items-center gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              {gemDiamond(10)}
+              <span className="text-[26px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
+                {topScore > 0 ? topScore : '—'}
               </span>
-              <span className="text-[13px] font-medium text-white/50">Top Score</span>
+              <span className="text-[14px] font-semibold text-white/70">Top Score</span>
             </div>
           </Link>
-          <Link href="/applications" className="no-underline flex-1">
-            <div className="rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-all h-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-[28px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.25)' }}>
+          <Link href="/applications" className="no-underline block">
+            <div className="rounded-lg px-4 py-4 flex items-center gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="text-[20px] leading-none shrink-0">🔥</span>
+              <span className="text-[26px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
                 {totalHeat > 0 ? totalHeat : '—'}
               </span>
-              <span className="text-[13px] font-medium text-white/50">🔥 Heat</span>
+              <span className="text-[14px] font-semibold text-white/70">Heat</span>
             </div>
           </Link>
         </div>

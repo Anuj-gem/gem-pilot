@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-export function DeleteScriptButton({ scriptId, title }: { scriptId: string; title: string }) {
+export function DeleteScriptButton({ scriptId, title, evaluationId }: { scriptId: string; title: string; evaluationId?: string | null }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [confirmDelete, setConfirmDelete] = useState(false)
   const [deleting, setDeleting] = useState(false)
@@ -33,10 +33,18 @@ export function DeleteScriptButton({ scriptId, title }: { scriptId: string; titl
       </button>
 
       {menuOpen && (
-        <div className="absolute right-0 top-9 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
+        <div className="absolute right-0 top-8 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
+          {evaluationId && (
+            <button
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setMenuOpen(false); router.push(`/report/${evaluationId}?edit=true`) }}
+              className="block w-full text-left px-3 py-2 text-[13px] text-gray-700 hover:bg-gray-50 transition-colors border-0 bg-transparent cursor-pointer"
+            >
+              Edit details
+            </button>
+          )}
           <button
             onClick={(e) => { e.preventDefault(); e.stopPropagation(); setMenuOpen(false); setConfirmDelete(true) }}
-            className="block w-full text-left px-3 py-2 text-[12px] text-red-600 hover:bg-red-50 transition-colors"
+            className="block w-full text-left px-3 py-2 text-[13px] text-red-600 hover:bg-red-50 transition-colors border-0 bg-transparent cursor-pointer"
           >
             Delete
           </button>
