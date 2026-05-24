@@ -51,7 +51,14 @@ export type PartnerApp = {
 export type PartnerOpp = {
   id: string
   title: string
+  subtitle: string | null
+  description: string
   status: string
+  formats: string[]
+  genres: string[]
+  budget_tiers: string[]
+  min_score: number | null
+  deadline: string | null
   created_at: string
 }
 
@@ -71,12 +78,11 @@ export default async function PartnerPage() {
 
   const service = svc()
 
-  // Fetch only OPEN opportunities owned by this partner
+  // Fetch ALL opportunities owned by this partner (active + closed)
   const { data: opps } = await service
     .from('opportunities')
-    .select('id, title, status, created_at')
+    .select('id, title, subtitle, description, status, formats, genres, budget_tiers, min_score, deadline, created_at')
     .eq('owner_id', user.id)
-    .eq('status', 'active')
     .order('created_at', { ascending: false })
 
   const oppList = (opps || []) as PartnerOpp[]

@@ -6,6 +6,7 @@
 import { useState, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import type { PartnerApp, PartnerOpp } from '@/app/partner/page'
+import { OpportunitySettings } from './opportunity-settings'
 
 const LIKED_TAGS = ['Interesting idea', 'Strong voice', 'Producible']
 const PASS_REASONS = ['Unoriginal idea', 'Hard to produce', 'Hard to develop', 'Budget concerns', 'Hard to market', 'Bad story']
@@ -56,6 +57,7 @@ export function PartnerTriageClient({
   const [triaging, setTriaging] = useState(false)
   const [showOppDropdown, setShowOppDropdown] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
   const [listTab, setListTab] = useState<'pending' | 'reviewed'>('pending')
   const customLikedRef = useRef<HTMLInputElement>(null)
   const customReasonRef = useRef<HTMLInputElement>(null)
@@ -206,18 +208,30 @@ export function PartnerTriageClient({
     <div className="h-screen flex" style={{ background: '#0f0a1a' }}>
         {/* LEFT: Applicant list */}
         <div className="w-[340px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
-          {/* Opportunity dropdown */}
+          {/* Opportunity dropdown + settings */}
           <div className="px-4 py-3 relative" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <button
-              onClick={() => setShowOppDropdown(!showOppDropdown)}
-              className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
-              style={{ background: 'rgba(255,255,255,0.06)' }}
-            >
-              <span className="truncate">{activeOpp?.title || 'Select opportunity'}</span>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform shrink-0 ${showOppDropdown ? 'rotate-180' : ''}`}>
-                <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowOppDropdown(!showOppDropdown)}
+                className="flex-1 flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
+              >
+                <span className="truncate">{activeOpp?.title || 'Select opportunity'}</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform shrink-0 ${showOppDropdown ? 'rotate-180' : ''}`}>
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <button
+                onClick={() => setShowSettings(true)}
+                title="Opportunity settings"
+                className="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg cursor-pointer border-0 transition-colors hover:bg-white/10"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+              </button>
+            </div>
             {showOppDropdown && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowOppDropdown(false)} />
@@ -720,6 +734,26 @@ export function PartnerTriageClient({
             </>
           )}
         </div>
+
+      {/* Opportunity Settings Modal */}
+      {showSettings && activeOpp && (
+        <OpportunitySettings
+          opportunity={{
+            id: activeOpp.id,
+            title: activeOpp.title,
+            subtitle: activeOpp.subtitle,
+            description: activeOpp.description,
+            status: activeOpp.status,
+            formats: activeOpp.formats || [],
+            genres: activeOpp.genres || [],
+            budget_tiers: activeOpp.budget_tiers || [],
+            min_score: activeOpp.min_score,
+            deadline: activeOpp.deadline,
+          }}
+          onClose={() => setShowSettings(false)}
+          onSaved={() => { setShowSettings(false); window.location.reload() }}
+        />
+      )}
     </div>
   )
 }

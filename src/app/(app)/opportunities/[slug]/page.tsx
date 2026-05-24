@@ -51,7 +51,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .from('opportunities')
     .select('title, subtitle, description')
     .eq('slug', slug)
-    .eq('status', 'active')
     .eq('published', true)
     .single()
 
@@ -73,11 +72,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     .from('opportunities')
     .select('*')
     .eq('slug', slug)
-    .eq('status', 'active')
     .eq('published', true)
     .single()
 
   if (!opp) notFound()
+
+  const isClosed = opp.status !== 'active'
 
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
@@ -329,7 +329,18 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           <div className="h-px bg-gray-100 mb-6" />
 
           {/* ── CTA section ── */}
-          {user ? (
+          {isClosed ? (
+            <div className="rounded-xl bg-gray-50 border border-gray-200 px-5 py-4 text-center">
+              <p className="text-[15px] font-semibold text-gray-700 m-0 mb-1">This opportunity has closed</p>
+              <p className="text-[13px] text-gray-500 m-0">Applications are no longer being accepted.</p>
+              <Link
+                href="/opportunities"
+                className="inline-block mt-3 text-[13px] font-semibold text-purple-600 hover:text-purple-700"
+              >
+                Browse open opportunities &rarr;
+              </Link>
+            </div>
+          ) : user ? (
             // ── LOGGED IN ──
             considerationId ? (
               // Has applied — show pending status + link to application

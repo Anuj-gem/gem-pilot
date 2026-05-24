@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json()
-  const { title, description, formats, genres, min_score } = body
+  const { title, description, subtitle, formats, genres, budget_tiers, min_score, deadline } = body
 
   if (!title || !description) {
     return NextResponse.json({ error: 'Title and description are required' }, { status: 400 })
@@ -66,10 +66,13 @@ export async function POST(req: NextRequest) {
     .from('opportunities')
     .insert({
       title,
+      subtitle: subtitle || null,
       description,
       formats: formats || [],
       genres: genres || [],
+      budget_tiers: budget_tiers || [],
       min_score: min_score ?? null,
+      deadline: deadline || null,
       slug,
       owner_id: user.id,
       posted_by: profile.full_name || null,
