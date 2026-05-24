@@ -74,7 +74,7 @@ export default async function PartnerPage() {
     .from('opportunities')
     .select('id, title, status, created_at')
     .eq('owner_id', user.id)
-    .eq('status', 'open')
+    .eq('status', 'active')
     .order('created_at', { ascending: false })
 
   const oppList = (opps || []) as PartnerOpp[]
