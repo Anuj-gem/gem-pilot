@@ -41,7 +41,7 @@ export function PartnerTriageClient({
   const [triageState, setTriageState] = useState<Record<string, { status: string; tags?: string[] }>>(() => {
     const initial: Record<string, { status: string; tags?: string[] }> = {}
     for (const app of applications) {
-      if (app.triage_status) {
+      if (app.triage_status === 'pass' || app.triage_status === 'meet') {
         initial[app.id] = { status: app.triage_status, tags: app.triage_feedback_tags || undefined }
       }
     }
