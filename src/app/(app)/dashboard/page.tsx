@@ -426,6 +426,36 @@ export default async function DashboardPage() {
   // Uniform placeholder gradient for scripts without posters
   const placeholderGradient = 'linear-gradient(135deg, #7c3aed, #6d28d9)'
 
+  // GEM diamond logo — the ACTUAL logo: concentric layered diamond with
+  // radiating purple layers (inner solid → progressively lighter outer rings).
+  // Matches the brand asset in marketing/gem_diamond_*.png.
+  const gemDiamond = (size = 14) => (
+    <span
+      aria-hidden="true"
+      className="inline-flex items-center justify-center shrink-0 rotate-45"
+      style={{ width: size * 1.8, height: size * 1.8 }}
+    >
+      {/* Outer ring — lightest */}
+      <span className="absolute rotate-0" style={{
+        width: size * 1.8, height: size * 1.8,
+        background: 'rgba(167, 139, 250, 0.15)',
+        borderRadius: size * 0.06,
+      }} />
+      {/* Middle ring */}
+      <span className="absolute rotate-0" style={{
+        width: size * 1.35, height: size * 1.35,
+        background: 'rgba(139, 92, 246, 0.35)',
+        borderRadius: size * 0.06,
+      }} />
+      {/* Inner core — solid purple */}
+      <span className="absolute rotate-0" style={{
+        width: size, height: size,
+        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+        borderRadius: size * 0.06,
+      }} />
+    </span>
+  )
+
   // Build tabs — 2 tabs for writers, 3 for producers
   const tabs: TabDef[] = [
     { id: 'scripts', label: 'Scripts', count: scriptCount },
@@ -498,10 +528,13 @@ export default async function DashboardPage() {
                       />
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center" style={{ background: placeholderGradient }}>
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
-                          <path d="M6 3h12l4 7-10 12L2 10l4-7z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" strokeWidth="1" strokeLinejoin="round"/>
-                        </svg>
-                        <p className="text-[11px] text-white/50 m-0 mt-2">Add a poster</p>
+                        {/* Layered concentric diamond — white version for dark background */}
+                        <span className="inline-flex items-center justify-center rotate-45" style={{ width: 72, height: 72 }}>
+                          <span className="absolute" style={{ width: 72, height: 72, background: 'rgba(255,255,255,0.08)', borderRadius: 4 }} />
+                          <span className="absolute" style={{ width: 54, height: 54, background: 'rgba(255,255,255,0.15)', borderRadius: 3 }} />
+                          <span className="absolute" style={{ width: 38, height: 38, background: 'rgba(255,255,255,0.22)', borderRadius: 2 }} />
+                        </span>
+                        <p className="text-[11px] text-white/50 m-0 mt-3">Add a poster</p>
                       </div>
                     )}
                   </div>
@@ -520,8 +553,8 @@ export default async function DashboardPage() {
 
                   {/* Score + Heat — prominent */}
                   <div className="flex items-center gap-4 mt-2.5">
-                    <span className="text-[18px] font-bold" style={{ color: '#7c3aed' }}>
-                      💎 {rounded || '—'}
+                    <span className="inline-flex items-center gap-1.5 text-[18px] font-bold" style={{ color: '#7c3aed' }}>
+                      {gemDiamond(10)} {rounded || '—'}
                     </span>
                     <span className="text-[14px] font-semibold" style={{ color: script.heat > 0 ? '#ea580c' : '#9ca3af' }}>
                       🔥 {script.heat}
@@ -746,45 +779,34 @@ export default async function DashboardPage() {
 
       <div className="space-y-8">
 
-        {/* ── STATS CARDS ── */}
-        {(scriptCount > 0 || (user && totalHeat > 0)) && (
-          <div className="grid grid-cols-3 gap-4">
-            <Link href="/scripts" className="no-underline block">
-              <div className="rounded-xl px-5 py-5 text-center hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                <p className="text-[11px] font-semibold text-gray-400 m-0 uppercase tracking-wider">📄 Scripts</p>
-                <p className="text-[36px] font-bold text-gray-900 m-0 mt-2 leading-none">{scriptCount}</p>
-              </div>
-            </Link>
-            <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-              <div className="rounded-xl px-5 py-5 text-center hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                <p className="text-[11px] font-semibold text-gray-400 m-0 uppercase tracking-wider">💎 Top Score</p>
-                <p className="text-[36px] font-bold m-0 mt-2 leading-none" style={{ color: topScore >= 80 ? '#059669' : topScore >= 70 ? '#7c3aed' : topScore >= 60 ? '#d97706' : '#d1d5db' }}>
+        {/* ── STATS ROW ── */}
+        <div className="flex items-stretch gap-3">
+          <Link href="/scripts" className="no-underline flex-1">
+            <div className="rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-all h-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="text-[28px] font-bold text-white leading-none">{scriptCount}</span>
+              <span className="text-[13px] font-medium text-white/50">Scripts</span>
+            </div>
+          </Link>
+          <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline flex-1">
+            <div className="rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-all h-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="inline-flex items-center gap-2">
+                {gemDiamond(10)}
+                <span className="text-[28px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.25)' }}>
                   {topScore > 0 ? topScore : '—'}
-                </p>
-              </div>
-            </Link>
-            <Link href="/applications" className="no-underline block">
-              <div className="rounded-xl px-5 py-5 text-center hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                <p className="text-[11px] font-semibold text-gray-400 m-0 uppercase tracking-wider">🔥 Industry Heat</p>
-                <p className="text-[36px] font-bold m-0 mt-2 leading-none" style={{ color: totalHeat > 0 ? '#ea580c' : '#d1d5db' }}>
-                  {totalHeat > 0 ? totalHeat : '—'}
-                </p>
-              </div>
-            </Link>
-          </div>
-        )}
-
-        {/* Zero-state stats */}
-        {scriptCount === 0 && !(user && totalHeat > 0) && (
-          <div className="grid grid-cols-3 gap-4">
-            {[{ label: '📄 Scripts' }, { label: '💎 Top Score' }, { label: '🔥 Industry Heat' }].map(({ label }) => (
-              <div key={label} className="rounded-xl px-5 py-5 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                <p className="text-[11px] font-semibold text-gray-400 m-0 uppercase tracking-wider">{label}</p>
-                <p className="text-[36px] font-bold text-gray-200 m-0 mt-2 leading-none">—</p>
-              </div>
-            ))}
-          </div>
-        )}
+                </span>
+              </span>
+              <span className="text-[13px] font-medium text-white/50">Top Score</span>
+            </div>
+          </Link>
+          <Link href="/applications" className="no-underline flex-1">
+            <div className="rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-all h-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="text-[28px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.25)' }}>
+                {totalHeat > 0 ? totalHeat : '—'}
+              </span>
+              <span className="text-[13px] font-medium text-white/50">🔥 Heat</span>
+            </div>
+          </Link>
+        </div>
 
         {/* ── TABBED CONTENT ── */}
         <DashboardTabs tabs={tabs} panels={panels} />
