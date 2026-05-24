@@ -746,7 +746,7 @@ export default async function DashboardPage() {
   if (managePanel) panels.manage = managePanel
 
   return (
-    <div className="rounded-2xl px-6 py-6 -mx-4 sm:-mx-6 lg:-mx-8 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)', minHeight: '60vh' }}>
+    <div className="-mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 -mt-6 pt-6 -mb-16 pb-16" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)', minHeight: 'calc(100vh - 56px)' }}>
       {user && submissionIds.length > 0 && (
         <RealtimeRefresh writerId={user.id} submissionIds={submissionIds} />
       )}
