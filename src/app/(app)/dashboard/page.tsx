@@ -10,8 +10,7 @@ import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { AnonSignupPrompt } from '@/components/dashboard/anon-signup-prompt'
-import { FormatSelectorHero } from '@/components/dashboard/format-selector-hero'
-import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
+import { NewScriptButton } from '@/components/dashboard/new-script-button'
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { PendingActionsDropdown } from '@/components/dashboard/pending-actions-dropdown'
 import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
@@ -414,7 +413,22 @@ export default async function DashboardPage() {
 
   const cardShadow = '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)'
 
-  // Build tabs
+  // Genre-to-gradient mapping for script card accent blocks
+  function genreGradient(genres: string[], format: string | null): string {
+    const primary = (genres[0] || '').toLowerCase()
+    if (primary.includes('thriller') || primary.includes('crime') || primary.includes('mystery')) return 'linear-gradient(135deg, #1e293b, #334155)'
+    if (primary.includes('horror')) return 'linear-gradient(135deg, #1c1917, #44403c)'
+    if (primary.includes('comedy')) return 'linear-gradient(135deg, #fbbf24, #f59e0b)'
+    if (primary.includes('drama')) return 'linear-gradient(135deg, #7c3aed, #6d28d9)'
+    if (primary.includes('sci-fi') || primary.includes('fantasy')) return 'linear-gradient(135deg, #0ea5e9, #6366f1)'
+    if (primary.includes('romance')) return 'linear-gradient(135deg, #ec4899, #f43f5e)'
+    if (primary.includes('action') || primary.includes('adventure')) return 'linear-gradient(135deg, #dc2626, #ea580c)'
+    if (primary.includes('family') || primary.includes('animation')) return 'linear-gradient(135deg, #10b981, #34d399)'
+    if ((format || '').toLowerCase() === 'film') return 'linear-gradient(135deg, #475569, #64748b)'
+    return 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+  }
+
+  // Build tabs — 2 tabs for writers, 3 for producers
   const tabs: TabDef[] = [
     { id: 'scripts', label: 'Scripts', count: scriptCount },
     { id: 'applications', label: 'Applications', count: pendingCount },
@@ -425,167 +439,122 @@ export default async function DashboardPage() {
 
   // ── TAB PANELS ──
 
-  // Scripts panel
+  // Scripts panel — 2-col grid with visual cards
   const scriptsPanel = (
-    <div className="space-y-3">
+    <div>
       {completedScripts.length === 0 && processingScripts.length === 0 ? (
-        <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
+        <div className="rounded-xl bg-white px-6 py-12 text-center" style={{ boxShadow: cardShadow }}>
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-600 m-0">Upload a screenplay to get started.</p>
+          <p className="text-[13px] text-gray-600 m-0">Upload a screenplay to get your first evaluation.</p>
         </div>
       ) : (
-        <>
-          {/* Processing */}
-          {processingScripts.slice(0, 5).map(script => (
-            <div key={script.id} className="rounded-xl bg-white p-4 flex items-center justify-between" style={{ boxShadow: cardShadow }}>
-              <div>
-                <span className="text-[14px] font-semibold text-gray-900">{script.title}</span>
-                <p className="text-[12px] text-gray-600 m-0 mt-0.5">Evaluating your script...</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Processing scripts */}
+          {processingScripts.map(script => (
+            <div key={script.id} className="rounded-xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
+              <div className="flex">
+                <div className="w-20 shrink-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e9d5ff, #c4b5fd)' }}>
+                  <svg className="animate-spin" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#f5f3ff" strokeWidth="2.5" />
+                    <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <div className="p-4 min-w-0 flex-1">
+                  <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{script.title}</h3>
+                  <p className="text-[12px] text-gray-600 m-0 mt-1">Evaluating...</p>
+                </div>
               </div>
-              <svg className="animate-spin shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" stroke="#e9d5ff" strokeWidth="2.5" />
-                <path d="M12 2a10 10 0 019.95 9" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
             </div>
           ))}
 
           {/* Completed scripts */}
-          {completedScripts.slice(0, 5 - processingScripts.length).map(script => {
+          {completedScripts.map(script => {
             const rounded = script.score ? Math.round(script.score) : null
             const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
+            const gradient = genreGradient(script.genres, script.format)
 
             return (
-              <div key={script.id} className="rounded-xl bg-white group hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-                <div className="p-4 flex items-center gap-4">
-                  {/* Left: title + meta */}
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
-                        {script.title}
-                      </h3>
-                      <DeleteScriptButton scriptId={script.id} title={script.title} />
+              <Link key={script.id} href={reportHref} className="block no-underline group">
+                <div className="rounded-xl bg-white overflow-hidden hover:shadow-lg transition-shadow" style={{ boxShadow: cardShadow }}>
+                  <div className="flex">
+                    {/* Genre gradient accent block with score overlay */}
+                    <div className="w-20 shrink-0 flex flex-col items-center justify-center gap-1.5 relative" style={{ background: gradient }}>
+                      {rounded ? (
+                        <span className="text-[22px] font-bold text-white leading-none">{rounded}</span>
+                      ) : (
+                        <span className="text-[20px] font-bold text-white/60 leading-none">
+                          {(script.title || '?').charAt(0).toUpperCase()}
+                        </span>
+                      )}
+                      {script.heat > 0 && (
+                        <span className="text-[11px] font-bold text-white/90">🔥 {script.heat}</span>
+                      )}
                     </div>
-                    <p className="text-[12px] text-gray-600 m-0 mt-0.5">
-                      {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' / ')}
-                    </p>
-                  </div>
 
-                  {/* Center: pills */}
-                  <div className="flex items-center gap-2 shrink-0">
-                    {rounded && (
-                      <span className="text-[12px] font-bold text-white px-2 py-0.5 rounded" style={{ background: scoreBadge(rounded).bg }}>
-                        {rounded}
-                      </span>
-                    )}
-                    {script.heat > 0 && (
-                      <span className="text-[12px] font-bold px-2 py-0.5 rounded" style={{ background: '#FFF3E0', color: '#E65100' }}>
-                        🔥 {script.heat}
-                      </span>
-                    )}
-                  </div>
+                    {/* Content */}
+                    <div className="p-4 min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
+                            {script.title}
+                          </h3>
+                          <p className="text-[12px] text-gray-600 m-0 mt-0.5">
+                            {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-1 shrink-0" onClick={(e: React.MouseEvent) => e.preventDefault()}>
+                          <PendingActionsDropdown
+                            scriptId={script.id}
+                            isPublic={script.isPublic}
+                            isPro={isPro}
+                            isAnon={!user}
+                            qualifyingOppsCount={script.qualifyingOpps.length}
+                          />
+                          <DeleteScriptButton scriptId={script.id} title={script.title} />
+                        </div>
+                      </div>
 
-                  {/* Right: actions */}
-                  <div className="flex items-center gap-2 shrink-0">
-                    <PendingActionsDropdown
-                      scriptId={script.id}
-                      isPublic={script.isPublic}
-                      isPro={isPro}
-                      isAnon={!user}
-                      qualifyingOppsCount={script.qualifyingOpps.length}
-                    />
-                    <Link
-                      href={reportHref}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white no-underline transition-all hover:opacity-90"
-                      style={{ background: '#534AB7' }}
-                    >
-                      View report →
-                    </Link>
+                      {script.logline && (
+                        <p className="text-[12px] text-gray-600 m-0 mt-1.5 line-clamp-2 leading-relaxed">{script.logline}</p>
+                      )}
+
+                      <div className="flex items-center gap-3 mt-2">
+                        <span className="text-[11px] text-gray-600">{fmtDate(script.createdAt)}</span>
+                        {script.qualifyingOpps.length > 0 && (
+                          <span className="text-[11px] font-medium text-purple-600">
+                            {script.qualifyingOpps.length} matching {script.qualifyingOpps.length === 1 ? 'opportunity' : 'opportunities'}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             )
           })}
-
-          {/* View all */}
-          {(completedScripts.length + processingScripts.length) > 5 && (
-            <div className="text-center pt-1">
-              <Link href="/scripts" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                View all scripts →
-              </Link>
-            </div>
-          )}
-        </>
+        </div>
       )}
     </div>
   )
 
-  // Applications panel
+  // Applications panel — pending + reviewed, with opportunity browse link
   const applicationsPanel = (
     <div className="space-y-5">
-      {/* Opportunities for you */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-[14px] font-semibold text-gray-900 m-0">Opportunities for you</h3>
-          {user && !isPro && (
-            <span className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-              style={{ background: appsRemaining > 0 ? '#f3f4f6' : '#fef2f2', color: appsRemaining > 0 ? '#6b7280' : '#dc2626' }}>
-              {appsRemaining > 0 ? `${appsRemaining} remaining` : 'Limit reached'}
-            </span>
-          )}
-          <Link href="/opportunities" className="text-[12px] font-medium text-purple-600 hover:text-purple-800 transition-colors ml-auto">
-            View all →
-          </Link>
-        </div>
-
-        {dashboardOpps.length === 0 ? (
-          <div className="rounded-xl bg-white px-6 py-6 text-center" style={{ boxShadow: cardShadow }}>
-            <p className="text-[13px] text-gray-600 m-0">
-              {pendingOppIds.size > 0 ? "You've applied to all open opportunities. We'll notify you when new ones open." : 'No opportunities right now. Check back soon.'}
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {dashboardOpps.map(opp => {
-              const status: OppStatus = pendingOppIds.has(opp.id) ? 'pending' : appliedOppIds.has(opp.id) ? 'previously_applied' : 'available'
-              const matchCount = getMatchingScriptsForOpp(opp).length
-              return (
-                <OpportunityCard
-                  key={opp.id}
-                  id={opp.id}
-                  slug={opp.slug}
-                  title={opp.title}
-                  subtitle={opp.subtitle}
-                  description={opp.description}
-                  genres={opp.genres || []}
-                  formats={opp.formats || []}
-                  createdAt={opp.created_at}
-                  deadline={opp.deadline}
-                  status={status}
-                  matchingScriptCount={matchCount}
-                  isAnon={!user}
-                  applicationCount={oppAppCount.get(opp.id) ?? 0}
-                />
-              )
-            })}
-          </div>
-        )}
-      </div>
-
       {/* Pending applications */}
       {pendingApps.length > 0 && (
         <div>
-          <h3 className="text-[14px] font-semibold text-gray-900 m-0 mb-2">Pending</h3>
+          <h3 className="text-[13px] font-semibold text-gray-900 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Pending</h3>
           <div className="space-y-2">
-            {pendingApps.slice(0, 5).map(app => {
+            {pendingApps.map(app => {
               const opp = oppMap.get(app.opportunity_id)
               return (
-                <Link key={app.id} href={`/review/applications/${app.id}`} className="block">
-                  <div className="rounded-xl bg-white px-4 py-3 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-                    <div>
-                      <p className="text-[14px] font-semibold text-gray-900 m-0">{opp?.title || 'Opportunity'}</p>
+                <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
+                  <div className="rounded-xl bg-white px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                    <div className="min-w-0">
+                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
                       <p className="text-[12px] text-gray-600 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
                     </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-yellow-50 text-yellow-700 shrink-0">Pending</span>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 shrink-0">Pending</span>
                   </div>
                 </Link>
               )
@@ -597,15 +566,15 @@ export default async function DashboardPage() {
       {/* Reviewed applications */}
       {reviewedApps.length > 0 && (
         <div>
-          <h3 className="text-[14px] font-semibold text-gray-900 m-0 mb-2">Recent reviews</h3>
+          <h3 className="text-[13px] font-semibold text-gray-900 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Reviewed</h3>
           <div className="space-y-2">
-            {reviewedApps.slice(0, 3).map(app => {
+            {reviewedApps.map(app => {
               const opp = oppMap.get(app.opportunity_id)
               return (
-                <Link key={app.id} href={`/review/applications/${app.id}`} className="block">
-                  <div className="rounded-xl bg-white px-4 py-3 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-                    <div>
-                      <p className="text-[14px] font-semibold text-gray-900 m-0">{opp?.title || 'Opportunity'}</p>
+                <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
+                  <div className="rounded-xl bg-white px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
+                    <div className="min-w-0">
+                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
                       <div className="flex items-center gap-2 mt-0.5">
                         <span className="text-[12px] text-gray-600">{fmtDate(app.reviewed_at || app.submitted_at)}</span>
                         {app.heat_earned > 0 && (
@@ -619,25 +588,32 @@ export default async function DashboardPage() {
               )
             })}
           </div>
-          {reviewedApps.length > 3 && (
-            <div className="text-center pt-2">
-              <Link href="/review" className="text-[12px] font-medium text-purple-600 hover:text-purple-800">
-                View all reviews →
-              </Link>
-            </div>
-          )}
         </div>
       )}
 
-      {allApplications.length === 0 && dashboardOpps.length === 0 && (
-        <div className="rounded-xl bg-white px-6 py-8 text-center" style={{ boxShadow: cardShadow }}>
-          <p className="text-[13px] text-gray-600 m-0">No applications yet. Browse opportunities above to get started.</p>
+      {/* Empty state */}
+      {allApplications.length === 0 && (
+        <div className="rounded-xl bg-white px-6 py-10 text-center" style={{ boxShadow: cardShadow }}>
+          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
+          <p className="text-[13px] text-gray-600 m-0 mb-3">Browse open opportunities and apply with your scripts.</p>
+          <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed' }}>
+            Browse opportunities →
+          </Link>
+        </div>
+      )}
+
+      {/* Browse link when there are apps */}
+      {allApplications.length > 0 && (
+        <div className="pt-1">
+          <Link href="/opportunities" className="text-[13px] font-medium text-purple-600 hover:text-purple-800 transition-colors">
+            Browse open opportunities →
+          </Link>
         </div>
       )}
     </div>
   )
 
-  // Manage panel (producers)
+  // Manage panel (producers only)
   const managePanel = accountType === 'producer' ? (
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-1">
@@ -656,7 +632,7 @@ export default async function DashboardPage() {
         </div>
       ) : (
         <div className="space-y-2">
-          {partnerApps.slice(0, 5).map(app => {
+          {partnerApps.map(app => {
             const writer = partnerWriterMap.get(app.writer_id)
             const opp = partnerOppMap.get(app.opportunity_id)
             const scripts = partnerScriptsByApp.get(app.id) || []
@@ -672,7 +648,7 @@ export default async function DashboardPage() {
             const s = stageMap[stage] || stageMap.pending
 
             return (
-              <Link key={app.id} href={`/partner/applications/${app.id}`} className="block">
+              <Link key={app.id} href={`/partner/applications/${app.id}`} className="block no-underline">
                 <div className="rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
                   <div className="flex items-center justify-between gap-3">
                     <div className="min-w-0 flex-1">
@@ -707,14 +683,6 @@ export default async function DashboardPage() {
           })}
         </div>
       )}
-
-      {partnerApps.length > 5 && (
-        <div className="text-center pt-1">
-          <Link href="/partner" className="text-[13px] font-medium text-purple-600 hover:text-purple-800">
-            View all applications →
-          </Link>
-        </div>
-      )}
     </div>
   ) : null
 
@@ -732,73 +700,41 @@ export default async function DashboardPage() {
       <ProcessingPoller active={isProcessing} />
       {!user && isProcessing && <AnonSignupPrompt />}
 
-      <div className="space-y-5">
+      <div className="space-y-6">
 
-        {/* ── TOP ROW: profile + create script ── */}
-        <div className="flex items-center gap-4">
-          {/* Profile card */}
-          {user && profile ? (
-            <div className="flex items-center gap-3">
-              {profile.avatar_url ? (
-                <img src={profile.avatar_url} alt="" className="w-10 h-10 rounded-full object-cover shrink-0" />
-              ) : (
-                <div className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-[14px] font-semibold text-white"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
-                  {(profile.full_name || 'W').charAt(0).toUpperCase()}
-                </div>
-              )}
-              <div>
-                <div className="flex items-center gap-2">
-                  <p className="text-[15px] font-semibold text-gray-900 m-0">{profile.full_name || 'Writer'}</p>
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded"
-                    style={{ background: isPro ? '#f5f3ff' : '#f9fafb', color: isPro ? '#7c3aed' : '#9ca3af' }}>
-                    {isPro ? 'Member' : 'Guest'}
-                  </span>
-                </div>
-                {profile.headline && (
-                  <p className="text-[12px] text-gray-600 m-0">{profile.headline}</p>
-                )}
-              </div>
-            </div>
-          ) : (
-            <p className="text-[15px] font-semibold text-gray-900 m-0">Dashboard</p>
-          )}
+        {/* ── COMPACT TOP BAR ── */}
+        <div className="flex items-center gap-4 flex-wrap">
+          <NewScriptButton />
+
+          {/* Inline stats */}
+          <div className="flex items-center gap-4 text-[13px]">
+            <span className="text-gray-600">
+              <span className="font-bold text-gray-900">{scriptCount}</span> {scriptCount === 1 ? 'script' : 'scripts'}
+            </span>
+            <span className="text-gray-300">·</span>
+            <span className="text-gray-600">
+              <span className="font-bold text-gray-900">{user ? pendingCount : 0}</span> pending
+            </span>
+            {(user ? totalHeat : 0) > 0 && (
+              <>
+                <span className="text-gray-300">·</span>
+                <span className="text-gray-600">
+                  🔥 <span className="font-bold text-gray-900">{totalHeat}</span>
+                </span>
+              </>
+            )}
+          </div>
 
           <div className="flex-1" />
 
-          {/* Create script CTA — opens the upload modal */}
-          <FormatSelectorHero evalsRemaining={isPro ? 99 : evalsRemaining} />
+          {/* Status pill */}
+          {user && (
+            <span className="text-[11px] font-bold px-2 py-1 rounded-full"
+              style={{ background: isPro ? '#f5f3ff' : '#f3f4f6', color: isPro ? '#7c3aed' : '#9ca3af' }}>
+              {isPro ? 'Member' : 'Guest'}
+            </span>
+          )}
         </div>
-
-        {/* ── STAT CARDS ── */}
-        <section className="grid grid-cols-3 gap-3">
-          <Link href="/scripts" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-[14px]">📄</span>
-              <span className="text-[12px] font-semibold text-gray-600">Scripts</span>
-            </div>
-            <div className="text-[26px] font-bold text-gray-900 leading-none">{scriptCount}</div>
-          </Link>
-
-          <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-[14px]">💰</span>
-              <span className="text-[12px] font-semibold text-gray-600">Applications</span>
-            </div>
-            <div className="text-[26px] font-bold text-gray-900 leading-none">
-              {user ? pendingCount : 0}
-              <span className="text-[12px] font-medium text-gray-600 ml-1">pending</span>
-            </div>
-          </Link>
-
-          <Link href="/review" className="block rounded-xl bg-white px-4 py-3.5 hover:shadow-md transition-shadow" style={{ boxShadow: cardShadow }}>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-[14px]">🔥</span>
-              <span className="text-[12px] font-semibold text-gray-600">Heat</span>
-            </div>
-            <div className="text-[26px] font-bold text-gray-900 leading-none">{user ? totalHeat : 0}</div>
-          </Link>
-        </section>
 
         {/* ── TABBED CONTENT ── */}
         <DashboardTabs tabs={tabs} panels={panels} />
