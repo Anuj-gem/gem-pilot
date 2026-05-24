@@ -243,29 +243,31 @@ export function PartnerTriageClient({
           </div>
         </div>
 
-        {/* Sort controls */}
-        <div className="flex items-center gap-1">
-          {(['score', 'heat', 'new'] as SortMode[]).map(mode => (
-            <button
-              key={mode}
-              onClick={() => setSortMode(mode)}
-              className={`text-[12px] px-2.5 py-1.5 rounded-md cursor-pointer border-0 transition-colors ${
-                sortMode === mode
-                  ? 'bg-purple-600 text-white'
-                  : 'text-white/40 hover:text-white/60 hover:bg-white/5'
-              }`}
-              style={sortMode !== mode ? { background: 'transparent' } : undefined}
-            >
-              {mode === 'score' ? 'Score' : mode === 'heat' ? 'Heat' : 'Newest'}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Main content: list + detail */}
       <div className="flex" style={{ height: 'calc(100vh - 130px)' }}>
         {/* LEFT: Applicant list */}
-        <div className="w-[340px] shrink-0 overflow-y-auto" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="w-[340px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+          {/* Sort controls — above list */}
+          <div className="flex items-center gap-1 px-4 py-2.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            {(['score', 'heat', 'new'] as SortMode[]).map(mode => (
+              <button
+                key={mode}
+                onClick={() => setSortMode(mode)}
+                className={`text-[12px] px-2.5 py-1.5 rounded-md cursor-pointer border-0 transition-colors ${
+                  sortMode === mode
+                    ? 'bg-purple-600 text-white'
+                    : 'text-white/40 hover:text-white/60 hover:bg-white/5'
+                }`}
+                style={sortMode !== mode ? { background: 'transparent' } : undefined}
+              >
+                {mode === 'score' ? 'Score' : mode === 'heat' ? 'Heat' : 'Newest'}
+              </button>
+            ))}
+          </div>
+          {/* Scrollable list — hidden scrollbar, visible on hover */}
+          <div className="flex-1 overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.1) transparent' }}>
           {sortedApps.length === 0 && (
             <div className="px-4 py-12 text-center text-[13px] text-white/30">No applications yet</div>
           )}
@@ -331,6 +333,7 @@ export function PartnerTriageClient({
               </div>
             )
           })}
+          </div>
         </div>
 
         {/* RIGHT: Detail panel — elevated surface */}
@@ -376,54 +379,43 @@ export function PartnerTriageClient({
               {/* Script details */}
               {selectedApp.scripts.map(script => (
                 <div key={script.submission_id} className="px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <div className="flex gap-4">
-                    {/* Poster */}
-                    {script.poster_url ? (
-                      <img src={script.poster_url} alt="" className="w-14 h-[72px] rounded-lg object-cover shrink-0" />
-                    ) : (
-                      <div className="w-14 h-[72px] rounded-lg shrink-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #7c3aed, #6d28d9)' }}>
-                        <span className="inline-flex items-center justify-center rotate-45" style={{ width: 20, height: 20 }}>
-                          <span className="absolute" style={{ width: 20, height: 20, background: 'rgba(255,255,255,0.08)', borderRadius: 2 }} />
-                          <span className="absolute" style={{ width: 14, height: 14, background: 'rgba(255,255,255,0.15)', borderRadius: 1.5 }} />
-                        </span>
-                      </div>
-                    )}
+                  {/* Poster — full width if present, hidden if not */}
+                  {script.poster_url && (
+                    <img src={script.poster_url} alt="" className="w-full h-[180px] rounded-lg object-cover mb-4" />
+                  )}
 
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[16px] font-semibold text-white truncate">{script.title}</span>
-                        <div className="flex items-center gap-2 shrink-0">
-                          {(script.heat_score ?? 0) > 0 && <span className="text-[13px] text-orange-400">🔥 {script.heat_score}</span>}
-                          {script.score && (
-                            <span className="flex items-center gap-1 text-[15px] font-bold text-purple-400">
-                              <GemDiamond size={9} /> {Math.round(script.score)}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      {/* Metadata pills */}
-                      <div className="flex items-center gap-1.5 mb-2">
-                        {script.format && (
-                          <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.format}</span>
-                        )}
-                        {script.genre && (
-                          <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.genre}</span>
-                        )}
-                        {script.budget_tier && (
-                          <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.budget_tier}</span>
-                        )}
-                      </div>
-                      {script.logline && (
-                        <p className="text-[13px] text-white/60 m-0 leading-relaxed">{script.logline}</p>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[16px] font-semibold text-white truncate">{script.title}</span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      {(script.heat_score ?? 0) > 0 && <span className="text-[13px] text-orange-400">🔥 {script.heat_score}</span>}
+                      {script.score && (
+                        <span className="flex items-center gap-1 text-[15px] font-bold text-purple-400">
+                          <GemDiamond size={9} /> {Math.round(script.score)}
+                        </span>
                       )}
-                      <Link
-                        href={`/partner/applications/${selectedApp.id}`}
-                        className="text-[12px] text-purple-400 mt-2 inline-block hover:text-purple-300 transition-colors no-underline"
-                      >
-                        View full report →
-                      </Link>
                     </div>
                   </div>
+                  {/* Metadata pills */}
+                  <div className="flex items-center gap-1.5 mb-2">
+                    {script.format && (
+                      <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.format}</span>
+                    )}
+                    {script.genre && (
+                      <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.genre}</span>
+                    )}
+                    {script.budget_tier && (
+                      <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.budget_tier}</span>
+                    )}
+                  </div>
+                  {script.logline && (
+                    <p className="text-[13px] text-white/60 m-0 leading-relaxed">{script.logline}</p>
+                  )}
+                  <Link
+                    href={`/partner/applications/${selectedApp.id}`}
+                    className="text-[12px] text-purple-400 mt-2 inline-block hover:text-purple-300 transition-colors no-underline"
+                  >
+                    View full report →
+                  </Link>
                 </div>
               ))}
 
@@ -454,19 +446,25 @@ export function PartnerTriageClient({
                       {writerHistory.map(prev => {
                         const prevStatus = triageState[prev.id]?.status || prev.triage_status
                         const prevTags = triageState[prev.id]?.tags || prev.triage_feedback_tags
+                        const prevHeat = prev.scripts[0]?.heat_score ?? 0
                         return (
                           <div
                             key={prev.id}
                             onClick={() => { setSelectedAppId(prev.id); setShowPassFeedback(null); resetFeedback() }}
-                            className="px-3 py-2 rounded-lg cursor-pointer transition-colors hover:bg-white/[0.04]"
+                            className="px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-white/[0.04]"
                             style={{ background: 'rgba(255,255,255,0.02)' }}
                           >
                             <div className="flex items-center justify-between">
                               <span className="text-[12px] text-white/60 truncate">{prev.scripts[0]?.title || 'No script'}</span>
                               <div className="flex items-center gap-2 shrink-0">
+                                {prevHeat > 0 && (
+                                  <span className="text-[10px] text-orange-400">🔥 +{prevHeat}</span>
+                                )}
                                 {prevStatus && (
-                                  <span className={`text-[10px] ${prevStatus === 'meet' ? 'text-green-400' : 'text-white/30'}`}>
-                                    {prevStatus === 'meet' ? '✓ Meet' : 'Passed'}
+                                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${prevStatus === 'meet' ? 'text-green-400' : 'text-white/30'}`} style={{
+                                    background: prevStatus === 'meet' ? 'rgba(74,222,128,0.08)' : 'rgba(255,255,255,0.04)',
+                                  }}>
+                                    {prevStatus === 'meet' ? '✓ Shortlisted' : 'Passed'}
                                   </span>
                                 )}
                                 <span className="text-[11px] text-white/20">{fmtDate(prev.submitted_at)}</span>
