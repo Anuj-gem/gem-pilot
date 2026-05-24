@@ -747,8 +747,7 @@ export function PartnerTriageClient({
             formats: activeOpp.formats || [],
             genres: activeOpp.genres || [],
             budget_tiers: activeOpp.budget_tiers || [],
-            min_score: activeOpp.min_score,
-            deadline: activeOpp.deadline,
+            tags: activeOpp.tags || [],
           }}
           onClose={() => setShowSettings(false)}
           onSaved={() => { setShowSettings(false); window.location.reload() }}
