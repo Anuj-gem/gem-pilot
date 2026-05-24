@@ -375,7 +375,7 @@ export default async function DashboardPage() {
         .select('id, status, review_stage, submitted_at, opportunity_id, writer_id, writer_pitch, heat_earned')
         .in('opportunity_id', oppIds)
         .order('submitted_at', { ascending: false })
-        .limit(10)
+        .limit(50)
       partnerApps = (rawApps || []) as PartnerApp[]
 
       // Load writer profiles
@@ -455,14 +455,17 @@ export default async function DashboardPage() {
     </span>
   )
 
-  // Build tabs — 2 tabs for writers, 3 for producers
-  const tabs: TabDef[] = [
-    { id: 'scripts', label: 'Scripts', count: scriptCount },
-    { id: 'applications', label: 'Applications', count: pendingCount },
-  ]
-  if (accountType === 'producer') {
-    tabs.push({ id: 'manage', label: 'Manage', count: partnerPendingTotal })
-  }
+  // Build tabs — producers get a completely different tab set
+  const tabs: TabDef[] = accountType === 'producer'
+    ? [
+        { id: 'pitches', label: 'Pitches', count: partnerPendingTotal },
+        { id: 'watchlist', label: 'Watchlist', count: 0 },
+        { id: 'scripts', label: 'My Scripts', count: scriptCount },
+      ]
+    : [
+        { id: 'scripts', label: 'Scripts', count: scriptCount },
+        { id: 'applications', label: 'Applications', count: pendingCount },
+      ]
 
   // ── TAB PANELS ──
 
@@ -672,25 +675,28 @@ export default async function DashboardPage() {
     </div>
   )
 
-  // Manage panel (producers only)
-  const managePanel = accountType === 'producer' ? (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between mb-1">
-        <p className="text-[13px] text-white/50 m-0">
-          {partnerPendingTotal > 0 ? `${partnerPendingTotal} pending review` : 'All caught up'}
-          {' · '}{partnerApps.length} total
-        </p>
-        <Link href="/partner/opportunities/create" className="text-[12px] font-semibold text-purple-300 hover:text-purple-200">
-          + Create opportunity
-        </Link>
-      </div>
-
+  // Pitches panel (producers only) — feed of applications to their opportunities
+  const pitchesPanel = accountType === 'producer' ? (
+    <div className="space-y-3">
       {partnerApps.length === 0 ? (
-        <div className="rounded-xl px-6 py-8 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-          <p className="text-[13px] text-gray-500 m-0">No applications yet. Create an opportunity to start receiving applications.</p>
+        <div className="rounded-2xl px-8 py-16 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+          <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: '#f3f0ff' }}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <p className="text-[16px] font-semibold text-gray-900 m-0 mb-1">No pitches yet</p>
+          <p className="text-[13px] text-gray-500 m-0 mb-4">Create an opportunity and writers will start pitching their scripts.</p>
+          <Link
+            href="/partner/opportunities/create"
+            className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-[13px] font-semibold text-white no-underline transition-all hover:brightness-110"
+            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+          >
+            Create opportunity
+          </Link>
         </div>
       ) : (
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           {partnerApps.map(app => {
             const writer = partnerWriterMap.get(app.writer_id)
             const opp = partnerOppMap.get(app.opportunity_id)
@@ -698,41 +704,51 @@ export default async function DashboardPage() {
             const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
             const stageMap: Record<string, { label: string; style: { background: string; color: string } }> = {
               pending: { label: 'New', style: { background: '#fef9c3', color: '#a16207' } },
-              in_consideration: { label: 'In consideration', style: { background: '#f3f0ff', color: '#7c3aed' } },
+              in_consideration: { label: 'Reviewing', style: { background: '#f3f0ff', color: '#7c3aed' } },
               shortlisted: { label: 'Shortlisted', style: { background: '#dbeafe', color: '#2563eb' } },
-              partner_match: { label: 'Partner match', style: { background: '#ecfdf5', color: '#059669' } },
+              partner_match: { label: 'Matched', style: { background: '#ecfdf5', color: '#059669' } },
               complete: { label: 'Reviewed', style: { background: '#f3f4f6', color: '#6b7280' } },
             }
             const stage = isReviewed ? 'complete' : (app.review_stage || 'pending')
             const s = stageMap[stage] || stageMap.pending
+            const topScript = scripts[0]
+            const scoreRounded = topScript?.score ? Math.round(topScript.score) : null
 
             return (
               <Link key={app.id} href={`/partner/applications/${app.id}`} className="block no-underline">
-                <div className="rounded-xl px-4 py-3.5 hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                  <div className="flex items-center justify-between gap-3">
+                <div className="rounded-xl px-4 py-4 hover:shadow-md transition-all group" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+                  <div className="flex items-start gap-3">
+                    {/* Left: writer + script info */}
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="text-[15px] font-bold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
                           {writer?.full_name || writer?.email || 'Unknown writer'}
                         </p>
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0" style={s.style}>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0" style={s.style}>
                           {s.label}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 mt-0.5">
+                      {topScript && (
+                        <p className="text-[14px] text-gray-700 m-0 truncate">
+                          {topScript.title}
+                          {scoreRounded && (
+                            <span className="ml-2 text-[13px] font-semibold" style={{ color: '#7c3aed' }}>
+                              {gemDiamond(7)} {scoreRounded}
+                            </span>
+                          )}
+                        </p>
+                      )}
+                      <div className="flex items-center gap-2 mt-1.5">
                         <span className="text-[12px] text-gray-400">{opp?.title || ''}</span>
-                        {scripts.length > 0 && (
-                          <>
-                            <span className="text-[11px] text-gray-300">·</span>
-                            <span className="text-[12px] text-gray-400">{scripts[0].title}</span>
-                            {scripts[0].score && <span className="text-[11px] font-semibold text-gray-400">({Math.round(scripts[0].score)})</span>}
-                          </>
-                        )}
                         <span className="text-[11px] text-gray-300">·</span>
-                        <span className="text-[11px] text-gray-400">{fmtDate(app.submitted_at)}</span>
+                        <span className="text-[12px] text-gray-400">{fmtDate(app.submitted_at)}</span>
                       </div>
+                      {app.writer_pitch && (
+                        <p className="text-[13px] text-gray-500 m-0 mt-2 line-clamp-2 italic">&ldquo;{app.writer_pitch}&rdquo;</p>
+                      )}
                     </div>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
+                    {/* Right: chevron */}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0 mt-1">
                       <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
@@ -745,11 +761,30 @@ export default async function DashboardPage() {
     </div>
   ) : null
 
-  const panels: Record<string, React.ReactNode> = {
-    scripts: scriptsPanel,
-    applications: applicationsPanel,
-  }
-  if (managePanel) panels.manage = managePanel
+  // Watchlist panel (producers only) — placeholder for future functionality
+  const watchlistPanel = accountType === 'producer' ? (
+    <div className="rounded-2xl px-8 py-16 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+      <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: '#f3f0ff' }}>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="12" r="3" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <p className="text-[16px] font-semibold text-gray-900 m-0 mb-1">Watchlist coming soon</p>
+      <p className="text-[13px] text-gray-500 m-0">Save writers and scripts you want to keep an eye on.</p>
+    </div>
+  ) : null
+
+  const panels: Record<string, React.ReactNode> = accountType === 'producer'
+    ? {
+        pitches: pitchesPanel,
+        watchlist: watchlistPanel,
+        scripts: scriptsPanel,
+      }
+    : {
+        scripts: scriptsPanel,
+        applications: applicationsPanel,
+      }
 
   return (
     <div style={{ position: 'relative' }}>
@@ -773,37 +808,59 @@ export default async function DashboardPage() {
 
       <div className="space-y-8">
 
-        {/* ── STATS ROW — icon · number · label ── */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
-          <Link href="/scripts" className="no-underline block">
-            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M14 2v6h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        {accountType === 'producer' ? (
+          /* ── PRODUCER TOP ROW — action buttons ── */
+          <div className="flex items-center gap-3">
+            <Link
+              href="/partner/opportunities/create"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[14px] font-semibold text-white no-underline transition-all hover:brightness-110"
+              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
-              <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{scriptCount}</span>
-              <span className="text-[12px] sm:text-[14px] font-bold text-white">Scripts</span>
-            </div>
-          </Link>
-          <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="hidden sm:inline-flex">{gemDiamond(10)}</span>
-              <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
-                {topScore > 0 ? topScore : '—'}
-              </span>
-              <span className="text-[12px] sm:text-[14px] font-bold text-white whitespace-nowrap">Top Score</span>
-            </div>
-          </Link>
-          <Link href="/applications" className="no-underline block">
-            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <span className="text-[18px] sm:text-[20px] leading-none shrink-0">🔥</span>
-              <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
-                {totalHeat > 0 ? totalHeat : '—'}
-              </span>
-              <span className="text-[12px] sm:text-[14px] font-bold text-white">Heat</span>
-            </div>
-          </Link>
-        </div>
+              Create opportunity
+            </Link>
+            <NewScriptButton />
+            <div className="flex-1" />
+            <span className="text-[13px] text-white/50">
+              {partnerPendingTotal > 0 ? `${partnerPendingTotal} pending` : 'All caught up'}
+              {' · '}{partnerApps.length} total pitch{partnerApps.length !== 1 ? 'es' : ''}
+            </span>
+          </div>
+        ) : (
+          /* ── WRITER STATS ROW — icon · number · label ── */
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <Link href="/scripts" className="no-underline block">
+              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 2v6h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{scriptCount}</span>
+                <span className="text-[12px] sm:text-[14px] font-bold text-white">Scripts</span>
+              </div>
+            </Link>
+            <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
+              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <span className="hidden sm:inline-flex">{gemDiamond(10)}</span>
+                <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
+                  {topScore > 0 ? topScore : '—'}
+                </span>
+                <span className="text-[12px] sm:text-[14px] font-bold text-white whitespace-nowrap">Top Score</span>
+              </div>
+            </Link>
+            <Link href="/applications" className="no-underline block">
+              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <span className="text-[18px] sm:text-[20px] leading-none shrink-0">🔥</span>
+                <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
+                  {totalHeat > 0 ? totalHeat : '—'}
+                </span>
+                <span className="text-[12px] sm:text-[14px] font-bold text-white">Heat</span>
+              </div>
+            </Link>
+          </div>
+        )}
 
         {/* ── TABBED CONTENT ── */}
         <DashboardTabs tabs={tabs} panels={panels} />

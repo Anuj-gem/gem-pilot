@@ -192,6 +192,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       headline: profile?.headline ?? null,
       avatar_url: profile?.avatar_url ?? null,
       isPro,
+      accountType: profile?.account_type ?? null,
       heatScore: (profile as any)?.heat_score ?? 0,
       referralCode: (profile as any)?.referral_code ?? null,
       bonusSubmissions: (profile as any)?.bonus_submissions ?? 0,

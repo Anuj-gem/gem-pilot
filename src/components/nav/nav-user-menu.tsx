@@ -13,6 +13,7 @@ export interface NavUserMenuProfile {
   headline: string | null
   avatar_url: string | null
   isPro?: boolean
+  accountType?: string | null
   referralCode?: string | null
   bonusSubmissions?: number
   referralCount?: number

@@ -166,7 +166,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
-                  {userData && !userData.profile.isPro && (
+                  {userData && !userData.profile.isPro && userData.profile.accountType !== 'producer' && (
                     <button
                       onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
                       className="ml-2 text-[12px] font-semibold px-3 py-1.5 rounded-lg transition-all duration-150 hover:brightness-110 cursor-pointer border-0 text-white"
@@ -325,7 +325,7 @@ export default function Nav({ userData }: NavProps = {}) {
                   </Link>
                 </>
               )}
-              {user && userData && !userData.profile.isPro && (
+              {user && userData && !userData.profile.isPro && userData.profile.accountType !== 'producer' && (
                 <>
                   <div className="border-t border-white/10 my-1" />
                   <button
