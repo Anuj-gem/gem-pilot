@@ -1,9 +1,9 @@
 'use client'
 
-// PartnerTriageClient — master/detail triage interface for producers.
-// Opportunity tabs across top, sorted list on left, detail + actions on right.
+// PartnerTriageClient — full-width dark triage interface for producers.
+// Opportunity dropdown at top, script-focused list, detail panel with Pass/Meet.
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import type { PartnerApp, PartnerOpp } from '@/app/partner/page'
 
@@ -49,13 +49,24 @@ export function PartnerTriageClient({
   const [showPassFeedback, setShowPassFeedback] = useState<string | null>(null)
   const [likedTags, setLikedTags] = useState<string[]>([])
   const [reasonTags, setReasonTags] = useState<string[]>([])
-  const [customTag, setCustomTag] = useState('')
+  const [customLiked, setCustomLiked] = useState('')
+  const [customReason, setCustomReason] = useState('')
+  const [addingCustomLiked, setAddingCustomLiked] = useState(false)
+  const [addingCustomReason, setAddingCustomReason] = useState(false)
   const [triaging, setTriaging] = useState(false)
+  const [showOppDropdown, setShowOppDropdown] = useState(false)
+  const [showHistory, setShowHistory] = useState(false)
+  const customLikedRef = useRef<HTMLInputElement>(null)
+  const customReasonRef = useRef<HTMLInputElement>(null)
 
   // Filter apps for active opportunity
   const oppApps = useMemo(() => {
     return applications.filter(a => a.opportunity_id === activeOppId)
   }, [applications, activeOppId])
+
+  // Stats
+  const pendingCount = useMemo(() => oppApps.filter(a => !triageState[a.id]).length, [oppApps, triageState])
+  const reviewedCount = useMemo(() => oppApps.filter(a => triageState[a.id]).length, [oppApps, triageState])
 
   // Sort apps
   const sortedApps = useMemo(() => {
@@ -86,14 +97,15 @@ export function PartnerTriageClient({
     return first || sortedApps[0] || null
   }, [selectedAppId, sortedApps, applications, triageState])
 
-  // Count per opportunity
-  const oppCounts = useMemo(() => {
-    const counts: Record<string, number> = {}
-    for (const opp of opportunities) {
-      counts[opp.id] = applications.filter(a => a.opportunity_id === opp.id).length
-    }
-    return counts
-  }, [opportunities, applications])
+  // Previous applications by the same writer (for history dropdown)
+  const writerHistory = useMemo(() => {
+    if (!selectedApp) return []
+    return applications
+      .filter(a => a.writer_id === selectedApp.writer_id && a.id !== selectedApp.id)
+      .sort((a, b) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime())
+  }, [selectedApp, applications])
+
+  const activeOpp = opportunities.find(o => o.id === activeOppId)
 
   async function handleTriage(action: 'pass' | 'meet', tags?: string[]) {
     if (!selectedApp || triaging) return
@@ -116,9 +128,7 @@ export function PartnerTriageClient({
           [selectedApp.id]: { status: action, tags },
         }))
         setShowPassFeedback(null)
-        setLikedTags([])
-        setReasonTags([])
-        setCustomTag('')
+        resetFeedback()
 
         // Auto-advance to next untriaged app
         const nextApp = sortedApps.find(a => a.id !== selectedApp.id && !triageState[a.id])
@@ -129,19 +139,45 @@ export function PartnerTriageClient({
     }
   }
 
+  function resetFeedback() {
+    setLikedTags([])
+    setReasonTags([])
+    setCustomLiked('')
+    setCustomReason('')
+    setAddingCustomLiked(false)
+    setAddingCustomReason(false)
+  }
+
   function handlePassClick() {
     if (!selectedApp) return
     setShowPassFeedback(selectedApp.id)
   }
 
   function confirmPass() {
-    if (reasonTags.length === 0 && !customTag.trim()) return // must select at least one reason
+    if (reasonTags.length === 0) return
     const allTags = [
       ...likedTags.map(t => `+${t}`),
       ...reasonTags.map(t => `-${t}`),
-      ...(customTag.trim() ? [`-${customTag.trim()}`] : []),
     ]
     handleTriage('pass', allTags)
+  }
+
+  function addCustomLikedTag() {
+    const val = customLiked.trim()
+    if (val && !likedTags.includes(val)) {
+      setLikedTags(prev => [...prev, val])
+    }
+    setCustomLiked('')
+    setAddingCustomLiked(false)
+  }
+
+  function addCustomReasonTag() {
+    const val = customReason.trim()
+    if (val && !reasonTags.includes(val)) {
+      setReasonTags(prev => [...prev, val])
+    }
+    setCustomReason('')
+    setAddingCustomReason(false)
   }
 
   const fmtDate = (d: string) => {
@@ -155,188 +191,236 @@ export function PartnerTriageClient({
   }
 
   return (
-    <div className="max-w-5xl mx-auto">
-      {/* Opportunity tabs */}
-      <div className="flex items-center gap-1 border-b border-gray-200 mb-0 overflow-x-auto">
-        {opportunities.map(opp => (
-          <button
-            key={opp.id}
-            onClick={() => { setActiveOppId(opp.id); setSelectedAppId(null); setShowPassFeedback(null) }}
-            className={`px-4 py-3 text-[13px] font-medium whitespace-nowrap border-b-2 transition-colors cursor-pointer bg-transparent ${
-              activeOppId === opp.id
-                ? 'border-purple-600 text-purple-700'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            {opp.title}
-            <span className="text-gray-400 ml-1.5 text-[12px]">{oppCounts[opp.id]}</span>
-          </button>
-        ))}
+    <div className="min-h-screen" style={{ background: '#0f0a1a' }}>
+      {/* Top bar: opportunity dropdown + stats */}
+      <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="flex items-center gap-3">
+          {/* Opportunity dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setShowOppDropdown(!showOppDropdown)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
+              style={{ background: 'rgba(255,255,255,0.06)' }}
+            >
+              {activeOpp?.title || 'Select opportunity'}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform ${showOppDropdown ? 'rotate-180' : ''}`}>
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {showOppDropdown && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowOppDropdown(false)} />
+                <div className="absolute top-full left-0 mt-1 py-1 rounded-lg z-20 min-w-[240px] shadow-xl" style={{ background: '#1a1425', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  {opportunities.map(opp => {
+                    const count = applications.filter(a => a.opportunity_id === opp.id).length
+                    return (
+                      <button
+                        key={opp.id}
+                        onClick={() => { setActiveOppId(opp.id); setSelectedAppId(null); setShowPassFeedback(null); resetFeedback(); setShowOppDropdown(false) }}
+                        className={`w-full text-left px-4 py-2.5 text-[13px] cursor-pointer border-0 transition-colors flex items-center justify-between ${
+                          activeOppId === opp.id ? 'text-purple-300 bg-purple-500/10' : 'text-white/70 hover:text-white hover:bg-white/5'
+                        }`}
+                        style={{ background: activeOppId === opp.id ? 'rgba(124,58,237,0.1)' : 'transparent' }}
+                      >
+                        <span className="truncate">{opp.title}</span>
+                        <span className="text-[12px] text-white/30 ml-2 shrink-0">{count}</span>
+                      </button>
+                    )
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* Stats pills */}
+          <div className="flex items-center gap-2 ml-2">
+            <span className="text-[12px] px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(124,58,237,0.15)', color: '#a78bfa' }}>
+              {pendingCount} pending
+            </span>
+            <span className="text-[12px] px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)' }}>
+              {reviewedCount} reviewed
+            </span>
+          </div>
+        </div>
+
+        {/* Sort controls */}
+        <div className="flex items-center gap-1">
+          {(['score', 'heat', 'new'] as SortMode[]).map(mode => (
+            <button
+              key={mode}
+              onClick={() => setSortMode(mode)}
+              className={`text-[12px] px-2.5 py-1.5 rounded-md cursor-pointer border-0 transition-colors ${
+                sortMode === mode
+                  ? 'bg-purple-600 text-white'
+                  : 'text-white/40 hover:text-white/60 hover:bg-white/5'
+              }`}
+              style={sortMode !== mode ? { background: 'transparent' } : undefined}
+            >
+              {mode === 'score' ? 'Score' : mode === 'heat' ? 'Heat' : 'Newest'}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Master/detail split */}
-      <div className="flex border border-gray-200 rounded-b-xl overflow-hidden bg-white" style={{ height: 'calc(100vh - 180px)', minHeight: '500px' }}>
-        {/* LEFT: App list */}
-        <div className="w-[280px] border-r border-gray-200 flex flex-col shrink-0">
-          {/* Sort controls */}
-          <div className="px-3 py-2.5 border-b border-gray-100 flex items-center gap-1.5">
-            <span className="text-[12px] text-gray-400 mr-1">Sort:</span>
-            {(['score', 'heat', 'new'] as SortMode[]).map(mode => (
-              <button
-                key={mode}
-                onClick={() => setSortMode(mode)}
-                className={`text-[12px] px-2.5 py-1 rounded cursor-pointer border-0 transition-colors ${
-                  sortMode === mode
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
+      {/* Main content: list + detail */}
+      <div className="flex" style={{ height: 'calc(100vh - 130px)' }}>
+        {/* LEFT: Applicant list */}
+        <div className="w-[340px] shrink-0 overflow-y-auto" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+          {sortedApps.length === 0 && (
+            <div className="px-4 py-12 text-center text-[13px] text-white/30">No applications yet</div>
+          )}
+          {sortedApps.map(app => {
+            const isPassed = triageState[app.id]?.status === 'pass'
+            const isMet = triageState[app.id]?.status === 'meet'
+            const isSelected = selectedApp?.id === app.id
+            const topScript = app.scripts[0]
+            const score = topScript?.score ? Math.round(topScript.score) : null
+            const heat = topScript?.heat_score ?? 0
+
+            return (
+              <div
+                key={app.id}
+                onClick={() => { setSelectedAppId(app.id); setShowPassFeedback(null); resetFeedback(); setShowHistory(false) }}
+                className={`px-4 py-3 cursor-pointer transition-all ${
+                  isSelected ? 'bg-purple-500/10' : 'hover:bg-white/[0.03]'
+                } ${isPassed ? 'opacity-35' : ''}`}
+                style={{ borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: isSelected ? '3px solid #7c3aed' : '3px solid transparent' }}
               >
-                {mode === 'score' ? 'Score' : mode === 'heat' ? 'Heat' : 'Newest'}
-              </button>
-            ))}
-          </div>
-
-          {/* App rows */}
-          <div className="flex-1 overflow-y-auto">
-            {sortedApps.length === 0 && (
-              <div className="px-4 py-8 text-center text-[13px] text-gray-400">No applications yet</div>
-            )}
-            {sortedApps.map(app => {
-              const isPassed = triageState[app.id]?.status === 'pass'
-              const isMet = triageState[app.id]?.status === 'meet'
-              const isSelected = selectedApp?.id === app.id
-              const topScript = app.scripts[0]
-              const score = topScript?.score ? Math.round(topScript.score) : null
-              const heat = topScript?.heat_score ?? 0
-
-              return (
-                <div
-                  key={app.id}
-                  onClick={() => { setSelectedAppId(app.id); setShowPassFeedback(null); setLikedTags([]); setReasonTags([]); setCustomTag('') }}
-                  className={`px-3 py-2.5 cursor-pointer border-b border-gray-50 transition-colors ${
-                    isSelected ? 'bg-purple-50 border-l-[3px] border-l-purple-600' : 'hover:bg-gray-50'
-                  } ${isPassed ? 'opacity-40' : ''}`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className={`text-[13px] font-medium ${isPassed ? 'line-through text-gray-400' : 'text-gray-900'}`}>
-                      {app.writer_name || 'Unknown'}
-                    </span>
-                    <div className="flex items-center gap-1.5">
-                      {isMet && <span className="text-[10px] text-green-600">✓</span>}
-                      {score && (
-                        <span className="flex items-center gap-0.5">
-                          <GemDiamond size={8} />
-                          <span className={`text-[12px] font-semibold ${score >= 75 ? 'text-purple-600' : 'text-gray-400'}`}>
-                            {score}
-                          </span>
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <div className="text-[12px] text-gray-500 mt-0.5 truncate">
+                {/* Script title + score */}
+                <div className="flex items-center justify-between mb-1">
+                  <span className={`text-[14px] font-medium truncate flex-1 ${isPassed ? 'line-through text-white/30' : 'text-white'}`}>
                     {topScript?.title || 'No script'}
-                  </div>
-                  <div className="flex items-center gap-1.5 mt-0.5">
-                    {heat > 0 && (
-                      <span className="text-[12px] text-orange-500">🔥 {heat}</span>
+                  </span>
+                  <div className="flex items-center gap-2 shrink-0 ml-2">
+                    {isMet && <span className="text-[10px] text-green-400">✓ Meet</span>}
+                    {isPassed && <span className="text-[10px] text-white/30">Passed</span>}
+                    {score && !isPassed && (
+                      <span className="flex items-center gap-0.5">
+                        <GemDiamond size={7} />
+                        <span className={`text-[13px] font-bold ${score >= 75 ? 'text-purple-400' : 'text-white/40'}`}>
+                          {score}
+                        </span>
+                      </span>
                     )}
-                    {!isPassed && (
-                      <span className="text-[12px] text-gray-300">{fmtDate(app.submitted_at)}</span>
-                    )}
-                    {isPassed && <span className="text-[12px] text-gray-300">Passed</span>}
                   </div>
                 </div>
-              )
-            })}
-          </div>
+
+                {/* Format · Genre · Budget */}
+                <div className="flex items-center gap-1.5 text-[12px] text-white/35 mb-1">
+                  {topScript?.format && <span>{topScript.format}</span>}
+                  {topScript?.format && topScript?.genre && <span>·</span>}
+                  {topScript?.genre && <span>{topScript.genre}</span>}
+                  {topScript?.budget_tier && <><span>·</span><span>{topScript.budget_tier}</span></>}
+                </div>
+
+                {/* Writer name + heat + app count + date */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[12px] text-white/50">{app.writer_name || 'Unknown'}</span>
+                    {app.writer_app_count > 1 && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.15)', color: '#fbbf24' }}>
+                        ×{app.writer_app_count}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    {heat > 0 && <span className="text-[11px] text-orange-400">🔥{heat}</span>}
+                    <span className="text-[11px] text-white/20">{fmtDate(app.submitted_at)}</span>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         {/* RIGHT: Detail panel */}
         <div className="flex-1 flex flex-col overflow-y-auto">
           {!selectedApp ? (
-            <div className="flex-1 flex items-center justify-center text-[14px] text-gray-400">
+            <div className="flex-1 flex items-center justify-center text-[14px] text-white/25">
               Select an application to review
             </div>
           ) : (
             <>
-              {/* Writer header — name, headline, avatar */}
-              <div className="px-6 py-5 border-b border-gray-100">
-                <div className="flex items-start gap-3">
-                  {selectedApp.writer_avatar_url ? (
-                    <img
-                      src={selectedApp.writer_avatar_url}
-                      alt=""
-                      className="w-10 h-10 rounded-full object-cover shrink-0"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-[14px] text-purple-700 shrink-0" style={{ background: '#EEEDFE' }}>
-                      {(selectedApp.writer_name || '?')[0]?.toUpperCase()}
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-[15px] text-gray-900 m-0">
-                      {selectedApp.writer_name || 'Unknown writer'}
-                    </p>
-                    {selectedApp.writer_headline && (
-                      <p className="text-[13px] text-gray-500 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
-                    )}
-                    <p className="text-[12px] text-gray-400 m-0 mt-0.5">{fmtDate(selectedApp.submitted_at)}</p>
+              {/* Writer info bar */}
+              <div className="px-6 py-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                {selectedApp.writer_avatar_url ? (
+                  <img src={selectedApp.writer_avatar_url} alt="" className="w-9 h-9 rounded-full object-cover shrink-0" />
+                ) : (
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center font-semibold text-[13px] text-purple-300 shrink-0" style={{ background: 'rgba(124,58,237,0.15)' }}>
+                    {(selectedApp.writer_name || '?')[0]?.toUpperCase()}
                   </div>
-                  {triageState[selectedApp.id] && (
-                    <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full shrink-0 ${
-                      triageState[selectedApp.id].status === 'meet' ? 'bg-green-50 text-green-700' :
-                      'bg-gray-100 text-gray-500'
-                    }`}>
-                      {triageState[selectedApp.id].status === 'meet' ? 'Meeting' : 'Passed'}
-                    </span>
+                )}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-[14px] text-white">{selectedApp.writer_name || 'Unknown'}</span>
+                    {selectedApp.writer_app_count > 1 && (
+                      <span className="text-[11px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.12)', color: '#fbbf24' }}>
+                        {selectedApp.writer_app_count} applications
+                      </span>
+                    )}
+                    {triageState[selectedApp.id] && (
+                      <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${
+                        triageState[selectedApp.id].status === 'meet' ? 'text-green-400' : 'text-white/30'
+                      }`} style={{ background: triageState[selectedApp.id].status === 'meet' ? 'rgba(74,222,128,0.1)' : 'rgba(255,255,255,0.05)' }}>
+                        {triageState[selectedApp.id].status === 'meet' ? 'Meeting' : 'Passed'}
+                      </span>
+                    )}
+                  </div>
+                  {selectedApp.writer_headline && (
+                    <p className="text-[12px] text-white/40 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
                   )}
                 </div>
+                <span className="text-[12px] text-white/20">{fmtDate(selectedApp.submitted_at)}</span>
               </div>
 
-              {/* Script info — with poster */}
+              {/* Script details */}
               {selectedApp.scripts.map(script => (
-                <div key={script.submission_id} className="px-6 py-5 border-b border-gray-100">
+                <div key={script.submission_id} className="px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="flex gap-4">
-                    {/* Poster thumbnail */}
+                    {/* Poster */}
                     {script.poster_url ? (
-                      <img
-                        src={script.poster_url}
-                        alt=""
-                        className="w-16 h-20 rounded-lg object-cover shrink-0"
-                      />
+                      <img src={script.poster_url} alt="" className="w-14 h-[72px] rounded-lg object-cover shrink-0" />
                     ) : (
-                      <div className="w-16 h-20 rounded-lg shrink-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #7c3aed, #6d28d9)' }}>
-                        <span className="inline-flex items-center justify-center rotate-45" style={{ width: 24, height: 24 }}>
-                          <span className="absolute" style={{ width: 24, height: 24, background: 'rgba(255,255,255,0.08)', borderRadius: 2 }} />
-                          <span className="absolute" style={{ width: 18, height: 18, background: 'rgba(255,255,255,0.15)', borderRadius: 1.5 }} />
-                          <span className="absolute" style={{ width: 12, height: 12, background: 'rgba(255,255,255,0.22)', borderRadius: 1 }} />
+                      <div className="w-14 h-[72px] rounded-lg shrink-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #7c3aed, #6d28d9)' }}>
+                        <span className="inline-flex items-center justify-center rotate-45" style={{ width: 20, height: 20 }}>
+                          <span className="absolute" style={{ width: 20, height: 20, background: 'rgba(255,255,255,0.08)', borderRadius: 2 }} />
+                          <span className="absolute" style={{ width: 14, height: 14, background: 'rgba(255,255,255,0.15)', borderRadius: 1.5 }} />
                         </span>
                       </div>
                     )}
 
-                    {/* Script details */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[15px] font-semibold text-gray-900 truncate">{script.title}</span>
+                        <span className="text-[16px] font-semibold text-white truncate">{script.title}</span>
                         <div className="flex items-center gap-2 shrink-0">
-                          {(script.heat_score ?? 0) > 0 && (
-                            <span className="text-[13px] text-orange-500">🔥 {script.heat_score}</span>
-                          )}
+                          {(script.heat_score ?? 0) > 0 && <span className="text-[13px] text-orange-400">🔥 {script.heat_score}</span>}
                           {script.score && (
-                            <span className="flex items-center gap-1 text-[14px] font-bold" style={{ color: '#7c3aed' }}>
-                              <GemDiamond size={10} /> {Math.round(script.score)}
+                            <span className="flex items-center gap-1 text-[15px] font-bold text-purple-400">
+                              <GemDiamond size={9} /> {Math.round(script.score)}
                             </span>
                           )}
                         </div>
                       </div>
+                      {/* Metadata pills */}
+                      <div className="flex items-center gap-1.5 mb-2">
+                        {script.format && (
+                          <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.format}</span>
+                        )}
+                        {script.genre && (
+                          <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.genre}</span>
+                        )}
+                        {script.budget_tier && (
+                          <span className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' }}>{script.budget_tier}</span>
+                        )}
+                      </div>
                       {script.logline && (
-                        <p className="text-[13px] text-gray-600 m-0 leading-relaxed">{script.logline}</p>
+                        <p className="text-[13px] text-white/60 m-0 leading-relaxed">{script.logline}</p>
                       )}
                       <Link
                         href={`/partner/applications/${selectedApp.id}`}
-                        className="text-[12px] text-purple-600 mt-2 inline-block hover:underline"
+                        className="text-[12px] text-purple-400 mt-2 inline-block hover:text-purple-300 transition-colors no-underline"
                       >
-                        View full details →
+                        View full report →
                       </Link>
                     </div>
                   </div>
@@ -345,11 +429,68 @@ export function PartnerTriageClient({
 
               {/* Writer's pitch */}
               {selectedApp.writer_pitch && (
-                <div className="px-6 py-5 border-b border-gray-100">
-                  <span className="text-[12px] text-gray-400 uppercase tracking-wider font-medium">Writer&apos;s pitch</span>
-                  <p className="text-[13px] text-gray-700 m-0 mt-2 leading-relaxed italic">
+                <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span className="text-[11px] text-white/25 uppercase tracking-wider font-medium">Writer&apos;s pitch</span>
+                  <p className="text-[13px] text-white/60 m-0 mt-2 leading-relaxed italic">
                     &ldquo;{selectedApp.writer_pitch}&rdquo;
                   </p>
+                </div>
+              )}
+
+              {/* Previous applications by this writer */}
+              {writerHistory.length > 0 && (
+                <div className="px-6 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <button
+                    onClick={() => setShowHistory(!showHistory)}
+                    className="flex items-center gap-2 text-[12px] text-white/40 hover:text-white/60 cursor-pointer bg-transparent border-0 transition-colors"
+                  >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={`transition-transform ${showHistory ? 'rotate-90' : ''}`}>
+                      <path d="M3 1.5L6.5 5L3 8.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {writerHistory.length} previous application{writerHistory.length !== 1 ? 's' : ''}
+                  </button>
+                  {showHistory && (
+                    <div className="mt-2 space-y-1.5">
+                      {writerHistory.map(prev => {
+                        const prevStatus = triageState[prev.id]?.status || prev.triage_status
+                        const prevTags = triageState[prev.id]?.tags || prev.triage_feedback_tags
+                        const oppTitle = opportunities.find(o => o.id === prev.opportunity_id)?.title
+                        return (
+                          <div
+                            key={prev.id}
+                            onClick={() => { setSelectedAppId(prev.id); setShowPassFeedback(null); resetFeedback() }}
+                            className="px-3 py-2 rounded-lg cursor-pointer transition-colors hover:bg-white/[0.04]"
+                            style={{ background: 'rgba(255,255,255,0.02)' }}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="text-[12px] text-white/60 truncate">{prev.scripts[0]?.title || 'No script'}</span>
+                              <div className="flex items-center gap-2 shrink-0">
+                                {prevStatus && (
+                                  <span className={`text-[10px] ${prevStatus === 'meet' ? 'text-green-400' : 'text-white/30'}`}>
+                                    {prevStatus === 'meet' ? '✓ Meet' : 'Passed'}
+                                  </span>
+                                )}
+                                <span className="text-[11px] text-white/20">{fmtDate(prev.submitted_at)}</span>
+                              </div>
+                            </div>
+                            {oppTitle && <span className="text-[11px] text-white/25 block mt-0.5">{oppTitle}</span>}
+                            {prevTags && prevTags.length > 0 && (
+                              <div className="flex flex-wrap gap-1 mt-1.5">
+                                {prevTags.map(tag => (
+                                  <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded-full" style={{
+                                    background: tag.startsWith('+') ? 'rgba(74,222,128,0.08)' : 'rgba(248,113,113,0.08)',
+                                    color: tag.startsWith('+') ? 'rgba(74,222,128,0.6)' : 'rgba(248,113,113,0.6)',
+                                  }}>
+                                    {tag.replace(/^[+-]/, '')}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -358,103 +499,158 @@ export function PartnerTriageClient({
                 {!triageState[selectedApp.id] && (
                   <>
                     {showPassFeedback !== selectedApp.id ? (
-                      /* Main action buttons — Pass and Meet only */
                       <div className="flex gap-3">
                         <button
                           onClick={handlePassClick}
                           disabled={triaging}
-                          className="flex-1 py-3 rounded-xl border border-gray-200 bg-white text-[14px] font-medium text-gray-500 hover:bg-gray-50 cursor-pointer transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                          className="flex-1 py-3 rounded-xl text-[14px] font-medium cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)' }}
                         >
-                          ✕ Pass
+                          Pass
                         </button>
                         <button
                           onClick={() => handleTriage('meet')}
                           disabled={triaging}
-                          className="flex-[2] py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-pointer transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
-                          style={{ background: '#534AB7' }}
+                          className="flex-[2] py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50 hover:brightness-110"
+                          style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
                         >
-                          💬 Meet
+                          Meet
                         </button>
                       </div>
                     ) : (
-                      /* Pass feedback flow */
+                      /* Pass feedback — sleek inline pills */
                       <div className="space-y-4">
                         {/* Liked section */}
                         <div>
-                          <span className="text-[13px] font-medium text-gray-700">Anything you liked?</span>
-                          <div className="flex flex-wrap gap-1.5 mt-2">
+                          <span className="text-[12px] text-white/40 mb-2 block">Anything you liked?</span>
+                          <div className="flex flex-wrap items-center gap-1.5">
                             {LIKED_TAGS.map(tag => (
                               <button
                                 key={tag}
                                 onClick={() => setLikedTags(prev =>
                                   prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
                                 )}
-                                className={`text-[12px] px-3 py-1.5 rounded-full border cursor-pointer transition-colors ${
+                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
                                   likedTags.includes(tag)
-                                    ? 'bg-green-50 border-green-300 text-green-700'
-                                    : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
+                                    ? 'text-green-300'
+                                    : 'text-white/40 hover:text-white/60'
                                 }`}
+                                style={{
+                                  background: likedTags.includes(tag) ? 'rgba(74,222,128,0.12)' : 'rgba(255,255,255,0.06)',
+                                }}
                               >
                                 {tag}
                               </button>
                             ))}
-                            <button
-                              onClick={() => setLikedTags([])}
-                              className={`text-[12px] px-3 py-1.5 rounded-full border cursor-pointer transition-colors ${
-                                likedTags.length === 0
-                                  ? 'bg-gray-100 border-gray-300 text-gray-600'
-                                  : 'bg-white border-gray-200 text-gray-400 hover:border-gray-300'
-                              }`}
-                            >
-                              Nothing
-                            </button>
+                            {/* Custom liked tags that have been added */}
+                            {likedTags.filter(t => !LIKED_TAGS.includes(t)).map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => setLikedTags(prev => prev.filter(t => t !== tag))}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-green-300"
+                                style={{ background: 'rgba(74,222,128,0.12)' }}
+                              >
+                                {tag} ×
+                              </button>
+                            ))}
+                            {/* Add custom — inline input */}
+                            {addingCustomLiked ? (
+                              <input
+                                ref={customLikedRef}
+                                autoFocus
+                                type="text"
+                                value={customLiked}
+                                onChange={e => setCustomLiked(e.target.value)}
+                                onKeyDown={e => { if (e.key === 'Enter') addCustomLikedTag(); if (e.key === 'Escape') { setAddingCustomLiked(false); setCustomLiked('') } }}
+                                onBlur={addCustomLikedTag}
+                                placeholder="Type and press Enter"
+                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
+                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
+                              />
+                            ) : (
+                              <button
+                                onClick={() => { setAddingCustomLiked(true); setTimeout(() => customLikedRef.current?.focus(), 50) }}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
+                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
+                              >
+                                + Other
+                              </button>
+                            )}
                           </div>
                         </div>
 
                         {/* Pass reason section */}
                         <div>
-                          <span className="text-[13px] font-medium text-gray-700">Why are you passing? <span className="text-gray-400 font-normal">(required)</span></span>
-                          <div className="flex flex-wrap gap-1.5 mt-2">
+                          <span className="text-[12px] text-white/40 mb-2 block">Why are you passing?</span>
+                          <div className="flex flex-wrap items-center gap-1.5">
                             {PASS_REASONS.map(tag => (
                               <button
                                 key={tag}
                                 onClick={() => setReasonTags(prev =>
                                   prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
                                 )}
-                                className={`text-[12px] px-3 py-1.5 rounded-full border cursor-pointer transition-colors ${
+                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
                                   reasonTags.includes(tag)
-                                    ? 'bg-red-50 border-red-300 text-red-700'
-                                    : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
+                                    ? 'text-red-300'
+                                    : 'text-white/40 hover:text-white/60'
                                 }`}
+                                style={{
+                                  background: reasonTags.includes(tag) ? 'rgba(248,113,113,0.12)' : 'rgba(255,255,255,0.06)',
+                                }}
                               >
                                 {tag}
                               </button>
                             ))}
-                          </div>
-                          {/* Custom tag input */}
-                          <div className="mt-2">
-                            <input
-                              type="text"
-                              value={customTag}
-                              onChange={e => setCustomTag(e.target.value)}
-                              placeholder="Add a custom reason..."
-                              className="text-[12px] px-3 py-1.5 rounded-lg border border-gray-200 text-gray-700 w-full max-w-[240px] outline-none focus:border-purple-300"
-                            />
+                            {/* Custom reason tags */}
+                            {reasonTags.filter(t => !PASS_REASONS.includes(t)).map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => setReasonTags(prev => prev.filter(t => t !== tag))}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-red-300"
+                                style={{ background: 'rgba(248,113,113,0.12)' }}
+                              >
+                                {tag} ×
+                              </button>
+                            ))}
+                            {/* Add custom reason */}
+                            {addingCustomReason ? (
+                              <input
+                                ref={customReasonRef}
+                                autoFocus
+                                type="text"
+                                value={customReason}
+                                onChange={e => setCustomReason(e.target.value)}
+                                onKeyDown={e => { if (e.key === 'Enter') addCustomReasonTag(); if (e.key === 'Escape') { setAddingCustomReason(false); setCustomReason('') } }}
+                                onBlur={addCustomReasonTag}
+                                placeholder="Type and press Enter"
+                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
+                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
+                              />
+                            ) : (
+                              <button
+                                onClick={() => { setAddingCustomReason(true); setTimeout(() => customReasonRef.current?.focus(), 50) }}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
+                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
+                              >
+                                + Other
+                              </button>
+                            )}
                           </div>
                         </div>
 
                         {/* Confirm / Cancel */}
-                        <div className="flex gap-2 pt-1">
+                        <div className="flex items-center gap-3 pt-1">
                           <button
                             onClick={confirmPass}
-                            disabled={triaging || (reasonTags.length === 0 && !customTag.trim())}
-                            className="text-[13px] font-semibold px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700 cursor-pointer border-0 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                            disabled={triaging || reasonTags.length === 0}
+                            className="text-[13px] font-semibold px-5 py-2 rounded-lg text-white cursor-pointer border-0 disabled:opacity-20 disabled:cursor-not-allowed transition-all hover:brightness-110"
+                            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
                           >
                             Confirm pass
                           </button>
                           <button
-                            onClick={() => { setShowPassFeedback(null); setLikedTags([]); setReasonTags([]); setCustomTag('') }}
-                            className="text-[13px] text-gray-400 hover:text-gray-600 cursor-pointer bg-transparent border-0 transition-colors"
+                            onClick={() => { setShowPassFeedback(null); resetFeedback() }}
+                            className="text-[13px] text-white/30 hover:text-white/50 cursor-pointer bg-transparent border-0 transition-colors"
                           >
                             Cancel
                           </button>
@@ -465,10 +661,10 @@ export function PartnerTriageClient({
                 )}
 
                 {triageState[selectedApp.id] && (
-                  <div className="text-center py-2">
-                    <span className="text-[13px] text-gray-400">
-                      {triageState[selectedApp.id].status === 'pass' && '✕ Passed'}
-                      {triageState[selectedApp.id].status === 'meet' && '💬 Meeting requested'}
+                  <div className="flex items-center justify-center gap-3 py-2">
+                    <span className="text-[13px] text-white/30">
+                      {triageState[selectedApp.id].status === 'pass' && 'Passed'}
+                      {triageState[selectedApp.id].status === 'meet' && 'Meeting requested'}
                     </span>
                     <button
                       onClick={() => {
@@ -478,7 +674,7 @@ export function PartnerTriageClient({
                           return next
                         })
                       }}
-                      className="ml-3 text-[12px] text-purple-600 hover:underline cursor-pointer bg-transparent border-0"
+                      className="text-[12px] text-purple-400 hover:text-purple-300 cursor-pointer bg-transparent border-0 transition-colors"
                     >
                       Undo
                     </button>

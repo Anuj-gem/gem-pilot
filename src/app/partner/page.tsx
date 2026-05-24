@@ -1,5 +1,5 @@
 // /partner — producer triage page.
-// Master/detail split: opportunity tabs, sorted app list, detail panel with Pass/Watchlist/Meet.
+// Full-width dark layout: opportunity dropdown, script-focused list, detail panel with Pass/Meet.
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
@@ -16,6 +16,18 @@ function svc() {
   )
 }
 
+export type PartnerScript = {
+  submission_id: string
+  title: string
+  score: number | null
+  heat_score: number | null
+  logline: string | null
+  poster_url: string | null
+  format: string | null
+  genre: string | null
+  budget_tier: string | null
+}
+
 export type PartnerApp = {
   id: string
   status: string
@@ -30,7 +42,8 @@ export type PartnerApp = {
   writer_email: string | null
   writer_headline: string | null
   writer_avatar_url: string | null
-  scripts: { submission_id: string; title: string; score: number | null; heat_score: number | null; logline: string | null; poster_url: string | null }[]
+  writer_app_count: number
+  scripts: PartnerScript[]
 }
 
 export type PartnerOpp = {
@@ -68,16 +81,18 @@ export default async function PartnerPage() {
 
   if (oppIds.length === 0) {
     return (
-      <div className="max-w-2xl mx-auto text-center py-16">
-        <p className="text-gray-500 text-[14px]">You don&apos;t have any opportunities yet.</p>
-        <a href="/partner/opportunities/create" className="inline-block mt-4 bg-purple-600 hover:bg-purple-700 text-white text-[13px] font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline">
-          Create your first opportunity
-        </a>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#0f0a1a' }}>
+        <div className="text-center">
+          <p className="text-white/50 text-[14px]">You don&apos;t have any opportunities yet.</p>
+          <a href="/partner/opportunities/create" className="inline-block mt-4 text-white text-[13px] font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline" style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
+            Create your first opportunity
+          </a>
+        </div>
       </div>
     )
   }
 
-  // Fetch all considerations for those opportunities
+  // Fetch ALL considerations for those opportunities (not just latest)
   const { data: rawApps } = await service
     .from('considerations')
     .select('id, status, review_stage, submitted_at, writer_id, writer_pitch, opportunity_id, triage_status, triage_feedback_tags')
@@ -89,6 +104,12 @@ export default async function PartnerPage() {
     writer_id: string; writer_pitch: string | null; opportunity_id: string
     triage_status: string | null; triage_feedback_tags: string[] | null
   }[]
+
+  // Compute per-writer application count (across all opportunities for this producer)
+  const writerAppCount = new Map<string, number>()
+  for (const a of apps) {
+    writerAppCount.set(a.writer_id, (writerAppCount.get(a.writer_id) || 0) + 1)
+  }
 
   // Load writer profiles
   const writerIds = [...new Set(apps.map(a => a.writer_id))]
@@ -105,7 +126,7 @@ export default async function PartnerPage() {
 
   // Load scripts + evaluations for each application
   const appIds = apps.map(a => a.id)
-  const scriptsByApp = new Map<string, { submission_id: string; title: string; score: number | null; heat_score: number | null; logline: string | null; poster_url: string | null }[]>()
+  const scriptsByApp = new Map<string, PartnerScript[]>()
 
   if (appIds.length > 0) {
     const { data: cs } = await service
@@ -118,12 +139,12 @@ export default async function PartnerPage() {
     if (scriptIds.length > 0) {
       const { data: subs } = await service
         .from('script_submissions')
-        .select('id, title, heat_score, poster_url')
+        .select('id, title, heat_score, poster_url, declared_format')
         .in('id', scriptIds)
 
-      const titleMap = new Map<string, { title: string; heat_score: number | null; poster_url: string | null }>()
-      for (const s of (subs || []) as { id: string; title: string; heat_score: number | null; poster_url: string | null }[]) {
-        titleMap.set(s.id, { title: s.title, heat_score: s.heat_score, poster_url: s.poster_url })
+      const subMap = new Map<string, { title: string; heat_score: number | null; poster_url: string | null; declared_format: string | null }>()
+      for (const s of (subs || []) as { id: string; title: string; heat_score: number | null; poster_url: string | null; declared_format: string | null }[]) {
+        subMap.set(s.id, { title: s.title, heat_score: s.heat_score, poster_url: s.poster_url, declared_format: s.declared_format })
       }
 
       const { data: evals } = await service
@@ -131,15 +152,23 @@ export default async function PartnerPage() {
         .select('submission_id, weighted_score, evaluation')
         .in('submission_id', scriptIds)
 
-      const evalMap = new Map<string, { score: number | null; logline: string | null }>()
+      const evalMap = new Map<string, { score: number | null; logline: string | null; format: string | null; genre: string | null; budget_tier: string | null }>()
       for (const e of (evals || []) as { submission_id: string; weighted_score: number | null; evaluation: any }[]) {
-        const logline = e.evaluation?.positioning_hook || e.evaluation?.whats_special?.headline || null
-        evalMap.set(e.submission_id, { score: e.weighted_score, logline })
+        const ev = e.evaluation || {}
+        const cls = ev.classification || {}
+        const fmt = ev.format_detection || {}
+        const pkg = ev.packaging || {}
+        const logline = ev.positioning_hook || ev.whats_special?.headline || null
+        const format = cls.format || fmt.format || null
+        const genre = cls.genre_primary || null
+        const bt = pkg.budget_tier
+        const budget_tier = bt ? (bt.label || bt.tier || null) : null
+        evalMap.set(e.submission_id, { score: e.weighted_score, logline, format, genre, budget_tier })
       }
 
       for (const c of (cs || []) as { consideration_id: string; script_submission_id: string }[]) {
         const existing = scriptsByApp.get(c.consideration_id) || []
-        const sub = titleMap.get(c.script_submission_id)
+        const sub = subMap.get(c.script_submission_id)
         const ev = evalMap.get(c.script_submission_id)
         existing.push({
           submission_id: c.script_submission_id,
@@ -148,6 +177,9 @@ export default async function PartnerPage() {
           heat_score: sub?.heat_score ?? null,
           logline: ev?.logline ?? null,
           poster_url: sub?.poster_url ?? null,
+          format: ev?.format || sub?.declared_format || null,
+          genre: ev?.genre ?? null,
+          budget_tier: ev?.budget_tier ?? null,
         })
         scriptsByApp.set(c.consideration_id, existing)
       }
@@ -161,6 +193,7 @@ export default async function PartnerPage() {
     writer_email: writerMap.get(app.writer_id)?.email || null,
     writer_headline: writerMap.get(app.writer_id)?.headline || null,
     writer_avatar_url: writerMap.get(app.writer_id)?.avatar_url || null,
+    writer_app_count: writerAppCount.get(app.writer_id) || 1,
     scripts: scriptsByApp.get(app.id) || [],
   }))
 
