@@ -545,15 +545,16 @@ export function PartnerTriageClient({
                     {showPassFeedback !== selectedApp.id ? (
                       <div className="flex gap-3">
                         <button
-                          disabled
-                          className="flex-1 py-3 rounded-xl text-[14px] font-medium cursor-not-allowed transition-all flex items-center justify-center gap-2 opacity-40"
+                          onClick={handlePassClick}
+                          disabled={triaging}
+                          className="flex-1 py-3 rounded-xl text-[14px] font-medium cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                           style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)' }}
                         >
                           Pass
                         </button>
                         <button
                           disabled
-                          className="flex-[2] py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-not-allowed transition-all flex items-center justify-center gap-2 opacity-40"
+                          className="flex-1 py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-not-allowed transition-all flex items-center justify-center gap-2 opacity-40"
                           style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
                         >
                           Meet
