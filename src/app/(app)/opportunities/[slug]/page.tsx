@@ -236,6 +236,13 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           if (!hasOverlap) ok = false
         }
         if (opp.budget_tiers?.length > 0 && budget && !opp.budget_tiers.includes(budget)) ok = false
+        // Tag matching: opp tags must overlap with script's classification.tags
+        if (opp.tags?.length > 0) {
+          const scriptTags = (cls.tags as string[] || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
+          const oppTagsNorm = opp.tags.map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
+          const hasTagOverlap = oppTagsNorm.some((ot: string) => scriptTags.some((st: string) => st === ot || st.includes(ot) || ot.includes(st)))
+          if (!hasTagOverlap) ok = false
+        }
 
         if (ok) {
           qualifyingScripts.push({
