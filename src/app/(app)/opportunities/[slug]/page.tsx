@@ -7,21 +7,23 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, FileText, Clock, Target } from 'lucide-react'
+import { ArrowRight, FileText, Clock } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 import { SubscribeCTA } from '@/components/subscribe-cta'
 import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
 
 const GENRE_LABELS: Record<string, string> = {
-  thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
-  comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
-  action: 'Action', family: 'Family', western: 'Western', musical: 'Musical',
+  Drama: 'Drama', Comedy: 'Comedy', Thriller: 'Thriller', Horror: 'Horror',
+  'Sci-Fi': 'Sci-Fi', Fantasy: 'Fantasy', Action: 'Action', Crime: 'Crime',
+  Mystery: 'Mystery', Romance: 'Romance', Western: 'Western', Musical: 'Musical',
+  Family: 'Family', Historical: 'Historical', War: 'War', Sports: 'Sports',
+  Documentary: 'Documentary',
 }
 const BUDGET_LABELS: Record<string, string> = {
   micro: 'Micro', indie: 'Indie', mid: 'Mid', studio: 'Studio', premium: 'Premium', tentpole: 'Tentpole',
 }
 const FORMAT_LABELS: Record<string, string> = {
-  feature: 'Feature', pilot: 'Pilot', limited_series: 'Limited Series', short: 'Short',
+  Feature: 'Feature', Series: 'Series',
 }
 
 const STAGE_DISPLAY: Record<string, { label: string; bg: string; text: string; description: string }> = {
@@ -221,7 +223,11 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
 
         let ok = true
-        if (opp.formats?.length > 0 && !opp.formats.includes(sub.declared_format)) ok = false
+        // Format matching: opp stores "Feature"/"Series", declared_format is "Feature film"/"Series"
+        if (opp.formats?.length > 0) {
+          const declNorm = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
+          if (!opp.formats.includes(declNorm)) ok = false
+        }
         if (opp.genres?.length > 0 && genres.length > 0) {
           const oppGenresNorm = opp.genres.map(normGenre)
           const hasOverlap = genres.some((sg: string) =>
@@ -230,7 +236,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           if (!hasOverlap) ok = false
         }
         if (opp.budget_tiers?.length > 0 && budget && !opp.budget_tiers.includes(budget)) ok = false
-        if (opp.min_score != null && (ev.weighted_score == null || ev.weighted_score < opp.min_score)) ok = false
 
         if (ok) {
           qualifyingScripts.push({
@@ -290,40 +295,64 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
             {opp.description}
           </p>
 
-          {/* ── Score requirement ── */}
-          {opp.min_score != null && (
-            <div className="flex items-start gap-3 rounded-xl bg-gray-50 px-4 py-3 border border-gray-100 mb-6">
-              <Target size={16} className="text-purple-600 shrink-0 mt-0.5" />
-              <div>
-                <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0">Minimum score</p>
-                <p className="text-[16px] font-bold text-gray-900 m-0">{Math.round(opp.min_score)}+</p>
+          {/* ── Looking for (formats, genres, budget, tags) ── */}
+          <div className="mb-6">
+            <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-3">Looking for</p>
+            <div className="space-y-2">
+              {/* Formats */}
+              <div className="flex items-center gap-2">
+                <span className="text-[12px] font-semibold text-gray-500 w-16 shrink-0">Format</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {opp.formats?.length > 0 ? opp.formats.map((f: string) => (
+                    <span key={f} className="text-[12px] font-semibold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+                      {FORMAT_LABELS[f] ?? f}
+                    </span>
+                  )) : (
+                    <span className="text-[12px] text-gray-500">All</span>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
-
-          {/* ── Looking for (genres, formats, budget) ── */}
-          {((opp.formats?.length > 0) || (opp.genres?.length > 0) || (opp.budget_tiers?.length > 0)) && (
-            <div className="mb-6">
-              <p className="text-[12px] font-bold text-gray-400 uppercase tracking-wide m-0 mb-2">Looking for</p>
-              <div className="flex flex-wrap gap-2">
-                {opp.formats?.map((f: string) => (
-                  <span key={f} className="text-[13px] font-semibold text-gray-700 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
-                    {FORMAT_LABELS[f] ?? f}
-                  </span>
-                ))}
-                {opp.genres?.map((g: string) => (
-                  <span key={g} className="text-[13px] font-semibold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-                    {GENRE_LABELS[g] ?? g}
-                  </span>
-                ))}
-                {opp.budget_tiers?.map((b: string) => (
-                  <span key={b} className="text-[13px] font-semibold text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-                    {BUDGET_LABELS[b] ?? b} budget
-                  </span>
-                ))}
+              {/* Genres */}
+              <div className="flex items-center gap-2">
+                <span className="text-[12px] font-semibold text-gray-500 w-16 shrink-0">Genre</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {opp.genres?.length > 0 ? opp.genres.map((g: string) => (
+                    <span key={g} className="text-[12px] font-semibold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+                      {GENRE_LABELS[g] ?? g}
+                    </span>
+                  )) : (
+                    <span className="text-[12px] text-gray-500">All</span>
+                  )}
+                </div>
               </div>
+              {/* Budget */}
+              <div className="flex items-center gap-2">
+                <span className="text-[12px] font-semibold text-gray-500 w-16 shrink-0">Budget</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {opp.budget_tiers?.length > 0 ? opp.budget_tiers.map((b: string) => (
+                    <span key={b} className="text-[12px] font-semibold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+                      {BUDGET_LABELS[b] ?? b}
+                    </span>
+                  )) : (
+                    <span className="text-[12px] text-gray-500">All</span>
+                  )}
+                </div>
+              </div>
+              {/* Tags */}
+              {opp.tags?.length > 0 && (
+                <div className="flex items-center gap-2">
+                  <span className="text-[12px] font-semibold text-gray-500 w-16 shrink-0">Tags</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {opp.tags.map((t: string) => (
+                      <span key={t} className="text-[12px] font-semibold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-          )}
+          </div>
 
           {/* ── Divider ── */}
           <div className="h-px bg-gray-100 mb-6" />
