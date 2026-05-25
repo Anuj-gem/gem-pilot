@@ -192,7 +192,7 @@ export function ScriptsList({
           <p className="text-[13px] text-gray-500 m-0">Upload your first screenplay to get a full evaluation.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {/* Optimistic processing cards */}
           {optimistic.map(s => (
             <div key={s.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
@@ -320,7 +320,7 @@ export function ScriptsList({
                   <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: '1px solid #f0f0f0' }}>
                     <div className="flex items-center gap-2">
                       <DiscoverToggle scriptId={s.id} isPublic={s.isPublic} isAnon={false} />
-                      <span className="text-[12px] text-gray-600">{s.isPublic ? 'Published to Discover' : 'Not published to Discover'}</span>
+                      <span className="text-[12px] text-gray-600">{s.isPublic ? 'Published to Leaderboard' : 'Not published to Leaderboard'}</span>
                     </div>
                     <Link href={reportHref} className="text-[13px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline whitespace-nowrap">
                       View report →

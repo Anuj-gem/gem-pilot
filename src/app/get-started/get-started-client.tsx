@@ -651,12 +651,21 @@ export default function GetStartedClient() {
   function WelcomeStep() {
     return (
       <div>
-        <h1
-          className="text-2xl font-bold mb-2"
-          style={{ color: '#ffffff' }}
-        >
-          Welcome to GEM
-        </h1>
+        <div className="flex items-baseline justify-between mb-2">
+          <h1
+            className="text-2xl font-bold"
+            style={{ color: '#ffffff' }}
+          >
+            Welcome to GEM
+          </h1>
+          <Link
+            href="https://www.gem.studio/apply"
+            className="text-xs font-semibold hover:underline whitespace-nowrap"
+            style={{ color: '#7C3AED' }}
+          >
+            Are you a producer or rep? Apply for industry access →
+          </Link>
+        </div>
         <p
           className="text-sm mb-6"
           style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.6' }}
@@ -782,19 +791,6 @@ export default function GetStartedClient() {
           nothing is shared without your permission.
         </p>
 
-        <p
-          className="text-center text-xs mt-4"
-          style={{ color: 'rgba(255,255,255,0.5)' }}
-        >
-          Are you a producer or rep?{' '}
-          <Link
-            href="https://www.gem.studio/apply"
-            className="font-semibold hover:underline"
-            style={{ color: '#7C3AED' }}
-          >
-            Apply for industry access →
-          </Link>
-        </p>
       </div>
     )
   }

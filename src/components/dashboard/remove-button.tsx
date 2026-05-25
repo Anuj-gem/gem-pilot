@@ -24,7 +24,7 @@ export function RemoveButton({ submissionId, title }: Props) {
   async function onClick() {
     const ok = confirm(
       `Remove "${title}" from your dashboard?\n\n` +
-        `This also unpublishes it from Discover if it's live there. ` +
+        `This also unpublishes it from the Leaderboard if it's live there. ` +
         `The evaluation itself is preserved — if you need it back later, ` +
         `reach out and we can restore it. It still counts as your free evaluation.`
     )

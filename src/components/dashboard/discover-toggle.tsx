@@ -48,7 +48,7 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
       onClick={toggle}
       disabled={busy}
       className="inline-flex items-center cursor-pointer border-0 bg-transparent p-0 disabled:opacity-50 shrink-0"
-      aria-label={on ? 'Visible on Discover' : 'Hidden from Discover'}
+      aria-label={on ? 'Visible on Leaderboard' : 'Hidden from Leaderboard'}
     >
       {/* Toggle switch */}
       <span

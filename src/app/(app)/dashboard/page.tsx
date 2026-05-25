@@ -594,7 +594,7 @@ export default async function DashboardPage() {
                   <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: '1px solid #f0f0f0' }}>
                     <div className="flex items-center gap-2">
                       <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} isAnon={!user} />
-                      <span className="text-[12px] text-gray-600">{script.isPublic ? 'Published to Discover' : 'Not published to Discover'}</span>
+                      <span className="text-[12px] text-gray-600">{script.isPublic ? 'Published to Leaderboard' : 'Not published to Leaderboard'}</span>
                     </div>
                     <Link href={reportHref} className="text-[13px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline whitespace-nowrap">
                       View report →

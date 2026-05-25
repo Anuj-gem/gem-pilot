@@ -58,9 +58,9 @@ export function PendingActionsDropdown({ scriptId, isPublic, isPro, isAnon, qual
           style={{ background: '#F8F7FE', borderColor: '#AFA9EC' }}
           onClick={(e) => { e.preventDefault(); e.stopPropagation() }}
         >
-          {/* Share on Discover */}
+          {/* Share on Leaderboard */}
           <div className="flex items-center justify-between py-2 px-1" style={{ borderBottom: '0.5px solid #E0DDF5' }}>
-            <span className="text-[12px] lg:text-[13px] font-semibold" style={{ color: '#3C3489' }}>Share on Discover</span>
+            <span className="text-[12px] lg:text-[13px] font-semibold" style={{ color: '#3C3489' }}>Share on Leaderboard</span>
             <DiscoverToggle scriptId={scriptId} isPublic={isPublic} isPro={isPro} isAnon={isAnon} />
           </div>
           {/* Apply to opportunities */}
