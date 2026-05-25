@@ -615,11 +615,11 @@ export default function GetStartedClient() {
   // ═════════════════════════════════════════════════════════════════════════
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0a0a0e' }}>
+    <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)' }}>
       {/* ─── Nav ─────────────────────────────────────────────────────── */}
       <nav
         className="sticky top-0 z-50 flex items-center justify-between px-5 h-14"
-        style={{ backgroundColor: 'rgba(10,10,14,0.95)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ backgroundColor: 'rgba(17,15,29,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
       >
         <Link
           href="/"
