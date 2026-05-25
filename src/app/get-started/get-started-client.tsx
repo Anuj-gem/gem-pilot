@@ -781,6 +781,20 @@ export default function GetStartedClient() {
           🔒 Your work stays private. You decide who sees your scripts —
           nothing is shared without your permission.
         </p>
+
+        <p
+          className="text-center text-xs mt-4"
+          style={{ color: 'rgba(255,255,255,0.5)' }}
+        >
+          Are you a producer or rep?{' '}
+          <Link
+            href="https://www.gem.studio/apply"
+            className="font-semibold hover:underline"
+            style={{ color: '#7C3AED' }}
+          >
+            Apply for industry access →
+          </Link>
+        </p>
       </div>
     )
   }
