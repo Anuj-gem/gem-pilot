@@ -177,9 +177,11 @@ export default function Nav({ userData }: NavProps = {}) {
                       Become a Member
                     </button>
                   )}
-                  <div className="ml-2">
-                    <NewActionMenu />
-                  </div>
+                  {(!userData || userData.profile.accountType !== 'producer') && (
+                    <div className="ml-2">
+                      <NewActionMenu />
+                    </div>
+                  )}
                   {userData && (
                     <div className="ml-2">
                       <NavUserMenu
@@ -198,7 +200,7 @@ export default function Nav({ userData }: NavProps = {}) {
 
               {/* Mobile logged-in — hamburger menu */}
               <div className="md:hidden flex items-center gap-2">
-                <NewActionMenu />
+                {(!userData || userData.profile.accountType !== 'producer') && <NewActionMenu />}
                 <button
                   onClick={() => setMobileMenuOpen(v => !v)}
                   className="flex items-center justify-center w-8 h-8 rounded-lg border-0 cursor-pointer bg-transparent text-[var(--gem-white)] hover:bg-black/5 transition-colors"

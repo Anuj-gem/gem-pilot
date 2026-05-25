@@ -216,10 +216,10 @@ export function PartnerTriageClient({
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowOppDropdown(!showOppDropdown)}
-                className="flex-1 flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
+                className="flex-1 min-w-0 flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold text-white cursor-pointer border-0 transition-all hover:bg-white/10"
                 style={{ background: 'rgba(255,255,255,0.06)' }}
               >
-                <span className="truncate">{activeOpp?.title || 'Select opportunity'}</span>
+                <span className="truncate min-w-0">{activeOpp?.title || 'Select opportunity'}</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform shrink-0 ${showOppDropdown ? 'rotate-180' : ''}`}>
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -327,23 +327,27 @@ export function PartnerTriageClient({
                 } ${isPassed ? 'opacity-35' : ''}`}
                 style={{ borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: isSelected ? '3px solid #7c3aed' : '3px solid transparent' }}
               >
-                {/* Script title + score */}
+                {/* Script title + date */}
                 <div className="flex items-center justify-between mb-1">
                   <span className={`text-[14px] font-medium truncate flex-1 ${isPassed ? 'line-through text-white/30' : 'text-white'}`}>
                     {topScript?.title || 'No script'}
                   </span>
-                  <div className="flex items-center gap-2 shrink-0 ml-2">
-                    {isMet && <span className="text-[10px] text-green-400">✓ Meet</span>}
-                    {isPassed && <span className="text-[10px] text-white/30">Passed</span>}
-                    {score && !isPassed && (
-                      <span className="flex items-center gap-0.5">
-                        <GemDiamond size={7} />
-                        <span className={`text-[13px] font-bold ${score >= 75 ? 'text-purple-400' : 'text-white/40'}`}>
-                          {score}
-                        </span>
+                  <span className="text-[11px] text-white/30 shrink-0 ml-2">{fmtDate(app.submitted_at)}</span>
+                </div>
+
+                {/* Score + heat + status */}
+                <div className="flex items-center gap-2 mb-1">
+                  {score && !isPassed && (
+                    <span className="flex items-center gap-0.5">
+                      <GemDiamond size={7} />
+                      <span className={`text-[13px] font-bold ${score >= 75 ? 'text-purple-400' : 'text-white/40'}`}>
+                        {score}
                       </span>
-                    )}
-                  </div>
+                    </span>
+                  )}
+                  <span className={`text-[11px] ${heat > 0 ? 'text-orange-400' : 'text-white/25'}`}>🔥{heat}</span>
+                  {isMet && <span className="text-[10px] text-green-400">✓ Meet</span>}
+                  {isPassed && <span className="text-[10px] text-white/30">Passed</span>}
                 </div>
 
                 {/* Format · Genre · Budget */}
@@ -354,20 +358,14 @@ export function PartnerTriageClient({
                   {topScript?.budget_tier && <><span>·</span><span>{topScript.budget_tier}</span></>}
                 </div>
 
-                {/* Writer name + heat + app count + date */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[12px] text-white/50">{app.writer_name || 'Unknown'}</span>
-                    {app.writer_app_count > 1 && (
-                      <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.15)', color: '#fbbf24' }}>
-                        ×{app.writer_app_count}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className={`text-[11px] ${heat > 0 ? 'text-orange-400' : 'text-white/25'}`}>🔥{heat}</span>
-                    <span className="text-[11px] text-white/20">{fmtDate(app.submitted_at)}</span>
-                  </div>
+                {/* Writer name + app count */}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[12px] text-white/50">{app.writer_name || 'Unknown'}</span>
+                  {app.writer_app_count > 1 && (
+                    <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.15)', color: '#fbbf24' }}>
+                      ×{app.writer_app_count}
+                    </span>
+                  )}
                 </div>
               </div>
             )
