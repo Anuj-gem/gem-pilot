@@ -63,6 +63,14 @@ export type PartnerOpp = {
   created_at: string
 }
 
+// Aggregate triage sentiment for a script across ALL considerations/opportunities
+export type ScriptSentiment = {
+  total_heat: number
+  liked_tags: Record<string, number>   // tag → count
+  pass_tags: Record<string, number>    // tag → count
+  review_count: number                 // how many reviews contributed
+}
+
 export default async function PartnerPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -210,5 +218,63 @@ export default async function PartnerPage() {
     scripts: scriptsByApp.get(app.id) || [],
   }))
 
-  return <PartnerTriageClient opportunities={oppList} applications={enrichedApps} />
+  // Build per-script sentiment aggregation across ALL considerations
+  // Key: script_submission_id → aggregated tags + heat
+  const scriptSentiment: Record<string, ScriptSentiment> = {}
+
+  // Get all script_submission_ids we know about
+  const allScriptIds = new Set<string>()
+  for (const app of enrichedApps) {
+    for (const s of app.scripts) {
+      allScriptIds.add(s.submission_id)
+    }
+  }
+
+  if (allScriptIds.size > 0) {
+    // Find ALL considerations that reference these scripts (across all opps, all partners)
+    const { data: allCs } = await service
+      .from('consideration_scripts')
+      .select('consideration_id, script_submission_id')
+      .in('script_submission_id', [...allScriptIds])
+
+    if (allCs && allCs.length > 0) {
+      const allConsIds = [...new Set(allCs.map((c: any) => c.consideration_id))]
+      // Fetch triage data for all those considerations
+      const { data: allTriageData } = await service
+        .from('considerations')
+        .select('id, triage_status, triage_feedback_tags')
+        .in('id', allConsIds)
+        .not('triage_feedback_tags', 'is', null)
+
+      // Map consideration_id → triage data
+      const triageMap = new Map<string, { status: string | null; tags: string[] }>()
+      for (const t of (allTriageData || []) as { id: string; triage_status: string | null; triage_feedback_tags: string[] }[]) {
+        triageMap.set(t.id, { status: t.triage_status, tags: t.triage_feedback_tags })
+      }
+
+      // Aggregate by script_submission_id
+      for (const cs of allCs as { consideration_id: string; script_submission_id: string }[]) {
+        const triage = triageMap.get(cs.consideration_id)
+        if (!triage) continue
+
+        if (!scriptSentiment[cs.script_submission_id]) {
+          scriptSentiment[cs.script_submission_id] = { total_heat: 0, liked_tags: {}, pass_tags: {}, review_count: 0 }
+        }
+        const sent = scriptSentiment[cs.script_submission_id]
+        sent.review_count++
+        for (const tag of triage.tags) {
+          if (tag.startsWith('+')) {
+            const clean = tag.slice(1)
+            sent.liked_tags[clean] = (sent.liked_tags[clean] || 0) + 1
+            sent.total_heat++
+          } else {
+            const clean = tag.startsWith('-') ? tag.slice(1) : tag
+            sent.pass_tags[clean] = (sent.pass_tags[clean] || 0) + 1
+          }
+        }
+      }
+    }
+  }
+
+  return <PartnerTriageClient opportunities={oppList} applications={enrichedApps} scriptSentiment={scriptSentiment} />
 }

@@ -5,7 +5,7 @@
 
 import { useState, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import type { PartnerApp, PartnerOpp } from '@/app/partner/page'
+import type { PartnerApp, PartnerOpp, ScriptSentiment } from '@/app/partner/page'
 import { OpportunitySettings } from './opportunity-settings'
 
 const LIKED_TAGS = ['Interesting idea', 'Strong voice', 'Producible']
@@ -31,9 +31,11 @@ function GemDiamond({ size = 12 }: { size?: number }) {
 export function PartnerTriageClient({
   opportunities,
   applications,
+  scriptSentiment = {},
 }: {
   opportunities: PartnerOpp[]
   applications: PartnerApp[]
+  scriptSentiment?: Record<string, ScriptSentiment>
 }) {
   const [activeOppId, setActiveOppId] = useState(opportunities[0]?.id || '')
   const [selectedAppId, setSelectedAppId] = useState<string | null>(null)
@@ -477,66 +479,105 @@ export function PartnerTriageClient({
                 )
               })()}
 
-              {/* Previous applications by this writer */}
+              {/* Previous applications by this writer for this opportunity */}
               {writerHistory.length > 0 && (
-                <div className="px-6 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <button
-                    onClick={() => setShowHistory(!showHistory)}
-                    className="flex items-center gap-2 text-[13px] text-white/70 hover:text-white/90 cursor-pointer bg-transparent border-0 transition-colors"
-                  >
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={`transition-transform ${showHistory ? 'rotate-90' : ''}`}>
-                      <path d="M3 1.5L6.5 5L3 8.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    {writerHistory.length} previous application{writerHistory.length !== 1 ? 's' : ''}
-                  </button>
-                  {showHistory && (
-                    <div className="mt-2 space-y-1.5">
-                      {writerHistory.map(prev => {
-                        const prevStatus = triageState[prev.id]?.status || prev.triage_status
-                        const prevTags = triageState[prev.id]?.tags || prev.triage_feedback_tags
-                        const prevHeat = prev.scripts[0]?.heat_score ?? 0
-                        return (
-                          <div
-                            key={prev.id}
-                            onClick={() => { setSelectedAppId(prev.id); setShowPassFeedback(null); resetFeedback() }}
-                            className="px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-white/[0.04]"
-                            style={{ background: 'rgba(255,255,255,0.02)' }}
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="text-[13px] text-white/80 truncate">{prev.scripts[0]?.title || 'No script'}</span>
-                              <div className="flex items-center gap-2 shrink-0">
-                                {prevHeat > 0 && (
-                                  <span className="text-[11px] text-orange-400">🔥 +{prevHeat}</span>
-                                )}
-                                {prevStatus && (
-                                  <span className={`text-[11px] px-1.5 py-0.5 rounded-full ${prevStatus === 'meet' ? 'text-green-400' : 'text-white/50'}`} style={{
-                                    background: prevStatus === 'meet' ? 'rgba(74,222,128,0.08)' : 'rgba(255,255,255,0.04)',
-                                  }}>
-                                    {prevStatus === 'meet' ? '✓ Shortlisted' : 'Passed'}
-                                  </span>
-                                )}
-                                <span className="text-[12px] text-white/60">{fmtDate(prev.submitted_at)}</span>
-                              </div>
-                            </div>
-                            {prevTags && prevTags.length > 0 && (
-                              <div className="flex flex-wrap gap-1 mt-1.5">
-                                {prevTags.map(tag => (
-                                  <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded-full" style={{
-                                    background: tag.startsWith('+') ? 'rgba(74,222,128,0.08)' : 'rgba(248,113,113,0.08)',
-                                    color: tag.startsWith('+') ? 'rgba(74,222,128,0.6)' : 'rgba(248,113,113,0.6)',
-                                  }}>
-                                    {tag.replace(/^[+-]/, '')}
-                                  </span>
-                                ))}
-                              </div>
+                <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">
+                    Applied {writerHistory.length + 1} times for this opportunity
+                  </span>
+                  <div className="mt-3 space-y-2.5">
+                    {writerHistory.map(prev => {
+                      const prevStatus = triageState[prev.id]?.status || prev.triage_status
+                      const prevScript = prev.scripts[0]
+                      const prevHeat = prevScript?.heat_score ?? 0
+                      return (
+                        <div key={prev.id} className="px-3 py-2.5 rounded-lg" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                          <div className="flex items-center justify-between gap-2">
+                            {prevScript?.eval_id ? (
+                              <Link href={`/report/${prevScript.eval_id}`} className="text-[13px] text-purple-400 hover:text-purple-300 truncate no-underline">
+                                {prevScript.title || 'Untitled'}
+                              </Link>
+                            ) : (
+                              <span className="text-[13px] text-white/80 truncate">{prevScript?.title || 'No script'}</span>
+                            )}
+                            <span className="text-[12px] text-white/40 shrink-0">{fmtDate(prev.submitted_at)}</span>
+                          </div>
+                          <div className="flex items-center gap-3 mt-1.5">
+                            {prevStatus && (
+                              <span className="text-[12px] text-white/60">
+                                {prevStatus === 'meet' ? 'Shortlisted' : 'Passed'}
+                              </span>
+                            )}
+                            {prevHeat > 0 && (
+                              <span className="text-[12px] text-orange-400">+{prevHeat} heat earned</span>
                             )}
                           </div>
-                        )
-                      })}
-                    </div>
-                  )}
+                          {(triageState[prev.id]?.tags || prev.triage_feedback_tags || []).length > 0 && (
+                            <div className="flex flex-wrap gap-1.5 mt-2">
+                              {(triageState[prev.id]?.tags || prev.triage_feedback_tags || []).map(tag => (
+                                <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                                  {tag.replace(/^[+-]/, '')}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               )}
+
+              {/* Industry sentiment — aggregate feedback across all partners/opportunities */}
+              {(() => {
+                const scriptId = selectedApp.scripts[0]?.submission_id
+                const sentiment = scriptId ? scriptSentiment[scriptId] : null
+                if (!sentiment || sentiment.review_count === 0) return null
+                const likedEntries = Object.entries(sentiment.liked_tags).sort((a, b) => b[1] - a[1])
+                const passEntries = Object.entries(sentiment.pass_tags).sort((a, b) => b[1] - a[1])
+                return (
+                  <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                    <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">
+                      Industry sentiment
+                    </span>
+                    <p className="text-[12px] text-white/40 mt-1 mb-0">
+                      From {sentiment.review_count} review{sentiment.review_count !== 1 ? 's' : ''} across all opportunities
+                    </p>
+
+                    {sentiment.total_heat > 0 && (
+                      <div className="mt-3 flex items-center gap-2">
+                        <span className="text-[13px] text-orange-400 font-medium">🔥 {sentiment.total_heat} total heat</span>
+                      </div>
+                    )}
+
+                    {likedEntries.length > 0 && (
+                      <div className="mt-3">
+                        <span className="text-[11px] text-white/50 uppercase tracking-wider">What people liked</span>
+                        <div className="flex flex-wrap gap-1.5 mt-1.5">
+                          {likedEntries.map(([tag, count]) => (
+                            <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                              {tag}{count > 1 ? ` x${count}` : ''}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {passEntries.length > 0 && (
+                      <div className="mt-3">
+                        <span className="text-[11px] text-white/50 uppercase tracking-wider">Why people passed</span>
+                        <div className="flex flex-wrap gap-1.5 mt-1.5">
+                          {passEntries.map(([tag, count]) => (
+                            <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                              {tag}{count > 1 ? ` x${count}` : ''}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )
+              })()}
 
               {/* Action buttons */}
               <div className="px-6 py-5 mt-auto" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
