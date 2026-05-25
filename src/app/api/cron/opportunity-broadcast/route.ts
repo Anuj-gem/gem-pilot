@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
   let query = service
     .from("opportunities")
-    .select("id, title, formats, genres, budget_tiers, description, slug, perspective")
+    .select("id, title, formats, genres, budget_tiers, tags, description, slug")
     .eq("status", "active")
 
   if (slugParam) {
@@ -67,6 +67,7 @@ export async function POST(request: NextRequest) {
     const format = Array.isArray(opp.formats) ? opp.formats.join(", ") : (opp.formats || "Any")
     const genres = Array.isArray(opp.genres) ? opp.genres.join(", ") : (opp.genres || "Any")
     const budget = Array.isArray(opp.budget_tiers) ? opp.budget_tiers.join(", ") : (opp.budget_tiers || "Any")
+    const tags = Array.isArray(opp.tags) ? opp.tags.join(", ") : (opp.tags || "")
 
     for (const user of users) {
       if (!user.email) continue
@@ -83,7 +84,7 @@ export async function POST(request: NextRequest) {
             format,
             genres,
             budget,
-            partner_type: opp.perspective === 'lit_rep' ? 'Talent Rep' : opp.perspective === 'actor_rep' ? 'Talent Rep' : opp.perspective === 'financier' ? 'Financier' : 'Producer',
+            tags,
             description: opp.description || "",
             opportunity_url: oppUrl,
           },

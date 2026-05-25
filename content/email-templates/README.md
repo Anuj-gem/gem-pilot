@@ -50,7 +50,7 @@ Drip sends via broadcast stream.
 
 | File | Trigger | Variables |
 |---|---|---|
-| `new_opportunity_broadcast.md` | New opportunity added to GEM | `{{opportunity_title}}`, `{{format}}`, `{{genres}}`, `{{budget}}`, `{{partner_type}}`, `{{description}}`, `{{opportunity_url}}` |
+| `new_opportunity_broadcast.md` | New opportunity added to GEM | `{{opportunity_title}}`, `{{format}}`, `{{genres}}`, `{{budget}}`, `{{tags}}`, `{{description}}`, `{{opportunity_url}}` |
 | `opportunities_announcement.md` | One-time announcement | (legacy) |
 | `trial_opportunities_personal.md` | Personalized trial user push | (per-user match data) |
 

@@ -85,5 +85,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: insertError?.message || 'Failed to create opportunity' }, { status: 500 })
   }
 
+  // Fire opportunity broadcast email to all writers (fire-and-forget).
+  // The broadcast route is idempotent (dedupe key per opp+user), so safe
+  // to call even if it somehow fires twice.
+  const broadcastUrl = new URL('/api/cron/opportunity-broadcast', req.url)
+  broadcastUrl.searchParams.set('slug', opportunity.slug)
+  fetch(broadcastUrl.toString(), { method: 'POST' }).catch((err) =>
+    console.error('[opportunity/create] broadcast trigger failed:', err)
+  )
+
   return NextResponse.json({ id: opportunity.id, slug: opportunity.slug })
 }
