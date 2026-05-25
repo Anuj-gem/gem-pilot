@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 
 const SITE_URL = "https://www.gem.studio"
 const SITE_NAME = "GEM"
-const DEFAULT_TITLE = "GEM — Built to help screenwriters succeed"
+const DEFAULT_TITLE = "GEM"
 const DEFAULT_DESCRIPTION = "Upload your screenplay. Get a sharable pitch, private development notes, and an industry match in 60 seconds. First read free."
 const SHORT_DESCRIPTION = "A pitch, notes, and industry matching for your script. First read free."
 
@@ -60,9 +60,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 }
 
