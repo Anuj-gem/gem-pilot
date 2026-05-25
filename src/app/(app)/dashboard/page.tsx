@@ -869,12 +869,7 @@ export default async function DashboardPage() {
                             {opp.title}
                           </h3>
                           <div className="flex items-center gap-2 shrink-0">
-                            {newForOpp > 0 && (
-                              <span className="text-[11px] font-bold px-2 py-0.5" style={{ background: 'rgba(250,204,21,0.2)', color: '#fbbf24', borderRadius: 4 }}>
-                                {newForOpp} new
-                              </span>
-                            )}
-                            <span className="text-[11px] font-bold px-2 py-0.5" style={{
+<span className="text-[11px] font-bold px-2 py-0.5" style={{
                               background: isActive ? 'rgba(52,211,153,0.15)' : 'rgba(255,255,255,0.08)',
                               color: isActive ? '#34d399' : 'rgba(255,255,255,0.4)',
                               borderRadius: 4,
