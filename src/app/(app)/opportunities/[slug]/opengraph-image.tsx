@@ -1,61 +1,11 @@
 import { ImageResponse } from 'next/og'
-import { createServerClient } from '@supabase/ssr'
 
 export const runtime = 'edge'
-export const alt = 'GEM — Opportunity'
+export const alt = 'GEM — Open opportunity for screenwriters'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
-const CREAM = '#FAF7F0'
-const PURPLE = '#7C3AED'
-const GOLD = '#C9A55A'
-const DARK = '#1A1A1A'
-
-const FORMAT_LABELS: Record<string, string> = {
-  feature: 'Feature Film',
-  pilot: 'TV Pilot',
-  series: 'Series',
-  short: 'Short Film',
-  limited: 'Limited Series',
-}
-
-const GENRE_LABELS: Record<string, string> = {
-  thriller: 'Thriller', crime: 'Crime', horror: 'Horror', drama: 'Drama',
-  comedy: 'Comedy', 'sci-fi': 'Sci-Fi', fantasy: 'Fantasy', romance: 'Romance',
-  action: 'Action', family: 'Family', western: 'Western', musical: 'Musical',
-}
-
-export default async function OpengraphImage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
-
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { cookies: { getAll() { return [] }, setAll() {} } }
-  )
-
-  const { data: opp } = await supabase
-    .from('opportunities')
-    .select('title, description, format, genres')
-    .eq('slug', slug)
-    .eq('status', 'active')
-    .single()
-
-  // Fallback if not found
-  const title = opp?.title || 'Opportunity'
-  const description = opp?.description?.slice(0, 120) || ''
-  const format = opp?.format ? FORMAT_LABELS[opp.format] || opp.format : null
-  const genres: string[] = opp?.genres || []
-  const genreStr = genres
-    .slice(0, 3)
-    .map((g: string) => GENRE_LABELS[g] || g)
-    .join(' · ')
-  const subtitle = [format, genreStr].filter(Boolean).join(' — ')
-
+export default async function OpengraphImage() {
   return new ImageResponse(
     (
       <div
@@ -65,76 +15,95 @@ export default async function OpengraphImage({
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          background: CREAM,
+          background: '#0f0b1a',
           fontFamily: 'system-ui, -apple-system, sans-serif',
-          color: DARK,
-          padding: '60px 80px',
+          padding: '80px 100px',
+          position: 'relative',
         }}
       >
+        {/* Logo */}
         <div
           style={{
             display: 'flex',
-            fontSize: 14,
-            fontWeight: 700,
-            letterSpacing: 4,
-            color: PURPLE,
-            marginBottom: 20,
+            alignItems: 'center',
+            gap: 16,
+            marginBottom: 48,
           }}
         >
-          GEM
+          <div
+            style={{
+              width: 28,
+              height: 28,
+              transform: 'rotate(45deg)',
+              background: 'linear-gradient(135deg, #a78bfa, #7c3aed)',
+              display: 'flex',
+            }}
+          />
+          <div
+            style={{
+              fontSize: 42,
+              fontWeight: 800,
+              color: '#ffffff',
+              letterSpacing: -1,
+              display: 'flex',
+            }}
+          >
+            GEM
+          </div>
         </div>
+
+        {/* Main text */}
         <div
           style={{
             display: 'flex',
-            fontSize: 13,
+            fontSize: 16,
             fontWeight: 600,
-            letterSpacing: 2.5,
-            color: GOLD,
+            letterSpacing: 3,
             textTransform: 'uppercase',
+            color: '#a78bfa',
             marginBottom: 16,
           }}
         >
-          Opportunity
+          Open opportunity
         </div>
         <div
           style={{
             display: 'flex',
-            fontFamily: 'Georgia, serif',
-            fontSize: 52,
-            fontWeight: 700,
-            lineHeight: 1.1,
-            letterSpacing: -1,
-            marginBottom: 16,
+            fontSize: 56,
+            fontWeight: 800,
+            color: '#ffffff',
+            lineHeight: 1.15,
+            letterSpacing: -1.5,
+            marginBottom: 24,
           }}
         >
-          {title}
+          Open opportunity for screenwriters
         </div>
-        {subtitle && (
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 18,
-              fontWeight: 600,
-              color: PURPLE,
-              marginBottom: 16,
-            }}
-          >
-            {subtitle}
-          </div>
-        )}
-        {description && (
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 20,
-              lineHeight: 1.5,
-              color: '#555',
-              maxWidth: 900,
-            }}
-          >
-            {description}{description.length >= 120 ? '…' : ''}
-          </div>
-        )}
+        <div
+          style={{
+            display: 'flex',
+            fontSize: 22,
+            color: 'rgba(255,255,255,0.55)',
+            fontWeight: 500,
+          }}
+        >
+          Apply for free on GEM
+        </div>
+
+        {/* Domain */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 40,
+            right: 60,
+            fontSize: 15,
+            color: 'rgba(255,255,255,0.3)',
+            fontWeight: 500,
+            display: 'flex',
+          }}
+        >
+          gem.studio
+        </div>
       </div>
     ),
     { ...size }

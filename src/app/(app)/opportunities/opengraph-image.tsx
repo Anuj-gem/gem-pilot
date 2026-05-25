@@ -1,14 +1,9 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Opportunities — GEM'
+export const alt = 'GEM — Open opportunity for screenwriters'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-
-const CREAM = '#FAF7F0'
-const PURPLE = '#7C3AED'
-const GOLD = '#C9A55A'
-const DARK = '#1A1A1A'
 
 export default async function OpengraphImage() {
   return new ImageResponse(
@@ -19,63 +14,95 @@ export default async function OpengraphImage() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
           justifyContent: 'center',
-          background: CREAM,
+          background: '#0f0b1a',
           fontFamily: 'system-ui, -apple-system, sans-serif',
-          color: DARK,
-          padding: '60px 80px',
+          padding: '80px 100px',
+          position: 'relative',
         }}
       >
+        {/* Logo */}
         <div
           style={{
             display: 'flex',
-            fontSize: 14,
-            fontWeight: 700,
-            letterSpacing: 4,
-            color: PURPLE,
-            marginBottom: 24,
+            alignItems: 'center',
+            gap: 16,
+            marginBottom: 48,
           }}
         >
-          GEM
+          <div
+            style={{
+              width: 28,
+              height: 28,
+              transform: 'rotate(45deg)',
+              background: 'linear-gradient(135deg, #a78bfa, #7c3aed)',
+              display: 'flex',
+            }}
+          />
+          <div
+            style={{
+              fontSize: 42,
+              fontWeight: 800,
+              color: '#ffffff',
+              letterSpacing: -1,
+              display: 'flex',
+            }}
+          >
+            GEM
+          </div>
         </div>
+
+        {/* Main text */}
         <div
           style={{
             display: 'flex',
-            fontSize: 13,
+            fontSize: 16,
             fontWeight: 600,
-            letterSpacing: 2.5,
-            color: GOLD,
+            letterSpacing: 3,
             textTransform: 'uppercase',
-            marginBottom: 20,
+            color: '#a78bfa',
+            marginBottom: 16,
           }}
         >
-          Opportunities
+          Open opportunity
         </div>
         <div
           style={{
             display: 'flex',
-            fontFamily: 'Georgia, serif',
             fontSize: 56,
-            fontWeight: 700,
-            lineHeight: 1.1,
-            letterSpacing: -1,
-            textAlign: 'center',
+            fontWeight: 800,
+            color: '#ffffff',
+            lineHeight: 1.15,
+            letterSpacing: -1.5,
             marginBottom: 24,
           }}
         >
-          Scripts wanted.
+          Open opportunity for screenwriters
         </div>
         <div
           style={{
             display: 'flex',
             fontSize: 22,
-            lineHeight: 1.5,
-            color: '#555',
-            textAlign: 'center',
+            color: 'rgba(255,255,255,0.55)',
+            fontWeight: 500,
           }}
         >
-          Opportunities from producers and lit reps looking for new voices.
+          Apply for free on GEM
+        </div>
+
+        {/* Domain */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 40,
+            right: 60,
+            fontSize: 15,
+            color: 'rgba(255,255,255,0.3)',
+            fontWeight: 500,
+            display: 'flex',
+          }}
+        >
+          gem.studio
         </div>
       </div>
     ),
