@@ -735,7 +735,7 @@ export default async function DashboardPage() {
                         {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}{fmtDate(app.submitted_at)}
                       </p>
                     </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: '#f3f0ff', color: '#7c3aed' }}>Pending</span>
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: '#f3f0ff', color: '#7c3aed' }}>In Consideration</span>
                   </div>
                 </Link>
               )
@@ -919,18 +919,15 @@ export default async function DashboardPage() {
         ) : (
           <>
           {/* ── WELCOME HEADER ── */}
-          <h1 className="text-[24px] sm:text-[28px] font-bold text-white m-0 leading-tight">
+          <h1 className="text-[24px] sm:text-[28px] font-bold text-white m-0 mb-6 leading-tight">
             Welcome back, {profile?.full_name?.split(' ')[0] || 'Writer'}
           </h1>
 
-          {/* ── WRITER STATS ROW — icon · number · label ── */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          {/* ── WRITER STATS ROW — emoji · number · label ── */}
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
             <Link href="/scripts" className="no-underline block">
               <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M14 2v6h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <span className="text-[18px] sm:text-[20px] leading-none shrink-0">📄</span>
                 <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{scriptCount}</span>
                 <span className="text-[12px] sm:text-[14px] font-bold text-white">Scripts</span>
               </div>
@@ -951,6 +948,15 @@ export default async function DashboardPage() {
                   {totalHeat > 0 ? totalHeat : '—'}
                 </span>
                 <span className="text-[12px] sm:text-[14px] font-bold text-white">Heat</span>
+              </div>
+            </Link>
+            <Link href="/applications" className="no-underline block">
+              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <span className="text-[18px] sm:text-[20px] leading-none shrink-0">📨</span>
+                <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: pendingCount > 0 ? '#a78bfa' : 'rgba(255,255,255,0.3)' }}>
+                  {pendingCount > 0 ? pendingCount : '—'}
+                </span>
+                <span className="text-[12px] sm:text-[14px] font-bold text-white whitespace-nowrap">Pending</span>
               </div>
             </Link>
           </div>
