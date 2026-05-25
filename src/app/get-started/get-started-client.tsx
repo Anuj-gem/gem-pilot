@@ -95,7 +95,7 @@ function ProgressBar({ current }: { current: Step }) {
                 ? 'rgba(124,58,237,0.5)'
                 : i === idx
                   ? '#7C3AED'
-                  : '#E7E5E4',
+                  : 'rgba(255,255,255,0.1)',
           }}
         />
       ))}
@@ -138,14 +138,14 @@ function EvalSpinner({ done }: { done: boolean }) {
   return (
     <div
       className="flex items-center gap-3 p-3 rounded-xl mb-6"
-      style={{ backgroundColor: '#FAFAF9', border: '1px solid #E7E5E4' }}
+      style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
     >
-      <div className="w-11 h-11 rounded-full border-[3px] border-[#E7E5E4] border-t-[#7C3AED] animate-spin shrink-0" />
+      <div className="w-11 h-11 rounded-full border-[3px] border-white/15 border-t-[#7C3AED] animate-spin shrink-0" />
       <div>
-        <p className="text-sm font-medium" style={{ color: '#1a1a1a' }}>
+        <p className="text-sm font-medium" style={{ color: '#ffffff' }}>
           {msg.main}
         </p>
-        <p className="text-xs" style={{ color: '#78716C' }}>
+        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
           {msg.sub}
         </p>
       </div>
@@ -157,10 +157,10 @@ function EvalSpinner({ done }: { done: boolean }) {
 const inputFocus = {
   onFocus: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.target.style.borderColor = '#7C3AED'
-    e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.08)'
+    e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.15)'
   },
   onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.target.style.borderColor = '#E7E5E4'
+    e.target.style.borderColor = 'rgba(255,255,255,0.12)'
     e.target.style.boxShadow = 'none'
   },
 }
@@ -168,8 +168,9 @@ const inputFocus = {
 const inputClass =
   'w-full px-3.5 py-2.5 rounded-[10px] text-sm outline-none transition-all'
 const inputStyle: React.CSSProperties = {
-  border: '1px solid #E7E5E4',
-  color: '#1a1a1a',
+  border: '1px solid rgba(255,255,255,0.12)',
+  color: '#ffffff',
+  backgroundColor: 'rgba(255,255,255,0.06)',
 }
 
 // ─── Google logo SVG ────────────────────────────────────────────────────────
@@ -614,11 +615,11 @@ export default function GetStartedClient() {
   // ═════════════════════════════════════════════════════════════════════════
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FFFFFF' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#0a0a0e' }}>
       {/* ─── Nav ─────────────────────────────────────────────────────── */}
       <nav
         className="sticky top-0 z-50 flex items-center justify-between px-5 h-14"
-        style={{ backgroundColor: '#1a1a1a' }}
+        style={{ backgroundColor: 'rgba(10,10,14,0.95)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
       >
         <Link
           href="/"
@@ -628,7 +629,7 @@ export default function GetStartedClient() {
         </Link>
         <div
           className="flex items-center gap-6 text-sm"
-          style={{ color: '#A8A29E' }}
+          style={{ color: 'rgba(255,255,255,0.5)' }}
         >
           <Link href="/" className="hover:text-white transition-colors">
             Home
@@ -675,13 +676,13 @@ export default function GetStartedClient() {
       <div>
         <h1
           className="text-2xl font-bold mb-2"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Welcome to GEM
         </h1>
         <p
           className="text-sm mb-6"
-          style={{ color: '#57534E', lineHeight: '1.6' }}
+          style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.6' }}
         >
           GEM connects writers with vetted industry opportunities. We evaluate
           your script, match you with production companies, managers, and
@@ -693,7 +694,7 @@ export default function GetStartedClient() {
         <div className="relative mb-8 pl-8">
           <div
             className="absolute left-[11px] top-[22px] bottom-[22px] w-[2px]"
-            style={{ backgroundColor: '#E7E5E4' }}
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
           />
           {(
             [
@@ -721,11 +722,11 @@ export default function GetStartedClient() {
               <div>
                 <p
                   className="text-sm font-semibold"
-                  style={{ color: '#1a1a1a' }}
+                  style={{ color: '#ffffff' }}
                 >
                   {title}
                 </p>
-                <p className="text-xs mt-0.5" style={{ color: '#78716C' }}>
+                <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
                   {desc}
                 </p>
               </div>
@@ -736,7 +737,7 @@ export default function GetStartedClient() {
         {/* Name */}
         <label
           className="block text-sm font-medium mb-1.5"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Your name
         </label>
@@ -753,7 +754,7 @@ export default function GetStartedClient() {
         {/* Genres */}
         <label
           className="block text-sm font-medium mb-1.5"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           What do you write?
         </label>
@@ -770,9 +771,9 @@ export default function GetStartedClient() {
                 }
                 className="px-4 py-2 rounded-full text-sm font-medium transition-all"
                 style={{
-                  backgroundColor: on ? '#7C3AED' : '#FFFFFF',
-                  color: on ? '#FFFFFF' : '#57534E',
-                  border: `1px solid ${on ? '#7C3AED' : '#E7E5E4'}`,
+                  backgroundColor: on ? '#7C3AED' : 'rgba(255,255,255,0.06)',
+                  color: on ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
+                  border: `1px solid ${on ? '#7C3AED' : 'rgba(255,255,255,0.12)'}`,
                 }}
               >
                 {g}
@@ -798,7 +799,7 @@ export default function GetStartedClient() {
 
         <p
           className="text-center text-xs mt-4"
-          style={{ color: '#A8A29E' }}
+          style={{ color: 'rgba(255,255,255,0.4)' }}
         >
           🔒 Your work stays private. You decide who sees your scripts —
           nothing is shared without your permission.
@@ -813,13 +814,13 @@ export default function GetStartedClient() {
       <div>
         <h1
           className="text-2xl font-bold mb-2"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Upload your script
         </h1>
         <p
           className="text-sm mb-6"
-          style={{ color: '#57534E', lineHeight: '1.6' }}
+          style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.6' }}
         >
           We&rsquo;ll evaluate your screenplay and match you with opportunities
           that fit. Takes about 60 seconds.
@@ -828,7 +829,7 @@ export default function GetStartedClient() {
         {/* Format toggle */}
         <label
           className="block text-sm font-medium mb-1.5"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Format
         </label>
@@ -839,9 +840,9 @@ export default function GetStartedClient() {
               onClick={() => setFormat(f)}
               className="flex-1 py-3 rounded-[10px] text-sm font-medium transition-all"
               style={{
-                backgroundColor: format === f ? '#7C3AED' : '#FFFFFF',
-                color: format === f ? '#FFFFFF' : '#57534E',
-                border: `1px solid ${format === f ? '#7C3AED' : '#E7E5E4'}`,
+                backgroundColor: format === f ? '#7C3AED' : 'rgba(255,255,255,0.06)',
+                color: format === f ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
+                border: `1px solid ${format === f ? '#7C3AED' : 'rgba(255,255,255,0.12)'}`,
               }}
             >
               {f === 'Feature film' ? 'Film' : 'Series'}
@@ -860,22 +861,22 @@ export default function GetStartedClient() {
 
         {/* ── VALIDATING ── */}
         {uploadSubState === 'validating' && (
-          <div className="rounded-[14px] p-9 text-center mb-5" style={{ border: '1px solid #E7E5E4', backgroundColor: '#FAFAF9' }}>
-            <div className="w-8 h-8 mx-auto rounded-full border-[3px] border-[#E7E5E4] border-t-[#7C3AED] animate-spin mb-3" />
-            <p className="text-sm font-medium" style={{ color: '#1a1a1a' }}>Checking your file...</p>
-            <p className="text-xs mt-1" style={{ color: '#78716C' }}>{fileName}</p>
+          <div className="rounded-[14px] p-9 text-center mb-5" style={{ border: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.05)' }}>
+            <div className="w-8 h-8 mx-auto rounded-full border-[3px] border-white/15 border-t-[#7C3AED] animate-spin mb-3" />
+            <p className="text-sm font-medium" style={{ color: '#ffffff' }}>Checking your file...</p>
+            <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>{fileName}</p>
           </div>
         )}
 
         {/* ── CONFIRMED — ready to go ── */}
         {uploadSubState === 'confirmed' && (
-          <div className="rounded-[14px] p-6 text-center mb-5" style={{ border: '1px solid rgba(34,197,94,0.3)', backgroundColor: 'rgba(34,197,94,0.04)' }}>
+          <div className="rounded-[14px] p-6 text-center mb-5" style={{ border: '1px solid rgba(34,197,94,0.3)', backgroundColor: 'rgba(34,197,94,0.06)' }}>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="mx-auto mb-3">
               <circle cx="14" cy="14" r="14" fill="rgba(34,197,94,0.15)" />
               <path d="M8 14.5l3.5 3.5 7-7" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <p className="text-sm font-semibold" style={{ color: '#1a1a1a' }}>Your script is ready</p>
-            <p className="text-xs mt-1 mb-4" style={{ color: '#78716C' }}>
+            <p className="text-sm font-semibold" style={{ color: '#ffffff' }}>Your script is ready</p>
+            <p className="text-xs mt-1 mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>
               {fileName}{pageEstimate ? ` · ~${pageEstimate} pages` : ''}
             </p>
             <button
@@ -894,23 +895,23 @@ export default function GetStartedClient() {
             onClick={() => fileRef.current?.click()}
             className="rounded-[14px] p-9 text-center transition-all cursor-pointer mb-5"
             style={{
-              border: '2px dashed #D6D3D1',
+              border: '2px dashed rgba(255,255,255,0.2)',
               backgroundColor: 'transparent',
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.borderColor = '#7C3AED'
-              e.currentTarget.style.backgroundColor = 'rgba(124,58,237,0.02)'
+              e.currentTarget.style.backgroundColor = 'rgba(124,58,237,0.06)'
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.borderColor = '#D6D3D1'
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
               e.currentTarget.style.backgroundColor = 'transparent'
             }}
           >
             <div className="text-3xl mb-2">📄</div>
-            <p className="text-sm font-medium" style={{ color: '#57534E' }}>
+            <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Drop your script here or click to browse
             </p>
-            <p className="text-xs mt-1" style={{ color: '#A8A29E' }}>
+            <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
               PDF only · Max 10 MB
             </p>
           </div>
@@ -939,19 +940,19 @@ export default function GetStartedClient() {
           <div
             className="rounded-[14px] p-4"
             style={{
-              backgroundColor: '#FAFAF9',
-              border: '1px solid #F5F5F4',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
             }}
           >
             <p
               className="text-sm font-semibold mb-2"
-              style={{ color: '#1a1a1a' }}
+              style={{ color: '#ffffff' }}
             >
               🔒 Our privacy commitment
             </p>
             <div
               className="text-xs space-y-1.5"
-              style={{ color: '#78716C', lineHeight: '1.5' }}
+              style={{ color: 'rgba(255,255,255,0.5)', lineHeight: '1.5' }}
             >
               <p>
                 • Your scripts are private by default — only you can see them
@@ -980,13 +981,13 @@ export default function GetStartedClient() {
 
         <h1
           className="text-2xl font-bold mb-2"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Save your results
         </h1>
         <p
           className="text-sm mb-6"
-          style={{ color: '#57534E', lineHeight: '1.6' }}
+          style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.6' }}
         >
           Create a free account to access your full report, apply to
           opportunities, and track your progress. Completely free — no credit
@@ -999,13 +1000,13 @@ export default function GetStartedClient() {
           disabled={googleLoading}
           className="w-full flex items-center justify-center gap-2 py-3 rounded-[10px] text-sm font-medium transition-all"
           style={{
-            border: '1px solid #E7E5E4',
-            color: '#1a1a1a',
-            backgroundColor: '#FFFFFF',
+            border: '1px solid rgba(255,255,255,0.2)',
+            color: '#ffffff',
+            backgroundColor: 'rgba(255,255,255,0.06)',
           }}
         >
           {googleLoading ? (
-            <span style={{ color: '#78716C' }}>Opening Google…</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>Opening Google…</span>
           ) : (
             <>
               <GoogleIcon />
@@ -1018,14 +1019,14 @@ export default function GetStartedClient() {
         <div className="flex items-center gap-3 my-5">
           <div
             className="flex-1 h-px"
-            style={{ backgroundColor: '#E7E5E4' }}
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
           />
-          <span className="text-xs" style={{ color: '#A8A29E' }}>
+          <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
             or
           </span>
           <div
             className="flex-1 h-px"
-            style={{ backgroundColor: '#E7E5E4' }}
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
           />
         </div>
 
@@ -1033,7 +1034,7 @@ export default function GetStartedClient() {
         <form onSubmit={handleEmailSignup}>
           <label
             className="block text-sm font-medium mb-1.5"
-            style={{ color: '#1a1a1a' }}
+            style={{ color: '#ffffff' }}
           >
             Email
           </label>
@@ -1049,7 +1050,7 @@ export default function GetStartedClient() {
 
           <label
             className="block text-sm font-medium mb-1.5"
-            style={{ color: '#1a1a1a' }}
+            style={{ color: '#ffffff' }}
           >
             Password
           </label>
@@ -1088,13 +1089,13 @@ export default function GetStartedClient() {
 
         <h1
           className="text-2xl font-bold mb-2"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Stand out to our network
         </h1>
         <p
           className="text-sm mb-6"
-          style={{ color: '#57534E', lineHeight: '1.6' }}
+          style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.6' }}
         >
           Complete your profile so industry partners know who you are and can
           reach you directly.
@@ -1104,24 +1105,24 @@ export default function GetStartedClient() {
         <div
           className="rounded-[14px] p-4 mb-6 flex items-center gap-3"
           style={{
-            backgroundColor: '#FAFAF9',
-            border: '1px solid #F5F5F4',
+            backgroundColor: 'rgba(255,255,255,0.05)',
+            border: '1px solid rgba(255,255,255,0.1)',
           }}
         >
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold text-white shrink-0"
-            style={{ backgroundColor: name ? '#7C3AED' : '#D6D3D1' }}
+            style={{ backgroundColor: name ? '#7C3AED' : 'rgba(255,255,255,0.15)' }}
           >
             {name ? name.charAt(0).toUpperCase() : '?'}
           </div>
           <div>
             <p
               className="text-sm font-semibold"
-              style={{ color: '#1a1a1a' }}
+              style={{ color: '#ffffff' }}
             >
               {name || 'Your name'}
             </p>
-            <p className="text-xs" style={{ color: '#78716C' }}>
+            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
               {headline || 'Screenwriter'}
             </p>
           </div>
@@ -1130,11 +1131,11 @@ export default function GetStartedClient() {
         {/* Phone */}
         <label
           className="block text-sm font-medium mb-1"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Phone
         </label>
-        <p className="text-xs mb-1.5" style={{ color: '#A8A29E' }}>
+        <p className="text-xs mb-1.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
           So our team can reach you if your work stands out
         </p>
         <input
@@ -1152,7 +1153,7 @@ export default function GetStartedClient() {
         {/* Bio */}
         <label
           className="block text-sm font-medium mb-1.5"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Short bio
         </label>
@@ -1169,7 +1170,7 @@ export default function GetStartedClient() {
         {/* Headline */}
         <label
           className="block text-sm font-medium mb-1.5"
-          style={{ color: '#1a1a1a' }}
+          style={{ color: '#ffffff' }}
         >
           Headline
         </label>
@@ -1195,7 +1196,7 @@ export default function GetStartedClient() {
         <button
           onClick={advanceToResults}
           className="w-full py-2 mt-2 text-sm transition-colors"
-          style={{ color: '#A8A29E' }}
+          style={{ color: 'rgba(255,255,255,0.4)' }}
         >
           Skip for now
         </button>
@@ -1208,8 +1209,8 @@ export default function GetStartedClient() {
     if (resultsLoading || !resultsData) {
       return (
         <div className="text-center py-16">
-          <div className="w-11 h-11 mx-auto rounded-full border-[3px] border-[#E7E5E4] border-t-[#7C3AED] animate-spin mb-4" />
-          <p className="text-sm" style={{ color: '#78716C' }}>
+          <div className="w-11 h-11 mx-auto rounded-full border-[3px] border-white/15 border-t-[#7C3AED] animate-spin mb-4" />
+          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Loading your results…
           </p>
         </div>
@@ -1234,11 +1235,11 @@ export default function GetStartedClient() {
           <p className="text-lg mb-1">🎬</p>
           <h2
             className="text-xl font-extrabold mb-1"
-            style={{ color: '#1a1a1a' }}
+            style={{ color: '#ffffff' }}
           >
             Congratulations!
           </h2>
-          <p className="text-sm" style={{ color: '#57534E' }}>
+          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
             Your evaluation is complete. Our partners are actively looking for
             scripts like yours.
           </p>
@@ -1248,29 +1249,29 @@ export default function GetStartedClient() {
         <div
           className="rounded-[14px] p-4 mb-6"
           style={{
-            backgroundColor: '#FAFAF9',
-            border: '1px solid #F5F5F4',
+            backgroundColor: 'rgba(255,255,255,0.05)',
+            border: '1px solid rgba(255,255,255,0.1)',
           }}
         >
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1 min-w-0">
               <h3
                 className="text-[15px] font-bold truncate"
-                style={{ color: '#1a1a1a' }}
+                style={{ color: '#ffffff' }}
               >
                 {script.title}
               </h3>
               {evaluation?.logline && (
                 <p
                   className="text-xs italic mt-1 line-clamp-2"
-                  style={{ color: '#78716C' }}
+                  style={{ color: 'rgba(255,255,255,0.5)' }}
                 >
                   {evaluation.logline}
                 </p>
               )}
               <div
                 className="flex items-center gap-2 mt-2 text-xs"
-                style={{ color: '#A8A29E' }}
+                style={{ color: 'rgba(255,255,255,0.4)' }}
               >
                 <span>
                   {script.format === 'Feature film' ? 'Film' : 'Series'}
@@ -1315,11 +1316,11 @@ export default function GetStartedClient() {
           <div className="mb-6">
             <h3
               className="text-base font-bold mb-1"
-              style={{ color: '#1a1a1a' }}
+              style={{ color: '#ffffff' }}
             >
               Your best matches
             </h3>
-            <p className="text-xs mb-4" style={{ color: '#78716C' }}>
+            <p className="text-xs mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>
               These opportunities are from our vetted industry network. When
               you apply, real people review your work to determine whether
               you&rsquo;re a fit.
@@ -1342,23 +1343,23 @@ export default function GetStartedClient() {
                   <div
                     key={opp.id}
                     className="rounded-[14px] p-4"
-                    style={{ border: '1px solid #E7E5E4' }}
+                    style={{ border: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.04)' }}
                   >
                     <h4
                       className="text-sm font-bold mb-1"
-                      style={{ color: '#1a1a1a' }}
+                      style={{ color: '#ffffff' }}
                     >
                       {opp.title}
                     </h4>
                     <p
                       className="text-xs mb-3 line-clamp-2"
-                      style={{ color: '#78716C' }}
+                      style={{ color: 'rgba(255,255,255,0.5)' }}
                     >
                       {opp.description}
                     </p>
                     <div
                       className="flex items-center gap-2 text-xs mb-3"
-                      style={{ color: '#A8A29E' }}
+                      style={{ color: 'rgba(255,255,255,0.4)' }}
                     >
                       <span
                         className="px-1.5 py-0.5 rounded text-[10px] font-medium"
@@ -1386,7 +1387,7 @@ export default function GetStartedClient() {
             </div>
 
             {total_matches > 2 && (
-              <p className="text-sm mt-3" style={{ color: '#57534E' }}>
+              <p className="text-sm mt-3" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 You have {total_matches - 2} more matching opportunities.{' '}
                 <Link
                   href="/opportunities"
@@ -1405,14 +1406,14 @@ export default function GetStartedClient() {
           <a
             href="/opportunities"
             className="flex-1 py-3 rounded-[10px] text-sm font-semibold text-center transition-all"
-            style={{ border: '1px solid #E7E5E4', color: '#1a1a1a' }}
+            style={{ border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', backgroundColor: 'rgba(255,255,255,0.06)' }}
           >
             View all opportunities
           </a>
           <a
             href="/dashboard"
             className="flex-1 py-3 rounded-[10px] text-sm font-semibold text-center transition-all"
-            style={{ border: '1px solid #E7E5E4', color: '#1a1a1a' }}
+            style={{ border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', backgroundColor: 'rgba(255,255,255,0.06)' }}
           >
             Go to my dashboard
           </a>

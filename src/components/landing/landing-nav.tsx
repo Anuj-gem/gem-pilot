@@ -39,9 +39,9 @@ export function LandingNav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          background: 'rgba(255,255,255,0.97)',
-          boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : '0 1px 4px rgba(0,0,0,0.04)',
-          backdropFilter: 'blur(12px)',
+          background: scrolled ? 'rgba(10,10,14,0.95)' : 'transparent',
+          boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.3)' : 'none',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
         }}
       >
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
@@ -55,7 +55,7 @@ export function LandingNav() {
                 boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
               }}
             />
-            <span className="text-xl font-bold tracking-tight" style={{ color: '#1c1917' }}>
+            <span className="text-xl font-bold tracking-tight text-white">
               GEM
             </span>
           </Link>
@@ -68,10 +68,10 @@ export function LandingNav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[15px] font-medium no-underline transition-colors hover:bg-gray-50"
-                  style={{ color: '#44403c' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#1c1917' }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = '#44403c' }}
+                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[15px] font-medium no-underline transition-colors hover:bg-white/10"
+                  style={{ color: 'rgba(255,255,255,0.7)' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#ffffff' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
                 >
                   <Icon size={17} />
                   {link.label}
@@ -81,10 +81,10 @@ export function LandingNav() {
 
             <Link
               href="/login"
-              className="ml-1 px-3 py-2 text-[15px] font-medium no-underline transition-colors hover:bg-gray-50 rounded-lg"
-              style={{ color: '#78716c' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#1c1917' }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = '#78716c' }}
+              className="ml-1 px-3 py-2 text-[15px] font-medium no-underline transition-colors hover:bg-white/10 rounded-lg"
+              style={{ color: 'rgba(255,255,255,0.5)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#ffffff' }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
             >
               Log in
             </Link>
@@ -139,7 +139,7 @@ export function LandingNav() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 rounded-lg border-0 bg-transparent cursor-pointer transition-colors"
-              style={{ color: '#1c1917' }}
+              style={{ color: '#ffffff' }}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -152,7 +152,7 @@ export function LandingNav() {
           <div
             className="md:hidden px-5 pb-4 pt-1"
             style={{
-              background: 'rgba(255,255,255,0.97)',
+              background: 'rgba(10,10,14,0.95)',
               backdropFilter: 'blur(12px)',
             }}
           >
@@ -164,7 +164,7 @@ export function LandingNav() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-2.5 px-3 py-3 rounded-lg text-[16px] font-medium no-underline transition-colors"
-                  style={{ color: '#1c1917' }}
+                  style={{ color: 'rgba(255,255,255,0.8)' }}
                 >
                   <Icon size={18} />
                   {link.label}
@@ -175,7 +175,7 @@ export function LandingNav() {
               href="/login"
               onClick={() => setMobileOpen(false)}
               className="flex items-center gap-2.5 px-3 py-3 rounded-lg text-[16px] font-medium no-underline transition-colors"
-              style={{ color: '#78716c' }}
+              style={{ color: 'rgba(255,255,255,0.5)' }}
             >
               Log in
             </Link>
