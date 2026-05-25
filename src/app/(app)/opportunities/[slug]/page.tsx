@@ -264,12 +264,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     <div className="max-w-2xl mx-auto">
       <Link
         href="/opportunities"
-        className="inline-flex items-center gap-1 text-[13px] font-semibold text-gray-400 hover:text-gray-700 transition-colors mb-5"
+        className="inline-flex items-center gap-1 text-[13px] font-semibold text-white/40 hover:text-white/70 transition-colors mb-5"
       >
         &larr; All opportunities
       </Link>
 
-      <div className="bg-white rounded-2xl overflow-hidden" style={{ border: '1.5px solid #e5e7eb' }}>
+      <div className="bg-white rounded-2xl overflow-hidden" style={{ border: '1.5px solid rgba(255,255,255,0.1)', boxShadow: '0 2px 16px rgba(0,0,0,0.25), 0 0 1px rgba(255,255,255,0.1)' }}>
         <div className="px-6 py-6 sm:px-8 sm:py-8">
 
           {/* ── Title ── */}
@@ -470,8 +470,8 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
             <div
               className="rounded-xl px-6 py-6"
               style={{
-                background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(124,58,237,0.03) 65%), #fff',
-                border: '1.5px solid rgba(124,58,237,0.25)',
+                background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.05) 65%), rgba(255,255,255,0.05)',
+                border: '1.5px solid rgba(124,58,237,0.3)',
               }}
             >
               <h3

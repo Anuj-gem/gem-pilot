@@ -159,7 +159,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Leaderboard</h1>
+        <h1 className="text-2xl font-bold text-white">Leaderboard</h1>
       </div>
       <DiscoverGrid
         cards={cards}

@@ -25,13 +25,13 @@ export default async function ScriptsPage() {
       <div className="max-w-3xl mx-auto">
         <header className="flex items-end justify-between mb-5">
           <div>
-            <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+            <h1 className="text-[22px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
               Scripts
             </h1>
-            <p className="text-[13px] text-gray-600 mt-1 m-0">0 scripts evaluated</p>
+            <p className="text-[13px] text-white/50 mt-1 m-0">0 scripts evaluated</p>
           </div>
         </header>
-        <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
+        <div className="rounded-xl border border-white/10 bg-white px-6 py-10 text-center" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.25), 0 0 1px rgba(255,255,255,0.1)' }}>
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
           <p className="text-[13px] text-gray-600 m-0 mb-4">Upload a screenplay to get your first evaluation.</p>
           <UploadCTAButton
@@ -150,10 +150,10 @@ export default async function ScriptsPage() {
 
       <header className="flex items-end justify-between mb-5">
         <div>
-          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-[22px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
             Scripts
           </h1>
-          <p className="text-[13px] text-gray-600 mt-1 m-0">
+          <p className="text-[13px] text-white/50 mt-1 m-0">
             {visibleCount} {visibleCount === 1 ? 'script' : 'scripts'} evaluated
           </p>
         </div>

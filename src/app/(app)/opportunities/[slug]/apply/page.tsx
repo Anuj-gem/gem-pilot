@@ -215,10 +215,10 @@ export default function ApplyPage() {
     return (
       <div className="max-w-lg mx-auto space-y-6">
         <div>
-          <Link href="/opportunities" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+          <Link href="/opportunities" className="text-[12px] text-white/40 hover:text-white/70 font-semibold">
             ← Back to opportunities
           </Link>
-          <h1 className="text-[20px] font-bold text-gray-900 mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-[20px] font-bold text-white mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
             {opportunity.title}
           </h1>
         </div>
@@ -237,14 +237,14 @@ export default function ApplyPage() {
     return (
       <div className="max-w-lg mx-auto space-y-6">
         <div>
-          <Link href={`/opportunities/${slug}`} className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+          <Link href={`/opportunities/${slug}`} className="text-[12px] text-white/40 hover:text-white/70 font-semibold">
             ← Back to opportunity
           </Link>
-          <h1 className="text-[20px] font-bold text-gray-900 mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-[20px] font-bold text-white mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
             {opportunity.title}
           </h1>
         </div>
-        <div className="rounded-xl border border-gray-200 bg-white px-5 py-6 text-center">
+        <div className="rounded-xl border border-white/10 bg-white px-5 py-6 text-center">
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">You've used your 2 free applications this month</p>
           <p className="text-[13px] text-gray-500 m-0 mb-4">Become a member for unlimited applications and full access to all opportunities.</p>
           <Link
@@ -265,19 +265,19 @@ export default function ApplyPage() {
     <div className="max-w-lg mx-auto space-y-6">
       {/* Header */}
       <div>
-        <Link href="/dashboard" className="text-[12px] text-gray-400 hover:text-gray-700 font-semibold">
+        <Link href="/dashboard" className="text-[12px] text-white/40 hover:text-white/70 font-semibold">
           ← Back to dashboard
         </Link>
-        <h1 className="text-[20px] font-bold text-gray-900 mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+        <h1 className="text-[20px] font-bold text-white mt-2 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
           Apply: {opportunity.title}
         </h1>
-        <p className="text-[13px] text-gray-600 m-0">{opportunity.description}</p>
+        <p className="text-[13px] text-white/60 m-0">{opportunity.description}</p>
         <div className="flex items-center gap-3 mt-2">
           {opportunity.min_score && (
-            <span className="text-[11px] text-gray-500">Min score: {opportunity.min_score}</span>
+            <span className="text-[11px] text-white/50">Min score: {opportunity.min_score}</span>
           )}
           {opportunity.subtitle && (
-            <span className="text-[11px] text-gray-500">{opportunity.subtitle}</span>
+            <span className="text-[11px] text-white/50">{opportunity.subtitle}</span>
           )}
         </div>
       </div>
@@ -285,10 +285,10 @@ export default function ApplyPage() {
 
       {/* Script selection — single select */}
       <div>
-        <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-1">Select your script</h2>
-        <p className="text-[12px] text-gray-600 m-0 mb-2.5">One script per application. You can apply again with a different script after receiving feedback.</p>
+        <h2 className="text-[14px] font-bold text-white m-0 mb-1">Select your script</h2>
+        <p className="text-[12px] text-white/60 m-0 mb-2.5">One script per application. You can apply again with a different script after receiving feedback.</p>
         {scripts.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-6 text-center">
+          <div className="rounded-xl border border-dashed border-white/10 bg-white px-5 py-6 text-center">
             <p className="text-[13px] text-gray-500 m-0">None of your scripts currently qualify for this opportunity.</p>
             <p className="text-[12px] text-gray-600 m-0 mt-1">Upload a new script or improve your scores.</p>
           </div>
@@ -303,7 +303,7 @@ export default function ApplyPage() {
                   className={`w-full text-left rounded-xl border px-4 py-3 transition-colors ${
                     selectedId === s.id
                       ? 'border-purple-400 bg-purple-50/50'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
+                      : 'border-white/10 bg-white hover:border-white/20'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -340,7 +340,7 @@ export default function ApplyPage() {
                 {previouslyConsidered.map(s => (
                   <div
                     key={s.id}
-                    className="w-full text-left rounded-xl border border-gray-200 bg-gray-50 px-4 py-3"
+                    className="w-full text-left rounded-xl border border-white/10 bg-gray-50 px-4 py-3"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-4 h-4 rounded-full border-2 border-gray-300 shrink-0" />
@@ -359,14 +359,14 @@ export default function ApplyPage() {
 
       {/* Note to reviewer */}
       <div>
-        <label className="text-[14px] font-semibold text-gray-800 block mb-1">
-          Note to reviewer <span className="text-[12px] font-normal text-gray-500">(optional)</span>
+        <label className="text-[14px] font-semibold text-white block mb-1">
+          Note to reviewer <span className="text-[12px] font-normal text-white/50">(optional)</span>
         </label>
-        <p className="text-[12px] text-gray-600 m-0 mb-1.5">Explain anything that will help them determine whether this is a fit for what they&apos;re looking for.</p>
+        <p className="text-[12px] text-white/60 m-0 mb-1.5">Explain anything that will help them determine whether this is a fit for what they&apos;re looking for.</p>
         <textarea
           value={responses.fit_originality || ''}
           onChange={(e) => setResponse('fit_originality', e.target.value)}
-          className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
+          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
           rows={4}
           placeholder="Anything you'd like the reviewer to know..."
         />
@@ -386,7 +386,7 @@ export default function ApplyPage() {
         >
           {submitting ? 'Submitting...' : 'Submit application'}
         </button>
-        <Link href="/dashboard" className="text-[13px] text-gray-400 hover:text-gray-700">
+        <Link href="/dashboard" className="text-[13px] text-white/40 hover:text-white/70">
           Cancel
         </Link>
       </div>

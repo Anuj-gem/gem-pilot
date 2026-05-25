@@ -26,12 +26,12 @@ export default async function ApplicationsPage() {
     return (
       <div className="max-w-2xl mx-auto">
         <header className="mb-5">
-          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-[22px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
             Applications
           </h1>
-          <p className="text-[13px] text-gray-400 mt-1 m-0">Your opportunity applications will appear here.</p>
+          <p className="text-[13px] text-white/50 mt-1 m-0">Your opportunity applications will appear here.</p>
         </header>
-        <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
+        <div className="rounded-xl border border-white/10 bg-white px-6 py-10 text-center" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.25), 0 0 1px rgba(255,255,255,0.1)' }}>
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
           <p className="text-[13px] text-gray-400 m-0 mb-4">Upload a script, get your report, then apply to open opportunities.</p>
           <UploadCTAButton
@@ -142,10 +142,10 @@ export default async function ApplicationsPage() {
     <div className="max-w-2xl mx-auto">
       <header className="flex items-center justify-between mb-5">
         <div>
-          <h1 className="text-[22px] font-bold text-gray-900 m-0" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-[22px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
             Applications
           </h1>
-          <p className="text-[13px] text-gray-400 mt-1 m-0">{apps.length} {apps.length === 1 ? 'application' : 'applications'}</p>
+          <p className="text-[13px] text-white/50 mt-1 m-0">{apps.length} {apps.length === 1 ? 'application' : 'applications'}</p>
         </div>
         <Link
           href="/opportunities"
@@ -156,7 +156,7 @@ export default async function ApplicationsPage() {
       </header>
 
       {apps.length === 0 ? (
-        <div className="rounded-xl border border-gray-200 bg-white px-6 py-10 text-center">
+        <div className="rounded-xl border border-white/10 bg-white px-6 py-10 text-center" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.25), 0 0 1px rgba(255,255,255,0.1)' }}>
           <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
           <p className="text-[13px] text-gray-400 m-0 mb-4">Upload a script, get your report, then apply to open opportunities.</p>
           <Link

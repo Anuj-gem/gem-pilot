@@ -182,16 +182,16 @@ export default async function OpportunitiesPage() {
       {/* Header */}
       <div className="mb-6">
         <h1
-          className="text-[28px] font-bold text-gray-900 m-0 mb-2"
+          className="text-[28px] font-bold text-white m-0 mb-2"
           style={{ fontFamily: 'Georgia, serif' }}
         >
           Opportunities
         </h1>
-        <p className="text-[14px] text-gray-500 m-0 leading-relaxed max-w-[520px]">
+        <p className="text-[14px] text-white/50 m-0 leading-relaxed max-w-[520px]">
           Real opportunities from our partner network — producers, lit reps, and financiers
           looking for scripts. Apply with your evaluated screenplay and get connected directly.
         </p>
-        <p className="text-[13px] text-gray-400 mt-2 m-0">
+        <p className="text-[13px] text-white/50 mt-2 m-0">
           {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} currently open
         </p>
       </div>
@@ -201,12 +201,12 @@ export default async function OpportunitiesPage() {
         <div
           className="rounded-2xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
           style={{
-            background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(124,58,237,0.02) 65%), #fff',
-            border: '1.5px solid rgba(124,58,237,0.25)',
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.05) 65%), rgba(255,255,255,0.05)',
+            border: '1.5px solid rgba(124,58,237,0.3)',
           }}
         >
           <div>
-            <p className="text-[15px] font-bold text-gray-900 m-0 leading-snug">
+            <p className="text-[15px] font-bold text-white m-0 leading-snug">
               Upload your script to see which opportunities you qualify for
             </p>
             {/* Pro upsell line hidden for anonymous users */}
@@ -224,7 +224,7 @@ export default async function OpportunitiesPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {opportunities.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-[15px] text-gray-400">No open opportunities right now. Check back soon.</p>
+            <p className="text-[15px] text-white/40">No open opportunities right now. Check back soon.</p>
           </div>
         ) : (
           opportunities.map((opp) => {
