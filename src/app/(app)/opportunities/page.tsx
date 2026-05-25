@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { ArrowRight } from 'lucide-react'
-import { UploadCTAButton } from '@/components/upload-cta-button'
+import Link from 'next/link'
 import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
 
 function svc() {
@@ -172,18 +172,16 @@ export default async function OpportunitiesPage() {
             border: '1.5px solid rgba(124,58,237,0.3)',
           }}
         >
-          <div>
-            <p className="text-[15px] font-bold text-white m-0 leading-snug">
-              Upload your script to see which opportunities you qualify for
-            </p>
-            {/* Pro upsell line hidden for anonymous users */}
-          </div>
-          <UploadCTAButton
-            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
+          <p className="text-[15px] font-bold text-white m-0 leading-snug">
+            Upload your script to see which opportunities you qualify for
+          </p>
+          <Link
+            href="/get-started"
+            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110"
             style={{ background: '#7c3aed' }}
           >
-            Upload a script <ArrowRight size={15} />
-          </UploadCTAButton>
+            Get started <ArrowRight size={15} />
+          </Link>
         </div>
       )}
 

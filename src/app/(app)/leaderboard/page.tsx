@@ -11,6 +11,8 @@ import { createServerClient } from '@supabase/ssr'
 import type { ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
 import { DiscoverGrid, type DiscoverCard } from '@/components/discover/discover-grid'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 function svc() {
   return createServerClient(
@@ -161,6 +163,28 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-white">Leaderboard</h1>
       </div>
+
+      {/* Logged-out CTA */}
+      {!user && (
+        <div
+          className="rounded-2xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+          style={{
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.05) 65%), rgba(255,255,255,0.05)',
+            border: '1.5px solid rgba(124,58,237,0.3)',
+          }}
+        >
+          <p className="text-[15px] font-bold text-white m-0 leading-snug">
+            Get your scripts in front of our industry partner network
+          </p>
+          <Link
+            href="/get-started"
+            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110"
+            style={{ background: '#7c3aed' }}
+          >
+            Get started <ArrowRight size={15} />
+          </Link>
+        </div>
+      )}
       <DiscoverGrid
         cards={cards}
         initialSort={initialSort}

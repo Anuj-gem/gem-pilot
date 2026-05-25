@@ -8,8 +8,6 @@ import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, FileText, Clock } from 'lucide-react'
-import { UploadCTAButton } from '@/components/upload-cta-button'
-import { SubscribeCTA } from '@/components/subscribe-cta'
 import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
 import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
 
@@ -434,7 +432,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               </div>
             )
           ) : (
-            // ── NOT LOGGED IN — strong CTA ──
+            // ── NOT LOGGED IN — simple CTA ──
             <div
               className="rounded-xl px-6 py-6"
               style={{
@@ -448,18 +446,16 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               >
                 Want to apply?
               </h3>
-              <p className="text-[14px] text-gray-600 m-0 mb-1 leading-relaxed">
+              <p className="text-[14px] text-gray-600 m-0 mb-4 leading-relaxed">
                 Upload your script and we&apos;ll evaluate it against the requirements above. If you qualify, you can submit directly.
               </p>
-              <p className="text-[13px] text-gray-400 m-0 mb-4">
-                Applying to opportunities is a <span className="font-semibold text-purple-600">members-only</span> feature. Your first evaluation is free.
-              </p>
-              <UploadCTAButton
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110 cursor-pointer border-0"
+              <Link
+                href="/get-started"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-bold text-white transition-all hover:brightness-110"
                 style={{ background: '#7c3aed', boxShadow: '0 4px 16px rgba(124,58,237,0.25)' }}
               >
-                Upload a script <ArrowRight size={16} />
-              </UploadCTAButton>
+                Get started <ArrowRight size={16} />
+              </Link>
             </div>
           )}
 
