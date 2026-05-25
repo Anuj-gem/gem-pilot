@@ -433,6 +433,36 @@ export default async function DashboardPage() {
   const partnerPendingTotal = partnerApps.filter(a => a.review_stage !== 'complete').length
   const partnerOppMap = new Map(partnerOpps.map(o => [o.id, o]))
 
+  // Compute per-opp stats for producer dashboard
+  const partnerOppStats = new Map<string, { total: number; pending: number; connections: number }>()
+  for (const opp of partnerOpps) {
+    const apps = partnerApps.filter(a => a.opportunity_id === opp.id)
+    partnerOppStats.set(opp.id, {
+      total: apps.length,
+      pending: apps.filter(a => !a.triage_status).length,
+      connections: apps.filter(a => a.triage_status === 'meet').length,
+    })
+  }
+
+  // Rank opportunities by total applications across ALL active opportunities
+  let oppRankMap = new Map<string, number>()
+  if (accountType === 'producer') {
+    // Get app counts for ALL opportunities (not just this producer's) for ranking
+    const oppIdsForRank = partnerOpps.map(o => o.id)
+    if (oppIdsForRank.length > 0) {
+      // Rank by total apps descending among this producer's opportunities
+      const sorted = [...partnerOpps].sort((a, b) => {
+        const aTotal = partnerOppStats.get(a.id)?.total ?? 0
+        const bTotal = partnerOppStats.get(b.id)?.total ?? 0
+        return bTotal - aTotal
+      })
+      sorted.forEach((o, i) => oppRankMap.set(o.id, i + 1))
+    }
+  }
+
+  const openOppCount = partnerOpps.filter(o => o.status === 'active').length
+  const totalWriterConnections = partnerApps.filter(a => a.triage_status === 'meet').length
+
   // ── RENDER ──
 
   const cardShadow = '0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)'
@@ -470,16 +500,11 @@ export default async function DashboardPage() {
     </span>
   )
 
-  // Build tabs — producers get a completely different tab set
-  const tabs: TabDef[] = accountType === 'producer'
-    ? [
-        { id: 'overview', label: 'Overview', count: partnerPendingTotal > 0 ? partnerPendingTotal : undefined },
-        { id: 'scripts', label: 'My Scripts', count: scriptCount },
-      ]
-    : [
-        { id: 'scripts', label: 'Scripts', count: scriptCount },
-        { id: 'applications', label: 'Applications', count: pendingCount },
-      ]
+  // Build tabs — writers only (producers get a completely different layout, no tabs)
+  const tabs: TabDef[] = [
+    { id: 'scripts', label: 'Scripts', count: scriptCount },
+    { id: 'applications', label: 'Applications', count: pendingCount },
+  ]
 
   // ── TAB PANELS ──
 
@@ -689,99 +714,10 @@ export default async function DashboardPage() {
     </div>
   )
 
-  // Overview panel (producers only) — opportunity cards + triage CTA
-  const overviewPanel = accountType === 'producer' ? (
-    <div className="space-y-6">
-      {/* Your Opportunities */}
-      <div>
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-[14px] font-semibold text-white/70 m-0 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Your Opportunities</h3>
-          <Link
-            href="/partner/opportunities/create"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white no-underline transition-all hover:brightness-110"
-            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-          >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-              <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
-            New
-          </Link>
-        </div>
-        {partnerOpps.length === 0 ? (
-          <div className="rounded-xl px-6 py-10 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-            <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No opportunities yet</p>
-            <p className="text-[13px] text-gray-500 m-0 mb-3">Create your first opportunity to start receiving pitches.</p>
-            <Link
-              href="/partner/opportunities/create"
-              className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-[13px] font-semibold text-white no-underline transition-all hover:brightness-110"
-              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-            >
-              Create opportunity
-            </Link>
-          </div>
-        ) : (
-          <div className="space-y-2.5">
-            {partnerOpps.map(opp => {
-              const totalForOpp = partnerApps.filter(a => a.opportunity_id === opp.id).length
-              const newForOpp = newCountByOpp.get(opp.id) || 0
-              return (
-                <Link key={opp.id} href="/partner" className="block no-underline">
-                  <div className="rounded-xl px-4 py-4 hover:shadow-md transition-all group" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                    <div className="flex items-center justify-between">
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2">
-                          <p className="text-[15px] font-bold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
-                            {opp.title}
-                          </p>
-                          {newForOpp > 0 && (
-                            <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: '#fef9c3', color: '#a16207' }}>
-                              {newForOpp} new
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-[12px] text-gray-400 m-0 mt-1">
-                          {totalForOpp} application{totalForOpp !== 1 ? 's' : ''}
-                          {opp.status === 'active' ? ' · Active' : ' · ' + opp.status}
-                        </p>
-                      </div>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-300 shrink-0">
-                        <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        )}
-      </div>
-
-      {/* Triage CTA — if there are untriaged apps */}
-      {partnerPendingTotal > 0 && (
-        <Link
-          href="/partner"
-          className="block no-underline rounded-xl px-5 py-4 text-center transition-all hover:brightness-105"
-          style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-        >
-          <p className="text-[15px] font-bold text-white m-0">
-            {partnerPendingTotal} pitch{partnerPendingTotal !== 1 ? 'es' : ''} to review
-          </p>
-          <p className="text-[12px] text-white/70 m-0 mt-0.5">Open triage →</p>
-        </Link>
-      )}
-
-    </div>
-  ) : null
-
-  const panels: Record<string, React.ReactNode> = accountType === 'producer'
-    ? {
-        overview: overviewPanel,
-        scripts: scriptsPanel,
-      }
-    : {
-        scripts: scriptsPanel,
-        applications: applicationsPanel,
-      }
+  const panels: Record<string, React.ReactNode> = {
+    scripts: scriptsPanel,
+    applications: applicationsPanel,
+  }
 
   return (
     <div style={{ position: 'relative' }}>
@@ -806,37 +742,146 @@ export default async function DashboardPage() {
       <div className="space-y-8">
 
         {accountType === 'producer' ? (
-          /* ── PRODUCER TOP ROW — stat cards ── */
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
-            <Link href="/partner" className="no-underline block">
-              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
-                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{partnerApps.length}</span>
-                <span className="text-[12px] sm:text-[14px] font-bold text-white">Applications</span>
+          /* ── PRODUCER DASHBOARD — vivid, no tabs ── */
+          <>
+            {/* Welcome */}
+            <h1 className="text-[28px] sm:text-[34px] font-bold text-white m-0 leading-tight">
+              Welcome, {profile?.full_name?.split(' ')[0] || 'Producer'}
+            </h1>
+
+            {/* Stat cards — emoji-driven */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              <div className="py-5 px-4 text-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
+                <span className="text-[24px] block mb-1">📋</span>
+                <span className="text-[28px] sm:text-[34px] font-bold text-white block leading-none">{openOppCount}</span>
+                <span className="text-[13px] text-white/60 mt-1 block">Open Opportunities</span>
               </div>
-            </Link>
-            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
-                <path d="M9 11l3 3L22 4" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{partnerApps.filter(a => a.triage_status === 'pass').length}</span>
-              <span className="text-[12px] sm:text-[14px] font-bold text-white">Reviewed</span>
+              <Link href="/partner" className="no-underline block">
+                <div className="py-5 px-4 text-center hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
+                  <span className="text-[24px] block mb-1">📨</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold text-white block leading-none">{partnerPendingTotal}</span>
+                  <span className="text-[13px] text-white/60 mt-1 block">Pending Applications</span>
+                </div>
+              </Link>
+              <div className="py-5 px-4 text-center" style={{ background: 'linear-gradient(135deg, rgba(52,211,153,0.15) 0%, rgba(52,211,153,0.06) 100%)', border: '1px solid rgba(52,211,153,0.25)', borderRadius: 16 }}>
+                <span className="text-[24px] block mb-1">🤝</span>
+                <span className="text-[28px] sm:text-[34px] font-bold text-white block leading-none">{totalWriterConnections}</span>
+                <span className="text-[13px] text-white/60 mt-1 block">Writer Connections</span>
+              </div>
             </div>
-            <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 hidden sm:block">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="9" cy="7" r="4" stroke="#a78bfa" strokeWidth="1.5"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{meetingsCount}</span>
-              <span className="text-[12px] sm:text-[14px] font-bold text-white">Meetings</span>
+
+            {/* Opportunity cards header */}
+            <div className="flex items-center justify-between">
+              <h2 className="text-[18px] font-bold text-white m-0">Your Opportunities</h2>
+              <div className="flex items-center gap-3">
+                {partnerOpps.length > 0 && (
+                  <Link href="/partner" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">
+                    View all →
+                  </Link>
+                )}
+                <Link
+                  href="/partner/opportunities/create"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-bold text-white no-underline transition-all hover:brightness-110"
+                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 10 }}
+                >
+                  + New
+                </Link>
+              </div>
             </div>
-          </div>
+
+            {/* Opportunity cards — 2 columns, vivid, no rounded corners */}
+            {partnerOpps.length === 0 ? (
+              <div className="px-8 py-14 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                <span className="text-[40px] block mb-3">🎬</span>
+                <p className="text-[17px] font-bold text-white m-0 mb-1">No opportunities yet</p>
+                <p className="text-[14px] text-white/50 m-0 mb-5">Create your first opportunity to start receiving pitches from writers.</p>
+                <Link
+                  href="/partner/opportunities/create"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-[14px] font-bold text-white no-underline transition-all hover:brightness-110"
+                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 10 }}
+                >
+                  Create opportunity
+                </Link>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {partnerOpps.map(opp => {
+                  const stats = partnerOppStats.get(opp.id) || { total: 0, pending: 0, connections: 0 }
+                  const rank = oppRankMap.get(opp.id) || 1
+                  const newForOpp = newCountByOpp.get(opp.id) || 0
+                  const isActive = opp.status === 'active'
+                  return (
+                    <Link key={opp.id} href="/partner" className="block no-underline group">
+                      <div
+                        className="p-5 transition-all hover:translate-y-[-2px]"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(255,255,255,0.03) 100%)',
+                          border: '1px solid rgba(124,58,237,0.2)',
+                          borderRadius: 4,
+                        }}
+                      >
+                        {/* Title + status */}
+                        <div className="flex items-start justify-between gap-2 mb-4">
+                          <h3 className="text-[17px] font-bold text-white m-0 line-clamp-2 group-hover:text-purple-300 transition-colors">
+                            {opp.title}
+                          </h3>
+                          <div className="flex items-center gap-2 shrink-0">
+                            {newForOpp > 0 && (
+                              <span className="text-[11px] font-bold px-2 py-0.5" style={{ background: 'rgba(250,204,21,0.2)', color: '#fbbf24', borderRadius: 4 }}>
+                                {newForOpp} new
+                              </span>
+                            )}
+                            <span className="text-[11px] font-bold px-2 py-0.5" style={{
+                              background: isActive ? 'rgba(52,211,153,0.15)' : 'rgba(255,255,255,0.08)',
+                              color: isActive ? '#34d399' : 'rgba(255,255,255,0.4)',
+                              borderRadius: 4,
+                            }}>
+                              {isActive ? 'Active' : opp.status}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Stats row — big, vivid numbers */}
+                        <div className="grid grid-cols-3 gap-3">
+                          <div>
+                            <span className="text-[22px] font-bold text-white block leading-none">{stats.total}</span>
+                            <span className="text-[12px] text-white/40 mt-0.5 block">
+                              Applicants {partnerOpps.length > 1 ? `(#${rank})` : ''}
+                            </span>
+                          </div>
+                          <div>
+                            <span className="text-[22px] font-bold block leading-none" style={{ color: stats.pending > 0 ? '#fb923c' : 'rgba(255,255,255,0.25)' }}>{stats.pending}</span>
+                            <span className="text-[12px] text-white/40 mt-0.5 block">Pending</span>
+                          </div>
+                          <div>
+                            <span className="text-[22px] font-bold block leading-none" style={{ color: stats.connections > 0 ? '#34d399' : 'rgba(255,255,255,0.25)' }}>{stats.connections}</span>
+                            <span className="text-[12px] text-white/40 mt-0.5 block">Connections</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            )}
+
+            {/* Triage CTA — if there are pending */}
+            {partnerPendingTotal > 0 && (
+              <Link
+                href="/partner"
+                className="block no-underline text-center py-4 transition-all hover:brightness-110"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 10 }}
+              >
+                <p className="text-[16px] font-bold text-white m-0">
+                  📨 {partnerPendingTotal} pitch{partnerPendingTotal !== 1 ? 'es' : ''} to review
+                </p>
+                <p className="text-[13px] text-white/70 m-0 mt-0.5">Open triage →</p>
+              </Link>
+            )}
+          </>
         ) : (
-          /* ── WRITER STATS ROW — icon · number · label ── */
+          <>
+          {/* ── WRITER STATS ROW — icon · number · label ── */}
           <div className="grid grid-cols-3 gap-2 sm:gap-3">
             <Link href="/scripts" className="no-underline block">
               <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -867,10 +912,11 @@ export default async function DashboardPage() {
               </div>
             </Link>
           </div>
-        )}
 
-        {/* ── TABBED CONTENT ── */}
-        <DashboardTabs tabs={tabs} panels={panels} />
+          {/* ── TABBED CONTENT ── */}
+          <DashboardTabs tabs={tabs} panels={panels} />
+          </>
+        )}
 
       </div>
     </div>
