@@ -55,11 +55,19 @@ export default function Nav({ userData }: NavProps = {}) {
   // Close activity dropdown on route change
   useEffect(() => { setActivityOpen(false) }, [pathname])
 
-  const activitySubLinks = [
-    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { href: '/scripts', label: 'My Scripts', icon: FileText },
-    { href: '/applications', label: 'My Applications', icon: Send },
-  ]
+  const isProducer = userData?.profile.accountType === 'producer'
+
+  const activitySubLinks = isProducer
+    ? [
+        { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { href: '/partner', label: 'Manage Opportunities', icon: Briefcase },
+        { href: '/scripts', label: 'My Scripts', icon: FileText },
+      ]
+    : [
+        { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { href: '/scripts', label: 'My Scripts', icon: FileText },
+        { href: '/applications', label: 'My Applications', icon: Send },
+      ]
 
   const navLinks = [
     { href: '/leaderboard', label: 'Leaderboard', icon: Compass },
@@ -97,7 +105,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     <button
                       onClick={() => setActivityOpen(v => !v)}
                       className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors cursor-pointer border-0 bg-transparent ${
-                        pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications')
+                        pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications') || pathname.startsWith('/partner')
                           ? 'text-[var(--gem-white)] font-semibold'
                           : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                       }`}
@@ -105,7 +113,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       <LayoutDashboard size={16} />
                       My Activity
                       <ChevronDown size={14} className={`transition-transform ${activityOpen ? 'rotate-180' : ''}`} />
-                      {(pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications')) && (
+                      {(pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications') || pathname.startsWith('/partner')) && (
                         <span
                           aria-hidden
                           className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full"
