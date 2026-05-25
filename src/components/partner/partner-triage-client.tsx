@@ -208,7 +208,7 @@ export function PartnerTriageClient({
   }
 
   return (
-    <div className="h-screen flex" style={{ background: '#0f0a1a' }}>
+    <div className="h-screen flex overflow-hidden" style={{ background: '#0f0a1a' }}>
         {/* LEFT: Applicant list */}
         <div className="w-[380px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
           {/* Opportunity dropdown + settings */}
