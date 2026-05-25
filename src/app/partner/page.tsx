@@ -291,7 +291,8 @@ export default async function PartnerPage() {
       const reviewMap = new Map<string, { feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number }>()
       for (const t of (allReviewData || []) as { id: string; feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number | null }[]) {
         const hasTags = (t.feedback_tags && t.feedback_tags.length > 0) || (t.next_steps_tags && t.next_steps_tags.length > 0)
-        if (hasTags) {
+        const hasHeat = (t.heat_earned || 0) > 0
+        if (hasTags || hasHeat) {
           reviewMap.set(t.id, { feedback_tags: t.feedback_tags, next_steps_tags: t.next_steps_tags, heat_earned: t.heat_earned || 0 })
         }
       }
