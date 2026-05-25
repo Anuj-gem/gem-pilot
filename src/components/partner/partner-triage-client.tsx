@@ -59,6 +59,7 @@ export function PartnerTriageClient({
   const [triaging, setTriaging] = useState(false)
   const [showOppDropdown, setShowOppDropdown] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
+  const [noteExpanded, setNoteExpanded] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [listTab, setListTab] = useState<'pending' | 'reviewed'>('pending')
   const customLikedRef = useRef<HTMLInputElement>(null)
@@ -209,7 +210,7 @@ export function PartnerTriageClient({
   return (
     <div className="h-screen flex" style={{ background: '#0f0a1a' }}>
         {/* LEFT: Applicant list */}
-        <div className="w-[340px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="w-[380px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
           {/* Opportunity dropdown + settings */}
           <div className="px-4 py-3 relative" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div className="flex items-center gap-2">
@@ -285,17 +286,18 @@ export function PartnerTriageClient({
             </button>
           </div>
           {/* Sort controls */}
-          <div className="flex items-center gap-1 px-4 py-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <div className="flex items-center gap-1.5 px-4 py-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+            <span className="text-[11px] text-white/40 mr-1">Sort:</span>
             {(['score', 'heat', 'new'] as SortMode[]).map(mode => (
               <button
                 key={mode}
                 onClick={() => setSortMode(mode)}
-                className={`text-[11px] px-2 py-1 rounded-md cursor-pointer border-0 transition-colors ${
+                className={`text-[11px] px-2.5 py-1 rounded-md cursor-pointer border-0 transition-colors ${
                   sortMode === mode
                     ? 'bg-purple-600 text-white'
-                    : 'text-white/30 hover:text-white/50 hover:bg-white/5'
+                    : 'text-white/50 hover:text-white/70'
                 }`}
-                style={sortMode !== mode ? { background: 'transparent' } : undefined}
+                style={sortMode !== mode ? { background: 'rgba(255,255,255,0.06)' } : undefined}
               >
                 {mode === 'score' ? 'Score' : mode === 'heat' ? 'Heat' : 'Newest'}
               </button>
@@ -319,7 +321,7 @@ export function PartnerTriageClient({
             return (
               <div
                 key={app.id}
-                onClick={() => { setSelectedAppId(app.id); setShowPassFeedback(null); resetFeedback(); setShowHistory(false) }}
+                onClick={() => { setSelectedAppId(app.id); setShowPassFeedback(null); resetFeedback(); setShowHistory(false); setNoteExpanded(false) }}
                 className={`px-4 py-3 cursor-pointer transition-all ${
                   isSelected ? 'bg-purple-500/10' : 'hover:bg-white/[0.03]'
                 } ${isPassed ? 'opacity-35' : ''}`}
@@ -363,7 +365,7 @@ export function PartnerTriageClient({
                     )}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    {heat > 0 && <span className="text-[11px] text-orange-400">🔥{heat}</span>}
+                    <span className={`text-[11px] ${heat > 0 ? 'text-orange-400' : 'text-white/25'}`}>🔥{heat}</span>
                     <span className="text-[11px] text-white/20">{fmtDate(app.submitted_at)}</span>
                   </div>
                 </div>
@@ -376,7 +378,7 @@ export function PartnerTriageClient({
         {/* RIGHT: Detail panel */}
         <div className="flex-1 flex flex-col overflow-y-auto" style={{ background: 'rgba(255,255,255,0.04)' }}>
           {!selectedApp ? (
-            <div className="flex-1 flex items-center justify-center text-[14px] text-white/25">
+            <div className="flex-1 flex items-center justify-center text-[15px] text-white/30">
               Select an application to review
             </div>
           ) : (
@@ -384,15 +386,15 @@ export function PartnerTriageClient({
               {/* Writer info bar */}
               <div className="px-6 py-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {selectedApp.writer_avatar_url ? (
-                  <img src={selectedApp.writer_avatar_url} alt="" className="w-9 h-9 rounded-full object-cover shrink-0" />
+                  <img src={selectedApp.writer_avatar_url} alt="" className="w-10 h-10 rounded-full object-cover shrink-0" />
                 ) : (
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center font-semibold text-[13px] text-purple-300 shrink-0" style={{ background: 'rgba(124,58,237,0.15)' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-[14px] text-purple-300 shrink-0" style={{ background: 'rgba(124,58,237,0.15)' }}>
                     {(selectedApp.writer_name || '?')[0]?.toUpperCase()}
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-[14px] text-white">{selectedApp.writer_name || 'Unknown'}</span>
+                    <span className="font-semibold text-[15px] text-white">{selectedApp.writer_name || 'Unknown'}</span>
                     {selectedApp.writer_app_count > 1 && (
                       <span className="text-[11px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.12)', color: '#fbbf24' }}>
                         {selectedApp.writer_app_count} applications
@@ -411,70 +413,91 @@ export function PartnerTriageClient({
                     })()}
                   </div>
                   {selectedApp.writer_headline && (
-                    <p className="text-[13px] text-white/70 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
+                    <p className="text-[13px] text-white/80 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
                   )}
                 </div>
                 <span className="text-[13px] text-white/60">{fmtDate(selectedApp.submitted_at)}</span>
               </div>
 
               {/* Script details */}
-              {selectedApp.scripts.map(script => (
-                <div key={script.submission_id} className="px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+              {selectedApp.scripts.map(script => {
+                const scriptHeat = script.heat_score ?? 0
+                return (
+                <div key={script.submission_id} className="px-6 py-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   {/* Poster + title row */}
-                  <div className="flex gap-4 mb-3">
+                  <div className="flex gap-5">
                     {script.poster_url && (
-                      <img src={script.poster_url} alt="" className="w-[100px] h-[140px] rounded-lg object-cover shrink-0" />
+                      <img src={script.poster_url} alt="" className="w-[120px] h-[170px] rounded-lg object-cover shrink-0" />
                     )}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[17px] font-semibold text-white truncate">{script.title}</span>
-                        <div className="flex items-center gap-2 shrink-0">
-                          {(script.heat_score ?? 0) > 0 && <span className="text-[14px] text-orange-400">🔥 {script.heat_score}</span>}
-                          {script.score && (
-                            <span className="flex items-center gap-1 text-[16px] font-bold text-purple-400">
-                              <GemDiamond size={9} /> {Math.round(script.score)}
-                            </span>
-                          )}
-                        </div>
-                      </div>
+                    <div className="flex-1 min-w-0 flex flex-col">
+                      {/* Title */}
+                      <h3 className="text-[20px] font-semibold text-white m-0 mb-1.5 truncate">{script.title}</h3>
                       {/* Metadata pills */}
-                      <div className="flex items-center gap-1.5 mb-2">
+                      <div className="flex items-center gap-1.5 mb-2.5">
                         {script.format && (
-                          <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>{script.format}</span>
+                          <span className="text-[12px] px-2.5 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.8)' }}>{script.format}</span>
                         )}
                         {script.genre && (
-                          <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>{script.genre}</span>
+                          <span className="text-[12px] px-2.5 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.8)' }}>{script.genre}</span>
                         )}
                         {script.budget_tier && (
-                          <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>{script.budget_tier}</span>
+                          <span className="text-[12px] px-2.5 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.8)' }}>{script.budget_tier}</span>
                         )}
                       </div>
+                      {/* Logline */}
                       {script.logline && (
-                        <p className="text-[14px] text-white/80 m-0 leading-relaxed">{script.logline}</p>
+                        <p className="text-[15px] text-white/90 m-0 leading-relaxed mb-3">{script.logline}</p>
                       )}
+                      {/* Score + Heat row — always visible */}
+                      <div className="flex items-center gap-4 mb-3">
+                        {script.score && (
+                          <span className="flex items-center gap-1.5 text-[15px] font-bold text-purple-400">
+                            <GemDiamond size={10} /> GEM Score {Math.round(script.score)}
+                          </span>
+                        )}
+                        <span className={`flex items-center gap-1 text-[14px] font-medium ${scriptHeat > 0 ? 'text-orange-400' : 'text-white/30'}`}>
+                          🔥 Industry Heat {scriptHeat}
+                        </span>
+                      </div>
+                      {/* View full report button */}
                       {script.eval_id && (
-                        <Link
-                          href={`/report/${script.eval_id}`}
-                          className="text-[13px] text-purple-400 mt-2 inline-block hover:text-purple-300 transition-colors no-underline"
-                        >
-                          View full report →
-                        </Link>
+                        <div className="mt-auto flex justify-end">
+                          <Link
+                            href={`/report/${script.eval_id}`}
+                            className="text-[13px] font-medium px-4 py-2 rounded-lg no-underline transition-all hover:brightness-110"
+                            style={{ background: 'rgba(124,58,237,0.15)', color: '#a78bfa', border: '1px solid rgba(124,58,237,0.3)' }}
+                          >
+                            View full report
+                          </Link>
+                        </div>
                       )}
                     </div>
                   </div>
                 </div>
-              ))}
+                )
+              })}
 
               {/* Writer's note */}
               {(() => {
                 const note = selectedApp.application_responses?.fit_originality || selectedApp.writer_pitch
                 if (!note) return null
+                // noteExpanded state is declared at component level
+                const isLong = note.length > 200
+                const displayNote = isLong && !noteExpanded ? note.slice(0, 200) + '...' : note
                 return (
                   <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                    <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">Writer&apos;s note</span>
-                    <p className="text-[14px] text-white/80 m-0 mt-2 leading-relaxed italic">
-                      &ldquo;{note}&rdquo;
+                    <span className="text-[13px] text-white/60 uppercase tracking-wider font-medium">Writer&apos;s note</span>
+                    <p className="text-[15px] text-white/90 m-0 mt-2 leading-relaxed">
+                      {displayNote}
                     </p>
+                    {isLong && !noteExpanded && (
+                      <button
+                        onClick={() => setNoteExpanded(true)}
+                        className="text-[13px] text-purple-400 hover:text-purple-300 mt-1 cursor-pointer bg-transparent border-0 p-0 transition-colors"
+                      >
+                        See more
+                      </button>
+                    )}
                   </div>
                 )
               })()}
@@ -552,31 +575,31 @@ export function PartnerTriageClient({
                 const scriptTitle = selectedApp.scripts[0]?.title || 'this script'
                 return (
                   <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                    <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">
+                    <span className="text-[13px] text-white/60 uppercase tracking-wider font-medium">
                       Industry sentiment about {scriptTitle}
                     </span>
                     {aggregated.review_count === 0 ? (
-                      <p className="text-[12px] text-white/40 mt-1 mb-0">
+                      <p className="text-[13px] text-white/50 mt-2 mb-0">
                         No completed reviews yet. You would be the first.
                       </p>
                     ) : (
                       <>
-                        <p className="text-[12px] text-white/40 mt-1 mb-0">
+                        <p className="text-[13px] text-white/50 mt-1 mb-0">
                           From {aggregated.review_count} completed review{aggregated.review_count !== 1 ? 's' : ''} across all opportunities
                         </p>
 
                         {aggregated.total_heat > 0 && (
                           <div className="mt-3 flex items-center gap-2">
-                            <span className="text-[13px] text-orange-400 font-medium">🔥 {aggregated.total_heat} total heat earned</span>
+                            <span className="text-[14px] text-orange-400 font-medium">🔥 {aggregated.total_heat} total heat earned</span>
                           </div>
                         )}
 
                         {likedArr.length > 0 && (
                           <div className="mt-3">
-                            <span className="text-[11px] text-white/50 uppercase tracking-wider">What people liked</span>
+                            <span className="text-[12px] text-white/50 uppercase tracking-wider">What people liked</span>
                             <div className="flex flex-wrap gap-1.5 mt-1.5">
                               {likedArr.map(tag => (
-                                <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                                <span key={tag} className="text-[12px] px-2.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.9)' }}>
                                   {tag}
                                 </span>
                               ))}
@@ -586,10 +609,10 @@ export function PartnerTriageClient({
 
                         {passArr.length > 0 && (
                           <div className="mt-3">
-                            <span className="text-[11px] text-white/50 uppercase tracking-wider">Why people passed</span>
+                            <span className="text-[12px] text-white/50 uppercase tracking-wider">Why people passed</span>
                             <div className="flex flex-wrap gap-1.5 mt-1.5">
                               {passArr.map(tag => (
-                                <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                                <span key={tag} className="text-[12px] px-2.5 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.9)' }}>
                                   {tag}
                                 </span>
                               ))}
