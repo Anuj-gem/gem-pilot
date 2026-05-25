@@ -789,8 +789,13 @@ export default async function DashboardPage() {
               </div>
             </div>
 
-            {/* Opportunity cards — 2 columns, vivid, no rounded corners */}
-            {partnerOpps.length === 0 ? (
+            {/* Opportunity cards — only show opps with pending (untriaged) applications */}
+            {(() => {
+              const oppsWithPending = partnerOpps.filter(opp => {
+                const stats = partnerOppStats.get(opp.id)
+                return stats && stats.pending > 0
+              })
+              return oppsWithPending.length === 0 ? (
               <div className="px-8 py-14 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                 <span className="text-[40px] block mb-3">🎬</span>
                 <p className="text-[17px] font-bold text-white m-0 mb-1">No opportunities yet</p>
@@ -805,7 +810,7 @@ export default async function DashboardPage() {
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {partnerOpps.map(opp => {
+                {oppsWithPending.map(opp => {
                   const stats = partnerOppStats.get(opp.id) || { total: 0, pending: 0, connections: 0 }
                   const rank = oppRankMap.get(opp.id) || 1
                   const newForOpp = newCountByOpp.get(opp.id) || 0
@@ -863,7 +868,7 @@ export default async function DashboardPage() {
                   )
                 })}
               </div>
-            )}
+            )})()}
 
             {/* Triage CTA — if there are pending */}
             {partnerPendingTotal > 0 && (
