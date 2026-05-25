@@ -239,38 +239,38 @@ export default async function PartnerPage() {
 
     if (allCs && allCs.length > 0) {
       const allConsIds = [...new Set(allCs.map((c: any) => c.consideration_id))]
-      // Fetch triage data for all those considerations
-      const { data: allTriageData } = await service
+      // Fetch review data for all those considerations
+      // feedback_tags = positive/liked tags, next_steps_tags = pass reasons
+      const { data: allReviewData } = await service
         .from('considerations')
-        .select('id, triage_status, triage_feedback_tags')
+        .select('id, feedback_tags, next_steps_tags, heat_earned')
         .in('id', allConsIds)
-        .not('triage_feedback_tags', 'is', null)
 
-      // Map consideration_id → triage data
-      const triageMap = new Map<string, { status: string | null; tags: string[] }>()
-      for (const t of (allTriageData || []) as { id: string; triage_status: string | null; triage_feedback_tags: string[] }[]) {
-        triageMap.set(t.id, { status: t.triage_status, tags: t.triage_feedback_tags })
+      // Map consideration_id → review data
+      const reviewMap = new Map<string, { feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number }>()
+      for (const t of (allReviewData || []) as { id: string; feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number | null }[]) {
+        const hasTags = (t.feedback_tags && t.feedback_tags.length > 0) || (t.next_steps_tags && t.next_steps_tags.length > 0)
+        if (hasTags) {
+          reviewMap.set(t.id, { feedback_tags: t.feedback_tags, next_steps_tags: t.next_steps_tags, heat_earned: t.heat_earned || 0 })
+        }
       }
 
       // Aggregate by script_submission_id
       for (const cs of allCs as { consideration_id: string; script_submission_id: string }[]) {
-        const triage = triageMap.get(cs.consideration_id)
-        if (!triage) continue
+        const review = reviewMap.get(cs.consideration_id)
+        if (!review) continue
 
         if (!scriptSentiment[cs.script_submission_id]) {
           scriptSentiment[cs.script_submission_id] = { total_heat: 0, liked_tags: {}, pass_tags: {}, review_count: 0 }
         }
         const sent = scriptSentiment[cs.script_submission_id]
         sent.review_count++
-        for (const tag of triage.tags) {
-          if (tag.startsWith('+')) {
-            const clean = tag.slice(1)
-            sent.liked_tags[clean] = (sent.liked_tags[clean] || 0) + 1
-            sent.total_heat++
-          } else {
-            const clean = tag.startsWith('-') ? tag.slice(1) : tag
-            sent.pass_tags[clean] = (sent.pass_tags[clean] || 0) + 1
-          }
+        sent.total_heat += review.heat_earned
+        for (const tag of (review.feedback_tags || [])) {
+          sent.liked_tags[tag] = (sent.liked_tags[tag] || 0) + 1
+        }
+        for (const tag of (review.next_steps_tags || [])) {
+          sent.pass_tags[tag] = (sent.pass_tags[tag] || 0) + 1
         }
       }
     }
