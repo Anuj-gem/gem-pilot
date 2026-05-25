@@ -16,6 +16,7 @@ import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
 import Link from 'next/link'
+import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 
 export const dynamic = 'force-dynamic'
 
@@ -528,7 +529,7 @@ export default async function DashboardPage() {
   // Build tabs — writers only (producers get a completely different layout, no tabs)
   const tabs: TabDef[] = [
     { id: 'scripts', label: 'Scripts', count: scriptCount },
-    { id: 'applications', label: 'Applications', count: pendingCount },
+    { id: 'opportunities', label: 'Opportunities' },
   ]
 
   // ── TAB PANELS ──
@@ -563,7 +564,7 @@ export default async function DashboardPage() {
           {/* Processing scripts */}
           {processingScripts.map(script => (
             <div key={script.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-              <div className="aspect-[5/4] sm:aspect-[4/5] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
+              <div className="aspect-[5/4] sm:aspect-[3/2] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
                 <div className="text-center">
                   <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
                   <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
@@ -585,7 +586,7 @@ export default async function DashboardPage() {
               <div key={script.id} className="rounded-2xl overflow-hidden group hover:shadow-lg transition-all duration-200" style={{ background: '#ffffff', boxShadow: cardShadow }}>
                 {/* Poster image area — no score overlay */}
                 <Link href={reportHref} className="block no-underline">
-                  <div className="aspect-[5/4] sm:aspect-[4/5] w-full relative overflow-hidden">
+                  <div className="aspect-[5/4] sm:aspect-[3/2] w-full relative overflow-hidden">
                     {script.posterUrl ? (
                       <img
                         src={script.posterUrl}
@@ -663,19 +664,71 @@ export default async function DashboardPage() {
     </div>
   )
 
-  // Applications panel — pending + reviewed, with opportunity browse link
-  const applicationsPanel = (
-    <div className="space-y-5">
+  // Opportunities panel — matching opps + pending applications
+  const opportunitiesPanel = (
+    <div className="space-y-6">
+      {/* Matching opportunities */}
+      {dashboardOpps.length > 0 ? (
+        <div>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-[13px] font-semibold text-white/60 m-0 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Matches for your scripts</h3>
+            <Link href="/opportunities" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">
+              View all →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {dashboardOpps.map(opp => {
+              const matchCount = getMatchingScriptsForOpp(opp).length
+              const oppStatus: OppStatus = pendingOppIds.has(opp.id)
+                ? 'pending'
+                : appliedOppIds.has(opp.id)
+                  ? 'previously_applied'
+                  : 'available'
+              return (
+                <OpportunityCard
+                  key={opp.id}
+                  id={opp.id}
+                  slug={opp.slug}
+                  title={opp.title}
+                  subtitle={opp.subtitle}
+                  description={opp.description}
+                  genres={opp.genres || []}
+                  formats={opp.formats || []}
+                  createdAt={opp.created_at}
+                  deadline={opp.deadline}
+                  status={oppStatus}
+                  matchingScriptCount={matchCount}
+                  isAnon={!user}
+                />
+              )
+            })}
+          </div>
+        </div>
+      ) : (
+        <div className="rounded-xl px-6 py-10 text-center" style={{ background: '#ffffff', boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No matching opportunities right now</p>
+          <p className="text-[13px] text-gray-500 m-0 mb-3">Upload more scripts to qualify for open opportunities.</p>
+          <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed' }}>
+            Browse opportunities →
+          </Link>
+        </div>
+      )}
+
       {/* Pending applications */}
       {pendingApps.length > 0 && (
         <div>
-          <h3 className="text-[13px] font-semibold text-white/60 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Pending</h3>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-[13px] font-semibold text-white/60 m-0 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Pending Applications</h3>
+            <Link href="/applications" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">
+              View all →
+            </Link>
+          </div>
           <div className="space-y-2">
-            {pendingApps.map(app => {
+            {pendingApps.slice(0, 3).map(app => {
               const opp = oppMap.get(app.opportunity_id)
               return (
                 <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
-                  <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+                  <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
                     <div className="min-w-0">
                       <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
                       <p className="text-[12px] text-gray-600 m-0 mt-0.5">
@@ -690,62 +743,12 @@ export default async function DashboardPage() {
           </div>
         </div>
       )}
-
-      {/* Reviewed applications */}
-      {reviewedApps.length > 0 && (
-        <div>
-          <h3 className="text-[13px] font-semibold text-white/60 m-0 mb-2 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Reviewed</h3>
-          <div className="space-y-2">
-            {reviewedApps.map(app => {
-              const opp = oppMap.get(app.opportunity_id)
-              return (
-                <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
-                  <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                    <div className="min-w-0">
-                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                      <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[12px] text-gray-600">
-                          {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}{fmtDate(app.reviewed_at || app.submitted_at)}
-                        </span>
-                        {app.heat_earned > 0 && (
-                          <span className="text-[11px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} 🔥</span>
-                        )}
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: '#ecfdf5', color: '#059669' }}>Reviewed</span>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* Empty state */}
-      {allApplications.length === 0 && (
-        <div className="rounded-xl px-6 py-10 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No applications yet</p>
-          <p className="text-[13px] text-gray-500 m-0 mb-3">Browse open opportunities and apply with your scripts.</p>
-          <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed' }}>
-            Browse opportunities →
-          </Link>
-        </div>
-      )}
-
-      {/* Browse link when there are apps */}
-      {allApplications.length > 0 && (
-        <div className="pt-1">
-          <Link href="/opportunities" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors">
-            Browse open opportunities →
-          </Link>
-        </div>
-      )}
     </div>
   )
 
   const panels: Record<string, React.ReactNode> = {
     scripts: scriptsPanel,
-    applications: applicationsPanel,
+    opportunities: opportunitiesPanel,
   }
 
   return (
