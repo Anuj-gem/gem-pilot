@@ -239,17 +239,16 @@ export default async function PartnerPage() {
 
     if (allCs && allCs.length > 0) {
       const allConsIds = [...new Set(allCs.map((c: any) => c.consideration_id))]
-      // Fetch review data for COMPLETED considerations from OTHER opportunities only
+      // Fetch review data for COMPLETED considerations only (all opportunities)
       const { data: allReviewData } = await service
         .from('considerations')
-        .select('id, feedback_tags, next_steps_tags, heat_earned, opportunity_id')
+        .select('id, feedback_tags, next_steps_tags, heat_earned')
         .in('id', allConsIds)
         .eq('review_stage', 'complete')
-        .not('opportunity_id', 'in', `(${oppIds.join(',')})`)
 
       // Map consideration_id → review data
       const reviewMap = new Map<string, { feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number }>()
-      for (const t of (allReviewData || []) as { id: string; feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number | null; opportunity_id: string }[]) {
+      for (const t of (allReviewData || []) as { id: string; feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number | null }[]) {
         const hasTags = (t.feedback_tags && t.feedback_tags.length > 0) || (t.next_steps_tags && t.next_steps_tags.length > 0)
         if (hasTags) {
           reviewMap.set(t.id, { feedback_tags: t.feedback_tags, next_steps_tags: t.next_steps_tags, heat_earned: t.heat_earned || 0 })
