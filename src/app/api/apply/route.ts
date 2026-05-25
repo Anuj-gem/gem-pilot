@@ -55,9 +55,9 @@ export async function POST(request: NextRequest) {
   const genres = Array.isArray(body.genres) ? body.genres : []
   const formats = Array.isArray(body.formats) ? body.formats : []
 
-  if (!fullName || !company || !role || !email || !phone) {
+  if (!fullName || !company || !role || !email) {
     return NextResponse.json(
-      { error: 'Name, company, role, email, and phone are required.' },
+      { error: 'Name, company, role, and email are required.' },
       { status: 400 }
     )
   }
