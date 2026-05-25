@@ -45,6 +45,9 @@ export type PartnerApp = {
   writer_headline: string | null
   writer_avatar_url: string | null
   writer_app_count: number
+  writer_script_count: number
+  writer_top_score: number | null
+  writer_total_heat: number
   scripts: PartnerScript[]
 }
 
@@ -144,6 +147,37 @@ export default async function PartnerPage() {
     }
   }
 
+  // Load writer stats (script count, top score, total heat) per writer
+  const writerStats = new Map<string, { script_count: number; top_score: number | null; total_heat: number }>()
+  if (writerIds.length > 0) {
+    const { data: writerSubs } = await service
+      .from('script_submissions')
+      .select('id, user_id, heat_score')
+      .in('user_id', writerIds)
+      .eq('status', 'completed')
+      .is('hidden_at', null)
+    const { data: writerEvals } = await service
+      .from('script_evaluations')
+      .select('submission_id, weighted_score')
+      .in('submission_id', (writerSubs || []).map((s: any) => s.id))
+    // Build eval score map
+    const evalScoreMap = new Map<string, number>()
+    for (const e of (writerEvals || []) as { submission_id: string; weighted_score: number | null }[]) {
+      if (e.weighted_score != null) evalScoreMap.set(e.submission_id, e.weighted_score)
+    }
+    // Aggregate per writer
+    for (const s of (writerSubs || []) as { id: string; user_id: string; heat_score: number | null }[]) {
+      const existing = writerStats.get(s.user_id) || { script_count: 0, top_score: null, total_heat: 0 }
+      existing.script_count++
+      existing.total_heat += s.heat_score ?? 0
+      const score = evalScoreMap.get(s.id)
+      if (score != null && (existing.top_score == null || score > existing.top_score)) {
+        existing.top_score = Math.round(score)
+      }
+      writerStats.set(s.user_id, existing)
+    }
+  }
+
   // Load scripts + evaluations for each application
   const appIds = apps.map(a => a.id)
   const scriptsByApp = new Map<string, PartnerScript[]>()
@@ -215,6 +249,9 @@ export default async function PartnerPage() {
     writer_headline: writerMap.get(app.writer_id)?.headline || null,
     writer_avatar_url: writerMap.get(app.writer_id)?.avatar_url || null,
     writer_app_count: writerOppCount.get(`${app.writer_id}:${app.opportunity_id}`) || 1,
+    writer_script_count: writerStats.get(app.writer_id)?.script_count ?? 0,
+    writer_top_score: writerStats.get(app.writer_id)?.top_score ?? null,
+    writer_total_heat: writerStats.get(app.writer_id)?.total_heat ?? 0,
     scripts: scriptsByApp.get(app.id) || [],
   }))
 

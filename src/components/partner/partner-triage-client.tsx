@@ -363,7 +363,7 @@ export function PartnerTriageClient({
                   <span className="text-[12px] text-white/50">{app.writer_name || 'Unknown'}</span>
                   {app.writer_app_count > 1 && (
                     <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.15)', color: '#fbbf24' }}>
-                      ×{app.writer_app_count}
+                      {app.writer_app_count === 2 ? '2nd' : app.writer_app_count === 3 ? '3rd' : `${app.writer_app_count}th`} App
                     </span>
                   )}
                 </div>
@@ -395,7 +395,7 @@ export function PartnerTriageClient({
                     <span className="font-semibold text-[15px] text-white">{selectedApp.writer_name || 'Unknown'}</span>
                     {selectedApp.writer_app_count > 1 && (
                       <span className="text-[11px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'rgba(251,191,36,0.12)', color: '#fbbf24' }}>
-                        {selectedApp.writer_app_count} applications
+                        {selectedApp.writer_app_count === 2 ? '2nd' : selectedApp.writer_app_count === 3 ? '3rd' : `${selectedApp.writer_app_count}th`} Application
                       </span>
                     )}
                     {(() => {
@@ -413,6 +413,13 @@ export function PartnerTriageClient({
                   {selectedApp.writer_headline && (
                     <p className="text-[13px] text-white/80 m-0 mt-0.5 truncate">{selectedApp.writer_headline}</p>
                   )}
+                  <div className="flex items-center gap-3 mt-1">
+                    <span className="text-[12px] text-white/50">📄 {selectedApp.writer_script_count} script{selectedApp.writer_script_count !== 1 ? 's' : ''}</span>
+                    {selectedApp.writer_top_score != null && (
+                      <span className="text-[12px] text-white/50">💎 Top {selectedApp.writer_top_score}</span>
+                    )}
+                    <span className="text-[12px] text-white/50">🔥 {selectedApp.writer_total_heat} heat</span>
+                  </div>
                 </div>
                 <span className="text-[13px] text-white/60">{fmtDate(selectedApp.submitted_at)}</span>
               </div>
@@ -446,8 +453,8 @@ export function PartnerTriageClient({
                       {script.logline && (
                         <p className="text-[15px] text-white/90 m-0 leading-relaxed mb-3">{script.logline}</p>
                       )}
-                      {/* Score + Heat row — always visible */}
-                      <div className="flex items-center gap-4 mb-3">
+                      {/* Score + Heat + Report button row */}
+                      <div className="flex items-center gap-4 mt-auto">
                         {script.score && (
                           <span className="flex items-center gap-1.5 text-[15px] font-bold text-purple-400">
                             <GemDiamond size={10} /> GEM Score {Math.round(script.score)}
@@ -456,19 +463,16 @@ export function PartnerTriageClient({
                         <span className={`flex items-center gap-1 text-[14px] font-medium ${scriptHeat > 0 ? 'text-orange-400' : 'text-white/30'}`}>
                           🔥 Industry Heat {scriptHeat}
                         </span>
-                      </div>
-                      {/* View full report button */}
-                      {script.eval_id && (
-                        <div className="mt-auto flex justify-end">
+                        {script.eval_id && (
                           <Link
                             href={`/report/${script.eval_id}`}
-                            className="text-[13px] font-medium px-4 py-2 rounded-lg no-underline transition-all hover:brightness-110"
+                            className="ml-auto text-[12px] font-medium px-3 py-1.5 rounded-lg no-underline transition-all hover:brightness-110"
                             style={{ background: 'rgba(124,58,237,0.15)', color: '#a78bfa', border: '1px solid rgba(124,58,237,0.3)' }}
                           >
                             View full report
                           </Link>
-                        </div>
-                      )}
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
