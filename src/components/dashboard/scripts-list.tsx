@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
+import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { useNewUploads } from '@/hooks/use-new-uploads'
 
 type ScriptRow = {
@@ -18,6 +19,7 @@ type ScriptRow = {
   createdAt: string
   heat: number
   posterUrl: string | null
+  isPublic: boolean
   matchingOpportunities?: { title: string; slug: string }[]
   isProcessing?: boolean
   isLocked?: boolean
@@ -28,7 +30,37 @@ type SortKey = 'date' | 'title' | 'score'
 type SortDir = 'asc' | 'desc'
 
 const placeholderGradient = 'linear-gradient(135deg, #7c3aed, #6d28d9)'
-const cardShadow = '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)'
+const cardShadow = '0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)'
+
+// GEM diamond logo — matches dashboard exactly
+function GemDiamond({ size = 10 }: { size?: number }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-flex items-center justify-center shrink-0 rotate-45"
+      style={{ width: size * 1.8, height: size * 1.8 }}
+    >
+      <span className="absolute rotate-0" style={{
+        width: size * 1.8, height: size * 1.8,
+        background: 'rgba(167, 139, 250, 0.15)',
+        borderRadius: size * 0.06,
+      }} />
+      <span className="absolute rotate-0" style={{
+        width: size * 1.35, height: size * 1.35,
+        background: 'rgba(139, 92, 246, 0.35)',
+        borderRadius: size * 0.06,
+      }} />
+      <span className="absolute rotate-0" style={{
+        width: size, height: size,
+        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+        borderRadius: size * 0.06,
+      }} />
+    </span>
+  )
+}
+
+const fmtDate = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
 export function ScriptsList({
   scripts,
@@ -42,7 +74,6 @@ export function ScriptsList({
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [deleting, setDeleting] = useState<Set<string>>(new Set())
-  const [menuOpen, setMenuOpen] = useState<string | null>(null)
 
   // Optimistic processing cards from new uploads + auto-refresh poller
   const optimistic = useNewUploads(scripts.map(s => s.id))
@@ -83,27 +114,8 @@ export function ScriptsList({
     })
   }
 
-  function toggleAll(rows: ScriptRow[]) {
-    const ids = rows.map(s => s.id)
-    const allSelected = ids.every(id => selected.has(id))
-    if (allSelected) {
-      setSelected(prev => {
-        const next = new Set(prev)
-        ids.forEach(id => next.delete(id))
-        return next
-      })
-    } else {
-      setSelected(prev => {
-        const next = new Set(prev)
-        ids.forEach(id => next.add(id))
-        return next
-      })
-    }
-  }
-
   async function deleteScript(id: string) {
     setDeleting(prev => new Set(prev).add(id))
-    setMenuOpen(null)
     await fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' })
     router.refresh()
   }
@@ -125,85 +137,92 @@ export function ScriptsList({
     <div>
       <ProcessingPoller active={hasProcessing} />
 
-      {/* Sort controls + select all */}
+      {/* Sort controls */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-1">
-          <span className="text-[12px] text-gray-600 mr-1">Sort:</span>
+          <span className="text-[12px] text-white/50 mr-1">Sort:</span>
           {(['date', 'title', 'score'] as SortKey[]).map(key => (
             <button
               key={key}
               onClick={() => toggleSort(key)}
-              className={`text-[12px] px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer border-0 bg-transparent ${
+              className={`text-[12px] px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer border-0 ${
                 sortKey === key
-                  ? 'bg-gray-100 text-gray-800'
-                  : 'text-gray-600 hover:text-gray-800'
+                  ? 'bg-white/15 text-white'
+                  : 'bg-transparent text-white/50 hover:text-white/70'
               }`}
             >
               {key.charAt(0).toUpperCase() + key.slice(1)}{arrow(key)}
             </button>
           ))}
         </div>
-        <span className="text-[12px] text-gray-600">
+        <span className="text-[12px] text-white/50">
           {visible.length} {visible.length === 1 ? 'script' : 'scripts'}
         </span>
       </div>
 
       {/* Bulk action bar */}
       {selected.size > 0 && (
-        <div className="flex items-center gap-3 mb-4 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg">
-          <span className="text-[12px] text-gray-600 font-medium">{selected.size} selected</span>
+        <div className="flex items-center gap-3 mb-4 px-3 py-2 rounded-lg" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+          <span className="text-[12px] text-white/70 font-medium">{selected.size} selected</span>
           <button
             onClick={bulkDelete}
-            className="text-[12px] font-semibold text-red-600 hover:text-red-800 transition-colors cursor-pointer border-0 bg-transparent"
+            className="text-[12px] font-semibold text-red-400 hover:text-red-300 transition-colors cursor-pointer border-0 bg-transparent"
           >
             Delete selected
           </button>
           <button
             onClick={() => setSelected(new Set())}
-            className="text-[12px] text-gray-600 hover:text-gray-800 transition-colors ml-auto cursor-pointer border-0 bg-transparent"
+            className="text-[12px] text-white/50 hover:text-white/70 transition-colors ml-auto cursor-pointer border-0 bg-transparent"
           >
             Clear
           </button>
         </div>
       )}
 
-      {/* Script grid */}
+      {/* Script grid — same layout as dashboard */}
       {sortedVisible.length === 0 && optimistic.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-200 bg-white px-5 py-8 text-center">
-          <p className="text-[14px] text-gray-600 m-0">No scripts yet. Use <strong>+ New</strong> to upload your first.</p>
+        <div className="rounded-2xl px-8 py-16 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+          <div className="w-16 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center" style={{ background: '#f3f0ff' }}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 2v6h6M12 18v-6M9 15h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <p className="text-[16px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
+          <p className="text-[13px] text-gray-500 m-0">Upload your first screenplay to get a full evaluation.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Optimistic processing cards */}
           {optimistic.map(s => (
-            <div key={s.id} className="rounded-2xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
-              <div className="aspect-[3/4] w-full relative overflow-hidden" style={{ background: placeholderGradient }}>
-                <div className="w-full h-full flex flex-col items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                  <p className="text-[12px] font-medium text-white/80 m-0 mt-3">Evaluating...</p>
+            <div key={s.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+              <div className="aspect-[5/4] sm:aspect-[3/2] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
+                <div className="text-center">
+                  <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
+                  <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
                 </div>
               </div>
-              <div className="px-4 py-3">
-                <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{s.title}</h3>
-                <p className="text-[12px] text-gray-600 m-0 mt-0.5">{s.format || 'Script'}</p>
+              <div className="px-4 py-4">
+                <h3 className="text-[16px] font-bold text-gray-900 m-0 truncate">{s.title}</h3>
+                <p className="text-[13px] text-gray-600 m-0 mt-0.5">{s.format || 'Script'}</p>
               </div>
             </div>
           ))}
 
-          {/* Completed script cards */}
+          {/* Completed script cards — identical to dashboard */}
           {sortedVisible.map(s => {
             if (s.isProcessing) {
               return (
-                <div key={s.id} className="rounded-2xl bg-white overflow-hidden" style={{ boxShadow: cardShadow }}>
-                  <div className="aspect-[3/4] w-full relative overflow-hidden" style={{ background: placeholderGradient }}>
-                    <div className="w-full h-full flex flex-col items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                      <p className="text-[12px] font-medium text-white/80 m-0 mt-3">Evaluating...</p>
+                <div key={s.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
+                  <div className="aspect-[5/4] sm:aspect-[3/2] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
+                    <div className="text-center">
+                      <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
+                      <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
                     </div>
                   </div>
-                  <div className="px-4 py-3">
-                    <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate">{s.title}</h3>
-                    <p className="text-[12px] text-gray-600 m-0 mt-0.5">{s.format || 'Script'}</p>
+                  <div className="px-4 py-4">
+                    <h3 className="text-[16px] font-bold text-gray-900 m-0 truncate">{s.title}</h3>
+                    <p className="text-[13px] text-gray-600 m-0 mt-0.5">{s.format || 'Script'}</p>
                   </div>
                 </div>
               )
@@ -215,8 +234,8 @@ export function ScriptsList({
             return (
               <div
                 key={s.id}
-                className={`rounded-2xl bg-white overflow-hidden group hover:shadow-xl transition-all duration-200 relative ${deleting.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}
-                style={{ boxShadow: cardShadow }}
+                className={`rounded-2xl overflow-hidden group hover:shadow-lg transition-all duration-200 relative ${deleting.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}
+                style={{ background: '#ffffff', boxShadow: cardShadow }}
               >
                 {s.isLocked && (
                   <div className="absolute inset-0 bg-white/60 z-10 flex items-center justify-center rounded-2xl">
@@ -224,11 +243,11 @@ export function ScriptsList({
                   </div>
                 )}
 
-                {/* Selection checkbox */}
+                {/* Selection checkbox — scripts page only feature */}
                 {!s.isLocked && (
                   <button
                     onClick={(e) => { e.stopPropagation(); toggleSelect(s.id) }}
-                    className="absolute top-2 left-2 z-20 w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors cursor-pointer bg-black/20 backdrop-blur-sm"
+                    className="absolute top-2 left-2 z-20 w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors cursor-pointer backdrop-blur-sm"
                     style={{
                       borderColor: selected.has(s.id) ? '#7c3aed' : 'rgba(255,255,255,0.6)',
                       background: selected.has(s.id) ? '#7c3aed' : 'rgba(0,0,0,0.2)',
@@ -240,34 +259,9 @@ export function ScriptsList({
                   </button>
                 )}
 
-                {/* Three-dot menu */}
-                {!s.isLocked && !s.isProcessing && (
-                  <div className="absolute top-2 right-2 z-20">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setMenuOpen(menuOpen === s.id ? null : s.id) }}
-                      className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer border-0 bg-black/20 backdrop-blur-sm text-white hover:bg-black/40 transition-colors"
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
-                    </button>
-                    {menuOpen === s.id && (
-                      <>
-                        <div className="fixed inset-0 z-30" onClick={() => setMenuOpen(null)} />
-                        <div className="absolute right-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-40 min-w-[120px]">
-                          <button
-                            onClick={() => deleteScript(s.id)}
-                            className="w-full text-left px-3 py-1.5 text-[12px] text-red-600 hover:bg-red-50 transition-colors cursor-pointer border-0 bg-transparent"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                )}
-
-                {/* Poster image area */}
+                {/* Poster image area — matches dashboard */}
                 <Link href={reportHref} className="block no-underline">
-                  <div className="aspect-[3/4] w-full relative overflow-hidden">
+                  <div className="aspect-[5/4] sm:aspect-[3/2] w-full relative overflow-hidden">
                     {s.posterUrl ? (
                       <img
                         src={s.posterUrl}
@@ -276,41 +270,62 @@ export function ScriptsList({
                       />
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center" style={{ background: placeholderGradient }}>
-                        <span className="text-[48px] font-bold text-white/30 leading-none">
-                          {(s.title || '?').charAt(0).toUpperCase()}
+                        {/* Layered concentric diamond — matches dashboard */}
+                        <span className="inline-flex items-center justify-center rotate-45" style={{ width: 72, height: 72 }}>
+                          <span className="absolute" style={{ width: 72, height: 72, background: 'rgba(255,255,255,0.08)', borderRadius: 4 }} />
+                          <span className="absolute" style={{ width: 54, height: 54, background: 'rgba(255,255,255,0.15)', borderRadius: 3 }} />
+                          <span className="absolute" style={{ width: 38, height: 38, background: 'rgba(255,255,255,0.22)', borderRadius: 2 }} />
                         </span>
-                        <p className="text-[11px] text-white/50 m-0 mt-2">Add a poster on your report page</p>
+                        <p className="text-[11px] text-white/50 m-0 mt-3">Add a poster</p>
                       </div>
                     )}
-
-                    {/* Score + heat overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 px-3 py-2 flex items-center justify-between" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
-                      {rounded ? (
-                        <span className="text-[12px] font-semibold text-white/90">
-                          GEM Score: {rounded}
-                        </span>
-                      ) : (
-                        <span />
-                      )}
-                      {s.heat > 0 && (
-                        <span className="text-[12px] font-semibold text-white/90">
-                          🔥 {s.heat}
-                        </span>
-                      )}
-                    </div>
                   </div>
                 </Link>
 
-                {/* Card content below poster */}
-                <div className="px-4 py-3">
+                {/* Card info — matches dashboard exactly */}
+                <div className="px-4 py-4 relative">
+                  {/* Three-dot delete menu — top right */}
+                  {!s.isLocked && !s.isProcessing && (
+                    <div className="absolute top-3 right-3">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); deleteScript(s.id) }}
+                        className="w-7 h-7 rounded-full flex items-center justify-center cursor-pointer border-0 bg-transparent text-gray-400 hover:text-red-500 hover:bg-gray-100 transition-colors"
+                        title="Delete script"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+                      </button>
+                    </div>
+                  )}
+
                   <Link href={reportHref} className="block no-underline">
-                    <h3 className="text-[14px] font-semibold text-gray-900 m-0 truncate group-hover:text-purple-700 transition-colors">
+                    <h3 className="text-[16px] font-bold text-gray-900 m-0 line-clamp-2 pr-8 group-hover:text-purple-700 transition-colors">
                       {s.title}
                     </h3>
-                    <p className="text-[12px] text-gray-600 m-0 mt-0.5">
-                      {[s.format, s.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase())].filter(Boolean).join(' · ')}
+                    <p className="text-[13px] text-gray-600 m-0 mt-1">
+                      {[s.format, s.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(s.createdAt)].filter(Boolean).join(' · ')}
                     </p>
                   </Link>
+
+                  {/* Score + Heat — large and prominent, matches dashboard */}
+                  <div className="flex items-center gap-4 mt-2.5">
+                    <span className="inline-flex items-center gap-1.5 text-[20px] font-bold" style={{ color: '#7c3aed' }}>
+                      <GemDiamond size={10} /> {rounded || '—'}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-[20px] font-bold" style={{ color: s.heat > 0 ? '#ea580c' : '#9ca3af' }}>
+                      <span className="text-[18px]">🔥</span> {s.heat}
+                    </span>
+                  </div>
+
+                  {/* Bottom row: Discover toggle + view report — matches dashboard */}
+                  <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: '1px solid #f0f0f0' }}>
+                    <div className="flex items-center gap-2">
+                      <DiscoverToggle scriptId={s.id} isPublic={s.isPublic} isAnon={false} />
+                      <span className="text-[12px] text-gray-600">{s.isPublic ? 'Published to Discover' : 'Not published to Discover'}</span>
+                    </div>
+                    <Link href={reportHref} className="text-[13px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline whitespace-nowrap">
+                      View report →
+                    </Link>
+                  </div>
                 </div>
               </div>
             )
