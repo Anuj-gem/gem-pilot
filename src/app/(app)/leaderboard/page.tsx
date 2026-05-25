@@ -46,10 +46,10 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
     const service = svc()
     const { data: profile } = await service
       .from('profiles')
-      .select('subscription_status')
+      .select('subscription_status, account_type')
       .eq('id', user.id)
       .single()
-    isInsider = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    isInsider = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing' || profile?.account_type === 'producer' || profile?.account_type === 'admin'
   }
 
   const sp = await searchParams
