@@ -50,6 +50,7 @@ export async function POST(request: NextRequest) {
     .from("profiles")
     .select("id, email")
     .not("email", "is", null)
+    .not("email", "ilike", "%@gem.studio")
     .or("account_type.is.null,account_type.eq.writer")
     .or("email_unsubscribed.is.null,email_unsubscribed.eq.false")
 
