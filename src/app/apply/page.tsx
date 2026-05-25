@@ -17,6 +17,7 @@ const CALENDLY_URL = 'https://calendly.com/anuj-gem/15-minute-intro-call'
 export default function ApplyPage() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [company, setCompany] = useState('')
   const [role, setRole] = useState<Role>('producer')
   const [submitting, setSubmitting] = useState(false)
@@ -34,6 +35,7 @@ export default function ApplyPage() {
         body: JSON.stringify({
           full_name: fullName,
           email,
+          phone,
           company,
           role,
         }),
@@ -98,9 +100,9 @@ export default function ApplyPage() {
                   autoComplete="name"
                   className="w-full px-3.5 py-2.5 rounded-lg text-[14px] outline-none transition-colors"
                   style={{
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    color: '#ffffff',
+                    background: '#ffffff',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    color: '#1a1a2e',
                   }}
                 />
               </Field>
@@ -115,9 +117,26 @@ export default function ApplyPage() {
                   autoComplete="email"
                   className="w-full px-3.5 py-2.5 rounded-lg text-[14px] outline-none transition-colors"
                   style={{
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    color: '#ffffff',
+                    background: '#ffffff',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    color: '#1a1a2e',
+                  }}
+                />
+              </Field>
+
+              <Field label="Phone" required>
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  placeholder="+1 555 123 4567"
+                  autoComplete="tel"
+                  className="w-full px-3.5 py-2.5 rounded-lg text-[14px] outline-none transition-colors"
+                  style={{
+                    background: '#ffffff',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    color: '#1a1a2e',
                   }}
                 />
               </Field>
@@ -132,9 +151,9 @@ export default function ApplyPage() {
                   autoComplete="organization"
                   className="w-full px-3.5 py-2.5 rounded-lg text-[14px] outline-none transition-colors"
                   style={{
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    color: '#ffffff',
+                    background: '#ffffff',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    color: '#1a1a2e',
                   }}
                 />
               </Field>
