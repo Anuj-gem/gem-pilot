@@ -535,67 +535,68 @@ export function PartnerTriageClient({
                 </div>
               )}
 
-              {/* Industry sentiment — aggregate feedback across all partners/opportunities for this writer's scripts */}
+              {/* Industry sentiment — completed reviews for THIS app's scripts only */}
               {(() => {
-                // Collect sentiment from ALL of this writer's scripts, not just the currently selected one
-                const writerScriptIds = applications
-                  .filter(a => a.writer_id === selectedApp.writer_id)
-                  .flatMap(a => a.scripts.map(s => s.submission_id))
-                const aggregated = { total_heat: 0, liked_tags: {} as Record<string, number>, pass_tags: {} as Record<string, number>, review_count: 0 }
-                for (const sid of writerScriptIds) {
+                const appScriptIds = selectedApp.scripts.map(s => s.submission_id)
+                const aggregated = { total_heat: 0, liked_tags: new Set<string>(), pass_tags: new Set<string>(), review_count: 0 }
+                for (const sid of appScriptIds) {
                   const s = scriptSentiment[sid]
                   if (!s) continue
                   aggregated.total_heat += s.total_heat
                   aggregated.review_count += s.review_count
-                  for (const [tag, count] of Object.entries(s.liked_tags)) {
-                    aggregated.liked_tags[tag] = (aggregated.liked_tags[tag] || 0) + count
-                  }
-                  for (const [tag, count] of Object.entries(s.pass_tags)) {
-                    aggregated.pass_tags[tag] = (aggregated.pass_tags[tag] || 0) + count
-                  }
+                  for (const tag of Object.keys(s.liked_tags)) aggregated.liked_tags.add(tag)
+                  for (const tag of Object.keys(s.pass_tags)) aggregated.pass_tags.add(tag)
                 }
-                if (aggregated.review_count === 0) return null
-                const likedEntries = Object.entries(aggregated.liked_tags).sort((a, b) => b[1] - a[1])
-                const passEntries = Object.entries(aggregated.pass_tags).sort((a, b) => b[1] - a[1])
+                const likedArr = [...aggregated.liked_tags]
+                const passArr = [...aggregated.pass_tags]
+                const scriptTitle = selectedApp.scripts[0]?.title || 'this script'
                 return (
                   <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">
-                      Industry sentiment
+                      Industry sentiment about {scriptTitle}
                     </span>
-                    <p className="text-[12px] text-white/40 mt-1 mb-0">
-                      From {aggregated.review_count} review{aggregated.review_count !== 1 ? 's' : ''} across all opportunities
-                    </p>
+                    {aggregated.review_count === 0 ? (
+                      <p className="text-[12px] text-white/40 mt-1 mb-0">
+                        No completed reviews yet. You would be the first.
+                      </p>
+                    ) : (
+                      <>
+                        <p className="text-[12px] text-white/40 mt-1 mb-0">
+                          From {aggregated.review_count} completed review{aggregated.review_count !== 1 ? 's' : ''} across all opportunities
+                        </p>
 
-                    {aggregated.total_heat > 0 && (
-                      <div className="mt-3 flex items-center gap-2">
-                        <span className="text-[13px] text-orange-400 font-medium">🔥 {aggregated.total_heat} total heat</span>
-                      </div>
-                    )}
+                        {aggregated.total_heat > 0 && (
+                          <div className="mt-3 flex items-center gap-2">
+                            <span className="text-[13px] text-orange-400 font-medium">🔥 {aggregated.total_heat} total heat earned</span>
+                          </div>
+                        )}
 
-                    {likedEntries.length > 0 && (
-                      <div className="mt-3">
-                        <span className="text-[11px] text-white/50 uppercase tracking-wider">What people liked</span>
-                        <div className="flex flex-wrap gap-1.5 mt-1.5">
-                          {likedEntries.map(([tag, count]) => (
-                            <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
-                              {tag}{count > 1 ? ` x${count}` : ''}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                        {likedArr.length > 0 && (
+                          <div className="mt-3">
+                            <span className="text-[11px] text-white/50 uppercase tracking-wider">What people liked</span>
+                            <div className="flex flex-wrap gap-1.5 mt-1.5">
+                              {likedArr.map(tag => (
+                                <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
 
-                    {passEntries.length > 0 && (
-                      <div className="mt-3">
-                        <span className="text-[11px] text-white/50 uppercase tracking-wider">Why people passed</span>
-                        <div className="flex flex-wrap gap-1.5 mt-1.5">
-                          {passEntries.map(([tag, count]) => (
-                            <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
-                              {tag}{count > 1 ? ` x${count}` : ''}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                        {passArr.length > 0 && (
+                          <div className="mt-3">
+                            <span className="text-[11px] text-white/50 uppercase tracking-wider">Why people passed</span>
+                            <div className="flex flex-wrap gap-1.5 mt-1.5">
+                              {passArr.map(tag => (
+                                <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
                     )}
                   </div>
                 )
