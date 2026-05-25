@@ -29,7 +29,7 @@ export default async function PartnerLayout({ children }: { children: React.Reac
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status, full_name, handle, headline, avatar_url, heat_score, referral_code, bonus_submissions')
+    .select('subscription_status, full_name, handle, headline, avatar_url, heat_score, referral_code, bonus_submissions, account_type')
     .eq('id', user.id)
     .single()
 
@@ -55,6 +55,7 @@ export default async function PartnerLayout({ children }: { children: React.Reac
       headline: profile?.headline ?? null,
       avatar_url: profile?.avatar_url ?? null,
       isPro,
+      accountType: (profile as any)?.account_type ?? null,
       heatScore: (profile as any)?.heat_score ?? 0,
       referralCode: (profile as any)?.referral_code ?? null,
       bonusSubmissions: (profile as any)?.bonus_submissions ?? 0,

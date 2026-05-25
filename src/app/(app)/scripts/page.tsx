@@ -5,6 +5,7 @@ import { createServerClient } from '@supabase/ssr'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
 import { ScriptsList } from '@/components/dashboard/scripts-list'
 import { UploadCTAButton } from '@/components/upload-cta-button'
+import { NewScriptButton } from '@/components/dashboard/new-script-button'
 
 export const dynamic = 'force-dynamic'
 
@@ -47,12 +48,13 @@ export default async function ScriptsPage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status')
+    .select('subscription_status, account_type')
     .eq('id', user.id)
     .single()
 
   const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
   const isTrial = !isPro
+  const isProducer = (profile as any)?.account_type === 'producer'
   const service = svc()
 
   // Fetch scripts (exclude hidden legacy rows)
@@ -158,6 +160,7 @@ export default async function ScriptsPage() {
             {visibleCount} {visibleCount === 1 ? 'script' : 'scripts'} evaluated
           </p>
         </div>
+        {isProducer && <NewScriptButton />}
       </header>
 
       {/* Script list (client component) */}
