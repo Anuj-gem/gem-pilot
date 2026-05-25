@@ -40,6 +40,9 @@ export type PartnerApp = {
   opportunity_id: string
   triage_status: string | null
   triage_feedback_tags: string[] | null
+  feedback_tags: string[] | null
+  next_steps_tags: string[] | null
+  heat_earned: number
   writer_name: string | null
   writer_email: string | null
   writer_headline: string | null
@@ -116,14 +119,14 @@ export default async function PartnerPage() {
   // Fetch ALL considerations for those opportunities (not just latest)
   const { data: rawApps } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, writer_id, writer_pitch, application_responses, opportunity_id, triage_status, triage_feedback_tags')
+    .select('id, status, review_stage, submitted_at, writer_id, writer_pitch, application_responses, opportunity_id, triage_status, triage_feedback_tags, heat_earned, feedback_tags, next_steps_tags')
     .in('opportunity_id', oppIds)
     .order('submitted_at', { ascending: false })
 
   const apps = (rawApps || []) as {
     id: string; status: string; review_stage: string; submitted_at: string
     writer_id: string; writer_pitch: string | null; application_responses: Record<string, string> | null; opportunity_id: string
-    triage_status: string | null; triage_feedback_tags: string[] | null
+    triage_status: string | null; triage_feedback_tags: string[] | null; feedback_tags: string[] | null; next_steps_tags: string[] | null; heat_earned: number | null
   }[]
 
   // Compute per-writer application count scoped to each opportunity
@@ -244,6 +247,7 @@ export default async function PartnerPage() {
   // Build enriched app list
   const enrichedApps: PartnerApp[] = apps.map(app => ({
     ...app,
+    heat_earned: app.heat_earned ?? 0,
     writer_name: writerMap.get(app.writer_id)?.full_name || writerMap.get(app.writer_id)?.email || null,
     writer_email: writerMap.get(app.writer_id)?.email || null,
     writer_headline: writerMap.get(app.writer_id)?.headline || null,

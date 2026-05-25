@@ -210,7 +210,7 @@ export function PartnerTriageClient({
   return (
     <div className="h-screen flex overflow-hidden" style={{ background: '#0f0a1a' }}>
         {/* LEFT: Applicant list */}
-        <div className="w-[380px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="w-[380px] shrink-0 flex flex-col" style={{ borderRight: '1px solid rgba(255,255,255,0.06)', boxShadow: '4px 0 20px rgba(0,0,0,0.3)' }}>
           {/* Opportunity dropdown + settings */}
           <div className="px-4 py-3 relative" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div className="flex items-center gap-2">
@@ -416,7 +416,7 @@ export function PartnerTriageClient({
                   <div className="flex items-center gap-3 mt-1">
                     <span className="text-[12px] text-white/50">📄 {selectedApp.writer_script_count} script{selectedApp.writer_script_count !== 1 ? 's' : ''}</span>
                     {selectedApp.writer_top_score != null && (
-                      <span className="text-[12px] text-white/50">💎 Top {selectedApp.writer_top_score}</span>
+                      <span className="flex items-center gap-1 text-[12px] text-white/50"><GemDiamond size={7} /> Top GEM Score {selectedApp.writer_top_score}</span>
                     )}
                     <span className="text-[12px] text-white/50">🔥 {selectedApp.writer_total_heat} heat</span>
                   </div>
@@ -514,7 +514,8 @@ export function PartnerTriageClient({
                     {writerHistory.map(prev => {
                       const prevStatus = triageState[prev.id]?.status || prev.triage_status
                       const prevScript = prev.scripts[0]
-                      const prevHeat = prevScript?.heat_score ?? 0
+                      const prevHeat = prev.heat_earned ?? 0
+                      const prevTags = triageState[prev.id]?.tags || [...(prev.triage_feedback_tags || []), ...(prev.feedback_tags || []), ...(prev.next_steps_tags || [])]
                       return (
                         <div key={prev.id} className="px-3 py-2.5 rounded-lg" style={{ background: 'rgba(255,255,255,0.02)' }}>
                           <div className="flex items-center justify-between gap-2">
@@ -527,13 +528,6 @@ export function PartnerTriageClient({
                             )}
                             <span className="text-[12px] text-white/40 shrink-0">{fmtDate(prev.submitted_at)}</span>
                           </div>
-                          <div className="flex items-center gap-2 mt-1">
-                            {prevScript?.format && <span className="text-[11px] text-white/50">{prevScript.format}</span>}
-                            {prevScript?.genre && <span className="text-[11px] text-white/50">· {prevScript.genre}</span>}
-                          </div>
-                          {prevScript?.logline && (
-                            <p className="text-[12px] text-white/50 mt-1 mb-0 line-clamp-2 leading-relaxed">{prevScript.logline}</p>
-                          )}
                           <div className="flex items-center gap-3 mt-1.5">
                             {prevStatus && (
                               <span className="text-[12px] text-white/60">
@@ -541,12 +535,12 @@ export function PartnerTriageClient({
                               </span>
                             )}
                             {prevHeat > 0 && (
-                              <span className="text-[12px] text-orange-400">+{prevHeat} heat earned</span>
+                              <span className="text-[12px] text-orange-400">+{prevHeat} heat</span>
                             )}
                           </div>
-                          {(triageState[prev.id]?.tags || prev.triage_feedback_tags || []).length > 0 && (
+                          {prevTags.length > 0 && (
                             <div className="flex flex-wrap gap-1.5 mt-2">
-                              {(triageState[prev.id]?.tags || prev.triage_feedback_tags || []).map(tag => (
+                              {prevTags.map(tag => (
                                 <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
                                   {tag.replace(/^[+-]/, '')}
                                 </span>
@@ -628,7 +622,7 @@ export function PartnerTriageClient({
               })()}
 
               {/* Action buttons */}
-              <div className="px-6 py-5 mt-auto" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
+              <div className="px-6 py-5" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
                 {!triageState[selectedApp.id] && (
                   <>
                     {showPassFeedback !== selectedApp.id ? (
@@ -795,25 +789,37 @@ export function PartnerTriageClient({
                 {(() => {
                   const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : null)
                   if (!st || (st !== 'pass' && st !== 'meet')) return null
+                  const tags = triageState[selectedApp.id]?.tags || selectedApp.triage_feedback_tags || []
                   return (
-                    <div className="flex items-center justify-center gap-3 py-2">
-                      <span className="text-[13px] text-white/30">
-                        {st === 'pass' && 'Passed'}
-                        {st === 'meet' && 'Meeting requested'}
-                      </span>
-                      {triageState[selectedApp.id] && (
-                        <button
-                          onClick={() => {
-                            setTriageState(prev => {
-                              const next = { ...prev }
-                              delete next[selectedApp.id]
-                              return next
-                            })
-                          }}
-                          className="text-[12px] text-purple-400 hover:text-purple-300 cursor-pointer bg-transparent border-0 transition-colors"
-                        >
-                          Undo
-                        </button>
+                    <div className="py-3 space-y-2">
+                      <div className="flex items-center gap-3">
+                        <span className="text-[13px] text-white/30">
+                          {st === 'pass' && 'Passed'}
+                          {st === 'meet' && 'Meeting requested'}
+                        </span>
+                        {triageState[selectedApp.id] && (
+                          <button
+                            onClick={() => {
+                              setTriageState(prev => {
+                                const next = { ...prev }
+                                delete next[selectedApp.id]
+                                return next
+                              })
+                            }}
+                            className="text-[12px] text-purple-400 hover:text-purple-300 cursor-pointer bg-transparent border-0 transition-colors"
+                          >
+                            Undo
+                          </button>
+                        )}
+                      </div>
+                      {tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5">
+                          {tags.map(tag => (
+                            <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                              {tag.replace(/^[+-]/, '')}
+                            </span>
+                          ))}
+                        </div>
                       )}
                     </div>
                   )
