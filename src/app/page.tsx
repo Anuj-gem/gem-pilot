@@ -16,6 +16,7 @@ import { LandingPartners } from '@/components/landing/landing-partners'
 import { LandingPro } from '@/components/landing/landing-pro'
 import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
+import { SiteFooter } from '@/components/site-footer'
 import { createClient } from '@/lib/supabase-server'
 
 export default async function Home({
@@ -49,6 +50,7 @@ export default async function Home({
       <LandingPro />
       <LandingFinalCTA />
 
+      <SiteFooter />
       <ScriptUploadModal redirectTo="/evaluating" />
     </div>
   )

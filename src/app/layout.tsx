@@ -4,7 +4,6 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 import { PostHogProvider } from "@/components/posthog-provider"
 import { GoogleAdsScript } from "@/components/google-ads-script"
 import { IntercomWidget } from "@/components/intercom-widget"
-import { SiteFooter } from "@/components/site-footer"
 import "./globals.css"
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
@@ -75,7 +74,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="flex-1 min-w-0 w-full overflow-x-hidden">
           {children}
         </div>
-        <SiteFooter />
       </body>
     </html>
   )
