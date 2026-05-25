@@ -483,7 +483,7 @@ export function PartnerTriageClient({
               {writerHistory.length > 0 && (
                 <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">
-                    Applied {writerHistory.length + 1} times for this opportunity
+                    {writerHistory.length} previous application{writerHistory.length !== 1 ? 's' : ''}
                   </span>
                   <div className="mt-3 space-y-2.5">
                     {writerHistory.map(prev => {
@@ -502,6 +502,13 @@ export function PartnerTriageClient({
                             )}
                             <span className="text-[12px] text-white/40 shrink-0">{fmtDate(prev.submitted_at)}</span>
                           </div>
+                          <div className="flex items-center gap-2 mt-1">
+                            {prevScript?.format && <span className="text-[11px] text-white/50">{prevScript.format}</span>}
+                            {prevScript?.genre && <span className="text-[11px] text-white/50">· {prevScript.genre}</span>}
+                          </div>
+                          {prevScript?.logline && (
+                            <p className="text-[12px] text-white/50 mt-1 mb-0 line-clamp-2 leading-relaxed">{prevScript.logline}</p>
+                          )}
                           <div className="flex items-center gap-3 mt-1.5">
                             {prevStatus && (
                               <span className="text-[12px] text-white/60">
@@ -528,25 +535,40 @@ export function PartnerTriageClient({
                 </div>
               )}
 
-              {/* Industry sentiment — aggregate feedback across all partners/opportunities */}
+              {/* Industry sentiment — aggregate feedback across all partners/opportunities for this writer's scripts */}
               {(() => {
-                const scriptId = selectedApp.scripts[0]?.submission_id
-                const sentiment = scriptId ? scriptSentiment[scriptId] : null
-                if (!sentiment || sentiment.review_count === 0) return null
-                const likedEntries = Object.entries(sentiment.liked_tags).sort((a, b) => b[1] - a[1])
-                const passEntries = Object.entries(sentiment.pass_tags).sort((a, b) => b[1] - a[1])
+                // Collect sentiment from ALL of this writer's scripts, not just the currently selected one
+                const writerScriptIds = applications
+                  .filter(a => a.writer_id === selectedApp.writer_id)
+                  .flatMap(a => a.scripts.map(s => s.submission_id))
+                const aggregated = { total_heat: 0, liked_tags: {} as Record<string, number>, pass_tags: {} as Record<string, number>, review_count: 0 }
+                for (const sid of writerScriptIds) {
+                  const s = scriptSentiment[sid]
+                  if (!s) continue
+                  aggregated.total_heat += s.total_heat
+                  aggregated.review_count += s.review_count
+                  for (const [tag, count] of Object.entries(s.liked_tags)) {
+                    aggregated.liked_tags[tag] = (aggregated.liked_tags[tag] || 0) + count
+                  }
+                  for (const [tag, count] of Object.entries(s.pass_tags)) {
+                    aggregated.pass_tags[tag] = (aggregated.pass_tags[tag] || 0) + count
+                  }
+                }
+                if (aggregated.review_count === 0) return null
+                const likedEntries = Object.entries(aggregated.liked_tags).sort((a, b) => b[1] - a[1])
+                const passEntries = Object.entries(aggregated.pass_tags).sort((a, b) => b[1] - a[1])
                 return (
                   <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <span className="text-[12px] text-white/60 uppercase tracking-wider font-medium">
                       Industry sentiment
                     </span>
                     <p className="text-[12px] text-white/40 mt-1 mb-0">
-                      From {sentiment.review_count} review{sentiment.review_count !== 1 ? 's' : ''} across all opportunities
+                      From {aggregated.review_count} review{aggregated.review_count !== 1 ? 's' : ''} across all opportunities
                     </p>
 
-                    {sentiment.total_heat > 0 && (
+                    {aggregated.total_heat > 0 && (
                       <div className="mt-3 flex items-center gap-2">
-                        <span className="text-[13px] text-orange-400 font-medium">🔥 {sentiment.total_heat} total heat</span>
+                        <span className="text-[13px] text-orange-400 font-medium">🔥 {aggregated.total_heat} total heat</span>
                       </div>
                     )}
 
