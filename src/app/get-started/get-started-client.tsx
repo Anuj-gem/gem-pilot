@@ -18,6 +18,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-browser'
+import { LandingNav } from '@/components/landing/landing-nav'
 import {
   identifyUser,
   trackSignupComplete,
@@ -616,44 +617,7 @@ export default function GetStartedClient() {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)' }}>
-      {/* ─── Nav ─────────────────────────────────────────────────────── */}
-      <nav
-        className="sticky top-0 z-50 flex items-center justify-between px-4 h-14"
-        style={{ backgroundColor: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #E7E5E4' }}
-      >
-        <Link href="/" className="flex items-center gap-2 no-underline">
-          <span
-            aria-hidden="true"
-            className="inline-block w-3 h-3 rotate-45"
-            style={{
-              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-              boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
-            }}
-          />
-          <span className="text-lg font-bold tracking-tight" style={{ color: '#1a1a1a' }}>
-            GEM
-          </span>
-        </Link>
-        <div className="flex items-center gap-6 text-sm">
-          <Link href="/" className="transition-colors" style={{ color: '#78716C' }}>
-            Home
-          </Link>
-          <Link
-            href="/leaderboard"
-            className="transition-colors"
-            style={{ color: '#78716C' }}
-          >
-            Discover
-          </Link>
-          <Link
-            href="/opportunities"
-            className="transition-colors"
-            style={{ color: '#78716C' }}
-          >
-            Opportunities
-          </Link>
-        </div>
-      </nav>
+      <LandingNav />
 
       {/* ─── Content ─────────────────────────────────────────────────── */}
       <div className="max-w-[560px] mx-auto px-5 pt-9 pb-24">
