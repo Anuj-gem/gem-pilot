@@ -484,6 +484,42 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const publicCount = publicSectionCount(privacy)
   const anyPublic = publicCount > 0
 
+  // Access gate: only the owner, admins, and producer accounts can view
+  // report pages. Everyone else sees a blocked page with no data.
+  const viewerHasAccess = isOwner || isAdmin || viewerIsProducer
+  if (!viewerHasAccess) {
+    return (
+      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center', maxWidth: 400, padding: '0 24px' }}>
+          <p style={{ fontSize: 48, margin: '0 0 16px' }}>🔒</p>
+          <h1 style={{ fontSize: 22, fontWeight: 600, margin: '0 0 8px', color: '#1C1917' }}>
+            This report is private
+          </h1>
+          <p style={{ fontSize: 15, color: '#57534E', margin: '0 0 24px', lineHeight: 1.5 }}>
+            {user
+              ? "You don't have access to view this report."
+              : 'Log in to view this report.'}
+          </p>
+          <a
+            href={user ? '/dashboard' : '/login'}
+            style={{
+              display: 'inline-block',
+              padding: '10px 20px',
+              borderRadius: 10,
+              background: '#7C3AED',
+              color: '#fff',
+              fontWeight: 600,
+              textDecoration: 'none',
+              fontSize: 15,
+            }}
+          >
+            {user ? 'Go to dashboard' : 'Log in'}
+          </a>
+        </div>
+      </div>
+    )
+  }
+
   const blurStyle: React.CSSProperties = {
     filter: 'blur(5px)',
     userSelect: 'none',
