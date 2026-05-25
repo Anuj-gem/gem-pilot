@@ -783,42 +783,48 @@ export default async function DashboardPage() {
 
             {/* Stat cards — emoji-driven */}
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
-              <div className="py-5 px-4 text-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
-                <span className="text-[24px] block mb-1">📋</span>
-                <span className="text-[28px] sm:text-[34px] font-bold text-white block leading-none">{openOppCount}</span>
-                <span className="text-[13px] text-white/60 mt-1 block">Open Opportunities</span>
+              <div className="py-5 px-4" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[24px] leading-none shrink-0">📋</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold text-white leading-none">{openOppCount}</span>
+                </div>
+                <span className="text-[13px] text-white/60 block">Open Opportunities</span>
               </div>
               <Link href="/partner" className="no-underline block">
-                <div className="py-5 px-4 text-center hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
-                  <span className="text-[24px] block mb-1">📨</span>
-                  <span className="text-[28px] sm:text-[34px] font-bold text-white block leading-none">{partnerPendingTotal}</span>
-                  <span className="text-[13px] text-white/60 mt-1 block">Pending Applications</span>
+                <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[24px] leading-none shrink-0">📨</span>
+                    <span className="text-[28px] sm:text-[34px] font-bold text-white leading-none">{partnerPendingTotal}</span>
+                  </div>
+                  <span className="text-[13px] text-white/60 block">Pending Applications</span>
                 </div>
               </Link>
-              <div className="py-5 px-4 text-center" style={{ background: 'linear-gradient(135deg, rgba(52,211,153,0.15) 0%, rgba(52,211,153,0.06) 100%)', border: '1px solid rgba(52,211,153,0.25)', borderRadius: 16 }}>
-                <span className="text-[24px] block mb-1">🤝</span>
-                <span className="text-[28px] sm:text-[34px] font-bold text-white block leading-none">{totalWriterConnections}</span>
-                <span className="text-[13px] text-white/60 mt-1 block">Writer Connections</span>
+              <div className="py-5 px-4" style={{ background: 'linear-gradient(135deg, rgba(52,211,153,0.15) 0%, rgba(52,211,153,0.06) 100%)', border: '1px solid rgba(52,211,153,0.25)', borderRadius: 16 }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[24px] leading-none shrink-0">🤝</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold text-white leading-none">{totalWriterConnections}</span>
+                </div>
+                <span className="text-[13px] text-white/60 block">Writer Connections</span>
               </div>
             </div>
 
             {/* Opportunity cards header */}
             <div className="flex items-center justify-between">
-              <h2 className="text-[18px] font-bold text-white m-0">Your Opportunities</h2>
               <div className="flex items-center gap-3">
+                <h2 className="text-[18px] font-bold text-white m-0">Your Opportunities</h2>
                 {partnerOpps.length > 0 && (
                   <Link href="/partner" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">
                     View all →
                   </Link>
                 )}
-                <Link
-                  href="/partner/opportunities/create"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-bold text-white no-underline transition-all hover:brightness-110"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 10 }}
-                >
-                  + New
-                </Link>
               </div>
+              <Link
+                href="/partner/opportunities/create"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-bold text-white no-underline transition-all hover:brightness-110"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 10 }}
+              >
+                + New
+              </Link>
             </div>
 
             {/* Opportunity cards — only show opps with pending (untriaged) applications */}
@@ -923,40 +929,48 @@ export default async function DashboardPage() {
             Welcome back, {profile?.full_name?.split(' ')[0] || 'Writer'}
           </h1>
 
-          {/* ── WRITER STATS ROW — emoji · number · label ── */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+          {/* ── WRITER STATS ROW ── */}
+          <div className="grid grid-cols-4 gap-3 sm:gap-4">
             <Link href="/scripts" className="no-underline block">
-              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <span className="text-[18px] sm:text-[20px] leading-none shrink-0">📄</span>
-                <span className="text-[22px] sm:text-[26px] font-bold text-white leading-none">{scriptCount}</span>
-                <span className="text-[12px] sm:text-[14px] font-bold text-white">Scripts</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[24px] leading-none shrink-0">📄</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold text-white leading-none">{scriptCount}</span>
+                </div>
+                <span className="text-[13px] text-white/60 block">Scripts</span>
               </div>
             </Link>
             <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <span className="hidden sm:inline-flex">{gemDiamond(10)}</span>
-                <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
-                  {topScore > 0 ? topScore : '—'}
-                </span>
-                <span className="text-[12px] sm:text-[14px] font-bold text-white whitespace-nowrap">Top Score</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(167,139,250,0.06) 100%)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: 16 }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="inline-flex shrink-0">{gemDiamond(10)}</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
+                    {topScore > 0 ? topScore : '—'}
+                  </span>
+                </div>
+                <span className="text-[13px] text-white/60 block">Top Score</span>
               </div>
             </Link>
             <Link href="/applications" className="no-underline block">
-              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <span className="text-[18px] sm:text-[20px] leading-none shrink-0">🔥</span>
-                <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
-                  {totalHeat > 0 ? totalHeat : '—'}
-                </span>
-                <span className="text-[12px] sm:text-[14px] font-bold text-white">Heat</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[24px] leading-none shrink-0">🔥</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
+                    {totalHeat > 0 ? totalHeat : '—'}
+                  </span>
+                </div>
+                <span className="text-[13px] text-white/60 block">Heat</span>
               </div>
             </Link>
             <Link href="/applications" className="no-underline block">
-              <div className="rounded-lg px-3 py-3 sm:px-4 sm:py-4 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 hover:bg-white/10 transition-all" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <span className="text-[18px] sm:text-[20px] leading-none shrink-0">📨</span>
-                <span className="text-[22px] sm:text-[26px] font-bold leading-none" style={{ color: pendingCount > 0 ? '#a78bfa' : 'rgba(255,255,255,0.3)' }}>
-                  {pendingCount > 0 ? pendingCount : '—'}
-                </span>
-                <span className="text-[12px] sm:text-[14px] font-bold text-white whitespace-nowrap">Pending</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[24px] leading-none shrink-0">📨</span>
+                  <span className="text-[28px] sm:text-[34px] font-bold leading-none" style={{ color: pendingCount > 0 ? '#a78bfa' : 'rgba(255,255,255,0.3)' }}>
+                    {pendingCount > 0 ? pendingCount : '—'}
+                  </span>
+                </div>
+                <span className="text-[13px] text-white/60 block">Pending</span>
               </div>
             </Link>
           </div>
