@@ -7,6 +7,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter, useParams, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
+import { scriptMatchesOpportunity, normGenre, collectGenres } from '@/lib/opportunity-matching'
 import Link from 'next/link'
 
 type Script = {
@@ -26,6 +27,8 @@ type Opportunity = {
   min_score: number | null
   formats: string[] | null
   genres: string[] | null
+  budget_tiers: string[] | null
+  tags: string[] | null
   subtitle: string | null
 }
 
@@ -79,7 +82,7 @@ export default function ApplyPage() {
       // Load opportunity
       const { data: opp } = await supabase
         .from('opportunities')
-        .select('id, title, slug, description, min_score, formats, genres, subtitle')
+        .select('id, title, slug, description, min_score, formats, genres, budget_tiers, tags, subtitle')
         .eq('slug', slug)
         .eq('status', 'active')
         .single()
@@ -138,30 +141,24 @@ export default function ApplyPage() {
           const evJson = ev?.evaluation as Record<string, unknown> | null
           const cls = (evJson?.classification as Record<string, unknown>) || {}
           const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-          const genreSet = new Set<string>()
-          for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
-            const n = (raw ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
-            if (n) genreSet.add(n)
-          }
+          const genres = collectGenres(cls.genre_primary as string, cls.genre_secondary as string[], cls.genre_tags as string[])
           const format = (cls.format as string) || (fmt.format as string) || s.declared_format || null
-          return { id: s.id, title: s.title, score, format, genres: Array.from(genreSet), evalId }
+          const packaging = (evJson?.packaging as Record<string, unknown>) || {}
+          const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
+          const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
+          const tags = ((cls.tags as string[]) || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
+          return { id: s.id, title: s.title, score, format, genres, evalId, budget, tags }
         })
 
       // Split into previously considered vs available
-      const prevConsidered = allMapped.filter((s: Script) => alreadySubmittedIds.has(s.id))
+      const prevConsidered = allMapped.filter((s: any) => alreadySubmittedIds.has(s.id))
       const qualifying = allMapped
-        .filter((s: Script) => !alreadySubmittedIds.has(s.id))
-        .filter((s: Script) => {
-          if (opp.min_score && (!s.score || s.score < opp.min_score)) return false
-          const noFormatFilter = !opp.formats || opp.formats.length === 0
-          const noGenreFilter = !opp.genres || opp.genres.length === 0
-          if (noFormatFilter && noGenreFilter) return true
-          const fmtMatch = noFormatFilter || (s.format && opp.formats!.some((f: string) => f.toLowerCase() === s.format!.toLowerCase()))
-          if (!fmtMatch) return false
-          if (noGenreFilter) return true
-          if (s.genres.length === 0) return false
-          const oppNorm = opp.genres!.map((g: string) => g.toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim())
-          return s.genres.some((sg: string) => oppNorm.some((og: string) => sg.includes(og) || og.includes(sg)))
+        .filter((s: any) => !alreadySubmittedIds.has(s.id))
+        .filter((s: any) => {
+          return scriptMatchesOpportunity(
+            { format: s.format, genres: s.genres, budget: s.budget, tags: s.tags, score: s.score },
+            opp
+          )
         })
 
       setScripts(qualifying)

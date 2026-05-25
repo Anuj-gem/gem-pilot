@@ -17,6 +17,7 @@ import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
 import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
+import { normGenre, collectGenres, scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
 
 export const dynamic = 'force-dynamic'
 
@@ -48,11 +49,7 @@ export default async function DashboardPage() {
   let visible: MySubRow[] = []
   let submissionIds: string[] = []
 
-  function normGenre(g: string | null | undefined): string {
-    return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
-  }
-
-  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null }
+  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null; budget: string | null; tags: string[] }
   const myEvalBySub = new Map<string, FeedEval>()
 
   type OppRow = {
@@ -60,6 +57,7 @@ export default async function DashboardPage() {
     formats: string[] | null; genres: string[] | null; min_score: number | null
     subtitle: string | null; description: string | null
     deadline: string | null; budget_tiers: string[] | null
+    tags: string[] | null
     created_at: string
   }
   let allOpenOpps: OppRow[] = []
@@ -75,7 +73,7 @@ export default async function DashboardPage() {
 
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, created_at')
+    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, tags, created_at')
     .eq('status', 'active')
   allOpenOpps = (openOpps || []) as OppRow[]
 
@@ -104,16 +102,9 @@ export default async function DashboardPage() {
         .in('submission_id', submissionIds)
       for (const e of (myEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
         const evJson = e.evaluation as Record<string, unknown> | null
-        const cls = (evJson?.classification as Record<string, unknown>) || {}
-        const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-        const genreSet = new Set<string>()
-        for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
-          const n = normGenre(raw)
-          if (n) genreSet.add(n)
-        }
-        const format = (cls.format as string) || (fmt.format as string) || null
-        const logline = (evJson?.positioning_hook as string) || (cls.logline as string) || null
-        myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: Array.from(genreSet), format, logline })
+        const matchData = extractMatchData(evJson)
+        const logline = (evJson?.positioning_hook as string) || ((evJson?.classification as Record<string, unknown>)?.logline as string) || null
+        myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, tags: matchData.tags })
       }
     }
 
@@ -148,16 +139,9 @@ export default async function DashboardPage() {
             .in('submission_id', submissionIds)
           for (const e of (anonEvs as { id: string; submission_id: string; weighted_score: number | null; evaluation: unknown }[] | null) || []) {
             const evJson = e.evaluation as Record<string, unknown> | null
-            const cls = (evJson?.classification as Record<string, unknown>) || {}
-            const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-            const genreSet = new Set<string>()
-            for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
-              const n = normGenre(raw)
-              if (n) genreSet.add(n)
-            }
-            const format = (cls.format as string) || (fmt.format as string) || null
-            const logline = (evJson?.positioning_hook as string) || (cls.logline as string) || null
-            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: Array.from(genreSet), format, logline })
+            const matchData = extractMatchData(evJson)
+            const logline = (evJson?.positioning_hook as string) || ((evJson?.classification as Record<string, unknown>)?.logline as string) || null
+            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, tags: matchData.tags })
           }
         }
       }
@@ -235,33 +219,24 @@ export default async function DashboardPage() {
   if (missingOppIds.length > 0) {
     const { data: closedOpps } = await service
       .from('opportunities')
-      .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, created_at')
+      .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, tags, created_at')
       .in('id', missingOppIds)
     for (const o of (closedOpps || []) as OppRow[]) {
       oppMap.set(o.id, o)
     }
   }
 
-  function getQualifyingOpps(format: string | null, scriptGenres: string[], score: number | null) {
-    return allOpenOpps.filter(o => {
-      if (o.min_score && (!score || score < o.min_score)) return false
-      const noFormatFilter = !o.formats || o.formats.length === 0
-      const noGenreFilter = !o.genres || o.genres.length === 0
-      if (noFormatFilter && noGenreFilter) return true
-      const fmtMatch = noFormatFilter || (format && o.formats!.some(f => f.toLowerCase() === format.toLowerCase()))
-      if (!fmtMatch) return false
-      if (noGenreFilter) return true
-      if (scriptGenres.length === 0) return false
-      const oppNorm = o.genres!.map(normGenre)
-      return scriptGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
-    })
+  function getQualifyingOpps(ev: FeedEval | undefined, declaredFormat: string | null) {
+    if (!ev) return []
+    const script = { format: ev.format || declaredFormat, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score }
+    return allOpenOpps.filter(o => scriptMatchesOpportunity(script, o))
   }
 
   const completedScripts = visible
     .filter(s => s.status === 'completed')
     .map(s => {
       const ev = myEvalBySub.get(s.id)
-      const qualifyingOpps = getQualifyingOpps(ev?.format || s.declared_format, ev?.genres || [], ev?.weighted_score || null)
+      const qualifyingOpps = getQualifyingOpps(ev, s.declared_format)
         .filter(o => !appliedOppIds.has(o.id))
       return {
         id: s.id,
@@ -313,18 +288,9 @@ export default async function DashboardPage() {
   function anyScriptQualifies(opp: OppRow) {
     return completedScripts.some(s => {
       const ev = myEvalBySub.get(s.id)
-      const score = ev?.weighted_score ?? null
-      if (opp.min_score && (!score || score < opp.min_score)) return false
-      const noFmt = !opp.formats || opp.formats.length === 0
-      const noGenre = !opp.genres || opp.genres.length === 0
-      if (noFmt && noGenre) return true
-      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
-      if (!fmtMatch) return false
-      if (noGenre) return true
-      const sGenres = ev?.genres || []
-      if (sGenres.length === 0) return false
-      const oppNorm = opp.genres!.map(normGenre)
-      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
+      if (!ev) return false
+      const script = { format: ev.format || s.format, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score }
+      return scriptMatchesOpportunity(script, opp)
     })
   }
 
@@ -360,18 +326,9 @@ export default async function DashboardPage() {
     return completedScripts.filter(s => {
       if (alreadyAppliedScripts.has(s.id)) return false
       const ev = myEvalBySub.get(s.id)
-      const score = ev?.weighted_score ?? null
-      if (opp.min_score && (!score || score < opp.min_score)) return false
-      const noFmt = !opp.formats || opp.formats.length === 0
-      const noGenre = !opp.genres || opp.genres.length === 0
-      if (noFmt && noGenre) return true
-      const fmtMatch = noFmt || (s.format && opp.formats!.some(f => f.toLowerCase() === s.format!.toLowerCase()))
-      if (!fmtMatch) return false
-      if (noGenre) return true
-      const sGenres = ev?.genres || []
-      if (sGenres.length === 0) return false
-      const oppNorm = opp.genres!.map(normGenre)
-      return sGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
+      if (!ev) return false
+      const script = { format: ev.format || s.format, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score }
+      return scriptMatchesOpportunity(script, opp)
     }).map(s => ({ id: s.id, title: s.title, score: s.score ? Math.round(s.score) : null }))
   }
 

@@ -11,6 +11,7 @@ import { ArrowRight, FileText, Clock } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 import { SubscribeCTA } from '@/components/subscribe-cta'
 import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
+import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
 
 const GENRE_LABELS: Record<string, string> = {
   Drama: 'Drama', Comedy: 'Comedy', Thriller: 'Thriller', Horror: 'Horror',
@@ -190,24 +191,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         .select('submission_id, weighted_score, evaluation')
         .in('submission_id', subIds)
 
-      // Normalize genre string: lowercase, unify dashes, strip junk
-      function normGenre(g: string | null | undefined): string {
-        return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
-      }
-
-      function collectGenres(...sources: (string | string[] | null | undefined)[]): string[] {
-        const set = new Set<string>()
-        for (const s of sources) {
-          if (!s) continue
-          const items = Array.isArray(s) ? s : [s]
-          for (const item of items) {
-            const n = normGenre(item)
-            if (n) set.add(n)
-          }
-        }
-        return Array.from(set)
-      }
-
       for (const sub of visibleSubs) {
         const ev = ((evals || []) as any[]).find((e: any) => e.submission_id === sub.id)
         if (!ev) continue
@@ -221,28 +204,13 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         const packaging = (evJson?.packaging as Record<string, unknown>) || {}
         const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
         const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
+        const scriptTags = ((cls.tags as string[]) || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
 
-        let ok = true
-        // Format matching: opp stores "Feature"/"Series", declared_format is "Feature film"/"Series"
-        if (opp.formats?.length > 0) {
-          const declNorm = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
-          if (!opp.formats.includes(declNorm)) ok = false
-        }
-        if (opp.genres?.length > 0 && genres.length > 0) {
-          const oppGenresNorm = opp.genres.map(normGenre)
-          const hasOverlap = genres.some((sg: string) =>
-            oppGenresNorm.some((og: string) => sg.includes(og) || og.includes(sg))
-          )
-          if (!hasOverlap) ok = false
-        }
-        if (opp.budget_tiers?.length > 0 && budget && !opp.budget_tiers.includes(budget)) ok = false
-        // Tag matching: opp tags must overlap with script's classification.tags
-        if (opp.tags?.length > 0) {
-          const scriptTags = (cls.tags as string[] || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
-          const oppTagsNorm = opp.tags.map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
-          const hasTagOverlap = oppTagsNorm.some((ot: string) => scriptTags.some((st: string) => st === ot || st.includes(ot) || ot.includes(st)))
-          if (!hasTagOverlap) ok = false
-        }
+        const format = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
+        const ok = scriptMatchesOpportunity(
+          { format, genres, budget, tags: scriptTags, score: ev.weighted_score },
+          opp
+        )
 
         if (ok) {
           qualifyingScripts.push({

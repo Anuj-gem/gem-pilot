@@ -7,6 +7,7 @@ import { createServerClient } from '@supabase/ssr'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { ArrowRight } from 'lucide-react'
 import { UploadCTAButton } from '@/components/upload-cta-button'
+import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
 
 function svc() {
   return createServerClient(
@@ -91,30 +92,10 @@ export default async function OpportunitiesPage() {
         .select('id, submission_id, weighted_score, evaluation')
         .in('submission_id', subIds)
 
-      // Normalize genre string: lowercase, unify dashes, strip junk
-      function normGenre(g: string | null | undefined): string {
-        return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
-      }
-
-      // Collect unique non-empty normalized genres
-      function collectGenres(...sources: (string | string[] | null | undefined)[]): string[] {
-        const set = new Set<string>()
-        for (const s of sources) {
-          if (!s) continue
-          const items = Array.isArray(s) ? s : [s]
-          for (const item of items) {
-            const n = normGenre(item)
-            if (n) set.add(n)
-          }
-        }
-        return Array.from(set)
-      }
-
       const evalMap = new Map<string, { weighted_score: number | null; genres: string[]; budget: string | null; tags: string[] }>()
       for (const ev of (evals || []) as any[]) {
         const evJson = ev.evaluation as Record<string, unknown> | null
         const cls = (evJson?.classification as Record<string, unknown>) || {}
-        // Collect ALL genres: primary + secondary + legacy genre_tags
         const genres = collectGenres(
           cls.genre_primary as string,
           cls.genre_secondary as string[],
@@ -133,26 +114,12 @@ export default async function OpportunitiesPage() {
         for (const sub of visibleSubs) {
           const ev = evalMap.get(sub.id)
           if (!ev) continue
-          // Format matching: opp stores "Feature"/"Series", declared_format is "Feature film"/"Series"
-          if (opp.formats.length > 0) {
-            const declNorm = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
-            if (!opp.formats.includes(declNorm)) continue
-          }
-          if (opp.genres.length > 0 && ev.genres.length > 0) {
-            const oppGenresNorm = opp.genres.map(normGenre)
-            const hasOverlap = ev.genres.some(sg =>
-              oppGenresNorm.some(og => sg.includes(og) || og.includes(sg))
-            )
-            if (!hasOverlap) continue
-          }
-          if (opp.budget_tiers.length > 0 && ev.budget && !opp.budget_tiers.includes(ev.budget)) continue
-          // Tag matching: opp tags must overlap with script's classification.tags
-          if (opp.tags?.length > 0) {
-            const oppTagsNorm = opp.tags.map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
-            const hasTagOverlap = oppTagsNorm.some((ot: string) => ev.tags.some((st: string) => st === ot || st.includes(ot) || ot.includes(st)))
-            if (!hasTagOverlap) continue
-          }
-          count++
+          const declNorm = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
+          const matches = scriptMatchesOpportunity(
+            { format: declNorm, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score },
+            opp
+          )
+          if (matches) count++
         }
         oppMatchCount.set(opp.id, count)
       }

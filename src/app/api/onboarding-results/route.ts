@@ -3,6 +3,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
+import { scriptMatchesOpportunity, collectGenres, type MatchableScript } from '@/lib/opportunity-matching'
 
 function svc() {
   return createServerClient(
@@ -48,49 +49,35 @@ export async function GET(req: NextRequest) {
     ...(cls.genre_secondary ?? []),
   ].filter(Boolean)
 
+  // Build matchable script from eval data
+  const packaging = (evalBlob?.packaging as Record<string, any>) || {}
+  const budgetTier = packaging.budget_tier as Record<string, any> | undefined
+  const scriptBudget = (budgetTier?.tier as string)?.toLowerCase() ?? null
+  const scriptTags = ((cls.tags as string[]) || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
+  const scriptGenres = collectGenres(cls.genre_primary, cls.genre_secondary, cls.genre_tags)
+  const scriptFormat = submission.declared_format ?? null
+  const scriptScore = evalRow?.weighted_score ?? null
+
+  const matchableScript: MatchableScript = {
+    format: scriptFormat,
+    genres: scriptGenres,
+    budget: scriptBudget,
+    tags: scriptTags,
+    score: scriptScore,
+  }
+
   // ─── Active opportunities ─────────────────────────────────────────────
   const { data: opps } = await supabase
     .from('opportunities')
     .select(
-      'id, title, description, slug, formats, genres, min_score, deadline, created_at, subtitle',
+      'id, title, description, slug, formats, genres, min_score, budget_tiers, tags, deadline, created_at, subtitle',
     )
     .eq('status', 'active')
     .eq('published', true)
     .order('created_at', { ascending: false })
 
   // ─── Match opportunities to script ────────────────────────────────────
-  const scriptFormat = (submission.declared_format ?? '').toLowerCase()
-  const scriptScore = evalRow?.weighted_score ?? 0
-
-  const matched = (opps ?? []).filter((opp) => {
-    // Format gate
-    if (opp.formats?.length) {
-      const fmtOk = opp.formats.some((f: string) => {
-        const fl = f.toLowerCase()
-        return (
-          fl === scriptFormat ||
-          fl === 'both' ||
-          (fl.includes('feature') && scriptFormat.includes('feature')) ||
-          (fl.includes('series') && scriptFormat.includes('series'))
-        )
-      })
-      if (!fmtOk) return false
-    }
-    // Min-score gate
-    if (opp.min_score != null && scriptScore < opp.min_score) return false
-    // Genre gate (loose substring match)
-    if (opp.genres?.length && genres.length) {
-      const genreOk = opp.genres.some((g: string) =>
-        genres.some(
-          (sg: string) =>
-            sg.toLowerCase().includes(g.toLowerCase()) ||
-            g.toLowerCase().includes(sg.toLowerCase()),
-        ),
-      )
-      if (!genreOk) return false
-    }
-    return true
-  })
+  const matched = (opps ?? []).filter((opp) => scriptMatchesOpportunity(matchableScript, opp))
 
   // ─── Applicant counts ─────────────────────────────────────────────────
   const oppIds = matched.map((o) => o.id)
