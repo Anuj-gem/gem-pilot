@@ -166,6 +166,7 @@ export default async function DashboardPage() {
   // Per-opp applied script tracking
   const appliedScriptsByOpp = new Map<string, Set<string>>()
   const pendingOppIds = new Set<string>()
+  const scriptTitlesByApp = new Map<string, string[]>()
 
   if (user && allApplications.length > 0) {
     const considerationIds = allApplications.map(a => a.id)
@@ -180,6 +181,17 @@ export default async function DashboardPage() {
       if (!oppId) continue
       if (!appliedScriptsByOpp.has(oppId)) appliedScriptsByOpp.set(oppId, new Set())
       appliedScriptsByOpp.get(oppId)!.add(row.script_id)
+    }
+
+    // Build map: consideration_id → script titles for display in app cards
+    const visibleTitleMap = new Map(visible.map(s => [s.id, s.title]))
+    for (const row of (csRows || []) as { script_id: string; consideration_id: string }[]) {
+      const title = visibleTitleMap.get(row.script_id)
+      if (title) {
+        const existing = scriptTitlesByApp.get(row.consideration_id) || []
+        existing.push(title)
+        scriptTitlesByApp.set(row.consideration_id, existing)
+      }
     }
 
     for (const app of allApplications) {
@@ -215,6 +227,19 @@ export default async function DashboardPage() {
     oppAppCount.set(a.opportunity_id, (oppAppCount.get(a.opportunity_id) || 0) + 1)
   }
   const oppMap = new Map(allOpenOpps.map(o => [o.id, o]))
+
+  // Fetch opportunity titles for all applied opps (including closed ones not in allOpenOpps)
+  const appliedOppIdsForTitles = [...new Set(allApplications.map(a => a.opportunity_id))]
+  const missingOppIds = appliedOppIdsForTitles.filter(id => !oppMap.has(id))
+  if (missingOppIds.length > 0) {
+    const { data: closedOpps } = await service
+      .from('opportunities')
+      .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, created_at')
+      .in('id', missingOppIds)
+    for (const o of (closedOpps || []) as OppRow[]) {
+      oppMap.set(o.id, o)
+    }
+  }
 
   function getQualifyingOpps(format: string | null, scriptGenres: string[], score: number | null) {
     return allOpenOpps.filter(o => {
@@ -538,7 +563,7 @@ export default async function DashboardPage() {
           {/* Processing scripts */}
           {processingScripts.map(script => (
             <div key={script.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-              <div className="aspect-[5/4] sm:aspect-[2/3] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
+              <div className="aspect-[5/4] sm:aspect-[4/5] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
                 <div className="text-center">
                   <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
                   <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
@@ -551,8 +576,8 @@ export default async function DashboardPage() {
             </div>
           ))}
 
-          {/* Completed scripts — poster-first cards (limited to 6) */}
-          {completedScripts.slice(0, 6).map(script => {
+          {/* Completed scripts — poster-first cards (limited to 3) */}
+          {completedScripts.slice(0, 3).map(script => {
             const rounded = script.score ? Math.round(script.score) : null
             const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
 
@@ -560,7 +585,7 @@ export default async function DashboardPage() {
               <div key={script.id} className="rounded-2xl overflow-hidden group hover:shadow-lg transition-all duration-200" style={{ background: '#ffffff', boxShadow: cardShadow }}>
                 {/* Poster image area — no score overlay */}
                 <Link href={reportHref} className="block no-underline">
-                  <div className="aspect-[5/4] sm:aspect-[2/3] w-full relative overflow-hidden">
+                  <div className="aspect-[5/4] sm:aspect-[4/5] w-full relative overflow-hidden">
                     {script.posterUrl ? (
                       <img
                         src={script.posterUrl}
@@ -622,7 +647,7 @@ export default async function DashboardPage() {
             )
           })}
         </div>
-        {completedScripts.length > 6 && (
+        {completedScripts.length > 3 && (
           <div className="mt-6 text-center">
             <Link
               href="/scripts"
@@ -653,7 +678,9 @@ export default async function DashboardPage() {
                   <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: cardShadow }}>
                     <div className="min-w-0">
                       <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                      <p className="text-[12px] text-gray-400 m-0 mt-0.5">Applied {fmtDate(app.submitted_at)}</p>
+                      <p className="text-[12px] text-gray-600 m-0 mt-0.5">
+                        {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}{fmtDate(app.submitted_at)}
+                      </p>
                     </div>
                     <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: '#f3f0ff', color: '#7c3aed' }}>Pending</span>
                   </div>
@@ -677,7 +704,9 @@ export default async function DashboardPage() {
                     <div className="min-w-0">
                       <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[12px] text-gray-400">{fmtDate(app.reviewed_at || app.submitted_at)}</span>
+                        <span className="text-[12px] text-gray-600">
+                          {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}{fmtDate(app.reviewed_at || app.submitted_at)}
+                        </span>
                         {app.heat_earned > 0 && (
                           <span className="text-[11px] font-bold" style={{ color: '#ea580c' }}>+{app.heat_earned} 🔥</span>
                         )}
@@ -886,6 +915,11 @@ export default async function DashboardPage() {
           </>
         ) : (
           <>
+          {/* ── WELCOME HEADER ── */}
+          <h1 className="text-[24px] sm:text-[28px] font-bold text-white m-0 leading-tight">
+            Welcome back, {profile?.full_name?.split(' ')[0] || 'Writer'}
+          </h1>
+
           {/* ── WRITER STATS ROW — icon · number · label ── */}
           <div className="grid grid-cols-3 gap-2 sm:gap-3">
             <Link href="/scripts" className="no-underline block">
