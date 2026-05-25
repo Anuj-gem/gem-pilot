@@ -161,7 +161,7 @@ const inputFocus = {
     e.target.style.boxShadow = '0 0 0 3px rgba(124,58,237,0.15)'
   },
   onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.target.style.borderColor = 'rgba(255,255,255,0.12)'
+    e.target.style.borderColor = '#E7E5E4'
     e.target.style.boxShadow = 'none'
   },
 }
@@ -169,9 +169,9 @@ const inputFocus = {
 const inputClass =
   'w-full px-3.5 py-2.5 rounded-[10px] text-sm outline-none transition-all'
 const inputStyle: React.CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.12)',
-  color: '#ffffff',
-  backgroundColor: 'rgba(255,255,255,0.06)',
+  border: '1px solid #E7E5E4',
+  color: '#1a1a1a',
+  backgroundColor: '#ffffff',
 }
 
 // ─── Google logo SVG ────────────────────────────────────────────────────────
@@ -315,6 +315,13 @@ export default function GetStartedClient() {
       if (pollingRef.current) clearInterval(pollingRef.current)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // ─── Dark body background (so footer text-white/30 is visible) ──────
+  useEffect(() => {
+    const prev = document.body.style.background
+    document.body.style.background = '#110f1d'
+    return () => { document.body.style.background = prev }
   }, [])
 
   // ─── Step transitions ─────────────────────────────────────────────────
@@ -620,7 +627,7 @@ export default function GetStartedClient() {
       <LandingNav />
 
       {/* ─── Content ─────────────────────────────────────────────────── */}
-      <div className="max-w-[560px] mx-auto px-5 pt-9 pb-24">
+      <div className="max-w-[760px] mx-auto px-5 pt-9 pb-24">
         <ProgressBar current={step} />
 
         <div
@@ -1118,7 +1125,7 @@ export default function GetStartedClient() {
           {...inputFocus}
         />
 
-        <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
+        <SmsConsent checked={smsConsent} onChange={setSmsConsent} dark />
 
         {/* Bio */}
         <label
