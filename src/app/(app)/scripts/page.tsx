@@ -6,6 +6,7 @@ import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-liste
 import { ScriptsList } from '@/components/dashboard/scripts-list'
 import { UploadCTAButton } from '@/components/upload-cta-button'
 import { NewScriptButton } from '@/components/dashboard/new-script-button'
+import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
 
 export const dynamic = 'force-dynamic'
 
@@ -73,51 +74,41 @@ export default async function ScriptsPage() {
   const allScripts = (mySubs as SubRow[] | null) || []
   const submissionIds = allScripts.map(s => s.id)
 
-  // Evaluations
-  const evalBySub = new Map<string, { id: string; score: number | null; genres: string[] }>()
+  // Evaluations — use canonical extractMatchData for full matching data
+  type ScriptEvalData = { id: string; score: number | null; genres: string[]; format: string | null; budget: string | null; tags: string[] }
+  const evalBySub = new Map<string, ScriptEvalData>()
   if (submissionIds.length > 0) {
     const { data: evs } = await service
       .from('script_evaluations')
       .select('id, submission_id, weighted_score, evaluation')
       .in('submission_id', submissionIds)
     for (const e of (evs || []) as any[]) {
-      const evJson = e.evaluation as Record<string, unknown> | null
-      const cls = (evJson?.classification as Record<string, unknown>) || {}
-      const fmt = (evJson?.format_detection as Record<string, unknown>) || {}
-      // Collect ALL genres: primary + secondary + legacy genre_tags
-      function normGenre(g: string | null | undefined): string {
-        return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
-      }
-      const genres: string[] = []
-      for (const raw of [cls.genre_primary as string, ...(cls.genre_secondary as string[] ?? []), ...(cls.genre_tags as string[] ?? [])]) {
-        const n = normGenre(raw)
-        if (n && !genres.includes(n)) genres.push(n)
-      }
-      evalBySub.set(e.submission_id, { id: e.id, score: e.weighted_score, genres })
+      const evJson = typeof e.evaluation === 'string' ? JSON.parse(e.evaluation) : (e.evaluation as Record<string, unknown> | null)
+      const matchData = extractMatchData(evJson)
+      evalBySub.set(e.submission_id, {
+        id: e.id,
+        score: e.weighted_score,
+        genres: matchData.genres,
+        format: matchData.format,
+        budget: matchData.budget,
+        tags: matchData.tags,
+      })
     }
   }
 
-  // Fetch open opportunities for matching
+  // Fetch open opportunities for matching (all fields needed by scriptMatchesOpportunity)
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, formats, genres')
+    .select('id, title, slug, formats, genres, budget_tiers, tags, min_score')
     .eq('status', 'active')
-  const opportunities = (openOpps || []) as { id: string; title: string; slug: string; formats: string[] | null; genres: string[] | null }[]
+  const opportunities = (openOpps || []) as { id: string; title: string; slug: string; formats: string[] | null; genres: string[] | null; budget_tiers: string[] | null; tags: string[] | null; min_score: number | null }[]
 
-  function normGenreOuter(g: string | null | undefined): string {
-    return (g ?? '').toLowerCase().replace(/[‐-―–—_/]/g, '-').replace(/[^a-z0-9\- ]+/g, ' ').replace(/\s+/g, ' ').trim()
-  }
-
-  function matchOpportunities(format: string | null, scriptGenres: string[]) {
-    if (!format && scriptGenres.length === 0) return []
-    return opportunities.filter(opp => {
-      const fmtMatch = !opp.formats || opp.formats.length === 0 || (format && opp.formats.includes(format))
-      if (!fmtMatch) return false
-      if (!opp.genres || opp.genres.length === 0) return true
-      if (scriptGenres.length === 0) return false
-      const oppNorm = opp.genres.map(normGenreOuter)
-      return scriptGenres.some(sg => oppNorm.some(og => sg.includes(og) || og.includes(sg)))
-    }).map(opp => ({ title: opp.title, slug: opp.slug }))
+  function getMatchingOpportunities(ev: ScriptEvalData | undefined, declaredFormat: string | null) {
+    if (!ev) return []
+    const script = { format: ev.format || declaredFormat, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.score }
+    return opportunities
+      .filter(o => scriptMatchesOpportunity(script, o))
+      .map(o => ({ title: o.title, slug: o.slug }))
   }
 
   // Build script rows for client component (ScriptRowData-compatible)
@@ -140,7 +131,7 @@ export default async function ScriptsPage() {
       isPublic: s.is_public ?? false,
       isProcessing: stillProcessing,
       isLocked: false,
-      matchingOpportunities: matchOpportunities(s.declared_format, ev?.genres ?? []),
+      matchingOpportunities: getMatchingOpportunities(ev, s.declared_format),
       hidden: !!s.hidden_at,
     }
   })
