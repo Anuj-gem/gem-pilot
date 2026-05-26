@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
+import { sendEmail } from '@/lib/email'
 
 const VALID_ROLES = ['producer', 'talent_representative', 'actor', 'director', 'other'] as const
 
@@ -100,6 +101,18 @@ export async function POST(
     return NextResponse.json({ error: 'Not your script' }, { status: 403 })
   }
 
+  // Rate limit: 5 invites per script per 24 hours
+  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+  const { count: recentInvites } = await supabase
+    .from('script_collaborators')
+    .select('id', { count: 'exact', head: true })
+    .eq('submission_id', submissionId)
+    .gte('created_at', twentyFourHoursAgo)
+
+  if ((recentInvites ?? 0) >= 5) {
+    return NextResponse.json({ error: 'Invite limit reached (5 per day per script). Try again tomorrow.' }, { status: 429 })
+  }
+
   const body = await request.json()
   const email = (body.email || '').trim().toLowerCase()
   const role = VALID_ROLES.includes(body.role) ? body.role : 'other'
@@ -147,6 +160,61 @@ export async function POST(
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 400 })
+  }
+
+  // Send invite email
+  try {
+    // Fetch script title + evaluation info for the email
+    const { data: scriptInfo } = await supabase
+      .from('script_submissions')
+      .select('title, declared_format')
+      .eq('id', submissionId)
+      .single()
+
+    // Fetch evaluation for logline and genres
+    const { data: evalInfo } = await supabase
+      .from('script_evaluations')
+      .select('id, evaluation')
+      .eq('submission_id', submissionId)
+      .single()
+
+    // Fetch inviter profile
+    const { data: inviterProfile } = await supabase
+      .from('profiles')
+      .select('full_name')
+      .eq('id', user.id)
+      .single()
+
+    const inviterName = inviterProfile?.full_name || 'A GEM user'
+    const inviterFirstName = inviterName.split(' ')[0]
+    const scriptTitle = scriptInfo?.title || 'Untitled'
+    const ev = evalInfo?.evaluation as Record<string, any> | null
+    const format = ev?.format || scriptInfo?.declared_format || ''
+    const genres = (ev?.genres as string[])?.join(', ') || ''
+    const formatGenre = [format, genres].filter(Boolean).join(' · ')
+    const logline = ev?.positioning_hook || ''
+    const evalId = evalInfo?.id
+
+    const joinUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.gem.studio'}/join/${collab.id}`
+
+    await sendEmail({
+      templateAlias: 'collaborator_invite',
+      to: email,
+      variables: {
+        inviter_name: inviterName,
+        inviter_first_name: inviterFirstName,
+        script_title: scriptTitle,
+        format_genre: formatGenre,
+        logline,
+        role: roleOther || role,
+        join_url: joinUrl,
+      },
+      dedupeKey: `collab_invite_${collab.id}`,
+      tag: 'collaborator_invite',
+    }, supabase)
+  } catch (emailErr) {
+    // Don't fail the invite if email fails — the collaborator row is already created
+    console.error('[collaborators] Failed to send invite email:', emailErr)
   }
 
   return NextResponse.json(collab)

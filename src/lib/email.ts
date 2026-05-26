@@ -51,6 +51,8 @@ export type TemplateAlias =
   | 'consideration_complete'
   // Review complete (no heat) — pass with zero heat earned.
   | 'consideration_complete_no_heat'
+  // Collaborator invite — sent when a writer invites a collaborator to their script.
+  | 'collaborator_invite'
 
 interface SendEmailOptions {
   templateAlias: TemplateAlias
