@@ -62,7 +62,7 @@ export default async function CollaborationsPage() {
   type EvalRow = {
     id: string; submission_id: string; evaluation: Record<string, unknown> | null
   }
-  const evalBySubId = new Map<string, { weighted_score: number | null; format: string | null; genres: string[] }>()
+  const evalBySubId = new Map<string, { evalId: string; weighted_score: number | null; format: string | null; genres: string[] }>()
 
   if (collabSubIds.length > 0) {
     const { data: subs } = await service
@@ -84,7 +84,7 @@ export default async function CollaborationsPage() {
         const ws = (ev?.weighted_score as number) ?? null
         const fmt = (ev?.format as string) ?? null
         const genres = (ev?.genres as string[]) ?? []
-        evalBySubId.set(e.submission_id, { weighted_score: ws, format: fmt, genres })
+        evalBySubId.set(e.submission_id, { evalId: e.id, weighted_score: ws, format: fmt, genres })
       }
     }
   }
@@ -102,12 +102,22 @@ export default async function CollaborationsPage() {
   }
 
   let invitedCollabRows: typeof collabRows = []
+  const mySubEvalIdMap = new Map<string, string>()
   if (mySubIds.length > 0) {
     const { data: invRows } = await service
       .from('script_collaborators')
       .select('id, submission_id, role, role_other, status, created_at, collaborator_id, collaborator_email')
       .in('submission_id', mySubIds)
     invitedCollabRows = (invRows || []) as typeof collabRows
+
+    // Fetch eval IDs for the user's own scripts so People section links work
+    const { data: myEvals } = await service
+      .from('script_evaluations')
+      .select('id, submission_id')
+      .in('submission_id', mySubIds)
+    for (const e of (myEvals || []) as { id: string; submission_id: string }[]) {
+      mySubEvalIdMap.set(e.submission_id, e.id)
+    }
   }
 
   // 2) People whose scripts you collaborate on (from collabRows, need to look up the owner)
@@ -120,7 +130,7 @@ export default async function CollaborationsPage() {
     name: string | null
     avatar_url: string | null
     headline: string | null
-    sharedScripts: { id: string; title: string }[]
+    sharedScripts: { id: string; title: string; evalId: string | null }[]
   }
   const personMap = new Map<string, PersonInfo>() // keyed by id or email
 
@@ -135,7 +145,7 @@ export default async function CollaborationsPage() {
     if (title) {
       const p = personMap.get(key)!
       if (!p.sharedScripts.some(s => s.id === r.submission_id)) {
-        p.sharedScripts.push({ id: r.submission_id, title })
+        p.sharedScripts.push({ id: r.submission_id, title, evalId: mySubEvalIdMap.get(r.submission_id) || null })
       }
     }
   }
@@ -149,7 +159,7 @@ export default async function CollaborationsPage() {
     }
     const p = personMap.get(key)!
     if (!p.sharedScripts.some(x => x.id === s.id)) {
-      p.sharedScripts.push({ id: s.id, title: s.title })
+      p.sharedScripts.push({ id: s.id, title: s.title, evalId: evalBySubId.get(s.id)?.evalId || null })
     }
   }
 
@@ -208,7 +218,7 @@ export default async function CollaborationsPage() {
               return (
                 <Link
                   key={s.id}
-                  href={`/report/${s.id}`}
+                  href={ev?.evalId ? `/report/${ev.evalId}` : '#'}
                   style={{ textDecoration: 'none', display: 'block' }}
                 >
                   <div style={{
@@ -352,7 +362,7 @@ export default async function CollaborationsPage() {
                         {p.sharedScripts.map(s => (
                           <Link
                             key={s.id}
-                            href={`/report/${s.id}`}
+                            href={s.evalId ? `/report/${s.evalId}` : '#'}
                             style={{
                               background: 'rgba(124,58,237,0.2)', color: '#c4b5fd',
                               fontSize: 11, fontWeight: 500, padding: '2px 8px',
