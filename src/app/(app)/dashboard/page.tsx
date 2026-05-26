@@ -158,21 +158,21 @@ export default async function DashboardPage() {
     const considerationIds = allApplications.map(a => a.id)
     const { data: csRows } = await service
       .from('consideration_scripts')
-      .select('script_id, consideration_id')
+      .select('script_submission_id, consideration_id')
       .in('consideration_id', considerationIds)
 
     const considerationToOpp = new Map(allApplications.map(a => [a.id, a.opportunity_id]))
-    for (const row of (csRows || []) as { script_id: string; consideration_id: string }[]) {
+    for (const row of (csRows || []) as { script_submission_id: string; consideration_id: string }[]) {
       const oppId = considerationToOpp.get(row.consideration_id)
       if (!oppId) continue
       if (!appliedScriptsByOpp.has(oppId)) appliedScriptsByOpp.set(oppId, new Set())
-      appliedScriptsByOpp.get(oppId)!.add(row.script_id)
+      appliedScriptsByOpp.get(oppId)!.add(row.script_submission_id)
     }
 
     // Build map: consideration_id → script titles for display in app cards
     const visibleTitleMap = new Map(visible.map(s => [s.id, s.title]))
-    for (const row of (csRows || []) as { script_id: string; consideration_id: string }[]) {
-      const title = visibleTitleMap.get(row.script_id)
+    for (const row of (csRows || []) as { script_submission_id: string; consideration_id: string }[]) {
+      const title = visibleTitleMap.get(row.script_submission_id)
       if (title) {
         const existing = scriptTitlesByApp.get(row.consideration_id) || []
         existing.push(title)
@@ -189,9 +189,9 @@ export default async function DashboardPage() {
     // Build per-script pending application count
     for (const app of allApplications) {
       if (app.status === 'reviewed' || app.review_stage === 'complete') continue
-      for (const row of (csRows || []) as { script_id: string; consideration_id: string }[]) {
+      for (const row of (csRows || []) as { script_submission_id: string; consideration_id: string }[]) {
         if (row.consideration_id === app.id) {
-          pendingAppsByScript.set(row.script_id, (pendingAppsByScript.get(row.script_id) || 0) + 1)
+          pendingAppsByScript.set(row.script_submission_id, (pendingAppsByScript.get(row.script_submission_id) || 0) + 1)
         }
       }
     }
@@ -340,7 +340,10 @@ export default async function DashboardPage() {
     .map(s => {
       const ev = myEvalBySub.get(s.id)
       const qualifyingOpps = getQualifyingOpps(ev, s.declared_format)
-        .filter(o => !appliedOppIds.has(o.id))
+        .filter(o => {
+          const scriptsApplied = appliedScriptsByOpp.get(o.id)
+          return !scriptsApplied || !scriptsApplied.has(s.id)
+        })
       return {
         id: s.id,
         title: s.title,
@@ -886,7 +889,7 @@ export default async function DashboardPage() {
                           <span className="text-[12px] shrink-0" style={{ color: 'rgba(255,255,255,0.8)' }}>🧑 {script.collaboratorCount}</span>
                           {script.availableOppCount > 0 && (
                             <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
-                              {script.availableOppCount} available
+                              {script.availableOppCount} available {script.availableOppCount === 1 ? 'opportunity' : 'opportunities'}
                             </span>
                           )}
                           {script.pendingAppCount > 0 && (
