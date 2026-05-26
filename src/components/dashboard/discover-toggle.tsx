@@ -45,29 +45,36 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
 
   return (
     <button
-      onClick={toggle}
+      onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle() }}
       disabled={busy}
-      className="inline-flex items-center cursor-pointer border-0 bg-transparent p-0 disabled:opacity-50 shrink-0"
-      aria-label={on ? 'Visible on Leaderboard' : 'Hidden from Leaderboard'}
+      className="inline-flex items-center gap-2 cursor-pointer border-0 bg-transparent p-0 disabled:opacity-50 shrink-0"
+      aria-label={on ? 'Published to Discover' : 'Not published to Discover'}
     >
-      {/* Toggle switch */}
-      <span
-        className="relative inline-flex items-center rounded-full transition-colors"
-        style={{
-          width: 36,
-          height: 20,
-          background: on ? '#534AB7' : '#d1d5db',
-        }}
-      >
+      <span className="text-[11px] font-semibold" style={{ color: on ? '#a78bfa' : 'rgba(255,255,255,0.5)' }}>
+        Publish to Discover
+      </span>
+      {/* Toggle switch with On/Off labels */}
+      <span className="inline-flex items-center gap-1">
+        <span className="text-[10px] font-bold" style={{ color: on ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.7)' }}>Off</span>
         <span
-          className="absolute rounded-full bg-white transition-all shadow-sm"
+          className="relative inline-flex items-center rounded-full transition-colors"
           style={{
-            width: 16,
-            height: 16,
-            top: 2,
-            left: on ? 18 : 2,
+            width: 36,
+            height: 20,
+            background: on ? '#7c3aed' : 'rgba(255,255,255,0.2)',
           }}
-        />
+        >
+          <span
+            className="absolute rounded-full bg-white transition-all shadow-sm"
+            style={{
+              width: 16,
+              height: 16,
+              top: 2,
+              left: on ? 18 : 2,
+            }}
+          />
+        </span>
+        <span className="text-[10px] font-bold" style={{ color: on ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.3)' }}>On</span>
       </span>
     </button>
   )

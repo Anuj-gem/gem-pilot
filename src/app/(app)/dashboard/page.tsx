@@ -832,7 +832,7 @@ export default async function DashboardPage() {
               {completedScripts.length === 0 && processingScripts.length === 0 ? (
                 <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
                   <p className="text-[14px] font-semibold text-white m-0 mb-1">No scripts yet</p>
-                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Upload your first screenplay to get a full evaluation.</p>
+                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.7)' }}>Upload your first screenplay to get a full evaluation.</p>
                   <NewScriptButton />
                 </div>
               ) : (
@@ -845,7 +845,7 @@ export default async function DashboardPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-[14px] font-semibold text-white m-0 truncate">{script.title}</p>
-                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>Evaluating...</p>
+                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>Evaluating...</p>
                       </div>
                     </div>
                   ))}
@@ -868,7 +868,7 @@ export default async function DashboardPage() {
                             )}
                             <div className="flex-1 min-w-0">
                               <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
-                              <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                              <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
                                 {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
                               </p>
                             </div>
@@ -883,10 +883,10 @@ export default async function DashboardPage() {
                             {gemDiamond(7)} {rounded || '—'}
                           </span>
                           <span className="text-[12px] shrink-0" style={{ color: '#fb923c' }}>🔥 {script.heat}</span>
-                          <span className="text-[12px] shrink-0" style={{ color: 'rgba(255,255,255,0.5)' }}>🧑 {script.collaboratorCount}</span>
+                          <span className="text-[12px] shrink-0" style={{ color: 'rgba(255,255,255,0.8)' }}>🧑 {script.collaboratorCount}</span>
                           {script.availableOppCount > 0 && (
                             <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
-                              {script.availableOppCount} opp{script.availableOppCount !== 1 ? 's' : ''}
+                              {script.availableOppCount} available
                             </span>
                           )}
                           {script.pendingAppCount > 0 && (
@@ -929,11 +929,11 @@ export default async function DashboardPage() {
                         <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
                               Applied {fmtDate(app.submitted_at)}
                             </p>
                             {scripts.length > 0 && (
-                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
                                 📄 {scripts.join(', ')}
                               </p>
                             )}
@@ -973,7 +973,7 @@ export default async function DashboardPage() {
                               </p>
                             )}
                             {qualCriteria.length > 0 && (
-                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
                                 Qualification Criteria: {qualCriteria.join(', ')}
                               </p>
                             )}
@@ -991,7 +991,7 @@ export default async function DashboardPage() {
               ) : pendingApps.length === 0 ? (
                 <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
                   <p className="text-[14px] font-semibold text-white m-0 mb-1">No opportunities yet</p>
-                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Upload scripts to qualify for open opportunities.</p>
+                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.7)' }}>Upload scripts to qualify for open opportunities.</p>
                   <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed', borderRadius: 8 }}>
                     Browse opportunities →
                   </Link>
