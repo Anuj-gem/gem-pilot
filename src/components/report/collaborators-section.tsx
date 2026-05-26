@@ -176,8 +176,8 @@ export function CollaboratorsSection({
 
   if (loading) return null
 
-  // Non-owners: hide entire section when no visible collabs
-  if (!isOwner && visibleCollabs.length === 0) return null
+  // Non-owners: hide entire section when no visible collabs AND no pending invite
+  if (!isOwner && visibleCollabs.length === 0 && !myPendingInvite) return null
 
   const count = visibleCollabs.length
 
