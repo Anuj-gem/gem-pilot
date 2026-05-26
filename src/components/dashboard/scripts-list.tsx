@@ -285,7 +285,7 @@ export function ScriptsList({
                       <>
                         <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
                         <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
-                          {oppCount} available {oppCount === 1 ? 'opportunity' : 'opportunities'}
+                          {oppCount} {oppCount === 1 ? 'opportunity' : 'opportunities'}
                         </span>
                       </>
                     )}
