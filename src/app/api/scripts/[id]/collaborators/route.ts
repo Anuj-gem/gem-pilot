@@ -1,14 +1,15 @@
+import { createClient } from '@supabase/supabase-js'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
 const VALID_ROLES = ['producer', 'talent_representative', 'actor', 'director', 'other'] as const
 
-function makeServiceClient(cookieStore: Awaited<ReturnType<typeof cookies>>) {
-  return createServerClient(
+function makeServiceClient() {
+  return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { cookies: { getAll() { return cookieStore.getAll() }, setAll() {} } }
+    { auth: { autoRefreshToken: false, persistSession: false } }
   )
 }
 
@@ -34,7 +35,7 @@ export async function GET(
 ) {
   const { id: submissionId } = await params
   const cookieStore = await cookies()
-  const supabase = makeServiceClient(cookieStore)
+  const supabase = makeServiceClient()
 
   const { data, error } = await supabase
     .from('script_collaborators')
@@ -80,7 +81,7 @@ export async function POST(
 ) {
   const { id: submissionId } = await params
   const cookieStore = await cookies()
-  const supabase = makeServiceClient(cookieStore)
+  const supabase = makeServiceClient()
   const anonSupabase = makeAnonClient(cookieStore)
 
   const { data: { user } } = await anonSupabase.auth.getUser()
@@ -158,7 +159,7 @@ export async function PATCH(
 ) {
   const { id: submissionId } = await params
   const cookieStore = await cookies()
-  const supabase = makeServiceClient(cookieStore)
+  const supabase = makeServiceClient()
   const anonSupabase = makeAnonClient(cookieStore)
 
   const { data: { user } } = await anonSupabase.auth.getUser()
@@ -238,7 +239,7 @@ export async function DELETE(
 ) {
   const { id: submissionId } = await params
   const cookieStore = await cookies()
-  const supabase = makeServiceClient(cookieStore)
+  const supabase = makeServiceClient()
   const anonSupabase = makeAnonClient(cookieStore)
 
   const { data: { user } } = await anonSupabase.auth.getUser()

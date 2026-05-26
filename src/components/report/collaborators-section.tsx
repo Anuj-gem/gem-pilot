@@ -6,6 +6,7 @@
 // Collaborator: can remove themselves.
 
 import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { UserPlus, Check, X, Loader2, Pencil, Trash2, ChevronDown } from 'lucide-react'
 
 const ROLE_OPTIONS = [
@@ -48,6 +49,7 @@ export function CollaboratorsSection({
   currentUserEmail,
   currentUserId,
 }: Props) {
+  const router = useRouter()
   const [collaborators, setCollaborators] = useState<Collaborator[]>([])
   const [loading, setLoading] = useState(true)
   const [email, setEmail] = useState('')
@@ -59,6 +61,8 @@ export function CollaboratorsSection({
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editRole, setEditRole] = useState('')
   const [editRoleOther, setEditRoleOther] = useState('')
+  const [confirmRemoveId, setConfirmRemoveId] = useState<string | null>(null)
+  const [confirmIsSelf, setConfirmIsSelf] = useState(false)
 
   const myPendingInvite = collaborators.find(
     c =>
@@ -114,14 +118,26 @@ export function CollaboratorsSection({
     }
   }
 
-  async function handleRemove(collabId: string) {
+  async function handleRemove(collabId: string, isSelf: boolean) {
+    setError('')
     try {
       const res = await fetch(
         `/api/scripts/${submissionId}/collaborators?collabId=${collabId}`,
         { method: 'DELETE' }
       )
-      if (res.ok) fetchCollaborators()
-    } catch {}
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setError(data.error || 'Failed to remove')
+        return
+      }
+      if (isSelf) {
+        router.push('/dashboard')
+      } else {
+        fetchCollaborators()
+      }
+    } catch {
+      setError('Failed to remove')
+    }
   }
 
   async function handleEditRole(collabId: string) {
@@ -298,7 +314,14 @@ export function CollaboratorsSection({
                     setEditRole(c.role)
                     setEditRoleOther(c.role_other || '')
                   }}
-                  onRemove={() => handleRemove(c.id)}
+                  onRemove={() => {
+                    if (isSelf && !isOwner) {
+                      setConfirmRemoveId(c.id)
+                      setConfirmIsSelf(true)
+                    } else {
+                      handleRemove(c.id, false)
+                    }
+                  }}
                 />
               )
             })}
@@ -311,6 +334,37 @@ export function CollaboratorsSection({
           </p>
         )}
       </div>
+
+      {/* Confirmation dialog for self-removal */}
+      {confirmRemoveId && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center gem-no-print" style={{ background: 'rgba(0,0,0,0.6)' }}>
+          <div className="mx-4 max-w-sm w-full rounded-xl p-5" style={{ background: '#1d1932', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <p className="text-[14px] text-white/90 m-0 mb-4">
+              This will revoke your access to this script. You will no longer be listed as attached.
+            </p>
+            <div className="flex items-center justify-end gap-2">
+              <button
+                onClick={() => { setConfirmRemoveId(null); setConfirmIsSelf(false) }}
+                className="px-4 py-2 rounded-lg text-[13px] font-medium cursor-pointer border-0 transition-colors"
+                style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  handleRemove(confirmRemoveId, confirmIsSelf)
+                  setConfirmRemoveId(null)
+                  setConfirmIsSelf(false)
+                }}
+                className="px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 transition-colors text-white"
+                style={{ background: '#dc2626' }}
+              >
+                Remove myself
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Accept/Decline bar for invited users */}
       {myPendingInvite && !isOwner && (
