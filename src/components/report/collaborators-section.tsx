@@ -327,11 +327,7 @@ export function CollaboratorsSection({
           </div>
         )}
 
-        {isOwner && count === 0 && !showInput && !myPendingInvite && (
-          <p className="text-[12px] m-0" style={{ color: 'rgba(255,255,255,0.35)' }}>
-            No one attached yet
-          </p>
-        )}
+        {/* Empty state handled by parent (0) count — no text needed */}
       </div>
 
       {/* Confirmation dialog for self-removal */}

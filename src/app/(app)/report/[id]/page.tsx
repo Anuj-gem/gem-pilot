@@ -778,12 +778,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
 
           {/* 4. People Attached — collaborators */}
-          <div className="mt-8">
+          <div className={collaboratorCount > 0 ? "mt-8" : "mt-3"}>
             <p className="text-[12px] uppercase tracking-[0.14em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.50)' }}>
               People Attached
-              {collaboratorCount > 0 && (
-                <span style={{ color: 'rgba(255,255,255,0.40)' }}> ({collaboratorCount})</span>
-              )}
+              <span style={{ color: 'rgba(255,255,255,0.40)' }}> ({collaboratorCount})</span>
             </p>
             {collaboratorCount > 0 && (
               <div className="flex flex-wrap gap-2 mb-2">
@@ -875,7 +873,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Stat cards removed — GEM Score + Heat now rendered in hero above */}
 
-        {/* ELEVATOR PITCH — combined pitch headline + plot summary */}
+        {/* ELEVATOR PITCH — pitch headline only (plot rendered below strengths/weaknesses) */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
@@ -887,18 +885,200 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {(whatsSpecial.headline || plotSummary) && (
             <div data-pdf-section="whats_working">
               <h2
-                className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-5"
-                style={{ color: 'rgba(255,255,255,0.50)' }}
+                className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
+                style={{ color: 'var(--gem-gold)' }}
               >
                 Elevator Pitch
               </h2>
               <InlineElevatorPitch
                 fallbackPitch={whatsSpecial.headline ?? ''}
                 fallbackPlot={plotSummary ?? ''}
+                hidePlot
               />
             </div>
           )}
         </SectionGate>
+
+        {/* ═══ STRENGTHS + WEAKNESSES — two columns ═══ */}
+        {(allStrengths.length > 0 || (issues?.items ?? []).length > 0 || craftNote) && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* LEFT — Why This Can Be a Hit */}
+            <SectionGate
+              section="whats_working"
+              privacy={privacy}
+              isOwnerOrAdmin={isOwnerOrAdmin}
+              submissionId={privacyControlId}
+              isPublic={submission.is_public ?? false}
+              isProSubscriber={true}
+            >
+              {allStrengths.length > 0 && (
+                <div
+                  className="rounded-xl p-5 sm:p-6"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  <h2
+                    className="text-[14px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                    style={{ color: 'var(--gem-gold)' }}
+                  >
+                    Why This Can Be a Hit
+                  </h2>
+                  <ol className="list-none m-0 p-0 space-y-2">
+                    {allStrengths.map((s, i) => (
+                      <li key={i}>
+                        <details className="group [&_summary::-webkit-details-marker]:hidden">
+                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-2">
+                            <span
+                              className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
+                              style={{ color: 'var(--gem-gold)' }}
+                            >
+                              {String(i + 1).padStart(2, '0')}
+                            </span>
+                            <p className="text-[14px] sm:text-[15px] font-semibold text-white m-0 leading-snug min-w-0">
+                              {s.dimension_or_area}
+                            </p>
+                            <span
+                              aria-hidden
+                              className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                            >
+                              ▾
+                            </span>
+                          </summary>
+                          <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
+                            <div />
+                            <p className="text-[13px] sm:text-[14px] text-[rgba(255,255,255,0.8)] leading-[1.6] m-0">
+                              {s.what_it_means}
+                            </p>
+                          </div>
+                        </details>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+            </SectionGate>
+
+            {/* RIGHT — What to Consider */}
+            {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
+              <SectionGate
+                section="development_considerations"
+                privacy={privacy}
+                isOwnerOrAdmin={isOwnerOrAdmin}
+                submissionId={privacyControlId}
+                isPublic={submission.is_public ?? false}
+                isProSubscriber={true}
+              >
+              {(() => {
+                type IssueRow = {
+                  area: string
+                  detail: string
+                  is_primary_lever?: boolean
+                }
+                const merged: IssueRow[] = (issues?.items ?? []).map((i) => ({
+                  area: i.area,
+                  detail: i.detail,
+                  is_primary_lever: i.is_primary_lever,
+                }))
+                const empty = merged.length === 0 && !craftNote
+                if (empty) return null
+                const primary = merged.find((c) => c.is_primary_lever === true)
+                const secondary = merged.filter((c) => c.is_primary_lever !== true)
+                const ordered: IssueRow[] = primary
+                  ? [primary, ...secondary]
+                  : secondary
+                return (
+                  <div
+                    className="rounded-xl p-5 sm:p-6"
+                    style={{
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                    }}
+                  >
+                    <h2
+                      className="text-[14px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                      style={{ color: 'var(--gem-gold)' }}
+                    >
+                      What to Consider
+                    </h2>
+                    {ordered.length > 0 && (
+                      <ol className="list-none m-0 p-0 space-y-2">
+                        {ordered.map((c, i) => (
+                          <li key={i}>
+                            <details className="group [&_summary::-webkit-details-marker]:hidden">
+                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-2">
+                                <span
+                                  className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
+                                  style={{ color: 'var(--gem-gold)' }}
+                                >
+                                  {String(i + 1).padStart(2, '0')}
+                                </span>
+                                <p className="text-[14px] sm:text-[15px] font-semibold text-white m-0 leading-snug min-w-0">
+                                  {c.area}
+                                </p>
+                                <span
+                                  aria-hidden
+                                  className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                                >
+                                  ▾
+                                </span>
+                              </summary>
+                              <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
+                                <div />
+                                <p className="text-[13px] sm:text-[14px] text-[rgba(255,255,255,0.8)] leading-[1.6] m-0">
+                                  {c.detail}
+                                </p>
+                              </div>
+                            </details>
+                          </li>
+                        ))}
+                      </ol>
+                    )}
+
+                    {/* Craft note */}
+                    {craftNote && (
+                      <div className="relative pl-4 mt-4">
+                        <div
+                          aria-hidden
+                          className="absolute left-0 top-1 bottom-1 rounded-sm"
+                          style={{ width: 3, background: '#059669' }}
+                        />
+                        <p
+                          className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1"
+                          style={{ color: '#059669' }}
+                        >
+                          Craft note
+                        </p>
+                        <p className="text-[13px] sm:text-[14px] text-[rgba(255,255,255,0.85)] leading-[1.6] m-0">
+                          {craftNote}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )
+              })()}
+              </SectionGate>
+            )}
+          </div>
+        )}
+
+        {/* PLOT SUMMARY — collapsible, after strengths/weaknesses */}
+        {plotSummary && (
+          <div>
+            <h2
+              className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+              style={{ color: 'var(--gem-gold)' }}
+            >
+              Plot Summary
+            </h2>
+            <Collapsible title="Read full plot summary" defaultOpen={false}>
+              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+                {plotSummary}
+              </p>
+            </Collapsible>
+          </div>
+        )}
 
         {/* LEAD CHARACTERS */}
         <SectionGate
@@ -925,8 +1105,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             return (
               <>
                 <h2
-                  className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-5"
-                  style={{ color: 'rgba(255,255,255,0.50)' }}
+                  className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
+                  style={{ color: 'var(--gem-gold)' }}
                 >
                   Cast
                 </h2>
@@ -984,169 +1164,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* Old stat cards removed — now rendered above elevator pitch */}
-
-        {/* ═══ KEY STRENGTHS ═══ */}
-        <SectionGate
-          section="whats_working"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-          isProSubscriber={true}
-        >
-          {allStrengths.length > 0 && (
-            <div
-              className="rounded-xl p-6 sm:p-8"
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-            >
-              <h2
-                className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
-                style={{ color: 'rgba(255,255,255,0.50)' }}
-              >
-                Key Strengths
-              </h2>
-              <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
-                {allStrengths.map((s, i) => (
-                  <li key={i}>
-                    <details className="group [&_summary::-webkit-details-marker]:hidden">
-                      <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-3 sm:-mx-4">
-                        <span
-                          className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
-                          style={{ color: 'var(--gem-gold)' }}
-                        >
-                          {String(i + 1).padStart(2, '0')}
-                        </span>
-                        <p className="text-[15.5px] sm:text-[17px] font-semibold text-white m-0 leading-snug min-w-0">
-                          {s.dimension_or_area}
-                        </p>
-                        <span
-                          aria-hidden
-                          className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
-                        >
-                          ▾
-                        </span>
-                      </summary>
-                      <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
-                        <div />
-                        <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.8)] leading-[1.65] m-0 max-w-[62ch]">
-                          {s.what_it_means}
-                        </p>
-                      </div>
-                    </details>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
-        </SectionGate>
-
-        {/* ═══ KEY WEAKNESSES ═══ */}
-        {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
-          <SectionGate
-            section="development_considerations"
-            privacy={privacy}
-            isOwnerOrAdmin={isOwnerOrAdmin}
-            submissionId={privacyControlId}
-            isPublic={submission.is_public ?? false}
-            isProSubscriber={true}
-          >
-          {(() => {
-            type IssueRow = {
-              area: string
-              detail: string
-              is_primary_lever?: boolean
-            }
-            const merged: IssueRow[] = (issues?.items ?? []).map((i) => ({
-              area: i.area,
-              detail: i.detail,
-              is_primary_lever: i.is_primary_lever,
-            }))
-            const empty = merged.length === 0 && !craftNote
-            if (empty) return null
-            const primary = merged.find((c) => c.is_primary_lever === true)
-            const secondary = merged.filter((c) => c.is_primary_lever !== true)
-            return (
-              <div
-                className="rounded-xl p-6 sm:p-8"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                }}
-              >
-                <h2
-                  className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
-                  style={{ color: 'rgba(255,255,255,0.50)' }}
-                >
-                  Key Weaknesses
-                </h2>
-                {(() => {
-                  const ordered: IssueRow[] = primary
-                    ? [primary, ...secondary]
-                    : secondary
-                  if (ordered.length === 0) return null
-                  return (
-                    <ol className="list-none m-0 p-0 space-y-2.5 sm:space-y-3">
-                      {ordered.map((c, i) => (
-                        <li key={i}>
-                          <details className="group [&_summary::-webkit-details-marker]:hidden">
-                            <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-3 sm:-mx-4">
-                              <span
-                                className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
-                                style={{ color: 'var(--gem-gold)' }}
-                              >
-                                {String(i + 1).padStart(2, '0')}
-                              </span>
-                              <p className="text-[15.5px] sm:text-[17px] font-semibold text-white m-0 leading-snug min-w-0">
-                                {c.area}
-                              </p>
-                              <span
-                                aria-hidden
-                                className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
-                              >
-                                ▾
-                              </span>
-                            </summary>
-                            <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
-                              <div />
-                              <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.8)] leading-[1.65] m-0 max-w-[62ch]">
-                                {c.detail}
-                              </p>
-                            </div>
-                          </details>
-                        </li>
-                      ))}
-                    </ol>
-                  )
-                })()}
-
-                {/* Craft note */}
-                {craftNote && (
-                  <div className="relative pl-5 sm:pl-6 mt-5 sm:mt-6">
-                    <div
-                      aria-hidden
-                      className="absolute left-0 top-1 bottom-1 rounded-sm"
-                      style={{ width: 3, background: '#059669' }}
-                    />
-                    <p
-                      className="text-[10.5px] uppercase tracking-[0.18em] font-bold m-0 mb-1.5"
-                      style={{ color: '#059669' }}
-                    >
-                      Craft note
-                    </p>
-                    <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.85)] leading-[1.65] m-0 max-w-[62ch]">
-                      {craftNote}
-                    </p>
-                  </div>
-                )}
-              </div>
-            )
-          })()}
-          </SectionGate>
-        )}
+        {/* Old standalone strengths/weaknesses sections removed — now in two-column layout above */}
 
         {/* ═══ NARRATIVE BREAKDOWN — dimension scores ═══ */}
         {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
@@ -1158,8 +1176,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             }}
           >
             <h2
-              className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
-              style={{ color: 'rgba(255,255,255,0.50)' }}
+              className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+              style={{ color: 'var(--gem-gold)' }}
             >
               Narrative Breakdown
             </h2>
@@ -1223,8 +1241,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               data-pdf-section="project_complexity"
             >
               <h2
-                className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
-                style={{ color: 'rgba(255,255,255,0.50)' }}
+                className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                style={{ color: 'var(--gem-gold)' }}
               >
                 Production
               </h2>

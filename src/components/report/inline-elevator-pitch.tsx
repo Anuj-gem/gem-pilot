@@ -10,9 +10,10 @@ import { Collapsible } from './v5-components'
 interface Props {
   fallbackPitch: string
   fallbackPlot: string
+  hidePlot?: boolean
 }
 
-export function InlineElevatorPitch({ fallbackPitch, fallbackPlot }: Props) {
+export function InlineElevatorPitch({ fallbackPitch, fallbackPlot, hidePlot }: Props) {
   const editCtx = useEditContextOptional()
   const isEditing = editCtx?.isEditing ?? false
 
@@ -70,7 +71,7 @@ export function InlineElevatorPitch({ fallbackPitch, fallbackPlot }: Props) {
           {displayPitch}
         </p>
       )}
-      {displayPlot && (
+      {!hidePlot && displayPlot && (
         <div className="mt-6">
           <Collapsible title="Detailed Plot Summary" defaultOpen={false}>
             <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
