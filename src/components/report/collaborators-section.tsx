@@ -183,25 +183,24 @@ export function CollaboratorsSection({
 
   return (
     <>
-      <div className="mt-4">
-        {/* Header */}
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-[13px] font-medium text-[var(--gem-gray-400)]">
-            People attached{count > 0 ? ` · ${count}` : ''}
-          </span>
-          {isOwner && (
+      <div className="mt-1">
+        {/* Add button — prominent for owners */}
+        {isOwner && (
+          <div className="mb-3">
             <button
               onClick={() => setShowInput(v => !v)}
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium cursor-pointer border-0 bg-transparent transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 transition-all"
               style={{
-                color: showInput ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.45)',
+                background: showInput ? 'rgba(139,92,246,0.2)' : 'rgba(255,255,255,0.08)',
+                color: showInput ? 'rgba(167,139,250,0.9)' : 'rgba(255,255,255,0.7)',
+                border: showInput ? '1px solid rgba(139,92,246,0.4)' : '1px solid rgba(255,255,255,0.14)',
               }}
             >
-              <UserPlus size={14} />
-              Add
+              <UserPlus size={16} />
+              {showInput ? 'Cancel' : 'Add Person'}
             </button>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Add form */}
         {isOwner && showInput && (
@@ -328,8 +327,8 @@ export function CollaboratorsSection({
           </div>
         )}
 
-        {isOwner && count === 0 && !showInput && (
-          <p className="text-[12px] text-white/30 m-0">
+        {isOwner && count === 0 && !showInput && !myPendingInvite && (
+          <p className="text-[12px] m-0" style={{ color: 'rgba(255,255,255,0.35)' }}>
             No one attached yet
           </p>
         )}

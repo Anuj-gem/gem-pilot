@@ -716,6 +716,107 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 isProSubscriber={true}
               />
 
+              {/* ═══ INLINE STATS — GEM Score + Heat, compact row ═══ */}
+              <div className="flex items-center gap-4 mt-4 flex-wrap">
+                {/* GEM Score */}
+                {typeof commercialScore === 'number' &&
+                  (isOwnerOrAdmin || isScoreVisible(privacy)) && (
+                  <div
+                    className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
+                    style={{
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.10)',
+                    }}
+                    data-pdf-section="gem_score"
+                  >
+                    {/* GEM diamond icon — concentric layered diamond */}
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex items-center justify-center shrink-0 rotate-45"
+                      style={{ width: 22, height: 22 }}
+                    >
+                      <span className="absolute rotate-0" style={{
+                        width: 22, height: 22,
+                        background: 'rgba(167, 139, 250, 0.15)',
+                        borderRadius: 1.5,
+                      }} />
+                      <span className="absolute rotate-0" style={{
+                        width: 16.5, height: 16.5,
+                        background: 'rgba(139, 92, 246, 0.35)',
+                        borderRadius: 1.5,
+                      }} />
+                      <span className="absolute rotate-0" style={{
+                        width: 12, height: 12,
+                        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                        borderRadius: 1.5,
+                      }} />
+                    </span>
+                    <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                      GEM Score
+                    </span>
+                    <span className="text-[22px] font-bold tabular-nums leading-none text-white">
+                      {Math.round(commercialScore)}
+                    </span>
+                    <span className="text-[11px] font-medium" style={{ color: 'rgba(255,255,255,0.30)' }}>/100</span>
+                  </div>
+                )}
+
+                {/* Heat */}
+                <div
+                  className="flex items-center gap-2 rounded-lg px-3.5 py-2"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.10)',
+                  }}
+                >
+                  <span className="text-[18px] leading-none">🔥</span>
+                  <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                    Heat
+                  </span>
+                  <span className="text-[22px] font-bold tabular-nums leading-none text-white">
+                    {heatScore}
+                  </span>
+                </div>
+              </div>
+
+              {/* ═══ PEOPLE ATTACHED — collaborators section ═══ */}
+              <div className="mt-5">
+                <p className="text-[12px] uppercase tracking-[0.14em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                  People Attached
+                  {collaboratorCount > 0 && (
+                    <span style={{ color: 'rgba(255,255,255,0.40)' }}> ({collaboratorCount})</span>
+                  )}
+                </p>
+                {collaboratorCount > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {(collaboratorRows ?? []).map((c: any, i: number) => {
+                      const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
+                      return (
+                        <span
+                          key={i}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[13px] font-medium"
+                          style={{
+                            background: 'rgba(255,255,255,0.08)',
+                            color: 'rgba(255,255,255,0.85)',
+                            border: '1px solid rgba(255,255,255,0.14)',
+                          }}
+                        >
+                          <span style={{ color: 'rgba(255,255,255,0.50)' }}>👤</span>
+                          {name}
+                          {c.role && <span style={{ color: 'rgba(255,255,255,0.40)' }}>· {c.role === 'other' ? c.role_other : c.role}</span>}
+                        </span>
+                      )
+                    })}
+                  </div>
+                )}
+                <CollaboratorsSection
+                  submissionId={submission.id}
+                  isOwner={isOwner || isAdmin}
+                  currentUserEmail={user?.email ?? null}
+                  currentUserId={user?.id ?? null}
+                />
+              </div>
+
             </div>
           </div>
 
@@ -726,108 +827,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isOwner={isOwner}
           />
 
-          {/* ═══ INLINE STATS — GEM Score + Heat, compact row ═══ */}
-          <div className="flex items-center gap-4 mt-5 flex-wrap">
-            {/* GEM Score */}
-            {typeof commercialScore === 'number' &&
-              (isOwnerOrAdmin || isScoreVisible(privacy)) && (
-              <div
-                className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
-                style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                }}
-                data-pdf-section="gem_score"
-              >
-                {/* GEM diamond icon — concentric layered diamond */}
-                <span
-                  aria-hidden="true"
-                  className="inline-flex items-center justify-center shrink-0 rotate-45"
-                  style={{ width: 22, height: 22 }}
-                >
-                  <span className="absolute rotate-0" style={{
-                    width: 22, height: 22,
-                    background: 'rgba(167, 139, 250, 0.15)',
-                    borderRadius: 1.5,
-                  }} />
-                  <span className="absolute rotate-0" style={{
-                    width: 16.5, height: 16.5,
-                    background: 'rgba(139, 92, 246, 0.35)',
-                    borderRadius: 1.5,
-                  }} />
-                  <span className="absolute rotate-0" style={{
-                    width: 12, height: 12,
-                    background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                    borderRadius: 1.5,
-                  }} />
-                </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: 'rgba(255,255,255,0.50)' }}>
-                  GEM Score
-                </span>
-                <span className="text-[22px] font-bold tabular-nums leading-none text-white">
-                  {Math.round(commercialScore)}
-                </span>
-                <span className="text-[11px] font-medium" style={{ color: 'rgba(255,255,255,0.30)' }}>/100</span>
-              </div>
-            )}
-
-            {/* Heat */}
-            <div
-              className="flex items-center gap-2 rounded-lg px-3.5 py-2"
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.10)',
-              }}
-            >
-              <span className="text-[18px] leading-none">🔥</span>
-              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: 'rgba(255,255,255,0.50)' }}>
-                Heat
-              </span>
-              <span className="text-[22px] font-bold tabular-nums leading-none text-white">
-                {heatScore}
-              </span>
-            </div>
-          </div>
-
-          {/* ═══ PEOPLE ATTACHED — collaborators section ═══ */}
-          <div className="mt-5">
-            <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-[14px] font-bold text-white m-0">
-                People Attached
-                {collaboratorCount > 0 && (
-                  <span style={{ color: 'rgba(255,255,255,0.45)' }}> ({collaboratorCount})</span>
-                )}
-              </h3>
-            </div>
-            {collaboratorCount > 0 && (
-              <div className="flex flex-wrap gap-2 mb-2">
-                {(collaboratorRows ?? []).map((c: any, i: number) => {
-                  const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
-                  return (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-medium"
-                      style={{
-                        background: 'rgba(255,255,255,0.08)',
-                        color: 'rgba(255,255,255,0.85)',
-                        border: '1px solid rgba(255,255,255,0.14)',
-                      }}
-                    >
-                      <span style={{ color: 'rgba(255,255,255,0.50)' }}>👤</span>
-                      {name}
-                      {c.role && <span style={{ color: 'rgba(255,255,255,0.40)' }}>· {c.role === 'other' ? c.role_other : c.role}</span>}
-                    </span>
-                  )
-                })}
-              </div>
-            )}
-            <CollaboratorsSection
-              submissionId={submission.id}
-              isOwner={isOwner || isAdmin}
-              currentUserEmail={user?.email ?? null}
-              currentUserId={user?.id ?? null}
-            />
-          </div>
         </div>
 
       </div>
@@ -839,7 +838,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       `}</style>
 
       <div
-        className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 pt-2"
+        className="max-w-6xl mx-auto pb-24 pt-2"
         style={{
           '--gem-gray-50': '#FFFFFF',
           '--gem-gray-100': 'rgba(255,255,255,0.92)',
