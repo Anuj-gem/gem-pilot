@@ -162,6 +162,34 @@ export async function POST(
     return NextResponse.json({ error: error.message }, { status: 400 })
   }
 
+  // Add +1 heat to the script for the new collaborator
+  try {
+    const { data: sub } = await supabase
+      .from('script_submissions')
+      .select('heat_score')
+      .eq('id', submissionId)
+      .single()
+    const currentHeat = (sub as any)?.heat_score || 0
+    const newHeat = currentHeat + 1
+    await supabase
+      .from('script_submissions')
+      .update({ heat_score: newHeat })
+      .eq('id', submissionId)
+    await supabase
+      .from('collaborator_heat_log')
+      .insert({
+        submission_id: submissionId,
+        collaborator_row_id: collab.id,
+        collaborator_email: email,
+        action: 'added',
+        heat_delta: 1,
+        heat_after: newHeat,
+        actor_id: user.id,
+      })
+  } catch (heatErr) {
+    console.error('[collaborators] Failed to update heat:', heatErr)
+  }
+
   // Send invite email
   try {
     // Fetch script title + evaluation info for the email
@@ -268,6 +296,37 @@ export async function PATCH(
       .single()
 
     if (error) return NextResponse.json({ error: error.message }, { status: 400 })
+
+    // If declined, remove the heat that was added on invite
+    if (status === 'declined') {
+      try {
+        const { data: sub } = await supabase
+          .from('script_submissions')
+          .select('heat_score')
+          .eq('id', submissionId)
+          .single()
+        const currentHeat = (sub as any)?.heat_score || 0
+        const newHeat = Math.max(0, currentHeat - 1)
+        await supabase
+          .from('script_submissions')
+          .update({ heat_score: newHeat })
+          .eq('id', submissionId)
+        await supabase
+          .from('collaborator_heat_log')
+          .insert({
+            submission_id: submissionId,
+            collaborator_row_id: collab.id,
+            collaborator_email: collab.collaborator_email,
+            action: 'declined',
+            heat_delta: -1,
+            heat_after: newHeat,
+            actor_id: user.id,
+          })
+      } catch (heatErr) {
+        console.error('[collaborators] Failed to update heat on decline:', heatErr)
+      }
+    }
+
     return NextResponse.json(updated)
   }
 
@@ -354,6 +413,34 @@ export async function DELETE(
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 400 })
+  }
+
+  // Remove 1 heat from the script + audit log
+  try {
+    const { data: sub } = await supabase
+      .from('script_submissions')
+      .select('heat_score')
+      .eq('id', submissionId)
+      .single()
+    const currentHeat = (sub as any)?.heat_score || 0
+    const newHeat = Math.max(0, currentHeat - 1)
+    await supabase
+      .from('script_submissions')
+      .update({ heat_score: newHeat })
+      .eq('id', submissionId)
+    await supabase
+      .from('collaborator_heat_log')
+      .insert({
+        submission_id: submissionId,
+        collaborator_row_id: collab.id,
+        collaborator_email: collab.collaborator_email,
+        action: 'removed',
+        heat_delta: -1,
+        heat_after: newHeat,
+        actor_id: user.id,
+      })
+  } catch (heatErr) {
+    console.error('[collaborators] Failed to update heat on remove:', heatErr)
   }
 
   return NextResponse.json({ ok: true })
