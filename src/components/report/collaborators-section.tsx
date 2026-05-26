@@ -33,6 +33,7 @@ interface Collaborator {
   profile: {
     full_name: string | null
     avatar_url: string | null
+    headline: string | null
   } | null
 }
 
@@ -253,7 +254,7 @@ export function CollaboratorsSection({
 
         {/* Collaborator chips */}
         {visibleCollabs.length > 0 && (
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3">
             {visibleCollabs.map(c => {
               const isSelf =
                 c.collaborator_id === currentUserId ||
@@ -430,7 +431,7 @@ function RoleSelect({ value, onChange }: { value: string; onChange: (v: string) 
   )
 }
 
-/* ── Chip ── */
+/* ── Collaborator Card ── */
 function CollaboratorChip({
   collaborator,
   isOwner,
@@ -446,57 +447,74 @@ function CollaboratorChip({
 }) {
   const name = collaborator.profile?.full_name || collaborator.collaborator_email
   const avatar = collaborator.profile?.avatar_url
+  const headline = collaborator.profile?.headline
   const isPending = collaborator.status === 'pending'
   const showRole = collaborator.role && collaborator.role !== 'collaborator'
   const canRemove = isOwner || isSelf
 
   return (
     <div
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full group/chip"
+      className="flex items-center gap-5 px-6 py-5 group/chip"
       style={{
-        background: 'rgba(255,255,255,0.06)',
+        background: 'rgba(255,255,255,0.07)',
         border: '1px solid rgba(255,255,255,0.10)',
         opacity: isPending ? 0.6 : 1,
       }}
     >
       {avatar ? (
-        <img src={avatar} alt="" className="w-5 h-5 rounded-full object-cover" />
+        <img src={avatar} alt="" className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0" />
       ) : (
         <div
-          className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
-          style={{ background: 'rgba(124,58,237,0.3)', color: '#c4b5fd' }}
+          className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[28px] font-bold flex-shrink-0"
+          style={{ background: 'rgba(124,58,237,0.25)', color: '#c4b5fd' }}
         >
           {name.charAt(0).toUpperCase()}
         </div>
       )}
-      <span className="text-[12px] font-medium text-white/80">{name}</span>
-      {showRole && (
-        <span className="text-[10px] text-white/40">
-          {roleLabel(collaborator.role, collaborator.role_other)}
-        </span>
-      )}
-      {isPending && isOwner && (
-        <span className="text-[10px] text-white/40 italic">pending</span>
-      )}
-      {/* Owner actions: edit + remove */}
-      {isOwner && !isPending && (
-        <button
-          onClick={onEdit}
-          className="opacity-0 group-hover/chip:opacity-100 transition-opacity bg-transparent border-0 cursor-pointer p-0 ml-0.5"
-          title="Edit role"
-        >
-          <Pencil size={11} style={{ color: 'rgba(255,255,255,0.4)' }} />
-        </button>
-      )}
-      {canRemove && (
-        <button
-          onClick={onRemove}
-          className="opacity-0 group-hover/chip:opacity-100 transition-opacity bg-transparent border-0 cursor-pointer p-0"
-          title={isSelf && !isOwner ? 'Remove yourself' : 'Remove'}
-        >
-          <Trash2 size={11} style={{ color: 'rgba(255,107,107,0.6)' }} />
-        </button>
-      )}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-3 flex-wrap">
+          <span className="text-[22px] font-bold text-white">{name}</span>
+          {showRole && (
+            <span
+              className="text-[14px] font-semibold px-3 py-1 flex-shrink-0"
+              style={{
+                background: 'rgba(124,58,237,0.2)',
+                color: '#c4b5fd',
+                borderRadius: 4,
+              }}
+            >
+              {roleLabel(collaborator.role, collaborator.role_other)}
+            </span>
+          )}
+          {isPending && isOwner && (
+            <span className="text-[13px] text-white/40 italic">pending</span>
+          )}
+          {/* Owner actions: edit + remove */}
+          {isOwner && !isPending && (
+            <button
+              onClick={onEdit}
+              className="opacity-0 group-hover/chip:opacity-100 transition-opacity bg-transparent border-0 cursor-pointer p-0"
+              title="Edit role"
+            >
+              <Pencil size={14} style={{ color: 'rgba(255,255,255,0.4)' }} />
+            </button>
+          )}
+          {canRemove && (
+            <button
+              onClick={onRemove}
+              className="opacity-0 group-hover/chip:opacity-100 transition-opacity bg-transparent border-0 cursor-pointer p-0"
+              title={isSelf && !isOwner ? 'Remove yourself' : 'Remove'}
+            >
+              <Trash2 size={14} style={{ color: 'rgba(255,107,107,0.6)' }} />
+            </button>
+          )}
+        </div>
+        {headline && (
+          <p className="text-[16px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            {headline}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

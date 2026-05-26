@@ -52,16 +52,16 @@ export async function GET(
     .filter(c => c.collaborator_id)
     .map(c => c.collaborator_id!)
 
-  let profiles: Record<string, { full_name: string | null; avatar_url: string | null }> = {}
+  let profiles: Record<string, { full_name: string | null; avatar_url: string | null; headline: string | null }> = {}
   if (collaboratorIds.length > 0) {
     const { data: profileRows } = await supabase
       .from('profiles')
-      .select('id, full_name, avatar_url')
+      .select('id, full_name, avatar_url, headline')
       .in('id', collaboratorIds)
 
     if (profileRows) {
       profiles = Object.fromEntries(
-        profileRows.map(p => [p.id, { full_name: p.full_name, avatar_url: p.avatar_url }])
+        profileRows.map(p => [p.id, { full_name: p.full_name, avatar_url: p.avatar_url, headline: (p as any).headline ?? null }])
       )
     }
   }

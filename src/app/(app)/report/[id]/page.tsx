@@ -814,32 +814,32 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   return (
                     <div
                       key={i}
-                      className="flex items-center gap-4 px-5 py-4"
+                      className="flex items-center gap-5 px-6 py-5"
                       style={{
                         background: 'rgba(255,255,255,0.07)',
                         border: '1px solid rgba(255,255,255,0.10)',
                       }}
                     >
                       {avatar ? (
-                        <img src={avatar} alt="" className="w-12 h-12 rounded-full object-cover flex-shrink-0" />
+                        <img src={avatar} alt="" className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0" />
                       ) : (
                         <div
-                          className="w-12 h-12 rounded-full flex items-center justify-center text-[18px] font-bold flex-shrink-0"
+                          className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[28px] font-bold flex-shrink-0"
                           style={{ background: 'rgba(124,58,237,0.25)', color: '#c4b5fd' }}
                         >
                           {name.charAt(0).toUpperCase()}
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-[17px] font-semibold text-white truncate">{name}</span>
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="text-[22px] font-bold text-white">{name}</span>
                           {role && (
                             <span
-                              className="text-[12px] font-medium px-2 py-0.5 flex-shrink-0"
+                              className="text-[14px] font-semibold px-3 py-1 flex-shrink-0"
                               style={{
                                 background: 'rgba(124,58,237,0.2)',
                                 color: '#c4b5fd',
-                                borderRadius: 3,
+                                borderRadius: 4,
                               }}
                             >
                               {role}
@@ -847,7 +847,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           )}
                         </div>
                         {headline && (
-                          <p className="text-[14px] m-0 mt-0.5 truncate" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                          <p className="text-[16px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
                             {headline}
                           </p>
                         )}
