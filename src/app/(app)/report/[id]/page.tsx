@@ -539,12 +539,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     )
   }
 
-  // Collaborator count for the stat card
-  const { count: collaboratorCount } = await serviceClient
+  // Collaborator data for the stat card
+  const { data: collaboratorRows } = await serviceClient
     .from('script_collaborators')
-    .select('*', { count: 'exact', head: true })
+    .select('id, collaborator_email, role, role_other, profiles:collaborator_id(full_name)')
     .eq('submission_id', submission.id)
     .eq('status', 'accepted')
+  const collaboratorCount = collaboratorRows?.length ?? 0
 
   const blurStyle: React.CSSProperties = {
     filter: 'blur(5px)',
@@ -637,7 +638,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         />
 
         {/* Banners inside hero */}
-        <div className="max-w-5xl mx-auto pt-8 relative z-10">
+        <div className="max-w-6xl mx-auto pt-8 relative z-10">
           {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
           {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
@@ -664,7 +665,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </div>
 
         {/* Hero content — poster + info */}
-        <div className="max-w-5xl mx-auto pb-10 sm:pb-14 relative z-10">
+        <div className="max-w-6xl mx-auto pb-10 sm:pb-14 relative z-10">
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 relative">
             {/* Poster image area — hidden for non-owners when no poster */}
             {((isOwner || isAdmin) || !!submission.poster_url) && (
@@ -717,13 +718,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 isProSubscriber={true}
               />
 
-              {/* Collaborators — below title/categories */}
-              <CollaboratorsSection
-                submissionId={submission.id}
-                isOwner={isOwner || isAdmin}
-                currentUserEmail={user?.email ?? null}
-                currentUserId={user?.id ?? null}
-              />
             </div>
           </div>
 
@@ -732,6 +726,92 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             submissionId={submission.id}
             initialMedia={(submission as any).media_urls || []}
             isOwner={isOwner}
+          />
+
+          {/* ═══ STAT CARDS — compact row inside hero ═══ */}
+          <div className="grid grid-cols-3 gap-3 mt-6">
+            {/* GEM Score */}
+            {typeof commercialScore === 'number' &&
+              (isOwnerOrAdmin || isScoreVisible(privacy)) && (
+              <div
+                className="rounded-xl px-4 py-3.5 flex items-center gap-3"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                }}
+                data-pdf-section="gem_score"
+              >
+                <span className="text-[22px] flex-shrink-0">💎</span>
+                <div className="min-w-0">
+                  <p className="text-[10.5px] uppercase tracking-[0.16em] font-semibold m-0" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    GEM Score
+                  </p>
+                  <span className="text-[28px] font-bold tabular-nums leading-none text-white">
+                    {Math.round(commercialScore)}
+                  </span>
+                  <span className="text-[12px] font-medium ml-0.5" style={{ color: 'rgba(255,255,255,0.3)' }}>/100</span>
+                </div>
+              </div>
+            )}
+
+            {/* Collaborators */}
+            <div
+              className="rounded-xl px-4 py-3.5 flex items-center gap-3"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.10)',
+              }}
+            >
+              <span className="text-[22px] flex-shrink-0">👥</span>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10.5px] uppercase tracking-[0.16em] font-semibold m-0" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  Collaborators
+                </p>
+                {collaboratorCount > 0 ? (
+                  <p className="text-[13px] font-medium text-white m-0 mt-0.5 leading-snug truncate">
+                    {(collaboratorRows ?? [])
+                      .slice(0, 3)
+                      .map((c: any) => {
+                        const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
+                        return name
+                      })
+                      .join(', ')}
+                    {collaboratorCount > 3 && ` +${collaboratorCount - 3}`}
+                  </p>
+                ) : (
+                  <p className="text-[13px] font-medium m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                    None yet
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Heat */}
+            <div
+              className="rounded-xl px-4 py-3.5 flex items-center gap-3"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.10)',
+              }}
+            >
+              <span className="text-[22px] flex-shrink-0">🔥</span>
+              <div className="min-w-0">
+                <p className="text-[10.5px] uppercase tracking-[0.16em] font-semibold m-0" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  Heat
+                </p>
+                <span className="text-[28px] font-bold tabular-nums leading-none text-white">
+                  {heatScore}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Collaborators management — owner can add/edit/remove */}
+          <CollaboratorsSection
+            submissionId={submission.id}
+            isOwner={isOwner || isAdmin}
+            currentUserEmail={user?.email ?? null}
+            currentUserId={user?.id ?? null}
           />
         </div>
 
@@ -744,7 +824,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       `}</style>
 
       <div
-        className="max-w-5xl mx-auto px-4 sm:px-6 pb-24 pt-2"
+        className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 pt-2"
         style={{
           '--gem-gray-50': '#FFFFFF',
           '--gem-gray-100': 'rgba(255,255,255,0.92)',
@@ -1428,7 +1508,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
         </div>
-        {/* /space-y-5 + max-w-5xl wrappers close here. */}
+        {/* /space-y-5 + max-w-6xl wrappers close here. */}
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
@@ -1441,7 +1521,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {/* Danger Zone — delete lives at the very bottom, deprioritized */}
       {(isOwner || isAdmin) && (
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <DangerZoneDelete submissionId={submission.id} />
         </div>
       )}

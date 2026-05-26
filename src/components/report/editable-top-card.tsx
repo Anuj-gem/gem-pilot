@@ -427,87 +427,72 @@ export function EditableTopCard({
         </div>
       ) : (
         hasCategories && (
-          <details className="group mb-4">
-            <summary
-              className="inline-flex items-center gap-1.5 cursor-pointer list-none text-[13px] font-medium text-[var(--gem-gray-400)] hover:text-[var(--gem-gray-200)] transition-colors select-none [&::-webkit-details-marker]:hidden"
-            >
-              View categories
-              <ChevronDown
-                size={14}
-                className="transition-transform duration-200 group-open:rotate-180"
-              />
-            </summary>
-            <div className="mt-3 space-y-3">
-              {(classificationPills.length > 0 || displayTone?.trim() || postedAt) && (
-                <div className="flex flex-wrap items-center gap-2">
-                  {classificationPills.map((pill, i) => (
+          <div className="mb-4 space-y-2.5">
+            {/* Format + Genres — always visible, prominent */}
+            {classificationPills.filter(p => p.variant === 'format' || p.variant === 'genre').length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                {classificationPills
+                  .filter(p => p.variant === 'format' || p.variant === 'genre')
+                  .map((pill, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold"
+                      className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-semibold"
                       style={
                         pill.variant === 'format'
                           ? {
-                              background: 'rgba(124,77,237,0.15)',
+                              background: 'rgba(124,77,237,0.18)',
                               color: '#c4b5fd',
-                              border: '1px solid rgba(124,77,237,0.25)',
+                              border: '1px solid rgba(124,77,237,0.30)',
                               textTransform: 'uppercase',
-                              letterSpacing: '0.04em',
+                              letterSpacing: '0.05em',
                             }
-                          : pill.variant === 'genre'
-                            ? {
-                                background: 'rgba(255,255,255,0.08)',
-                                color: 'rgba(255,255,255,0.75)',
-                                border: '1px solid rgba(255,255,255,0.12)',
-                              }
-                            : {
-                                background: 'rgba(255,255,255,0.05)',
-                                color: 'rgba(255,255,255,0.50)',
-                                border: '1px solid rgba(255,255,255,0.08)',
-                              }
+                          : {
+                              background: 'rgba(255,255,255,0.08)',
+                              color: 'rgba(255,255,255,0.80)',
+                              border: '1px solid rgba(255,255,255,0.14)',
+                            }
                       }
                     >
                       {pill.label}
                     </span>
                   ))}
-                  {displayTone?.trim() && (
-                    <span className="text-[12px] italic text-[var(--gem-gray-300)]">
-                      {displayTone}
-                    </span>
-                  )}
-                  {postedAt && (
-                    <>
-                      <span className="text-[var(--gem-gray-500)]">·</span>
-                      <span className="text-[12px] text-[var(--gem-gray-400)]">
-                        Posted{' '}
-                        {new Date(postedAt).toLocaleDateString('en-US', {
-                          month: 'short',
-                          day: 'numeric',
-                          year: 'numeric',
-                        })}
-                      </span>
-                    </>
-                  )}
-                </div>
-              )}
-              {displayTags.length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {displayTags.map((tag, i) => (
-                    <span
-                      key={`${tag}-${i}`}
-                      className="px-2.5 py-1 rounded-full text-[12px] font-medium"
-                      style={{
-                        color: 'var(--gem-gray-300)',
-                        background: 'rgba(255,255,255,0.06)',
-                        border: '1px solid rgba(255,255,255,0.10)',
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </details>
+                {displayTone?.trim() && (
+                  <span className="text-[12.5px] italic text-[var(--gem-gray-300)]">
+                    {displayTone}
+                  </span>
+                )}
+              </div>
+            )}
+            {/* Tags — subtler, smaller */}
+            {displayTags.length > 0 && (
+              <div className="flex flex-wrap gap-1.5">
+                {displayTags.map((tag, i) => (
+                  <span
+                    key={`${tag}-${i}`}
+                    className="px-2 py-0.5 rounded-full text-[11.5px] font-medium"
+                    style={{
+                      color: 'rgba(255,255,255,0.45)',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            {/* Posted date — subtle, at the end */}
+            {postedAt && (
+              <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0">
+                Posted{' '}
+                {new Date(postedAt).toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}
+              </p>
+            )}
+          </div>
         )
       )}
     </div>
