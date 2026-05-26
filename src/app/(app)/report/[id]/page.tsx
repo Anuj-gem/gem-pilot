@@ -61,6 +61,7 @@ import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
 import { PosterImage } from '@/components/report/poster-image'
 import MediaGallery from '@/components/report/media-gallery'
+import { CollaboratorsSection } from '@/components/report/collaborators-section'
 import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
@@ -687,6 +688,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 commercialScore={null}
                 scoreShownToIndustry={isScoreVisible(privacy)}
                 isProSubscriber={true}
+              />
+
+              {/* Collaborators — below title/categories */}
+              <CollaboratorsSection
+                submissionId={submission.id}
+                isOwner={isOwner || isAdmin}
+                currentUserEmail={user?.email ?? null}
+                currentUserId={user?.id ?? null}
               />
             </div>
           </div>
