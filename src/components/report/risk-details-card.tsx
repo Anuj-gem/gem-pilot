@@ -46,21 +46,29 @@ export function RiskDetailsSection({ data, production }: Props) {
       subtitle="Smooth sailing or a complicated shoot — what to plan for on production and casting. Tap any card for the raw production details."
       summary={`Production ${LEVEL_LABEL[data.budget?.level ?? 'medium']} · Cast ${LEVEL_LABEL[data.casting?.level ?? 'medium']}`}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <ComplexityCard
-          title="Production"
-          axis={data.budget}
-          details={
-            production ? <ProductionDetails production={production} /> : null
-          }
-        />
-        <ComplexityCard
-          title="Cast"
-          axis={data.casting}
-          details={production ? <CastDetails production={production} /> : null}
-        />
-      </div>
+      <ComplexityCardsInner data={data} production={production} />
     </Section>
+  )
+}
+
+/** Complexity cards without the Section wrapper — for embedding inside
+ *  a parent container (e.g. the unified Production section). */
+export function ComplexityCardsInner({ data, production }: { data: RiskDetails; production?: ProductionReality | null }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <ComplexityCard
+        title="Production"
+        axis={data.budget}
+        details={
+          production ? <ProductionDetails production={production} /> : null
+        }
+      />
+      <ComplexityCard
+        title="Cast"
+        axis={data.casting}
+        details={production ? <CastDetails production={production} /> : null}
+      />
+    </div>
   )
 }
 

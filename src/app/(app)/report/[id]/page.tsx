@@ -68,7 +68,7 @@ import { CollaboratorsSection } from '@/components/report/collaborators-section'
 // IndustryActivityButton retired from the report page on 2026-04-30
 // v0.10.19 (still used on the dashboard via OwnerActionsMenu).
 import { RerunBanner } from '@/components/report/rerun-banner'
-import { ProductionFactsSection, RiskDetailsSection } from '@/components/report/risk-details-card'
+import { ProductionFactsSection, RiskDetailsSection, ComplexityCardsInner } from '@/components/report/risk-details-card'
 // Annotations removed — synthesized feedback + next-steps tag instead.
 // BudgetTierCard retired 2026-05-25 — budget shown inline in stat cards + production section
 // import { BudgetTierCard } from '@/components/report/packaging-block'
@@ -682,7 +682,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </div>
 
         {/* Hero content — article-style: title first, then media, then stats */}
-        <div className="max-w-3xl mx-auto pb-10 sm:pb-14 relative z-10">
+        <div className="max-w-3xl mx-auto pb-6 sm:pb-8 relative z-10">
 
           {/* Owner actions — top right */}
           {(isOwner || isAdmin) && (
@@ -890,7 +890,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       `}</style>
 
       <div
-        className="max-w-3xl mx-auto pb-24 pt-14"
+        className="max-w-3xl mx-auto pb-24 pt-6"
         style={{
           '--gem-gray-50': '#FFFFFF',
           '--gem-gray-100': 'rgba(255,255,255,0.92)',
@@ -1232,13 +1232,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* ═══ NARRATIVE BREAKDOWN — dimension scores ═══ */}
         {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-          <div
-            className="rounded-xl p-6 sm:p-8"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-            }}
-          >
+          <div>
             <h2
               className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
               style={{ color: 'var(--gem-gold)' }}
@@ -1261,7 +1255,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 )
               })}
             </div>
-            {/* Plot summary removed — now rendered separately above cast */}
           </div>
         )}
 
@@ -1283,58 +1276,70 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 Production
               </h2>
 
-              {/* Budget tier — prominent card */}
-              {packaging?.budget_tier && (
-                <div
-                  className="rounded-xl p-5 sm:p-6 mb-5"
-                  style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                  }}
-                >
-                  <div className="flex items-center justify-between gap-3 mb-2">
-                    <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
-                      Budget Assessment
-                    </p>
-                    <span
-                      className="text-[12px] uppercase tracking-[0.12em] font-bold px-2.5 py-0.5 rounded-full capitalize"
-                      style={{
-                        color: 'var(--gem-gold)',
-                        background: 'rgba(232,184,37,0.12)',
-                        border: '1px solid rgba(232,184,37,0.3)',
-                      }}
-                    >
-                      {packaging.budget_tier.tier}
-                    </span>
+              <div
+                className="rounded-xl overflow-hidden"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                }}
+              >
+                {/* Budget tier — prominent header */}
+                {packaging?.budget_tier && (
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-center justify-between gap-3 mb-2">
+                      <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
+                        Budget Assessment
+                      </p>
+                      <span
+                        className="text-[12px] uppercase tracking-[0.12em] font-bold px-2.5 py-0.5 rounded-full capitalize"
+                        style={{
+                          color: 'var(--gem-gold)',
+                          background: 'rgba(232,184,37,0.12)',
+                          border: '1px solid rgba(232,184,37,0.3)',
+                        }}
+                      >
+                        {packaging.budget_tier.tier}
+                      </span>
+                    </div>
+                    {packaging.budget_tier.range && (
+                      <p className="text-[18px] sm:text-[20px] font-bold text-white m-0 mb-1">
+                        {packaging.budget_tier.range}
+                      </p>
+                    )}
+                    {packaging.budget_tier.per_episode && (
+                      <p className="text-[14px] text-[rgba(255,255,255,0.6)] m-0 mb-1">
+                        {packaging.budget_tier.per_episode} per episode
+                        {packaging.budget_tier.season_total ? ` · ${packaging.budget_tier.season_total} season total` : ''}
+                      </p>
+                    )}
+                    {packaging.budget_tier.note && (
+                      <p className="text-[14px] sm:text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.55] m-0 mt-2">
+                        {packaging.budget_tier.note}
+                      </p>
+                    )}
                   </div>
-                  {packaging.budget_tier.range && (
-                    <p className="text-[18px] sm:text-[20px] font-bold text-white m-0 mb-1">
-                      {packaging.budget_tier.range}
-                    </p>
-                  )}
-                  {packaging.budget_tier.per_episode && (
-                    <p className="text-[14px] text-[rgba(255,255,255,0.6)] m-0 mb-1">
-                      {packaging.budget_tier.per_episode} per episode
-                      {packaging.budget_tier.season_total ? ` · ${packaging.budget_tier.season_total} season total` : ''}
-                    </p>
-                  )}
-                  {packaging.budget_tier.note && (
-                    <p className="text-[14px] sm:text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.55] m-0 mt-2">
-                      {packaging.budget_tier.note}
-                    </p>
-                  )}
-                </div>
-              )}
+                )}
 
-              {/* Complexity cards — Production + Cast */}
-              {riskDetails && (
-                <RiskDetailsSection data={riskDetails} production={production} />
-              )}
+                {/* Complexity cards — Production + Cast */}
+                {riskDetails && (
+                  <div
+                    className="p-5 sm:p-6"
+                    style={{ borderTop: packaging?.budget_tier ? '1px solid rgba(255,255,255,0.08)' : undefined }}
+                  >
+                    <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+                      Complexity
+                    </p>
+                    <ComplexityCardsInner data={riskDetails} production={production} />
+                  </div>
+                )}
 
-              {/* Legacy fallback: if no riskDetails but production exists */}
-              {!riskDetails && production && (
-                <ProductionFactsSection data={{ budget: { level: 'medium', note: '' }, casting: { level: 'medium', note: '' }, development: { level: 'medium', note: '' } }} production={production} />
-              )}
+                {/* Legacy fallback: if no riskDetails but production exists */}
+                {!riskDetails && production && (
+                  <div className="p-5 sm:p-6">
+                    <ProductionFactsSection data={{ budget: { level: 'medium', note: '' }, casting: { level: 'medium', note: '' }, development: { level: 'medium', note: '' } }} production={production} />
+                  </div>
+                )}
+              </div>
             </div>
           </SectionGate>
         )}
