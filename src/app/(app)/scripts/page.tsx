@@ -32,9 +32,9 @@ export default async function ScriptsPage() {
             <p className="text-[13px] text-white/50 mt-1 m-0">0 scripts evaluated</p>
           </div>
         </header>
-        <div className="rounded-xl border border-white/10 bg-white px-6 py-10 text-center" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.25), 0 0 1px rgba(255,255,255,0.1)' }}>
-          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-600 m-0 mb-4">Upload a screenplay to get your first evaluation.</p>
+        <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
+          <p className="text-[14px] font-semibold text-white m-0 mb-1">No scripts yet</p>
+          <p className="text-[13px] m-0 mb-4" style={{ color: 'rgba(255,255,255,1)' }}>Upload a screenplay to get your first evaluation.</p>
           <UploadCTAButton
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold text-white transition-colors cursor-pointer border-0"
             style={{ background: 'var(--gem-accent)' }}
