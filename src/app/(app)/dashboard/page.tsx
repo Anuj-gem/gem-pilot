@@ -328,7 +328,8 @@ export default async function DashboardPage() {
   const reviewedApps = allApplications.filter(a => a.status === 'reviewed' || a.review_stage === 'complete')
   const pendingApps = allApplications.filter(a => a.status !== 'reviewed' && a.review_stage !== 'complete')
 
-  const totalHeat = (profile as any)?.heat_score ?? 0
+  // Derive account heat from sum of all script heat — single source of truth
+  const totalHeat = visible.reduce((sum, s) => sum + (s.heat_score ?? 0), 0)
   const scriptCount = completedScripts.length + processingScripts.length
   const pendingCount = pendingApps.length
 

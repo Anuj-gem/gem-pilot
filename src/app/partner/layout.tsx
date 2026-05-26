@@ -48,6 +48,14 @@ export default async function PartnerLayout({ children }: { children: React.Reac
 
   const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
 
+  // Derive total heat from sum of all script heat scores
+  const { data: heatSubs } = await service
+    .from('script_submissions')
+    .select('heat_score')
+    .eq('user_id', user.id)
+    .eq('status', 'completed')
+  const totalHeat = (heatSubs || []).reduce((sum: number, s: any) => sum + (s.heat_score ?? 0), 0)
+
   const navUserData = {
     profile: {
       full_name: profile?.full_name ?? null,
@@ -56,7 +64,7 @@ export default async function PartnerLayout({ children }: { children: React.Reac
       avatar_url: profile?.avatar_url ?? null,
       isPro,
       accountType: (profile as any)?.account_type ?? null,
-      heatScore: (profile as any)?.heat_score ?? 0,
+      heatScore: totalHeat,
       referralCode: (profile as any)?.referral_code ?? null,
       bonusSubmissions: (profile as any)?.bonus_submissions ?? 0,
       referralCount: 0,

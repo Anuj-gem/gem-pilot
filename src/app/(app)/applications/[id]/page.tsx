@@ -99,13 +99,13 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   }
   if (app.review_stage) reachedStages.add(app.review_stage)
 
-  // Load writer's total heat score
-  const { data: profile } = await service
-    .from('profiles')
+  // Derive total heat from sum of all script heat scores
+  const { data: heatSubs } = await service
+    .from('script_submissions')
     .select('heat_score')
-    .eq('id', user.id)
-    .single()
-  const totalHeat = (profile as any)?.heat_score ?? 0
+    .eq('user_id', user.id)
+    .eq('status', 'completed')
+  const totalHeat = (heatSubs || []).reduce((sum: number, s: any) => sum + (s.heat_score ?? 0), 0)
 
   const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
   const isUpgraded = app.review_stage === 'shortlisted' || app.review_stage === 'partner_match'

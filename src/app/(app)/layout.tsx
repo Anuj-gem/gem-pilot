@@ -174,6 +174,14 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     monthlySubmissions = { used: count ?? 0, limit: 3 + bonusSubs, resetsAt: nextMonth.toISOString() }
   }
 
+  // Derive total heat from sum of all script heat scores
+  const { data: heatSubs } = await service
+    .from('script_submissions')
+    .select('heat_score')
+    .eq('user_id', user.id)
+    .eq('status', 'completed')
+  const totalHeat = (heatSubs || []).reduce((sum: number, s: any) => sum + (s.heat_score ?? 0), 0)
+
   // Count successful referrals
   let referralCount = 0
   if ((profile as any)?.referral_code) {
@@ -193,7 +201,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       avatar_url: profile?.avatar_url ?? null,
       isPro,
       accountType: profile?.account_type ?? null,
-      heatScore: (profile as any)?.heat_score ?? 0,
+      heatScore: totalHeat,
       referralCode: (profile as any)?.referral_code ?? null,
       bonusSubmissions: (profile as any)?.bonus_submissions ?? 0,
       referralCount,
