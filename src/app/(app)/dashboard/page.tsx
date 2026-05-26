@@ -857,7 +857,7 @@ export default async function DashboardPage() {
                     {pendingApps.slice(0, 3).map(app => {
                       const opp = oppMap.get(app.opportunity_id)
                       return (
-                        <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
+                        <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
                             <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
