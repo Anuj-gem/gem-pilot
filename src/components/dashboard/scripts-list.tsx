@@ -7,6 +7,7 @@ import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
+import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
 import { useNewUploads } from '@/hooks/use-new-uploads'
 
 type ScriptRow = {
@@ -19,6 +20,7 @@ type ScriptRow = {
   evaluationId: string | null
   createdAt: string
   heat: number
+  collaboratorCount: number
   posterUrl: string | null
   isPublic: boolean
   matchingOpportunities?: { title: string; slug: string }[]
@@ -270,18 +272,25 @@ export function ScriptsList({
                     )}
                   </div>
 
-                  {/* Stats row — score, heat, opps, publish */}
-                  <div className="flex items-center gap-3 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
+                  {/* Stats row — score, heat | add collaborators | opps | leaderboard */}
+                  <div className="flex items-center gap-0 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
                     <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
                       {gemDiamond(7)} {rounded || '—'}
                     </span>
-                    <span className="text-[12px] shrink-0" style={{ color: '#fb923c' }}>🔥 {s.heat}</span>
+                    <span className="text-[12px] shrink-0 ml-3" style={{ color: '#fb923c' }}>🔥 {s.heat}</span>
+                    {/* Separator */}
+                    <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
+                    <AddCollaboratorButton scriptId={s.id} collaboratorCount={s.collaboratorCount} />
                     {oppCount > 0 && (
-                      <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
-                        {oppCount} available {oppCount === 1 ? 'opportunity' : 'opportunities'}
-                      </span>
+                      <>
+                        <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
+                        <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
+                          {oppCount} available {oppCount === 1 ? 'opportunity' : 'opportunities'}
+                        </span>
+                      </>
                     )}
-                    <span className="ml-auto shrink-0">
+                    <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
+                    <span className="shrink-0">
                       <DiscoverToggle scriptId={s.id} isPublic={s.isPublic} isAnon={false} />
                     </span>
                   </div>

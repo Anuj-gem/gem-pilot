@@ -111,6 +111,19 @@ export default async function ScriptsPage() {
       .map(o => ({ title: o.title, slug: o.slug }))
   }
 
+  // Fetch collaborator counts per script
+  const collabCountByScript = new Map<string, number>()
+  if (submissionIds.length > 0) {
+    const { data: collabs } = await service
+      .from('script_collaborators')
+      .select('submission_id')
+      .in('submission_id', submissionIds)
+      .in('status', ['pending', 'accepted'])
+    for (const c of (collabs || []) as { submission_id: string }[]) {
+      collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
+    }
+  }
+
   // Build script rows for client component (ScriptRowData-compatible)
   // Free users can see ALL their scripts — no locking.
   const scriptRows = allScripts.map(s => {
@@ -127,6 +140,7 @@ export default async function ScriptsPage() {
       evaluationId: ev?.id ?? null,
       createdAt: s.created_at,
       heat: s.heat_score ?? 0,
+      collaboratorCount: collabCountByScript.get(s.id) ?? 0,
       posterUrl: s.poster_url ?? null,
       isPublic: s.is_public ?? false,
       isProcessing: stillProcessing,

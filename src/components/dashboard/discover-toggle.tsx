@@ -51,7 +51,7 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
       aria-label={on ? 'Published to Leaderboard' : 'Not published to Leaderboard'}
     >
       <span className="text-[11px] font-bold text-white">
-        Publish to Leaderboard
+        Leaderboard
       </span>
       {/* Toggle switch with On/Off labels */}
       <span className="inline-flex items-center gap-1">
