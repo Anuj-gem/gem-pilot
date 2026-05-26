@@ -961,7 +961,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </SectionGate>
 
             {/* RIGHT — What to Consider */}
-            {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
               <SectionGate
                 section="development_considerations"
                 privacy={privacy}
@@ -1059,7 +1058,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 )
               })()}
               </SectionGate>
-            )}
           </div>
         )}
 
