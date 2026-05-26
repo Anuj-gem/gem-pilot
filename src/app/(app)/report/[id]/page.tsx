@@ -541,10 +541,28 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   // Collaborator data for the stat card
   const { data: collaboratorRows } = await serviceClient
     .from('script_collaborators')
-    .select('id, collaborator_email, role, role_other, profiles:collaborator_id(full_name)')
+    .select('id, collaborator_email, collaborator_id, role, role_other, profiles:collaborator_id(full_name, avatar_url, headline)')
     .eq('submission_id', submission.id)
     .eq('status', 'accepted')
   const collaboratorCount = collaboratorRows?.length ?? 0
+
+  // Fetch heat + script count for each collaborator who has an account
+  const collabIds = (collaboratorRows ?? []).map((c: any) => c.collaborator_id).filter(Boolean)
+  let collabStats: Record<string, { scripts: number; heat: number }> = {}
+  if (collabIds.length > 0) {
+    const { data: statsRows } = await serviceClient
+      .from('script_submissions')
+      .select('user_id, heat_score')
+      .in('user_id', collabIds)
+      .eq('status', 'completed')
+    if (statsRows) {
+      for (const row of statsRows) {
+        if (!collabStats[row.user_id]) collabStats[row.user_id] = { scripts: 0, heat: 0 }
+        collabStats[row.user_id].scripts += 1
+        collabStats[row.user_id].heat += (row.heat_score ?? 0)
+      }
+    }
+  }
 
   const blurStyle: React.CSSProperties = {
     filter: 'blur(5px)',
@@ -768,7 +786,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
 
           {/* 3. Media carousel — centered, article-style */}
-          <div className="flex justify-center">
+          <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
             <HeroMediaCarousel
               submissionId={submission.id}
               posterUrl={submission.poster_url ?? null}
@@ -778,29 +796,77 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
 
           {/* 4. People Attached — collaborators */}
-          <div className={collaboratorCount > 0 ? "mt-8" : "mt-3"}>
-            <p className="text-[12px] uppercase tracking-[0.14em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.50)' }}>
+          <div className="mt-2">
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4" style={{ color: 'var(--gem-gold)' }}>
               People Attached
               <span style={{ color: 'rgba(255,255,255,0.40)' }}> ({collaboratorCount})</span>
-            </p>
+            </h2>
             {collaboratorCount > 0 && (
-              <div className="flex flex-wrap gap-2 mb-2">
+              <div className="flex flex-col gap-3 mb-3">
                 {(collaboratorRows ?? []).map((c: any, i: number) => {
                   const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
+                  const avatar = c.profiles?.avatar_url
+                  const headline = c.profiles?.headline
+                  const role = c.role === 'other' ? c.role_other : c.role
+                  const stats = c.collaborator_id ? collabStats[c.collaborator_id] : null
+                  const hasScripts = stats && stats.scripts > 0
+                  const hasHeat = stats && stats.heat > 0
                   return (
-                    <span
+                    <div
                       key={i}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[13px] font-medium"
+                      className="flex items-center gap-4 px-5 py-4"
                       style={{
-                        background: 'rgba(255,255,255,0.08)',
-                        color: 'rgba(255,255,255,0.85)',
-                        border: '1px solid rgba(255,255,255,0.14)',
+                        background: 'rgba(255,255,255,0.07)',
+                        border: '1px solid rgba(255,255,255,0.10)',
                       }}
                     >
-                      <span style={{ color: 'rgba(255,255,255,0.50)' }}>👤</span>
-                      {name}
-                      {c.role && <span style={{ color: 'rgba(255,255,255,0.40)' }}>· {c.role === 'other' ? c.role_other : c.role}</span>}
-                    </span>
+                      {avatar ? (
+                        <img src={avatar} alt="" className="w-12 h-12 rounded-full object-cover flex-shrink-0" />
+                      ) : (
+                        <div
+                          className="w-12 h-12 rounded-full flex items-center justify-center text-[18px] font-bold flex-shrink-0"
+                          style={{ background: 'rgba(124,58,237,0.25)', color: '#c4b5fd' }}
+                        >
+                          {name.charAt(0).toUpperCase()}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-[17px] font-semibold text-white truncate">{name}</span>
+                          {role && (
+                            <span
+                              className="text-[12px] font-medium px-2 py-0.5 flex-shrink-0"
+                              style={{
+                                background: 'rgba(124,58,237,0.2)',
+                                color: '#c4b5fd',
+                                borderRadius: 3,
+                              }}
+                            >
+                              {role}
+                            </span>
+                          )}
+                        </div>
+                        {headline && (
+                          <p className="text-[14px] m-0 mt-0.5 truncate" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                            {headline}
+                          </p>
+                        )}
+                        {(hasScripts || hasHeat) && (
+                          <div className="flex items-center gap-3 mt-1.5">
+                            {hasScripts && (
+                              <span className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                                {stats!.scripts} {stats!.scripts === 1 ? 'script' : 'scripts'}
+                              </span>
+                            )}
+                            {hasHeat && (
+                              <span className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                                🔥 {stats!.heat} heat
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   )
                 })}
               </div>
