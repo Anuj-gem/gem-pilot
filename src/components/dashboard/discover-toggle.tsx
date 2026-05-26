@@ -48,10 +48,10 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
       onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle() }}
       disabled={busy}
       className="inline-flex items-center gap-2 cursor-pointer border-0 bg-transparent p-0 disabled:opacity-50 shrink-0"
-      aria-label={on ? 'Published to Discover' : 'Not published to Discover'}
+      aria-label={on ? 'Published to Leaderboard' : 'Not published to Leaderboard'}
     >
       <span className="text-[11px] font-semibold" style={{ color: on ? '#a78bfa' : 'rgba(255,255,255,0.5)' }}>
-        Publish to Discover
+        Publish to Leaderboard
       </span>
       {/* Toggle switch with On/Off labels */}
       <span className="inline-flex items-center gap-1">

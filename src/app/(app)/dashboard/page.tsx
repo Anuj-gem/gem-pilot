@@ -772,50 +772,60 @@ export default async function DashboardPage() {
           </h1>
 
           {/* ── WRITER STATS ROW ── */}
-          <div className="grid grid-cols-5 gap-3 sm:gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3">
             <Link href="/scripts" className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
-                <span className="text-[24px] leading-none mb-1">📄</span>
-                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">{scriptCount}</span>
-                <span className="text-[13px] text-white mt-1 block">Scripts</span>
+              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 12 }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[20px] leading-none shrink-0">📄</span>
+                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">{scriptCount}</span>
+                </div>
+                <span className="text-[12px] font-bold text-white mt-1 block">Scripts</span>
               </div>
             </Link>
             <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(167,139,250,0.06) 100%)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: 16 }}>
-                <span className="inline-flex mb-1">{gemDiamond(10)}</span>
-                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
-                  {topScore > 0 ? topScore : '—'}
-                </span>
-                <span className="text-[13px] text-white mt-1 block">Top Score</span>
+              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(167,139,250,0.06) 100%)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: 12 }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="inline-flex shrink-0">{gemDiamond(9)}</span>
+                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
+                    {topScore > 0 ? topScore : '—'}
+                  </span>
+                </div>
+                <span className="text-[12px] font-bold text-white mt-1 block">Top Score</span>
               </div>
             </Link>
             <Link href="/applications" className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
-                <span className="text-[24px] leading-none mb-1">🔥</span>
-                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
-                  {totalHeat > 0 ? totalHeat : '—'}
-                </span>
-                <span className="text-[13px] text-white mt-1 block">Heat</span>
+              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 12 }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[20px] leading-none shrink-0">🔥</span>
+                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
+                    {totalHeat > 0 ? totalHeat : '—'}
+                  </span>
+                </div>
+                <span className="text-[12px] font-bold text-white mt-1 block">Heat</span>
               </div>
             </Link>
             <div className="block">
-              <div className="py-5 px-4 flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.06) 100%)', border: '1px solid rgba(59,130,246,0.25)', borderRadius: 16 }}>
-                <span className="text-[24px] leading-none mb-1">🧑</span>
-                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
-                  {totalCollaborators > 0 ? totalCollaborators : pendingCollaborators > 0 ? '—' : '—'}
-                </span>
-                <span className="text-[13px] text-white mt-1 block">
-                  {totalCollaborators === 0 && pendingCollaborators > 0 ? `Collaborators (${pendingCollaborators} pending)` : 'Collaborators'}
+              <div className="py-3 px-3" style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.06) 100%)', border: '1px solid rgba(59,130,246,0.25)', borderRadius: 12 }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[20px] leading-none shrink-0">🧑</span>
+                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
+                    {totalCollaborators > 0 ? totalCollaborators : '—'}
+                  </span>
+                </div>
+                <span className="text-[12px] font-bold text-white mt-1 block">
+                  {totalCollaborators === 0 && pendingCollaborators > 0 ? `Collabs (${pendingCollaborators} pending)` : 'Collaborators'}
                 </span>
               </div>
             </div>
             <Link href="/applications" className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
-                <span className="text-[24px] leading-none mb-1">📨</span>
-                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
-                  {pendingCount > 0 ? pendingCount : '—'}
-                </span>
-                <span className="text-[13px] text-white mt-1 block">Pending Opportunities</span>
+              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 12 }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[20px] leading-none shrink-0">📨</span>
+                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
+                    {pendingCount > 0 ? pendingCount : '—'}
+                  </span>
+                </div>
+                <span className="text-[12px] font-bold text-white mt-1 block">Pending</span>
               </div>
             </Link>
           </div>
@@ -848,7 +858,7 @@ export default async function DashboardPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-[14px] font-semibold text-white m-0 truncate">{script.title}</p>
-                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>Evaluating...</p>
+                        <p className="text-[12px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>Evaluating...</p>
                       </div>
                     </div>
                   ))}
@@ -871,7 +881,7 @@ export default async function DashboardPage() {
                             )}
                             <div className="flex-1 min-w-0">
                               <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
-                              <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[13px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
                                 {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
                               </p>
                             </div>
@@ -906,9 +916,6 @@ export default async function DashboardPage() {
                       </div>
                     )
                   })}
-                  <div className="mt-2.5">
-                    <NewScriptButton />
-                  </div>
                 </div>
               )}
             </div>
@@ -932,11 +939,11 @@ export default async function DashboardPage() {
                         <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                            <p className="text-[13px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
                               Applied {fmtDate(app.submitted_at)}
                             </p>
                             {scripts.length > 0 && (
-                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[13px] font-bold m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
                                 📄 {scripts.join(', ')}
                               </p>
                             )}
@@ -971,12 +978,12 @@ export default async function DashboardPage() {
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp.title}</p>
                             {opp.description && (
-                              <p className="text-[12px] m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[13px] font-bold m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,1)' }}>
                                 {opp.description}
                               </p>
                             )}
                             {qualCriteria.length > 0 && (
-                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[13px] font-bold m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
                                 Qualification Criteria: {qualCriteria.join(', ')}
                               </p>
                             )}

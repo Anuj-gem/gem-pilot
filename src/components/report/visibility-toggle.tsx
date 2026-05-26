@@ -6,9 +6,9 @@
 // updating, and unpublishing — one surface, no scattered controls.
 //
 // Button label + style reflects current state:
-//   - Unpublished        → "Publish to Discover" (accent button)
+//   - Unpublished        → "Publish to Leaderboard" (accent button)
 //   - Published          → "Privacy · {preset}" (green pill)
-//   - Free writer        → "Publish to Discover" — modal still opens, but
+//   - Free writer        → "Publish to Leaderboard" — modal still opens, but
 //                          Publish inside the modal fires the upgrade gate.
 
 import { useState } from 'react'

@@ -3,7 +3,7 @@
 // the single surface writers use to control what a visitor sees on their
 // report. Works identically whether the report is published or not:
 //
-//   - Unpublished → bottom CTA reads "Publish to Discover". Clicking it
+//   - Unpublished → bottom CTA reads "Publish to Leaderboard". Clicking it
 //     saves the privacy settings + flips is_public in one round trip.
 //   - Published → bottom CTA reads "Save changes", with an Unpublish
 //     secondary action. Changes propagate to Discover live.
@@ -12,7 +12,7 @@
 // Custom expands per-section toggles for power users.
 //
 // Free writers: modal opens + lets them pick a preset to preview what they'd
-// share — but hitting "Publish to Discover" fires the upgrade modal instead
+// share — but hitting "Publish to Leaderboard" fires the upgrade modal instead
 // of saving. Conversion hook is: they see the picker, mentally commit to a
 // sharing posture, hit paywall on the final commit.
 

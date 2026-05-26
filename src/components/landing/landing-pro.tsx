@@ -10,7 +10,7 @@ const FEATURES = [
   'Portfolio reviews by our development team',
   'Direct partner matching',
   'Priority in opportunity matching',
-  'Publish to Discover',
+  'Publish to Leaderboard',
 ]
 
 export function LandingPro() {
