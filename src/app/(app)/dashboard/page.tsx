@@ -1,8 +1,8 @@
 // /dashboard — unified dashboard for writers and producers.
 //
-// Layout: top row (profile + CTA) → stat cards → tabbed content.
-// Writers get Scripts + Applications tabs.
-// Producers get a third "Manage" tab showing applications to their opportunities.
+// Layout: stats row → two-column (recent scripts + opportunities) → collaborations.
+// Writers see scripts, pending/available opps, and collaborations inline (no tabs).
+// Producers get a completely different layout (opp cards + triage CTA).
 
 import { cookies } from 'next/headers'
 import { createClient } from '@/lib/supabase-server'
@@ -14,7 +14,7 @@ import { NewScriptButton } from '@/components/dashboard/new-script-button'
 // StickyNewScript removed — collided with Intercom
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
-import { DashboardTabs, type TabDef } from '@/components/dashboard/dashboard-tabs'
+// DashboardTabs removed — writer dashboard is now a flat two-column layout
 import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
 import { normGenre, collectGenres, scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
@@ -203,6 +203,75 @@ export default async function DashboardPage() {
   }
   const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
   const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
+
+  // ── COLLABORATIONS QUERY ──
+
+  type CollabRow = {
+    id: string; collaborator_email: string; collaborator_id: string | null
+    role: string; role_other: string | null; submission_id: string
+  }
+  let myCollabs: (CollabRow & { profile: { full_name: string | null; avatar_url: string | null; headline: string | null } | null; scriptTitle: string | null })[] = []
+
+  if (user) {
+    // Fetch collabs where user is the inviter (people they added to their scripts)
+    const { data: invitedRows } = await service
+      .from('script_collaborators')
+      .select('id, collaborator_email, collaborator_id, role, role_other, submission_id')
+      .in('submission_id', submissionIds.length > 0 ? submissionIds : ['__none__'])
+      .order('created_at', { ascending: false })
+
+    // Fetch collabs where user is the collaborator (scripts they were invited to)
+    const { data: invitedToRows } = await service
+      .from('script_collaborators')
+      .select('id, collaborator_email, collaborator_id, role, role_other, submission_id')
+      .or(`collaborator_id.eq.${user.id},collaborator_email.eq.${user.email?.toLowerCase()}`)
+      .order('created_at', { ascending: false })
+
+    // Merge and dedupe
+    const allCollabRows = [...(invitedRows || []), ...(invitedToRows || [])] as CollabRow[]
+    const seenIds = new Set<string>()
+    const dedupedCollabs: CollabRow[] = []
+    for (const c of allCollabRows) {
+      if (!seenIds.has(c.id)) {
+        seenIds.add(c.id)
+        dedupedCollabs.push(c)
+      }
+    }
+
+    // Enrich with profiles
+    const collabUserIds = dedupedCollabs.map(c => c.collaborator_id).filter(Boolean) as string[]
+    let collabProfiles: Record<string, { full_name: string | null; avatar_url: string | null; headline: string | null }> = {}
+    if (collabUserIds.length > 0) {
+      const { data: pRows } = await service
+        .from('profiles')
+        .select('id, full_name, avatar_url, headline')
+        .in('id', collabUserIds)
+      if (pRows) {
+        collabProfiles = Object.fromEntries(
+          pRows.map((p: any) => [p.id, { full_name: p.full_name, avatar_url: p.avatar_url, headline: p.headline ?? null }])
+        )
+      }
+    }
+
+    // Get script titles for the collab's submission_id
+    const collabSubIds = [...new Set(dedupedCollabs.map(c => c.submission_id))]
+    let collabScriptTitles: Record<string, string> = {}
+    if (collabSubIds.length > 0) {
+      const { data: sRows } = await service
+        .from('script_submissions')
+        .select('id, title')
+        .in('id', collabSubIds)
+      if (sRows) {
+        collabScriptTitles = Object.fromEntries(sRows.map((s: any) => [s.id, s.title]))
+      }
+    }
+
+    myCollabs = dedupedCollabs.map(c => ({
+      ...c,
+      profile: c.collaborator_id ? collabProfiles[c.collaborator_id] ?? null : null,
+      scriptTitle: collabScriptTitles[c.submission_id] ?? null,
+    }))
+  }
 
   // ── DERIVED DATA ──
 
@@ -483,230 +552,10 @@ export default async function DashboardPage() {
     </span>
   )
 
-  // Build tabs — writers only (producers get a completely different layout, no tabs)
-  const tabs: TabDef[] = [
-    { id: 'scripts', label: 'Scripts', count: scriptCount },
-    { id: 'opportunities', label: 'Opportunities' },
-  ]
-
-  // ── TAB PANELS ──
-
   // Compute stats for the prominent stats section
-  const avgScore = completedScripts.length > 0
-    ? Math.round(completedScripts.reduce((sum, s) => sum + (s.score ?? 0), 0) / completedScripts.filter(s => s.score).length) || 0
-    : 0
   const topScore = completedScripts.length > 0
     ? Math.round(Math.max(...completedScripts.map(s => s.score ?? 0)))
     : 0
-  const totalOpps = completedScripts.reduce((sum, s) => sum + s.qualifyingOpps.length, 0)
-
-  // Scripts panel — poster-first visual cards with light card backgrounds
-  const scriptsPanel = (
-    <div>
-      {completedScripts.length === 0 && processingScripts.length === 0 ? (
-        <div className="rounded-2xl px-8 py-16 text-center" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-          <div className="w-16 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center" style={{ background: '#f3f0ff' }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M14 2v6h6M12 18v-6M9 15h6" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <p className="text-[16px] font-semibold text-gray-900 m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] text-gray-500 m-0 mb-4">Upload your first screenplay to get a full evaluation.</p>
-          <NewScriptButton />
-        </div>
-      ) : (
-        <>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {/* Processing scripts */}
-          {processingScripts.map(script => (
-            <div key={script.id} className="rounded-2xl overflow-hidden" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-              <div className="aspect-[5/4] sm:aspect-[3/2] w-full flex items-center justify-center" style={{ background: placeholderGradient }}>
-                <div className="text-center">
-                  <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-2" />
-                  <p className="text-[12px] font-medium text-white/70 m-0">Evaluating...</p>
-                </div>
-              </div>
-              <div className="px-4 py-4">
-                <h3 className="text-[16px] font-bold text-gray-900 m-0 truncate">{script.title}</h3>
-                <p className="text-[13px] text-gray-600 m-0 mt-0.5">{script.format || 'Script'}</p>
-              </div>
-            </div>
-          ))}
-
-          {/* Completed scripts — poster-first cards (limited to 3) */}
-          {completedScripts.slice(0, 3).map(script => {
-            const rounded = script.score ? Math.round(script.score) : null
-            const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
-
-            return (
-              <div key={script.id} className="rounded-2xl overflow-hidden group hover:shadow-lg transition-all duration-200" style={{ background: '#ffffff', boxShadow: cardShadow }}>
-                {/* Poster image area — no score overlay */}
-                <Link href={reportHref} className="block no-underline">
-                  <div className="aspect-[5/4] sm:aspect-[3/2] w-full relative overflow-hidden">
-                    {script.posterUrl ? (
-                      <img
-                        src={script.posterUrl}
-                        alt={script.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex flex-col items-center justify-center" style={{ background: placeholderGradient }}>
-                        {/* Layered concentric diamond — white version for dark background */}
-                        <span className="inline-flex items-center justify-center rotate-45" style={{ width: 72, height: 72 }}>
-                          <span className="absolute" style={{ width: 72, height: 72, background: 'rgba(255,255,255,0.08)', borderRadius: 4 }} />
-                          <span className="absolute" style={{ width: 54, height: 54, background: 'rgba(255,255,255,0.15)', borderRadius: 3 }} />
-                          <span className="absolute" style={{ width: 38, height: 38, background: 'rgba(255,255,255,0.22)', borderRadius: 2 }} />
-                        </span>
-                        <p className="text-[11px] text-white/50 m-0 mt-3">Add a poster</p>
-                      </div>
-                    )}
-                  </div>
-                </Link>
-
-                {/* Card info — light background */}
-                <div className="px-4 py-4 relative">
-                  {/* Three-dot menu — top right */}
-                  <div className="absolute top-3 right-3">
-                    <DeleteScriptButton scriptId={script.id} title={script.title} evaluationId={script.evaluationId} />
-                  </div>
-
-                  <Link href={reportHref} className="block no-underline">
-                    <h3 className="text-[16px] font-bold text-gray-900 m-0 line-clamp-2 pr-8 group-hover:text-purple-700 transition-colors">
-                      {script.title}
-                    </h3>
-                    <p className="text-[13px] text-gray-600 m-0 mt-1">
-                      {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
-                    </p>
-                  </Link>
-
-                  {/* Score + Heat — both large and prominent */}
-                  <div className="flex items-center gap-4 mt-2.5">
-                    <span className="inline-flex items-center gap-1.5 text-[20px] font-bold" style={{ color: '#7c3aed' }}>
-                      {gemDiamond(10)} {rounded || '—'}
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-[20px] font-bold" style={{ color: script.heat > 0 ? '#ea580c' : '#9ca3af' }}>
-                      <span className="text-[18px]">🔥</span> {script.heat}
-                    </span>
-                  </div>
-
-                  {/* Bottom row: Discover toggle + view report */}
-                  <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: '1px solid #f0f0f0' }}>
-                    <div className="flex items-center gap-2">
-                      <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} isAnon={!user} />
-                      <span className="text-[12px] text-gray-600">{script.isPublic ? 'Published to Leaderboard' : 'Not published to Leaderboard'}</span>
-                    </div>
-                    <Link href={reportHref} className="text-[13px] font-semibold text-purple-600 hover:text-purple-700 transition-colors no-underline whitespace-nowrap">
-                      View report →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-        {completedScripts.length > 3 && (
-          <div className="mt-6 text-center">
-            <Link
-              href="/scripts"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[14px] font-semibold text-white no-underline transition-all hover:brightness-110"
-              style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-            >
-              View all {completedScripts.length} scripts →
-            </Link>
-          </div>
-        )}
-        </>
-      )}
-    </div>
-  )
-
-  // Opportunities panel — matching opps + pending applications
-  const opportunitiesPanel = (
-    <div className="space-y-6">
-      {/* Matching opportunities */}
-      {dashboardOpps.length > 0 ? (
-        <div>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-[13px] font-semibold text-white/60 m-0 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Matches for your scripts</h3>
-            <Link href="/opportunities" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">
-              View all →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {dashboardOpps.map(opp => {
-              const matchCount = getMatchingScriptsForOpp(opp).length
-              const oppStatus: OppStatus = pendingOppIds.has(opp.id)
-                ? 'pending'
-                : appliedOppIds.has(opp.id)
-                  ? 'previously_applied'
-                  : 'available'
-              return (
-                <OpportunityCard
-                  key={opp.id}
-                  id={opp.id}
-                  slug={opp.slug}
-                  title={opp.title}
-                  subtitle={opp.subtitle}
-                  description={opp.description}
-                  genres={opp.genres || []}
-                  formats={opp.formats || []}
-                  createdAt={opp.created_at}
-                  deadline={opp.deadline}
-                  status={oppStatus}
-                  matchingScriptCount={matchCount}
-                  isAnon={!user}
-                />
-              )
-            })}
-          </div>
-        </div>
-      ) : (
-        <div className="rounded-xl px-6 py-10 text-center" style={{ background: '#ffffff', boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-          <p className="text-[15px] font-semibold text-gray-900 m-0 mb-1">No matching opportunities right now</p>
-          <p className="text-[13px] text-gray-500 m-0 mb-3">Upload more scripts to qualify for open opportunities.</p>
-          <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed' }}>
-            Browse opportunities →
-          </Link>
-        </div>
-      )}
-
-      {/* Pending applications */}
-      {pendingApps.length > 0 && (
-        <div>
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-[13px] font-semibold text-white/60 m-0 uppercase tracking-wide" style={{ letterSpacing: '0.05em' }}>Pending Applications</h3>
-            <Link href="/applications" className="text-[13px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">
-              View all →
-            </Link>
-          </div>
-          <div className="space-y-2">
-            {pendingApps.slice(0, 3).map(app => {
-              const opp = oppMap.get(app.opportunity_id)
-              return (
-                <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
-                  <div className="rounded-xl px-4 py-3.5 flex items-center justify-between hover:shadow-md transition-all" style={{ background: '#ffffff', boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
-                    <div className="min-w-0">
-                      <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                      <p className="text-[12px] text-gray-600 m-0 mt-0.5">
-                        {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}{fmtDate(app.submitted_at)}
-                      </p>
-                    </div>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0" style={{ background: '#f3f0ff', color: '#7c3aed' }}>In Consideration</span>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      )}
-    </div>
-  )
-
-  const panels: Record<string, React.ReactNode> = {
-    scripts: scriptsPanel,
-    opportunities: opportunitiesPanel,
-  }
 
   return (
     <div style={{ position: 'relative' }}>
@@ -927,8 +776,201 @@ export default async function DashboardPage() {
             </Link>
           </div>
 
-          {/* ── TABBED CONTENT ── */}
-          <DashboardTabs tabs={tabs} panels={panels} />
+          {/* ── TWO-COLUMN: SCRIPTS + OPPORTUNITIES ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            {/* LEFT: Recent Scripts */}
+            <div className="min-w-0">
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>Recent scripts</h2>
+                {completedScripts.length > 0 && (
+                  <Link href="/scripts" className="text-[12px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">View all →</Link>
+                )}
+              </div>
+
+              {completedScripts.length === 0 && processingScripts.length === 0 ? (
+                <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
+                  <p className="text-[14px] font-semibold text-white m-0 mb-1">No scripts yet</p>
+                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Upload your first screenplay to get a full evaluation.</p>
+                  <NewScriptButton />
+                </div>
+              ) : (
+                <div className="space-y-1.5">
+                  {/* Processing scripts */}
+                  {processingScripts.map(script => (
+                    <div key={script.id} className="flex items-center gap-2.5 px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                      <div className="w-[40px] h-[50px] shrink-0 rounded flex items-center justify-center" style={{ background: placeholderGradient }}>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[14px] font-semibold text-white m-0 truncate">{script.title}</p>
+                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>Evaluating...</p>
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Completed scripts — compact rows */}
+                  {completedScripts.slice(0, 3).map(script => {
+                    const rounded = script.score ? Math.round(script.score) : null
+                    const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
+                    return (
+                      <Link key={script.id} href={reportHref} className="block no-underline group">
+                        <div className="flex items-center gap-2.5 px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                          <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden" style={{ background: placeholderGradient }}>
+                            {script.posterUrl && (
+                              <img src={script.posterUrl} alt="" className="w-full h-full object-cover" />
+                            )}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
+                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                              {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
+                            </p>
+                          </div>
+                          <span className="text-[16px] font-bold shrink-0" style={{ color: '#a78bfa' }}>{rounded || '—'}</span>
+                          {script.heat > 0 && (
+                            <span className="text-[13px] shrink-0" style={{ color: '#fb923c' }}>🔥 {script.heat}</span>
+                          )}
+                        </div>
+                      </Link>
+                    )
+                  })}
+                  <div className="mt-2.5">
+                    <NewScriptButton />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* RIGHT: Opportunities — Pending + Available */}
+            <div className="min-w-0">
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>Opportunities</h2>
+                <Link href="/opportunities" className="text-[12px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">Browse all →</Link>
+              </div>
+
+              {/* Pending applications */}
+              {pendingApps.length > 0 && (
+                <div className="mb-3">
+                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>Pending</p>
+                  <div className="space-y-1.5">
+                    {pendingApps.slice(0, 3).map(app => {
+                      const opp = oppMap.get(app.opportunity_id)
+                      return (
+                        <Link key={app.id} href={`/review/applications/${app.id}`} className="block no-underline">
+                          <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                            <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
+                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                              {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}Applied {fmtDate(app.submitted_at)}
+                            </p>
+                            <span className="inline-block text-[10px] font-bold px-2 py-0.5 mt-1" style={{ background: 'rgba(251,146,60,0.15)', color: '#fdba74', borderRadius: 3 }}>In consideration</span>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                  {/* Divider between pending and available */}
+                  {dashboardOpps.length > 0 && (
+                    <div className="my-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} />
+                  )}
+                </div>
+              )}
+
+              {/* Available opportunities */}
+              {dashboardOpps.length > 0 ? (
+                <div>
+                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>Available</p>
+                  <div className="space-y-1.5">
+                    {dashboardOpps.map(opp => {
+                      const matchCount = getMatchingScriptsForOpp(opp).length
+                      return (
+                        <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block no-underline">
+                          <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                            <p className="text-[14px] font-semibold text-white m-0 truncate">{opp.title}</p>
+                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                              {[opp.genres?.slice(0, 2).join(', '), opp.deadline ? `Deadline ${fmtDate(opp.deadline)}` : null].filter(Boolean).join(' · ')}
+                            </p>
+                            {matchCount > 0 && (
+                              <span className="inline-block text-[10px] font-bold px-2 py-0.5 mt-1" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>
+                                {matchCount} script{matchCount !== 1 ? 's' : ''} qualify
+                              </span>
+                            )}
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              ) : pendingApps.length === 0 ? (
+                <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
+                  <p className="text-[14px] font-semibold text-white m-0 mb-1">No opportunities yet</p>
+                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Upload scripts to qualify for open opportunities.</p>
+                  <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed', borderRadius: 8 }}>
+                    Browse opportunities →
+                  </Link>
+                </div>
+              ) : null}
+            </div>
+          </div>
+
+          {/* ── COLLABORATIONS — full width ── */}
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>Collaborations</h2>
+              {completedScripts.length > 0 && (
+                <Link
+                  href={completedScripts[0]?.evaluationId ? `/report/${completedScripts[0].evaluationId}` : '/scripts'}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-white no-underline transition-all hover:brightness-110"
+                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 8 }}
+                >
+                  + Invite collaborator
+                </Link>
+              )}
+            </div>
+
+            {myCollabs.length === 0 ? (
+              <div className="px-6 py-8 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
+                <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.35)' }}>No collaborations yet. Invite a director, producer, or actor to your script.</p>
+              </div>
+            ) : (
+              <div className="space-y-1.5">
+                {myCollabs.slice(0, 5).map(collab => {
+                  const name = collab.profile?.full_name || collab.collaborator_email
+                  const initials = collab.profile?.full_name
+                    ? collab.profile.full_name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+                    : (collab.collaborator_email[0] || '?').toUpperCase()
+                  const roleName = collab.role === 'other' ? (collab.role_other || 'Collaborator') : collab.role.replace('_', ' ').replace(/^\w/, (c: string) => c.toUpperCase())
+                  const headline = collab.profile?.headline ?? null
+
+                  return (
+                    <div key={collab.id} className="flex items-center gap-3 px-3 py-3" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                      {/* Avatar */}
+                      {collab.profile?.avatar_url ? (
+                        <img src={collab.profile.avatar_url} alt="" className="w-[40px] h-[40px] rounded-full object-cover shrink-0" />
+                      ) : (
+                        <div className="w-[40px] h-[40px] rounded-full shrink-0 flex items-center justify-center text-[15px] font-semibold text-white" style={{ background: '#7c3aed' }}>
+                          {initials}
+                        </div>
+                      )}
+                      {/* Info */}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[14px] font-semibold text-white m-0 truncate">{name}</p>
+                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                          {headline || ''}
+                        </p>
+                      </div>
+                      {/* Role pill */}
+                      <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{roleName}</span>
+                      {/* Script name */}
+                      {collab.scriptTitle && (
+                        <span className="text-[11px] shrink-0 hidden sm:block" style={{ color: 'rgba(255,255,255,0.35)' }}>on &ldquo;{collab.scriptTitle}&rdquo;</span>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+          </div>
           </>
         )}
 
