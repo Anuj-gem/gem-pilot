@@ -184,23 +184,34 @@ export function EditableTopCard({
 
   return (
     <div ref={cardRef} className="relative">
-      {/* 1. Title + score badge */}
-      <div className="flex items-start justify-between gap-3 sm:gap-4 mb-3">
-        {isEditing && editCtx ? (
-          <input
-            type="text"
-            value={editCtx.title}
-            onChange={(e) => editCtx.setTitle(e.target.value.slice(0, 200))}
-            className="flex-1 min-w-0 text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 bg-transparent outline-none border-b-2 border-purple-500/40 focus:border-purple-400 transition-colors"
-            placeholder="Your script title"
-          />
-        ) : (
-          <h1
-            className="text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0"
-          >
-            {displayTitle}
-          </h1>
-        )}
+      {/* 1. Title + posted date */}
+      <div className="flex items-baseline justify-between gap-3 sm:gap-4 mb-3">
+        <div className="flex items-baseline gap-4 flex-1 min-w-0">
+          {isEditing && editCtx ? (
+            <input
+              type="text"
+              value={editCtx.title}
+              onChange={(e) => editCtx.setTitle(e.target.value.slice(0, 200))}
+              className="flex-1 min-w-0 text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 bg-transparent outline-none border-b-2 border-purple-500/40 focus:border-purple-400 transition-colors"
+              placeholder="Your script title"
+            />
+          ) : (
+            <h1
+              className="text-[26px] sm:text-[40px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-[1.1] m-0 flex-1 min-w-0"
+            >
+              {displayTitle}
+            </h1>
+          )}
+          {!isEditing && postedAt && (
+            <span className="text-[12px] font-medium whitespace-nowrap shrink-0" style={{ color: 'rgba(255,255,255,0.40)' }}>
+              {new Date(postedAt).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+            </span>
+          )}
+        </div>
         {typeof commercialScore === 'number' && !Number.isNaN(commercialScore) && (
           <span
             data-pdf-section="score"
@@ -231,7 +242,7 @@ export function EditableTopCard({
                   {authorName}
                 </span>
                 {authorHeadline && (
-                  <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug truncate max-w-[280px]">
+                  <span className="block text-[12px] font-medium text-[var(--gem-gray-200)] leading-snug truncate max-w-[280px]">
                     {authorHeadline}
                   </span>
                 )}
@@ -245,7 +256,7 @@ export function EditableTopCard({
                   {authorName}
                 </span>
                 {authorHeadline && (
-                  <span className="block text-[12px] text-[var(--gem-gray-400)] leading-snug truncate max-w-[280px]">
+                  <span className="block text-[12px] font-medium text-[var(--gem-gray-200)] leading-snug truncate max-w-[280px]">
                     {authorHeadline}
                   </span>
                 )}
@@ -427,71 +438,71 @@ export function EditableTopCard({
         </div>
       ) : (
         hasCategories && (
-          <div className="mb-4 space-y-2.5">
-            {/* Format + Genres — always visible, prominent */}
-            {classificationPills.filter(p => p.variant === 'format' || p.variant === 'genre').length > 0 && (
-              <div className="flex flex-wrap items-center gap-2">
-                {classificationPills
-                  .filter(p => p.variant === 'format' || p.variant === 'genre')
-                  .map((pill, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-semibold"
-                      style={
-                        pill.variant === 'format'
-                          ? {
-                              background: 'rgba(124,77,237,0.18)',
-                              color: '#c4b5fd',
-                              border: '1px solid rgba(124,77,237,0.30)',
-                              textTransform: 'uppercase',
-                              letterSpacing: '0.05em',
-                            }
-                          : {
-                              background: 'rgba(255,255,255,0.08)',
-                              color: 'rgba(255,255,255,0.80)',
-                              border: '1px solid rgba(255,255,255,0.14)',
-                            }
-                      }
-                    >
-                      {pill.label}
-                    </span>
-                  ))}
-                {displayTone?.trim() && (
-                  <span className="text-[12.5px] italic text-[var(--gem-gray-300)]">
-                    {displayTone}
-                  </span>
-                )}
-              </div>
-            )}
-            {/* Tags — subtler, smaller */}
-            {displayTags.length > 0 && (
-              <div className="flex flex-wrap gap-1.5">
-                {displayTags.map((tag, i) => (
+          <div className="mb-4">
+            {/* All pills in one aligned row: format → genres → tone → tags */}
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Format pill — purple */}
+              {classificationPills
+                .filter(p => p.variant === 'format')
+                .map((pill, i) => (
                   <span
-                    key={`${tag}-${i}`}
-                    className="px-2 py-0.5 rounded-full text-[11.5px] font-medium"
+                    key={`fmt-${i}`}
+                    className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-bold"
                     style={{
-                      color: 'rgba(255,255,255,0.45)',
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid rgba(255,255,255,0.08)',
+                      background: 'rgba(124,77,237,0.22)',
+                      color: '#c4b5fd',
+                      border: '1px solid rgba(124,77,237,0.35)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
                     }}
                   >
-                    {tag}
+                    {pill.label}
                   </span>
                 ))}
-              </div>
-            )}
-            {/* Posted date — subtle, at the end */}
-            {postedAt && (
-              <p className="text-[11.5px] text-[var(--gem-gray-500)] m-0">
-                Posted{' '}
-                {new Date(postedAt).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </p>
-            )}
+              {/* Genre pills — bright white */}
+              {classificationPills
+                .filter(p => p.variant === 'genre' || p.variant === 'secondary')
+                .map((pill, i) => (
+                  <span
+                    key={`genre-${i}`}
+                    className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-semibold"
+                    style={{
+                      background: 'rgba(255,255,255,0.10)',
+                      color: 'rgba(255,255,255,0.88)',
+                      border: '1px solid rgba(255,255,255,0.18)',
+                    }}
+                  >
+                    {pill.label}
+                  </span>
+                ))}
+              {/* Tone pill — italic, warm amber tint */}
+              {displayTone?.trim() && (
+                <span
+                  className="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-medium italic"
+                  style={{
+                    background: 'rgba(232,184,37,0.10)',
+                    color: 'rgba(232,184,37,0.85)',
+                    border: '1px solid rgba(232,184,37,0.20)',
+                  }}
+                >
+                  {displayTone}
+                </span>
+              )}
+              {/* Tags — subtler, smaller */}
+              {displayTags.map((tag, i) => (
+                <span
+                  key={`${tag}-${i}`}
+                  className="px-2 py-0.5 rounded-full text-[11px] font-medium"
+                  style={{
+                    color: 'rgba(255,255,255,0.40)',
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         )
       )}

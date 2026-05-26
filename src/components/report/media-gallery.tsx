@@ -127,8 +127,8 @@ export default function MediaGallery({ submissionId, initialMedia, isOwner }: Me
       `}</style>
 
       {/* Header row: title + inline add controls */}
-      <div className="flex items-center gap-2 mb-3">
-        <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0">
+      <div className="flex items-center gap-2 mb-2">
+        <p className="text-[12px] uppercase tracking-[0.14em] font-bold m-0" style={{ color: 'rgba(255,255,255,0.50)' }}>
           Additional Media
         </p>
 
