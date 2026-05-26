@@ -204,22 +204,16 @@ export default async function DashboardPage() {
   const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
   const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
 
-  // ── COLLABORATIONS QUERY ──
+  // ── COLLABORATIONS QUERY (scripts I'm collaborating on) ──
 
-  type CollabRow = {
-    id: string; collaborator_email: string; collaborator_id: string | null
-    role: string; role_other: string | null; submission_id: string
+  type CollabScript = {
+    id: string; title: string; format: string | null; genres: string[]
+    score: number | null; evaluationId: string | null; createdAt: string
+    heat: number; posterUrl: string | null; collabRole: string
   }
-  let myCollabs: (CollabRow & { profile: { full_name: string | null; avatar_url: string | null; headline: string | null } | null; scriptTitle: string | null })[] = []
+  let collabScripts: CollabScript[] = []
 
   if (user) {
-    // Fetch collabs where user is the inviter (people they added to their scripts)
-    const { data: invitedRows } = await service
-      .from('script_collaborators')
-      .select('id, collaborator_email, collaborator_id, role, role_other, submission_id')
-      .in('submission_id', submissionIds.length > 0 ? submissionIds : ['__none__'])
-      .order('created_at', { ascending: false })
-
     // Fetch collabs where user is the collaborator (scripts they were invited to)
     const { data: invitedToRows } = await service
       .from('script_collaborators')
@@ -227,50 +221,52 @@ export default async function DashboardPage() {
       .or(`collaborator_id.eq.${user.id},collaborator_email.eq.${user.email?.toLowerCase()}`)
       .order('created_at', { ascending: false })
 
-    // Merge and dedupe
-    const allCollabRows = [...(invitedRows || []), ...(invitedToRows || [])] as CollabRow[]
-    const seenIds = new Set<string>()
-    const dedupedCollabs: CollabRow[] = []
-    for (const c of allCollabRows) {
-      if (!seenIds.has(c.id)) {
-        seenIds.add(c.id)
-        dedupedCollabs.push(c)
-      }
-    }
-
-    // Enrich with profiles
-    const collabUserIds = dedupedCollabs.map(c => c.collaborator_id).filter(Boolean) as string[]
-    let collabProfiles: Record<string, { full_name: string | null; avatar_url: string | null; headline: string | null }> = {}
-    if (collabUserIds.length > 0) {
-      const { data: pRows } = await service
-        .from('profiles')
-        .select('id, full_name, avatar_url, headline')
-        .in('id', collabUserIds)
-      if (pRows) {
-        collabProfiles = Object.fromEntries(
-          pRows.map((p: any) => [p.id, { full_name: p.full_name, avatar_url: p.avatar_url, headline: p.headline ?? null }])
-        )
-      }
-    }
-
-    // Get script titles for the collab's submission_id
-    const collabSubIds = [...new Set(dedupedCollabs.map(c => c.submission_id))]
-    let collabScriptTitles: Record<string, string> = {}
-    if (collabSubIds.length > 0) {
-      const { data: sRows } = await service
+    if (invitedToRows && invitedToRows.length > 0) {
+      const collabSubIds = [...new Set(invitedToRows.map((c: any) => c.submission_id))]
+      // Fetch submission details for those scripts
+      const { data: collabSubs } = await service
         .from('script_submissions')
-        .select('id, title')
+        .select('id, title, declared_format, status, created_at, heat_score, poster_url, is_public')
         .in('id', collabSubIds)
-      if (sRows) {
-        collabScriptTitles = Object.fromEntries(sRows.map((s: any) => [s.id, s.title]))
-      }
-    }
+        .eq('status', 'completed')
 
-    myCollabs = dedupedCollabs.map(c => ({
-      ...c,
-      profile: c.collaborator_id ? collabProfiles[c.collaborator_id] ?? null : null,
-      scriptTitle: collabScriptTitles[c.submission_id] ?? null,
-    }))
+      // Fetch evaluations for those submissions
+      const collabSubIdsCompleted = (collabSubs || []).map((s: any) => s.id)
+      let collabEvalsBySub: Record<string, any> = {}
+      if (collabSubIdsCompleted.length > 0) {
+        const { data: collabEvals } = await service
+          .from('script_evaluations')
+          .select('id, submission_id, evaluation')
+          .in('submission_id', collabSubIdsCompleted)
+        for (const ev of (collabEvals || []) as any[]) {
+          const parsed = typeof ev.evaluation === 'string' ? JSON.parse(ev.evaluation) : ev.evaluation
+          collabEvalsBySub[ev.submission_id] = { id: ev.id, ...parsed }
+        }
+      }
+
+      // Build collab script cards
+      const roleBySubId = new Map<string, string>()
+      for (const c of invitedToRows as any[]) {
+        const roleName = c.role === 'other' ? (c.role_other || 'Collaborator') : c.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
+        roleBySubId.set(c.submission_id, roleName)
+      }
+
+      collabScripts = (collabSubs || []).map((s: any) => {
+        const ev = collabEvalsBySub[s.id]
+        return {
+          id: s.id,
+          title: s.title,
+          format: ev?.format || s.declared_format,
+          genres: ev?.genres || [],
+          score: ev?.weighted_score ?? null,
+          evaluationId: ev?.id ?? null,
+          createdAt: s.created_at,
+          heat: s.heat_score ?? 0,
+          posterUrl: s.poster_url ?? null,
+          collabRole: roleBySubId.get(s.id) || 'Collaborator',
+        }
+      })
+    }
   }
 
   // ── DERIVED DATA ──
@@ -809,8 +805,11 @@ export default async function DashboardPage() {
                     </div>
                   ))}
 
-                  {/* Completed scripts — compact rows */}
-                  {completedScripts.slice(0, 3).map(script => {
+                  {/* Completed scripts + collab scripts — compact rows */}
+                  {[
+                    ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
+                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)),
+                  ].map(script => {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
                     return (
@@ -827,6 +826,9 @@ export default async function DashboardPage() {
                               {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
                             </p>
                           </div>
+                          {script.collabRole && (
+                            <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{script.collabRole}</span>
+                          )}
                           <span className="text-[16px] font-bold shrink-0" style={{ color: '#a78bfa' }}>{rounded || '—'}</span>
                           {script.heat > 0 && (
                             <span className="text-[13px] shrink-0" style={{ color: '#fb923c' }}>🔥 {script.heat}</span>
@@ -913,64 +915,7 @@ export default async function DashboardPage() {
             </div>
           </div>
 
-          {/* ── COLLABORATIONS — full width ── */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>Collaborations</h2>
-              {completedScripts.length > 0 && (
-                <Link
-                  href={completedScripts[0]?.evaluationId ? `/report/${completedScripts[0].evaluationId}` : '/scripts'}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-white no-underline transition-all hover:brightness-110"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', borderRadius: 8 }}
-                >
-                  + Invite collaborator
-                </Link>
-              )}
-            </div>
-
-            {myCollabs.length === 0 ? (
-              <div className="px-6 py-8 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
-                <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,0.35)' }}>No collaborations yet. Invite a director, producer, or actor to your script.</p>
-              </div>
-            ) : (
-              <div className="space-y-1.5">
-                {myCollabs.slice(0, 5).map(collab => {
-                  const name = collab.profile?.full_name || collab.collaborator_email
-                  const initials = collab.profile?.full_name
-                    ? collab.profile.full_name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
-                    : (collab.collaborator_email[0] || '?').toUpperCase()
-                  const roleName = collab.role === 'other' ? (collab.role_other || 'Collaborator') : collab.role.replace('_', ' ').replace(/^\w/, (c: string) => c.toUpperCase())
-                  const headline = collab.profile?.headline ?? null
-
-                  return (
-                    <div key={collab.id} className="flex items-center gap-3 px-3 py-3" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
-                      {/* Avatar */}
-                      {collab.profile?.avatar_url ? (
-                        <img src={collab.profile.avatar_url} alt="" className="w-[40px] h-[40px] rounded-full object-cover shrink-0" />
-                      ) : (
-                        <div className="w-[40px] h-[40px] rounded-full shrink-0 flex items-center justify-center text-[15px] font-semibold text-white" style={{ background: '#7c3aed' }}>
-                          {initials}
-                        </div>
-                      )}
-                      {/* Info */}
-                      <div className="flex-1 min-w-0">
-                        <p className="text-[14px] font-semibold text-white m-0 truncate">{name}</p>
-                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                          {headline || ''}
-                        </p>
-                      </div>
-                      {/* Role pill */}
-                      <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{roleName}</span>
-                      {/* Script name */}
-                      {collab.scriptTitle && (
-                        <span className="text-[11px] shrink-0 hidden sm:block" style={{ color: 'rgba(255,255,255,0.35)' }}>on &ldquo;{collab.scriptTitle}&rdquo;</span>
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
-            )}
-          </div>
+          {/* Collaborations section removed — collab scripts now appear in Recent Scripts with a role pill */}
           </>
         )}
 

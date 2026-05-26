@@ -10,6 +10,7 @@ import {
   Compass,
   FileText,
   Send,
+  Users,
   ChevronDown,
 } from 'lucide-react'
 import {
@@ -67,6 +68,7 @@ export default function Nav({ userData }: NavProps = {}) {
         { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { href: '/scripts', label: 'My Scripts', icon: FileText },
         { href: '/applications', label: 'My Applications', icon: Send },
+        { href: '/collaborations', label: 'Collaborations', icon: Users },
       ]
 
   const navLinks = [
