@@ -215,9 +215,9 @@ export function CollaboratorsSection({
                 placeholder="Email address"
                 className="flex-1 px-3 py-2 rounded-lg text-[13px] outline-none"
                 style={{
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  color: '#fff',
+                  background: '#f5f5f4',
+                  border: '1px solid #d6d3d1',
+                  color: '#1c1917',
                 }}
                 autoFocus
               />
@@ -240,9 +240,9 @@ export function CollaboratorsSection({
                 maxLength={60}
                 className="w-full px-3 py-2 rounded-lg text-[13px] outline-none"
                 style={{
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  color: '#fff',
+                  background: '#f5f5f4',
+                  border: '1px solid #d6d3d1',
+                  color: '#1c1917',
                 }}
               />
             )}
@@ -411,13 +411,13 @@ function RoleSelect({ value, onChange }: { value: string; onChange: (v: string) 
         onChange={e => onChange(e.target.value)}
         className="appearance-none pl-2.5 pr-6 py-2 rounded-lg text-[12px] font-medium outline-none cursor-pointer"
         style={{
-          background: 'rgba(255,255,255,0.08)',
-          border: '1px solid rgba(255,255,255,0.12)',
-          color: 'rgba(255,255,255,0.8)',
+          background: '#f5f5f4',
+          border: '1px solid #d6d3d1',
+          color: '#1c1917',
         }}
       >
         {ROLE_OPTIONS.map(r => (
-          <option key={r.value} value={r.value} style={{ background: '#1d1932', color: '#fff' }}>
+          <option key={r.value} value={r.value} style={{ background: '#fff', color: '#1c1917' }}>
             {r.label}
           </option>
         ))}
@@ -425,7 +425,7 @@ function RoleSelect({ value, onChange }: { value: string; onChange: (v: string) 
       <ChevronDown
         size={12}
         className="absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none"
-        style={{ color: 'rgba(255,255,255,0.4)' }}
+        style={{ color: '#78716c' }}
       />
     </div>
   )
