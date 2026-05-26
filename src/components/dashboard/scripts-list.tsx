@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
+import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 import { useNewUploads } from '@/hooks/use-new-uploads'
 
 type ScriptRow = {
@@ -113,10 +114,9 @@ export function ScriptsList({
     })
   }
 
-  async function deleteScript(id: string) {
+  function handleDelete(id: string) {
     setDeleting(prev => new Set(prev).add(id))
-    await fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' })
-    router.refresh()
+    fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' }).then(() => router.refresh())
   }
 
   async function bulkDelete() {
@@ -199,7 +199,7 @@ export function ScriptsList({
             </div>
           ))}
 
-          {/* Completed script cards — identical to dashboard */}
+          {/* Completed script cards */}
           {sortedVisible.map(s => {
             if (s.isProcessing) {
               return (
@@ -220,25 +220,15 @@ export function ScriptsList({
             const oppCount = s.matchingOpportunities?.length ?? 0
 
             return (
-              <div
-                key={s.id}
-                className={`relative px-3 py-2.5 ${deleting.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}
-              >
-                {s.isLocked && (
-                  <div className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center" style={{ borderRadius: 4 }}>
-                    <UpgradePill />
-                  </div>
-                )}
-
-                {/* Selection checkbox overlay */}
+              <div key={s.id} className={`flex gap-2 items-start ${deleting.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}>
+                {/* Checkbox column — separate from card */}
                 {!s.isLocked && (
                   <button
-                    onClick={(e) => { e.stopPropagation(); toggleSelect(s.id) }}
-                    className="absolute top-2 left-2 z-20 w-5 h-5 rounded flex items-center justify-center shrink-0 transition-colors cursor-pointer border-2 backdrop-blur-sm"
+                    onClick={() => toggleSelect(s.id)}
+                    className="mt-3 w-5 h-5 rounded shrink-0 flex items-center justify-center transition-colors cursor-pointer border-2"
                     style={{
-                      borderColor: selected.has(s.id) ? '#7c3aed' : 'rgba(255,255,255,0.3)',
-                      background: selected.has(s.id) ? '#7c3aed' : 'rgba(0,0,0,0.3)',
+                      borderColor: selected.has(s.id) ? '#7c3aed' : 'rgba(255,255,255,0.2)',
+                      background: selected.has(s.id) ? '#7c3aed' : 'transparent',
                     }}
                   >
                     {selected.has(s.id) && (
@@ -247,37 +237,54 @@ export function ScriptsList({
                   </button>
                 )}
 
-                {/* Title row with poster */}
-                <Link href={reportHref} className="block no-underline group">
-                  <div className="flex items-center gap-2.5">
-                    {s.posterUrl && (
-                      <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden">
-                        <img src={s.posterUrl} alt="" className="w-full h-full object-cover" />
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{s.title}</p>
-                      <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
-                        {[s.format, s.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(s.createdAt)].filter(Boolean).join(' · ')}
-                      </p>
+                {/* Card */}
+                <div
+                  className="flex-1 min-w-0 relative px-3 py-2.5"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}
+                >
+                  {s.isLocked && (
+                    <div className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center" style={{ borderRadius: 4 }}>
+                      <UpgradePill />
                     </div>
-                  </div>
-                </Link>
-
-                {/* Stats row — score, heat, opps, publish */}
-                <div className="flex items-center gap-3 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
-                  <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
-                    {gemDiamond(7)} {rounded || '—'}
-                  </span>
-                  <span className="text-[12px] shrink-0" style={{ color: '#fb923c' }}>🔥 {s.heat}</span>
-                  {oppCount > 0 && (
-                    <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
-                      {oppCount} available {oppCount === 1 ? 'opportunity' : 'opportunities'}
-                    </span>
                   )}
-                  <span className="ml-auto shrink-0">
-                    <DiscoverToggle scriptId={s.id} isPublic={s.isPublic} isAnon={false} />
-                  </span>
+
+                  {/* Title row with poster + three-dot menu */}
+                  <div className="flex items-start gap-2.5">
+                    <Link href={reportHref} className="flex-1 min-w-0 no-underline group">
+                      <div className="flex items-center gap-2.5">
+                        {s.posterUrl && (
+                          <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden">
+                            <img src={s.posterUrl} alt="" className="w-full h-full object-cover" />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{s.title}</p>
+                          <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                            {[s.format, s.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(s.createdAt)].filter(Boolean).join(' · ')}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                    {!s.isLocked && (
+                      <ScriptCardMenu scriptId={s.id} evaluationId={s.evaluationId} onDelete={handleDelete} />
+                    )}
+                  </div>
+
+                  {/* Stats row — score, heat, opps, publish */}
+                  <div className="flex items-center gap-3 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
+                    <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
+                      {gemDiamond(7)} {rounded || '—'}
+                    </span>
+                    <span className="text-[12px] shrink-0" style={{ color: '#fb923c' }}>🔥 {s.heat}</span>
+                    {oppCount > 0 && (
+                      <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
+                        {oppCount} available {oppCount === 1 ? 'opportunity' : 'opportunities'}
+                      </span>
+                    )}
+                    <span className="ml-auto shrink-0">
+                      <DiscoverToggle scriptId={s.id} isPublic={s.isPublic} isAnon={false} />
+                    </span>
+                  </div>
                 </div>
               </div>
             )

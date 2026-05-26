@@ -14,6 +14,7 @@ import { NewScriptButton } from '@/components/dashboard/new-script-button'
 // StickyNewScript removed — collided with Intercom
 import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
+import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 // DashboardTabs removed — writer dashboard is now a flat two-column layout
 import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
@@ -872,24 +873,29 @@ export default async function DashboardPage() {
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
                     return (
                       <div key={script.id} className="px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
-                        <Link href={reportHref} className="block no-underline group">
-                          <div className="flex items-center gap-2.5">
-                            {script.posterUrl && (
-                              <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden">
-                                <img src={script.posterUrl} alt="" className="w-full h-full object-cover" />
+                        <div className="flex items-start gap-2.5">
+                          <Link href={reportHref} className="flex-1 min-w-0 no-underline group">
+                            <div className="flex items-center gap-2.5">
+                              {script.posterUrl && (
+                                <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden">
+                                  <img src={script.posterUrl} alt="" className="w-full h-full object-cover" />
+                                </div>
+                              )}
+                              <div className="flex-1 min-w-0">
+                                <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
+                                <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                                  {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
+                                </p>
                               </div>
-                            )}
-                            <div className="flex-1 min-w-0">
-                              <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
-                              <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
-                                {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
-                              </p>
+                              {script.collabRole && (
+                                <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{script.collabRole}</span>
+                              )}
                             </div>
-                            {script.collabRole && (
-                              <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{script.collabRole}</span>
-                            )}
-                          </div>
-                        </Link>
+                          </Link>
+                          {!script.collabRole && (
+                            <ScriptCardMenu scriptId={script.id} evaluationId={script.evaluationId} />
+                          )}
+                        </div>
                         {/* Stats row — score, heat, collaborators, opps, publish */}
                         <div className="flex items-center gap-3 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
                           <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
