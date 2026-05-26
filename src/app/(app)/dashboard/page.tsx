@@ -684,7 +684,7 @@ export default async function DashboardPage() {
               <div className="px-8 py-14 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                 <span className="text-[40px] block mb-3">🎬</span>
                 <p className="text-[17px] font-bold text-white m-0 mb-1">No opportunities yet</p>
-                <p className="text-[14px] text-white/50 m-0 mb-5">Create your first opportunity to start receiving pitches from writers.</p>
+                <p className="text-[14px] text-white/75 m-0 mb-5">Create your first opportunity to start receiving pitches from writers.</p>
                 <Link
                   href="/partner/opportunities/create"
                   className="inline-flex items-center gap-2 px-6 py-3 text-[14px] font-bold text-white no-underline transition-all hover:brightness-110"
@@ -718,7 +718,7 @@ export default async function DashboardPage() {
                           <div className="flex items-center gap-2 shrink-0">
 <span className="text-[11px] font-bold px-2 py-0.5" style={{
                               background: isActive ? 'rgba(52,211,153,0.15)' : 'rgba(255,255,255,0.08)',
-                              color: isActive ? '#34d399' : 'rgba(255,255,255,0.4)',
+                              color: isActive ? '#34d399' : 'rgba(255,255,255,0.6)',
                               borderRadius: 4,
                             }}>
                               {isActive ? 'Active' : opp.status}
@@ -730,17 +730,17 @@ export default async function DashboardPage() {
                         <div className="grid grid-cols-3 gap-3">
                           <div>
                             <span className="text-[22px] font-bold text-white block leading-none">{stats.total}</span>
-                            <span className="text-[12px] text-white/40 mt-0.5 block">
+                            <span className="text-[12px] text-white/60 mt-0.5 block">
                               Applicants {partnerOpps.length > 1 ? `(#${rank})` : ''}
                             </span>
                           </div>
                           <div>
-                            <span className="text-[22px] font-bold block leading-none" style={{ color: stats.pending > 0 ? '#fb923c' : 'rgba(255,255,255,0.25)' }}>{stats.pending}</span>
-                            <span className="text-[12px] text-white/40 mt-0.5 block">Pending</span>
+                            <span className="text-[22px] font-bold block leading-none" style={{ color: stats.pending > 0 ? '#fb923c' : 'rgba(255,255,255,0.4)' }}>{stats.pending}</span>
+                            <span className="text-[12px] text-white/60 mt-0.5 block">Pending</span>
                           </div>
                           <div>
-                            <span className="text-[22px] font-bold block leading-none" style={{ color: stats.connections > 0 ? '#34d399' : 'rgba(255,255,255,0.25)' }}>{stats.connections}</span>
-                            <span className="text-[12px] text-white/40 mt-0.5 block">Connections</span>
+                            <span className="text-[22px] font-bold block leading-none" style={{ color: stats.connections > 0 ? '#34d399' : 'rgba(255,255,255,0.4)' }}>{stats.connections}</span>
+                            <span className="text-[12px] text-white/60 mt-0.5 block">Connections</span>
                           </div>
                         </div>
                       </div>
@@ -826,7 +826,7 @@ export default async function DashboardPage() {
             {/* LEFT: Recent Scripts */}
             <div className="min-w-0">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>Recent scripts</h2>
+                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>Recent scripts</h2>
                 {completedScripts.length > 0 && (
                   <Link href="/scripts" className="text-[12px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">View all →</Link>
                 )}
@@ -835,7 +835,7 @@ export default async function DashboardPage() {
               {completedScripts.length === 0 && processingScripts.length === 0 ? (
                 <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
                   <p className="text-[14px] font-semibold text-white m-0 mb-1">No scripts yet</p>
-                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.7)' }}>Upload your first screenplay to get a full evaluation.</p>
+                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>Upload your first screenplay to get a full evaluation.</p>
                   <NewScriptButton />
                 </div>
               ) : (
@@ -848,7 +848,7 @@ export default async function DashboardPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-[14px] font-semibold text-white m-0 truncate">{script.title}</p>
-                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>Evaluating...</p>
+                        <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.85)' }}>Evaluating...</p>
                       </div>
                     </div>
                   ))}
@@ -871,7 +871,7 @@ export default async function DashboardPage() {
                             )}
                             <div className="flex-1 min-w-0">
                               <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
-                              <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                              <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.85)' }}>
                                 {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
                               </p>
                             </div>
@@ -916,14 +916,14 @@ export default async function DashboardPage() {
             {/* RIGHT: Opportunities — Pending + Available */}
             <div className="min-w-0">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>Opportunities</h2>
+                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>Opportunities</h2>
                 <Link href="/opportunities" className="text-[12px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">Browse all →</Link>
               </div>
 
               {/* Pending applications */}
               {pendingApps.length > 0 && (
                 <div className="mb-3">
-                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>Pending</p>
+                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,0.6)' }}>Pending</p>
                   <div className="space-y-1.5">
                     {pendingApps.slice(0, 3).map(app => {
                       const opp = oppMap.get(app.opportunity_id)
@@ -932,11 +932,11 @@ export default async function DashboardPage() {
                         <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.85)' }}>
                               Applied {fmtDate(app.submitted_at)}
                             </p>
                             {scripts.length > 0 && (
-                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
                                 📄 {scripts.join(', ')}
                               </p>
                             )}
@@ -956,7 +956,7 @@ export default async function DashboardPage() {
               {/* Available opportunities */}
               {dashboardOpps.length > 0 ? (
                 <div>
-                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>Available</p>
+                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,0.6)' }}>Available</p>
                   <div className="space-y-1.5">
                     {dashboardOpps.map(opp => {
                       const matchCount = getMatchingScriptsForOpp(opp).length
@@ -971,12 +971,12 @@ export default async function DashboardPage() {
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp.title}</p>
                             {opp.description && (
-                              <p className="text-[12px] m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                              <p className="text-[12px] m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,0.75)' }}>
                                 {opp.description}
                               </p>
                             )}
                             {qualCriteria.length > 0 && (
-                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
                                 Qualification Criteria: {qualCriteria.join(', ')}
                               </p>
                             )}
@@ -994,7 +994,7 @@ export default async function DashboardPage() {
               ) : pendingApps.length === 0 ? (
                 <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
                   <p className="text-[14px] font-semibold text-white m-0 mb-1">No opportunities yet</p>
-                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.7)' }}>Upload scripts to qualify for open opportunities.</p>
+                  <p className="text-[13px] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>Upload scripts to qualify for open opportunities.</p>
                   <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed', borderRadius: 8 }}>
                     Browse opportunities →
                   </Link>
