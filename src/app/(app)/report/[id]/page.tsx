@@ -62,16 +62,17 @@ import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
 import { PosterImage } from '@/components/report/poster-image'
 import MediaGallery from '@/components/report/media-gallery'
 import { CollaboratorsSection } from '@/components/report/collaborators-section'
-import { GemAnalysisTabs } from '@/components/report/gem-analysis-tabs'
+// GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
 // ScriptPrivacySheet. The dashboard surface still uses it.
 // IndustryActivityButton retired from the report page on 2026-04-30
 // v0.10.19 (still used on the dashboard via OwnerActionsMenu).
 import { RerunBanner } from '@/components/report/rerun-banner'
-import { ProductionFactsSection } from '@/components/report/risk-details-card'
+import { ProductionFactsSection, RiskDetailsSection } from '@/components/report/risk-details-card'
 // Annotations removed — synthesized feedback + next-steps tag instead.
-import { BudgetTierCard } from '@/components/report/packaging-block'
+// BudgetTierCard retired 2026-05-25 — budget shown inline in stat cards + production section
+// import { BudgetTierCard } from '@/components/report/packaging-block'
 import { IssuesSection } from '@/components/report/issues-block'
 // Producer-mode UI (Anuj 2026-04-29) — rendered inline when a matched
 // industry partner views this report. The surface is the same as the
@@ -155,7 +156,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         id, user_id, title, filename, file_size, status, is_public, created_at,
         expires_at, declared_format, report_privacy, contact_enabled,
         allow_reviews, allow_industry,
-        privacy_review_needed, tags, poster_url, media_urls,
+        privacy_review_needed, tags, poster_url, media_urls, heat_score,
         profiles ( full_name, avatar_url, handle, headline )
       )
     `)
@@ -464,6 +465,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const riskDetails = report.risk_details ?? null
   const packaging = report.packaging ?? null
   const issues = report.issues
+  const heatScore: number = (submission as any).heat_score ?? 0
 
   let commercialScore: number | null = null
   try {
@@ -891,76 +893,78 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* ═══ GEM ANALYSIS — tabbed card ═══ */}
-        <GemAnalysisTabs>
-
-          {/* ── TAB: OVERVIEW ── */}
-          <div className="gem-tab-panel space-y-6" data-tab="overview">
-
-        {/* OVERALL GEM SCORE — at top of Overview */}
-        {typeof commercialScore === 'number' &&
-          (isOwnerOrAdmin || isScoreVisible(privacy)) && (
-            <section data-pdf-section="gem_score">
-              <p
-                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-3"
-                style={{ color: 'var(--gem-accent)' }}
-              >
-                Overall GEM Score
-              </p>
+        {/* ═══ STAT CARDS — Score, Budget, Heat ═══ */}
+        {(typeof commercialScore === 'number' || packaging?.budget_tier || heatScore > 0) && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {/* GEM Score */}
+            {typeof commercialScore === 'number' &&
+              (isOwnerOrAdmin || isScoreVisible(privacy)) && (
               <div
-                className="rounded-2xl p-6 sm:p-7 flex items-center gap-5 sm:gap-7 flex-wrap"
+                className="rounded-xl p-5 flex flex-col items-center justify-center text-center"
                 style={{
-                  background: 'rgba(124,58,237,0.08)',
-                  border: '1px solid rgba(124,58,237,0.25)',
+                  background: 'rgba(255,255,255,0.07)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(12px)',
+                }}
+                data-pdf-section="gem_score"
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  GEM Score
+                </p>
+                <span className="text-[42px] font-bold tabular-nums leading-none text-white">
+                  {Math.round(commercialScore)}
+                </span>
+                <span className="text-[11px] font-medium mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  /100
+                </span>
+              </div>
+            )}
+            {/* Budget Tier */}
+            {packaging?.budget_tier && (
+              <div
+                className="rounded-xl p-5 flex flex-col items-center justify-center text-center"
+                style={{
+                  background: 'rgba(255,255,255,0.07)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(12px)',
                 }}
               >
-                <div
-                  className="flex flex-col items-center justify-center rounded-xl tabular-nums shrink-0"
-                  style={{
-                    background: 'rgba(124,58,237,0.12)',
-                    border: '1px solid rgba(124,58,237,0.30)',
-                    minWidth: 96,
-                    padding: '12px 18px',
-                  }}
-                >
-                  <span
-                    className="text-[10px] uppercase tracking-[0.18em] font-bold leading-none mb-1.5"
-                    style={{ color: 'var(--gem-gray-500)' }}
-                  >
-                    Score
-                  </span>
-                  <span
-                    className="font-bold leading-none text-[var(--gem-gray-50)]"
-                    style={{ fontSize: 44 }}
-                  >
-                    {Math.round(commercialScore)}
-                  </span>
-                  <span
-                    className="text-[11px] font-medium leading-none mt-2"
-                    style={{ color: 'var(--gem-gray-500)' }}
-                  >
-                    /100
-                  </span>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0">
-                    Your GEM Score is an overall assessment of your
-                    script&apos;s potential. The strengths and weaknesses below
-                    are the most important considerations when deciding whether
-                    to produce this work.
-                  </p>
-                  {isOwner && !isScoreVisible(privacy) && (
-                    <p className="text-[12.5px] text-[var(--gem-gray-500)] m-0 mt-3 italic">
-                      You&apos;ve hidden this score from other GEM members. Only
-                      you (and admins) see it here.
-                    </p>
-                  )}
-                </div>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  Budget Tier
+                </p>
+                <span className="text-[18px] sm:text-[20px] font-bold leading-tight text-white capitalize">
+                  {packaging.budget_tier.tier}
+                </span>
+                <span className="text-[11px] font-medium mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  {packaging.budget_tier.range}
+                </span>
               </div>
-            </section>
-          )}
+            )}
+            {/* Insider Heat */}
+            {heatScore > 0 && (
+              <div
+                className="rounded-xl p-5 flex flex-col items-center justify-center text-center"
+                style={{
+                  background: 'rgba(255,255,255,0.07)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(12px)',
+                }}
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  Insider Heat
+                </p>
+                <span className="text-[42px] font-bold tabular-nums leading-none text-white">
+                  {heatScore}
+                </span>
+                <span className="text-[11px] font-medium mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  🔥
+                </span>
+              </div>
+            )}
+          </div>
+        )}
 
-        {/* NUMBERED STRENGTHS */}
+        {/* ═══ KEY STRENGTHS ═══ */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
@@ -970,7 +974,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {allStrengths.length > 0 && (
-            <div>
+            <div
+              className="rounded-xl p-5 sm:p-6"
+              style={{
+                background: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.12)',
+              }}
+            >
               <h2
                 className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
                 style={{ color: 'var(--gem-gold)' }}
@@ -981,36 +991,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 {allStrengths.map((s, i) => (
                   <li key={i}>
                     <details className="group [&_summary::-webkit-details-marker]:hidden">
-                      <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
+                      <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-3 sm:-mx-4">
                         <span
                           className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
                           style={{ color: 'var(--gem-gold)' }}
                         >
                           {String(i + 1).padStart(2, '0')}
                         </span>
-                        <p
-                          className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0"
-                          style={
-                            applyPaywallBlur && i > 0
-                              ? { filter: 'blur(8px)', userSelect: 'none' }
-                              : undefined
-                          }
-                        >
+                        <p className="text-[15.5px] sm:text-[17px] font-semibold text-white m-0 leading-snug min-w-0">
                           {s.dimension_or_area}
                         </p>
                         <span
                           aria-hidden
-                          className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
+                          className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
                         >
                           ▾
                         </span>
                       </summary>
                       <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
                         <div />
-                        <p
-                          className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
-                          style={applyPaywallBlur && i > 0 ? bodyBlur : undefined}
-                        >
+                        <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.8)] leading-[1.65] m-0 max-w-[62ch]">
                           {s.what_it_means}
                         </p>
                       </div>
@@ -1021,18 +1021,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
         </SectionGate>
-        {/* DEVELOPMENT CONSIDERATIONS — weaknesses in Overview tab */}
 
-        {/* DEVELOPMENT PRIORITIES — primary lever first (red-accent treatment),
-            craft note as an inline callout, then all other considerations.
-            Merges what was previously two sections ("Sharpest lever" + secondary
-            Development Priorities) into a single coherent section that mirrors
-            the structure of the actual report. */}
-        {/* Development considerations — Anuj 2026-04-29: now has its
-            own per-section privacy toggle (`development_considerations`).
-            Owner/admin always see it. Non-owners only see it on a
-            published post when the writer hasn't marked the section
-            private. */}
+        {/* ═══ KEY WEAKNESSES ═══ */}
         {(isOwnerOrAdmin || (submission.is_public ?? false)) && (
           <SectionGate
             section="development_considerations"
@@ -1043,8 +1033,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isProSubscriber={true}
           >
           {(() => {
-            // Selznick 3.8: every eval emits `issues.items` directly.
-            // Legacy `considerations` reads removed 2026-04-29.
             type IssueRow = {
               area: string
               detail: string
@@ -1060,7 +1048,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const primary = merged.find((c) => c.is_primary_lever === true)
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
-              <div>
+              <div
+                className="rounded-xl p-5 sm:p-6"
+                style={{
+                  background: 'rgba(255,255,255,0.07)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                }}
+              >
                 <h2
                   className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
                   style={{ color: 'var(--gem-accent)' }}
@@ -1077,36 +1071,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       {ordered.map((c, i) => (
                         <li key={i}>
                           <details className="group [&_summary::-webkit-details-marker]:hidden">
-                            <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[var(--gem-gray-900)] transition-colors -mx-3 sm:-mx-4">
+                            <summary className="cursor-pointer list-none grid grid-cols-[28px_1fr_auto] sm:grid-cols-[36px_1fr_auto] gap-x-3 sm:gap-x-4 items-center py-2.5 px-3 sm:px-4 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-3 sm:-mx-4">
                               <span
                                 className="text-[16px] sm:text-[20px] font-bold tabular-nums leading-tight"
                                 style={{ color: 'var(--gem-gold)' }}
                               >
                                 {String(i + 1).padStart(2, '0')}
                               </span>
-                              <p
-                                className="text-[15.5px] sm:text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-snug min-w-0"
-                                style={
-                                  applyPaywallBlur
-                                    ? { filter: 'blur(8px)', userSelect: 'none' }
-                                    : undefined
-                                }
-                              >
+                              <p className="text-[15.5px] sm:text-[17px] font-semibold text-white m-0 leading-snug min-w-0">
                                 {c.area}
                               </p>
                               <span
                                 aria-hidden
-                                className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
+                                className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[14px]"
                               >
                                 ▾
                               </span>
                             </summary>
                             <div className="grid grid-cols-[28px_1fr] sm:grid-cols-[36px_1fr] gap-x-3 sm:gap-x-4 pt-2 pb-1">
                               <div />
-                              <p
-                                className="text-[15px] sm:text-[16px] text-[var(--gem-gray-200)] leading-[1.65] m-0 max-w-[62ch]"
-                                style={bodyBlur}
-                              >
+                              <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.8)] leading-[1.65] m-0 max-w-[62ch]">
                                 {c.detail}
                               </p>
                             </div>
@@ -1117,7 +1101,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   )
                 })()}
 
-                {/* Craft note (always visible, emerald aside). */}
+                {/* Craft note */}
                 {craftNote && (
                   <div className="relative pl-5 sm:pl-6 mt-5 sm:mt-6">
                     <div
@@ -1131,10 +1115,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     >
                       Craft note
                     </p>
-                    <p
-                      className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.65] m-0 max-w-[62ch]"
-                      style={bodyBlur}
-                    >
+                    <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.85)] leading-[1.65] m-0 max-w-[62ch]">
                       {craftNote}
                     </p>
                   </div>
@@ -1145,73 +1126,107 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </SectionGate>
         )}
 
-          </div>
-          {/* /Overview tab */}
-
-          {/* ── TAB: NARRATIVE ANALYSIS ── */}
-          <div className="gem-tab-panel space-y-3" data-tab="narrative">
-            {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-              <>
-                <InfoSection text="These are the factors we find most important when evaluating a script's potential.">
-                  <p className="text-[13px] font-semibold text-[var(--gem-gray-200)] m-0">
-                    Dimension Scores
-                  </p>
-                </InfoSection>
-                <div className="space-y-3">
-                  {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
-                    const s = scores?.[dimId]
-                    if (typeof s?.score !== 'number') return null
-                    const meta = DIMENSION_META[dimId]
-                    return (
-                      <DimensionRow
-                        key={dimId}
-                        label={meta.label}
-                        score={s.score}
-                        reasoning={s.reasoning}
-                        locked={applyPaywallBlur}
-                      />
-                    )
-                  })}
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* ── TAB: PACKAGING & PRODUCTION ── */}
-          <div className="gem-tab-panel space-y-5" data-tab="production">
-
-            {/* Budget Tier — prominent lead for this tab */}
-            {packaging?.budget_tier && (
-              <div
-                style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                aria-hidden={applyPaywallBlur ? true : undefined}
-              >
-                <BudgetTierCard tier={packaging.budget_tier} />
-              </div>
-            )}
-
-            {/* Production Reality — single expandable section */}
-            {riskDetails && (
-              <SectionGate
-                section="project_complexity"
-                privacy={privacy}
-                isOwnerOrAdmin={isOwnerOrAdmin}
-                submissionId={privacyControlId}
-                isPublic={submission.is_public ?? false}
-                isProSubscriber={true}
-              >
-                <div
-                  data-pdf-section="project_complexity"
-                  style={applyPaywallBlur ? { ...bodyBlur, pointerEvents: 'none' } : undefined}
-                  aria-hidden={applyPaywallBlur ? true : undefined}
+        {/* ═══ NARRATIVE BREAKDOWN — dimension scores ═══ */}
+        {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
+          <div
+            className="rounded-xl p-5 sm:p-6"
+            style={{
+              background: 'rgba(255,255,255,0.07)',
+              border: '1px solid rgba(255,255,255,0.12)',
+            }}
+          >
+            <h2
+              className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+              style={{ color: 'var(--gem-gold)' }}
+            >
+              Narrative Breakdown
+            </h2>
+            <div className="space-y-3">
+              {(Object.keys(DIMENSION_META) as DimensionId[]).map((dimId) => {
+                const s = scores?.[dimId]
+                if (typeof s?.score !== 'number') return null
+                const meta = DIMENSION_META[dimId]
+                return (
+                  <DimensionRow
+                    key={dimId}
+                    label={meta.label}
+                    score={s.score}
+                    reasoning={s.reasoning}
+                    locked={applyPaywallBlur}
+                  />
+                )
+              })}
+            </div>
+            {/* Collapsible plot summary */}
+            {plotSummary && (
+              <details className="group mt-5 [&_summary::-webkit-details-marker]:hidden">
+                <summary
+                  className="cursor-pointer list-none flex items-center gap-2 pt-3 border-t"
+                  style={{ borderColor: 'rgba(255,255,255,0.1)' }}
                 >
-                  <ProductionFactsSection data={riskDetails} production={production} />
-                </div>
-              </SectionGate>
+                  <span className="text-[11.5px] uppercase tracking-[0.15em] font-bold text-[rgba(255,255,255,0.4)] group-hover:text-[rgba(255,255,255,0.6)]">
+                    Plot Summary
+                  </span>
+                  <span
+                    aria-hidden
+                    className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                  >
+                    ▾
+                  </span>
+                </summary>
+                <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.8)] leading-[1.65] m-0 mt-3 max-w-[62ch]">
+                  {plotSummary}
+                </p>
+              </details>
             )}
           </div>
+        )}
 
-        </GemAnalysisTabs>
+        {/* ═══ PRODUCTION — complexity cards + details ═══ */}
+        {(riskDetails || production) && (
+          <SectionGate
+            section="project_complexity"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+            isPublic={submission.is_public ?? false}
+            isProSubscriber={true}
+          >
+            <div
+              className="rounded-xl p-5 sm:p-6"
+              style={{
+                background: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.12)',
+              }}
+              data-pdf-section="project_complexity"
+            >
+              <h2
+                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                style={{ color: 'var(--gem-gold)' }}
+              >
+                Production
+              </h2>
+
+              {/* Budget tier re-stated */}
+              {packaging?.budget_tier && (
+                <p className="text-[15px] sm:text-[16px] font-medium text-white m-0 mb-4">
+                  <span className="capitalize">{packaging.budget_tier.tier}</span>
+                  {packaging.budget_tier.range ? ` · ${packaging.budget_tier.range}` : ''}
+                </p>
+              )}
+
+              {/* Complexity cards — Production + Cast */}
+              {riskDetails && (
+                <RiskDetailsSection data={riskDetails} production={production} />
+              )}
+
+              {/* Legacy fallback: if no riskDetails but production exists */}
+              {!riskDetails && production && (
+                <ProductionFactsSection data={{ budget: { level: 'medium', note: '' }, casting: { level: 'medium', note: '' }, development: { level: 'medium', note: '' } }} production={production} />
+              )}
+            </div>
+          </SectionGate>
+        )}
 
         {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
             the Development Priorities EditorialSection above, which now
