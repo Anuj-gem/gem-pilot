@@ -858,7 +858,7 @@ export default async function DashboardPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-[14px] font-semibold text-white m-0 truncate">{script.title}</p>
-                        <p className="text-[12px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>Evaluating...</p>
+                        <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>Evaluating...</p>
                       </div>
                     </div>
                   ))}
@@ -881,7 +881,7 @@ export default async function DashboardPage() {
                             )}
                             <div className="flex-1 min-w-0">
                               <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
-                              <p className="text-[13px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
                                 {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
                               </p>
                             </div>
@@ -939,11 +939,11 @@ export default async function DashboardPage() {
                         <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
-                            <p className="text-[13px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                            <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
                               Applied {fmtDate(app.submitted_at)}
                             </p>
                             {scripts.length > 0 && (
-                              <p className="text-[13px] font-bold m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[11px] font-bold m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
                                 📄 {scripts.join(', ')}
                               </p>
                             )}
@@ -978,12 +978,12 @@ export default async function DashboardPage() {
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp.title}</p>
                             {opp.description && (
-                              <p className="text-[13px] font-bold m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[11px] font-bold m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,1)' }}>
                                 {opp.description}
                               </p>
                             )}
                             {qualCriteria.length > 0 && (
-                              <p className="text-[13px] font-bold m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
+                              <p className="text-[11px] font-bold m-0 mt-1" style={{ color: 'rgba(255,255,255,1)' }}>
                                 Qualification Criteria: {qualCriteria.join(', ')}
                               </p>
                             )}
