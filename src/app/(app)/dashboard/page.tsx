@@ -152,6 +152,7 @@ export default async function DashboardPage() {
   const appliedScriptsByOpp = new Map<string, Set<string>>()
   const pendingOppIds = new Set<string>()
   const scriptTitlesByApp = new Map<string, string[]>()
+  const pendingAppsByScript = new Map<string, number>()
 
   if (user && allApplications.length > 0) {
     const considerationIds = allApplications.map(a => a.id)
@@ -184,6 +185,16 @@ export default async function DashboardPage() {
         pendingOppIds.add(app.opportunity_id)
       }
     }
+
+    // Build per-script pending application count
+    for (const app of allApplications) {
+      if (app.status === 'reviewed' || app.review_stage === 'complete') continue
+      for (const row of (csRows || []) as { script_id: string; consideration_id: string }[]) {
+        if (row.consideration_id === app.id) {
+          pendingAppsByScript.set(row.script_id, (pendingAppsByScript.get(row.script_id) || 0) + 1)
+        }
+      }
+    }
   }
 
   // Usage gate
@@ -203,6 +214,33 @@ export default async function DashboardPage() {
   }
   const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
   const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
+
+  // ── COLLABORATOR COUNTS (for stat card + per-script display) ──
+
+  let totalCollaborators = 0
+  let pendingCollaborators = 0
+  const collabCountByScript = new Map<string, number>()
+
+  if (user && submissionIds.length > 0) {
+    // Active (accepted) collaborators on my scripts
+    const { data: activeCollabs } = await service
+      .from('script_collaborators')
+      .select('id, submission_id')
+      .in('submission_id', submissionIds)
+      .eq('status', 'accepted')
+    totalCollaborators = (activeCollabs || []).length
+    for (const c of (activeCollabs || []) as { id: string; submission_id: string }[]) {
+      collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
+    }
+
+    // Pending collaborator invitations on my scripts
+    const { count: pendingCount2 } = await service
+      .from('script_collaborators')
+      .select('id', { count: 'exact', head: true })
+      .in('submission_id', submissionIds)
+      .eq('status', 'pending')
+    pendingCollaborators = pendingCount2 ?? 0
+  }
 
   // ── COLLABORATIONS QUERY (scripts I'm collaborating on) ──
 
@@ -316,6 +354,9 @@ export default async function DashboardPage() {
         isPublic: s.is_public ?? false,
         logline: ev?.logline ?? null,
         posterUrl: s.poster_url ?? null,
+        collaboratorCount: collabCountByScript.get(s.id) ?? 0,
+        pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
+        availableOppCount: qualifyingOpps.length,
       }
     })
 
@@ -728,47 +769,50 @@ export default async function DashboardPage() {
           </h1>
 
           {/* ── WRITER STATS ROW ── */}
-          <div className="grid grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-5 gap-3 sm:gap-4">
             <Link href="/scripts" className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[24px] leading-none shrink-0">📄</span>
-                  <span className="text-[28px] sm:text-[34px] font-bold text-white leading-none">{scriptCount}</span>
-                </div>
-                <span className="text-[13px] text-white/60 block">Scripts</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
+                <span className="text-[24px] leading-none mb-1">📄</span>
+                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">{scriptCount}</span>
+                <span className="text-[13px] text-white mt-1 block">Scripts</span>
               </div>
             </Link>
             <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(167,139,250,0.06) 100%)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: 16 }}>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="inline-flex shrink-0">{gemDiamond(10)}</span>
-                  <span className="text-[28px] sm:text-[34px] font-bold leading-none" style={{ color: topScore >= 80 ? '#34d399' : topScore >= 70 ? '#a78bfa' : topScore >= 60 ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}>
-                    {topScore > 0 ? topScore : '—'}
-                  </span>
-                </div>
-                <span className="text-[13px] text-white/60 block">Top Score</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(167,139,250,0.06) 100%)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: 16 }}>
+                <span className="inline-flex mb-1">{gemDiamond(10)}</span>
+                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
+                  {topScore > 0 ? topScore : '—'}
+                </span>
+                <span className="text-[13px] text-white mt-1 block">Top Score</span>
               </div>
             </Link>
             <Link href="/applications" className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[24px] leading-none shrink-0">🔥</span>
-                  <span className="text-[28px] sm:text-[34px] font-bold leading-none" style={{ color: totalHeat > 0 ? '#fb923c' : 'rgba(255,255,255,0.3)' }}>
-                    {totalHeat > 0 ? totalHeat : '—'}
-                  </span>
-                </div>
-                <span className="text-[13px] text-white/60 block">Heat</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 16 }}>
+                <span className="text-[24px] leading-none mb-1">🔥</span>
+                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
+                  {totalHeat > 0 ? totalHeat : '—'}
+                </span>
+                <span className="text-[13px] text-white mt-1 block">Heat</span>
               </div>
             </Link>
+            <div className="block">
+              <div className="py-5 px-4 flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.06) 100%)', border: '1px solid rgba(59,130,246,0.25)', borderRadius: 16 }}>
+                <span className="text-[24px] leading-none mb-1">🧑</span>
+                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
+                  {totalCollaborators > 0 ? totalCollaborators : pendingCollaborators > 0 ? '—' : '—'}
+                </span>
+                <span className="text-[13px] text-white mt-1 block">
+                  {totalCollaborators === 0 && pendingCollaborators > 0 ? `Collaborators (${pendingCollaborators} pending)` : 'Collaborators'}
+                </span>
+              </div>
+            </div>
             <Link href="/applications" className="no-underline block">
-              <div className="py-5 px-4 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[24px] leading-none shrink-0">📨</span>
-                  <span className="text-[28px] sm:text-[34px] font-bold leading-none" style={{ color: pendingCount > 0 ? '#a78bfa' : 'rgba(255,255,255,0.3)' }}>
-                    {pendingCount > 0 ? pendingCount : '—'}
-                  </span>
-                </div>
-                <span className="text-[13px] text-white/60 block">Pending</span>
+              <div className="py-5 px-4 hover:brightness-110 transition-all flex flex-col items-center text-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 16 }}>
+                <span className="text-[24px] leading-none mb-1">📨</span>
+                <span className="text-[32px] sm:text-[38px] font-bold text-white leading-none">
+                  {pendingCount > 0 ? pendingCount : '—'}
+                </span>
+                <span className="text-[13px] text-white mt-1 block">Pending Opportunities</span>
               </div>
             </Link>
           </div>
@@ -809,33 +853,54 @@ export default async function DashboardPage() {
                   {/* Completed scripts + collab scripts — compact rows */}
                   {[
                     ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
-                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)),
+                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[] })),
                   ].map(script => {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
                     return (
-                      <Link key={script.id} href={reportHref} className="block no-underline group">
-                        <div className="flex items-center gap-2.5 px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
-                          <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden" style={{ background: placeholderGradient }}>
+                      <div key={script.id} className="px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                        <Link href={reportHref} className="block no-underline group">
+                          <div className="flex items-center gap-2.5">
                             {script.posterUrl && (
-                              <img src={script.posterUrl} alt="" className="w-full h-full object-cover" />
+                              <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden">
+                                <img src={script.posterUrl} alt="" className="w-full h-full object-cover" />
+                              </div>
+                            )}
+                            <div className="flex-1 min-w-0">
+                              <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
+                              <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                                {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
+                              </p>
+                            </div>
+                            {script.collabRole && (
+                              <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{script.collabRole}</span>
                             )}
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{script.title}</p>
-                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                              {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
-                            </p>
-                          </div>
-                          {script.collabRole && (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{script.collabRole}</span>
+                        </Link>
+                        {/* Stats row — score, heat, collaborators, opps, publish */}
+                        <div className="flex items-center gap-3 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
+                          <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
+                            {gemDiamond(7)} {rounded || '—'}
+                          </span>
+                          <span className="text-[12px] shrink-0" style={{ color: '#fb923c' }}>🔥 {script.heat}</span>
+                          <span className="text-[12px] shrink-0" style={{ color: 'rgba(255,255,255,0.5)' }}>🧑 {script.collaboratorCount}</span>
+                          {script.availableOppCount > 0 && (
+                            <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
+                              {script.availableOppCount} opp{script.availableOppCount !== 1 ? 's' : ''}
+                            </span>
                           )}
-                          <span className="text-[16px] font-bold shrink-0" style={{ color: '#a78bfa' }}>{rounded || '—'}</span>
-                          {script.heat > 0 && (
-                            <span className="text-[13px] shrink-0" style={{ color: '#fb923c' }}>🔥 {script.heat}</span>
+                          {script.pendingAppCount > 0 && (
+                            <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(251,146,60,0.15)', color: '#fdba74', borderRadius: 3 }}>
+                              {script.pendingAppCount} pending
+                            </span>
+                          )}
+                          {!script.collabRole && (
+                            <span className="ml-auto shrink-0">
+                              <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} />
+                            </span>
                           )}
                         </div>
-                      </Link>
+                      </div>
                     )
                   })}
                   <div className="mt-2.5">
@@ -859,13 +924,19 @@ export default async function DashboardPage() {
                   <div className="space-y-1.5">
                     {pendingApps.slice(0, 3).map(app => {
                       const opp = oppMap.get(app.opportunity_id)
+                      const scripts = scriptTitlesByApp.get(app.id) || []
                       return (
                         <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp?.title || 'Opportunity'}</p>
                             <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                              {scriptTitlesByApp.get(app.id)?.[0] ? `${scriptTitlesByApp.get(app.id)![0]} · ` : ''}Applied {fmtDate(app.submitted_at)}
+                              Applied {fmtDate(app.submitted_at)}
                             </p>
+                            {scripts.length > 0 && (
+                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                                📄 {scripts.join(', ')}
+                              </p>
+                            )}
                             <span className="inline-block text-[10px] font-bold px-2 py-0.5 mt-1" style={{ background: 'rgba(251,146,60,0.15)', color: '#fdba74', borderRadius: 3 }}>In consideration</span>
                           </div>
                         </Link>
@@ -886,13 +957,26 @@ export default async function DashboardPage() {
                   <div className="space-y-1.5">
                     {dashboardOpps.map(opp => {
                       const matchCount = getMatchingScriptsForOpp(opp).length
+                      const qualCriteria = [
+                        opp.formats?.length ? opp.formats.join(', ') : null,
+                        opp.genres?.length ? opp.genres.join(', ') : null,
+                        opp.min_score ? `Score ${opp.min_score}+` : null,
+                        opp.budget_tiers?.length ? opp.budget_tiers.join(', ') : null,
+                      ].filter(Boolean)
                       return (
                         <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block no-underline">
                           <div className="px-3 py-2.5 hover:brightness-110 transition-all" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
                             <p className="text-[14px] font-semibold text-white m-0 truncate">{opp.title}</p>
-                            <p className="text-[11px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                              {[opp.genres?.slice(0, 2).join(', '), opp.deadline ? `Deadline ${fmtDate(opp.deadline)}` : null].filter(Boolean).join(' · ')}
-                            </p>
+                            {opp.description && (
+                              <p className="text-[12px] m-0 mt-1 line-clamp-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                                {opp.description}
+                              </p>
+                            )}
+                            {qualCriteria.length > 0 && (
+                              <p className="text-[11px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                                Qualification Criteria: {qualCriteria.join(', ')}
+                              </p>
+                            )}
                             {matchCount > 0 && (
                               <span className="inline-block text-[10px] font-bold px-2 py-0.5 mt-1" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>
                                 {matchCount} script{matchCount !== 1 ? 's' : ''} qualify
