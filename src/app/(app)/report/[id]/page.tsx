@@ -59,8 +59,7 @@ import { InlineCastField } from '@/components/report/inline-cast-editor'
 import { InlineElevatorPitch } from '@/components/report/inline-elevator-pitch'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
-import { PosterImage } from '@/components/report/poster-image'
-import MediaGallery from '@/components/report/media-gallery'
+import HeroMediaCarousel from '@/components/report/hero-media-carousel'
 import { CollaboratorsSection } from '@/components/report/collaborators-section'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
@@ -664,35 +663,33 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </div>
 
-        {/* Hero content — poster + info */}
+        {/* Hero content — carousel at top, info below */}
         <div className="max-w-6xl mx-auto pb-10 sm:pb-14 relative z-10">
-          <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8 relative">
-            {/* Poster image area — hidden for non-owners when no poster */}
-            {((isOwner || isAdmin) || !!submission.poster_url) && (
-              <PosterImage
-                submissionId={submission.id}
-                posterUrl={submission.poster_url ?? null}
-                isOwner={isOwner}
-              />
+          {/* ── MEDIA CAROUSEL — poster + additional media ── */}
+          <HeroMediaCarousel
+            submissionId={submission.id}
+            posterUrl={submission.poster_url ?? null}
+            initialMedia={(submission as any).media_urls || []}
+            isOwner={isOwner}
+          />
+
+          {/* Info section — below carousel */}
+          <div className="relative mt-6">
+            {/* Owner actions — top right */}
+            {(isOwner || isAdmin) && (
+              <div className="gem-no-print sticky top-4 z-30 flex justify-end mb-0 -mt-1">
+                <OwnerActionsMenu
+                  submissionId={submission.id}
+                  evaluationId={id}
+                  title={submission.title}
+                  declaredFormat={submission.declared_format ?? null}
+                  isSubscribed={ownerIsSubscribed || isAdmin}
+                />
+              </div>
             )}
 
-            {/* Info column — pt-0 ensures title aligns flush with poster top */}
-            <div className="flex-1 min-w-0 relative pt-0">
-              {/* Owner actions — absolute-positioned so they don't push title down */}
-              {(isOwner || isAdmin) && (
-                <div className="gem-no-print sticky top-4 z-30 flex justify-end mb-0 -mt-1">
-                  <OwnerActionsMenu
-                    submissionId={submission.id}
-                    evaluationId={id}
-                    title={submission.title}
-                    declaredFormat={submission.declared_format ?? null}
-                    isSubscribed={ownerIsSubscribed || isAdmin}
-                  />
-                </div>
-              )}
-
-              {/* Title + author + logline + collapsible categories */}
-              <EditableTopCard
+            {/* Title + author + logline + collapsible categories */}
+            <EditableTopCard
                 evaluationId={id}
                 submissionId={submission.id}
                 initial={topCard}
@@ -817,16 +814,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 />
               </div>
 
-            </div>
           </div>
-
-          {/* ── MEDIA GALLERY — YouTube embeds, images, PDFs ── */}
-          <MediaGallery
-            submissionId={submission.id}
-            initialMedia={(submission as any).media_urls || []}
-            isOwner={isOwner}
-          />
-
         </div>
 
       </div>
