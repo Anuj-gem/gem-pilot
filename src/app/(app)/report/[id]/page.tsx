@@ -1197,33 +1197,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 )
               })}
             </div>
-            {/* Collapsible plot summary */}
-            {plotSummary && (
-              <details className="group mt-5 [&_summary::-webkit-details-marker]:hidden">
-                <summary
-                  className="cursor-pointer list-none flex items-center gap-2 pt-3 border-t"
-                  style={{ borderColor: 'rgba(255,255,255,0.1)' }}
-                >
-                  <span className="text-[11.5px] uppercase tracking-[0.15em] font-bold text-[rgba(255,255,255,0.4)] group-hover:text-[rgba(255,255,255,0.6)]">
-                    Plot Summary
-                  </span>
-                  <span
-                    aria-hidden
-                    className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                  >
-                    ▾
-                  </span>
-                </summary>
-                <p className="text-[15px] sm:text-[16px] text-[rgba(255,255,255,0.8)] leading-[1.65] m-0 mt-3 max-w-[62ch]">
-                  {plotSummary}
-                </p>
-              </details>
-            )}
+            {/* Plot summary removed — now rendered separately above cast */}
           </div>
         )}
 
-        {/* ═══ PRODUCTION — complexity cards + details ═══ */}
-        {(riskDetails || production) && (
+        {/* ═══ PRODUCTION — budget tier + complexity cards ═══ */}
+        {(riskDetails || production || packaging?.budget_tier) && (
           <SectionGate
             section="project_complexity"
             privacy={privacy}
@@ -1232,27 +1211,55 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isPublic={submission.is_public ?? false}
             isProSubscriber={true}
           >
-            <div
-              className="rounded-xl p-6 sm:p-8"
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-              data-pdf-section="project_complexity"
-            >
+            <div data-pdf-section="project_complexity">
               <h2
-                className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+                className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
                 style={{ color: 'var(--gem-gold)' }}
               >
                 Production
               </h2>
 
-              {/* Budget tier re-stated */}
+              {/* Budget tier — prominent card */}
               {packaging?.budget_tier && (
-                <p className="text-[15px] sm:text-[16px] font-medium text-white m-0 mb-4">
-                  <span className="capitalize">{packaging.budget_tier.tier}</span>
-                  {packaging.budget_tier.range ? ` · ${packaging.budget_tier.range}` : ''}
-                </p>
+                <div
+                  className="rounded-xl p-5 sm:p-6 mb-5"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  <div className="flex items-center justify-between gap-3 mb-2">
+                    <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
+                      Budget Assessment
+                    </p>
+                    <span
+                      className="text-[12px] uppercase tracking-[0.12em] font-bold px-2.5 py-0.5 rounded-full capitalize"
+                      style={{
+                        color: 'var(--gem-gold)',
+                        background: 'rgba(232,184,37,0.12)',
+                        border: '1px solid rgba(232,184,37,0.3)',
+                      }}
+                    >
+                      {packaging.budget_tier.tier}
+                    </span>
+                  </div>
+                  {packaging.budget_tier.range && (
+                    <p className="text-[18px] sm:text-[20px] font-bold text-white m-0 mb-1">
+                      {packaging.budget_tier.range}
+                    </p>
+                  )}
+                  {packaging.budget_tier.per_episode && (
+                    <p className="text-[14px] text-[rgba(255,255,255,0.6)] m-0 mb-1">
+                      {packaging.budget_tier.per_episode} per episode
+                      {packaging.budget_tier.season_total ? ` · ${packaging.budget_tier.season_total} season total` : ''}
+                    </p>
+                  )}
+                  {packaging.budget_tier.note && (
+                    <p className="text-[14px] sm:text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.55] m-0 mt-2">
+                      {packaging.budget_tier.note}
+                    </p>
+                  )}
+                </div>
               )}
 
               {/* Complexity cards — Production + Cast */}
