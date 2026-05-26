@@ -1,10 +1,25 @@
 'use client'
 
-// CollaboratorsSection — sits below "View categories" on the report page.
-// Owner can add collaborators by email. Invited users see accept/decline bar.
+// CollaboratorsSection — "People attached" on the report page.
+// Owner: sees section always (even when empty), can add/edit/remove.
+// Non-owner: only sees if there are accepted collaborators.
+// Collaborator: can remove themselves.
 
-import { useState, useEffect } from 'react'
-import { UserPlus, Check, X, Loader2 } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { UserPlus, Check, X, Loader2, Pencil, Trash2, ChevronDown } from 'lucide-react'
+
+const ROLE_OPTIONS = [
+  { value: 'producer', label: 'Producer' },
+  { value: 'talent_representative', label: 'Talent Representative' },
+  { value: 'actor', label: 'Actor' },
+  { value: 'director', label: 'Director' },
+  { value: 'other', label: 'Other' },
+] as const
+
+function roleLabel(role: string, roleOther?: string | null) {
+  if (role === 'other' && roleOther) return roleOther
+  return ROLE_OPTIONS.find(r => r.value === role)?.label ?? role
+}
 
 interface Collaborator {
   id: string
@@ -12,6 +27,7 @@ interface Collaborator {
   collaborator_id: string | null
   status: 'pending' | 'accepted' | 'declined'
   role: string
+  role_other: string | null
   created_at: string
   profile: {
     full_name: string | null
@@ -35,11 +51,15 @@ export function CollaboratorsSection({
   const [collaborators, setCollaborators] = useState<Collaborator[]>([])
   const [loading, setLoading] = useState(true)
   const [email, setEmail] = useState('')
+  const [role, setRole] = useState('producer')
+  const [roleOther, setRoleOther] = useState('')
   const [adding, setAdding] = useState(false)
   const [error, setError] = useState('')
   const [showInput, setShowInput] = useState(false)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editRole, setEditRole] = useState('')
+  const [editRoleOther, setEditRoleOther] = useState('')
 
-  // Find pending invitation for the current user (if any)
   const myPendingInvite = collaborators.find(
     c =>
       c.status === 'pending' &&
@@ -71,7 +91,11 @@ export function CollaboratorsSection({
       const res = await fetch(`/api/scripts/${submissionId}/collaborators`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({
+          email: email.trim(),
+          role,
+          role_other: role === 'other' ? roleOther.trim() : undefined,
+        }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -79,13 +103,43 @@ export function CollaboratorsSection({
         return
       }
       setEmail('')
+      setRole('producer')
+      setRoleOther('')
       setShowInput(false)
       fetchCollaborators()
     } catch {
-      setError('Failed to add collaborator')
+      setError('Failed to add')
     } finally {
       setAdding(false)
     }
+  }
+
+  async function handleRemove(collabId: string) {
+    try {
+      const res = await fetch(
+        `/api/scripts/${submissionId}/collaborators?collabId=${collabId}`,
+        { method: 'DELETE' }
+      )
+      if (res.ok) fetchCollaborators()
+    } catch {}
+  }
+
+  async function handleEditRole(collabId: string) {
+    try {
+      const res = await fetch(`/api/scripts/${submissionId}/collaborators`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          collaborator_id: collabId,
+          role: editRole,
+          role_other: editRole === 'other' ? editRoleOther.trim() : undefined,
+        }),
+      })
+      if (res.ok) {
+        setEditingId(null)
+        fetchCollaborators()
+      }
+    } catch {}
   }
 
   async function handleRespond(collabId: string, status: 'accepted' | 'declined') {
@@ -95,30 +149,30 @@ export function CollaboratorsSection({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ collaborator_id: collabId, status }),
       })
-      if (res.ok) {
-        fetchCollaborators()
-      }
+      if (res.ok) fetchCollaborators()
     } catch {}
   }
 
-  // Filter to show: accepted collaborators always, pending if owner
+  // Visible collabs: accepted always, pending if owner
   const visibleCollabs = collaborators.filter(
     c => c.status === 'accepted' || (isOwner && c.status === 'pending')
   )
 
   if (loading) return null
 
+  // Non-owners: hide entire section when no visible collabs
+  if (!isOwner && visibleCollabs.length === 0) return null
+
+  const count = visibleCollabs.length
+
   return (
     <>
-      {/* Collaborators section — below categories */}
       <div className="mt-4">
-        {/* Header row */}
+        {/* Header */}
         <div className="flex items-center gap-2 mb-3">
-          {visibleCollabs.length > 0 && (
-            <span className="text-[13px] font-medium text-[var(--gem-gray-400)]">
-              Collaborators
-            </span>
-          )}
+          <span className="text-[13px] font-medium text-[var(--gem-gray-400)]">
+            People attached{count > 0 ? ` · ${count}` : ''}
+          </span>
           {isOwner && (
             <button
               onClick={() => setShowInput(v => !v)}
@@ -128,49 +182,133 @@ export function CollaboratorsSection({
               }}
             >
               <UserPlus size={14} />
-              {visibleCollabs.length === 0 ? 'Add collaborators' : 'Add'}
+              Add
             </button>
           )}
         </div>
 
-        {/* Email input */}
+        {/* Add form */}
         {isOwner && showInput && (
-          <div className="flex items-center gap-2 mb-3">
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && handleAdd()}
-              placeholder="Email address"
-              className="flex-1 px-3 py-2 rounded-lg text-[13px] outline-none"
-              style={{
-                background: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                color: '#fff',
-              }}
-              autoFocus
-            />
-            <button
-              onClick={handleAdd}
-              disabled={adding || !email.trim()}
-              className="px-3 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 disabled:opacity-50 transition-colors text-white"
-              style={{ background: '#7c3aed' }}
-            >
-              {adding ? <Loader2 size={14} className="animate-spin" /> : 'Invite'}
-            </button>
+          <div className="mb-3 space-y-2">
+            <div className="flex items-center gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && handleAdd()}
+                placeholder="Email address"
+                className="flex-1 px-3 py-2 rounded-lg text-[13px] outline-none"
+                style={{
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  color: '#fff',
+                }}
+                autoFocus
+              />
+              <RoleSelect value={role} onChange={setRole} />
+              <button
+                onClick={handleAdd}
+                disabled={adding || !email.trim()}
+                className="px-3 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 disabled:opacity-50 transition-colors text-white shrink-0"
+                style={{ background: '#7c3aed' }}
+              >
+                {adding ? <Loader2 size={14} className="animate-spin" /> : 'Invite'}
+              </button>
+            </div>
+            {role === 'other' && (
+              <input
+                type="text"
+                value={roleOther}
+                onChange={e => setRoleOther(e.target.value)}
+                placeholder="Describe role (max 60 chars)"
+                maxLength={60}
+                className="w-full px-3 py-2 rounded-lg text-[13px] outline-none"
+                style={{
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  color: '#fff',
+                }}
+              />
+            )}
           </div>
         )}
         {error && (
           <p className="text-[12px] text-red-400 mb-2">{error}</p>
         )}
 
-        {/* Collaborator list */}
+        {/* Collaborator chips */}
         {visibleCollabs.length > 0 && (
           <div className="flex flex-wrap gap-3">
-            {visibleCollabs.map(c => (
-              <CollaboratorChip key={c.id} collaborator={c} isOwner={isOwner} />
-            ))}
+            {visibleCollabs.map(c => {
+              const isSelf =
+                c.collaborator_id === currentUserId ||
+                c.collaborator_email === currentUserEmail
+              const isEditing = editingId === c.id
+
+              if (isEditing && isOwner) {
+                return (
+                  <div
+                    key={c.id}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+                    style={{
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(124,58,237,0.4)',
+                    }}
+                  >
+                    <RoleSelect value={editRole} onChange={setEditRole} />
+                    {editRole === 'other' && (
+                      <input
+                        type="text"
+                        value={editRoleOther}
+                        onChange={e => setEditRoleOther(e.target.value)}
+                        placeholder="Role"
+                        maxLength={60}
+                        className="px-2 py-0.5 rounded text-[12px] outline-none w-24"
+                        style={{
+                          background: 'rgba(255,255,255,0.08)',
+                          border: '1px solid rgba(255,255,255,0.12)',
+                          color: '#fff',
+                        }}
+                      />
+                    )}
+                    <button
+                      onClick={() => handleEditRole(c.id)}
+                      className="text-[11px] font-semibold text-white/80 bg-transparent border-0 cursor-pointer hover:text-white"
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={() => setEditingId(null)}
+                      className="text-[11px] text-white/40 bg-transparent border-0 cursor-pointer hover:text-white/60"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                )
+              }
+
+              return (
+                <CollaboratorChip
+                  key={c.id}
+                  collaborator={c}
+                  isOwner={isOwner}
+                  isSelf={isSelf}
+                  onEdit={() => {
+                    setEditingId(c.id)
+                    setEditRole(c.role)
+                    setEditRoleOther(c.role_other || '')
+                  }}
+                  onRemove={() => handleRemove(c.id)}
+                />
+              )
+            })}
           </div>
+        )}
+
+        {isOwner && count === 0 && !showInput && (
+          <p className="text-[12px] text-white/30 m-0">
+            No one attached yet
+          </p>
         )}
       </div>
 
@@ -214,14 +352,58 @@ export function CollaboratorsSection({
   )
 }
 
-function CollaboratorChip({ collaborator, isOwner }: { collaborator: Collaborator; isOwner: boolean }) {
+/* ── Role dropdown ── */
+function RoleSelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  return (
+    <div className="relative">
+      <select
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className="appearance-none pl-2.5 pr-6 py-2 rounded-lg text-[12px] font-medium outline-none cursor-pointer"
+        style={{
+          background: 'rgba(255,255,255,0.08)',
+          border: '1px solid rgba(255,255,255,0.12)',
+          color: 'rgba(255,255,255,0.8)',
+        }}
+      >
+        {ROLE_OPTIONS.map(r => (
+          <option key={r.value} value={r.value} style={{ background: '#1d1932', color: '#fff' }}>
+            {r.label}
+          </option>
+        ))}
+      </select>
+      <ChevronDown
+        size={12}
+        className="absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none"
+        style={{ color: 'rgba(255,255,255,0.4)' }}
+      />
+    </div>
+  )
+}
+
+/* ── Chip ── */
+function CollaboratorChip({
+  collaborator,
+  isOwner,
+  isSelf,
+  onEdit,
+  onRemove,
+}: {
+  collaborator: Collaborator
+  isOwner: boolean
+  isSelf: boolean
+  onEdit: () => void
+  onRemove: () => void
+}) {
   const name = collaborator.profile?.full_name || collaborator.collaborator_email
   const avatar = collaborator.profile?.avatar_url
   const isPending = collaborator.status === 'pending'
+  const showRole = collaborator.role && collaborator.role !== 'collaborator'
+  const canRemove = isOwner || isSelf
 
   return (
     <div
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full group/chip"
       style={{
         background: 'rgba(255,255,255,0.06)',
         border: '1px solid rgba(255,255,255,0.10)',
@@ -229,27 +411,42 @@ function CollaboratorChip({ collaborator, isOwner }: { collaborator: Collaborato
       }}
     >
       {avatar ? (
-        <img
-          src={avatar}
-          alt=""
-          className="w-5 h-5 rounded-full object-cover"
-        />
+        <img src={avatar} alt="" className="w-5 h-5 rounded-full object-cover" />
       ) : (
         <div
           className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
-          style={{
-            background: 'rgba(124,58,237,0.3)',
-            color: '#c4b5fd',
-          }}
+          style={{ background: 'rgba(124,58,237,0.3)', color: '#c4b5fd' }}
         >
           {name.charAt(0).toUpperCase()}
         </div>
       )}
-      <span className="text-[12px] font-medium text-white/80">
-        {name}
-      </span>
+      <span className="text-[12px] font-medium text-white/80">{name}</span>
+      {showRole && (
+        <span className="text-[10px] text-white/40">
+          {roleLabel(collaborator.role, collaborator.role_other)}
+        </span>
+      )}
       {isPending && isOwner && (
         <span className="text-[10px] text-white/40 italic">pending</span>
+      )}
+      {/* Owner actions: edit + remove */}
+      {isOwner && !isPending && (
+        <button
+          onClick={onEdit}
+          className="opacity-0 group-hover/chip:opacity-100 transition-opacity bg-transparent border-0 cursor-pointer p-0 ml-0.5"
+          title="Edit role"
+        >
+          <Pencil size={11} style={{ color: 'rgba(255,255,255,0.4)' }} />
+        </button>
+      )}
+      {canRemove && (
+        <button
+          onClick={onRemove}
+          className="opacity-0 group-hover/chip:opacity-100 transition-opacity bg-transparent border-0 cursor-pointer p-0"
+          title={isSelf && !isOwner ? 'Remove yourself' : 'Remove'}
+        >
+          <Trash2 size={11} style={{ color: 'rgba(255,107,107,0.6)' }} />
+        </button>
       )}
     </div>
   )

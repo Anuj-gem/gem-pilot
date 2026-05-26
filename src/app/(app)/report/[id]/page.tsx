@@ -657,12 +657,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Hero content — poster + info */}
         <div className="max-w-5xl mx-auto pb-10 sm:pb-14 relative z-10">
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 relative">
-            {/* Poster image area */}
-            <PosterImage
-              submissionId={submission.id}
-              posterUrl={submission.poster_url ?? null}
-              isOwner={isOwner}
-            />
+            {/* Poster image area — hidden for non-owners when no poster */}
+            {((isOwner || isAdmin) || !!submission.poster_url) && (
+              <PosterImage
+                submissionId={submission.id}
+                posterUrl={submission.poster_url ?? null}
+                isOwner={isOwner}
+              />
+            )}
 
             {/* Info column */}
             <div className="flex-1 min-w-0 relative">
