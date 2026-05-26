@@ -637,7 +637,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         />
 
         {/* Banners inside hero */}
-        <div className="max-w-6xl mx-auto pt-8 relative z-10">
+        <div className="max-w-4xl mx-auto pt-8 relative z-10">
           {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
           {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
@@ -664,7 +664,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </div>
 
         {/* Hero content — carousel at top, info below */}
-        <div className="max-w-6xl mx-auto pb-10 sm:pb-14 relative z-10">
+        <div className="max-w-4xl mx-auto pb-10 sm:pb-14 relative z-10">
           {/* ── MEDIA CAROUSEL — poster + additional media ── */}
           <HeroMediaCarousel
             submissionId={submission.id}
@@ -826,7 +826,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       `}</style>
 
       <div
-        className="max-w-6xl mx-auto pb-24 pt-2"
+        className="max-w-3xl mx-auto pb-24 pt-14"
         style={{
           '--gem-gray-50': '#FFFFFF',
           '--gem-gray-100': 'rgba(255,255,255,0.92)',
@@ -841,7 +841,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           '--gem-gold': '#E8B825',
         } as React.CSSProperties}
       >
-        <div className="space-y-5">
+        <div className="space-y-10">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -887,8 +887,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {(whatsSpecial.headline || plotSummary) && (
             <div data-pdf-section="whats_working">
               <h2
-                className="text-[18px] sm:text-[20px] font-bold m-0 mb-5"
-                style={{ color: 'var(--gem-gold)' }}
+                className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-5"
+                style={{ color: 'rgba(255,255,255,0.50)' }}
               >
                 Elevator Pitch
               </h2>
@@ -925,8 +925,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             return (
               <>
                 <h2
-                  className="text-[18px] sm:text-[20px] font-bold m-0 mb-5"
-                  style={{ color: 'var(--gem-gold)' }}
+                  className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-5"
+                  style={{ color: 'rgba(255,255,255,0.50)' }}
                 >
                   Cast
                 </h2>
@@ -997,15 +997,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         >
           {allStrengths.length > 0 && (
             <div
-              className="rounded-xl p-5 sm:p-6"
+              className="rounded-xl p-6 sm:p-8"
               style={{
-                background: 'rgba(255,255,255,0.07)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
               <h2
-                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-                style={{ color: 'var(--gem-gold)' }}
+                className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
+                style={{ color: 'rgba(255,255,255,0.50)' }}
               >
                 Key Strengths
               </h2>
@@ -1071,15 +1071,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const secondary = merged.filter((c) => c.is_primary_lever !== true)
             return (
               <div
-                className="rounded-xl p-5 sm:p-6"
+                className="rounded-xl p-6 sm:p-8"
                 style={{
-                  background: 'rgba(255,255,255,0.07)',
-                  border: '1px solid rgba(255,255,255,0.12)',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.08)',
                 }}
               >
                 <h2
-                  className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-                  style={{ color: 'var(--gem-accent)' }}
+                  className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
+                  style={{ color: 'rgba(255,255,255,0.50)' }}
                 >
                   Key Weaknesses
                 </h2>
@@ -1151,15 +1151,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ NARRATIVE BREAKDOWN — dimension scores ═══ */}
         {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
           <div
-            className="rounded-xl p-5 sm:p-6"
+            className="rounded-xl p-6 sm:p-8"
             style={{
-              background: 'rgba(255,255,255,0.07)',
-              border: '1px solid rgba(255,255,255,0.12)',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
             <h2
-              className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-              style={{ color: 'var(--gem-gold)' }}
+              className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
+              style={{ color: 'rgba(255,255,255,0.50)' }}
             >
               Narrative Breakdown
             </h2>
@@ -1215,16 +1215,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isProSubscriber={true}
           >
             <div
-              className="rounded-xl p-5 sm:p-6"
+              className="rounded-xl p-6 sm:p-8"
               style={{
-                background: 'rgba(255,255,255,0.07)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.08)',
               }}
               data-pdf-section="project_complexity"
             >
               <h2
-                className="text-[12px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-                style={{ color: 'var(--gem-gold)' }}
+                className="text-[13px] uppercase tracking-[0.2em] font-semibold m-0 mb-4"
+                style={{ color: 'rgba(255,255,255,0.50)' }}
               >
                 Production
               </h2>
@@ -1460,7 +1460,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {/* Danger Zone — delete lives at the very bottom, deprioritized */}
       {(isOwner || isAdmin) && (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <DangerZoneDelete submissionId={submission.id} />
         </div>
       )}
