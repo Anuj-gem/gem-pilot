@@ -485,9 +485,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const publicCount = publicSectionCount(privacy)
   const anyPublic = publicCount > 0
 
-  // Access gate: only the owner, admins, and producer accounts can view
-  // report pages. Everyone else sees a blocked page with no data.
-  const viewerHasAccess = isOwner || isAdmin || viewerIsProducer
+  // Collaborator check: pending or accepted — both get access so pending
+  // users can see the accept/decline bar on the report page.
+  let isCollaborator = false
+  let isPendingCollaborator = false
+  if (user && !isOwner && !isAdmin) {
+    const { data: collabRow } = await serviceClient
+      .from('script_collaborators')
+      .select('id, status')
+      .eq('submission_id', submission.id)
+      .in('status', ['accepted', 'pending'])
+      .or(`collaborator_id.eq.${user.id},collaborator_email.eq.${user.email?.toLowerCase()}`)
+      .maybeSingle()
+    isCollaborator = collabRow?.status === 'accepted'
+    isPendingCollaborator = collabRow?.status === 'pending'
+  }
+
+  // Access gate: owner, admins, producers, and collaborators (including
+  // pending — so they can see the accept/decline bar) can view reports.
+  const viewerHasAccess = isOwner || isAdmin || viewerIsProducer || isCollaborator || isPendingCollaborator
   if (!viewerHasAccess) {
     return (
       <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
