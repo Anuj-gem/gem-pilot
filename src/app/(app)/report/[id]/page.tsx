@@ -539,6 +539,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     )
   }
 
+  // Collaborator count for the stat card
+  const { count: collaboratorCount } = await serviceClient
+    .from('script_collaborators')
+    .select('*', { count: 'exact', head: true })
+    .eq('submission_id', submission.id)
+    .eq('status', 'accepted')
+
   const blurStyle: React.CSSProperties = {
     filter: 'blur(5px)',
     userSelect: 'none',
@@ -784,6 +791,71 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* RERUN BANNER — shown to owner when eval is stale */}
         {isStaleEval && <RerunBanner submissionId={submission.id} />}
 
+        {/* ═══ STAT CARDS — Score, Collaborators, Heat ═══ */}
+        <div className="grid grid-cols-3 gap-3">
+          {/* GEM Score */}
+          {typeof commercialScore === 'number' &&
+            (isOwnerOrAdmin || isScoreVisible(privacy)) && (
+            <div
+              className="rounded-2xl p-5 flex flex-col items-center justify-center text-center relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.05) 100%)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                backdropFilter: 'blur(16px)',
+              }}
+              data-pdf-section="gem_score"
+            >
+              <p className="text-[11px] uppercase tracking-[0.18em] font-semibold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                GEM Score
+              </p>
+              <span className="text-[44px] font-bold tabular-nums leading-none text-white">
+                {Math.round(commercialScore)}
+              </span>
+              <span className="text-[12px] font-medium mt-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                /100
+              </span>
+            </div>
+          )}
+          {/* Collaborators */}
+          <div
+            className="rounded-2xl p-5 flex flex-col items-center justify-center text-center relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.05) 100%)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(16px)',
+            }}
+          >
+            <p className="text-[11px] uppercase tracking-[0.18em] font-semibold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Collaborators
+            </p>
+            <span className="text-[44px] font-bold tabular-nums leading-none text-white">
+              {collaboratorCount ?? 0}
+            </span>
+            <span className="text-[12px] font-medium mt-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
+              attached
+            </span>
+          </div>
+          {/* Heat */}
+          <div
+            className="rounded-2xl p-5 flex flex-col items-center justify-center text-center relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.05) 100%)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(16px)',
+            }}
+          >
+            <p className="text-[11px] uppercase tracking-[0.18em] font-semibold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Heat
+            </p>
+            <span className="text-[44px] font-bold tabular-nums leading-none text-white">
+              {heatScore}
+            </span>
+            <span className="text-[12px] font-medium mt-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
+              🔥
+            </span>
+          </div>
+        </div>
+
         {/* ELEVATOR PITCH — combined pitch headline + plot summary */}
         <SectionGate
           section="whats_working"
@@ -893,76 +965,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
-        {/* ═══ STAT CARDS — Score, Budget, Heat ═══ */}
-        {(typeof commercialScore === 'number' || packaging?.budget_tier || heatScore > 0) && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {/* GEM Score */}
-            {typeof commercialScore === 'number' &&
-              (isOwnerOrAdmin || isScoreVisible(privacy)) && (
-              <div
-                className="rounded-xl p-5 flex flex-col items-center justify-center text-center"
-                style={{
-                  background: 'rgba(255,255,255,0.07)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  backdropFilter: 'blur(12px)',
-                }}
-                data-pdf-section="gem_score"
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                  GEM Score
-                </p>
-                <span className="text-[42px] font-bold tabular-nums leading-none text-white">
-                  {Math.round(commercialScore)}
-                </span>
-                <span className="text-[11px] font-medium mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  /100
-                </span>
-              </div>
-            )}
-            {/* Budget Tier */}
-            {packaging?.budget_tier && (
-              <div
-                className="rounded-xl p-5 flex flex-col items-center justify-center text-center"
-                style={{
-                  background: 'rgba(255,255,255,0.07)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  backdropFilter: 'blur(12px)',
-                }}
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                  Budget Tier
-                </p>
-                <span className="text-[18px] sm:text-[20px] font-bold leading-tight text-white capitalize">
-                  {packaging.budget_tier.tier}
-                </span>
-                <span className="text-[11px] font-medium mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  {packaging.budget_tier.range}
-                </span>
-              </div>
-            )}
-            {/* Insider Heat */}
-            {heatScore > 0 && (
-              <div
-                className="rounded-xl p-5 flex flex-col items-center justify-center text-center"
-                style={{
-                  background: 'rgba(255,255,255,0.07)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  backdropFilter: 'blur(12px)',
-                }}
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                  Insider Heat
-                </p>
-                <span className="text-[42px] font-bold tabular-nums leading-none text-white">
-                  {heatScore}
-                </span>
-                <span className="text-[11px] font-medium mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  🔥
-                </span>
-              </div>
-            )}
-          </div>
-        )}
+        {/* Old stat cards removed — now rendered above elevator pitch */}
 
         {/* ═══ KEY STRENGTHS ═══ */}
         <SectionGate
