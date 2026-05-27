@@ -24,7 +24,7 @@ export function LandingSteps() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid var(--gem-gray-700)' }}
+      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto" style={{ maxWidth: 800 }}>
         <p
@@ -35,7 +35,7 @@ export function LandingSteps() {
         </p>
         <h2
           className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] mb-5"
-          style={{ fontFamily: 'Georgia, serif', color: 'var(--gem-gray-50)' }}
+          style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
         >
           It takes about 60 seconds.
         </h2>
@@ -56,18 +56,18 @@ export function LandingSteps() {
                   width: 40,
                   height: 40,
                   borderRadius: 12,
-                  background: 'rgba(124,58,237,0.08)',
-                  border: '1px solid rgba(124,58,237,0.2)',
+                  background: 'rgba(124,58,237,0.2)',
+                  border: '1px solid rgba(124,58,237,0.4)',
                   color: 'var(--gem-accent)',
                 }}
               >
                 {step.num}
               </div>
               <div>
-                <h3 className="text-[17px] font-bold mb-1.5" style={{ color: 'var(--gem-gray-50)' }}>
+                <h3 className="text-[17px] font-bold mb-1.5" style={{ color: '#ffffff' }}>
                   {step.title}
                 </h3>
-                <p className="text-[14px] m-0" style={{ color: 'var(--gem-gray-400)', lineHeight: 1.6 }}>
+                <p className="text-[14px] m-0" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
                   {step.desc}
                 </p>
               </div>

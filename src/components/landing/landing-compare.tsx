@@ -24,7 +24,7 @@ export function LandingCompare() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid var(--gem-gray-700)' }}
+      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto text-center" style={{ maxWidth: 720 }}>
         <p
@@ -35,7 +35,7 @@ export function LandingCompare() {
         </p>
         <h2
           className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] mb-10"
-          style={{ fontFamily: 'Georgia, serif', color: 'var(--gem-gray-50)' }}
+          style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
         >
           Nothing like this has existed for writers.
         </h2>
@@ -47,7 +47,7 @@ export function LandingCompare() {
               <span className="text-[18px] font-extrabold" style={{ color: 'var(--gem-accent)' }}>
                 GEM
               </span>
-              <span className="text-[14px] font-bold" style={{ color: 'var(--gem-gray-50)' }}>
+              <span className="text-[14px] font-bold" style={{ color: '#ffffff' }}>
                 $20/month
               </span>
             </div>
@@ -57,9 +57,9 @@ export function LandingCompare() {
                   key={tag.label}
                   className="rounded-lg text-[13px] font-semibold"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(124,58,237,0.06), rgba(124,58,237,0.12))',
-                    border: '1px solid rgba(124,58,237,0.18)',
-                    color: '#5b21b6',
+                    background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.12))',
+                    border: '1px solid rgba(124,58,237,0.35)',
+                    color: '#c4b5fd',
                     padding: '7px 13px',
                   }}
                 >
@@ -72,10 +72,10 @@ export function LandingCompare() {
           {/* Others column */}
           <div>
             <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-[18px] font-extrabold" style={{ color: '#a8a29e' }}>
+              <span className="text-[18px] font-extrabold" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 BlackList, ISA, etc.
               </span>
-              <span className="text-[14px] font-bold" style={{ color: '#b91c1c' }}>
+              <span className="text-[14px] font-bold" style={{ color: '#f87171' }}>
                 $150+/month*
               </span>
             </div>
@@ -85,9 +85,9 @@ export function LandingCompare() {
                   key={tag}
                   className="rounded-lg text-[13px] font-medium"
                   style={{
-                    background: '#f5f5f4',
-                    border: '1px solid #e7e5e4',
-                    color: '#a8a29e',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    color: 'rgba(255,255,255,0.4)',
                     padding: '7px 13px',
                   }}
                 >
@@ -98,7 +98,7 @@ export function LandingCompare() {
           </div>
         </div>
 
-        <p className="text-[11px] mt-6" style={{ color: '#a8a29e' }}>
+        <p className="text-[11px] mt-6" style={{ color: 'rgba(255,255,255,0.35)' }}>
           *Based on 5 evaluations/month at published rates.
         </p>
       </div>

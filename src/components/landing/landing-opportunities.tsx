@@ -39,7 +39,7 @@ export function LandingOpportunities() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid var(--gem-gray-700)' }}
+      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto" style={{ maxWidth: 800 }}>
         <p
@@ -54,7 +54,7 @@ export function LandingOpportunities() {
         >
           Real opportunities, right now.
         </h2>
-        <p className="text-[15px] text-[var(--gem-gray-400)] m-0 mb-10">
+        <p className="text-[15px] m-0 mb-10" style={{ color: 'rgba(255,255,255,0.5)' }}>
           These are live. Partners are actively reviewing submissions.
         </p>
 
@@ -68,7 +68,7 @@ export function LandingOpportunities() {
               className="flex flex-col gap-2 rounded-xl p-4"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid var(--gem-gray-700)',
+                border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
               <div className="flex items-center justify-between">
@@ -81,22 +81,23 @@ export function LandingOpportunities() {
                 >
                   &#128176; Paid
                 </span>
-                <span className="text-[12px] text-[var(--gem-gray-400)]">
+                <span className="text-[12px]" style={{ color: '#78716c' }}>
                   Posted {opp.posted}
                 </span>
               </div>
-              <h3 className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0">
+              <h3 className="text-[15px] font-bold m-0" style={{ color: '#1c1917' }}>
                 {opp.title}
               </h3>
-              <p className="text-[13px] text-[var(--gem-gray-400)] m-0">
-                <span className="font-bold text-[var(--gem-gray-300)]">Genre:</span> {opp.genre}
+              <p className="text-[13px] m-0" style={{ color: '#78716c' }}>
+                <span className="font-bold" style={{ color: '#57534e' }}>Genre:</span> {opp.genre}
               </p>
-              <p className="text-[13px] text-[var(--gem-gray-300)] m-0" style={{ lineHeight: 1.4 }}>
+              <p className="text-[13px] m-0" style={{ lineHeight: 1.4, color: '#57534e' }}>
                 {opp.description}
               </p>
               <Link
                 href={`/opportunities/${opp.slug}`}
-                className="text-[13px] font-semibold text-[var(--gem-gray-400)] hover:text-[var(--gem-accent)] transition-colors no-underline mt-auto"
+                className="text-[13px] font-semibold hover:text-[var(--gem-accent)] transition-colors no-underline mt-auto"
+                style={{ color: '#78716c' }}
               >
                 View details &rarr;
               </Link>

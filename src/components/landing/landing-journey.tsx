@@ -43,17 +43,17 @@ const steps = [
 
 export function LandingJourney() {
   return (
-    <section className="px-6 sm:px-10 py-20 sm:py-28" style={{ background: 'var(--gem-black)' }}>
+    <section className="px-6 sm:px-10 py-20 sm:py-28">
       <div className="max-w-[800px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-[13px] font-semibold uppercase tracking-wider m-0 mb-3" style={{ color: 'var(--gem-gold)' }}>
             How GEM works for you
           </p>
-          <h2 className="text-[28px] sm:text-[36px] font-bold leading-tight m-0 mb-4" style={{ fontFamily: 'Georgia, serif', color: 'var(--gem-gray-50)' }}>
+          <h2 className="text-[28px] sm:text-[36px] font-bold leading-tight m-0 mb-4" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
             Your partner at every step.
           </h2>
-          <p className="text-[16px] sm:text-[18px] m-0 max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--gem-gray-300)' }}>
+          <p className="text-[16px] sm:text-[18px] m-0 max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
             GEM helps you understand your work, build your portfolio, grow your reputation, and get found by the right people. One platform, from first draft to first meeting.
           </p>
         </div>
@@ -101,10 +101,10 @@ export function LandingJourney() {
               </div>
 
               {/* Content */}
-              <h3 className="text-[18px] sm:text-[20px] font-bold m-0 mb-2" style={{ color: 'var(--gem-gray-50)' }}>
+              <h3 className="text-[18px] sm:text-[20px] font-bold m-0 mb-2" style={{ color: '#ffffff' }}>
                 {step.title}
               </h3>
-              <p className="text-[15px] m-0 mb-4 leading-relaxed" style={{ color: 'var(--gem-gray-300)' }}>
+              <p className="text-[15px] m-0 mb-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 {step.description}
               </p>
 

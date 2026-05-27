@@ -22,7 +22,7 @@ export function LandingPrivacy() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ background: 'var(--gem-gray-900)', borderBottom: '1px solid var(--gem-gray-700)' }}
+      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto text-center" style={{ maxWidth: 800 }}>
         <p
@@ -33,13 +33,13 @@ export function LandingPrivacy() {
         </p>
         <h2
           className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] mb-4"
-          style={{ fontFamily: 'Georgia, serif', color: 'var(--gem-gray-50)' }}
+          style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
         >
           Your script stays private until you say otherwise.
         </h2>
         <p
           className="text-[15px] mx-auto mb-10"
-          style={{ color: 'var(--gem-gray-400)', maxWidth: 520, lineHeight: 1.6 }}
+          style={{ color: 'rgba(255,255,255,0.5)', maxWidth: 520, lineHeight: 1.6 }}
         >
           We built GEM the way a technology company should protect creative work. Not the way legacy platforms do it.
         </p>
@@ -52,7 +52,7 @@ export function LandingPrivacy() {
             <div
               key={card.title}
               className="rounded-xl p-5"
-              style={{ background: '#ffffff', border: '1px solid var(--gem-gray-700)' }}
+              style={{ background: '#ffffff', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               <div
                 className="flex items-center justify-center mb-3"
@@ -67,10 +67,10 @@ export function LandingPrivacy() {
               >
                 {card.icon}
               </div>
-              <h3 className="text-[15px] font-bold mb-1.5" style={{ color: 'var(--gem-gray-50)' }}>
+              <h3 className="text-[15px] font-bold mb-1.5" style={{ color: '#1c1917' }}>
                 {card.title}
               </h3>
-              <p className="text-[13px] m-0" style={{ color: 'var(--gem-gray-400)', lineHeight: 1.5 }}>
+              <p className="text-[13px] m-0" style={{ color: '#78716c', lineHeight: 1.5 }}>
                 {card.desc}
               </p>
             </div>

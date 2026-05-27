@@ -35,7 +35,7 @@ export default async function Home({
   if (user) redirect('/dashboard')
 
   return (
-    <div className="min-h-screen bg-[var(--gem-black)] text-[var(--gem-gray-50)]">
+    <div className="min-h-screen text-white" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)' }}>
       <LandingTracking />
       <LandingNav />
 

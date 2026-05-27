@@ -31,8 +31,7 @@ export function LandingPartners() {
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
       style={{
-        background: 'var(--gem-gray-900)',
-        borderBottom: '1px solid var(--gem-gray-700)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}
     >
       <div className="mx-auto" style={{ maxWidth: 800 }}>
@@ -44,11 +43,11 @@ export function LandingPartners() {
         </p>
         <h2
           className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-[1.15] m-0 mb-3"
-          style={{ fontFamily: 'Georgia, serif' }}
+          style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}
         >
           Who we work with.
         </h2>
-        <p className="text-[15px] text-[var(--gem-gray-400)] m-0 mb-8" style={{ maxWidth: 560 }}>
+        <p className="text-[15px] m-0 mb-8" style={{ maxWidth: 560, color: 'rgba(255,255,255,0.5)' }}>
           We partner with reps, producers, and development executives who have a demonstrated track record of delivering real value for writers &mdash; and a reputation for doing business the right way.
         </p>
 
@@ -59,9 +58,9 @@ export function LandingPartners() {
               key={pill}
               className="text-[13px] font-semibold rounded-lg px-3.5 py-2"
               style={{
-                color: 'var(--gem-gray-300)',
+                color: '#57534e',
                 background: '#FFFFFF',
-                border: '1px solid var(--gem-gray-700)',
+                border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
               {pill}
@@ -79,18 +78,18 @@ export function LandingPartners() {
                   width: 40,
                   height: 40,
                   borderRadius: 10,
-                  background: 'rgba(124,58,237,0.06)',
-                  border: '1px solid rgba(124,58,237,0.12)',
+                  background: 'rgba(124,58,237,0.15)',
+                  border: '1px solid rgba(124,58,237,0.3)',
                   fontSize: 18,
                 }}
               >
                 {point.emoji}
               </div>
               <div>
-                <h3 className="text-[15px] font-bold text-[var(--gem-gray-50)] m-0 mb-1">
+                <h3 className="text-[15px] font-bold m-0 mb-1" style={{ color: '#ffffff' }}>
                   {point.title}
                 </h3>
-                <p className="text-[14px] text-[var(--gem-gray-400)] m-0" style={{ lineHeight: 1.5 }}>
+                <p className="text-[14px] m-0" style={{ lineHeight: 1.5, color: 'rgba(255,255,255,0.5)' }}>
                   {point.desc}
                 </p>
               </div>
