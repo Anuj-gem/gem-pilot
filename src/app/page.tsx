@@ -1,12 +1,11 @@
-// Landing page — v17 (2026-05-16).
+// Landing page — v18 (2026-05-27).
 //
-// Hero → Activity → Journey → Compare → Privacy → Steps → Opportunities → Partners → Pro → Final CTA.
+// Hero (with live stats) → Journey → Compare → Privacy → Steps → Opportunities → Partners → Pro → Final CTA.
 
 import { redirect } from 'next/navigation'
 import { LandingTracking } from '@/components/landing-tracking'
 import { LandingNav } from '@/components/landing/landing-nav'
 import { LandingHero } from '@/components/landing/landing-hero'
-import { LandingActivity } from '@/components/landing/landing-activity'
 import { LandingJourney } from '@/components/landing/landing-journey'
 import { LandingCompare } from '@/components/landing/landing-compare'
 import { LandingPrivacy } from '@/components/landing/landing-privacy'
@@ -34,13 +33,20 @@ export default async function Home({
   const { data: { user } } = await supabase.auth.getUser()
   if (user) redirect('/dashboard')
 
+  // Live social proof counts (exclude internal @gem.studio accounts)
+  const [profilesRes, scriptsRes] = await Promise.all([
+    supabase.from('profiles').select('id', { count: 'exact', head: true }).not('email', 'ilike', '%@gem.studio'),
+    supabase.from('script_submissions').select('id', { count: 'exact', head: true }).not('user_id', 'is', null),
+  ])
+  const writerCount = profilesRes.count ?? 0
+  const scriptCount = scriptsRes.count ?? 0
+
   return (
     <div className="min-h-screen text-white" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)' }}>
       <LandingTracking />
       <LandingNav />
 
-      <LandingHero />
-      <LandingActivity />
+      <LandingHero writerCount={writerCount} scriptCount={scriptCount} />
       <LandingJourney />
       <LandingCompare />
       <LandingPrivacy />

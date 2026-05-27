@@ -1,23 +1,23 @@
-// LandingHero — v19.
-// Dark purple gradient bg (matches app). White card tells the GEM story:
-// writer uploads → scored → industry attaches → optioned.
+// LandingHero — v20.
+// Bigger title with gold "hits". Social proof stats below card.
 'use client'
 
 import Link from 'next/link'
 import { trackEvent } from '@/lib/posthog'
 
-export function LandingHero() {
+export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?: number; scriptCount?: number }) {
   return (
-    <section className="relative overflow-hidden px-6 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-28">
+    <section className="relative overflow-hidden px-6 sm:px-10 pt-16 sm:pt-24 pb-12 sm:pb-16">
       {/* Star dots */}
       <div className="absolute inset-0 opacity-15" style={{
         backgroundImage: 'radial-gradient(1.5px 1.5px at 15% 25%, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 35% 65%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 8% 75%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 92% 35%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 50% 8%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.4), transparent)',
       }} />
 
       <div className="relative max-w-3xl mx-auto text-center">
-        {/* Headline */}
-        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-bold text-white leading-[1.1] tracking-tight m-0 mb-3 sm:mb-4">
-          Where screenwriters develop their ideas into hits.
+        {/* Headline — bigger, "hits" in gold */}
+        <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-tight m-0 mb-3 sm:mb-4">
+          Where screenwriters develop their ideas into{' '}
+          <span style={{ color: '#d4a843' }}>hits.</span>
         </h1>
         <p className="text-[15px] sm:text-[17px] m-0 mb-8 sm:mb-10 max-w-lg mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
           The development network for screenwriters.
@@ -132,6 +132,27 @@ export function LandingHero() {
                 <span className="text-[11px]" style={{ color: '#9ca3af' }}>Actor</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Social proof stats — inline below card */}
+        <div className="flex items-center justify-center gap-8 sm:gap-12 mt-10 sm:mt-14">
+          <div className="text-center">
+            <span className="block text-[28px] sm:text-[32px] font-extrabold text-white leading-none">
+              {writerCount.toLocaleString()}
+            </span>
+            <span className="block text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              writers
+            </span>
+          </div>
+          <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.12)' }} />
+          <div className="text-center">
+            <span className="block text-[28px] sm:text-[32px] font-extrabold text-white leading-none">
+              {scriptCount.toLocaleString()}
+            </span>
+            <span className="block text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              scripts in development
+            </span>
           </div>
         </div>
       </div>
