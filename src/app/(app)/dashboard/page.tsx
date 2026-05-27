@@ -608,7 +608,7 @@ export default async function DashboardPage() {
         style={{
           position: 'fixed',
           inset: 0,
-          background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)',
+          background: '#2b1a55',
           pointerEvents: 'none',
           zIndex: 0,
         }}
