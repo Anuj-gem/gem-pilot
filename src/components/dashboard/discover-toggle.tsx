@@ -50,18 +50,18 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
       className="inline-flex items-center gap-2 cursor-pointer border-0 bg-transparent p-0 disabled:opacity-50 shrink-0"
       aria-label={on ? 'Published to Leaderboard' : 'Not published to Leaderboard'}
     >
-      <span className="text-[11px] font-bold text-white">
+      <span className="text-[11px] font-bold" style={{ color: '#111827' }}>
         Leaderboard
       </span>
       {/* Toggle switch with On/Off labels */}
       <span className="inline-flex items-center gap-1">
-        <span className="text-[10px] font-bold" style={{ color: on ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.7)' }}>Off</span>
+        <span className="text-[10px] font-bold" style={{ color: on ? 'rgba(0,0,0,0.25)' : 'rgba(0,0,0,0.6)' }}>Off</span>
         <span
           className="relative inline-flex items-center rounded-full transition-colors"
           style={{
             width: 36,
             height: 20,
-            background: on ? '#7c3aed' : 'rgba(255,255,255,0.2)',
+            background: on ? '#7c3aed' : '#d1d5db',
           }}
         >
           <span
@@ -74,7 +74,7 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
             }}
           />
         </span>
-        <span className="text-[10px] font-bold" style={{ color: on ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.3)' }}>On</span>
+        <span className="text-[10px] font-bold" style={{ color: on ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.25)' }}>On</span>
       </span>
     </button>
   )
