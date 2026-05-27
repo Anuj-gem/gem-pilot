@@ -10,19 +10,19 @@ const FEATURES = [
   'Portfolio reviews by our development team',
   'Direct partner matching',
   'Priority in opportunity matching',
-  'Publish to Leaderboard',
+  'Publish to Discover',
 ]
 
 export function LandingPro() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+      style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto text-center" style={{ maxWidth: 560 }}>
         <p
           className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
-          style={{ color: 'var(--gem-gold)' }}
+          style={{ color: '#d4a843' }}
         >
           Membership
         </p>
@@ -83,7 +83,7 @@ export function LandingPro() {
           href="/get-started"
           className="inline-block rounded-xl px-10 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:brightness-110 active:scale-[0.985]"
           style={{
-            background: 'var(--gem-accent)',
+            background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
             boxShadow: '0 6px 20px rgba(124,58,237,0.30)',
           }}
           onClick={() => {

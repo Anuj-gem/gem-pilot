@@ -22,12 +22,12 @@ export function LandingPrivacy() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+      style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto text-center" style={{ maxWidth: 800 }}>
         <p
           className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
-          style={{ color: 'var(--gem-gold)' }}
+          style={{ color: '#d4a843' }}
         >
           Your work, your control
         </p>

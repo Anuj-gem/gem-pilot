@@ -1,6 +1,7 @@
-// Landing page — v18 (2026-05-27).
+// Landing page — v19 (2026-05-27).
 //
-// Hero (with live stats) → Journey → Compare → Privacy → Steps → Opportunities → Partners → Pro → Final CTA.
+// Hero (side-by-side) → Journey → Compare → Privacy → Steps → Opportunities → Partners → Pro → Final CTA.
+// Solid deep purple background #2b1a55.
 
 import { redirect } from 'next/navigation'
 import { LandingTracking } from '@/components/landing-tracking'
@@ -33,20 +34,12 @@ export default async function Home({
   const { data: { user } } = await supabase.auth.getUser()
   if (user) redirect('/dashboard')
 
-  // Live social proof counts (exclude internal @gem.studio accounts)
-  const [profilesRes, scriptsRes] = await Promise.all([
-    supabase.from('profiles').select('id', { count: 'exact', head: true }).not('email', 'ilike', '%@gem.studio'),
-    supabase.from('script_submissions').select('id', { count: 'exact', head: true }).not('user_id', 'is', null),
-  ])
-  const writerCount = profilesRes.count ?? 0
-  const scriptCount = scriptsRes.count ?? 0
-
   return (
-    <div className="min-h-screen text-white" style={{ background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)' }}>
+    <div className="min-h-screen text-white" style={{ background: '#2b1a55' }}>
       <LandingTracking />
       <LandingNav />
 
-      <LandingHero writerCount={writerCount} scriptCount={scriptCount} />
+      <LandingHero />
       <LandingJourney />
       <LandingCompare />
       <LandingPrivacy />

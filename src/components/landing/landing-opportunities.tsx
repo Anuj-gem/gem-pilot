@@ -39,12 +39,12 @@ export function LandingOpportunities() {
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+      style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto" style={{ maxWidth: 800 }}>
         <p
           className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
-          style={{ color: 'var(--gem-gold)' }}
+          style={{ color: '#d4a843' }}
         >
           Open now
         </p>
@@ -75,7 +75,7 @@ export function LandingOpportunities() {
                 <span
                   className="text-[11px] font-bold rounded px-1.5 py-0.5"
                   style={{
-                    color: 'var(--gem-accent)',
+                    color: '#7c3aed',
                     background: 'rgba(124,58,237,0.06)',
                   }}
                 >
@@ -96,7 +96,7 @@ export function LandingOpportunities() {
               </p>
               <Link
                 href={`/opportunities/${opp.slug}`}
-                className="text-[13px] font-semibold hover:text-[var(--gem-accent)] transition-colors no-underline mt-auto"
+                className="text-[13px] font-semibold hover:opacity-80 transition-colors no-underline mt-auto"
                 style={{ color: '#78716c' }}
               >
                 View details &rarr;
@@ -109,7 +109,7 @@ export function LandingOpportunities() {
           <Link
             href="/opportunities"
             className="text-[14px] font-bold hover:underline"
-            style={{ color: 'var(--gem-accent)' }}
+            style={{ color: '#c4b5fd' }}
             onClick={() => {
               try { trackEvent('cta_clicked', { location: 'opportunities_section', label: 'Browse all' }) } catch {}
             }}

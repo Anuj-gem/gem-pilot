@@ -9,7 +9,7 @@ export function LandingFinalCTA() {
     <section
       className="px-6"
       style={{
-        background: 'linear-gradient(160deg, #0f0a1a 0%, #1a1035 30%, #2d1b4e 60%, #4c1d95 100%)',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
         padding: '80px 24px',
       }}
     >

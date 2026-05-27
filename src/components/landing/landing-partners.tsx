@@ -31,13 +31,13 @@ export function LandingPartners() {
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
       style={{
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
       }}
     >
       <div className="mx-auto" style={{ maxWidth: 800 }}>
         <p
           className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
-          style={{ color: 'var(--gem-gold)' }}
+          style={{ color: '#d4a843' }}
         >
           For partners
         </p>
@@ -58,9 +58,9 @@ export function LandingPartners() {
               key={pill}
               className="text-[13px] font-semibold rounded-lg px-3.5 py-2"
               style={{
-                color: '#57534e',
-                background: '#FFFFFF',
-                border: '1px solid rgba(255,255,255,0.08)',
+                color: '#d8b4fe',
+                background: 'rgba(168,85,247,0.12)',
+                border: '1px solid rgba(168,85,247,0.25)',
               }}
             >
               {pill}
@@ -101,7 +101,7 @@ export function LandingPartners() {
           <a
             href="#"
             className="text-[14px] font-bold hover:underline"
-            style={{ color: 'var(--gem-accent)' }}
+            style={{ color: '#c4b5fd' }}
           >
             Apply to become a partner &rarr;
           </a>

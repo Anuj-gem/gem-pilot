@@ -1,3 +1,4 @@
+// LandingSteps — v2. Dark bg contrast fix.
 'use client'
 
 import Link from 'next/link'
@@ -7,29 +8,29 @@ export function LandingSteps() {
     {
       num: 1,
       title: 'Upload your PDF',
-      desc: 'Drop in your screenplay. No account needed. Takes a few seconds.',
+      desc: 'Drop in your screenplay. No account needed.',
     },
     {
       num: 2,
       title: 'Get your evaluation',
-      desc: 'Full producer-style report — score, comparables, development notes, and where your script sits in the market. Ready in under a minute.',
+      desc: 'Score, comparables, development notes. Ready in under a minute.',
     },
     {
       num: 3,
       title: 'Apply for opportunities',
-      desc: 'Browse what’s open. Apply with one click. Partners respond directly in the app when your work is a fit.',
+      desc: 'Browse what’s open. Apply with one click. Partners respond directly.',
     },
   ]
 
   return (
     <section
       className="px-5 sm:px-8 py-16 sm:py-20"
-      style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+      style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
     >
       <div className="mx-auto" style={{ maxWidth: 800 }}>
         <p
           className="text-[11px] uppercase tracking-[0.32em] font-semibold mb-3"
-          style={{ color: 'var(--gem-gold)' }}
+          style={{ color: '#d4a843' }}
         >
           Get started
         </p>
@@ -42,7 +43,7 @@ export function LandingSteps() {
         <Link
           href="/get-started"
           className="inline-block rounded-lg px-5 py-2.5 font-semibold text-[15px] mb-9"
-          style={{ background: 'var(--gem-accent)', color: '#ffffff' }}
+          style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', color: '#ffffff' }}
         >
           Get started free &rarr;
         </Link>
@@ -56,9 +57,9 @@ export function LandingSteps() {
                   width: 40,
                   height: 40,
                   borderRadius: 12,
-                  background: 'rgba(124,58,237,0.2)',
-                  border: '1px solid rgba(124,58,237,0.4)',
-                  color: 'var(--gem-accent)',
+                  background: 'rgba(168,85,247,0.2)',
+                  border: '1px solid rgba(168,85,247,0.3)',
+                  color: '#d8b4fe',
                 }}
               >
                 {step.num}

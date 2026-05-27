@@ -1,131 +1,109 @@
+// LandingJourney — v2. Three feature cards on dark bg.
 'use client'
 
 import Link from 'next/link'
 import { trackEvent } from '@/lib/posthog'
 
-const steps = [
+const cards = [
   {
-    dotStyle: { background: 'linear-gradient(135deg, #7c3aed, #a855f7)' } as React.CSSProperties,
-    dotIcon: 'diamond' as const,
-    title: 'Detailed script coverage, instantly',
-    description: 'Upload any draft and get a full producer-style evaluation — built on research from thousands of produced screenplays. See exactly how real buyers would view your work. Improve unlimited drafts, track your progress.',
-    badge: '◇ Score 78 · 5 dimensions · comparables · dev notes',
-    badgeStyle: {
-      background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
-      color: '#fff',
-    },
+    icon: '◇',
+    iconBg: 'rgba(168,85,247,0.2)',
+    title: 'Instant coverage',
+    description: 'Full producer-style evaluation. Score, comparables, development notes. Ready in 60 seconds.',
+    badge: '◇ Score 78 · 5 dimensions',
+    badgeBg: 'rgba(168,85,247,0.15)',
+    badgeBorder: 'rgba(168,85,247,0.3)',
+    badgeColor: '#d8b4fe',
   },
   {
-    dotStyle: { background: '#fff7ed', border: '1.5px solid #fed7aa' } as React.CSSProperties,
-    dotIcon: 'fire' as const,
-    title: 'Build your portfolio. Build your heat.',
-    description: 'Every script you evaluate becomes part of your portfolio on GEM. As industry partners read your work and engage with it, you build heat — real signal that your writing is getting noticed. Rise on the leaderboard. Build distinction.',
-    badge: '🔥 Heat 14 — partners are reading your work',
-    badgeStyle: {
-      background: '#fff7ed',
-      border: '1.5px solid #fed7aa',
-      color: '#ea580c',
-    },
+    icon: '🔥',
+    iconBg: 'rgba(251,146,60,0.15)',
+    title: 'Build your heat',
+    description: 'As industry partners read your work, you build heat — real signal that your writing is getting noticed.',
+    badge: '🔥 Heat 14 — partners reading',
+    badgeBg: 'rgba(251,146,60,0.12)',
+    badgeBorder: 'rgba(251,146,60,0.25)',
+    badgeColor: '#fdba74',
   },
   {
-    dotStyle: { background: '#e8f5e9', border: '1.5px solid rgba(21,128,61,0.3)' } as React.CSSProperties,
-    dotIcon: 'money' as const,
-    title: 'Matched to real industry opportunities.',
-    description: 'Our network of reps and producers post open opportunities for writers and are constantly searching for scripts by GEM writers. When your work is a fit for what they\'re looking for, you connect with them directly.',
-    badge: '3 opportunities matched — apply directly',
-    badgeStyle: {
-      background: 'rgba(21,128,61,0.08)',
-      border: '1.5px solid rgba(21,128,61,0.2)',
-      color: '#15803d',
-    },
+    icon: '💰',
+    iconBg: 'rgba(52,211,153,0.15)',
+    title: 'Get matched',
+    description: 'Reps and producers post open opportunities. When your work fits, you connect directly.',
+    badge: '3 opportunities matched',
+    badgeBg: 'rgba(52,211,153,0.1)',
+    badgeBorder: 'rgba(52,211,153,0.2)',
+    badgeColor: '#6ee7b7',
   },
 ]
 
 export function LandingJourney() {
   return (
-    <section className="px-6 sm:px-10 py-20 sm:py-28">
-      <div className="max-w-[800px] mx-auto">
+    <section className="px-6 sm:px-10 py-20 sm:py-28" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <p className="text-[13px] font-semibold uppercase tracking-wider m-0 mb-3" style={{ color: 'var(--gem-gold)' }}>
+          <p className="text-[13px] font-semibold uppercase tracking-wider m-0 mb-3" style={{ color: '#d4a843' }}>
             How GEM works for you
           </p>
           <h2 className="text-[28px] sm:text-[36px] font-bold leading-tight m-0 mb-4" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
             Your partner at every step.
           </h2>
-          <p className="text-[16px] sm:text-[18px] m-0 max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            GEM helps you understand your work, build your portfolio, grow your reputation, and get found by the right people. One platform, from first draft to first meeting.
+          <p className="text-[16px] sm:text-[18px] m-0 max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            From first draft to first meeting. One platform.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative pl-8 sm:pl-10">
-          {/* Vertical gradient line */}
-          <div
-            className="absolute left-[10px] sm:left-[14px] top-3 bottom-3 w-[2px]"
-            style={{
-              background: 'linear-gradient(180deg, #7c3aed 0%, #a855f7 30%, #fb923c 65%, #15803d 100%)',
-            }}
-          />
-
-          {steps.map((step, i) => (
-            <div key={i} className="relative mb-12 last:mb-0">
-              {/* Dot */}
+        {/* Three cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {cards.map((card) => (
+            <div
+              key={card.title}
+              className="rounded-2xl p-5"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}
+            >
               <div
-                className="absolute flex items-center justify-center rounded-full"
+                className="flex items-center justify-center mb-3"
                 style={{
-                  left: -32,
-                  top: 4,
-                  width: 22,
-                  height: 22,
-                  ...step.dotStyle,
+                  width: 40,
+                  height: 40,
+                  borderRadius: 10,
+                  background: card.iconBg,
+                  fontSize: 18,
                 }}
               >
-                {step.dotIcon === 'diamond' && (
-                  <span
-                    className="block"
-                    style={{
-                      width: 8,
-                      height: 8,
-                      background: 'rgba(255,255,255,0.85)',
-                      transform: 'rotate(45deg)',
-                    }}
-                  />
-                )}
-                {step.dotIcon === 'fire' && (
-                  <span className="text-[11px] leading-none">🔥</span>
-                )}
-                {step.dotIcon === 'money' && (
-                  <span className="text-[11px] leading-none">💰</span>
-                )}
+                {card.icon}
               </div>
-
-              {/* Content */}
-              <h3 className="text-[18px] sm:text-[20px] font-bold m-0 mb-2" style={{ color: '#ffffff' }}>
-                {step.title}
+              <h3 className="text-[16px] font-bold mb-2" style={{ color: '#ffffff' }}>
+                {card.title}
               </h3>
-              <p className="text-[15px] m-0 mb-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                {step.description}
+              <p className="text-[13px] m-0 mb-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                {card.description}
               </p>
-
-              {/* Motif badge */}
               <span
-                className="inline-block text-[12px] font-medium rounded-full px-3 py-1.5"
-                style={step.badgeStyle}
+                className="inline-block text-[11px] font-medium rounded-full px-3 py-1.5"
+                style={{
+                  background: card.badgeBg,
+                  border: `1px solid ${card.badgeBorder}`,
+                  color: card.badgeColor,
+                }}
               >
-                {step.badge}
+                {card.badge}
               </span>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-14">
+        <div className="text-center mt-12">
           <Link
             href="/get-started"
             onClick={() => { try { trackEvent('cta_clicked', { location: 'journey', label: 'Get started free' }) } catch {} }}
             className="text-[16px] font-semibold no-underline hover:underline"
-            style={{ color: 'var(--gem-accent)' }}
+            style={{ color: '#c4b5fd' }}
           >
             Get started free →
           </Link>

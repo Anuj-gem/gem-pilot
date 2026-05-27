@@ -1,48 +1,41 @@
-// LandingHero — v20.
-// Bigger title with gold "hits". Social proof stats below card.
+// LandingHero — v21. Side-by-side: text left, card right.
 'use client'
 
 import Link from 'next/link'
 import { trackEvent } from '@/lib/posthog'
 
-export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?: number; scriptCount?: number }) {
+export function LandingHero() {
   return (
     <section className="relative overflow-hidden px-6 sm:px-10 pt-16 sm:pt-24 pb-12 sm:pb-16">
-      {/* Star dots */}
-      <div className="absolute inset-0 opacity-15" style={{
-        backgroundImage: 'radial-gradient(1.5px 1.5px at 15% 25%, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 35% 65%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 8% 75%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 92% 35%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 50% 8%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.4), transparent)',
-      }} />
+      <div className="relative max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+        {/* Left — text */}
+        <div className="text-center md:text-left">
+          <h1 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.08] tracking-tight m-0 mb-4">
+            Where screenwriters develop their ideas into{' '}
+            <span style={{ color: '#d4a843' }}>hits.</span>
+          </h1>
+          <p className="text-[15px] sm:text-[16px] m-0 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            Upload your script. Get instant coverage. Connect with the industry partners who can help get your project made.
+          </p>
+          <Link
+            id="hero-cta"
+            href="/get-started"
+            onClick={() => { try { trackEvent('cta_clicked', { location: 'hero', label: 'Get started' }) } catch {} }}
+            className="inline-block px-10 py-3.5 rounded-xl text-[16px] font-semibold text-white no-underline cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98]"
+            style={{
+              background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+            }}
+          >
+            Get started
+          </Link>
+        </div>
 
-      <div className="relative max-w-3xl mx-auto text-center">
-        {/* Headline — bigger, "hits" in gold */}
-        <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-tight m-0 mb-3 sm:mb-4">
-          Where screenwriters develop their ideas into{' '}
-          <span style={{ color: '#d4a843' }}>hits.</span>
-        </h1>
-        <p className="text-[15px] sm:text-[17px] m-0 mb-8 sm:mb-10 max-w-lg mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-          The development network for screenwriters.
-        </p>
-
-        {/* CTA */}
-        <Link
-          id="hero-cta"
-          href="/get-started"
-          onClick={() => { try { trackEvent('cta_clicked', { location: 'hero', label: 'Get started' }) } catch {} }}
-          className="inline-block px-10 py-3.5 rounded-xl text-[16px] font-semibold text-white no-underline cursor-pointer transition-all hover:scale-[1.04] active:scale-[0.98] mb-10 sm:mb-14"
-          style={{
-            background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
-            boxShadow: '0 4px 20px rgba(124,58,237,0.45)',
-          }}
-        >
-          Get started
-        </Link>
-
-        {/* The Card */}
+        {/* Right — the Card */}
         <div
-          className="max-w-[420px] mx-auto rounded-2xl text-left overflow-hidden"
+          className="max-w-[420px] mx-auto md:mx-0 rounded-2xl text-left overflow-hidden"
           style={{
             background: '#ffffff',
-            boxShadow: '0 8px 40px rgba(0,0,0,0.35)',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
           }}
         >
           {/* OPTIONED bar */}
@@ -89,7 +82,6 @@ export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?
             </div>
 
             <div className="flex flex-col gap-2">
-              {/* Meridian Pictures */}
               <div className="flex items-center gap-2">
                 <div className="w-[22px] h-[22px] rounded-[5px] flex items-center justify-center shrink-0" style={{ background: '#10b981' }}>
                   <span className="text-[8px] font-extrabold text-white" style={{ letterSpacing: '-0.3px' }}>MP</span>
@@ -97,7 +89,6 @@ export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?
                 <span className="text-[12px] font-medium" style={{ color: '#374151' }}>Meridian Pictures</span>
                 <span className="text-[11px]" style={{ color: '#9ca3af' }}>Producer</span>
               </div>
-              {/* Kate Park */}
               <div className="flex items-center gap-2">
                 <svg width="22" height="22" viewBox="0 0 22 22" className="rounded-full shrink-0">
                   <circle cx="11" cy="11" r="11" fill="#ec4899"/>
@@ -110,7 +101,6 @@ export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?
                 <span className="text-[12px] font-medium" style={{ color: '#374151' }}>Kate Park</span>
                 <span className="text-[11px]" style={{ color: '#9ca3af' }}>Director</span>
               </div>
-              {/* GSK Talent */}
               <div className="flex items-center gap-2">
                 <div className="w-[22px] h-[22px] rounded-[5px] flex items-center justify-center shrink-0" style={{ background: '#1e293b' }}>
                   <span className="text-[7px] font-extrabold" style={{ color: '#fb923c', letterSpacing: '-0.3px' }}>GSK</span>
@@ -118,7 +108,6 @@ export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?
                 <span className="text-[12px] font-medium" style={{ color: '#374151' }}>GSK Talent</span>
                 <span className="text-[11px]" style={{ color: '#9ca3af' }}>Talent Rep</span>
               </div>
-              {/* James Moto */}
               <div className="flex items-center gap-2">
                 <svg width="22" height="22" viewBox="0 0 22 22" className="rounded-full shrink-0">
                   <circle cx="11" cy="11" r="11" fill="#38bdf8"/>
@@ -132,27 +121,6 @@ export function LandingHero({ writerCount = 0, scriptCount = 0 }: { writerCount?
                 <span className="text-[11px]" style={{ color: '#9ca3af' }}>Actor</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Social proof stats — inline below card */}
-        <div className="flex items-center justify-center gap-8 sm:gap-12 mt-10 sm:mt-14">
-          <div className="text-center">
-            <span className="block text-[28px] sm:text-[32px] font-extrabold text-white leading-none">
-              {writerCount.toLocaleString()}
-            </span>
-            <span className="block text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              writers
-            </span>
-          </div>
-          <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.12)' }} />
-          <div className="text-center">
-            <span className="block text-[28px] sm:text-[32px] font-extrabold text-white leading-none">
-              {scriptCount.toLocaleString()}
-            </span>
-            <span className="block text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              scripts in development
-            </span>
           </div>
         </div>
       </div>
