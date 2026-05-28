@@ -182,8 +182,6 @@ export default function GetStartedClient() {
     }
 
     if (data.user?.id) {
-      setUserId(data.user.id)
-
       identifyUser(data.user.id, { email, full_name: fullName })
 
       // Save phone + SMS consent
@@ -205,7 +203,16 @@ export default function GetStartedClient() {
         keepalive: true,
       }).catch(() => {})
 
-      goTo('profile')
+      // If Supabase returned a session, the user is confirmed — proceed
+      if (data.session) {
+        setUserId(data.user.id)
+        goTo('profile')
+      } else {
+        // Email confirmation required — can't proceed to profile
+        // because there's no valid session for server-side pages
+        setError('Check your email to confirm your account, then log in to set up your profile.')
+        setLoading(false)
+      }
     } else {
       setError('Something went wrong. Please try again.')
       setLoading(false)
