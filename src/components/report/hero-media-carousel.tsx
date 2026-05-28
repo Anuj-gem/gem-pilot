@@ -197,23 +197,23 @@ export default function HeroMediaCarousel({
       <div className="w-full max-w-[520px]">
         <button
           onClick={() => posterInputRef.current?.click()}
-          className="w-full rounded-xl flex flex-col items-center justify-center gap-3 transition-all hover:bg-[rgba(255,255,255,0.04)] cursor-pointer"
+          className="w-full rounded-xl flex flex-col items-center justify-center gap-3 transition-all hover:bg-[rgba(0,0,0,0.04)] cursor-pointer"
           style={{
             aspectRatio: '4/3',
-            background: 'rgba(255,255,255,0.02)',
-            border: '2px dashed rgba(255,255,255,0.12)',
+            background: 'rgba(0,0,0,0.02)',
+            border: '2px dashed rgba(0,0,0,0.15)',
           }}
         >
           {uploading ? (
             <div className="w-8 h-8 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
           ) : (
             <>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.25)" strokeWidth="1.5">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
               </svg>
-              <span className="text-sm text-[rgba(255,255,255,0.35)]">Add a photo</span>
+              <span className="text-sm" style={{ color: '#78716C' }}>Add a photo</span>
             </>
           )}
         </button>
