@@ -7,7 +7,7 @@ export const contentType = 'image/png'
 
 const DEEP_PURPLE = '#2b1a55'
 const PURPLE = '#7C3AED'
-const LIGHT_PURPLE = '#a78bfa'
+const GOLD = '#d4a843'
 
 export default async function DiscoverOpengraphImage() {
   return new ImageResponse(
@@ -24,27 +24,34 @@ export default async function DiscoverOpengraphImage() {
           color: '#ffffff',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            fontSize: 14,
-            fontWeight: 700,
-            letterSpacing: 4,
-            color: LIGHT_PURPLE,
-            marginBottom: 20,
-          }}
-        >
-          GEM
+        {/* GEM logo */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
+          <div
+            style={{
+              display: 'flex',
+              width: 22,
+              height: 22,
+              transform: 'rotate(45deg)',
+              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+              borderRadius: 3,
+            }}
+          />
+          <div style={{ display: 'flex', fontSize: 28, fontWeight: 700, letterSpacing: 1 }}>
+            GEM
+          </div>
         </div>
+
+        {/* Title in gold */}
         <div
           style={{
             display: 'flex',
             fontFamily: 'Georgia, serif',
-            fontSize: 48,
+            fontSize: 56,
             fontWeight: 700,
             lineHeight: 1.1,
             letterSpacing: -1.5,
             marginBottom: 12,
+            color: GOLD,
           }}
         >
           The Leaderboard
@@ -52,67 +59,128 @@ export default async function DiscoverOpengraphImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: 20,
-            color: 'rgba(255,255,255,0.6)',
+            fontSize: 22,
+            color: 'rgba(255,255,255,0.85)',
             lineHeight: 1.4,
-            marginBottom: 36,
-            maxWidth: 700,
+            marginBottom: 40,
           }}
         >
           The best unproduced screenplays in Hollywood, ranked.
         </div>
 
-        <div style={{ display: 'flex', gap: 16 }}>
-          {[
-            { rank: 1, title: 'Oldest Friend', genre: 'Drama', score: 84, author: 'Jessilyn King' },
-            { rank: 2, title: 'SWITCHED SKIN', genre: 'Thriller', score: 81, author: 'Mycah Roberts' },
-            { rank: 3, title: 'The Union', genre: 'Drama', score: 79, author: 'Jessilyn King' },
-          ].map((card) => (
+        {/* Single featured card */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            background: '#ffffff',
+            borderRadius: 16,
+            padding: '24px 28px',
+            maxWidth: 480,
+            boxShadow: '0 6px 24px rgba(0,0,0,0.25)',
+            position: 'relative',
+          }}
+        >
+          {/* #1 badge */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'absolute',
+              top: -12,
+              left: -12,
+              width: 40,
+              height: 40,
+              borderRadius: 999,
+              background: PURPLE,
+              color: '#fff',
+              fontSize: 16,
+              fontWeight: 800,
+            }}
+          >
+            #1
+          </div>
+
+          {/* Author */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
             <div
-              key={card.title}
               style={{
                 display: 'flex',
-                flexDirection: 'column',
-                flex: 1,
-                background: '#ffffff',
-                borderRadius: 12,
-                padding: 20,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-                position: 'relative',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 28,
+                height: 28,
+                borderRadius: 999,
+                background: '#8b5cf6',
+                color: '#fff',
+                fontSize: 11,
+                fontWeight: 700,
               }}
             >
+              JE
+            </div>
+            <div style={{ display: 'flex', fontSize: 13, color: '#9ca3af' }}>Jordan Ellis</div>
+          </div>
+
+          {/* Title + genre */}
+          <div
+            style={{
+              display: 'flex',
+              fontFamily: 'Georgia, serif',
+              fontSize: 26,
+              fontWeight: 700,
+              color: '#111827',
+              marginBottom: 4,
+              lineHeight: 1.2,
+            }}
+          >
+            Oldest Friend
+          </div>
+          <div style={{ display: 'flex', fontSize: 14, color: '#9ca3af', fontWeight: 600, marginBottom: 16 }}>
+            Feature · Drama
+          </div>
+
+          {/* Divider */}
+          <div style={{ display: 'flex', height: 1, background: '#f3f4f6', marginBottom: 16 }} />
+
+          {/* Score + Heat */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div style={{ display: 'flex', fontSize: 13, fontWeight: 600, color: '#6b7280' }}>GEM Score</div>
+              <div style={{ display: 'flex', fontSize: 26, fontWeight: 800, color: PURPLE }}>84</div>
               <div
                 style={{
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'absolute',
-                  top: -8,
-                  left: -8,
-                  width: 28,
-                  height: 28,
+                  fontSize: 11,
+                  fontWeight: 700,
+                  padding: '3px 8px',
                   borderRadius: 999,
-                  background: card.rank === 1 ? PURPLE : card.rank === 2 ? '#8b5cf6' : LIGHT_PURPLE,
-                  color: '#fff',
-                  fontSize: 13,
-                  fontWeight: 800,
+                  background: '#f3f0ff',
+                  color: PURPLE,
                 }}
               >
-                {card.rank}
+                #1
               </div>
-              <div style={{ display: 'flex', fontFamily: 'Georgia, serif', fontSize: 19, fontWeight: 700, color: '#111827', marginBottom: 6, lineHeight: 1.2 }}>
-                {card.title}
-              </div>
-              <div style={{ display: 'flex', fontSize: 12, color: '#6b7280', fontWeight: 600, marginBottom: 14 }}>
-                {card.genre}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-                <div style={{ display: 'flex', fontSize: 11, fontWeight: 600, color: '#6b7280' }}>GEM Score</div>
-                <div style={{ display: 'flex', fontSize: 20, fontWeight: 800, color: PURPLE }}>{card.score}</div>
-              </div>
-              <div style={{ display: 'flex', fontSize: 11, color: '#9ca3af', fontStyle: 'italic' }}>By {card.author}</div>
             </div>
-          ))}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div style={{ display: 'flex', fontSize: 13, fontWeight: 600, color: '#6b7280' }}>Project Heat</div>
+              <div style={{ display: 'flex', fontSize: 26, fontWeight: 800, color: '#f97316' }}>12</div>
+              <div
+                style={{
+                  display: 'flex',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  padding: '3px 8px',
+                  borderRadius: 999,
+                  background: '#fff7ed',
+                  color: '#f97316',
+                }}
+              >
+                #1
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     ),
