@@ -309,7 +309,6 @@ export default function Nav({ userData }: NavProps = {}) {
               <div className="border-t border-white/10 my-1" />
               {/* Other nav links */}
               {navLinks.map(link => {
-                const Icon = link.icon
                 const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
                 return (
                   <Link
@@ -319,7 +318,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       active ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    {link.emoji ? <span className="text-[15px] leading-none">{link.emoji}</span> : Icon ? <Icon size={16} /> : null}
+                    <span className="text-[15px] leading-none">{link.emoji}</span>
                     {link.label}
                   </Link>
                 )
