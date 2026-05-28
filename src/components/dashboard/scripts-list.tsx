@@ -5,10 +5,19 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
-import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
-import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
+import { HeatBreakdown } from '@/components/dashboard/heat-breakdown'
+import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
 import { useNewUploads } from '@/hooks/use-new-uploads'
+
+type CollabInfo = {
+  id: string
+  email: string
+  name: string | null
+  avatarUrl: string | null
+  role: string
+  status: string
+}
 
 type ScriptRow = {
   id: string
@@ -21,8 +30,15 @@ type ScriptRow = {
   createdAt: string
   heat: number
   collaboratorCount: number
+  collabHeatCount?: number
+  collaborators?: CollabInfo[]
   posterUrl: string | null
   isPublic: boolean
+  qualifyingOpps?: { id: string; title: string; slug: string; subtitle: string | null }[]
+  availableOppCount?: number
+  pendingAppCount?: number
+  scoreRank?: number | null
+  heatRank?: number | null
   matchingOpportunities?: { title: string; slug: string }[]
   isProcessing?: boolean
   isLocked?: boolean
@@ -180,23 +196,23 @@ export function ScriptsList({
         </div>
       )}
 
-      {/* Script list — single column, dashboard-style compact rows */}
+      {/* Script list — white expanded cards matching dashboard */}
       {sortedVisible.length === 0 && optimistic.length === 0 ? (
-        <div className="px-6 py-10 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 4 }}>
-          <p className="text-[14px] font-semibold text-white m-0 mb-1">No scripts yet</p>
-          <p className="text-[13px] m-0" style={{ color: 'rgba(255,255,255,1)' }}>Upload your first screenplay to get a full evaluation.</p>
+        <div className="px-6 py-10 text-center" style={{ background: '#ffffff', border: '1px dashed #d1d5db', borderRadius: 4 }}>
+          <p className="text-[14px] font-semibold m-0 mb-1" style={{ color: '#111827' }}>No scripts yet</p>
+          <p className="text-[13px] m-0" style={{ color: '#6b7280' }}>Upload your first screenplay to get a full evaluation.</p>
         </div>
       ) : (
         <div className="space-y-1.5">
           {/* Optimistic processing cards */}
           {optimistic.map(s => (
-            <div key={s.id} className="flex items-center gap-2.5 px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+            <div key={s.id} className="flex items-center gap-2.5 px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
               <div className="w-[40px] h-[50px] shrink-0 rounded flex items-center justify-center" style={{ background: placeholderGradient }}>
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[14px] font-semibold text-white m-0 truncate">{s.title}</p>
-                <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>Evaluating...</p>
+                <p className="text-[14px] font-semibold m-0 truncate" style={{ color: '#111827' }}>{s.title}</p>
+                <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>Evaluating...</p>
               </div>
             </div>
           ))}
@@ -205,13 +221,13 @@ export function ScriptsList({
           {sortedVisible.map(s => {
             if (s.isProcessing) {
               return (
-                <div key={s.id} className="flex items-center gap-2.5 px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}>
+                <div key={s.id} className="flex items-center gap-2.5 px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
                   <div className="w-[40px] h-[50px] shrink-0 rounded flex items-center justify-center" style={{ background: placeholderGradient }}>
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[14px] font-semibold text-white m-0 truncate">{s.title}</p>
-                    <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>Evaluating...</p>
+                    <p className="text-[14px] font-semibold m-0 truncate" style={{ color: '#111827' }}>{s.title}</p>
+                    <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>Evaluating...</p>
                   </div>
                 </div>
               )
@@ -219,7 +235,6 @@ export function ScriptsList({
 
             const rounded = s.score ? Math.round(s.score) : null
             const reportHref = s.evaluationId ? `/report/${s.evaluationId}` : '/scripts'
-            const oppCount = s.matchingOpportunities?.length ?? 0
 
             return (
               <div key={s.id} className={`flex gap-2 items-start ${deleting.has(s.id) ? 'opacity-40 pointer-events-none' : ''}`}>
@@ -239,18 +254,18 @@ export function ScriptsList({
                   </button>
                 )}
 
-                {/* Card */}
+                {/* Card — white expanded style matching dashboard */}
                 <div
                   className="flex-1 min-w-0 relative px-3 py-2.5"
-                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4 }}
+                  style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
                 >
                   {s.isLocked && (
-                    <div className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center" style={{ borderRadius: 4 }}>
+                    <div className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center" style={{ borderRadius: 8 }}>
                       <UpgradePill />
                     </div>
                   )}
 
-                  {/* Title row with poster + three-dot menu */}
+                  {/* Row 1: poster + title + format/genre/date + menu */}
                   <div className="flex items-start gap-2.5">
                     <Link href={reportHref} className="flex-1 min-w-0 no-underline group">
                       <div className="flex items-center gap-2.5">
@@ -260,8 +275,8 @@ export function ScriptsList({
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
-                          <p className="text-[14px] font-semibold text-white m-0 truncate group-hover:text-purple-300 transition-colors">{s.title}</p>
-                          <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: 'rgba(255,255,255,1)' }}>
+                          <p className="text-[14px] font-semibold m-0 truncate group-hover:text-purple-600 transition-colors" style={{ color: '#111827' }}>{s.title}</p>
+                          <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>
                             {[s.format, s.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(s.createdAt)].filter(Boolean).join(' · ')}
                           </p>
                         </div>
@@ -272,28 +287,41 @@ export function ScriptsList({
                     )}
                   </div>
 
-                  {/* Stats row — score, heat | add collaborators | opps | leaderboard */}
-                  <div className="flex items-center gap-0 mt-2 flex-wrap" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 6 }}>
-                    <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
-                      {gemDiamond(7)} {rounded || '—'}
-                    </span>
-                    <span className="text-[12px] shrink-0 ml-3" style={{ color: '#fb923c' }}>🔥 {s.heat}</span>
-                    {/* Separator */}
-                    <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
-                    <AddCollaboratorButton scriptId={s.id} collaboratorCount={s.collaboratorCount} />
-                    {oppCount > 0 && (
-                      <>
-                        <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
-                        <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(52,211,153,0.15)', color: '#34d399', borderRadius: 3 }}>
-                          {oppCount} {oppCount === 1 ? 'opportunity' : 'opportunities'}
-                        </span>
-                      </>
+                  {/* Row 2: GEM Score + rank | HeatBreakdown | View report → */}
+                  <div className="flex items-center mt-2" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>GEM Score</span>
+                      <span className="inline-flex">{gemDiamond(5)}</span>
+                      <span className="text-[15px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
+                      {s.isPublic && s.scoreRank ? (
+                        <span className="text-[11px] font-semibold" style={{ color: '#7c3aed' }}>#{s.scoreRank}</span>
+                      ) : (
+                        <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
+                      )}
+                    </div>
+                    <div className="ml-4">
+                      <HeatBreakdown heat={s.heat} heatRank={s.heatRank ?? null} isPublic={s.isPublic} collabHeatCount={s.collabHeatCount ?? 0} />
+                    </div>
+                    <span className="flex-1" />
+                    {s.evaluationId && (
+                      <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
+                        View report →
+                      </Link>
                     )}
-                    <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.12)', display: 'inline-block' }} />
-                    <span className="shrink-0">
-                      <DiscoverToggle scriptId={s.id} isPublic={s.isPublic} isAnon={false} />
-                    </span>
                   </div>
+
+                  {/* Row 3: Grow your heat — collapsible */}
+                  <GrowHeatSection
+                    scriptId={s.id}
+                    isPublic={s.isPublic}
+                    collaboratorCount={s.collaboratorCount}
+                    collaborators={s.collaborators || []}
+                    availableOppCount={s.availableOppCount ?? 0}
+                    pendingAppCount={s.pendingAppCount ?? 0}
+                    heat={s.heat}
+                    isCollab={false}
+                    qualifyingOpps={s.qualifyingOpps || []}
+                  />
                 </div>
               </div>
             )
