@@ -156,7 +156,6 @@ export default function Nav({ userData }: NavProps = {}) {
 
                   {/* Flat nav links */}
                   {navLinks.map(link => {
-                    const Icon = link.icon
                     const active = pathname.startsWith(link.href)
                     return (
                       <Link
@@ -168,7 +167,7 @@ export default function Nav({ userData }: NavProps = {}) {
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
-                        {link.emoji ? <span className="text-[15px] leading-none">{link.emoji}</span> : Icon ? <Icon size={16} /> : null}
+                        <span className="text-[15px] leading-none">{link.emoji}</span>
                         {link.label}
                         {active && (
                           <span
@@ -234,7 +233,6 @@ export default function Nav({ userData }: NavProps = {}) {
               <div className="hidden md:flex flex-1 items-center justify-end ml-6">
                 <div className="flex items-center gap-1">
                   {navLinks.map(link => {
-                    const Icon = link.icon
                     const active = link.href === '/'
                       ? pathname === '/'
                       : pathname.startsWith(link.href)
@@ -248,7 +246,7 @@ export default function Nav({ userData }: NavProps = {}) {
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
-                        {link.emoji ? <span className="text-[15px] leading-none">{link.emoji}</span> : Icon ? <Icon size={16} /> : null}
+                        <span className="text-[15px] leading-none">{link.emoji}</span>
                         {link.label}
                         {active && (
                           <span
