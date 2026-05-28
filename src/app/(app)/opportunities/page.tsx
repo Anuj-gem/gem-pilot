@@ -174,7 +174,7 @@ export default async function OpportunitiesPage() {
       marginBottom: '-64px',
       paddingBottom: '64px',
     }}>
-    <div className="px-4 sm:px-6">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6">
       {/* Header */}
       <div className="mb-6">
         <h1
