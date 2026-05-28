@@ -17,6 +17,7 @@ import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
 import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
+import { HeatBreakdown } from '@/components/dashboard/heat-breakdown'
 // DashboardTabs removed — writer dashboard is now a flat two-column layout
 import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
@@ -961,15 +962,8 @@ export default async function DashboardPage() {
                               <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
                             )}
                           </div>
-                          <div className="flex items-center gap-1.5 ml-4">
-                            <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>Project Heat</span>
-                            <span className="text-[11px]">🔥</span>
-                            <span className="text-[15px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#d1d5db' }}>{script.heat}</span>
-                            {script.isPublic && script.heat > 0 && script.heatRank ? (
-                              <span className="text-[11px] font-semibold" style={{ color: '#ea580c' }}>#{script.heatRank}</span>
-                            ) : (
-                              <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
-                            )}
+                          <div className="ml-4">
+                            <HeatBreakdown heat={script.heat} heatRank={script.heatRank} isPublic={script.isPublic} collaboratorCount={script.collaboratorCount} />
                           </div>
                           <span className="flex-1" />
                           {script.evaluationId && (

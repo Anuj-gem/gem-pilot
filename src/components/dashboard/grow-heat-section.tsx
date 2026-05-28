@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { AddCollaboratorButton } from './add-collaborator-button'
 import { DiscoverToggle } from './discover-toggle'
@@ -39,14 +40,28 @@ export function GrowHeatSection({
   isAnon,
   qualifyingOpps = [],
 }: Props) {
+  const router = useRouter()
   const [oppsExpanded, setOppsExpanded] = useState(false)
   const [collabsExpanded, setCollabsExpanded] = useState(false)
+  const [removing, setRemoving] = useState<string | null>(null)
 
   const accepted = collaborators.filter(c => c.status === 'accepted')
   const pending = collaborators.filter(c => c.status === 'pending')
   const totalCount = accepted.length + pending.length
-  const showAvatars = accepted.length > 0 || pending.length > 0
+  const allCollabs = [...accepted, ...pending]
   const MAX_VISIBLE = 4
+
+  async function handleRemove(collabId: string) {
+    setRemoving(collabId)
+    try {
+      await fetch(`/api/scripts/${scriptId}/collaborators?collabId=${collabId}`, { method: 'DELETE' })
+      router.refresh()
+    } catch {
+      // silent
+    } finally {
+      setRemoving(null)
+    }
+  }
 
   return (
     <div style={{ borderTop: '1px solid #f3f4f6', marginTop: 8 }}>
@@ -65,21 +80,18 @@ export function GrowHeatSection({
               <div className="flex-1 min-w-0">
                 <p className="text-[12px] font-semibold m-0" style={{ color: '#111827' }}>
                   Collaborators
-                  {totalCount > 0 && (
-                    <span className="font-normal" style={{ color: '#6b7280' }}> ({totalCount})</span>
-                  )}
+                  <span className="font-normal" style={{ color: '#6b7280' }}> ({totalCount})</span>
                 </p>
                 <p className="text-[11px] m-0 mt-0.5" style={{ color: '#6b7280' }}>+1 🔥 heat each</p>
               </div>
               <AddCollaboratorButton scriptId={scriptId} collaboratorCount={collaboratorCount} />
             </div>
 
-            {/* Avatar circles row */}
-            {showAvatars && (
+            {/* Avatar circles row — always show when there are collaborators */}
+            {totalCount > 0 && (
               <div className="mt-1.5 ml-[27px]">
                 <div className="flex items-center gap-0.5">
-                  {/* Show first N avatars */}
-                  {[...accepted, ...pending].slice(0, MAX_VISIBLE).map((c) => (
+                  {allCollabs.slice(0, MAX_VISIBLE).map((c) => (
                     <div
                       key={c.id}
                       className="relative group"
@@ -105,22 +117,20 @@ export function GrowHeatSection({
                       </div>
                     </div>
                   ))}
-                  {/* Overflow indicator */}
-                  {totalCount > MAX_VISIBLE && (
-                    <button
-                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCollabsExpanded(!collabsExpanded) }}
-                      className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 cursor-pointer border-0"
-                      style={{ background: '#f3f4f6', color: '#6b7280' }}
-                    >
-                      +{totalCount - MAX_VISIBLE}
-                    </button>
-                  )}
+                  {/* Expand/collapse button */}
+                  <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCollabsExpanded(!collabsExpanded) }}
+                    className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 cursor-pointer border-0"
+                    style={{ background: '#f3f4f6', color: '#6b7280' }}
+                  >
+                    {totalCount > MAX_VISIBLE ? `+${totalCount - MAX_VISIBLE}` : '▾'}
+                  </button>
                 </div>
 
-                {/* Expanded list */}
-                {collabsExpanded && totalCount > MAX_VISIBLE && (
+                {/* Expanded list — shows ALL collaborators with remove buttons */}
+                {collabsExpanded && (
                   <div className="mt-1.5 space-y-1" style={{ borderTop: '1px solid #f0f0f0', paddingTop: 6 }}>
-                    {[...accepted, ...pending].slice(MAX_VISIBLE).map(c => (
+                    {allCollabs.map(c => (
                       <div key={c.id} className="flex items-center gap-2">
                         <div
                           className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold shrink-0"
@@ -132,11 +142,19 @@ export function GrowHeatSection({
                         >
                           {!c.avatarUrl && (c.name ? c.name[0].toUpperCase() : c.email[0].toUpperCase())}
                         </div>
-                        <span className="text-[11px]" style={{ color: '#374151' }}>{c.name || c.email}</span>
-                        <span className="text-[10px]" style={{ color: '#9ca3af' }}>{c.role}</span>
+                        <span className="text-[11px] flex-1 min-w-0 truncate" style={{ color: '#374151' }}>{c.name || c.email}</span>
+                        <span className="text-[10px] shrink-0" style={{ color: '#6b7280' }}>{c.role}</span>
                         {c.status === 'pending' && (
-                          <span className="text-[10px] font-semibold" style={{ color: '#f59e0b' }}>Pending</span>
+                          <span className="text-[10px] font-semibold shrink-0" style={{ color: '#f59e0b' }}>Pending</span>
                         )}
+                        <button
+                          onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleRemove(c.id) }}
+                          disabled={removing === c.id}
+                          className="text-[10px] cursor-pointer border-0 bg-transparent px-1 py-0.5 rounded shrink-0 hover:bg-red-50 transition-colors"
+                          style={{ color: '#ef4444', opacity: removing === c.id ? 0.5 : 1 }}
+                        >
+                          {removing === c.id ? '...' : '✕'}
+                        </button>
                       </div>
                     ))}
                   </div>
@@ -212,15 +230,6 @@ export function GrowHeatSection({
                 Turn on to get ranked on the leaderboard
               </p>
             )}
-          </div>
-        )}
-
-        {/* Heat earned — only show if heat > 0 */}
-        {heat > 0 && (
-          <div className="flex items-center gap-1.5 pt-1" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 6 }}>
-            <span className="text-[11px]" style={{ color: '#9ca3af' }}>Heat earned:</span>
-            <span className="text-[11px]">🔥</span>
-            <span className="text-[12px] font-semibold" style={{ color: '#ea580c' }}>{heat}</span>
           </div>
         )}
       </div>
