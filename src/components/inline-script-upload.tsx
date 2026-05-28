@@ -4,6 +4,7 @@
 // Flow: format → upload PDF → validate → confirm → submit.
 // Title, genre, and logline are extracted automatically by the eval prompt.
 // Works on dashboard, scripts page, and review draft page.
+// Supports dark variant for modal use (dark?: true).
 
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -17,6 +18,7 @@ export function InlineScriptUpload({
   startOpen = false,
   onClose,
   redirectTo,
+  dark = false,
 }: {
   className?: string
   /** When true, the component starts on the format step instead of showing the closed button. */
@@ -25,6 +27,8 @@ export function InlineScriptUpload({
   onClose?: () => void
   /** If set, navigate here after successful upload instead of refreshing the current page. */
   redirectTo?: string
+  /** Dark theme variant for modal use — #2b1a55 background, white text */
+  dark?: boolean
 }) {
   const router = useRouter()
   const [step, setStep] = useState<Step>(startOpen ? 'format' : 'closed')
@@ -33,6 +37,39 @@ export function InlineScriptUpload({
   const [error, setError] = useState<string | null>(null)
   const [pageEstimate, setPageEstimate] = useState<number | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // ── Dark / light style tokens ──
+  const bg = dark ? 'bg-[#2b1a55]' : 'bg-white'
+  const textPrimary = dark ? 'text-white' : 'text-gray-900'
+  const textSecondary = dark ? 'text-white/60' : 'text-gray-500'
+  const textTertiary = dark ? 'text-white/40' : 'text-gray-400'
+  const borderColor = dark ? 'border-white/10' : 'border-gray-100'
+  const borderMedium = dark ? 'border-white/15' : 'border-gray-200'
+  const borderDashed = dark ? 'border-white/20' : 'border-gray-300'
+  const closeBtnClasses = dark
+    ? 'text-white/40 hover:text-white/70 hover:bg-white/10'
+    : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
+  const cardBg = dark ? 'bg-white/5' : 'bg-gray-50'
+  const iconColor = dark ? 'text-white/50' : 'text-gray-500'
+  const dotInactive = dark ? 'bg-white/20' : 'bg-gray-200'
+  const dropHover = dark
+    ? 'hover:border-purple-400 hover:bg-purple-500/10'
+    : 'hover:border-purple-400 hover:bg-purple-50/20'
+  const formatCardBorder = dark ? 'border-white/10' : 'border-gray-200'
+  const formatCardHover = dark ? 'hover:border-white/25' : 'hover:border-gray-300'
+  const formatCardActive = dark ? 'border-purple-400 bg-purple-500/15' : 'border-purple-400 bg-purple-50/50'
+  const backBtnClasses = dark
+    ? 'text-white/50 hover:text-white/70'
+    : 'text-gray-500 hover:text-gray-700'
+  const retryClasses = dark
+    ? 'text-purple-300 hover:text-purple-200'
+    : 'text-purple-600 hover:text-purple-800'
+  const outerBorder = dark
+    ? '1px solid rgba(255,255,255,0.08)'
+    : '1px solid rgba(0,0,0,0.08)'
+  const outerShadow = dark
+    ? '0 1px 3px rgba(0,0,0,0.2)'
+    : '0 1px 3px rgba(0,0,0,0.04)'
 
   function reset() {
     setStep(startOpen ? 'format' : 'closed')
@@ -186,8 +223,8 @@ export function InlineScriptUpload({
   const activeStepIndex = step === 'format' ? 0 : 1
   const stepDots = (
     <div className="flex items-center gap-1.5 mb-4">
-      <div className={`h-[3px] rounded-full transition-all ${activeStepIndex === 0 ? 'w-6 bg-purple-600' : 'w-2 bg-purple-600'}`} />
-      <div className={`h-[3px] rounded-full transition-all ${activeStepIndex >= 1 ? 'w-6 bg-purple-600' : 'w-2 bg-gray-200'}`} />
+      <div className={`h-[3px] rounded-full transition-all ${activeStepIndex === 0 ? 'w-6 bg-purple-600' : `w-2 bg-purple-600`}`} />
+      <div className={`h-[3px] rounded-full transition-all ${activeStepIndex >= 1 ? 'w-6 bg-purple-600' : `w-2 ${dotInactive}`}`} />
     </div>
   )
 
@@ -207,14 +244,14 @@ export function InlineScriptUpload({
   }
 
   return (
-    <div className={`rounded-xl bg-white overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 ${className ?? ''}`}
-      style={{ border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
+    <div className={`rounded-xl ${bg} overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 ${className ?? ''}`}
+      style={{ border: outerBorder, boxShadow: outerShadow }}>
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-        <span className="text-[14px] font-semibold text-gray-900">Add script</span>
+      <div className={`flex items-center justify-between px-4 py-3 border-b ${borderColor}`}>
+        <span className={`text-[14px] font-semibold ${textPrimary}`}>Add script</span>
         <button
           onClick={handleClose}
-          className="w-6 h-6 flex items-center justify-center rounded text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+          className={`w-6 h-6 flex items-center justify-center rounded transition-colors ${closeBtnClasses}`}
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
             <line x1="3" y1="3" x2="11" y2="11" /><line x1="11" y1="3" x2="3" y2="11" />
@@ -235,11 +272,11 @@ export function InlineScriptUpload({
               <button
                 key={f.id}
                 onClick={() => handleFormatSelect(f.id)}
-                className={`flex flex-col items-center gap-1.5 py-4 px-3 border rounded-lg transition-all hover:border-gray-300 ${
-                  format === f.id ? 'border-purple-400 bg-purple-50/50' : 'border-gray-200'
+                className={`flex flex-col items-center gap-1.5 py-4 px-3 border rounded-lg transition-all ${formatCardHover} ${
+                  format === f.id ? formatCardActive : formatCardBorder
                 }`}
               >
-                <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-gray-500">
+                <div className={`w-8 h-8 rounded-lg ${cardBg} flex items-center justify-center ${iconColor}`}>
                   {f.icon === 'film' ? (
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="2" width="20" height="20" rx="2.18" /><line x1="7" y1="2" x2="7" y2="22" /><line x1="17" y1="2" x2="17" y2="22" /><line x1="2" y1="12" x2="22" y2="12" />
@@ -250,8 +287,8 @@ export function InlineScriptUpload({
                     </svg>
                   )}
                 </div>
-                <span className="text-[13px] font-semibold text-gray-900">{f.label}</span>
-                <span className="text-[11px] text-gray-400">{f.caption}</span>
+                <span className={`text-[13px] font-semibold ${textPrimary}`}>{f.label}</span>
+                <span className={`text-[11px] ${textTertiary}`}>{f.caption}</span>
               </button>
             ))}
           </div>
@@ -264,15 +301,15 @@ export function InlineScriptUpload({
               onClick={() => fileInputRef.current?.click()}
               onDragOver={e => e.preventDefault()}
               onDrop={handleDrop}
-              className="border-[1.5px] border-dashed border-gray-300 rounded-lg py-8 px-4 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/20 transition-colors"
+              className={`border-[1.5px] border-dashed ${borderDashed} rounded-lg py-8 px-4 text-center cursor-pointer ${dropHover} transition-colors`}
             >
-              <div className="flex justify-center mb-2 text-gray-400">
+              <div className={`flex justify-center mb-2 ${textTertiary}`}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
                 </svg>
               </div>
-              <p className="text-[13px] text-gray-500">Drop your PDF here or click to browse</p>
-              <p className="text-[11px] text-gray-400 mt-1">PDF only, up to 10 MB</p>
+              <p className={`text-[13px] ${textSecondary}`}>Drop your PDF here or click to browse</p>
+              <p className={`text-[11px] ${textTertiary} mt-1`}>PDF only, up to 10 MB</p>
             </div>
             <input
               ref={fileInputRef}
@@ -283,10 +320,10 @@ export function InlineScriptUpload({
             />
             {error && (
               <div className="mt-2">
-                <p className="text-[12px] text-red-600">{error}</p>
+                <p className="text-[12px] text-red-400">{error}</p>
                 <button
                   onClick={() => { setError(null); fileInputRef.current?.click() }}
-                  className="text-[12px] font-semibold text-purple-600 hover:text-purple-800 mt-1"
+                  className={`text-[12px] font-semibold ${retryClasses} mt-1`}
                 >
                   Try a different file
                 </button>
@@ -295,7 +332,7 @@ export function InlineScriptUpload({
             <div className="flex justify-start mt-3">
               <button
                 onClick={() => { setStep('format'); setError(null) }}
-                className="text-[12px] font-semibold text-gray-500 hover:text-gray-700"
+                className={`text-[12px] font-semibold ${backBtnClasses}`}
               >
                 &larr; Back
               </button>
@@ -307,23 +344,26 @@ export function InlineScriptUpload({
         {step === 'validating' && (
           <div className="py-8 text-center">
             <div className="flex justify-center mb-3">
-              <div className="w-6 h-6 border-2 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+              <div className={`w-6 h-6 border-2 ${dark ? 'border-purple-300/30 border-t-purple-400' : 'border-purple-200 border-t-purple-600'} rounded-full animate-spin`} />
             </div>
-            <p className="text-[13px] font-semibold text-gray-700">Checking your file...</p>
-            <p className="text-[11px] text-gray-400 mt-1">{file?.name}</p>
+            <p className={`text-[13px] font-semibold ${dark ? 'text-white/80' : 'text-gray-700'}`}>Checking your file...</p>
+            <p className={`text-[11px] ${textTertiary} mt-1`}>{file?.name}</p>
           </div>
         )}
 
         {/* ── CONFIRMED — ready to go ── */}
         {step === 'confirmed' && (
           <div className="py-4 text-center">
-            <div className="rounded-lg py-5 px-4" style={{ border: '1px solid rgba(34,197,94,0.3)', background: 'rgba(34,197,94,0.04)' }}>
+            <div className="rounded-lg py-5 px-4" style={{
+              border: dark ? '1px solid rgba(34,197,94,0.2)' : '1px solid rgba(34,197,94,0.3)',
+              background: dark ? 'rgba(34,197,94,0.08)' : 'rgba(34,197,94,0.04)',
+            }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="mx-auto mb-3">
                 <circle cx="12" cy="12" r="12" fill="rgba(34,197,94,0.15)" />
                 <path d="M7 12.5l3 3 6-6" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <p className="text-[14px] font-semibold text-gray-900 m-0 mb-0.5">Your script is ready</p>
-              <p className="text-[12px] text-gray-500 m-0 mb-4">
+              <p className={`text-[14px] font-semibold ${textPrimary} m-0 mb-0.5`}>Your script is ready</p>
+              <p className={`text-[12px] ${textSecondary} m-0 mb-4`}>
                 {file?.name}{pageEstimate ? ` · ~${pageEstimate} pages` : ''}
               </p>
               <button
@@ -333,10 +373,10 @@ export function InlineScriptUpload({
               >
                 Begin analysis
               </button>
-              <p className="text-[11px] text-gray-400 mt-3 mb-0">Your report will appear on your dashboard. Delete it anytime.</p>
+              <p className={`text-[11px] ${textTertiary} mt-3 mb-0`}>Your report will appear on your dashboard. Delete it anytime.</p>
             </div>
             {error && (
-              <p className="text-[12px] text-red-600 mt-2">{error}</p>
+              <p className="text-[12px] text-red-400 mt-2">{error}</p>
             )}
           </div>
         )}
@@ -345,9 +385,9 @@ export function InlineScriptUpload({
         {step === 'submitting' && (
           <div className="py-8 text-center">
             <div className="flex justify-center mb-3">
-              <div className="w-6 h-6 border-2 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+              <div className={`w-6 h-6 border-2 ${dark ? 'border-purple-300/30 border-t-purple-400' : 'border-purple-200 border-t-purple-600'} rounded-full animate-spin`} />
             </div>
-            <p className="text-[13px] font-semibold text-gray-700">Starting analysis...</p>
+            <p className={`text-[13px] font-semibold ${dark ? 'text-white/80' : 'text-gray-700'}`}>Starting analysis...</p>
           </div>
         )}
       </div>

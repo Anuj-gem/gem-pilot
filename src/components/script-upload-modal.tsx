@@ -57,7 +57,7 @@ export function ScriptUploadModal({ redirectTo, guestEvalsUsed }: Props) {
 
       {/* Modal */}
       <div className="relative w-full max-w-md mx-4 animate-in fade-in zoom-in-95 duration-150">
-        <InlineScriptUpload startOpen onClose={() => setOpen(false)} redirectTo={redirectTo} />
+        <InlineScriptUpload startOpen dark onClose={() => setOpen(false)} redirectTo={redirectTo} />
       </div>
     </div>
   )

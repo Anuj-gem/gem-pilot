@@ -10,6 +10,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, FileText, Building2, CheckCircle2, Flame, Users, Diamond } from 'lucide-react'
 import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
+import { NoScriptsApplyButton } from '@/components/opportunities/no-scripts-apply-button'
 import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
 
 const GENRE_LABELS: Record<string, string> = {
@@ -202,6 +203,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   let considerationId: string | null = null
   let isPro = false
   let freeRemaining = 2
+  let totalVisibleScripts = 0
 
   if (user) {
     const { data: profile } = await service
@@ -279,6 +281,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .eq('status', 'completed')
 
     const visibleSubs = ((userSubs || []) as any[]).filter((s: any) => !s.hidden_at && !alreadySubmittedScriptIds.has(s.id))
+    totalVisibleScripts = ((userSubs || []) as any[]).filter((s: any) => !s.hidden_at).length
     const subIds = visibleSubs.map((s: any) => s.id)
 
     if (subIds.length > 0) {
@@ -450,7 +453,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               </Link>
             ) : (
               <>
-                {isPro ? (
+                {totalVisibleScripts === 0 ? (
+                  <NoScriptsApplyButton />
+                ) : isPro ? (
                   <Link
                     href={`/opportunities/${opp.slug}/apply`}
                     className="inline-flex items-center gap-2 rounded-xl px-7 py-2.5 text-[14px] font-medium text-white"
