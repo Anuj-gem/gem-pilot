@@ -250,12 +250,13 @@ export default function GetStartedClient() {
         headline: headline || undefined,
         bio: bio || undefined,
       })
-      router.replace('/dashboard')
+      // Hard navigate so dashboard server component renders with fresh auth
+      window.location.href = '/dashboard'
     })
   }
 
   function handleSkipProfile() {
-    router.replace('/dashboard')
+    window.location.href = '/dashboard'
   }
 
   // ═══════════════════════════════════════════════════════════════════════
