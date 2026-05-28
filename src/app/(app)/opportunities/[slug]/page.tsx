@@ -375,22 +375,13 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 Verified
               </span>
             </div>
-            {opp.deal_type && (
-              <span className="text-[11px] text-white/40">
-                {DEAL_TYPE_LABELS[opp.deal_type] || 'Partner'}
-              </span>
-            )}
+            <span className="text-[11px] text-white/40">Talent Representative</span>
           </div>
-          <div className="ml-auto flex items-center gap-3">
-            {reviewedCount > 0 && (
+          {reviewedCount > 0 && (
+            <div className="ml-auto flex items-center gap-3">
               <span className="text-[11px] text-white/45">{reviewedCount} reviewed</span>
-            )}
-            {totalHeat > 0 && (
-              <span className="text-[11px] text-white/45 flex items-center gap-1">
-                <Flame size={11} className="text-white/45" /> {totalHeat} heat granted
-              </span>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Status line */}
@@ -482,18 +473,10 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         <div className="bg-white rounded-xl overflow-hidden">
 
           {/* Stats bar */}
-          <div className="grid grid-cols-4" style={{ borderBottom: '1px solid #f3f4f6' }}>
+          <div className="grid grid-cols-2" style={{ borderBottom: '1px solid #f3f4f6' }}>
             <div className="py-4 px-4 text-center" style={{ borderRight: '1px solid #f3f4f6' }}>
               <div className="text-[22px] font-medium text-gray-900">{applicantCount ?? 0}</div>
               <div className="text-[11px] text-gray-500 mt-0.5">Writers applied</div>
-            </div>
-            <div className="py-4 px-4 text-center" style={{ borderRight: '1px solid #f3f4f6' }}>
-              <div className="text-[22px] font-medium text-gray-900">{avgScore ?? '—'}</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Avg. score</div>
-            </div>
-            <div className="py-4 px-4 text-center" style={{ borderRight: '1px solid #f3f4f6' }}>
-              <div className="text-[22px] font-medium text-gray-900">{totalHeat || '—'}</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Heat granted</div>
             </div>
             <div className="py-4 px-4 text-center">
               <div className="text-[13px] font-medium text-green-600">
