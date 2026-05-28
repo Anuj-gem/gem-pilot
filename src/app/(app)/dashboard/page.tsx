@@ -309,6 +309,40 @@ export default async function DashboardPage() {
     }
   }
 
+  // ── DISCOVER RANK CALCULATION ──
+  const scoreRankMap = new Map<string, number>()
+  const heatRankMap = new Map<string, number>()
+
+  if (submissionIds.length > 0) {
+    const { data: allPublicScripts } = await service
+      .from('script_submissions')
+      .select('id, heat_score')
+      .eq('status', 'completed')
+      .eq('is_public', true)
+
+    const allPublicIds = (allPublicScripts || []).map((s: any) => s.id)
+
+    let allPublicEvals = new Map<string, number>()
+    if (allPublicIds.length > 0) {
+      const { data: pubEvs } = await service
+        .from('script_evaluations')
+        .select('submission_id, weighted_score')
+        .in('submission_id', allPublicIds)
+      for (const e of (pubEvs || []) as { submission_id: string; weighted_score: number | null }[]) {
+        if (e.weighted_score != null) allPublicEvals.set(e.submission_id, e.weighted_score)
+      }
+    }
+
+    const publicWithScores = (allPublicScripts || [])
+      .map((s: any) => ({ id: s.id, score: allPublicEvals.get(s.id) ?? 0, heat: s.heat_score ?? 0 }))
+
+    const byScore = [...publicWithScores].sort((a, b) => b.score - a.score)
+    byScore.forEach((s, i) => scoreRankMap.set(s.id, i + 1))
+
+    const byHeat = [...publicWithScores].sort((a, b) => b.heat - a.heat)
+    byHeat.forEach((s, i) => heatRankMap.set(s.id, i + 1))
+  }
+
   // ── DERIVED DATA ──
 
   const appliedOppIds = new Set(allApplications.map(a => a.opportunity_id))
@@ -362,6 +396,8 @@ export default async function DashboardPage() {
         collaboratorCount: collabCountByScript.get(s.id) ?? 0,
         pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
         availableOppCount: qualifyingOpps.length,
+        scoreRank: scoreRankMap.get(s.id) ?? null,
+        heatRank: heatRankMap.get(s.id) ?? null,
       }
     })
 
@@ -868,12 +904,13 @@ export default async function DashboardPage() {
                   {/* Completed scripts + collab scripts — compact rows */}
                   {[
                     ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
-                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[] })),
+                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null, heatRank: null as number | null })),
                   ].map(script => {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
                     return (
                       <div key={script.id} className="px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
+                        {/* Row 1: poster + title + format/genre/date + menu */}
                         <div className="flex items-start gap-2.5">
                           <Link href={reportHref} className="flex-1 min-w-0 no-underline group">
                             <div className="flex items-center gap-2.5">
@@ -897,14 +934,40 @@ export default async function DashboardPage() {
                             <ScriptCardMenu scriptId={script.id} evaluationId={script.evaluationId} />
                           )}
                         </div>
-                        {/* Stats row — score, heat | add collaborators | opps | leaderboard */}
+
+                        {/* Row 2: GEM Score card + Project Heat card — side by side */}
+                        <div className="grid grid-cols-2 gap-2 mt-2">
+                          {/* GEM Score card */}
+                          <div className="flex items-center gap-2 px-3 py-2" style={{ background: '#faf5ff', border: '1.5px solid #e9d5ff', borderRadius: 8 }}>
+                            <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                              <span className="text-[11px] font-bold shrink-0" style={{ color: '#7c3aed' }}>GEM Score</span>
+                              <span className="inline-flex shrink-0">{gemDiamond(6)}</span>
+                              <span className="text-[18px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
+                            </div>
+                            {script.isPublic && script.scoreRank ? (
+                              <span className="text-[14px] font-extrabold shrink-0" style={{ color: '#7c3aed' }}>#{script.scoreRank}</span>
+                            ) : (
+                              <span className="text-[12px] font-bold shrink-0" style={{ color: '#c4b5fd' }}>—</span>
+                            )}
+                          </div>
+
+                          {/* Project Heat card */}
+                          <div className="flex items-center gap-2 px-3 py-2" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa', borderRadius: 8 }}>
+                            <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                              <span className="text-[11px] font-bold shrink-0" style={{ color: '#ea580c' }}>Project Heat</span>
+                              <span className="text-[12px] leading-none shrink-0">🔥</span>
+                              <span className="text-[18px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#fdba74' }}>{script.heat}</span>
+                            </div>
+                            {script.isPublic && script.heat > 0 && script.heatRank ? (
+                              <span className="text-[14px] font-extrabold shrink-0" style={{ color: '#ea580c' }}>#{script.heatRank}</span>
+                            ) : (
+                              <span className="text-[12px] font-bold shrink-0" style={{ color: '#fdba74' }}>—</span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Row 3: collaborators | opps | Discover toggle | View report */}
                         <div className="flex items-center gap-0 mt-2 flex-wrap" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 6 }}>
-                          <span className="inline-flex items-center gap-1 text-[13px] font-bold shrink-0" style={{ color: '#a78bfa' }}>
-                            {gemDiamond(7)} {rounded || '—'}
-                          </span>
-                          <span className="text-[12px] shrink-0 ml-3" style={{ color: '#fb923c' }}>🔥 {script.heat}</span>
-                          {/* Separator */}
-                          <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: '#e5e7eb', display: 'inline-block' }} />
                           {!script.collabRole && (
                             <AddCollaboratorButton scriptId={script.id} collaboratorCount={script.collaboratorCount} />
                           )}
@@ -934,6 +997,12 @@ export default async function DashboardPage() {
                                 <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} />
                               </span>
                             </>
+                          )}
+                          <span className="flex-1" />
+                          {script.evaluationId && (
+                            <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
+                              View report →
+                            </Link>
                           )}
                         </div>
                       </div>
