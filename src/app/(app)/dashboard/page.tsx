@@ -944,8 +944,10 @@ export default async function DashboardPage() {
                             <span className="text-[15px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
                             {script.isPublic && script.scoreRank ? (
                               <span className="text-[11px] font-semibold" style={{ color: '#7c3aed' }}>#{script.scoreRank}</span>
+                            ) : !script.isPublic ? (
+                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not public</span>
                             ) : (
-                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not ranked</span>
+                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>—</span>
                             )}
                           </div>
                           <div className="flex items-center gap-1.5">
@@ -954,8 +956,10 @@ export default async function DashboardPage() {
                             <span className="text-[15px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#d1d5db' }}>{script.heat}</span>
                             {script.isPublic && script.heat > 0 && script.heatRank ? (
                               <span className="text-[11px] font-semibold" style={{ color: '#ea580c' }}>#{script.heatRank}</span>
+                            ) : !script.isPublic ? (
+                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not public</span>
                             ) : (
-                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not ranked</span>
+                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>—</span>
                             )}
                           </div>
                           <span className="flex-1" />
