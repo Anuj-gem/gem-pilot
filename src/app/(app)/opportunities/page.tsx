@@ -43,6 +43,7 @@ type OppRow = {
   formats: string[]; genres: string[]; budget_tiers: string[]; tags: string[]
   deadline: string | null; status: string
   posted_by: string | null; subtitle: string | null; created_at: string
+  deal_type: string | null
 }
 
 export default async function OpportunitiesPage() {
@@ -69,6 +70,22 @@ export default async function OpportunitiesPage() {
     .order('created_at', { ascending: false })
 
   const opportunities = (opps || []) as OppRow[]
+
+  // Fetch total writers applied + last application per opportunity
+  const oppIds = opportunities.map(o => o.id)
+  const writersAppliedMap = new Map<string, number>()
+  const lastAppMap = new Map<string, string>()
+  if (oppIds.length > 0) {
+    const { data: allCons } = await service
+      .from('considerations')
+      .select('opportunity_id, created_at')
+      .in('opportunity_id', oppIds)
+    for (const c of (allCons || []) as { opportunity_id: string; created_at: string }[]) {
+      writersAppliedMap.set(c.opportunity_id, (writersAppliedMap.get(c.opportunity_id) || 0) + 1)
+      const existing = lastAppMap.get(c.opportunity_id)
+      if (!existing || c.created_at > existing) lastAppMap.set(c.opportunity_id, c.created_at)
+    }
+  }
 
   // For logged-in users: qualification + application status
   const oppMatchCount = new Map<string, number>()
@@ -211,6 +228,9 @@ export default async function OpportunitiesPage() {
                 matchingScriptCount={oppMatchCount.get(opp.id) ?? 0}
                 isAnon={!user}
                 applicationCount={oppAppCount.get(opp.id) ?? 0}
+                writersApplied={writersAppliedMap.get(opp.id) ?? 0}
+                lastApplicationAt={lastAppMap.get(opp.id) ?? null}
+                dealType={opp.deal_type}
               />
             )
           })

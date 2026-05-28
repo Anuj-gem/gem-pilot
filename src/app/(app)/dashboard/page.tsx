@@ -63,6 +63,7 @@ export default async function DashboardPage() {
     deadline: string | null; budget_tiers: string[] | null
     tags: string[] | null
     created_at: string
+    deal_type: string | null
   }
   let allOpenOpps: OppRow[] = []
 
@@ -77,7 +78,7 @@ export default async function DashboardPage() {
 
   const { data: openOpps } = await service
     .from('opportunities')
-    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, tags, created_at')
+    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, tags, created_at, deal_type')
     .eq('status', 'active')
   allOpenOpps = (openOpps || []) as OppRow[]
 
@@ -507,6 +508,22 @@ export default async function DashboardPage() {
   }
   const dashboardOpps = combinedOpps.slice(0, 3)
   const qualifiedOppIds = new Set(qualifiedOpps.map(o => o.id))
+
+  // Fetch total writers applied + last application per opportunity (for card display)
+  const dashOppIds = [...new Set([...dashboardOpps.map(o => o.id), ...pendingApps.map(a => a.opportunity_id)])]
+  const writersAppliedMap = new Map<string, number>()
+  const lastAppMap = new Map<string, string>()
+  if (dashOppIds.length > 0) {
+    const { data: allCons } = await service
+      .from('considerations')
+      .select('opportunity_id, created_at')
+      .in('opportunity_id', dashOppIds)
+    for (const c of (allCons || []) as { opportunity_id: string; created_at: string }[]) {
+      writersAppliedMap.set(c.opportunity_id, (writersAppliedMap.get(c.opportunity_id) || 0) + 1)
+      const existing = lastAppMap.get(c.opportunity_id)
+      if (!existing || c.created_at > existing) lastAppMap.set(c.opportunity_id, c.created_at)
+    }
+  }
 
   function getMatchingScriptsForOpp(opp: OppRow) {
     const alreadyAppliedScripts = appliedScriptsByOpp.get(opp.id) || new Set<string>()
@@ -1027,31 +1044,35 @@ export default async function DashboardPage() {
               {pendingApps.length > 0 && (
                 <div className="mb-3">
                   <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,1)' }}>Pending</p>
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
                     {pendingApps.slice(0, 3).map(app => {
                       const opp = oppMap.get(app.opportunity_id)
-                      const scripts = scriptTitlesByApp.get(app.id) || []
+                      if (!opp) return null
                       return (
-                        <Link key={app.id} href={`/applications/${app.id}`} className="block no-underline">
-                          <div className="px-3 py-2.5 hover:brightness-95 transition-all" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
-                            <p className="text-[14px] font-semibold m-0 truncate" style={{ color: '#111827' }}>{opp?.title || 'Opportunity'}</p>
-                            <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>
-                              Applied {fmtDate(app.submitted_at)}
-                            </p>
-                            {scripts.length > 0 && (
-                              <p className="text-[11px] font-bold m-0 mt-1" style={{ color: '#6b7280' }}>
-                                📄 {scripts.join(', ')}
-                              </p>
-                            )}
-                            <span className="inline-block text-[10px] font-bold px-2 py-0.5 mt-1" style={{ background: 'rgba(234,88,12,0.1)', color: '#ea580c', borderRadius: 3 }}>In consideration</span>
-                          </div>
-                        </Link>
+                        <OpportunityCard
+                          key={app.id}
+                          id={opp.id}
+                          slug={opp.slug}
+                          title={opp.title}
+                          subtitle={opp.subtitle}
+                          description={opp.description}
+                          genres={(opp.genres as string[]) || []}
+                          formats={(opp.formats as string[]) || []}
+                          createdAt={opp.created_at}
+                          deadline={opp.deadline}
+                          status="pending"
+                          matchingScriptCount={0}
+                          applicationCount={oppAppCount.get(opp.id) ?? 0}
+                          writersApplied={writersAppliedMap.get(opp.id) ?? 0}
+                          lastApplicationAt={lastAppMap.get(opp.id) ?? null}
+                          dealType={opp.deal_type}
+                        />
                       )
                     })}
                   </div>
                   {/* Divider between pending and available */}
                   {dashboardOpps.length > 0 && (
-                    <div className="my-3" style={{ borderTop: '1px solid #e5e7eb' }} />
+                    <div className="my-3" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }} />
                   )}
                 </div>
               )}
@@ -1060,36 +1081,30 @@ export default async function DashboardPage() {
               {dashboardOpps.length > 0 ? (
                 <div>
                   <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,1)' }}>Available</p>
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
                     {dashboardOpps.map(opp => {
                       const matchCount = getMatchingScriptsForOpp(opp).length
-                      const qualCriteria = [
-                        opp.formats?.length ? opp.formats.join(', ') : null,
-                        opp.genres?.length ? opp.genres.join(', ') : null,
-                        opp.min_score ? `Score ${opp.min_score}+` : null,
-                        opp.budget_tiers?.length ? opp.budget_tiers.join(', ') : null,
-                      ].filter(Boolean)
+                      const hasApplied = appliedOppIds.has(opp.id)
+                      const oppStatus: OppStatus = hasApplied ? 'previously_applied' : 'available'
                       return (
-                        <Link key={opp.id} href={`/opportunities/${opp.slug}`} className="block no-underline">
-                          <div className="px-3 py-2.5 hover:brightness-95 transition-all" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
-                            <p className="text-[14px] font-semibold m-0 truncate" style={{ color: '#111827' }}>{opp.title}</p>
-                            {opp.description && (
-                              <p className="text-[11px] font-bold m-0 mt-1 line-clamp-2" style={{ color: '#6b7280' }}>
-                                {opp.description}
-                              </p>
-                            )}
-                            {qualCriteria.length > 0 && (
-                              <p className="text-[11px] font-bold m-0 mt-1" style={{ color: '#6b7280' }}>
-                                Qualification Criteria: {qualCriteria.join(', ')}
-                              </p>
-                            )}
-                            {matchCount > 0 && (
-                              <span className="inline-block text-[10px] font-bold px-2 py-0.5 mt-1" style={{ background: 'rgba(124,58,237,0.1)', color: '#7c3aed', borderRadius: 3 }}>
-                                {matchCount} script{matchCount !== 1 ? 's' : ''} qualify
-                              </span>
-                            )}
-                          </div>
-                        </Link>
+                        <OpportunityCard
+                          key={opp.id}
+                          id={opp.id}
+                          slug={opp.slug}
+                          title={opp.title}
+                          subtitle={opp.subtitle}
+                          description={opp.description}
+                          genres={(opp.genres as string[]) || []}
+                          formats={(opp.formats as string[]) || []}
+                          createdAt={opp.created_at}
+                          deadline={opp.deadline}
+                          status={oppStatus}
+                          matchingScriptCount={matchCount}
+                          applicationCount={oppAppCount.get(opp.id) ?? 0}
+                          writersApplied={writersAppliedMap.get(opp.id) ?? 0}
+                          lastApplicationAt={lastAppMap.get(opp.id) ?? null}
+                          dealType={opp.deal_type}
+                        />
                       )
                     })}
                   </div>

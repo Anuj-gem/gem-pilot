@@ -1,5 +1,5 @@
 // OpportunityCard — unified card for opportunity display.
-// Works in dashboard 3-col grid and opportunities listing page.
+// Used identically on dashboard AND opportunities listing page.
 // Pure server component — Apply links to detail page, no inline actions.
 
 import Link from 'next/link'
@@ -36,23 +36,42 @@ export interface OpportunityCardProps {
   matchingScriptCount: number
   isAnon?: boolean
   applicationCount?: number
+  // New fields
+  writersApplied?: number
+  lastApplicationAt?: string | null
+  dealType?: string | null
+}
+
+function timeAgo(dateStr: string): string {
+  const now = Date.now()
+  const then = new Date(dateStr).getTime()
+  const diff = now - then
+  const mins = Math.floor(diff / 60000)
+  if (mins < 60) return `${mins}m ago`
+  const hrs = Math.floor(mins / 60)
+  if (hrs < 24) return `${hrs}h ago`
+  const days = Math.floor(hrs / 24)
+  if (days < 7) return `${days}d ago`
+  const weeks = Math.floor(days / 7)
+  if (weeks < 5) return `${weeks}w ago`
+  return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
 export function OpportunityCard({
   id, slug, title, subtitle, description, genres, formats,
   createdAt, deadline, status, matchingScriptCount, isAnon, applicationCount,
+  writersApplied, lastApplicationAt, dealType,
 }: OpportunityCardProps) {
   const href = `/opportunities/${slug ?? id}`
   const applyHref = `/opportunities/${slug ?? id}/apply`
-  const postedDate = new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   const hasApplied = status === 'previously_applied'
   const hasPending = status === 'pending'
   const hasMatches = matchingScriptCount > 0
   const canApply = !isAnon && hasMatches && !hasPending
 
   return (
-    <div className="relative rounded-xl bg-white overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
-      style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
+    <div className="relative rounded-xl overflow-hidden hover:shadow-md transition-shadow flex flex-col group"
+      style={{ background: '#ffffff', boxShadow: '0 0 0 1px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04)' }}>
 
       {/* Full-card link */}
       <Link href={href} className="absolute inset-0 z-0" aria-label={title} />
@@ -60,26 +79,45 @@ export function OpportunityCard({
       {/* Card body */}
       <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
 
-        {/* Top row: Paid badge + posted date */}
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-[12px] font-bold px-2 py-0.5 rounded"
-            style={{ background: '#eff6ff', color: '#1d4ed8' }}>
-            Paid
+        {/* Top row: Partner badge + deal type */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-[11px] font-bold px-2 py-0.5 rounded"
+            style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
+            Verified GEM Partner
           </span>
-          <span className="text-[12px] text-gray-500">Posted {postedDate}</span>
+          {dealType && (
+            <span className="text-[11px] font-semibold px-2 py-0.5 rounded"
+              style={{ background: 'rgba(124,58,237,0.05)', color: '#7c3aed' }}>
+              {dealType}
+            </span>
+          )}
         </div>
 
         {/* Title */}
-        <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-2 leading-snug group-hover:text-purple-700 transition-colors">
+        <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-1 leading-snug group-hover:text-purple-700 transition-colors">
           {title}
         </h3>
 
         {/* Subtitle / description */}
         {(subtitle || description) && (
-          <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug">
+          <p className="text-[13px] text-gray-600 m-0 line-clamp-2 leading-snug mb-2">
             {subtitle || description}
           </p>
         )}
+
+        {/* Stats row */}
+        <div className="flex items-center gap-3 mt-auto pt-1">
+          {(writersApplied != null && writersApplied > 0) && (
+            <span className="text-[12px] text-gray-600">
+              {writersApplied} writer{writersApplied !== 1 ? 's' : ''} applied
+            </span>
+          )}
+          {lastApplicationAt && (
+            <span className="text-[12px] text-gray-600">
+              Last {timeAgo(lastApplicationAt)}
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Bottom bar */}
@@ -94,7 +132,7 @@ export function OpportunityCard({
                 Upload a script to apply
               </span>
             ) : hasPending ? (
-              <span className="text-[12px] font-semibold text-purple-700 shrink-0">
+              <span className="text-[12px] font-semibold shrink-0" style={{ color: '#7c3aed' }}>
                 Application pending
               </span>
             ) : (
