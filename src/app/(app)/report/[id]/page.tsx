@@ -998,13 +998,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               isProSubscriber={true}
             >
               {allStrengths.length > 0 && (
-                <div
-                  className="rounded-xl p-5 sm:p-6"
-                  style={{
-                    background: '#F5F5F4',
-                    border: '1px solid #E7E5E3',
-                  }}
-                >
+                <div>
                   <h2
                     className="text-[14px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
                     style={{ color: 'var(--gem-gold)' }}
@@ -1075,13 +1069,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   ? [primary, ...secondary]
                   : secondary
                 return (
-                  <div
-                    className="rounded-xl p-5 sm:p-6"
-                    style={{
-                      background: '#F5F5F4',
-                      border: '1px solid #E7E5E3',
-                    }}
-                  >
+                  <div>
                     <h2
                       className="text-[14px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
                       style={{ color: 'var(--gem-gold)' }}
@@ -1300,11 +1288,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </h2>
 
               <div
-                className="rounded-xl overflow-hidden"
-                style={{
-                  background: '#F5F5F4',
-                  border: '1px solid #E7E5E3',
-                }}
+                className="overflow-hidden"
               >
                 {/* Budget tier — prominent header */}
                 {packaging?.budget_tier && (
@@ -1671,7 +1655,7 @@ function DimensionRow({
   return (
     <div
       className="rounded-xl p-5"
-      style={{ border: '1px solid #E7E5E3', background: '#F5F5F4' }}
+      style={{ border: 'none', background: 'transparent' }}
     >
       <div className="flex items-baseline justify-between gap-4 mb-3">
         <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">

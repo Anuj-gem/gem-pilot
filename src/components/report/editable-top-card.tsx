@@ -203,7 +203,7 @@ export function EditableTopCard({
             </h1>
           )}
           {!isEditing && postedAt && (
-            <span className="text-[12px] font-medium whitespace-nowrap shrink-0" style={{ color: 'rgba(255,255,255,0.40)' }}>
+            <span className="text-[12px] font-medium whitespace-nowrap shrink-0" style={{ color: '#78716C' }}>
               {new Date(postedAt).toLocaleDateString('en-US', {
                 month: 'short',
                 day: 'numeric',
@@ -459,44 +459,44 @@ export function EditableTopCard({
                     {pill.label}
                   </span>
                 ))}
-              {/* Genre pills — bright white */}
+              {/* Genre pills — bluish */}
               {classificationPills
                 .filter(p => p.variant === 'genre' || p.variant === 'secondary')
                 .map((pill, i) => (
                   <span
                     key={`genre-${i}`}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-semibold"
+                    className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-bold"
                     style={{
-                      background: 'rgba(255,255,255,0.10)',
-                      color: 'rgba(255,255,255,0.88)',
-                      border: '1px solid rgba(255,255,255,0.18)',
+                      background: 'rgba(59,130,246,0.12)',
+                      color: '#2563EB',
+                      border: '1px solid rgba(59,130,246,0.25)',
                     }}
                   >
                     {pill.label}
                   </span>
                 ))}
-              {/* Tone pill — italic, warm amber tint */}
+              {/* Tone pill — bold black */}
               {displayTone?.trim() && (
                 <span
-                  className="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-medium italic"
+                  className="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-bold"
                   style={{
-                    background: 'rgba(232,184,37,0.10)',
-                    color: 'rgba(232,184,37,0.85)',
-                    border: '1px solid rgba(232,184,37,0.20)',
+                    background: 'rgba(0,0,0,0.06)',
+                    color: '#1C1917',
+                    border: '1px solid rgba(0,0,0,0.10)',
                   }}
                 >
                   {displayTone}
                 </span>
               )}
-              {/* Tags — subtler, smaller */}
+              {/* Tags — bold black */}
               {displayTags.map((tag, i) => (
                 <span
                   key={`${tag}-${i}`}
-                  className="px-2 py-0.5 rounded-full text-[11px] font-medium"
+                  className="px-2 py-0.5 rounded-full text-[11px] font-bold"
                   style={{
-                    color: 'rgba(255,255,255,0.40)',
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    color: '#1C1917',
+                    background: 'rgba(0,0,0,0.06)',
+                    border: '1px solid rgba(0,0,0,0.10)',
                   }}
                 >
                   {tag}
