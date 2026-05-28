@@ -935,38 +935,43 @@ export default async function DashboardPage() {
                           )}
                         </div>
 
-                        {/* Row 2: GEM Score card + Project Heat card — side by side */}
-                        <div className="grid grid-cols-2 gap-2 mt-2">
-                          {/* GEM Score card */}
-                          <div className="flex items-center gap-2 px-3 py-2" style={{ background: '#faf5ff', border: '1.5px solid #e9d5ff', borderRadius: 8 }}>
-                            <div className="flex items-center gap-1.5 flex-1 min-w-0">
-                              <span className="text-[11px] font-bold shrink-0" style={{ color: '#7c3aed' }}>GEM Score</span>
-                              <span className="inline-flex shrink-0">{gemDiamond(6)}</span>
-                              <span className="text-[18px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
-                            </div>
+                        {/* Ranking section */}
+                        <div className="mt-2 space-y-1.5" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
+                          {/* GEM Score + rank */}
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[11px] font-bold" style={{ color: '#7c3aed' }}>GEM Score</span>
+                            <span className="inline-flex">{gemDiamond(5)}</span>
+                            <span className="text-[15px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
+                            <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>·</span>
                             {script.isPublic && script.scoreRank ? (
-                              <span className="text-[14px] font-extrabold shrink-0" style={{ color: '#7c3aed' }}>#{script.scoreRank}</span>
+                              <span className="text-[12px] font-bold" style={{ color: '#7c3aed' }}>Ranked #{script.scoreRank}</span>
                             ) : (
-                              <span className="text-[12px] font-bold shrink-0" style={{ color: '#c4b5fd' }}>—</span>
+                              <span className="text-[11px] font-medium" style={{ color: '#9ca3af' }}>Not ranked</span>
                             )}
                           </div>
 
-                          {/* Project Heat card */}
-                          <div className="flex items-center gap-2 px-3 py-2" style={{ background: '#fff7ed', border: '1.5px solid #fed7aa', borderRadius: 8 }}>
-                            <div className="flex items-center gap-1.5 flex-1 min-w-0">
-                              <span className="text-[11px] font-bold shrink-0" style={{ color: '#ea580c' }}>Project Heat</span>
-                              <span className="text-[12px] leading-none shrink-0">🔥</span>
-                              <span className="text-[18px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#fdba74' }}>{script.heat}</span>
-                            </div>
+                          {/* Project Heat + rank */}
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[11px] font-bold" style={{ color: '#ea580c' }}>Project Heat</span>
+                            <span className="text-[11px] leading-none">🔥</span>
+                            <span className="text-[15px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#d1d5db' }}>{script.heat}</span>
+                            <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>·</span>
                             {script.isPublic && script.heat > 0 && script.heatRank ? (
-                              <span className="text-[14px] font-extrabold shrink-0" style={{ color: '#ea580c' }}>#{script.heatRank}</span>
+                              <span className="text-[12px] font-bold" style={{ color: '#ea580c' }}>Ranked #{script.heatRank}</span>
                             ) : (
-                              <span className="text-[12px] font-bold shrink-0" style={{ color: '#fdba74' }}>—</span>
+                              <span className="text-[11px] font-medium" style={{ color: '#9ca3af' }}>Not ranked</span>
                             )}
                           </div>
+
+                          {/* Discover toggle */}
+                          {!script.collabRole && (
+                            <div className="flex items-center gap-1.5 pt-0.5">
+                              <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} />
+                            </div>
+                          )}
                         </div>
 
-                        {/* Row 3: collaborators | opps | Discover toggle | View report */}
+                        {/* Actions section */}
                         <div className="flex items-center gap-0 mt-2 flex-wrap" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 6 }}>
                           {!script.collabRole && (
                             <AddCollaboratorButton scriptId={script.id} collaboratorCount={script.collaboratorCount} />
@@ -987,14 +992,6 @@ export default async function DashboardPage() {
                               <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: '#e5e7eb', display: 'inline-block' }} />
                               <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(234,88,12,0.1)', color: '#ea580c', borderRadius: 3 }}>
                                 {script.pendingAppCount} pending
-                              </span>
-                            </>
-                          )}
-                          {!script.collabRole && (
-                            <>
-                              <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: '#e5e7eb', display: 'inline-block' }} />
-                              <span className="shrink-0">
-                                <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} />
                               </span>
                             </>
                           )}
