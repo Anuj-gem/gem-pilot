@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { sendEmail } from '@/lib/email'
 
 function svc() {
   return createServerClient(
@@ -91,6 +92,128 @@ export async function POST(req: NextRequest) {
     .from('considerations')
     .update(updateData)
     .eq('id', consideration_id)
+
+  // --- Pass: propagate heat to profile + scripts, send email ---
+  if (action === 'pass') {
+    const heatEarned = (updateData.heat_earned as number) || 0
+
+    // Propagate heat to writer profile + scripts
+    if (heatEarned > 0) {
+      // Profile heat
+      await service.rpc('increment_heat_score', {
+        p_user_id: consideration.writer_id,
+        p_amount: heatEarned,
+      }).then(async (res) => {
+        if (res.error) {
+          const { data: profile } = await service
+            .from('profiles')
+            .select('heat_score')
+            .eq('id', consideration.writer_id)
+            .single()
+          await service
+            .from('profiles')
+            .update({ heat_score: (profile?.heat_score || 0) + heatEarned })
+            .eq('id', consideration.writer_id)
+        }
+      })
+
+      // Script-level heat
+      const { data: csRows } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .eq('consideration_id', consideration_id)
+      if (csRows && csRows.length > 0) {
+        for (const cs of csRows) {
+          const { data: sub } = await service
+            .from('script_submissions')
+            .select('heat_score')
+            .eq('id', cs.script_submission_id)
+            .single()
+          await service
+            .from('script_submissions')
+            .update({ heat_score: ((sub as any)?.heat_score || 0) + heatEarned })
+            .eq('id', cs.script_submission_id)
+        }
+      }
+    }
+
+    // Send review complete email
+    try {
+      const { data: writerProfile } = await service
+        .from('profiles')
+        .select('full_name, email, heat_score')
+        .eq('id', consideration.writer_id)
+        .single()
+
+      // Get opportunity details
+      let opportunityTitle = 'an opportunity'
+      let opportunityGenres = ''
+      let opportunityType = 'Paid'
+      let opportunityBadgeBg = '#DCFCE7'
+      let opportunityBadgeColor = '#166534'
+      if (consideration.opportunity_id) {
+        const { data: oppDetail } = await service
+          .from('opportunities')
+          .select('title, genres, deal_type')
+          .eq('id', consideration.opportunity_id)
+          .single()
+        if (oppDetail) {
+          opportunityTitle = oppDetail.title || opportunityTitle
+          opportunityGenres = Array.isArray(oppDetail.genres) ? oppDetail.genres.join(', ') : (oppDetail.genres || '')
+          opportunityType = oppDetail.deal_type === 'unpaid' ? 'Unpaid' : 'Paid'
+          opportunityBadgeBg = oppDetail.deal_type === 'unpaid' ? '#FEF3C7' : '#DCFCE7'
+          opportunityBadgeColor = oppDetail.deal_type === 'unpaid' ? '#92400E' : '#166534'
+        }
+      }
+
+      // Get script title
+      let scriptTitle = 'your script'
+      const { data: csForEmail } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .eq('consideration_id', consideration_id)
+        .limit(1)
+      if (csForEmail && csForEmail.length > 0) {
+        const { data: script } = await service
+          .from('script_submissions')
+          .select('title')
+          .eq('id', csForEmail[0].script_submission_id)
+          .single()
+        if (script?.title) scriptTitle = script.title
+      }
+
+      const feedbackUrl = `https://www.gem.studio/applications/${consideration_id}`
+
+      if (writerProfile?.email) {
+        const emailAlias = heatEarned > 0
+          ? 'consideration_complete' as const
+          : 'consideration_complete_no_heat' as const
+
+        await sendEmail({
+          templateAlias: emailAlias,
+          to: writerProfile.email,
+          variables: {
+            script_title: scriptTitle,
+            opportunity_title: opportunityTitle,
+            opportunity_genres: opportunityGenres,
+            opportunity_type: opportunityType,
+            opportunity_badge_bg: opportunityBadgeBg,
+            opportunity_badge_color: opportunityBadgeColor,
+            ...(heatEarned > 0 ? {
+              heat_earned: String(heatEarned),
+              total_heat: String(writerProfile.heat_score || 0),
+            } : {}),
+            feedback_url: feedbackUrl,
+          },
+          dedupeKey: `consideration_complete_${consideration_id}`,
+          tag: emailAlias,
+          userId: consideration.writer_id,
+        }, service)
+      }
+    } catch (emailErr) {
+      console.error('[partner/triage] Pass email failed:', emailErr)
+    }
+  }
 
   // If watchlisting, also add to writer_watchlist (upsert — ignore if already watching)
   if (action === 'watchlist') {
