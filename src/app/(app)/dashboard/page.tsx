@@ -230,19 +230,39 @@ export default async function DashboardPage() {
 
   if (user && submissionIds.length > 0) {
     // All collaborators on my scripts (accepted + pending)
+    // NOTE: avoid profiles:collaborator_id(...) FK embedding — it silently fails
+    // if the FK relationship isn't registered. Fetch profiles separately instead.
     const { data: allCollabRows } = await service
       .from('script_collaborators')
-      .select('id, submission_id, collaborator_email, collaborator_id, role, role_other, status, profiles:collaborator_id(full_name, avatar_url)')
+      .select('id, submission_id, collaborator_email, collaborator_id, role, role_other, status')
       .in('submission_id', submissionIds)
       .in('status', ['accepted', 'pending'])
 
+    // Fetch profile info for collaborators who have accounts
+    const collabUserIds = (allCollabRows || [])
+      .map((c: any) => c.collaborator_id)
+      .filter(Boolean) as string[]
+    let collabProfiles: Record<string, { full_name: string | null; avatar_url: string | null }> = {}
+    if (collabUserIds.length > 0) {
+      const { data: profileRows } = await service
+        .from('profiles')
+        .select('id, full_name, avatar_url')
+        .in('id', collabUserIds)
+      if (profileRows) {
+        collabProfiles = Object.fromEntries(
+          profileRows.map((p: any) => [p.id, { full_name: p.full_name, avatar_url: p.avatar_url }])
+        )
+      }
+    }
+
     for (const c of (allCollabRows || []) as any[]) {
       const roleName = c.role === 'other' ? (c.role_other || 'Collaborator') : c.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
+      const prof = c.collaborator_id ? collabProfiles[c.collaborator_id] : null
       const info: CollabInfo = {
         id: c.id,
         email: c.collaborator_email,
-        name: c.profiles?.full_name || null,
-        avatarUrl: c.profiles?.avatar_url || null,
+        name: prof?.full_name || null,
+        avatarUrl: prof?.avatar_url || null,
         role: roleName,
         status: c.status,
       }
@@ -250,11 +270,11 @@ export default async function DashboardPage() {
       list.push(info)
       collabsByScript.set(c.submission_id, list)
 
-      // Heat is granted on invite (both accepted + pending contribute heat)
-      collabHeatByScript.set(c.submission_id, (collabHeatByScript.get(c.submission_id) || 0) + 1)
+      // Only accepted collaborators contribute to heat (heat granted on accept, not invite)
       if (c.status === 'accepted') {
         totalCollaborators++
         collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
+        collabHeatByScript.set(c.submission_id, (collabHeatByScript.get(c.submission_id) || 0) + 1)
       } else {
         pendingCollaborators++
       }

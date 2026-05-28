@@ -162,33 +162,8 @@ export async function POST(
     return NextResponse.json({ error: error.message }, { status: 400 })
   }
 
-  // Add +1 heat to the script for the new collaborator
-  try {
-    const { data: sub } = await supabase
-      .from('script_submissions')
-      .select('heat_score')
-      .eq('id', submissionId)
-      .single()
-    const currentHeat = (sub as any)?.heat_score || 0
-    const newHeat = currentHeat + 1
-    await supabase
-      .from('script_submissions')
-      .update({ heat_score: newHeat })
-      .eq('id', submissionId)
-    await supabase
-      .from('collaborator_heat_log')
-      .insert({
-        submission_id: submissionId,
-        collaborator_row_id: collab.id,
-        collaborator_email: email,
-        action: 'added',
-        heat_delta: 1,
-        heat_after: newHeat,
-        actor_id: user.id,
-      })
-  } catch (heatErr) {
-    console.error('[collaborators] Failed to update heat:', heatErr)
-  }
+  // Heat is NOT granted on invite — only when the collaborator accepts.
+  // See PATCH handler for heat grant on acceptance.
 
   // Send invite email
   try {
@@ -297,8 +272,8 @@ export async function PATCH(
 
     if (error) return NextResponse.json({ error: error.message }, { status: 400 })
 
-    // If declined, remove the heat that was added on invite
-    if (status === 'declined') {
+    // Grant +1 heat only when the collaborator ACCEPTS
+    if (status === 'accepted') {
       try {
         const { data: sub } = await supabase
           .from('script_submissions')
@@ -306,7 +281,7 @@ export async function PATCH(
           .eq('id', submissionId)
           .single()
         const currentHeat = (sub as any)?.heat_score || 0
-        const newHeat = Math.max(0, currentHeat - 1)
+        const newHeat = currentHeat + 1
         await supabase
           .from('script_submissions')
           .update({ heat_score: newHeat })
@@ -317,15 +292,16 @@ export async function PATCH(
             submission_id: submissionId,
             collaborator_row_id: collab.id,
             collaborator_email: collab.collaborator_email,
-            action: 'declined',
-            heat_delta: -1,
+            action: 'accepted',
+            heat_delta: 1,
             heat_after: newHeat,
             actor_id: user.id,
           })
       } catch (heatErr) {
-        console.error('[collaborators] Failed to update heat on decline:', heatErr)
+        console.error('[collaborators] Failed to update heat on accept:', heatErr)
       }
     }
+    // No heat to remove on decline — heat was never granted for pending invites
 
     return NextResponse.json(updated)
   }
@@ -382,7 +358,7 @@ export async function DELETE(
 
   const { data: collab } = await supabase
     .from('script_collaborators')
-    .select('id, collaborator_email, collaborator_id, submission_id')
+    .select('id, collaborator_email, collaborator_id, submission_id, status')
     .eq('submission_id', submissionId)
     .eq('id', collabRowId)
     .single()
@@ -415,32 +391,34 @@ export async function DELETE(
     return NextResponse.json({ error: error.message }, { status: 400 })
   }
 
-  // Remove 1 heat from the script + audit log
-  try {
-    const { data: sub } = await supabase
-      .from('script_submissions')
-      .select('heat_score')
-      .eq('id', submissionId)
-      .single()
-    const currentHeat = (sub as any)?.heat_score || 0
-    const newHeat = Math.max(0, currentHeat - 1)
-    await supabase
-      .from('script_submissions')
-      .update({ heat_score: newHeat })
-      .eq('id', submissionId)
-    await supabase
-      .from('collaborator_heat_log')
-      .insert({
-        submission_id: submissionId,
-        collaborator_row_id: collab.id,
-        collaborator_email: collab.collaborator_email,
-        action: 'removed',
-        heat_delta: -1,
-        heat_after: newHeat,
-        actor_id: user.id,
-      })
-  } catch (heatErr) {
-    console.error('[collaborators] Failed to update heat on remove:', heatErr)
+  // Only remove heat if the collaborator was accepted (pending never had heat)
+  if (collab.status === 'accepted') {
+    try {
+      const { data: sub } = await supabase
+        .from('script_submissions')
+        .select('heat_score')
+        .eq('id', submissionId)
+        .single()
+      const currentHeat = (sub as any)?.heat_score || 0
+      const newHeat = Math.max(0, currentHeat - 1)
+      await supabase
+        .from('script_submissions')
+        .update({ heat_score: newHeat })
+        .eq('id', submissionId)
+      await supabase
+        .from('collaborator_heat_log')
+        .insert({
+          submission_id: submissionId,
+          collaborator_row_id: collab.id,
+          collaborator_email: collab.collaborator_email,
+          action: 'removed',
+          heat_delta: -1,
+          heat_after: newHeat,
+          actor_id: user.id,
+        })
+    } catch (heatErr) {
+      console.error('[collaborators] Failed to update heat on remove:', heatErr)
+    }
   }
 
   return NextResponse.json({ ok: true })

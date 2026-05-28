@@ -22,7 +22,7 @@ export function HeatBreakdown({ heat, heatRank, isPublic, collabHeatCount }: Pro
     return () => document.removeEventListener('mousedown', handleClick)
   }, [open])
 
-  // Calculate breakdown — collabHeatCount includes pending invites (heat granted on invite)
+  // Calculate breakdown — collabHeatCount = accepted collaborators only (heat granted on accept)
   const collabHeat = collabHeatCount
   const reviewHeat = Math.max(0, heat - collabHeat)
 
