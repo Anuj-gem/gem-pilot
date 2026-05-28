@@ -5,10 +5,20 @@ import Link from 'next/link'
 import { AddCollaboratorButton } from './add-collaborator-button'
 import { DiscoverToggle } from './discover-toggle'
 
+type CollabInfo = {
+  id: string
+  email: string
+  name: string | null
+  avatarUrl: string | null
+  role: string
+  status: string
+}
+
 type Props = {
   scriptId: string
   isPublic: boolean
   collaboratorCount: number
+  collaborators?: CollabInfo[]
   availableOppCount: number
   pendingAppCount: number
   heat: number
@@ -21,6 +31,7 @@ export function GrowHeatSection({
   scriptId,
   isPublic,
   collaboratorCount,
+  collaborators = [],
   availableOppCount,
   pendingAppCount,
   heat,
@@ -29,6 +40,13 @@ export function GrowHeatSection({
   qualifyingOpps = [],
 }: Props) {
   const [oppsExpanded, setOppsExpanded] = useState(false)
+  const [collabsExpanded, setCollabsExpanded] = useState(false)
+
+  const accepted = collaborators.filter(c => c.status === 'accepted')
+  const pending = collaborators.filter(c => c.status === 'pending')
+  const totalCount = accepted.length + pending.length
+  const showAvatars = accepted.length > 0 || pending.length > 0
+  const MAX_VISIBLE = 4
 
   return (
     <div style={{ borderTop: '1px solid #f3f4f6', marginTop: 8 }}>
@@ -39,7 +57,7 @@ export function GrowHeatSection({
       </div>
 
       <div className="space-y-1.5 pb-2">
-        {/* Add collaborators */}
+        {/* Collaborators */}
         {!isCollab && (
           <div className="px-2.5 py-1.5" style={{ background: '#fafafa', borderRadius: 6 }}>
             <div className="flex items-center gap-2.5">
@@ -47,14 +65,84 @@ export function GrowHeatSection({
               <div className="flex-1 min-w-0">
                 <p className="text-[12px] font-semibold m-0" style={{ color: '#111827' }}>
                   Collaborators
-                  {collaboratorCount > 0 && (
-                    <span className="font-normal" style={{ color: '#6b7280' }}> · {collaboratorCount} added</span>
+                  {totalCount > 0 && (
+                    <span className="font-normal" style={{ color: '#6b7280' }}> ({totalCount})</span>
                   )}
                 </p>
-                <p className="text-[11px] m-0 mt-0.5" style={{ color: '#6b7280' }}>+1 heat each</p>
+                <p className="text-[11px] m-0 mt-0.5" style={{ color: '#6b7280' }}>+1 🔥 heat each</p>
               </div>
               <AddCollaboratorButton scriptId={scriptId} collaboratorCount={collaboratorCount} />
             </div>
+
+            {/* Avatar circles row */}
+            {showAvatars && (
+              <div className="mt-1.5 ml-[27px]">
+                <div className="flex items-center gap-0.5">
+                  {/* Show first N avatars */}
+                  {[...accepted, ...pending].slice(0, MAX_VISIBLE).map((c) => (
+                    <div
+                      key={c.id}
+                      className="relative group"
+                    >
+                      <div
+                        className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0"
+                        style={{
+                          background: c.avatarUrl ? `url(${c.avatarUrl}) center/cover` : c.status === 'pending' ? '#e5e7eb' : '#ddd6fe',
+                          color: c.status === 'pending' ? '#9ca3af' : '#7c3aed',
+                          border: c.status === 'pending' ? '1px dashed #d1d5db' : '1px solid #c4b5fd',
+                        }}
+                      >
+                        {!c.avatarUrl && (c.name ? c.name[0].toUpperCase() : c.email[0].toUpperCase())}
+                      </div>
+                      {/* Hover tooltip */}
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-20"
+                        style={{ background: '#1f2937', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}
+                      >
+                        <p className="text-[11px] font-semibold text-white m-0">{c.name || c.email}</p>
+                        <p className="text-[10px] m-0" style={{ color: '#9ca3af' }}>
+                          {c.role}{c.status === 'pending' ? ' · Pending' : ''}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                  {/* Overflow indicator */}
+                  {totalCount > MAX_VISIBLE && (
+                    <button
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCollabsExpanded(!collabsExpanded) }}
+                      className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 cursor-pointer border-0"
+                      style={{ background: '#f3f4f6', color: '#6b7280' }}
+                    >
+                      +{totalCount - MAX_VISIBLE}
+                    </button>
+                  )}
+                </div>
+
+                {/* Expanded list */}
+                {collabsExpanded && totalCount > MAX_VISIBLE && (
+                  <div className="mt-1.5 space-y-1" style={{ borderTop: '1px solid #f0f0f0', paddingTop: 6 }}>
+                    {[...accepted, ...pending].slice(MAX_VISIBLE).map(c => (
+                      <div key={c.id} className="flex items-center gap-2">
+                        <div
+                          className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold shrink-0"
+                          style={{
+                            background: c.avatarUrl ? `url(${c.avatarUrl}) center/cover` : c.status === 'pending' ? '#e5e7eb' : '#ddd6fe',
+                            color: c.status === 'pending' ? '#9ca3af' : '#7c3aed',
+                            border: c.status === 'pending' ? '1px dashed #d1d5db' : '1px solid #c4b5fd',
+                          }}
+                        >
+                          {!c.avatarUrl && (c.name ? c.name[0].toUpperCase() : c.email[0].toUpperCase())}
+                        </div>
+                        <span className="text-[11px]" style={{ color: '#374151' }}>{c.name || c.email}</span>
+                        <span className="text-[10px]" style={{ color: '#9ca3af' }}>{c.role}</span>
+                        {c.status === 'pending' && (
+                          <span className="text-[10px] font-semibold" style={{ color: '#f59e0b' }}>Pending</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
 

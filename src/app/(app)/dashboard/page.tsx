@@ -218,31 +218,43 @@ export default async function DashboardPage() {
   const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
   const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
 
-  // ── COLLABORATOR COUNTS (for stat card + per-script display) ──
+  // ── COLLABORATOR DATA (for stat card + per-script display) ──
 
+  type CollabInfo = { id: string; email: string; name: string | null; avatarUrl: string | null; role: string; status: string }
   let totalCollaborators = 0
   let pendingCollaborators = 0
   const collabCountByScript = new Map<string, number>()
+  const collabsByScript = new Map<string, CollabInfo[]>()
 
   if (user && submissionIds.length > 0) {
-    // Active (accepted) collaborators on my scripts
-    const { data: activeCollabs } = await service
+    // All collaborators on my scripts (accepted + pending)
+    const { data: allCollabRows } = await service
       .from('script_collaborators')
-      .select('id, submission_id')
+      .select('id, submission_id, collaborator_email, collaborator_id, role, role_other, status, profiles:collaborator_id(full_name, avatar_url)')
       .in('submission_id', submissionIds)
-      .eq('status', 'accepted')
-    totalCollaborators = (activeCollabs || []).length
-    for (const c of (activeCollabs || []) as { id: string; submission_id: string }[]) {
-      collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
-    }
+      .in('status', ['accepted', 'pending'])
 
-    // Pending collaborator invitations on my scripts
-    const { count: pendingCount2 } = await service
-      .from('script_collaborators')
-      .select('id', { count: 'exact', head: true })
-      .in('submission_id', submissionIds)
-      .eq('status', 'pending')
-    pendingCollaborators = pendingCount2 ?? 0
+    for (const c of (allCollabRows || []) as any[]) {
+      const roleName = c.role === 'other' ? (c.role_other || 'Collaborator') : c.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
+      const info: CollabInfo = {
+        id: c.id,
+        email: c.collaborator_email,
+        name: c.profiles?.full_name || null,
+        avatarUrl: c.profiles?.avatar_url || null,
+        role: roleName,
+        status: c.status,
+      }
+      const list = collabsByScript.get(c.submission_id) || []
+      list.push(info)
+      collabsByScript.set(c.submission_id, list)
+
+      if (c.status === 'accepted') {
+        totalCollaborators++
+        collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
+      } else {
+        pendingCollaborators++
+      }
+    }
   }
 
   // ── COLLABORATIONS QUERY (scripts I'm collaborating on) ──
@@ -395,6 +407,7 @@ export default async function DashboardPage() {
         logline: ev?.logline ?? null,
         posterUrl: s.poster_url ?? null,
         collaboratorCount: collabCountByScript.get(s.id) ?? 0,
+        collaborators: collabsByScript.get(s.id) ?? [],
         pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
         availableOppCount: qualifyingOpps.length,
         scoreRank: scoreRankMap.get(s.id) ?? null,
@@ -905,7 +918,7 @@ export default async function DashboardPage() {
                   {/* Completed scripts + collab scripts — compact rows */}
                   {[
                     ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
-                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null, heatRank: null as number | null })),
+                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, collaborators: [] as CollabInfo[], pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null, heatRank: null as number | null })),
                   ].map(script => {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
@@ -971,6 +984,7 @@ export default async function DashboardPage() {
                           scriptId={script.id}
                           isPublic={script.isPublic}
                           collaboratorCount={script.collaboratorCount}
+                          collaborators={script.collaborators || []}
                           availableOppCount={script.availableOppCount}
                           pendingAppCount={script.pendingAppCount}
                           heat={script.heat}
