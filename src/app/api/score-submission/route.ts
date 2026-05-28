@@ -296,7 +296,9 @@ export async function POST(request: NextRequest) {
       // submission row so per-script overrides via the report-page menu
       // start from the writer's chosen defaults.
       const pd = ownerProfile?.privacy_defaults
-      if (typeof pd?.public_default === "boolean") ownerPublicDefault = pd.public_default
+      // is_public always defaults to true for real accounts (Anuj 2026-05-28).
+      // Writers can toggle it off via the leaderboard switch on their dashboard.
+      // Skipping pd.public_default — that legacy setting no longer overrides.
       if (typeof pd?.allow_reviews === "boolean") ownerAllowReviews = pd.allow_reviews
       if (typeof pd?.allow_industry === "boolean") ownerAllowIndustry = pd.allow_industry
 
