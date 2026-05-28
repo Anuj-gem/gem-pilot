@@ -16,6 +16,7 @@ import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
+import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
 // DashboardTabs removed — writer dashboard is now a flat two-column layout
 import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
@@ -935,66 +936,28 @@ export default async function DashboardPage() {
                           )}
                         </div>
 
-                        {/* Ranking section */}
-                        <div className="mt-2 space-y-1.5" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
-                          {/* GEM Score + rank */}
+                        {/* Scores + View report row */}
+                        <div className="flex items-center gap-4 mt-2 px-0" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
                           <div className="flex items-center gap-1.5">
-                            <span className="text-[11px] font-bold" style={{ color: '#7c3aed' }}>GEM Score</span>
+                            <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>GEM Score</span>
                             <span className="inline-flex">{gemDiamond(5)}</span>
                             <span className="text-[15px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
-                            <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>·</span>
                             {script.isPublic && script.scoreRank ? (
-                              <span className="text-[12px] font-bold" style={{ color: '#7c3aed' }}>Ranked #{script.scoreRank}</span>
+                              <span className="text-[11px] font-semibold" style={{ color: '#7c3aed' }}>#{script.scoreRank}</span>
                             ) : (
-                              <span className="text-[11px] font-medium" style={{ color: '#9ca3af' }}>Not ranked</span>
+                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not ranked</span>
                             )}
                           </div>
-
-                          {/* Project Heat + rank */}
                           <div className="flex items-center gap-1.5">
-                            <span className="text-[11px] font-bold" style={{ color: '#ea580c' }}>Project Heat</span>
-                            <span className="text-[11px] leading-none">🔥</span>
+                            <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>Project Heat</span>
+                            <span className="text-[11px]">🔥</span>
                             <span className="text-[15px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#d1d5db' }}>{script.heat}</span>
-                            <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>·</span>
                             {script.isPublic && script.heat > 0 && script.heatRank ? (
-                              <span className="text-[12px] font-bold" style={{ color: '#ea580c' }}>Ranked #{script.heatRank}</span>
+                              <span className="text-[11px] font-semibold" style={{ color: '#ea580c' }}>#{script.heatRank}</span>
                             ) : (
-                              <span className="text-[11px] font-medium" style={{ color: '#9ca3af' }}>Not ranked</span>
+                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not ranked</span>
                             )}
                           </div>
-
-                          {/* Discover toggle */}
-                          {!script.collabRole && (
-                            <div className="flex items-center gap-1.5 pt-0.5">
-                              <DiscoverToggle scriptId={script.id} isPublic={script.isPublic} />
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Actions section */}
-                        <div className="flex items-center gap-0 mt-2 flex-wrap" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 6 }}>
-                          {!script.collabRole && (
-                            <AddCollaboratorButton scriptId={script.id} collaboratorCount={script.collaboratorCount} />
-                          )}
-                          {script.collabRole && (
-                            <span className="text-[12px] shrink-0" style={{ color: '#6b7280' }}>🧑 {script.collaboratorCount}</span>
-                          )}
-                          {script.availableOppCount > 0 && (
-                            <>
-                              <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: '#e5e7eb', display: 'inline-block' }} />
-                              <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(22,163,74,0.1)', color: '#16a34a', borderRadius: 3 }}>
-                                {script.availableOppCount} {script.availableOppCount === 1 ? 'opportunity' : 'opportunities'}
-                              </span>
-                            </>
-                          )}
-                          {script.pendingAppCount > 0 && (
-                            <>
-                              <span className="shrink-0 mx-3" style={{ width: 1, height: 16, background: '#e5e7eb', display: 'inline-block' }} />
-                              <span className="text-[11px] font-semibold px-1.5 py-0.5 shrink-0" style={{ background: 'rgba(234,88,12,0.1)', color: '#ea580c', borderRadius: 3 }}>
-                                {script.pendingAppCount} pending
-                              </span>
-                            </>
-                          )}
                           <span className="flex-1" />
                           {script.evaluationId && (
                             <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
@@ -1002,6 +965,17 @@ export default async function DashboardPage() {
                             </Link>
                           )}
                         </div>
+
+                        {/* Grow your heat — collapsible */}
+                        <GrowHeatSection
+                          scriptId={script.id}
+                          isPublic={script.isPublic}
+                          collaboratorCount={script.collaboratorCount}
+                          availableOppCount={script.availableOppCount}
+                          pendingAppCount={script.pendingAppCount}
+                          heat={script.heat}
+                          isCollab={!!script.collabRole}
+                        />
                       </div>
                     )
                   })}
