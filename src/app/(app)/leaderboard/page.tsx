@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     title: 'GEM — The Leaderboard',
     description: 'The best unproduced screenplays in Hollywood, ranked.',
     siteName: 'GEM',
+    url: 'https://www.gem.studio/leaderboard',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
