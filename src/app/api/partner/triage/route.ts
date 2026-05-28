@@ -20,10 +20,11 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, action, feedback_tags } = body as {
+  const { consideration_id, action, feedback_tags, heat_override } = body as {
     consideration_id: string
     action: 'pass' | 'watchlist' | 'meet'
     feedback_tags?: string[]
+    heat_override?: number
   }
 
   if (!consideration_id || !action) {
@@ -77,9 +78,10 @@ export async function POST(req: NextRequest) {
       if (positive.length > 0) updateData.feedback_tags = positive
       if (negative.length > 0) updateData.next_steps_tags = negative
 
-      // Heat: +1 per positive signal tag
-      if (positive.length > 0) {
-        updateData.heat_earned = positive.length
+      // Heat: use override if provided, else +1 per positive signal tag
+      const heatValue = heat_override !== undefined ? heat_override : positive.length
+      if (heatValue > 0) {
+        updateData.heat_earned = heatValue
       }
     }
   }

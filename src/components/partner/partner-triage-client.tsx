@@ -56,6 +56,7 @@ export function PartnerTriageClient({
   const [customReason, setCustomReason] = useState('')
   const [addingCustomLiked, setAddingCustomLiked] = useState(false)
   const [addingCustomReason, setAddingCustomReason] = useState(false)
+  const [heatOverride, setHeatOverride] = useState(0)
   const [triaging, setTriaging] = useState(false)
   const [showOppDropdown, setShowOppDropdown] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
@@ -124,7 +125,7 @@ export function PartnerTriageClient({
 
   const activeOpp = opportunities.find(o => o.id === activeOppId)
 
-  async function handleTriage(action: 'pass' | 'meet', tags?: string[]) {
+  async function handleTriage(action: 'pass' | 'meet', tags?: string[], heat?: number) {
     if (!selectedApp || triaging) return
     setTriaging(true)
 
@@ -136,6 +137,7 @@ export function PartnerTriageClient({
           consideration_id: selectedApp.id,
           action,
           feedback_tags: tags?.length ? tags : undefined,
+          ...(heat !== undefined ? { heat_override: heat } : {}),
         }),
       })
 
@@ -159,10 +161,22 @@ export function PartnerTriageClient({
   function resetFeedback() {
     setLikedTags([])
     setReasonTags([])
+    setHeatOverride(0)
     setCustomLiked('')
     setCustomReason('')
     setAddingCustomLiked(false)
     setAddingCustomReason(false)
+  }
+
+  function toggleLikedTag(tag: string) {
+    setLikedTags(prev => {
+      const removing = prev.includes(tag)
+      const next = removing ? prev.filter(t => t !== tag) : [...prev, tag]
+      // Auto-bump heat to 1 when first positive tag added, drop to 0 when all removed
+      if (!removing && prev.length === 0) setHeatOverride(h => Math.max(h, 1))
+      if (removing && next.length === 0) setHeatOverride(0)
+      return next
+    })
   }
 
   function handlePassClick() {
@@ -176,13 +190,16 @@ export function PartnerTriageClient({
       ...likedTags.map(t => `+${t}`),
       ...reasonTags.map(t => `-${t}`),
     ]
-    handleTriage('pass', allTags)
+    handleTriage('pass', allTags, heatOverride)
   }
 
   function addCustomLikedTag() {
     const val = customLiked.trim()
     if (val && !likedTags.includes(val)) {
-      setLikedTags(prev => [...prev, val])
+      setLikedTags(prev => {
+        if (prev.length === 0) setHeatOverride(h => Math.max(h, 1))
+        return [...prev, val]
+      })
     }
     setCustomLiked('')
     setAddingCustomLiked(false)
@@ -653,9 +670,7 @@ export function PartnerTriageClient({
                             {LIKED_TAGS.map(tag => (
                               <button
                                 key={tag}
-                                onClick={() => setLikedTags(prev =>
-                                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-                                )}
+                                onClick={() => toggleLikedTag(tag)}
                                 className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
                                   likedTags.includes(tag)
                                     ? 'text-green-300'
@@ -672,7 +687,7 @@ export function PartnerTriageClient({
                             {likedTags.filter(t => !LIKED_TAGS.includes(t)).map(tag => (
                               <button
                                 key={tag}
-                                onClick={() => setLikedTags(prev => prev.filter(t => t !== tag))}
+                                onClick={() => toggleLikedTag(tag)}
                                 className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-green-300"
                                 style={{ background: 'rgba(74,222,128,0.12)' }}
                               >
@@ -761,6 +776,28 @@ export function PartnerTriageClient({
                                 + Other
                               </button>
                             )}
+                          </div>
+                        </div>
+
+                        {/* Heat stepper */}
+                        <div className="flex items-center gap-3">
+                          <span className="text-[12px] text-white/40">🔥 Heat</span>
+                          <div className="flex items-center gap-0 rounded-lg overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                            <button
+                              onClick={() => setHeatOverride(h => Math.max(0, h - 1))}
+                              className="text-[14px] px-2.5 py-1 text-white/40 hover:text-white/70 cursor-pointer bg-transparent border-0 transition-colors"
+                            >
+                              −
+                            </button>
+                            <span className={`text-[14px] font-bold min-w-[28px] text-center ${heatOverride > 0 ? 'text-orange-400' : 'text-white/20'}`}>
+                              {heatOverride}
+                            </span>
+                            <button
+                              onClick={() => setHeatOverride(h => h + 1)}
+                              className="text-[14px] px-2.5 py-1 text-white/40 hover:text-white/70 cursor-pointer bg-transparent border-0 transition-colors"
+                            >
+                              +
+                            </button>
                           </div>
                         </div>
 
