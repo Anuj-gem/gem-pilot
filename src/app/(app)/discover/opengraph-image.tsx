@@ -7,7 +7,7 @@ export const contentType = 'image/png'
 
 const DEEP_PURPLE = '#2b1a55'
 const PURPLE = '#7C3AED'
-const GOLD = '#d4a843'
+const GOLD = '#f0c040'
 
 export default async function DiscoverOpengraphImage() {
   return new ImageResponse(
@@ -18,25 +18,25 @@ export default async function DiscoverOpengraphImage() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          padding: '52px 60px 0',
+          padding: '40px 48px 0',
           background: DEEP_PURPLE,
           fontFamily: 'system-ui, -apple-system, sans-serif',
           color: '#ffffff',
         }}
       >
         {/* GEM logo */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
           <div
             style={{
               display: 'flex',
-              width: 22,
-              height: 22,
+              width: 24,
+              height: 24,
               transform: 'rotate(45deg)',
               background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
               borderRadius: 3,
             }}
           />
-          <div style={{ display: 'flex', fontSize: 28, fontWeight: 700, letterSpacing: 1 }}>
+          <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, letterSpacing: 1 }}>
             GEM
           </div>
         </div>
@@ -46,11 +46,11 @@ export default async function DiscoverOpengraphImage() {
           style={{
             display: 'flex',
             fontFamily: 'Georgia, serif',
-            fontSize: 56,
+            fontSize: 64,
             fontWeight: 700,
             lineHeight: 1.1,
             letterSpacing: -1.5,
-            marginBottom: 12,
+            marginBottom: 8,
             color: GOLD,
           }}
         >
@@ -59,10 +59,10 @@ export default async function DiscoverOpengraphImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: 22,
-            color: 'rgba(255,255,255,0.85)',
+            fontSize: 24,
+            color: '#ffffff',
             lineHeight: 1.4,
-            marginBottom: 40,
+            marginBottom: 28,
           }}
         >
           The best unproduced screenplays in Hollywood, ranked.
@@ -76,7 +76,7 @@ export default async function DiscoverOpengraphImage() {
             background: '#ffffff',
             borderRadius: 16,
             padding: '24px 28px',
-            maxWidth: 480,
+            maxWidth: 540,
             boxShadow: '0 6px 24px rgba(0,0,0,0.25)',
             position: 'relative',
           }}
@@ -90,12 +90,12 @@ export default async function DiscoverOpengraphImage() {
               position: 'absolute',
               top: -12,
               left: -12,
-              width: 40,
-              height: 40,
+              width: 44,
+              height: 44,
               borderRadius: 999,
               background: PURPLE,
               color: '#fff',
-              fontSize: 16,
+              fontSize: 18,
               fontWeight: 800,
             }}
           >
@@ -109,18 +109,18 @@ export default async function DiscoverOpengraphImage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: 28,
-                height: 28,
+                width: 30,
+                height: 30,
                 borderRadius: 999,
                 background: '#8b5cf6',
                 color: '#fff',
-                fontSize: 11,
+                fontSize: 12,
                 fontWeight: 700,
               }}
             >
               JE
             </div>
-            <div style={{ display: 'flex', fontSize: 13, color: '#9ca3af' }}>Jordan Ellis</div>
+            <div style={{ display: 'flex', fontSize: 14, color: '#9ca3af' }}>Jordan Ellis</div>
           </div>
 
           {/* Title + genre */}
@@ -128,7 +128,7 @@ export default async function DiscoverOpengraphImage() {
             style={{
               display: 'flex',
               fontFamily: 'Georgia, serif',
-              fontSize: 26,
+              fontSize: 30,
               fontWeight: 700,
               color: '#111827',
               marginBottom: 4,
@@ -137,7 +137,7 @@ export default async function DiscoverOpengraphImage() {
           >
             Oldest Friend
           </div>
-          <div style={{ display: 'flex', fontSize: 14, color: '#9ca3af', fontWeight: 600, marginBottom: 16 }}>
+          <div style={{ display: 'flex', fontSize: 15, color: '#9ca3af', fontWeight: 600, marginBottom: 16 }}>
             Feature · Drama
           </div>
 
@@ -147,14 +147,14 @@ export default async function DiscoverOpengraphImage() {
           {/* Score + Heat */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <div style={{ display: 'flex', fontSize: 13, fontWeight: 600, color: '#6b7280' }}>GEM Score</div>
-              <div style={{ display: 'flex', fontSize: 26, fontWeight: 800, color: PURPLE }}>84</div>
+              <div style={{ display: 'flex', fontSize: 14, fontWeight: 600, color: '#6b7280' }}>GEM Score</div>
+              <div style={{ display: 'flex', fontSize: 30, fontWeight: 800, color: PURPLE }}>84</div>
               <div
                 style={{
                   display: 'flex',
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: 700,
-                  padding: '3px 8px',
+                  padding: '3px 10px',
                   borderRadius: 999,
                   background: '#f3f0ff',
                   color: PURPLE,
@@ -164,14 +164,14 @@ export default async function DiscoverOpengraphImage() {
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <div style={{ display: 'flex', fontSize: 13, fontWeight: 600, color: '#6b7280' }}>Project Heat</div>
-              <div style={{ display: 'flex', fontSize: 26, fontWeight: 800, color: '#f97316' }}>12</div>
+              <div style={{ display: 'flex', fontSize: 14, fontWeight: 600, color: '#6b7280' }}>Project Heat</div>
+              <div style={{ display: 'flex', fontSize: 30, fontWeight: 800, color: '#f97316' }}>12</div>
               <div
                 style={{
                   display: 'flex',
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: 700,
-                  padding: '3px 8px',
+                  padding: '3px 10px',
                   borderRadius: 999,
                   background: '#fff7ed',
                   color: '#f97316',
