@@ -73,10 +73,6 @@ export default async function DiscoverOpengraphImage() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            flexGrow: 1,
-            flexShrink: 0,
-            flexBasis: 0,
-            minHeight: 370,
             background: '#ffffff',
             borderRadius: 18,
             padding: '28px 32px',
@@ -124,7 +120,7 @@ export default async function DiscoverOpengraphImage() {
             >
               JE
             </div>
-            <div style={{ display: 'flex', fontSize: 16, color: '#9ca3af' }}>Jordan Ellis</div>
+            <div style={{ display: 'flex', fontSize: 16, fontWeight: 700, color: '#111827' }}>Jordan Ellis</div>
           </div>
 
           {/* Title + genre */}
@@ -141,7 +137,7 @@ export default async function DiscoverOpengraphImage() {
           >
             Oldest Friend
           </div>
-          <div style={{ display: 'flex', fontSize: 18, color: '#9ca3af', fontWeight: 600, marginBottom: 20 }}>
+          <div style={{ display: 'flex', fontSize: 18, color: '#111827', fontWeight: 700, marginBottom: 20 }}>
             Feature · Drama
           </div>
 
@@ -151,7 +147,7 @@ export default async function DiscoverOpengraphImage() {
           {/* Score + Heat */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <div style={{ display: 'flex', fontSize: 16, fontWeight: 600, color: '#6b7280' }}>GEM Score</div>
+              <div style={{ display: 'flex', fontSize: 16, fontWeight: 700, color: '#111827' }}>GEM Score</div>
               <div style={{ display: 'flex', fontSize: 36, fontWeight: 800, color: PURPLE }}>84</div>
               <div
                 style={{
@@ -168,7 +164,7 @@ export default async function DiscoverOpengraphImage() {
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <div style={{ display: 'flex', fontSize: 16, fontWeight: 600, color: '#6b7280' }}>Project Heat</div>
+              <div style={{ display: 'flex', fontSize: 16, fontWeight: 700, color: '#111827' }}>Project Heat</div>
               <div style={{ display: 'flex', fontSize: 36, fontWeight: 800, color: '#f97316' }}>12</div>
               <div
                 style={{
