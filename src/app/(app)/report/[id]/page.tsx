@@ -958,7 +958,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Stat cards removed — GEM Score + Heat now rendered in hero above */}
 
-        {/* ELEVATOR PITCH — pitch headline only (plot rendered below strengths/weaknesses) */}
+        {/* ═══ PITCH CONTAINER — elevator pitch, plot summary, cast ═══ */}
+        <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
+
+        {/* ELEVATOR PITCH */}
         <SectionGate
           section="whats_working"
           privacy={privacy}
@@ -968,7 +971,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {(whatsSpecial.headline || plotSummary) && (
-            <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }} data-pdf-section="whats_working">
+            <div data-pdf-section="whats_working">
               <h2
                 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
                 style={{ color: 'var(--gem-gold)' }}
@@ -984,9 +987,134 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
+        {/* PLOT SUMMARY */}
+        {plotSummary && (
+          <div>
+            <h2
+              className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
+              style={{ color: 'var(--gem-gold)' }}
+            >
+              Plot Summary
+            </h2>
+            <Collapsible title="Read full plot summary" defaultOpen={false}>
+              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+                {plotSummary}
+              </p>
+            </Collapsible>
+          </div>
+        )}
+
+        {/* LEAD CHARACTERS */}
+        <SectionGate
+          section="deep_dive_characters"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={privacyControlId}
+          isPublic={submission.is_public ?? false}
+          isProSubscriber={true}
+        >
+          {leadCharacters.length > 0 && (
+            <div data-pdf-section="cast">
+            {(() => {
+            const leads = leadCharacters.filter(
+              (c) => (c.role_type ?? '').toLowerCase() === 'lead'
+            )
+            const supporting = leadCharacters.filter(
+              (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
+            )
+            // Build a global index map so InlineCastField can address the
+            // right slot in the edit context's characters[] array.
+            const leadGlobalIndices = leads.map((c) => leadCharacters.indexOf(c))
+            const supportGlobalIndices = supporting.map((c) => leadCharacters.indexOf(c))
+            return (
+              <>
+                <h2
+                  className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
+                  style={{ color: 'var(--gem-gold)' }}
+                >
+                  Cast
+                </h2>
+                <div className="space-y-3">
+                  {leads.map((c, i) => (
+                    <InlineCastField
+                      key={`lead-${i}`}
+                      index={leadGlobalIndices[i]}
+                      character={c}
+                      blurred={applyPaywallBlur}
+                      fallback={
+                        <Collapsible
+                          title={c.name}
+                          meta={`${c.role_type} · ${c.demographics}`}
+                          titleBlurred={applyPaywallBlur}
+                          defaultOpen
+                        >
+                          <p
+                            className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                            style={bodyBlur}
+                          >
+                            {c.hook}
+                          </p>
+                        </Collapsible>
+                      }
+                    />
+                  ))}
+                </div>
+                {supporting.length > 0 && (
+                  <div className="mt-6">
+                    <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+                      Supporting cast · {supporting.length}
+                    </p>
+                    <div className="space-y-3">
+                      {supporting.map((c, i) => (
+                        <InlineCastField
+                          key={`support-${i}`}
+                          index={supportGlobalIndices[i]}
+                          character={c}
+                          blurred={applyPaywallBlur}
+                          fallback={null}
+                        />
+                      ))}
+                    </div>
+                    <SupportingCharactersCarousel
+                      characters={supporting}
+                      blurred={applyPaywallBlur}
+                    />
+                  </div>
+                )}
+              </>
+            )
+          })()}
+            </div>
+          )}
+        </SectionGate>
+
+        </div>{/* ═══ END PITCH CONTAINER ═══ */}
+
+        {/* ═══ GEM ANALYSIS CONTAINER ═══ */}
+        <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
+
+        {/* GEM Analysis header + score */}
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-[28px]">💎</span>
+          <div>
+            <h2 className="text-[20px] sm:text-[22px] font-bold m-0 tracking-tight" style={{ color: '#1C1917' }}>
+              GEM Evaluation
+            </h2>
+          </div>
+          {typeof commercialScore === 'number' && (
+            <div className="ml-auto flex items-center gap-2">
+              <span className="text-[36px] sm:text-[42px] font-bold leading-none" style={{ color: '#6B46C1' }}>
+                {Math.round(commercialScore)}
+              </span>
+              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: '#A78BFA' }}>
+                / 100
+              </span>
+            </div>
+          )}
+        </div>
+
         {/* ═══ STRENGTHS + WEAKNESSES — two columns ═══ */}
         {(allStrengths.length > 0 || (issues?.items ?? []).length > 0 || craftNote) && (
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* LEFT — Why This Can Be a Hit */}
             <SectionGate
@@ -1135,115 +1263,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               })()}
               </SectionGate>
           </div>
-          </div>
         )}
-
-        {/* PLOT SUMMARY — collapsible, after strengths/weaknesses */}
-        {plotSummary && (
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
-            <h2
-              className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              Plot Summary
-            </h2>
-            <Collapsible title="Read full plot summary" defaultOpen={false}>
-              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
-                {plotSummary}
-              </p>
-            </Collapsible>
-          </div>
-        )}
-
-        {/* LEAD CHARACTERS */}
-        <SectionGate
-          section="deep_dive_characters"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-          isProSubscriber={true}
-        >
-          {leadCharacters.length > 0 && (
-            <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }} data-pdf-section="cast">
-            {(() => {
-            const leads = leadCharacters.filter(
-              (c) => (c.role_type ?? '').toLowerCase() === 'lead'
-            )
-            const supporting = leadCharacters.filter(
-              (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
-            )
-            // Build a global index map so InlineCastField can address the
-            // right slot in the edit context's characters[] array.
-            const leadGlobalIndices = leads.map((c) => leadCharacters.indexOf(c))
-            const supportGlobalIndices = supporting.map((c) => leadCharacters.indexOf(c))
-            return (
-              <>
-                <h2
-                  className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
-                  style={{ color: 'var(--gem-gold)' }}
-                >
-                  Cast
-                </h2>
-                <div className="space-y-3">
-                  {leads.map((c, i) => (
-                    <InlineCastField
-                      key={`lead-${i}`}
-                      index={leadGlobalIndices[i]}
-                      character={c}
-                      blurred={applyPaywallBlur}
-                      fallback={
-                        <Collapsible
-                          title={c.name}
-                          meta={`${c.role_type} · ${c.demographics}`}
-                          titleBlurred={applyPaywallBlur}
-                          defaultOpen
-                        >
-                          <p
-                            className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                            style={bodyBlur}
-                          >
-                            {c.hook}
-                          </p>
-                        </Collapsible>
-                      }
-                    />
-                  ))}
-                </div>
-                {supporting.length > 0 && (
-                  <div className="mt-6">
-                    <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-                      Supporting cast · {supporting.length}
-                    </p>
-                    <div className="space-y-3">
-                      {supporting.map((c, i) => (
-                        <InlineCastField
-                          key={`support-${i}`}
-                          index={supportGlobalIndices[i]}
-                          character={c}
-                          blurred={applyPaywallBlur}
-                          fallback={null}
-                        />
-                      ))}
-                    </div>
-                    <SupportingCharactersCarousel
-                      characters={supporting}
-                      blurred={applyPaywallBlur}
-                    />
-                  </div>
-                )}
-              </>
-            )
-          })()}
-            </div>
-          )}
-        </SectionGate>
-
-        {/* Old standalone strengths/weaknesses sections removed — now in two-column layout above */}
 
         {/* ═══ NARRATIVE BREAKDOWN — dimension scores ═══ */}
         {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
+          <div>
             <h2
               className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
               style={{ color: 'var(--gem-gold)' }}
@@ -1279,7 +1303,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isPublic={submission.is_public ?? false}
             isProSubscriber={true}
           >
-            <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }} data-pdf-section="project_complexity">
+            <div data-pdf-section="project_complexity">
               <h2
                 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
                 style={{ color: 'var(--gem-gold)' }}
@@ -1350,6 +1374,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           </SectionGate>
         )}
+
+        </div>{/* ═══ END GEM ANALYSIS CONTAINER ═══ */}
 
         {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
             the Development Priorities EditorialSection above, which now
