@@ -149,17 +149,31 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   }
 
   // Score + heat ranks across all public scripts
+  // Tied ranks: same rounded score = same rank number
   const scoreRankMap = new Map<string, number>()
   const heatRankMap = new Map<string, number>()
   const publicWithScores = scripts.map(s => ({
     id: s.id,
     score: evalBySubmission.get(s.id)?.weighted_score ?? 0,
+    roundedScore: Math.round(evalBySubmission.get(s.id)?.weighted_score ?? 0),
     heat: s.heat_score ?? 0,
   }))
-  const byScore = [...publicWithScores].sort((a, b) => b.score - a.score)
-  byScore.forEach((s, i) => scoreRankMap.set(s.id, i + 1))
+  const byScore = [...publicWithScores].sort((a, b) => b.roundedScore - a.roundedScore)
+  let currentScoreRank = 1
+  byScore.forEach((s, i) => {
+    if (i > 0 && s.roundedScore < byScore[i - 1].roundedScore) {
+      currentScoreRank = i + 1
+    }
+    scoreRankMap.set(s.id, currentScoreRank)
+  })
   const byHeat = [...publicWithScores].sort((a, b) => b.heat - a.heat)
-  byHeat.forEach((s, i) => heatRankMap.set(s.id, i + 1))
+  let currentHeatRank = 1
+  byHeat.forEach((s, i) => {
+    if (i > 0 && s.heat < byHeat[i - 1].heat) {
+      currentHeatRank = i + 1
+    }
+    heatRankMap.set(s.id, currentHeatRank)
+  })
 
   // 7-day new script count for header
   const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
@@ -258,6 +272,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
         initialFilters={{ format: initialFormat, genres: initialGenres, budgets: initialBudgets }}
         basePath="/leaderboard"
         isInsider={isInsider}
+        isLoggedIn={!!user}
       />
     </div>
   )

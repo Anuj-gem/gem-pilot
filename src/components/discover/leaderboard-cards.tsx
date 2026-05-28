@@ -97,8 +97,6 @@ function CollaboratorsDropdown({ collaborators, count }: { collaborators: Collab
     return () => document.removeEventListener('mousedown', handleClick)
   }, [open])
 
-  if (count === 0 && collaborators.length === 0) return null
-
   const accepted = collaborators.filter(c => c.status === 'accepted')
 
   return (
@@ -241,12 +239,14 @@ export function LeaderboardCards({
   initialFilters,
   basePath,
   isInsider,
+  isLoggedIn,
 }: {
   cards: LeaderboardCard[]
   initialSort: SortMode
   initialFilters: { format: FormatFilter; genres: GenreId[]; budgets: BudgetId[] }
   basePath: string
   isInsider: boolean
+  isLoggedIn: boolean
 }) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -293,6 +293,21 @@ export function LeaderboardCards({
     filtered = [...filtered].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
   }
 
+  // Compute tied display ranks — same rounded value = same rank
+  const displayRanks = new Map<string, number>()
+  if (sort === 'top_gem' || sort === 'top_heat') {
+    let currentRank = 1
+    filtered.forEach((c, i) => {
+      if (i > 0) {
+        const prev = filtered[i - 1]
+        const curVal = sort === 'top_gem' ? Math.round(c.scoreVisible ? (c.score ?? 0) : 0) : c.heat
+        const prevVal = sort === 'top_gem' ? Math.round(prev.scoreVisible ? (prev.score ?? 0) : 0) : prev.heat
+        if (curVal < prevVal) currentRank = i + 1
+      }
+      displayRanks.set(c.submissionId, currentRank)
+    })
+  }
+
   // Cap at 60
   const visible = filtered.slice(0, 60)
 
@@ -334,10 +349,10 @@ export function LeaderboardCards({
         </div>
       ) : (
         <div className="space-y-1.5">
-          {visible.map((c, idx) => {
+          {visible.map((c) => {
             const rounded = c.score ? Math.round(c.score) : null
             const reportHref = `/report/${c.evaluationId}`
-            const rank = sort === 'top_gem' ? (idx + 1) : (sort === 'top_heat' ? (idx + 1) : null)
+            const rank = displayRanks.get(c.submissionId) ?? null
 
             return (
               <div
@@ -402,66 +417,48 @@ export function LeaderboardCards({
                       <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
                     )}
                   </div>
-                  {c.collaboratorCount > 0 && (
-                    <div className="ml-4">
-                      <CollaboratorsDropdown collaborators={c.collaborators} count={c.collaboratorCount} />
-                    </div>
-                  )}
+                  <div className="ml-4">
+                    <CollaboratorsDropdown collaborators={c.collaborators} count={c.collaboratorCount} />
+                  </div>
                   <span className="flex-1" />
                   <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
                     View report →
                   </Link>
                 </div>
 
-                {/* Row 3: Author card */}
+                {/* Row 3: Author card (not clickable) */}
                 {c.writer && (
                   <div className="flex items-center gap-2 mt-2 pt-2" style={{ borderTop: '1px solid #f3f4f6' }}>
-                    {c.writer.handle ? (
-                      <Link href={`/w/${c.writer.handle}`} className="flex items-center gap-2 no-underline group/author min-w-0">
-                        {c.writer.avatarUrl ? (
-                          <img src={c.writer.avatarUrl} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
-                        ) : (
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-[9px] font-bold text-white" style={{ background: placeholderGradient }}>
-                            {writerInitials(c.writer.fullName)}
-                          </div>
-                        )}
-                        <div className="min-w-0">
-                          <p className="text-[12px] font-semibold m-0 truncate group-hover/author:text-purple-600 transition-colors" style={{ color: '#374151' }}>
-                            {isInsider ? (c.writer.fullName || c.writer.handle) : (c.writer.fullName || c.writer.handle)}
-                          </p>
-                          {c.writer.headline && (
-                            <p className="text-[11px] m-0 truncate" style={{ color: '#9ca3af' }}>{c.writer.headline}</p>
-                          )}
-                        </div>
-                      </Link>
+                    {c.writer.avatarUrl ? (
+                      <img src={c.writer.avatarUrl} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
                     ) : (
-                      <div className="flex items-center gap-2 min-w-0">
-                        {c.writer.avatarUrl ? (
-                          <img src={c.writer.avatarUrl} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
-                        ) : (
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-[9px] font-bold text-white" style={{ background: placeholderGradient }}>
-                            {writerInitials(c.writer.fullName)}
-                          </div>
-                        )}
-                        <div className="min-w-0">
-                          <p className="text-[12px] font-semibold m-0 truncate" style={{ color: '#374151' }}>
-                            {c.writer.fullName || 'Anonymous'}
-                          </p>
-                          {c.writer.headline && (
-                            <p className="text-[11px] m-0 truncate" style={{ color: '#9ca3af' }}>{c.writer.headline}</p>
-                          )}
-                        </div>
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-[9px] font-bold text-white" style={{ background: placeholderGradient }}>
+                        {writerInitials(c.writer.fullName)}
                       </div>
                     )}
+                    <div className="min-w-0">
+                      <p className="text-[12px] font-semibold m-0 truncate" style={{ color: '#374151' }}>
+                        {c.writer.fullName || 'Anonymous'}
+                      </p>
+                      {c.writer.headline && (
+                        <p className="text-[11px] m-0 truncate" style={{ color: '#9ca3af' }}>{c.writer.headline}</p>
+                      )}
+                    </div>
                   </div>
                 )}
 
-                {/* Non-insider blur overlay for author + report */}
+                {/* Non-insider blur overlay */}
                 {!isInsider && (
                   <div className="absolute bottom-0 left-0 right-0 h-[48px] flex items-center justify-center" style={{ borderRadius: '0 0 8px 8px', background: 'linear-gradient(transparent, rgba(255,255,255,0.95) 40%)', backdropFilter: 'blur(2px)' }}>
-                    <span className="text-[11px] font-semibold px-3 py-1 rounded-full" style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
-                      Unlock with GEM Pro
-                    </span>
+                    {!isLoggedIn ? (
+                      <Link href="/login" className="text-[11px] font-semibold px-3 py-1 rounded-full no-underline" style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
+                        Log in to see more
+                      </Link>
+                    ) : (
+                      <span className="text-[11px] font-semibold px-3 py-1 rounded-full" style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
+                        Unlock with GEM Pro
+                      </span>
+                    )}
                   </div>
                 )}
               </div>
