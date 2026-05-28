@@ -845,6 +845,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
+        {/* Media carousel */}
+        <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
+          <HeroMediaCarousel
+            submissionId={submission.id}
+            posterUrl={submission.poster_url ?? null}
+            initialMedia={(submission as any).media_urls || []}
+            isOwner={isOwner}
+          />
+        </div>
+
         {/* ELEVATOR PITCH */}
         <SectionGate
           section="whats_working"
@@ -971,16 +981,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
         </SectionGate>
-
-        {/* Media carousel */}
-        <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
-          <HeroMediaCarousel
-            submissionId={submission.id}
-            posterUrl={submission.poster_url ?? null}
-            initialMedia={(submission as any).media_urls || []}
-            isOwner={isOwner}
-          />
-        </div>
 
         {/* Collaborators Attached */}
         <div>

@@ -372,7 +372,7 @@ export function EditableTopCard({
                 className="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold opacity-60"
                 style={{
                   background: 'rgba(124,77,237,0.15)',
-                  color: '#c4b5fd',
+                  color: '#7C3AED',
                   border: '1px solid rgba(124,77,237,0.25)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.04em',
@@ -450,7 +450,7 @@ export function EditableTopCard({
                     className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-bold"
                     style={{
                       background: 'rgba(124,77,237,0.22)',
-                      color: '#c4b5fd',
+                      color: '#7C3AED',
                       border: '1px solid rgba(124,77,237,0.35)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',

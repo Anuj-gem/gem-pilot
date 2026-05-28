@@ -115,7 +115,8 @@ export function OwnerActionsMenu({
       {editHref ? (
         <Link
           href={editHref}
-          className={`${baseBtnClass} text-white border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
+          className={`${baseBtnClass} border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
+          style={{ color: '#7C3AED' }}
           title="Edit title, headline, tags"
         >
           <span className="text-[14px]" aria-hidden>&#9998;</span>
@@ -125,7 +126,8 @@ export function OwnerActionsMenu({
         <button
           type="button"
           onClick={triggerEdit}
-          className={`${baseBtnClass} text-white border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
+          className={`${baseBtnClass} border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
+          style={{ color: '#7C3AED' }}
           title="Edit title, headline, tags"
         >
           <span className="text-[14px]" aria-hidden>&#9998;</span>
@@ -137,7 +139,8 @@ export function OwnerActionsMenu({
       {downloadHref ? (
         <Link
           href={downloadHref}
-          className={`${baseBtnClass} text-white border-[var(--gem-gray-600)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
+          className={`${baseBtnClass} border-[rgba(0,0,0,0.15)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
+          style={{ color: '#57534E' }}
           title="Download PDF"
         >
           <Download size={14} />
@@ -147,7 +150,8 @@ export function OwnerActionsMenu({
         <button
           type="button"
           onClick={triggerDownload}
-          className={`${baseBtnClass} text-white border-[var(--gem-gray-600)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
+          className={`${baseBtnClass} border-[rgba(0,0,0,0.15)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
+          style={{ color: '#57534E' }}
           title="Download PDF"
         >
           <Download size={14} />
