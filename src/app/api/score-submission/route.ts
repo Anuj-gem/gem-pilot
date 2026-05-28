@@ -270,7 +270,7 @@ export async function POST(request: NextRequest) {
     // They stay private until the user claims the report and creates
     // an account. Anuj 2026-05-02.
     const isAnonymous = !ownedCheck?.user_id
-    let ownerPublicDefault = false
+    let ownerPublicDefault = true
     let ownerAllowReviews = isAnonymous ? false : true
     let ownerAllowIndustry = isAnonymous ? false : true
     let isLockedScript = false
