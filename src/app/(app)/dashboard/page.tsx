@@ -225,6 +225,7 @@ export default async function DashboardPage() {
   let totalCollaborators = 0
   let pendingCollaborators = 0
   const collabCountByScript = new Map<string, number>()
+  const collabHeatByScript = new Map<string, number>()
   const collabsByScript = new Map<string, CollabInfo[]>()
 
   if (user && submissionIds.length > 0) {
@@ -249,6 +250,8 @@ export default async function DashboardPage() {
       list.push(info)
       collabsByScript.set(c.submission_id, list)
 
+      // Heat is granted on invite (both accepted + pending contribute heat)
+      collabHeatByScript.set(c.submission_id, (collabHeatByScript.get(c.submission_id) || 0) + 1)
       if (c.status === 'accepted') {
         totalCollaborators++
         collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
@@ -408,6 +411,7 @@ export default async function DashboardPage() {
         logline: ev?.logline ?? null,
         posterUrl: s.poster_url ?? null,
         collaboratorCount: collabCountByScript.get(s.id) ?? 0,
+        collabHeatCount: collabHeatByScript.get(s.id) ?? 0,
         collaborators: collabsByScript.get(s.id) ?? [],
         pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
         availableOppCount: qualifyingOpps.length,
@@ -919,7 +923,7 @@ export default async function DashboardPage() {
                   {/* Completed scripts + collab scripts — compact rows */}
                   {[
                     ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
-                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, collaborators: [] as CollabInfo[], pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null, heatRank: null as number | null })),
+                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, collabHeatCount: 0, collaborators: [] as CollabInfo[], pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null, heatRank: null as number | null })),
                   ].map(script => {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
@@ -963,7 +967,7 @@ export default async function DashboardPage() {
                             )}
                           </div>
                           <div className="ml-4">
-                            <HeatBreakdown heat={script.heat} heatRank={script.heatRank} isPublic={script.isPublic} collaboratorCount={script.collaboratorCount} />
+                            <HeatBreakdown heat={script.heat} heatRank={script.heatRank} isPublic={script.isPublic} collabHeatCount={script.collabHeatCount} />
                           </div>
                           <span className="flex-1" />
                           {script.evaluationId && (

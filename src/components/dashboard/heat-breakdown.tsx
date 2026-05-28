@@ -6,10 +6,10 @@ interface Props {
   heat: number
   heatRank: number | null
   isPublic: boolean
-  collaboratorCount: number
+  collabHeatCount: number
 }
 
-export function HeatBreakdown({ heat, heatRank, isPublic, collaboratorCount }: Props) {
+export function HeatBreakdown({ heat, heatRank, isPublic, collabHeatCount }: Props) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -22,8 +22,8 @@ export function HeatBreakdown({ heat, heatRank, isPublic, collaboratorCount }: P
     return () => document.removeEventListener('mousedown', handleClick)
   }, [open])
 
-  // Calculate breakdown
-  const collabHeat = collaboratorCount
+  // Calculate breakdown — collabHeatCount includes pending invites (heat granted on invite)
+  const collabHeat = collabHeatCount
   const reviewHeat = Math.max(0, heat - collabHeat)
 
   return (
