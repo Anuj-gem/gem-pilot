@@ -162,8 +162,19 @@ export default async function OpportunitiesPage() {
   }
 
   return (
-    <div style={{ background: '#2b1a55', minHeight: '100vh' }}>
-    <div className="max-w-2xl mx-auto">
+    <div style={{
+      background: '#2b1a55',
+      minHeight: '100vh',
+      width: '100vw',
+      position: 'relative',
+      left: '50%',
+      marginLeft: '-50vw',
+      marginTop: '-24px',
+      paddingTop: '24px',
+      marginBottom: '-64px',
+      paddingBottom: '64px',
+    }}>
+    <div className="max-w-2xl mx-auto px-4">
       {/* Header */}
       <div className="mb-6">
         <h1
