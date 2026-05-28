@@ -15,6 +15,7 @@ interface OpportunitySettingsProps {
     tags: string[]
     min_score?: number | null
     deadline?: string | null
+    deal_type?: string | null
   }
   onClose: () => void
   onSaved: () => void
@@ -38,6 +39,13 @@ const BUDGET_OPTIONS = [
   { value: 'tentpole', label: 'Tentpole' },
 ]
 
+const DEAL_TYPE_OPTIONS = [
+  { value: 'representation', label: 'Representation' },
+  { value: 'option', label: 'Option' },
+  { value: 'development_deal', label: 'Development Deal' },
+  { value: 'production_partnership', label: 'Production Partnership' },
+]
+
 const TAG_SUGGESTIONS = [
   'biopic', 'true-story', 'adaptation', 'original-ip', 'limited-series',
   'anthology', 'period-piece', 'contemporary', 'ensemble', 'single-lead',
@@ -57,6 +65,7 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
   const [genres, setGenres] = useState<string[]>(opportunity.genres || [])
   const [budgetTiers, setBudgetTiers] = useState<string[]>(opportunity.budget_tiers || [])
   const [tags, setTags] = useState<string[]>(opportunity.tags || [])
+  const [dealType, setDealType] = useState(opportunity.deal_type || '')
   const [tagInput, setTagInput] = useState('')
   const [tagSuggestions, setTagSuggestions] = useState<string[]>([])
   const [showTagSuggestions, setShowTagSuggestions] = useState(false)
@@ -118,6 +127,7 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
           genres,
           budget_tiers: budgetTiers,
           tags,
+          deal_type: dealType || null,
           status,
         }),
       })
@@ -186,6 +196,21 @@ export function OpportunitySettings({ opportunity, onClose, onSaved }: Opportuni
               placeholder="Short tagline (optional)"
               className="w-full px-3 py-2 rounded-lg border border-gray-200 text-[14px] text-gray-900 focus:outline-none focus:border-purple-400"
             />
+          </div>
+
+          {/* Deal Type */}
+          <div>
+            <label className="block text-[12px] font-semibold text-gray-600 mb-1">Deal type</label>
+            <select
+              value={dealType}
+              onChange={e => setDealType(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-gray-200 text-[14px] text-gray-900 focus:outline-none focus:border-purple-400 bg-white"
+            >
+              <option value="">Select deal type...</option>
+              {DEAL_TYPE_OPTIONS.map(d => (
+                <option key={d.value} value={d.value}>{d.label}</option>
+              ))}
+            </select>
           </div>
 
           {/* Description */}
