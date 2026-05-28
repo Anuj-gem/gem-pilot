@@ -804,100 +804,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
           </div>
 
-          {/* 3. Media carousel — centered, article-style */}
-          <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
-            <HeroMediaCarousel
-              submissionId={submission.id}
-              posterUrl={submission.poster_url ?? null}
-              initialMedia={(submission as any).media_urls || []}
-              isOwner={isOwner}
-            />
-          </div>
-
-          {/* 4. People Attached — collaborators */}
-          <div className="mt-2">
-            <h2 className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4" style={{ color: 'var(--gem-gold)' }}>
-              People Attached
-              <span style={{ color: 'rgba(255,255,255,0.40)' }}> ({collaboratorCount})</span>
-            </h2>
-            {collaboratorCount > 0 && (
-              <div className="flex flex-col gap-3 mb-3">
-                {(collaboratorRows ?? []).map((c: any, i: number) => {
-                  const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
-                  const avatar = c.profiles?.avatar_url
-                  const headline = c.profiles?.headline
-                  const role = c.role === 'other' ? c.role_other : c.role
-                  const stats = c.collaborator_id ? collabStats[c.collaborator_id] : null
-                  const hasScripts = stats && stats.scripts > 0
-                  const hasHeat = stats && stats.heat > 0
-                  return (
-                    <div
-                      key={i}
-                      className="flex items-center gap-5 px-6 py-5"
-                      style={{
-                        background: 'rgba(255,255,255,0.07)',
-                        border: '1px solid rgba(255,255,255,0.10)',
-                      }}
-                    >
-                      {avatar ? (
-                        <img src={avatar} alt="" className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0" />
-                      ) : (
-                        <div
-                          className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[28px] font-bold flex-shrink-0"
-                          style={{ background: 'rgba(124,58,237,0.25)', color: '#c4b5fd' }}
-                        >
-                          {name.charAt(0).toUpperCase()}
-                        </div>
-                      )}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <span className="text-[22px] font-bold text-white">{name}</span>
-                          {role && (
-                            <span
-                              className="text-[14px] font-semibold px-3 py-1 flex-shrink-0"
-                              style={{
-                                background: 'rgba(124,58,237,0.2)',
-                                color: '#c4b5fd',
-                                borderRadius: 4,
-                              }}
-                            >
-                              {role}
-                            </span>
-                          )}
-                        </div>
-                        {headline && (
-                          <p className="text-[16px] m-0 mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                            {headline}
-                          </p>
-                        )}
-                        {(hasScripts || hasHeat) && (
-                          <div className="flex items-center gap-3 mt-1.5">
-                            {hasScripts && (
-                              <span className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                                {stats!.scripts} {stats!.scripts === 1 ? 'script' : 'scripts'}
-                              </span>
-                            )}
-                            {hasHeat && (
-                              <span className="text-[13px] font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                                🔥 {stats!.heat} heat
-                              </span>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            )}
-            <CollaboratorsSection
-              submissionId={submission.id}
-              isOwner={isOwner || isAdmin}
-              currentUserEmail={user?.email ?? null}
-              currentUserId={user?.id ?? null}
-            />
-          </div>
-
         </div>
 
       </div>
@@ -1088,25 +994,143 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </SectionGate>
 
+        {/* Media carousel */}
+        <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
+          <HeroMediaCarousel
+            submissionId={submission.id}
+            posterUrl={submission.poster_url ?? null}
+            initialMedia={(submission as any).media_urls || []}
+            isOwner={isOwner}
+          />
+        </div>
+
+        {/* Collaborators Attached */}
+        <div>
+          <h2 className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4" style={{ color: 'var(--gem-gold)' }}>
+            🤝 Collaborators Attached
+            <span style={{ color: '#A8A29E' }}> ({collaboratorCount})</span>
+          </h2>
+          {collaboratorCount > 0 && (
+            <div className="flex flex-col gap-3 mb-3">
+              {(collaboratorRows ?? []).map((c: any, i: number) => {
+                const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
+                const avatar = c.profiles?.avatar_url
+                const headline = c.profiles?.headline
+                const role = c.role === 'other' ? c.role_other : c.role
+                const stats = c.collaborator_id ? collabStats[c.collaborator_id] : null
+                const hasScripts = stats && stats.scripts > 0
+                const hasHeat = stats && stats.heat > 0
+                return (
+                  <div
+                    key={i}
+                    className="flex items-center gap-5 px-6 py-5 rounded-xl"
+                    style={{
+                      background: 'rgba(0,0,0,0.03)',
+                      border: '1px solid rgba(0,0,0,0.06)',
+                    }}
+                  >
+                    {avatar ? (
+                      <img src={avatar} alt="" className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0" />
+                    ) : (
+                      <div
+                        className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[28px] font-bold flex-shrink-0"
+                        style={{ background: 'rgba(124,58,237,0.12)', color: '#7C3AED' }}
+                      >
+                        {name.charAt(0).toUpperCase()}
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <span className="text-[22px] font-bold" style={{ color: '#1C1917' }}>{name}</span>
+                        {role && (
+                          <span
+                            className="text-[14px] font-semibold px-3 py-1 flex-shrink-0"
+                            style={{
+                              background: 'rgba(124,58,237,0.10)',
+                              color: '#7C3AED',
+                              borderRadius: 4,
+                            }}
+                          >
+                            {role}
+                          </span>
+                        )}
+                      </div>
+                      {headline && (
+                        <p className="text-[16px] m-0 mt-1" style={{ color: '#78716C' }}>
+                          {headline}
+                        </p>
+                      )}
+                      {(hasScripts || hasHeat) && (
+                        <div className="flex items-center gap-3 mt-1.5">
+                          {hasScripts && (
+                            <span className="text-[13px] font-medium" style={{ color: '#A8A29E' }}>
+                              {stats!.scripts} {stats!.scripts === 1 ? 'script' : 'scripts'}
+                            </span>
+                          )}
+                          {hasHeat && (
+                            <span className="text-[13px] font-medium" style={{ color: '#A8A29E' }}>
+                              🔥 {stats!.heat} heat
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+          <CollaboratorsSection
+            submissionId={submission.id}
+            isOwner={isOwner || isAdmin}
+            currentUserEmail={user?.email ?? null}
+            currentUserId={user?.id ?? null}
+          />
+        </div>
+
         </div>{/* ═══ END PITCH CONTAINER ═══ */}
 
         {/* ═══ GEM ANALYSIS CONTAINER ═══ */}
         <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
 
         {/* GEM Analysis header + score */}
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-[28px]">💎</span>
-          <div>
-            <h2 className="text-[20px] sm:text-[22px] font-bold m-0 tracking-tight" style={{ color: '#1C1917' }}>
-              GEM Evaluation
-            </h2>
+        <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(107,70,193,0.10)' }}>
+          {/* GEM diamond icon */}
+          <div className="flex justify-center mb-4">
+            <span
+              aria-hidden="true"
+              className="inline-flex items-center justify-center shrink-0 rotate-45"
+              style={{ width: 36, height: 36 }}
+            >
+              <span className="absolute rotate-0" style={{
+                width: 36, height: 36,
+                background: 'rgba(167, 139, 250, 0.15)',
+                borderRadius: 2.5,
+              }} />
+              <span className="absolute rotate-0" style={{
+                width: 27, height: 27,
+                background: 'rgba(139, 92, 246, 0.35)',
+                borderRadius: 2,
+              }} />
+              <span className="absolute rotate-0" style={{
+                width: 19, height: 19,
+                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                borderRadius: 1.5,
+              }} />
+            </span>
           </div>
+          <h2 className="text-[24px] sm:text-[28px] font-bold m-0 tracking-tight" style={{ color: '#1C1917' }}>
+            GEM Evaluation
+          </h2>
           {typeof commercialScore === 'number' && (
-            <div className="ml-auto flex items-center gap-2">
-              <span className="text-[36px] sm:text-[42px] font-bold leading-none" style={{ color: '#6B46C1' }}>
+            <div className="mt-3 flex items-baseline justify-center gap-2">
+              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: '#78716C' }}>
+                Overall Score
+              </span>
+              <span className="text-[40px] sm:text-[48px] font-bold leading-none" style={{ color: '#6B46C1' }}>
                 {Math.round(commercialScore)}
               </span>
-              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: '#A78BFA' }}>
+              <span className="text-[15px] font-bold" style={{ color: '#A78BFA' }}>
                 / 100
               </span>
             </div>

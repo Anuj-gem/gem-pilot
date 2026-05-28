@@ -66,8 +66,8 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
             key={`print-${i}`}
             className="rounded-lg p-4 break-inside-avoid"
             style={{
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(0,0,0,0.08)',
+              background: 'rgba(0,0,0,0.03)',
             }}
           >
             <p className="text-[16px] font-bold text-[var(--gem-gray-50)] m-0 leading-tight">
@@ -91,7 +91,7 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
           aria-label="Scroll supporting cast left"
           onClick={() => scrollByCard(-1)}
           className="hidden sm:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full shadow-md transition-colors"
-          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.5)' }}
+          style={{ background: 'rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.10)', color: 'rgba(0,0,0,0.4)' }}
         >
           <ChevronLeft size={16} />
         </button>
@@ -100,7 +100,7 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
           aria-label="Scroll supporting cast right"
           onClick={() => scrollByCard(1)}
           className="hidden sm:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8 rounded-full shadow-md transition-colors"
-          style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.5)' }}
+          style={{ background: 'rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.10)', color: 'rgba(0,0,0,0.4)' }}
         >
           <ChevronRight size={16} />
         </button>
@@ -119,8 +119,8 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
                 onClick={() => setActiveIndex(isActive ? null : i)}
                 className="flex-shrink-0 snap-start w-[200px] text-left rounded-xl px-4 py-3 transition-colors"
                 style={{
-                  border: `1px solid ${isActive ? 'var(--gem-gold)' : 'rgba(255,255,255,0.1)'}`,
-                  background: isActive ? 'rgba(212,175,55,0.05)' : 'rgba(255,255,255,0.05)',
+                  border: `1px solid ${isActive ? 'var(--gem-gold)' : 'rgba(0,0,0,0.08)'}`,
+                  background: isActive ? 'rgba(212,175,55,0.08)' : 'rgba(0,0,0,0.03)',
                 }}
               >
                 <p
@@ -150,7 +150,7 @@ export function SupportingCharactersCarousel({ characters, blurred = false }: Pr
           className="gem-no-print rounded-xl p-5 mt-4"
           style={{
             border: '1px solid var(--gem-gold)',
-            background: 'rgba(212,175,55,0.04)',
+            background: 'rgba(212,175,55,0.06)',
           }}
         >
           <div className="flex items-baseline justify-between gap-3 mb-3">
