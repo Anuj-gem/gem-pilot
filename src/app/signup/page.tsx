@@ -2,14 +2,19 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { SignupPageClient } from './signup-client'
 
-export default async function SignupPage() {
-  const supabase = await createClient()
+interface PageProps {
+  searchParams: Promise<{ redirect?: string; email?: string }>
+}
 
-  // Already-signed-in writers should go straight to their dashboard rather
-  // than see another sign-up form.
+export default async function SignupPage({ searchParams }: PageProps) {
+  const supabase = await createClient()
+  const sp = await searchParams
+
+  // Already-signed-in writers should go to wherever they were headed
+  // (or dashboard by default).
   const { data: { user } } = await supabase.auth.getUser()
   if (user) {
-    redirect('/dashboard')
+    redirect(sp.redirect || '/dashboard')
   }
 
   // Show the 3 most recent public scripts on Discover — social proof that

@@ -161,7 +161,7 @@ function LoginContent() {
 
         <p className="mt-6 text-center text-sm text-[var(--gem-gray-400)]">
           Don&apos;t have an account?{' '}
-          <Link href="/signup" className="text-[var(--gem-accent)] hover:underline">
+          <Link href={redirect !== '/dashboard' ? `/signup?redirect=${encodeURIComponent(redirect)}` : '/signup'} className="text-[var(--gem-accent)] hover:underline">
             Join GEM
           </Link>
         </p>

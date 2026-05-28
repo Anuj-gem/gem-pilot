@@ -448,20 +448,6 @@ export function LeaderboardCards({
                   </div>
                 )}
 
-                {/* Non-insider blur overlay */}
-                {!isInsider && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[48px] flex items-center justify-center" style={{ borderRadius: '0 0 8px 8px', background: 'linear-gradient(transparent, rgba(255,255,255,0.95) 40%)', backdropFilter: 'blur(2px)' }}>
-                    {!isLoggedIn ? (
-                      <Link href="/login" className="text-[11px] font-semibold px-3 py-1 rounded-full no-underline" style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
-                        Log in to see more
-                      </Link>
-                    ) : (
-                      <span className="text-[11px] font-semibold px-3 py-1 rounded-full" style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
-                        Unlock with GEM Pro
-                      </span>
-                    )}
-                  </div>
-                )}
               </div>
             )
           })}

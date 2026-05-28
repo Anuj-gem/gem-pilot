@@ -502,40 +502,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     isPendingCollaborator = collabRow?.status === 'pending'
   }
 
-  // Access gate: owner, admins, producers, and collaborators (including
-  // pending — so they can see the accept/decline bar) can view reports.
-  const viewerHasAccess = isOwner || isAdmin || viewerIsProducer || isCollaborator || isPendingCollaborator
-  if (!viewerHasAccess) {
-    return (
-      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ textAlign: 'center', maxWidth: 400, padding: '0 24px' }}>
-          <p style={{ fontSize: 48, margin: '0 0 16px' }}>🔒</p>
-          <h1 style={{ fontSize: 22, fontWeight: 600, margin: '0 0 8px', color: '#1C1917' }}>
-            This report is private
-          </h1>
-          <p style={{ fontSize: 15, color: '#57534E', margin: '0 0 24px', lineHeight: 1.5 }}>
-            {user
-              ? "You don't have access to view this report."
-              : 'Log in to view this report.'}
-          </p>
-          <a
-            href={user ? '/dashboard' : '/login'}
-            style={{
-              display: 'inline-block',
-              padding: '10px 20px',
-              borderRadius: 10,
-              background: '#7C3AED',
-              color: '#fff',
-              fontWeight: 600,
-              textDecoration: 'none',
-              fontSize: 15,
-            }}
-          >
-            {user ? 'Go to dashboard' : 'Log in'}
-          </a>
-        </div>
-      </div>
-    )
+  // Access tiers (Anuj 2026-05-28):
+  //   1. Not logged in → redirect to login with return URL
+  //   2. Logged in but not collaborator/owner/admin/producer → partial
+  //      access (Pitch visible, GEM Analysis blurred)
+  //   3. Collaborator/owner/admin/producer → full access
+  const viewerHasFullAccess = isOwner || isAdmin || viewerIsProducer || isCollaborator || isPendingCollaborator
+  if (!user) {
+    redirect(`/login?redirect=${encodeURIComponent(`/report/${id}`)}`)
   }
 
   // Collaborator data for the stat card
@@ -1069,7 +1043,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </div>{/* ═══ END PITCH CONTAINER ═══ */}
 
         {/* ═══ GEM ANALYSIS CONTAINER ═══ */}
-        <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
+        <div className="relative rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
+        {!viewerHasFullAccess && (
+          <div className="absolute inset-0 z-20 rounded-2xl flex items-center justify-center" style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(250,248,255,0.6)' }}>
+            <p className="text-[20px] sm:text-[24px] font-bold text-center m-0 px-6" style={{ color: '#6B46C1' }}>
+              Visible to collaborators only
+            </p>
+          </div>
+        )}
 
         {/* GEM Analysis header + score */}
         <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(107,70,193,0.10)' }}>
