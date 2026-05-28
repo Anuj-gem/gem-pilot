@@ -1,15 +1,13 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'GEM Industry Portal — Where the industry finds scripts'
+export const alt = 'GEM — The Leaderboard'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
-const CREAM = '#FAF7F0'
+const DEEP_PURPLE = '#2b1a55'
 const PURPLE = '#7C3AED'
-const GOLD = '#C9A55A'
-const DARK = '#1A1A1A'
-const GREEN = '#10B981'
+const LIGHT_PURPLE = '#a78bfa'
 
 export default async function LeaderboardOpengraphImage() {
   return new ImageResponse(
@@ -20,20 +18,20 @@ export default async function LeaderboardOpengraphImage() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          padding: '48px 60px 0',
-          background: CREAM,
+          padding: '52px 60px 0',
+          background: DEEP_PURPLE,
           fontFamily: 'system-ui, -apple-system, sans-serif',
-          color: DARK,
+          color: '#ffffff',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 13,
+            fontSize: 14,
             fontWeight: 700,
             letterSpacing: 4,
-            color: PURPLE,
-            marginBottom: 14,
+            color: LIGHT_PURPLE,
+            marginBottom: 20,
           }}
         >
           GEM
@@ -41,48 +39,35 @@ export default async function LeaderboardOpengraphImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: 12,
-            fontWeight: 600,
-            letterSpacing: 2.5,
-            color: GREEN,
-            textTransform: 'uppercase',
-            marginBottom: 10,
-          }}
-        >
-          INDUSTRY PORTAL
-        </div>
-        <div
-          style={{
-            display: 'flex',
             fontFamily: 'Georgia, serif',
-            fontSize: 44,
+            fontSize: 48,
             fontWeight: 700,
-            lineHeight: 1.05,
-            letterSpacing: -1.2,
-            marginBottom: 8,
+            lineHeight: 1.1,
+            letterSpacing: -1.5,
+            marginBottom: 12,
           }}
         >
-          Where the industry finds scripts that fit.
+          The Leaderboard
         </div>
         <div
           style={{
             display: 'flex',
-            fontSize: 17,
-            color: '#555',
+            fontSize: 20,
+            color: 'rgba(255,255,255,0.6)',
             lineHeight: 1.4,
-            marginBottom: 26,
-            maxWidth: 900,
+            marginBottom: 36,
+            maxWidth: 700,
           }}
         >
-          Producers, agents, and dev execs scout for the screenwriters making moves right now.
+          The best unproduced screenplays in Hollywood, ranked.
         </div>
 
         {/* 3 sample script cards */}
         <div style={{ display: 'flex', gap: 16 }}>
           {[
-            { title: 'Oldest Friend', body: 'A feral LA mom returns to her Missouri best friend’s wedding and turns a controlled weekend into a reckoning.', author: 'Jessilyn King' },
-            { title: 'SWITCHED SKIN', body: 'A tattooed murder suspect and his smug defense lawyer swap bodies in a county jail, forcing them to outrun cartel muscle.', author: 'Mycah Roberts' },
-            { title: 'The Union', body: 'A dutiful young man in a government-controlled pairing system experiences a genuine connection for the first time.', author: 'Jessilyn King' },
+            { rank: 1, title: 'Oldest Friend', genre: 'Drama', score: 84, author: 'Jessilyn King' },
+            { rank: 2, title: 'SWITCHED SKIN', genre: 'Thriller', score: 81, author: 'Mycah Roberts' },
+            { rank: 3, title: 'The Union', genre: 'Drama', score: 79, author: 'Jessilyn King' },
           ].map((card) => (
             <div
               key={card.title}
@@ -90,53 +75,41 @@ export default async function LeaderboardOpengraphImage() {
                 display: 'flex',
                 flexDirection: 'column',
                 flex: 1,
-                background: '#fff',
-                border: '1px solid #F0E5C8',
+                background: '#ffffff',
                 borderRadius: 12,
-                padding: 18,
-                boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
+                padding: 20,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+                position: 'relative',
               }}
             >
+              {/* Rank badge */}
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  alignSelf: 'flex-start',
-                  gap: 6,
-                  background: '#ECFDF5',
-                  color: GREEN,
-                  fontSize: 10,
-                  fontWeight: 600,
-                  letterSpacing: 1.5,
-                  padding: '5px 10px',
-                  borderRadius: 6,
-                  marginBottom: 12,
+                  justifyContent: 'center',
+                  position: 'absolute',
+                  top: -8,
+                  left: -8,
+                  width: 28,
+                  height: 28,
+                  borderRadius: 999,
+                  background: card.rank === 1 ? PURPLE : card.rank === 2 ? '#8b5cf6' : LIGHT_PURPLE,
+                  color: '#fff',
+                  fontSize: 13,
+                  fontWeight: 800,
                 }}
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: 13,
-                    height: 13,
-                    borderRadius: 999,
-                    background: GREEN,
-                    color: '#fff',
-                    fontSize: 9,
-                  }}
-                >
-                  ✓
-                </div>
-                QUALIFIED
+                {card.rank}
               </div>
               <div
                 style={{
                   display: 'flex',
                   fontFamily: 'Georgia, serif',
-                  fontSize: 18,
+                  fontSize: 19,
                   fontWeight: 700,
-                  marginBottom: 8,
+                  color: '#111827',
+                  marginBottom: 6,
                   lineHeight: 1.2,
                 }}
               >
@@ -146,18 +119,47 @@ export default async function LeaderboardOpengraphImage() {
                 style={{
                   display: 'flex',
                   fontSize: 12,
-                  lineHeight: 1.45,
-                  color: '#555',
+                  color: '#6b7280',
+                  fontWeight: 600,
+                  marginBottom: 14,
+                }}
+              >
+                {card.genre}
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
                   marginBottom: 10,
                 }}
               >
-                {card.body}
+                <div
+                  style={{
+                    display: 'flex',
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: '#6b7280',
+                  }}
+                >
+                  GEM Score
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    fontSize: 20,
+                    fontWeight: 800,
+                    color: PURPLE,
+                  }}
+                >
+                  {card.score}
+                </div>
               </div>
               <div
                 style={{
                   display: 'flex',
                   fontSize: 11,
-                  color: '#888',
+                  color: '#9ca3af',
                   fontStyle: 'italic',
                 }}
               >

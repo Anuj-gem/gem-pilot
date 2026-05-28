@@ -321,6 +321,12 @@ export function LeaderboardCards({
 
   return (
     <div>
+      <style>{`
+        @keyframes lbCardIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
       {/* Sort + filter controls */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-1 flex-wrap">
@@ -350,16 +356,20 @@ export function LeaderboardCards({
         </div>
       ) : (
         <div className="space-y-1.5">
-          {visible.map((c) => {
+          {visible.map((c, idx) => {
             const rounded = c.score ? Math.round(c.score) : null
             const reportHref = `/report/${c.evaluationId}`
             const rank = displayRanks.get(c.submissionId) ?? null
+            const staggerDelay = Math.min(idx * 40, 600)
 
             return (
               <div
                 key={c.submissionId}
                 className="relative min-w-0 px-3 py-2.5"
-                style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
+                style={{
+                  background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+                  animation: `lbCardIn 0.35s ease-out ${staggerDelay}ms both`,
+                }}
               >
                 {/* Rank badge */}
                 {rank && rank <= 3 && (

@@ -5,6 +5,7 @@
 //
 // Anuj 2026-05-28 v0.2 — redesign to match dashboard cards.
 
+import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { getScriptStats } from '@/lib/script-stats'
@@ -18,6 +19,21 @@ function svc() {
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     { cookies: { getAll() { return [] }, setAll() {} } }
   )
+}
+
+export const metadata: Metadata = {
+  title: 'GEM — The Leaderboard',
+  description: 'The best unproduced screenplays in Hollywood, ranked.',
+  openGraph: {
+    title: 'GEM — The Leaderboard',
+    description: 'The best unproduced screenplays in Hollywood, ranked.',
+    siteName: 'GEM',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GEM — The Leaderboard',
+    description: 'The best unproduced screenplays in Hollywood, ranked.',
+  },
 }
 
 export const revalidate = 60
@@ -235,37 +251,63 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
+      <style>{`
+        @keyframes lbSlideUp {
+          from { opacity: 0; transform: translateY(18px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes lbFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes lbFadeInScale {
+          from { opacity: 0; transform: scale(0.97); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .lb-title { animation: lbSlideUp 0.5s ease-out both; }
+        .lb-subtitle { animation: lbSlideUp 0.5s ease-out 0.15s both; }
+        .lb-stats { animation: lbFadeIn 0.4s ease-out 0.3s both; }
+        .lb-cta { animation: lbFadeInScale 0.4s ease-out 0.35s both; }
+        .lb-cards { animation: lbFadeIn 0.4s ease-out 0.45s both; }
+      `}</style>
+
       <div className="mb-6">
-        <h1 className="text-[22px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
-          Discover
+        <h1 className="lb-title text-[28px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
+          The Leaderboard
         </h1>
-        <p className="text-[13px] text-white/50 mt-1 m-0">
-          {cards.length} scripts published{recentCount > 0 ? ` · ${recentCount} added this week` : ''}
+        <p className="lb-subtitle text-[15px] text-white/60 mt-1.5 m-0">
+          The best unproduced screenplays in Hollywood, ranked.
         </p>
+        {recentCount > 0 && (
+          <p className="lb-stats text-[12px] text-white/40 mt-1 m-0">
+            {recentCount} new this week
+          </p>
+        )}
       </div>
 
       {/* Logged-out CTA */}
       {!user && (
         <div
-          className="rounded-2xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+          className="lb-cta rounded-2xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
           style={{
-            background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.05) 65%), rgba(255,255,255,0.05)',
-            border: '1.5px solid rgba(124,58,237,0.3)',
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(124,58,237,0.08) 65%), rgba(255,255,255,0.06)',
+            border: '1.5px solid rgba(124,58,237,0.35)',
           }}
         >
-          <p className="text-[15px] font-bold text-white m-0 leading-snug">
-            Get your scripts ranked among the top unproduced screenplays
+          <p className="text-[16px] font-bold text-white m-0 leading-snug">
+            See where your script ranks
           </p>
           <Link
             href="/get-started"
-            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110"
-            style={{ background: '#7c3aed' }}
+            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-[14px] font-bold text-white transition-all hover:brightness-110"
+            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
           >
-            Get started <ArrowRight size={15} />
+            Submit your script <ArrowRight size={15} />
           </Link>
         </div>
       )}
 
+      <div className="lb-cards">
       <LeaderboardCards
         cards={cards}
         initialSort={initialSort}
@@ -274,6 +316,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
         isInsider={isInsider}
         isLoggedIn={!!user}
       />
+      </div>
     </div>
   )
 }
