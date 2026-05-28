@@ -72,7 +72,7 @@ export default function Nav({ userData }: NavProps = {}) {
 
   const navLinks = [
     { href: '/leaderboard', label: 'Leaderboard', icon: null, emoji: '🏆' },
-    { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
+    { href: '/opportunities', label: 'Opportunities', icon: null, emoji: '💼' },
   ]
 
   return (
@@ -111,7 +111,12 @@ export default function Nav({ userData }: NavProps = {}) {
                           : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                       }`}
                     >
-                      <LayoutDashboard size={16} />
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="7" height="7" rx="1.5" fill="#7c3aed" />
+                        <rect x="14" y="3" width="7" height="7" rx="1.5" fill="#a78bfa" />
+                        <rect x="3" y="14" width="7" height="7" rx="1.5" fill="#a78bfa" />
+                        <rect x="14" y="14" width="7" height="7" rx="1.5" fill="#7c3aed" />
+                      </svg>
                       My Activity
                       <ChevronDown size={14} className={`transition-transform ${activityOpen ? 'rotate-180' : ''}`} />
                       {(pathname === '/dashboard' || pathname.startsWith('/scripts') || pathname.startsWith('/applications') || pathname.startsWith('/partner')) && (

@@ -6,12 +6,12 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Compass, Briefcase, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { trackEvent } from '@/lib/posthog'
 
 const NAV_LINKS = [
-  { href: '/leaderboard', label: 'Discover', icon: Compass },
-  { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
+  { href: '/leaderboard', label: 'Leaderboard', emoji: '🏆' },
+  { href: '/opportunities', label: 'Opportunities', emoji: '💼' },
 ]
 
 export function LandingNav() {
@@ -61,9 +61,7 @@ export function LandingNav() {
 
           {/* Desktop: links + CTA */}
           <div className="hidden md:flex items-center gap-1">
-            {NAV_LINKS.map(link => {
-              const Icon = link.icon
-              return (
+            {NAV_LINKS.map(link => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -72,11 +70,10 @@ export function LandingNav() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#1a1a1a' }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#78716C' }}
                 >
-                  <Icon size={16} />
+                  <span className="text-[15px] leading-none">{link.emoji}</span>
                   {link.label}
                 </Link>
-              )
-            })}
+              ))}
 
             <Link
               href="/login"
@@ -155,9 +152,7 @@ export function LandingNav() {
               borderTop: '1px solid rgba(255,255,255,0.1)',
             }}
           >
-            {NAV_LINKS.map(link => {
-              const Icon = link.icon
-              return (
+            {NAV_LINKS.map(link => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -165,11 +160,10 @@ export function LandingNav() {
                   className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[14px] font-medium no-underline transition-colors"
                   style={{ color: 'rgba(255,255,255,0.7)' }}
                 >
-                  <Icon size={16} />
+                  <span className="text-[15px] leading-none">{link.emoji}</span>
                   {link.label}
                 </Link>
-              )
-            })}
+              ))}
             <Link
               href="/login"
               onClick={() => setMobileOpen(false)}
