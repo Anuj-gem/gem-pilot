@@ -97,12 +97,16 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   // ── Fetch stats ──
   const { data: considerations, count: applicantCount } = await service
     .from('considerations')
-    .select('id, created_at', { count: 'exact' })
+    .select('id, created_at, heat', { count: 'exact' })
     .eq('opportunity_id', opp.id)
 
   const conIds = ((considerations || []) as any[]).map((c: any) => c.id)
   let avgScore: number | null = null
+  // Heat granted = sum of heat the partner gave via reviews on this opportunity
   let totalHeat = 0
+  for (const c of (considerations || []) as any[]) {
+    totalHeat += c.heat ?? 0
+  }
   let lastApplicationDate: string | null = null
   type TopSub = { format: string | null; genres: string[]; score: number | null; heat: number; collaborators: number }
   let topSubmissions: TopSub[] = []
@@ -149,8 +153,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       for (const ev of (evals || []) as any[]) {
         if (ev.weighted_score != null) scores.push(ev.weighted_score)
         const sub = subMap.get(ev.submission_id)
-        const heat = sub?.heat_score ?? 0
-        totalHeat += heat
 
         const evJson = ev.evaluation as Record<string, unknown> | null
         const cls = (evJson?.classification as Record<string, unknown>) || {}
@@ -163,7 +165,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           format: sub?.declared_format || null,
           genres,
           score: ev.weighted_score,
-          heat,
+          heat: sub?.heat_score ?? 0,
           collaborators: collabCounts.get(ev.submission_id) || 0,
         })
       }
