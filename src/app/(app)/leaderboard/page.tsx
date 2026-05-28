@@ -1,18 +1,16 @@
 // /leaderboard — public script directory, ranked by score.
 //
-// Shows all non-hidden completed scripts (up to 25), sorted by GEM score.
-// Login-gated for now. Loglines stripped from cards — writers and public
-// see title, genre, format, score, writer name only.
+// Dashboard-style white expanded cards. No loglines, no grow-heat.
+// Collaborators dropdown on score/heat row. Author card inline.
 //
-// Anuj 2026-05-13 v0.1.
+// Anuj 2026-05-28 v0.2 — redesign to match dashboard cards.
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import type { ScriptCardData } from '@/components/cards/script-card'
 import { getScriptStats } from '@/lib/script-stats'
-import { DiscoverGrid, type DiscoverCard } from '@/components/discover/discover-grid'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { LeaderboardCards } from '@/components/discover/leaderboard-cards'
 
 function svc() {
   return createServerClient(
@@ -66,102 +64,170 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
 
   const service = svc()
 
-  // All public completed scripts — the leaderboard.
+  // All public completed scripts
   const { data: rows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry, heat_score')
+    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry, heat_score, poster_url')
     .eq('status', 'completed')
     .eq('is_public', true)
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
+
   type SubRow = {
-    id: string
-    title: string
-    declared_format: string | null
-    created_at: string
-    user_id: string | null
-    report_privacy: { show_score?: boolean } | null
-    allow_reviews: boolean | null
-    allow_industry: boolean | null
-    heat_score: number | null
+    id: string; title: string; declared_format: string | null; created_at: string
+    user_id: string | null; report_privacy: { show_score?: boolean } | null
+    allow_reviews: boolean | null; allow_industry: boolean | null
+    heat_score: number | null; poster_url: string | null
   }
   const scripts = (rows as SubRow[] | null) || []
   const submissionIds = scripts.map((s) => s.id)
   const writerIds = Array.from(new Set(scripts.map((s) => s.user_id).filter(Boolean) as string[]))
 
-  // Only extract the 3 fields we need from the evaluation JSONB — avoids
-  // pulling the full ~50KB blob per script.  Anuj 2026-05-18 perf fix.
+  // Evaluations + writers + stats
   const [{ data: evs }, { data: writers }, stats] = await Promise.all([
     service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier, logline:evaluation->>positioning_hook')
+      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier')
       .in('submission_id', submissionIds),
     service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
     getScriptStats(submissionIds),
   ])
 
-  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null; logline: string | null }
+  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null }
   const evalBySubmission = new Map<string, EvalRow>()
-  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null; logline: string | null }[] | null) || []) {
+  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null }[] | null) || []) {
     const genre = e.genre_cls || e.genre_fmt || null
     const genreKey = genre ? genre.toLowerCase().replace(/[^a-z]/g, '') : null
     const rawBudget = e.budget_raw?.toLowerCase() ?? null
     const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
     evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, logline: e.logline,
+      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget,
     })
   }
 
-  type WriterRow = { handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null }
-  type WriterRowWithId = WriterRow & { id: string }
+  type WriterRow = { id: string; handle: string | null; full_name: string | null; avatar_url: string | null; headline: string | null }
   const writerById = new Map<string, WriterRow>()
-  for (const w of (writers as WriterRowWithId[] | null) || []) {
-    writerById.set(w.id, { handle: w.handle, full_name: w.full_name, avatar_url: w.avatar_url, headline: w.headline })
+  for (const w of (writers as WriterRow[] | null) || []) {
+    writerById.set(w.id, w)
   }
 
-  // Build card data — loglines passed through (shown blurred for non-insiders).
-  const cards: DiscoverCard[] = scripts
-    .map((s): DiscoverCard | null => {
+  // Collaborator counts per script
+  const collabCountByScript = new Map<string, number>()
+  type CollabDetail = { id: string; email: string; name: string | null; avatarUrl: string | null; role: string; status: string }
+  const collabsByScript = new Map<string, CollabDetail[]>()
+
+  if (submissionIds.length > 0) {
+    const { data: collabRows } = await service
+      .from('script_collaborators')
+      .select('id, submission_id, collaborator_email, collaborator_id, role, role_other, status')
+      .in('submission_id', submissionIds)
+      .in('status', ['accepted', 'pending'])
+
+    const collabUserIds = (collabRows || []).map((c: any) => c.collaborator_id).filter(Boolean) as string[]
+    let collabProfiles: Record<string, { full_name: string | null; avatar_url: string | null }> = {}
+    if (collabUserIds.length > 0) {
+      const { data: profileRows } = await service
+        .from('profiles')
+        .select('id, full_name, avatar_url')
+        .in('id', collabUserIds)
+      if (profileRows) {
+        collabProfiles = Object.fromEntries(profileRows.map((p: any) => [p.id, { full_name: p.full_name, avatar_url: p.avatar_url }]))
+      }
+    }
+
+    for (const c of (collabRows || []) as any[]) {
+      const roleName = c.role === 'other' ? (c.role_other || 'Collaborator') : c.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
+      const prof = c.collaborator_id ? collabProfiles[c.collaborator_id] : null
+      const info: CollabDetail = { id: c.id, email: c.collaborator_email, name: prof?.full_name || null, avatarUrl: prof?.avatar_url || null, role: roleName, status: c.status }
+      const list = collabsByScript.get(c.submission_id) || []
+      list.push(info)
+      collabsByScript.set(c.submission_id, list)
+      if (c.status === 'accepted') {
+        collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
+      }
+    }
+  }
+
+  // Score + heat ranks across all public scripts
+  const scoreRankMap = new Map<string, number>()
+  const heatRankMap = new Map<string, number>()
+  const publicWithScores = scripts.map(s => ({
+    id: s.id,
+    score: evalBySubmission.get(s.id)?.weighted_score ?? 0,
+    heat: s.heat_score ?? 0,
+  }))
+  const byScore = [...publicWithScores].sort((a, b) => b.score - a.score)
+  byScore.forEach((s, i) => scoreRankMap.set(s.id, i + 1))
+  const byHeat = [...publicWithScores].sort((a, b) => b.heat - a.heat)
+  byHeat.forEach((s, i) => heatRankMap.set(s.id, i + 1))
+
+  // 7-day new script count for header
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
+  const recentCount = scripts.filter(s => s.created_at >= sevenDaysAgo).length
+
+  // Build card data
+  type LeaderboardCard = {
+    submissionId: string
+    evaluationId: string
+    title: string
+    format: string | null
+    genre: string | null
+    genreKey: string | null
+    budget: BudgetId | null
+    score: number | null
+    scoreVisible: boolean
+    heat: number
+    scoreRank: number | null
+    heatRank: number | null
+    posterUrl: string | null
+    createdAt: string
+    reviewCount: number
+    avgPeerScore: number | null
+    collaboratorCount: number
+    collaborators: CollabDetail[]
+    writer: { handle: string | null; fullName: string | null; avatarUrl: string | null; headline: string | null } | null
+  }
+
+  const cards: LeaderboardCard[] = scripts
+    .map((s): LeaderboardCard | null => {
       const ev = evalBySubmission.get(s.id)
       if (!ev) return null
       const wp = s.user_id ? writerById.get(s.user_id) : null
       const st = stats.get(s.id)
       const scoreVisible = s.report_privacy?.show_score !== false
-      const data: ScriptCardData = {
-        submission_id: s.id,
-        evaluation_id: ev.id,
+      return {
+        submissionId: s.id,
+        evaluationId: ev.id,
         title: s.title,
         format: s.declared_format,
         genre: ev.genre,
-        logline: ev.logline,
-        selznick_score: ev.weighted_score,
-        heat_score: s.heat_score ?? 0,
-        writer_handle: wp?.handle ?? null,
-        writer_name: wp?.full_name ?? null,
-        writer_avatar_url: wp?.avatar_url ?? null,
-        review_count: st?.reviewCount ?? 0,
-        avg_peer_score: st?.avgPeerScore ?? null,
-        score_visible: scoreVisible,
-        allow_reviews: s.allow_reviews ?? true,
-        allow_industry: s.allow_industry ?? true,
-      }
-      return {
-        data,
-        recentTs: new Date(s.created_at).getTime(),
-        selznick: Number(ev.weighted_score ?? 0),
-        heat: s.heat_score ?? 0,
-        scoreVisible,
-        reviews: st?.reviewCount ?? 0,
         genreKey: ev.genreKey,
         budget: ev.budget,
+        score: ev.weighted_score,
+        scoreVisible,
+        heat: s.heat_score ?? 0,
+        scoreRank: scoreRankMap.get(s.id) ?? null,
+        heatRank: heatRankMap.get(s.id) ?? null,
+        posterUrl: s.poster_url ?? null,
+        createdAt: s.created_at,
+        reviewCount: st?.reviewCount ?? 0,
+        avgPeerScore: st?.avgPeerScore ?? null,
+        collaboratorCount: collabCountByScript.get(s.id) ?? 0,
+        collaborators: collabsByScript.get(s.id) ?? [],
+        writer: wp ? { handle: wp.handle, fullName: wp.full_name, avatarUrl: wp.avatar_url, headline: wp.headline } : null,
       }
     })
-    .filter((c): c is DiscoverCard => c !== null)
+    .filter((c): c is LeaderboardCard => c !== null)
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-3xl px-4 py-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-white">Leaderboard</h1>
+        <h1 className="text-[22px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
+          Discover
+        </h1>
+        <p className="text-[13px] text-white/50 mt-1 m-0">
+          {cards.length} scripts published{recentCount > 0 ? ` · ${recentCount} added this week` : ''}
+        </p>
       </div>
 
       {/* Logged-out CTA */}
@@ -174,7 +240,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
           }}
         >
           <p className="text-[15px] font-bold text-white m-0 leading-snug">
-            Get your scripts in front of our industry partner network
+            Get your scripts ranked among the top unproduced screenplays
           </p>
           <Link
             href="/get-started"
@@ -185,14 +251,11 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
           </Link>
         </div>
       )}
-      <DiscoverGrid
+
+      <LeaderboardCards
         cards={cards}
         initialSort={initialSort}
-        initialFilters={{
-          format: initialFormat,
-          genres: initialGenres,
-          budgets: initialBudgets,
-        }}
+        initialFilters={{ format: initialFormat, genres: initialGenres, budgets: initialBudgets }}
         basePath="/leaderboard"
         isInsider={isInsider}
       />
