@@ -341,6 +341,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   }
 
   return (
+    <div style={{ background: '#2b1a55', minHeight: '100vh' }}>
     <div className="max-w-3xl mx-auto px-4">
 
       {/* ── Back link ── */}
@@ -598,6 +599,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
