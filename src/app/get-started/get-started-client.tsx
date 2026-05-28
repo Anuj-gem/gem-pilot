@@ -25,6 +25,42 @@ import {
 import { gtagSignupCompleted } from '@/lib/gtag'
 import { GoogleMark } from '@/components/auth/google-mark'
 import SmsConsent from '@/components/sms-consent'
+
+function CollapsibleSmsConsent({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="rounded-lg border p-2.5" style={{ borderColor: '#E7E5E4' }}>
+      <div className="flex items-center justify-between">
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => onChange(e.target.checked)}
+            className="w-3.5 h-3.5 rounded accent-[#7c3aed]"
+          />
+          <span className="text-[12px] font-medium" style={{ color: '#57534E' }}>
+            I&apos;d like to receive updates by text
+          </span>
+        </label>
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="text-[11px] bg-transparent border-0 cursor-pointer p-0 underline"
+          style={{ color: '#A8A29E' }}
+        >
+          {open ? 'Hide terms' : 'View terms'}
+        </button>
+      </div>
+      {open && (
+        <p className="text-[11px] leading-[1.5] mt-1.5 ml-[22px]" style={{ color: '#A8A29E' }}>
+          We&apos;ll send updates on your script evaluations and industry opportunities.
+          Message & data rates may apply. Frequency varies. Text HELP for help or STOP to opt out.{' '}
+          <a href="/privacy" className="underline" style={{ color: '#A8A29E' }}>Privacy Policy</a>
+        </p>
+      )}
+    </div>
+  )
+}
 import { updateProfile } from '@/app/profile/actions'
 
 type Step = 'signup' | 'profile'
@@ -234,9 +270,9 @@ export default function GetStartedClient() {
       >
         {step === 'signup' && (
           <div className="min-h-[calc(100vh-56px)] flex items-center justify-center px-4 py-8">
-            <div className="flex w-full max-w-[860px] gap-12 items-center">
+            <div className="flex w-full max-w-[1000px] gap-16 items-center">
               {/* Left — signup form */}
-              <div className="flex-1 max-w-[420px]">
+              <div className="flex-1 max-w-[480px]">
                 <h1 className="text-[28px] font-bold text-white mb-1">
                   Get started
                 </h1>
@@ -352,7 +388,7 @@ export default function GetStartedClient() {
                       </p>
                     </div>
 
-                    <SmsConsent checked={smsConsent} onChange={setSmsConsent} />
+                    <CollapsibleSmsConsent checked={smsConsent} onChange={setSmsConsent} />
 
                     {error && (
                       <p className="text-sm text-red-500">{error}</p>
@@ -378,7 +414,7 @@ export default function GetStartedClient() {
               </div>
 
               {/* Right — branding */}
-              <div className="flex-1 hidden md:flex flex-col justify-center max-w-[340px]">
+              <div className="flex-1 hidden md:flex flex-col justify-center max-w-[400px]">
                 <h2 className="text-[26px] font-bold text-white leading-tight mb-3">
                   Where screenwriters develop their ideas into{' '}
                   <span style={{ color: '#d4a843' }}>hits.</span>
