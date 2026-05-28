@@ -105,7 +105,8 @@ function CollaboratorsDropdown({ collaborators, count }: { collaborators: Collab
         onClick={(e) => { e.preventDefault(); e.stopPropagation(); setOpen(!open) }}
         className="flex items-center gap-1 border-0 bg-transparent cursor-pointer p-0"
       >
-        <span className="text-[11px]">🧑‍🤝‍🧑</span>
+        <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>Collaborators</span>
+        <span className="text-[12px]">🧑</span>
         <span className="text-[13px] font-bold leading-none" style={{ color: count > 0 ? '#6d28d9' : '#d1d5db' }}>{count}</span>
         <span className="text-[10px]" style={{ color: '#9ca3af' }}>▾</span>
       </button>
