@@ -390,7 +390,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 Verified
               </span>
             </div>
-            <span className="text-[11px] text-white/40">Talent Representative</span>
+            <span className="text-[11px] text-white/40">{opp.perspective === 'lit_rep' ? 'Talent Representative' : 'Producer'}</span>
           </div>
           {reviewedCount > 0 && (
             <div className="ml-auto flex items-center gap-3">
