@@ -7,7 +7,6 @@ import { createClient } from '@/lib/supabase-browser'
 import {
   LayoutDashboard,
   Briefcase,
-  Compass,
   FileText,
   Send,
   Users,
@@ -72,7 +71,7 @@ export default function Nav({ userData }: NavProps = {}) {
       ]
 
   const navLinks = [
-    { href: '/leaderboard', label: 'Leaderboard', icon: Compass },
+    { href: '/leaderboard', label: 'Leaderboard', icon: null, emoji: '🏆' },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase },
   ]
 
@@ -164,7 +163,7 @@ export default function Nav({ userData }: NavProps = {}) {
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
-                        <Icon size={16} />
+                        {link.emoji ? <span className="text-[15px] leading-none">{link.emoji}</span> : Icon ? <Icon size={16} /> : null}
                         {link.label}
                         {active && (
                           <span
@@ -244,7 +243,7 @@ export default function Nav({ userData }: NavProps = {}) {
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
-                        <Icon size={16} />
+                        {link.emoji ? <span className="text-[15px] leading-none">{link.emoji}</span> : Icon ? <Icon size={16} /> : null}
                         {link.label}
                         {active && (
                           <span
@@ -317,7 +316,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       active ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    <Icon size={16} />
+                    {link.emoji ? <span className="text-[15px] leading-none">{link.emoji}</span> : Icon ? <Icon size={16} /> : null}
                     {link.label}
                   </Link>
                 )

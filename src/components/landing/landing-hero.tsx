@@ -11,8 +11,8 @@ export function LandingHero() {
         {/* Left — text */}
         <div className="text-center md:text-left">
           <h1 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-white leading-[1.08] tracking-tight m-0 mb-4">
-            Where screenwriters develop their ideas into{' '}
-            <span style={{ color: '#d4a843' }}>hits.</span>
+            Where screenwriters develop their scripts & get{' '}
+            <span style={{ color: '#d4a843' }}>discovered.</span>
           </h1>
           <p className="text-[15px] sm:text-[16px] m-0 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
             Upload your script. Get instant coverage. Connect with the industry partners who can help get your project made.
@@ -70,6 +70,23 @@ export function LandingHero() {
 
             {/* Format */}
             <p className="text-[12px] m-0 mb-3.5" style={{ color: '#9ca3af' }}>Series · Drama · Thriller</p>
+
+            {/* Divider */}
+            <div className="mb-3" style={{ height: 1, background: '#f3f4f6' }} />
+
+            {/* GEM Score + Project Heat */}
+            <div className="flex items-center gap-4 mb-3">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>GEM Score</span>
+                <span className="text-[16px] font-extrabold" style={{ color: '#7c3aed' }}>85</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: '#f3f0ff', color: '#7c3aed' }}>#1</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>Project Heat</span>
+                <span className="text-[16px] font-extrabold" style={{ color: '#f97316' }}>75</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: '#fff7ed', color: '#f97316' }}>#1</span>
+              </div>
+            </div>
 
             {/* Divider */}
             <div className="mb-3" style={{ height: 1, background: '#f3f4f6' }} />
