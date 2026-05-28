@@ -620,7 +620,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <div
         className="gem-report-hero -mt-6 mb-0 relative overflow-hidden"
         style={{
-          background: 'linear-gradient(180deg, #110f1d 0%, #171428 60%, #1d1932 100%)',
+          background: '#2b1a55',
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
           paddingLeft: 'calc(50vw - 50%)',
@@ -697,7 +697,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
 
-          {/* 1. Title + author + logline + categories — the "article header" */}
+          {/* 1. Title + author + logline + categories + score/heat — white card */}
+          <div
+            className="rounded-2xl p-6 sm:p-8 mb-6"
+            style={{
+              background: 'white',
+              border: '1px solid rgba(0,0,0,0.06)',
+              '--gem-gray-50': '#1C1917',
+              '--gem-gray-100': '#292524',
+              '--gem-gray-200': '#44403C',
+              '--gem-gray-300': '#57534E',
+              '--gem-gray-400': '#78716C',
+              '--gem-gray-500': '#A8A29E',
+              '--gem-gray-600': '#D6D3D1',
+              '--gem-gray-700': '#E7E5E3',
+              '--gem-gray-800': '#F5F5F4',
+              '--gem-gray-900': '#FAFAF9',
+              '--gem-gold': '#92400E',
+            } as React.CSSProperties}
+          >
           <EditableTopCard
             evaluationId={id}
             submissionId={submission.id}
@@ -722,16 +740,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isProSubscriber={true}
           />
 
-          {/* 2. Inline stats — GEM Score + Heat */}
-          <div className="flex items-center gap-4 mt-6 mb-8 flex-wrap">
+          {/* Inline stats — GEM Score + Heat */}
+          <div className="flex items-center gap-4 mt-6 flex-wrap">
             {/* GEM Score */}
             {typeof commercialScore === 'number' &&
               (isOwnerOrAdmin || isScoreVisible(privacy)) && (
               <div
                 className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
+                  background: 'rgba(124,58,237,0.08)',
+                  border: '1px solid rgba(124,58,237,0.15)',
                 }}
                 data-pdf-section="gem_score"
               >
@@ -757,13 +775,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     borderRadius: 1.5,
                   }} />
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: 'rgba(255,255,255,0.50)' }}>
+                <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
                   GEM Score
                 </span>
-                <span className="text-[22px] font-bold tabular-nums leading-none text-white">
+                <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
                   {Math.round(commercialScore)}
                 </span>
-                <span className="text-[11px] font-medium" style={{ color: 'rgba(255,255,255,0.30)' }}>/100</span>
+                <span className="text-[11px] font-medium" style={{ color: '#A8A29E' }}>/100</span>
               </div>
             )}
 
@@ -771,18 +789,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <div
               className="flex items-center gap-2 rounded-lg px-3.5 py-2"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.10)',
+                background: 'rgba(124,58,237,0.08)',
+                border: '1px solid rgba(124,58,237,0.15)',
               }}
             >
               <span className="text-[18px] leading-none">🔥</span>
-              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: 'rgba(255,255,255,0.50)' }}>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
                 Heat
               </span>
-              <span className="text-[22px] font-bold tabular-nums leading-none text-white">
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
                 {heatScore}
               </span>
             </div>
+          </div>
           </div>
 
           {/* 3. Media carousel — centered, article-style */}
@@ -883,29 +902,29 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       </div>
 
-      {/* Override the (app) layout light-gray background to dark for report */}
+      {/* Override the (app) layout background to GEM purple for report */}
       <style>{`
-        .min-h-screen { background: #1d1932 !important; }
+        .min-h-screen { background: #2b1a55 !important; }
         .gem-dark-section { background: rgba(255,255,255,0.04); }
       `}</style>
 
       <div
         className="max-w-3xl mx-auto pb-24 pt-6"
         style={{
-          '--gem-gray-50': '#FFFFFF',
-          '--gem-gray-100': 'rgba(255,255,255,0.92)',
-          '--gem-gray-200': 'rgba(255,255,255,0.80)',
-          '--gem-gray-300': 'rgba(255,255,255,0.65)',
-          '--gem-gray-400': 'rgba(255,255,255,0.50)',
-          '--gem-gray-500': 'rgba(255,255,255,0.35)',
-          '--gem-gray-600': 'rgba(255,255,255,0.15)',
-          '--gem-gray-700': 'rgba(255,255,255,0.12)',
-          '--gem-gray-800': 'rgba(255,255,255,0.06)',
-          '--gem-gray-900': 'rgba(255,255,255,0.03)',
-          '--gem-gold': '#E8B825',
+          '--gem-gray-50': '#1C1917',
+          '--gem-gray-100': '#292524',
+          '--gem-gray-200': '#44403C',
+          '--gem-gray-300': '#57534E',
+          '--gem-gray-400': '#78716C',
+          '--gem-gray-500': '#A8A29E',
+          '--gem-gray-600': '#D6D3D1',
+          '--gem-gray-700': '#E7E5E3',
+          '--gem-gray-800': '#F5F5F4',
+          '--gem-gray-900': '#FAFAF9',
+          '--gem-gold': '#92400E',
         } as React.CSSProperties}
       >
-        <div className="space-y-10">
+        <div className="space-y-8">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -949,7 +968,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {(whatsSpecial.headline || plotSummary) && (
-            <div data-pdf-section="whats_working">
+            <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }} data-pdf-section="whats_working">
               <h2
                 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
                 style={{ color: 'var(--gem-gold)' }}
@@ -967,6 +986,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* ═══ STRENGTHS + WEAKNESSES — two columns ═══ */}
         {(allStrengths.length > 0 || (issues?.items ?? []).length > 0 || craftNote) && (
+          <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* LEFT — Why This Can Be a Hit */}
             <SectionGate
@@ -981,8 +1001,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <div
                   className="rounded-xl p-5 sm:p-6"
                   style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: '#F5F5F4',
+                    border: '1px solid #E7E5E3',
                   }}
                 >
                   <h2
@@ -995,26 +1015,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {allStrengths.map((s, i) => (
                       <li key={i}>
                         <details className="group [&_summary::-webkit-details-marker]:hidden">
-                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-2">
+                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(0,0,0,0.03)] transition-colors -mx-2">
                             <span
                               className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
                               style={{ color: 'var(--gem-gold)' }}
                             >
                               {String(i + 1).padStart(2, '0')}
                             </span>
-                            <p className="text-[14px] sm:text-[15px] font-semibold text-white m-0 leading-snug min-w-0">
+                            <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: '#1C1917' }}>
                               {s.dimension_or_area}
                             </p>
                             <span
                               aria-hidden
-                              className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                              className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                              style={{ color: '#A8A29E' }}
                             >
                               ▾
                             </span>
                           </summary>
                           <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
                             <div />
-                            <p className="text-[13px] sm:text-[14px] text-[rgba(255,255,255,0.8)] leading-[1.6] m-0">
+                            <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#57534E' }}>
                               {s.what_it_means}
                             </p>
                           </div>
@@ -1057,8 +1078,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <div
                     className="rounded-xl p-5 sm:p-6"
                     style={{
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid rgba(255,255,255,0.08)',
+                      background: '#F5F5F4',
+                      border: '1px solid #E7E5E3',
                     }}
                   >
                     <h2
@@ -1072,26 +1093,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         {ordered.map((c, i) => (
                           <li key={i}>
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors -mx-2">
+                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(0,0,0,0.03)] transition-colors -mx-2">
                                 <span
                                   className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
                                   style={{ color: 'var(--gem-gold)' }}
                                 >
                                   {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <p className="text-[14px] sm:text-[15px] font-semibold text-white m-0 leading-snug min-w-0">
+                                <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: '#1C1917' }}>
                                   {c.area}
                                 </p>
                                 <span
                                   aria-hidden
-                                  className="text-[rgba(255,255,255,0.4)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                                  className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
+                                  style={{ color: '#A8A29E' }}
                                 >
                                   ▾
                                 </span>
                               </summary>
                               <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
                                 <div />
-                                <p className="text-[13px] sm:text-[14px] text-[rgba(255,255,255,0.8)] leading-[1.6] m-0">
+                                <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#57534E' }}>
                                   {c.detail}
                                 </p>
                               </div>
@@ -1115,7 +1137,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         >
                           Craft note
                         </p>
-                        <p className="text-[13px] sm:text-[14px] text-[rgba(255,255,255,0.85)] leading-[1.6] m-0">
+                        <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#44403C' }}>
                           {craftNote}
                         </p>
                       </div>
@@ -1125,11 +1147,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               })()}
               </SectionGate>
           </div>
+          </div>
         )}
 
         {/* PLOT SUMMARY — collapsible, after strengths/weaknesses */}
         {plotSummary && (
-          <div>
+          <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
             <h2
               className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
               style={{ color: 'var(--gem-gold)' }}
@@ -1154,7 +1177,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         >
           {leadCharacters.length > 0 && (
-            <div data-pdf-section="cast">
+            <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }} data-pdf-section="cast">
             {(() => {
             const leads = leadCharacters.filter(
               (c) => (c.role_type ?? '').toLowerCase() === 'lead'
@@ -1232,7 +1255,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* ═══ NARRATIVE BREAKDOWN — dimension scores ═══ */}
         {scores && Object.values(scores).some((s) => typeof s?.score === 'number') && (
-          <div>
+          <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
             <h2
               className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
               style={{ color: 'var(--gem-gold)' }}
@@ -1268,7 +1291,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isPublic={submission.is_public ?? false}
             isProSubscriber={true}
           >
-            <div data-pdf-section="project_complexity">
+            <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }} data-pdf-section="project_complexity">
               <h2
                 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
                 style={{ color: 'var(--gem-gold)' }}
@@ -1279,8 +1302,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <div
                 className="rounded-xl overflow-hidden"
                 style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: '#F5F5F4',
+                  border: '1px solid #E7E5E3',
                 }}
               >
                 {/* Budget tier — prominent header */}
@@ -1294,26 +1317,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         className="text-[12px] uppercase tracking-[0.12em] font-bold px-2.5 py-0.5 rounded-full capitalize"
                         style={{
                           color: 'var(--gem-gold)',
-                          background: 'rgba(232,184,37,0.12)',
-                          border: '1px solid rgba(232,184,37,0.3)',
+                          background: 'rgba(146,64,14,0.08)',
+                          border: '1px solid rgba(146,64,14,0.2)',
                         }}
                       >
                         {packaging.budget_tier.tier}
                       </span>
                     </div>
                     {packaging.budget_tier.range && (
-                      <p className="text-[18px] sm:text-[20px] font-bold text-white m-0 mb-1">
+                      <p className="text-[18px] sm:text-[20px] font-bold m-0 mb-1" style={{ color: '#1C1917' }}>
                         {packaging.budget_tier.range}
                       </p>
                     )}
                     {packaging.budget_tier.per_episode && (
-                      <p className="text-[14px] text-[rgba(255,255,255,0.6)] m-0 mb-1">
+                      <p className="text-[14px] m-0 mb-1" style={{ color: '#78716C' }}>
                         {packaging.budget_tier.per_episode} per episode
                         {packaging.budget_tier.season_total ? ` · ${packaging.budget_tier.season_total} season total` : ''}
                       </p>
                     )}
                     {packaging.budget_tier.note && (
-                      <p className="text-[14px] sm:text-[15px] text-[rgba(255,255,255,0.7)] leading-[1.55] m-0 mt-2">
+                      <p className="text-[14px] sm:text-[15px] leading-[1.55] m-0 mt-2" style={{ color: '#57534E' }}>
                         {packaging.budget_tier.note}
                       </p>
                     )}
@@ -1324,7 +1347,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 {riskDetails && (
                   <div
                     className="p-5 sm:p-6"
-                    style={{ borderTop: packaging?.budget_tier ? '1px solid rgba(255,255,255,0.08)' : undefined }}
+                    style={{ borderTop: packaging?.budget_tier ? '1px solid #E7E5E3' : undefined }}
                   >
                     <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
                       Complexity
@@ -1357,7 +1380,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             "Reference" disclosure when there's nothing to put in it.
             Anuj 2026-04-30 cleanup. */}
         {!riskDetails && production && (isOwnerOrAdmin || (submission.is_public ?? false)) && (
-        <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
+        <div className="rounded-2xl px-5 sm:px-8 py-6 sm:py-7" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
         <details className="gem-no-print group [&_summary::-webkit-details-marker]:hidden">
           <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
             <div
@@ -1533,8 +1556,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* Fallback if writer has everything private and the page would
             render empty for visitors. */}
         {!isOwnerOrAdmin && !anyPublic && (
-          <div className="rounded-xl px-5 sm:px-8 py-6 sm:py-7 gem-dark-section">
-            <p className="text-[14px] text-[var(--gem-gray-400)] m-0 leading-[1.6]">
+          <div className="rounded-2xl px-5 sm:px-8 py-6 sm:py-7" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
+            <p className="text-[14px] m-0 leading-[1.6]" style={{ color: '#78716C' }}>
               {writerName} has kept this report private. Request a connection
               below if you&apos;d like to be in touch about this script.
             </p>
@@ -1648,7 +1671,7 @@ function DimensionRow({
   return (
     <div
       className="rounded-xl p-5"
-      style={{ border: '1px solid var(--gem-gray-700)', background: 'rgba(255,255,255,0.04)' }}
+      style={{ border: '1px solid #E7E5E3', background: '#F5F5F4' }}
     >
       <div className="flex items-baseline justify-between gap-4 mb-3">
         <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
