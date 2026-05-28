@@ -174,21 +174,17 @@ export default async function OpportunitiesPage() {
       marginBottom: '-64px',
       paddingBottom: '64px',
     }}>
-    <div className="max-w-2xl mx-auto px-4">
+    <div className="px-4 sm:px-6">
       {/* Header */}
       <div className="mb-6">
         <h1
           className="text-[28px] font-bold text-white m-0 mb-2"
           style={{ fontFamily: 'Georgia, serif' }}
         >
-          Opportunities
+          Open Opportunities
         </h1>
-        <p className="text-[14px] text-white/50 m-0 leading-relaxed max-w-[520px]">
-          Real opportunities from our partner network — producers, lit reps, and financiers
-          looking for scripts. Apply with your evaluated screenplay and get connected directly.
-        </p>
-        <p className="text-[13px] text-white/50 mt-2 m-0">
-          {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'} currently open
+        <p className="text-[14px] text-white/70 m-0 leading-relaxed">
+          From verified reps and producers in our network. {opportunities.length} open now.
         </p>
       </div>
 
@@ -215,7 +211,7 @@ export default async function OpportunitiesPage() {
       )}
 
       {/* Opportunity cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {opportunities.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-[15px] text-white/40">No open opportunities right now. Check back soon.</p>
