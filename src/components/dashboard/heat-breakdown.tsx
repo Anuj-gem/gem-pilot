@@ -61,7 +61,7 @@ export function HeatBreakdown({ heat, heatRank, isPublic, collabHeatCount }: Pro
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <span className="text-[12px]">💼</span>
-                <span className="text-[12px]" style={{ color: '#374151' }}>Industry reviews</span>
+                <span className="text-[12px]" style={{ color: '#374151' }}>Opportunities</span>
               </div>
               <span className="text-[12px] font-semibold" style={{ color: reviewHeat > 0 ? '#ea580c' : '#d1d5db' }}>+{reviewHeat}</span>
             </div>
