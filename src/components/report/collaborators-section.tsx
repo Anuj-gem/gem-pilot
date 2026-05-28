@@ -192,9 +192,9 @@ export function CollaboratorsSection({
               onClick={() => setShowInput(v => !v)}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 transition-all"
               style={{
-                background: showInput ? 'rgba(139,92,246,0.2)' : 'rgba(255,255,255,0.08)',
-                color: showInput ? 'rgba(167,139,250,0.9)' : 'rgba(255,255,255,0.7)',
-                border: showInput ? '1px solid rgba(139,92,246,0.4)' : '1px solid rgba(255,255,255,0.14)',
+                background: showInput ? 'rgba(139,92,246,0.12)' : 'rgba(0,0,0,0.04)',
+                color: showInput ? '#7C3AED' : '#57534E',
+                border: showInput ? '1px solid rgba(139,92,246,0.3)' : '1px solid rgba(0,0,0,0.10)',
               }}
             >
               <UserPlus size={16} />
@@ -267,8 +267,8 @@ export function CollaboratorsSection({
                     key={c.id}
                     className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
                     style={{
-                      background: 'rgba(255,255,255,0.06)',
-                      border: '1px solid rgba(124,58,237,0.4)',
+                      background: 'rgba(0,0,0,0.03)',
+                      border: '1px solid rgba(124,58,237,0.3)',
                     }}
                   >
                     <RoleSelect value={editRole} onChange={setEditRole} />
@@ -281,21 +281,23 @@ export function CollaboratorsSection({
                         maxLength={60}
                         className="px-2 py-0.5 rounded text-[12px] outline-none w-24"
                         style={{
-                          background: 'rgba(255,255,255,0.08)',
-                          border: '1px solid rgba(255,255,255,0.12)',
-                          color: '#fff',
+                          background: 'rgba(0,0,0,0.04)',
+                          border: '1px solid rgba(0,0,0,0.10)',
+                          color: '#1C1917',
                         }}
                       />
                     )}
                     <button
                       onClick={() => handleEditRole(c.id)}
-                      className="text-[11px] font-semibold text-white/80 bg-transparent border-0 cursor-pointer hover:text-white"
+                      className="text-[11px] font-semibold bg-transparent border-0 cursor-pointer"
+                      style={{ color: '#7C3AED' }}
                     >
                       Save
                     </button>
                     <button
                       onClick={() => setEditingId(null)}
-                      className="text-[11px] text-white/40 bg-transparent border-0 cursor-pointer hover:text-white/60"
+                      className="text-[11px] bg-transparent border-0 cursor-pointer"
+                      style={{ color: '#78716C' }}
                     >
                       Cancel
                     </button>

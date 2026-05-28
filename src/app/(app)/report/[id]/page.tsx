@@ -681,130 +681,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </div>
 
-        {/* Hero content — article-style: title first, then media, then stats */}
-        <div className="max-w-3xl mx-auto pb-6 sm:pb-8 relative z-10">
-
-          {/* Owner actions — top right */}
-          {(isOwner || isAdmin) && (
-            <div className="gem-no-print sticky top-4 z-30 flex justify-end mb-0 -mt-1">
-              <OwnerActionsMenu
-                submissionId={submission.id}
-                evaluationId={id}
-                title={submission.title}
-                declaredFormat={submission.declared_format ?? null}
-                isSubscribed={ownerIsSubscribed || isAdmin}
-              />
-            </div>
-          )}
-
-          {/* 1. Title + author + logline + categories + score/heat — white card */}
-          <div
-            className="rounded-2xl p-6 sm:p-8 mb-6"
-            style={{
-              background: 'white',
-              border: '1px solid rgba(0,0,0,0.06)',
-              '--gem-gray-50': '#1C1917',
-              '--gem-gray-100': '#292524',
-              '--gem-gray-200': '#44403C',
-              '--gem-gray-300': '#57534E',
-              '--gem-gray-400': '#78716C',
-              '--gem-gray-500': '#A8A29E',
-              '--gem-gray-600': '#D6D3D1',
-              '--gem-gray-700': '#E7E5E3',
-              '--gem-gray-800': '#F5F5F4',
-              '--gem-gray-900': '#FAFAF9',
-              '--gem-gold': '#92400E',
-            } as React.CSSProperties}
-          >
-          <EditableTopCard
-            evaluationId={id}
-            submissionId={submission.id}
-            initial={topCard}
-            isOwner={isOwner || isAdmin}
-            hasEdits={topCardHasEdits}
-            postedAt={submission.created_at ?? null}
-            authorName={
-              isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-            }
-            authorHandle={
-              isAnonymousSubmission ? null : submission.profiles?.handle ?? null
-            }
-            authorAvatar={
-              isAnonymousSubmission ? null : submission.profiles?.avatar_url ?? null
-            }
-            authorHeadline={
-              isAnonymousSubmission ? null : submission.profiles?.headline ?? null
-            }
-            commercialScore={null}
-            scoreShownToIndustry={isScoreVisible(privacy)}
-            isProSubscriber={true}
-          />
-
-          {/* Inline stats — GEM Score + Heat */}
-          <div className="flex items-center gap-4 mt-6 flex-wrap">
-            {/* GEM Score */}
-            {typeof commercialScore === 'number' &&
-              (isOwnerOrAdmin || isScoreVisible(privacy)) && (
-              <div
-                className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
-                style={{
-                  background: 'rgba(124,58,237,0.08)',
-                  border: '1px solid rgba(124,58,237,0.15)',
-                }}
-                data-pdf-section="gem_score"
-              >
-                {/* GEM diamond icon — concentric layered diamond */}
-                <span
-                  aria-hidden="true"
-                  className="inline-flex items-center justify-center shrink-0 rotate-45"
-                  style={{ width: 22, height: 22 }}
-                >
-                  <span className="absolute rotate-0" style={{
-                    width: 22, height: 22,
-                    background: 'rgba(167, 139, 250, 0.15)',
-                    borderRadius: 1.5,
-                  }} />
-                  <span className="absolute rotate-0" style={{
-                    width: 16.5, height: 16.5,
-                    background: 'rgba(139, 92, 246, 0.35)',
-                    borderRadius: 1.5,
-                  }} />
-                  <span className="absolute rotate-0" style={{
-                    width: 12, height: 12,
-                    background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                    borderRadius: 1.5,
-                  }} />
-                </span>
-                <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
-                  GEM Score
-                </span>
-                <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
-                  {Math.round(commercialScore)}
-                </span>
-                <span className="text-[11px] font-medium" style={{ color: '#A8A29E' }}>/100</span>
-              </div>
-            )}
-
-            {/* Heat */}
-            <div
-              className="flex items-center gap-2 rounded-lg px-3.5 py-2"
-              style={{
-                background: 'rgba(124,58,237,0.08)',
-                border: '1px solid rgba(124,58,237,0.15)',
-              }}
-            >
-              <span className="text-[18px] leading-none">🔥</span>
-              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
-                Heat
-              </span>
-              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
-                {heatScore}
-              </span>
-            </div>
-          </div>
-          </div>
-
-        </div>
+        <div className="max-w-3xl mx-auto pb-4 relative z-10" />
 
       </div>
 
@@ -864,8 +741,109 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Stat cards removed — GEM Score + Heat now rendered in hero above */}
 
-        {/* ═══ PITCH CONTAINER — elevator pitch, plot summary, cast ═══ */}
+        {/* ═══ PITCH CONTAINER — top card, elevator pitch, plot summary, cast, media, collaborators ═══ */}
         <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
+
+        {/* Owner actions — top right */}
+        {(isOwner || isAdmin) && (
+          <div className="gem-no-print sticky top-4 z-30 flex justify-end -mb-4 -mt-1">
+            <OwnerActionsMenu
+              submissionId={submission.id}
+              evaluationId={id}
+              title={submission.title}
+              declaredFormat={submission.declared_format ?? null}
+              isSubscribed={ownerIsSubscribed || isAdmin}
+            />
+          </div>
+        )}
+
+        {/* Title + author + logline + categories */}
+        <EditableTopCard
+          evaluationId={id}
+          submissionId={submission.id}
+          initial={topCard}
+          isOwner={isOwner || isAdmin}
+          hasEdits={topCardHasEdits}
+          postedAt={submission.created_at ?? null}
+          authorName={
+            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+          }
+          authorHandle={
+            isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+          }
+          authorAvatar={
+            isAnonymousSubmission ? null : submission.profiles?.avatar_url ?? null
+          }
+          authorHeadline={
+            isAnonymousSubmission ? null : submission.profiles?.headline ?? null
+          }
+          commercialScore={null}
+          scoreShownToIndustry={isScoreVisible(privacy)}
+          isProSubscriber={true}
+        />
+
+        {/* Inline stats — GEM Score + Heat */}
+        <div className="flex items-center gap-4 flex-wrap">
+          {/* GEM Score */}
+          {typeof commercialScore === 'number' &&
+            (isOwnerOrAdmin || isScoreVisible(privacy)) && (
+            <div
+              className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
+              style={{
+                background: 'rgba(124,58,237,0.08)',
+                border: '1px solid rgba(124,58,237,0.15)',
+              }}
+              data-pdf-section="gem_score"
+            >
+              {/* GEM diamond icon */}
+              <span
+                aria-hidden="true"
+                className="inline-flex items-center justify-center shrink-0 rotate-45"
+                style={{ width: 22, height: 22 }}
+              >
+                <span className="absolute rotate-0" style={{
+                  width: 22, height: 22,
+                  background: 'rgba(167, 139, 250, 0.15)',
+                  borderRadius: 1.5,
+                }} />
+                <span className="absolute rotate-0" style={{
+                  width: 16.5, height: 16.5,
+                  background: 'rgba(139, 92, 246, 0.35)',
+                  borderRadius: 1.5,
+                }} />
+                <span className="absolute rotate-0" style={{
+                  width: 12, height: 12,
+                  background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                  borderRadius: 1.5,
+                }} />
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
+                GEM Score
+              </span>
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
+                {Math.round(commercialScore)}
+              </span>
+              <span className="text-[11px] font-medium" style={{ color: '#A8A29E' }}>/100</span>
+            </div>
+          )}
+
+          {/* Heat */}
+          <div
+            className="flex items-center gap-2 rounded-lg px-3.5 py-2"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.15)',
+            }}
+          >
+            <span className="text-[18px] leading-none">🔥</span>
+            <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
+              Heat
+            </span>
+            <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
+              {heatScore}
+            </span>
+          </div>
+        </div>
 
         {/* ELEVATOR PITCH */}
         <SectionGate
