@@ -73,7 +73,10 @@ export default async function LeaderboardOpengraphImage() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            flex: 1,
+            flexGrow: 1,
+            flexShrink: 0,
+            flexBasis: 0,
+            minHeight: 370,
             background: '#ffffff',
             borderRadius: 18,
             padding: '28px 32px',
