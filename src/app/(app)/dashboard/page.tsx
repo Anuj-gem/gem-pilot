@@ -910,7 +910,7 @@ export default async function DashboardPage() {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
                     return (
-                      <div key={script.id} className="px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
+                      <div key={script.id} className="px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
                         {/* Row 1: poster + title + format/genre/date + menu */}
                         <div className="flex items-start gap-2.5">
                           <Link href={reportHref} className="flex-1 min-w-0 no-underline group">
@@ -937,29 +937,25 @@ export default async function DashboardPage() {
                         </div>
 
                         {/* Scores + View report row */}
-                        <div className="flex items-center gap-4 mt-2 px-0" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
+                        <div className="flex items-center mt-2" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
                           <div className="flex items-center gap-1.5">
                             <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>GEM Score</span>
                             <span className="inline-flex">{gemDiamond(5)}</span>
                             <span className="text-[15px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
                             {script.isPublic && script.scoreRank ? (
                               <span className="text-[11px] font-semibold" style={{ color: '#7c3aed' }}>#{script.scoreRank}</span>
-                            ) : !script.isPublic ? (
-                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not public</span>
                             ) : (
-                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>—</span>
+                              <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
                             )}
                           </div>
-                          <div className="flex items-center gap-1.5">
+                          <div className="flex items-center gap-1.5 ml-4">
                             <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>Project Heat</span>
                             <span className="text-[11px]">🔥</span>
                             <span className="text-[15px] font-extrabold leading-none" style={{ color: script.heat > 0 ? '#ea580c' : '#d1d5db' }}>{script.heat}</span>
                             {script.isPublic && script.heat > 0 && script.heatRank ? (
                               <span className="text-[11px] font-semibold" style={{ color: '#ea580c' }}>#{script.heatRank}</span>
-                            ) : !script.isPublic ? (
-                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>not public</span>
                             ) : (
-                              <span className="text-[11px]" style={{ color: '#d1d5db' }}>—</span>
+                              <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
                             )}
                           </div>
                           <span className="flex-1" />
@@ -979,6 +975,7 @@ export default async function DashboardPage() {
                           pendingAppCount={script.pendingAppCount}
                           heat={script.heat}
                           isCollab={!!script.collabRole}
+                          qualifyingOpps={script.qualifyingOpps || []}
                         />
                       </div>
                     )
