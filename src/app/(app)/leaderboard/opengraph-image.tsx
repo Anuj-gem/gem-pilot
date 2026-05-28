@@ -60,6 +60,7 @@ export default async function LeaderboardOpengraphImage() {
           style={{
             display: 'flex',
             fontSize: 26,
+            fontWeight: 700,
             color: '#ffffff',
             lineHeight: 1.3,
             marginBottom: 24,
@@ -68,15 +69,16 @@ export default async function LeaderboardOpengraphImage() {
           The best unproduced screenplays in Hollywood, ranked.
         </div>
 
-        {/* Single featured card — flex:1 fills remaining space */}
+        {/* Card — full width, fixed height to fill remaining space, content centered */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'center',
             background: '#ffffff',
             borderRadius: 18,
-            padding: '28px 32px',
-            maxWidth: 600,
+            padding: '28px 40px',
+            height: 370,
             boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
             position: 'relative',
           }}
