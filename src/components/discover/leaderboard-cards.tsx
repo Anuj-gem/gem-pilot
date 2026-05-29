@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
@@ -309,8 +309,36 @@ export function LeaderboardCards({
     })
   }
 
-  // Cap at 60
-  const visible = filtered.slice(0, 60)
+  // Infinite scroll
+  const BATCH = 40
+  const [visibleCount, setVisibleCount] = useState(BATCH)
+  const sentinelRef = useRef<HTMLDivElement>(null)
+
+  // Reset visible count when sort/filter changes
+  useEffect(() => {
+    setVisibleCount(BATCH)
+  }, [sort, format, genres, budgets])
+
+  // IntersectionObserver to load more as user scrolls
+  useEffect(() => {
+    const el = sentinelRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount(prev => {
+            const next = prev + BATCH
+            return next >= filtered.length ? filtered.length : next
+          })
+        }
+      },
+      { rootMargin: '400px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [filtered.length])
+
+  const visible = filtered.slice(0, visibleCount)
 
   const sortLabel = (key: SortMode) => {
     const labels: Record<SortMode, string> = { top_gem: 'GEM Score', top_heat: 'Heat', recent: 'Recent' }
@@ -344,7 +372,7 @@ export function LeaderboardCards({
           <FiltersBar format={format} setFormat={setFormat} genres={genres} setGenres={setGenres} budgets={budgets} setBudgets={setBudgets} />
         </div>
         <span className="text-[12px] text-white/50 shrink-0">
-          {visible.length} {visible.length === 1 ? 'script' : 'scripts'}
+          {filtered.length} {filtered.length === 1 ? 'script' : 'scripts'}
         </span>
       </div>
 
@@ -360,7 +388,7 @@ export function LeaderboardCards({
             const rounded = c.score ? Math.round(c.score) : null
             const reportHref = `/report/${c.evaluationId}`
             const rank = displayRanks.get(c.submissionId) ?? null
-            const staggerDelay = Math.min(idx * 40, 600)
+            const staggerDelay = idx < BATCH ? Math.min(idx * 40, 600) : 0
 
             return (
               <div
@@ -461,6 +489,10 @@ export function LeaderboardCards({
               </div>
             )
           })}
+          {/* Infinite scroll sentinel */}
+          {visibleCount < filtered.length && (
+            <div ref={sentinelRef} className="h-1" />
+          )}
         </div>
       )}
     </div>
