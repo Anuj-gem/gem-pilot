@@ -97,7 +97,7 @@ export default async function DashboardPage() {
       .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
-    visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
+    visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at && s.status !== 'failed')
     submissionIds = visible.map((s) => s.id)
 
     if (submissionIds.length > 0) {
@@ -134,7 +134,7 @@ export default async function DashboardPage() {
           .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
           .in('id', anonIds)
           .order('created_at', { ascending: false })
-        visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
+        visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at && s.status !== 'failed')
         submissionIds = visible.map((s) => s.id)
 
         if (submissionIds.length > 0) {

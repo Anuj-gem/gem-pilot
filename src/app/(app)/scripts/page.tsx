@@ -69,6 +69,7 @@ export default async function ScriptsPage() {
     .select('id, title, status, declared_format, created_at, hidden_at, heat_score, poster_url, is_public')
     .eq('user_id', user.id)
     .is('hidden_at', null)
+    .neq('status', 'failed')
     .order('created_at', { ascending: false })
 
   const allScripts = (mySubs as SubRow[] | null) || []
