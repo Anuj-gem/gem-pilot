@@ -18,6 +18,7 @@ import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
 import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
 import { HeatBreakdown } from '@/components/dashboard/heat-breakdown'
+import { FailedScriptCard } from '@/components/dashboard/failed-script-card'
 // DashboardTabs removed — writer dashboard is now a flat two-column layout
 import Link from 'next/link'
 import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
@@ -97,7 +98,7 @@ export default async function DashboardPage() {
       .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
-    visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at && s.status !== 'failed')
+    visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
     submissionIds = visible.map((s) => s.id)
 
     if (submissionIds.length > 0) {
@@ -134,7 +135,7 @@ export default async function DashboardPage() {
           .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
           .in('id', anonIds)
           .order('created_at', { ascending: false })
-        visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at && s.status !== 'failed')
+        visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
         submissionIds = visible.map((s) => s.id)
 
         if (submissionIds.length > 0) {
@@ -443,6 +444,10 @@ export default async function DashboardPage() {
 
   const processingScripts = visible
     .filter(s => s.status === 'processing' || s.status === 'queued')
+    .map(s => ({ id: s.id, title: s.title, format: s.declared_format, createdAt: s.created_at }))
+
+  const failedScripts = visible
+    .filter(s => s.status === 'failed')
     .map(s => ({ id: s.id, title: s.title, format: s.declared_format, createdAt: s.created_at }))
 
   const isProcessing = processingScripts.length > 0
@@ -936,7 +941,7 @@ export default async function DashboardPage() {
                 )}
               </div>
 
-              {completedScripts.length === 0 && processingScripts.length === 0 ? (
+              {completedScripts.length === 0 && processingScripts.length === 0 && failedScripts.length === 0 ? (
                 <div className="px-6 py-10 text-center" style={{ background: '#ffffff', border: '1px dashed #d1d5db', borderRadius: 4 }}>
                   <p className="text-[14px] font-semibold m-0 mb-1" style={{ color: '#111827' }}>No scripts yet</p>
                   <p className="text-[13px] m-0 mb-3" style={{ color: '#6b7280' }}>Upload your first screenplay to get a full evaluation.</p>
@@ -955,6 +960,11 @@ export default async function DashboardPage() {
                         <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>Evaluating...</p>
                       </div>
                     </div>
+                  ))}
+
+                  {/* Failed scripts */}
+                  {failedScripts.map(script => (
+                    <FailedScriptCard key={script.id} scriptId={script.id} title={script.title} format={script.format} createdAt={script.createdAt} />
                   ))}
 
                   {/* Completed scripts + collab scripts — compact rows */}

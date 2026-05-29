@@ -9,6 +9,7 @@ import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 import { HeatBreakdown } from '@/components/dashboard/heat-breakdown'
 import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
 import { useNewUploads } from '@/hooks/use-new-uploads'
+import { FailedScriptCard } from '@/components/dashboard/failed-script-card'
 
 type CollabInfo = {
   id: string
@@ -41,6 +42,7 @@ type ScriptRow = {
   heatRank?: number | null
   matchingOpportunities?: { title: string; slug: string }[]
   isProcessing?: boolean
+  isFailed?: boolean
   isLocked?: boolean
   hidden?: boolean
 }
@@ -230,6 +232,12 @@ export function ScriptsList({
                     <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>Evaluating...</p>
                   </div>
                 </div>
+              )
+            }
+
+            if (s.isFailed) {
+              return (
+                <FailedScriptCard key={s.id} scriptId={s.id} title={s.title} format={s.format} createdAt={s.createdAt} />
               )
             }
 
