@@ -756,12 +756,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             style={{ background: 'linear-gradient(transparent 40%, rgba(0,0,0,0.85))' }}
           />
           {/* Empty-state placeholder (no poster) */}
-          {!submission.poster_url && (
-            <div className="absolute inset-0 flex items-center justify-center" style={{ opacity: 0.3 }}>
-              <div className="text-center">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg>
-                <p className="text-white text-[13px] m-0">Add photos, lookbook, mood board</p>
-              </div>
+          {!submission.poster_url && (isOwner || isAdmin) && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <HeroMediaCarousel
+                submissionId={submission.id}
+                posterUrl={null}
+                initialMedia={(submission as any).media_urls || []}
+                isOwner={true}
+              />
             </div>
           )}
           {/* Metadata overlay at bottom */}
@@ -795,7 +797,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* ═══ TOOLBAR — owner actions ═══ */}
         {(isOwner || isAdmin) && (
-          <div className="gem-no-print flex items-center justify-end gap-2 py-2.5">
+          <div className="gem-no-print flex items-center justify-end gap-2 py-2">
             <ShareButtons
               title={submission.title ?? 'Check out my project on GEM'}
               url={`https://gem-pilot.vercel.app/report/${id}`}
@@ -810,68 +812,53 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* ═══ THE PITCH — logline + elevator pitch + plot summary + media ═══ */}
-        <div className="space-y-6" style={{ marginBottom: '8px' }}>
-          <div>
-            <p
-              className="text-[11px] font-medium tracking-[0.12em] m-0 mb-2"
-              style={{ color: 'var(--gem-gray-400)' }}
-            >
-              THE PITCH
-            </p>
-            {topCard.logline && (
-              <p className="text-[19px] leading-[1.5] font-normal m-0 mb-4" style={{ color: 'var(--gem-gray-50)' }}>
+        {/* ═══ LOGLINE + ELEVATOR PITCH + PLOT SUMMARY ═══ */}
+        <div className="space-y-5">
+          {/* Logline */}
+          {topCard.logline && (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                Logline
+              </p>
+              <p className="text-[18px] sm:text-[19px] leading-[1.55] font-normal m-0" style={{ color: 'rgba(255,255,255,0.92)' }}>
                 {topCard.logline}
               </p>
-            )}
-            <SectionGate
-              section="whats_working"
-              privacy={privacy}
-              isOwnerOrAdmin={isOwnerOrAdmin}
-              submissionId={privacyControlId}
-              isPublic={submission.is_public ?? false}
-              isProSubscriber={true}
-            >
-              {whatsSpecial.headline && (
-                <div
-                  className="rounded-xl p-4 sm:px-5"
-                  style={{ background: 'rgba(255,255,255,0.06)' }}
-                >
-                  <p
-                    className="text-[13px] font-medium m-0 mb-2"
-                    style={{ color: 'var(--gem-gray-400)' }}
-                  >
-                    Elevator pitch
-                  </p>
-                  <p className="text-[14px] leading-[1.6] m-0" style={{ color: 'var(--gem-gray-100)' }}>
-                    {whatsSpecial.headline}
-                  </p>
-                </div>
-              )}
-            </SectionGate>
-          </div>
-
-          {/* PLOT SUMMARY */}
-          {plotSummary && (
-            <div>
-              <Collapsible title="Plot summary" defaultOpen={false}>
-                <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
-                  {plotSummary}
-                </p>
-              </Collapsible>
             </div>
           )}
 
-          {/* Media carousel — for managing uploads */}
-          <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
-            <HeroMediaCarousel
-              submissionId={submission.id}
-              posterUrl={submission.poster_url ?? null}
-              initialMedia={(submission as any).media_urls || []}
-              isOwner={isOwner}
-            />
-          </div>
-        </div>{/* ═══ END PITCH ═══ */}
+          {/* Elevator pitch */}
+          <SectionGate
+            section="whats_working"
+            privacy={privacy}
+            isOwnerOrAdmin={isOwnerOrAdmin}
+            submissionId={privacyControlId}
+            isPublic={submission.is_public ?? false}
+            isProSubscriber={true}
+          >
+            {whatsSpecial.headline && (
+              <div
+                className="rounded-xl px-5 py-4"
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  Elevator pitch
+                </p>
+                <p className="text-[14px] leading-[1.65] m-0" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                  {whatsSpecial.headline}
+                </p>
+              </div>
+            )}
+          </SectionGate>
+
+          {/* PLOT SUMMARY */}
+          {plotSummary && (
+            <Collapsible title="Plot summary" defaultOpen={false}>
+              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+                {plotSummary}
+              </p>
+            </Collapsible>
+          )}
+        </div>
 
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
         <ProjectNeedsCards
