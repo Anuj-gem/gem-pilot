@@ -52,7 +52,7 @@ export async function PATCH(req: NextRequest) {
   }
 
   // Whitelist editable fields
-  const allowed = ['title', 'subtitle', 'description', 'formats', 'genres', 'budget_tiers', 'tags', 'status', 'deal_type']
+  const allowed = ['title', 'subtitle', 'description', 'formats', 'genres', 'budget_tiers', 'tags', 'status', 'deal_type', 'investment_range', 'investment_thesis', 'investment_requirements']
   const update: Record<string, any> = {}
   for (const key of allowed) {
     if (key in fields) {

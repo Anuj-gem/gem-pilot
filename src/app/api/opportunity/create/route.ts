@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json()
-  const { title, description, subtitle, formats, genres, budget_tiers, tags, deal_type } = body
+  const { title, description, subtitle, formats, genres, budget_tiers, tags, deal_type, investment_range, investment_thesis, investment_requirements } = body
 
   if (!title || !description) {
     return NextResponse.json({ error: 'Title and description are required' }, { status: 400 })
@@ -73,6 +73,9 @@ export async function POST(req: NextRequest) {
       budget_tiers: budget_tiers || [],
       tags: tags || [],
       deal_type: deal_type || null,
+      investment_range: investment_range || null,
+      investment_thesis: investment_thesis || null,
+      investment_requirements: investment_requirements || [],
       slug,
       owner_id: user.id,
       posted_by: profile.full_name || null,

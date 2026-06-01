@@ -546,6 +546,41 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               </div>
             </div>
 
+            {/* Investor details (shown when any investor field is populated) */}
+            {(opp.investment_range || opp.investment_thesis || (opp.investment_requirements?.length > 0)) && (
+              <div className="rounded-lg p-3.5 mb-6" style={{ background: '#f0fdf4', border: '1px solid #bbf7d0' }}>
+                <div className="text-[11px] font-medium text-green-700 mb-3">Investment details</div>
+                {opp.investment_range && (
+                  <div className="mb-2.5">
+                    <div className="text-[11px] font-medium text-gray-500 mb-0.5">Range</div>
+                    <div className="text-[14px] font-medium text-gray-900">{opp.investment_range}</div>
+                  </div>
+                )}
+                {opp.investment_thesis && (
+                  <div className="mb-2.5">
+                    <div className="text-[11px] font-medium text-gray-500 mb-0.5">Thesis</div>
+                    <div className="text-[13px] text-gray-700 leading-relaxed">{opp.investment_thesis}</div>
+                  </div>
+                )}
+                {opp.investment_requirements?.length > 0 && (
+                  <div>
+                    <div className="text-[11px] font-medium text-gray-500 mb-1.5">Requirements</div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {opp.investment_requirements.map((req: string, i: number) => (
+                        <span
+                          key={i}
+                          className="text-[12px] font-medium px-2.5 py-0.5 rounded"
+                          style={{ color: '#166534', background: '#dcfce7' }}
+                        >
+                          {req}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Top submissions */}
             {topSubmissions.length > 0 && (
               <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '20px' }}>
