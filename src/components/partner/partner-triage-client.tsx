@@ -55,8 +55,7 @@ export function PartnerTriageClient({
     }
     return initial
   })
-  const [showPassFeedback, setShowPassFeedback] = useState<string | null>(null)
-  const [showFollowFeedback, setShowFollowFeedback] = useState<string | null>(null)
+  const [showFeedback, setShowFeedback] = useState<string | null>(null)
   const [likedTags, setLikedTags] = useState<string[]>([])
   const [reasonTags, setReasonTags] = useState<string[]>([])
   const [gapTags, setGapTags] = useState<string[]>([])
@@ -158,8 +157,7 @@ export function PartnerTriageClient({
           ...prev,
           [selectedApp.id]: { status: action, tags, gapTags: backingConditions },
         }))
-        setShowPassFeedback(null)
-        setShowFollowFeedback(null)
+        setShowFeedback(null)
         resetFeedback()
 
         // Auto-advance to next pending app
@@ -195,18 +193,25 @@ export function PartnerTriageClient({
     })
   }
 
-  function handlePassClick() {
+  function handleShowFeedback() {
     if (!selectedApp) return
-    setShowPassFeedback(selectedApp.id)
+    setShowFeedback(selectedApp.id)
   }
 
-  function confirmPass() {
-    if (reasonTags.length === 0) return
+  function submitPass() {
     const allTags = [
       ...likedTags.map(t => `+${t}`),
       ...reasonTags.map(t => `-${t}`),
     ]
-    handleTriage('pass', allTags, heatOverride)
+    handleTriage('pass', allTags.length > 0 ? allTags : undefined, heatOverride)
+  }
+
+  function submitFollow() {
+    const allTags = [
+      ...likedTags.map(t => `+${t}`),
+      ...reasonTags.map(t => `-${t}`),
+    ]
+    handleTriage('follow', allTags.length > 0 ? allTags : undefined, heatOverride, gapTags.length > 0 ? gapTags : undefined)
   }
 
   function addCustomLikedTag() {
@@ -228,20 +233,6 @@ export function PartnerTriageClient({
     }
     setCustomReason('')
     setAddingCustomReason(false)
-  }
-
-  function handleFollowClick() {
-    if (!selectedApp) return
-    setShowFollowFeedback(selectedApp.id)
-    setShowPassFeedback(null)
-  }
-
-  function confirmFollow() {
-    if (gapTags.length === 0) return
-    const allTags = [
-      ...likedTags.map(t => `+${t}`),
-    ]
-    handleTriage('follow', allTags.length > 0 ? allTags : undefined, heatOverride, gapTags)
   }
 
   function addCustomGapTag() {
@@ -305,7 +296,7 @@ export function PartnerTriageClient({
                     return (
                       <button
                         key={opp.id}
-                        onClick={() => { setActiveOppId(opp.id); setSelectedAppId(null); setShowPassFeedback(null); resetFeedback(); setShowOppDropdown(false); setListTab('pending') }}
+                        onClick={() => { setActiveOppId(opp.id); setSelectedAppId(null); setShowFeedback(null); resetFeedback(); setShowOppDropdown(false); setListTab('pending') }}
                         className={`w-full text-left px-4 py-2.5 text-[13px] cursor-pointer border-0 transition-colors flex items-center justify-between ${
                           activeOppId === opp.id ? 'text-purple-300 bg-purple-500/10' : 'text-white/70 hover:text-white hover:bg-white/5'
                         }`}
@@ -377,7 +368,7 @@ export function PartnerTriageClient({
             return (
               <div
                 key={app.id}
-                onClick={() => { setSelectedAppId(app.id); setShowPassFeedback(null); resetFeedback(); setShowHistory(false); setNoteExpanded(false) }}
+                onClick={() => { setSelectedAppId(app.id); setShowFeedback(null); resetFeedback(); setShowHistory(false); setNoteExpanded(false) }}
                 className={`px-4 py-3 cursor-pointer transition-all ${
                   isSelected ? 'bg-purple-500/10' : 'hover:bg-white/[0.03]'
                 } ${isPassed ? 'opacity-35' : ''}`}
@@ -681,27 +672,20 @@ export function PartnerTriageClient({
               <div className="px-6 py-5" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
                 {!triageState[selectedApp.id] && (
                   <>
-                    {showPassFeedback !== selectedApp.id && showFollowFeedback !== selectedApp.id ? (
+                    {showFeedback !== selectedApp.id ? (
+                      /* Initial state — just the two action buttons */
                       <div className="flex gap-3">
                         <button
-                          onClick={handlePassClick}
+                          onClick={handleShowFeedback}
                           disabled={triaging}
                           className="flex-1 py-3 rounded-xl text-[14px] font-medium cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                           style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)' }}
                         >
-                          Pass
-                        </button>
-                        <button
-                          onClick={handleFollowClick}
-                          disabled={triaging}
-                          className="flex-1 py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50 hover:brightness-110"
-                          style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-                        >
-                          Follow
+                          Review
                         </button>
                       </div>
-                    ) : showPassFeedback === selectedApp.id ? (
-                      /* Pass feedback — sleek inline pills */
+                    ) : (
+                      /* Unified feedback form — all fields, Pass/Follow at bottom */
                       <div className="space-y-4">
                         {/* Liked section */}
                         <div>
@@ -723,7 +707,6 @@ export function PartnerTriageClient({
                                 {tag}
                               </button>
                             ))}
-                            {/* Custom liked tags that have been added */}
                             {likedTags.filter(t => !LIKED_TAGS.includes(t)).map(tag => (
                               <button
                                 key={tag}
@@ -734,7 +717,6 @@ export function PartnerTriageClient({
                                 {tag} ×
                               </button>
                             ))}
-                            {/* Add custom — inline input */}
                             {addingCustomLiked ? (
                               <input
                                 ref={customLikedRef}
@@ -760,9 +742,9 @@ export function PartnerTriageClient({
                           </div>
                         </div>
 
-                        {/* Pass reason section */}
+                        {/* Feedback / reason tags */}
                         <div>
-                          <span className="text-[12px] text-white/40 mb-2 block">Why are you passing?</span>
+                          <span className="text-[12px] text-white/40 mb-2 block">Feedback</span>
                           <div className="flex flex-wrap items-center gap-1.5">
                             {PASS_REASONS.map(tag => (
                               <button
@@ -782,7 +764,6 @@ export function PartnerTriageClient({
                                 {tag}
                               </button>
                             ))}
-                            {/* Custom reason tags */}
                             {reasonTags.filter(t => !PASS_REASONS.includes(t)).map(tag => (
                               <button
                                 key={tag}
@@ -793,7 +774,6 @@ export function PartnerTriageClient({
                                 {tag} ×
                               </button>
                             ))}
-                            {/* Add custom reason */}
                             {addingCustomReason ? (
                               <input
                                 ref={customReasonRef}
@@ -810,6 +790,63 @@ export function PartnerTriageClient({
                             ) : (
                               <button
                                 onClick={() => { setAddingCustomReason(true); setTimeout(() => customReasonRef.current?.focus(), 50) }}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
+                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
+                              >
+                                + Other
+                              </button>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Gap-closing tags */}
+                        <div>
+                          <span className="text-[12px] text-white/40 mb-2 block">What would close the gap?</span>
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            {GAP_CLOSING_TAGS.map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => setGapTags(prev =>
+                                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+                                )}
+                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
+                                  gapTags.includes(tag)
+                                    ? 'text-purple-300'
+                                    : 'text-white/40 hover:text-white/60'
+                                }`}
+                                style={{
+                                  background: gapTags.includes(tag) ? 'rgba(124,58,237,0.15)' : 'rgba(255,255,255,0.06)',
+                                }}
+                              >
+                                {tag}
+                              </button>
+                            ))}
+                            {gapTags.filter(t => !GAP_CLOSING_TAGS.includes(t)).map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => setGapTags(prev => prev.filter(t => t !== tag))}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-purple-300"
+                                style={{ background: 'rgba(124,58,237,0.15)' }}
+                              >
+                                {tag} ×
+                              </button>
+                            ))}
+                            {addingCustomGap ? (
+                              <input
+                                ref={customGapRef}
+                                autoFocus
+                                type="text"
+                                value={customGap}
+                                onChange={e => setCustomGap(e.target.value)}
+                                onKeyDown={e => { if (e.key === 'Enter') addCustomGapTag(); if (e.key === 'Escape') { setAddingCustomGap(false); setCustomGap('') } }}
+                                onBlur={addCustomGapTag}
+                                placeholder="Type and press Enter"
+                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
+                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
+                              />
+                            ) : (
+                              <button
+                                onClick={() => { setAddingCustomGap(true); setTimeout(() => customGapRef.current?.focus(), 50) }}
                                 className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
                                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
                               >
@@ -841,128 +878,33 @@ export function PartnerTriageClient({
                           </div>
                         </div>
 
-                        {/* Confirm / Cancel */}
+                        {/* Pass / Follow / Cancel */}
                         <div className="flex items-center gap-3 pt-1">
                           <button
-                            onClick={confirmPass}
-                            disabled={triaging || reasonTags.length === 0}
-                            className="text-[13px] font-semibold px-5 py-2 rounded-lg text-white cursor-pointer border-0 disabled:opacity-20 disabled:cursor-not-allowed transition-all hover:brightness-110"
-                            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+                            onClick={submitPass}
+                            disabled={triaging}
+                            className="text-[13px] font-semibold px-5 py-2 rounded-lg cursor-pointer border-0 disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:brightness-110"
+                            style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)' }}
                           >
-                            Confirm pass
+                            Pass
                           </button>
                           <button
-                            onClick={() => { setShowPassFeedback(null); resetFeedback() }}
+                            onClick={submitFollow}
+                            disabled={triaging}
+                            className="text-[13px] font-semibold px-5 py-2 rounded-lg text-white cursor-pointer border-0 disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:brightness-110"
+                            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+                          >
+                            Follow
+                          </button>
+                          <button
+                            onClick={() => { setShowFeedback(null); resetFeedback() }}
                             className="text-[13px] text-white/30 hover:text-white/50 cursor-pointer bg-transparent border-0 transition-colors"
                           >
                             Cancel
                           </button>
                         </div>
                       </div>
-                    ) : showFollowFeedback === selectedApp.id ? (
-                      /* Follow feedback — gap-closing tags */
-                      <div className="space-y-4">
-                        {/* What would close the gap? */}
-                        <div>
-                          <span className="text-[12px] text-white/40 mb-2 block">What would close the gap?</span>
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {GAP_CLOSING_TAGS.map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => setGapTags(prev =>
-                                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-                                )}
-                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
-                                  gapTags.includes(tag)
-                                    ? 'text-purple-300'
-                                    : 'text-white/40 hover:text-white/60'
-                                }`}
-                                style={{
-                                  background: gapTags.includes(tag) ? 'rgba(124,58,237,0.15)' : 'rgba(255,255,255,0.06)',
-                                }}
-                              >
-                                {tag}
-                              </button>
-                            ))}
-                            {/* Custom gap tags that have been added */}
-                            {gapTags.filter(t => !GAP_CLOSING_TAGS.includes(t)).map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => setGapTags(prev => prev.filter(t => t !== tag))}
-                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-purple-300"
-                                style={{ background: 'rgba(124,58,237,0.15)' }}
-                              >
-                                {tag} ×
-                              </button>
-                            ))}
-                            {/* Add custom */}
-                            {addingCustomGap ? (
-                              <input
-                                ref={customGapRef}
-                                autoFocus
-                                type="text"
-                                value={customGap}
-                                onChange={e => setCustomGap(e.target.value)}
-                                onKeyDown={e => { if (e.key === 'Enter') addCustomGapTag(); if (e.key === 'Escape') { setAddingCustomGap(false); setCustomGap('') } }}
-                                onBlur={addCustomGapTag}
-                                placeholder="Type and press Enter"
-                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
-                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
-                              />
-                            ) : (
-                              <button
-                                onClick={() => { setAddingCustomGap(true); setTimeout(() => customGapRef.current?.focus(), 50) }}
-                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
-                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
-                              >
-                                + Other
-                              </button>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Liked section (optional, same as pass) */}
-                        <div>
-                          <span className="text-[12px] text-white/40 mb-2 block">Anything you liked?</span>
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {LIKED_TAGS.map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => toggleLikedTag(tag)}
-                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
-                                  likedTags.includes(tag)
-                                    ? 'text-green-300'
-                                    : 'text-white/40 hover:text-white/60'
-                                }`}
-                                style={{
-                                  background: likedTags.includes(tag) ? 'rgba(74,222,128,0.12)' : 'rgba(255,255,255,0.06)',
-                                }}
-                              >
-                                {tag}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Confirm / Cancel */}
-                        <div className="flex items-center gap-3 pt-1">
-                          <button
-                            onClick={confirmFollow}
-                            disabled={triaging || gapTags.length === 0}
-                            className="text-[13px] font-semibold px-5 py-2 rounded-lg text-white cursor-pointer border-0 disabled:opacity-20 disabled:cursor-not-allowed transition-all hover:brightness-110"
-                            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-                          >
-                            Confirm follow
-                          </button>
-                          <button
-                            onClick={() => { setShowFollowFeedback(null); resetFeedback() }}
-                            className="text-[13px] text-white/30 hover:text-white/50 cursor-pointer bg-transparent border-0 transition-colors"
-                          >
-                            Cancel
-                          </button>
-                        </div>
-                      </div>
-                    ) : null}
+                    )}
                   </>
                 )}
 
