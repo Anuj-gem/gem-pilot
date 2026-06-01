@@ -43,6 +43,7 @@ interface Props {
   commercialScore?: number | null
   scoreShownToIndustry?: boolean
   isProSubscriber?: boolean
+  heroOverlay?: boolean
 }
 
 const MAX_TAGS = 25
@@ -74,6 +75,7 @@ export function EditableTopCard({
   scoreShownToIndustry = true,
   isProSubscriber = true,
   headerActionsLeft,
+  heroOverlay,
 }: Props) {
   const editCtx = useEditContextOptional()
   const isEditing = editCtx?.isEditing ?? false
@@ -181,6 +183,75 @@ export function EditableTopCard({
 
   const wordCount = editCtx ? loglineWordCount(editCtx.logline) : 0
   const overCap = wordCount > LOGLINE_WORD_CAP
+
+  // Hero overlay mode — render genre pills + title + author on dark bg
+  if (heroOverlay && !isEditing) {
+    return (
+      <div ref={cardRef}>
+        {classificationPills.length > 0 && (
+          <div className="flex gap-1.5 flex-wrap mb-2.5">
+            {classificationPills.map((p, i) => (
+              <span
+                key={`cls-${i}`}
+                className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium"
+                style={
+                  p.variant === 'format'
+                    ? { background: 'rgba(124,58,237,0.9)', color: '#fff' }
+                    : {
+                        background: 'rgba(255,255,255,0.15)',
+                        color: 'rgba(255,255,255,0.9)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                      }
+                }
+              >
+                {p.label}
+              </span>
+            ))}
+          </div>
+        )}
+        <h1 className="text-[28px] sm:text-[32px] font-medium text-white tracking-tight leading-[1.1] m-0 mb-1.5">
+          {displayTitle}
+        </h1>
+        <div className="flex items-center gap-2">
+          {authorAvatar ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={authorAvatar}
+              alt=""
+              className="w-6 h-6 rounded-full object-cover"
+            />
+          ) : authorInitials ? (
+            <div
+              className="w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-medium"
+              style={{ background: '#7C3AED', color: '#fff' }}
+            >
+              {authorInitials}
+            </div>
+          ) : null}
+          {authorName && (
+            <span
+              className="text-[13px]"
+              style={{ color: 'rgba(255,255,255,0.8)' }}
+            >
+              {authorName}
+            </span>
+          )}
+          {postedAt && (
+            <span
+              className="text-[13px]"
+              style={{ color: 'rgba(255,255,255,0.4)' }}
+            >
+              {new Date(postedAt).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+            </span>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div ref={cardRef} className="relative">

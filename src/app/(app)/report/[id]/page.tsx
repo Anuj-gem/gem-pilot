@@ -736,12 +736,66 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {(isOwner || isAdmin) ? (
         <>
 
-        {/* ═══ PITCH CONTAINER — top card, elevator pitch, plot summary, media ═══ */}
-        <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
+        {/* ═══ HERO — dark 16:9 area with poster bg + overlay metadata ═══ */}
+        <div
+          className="relative w-full rounded-2xl overflow-hidden"
+          style={{ aspectRatio: '16/9', background: '#1a1a1a' }}
+        >
+          {/* Poster background */}
+          {submission.poster_url && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={submission.poster_url}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
+          {/* Gradient overlay */}
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(transparent 40%, rgba(0,0,0,0.85))' }}
+          />
+          {/* Empty-state placeholder (no poster) */}
+          {!submission.poster_url && (
+            <div className="absolute inset-0 flex items-center justify-center" style={{ opacity: 0.3 }}>
+              <div className="text-center">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg>
+                <p className="text-white text-[13px] m-0">Add photos, lookbook, mood board</p>
+              </div>
+            </div>
+          )}
+          {/* Metadata overlay at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:px-7 sm:pb-6">
+            <EditableTopCard
+              evaluationId={id}
+              submissionId={submission.id}
+              initial={topCard}
+              isOwner={isOwner || isAdmin}
+              hasEdits={topCardHasEdits}
+              postedAt={submission.created_at ?? null}
+              heroOverlay
+              authorName={
+                isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+              }
+              authorHandle={
+                isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+              }
+              authorAvatar={
+                isAnonymousSubmission ? null : submission.profiles?.avatar_url ?? null
+              }
+              authorHeadline={
+                isAnonymousSubmission ? null : submission.profiles?.headline ?? null
+              }
+              commercialScore={null}
+              scoreShownToIndustry={isScoreVisible(privacy)}
+              isProSubscriber={true}
+            />
+          </div>
+        </div>
 
-        {/* Owner actions + share — compact top row */}
+        {/* ═══ TOOLBAR — owner actions ═══ */}
         {(isOwner || isAdmin) && (
-          <div className="gem-no-print flex items-center justify-end gap-1 -mb-2">
+          <div className="gem-no-print flex items-center justify-end gap-2 py-2.5">
             <ShareButtons
               title={submission.title ?? 'Check out my project on GEM'}
               url={`https://gem-pilot.vercel.app/report/${id}`}
@@ -756,88 +810,68 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* Title + author + logline + categories */}
-        <EditableTopCard
-          evaluationId={id}
-          submissionId={submission.id}
-          initial={topCard}
-          isOwner={isOwner || isAdmin}
-          hasEdits={topCardHasEdits}
-          postedAt={submission.created_at ?? null}
-          authorName={
-            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
-          }
-          authorHandle={
-            isAnonymousSubmission ? null : submission.profiles?.handle ?? null
-          }
-          authorAvatar={
-            isAnonymousSubmission ? null : submission.profiles?.avatar_url ?? null
-          }
-          authorHeadline={
-            isAnonymousSubmission ? null : submission.profiles?.headline ?? null
-          }
-          commercialScore={null}
-          scoreShownToIndustry={isScoreVisible(privacy)}
-          isProSubscriber={true}
-        />
+        {/* ═══ THE PITCH — logline + elevator pitch + plot summary + media ═══ */}
+        <div className="space-y-6" style={{ marginBottom: '8px' }}>
+          <div>
+            <p
+              className="text-[11px] font-medium tracking-[0.12em] m-0 mb-2"
+              style={{ color: 'var(--gem-gray-400)' }}
+            >
+              THE PITCH
+            </p>
+            {topCard.logline && (
+              <p className="text-[19px] leading-[1.5] font-normal m-0 mb-4" style={{ color: 'var(--gem-gray-50)' }}>
+                {topCard.logline}
+              </p>
+            )}
+            <SectionGate
+              section="whats_working"
+              privacy={privacy}
+              isOwnerOrAdmin={isOwnerOrAdmin}
+              submissionId={privacyControlId}
+              isPublic={submission.is_public ?? false}
+              isProSubscriber={true}
+            >
+              {whatsSpecial.headline && (
+                <div
+                  className="rounded-xl p-4 sm:px-5"
+                  style={{ background: 'rgba(255,255,255,0.06)' }}
+                >
+                  <p
+                    className="text-[13px] font-medium m-0 mb-2"
+                    style={{ color: 'var(--gem-gray-400)' }}
+                  >
+                    Elevator pitch
+                  </p>
+                  <p className="text-[14px] leading-[1.6] m-0" style={{ color: 'var(--gem-gray-100)' }}>
+                    {whatsSpecial.headline}
+                  </p>
+                </div>
+              )}
+            </SectionGate>
+          </div>
 
-        {/* GEM Score + backing badges removed from hero — score lives in GEM Analysis card,
-            backing badges live in the Investment needs card */}
-
-        {/* Media carousel */}
-        <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
-          <HeroMediaCarousel
-            submissionId={submission.id}
-            posterUrl={submission.poster_url ?? null}
-            initialMedia={(submission as any).media_urls || []}
-            isOwner={isOwner}
-          />
-        </div>
-
-        {/* ELEVATOR PITCH */}
-        <SectionGate
-          section="whats_working"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-          isProSubscriber={true}
-        >
-          {(whatsSpecial.headline || plotSummary) && (
-            <div data-pdf-section="whats_working">
-              <h2
-                className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
-                style={{ color: 'var(--gem-gold)' }}
-              >
-                Elevator Pitch
-              </h2>
-              <InlineElevatorPitch
-                fallbackPitch={whatsSpecial.headline ?? ''}
-                fallbackPlot={plotSummary ?? ''}
-                hidePlot
-              />
+          {/* PLOT SUMMARY */}
+          {plotSummary && (
+            <div>
+              <Collapsible title="Plot summary" defaultOpen={false}>
+                <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+                  {plotSummary}
+                </p>
+              </Collapsible>
             </div>
           )}
-        </SectionGate>
 
-        {/* PLOT SUMMARY */}
-        {plotSummary && (
-          <div>
-            <h2
-              className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-              style={{ color: 'var(--gem-gold)' }}
-            >
-              Plot Summary
-            </h2>
-            <Collapsible title="Read full plot summary" defaultOpen={false}>
-              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
-                {plotSummary}
-              </p>
-            </Collapsible>
+          {/* Media carousel — for managing uploads */}
+          <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
+            <HeroMediaCarousel
+              submissionId={submission.id}
+              posterUrl={submission.poster_url ?? null}
+              initialMedia={(submission as any).media_urls || []}
+              isOwner={isOwner}
+            />
           </div>
-        )}
-
-        </div>{/* ═══ END PITCH CONTAINER ═══ */}
+        </div>{/* ═══ END PITCH ═══ */}
 
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
         <ProjectNeedsCards
