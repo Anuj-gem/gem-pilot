@@ -32,7 +32,7 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
   // Load the application
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned, application_responses, media_urls, reviewer_strengths, reviewer_concerns')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned, application_responses, media_urls, reviewer_strengths, reviewer_concerns, backing_status, backing_amount, backing_conditions, backing_note')
     .eq('id', id)
     .single()
 
@@ -285,8 +285,10 @@ export default async function ApplicationReviewPage({ params }: { params: Promis
           allUsedFeedbackTags={usedFeedbackTags}
           allUsedNextStepsTags={usedNextStepsTags}
           currentReviewStage={app.review_stage || 'pending'}
-          currentSentiment={app.sentiment || null}
-          currentHeatEarned={app.heat_earned || 0}
+          currentBackingStatus={app.backing_status || null}
+          currentBackingAmount={app.backing_amount || 0}
+          currentBackingConditions={app.backing_conditions || []}
+          currentBackingNote={app.backing_note || ''}
         />
       </section>
     </div>

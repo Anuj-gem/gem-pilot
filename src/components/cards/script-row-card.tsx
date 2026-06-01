@@ -16,8 +16,11 @@ export type ScriptRowData = {
   score: number | null
   evaluationId: string | null
   createdAt: string
-  // Heat — total industry heat accrued by this script
-  heat?: number
+  // Backing — investor interest metrics
+  totalBacking?: number
+  backerCount?: number
+  totalFollowing?: number
+  followerCount?: number
   // Opportunities
   matchingOpportunities?: { title: string; slug: string }[]
   // States
@@ -148,24 +151,38 @@ export function ScriptRowCard({
           </div>
         )}
 
-        {/* Heat badge — always shown on completed scripts (zero state included) */}
-        {!s.isProcessing && !s.isLocked && s.evaluationId && (
-          <div className="relative group/heat shrink-0">
-            <div
-              className="h-9 lg:h-11 rounded-lg flex items-center gap-1 justify-center px-2 lg:px-2.5"
-              style={{ background: '#fff7ed', border: '1.5px solid #fed7aa' }}
-            >
-              <span className="text-[12px] leading-none" aria-hidden="true">🔥</span>
-              <span className={`text-[16px] font-extrabold leading-none ${s.heat && s.heat > 0 ? 'text-orange-600' : 'text-orange-300'}`}>
-                {s.heat ?? 0}
-              </span>
-              <span className={`text-[9px] font-bold uppercase tracking-wider leading-none ${s.heat && s.heat > 0 ? 'text-orange-400' : 'text-orange-200'}`}>Heat</span>
-            </div>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-48 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/heat:opacity-100 transition-opacity z-30 text-center pointer-events-none">
-              Apply for opportunities to earn heat as your script gets attention
-            </div>
-          </div>
-        )}
+        {/* Backing badges — shown on completed scripts */}
+        {!s.isProcessing && !s.isLocked && s.evaluationId && (() => {
+          const hasBacking = (s.totalBacking || 0) > 0
+          const hasFollowing = (s.totalFollowing || 0) > 0
+          const fmtAmt = (n: number) => n >= 1000 ? `$${Math.round(n / 1000)}K` : `$${n}`
+          return (
+            <>
+              {hasBacking && (
+                <div className="relative group/back shrink-0">
+                  <div className="h-9 lg:h-11 rounded-lg flex items-center gap-1 justify-center px-2 lg:px-2.5" style={{ background: '#ecfdf5', border: '1.5px solid #6ee7b7' }}>
+                    <span className="text-[14px] font-extrabold leading-none text-green-700">{fmtAmt(s.totalBacking || 0)}</span>
+                    <span className="text-[9px] font-bold uppercase tracking-wider leading-none text-green-500">backed</span>
+                  </div>
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/back:opacity-100 transition-opacity z-30 text-center pointer-events-none">
+                    {s.backerCount} investor{s.backerCount !== 1 ? 's' : ''} attached
+                  </div>
+                </div>
+              )}
+              {hasFollowing && (
+                <div className="relative group/follow shrink-0">
+                  <div className="h-9 lg:h-11 rounded-lg flex items-center gap-1 justify-center px-2 lg:px-2.5" style={{ background: '#fffbeb', border: '1.5px solid #fcd34d' }}>
+                    <span className="text-[14px] font-extrabold leading-none text-amber-700">{fmtAmt(s.totalFollowing || 0)}</span>
+                    <span className="text-[9px] font-bold uppercase tracking-wider leading-none text-amber-500">following</span>
+                  </div>
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-44 rounded-lg bg-gray-900 text-white text-[11px] leading-snug p-2 opacity-0 group-hover/follow:opacity-100 transition-opacity z-30 text-center pointer-events-none">
+                    {s.followerCount} investor{s.followerCount !== 1 ? 's' : ''} following
+                  </div>
+                </div>
+              )}
+            </>
+          )
+        })()}
 
         {/* Title + format + date */}
         <div className="min-w-0 flex-1">

@@ -62,11 +62,13 @@ export default async function ScriptsPage() {
   type SubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; heat_score: number | null
+    total_backing: number | null; backer_count: number | null
+    total_following: number | null; follower_count: number | null
     poster_url: string | null; is_public: boolean | null
   }
   const { data: mySubs } = await supabase
     .from('script_submissions')
-    .select('id, title, status, declared_format, created_at, hidden_at, heat_score, poster_url, is_public')
+    .select('id, title, status, declared_format, created_at, hidden_at, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, is_public')
     .eq('user_id', user.id)
     .is('hidden_at', null)
     .order('created_at', { ascending: false })
@@ -238,9 +240,11 @@ export default async function ScriptsPage() {
       score: ev?.score ?? null,
       evaluationId: ev?.id ?? null,
       createdAt: s.created_at,
-      heat: s.heat_score ?? 0,
+      totalBacking: s.total_backing ?? 0,
+      backerCount: s.backer_count ?? 0,
+      totalFollowing: s.total_following ?? 0,
+      followerCount: s.follower_count ?? 0,
       collaboratorCount: collabCountByScript.get(s.id) ?? 0,
-      collabHeatCount: collabHeatByScript.get(s.id) ?? 0,
       collaborators: collabsByScript.get(s.id) ?? [],
       posterUrl: s.poster_url ?? null,
       isPublic: s.is_public ?? false,
@@ -251,7 +255,6 @@ export default async function ScriptsPage() {
       availableOppCount: qualifyingOpps.length,
       pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
       scoreRank: scoreRankMap.get(s.id) ?? null,
-      heatRank: heatRankMap.get(s.id) ?? null,
       hidden: !!s.hidden_at,
     }
   })

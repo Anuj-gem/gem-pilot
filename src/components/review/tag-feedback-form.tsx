@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 
-// Presets — "What stood out" (positive signals, each = heat)
+// Presets — "What stood out" (positive signals)
 const POSITIVE_PRESETS = [
   'Strong voice',
   'Compelling lead',
@@ -17,7 +17,7 @@ const POSITIVE_PRESETS = [
   'Visual storytelling',
 ]
 
-// Presets — "Why passing" (pass reasons)
+// Presets — "Why passing"
 const PASS_REASON_PRESETS = [
   'Conflicting project',
   'Similar to something in development',
@@ -31,7 +31,21 @@ const PASS_REASON_PRESETS = [
   'Concept unclear',
 ]
 
-// Combo tag input — type to add custom, presets as suggestions, search previously used
+// Presets — investor conditions (for Follow / Back)
+const CONDITION_PRESETS = [
+  'Needs director attached',
+  'Needs talent attached',
+  'Needs production plan',
+  'Needs proof of concept',
+  'Needs sizzle reel',
+  'Needs script revision',
+  'Needs showrunner',
+  'Needs budget breakdown',
+  'Needs distribution strategy',
+  'Market timing dependent',
+]
+
+// Combo tag input — type to add custom, presets as suggestions
 function TagComboInput({
   tags,
   setTags,
@@ -45,13 +59,12 @@ function TagComboInput({
   presets: string[]
   allUsed: string[]
   placeholder: string
-  accentColor: 'purple' | 'gray'
+  accentColor: 'purple' | 'gray' | 'amber'
 }) {
   const [input, setInput] = useState('')
   const [focused, setFocused] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // Merge presets + previously used, deduplicate, exclude already-selected
   const allSuggestions = [...new Set([...presets, ...allUsed])]
   const filtered = input.trim()
     ? allSuggestions.filter(s => s.toLowerCase().includes(input.toLowerCase()) && !tags.includes(s))
@@ -69,31 +82,25 @@ function TagComboInput({
     setTags(tags.filter(t => t !== tag))
   }
 
-  const colors = accentColor === 'purple'
-    ? { pill: 'border-purple-300 bg-purple-50 text-purple-700', suggestion: 'hover:bg-purple-50', ring: 'focus-within:border-purple-300' }
-    : { pill: 'border-gray-300 bg-gray-100 text-gray-600', suggestion: 'hover:bg-gray-50', ring: 'focus-within:border-gray-300' }
+  const colorMap = {
+    purple: { pill: 'border-purple-300 bg-purple-50 text-purple-700', suggestion: 'hover:bg-purple-50', ring: 'focus-within:border-purple-300' },
+    gray: { pill: 'border-gray-300 bg-gray-100 text-gray-600', suggestion: 'hover:bg-gray-50', ring: 'focus-within:border-gray-300' },
+    amber: { pill: 'border-amber-300 bg-amber-50 text-amber-700', suggestion: 'hover:bg-amber-50', ring: 'focus-within:border-amber-300' },
+  }
+  const colors = colorMap[accentColor]
 
   return (
     <div>
-      {/* Selected tags */}
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mb-2">
           {tags.map(tag => (
             <span key={tag} className={`inline-flex items-center gap-1 text-[12px] px-2.5 py-1 rounded-full border font-semibold ${colors.pill}`}>
               {tag}
-              <button
-                type="button"
-                onClick={() => removeTag(tag)}
-                className="opacity-60 hover:opacity-100 ml-0.5"
-              >
-                ×
-              </button>
+              <button type="button" onClick={() => removeTag(tag)} className="opacity-60 hover:opacity-100 ml-0.5">×</button>
             </span>
           ))}
         </div>
       )}
-
-      {/* Input + dropdown */}
       <div className="relative">
         <input
           ref={inputRef}
@@ -103,19 +110,12 @@ function TagComboInput({
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           onKeyDown={e => {
-            if (e.key === 'Enter' && input.trim()) {
-              e.preventDefault()
-              addTag(input)
-            }
-            if (e.key === 'Backspace' && !input && tags.length > 0) {
-              removeTag(tags[tags.length - 1])
-            }
+            if (e.key === 'Enter' && input.trim()) { e.preventDefault(); addTag(input) }
+            if (e.key === 'Backspace' && !input && tags.length > 0) { removeTag(tags[tags.length - 1]) }
           }}
           placeholder={tags.length === 0 ? placeholder : 'Add another...'}
           className={`w-full text-[13px] px-3 py-2 rounded-lg border border-gray-200 bg-white focus:outline-none ${colors.ring}`}
         />
-
-        {/* Suggestions dropdown */}
         {focused && filtered.length > 0 && (
           <div className="absolute z-10 mt-1 w-full border border-gray-200 rounded-lg bg-white shadow-sm max-h-48 overflow-y-auto">
             {filtered.slice(0, 12).map(s => (
@@ -144,24 +144,7 @@ function TagComboInput({
   )
 }
 
-const REVIEW_STAGES = [
-  { value: 'pending', label: 'Pending', color: '#d97706', bg: '#fef3c7' },
-  { value: 'in_consideration', label: 'In consideration', color: '#7c3aed', bg: '#ede9fe' },
-  { value: 'shortlisted', label: 'Shortlisted', color: '#2563eb', bg: '#dbeafe' },
-  { value: 'partner_match', label: 'Partner match', color: '#059669', bg: '#d1fae5' },
-] as const
-
-// Heat points by stage: shortlisted earns +2 automatically
-const STAGE_HEAT: Record<string, number> = {
-  shortlisted: 2,
-  partner_match: 3,
-}
-
-function calcHeatPreview(currentStage: string, hasFeedbackTags: boolean): number {
-  const stageHeat = STAGE_HEAT[currentStage] || 0
-  const positiveHeat = hasFeedbackTags ? 1 : 0
-  return stageHeat + positiveHeat
-}
+type BackingStatus = 'pass' | 'following' | 'attached'
 
 interface TagFeedbackFormProps {
   considerationId: string
@@ -171,8 +154,10 @@ interface TagFeedbackFormProps {
   allUsedFeedbackTags?: string[]
   allUsedNextStepsTags?: string[]
   currentReviewStage?: string
-  currentSentiment?: string | null
-  currentHeatEarned?: number
+  currentBackingStatus?: BackingStatus | null
+  currentBackingAmount?: number
+  currentBackingConditions?: string[]
+  currentBackingNote?: string
 }
 
 export function TagFeedbackForm({
@@ -183,78 +168,50 @@ export function TagFeedbackForm({
   allUsedFeedbackTags = [],
   allUsedNextStepsTags = [],
   currentReviewStage = 'pending',
-  currentSentiment = null,
-  currentHeatEarned = 0,
+  currentBackingStatus = null,
+  currentBackingAmount = 0,
+  currentBackingConditions = [],
+  currentBackingNote = '',
 }: TagFeedbackFormProps) {
+  const [outcome, setOutcome] = useState<BackingStatus | null>(currentBackingStatus)
   const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
   const [passReasonTags, setPassReasonTags] = useState<string[]>(currentNextStepsTags)
-  const [note, setNote] = useState(currentFeedback)
+  const [conditionTags, setConditionTags] = useState<string[]>(currentBackingConditions)
+  const [amount, setAmount] = useState(currentBackingAmount > 0 ? String(currentBackingAmount) : '')
+  const [note, setNote] = useState(currentFeedback || currentBackingNote || '')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
-  const [stage, setStage] = useState(currentReviewStage)
-  const [stageSaving, setStageSaving] = useState(false)
   const [validationError, setValidationError] = useState<string | null>(null)
   const router = useRouter()
 
   const isAlreadyComplete = currentReviewStage === 'complete'
-  const heatPreview = calcHeatPreview(stage, feedbackTags.length > 0)
+  const showAmountAndConditions = outcome === 'following' || outcome === 'attached'
 
-  // Shortlisted or partner_match requires at least one positive tag
-  const requiresPositiveTag = stage === 'shortlisted' || stage === 'partner_match'
-
-  async function handleStageChange(newStage: string) {
-    if (newStage === stage) return
-    // If moving to shortlisted/partner_match, require positive tags
-    if ((newStage === 'shortlisted' || newStage === 'partner_match') && feedbackTags.length === 0) {
-      setValidationError('Add at least one "What stood out" tag before shortlisting.')
+  async function handleComplete() {
+    if (!outcome) {
+      setValidationError('Select an outcome: Pass, Follow, or Back.')
       return
     }
-    setValidationError(null)
-    setStageSaving(true)
-    const res = await fetch('/api/consideration/review', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ consideration_id: considerationId, review_stage: newStage, feedback_tags: feedbackTags }),
-    })
-    setStageSaving(false)
-    if (res.ok) {
-      setStage(newStage)
-      router.refresh()
-    }
-  }
-
-  function updateFeedbackTags(tags: string[]) {
-    setFeedbackTags(tags)
-    setSaved(false)
-    if (tags.length > 0) setValidationError(null)
-  }
-  function updatePassReasonTags(tags: string[]) { setPassReasonTags(tags); setSaved(false) }
-
-  async function handlePass() {
-    // Require some form of feedback
-    if (feedbackTags.length === 0 && passReasonTags.length === 0 && !note.trim()) {
-      setValidationError('Add at least one tag or a note before completing the review.')
-      return
-    }
-    // If shortlisted/partner_match, require positive tags
-    if (requiresPositiveTag && feedbackTags.length === 0) {
-      setValidationError('Add at least one "What stood out" tag before shortlisting.')
+    // Pass requires some form of feedback
+    if (outcome === 'pass' && feedbackTags.length === 0 && passReasonTags.length === 0 && !note.trim()) {
+      setValidationError('Add at least one tag or a note before passing.')
       return
     }
     setValidationError(null)
     setSaving(true)
-    // Derive sentiment from positive tags for backward compat
-    const derivedSentiment = feedbackTags.length > 0 ? 'positive' : 'negative'
+
     const res = await fetch('/api/consideration/review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         consideration_id: considerationId,
+        backing_status: outcome,
+        backing_amount: showAmountAndConditions ? (parseFloat(amount) || 0) : 0,
+        backing_conditions: showAmountAndConditions ? conditionTags : [],
+        backing_note: note.trim() || undefined,
         feedback_tags: feedbackTags,
         next_steps_tags: passReasonTags,
         feedback: note.trim() || undefined,
-        review_stage: 'complete',
-        sentiment: derivedSentiment,
       }),
     })
     setSaving(false)
@@ -273,6 +230,9 @@ export function TagFeedbackForm({
         consideration_id: considerationId,
         feedback_tags: feedbackTags,
         next_steps_tags: passReasonTags,
+        backing_conditions: conditionTags,
+        backing_amount: parseFloat(amount) || 0,
+        backing_note: note.trim() || undefined,
         feedback: note.trim() || undefined,
       }),
     })
@@ -280,117 +240,162 @@ export function TagFeedbackForm({
     setSaved(true)
   }
 
-  // Build heat explanation string
-  const heatParts: string[] = []
-  if (feedbackTags.length > 0) heatParts.push('+1 positive signals')
-  if (STAGE_HEAT[stage]) heatParts.push(`+${STAGE_HEAT[stage]} ${stage === 'shortlisted' ? 'shortlisted' : 'partner match'}`)
+  // Completed state
+  if (isAlreadyComplete) {
+    const statusLabel: Record<string, { label: string; color: string; bg: string }> = {
+      pass: { label: 'Passed', color: '#6b7280', bg: '#f3f4f6' },
+      following: { label: 'Following', color: '#d97706', bg: '#fffbeb' },
+      attached: { label: 'Attached as backer', color: '#059669', bg: '#ecfdf5' },
+    }
+    const display = currentBackingStatus ? statusLabel[currentBackingStatus] : { label: 'Reviewed', color: '#6b7280', bg: '#f3f4f6' }
+    const fmtAmount = currentBackingAmount > 0
+      ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(currentBackingAmount)
+      : null
+
+    return (
+      <div className="space-y-3">
+        <div className="rounded-lg border px-3 py-2" style={{ borderColor: display.color + '40', background: display.bg }}>
+          <div className="flex items-center gap-2">
+            <span className="text-[13px] font-bold" style={{ color: display.color }}>{display.label}</span>
+            {fmtAmount && (
+              <span className="text-[13px] font-bold" style={{ color: display.color }}>&middot; {fmtAmount}</span>
+            )}
+          </div>
+          {currentBackingConditions.length > 0 && (
+            <div className="flex flex-wrap gap-1 mt-1.5">
+              {currentBackingConditions.map(c => (
+                <span key={c} className="text-[11px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-medium">{c}</span>
+              ))}
+            </div>
+          )}
+        </div>
+        {(currentFeedback || currentBackingNote) && (
+          <p className="text-[13px] text-gray-600 m-0">{currentFeedback || currentBackingNote}</p>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-5">
-      {/* Stage picker */}
+      {/* Outcome selector — three big buttons */}
       <div>
-        <label className="text-[13px] font-bold text-gray-900 block mb-2">Status</label>
-        <div className="flex flex-wrap gap-1.5">
-          {REVIEW_STAGES.map(s => {
-            const isActive = stage === s.value
+        <label className="text-[13px] font-bold text-gray-900 block mb-2">Decision</label>
+        <div className="grid grid-cols-3 gap-2">
+          {([
+            { value: 'pass' as const, label: 'Pass', icon: '✕', color: '#6b7280', bg: '#f9fafb', activeBg: '#f3f4f6', border: '#d1d5db' },
+            { value: 'following' as const, label: 'Follow', icon: '👁', color: '#d97706', bg: '#fffbeb', activeBg: '#fef3c7', border: '#fbbf24' },
+            { value: 'attached' as const, label: 'Back', icon: '✓', color: '#059669', bg: '#ecfdf5', activeBg: '#d1fae5', border: '#34d399' },
+          ]).map(opt => {
+            const isActive = outcome === opt.value
             return (
               <button
-                key={s.value}
-                onClick={() => handleStageChange(s.value)}
-                disabled={stageSaving || isAlreadyComplete}
-                className="text-[12px] font-semibold px-3 py-1.5 rounded-full border transition-colors disabled:opacity-50"
+                key={opt.value}
+                onClick={() => { setOutcome(opt.value); setValidationError(null); setSaved(false) }}
+                className="flex flex-col items-center gap-1 py-3 rounded-xl border-2 transition-all text-center"
                 style={{
-                  background: isActive ? s.bg : 'transparent',
-                  borderColor: isActive ? s.color : '#e5e7eb',
-                  color: isActive ? s.color : '#9ca3af',
+                  borderColor: isActive ? opt.border : '#e5e7eb',
+                  background: isActive ? opt.activeBg : 'white',
                 }}
               >
-                {s.label}
+                <span className="text-[18px]">{opt.icon}</span>
+                <span className="text-[13px] font-bold" style={{ color: isActive ? opt.color : '#9ca3af' }}>
+                  {opt.label}
+                </span>
               </button>
             )
           })}
-          {stageSaving && <span className="text-[11px] text-gray-400 self-center ml-1">Saving...</span>}
         </div>
       </div>
 
-      {/* What stood out — positive tags */}
-      <div>
-        <div className="flex items-center justify-between mb-1.5">
-          <label className="text-[13px] font-bold text-gray-900">What stood out</label>
-          <span className="text-[11px] text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full font-medium">
-            Tags = positive signal &middot; Writer earns 🔥 +1
-          </span>
+      {/* Amount — only for Follow / Back */}
+      {showAmountAndConditions && (
+        <div>
+          <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
+            {outcome === 'attached' ? 'Committed amount' : 'Potential amount'}
+          </label>
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[14px] text-gray-400 font-medium">$</span>
+            <input
+              type="text"
+              value={amount}
+              onChange={e => {
+                const v = e.target.value.replace(/[^0-9]/g, '')
+                setAmount(v)
+                setSaved(false)
+              }}
+              placeholder="0"
+              className="w-full text-[14px] pl-7 pr-3 py-2.5 rounded-lg border border-gray-200 bg-white focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200 font-medium"
+            />
+          </div>
+          {amount && (
+            <p className="text-[11px] text-gray-500 mt-1 m-0">
+              {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(parseFloat(amount) || 0)}
+            </p>
+          )}
         </div>
+      )}
+
+      {/* Conditions — only for Follow / Back */}
+      {showAmountAndConditions && (
+        <div>
+          <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
+            Conditions <span className="text-[11px] font-normal text-gray-500">(what would need to happen)</span>
+          </label>
+          <TagComboInput
+            tags={conditionTags}
+            setTags={(t) => { setConditionTags(t); setSaved(false) }}
+            presets={CONDITION_PRESETS}
+            allUsed={[]}
+            placeholder="Select or type conditions..."
+            accentColor="amber"
+          />
+        </div>
+      )}
+
+      {/* What stood out — positive tags (available for all outcomes) */}
+      <div>
+        <label className="text-[13px] font-bold text-gray-900 block mb-1.5">What stood out</label>
         <TagComboInput
           tags={feedbackTags}
-          setTags={updateFeedbackTags}
+          setTags={(t) => { setFeedbackTags(t); setSaved(false) }}
           presets={POSITIVE_PRESETS}
           allUsed={allUsedFeedbackTags}
           placeholder="Select or type what stood out..."
           accentColor="purple"
         />
-        {feedbackTags.length > 0 && (
-          <p className="text-[11px] text-gray-400 mt-1 m-0">{feedbackTags.length} selected</p>
-        )}
       </div>
 
-      {/* Why passing — pass reason tags */}
-      <div>
-        <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
-          Why passing <span className="text-[11px] font-normal text-gray-400">(if applicable)</span>
-        </label>
-        <TagComboInput
-          tags={passReasonTags}
-          setTags={updatePassReasonTags}
-          presets={PASS_REASON_PRESETS}
-          allUsed={allUsedNextStepsTags}
-          placeholder="Select or type reason..."
-          accentColor="gray"
-        />
-      </div>
+      {/* Why passing — only shown for Pass */}
+      {outcome === 'pass' && (
+        <div>
+          <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
+            Why passing <span className="text-[11px] font-normal text-gray-500">(if applicable)</span>
+          </label>
+          <TagComboInput
+            tags={passReasonTags}
+            setTags={(t) => { setPassReasonTags(t); setSaved(false) }}
+            presets={PASS_REASON_PRESETS}
+            allUsed={allUsedNextStepsTags}
+            placeholder="Select or type reason..."
+            accentColor="gray"
+          />
+        </div>
+      )}
 
       {/* Note */}
       <div>
         <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
-          Note <span className="text-[11px] font-normal text-gray-400">(visible to writer)</span>
+          Note <span className="text-[11px] font-normal text-gray-500">(visible to writer)</span>
         </label>
         <textarea
           value={note}
-          onChange={(e) => { setNote(e.target.value); setSaved(false) }}
-          placeholder="Any additional context or encouragement..."
+          onChange={e => { setNote(e.target.value); setSaved(false) }}
+          placeholder="Any additional context, encouragement, or guidance..."
           className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
           rows={3}
         />
       </div>
-
-      {/* Heat preview */}
-      {!isAlreadyComplete && (
-        <div className="rounded-lg px-3 py-2" style={{ background: heatPreview > 0 ? '#fff7ed' : '#f9fafb' }}>
-          <div className="flex items-center gap-2">
-            <span className="text-[14px]">🔥</span>
-            <span className="text-[14px] font-bold" style={{ color: heatPreview > 0 ? '#ea580c' : '#9ca3af' }}>
-              {heatPreview} heat
-            </span>
-            {heatParts.length > 0 && (
-              <span className="text-[11px] text-gray-400 ml-1">
-                ({heatParts.join(' + ')})
-              </span>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Already completed — show what was recorded */}
-      {isAlreadyComplete && (
-        <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
-          <span className="text-[12px] text-gray-500">
-            Review complete
-            {currentHeatEarned > 0 && (
-              <span className="ml-2 font-bold" style={{ color: '#f97316' }}>🔥 {currentHeatEarned} heat awarded</span>
-            )}
-          </span>
-        </div>
-      )}
 
       {/* Validation error */}
       {validationError && (
@@ -399,26 +404,20 @@ export function TagFeedbackForm({
 
       {/* Actions */}
       <div className="flex items-center gap-3">
-        {!isAlreadyComplete ? (
-          <>
-            <button
-              onClick={handlePass}
-              disabled={saving}
-              className="inline-flex items-center text-[13px] font-semibold text-white bg-green-600 hover:bg-green-700 disabled:opacity-50 px-4 py-2 rounded-lg transition-colors"
-            >
-              {saving ? 'Saving...' : 'Complete review'}
-            </button>
-            <button
-              onClick={handleSaveDraft}
-              disabled={saving}
-              className="inline-flex items-center text-[13px] font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
-            >
-              Save draft
-            </button>
-          </>
-        ) : (
-          <span className="text-[12px] text-gray-400 font-medium">Review complete</span>
-        )}
+        <button
+          onClick={handleComplete}
+          disabled={saving || !outcome}
+          className="inline-flex items-center text-[13px] font-semibold text-white bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-5 py-2.5 rounded-lg transition-colors"
+        >
+          {saving ? 'Saving...' : 'Complete review'}
+        </button>
+        <button
+          onClick={handleSaveDraft}
+          disabled={saving}
+          className="inline-flex items-center text-[13px] font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 px-4 py-2.5 rounded-lg transition-colors"
+        >
+          Save draft
+        </button>
         {saved && <span className="text-[12px] text-green-600 font-medium">Saved</span>}
       </div>
     </div>

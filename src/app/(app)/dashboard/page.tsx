@@ -16,8 +16,6 @@ import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
 import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
-import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
-import { HeatBreakdown } from '@/components/dashboard/heat-breakdown'
 import { FailedScriptCard } from '@/components/dashboard/failed-script-card'
 // DashboardTabs removed — writer dashboard is now a flat two-column layout
 import Link from 'next/link'
@@ -50,6 +48,8 @@ export default async function DashboardPage() {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; is_public: boolean | null
     heat_score: number | null; poster_url: string | null
+    total_backing: number | null; backer_count: number | null
+    total_following: number | null; follower_count: number | null
   }
   let visible: MySubRow[] = []
   let submissionIds: string[] = []
@@ -95,7 +95,7 @@ export default async function DashboardPage() {
 
     const { data: mySubs } = await supabase
       .from('script_submissions')
-      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
+      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, total_backing, backer_count, total_following, follower_count, poster_url')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
     visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -132,7 +132,7 @@ export default async function DashboardPage() {
       if (anonIds.length > 0) {
         const { data: anonSubs } = await service
           .from('script_submissions')
-          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, poster_url')
+          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, total_backing, backer_count, total_following, follower_count, poster_url')
           .in('id', anonIds)
           .order('created_at', { ascending: false })
         visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -227,7 +227,7 @@ export default async function DashboardPage() {
   let totalCollaborators = 0
   let pendingCollaborators = 0
   const collabCountByScript = new Map<string, number>()
-  const collabHeatByScript = new Map<string, number>()
+  // collabHeatByScript removed — replaced by backing system
   const collabsByScript = new Map<string, CollabInfo[]>()
 
   if (user && submissionIds.length > 0) {
@@ -276,7 +276,7 @@ export default async function DashboardPage() {
       if (c.status === 'accepted') {
         totalCollaborators++
         collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
-        collabHeatByScript.set(c.submission_id, (collabHeatByScript.get(c.submission_id) || 0) + 1)
+        // collabHeatByScript removed — backing system
       } else {
         pendingCollaborators++
       }
@@ -288,7 +288,8 @@ export default async function DashboardPage() {
   type CollabScript = {
     id: string; title: string; format: string | null; genres: string[]
     score: number | null; evaluationId: string | null; createdAt: string
-    heat: number; posterUrl: string | null; collabRole: string
+    totalBacking: number; backerCount: number; totalFollowing: number; followerCount: number
+    posterUrl: string | null; collabRole: string
   }
   let collabScripts: CollabScript[] = []
 
@@ -305,7 +306,7 @@ export default async function DashboardPage() {
       // Fetch submission details for those scripts
       const { data: collabSubs } = await service
         .from('script_submissions')
-        .select('id, title, declared_format, status, created_at, heat_score, poster_url, is_public')
+        .select('id, title, declared_format, status, created_at, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, is_public')
         .in('id', collabSubIds)
         .eq('status', 'completed')
 
@@ -340,7 +341,10 @@ export default async function DashboardPage() {
           score: ev?.weighted_score ?? null,
           evaluationId: ev?.id ?? null,
           createdAt: s.created_at,
-          heat: s.heat_score ?? 0,
+          totalBacking: s.total_backing ?? 0,
+          backerCount: s.backer_count ?? 0,
+          totalFollowing: s.total_following ?? 0,
+          followerCount: s.follower_count ?? 0,
           posterUrl: s.poster_url ?? null,
           collabRole: roleBySubId.get(s.id) || 'Collaborator',
         }
@@ -350,7 +354,6 @@ export default async function DashboardPage() {
 
   // ── DISCOVER RANK CALCULATION ──
   const scoreRankMap = new Map<string, number>()
-  const heatRankMap = new Map<string, number>()
 
   if (submissionIds.length > 0) {
     const { data: allPublicScripts } = await service
@@ -378,8 +381,7 @@ export default async function DashboardPage() {
     const byScore = [...publicWithScores].sort((a, b) => b.score - a.score)
     byScore.forEach((s, i) => scoreRankMap.set(s.id, i + 1))
 
-    const byHeat = [...publicWithScores].sort((a, b) => b.heat - a.heat)
-    byHeat.forEach((s, i) => heatRankMap.set(s.id, i + 1))
+    // heatRankMap removed — replaced by backing system
   }
 
   // ── DERIVED DATA ──
@@ -427,18 +429,19 @@ export default async function DashboardPage() {
         score: ev?.weighted_score ?? null,
         evaluationId: ev?.id ?? null,
         createdAt: s.created_at,
-        heat: s.heat_score ?? 0,
+        totalBacking: s.total_backing ?? 0,
+        backerCount: s.backer_count ?? 0,
+        totalFollowing: s.total_following ?? 0,
+        followerCount: s.follower_count ?? 0,
         qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug, subtitle: o.subtitle })),
         isPublic: s.is_public ?? false,
         logline: ev?.logline ?? null,
         posterUrl: s.poster_url ?? null,
         collaboratorCount: collabCountByScript.get(s.id) ?? 0,
-        collabHeatCount: collabHeatByScript.get(s.id) ?? 0,
         collaborators: collabsByScript.get(s.id) ?? [],
         pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
         availableOppCount: qualifyingOpps.length,
         scoreRank: scoreRankMap.get(s.id) ?? null,
-        heatRank: heatRankMap.get(s.id) ?? null,
       }
     })
 
@@ -455,8 +458,8 @@ export default async function DashboardPage() {
   const reviewedApps = allApplications.filter(a => a.status === 'reviewed' || a.review_stage === 'complete')
   const pendingApps = allApplications.filter(a => a.status !== 'reviewed' && a.review_stage !== 'complete')
 
-  // Derive account heat from sum of all script heat — single source of truth
-  const totalHeat = visible.reduce((sum, s) => sum + (s.heat_score ?? 0), 0)
+  // Derive total backing from sum of all script backing
+  const totalBackingAll = visible.reduce((sum, s) => sum + (s.total_backing ?? 0), 0)
   const scriptCount = completedScripts.length + processingScripts.length
   const pendingCount = pendingApps.length
 
@@ -893,14 +896,14 @@ export default async function DashboardPage() {
               </div>
             </Link>
             <Link href="/applications" className="no-underline block">
-              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.15) 0%, rgba(251,146,60,0.06) 100%)', border: '1px solid rgba(251,146,60,0.25)', borderRadius: 12 }}>
+              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.06) 100%)', border: '1px solid rgba(34,197,94,0.25)', borderRadius: 12 }}>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[20px] leading-none shrink-0">🔥</span>
+                  <span className="text-[20px] leading-none shrink-0">💰</span>
                   <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
-                    {totalHeat > 0 ? totalHeat : '—'}
+                    {totalBackingAll > 0 ? (totalBackingAll >= 1000 ? `$${Math.round(totalBackingAll / 1000)}K` : `$${totalBackingAll}`) : '—'}
                   </span>
                 </div>
-                <span className="text-[12px] font-bold text-white mt-1 block">Heat</span>
+                <span className="text-[12px] font-bold text-white mt-1 block">Backed</span>
               </div>
             </Link>
             <div className="block">
@@ -970,7 +973,7 @@ export default async function DashboardPage() {
                   {/* Completed scripts + collab scripts — compact rows */}
                   {[
                     ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
-                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, collabHeatCount: 0, collaborators: [] as CollabInfo[], pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null, heatRank: null as number | null })),
+                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, collaborators: [] as CollabInfo[], pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null })),
                   ].map(script => {
                     const rounded = script.score ? Math.round(script.score) : null
                     const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
@@ -1013,9 +1016,20 @@ export default async function DashboardPage() {
                               <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
                             )}
                           </div>
-                          <div className="ml-4">
-                            <HeatBreakdown heat={script.heat} heatRank={script.heatRank} isPublic={script.isPublic} collabHeatCount={script.collabHeatCount} />
-                          </div>
+                          {(script.totalBacking > 0 || script.totalFollowing > 0) && (
+                            <div className="ml-4 flex items-center gap-2">
+                              {script.totalBacking > 0 && (
+                                <span className="text-[11px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>
+                                  {script.totalBacking >= 1000 ? `$${Math.round(script.totalBacking / 1000)}K` : `$${script.totalBacking}`} backed
+                                </span>
+                              )}
+                              {script.totalFollowing > 0 && (
+                                <span className="text-[11px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#fffbeb', color: '#92400e', border: '1px solid #fcd34d' }}>
+                                  {script.totalFollowing >= 1000 ? `$${Math.round(script.totalFollowing / 1000)}K` : `$${script.totalFollowing}`} following
+                                </span>
+                              )}
+                            </div>
+                          )}
                           <span className="flex-1" />
                           {script.evaluationId && (
                             <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
@@ -1023,19 +1037,6 @@ export default async function DashboardPage() {
                             </Link>
                           )}
                         </div>
-
-                        {/* Grow your heat — collapsible */}
-                        <GrowHeatSection
-                          scriptId={script.id}
-                          isPublic={script.isPublic}
-                          collaboratorCount={script.collaboratorCount}
-                          collaborators={script.collaborators || []}
-                          availableOppCount={script.availableOppCount}
-                          pendingAppCount={script.pendingAppCount}
-                          heat={script.heat}
-                          isCollab={!!script.collabRole}
-                          qualifyingOpps={script.qualifyingOpps || []}
-                        />
                       </div>
                     )
                   })}

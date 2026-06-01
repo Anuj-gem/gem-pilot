@@ -36,7 +36,7 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
   // Load the application
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned, application_responses, media_urls, reviewer_strengths, reviewer_concerns')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_id, writer_pitch, writer_response, sentiment, heat_earned, application_responses, media_urls, reviewer_strengths, reviewer_concerns, backing_status, backing_amount, backing_conditions, backing_note')
     .eq('id', id)
     .single()
 
@@ -111,7 +111,15 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
     partner_match: { label: 'Partner match', classes: 'bg-green-50 text-green-700' },
     complete: { label: 'Reviewed', classes: 'bg-gray-100 text-gray-500' },
   }
-  const currentStage = STAGE_DISPLAY[app.review_stage || 'pending'] || STAGE_DISPLAY.pending
+  // If review is complete, show backing status as the badge
+  const BACKING_DISPLAY: Record<string, { label: string; classes: string }> = {
+    pass: { label: 'Passed', classes: 'bg-gray-100 text-gray-500' },
+    following: { label: 'Following', classes: 'bg-amber-50 text-amber-700' },
+    attached: { label: 'Backed', classes: 'bg-green-50 text-green-700' },
+  }
+  const currentStage = (isReviewed && app.backing_status)
+    ? (BACKING_DISPLAY[app.backing_status] || STAGE_DISPLAY.complete)
+    : (STAGE_DISPLAY[app.review_stage || 'pending'] || STAGE_DISPLAY.pending)
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -273,8 +281,10 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
             allUsedFeedbackTags={usedFeedbackTags}
             allUsedNextStepsTags={usedNextStepsTags}
             currentReviewStage={app.review_stage || 'pending'}
-            currentSentiment={app.sentiment || null}
-            currentHeatEarned={app.heat_earned || 0}
+            currentBackingStatus={app.backing_status || null}
+            currentBackingAmount={app.backing_amount || 0}
+            currentBackingConditions={app.backing_conditions || []}
+            currentBackingNote={app.backing_note || ''}
           />
         </section>
     </div>

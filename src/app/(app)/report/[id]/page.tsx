@@ -156,6 +156,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         expires_at, declared_format, report_privacy, contact_enabled,
         allow_reviews, allow_industry,
         privacy_review_needed, tags, poster_url, media_urls, heat_score,
+        total_backing, backer_count, total_following, follower_count,
         profiles ( full_name, avatar_url, handle, headline )
       )
     `)
@@ -464,7 +465,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const riskDetails = report.risk_details ?? null
   const packaging = report.packaging ?? null
   const issues = report.issues
-  const heatScore: number = (submission as any).heat_score ?? 0
+  const totalBacking: number = (submission as any).total_backing ?? 0
+  const backerCount: number = (submission as any).backer_count ?? 0
+  const totalFollowing: number = (submission as any).total_following ?? 0
+  const followerCount: number = (submission as any).follower_count ?? 0
 
   let commercialScore: number | null = null
   try {
@@ -520,20 +524,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     .eq('status', 'accepted')
   const collaboratorCount = collaboratorRows?.length ?? 0
 
-  // Fetch heat + script count for each collaborator who has an account
+  // Fetch backing + script count for each collaborator who has an account
   const collabIds = (collaboratorRows ?? []).map((c: any) => c.collaborator_id).filter(Boolean)
-  let collabStats: Record<string, { scripts: number; heat: number }> = {}
+  let collabStats: Record<string, { scripts: number; totalBacking: number }> = {}
   if (collabIds.length > 0) {
     const { data: statsRows } = await serviceClient
       .from('script_submissions')
-      .select('user_id, heat_score')
+      .select('user_id, total_backing')
       .in('user_id', collabIds)
       .eq('status', 'completed')
     if (statsRows) {
       for (const row of statsRows) {
-        if (!collabStats[row.user_id]) collabStats[row.user_id] = { scripts: 0, heat: 0 }
+        if (!collabStats[row.user_id]) collabStats[row.user_id] = { scripts: 0, totalBacking: 0 }
         collabStats[row.user_id].scripts += 1
-        collabStats[row.user_id].heat += (row.heat_score ?? 0)
+        collabStats[row.user_id].totalBacking += (row.total_backing ?? 0)
       }
     }
   }
@@ -801,22 +805,33 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
 
-          {/* Heat */}
-          <div
-            className="flex items-center gap-2 rounded-lg px-3.5 py-2"
-            style={{
-              background: 'rgba(124,58,237,0.08)',
-              border: '1px solid rgba(124,58,237,0.15)',
-            }}
-          >
-            <span className="text-[18px] leading-none">🔥</span>
-            <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
-              Heat
-            </span>
-            <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
-              {heatScore}
-            </span>
-          </div>
+          {/* Backing badges */}
+          {totalBacking > 0 && (
+            <div
+              className="flex items-center gap-2 rounded-lg px-3.5 py-2"
+              style={{ background: '#ecfdf5', border: '1px solid #6ee7b7' }}
+            >
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#15803d' }}>
+                {totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`}
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#15803d' }}>
+                backed
+              </span>
+            </div>
+          )}
+          {totalFollowing > 0 && (
+            <div
+              className="flex items-center gap-2 rounded-lg px-3.5 py-2"
+              style={{ background: '#fffbeb', border: '1px solid #fcd34d' }}
+            >
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#92400e' }}>
+                {totalFollowing >= 1000 ? `$${Math.round(totalFollowing / 1000)}K` : `$${totalFollowing}`}
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#92400e' }}>
+                following
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Media carousel */}
@@ -971,7 +986,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 const role = c.role === 'other' ? c.role_other : c.role
                 const stats = c.collaborator_id ? collabStats[c.collaborator_id] : null
                 const hasScripts = stats && stats.scripts > 0
-                const hasHeat = stats && stats.heat > 0
+                const hasBacking = stats && stats.totalBacking > 0
                 return (
                   <div
                     key={i}
@@ -1012,16 +1027,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                           {headline}
                         </p>
                       )}
-                      {(hasScripts || hasHeat) && (
+                      {(hasScripts || hasBacking) && (
                         <div className="flex items-center gap-3 mt-1.5">
                           {hasScripts && (
                             <span className="text-[13px] font-medium" style={{ color: '#A8A29E' }}>
                               {stats!.scripts} {stats!.scripts === 1 ? 'script' : 'scripts'}
                             </span>
                           )}
-                          {hasHeat && (
-                            <span className="text-[13px] font-medium" style={{ color: '#A8A29E' }}>
-                              🔥 {stats!.heat} heat
+                          {hasBacking && (
+                            <span className="text-[13px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>
+                              {stats!.totalBacking >= 1000 ? `$${Math.round(stats!.totalBacking / 1000)}K` : `$${stats!.totalBacking}`} backed
                             </span>
                           )}
                         </div>

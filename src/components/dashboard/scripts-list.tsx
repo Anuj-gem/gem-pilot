@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { UpgradePill } from '@/components/dashboard/upgrade-pill'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
-import { HeatBreakdown } from '@/components/dashboard/heat-breakdown'
-import { GrowHeatSection } from '@/components/dashboard/grow-heat-section'
 import { useNewUploads } from '@/hooks/use-new-uploads'
 import { FailedScriptCard } from '@/components/dashboard/failed-script-card'
 
@@ -29,9 +27,11 @@ type ScriptRow = {
   score: number | null
   evaluationId: string | null
   createdAt: string
-  heat: number
+  totalBacking: number
+  backerCount: number
+  totalFollowing: number
+  followerCount: number
   collaboratorCount: number
-  collabHeatCount?: number
   collaborators?: CollabInfo[]
   posterUrl: string | null
   isPublic: boolean
@@ -39,7 +39,6 @@ type ScriptRow = {
   availableOppCount?: number
   pendingAppCount?: number
   scoreRank?: number | null
-  heatRank?: number | null
   matchingOpportunities?: { title: string; slug: string }[]
   isProcessing?: boolean
   isFailed?: boolean
@@ -295,7 +294,7 @@ export function ScriptsList({
                     )}
                   </div>
 
-                  {/* Row 2: GEM Score + rank | HeatBreakdown | View report → */}
+                  {/* Row 2: GEM Score + rank | Backing badges | View report → */}
                   <div className="flex items-center mt-2" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
                     <div className="flex items-center gap-1.5">
                       <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>GEM Score</span>
@@ -307,9 +306,20 @@ export function ScriptsList({
                         <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
                       )}
                     </div>
-                    <div className="ml-4">
-                      <HeatBreakdown heat={s.heat} heatRank={s.heatRank ?? null} isPublic={s.isPublic} collabHeatCount={s.collabHeatCount ?? 0} />
-                    </div>
+                    {(s.totalBacking > 0 || s.totalFollowing > 0) && (
+                      <div className="ml-4 flex items-center gap-2">
+                        {s.totalBacking > 0 && (
+                          <span className="text-[11px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>
+                            {s.totalBacking >= 1000 ? `$${Math.round(s.totalBacking / 1000)}K` : `$${s.totalBacking}`} backed
+                          </span>
+                        )}
+                        {s.totalFollowing > 0 && (
+                          <span className="text-[11px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#fffbeb', color: '#92400e', border: '1px solid #fcd34d' }}>
+                            {s.totalFollowing >= 1000 ? `$${Math.round(s.totalFollowing / 1000)}K` : `$${s.totalFollowing}`} following
+                          </span>
+                        )}
+                      </div>
+                    )}
                     <span className="flex-1" />
                     {s.evaluationId && (
                       <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
@@ -317,19 +327,6 @@ export function ScriptsList({
                       </Link>
                     )}
                   </div>
-
-                  {/* Row 3: Grow your heat — collapsible */}
-                  <GrowHeatSection
-                    scriptId={s.id}
-                    isPublic={s.isPublic}
-                    collaboratorCount={s.collaboratorCount}
-                    collaborators={s.collaborators || []}
-                    availableOppCount={s.availableOppCount ?? 0}
-                    pendingAppCount={s.pendingAppCount ?? 0}
-                    heat={s.heat}
-                    isCollab={false}
-                    qualifyingOpps={s.qualifyingOpps || []}
-                  />
                 </div>
               </div>
             )
