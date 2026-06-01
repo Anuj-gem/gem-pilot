@@ -97,153 +97,126 @@ export function RevenuePlanEditor({ initial, submissionId, onSave }: Props) {
     save(updated)
   }
 
-  const hasContent = sources.length > 0
-
   return (
     <div className="bg-white rounded-2xl p-5 px-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xs uppercase tracking-wider text-gray-400 font-medium">Revenue plan</h3>
-        <span className="text-xs text-gray-400 flex items-center gap-1">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          Visible to investors
-        </span>
+        <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium">Revenue plan</h3>
       </div>
 
-      {/* Empty state */}
-      {!hasContent && !addingSource && (
-        <div className="border-2 border-dashed border-gray-200 rounded-lg py-8 text-center">
-          <p className="text-sm text-gray-500 mb-1">Plan your revenue</p>
-          <p className="text-xs text-gray-400 mb-3">Add revenue sources and projections</p>
-          <button
-            onClick={() => setAddingSource(true)}
-            className="text-sm font-medium px-4 py-1.5 rounded-lg border border-[#534AB7] hover:bg-[#EEEDFE] transition-colors"
-            style={{ color: '#534AB7' }}
-          >
-            + Add revenue source
-          </button>
+      {/* Sources — always visible */}
+      <div>
+        <div className="grid gap-2 text-xs text-gray-600 uppercase tracking-wider mb-1" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
+          <span>Source</span>
+          <span className="text-right">Projection</span>
+          <span />
         </div>
-      )}
 
-      {/* Sources list */}
-      {(hasContent || addingSource) && (
-        <div>
-          {sources.length > 0 && (
-            <div className="grid gap-2 text-xs text-gray-400 uppercase tracking-wider mb-1" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
-              <span>Source</span>
-              <span className="text-right">Projection</span>
-              <span />
+        {sources.map((src, i) => (
+          <div key={i} className="py-2.5 border-t border-gray-100">
+            <div className="grid gap-2 items-center text-sm" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
+              <span className="text-gray-900">{src.label}</span>
+              <span className="text-right font-medium" style={{ color: '#085041' }}>{fmtFull(src.projection)}</span>
+              <button onClick={() => removeSource(i)} className="text-gray-300 hover:text-gray-500 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
             </div>
-          )}
-
-          {sources.map((src, i) => (
-            <div key={i} className="py-2.5 border-t border-gray-100">
-              <div className="grid gap-2 items-center text-sm" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
-                <span className="text-gray-900">{src.label}</span>
-                <span className="text-right font-medium" style={{ color: '#085041' }}>{fmtFull(src.projection)}</span>
-                <button onClick={() => removeSource(i)} className="text-gray-300 hover:text-gray-500 transition-colors">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-              </div>
-              {/* Note */}
-              {editingNote === i ? (
-                <div className="mt-2">
-                  <textarea
-                    value={editNoteValue}
-                    onChange={(e) => setEditNoteValue(e.target.value)}
-                    placeholder="Why is this projection realistic?"
-                    className="w-full text-xs border border-gray-200 rounded px-2 py-1.5 focus:outline-none focus:border-[#534AB7] resize-none"
-                    rows={2}
-                    autoFocus
-                  />
-                  <button
-                    onClick={() => saveNote(i)}
-                    className="mt-1 text-xs px-2 py-0.5 rounded border border-[#534AB7] hover:bg-[#EEEDFE]"
-                    style={{ color: '#534AB7' }}
-                  >
-                    Save
-                  </button>
-                </div>
-              ) : (
-                <div
-                  onClick={() => startEditNote(i)}
-                  className="mt-1 text-xs text-gray-500 leading-relaxed cursor-pointer group"
-                >
-                  {src.note || <span className="text-gray-400 italic">Add reasoning...</span>}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline ml-1 text-gray-300 group-hover:text-gray-500 align-middle"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                </div>
-              )}
-            </div>
-          ))}
-
-          {/* Add source form */}
-          {addingSource ? (
-            <div className="py-2.5 border-t border-gray-100 space-y-2">
-              <div className="grid gap-2 items-center" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
-                <input
-                  type="text"
-                  placeholder="Source name"
-                  value={newLabel}
-                  onChange={(e) => setNewLabel(e.target.value)}
-                  className="text-sm border border-gray-200 rounded px-2 py-1.5 focus:outline-none focus:border-[#534AB7]"
+            {/* Note */}
+            {editingNote === i ? (
+              <div className="mt-2">
+                <textarea
+                  value={editNoteValue}
+                  onChange={(e) => setEditNoteValue(e.target.value)}
+                  placeholder="Why is this projection realistic?"
+                  className="w-full text-xs border border-gray-200 rounded px-2 py-1.5 focus:outline-none focus:border-[#534AB7] resize-none"
+                  rows={2}
                   autoFocus
                 />
-                <input
-                  type="text"
-                  placeholder="$0"
-                  value={newProjection}
-                  onChange={(e) => setNewProjection(e.target.value)}
-                  className="text-sm border border-gray-200 rounded px-2 py-1.5 text-right focus:outline-none focus:border-[#534AB7]"
-                />
-                <button onClick={addSource} className="text-green-600 hover:text-green-700">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <button
+                  onClick={() => saveNote(i)}
+                  className="mt-1 text-xs px-2 py-0.5 rounded border border-[#534AB7] hover:bg-[#EEEDFE]"
+                  style={{ color: '#534AB7' }}
+                >
+                  Save
                 </button>
               </div>
-              <textarea
-                placeholder="Why is this realistic? (optional)"
-                value={newNote}
-                onChange={(e) => setNewNote(e.target.value)}
-                className="w-full text-xs border border-gray-200 rounded px-2 py-1.5 focus:outline-none focus:border-[#534AB7] resize-none"
-                rows={2}
-                onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); addSource() } }}
-              />
-            </div>
-          ) : (
-            <div className="py-2.5 border-t border-gray-100">
-              <button
-                onClick={() => setAddingSource(true)}
-                className="text-sm flex items-center gap-1 hover:opacity-70 transition-opacity"
-                style={{ color: '#534AB7' }}
+            ) : (
+              <div
+                onClick={() => startEditNote(i)}
+                className="mt-1 text-xs text-gray-600 leading-relaxed cursor-pointer group"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Add source
-              </button>
-              {/* Preset pills */}
-              <div className="flex flex-wrap gap-1.5 mt-2">
-                {PRESET_SOURCES.filter((p) => !usedLabels.has(p)).map((p) => (
-                  <button
-                    key={p}
-                    onClick={() => addPreset(p)}
-                    className="text-xs text-gray-500 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-full transition-colors"
-                  >
-                    {p}
-                  </button>
-                ))}
+                {src.note || <span className="text-gray-600 italic">Add reasoning...</span>}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline ml-1 text-gray-300 group-hover:text-gray-500 align-middle"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+        ))}
 
-          {/* Total */}
-          {sources.length > 0 && (
-            <div className="grid gap-2 pt-3 border-t border-gray-100 items-center" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
-              <span className="text-sm font-medium text-gray-900">Total projected revenue</span>
-              <span className="text-right text-sm font-medium" style={{ color: '#085041' }}>{fmtFull(total)}</span>
-              <span />
+        {/* Add source form */}
+        {addingSource ? (
+          <div className="py-2.5 border-t border-gray-100 space-y-2">
+            <div className="grid gap-2 items-center" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
+              <input
+                type="text"
+                placeholder="Source name"
+                value={newLabel}
+                onChange={(e) => setNewLabel(e.target.value)}
+                className="text-sm border border-gray-200 rounded px-2 py-1.5 focus:outline-none focus:border-[#534AB7]"
+                autoFocus
+              />
+              <input
+                type="text"
+                placeholder="$0"
+                value={newProjection}
+                onChange={(e) => setNewProjection(e.target.value)}
+                className="text-sm border border-gray-200 rounded px-2 py-1.5 text-right focus:outline-none focus:border-[#534AB7]"
+              />
+              <button onClick={addSource} className="text-green-600 hover:text-green-700">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
             </div>
-          )}
+            <textarea
+              placeholder="Why is this realistic? (optional)"
+              value={newNote}
+              onChange={(e) => setNewNote(e.target.value)}
+              className="w-full text-xs border border-gray-200 rounded px-2 py-1.5 focus:outline-none focus:border-[#534AB7] resize-none"
+              rows={2}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); addSource() } }}
+            />
+          </div>
+        ) : (
+          <div className="py-2.5 border-t border-gray-100">
+            <button
+              onClick={() => setAddingSource(true)}
+              className="text-sm flex items-center gap-1 hover:opacity-70 transition-opacity"
+              style={{ color: '#534AB7' }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add source
+            </button>
+            {/* Preset pills */}
+            <div className="flex flex-wrap gap-1.5 mt-2">
+              {PRESET_SOURCES.filter((p) => !usedLabels.has(p)).map((p) => (
+                <button
+                  key={p}
+                  onClick={() => addPreset(p)}
+                  className="text-xs text-gray-600 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-full transition-colors"
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Total — always visible */}
+        <div className="grid gap-2 pt-3 border-t border-gray-100 items-center" style={{ gridTemplateColumns: '1fr 110px 28px' }}>
+          <span className="text-sm font-medium text-gray-900">Total projected revenue</span>
+          <span className="text-right text-sm font-medium" style={{ color: '#085041' }}>{fmtFull(total)}</span>
+          <span />
         </div>
-      )}
+      </div>
 
-      {saving && <p className="text-xs text-gray-400 mt-2">Saving...</p>}
+      {saving && <p className="text-xs text-gray-600 mt-2">Saving...</p>}
     </div>
   )
 }
