@@ -10,6 +10,12 @@ import { OpportunitySettings } from './opportunity-settings'
 
 const LIKED_TAGS = ['Interesting idea', 'Strong voice', 'Producible']
 const PASS_REASONS = ['Unoriginal idea', 'Hard to produce', 'Hard to develop', 'Budget concerns', 'Hard to market', 'Bad story']
+const GAP_CLOSING_TAGS = [
+  'Needs director attached', 'Needs talent attached', 'Needs production plan',
+  'Needs budget breakdown', 'Needs showrunner', 'Needs network/platform interest',
+  'Needs revised pilot', 'Needs series bible', 'Needs proof of concept',
+  'Want to see more work from this writer',
+]
 
 type SortMode = 'score' | 'heat' | 'new'
 
@@ -40,22 +46,26 @@ export function PartnerTriageClient({
   const [activeOppId, setActiveOppId] = useState(opportunities[0]?.id || '')
   const [selectedAppId, setSelectedAppId] = useState<string | null>(null)
   const [sortMode, setSortMode] = useState<SortMode>('score')
-  const [triageState, setTriageState] = useState<Record<string, { status: string; tags?: string[] }>>(() => {
-    const initial: Record<string, { status: string; tags?: string[] }> = {}
+  const [triageState, setTriageState] = useState<Record<string, { status: string; tags?: string[]; gapTags?: string[] }>>(() => {
+    const initial: Record<string, { status: string; tags?: string[]; gapTags?: string[] }> = {}
     for (const app of applications) {
-      if (app.triage_status === 'pass' || app.triage_status === 'meet') {
+      if (app.triage_status === 'pass' || app.triage_status === 'meet' || app.triage_status === 'follow') {
         initial[app.id] = { status: app.triage_status, tags: app.triage_feedback_tags || undefined }
       }
     }
     return initial
   })
   const [showPassFeedback, setShowPassFeedback] = useState<string | null>(null)
+  const [showFollowFeedback, setShowFollowFeedback] = useState<string | null>(null)
   const [likedTags, setLikedTags] = useState<string[]>([])
   const [reasonTags, setReasonTags] = useState<string[]>([])
+  const [gapTags, setGapTags] = useState<string[]>([])
   const [customLiked, setCustomLiked] = useState('')
   const [customReason, setCustomReason] = useState('')
+  const [customGap, setCustomGap] = useState('')
   const [addingCustomLiked, setAddingCustomLiked] = useState(false)
   const [addingCustomReason, setAddingCustomReason] = useState(false)
+  const [addingCustomGap, setAddingCustomGap] = useState(false)
   const [heatOverride, setHeatOverride] = useState(0)
   const [triaging, setTriaging] = useState(false)
   const [showOppDropdown, setShowOppDropdown] = useState(false)
@@ -65,6 +75,7 @@ export function PartnerTriageClient({
   const [listTab, setListTab] = useState<'pending' | 'reviewed'>('pending')
   const customLikedRef = useRef<HTMLInputElement>(null)
   const customReasonRef = useRef<HTMLInputElement>(null)
+  const customGapRef = useRef<HTMLInputElement>(null)
 
   // Filter apps for active opportunity
   const oppApps = useMemo(() => {
@@ -74,8 +85,8 @@ export function PartnerTriageClient({
   // "Reviewed" = triaged as pass/meet (locally or from DB) or review_stage complete
   const isReviewed = (app: PartnerApp) => {
     const localTriage = triageState[app.id]
-    if (localTriage && (localTriage.status === 'pass' || localTriage.status === 'meet')) return true
-    if (app.triage_status === 'pass' || app.triage_status === 'meet') return true
+    if (localTriage && (localTriage.status === 'pass' || localTriage.status === 'meet' || localTriage.status === 'follow')) return true
+    if (app.triage_status === 'pass' || app.triage_status === 'meet' || app.triage_status === 'follow') return true
     return app.review_stage === 'complete'
   }
 
@@ -125,7 +136,7 @@ export function PartnerTriageClient({
 
   const activeOpp = opportunities.find(o => o.id === activeOppId)
 
-  async function handleTriage(action: 'pass' | 'meet', tags?: string[], heat?: number) {
+  async function handleTriage(action: 'pass' | 'meet' | 'follow', tags?: string[], heat?: number, backingConditions?: string[]) {
     if (!selectedApp || triaging) return
     setTriaging(true)
 
@@ -138,15 +149,17 @@ export function PartnerTriageClient({
           action,
           feedback_tags: tags?.length ? tags : undefined,
           ...(heat !== undefined ? { heat_override: heat } : {}),
+          ...(backingConditions?.length ? { backing_conditions: backingConditions } : {}),
         }),
       })
 
       if (res.ok) {
         setTriageState(prev => ({
           ...prev,
-          [selectedApp.id]: { status: action, tags },
+          [selectedApp.id]: { status: action, tags, gapTags: backingConditions },
         }))
         setShowPassFeedback(null)
+        setShowFollowFeedback(null)
         resetFeedback()
 
         // Auto-advance to next pending app
@@ -161,11 +174,14 @@ export function PartnerTriageClient({
   function resetFeedback() {
     setLikedTags([])
     setReasonTags([])
+    setGapTags([])
     setHeatOverride(0)
     setCustomLiked('')
     setCustomReason('')
+    setCustomGap('')
     setAddingCustomLiked(false)
     setAddingCustomReason(false)
+    setAddingCustomGap(false)
   }
 
   function toggleLikedTag(tag: string) {
@@ -212,6 +228,29 @@ export function PartnerTriageClient({
     }
     setCustomReason('')
     setAddingCustomReason(false)
+  }
+
+  function handleFollowClick() {
+    if (!selectedApp) return
+    setShowFollowFeedback(selectedApp.id)
+    setShowPassFeedback(null)
+  }
+
+  function confirmFollow() {
+    if (gapTags.length === 0) return
+    const allTags = [
+      ...likedTags.map(t => `+${t}`),
+    ]
+    handleTriage('follow', allTags.length > 0 ? allTags : undefined, heatOverride, gapTags)
+  }
+
+  function addCustomGapTag() {
+    const val = customGap.trim()
+    if (val && !gapTags.includes(val)) {
+      setGapTags(prev => [...prev, val])
+    }
+    setCustomGap('')
+    setAddingCustomGap(false)
   }
 
   const fmtDate = (d: string) => {
@@ -642,7 +681,7 @@ export function PartnerTriageClient({
               <div className="px-6 py-5" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
                 {!triageState[selectedApp.id] && (
                   <>
-                    {showPassFeedback !== selectedApp.id ? (
+                    {showPassFeedback !== selectedApp.id && showFollowFeedback !== selectedApp.id ? (
                       <div className="flex gap-3">
                         <button
                           onClick={handlePassClick}
@@ -653,14 +692,15 @@ export function PartnerTriageClient({
                           Pass
                         </button>
                         <button
-                          disabled
-                          className="flex-1 py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-not-allowed transition-all flex items-center justify-center gap-2 opacity-40"
+                          onClick={handleFollowClick}
+                          disabled={triaging}
+                          className="flex-1 py-3 rounded-xl border-0 text-[14px] font-semibold text-white cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-50 hover:brightness-110"
                           style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
                         >
-                          Meet
+                          Follow
                         </button>
                       </div>
-                    ) : (
+                    ) : showPassFeedback === selectedApp.id ? (
                       /* Pass feedback — sleek inline pills */
                       <div className="space-y-4">
                         {/* Liked section */}
@@ -819,20 +859,125 @@ export function PartnerTriageClient({
                           </button>
                         </div>
                       </div>
-                    )}
+                    ) : showFollowFeedback === selectedApp.id ? (
+                      /* Follow feedback — gap-closing tags */
+                      <div className="space-y-4">
+                        {/* What would close the gap? */}
+                        <div>
+                          <span className="text-[12px] text-white/40 mb-2 block">What would close the gap?</span>
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            {GAP_CLOSING_TAGS.map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => setGapTags(prev =>
+                                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+                                )}
+                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
+                                  gapTags.includes(tag)
+                                    ? 'text-purple-300'
+                                    : 'text-white/40 hover:text-white/60'
+                                }`}
+                                style={{
+                                  background: gapTags.includes(tag) ? 'rgba(124,58,237,0.15)' : 'rgba(255,255,255,0.06)',
+                                }}
+                              >
+                                {tag}
+                              </button>
+                            ))}
+                            {/* Custom gap tags that have been added */}
+                            {gapTags.filter(t => !GAP_CLOSING_TAGS.includes(t)).map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => setGapTags(prev => prev.filter(t => t !== tag))}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-purple-300"
+                                style={{ background: 'rgba(124,58,237,0.15)' }}
+                              >
+                                {tag} ×
+                              </button>
+                            ))}
+                            {/* Add custom */}
+                            {addingCustomGap ? (
+                              <input
+                                ref={customGapRef}
+                                autoFocus
+                                type="text"
+                                value={customGap}
+                                onChange={e => setCustomGap(e.target.value)}
+                                onKeyDown={e => { if (e.key === 'Enter') addCustomGapTag(); if (e.key === 'Escape') { setAddingCustomGap(false); setCustomGap('') } }}
+                                onBlur={addCustomGapTag}
+                                placeholder="Type and press Enter"
+                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
+                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
+                              />
+                            ) : (
+                              <button
+                                onClick={() => { setAddingCustomGap(true); setTimeout(() => customGapRef.current?.focus(), 50) }}
+                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
+                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
+                              >
+                                + Other
+                              </button>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Liked section (optional, same as pass) */}
+                        <div>
+                          <span className="text-[12px] text-white/40 mb-2 block">Anything you liked?</span>
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            {LIKED_TAGS.map(tag => (
+                              <button
+                                key={tag}
+                                onClick={() => toggleLikedTag(tag)}
+                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
+                                  likedTags.includes(tag)
+                                    ? 'text-green-300'
+                                    : 'text-white/40 hover:text-white/60'
+                                }`}
+                                style={{
+                                  background: likedTags.includes(tag) ? 'rgba(74,222,128,0.12)' : 'rgba(255,255,255,0.06)',
+                                }}
+                              >
+                                {tag}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Confirm / Cancel */}
+                        <div className="flex items-center gap-3 pt-1">
+                          <button
+                            onClick={confirmFollow}
+                            disabled={triaging || gapTags.length === 0}
+                            className="text-[13px] font-semibold px-5 py-2 rounded-lg text-white cursor-pointer border-0 disabled:opacity-20 disabled:cursor-not-allowed transition-all hover:brightness-110"
+                            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+                          >
+                            Confirm follow
+                          </button>
+                          <button
+                            onClick={() => { setShowFollowFeedback(null); resetFeedback() }}
+                            className="text-[13px] text-white/30 hover:text-white/50 cursor-pointer bg-transparent border-0 transition-colors"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : null}
                   </>
                 )}
 
                 {(() => {
                   const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : null)
-                  if (!st || (st !== 'pass' && st !== 'meet')) return null
+                  if (!st || (st !== 'pass' && st !== 'meet' && st !== 'follow')) return null
                   const tags = triageState[selectedApp.id]?.tags || selectedApp.triage_feedback_tags || []
+                  const gaps = triageState[selectedApp.id]?.gapTags || (selectedApp as any).backing_conditions || []
                   return (
                     <div className="py-3 space-y-2">
                       <div className="flex items-center gap-3">
                         <span className="text-[13px] text-white/30">
                           {st === 'pass' && 'Passed'}
                           {st === 'meet' && 'Meeting requested'}
+                          {st === 'follow' && 'Following'}
                         </span>
                         {triageState[selectedApp.id] && (
                           <button
@@ -856,6 +1001,18 @@ export function PartnerTriageClient({
                               {tag.replace(/^[+-]/, '')}
                             </span>
                           ))}
+                        </div>
+                      )}
+                      {gaps.length > 0 && (
+                        <div>
+                          <span className="text-[11px] text-white/40">Gap-closing:</span>
+                          <div className="flex flex-wrap gap-1.5 mt-1">
+                            {gaps.map((tag: string) => (
+                              <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>

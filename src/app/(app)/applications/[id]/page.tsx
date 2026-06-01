@@ -42,7 +42,7 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
   // Load consideration
   const { data: app } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned, application_responses, media_urls')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, writer_response, heat_earned, application_responses, media_urls, backing_status, backing_conditions, backing_note')
     .eq('id', id)
     .eq('writer_id', user.id)
     .single()
@@ -129,14 +129,26 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
   const hasMedia = mediaItems.length > 0
 
-  // Status badge
+  // Status badge — use backing_status to determine the actual decision
+  const backingStatus = (app as any).backing_status as string | null
+  const backingConditions = ((app as any).backing_conditions || []) as string[]
+  const backingNote = ((app as any).backing_note || '') as string
+
   const STAGE_DISPLAY: Record<string, { label: string; bg: string; color: string }> = {
     in_consideration: { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' },
     shortlisted: { label: 'Shortlisted', bg: '#dbeafe', color: '#1e40af' },
     partner_match: { label: 'Partner match', bg: '#d1fae5', color: '#065f46' },
-    complete: { label: 'Pass', bg: '#fef3c7', color: '#92400e' },
+    complete_pass: { label: 'Pass', bg: '#fef3c7', color: '#92400e' },
+    complete_following: { label: 'Following', bg: '#ede9fe', color: '#5b21b6' },
+    complete_attached: { label: 'Backed', bg: '#d1fae5', color: '#065f46' },
   }
-  const displayStage = isReviewed && !isUpgraded ? 'complete' : (app.review_stage || 'in_consideration')
+
+  let displayStage = app.review_stage || 'in_consideration'
+  if (isReviewed && !isUpgraded) {
+    if (backingStatus === 'following') displayStage = 'complete_following'
+    else if (backingStatus === 'attached') displayStage = 'complete_attached'
+    else displayStage = 'complete_pass'
+  }
   const badge = STAGE_DISPLAY[displayStage] || STAGE_DISPLAY.in_consideration
 
   return (
@@ -377,10 +389,23 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
 
                 {app.next_steps_tags && app.next_steps_tags.length > 0 && (
                   <div className="mb-3">
-                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1.5">Why passing</p>
+                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1.5">{backingStatus === 'following' ? 'Areas to improve' : 'Why passing'}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {app.next_steps_tags.map((tag: string) => (
                         <span key={tag} className="text-[12px] font-semibold px-2.5 py-1 rounded-full" style={{ background: '#f3f4f6', color: '#6b7280', border: '1px solid #d1d5db' }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {backingConditions.length > 0 && (
+                  <div className="mb-3">
+                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1.5">What they want to see</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {backingConditions.map((tag: string) => (
+                        <span key={tag} className="text-[12px] font-semibold px-2.5 py-1 rounded-full" style={{ background: '#ede9fe', color: '#7c3aed', border: '1px solid #c4b5fd' }}>
                           {tag}
                         </span>
                       ))}
@@ -392,6 +417,13 @@ export default async function ApplicationDetailPage({ params }: { params: { id: 
                   <div className="mb-3">
                     <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1">Note</p>
                     <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{app.feedback}</p>
+                  </div>
+                )}
+
+                {backingNote && (
+                  <div className="mb-3">
+                    <p className="text-[11px] font-semibold text-gray-400 m-0 mb-1">Additional note</p>
+                    <p className="text-[13px] text-gray-700 m-0 leading-relaxed">{backingNote}</p>
                   </div>
                 )}
 

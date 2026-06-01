@@ -1,5 +1,5 @@
-// POST /api/partner/triage — producer triages an application (pass/watchlist/meet).
-// Does NOT change existing review_stage or status. Purely additive.
+// POST /api/partner/triage — producer triages an application (pass/watchlist/meet/follow).
+// Pass and follow complete the review. Meet shortlists. Watchlist is passive.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
@@ -20,18 +20,19 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, action, feedback_tags, heat_override } = body as {
+  const { consideration_id, action, feedback_tags, heat_override, backing_conditions } = body as {
     consideration_id: string
-    action: 'pass' | 'watchlist' | 'meet'
+    action: 'pass' | 'watchlist' | 'meet' | 'follow'
     feedback_tags?: string[]
     heat_override?: number
+    backing_conditions?: string[]
   }
 
   if (!consideration_id || !action) {
     return NextResponse.json({ error: 'Missing consideration_id or action' }, { status: 400 })
   }
 
-  if (!['pass', 'watchlist', 'meet'].includes(action)) {
+  if (!['pass', 'watchlist', 'meet', 'follow'].includes(action)) {
     return NextResponse.json({ error: 'Invalid action' }, { status: 400 })
   }
 
@@ -90,13 +91,36 @@ export async function POST(req: NextRequest) {
     updateData.review_stage = 'shortlisted'
   }
 
+  if (action === 'follow') {
+    // Follow = interested but not ready. Completes the review with backing_status='following'.
+    updateData.review_stage = 'complete'
+    updateData.status = 'reviewed'
+    updateData.reviewed_at = new Date().toISOString()
+    updateData.backing_status = 'following'
+    updateData.backing_conditions = backing_conditions || []
+
+    // Split tags same as pass
+    if (feedback_tags?.length) {
+      updateData.triage_feedback_tags = feedback_tags
+      const positive = feedback_tags.filter(t => t.startsWith('+')).map(t => t.slice(1))
+      const negative = feedback_tags.filter(t => t.startsWith('-')).map(t => t.slice(1))
+      if (positive.length > 0) updateData.feedback_tags = positive
+      if (negative.length > 0) updateData.next_steps_tags = negative
+
+      const heatValue = heat_override !== undefined ? heat_override : positive.length
+      if (heatValue > 0) {
+        updateData.heat_earned = heatValue
+      }
+    }
+  }
+
   await service
     .from('considerations')
     .update(updateData)
     .eq('id', consideration_id)
 
-  // --- Pass: propagate heat to profile + scripts, send email ---
-  if (action === 'pass') {
+  // --- Pass/Follow: propagate heat to profile + scripts, send email ---
+  if (action === 'pass' || action === 'follow') {
     const heatEarned = (updateData.heat_earned as number) || 0
 
     // Propagate heat to writer profile + scripts
@@ -213,7 +237,48 @@ export async function POST(req: NextRequest) {
         }, service)
       }
     } catch (emailErr) {
-      console.error('[partner/triage] Pass email failed:', emailErr)
+      console.error('[partner/triage] Pass/follow email failed:', emailErr)
+    }
+  }
+
+  // --- Follow: aggregate backing totals to script_submissions ---
+  if (action === 'follow') {
+    const { data: csRows } = await service
+      .from('consideration_scripts')
+      .select('script_submission_id')
+      .eq('consideration_id', consideration_id)
+
+    if (csRows && csRows.length > 0) {
+      for (const cs of csRows) {
+        const { data: allLinks } = await service
+          .from('consideration_scripts')
+          .select('consideration_id')
+          .eq('script_submission_id', cs.script_submission_id)
+
+        if (allLinks) {
+          const conIds = allLinks.map(l => l.consideration_id)
+          const { data: allCons } = await service
+            .from('considerations')
+            .select('backing_status, backing_amount')
+            .in('id', conIds)
+            .eq('review_stage', 'complete')
+            .not('backing_status', 'is', null)
+
+          if (allCons) {
+            const attached = allCons.filter(c => c.backing_status === 'attached')
+            const following = allCons.filter(c => c.backing_status === 'following')
+            await service
+              .from('script_submissions')
+              .update({
+                total_backing: attached.reduce((s, c) => s + (Number(c.backing_amount) || 0), 0),
+                backer_count: attached.length,
+                total_following: following.reduce((s, c) => s + (Number(c.backing_amount) || 0), 0),
+                follower_count: following.length,
+              })
+              .eq('id', cs.script_submission_id)
+          }
+        }
+      }
     }
   }
 

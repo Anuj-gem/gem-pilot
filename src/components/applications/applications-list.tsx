@@ -15,6 +15,8 @@ interface AppData {
   opportunity_id: string
   writer_pitch: string | null
   heat_earned: number
+  backing_status: string | null
+  backing_conditions: string[] | null
 }
 
 interface OppInfo {
@@ -50,10 +52,17 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat, matchi
         const isReviewed = app.status === 'reviewed' || app.review_stage === 'complete'
         const isExpanded = expandedId === app.id
 
-        // Status badge — just "In consideration" or "Pass"
-        const s = isReviewed
-          ? { label: 'Pass', bg: '#fef3c7', color: '#92400e' }
-          : { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' }
+        // Status badge — backing_status-aware
+        let s = { label: 'In consideration', bg: '#ede9fe', color: '#5b21b6' }
+        if (isReviewed) {
+          if (app.backing_status === 'following') {
+            s = { label: 'Following', bg: '#ede9fe', color: '#5b21b6' }
+          } else if (app.backing_status === 'attached') {
+            s = { label: 'Backed', bg: '#d1fae5', color: '#065f46' }
+          } else {
+            s = { label: 'Pass', bg: '#fef3c7', color: '#92400e' }
+          }
+        }
 
         const matchCount = matchingScriptCounts?.[app.opportunity_id] ?? 0
         const canReapply = opp?.isActive
@@ -143,10 +152,28 @@ export function ApplicationsList({ apps, oppMap, scriptsByApp, totalHeat, matchi
                       </div>
                     )}
 
+                    {/* Gap-closing tags (following) */}
+                    {app.backing_status === 'following' && app.backing_conditions && app.backing_conditions.length > 0 && (
+                      <div>
+                        <p className="text-[12px] font-semibold text-gray-500 m-0 mb-1.5">What they want to see</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {app.backing_conditions.map(tag => (
+                            <span
+                              key={tag}
+                              className="text-[12px] font-semibold px-2.5 py-1 rounded-full"
+                              style={{ background: '#ede9fe', color: '#7c3aed', border: '1px solid #c4b5fd' }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Pass reason tags */}
                     {app.next_steps_tags && app.next_steps_tags.length > 0 && (
                       <div>
-                        <p className="text-[12px] font-semibold text-gray-500 m-0 mb-1.5">Why passing</p>
+                        <p className="text-[12px] font-semibold text-gray-500 m-0 mb-1.5">{app.backing_status === 'following' ? 'Areas to improve' : 'Why passing'}</p>
                         <div className="flex flex-wrap gap-1.5">
                           {app.next_steps_tags.map(tag => (
                             <span

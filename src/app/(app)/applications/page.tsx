@@ -50,7 +50,7 @@ export default async function ApplicationsPage() {
   // Load all opportunity applications (considerations with opportunity_id)
   const { data: rawApps } = await service
     .from('considerations')
-    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, heat_earned')
+    .select('id, status, review_stage, submitted_at, reviewed_at, feedback, feedback_tags, next_steps_tags, opportunity_id, writer_pitch, heat_earned, backing_status, backing_conditions')
     .eq('writer_id', user.id)
     .not('opportunity_id', 'is', null)
     .order('submitted_at', { ascending: false })
@@ -60,7 +60,8 @@ export default async function ApplicationsPage() {
     reviewed_at: string | null; feedback: string | null
     feedback_tags: string[] | null; next_steps_tags: string[] | null
     opportunity_id: string; writer_pitch: string | null
-    heat_earned: number
+    heat_earned: number; backing_status: string | null
+    backing_conditions: string[] | null
   }[]
 
   // Load opportunity titles + active status
