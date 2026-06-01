@@ -61,6 +61,8 @@ import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
 import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
 import HeroMediaCarousel from '@/components/report/hero-media-carousel'
 import { CollaboratorsSection } from '@/components/report/collaborators-section'
+import { CrewSection } from '@/components/report/crew-section'
+import { FollowersSection } from '@/components/report/followers-section'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
@@ -267,12 +269,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   let ownerIsSubscribed = false
   let ownerIsProducer = false
+  let ownerProfile: { subscription_status: string | null; account_type: string | null; full_name: string | null; avatar_url: string | null; headline: string | null } | null = null
   if (submission.user_id) {
-    const { data: ownerProfile } = await serviceClient
+    const { data: op } = await serviceClient
       .from('profiles')
-      .select('subscription_status, account_type')
+      .select('subscription_status, account_type, full_name, avatar_url, headline')
       .eq('id', submission.user_id)
       .single()
+    ownerProfile = op
     ownerIsSubscribed = ownerProfile?.subscription_status === 'active' || ownerProfile?.subscription_status === 'trialing'
     ownerIsProducer = ownerProfile?.account_type === 'producer'
   }
@@ -1068,6 +1072,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             currentUserId={user?.id ?? null}
           />
         </div>
+
+        {/* Crew Roles */}
+        <CrewSection
+          submissionId={submission.id}
+          isOwner={isOwner || isAdmin}
+          currentUserId={user?.id ?? null}
+          ownerProfile={ownerProfile ? {
+            full_name: ownerProfile.full_name ?? null,
+            avatar_url: ownerProfile.avatar_url ?? null,
+            headline: ownerProfile.headline ?? null,
+          } : null}
+        />
+
+        {/* Followers / Backers */}
+        <FollowersSection
+          submissionId={submission.id}
+          totalFollowing={totalFollowing}
+          followerCount={followerCount}
+          totalBacking={totalBacking}
+          backerCount={backerCount}
+        />
 
         </div>{/* ═══ END PITCH CONTAINER ═══ */}
 
