@@ -698,7 +698,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           '--gem-gold': '#92400E',
         } as React.CSSProperties}
       >
-        <div className="space-y-8">
+        <div className="space-y-12">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -795,9 +795,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* ═══ TOOLBAR — owner actions ═══ */}
+        {/* ═══ TOOLBAR — owner actions, tight spacing ═══ */}
         {(isOwner || isAdmin) && (
-          <div className="gem-no-print flex items-center justify-end gap-2 py-2">
+          <div className="gem-no-print flex items-center justify-end gap-2 py-1">
             <ShareButtons
               title={submission.title ?? 'Check out my project on GEM'}
               url={`https://gem-pilot.vercel.app/report/${id}`}
@@ -813,20 +813,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         {/* ═══ LOGLINE + ELEVATOR PITCH + PLOT SUMMARY ═══ */}
-        <div className="space-y-5">
-          {/* Logline */}
+        <div className="space-y-6">
+          {/* Logline — no label, big and bold */}
           {topCard.logline && (
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Logline
-              </p>
-              <p className="text-[18px] sm:text-[19px] leading-[1.55] font-normal m-0" style={{ color: 'rgba(255,255,255,0.92)' }}>
-                {topCard.logline}
-              </p>
-            </div>
+            <p className="text-[22px] sm:text-[24px] leading-[1.4] font-semibold m-0" style={{ color: 'rgba(255,255,255,0.95)' }}>
+              {topCard.logline}
+            </p>
           )}
 
-          {/* Elevator pitch */}
+          {/* Elevator pitch — no label, reads like streaming-service description */}
           <SectionGate
             section="whats_working"
             privacy={privacy}
@@ -836,17 +831,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isProSubscriber={true}
           >
             {whatsSpecial.headline && (
-              <div
-                className="rounded-xl px-5 py-4"
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                  Elevator pitch
-                </p>
-                <p className="text-[14px] leading-[1.65] m-0" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                  {whatsSpecial.headline}
-                </p>
-              </div>
+              <p className="text-[17px] sm:text-[18px] leading-[1.6] font-normal m-0" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                {whatsSpecial.headline}
+              </p>
             )}
           </SectionGate>
 
@@ -1080,8 +1067,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
         />
 
-        {/* ═══ GEM ANALYSIS — collapsible card ═══ */}
-        <GemAnalysisCard>
+        {/* ═══ GEM ANALYSIS — collapsible card with inline score ═══ */}
+        <GemAnalysisCard
+          score={typeof commercialScore === 'number' ? Math.round(commercialScore) : null}
+          tier={designation ? DESIGNATION_STYLE[designation].label : null}
+        >
 
         {/* ═══ GEM ANALYSIS CONTENT ═══ */}
         <div className="relative space-y-8">

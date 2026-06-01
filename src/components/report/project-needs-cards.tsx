@@ -16,37 +16,37 @@ function NeedsCard({ title, icon, summary, children, defaultOpen = false }: Need
 
   return (
     <div
-      className="rounded-xl overflow-hidden transition-all"
+      className="rounded-xl overflow-hidden transition-all flex flex-col"
       style={{
-        background: 'white',
-        border: '1px solid rgba(0,0,0,0.06)',
+        background: 'rgba(255,255,255,0.04)',
+        border: '1px solid rgba(255,255,255,0.12)',
       }}
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-3 px-5 py-4 cursor-pointer border-0 bg-transparent text-left"
+        className="w-full flex flex-col items-center gap-2 px-5 py-5 cursor-pointer border-0 bg-transparent text-center"
       >
         <div
           className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-          style={{ background: 'rgba(124,58,237,0.08)' }}
+          style={{ background: 'rgba(124,58,237,0.15)' }}
         >
           {icon}
         </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="text-[15px] font-bold m-0" style={{ color: '#1C1917' }}>
+        <div className="min-w-0">
+          <h3 className="text-[15px] font-bold m-0" style={{ color: 'rgba(255,255,255,0.95)' }}>
             {title}
           </h3>
           {summary && (
-            <p className="text-[13px] m-0 mt-0.5" style={{ color: '#78716C' }}>
+            <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#a78bfa' }}>
               {summary}
             </p>
           )}
         </div>
         <ChevronDown
-          size={18}
+          size={16}
           className="shrink-0 transition-transform duration-200"
           style={{
-            color: '#A8A29E',
+            color: 'rgba(255,255,255,0.4)',
             transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
           }}
         />
@@ -55,7 +55,7 @@ function NeedsCard({ title, icon, summary, children, defaultOpen = false }: Need
       {open && (
         <div
           className="px-5 pb-5 space-y-6"
-          style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}
+          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
           <div className="pt-4">
             {children}
@@ -86,15 +86,15 @@ export function ProjectNeedsCards({
   return (
     <div>
       <h2
-        className="text-[13px] uppercase tracking-[0.18em] font-bold m-0 mb-4"
-        style={{ color: '#78716C' }}
+        className="text-[11px] uppercase tracking-[0.18em] font-semibold m-0 mb-4"
+        style={{ color: 'rgba(255,255,255,0.4)' }}
       >
         What This Project Needs
       </h2>
-      <div className="space-y-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <NeedsCard
           title="Investment"
-          icon={<DollarSign size={20} style={{ color: '#7C3AED' }} />}
+          icon={<DollarSign size={20} style={{ color: '#a78bfa' }} />}
           summary={investmentSummary}
         >
           {investmentChildren}
@@ -102,7 +102,7 @@ export function ProjectNeedsCards({
 
         <NeedsCard
           title="Crew"
-          icon={<Film size={20} style={{ color: '#7C3AED' }} />}
+          icon={<Film size={20} style={{ color: '#a78bfa' }} />}
           summary={crewSummary}
         >
           {crewChildren}
@@ -110,7 +110,7 @@ export function ProjectNeedsCards({
 
         <NeedsCard
           title="Cast"
-          icon={<Users size={20} style={{ color: '#7C3AED' }} />}
+          icon={<Users size={20} style={{ color: '#a78bfa' }} />}
           summary={castSummary}
         >
           {castChildren}
@@ -123,19 +123,24 @@ export function ProjectNeedsCards({
 /* ── Collapsible GEM Analysis wrapper ── */
 interface GemAnalysisCardProps {
   children: React.ReactNode
+  score?: number | null
+  tier?: string | null
 }
 
-export function GemAnalysisCard({ children }: GemAnalysisCardProps) {
+export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps) {
   const [open, setOpen] = useState(false)
 
   return (
     <div
-      className="rounded-2xl overflow-hidden"
-      style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}
+      className="rounded-xl overflow-hidden"
+      style={{
+        background: 'rgba(255,255,255,0.04)',
+        border: '1px solid rgba(255,255,255,0.12)',
+      }}
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-3 px-6 py-5 cursor-pointer border-0 bg-transparent text-left"
+        className="w-full flex items-center gap-4 px-6 py-5 cursor-pointer border-0 bg-transparent text-left"
       >
         {/* GEM diamond icon */}
         <span
@@ -160,22 +165,35 @@ export function GemAnalysisCard({ children }: GemAnalysisCardProps) {
           }} />
         </span>
         <div className="flex-1 min-w-0">
-          <h3 className="text-[17px] font-bold m-0" style={{ color: '#1C1917' }}>
+          <h3 className="text-[17px] font-bold m-0" style={{ color: 'rgba(255,255,255,0.95)' }}>
             GEM Analysis
           </h3>
-          <p className="text-[13px] m-0 mt-0.5" style={{ color: '#78716C' }}>
+          <p className="text-[13px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Score breakdown, strengths, and development notes
           </p>
         </div>
-        <span
-          className="text-[13px] font-semibold shrink-0 px-3 py-1.5 rounded-lg"
+        {score != null && (
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="text-right">
+              <span className="text-[28px] font-bold" style={{ color: '#a78bfa' }}>
+                {score}
+              </span>
+              {tier && (
+                <p className="text-[11px] font-medium m-0 uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  {tier}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+        <ChevronDown
+          size={18}
+          className="shrink-0 transition-transform duration-200"
           style={{
-            color: '#7C3AED',
-            background: 'rgba(124,58,237,0.08)',
+            color: 'rgba(255,255,255,0.4)',
+            transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
           }}
-        >
-          {open ? 'Hide' : 'View'}
-        </span>
+        />
       </button>
 
       {open && (

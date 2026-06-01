@@ -209,7 +209,7 @@ export function EditableTopCard({
             ))}
           </div>
         )}
-        <h1 className="text-[28px] sm:text-[32px] font-medium text-white tracking-tight leading-[1.1] m-0 mb-1.5">
+        <h1 className="text-[34px] sm:text-[40px] font-semibold text-white tracking-tight leading-[1.08] m-0 mb-2">
           {displayTitle}
         </h1>
         <div className="flex items-center gap-2">
