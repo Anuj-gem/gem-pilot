@@ -171,80 +171,75 @@ export default async function SampleReportPage({ params }: PageProps) {
           </div>
         )}
 
-        <ReportTabs
-          showDetails={true}
-          detailsLocked={false}
-          pitch={
-            <>
-              <section className="mb-12">
-                <SectionHeader label="What Makes This Special" />
-                {whatsSpecial.headline && (
-                  <p className="text-base sm:text-lg text-[var(--gem-gray-200)] leading-relaxed mb-6">
-                    {whatsSpecial.headline}
-                  </p>
-                )}
+        <ReportTabs publicPageUrl={`/sample/${slug}`}>
+          {/* Project tab */}
+          <>
+            <section className="mb-12">
+              <SectionHeader label="What Makes This Special" />
+              {whatsSpecial.headline && (
+                <p className="text-base sm:text-lg text-[var(--gem-gray-200)] leading-relaxed mb-6">
+                  {whatsSpecial.headline}
+                </p>
+              )}
+              <div className="space-y-3">
+                {allStrengths.map((s, i) => (
+                  <div
+                    key={i}
+                    className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
+                  >
+                    <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
+                      {s.dimension_or_area}
+                    </p>
+                    <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
+                      {s.what_it_means}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-12">
+              <SectionHeader label="Lead Characters" />
+              <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
+                The parts inside this script and why an actor would chase them.
+              </p>
+              {leadCharacters.length === 0 ? (
+                <p className="text-sm text-[var(--gem-gray-500)] italic">
+                  No lead character breakdown available for this report.
+                </p>
+              ) : (
                 <div className="space-y-3">
-                  {allStrengths.map((s, i) => (
-                    <div
-                      key={i}
-                      className="border border-[var(--gem-gray-700)] rounded-xl p-5 bg-white"
-                    >
-                      <p className="text-[15px] font-semibold text-[var(--gem-white)] mb-2">
-                        {s.dimension_or_area}
-                      </p>
-                      <p className="text-sm text-[var(--gem-gray-300)] leading-relaxed">
-                        {s.what_it_means}
-                      </p>
-                      {/* Evidence-from-the-script removed 2026-04-23 — see /report/[id]/page.tsx for context. */}
-                    </div>
+                  {leadCharacters.map((c, i) => (
+                    <LeadCharacterCard key={i} c={c} />
                   ))}
                 </div>
-              </section>
+              )}
+            </section>
+          </>
+          {/* Analysis tab */}
+          <>
+            {/* Sample-specific disclosure */}
+            <div
+              className="flex items-start gap-2 text-[13px] text-amber-900 mb-6 p-3.5 rounded-lg border border-amber-300 bg-amber-50 leading-snug"
+            >
+              <Eye size={14} className="shrink-0 mt-0.5" />
+              <span>
+                <strong className="font-semibold">Normally private.</strong>{' '}
+                On real writer reports, the Details tab is only visible to the writer who uploaded the script. We&apos;re showing it here so you can see what the full report looks like.
+              </span>
+            </div>
 
-              <section className="mb-12">
-                <SectionHeader label="Lead Characters" />
-                <p className="text-sm text-[var(--gem-gray-500)] -mt-3 mb-5">
-                  The parts inside this script and why an actor would chase them.
-                </p>
-                {leadCharacters.length === 0 ? (
-                  <p className="text-sm text-[var(--gem-gray-500)] italic">
-                    No lead character breakdown available for this report.
-                  </p>
-                ) : (
-                  <div className="space-y-3">
-                    {leadCharacters.map((c, i) => (
-                      <LeadCharacterCard key={i} c={c} />
-                    ))}
-                  </div>
-                )}
-              </section>
-            </>
-          }
-          details={
-            <>
-              {/* Sample-specific disclosure — overrides the default "Private to you" note. */}
-              <div
-                className="flex items-start gap-2 text-[13px] text-amber-900 mb-6 p-3.5 rounded-lg border border-amber-300 bg-amber-50 leading-snug"
-              >
-                <Eye size={14} className="shrink-0 mt-0.5" />
-                <span>
-                  <strong className="font-semibold">Normally private.</strong>{' '}
-                  On real writer reports, the Details tab is only visible to the writer who uploaded the script. We&apos;re showing it here so you can see what the full report looks like.
-                </span>
-              </div>
-
-              <DetailsView
-                scores={scores}
-                production={production}
-                considerations={considerations}
-                overallScore={ev.weighted_score ?? null}
-                showScores
-                locked={false}
-                showPrivacyNote={false}
-              />
-            </>
-          }
-        />
+            <DetailsView
+              scores={scores}
+              production={production}
+              considerations={considerations}
+              overallScore={ev.weighted_score ?? null}
+              showScores
+              locked={false}
+              showPrivacyNote={false}
+            />
+          </>
+        </ReportTabs>
 
         {/* CTA footer */}
         <div className="mt-8 p-6 rounded-xl border border-[var(--gem-gray-700)] bg-[var(--gem-gray-900)]/50 text-center">

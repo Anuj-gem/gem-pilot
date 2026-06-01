@@ -1,55 +1,71 @@
 'use client'
-import { useState } from 'react'
-import { Lock } from 'lucide-react'
 
-interface Props {
-  pitch: React.ReactNode
-  details: React.ReactNode
-  detailsLocked?: boolean
-  // Details tab is owner-only. Non-owners never see the tab at all.
-  showDetails?: boolean
+import { useState } from 'react'
+
+interface ReportTabsProps {
+  publicPageUrl: string
+  children: [React.ReactNode, React.ReactNode] // [ProjectTab, AnalysisTab]
 }
 
-export function ReportTabs({ pitch, details, detailsLocked, showDetails = true }: Props) {
-  const [tab, setTab] = useState<'pitch' | 'details'>('pitch')
-  const activeTab = showDetails ? tab : 'pitch'
+export function ReportTabs({ publicPageUrl, children }: ReportTabsProps) {
+  const [tab, setTab] = useState<'project' | 'analysis'>('project')
+
   return (
-    <>
-      <div className="flex border-b border-[var(--gem-gray-700)] mb-8 -mx-1">
-        <TabBtn active={activeTab === 'pitch'} onClick={() => setTab('pitch')}>
-          Pitch
+    <div>
+      {/* Tab bar */}
+      <div className="flex items-center border-b border-white/15 mb-6">
+        <TabBtn active={tab === 'project'} onClick={() => setTab('project')}>
+          Project
         </TabBtn>
-        {showDetails && (
-          <TabBtn active={activeTab === 'details'} onClick={() => setTab('details')}>
-            {detailsLocked && <Lock size={12} />}
-            <span>Development</span>
-          </TabBtn>
-        )}
+        <TabBtn active={tab === 'analysis'} onClick={() => setTab('analysis')}>
+          Analysis
+        </TabBtn>
+        <button
+          className="px-4 py-2.5 text-sm text-white/30 cursor-default"
+          disabled
+        >
+          Activity
+        </button>
+        <button
+          className="px-4 py-2.5 text-sm text-white/30 cursor-default"
+          disabled
+        >
+          Settings
+        </button>
+        <a
+          href={publicPageUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-auto flex items-center gap-1.5 px-4 py-2.5 text-xs text-white/50 hover:text-white/70 transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View public page
+        </a>
       </div>
-      <div>{activeTab === 'pitch' ? pitch : details}</div>
-    </>
+
+      {/* Tab content — use display toggle to preserve state */}
+      <div style={{ display: tab === 'project' ? 'block' : 'none' }}>
+        {children[0]}
+      </div>
+      <div style={{ display: tab === 'analysis' ? 'block' : 'none' }}>
+        {children[1]}
+      </div>
+    </div>
   )
 }
 
-function TabBtn({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean
-  onClick: () => void
-  children: React.ReactNode
-}) {
+function TabBtn({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-2 px-5 py-3.5 text-sm font-medium -mb-px transition-colors"
-      style={{
-        color: active ? 'var(--gem-white)' : 'var(--gem-gray-500)',
-        borderBottom: `2px solid ${active ? 'var(--gem-accent)' : 'transparent'}`,
-      }}
+      className={`px-5 py-2.5 text-sm font-medium transition-colors relative ${
+        active ? 'text-white' : 'text-white/50 hover:text-white/70'
+      }`}
     >
       {children}
+      {active && (
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white" />
+      )}
     </button>
   )
 }

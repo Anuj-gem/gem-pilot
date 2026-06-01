@@ -82,6 +82,10 @@ import { IssuesSection } from '@/components/report/issues-block'
 // import { ScriptDownloadButton } from '@/components/partner/script-download-button'
 // import { ProducerIntroButton } from '@/components/partner/producer-intro-button'
 // import { Mail } from 'lucide-react'
+import { ReportTabs } from '@/components/report/report-tabs'
+import { BudgetEditor, type BudgetPlan } from '@/components/report/budget-editor'
+import { RevenuePlanEditor, type RevenuePlan } from '@/components/report/revenue-plan-editor'
+import { ProjectedReturns } from '@/components/report/projected-returns'
 import { normalizeEvaluation, calculateWeightedScore, DIMENSION_META } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
@@ -157,6 +161,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         allow_reviews, allow_industry,
         privacy_review_needed, tags, poster_url, media_urls, heat_score,
         total_backing, backer_count, total_following, follower_count,
+        budget_plan, revenue_plan,
         profiles ( full_name, avatar_url, handle, headline )
       )
     `)
@@ -469,6 +474,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const backerCount: number = (submission as any).backer_count ?? 0
   const totalFollowing: number = (submission as any).total_following ?? 0
   const followerCount: number = (submission as any).follower_count ?? 0
+  const budgetPlan: BudgetPlan | null = (submission as any).budget_plan ?? null
+  const revenuePlan: RevenuePlan | null = (submission as any).revenue_plan ?? null
+  const gemEstimate: string | null = packaging?.budget_tier?.range ?? null
 
   let commercialScore: number | null = null
   try {
@@ -718,6 +726,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {isStaleEval && <RerunBanner submissionId={submission.id} />}
 
         {/* Stat cards removed — GEM Score + Heat now rendered in hero above */}
+
+        {/* ═══ OWNER VIEW — tabbed workspace ═══ */}
+        {(isOwner || isAdmin) ? (
+        <ReportTabs publicPageUrl={`/report/${id}`}>
+          {/* ── PROJECT TAB ── */}
+          <div className="space-y-8">
 
         {/* ═══ PITCH CONTAINER — top card, elevator pitch, plot summary, cast, media, collaborators ═══ */}
         <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
@@ -1057,6 +1071,26 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         </div>{/* ═══ END PITCH CONTAINER ═══ */}
 
+        {/* ═══ BUDGET + REVENUE + PROJECTED RETURNS ═══ */}
+        <BudgetEditor
+          initial={budgetPlan}
+          gemEstimate={gemEstimate}
+          submissionId={submission.id}
+        />
+        <RevenuePlanEditor
+          initial={revenuePlan}
+          submissionId={submission.id}
+        />
+        <ProjectedReturns
+          budgetTotal={budgetPlan?.total ?? 0}
+          revenueTotal={revenuePlan?.total ?? 0}
+        />
+
+          </div>{/* ── END PROJECT TAB ── */}
+
+          {/* ── ANALYSIS TAB ── */}
+          <div className="space-y-8">
+
         {/* ═══ GEM ANALYSIS CONTAINER ═══ */}
         <div className="relative rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
         {!viewerHasFullAccess && (
@@ -1375,201 +1409,151 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         </div>{/* ═══ END GEM ANALYSIS CONTAINER ═══ */}
 
-        {/* v5.4 IssuesSection rendering removed (2026-04-27): redundant with
-            the Development Priorities EditorialSection above, which now
-            carries the writer-facing "Issues" label and a lede + see-more
-            disclosure. The `issues` data on the eval is still emitted by
-            the prompt; we can re-mount this surface later if we want a
-            producer-direct framing somewhere. */}
+          </div>{/* ── END ANALYSIS TAB ── */}
+        </ReportTabs>
+        ) : (
+        /* ═══ VISITOR VIEW — flat layout, no tabs ═══ */
+        <>
+        {/* ═══ PITCH CONTAINER (visitor) ═══ */}
+        <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
 
-        {/* REFERENCE — Production specs disclosure for legacy v4 evals
-            only. v5.2+ evals carry their detail in `riskDetails` and
-            render that section instead, so we suppress the empty-shell
-            "Reference" disclosure when there's nothing to put in it.
-            Anuj 2026-04-30 cleanup. */}
-        {!riskDetails && production && (isOwnerOrAdmin || (submission.is_public ?? false)) && (
-        <div className="rounded-2xl px-5 sm:px-8 py-6 sm:py-7" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
-        <details className="gem-no-print group [&_summary::-webkit-details-marker]:hidden">
-          <summary className="cursor-pointer list-none rounded-lg -mx-2 px-2 py-2 hover:bg-[var(--gem-gray-900)] transition-colors">
+        {/* Title + author + logline + categories */}
+        <EditableTopCard
+          evaluationId={id}
+          submissionId={submission.id}
+          initial={topCard}
+          isOwner={false}
+          hasEdits={topCardHasEdits}
+          postedAt={submission.created_at ?? null}
+          authorName={
+            isAnonymousSubmission ? null : submission.profiles?.full_name ?? null
+          }
+          authorHandle={
+            isAnonymousSubmission ? null : submission.profiles?.handle ?? null
+          }
+          authorAvatar={
+            isAnonymousSubmission ? null : submission.profiles?.avatar_url ?? null
+          }
+          authorHeadline={
+            isAnonymousSubmission ? null : submission.profiles?.headline ?? null
+          }
+          commercialScore={null}
+          scoreShownToIndustry={isScoreVisible(privacy)}
+          isProSubscriber={true}
+        />
+
+        {/* Inline stats — GEM Score + Heat */}
+        <div className="flex items-center gap-4 flex-wrap">
+          {typeof commercialScore === 'number' &&
+            isScoreVisible(privacy) && (
             <div
-              aria-hidden
-              className="w-12 h-0.5 mb-3 rounded-sm"
-              style={{ background: 'var(--gem-accent)' }}
-            />
-            <div className="flex items-center justify-between gap-3">
-              <h2 className="text-[20px] sm:text-[24px] font-bold text-[var(--gem-gray-50)] tracking-tight leading-tight m-0">
-                Reference
-              </h2>
+              className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
+              style={{
+                background: 'rgba(124,58,237,0.08)',
+                border: '1px solid rgba(124,58,237,0.15)',
+              }}
+            >
               <span
-                aria-hidden
-                className="text-[var(--gem-gray-400)] transition-transform duration-200 group-open:rotate-180 text-[18px]"
+                aria-hidden="true"
+                className="inline-flex items-center justify-center shrink-0 rotate-45"
+                style={{ width: 22, height: 22 }}
               >
-                ▾
+                <span className="absolute rotate-0" style={{ width: 22, height: 22, background: 'rgba(167, 139, 250, 0.15)', borderRadius: 1.5 }} />
+                <span className="absolute rotate-0" style={{ width: 16.5, height: 16.5, background: 'rgba(139, 92, 246, 0.35)', borderRadius: 1.5 }} />
+                <span className="absolute rotate-0" style={{ width: 12, height: 12, background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', borderRadius: 1.5 }} />
               </span>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>GEM Score</span>
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>{Math.round(commercialScore)}</span>
+              <span className="text-[11px] font-medium" style={{ color: '#A8A29E' }}>/100</span>
             </div>
-            <p className="text-[14px] text-[var(--gem-gray-400)] m-0 mt-1.5">
-              Tap to see the full production planning facts pulled from the script.
-            </p>
-          </summary>
-          <div className="mt-5">
-
-        {/* "Additional scored dimensions" Section moved into the GEM
-            Score block above (Anuj 2026-04-29). The per-dim breakdown
-            now lives next to the score itself, folded under a "See the
-            per-dimension breakdown" disclosure. */}
-
-        {/* PRODUCTION PLANNING DETAILS — legacy fallback only. */}
-        {!riskDetails &&
-          (isOwnerOrAdmin || (submission.is_public ?? false)) && (
-            <>
-            {production && (
-              <Section
-                label="Production planning details"
-                subtitle="Everything the script tells us about how it would actually get made."
-                summary="Cast · Locations · Technical · Platform · Rights"
-              >
-                <div className="space-y-3">
-                  <Collapsible
-                    title="Cast"
-                    meta={`${production.cast?.leads ?? 0} lead${production.cast?.leads === 1 ? '' : 's'} · ${production.cast?.speaking_roles ?? 0} speaking roles${production.cast?.child_actors ? ' · child actors' : ''}`}
-                  >
-                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                      <FactList>
-                        <Fact k="Speaking roles" v={production.cast?.speaking_roles} />
-                        <Fact k="Leads" v={production.cast?.leads} />
-                        {(production.cast?.series_regulars ?? 0) > 0 && (
-                          <Fact k="Series regulars" v={production.cast?.series_regulars} />
-                        )}
-                        {production.cast?.child_actors && <Fact k="Child actors" v="Yes" />}
-                        {production.cast?.casting_challenges?.length ? (
-                          <Fact k="Casting" v={production.cast.casting_challenges.join(', ')} />
-                        ) : null}
-                      </FactList>
-                    </div>
-                  </Collapsible>
-                  <Collapsible
-                    title="Locations & Scale"
-                    meta={`${production.locations?.distinct_count ?? 0} distinct${production.locations?.period_or_contemporary ? ` · ${production.locations.period_or_contemporary}` : ''}`}
-                  >
-                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                      <FactList>
-                        <Fact k="Distinct locations" v={production.locations?.distinct_count} />
-                        <Fact
-                          k="Int / Ext"
-                          v={
-                            production.locations?.interior_exterior_ratio ??
-                            production.locations?.interior_exterior_mix
-                          }
-                        />
-                        <Fact k="Era" v={production.locations?.period_or_contemporary} />
-                        {production.locations?.expensive_flags?.length ? (
-                          <Fact k="Notable" v={production.locations.expensive_flags.join(', ')} />
-                        ) : null}
-                      </FactList>
-                    </div>
-                  </Collapsible>
-                  <Collapsible
-                    title="Technical"
-                    meta={`VFX ${production.technical?.vfx_level ?? '—'} · Stunts ${production.technical?.stunts_level ?? production.technical?.stunts ?? '—'}`}
-                  >
-                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                      <FactList>
-                        <Fact
-                          k="VFX"
-                          v={
-                            (production.technical?.vfx_level ?? '') +
-                            (production.technical?.vfx_details ? ` — ${production.technical.vfx_details}` : '')
-                          }
-                        />
-                        <Fact
-                          k="Stunts"
-                          v={production.technical?.stunts_level ?? production.technical?.stunts}
-                        />
-                        {production.technical?.sfx_needs && (
-                          <Fact k="SFX" v={production.technical.sfx_needs} />
-                        )}
-                        {production.technical?.night_shoots && (
-                          <Fact k="Night shoots" v={production.technical.night_shoots} />
-                        )}
-                        {production.technical?.animals && <Fact k="Animals" v="Yes" />}
-                      </FactList>
-                    </div>
-                  </Collapsible>
-                  <Collapsible
-                    title="Platform & Content"
-                    meta={production.platform_fit?.recommended_lane}
-                  >
-                    <div style={bodyBlur} aria-hidden={applyPaywallBlur ? true : undefined}>
-                      <FactList>
-                        <Fact k="Lane" v={production.platform_fit?.recommended_lane} />
-                        <Fact k="Content" v={production.platform_fit?.content_level} />
-                        {production.platform_fit?.series_engine_or_release_model && (
-                          <Fact k="Model" v={production.platform_fit.series_engine_or_release_model} />
-                        )}
-                      </FactList>
-                    </div>
-                  </Collapsible>
-                  {production.rights_flags?.length ? (
-                    <Collapsible
-                      title="Rights & Clearance"
-                      meta={`${production.rights_flags.length} item${production.rights_flags.length === 1 ? '' : 's'} to flag`}
-                    >
-                      <ul
-                        className="space-y-3 list-none p-0 m-0"
-                        style={bodyBlur}
-                        aria-hidden={applyPaywallBlur ? true : undefined}
-                      >
-                        {production.rights_flags.map((r, i) => {
-                          const text =
-                            typeof r === 'string'
-                              ? r
-                              : `${r.type}: ${r.detail}`
-                          return (
-                            <li
-                              key={i}
-                              className="flex gap-3 text-[16px] text-[var(--gem-gray-100)] leading-[1.55]"
-                            >
-                              <span className="text-[var(--gem-gold)] flex-shrink-0">•</span>
-                              <span>{text}</span>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </Collapsible>
-                  ) : null}
-                </div>
-              </Section>
-            )}
-            </>
           )}
-          </div>
-        </details>
+          {totalBacking > 0 && (
+            <div className="flex items-center gap-2 rounded-lg px-3.5 py-2" style={{ background: '#ecfdf5', border: '1px solid #6ee7b7' }}>
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#15803d' }}>
+                {totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`}
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#15803d' }}>backed</span>
+            </div>
+          )}
+          {totalFollowing > 0 && (
+            <div className="flex items-center gap-2 rounded-lg px-3.5 py-2" style={{ background: '#fffbeb', border: '1px solid #fcd34d' }}>
+              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#92400e' }}>
+                {totalFollowing >= 1000 ? `$${Math.round(totalFollowing / 1000)}K` : `$${totalFollowing}`}
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#92400e' }}>following</span>
+            </div>
+          )}
         </div>
+
+        {/* Media carousel */}
+        <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
+          <HeroMediaCarousel
+            submissionId={submission.id}
+            posterUrl={submission.poster_url ?? null}
+            initialMedia={(submission as any).media_urls || []}
+            isOwner={false}
+          />
+        </div>
+
+        {/* ELEVATOR PITCH */}
+        <SectionGate
+          section="whats_working"
+          privacy={privacy}
+          isOwnerOrAdmin={isOwnerOrAdmin}
+          submissionId={undefined}
+          isPublic={submission.is_public ?? false}
+          isProSubscriber={true}
+        >
+          {(whatsSpecial.headline || plotSummary) && (
+            <div data-pdf-section="whats_working">
+              <h2 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5" style={{ color: 'var(--gem-gold)' }}>
+                Elevator Pitch
+              </h2>
+              <InlineElevatorPitch fallbackPitch={whatsSpecial.headline ?? ''} fallbackPlot={plotSummary ?? ''} hidePlot />
+            </div>
+          )}
+        </SectionGate>
+
+        {/* PLOT SUMMARY */}
+        {plotSummary && (
+          <div>
+            <h2 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4" style={{ color: 'var(--gem-gold)' }}>
+              Plot Summary
+            </h2>
+            <Collapsible title="Read full plot summary" defaultOpen={false}>
+              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">{plotSummary}</p>
+            </Collapsible>
+          </div>
         )}
 
-        {/* Mid-page upgrade CTA retired 2026-04-30 v0.10.12 — replaced
-            with a slim hovering banner mounted at the top of the report
-            (see UpgradeTopBanner below the back-to-Community link).
-            Single message: "submit another draft." */}
+        </div>{/* ═══ END VISITOR PITCH CONTAINER ═══ */}
 
-        {/* Owner "You're reachable / Contact open" card removed
-            2026-04-28 — redundant for the owner who already sees their
-            publish status + privacy controls at the top of the page. */}
+        {/* ═══ GEM ANALYSIS (visitor — blurred for non-collaborators) ═══ */}
+        <div className="relative rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
+        {!viewerHasFullAccess && (
+          <div className="absolute inset-0 z-20 rounded-2xl flex items-center justify-center" style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(250,248,255,0.6)' }}>
+            <p className="text-[20px] sm:text-[24px] font-bold text-center m-0 px-6" style={{ color: '#6B46C1' }}>
+              Visible to collaborators only
+            </p>
+          </div>
+        )}
+        <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(107,70,193,0.10)' }}>
+          <h2 className="text-[24px] sm:text-[28px] font-bold m-0 tracking-tight" style={{ color: '#1C1917' }}>
+            GEM Evaluation
+          </h2>
+        </div>
+        </div>
 
-        {/* CommunityReviewCta retired 2026-04-30 v0.10.14. The Peer
-            reviews section below now owns the "be the first to review"
-            empty-state CTA, so we don't double-stack two cards that
-            both ask the same person to write the same review. */}
-
-        {/* Fallback if writer has everything private and the page would
-            render empty for visitors. */}
-        {!isOwnerOrAdmin && !anyPublic && (
+        {/* Fallback if writer has everything private */}
+        {!anyPublic && (
           <div className="rounded-2xl px-5 sm:px-8 py-6 sm:py-7" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
             <p className="text-[14px] m-0 leading-[1.6]" style={{ color: '#78716C' }}>
               {writerName} has kept this report private. Request a connection
               below if you&apos;d like to be in touch about this script.
             </p>
           </div>
+        )}
+        </>
         )}
         </div>
         {/* /space-y-5 + max-w-6xl wrappers close here. */}
