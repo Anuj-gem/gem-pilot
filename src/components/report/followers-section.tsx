@@ -50,8 +50,8 @@ export function FollowersSection({ submissionId, totalFollowing, followerCount, 
   }
 
   const attached = followers.filter(f => f.type === 'attached')
-  const following = followers.filter(f => f.type === 'following')
-  const totalCount = attached.length + following.length
+  const considering = followers.filter(f => f.type === 'following')
+  const totalCount = attached.length + considering.length
 
   if (loading) return null
   if (totalCount === 0 && backerCount === 0 && followerCount === 0) return null
@@ -62,7 +62,7 @@ export function FollowersSection({ submissionId, totalFollowing, followerCount, 
         className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4"
         style={{ color: 'var(--gem-gold)' }}
       >
-        👥 Followers
+        👥 Investor Interest
         <span style={{ color: '#A8A29E' }}> ({totalCount})</span>
       </h2>
 
@@ -82,7 +82,7 @@ export function FollowersSection({ submissionId, totalFollowing, followerCount, 
               className="text-[13px] font-bold px-2.5 py-1 rounded-lg"
               style={{ background: '#fffbeb', color: '#92400e', border: '1px solid #fcd34d' }}
             >
-              {totalFollowing >= 1000 ? `$${Math.round(totalFollowing / 1000)}K` : `$${totalFollowing}`} following
+              {totalFollowing >= 1000 ? `$${Math.round(totalFollowing / 1000)}K` : `$${totalFollowing}`} considering
             </span>
           )}
         </div>
@@ -91,7 +91,7 @@ export function FollowersSection({ submissionId, totalFollowing, followerCount, 
       {/* Individual follower rows */}
       {totalCount > 0 ? (
         <div className="flex flex-col gap-2">
-          {[...attached, ...following].map(f => (
+          {[...attached, ...considering].map(f => (
             <FollowerRow key={f.id} follower={f} />
           ))}
         </div>
@@ -146,7 +146,7 @@ function FollowerRow({ follower }: { follower: Follower }) {
               border: isAttached ? '1px solid #6ee7b7' : '1px solid #fcd34d',
             }}
           >
-            {isAttached ? 'Backed' : 'Following'}
+            {isAttached ? 'Backed' : 'Considering'}
           </span>
         </div>
         <p className="text-[12px] m-0 mt-0.5" style={{ color: '#78716C' }}>

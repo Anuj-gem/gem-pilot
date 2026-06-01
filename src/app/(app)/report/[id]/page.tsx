@@ -84,7 +84,7 @@ import { IssuesSection } from '@/components/report/issues-block'
 // import { ScriptDownloadButton } from '@/components/partner/script-download-button'
 // import { ProducerIntroButton } from '@/components/partner/producer-intro-button'
 // import { Mail } from 'lucide-react'
-import { ReportTabs } from '@/components/report/report-tabs'
+import { ProjectNeedsCards, GemAnalysisCard } from '@/components/report/project-needs-cards'
 import { BudgetEditor, type BudgetPlan } from '@/components/report/budget-editor'
 import { RevenuePlanEditor, type RevenuePlan } from '@/components/report/revenue-plan-editor'
 import { ProjectedReturns } from '@/components/report/projected-returns'
@@ -731,13 +731,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Stat cards removed — GEM Score + Heat now rendered in hero above */}
 
-        {/* ═══ OWNER VIEW — tabbed workspace ═══ */}
+        {/* ═══ OWNER VIEW — continuous scroll pitch page ═══ */}
         {(isOwner || isAdmin) ? (
-        <ReportTabs publicPageUrl={`/report/${id}`}>
-          {/* ── PROJECT TAB ── */}
-          <div className="space-y-8">
+        <>
 
-        {/* ═══ PITCH CONTAINER — top card, elevator pitch, plot summary, cast, media, collaborators ═══ */}
+        {/* ═══ PITCH CONTAINER — top card, elevator pitch, plot summary, media ═══ */}
         <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
 
         {/* Owner actions — top right */}
@@ -905,219 +903,233 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* LEAD CHARACTERS */}
-        <SectionGate
-          section="deep_dive_characters"
-          privacy={privacy}
-          isOwnerOrAdmin={isOwnerOrAdmin}
-          submissionId={privacyControlId}
-          isPublic={submission.is_public ?? false}
-          isProSubscriber={true}
-        >
-          {leadCharacters.length > 0 && (
-            <div data-pdf-section="cast">
-            {(() => {
-            const leads = leadCharacters.filter(
-              (c) => (c.role_type ?? '').toLowerCase() === 'lead'
-            )
-            const supporting = leadCharacters.filter(
-              (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
-            )
-            // Build a global index map so InlineCastField can address the
-            // right slot in the edit context's characters[] array.
-            const leadGlobalIndices = leads.map((c) => leadCharacters.indexOf(c))
-            const supportGlobalIndices = supporting.map((c) => leadCharacters.indexOf(c))
-            return (
-              <>
-                <h2
-                  className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
-                  style={{ color: 'var(--gem-gold)' }}
-                >
-                  Cast
+        </div>{/* ═══ END PITCH CONTAINER ═══ */}
+
+        {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
+        <ProjectNeedsCards
+          investmentSummary={
+            totalBacking > 0
+              ? `${totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`} backed`
+              : budgetPlan?.total
+                ? `Budget: ${budgetPlan.total >= 1000 ? `$${Math.round(budgetPlan.total / 1000)}K` : `$${budgetPlan.total}`}`
+                : null
+          }
+          crewSummary={null}
+          castSummary={
+            leadCharacters.length > 0
+              ? `${leadCharacters.length} character${leadCharacters.length !== 1 ? 's' : ''}`
+              : null
+          }
+          investmentChildren={
+            <div className="space-y-6">
+              <FollowersSection
+                submissionId={submission.id}
+                totalFollowing={totalFollowing}
+                followerCount={followerCount}
+                totalBacking={totalBacking}
+                backerCount={backerCount}
+              />
+              <BudgetEditor
+                initial={budgetPlan}
+                gemEstimate={gemEstimate}
+                submissionId={submission.id}
+              />
+              <RevenuePlanEditor
+                initial={revenuePlan}
+                submissionId={submission.id}
+              />
+              <ProjectedReturns
+                budgetTotal={budgetPlan?.total ?? 0}
+                revenueTotal={revenuePlan?.total ?? 0}
+              />
+            </div>
+          }
+          crewChildren={
+            <div className="space-y-6">
+              <CrewSection
+                submissionId={submission.id}
+                isOwner={isOwner || isAdmin}
+                currentUserId={user?.id ?? null}
+                ownerProfile={ownerProfile ? {
+                  full_name: ownerProfile.full_name ?? null,
+                  avatar_url: ownerProfile.avatar_url ?? null,
+                  headline: ownerProfile.headline ?? null,
+                } : null}
+              />
+              {/* Collaborators Attached */}
+              <div>
+                <h2 className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4" style={{ color: 'var(--gem-gold)' }}>
+                  🤝 Collaborators Attached
+                  <span style={{ color: '#A8A29E' }}> ({collaboratorCount})</span>
                 </h2>
-                <div className="space-y-3">
-                  {leads.map((c, i) => (
-                    <InlineCastField
-                      key={`lead-${i}`}
-                      index={leadGlobalIndices[i]}
-                      character={c}
-                      blurred={applyPaywallBlur}
-                      fallback={
-                        <Collapsible
-                          title={c.name}
-                          meta={`${c.role_type} · ${c.demographics}`}
-                          titleBlurred={applyPaywallBlur}
-                          defaultOpen
+                {collaboratorCount > 0 && (
+                  <div className="flex flex-col gap-3 mb-3">
+                    {(collaboratorRows ?? []).map((c: any, i: number) => {
+                      const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
+                      const avatar = c.profiles?.avatar_url
+                      const headline = c.profiles?.headline
+                      const role = c.role === 'other' ? c.role_other : c.role
+                      const stats = c.collaborator_id ? collabStats[c.collaborator_id] : null
+                      const hasScripts = stats && stats.scripts > 0
+                      const hasBacking = stats && stats.totalBacking > 0
+                      return (
+                        <div
+                          key={i}
+                          className="flex items-center gap-5 px-6 py-5 rounded-xl"
+                          style={{
+                            background: 'rgba(0,0,0,0.03)',
+                            border: '1px solid rgba(0,0,0,0.06)',
+                          }}
                         >
-                          <p
-                            className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                            style={bodyBlur}
-                          >
-                            {c.hook}
-                          </p>
-                        </Collapsible>
-                      }
-                    />
-                  ))}
-                </div>
-                {supporting.length > 0 && (
-                  <div className="mt-6">
-                    <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-                      Supporting cast · {supporting.length}
-                    </p>
+                          {avatar ? (
+                            <img src={avatar} alt="" className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0" />
+                          ) : (
+                            <div
+                              className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[28px] font-bold flex-shrink-0"
+                              style={{ background: 'rgba(124,58,237,0.12)', color: '#7C3AED' }}
+                            >
+                              {name.charAt(0).toUpperCase()}
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-3 flex-wrap">
+                              <span className="text-[22px] font-bold" style={{ color: '#1C1917' }}>{name}</span>
+                              {role && (
+                                <span
+                                  className="text-[14px] font-semibold px-3 py-1 flex-shrink-0"
+                                  style={{
+                                    background: 'rgba(124,58,237,0.10)',
+                                    color: '#7C3AED',
+                                    borderRadius: 4,
+                                  }}
+                                >
+                                  {role}
+                                </span>
+                              )}
+                            </div>
+                            {headline && (
+                              <p className="text-[16px] m-0 mt-1" style={{ color: '#78716C' }}>
+                                {headline}
+                              </p>
+                            )}
+                            {(hasScripts || hasBacking) && (
+                              <div className="flex items-center gap-3 mt-1.5">
+                                {hasScripts && (
+                                  <span className="text-[13px] font-medium" style={{ color: '#A8A29E' }}>
+                                    {stats!.scripts} {stats!.scripts === 1 ? 'script' : 'scripts'}
+                                  </span>
+                                )}
+                                {hasBacking && (
+                                  <span className="text-[13px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>
+                                    {stats!.totalBacking >= 1000 ? `$${Math.round(stats!.totalBacking / 1000)}K` : `$${stats!.totalBacking}`} backed
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+                <CollaboratorsSection
+                  submissionId={submission.id}
+                  isOwner={isOwner || isAdmin}
+                  currentUserEmail={user?.email ?? null}
+                  currentUserId={user?.id ?? null}
+                />
+              </div>
+            </div>
+          }
+          castChildren={
+            <SectionGate
+              section="deep_dive_characters"
+              privacy={privacy}
+              isOwnerOrAdmin={isOwnerOrAdmin}
+              submissionId={privacyControlId}
+              isPublic={submission.is_public ?? false}
+              isProSubscriber={true}
+            >
+              {leadCharacters.length > 0 && (
+                <div data-pdf-section="cast">
+                {(() => {
+                const leads = leadCharacters.filter(
+                  (c) => (c.role_type ?? '').toLowerCase() === 'lead'
+                )
+                const supporting = leadCharacters.filter(
+                  (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
+                )
+                const leadGlobalIndices = leads.map((c) => leadCharacters.indexOf(c))
+                const supportGlobalIndices = supporting.map((c) => leadCharacters.indexOf(c))
+                return (
+                  <>
+                    <h2
+                      className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
+                      style={{ color: 'var(--gem-gold)' }}
+                    >
+                      Cast
+                    </h2>
                     <div className="space-y-3">
-                      {supporting.map((c, i) => (
+                      {leads.map((c, i) => (
                         <InlineCastField
-                          key={`support-${i}`}
-                          index={supportGlobalIndices[i]}
+                          key={`lead-${i}`}
+                          index={leadGlobalIndices[i]}
                           character={c}
                           blurred={applyPaywallBlur}
-                          fallback={null}
+                          fallback={
+                            <Collapsible
+                              title={c.name}
+                              meta={`${c.role_type} · ${c.demographics}`}
+                              titleBlurred={applyPaywallBlur}
+                              defaultOpen
+                            >
+                              <p
+                                className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
+                                style={bodyBlur}
+                              >
+                                {c.hook}
+                              </p>
+                            </Collapsible>
+                          }
                         />
                       ))}
                     </div>
-                    <SupportingCharactersCarousel
-                      characters={supporting}
-                      blurred={applyPaywallBlur}
-                    />
-                  </div>
-                )}
-              </>
-            )
-          })()}
-            </div>
-          )}
-        </SectionGate>
-
-        {/* Collaborators Attached */}
-        <div>
-          <h2 className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4" style={{ color: 'var(--gem-gold)' }}>
-            🤝 Collaborators Attached
-            <span style={{ color: '#A8A29E' }}> ({collaboratorCount})</span>
-          </h2>
-          {collaboratorCount > 0 && (
-            <div className="flex flex-col gap-3 mb-3">
-              {(collaboratorRows ?? []).map((c: any, i: number) => {
-                const name = c.profiles?.full_name || c.collaborator_email?.split('@')[0]
-                const avatar = c.profiles?.avatar_url
-                const headline = c.profiles?.headline
-                const role = c.role === 'other' ? c.role_other : c.role
-                const stats = c.collaborator_id ? collabStats[c.collaborator_id] : null
-                const hasScripts = stats && stats.scripts > 0
-                const hasBacking = stats && stats.totalBacking > 0
-                return (
-                  <div
-                    key={i}
-                    className="flex items-center gap-5 px-6 py-5 rounded-xl"
-                    style={{
-                      background: 'rgba(0,0,0,0.03)',
-                      border: '1px solid rgba(0,0,0,0.06)',
-                    }}
-                  >
-                    {avatar ? (
-                      <img src={avatar} alt="" className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0" />
-                    ) : (
-                      <div
-                        className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[28px] font-bold flex-shrink-0"
-                        style={{ background: 'rgba(124,58,237,0.12)', color: '#7C3AED' }}
-                      >
-                        {name.charAt(0).toUpperCase()}
+                    {supporting.length > 0 && (
+                      <div className="mt-6">
+                        <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
+                          Supporting cast · {supporting.length}
+                        </p>
+                        <div className="space-y-3">
+                          {supporting.map((c, i) => (
+                            <InlineCastField
+                              key={`support-${i}`}
+                              index={supportGlobalIndices[i]}
+                              character={c}
+                              blurred={applyPaywallBlur}
+                              fallback={null}
+                            />
+                          ))}
+                        </div>
+                        <SupportingCharactersCarousel
+                          characters={supporting}
+                          blurred={applyPaywallBlur}
+                        />
                       </div>
                     )}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <span className="text-[22px] font-bold" style={{ color: '#1C1917' }}>{name}</span>
-                        {role && (
-                          <span
-                            className="text-[14px] font-semibold px-3 py-1 flex-shrink-0"
-                            style={{
-                              background: 'rgba(124,58,237,0.10)',
-                              color: '#7C3AED',
-                              borderRadius: 4,
-                            }}
-                          >
-                            {role}
-                          </span>
-                        )}
-                      </div>
-                      {headline && (
-                        <p className="text-[16px] m-0 mt-1" style={{ color: '#78716C' }}>
-                          {headline}
-                        </p>
-                      )}
-                      {(hasScripts || hasBacking) && (
-                        <div className="flex items-center gap-3 mt-1.5">
-                          {hasScripts && (
-                            <span className="text-[13px] font-medium" style={{ color: '#A8A29E' }}>
-                              {stats!.scripts} {stats!.scripts === 1 ? 'script' : 'scripts'}
-                            </span>
-                          )}
-                          {hasBacking && (
-                            <span className="text-[13px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>
-                              {stats!.totalBacking >= 1000 ? `$${Math.round(stats!.totalBacking / 1000)}K` : `$${stats!.totalBacking}`} backed
-                            </span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  </>
                 )
-              })}
-            </div>
-          )}
-          <CollaboratorsSection
-            submissionId={submission.id}
-            isOwner={isOwner || isAdmin}
-            currentUserEmail={user?.email ?? null}
-            currentUserId={user?.id ?? null}
-          />
-        </div>
-
-        {/* Crew Roles */}
-        <CrewSection
-          submissionId={submission.id}
-          isOwner={isOwner || isAdmin}
-          currentUserId={user?.id ?? null}
-          ownerProfile={ownerProfile ? {
-            full_name: ownerProfile.full_name ?? null,
-            avatar_url: ownerProfile.avatar_url ?? null,
-            headline: ownerProfile.headline ?? null,
-          } : null}
+              })()}
+                </div>
+              )}
+            </SectionGate>
+          }
         />
 
-        {/* Followers / Backers */}
-        <FollowersSection
-          submissionId={submission.id}
-          totalFollowing={totalFollowing}
-          followerCount={followerCount}
-          totalBacking={totalBacking}
-          backerCount={backerCount}
-        />
+        {/* ═══ GEM ANALYSIS — collapsible card ═══ */}
+        <GemAnalysisCard>
 
-        </div>{/* ═══ END PITCH CONTAINER ═══ */}
-
-        {/* ═══ BUDGET + REVENUE + PROJECTED RETURNS ═══ */}
-        <BudgetEditor
-          initial={budgetPlan}
-          gemEstimate={gemEstimate}
-          submissionId={submission.id}
-        />
-        <RevenuePlanEditor
-          initial={revenuePlan}
-          submissionId={submission.id}
-        />
-        <ProjectedReturns
-          budgetTotal={budgetPlan?.total ?? 0}
-          revenueTotal={revenuePlan?.total ?? 0}
-        />
-
-          </div>{/* ── END PROJECT TAB ── */}
-
-          {/* ── ANALYSIS TAB ── */}
-          <div className="space-y-8">
-
-        {/* ═══ GEM ANALYSIS CONTAINER ═══ */}
-        <div className="relative rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: '#FAF8FF', border: '1px solid rgba(107,70,193,0.10)' }}>
+        {/* ═══ GEM ANALYSIS CONTENT ═══ */}
+        <div className="relative space-y-8">
         {!viewerHasFullAccess && (
           <div className="absolute inset-0 z-20 rounded-2xl flex items-center justify-center" style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(250,248,255,0.6)' }}>
             <p className="text-[20px] sm:text-[24px] font-bold text-center m-0 px-6" style={{ color: '#6B46C1' }}>
@@ -1126,37 +1138,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* GEM Analysis header + score */}
-        <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(107,70,193,0.10)' }}>
-          {/* GEM diamond icon */}
-          <div className="flex justify-center mb-4">
-            <span
-              aria-hidden="true"
-              className="inline-flex items-center justify-center shrink-0 rotate-45"
-              style={{ width: 36, height: 36 }}
-            >
-              <span className="absolute rotate-0" style={{
-                width: 36, height: 36,
-                background: 'rgba(167, 139, 250, 0.15)',
-                borderRadius: 2.5,
-              }} />
-              <span className="absolute rotate-0" style={{
-                width: 27, height: 27,
-                background: 'rgba(139, 92, 246, 0.35)',
-                borderRadius: 2,
-              }} />
-              <span className="absolute rotate-0" style={{
-                width: 19, height: 19,
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                borderRadius: 1.5,
-              }} />
-            </span>
-          </div>
-          <h2 className="text-[24px] sm:text-[28px] font-bold m-0 tracking-tight" style={{ color: '#1C1917' }}>
-            GEM Evaluation
-          </h2>
-          {typeof commercialScore === 'number' && (
-            <div className="mt-3 flex items-baseline justify-center gap-2">
+        {/* Score display */}
+        {typeof commercialScore === 'number' && (
+          <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(107,70,193,0.10)' }}>
+            <div className="flex items-baseline justify-center gap-2">
               <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: '#78716C' }}>
                 Overall Score
               </span>
@@ -1167,8 +1152,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 / 100
               </span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* ═══ STRENGTHS + WEAKNESSES — two columns ═══ */}
         {(allStrengths.length > 0 || (issues?.items ?? []).length > 0 || craftNote) && (
@@ -1432,10 +1417,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </SectionGate>
         )}
 
-        </div>{/* ═══ END GEM ANALYSIS CONTAINER ═══ */}
+        </div>{/* ═══ END GEM ANALYSIS CONTENT ═══ */}
 
-          </div>{/* ── END ANALYSIS TAB ── */}
-        </ReportTabs>
+        </GemAnalysisCard>
+        </>
         ) : (
         /* ═══ VISITOR VIEW — flat layout, no tabs ═══ */
         <>
