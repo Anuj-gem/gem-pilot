@@ -15,7 +15,7 @@
 // The save/cancel bar lives in StickySaveBar (fixed bottom). This
 // component just toggles its fields between display and edit mode.
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { Eye, EyeOff, ChevronDown, X } from 'lucide-react'
@@ -438,73 +438,89 @@ export function EditableTopCard({
         </div>
       ) : (
         hasCategories && (
-          <div className="mb-4">
-            {/* All pills in one aligned row: format → genres → tone → tags */}
-            <div className="flex flex-wrap items-center gap-2">
-              {/* Format pill — purple */}
-              {classificationPills
-                .filter(p => p.variant === 'format')
-                .map((pill, i) => (
-                  <span
-                    key={`fmt-${i}`}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-bold"
-                    style={{
-                      background: 'rgba(124,77,237,0.22)',
-                      color: '#7C3AED',
-                      border: '1px solid rgba(124,77,237,0.35)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                    }}
-                  >
-                    {pill.label}
-                  </span>
-                ))}
-              {/* Genre pills — bluish */}
-              {classificationPills
-                .filter(p => p.variant === 'genre' || p.variant === 'secondary')
-                .map((pill, i) => (
-                  <span
-                    key={`genre-${i}`}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-[12.5px] font-bold"
-                    style={{
-                      background: 'rgba(59,130,246,0.12)',
-                      color: '#2563EB',
-                      border: '1px solid rgba(59,130,246,0.25)',
-                    }}
-                  >
-                    {pill.label}
-                  </span>
-                ))}
-              {/* Tone pill — bold black */}
-              {displayTone?.trim() && (
-                <span
-                  className="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-bold"
-                  style={{
-                    background: 'rgba(0,0,0,0.06)',
-                    color: '#1C1917',
-                    border: '1px solid rgba(0,0,0,0.10)',
-                  }}
-                >
-                  {displayTone}
-                </span>
-              )}
-              {/* Tags — bold black */}
-              {displayTags.map((tag, i) => (
-                <span
-                  key={`${tag}-${i}`}
-                  className="px-2 py-0.5 rounded-full text-[11px] font-bold"
-                  style={{
-                    color: '#1C1917',
-                    background: 'rgba(0,0,0,0.06)',
-                    border: '1px solid rgba(0,0,0,0.10)',
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+          <CollapsibleTags
+            classificationPills={classificationPills}
+            tone={displayTone ?? null}
+            tags={displayTags}
+          />
         )
+      )}
+    </div>
+  )
+}
+
+// ── CollapsibleTags — display-mode tags with "+N more" collapse ─────
+function CollapsibleTags({
+  classificationPills,
+  tone,
+  tags,
+}: {
+  classificationPills: { label: string; variant: 'format' | 'genre' | 'secondary' }[]
+  tone: string | null
+  tags: string[]
+}) {
+  const [expanded, setExpanded] = useState(false)
+
+  const VISIBLE_TAG_LIMIT = 5
+  const visibleTags = expanded ? tags : tags.slice(0, VISIBLE_TAG_LIMIT)
+  const hiddenCount = tags.length - VISIBLE_TAG_LIMIT
+
+  const pillStyle = (variant: 'format' | 'genre' | 'secondary') => {
+    if (variant === 'format') return { background: '#F3E8FF', color: '#7C3AED', border: '1px solid #DDD6FE' }
+    return { background: '#EDE9FE', color: '#6D28D9', border: '1px solid #DDD6FE' }
+  }
+
+  return (
+    <div className="flex flex-wrap items-center gap-1.5 mt-3">
+      {classificationPills.map((p, i) => (
+        <span
+          key={`cls-${i}`}
+          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold"
+          style={pillStyle(p.variant)}
+        >
+          {p.label}
+        </span>
+      ))}
+
+      {tone && (
+        <span
+          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold"
+          style={{ background: '#F5F5F4', color: '#57534E', border: '1px solid #E7E5E4' }}
+        >
+          {tone}
+        </span>
+      )}
+
+      {visibleTags.map((t, i) => (
+        <span
+          key={`tag-${i}`}
+          className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px]"
+          style={{ background: '#F5F5F4', color: '#78716C', border: '1px solid #E7E5E4' }}
+        >
+          {t}
+        </span>
+      ))}
+
+      {!expanded && hiddenCount > 0 && (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border-0 cursor-pointer"
+          style={{ background: '#F5F5F4', color: '#7C3AED' }}
+        >
+          +{hiddenCount} more
+        </button>
+      )}
+
+      {expanded && tags.length > VISIBLE_TAG_LIMIT && (
+        <button
+          type="button"
+          onClick={() => setExpanded(false)}
+          className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border-0 cursor-pointer"
+          style={{ background: '#F5F5F4', color: '#7C3AED' }}
+        >
+          show less
+        </button>
       )}
     </div>
   )

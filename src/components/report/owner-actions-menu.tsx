@@ -9,11 +9,12 @@
 // link to /submit. Remove fires a confirm sheet, then PATCHes the hide
 // endpoint and bounces to the dashboard.
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
   Pencil,
   Download,
+  MoreHorizontal,
 } from 'lucide-react'
 import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
 import { useEditContextOptional } from './edit-context'
@@ -106,60 +107,82 @@ export function OwnerActionsMenu({
     window.dispatchEvent(new CustomEvent('gem:open-download-pdf'))
   }
 
-  const baseBtnClass =
-    'inline-flex items-center justify-center gap-1.5 h-8 rounded-full border transition-colors text-[12px] font-medium px-3'
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  // Close on outside click
+  useEffect(() => {
+    if (!menuOpen) return
+    function handleClick(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [menuOpen])
 
   return (
-    <div ref={wrapRef} className="relative inline-flex items-center gap-2">
-      {/* Edit */}
-      {editHref ? (
-        <Link
-          href={editHref}
-          className={`${baseBtnClass} border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
-          style={{ color: '#7C3AED' }}
-          title="Edit title, headline, tags"
-        >
-          <span className="text-[14px]" aria-hidden>&#9998;</span>
-          <span className="hidden sm:inline">Edit</span>
-        </Link>
-      ) : (
-        <button
-          type="button"
-          onClick={triggerEdit}
-          className={`${baseBtnClass} border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/15`}
-          style={{ color: '#7C3AED' }}
-          title="Edit title, headline, tags"
-        >
-          <span className="text-[14px]" aria-hidden>&#9998;</span>
-          <span className="hidden sm:inline">Edit</span>
-        </button>
-      )}
+    <div ref={wrapRef} className="relative inline-flex items-center">
+      <button
+        type="button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors hover:bg-[rgba(0,0,0,0.06)]"
+        style={{ color: '#78716C' }}
+        title="More actions"
+      >
+        <MoreHorizontal size={18} />
+      </button>
 
-      {/* Download */}
-      {downloadHref ? (
-        <Link
-          href={downloadHref}
-          className={`${baseBtnClass} border-[rgba(0,0,0,0.15)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
-          style={{ color: '#57534E' }}
-          title="Download PDF"
+      {menuOpen && (
+        <div
+          className="absolute right-0 top-full mt-1 w-44 rounded-xl shadow-lg py-1 z-50"
+          style={{ background: 'white', border: '1px solid rgba(0,0,0,0.08)' }}
         >
-          <Download size={14} />
-          <span className="hidden sm:inline">Download</span>
-        </Link>
-      ) : (
-        <button
-          type="button"
-          onClick={triggerDownload}
-          className={`${baseBtnClass} border-[rgba(0,0,0,0.15)] hover:border-[var(--gem-gold)] hover:text-[var(--gem-gold)]`}
-          style={{ color: '#57534E' }}
-          title="Download PDF"
-        >
-          <Download size={14} />
-          <span className="hidden sm:inline">Download</span>
-        </button>
-      )}
+          {editHref ? (
+            <Link
+              href={editHref}
+              className="flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] no-underline"
+              style={{ color: '#1C1917' }}
+              onClick={() => setMenuOpen(false)}
+            >
+              <Pencil size={14} style={{ color: '#7C3AED' }} />
+              Edit
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={() => { triggerEdit(); setMenuOpen(false) }}
+              className="w-full flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] border-0 bg-transparent text-left cursor-pointer"
+              style={{ color: '#1C1917' }}
+            >
+              <Pencil size={14} style={{ color: '#7C3AED' }} />
+              Edit
+            </button>
+          )}
 
-      {/* Delete moved to DangerZoneDelete at page bottom */}
+          {downloadHref ? (
+            <Link
+              href={downloadHref}
+              className="flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] no-underline"
+              style={{ color: '#1C1917' }}
+              onClick={() => setMenuOpen(false)}
+            >
+              <Download size={14} style={{ color: '#78716C' }} />
+              Download PDF
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={() => { triggerDownload(); setMenuOpen(false) }}
+              className="w-full flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] border-0 bg-transparent text-left cursor-pointer"
+              style={{ color: '#1C1917' }}
+            >
+              <Download size={14} style={{ color: '#78716C' }} />
+              Download PDF
+            </button>
+          )}
+        </div>
+      )}
 
       {activity !== undefined && (
         <IndustryActivitySheet

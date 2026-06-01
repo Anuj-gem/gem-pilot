@@ -58,6 +58,7 @@ import { EditWrapper } from '@/components/report/edit-wrapper'
 import { InlineCastField } from '@/components/report/inline-cast-editor'
 import { InlineElevatorPitch } from '@/components/report/inline-elevator-pitch'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
+import { ShareButtons } from '@/components/report/share-buttons'
 import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
 import HeroMediaCarousel from '@/components/report/hero-media-carousel'
 import { CollaboratorsSection } from '@/components/report/collaborators-section'
@@ -738,9 +739,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ PITCH CONTAINER — top card, elevator pitch, plot summary, media ═══ */}
         <div className="rounded-2xl p-6 sm:p-8 space-y-8" style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}>
 
-        {/* Owner actions — top right */}
+        {/* Owner actions + share — compact top row */}
         {(isOwner || isAdmin) && (
-          <div className="gem-no-print sticky top-4 z-30 flex justify-end -mb-4 -mt-1">
+          <div className="gem-no-print flex items-center justify-end gap-1 -mb-2">
+            <ShareButtons
+              title={submission.title ?? 'Check out my project on GEM'}
+              url={`https://gem-pilot.vercel.app/report/${id}`}
+            />
             <OwnerActionsMenu
               submissionId={submission.id}
               evaluationId={id}
@@ -776,79 +781,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           isProSubscriber={true}
         />
 
-        {/* Inline stats — GEM Score + Heat */}
-        <div className="flex items-center gap-4 flex-wrap">
-          {/* GEM Score */}
-          {typeof commercialScore === 'number' &&
-            (isOwnerOrAdmin || isScoreVisible(privacy)) && (
-            <div
-              className="flex items-center gap-2.5 rounded-lg px-3.5 py-2"
-              style={{
-                background: 'rgba(124,58,237,0.08)',
-                border: '1px solid rgba(124,58,237,0.15)',
-              }}
-              data-pdf-section="gem_score"
-            >
-              {/* GEM diamond icon */}
-              <span
-                aria-hidden="true"
-                className="inline-flex items-center justify-center shrink-0 rotate-45"
-                style={{ width: 22, height: 22 }}
-              >
-                <span className="absolute rotate-0" style={{
-                  width: 22, height: 22,
-                  background: 'rgba(167, 139, 250, 0.15)',
-                  borderRadius: 1.5,
-                }} />
-                <span className="absolute rotate-0" style={{
-                  width: 16.5, height: 16.5,
-                  background: 'rgba(139, 92, 246, 0.35)',
-                  borderRadius: 1.5,
-                }} />
-                <span className="absolute rotate-0" style={{
-                  width: 12, height: 12,
-                  background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-                  borderRadius: 1.5,
-                }} />
-              </span>
-              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#78716C' }}>
-                GEM Score
-              </span>
-              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#1C1917' }}>
-                {Math.round(commercialScore)}
-              </span>
-              <span className="text-[11px] font-medium" style={{ color: '#A8A29E' }}>/100</span>
-            </div>
-          )}
-
-          {/* Backing badges */}
-          {totalBacking > 0 && (
-            <div
-              className="flex items-center gap-2 rounded-lg px-3.5 py-2"
-              style={{ background: '#ecfdf5', border: '1px solid #6ee7b7' }}
-            >
-              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#15803d' }}>
-                {totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`}
-              </span>
-              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#15803d' }}>
-                backed
-              </span>
-            </div>
-          )}
-          {totalFollowing > 0 && (
-            <div
-              className="flex items-center gap-2 rounded-lg px-3.5 py-2"
-              style={{ background: '#fffbeb', border: '1px solid #fcd34d' }}
-            >
-              <span className="text-[22px] font-bold tabular-nums leading-none" style={{ color: '#92400e' }}>
-                {totalFollowing >= 1000 ? `$${Math.round(totalFollowing / 1000)}K` : `$${totalFollowing}`}
-              </span>
-              <span className="text-[11px] uppercase tracking-[0.14em] font-bold" style={{ color: '#92400e' }}>
-                following
-              </span>
-            </div>
-          )}
-        </div>
+        {/* GEM Score + backing badges removed from hero — score lives in GEM Analysis card,
+            backing badges live in the Investment needs card */}
 
         {/* Media carousel */}
         <div className="flex justify-center [&:has(>:empty)]:hidden [&:empty]:hidden">
