@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Users, ExternalLink } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 
 interface Follower {
   id: string
@@ -80,7 +80,7 @@ export function FollowersSection({ submissionId, totalFollowing, followerCount, 
           {totalFollowing > 0 && (
             <span
               className="text-[13px] font-bold px-2.5 py-1 rounded-lg"
-              style={{ background: 'rgba(124,58,237,0.06)', color: '#7C3AED', border: '1px solid rgba(124,58,237,0.2)' }}
+              style={{ background: '#fffbeb', color: '#92400e', border: '1px solid #fcd34d' }}
             >
               {totalFollowing >= 1000 ? `$${Math.round(totalFollowing / 1000)}K` : `$${totalFollowing}`} following
             </span>
@@ -105,10 +105,11 @@ export function FollowersSection({ submissionId, totalFollowing, followerCount, 
 }
 
 function FollowerRow({ follower }: { follower: Follower }) {
-  const name = follower.partner?.name || 'Investor'
-  const avatar = follower.partner?.avatar_url
   const isAttached = follower.type === 'attached'
   const amount = follower.amount
+  const fmtAmount = amount != null && amount > 0
+    ? (amount >= 1000 ? `$${Math.round(amount / 1000)}K` : `$${amount.toLocaleString()}`)
+    : null
 
   return (
     <div
@@ -118,58 +119,52 @@ function FollowerRow({ follower }: { follower: Follower }) {
         border: '1px solid rgba(0,0,0,0.06)',
       }}
     >
-      {/* Avatar */}
-      {avatar ? (
-        <img src={avatar} alt="" className="w-9 h-9 rounded-full object-cover flex-shrink-0" />
-      ) : (
-        <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-[14px] font-bold flex-shrink-0"
-          style={{ background: 'rgba(124,58,237,0.12)', color: '#7C3AED' }}
-        >
-          {name.charAt(0).toUpperCase()}
-        </div>
-      )}
+      {/* Anonymous avatar */}
+      <div
+        className="w-9 h-9 rounded-full flex items-center justify-center text-[16px] flex-shrink-0"
+        style={{ background: isAttached ? '#ecfdf5' : '#fffbeb' }}
+      >
+        💰
+      </div>
 
-      {/* Info */}
+      {/* Amount is the headline */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <span className="text-[14px] font-semibold" style={{ color: '#1C1917' }}>{name}</span>
+          {fmtAmount && (
+            <span
+              className="text-[18px] font-bold"
+              style={{ color: isAttached ? '#15803d' : '#92400e' }}
+            >
+              {fmtAmount}
+            </span>
+          )}
           <span
             className="text-[11px] font-semibold px-2 py-0.5 rounded"
             style={{
-              background: isAttached ? '#ecfdf5' : 'rgba(124,58,237,0.06)',
-              color: isAttached ? '#15803d' : '#7C3AED',
-              border: isAttached ? '1px solid #6ee7b7' : '1px solid rgba(124,58,237,0.2)',
+              background: isAttached ? '#ecfdf5' : '#fffbeb',
+              color: isAttached ? '#15803d' : '#92400e',
+              border: isAttached ? '1px solid #6ee7b7' : '1px solid #fcd34d',
             }}
           >
-            {isAttached ? 'Backer' : 'Following'}
+            {isAttached ? 'Backed' : 'Following'}
           </span>
         </div>
-        {follower.partner?.headline && (
-          <p className="text-[12px] m-0 mt-0.5" style={{ color: '#78716C' }}>
-            {follower.partner.headline}
-          </p>
-        )}
+        <p className="text-[12px] m-0 mt-0.5" style={{ color: '#78716C' }}>
+          Investor
+        </p>
       </div>
 
-      {/* Amount + link */}
-      <div className="flex items-center gap-2 shrink-0">
-        {amount != null && amount > 0 && (
-          <span className="text-[13px] font-bold" style={{ color: isAttached ? '#15803d' : '#7C3AED' }}>
-            {amount >= 1000 ? `$${Math.round(amount / 1000)}K` : `$${amount}`}
-          </span>
-        )}
-        {follower.opportunity && (
-          <a
-            href={`/opportunities/${follower.opportunity.id}`}
-            className="text-[12px] no-underline flex items-center gap-1"
-            style={{ color: '#7C3AED' }}
-            title={follower.opportunity.title}
-          >
-            <ExternalLink size={12} />
-          </a>
-        )}
-      </div>
+      {/* Link to opportunity */}
+      {follower.opportunity && (
+        <a
+          href={`/opportunities/${follower.opportunity.id}`}
+          className="text-[12px] no-underline flex items-center gap-1 shrink-0"
+          style={{ color: '#7C3AED' }}
+          title={follower.opportunity.title}
+        >
+          <ExternalLink size={14} />
+        </a>
+      )}
     </div>
   )
 }
