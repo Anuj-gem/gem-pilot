@@ -96,7 +96,7 @@ export default async function PartnerPage() {
   // Fetch ALL opportunities owned by this partner (active + closed)
   const { data: opps } = await service
     .from('opportunities')
-    .select('id, title, subtitle, description, status, formats, genres, budget_tiers, tags, min_score, deadline, created_at')
+    .select('id, title, subtitle, description, status, formats, genres, budget_tiers, tags, min_score, deadline, created_at, investment_range, investment_thesis, investment_requirements')
     .eq('owner_id', user.id)
     .order('created_at', { ascending: false })
 

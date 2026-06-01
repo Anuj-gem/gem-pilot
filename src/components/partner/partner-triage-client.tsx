@@ -879,6 +879,9 @@ export function PartnerTriageClient({
             genres: activeOpp.genres || [],
             budget_tiers: activeOpp.budget_tiers || [],
             tags: activeOpp.tags || [],
+            investment_range: (activeOpp as any).investment_range || null,
+            investment_thesis: (activeOpp as any).investment_thesis || null,
+            investment_requirements: (activeOpp as any).investment_requirements || [],
           }}
           onClose={() => setShowSettings(false)}
           onSaved={() => { setShowSettings(false); window.location.reload() }}
