@@ -35,6 +35,13 @@ interface TeamMember {
   email?: string
 }
 
+interface CharacterInfo {
+  name: string
+  role_type: string
+  demographics: string
+  hook: string
+}
+
 interface Props {
   submissionId: string
   isOwner: boolean
@@ -47,6 +54,7 @@ interface Props {
   } | null
   category?: 'crew' | 'cast'
   characterNames?: string[]
+  characters?: CharacterInfo[]
   title?: string
   emoji?: string
 }
@@ -61,6 +69,7 @@ export function CrewSection({
   ownerProfile,
   category = 'crew',
   characterNames = [],
+  characters = [],
   title,
   emoji,
 }: Props) {
@@ -311,6 +320,12 @@ export function CrewSection({
     return false
   }
 
+  // Build a lookup map for cast character info by normalized name
+  const characterByName = new Map<string, CharacterInfo>()
+  for (const c of characters) {
+    characterByName.set(c.name.toLowerCase().trim(), c)
+  }
+
   if (loading) return null
 
   const visibleRoles = isOwner
@@ -341,6 +356,7 @@ export function CrewSection({
             isOwner={isOwner}
             currentUserId={currentUserId}
             isMyPending={isMyPendingInvite(role)}
+            characterInfo={category === 'cast' ? characterByName.get(role.role_name.toLowerCase().trim()) : undefined}
             teamMembers={getTeamMembers(role.id)}
             onAssignUser={(userId) => handleAssignUser(role.id, userId)}
             onAssignCollaborator={(collabId) => handleAssignCollaborator(role.id, collabId)}
@@ -417,6 +433,7 @@ function RoleSlot({
   isOwner,
   currentUserId,
   isMyPending,
+  characterInfo,
   teamMembers,
   onAssignUser,
   onAssignCollaborator,
@@ -429,6 +446,7 @@ function RoleSlot({
   isOwner: boolean
   currentUserId: string | null
   isMyPending?: boolean
+  characterInfo?: CharacterInfo
   teamMembers: TeamMember[]
   onAssignUser: (userId: string) => void
   onAssignCollaborator: (collabId: string) => void
@@ -520,30 +538,42 @@ function RoleSlot({
           </div>
         )}
 
-        {/* Role name + person */}
+        {/* Role name + person + character info */}
         <div className="flex-1 min-w-0">
-          <span className="text-[13px] font-semibold" style={{ color: '#7C3AED' }}>
-            {role.role_name}
-          </span>
-          {isFilled && displayName && (
-            <span className="text-[14px] font-medium ml-2" style={{ color: '#1C1917' }}>
-              {displayName}
+          <div className="flex items-center flex-wrap gap-x-2">
+            <span className="text-[13px] font-semibold" style={{ color: '#7C3AED' }}>
+              {role.role_name}
             </span>
-          )}
-          {isPending && isOwner && !isMyPending && (
-            <span className="text-[12px] italic ml-2" style={{ color: '#D97706' }}>
-              invite pending
-            </span>
-          )}
-          {isPending && isMyPending && (
-            <span className="text-[12px] italic ml-2" style={{ color: '#7C3AED' }}>
-              invited you
-            </span>
-          )}
-          {!isFilled && !isPending && (
-            <span className="text-[13px] ml-2" style={{ color: '#A8A29E' }}>
-              Open
-            </span>
+            {isFilled && displayName && (
+              <span className="text-[14px] font-medium" style={{ color: '#1C1917' }}>
+                {displayName}
+              </span>
+            )}
+            {isPending && isOwner && !isMyPending && (
+              <span className="text-[12px] italic" style={{ color: '#D97706' }}>
+                invite pending
+              </span>
+            )}
+            {isPending && isMyPending && (
+              <span className="text-[12px] italic" style={{ color: '#7C3AED' }}>
+                invited you
+              </span>
+            )}
+            {!isFilled && !isPending && (
+              <span className="text-[13px]" style={{ color: '#A8A29E' }}>
+                Open
+              </span>
+            )}
+          </div>
+          {characterInfo && (
+            <>
+              <p className="text-[12px] m-0 mt-1" style={{ color: '#78716C' }}>
+                {characterInfo.role_type} · {characterInfo.demographics}
+              </p>
+              <p className="text-[13px] m-0 mt-1.5 leading-[1.5]" style={{ color: '#44403C' }}>
+                {characterInfo.hook}
+              </p>
+            </>
           )}
         </div>
 

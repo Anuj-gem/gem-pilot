@@ -936,87 +936,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 } : null}
                 category="cast"
                 characterNames={leadCharacters.map(c => c.name)}
+                characters={leadCharacters.map(c => ({
+                  name: c.name,
+                  role_type: c.role_type || '',
+                  demographics: c.demographics || '',
+                  hook: c.hook || '',
+                }))}
               />
-            <SectionGate
-              section="deep_dive_characters"
-              privacy={privacy}
-              isOwnerOrAdmin={isOwnerOrAdmin}
-              submissionId={privacyControlId}
-              isPublic={submission.is_public ?? false}
-              isProSubscriber={true}
-            >
-              {leadCharacters.length > 0 && (
-                <div data-pdf-section="cast">
-                {(() => {
-                const leads = leadCharacters.filter(
-                  (c) => (c.role_type ?? '').toLowerCase() === 'lead'
-                )
-                const supporting = leadCharacters.filter(
-                  (c) => (c.role_type ?? '').toLowerCase() !== 'lead'
-                )
-                const leadGlobalIndices = leads.map((c) => leadCharacters.indexOf(c))
-                const supportGlobalIndices = supporting.map((c) => leadCharacters.indexOf(c))
-                return (
-                  <>
-                    <h2
-                      className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
-                      style={{ color: 'var(--gem-gold)' }}
-                    >
-                      Cast
-                    </h2>
-                    <div className="space-y-3">
-                      {leads.map((c, i) => (
-                        <InlineCastField
-                          key={`lead-${i}`}
-                          index={leadGlobalIndices[i]}
-                          character={c}
-                          blurred={applyPaywallBlur}
-                          fallback={
-                            <Collapsible
-                              title={c.name}
-                              meta={`${c.role_type} · ${c.demographics}`}
-                              titleBlurred={applyPaywallBlur}
-                              defaultOpen
-                            >
-                              <p
-                                className="text-[17px] sm:text-[18px] text-[var(--gem-gray-100)] leading-[1.6] m-0"
-                                style={bodyBlur}
-                              >
-                                {c.hook}
-                              </p>
-                            </Collapsible>
-                          }
-                        />
-                      ))}
-                    </div>
-                    {supporting.length > 0 && (
-                      <div className="mt-6">
-                        <p className="text-[11.5px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
-                          Supporting cast · {supporting.length}
-                        </p>
-                        <div className="space-y-3">
-                          {supporting.map((c, i) => (
-                            <InlineCastField
-                              key={`support-${i}`}
-                              index={supportGlobalIndices[i]}
-                              character={c}
-                              blurred={applyPaywallBlur}
-                              fallback={null}
-                            />
-                          ))}
-                        </div>
-                        <SupportingCharactersCarousel
-                          characters={supporting}
-                          blurred={applyPaywallBlur}
-                        />
-                      </div>
-                    )}
-                  </>
-                )
-              })()}
-                </div>
-              )}
-            </SectionGate>
             </div>
           }
         />
