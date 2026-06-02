@@ -144,11 +144,16 @@ function EditableNum({ value, onChange, isDollar = true, fontSize = '22px' }: {
 export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave }: Props) {
   const isSeries = !!gemPerEpisode
   const gemParsed = parseBudgetStr(isSeries ? gemPerEpisode : gemEstimate)
+  const gemLow = gemParsed?.low || 0
+  const gemHigh = gemParsed?.high || 0
 
-  const [low, setLow] = useState(initial?.budget_low || gemParsed?.low || 0)
-  const [high, setHigh] = useState(initial?.budget_high || gemParsed?.high || initial?.total || 0)
+  const [low, setLow] = useState(initial?.budget_low || gemLow)
+  const [high, setHigh] = useState(initial?.budget_high || gemHigh || initial?.total || 0)
   const [eps, setEps] = useState(initial?.episodes || 1)
   const [saving, setSaving] = useState(false)
+
+  // Whether user has changed anything from GEM defaults
+  const isCustom = low !== gemLow || high !== gemHigh || eps !== 1
 
   const totalLow = isSeries ? low * eps : low
   const totalHigh = isSeries ? high * eps : high
@@ -169,45 +174,71 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
     }
   }, [submissionId, onSave, isSeries])
 
+  function handleRevert() {
+    setLow(gemLow)
+    setHigh(gemHigh)
+    setEps(1)
+    save(gemLow, gemHigh, 1)
+  }
+
+  // Total display string
+  const totalDisplay = totalLow > 0 && totalHigh > 0 && totalLow !== totalHigh
+    ? `${fmtShort(totalLow)}–${fmtShort(totalHigh)}`
+    : fmtShort(totalHigh || totalLow)
+
   return (
     <div>
-      {/* Per-episode cost (or total for features) */}
-      <div className="flex items-baseline gap-2 flex-wrap">
-        <EditableNum value={low} onChange={n => { setLow(n); save(n, high, eps) }} />
-        <span className="text-[16px]" style={{ color: '#A8A29E' }}>–</span>
-        <EditableNum value={high} onChange={n => { setHigh(n); save(low, n, eps) }} />
-        {isSeries && (
-          <span className="text-[14px]" style={{ color: '#78716C' }}>per episode</span>
+      <div className="flex items-start justify-between gap-4">
+        {/* Left — editable fields */}
+        <div>
+          {/* Cost line */}
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <EditableNum value={low} onChange={n => { setLow(n); save(n, high, eps) }} />
+            <span className="text-[16px]" style={{ color: '#A8A29E' }}>–</span>
+            <EditableNum value={high} onChange={n => { setHigh(n); save(low, n, eps) }} />
+            {isSeries && (
+              <span className="text-[14px]" style={{ color: '#78716C' }}>per episode</span>
+            )}
+          </div>
+
+          {/* Episodes — series only */}
+          {isSeries && (
+            <div className="flex items-baseline gap-1.5 mt-2">
+              <span className="text-[14px]" style={{ color: '#78716C' }}>×</span>
+              <EditableNum
+                value={eps}
+                onChange={n => { const e = Math.max(1, n); setEps(e); save(low, high, e) }}
+                isDollar={false}
+                fontSize="17px"
+              />
+              <span className="text-[14px]" style={{ color: '#78716C' }}>
+                episode{eps !== 1 ? 's' : ''}
+              </span>
+            </div>
+          )}
+
+          {/* Revert */}
+          {isCustom && (
+            <button
+              onClick={handleRevert}
+              className="text-[12px] underline border-0 bg-transparent cursor-pointer p-0 mt-2"
+              style={{ color: '#78716C' }}
+            >
+              Revert
+            </button>
+          )}
+        </div>
+
+        {/* Right — total (always visible, no layout shift) */}
+        {(totalHigh > 0 || totalLow > 0) && (
+          <div className="text-right shrink-0 pt-1">
+            <div className="text-[20px] font-bold" style={{ color: '#534AB7' }}>
+              {totalDisplay}
+            </div>
+            <div className="text-[12px]" style={{ color: '#78716C' }}>total</div>
+          </div>
         )}
       </div>
-
-      {/* Episode multiplier — series only */}
-      {isSeries && (
-        <div className="flex items-baseline gap-1.5 mt-2">
-          <span className="text-[14px]" style={{ color: '#78716C' }}>×</span>
-          <EditableNum
-            value={eps}
-            onChange={n => { const e = Math.max(1, n); setEps(e); save(low, high, e) }}
-            isDollar={false}
-            fontSize="17px"
-          />
-          <span className="text-[14px]" style={{ color: '#78716C' }}>
-            episode{eps !== 1 ? 's' : ''}
-          </span>
-        </div>
-      )}
-
-      {/* Season total — only when multiplying */}
-      {isSeries && eps > 1 && (totalLow > 0 || totalHigh > 0) && (
-        <div className="mt-2 pt-2" style={{ borderTop: '1px dashed #e7e5e4' }}>
-          <span className="text-[17px] font-semibold" style={{ color: '#534AB7' }}>
-            {totalLow > 0 && totalHigh > 0 && totalLow !== totalHigh
-              ? `${fmtShort(totalLow)} – ${fmtShort(totalHigh)}`
-              : fmtShort(totalHigh || totalLow)}
-          </span>
-          <span className="text-[13px] ml-1.5" style={{ color: '#78716C' }}>total</span>
-        </div>
-      )}
 
       {/* GEM note */}
       {gemNote && (

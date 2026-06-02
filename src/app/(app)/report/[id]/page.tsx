@@ -984,8 +984,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CollapsibleRow
                 emoji="📊"
                 title="Budget"
-                subtitle={budgetPlan?.total ? 'Your budget' : (packaging?.budget_tier?.per_episode || packaging?.budget_tier?.range) ? `GEM estimate: ${(packaging.budget_tier.per_episode || packaging.budget_tier.range || '').replace(/total negative cost/i, '').trim()}` : 'Set your project budget'}
-                value={budgetPlan?.total ? fmtShort(budgetPlan.total) : '$0'}
+                subtitle="Plan your project budget"
+                value=""
               >
                 <BudgetEditor
                   initial={budgetPlan}
