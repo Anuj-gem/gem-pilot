@@ -687,6 +687,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           -webkit-backdrop-filter: blur(8px);
           box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
         }
+        /* Hide the nav bottom border on report pages — it creates a
+           visible seam between the white nav and the dark gradient. */
+        nav { border-bottom: none !important; }
       `}</style>
 
       <div
