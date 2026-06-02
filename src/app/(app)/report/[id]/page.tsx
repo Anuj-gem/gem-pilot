@@ -859,28 +859,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scoreShownToIndustry={isScoreVisible(privacy)}
               isProSubscriber={true}
             />
-            {/* Compact stat row */}
-            <div className="flex items-center gap-3 mt-3 flex-wrap">
-              {submission.declared_format && (
-                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
-                  {submission.declared_format}
+            {/* Classification pills + following */}
+            <div className="flex items-center gap-2 mt-3 flex-wrap">
+              {report.classification?.format && (
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium" style={{ background: 'rgba(124,58,237,0.9)', color: '#fff' }}>
+                  {report.classification.format}
                 </span>
               )}
-              {typeof commercialScore === 'number' && (
-                <span className="text-[12px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'rgba(124,58,237,0.5)', color: '#fff' }}>
-                  Score {Math.round(commercialScore)}
+              {report.classification?.genre_primary && (
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  {report.classification.genre_primary}
                 </span>
               )}
-              {((submission as any).heat_score ?? 0) > 0 && (
-                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
-                  🔥 {(submission as any).heat_score}
+              {(report.classification?.genre_secondary ?? []).map((g: string, i: number) => (
+                <span key={`gs-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  {g}
                 </span>
-              )}
-              {totalBacking > 0 && (
-                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
-                  {totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`} backed
-                </span>
-              )}
+              ))}
               {followerCount > 0 && (
                 <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
                   {followerCount} following

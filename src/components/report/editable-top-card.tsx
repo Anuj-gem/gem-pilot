@@ -184,31 +184,10 @@ export function EditableTopCard({
   const wordCount = editCtx ? loglineWordCount(editCtx.logline) : 0
   const overCap = wordCount > LOGLINE_WORD_CAP
 
-  // Hero overlay mode — render genre pills + title + author on dark bg
+  // Hero overlay mode — title + logline + author on dark bg (genre pills moved to stat row)
   if (heroOverlay && !isEditing) {
     return (
       <div ref={cardRef}>
-        {classificationPills.length > 0 && (
-          <div className="flex gap-1.5 flex-wrap mb-2.5">
-            {classificationPills.map((p, i) => (
-              <span
-                key={`cls-${i}`}
-                className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium"
-                style={
-                  p.variant === 'format'
-                    ? { background: 'rgba(124,58,237,0.9)', color: '#fff' }
-                    : {
-                        background: 'rgba(255,255,255,0.15)',
-                        color: 'rgba(255,255,255,0.9)',
-                        border: '1px solid rgba(255,255,255,0.2)',
-                      }
-                }
-              >
-                {p.label}
-              </span>
-            ))}
-          </div>
-        )}
         <h1 className="text-[34px] sm:text-[40px] font-semibold text-white tracking-tight leading-[1.08] m-0 mb-2">
           {displayTitle}
         </h1>
