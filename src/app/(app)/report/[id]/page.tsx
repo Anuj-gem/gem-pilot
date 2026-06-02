@@ -65,6 +65,8 @@ import { CollaboratorsSection } from '@/components/report/collaborators-section'
 import { CrewSection } from '@/components/report/crew-section'
 import { FollowersSection } from '@/components/report/followers-section'
 import { BackersList } from '@/components/report/backers-list'
+import { FundingOpportunities } from '@/components/report/funding-opportunities'
+import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
@@ -483,6 +485,57 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const budgetPlan: BudgetPlan | null = (submission as any).budget_plan ?? null
   const revenuePlan: RevenuePlan | null = (submission as any).revenue_plan ?? null
   const gemEstimate: string | null = packaging?.budget_tier?.range ?? null
+
+  // ── Matching opportunities + consideration results for Investment section ──
+  const matchData = extractMatchData(report as unknown as Record<string, unknown>)
+  if (!matchData.format && submission.declared_format) matchData.format = submission.declared_format
+
+  const { data: openOpps } = await serviceClient
+    .from('opportunities')
+    .select('id, title, slug, subtitle, funding_amount, deadline, formats, genres, budget_tiers, tags, min_score')
+    .eq('status', 'active')
+
+  const matchingOpps = (openOpps || []).filter(o =>
+    scriptMatchesOpportunity(matchData, o)
+  ).map(o => ({
+    id: o.id,
+    title: o.title,
+    slug: o.slug,
+    subtitle: o.subtitle,
+    funding_amount: Number(o.funding_amount) || 0,
+    deadline: o.deadline,
+  }))
+
+  // Get consideration results for this script's submission
+  let considerationResults: { opportunity_id: string; backing_status: string | null; backing_amount: number | null; review_stage: string | null; outcome: string | null; feedback: string | null; feedback_tags: string[] | null }[] = []
+  {
+    const { data: csLinks } = await serviceClient
+      .from('consideration_scripts')
+      .select('consideration_id')
+      .eq('script_submission_id', submission.id)
+    if (csLinks && csLinks.length > 0) {
+      const conIds = csLinks.map(l => l.consideration_id)
+      const { data: cons } = await serviceClient
+        .from('considerations')
+        .select('id, opportunity_id, backing_status, backing_amount, review_stage, feedback, feedback_tags')
+        .in('id', conIds)
+      if (cons) {
+        // Map review_stage to outcome for display
+        considerationResults = cons.map(c => ({
+          opportunity_id: c.opportunity_id,
+          backing_status: c.backing_status,
+          backing_amount: c.backing_amount,
+          review_stage: c.review_stage,
+          outcome: c.backing_status === 'attached' ? 'back'
+            : c.backing_status === 'following' ? 'follow'
+            : c.review_stage === 'complete' && !c.backing_status ? 'pass'
+            : null,
+          feedback: c.feedback,
+          feedback_tags: c.feedback_tags,
+        }))
+      }
+    }
+  }
 
   let commercialScore: number | null = null
   try {
@@ -908,6 +961,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
           investmentChildren={
             <div className="space-y-6">
+              <BudgetEditor
+                initial={budgetPlan}
+                gemEstimate={gemEstimate}
+                submissionId={submission.id}
+              />
               <BackersList
                 submissionId={submission.id}
                 budgetTotal={budgetPlan?.total ?? 0}
@@ -915,10 +973,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 currentUserId={user?.id ?? null}
                 ownerName={ownerProfile?.full_name ?? null}
               />
-              <BudgetEditor
-                initial={budgetPlan}
-                gemEstimate={gemEstimate}
+              <FundingOpportunities
+                matchingOpps={matchingOpps}
+                considerationResults={considerationResults}
                 submissionId={submission.id}
+                isOwner={isOwner || isAdmin}
               />
               <RevenuePlanEditor
                 initial={revenuePlan}

@@ -70,7 +70,9 @@ export function BackersList({ submissionId, budgetTotal, isOwner, currentUserId,
     }
   }
 
-  const allBackers = [...directBackers, ...opportunityBackers]
+  // Only show confirmed/attached backers — not "considering" from opportunity flow
+  const confirmedOppBackers = opportunityBackers.filter(b => b.status === 'confirmed')
+  const allBackers = [...directBackers, ...confirmedOppBackers]
   const totalBacked = allBackers.reduce((s, b) => s + (b.amount || 0), 0)
   const pct = budgetTotal > 0 ? Math.min(100, Math.round((totalBacked / budgetTotal) * 100)) : 0
   const selfBacker = directBackers.find(b => b.user_id === currentUserId)
