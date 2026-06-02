@@ -817,21 +817,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         )}
 
-        {/* ═══ LOGLINE + ELEVATOR PITCH + PLOT SUMMARY ═══ */}
+        {/* ═══ PITCH + PLOT SUMMARY ═══ */}
         <div className="px-6 sm:px-8 py-6 space-y-5">
-          {/* Logline */}
-          {topCard.logline && (
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
-                Logline
-              </p>
-              <p className="text-[20px] sm:text-[22px] leading-[1.45] font-semibold m-0" style={{ color: '#1C1917' }}>
-                {topCard.logline}
-              </p>
-            </div>
-          )}
-
-          {/* Elevator pitch */}
+          {/* Why This Can Be a Hit */}
           <SectionGate
             section="whats_working"
             privacy={privacy}
@@ -843,7 +831,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             {whatsSpecial.headline && (
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
-                  Elevator Pitch
+                  Why This Can Be a Hit
                 </p>
                 <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: '#44403C' }}>
                   {whatsSpecial.headline}
@@ -852,16 +840,21 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             )}
           </SectionGate>
 
-          {/* PLOT SUMMARY */}
+          {/* PLOT SUMMARY — collapsed by default */}
           {plotSummary && (
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
-                Plot Summary
-              </p>
-              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0" style={{ color: '#57534E' }}>
+            <details>
+              <summary className="text-[11px] font-semibold uppercase tracking-[0.12em] cursor-pointer select-none list-none" style={{ color: '#78716C' }}>
+                <span className="flex items-center gap-1.5">
+                  Plot Summary
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="inline-block transition-transform [[open]>&]:rotate-180">
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="#78716C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </summary>
+              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2" style={{ color: '#57534E' }}>
                 {plotSummary}
               </p>
-            </div>
+            </details>
           )}
         </div>
 

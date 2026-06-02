@@ -212,6 +212,11 @@ export function EditableTopCard({
         <h1 className="text-[34px] sm:text-[40px] font-semibold text-white tracking-tight leading-[1.08] m-0 mb-2">
           {displayTitle}
         </h1>
+        {displayLogline && (
+          <p className="text-[15px] sm:text-[16px] leading-[1.5] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            {displayLogline}
+          </p>
+        )}
         <div className="flex items-center gap-2">
           {authorAvatar ? (
             // eslint-disable-next-line @next/next/no-img-element
