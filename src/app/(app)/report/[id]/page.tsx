@@ -964,19 +964,24 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
         <div className="gem-floating-card">
         <ProjectNeedsCards
-          investmentSummary={(() => {
-            const parts: string[] = []
-            if (totalBacking > 0) parts.push(`${fmtShort(totalBacking)} funded`)
-            if (matchingOpps.length > 0) parts.push(`${matchingOpps.length} opportunit${matchingOpps.length !== 1 ? 'ies' : 'y'}`)
-            if (revenuePlan?.total) parts.push(`${fmtShort(revenuePlan.total)} revenue`)
-            if (parts.length === 0 && investmentProjectCost) return `${investmentProjectCost} budget`
-            return parts.join(' · ') || null
+          investmentSummary={null}
+          investmentMetrics={(() => {
+            const pendingFromOpps = considerationResults
+              .filter(r => !r.outcome || r.outcome === '' || r.outcome === 'follow')
+              .reduce((s, r) => {
+                const opp = matchingOpps.find(o => o.id === r.opportunity_id)
+                return s + (opp?.funding_amount || 0)
+              }, 0)
+            return {
+              projectCost: investmentProjectCost,
+              secured: totalBacking > 0 ? fmtShort(totalBacking) : null,
+              considering: pendingFromOpps > 0 ? fmtShort(pendingFromOpps) : null,
+            }
           })()}
-          investmentMetrics={null}
-          crewSummary={null}
+          crewSummary="Open roles"
           castSummary={
             leadCharacters.length > 0
-              ? `${leadCharacters.length} role${leadCharacters.length !== 1 ? 's' : ''}`
+              ? `${leadCharacters.length} open`
               : null
           }
           investmentChildren={
@@ -985,7 +990,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 emoji="📊"
                 title="Budget"
                 subtitle="Plan your project budget"
-                value=""
+                value={investmentProjectCost || ''}
               >
                 <BudgetEditor
                   initial={budgetPlan}

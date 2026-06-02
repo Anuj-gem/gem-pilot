@@ -32,18 +32,20 @@ export function ProjectNeedsCards({
     cast: castChildren,
   }
 
-  // Build summary lines
+  // Build summary lines — show multiple stats so user sees preview without opening
   const investmentLine = (() => {
     if (investmentMetrics) {
-      if (investmentMetrics.secured) return `${investmentMetrics.secured} secured`
-      if (investmentMetrics.projectCost) return `${investmentMetrics.projectCost} budget`
-      if (investmentMetrics.considering) return `${investmentMetrics.considering} considering`
+      const parts: string[] = []
+      if (investmentMetrics.projectCost) parts.push(`Budget ${investmentMetrics.projectCost}`)
+      if (investmentMetrics.secured) parts.push(`${investmentMetrics.secured} secured`)
+      if (investmentMetrics.considering) parts.push(`${investmentMetrics.considering} pending`)
+      if (parts.length > 0) return parts.join(' · ')
     }
     return investmentSummary || null
   })()
 
   const tabs: { key: CardKey; emoji: string; title: string; summary: string | null; highlightColor?: string }[] = [
-    { key: 'investment', emoji: '💰', title: 'Funding', summary: investmentLine },
+    { key: 'investment', emoji: '💰', title: 'Finances', summary: investmentLine },
     { key: 'crew', emoji: '🎬', title: 'Crew', summary: crewSummary },
     { key: 'cast', emoji: '🎭', title: 'Cast', summary: castSummary },
   ]
