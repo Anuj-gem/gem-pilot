@@ -1,9 +1,9 @@
-// /leaderboard — public script directory, ranked by score.
+// /leaderboard — public project directory.
 //
-// Dashboard-style white expanded cards. No loglines, no grow-heat.
-// Collaborators dropdown on score/heat row. Author card inline.
+// Tile-based two-column grid matching dashboard ProjectTile design.
+// Filter chips + sort dropdown. No scores, no heat, no rank numbers.
 //
-// Anuj 2026-05-28 v0.2 — redesign to match dashboard cards.
+// Anuj 2026-06-02 v0.3 — tile grid rewrite.
 
 import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase-server'
@@ -22,19 +22,19 @@ function svc() {
 }
 
 export const metadata: Metadata = {
-  title: 'GEM — The Leaderboard',
-  description: 'The best unproduced screenplays in Hollywood, ranked.',
+  title: 'GEM — Discover',
+  description: 'Explore projects from the GEM community.',
   openGraph: {
-    title: 'GEM — The Leaderboard',
-    description: 'The best unproduced screenplays in Hollywood, ranked.',
+    title: 'GEM — Discover',
+    description: 'Explore projects from the GEM community.',
     siteName: 'GEM',
     url: 'https://www.gem.studio/leaderboard',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GEM — The Leaderboard',
-    description: 'The best unproduced screenplays in Hollywood, ranked.',
+    title: 'GEM — Discover',
+    description: 'Explore projects from the GEM community.',
   },
 }
 
@@ -275,10 +275,10 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
 
       <div className="mb-6">
         <h1 className="lb-title text-[28px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
-          The Leaderboard
+          Discover
         </h1>
         <p className="lb-subtitle text-[15px] text-white/60 mt-1.5 m-0">
-          The best unproduced screenplays in Hollywood, ranked.
+          Explore projects from the GEM community
         </p>
         {recentCount > 0 && (
           <p className="lb-stats text-[12px] text-white/40 mt-1 m-0">
