@@ -252,7 +252,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
     .filter((c): c is LeaderboardCard => c !== null)
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-6 py-8">
       <style>{`
         @keyframes lbSlideUp {
           from { opacity: 0; transform: translateY(18px); }
@@ -274,11 +274,11 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
       `}</style>
 
       <div className="mb-6">
-        <h1 className="lb-title text-[28px] font-bold text-white m-0" style={{ fontFamily: 'Georgia, serif' }}>
+        <h1 className="lb-title text-[32px] font-bold text-white m-0">
           Discover
         </h1>
         <p className="lb-subtitle text-[15px] text-white/60 mt-1.5 m-0">
-          Explore projects from the GEM community
+          Independent series and film projects
         </p>
         {recentCount > 0 && (
           <p className="lb-stats text-[12px] text-white/40 mt-1 m-0">
