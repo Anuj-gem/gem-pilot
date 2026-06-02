@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 
 export interface BudgetLineItem {
   label: string
@@ -13,6 +13,7 @@ export interface BudgetPlan {
   total: number
   budget_low?: number
   budget_high?: number
+  episodes?: number
 }
 
 interface Props {
@@ -26,33 +27,135 @@ interface Props {
   onSave?: (plan: BudgetPlan) => void
 }
 
+/* ── Parse "$3M", "$500K", "3000000" → number ── */
+function parseInput(s: string): number {
+  const c = s.replace(/[,$\s]/g, '')
+  const m = c.match(/^([0-9.]+)\s*(K|M|B)?$/i)
+  if (m) {
+    const n = parseFloat(m[1])
+    const u = (m[2] || '').toUpperCase()
+    return Math.round(u === 'B' ? n * 1e9 : u === 'M' ? n * 1e6 : u === 'K' ? n * 1e3 : n)
+  }
+  return parseInt(c.replace(/[^0-9]/g, ''), 10) || 0
+}
+
+/* ── Parse "$3M-$6M/ep" → { low, high } ── */
+function parseBudgetStr(s: string | null | undefined): { low: number; high: number } | null {
+  if (!s) return null
+  const ms = s.match(/\$([0-9.]+)\s*(K|M|B)?/gi)
+  if (!ms) return null
+  function one(m: string): number {
+    const r = m.match(/\$([0-9.]+)\s*(K|M|B)?/i)
+    if (!r) return 0
+    const n = parseFloat(r[1])
+    const u = (r[2] || '').toUpperCase()
+    return Math.round(u === 'B' ? n * 1e9 : u === 'M' ? n * 1e6 : u === 'K' ? n * 1e3 : n)
+  }
+  return ms.length >= 2
+    ? { low: one(ms[0]), high: one(ms[1]) }
+    : { low: one(ms[0]), high: one(ms[0]) }
+}
+
 function fmtShort(n: number): string {
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1)}M`
-  if (n >= 1_000) return `$${Math.round(n / 1_000)}K`
+  if (n >= 1e9) return `$${(n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1)}B`
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+  if (n >= 1e3) return `$${Math.round(n / 1e3).toLocaleString()}K`
   return `$${n.toLocaleString()}`
 }
 
-function fmtFull(n: number): string {
-  return `$${n.toLocaleString()}`
-}
-
-function parseAmount(s: string): number {
-  return parseInt(s.replace(/[^0-9]/g, ''), 10) || 0
-}
-
-export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave }: Props) {
-  // Track live plan internally so revert works without parent re-render
-  const [livePlan, setLivePlan] = useState<BudgetPlan | null>(initial)
-  const hasUserBudget = (livePlan?.total ?? 0) > 0 || (livePlan?.budget_low ?? 0) > 0 || (livePlan?.budget_high ?? 0) > 0
+/* ── Click-to-edit number ── */
+function EditableNum({ value, onChange, isDollar = true, fontSize = '22px' }: {
+  value: number
+  onChange: (n: number) => void
+  isDollar?: boolean
+  fontSize?: string
+}) {
   const [editing, setEditing] = useState(false)
-  const [lowInput, setLowInput] = useState(livePlan?.budget_low ? fmtFull(livePlan.budget_low) : '')
-  const [highInput, setHighInput] = useState(livePlan?.budget_high ? fmtFull(livePlan.budget_high) : (livePlan?.total ? fmtFull(livePlan.total) : ''))
-  const [explanation, setExplanation] = useState(livePlan?.explanation ?? '')
+  const [text, setText] = useState('')
+  const ref = useRef<HTMLInputElement>(null)
+
+  function start() {
+    setText(value > 0 ? (isDollar ? fmtShort(value) : String(value)) : '')
+    setEditing(true)
+  }
+
+  function commit() {
+    const n = isDollar ? parseInput(text) : Math.max(1, parseInt(text, 10) || 1)
+    onChange(n)
+    setEditing(false)
+  }
+
+  useEffect(() => {
+    if (editing) {
+      ref.current?.focus()
+      ref.current?.select()
+    }
+  }, [editing])
+
+  const display = value > 0
+    ? (isDollar ? fmtShort(value) : String(value))
+    : (isDollar ? '___' : '1')
+
+  if (!editing) {
+    return (
+      <span
+        onClick={start}
+        className="cursor-pointer inline-block"
+        style={{
+          fontSize,
+          fontWeight: 600,
+          color: value > 0 ? '#1C1917' : '#c4b5fd',
+          borderBottom: '1.5px dashed #c4b5fd',
+          lineHeight: 1.3,
+        }}
+      >
+        {display}
+      </span>
+    )
+  }
+
+  return (
+    <input
+      ref={ref}
+      type="text"
+      value={text}
+      onChange={e => setText(e.target.value)}
+      onBlur={commit}
+      onKeyDown={e => e.key === 'Enter' && commit()}
+      placeholder={isDollar ? '$0' : '1'}
+      style={{
+        fontSize,
+        fontWeight: 600,
+        width: isDollar ? '6rem' : '2.5rem',
+        textAlign: 'center',
+        border: 'none',
+        borderBottom: '2px solid #534AB7',
+        outline: 'none',
+        background: 'transparent',
+        padding: '0 2px',
+        lineHeight: 1.3,
+        color: '#1C1917',
+      }}
+    />
+  )
+}
+
+/* ── Main ── */
+export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave }: Props) {
+  const isSeries = !!gemPerEpisode
+  const gemParsed = parseBudgetStr(isSeries ? gemPerEpisode : gemEstimate)
+
+  const [low, setLow] = useState(initial?.budget_low || gemParsed?.low || 0)
+  const [high, setHigh] = useState(initial?.budget_high || gemParsed?.high || initial?.total || 0)
+  const [eps, setEps] = useState(initial?.episodes || 1)
   const [saving, setSaving] = useState(false)
 
-  const save = useCallback(async (low: number, high: number, expl: string) => {
-    const total = high || low
-    const plan: BudgetPlan = { line_items: [], explanation: expl, total, budget_low: low, budget_high: high }
+  const totalLow = isSeries ? low * eps : low
+  const totalHigh = isSeries ? high * eps : high
+
+  const save = useCallback(async (l: number, h: number, e: number) => {
+    const total = isSeries ? (h || l) * e : (h || l)
+    const plan: BudgetPlan = { line_items: [], explanation: '', total, budget_low: l, budget_high: h, episodes: e }
     setSaving(true)
     try {
       const res = await fetch('/api/report/financial-plan', {
@@ -60,137 +163,60 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ submissionId, budgetPlan: plan }),
       })
-      if (res.ok) {
-        setLivePlan(plan)
-        onSave?.(plan)
-      }
+      if (res.ok) onSave?.(plan)
     } finally {
       setSaving(false)
     }
-  }, [submissionId, onSave])
-
-  function handleSave() {
-    const low = parseAmount(lowInput)
-    const high = parseAmount(highInput)
-    if (!low && !high) return
-    save(low, high, explanation)
-    setEditing(false)
-  }
-
-  function handleRevert() {
-    save(0, 0, '')
-    setLowInput('')
-    setHighInput('')
-    setExplanation('')
-    setEditing(false)
-  }
-
-  const isSeries = !!gemPerEpisode
-  const gemDisplayEstimate = (() => {
-    const raw = gemEstimate?.replace(/total negative cost/i, '').trim()
-    if (isSeries && gemPerEpisode) {
-      return `${gemPerEpisode.replace(/\/ep$/i, '').trim()} per episode`
-    }
-    return raw || null
-  })()
-
-  // Display the user's range or single number
-  const userLow = livePlan?.budget_low ?? 0
-  const userHigh = livePlan?.budget_high ?? livePlan?.total ?? 0
-  const userDisplay = userLow > 0 && userHigh > 0 && userLow !== userHigh
-    ? `${fmtShort(userLow)}–${fmtShort(userHigh)}`
-    : userHigh > 0
-    ? fmtFull(userHigh)
-    : null
+  }, [submissionId, onSave, isSeries])
 
   return (
     <div>
-      {!editing ? (
-        <>
-          {/* Display state */}
-          <div className="mb-2">
-            <div className="flex items-baseline gap-2">
-              <span className="text-[24px] font-medium" style={{ color: '#1C1917' }}>
-                {hasUserBudget ? userDisplay : gemDisplayEstimate || 'No estimate'}
-              </span>
-            </div>
-            {!hasUserBudget && isSeries && gemSeasonTotal && (
-              <div className="text-[13px] mt-1" style={{ color: '#78716C' }}>{gemSeasonTotal}</div>
-            )}
-          </div>
+      {/* Per-episode cost (or total for features) */}
+      <div className="flex items-baseline gap-2 flex-wrap">
+        <EditableNum value={low} onChange={n => { setLow(n); save(n, high, eps) }} />
+        <span className="text-[16px]" style={{ color: '#A8A29E' }}>–</span>
+        <EditableNum value={high} onChange={n => { setHigh(n); save(low, n, eps) }} />
+        {isSeries && (
+          <span className="text-[14px]" style={{ color: '#78716C' }}>per episode</span>
+        )}
+      </div>
 
-          <div className="flex items-center gap-2 mb-4">
-            {hasUserBudget ? (
-              <>
-                <button onClick={() => setEditing(true)} className="text-[12px] underline border-0 bg-transparent cursor-pointer p-0" style={{ color: '#534AB7' }}>Edit</button>
-                <span className="text-[11px]" style={{ color: '#A8A29E' }}>·</span>
-                <button onClick={handleRevert} className="text-[12px] underline border-0 bg-transparent cursor-pointer p-0" style={{ color: '#78716C' }}>
-                  Revert to GEM estimate{gemDisplayEstimate ? ` (${gemDisplayEstimate})` : ''}
-                </button>
-              </>
-            ) : (
-              <>
-                <span className="text-[12px]" style={{ color: '#534AB7' }}>Based on GEM evaluation</span>
-                <span className="text-[11px]" style={{ color: '#A8A29E' }}>·</span>
-                <button onClick={() => setEditing(true)} className="text-[12px] underline border-0 bg-transparent cursor-pointer p-0" style={{ color: '#78716C' }}>Set your own budget</button>
-              </>
-            )}
-          </div>
-
-          {/* Explanation */}
-          {(explanation || gemNote) && (
-            <div className="rounded-lg px-4 py-3" style={{ background: '#fafaf9' }}>
-              <p className="text-[13px] m-0 leading-relaxed" style={{ color: '#44403C' }}>
-                {explanation || gemNote}
-              </p>
-            </div>
-          )}
-        </>
-      ) : (
-        /* Edit form */
-        <div className="p-4 rounded-lg" style={{ background: '#fafaf9', border: '1px solid #e5e7eb' }}>
-          <div className="text-[12px] mb-2" style={{ color: '#78716C' }}>Your budget range</div>
-          <div className="flex items-center gap-2 mb-3">
-            <div className="flex-1">
-              <label className="text-[11px] block mb-1" style={{ color: '#A8A29E' }}>Low</label>
-              <input
-                type="text"
-                value={lowInput}
-                onChange={e => setLowInput(e.target.value)}
-                placeholder="e.g. $5,000,000"
-                className="w-full text-[15px] font-medium px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[#534AB7]"
-                autoFocus
-              />
-            </div>
-            <span className="text-[14px] mt-5" style={{ color: '#A8A29E' }}>–</span>
-            <div className="flex-1">
-              <label className="text-[11px] block mb-1" style={{ color: '#A8A29E' }}>High</label>
-              <input
-                type="text"
-                value={highInput}
-                onChange={e => setHighInput(e.target.value)}
-                placeholder="e.g. $10,000,000"
-                className="w-full text-[15px] font-medium px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[#534AB7]"
-                onKeyDown={e => e.key === 'Enter' && handleSave()}
-              />
-            </div>
-          </div>
-          <div className="text-[12px] mb-1.5" style={{ color: '#78716C' }}>Explanation (optional)</div>
-          <textarea
-            value={explanation}
-            onChange={e => setExplanation(e.target.value)}
-            placeholder="Why does your budget differ from the GEM estimate?"
-            className="w-full text-[13px] border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#534AB7] resize-none mb-3"
-            rows={2}
+      {/* Episode multiplier — series only */}
+      {isSeries && (
+        <div className="flex items-baseline gap-1.5 mt-2">
+          <span className="text-[14px]" style={{ color: '#78716C' }}>×</span>
+          <EditableNum
+            value={eps}
+            onChange={n => { const e = Math.max(1, n); setEps(e); save(low, high, e) }}
+            isDollar={false}
+            fontSize="17px"
           />
-          <div className="flex items-center gap-2">
-            <button onClick={handleSave} className="px-4 py-2 rounded-lg text-[13px] font-medium text-white border-0 cursor-pointer" style={{ background: '#534AB7' }}>Save</button>
-            <button onClick={() => setEditing(false)} className="px-3 py-2 rounded-lg text-[13px] border border-gray-200 bg-white cursor-pointer" style={{ color: '#78716C' }}>Cancel</button>
-          </div>
+          <span className="text-[14px]" style={{ color: '#78716C' }}>
+            episode{eps !== 1 ? 's' : ''}
+          </span>
         </div>
       )}
 
-      {saving && <p className="text-[12px] mt-2" style={{ color: '#78716C' }}>Saving...</p>}
+      {/* Season total — only when multiplying */}
+      {isSeries && eps > 1 && (totalLow > 0 || totalHigh > 0) && (
+        <div className="mt-2 pt-2" style={{ borderTop: '1px dashed #e7e5e4' }}>
+          <span className="text-[17px] font-semibold" style={{ color: '#534AB7' }}>
+            {totalLow > 0 && totalHigh > 0 && totalLow !== totalHigh
+              ? `${fmtShort(totalLow)} – ${fmtShort(totalHigh)}`
+              : fmtShort(totalHigh || totalLow)}
+          </span>
+          <span className="text-[13px] ml-1.5" style={{ color: '#78716C' }}>total</span>
+        </div>
+      )}
+
+      {/* GEM note */}
+      {gemNote && (
+        <div className="rounded-lg px-4 py-3 mt-3" style={{ background: '#fafaf9' }}>
+          <p className="text-[13px] m-0 leading-relaxed" style={{ color: '#44403C' }}>{gemNote}</p>
+        </div>
+      )}
+
+      {saving && <p className="text-[12px] mt-1" style={{ color: '#78716C' }}>Saving...</p>}
     </div>
   )
 }
