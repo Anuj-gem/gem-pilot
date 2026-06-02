@@ -27,6 +27,8 @@ interface Props {
   considerationResults: ConsiderationResult[]
   submissionId: string
   isOwner: boolean
+  budgetTotal?: number
+  securedAmount?: number
 }
 
 function fmt(n: number): string {
@@ -35,7 +37,7 @@ function fmt(n: number): string {
   return `$${n.toLocaleString()}`
 }
 
-export function FundingOpportunities({ matchingOpps, considerationResults, submissionId, isOwner }: Props) {
+export function FundingOpportunities({ matchingOpps, considerationResults, submissionId, isOwner, budgetTotal = 0, securedAmount = 0 }: Props) {
   const [expandedOpp, setExpandedOpp] = useState<string | null>(null)
 
   // Build a map from opportunity_id to consideration result
@@ -93,38 +95,44 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
     return <span className="text-[11px] font-semibold px-2 py-0.5 rounded" style={{ background: '#fffbeb', color: '#92400e' }}>Pending</span>
   }
 
+  const consideringTotal = followingAmount + pending.reduce((s, o) => s + (o.funding_amount || 0), 0)
+  const totalFunded = securedAmount + consideringTotal
+  const progressPct = budgetTotal > 0 ? Math.min(100, Math.round((securedAmount / budgetTotal) * 100)) : 0
+  const consideringPct = budgetTotal > 0 ? Math.min(100 - progressPct, Math.round((consideringTotal / budgetTotal) * 100)) : 0
+
   return (
     <div className="bg-white rounded-2xl p-5 px-6">
-      <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium mb-4">Matching Opportunities</h3>
-
-      {/* Summary stats */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {backedAmount > 0 && (
-          <span className="text-[12px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #bbf7d0' }}>
-            {fmt(backedAmount)} backed
-          </span>
-        )}
-        {followingAmount > 0 && (
-          <span className="text-[12px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: '#EEEDFE', color: '#534AB7', border: '1px solid #c4b5fd' }}>
-            {fmt(followingAmount)} following
-          </span>
-        )}
-        {pending.length > 0 && (
-          <span className="text-[12px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: '#fffbeb', color: '#92400e', border: '1px solid #fcd34d' }}>
-            {pending.length} pending
-          </span>
-        )}
-        {availableAmount > 0 && (
-          <span className="text-[12px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: '#f5f5f4', color: '#57534E', border: '1px solid #d6d3d1' }}>
-            {fmt(availableAmount)} available
-          </span>
-        )}
-        {passedAmount > 0 && (
-          <span className="text-[12px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: '#fef2f2', color: '#991b1b', border: '1px solid #fecaca' }}>
-            {fmt(passedAmount)} passed
-          </span>
-        )}
+      <div className="flex items-start justify-between mb-1">
+        <div>
+          <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium m-0">Funding available</h3>
+          <p className="text-[12px] m-0 mt-1" style={{ color: '#534AB7' }}>Directly from GEM financial partners</p>
+        </div>
+        <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(totalAvailable)} total</span>
       </div>
+
+      {/* Progress bar */}
+      {budgetTotal > 0 && (
+        <div className="mb-4 mt-3">
+          <div className="flex justify-between text-[11px] mb-1.5" style={{ color: '#78716C' }}>
+            <span>Funding progress</span>
+            <span>{fmt(securedAmount + consideringTotal)} of {fmt(budgetTotal)}</span>
+          </div>
+          <div className="w-full h-2.5 rounded-full overflow-hidden" style={{ background: '#f0edf9', position: 'relative' }}>
+            <div
+              className="h-full rounded-full"
+              style={{ width: `${Math.max(progressPct, progressPct > 0 ? 1 : 0)}%`, background: '#0F6E56', position: 'absolute', left: 0, top: 0 }}
+            />
+            <div
+              className="h-full"
+              style={{ width: `${consideringPct}%`, background: '#534AB7', opacity: 0.4, position: 'absolute', left: `${progressPct}%`, top: 0 }}
+            />
+          </div>
+          <div className="flex gap-4 mt-1.5 text-[11px]">
+            <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-sm" style={{ background: '#0F6E56' }} /><span style={{ color: '#78716C' }}>Secured</span></span>
+            <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-sm" style={{ background: '#534AB7', opacity: 0.5 }} /><span style={{ color: '#78716C' }}>Considering</span></span>
+          </div>
+        </div>
+      )}
 
       {/* Applied opportunities (with results) */}
       {applied.length > 0 && (

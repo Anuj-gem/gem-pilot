@@ -946,13 +946,28 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
         <div className="gem-floating-card">
         <ProjectNeedsCards
-          investmentSummary={
-            totalBacking > 0
-              ? `${totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`} backed`
-              : budgetPlan?.total
-                ? `Budget: ${budgetPlan.total >= 1000 ? `$${Math.round(budgetPlan.total / 1000)}K` : `$${budgetPlan.total}`}`
-                : null
-          }
+          investmentSummary={null}
+          investmentMetrics={(() => {
+            const fmtShort = (n: number) => {
+              if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1)}M`
+              if (n >= 1_000) return `$${Math.round(n / 1_000)}K`
+              return `$${n}`
+            }
+            const projectCost = budgetPlan?.total ? fmtShort(budgetPlan.total) : gemEstimate || null
+            const securedAmount = totalBacking
+            const consideringAmount = considerationResults
+              .filter(r => !r.backing_status || r.backing_status === 'following')
+              .filter(r => r.outcome !== 'pass' && r.outcome !== 'back')
+              .reduce((s, r) => {
+                const opp = matchingOpps.find(o => o.id === r.opportunity_id)
+                return s + (opp?.funding_amount || 0)
+              }, 0) + totalFollowing
+            return {
+              projectCost,
+              secured: securedAmount > 0 ? fmtShort(securedAmount) : null,
+              considering: consideringAmount > 0 ? fmtShort(consideringAmount) : null,
+            }
+          })()}
           crewSummary={null}
           castSummary={
             leadCharacters.length > 0
@@ -978,6 +993,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 considerationResults={considerationResults}
                 submissionId={submission.id}
                 isOwner={isOwner || isAdmin}
+                budgetTotal={budgetPlan?.total ?? 0}
+                securedAmount={totalBacking}
               />
               <RevenuePlanEditor
                 initial={revenuePlan}

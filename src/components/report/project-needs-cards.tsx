@@ -12,11 +12,18 @@ interface CardConfig {
   summary: string | null
 }
 
+interface InvestmentMetrics {
+  projectCost: string | null
+  secured: string | null
+  considering: string | null
+}
+
 interface ProjectNeedsCardsProps {
   investmentChildren: React.ReactNode
   crewChildren: React.ReactNode
   castChildren: React.ReactNode
   investmentSummary: string | null
+  investmentMetrics?: InvestmentMetrics | null
   crewSummary: string | null
   castSummary: string | null
 }
@@ -26,6 +33,7 @@ export function ProjectNeedsCards({
   crewChildren,
   castChildren,
   investmentSummary,
+  investmentMetrics,
   crewSummary,
   castSummary,
 }: ProjectNeedsCardsProps) {
@@ -72,15 +80,36 @@ export function ProjectNeedsCards({
               >
                 {card.icon}
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <h3 className="text-[15px] font-bold m-0" style={{ color: '#1C1917' }}>
                   {card.title}
                 </h3>
-                {card.summary && (
+                {card.key === 'investment' && investmentMetrics && (investmentMetrics.projectCost || investmentMetrics.secured || investmentMetrics.considering) ? (
+                  <div className="grid grid-cols-3 gap-1.5 mt-2 w-full">
+                    {investmentMetrics.projectCost && (
+                      <div className="rounded-lg px-2 py-1.5 text-center" style={{ background: 'rgba(0,0,0,0.04)' }}>
+                        <div className="text-[10px]" style={{ color: '#78716C' }}>Cost</div>
+                        <div className="text-[15px] font-bold" style={{ color: '#1C1917' }}>{investmentMetrics.projectCost}</div>
+                      </div>
+                    )}
+                    {investmentMetrics.secured && (
+                      <div className="rounded-lg px-2 py-1.5 text-center" style={{ background: 'rgba(0,0,0,0.04)' }}>
+                        <div className="text-[10px]" style={{ color: '#78716C' }}>Secured</div>
+                        <div className="text-[15px] font-bold" style={{ color: '#0F6E56' }}>{investmentMetrics.secured}</div>
+                      </div>
+                    )}
+                    {investmentMetrics.considering && (
+                      <div className="rounded-lg px-2 py-1.5 text-center" style={{ background: 'rgba(0,0,0,0.04)' }}>
+                        <div className="text-[10px]" style={{ color: '#78716C' }}>Considering</div>
+                        <div className="text-[15px] font-bold" style={{ color: '#534AB7' }}>{investmentMetrics.considering}</div>
+                      </div>
+                    )}
+                  </div>
+                ) : card.summary ? (
                   <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#7C3AED' }}>
                     {card.summary}
                   </p>
-                )}
+                ) : null}
               </div>
               <ChevronDown
                 size={16}
