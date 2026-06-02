@@ -913,6 +913,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 submissionId={submission.id}
                 isOwner={isOwner || isAdmin}
                 currentUserId={user?.id ?? null}
+                currentUserEmail={user?.email ?? null}
                 ownerProfile={ownerProfile ? {
                   full_name: ownerProfile.full_name ?? null,
                   avatar_url: ownerProfile.avatar_url ?? null,
@@ -927,6 +928,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 submissionId={submission.id}
                 isOwner={isOwner || isAdmin}
                 currentUserId={user?.id ?? null}
+                currentUserEmail={user?.email ?? null}
                 ownerProfile={ownerProfile ? {
                   full_name: ownerProfile.full_name ?? null,
                   avatar_url: ownerProfile.avatar_url ?? null,

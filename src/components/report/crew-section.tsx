@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Plus, X, Loader2, Trash2, UserPlus, ChevronDown, Mail } from 'lucide-react'
+import { Plus, X, Loader2, Trash2, UserPlus, ChevronDown, Mail, Check } from 'lucide-react'
 
 /* ── Types ── */
 
@@ -39,6 +39,7 @@ interface Props {
   submissionId: string
   isOwner: boolean
   currentUserId: string | null
+  currentUserEmail: string | null
   ownerProfile: {
     full_name: string | null
     avatar_url: string | null
@@ -56,6 +57,7 @@ export function CrewSection({
   submissionId,
   isOwner,
   currentUserId,
+  currentUserEmail,
   ownerProfile,
   category = 'crew',
   characterNames = [],
@@ -286,9 +288,38 @@ export function CrewSection({
     } catch {}
   }
 
+  // Accept/decline a collaborator invite (for the current viewer)
+  async function handleRespondInvite(collabRowId: string, status: 'accepted' | 'declined') {
+    try {
+      const res = await fetch(`/api/scripts/${submissionId}/collaborators`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ collaborator_id: collabRowId, status }),
+      })
+      if (res.ok) {
+        fetchRoles()
+        fetchAllProjectMembers()
+      }
+    } catch {}
+  }
+
+  // Check if a role's pending invite belongs to the current viewer
+  function isMyPendingInvite(role: CrewRole): boolean {
+    if (!role.collaborator || role.collaborator.status !== 'pending') return false
+    if (role.collaborator.profile?.id && role.collaborator.profile.id === currentUserId) return true
+    if (currentUserEmail && role.collaborator.email?.toLowerCase() === currentUserEmail.toLowerCase()) return true
+    return false
+  }
+
   if (loading) return null
 
-  const visibleRoles = isOwner ? roles : roles.filter(r => r.assigned_user_id || (r.collaborator && r.collaborator.status === 'accepted'))
+  const visibleRoles = isOwner
+    ? roles
+    : roles.filter(r =>
+        r.assigned_user_id ||
+        (r.collaborator && r.collaborator.status === 'accepted') ||
+        isMyPendingInvite(r)
+      )
   if (!isOwner && visibleRoles.length === 0) return null
 
   return (
@@ -309,12 +340,14 @@ export function CrewSection({
             role={role}
             isOwner={isOwner}
             currentUserId={currentUserId}
+            isMyPending={isMyPendingInvite(role)}
             teamMembers={getTeamMembers(role.id)}
             onAssignUser={(userId) => handleAssignUser(role.id, userId)}
             onAssignCollaborator={(collabId) => handleAssignCollaborator(role.id, collabId)}
             onUnassign={() => handleUnassign(role.id)}
             onInvite={(email) => handleInvite(role.id, email)}
             onDelete={() => handleDeleteRole(role.id)}
+            onRespondInvite={role.collaborator_row_id ? (status) => handleRespondInvite(role.collaborator_row_id!, status) : undefined}
           />
         ))}
       </div>
@@ -383,22 +416,26 @@ function RoleSlot({
   role,
   isOwner,
   currentUserId,
+  isMyPending,
   teamMembers,
   onAssignUser,
   onAssignCollaborator,
   onUnassign,
   onInvite,
   onDelete,
+  onRespondInvite,
 }: {
   role: CrewRole
   isOwner: boolean
   currentUserId: string | null
+  isMyPending?: boolean
   teamMembers: TeamMember[]
   onAssignUser: (userId: string) => void
   onAssignCollaborator: (collabId: string) => void
   onUnassign: () => void
   onInvite: (email: string) => void
   onDelete: () => void
+  onRespondInvite?: (status: 'accepted' | 'declined') => void
 }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [inviteMode, setInviteMode] = useState(false)
@@ -493,9 +530,14 @@ function RoleSlot({
               {displayName}
             </span>
           )}
-          {isPending && isOwner && (
+          {isPending && isOwner && !isMyPending && (
             <span className="text-[12px] italic ml-2" style={{ color: '#D97706' }}>
               invite pending
+            </span>
+          )}
+          {isPending && isMyPending && (
+            <span className="text-[12px] italic ml-2" style={{ color: '#7C3AED' }}>
+              invited you
             </span>
           )}
           {!isFilled && !isPending && (
@@ -537,6 +579,28 @@ function RoleSlot({
               title="Remove role"
             >
               <Trash2 size={14} />
+            </button>
+          </div>
+        )}
+
+        {/* Accept/Decline for the invited viewer */}
+        {isMyPending && !isOwner && onRespondInvite && (
+          <div className="flex items-center gap-1.5 shrink-0">
+            <button
+              onClick={() => onRespondInvite('declined')}
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-[12px] font-medium cursor-pointer border-0 transition-colors"
+              style={{ background: 'rgba(0,0,0,0.04)', color: '#57534E' }}
+            >
+              <X size={13} />
+              Decline
+            </button>
+            <button
+              onClick={() => onRespondInvite('accepted')}
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-[12px] font-semibold cursor-pointer border-0 transition-colors text-white"
+              style={{ background: '#7c3aed' }}
+            >
+              <Check size={13} />
+              Accept
             </button>
           </div>
         )}

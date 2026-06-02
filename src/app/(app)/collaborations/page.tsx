@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import { CollabInviteActions } from '@/components/collab-invite-actions'
 
 export const dynamic = 'force-dynamic'
 
@@ -48,9 +49,17 @@ export default async function CollaborationsPage() {
   }[]
 
   const collabSubIds = [...new Set(collabRows.map(r => r.submission_id))]
-  const collabRoleBySubId = new Map<string, string>()
+  // Track ALL roles per submission (not just the last one)
+  type CollabInvite = { id: string; role: string; status: string }
+  const collabInvitesBySubId = new Map<string, CollabInvite[]>()
   for (const r of collabRows) {
-    collabRoleBySubId.set(r.submission_id, r.role_other || r.role || 'Collaborator')
+    const existing = collabInvitesBySubId.get(r.submission_id) || []
+    existing.push({
+      id: r.id,
+      role: r.role_other || r.role || 'Collaborator',
+      status: r.status || 'pending',
+    })
+    collabInvitesBySubId.set(r.submission_id, existing)
   }
 
   type SubRow = {
@@ -211,78 +220,102 @@ export default async function CollaborationsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {collabSubs.map(s => {
               const ev = evalBySubId.get(s.id)
-              const role = collabRoleBySubId.get(s.id) || 'Collaborator'
+              const invites = collabInvitesBySubId.get(s.id) || []
+              const pendingInvites = invites.filter(inv => inv.status === 'pending')
               const score = ev?.weighted_score
               const meta = [ev?.format || s.declared_format, ...(ev?.genres || [])].filter(Boolean).join(' · ')
+              const reportHref = ev?.evalId ? `/report/${ev.evalId}` : '#'
 
               return (
-                <Link
+                <div
                   key={s.id}
-                  href={ev?.evalId ? `/report/${ev.evalId}` : '#'}
-                  style={{ textDecoration: 'none', display: 'block' }}
-                >
-                  <div style={{
+                  style={{
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: 4,
-                    padding: '12px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 14,
-                    transition: 'background 0.15s',
-                  }}>
-                    {/* Poster thumbnail */}
+                    overflow: 'hidden',
+                  }}
+                >
+                  <Link
+                    href={reportHref}
+                    style={{ textDecoration: 'none', display: 'block' }}
+                  >
                     <div style={{
-                      width: 40, height: 50, borderRadius: 3, flexShrink: 0, overflow: 'hidden',
-                      background: s.poster_url
-                        ? undefined
-                        : 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.15))',
+                      padding: '12px 16px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 14,
+                      transition: 'background 0.15s',
                     }}>
-                      {s.poster_url && (
-                        <img
-                          src={s.poster_url}
-                          alt=""
-                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        />
-                      )}
-                    </div>
-
-                    {/* Title + meta */}
-                    <div style={{ flex: 1, minWidth: 0 }}>
+                      {/* Poster thumbnail */}
                       <div style={{
-                        color: '#fff', fontSize: 14, fontWeight: 600,
-                        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'
+                        width: 40, height: 50, borderRadius: 3, flexShrink: 0, overflow: 'hidden',
+                        background: s.poster_url
+                          ? undefined
+                          : 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.15))',
                       }}>
-                        {s.title}
+                        {s.poster_url && (
+                          <img
+                            src={s.poster_url}
+                            alt=""
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                          />
+                        )}
                       </div>
-                      {meta && (
-                        <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 2 }}>
-                          {meta}
+
+                      {/* Title + meta */}
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{
+                          color: '#fff', fontSize: 14, fontWeight: 600,
+                          overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'
+                        }}>
+                          {s.title}
+                        </div>
+                        {meta && (
+                          <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 2 }}>
+                            {meta}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Role pills */}
+                      <div style={{ display: 'flex', gap: 4, flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                        {invites.map(inv => (
+                          <div key={inv.id} style={{
+                            background: 'rgba(124,58,237,0.2)', color: '#c4b5fd',
+                            fontSize: 11, fontWeight: 600, padding: '3px 8px',
+                            borderRadius: 3, textTransform: 'capitalize' as const,
+                            whiteSpace: 'nowrap',
+                          }}>
+                            {inv.role}{inv.status === 'pending' ? ' · pending' : ''}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Score */}
+                      {score != null && (
+                        <div style={{
+                          fontSize: 16, fontWeight: 700, color: '#a78bfa',
+                          flexShrink: 0, minWidth: 32, textAlign: 'right'
+                        }}>
+                          {Math.round(score)}
                         </div>
                       )}
                     </div>
+                  </Link>
 
-                    {/* Role pill */}
-                    <div style={{
-                      background: 'rgba(124,58,237,0.2)', color: '#c4b5fd',
-                      fontSize: 11, fontWeight: 600, padding: '3px 8px',
-                      borderRadius: 3, textTransform: 'capitalize' as const,
-                      whiteSpace: 'nowrap', flexShrink: 0
-                    }}>
-                      {role}
-                    </div>
-
-                    {/* Score */}
-                    {score != null && (
-                      <div style={{
-                        fontSize: 16, fontWeight: 700, color: '#a78bfa',
-                        flexShrink: 0, minWidth: 32, textAlign: 'right'
-                      }}>
-                        {Math.round(score)}
-                      </div>
-                    )}
-                  </div>
-                </Link>
+                  {/* Accept/Decline for pending invites */}
+                  {pendingInvites.length > 0 && (
+                    <CollabInviteActions
+                      invites={pendingInvites.map(inv => ({
+                        id: inv.id,
+                        submissionId: s.id,
+                        role: inv.role,
+                        status: inv.status,
+                      }))}
+                    />
+                  )}
+                </div>
               )
             })}
           </div>

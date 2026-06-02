@@ -65,12 +65,13 @@ export function CollaboratorsSection({
   const [confirmRemoveId, setConfirmRemoveId] = useState<string | null>(null)
   const [confirmIsSelf, setConfirmIsSelf] = useState(false)
 
-  const myPendingInvite = collaborators.find(
+  const myPendingInvites = collaborators.filter(
     c =>
       c.status === 'pending' &&
       (c.collaborator_id === currentUserId ||
         c.collaborator_email === currentUserEmail)
   )
+  const myPendingInvite = myPendingInvites.length > 0 ? myPendingInvites[0] : undefined
 
   useEffect(() => {
     fetchCollaborators()
@@ -365,38 +366,95 @@ export function CollaboratorsSection({
       )}
 
       {/* Accept/Decline bar for invited users */}
-      {myPendingInvite && !isOwner && (
+      {myPendingInvites.length > 0 && !isOwner && (
         <div
           className="fixed bottom-0 left-0 right-0 z-50 gem-no-print"
           style={{
             background: 'linear-gradient(180deg, transparent 0%, rgba(17,15,29,0.95) 20%)',
           }}
         >
-          <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-            <p className="text-[14px] text-white/80 m-0">
-              You&apos;ve been invited to collaborate on this project.
-            </p>
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={() => handleRespond(myPendingInvite.id, 'declined')}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-medium cursor-pointer border-0 transition-colors"
-                style={{
-                  background: 'rgba(255,255,255,0.08)',
-                  color: 'rgba(255,255,255,0.7)',
-                }}
-              >
-                <X size={14} />
-                Decline
-              </button>
-              <button
-                onClick={() => handleRespond(myPendingInvite.id, 'accepted')}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 transition-colors text-white"
-                style={{ background: '#7c3aed' }}
-              >
-                <Check size={14} />
-                Accept
-              </button>
-            </div>
+          <div className="max-w-3xl mx-auto px-4 py-4">
+            {myPendingInvites.length === 1 ? (
+              /* Single invite — simple bar */
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-[14px] text-white/80 m-0">
+                  You&apos;ve been invited as <span className="font-semibold text-white capitalize">{roleLabel(myPendingInvites[0].role, myPendingInvites[0].role_other)}</span>.
+                </p>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    onClick={() => handleRespond(myPendingInvites[0].id, 'declined')}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-medium cursor-pointer border-0 transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}
+                  >
+                    <X size={14} />
+                    Decline
+                  </button>
+                  <button
+                    onClick={() => handleRespond(myPendingInvites[0].id, 'accepted')}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 transition-colors text-white"
+                    style={{ background: '#7c3aed' }}
+                  >
+                    <Check size={14} />
+                    Accept
+                  </button>
+                </div>
+              </div>
+            ) : (
+              /* Multiple invites — grouped with accept-all */
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-[14px] text-white/80 m-0">
+                    You&apos;ve been invited to <span className="font-semibold text-white">{myPendingInvites.length} roles</span> on this project.
+                  </p>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button
+                      onClick={() => myPendingInvites.forEach(inv => handleRespond(inv.id, 'declined'))}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-medium cursor-pointer border-0 transition-colors"
+                      style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}
+                    >
+                      Decline all
+                    </button>
+                    <button
+                      onClick={() => myPendingInvites.forEach(inv => handleRespond(inv.id, 'accepted'))}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 transition-colors text-white"
+                      style={{ background: '#7c3aed' }}
+                    >
+                      <Check size={14} />
+                      Accept all
+                    </button>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {myPendingInvites.map(inv => (
+                    <div
+                      key={inv.id}
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg"
+                      style={{ background: 'rgba(255,255,255,0.06)' }}
+                    >
+                      <span className="text-[13px] text-white/80 capitalize">
+                        {roleLabel(inv.role, inv.role_other)}
+                      </span>
+                      <button
+                        onClick={() => handleRespond(inv.id, 'declined')}
+                        className="p-1 rounded cursor-pointer border-0 bg-transparent transition-colors"
+                        style={{ color: 'rgba(255,255,255,0.4)' }}
+                        title="Decline"
+                      >
+                        <X size={14} />
+                      </button>
+                      <button
+                        onClick={() => handleRespond(inv.id, 'accepted')}
+                        className="p-1 rounded cursor-pointer border-0 bg-transparent transition-colors"
+                        style={{ color: '#a78bfa' }}
+                        title="Accept"
+                      >
+                        <Check size={14} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
