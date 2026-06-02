@@ -600,6 +600,7 @@ export default async function DashboardPage() {
       status,
       has_pending_apps: (pendingAppsByScript.get(s.id) ?? 0) > 0,
       needs_funding: backing > 0 && false,
+      is_public: s.is_public ?? false,
       created_at: s.created_at,
     })
   }
@@ -629,6 +630,7 @@ export default async function DashboardPage() {
       status: 'completed',
       has_pending_apps: false,
       needs_funding: false,
+      is_public: false,
       created_at: s.createdAt,
     })
   }

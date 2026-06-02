@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
 
 /* ── Types ── */
 
@@ -27,6 +28,7 @@ export interface ProjectCard {
   status: 'processing' | 'completed' | 'error'
   has_pending_apps: boolean
   needs_funding: boolean
+  is_public: boolean
   created_at: string
 }
 
@@ -186,20 +188,19 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
             {FILTER_LABELS[key]} {counts[key]}
           </button>
         ))}
-        <div style={{ marginLeft: 'auto', position: 'relative' }}>
+        <div style={{ marginLeft: 'auto' }}>
           <select
             value={sort}
             onChange={e => setSort(e.target.value as SortKey)}
             style={{
-              fontSize: 11,
-              color: 'rgba(255,255,255,0.35)',
-              background: 'transparent',
-              border: 'none',
+              fontSize: 12,
+              color: 'rgba(255,255,255,0.6)',
+              background: 'rgba(255,255,255,0.06)',
+              border: '0.5px solid rgba(255,255,255,0.12)',
+              borderRadius: 8,
+              padding: '6px 12px',
               cursor: 'pointer',
               outline: 'none',
-              appearance: 'none',
-              WebkitAppearance: 'none',
-              paddingRight: 4,
             }}
           >
             {Object.entries(SORT_LABELS).map(([k, v]) => (
@@ -313,29 +314,29 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
       {selected.size > 0 && (
         <div style={{
           position: 'fixed',
-          bottom: 24,
+          bottom: 32,
           left: '50%',
           transform: 'translateX(-50%)',
           background: '#1e1b2e',
           border: '1px solid rgba(124,58,237,0.4)',
-          borderRadius: 12,
-          padding: '10px 20px',
+          borderRadius: 14,
+          padding: '14px 28px',
           display: 'flex',
           alignItems: 'center',
-          gap: 16,
+          gap: 20,
           zIndex: 50,
-          boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+          boxShadow: '0 12px 40px rgba(0,0,0,0.5)',
         }}>
-          <span style={{ fontSize: 13, color: '#fff' }}>{selected.size} selected</span>
+          <span style={{ fontSize: 15, fontWeight: 500, color: '#fff' }}>{selected.size} selected</span>
           <button
             onClick={handleBulkDelete}
-            style={{ fontSize: 12, color: '#f87171', background: 'transparent', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+            style={{ fontSize: 14, fontWeight: 500, color: '#fff', background: '#dc2626', border: 'none', cursor: 'pointer', padding: '6px 18px', borderRadius: 8 }}
           >
-            Hide
+            Delete
           </button>
           <button
             onClick={() => setSelected(new Set())}
-            style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', background: 'transparent', border: 'none', cursor: 'pointer' }}
+            style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', background: 'transparent', border: '0.5px solid rgba(255,255,255,0.15)', cursor: 'pointer', padding: '6px 18px', borderRadius: 8 }}
           >
             Cancel
           </button>
@@ -360,7 +361,6 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
   isSelected: boolean
   onToggleSelect: () => void
 }) {
-  // Use eval_id for report link if available, fall back to submission id
   const href = p.status === 'completed' ? `/report/${p.eval_id || p.id}` : undefined
 
   const roleLabel = p.role === 'creator'
@@ -384,13 +384,22 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
           <img src={p.poster_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }} />
         ) : (
           <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -55%)', textAlign: 'center' }}>
-            <div style={{
-              width: 36, height: 36, borderRadius: '50%', background: 'rgba(255,255,255,0.06)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 4px',
-            }}>
-              <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.2)' }}>+</span>
-            </div>
-            <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.2)', margin: 0 }}>Add image</p>
+            {href ? (
+              <Link
+                href={href}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                  fontSize: 12, color: 'rgba(255,255,255,0.4)', textDecoration: 'none',
+                  padding: '6px 14px', borderRadius: 6,
+                  border: '0.5px solid rgba(255,255,255,0.12)',
+                  background: 'rgba(255,255,255,0.04)',
+                }}
+              >
+                + Add image
+              </Link>
+            ) : (
+              <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>No image</span>
+            )}
           </div>
         )}
 
@@ -399,7 +408,7 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
           onClick={e => { e.preventDefault(); e.stopPropagation(); onToggleSelect() }}
           style={{
             position: 'absolute', top: 8, left: 8,
-            width: 20, height: 20, borderRadius: 4,
+            width: 22, height: 22, borderRadius: 4,
             background: isSelected ? '#534AB7' : 'rgba(0,0,0,0.3)',
             border: isSelected ? 'none' : '1.5px solid rgba(255,255,255,0.3)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -408,7 +417,7 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
           }}
           className="tile-checkbox"
         >
-          {isSelected && <span style={{ color: '#fff', fontSize: 12, fontWeight: 700 }}>✓</span>}
+          {isSelected && <span style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>✓</span>}
         </div>
 
         {/* Role badge — top right */}
@@ -440,42 +449,46 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
         </div>
       </div>
 
-      {/* Status bar + View project */}
+      {/* Status bar */}
       <div style={{
         padding: '8px 12px',
         display: 'flex',
         alignItems: 'center',
-        gap: 12,
+        gap: 10,
         fontSize: 11,
         borderTop: '0.5px solid #f0f0f0',
       }}>
-        {/* Secured */}
         <span style={{ color: p.backing_total > 0 ? '#15803d' : '#A8A29E' }}>
           💰 {p.backing_total > 0 ? `${fmtK(p.backing_total)} secured` : 'Secured 0'}
         </span>
-        {/* Pending */}
         {p.following_total > 0 && (
           <span style={{ color: '#534AB7' }}>
             {fmtK(p.following_total)} pending
           </span>
         )}
-        {/* Crew */}
         <span style={{ color: p.crew_count > 0 ? '#57534E' : '#A8A29E' }}>
-          Crew {p.crew_count}
+          🎬 Crew {p.crew_count}
         </span>
-        {/* Cast */}
         <span style={{ color: p.cast_count > 0 ? '#57534E' : '#A8A29E' }}>
-          Cast {p.cast_count}
+          🎭 Cast {p.cast_count}
         </span>
+      </div>
 
-        {/* View project button */}
+      {/* Action row: Discover toggle + View project */}
+      <div style={{
+        padding: '6px 12px 8px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}>
+        <div style={{ transform: 'scale(0.9)', transformOrigin: 'left center' }}>
+          <DiscoverToggle scriptId={p.id} isPublic={p.is_public} />
+        </div>
         {href && (
           <Link
             href={href}
-            onClick={e => e.stopPropagation()}
             style={{
-              marginLeft: 'auto',
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 500,
               color: '#534AB7',
               textDecoration: 'none',
