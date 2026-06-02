@@ -676,27 +676,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       </div>
 
-      {/* Override the (app) layout background to GEM purple for report */}
+      {/* Override the (app) layout background to light for report */}
       <style>{`
-        .min-h-screen { background: linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%) !important; }
-        .gem-dark-section { background: rgba(255,255,255,0.04); }
+        .min-h-screen { background: #F5F5F4 !important; }
       `}</style>
 
       <div
         className="max-w-3xl mx-auto pb-24 pt-6"
-        style={{
-          '--gem-gray-50': '#1C1917',
-          '--gem-gray-100': '#292524',
-          '--gem-gray-200': '#44403C',
-          '--gem-gray-300': '#57534E',
-          '--gem-gray-400': '#78716C',
-          '--gem-gray-500': '#A8A29E',
-          '--gem-gray-600': '#D6D3D1',
-          '--gem-gray-700': '#E7E5E3',
-          '--gem-gray-800': '#F5F5F4',
-          '--gem-gray-900': '#FAFAF9',
-          '--gem-gold': '#92400E',
-        } as React.CSSProperties}
       >
         <div className="space-y-12">
 
@@ -819,14 +805,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* ═══ WHITE CONTENT CARD — elevated container for all content below hero ═══ */}
-        <div
-          className="rounded-t-2xl -mt-8 relative z-10"
-          style={{
-            background: '#fff',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
-          }}
-        >
+        {/* ═══ CONTENT BELOW HERO — flows on light background ═══ */}
 
         {/* ═══ TOOLBAR — owner actions ═══ */}
         {(isOwner || isAdmin) && (
@@ -1273,9 +1252,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         </div>{/* ═══ END GEM ANALYSIS PADDING WRAPPER ═══ */}
 
-        </div>{/* ═══ END WHITE CONTENT CARD ═══ */}
-        </div>
-        {/* /space-y-5 + max-w-6xl wrappers close here. */}
+        {/* ═══ END CONTENT BELOW HERO ═══ */}
+        </div>{/* /space-y-12 */}
       </div>
 
       {/* Invite a Reviewer + Peer Reviews hidden — opportunities-v1.
