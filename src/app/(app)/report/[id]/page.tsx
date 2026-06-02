@@ -67,6 +67,7 @@ import { FollowersSection } from '@/components/report/followers-section'
 import { BackersList } from '@/components/report/backers-list'
 import { FundingOpportunities } from '@/components/report/funding-opportunities'
 import { FundingProgressBar } from '@/components/report/funding-progress-bar'
+import { CollapsibleRow } from '@/components/report/collapsible-row'
 import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
@@ -965,21 +966,25 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
           investmentChildren={
             <div>
-              <FundingProgressBar
-                budgetTotal={budgetPlan?.total ?? 0}
-                securedAmount={totalBacking}
-                consideringAmount={investmentConsideringAmount}
-              />
-              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
-              <div className="py-5">
+              <CollapsibleRow
+                emoji="📊"
+                title="Budget"
+                subtitle={gemEstimate ? `GEM estimate: ${gemEstimate}` : 'Set your project budget'}
+                value={budgetPlan?.total ? fmtShort(budgetPlan.total) : '$0'}
+              >
                 <BudgetEditor
                   initial={budgetPlan}
                   gemEstimate={gemEstimate}
                   submissionId={submission.id}
                 />
-              </div>
-              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
-              <div className="py-5">
+              </CollapsibleRow>
+              <CollapsibleRow
+                emoji="💰"
+                title="Backers"
+                subtitle={totalBacking > 0 ? `${backerCount} confirmed` : 'No backers yet'}
+                value={totalBacking > 0 ? fmtShort(totalBacking) : '$0'}
+                valueColor={totalBacking > 0 ? '#0F6E56' : '#78716C'}
+              >
                 <BackersList
                   submissionId={submission.id}
                   budgetTotal={budgetPlan?.total ?? 0}
@@ -987,9 +992,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   currentUserId={user?.id ?? null}
                   ownerName={ownerProfile?.full_name ?? null}
                 />
-              </div>
-              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
-              <div className="py-5">
+              </CollapsibleRow>
+              <CollapsibleRow
+                emoji="🏦"
+                title="Funding available"
+                subtitle={matchingOpps.length > 0 ? `${matchingOpps.length} matching from GEM partners` : 'No matching opportunities'}
+                value={matchingOpps.length > 0 ? fmtShort(matchingOpps.reduce((s, o) => s + o.funding_amount, 0)) : '$0'}
+                valueColor={matchingOpps.length > 0 ? '#534AB7' : '#78716C'}
+              >
                 <FundingOpportunities
                   matchingOpps={matchingOpps}
                   considerationResults={considerationResults}
@@ -998,20 +1008,30 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   budgetTotal={budgetPlan?.total ?? 0}
                   securedAmount={totalBacking}
                 />
-              </div>
-              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
-              <div className="py-5">
+              </CollapsibleRow>
+              <CollapsibleRow
+                emoji="📈"
+                title="Revenue plan"
+                subtitle={revenuePlan?.sources?.length ? `${revenuePlan.sources.length} source${revenuePlan.sources.length !== 1 ? 's' : ''}` : 'No sources added yet'}
+                value={revenuePlan?.total ? fmtShort(revenuePlan.total) : '$0'}
+                valueColor={revenuePlan?.total ? '#0F6E56' : '#78716C'}
+              >
                 <RevenuePlanEditor
                   initial={revenuePlan}
                   submissionId={submission.id}
                 />
-              </div>
-              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
-              <div className="pt-5">
-                <ProjectedReturns
-                  budgetTotal={budgetPlan?.total ?? 0}
-                  revenueTotal={revenuePlan?.total ?? 0}
-                />
+              </CollapsibleRow>
+              {/* Returns summary — always visible */}
+              <div className="flex items-center justify-center gap-4 py-4 text-[14px]">
+                <span style={{ color: '#78716C' }}>{fmtShort(budgetPlan?.total ?? 0)} cost</span>
+                <span style={{ color: '#A8A29E' }}>→</span>
+                <span style={{ color: '#0F6E56', fontWeight: 500 }}>{fmtShort(revenuePlan?.total ?? 0)} revenue</span>
+                {(budgetPlan?.total ?? 0) > 0 && (revenuePlan?.total ?? 0) > 0 && (
+                  <>
+                    <span style={{ color: '#A8A29E' }}>→</span>
+                    <span style={{ color: '#534AB7', fontWeight: 500 }}>{((revenuePlan?.total ?? 0) / (budgetPlan?.total ?? 1)).toFixed(1)}x</span>
+                  </>
+                )}
               </div>
             </div>
           }
