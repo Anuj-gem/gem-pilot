@@ -32,6 +32,7 @@ export default function HeroMediaCarousel({
   const [showYoutubeInput, setShowYoutubeInput] = useState(false)
   const [youtubeUrl, setYoutubeUrl] = useState('')
   const [hovered, setHovered] = useState(false)
+  const [lightboxUrl, setLightboxUrl] = useState<string | null>(null)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
   const posterInputRef = useRef<HTMLInputElement>(null)
@@ -248,13 +249,29 @@ export default function HeroMediaCarousel({
           {slides.map((slide, i) => (
             <div key={slide.url + i} className="w-full h-full flex-shrink-0 relative">
               {slide.type === 'youtube' ? (
-                <iframe
-                  src={slide.url}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title={slide.label || `Slide ${i + 1}`}
-                />
+                <>
+                  {/* YouTube thumbnail instead of iframe */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={slide.thumbnail || slide.url}
+                    alt={slide.label || `Video ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Play button overlay */}
+                  <button
+                    onClick={() => setLightboxUrl(slide.embedUrl || slide.url)}
+                    className="absolute inset-0 flex items-center justify-center z-[5] border-0 bg-transparent cursor-pointer"
+                  >
+                    <div
+                      className="w-16 h-16 rounded-full flex items-center justify-center transition-transform hover:scale-110"
+                      style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+                    >
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <polygon points="8,5 20,12 8,19" />
+                      </svg>
+                    </div>
+                  </button>
+                </>
               ) : (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -268,7 +285,8 @@ export default function HeroMediaCarousel({
               {isOwner && hovered && (
                 <button
                   onClick={() => handleDelete(i)}
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-opacity bg-[rgba(0,0,0,0.6)] hover:bg-[rgba(0,0,0,0.8)]"
+                  className="absolute top-12 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-opacity z-10"
+                  style={{ background: 'rgba(0,0,0,0.6)' }}
                   title={slide.isPoster ? 'Replace poster' : 'Remove'}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
@@ -433,6 +451,39 @@ export default function HeroMediaCarousel({
         onChange={handlePosterChange}
         className="hidden"
       />
+
+      {/* Video lightbox */}
+      {lightboxUrl && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          style={{ background: 'rgba(0,0,0,0.85)' }}
+          onClick={() => setLightboxUrl(null)}
+        >
+          <button
+            onClick={() => setLightboxUrl(null)}
+            className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center border-0 cursor-pointer z-10"
+            style={{ background: 'rgba(255,255,255,0.1)' }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div
+            className="w-full max-w-4xl"
+            style={{ aspectRatio: '16/9' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={lightboxUrl + (lightboxUrl.includes('?') ? '&' : '?') + 'autoplay=1'}
+              className="w-full h-full rounded-lg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Video player"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -444,6 +495,23 @@ interface Slide {
   url: string
   label?: string
   isPoster: boolean
+  thumbnail?: string
+  embedUrl?: string
+}
+
+/** Extract YouTube video ID from various URL formats */
+function extractYoutubeId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/embed\/)([^?&/]+)/,
+    /(?:youtube\.com\/watch\?v=)([^&]+)/,
+    /(?:youtu\.be\/)([^?&/]+)/,
+    /(?:youtube\.com\/v\/)([^?&/]+)/,
+  ]
+  for (const p of patterns) {
+    const m = url.match(p)
+    if (m) return m[1]
+  }
+  return null
 }
 
 function buildSlides(poster: string | null, media: MediaItem[]): Slide[] {
@@ -454,9 +522,27 @@ function buildSlides(poster: string | null, media: MediaItem[]): Slide[] {
   }
 
   for (const item of media) {
-    // Skip PDFs — carousel is images + youtube only
     if (item.type === 'pdf') continue
-    slides.push({ type: item.type, url: item.url, label: item.label, isPoster: false })
+
+    if (item.type === 'youtube') {
+      const videoId = extractYoutubeId(item.url)
+      const thumbnail = videoId
+        ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+        : item.thumbnail
+      const embedUrl = videoId
+        ? `https://www.youtube.com/embed/${videoId}`
+        : item.url
+      slides.push({
+        type: 'youtube',
+        url: thumbnail || item.url,
+        thumbnail: thumbnail || undefined,
+        embedUrl,
+        label: item.label,
+        isPoster: false,
+      })
+    } else {
+      slides.push({ type: item.type, url: item.url, label: item.label, isPoster: false })
+    }
   }
 
   return slides
