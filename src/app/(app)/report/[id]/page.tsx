@@ -678,7 +678,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {/* Override the (app) layout background to dark gradient for report */}
       <style>{`
-        .min-h-screen { background: linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%) !important; }
         .gem-floating-card {
           background: rgba(255,255,255,0.06);
           border: 1px solid rgba(255,255,255,0.10);

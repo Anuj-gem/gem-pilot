@@ -46,7 +46,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // anonymous onboarding state (upload + newest opportunities).
   if (!user) {
     return (
-      <div className="min-h-screen" style={{ background: '#2b1a55' }}>
+      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%)' }}>
         <Nav />
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 lg:pb-16">
           <div className="flex gap-8">
@@ -217,7 +217,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#2b1a55' }}>
+    <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%)' }}>
       <Nav userData={navUserData} />
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 lg:pb-16">
         <main className="min-w-0">
