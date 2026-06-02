@@ -18,8 +18,8 @@ function NeedsCard({ title, icon, summary, children, defaultOpen = false }: Need
     <div
       className="rounded-xl overflow-hidden transition-all flex flex-col"
       style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.12)',
+        background: '#FAFAF9',
+        border: '1px solid #E7E5E4',
       }}
     >
       <button
@@ -28,16 +28,16 @@ function NeedsCard({ title, icon, summary, children, defaultOpen = false }: Need
       >
         <div
           className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-          style={{ background: 'rgba(124,58,237,0.15)' }}
+          style={{ background: 'rgba(124,58,237,0.10)' }}
         >
           {icon}
         </div>
         <div className="min-w-0">
-          <h3 className="text-[15px] font-bold m-0" style={{ color: 'rgba(255,255,255,0.95)' }}>
+          <h3 className="text-[15px] font-bold m-0" style={{ color: '#1C1917' }}>
             {title}
           </h3>
           {summary && (
-            <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#a78bfa' }}>
+            <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#7C3AED' }}>
               {summary}
             </p>
           )}
@@ -46,7 +46,7 @@ function NeedsCard({ title, icon, summary, children, defaultOpen = false }: Need
           size={16}
           className="shrink-0 transition-transform duration-200"
           style={{
-            color: 'rgba(255,255,255,0.4)',
+            color: '#A8A29E',
             transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
           }}
         />
@@ -55,7 +55,7 @@ function NeedsCard({ title, icon, summary, children, defaultOpen = false }: Need
       {open && (
         <div
           className="px-5 pb-5 space-y-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
+          style={{ borderTop: '1px solid #E7E5E4' }}
         >
           <div className="pt-4">
             {children}
@@ -87,7 +87,7 @@ export function ProjectNeedsCards({
     <div>
       <h2
         className="text-[11px] uppercase tracking-[0.18em] font-semibold m-0 mb-4"
-        style={{ color: 'rgba(255,255,255,0.4)' }}
+        style={{ color: '#78716C' }}
       >
         What This Project Needs
       </h2>
@@ -134,8 +134,8 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
     <div
       className="rounded-xl overflow-hidden"
       style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.12)',
+        background: '#FAFAF9',
+        border: '1px solid #E7E5E4',
       }}
     >
       <button
@@ -150,12 +150,12 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
         >
           <span className="absolute rotate-0" style={{
             width: 28, height: 28,
-            background: 'rgba(167, 139, 250, 0.15)',
+            background: 'rgba(124, 58, 237, 0.08)',
             borderRadius: 2,
           }} />
           <span className="absolute rotate-0" style={{
             width: 21, height: 21,
-            background: 'rgba(139, 92, 246, 0.35)',
+            background: 'rgba(124, 58, 237, 0.20)',
             borderRadius: 1.5,
           }} />
           <span className="absolute rotate-0" style={{
@@ -165,21 +165,21 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
           }} />
         </span>
         <div className="flex-1 min-w-0">
-          <h3 className="text-[17px] font-bold m-0" style={{ color: 'rgba(255,255,255,0.95)' }}>
+          <h3 className="text-[17px] font-bold m-0" style={{ color: '#1C1917' }}>
             GEM Analysis
           </h3>
-          <p className="text-[13px] m-0 mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="text-[13px] m-0 mt-0.5" style={{ color: '#78716C' }}>
             Score breakdown, strengths, and development notes
           </p>
         </div>
         {score != null && (
           <div className="flex items-center gap-3 shrink-0">
             <div className="text-right">
-              <span className="text-[28px] font-bold" style={{ color: '#a78bfa' }}>
+              <span className="text-[28px] font-bold" style={{ color: '#7C3AED' }}>
                 {score}
               </span>
               {tier && (
-                <p className="text-[11px] font-medium m-0 uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <p className="text-[11px] font-medium m-0 uppercase tracking-wider" style={{ color: '#78716C' }}>
                   {tier}
                 </p>
               )}
@@ -190,14 +190,14 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
           size={18}
           className="shrink-0 transition-transform duration-200"
           style={{
-            color: 'rgba(255,255,255,0.4)',
+            color: '#A8A29E',
             transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
           }}
         />
       </button>
 
       {open && (
-        <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-8">
+        <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-8" style={{ borderTop: '1px solid #E7E5E4' }}>
           {children}
         </div>
       )}

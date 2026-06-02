@@ -795,9 +795,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* ═══ TOOLBAR — owner actions, tight spacing ═══ */}
+        {/* ═══ WHITE CONTENT CARD — elevated container for all content below hero ═══ */}
+        <div
+          className="rounded-2xl -mt-4 relative z-10"
+          style={{
+            background: '#fff',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
+          }}
+        >
+
+        {/* ═══ TOOLBAR — owner actions ═══ */}
         {(isOwner || isAdmin) && (
-          <div className="gem-no-print flex items-center justify-end gap-2 py-1">
+          <div className="gem-no-print flex items-center justify-end gap-2 px-6 sm:px-8 pt-4">
             <ShareButtons
               title={submission.title ?? 'Check out my project on GEM'}
               url={`https://gem-pilot.vercel.app/report/${id}`}
@@ -813,15 +822,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         {/* ═══ LOGLINE + ELEVATOR PITCH + PLOT SUMMARY ═══ */}
-        <div className="space-y-6">
-          {/* Logline — no label, big and bold */}
+        <div className="px-6 sm:px-8 py-6 space-y-5">
+          {/* Logline */}
           {topCard.logline && (
-            <p className="text-[22px] sm:text-[24px] leading-[1.4] font-semibold m-0" style={{ color: 'rgba(255,255,255,0.95)' }}>
-              {topCard.logline}
-            </p>
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
+                Logline
+              </p>
+              <p className="text-[20px] sm:text-[22px] leading-[1.45] font-semibold m-0" style={{ color: '#1C1917' }}>
+                {topCard.logline}
+              </p>
+            </div>
           )}
 
-          {/* Elevator pitch — no label, reads like streaming-service description */}
+          {/* Elevator pitch */}
           <SectionGate
             section="whats_working"
             privacy={privacy}
@@ -831,23 +845,34 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isProSubscriber={true}
           >
             {whatsSpecial.headline && (
-              <p className="text-[17px] sm:text-[18px] leading-[1.6] font-normal m-0" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                {whatsSpecial.headline}
-              </p>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
+                  Elevator Pitch
+                </p>
+                <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: '#44403C' }}>
+                  {whatsSpecial.headline}
+                </p>
+              </div>
             )}
           </SectionGate>
 
           {/* PLOT SUMMARY */}
           {plotSummary && (
-            <Collapsible title="Plot summary" defaultOpen={false}>
-              <p className="text-[16px] sm:text-[17px] text-[var(--gem-gray-200)] leading-[1.6] m-0">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
+                Plot Summary
+              </p>
+              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0" style={{ color: '#57534E' }}>
                 {plotSummary}
               </p>
-            </Collapsible>
+            </div>
           )}
         </div>
 
+        <div style={{ borderTop: '1px solid #E7E5E4' }} />
+
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
+        <div className="px-6 sm:px-8 py-6">
         <ProjectNeedsCards
           investmentSummary={
             totalBacking > 0
@@ -1066,8 +1091,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </SectionGate>
           }
         />
+        </div>{/* close project needs padding wrapper */}
+
+        <div style={{ borderTop: '1px solid #E7E5E4' }} />
 
         {/* ═══ GEM ANALYSIS — collapsible card with inline score ═══ */}
+        <div className="px-6 sm:px-8 py-6">
         <GemAnalysisCard
           score={typeof commercialScore === 'number' ? Math.round(commercialScore) : null}
           tier={designation ? DESIGNATION_STYLE[designation].label : null}
@@ -1365,6 +1394,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         </div>{/* ═══ END GEM ANALYSIS CONTENT ═══ */}
 
         </GemAnalysisCard>
+
+        </div>{/* ═══ END GEM ANALYSIS PADDING WRAPPER ═══ */}
+
+        </div>{/* ═══ END WHITE CONTENT CARD ═══ */}
         </>
         ) : (
         /* ═══ VISITOR VIEW — flat layout, no tabs ═══ */
