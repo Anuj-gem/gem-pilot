@@ -984,12 +984,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CollapsibleRow
                 emoji="📊"
                 title="Budget"
-                subtitle={gemEstimate ? `GEM estimate: ${gemEstimate}` : 'Set your project budget'}
+                subtitle={budgetPlan?.total ? 'Your budget' : gemEstimate ? `GEM estimate: ${gemEstimate.replace(/total negative cost/i, '').trim()}` : 'Set your project budget'}
                 value={budgetPlan?.total ? fmtShort(budgetPlan.total) : '$0'}
               >
                 <BudgetEditor
                   initial={budgetPlan}
                   gemEstimate={gemEstimate}
+                  gemNote={packaging?.budget_tier?.note ?? null}
+                  gemTier={packaging?.budget_tier?.tier ?? null}
                   submissionId={submission.id}
                 />
               </CollapsibleRow>
