@@ -112,26 +112,7 @@ export function LeaderboardCards({
         <Chip label={`Series ${seriesCount}`} active={format === 'series'} onClick={() => setFormat(format === 'series' ? 'all' : 'series')} />
 
         {/* Sort */}
-        <div style={{ marginLeft: 'auto' }}>
-          <select
-            value={sort}
-            onChange={e => setSort(e.target.value as SortKey)}
-            style={{
-              fontSize: 12,
-              color: 'rgba(255,255,255,0.6)',
-              background: 'rgba(255,255,255,0.06)',
-              border: '0.5px solid rgba(255,255,255,0.12)',
-              borderRadius: 8,
-              padding: '6px 12px',
-              cursor: 'pointer',
-              outline: 'none',
-            }}
-          >
-            <option value="heat" style={{ background: '#1a0f35', color: '#fff' }}>Most funded</option>
-            <option value="recent" style={{ background: '#1a0f35', color: '#fff' }}>Newest</option>
-            <option value="score" style={{ background: '#1a0f35', color: '#fff' }}>Top score</option>
-          </select>
-        </div>
+        <DiscoverSortDropdown value={sort} onChange={setSort} />
       </div>
 
       {/* Row 2: Genre chips */}
@@ -176,6 +157,61 @@ export function LeaderboardCards({
 }
 
 /* ── Chip ── */
+
+const DISCOVER_SORT_LABELS: Record<SortKey, string> = { heat: 'Most funded', recent: 'Newest', score: 'Top score' }
+
+function DiscoverSortDropdown({ value, onChange }: { value: SortKey; onChange: (v: SortKey) => void }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div style={{ position: 'relative', marginLeft: 'auto' }}>
+      <button
+        onClick={() => setOpen(v => !v)}
+        style={{
+          fontSize: 12,
+          color: 'rgba(255,255,255,0.7)',
+          background: 'rgba(255,255,255,0.06)',
+          border: '0.5px solid rgba(255,255,255,0.15)',
+          borderRadius: 8,
+          padding: '6px 14px',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 6,
+        }}
+      >
+        Sort: {DISCOVER_SORT_LABELS[value]}
+        <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
+      </button>
+      {open && (
+        <>
+          <div style={{ position: 'fixed', inset: 0, zIndex: 40 }} onClick={() => setOpen(false)} />
+          <div style={{
+            position: 'absolute', right: 0, top: '100%', marginTop: 4,
+            background: '#1e1b2e', border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: 10, padding: '4px 0', zIndex: 50, minWidth: 160,
+            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+          }}>
+            {(['heat', 'recent', 'score'] as SortKey[]).map(k => (
+              <button
+                key={k}
+                onClick={() => { onChange(k); setOpen(false) }}
+                style={{
+                  display: 'block', width: '100%', textAlign: 'left',
+                  fontSize: 13, padding: '8px 16px', border: 'none', cursor: 'pointer',
+                  background: k === value ? 'rgba(255,255,255,0.08)' : 'transparent',
+                  color: k === value ? '#fff' : 'rgba(255,255,255,0.6)',
+                  fontWeight: k === value ? 500 : 400,
+                }}
+              >
+                {DISCOVER_SORT_LABELS[k]}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
 
 function Chip({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (

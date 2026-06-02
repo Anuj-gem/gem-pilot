@@ -188,26 +188,7 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
             {FILTER_LABELS[key]} {counts[key]}
           </button>
         ))}
-        <div style={{ marginLeft: 'auto' }}>
-          <select
-            value={sort}
-            onChange={e => setSort(e.target.value as SortKey)}
-            style={{
-              fontSize: 12,
-              color: 'rgba(255,255,255,0.6)',
-              background: 'rgba(255,255,255,0.06)',
-              border: '0.5px solid rgba(255,255,255,0.12)',
-              borderRadius: 8,
-              padding: '6px 12px',
-              cursor: 'pointer',
-              outline: 'none',
-            }}
-          >
-            {Object.entries(SORT_LABELS).map(([k, v]) => (
-              <option key={k} value={k} style={{ background: '#1a0f35', color: '#fff' }}>Sort: {v}</option>
-            ))}
-          </select>
-        </div>
+        <SortDropdown value={sort} onChange={setSort} labels={SORT_LABELS} />
       </div>
 
       {/* Pending collaboration requests */}
@@ -341,6 +322,61 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
             Cancel
           </button>
         </div>
+      )}
+    </div>
+  )
+}
+
+/* ── Custom sort dropdown (native <select> is invisible on dark bg) ── */
+
+function SortDropdown<T extends string>({ value, onChange, labels }: { value: T; onChange: (v: T) => void; labels: Record<T, string> }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div style={{ position: 'relative', marginLeft: 'auto' }}>
+      <button
+        onClick={() => setOpen(v => !v)}
+        style={{
+          fontSize: 12,
+          color: 'rgba(255,255,255,0.7)',
+          background: 'rgba(255,255,255,0.06)',
+          border: '0.5px solid rgba(255,255,255,0.15)',
+          borderRadius: 8,
+          padding: '6px 14px',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 6,
+        }}
+      >
+        Sort: {labels[value]}
+        <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
+      </button>
+      {open && (
+        <>
+          <div style={{ position: 'fixed', inset: 0, zIndex: 40 }} onClick={() => setOpen(false)} />
+          <div style={{
+            position: 'absolute', right: 0, top: '100%', marginTop: 4,
+            background: '#1e1b2e', border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: 10, padding: '4px 0', zIndex: 50, minWidth: 160,
+            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+          }}>
+            {(Object.keys(labels) as T[]).map(k => (
+              <button
+                key={k}
+                onClick={() => { onChange(k); setOpen(false) }}
+                style={{
+                  display: 'block', width: '100%', textAlign: 'left',
+                  fontSize: 13, padding: '8px 16px', border: 'none', cursor: 'pointer',
+                  background: k === value ? 'rgba(255,255,255,0.08)' : 'transparent',
+                  color: k === value ? '#fff' : 'rgba(255,255,255,0.6)',
+                  fontWeight: k === value ? 500 : 400,
+                }}
+              >
+                {labels[k]}
+              </button>
+            ))}
+          </div>
+        </>
       )}
     </div>
   )
