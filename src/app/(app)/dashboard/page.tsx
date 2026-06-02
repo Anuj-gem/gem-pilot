@@ -581,6 +581,7 @@ export default async function DashboardPage() {
 
     projectCards.push({
       id: s.id,
+      eval_id: ev?.id ?? null,
       title: s.title,
       logline: ev?.logline ?? null,
       poster_url: s.poster_url ?? null,
@@ -593,11 +594,12 @@ export default async function DashboardPage() {
       crew_count: crewCount,
       cast_count: 0,
       backing_total: backing,
+      following_total: s.total_following ?? 0,
       role: 'creator',
       collab_role_label: null,
       status,
       has_pending_apps: (pendingAppsByScript.get(s.id) ?? 0) > 0,
-      needs_funding: backing > 0 && false, // TODO: compare against budget when available
+      needs_funding: backing > 0 && false,
       created_at: s.created_at,
     })
   }
@@ -608,6 +610,7 @@ export default async function DashboardPage() {
 
     projectCards.push({
       id: s.id,
+      eval_id: s.evaluationId ?? null,
       title: s.title,
       logline: null,
       poster_url: s.posterUrl,
@@ -620,6 +623,7 @@ export default async function DashboardPage() {
       crew_count: 0,
       cast_count: 0,
       backing_total: s.totalBacking,
+      following_total: s.totalFollowing,
       role: 'collaborator',
       collab_role_label: s.collabRole,
       status: 'completed',

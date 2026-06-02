@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 
 export interface ProjectCard {
   id: string
+  eval_id: string | null
   title: string
   logline: string | null
   poster_url: string | null
@@ -20,6 +21,7 @@ export interface ProjectCard {
   crew_count: number
   cast_count: number
   backing_total: number
+  following_total: number
   role: 'creator' | 'collaborator'
   collab_role_label: string | null
   status: 'processing' | 'completed' | 'error'
@@ -343,6 +345,14 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
   )
 }
 
+/* ── Helpers ── */
+
+function fmtK(n: number): string {
+  if (n >= 1e6) return `${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+  if (n >= 1e3) return `${Math.round(n / 1e3)}K`
+  return n.toLocaleString()
+}
+
 /* ── Project tile ── */
 
 function ProjectTile({ project: p, isSelected, onToggleSelect }: {
@@ -350,15 +360,19 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
   isSelected: boolean
   onToggleSelect: () => void
 }) {
-  const href = p.status === 'completed' ? `/report/${p.id}` : undefined
+  // Use eval_id for report link if available, fall back to submission id
+  const href = p.status === 'completed' ? `/report/${p.eval_id || p.id}` : undefined
 
-  const card = (
+  const roleLabel = p.role === 'creator'
+    ? 'Role: Creator'
+    : `Role: ${p.collab_role_label || 'Collaborator'}`
+
+  return (
     <div
       style={{
         borderRadius: 10,
         overflow: 'hidden',
         background: '#fff',
-        cursor: href ? 'pointer' : 'default',
         outline: isSelected ? '2px solid #7C3AED' : 'none',
         outlineOffset: -2,
         position: 'relative',
@@ -380,33 +394,11 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
           </div>
         )}
 
-        {/* Role badge */}
-        <div style={{ position: 'absolute', top: 8, left: 8 }}>
-          <span style={{
-            fontSize: 10, fontWeight: 500, padding: '2px 6px', borderRadius: 3,
-            background: p.role === 'collaborator' ? 'rgba(83,74,183,0.7)' : 'rgba(0,0,0,0.5)',
-            color: '#fff',
-          }}>
-            {p.role === 'creator' ? 'Creator' : p.collab_role_label || 'Collaborator'}
-          </span>
-        </div>
-
-        {/* Score badge */}
-        <div style={{ position: 'absolute', top: 8, right: 8 }}>
-          <span style={{
-            fontSize: 12, fontWeight: 500, padding: '2px 8px', borderRadius: 4,
-            background: p.score != null ? 'rgba(124,58,237,0.85)' : 'rgba(255,255,255,0.1)',
-            color: p.score != null ? '#fff' : 'rgba(255,255,255,0.35)',
-          }}>
-            {p.score ?? '--'}
-          </span>
-        </div>
-
-        {/* Select checkbox */}
+        {/* Select checkbox — top left */}
         <div
           onClick={e => { e.preventDefault(); e.stopPropagation(); onToggleSelect() }}
           style={{
-            position: 'absolute', top: 8, right: 46,
+            position: 'absolute', top: 8, left: 8,
             width: 20, height: 20, borderRadius: 4,
             background: isSelected ? '#534AB7' : 'rgba(0,0,0,0.3)',
             border: isSelected ? 'none' : '1.5px solid rgba(255,255,255,0.3)',
@@ -414,9 +406,20 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
             cursor: 'pointer', opacity: isSelected ? 1 : 0,
             transition: 'opacity 0.15s',
           }}
-          className="group-hover-visible"
+          className="tile-checkbox"
         >
           {isSelected && <span style={{ color: '#fff', fontSize: 12, fontWeight: 700 }}>✓</span>}
+        </div>
+
+        {/* Role badge — top right */}
+        <div style={{ position: 'absolute', top: 8, right: 8 }}>
+          <span style={{
+            fontSize: 10, fontWeight: 500, padding: '2px 8px', borderRadius: 3,
+            background: 'rgba(0,0,0,0.5)', color: '#fff',
+            backdropFilter: 'blur(4px)',
+          }}>
+            {roleLabel}
+          </span>
         </div>
 
         {/* Title overlay */}
@@ -437,32 +440,57 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
         </div>
       </div>
 
-      {/* Status bar */}
+      {/* Status bar + View project */}
       <div style={{
         padding: '8px 12px',
         display: 'flex',
         alignItems: 'center',
-        gap: 10,
+        gap: 12,
         fontSize: 11,
         borderTop: '0.5px solid #f0f0f0',
       }}>
-        <span>💰 <span style={{ color: p.budget_display ? '#534AB7' : '#A8A29E', fontWeight: p.budget_display ? 500 : 400 }}>{p.budget_display || '--'}</span></span>
-        <span>🎬 <span style={{ color: p.crew_count > 0 ? '#57534E' : '#A8A29E' }}>{p.crew_count}</span></span>
-        <span>🎭 <span style={{ color: p.cast_count > 0 ? '#57534E' : '#A8A29E' }}>{p.cast_count}</span></span>
-        {p.heat_score > 0 && (
-          <span>🔥 <span style={{ color: '#f97316', fontWeight: 500 }}>{p.heat_score}</span></span>
+        {/* Secured */}
+        <span style={{ color: p.backing_total > 0 ? '#15803d' : '#A8A29E' }}>
+          💰 {p.backing_total > 0 ? `${fmtK(p.backing_total)} secured` : 'Secured 0'}
+        </span>
+        {/* Pending */}
+        {p.following_total > 0 && (
+          <span style={{ color: '#534AB7' }}>
+            {fmtK(p.following_total)} pending
+          </span>
+        )}
+        {/* Crew */}
+        <span style={{ color: p.crew_count > 0 ? '#57534E' : '#A8A29E' }}>
+          Crew {p.crew_count}
+        </span>
+        {/* Cast */}
+        <span style={{ color: p.cast_count > 0 ? '#57534E' : '#A8A29E' }}>
+          Cast {p.cast_count}
+        </span>
+
+        {/* View project button */}
+        {href && (
+          <Link
+            href={href}
+            onClick={e => e.stopPropagation()}
+            style={{
+              marginLeft: 'auto',
+              fontSize: 11,
+              fontWeight: 500,
+              color: '#534AB7',
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            View project →
+          </Link>
         )}
       </div>
 
       {/* Hover show checkbox */}
       <style>{`
-        div:hover .group-hover-visible { opacity: 1 !important; }
+        div:hover .tile-checkbox { opacity: 1 !important; }
       `}</style>
     </div>
   )
-
-  if (href) {
-    return <Link href={href} style={{ textDecoration: 'none', display: 'block' }}>{card}</Link>
-  }
-  return card
 }
