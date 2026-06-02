@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Plus, UserCheck, UserPlus, X, Loader2, Trash2, Mail, Lock } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Plus, X, Loader2, Trash2, UserPlus, ChevronDown, Mail } from 'lucide-react'
+
+/* ── Types ── */
 
 interface CrewRole {
   id: string
@@ -22,6 +24,17 @@ interface CrewRole {
   } | null
 }
 
+/** Someone who can be picked from the assign dropdown */
+interface TeamMember {
+  id: string // either a user id or collaborator row id
+  type: 'owner' | 'user' | 'collaborator'
+  userId: string | null
+  collaboratorRowId: string | null
+  name: string
+  avatar: string | null
+  email?: string
+}
+
 interface Props {
   submissionId: string
   isOwner: boolean
@@ -32,13 +45,12 @@ interface Props {
     headline: string | null
   } | null
   category?: 'crew' | 'cast'
-  /** For cast: character names to auto-seed as role slots */
   characterNames?: string[]
-  /** Section title override */
   title?: string
-  /** Emoji for section header */
   emoji?: string
 }
+
+/* ── Main Component ── */
 
 export function CrewSection({
   submissionId,
@@ -57,16 +69,15 @@ export function CrewSection({
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
 
-  // Invite state
-  const [inviteRoleId, setInviteRoleId] = useState<string | null>(null)
-  const [inviteEmail, setInviteEmail] = useState('')
-  const [inviting, setInviting] = useState(false)
-
   const sectionTitle = title || (category === 'cast' ? 'Cast' : 'Crew')
   const sectionEmoji = emoji || (category === 'cast' ? '🎭' : '🎬')
 
+  // Build the team member list from ALL roles (crew + cast) on this project
+  const [allProjectRoles, setAllProjectRoles] = useState<CrewRole[]>([])
+
   useEffect(() => {
     fetchRoles()
+    fetchAllProjectMembers()
   }, [submissionId, category])
 
   async function fetchRoles() {
@@ -83,6 +94,79 @@ export function CrewSection({
     } finally {
       setLoading(false)
     }
+  }
+
+  async function fetchAllProjectMembers() {
+    // Fetch both crew and cast roles to build the full team list
+    const otherCategory = category === 'crew' ? 'cast' : 'crew'
+    try {
+      const [res1, res2] = await Promise.all([
+        fetch(`/api/scripts/${submissionId}/crew?category=${category}`),
+        fetch(`/api/scripts/${submissionId}/crew?category=${otherCategory}`),
+      ])
+      const [data1, data2] = await Promise.all([
+        res1.ok ? res1.json() : [],
+        res2.ok ? res2.json() : [],
+      ])
+      setAllProjectRoles([...data1, ...data2])
+    } catch {}
+  }
+
+  // Build the team member picker options
+  function getTeamMembers(excludeRoleId: string): TeamMember[] {
+    const members: TeamMember[] = []
+    const seenUserIds = new Set<string>()
+    const seenCollabIds = new Set<string>()
+
+    // 1. Owner first
+    if (currentUserId) {
+      members.push({
+        id: `owner-${currentUserId}`,
+        type: 'owner',
+        userId: currentUserId,
+        collaboratorRowId: null,
+        name: ownerProfile?.full_name || 'Me',
+        avatar: ownerProfile?.avatar_url || null,
+      })
+      seenUserIds.add(currentUserId)
+    }
+
+    // 2. Collect everyone assigned to ANY role on this project
+    for (const r of allProjectRoles) {
+      if (r.id === excludeRoleId) continue
+
+      // User directly assigned
+      if (r.assigned_user_id && !seenUserIds.has(r.assigned_user_id) && r.profile) {
+        members.push({
+          id: `user-${r.assigned_user_id}`,
+          type: 'user',
+          userId: r.assigned_user_id,
+          collaboratorRowId: null,
+          name: r.profile.full_name || 'Team member',
+          avatar: r.profile.avatar_url || null,
+        })
+        seenUserIds.add(r.assigned_user_id)
+      }
+
+      // Collaborator with accepted status
+      if (r.collaborator_row_id && r.collaborator && !seenCollabIds.has(r.collaborator_row_id)) {
+        if (r.collaborator.status === 'accepted') {
+          const cProfile = r.collaborator.profile
+          members.push({
+            id: `collab-${r.collaborator_row_id}`,
+            type: 'collaborator',
+            userId: cProfile?.id || null,
+            collaboratorRowId: r.collaborator_row_id,
+            name: cProfile?.full_name || r.collaborator.email,
+            avatar: cProfile?.avatar_url || null,
+            email: r.collaborator.email,
+          })
+          seenCollabIds.add(r.collaborator_row_id)
+        }
+      }
+    }
+
+    return members
   }
 
   async function handleAddRole() {
@@ -103,12 +187,13 @@ export function CrewSection({
       setNewRoleName('')
       setAddingRole(false)
       fetchRoles()
+      fetchAllProjectMembers()
     } finally {
       setSaving(false)
     }
   }
 
-  async function handleSelfAssign(roleId: string) {
+  async function handleAssignUser(roleId: string, userId: string) {
     setError('')
     try {
       const res = await fetch(`/api/scripts/${submissionId}/crew`, {
@@ -116,7 +201,25 @@ export function CrewSection({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role_id: roleId, action: 'self_assign' }),
       })
-      if (res.ok) fetchRoles()
+      if (res.ok) {
+        fetchRoles()
+        fetchAllProjectMembers()
+      }
+    } catch {}
+  }
+
+  async function handleAssignCollaborator(roleId: string, collaboratorRowId: string) {
+    setError('')
+    try {
+      const res = await fetch(`/api/scripts/${submissionId}/crew`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ role_id: roleId, action: 'link_collaborator', collaborator_row_id: collaboratorRowId }),
+      })
+      if (res.ok) {
+        fetchRoles()
+        fetchAllProjectMembers()
+      }
     } catch {}
   }
 
@@ -128,24 +231,24 @@ export function CrewSection({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role_id: roleId, action: 'unassign' }),
       })
-      if (res.ok) fetchRoles()
+      if (res.ok) {
+        fetchRoles()
+        fetchAllProjectMembers()
+      }
     } catch {}
   }
 
-  async function handleInvite(roleId: string) {
-    if (!inviteEmail.trim()) return
-    setInviting(true)
+  async function handleInvite(roleId: string, email: string) {
     setError('')
     try {
-      // Use the existing collaborator invite API, then link to crew role
       const roleName = roles.find(r => r.id === roleId)?.role_name || sectionTitle
       const res = await fetch(`/api/scripts/${submissionId}/collaborators`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: inviteEmail.trim(),
+          email: email.trim(),
           role: category === 'cast' ? 'actor' : 'other',
-          role_other: category === 'cast' ? roleName : roleName,
+          role_other: roleName,
         }),
       })
       const data = await res.json()
@@ -165,12 +268,9 @@ export function CrewSection({
         }),
       })
 
-      setInviteEmail('')
-      setInviteRoleId(null)
       fetchRoles()
-    } finally {
-      setInviting(false)
-    }
+      fetchAllProjectMembers()
+    } catch {}
   }
 
   async function handleDeleteRole(roleId: string) {
@@ -179,19 +279,17 @@ export function CrewSection({
       const res = await fetch(`/api/scripts/${submissionId}/crew?roleId=${roleId}`, {
         method: 'DELETE',
       })
-      if (res.ok) fetchRoles()
+      if (res.ok) {
+        fetchRoles()
+        fetchAllProjectMembers()
+      }
     } catch {}
   }
 
   if (loading) return null
 
-  // For visitors: only show filled roles
   const visibleRoles = isOwner ? roles : roles.filter(r => r.assigned_user_id || (r.collaborator && r.collaborator.status === 'accepted'))
-
   if (!isOwner && visibleRoles.length === 0) return null
-
-  // Pending invites (owner-only private section)
-  const pendingRoles = roles.filter(r => r.collaborator && r.collaborator.status === 'pending')
 
   return (
     <div>
@@ -211,19 +309,12 @@ export function CrewSection({
             role={role}
             isOwner={isOwner}
             currentUserId={currentUserId}
-            ownerProfile={ownerProfile}
-            onSelfAssign={() => handleSelfAssign(role.id)}
+            teamMembers={getTeamMembers(role.id)}
+            onAssignUser={(userId) => handleAssignUser(role.id, userId)}
+            onAssignCollaborator={(collabId) => handleAssignCollaborator(role.id, collabId)}
             onUnassign={() => handleUnassign(role.id)}
-            onInviteClick={() => {
-              setInviteRoleId(inviteRoleId === role.id ? null : role.id)
-              setInviteEmail('')
-            }}
+            onInvite={(email) => handleInvite(role.id, email)}
             onDelete={() => handleDeleteRole(role.id)}
-            inviteOpen={inviteRoleId === role.id}
-            inviteEmail={inviteEmail}
-            onInviteEmailChange={setInviteEmail}
-            onInviteSubmit={() => handleInvite(role.id)}
-            inviting={inviting}
           />
         ))}
       </div>
@@ -282,99 +373,90 @@ export function CrewSection({
       )}
 
       {error && <p className="text-[12px] text-red-500 mb-2">{error}</p>}
-
-      {/* Pending invites — private to owner */}
-      {isOwner && pendingRoles.length > 0 && (
-        <div
-          className="mt-4 p-3 rounded-lg"
-          style={{ background: 'rgba(124,58,237,0.04)', border: '1px solid rgba(124,58,237,0.12)' }}
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <Lock size={12} style={{ color: '#7C3AED' }} />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.1em]" style={{ color: '#7C3AED' }}>
-              Private to you
-            </span>
-          </div>
-          <table className="w-full text-[13px]" style={{ color: '#44403C' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-                <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>Invite</th>
-                <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>{category === 'cast' ? 'Character' : 'Role'}</th>
-                <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pendingRoles.map(role => (
-                <tr key={role.id} style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
-                  <td className="py-1.5">{role.collaborator?.email || '—'}</td>
-                  <td className="py-1.5">{role.role_name}</td>
-                  <td className="py-1.5">
-                    <span
-                      className="text-[11px] font-semibold px-2 py-0.5 rounded"
-                      style={{ background: 'rgba(245,158,11,0.1)', color: '#D97706' }}
-                    >
-                      Pending
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
     </div>
   )
 }
 
-/* ── Individual Role Slot ── */
+/* ── Individual Role Slot with assign dropdown ── */
+
 function RoleSlot({
   role,
   isOwner,
   currentUserId,
-  ownerProfile,
-  onSelfAssign,
+  teamMembers,
+  onAssignUser,
+  onAssignCollaborator,
   onUnassign,
-  onInviteClick,
+  onInvite,
   onDelete,
-  inviteOpen,
-  inviteEmail,
-  onInviteEmailChange,
-  onInviteSubmit,
-  inviting,
 }: {
   role: CrewRole
   isOwner: boolean
   currentUserId: string | null
-  ownerProfile: Props['ownerProfile']
-  onSelfAssign: () => void
+  teamMembers: TeamMember[]
+  onAssignUser: (userId: string) => void
+  onAssignCollaborator: (collabId: string) => void
   onUnassign: () => void
-  onInviteClick: () => void
+  onInvite: (email: string) => void
   onDelete: () => void
-  inviteOpen: boolean
-  inviteEmail: string
-  onInviteEmailChange: (v: string) => void
-  onInviteSubmit: () => void
-  inviting: boolean
 }) {
-  const isSelfAssigned = role.assigned_user_id === currentUserId
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [inviteMode, setInviteMode] = useState(false)
+  const [inviteEmail, setInviteEmail] = useState('')
+  const [inviting, setInviting] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
   const isFilled = role.assigned_user_id || (role.collaborator && role.collaborator.status === 'accepted')
+  const isPending = role.collaborator?.status === 'pending' && !role.assigned_user_id
 
   // Determine display name and avatar
   let displayName = ''
   let avatar: string | null = null
 
   if (role.assigned_user_id && role.profile) {
-    displayName = role.profile.full_name || 'You'
+    displayName = role.profile.full_name || 'Assigned'
     avatar = role.profile.avatar_url
   } else if (role.collaborator?.status === 'accepted' && role.collaborator.profile) {
     displayName = role.collaborator.profile.full_name || role.collaborator.email
     avatar = role.collaborator.profile.avatar_url
-  } else if (role.collaborator?.status === 'pending') {
-    displayName = '' // Will show as open with pending indicator
+  }
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+        setInviteMode(false)
+        setInviteEmail('')
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClick)
+      return () => document.removeEventListener('mousedown', handleClick)
+    }
+  }, [dropdownOpen])
+
+  async function handleInviteSubmit() {
+    if (!inviteEmail.trim()) return
+    setInviting(true)
+    await onInvite(inviteEmail.trim())
+    setInviting(false)
+    setInviteEmail('')
+    setInviteMode(false)
+    setDropdownOpen(false)
+  }
+
+  function handlePickMember(member: TeamMember) {
+    if (member.type === 'owner' || member.type === 'user') {
+      if (member.userId) onAssignUser(member.userId)
+    } else if (member.type === 'collaborator') {
+      if (member.collaboratorRowId) onAssignCollaborator(member.collaboratorRowId)
+    }
+    setDropdownOpen(false)
   }
 
   return (
-    <div>
+    <div className="relative" ref={dropdownRef}>
       <div
         className="flex items-center gap-3 px-4 py-3 rounded-xl group/slot"
         style={{
@@ -411,12 +493,12 @@ function RoleSlot({
               {displayName}
             </span>
           )}
-          {!isFilled && role.collaborator?.status === 'pending' && isOwner && (
+          {isPending && isOwner && (
             <span className="text-[12px] italic ml-2" style={{ color: '#D97706' }}>
               invite pending
             </span>
           )}
-          {!isFilled && !role.collaborator && (
+          {!isFilled && !isPending && (
             <span className="text-[13px] ml-2" style={{ color: '#A8A29E' }}>
               Open
             </span>
@@ -426,27 +508,18 @@ function RoleSlot({
         {/* Owner actions */}
         {isOwner && (
           <div className="flex items-center gap-1 opacity-0 group-hover/slot:opacity-100 transition-opacity">
-            {!isFilled && !role.collaborator && (
-              <>
-                <button
-                  onClick={onSelfAssign}
-                  className="px-2.5 py-1.5 rounded-lg text-[11px] font-semibold cursor-pointer border-0 transition-colors"
-                  style={{ background: 'rgba(124,58,237,0.08)', color: '#7C3AED' }}
-                  title="Assign myself"
-                >
-                  <UserCheck size={14} />
-                </button>
-                <button
-                  onClick={onInviteClick}
-                  className="px-2.5 py-1.5 rounded-lg text-[11px] font-semibold cursor-pointer border-0 transition-colors"
-                  style={{ background: 'rgba(124,58,237,0.08)', color: '#7C3AED' }}
-                  title="Invite someone"
-                >
-                  <Mail size={14} />
-                </button>
-              </>
+            {/* The assign button — opens dropdown */}
+            {!isFilled && !isPending && (
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[12px] font-semibold cursor-pointer border-0 transition-colors"
+                style={{ background: 'rgba(124,58,237,0.08)', color: '#7C3AED' }}
+              >
+                Assign <ChevronDown size={12} />
+              </button>
             )}
-            {(isFilled || role.collaborator?.status === 'pending') && (
+            {/* Unassign */}
+            {(isFilled || isPending) && (
               <button
                 onClick={onUnassign}
                 className="px-2.5 py-1.5 rounded-lg text-[11px] cursor-pointer border-0 transition-colors"
@@ -456,6 +529,7 @@ function RoleSlot({
                 <X size={14} />
               </button>
             )}
+            {/* Delete role */}
             <button
               onClick={onDelete}
               className="px-2.5 py-1.5 rounded-lg text-[11px] cursor-pointer border-0 transition-colors"
@@ -468,27 +542,95 @@ function RoleSlot({
         )}
       </div>
 
-      {/* Inline invite form */}
-      {inviteOpen && isOwner && (
-        <div className="flex items-center gap-2 mt-1.5 ml-13 pl-[52px]">
-          <input
-            type="email"
-            value={inviteEmail}
-            onChange={e => onInviteEmailChange(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && onInviteSubmit()}
-            placeholder="Email address"
-            className="flex-1 px-3 py-2 rounded-lg text-[13px] outline-none"
-            style={{ background: '#f5f5f4', border: '1px solid #d6d3d1', color: '#1c1917' }}
-            autoFocus
-          />
-          <button
-            onClick={onInviteSubmit}
-            disabled={inviting || !inviteEmail.trim()}
-            className="px-3 py-2 rounded-lg text-[13px] font-semibold cursor-pointer border-0 disabled:opacity-50 text-white shrink-0"
-            style={{ background: '#7c3aed' }}
-          >
-            {inviting ? <Loader2 size={14} className="animate-spin" /> : 'Invite'}
-          </button>
+      {/* ── Assign Dropdown ── */}
+      {dropdownOpen && isOwner && (
+        <div
+          className="absolute right-0 top-full mt-1 z-50 rounded-xl overflow-hidden shadow-lg"
+          style={{
+            background: '#FFFFFF',
+            border: '1px solid #E7E5E4',
+            minWidth: 240,
+            maxWidth: 320,
+          }}
+        >
+          {/* Team member list */}
+          <div className="py-1">
+            {teamMembers.map(member => (
+              <button
+                key={member.id}
+                onClick={() => handlePickMember(member)}
+                className="w-full flex items-center gap-3 px-4 py-2.5 cursor-pointer border-0 bg-transparent text-left transition-colors hover:bg-stone-50"
+              >
+                {member.avatar ? (
+                  <img src={member.avatar} alt="" className="w-7 h-7 rounded-full object-cover flex-shrink-0" />
+                ) : (
+                  <div
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-bold flex-shrink-0"
+                    style={{ background: 'rgba(124,58,237,0.12)', color: '#7C3AED' }}
+                  >
+                    {member.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <div className="min-w-0 flex-1">
+                  <p className="text-[13px] font-medium m-0 truncate" style={{ color: '#1C1917' }}>
+                    {member.name}{member.type === 'owner' ? ' (you)' : ''}
+                  </p>
+                  {member.email && (
+                    <p className="text-[11px] m-0 truncate" style={{ color: '#78716C' }}>
+                      {member.email}
+                    </p>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div style={{ borderTop: '1px solid #E7E5E4' }} />
+
+          {/* Invite new person */}
+          {!inviteMode ? (
+            <button
+              onClick={() => setInviteMode(true)}
+              className="w-full flex items-center gap-3 px-4 py-2.5 cursor-pointer border-0 bg-transparent text-left transition-colors hover:bg-stone-50"
+            >
+              <div
+                className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: 'rgba(124,58,237,0.08)' }}
+              >
+                <Mail size={13} style={{ color: '#7C3AED' }} />
+              </div>
+              <span className="text-[13px] font-medium" style={{ color: '#7C3AED' }}>
+                Invite new person
+              </span>
+            </button>
+          ) : (
+            <div className="px-3 py-2.5">
+              <div className="flex items-center gap-2">
+                <input
+                  type="email"
+                  value={inviteEmail}
+                  onChange={e => setInviteEmail(e.target.value)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') handleInviteSubmit()
+                    if (e.key === 'Escape') { setInviteMode(false); setInviteEmail('') }
+                  }}
+                  placeholder="Email address"
+                  className="flex-1 px-3 py-2 rounded-lg text-[13px] outline-none"
+                  style={{ background: '#f5f5f4', border: '1px solid #d6d3d1', color: '#1c1917' }}
+                  autoFocus
+                />
+                <button
+                  onClick={handleInviteSubmit}
+                  disabled={inviting || !inviteEmail.trim()}
+                  className="px-3 py-2 rounded-lg text-[12px] font-semibold cursor-pointer border-0 disabled:opacity-50 text-white shrink-0"
+                  style={{ background: '#7c3aed' }}
+                >
+                  {inviting ? <Loader2 size={13} className="animate-spin" /> : 'Send'}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
