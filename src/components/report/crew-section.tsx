@@ -9,6 +9,7 @@ interface CrewRole {
   assigned_user_id: string | null
   collaborator_row_id: string | null
   sort_order: number
+  role_category?: string
   profile: {
     full_name: string | null
     avatar_url: string | null
@@ -30,9 +31,25 @@ interface Props {
     avatar_url: string | null
     headline: string | null
   } | null
+  category?: 'crew' | 'cast'
+  /** For cast: character names to auto-seed as role slots */
+  characterNames?: string[]
+  /** Section title override */
+  title?: string
+  /** Emoji for section header */
+  emoji?: string
 }
 
-export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile }: Props) {
+export function CrewSection({
+  submissionId,
+  isOwner,
+  currentUserId,
+  ownerProfile,
+  category = 'crew',
+  characterNames = [],
+  title,
+  emoji,
+}: Props) {
   const [roles, setRoles] = useState<CrewRole[]>([])
   const [loading, setLoading] = useState(true)
   const [addingRole, setAddingRole] = useState(false)
@@ -45,13 +62,20 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
   const [inviteEmail, setInviteEmail] = useState('')
   const [inviting, setInviting] = useState(false)
 
+  const sectionTitle = title || (category === 'cast' ? 'Cast' : 'Crew')
+  const sectionEmoji = emoji || (category === 'cast' ? '🎭' : '🎬')
+
   useEffect(() => {
     fetchRoles()
-  }, [submissionId])
+  }, [submissionId, category])
 
   async function fetchRoles() {
     try {
-      const res = await fetch(`/api/scripts/${submissionId}/crew`)
+      let url = `/api/scripts/${submissionId}/crew?category=${category}`
+      if (category === 'cast' && characterNames.length > 0) {
+        url += `&characters=${encodeURIComponent(characterNames.join(','))}`
+      }
+      const res = await fetch(url)
       if (res.ok) {
         const data = await res.json()
         setRoles(data)
@@ -69,7 +93,7 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
       const res = await fetch(`/api/scripts/${submissionId}/crew`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ role_name: newRoleName.trim() }),
+        body: JSON.stringify({ role_name: newRoleName.trim(), role_category: category }),
       })
       if (!res.ok) {
         const data = await res.json()
@@ -114,13 +138,14 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
     setError('')
     try {
       // Use the existing collaborator invite API, then link to crew role
+      const roleName = roles.find(r => r.id === roleId)?.role_name || sectionTitle
       const res = await fetch(`/api/scripts/${submissionId}/collaborators`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: inviteEmail.trim(),
-          role: 'other',
-          role_other: roles.find(r => r.id === roleId)?.role_name || 'Crew',
+          role: category === 'cast' ? 'actor' : 'other',
+          role_other: category === 'cast' ? roleName : roleName,
         }),
       })
       const data = await res.json()
@@ -129,7 +154,7 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
         return
       }
 
-      // Link the collaborator row to the crew role
+      // Link the collaborator row to the crew/cast role
       await fetch(`/api/scripts/${submissionId}/crew`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
@@ -174,7 +199,7 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
         className="text-[15px] font-bold uppercase tracking-[0.14em] m-0 mb-4"
         style={{ color: 'var(--gem-gold)' }}
       >
-        🎬 Crew
+        {sectionEmoji} {sectionTitle}
         <span style={{ color: '#A8A29E' }}> ({visibleRoles.length})</span>
       </h2>
 
@@ -213,7 +238,7 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
                 value={newRoleName}
                 onChange={e => setNewRoleName(e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && handleAddRole()}
-                placeholder="Role name (e.g. Cinematographer)"
+                placeholder={category === 'cast' ? 'Character name' : 'Role name (e.g. Cinematographer)'}
                 maxLength={60}
                 className="flex-1 px-3 py-2 rounded-lg text-[13px] outline-none"
                 style={{
@@ -250,7 +275,7 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
               }}
             >
               <Plus size={16} />
-              Add Role
+              {category === 'cast' ? 'Add Character' : 'Add Role'}
             </button>
           )}
         </div>
@@ -274,7 +299,7 @@ export function CrewSection({ submissionId, isOwner, currentUserId, ownerProfile
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
                 <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>Invite</th>
-                <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>Role</th>
+                <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>{category === 'cast' ? 'Character' : 'Role'}</th>
                 <th className="text-left py-1.5 font-semibold" style={{ color: '#78716C' }}>Status</th>
               </tr>
             </thead>

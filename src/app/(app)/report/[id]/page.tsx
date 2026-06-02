@@ -926,6 +926,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           }
           castChildren={
+            <div className="space-y-6">
+              <CrewSection
+                submissionId={submission.id}
+                isOwner={isOwner || isAdmin}
+                currentUserId={user?.id ?? null}
+                ownerProfile={ownerProfile ? {
+                  full_name: ownerProfile.full_name ?? null,
+                  avatar_url: ownerProfile.avatar_url ?? null,
+                  headline: ownerProfile.headline ?? null,
+                } : null}
+                category="cast"
+                characterNames={leadCharacters.map(c => c.name)}
+              />
             <SectionGate
               section="deep_dive_characters"
               privacy={privacy}
@@ -1006,6 +1019,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 </div>
               )}
             </SectionGate>
+            </div>
           }
         />
         </div>{/* close project needs padding wrapper */}

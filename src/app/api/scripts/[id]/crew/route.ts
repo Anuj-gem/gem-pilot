@@ -3,7 +3,7 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
-const DEFAULT_ROLES = ['Producer', 'Director', 'Editor', 'DP']
+const DEFAULT_CREW_ROLES = ['Producer', 'Director', 'Editor', 'DP']
 
 function makeServiceClient() {
   return createClient(
@@ -28,18 +28,23 @@ function makeAnonClient(cookieStore: Awaited<ReturnType<typeof cookies>>) {
   )
 }
 
-// GET — list crew roles for a script (public)
+// GET — list crew/cast roles for a script (public)
+// Query params: ?category=crew|cast&characters=Name1,Name2 (for cast auto-seeding)
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id: submissionId } = await params
   const supabase = makeServiceClient()
+  const url = new URL(_request.url)
+  const category = url.searchParams.get('category') || 'crew'
+  const characterNames = url.searchParams.get('characters')?.split(',').filter(Boolean) || []
 
   const { data: roles, error } = await supabase
     .from('project_crew_roles')
-    .select('id, role_name, assigned_user_id, collaborator_row_id, sort_order, created_at')
+    .select('id, role_name, assigned_user_id, collaborator_row_id, sort_order, role_category, created_at')
     .eq('submission_id', submissionId)
+    .eq('role_category', category)
     .order('sort_order', { ascending: true })
 
   if (error) {
@@ -60,20 +65,24 @@ export async function GET(
       .single()
 
     if (submission && user && submission.user_id === user.id) {
-      // Seed default roles
-      const inserts = DEFAULT_ROLES.map((name, i) => ({
-        submission_id: submissionId,
-        role_name: name,
-        sort_order: i,
-      }))
+      // Seed default roles based on category
+      const defaultNames = category === 'cast' ? characterNames : DEFAULT_CREW_ROLES
+      if (defaultNames.length > 0) {
+        const inserts = defaultNames.map((name, i) => ({
+          submission_id: submissionId,
+          role_name: name,
+          role_category: category,
+          sort_order: i,
+        }))
 
-      const { data: seeded } = await supabase
-        .from('project_crew_roles')
-        .insert(inserts)
-        .select('id, role_name, assigned_user_id, collaborator_row_id, sort_order, created_at')
+        const { data: seeded } = await supabase
+          .from('project_crew_roles')
+          .insert(inserts)
+          .select('id, role_name, assigned_user_id, collaborator_row_id, sort_order, role_category, created_at')
 
-      if (seeded) {
-        return NextResponse.json(seeded.map(r => ({ ...r, profile: null })))
+        if (seeded) {
+          return NextResponse.json(seeded.map(r => ({ ...r, profile: null, collaborator: null })))
+        }
       }
     }
 
@@ -165,15 +174,17 @@ export async function POST(
 
   const body = await request.json()
   const roleName = (body.role_name || '').trim().slice(0, 60)
+  const roleCategory = body.role_category || 'crew'
   if (!roleName) {
     return NextResponse.json({ error: 'Role name required' }, { status: 400 })
   }
 
-  // Get next sort order
+  // Get next sort order within the same category
   const { data: existing } = await supabase
     .from('project_crew_roles')
     .select('sort_order')
     .eq('submission_id', submissionId)
+    .eq('role_category', roleCategory)
     .order('sort_order', { ascending: false })
     .limit(1)
 
@@ -184,6 +195,7 @@ export async function POST(
     .insert({
       submission_id: submissionId,
       role_name: roleName,
+      role_category: roleCategory,
       sort_order: nextOrder,
     })
     .select()
