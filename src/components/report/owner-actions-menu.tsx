@@ -15,7 +15,9 @@ import {
   Pencil,
   Download,
   MoreHorizontal,
+  Trash2,
 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
 import { useEditContextOptional } from './edit-context'
 import {
@@ -72,9 +74,11 @@ export function OwnerActionsMenu({
   showScore,
   reportSections,
 }: Props) {
+  const router = useRouter()
   const editCtx = useEditContextOptional()
   const [activityOpen, setActivityOpen] = useState(false)
   const [privacyOpen, setPrivacyOpen] = useState(false)
+  const [deleting, setDeleting] = useState(false)
   // Avoid unused param warnings for `evaluationId` and `title` — they're
   // still in the public API surface for future callers (e.g. a server-
   // side PDF endpoint we may bring back).
@@ -181,6 +185,36 @@ export function OwnerActionsMenu({
               Download PDF
             </button>
           )}
+
+          {/* Divider */}
+          <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', margin: '4px 0' }} />
+
+          {/* Delete */}
+          <button
+            type="button"
+            onClick={async () => {
+              if (!confirm('Permanently delete this script? All history will be erased. This cannot be undone.')) return
+              setDeleting(true)
+              setMenuOpen(false)
+              try {
+                const res = await fetch(`/api/scripts/${submissionId}/hide`, { method: 'POST' })
+                if (res.ok) router.push('/dashboard')
+              } finally {
+                setDeleting(false)
+              }
+            }}
+            disabled={deleting}
+            className="w-full flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(239,68,68,0.04)] border-0 bg-transparent text-left cursor-pointer disabled:opacity-50"
+            style={{ color: '#991b1b' }}
+          >
+            <Trash2 size={14} style={{ color: '#991b1b' }} />
+            {deleting ? 'Deleting...' : 'Delete script'}
+          </button>
+
+          {/* Only visible to you note */}
+          <div className="px-3.5 py-2" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+            <p className="text-[11px] m-0" style={{ color: '#A8A29E' }}>Only visible to you</p>
+          </div>
         </div>
       )}
 

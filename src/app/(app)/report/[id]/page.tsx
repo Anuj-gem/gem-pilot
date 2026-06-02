@@ -883,25 +883,28 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* ═══ CONTENT BELOW HERO — floating cards on dark gradient ═══ */}
 
-        {/* ═══ TOOLBAR — owner actions ═══ */}
-        {(isOwner || isAdmin) && (
-          <div className="gem-no-print flex items-center justify-end gap-2 px-6 sm:px-8 pt-4">
-            <ShareButtons
-              title={submission.title ?? 'Check out my project on GEM'}
-              url={`https://gem-pilot.vercel.app/report/${id}`}
-            />
-            <OwnerActionsMenu
-              submissionId={submission.id}
-              evaluationId={id}
-              title={submission.title}
-              declaredFormat={submission.declared_format ?? null}
-              isSubscribed={ownerIsSubscribed || isAdmin}
-            />
+        {/* ═══ PITCH + PLOT SUMMARY — share bar integrated ═══ */}
+        <div className="gem-floating-card" style={{ padding: 0 }}>
+          {/* Share bar — top of section */}
+          <div className="gem-no-print flex items-center justify-between" style={{ padding: '12px 32px', borderBottom: '1px solid #f0f0f0' }}>
+            <div className="flex items-center gap-1">
+              <ShareButtons
+                title={submission.title ?? 'Check out my project on GEM'}
+                url={`https://gem-pilot.vercel.app/report/${id}`}
+              />
+            </div>
+            {(isOwner || isAdmin) && (
+              <OwnerActionsMenu
+                submissionId={submission.id}
+                evaluationId={id}
+                title={submission.title}
+                declaredFormat={submission.declared_format ?? null}
+                isSubscribed={ownerIsSubscribed || isAdmin}
+              />
+            )}
           </div>
-        )}
-
-        {/* ═══ PITCH + PLOT SUMMARY ═══ */}
-        <div className="gem-floating-card space-y-5">
+          {/* Content */}
+          <div style={{ padding: '24px 32px' }} className="space-y-5">
           {/* Why This Can Be a Hit */}
           <SectionGate
             section="whats_working"
@@ -939,7 +942,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </p>
             </details>
           )}
-        </div>
+          </div>{/* close content wrapper */}
+        </div>{/* close gem-floating-card */}
 
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
         <div className="gem-floating-card">
@@ -1363,12 +1367,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {/* opportunities-v1: reach-out panel + sticky Interested/Pass bar removed.
           Producer interaction now flows through /producer/opportunities. */}
 
-      {/* Danger Zone — delete lives at the very bottom, deprioritized */}
-      {(isOwner || isAdmin) && (
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <DangerZoneDelete submissionId={submission.id} />
-        </div>
-      )}
+      {/* Danger Zone removed — delete now lives in the three-dot menu */}
 
       </EditWrapper>
     </>
