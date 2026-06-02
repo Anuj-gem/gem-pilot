@@ -480,8 +480,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const riskDetails = report.risk_details ?? null
   const packaging = report.packaging ?? null
   const issues = report.issues
-  const totalBacking: number = (submission as any).total_backing ?? 0
-  const backerCount: number = (submission as any).backer_count ?? 0
+  // Query project_backers for self-added/invited backer amounts
+  const { data: projectBackers } = await serviceClient
+    .from('project_backers')
+    .select('amount, status')
+    .eq('submission_id', submission.id)
+  const directBackingTotal = (projectBackers || [])
+    .filter(b => b.status === 'confirmed')
+    .reduce((s, b) => s + (Number(b.amount) || 0), 0)
+  const directBackerCount = (projectBackers || []).filter(b => b.status === 'confirmed').length
+
+  const oppBacking: number = (submission as any).total_backing ?? 0
+  const oppBackerCount: number = (submission as any).backer_count ?? 0
+  const totalBacking: number = oppBacking + directBackingTotal
+  const backerCount: number = oppBackerCount + directBackerCount
   const totalFollowing: number = (submission as any).total_following ?? 0
   const followerCount: number = (submission as any).follower_count ?? 0
   const budgetPlan: BudgetPlan | null = (submission as any).budget_plan ?? null
