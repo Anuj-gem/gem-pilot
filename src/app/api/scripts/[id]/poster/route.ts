@@ -100,3 +100,44 @@ export async function POST(
 
   return NextResponse.json({ url: publicUrl })
 }
+
+// DELETE /api/scripts/[id]/poster — clear the poster_url field
+export async function DELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id: submissionId } = await params
+  const cookieStore = await cookies()
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    { cookies: { getAll: () => cookieStore.getAll() } }
+  )
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) {
+    return NextResponse.json({ error: 'Not authenticated' }, { status: 401 })
+  }
+
+  const serviceClient = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+
+  const { data: submission } = await serviceClient
+    .from('script_submissions')
+    .select('id, user_id')
+    .eq('id', submissionId)
+    .single()
+
+  if (!submission || submission.user_id !== user.id) {
+    return NextResponse.json({ error: 'Not authorized' }, { status: 403 })
+  }
+
+  await serviceClient
+    .from('script_submissions')
+    .update({ poster_url: null })
+    .eq('id', submissionId)
+
+  return NextResponse.json({ ok: true })
+}

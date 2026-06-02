@@ -106,30 +106,40 @@ export default function HeroMediaCarousel({
     const item = media[idx]
     if (!item) return
 
-    // If it's the poster (first image that matches posterUrl), clear poster_url too
-    if (idx === 0 && posterUrl && item.url === posterUrl) {
-      // Delete poster via setting it to null — we'll just use the media endpoint
-      // and also clear the poster_url field
-      try {
-        await fetch(`/api/scripts/${submissionId}/poster`, {
-          method: 'POST',
-          body: (() => { const fd = new FormData(); fd.append('clear', 'true'); return fd })(),
-        })
-      } catch { /* poster clear failed, continue with media delete */ }
-    }
+    const isPosterItem = item.url === posterUrl
 
-    try {
-      const res = await fetch(`/api/scripts/${submissionId}/media`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: item.url }),
-      })
-      if (res.ok) {
-        const data = await res.json()
-        rebuildMedia(data.media_urls)
-      }
-    } catch { /* silent */ }
-  }, [media, posterUrl, submissionId])
+    if (isPosterItem) {
+      // Clear poster_url in DB
+      try {
+        await fetch(`/api/scripts/${submissionId}/poster`, { method: 'DELETE' })
+      } catch { /* silent */ }
+      // Remove from local state
+      setMedia(prev => prev.filter((_, i) => i !== idx))
+      router.refresh()
+    } else {
+      // Remove from media_urls via API
+      try {
+        const res = await fetch(`/api/scripts/${submissionId}/media`, {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: item.url }),
+        })
+        if (res.ok) {
+          const data = await res.json()
+          // Rebuild: keep poster if it still exists, then API media
+          const items: MediaItem[] = []
+          if (posterUrl) {
+            const stillHasPoster = media.some(m => m.url === posterUrl)
+            if (stillHasPoster) items.push({ type: 'image', url: posterUrl, label: 'Main Photo' })
+          }
+          for (const m of (data.media_urls as MediaItem[])) {
+            if (m.type !== 'pdf') items.push(m)
+          }
+          setMedia(items)
+        }
+      } catch { /* silent */ }
+    }
+  }, [media, posterUrl, submissionId, router])
 
   // Rebuild the unified media list from API response + poster
   function rebuildMedia(apiMedia: MediaItem[]) {
