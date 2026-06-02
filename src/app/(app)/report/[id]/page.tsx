@@ -646,7 +646,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         />
 
         {/* Banners inside hero */}
-        <div className="max-w-3xl mx-auto pt-8 relative z-10">
+        <div className="max-w-3xl mx-auto pt-2 relative z-10">
           {showUpgradeCTA && isOwner && <UpgradeTopBanner evaluationId={id} />}
           {forWriter && <PrivateDemoBanner writerName={decodeURIComponent(forWriter)} />}
 
@@ -672,7 +672,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           )}
         </div>
 
-        <div className="max-w-3xl mx-auto pb-4 relative z-10" />
+        <div className="max-w-3xl mx-auto pb-0 relative z-10" />
 
       </div>
 
@@ -693,7 +693,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       `}</style>
 
       <div
-        className="max-w-3xl mx-auto pb-24 pt-6"
+        className="max-w-3xl mx-auto pb-24 pt-0"
         style={{
           '--gem-gray-50': '#FFFFFF',
           '--gem-gray-100': 'rgba(255,255,255,0.92)',
