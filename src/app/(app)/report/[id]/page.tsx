@@ -611,7 +611,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       <div
         className="gem-report-hero -mt-6 mb-0 relative overflow-hidden"
         style={{
-          background: '#2b1a55',
+          background: 'linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%)',
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
           paddingLeft: 'calc(50vw - 50%)',
@@ -641,7 +641,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             top: '-40px',
             left: '50%',
             transform: 'translateX(-50%)',
-            background: 'radial-gradient(ellipse at center, rgba(124,77,237,0.10) 0%, rgba(124,77,237,0.03) 50%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(124,77,237,0.22) 0%, rgba(124,77,237,0.08) 45%, transparent 70%)',
           }}
         />
 
@@ -678,7 +678,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       {/* Override the (app) layout background to GEM purple for report */}
       <style>{`
-        .min-h-screen { background: #2b1a55 !important; }
+        .min-h-screen { background: linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%) !important; }
         .gem-dark-section { background: rgba(255,255,255,0.04); }
       `}</style>
 
@@ -735,7 +735,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ HERO — dark 16:9 area with poster bg + overlay metadata ═══ */}
         <div
           className="relative w-full rounded-2xl overflow-hidden"
-          style={{ aspectRatio: '16/9', background: '#1a1a1a' }}
+          style={{ aspectRatio: '2.2/1', background: '#1a1a1a' }}
         >
           {/* Poster background */}
           {submission.poster_url && (
@@ -788,15 +788,43 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scoreShownToIndustry={isScoreVisible(privacy)}
               isProSubscriber={true}
             />
+            {/* Compact stat row */}
+            <div className="flex items-center gap-3 mt-3 flex-wrap">
+              {submission.declared_format && (
+                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
+                  {submission.declared_format}
+                </span>
+              )}
+              {typeof commercialScore === 'number' && (
+                <span className="text-[12px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'rgba(124,58,237,0.5)', color: '#fff' }}>
+                  Score {Math.round(commercialScore)}
+                </span>
+              )}
+              {((submission as any).heat_score ?? 0) > 0 && (
+                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
+                  🔥 {(submission as any).heat_score}
+                </span>
+              )}
+              {totalBacking > 0 && (
+                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
+                  {totalBacking >= 1000 ? `$${Math.round(totalBacking / 1000)}K` : `$${totalBacking}`} backed
+                </span>
+              )}
+              {followerCount > 0 && (
+                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
+                  {followerCount} following
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
         {/* ═══ WHITE CONTENT CARD — elevated container for all content below hero ═══ */}
         <div
-          className="rounded-2xl -mt-4 relative z-10"
+          className="rounded-t-2xl -mt-8 relative z-10"
           style={{
             background: '#fff',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
           }}
         >
 
