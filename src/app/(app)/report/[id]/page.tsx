@@ -819,31 +819,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           className="relative w-full overflow-hidden -mx-4 sm:-mx-6"
           style={{ aspectRatio: '16/9', background: '#1a1a1a', width: 'calc(100% + 2rem)' }}
         >
-          {/* Poster background */}
-          {submission.poster_url && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={submission.poster_url}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
+          {/* Media carousel — poster is slide 1, additional media follows */}
+          <div className="absolute inset-0">
+            <HeroMediaCarousel
+              submissionId={submission.id}
+              posterUrl={submission.poster_url ?? null}
+              initialMedia={(submission as any).media_urls || []}
+              isOwner={isOwner || isAdmin}
             />
-          )}
+          </div>
           {/* Gradient overlay */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 pointer-events-none"
             style={{ background: 'linear-gradient(transparent 40%, rgba(0,0,0,0.85))' }}
           />
-          {/* Empty-state placeholder (no poster) */}
-          {!submission.poster_url && (isOwner || isAdmin) && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <HeroMediaCarousel
-                submissionId={submission.id}
-                posterUrl={null}
-                initialMedia={(submission as any).media_urls || []}
-                isOwner={true}
-              />
-            </div>
-          )}
           {/* Metadata overlay at bottom */}
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:px-7 sm:pb-6">
             <EditableTopCard
