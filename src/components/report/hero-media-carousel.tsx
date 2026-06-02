@@ -216,15 +216,18 @@ export default function HeroMediaCarousel({
             <div key={slide.url + i} className="w-full h-full flex-shrink-0 relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={slide.url} alt={slide.label} className="w-full h-full object-cover" />
-              {/* Play button on YouTube thumbnails (only when NOT in media mode) */}
-              {slide.type === 'youtube' && !mediaMode && (
+              {/* Click anywhere on slide to enter media mode */}
+              {!mediaMode && (
                 <button
                   onClick={() => setMediaMode(true)}
                   className="absolute inset-0 flex items-center justify-center z-[5] border-0 bg-transparent cursor-pointer"
                 >
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="8,5 20,12 8,19" /></svg>
-                  </div>
+                  {/* Show play icon only for YouTube */}
+                  {slide.type === 'youtube' && (
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="8,5 20,12 8,19" /></svg>
+                    </div>
+                  )}
                 </button>
               )}
             </div>
@@ -299,31 +302,6 @@ export default function HeroMediaCarousel({
                 </div>
               )}
 
-              {/* Owner controls in media mode — top-left */}
-              {isOwner && (
-                <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-auto">
-                  <button
-                    onClick={() => setShowAddMenu(true)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-medium border-0 cursor-pointer"
-                    style={{ background: 'rgba(0,0,0,0.5)', color: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(4px)' }}
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
-                    </svg>
-                    Add
-                  </button>
-                  <button
-                    onClick={() => deleteSlide(currentIndex)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-medium border-0 cursor-pointer"
-                    style={{ background: 'rgba(239,68,68,0.3)', color: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(4px)' }}
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
-                    </svg>
-                    Delete
-                  </button>
-                </div>
-              )}
             </div>
           </>
         )}
