@@ -101,7 +101,7 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
   const consideringPct = budgetTotal > 0 ? Math.min(100 - progressPct, Math.round((consideringTotal / budgetTotal) * 100)) : 0
 
   return (
-    <div className="bg-white rounded-2xl p-5 px-6">
+    <div>
       <div className="flex items-start justify-between mb-1">
         <div>
           <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium m-0">Funding available</h3>

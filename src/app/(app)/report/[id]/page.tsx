@@ -66,6 +66,7 @@ import { CrewSection } from '@/components/report/crew-section'
 import { FollowersSection } from '@/components/report/followers-section'
 import { BackersList } from '@/components/report/backers-list'
 import { FundingOpportunities } from '@/components/report/funding-opportunities'
+import { FundingProgressBar } from '@/components/report/funding-progress-bar'
 import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
@@ -548,6 +549,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
   const designation = scoreDesignation(commercialScore)
 
+  // Investment metrics — computed once, used in both tab summary and progress bar
+  const investmentConsideringAmount = considerationResults
+    .filter(r => !r.backing_status || r.backing_status === 'following')
+    .filter(r => r.outcome !== 'pass' && r.outcome !== 'back')
+    .reduce((s, r) => {
+      const opp = matchingOpps.find(o => o.id === r.opportunity_id)
+      return s + (opp?.funding_amount || 0)
+    }, 0) + totalFollowing
+
+  const fmtShort = (n: number) => {
+    if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1)}M`
+    if (n >= 1_000) return `$${Math.round(n / 1_000)}K`
+    return `$${n}`
+  }
+
+  const investmentProjectCost = budgetPlan?.total ? fmtShort(budgetPlan.total) : gemEstimate || null
+
   // All evals unlocked — redirect removed.
 
   // Count hidden sections (for the visitor contact card copy).
@@ -947,27 +965,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         <div className="gem-floating-card">
         <ProjectNeedsCards
           investmentSummary={null}
-          investmentMetrics={(() => {
-            const fmtShort = (n: number) => {
-              if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1)}M`
-              if (n >= 1_000) return `$${Math.round(n / 1_000)}K`
-              return `$${n}`
-            }
-            const projectCost = budgetPlan?.total ? fmtShort(budgetPlan.total) : gemEstimate || null
-            const securedAmount = totalBacking
-            const consideringAmount = considerationResults
-              .filter(r => !r.backing_status || r.backing_status === 'following')
-              .filter(r => r.outcome !== 'pass' && r.outcome !== 'back')
-              .reduce((s, r) => {
-                const opp = matchingOpps.find(o => o.id === r.opportunity_id)
-                return s + (opp?.funding_amount || 0)
-              }, 0) + totalFollowing
-            return {
-              projectCost,
-              secured: securedAmount > 0 ? fmtShort(securedAmount) : null,
-              considering: consideringAmount > 0 ? fmtShort(consideringAmount) : null,
-            }
-          })()}
+          investmentMetrics={{
+            projectCost: investmentProjectCost,
+            secured: totalBacking > 0 ? fmtShort(totalBacking) : null,
+            considering: investmentConsideringAmount > 0 ? fmtShort(investmentConsideringAmount) : null,
+          }}
           crewSummary={null}
           castSummary={
             leadCharacters.length > 0
@@ -975,35 +977,55 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               : null
           }
           investmentChildren={
-            <div className="space-y-6">
-              <BudgetEditor
-                initial={budgetPlan}
-                gemEstimate={gemEstimate}
-                submissionId={submission.id}
-              />
-              <BackersList
-                submissionId={submission.id}
-                budgetTotal={budgetPlan?.total ?? 0}
-                isOwner={isOwner || isAdmin}
-                currentUserId={user?.id ?? null}
-                ownerName={ownerProfile?.full_name ?? null}
-              />
-              <FundingOpportunities
-                matchingOpps={matchingOpps}
-                considerationResults={considerationResults}
-                submissionId={submission.id}
-                isOwner={isOwner || isAdmin}
+            <div>
+              <FundingProgressBar
                 budgetTotal={budgetPlan?.total ?? 0}
                 securedAmount={totalBacking}
+                consideringAmount={investmentConsideringAmount}
               />
-              <RevenuePlanEditor
-                initial={revenuePlan}
-                submissionId={submission.id}
-              />
-              <ProjectedReturns
-                budgetTotal={budgetPlan?.total ?? 0}
-                revenueTotal={revenuePlan?.total ?? 0}
-              />
+              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
+              <div className="py-5">
+                <BudgetEditor
+                  initial={budgetPlan}
+                  gemEstimate={gemEstimate}
+                  submissionId={submission.id}
+                />
+              </div>
+              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
+              <div className="py-5">
+                <BackersList
+                  submissionId={submission.id}
+                  budgetTotal={budgetPlan?.total ?? 0}
+                  isOwner={isOwner || isAdmin}
+                  currentUserId={user?.id ?? null}
+                  ownerName={ownerProfile?.full_name ?? null}
+                />
+              </div>
+              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
+              <div className="py-5">
+                <FundingOpportunities
+                  matchingOpps={matchingOpps}
+                  considerationResults={considerationResults}
+                  submissionId={submission.id}
+                  isOwner={isOwner || isAdmin}
+                  budgetTotal={budgetPlan?.total ?? 0}
+                  securedAmount={totalBacking}
+                />
+              </div>
+              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
+              <div className="py-5">
+                <RevenuePlanEditor
+                  initial={revenuePlan}
+                  submissionId={submission.id}
+                />
+              </div>
+              <div style={{ borderTop: '1px solid #E7E5E4', margin: '0 -24px', padding: '0 24px' }} />
+              <div className="pt-5">
+                <ProjectedReturns
+                  budgetTotal={budgetPlan?.total ?? 0}
+                  revenueTotal={revenuePlan?.total ?? 0}
+                />
+              </div>
             </div>
           }
           crewChildren={

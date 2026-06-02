@@ -143,7 +143,7 @@ export function BackersList({ submissionId, budgetTotal, isOwner, currentUserId,
   if (loading) return null
 
   return (
-    <div className="bg-white rounded-2xl p-5 px-6">
+    <div>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium">Funding</h3>

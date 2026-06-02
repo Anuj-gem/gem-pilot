@@ -1,29 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, DollarSign, Users, Film } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 type CardKey = 'investment' | 'crew' | 'cast'
-
-interface CardConfig {
-  key: CardKey
-  title: string
-  icon: React.ReactNode
-  summary: string | null
-}
-
-interface InvestmentMetrics {
-  projectCost: string | null
-  secured: string | null
-  considering: string | null
-}
 
 interface ProjectNeedsCardsProps {
   investmentChildren: React.ReactNode
   crewChildren: React.ReactNode
   castChildren: React.ReactNode
   investmentSummary: string | null
-  investmentMetrics?: InvestmentMetrics | null
+  investmentMetrics?: { projectCost: string | null; secured: string | null; considering: string | null } | null
   crewSummary: string | null
   castSummary: string | null
 }
@@ -37,19 +24,31 @@ export function ProjectNeedsCards({
   crewSummary,
   castSummary,
 }: ProjectNeedsCardsProps) {
-  const [activeCard, setActiveCard] = useState<CardKey | null>(null)
-
-  const cards: CardConfig[] = [
-    { key: 'investment', title: 'Investment', icon: <DollarSign size={20} style={{ color: '#a78bfa' }} />, summary: investmentSummary },
-    { key: 'crew', title: 'Crew', icon: <Film size={20} style={{ color: '#a78bfa' }} />, summary: crewSummary },
-    { key: 'cast', title: 'Cast', icon: <Users size={20} style={{ color: '#a78bfa' }} />, summary: castSummary },
-  ]
+  const [activeTab, setActiveTab] = useState<CardKey | null>(null)
 
   const childrenMap: Record<CardKey, React.ReactNode> = {
     investment: investmentChildren,
     crew: crewChildren,
     cast: castChildren,
   }
+
+  // Build summary text lines for each tab
+  const investmentLine = (() => {
+    if (investmentMetrics) {
+      const parts: string[] = []
+      if (investmentMetrics.projectCost) parts.push(`${investmentMetrics.projectCost} cost`)
+      if (investmentMetrics.secured) parts.push(`${investmentMetrics.secured} secured`)
+      if (investmentMetrics.considering) parts.push(`${investmentMetrics.considering} considering`)
+      if (parts.length > 0) return parts.join(' · ')
+    }
+    return investmentSummary
+  })()
+
+  const tabs: { key: CardKey; title: string; summary: string | null }[] = [
+    { key: 'investment', title: 'Investment', summary: investmentLine },
+    { key: 'crew', title: 'Crew', summary: crewSummary },
+    { key: 'cast', title: 'Cast', summary: castSummary },
+  ]
 
   return (
     <div>
@@ -60,81 +59,61 @@ export function ProjectNeedsCards({
         What This Project Needs
       </h2>
 
-      {/* 3-card row */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        {cards.map((card) => {
-          const isActive = activeCard === card.key
+      {/* Tab strip — connected to body panel */}
+      <div
+        className="flex overflow-hidden"
+        style={{
+          borderRadius: activeTab ? '12px 12px 0 0' : '12px',
+          border: '1px solid #E7E5E4',
+          borderBottom: activeTab ? 'none' : '1px solid #E7E5E4',
+        }}
+      >
+        {tabs.map((tab, i) => {
+          const isActive = activeTab === tab.key
           return (
             <button
-              key={card.key}
-              onClick={() => setActiveCard(isActive ? null : card.key)}
-              className="rounded-xl overflow-hidden transition-all flex flex-col items-center gap-2 px-5 py-5 cursor-pointer border-0 text-center"
+              key={tab.key}
+              onClick={() => setActiveTab(isActive ? null : tab.key)}
+              className="flex-1 cursor-pointer text-center transition-colors"
               style={{
+                padding: '14px 12px 12px',
+                border: 'none',
+                borderLeft: i > 0 ? '1px solid #E7E5E4' : 'none',
+                borderBottom: isActive ? '2px solid #534AB7' : '2px solid transparent',
                 background: isActive ? '#F5F3FF' : '#FAFAF9',
-                border: isActive ? '1px solid #a78bfa' : '1px solid #E7E5E4',
               }}
             >
               <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: 'rgba(124,58,237,0.10)' }}
+                className="text-[14px] font-semibold m-0"
+                style={{ color: isActive ? '#534AB7' : '#78716C' }}
               >
-                {card.icon}
+                {tab.title}
               </div>
-              <div className="min-w-0 w-full">
-                <h3 className="text-[15px] font-bold m-0" style={{ color: '#1C1917' }}>
-                  {card.title}
-                </h3>
-                {card.key === 'investment' && investmentMetrics && (investmentMetrics.projectCost || investmentMetrics.secured || investmentMetrics.considering) ? (
-                  <div className="grid grid-cols-3 gap-1.5 mt-2 w-full">
-                    {investmentMetrics.projectCost && (
-                      <div className="rounded-lg px-2 py-1.5 text-center" style={{ background: 'rgba(0,0,0,0.04)' }}>
-                        <div className="text-[10px]" style={{ color: '#78716C' }}>Cost</div>
-                        <div className="text-[15px] font-bold" style={{ color: '#1C1917' }}>{investmentMetrics.projectCost}</div>
-                      </div>
-                    )}
-                    {investmentMetrics.secured && (
-                      <div className="rounded-lg px-2 py-1.5 text-center" style={{ background: 'rgba(0,0,0,0.04)' }}>
-                        <div className="text-[10px]" style={{ color: '#78716C' }}>Secured</div>
-                        <div className="text-[15px] font-bold" style={{ color: '#0F6E56' }}>{investmentMetrics.secured}</div>
-                      </div>
-                    )}
-                    {investmentMetrics.considering && (
-                      <div className="rounded-lg px-2 py-1.5 text-center" style={{ background: 'rgba(0,0,0,0.04)' }}>
-                        <div className="text-[10px]" style={{ color: '#78716C' }}>Considering</div>
-                        <div className="text-[15px] font-bold" style={{ color: '#534AB7' }}>{investmentMetrics.considering}</div>
-                      </div>
-                    )}
-                  </div>
-                ) : card.summary ? (
-                  <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#7C3AED' }}>
-                    {card.summary}
-                  </p>
-                ) : null}
-              </div>
-              <ChevronDown
-                size={16}
-                className="shrink-0 transition-transform duration-200"
-                style={{
-                  color: '#A8A29E',
-                  transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
-                }}
-              />
+              {tab.summary && (
+                <div
+                  className="text-[12px] m-0 mt-1"
+                  style={{ color: tab.key === 'cast' && !isActive ? '#534AB7' : '#78716C' }}
+                >
+                  {tab.summary}
+                </div>
+              )}
             </button>
           )
         })}
       </div>
 
-      {/* Expanded detail panel below the row */}
-      {activeCard && (
+      {/* Body panel — directly attached below tabs */}
+      {activeTab && (
         <div
-          className="mt-3 rounded-xl overflow-hidden"
           style={{
-            background: '#FAFAF9',
             border: '1px solid #E7E5E4',
+            borderTop: 'none',
+            borderRadius: '0 0 12px 12px',
+            background: '#FFFFFF',
           }}
         >
           <div className="px-5 sm:px-6 py-5 sm:py-6">
-            {childrenMap[activeCard]}
+            {childrenMap[activeTab]}
           </div>
         </div>
       )}
@@ -164,7 +143,6 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
         onClick={() => setOpen(!open)}
         className="w-full flex items-center gap-4 px-6 py-5 cursor-pointer border-0 bg-transparent text-left"
       >
-        {/* GEM diamond icon */}
         <span
           aria-hidden="true"
           className="inline-flex items-center justify-center shrink-0 rotate-45"

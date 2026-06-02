@@ -15,7 +15,7 @@ export function ProjectedReturns({ budgetTotal, revenueTotal }: Props) {
   const returnMultiple = budgetTotal > 0 ? (revenueTotal / budgetTotal) : 0
 
   return (
-    <div className="bg-white rounded-2xl p-4 px-6" style={{ border: '2px solid #534AB7' }}>
+    <div>
       <div className="flex items-center gap-5">
         <div>
           <div className="text-[11px] text-gray-600 uppercase tracking-wider mb-0.5">Cost</div>

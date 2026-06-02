@@ -85,7 +85,7 @@ export function BudgetEditor({ initial, gemEstimate, submissionId, onSave }: Pro
   }
 
   return (
-    <div className="bg-white rounded-2xl p-5 px-6">
+    <div>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium">Budget</h3>
       </div>
