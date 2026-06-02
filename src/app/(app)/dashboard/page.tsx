@@ -1,7 +1,6 @@
 // /dashboard — unified dashboard for writers and producers.
 //
-// Layout: stats row → two-column (recent scripts + opportunities) → collaborations.
-// Writers see scripts, pending/available opps, and collaborations inline (no tabs).
+// Writers see the ProjectHub client component.
 // Producers get a completely different layout (opp cards + triage CTA).
 
 import { cookies } from 'next/headers'
@@ -10,17 +9,10 @@ import { createServerClient } from '@supabase/ssr'
 import { RealtimeRefresh } from '@/components/dashboard/realtime-refresh'
 import { ProcessingPoller } from '@/components/dashboard/processing-poller'
 import { AnonSignupPrompt } from '@/components/dashboard/anon-signup-prompt'
-import { NewScriptButton } from '@/components/dashboard/new-script-button'
-// StickyNewScript removed — collided with Intercom
-import { DeleteScriptButton } from '@/components/dashboard/delete-script-button'
-import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
-import { ScriptCardMenu } from '@/components/dashboard/script-card-menu'
-import { AddCollaboratorButton } from '@/components/dashboard/add-collaborator-button'
-import { FailedScriptCard } from '@/components/dashboard/failed-script-card'
-// DashboardTabs removed — writer dashboard is now a flat two-column layout
+import { ProjectHub } from '@/components/dashboard/project-hub'
+import type { ProjectCard, CollabRequest } from '@/components/dashboard/project-hub'
 import Link from 'next/link'
-import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
-import { normGenre, collectGenres, scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
+import { extractMatchData } from '@/lib/opportunity-matching'
 
 export const dynamic = 'force-dynamic'
 
@@ -30,6 +22,23 @@ function svc() {
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     { cookies: { getAll() { return [] }, setAll() {} } }
   )
+}
+
+/* ── Helpers ── */
+
+function fmtShort(n: number): string {
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+  if (n >= 1e3) return `$${Math.round(n / 1e3).toLocaleString()}K`
+  return `$${n.toLocaleString()}`
+}
+
+function tierFromScore(s: number | null): string | null {
+  if (s == null) return null
+  if (s >= 80) return 'Exceptional'
+  if (s >= 70) return 'Strong'
+  if (s >= 60) return 'Promising'
+  if (s >= 50) return 'Early Stage'
+  return 'Needs Rework'
 }
 
 export default async function DashboardPage() {
@@ -57,17 +66,6 @@ export default async function DashboardPage() {
   type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null; budget: string | null; tags: string[] }
   const myEvalBySub = new Map<string, FeedEval>()
 
-  type OppRow = {
-    id: string; title: string; slug: string
-    formats: string[] | null; genres: string[] | null; min_score: number | null
-    subtitle: string | null; description: string | null
-    deadline: string | null; budget_tiers: string[] | null
-    tags: string[] | null
-    created_at: string
-    deal_type: string | null
-  }
-  let allOpenOpps: OppRow[] = []
-
   type AppRow = {
     id: string; status: string; review_stage: string; submitted_at: string
     reviewed_at: string | null; feedback: string | null
@@ -76,12 +74,6 @@ export default async function DashboardPage() {
     heat_earned: number
   }
   let allApplications: AppRow[] = []
-
-  const { data: openOpps } = await service
-    .from('opportunities')
-    .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, tags, created_at, deal_type')
-    .eq('status', 'active')
-  allOpenOpps = (openOpps || []) as OppRow[]
 
   if (user) {
     const { data: p } = await supabase
@@ -203,37 +195,13 @@ export default async function DashboardPage() {
     }
   }
 
-  // Usage gate
-  const FREE_EVAL_LIMIT = 2
-  const FREE_APP_LIMIT = 2
-  let totalSubmissions = 0
-  let totalApps = 0
-  if (user && !isPro) {
-    const { count: subCount } = await service
-      .from('script_submissions')
-      .select('id', { count: 'exact', head: true })
-      .eq('user_id', user.id)
-    totalSubmissions = subCount ?? 0
-    totalApps = allApplications.length
-  } else if (!user) {
-    totalSubmissions = visible.length
-  }
-  const evalsRemaining = Math.max(0, FREE_EVAL_LIMIT - totalSubmissions)
-  const appsRemaining = Math.max(0, FREE_APP_LIMIT - totalApps)
-
   // ── COLLABORATOR DATA (for stat card + per-script display) ──
 
   type CollabInfo = { id: string; email: string; name: string | null; avatarUrl: string | null; role: string; status: string }
-  let totalCollaborators = 0
-  let pendingCollaborators = 0
   const collabCountByScript = new Map<string, number>()
-  // collabHeatByScript removed — replaced by backing system
   const collabsByScript = new Map<string, CollabInfo[]>()
 
   if (user && submissionIds.length > 0) {
-    // All collaborators on my scripts (accepted + pending)
-    // NOTE: avoid profiles:collaborator_id(...) FK embedding — it silently fails
-    // if the FK relationship isn't registered. Fetch profiles separately instead.
     const { data: allCollabRows } = await service
       .from('script_collaborators')
       .select('id, submission_id, collaborator_email, collaborator_id, role, role_other, status')
@@ -272,13 +240,8 @@ export default async function DashboardPage() {
       list.push(info)
       collabsByScript.set(c.submission_id, list)
 
-      // Only accepted collaborators contribute to heat (heat granted on accept, not invite)
       if (c.status === 'accepted') {
-        totalCollaborators++
         collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
-        // collabHeatByScript removed — backing system
-      } else {
-        pendingCollaborators++
       }
     }
   }
@@ -289,65 +252,150 @@ export default async function DashboardPage() {
     id: string; title: string; format: string | null; genres: string[]
     score: number | null; evaluationId: string | null; createdAt: string
     totalBacking: number; backerCount: number; totalFollowing: number; followerCount: number
-    posterUrl: string | null; collabRole: string
+    posterUrl: string | null; collabRole: string; heatScore: number
   }
   let collabScripts: CollabScript[] = []
+
+  // Pending collaboration requests (invites the user hasn't accepted yet)
+  type PendingCollabRow = {
+    id: string; submission_id: string; role: string; role_other: string | null
+  }
+  let pendingCollabRows: PendingCollabRow[] = []
+  let pendingCollabSubIds: string[] = []
 
   if (user) {
     // Fetch collabs where user is the collaborator (scripts they were invited to)
     const { data: invitedToRows } = await service
       .from('script_collaborators')
-      .select('id, collaborator_email, collaborator_id, role, role_other, submission_id')
+      .select('id, collaborator_email, collaborator_id, role, role_other, submission_id, status')
       .or(`collaborator_id.eq.${user.id},collaborator_email.eq.${user.email?.toLowerCase()}`)
       .order('created_at', { ascending: false })
 
     if (invitedToRows && invitedToRows.length > 0) {
-      const collabSubIds = [...new Set(invitedToRows.map((c: any) => c.submission_id))]
-      // Fetch submission details for those scripts
-      const { data: collabSubs } = await service
-        .from('script_submissions')
-        .select('id, title, declared_format, status, created_at, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, is_public')
-        .in('id', collabSubIds)
-        .eq('status', 'completed')
+      // Separate accepted vs pending
+      const acceptedRows = (invitedToRows as any[]).filter(c => c.status === 'accepted')
+      const pendingRows = (invitedToRows as any[]).filter(c => c.status === 'pending')
 
-      // Fetch evaluations for those submissions
-      const collabSubIdsCompleted = (collabSubs || []).map((s: any) => s.id)
-      let collabEvalsBySub: Record<string, any> = {}
-      if (collabSubIdsCompleted.length > 0) {
-        const { data: collabEvals } = await service
-          .from('script_evaluations')
-          .select('id, submission_id, evaluation')
-          .in('submission_id', collabSubIdsCompleted)
-        for (const ev of (collabEvals || []) as any[]) {
-          const parsed = typeof ev.evaluation === 'string' ? JSON.parse(ev.evaluation) : ev.evaluation
-          collabEvalsBySub[ev.submission_id] = { id: ev.id, ...parsed }
+      pendingCollabRows = pendingRows.map((c: any) => ({
+        id: c.id,
+        submission_id: c.submission_id,
+        role: c.role,
+        role_other: c.role_other,
+      }))
+      pendingCollabSubIds = [...new Set(pendingRows.map((c: any) => c.submission_id as string))]
+
+      // Build accepted collaboration scripts
+      const acceptedSubIds = [...new Set(acceptedRows.map((c: any) => c.submission_id as string))]
+      if (acceptedSubIds.length > 0) {
+        const { data: collabSubs } = await service
+          .from('script_submissions')
+          .select('id, title, declared_format, status, created_at, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, is_public')
+          .in('id', acceptedSubIds)
+          .eq('status', 'completed')
+
+        const collabSubIdsCompleted = (collabSubs || []).map((s: any) => s.id)
+        let collabEvalsBySub: Record<string, any> = {}
+        if (collabSubIdsCompleted.length > 0) {
+          const { data: collabEvals } = await service
+            .from('script_evaluations')
+            .select('id, submission_id, weighted_score, evaluation')
+            .in('submission_id', collabSubIdsCompleted)
+          for (const ev of (collabEvals || []) as any[]) {
+            const parsed = typeof ev.evaluation === 'string' ? JSON.parse(ev.evaluation) : ev.evaluation
+            collabEvalsBySub[ev.submission_id] = { id: ev.id, weighted_score: ev.weighted_score, ...parsed }
+          }
         }
-      }
 
-      // Build collab script cards
-      const roleBySubId = new Map<string, string>()
-      for (const c of invitedToRows as any[]) {
-        const roleName = c.role === 'other' ? (c.role_other || 'Collaborator') : c.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
-        roleBySubId.set(c.submission_id, roleName)
-      }
-
-      collabScripts = (collabSubs || []).map((s: any) => {
-        const ev = collabEvalsBySub[s.id]
-        return {
-          id: s.id,
-          title: s.title,
-          format: ev?.format || s.declared_format,
-          genres: ev?.genres || [],
-          score: ev?.weighted_score ?? null,
-          evaluationId: ev?.id ?? null,
-          createdAt: s.created_at,
-          totalBacking: s.total_backing ?? 0,
-          backerCount: s.backer_count ?? 0,
-          totalFollowing: s.total_following ?? 0,
-          followerCount: s.follower_count ?? 0,
-          posterUrl: s.poster_url ?? null,
-          collabRole: roleBySubId.get(s.id) || 'Collaborator',
+        const roleBySubId = new Map<string, string>()
+        for (const c of acceptedRows) {
+          const roleName = c.role === 'other' ? (c.role_other || 'Collaborator') : c.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
+          roleBySubId.set(c.submission_id, roleName)
         }
+
+        collabScripts = (collabSubs || []).map((s: any) => {
+          const ev = collabEvalsBySub[s.id]
+          return {
+            id: s.id,
+            title: s.title,
+            format: ev?.format || s.declared_format,
+            genres: ev?.genres || [],
+            score: ev?.weighted_score ?? null,
+            evaluationId: ev?.id ?? null,
+            createdAt: s.created_at,
+            totalBacking: s.total_backing ?? 0,
+            backerCount: s.backer_count ?? 0,
+            totalFollowing: s.total_following ?? 0,
+            followerCount: s.follower_count ?? 0,
+            posterUrl: s.poster_url ?? null,
+            collabRole: roleBySubId.get(s.id) || 'Collaborator',
+            heatScore: s.heat_score ?? 0,
+          }
+        })
+      }
+    }
+  }
+
+  // ── PENDING COLLAB REQUESTS: fetch submission + owner data ──
+
+  let collabRequests: CollabRequest[] = []
+
+  if (user && pendingCollabSubIds.length > 0) {
+    // Fetch submission details for pending invites
+    const { data: pendingSubs } = await service
+      .from('script_submissions')
+      .select('id, title, poster_url, user_id')
+      .in('id', pendingCollabSubIds)
+
+    // Fetch owner profiles
+    const ownerIds = [...new Set((pendingSubs || []).map((s: any) => s.user_id as string))]
+    let ownerNames: Record<string, string> = {}
+    if (ownerIds.length > 0) {
+      const { data: ownerProfiles } = await service
+        .from('profiles')
+        .select('id, full_name')
+        .in('id', ownerIds)
+      for (const p of (ownerProfiles || []) as { id: string; full_name: string | null }[]) {
+        ownerNames[p.id] = p.full_name || 'Unknown'
+      }
+    }
+
+    // Fetch scores for pending invite scripts
+    let pendingScores: Record<string, number | null> = {}
+    if (pendingCollabSubIds.length > 0) {
+      const { data: pendingEvs } = await service
+        .from('script_evaluations')
+        .select('submission_id, weighted_score')
+        .in('submission_id', pendingCollabSubIds)
+      for (const e of (pendingEvs || []) as { submission_id: string; weighted_score: number | null }[]) {
+        pendingScores[e.submission_id] = e.weighted_score
+      }
+    }
+
+    const subMap = new Map((pendingSubs || []).map((s: any) => [s.id, s]))
+
+    for (const row of pendingCollabRows) {
+      const sub = subMap.get(row.submission_id)
+      if (!sub) continue
+
+      const roleName = row.role === 'other'
+        ? (row.role_other || 'Collaborator')
+        : row.role.replace('_', ' ').replace(/^\w/, (ch: string) => ch.toUpperCase())
+
+      // Determine cast vs crew
+      const roleLC = (row.role || '').toLowerCase()
+      const isCast = roleLC === 'actor' || roleLC === 'actress' || roleLC === 'cast'
+      const roleType: 'crew' | 'cast' = isCast ? 'cast' : 'crew'
+
+      collabRequests.push({
+        id: row.id,
+        submission_id: row.submission_id,
+        title: sub.title,
+        poster_url: sub.poster_url ?? null,
+        owner_name: ownerNames[sub.user_id] || 'Unknown',
+        role_type: roleType,
+        role_name: roleName,
+        character_detail: null,
+        score: pendingScores[row.submission_id] ?? null,
       })
     }
   }
@@ -380,168 +428,6 @@ export default async function DashboardPage() {
 
     const byScore = [...publicWithScores].sort((a, b) => b.score - a.score)
     byScore.forEach((s, i) => scoreRankMap.set(s.id, i + 1))
-
-    // heatRankMap removed — replaced by backing system
-  }
-
-  // ── DERIVED DATA ──
-
-  const appliedOppIds = new Set(allApplications.map(a => a.opportunity_id))
-  const oppAppCount = new Map<string, number>()
-  for (const a of allApplications) {
-    oppAppCount.set(a.opportunity_id, (oppAppCount.get(a.opportunity_id) || 0) + 1)
-  }
-  const oppMap = new Map(allOpenOpps.map(o => [o.id, o]))
-
-  // Fetch opportunity titles for all applied opps (including closed ones not in allOpenOpps)
-  const appliedOppIdsForTitles = [...new Set(allApplications.map(a => a.opportunity_id))]
-  const missingOppIds = appliedOppIdsForTitles.filter(id => !oppMap.has(id))
-  if (missingOppIds.length > 0) {
-    const { data: closedOpps } = await service
-      .from('opportunities')
-      .select('id, title, slug, formats, genres, min_score, subtitle, description, deadline, budget_tiers, tags, created_at')
-      .in('id', missingOppIds)
-    for (const o of (closedOpps || []) as OppRow[]) {
-      oppMap.set(o.id, o)
-    }
-  }
-
-  function getQualifyingOpps(ev: FeedEval | undefined, declaredFormat: string | null) {
-    if (!ev) return []
-    const script = { format: ev.format || declaredFormat, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score }
-    return allOpenOpps.filter(o => scriptMatchesOpportunity(script, o))
-  }
-
-  const completedScripts = visible
-    .filter(s => s.status === 'completed')
-    .map(s => {
-      const ev = myEvalBySub.get(s.id)
-      const qualifyingOpps = getQualifyingOpps(ev, s.declared_format)
-        .filter(o => {
-          const scriptsApplied = appliedScriptsByOpp.get(o.id)
-          return !scriptsApplied || !scriptsApplied.has(s.id)
-        })
-      return {
-        id: s.id,
-        title: s.title,
-        format: ev?.format || s.declared_format,
-        genres: ev?.genres || [],
-        score: ev?.weighted_score ?? null,
-        evaluationId: ev?.id ?? null,
-        createdAt: s.created_at,
-        totalBacking: s.total_backing ?? 0,
-        backerCount: s.backer_count ?? 0,
-        totalFollowing: s.total_following ?? 0,
-        followerCount: s.follower_count ?? 0,
-        qualifyingOpps: qualifyingOpps.map(o => ({ id: o.id, title: o.title, slug: o.slug, subtitle: o.subtitle })),
-        isPublic: s.is_public ?? false,
-        logline: ev?.logline ?? null,
-        posterUrl: s.poster_url ?? null,
-        collaboratorCount: collabCountByScript.get(s.id) ?? 0,
-        collaborators: collabsByScript.get(s.id) ?? [],
-        pendingAppCount: pendingAppsByScript.get(s.id) ?? 0,
-        availableOppCount: qualifyingOpps.length,
-        scoreRank: scoreRankMap.get(s.id) ?? null,
-      }
-    })
-
-  const processingScripts = visible
-    .filter(s => s.status === 'processing' || s.status === 'queued')
-    .map(s => ({ id: s.id, title: s.title, format: s.declared_format, createdAt: s.created_at }))
-
-  const failedScripts = visible
-    .filter(s => s.status === 'failed')
-    .map(s => ({ id: s.id, title: s.title, format: s.declared_format, createdAt: s.created_at }))
-
-  const isProcessing = processingScripts.length > 0
-
-  const reviewedApps = allApplications.filter(a => a.status === 'reviewed' || a.review_stage === 'complete')
-  const pendingApps = allApplications.filter(a => a.status !== 'reviewed' && a.review_stage !== 'complete')
-
-  // Derive total backing from sum of all script backing
-  const totalBackingAll = visible.reduce((sum, s) => sum + (s.total_backing ?? 0), 0)
-  const scriptCount = completedScripts.length + processingScripts.length
-  const pendingCount = pendingApps.length
-
-  // Find the top-scoring script for linking
-  const topScoringScript = completedScripts.reduce<{ score: number; evaluationId: string | null } | null>((best, s) => {
-    const score = s.score ?? 0
-    if (!best || score > best.score) return { score, evaluationId: s.evaluationId }
-    return best
-  }, null)
-
-  function scoreBadge(s: number): { bg: string } {
-    if (s >= 80) return { bg: '#059669' }
-    if (s >= 60) return { bg: '#7c3aed' }
-    if (s >= 40) return { bg: '#d97706' }
-    return { bg: '#9ca3af' }
-  }
-
-  const fmtDate = (d: string) =>
-    new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-
-  // Opportunity qualification helpers
-  function anyScriptQualifies(opp: OppRow) {
-    return completedScripts.some(s => {
-      const ev = myEvalBySub.get(s.id)
-      if (!ev) return false
-      const script = { format: ev.format || s.format, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score }
-      return scriptMatchesOpportunity(script, opp)
-    })
-  }
-
-  const unappliedOpps = allOpenOpps.filter(o => !pendingOppIds.has(o.id))
-  const qualifiedOpps = unappliedOpps.filter(o => anyScriptQualifies(o))
-  const unqualifiedOpps = unappliedOpps.filter(o => !anyScriptQualifies(o))
-
-  const sortByDeadline = (a: OppRow, b: OppRow) => {
-    if (a.deadline && b.deadline) return new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
-    if (a.deadline) return -1
-    if (b.deadline) return 1
-    return 0
-  }
-  qualifiedOpps.sort(sortByDeadline)
-  unqualifiedOpps.sort(sortByDeadline)
-
-  const combinedOpps = [...qualifiedOpps, ...unqualifiedOpps]
-  if (combinedOpps.length < 3) {
-    const shown = new Set(combinedOpps.map(o => o.id))
-    const filler = unappliedOpps
-      .filter(o => !shown.has(o.id))
-      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
-    for (const o of filler) {
-      if (combinedOpps.length >= 3) break
-      combinedOpps.push(o)
-    }
-  }
-  const dashboardOpps = combinedOpps.slice(0, 3)
-  const qualifiedOppIds = new Set(qualifiedOpps.map(o => o.id))
-
-  // Fetch total writers applied + last application per opportunity (for card display)
-  const dashOppIds = [...new Set([...dashboardOpps.map(o => o.id), ...pendingApps.map(a => a.opportunity_id)])]
-  const writersAppliedMap = new Map<string, number>()
-  const lastAppMap = new Map<string, string>()
-  if (dashOppIds.length > 0) {
-    const { data: allCons } = await service
-      .from('considerations')
-      .select('opportunity_id, created_at')
-      .in('opportunity_id', dashOppIds)
-    for (const c of (allCons || []) as { opportunity_id: string; created_at: string }[]) {
-      writersAppliedMap.set(c.opportunity_id, (writersAppliedMap.get(c.opportunity_id) || 0) + 1)
-      const existing = lastAppMap.get(c.opportunity_id)
-      if (!existing || c.created_at > existing) lastAppMap.set(c.opportunity_id, c.created_at)
-    }
-  }
-
-  function getMatchingScriptsForOpp(opp: OppRow) {
-    const alreadyAppliedScripts = appliedScriptsByOpp.get(opp.id) || new Set<string>()
-    return completedScripts.filter(s => {
-      if (alreadyAppliedScripts.has(s.id)) return false
-      const ev = myEvalBySub.get(s.id)
-      if (!ev) return false
-      const script = { format: ev.format || s.format, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score }
-      return scriptMatchesOpportunity(script, opp)
-    }).map(s => ({ id: s.id, title: s.title, score: s.score ? Math.round(s.score) : null }))
   }
 
   // ── PRODUCER DATA (for Manage tab) ──
@@ -642,10 +528,8 @@ export default async function DashboardPage() {
   // Rank opportunities by total applications across ALL active opportunities
   let oppRankMap = new Map<string, number>()
   if (accountType === 'producer') {
-    // Get app counts for ALL opportunities (not just this producer's) for ranking
     const oppIdsForRank = partnerOpps.map(o => o.id)
     if (oppIdsForRank.length > 0) {
-      // Rank by total apps descending among this producer's opportunities
       const sorted = [...partnerOpps].sort((a, b) => {
         const aTotal = partnerOppStats.get(a.id)?.total ?? 0
         const bTotal = partnerOppStats.get(b.id)?.total ?? 0
@@ -658,47 +542,94 @@ export default async function DashboardPage() {
   const openOppCount = partnerOpps.filter(o => o.status === 'active').length
   const totalWriterConnections = partnerApps.filter(a => a.triage_status === 'meet').length
 
+  // ── BUILD ProjectCard[] FOR WRITER ──
+
+  const isProcessing = visible.some(s => s.status === 'processing' || s.status === 'queued')
+  const firstName = profile?.full_name?.split(' ')[0] || 'Writer'
+
+  const projectCards: ProjectCard[] = []
+
+  // Own scripts → role: 'creator'
+  for (const s of visible) {
+    const ev = myEvalBySub.get(s.id)
+    const score = ev?.weighted_score ?? null
+    const rounded = score != null ? Math.round(score) : null
+
+    // Determine budget display from evaluation budget string
+    let budgetDisplay: string | null = null
+    if (ev?.budget) {
+      // budget is typically a string like "micro" / "low" / "mid" / "high" / "blockbuster"
+      // or a number string — try to parse
+      const budgetLC = ev.budget.toLowerCase()
+      if (budgetLC.includes('micro')) budgetDisplay = 'Under $1M'
+      else if (budgetLC.includes('low') || budgetLC.includes('indie')) budgetDisplay = '$1-5M'
+      else if (budgetLC.includes('mid')) budgetDisplay = '$5-30M'
+      else if (budgetLC.includes('high') || budgetLC.includes('studio')) budgetDisplay = '$30-100M'
+      else if (budgetLC.includes('block') || budgetLC.includes('tent')) budgetDisplay = '$100M+'
+      else {
+        const parsed = parseFloat(ev.budget.replace(/[^0-9.]/g, ''))
+        if (!isNaN(parsed) && parsed > 0) budgetDisplay = fmtShort(parsed)
+      }
+    }
+
+    const crewCount = collabCountByScript.get(s.id) ?? 0
+    const backing = s.total_backing ?? 0
+
+    let status: 'processing' | 'completed' | 'error' = 'completed'
+    if (s.status === 'processing' || s.status === 'queued') status = 'processing'
+    else if (s.status === 'failed') status = 'error'
+
+    projectCards.push({
+      id: s.id,
+      title: s.title,
+      logline: ev?.logline ?? null,
+      poster_url: s.poster_url ?? null,
+      score: rounded,
+      tier: tierFromScore(rounded),
+      format: ev?.format || s.declared_format,
+      genres: ev?.genres || [],
+      heat_score: s.heat_score ?? 0,
+      budget_display: budgetDisplay,
+      crew_count: crewCount,
+      cast_count: 0,
+      backing_total: backing,
+      role: 'creator',
+      collab_role_label: null,
+      status,
+      has_pending_apps: (pendingAppsByScript.get(s.id) ?? 0) > 0,
+      needs_funding: backing > 0 && false, // TODO: compare against budget when available
+      created_at: s.created_at,
+    })
+  }
+
+  // Accepted collaboration scripts → role: 'collaborator'
+  for (const s of collabScripts) {
+    const rounded = s.score != null ? Math.round(s.score) : null
+
+    projectCards.push({
+      id: s.id,
+      title: s.title,
+      logline: null,
+      poster_url: s.posterUrl,
+      score: rounded,
+      tier: tierFromScore(rounded),
+      format: s.format,
+      genres: s.genres,
+      heat_score: s.heatScore,
+      budget_display: null,
+      crew_count: 0,
+      cast_count: 0,
+      backing_total: s.totalBacking,
+      role: 'collaborator',
+      collab_role_label: s.collabRole,
+      status: 'completed',
+      has_pending_apps: false,
+      needs_funding: false,
+      created_at: s.createdAt,
+    })
+  }
+
   // ── RENDER ──
-
-  const cardShadow = '0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)'
-
-  // Uniform placeholder gradient for scripts without posters
-  const placeholderGradient = 'linear-gradient(135deg, #7c3aed, #6d28d9)'
-
-  // GEM diamond logo — the ACTUAL logo: concentric layered diamond with
-  // radiating purple layers (inner solid → progressively lighter outer rings).
-  // Matches the brand asset in marketing/gem_diamond_*.png.
-  const gemDiamond = (size = 14) => (
-    <span
-      aria-hidden="true"
-      className="inline-flex items-center justify-center shrink-0 rotate-45"
-      style={{ width: size * 1.8, height: size * 1.8 }}
-    >
-      {/* Outer ring — lightest */}
-      <span className="absolute rotate-0" style={{
-        width: size * 1.8, height: size * 1.8,
-        background: 'rgba(167, 139, 250, 0.15)',
-        borderRadius: size * 0.06,
-      }} />
-      {/* Middle ring */}
-      <span className="absolute rotate-0" style={{
-        width: size * 1.35, height: size * 1.35,
-        background: 'rgba(139, 92, 246, 0.35)',
-        borderRadius: size * 0.06,
-      }} />
-      {/* Inner core — solid purple */}
-      <span className="absolute rotate-0" style={{
-        width: size, height: size,
-        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
-        borderRadius: size * 0.06,
-      }} />
-    </span>
-  )
-
-  // Compute stats for the prominent stats section
-  const topScore = completedScripts.length > 0
-    ? Math.round(Math.max(...completedScripts.map(s => s.score ?? 0)))
-    : 0
 
   return (
     <div style={{ position: 'relative' }}>
@@ -867,273 +798,12 @@ export default async function DashboardPage() {
             )}
           </>
         ) : (
-          <>
-          {/* ── WELCOME HEADER ── */}
-          <h1 className="text-[24px] sm:text-[28px] font-bold text-white m-0 mb-6 leading-tight">
-            Welcome back, {profile?.full_name?.split(' ')[0] || 'Writer'}
-          </h1>
-
-          {/* ── WRITER STATS ROW ── */}
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3">
-            <Link href="/scripts" className="no-underline block">
-              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 12 }}>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[20px] leading-none shrink-0">📄</span>
-                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">{scriptCount}</span>
-                </div>
-                <span className="text-[12px] font-bold text-white mt-1 block">Scripts</span>
-              </div>
-            </Link>
-            <Link href={topScoringScript?.evaluationId ? `/report/${topScoringScript.evaluationId}` : '/scripts'} className="no-underline block">
-              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(167,139,250,0.06) 100%)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: 12 }}>
-                <div className="flex items-center gap-1.5">
-                  <span className="inline-flex shrink-0">{gemDiamond(9)}</span>
-                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
-                    {topScore > 0 ? topScore : '—'}
-                  </span>
-                </div>
-                <span className="text-[12px] font-bold text-white mt-1 block">Top Score</span>
-              </div>
-            </Link>
-            <Link href="/applications" className="no-underline block">
-              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.06) 100%)', border: '1px solid rgba(34,197,94,0.25)', borderRadius: 12 }}>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[20px] leading-none shrink-0">💰</span>
-                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
-                    {totalBackingAll > 0 ? (totalBackingAll >= 1000 ? `$${Math.round(totalBackingAll / 1000)}K` : `$${totalBackingAll}`) : '—'}
-                  </span>
-                </div>
-                <span className="text-[12px] font-bold text-white mt-1 block">Backed</span>
-              </div>
-            </Link>
-            <div className="block">
-              <div className="py-3 px-3" style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.06) 100%)', border: '1px solid rgba(59,130,246,0.25)', borderRadius: 12 }}>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[20px] leading-none shrink-0">🧑</span>
-                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
-                    {totalCollaborators > 0 ? totalCollaborators : '—'}
-                  </span>
-                </div>
-                <span className="text-[12px] font-bold text-white mt-1 block">
-                  {totalCollaborators === 0 && pendingCollaborators > 0 ? `Collabs (${pendingCollaborators} pending)` : 'Collaborators'}
-                </span>
-              </div>
-            </div>
-            <Link href="/applications" className="no-underline block">
-              <div className="py-3 px-3 hover:brightness-110 transition-all" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(124,58,237,0.06) 100%)', border: '1px solid rgba(124,58,237,0.25)', borderRadius: 12 }}>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[20px] leading-none shrink-0">📨</span>
-                  <span className="text-[26px] sm:text-[32px] font-bold text-white leading-none">
-                    {pendingCount > 0 ? pendingCount : '—'}
-                  </span>
-                </div>
-                <span className="text-[12px] font-bold text-white mt-1 block">Pending</span>
-              </div>
-            </Link>
-          </div>
-
-          {/* ── TWO-COLUMN: SCRIPTS + OPPORTUNITIES ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-            {/* LEFT: Recent Scripts */}
-            <div className="min-w-0">
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,1)', letterSpacing: '0.04em' }}>Recent scripts</h2>
-                {completedScripts.length > 0 && (
-                  <Link href="/scripts" className="text-[12px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">View all →</Link>
-                )}
-              </div>
-
-              {completedScripts.length === 0 && processingScripts.length === 0 && failedScripts.length === 0 ? (
-                <div className="px-6 py-10 text-center" style={{ background: '#ffffff', border: '1px dashed #d1d5db', borderRadius: 4 }}>
-                  <p className="text-[14px] font-semibold m-0 mb-1" style={{ color: '#111827' }}>No scripts yet</p>
-                  <p className="text-[13px] m-0 mb-3" style={{ color: '#6b7280' }}>Upload your first screenplay to get a full evaluation.</p>
-                  <NewScriptButton />
-                </div>
-              ) : (
-                <div className="space-y-1.5">
-                  {/* Processing scripts */}
-                  {processingScripts.map(script => (
-                    <div key={script.id} className="flex items-center gap-2.5 px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 4 }}>
-                      <div className="w-[40px] h-[50px] shrink-0 rounded flex items-center justify-center" style={{ background: placeholderGradient }}>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-[14px] font-semibold m-0 truncate" style={{ color: '#111827' }}>{script.title}</p>
-                        <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>Evaluating...</p>
-                      </div>
-                    </div>
-                  ))}
-
-                  {/* Failed scripts */}
-                  {failedScripts.map(script => (
-                    <FailedScriptCard key={script.id} scriptId={script.id} title={script.title} format={script.format} createdAt={script.createdAt} />
-                  ))}
-
-                  {/* Completed scripts + collab scripts — compact rows */}
-                  {[
-                    ...completedScripts.slice(0, 3).map(s => ({ ...s, collabRole: null as string | null })),
-                    ...collabScripts.slice(0, 3 - Math.min(completedScripts.length, 3)).map(s => ({ ...s, collaboratorCount: 0, collaborators: [] as CollabInfo[], pendingAppCount: 0, availableOppCount: 0, isPublic: false, qualifyingOpps: [] as { id: string; title: string; slug: string; subtitle: string | null }[], scoreRank: null as number | null })),
-                  ].map(script => {
-                    const rounded = script.score ? Math.round(script.score) : null
-                    const reportHref = script.evaluationId ? `/report/${script.evaluationId}` : '/scripts'
-                    return (
-                      <div key={script.id} className="px-3 py-2.5" style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-                        {/* Row 1: poster + title + format/genre/date + menu */}
-                        <div className="flex items-start gap-2.5">
-                          <Link href={reportHref} className="flex-1 min-w-0 no-underline group">
-                            <div className="flex items-center gap-2.5">
-                              {script.posterUrl && (
-                                <div className="w-[40px] h-[50px] shrink-0 rounded overflow-hidden">
-                                  <img src={script.posterUrl} alt="" className="w-full h-full object-cover" />
-                                </div>
-                              )}
-                              <div className="flex-1 min-w-0">
-                                <p className="text-[14px] font-semibold m-0 truncate group-hover:text-purple-600 transition-colors" style={{ color: '#111827' }}>{script.title}</p>
-                                <p className="text-[11px] font-bold m-0 mt-0.5" style={{ color: '#6b7280' }}>
-                                  {[script.format, script.genres[0]?.replace(/^\w/, (c: string) => c.toUpperCase()), fmtDate(script.createdAt)].filter(Boolean).join(' · ')}
-                                </p>
-                              </div>
-                              {script.collabRole && (
-                                <span className="text-[11px] font-semibold px-2 py-0.5 shrink-0" style={{ background: 'rgba(124,58,237,0.2)', color: '#c4b5fd', borderRadius: 3 }}>{script.collabRole}</span>
-                              )}
-                            </div>
-                          </Link>
-                          {!script.collabRole && (
-                            <ScriptCardMenu scriptId={script.id} evaluationId={script.evaluationId} />
-                          )}
-                        </div>
-
-                        {/* Scores + View report row */}
-                        <div className="flex items-center mt-2" style={{ borderTop: '1px solid #f3f4f6', paddingTop: 8 }}>
-                          <div className="flex items-center gap-1.5">
-                            <span className="text-[11px] font-semibold" style={{ color: '#6b7280' }}>GEM Score</span>
-                            <span className="inline-flex">{gemDiamond(5)}</span>
-                            <span className="text-[15px] font-extrabold leading-none" style={{ color: '#6d28d9' }}>{rounded || '—'}</span>
-                            {script.isPublic && script.scoreRank ? (
-                              <span className="text-[11px] font-semibold" style={{ color: '#7c3aed' }}>#{script.scoreRank}</span>
-                            ) : (
-                              <span className="text-[11px] font-semibold" style={{ color: '#9ca3af' }}>Rank: N/A</span>
-                            )}
-                          </div>
-                          {(script.totalBacking > 0 || script.totalFollowing > 0) && (
-                            <div className="ml-4 flex items-center gap-2">
-                              {script.totalBacking > 0 && (
-                                <span className="text-[11px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>
-                                  {script.totalBacking >= 1000 ? `$${Math.round(script.totalBacking / 1000)}K` : `$${script.totalBacking}`} backed
-                                </span>
-                              )}
-                              {script.totalFollowing > 0 && (
-                                <span className="text-[11px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#fffbeb', color: '#92400e', border: '1px solid #fcd34d' }}>
-                                  {script.totalFollowing >= 1000 ? `$${Math.round(script.totalFollowing / 1000)}K` : `$${script.totalFollowing}`} following
-                                </span>
-                              )}
-                            </div>
-                          )}
-                          <span className="flex-1" />
-                          {script.evaluationId && (
-                            <Link href={reportHref} className="text-[12px] font-semibold no-underline shrink-0" style={{ color: '#7c3aed' }}>
-                              View report →
-                            </Link>
-                          )}
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
-
-            {/* RIGHT: Opportunities — Pending + Available */}
-            <div className="min-w-0">
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-[13px] font-semibold m-0 uppercase" style={{ color: 'rgba(255,255,255,1)', letterSpacing: '0.04em' }}>Opportunities</h2>
-                <Link href="/opportunities" className="text-[12px] font-medium text-purple-300 hover:text-purple-200 transition-colors no-underline">Browse all →</Link>
-              </div>
-
-              {/* Pending applications */}
-              {pendingApps.length > 0 && (
-                <div className="mb-3">
-                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,1)' }}>Pending</p>
-                  <div className="space-y-2">
-                    {pendingApps.slice(0, 3).map(app => {
-                      const opp = oppMap.get(app.opportunity_id)
-                      if (!opp) return null
-                      return (
-                        <OpportunityCard
-                          key={app.id}
-                          id={opp.id}
-                          slug={opp.slug}
-                          title={opp.title}
-                          subtitle={opp.subtitle}
-                          description={opp.description}
-                          genres={(opp.genres as string[]) || []}
-                          formats={(opp.formats as string[]) || []}
-                          createdAt={opp.created_at}
-                          deadline={opp.deadline}
-                          status="pending"
-                          matchingScriptCount={0}
-                          applicationCount={oppAppCount.get(opp.id) ?? 0}
-                          writersApplied={writersAppliedMap.get(opp.id) ?? 0}
-                          lastApplicationAt={lastAppMap.get(opp.id) ?? null}
-                          dealType={opp.deal_type}
-                        />
-                      )
-                    })}
-                  </div>
-                  {/* Divider between pending and available */}
-                  {dashboardOpps.length > 0 && (
-                    <div className="my-3" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }} />
-                  )}
-                </div>
-              )}
-
-              {/* Available opportunities */}
-              {dashboardOpps.length > 0 ? (
-                <div>
-                  <p className="text-[12px] font-semibold m-0 mb-1.5" style={{ color: 'rgba(255,255,255,1)' }}>Available</p>
-                  <div className="space-y-2">
-                    {dashboardOpps.map(opp => {
-                      const matchCount = getMatchingScriptsForOpp(opp).length
-                      const hasApplied = appliedOppIds.has(opp.id)
-                      const oppStatus: OppStatus = hasApplied ? 'previously_applied' : 'available'
-                      return (
-                        <OpportunityCard
-                          key={opp.id}
-                          id={opp.id}
-                          slug={opp.slug}
-                          title={opp.title}
-                          subtitle={opp.subtitle}
-                          description={opp.description}
-                          genres={(opp.genres as string[]) || []}
-                          formats={(opp.formats as string[]) || []}
-                          createdAt={opp.created_at}
-                          deadline={opp.deadline}
-                          status={oppStatus}
-                          matchingScriptCount={matchCount}
-                          applicationCount={oppAppCount.get(opp.id) ?? 0}
-                          writersApplied={writersAppliedMap.get(opp.id) ?? 0}
-                          lastApplicationAt={lastAppMap.get(opp.id) ?? null}
-                          dealType={opp.deal_type}
-                        />
-                      )
-                    })}
-                  </div>
-                </div>
-              ) : pendingApps.length === 0 ? (
-                <div className="px-6 py-10 text-center" style={{ background: '#ffffff', border: '1px dashed #d1d5db', borderRadius: 4 }}>
-                  <p className="text-[14px] font-semibold m-0 mb-1" style={{ color: '#111827' }}>No opportunities yet</p>
-                  <p className="text-[13px] m-0 mb-3" style={{ color: '#6b7280' }}>Upload scripts to qualify for open opportunities.</p>
-                  <Link href="/opportunities" className="inline-flex items-center gap-1 px-4 py-2 text-[13px] font-semibold text-white no-underline" style={{ background: '#7c3aed', borderRadius: 8 }}>
-                    Browse opportunities →
-                  </Link>
-                </div>
-              ) : null}
-            </div>
-          </div>
-
-          {/* Collaborations section removed — collab scripts now appear in Recent Scripts with a role pill */}
-          </>
+          /* ── WRITER DASHBOARD — ProjectHub ── */
+          <ProjectHub
+            projects={projectCards}
+            requests={collabRequests}
+            userName={firstName}
+          />
         )}
 
       </div>
