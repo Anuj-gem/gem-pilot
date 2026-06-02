@@ -3,67 +3,13 @@
 import { useState } from 'react'
 import { ChevronDown, DollarSign, Users, Film } from 'lucide-react'
 
-interface NeedsCardProps {
+type CardKey = 'investment' | 'crew' | 'cast'
+
+interface CardConfig {
+  key: CardKey
   title: string
   icon: React.ReactNode
   summary: string | null
-  children: React.ReactNode
-  defaultOpen?: boolean
-}
-
-function NeedsCard({ title, icon, summary, children, defaultOpen = false }: NeedsCardProps) {
-  const [open, setOpen] = useState(defaultOpen)
-
-  return (
-    <div
-      className="rounded-xl overflow-hidden transition-all flex flex-col"
-      style={{
-        background: '#FAFAF9',
-        border: '1px solid #E7E5E4',
-      }}
-    >
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex flex-col items-center gap-2 px-5 py-5 cursor-pointer border-0 bg-transparent text-center"
-      >
-        <div
-          className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-          style={{ background: 'rgba(124,58,237,0.10)' }}
-        >
-          {icon}
-        </div>
-        <div className="min-w-0">
-          <h3 className="text-[15px] font-bold m-0" style={{ color: '#1C1917' }}>
-            {title}
-          </h3>
-          {summary && (
-            <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#7C3AED' }}>
-              {summary}
-            </p>
-          )}
-        </div>
-        <ChevronDown
-          size={16}
-          className="shrink-0 transition-transform duration-200"
-          style={{
-            color: '#A8A29E',
-            transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-          }}
-        />
-      </button>
-
-      {open && (
-        <div
-          className="px-5 pb-5 space-y-6"
-          style={{ borderTop: '1px solid #E7E5E4' }}
-        >
-          <div className="pt-4">
-            {children}
-          </div>
-        </div>
-      )}
-    </div>
-  )
 }
 
 interface ProjectNeedsCardsProps {
@@ -83,6 +29,20 @@ export function ProjectNeedsCards({
   crewSummary,
   castSummary,
 }: ProjectNeedsCardsProps) {
+  const [activeCard, setActiveCard] = useState<CardKey | null>(null)
+
+  const cards: CardConfig[] = [
+    { key: 'investment', title: 'Investment', icon: <DollarSign size={20} style={{ color: '#a78bfa' }} />, summary: investmentSummary },
+    { key: 'crew', title: 'Crew', icon: <Film size={20} style={{ color: '#a78bfa' }} />, summary: crewSummary },
+    { key: 'cast', title: 'Cast', icon: <Users size={20} style={{ color: '#a78bfa' }} />, summary: castSummary },
+  ]
+
+  const childrenMap: Record<CardKey, React.ReactNode> = {
+    investment: investmentChildren,
+    crew: crewChildren,
+    cast: castChildren,
+  }
+
   return (
     <div>
       <h2
@@ -91,31 +51,64 @@ export function ProjectNeedsCards({
       >
         What This Project Needs
       </h2>
+
+      {/* 3-card row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <NeedsCard
-          title="Investment"
-          icon={<DollarSign size={20} style={{ color: '#a78bfa' }} />}
-          summary={investmentSummary}
-        >
-          {investmentChildren}
-        </NeedsCard>
-
-        <NeedsCard
-          title="Crew"
-          icon={<Film size={20} style={{ color: '#a78bfa' }} />}
-          summary={crewSummary}
-        >
-          {crewChildren}
-        </NeedsCard>
-
-        <NeedsCard
-          title="Cast"
-          icon={<Users size={20} style={{ color: '#a78bfa' }} />}
-          summary={castSummary}
-        >
-          {castChildren}
-        </NeedsCard>
+        {cards.map((card) => {
+          const isActive = activeCard === card.key
+          return (
+            <button
+              key={card.key}
+              onClick={() => setActiveCard(isActive ? null : card.key)}
+              className="rounded-xl overflow-hidden transition-all flex flex-col items-center gap-2 px-5 py-5 cursor-pointer border-0 text-center"
+              style={{
+                background: isActive ? '#F5F3FF' : '#FAFAF9',
+                border: isActive ? '1px solid #a78bfa' : '1px solid #E7E5E4',
+              }}
+            >
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                style={{ background: 'rgba(124,58,237,0.10)' }}
+              >
+                {card.icon}
+              </div>
+              <div className="min-w-0">
+                <h3 className="text-[15px] font-bold m-0" style={{ color: '#1C1917' }}>
+                  {card.title}
+                </h3>
+                {card.summary && (
+                  <p className="text-[22px] font-bold m-0 mt-1" style={{ color: '#7C3AED' }}>
+                    {card.summary}
+                  </p>
+                )}
+              </div>
+              <ChevronDown
+                size={16}
+                className="shrink-0 transition-transform duration-200"
+                style={{
+                  color: '#A8A29E',
+                  transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
+                }}
+              />
+            </button>
+          )
+        })}
       </div>
+
+      {/* Expanded detail panel below the row */}
+      {activeCard && (
+        <div
+          className="mt-3 rounded-xl overflow-hidden"
+          style={{
+            background: '#FAFAF9',
+            border: '1px solid #E7E5E4',
+          }}
+        >
+          <div className="px-5 sm:px-6 py-5 sm:py-6">
+            {childrenMap[activeCard]}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
