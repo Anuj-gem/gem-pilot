@@ -41,11 +41,13 @@ function parseAmount(s: string): number {
 }
 
 export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave }: Props) {
-  const hasUserBudget = (initial?.total ?? 0) > 0 || (initial?.budget_low ?? 0) > 0 || (initial?.budget_high ?? 0) > 0
+  // Track live plan internally so revert works without parent re-render
+  const [livePlan, setLivePlan] = useState<BudgetPlan | null>(initial)
+  const hasUserBudget = (livePlan?.total ?? 0) > 0 || (livePlan?.budget_low ?? 0) > 0 || (livePlan?.budget_high ?? 0) > 0
   const [editing, setEditing] = useState(false)
-  const [lowInput, setLowInput] = useState(initial?.budget_low ? fmtFull(initial.budget_low) : '')
-  const [highInput, setHighInput] = useState(initial?.budget_high ? fmtFull(initial.budget_high) : (initial?.total ? fmtFull(initial.total) : ''))
-  const [explanation, setExplanation] = useState(initial?.explanation ?? '')
+  const [lowInput, setLowInput] = useState(livePlan?.budget_low ? fmtFull(livePlan.budget_low) : '')
+  const [highInput, setHighInput] = useState(livePlan?.budget_high ? fmtFull(livePlan.budget_high) : (livePlan?.total ? fmtFull(livePlan.total) : ''))
+  const [explanation, setExplanation] = useState(livePlan?.explanation ?? '')
   const [saving, setSaving] = useState(false)
 
   const save = useCallback(async (low: number, high: number, expl: string) => {
@@ -58,7 +60,10 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ submissionId, budgetPlan: plan }),
       })
-      if (res.ok) onSave?.(plan)
+      if (res.ok) {
+        setLivePlan(plan)
+        onSave?.(plan)
+      }
     } finally {
       setSaving(false)
     }
@@ -90,8 +95,8 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
   })()
 
   // Display the user's range or single number
-  const userLow = initial?.budget_low ?? 0
-  const userHigh = initial?.budget_high ?? initial?.total ?? 0
+  const userLow = livePlan?.budget_low ?? 0
+  const userHigh = livePlan?.budget_high ?? livePlan?.total ?? 0
   const userDisplay = userLow > 0 && userHigh > 0 && userLow !== userHigh
     ? `${fmtShort(userLow)}–${fmtShort(userHigh)}`
     : userHigh > 0
