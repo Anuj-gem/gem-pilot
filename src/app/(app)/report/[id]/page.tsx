@@ -64,6 +64,7 @@ import HeroMediaCarousel from '@/components/report/hero-media-carousel'
 import { CollaboratorsSection } from '@/components/report/collaborators-section'
 import { CrewSection } from '@/components/report/crew-section'
 import { FollowersSection } from '@/components/report/followers-section'
+import { BackersList } from '@/components/report/backers-list'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
@@ -907,12 +908,12 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           }
           investmentChildren={
             <div className="space-y-6">
-              <FollowersSection
+              <BackersList
                 submissionId={submission.id}
-                totalFollowing={totalFollowing}
-                followerCount={followerCount}
-                totalBacking={totalBacking}
-                backerCount={backerCount}
+                budgetTotal={budgetPlan?.total ?? 0}
+                isOwner={isOwner || isAdmin}
+                currentUserId={user?.id ?? null}
+                ownerName={ownerProfile?.full_name ?? null}
               />
               <BudgetEditor
                 initial={budgetPlan}
