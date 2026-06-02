@@ -984,7 +984,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CollapsibleRow
                 emoji="💰"
                 title="Funding"
-                subtitle={totalBacking > 0 ? `${backerCount} confirmed` : 'No funding yet'}
+                subtitle={(() => {
+                  const parts: string[] = []
+                  if (totalBacking > 0) parts.push(`${fmtShort(totalBacking)} secured`)
+                  if (investmentConsideringAmount > 0) parts.push(`${fmtShort(investmentConsideringAmount)} pending`)
+                  const availableOppAmount = matchingOpps.filter(o => !considerationResults.some(r => r.opportunity_id === o.id)).reduce((s, o) => s + o.funding_amount, 0)
+                  if (availableOppAmount > 0) parts.push(`${fmtShort(availableOppAmount)} available`)
+                  return parts.length > 0 ? parts.join(' · ') : 'No funding yet'
+                })()}
                 value={totalBacking > 0 ? fmtShort(totalBacking) : '$0'}
                 valueColor={totalBacking > 0 ? '#0F6E56' : '#78716C'}
               >
@@ -995,22 +1002,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   currentUserId={user?.id ?? null}
                   ownerName={ownerProfile?.full_name ?? null}
                 />
-              </CollapsibleRow>
-              <CollapsibleRow
-                emoji="🏦"
-                title="Funding opportunities"
-                subtitle={matchingOpps.length > 0 ? `${matchingOpps.length} matching from GEM partners` : 'No matching opportunities'}
-                value={matchingOpps.length > 0 ? fmtShort(matchingOpps.reduce((s, o) => s + o.funding_amount, 0)) : '$0'}
-                valueColor={matchingOpps.length > 0 ? '#534AB7' : '#78716C'}
-              >
-                <FundingOpportunities
-                  matchingOpps={matchingOpps}
-                  considerationResults={considerationResults}
-                  submissionId={submission.id}
-                  isOwner={isOwner || isAdmin}
-                  budgetTotal={budgetPlan?.total ?? 0}
-                  securedAmount={totalBacking}
-                />
+                {matchingOpps.length > 0 && (
+                  <div style={{ borderTop: '1px solid #f0f0f0', marginTop: 16, paddingTop: 16 }}>
+                    <FundingOpportunities
+                      matchingOpps={matchingOpps}
+                      considerationResults={considerationResults}
+                      submissionId={submission.id}
+                      isOwner={isOwner || isAdmin}
+                      budgetTotal={0}
+                      securedAmount={0}
+                    />
+                  </div>
+                )}
               </CollapsibleRow>
               <CollapsibleRow
                 emoji="📈"

@@ -104,10 +104,9 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
     <div>
       <div className="flex items-start justify-between mb-1">
         <div>
-          <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium m-0">Funding available</h3>
-          <p className="text-[12px] m-0 mt-1" style={{ color: '#534AB7' }}>Directly from GEM financial partners</p>
+          <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium m-0">GEM funding opportunities</h3>
         </div>
-        <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(totalAvailable)} total</span>
+        <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(totalAvailable)}</span>
       </div>
 
       {/* Progress bar */}
