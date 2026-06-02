@@ -984,14 +984,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CollapsibleRow
                 emoji="📊"
                 title="Budget"
-                subtitle={budgetPlan?.total ? 'Your budget' : gemEstimate ? `GEM estimate: ${gemEstimate.replace(/total negative cost/i, '').trim()}` : 'Set your project budget'}
+                subtitle={budgetPlan?.total ? 'Your budget' : (packaging?.budget_tier?.per_episode || packaging?.budget_tier?.range) ? `GEM estimate: ${(packaging.budget_tier.per_episode || packaging.budget_tier.range || '').replace(/total negative cost/i, '').trim()}` : 'Set your project budget'}
                 value={budgetPlan?.total ? fmtShort(budgetPlan.total) : '$0'}
               >
                 <BudgetEditor
                   initial={budgetPlan}
-                  gemEstimate={gemEstimate}
+                  gemEstimate={packaging?.budget_tier?.range || packaging?.budget_tier?.per_episode || null}
                   gemNote={packaging?.budget_tier?.note ?? null}
-                  gemTier={packaging?.budget_tier?.tier ?? null}
+                  gemTier={null}
+                  gemPerEpisode={packaging?.budget_tier?.per_episode ?? null}
+                  gemSeasonTotal={packaging?.budget_tier?.season_total ?? null}
                   submissionId={submission.id}
                 />
               </CollapsibleRow>

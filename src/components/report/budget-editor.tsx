@@ -20,6 +20,8 @@ interface Props {
   gemEstimate: string | null
   gemNote: string | null
   gemTier: string | null
+  gemPerEpisode?: string | null
+  gemSeasonTotal?: string | null
   submissionId: string
   onSave?: (plan: BudgetPlan) => void
 }
@@ -38,7 +40,7 @@ function parseAmount(s: string): number {
   return parseInt(s.replace(/[^0-9]/g, ''), 10) || 0
 }
 
-export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, submissionId, onSave }: Props) {
+export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave }: Props) {
   const hasUserBudget = (initial?.total ?? 0) > 0 || (initial?.budget_low ?? 0) > 0 || (initial?.budget_high ?? 0) > 0
   const [editing, setEditing] = useState(false)
   const [lowInput, setLowInput] = useState(initial?.budget_low ? fmtFull(initial.budget_low) : '')
@@ -78,7 +80,14 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, submissio
     setEditing(false)
   }
 
-  const tierLabel = gemTier ? gemTier.charAt(0).toUpperCase() + gemTier.slice(1) : null
+  const isSeries = !!gemPerEpisode
+  const gemDisplayEstimate = (() => {
+    const raw = gemEstimate?.replace(/total negative cost/i, '').trim()
+    if (isSeries && gemPerEpisode) {
+      return `${gemPerEpisode.replace(/\/ep$/i, '').trim()} per episode`
+    }
+    return raw || null
+  })()
 
   // Display the user's range or single number
   const userLow = initial?.budget_low ?? 0
@@ -94,12 +103,14 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, submissio
       {!editing ? (
         <>
           {/* Display state */}
-          <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-[24px] font-medium" style={{ color: '#1C1917' }}>
-              {hasUserBudget ? userDisplay : gemEstimate?.replace(/total negative cost/i, '').trim() || 'No estimate'}
-            </span>
-            {!hasUserBudget && tierLabel && (
-              <span className="text-[13px]" style={{ color: '#78716C' }}>{tierLabel}</span>
+          <div className="mb-2">
+            <div className="flex items-baseline gap-2">
+              <span className="text-[24px] font-medium" style={{ color: '#1C1917' }}>
+                {hasUserBudget ? userDisplay : gemDisplayEstimate || 'No estimate'}
+              </span>
+            </div>
+            {!hasUserBudget && isSeries && gemSeasonTotal && (
+              <div className="text-[13px] mt-1" style={{ color: '#78716C' }}>{gemSeasonTotal}</div>
             )}
           </div>
 
@@ -109,7 +120,7 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, submissio
                 <button onClick={() => setEditing(true)} className="text-[12px] underline border-0 bg-transparent cursor-pointer p-0" style={{ color: '#534AB7' }}>Edit</button>
                 <span className="text-[11px]" style={{ color: '#A8A29E' }}>·</span>
                 <button onClick={handleRevert} className="text-[12px] underline border-0 bg-transparent cursor-pointer p-0" style={{ color: '#78716C' }}>
-                  Revert to GEM estimate{gemEstimate ? ` (${gemEstimate.replace(/total negative cost/i, '').trim()})` : ''}
+                  Revert to GEM estimate{gemDisplayEstimate ? ` (${gemDisplayEstimate})` : ''}
                 </button>
               </>
             ) : (
